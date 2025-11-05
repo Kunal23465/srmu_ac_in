@@ -1,5 +1,5 @@
 import React from "react";
-import Message from "../../components/message/Message";
+import Message from "../../../components/about/message/Message";
 
 const MessagePage: React.FC = () => {
   return <Message />;

@@ -4,7 +4,7 @@ import HomePage from "../pages/HomePage";
 import RootLayout from "../pages/RootLayout";
 import Classes from "../utils/styles/Global.module.css";
 import { Fragment } from "react/jsx-runtime";
-import MessagePage from "../pages/Message/MessagePage";
+import MessagePage from "../pages/About/Message/MessagePage";
 
 interface IMatches {
     id: string;
@@ -49,7 +49,6 @@ export const routes = [
                         },
                     },
                 ]
-
             },
         ]
     }

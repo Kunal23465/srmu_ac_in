@@ -1,7 +1,7 @@
 import React from "react";
-import Classes from "../../utils/styles/Global.module.css";
-import Counter from "../../utils/custom/Counter";
-import { counterDataForMessagepage } from "../../data/message/counterData";
+import Classes from "../../../utils/styles/Global.module.css";
+import Counter from "../../../utils/custom/Counter";
+import { counterDataForMessagepage } from "../../../data/about/message/messageData";
 
 const Program: React.FC = () => {
   return (

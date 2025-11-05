@@ -1,6 +1,6 @@
 import React from "react";
-import { counterDataType } from "../../data/message/counterData";
 import CountUp from "react-countup";
+import { counterDataType } from "../../data/about/message/messageData";
 
 interface counterDataPropsType {
   counterData: counterDataType[];

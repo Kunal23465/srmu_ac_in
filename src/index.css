@@ -25,7 +25,16 @@
 }
 
 
+.view-button{
+  background-color: rgb(15, 74, 133);
+  border: rgb(15, 74, 133) 1px solid;
+}
 
+.view-button:hover{
+  background-color: white;
+  color: rgb(15, 74, 133);
+  
+}
 
 .text-center {
   text-align: center !important;

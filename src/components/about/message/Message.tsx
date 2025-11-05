@@ -1,0 +1,49 @@
+import React from "react";
+import Classes from "../../../utils/styles/Global.module.css";
+import CustomOverviewSection from "../../../utils/custom/CustomOverviewSection";
+import CustomTopFooter from "../../../utils/custom/CustomTopFooter";
+import Program from "./Program";
+import AlternateProfileSection from "./AlternateProfileSection";
+import {
+  CustomTopFooterData1,
+  MessageOverviewData,
+  profileData,
+  governingBodyData,
+  executiveCouncilData
+} from "../../../data/about/message/messageData";
+import CustomGoverningBodySection from "../../../utils/custom/CustomGoverningBodySection";
+
+const Message: React.FC = () => {
+  return (
+    <>
+      <div className={`${Classes["container"]}`}>
+        <CustomOverviewSection data={MessageOverviewData} />
+      </div>
+      <AlternateProfileSection people={profileData} />
+
+      <CustomGoverningBodySection
+        title="Governing Body"
+        description="Our dedicated governing body steers administrative operations and takes key decisions to ensure a thriving academic environment."
+        data={governingBodyData}
+      />
+
+      <CustomGoverningBodySection
+        title="Executive Council"
+        description="Our executive body oversees strategies, policies, and day-to-day operations to achieve academic and institutional goals."
+        data={executiveCouncilData}
+      />
+
+      <CustomGoverningBodySection
+        title="Academic Council"
+        description="Academic Council has been constituted to evaluate, monitor and recommend in respect of various matters related to - review, design and evaluation of course curriculum etc."
+        data={executiveCouncilData}
+      />
+
+      <CustomTopFooter data={CustomTopFooterData1} />
+
+    </>
+
+  );
+};
+
+export default Message;
