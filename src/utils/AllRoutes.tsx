@@ -1,9 +1,10 @@
-import { Link, useMatches } from "react-router-dom";
-import AboutPage from "../pages/AboutPage";
+import { Link, Params, useMatches } from "react-router-dom";
+import AboutPage from "../pages/about/AboutPage";
 import HomePage from "../pages/HomePage";
 import RootLayout from "../pages/RootLayout";
 import Classes from "../utils/styles/Global.module.css";
 import { Fragment } from "react/jsx-runtime";
+import MessagePage from "../pages/about/Message/MessagePage";
 
 interface IMatches {
     id: string;
@@ -39,13 +40,21 @@ export const routes = [
                 handle: {
                     crumb: () => <Link to="/about">About Us</Link>,
                 },
+                children: [
+                    {
+                        path: "message",
+                        element: <MessagePage />,
+                        handle: {
+                            crumb: () => <Link to="/">Message</Link>,
+                        },
+                    },
+                ]
 
             },
         ]
     }
 ]
 
-// this is breadcrumbs
 function Breadcrumbs() {
     let matches: IMatches[] = useMatches();
 
