@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-import ProfileCards from "../../components/about/message/ProfileCards";
-import { Member } from "../../data/about/message/messageData";
+import ProfileCards from "../../components/about/leadership-and-governance/ProfileCards";
+import { Member } from "../../data/about/leadership-and-governance/leadership-and-governance-data";
 
 
 
-interface GoverningBodySectionProps {
+interface MembersSectionProps {
   title: string;
   description: string;
   data: Member[];
 }
 
-const CustomGoverningBodySection: React.FC<GoverningBodySectionProps> = ({
+const CustomMembersSection: React.FC<MembersSectionProps> = ({
   title,
   description,
   data,
@@ -29,7 +29,8 @@ const CustomGoverningBodySection: React.FC<GoverningBodySectionProps> = ({
         </h2>
         <p className="text-gray-600 mb-10">{description}</p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-0 gap-y-8
+ justify-items-center text-left">
           {data.slice(0, visibleCount).map((member, index) => (
             <ProfileCards key={index} member={member} />
           ))}
@@ -49,4 +50,4 @@ const CustomGoverningBodySection: React.FC<GoverningBodySectionProps> = ({
   );
 };
 
-export default CustomGoverningBodySection;
+export default CustomMembersSection;

@@ -1,10 +1,10 @@
 import { Link, Params, useMatches } from "react-router-dom";
-import AboutPage from "../pages/AboutPage";
 import HomePage from "../pages/HomePage";
 import RootLayout from "../pages/RootLayout";
 import Classes from "../utils/styles/Global.module.css";
 import { Fragment } from "react/jsx-runtime";
-import MessagePage from "../pages/About/Message/MessagePage";
+import AboutPage from "../pages/About/AboutPage";
+import LeadershipAndGovernancePage from "../pages/About/Leadership-and-Governance/LeadershipAndGovernancePage";
 
 interface IMatches {
     id: string;
@@ -42,10 +42,10 @@ export const routes = [
                 },
                 children: [
                     {
-                        path: "message",
-                        element: <MessagePage />,
+                        path: "leadership-and-governance",
+                        element: <LeadershipAndGovernancePage />,
                         handle: {
-                            crumb: () => <Link to="/">Message</Link>,
+                            crumb: () => <Link to="/">Leadership and Governance</Link>,
                         },
                     },
                 ]

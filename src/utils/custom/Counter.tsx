@@ -1,12 +1,13 @@
 import React from "react";
 import CountUp from "react-countup";
-import { counterDataType } from "../../data/about/message/messageData";
+import { counterDataType } from "../../data/about/leadership-and-governance/leadership-and-governance-data";
 
 interface counterDataPropsType {
   counterData: counterDataType[];
   classes?: any;
+  aboutusClass?: any;
 }
-const Counter: React.FC<counterDataPropsType> = ({ counterData, classes }) => {
+const Counter: React.FC<counterDataPropsType> = ({ counterData, classes, aboutusClass }) => {
   return (
     <div className={`parent-box ${classes ? classes : ""}   py-7 md:py-10 lg:py-14`}>
       {counterData.map((item: any) => (
@@ -20,9 +21,8 @@ const Counter: React.FC<counterDataPropsType> = ({ counterData, classes }) => {
             <CountUp start={0} end={Number(item.value)} duration={3} separator="" suffix={item.suffix} enableScrollSpy={true}>
               {({ countUpRef }) => <span ref={countUpRef} />}
             </CountUp>
-            {/* {item.value} */}
           </h1>
-          <p className={`text-sm sm:text-base md:text-xl text-manulay-center text-white  mt-3`}>{item.label}</p>
+          <p className={`text-sm sm:text-base md:text-xl text-manulay-center ${aboutusClass ? aboutusClass : "text-white  mt-3"} `}>{item.label}</p>
         </div>
       ))}
     </div>

@@ -30,6 +30,11 @@
   border: rgb(15, 74, 133) 1px solid;
 }
 
+.view-more{
+  color: rgb(15, 74, 133);
+  cursor: pointer;
+}
+
 .view-button:hover{
   background-color: white;
   color: rgb(15, 74, 133);

@@ -45,7 +45,7 @@ export const HeaderData = [
                         item: "About Us",
                         path: "/about",
                         subItem: [
-                            { item: "Message", path: "/about/message" },
+                            { item: "Leadership and Governance", path: "/about/leadership-and-governance" },
                             { item: "Administration", path: "/about/administration" },
                             { item: "IQAC", path: "/about/iqac" },
                             { item: "Membership", path: "/about/membership" },

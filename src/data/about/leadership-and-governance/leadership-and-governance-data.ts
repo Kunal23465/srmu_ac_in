@@ -1,31 +1,26 @@
-import nagendra from "../../../assets/images/about/message/nagendra.png";
-import bhavnesh from "../../../assets/images/about/message/bhavnesh.png";
-import pankaj from "../../../assets/images/about/message/pankaj.png";
-import pooja from "../../../assets/images/about/message/pooja.png";
-import vijaytiwari from "../../../assets/images/about/message/vijaytiwari.jpeg"
-import dixit from "../../../assets/images/about/message/dixit.jpg"
-import neerja from "../../../assets/images/about/message/neerja.jpg"
-import ritu from "../../../assets/images/about/message/ritu.jpg"
-import jaiswal from "../../../assets/images/about/message/jaiswal.jpg"
-import manju from "../../../assets/images/about/message/manju.jpg"
-import sachin from "../../../assets/images/about/message/sachin.png"
-import amit from "../../../assets/images/about/message/amit.png"
-import chauhan from "../../../assets/images/about/message/chauhan.png"
-import justice from "../../../assets/images/about/message/justice.png"
-import pragati from "../../../assets/images/about/message/pragati.png"
-import balraj from "../../../assets/images/about/message/balraj.png"
-import kiran from "../../../assets/images/about/message/kiran.png"
-import defaultimg from "../../../assets/images/about/message/defaultimg.png"
-import rajeev from "../../../assets/images/about/message/rajeev.png"
-import rastogi from "../../../assets/images/about/message/rastogi.png"
-import shanoli from "../../../assets/images/about/message/shanoli.png"
 
-
-import icon1 from "../../../assets/images/about/message/icon1.png";
-import icon2 from "../../../assets/images/about/message/icon2.png";
-import icon3 from "../../../assets/images/about/message/icon3.png";
-import icon4 from "../../../assets/images/about/message/icon4.png";
+import pankaj from "../../../assets/images/about/leadershipGovernance/pankaj.png";
+import pooja from "../../../assets/images/about/leadershipGovernance/pooja.png";
+import vijaytiwari from "../../../assets/images/about/leadershipGovernance/vijaytiwari.jpeg"
+import dixit from "../../../assets/images/about/leadershipGovernance/dixit.jpg"
+import neerja from "../../../assets/images/about/leadershipGovernance/neerja.jpg"
+import ritu from "../../../assets/images/about/leadershipGovernance/ritu.jpg"
+import jaiswal from "../../../assets/images/about/leadershipGovernance/jaiswal.jpg"
+import manju from "../../../assets/images/about/leadershipGovernance/manju.jpg"
+import sachin from "../../../assets/images/about/leadershipGovernance/sachin.png"
+import amit from "../../../assets/images/about/leadershipGovernance/amit.png"
+import chauhan from "../../../assets/images/about/leadershipGovernance/chauhan.png"
+import justice from "../../../assets/images/about/leadershipGovernance/justice.png"
+import pragati from "../../../assets/images/about/leadershipGovernance/pragati.png"
+import balraj from "../../../assets/images/about/leadershipGovernance/balraj.png"
+import kiran from "../../../assets/images/about/leadershipGovernance/kiran.png"
+import defaultimg from "../../../assets/images/about/leadershipGovernance/defaultimg.png"
+import rajeev from "../../../assets/images/about/leadershipGovernance/rajeev.png"
+import rastogi from "../../../assets/images/about/leadershipGovernance/rastogi.png"
+import shanoli from "../../../assets/images/about/leadershipGovernance/shanoli.png"
 import { customeOverViewType } from "../../../types/home-data-type";
+
+
 export interface counterDataType {
   id: number;
   icon?: string;
@@ -62,24 +57,29 @@ export const profileData = [
     styleType: "StyleB",
   },
   {
-    name: "Mr. Nagendra Kumar Agarwal",
-    title: "Secretary",
-    image: nagendra,
+    name: "Prof. (Dr.) Vijay Tiwari",
+    title: "Vice Chancellor",
+    image: vijaytiwari,
     description: [
-      "SRMCEM strives for distinction through its institutional culture, passion for innovation and academic integrity evoking trust and credibility.",
-      "After all, institutions are not made in a day. The college has made incessant efforts in improvising systems befitting to its students.",
-      "It offers its students a complete career building platform to make them hone up their skills, develop knowledge and nurture values.",
+      "At SRM University, we are committed to nurturing future-ready professionals through a dynamic and holistic education ecosystem that fully aligns with the vision of the National Education Policy (NEP) 2020.",
+      "Our academic framework emphasizes flexibility, multidisciplinary learning, and experiential education, ensuring that every student is equipped with the knowledge, creativity, and critical thinking skills essential for success in a rapidly evolving world.",
+      "We take pride in offering programs that are closely aligned with industry requirements, designed in consultation with experts and delivered through hands-on learning, internships, and research-driven pedagogy.",
+      "Our goal is to bridge the gap between academia and the professional world, preparing our students to become leaders, innovators, and entrepreneurs.",
+      "SRM University provides a safe, inclusive, and secure campus environment, fostering a culture of respect, collaboration, and intellectual curiosity.",
+      "We believe education is not just about knowledge—it is about empowering young minds to create, innovate, and transform the world for the better."
     ],
     styleType: "StyleA",
   },
   {
-    name: "Prof. (Dr.) Bhavesh Kumar Chauhan",
-    title: "Group Director",
-    image: bhavnesh,
+    name: "Prof. (Dr.) Neerja Jindal",
+    title: "Registrar",
+    image: neerja,
     description: [
-      "A successful career doesn’t happen by chance. The grit to be successful needs guidance and proper format to take shape and crystallize itself.",
-      " SRMCEM ensure pertinent benchmarks, quality management systems, and innovative facilities to meet the aspirations of its students.",
-      "Our well-qualified faculty members are incessantly engaged in enhanced teaching and learning.",
+      "Education is the pathway to a meaningful and socially productive life, fostering success, stability and growth.In today's fast-changing world, where new skills and strategies are in demand, education stands as the most powerful tool to meet emerging societal needs.",
+      "At SRMU, we are dedicated to shaping young minds that can transform the world for the better.",
+      "Our goal is to be a reservoir of learning that nurtures the potential and possibilities of students, and equips them with the tools to build brighter futures.",
+      "‘Learning is not attained by chance, it must be sought for with ardor and attended to with diligence’ — and providing this diligence and fostering a passion for learning is our top priority.",
+      "Let's embrace the art of learning, educate, and create a world full of opportunities together."
     ],
     styleType: "StyleA",
   },
@@ -87,35 +87,7 @@ export const profileData = [
 
 
 
-
-
-export const counterDataForMessagepage: counterDataType[] = [
-  { id: 1, icon: icon1, value: "10", suffix: "+", label: "Department" },
-  { id: 2, icon: icon2, value: "20", suffix: "+", label: "Programs" },
-  { id: 3, icon: icon3, value: "200", suffix: "+", label: "Academicians" },
-  { id: 4, icon: icon4, value: "3700", suffix: "+", label: "Students" },
-];
-export const counterDataForAboutPage: counterDataType[] = [
-  { id: 1, value: "3700", suffix: "+", label: "Students Enrolled" },
-  { id: 2, value: "20", suffix: "+", label: "Courses Uploaded" },
-  { id: 3, value: "1100", suffix: "+", label: "People Certificate" },
-  { id: 4, value: "200", suffix: "+", label: "Global Teachers" },
-];
-export const counterDataForHomePage: counterDataType[] = [
-  { id: 1, value: "20", suffix: "+", label: "Years Of Experience" },
-  { id: 2, value: "20", suffix: "+", label: "Number Of Courses" },
-  { id: 3, value: "3700", suffix: "+", label: "Students" },
-  { id: 4, value: "1000", suffix: "+", label: "Number Of Placements" },
-];
-export const counterDataFoPlacementTrainingPage: counterDataType[] = [
-  { id: 1, value: "500", suffix: "+", label: "Companies Visited" },
-  { id: 2, value: "5000", suffix: "+", label: "Job Offers" },
-  { id: 3, value: "88", suffix: "%", label: "Placement" },
-];
-
-
-
-export const MessageOverviewData: customeOverViewType = {
+export const LeadershiOverviewData: customeOverViewType = {
   heading: "Leaders Vision",
   content:
     "Established in 1998 by distinguished alumni and Gold Medalists from IIT Kanpur, SRMCEM embarked on an extraordinary journey. Our innovative leadership team sought to develop a globally esteemed institution that not only delivers knowledge but also promotes ethical values and encourages social and environmental consciousness.",
@@ -278,5 +250,5 @@ export const executiveCouncilData: Member[] = [
     position: "Director, IQAC & Principal, IER, SRMU, Lucknow–Deva Road",
     image: ritu,
   },
-  
+
 ];

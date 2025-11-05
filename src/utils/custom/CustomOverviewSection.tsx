@@ -1,6 +1,5 @@
 import React from "react";
 import { otherDataTypes } from "../../types/home-data-type";
-// import Classes from "../styles/Global.module.css";
 interface CustomOverviewSectionProps {
   data: {
     heading: string;
