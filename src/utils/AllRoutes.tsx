@@ -5,6 +5,7 @@ import Classes from "../utils/styles/Global.module.css";
 import { Fragment } from "react/jsx-runtime";
 import AboutPage from "../pages/About/AboutPage";
 import LeadershipAndGovernancePage from "../pages/About/Leadership-and-Governance/LeadershipAndGovernancePage";
+import CommitteeAndCellsPage from "../pages/About/Committee-and-Cells/CommitteeAndCellsPage";
 
 interface IMatches {
     id: string;
@@ -48,6 +49,13 @@ export const routes = [
                             crumb: () => <Link to="/">Leadership and Governance</Link>,
                         },
                     },
+                    {
+                        path: "committees-and-cells",
+                        element: <CommitteeAndCellsPage />,
+                        handle: {
+                            crumb: () => <Link to="/">Committees and Cells</Link>,
+                        },
+                    }
                 ]
             },
         ]
