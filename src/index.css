@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+/* for banner section */
+.banner-section {
+  background-image: url("/srmu-banner-img.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 400px;
+  background-position: center;
+}
+
+.banner-section.abhivyakt {
+  background-image: url("/abhivyakt.png");
+}
+
+/* for banner section */
+.banner-section {
+  background-image: url("/srmu-banner-img.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 400px;
+  background-position: center;
+}
