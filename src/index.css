@@ -979,3 +979,89 @@ html {
   font-size: 10px;
 }
 
+
+.custom-table-container {
+  margin: 20px 0;
+  border: 3px solid #ffcc66;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.custom-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-family: Arial, sans-serif;
+}
+
+.table-header-row {
+  background-color: rgb(15, 74, 133);
+  color: white;
+}
+
+.custom-table th {
+  padding: 25px 20px;
+  text-align: left;
+  font-size: 1.25em;
+  font-weight: 600;
+}
+
+.column-one-header {
+  width: 80%;
+}
+
+.column-two-header {
+  width: 20%;
+  text-align: center; 
+}
+
+.custom-table td {
+  background-color: #ffffff;
+  padding: 15px 20px;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 1.12em;
+  color: #333333;
+}
+
+.custom-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.row-download {
+  display: flex;
+}
+
+
+
+.download-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  font-size: 22px;
+  border: 2px solid orange;          
+  background-color: rgb(15, 74, 133);         
+  color: rgb(15, 74, 133);                    
+  border-radius: 8px;
+  cursor: pointer;
+  margin-left: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.download-icon svg {
+  background-color: white;           
+  padding: 4px;
+  border-radius: 4px;
+
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.download-icon:hover {
+  background-color: white;          
+  color: rgb(15, 74, 133);                    
+}
+
+.download-icon:hover svg {
+  background-color: orange;          
+  color: rgb(15, 74, 133);                    
+}

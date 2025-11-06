@@ -6,6 +6,11 @@ import { Fragment } from "react/jsx-runtime";
 import AboutPage from "../pages/About/AboutPage";
 import LeadershipAndGovernancePage from "../pages/About/Leadership-and-Governance/LeadershipAndGovernancePage";
 import CommitteeAndCellsPage from "../pages/About/Committee-and-Cells/CommitteeAndCellsPage";
+import NAACPage from "../pages/About/NAAC/NAACPage";
+import NIRFPage from "../pages/About/NIRF/NIRFPage";
+import OragnisationStructurePage from "../pages/About/Organisation -Structure-Plan/OrganisationStructurePlan";
+import AcademicsPage from "../pages/Academics/AcademicsPage";
+import PoliciesReportsPage from "../pages/Academics/Policies-Reports/PoliciesReportsPage";
 
 interface IMatches {
     id: string;
@@ -55,7 +60,45 @@ export const routes = [
                         handle: {
                             crumb: () => <Link to="/">Committees and Cells</Link>,
                         },
+                    },
+                    {
+                        path: "naac",
+                        element: <NAACPage />,
+                        handle: {
+                            crumb: () => <Link to="/">NAAC</Link>,
+                        },
+                    },
+                    {
+                        path: "nirf",
+                        element: <NIRFPage />,
+                        handle: {
+                            crumb: () => <Link to="/">NIRF</Link>,
+                        },
+                    },
+                    {
+                        path: "organization-structure-plan",
+                        element: <OragnisationStructurePage />,
+                        handle: {
+                            crumb: () => <Link to="/">NIRF</Link>,
+                        },
                     }
+                ]
+            },
+            {
+                path: "/academics",
+                element: <AcademicsPage />,
+                handle: {
+                    crumb: () => <Link to="/">Academics</Link>,
+                },
+
+                children: [
+                    {
+                        path: "policies-reports",
+                        element: <PoliciesReportsPage />,
+                        handle: {
+                            crumb: () => <Link to="/">Policies & Reports</Link>,
+                        },
+                    },
                 ]
             },
         ]

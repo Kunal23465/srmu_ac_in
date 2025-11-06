@@ -47,17 +47,18 @@ export const HeaderData = [
                         subItem: [
                             { item: "Leadership and Governance", path: "/about/leadership-and-governance" },
                             { item: "Committees and Cells", path: "/about/committees-and-cells" },
-                            { item: "IQAC", path: "/about/iqac" },
-                            { item: "Membership", path: "/about/membership" },
-                            { item: "Achievements", path: "/about/achievements" },
-                            { item: "Visitors Testimonial", path: "/about/visitors" },
+                            { item: "NAAC", path: "/about/naac" },
+                            { item: "NIRF", path: "/about/nirf" },
+                            { item: "Organizational Structure & Plan", path: "/about/organization-structure-plan" },
                         ],
                     },
                     {
                         id: 1,
                         item: "Academics",
                         path: "/academics",
-                        subItem: [{ item: "Academic Calendar", path: "/academics/academics-calender" }],
+                        subItem: [{ item: "Academic Calendar", path: "/academics/academics-calender" },
+                            {item: "Policies & Reports", path: "/academics/policies-reports"}
+                        ],
                     },
                     {
                         id: 2,

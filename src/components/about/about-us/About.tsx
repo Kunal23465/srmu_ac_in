@@ -7,7 +7,6 @@ import Counter from '../../../utils/custom/Counter';
 const About: React.FC = () => {
     return (
         <div>
-            {/* <LeaderVision /> */}
             <div className={`${Classes["container"]}`}>
                 <CustomOverviewSection data={aboutOverviewData} />
                 <Counter counterData={counterDataForAboutPage} classes="counter" aboutusClass={"text-black mt-3"} />

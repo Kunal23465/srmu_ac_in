@@ -12,14 +12,19 @@ import CustomTopFooter from "../../../utils/custom/CustomTopFooter";
 
 const Committees: React.FC = () => {
   return (
-    <div className={`${Classes["container"]}`}>
-      <CustomOverviewSection data={CommitteeOverviewData} />
+    <>
+      <div className={`${Classes["container"]}`}>
+        <CustomOverviewSection data={CommitteeOverviewData} />
+         <CustomCommitteeCardSection data={committeeCards} />
+      </div>
 
-      <CustomCommitteeCardSection data={committeeCards} />
+     
 
-          <CustomTopFooter data={CustomTopFooterData1} />
+      <CustomTopFooter data={CustomTopFooterData1} />
 
-    </div>
+    </>
+
+
   );
 };
 
