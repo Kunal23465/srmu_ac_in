@@ -5,6 +5,12 @@ import comp from "../../../assets/images/about/committeesAndCells/complaint.jpg"
 import saving from "../../../assets/images/about/committeesAndCells/saving-money.jpg"
 import rag from "../../../assets/images/about/committeesAndCells/anti-ragging-committee.jpg"
 import board from "../../../assets/images/about/committeesAndCells/proctorial-board1.jpg"
+import digital from "../../../assets/images/about/committeesAndCells/digital-learning-monitoring.jpg"
+import gender from "../../../assets/images/about/committeesAndCells/gender-sensitization-cell.jpg"
+import obc from "../../../assets/images/about/committeesAndCells/OBC-CELL.jpg"
+import minority from "../../../assets/images/about/committeesAndCells/minority-cell.jpg"
+import unnat from "../../../assets/images/about/committeesAndCells/unnat.jpg"
+import grievance from "../../../assets/images/about/committeesAndCells/Student-Grievance-and-Redressal-Committee.jpg"
 
 
 
@@ -40,47 +46,68 @@ export const committeeCards: Card[] = [
     imagePath: scst,
     readMoreLink: '/committees/sc-st-welfare',
   },
-  
+
   {
     id: 4,
-    title: 'Digital Learning Monitoring Cell',
-    description: 'Under Digital Initiative by MHRD and Government of India, "Digital Learning Monitoring Cell" is established in Shri Ramswaroop Memorial University.',
-    imagePath: 'https://srmu.ac.in/storage/committees/saving-money-21022405275658.jpg',
+    title: 'Students Welfare Fund Committee',
+    description: 'The University has established a fund known as Student Welfare Fund in the academic session 2014-15 with an objective to help the needy, poor and deserving students to pursue studies.',
+    imagePath: saving,
     readMoreLink: '/committees/digital-learning',
   },
   {
     id: 5,
-    title: 'Gender Sensitization Cell',
-    description: 'Gender Sensitization involves creating awareness about gender issues and working towards and creating an enabling environment of gender justice where men and women can work together with a sense of personal security and dignity.',
-    imagePath: 'https://srmu.ac.in/storage/committees/anti-discrimination-cell-10022410271050.jpg',
+    title: 'Anti-Discrimination Cell',
+    description: 'The University provides everybody with equal opportunity into its fold irrespective of caste, religion, language or based on gender.',
+    imagePath: discri,
     readMoreLink: '/committees/gender-sensitization',
   },
   {
     id: 6,
-    title: 'OBC Cell',
-    description: 'The OBC Cell at Shri Ramswaroop Memorial University was established with the purpose to empower the OBC students.',
-    imagePath: 'https://srmu.ac.in/storage/committees/complaint-08022403315624.jpg',
+    title: 'Internal Complaints Committee',
+    description: 'Sexual Harassment is an offence under The Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013 No. 14 of 2013.',
+    imagePath: comp,
     readMoreLink: '/committees/obc-cell',
   },
   {
     id: 7,
-    title: 'Minority Cell',
-    description: 'The Minority Cell\'s purpose is to support and strengthen minority groups in all of their extracurricular, co-curricular, and academic endeavors.',
-    imagePath: 'https://srmu.ac.in/storage/committees/digital-learning-monitoring-cell-17102306162142.jpg',
+    title: 'Digital Learning Monitoring Cell',
+    description: 'Under Digital Initiative by MHRD and Government of India, “Digital Learning Monitoring Cell” is established in Shri Ramswaroop Memorial University. ',
+    imagePath: digital,
     readMoreLink: '/committees/minority-cell',
   },
   {
     id: 8,
-    title: 'Unnat Bharat Abhiyan',
-    description: 'Unnat Bharat Abhiyan is inspired by the vision of transformational change in rural development processes by leveraging knowledge institutions to help build the architecture of an Inclusive India.',
-    imagePath: 'https://srmu.ac.in/storage/committees/gender-sensitization-cell-17102306163952.jpg',
+    title: 'Gender Sensitization Cell',
+    description: 'Gender Sensitization involves creating awareness about gender issues and working towards and creating an enabling environment of gender justice where men and women can work together with a sense of personal security and dignity.',
+    imagePath: gender,
     readMoreLink: '/committees/unnat-bharat-abhiyan',
   },
   {
     id: 9,
-    title: 'Student Grievance and Redressal Committee',
-    description: 'The Student Grievance and Redressal Committee was established to address and resolve student complaints and issues promptly and fairly.',
-    imagePath: 'https://srmu.ac.in/storage/committees/OBC-CELL-17102306165461.jpg',
+    title: 'OBC CELL',
+    description: 'The OBC Cell at Shri Ramswaroop Memorial University was established with the purpose to empower the OBC students.',
+    imagePath: obc,
+    readMoreLink: '/committees/grievance-redressal',
+  },
+  {
+    id: 10,
+    title: 'Minority Cell',
+    description: 'The Minority Cell\'s purpose is to support and strengthen the minority groups in all of their extracurricular, co-curricular, and academic endeavors.',
+    imagePath: minority,
+    readMoreLink: '/committees/grievance-redressal',
+  },
+  {
+    id: 11,
+    title: 'Unnat Bharat Cell',
+    description: 'Unnat Bharat Abhiyan is inspired by the vision of transformational change in rural development processes by leveraging knowledge institutions to help build the architecture of an Inclusive India.',
+    imagePath: unnat,
+    readMoreLink: '/committees/grievance-redressal',
+  },
+  {
+    id: 12,
+    title: 'Student Grievance And Redressal Committee',
+    description: 'The Student Grievance and Redressal Committee was established with the purpose of investigating and evaluating any complaints submitted by students.',
+    imagePath: grievance,
     readMoreLink: '/committees/grievance-redressal',
   },
 ];

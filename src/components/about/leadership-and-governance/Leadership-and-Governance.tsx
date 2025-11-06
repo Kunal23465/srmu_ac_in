@@ -8,7 +8,8 @@ import {
   LeadershiOverviewData,
   profileData,
   governingBodyData,
-  executiveCouncilData
+  executiveCouncilData,
+  academicCouncilData
 } from "../../../data/about/leadership-and-governance/leadership-and-governance-data";
 import CustomMembersSection from "../../../utils/custom/CustomMembersSection";
 
@@ -35,7 +36,7 @@ const Leadership: React.FC = () => {
       <CustomMembersSection
         title="Academic Council"
         description="Academic Council has been constituted to evaluate, monitor and recommend in respect of various matters related to - review, design and evaluation of course curriculum etc."
-        data={executiveCouncilData}
+        data={academicCouncilData}
       />
 
       <CustomTopFooter data={CustomTopFooterData1} />

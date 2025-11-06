@@ -20,6 +20,29 @@ import rastogi from "../../../assets/images/about/leadershipGovernance/rastogi.p
 import shanoli from "../../../assets/images/about/leadershipGovernance/shanoli.png"
 import { customeOverViewType } from "../../../types/home-data-type";
 
+import ansingh from "../../../assets/images/about/leadershipGovernance/ansingh.png";
+import jitendraagrawal from "../../../assets/images/about/leadershipGovernance/jitendraagarwal.png";
+import rakeshjain from "../../../assets/images/about/leadershipGovernance/rakeshjain.png";
+import riturajmishra from "../../../assets/images/about/leadershipGovernance/riturajmishra.png";
+import abhabishnoi from "../../../assets/images/about/leadershipGovernance/abhabishnoi.png";
+import riteshkhanna from "../../../assets/images/about/leadershipGovernance/riteshkhanna.png";
+import bobbylyall from "../../../assets/images/about/leadershipGovernance/bobbylyall.png";
+import sksingh from "../../../assets/images/about/leadershipGovernance/sksingh.jpg";
+import rsbajpai from "../../../assets/images/about/leadershipGovernance/rsbajpai.jpg";
+import alokeshagarwal from "../../../assets/images/about/leadershipGovernance/alokeshagarwal.jpg";
+import rajeshporwal from "../../../assets/images/about/leadershipGovernance/rajeshporwal.jpg";
+import krishnasrivastava from "../../../assets/images/about/leadershipGovernance/krishnasrivastava.jpg";
+import vnpathak from "../../../assets/images/about/leadershipGovernance/vnpathak.png";
+import ramgopalsingh from "../../../assets/images/about/leadershipGovernance/ramgopalsingh.png";
+import madhudixit from "../../../assets/images/about/leadershipGovernance/madhudixit.png";
+import bineetgupta from "../../../assets/images/about/leadershipGovernance/bineetgupta.jpg";
+import rdyadav from "../../../assets/images/about/leadershipGovernance/rdyadav.png";
+import tabishqidwai from "../../../assets/images/about/leadershipGovernance/tabishqidwai.png";
+import akankshanigam from "../../../assets/images/about/leadershipGovernance/akankshanigam.jpg";
+import amittrivedi from "../../../assets/images/about/leadershipGovernance/amittrivedi.png";
+import abhishek from "../../../assets/images/about/leadershipGovernance/abhishek.jpg";
+
+
 
 export interface counterDataType {
   id: number;
@@ -251,4 +274,176 @@ export const executiveCouncilData: Member[] = [
     image: ritu,
   },
 
+];
+
+
+export const academicCouncilData: Member[] = [
+  {
+    name: "Prof. (Dr.) Vijay Tiwari",
+    title: "(Chairman)",
+    position: "Vice Chancellor, SRMU, Lucknow–Deva Road",
+    image: vijaytiwari,
+  },
+  {
+    name: "Prof. (Dr.) Pragati Kumar",
+    title: "(Nominated Member)",
+    position: "Vice Chancellor, SMVDU, J&K",
+    image: pragati,
+  },
+  {
+    name: "Prof. (Dr.) A.N. Singh",
+    title: "(Nominated Member)",
+    position: "Former Professor, DSW, University of Lucknow, Lucknow",
+    image: ansingh,
+  },
+  {
+    name: "Dr. Jitendra Agrawal",
+    title: "(Nominated Member)",
+    position: "Director, SoIT, RGPV, Bhopal, MP",
+    image: jitendraagrawal,
+  },
+  {
+    name: "Dr. Rakesh Kumar Jain",
+    title: "(Nominated Member)",
+    position: "Principal, RSCOE, Pune, Maharashtra",
+    image: rakeshjain,
+  },
+  {
+    name: "Mr. Rituraj Mishra",
+    title: "(Nominated Member)",
+    position: "HR, Tata Motors, Lucknow",
+    image: riturajmishra,
+  },
+  {
+    name: "Prof. (Dr.) Abha Bishnoi",
+    title: "(Nominated Member)",
+    position: "Professor, Dept. of Chemistry, University of Lucknow, Lucknow",
+    image: abhabishnoi,
+  },
+  {
+    name: "Er. Ritesh Khanna",
+    title: "(Nominated Member)",
+    position: "Project Manager, SRDT, Lucknow",
+    image: riteshkhanna,
+  },
+  {
+    name: "Dr. Bobby W. Lyall",
+    title: "(Nominated Member)",
+    position: "Professor & Head, Dept. of Management, SRCEM, Lucknow",
+    image: bobbylyall,
+  },
+  {
+    name: "Prof. (Dr.) B.M. Dixit",
+    title: "(Ex-Officio Member)",
+    position: "Director, NSH, SRMU, Lucknow–Deva Road",
+    image: dixit,
+  },
+  {
+    name: "Prof. (Dr.) Manju Pandey",
+    title: "(Ex-Officio Member)",
+    position: "Director, IQAC, SRMU, Lucknow–Deva Road",
+    image: manju,
+  },
+  {
+    name: "Prof. (Dr.) Ritu Chandra",
+    title: "(Ex-Officio Member)",
+    position: "Director, IQAC & Principal, IER, SRMU, Lucknow–Deva Road",
+    image: ritu,
+  },
+  {
+    name: "Prof. (Dr.) Abhishek Saxena",
+    title: "(Ex-Officio Member)",
+    position: "Dy. Director, IQAP & Dean FoCE, SRMU, Lucknow–Deva Road",
+    image: abhishek,
+  },
+  {
+    name: "Dr. Rajeev Kumar",
+    title: "(Ex-Officio Member)",
+    position: "Dean, CoE & Dean, SRMU, Lucknow–Deva Road",
+    image: rajeev,
+  },
+  {
+    name: "Mr. S.K. Singh",
+    title: "(Ex-Officio Member)",
+    position: "Deputy Director, Polytechnic, SRMU, Lucknow–Deva Road",
+    image: sksingh,
+  },
+  {
+    name: "Prof. (Dr.) R.S. Bajpai",
+    title: "(Ex-Officio Member)",
+    position: "Dean, FoECE, SRMU, Lucknow–Deva Road",
+    image: rsbajpai,
+  },
+  {
+    name: "Dr. Alokesh Agarwal",
+    title: "(Ex-Officio Member)",
+    position: "Dean, DoECE & Convenor, CIIE, SRMU, Lucknow–Deva Road",
+    image: alokeshagarwal,
+  },
+  {
+    name: "Dr. Rajesh Kumar Porwal",
+    title: "(Ex-Officio Member)",
+    position: "Dean, FoME, SRMU, Lucknow–Deva Road",
+    image: rajeshporwal,
+  },
+  {
+    name: "Prof. (Dr.) Krishna Srivastava",
+    title: "(Ex-Officio Member)",
+    position: "Dean, FoMS, SRMU, Lucknow–Deva Road",
+    image: krishnasrivastava,
+  },
+  {
+    name: "Prof. (Dr.) V.N. Pathak",
+    title: "(Ex-Officio Member)",
+    position: "Dean, FoHS, SRMU, Lucknow–Deva Road",
+    image: vnpathak,
+  },
+  {
+    name: "Dr. Ram Gopal Singh",
+    title: "(Ex-Officio Member)",
+    position: "Dean, FoPS, SRMU, Lucknow–Deva Road",
+    image: ramgopalsingh,
+  },
+  {
+    name: "Prof. (Dr.) Madhu Dixit",
+    title: "(Ex-Officio Member)",
+    position: "HoD, Management, SRMU, Lucknow–Deva Road",
+    image: madhudixit,
+  },
+  {
+    name: "Prof. (Dr.) Bineet Kumar Gupta",
+    title: "(Ex-Officio Member)",
+    position: "HoD, SRMU, Lucknow–Deva Road",
+    image: bineetgupta,
+  },
+  {
+    name: "Dr. R.D. Yadav",
+    title: "(Ex-Officio Member)",
+    position: "Librarian, SRMU, Lucknow–Deva Road",
+    image: rdyadav,
+  },
+  {
+    name: "Dr. Tabish Qidwai",
+    title: "(Ex-Officio Member)",
+    position: "Dy. Director, IST, SRMU, Lucknow–Deva Road",
+    image: tabishqidwai,
+  },
+  {
+    name: "Prof. (Dr.) Akanksha Nigam",
+    title: "(Ex-Officio Member)",
+    position: "CoE, SRMU, Lucknow–Deva Road",
+    image: akankshanigam,
+  },
+  {
+    name: "Dr. Amit Trivedi",
+    title: "(Special Invitee)",
+    position: "Asst. Prof., MCE & Coordinator, Acad., SRMU, Lucknow–Deva Road",
+    image: amittrivedi,
+  },
+  {
+    name: "Prof. (Dr.) Neerja Jindal",
+    title: "(Member Secretary)",
+    position: "Registrar, SRMU, Lucknow–Deva Road",
+    image: neerja,
+  },
 ];
