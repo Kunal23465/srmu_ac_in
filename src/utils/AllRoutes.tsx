@@ -3,14 +3,15 @@ import HomePage from "../pages/HomePage";
 import RootLayout from "../pages/RootLayout";
 import Classes from "../utils/styles/Global.module.css";
 import { Fragment } from "react/jsx-runtime";
-import AboutPage from "../pages/About/AboutPage";
-import LeadershipAndGovernancePage from "../pages/About/Leadership-and-Governance/LeadershipAndGovernancePage";
-import CommitteeAndCellsPage from "../pages/About/Committee-and-Cells/CommitteeAndCellsPage";
-import NAACPage from "../pages/About/NAAC/NAACPage";
-import NIRFPage from "../pages/About/NIRF/NIRFPage";
-import OragnisationStructurePage from "../pages/About/Organisation -Structure-Plan/OrganisationStructurePlan";
-import AcademicsPage from "../pages/Academics/AcademicsPage";
-import PoliciesReportsPage from "../pages/Academics/Policies-Reports/PoliciesReportsPage";
+import AboutPage from "../pages/about/AboutPage";
+import LeadershipAndGovernancePage from "../pages/about/leadership-and-governance/LeadershipAndGovernancePage";
+import CommitteeAndCellsPage from "../pages/about/committee-and-cells/CommitteeAndCellsPage";
+import NAACPage from "../pages/about/naac/NAACPage";
+import NIRFPage from "../pages/about/nirf/NIRFPage";
+import OragnisationStructurePage from "../pages/about/organisation-structure-plan/OrganisationStructurePlan";
+import AcademicsPage from "../pages/academics/AcademicsPage";
+import PoliciesReportsPage from "../pages/academics/policies-reports/PoliciesReportsPage";
+import AcademicCalendarsPage from "../pages/academics/academic-calendars/AcademicCalendarsPage";
 
 interface IMatches {
     id: string;
@@ -99,6 +100,14 @@ export const routes = [
                             crumb: () => <Link to="/">Policies & Reports</Link>,
                         },
                     },
+                    { 
+                        path: "academic-calendars",
+                        element: <AcademicCalendarsPage />,
+                        handle: {
+                            crumb: () => <Link to="/">Academic Calendars</Link>,
+                        },
+                    },
+                    
                 ]
             },
         ]

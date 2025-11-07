@@ -57,7 +57,8 @@ export const HeaderData = [
                         item: "Academics",
                         path: "/academics",
                         subItem: [{ item: "Academic Calendar", path: "/academics/academics-calender" },
-                            {item: "Policies & Reports", path: "/academics/policies-reports"}
+                            {item: "Policies & Reports", path: "/academics/policies-reports"},
+                            {item: "Academic Calendars", path: "/academics/academic-calendars"}
                         ],
                     },
                     {
