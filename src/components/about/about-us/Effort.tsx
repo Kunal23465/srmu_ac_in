@@ -1,23 +1,29 @@
-import React from 'react'
-
-import ramswaroop from "../../../assets/images/about/aboutUs/ramswaroop-agrawal.jpg"
-import { effortData } from '../../../data/about/aboutusData'
+import React from "react";
+import ramswaroop from "../../../assets/images/about/aboutUs/ramswaroop-agrawal.jpg";
+import { effortData } from "../../../data/about/aboutusData";
 
 const Effort: React.FC = () => {
     return (
-        <div className='flex w-full gap-x-10 justify-between'>
-            <div>
-                <img src={ramswaroop} alt="img" />
+        <div className="flex  justify-between w-full gap-10 py-8">
+            {/* Left side - Image */}
+            <div className="w-full md:w-1/2 flex justify-center">
+                <img
+                    src={ramswaroop}
+                    alt="img"
+                    className="w-full  object-cover shadow-md"
+                />
             </div>
-            <div>
-                <h1 className='text-[2rem]'>{effortData.heading}</h1>
-                <div className='flex flex-col'>
+
+            {/* Right side - Text */}
+            <div className="w-full md:w-1/2 flex flex-col justify-center">
+                <h1 className="text-3xl font-semibold mb-4">{effortData.heading}</h1>
+                <div className="space-y-3 text-gray-700 leading-relaxed">
                     <p>{effortData.desc.p1}</p>
-                    <p>{effortData.desc.p1}</p>
+                    <p>{effortData.desc.p2}</p>
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default Effort
+export default Effort;
