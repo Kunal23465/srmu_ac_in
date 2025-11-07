@@ -1,8 +1,10 @@
-import React from "react";
-import Message from "../../../components/message/Message";
+import React from 'react'
+import Message from '../../../components/about/message/Message'
 
 const MessagePage: React.FC = () => {
-  return <Message />;
-};
+  return (
+    <Message />
+  )
+}
 
-export default MessagePage;
+export default MessagePage
