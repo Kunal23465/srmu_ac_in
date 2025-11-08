@@ -23,6 +23,23 @@ import p21 from "../../../assets/images/about/recognition-approval/collaboration
 import p22 from "../../../assets/images/about/recognition-approval/collaborations-22.png"
 import p23 from "../../../assets/images/about/recognition-approval/collaborations-23.png"
 import p24 from "../../../assets/images/about/recognition-approval/collaborations-24.png"
+import bci from "../../../assets/images/about/recognition-approval/BCI-APPROVAL-01112301323183.jpg"
+import naac from "../../../assets/images/about/recognition-approval/NAAC-CERTIFICATE-01112301353937.jpg"
+import pci from "../../../assets/images/about/recognition-approval/pci-27022404114839-30082501411976.png"
+import ugc from "../../../assets/images/about/recognition-approval/UGC-RECOGNITION-01112301301945.jpg"
+import universityact from "../../../assets/images/about/recognition-approval/UNIVERSITY-ACT-AND-GOVT-NOTIFICATION-0111230129578.jpg"
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 export const approvalOverviewData: customeOverViewType = {
@@ -170,7 +187,7 @@ export const approvalData: ApprovalDataType[] = [
     subtitle: "[PHARMACY COUNCIL OF INDIA]",
     description:
       "Pharmacy programs offered by the Institute of Pharmaceutical Sciences of SRMU have an approval from the Pharmacy Council of India.",
-    logo: "/images/approvals/pci.png",
+    logo: pci,
     pdfLink: "/pdfs/pci.pdf",
   },
   {

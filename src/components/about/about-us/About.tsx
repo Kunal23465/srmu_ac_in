@@ -9,13 +9,16 @@ import CustomTopFooter from '../../../utils/custom/CustomTopFooter';
 import MIssionAndVission from './MIssionAndVission';
 import CoreValues from './CoreValue';
 import KnowOurCampus from './KnowYourCampus';
+import Slider from './Slider';
 
 const About: React.FC = () => {
     return (
         <div>
             <div className={`${Classes["container"]}`}>
                 <CustomOverviewSection data={aboutOverviewData} />
+                
                 <Counter counterData={counterDataForAboutPage} classes="counter" aboutusClass={"text-black mt-3"} />
+                <Slider/>
                 <Effort />
                 {/* kulgeet section  */}
                 <div className='flex flex-col items-center justify-center pb-10 w-full '>
