@@ -1,10 +1,19 @@
 import { Link, Params, useMatches } from "react-router-dom";
-import AboutPage from "../pages/about/AboutPage";
 import HomePage from "../pages/HomePage";
 import RootLayout from "../pages/RootLayout";
 import Classes from "../utils/styles/Global.module.css";
 import { Fragment } from "react/jsx-runtime";
-import MessagePage from "../pages/about/Message/MessagePage";
+import AboutPage from "../pages/about/AboutPage";
+import LeadershipAndGovernancePage from "../pages/about/Leadership-and-Governance/LeadershipAndGovernancePage";
+import CommitteeAndCellsPage from "../pages/about/Committee-and-Cells/CommitteeAndCellsPage";
+import NAACPage from "../pages/about/NAAC/NAACPage";
+import NIRFPage from "../pages/about/NIRF/NIRFPage";
+import OragnisationStructurePage from "../pages/about/organisation-structure-plan/OrganisationStructurePlan";
+import AcademicsPage from "../pages/Academics/AcademicsPage";
+import PoliciesReportsPage from "../pages/Academics/Policies-Reports/PoliciesReportsPage";
+import AcademicCalendarsPage from "../pages/Academics/academic-calendars/AcademicCalendarsPage";
+import RecognitionApprovalsPage from "../pages/about/recognition-approval/RecognitionApprovalsPage";
+
 
 interface IMatches {
     id: string;
@@ -42,12 +51,73 @@ export const routes = [
                 },
                 children: [
                     {
-                        path: "message",
-                        element: <MessagePage />,
+                        path: "leadership-and-governance",
+                        element: <LeadershipAndGovernancePage />,
                         handle: {
-                            crumb: () => <Link to="/">Message</Link>,
+                            crumb: () => <Link to="/">Leadership and Governance</Link>,
                         },
                     },
+                    {
+                        path: "committees-and-cells",
+                        element: <CommitteeAndCellsPage />,
+                        handle: {
+                            crumb: () => <Link to="/">Committees and Cells</Link>,
+                        },
+                    },
+                    {
+                        path: "recognition-approvals",
+                        element: <RecognitionApprovalsPage />,
+                        handle: {
+                            crumb: () => <Link to="/">
+                                Approvals & Associations</Link>,
+                        },
+                    },
+                    {
+                        path: "naac",
+                        element: <NAACPage />,
+                        handle: {
+                            crumb: () => <Link to="/">NAAC</Link>,
+                        },
+                    },
+                    {
+                        path: "nirf",
+                        element: <NIRFPage />,
+                        handle: {
+                            crumb: () => <Link to="/">NIRF</Link>,
+                        },
+                    },
+                    {
+                        path: "organization-structure-plan",
+                        element: <OragnisationStructurePage />,
+                        handle: {
+                            crumb: () => <Link to="/">NIRF</Link>,
+                        },
+                    }
+                ]
+            },
+            {
+                path: "/academics",
+                element: <AcademicsPage />,
+                handle: {
+                    crumb: () => <Link to="/">Academics</Link>,
+                },
+
+                children: [
+                    {
+                        path: "policies-reports",
+                        element: <PoliciesReportsPage />,
+                        handle: {
+                            crumb: () => <Link to="/">Policies & Reports</Link>,
+                        },
+                    },
+                    {
+                        path: "academic-calendars",
+                        element: <AcademicCalendarsPage />,
+                        handle: {
+                            crumb: () => <Link to="/">Academic Calendars</Link>,
+                        },
+                    },
+
                 ]
             },
         ]

@@ -1,6 +1,6 @@
 import React from "react";
-import { counterDataType } from "../../data/about/message/counterData";
 import CountUp from "react-countup";
+import { counterDataType } from "../../data/about/leadership-and-governance/leadership-and-governance-data";
 
 interface counterDataPropsType {
   counterData: counterDataType[];
@@ -21,7 +21,6 @@ const Counter: React.FC<counterDataPropsType> = ({ counterData, classes, aboutus
             <CountUp start={0} end={Number(item.value)} duration={3} separator="" suffix={item.suffix} enableScrollSpy={true}>
               {({ countUpRef }) => <span ref={countUpRef} />}
             </CountUp>
-            {/* {item.value} */}
           </h1>
           <p className={`text-sm sm:text-base md:text-xl text-manulay-center ${aboutusClass ? aboutusClass : "text-white  mt-3"} `}>{item.label}</p>
         </div>

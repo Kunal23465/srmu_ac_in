@@ -45,19 +45,21 @@ export const HeaderData = [
                         item: "About Us",
                         path: "/about",
                         subItem: [
-                            { item: "Message", path: "/about/message" },
-                            { item: "Administration", path: "/about/administration" },
-                            { item: "IQAC", path: "/about/iqac" },
-                            { item: "Membership", path: "/about/membership" },
-                            { item: "Achievements", path: "/about/achievements" },
-                            { item: "Visitors Testimonial", path: "/about/visitors" },
+                            { item: "Leadership and Governance", path: "/about/leadership-and-governance" },
+                            { item: "Committees and Cells", path: "/about/committees-and-cells" },
+                            { item: "NAAC", path: "/about/naac" },
+                            { item: "NIRF", path: "/about/nirf" },
+                            { item: "Organizational Structure & Plan", path: "/about/organization-structure-plan" },
                         ],
                     },
                     {
                         id: 1,
                         item: "Academics",
                         path: "/academics",
-                        subItem: [{ item: "Academic Calendar", path: "/academics/academics-calender" }],
+                        subItem: [{ item: "Academic Calendar", path: "/academics/academics-calender" },
+                            {item: "Policies & Reports", path: "/academics/policies-reports"},
+                            {item: "Academic Calendars", path: "/academics/academic-calendars"}
+                        ],
                     },
                     {
                         id: 2,
