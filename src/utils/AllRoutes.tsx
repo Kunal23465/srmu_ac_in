@@ -4,10 +4,7 @@ import RootLayout from "../pages/RootLayout";
 import Classes from "../utils/styles/Global.module.css";
 import { Fragment } from "react/jsx-runtime";
 import AboutPage from "../pages/about/AboutPage";
-import LeadershipAndGovernancePage from "../pages/about/leadership-and-governance/LeadershipAndGovernancePage";
-import CommitteeAndCellsPage from "../pages/about/committee-and-cells/CommitteeAndCellsPage";
-import NAACPage from "../pages/about/naac/NAACPage";
-import NIRFPage from "../pages/about/nirf/NIRFPage";
+
 import OragnisationStructurePage from "../pages/about/organisation-structure-plan/OrganisationStructurePlan";
 import AcademicsPage from "../pages/academics/AcademicsPage";
 import PoliciesReportsPage from "../pages/academics/policies-reports/PoliciesReportsPage";
@@ -19,6 +16,11 @@ import CurriculumDesignPage from "../pages/academics/curriculum-design/Curriculu
 import { committeeCards } from "../data/about/committee-and-cells/committee-and-cells-data";
 import CustomCommitteeDetailsPage from "./custom/CustomCommitteeDetailsPage";
 import TeachingLearningProcessPage from "../pages/academics/teaching-learning-process/TeachingLearningProcessPage";
+import LeadershipAndGovernancePage from "../pages/about/leadership-and-governance/LeadershipAndGovernancePage";
+import CommitteeAndCellsPage from "../pages/about/committee-and-cells/CommitteeAndCellsPage";
+import RecognitionApprovalsPage from "../pages/about/recognition-approval/RecognitionApprovalsPage";
+import NAACPage from "../pages/about/naac/NAACPage";
+import NIRFPage from "../pages/about/nirf/NIRFPage";
 
 
 interface IMatches {
@@ -80,6 +82,14 @@ export const routes = [
                     },
 
                     {
+                        path: "recognition-approvals",
+                        element: <RecognitionApprovalsPage />,
+                        handle: {
+                            crumb: () => <Link to="/">
+                                Approvals & Associations</Link>,
+                        },
+                    },
+                    {
                         path: "naac",
                         element: <NAACPage />,
                         handle: {
@@ -128,7 +138,7 @@ export const routes = [
                         path: "teaching-learning-process",
                         element: <TeachingLearningProcessPage/>,
                         handle: {
-                            crumb: () => <Link to="/">Academic Calendars</Link>,
+                            crumb: () => <Link to="/">Teaching Learning Process</Link>,
                         },
                     },
 

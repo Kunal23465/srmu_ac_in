@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 @import "tailwindcss";
 
-
 /* for banner section */
 .banner-section {
   background-image: url("/srmu-banner-img.jpg");
@@ -24,27 +23,24 @@
   background-position: center;
 }
 
-
-.view-button{
+.view-button {
   background-color: rgb(15, 74, 133);
   border: rgb(15, 74, 133) 1px solid;
 }
 
-.view-more{
+.view-more {
   color: rgb(15, 74, 133);
   cursor: pointer;
 }
 
-.view-button:hover{
+.view-button:hover {
   background-color: white;
   color: rgb(15, 74, 133);
-  
 }
 
 .text-center {
   text-align: center !important;
 }
-
 
 .about-card {
   display: grid;
@@ -752,22 +748,17 @@ input::-webkit-inner-spin-button {
   }
 }
 
-
-@media (min-width: 1200px) and  (max-width: 1400px) {
-  .card-bottom-part{
+@media (min-width: 1200px) and (max-width: 1400px) {
+  .card-bottom-part {
     min-height: 200px;
   }
 }
-
 
 html {
   scroll-behavior: smooth;
   font-family: "Rubik", sans-serif;
   color: #212529;
 }
-
-
-
 
 .testmonial-slider .slick-dots {
   display: none !important;
@@ -979,7 +970,6 @@ html {
   font-size: 10px;
 }
 
-
 .custom-table-container {
   margin: 20px 0;
   border: 3px solid #ffcc66;
@@ -1012,7 +1002,7 @@ html {
 
 .column-two-header {
   width: 20%;
-  text-align: center; 
+  text-align: center;
 }
 
 .custom-table td {
@@ -1031,17 +1021,15 @@ html {
   display: flex;
 }
 
-
-
 .download-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   padding: 10px;
   font-size: 22px;
-  border: 2px solid orange;          
-  background-color: rgb(15, 74, 133);         
-  color: rgb(15, 74, 133);                    
+  border: 2px solid orange;
+  background-color: rgb(15, 74, 133);
+  color: rgb(15, 74, 133);
   border-radius: 8px;
   cursor: pointer;
   margin-left: 20px;
@@ -1049,7 +1037,7 @@ html {
 }
 
 .download-icon svg {
-  background-color: white;           
+  background-color: white;
   padding: 4px;
   border-radius: 4px;
 
@@ -1057,11 +1045,47 @@ html {
 }
 
 .download-icon:hover {
-  background-color: white;          
-  color: rgb(15, 74, 133);                    
+  background-color: white;
+  color: rgb(15, 74, 133);
 }
 
 .download-icon:hover svg {
-  background-color: orange;          
-  color: rgb(15, 74, 133);                    
+  background-color: orange;
+  color: rgb(15, 74, 133);
+}
+
+.font22 {
+  font-size: 1.375rem;
+}
+
+.fw600 {
+  font-weight: 600 !important;
+}
+
+.color_light_blue {
+  color: rgb(15, 74, 133) !important;
+}
+
+.font18 {
+  font-size: 1.125rem;
+}
+
+.fw500 {
+  font-weight: 500 !important;
+}
+
+.theme_color_yellow {
+  color: #ffb703 !important;
+}
+
+ul {
+  list-style-type: disc;
+}
+
+.curr {
+  font-size: calc(1.025rem + 0.9vw);
+}
+
+p{
+  font-size: 1.125rem;
 }

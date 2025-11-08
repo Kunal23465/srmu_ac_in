@@ -18,5 +18,18 @@ export const academicCalendarFirstCycle: TableRowData[] = [
     title: 'For Second Year Onwards',
     download: { type: 'pdf', url: "" },
   },
- 
+];
+
+
+export const academicCalendarSecondCycle: TableRowData[] = [
+  {
+    id: 1,
+    title: 'Holidays For Year 2023',
+    download: { type: 'pdf', url: "" },
+  },
+  {
+    id: 2,
+    title: 'Holidays For Year 2024',
+    download: { type: 'pdf', url: "" },
+  },
 ];
