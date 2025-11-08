@@ -22,6 +22,7 @@ import RecognitionApprovalsPage from "../pages/about/recognition-approval/Recogn
 import NAACPage from "../pages/about/naac/NAACPage";
 import NIRFPage from "../pages/about/nirf/NIRFPage";
 import AcademicBankOfCreditPage from "../pages/academics/academic-bank-credit/AcademicBankOfCreditPage";
+import IqacPage from "../pages/about/iqac-overview/IqacPage";
 
 
 interface IMatches {
@@ -88,6 +89,15 @@ export const routes = [
                         handle: {
                             crumb: () => <Link to="/">
                                 Approvals & Associations</Link>,
+                        },
+                    },
+                    {
+                        path: "iqac-overview",
+                        element: <IqacPage />,
+                        handle: {
+                            crumb: () => <Link to="/">
+
+                                IQAC Overview</Link>,
                         },
                     },
                     {
