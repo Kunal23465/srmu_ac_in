@@ -48,7 +48,7 @@ const Iqac: React.FC = () => {
 
       <div className={`${Classes["container"]}`}>
         {/* Reports Section */}
-        <h1 className="text-3xl lg:text-4xl mt-10 font-semibold">Report</h1>
+        <h1 className="text-3xl lg:text-4xl mt-14 font-semibold">Report</h1>
         <CustomTable
           columnOneHeader="University Annual Report"
           columnTwoHeader="Downloads"
