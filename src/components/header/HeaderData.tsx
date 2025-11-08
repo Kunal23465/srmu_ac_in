@@ -50,6 +50,7 @@ export const HeaderData = [
                             { item: "NAAC", path: "/about/naac" },
                             { item: "NIRF", path: "/about/nirf" },
                             { item: "Organizational Structure & Plan", path: "/about/organization-structure-plan" },
+                            { item: "Award Overview", path: "/about/award-overview" },
                         ],
                     },
                     {
@@ -61,6 +62,7 @@ export const HeaderData = [
                             {item: "E-Content Cell", path: "/academics/e-content-development-cell"},
                             {item: "Curriculum Design", path: "/academics/curriculum-design"},
                             {item: "Teaching Learning Process", path: "/academics/teaching-learning-process"},
+                            {item: "Academic Bank of Credit", path: "/academics/academic-depository-nad-and-abc"},
                         
                         ],
                     },

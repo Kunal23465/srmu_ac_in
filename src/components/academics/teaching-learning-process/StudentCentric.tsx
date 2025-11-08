@@ -6,10 +6,10 @@ const StudentCentric = () => {
             <h2 className='curr'>
                 <strong>Student centric methods used for enhancing learning experiences</strong>
             </h2>
-            <p className='mb-4'>
+            <p className='mb-4 font18'>
                 The following methodologies are used to enhance learning experiences during Teaching- Learning process:
             </p>
-            <ul className='mb-4'>
+            <ul className='mb-4 font18'>
                 <li>Sharing in advance (Lecture + Tutorial)</li>
                 <li>Demonstration of Concepts</li>
                 <li>Topics for Self Study in Assignments</li>

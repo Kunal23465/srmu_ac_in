@@ -21,6 +21,7 @@ import CommitteeAndCellsPage from "../pages/about/committee-and-cells/CommitteeA
 import RecognitionApprovalsPage from "../pages/about/recognition-approval/RecognitionApprovalsPage";
 import NAACPage from "../pages/about/naac/NAACPage";
 import NIRFPage from "../pages/about/nirf/NIRFPage";
+import AcademicBankOfCreditPage from "../pages/academics/academic-bank-credit/AcademicBankOfCreditPage";
 
 
 interface IMatches {
@@ -139,6 +140,13 @@ export const routes = [
                         element: <TeachingLearningProcessPage/>,
                         handle: {
                             crumb: () => <Link to="/">Teaching Learning Process</Link>,
+                        },
+                    },
+                    {
+                        path: "academic-depository-nad-and-abc",
+                        element: <AcademicBankOfCreditPage/>,
+                        handle: {
+                            crumb: () => <Link to="/">Academic Bank of Credit</Link>,
                         },
                     },
 
