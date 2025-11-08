@@ -7,7 +7,7 @@ import iqaccard5 from "../../../assets/images/about/iqac-overview/iqaccard-5.png
 import { TableRowData } from "../../../types/table-data-types";
 
 // iqac pdf
-import annualReport2022_23 from "../../../assets/pdf/iqac-overview/university-annual-report-2022-23.pdf"
+import annualReport2022_23 from "../../../assets/pdf/iqac-overview/university-annual-report-2022-23.pdf";
 import annualReport2021_22 from "../../../assets/pdf/iqac-overview/annual-report-final-2021-2022.pdf";
 import annualReport2020_21 from "../../../assets/pdf/iqac-overview/Annual-Report-2020_21.pdf";
 import annualReport2019_20 from "../../../assets/pdf/iqac-overview/Annual-Report_2019-20.pdf";
@@ -24,7 +24,6 @@ import iqacAnnualReport2018_19 from "../../../assets/pdf/iqac-overview/iqac-annu
 import iqacAnnualReport2017_18 from "../../../assets/pdf/iqac-overview/iqac-annual-report-2017-18-210324113739.pdf";
 import iqacAnnualReport2016_17 from "../../../assets/pdf/iqac-overview/iqac-annual-report-2016-17-210324113713.pdf";
 import iqacAnnualReport2015_16 from "../../../assets/pdf/iqac-overview/iqac-annual-report-2015-16-210324113655.pdf";
-
 
 import iqacActionTakenReport2022_23 from "../../../assets/pdf/iqac-overview/iqac-action-taken-report-2022-23-210324115450.pdf";
 import iqacActionTakenReport2021_22 from "../../../assets/pdf/iqac-overview/iqac-action-taken-report-2021-22-210324115435.pdf";
@@ -50,24 +49,22 @@ import iqacFeedbackTeacher from "../../../assets/pdf/iqac-overview/teachers-feed
 import iqacFeedbackAlumni from "../../../assets/pdf/iqac-overview/Alumni-Feedback-sample-051223045054.pdf";
 import iqacFeedbackEmployer from "../../../assets/pdf/iqac-overview/Employer-Feedback-sample-051223045109.pdf";
 
-
 import iqacAnalysisReportAlumni from "../../../assets/pdf/iqac-overview/Analysis-Report-Alumni-051223045434.pdf";
 import iqacAnalysisReportEmployer from "../../../assets/pdf/iqac-overview/Analysis-Report-Employer-Feedback-051223045501.pdf";
 
-
-
-
-
-
-
+// iqac card
+import iqacCard1 from "../../../assets/images/about/iqac-overview/compositioniqac-08022402070016.jpg";
+import iqacCard2 from "../../../assets/images/about/iqac-overview/organisation-iqac-08022402064956.jpg";
+import iqacCard3 from "../../../assets/images/about/iqac-overview/iiqa-iqac.jpg";
+import iqaccardpdf1 from "../../../assets/pdf/iqac-overview/IQACORGANISATIONCHART-041223011729.pdf";
+import iqaccardpdf2 from "../../../assets/pdf/iqac-overview/Composition-of-Internal-Quality-Assurance-Cell-IQA-041223011746.pdf";
+import iqaccardpdf3 from "../../../assets/pdf/iqac-overview/iiqa-270224043528.pdf";
 
 export const iqacOverviewData: customeOverViewType = {
   heading: "IQAC Overview",
   content: `Sustained quality assurance ensures that at both the institutional and disciplinary levels, there is a culture of continuous improvement and growth. Hence, at SRMU, an institution-wide quality management system serves as the foundation for external quality assurance mechanisms like accreditation. 
           The Internal Quality Assurance Cell (IQAC) assesses accreditation requirements, and is dedicated to enhancing overall institutional performance through conscious and catalytic improvements.`,
 };
-
-
 
 export const iqacCards = [
   {
@@ -189,8 +186,6 @@ export const iqacCards = [
   },
 ];
 
-
-
 export const UniversityannualReportData: TableRowData[] = [
   {
     id: 1,
@@ -233,7 +228,6 @@ export const UniversityannualReportData: TableRowData[] = [
     download: { type: "pdf", url: annualReport2015_16 },
   },
 ];
-
 
 export const iqacAnnualReportData: TableRowData[] = [
   {
@@ -278,9 +272,6 @@ export const iqacAnnualReportData: TableRowData[] = [
   },
 ];
 
-
-
-
 export const iqacActionTakenReportData: TableRowData[] = [
   {
     id: 1,
@@ -324,8 +315,6 @@ export const iqacActionTakenReportData: TableRowData[] = [
   },
 ];
 
-
-
 export const iqacMinutesOfMeetingData: TableRowData[] = [
   {
     id: 1,
@@ -362,10 +351,7 @@ export const iqacMinutesOfMeetingData: TableRowData[] = [
     title: "Meeting Minutes (Session: 2019-20)",
     download: { type: "pdf", url: iqacMeetingMinutes2019_20 },
   },
-
 ];
-
-
 
 export const iqacUndertakingData: TableRowData[] = [
   {
@@ -374,11 +360,6 @@ export const iqacUndertakingData: TableRowData[] = [
     download: { type: "pdf", url: iqacUndertaking },
   },
 ];
-
-
-
-
-
 
 export const iqacFeedbackData: TableRowData[] = [
   {
@@ -403,7 +384,6 @@ export const iqacFeedbackData: TableRowData[] = [
   },
 ];
 
-
 export const iqacAnalysisReportData: TableRowData[] = [
   {
     id: 1,
@@ -417,32 +397,28 @@ export const iqacAnalysisReportData: TableRowData[] = [
   },
 ];
 
-
-
-
-
 export const iqacCardsData = [
   {
     id: 1,
     title: "Organisation",
     description:
       "The IQAC is composed of a Director and Committee Members, who report to the Vice-Chancellor. It also consists of a NAAC committee and NIRF committee to oversee accreditation processes.",
-    img: "/assets/images/iqac/organisation.jpg",
-    pdfLink: "#",
+    img: iqacCard1,
+    pdfLink: iqaccardpdf1,
   },
   {
     id: 2,
     title: "Composition",
     description: "The IQAC committees have a diverse body of members, from teaching staff to non-teaching staff to student nominees.",
-    img: "/assets/images/iqac/composition.jpg",
-    pdfLink: "#",
+    img: iqacCard2,
+    pdfLink: iqaccardpdf2,
   },
   {
     id: 3,
     title: "IIQA",
     description:
       'IIQA is a procedure used to determine if an organization is "accreditation ready." Online Institutional Information for Quality Assessment (IIQA) submission is necessary for qualified HEIs requesting an A&A.',
-    img: "/assets/images/iqac/iiqa.jpg",
-    pdfLink: "#",
+    img: iqacCard3,
+    pdfLink: iqaccardpdf3,
   },
 ];
