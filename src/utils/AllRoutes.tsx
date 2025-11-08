@@ -13,6 +13,7 @@ import AcademicsPage from "../pages/Academics/AcademicsPage";
 import PoliciesReportsPage from "../pages/Academics/Policies-Reports/PoliciesReportsPage";
 import AcademicCalendarsPage from "../pages/Academics/academic-calendars/AcademicCalendarsPage";
 import RecognitionApprovalsPage from "../pages/about/recognition-approval/RecognitionApprovalsPage";
+import IqacPage from "../pages/about/iqac-overview/IqacPage";
 
 
 interface IMatches {
@@ -70,6 +71,15 @@ export const routes = [
                         handle: {
                             crumb: () => <Link to="/">
                                 Approvals & Associations</Link>,
+                        },
+                    },
+                    {
+                        path: "iqac-overview",
+                        element: <IqacPage />,
+                        handle: {
+                            crumb: () => <Link to="/">
+
+                                IQAC Overview</Link>,
                         },
                     },
                     {
