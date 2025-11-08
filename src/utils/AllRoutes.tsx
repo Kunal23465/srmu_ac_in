@@ -12,6 +12,14 @@ import OragnisationStructurePage from "../pages/about/organisation-structure-pla
 import AcademicsPage from "../pages/academics/AcademicsPage";
 import PoliciesReportsPage from "../pages/academics/policies-reports/PoliciesReportsPage";
 import AcademicCalendarsPage from "../pages/academics/academic-calendars/AcademicCalendarsPage";
+import EContentCellPage from "../pages/academics/e-content-cell/EContentCellPage";
+import SwayamNptelPage from "../pages/academics/swayam-nptel/SwayamNptelPage";
+import IirsIsroPage from "../pages/academics/iirs-isro/IirsIsroPage";
+import CurriculumDesignPage from "../pages/academics/curriculum-design/CurriculumDesignPage";
+import { committeeCards } from "../data/about/committee-and-cells/committee-and-cells-data";
+import CustomCommitteeDetailsPage from "./custom/CustomCommitteeDetailsPage";
+import TeachingLearningProcessPage from "../pages/academics/teaching-learning-process/TeachingLearningProcessPage";
+
 
 interface IMatches {
     id: string;
@@ -59,9 +67,18 @@ export const routes = [
                         path: "committees-and-cells",
                         element: <CommitteeAndCellsPage />,
                         handle: {
-                            crumb: () => <Link to="/">Committees and Cells</Link>,
+                            crumb: () => <Link to="/about/committees-and-cells">Committees and Cells</Link>,
                         },
+
+                        children: committeeCards.map(card => ({
+                            path: card.routeKey,
+                            element: <CustomCommitteeDetailsPage committee={card} />,
+                            handle: {
+                                crumb: () => <a>{card.breadcrumb}</a>,
+                            }
+                        }))
                     },
+
                     {
                         path: "naac",
                         element: <NAACPage />,
@@ -100,14 +117,55 @@ export const routes = [
                             crumb: () => <Link to="/">Policies & Reports</Link>,
                         },
                     },
-                    { 
-                        path: "academic-calendars",
+                    {
+                        path: "academic-calender",
                         element: <AcademicCalendarsPage />,
                         handle: {
                             crumb: () => <Link to="/">Academic Calendars</Link>,
                         },
                     },
-                    
+                    {
+                        path: "teaching-learning-process",
+                        element: <TeachingLearningProcessPage/>,
+                        handle: {
+                            crumb: () => <Link to="/">Academic Calendars</Link>,
+                        },
+                    },
+
+                    {
+                        path: "e-content-development-cell",
+                        element: <EContentCellPage />,
+                        handle: {
+                            crumb: () => <Link to="/">E-CONTENT DEVELOPMENT CELL</Link>,
+                        },
+                    },
+
+                    {
+                        path: "swayam-nptel-local-chapter",
+                        element: <SwayamNptelPage />,
+                        handle: {
+                            crumb: () => <Link to="/">
+                                SWAYAM NPTEL Local Chapter</Link>,
+                        },
+                    },
+                    {
+                        path: "iirs-isro",
+                        element: <IirsIsroPage />,
+                        handle: {
+                            crumb: () => <Link to="/">
+                                IIRS – ISRO</Link>,
+                        },
+                    },
+                    {
+                        path: "curriculum-design",
+                        element: <CurriculumDesignPage />,
+                        handle: {
+                            crumb: () => <Link to="/">
+                                Curriculum Design
+                            </Link>,
+                        },
+                    },
+
                 ]
             },
         ]
