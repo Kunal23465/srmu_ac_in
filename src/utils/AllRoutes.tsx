@@ -6,24 +6,27 @@ import { Fragment } from "react/jsx-runtime";
 import AboutPage from "../pages/about/AboutPage";
 
 import OragnisationStructurePage from "../pages/about/organisation-structure-plan/OrganisationStructurePlan";
+
+import { committeeCards } from "../data/about/committee-and-cells/committee-and-cells-data";
+import CustomCommitteeDetailsPage from "./custom/CustomCommitteeDetailsPage";
+
+import RecognitionApprovalsPage from "../pages/about/recognition-approval/RecognitionApprovalsPage";
+
+import IqacPage from "../pages/about/iqac-overview/IqacPage";
+import InstitutePage from "../pages/academics/institutes/InstitutePage";
+import LeadershipAndGovernancePage from "../pages/about/leadership-and-governance/LeadershipAndGovernancePage";
+import CommitteeAndCellsPage from "../pages/about/committee-and-cells/CommitteeAndCellsPage";
+import NAACPage from "../pages/about/naac/NAACPage";
+import NIRFPage from "../pages/about/nirf/NIRFPage";
 import AcademicsPage from "../pages/academics/AcademicsPage";
 import PoliciesReportsPage from "../pages/academics/policies-reports/PoliciesReportsPage";
 import AcademicCalendarsPage from "../pages/academics/academic-calendars/AcademicCalendarsPage";
+import TeachingLearningProcessPage from "../pages/academics/teaching-learning-process/TeachingLearningProcessPage";
+import AcademicBankOfCreditPage from "../pages/academics/academic-bank-credit/AcademicBankOfCreditPage";
 import EContentCellPage from "../pages/academics/e-content-cell/EContentCellPage";
 import SwayamNptelPage from "../pages/academics/swayam-nptel/SwayamNptelPage";
 import IirsIsroPage from "../pages/academics/iirs-isro/IirsIsroPage";
 import CurriculumDesignPage from "../pages/academics/curriculum-design/CurriculumDesignPage";
-import { committeeCards } from "../data/about/committee-and-cells/committee-and-cells-data";
-import CustomCommitteeDetailsPage from "./custom/CustomCommitteeDetailsPage";
-import TeachingLearningProcessPage from "../pages/academics/teaching-learning-process/TeachingLearningProcessPage";
-import LeadershipAndGovernancePage from "../pages/about/leadership-and-governance/LeadershipAndGovernancePage";
-import CommitteeAndCellsPage from "../pages/about/committee-and-cells/CommitteeAndCellsPage";
-import RecognitionApprovalsPage from "../pages/about/recognition-approval/RecognitionApprovalsPage";
-import NAACPage from "../pages/about/naac/NAACPage";
-import NIRFPage from "../pages/about/nirf/NIRFPage";
-import AcademicBankOfCreditPage from "../pages/academics/academic-bank-credit/AcademicBankOfCreditPage";
-import IqacPage from "../pages/about/iqac-overview/IqacPage";
-import InstitutePage from "../pages/academics/institutes/InstitutePage";
 
 
 interface IMatches {
@@ -129,6 +132,87 @@ export const routes = [
                 element: <AcademicsPage />,
                 handle: {
                     crumb: () => <Link to="/">Academics</Link>,
+                },
+
+                children: [
+                    {
+                        path: "institutes-info",
+                        element: <InstitutePage />,
+                        handle: {
+                            crumb: () => <Link to="/"> Academics</Link>,
+                        },
+                    },
+
+                    {
+                        path: "policies-reports",
+                        element: <PoliciesReportsPage />,
+                        handle: {
+                            crumb: () => <Link to="/">Policies & Reports</Link>,
+                        },
+                    },
+                    {
+                        path: "academic-calender",
+                        element: <AcademicCalendarsPage />,
+                        handle: {
+                            crumb: () => <Link to="/">Academic Calendars</Link>,
+                        },
+                    },
+                    {
+                        path: "teaching-learning-process",
+                        element: <TeachingLearningProcessPage />,
+                        handle: {
+                            crumb: () => <Link to="/">Teaching Learning Process</Link>,
+                        },
+                    },
+                    {
+                        path: "academic-depository-nad-and-abc",
+                        element: <AcademicBankOfCreditPage />,
+                        handle: {
+                            crumb: () => <Link to="/">Academic Bank of Credit</Link>,
+                        },
+                    },
+
+                    {
+                        path: "e-content-development-cell",
+                        element: <EContentCellPage />,
+                        handle: {
+                            crumb: () => <Link to="/">E-CONTENT DEVELOPMENT CELL</Link>,
+                        },
+                    },
+
+                    {
+                        path: "swayam-nptel-local-chapter",
+                        element: <SwayamNptelPage />,
+                        handle: {
+                            crumb: () => <Link to="/">
+                                SWAYAM NPTEL Local Chapter</Link>,
+                        },
+                    },
+                    {
+                        path: "iirs-isro",
+                        element: <IirsIsroPage />,
+                        handle: {
+                            crumb: () => <Link to="/">
+                                IIRS – ISRO</Link>,
+                        },
+                    },
+                    {
+                        path: "curriculum-design",
+                        element: <CurriculumDesignPage />,
+                        handle: {
+                            crumb: () => <Link to="/">
+                                Curriculum Design
+                            </Link>,
+                        },
+                    },
+
+                ]
+            },
+            {
+                path: "/admissions",
+                element: <AcademicsPage />,
+                handle: {
+                    crumb: () => <Link to="/">Admissions</Link>,
                 },
 
                 children: [
