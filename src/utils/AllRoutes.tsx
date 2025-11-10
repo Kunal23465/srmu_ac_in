@@ -23,6 +23,7 @@ import NAACPage from "../pages/about/naac/NAACPage";
 import NIRFPage from "../pages/about/nirf/NIRFPage";
 import AcademicBankOfCreditPage from "../pages/academics/academic-bank-credit/AcademicBankOfCreditPage";
 import IqacPage from "../pages/about/iqac-overview/IqacPage";
+import InstitutePage from "../pages/academics/institutes/InstitutePage";
 
 
 interface IMatches {
@@ -132,6 +133,14 @@ export const routes = [
 
                 children: [
                     {
+                        path: "institutes-info",
+                        element: <InstitutePage />,
+                        handle: {
+                            crumb: () => <Link to="/"> Academics</Link>,
+                        },
+                    },
+
+                    {
                         path: "policies-reports",
                         element: <PoliciesReportsPage />,
                         handle: {
@@ -147,14 +156,14 @@ export const routes = [
                     },
                     {
                         path: "teaching-learning-process",
-                        element: <TeachingLearningProcessPage/>,
+                        element: <TeachingLearningProcessPage />,
                         handle: {
                             crumb: () => <Link to="/">Teaching Learning Process</Link>,
                         },
                     },
                     {
                         path: "academic-depository-nad-and-abc",
-                        element: <AcademicBankOfCreditPage/>,
+                        element: <AcademicBankOfCreditPage />,
                         handle: {
                             crumb: () => <Link to="/">Academic Bank of Credit</Link>,
                         },

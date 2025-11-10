@@ -72,15 +72,6 @@ export const iqacCards = [
     icon: iqaccard1,
     description: "To ensure a culture of quality through institutionalizing and implementing improved initiatives, with internal and external support.",
     content: `
-      <div>
-        <h2 class="font-semibold text-2xl mb-3">Aim</h2>
-        <p>
-        <strong>1. </strong>
-          Internal Quality Assurance Cell is conceived as a mechanism to build and ensure a quality culture at the institutional level. It is meant for planning, guiding and
-          monitoring Quality Assurance (QA) and Quality Enhancement (QE) activities of the college. Since quality enhancement is a continuous process, IQAC will work towards
-          realization of the goals of quality enhancement, quality sustenance and academic excellence.
-        </p>
-      </div>
     `,
   },
   {
