@@ -21,22 +21,16 @@ const About: React.FC = () => {
                 <Slider />
             </div>
             <MIssionAndVission />
-
-            <div className={`${Classes["container"]}`}>
-                <CoreValues />
-
-            </div>
+            <CoreValues />
             <KnowOurCampus />
-            <div className={`${Classes["container"]}`}>
+            <div className={`${Classes["container"]} mt-14`}>
 
                 <Effort />
-                {/* kulgeet section  */}
-
-                <div className='flex flex-col items-center justify-center pb-10 w-full '>
-                    <h1 className='text-[46px] text=[#023047] font-medium'>Kulgeet</h1>
-                    <img src={kulgeetimg} alt="kulgeet" />
-                </div>
-
+            </div>
+            {/* kulgeet section  */}
+            <div className='flex flex-col items-center justify-center pb-10 w-full '>
+                <h1 className='text-[46px] text=[#023047] font-medium'>Kulgeet</h1>
+                <img src={kulgeetimg} alt="kulgeet" />
             </div>
 
 
