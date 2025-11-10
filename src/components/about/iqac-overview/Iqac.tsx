@@ -6,6 +6,7 @@ import {
   iqacAnalysisReportData,
   iqacAnnualReportData,
   iqacCards,
+  iqacCustomTopFooter,
   iqacFeedbackData,
   iqacMinutesOfMeetingData,
   iqacOverviewData,
@@ -15,6 +16,7 @@ import {
 import CustomIqacCard from "../../../utils/custom/CustomIqacCard";
 import CustomTable from "../../../utils/custom/CustomTable";
 import IqacCardsSection from "./IqacCard";
+import CustomTopFooter from "../../../utils/custom/CustomTopFooter";
 
 const Iqac: React.FC = () => {
   return (
@@ -88,6 +90,8 @@ const Iqac: React.FC = () => {
           data={iqacAnalysisReportData}
         />
       </div>
+      <CustomTopFooter data={iqacCustomTopFooter} />
+
     </>
   );
 };

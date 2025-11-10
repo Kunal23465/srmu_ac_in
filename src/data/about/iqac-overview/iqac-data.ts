@@ -107,7 +107,8 @@ export const iqacCards = [
   {
     title: "Strategies",
     icon: iqaccard3,
-    description: "The IQAC will develop systems to: Ensure timely and efficient performance in academic, administrative, and financial tasks. Improve the relevance and quality of academic and research programs",
+    description:
+      "The IQAC will develop systems to: Ensure timely and efficient performance in academic, administrative, and financial tasks. Improve the relevance and quality of academic and research programs",
     content: `
       <div>
         <h2 class="font-semibold text-2xl mb-3">Strategies</h2>
@@ -159,8 +160,7 @@ Sharing of research findings and networking with other institutions in India and
   {
     title: "Functions",
     icon: iqaccard5,
-    description:
-      "Development and application of quality benchmarks/parameters for various academic and administrative activities of the institution",
+    description: "Development and application of quality benchmarks/parameters for various academic and administrative activities of the institution",
     content: `
       <div>
         <h2 class="font-semibold text-2xl mb-3">Functions</h2>
@@ -457,5 +457,12 @@ export const iqacCardsData = [
       'IIQA is a procedure used to determine if an organization is "accreditation ready." Online Institutional Information for Quality Assessment (IIQA) submission is necessary for qualified HEIs requesting an A&A.',
     img: iqacCard3,
     pdfLink: iqaccardpdf3,
+  },
+];
+
+export const iqacCustomTopFooter = [
+  {
+    content: `Want to learn more about SRMU?`,
+    btnText: "Request Registration",
   },
 ];

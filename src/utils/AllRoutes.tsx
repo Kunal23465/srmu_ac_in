@@ -26,6 +26,10 @@ import EContentCellPage from "../pages/Academics/e-content-cell/EContentCellPage
 import SwayamNptelPage from "../pages/Academics/swayam-nptel/SwayamNptelPage";
 import IirsIsroPage from "../pages/Academics/iirs-isro/IirsIsroPage";
 import CurriculumDesignPage from "../pages/Academics/curriculum-design/CurriculumDesignPage";
+import FeeStructurePage from "../pages/admissions/fee-structure/FeeStructurePage";
+import ShiftSchedulePage from "../pages/admissions/shift-schedule/ShiftSchedulePage";
+import DocumentChecklistPage from "../pages/admissions/document-checklist/DocumentChecklistPage";
+import AdmissionFaqPage from "../pages/admissions/admission-faq/AdmissionFaqPage";
 
 
 interface IMatches {
@@ -208,29 +212,29 @@ export const routes = [
 
                 children: [
                     {
-                        path: "policies-reports",
-                        element: <PoliciesReportsPage />,
+                        path: "fee-structure",
+                        element: <FeeStructurePage />,
                         handle: {
-                            crumb: () => <Link to="/">Policies & Reports</Link>,
+                            crumb: () => <Link to="/">Fee Structure</Link>,
                         },
                     },
                     {
-                        path: "academic-calender",
-                        element: <AcademicCalendarsPage />,
+                        path: "shift-schedule",
+                        element: <ShiftSchedulePage />,
                         handle: {
-                            crumb: () => <Link to="/">Academic Calendars</Link>,
+                            crumb: () => <Link to="/">Shift Schedule</Link>,
                         },
                     },
                     {
-                        path: "teaching-learning-process",
-                        element: <TeachingLearningProcessPage />,
+                        path: "document-checklist",
+                        element: <DocumentChecklistPage />,
                         handle: {
-                            crumb: () => <Link to="/">Teaching Learning Process</Link>,
+                            crumb: () => <Link to="/">Document Checklist</Link>,
                         },
                     },
                     {
-                        path: "academic-depository-nad-and-abc",
-                        element: <AcademicBankOfCreditPage />,
+                        path: "admission-faq",
+                        element: <AdmissionFaqPage />,
                         handle: {
                             crumb: () => <Link to="/">Academic Bank of Credit</Link>,
                         },
@@ -244,31 +248,7 @@ export const routes = [
                         },
                     },
 
-                    {
-                        path: "swayam-nptel-local-chapter",
-                        element: <SwayamNptelPage />,
-                        handle: {
-                            crumb: () => <Link to="/">
-                                SWAYAM NPTEL Local Chapter</Link>,
-                        },
-                    },
-                    {
-                        path: "iirs-isro",
-                        element: <IirsIsroPage />,
-                        handle: {
-                            crumb: () => <Link to="/">
-                                IIRS – ISRO</Link>,
-                        },
-                    },
-                    {
-                        path: "curriculum-design",
-                        element: <CurriculumDesignPage />,
-                        handle: {
-                            crumb: () => <Link to="/">
-                                Curriculum Design
-                            </Link>,
-                        },
-                    },
+        
 
                 ]
             },
