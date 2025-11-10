@@ -156,52 +156,52 @@ export interface ApprovalDataType {
 export const approvalData: ApprovalDataType[] = [
   {
     id: 1,
-    title: "PCI APPROVAL",
-    subtitle: "[PHARMACY COUNCIL OF INDIA]",
+    title: "NAAC ACCREDITED",
+    subtitle: "[NATIONAL ASSESSMENT & ACCREDITATION COUNCIL]",
     description:
-      "Pharmacy programs offered by the Institute of Pharmaceutical Sciences of SRMU have an approval from the Pharmacy Council of India.",
+      "SRMU has been Accredited with a CGPA of 2.73 on a four point scale with “B+” Grade valid for a period of 5 years from January 24, 2023 in the first cycle.",
     logo: "/images/approvals/pci.png",
-    pdfLink: "/pdfs/pci.pdf",
+    pdfLink: "/pdfs/NAAC.pdf",
   },
   {
     id: 2,
-    title: "NCTE APPROVAL",
-    subtitle: "[NATIONAL COUNCIL FOR TEACHER EDUCATION]",
+    title: "UNIVERSITY ACT AND GOVT. NOTIFICATION",
+    subtitle: "[GOVT. OF UTTAR PRADESH]",
     description:
-      "Education programs offered by Shri Ramswaroop Memorial University have approval from the National Council for Teacher Education.",
+      "Shri Ramswaroop Memorial University has been established by UP State Govt. ACT 1 of 2012",
     logo: "/images/approvals/ncte.png",
     pdfLink: "/pdfs/ncte.pdf",
   },
   {
     id: 3,
-    title: "AIU MEMBERSHIP",
-    subtitle: "[MEMBER OF ASSOCIATION OF INDIA UNIVERSITIES]",
+    title: "UGC RECOGNITION",
+    subtitle: "[UNIVERSITY GRANTS COMMISSION]",
     description:
-      "Shri Ramswaroop Memorial University is a member of the Association of Indian Universities.",
+      "SRMU has been empowered to award degrees through its main campus by University Grants Commission under section 22 of UGC Act.",
     logo: "/images/approvals/aiu.png",
     pdfLink: "/pdfs/aiu.pdf",
   },
   {
     id: 1,
-    title: "PCI APPROVAL",
-    subtitle: "[PHARMACY COUNCIL OF INDIA]",
+    title: "BCI APPROVAL",
+    subtitle: "[BAR COUNCIL OF INDIA]",
     description:
-      "Pharmacy programs offered by the Institute of Pharmaceutical Sciences of SRMU have an approval from the Pharmacy Council of India.",
+      "Law programs offered by Shri Ramswaroop Memorial University have an approval from the Bar Council of India.",
     logo: pci,
     pdfLink: "/pdfs/pci.pdf",
   },
   {
     id: 2,
-    title: "NCTE APPROVAL",
-    subtitle: "[NATIONAL COUNCIL FOR TEACHER EDUCATION]",
+    title: "PCI APROVAL",
+    subtitle: "[PHARMACY COUNCIL OF INDIA]",
     description:
-      "Education programs offered by Shri Ramswaroop Memorial University have approval from the National Council for Teacher Education.",
+      "Pharmacy programs offered by Institute of Pharmacy of SRMU have an apporval from the Pharmacy Council of India.",
     logo: "/images/approvals/ncte.png",
     pdfLink: "/pdfs/ncte.pdf",
   },
   {
     id: 3,
-    title: "AIU MEMBERSHIP",
+    title: "PCI APROVAL",
     subtitle: "[MEMBER OF ASSOCIATION OF INDIA UNIVERSITIES]",
     description:
       "Shri Ramswaroop Memorial University is a member of the Association of Indian Universities.",

@@ -19,7 +19,8 @@ import { customeOverViewType } from "../../../types/home-data-type";
 export const CommitteeOverviewData: customeOverViewType = {
   heading: "Committees & Cells",
   content:
-    "Education has the potential to change our world. It is a powerful tool for eradicating inequality, gender disparity, diminishing poverty, alleviation of disease and to develop means for creating a sustainable planet, infused with peace and prosperity. Founders of the University, Alumni and Gold Medalist from IIT Kanpur, envision Shri Ramswaroop Memorial University to be a globally recognized place of teaching-learning, doing research and preparing human capital with ethical, social and ecological sensibilities, thereby contributing to national prosperity."
+    `Education has the potential to change our world. It is a powerful tool for eradicating inequality, gender disparity, diminishing poverty, alleviation of disease and to develop means for creating a sustainable planet, infused with peace and prosperity. 
+    Founders of the University, Alumni and Gold Medalist from IIT Kanpur, envision Shri Ramswaroop Memorial University to be a globally recognized place of teaching-learning, doing research and preparing human capital with ethical, social and ecological sensibilities, thereby contributing to national prosperity.`
 };
 
 

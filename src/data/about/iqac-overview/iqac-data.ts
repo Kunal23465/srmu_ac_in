@@ -91,96 +91,133 @@ export const iqacCards = [
     content: `
       <div>
         <h2 class="font-semibold text-2xl mb-3">Objective</h2>
-        <p>
-        <strong>2. </strong>
-          The prime task of the IQAC is to develop a system for conscious, consistent and catalytic improvement in the overall performance of institution. For this, there is a need to channelize all the efforts and measures towards promoting the holistic academic excellence. The overall aim is to establish internalization of quality culture and institutional best practices.
-        </p>
+        <ul>
+        <li>
+        To develop a system for conscious, consistent and catalytic action to improve the academic and administrative performance of the institution.
+        </li>
+        <li>
+        To promote measures for institutional functioning towards quality enhancement through internalization of quality culture and institutionalization of best practices
+
+        </li>
+        </ul>
       </div>
     `,
   },
 
   {
-    title: "Composition",
+    title: "Strategies",
     icon: iqaccard3,
-    description: "IQAC is a significant administrative body that is responsible for all quality matters. The composition of the IQAC is as follows",
+    description: "The IQAC will develop systems to: Ensure timely and efficient performance in academic, administrative, and financial tasks. Improve the relevance and quality of academic and research programs",
     content: `
       <div>
-        <h2 class="font-semibold text-2xl mb-3">Composition</h2>
+        <h2 class="font-semibold text-2xl mb-3">Strategies</h2>
         <p>
-        <strong>3. </strong>
-         IQAC is a significant administrative body that is responsible for all quality matters. The composition of the IQAC is as follows:
+        <strong> 
+         IQAC shall evolve mechanisms and procedures for</strong>
         </p>
-         <p class="mb-1 mt-2"><strong>(a) Chairperson</strong> - Director General/ Director</p>
-  <p class="mb-1"><strong>(b) Member Secretary</strong> - OIC IQAC</p>
-  <p class="mb-1"><strong>(c) Coordinator</strong> - Senior Faculty (Associate Prof./Prof.)</p>
-  <p class="mb-1"><strong>(d) Faculty Member Rep.</strong> - One from each department</p>
-  <p class="mb-1"><strong>(e) Admin Rep</strong> - Associate Director (Admin)</p>
-  <p class="mb-1"><strong>(f) Rep of Society</strong> - One member</p>
-  <p class="mb-1"><strong>(g) Rep of Alumni</strong> - One/two member(s)</p>
-  <p class="mb-1"><strong>(h) Rep of Students</strong> - President of Student-Senate</p>
-  <p class="mb-1"><strong>(i) Rep of Employers</strong> - Director (Corporate Relations & Placement)</p>
-  <p class="mb-1"><strong>(j) Rep of Stake Holders</strong> - One/two Parents</p>
-  <p class="mb-2"><strong>(k) Rep of Staff</strong> - Registrar</p>
-   <p>
-        <strong>4. </strong>
-         The membership of such nominated members shall be for a period of two years. The IQAC should meet at least once in every semester. The quorum for the meeting shall be two- third of the total number of members. The agenda, minutes and ‘Action Taken Reports’ are to be documented with official signatures and maintained electronically in a retrievable format.
-        </p>
-         <p>
-        <strong>5. </strong>
-        The IQAC office shall be functional throughout the year for various functions as described in subsequent paragraphs.
-        </p>
+         <ul>
+         <li>
+         Ensuring timely, efficient and progressive performance of academic, administrative and financial tasks</li>
+         <li> The relevance and quality of academic and research programmes;
+</li>
+
+<li>
+Equitable access to and affordability of academic programmes for various sections of society;
+
+</li>
+
+<li>
+Optimization and integration of modern methods of teaching and learning;
+
+</li>
+
+<li>
+The credibility of evaluation procedures;
+
+</li>
+
+<li>
+Ensuring the adequacy, maintenance and proper allocation of support structure and services;
+
+</li>
+
+<li>
+Sharing of research findings and networking with other institutions in India and abroad.
+
+</li>
+         
+         </ul>
       </div>
     `,
   },
   {
-    title: "Functions",
+    title: "Quality Policy Statement",
     icon: iqaccard4,
     description:
-      "The work of the IQAC is the first step towards internalization and institutionalization of quality enhancement initiatives.Its success depends upon the sense of belongingness and participation in all the constituents of the institution. It will be a facilitative and participative voluntary system/unit/organ of the institution. It has the potential to become a vehicle for ushering in quality enhancement by working out planned interventionist strategies by IQAC to remove deficiencies and enhance quality like the “Quality Circles” in industries.",
+      "To establish & effectively implement a quality system in all sphere of its activities, and through internal and external reviews, will work towards self evaluation and continual improvement and remain accountable to all its stakeholders.",
+  },
+  {
+    title: "Functions",
+    icon: iqaccard5,
+    description:
+      "Development and application of quality benchmarks/parameters for various academic and administrative activities of the institution",
     content: `
       <div>
         <h2 class="font-semibold text-2xl mb-3">Functions</h2>
         <p>
-        <strong>6. </strong>
-         The work of the IQAC is the first step towards internalization and institutionalization of quality enhancement initiatives.Its success depends upon the sense of belongingness and participation in all the constituents of the institution. It will be a facilitative and participative voluntary system/unit/organ of the institution. It has the potential to become a vehicle for ushering in quality enhancement by working out planned interventionist strategies by IQAC to remove deficiencies and enhance quality like the “Quality Circles” in industries.
+        <strong> 
+       Some of the functions expected of the IQAC are:</strong>
         </p>
-        <p>
-        <strong>7. </strong>
-         Some of the functions of the IQAC are:
-        </p>
- <p class="mb-1 mt-2"><strong>(a) Development and application of quality benchmarks</strong> - Setting standards for academic excellence and institutional performance</p>
-  <p class="mb-1"><strong>(b) Parameters for academic/administrative activities</strong> - Establishing measurable criteria for institutional operations</p>
-  <p class="mb-1"><strong>(c) Learner-centric environment development</strong> - Fostering quality education through faculty development and technology integration</p>
-  <p class="mb-1"><strong>(d) Stakeholder feedback analysis</strong> - Systematic collection and evaluation of quality-related input</p>
-  <p class="mb-1"><strong>(e) Quality parameter dissemination</strong> - Sharing quality metrics and standards with all stakeholders</p>
-  <p class="mb-1"><strong>(f) Quality workshops and seminars</strong> - Organizing knowledge-sharing events and quality circles</p>
-  <p class="mb-1"><strong>(g) Quality improvement documentation</strong> - Recording programs and activities enhancing institutional quality</p>
-  <p class="mb-1"><strong>(h) Quality coordination hub</strong> - Serving as nodal agency for best practice adoption</p>
-  <p class="mb-1"><strong>(i) Institutional database management</strong> - Maintaining quality-enhancing systems through MIS</p>
-  <p class="mb-2"><strong>(j) Academic/administrative audits</strong> - Conducting periodic reviews and follow-up actions</p>
+         <ul>
+         <li>
+         Development and application of quality benchmarks/parameters for various academic and administrative activities of the institution;</li>
 
+         <li>
+         Facilitating the creation of a learner-centric environment conducive to quality education and faculty maturation to adopt the required knowledge and technology for participatory teaching and learning process;
 
+         </li>
 
+         <li>
+         Arrangement for feedback response from students, parents and other stakeholders on quality-related institutional processes;
 
-      </div>
-    `,
-  },
-  {
-    title: "Conclusion",
-    icon: iqaccard5,
-    description:
-      "he IQAC will strive to create a work culture wherein whatever activity is undertaken by the institute it will be accomplished with the highest standard in quality. Quality, over a period, should become a hallmark of the College. Consequent to formation of IQAC, the Quality Control Cell stands dissolved with immediate effect.However, the Academic Cell will continue to function as hitherto before.",
-    content: `
-      <div>
-        <h2 class="font-semibold text-2xl mb-3">Conclusion</h2>
-        <p>
-        <strong>8. </strong>
-        he IQAC will strive to create a work culture wherein whatever activity is undertaken by the institute it will be accomplished with the highest standard in quality. Quality, over a period, should become a hallmark of the College. Consequent to formation of IQAC, the Quality Control Cell stands dissolved with immediate effect.However, the Academic Cell will continue to function as hitherto before.
-        </p>
-         <p>
-        <strong>9. </strong>
-     Consequent to formation of IQAC, the Quality Control Cell stands dissolved with immediate effect. However, the Academic Cell will continue to function as hitherto before.
-        </p>
+         </li>
+
+         <li>
+         Dissemination of information on various quality parameters of higher education;
+
+         </li>
+
+         <li>
+         Organization of inter and intra institutional workshops, seminars on quality related themes and promotion of quality circles;
+
+         </li>
+
+         <li>
+         Documentation of the various programmes/activities leading to quality improvement;
+
+         </li>
+
+         <li>
+         Acting as a nodal agency of the Institution for coordinating quality-related activities, including adoption and dissemination of best practices;
+
+         </li>
+
+         <li>
+         Development and maintenance of institutional database through MIS for the purpose of maintaining /enhancing the institutional quality;
+
+         </li>
+
+         <li>
+         Development of Quality Culture in the institution;
+
+         </li>
+
+         <li>
+         Preparation of the Annual Quality Assurance Report (AQAR) of the University based on the quality parameters/assessment criteria developed by the relevant quality assurance body (like NAAC, NBA, COA etc.) in the prescribed format;
+
+         </li>
+         
+         </ul>
       </div>
     `,
   },
