@@ -63,10 +63,10 @@ const WhySRMU: React.FC<Props> = ({ items }) => {
             <div className="w-full max-w-7xl flex flex-row items-start gap-10 p-4">
 
                 <div className="flex flex-col items-start min-w-[300px] mt-6">
-                    <h2 className="text-6xl font-extrabold leading-tight mb-2">
+                    <h2 className="leading-[1.2] text-[#1a1a1a] font-medium text-[3.125rem] mb-[1rem]">
                         Why SRMU?
                     </h2>
-                    <p className="text-2xl text-gray-700 mb-8">At SRMU, you will</p>
+                    <p className="text-[20px] text-gray-700 mb-8">At SRMU, you will</p>
 
                     <div className="flex gap-4">
                         <button

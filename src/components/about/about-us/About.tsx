@@ -16,21 +16,28 @@ const About: React.FC = () => {
         <div>
             <div className={`${Classes["container"]}`}>
                 <CustomOverviewSection data={aboutOverviewData} />
-                
+
                 <Counter counterData={counterDataForAboutPage} classes="counter" aboutusClass={"text-black mt-3"} />
-                <Slider/>
-                <Effort />
-                {/* kulgeet section  */}
-                <div className='flex flex-col items-center justify-center pb-10 w-full '>
-                    <h1 className='text-[46px] text=[#023047] font-medium'>Kulgeet</h1>
-                    <img src={kulgeetimg} alt="kulgeet" />
-                </div>
+                <Slider />
             </div>
             <MIssionAndVission />
-            <div >
-                <CoreValues />
-            </div>
+            <CoreValues />
             <KnowOurCampus />
+            <div className={`${Classes["container"]} mt-14`}>
+
+                <Effort />
+            </div>
+            {/* kulgeet section  */}
+            <div className='flex flex-col items-center justify-center pb-10 w-full '>
+                <h1 className='text-[46px] text=[#023047] font-medium'>Kulgeet</h1>
+                <img src={kulgeetimg} alt="kulgeet" />
+            </div>
+
+
+            <div >
+
+            </div>
+
             <CustomTopFooter data={CustomTopFooterAbout} />
 
         </div>
