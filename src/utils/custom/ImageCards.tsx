@@ -8,8 +8,8 @@ interface CardProps {
 const ImageCards: React.FC<CardProps> = ({ card }) => {
     return (
         <>
-            <a
-                href={card.linkTo}
+            <div
+                
                 className="block w-80 h-full rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
             >
                 <div className="relative w-full h-full">
@@ -26,7 +26,7 @@ const ImageCards: React.FC<CardProps> = ({ card }) => {
                         <span className="block text-4xl font-bold">→</span>
                     </div>
                 </div>
-            </a>
+            </div>
         </>
     );
 };

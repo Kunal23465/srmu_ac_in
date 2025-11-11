@@ -29,6 +29,11 @@ import IirsIsroPage from "../pages/academics/iirs-isro/IirsIsroPage";
 import CurriculumDesignPage from "../pages/academics/curriculum-design/CurriculumDesignPage";
 import AdmissonsPage from "../pages/admissions/AdmissionPage";
 import OverviewPage from "../pages/admissions/overview/OverviewPage";
+import FeeStructurePage from "../pages/admissions/fee-structure/FeeStructurePage";
+import ShiftSchedulePage from "../pages/admissions/shift-schedule/ShiftSchedulePage";
+import DocumentChecklistPage from "../pages/admissions/document-checklist/DocumentChecklistPage";
+import AdmissionFaqPage from "../pages/admissions/admission-faq/AdmissionFaqPage";
+import ProgramFinderPage from "../pages/admissions/program-finder/ProgramFinderPage";
 
 
 interface IMatches {
@@ -224,6 +229,43 @@ export const routes = [
                         element: <OverviewPage />,
                         handle: {
                             crumb: () => <Link to="/">Admission Overview</Link>,
+                        },
+                    },
+                    {
+
+                        path: "fee-structure",
+                        element: <FeeStructurePage />,
+                        handle: {
+                            crumb: () => <Link to="/">Fee Structure</Link>,
+                        },
+                    },
+                    {
+                        path: "shift-schedule",
+                        element: <ShiftSchedulePage />,
+                        handle: {
+                            crumb: () => <Link to="/">Shift Schedule</Link>,
+                        },
+                    },
+                    {
+                        path: "document-checklist",
+                        element: <DocumentChecklistPage />,
+                        handle: {
+                            crumb: () => <Link to="/">Document Checklist</Link>,
+                        },
+                    },
+                    {
+                        path: "admission-faq",
+                        element: <AdmissionFaqPage />,
+                        handle: {
+                            crumb: () => <Link to="/">Academic Bank of Credit</Link>,
+                        },
+                    },
+
+                    {
+                        path: "program-finder",
+                        element: <ProgramFinderPage />,
+                        handle: {
+                            crumb: () => <Link to="/">Program Finder</Link>,
                         },
                     },
 
