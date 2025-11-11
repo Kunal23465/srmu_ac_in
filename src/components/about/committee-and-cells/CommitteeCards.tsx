@@ -57,19 +57,18 @@ const CommitteeCard: React.FC<CommitteeCardProps> = ({
   );
 
   const cardImage = (
-    <div className="aspect-video">
+    <div className="aspect-video p-2">
       <img
         src={imagePath}
         alt={title}
-        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 cursor-pointer"
+        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 cursor-pointer rounded-br-3xl"
       />
     </div>
   );
 
   return (
-    <div
-      className="group bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col h-full hover:bg-[rgb(15,74,133)]"
-    >
+    <div className="group bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col h-full hover:bg-[rgb(15,74,133)] p-2">
+
       {!imageIsBottom && cardImage}
       {cardContent}
       {imageIsBottom && cardImage}

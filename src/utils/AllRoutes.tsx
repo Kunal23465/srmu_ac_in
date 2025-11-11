@@ -30,6 +30,10 @@ import FeeStructurePage from "../pages/admissions/fee-structure/FeeStructurePage
 import ShiftSchedulePage from "../pages/admissions/shift-schedule/ShiftSchedulePage";
 import DocumentChecklistPage from "../pages/admissions/document-checklist/DocumentChecklistPage";
 import AdmissionFaqPage from "../pages/admissions/admission-faq/AdmissionFaqPage";
+import InstitutePage from "../pages/Academics/institutes/InstitutePage";
+import ProgramFinderPage from "../pages/admissions/program-finder/ProgramFinderPage";
+
+
 
 
 interface IMatches {
@@ -139,6 +143,14 @@ export const routes = [
 
                 children: [
                     {
+                        path: "institutes-info",
+                        element: <InstitutePage />,
+                        handle: {
+                            crumb: () => <Link to="/"> Academics</Link>,
+                        },
+                    },
+
+                    {
                         path: "policies-reports",
                         element: <PoliciesReportsPage />,
                         handle: {
@@ -154,14 +166,14 @@ export const routes = [
                     },
                     {
                         path: "teaching-learning-process",
-                        element: <TeachingLearningProcessPage/>,
+                        element: <TeachingLearningProcessPage />,
                         handle: {
                             crumb: () => <Link to="/">Teaching Learning Process</Link>,
                         },
                     },
                     {
                         path: "academic-depository-nad-and-abc",
-                        element: <AcademicBankOfCreditPage/>,
+                        element: <AcademicBankOfCreditPage />,
                         handle: {
                             crumb: () => <Link to="/">Academic Bank of Credit</Link>,
                         },
@@ -241,14 +253,14 @@ export const routes = [
                     },
 
                     {
-                        path: "e-content-development-cell",
-                        element: <EContentCellPage />,
+                        path: "program-finder",
+                        element: <ProgramFinderPage />,
                         handle: {
-                            crumb: () => <Link to="/">E-CONTENT DEVELOPMENT CELL</Link>,
+                            crumb: () => <Link to="/">Program Finder</Link>,
                         },
                     },
 
-        
+
 
                 ]
             },
