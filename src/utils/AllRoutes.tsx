@@ -27,6 +27,8 @@ import EContentCellPage from "../pages/academics/e-content-cell/EContentCellPage
 import SwayamNptelPage from "../pages/academics/swayam-nptel/SwayamNptelPage";
 import IirsIsroPage from "../pages/academics/iirs-isro/IirsIsroPage";
 import CurriculumDesignPage from "../pages/academics/curriculum-design/CurriculumDesignPage";
+import AdmissonsPage from "../pages/admissions/AdmissionPage";
+import OverviewPage from "../pages/admissions/overview/OverviewPage";
 
 
 interface IMatches {
@@ -208,87 +210,26 @@ export const routes = [
 
                 ]
             },
+
             {
                 path: "/admissions",
-                element: <AcademicsPage />,
+                element: <AdmissonsPage />,
                 handle: {
                     crumb: () => <Link to="/">Admissions</Link>,
                 },
 
                 children: [
                     {
-                        path: "institutes-info",
-                        element: <InstitutePage />,
+                        path: "admission-overview",
+                        element: <OverviewPage />,
                         handle: {
-                            crumb: () => <Link to="/"> Academics</Link>,
-                        },
-                    },
-
-                    {
-                        path: "policies-reports",
-                        element: <PoliciesReportsPage />,
-                        handle: {
-                            crumb: () => <Link to="/">Policies & Reports</Link>,
-                        },
-                    },
-                    {
-                        path: "academic-calender",
-                        element: <AcademicCalendarsPage />,
-                        handle: {
-                            crumb: () => <Link to="/">Academic Calendars</Link>,
-                        },
-                    },
-                    {
-                        path: "teaching-learning-process",
-                        element: <TeachingLearningProcessPage />,
-                        handle: {
-                            crumb: () => <Link to="/">Teaching Learning Process</Link>,
-                        },
-                    },
-                    {
-                        path: "academic-depository-nad-and-abc",
-                        element: <AcademicBankOfCreditPage />,
-                        handle: {
-                            crumb: () => <Link to="/">Academic Bank of Credit</Link>,
-                        },
-                    },
-
-                    {
-                        path: "e-content-development-cell",
-                        element: <EContentCellPage />,
-                        handle: {
-                            crumb: () => <Link to="/">E-CONTENT DEVELOPMENT CELL</Link>,
-                        },
-                    },
-
-                    {
-                        path: "swayam-nptel-local-chapter",
-                        element: <SwayamNptelPage />,
-                        handle: {
-                            crumb: () => <Link to="/">
-                                SWAYAM NPTEL Local Chapter</Link>,
-                        },
-                    },
-                    {
-                        path: "iirs-isro",
-                        element: <IirsIsroPage />,
-                        handle: {
-                            crumb: () => <Link to="/">
-                                IIRS – ISRO</Link>,
-                        },
-                    },
-                    {
-                        path: "curriculum-design",
-                        element: <CurriculumDesignPage />,
-                        handle: {
-                            crumb: () => <Link to="/">
-                                Curriculum Design
-                            </Link>,
+                            crumb: () => <Link to="/">Admission Overview</Link>,
                         },
                     },
 
                 ]
             },
+
         ]
     }
 ]

@@ -60,13 +60,13 @@ export const HeaderData = [
                         item: "Academics",
                         path: "/academics",
                         subItem: [{ item: "Academic Calendar", path: "/academics/academic-calender" },
-                            {item: "Institute", path: "/academics/institutes-info"},
-                            {item: "Policies & Reports", path: "/academics/policies-reports"},
-                            {item: "E-Content Cell", path: "/academics/e-content-development-cell"},
-                            {item: "Curriculum Design", path: "/academics/curriculum-design"},
-                            {item: "Teaching Learning Process", path: "/academics/teaching-learning-process"},
-                            {item: "Academic Bank of Credit", path: "/academics/academic-depository-nad-and-abc"},
-                        
+                        { item: "Institute", path: "/academics/institutes-info" },
+                        { item: "Policies & Reports", path: "/academics/policies-reports" },
+                        { item: "E-Content Cell", path: "/academics/e-content-development-cell" },
+                        { item: "Curriculum Design", path: "/academics/curriculum-design" },
+                        { item: "Teaching Learning Process", path: "/academics/teaching-learning-process" },
+                        { item: "Academic Bank of Credit", path: "/academics/academic-depository-nad-and-abc" },
+
                         ],
                     },
                     {
@@ -76,6 +76,7 @@ export const HeaderData = [
                         subItem: [
                             { item: "Courses Offerd", path: "admissions/course-offered" },
                             { item: "How To Apply", path: "admissions/how-to-apply" },
+                            { item: "Overview", path: "admissions/admission-overview" },
                             {
                                 item: "Anti Ragging",
                                 path: "#",
