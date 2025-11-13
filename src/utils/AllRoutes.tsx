@@ -20,29 +20,29 @@ import FacilitiesPage from "../pages/campus-life/facilities/FacilitiesPage";
 import CentralLibraryPage from "../pages/campus-life/central-library/CentralLibraryPage";
 import EventPage from "../pages/campus-life/events/EventPage";
 
-import AcademicsPage from "../pages/Academics/AcademicsPage";
-import InstitutePage from "../pages/Academics/institutes/InstitutePage";
-import PoliciesReportsPage from "../pages/Academics/Policies-Reports/PoliciesReportsPage";
-import AcademicCalendarsPage from "../pages/Academics/academic-calendars/AcademicCalendarsPage";
-import TeachingLearningProcessPage from "../pages/Academics/teaching-learning-process/TeachingLearningProcessPage";
-import AcademicBankOfCreditPage from "../pages/Academics/academic-bank-credit/AcademicBankOfCreditPage";
-import EContentCellPage from "../pages/Academics/e-content-cell/EContentCellPage";
-import SwayamNptelPage from "../pages/Academics/swayam-nptel/SwayamNptelPage";
-import IirsIsroPage from "../pages/Academics/iirs-isro/IirsIsroPage";
-import CurriculumDesignPage from "../pages/Academics/curriculum-design/CurriculumDesignPage";
+import AcademicsPage from "../pages/academics/AcademicsPage";
+import InstitutePage from "../pages/academics/institutes/InstitutePage";
+import PoliciesReportsPage from "../pages/academics/Policies-Reports/PoliciesReportsPage";
+import AcademicCalendarsPage from "../pages/academics/academic-calendars/AcademicCalendarsPage";
+import TeachingLearningProcessPage from "../pages/academics/teaching-learning-process/TeachingLearningProcessPage";
+import AcademicBankOfCreditPage from "../pages/academics/academic-bank-credit/AcademicBankOfCreditPage";
+import EContentCellPage from "../pages/academics/e-content-cell/EContentCellPage";
+import SwayamNptelPage from "../pages/academics/swayam-nptel/SwayamNptelPage";
+import IirsIsroPage from "../pages/academics/iirs-isro/IirsIsroPage";
+import CurriculumDesignPage from "../pages/academics/curriculum-design/CurriculumDesignPage";
 import FeeStructurePage from "../pages/admissions/fee-structure/FeeStructurePage";
 import ShiftSchedulePage from "../pages/admissions/shift-schedule/ShiftSchedulePage";
 import DocumentChecklistPage from "../pages/admissions/document-checklist/DocumentChecklistPage";
 import AdmissionFaqPage from "../pages/admissions/admission-faq/AdmissionFaqPage";
 import ProgramFinderPage from "../pages/admissions/program-finder/ProgramFinderPage";
 import ScholarshipPage from "../pages/admissions/scholarship/ScholarshipPage";
-import LeadershipAndGovernancePage from "../pages/About/Leadership-and-Governance/LeadershipAndGovernancePage";
-import CommitteeAndCellsPage from "../pages/About/Committee-and-Cells/CommitteeAndCellsPage";
-import RecognitionApprovalsPage from "../pages/About/recognition-approval/RecognitionApprovalsPage";
-import IqacPage from "../pages/About/iqac-overview/IqacPage";
-import NAACPage from "../pages/About/NAAC/NAACPage";
-import NIRFPage from "../pages/About/NIRF/NIRFPage";
-import OragnisationStructurePage from "../pages/About/organisation-structure-plan/OrganisationStructurePlan";
+import LeadershipAndGovernancePage from "../pages/about/Leadership-and-Governance/LeadershipAndGovernancePage";
+import CommitteeAndCellsPage from "../pages/about/Committee-and-Cells/CommitteeAndCellsPage";
+import RecognitionApprovalsPage from "../pages/about/recognition-approval/RecognitionApprovalsPage";
+import IqacPage from "../pages/about/iqac-overview/IqacPage";
+import NAACPage from "../pages/about/NAAC/NAACPage";
+import NIRFPage from "../pages/about/NIRF/NIRFPage";
+import OragnisationStructurePage from "../pages/about/organisation-structure-plan/OrganisationStructurePlan";
 
 
 
