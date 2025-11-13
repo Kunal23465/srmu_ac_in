@@ -14,11 +14,7 @@ import CustomCommitteeDetailsPage from "./custom/CustomCommitteeDetailsPage";
 
 import AdmissonsPage from "../pages/admissions/AdmissionPage";
 import OverviewPage from "../pages/admissions/overview/OverviewPage";
-import FeeStructurePage from "../pages/admissions/fee-structure/FeeStructurePage";
-import ShiftSchedulePage from "../pages/admissions/shift-schedule/ShiftSchedulePage";
-import DocumentChecklistPage from "../pages/admissions/document-checklist/DocumentChecklistPage";
-import AdmissionFaqPage from "../pages/admissions/admission-faq/AdmissionFaqPage";
-import ProgramFinderPage from "../pages/admissions/program-finder/ProgramFinderPage";
+
 import CampusLifePage from "../pages/campus-life/CampusLifePage";
 import FacilitiesPage from "../pages/campus-life/facilities/FacilitiesPage";
 import CentralLibraryPage from "../pages/campus-life/central-library/CentralLibraryPage";
@@ -40,6 +36,14 @@ import EContentCellPage from "../pages/Academics/e-content-cell/EContentCellPage
 import SwayamNptelPage from "../pages/Academics/swayam-nptel/SwayamNptelPage";
 import IirsIsroPage from "../pages/Academics/iirs-isro/IirsIsroPage";
 import CurriculumDesignPage from "../pages/Academics/curriculum-design/CurriculumDesignPage";
+import FeeStructurePage from "../pages/admissions/fee-structure/FeeStructurePage";
+import ShiftSchedulePage from "../pages/admissions/shift-schedule/ShiftSchedulePage";
+import DocumentChecklistPage from "../pages/admissions/document-checklist/DocumentChecklistPage";
+import AdmissionFaqPage from "../pages/admissions/admission-faq/AdmissionFaqPage";
+import ProgramFinderPage from "../pages/admissions/program-finder/ProgramFinderPage";
+import ScholarshipPage from "../pages/admissions/scholarship/ScholarshipPage";
+
+
 
 
 interface IMatches {
@@ -307,6 +311,13 @@ export const routes = [
                         },
                     },
                     
+                    {
+                        path: "scholarship",
+                        element: <ScholarshipPage />,
+                        handle: {
+                            crumb: () => <Link to="/">Scholarship</Link>,
+                        },
+                    },
 
                 ]
             },

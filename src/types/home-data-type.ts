@@ -41,8 +41,8 @@ interface listContentTypes {
   item: string
 }
 export interface otherDataTypes {
-  id: number,
-  paraContent: string[],
+  id?: number,
+  paraContent?: string[],
   listContent?: listContentTypes[],
   eligibility?: string
 }

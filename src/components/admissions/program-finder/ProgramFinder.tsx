@@ -18,7 +18,8 @@ const ProgramFinder: React.FC = () => {
                 </div>
 
                 <ProgramFilter />
-                <ProgramFinderIntro/>
+                <ProgramFinderIntro />
+                
             </div>
             <CustomTopFooter data={feeStructureCustomTopFooter} />
 
