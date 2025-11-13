@@ -32,6 +32,7 @@ import DocumentChecklistPage from "../pages/admissions/document-checklist/Docume
 import AdmissionFaqPage from "../pages/admissions/admission-faq/AdmissionFaqPage";
 import InstitutePage from "../pages/Academics/institutes/InstitutePage";
 import ProgramFinderPage from "../pages/admissions/program-finder/ProgramFinderPage";
+import ScholarshipPage from "../pages/admissions/scholarship/ScholarshipPage";
 
 
 
@@ -260,7 +261,13 @@ export const routes = [
                         },
                     },
 
-
+                    {
+                        path: "scholarship",
+                        element: <ScholarshipPage />,
+                        handle: {
+                            crumb: () => <Link to="/">Scholarship</Link>,
+                        },
+                    },
 
                 ]
             },
