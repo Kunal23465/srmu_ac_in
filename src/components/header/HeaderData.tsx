@@ -230,6 +230,9 @@ export const HeaderData = [
                         path: "#",
                         subItem: [
                             { item: "Student Corner", path: "/campus-life/student-corner" },
+                            { item: "Facilitites", path: "/campus-life/facilities" },
+                            { item: "Central Library", path: "/campus-life/central-library" },
+                            { item: "Events", path: "/campus-life/events" },
                             { item: "Outreach", path: "/campus-life/outreach" },
                             { item: "Clubs", path: "/campus-life/clubs" },
                             {

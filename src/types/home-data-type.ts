@@ -50,4 +50,10 @@ export interface customeOverViewType {
   heading: string;
   content: string
   otherData?: otherDataTypes[]
+  links?: LinkType[];
+}
+
+export interface LinkType {
+  title: string;
+  url: string;
 }

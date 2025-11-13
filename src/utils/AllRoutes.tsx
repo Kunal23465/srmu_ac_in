@@ -34,6 +34,10 @@ import ShiftSchedulePage from "../pages/admissions/shift-schedule/ShiftScheduleP
 import DocumentChecklistPage from "../pages/admissions/document-checklist/DocumentChecklistPage";
 import AdmissionFaqPage from "../pages/admissions/admission-faq/AdmissionFaqPage";
 import ProgramFinderPage from "../pages/admissions/program-finder/ProgramFinderPage";
+import CampusLifePage from "../pages/campus-life/CampusLifePage";
+import FacilitiesPage from "../pages/campus-life/facilities/FacilitiesPage";
+import CentralLibraryPage from "../pages/campus-life/central-library/CentralLibraryPage";
+import EventPage from "../pages/campus-life/events/EventPage";
 
 
 interface IMatches {
@@ -268,6 +272,39 @@ export const routes = [
                             crumb: () => <Link to="/">Program Finder</Link>,
                         },
                     },
+
+                ]
+            },
+             {
+                path: "/campus-life",
+                element: <CampusLifePage />,
+                handle: {
+                    crumb: () => <Link to="/">Admissions</Link>,
+                },
+
+                children: [
+                    {
+                        path: "facilities",
+                        element: <FacilitiesPage />,
+                        handle: {
+                            crumb: () => <Link to="/">Facilities</Link>,
+                        },
+                    },
+                    {
+                        path: "central-library",
+                        element: <CentralLibraryPage />,
+                        handle: {
+                            crumb: () => <Link to="/">Central Library</Link>,
+                        },
+                    },
+                    {
+                        path: "events",
+                        element: <EventPage />,
+                        handle: {
+                            crumb: () => <Link to="/">Central Library</Link>,
+                        },
+                    },
+                    
 
                 ]
             },
