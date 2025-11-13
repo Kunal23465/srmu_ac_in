@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import Header from "../components/header/Header";
 import { Breadcrumbs } from "../utils/AllRoutes";
+import Footer from "../components/footer/Footer";
 
 const RootLayout: React.FC = () => {
   const location = useLocation();
@@ -20,7 +21,7 @@ const RootLayout: React.FC = () => {
         {location.pathname !== "/" && <Breadcrumbs />}
         <Outlet />
       </main>
-      <h1 className=" font-semibold">Footer</h1>
+      <Footer />
     </>
   );
 };

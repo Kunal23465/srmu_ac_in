@@ -198,6 +198,8 @@
   font-size: 18px;
 }
 
+
+
 .page-title-content .breadcrumb-item+.breadcrumb-item::before {
   content: "/ ";
   color: #ffff;
@@ -393,3 +395,4 @@
     padding-bottom: 2rem;
   }
 }
+
