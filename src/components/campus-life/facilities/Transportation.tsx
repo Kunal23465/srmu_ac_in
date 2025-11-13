@@ -1,0 +1,34 @@
+import { FaArrowRightLong } from 'react-icons/fa6'
+import bus from "../../../assets/images/campus-life/facilities/1-1-18102301254317.png"
+
+const Transportation = () => {
+    return (
+        <div className="px-4 md:px-20 py-10">
+            <div className="mb-8">
+                <h2 className="text-[#233E6F] font50 fw500">
+                    Transportation
+                </h2>
+            </div>
+
+            <div className='flex flex-col md:flex-row gap-8 md:gap-20 w-full'>
+                <div className="flex-1">
+                    <img src={bus} className='w-full h-auto object-cover rounded-lg' alt="Campus Bus"/>
+                </div>
+
+                <div className="flex-1 flex flex-col gap-4">
+                    <p>
+                        Shri Ramswaroop Memorial University (SRMU) boasts an exemplary transportation facility that plays a pivotal role in fostering accessibility and connectivity across its sprawling campus. The university's commitment to providing efficient transport services is evident through a well-maintained fleet of buses that cater to the commuting needs of students and faculty. These buses operate on multiple routes, linking various departments, hostels, and facilities, ensuring seamless mobility for the university community.
+                    </p>
+                    <p>
+                        SRMU's transportation facility is not merely about facilitating movement; it prioritizes safety and comfort. The buses are equipped with modern amenities, and the experienced drivers adhere to stringent safety measures, creating a secure environment for all passengers. The system operates on a well-organized schedule, enabling timely arrivals and departures. This well-coordinated transportation network contributes significantly to the overall campus experience, allowing students and staff to navigate the expansive university grounds efficiently.
+                    </p>
+                    <button className="bg-[#233E6F] hover:bg-white hover:text-[#233E6F] hover:border-1 hover:border-[#233E6F] cursor-pointer text-white px-4 py-3 text-sm rounded flex items-center gap-2 mt-4 w-max">
+                        Read More <FaArrowRightLong />
+                    </button>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+export default Transportation
