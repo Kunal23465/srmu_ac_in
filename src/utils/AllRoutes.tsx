@@ -283,7 +283,7 @@ export const routes = [
 
                 ]
             },
-             {
+            {
                 path: "/campus-life",
                 element: <CampusLifePage />,
                 handle: {
@@ -312,7 +312,7 @@ export const routes = [
                             crumb: () => <Link to="/">Central Library</Link>,
                         },
                     },
-                    
+
                     {
                         path: "scholarship",
                         element: <ScholarshipPage />,
