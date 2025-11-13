@@ -43,6 +43,9 @@ import IqacPage from "../pages/about/iqac-overview/IqacPage";
 import NAACPage from "../pages/about/NAAC/NAACPage";
 import NIRFPage from "../pages/about/NIRF/NIRFPage";
 import OragnisationStructurePage from "../pages/about/organisation-structure-plan/OrganisationStructurePlan";
+import ResearchPage from "../pages/Research/ResearchPage";
+import ResearchOverviewPage from "../pages/Research/Overview/ResearchOverviewPage";
+import ProcessAndInitiativePage from "../pages/Research/Process-and-Initiative/ProcessAndInitiativePage";
 
 
 
@@ -60,273 +63,284 @@ type HandleType = {
     crumb: (param?: string) => React.ReactNode;
 };
 export const routes = [
-    {
-        path: "/",
-        element: <RootLayout />,
+  {
+    path: "/",
+    element: <RootLayout />,
+    handle: {
+      crumb: () => <Link to="/">Home</Link>,
+    },
+
+    children: [
+      {
+        index: true,
+        element: <HomePage />,
         handle: {
-            crumb: () => <Link to="/">Home</Link>,
+          crumb: () => <Link to="/">Home</Link>,
+        },
+      },
+      {
+        path: "/about",
+        element: <AboutPage />,
+        handle: {
+          crumb: () => <Link to="/about">About Us</Link>,
+        },
+        children: [
+          {
+            path: "leadership-and-governance",
+            element: <LeadershipAndGovernancePage />,
+            handle: {
+              crumb: () => <Link to="/">Leadership and Governance</Link>,
+            },
+          },
+          {
+            path: "committees-and-cells",
+            element: <CommitteeAndCellsPage />,
+            handle: {
+              crumb: () => <Link to="/about/committees-and-cells">Committees and Cells</Link>,
+            },
+
+            children: committeeCards.map((card) => ({
+              path: card.routeKey,
+              element: <CustomCommitteeDetailsPage committee={card} />,
+              handle: {
+                crumb: () => <a>{card.breadcrumb}</a>,
+              },
+            })),
+          },
+
+          {
+            path: "recognition-approvals",
+            element: <RecognitionApprovalsPage />,
+            handle: {
+              crumb: () => <Link to="/">Approvals & Associations</Link>,
+            },
+          },
+          {
+            path: "iqac-overview",
+            element: <IqacPage />,
+            handle: {
+              crumb: () => <Link to="/">IQAC Overview</Link>,
+            },
+          },
+          {
+            path: "naac",
+            element: <NAACPage />,
+            handle: {
+              crumb: () => <Link to="/">NAAC</Link>,
+            },
+          },
+          {
+            path: "nirf",
+            element: <NIRFPage />,
+            handle: {
+              crumb: () => <Link to="/">NIRF</Link>,
+            },
+          },
+          {
+            path: "organization-structure-plan",
+            element: <OragnisationStructurePage />,
+            handle: {
+              crumb: () => <Link to="/">NIRF</Link>,
+            },
+          },
+        ],
+      },
+      {
+        path: "/academics",
+        element: <AcademicsPage />,
+        handle: {
+          crumb: () => <Link to="/">Academics</Link>,
         },
 
         children: [
-            {
-                index: true,
-                element: <HomePage />,
-                handle: {
-                    crumb: () => <Link to="/">Home</Link>,
-                },
-
+          {
+            path: "institutes-info",
+            element: <InstitutePage />,
+            handle: {
+              crumb: () => <Link to="/"> Academics</Link>,
             },
-            {
-                path: "/about",
-                element: <AboutPage />,
-                handle: {
-                    crumb: () => <Link to="/about">About Us</Link>,
-                },
-                children: [
-                    {
-                        path: "leadership-and-governance",
-                        element: <LeadershipAndGovernancePage />,
-                        handle: {
-                            crumb: () => <Link to="/">Leadership and Governance</Link>,
-                        },
-                    },
-                    {
-                        path: "committees-and-cells",
-                        element: <CommitteeAndCellsPage />,
-                        handle: {
-                            crumb: () => <Link to="/about/committees-and-cells">Committees and Cells</Link>,
-                        },
+          },
 
-                        children: committeeCards.map(card => ({
-                            path: card.routeKey,
-                            element: <CustomCommitteeDetailsPage committee={card} />,
-                            handle: {
-                                crumb: () => <a>{card.breadcrumb}</a>,
-                            }
-                        }))
-                    },
-
-                    {
-                        path: "recognition-approvals",
-                        element: <RecognitionApprovalsPage />,
-                        handle: {
-                            crumb: () => <Link to="/">
-                                Approvals & Associations</Link>,
-                        },
-                    },
-                    {
-                        path: "iqac-overview",
-                        element: <IqacPage />,
-                        handle: {
-                            crumb: () => <Link to="/">
-
-                                IQAC Overview</Link>,
-                        },
-                    },
-                    {
-                        path: "naac",
-                        element: <NAACPage />,
-                        handle: {
-                            crumb: () => <Link to="/">NAAC</Link>,
-                        },
-                    },
-                    {
-                        path: "nirf",
-                        element: <NIRFPage />,
-                        handle: {
-                            crumb: () => <Link to="/">NIRF</Link>,
-                        },
-                    },
-                    {
-                        path: "organization-structure-plan",
-                        element: <OragnisationStructurePage />,
-                        handle: {
-                            crumb: () => <Link to="/">NIRF</Link>,
-                        },
-                    }
-                ]
+          {
+            path: "policies-reports",
+            element: <PoliciesReportsPage />,
+            handle: {
+              crumb: () => <Link to="/">Policies & Reports</Link>,
             },
-            {
-                path: "/academics",
-                element: <AcademicsPage />,
-                handle: {
-                    crumb: () => <Link to="/">Academics</Link>,
-                },
-
-                children: [
-                    {
-                        path: "institutes-info",
-                        element: <InstitutePage />,
-                        handle: {
-                            crumb: () => <Link to="/"> Academics</Link>,
-                        },
-                    },
-
-                    {
-                        path: "policies-reports",
-                        element: <PoliciesReportsPage />,
-                        handle: {
-                            crumb: () => <Link to="/">Policies & Reports</Link>,
-                        },
-                    },
-                    {
-                        path: "academic-calender",
-                        element: <AcademicCalendarsPage />,
-                        handle: {
-                            crumb: () => <Link to="/">Academic Calendars</Link>,
-                        },
-                    },
-                    {
-                        path: "teaching-learning-process",
-                        element: <TeachingLearningProcessPage />,
-                        handle: {
-                            crumb: () => <Link to="/">Teaching Learning Process</Link>,
-                        },
-                    },
-                    {
-                        path: "academic-depository-nad-and-abc",
-                        element: <AcademicBankOfCreditPage />,
-                        handle: {
-                            crumb: () => <Link to="/">Academic Bank of Credit</Link>,
-                        },
-                    },
-
-                    {
-                        path: "e-content-development-cell",
-                        element: <EContentCellPage />,
-                        handle: {
-                            crumb: () => <Link to="/">E-CONTENT DEVELOPMENT CELL</Link>,
-                        },
-                    },
-
-                    {
-                        path: "swayam-nptel-local-chapter",
-                        element: <SwayamNptelPage />,
-                        handle: {
-                            crumb: () => <Link to="/">
-                                SWAYAM NPTEL Local Chapter</Link>,
-                        },
-                    },
-                    {
-                        path: "iirs-isro",
-                        element: <IirsIsroPage />,
-                        handle: {
-                            crumb: () => <Link to="/">
-                                IIRS – ISRO</Link>,
-                        },
-                    },
-                    {
-                        path: "curriculum-design",
-                        element: <CurriculumDesignPage />,
-                        handle: {
-                            crumb: () => <Link to="/">
-                                Curriculum Design
-                            </Link>,
-                        },
-                    },
-
-                ]
+          },
+          {
+            path: "academic-calender",
+            element: <AcademicCalendarsPage />,
+            handle: {
+              crumb: () => <Link to="/">Academic Calendars</Link>,
             },
-
-            {
-                path: "/admissions",
-                element: <AdmissonsPage />,
-                handle: {
-                    crumb: () => <Link to="/">Admissions</Link>,
-                },
-
-                children: [
-                    {
-                        path: "admission-overview",
-                        element: <OverviewPage />,
-                        handle: {
-                            crumb: () => <Link to="/">Admission Overview</Link>,
-                        },
-                    },
-                    {
-
-                        path: "fee-structure",
-                        element: <FeeStructurePage />,
-                        handle: {
-                            crumb: () => <Link to="/">Fee Structure</Link>,
-                        },
-                    },
-                    {
-                        path: "shift-schedule",
-                        element: <ShiftSchedulePage />,
-                        handle: {
-                            crumb: () => <Link to="/">Shift Schedule</Link>,
-                        },
-                    },
-                    {
-                        path: "document-checklist",
-                        element: <DocumentChecklistPage />,
-                        handle: {
-                            crumb: () => <Link to="/">Document Checklist</Link>,
-                        },
-                    },
-                    {
-                        path: "admission-faq",
-                        element: <AdmissionFaqPage />,
-                        handle: {
-                            crumb: () => <Link to="/">Academic Bank of Credit</Link>,
-                        },
-                    },
-
-                    {
-                        path: "program-finder",
-                        element: <ProgramFinderPage />,
-                        handle: {
-                            crumb: () => <Link to="/">Program Finder</Link>,
-                        },
-                    },
-
-                ]
+          },
+          {
+            path: "teaching-learning-process",
+            element: <TeachingLearningProcessPage />,
+            handle: {
+              crumb: () => <Link to="/">Teaching Learning Process</Link>,
             },
-             {
-                path: "/campus-life",
-                element: <CampusLifePage />,
-                handle: {
-                    crumb: () => <Link to="/">Admissions</Link>,
-                },
-
-                children: [
-                    {
-                        path: "facilities",
-                        element: <FacilitiesPage />,
-                        handle: {
-                            crumb: () => <Link to="/">Facilities</Link>,
-                        },
-                    },
-                    {
-                        path: "central-library",
-                        element: <CentralLibraryPage />,
-                        handle: {
-                            crumb: () => <Link to="/">Central Library</Link>,
-                        },
-                    },
-                    {
-                        path: "events",
-                        element: <EventPage />,
-                        handle: {
-                            crumb: () => <Link to="/">Central Library</Link>,
-                        },
-                    },
-                    
-                    {
-                        path: "scholarship",
-                        element: <ScholarshipPage />,
-                        handle: {
-                            crumb: () => <Link to="/">Scholarship</Link>,
-                        },
-                    },
-
-                ]
+          },
+          {
+            path: "academic-depository-nad-and-abc",
+            element: <AcademicBankOfCreditPage />,
+            handle: {
+              crumb: () => <Link to="/">Academic Bank of Credit</Link>,
             },
+          },
 
-        ]
-    }
-]
+          {
+            path: "e-content-development-cell",
+            element: <EContentCellPage />,
+            handle: {
+              crumb: () => <Link to="/">E-CONTENT DEVELOPMENT CELL</Link>,
+            },
+          },
+
+          {
+            path: "swayam-nptel-local-chapter",
+            element: <SwayamNptelPage />,
+            handle: {
+              crumb: () => <Link to="/">SWAYAM NPTEL Local Chapter</Link>,
+            },
+          },
+          {
+            path: "iirs-isro",
+            element: <IirsIsroPage />,
+            handle: {
+              crumb: () => <Link to="/">IIRS – ISRO</Link>,
+            },
+          },
+          {
+            path: "curriculum-design",
+            element: <CurriculumDesignPage />,
+            handle: {
+              crumb: () => <Link to="/">Curriculum Design</Link>,
+            },
+          },
+        ],
+      },
+
+      {
+        path: "/admissions",
+        element: <AdmissonsPage />,
+        handle: {
+          crumb: () => <Link to="/">Admissions</Link>,
+        },
+
+        children: [
+          {
+            path: "admission-overview",
+            element: <OverviewPage />,
+            handle: {
+              crumb: () => <Link to="/">Admission Overview</Link>,
+            },
+          },
+          {
+            path: "fee-structure",
+            element: <FeeStructurePage />,
+            handle: {
+              crumb: () => <Link to="/">Fee Structure</Link>,
+            },
+          },
+          {
+            path: "shift-schedule",
+            element: <ShiftSchedulePage />,
+            handle: {
+              crumb: () => <Link to="/">Shift Schedule</Link>,
+            },
+          },
+          {
+            path: "document-checklist",
+            element: <DocumentChecklistPage />,
+            handle: {
+              crumb: () => <Link to="/">Document Checklist</Link>,
+            },
+          },
+          {
+            path: "admission-faq",
+            element: <AdmissionFaqPage />,
+            handle: {
+              crumb: () => <Link to="/">Academic Bank of Credit</Link>,
+            },
+          },
+
+          {
+            path: "program-finder",
+            element: <ProgramFinderPage />,
+            handle: {
+              crumb: () => <Link to="/">Program Finder</Link>,
+            },
+          },
+        ],
+      },
+      {
+        path: "/campus-life",
+        element: <CampusLifePage />,
+        handle: {
+          crumb: () => <Link to="/">Admissions</Link>,
+        },
+
+        children: [
+          {
+            path: "facilities",
+            element: <FacilitiesPage />,
+            handle: {
+              crumb: () => <Link to="/">Facilities</Link>,
+            },
+          },
+          {
+            path: "central-library",
+            element: <CentralLibraryPage />,
+            handle: {
+              crumb: () => <Link to="/">Central Library</Link>,
+            },
+          },
+          {
+            path: "events",
+            element: <EventPage />,
+            handle: {
+              crumb: () => <Link to="/">Central Library</Link>,
+            },
+          },
+
+          {
+            path: "scholarship",
+            element: <ScholarshipPage />,
+            handle: {
+              crumb: () => <Link to="/">Scholarship</Link>,
+            },
+          },
+        ],
+      },
+      {
+        path: "/research",
+        element: <ResearchPage />,
+        handle: {
+          crumb: () => <Link to="/">Research</Link>,
+        },
+
+        children: [
+          {
+            path: "overview",
+            element: <ResearchOverviewPage />,
+            handle: {
+              crumb: () => <Link to="/">Research Overview</Link>,
+            },
+          },
+          {
+            path: "process-and-initiatives",
+            element: <ProcessAndInitiativePage />,
+            handle: {
+              crumb: () => <Link to="/">Process And Initiatives</Link>,
+            },
+          },
+        ],
+      },
+    ],
+  },
+];
 
 function Breadcrumbs() {
     let matches: IMatches[] = useMatches();
