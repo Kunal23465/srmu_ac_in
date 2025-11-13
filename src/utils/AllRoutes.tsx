@@ -19,13 +19,7 @@ import CampusLifePage from "../pages/campus-life/CampusLifePage";
 import FacilitiesPage from "../pages/campus-life/facilities/FacilitiesPage";
 import CentralLibraryPage from "../pages/campus-life/central-library/CentralLibraryPage";
 import EventPage from "../pages/campus-life/events/EventPage";
-import LeadershipAndGovernancePage from "../pages/About/Leadership-and-Governance/LeadershipAndGovernancePage";
-import CommitteeAndCellsPage from "../pages/About/Committee-and-Cells/CommitteeAndCellsPage";
-import RecognitionApprovalsPage from "../pages/About/recognition-approval/RecognitionApprovalsPage";
-import IqacPage from "../pages/About/iqac-overview/IqacPage";
-import NAACPage from "../pages/About/NAAC/NAACPage";
-import NIRFPage from "../pages/About/NIRF/NIRFPage";
-import OragnisationStructurePage from "../pages/About/organisation-structure-plan/OrganisationStructurePlan";
+
 import AcademicsPage from "../pages/Academics/AcademicsPage";
 import InstitutePage from "../pages/Academics/institutes/InstitutePage";
 import PoliciesReportsPage from "../pages/Academics/Policies-Reports/PoliciesReportsPage";
@@ -42,6 +36,13 @@ import DocumentChecklistPage from "../pages/admissions/document-checklist/Docume
 import AdmissionFaqPage from "../pages/admissions/admission-faq/AdmissionFaqPage";
 import ProgramFinderPage from "../pages/admissions/program-finder/ProgramFinderPage";
 import ScholarshipPage from "../pages/admissions/scholarship/ScholarshipPage";
+import LeadershipAndGovernancePage from "../pages/about/Leadership-and-Governance/LeadershipAndGovernancePage";
+import CommitteeAndCellsPage from "../pages/about/Committee-and-Cells/CommitteeAndCellsPage";
+import RecognitionApprovalsPage from "../pages/about/recognition-approval/RecognitionApprovalsPage";
+import IqacPage from "../pages/about/iqac-overview/IqacPage";
+import NAACPage from "../pages/about/NAAC/NAACPage";
+import NIRFPage from "../pages/about/NIRF/NIRFPage";
+import OragnisationStructurePage from "../pages/about/organisation-structure-plan/OrganisationStructurePlan";
 
 
 
