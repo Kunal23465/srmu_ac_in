@@ -12,15 +12,20 @@ import { IoClose } from "react-icons/io5";
 import awards1 from "../../assets/images/award-footer1.png"
 import awards2 from "../../assets/images/award-footer2.png"
 import scanner from "../../assets/images/merchandise-scan.jpeg"
+import fb from "../../assets/images/social-icons/fb.png"
+import instagram from "../../assets/images/social-icons/instagram.png"
+import linkdin from "../../assets/images/social-icons/linkdin.png"
+import twitter from "../../assets/images/social-icons/twitter.png"
+import youtube from "../../assets/images/social-icons/youtube.png"
 export const footerData = {
   logo: { src: logosrmcem, alt: "SRMCEM Logo" },
   description:
     "Shri Ramswaroop Memorial College of Engineering & Management, Lucknow is one of the leading institutes of professional education in UP. SRMCEM is affiliated to Dr. A.P.J. Abdul Kalam Technical University and recognized by AICTE.",
   contact: {
-    address: "Tiwariganj, Faizabad Road, Lucknow (UP) - 226028",
-    phone1: "757-000-3074 , 983-901-0407",
+    address: "Shri Ramswaroop Memorial University Lucknow Deva Road, Barabanki",
+    phone1: "+91-9838904666",
     // phone2: "983-901-0407",
-    email: "admissions@srmcem.ac.in",
+    email: "admissions@srmu.ac.in",
   },
   otherLinks: [
     {
@@ -57,17 +62,17 @@ export const footerData = {
   getEnrolled: [
     {
       id: 0,
-      title: "Mandatory Disclosure",
+      title: "How to Apply",
       path: mandatoryDiscloserPdf,
     },
     {
       id: 1,
-      title: "Important Policies",
+      title: "Program Finder",
       path: "/imp-policies",
     },
     {
       id: 2,
-      title: "List of Holidays",
+      title: "Scholarships",
       path: "/list-holidays",
     },
   ],
@@ -82,25 +87,35 @@ export const footerData = {
   getEvolved: [
     {
       id: 0,
-      title: "How to apply",
+      title: "Our Institutes",
       path: "admissions/how-to-apply",
     },
     {
       id: 1,
-      title: "Program Finder",
+      title: "IQAC Developments",
+      path: "admissions/course-offered",
+    },
+    {
+      id: 2,
+      title: "Placements",
       path: "admissions/course-offered",
     },
 
   ],
-    getHelped: [
+  getHelped: [
     {
       id: 0,
-      title: "How to apply",
+      title: "Student Corner",
       path: "admissions/how-to-apply",
     },
     {
       id: 1,
-      title: "Program Finder",
+      title: "Result Portal",
+      path: "admissions/course-offered",
+    },
+    {
+      id: 2,
+      title: "Grievance Redressal System",
       path: "admissions/course-offered",
     },
 
@@ -118,42 +133,52 @@ export const footerData = {
     },
     {
       id: 2,
-      title: "Newsletters",
-      path: "/newsletters",
+      title: "RTI",
+      path: "#",
     },
   ],
 
-    getDelighted: [
+  getDelighted: [
     {
       id: 0,
-      title: "Careers",
+      title: "Central Library",
       path: "/career",
     },
     {
       id: 1,
-      title: "Contact us",
+      title: "Newsletter",
       path: "#",
     },
     {
       id: 2,
-      title: "Newsletters",
+      title: "Clubs",
+      path: "/newsletters",
+    },
+    {
+      id: 3,
+      title: "Events",
+      path: "/newsletters",
+    },
+    {
+      id: 4,
+      title: "Blogs",
       path: "/newsletters",
     },
   ],
   getResponsible: [
     {
       id: 0,
-      title: "Women Helpline - 9415115062",
+      title: "Green Initiative",
       path: "tel:9415115062",
     },
     {
       id: 1,
-      title: "Grievance Redressal System",
-      path: "https://docs.google.com/forms/d/e/1FAIpQLSde8Ov2JDvB1vYeL-jrqNrlman0gLstQVEWEJ6DN34-EsYdCQ/viewform?pli=1",
+      title: "Outreach Activations",
+      path: "#",
     },
     {
       id: 2,
-      title: "Anti-Sexual Harassment - ICC",
+      title: "Women Empowerment",
       path: anti_sexual,
     },
   ],
@@ -226,7 +251,7 @@ const Footer: React.FC = () => {
                     </span>
                     <h3 className="font-semibold text-sm sm:text-base text-[#ffb703] uppercase">Address</h3>
                   </div>
-                  <p className="text-[14px]">{footerData.contact.address}</p>
+                  <p className="text-[14px]!">{footerData.contact.address}</p>
                 </div>
                 <div className="flex flex-col gap-1 ">
                   <div className="flex items-center gap-x-2">
@@ -237,7 +262,7 @@ const Footer: React.FC = () => {
                     </span>
                     <h3 className="font-semibold text-sm sm:text-base text-[#ffb703] uppercase">Phone</h3>
                   </div>
-                  <p className="text-[14px]">{footerData.contact.phone1}</p>
+                  <p className="text-[14px]!">{footerData.contact.phone1}</p>
                 </div>
                 <div className="flex gap-1 flex-col">
                   <div className="flex items-center gap-x-2">
@@ -249,7 +274,7 @@ const Footer: React.FC = () => {
                     <h3 className="font-semibold text-sm sm:text-base text-[#ffb703] uppercase">Email</h3>
                   </div>
                   <p>
-                    <Link to={`mailto:${footerData.contact.email}`} className=" text-[14px]">
+                    <Link to={`mailto:${footerData.contact.email}`} className=" text-[14px]!">
                       {footerData.contact.email}
                     </Link>
                   </p>
@@ -260,40 +285,48 @@ const Footer: React.FC = () => {
                   to="https://www.facebook.com/SRMGPCOFFICIAL/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="border rounded-full text-sm sm:text-base p-1  p-1  w-6 sm:w-8 h-6 sm:h-8 flex items-center justify-center transition-all duration-300 hover:rotate-[360deg]  hover:border-[#ffb703] hover:bg-transparent hover:text-[#ffb703] cursor-pointer"
+                  className="flex items-center justify-center transition-all duration-300 hover:rotate-[360deg]  hover:border-[#ffb703] hover:bg-transparent hover:text-[#ffb703] cursor-pointer"
                   aria-label="Facebook"
                 >
-                  <FaFacebookF />
+                  <img src={fb} alt="facebook" />
                 </Link>
                 <Link
                   to="https://x.com/SrmgpcL"
                   target="_blank"
-                  className="border rounded-full text-sm sm:text-base p-1  w-6 sm:w-8 h-6 sm:h-8 flex items-center justify-center transition-all duration-300 hover:rotate-[360deg] hover:border-[#ffb703] hover:bg-transparent hover:text-[#ffb703] cursor-pointer"
+                  className=" flex items-center justify-center transition-all duration-300 hover:rotate-[360deg] hover:border-[#ffb703] hover:bg-transparent hover:text-[#ffb703] cursor-pointer"
                   aria-label="Twitter"
                 >
-                  <FaTwitter />
+                  <img src={instagram} alt="instagram" />
                 </Link>
                 <Link
                   to="https://www.instagram.com/srmgpc_official/#"
                   target="_blank"
-                  className="border rounded-full text-sm sm:text-base p-1  w-6 sm:w-8 h-6 sm:h-8 flex items-center justify-center transition-all duration-300 hover:rotate-[360deg] hover:border-[#ffb703] hover:bg-transparent hover:text-[#ffb703] cursor-pointer"
+                  className=" flex items-center justify-center transition-all duration-300 hover:rotate-[360deg] hover:border-[#ffb703] hover:bg-transparent hover:text-[#ffb703] cursor-pointer"
                   aria-label="Instagram"
                 >
-                  <FaInstagram />
+                  <img src={linkdin} alt="linkdin" />
                 </Link>
                 <Link
                   to="https://www.linkedin.com/in/srmgpc"
                   target="_blank"
-                  className="border rounded-full text-sm sm:text-base p-1 p-1  w-6 sm:w-8 h-6 sm:h-8 flex items-center justify-center transition-all duration-300 hover:rotate-[360deg] hover:border-[#ffb703] hover:bg-transparent hover:text-[#ffb703] cursor-pointer"
+                  className=" flex items-center justify-center transition-all duration-300 hover:rotate-[360deg] hover:border-[#ffb703] hover:bg-transparent hover:text-[#ffb703] cursor-pointer"
                   aria-label="LinkedIn"
                 >
-                  <FaLinkedinIn />
+                  <img src={twitter} alt="twitter" />
+                </Link>
+                <Link
+                  to="https://www.linkedin.com/in/srmgpc"
+                  target="_blank"
+                  className=" flex items-center justify-center transition-all duration-300 hover:rotate-[360deg] hover:border-[#ffb703] hover:bg-transparent hover:text-[#ffb703] cursor-pointer"
+                  aria-label="LinkedIn"
+                >
+                  <img src={youtube} alt="youtube" />
                 </Link>
               </div>
             </div>
             <div className=" w-full grid-second">
               <h3 className="font-semibold text-sm sm:text-base mb-3 text-[#ffb703]  Get Responsible uppercase">Get Enrolled</h3>
-              <ul className="space-y-2 pb-4">
+              <ul className="space-y-2 pb-4 list-none! border-b-2 border-dashed border-white ">
                 {footerData.getEnrolled.map((link, index) => (
                   <li key={index}>
                     <div className="flex items-center group hover:text-[#ffb703] ">
@@ -312,7 +345,7 @@ const Footer: React.FC = () => {
                 ))}
               </ul>
               <h3 className="font-semibold text-sm sm:text-base mt-4 mb-3 text-[#ffb703] uppercase">Get Evolved</h3>
-              <ul className="space-y-2  pb-4">
+              <ul className="space-y-2  pb-4 list-none! border-b-2 border-dashed border-white">
                 {footerData.getEvolved.map((link, index) => (
                   <li key={index}>
                     <div className="flex items-center group hover:text-[#ffb703]">
@@ -323,8 +356,8 @@ const Footer: React.FC = () => {
                   </li>
                 ))}
               </ul>
-               <h3 className="font-semibold text-sm sm:text-base mb-3 text-[#ffb703] mt-4 Get Responsible uppercase">Get Delighted</h3>
-              <ul className="space-y-2 pb-4">
+              <h3 className="font-semibold text-sm sm:text-base mb-3 text-[#ffb703] mt-4 Get Responsible uppercase">Get Delighted</h3>
+              <ul className="space-y-2 pb-4 list-none! ">
                 {footerData.getDelighted.map((link, index) => (
                   <li key={index}>
                     <div className="flex items-center group hover:text-[#ffb703]">
@@ -345,7 +378,7 @@ const Footer: React.FC = () => {
             </div>
             <div className="w-full grid-third">
               <h3 className="font-semibold text-sm sm:text-base mb-3 text-[#ffb703] uppercase ">Get Responsible</h3>
-              <ul className="space-y-2  pb-4">
+              <ul className="space-y-2  pb-4 list-none! border-b-2 border-dashed border-white">
                 {footerData.getResponsible.map((link, index) => (
                   <li key={index}>
                     <div className="flex items-center group hover:text-[#ffb703] ">
@@ -365,9 +398,9 @@ const Footer: React.FC = () => {
               </ul>
 
 
-             
+
               <h3 className="font-semibold text-sm sm:text-base mt-4 mb-3 text-[#ffb703] uppercase">Get Helped</h3>
-              <ul className="space-y-2  pb-4">
+              <ul className="space-y-2  pb-4 list-none! border-b-2 border-dashed border-white">
                 {footerData.getHelped.map((link, index) => (
                   <li key={index}>
                     <div className="flex items-center group hover:text-[#ffb703]">
@@ -378,8 +411,8 @@ const Footer: React.FC = () => {
                   </li>
                 ))}
               </ul>
- <h3 className="font-semibold text-sm sm:text-base mb-3 text-[#ffb703] mt-4 Get Responsible uppercase">Get Connected</h3>
-              <ul className="space-y-2 pb-4">
+              <h3 className="font-semibold text-sm sm:text-base mb-3 text-[#ffb703] mt-4 Get Responsible uppercase">Get Connected</h3>
+              <ul className="space-y-2 pb-4 list-none! ">
                 {footerData.getConected.map((link, index) => (
                   <li key={index}>
                     <div className="flex items-center group hover:text-[#ffb703]">
@@ -408,14 +441,14 @@ const Footer: React.FC = () => {
                 </span>{" "}
                 Virtual Tour
               </button>
-               <h3 className="font-semibold text-sm sm:text-base pt-4 mb-3 text-[#ffb703]  Get Responsible uppercase">Awards</h3>
-               <div className="flex gap-x-4">
+              <h3 className="font-semibold text-sm sm:text-base pt-4 mb-3 text-[#ffb703]  Get Responsible uppercase">Awards</h3>
+              <div className="flex gap-x-4">
                 <img src={awards1} alt="awards1" />
-                  <img src={awards2} alt="awards1" />
-               </div>
-                <h3 className="font-semibold text-sm sm:text-base pt-4 mb-3 text-[#ffb703]  Get Responsible uppercase">MERCH SHOP</h3>
-                <h4 className="font-semibold text-xs text-white">To Shop SRMU Merchandise Scan the Code</h4>
-                <img src={scanner} alt="scanner" className="max-w-[150px] mt-2" />
+                <img src={awards2} alt="awards1" />
+              </div>
+              <h3 className="font-semibold text-sm sm:text-base pt-4 mb-3 text-[#ffb703]  Get Responsible uppercase">MERCH SHOP</h3>
+              <h4 className="font-semibold text-xs text-white">To Shop SRMU Merchandise Scan the Code</h4>
+              <img src={scanner} alt="scanner" className="max-w-[150px] mt-2" />
 
             </div>
           </div>
