@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Holistic = () => {
+const Holistic:React.FC = () => {
   return (
     <div className='mb-10'>
         <h2 className='curr'>

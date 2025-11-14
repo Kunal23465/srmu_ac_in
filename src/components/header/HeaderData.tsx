@@ -45,22 +45,50 @@ export const HeaderData = [
             item: "About Us",
             path: "/about",
             subItem: [
-              { item: "Message", path: "/about/message" },
-              { item: "Administration", path: "/about/administration" },
-              { item: "IQAC", path: "/about/iqac" },
-              { item: "Membership", path: "/about/membership" },
-              { item: "Achievements", path: "/about/achievements" },
-              { item: "Visitors Testimonial", path: "/about/visitors" },
+              { item: "About SRMU", path: "/about" },
+              { item: "Leadership & Governance", path: "/about/leadership-and-governance" },
+              { item: "Committee & Cells", path: "/about/committees-and-cells" },
+              { item: "Approval & Associations", path: "/about/recognition-approvals" },
+              { item: "Awards & Rankings", path: "#" },
+              { item: "Quality Assurance Cell", path: "/about/iqac-overview" },
+              { item: "NAAC", path: "/about/naac" },
+              { item: "NIRF", path: "/about/nirf" },
+              { item: "Organizational Structure & Plan", path: "/about/organization-structure-plan" },
             ],
           },
           {
             id: 1,
             item: "Academics",
-            path: "/academics",
+            path: "/academics/institutes-info",
             subItem: [
               {
+                item: "Institute",
+                path: "/academics/institutes-info",
+              },
+              {
+                item: "Policies & Reports",
+                path: "/academics/policies-reports",
+              },
+              {
+                item: "Curriculum Design",
+                path: "/academics/curriculum-design",
+              },
+              {
+                item: "Teaching Learning Process",
+                path: "/academics/teaching-learning-process",
+              },
+              {
                 item: "Academic Calendar",
-                path: "/academics/academics-calender",
+                path: "/academics/academic-calender",
+              },
+
+              {
+                item: "Academic Bank of Credit",
+                path: "/academics/academic-depository-nad-and-abc",
+              },
+              {
+                item: "E-Content Cell",
+                path: "/academics/e-content-development-cell",
               },
             ],
           },
@@ -99,96 +127,61 @@ export const HeaderData = [
           {
             id: 3,
             item: "Addmission",
-            path: "#",
+            path: "adsmission/admission-overview",
             subItem: [
               {
-                item: "Applied Sciences & Humanities  ",
-                path: "/department/applied-science/humanities",
+                item: "Overview",
+                path: "/adsmission/adsmission/admission-overview",
               },
               {
-                item: "Civil Engineering",
-                path: "/department/civil-engineering",
+                item: "How to Apply",
+                path: "/adsmission/civil-engineering",
               },
               {
-                item: "Computer Science & Engineering",
-                path: "/department/computer-science",
+                item: "Program Finder",
+                path: "/adsmission/program-finder",
               },
               {
-                item: "Computer Science & Engineering-AI & ML",
-                path: "/department/cse-ai-ml",
+                item: "Fee Structure",
+                path: "/adsmission/fee-structure",
               },
               {
-                item: "Computer Science & Engineering-Data Science",
-                path: "/department/data-science",
+                item: "Scholarship",
+                path: "/adsmission/data-science",
               },
               {
-                item: "Computer Science & Engineering-IOT",
-                path: "/department/iot",
+                item: "Shift Schedule (First Year Only)",
+                path: "/adsmission/shift-schedule",
               },
               {
-                item: "Computer Science & Engineering-Cyber Security",
-                path: "/department/cyber-cecurity",
+                item: "Document Checklist",
+                path: "/adsmission/document-checklist",
               },
 
-              // {
-              //   item: "Computer Science & Engineering",
-              //   path: "#",
-              //   isMode: "second",
-              //   nestedSubItem: [
-              //     {
-              //       item: "Computer Science & Engineering-AI & ML",
-              //       path: "/department/cse/cse-ai-ml",
-              //     },
-              //     {
-              //       item: "Computer Science & Engineering-Data Science",
-              //       path: "/department/cse/data-science",
-              //     },
-              //     {
-              //       item: "Computer Science & Engineering-IOT",
-              //       path: "/department/cse/iot",
-              //     },
-              //     {
-              //       item: "Computer Science & Engineering-Cyber Security",
-              //       path: "/department/cse/cyber-cecurity",
-              //     },
-              //   ],
-              // },
-              { item: "Information Technology", path: "/department/it" },
+
+              { item: "Admission Policies", path: "/adsmission/it" },
 
               {
-                item: "Electrical Engineering",
-                path: "/department/electrical-engineering",
-              },
-              {
-                item: "Electronics & Communication Engineering",
-                path: "/department/electronics&communication-engineering",
+                item: "Admission FAQs",
+                path: "/adsmission/admission-faq",
               },
 
-              {
-                item: "Mechanical Engineering",
-                path: "/department/mechanical-engineering",
-              },
-              {
-                item: "Pharmacy",
-                path: "/department/pharmacy",
-              },
             ],
           },
 
           {
             id: 4,
             item: "Campus Life",
-            path: "#",
+            path: "/campus-life/facilities",
             subItem: [
-              { item: "Student Corner", path: "/campus-life/student-corner" },
-              { item: "Outreach", path: "/campus-life/outreach" },
-              { item: "Clubs", path: "/campus-life/clubs" },
+              { item: "Facilities", path: "/campus-life/student-corner" },
+              { item: "Central Library", path: "/campus-life/central-library" },
+
               {
-                item: "Innovation & Entrepreneurship Cell",
-                path: "/campus-life/entrepreneurship",
+                item: "Events",
+                path: "/campus-life/events",
               },
-              { item: "Events", path: "/campus-life/events" },
-              { item: "Campus Tour", path: "/campus-life/campus-tour" },
+
             ],
           },
 

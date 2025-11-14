@@ -111,7 +111,7 @@
 
 
 
-import React, { useRef, useState } from "react";
+import  { useRef, useState } from "react";
 import Slider from "react-slick";
 import { FaFilePdf } from "react-icons/fa";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";

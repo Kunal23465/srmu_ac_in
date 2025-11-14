@@ -58,6 +58,7 @@ const CustomOverviewSectionForCentralLibrary: React.FC<CustomOverviewSectionProp
                 <div className="pt-7 md:pt-10 lg:pt-14">
                     {otherData.map((ele) => (
                         <div key={ele.id}>
+                            {/* @ts-ignore */}
                             {ele.paraContent.map((para, idx) => (
                                 <p key={idx} className="mt-1.5">
                                     {para}

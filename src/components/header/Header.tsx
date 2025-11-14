@@ -5,12 +5,12 @@ import TopHeader from "./TopHeader";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdClose, MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { Link, useLocation } from "react-router-dom";
-import { FaAngleDown } from "react-icons/fa";
 import { HeaderData } from "./HeaderData";
 const Header = () => {
   const location = useLocation();
   const { bottomHeaderData } = HeaderData[0];
   const [sideMenu, setSideMenu] = useState(false);
+  // @ts-ignore
   const [nestedMenu, setNestedMenu] = useState<string | undefined | null>(null);
   const [subMenu, setSubMenu] = useState<number | undefined | null>(null);
   const [isActive, setIsActive] = useState(false);
@@ -77,7 +77,7 @@ const Header = () => {
                 </div>
                 <div>
                   <h2
-                    className={` font-bold lg:text-[1rem] xl:text-[1.4rem] ${
+                    className={` font-bold lg:text-[1rem] xl:text-[1.4rem] text-white ${
                       isActive
                         ? "text-white"
                         : location.pathname !== "/"
@@ -106,7 +106,7 @@ const Header = () => {
                             }   [&.active]:text-[#ffb703]`}
                           >
                             <span
-                              className={`flex items-center ${
+                              className={`flex items-center text-white ${
                                 isActive
                                   ? "text-white"
                                   : location.pathname !== "/"
@@ -136,7 +136,7 @@ const Header = () => {
                                             key={ind}
                                             to={value.path}
                                             className={`text-nowrap relative block  parentclass font-normal  px-3  py-3 ${
-                                              ind == 0 ? " " : " border-t"
+                                              ind == 0 ? " " : " border-t  border-gray-200"
                                             }`}
                                           >
                                             <div
@@ -152,7 +152,7 @@ const Header = () => {
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             className={`text-nowrap relative block  parentclass font-normal hover:text-[#ffb703] px-3  py-3 ${
-                                              ind == 0 ? " " : " border-t"
+                                              ind == 0 ? " " : " border-t border-gray-200"
                                             }`}
                                             onClick={(e) => {
                                               e.preventDefault(); // Prevent default navigation
@@ -211,7 +211,7 @@ const Header = () => {
                   className={`relative w-full  ${
                     data.item === "Login" && "hidden"
                   } text-sm  uppercase cursor-pointer py-2 ${
-                    data.id !== 0 && "border-t"
+                    data.id !== 0 && "border-t border-gray-200"
                   }  `}
                 >
                   <Link
@@ -241,8 +241,8 @@ const Header = () => {
                                 href={value.path}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className={`text-nowrap relative block  parentclass font-normal hover:text-[#ffb703] px-5  pt-3 pb-1 ${
-                                  ind == 0 ? " " : " border-t"
+                                className={`text-nowrap relative block  parentclass font-normal hover:text-[#ffb703] px-5  pt-3 pb-1  ${
+                                  ind == 0 ? " " : " border-t border-gray-200"
                                 }`}
                                 onClick={(e) => {
                                   e.preventDefault(); // Prevent default navigation

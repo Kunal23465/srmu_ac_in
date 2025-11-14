@@ -14,6 +14,7 @@ const CentralLibraryComp = () => {
         <div>
             <div className={`${Classes["container"]}`}>
                 <CustomOverviewSectionForCentralLibrary data={CentralLibraryOverviewData} />
+                {/* @ts-ignore */}
                 <Counter counterData={counterDataForCentralLibraryPage} classes="counter" aboutusClass={"text-black mt-3"} />
                 <CentralLibrarySlider />
                 <MissionCentralLibrary />

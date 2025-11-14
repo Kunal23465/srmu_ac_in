@@ -9,7 +9,7 @@ import CustomTopFooter from '../../../utils/custom/CustomTopFooter';
 import { CustomTopFooterData1 } from '../../../data/about/leadership-and-governance/leadership-and-governance-data';
 
 
-const Institutes = () => {
+const Institutes:React.FC = () => {
   return (
     <>
       <div className={`${Classes["container"]}`}>

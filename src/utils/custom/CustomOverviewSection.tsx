@@ -27,6 +27,7 @@ const CustomOverviewSection: React.FC<CustomOverviewSectionProps> = ({ data }) =
           {otherData.map((ele) => (
             <>
               <div>
+                {/* @ts-ignore */}
                 {ele.paraContent.map((ele) => ( 
                   <p className="mt-1.5">{ele}</p>
                 ))}

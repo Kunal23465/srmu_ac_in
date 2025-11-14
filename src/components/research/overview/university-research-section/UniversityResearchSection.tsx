@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 import { MdArrowRightAlt } from "react-icons/md";
-import { Link } from "react-router-dom";
 import { researchMembers } from "../../../../data/research/overview/research-overview-data";
 import ResearchCard from "./ResearchCard";
 import bgImg from "../../../../assets/images/research/overview/facilities-bg-lg.jpeg"

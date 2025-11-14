@@ -17,7 +17,7 @@ const TopHeader: React.FC = () => {
                                     RESULTS |
                                 </a>
                                 <Link to="/career">CAREER |</Link>
-                                <Link to="/uptac-2025" className="uppercase blink_uptac text-black font-semibold px-4 pt-1.5 pb-1 rounded-full flex items-center justify-center">UPTAC-2025</Link>
+                                <Link to="/career">SHIFT SCHEDULE</Link>
                             </ul>
                         </div>
                     </div>
