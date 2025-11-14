@@ -17,7 +17,7 @@ const UniversityResearchSection: React.FC = () => {
   // slice the data according to visible count
   const visibleMembers = researchMembers.slice(0, visibleCount);
   return (
-    <section className="bg-[bgImg]  text-white py-16 relative overflow-hidden" style={{ backgroundImage: `url(${bgImg})`, backgroundSize: "cover", backgroundPosition: "center" }}>
+    <section className="text-white py-16 relative overflow-hidden" style={{ backgroundImage: `url(${bgImg})`, backgroundSize: "cover", backgroundPosition: "center" }}>
       <div className="container mx-auto px-5">
         <div className=" mb-10 border-b-3 border-white/50 pb-6">
           <h2 className="text-3xl lg:text-4xl font-extrabold mb-3">University Research Advisory Board / Council</h2>

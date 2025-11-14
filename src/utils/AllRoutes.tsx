@@ -46,6 +46,7 @@ import OragnisationStructurePage from "../pages/about/organisation-structure-pla
 import ResearchPage from "../pages/Research/ResearchPage";
 import ResearchOverviewPage from "../pages/Research/Overview/ResearchOverviewPage";
 import ProcessAndInitiativePage from "../pages/Research/Process-and-Initiative/ProcessAndInitiativePage";
+import PhdNotificationSessionPage from "../pages/Research/Phd-notification-session/PhdNotificationSessionPage";
 
 
 
@@ -336,6 +337,14 @@ export const routes = [
               crumb: () => <Link to="/">Process And Initiatives</Link>,
             },
           },
+          {
+            path: "phd-notification-session",
+            element: <PhdNotificationSessionPage />,
+            handle: {
+              crumb: () => <Link to="/">Ph.D. Notification (Session: 2025-26)</Link>,
+            },
+          },
+          ,
         ],
       },
     ],
