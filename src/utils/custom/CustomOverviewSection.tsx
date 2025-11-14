@@ -3,7 +3,7 @@ import { otherDataTypes } from "../../types/home-data-type";
 interface CustomOverviewSectionProps {
   data: {
     heading: string;
-    content: string;
+    content: string | React.ReactNode;
     otherData?: otherDataTypes[];
   };
 }
@@ -19,7 +19,9 @@ const CustomOverviewSection: React.FC<CustomOverviewSectionProps> = ({ data }) =
           <h2 className="text-3xl lg:text-4xl font-semibold leading-8 pr-4 sm:min-w-[350px]">{heading}</h2>
         </div>
         <div className={`  ${otherData && otherData?.length > 0 ? "" : "md:pl-8 md:py-4"}`}>
-          <p className="text-justify ">{content}</p>
+          <div className="text-justify">
+            {typeof content === "string" ? <p>{content}</p> : content}
+          </div>
         </div>
       </div>
       {otherData && (
@@ -28,7 +30,7 @@ const CustomOverviewSection: React.FC<CustomOverviewSectionProps> = ({ data }) =
             <>
               <div>
                 {/* @ts-ignore */}
-                {ele.paraContent.map((ele) => ( 
+                {ele.paraContent.map((ele) => (
                   <p className="mt-1.5">{ele}</p>
                 ))}
               </div>

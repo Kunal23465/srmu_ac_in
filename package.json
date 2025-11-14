@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fancyapps/fancybox": "^3.5.7",
+    "@fancyapps/ui": "^6.1.5",
     "@tailwindcss/vite": "^4.1.16",
     "antd": "^5.28.1",
     "formik": "^2.4.8",

@@ -15,7 +15,7 @@ interface OtherDataType {
 interface CustomOverviewSectionProps {
     data: {
         heading: string;
-        content: string;
+        content: string | React.ReactNode;
         otherData?: OtherDataType[];
     };
 }
@@ -45,7 +45,9 @@ const CustomOverviewSection: React.FC<CustomOverviewSectionProps> = ({ data }) =
 
                 {/* Right Content Section */}
                 <div className={`${otherData && otherData?.length > 0 ? "" : "md:pl-8 md:py-4"}`}>
-                    <p className="text-justify text-gray-800 leading-relaxed">{content}</p>
+                    <div className="text-justify">
+                        {typeof content === "string" ? <p>{content}</p> : content}
+                    </div>
                     {/* Additional Other Data (Paragraphs, Lists, Eligibility, etc.) */}
                     {otherData && (
                         <div className="pt-2 ">
@@ -74,7 +76,7 @@ const CustomOverviewSection: React.FC<CustomOverviewSectionProps> = ({ data }) =
                                         </ul>
                                     )}
 
-                                    
+
                                 </div>
                             ))}
                         </div>

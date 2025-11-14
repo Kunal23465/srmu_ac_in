@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { festData } from "../../../data/campus-life/events/events-data";
+import { useNavigate } from "react-router-dom";
 
 const tabs = [
     { key: "anubhuti", label: "ANUBHUTI" },
@@ -10,6 +11,8 @@ const tabs = [
 const AnnualFest: React.FC = () => {
     const [activeTab, setActiveTab] = useState("anubhuti");
     const [currentIndex, setCurrentIndex] = useState(0);
+    const navigate = useNavigate();
+
 
     const data = festData[activeTab];
     const cardsPerPage = 2;
@@ -104,7 +107,8 @@ const AnnualFest: React.FC = () => {
                                     <span className="text-sm text-yellow-500 mb-2">{card.date}</span>
                                     <span className="text-sm text-gray-700 mt-2 line-clamp-2" dangerouslySetInnerHTML={{ __html: card.description }}>
                                     </span>
-                                    <button className="mt-3 text-sm font-medium cursor-pointer color_light_blue border-1 border-yellow-500 py-2 px-4 rounded-lg hover:bg-yellow-500 flex items-center gap-1">
+                                    <button onClick={() => navigate(card.routeKey)} 
+                                    className="mt-3 text-sm font-medium cursor-pointer color_light_blue border-1 border-yellow-500 py-2 px-4 rounded-lg hover:bg-yellow-500 flex items-center gap-1">
                                         MORE INFO →
                                     </button>
                                 </div>

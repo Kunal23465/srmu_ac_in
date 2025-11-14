@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { conferenceData } from "../../../data/campus-life/events/events-data";
+import { useNavigate } from "react-router-dom";
 
 interface ModalProps {
     isOpen: boolean;
@@ -32,6 +33,8 @@ const ConferencesSection: React.FC = () => {
     const [activeTab, setActiveTab] = useState<"conference" | "seminar">("conference");
     const [startIndex, setStartIndex] = useState(0);
     const [selectedCard, setSelectedCard] = useState<any>(null);
+        const navigate = useNavigate();
+
 
     const data =
         activeTab === "conference" ? conferenceData.conferences : conferenceData.seminars;
@@ -121,7 +124,7 @@ const ConferencesSection: React.FC = () => {
                                     {card.description}
                                 </span>
                                 <button
-                                    onClick={() => setSelectedCard(card)}
+                                    onClick={() => navigate(card.routeKey)} 
                                     className="text-sm font-semibold border border-yellow-500 color_light_blue py-2 px-4 rounded-lg hover:bg-yellow-500 hover:text-white transition flex items-center gap-2"
                                 >
                                     MORE INFO →
