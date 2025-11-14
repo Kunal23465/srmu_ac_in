@@ -48,7 +48,7 @@ const ConferencesSection: React.FC = () => {
 
     return (
         <section className="py-16 bg-white text-center">
-            <h2 className="text-4xl font-bold text-[#003366] mb-4">Conferences</h2>
+            <h2 className="font50 fw500 color_light_blue mb-4">Conferences</h2>
             <p className="text-gray-600 w-full mx-auto mb-8">
                 SRMU both hosts and participates in a diverse set of academic conferences,
                 leveraging these platforms to exchange ideas and delve into emerging research
@@ -62,9 +62,9 @@ const ConferencesSection: React.FC = () => {
                         setActiveTab("conference");
                         setStartIndex(0);
                     }}
-                    className={`px-6 py-2 rounded-lg font-semibold border ${activeTab === "conference"
-                            ? "bg-[#003366] text-white"
-                            : "border-[#003366] text-[#003366] hover:bg-[#003366]/10"
+                    className={`px-6 py-3 rounded-lg font-semibold border cursor-pointer ${activeTab === "conference"
+                            ? "color_background_blue text-white"
+                            : "color_border_blue color_light_blue"
                         }`}
                 >
                     CONFERENCE
@@ -74,9 +74,9 @@ const ConferencesSection: React.FC = () => {
                         setActiveTab("seminar");
                         setStartIndex(0);
                     }}
-                    className={`px-6 py-2 rounded-lg font-semibold border ${activeTab === "seminar"
-                            ? "bg-[#003366] text-white"
-                            : "border-[#003366] text-[#003366] hover:bg-[#003366]/10"
+                    className={`px-6 py-3 rounded-lg font-semibold border cursor-pointer ${activeTab === "seminar"
+                            ? "color_background_blue text-white"
+                            : "color_border_blue color_light_blue"
                         }`}
                 >
                     SEMINAR
@@ -88,7 +88,7 @@ const ConferencesSection: React.FC = () => {
                     <button
                         onClick={prevSlide}
                         disabled={startIndex === 0}
-                        className={`w-10 h-10 rounded border border-gray-300 flex items-center justify-center hover:bg-[#003366] hover:text-white transition ${startIndex === 0 ? "opacity-50 cursor-not-allowed" : ""
+                        className={`w-15 h-15 rounded border border-gray-300 flex items-center justify-center hover:bg-[#003366] hover:text-white transition ${startIndex === 0 ? "opacity-50 cursor-not-allowed" : ""
                             }`}
                     >
                         &lt;
@@ -96,7 +96,7 @@ const ConferencesSection: React.FC = () => {
                     <button
                         onClick={nextSlide}
                         disabled={startIndex + 3 >= data.length}
-                        className={`w-10 h-10 rounded border border-gray-300 flex items-center justify-center hover:bg-[#003366] hover:text-white transition ${startIndex + 3 >= data.length ? "opacity-50 cursor-not-allowed" : ""
+                        className={`w-15 h-15 rounded border border-gray-300 flex items-center justify-center hover:bg-[#003366] hover:text-white transition ${startIndex + 3 >= data.length ? "opacity-50 cursor-not-allowed" : ""
                             }`}
                     >
                         &gt;
@@ -107,7 +107,7 @@ const ConferencesSection: React.FC = () => {
                     {visibleCards.map((card, idx) => (
                         <div
                             key={idx}
-                            className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg border border-gray-200 transition"
+                            className="bg-white cursor-pointer rounded-2xl hover:border-yellow-500 shadow-md overflow-hidden hover:shadow-lg border border-gray-200 transition"
                         >
                             <img
                                 src={card.image}
@@ -115,14 +115,14 @@ const ConferencesSection: React.FC = () => {
                                 className="w-full h-56 object-cover"
                             />
                             <div className="p-5 text-left">
-                                <h3 className="text-lg font-semibold text-[#003366] mb-1">{card.title}</h3>
-                                <p className="text-sm text-yellow-600 mb-2">{card.date}</p>
-                                <p className="text-gray-600 text-sm line-clamp-3 mb-4">
+                                <h3 className="text-lg font-semibold color_light_blue mb-1 mt-4">{card.title}</h3>
+                                <span className="text-sm text-yellow-500">{card.date}</span>
+                                <span className="text-gray-600 text-sm line-clamp-3 mt-2 mb-4">
                                     {card.description}
-                                </p>
+                                </span>
                                 <button
                                     onClick={() => setSelectedCard(card)}
-                                    className="text-sm font-semibold border border-yellow-500 text-[#003366] py-2 px-4 rounded-lg hover:bg-yellow-500 hover:text-white transition flex items-center gap-2"
+                                    className="text-sm font-semibold border border-yellow-500 color_light_blue py-2 px-4 rounded-lg hover:bg-yellow-500 hover:text-white transition flex items-center gap-2"
                                 >
                                     MORE INFO →
                                 </button>

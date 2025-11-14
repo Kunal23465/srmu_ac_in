@@ -1086,6 +1086,9 @@ footer:after {
 .color_light_blue {
   color: rgb(15, 74, 133) !important;
 }
+.color_border_blue {
+  border:solid 1px rgb(15, 74, 133) !important;
+}
 
 .color_background_blue {
   background-color: rgb(15, 74, 133) !important;
@@ -1300,4 +1303,8 @@ p {
   .parent_grid_gallary .children:nth-child(4) {
     grid-row: 2 span;
   }
+}
+
+.font14{
+  font-size: .875rem;
 }

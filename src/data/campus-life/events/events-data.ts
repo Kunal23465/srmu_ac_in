@@ -14,6 +14,28 @@ import harmony5 from "../../../assets/images/campus-life/events/harmony-5.jpg"
 import harmony6 from "../../../assets/images/campus-life/events/harmony-6.jpg"
 import ullas1 from "../../../assets/images/campus-life/events/ullas-1.jpg"
 import ullas2 from "../../../assets/images/campus-life/events/ullas-2.jpg"
+import ican from "../../../assets/images/campus-life/events/ican.jpg"
+import SOLARIS2020 from "../../../assets/images/campus-life/events/SOLARIS2020-24112310432994.jpeg"
+import ncrtma from "../../../assets/images/campus-life/events/ncrtma.jpeg"
+import secondinternationlibrary from "../../../assets/images/campus-life/events/secondinternationlibrary.jpg"
+import raics from "../../../assets/images/campus-life/events/raics.jpg"
+import kitaab from "../../../assets/images/campus-life/events/kitaab.jpg"
+import firstinternationaliterary from "../../../assets/images/campus-life/events/firstinternationaliterary.jpg"
+import iconcute from "../../../assets/images/campus-life/events/iconcute2019-2--27122305411175.jpg"
+import seminar1 from "../../../assets/images/campus-life/events/seminar-1.jpg"
+import holi1 from "../../../assets/images/campus-life/events/holi-1.jpg"
+import holi2 from "../../../assets/images/campus-life/events/holi-2.jpg"
+import holi3 from "../../../assets/images/campus-life/events/holi-3.jpg"
+import dandiya1 from "../../../assets/images/campus-life/events/dandiya-1.jpg"
+import dandiya2 from "../../../assets/images/campus-life/events/dandiya-2.jpg"
+import dandiya3 from "../../../assets/images/campus-life/events/dandiya-3.jpg"
+import tedx1 from "../../../assets/images/campus-life/events/tedx-1.jpg"
+import tedx2 from "../../../assets/images/campus-life/events/tedx-2.jpg"
+import tedx3 from "../../../assets/images/campus-life/events/tedx-3.jpg"
+import tedx4 from "../../../assets/images/campus-life/events/tedx-4.jpg"
+import tedx5 from "../../../assets/images/campus-life/events/tedx-5.jpg"
+import tedx6 from "../../../assets/images/campus-life/events/tedx-6.jpg"
+
 
 export const EventsOverviewData: customeOverViewType = {
     heading: "Events",
@@ -167,62 +189,222 @@ export const festData: Record<string, FestData> = {
 
 
 export interface EventCard {
-  title: string;
-  date: string;
-  description: string;
-  image: string;
+    title: string;
+    date: string;
+    description: string;
+    image: string;
 }
 
 export interface ConferenceData {
-  conferences: EventCard[];
-  seminars: EventCard[];
+    conferences: EventCard[];
+    seminars: EventCard[];
 }
 
 export const conferenceData: ConferenceData = {
-  conferences: [
-    {
-      title: "ICANSVME-24",
-      date: "January 22–24, 2024",
-      description:
-        "A three-day international conference on 'Advancement in Natural Sciences: Vedic to Modern Era' held at Shri Ramswaroop Memorial University, Lucknow. The event brought together researchers, faculty, and scholars to discuss scientific innovations and their modern relevance.",
-      image: "/images/conference1.jpg",
-    },
-    {
-      title: "SOLARIS-2020",
-      date: "February 07–09, 2020",
-      description:
-        "Organized by the Faculty of Physical Sciences, SRMU, in collaboration with Sukrit Solar Pvt Ltd and Gajah Solar Power Pvt Ltd. SOLARIS 2020 focused on sustainable energy, environment, and climate change challenges.",
-      image: "/images/conference2.jpg",
-    },
-    {
-      title: "NCRTMA-20",
-      date: "January 30–31, 2020",
-      description:
-        "National Conference on Recent Trends in Mathematics with Applications (NCRTMA-20), hosted by the Faculty of Mathematical & Statistical Sciences. Featured keynotes and paper presentations by leading mathematicians.",
-      image: "/images/conference3.jpg",
-    },
-  ],
-  seminars: [
-    {
-      title: "AI & Future Technologies",
-      date: "March 05, 2025",
-      description:
-        "An insightful seminar exploring the transformative role of Artificial Intelligence in shaping future industries and education, featuring experts from academia and tech organizations.",
-      image: "/images/seminar1.jpg",
-    },
-    {
-      title: "Green Energy and Innovation",
-      date: "November 20, 2024",
-      description:
-        "This seminar brought together energy experts to discuss renewable energy technologies and their role in achieving sustainable development goals.",
-      image: "/images/seminar2.jpg",
-    },
-    {
-      title: "Cyber Awareness Workshop",
-      date: "September 12, 2024",
-      description:
-        "A hands-on workshop aimed at spreading awareness on cyber threats, digital safety, and ethical hacking practices among university students.",
-      image: "/images/seminar3.jpg",
-    },
-  ],
+    conferences: [
+        {
+            title: "ICANSVME-24",
+            date: "January 22–24, 2024",
+            description:
+                "A three days international conference on ‘Advancement in Natural Sciences: Vedic to Modern Era’ is being organized in Shri Ramswaroop Memorial University, Deva Road-Lucknow, Barabanki. The inaugural session of the conference was addressed by Prof. A.S. Vidhyarthi, VC Bikaner Technical University, he explained that the invention of Puspak Viman took place in Treta Yug, It was sound proof and moves according to the will of pilot. Prof. P K Bajpai VC JP University, Chapra emphasised the importance of learning science and technology according to Indian culture. The key note speakers were Dr. Shibesh Kumar PICS, Odisha, Dr Dinesh Kumar, SGPGI, Prof. Surya Narayan Gautam, Prof, Iyenger, Dr, Vishal Dwivedi, Tampere University, Finland and Prof. A.K. Thakur GGV Bilaspur also explained about the importance of Vedic Science.",
+            image: ican,
+        },
+        {
+            title: "SOLARIS-2020",
+            date: "February 07–09, 2020",
+            description:
+                "Faculty of Physical Sciences, Institute of Natural Sciences and Humanities, SRMU in collaboration with BERS, Sukrit Solar Pvt Limited and Gajah Solar Power Pvt. Limited organized the “SOLARIS 2020 - a National Conference on Sustainable Environment and Climate” from 7-9 February 2020. The Guest of honour in SOLARIS 2020 was Prof. Vineet Saini (DST, GOI) and Chief guest was Prof. A.S.K. Sinha (Director, RGIPT). More than 20 invited lectures, poster sessions and 6 technical sessions were conducted during the conference.",
+            image: SOLARIS2020,
+        },
+        {
+            title: "NCRTMA-20",
+            date: "January 30–31, 2020",
+            description:
+                `Faculty of Mathematical & Statistical Sciences, Institute of Natural Sciences and Humanities, organized two days “2nd National Conference on Recent Trends in Mathematics with Applications”. Chief guest of NCRTMA-20 was Prof. (Dr.) Ram Bilas Misra (Ex Vice-Chancellor Dr. RML Avadh University, Ayodhya). More than 15 invited lectures were delivered by eminent mathematicians from Central University, IIT, NIT, IIIT and State University.`,
+            image: ncrtma,
+        },
+        {
+            title: "ICON-CUTE 2019",
+            date: "November 14-16, 2019",
+            description:
+                `Shri Ramswaroop Memorial University organized a three-day International Conference on Cutting edge technologies in Engineering. Padam Shri Dr. Kota Harinarayana who happens to be a distinguished Scientist, Chief Architect-Light Combat Aircraft, addressed the audience about the topic from "Manned fighter" to "Unmanned Combat Aircraft". He told the gathering about Aircraft, UAV technologies effect of anatomy, increasing role of technology adoption. Er. Yogesh Kumar Ex-director, of HAL Bangalore, India addressed the topic of future technology in Aviation. Dr. Syed Umar Amin, Professor R K Pant, Er. Amit Agarwal also graced the occasion.`,
+            image: iconcute,
+        },
+
+
+
+        {
+            title: "Second International Literary Conference",
+            date: "February 02-03, 2019",
+            description:
+                `The two day international conference on “Rethinking the Global South: Literatures, Cultures and Media” in collaboration with Challenging Precarity: A Global Network, UK was organized by the Department of Humanities & Social Sciences, Shri Ramswaroop Memorial University. In the International Conference the effort was  to revisit and rethink the conceptual framework of the Global South by putting queries on; “does the Global South find itself a victim or a benefactor in the global capitalism, the methodology of the productions of the Global South compete the productions of the North, the different experiences of globalization within the Global South, the ways in which the globalization bridge the gap between the North and the South, is global south a promise or predicament in the process of globalization”. Eminent intellectuals like Prof.Janet Wilson (Northampton University, UK),Prof. Roderick McGillis(Calgary University, Canada), Dr. Halina Marlewicz (Jagiellonian University, USA), Prof. Lisa Bloom(UC Berkeley, California, USA) and many more such dignitaries across the national and international circuit would be part of the event.`,
+            image: secondinternationlibrary,
+        },
+        {
+            title: "RAICS-18",
+            date: "November 02-03, 2018",
+            description:
+                `The Faculty of Chemical Sciences organized the 1st national conference on “Recent Approaches and Innovations in Chemical Sciences (RAICS)” which included wide area of disciplines including materials chemistry, nanochemistry, synthetic chemistry, natural products, supramolecular chemistry, medicinal chemistry, polymer chemistry, green chemistry, theoretical chemistry and environmental chemistry. The conference aims to accrue various novel developments and amelioration for collaborative sharing, discussion and implicate further progress by learned academicians, industrial experts and science enthusiasts through this platform.`,
+            image: raics,
+        },
+
+        {
+            title: "Kitaab",
+            date: "April 07-08, 2018",
+            description:
+                `The two-day long International Literary Festival in collaboration with ‘Kitaab’, Singapore was inaugurated on 7th April, 2018 at Shri Ramswaroop Memorial University. The Fest witnessed a confluence of many luminaries from the academic and cultural field. Mr. Zafar Anjum, founder of ‘Kitaab’, Mr. Shishir Sharma (actor), Sudeep Sen, Miniya Chatterji, Kavitha Rao, Dr. Surya Prasad Dixit and Mr. Yogesh Praveen to name a few of the icons. The theme of the festival was ‘Micro Literature in the age of Social Media’. It also was the launch pad of the best Asian short stories and short films by ‘Filmwallas’. There was also a screening of a short film "More Chai Please" by Mr. Zafar Anjum.`,
+            image: kitaab,
+        },
+        {
+            title: "First International Literary Conference",
+            date: "Februaryb 17-18, 2017",
+            description:
+                `Shri Ramswaroop Memorial University organized the First Internatinal Literary Conference (Sponsored by the University of Rome Tor Vergata, Italy & South Asian Diaspora International Researcher's Network, Monash University , Australia). This conference, The Cultures of New India was a two day event. It witnessed some of the distinguished speakers from around the globe like Dr. Shashi Tharoor, Janet Wilson, Tabish Khair, Claire Chambers, Joel Kuortti, Florian Stadtler, Veronica Thompson and many more. `,
+            image: firstinternationaliterary,
+        },
+    ],
+    seminars: [
+        {
+            title: "New Education Policy and Quality Education for Sustainable Future",
+            date: "April 08, 2023",
+            description:
+                `The one-day seminar on 'New Education Policy and Quality Education for Sustainable Future,' organized at Shri Ramswaroop Memorial University (SRMU), served as a thought-provoking forum for educators, policymakers, and stakeholders in the field of education. The event provided an insightful exploration into the implications and potential impact of the New Education Policy on the delivery of quality education and its role in shaping a sustainable future. Through engaging panel discussions, expert presentations, and interactive sessions, the seminar facilitated a comprehensive understanding of the policy's objectives, challenges, and its potential to transform the educational landscape. Participants delved into discussions on innovative teaching methodologies, technology integration, and curriculum development aligned with sustainability goals, envisioning a future where education plays a pivotal role in fostering holistic development and societal well-being. The seminar not only contributed to the ongoing discourse on educational reforms but also positioned SRMU as a proactive hub for dialogue and collaboration in shaping the future of education.`,
+            image: seminar1,
+        },
+
+    ],
 };
+
+
+export interface FestivalCard {
+    title: string;
+    image: string;
+    description: string;
+    date: string;
+}
+
+export interface Festival {
+    name: string;
+    description: string;
+    cards: FestivalCard[];
+}
+
+export const festivalsData: Festival[] = [
+    {
+        name: "RANG BARSE (HOLI)",
+        description: `Rang Barse festival, inspired by the joyous spirit of Holi, emerges as a vibrant tapestry of colors, laughter, and camaraderie. As the festival unfolds, it transforms ordinary spaces into kaleidoscopic realms where people of all ages come together to celebrate the arrival of spring and the triumph of good over evil. From the rhythmic beats of traditional drums to the playful splashes of colored powders, Rang Barse encapsulates the essence of festivity and togetherness. With its infectious energy and jubilant atmosphere, Rang Barse festival serves as a timeless reminder of the beauty found in shared experiences and the boundless exuberance of the human spirit during the Holi season.`,
+        cards: [
+            {
+                title: "Holi Celebration 2024",
+                image: holi1,
+                date: "November 06, 2023",
+                description:
+                    "Students celebrated Holi with joy, colors, and music, creating a vibrant environment of unity and happiness.",
+            },
+            {
+                title: "Color Splash 2023",
+                image: holi2,
+                date: "November 06, 2023",
+                description:
+                    "A day filled with laughter, dance, and celebration — marking the triumph of good over evil through colors.",
+            },
+            {
+                title: "Festival of Unity 2022",
+                image: holi3,
+                date: "November 06, 2023",
+                description:
+                    "The Holi festival at SRMU brought together students and staff, celebrating the true essence of togetherness.",
+            },
+        ],
+    },
+    {
+        name: "DANDIYA DELIGHTZZ",
+        description: `Dandiya Delightzz, a vibrant celebration of Navratri, fills the SRMU campus with dazzling lights, rhythmic music, and joyful dance. Students and faculty come together in traditional attire to participate in energetic Garba and Dandiya performances, symbolizing devotion and unity. The festival reflects India's rich cultural heritage and serves as a platform for students to express their creativity, enthusiasm, and cultural pride.`,
+        cards: [
+            {
+                title: "Navratri Night 2024",
+                image: dandiya1,
+                date: "November 06, 2023",
+                description:
+                    "A night full of rhythm and devotion where students performed Garba and Dandiya in colorful traditional outfits.",
+            },
+            {
+                title: "Cultural Celebration 2023",
+                image: dandiya2,
+                date: "November 06, 2023",
+                description:
+                    "The event showcased Indian traditions through lively performances, music, and community spirit.",
+            },
+            {
+                title: "Dandiya Extravaganza 2022",
+                image: dandiya3,
+                date: "November 06, 2023",
+                description:
+                    "A grand evening that lit up the campus with energy, dance, and vibrant colors of cultural heritage.",
+            },
+        ],
+    },
+];
+
+
+export interface TedxCardData {
+    id: string;
+    title: string;
+    date: string;
+    image: string;
+    description: string;
+}
+
+const tedxData: TedxCardData[] = [
+    {
+        id: "innovatia",
+        title: "TEDx SRMUInnovatia",
+        date: "November 18, 2019",
+        image: tedx1,
+        description:
+            `TEDxSRMUInnovatia, a dynamic event organized at Shri Ramswaroop Memorial University (SRMU), uniquely focuses on student participation through engaging Mock TEDx Talks and an Entrepreneurship Quiz. This platform empowers students to unleash their creativity and share innovative ideas in a simulated TEDx-style presentation, offering them a chance to articulate their visions, research findings, and projects. The Mock TEDx Talks foster a culture of public speaking, idea dissemination, and inspire a spirit of intellectual exploration among the student community.`
+    },
+    {
+        id: "women",
+        title: "TEDx SRMUWomen",
+        date: "December 03, 2018",
+        image: tedx2,
+        description:
+            `TEDx Women, organized at Shri Ramswaroop Memorial University (SRMU), stands as a powerful platform for highlighting and celebrating the diverse voices and achievements of women across various fields. This event, affiliated with the renowned TEDx program, provides a stage for inspirational talks, discussions, and performances that revolve around the experiences, challenges, and triumphs of women. From trailblazing entrepreneurs to influential thought leaders, speakers at TEDx Women at SRMU share their stories and insights, inspiring the audience to envision a world where women's contributions are recognized and valued.`,
+    },
+    {
+        id: "global",
+        title: "TEDx SRMUGlobal",
+        date: "October 01, 2018",
+        image: tedx3,
+        description:
+            `TEDx SRMU GLOBAL, organized at Shri Ramswaroop Memorial University (SRMU), transcends geographical boundaries to create an intellectually stimulating platform that showcases a diverse array of global perspectives and groundbreaking ideas. As an extension of the renowned TEDx program, this event brings together speakers and thought leaders from across the globe, offering a unique opportunity for the audience to engage with innovative concepts, inspiring stories, and transformative visions. The talks span a spectrum of topics, ranging from technology and science to culture, education, and social issues, fostering an environment of cross-cultural dialogue and collaborative thinking.`,
+    },
+    {
+        id: "live",
+        title: "TEDx SRMULive",
+        date: "April 20, 2018",
+        image: tedx4,
+        description:
+            `TEDx SRMULive, an exhilarating and intellectually stimulating event organized at Shri Ramswaroop Memorial University (SRMU), stands as a testament to the institution's commitment to fostering innovative ideas and insightful dialogue. This live edition of the renowned TEDx series serves as a platform where thought leaders, professionals, and visionaries converge to share their inspiring stories and groundbreaking ideas. With a diverse lineup of speakers covering a spectrum of topics, TEDx SRMULive transcends conventional boundaries, offering the university community a unique opportunity to engage with transformative concepts and perspectives.`,
+    },
+    {
+        id: "srm",
+        title: "TEDx SRMU",
+        date: "January 20, 2018",
+        image: tedx5,
+        description:
+            `TEDxSRMU, organized at Shri Ramswaroop Memorial University (SRMU), offers a profound exploration into how the changing world impacts the lives of individuals. Through captivating talks and discussions, speakers delve into the myriad ways in which technological advancements, social transformations, and global challenges reshape our perceptions, behaviors, and interactions. The event serves as a platform for thought-provoking reflections on topics such as artificial intelligence, climate change, globalization, and cultural shifts, illuminating the complex interplay between societal changes and personal experiences.`,
+    },
+    {
+        id: "wom",
+        title: "TEDx SRMUWomen",
+        date: "November 08, 2017",
+        image: tedx6,
+        description:
+            `TEDxSRMU Women, organized at Shri Ramswaroop Memorial University (SRMU), is a transformative event that serves as a local gathering for women empowerment, bringing together dynamic and accomplished women from diverse backgrounds. This platform provides a unique space for these empowered ladies to share their experiences, insights, and stories of growth, emphasizing the importance of women's empowerment in various spheres of life. The event celebrates the achievements of women who have overcome challenges, shattered glass ceilings, and made significant contributions to their fields, inspiring others to pursue their goals with determination and resilience.`,
+    },
+
+];
+
+export default tedxData;
