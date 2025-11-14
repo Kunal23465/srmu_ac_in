@@ -1308,3 +1308,34 @@ p {
 .font14{
   font-size: .875rem;
 }
+
+
+
+
+
+
+/* FULL WIDTH MODAL */
+.director-modal .ant-modal {
+  max-width: 100% !important;
+  width: 100% !important;
+  margin: 0 !important;
+  top: 0 !important;
+  padding: 0 !important;
+}
+
+/* REMOVE BORDER RADIUS */
+.director-modal .ant-modal-content {
+  border-radius: 0 !important;
+  padding: 0 !important;
+}
+
+/* Top + Bottom Borders */
+.director-modal .ant-modal-content {
+  border-top: 5px solid #ffb703 !important; /* yellow */
+  border-bottom: 5px solid #0f4a85 !important; /* blue */
+}
+
+/* Remove internal padding */
+.director-modal .ant-modal-body {
+  padding: 0 !important;
+}

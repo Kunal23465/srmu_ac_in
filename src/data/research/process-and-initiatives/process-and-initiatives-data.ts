@@ -131,3 +131,31 @@ export const institutionCouncilData = {
     imageUrl: "https://srmu.ac.in/storage/common-section/Institutions-16112310311961.jpg",
     pdfUrl: "https://srmu.ac.in/storage/common-section/iic-compressed-130224033132.pdf",
 };
+
+
+export interface ResearchCenterItem {
+    id: number;
+    title: string;
+    description: string;
+    image: string;
+    pdfUrl: string;
+}
+
+export const researchCenters: ResearchCenterItem[] = [
+    {
+        id: 1,
+        title: "EC & Management",
+        description:
+            "The EC and Management research center provides opportunities for innovative research contributions in the fields of finance, business, and management.",
+        image: "https://srmu.ac.in/storage/common-section/ec-management-02022401090025.jpg",
+        pdfUrl: "https://srmu.ac.in/storage/common-section/centre-of-energy-conservation-and-management-130224033114.pdf",
+    },
+    {
+        id: 2,
+        title: "CIIE & IIH",
+        description:
+            "The CIIE (Center for Innovation, Incubation, and Entrepreneurship) and IIH Research Centers provide a vibrant space for groundbreaking research projects in entrepreneurship and health sciences.",
+        image: "https://srmu.ac.in/storage/common-section/CIIE-IIH-16112310304414.jpg",
+        pdfUrl: "https://srmu.ac.in/storage/common-section/CIIE_IIH-(1)-021123125257.pdf",
+    },
+];
