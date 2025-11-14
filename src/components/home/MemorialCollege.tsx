@@ -65,7 +65,7 @@ const MemorialCollege: React.FC = () => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
   return (
-    <div id="first" className="w-full -mt-[68px]">
+    <div id="first" className="w-full -mt-[68px]  pb-7 md:pb-10 lg:pb-14">
       <div className="circle-part flex justify-center z-[99] relative">
         <img className="cursor-pointer " onClick={() => handleScroll("first")} src={curve_btn} alt="curve" />
       </div>
