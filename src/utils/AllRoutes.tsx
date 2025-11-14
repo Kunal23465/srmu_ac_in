@@ -49,6 +49,7 @@ import ProcessAndInitiativePage from "../pages/Research/Process-and-Initiative/P
 import PhdNotificationSessionPage from "../pages/Research/Phd-notification-session/PhdNotificationSessionPage";
 import EventDetails from "../pages/campus-life/events/EventDetails";
 import { conferenceData, festData } from "../data/campus-life/events/events-data";
+import InnovationPage from "../pages/Research/Innovation/InnovationPage";
 
 
 
@@ -378,7 +379,13 @@ export const routes = [
               crumb: () => <Link to="/">Ph.D. Notification (Session: 2025-26)</Link>,
             },
           },
-          ,
+          {
+            path: "innovation",
+            element: <InnovationPage />,
+            handle: {
+              crumb: () => <Link to="/">Innovation</Link>,
+            },
+          },
         ],
       },
     ],

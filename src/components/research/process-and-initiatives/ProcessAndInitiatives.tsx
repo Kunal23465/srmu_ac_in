@@ -10,6 +10,8 @@ import CustomTopFooter from "../../../utils/custom/CustomTopFooter";
 import { CustomTopFooterAbout } from "../../../data/about/aboutusData";
 import InstitutionCouncilSection from "./institution-council/InstitutionCouncilSection";
 
+import ResearchCentersSection from "./research-centers/ResearchCentersSection";
+
 const ProcessAndInitiatives: React.FC = () => {
   return (
     <div>
@@ -20,6 +22,7 @@ const ProcessAndInitiatives: React.FC = () => {
       <AdmissionProcessSection />
       <PhdFeeStructureSection />
       <MultiPhdCardSection />
+      <ResearchCentersSection />
       <InstitutionCouncilSection />
       <CustomTopFooter data={CustomTopFooterAbout} />
     </div>

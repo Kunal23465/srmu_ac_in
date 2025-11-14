@@ -16,7 +16,7 @@ const DirectorSection: React.FC = () => {
     { key: "2", label: "Director Profile", children: <DirectorProfile data={DirectorSectionData.tab2} /> },
   ];
   return (
-    <div className="bg-[#ffb703] py-10">
+    <div className="bg-[#ffb703] py-20">
       <div className={`${Classes["container"]} `}>
         <div className="grid lg:grid-cols-2 gap-10 items-start">
           <CustomTabs items={items} />
