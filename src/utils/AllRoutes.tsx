@@ -119,7 +119,7 @@ export const routes = [
             path: "iqac-overview",
             element: <IqacPage />,
             handle: {
-              crumb: () => <Link to="/">IQAC Overview</Link>,
+              crumb: () => <Link to="/">Quality Assurance Cell</Link>,
             },
           },
           {
@@ -279,7 +279,7 @@ export const routes = [
         path: "/campus-life",
         element: <CampusLifePage />,
         handle: {
-          crumb: () => <Link to="/">Admissions</Link>,
+          crumb: () => <Link to="/">campus-life</Link>,
         },
 
         children: [

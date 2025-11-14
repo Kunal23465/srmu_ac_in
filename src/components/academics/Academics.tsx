@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Academics = () => {
+const Academics:React.FC = () => {
   return (
     <div>Academics</div>
   )

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import SliderLogic, { SliderLogicProps } from './SliderLogic';
+import SliderLogic from './SliderLogic';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const FinalSlider: React.FC = () => {

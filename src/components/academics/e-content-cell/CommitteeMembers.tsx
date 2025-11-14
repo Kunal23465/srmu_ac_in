@@ -1,6 +1,6 @@
 import React from 'react'
 
-const CommitteeMembers = () => {
+const CommitteeMembers:React.FC = () => {
     return (
         <div className='py-4 md:py-7 lg:py-7'>
             <h2 className='font22 fw600 mb-4 color_light_blue'>

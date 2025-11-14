@@ -1,7 +1,7 @@
 import React from 'react'
 import girl from "../../../assets/images/admissions/overview/girl-08022411552330.png"
 
-const OnlyCampus = () => {
+const OnlyCampus:React.FC = () => {
     return (
         <div>
             <section className="relative bg-cover bg-center bg-no-repeat py-50 skoi overflow-hidden">

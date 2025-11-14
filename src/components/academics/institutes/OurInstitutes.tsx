@@ -1,6 +1,6 @@
 import React from 'react'
 
-const OurInstitutes = () => {
+const OurInstitutes:React.FC = () => {
   return (
     <div className='text-center'>
         <h2 className='curr font50 fw500'>

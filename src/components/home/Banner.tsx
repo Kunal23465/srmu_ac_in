@@ -3,7 +3,6 @@ import Classes from "../../utils/styles/Global.module.css";
 import banner4 from "../../assets/images/home/banner-bg.jpg";
 import { bannerData } from "../../data/home/bannerData";
 import Slider from "react-slick";
-import { IoIosArrowBack } from "react-icons/io";
 import { FaArrowLeftLong } from "react-icons/fa6";
 
 // import { MdArrowRightAlt } from "react-icons/md";

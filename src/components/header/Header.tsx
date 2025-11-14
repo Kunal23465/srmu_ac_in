@@ -5,12 +5,12 @@ import TopHeader from "./TopHeader";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdClose, MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { Link, useLocation } from "react-router-dom";
-import { FaAngleDown } from "react-icons/fa";
 import { HeaderData } from "./HeaderData";
 const Header = () => {
   const location = useLocation();
   const { bottomHeaderData } = HeaderData[0];
   const [sideMenu, setSideMenu] = useState(false);
+  // @ts-ignore
   const [nestedMenu, setNestedMenu] = useState<string | undefined | null>(null);
   const [subMenu, setSubMenu] = useState<number | undefined | null>(null);
   const [isActive, setIsActive] = useState(false);
