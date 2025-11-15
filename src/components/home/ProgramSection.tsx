@@ -12,7 +12,7 @@ const ProgramsSection: FC = () => {
                     "url('https://srmu.ac.in/storage/common-section/1657x580-new-09022401172650.png')",
             }}
         >
-            <div className="container mx-auto max-w-[1280px] px-4">
+            <div className="container mx-auto max-w-7xl px-4">
 
                 <div className="text-white mb-10">
                     <h2 className="font50 fw600">Our Programs</h2>
