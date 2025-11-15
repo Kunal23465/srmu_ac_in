@@ -5,12 +5,8 @@ import Classes from "../utils/styles/Global.module.css";
 import { Fragment } from "react/jsx-runtime";
 import AboutPage from "../pages/about/AboutPage";
 
-
-
 import { committeeCards } from "../data/about/committee-and-cells/committee-and-cells-data";
 import CustomCommitteeDetailsPage from "./custom/CustomCommitteeDetailsPage";
-
-
 
 import AdmissonsPage from "../pages/admissions/AdmissionPage";
 import OverviewPage from "../pages/admissions/overview/OverviewPage";
@@ -50,10 +46,7 @@ import PhdNotificationSessionPage from "../pages/Research/Phd-notification-sessi
 import EventDetails from "../pages/campus-life/events/EventDetails";
 import { conferenceData, festData } from "../data/campus-life/events/events-data";
 import InnovationPage from "../pages/Research/Innovation/InnovationPage";
-
-
-
-
+import StudentTestimonialPage from "../pages/placement/StudentTestimonialPage";
 
 interface IMatches {
   id: string;
@@ -320,7 +313,6 @@ export const routes = [
                 }))
               ),
 
-            
               ...conferenceData.conferences.map((card) => ({
                 path: card.routeKey,
                 element: <EventDetails card={card} />,
@@ -336,9 +328,7 @@ export const routes = [
                   crumb: () => <a>{card.title}</a>,
                 },
               })),
-
-            ]
-
+            ],
           },
 
           {
@@ -384,6 +374,23 @@ export const routes = [
             element: <InnovationPage />,
             handle: {
               crumb: () => <Link to="/">Innovation</Link>,
+            },
+          },
+        ],
+      },
+      {
+        path: "/placements",
+        element: <StudentTestimonialPage />,
+        handle: {
+          crumb: () => <Link to="/">Placement</Link>,
+        },
+
+        children: [
+          {
+            path: "student-testimonial",
+            element: <StudentTestimonialPage />,
+            handle: {
+              crumb: () => <Link to="/">student testimonial</Link>,
             },
           },
         ],
