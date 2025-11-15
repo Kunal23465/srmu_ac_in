@@ -33,7 +33,7 @@ const ConferencesSection: React.FC = () => {
     const [activeTab, setActiveTab] = useState<"conference" | "seminar">("conference");
     const [startIndex, setStartIndex] = useState(0);
     const [selectedCard, setSelectedCard] = useState<any>(null);
-        const navigate = useNavigate();
+    const navigate = useNavigate();
 
 
     const data =
@@ -66,8 +66,8 @@ const ConferencesSection: React.FC = () => {
                         setStartIndex(0);
                     }}
                     className={`px-6 py-3 rounded-lg font-semibold border cursor-pointer ${activeTab === "conference"
-                            ? "color_background_blue text-white"
-                            : "color_border_blue color_light_blue"
+                        ? "color_background_blue text-white"
+                        : "color_border_blue color_light_blue"
                         }`}
                 >
                     CONFERENCE
@@ -78,8 +78,8 @@ const ConferencesSection: React.FC = () => {
                         setStartIndex(0);
                     }}
                     className={`px-6 py-3 rounded-lg font-semibold border cursor-pointer ${activeTab === "seminar"
-                            ? "color_background_blue text-white"
-                            : "color_border_blue color_light_blue"
+                        ? "color_background_blue text-white"
+                        : "color_border_blue color_light_blue"
                         }`}
                 >
                     SEMINAR
@@ -124,7 +124,7 @@ const ConferencesSection: React.FC = () => {
                                     {card.description}
                                 </span>
                                 <button
-                                    onClick={() => navigate(card.routeKey)} 
+                                    onClick={() => navigate(card.routeKey)}
                                     className="text-sm font-semibold border border-yellow-500 color_light_blue py-2 px-4 rounded-lg hover:bg-yellow-500 hover:text-white transition flex items-center gap-2"
                                 >
                                     MORE INFO →
