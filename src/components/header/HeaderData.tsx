@@ -28,10 +28,7 @@ export const HeaderData = [
           {
             id: 2,
             logo: "",
-            content1: [
-              { icon: "", info: "Admission Helpline", phone: "18001026004" },
-              { item: "Student Login" },
-            ],
+            content1: [{ icon: "", info: "Admission Helpline", phone: "18001026004" }, { item: "Student Login" }],
           },
         ],
       },
@@ -158,14 +155,12 @@ export const HeaderData = [
                 path: "/adsmission/document-checklist",
               },
 
-
               { item: "Admission Policies", path: "/adsmission/it" },
 
               {
                 item: "Admission FAQs",
                 path: "/adsmission/admission-faq",
               },
-
             ],
           },
 
@@ -181,7 +176,6 @@ export const HeaderData = [
                 item: "Events",
                 path: "/campus-life/events",
               },
-
             ],
           },
 
@@ -191,9 +185,11 @@ export const HeaderData = [
             path: "#",
             subItem: [
               {
-                item: "Placement & Training",
-                path: "/placements/training-placement",
+                item: "Student testimonial",
+                path: "/placements/student-testimonial",
               },
+
+              // student-testimonial
             ],
           },
 
