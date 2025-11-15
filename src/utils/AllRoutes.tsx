@@ -44,7 +44,7 @@ import ResearchOverviewPage from "../pages/Research/Overview/ResearchOverviewPag
 import ProcessAndInitiativePage from "../pages/Research/Process-and-Initiative/ProcessAndInitiativePage";
 import PhdNotificationSessionPage from "../pages/Research/Phd-notification-session/PhdNotificationSessionPage";
 import EventDetails from "../pages/campus-life/events/EventDetails";
-import { conferenceData, festData } from "../data/campus-life/events/events-data";
+import tedxData, { conferenceData, festData, festivalsData } from "../data/campus-life/events/events-data";
 import InnovationPage from "../pages/Research/Innovation/InnovationPage";
 import StudentTestimonialPage from "../pages/placement/StudentTestimonialPage";
 
@@ -322,6 +322,25 @@ export const routes = [
               })),
 
               ...conferenceData.seminars.map((card) => ({
+                path: card.routeKey,
+                element: <EventDetails card={card} />,
+                handle: {
+                  crumb: () => <a>{card.title}</a>,
+                },
+              })),
+
+
+              ...Object.values(festivalsData).flatMap((festival) =>
+                festival.cards.map((card) => ({
+                  path: card.routeKey,
+                  element: <EventDetails card={card} />,
+                  handle: {
+                    crumb: () => <a>{card.title}</a>,
+                  },
+                }))
+              ),
+
+              ...tedxData.map((card) => ({
                 path: card.routeKey,
                 element: <EventDetails card={card} />,
                 handle: {
