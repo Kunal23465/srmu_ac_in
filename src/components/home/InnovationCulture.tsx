@@ -2,16 +2,16 @@
 export default function InnovationCulture() {
   return (
     <section className="flex justify-center py-16 px-4">
-      <div className="bg-[#0F4A85] rounded-3xl overflow-hidden p-10 lg:p-[5rem] flex flex-col lg:flex-row max-w-[1300px] w-full items-center relative text-white">
-        {/* Left Section */}
+      <div className="card-color rounded-3xl overflow-hidden p-10 lg:p-[5rem] flex flex-col lg:flex-row max-w-[1300px] w-full items-center relative text-white">
         <div className="lg:w-3/5 pb-10 lg:pb-0">
           <div className="pb-8">
-            <h2 className="uppercase text-3xl lg:text-5xl font-medium leading-tight">
+            <h2 className="uppercase text-[2.5rem] fw500 leading-tight">
               Excellent Research and Innovation Culture
             </h2>
           </div>
 
-          <ul className="space-y-4 text-lg">
+         <div className="humming">
+           <ul className="space-y-4 text-lg">
             <li><a href="#">22 Research & Consultancy Projects Completed</a></li>
             <li><a href="#">3 Cr.+ Funding Received For R & C Projects</a></li>
             <li><a href="#">90+ Patents Granted / Published</a></li>
@@ -19,9 +19,10 @@ export default function InnovationCulture() {
             <li><a href="#">270+ Books & Book Chapters Published</a></li>
             <li><a href="#">125+ Ph.D. Awarded</a></li>
           </ul>
+         </div>
 
           <a
-            href="/research-overview"
+            href="#"
             className="inline-flex items-center mt-8 bg-yellow-400 text-[#0F4A85] font-medium uppercase py-3 px-8 rounded-xl transition border border-yellow-400 hover:bg-transparent hover:text-yellow-400"
           >
             Know More
@@ -38,15 +39,18 @@ export default function InnovationCulture() {
           </a>
         </div>
 
-        {/* Right Section */}
-        <div className="lg:w-1/2 relative mt-10 lg:mt-0 flex justify-center lg:justify-end">
+        <div className="lg:w-1/2  mt-10 lg:mt-0 flex justify-center">
           <img
             src="https://srmu.ac.in/storage/common-section/532x528-1--08022408045592.png"
             alt="Students"
-            className="object-contain h-full"
+            className="object-contain absolute bottom-0"
           />
         </div>
       </div>
     </section>
   );
 }
+
+
+
+<a href="#">22 Research &amp; Consultancy Projects Completed</a>
