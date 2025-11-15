@@ -1121,9 +1121,9 @@ ul {
   font-size: calc(1.025rem + 0.9vw);
 }
 
-p {
+/* p {
   font-size: 1.125rem;
-}
+} */
 
 .abc-wrapper {
   background: #eceff1;

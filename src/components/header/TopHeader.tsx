@@ -4,6 +4,8 @@ import { IoCallSharp } from "react-icons/io5";
 import React from "react";
 import { Link } from "react-router-dom";
 import { BsArrowUpRightCircle } from "react-icons/bs";
+import user from "../../assets/images/home/user-icon.png"
+import search from "../../assets/images/home/searching-icon.png"
 const TopHeader: React.FC = () => {
     return (
         <div className={`${Classes["top_header"]}  text-white bg-white lg:bg-[#0f4a85]  text-[0.89rem]`}>
@@ -24,20 +26,28 @@ const TopHeader: React.FC = () => {
 
                     <div className="right-part flex gap-3 items-center">
                         <div className="flex gap-2 items-center">
-                            <ul className="flex text-black">
+                            <div className="flex text-black items-center">
+                                <div className="flex items-center text-white gap-x-2 pr-2 border-r-2 border-white">
+                                    <img src={user} alt="user" />
+                                    Student Login
+                                </div>
+                                <div className="flex items-center text-white gap-x-2 pl-2 mr-4">
+                                    Staff Login
+                                    <img src={search} alt="user" />
+                                </div>
                                 <button className="bg-white flex items-center px-2 py-1 gap-2 ">
                                     <a href="tel:18001035298" className="text-[#FFB703]  ">
                                         <IoCallSharp className="text-[1.5rem]" />
                                     </a>
                                     <div className="flex flex-col  text-start px-auto">
-                                        <p>Admission Helpline</p>
-                                        <p className="font-medium ">18001035298</p>
+                                        <p className="text-xs font-normal">Admission Helpline</p>
+                                        <p className=" ">18001035298</p>
                                     </div>
                                 </button>
-                                <Link to="enquiry-form" className="bg-[#FFB703] px-2 font-bold border-2 border-[#ffb703]   flex gapx-x-1 items-center">
-                                    Apply Now 2025
+                                <Link to="enquiry-form" className="bg-[#FFB703] px-2 font-medium uppercase border-2 border-[#ffb703]  py-2.5 flex gapx-x-1 items-center">
+                                    Student Portal
                                 </Link>
-                            </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
