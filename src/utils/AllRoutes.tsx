@@ -46,18 +46,25 @@ import PhdNotificationSessionPage from "../pages/Research/Phd-notification-sessi
 import EventDetails from "../pages/campus-life/events/EventDetails";
 import tedxData, { conferenceData, festData, festivalsData } from "../data/campus-life/events/events-data";
 import InnovationPage from "../pages/Research/Innovation/InnovationPage";
+import PlacementPage from "../pages/placement/PlacementPage";
+import StudentTestimonialPage from "../pages/placement/student-testimonial/StudentTestimonialPage";
+import PlacementPoliciesPage from "../pages/placement/placement-policies/PlacementPoliciesPage";
 import ConsultancyPage from "../pages/Research/Consultancy/ConsultancyPage";
 
-import StudentTestimonialPage from "../pages/placement/StudentTestimonialPage";
+
+
+
+
 import AlumniRegistrationPage from "../pages/placement/AlumniRegistrationPage";
 import ConvocationPage from "../pages/campus-life/convocation/ConvocationPage";
 import { convocationData } from "../data/campus-life/convocation/convocation-data";
 import ConvocationDetailPage from "../pages/campus-life/convocation/ConvocationDetailPage";
+
 import AfterClass10thPage from "../pages/Home/AfterClass10thPage";
 import AfterClass12thPage from "../pages/Home/AfterClass12thPage";
+import GreenInitiativesPage from "../pages/campus-life/green-initiatives/GreenInitiativesPage";
 
 interface IMatches {
-  id: string;
   pathname: string;
   params: Params<string>;
   data: unknown;
@@ -335,6 +342,14 @@ export const routes = [
               crumb: () => <Link to="/">Central Library</Link>,
             },
           },
+
+          {
+            path: "green-initiative",
+            element: <GreenInitiativesPage />,
+            handle: {
+              crumb: () => <Link to="/">Green Initiative</Link>,
+            },
+          },
           {
             path: "events",
             element: <EventPage />,
@@ -446,6 +461,7 @@ export const routes = [
       },
       {
         path: "/placements",
+        element: <PlacementPage />,
         // element: <StudentTestimonialPage />,
         handle: {
           crumb: () => <Link to="/">Placement</Link>,
@@ -456,7 +472,14 @@ export const routes = [
             path: "student-testimonial",
             element: <StudentTestimonialPage />,
             handle: {
-              crumb: () => <Link to="/">student testimonial</Link>,
+              crumb: () => <Link to="/">Student Testimonial</Link>,
+            },
+          },
+          {
+            path: "placement-policies",
+            element: <PlacementPoliciesPage />,
+            handle: {
+              crumb: () => <Link to="/">Placement Polices</Link>,
             },
           },
           {
