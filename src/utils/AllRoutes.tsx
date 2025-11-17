@@ -50,6 +50,7 @@ import PhdNotificationSessionPage from "../pages/Research/Phd-notification-sessi
 import EventDetails from "../pages/campus-life/events/EventDetails";
 import { conferenceData, festData } from "../data/campus-life/events/events-data";
 import InnovationPage from "../pages/Research/Innovation/InnovationPage";
+import ConsultancyPage from "../pages/Research/Consultancy/ConsultancyPage";
 
 
 
@@ -320,7 +321,6 @@ export const routes = [
                 }))
               ),
 
-            
               ...conferenceData.conferences.map((card) => ({
                 path: card.routeKey,
                 element: <EventDetails card={card} />,
@@ -336,9 +336,7 @@ export const routes = [
                   crumb: () => <a>{card.title}</a>,
                 },
               })),
-
-            ]
-
+            ],
           },
 
           {
@@ -386,6 +384,13 @@ export const routes = [
               crumb: () => <Link to="/">Innovation</Link>,
             },
           },
+          {
+            path: "consultancy",
+            element: <ConsultancyPage />,
+            handle: {
+              crumb: () => <Link to="/">Consultancy</Link>,
+            },
+          },
         ],
       },
     ],
@@ -411,7 +416,7 @@ function Breadcrumbs() {
         <div className={`${Classes["page-title-content"]}`}>
           {/* <span className={`   text-[25px] sm:text-[40px] md:text-[54px] font-semibold text-white pointer-events-none`}>{crumbs[crumbs.length - 1]}</span> */}
           <nav aria-label="breadcrumb">
-            <ol className="breadcrumb m-0 flex flex-wrap  gap-[0.5rem] ">
+            <ol className="breadcrumb m-0 flex flex-wrap  gap-2">
               {crumbs.map((crumb, index) => (
                 <li key={index} className={`${Classes["breadcrumb-item"]} max-sm:text-[12px]`}>
                   {index === crumbs.length - 1 ? (
