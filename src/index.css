@@ -1421,24 +1421,24 @@ section .card-color img {
 }
 
 .humming ul {
-  list-style: none;    
+  list-style: none;
   padding-left: 0;
 }
 
 .humming ul li {
   position: relative;
-  padding-left: 40px;  
+  padding-left: 40px;
 }
 
 .humming ul li::before {
   content: "";
   position: absolute;
-  left: 0;              
+  left: 0;
   top: 50%;
   transform: translateY(-50%);
   width: 21px;
   height: 21px;
-  background-image: url('/list-arrow.png');
+  background-image: url("/list-arrow.png");
   background-size: cover;
   background-repeat: no-repeat;
 }

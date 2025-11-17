@@ -182,14 +182,17 @@ export const HeaderData = [
           {
             id: 5,
             item: "Placements",
-            path: "#",
+            path: "/placements",
             subItem: [
               {
                 item: "Student testimonial",
                 path: "/placements/student-testimonial",
               },
-
               // student-testimonial
+              {
+                item: "Placement Plolicies",
+                path: "/placements/placement-policies",
+              },
             ],
           },
 

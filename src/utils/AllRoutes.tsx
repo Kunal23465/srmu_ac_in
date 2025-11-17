@@ -46,7 +46,9 @@ import PhdNotificationSessionPage from "../pages/Research/Phd-notification-sessi
 import EventDetails from "../pages/campus-life/events/EventDetails";
 import { conferenceData, festData } from "../data/campus-life/events/events-data";
 import InnovationPage from "../pages/Research/Innovation/InnovationPage";
-import StudentTestimonialPage from "../pages/placement/StudentTestimonialPage";
+import PlacementPage from "../pages/placement/PlacementPage";
+import StudentTestimonialPage from "../pages/placement/student-testimonial/StudentTestimonialPage";
+import PlacementPoliciesPage from "../pages/placement/placement-policies/PlacementPoliciesPage";
 
 interface IMatches {
   id: string;
@@ -380,7 +382,7 @@ export const routes = [
       },
       {
         path: "/placements",
-        element: <StudentTestimonialPage />,
+        element: <PlacementPage />,
         handle: {
           crumb: () => <Link to="/">Placement</Link>,
         },
@@ -390,7 +392,14 @@ export const routes = [
             path: "student-testimonial",
             element: <StudentTestimonialPage />,
             handle: {
-              crumb: () => <Link to="/">student testimonial</Link>,
+              crumb: () => <Link to="/">Student Testimonial</Link>,
+            },
+          },
+          {
+            path: "placement-policies",
+            element: <PlacementPoliciesPage />,
+            handle: {
+              crumb: () => <Link to="/">Placement Polices</Link>,
             },
           },
         ],

@@ -1,5 +1,5 @@
 import React from "react";
-import StudentTestimonial from "../../components/placement/student-testimonail/StudentTestimonial";
+import StudentTestimonial from "../../../components/placement/student-testimonail/StudentTestimonial";
 
 const StudentTestimonialPage: React.FC = () => {
   return (
