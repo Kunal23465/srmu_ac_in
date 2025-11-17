@@ -1,4 +1,6 @@
+import { feeStructureCustomTopFooter } from "../../../data/admissions/fee-structure/fee-structue-data";
 import CustomOverviewSection from "../../../utils/custom/CustomOverviewSection";
+import CustomTopFooter from "../../../utils/custom/CustomTopFooter";
 import Classes from "../../../utils/styles/Global.module.css";
 import PhotoSection from "../events/PhotoSection ";
 
@@ -38,6 +40,8 @@ const ConvocationDetailsComponent = <T extends CardBase>({ card }: Props<T>) => 
           </div>
         )}
       </div>
+      
+       <CustomTopFooter data={feeStructureCustomTopFooter} />
     </div>
   );
 };
