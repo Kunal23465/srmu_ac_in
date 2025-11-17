@@ -188,6 +188,10 @@ export const HeaderData = [
                 item: "Student testimonial",
                 path: "/placements/student-testimonial",
               },
+              {
+                item: "Alumni Registration",
+                path: "/placements/alumni-registration",
+              },
 
               // student-testimonial
             ],
