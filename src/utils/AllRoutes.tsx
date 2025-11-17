@@ -58,6 +58,7 @@ import AlumniRegistrationPage from "../pages/placement/AlumniRegistrationPage";
 import ConvocationPage from "../pages/campus-life/convocation/ConvocationPage";
 import { convocationData } from "../data/campus-life/convocation/convocation-data";
 import ConvocationDetailPage from "../pages/campus-life/convocation/ConvocationDetailPage";
+import GreenInitiativesPage from "../pages/campus-life/green-initiatives/GreenInitiativesPage";
 
 interface IMatches {
   id: string;
@@ -322,6 +323,14 @@ export const routes = [
             element: <CentralLibraryPage />,
             handle: {
               crumb: () => <Link to="/">Central Library</Link>,
+            },
+          },
+
+          {
+            path: "green-initiative",
+            element: <GreenInitiativesPage />,
+            handle: {
+              crumb: () => <Link to="/">Green Initiative</Link>,
             },
           },
           {
