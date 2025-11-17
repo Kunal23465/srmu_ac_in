@@ -18,11 +18,11 @@ export const CustomInstituteCards: React.FC<CardProps> = ({ institute }) => {
 
             <h2 className="mt-4 text-lg font-semibold color_light_blue">{institute.title}</h2>
 
-            <p className="mt-2 text-sm text-gray-600 leading-relaxed grow">
+            <p className="mt-2 text-md text-gray-600 leading-relaxed flex-grow">
                 {institute.description}
             </p>
 
-            <div className="mt-4 flex items-center justify-between">
+            <div className="mt-auto pt-4 flex items-center justify-between">
                 <span className="font18 fw500 color_light_blue">
                     {institute.departments} Departments
                 </span>
@@ -31,14 +31,12 @@ export const CustomInstituteCards: React.FC<CardProps> = ({ institute }) => {
                                    cursor-pointer transition active:scale-95
                                    group-hover:bg-yellow-400 hover:bg-yellow-400 hover:border-yellow-400">
                     <div className="flex items-center gap-2">
-                        <span>
-                            MORE INFO
-                        </span>
-                        <span><FaArrowRight /></span>
-
+                        <span>MORE INFO</span>
+                        <FaArrowRight />
                     </div>
                 </button>
             </div>
         </div>
     );
 };
+
