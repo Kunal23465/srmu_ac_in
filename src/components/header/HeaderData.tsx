@@ -184,6 +184,10 @@ export const HeaderData = [
                 item: "Green Initiative",
                 path: "/campus-life/green-initiative",
               },
+              {
+                item: "Women Empowerment",
+                path: "/campus-life/women-empowerment",
+              },
             ],
           },
 

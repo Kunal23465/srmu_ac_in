@@ -123,7 +123,7 @@
   display: none !important;
 }
 
-.photo_gallery>.slick-dots li button:before {
+.photo_gallery > .slick-dots li button:before {
   font-family: "slick";
   position: absolute;
   top: 0;
@@ -139,12 +139,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.photo_gallery>.slick-dots li.slick-active button:before {
+.photo_gallery > .slick-dots li.slick-active button:before {
   opacity: 0.9;
   background: #ffb703;
 }
 
-.photo_gallery>.slick-dots {
+.photo_gallery > .slick-dots {
   bottom: -40px !important;
 }
 
@@ -474,7 +474,6 @@ background: radial-gradient(circle, rgba(36,64,143,0.9444152661064426) 0%, rgba(
 }
 
 @media screen and (min-width: 592px) {
-
   /* ======================================== */
   .parent_grid_gallary .children img {
     width: 100%;
@@ -1119,7 +1118,7 @@ footer:after {
   color: #ffb703 !important;
 }
 
-.font32{
+.font32 {
   font-size: 2rem;
 }
 
@@ -1280,7 +1279,6 @@ ul {
 }
 
 @media screen and (min-width: 592px) {
-
   /* ======================================== */
   .parent_grid_gallary .children img {
     width: 100%;
@@ -1392,12 +1390,12 @@ section .card-color img {
     flex-direction: column;
   }
 
-  section .card-color>div:first-child {
+  section .card-color > div:first-child {
     width: 100% !important;
     text-align: left;
   }
 
-  section .card-color>div:last-child {
+  section .card-color > div:last-child {
     width: 100% !important;
     margin-top: 2rem !important;
     position: relative !important;
@@ -1496,4 +1494,22 @@ section .card-color img {
   opacity: 1;
 }
 
+.women {
+  background-image: url("./assets/images/campus-life/women-empowerment/we-believe-in.jpg");
+}
 
+.font60 {
+  font-size: 3.75rem;
+}
+
+.font20{
+  font-size: 1.25rem;
+}
+
+.font26{
+  font-size: 1.625rem;
+}
+
+.font19{
+  font-size: 1.188rem;
+}

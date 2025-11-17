@@ -59,6 +59,7 @@ import ConvocationPage from "../pages/campus-life/convocation/ConvocationPage";
 import { convocationData } from "../data/campus-life/convocation/convocation-data";
 import ConvocationDetailPage from "../pages/campus-life/convocation/ConvocationDetailPage";
 import GreenInitiativesPage from "../pages/campus-life/green-initiatives/GreenInitiativesPage";
+import WomenEmpowermentPage from "../pages/campus-life/women-empowerment/WomenEmpowermentPage";
 
 interface IMatches {
   id: string;
@@ -331,6 +332,13 @@ export const routes = [
             element: <GreenInitiativesPage />,
             handle: {
               crumb: () => <Link to="/">Green Initiative</Link>,
+            },
+          },
+          {
+            path: "women-empowerment",
+            element: <WomenEmpowermentPage />,
+            handle: {
+              crumb: () => <Link to="/">Women Empowerment</Link>,
             },
           },
           {
