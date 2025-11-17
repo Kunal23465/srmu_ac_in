@@ -27,7 +27,7 @@ const EventDetailsComponent = <T extends CardBase>({ card }: Props<T>) => {
 
         {card.extraDescription && (
           <div
-            className="mt-6 text-gray-700 leading-7"
+            className="mt-6 font18 leading-7"
             dangerouslySetInnerHTML={{ __html: card.extraDescription }}
           />
         )}

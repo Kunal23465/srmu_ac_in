@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { MdClose } from "react-icons/md";
-// import { string } from "yup";
 
 interface IqacCardProps {
     title: string;
