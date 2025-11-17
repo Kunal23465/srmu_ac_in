@@ -123,7 +123,7 @@
   display: none !important;
 }
 
-.photo_gallery > .slick-dots li button:before {
+.photo_gallery>.slick-dots li button:before {
   font-family: "slick";
   position: absolute;
   top: 0;
@@ -139,12 +139,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.photo_gallery > .slick-dots li.slick-active button:before {
+.photo_gallery>.slick-dots li.slick-active button:before {
   opacity: 0.9;
   background: #ffb703;
 }
 
-.photo_gallery > .slick-dots {
+.photo_gallery>.slick-dots {
   bottom: -40px !important;
 }
 
@@ -474,6 +474,7 @@ background: radial-gradient(circle, rgba(36,64,143,0.9444152661064426) 0%, rgba(
 }
 
 @media screen and (min-width: 592px) {
+
   /* ======================================== */
   .parent_grid_gallary .children img {
     width: 100%;
@@ -691,23 +692,23 @@ input::-webkit-inner-spin-button {
 
 @media screen and (max-width: 1200px) {
   .manage_footer_column {
-    grid-template-columns: repeat(8, minmax(0, 1fr));
+    grid-template-columns: repeat(11, minmax(0, 1fr));
   }
 
   .grid-first {
-    grid-column: span 5 / span 5;
+    grid-column: span 6 / span 6;
   }
 
   .grid-second {
-    grid-column: span 3 / span 3;
-  }
-
-  .grid-third {
     grid-column: span 5 / span 5;
   }
 
+  .grid-third {
+    grid-column: span 6 / span 6;
+  }
+
   .grid-fourth {
-    grid-column: span 3 / span 3;
+    grid-column: span 5 / span 5;
   }
 }
 
@@ -973,6 +974,7 @@ html {
   grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
   font-size: 10px;
 }
+
 footer {
   background-color: #ecf0f9;
   background-position: center;
@@ -982,6 +984,7 @@ footer {
   background-size: cover;
   background-repeat: no-repeat;
 }
+
 footer:after {
   content: "";
   position: absolute;
@@ -991,12 +994,14 @@ footer:after {
   height: 100%;
   background-color: rgb(15 74 133 / 90%);
 }
+
 .custom-table-container {
   margin: 20px 0;
   border: 3px solid #ffcc66;
   border-radius: 10px;
   overflow: hidden;
 }
+
 .custom-table {
   width: 100%;
   border-collapse: separate;
@@ -1085,6 +1090,7 @@ footer:after {
 .color_light_blue {
   color: rgb(15, 74, 133) !important;
 }
+
 .color_border_blue {
   border: solid 1px rgb(15, 74, 133) !important;
 }
@@ -1136,6 +1142,7 @@ ul {
 .abc-wrapper {
   position: relative;
 }
+
 .abc-wrapper::before {
   content: "";
   position: absolute;
@@ -1159,13 +1166,16 @@ ul {
 
 .abc-videos-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* exactly 2 per row */
+  grid-template-columns: repeat(2, 1fr);
+  /* exactly 2 per row */
   gap: 24px;
 }
+
 .abc-video-wrapper {
   position: relative;
   width: 100%;
-  padding-top: 56.25%; /* 16:9 aspect ratio */
+  padding-top: 56.25%;
+  /* 16:9 aspect ratio */
   overflow: hidden;
   border-radius: 12px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
@@ -1184,6 +1194,10 @@ ul {
 @media (max-width: 768px) {
   .abc-videos-grid {
     grid-template-columns: 1fr;
+  }
+
+  .programs-tabs button::after {
+    display: none;
   }
 }
 
@@ -1262,6 +1276,7 @@ ul {
 }
 
 @media screen and (min-width: 592px) {
+
   /* ======================================== */
   .parent_grid_gallary .children img {
     width: 100%;
@@ -1321,8 +1336,10 @@ ul {
 
 /* Top + Bottom Borders */
 .director-modal .ant-modal-content {
-  border-top: 5px solid #ffb703 !important; /* yellow */
-  border-bottom: 5px solid #0f4a85 !important; /* blue */
+  border-top: 5px solid #ffb703 !important;
+  /* yellow */
+  border-bottom: 5px solid #0f4a85 !important;
+  /* blue */
 }
 
 /* Remove internal padding */
@@ -1371,12 +1388,12 @@ section .card-color img {
     flex-direction: column;
   }
 
-  section .card-color > div:first-child {
+  section .card-color>div:first-child {
     width: 100% !important;
     text-align: left;
   }
 
-  section .card-color > div:last-child {
+  section .card-color>div:last-child {
     width: 100% !important;
     margin-top: 2rem !important;
     position: relative !important;
@@ -1421,19 +1438,19 @@ section .card-color img {
 }
 
 .humming ul {
-  list-style: none;    
+  list-style: none;
   padding-left: 0;
 }
 
 .humming ul li {
   position: relative;
-  padding-left: 40px;  
+  padding-left: 40px;
 }
 
 .humming ul li::before {
   content: "";
   position: absolute;
-  left: 0;              
+  left: 0;
   top: 50%;
   transform: translateY(-50%);
   width: 21px;
@@ -1443,34 +1460,34 @@ section .card-color img {
   background-repeat: no-repeat;
 }
 
-.programsection{
+.programsection {
   background-color: rgb(33, 158, 188);
 }
 
 .programs-tabs ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .programs-tabs li {
-    position: relative;
+  position: relative;
 }
 
 .programs-tabs button::after {
-    content: "";
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    width: 14px;
-    height: 14px;
-    transform: translateY(-50%);
-    background-image: url("/tab-arrow.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    opacity: 0.7;
+  content: "";
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  width: 14px;
+  height: 14px;
+  transform: translateY(-50%);
+  background-image: url("/tab-arrow.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.7;
 }
 
 .programs-tabs button.programsection::after {
-    opacity: 1;
+  opacity: 1;
 }
