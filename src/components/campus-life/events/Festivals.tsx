@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { festivalsData } from "../../../data/campus-life/events/events-data";
+import { useNavigate } from "react-router-dom";
 
 const Festivals: React.FC = () => {
     const [activeIndex, setActiveIndex] = useState(0);
     const [startCard, setStartCard] = useState(0);
-    const [selectedCard, setSelectedCard] = useState<any>(null);
+    const navigate = useNavigate();
 
 
     const activeFestival = festivalsData[activeIndex];
@@ -117,7 +118,7 @@ const Festivals: React.FC = () => {
 
                                     <div className="mt-4">
                                         <button
-                                            onClick={() => setSelectedCard(card)}
+                                            onClick={() => navigate(card.routeKey)} 
                                             className="text-sm font-semibold border border-yellow-500 color_light_blue py-2 px-4 rounded-lg hover:bg-yellow-500 hover:text-white transition flex items-center gap-2 w-fit"
                                         >
                                             MORE INFO →

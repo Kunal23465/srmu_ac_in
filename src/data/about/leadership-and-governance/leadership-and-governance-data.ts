@@ -113,7 +113,9 @@ export const profileData = [
 export const LeadershiOverviewData: customeOverViewType = {
   heading: "Leaders Vision",
   content:
-    "Established in 1998 by distinguished alumni and Gold Medalists from IIT Kanpur, SRMCEM embarked on an extraordinary journey. Our innovative leadership team sought to develop a globally esteemed institution that not only delivers knowledge but also promotes ethical values and encourages social and environmental consciousness.",
+    `Founded by IIT Kanpur alumni and Gold Medalists, SRMUs inception in 1999 marked the start of a remarkable journey. Our visionary leadership team aimed to create a globally recognized institution that imparts knowledge, instills ethical values, and nurtures social and ecological sensibilities.
+
+Over time, this commitment to quality education has blossomed into a multifaceted university. Hear from SRMU’s Leadership as they reinforce this commitment:`,
 };
 
 export const CustomTopFooterData1 = [

@@ -5,12 +5,8 @@ import Classes from "../utils/styles/Global.module.css";
 import { Fragment } from "react/jsx-runtime";
 import AboutPage from "../pages/about/AboutPage";
 
-
-
 import { committeeCards } from "../data/about/committee-and-cells/committee-and-cells-data";
 import CustomCommitteeDetailsPage from "./custom/CustomCommitteeDetailsPage";
-
-
 
 import AdmissonsPage from "../pages/admissions/AdmissionPage";
 import OverviewPage from "../pages/admissions/overview/OverviewPage";
@@ -48,13 +44,14 @@ import ResearchOverviewPage from "../pages/Research/Overview/ResearchOverviewPag
 import ProcessAndInitiativePage from "../pages/Research/Process-and-Initiative/ProcessAndInitiativePage";
 import PhdNotificationSessionPage from "../pages/Research/Phd-notification-session/PhdNotificationSessionPage";
 import EventDetails from "../pages/campus-life/events/EventDetails";
-import { conferenceData, festData } from "../data/campus-life/events/events-data";
+import tedxData, { conferenceData, festData, festivalsData } from "../data/campus-life/events/events-data";
 import InnovationPage from "../pages/Research/Innovation/InnovationPage";
 import ConsultancyPage from "../pages/Research/Consultancy/ConsultancyPage";
 
 
 
 
+import StudentTestimonialPage from "../pages/placement/StudentTestimonialPage";
 
 interface IMatches {
   id: string;
@@ -336,6 +333,25 @@ export const routes = [
                   crumb: () => <a>{card.title}</a>,
                 },
               })),
+
+
+              ...Object.values(festivalsData).flatMap((festival) =>
+                festival.cards.map((card) => ({
+                  path: card.routeKey,
+                  element: <EventDetails card={card} />,
+                  handle: {
+                    crumb: () => <a>{card.title}</a>,
+                  },
+                }))
+              ),
+
+              ...tedxData.map((card) => ({
+                path: card.routeKey,
+                element: <EventDetails card={card} />,
+                handle: {
+                  crumb: () => <a>{card.title}</a>,
+                },
+              })),
             ],
           },
 
@@ -389,6 +405,23 @@ export const routes = [
             element: <ConsultancyPage />,
             handle: {
               crumb: () => <Link to="/">Consultancy</Link>,
+            },
+          },
+        ],
+      },
+      {
+        path: "/placements",
+        element: <StudentTestimonialPage />,
+        handle: {
+          crumb: () => <Link to="/">Placement</Link>,
+        },
+
+        children: [
+          {
+            path: "student-testimonial",
+            element: <StudentTestimonialPage />,
+            handle: {
+              crumb: () => <Link to="/">student testimonial</Link>,
             },
           },
         ],

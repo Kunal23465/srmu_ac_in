@@ -5,7 +5,7 @@ export interface BannerContent {
   buttonText: string ;
 }
 export const bannerData: BannerContent = {
-  title: "Admissions Open 2025-26",
+  title: "Cheers to Success!!",
   subtitle: ["Top Choice", "of AKTU Aspirants in the Region "],
   description: "Innovate, Transform, Empower & Succeed with AKTU Score Based Scholarships",
   buttonText: "Apply Now",

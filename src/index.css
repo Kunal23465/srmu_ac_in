@@ -1121,9 +1121,9 @@ ul {
   font-size: calc(1.025rem + 0.9vw);
 }
 
-p {
+/* p {
   font-size: 1.125rem;
-}
+} */
 
 .abc-wrapper {
   background: #eceff1;
@@ -1441,4 +1441,36 @@ section .card-color img {
   background-image: url('/list-arrow.png');
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.programsection{
+  background-color: rgb(33, 158, 188);
+}
+
+.programs-tabs ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.programs-tabs li {
+    position: relative;
+}
+
+.programs-tabs button::after {
+    content: "";
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    width: 14px;
+    height: 14px;
+    transform: translateY(-50%);
+    background-image: url("/tab-arrow.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.7;
+}
+
+.programs-tabs button.programsection::after {
+    opacity: 1;
 }
