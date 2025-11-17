@@ -53,6 +53,9 @@ import ConsultancyPage from "../pages/Research/Consultancy/ConsultancyPage";
 
 import StudentTestimonialPage from "../pages/placement/StudentTestimonialPage";
 import AlumniRegistrationPage from "../pages/placement/AlumniRegistrationPage";
+import ConvocationPage from "../pages/campus-life/convocation/ConvocationPage";
+import { convocationData } from "../data/campus-life/convocation/convocation-data";
+import ConvocationDetailPage from "../pages/campus-life/convocation/ConvocationDetailPage";
 
 interface IMatches {
   id: string;
@@ -292,6 +295,25 @@ export const routes = [
             handle: {
               crumb: () => <Link to="/">Facilities</Link>,
             },
+          },
+          {
+            path: "convocation",
+            element: <ConvocationPage />,
+            handle: {
+              crumb: () => <Link to="/">Convocation</Link>,
+            },
+            children: [
+              ...Object.values(convocationData).flatMap((item) =>
+                item.cards.map((card) => ({
+                  path: card.routeKey,
+                  element: <ConvocationDetailPage card={card} />,
+                  handle: {
+                    crumb: () => <a>{card.title}</a>,
+                  },
+                }))
+              ),
+            ]
+
           },
           {
             path: "central-library",

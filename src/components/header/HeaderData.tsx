@@ -176,6 +176,10 @@ export const HeaderData = [
                 item: "Events",
                 path: "/campus-life/events",
               },
+              {
+                item: "Convocation",
+                path: "/campus-life/convocation",
+              },
             ],
           },
 
