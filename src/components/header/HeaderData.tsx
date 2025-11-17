@@ -176,6 +176,10 @@ export const HeaderData = [
                 item: "Events",
                 path: "/campus-life/events",
               },
+              {
+                item: "Convocation",
+                path: "/campus-life/convocation",
+              },
             ],
           },
 
@@ -188,6 +192,11 @@ export const HeaderData = [
                 item: "Student testimonial",
                 path: "/placements/student-testimonial",
               },
+              {
+                item: "Alumni Registration",
+                path: "/placements/alumni-registration",
+              },
+
               // student-testimonial
               {
                 item: "Placement Plolicies",

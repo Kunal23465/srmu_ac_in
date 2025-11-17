@@ -58,9 +58,8 @@ const Header = () => {
       >
         <TopHeader />
         <div
-          className={`py-2   items-stretch header ${
-            isActive ? "bg-[#0e2f46] active" : ""
-          }`}
+          className={`py-2   items-stretch header ${isActive ? "bg-[#0e2f46] active" : ""
+            }`}
         >
           <div className={`${Classes["container"]} `}>
             <div className="flex flex-row justify-between">
@@ -77,13 +76,12 @@ const Header = () => {
                 </div>
                 <div>
                   <h2
-                    className={` font-bold lg:text-[1rem] xl:text-[1.4rem] text-white ${
-                      isActive
+                    className={` font-bold lg:text-[1rem] xl:text-[1.4rem] text-white ${isActive
                         ? "text-white"
                         : location.pathname !== "/"
-                        ? "text-white"
-                        : ""
-                    } `}
+                          ? "text-white"
+                          : ""
+                      } `}
                   >
                     SHRI RAMSWAROOP
                     <div className="text-[0.5rem] font-semibold">
@@ -101,18 +99,16 @@ const Header = () => {
                           <Link
                             to={data.path}
                             key={index}
-                            className={` relative group    py-6 text-sm uppercase cursor-pointer ${
-                              location.pathname === data.path ? "active" : ""
-                            }   [&.active]:text-[#ffb703]`}
+                            className={` relative group    py-6 text-sm uppercase cursor-pointer ${location.pathname === data.path ? "active" : ""
+                              }   [&.active]:text-[#ffb703]`}
                           >
                             <span
-                              className={`flex items-center text-white ${
-                                isActive
+                              className={`flex items-center text-white ${isActive
                                   ? "text-white"
                                   : location.pathname !== "/"
-                                  ? "text-white"
-                                  : ""
-                              } hover:text-[#ffb703]`}
+                                    ? "text-white"
+                                    : ""
+                                } hover:text-[#ffb703]`}
                             >
                               {data.item}
                             </span>
@@ -131,13 +127,12 @@ const Header = () => {
                                     return (
                                       <>
                                         {value.item !== "SC/ST Committee" &&
-                                        value.item !== "WebOPAC" ? (
+                                          value.item !== "WebOPAC" ? (
                                           <Link
                                             key={ind}
                                             to={value.path}
-                                            className={`text-nowrap relative block  parentclass font-normal  px-3  py-3 ${
-                                              ind == 0 ? " " : " border-t  border-gray-200"
-                                            }`}
+                                            className={`text-nowrap relative block  parentclass font-normal  px-3  py-3 ${ind == 0 ? " " : " border-t  border-gray-200"
+                                              }`}
                                           >
                                             <div
                                               onClick={() => handleClick(value)}
@@ -151,9 +146,8 @@ const Header = () => {
                                             href={value.path}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className={`text-nowrap relative block  parentclass font-normal hover:text-[#ffb703] px-3  py-3 ${
-                                              ind == 0 ? " " : " border-t border-gray-200"
-                                            }`}
+                                            className={`text-nowrap relative block  parentclass font-normal hover:text-[#ffb703] px-3  py-3 ${ind == 0 ? " " : " border-t border-gray-200"
+                                              }`}
                                             onClick={(e) => {
                                               e.preventDefault(); // Prevent default navigation
                                               window.open(value.path, "_blank"); // Open in new tab
@@ -179,13 +173,12 @@ const Header = () => {
               <div className="lg:hidden my-auto">
                 <GiHamburgerMenu
                   size={20}
-                  className={`cursor-pointer  ${
-                    isActive
+                  className={`cursor-pointer text-white  ${isActive
                       ? "text-white"
                       : location.pathname !== "/"
-                      ? "text-white"
-                      : ""
-                  }  `}
+                        ? "text-white"
+                        : ""
+                    }  `}
                   onClick={() => setSideMenu(!sideMenu)}
                 />
               </div>
@@ -194,32 +187,27 @@ const Header = () => {
         </div>
         {/* Mobile menu */}
         <div
-          className={`lg:hidden ${
-            sideMenu ? "block " : " hidden "
-          } w-full h-[calc(100vh-103px)]  bg-opacity-50 fixed top-[100px] right-0`}
+          className={`lg:hidden ${sideMenu ? "block " : " hidden "
+            } w-full h-[calc(100vh-103px)]  bg-opacity-50 fixed top-[100px] right-0`}
         ></div>
         <div
-          className={`fixed top-[100px] pt-4  h-[calc(100vh-92px)] right-0 sm:h-[calc(100vh-103px)] bg-white  border-t-2 border-blue-900 transition-all duration-300 overflow-auto mobile-scroll w-full lg:hidden ${
-            sideMenu ? "max-w-[250px]" : "max-w-0"
-          }`}
+          className={`fixed top-[100px] pt-4  h-[calc(100vh-92px)] right-0 sm:h-[calc(100vh-103px)] bg-white  border-t-2 border-blue-900 transition-all duration-300 overflow-auto mobile-scroll w-full lg:hidden ${sideMenu ? "max-w-[250px]" : "max-w-0"
+            }`}
         >
           <ul className="w-full flex flex-col list-none   mt-10 border-y  ">
             {bottomHeaderData[0].navitems.map((data, index) => {
               return (
                 <li
                   key={index}
-                  className={`relative w-full  ${
-                    data.item === "Login" && "hidden"
-                  } text-sm  uppercase cursor-pointer py-2 ${
-                    data.id !== 0 && "border-t border-gray-200"
-                  }  `}
+                  className={`relative w-full  ${data.item === "Login" && "hidden"
+                    } text-sm  uppercase cursor-pointer py-2 ${data.id !== 0 && "border-t border-gray-200"
+                    }  `}
                 >
                   <Link
                     to={data.path}
                     key={index}
-                    className={`  ${
-                      location.pathname === data.path ? "active" : ""
-                    } w-full block   [&.active]:text-[#ffb703] `}
+                    className={`  ${location.pathname === data.path ? "active" : ""
+                      } w-full block   [&.active]:text-[#ffb703] `}
                   >
                     <span
                       className={`flex gap-x-0.5 xl:gap-x-1 items-center pl-2 pr-5 justify-between hover:text-[#ffb703]  `}
@@ -228,9 +216,8 @@ const Header = () => {
                     </span>
                     {data?.subItem && (
                       <ul
-                        className={`transition-all w-full     duration-700  h-full overflow-hidden  ${
-                          subMenu == data.id ? "max-h-[1000px]" : "max-h-0"
-                        }   `}
+                        className={`transition-all w-full     duration-700  h-full overflow-hidden  ${subMenu == data.id ? "max-h-[1000px]" : "max-h-0"
+                          }   `}
                       >
                         <span className="w-full block h-0.5 mt-2 bg-[#ffb703]"></span>
                         {data?.subItem.map((value, ind) => {
@@ -241,9 +228,8 @@ const Header = () => {
                                 href={value.path}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className={`text-nowrap relative block  parentclass font-normal hover:text-[#ffb703] px-5  pt-3 pb-1  ${
-                                  ind == 0 ? " " : " border-t border-gray-200"
-                                }`}
+                                className={`text-nowrap relative block  parentclass font-normal hover:text-[#ffb703] px-5  pt-3 pb-1  ${ind == 0 ? " " : " border-t border-gray-200"
+                                  }`}
                                 onClick={(e) => {
                                   e.preventDefault(); // Prevent default navigation
                                   window.open(value.path, "_blank"); // Open in new tab

@@ -17,7 +17,7 @@ const RootLayout: React.FC = () => {
   return (
     <>
       <Header />
-      <main className="mt-[51px]">
+      <main className="mt-[41px] lg:mt-[45px]">
         {location.pathname !== "/" && <Breadcrumbs />}
         <Outlet />
       </main>

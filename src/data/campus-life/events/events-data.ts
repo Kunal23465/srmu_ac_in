@@ -239,6 +239,86 @@ import f6 from "../../../assets/images/campus-life/events/new-education/6.jpg"
 import f7 from "../../../assets/images/campus-life/events/new-education/7.jpg"
 
 
+
+
+import g1 from "../../../assets/images/campus-life/events/rang-barse-2k23/1.jpg"
+import g2 from "../../../assets/images/campus-life/events/rang-barse-2k23/2.jpg"
+import g3 from "../../../assets/images/campus-life/events/rang-barse-2k23/3.jpg"
+import g4 from "../../../assets/images/campus-life/events/rang-barse-2k23/4.jpg"
+import g5 from "../../../assets/images/campus-life/events/rang-barse-2k23/5.jpg"
+import g6 from "../../../assets/images/campus-life/events/rang-barse-2k23/6.jpg"
+
+
+import h1 from "../../../assets/images/campus-life/events/rang-barse-2k22/1.jpg"
+import h2 from "../../../assets/images/campus-life/events/rang-barse-2k22/2.jpg"
+import h3 from "../../../assets/images/campus-life/events/rang-barse-2k22/3.jpg"
+import h4 from "../../../assets/images/campus-life/events/rang-barse-2k22/4.jpg"
+import h5 from "../../../assets/images/campus-life/events/rang-barse-2k22/5.jpg"
+
+
+import i1 from "../../../assets/images/campus-life/events/rang-barse-2k21/1.jpg"
+import i2 from "../../../assets/images/campus-life/events/rang-barse-2k21/2.jpg"
+import i3 from "../../../assets/images/campus-life/events/rang-barse-2k21/3.jpg"
+
+
+
+import j1 from "../../../assets/images/campus-life/events/dandiya-2k23/1.jpg"
+import j2 from "../../../assets/images/campus-life/events/dandiya-2k23/2.jpg"
+import j3 from "../../../assets/images/campus-life/events/dandiya-2k23/3.jpg"
+
+
+import k1 from "../../../assets/images/campus-life/events/dandiya-2k21/1.jpg"
+import k2 from "../../../assets/images/campus-life/events/dandiya-2k21/2.jpg"
+import k3 from "../../../assets/images/campus-life/events/dandiya-2k21/3.jpg"
+
+
+import l1 from "../../../assets/images/campus-life/events/dandiya-2k19/1.jpg"
+import l2 from "../../../assets/images/campus-life/events/dandiya-2k19/2.jpg"
+import l3 from "../../../assets/images/campus-life/events/dandiya-2k19/3.jpg"
+
+import m1 from "../../../assets/images/campus-life/events/tedxinnovation/1.jpg"
+import m2 from "../../../assets/images/campus-life/events/tedxinnovation/2.jpg"
+import m3 from "../../../assets/images/campus-life/events/tedxinnovation/3.jpg"
+import m4 from "../../../assets/images/campus-life/events/tedxinnovation/4.jpg"
+import m5 from "../../../assets/images/campus-life/events/tedxinnovation/5.jpg"
+import m6 from "../../../assets/images/campus-life/events/tedxinnovation/6.jpg"
+import m7 from "../../../assets/images/campus-life/events/tedxinnovation/7.jpg"
+import m8 from "../../../assets/images/campus-life/events/tedxinnovation/8.jpg"
+import m9 from "../../../assets/images/campus-life/events/tedxinnovation/9.jpg"
+
+import n1 from "../../../assets/images/campus-life/events/tedxwomen1/1.jpg"
+import n2 from "../../../assets/images/campus-life/events/tedxwomen1/2.jpg"
+import n3 from "../../../assets/images/campus-life/events/tedxwomen1/3.jpg"
+
+import o1 from "../../../assets/images/campus-life/events/tedxglobal/1.jpg"
+import o2 from "../../../assets/images/campus-life/events/tedxglobal/2.jpg"
+import o3 from "../../../assets/images/campus-life/events/tedxglobal/3.jpg"
+
+import q1 from "../../../assets/images/campus-life/events/tedx-srmulive/1.jpg"
+import q2 from "../../../assets/images/campus-life/events/tedx-srmulive/2.jpg"
+import q3 from "../../../assets/images/campus-life/events/tedx-srmulive/3.jpg"
+import q4 from "../../../assets/images/campus-life/events/tedx-srmulive/4.jpeg"
+
+import r1 from "../../../assets/images/campus-life/events/tedx-srmu/1.jpg"
+import r2 from "../../../assets/images/campus-life/events/tedx-srmu/2.jpg"
+import r3 from "../../../assets/images/campus-life/events/tedx-srmu/3.jpg"
+import r4 from "../../../assets/images/campus-life/events/tedx-srmu/4.jpg"
+import r5 from "../../../assets/images/campus-life/events/tedx-srmu/5.jpg"
+import r6 from "../../../assets/images/campus-life/events/tedx-srmu/6.jpg"
+import r7 from "../../../assets/images/campus-life/events/tedx-srmu/7.jpg"
+import r8 from "../../../assets/images/campus-life/events/tedx-srmu/8.jpg"
+import r9 from "../../../assets/images/campus-life/events/tedx-srmu/9.jpg"
+
+import s1 from "../../../assets/images/campus-life/events/tedx-women2/1.jpg"
+import s2 from "../../../assets/images/campus-life/events/tedx-women2/2.jpg"
+import s3 from "../../../assets/images/campus-life/events/tedx-women2/3.jpg"
+import s4 from "../../../assets/images/campus-life/events/tedx-women2/4.jpg"
+import s5 from "../../../assets/images/campus-life/events/tedx-women2/5.jpg"
+import s6 from "../../../assets/images/campus-life/events/tedx-women2/6.jpg"
+import s7 from "../../../assets/images/campus-life/events/tedx-women2/7.jpg"
+import s8 from "../../../assets/images/campus-life/events/tedx-women2/8.jpg"
+import s9 from "../../../assets/images/campus-life/events/tedx-women2/9.jpg"
+
 export const EventsOverviewData: customeOverViewType = {
     heading: "Events",
     content:
@@ -626,6 +706,9 @@ export interface FestivalCard {
     image: string;
     description: string;
     date: string;
+    routeKey: string;
+    photos?: string[];
+    extraDescription?: string;
 }
 
 export interface Festival {
@@ -640,52 +723,75 @@ export const festivalsData: Festival[] = [
         description: `Rang Barse festival, inspired by the joyous spirit of Holi, emerges as a vibrant tapestry of colors, laughter, and camaraderie. As the festival unfolds, it transforms ordinary spaces into kaleidoscopic realms where people of all ages come together to celebrate the arrival of spring and the triumph of good over evil. From the rhythmic beats of traditional drums to the playful splashes of colored powders, Rang Barse encapsulates the essence of festivity and togetherness. With its infectious energy and jubilant atmosphere, Rang Barse festival serves as a timeless reminder of the beauty found in shared experiences and the boundless exuberance of the human spirit during the Holi season.`,
         cards: [
             {
-                title: "Holi Celebration 2024",
+                title: "Rang Barse 2K23",
                 image: holi1,
-                date: "November 06, 2023",
+                date: "March 4, 2023",
                 description:
-                    "Students celebrated Holi with joy, colors, and music, creating a vibrant environment of unity and happiness.",
+                    `Rangostav, a spirited celebration organized at SRM University in honor of Holi, embodies the essence of this vibrant festival. The campus transforms into a riot of colors as students and faculty come together to revel in the joyous occasion. The event features traditional rituals, lively music, and a riotous play of colors, where participants gleefully throw vibrant powders at each other, symbolizing the triumph of good over evil. Rangostav is a platform for cultural exchange, fostering unity and camaraderie among the diverse student body. With lively dance performances, delicious Holi delicacies, and a jubilant atmosphere, Rangostav at SRM University is a jubilant expression of the festival, creating lasting memories of shared laughter and colorful camaraderie.`,
+                routeKey: "rang-barse-2k23",
+                photos: [g1, g2, g3, g4, g5, g6],
+                extraDescription: `Amidst the swirl of colors, 'Rang Barse' becomes a melting pot of cultures and traditions, where individuals from diverse backgrounds come together in a harmonious celebration of unity and camaraderie. As people dance to the rhythm of folk songs and exchange warm greetings, the boundaries of caste, creed, and social status fade away, leaving behind a sense of shared humanity. 'Rang Barse' transcends the confines of time and space, embodying the timeless spirit of Holi while serving as a vibrant testament to the beauty of cultural diversity and the power of collective celebration.`
             },
             {
-                title: "Color Splash 2023",
+                title: "Rang Barse 2K22",
                 image: holi2,
-                date: "November 06, 2023",
+                date: "March 14,  2022",
                 description:
-                    "A day filled with laughter, dance, and celebration — marking the triumph of good over evil through colors.",
+                    `Rang Barse, the exuberant Holi celebration, unfolds as a kaleidoscopic extravaganza that paints the canvas of life with vibrant hues. This lively event is a melting pot of cultural traditions, bringing people from diverse backgrounds together to revel in the joyous arrival of spring. As the beats of traditional music fill the air, participants engage in a riot of colors, playfully dousing each other in vibrant powders and water balloons. The festival transcends the barriers of age, caste, and creed, fostering a sense of unity and shared jubilation. It's a time when the community comes alive with infectious laughter, music, and dance, creating a collective memory that lingers long after the last traces of color have faded.`,
+                routeKey: "rang-barse-2k22",
+                photos: [h1, h2, h3, h4, h5],
+                extraDescription:
+                    `Rang Barse is not just a celebration of colors but a symbol of renewal, symbolizing the triumph of good over evil. It encapsulates the spirit of letting go of the past and embracing the promise of a brighter future. From traditional rituals to contemporary twists on Holi festivities, Rang Barse stands as a testament to the enduring cultural significance of Holi, bringing people together in a riotous celebration of life, love, and the vibrant spectrum of human emotions.`
             },
             {
-                title: "Festival of Unity 2022",
+                title: "Rang Barse 2K21",
                 image: holi3,
-                date: "November 06, 2023",
+                date: "March 24, 2021",
                 description:
-                    "The Holi festival at SRMU brought together students and staff, celebrating the true essence of togetherness.",
+                    `'Rang Barse' at our institution has evolved into a joyous annual tradition, creating a delightful intersection where students and faculty come together to revel in the spirit of Holi. The event sparks a palpable sense of excitement as both academic and administrative staff, along with enthusiastic students, eagerly anticipate the color-filled festivities. Amidst the vibrant hues, traditional music, and infectious laughter, the boundaries that typically define student-faculty relationships dissolve, fostering an environment of shared enjoyment and celebration.`,
+                routeKey: "rang-barse-2k21",
+                photos: [i1, i2, i3],
+                extraDescription:
+                    `The beauty of 'Rang Barse' lies in the seamless integration of generations within the academic community. Students and faculty alike engage in spirited conversations, share laughter, and partake in the colorful revelry, creating lasting memories that extend beyond the classroom. It serves as a unique platform where academic hierarchies momentarily fade, allowing for meaningful interactions and a sense of unity that transcends roles and responsibilities. 'Rang Barse' becomes a testament to the inclusive and harmonious campus culture, where everyone, regardless of their academic or administrative roles, can collectively immerse themselves in the joyous celebration of Holi.`,
             },
         ],
     },
     {
         name: "DANDIYA DELIGHTZZ",
-        description: `Dandiya Delightzz, a vibrant celebration of Navratri, fills the SRMU campus with dazzling lights, rhythmic music, and joyful dance. Students and faculty come together in traditional attire to participate in energetic Garba and Dandiya performances, symbolizing devotion and unity. The festival reflects India's rich cultural heritage and serves as a platform for students to express their creativity, enthusiasm, and cultural pride.`,
+        description: `On the auspicious occasion of Winter Navratri Dandiya delightzz is celebrated, Dandiya is a dance form with music wherein each participant has a partner with two wooden sticks, it is a great cultural heritage of western part of our nation. University celebrates ‘Dandiya Delightzz’ every year in the University Campus with full fan fare wherein participant wears ethnic clothes and have their dandiya where folk music & filmi songs is the most awaited program as each participant must have a partner dancer. Students as well as faculty members in pair participate in this event with great enthusiasm.`,
         cards: [
             {
-                title: "Navratri Night 2024",
+                title: "Dandiya Delightzzz 2K23",
                 image: dandiya1,
                 date: "November 06, 2023",
                 description:
-                    "A night full of rhythm and devotion where students performed Garba and Dandiya in colorful traditional outfits.",
+                    `The SRMU Annual Festival, 'Dandiya Delightzz,' unfolds as a dazzling celebration of culture, rhythm, and communal joy. This vibrant event encapsulates the spirit of Navratri, bringing together students, faculty, and staff in a spirited dance extravaganza. As the campus transforms into a kaleidoscope of colors and lights, the infectious beats of traditional dandiya music reverberate through the air. 'Dandiya Delightzz' is a testimony to the rich cultural diversity within SRMU, where participants, bedecked in traditional attire, twirl and sway to the energetic tunes, creating an atmosphere of sheer revelry and unity.`,
+                routeKey: "dandiya-delightzzz-2k23",
+                photos: [j1, j2, j3],
+                extraDescription:
+                    `Beyond its festive exuberance, 'Dandiya Delightzz' stands as a bridge that connects individuals from various academic disciplines and backgrounds. The dance floor becomes a melting pot of camaraderie as students, faculty, and staff engage in the rhythmic patterns of dandiya, fostering a sense of togetherness that extends beyond the academic setting. With its blend of traditional dance forms, lively music, and the vibrant energy of participants, 'Dandiya Delightzz' has become a hallmark event at SRMU, embodying the institution's commitment to fostering a holistic and inclusive campus culture.`,
             },
             {
-                title: "Cultural Celebration 2023",
+                title: "Dandiya Delightzzz 2K21",
                 image: dandiya2,
-                date: "November 06, 2023",
+                date: "October 12, 2021",
                 description:
-                    "The event showcased Indian traditions through lively performances, music, and community spirit.",
+                    `The SRMU annual festival 'Dandiya Delightzz' stands as a vibrant celebration of culture, rhythm, and community spirit. Held against the backdrop of traditional Indian festivities, this event transforms the campus into a colorful spectacle of dance, music, and camaraderie. With students, faculty, and staff adorned in traditional attire, the festival exudes an atmosphere of joy and festivity, resonating with the pulsating beats of dandiya and garba rhythms.`,
+                routeKey: "dandiya-delightzzz-2k21",
+                photos: [k1, k2, k3],
+                extraDescription:
+                    `As the sun sets, the campus comes alive with the rhythmic claps and twirls of dandiya sticks, creating an enchanting tapestry of movement and sound. 'Dandiya Delightzz' offers a platform for participants to immerse themselves in the rich cultural heritage of India, fostering a sense of belonging and unity among the diverse student body. Beyond just a dance festival, it serves as a melting pot where individuals from various backgrounds come together to celebrate the spirit of togetherness and harmony, making it a highlight of the academic calendar at SRMU.`,
             },
             {
-                title: "Dandiya Extravaganza 2022",
+                title: "Dandiya Delightzzz 2K19",
                 image: dandiya3,
-                date: "November 06, 2023",
+                date: "October 22, 2019",
                 description:
-                    "A grand evening that lit up the campus with energy, dance, and vibrant colors of cultural heritage.",
+                    `'SRMU Annual Festival: Dandiya Delightzz' is a spectacular celebration that brings the entire Shri Ramswaroop Memorial University (SRMU) community together for an enchanting night of traditional dance, vibrant music, and joyous festivities. The event is a colorful ode to the cultural richness of India, specifically highlighting the spirited dance form of Dandiya Raas. As the university decks out in lively decorations, students and faculty eagerly don traditional attire, adding to the festive ambiance. The rhythmic beats of dandiya sticks striking together create a pulsating energy that reverberates throughout the campus, transforming it into a lively dance floor.`,
+                routeKey: "dandiya-delightzzz-2k19",
+                photos: [l1, l2, l3],
+                extraDescription:
+                    `Dandiya Delightzz is more than just a dance event; it embodies the spirit of unity and diversity within the SRMU community. Students and faculty members come together to revel in the festivities, breaking down barriers and fostering a sense of camaraderie that extends beyond academic and administrative roles. The event provides a platform for cultural exchange and appreciation, allowing everyone to immerse themselves in the joyous celebration of Dandiya while creating lasting memories that contribute to the vibrant tapestry of the university's annual festivities.`,
             },
         ],
     },
@@ -698,6 +804,9 @@ export interface TedxCardData {
     date: string;
     image: string;
     description: string;
+    routeKey: string;
+    photos?: string[];
+    extraDescription?: string;
 }
 
 const tedxData: TedxCardData[] = [
@@ -707,7 +816,12 @@ const tedxData: TedxCardData[] = [
         date: "November 18, 2019",
         image: tedx1,
         description:
-            `TEDxSRMUInnovatia, a dynamic event organized at Shri Ramswaroop Memorial University (SRMU), uniquely focuses on student participation through engaging Mock TEDx Talks and an Entrepreneurship Quiz. This platform empowers students to unleash their creativity and share innovative ideas in a simulated TEDx-style presentation, offering them a chance to articulate their visions, research findings, and projects. The Mock TEDx Talks foster a culture of public speaking, idea dissemination, and inspire a spirit of intellectual exploration among the student community.`
+            `TEDxSRMUInnovatia, a dynamic event organized at Shri Ramswaroop Memorial University (SRMU), uniquely focuses on student participation through engaging Mock TEDx Talks and an Entrepreneurship Quiz. This platform empowers students to unleash their creativity and share innovative ideas in a simulated TEDx-style presentation, offering them a chance to articulate their visions, research findings, and projects. The Mock TEDx Talks foster a culture of public speaking, idea dissemination, and inspire a spirit of intellectual exploration among the student community.`,
+        routeKey: "tedx-srmuinnovatia",
+        photos: [m1, m2, m3, m4, m5, m6, m7, m8, m9],
+        extraDescription:
+            `In addition to the stimulating talks, TEDxSRMUInnovatia incorporates an Entrepreneurship Quiz designed to challenge students' knowledge and understanding of business and innovation. This interactive quiz not only encourages healthy competition but also serves as a valuable educational tool, enhancing students' comprehension of entrepreneurial concepts. By integrating these components, the event creates a vibrant atmosphere where students can showcase their intellectual prowess, explore their entrepreneurial potential, and contribute to the university's culture of innovation. TEDxSRMUInnovatia stands as a testament to SRMU's commitment to nurturing the creativity and entrepreneurial spirit of its students.`,
+
     },
     {
         id: "women",
@@ -716,6 +830,11 @@ const tedxData: TedxCardData[] = [
         image: tedx2,
         description:
             `TEDx Women, organized at Shri Ramswaroop Memorial University (SRMU), stands as a powerful platform for highlighting and celebrating the diverse voices and achievements of women across various fields. This event, affiliated with the renowned TEDx program, provides a stage for inspirational talks, discussions, and performances that revolve around the experiences, challenges, and triumphs of women. From trailblazing entrepreneurs to influential thought leaders, speakers at TEDx Women at SRMU share their stories and insights, inspiring the audience to envision a world where women's contributions are recognized and valued.`,
+        routeKey: "tedx-srmuwomen1",
+        photos: [n1, n2, n3],
+        extraDescription:
+            `The TEDx Women event at SRMU goes beyond a traditional conference; it serves as a catalyst for fostering a community of empowered individuals who champion gender equality and inclusivity. By showcasing the extraordinary journeys of women who have made a significant impact, the event not only amplifies diverse perspectives but also encourages meaningful conversations about the role of women in shaping the future. The TEDx Women platform at SRMU plays a pivotal role in challenging stereotypes, breaking barriers, and creating a space where ideas flourish, driving positive change and empowering both women and men to contribute to a more equitable society.`,
+
     },
     {
         id: "global",
@@ -724,6 +843,10 @@ const tedxData: TedxCardData[] = [
         image: tedx3,
         description:
             `TEDx SRMU GLOBAL, organized at Shri Ramswaroop Memorial University (SRMU), transcends geographical boundaries to create an intellectually stimulating platform that showcases a diverse array of global perspectives and groundbreaking ideas. As an extension of the renowned TEDx program, this event brings together speakers and thought leaders from across the globe, offering a unique opportunity for the audience to engage with innovative concepts, inspiring stories, and transformative visions. The talks span a spectrum of topics, ranging from technology and science to culture, education, and social issues, fostering an environment of cross-cultural dialogue and collaborative thinking.`,
+        routeKey: "tedx-srmuglobal",
+        photos: [o1, o2, o3],
+        extraDescription:
+            `TEDx SRMU GLOBAL not only serves as a bridge connecting the SRMU community with global thought leaders but also amplifies the university's commitment to providing a space for the exchange of impactful ideas. By hosting this global event, SRMU underscores its dedication to cultivating an international perspective and fostering a community that values the power of knowledge and shared experiences. TEDx SRMU GLOBAL becomes a nexus where intellectual curiosity knows no bounds, allowing attendees to broaden their horizons and gain insights that transcend borders, ultimately contributing to a more interconnected and enlightened global community.`,
     },
     {
         id: "live",
@@ -732,6 +855,9 @@ const tedxData: TedxCardData[] = [
         image: tedx4,
         description:
             `TEDx SRMULive, an exhilarating and intellectually stimulating event organized at Shri Ramswaroop Memorial University (SRMU), stands as a testament to the institution's commitment to fostering innovative ideas and insightful dialogue. This live edition of the renowned TEDx series serves as a platform where thought leaders, professionals, and visionaries converge to share their inspiring stories and groundbreaking ideas. With a diverse lineup of speakers covering a spectrum of topics, TEDx SRMULive transcends conventional boundaries, offering the university community a unique opportunity to engage with transformative concepts and perspectives.`,
+        routeKey: "tedx-srmulive",
+        photos: [q1, q2, q3, q4],
+        extraDescription: `Beyond its immediate impact, TEDx SRMULive contributes to the university's broader mission of nurturing a community that values intellectual curiosity, diversity of thought, and the transformative potential of ideas. By hosting this live event, SRMU reinforces its dedication to providing a platform for innovative thinking and contributing to the global conversation on matters that shape our world. TEDx SRMULive becomes a memorable and enriching experience, leaving a lasting imprint on the minds of those who engage with the profound narratives and thought leadership presented on its stage.`,
     },
     {
         id: "srm",
@@ -740,6 +866,10 @@ const tedxData: TedxCardData[] = [
         image: tedx5,
         description:
             `TEDxSRMU, organized at Shri Ramswaroop Memorial University (SRMU), offers a profound exploration into how the changing world impacts the lives of individuals. Through captivating talks and discussions, speakers delve into the myriad ways in which technological advancements, social transformations, and global challenges reshape our perceptions, behaviors, and interactions. The event serves as a platform for thought-provoking reflections on topics such as artificial intelligence, climate change, globalization, and cultural shifts, illuminating the complex interplay between societal changes and personal experiences.`,
+        routeKey: "tedx-srmu",
+        photos: [r1, r2, r3, r4, r5, r6, r7, r8, r9],
+        extraDescription: `As attendees engage with the diverse perspectives shared at TEDxSRMU, they gain valuable insights into navigating the complexities of the modern world. From examining the implications of digital connectivity on human relationships to exploring strategies for resilience in the face of environmental upheavals, TEDxSRMU offers a holistic understanding of the multifaceted ways in which the evolving landscape impacts individual lives. By fostering critical thinking and dialogue, the event empowers participants to navigate uncertainty, adapt to change, and envision pathways towards personal growth and collective well-being amidst the dynamic forces shaping our society.`,
+
     },
     {
         id: "wom",
@@ -748,6 +878,10 @@ const tedxData: TedxCardData[] = [
         image: tedx6,
         description:
             `TEDxSRMU Women, organized at Shri Ramswaroop Memorial University (SRMU), is a transformative event that serves as a local gathering for women empowerment, bringing together dynamic and accomplished women from diverse backgrounds. This platform provides a unique space for these empowered ladies to share their experiences, insights, and stories of growth, emphasizing the importance of women's empowerment in various spheres of life. The event celebrates the achievements of women who have overcome challenges, shattered glass ceilings, and made significant contributions to their fields, inspiring others to pursue their goals with determination and resilience.`,
+        routeKey: "tedx-women",
+        photos: [s1, s2, s3, s4, s5, s6, s7, s8, s9],
+        extraDescription: `Focused on fostering dialogue and connections, TEDxSRMU Women creates an environment where attendees can engage with thought-provoking discussions on gender equality, professional development, and personal growth. The event goes beyond showcasing individual success stories; it aims to spark a collective conversation about the role of women in shaping the future and the importance of creating supportive networks. TEDxSRMU Women becomes a catalyst for empowerment, encouraging women to take charge of their narratives, break societal barriers, and contribute to a more inclusive and equitable world.`,
+
     },
 
 ];

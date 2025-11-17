@@ -44,11 +44,20 @@ import ResearchOverviewPage from "../pages/Research/Overview/ResearchOverviewPag
 import ProcessAndInitiativePage from "../pages/Research/Process-and-Initiative/ProcessAndInitiativePage";
 import PhdNotificationSessionPage from "../pages/Research/Phd-notification-session/PhdNotificationSessionPage";
 import EventDetails from "../pages/campus-life/events/EventDetails";
-import { conferenceData, festData } from "../data/campus-life/events/events-data";
+import tedxData, { conferenceData, festData, festivalsData } from "../data/campus-life/events/events-data";
 import InnovationPage from "../pages/Research/Innovation/InnovationPage";
 import PlacementPage from "../pages/placement/PlacementPage";
 import StudentTestimonialPage from "../pages/placement/student-testimonial/StudentTestimonialPage";
 import PlacementPoliciesPage from "../pages/placement/placement-policies/PlacementPoliciesPage";
+import ConsultancyPage from "../pages/Research/Consultancy/ConsultancyPage";
+
+
+
+
+import AlumniRegistrationPage from "../pages/placement/AlumniRegistrationPage";
+import ConvocationPage from "../pages/campus-life/convocation/ConvocationPage";
+import { convocationData } from "../data/campus-life/convocation/convocation-data";
+import ConvocationDetailPage from "../pages/campus-life/convocation/ConvocationDetailPage";
 
 interface IMatches {
   id: string;
@@ -290,6 +299,25 @@ export const routes = [
             },
           },
           {
+            path: "convocation",
+            element: <ConvocationPage />,
+            handle: {
+              crumb: () => <Link to="/">Convocation</Link>,
+            },
+            children: [
+              ...Object.values(convocationData).flatMap((item) =>
+                item.cards.map((card) => ({
+                  path: card.routeKey,
+                  element: <ConvocationDetailPage card={card} />,
+                  handle: {
+                    crumb: () => <a>{card.title}</a>,
+                  },
+                }))
+              ),
+            ]
+
+          },
+          {
             path: "central-library",
             element: <CentralLibraryPage />,
             handle: {
@@ -324,6 +352,25 @@ export const routes = [
               })),
 
               ...conferenceData.seminars.map((card) => ({
+                path: card.routeKey,
+                element: <EventDetails card={card} />,
+                handle: {
+                  crumb: () => <a>{card.title}</a>,
+                },
+              })),
+
+
+              ...Object.values(festivalsData).flatMap((festival) =>
+                festival.cards.map((card) => ({
+                  path: card.routeKey,
+                  element: <EventDetails card={card} />,
+                  handle: {
+                    crumb: () => <a>{card.title}</a>,
+                  },
+                }))
+              ),
+
+              ...tedxData.map((card) => ({
                 path: card.routeKey,
                 element: <EventDetails card={card} />,
                 handle: {
@@ -378,11 +425,19 @@ export const routes = [
               crumb: () => <Link to="/">Innovation</Link>,
             },
           },
+          {
+            path: "consultancy",
+            element: <ConsultancyPage />,
+            handle: {
+              crumb: () => <Link to="/">Consultancy</Link>,
+            },
+          },
         ],
       },
       {
         path: "/placements",
         element: <PlacementPage />,
+        // element: <StudentTestimonialPage />,
         handle: {
           crumb: () => <Link to="/">Placement</Link>,
         },
@@ -400,6 +455,13 @@ export const routes = [
             element: <PlacementPoliciesPage />,
             handle: {
               crumb: () => <Link to="/">Placement Polices</Link>,
+            },
+          },
+          {
+            path: "alumni-registration",
+            element: <AlumniRegistrationPage />,
+            handle: {
+              crumb: () => <Link to="/">Alumni Registration</Link>,
             },
           },
         ],
@@ -427,7 +489,7 @@ function Breadcrumbs() {
         <div className={`${Classes["page-title-content"]}`}>
           {/* <span className={`   text-[25px] sm:text-[40px] md:text-[54px] font-semibold text-white pointer-events-none`}>{crumbs[crumbs.length - 1]}</span> */}
           <nav aria-label="breadcrumb">
-            <ol className="breadcrumb m-0 flex flex-wrap  gap-[0.5rem] ">
+            <ol className="breadcrumb m-0 flex flex-wrap  gap-2">
               {crumbs.map((crumb, index) => (
                 <li key={index} className={`${Classes["breadcrumb-item"]} max-sm:text-[12px]`}>
                   {index === crumbs.length - 1 ? (

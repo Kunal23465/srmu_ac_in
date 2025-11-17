@@ -17,7 +17,19 @@ const Leadership: React.FC = () => {
   return (
     <>
       <div className={`${Classes["container"]}`}>
-        <CustomOverviewSection data={LeadershiOverviewData} />
+        <CustomOverviewSection
+          data={{
+            ...LeadershiOverviewData,
+            content: (
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: LeadershiOverviewData.content,
+                }}
+              />
+            ),
+          }}
+        />
+
       </div>
       <AlternateProfileSection people={profileData} />
 

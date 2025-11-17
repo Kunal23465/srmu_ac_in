@@ -1,3 +1,5 @@
+import girlsimage from "../../assets/images/home/girls-image.png"
+
 
 export default function InnovationCulture() {
   return (
@@ -41,7 +43,7 @@ export default function InnovationCulture() {
 
         <div className="lg:w-1/2  mt-10 lg:mt-0 flex justify-center">
           <img
-            src="https://srmu.ac.in/storage/common-section/532x528-1--08022408045592.png"
+            src={girlsimage}
             alt="Students"
             className="object-contain absolute bottom-0"
           />
@@ -52,5 +54,3 @@ export default function InnovationCulture() {
 }
 
 
-
-<a href="#">22 Research &amp; Consultancy Projects Completed</a>

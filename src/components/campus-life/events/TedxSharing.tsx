@@ -1,9 +1,11 @@
 import { useState } from "react";
 import tedxData from "../../../data/campus-life/events/events-data";
+import { useNavigate } from "react-router-dom";
 
 export default function TedxSharing() {
     const [hoveredId, setHoveredId] = useState<string | null>(null);
     const [currentIndex, setCurrentIndex] = useState(0);
+    const navigate = useNavigate();
 
     const slideLeft = () => {
         if (currentIndex > 0) setCurrentIndex(currentIndex - 1);
@@ -118,7 +120,8 @@ export default function TedxSharing() {
                                         {item.description}
                                     </span>
 
-                                    <button className="bg-yellow-400 block mx-auto text-black px-6 py-2 rounded-xl font-semibold shadow-md">
+                                    <button   onClick={() => navigate(item.routeKey)}
+                                    className="bg-yellow-400 block mx-auto text-black px-6 py-2 rounded-xl font-semibold shadow-md">
                                         VIEW ALL →
                                     </button>
                                 </div>
