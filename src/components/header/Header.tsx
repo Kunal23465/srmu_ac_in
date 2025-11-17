@@ -173,7 +173,7 @@ const Header = () => {
               <div className="lg:hidden my-auto">
                 <GiHamburgerMenu
                   size={20}
-                  className={`cursor-pointer  ${isActive
+                  className={`cursor-pointer text-white  ${isActive
                       ? "text-white"
                       : location.pathname !== "/"
                         ? "text-white"

@@ -8,33 +8,26 @@ const ProgramsSection: FC = () => {
         <section
             className="bg-cover bg-center bg-fixed py-20 mb-20"
             style={{
-                backgroundImage:
-                    "url('https://srmu.ac.in/storage/common-section/1657x580-new-09022401172650.png')",
+                backgroundImage: "url('https://srmu.ac.in/storage/common-section/1657x580-new-09022401172650.png')",
             }}
         >
             <div className="container mx-auto max-w-7xl px-4">
-
                 <div className="text-white mb-10">
                     <h2 className="font50 fw600">Our Programs</h2>
                     <span className="text-lg mt-2 max-w-2xl opacity-90">
-                        At University’s beautiful campus, you’ll find a diverse and welcoming
-                        community that will teach you life skills along with having fun.
+                        At University’s beautiful campus, you’ll find a diverse and welcoming community that will teach you life skills along with having fun.
                     </span>
                 </div>
 
-                <div className="flex gap-10">
-
-                    <div className="w-1/3 programs-tabs">
-                        <ul>
+                <div className="w-full flex flex-col md:flex-row gap-y-10 md:gap-10">
+                    <div className="w-full md:max-w-[350px] programs-tabs">
+                        <ul className="flex flex-row md:flex-col overflow-x-auto">
                             {tabs.map((tab) => (
                                 <li key={tab.id}>
                                     <button
                                         onClick={() => setActiveTab(tab.id)}
-                                        className={`block w-full text-left uppercase text-white font-medium rounded-md py-5 pl-6 pr-16 mb-1 text-[1.25rem] cursor-pointer transition-all
-                      ${activeTab === tab.id
-                                                ? "programsection shadow-lg"
-                                                : "bg-transparent"
-                                            }`}
+                                        className={`block w-full text-left uppercase text-white text-nowrap md:font-medium rounded-md py-5 md:pl-6 md:pr-16 mb-1 px-5 text-base md:text-[1.25rem] cursor-pointer transition-all
+                                     ${activeTab === tab.id ? "programsection shadow-lg" : "bg-transparent"}`}
                                     >
                                         {tab.title}
                                     </button>
@@ -43,31 +36,30 @@ const ProgramsSection: FC = () => {
                         </ul>
                     </div>
 
-                    <div className="w-2/3 ml-6">
+                    <div className="w-full md:ml-6">
                         {tabs.map((tab) => (
-                            <div
-                                key={tab.id}
-                                className={`${activeTab === tab.id ? "block" : "hidden"}`}
-                            >
-                                <ul className="grid grid-cols-4 gap-6">
+                            <div key={tab.id} className={`${activeTab === tab.id ? "block" : "hidden"}`}>
+
+                                <ul className="grid gap-6 [grid-template-columns:repeat(auto-fit,minmax(190px,190px))]">
                                     {tab.programs.map((item) => (
                                         <li key={item.name}>
                                             <a
                                                 href={item.link}
-                                                className="block  overflow-hidden bg-transparent  transition-all hover:-translate-y-2 duration-300"
+                                                className="block overflow-hidden bg-transparent transition-all hover:-translate-y-2 duration-300"
                                             >
                                                 <img
                                                     src={item.img}
                                                     alt={item.name}
                                                     className="w-full h-40 object-cover border-white border-2 rounded-xl"
                                                 />
-                                                <div className="p-4 text-left text-white font-semibold text-md">
+                                                <div className=" text-left text-white mt-4 text-base">
                                                     {item.name}
                                                 </div>
                                             </a>
                                         </li>
                                     ))}
                                 </ul>
+
                             </div>
                         ))}
 
@@ -81,9 +73,7 @@ const ProgramsSection: FC = () => {
                             </a>
                         </div>
                     </div>
-
                 </div>
-
             </div>
         </section>
     );
