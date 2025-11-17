@@ -180,6 +180,10 @@ export const HeaderData = [
                 item: "Convocation",
                 path: "/campus-life/convocation",
               },
+               {
+                item: "Green Initiative",
+                path: "/campus-life/green-initiative",
+              },
             ],
           },
 
