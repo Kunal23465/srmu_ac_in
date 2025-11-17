@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Classes from "../../utils/styles/Global.module.css";
 import { FaAngleRight } from "react-icons/fa";
 import img1 from "../../assets/images/home/apply-srmu1.jpg";
+import { Link } from "react-router-dom";
 
 const accordianData = [
     {
@@ -10,7 +11,7 @@ const accordianData = [
         content: (
             <>
                 <p>Explore a range of design and polytechnic courses.</p>
-                <button className="text-[#ffb703] font-medium">Read More...</button>
+                <Link to="after-class-10th" className="text-[#ffb703] font-medium">Read More...</Link>
             </>
         ),
         imgSrc: img1,
@@ -21,7 +22,7 @@ const accordianData = [
         content: (
             <>
                 <p>Our bachelor's degrees offer versatile options, from agriculture to law to media studies.</p>
-                <button className="text-[#ffb703] font-medium">Read More...</button>
+                <Link to="after-class-10th" className="text-[#ffb703] font-medium">Read More...</Link>
             </>
         ),
         imgSrc: img1,

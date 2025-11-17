@@ -1,5 +1,5 @@
 import { Link, Params, useMatches } from "react-router-dom";
-import HomePage from "../pages/HomePage";
+import HomePage from "../pages/Home/HomePage";
 import RootLayout from "../pages/RootLayout";
 import Classes from "../utils/styles/Global.module.css";
 import { Fragment } from "react/jsx-runtime";
@@ -48,14 +48,13 @@ import tedxData, { conferenceData, festData, festivalsData } from "../data/campu
 import InnovationPage from "../pages/Research/Innovation/InnovationPage";
 import ConsultancyPage from "../pages/Research/Consultancy/ConsultancyPage";
 
-
-
-
 import StudentTestimonialPage from "../pages/placement/StudentTestimonialPage";
 import AlumniRegistrationPage from "../pages/placement/AlumniRegistrationPage";
 import ConvocationPage from "../pages/campus-life/convocation/ConvocationPage";
 import { convocationData } from "../data/campus-life/convocation/convocation-data";
 import ConvocationDetailPage from "../pages/campus-life/convocation/ConvocationDetailPage";
+import AfterClass10thPage from "../pages/Home/AfterClass10thPage";
+import AfterClass12thPage from "../pages/Home/AfterClass12thPage";
 
 interface IMatches {
   id: string;
@@ -84,6 +83,21 @@ export const routes = [
           crumb: () => <Link to="/">Home</Link>,
         },
       },
+      {
+        path: "after-class-10th",
+        element: <AfterClass10thPage />,
+        handle: {
+          crumb: () => <Link to="/">After Class 10th</Link>,
+        },
+      },
+      {
+        path: "after-class-12th",
+        element: <AfterClass12thPage />,
+        handle: {
+          crumb: () => <Link to="/">After Class 12th</Link>,
+        },
+      },
+      // AfterClass12thPage
       {
         path: "/about",
         element: <AboutPage />,
@@ -312,8 +326,7 @@ export const routes = [
                   },
                 }))
               ),
-            ]
-
+            ],
           },
           {
             path: "central-library",
@@ -356,7 +369,6 @@ export const routes = [
                   crumb: () => <a>{card.title}</a>,
                 },
               })),
-
 
               ...Object.values(festivalsData).flatMap((festival) =>
                 festival.cards.map((card) => ({
