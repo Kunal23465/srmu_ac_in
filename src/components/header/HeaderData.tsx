@@ -177,12 +177,32 @@ export const HeaderData = [
                 path: "/campus-life/events",
               },
               {
+                item: "Clubs",
+                path: "/campus-life/clubs",
+              },
+              {
                 item: "Convocation",
                 path: "/campus-life/convocation",
               },
               {
                 item: "Green Initiative",
                 path: "/campus-life/green-initiative",
+              },
+              {
+                item: "Women Empowerment",
+                path: "/campus-life/women-empowerment",
+              },
+              {
+                item: "Outreach Activations",
+                path: "/campus-life/outreach-activations",
+              },
+              {
+                item: "Student Senate",
+                path: "/campus-life/student-senate",
+              },
+              {
+                item: "Student Corner",
+                path: "/campus-life/student-corner",
               },
             ],
           },
@@ -207,6 +227,16 @@ export const HeaderData = [
               {
                 item: "Alumni Registration",
                 path: "/placements/alumni-registration",
+              },
+              {
+                item: "Alumni Testimonials",
+                path: "/placements/notable-alumni",
+              },
+
+              // student-testimonial
+              {
+                item: "Placement Plolicies",
+                path: "/placements/placement-policies",
               },
             ],
           },

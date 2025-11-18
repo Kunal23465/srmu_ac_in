@@ -3,7 +3,7 @@ import { MdClose } from "react-icons/md";
 
 interface IqacCardProps {
     title: string;
-    icon: string;
+    icon?: string;
     description: string;
     colorCode: string;
     index: number;
@@ -21,7 +21,7 @@ interface propsModal {
     content: any;
 }
 
-const CustomModal: React.FC<propsModal> = ({ isExpanded, id, setIsExpanded, content }) => {
+export const CustomModal: React.FC<propsModal> = ({ isExpanded, id, setIsExpanded, content }) => {
     return (
         <>
             {isExpanded == id && (
@@ -72,7 +72,7 @@ const CustomIqacCard: React.FC<IqacCardProps> = ({ title, icon, description, col
             >
                 {/* Icon and Title Section */}
                 <div className="flex flex-col items-center justify-center w-full">
-                    <img src={icon} alt={title} className="w-24 h-24 mb-2 object-cover" />
+                    {icon && <img src={icon} alt={title} className="w-24 h-24 mb-2 object-cover" />}
                     <h3 className="font-semibold text-white text-2xl text-center w-full max-w-[160px] mx-auto mt-5">{title}</h3>
                 </div>
 

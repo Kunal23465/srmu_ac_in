@@ -123,7 +123,7 @@
   display: none !important;
 }
 
-.photo_gallery>.slick-dots li button:before {
+.photo_gallery > .slick-dots li button:before {
   font-family: "slick";
   position: absolute;
   top: 0;
@@ -139,12 +139,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.photo_gallery>.slick-dots li.slick-active button:before {
+.photo_gallery > .slick-dots li.slick-active button:before {
   opacity: 0.9;
   background: #ffb703;
 }
 
-.photo_gallery>.slick-dots {
+.photo_gallery > .slick-dots {
   bottom: -40px !important;
 }
 
@@ -474,7 +474,6 @@ background: radial-gradient(circle, rgba(36,64,143,0.9444152661064426) 0%, rgba(
 }
 
 @media screen and (min-width: 592px) {
-
   /* ======================================== */
   .parent_grid_gallary .children img {
     width: 100%;
@@ -1091,6 +1090,10 @@ footer:after {
   color: rgb(15, 74, 133) !important;
 }
 
+.color_dark_blue {
+  color: rgb(2, 48, 71) !important;
+}
+
 .color_border_blue {
   border: solid 1px rgb(15, 74, 133) !important;
 }
@@ -1119,7 +1122,7 @@ footer:after {
   color: #ffb703 !important;
 }
 
-.font32{
+.font32 {
   font-size: 2rem;
 }
 
@@ -1283,7 +1286,6 @@ clip-path: polygon(0 0, 92% 0, 96% 100%, 0 100%);
 }
 
 @media screen and (min-width: 592px) {
-
   /* ======================================== */
   .parent_grid_gallary .children img {
     width: 100%;
@@ -1395,12 +1397,12 @@ section .card-color img {
     flex-direction: column;
   }
 
-  section .card-color>div:first-child {
+  section .card-color > div:first-child {
     width: 100% !important;
     text-align: left;
   }
 
-  section .card-color>div:last-child {
+  section .card-color > div:last-child {
     width: 100% !important;
     margin-top: 2rem !important;
     position: relative !important;
@@ -1498,5 +1500,80 @@ section .card-color img {
 .programs-tabs button.programsection::after {
   opacity: 1;
 }
+.clip-slanted {
+  clip-path: polygon(0 0, 95% 0, 100% 100%, 0 100%);
+}
 
+@keyframes bubbleScale {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+    border-radius: 50%;
+  }
+  60% {
+    transform: scale(1.05);
+    opacity: 0.8;
+    border-radius: 20px;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+    border-radius: 0px;
+  }
+}
 
+.bubble-animation {
+  animation: bubbleScale 0.45s ease-out forwards;
+}
+.bubble-anim {
+  transform-origin: center center;
+}
+
+.women {
+  background-image: url("./assets/images/campus-life/women-empowerment/we-believe-in.jpg");
+}
+
+.font60 {
+  font-size: 3.75rem;
+}
+
+.font20 {
+  font-size: 1.25rem;
+}
+
+.font26 {
+  font-size: 1.625rem;
+}
+
+.font19 {
+  font-size: 1.188rem;
+}
+
+.flip-card {
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+}
+
+.flip-card.rotate {
+  transform: rotateY(180deg);
+}
+
+.flip-card-face {
+  backface-visibility: hidden;
+}
+
+.font17 {
+  font-size: 1.063rem;
+}
+
+.font26 {
+  font-size: 1.625rem;
+}
+
+.font16 {
+  font-size: 1rem;
+}
+
+.font28{
+      font-size: 1.75rem;
+}
