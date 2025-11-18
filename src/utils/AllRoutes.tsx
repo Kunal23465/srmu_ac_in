@@ -62,6 +62,9 @@ import AfterClass12thPage from "../pages/Home/AfterClass12thPage";
 import GreenInitiativesPage from "../pages/campus-life/green-initiatives/GreenInitiativesPage";
 import WomenEmpowermentPage from "../pages/campus-life/women-empowerment/WomenEmpowermentPage";
 import IndustryHonorsPage from "../pages/Home/IndustryHonorsPage";
+import AfterGraduationPage from "../pages/Home/AfterGraduationPage";
+import AfterPolytechnicPage from "../pages/Home/AfterPolytechnicPage";
+import AfterPostGraduationPage from "../pages/Home/AfterPostGraduationPage";
 
 interface IMatches {
   pathname: string;
@@ -110,7 +113,28 @@ export const routes = [
           crumb: () => <Link to="/">Industry Honors</Link>,
         },
       },
-      // IndustryHonorsPage
+      {
+        path: "after-graduation",
+        element: <AfterGraduationPage />,
+        handle: {
+          crumb: () => <Link to="/">After Graduation</Link>,
+        },
+      },
+      {
+        path: "after-polytechnic",
+        element: <AfterPolytechnicPage />,
+        handle: {
+          crumb: () => <Link to="/">After Polytechnic</Link>,
+        },
+      },
+      {
+        path: "after-Graduation",
+        element: <AfterPostGraduationPage />,
+        handle: {
+          crumb: () => <Link to="/">After Graduation</Link>,
+        },
+      },
+      // AfterPostGraduationPage
       {
         path: "/about",
         element: <AboutPage />,
