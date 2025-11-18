@@ -176,13 +176,25 @@ export const HeaderData = [
                 item: "Events",
                 path: "/campus-life/events",
               },
+              {
+                item: "Convocation",
+                path: "/campus-life/convocation",
+              },
+               {
+                item: "Green Initiative",
+                path: "/campus-life/green-initiative",
+              },
+              {
+                item: "Women Empowerment",
+                path: "/campus-life/women-empowerment",
+              },
             ],
           },
 
           {
             id: 5,
             item: "Placements",
-            path: "#",
+            path: "/placements",
             subItem: [
               {
                 item: "Student testimonial",
@@ -198,6 +210,10 @@ export const HeaderData = [
               },
 
               // student-testimonial
+              {
+                item: "Placement Plolicies",
+                path: "/placements/placement-policies",
+              },
             ],
           },
 

@@ -20,7 +20,6 @@ const Counter: React.FC<counterDataPropsType> = ({ counterData, classes }) => {
             <CountUp start={0} end={Number(item.value)} duration={3} separator="" suffix={item.suffix} enableScrollSpy={true}>
               {({ countUpRef }) => <span ref={countUpRef} />}
             </CountUp>
-            {/* {item.value} */}
           </h1>
           <p className={`text-sm sm:text-base md:text-xl text-center  mt-3`}>{item.label}</p>
         </div>

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { MdClose } from "react-icons/md";
-// import { string } from "yup";
 
 interface IqacCardProps {
     title: string;
@@ -22,7 +21,7 @@ interface propsModal {
     content: any;
 }
 
-const CustomModal: React.FC<propsModal> = ({ isExpanded, id, setIsExpanded, content }) => {
+export const CustomModal: React.FC<propsModal> = ({ isExpanded, id, setIsExpanded, content }) => {
     return (
         <>
             {isExpanded == id && (
