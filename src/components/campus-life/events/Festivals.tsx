@@ -84,7 +84,7 @@ const Festivals: React.FC = () => {
                         </button>
                     </div>
                 </div>
-                <span className=" leading-relaxed  whitespace-pre-line">
+                <span className=" leading-relaxed  whitespace-pre-line text-justify">
                     {activeFestival.description}
                 </span>
 

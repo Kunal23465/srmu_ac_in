@@ -11,7 +11,7 @@ const StrategicCard: React.FC<StrategicCardProps> = ({ title, description, image
     <div className="flex mb-20 flex-col md:flex-row rounded-2xl overflow-hidden shadow-lg bg-[#fbbf24]/90">
       <div className="md:w-1/2 p-8 text-black">
         <h2 className="text-3xl lg:text-4xl font-bold text-blue-800 mb-4">{title}</h2>
-        <p className="text-[15px] leading-relaxed whitespace-pre-line">{description}</p>
+        <p className="text-[15px] leading-relaxed whitespace-pre-line text-justify">{description}</p>
       </div>
 
       <div className="md:w-1/2">
