@@ -67,7 +67,7 @@ const AnnualFest: React.FC = () => {
                     {/* Left column */}
                     <div className="max-w-[480px]">
                         <h3 className="font40 fw500 font-bold mb-4">{data.title}</h3>
-                        <span className="text-white leading-relaxed mb-6 block">
+                        <span className="text-white leading-relaxed mb-6 block text-justify">
                             {data.description}
                         </span>
 

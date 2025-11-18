@@ -60,11 +60,13 @@ import ConvocationDetailPage from "../pages/campus-life/convocation/ConvocationD
 
 
 import ClubsPage from "../pages/campus-life/clubs/ClubsPage";
-// import GreenInitiativePage from "../pages/campus-life/green-initiative/GreenInitiativePage";
 import AfterClass10thPage from "../pages/Home/AfterClass10thPage";
 import AfterClass12thPage from "../pages/Home/AfterClass12thPage";
 import WomenEmpowermentPage from "../pages/campus-life/women-empowerment/WomenEmpowermentPage";
 import IndustryHonorsPage from "../pages/Home/IndustryHonorsPage";
+import OutreachActivationsPage from "../pages/campus-life/outreach-activations/OutreachActivationsPage";
+import StudentSenatePage from "../pages/campus-life/student-senate/StudentSenatePage";
+import StudentCornerPage from "../pages/campus-life/student-corner/StudentCornerPage";
 import GreenInitiativePage from "../pages/campus-life/green-initiative/GreenInitiativePage";
 
 interface IMatches {
@@ -353,6 +355,7 @@ export const routes = [
             },
           },
 
+
           {
             path: "green-initiative",
             element: <GreenInitiativePage />,
@@ -365,6 +368,27 @@ export const routes = [
             element: <WomenEmpowermentPage />,
             handle: {
               crumb: () => <Link to="/">Women Empowerment</Link>,
+            },
+          },
+          {
+            path: "student-senate",
+            element: <StudentSenatePage />,
+            handle: {
+              crumb: () => <Link to="/">Student Senate</Link>,
+            },
+          },
+          {
+            path: "student-corner",
+            element: <StudentCornerPage />,
+            handle: {
+              crumb: () => <Link to="/">Student Corner</Link>,
+            },
+          },
+          {
+            path: "outreach-activations",
+            element: <OutreachActivationsPage />,
+            handle: {
+              crumb: () => <Link to="/">Outreach Activations</Link>,
             },
           },
           {
