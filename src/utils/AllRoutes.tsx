@@ -57,11 +57,15 @@ import ConvocationPage from "../pages/campus-life/convocation/ConvocationPage";
 import { convocationData } from "../data/campus-life/convocation/convocation-data";
 import ConvocationDetailPage from "../pages/campus-life/convocation/ConvocationDetailPage";
 
+
+
+import ClubsPage from "../pages/campus-life/clubs/ClubsPage";
+// import GreenInitiativePage from "../pages/campus-life/green-initiative/GreenInitiativePage";
 import AfterClass10thPage from "../pages/Home/AfterClass10thPage";
 import AfterClass12thPage from "../pages/Home/AfterClass12thPage";
-import GreenInitiativesPage from "../pages/campus-life/green-initiatives/GreenInitiativesPage";
 import WomenEmpowermentPage from "../pages/campus-life/women-empowerment/WomenEmpowermentPage";
 import IndustryHonorsPage from "../pages/Home/IndustryHonorsPage";
+import GreenInitiativePage from "../pages/campus-life/green-initiative/GreenInitiativePage";
 
 interface IMatches {
   pathname: string;
@@ -256,7 +260,7 @@ export const routes = [
       },
 
       {
-        path: "/admissions",
+        path: "/admission",
         element: <AdmissonsPage />,
         handle: {
           crumb: () => <Link to="/">Admissions</Link>,
@@ -351,7 +355,7 @@ export const routes = [
 
           {
             path: "green-initiative",
-            element: <GreenInitiativesPage />,
+            element: <GreenInitiativePage />,
             handle: {
               crumb: () => <Link to="/">Green Initiative</Link>,
             },
@@ -363,6 +367,20 @@ export const routes = [
               crumb: () => <Link to="/">Women Empowerment</Link>,
             },
           },
+          {
+            path: "clubs",
+            element: <ClubsPage />,
+            handle: {
+              crumb: () => <Link to="/">Clubs</Link>,
+            },
+          },
+          // {
+          //   path: "green-initiative",
+          //   element: <GreenInitiativePage />,
+          //   handle: {
+          //     crumb: () => <Link to="/">Green Initiative</Link>,
+          //   },
+          // },
           {
             path: "events",
             element: <EventPage />,
