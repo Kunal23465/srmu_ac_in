@@ -9,7 +9,6 @@ const Home: React.FC = () => {
   return (
     <div>
       <Banner />
-
       <MemorialCollege />
       <ProgramsSection />
       <Apply />

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Classes from "../../utils/styles/Global.module.css";
-import { FaAngleRight, FaLongArrowAltRight } from "react-icons/fa";
+import { FaAngleRight } from "react-icons/fa";
 import img1 from "../../assets/images/home/apply-srmu1.jpg";
-
+import { Link } from "react-router-dom";
 
 const accordianData = [
     {
@@ -10,38 +10,8 @@ const accordianData = [
         title: "After Class 10th",
         content: (
             <>
-                <div className="flex items-center mt-2 gap-x-2 text-[#219ebc]">
-                    <FaLongArrowAltRight />
-                    <strong>Step 1:</strong>
-                </div>
-                <ul className="list-disc till ml-5 mt-2">
-                    <li> Deposit Counselling letter and purchase college prospectus.</li>
-                </ul>
-
-                <div className="flex items-center mt-2 gap-x-2 text-[#219ebc]">
-                    <FaLongArrowAltRight />
-                    <strong>Step 2:</strong>
-                </div>
-                <ul className="list-disc till ml-5 mt-2">
-                    <li className="mt-2">Deposit the complete Fee as applicable. Fee will include Tuition Fee, University Fee.</li>
-                    <li className="mt-2">Exam Fee college registration and caution money and then report to registrar office.</li>
-                </ul>
-
-                <div className="flex items-center mt-2 gap-x-2 text-[#219ebc]">
-                    <FaLongArrowAltRight />
-                    <strong>Step 3:</strong>
-                </div>
-                <ul className="list-disc till ml-5 mt-2">
-                    <li> Deposit Counselling letter and purchase college prospectus.</li>
-                </ul>
-
-                <div className="flex items-center mt-2 gap-x-2 text-[#219ebc]">
-                    <FaLongArrowAltRight />
-                    <strong>Step 4:</strong>
-                </div>
-                <ul className="list-disc till ml-5 mt-2">
-                    <li> If bus facility is required, deposit bus charges and report to Administrative Officer for bus pass.</li>
-                </ul>
+                <p>Explore a range of design and polytechnic courses.</p>
+                <Link to="after-class-10th" className="text-[#ffb703] font-medium">Read More...</Link>
             </>
         ),
         imgSrc: img1,
@@ -51,15 +21,8 @@ const accordianData = [
         title: "After Class 12th",
         content: (
             <>
-                <div className="flex items-center mt-2 gap-x-2 text-[#219ebc]">
-                    <FaLongArrowAltRight />
-                    <strong>Step 5:</strong>
-                </div>
-                <ul className="list-disc till ml-5">
-                    <li className="mt-2">Submit the duty filled admission form. (refer SRMCEM/PO/F07)</li>
-                    <li className="mt-2">All documents as per checklist of the Registrar Office (refer SRMCEM/PO/F08 (1) to (6) )</li>
-                    <li className="mt-2">Photocopy of counselling letter.</li>
-                </ul>
+                <p>Our bachelor's degrees offer versatile options, from agriculture to law to media studies.</p>
+                <Link to="after-class-10th" className="text-[#ffb703] font-medium">Read More...</Link>
             </>
         ),
         imgSrc: img1,
@@ -69,13 +32,8 @@ const accordianData = [
         title: "Industry Honors",
         content: (
             <>
-                <div className="flex items-center mt-2 gap-x-2 text-[#219ebc]">
-                    <FaLongArrowAltRight />
-                    <strong>Step 6:</strong>
-                </div>
-                <ul className="list-disc till ml-5 mt-2">
-                    <li className="mt-2">Obtain bus passes after showing bus pass receipt</li>
-                </ul>
+                <p>Our outcome-based programs your professional growth and skill-building.</p>
+                <button className="text-[#ffb703] font-medium">Read More...</button>
             </>
         ),
         imgSrc: img1,
@@ -85,15 +43,9 @@ const accordianData = [
         title: "After Graduation",
         content: (
             <>
-                <div className="flex items-center mt-2 gap-x-2 text-[#219ebc]">
-                    <FaLongArrowAltRight />
-                    <strong>Step 7:</strong>
-                </div>
-                <ul className="list-disc till ml-5 mt-2">
-                    <li className="mt-2">
-                        Fill up the Application Form of Hostel (refer SRMCEM/PO/F/37) submit with the photocopy of Hostel Fee receipt and obtain hostel I Card and get accommodation.{" "}
-                    </li>
-                </ul>
+                <h3 className="text-[40px] text-[#260805] font-medium">Commerce and Economics</h3>
+                <p>Hone your proficiency in your respective fields with our post-graduate degrees.</p>
+                <button className="text-[#ffb703] font-medium">Read More...</button>
             </>
         ),
         imgSrc: img1,
@@ -103,13 +55,8 @@ const accordianData = [
         title: "After Polytechnic",
         content: (
             <>
-                <div className="flex items-center mt-2 gap-x-2 text-[#219ebc]">
-                    <FaLongArrowAltRight />
-                    <strong>Step 8:</strong>
-                </div>
-                <ul className="list-disc till ml-5 mt-2">
-                    <li className="mt-2">Obtain Library Cards after completing the formalities.</li>
-                </ul>
+                <p>Develop greater technical knowledge with these skills-based programs.</p>
+                <button className="text-[#ffb703] font-medium">Read More...</button>
             </>
         ),
         imgSrc: img1,
@@ -119,13 +66,8 @@ const accordianData = [
         title: "After Post Graduation",
         content: (
             <>
-                <div className="flex items-center mt-2 gap-x-2 text-[#219ebc]">
-                    <FaLongArrowAltRight />
-                    <strong>Step 8:</strong>
-                </div>
-                <ul className="list-disc till ml-5 mt-2">
-                    <li className="mt-2">Obtain Library Cards after completing the formalities.</li>
-                </ul>
+                <p>Become a sought-after researcher with our PHD programs.</p>
+                <button className="text-[#ffb703] font-medium">Read More...</button>
             </>
         ),
         imgSrc: img1,
@@ -166,6 +108,7 @@ const Apply: React.FC = () => {
                 {/* Right Part - Image */}
                 <div className="right-part">
                     <img className="w-full h-auto rounded-lg max-w-[720px] max-h-[500px]" src={accordianData[0].imgSrc} alt="Accordion Visual" />
+
                 </div>
             </div>
         </div>

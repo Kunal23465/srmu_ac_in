@@ -1,5 +1,5 @@
 import { Link, Params, useMatches } from "react-router-dom";
-import HomePage from "../pages/HomePage";
+import HomePage from "../pages/Home/HomePage";
 import RootLayout from "../pages/RootLayout";
 import Classes from "../utils/styles/Global.module.css";
 import { Fragment } from "react/jsx-runtime";
@@ -46,17 +46,28 @@ import PhdNotificationSessionPage from "../pages/Research/Phd-notification-sessi
 import EventDetails from "../pages/campus-life/events/EventDetails";
 import tedxData, { conferenceData, festData, festivalsData } from "../data/campus-life/events/events-data";
 import InnovationPage from "../pages/Research/Innovation/InnovationPage";
+import PlacementPage from "../pages/placement/PlacementPage";
+import StudentTestimonialPage from "../pages/placement/student-testimonial/StudentTestimonialPage";
+import PlacementPoliciesPage from "../pages/placement/placement-policies/PlacementPoliciesPage";
 import ConsultancyPage from "../pages/Research/Consultancy/ConsultancyPage";
 
+import AlumniRegistrationPage from "../pages/placement/AlumniRegistrationPage";
+import AlumniTestimonialsPage from "../pages/placement/AlumniTestimonialsPage";
+import ConvocationPage from "../pages/campus-life/convocation/ConvocationPage";
+import { convocationData } from "../data/campus-life/convocation/convocation-data";
+import ConvocationDetailPage from "../pages/campus-life/convocation/ConvocationDetailPage";
 
 
 
-import StudentTestimonialPage from "../pages/placement/StudentTestimonialPage";
 import ClubsPage from "../pages/campus-life/clubs/ClubsPage";
+// import GreenInitiativePage from "../pages/campus-life/green-initiative/GreenInitiativePage";
+import AfterClass10thPage from "../pages/Home/AfterClass10thPage";
+import AfterClass12thPage from "../pages/Home/AfterClass12thPage";
+import WomenEmpowermentPage from "../pages/campus-life/women-empowerment/WomenEmpowermentPage";
+import IndustryHonorsPage from "../pages/Home/IndustryHonorsPage";
 import GreenInitiativePage from "../pages/campus-life/green-initiative/GreenInitiativePage";
 
 interface IMatches {
-  id: string;
   pathname: string;
   params: Params<string>;
   data: unknown;
@@ -82,6 +93,28 @@ export const routes = [
           crumb: () => <Link to="/">Home</Link>,
         },
       },
+      {
+        path: "after-class-10th",
+        element: <AfterClass10thPage />,
+        handle: {
+          crumb: () => <Link to="/">After Class 10th</Link>,
+        },
+      },
+      {
+        path: "after-class-12th",
+        element: <AfterClass12thPage />,
+        handle: {
+          crumb: () => <Link to="/">After Class 12th</Link>,
+        },
+      },
+      {
+        path: "industry-honors",
+        element: <IndustryHonorsPage />,
+        handle: {
+          crumb: () => <Link to="/">Industry Honors</Link>,
+        },
+      },
+      // IndustryHonorsPage
       {
         path: "/about",
         element: <AboutPage />,
@@ -295,10 +328,43 @@ export const routes = [
             },
           },
           {
+            path: "convocation",
+            element: <ConvocationPage />,
+            handle: {
+              crumb: () => <Link to="/">Convocation</Link>,
+            },
+            children: [
+              ...Object.values(convocationData).flatMap((item) =>
+                item.cards.map((card) => ({
+                  path: card.routeKey,
+                  element: <ConvocationDetailPage card={card} />,
+                  handle: {
+                    crumb: () => <a>{card.title}</a>,
+                  },
+                }))
+              ),
+            ],
+          },
+          {
             path: "central-library",
             element: <CentralLibraryPage />,
             handle: {
               crumb: () => <Link to="/">Central Library</Link>,
+            },
+          },
+
+          {
+            path: "green-initiative",
+            element: <GreenInitiativePage />,
+            handle: {
+              crumb: () => <Link to="/">Green Initiative</Link>,
+            },
+          },
+          {
+            path: "women-empowerment",
+            element: <WomenEmpowermentPage />,
+            handle: {
+              crumb: () => <Link to="/">Women Empowerment</Link>,
             },
           },
           {
@@ -308,13 +374,13 @@ export const routes = [
               crumb: () => <Link to="/">Clubs</Link>,
             },
           },
-          {
-            path: "green-initiative",
-            element: <GreenInitiativePage />,
-            handle: {
-              crumb: () => <Link to="/">Green Initiative</Link>,
-            },
-          },
+          // {
+          //   path: "green-initiative",
+          //   element: <GreenInitiativePage />,
+          //   handle: {
+          //     crumb: () => <Link to="/">Green Initiative</Link>,
+          //   },
+          // },
           {
             path: "events",
             element: <EventPage />,
@@ -349,7 +415,6 @@ export const routes = [
                   crumb: () => <a>{card.title}</a>,
                 },
               })),
-
 
               ...Object.values(festivalsData).flatMap((festival) =>
                 festival.cards.map((card) => ({
@@ -427,7 +492,8 @@ export const routes = [
       },
       {
         path: "/placements",
-        element: <StudentTestimonialPage />,
+        element: <PlacementPage />,
+        // element: <StudentTestimonialPage />,
         handle: {
           crumb: () => <Link to="/">Placement</Link>,
         },
@@ -437,7 +503,28 @@ export const routes = [
             path: "student-testimonial",
             element: <StudentTestimonialPage />,
             handle: {
-              crumb: () => <Link to="/">student testimonial</Link>,
+              crumb: () => <Link to="/">Student Testimonial</Link>,
+            },
+          },
+          {
+            path: "placement-policies",
+            element: <PlacementPoliciesPage />,
+            handle: {
+              crumb: () => <Link to="/">Placement Polices</Link>,
+            },
+          },
+          {
+            path: "alumni-registration",
+            element: <AlumniRegistrationPage />,
+            handle: {
+              crumb: () => <Link to="/">Alumni Registration</Link>,
+            },
+          },
+          {
+            path: "notable-alumni",
+            element: <AlumniTestimonialsPage />,
+            handle: {
+              crumb: () => <Link to="/">Notable Alumni</Link>,
             },
           },
         ],

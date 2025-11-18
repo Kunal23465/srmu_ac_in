@@ -181,8 +181,16 @@ export const HeaderData = [
                 path: "/campus-life/clubs",
               },
               {
+                item: "Convocation",
+                path: "/campus-life/convocation",
+              },
+               {
                 item: "Green Initiative",
                 path: "/campus-life/green-initiative",
+              },
+              {
+                item: "Women Empowerment",
+                path: "/campus-life/women-empowerment",
               },
             ],
           },
@@ -190,14 +198,26 @@ export const HeaderData = [
           {
             id: 5,
             item: "Placements",
-            path: "#",
+            path: "/placements",
             subItem: [
               {
                 item: "Student testimonial",
                 path: "/placements/student-testimonial",
               },
+              {
+                item: "Alumni Registration",
+                path: "/placements/alumni-registration",
+              },
+              {
+                item: "Alumni Testimonials",
+                path: "/placements/notable-alumni",
+              },
 
               // student-testimonial
+              {
+                item: "Placement Plolicies",
+                path: "/placements/placement-policies",
+              },
             ],
           },
 
