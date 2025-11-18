@@ -192,6 +192,10 @@ export const HeaderData = [
                 item: "Alumni Registration",
                 path: "/placements/alumni-registration",
               },
+              {
+                item: "Alumni Testimonials",
+                path: "/placements/notable-alumni",
+              },
 
               // student-testimonial
             ],

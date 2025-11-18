@@ -53,6 +53,7 @@ import ConsultancyPage from "../pages/Research/Consultancy/ConsultancyPage";
 
 import StudentTestimonialPage from "../pages/placement/StudentTestimonialPage";
 import AlumniRegistrationPage from "../pages/placement/AlumniRegistrationPage";
+import AlumniTestimonialsPage from "../pages/placement/AlumniTestimonialsPage";
 
 interface IMatches {
   id: string;
@@ -430,6 +431,13 @@ export const routes = [
             element: <AlumniRegistrationPage />,
             handle: {
               crumb: () => <Link to="/">Alumni Registration</Link>,
+            },
+          },
+          {
+            path: "notable-alumni",
+            element: <AlumniTestimonialsPage />,
+            handle: {
+              crumb: () => <Link to="/">Notable Alumni</Link>,
             },
           },
         ],
