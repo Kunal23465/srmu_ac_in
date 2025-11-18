@@ -51,10 +51,6 @@ import StudentTestimonialPage from "../pages/placement/student-testimonial/Stude
 import PlacementPoliciesPage from "../pages/placement/placement-policies/PlacementPoliciesPage";
 import ConsultancyPage from "../pages/Research/Consultancy/ConsultancyPage";
 
-
-
-
-
 import AlumniRegistrationPage from "../pages/placement/AlumniRegistrationPage";
 import ConvocationPage from "../pages/campus-life/convocation/ConvocationPage";
 import { convocationData } from "../data/campus-life/convocation/convocation-data";
@@ -64,6 +60,7 @@ import AfterClass10thPage from "../pages/Home/AfterClass10thPage";
 import AfterClass12thPage from "../pages/Home/AfterClass12thPage";
 import GreenInitiativesPage from "../pages/campus-life/green-initiatives/GreenInitiativesPage";
 import WomenEmpowermentPage from "../pages/campus-life/women-empowerment/WomenEmpowermentPage";
+import IndustryHonorsPage from "../pages/Home/IndustryHonorsPage";
 
 interface IMatches {
   pathname: string;
@@ -105,7 +102,14 @@ export const routes = [
           crumb: () => <Link to="/">After Class 12th</Link>,
         },
       },
-      // AfterClass12thPage
+      {
+        path: "industry-honors",
+        element: <IndustryHonorsPage />,
+        handle: {
+          crumb: () => <Link to="/">Industry Honors</Link>,
+        },
+      },
+      // IndustryHonorsPage
       {
         path: "/about",
         element: <AboutPage />,

@@ -1,4 +1,3 @@
-
 export const afterClass10thProgramData = [
   {
     id: 1,
@@ -71,7 +70,7 @@ export interface dataTypes {
   para: string;
   content: contentTypes[];
 }
-export const afterClass10thProgramDescription:dataTypes[] = [
+export const afterClass10thProgramDescription: dataTypes[] = [
   {
     heading: "Charting Your Path to Success at SRMU After Class 10th",
     para: "The transition from high school to college is an important time in a student’s educational journey. At Sri Ramaswaroop Memorial University (SRMU), we recognize the importance of this phase and offer a range of programs aimed at nurturing young minds and preparing them for a successful future.",
@@ -119,44 +118,87 @@ export const afterClass12thProgramDescription: dataTypes[] = [
   {
     heading: "After Class 12th Your Path to a Bright Future at SRMU",
     para: "Entering the world of higher education after school is a pivotal moment in every student’s life. At Shri Ramswaroop Memorial University (SRMU), we understand the importance of these changes and are committed to creating a nurturing and dynamic environment that fosters growth, learning and success.",
- content: [
-  {
-    id: 0,
-    title: "Diverse Range of Programs",
-    value:
-      "SRMU offers a wide range of undergraduate programs designed to meet a variety of interests and career aspirations. Undergraduate courses are available in various disciplines, including Engineering, Management, Law, Media Studies, Commerce, Economics, Design, Food Technology, Nutrition & Dietetics, Arts, Science, and more.",
-  },
-  {
-    id: 1,
-    title: "State-of-the-Art Infrastructure",
-    value:
-      "Our campus has state-of-the-art facilities, including modern classrooms, well-equipped laboratories, and extensive libraries. These centers are designed to enhance your learning experience and ensure you have the resources you need to excel in your chosen field.",
-  },
-  {
-    id: 2,
-    title: "Experienced Faculty",
-    value:
-      "At SRMU, you will learn from highly qualified and experienced faculty who are dedicated to academic excellence and research. Our teachers are not only experts in their fields but also mentors who guide your learning journey, inspire critical thinking, and encourage innovation.",
-  },
-  {
-    id: 3,
-    title: "Holistic Development",
-    value:
-      "We believe in the holistic development of our students. In addition to academics, SRMU offers a variety of extracurricular activities, including sports and cultural programs. These activities help students develop essential life skills, strong character, and lasting friendships.",
-  },
-  {
-    id: 4,
-    title: "Corporate Relations",
-    value:
-      "Our strong relationships with leading industries ensure that our curriculum remains aligned with market needs. Regular guest lectures, internships, and placement drives are integral to the SRMU experience, providing students with valuable exposure and enhanced career opportunities.",
-  },
-  {
-    id: 5,
-    title: "Join SRMU",
-    value:
-      "Choosing the right university after Class 12 is a crucial step toward shaping your future. At SRMU, we are committed to developing the leaders of tomorrow. Join us and embark on a transformational journey that lays the foundation for a successful and fulfilling career.",
-  },
-]
+    content: [
+      {
+        id: 0,
+        title: "Diverse Range of Programs",
+        value:
+          "SRMU offers a wide range of undergraduate programs designed to meet a variety of interests and career aspirations. Undergraduate courses are available in various disciplines, including Engineering, Management, Law, Media Studies, Commerce, Economics, Design, Food Technology, Nutrition & Dietetics, Arts, Science, and more.",
+      },
+      {
+        id: 1,
+        title: "State-of-the-Art Infrastructure",
+        value:
+          "Our campus has state-of-the-art facilities, including modern classrooms, well-equipped laboratories, and extensive libraries. These centers are designed to enhance your learning experience and ensure you have the resources you need to excel in your chosen field.",
+      },
+      {
+        id: 2,
+        title: "Experienced Faculty",
+        value:
+          "At SRMU, you will learn from highly qualified and experienced faculty who are dedicated to academic excellence and research. Our teachers are not only experts in their fields but also mentors who guide your learning journey, inspire critical thinking, and encourage innovation.",
+      },
+      {
+        id: 3,
+        title: "Holistic Development",
+        value:
+          "We believe in the holistic development of our students. In addition to academics, SRMU offers a variety of extracurricular activities, including sports and cultural programs. These activities help students develop essential life skills, strong character, and lasting friendships.",
+      },
+      {
+        id: 4,
+        title: "Corporate Relations",
+        value:
+          "Our strong relationships with leading industries ensure that our curriculum remains aligned with market needs. Regular guest lectures, internships, and placement drives are integral to the SRMU experience, providing students with valuable exposure and enhanced career opportunities.",
+      },
+      {
+        id: 5,
+        title: "Join SRMU",
+        value:
+          "Choosing the right university after Class 12 is a crucial step toward shaping your future. At SRMU, we are committed to developing the leaders of tomorrow. Join us and embark on a transformational journey that lays the foundation for a successful and fulfilling career.",
+      },
+    ],
   },
 ];
-
+export const industryHonorsProgramDescription: dataTypes[] = [
+  {
+    heading: "Elevate Your Career with SRMU’s Industry Honors Programs",
+    para: "Entry into higher education is a crucial transition. Shri Ramswaroop Memorial University (SRMU) recognizes this and provides Industry Honors Programs that align academic learning with industry needs, ensuring that students are well-prepared for their future careers.",
+    content: [
+      {
+        id: 0,
+        title: "Diverse Range of Programs",
+        value:
+          "SRMU offers a wide range of undergraduate programs designed to meet a variety of interests and career aspirations. Undergraduate courses are available in various disciplines, including Engineering, Management, Law, Media Studies, Commerce, Economics, Design, Food Technology, Nutrition & Dietetics, Arts, Science, and more.",
+      },
+      {
+        id: 1,
+        title: "State-of-the-Art Infrastructure",
+        value:
+          "Our campus has state-of-the-art facilities, including modern classrooms, well-equipped laboratories, and extensive libraries. These centers are designed to enhance your learning experience and ensure you have the resources you need to excel in your chosen field.",
+      },
+      {
+        id: 2,
+        title: "Experienced Faculty",
+        value:
+          "At SRMU, you will learn from highly qualified and experienced faculty who are dedicated to academic excellence and research. Our teachers are not only experts in their fields but also mentors who guide your learning journey, inspire critical thinking, and encourage innovation.",
+      },
+      {
+        id: 3,
+        title: "Holistic Development",
+        value:
+          "We believe in the holistic development of our students. In addition to academics, SRMU offers a variety of extracurricular activities, including sports and cultural programs. These activities help students develop essential life skills, strong character, and lasting friendships.",
+      },
+      {
+        id: 4,
+        title: "Corporate Relations",
+        value:
+          "Our strong relationships with leading industries ensure that our curriculum remains aligned with market needs. Regular guest lectures, internships, and placement drives are integral to the SRMU experience, providing students with valuable exposure and enhanced career opportunities.",
+      },
+      {
+        id: 5,
+        title: "Join SRMU",
+        value:
+          "Choosing the right university after Class 12 is a crucial step toward shaping your future. At SRMU, we are committed to developing the leaders of tomorrow. Join us and embark on a transformational journey that lays the foundation for a successful and fulfilling career.",
+      },
+    ],
+  },
+];
