@@ -52,6 +52,8 @@ import ConsultancyPage from "../pages/Research/Consultancy/ConsultancyPage";
 
 
 import StudentTestimonialPage from "../pages/placement/StudentTestimonialPage";
+import ClubsPage from "../pages/campus-life/clubs/ClubsPage";
+import GreenInitiativePage from "../pages/campus-life/green-initiative/GreenInitiativePage";
 
 interface IMatches {
   id: string;
@@ -225,7 +227,7 @@ export const routes = [
       },
 
       {
-        path: "/admissions",
+        path: "/admission",
         element: <AdmissonsPage />,
         handle: {
           crumb: () => <Link to="/">Admissions</Link>,
@@ -297,6 +299,20 @@ export const routes = [
             element: <CentralLibraryPage />,
             handle: {
               crumb: () => <Link to="/">Central Library</Link>,
+            },
+          },
+          {
+            path: "clubs",
+            element: <ClubsPage />,
+            handle: {
+              crumb: () => <Link to="/">Clubs</Link>,
+            },
+          },
+          {
+            path: "green-initiative",
+            element: <GreenInitiativePage />,
+            handle: {
+              crumb: () => <Link to="/">Green Initiative</Link>,
             },
           },
           {

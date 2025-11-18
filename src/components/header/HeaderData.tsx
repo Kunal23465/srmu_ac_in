@@ -176,6 +176,14 @@ export const HeaderData = [
                 item: "Events",
                 path: "/campus-life/events",
               },
+              {
+                item: "Clubs",
+                path: "/campus-life/clubs",
+              },
+              {
+                item: "Green Initiative",
+                path: "/campus-life/green-initiative",
+              },
             ],
           },
 
