@@ -8,7 +8,7 @@ const Holistic:React.FC = () => {
                 Holistic development of students
             </strong>
         </h2>
-        <p className='font18'>
+        <p className='font18 text-justify'>
             University gives emphasis on holistic development of students through co-curricular and extracurricular and beyond class room activities as integral part of learning process. University organize cultural, sports, technical, outreach, NSS & NCC activities and competitions. Various clubs are functional in the university for developing various skills and to promote student to pursue their interests in diverse fields.
         </p>
     </div>

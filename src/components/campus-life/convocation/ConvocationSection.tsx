@@ -21,7 +21,7 @@ export default function ConvocationSection() {
 
                     <div>
                         <p
-                            className="mb-4 leading-relaxed"
+                            className="mb-4 leading-relaxed text-justify"
                             dangerouslySetInnerHTML={{
                                 __html: card.description,
                             }}

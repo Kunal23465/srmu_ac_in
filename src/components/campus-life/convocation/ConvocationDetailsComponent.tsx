@@ -29,7 +29,7 @@ const ConvocationDetailsComponent = <T extends CardBase>({ card }: Props<T>) => 
 
         {card.extraDescription && (
           <div
-            className="mt-6 font18 leading-7"
+            className="mt-6 font18 leading-7 text-justify"
             dangerouslySetInnerHTML={{ __html: card.extraDescription }}
           />
         )}

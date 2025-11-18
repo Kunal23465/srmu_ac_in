@@ -177,6 +177,10 @@ export const HeaderData = [
                 path: "/campus-life/events",
               },
               {
+                item: "Clubs",
+                path: "/campus-life/clubs",
+              },
+              {
                 item: "Convocation",
                 path: "/campus-life/convocation",
               },
@@ -187,6 +191,18 @@ export const HeaderData = [
               {
                 item: "Women Empowerment",
                 path: "/campus-life/women-empowerment",
+              },
+              {
+                item: "Outreach Activations",
+                path: "/campus-life/outreach-activations",
+              },
+              {
+                item: "Student Senate",
+                path: "/campus-life/student-senate",
+              },
+              {
+                item: "Student Corner",
+                path: "/campus-life/student-corner",
               },
             ],
           },
