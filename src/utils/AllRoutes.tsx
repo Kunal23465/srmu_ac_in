@@ -59,6 +59,7 @@ import ConvocationPage from "../pages/campus-life/convocation/ConvocationPage";
 import { convocationData } from "../data/campus-life/convocation/convocation-data";
 import ConvocationDetailPage from "../pages/campus-life/convocation/ConvocationDetailPage";
 import GreenInitiativesPage from "../pages/campus-life/green-initiatives/GreenInitiativesPage";
+import PlacementCellPage from "../pages/placement/placement-cell/PlacementCellPage";
 
 interface IMatches {
   id: string;
@@ -452,6 +453,13 @@ export const routes = [
         },
 
         children: [
+           {
+            path: "placement-cell",
+            element: <PlacementCellPage />,
+            handle: {
+              crumb: () => <Link to="/">Placement Cell</Link>,
+            },
+          },         
           {
             path: "student-testimonial",
             element: <StudentTestimonialPage />,
