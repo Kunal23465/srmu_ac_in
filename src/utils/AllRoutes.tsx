@@ -64,6 +64,9 @@ import AfterClass10thPage from "../pages/Home/AfterClass10thPage";
 import AfterClass12thPage from "../pages/Home/AfterClass12thPage";
 import WomenEmpowermentPage from "../pages/campus-life/women-empowerment/WomenEmpowermentPage";
 import IndustryHonorsPage from "../pages/Home/IndustryHonorsPage";
+import AfterGraduationPage from "../pages/Home/AfterGraduationPage";
+import AfterPolytechnicPage from "../pages/Home/AfterPolytechnicPage";
+import AfterPostGraduationPage from "../pages/Home/AfterPostGraduationPage";
 import OutreachActivationsPage from "../pages/campus-life/outreach-activations/OutreachActivationsPage";
 import StudentSenatePage from "../pages/campus-life/student-senate/StudentSenatePage";
 import StudentCornerPage from "../pages/campus-life/student-corner/StudentCornerPage";
@@ -116,7 +119,28 @@ export const routes = [
           crumb: () => <Link to="/">Industry Honors</Link>,
         },
       },
-      // IndustryHonorsPage
+      {
+        path: "after-graduation",
+        element: <AfterGraduationPage />,
+        handle: {
+          crumb: () => <Link to="/">After Graduation</Link>,
+        },
+      },
+      {
+        path: "after-polytechnic",
+        element: <AfterPolytechnicPage />,
+        handle: {
+          crumb: () => <Link to="/">After Polytechnic</Link>,
+        },
+      },
+      {
+        path: "after-Graduation",
+        element: <AfterPostGraduationPage />,
+        handle: {
+          crumb: () => <Link to="/">After Graduation</Link>,
+        },
+      },
+      // AfterPostGraduationPage
       {
         path: "/about",
         element: <AboutPage />,
