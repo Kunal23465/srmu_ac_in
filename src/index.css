@@ -1493,6 +1493,36 @@ section .card-color img {
 .programs-tabs button.programsection::after {
   opacity: 1;
 }
+.clip-slanted {
+  clip-path: polygon(0 0, 95% 0, 100% 100%, 0 100%);
+}
+
+@keyframes bubbleScale {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+    border-radius: 50%;
+  }
+  60% {
+    transform: scale(1.05);
+    opacity: 0.8;
+    border-radius: 20px;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+    border-radius: 0px;
+  }
+}
+
+.bubble-animation {
+  animation: bubbleScale 0.45s ease-out forwards;
+}
+.bubble-anim {
+  transform-origin: center center;
+}
+
+
 
 .women {
   background-image: url("./assets/images/campus-life/women-empowerment/we-believe-in.jpg");

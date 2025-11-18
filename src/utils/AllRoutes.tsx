@@ -56,6 +56,7 @@ import ConsultancyPage from "../pages/Research/Consultancy/ConsultancyPage";
 
 
 import AlumniRegistrationPage from "../pages/placement/AlumniRegistrationPage";
+import AlumniTestimonialsPage from "../pages/placement/AlumniTestimonialsPage";
 import ConvocationPage from "../pages/campus-life/convocation/ConvocationPage";
 import { convocationData } from "../data/campus-life/convocation/convocation-data";
 import ConvocationDetailPage from "../pages/campus-life/convocation/ConvocationDetailPage";
@@ -495,6 +496,13 @@ export const routes = [
             element: <AlumniRegistrationPage />,
             handle: {
               crumb: () => <Link to="/">Alumni Registration</Link>,
+            },
+          },
+          {
+            path: "notable-alumni",
+            element: <AlumniTestimonialsPage />,
+            handle: {
+              crumb: () => <Link to="/">Notable Alumni</Link>,
             },
           },
         ],
