@@ -11,15 +11,30 @@ const DirectorSection: React.FC = () => {
     {
       key: "1",
       label: "Director Message",
-      children: <DirectorMessage data={DirectorSectionData.tab1} />,
+      content: <DirectorMessage data={DirectorSectionData.tab1} />,
     },
-    { key: "2", label: "Director Profile", children: <DirectorProfile data={DirectorSectionData.tab2} /> },
+    {
+      key: "2",
+      label: "Director Profile",
+      content: <DirectorProfile data={DirectorSectionData.tab2} />,
+    },
   ];
+
   return (
     <div className="bg-[#ffb703] py-20">
       <div className={`${Classes["container"]} `}>
         <div className="grid lg:grid-cols-2 gap-10 items-start">
-          <CustomTabs items={items} />
+          <CustomTabs
+            items={items}
+            activeTextColor="#000000"
+            inactiveTextColor="#555555"
+            hoverTextColor="#000000"
+            activeUnderlineColor="#000000"
+            fullWidthUnderlineColor="#555555"
+          />
+
+
+
           <div className="">
             <img src={DirectorSectionData.imageUrl} alt="" className="rounded-xl" />
           </div>
