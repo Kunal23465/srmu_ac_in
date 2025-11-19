@@ -72,6 +72,7 @@ import StudentSenatePage from "../pages/campus-life/student-senate/StudentSenate
 import StudentCornerPage from "../pages/campus-life/student-corner/StudentCornerPage";
 import GreenInitiativePage from "../pages/campus-life/green-initiative/GreenInitiativePage";
 import PlacementCellPage from "../pages/placement/placement-cell/PlacementCellPage";
+import NoticePage from "../pages/notice/NoticePage";
 
 interface IMatches {
   pathname: string;
@@ -141,6 +142,14 @@ export const routes = [
           crumb: () => <Link to="/">After Graduation</Link>,
         },
       },
+      {
+        path: "notice",
+        element: <NoticePage />,
+        handle: {
+          crumb: () => <Link to="/">Notice</Link>,
+        },
+      },
+
       // AfterPostGraduationPage
       {
         path: "/about",

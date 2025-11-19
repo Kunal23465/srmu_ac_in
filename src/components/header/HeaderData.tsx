@@ -7,6 +7,7 @@ export const HeaderData = [
         leftContent: [
           {
             item: "Notice",
+            path: "/notice"
           },
           {
             item: "Admission Enquiry",
@@ -231,12 +232,6 @@ export const HeaderData = [
               {
                 item: "Alumni Testimonials",
                 path: "/placements/notable-alumni",
-              },
-
-              // student-testimonial
-              {
-                item: "Placement Plolicies",
-                path: "/placements/placement-policies",
               },
             ],
           },
