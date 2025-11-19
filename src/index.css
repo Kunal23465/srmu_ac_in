@@ -123,7 +123,7 @@
   display: none !important;
 }
 
-.photo_gallery > .slick-dots li button:before {
+.photo_gallery>.slick-dots li button:before {
   font-family: "slick";
   position: absolute;
   top: 0;
@@ -139,12 +139,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.photo_gallery > .slick-dots li.slick-active button:before {
+.photo_gallery>.slick-dots li.slick-active button:before {
   opacity: 0.9;
   background: #ffb703;
 }
 
-.photo_gallery > .slick-dots {
+.photo_gallery>.slick-dots {
   bottom: -40px !important;
 }
 
@@ -474,6 +474,7 @@ background: radial-gradient(circle, rgba(36,64,143,0.9444152661064426) 0%, rgba(
 }
 
 @media screen and (min-width: 592px) {
+
   /* ======================================== */
   .parent_grid_gallary .children img {
     width: 100%;
@@ -1283,6 +1284,7 @@ ul {
 }
 
 @media screen and (min-width: 592px) {
+
   /* ======================================== */
   .parent_grid_gallary .children img {
     width: 100%;
@@ -1394,12 +1396,12 @@ section .card-color img {
     flex-direction: column;
   }
 
-  section .card-color > div:first-child {
+  section .card-color>div:first-child {
     width: 100% !important;
     text-align: left;
   }
 
-  section .card-color > div:last-child {
+  section .card-color>div:last-child {
     width: 100% !important;
     margin-top: 2rem !important;
     position: relative !important;
@@ -1497,12 +1499,12 @@ section .card-color img {
 .programs-tabs button.programsection::after {
   opacity: 1;
 }
-<<<<<<< HEAD
 
 .rs__option {
   color: black !important;
-  padding: 6px ;
-=======
+  padding: 6px;
+}
+
 .clip-slanted {
   clip-path: polygon(0 0, 95% 0, 100% 100%, 0 100%);
 }
@@ -1513,11 +1515,13 @@ section .card-color img {
     opacity: 0;
     border-radius: 50%;
   }
+
   60% {
     transform: scale(1.05);
     opacity: 0.8;
     border-radius: 20px;
   }
+
   100% {
     transform: scale(1);
     opacity: 1;
@@ -1528,6 +1532,7 @@ section .card-color img {
 .bubble-animation {
   animation: bubbleScale 0.45s ease-out forwards;
 }
+
 .bubble-anim {
   transform-origin: center center;
 }
@@ -1550,7 +1555,6 @@ section .card-color img {
 
 .font19 {
   font-size: 1.188rem;
->>>>>>> 6546c5863d243c8f3537ac340afd8b0eba30466f
 }
 
 .flip-card {
@@ -1578,6 +1582,6 @@ section .card-color img {
   font-size: 1rem;
 }
 
-.font28{
-      font-size: 1.75rem;
+.font28 {
+  font-size: 1.75rem;
 }
