@@ -66,6 +66,7 @@ import AfterClass12thPage from "../pages/Home/AfterClass12thPage";
 import WomenEmpowermentPage from "../pages/campus-life/women-empowerment/WomenEmpowermentPage";
 import IndustryHonorsPage from "../pages/Home/IndustryHonorsPage";
 import GreenInitiativePage from "../pages/campus-life/green-initiative/GreenInitiativePage";
+import OutreactActivationsPage from "../pages/campus-life/outreach-activations/OutreactActivationsPage";
 
 interface IMatches {
   pathname: string;
@@ -365,6 +366,13 @@ export const routes = [
             element: <WomenEmpowermentPage />,
             handle: {
               crumb: () => <Link to="/">Women Empowerment</Link>,
+            },
+          },
+          {
+            path: "outreach-activations",
+            element: <OutreactActivationsPage />,
+            handle: {
+              crumb: () => <Link to="/">Outreach Activations</Link>,
             },
           },
           {

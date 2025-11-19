@@ -192,6 +192,10 @@ export const HeaderData = [
                 item: "Women Empowerment",
                 path: "/campus-life/women-empowerment",
               },
+              {
+                item: "Outreach Activations",
+                path: "/campus-life/outreach-activations",
+              },
             ],
           },
 
