@@ -1,9 +1,5 @@
 import { StudentSenate } from "../../../data/campus-life/student-senate/student-senate-data";
-import { FaFilePdf } from "react-icons/fa6";
 
-const DownloadIcon: React.FC = () => {
-    return <FaFilePdf className="text-xl" />;
-};
 
 interface CardProps {
     student: StudentSenate;
@@ -55,7 +51,7 @@ export const CardSectionSenate: React.FC<CardProps> = ({ student }) => {
                 >
                     
                     <div className="bg-white rounded-md p-2 transition-all group-hover:bg-yellow-500">
-
+{/* @ts-ignore */}
                         <PdfSvgIcon className="transition-all group-hover:fill-white group-hover:text-white" /> 
                     </div>
                    <span> DOWNLOAD PDF</span>

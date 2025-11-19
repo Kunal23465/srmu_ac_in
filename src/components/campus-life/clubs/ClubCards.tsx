@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { cardclubCardsData } from '../../../data/campus-life/clubs/clubs-data';
-import { FaArrowRightLong } from 'react-icons/fa6';
+
 import { MdArrowRightAlt, MdClose } from 'react-icons/md';
-import { Link } from 'react-router-dom';
 
 
 
+// @ts-ignore
 const CustomModal = ({ selected, setSelected }) => {
     if (!selected) return null;
 
@@ -61,6 +61,7 @@ const ClubCards: React.FC = () => {
                 {cardclubCardsData.map((card, i) => (
                     <div
                         key={i}
+                        // @ts-ignore
                         onClick={() => setSelected(card)}
                         className="relative h-64 rounded-2xl overflow-hidden shadow-md group cursor-pointer  border-transparent hover:border-yellow-400 border-2 transition-all duration-300"
                     >

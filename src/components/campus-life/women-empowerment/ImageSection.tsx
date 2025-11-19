@@ -1,4 +1,3 @@
-import React from "react";
 import { items, stats } from "../../../data/campus-life/women-empowerment/women-empowerment-data";
 
 export default function ImageSection() {

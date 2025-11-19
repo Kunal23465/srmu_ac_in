@@ -5,7 +5,7 @@ import { studentCornerFirstCycle, StudentCornerOverviewData, studentCornerSecond
 import CustomTable from '../../../utils/custom/CustomTable';
 
 
-const StudentCornerComp = () => {
+const StudentCornerComp:React.FC = () => {
     return (
         <div>
             <div className={`${Classes["container"]}`}>
