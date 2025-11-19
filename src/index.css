@@ -1500,6 +1500,11 @@ section .card-color img {
 .programs-tabs button.programsection::after {
   opacity: 1;
 }
+
+.rs__option {
+  color: black !important;
+  padding: 6px 
+}
 .clip-slanted {
   clip-path: polygon(0 0, 95% 0, 100% 100%, 0 100%);
 }
