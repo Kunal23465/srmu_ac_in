@@ -1,48 +1,141 @@
-import { ConfigProvider, Tabs } from "antd";
-import type { TabsProps } from "antd";
-import { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
+
 interface CustomTabsProps {
-  items: TabsProps["items"];
+  items: {
+    key: string;
+    label: string;
+    content: React.ReactNode;
+  }[];
+
   defaultActiveKey?: string;
+  activeKey?: string;
+  onChange?: (key: string) => void;
+
+  fullWidthUnderlineColor?: string;
+  activeUnderlineColor?: string;
+
+  activeTextColor?: string;
+  inactiveTextColor?: string;
+  hoverTextColor?: string;
 }
-const CustomTabs = ({ items, defaultActiveKey = "1" }: CustomTabsProps) => {
-  const [activeKey, setActiveKey] = useState(defaultActiveKey);
+
+const CustomTabs = ({
+  items,
+  defaultActiveKey,
+  activeKey: controlledKey,
+  onChange,
+
+  fullWidthUnderlineColor = "#E5E7EB",
+  activeUnderlineColor = "#000",
+
+  activeTextColor = "#000",
+  inactiveTextColor = "#777",
+  hoverTextColor = "#000",
+}: CustomTabsProps) => {
+  const isControlled = controlledKey !== undefined;
+  const [internalKey, setInternalKey] = useState(defaultActiveKey || items[0]?.key);
+
+  const currentKey = isControlled ? controlledKey : internalKey;
+
+  const handleClick = (key: string) => {
+    if (!isControlled) setInternalKey(key);
+    onChange?.(key);
+  };
+
+  // --- Refs for underline animation ---
+  const tabRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const underlineRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const index = items.findIndex((t) => t.key === currentKey);
+    const activeTab = tabRefs.current[index];
+
+    if (activeTab && underlineRef.current) {
+      const rect = activeTab.getBoundingClientRect();
+
+      underlineRef.current.style.width = rect.width + "px";
+      underlineRef.current.style.transform = `translateX(${activeTab.offsetLeft}px)`;
+    }
+  }, [currentKey, items]);
+
   return (
-    <div className="py-2">
-      <ConfigProvider
-        theme={{
-          token: {
-            colorPrimary: "#0E2F46", // Tailwind's purple-600
-          },
-        }}
-      >
-        <Tabs
-          activeKey={activeKey}
-          onChange={(key) => setActiveKey(key)}
-          defaultActiveKey={defaultActiveKey}
-          items={items}
-          renderTabBar={(props, DefaultTabBar) => (
-            <DefaultTabBar
-              {...props}
-              className={`
-              border-none!
-              font-bold!
-              [&_.ant-tabs-nav::before]:border-none!
-              [&_.ant-tabs-tab]:text-xl!
-              [&_.ant-tabs-tab]:text-gray-600!
-              [&_.ant-tabs-tab]:px-3 
-              [&_.ant-tabs-tab]:py-2 
-              [&_.ant-tabs-tab[aria-selected='true']_.ant-tabs-tab-btn]:text-[#0E2F46] 
-              [&_.ant-tabs-tab[aria-selected='true']_.ant-tabs-tab-btn]:font-bold!
-              [&_.ant-tabs-ink-bar]:bg-[#0E2F46]!
-              /* unselected tabs: add a visible red border on the tab element (li) so it's visible */
-              [&_.ant-tabs-tab[aria-selected='false']]:border-b-4!
-              [&_.ant-tabs-tab[aria-selected='false']]:border-[#ff0000]!
-            `}
-            />
-          )}
+    <div className="custom-tabs-container">
+      {/* Tab Headers */}
+      <div className="tabs-header">
+        {items.map((tab, index) => (
+          <div
+            key={tab.key}
+            ref={(el) => (tabRefs.current[index] = el)}
+            className={`tab-item ${tab.key === currentKey ? "active" : ""}`}
+            onClick={() => handleClick(tab.key)}
+          >
+            {tab.label}
+          </div>
+        ))}
+
+        {/* Active underline */}
+        <div
+          ref={underlineRef}
+          className="active-underline"
+          style={{ backgroundColor: activeUnderlineColor }}
         />
-      </ConfigProvider>
+      </div>
+
+      {/* Content */}
+      <div className="tabs-content">
+        {items.find((t) => t.key === currentKey)?.content}
+      </div>
+
+      {/* Styles */}
+      <style>
+        {`
+        .custom-tabs-container {
+          width: 100%;
+        }
+
+        .tabs-header {
+          position: relative;
+          display: flex;
+          gap: 32px;
+          padding-bottom: 10px;
+          border-bottom: 1px solid ${fullWidthUnderlineColor};
+        }
+
+        .tab-item {
+          cursor: pointer;
+          font-weight: 600;
+          font-size: 15px;
+          padding-bottom: 6px;
+          color: ${inactiveTextColor};
+          transition: color 0.2s ease;
+          position: relative;
+        }
+
+        .tab-item:hover {
+          color: ${hoverTextColor};
+        }
+
+        .tab-item.active {
+          color: ${activeTextColor};
+        }
+
+        /* ACTIVE underline that moves + resizes smoothly */
+        .active-underline {
+          position: absolute;
+          bottom: -1px;
+          height: 2px;
+          width: 0px; 
+          transition: 
+            transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+            width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          z-index: 2;
+        }
+
+        .tabs-content {
+          padding-top: 20px;
+        }
+      `}
+      </style>
     </div>
   );
 };

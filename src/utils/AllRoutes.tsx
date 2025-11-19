@@ -60,13 +60,20 @@ import ConvocationDetailPage from "../pages/campus-life/convocation/ConvocationD
 
 
 import ClubsPage from "../pages/campus-life/clubs/ClubsPage";
-// import GreenInitiativePage from "../pages/campus-life/green-initiative/GreenInitiativePage";
 import AfterClass10thPage from "../pages/Home/AfterClass10thPage";
 import AfterClass12thPage from "../pages/Home/AfterClass12thPage";
 import WomenEmpowermentPage from "../pages/campus-life/women-empowerment/WomenEmpowermentPage";
 import IndustryHonorsPage from "../pages/Home/IndustryHonorsPage";
+import AfterGraduationPage from "../pages/Home/AfterGraduationPage";
+import AfterPolytechnicPage from "../pages/Home/AfterPolytechnicPage";
+import AfterPostGraduationPage from "../pages/Home/AfterPostGraduationPage";
+import OutreachActivationsPage from "../pages/campus-life/outreach-activations/OutreachActivationsPage";
+import StudentSenatePage from "../pages/campus-life/student-senate/StudentSenatePage";
+import StudentCornerPage from "../pages/campus-life/student-corner/StudentCornerPage";
 import GreenInitiativePage from "../pages/campus-life/green-initiative/GreenInitiativePage";
 import OutreactActivationsPage from "../pages/campus-life/outreach-activations/OutreactActivationsPage";
+import PlacementCellPage from "../pages/placement/placement-cell/PlacementCellPage";
+import GrievanceRedressalSystemPage from "../pages/campus-life/grievance-redressal-system/GrievanceRedressalSystemPage";
 
 interface IMatches {
   pathname: string;
@@ -115,7 +122,28 @@ export const routes = [
           crumb: () => <Link to="/">Industry Honors</Link>,
         },
       },
-      // IndustryHonorsPage
+      {
+        path: "after-graduation",
+        element: <AfterGraduationPage />,
+        handle: {
+          crumb: () => <Link to="/">After Graduation</Link>,
+        },
+      },
+      {
+        path: "after-polytechnic",
+        element: <AfterPolytechnicPage />,
+        handle: {
+          crumb: () => <Link to="/">After Polytechnic</Link>,
+        },
+      },
+      {
+        path: "after-Graduation",
+        element: <AfterPostGraduationPage />,
+        handle: {
+          crumb: () => <Link to="/">After Graduation</Link>,
+        },
+      },
+      // AfterPostGraduationPage
       {
         path: "/about",
         element: <AboutPage />,
@@ -354,6 +382,7 @@ export const routes = [
             },
           },
 
+
           {
             path: "green-initiative",
             element: <GreenInitiativePage />,
@@ -371,6 +400,22 @@ export const routes = [
           {
             path: "outreach-activations",
             element: <OutreactActivationsPage />,
+            path: "student-senate",
+            element: <StudentSenatePage />,
+            handle: {
+              crumb: () => <Link to="/">Student Senate</Link>,
+            },
+          },
+          {
+            path: "student-corner",
+            element: <StudentCornerPage />,
+            handle: {
+              crumb: () => <Link to="/">Student Corner</Link>,
+            },
+          },
+          {
+            path: "outreach-activations",
+            element: <OutreachActivationsPage />,
             handle: {
               crumb: () => <Link to="/">Outreach Activations</Link>,
             },
@@ -382,13 +427,13 @@ export const routes = [
               crumb: () => <Link to="/">Clubs</Link>,
             },
           },
-          // {
-          //   path: "green-initiative",
-          //   element: <GreenInitiativePage />,
-          //   handle: {
-          //     crumb: () => <Link to="/">Green Initiative</Link>,
-          //   },
-          // },
+          {
+            path: "grievance-redressal-system",
+            element: <GrievanceRedressalSystemPage />,
+            handle: {
+              crumb: () => <Link to="/">Grievance Redressal System</Link>,
+            },
+          },
           {
             path: "events",
             element: <EventPage />,
@@ -507,6 +552,13 @@ export const routes = [
         },
 
         children: [
+           {
+            path: "placement-cell",
+            element: <PlacementCellPage />,
+            handle: {
+              crumb: () => <Link to="/">Placement Cell</Link>,
+            },
+          },         
           {
             path: "student-testimonial",
             element: <StudentTestimonialPage />,

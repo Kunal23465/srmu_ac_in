@@ -1090,6 +1090,10 @@ footer:after {
   color: rgb(15, 74, 133) !important;
 }
 
+.color_dark_blue {
+  color: rgb(2, 48, 71) !important;
+}
+
 .color_border_blue {
   border: solid 1px rgb(15, 74, 133) !important;
 }
@@ -1126,6 +1130,9 @@ ul {
   list-style-type: disc;
 }
 
+.polygon_bg{
+clip-path: polygon(0 0, 92% 0, 96% 100%, 0 100%);
+}
 .curr {
   font-size: calc(1.025rem + 0.9vw);
 }
@@ -1527,8 +1534,6 @@ section .card-color img {
   transform-origin: center center;
 }
 
-
-
 .women {
   background-image: url("./assets/images/campus-life/women-empowerment/we-believe-in.jpg");
 }
@@ -1537,14 +1542,43 @@ section .card-color img {
   font-size: 3.75rem;
 }
 
-.font20{
+.font20 {
   font-size: 1.25rem;
 }
 
-.font26{
+.font26 {
   font-size: 1.625rem;
 }
 
-.font19{
+.font19 {
   font-size: 1.188rem;
+}
+
+.flip-card {
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+}
+
+.flip-card.rotate {
+  transform: rotateY(180deg);
+}
+
+.flip-card-face {
+  backface-visibility: hidden;
+}
+
+.font17 {
+  font-size: 1.063rem;
+}
+
+.font26 {
+  font-size: 1.625rem;
+}
+
+.font16 {
+  font-size: 1rem;
+}
+
+.font28{
+      font-size: 1.75rem;
 }
