@@ -15,6 +15,10 @@ export const HeaderData = [
           {
             item: "Career",
           },
+          {
+            item: "Shift Schedule",
+            path: "/shift-schedule"
+          }
         ],
         rightContent: [
           {

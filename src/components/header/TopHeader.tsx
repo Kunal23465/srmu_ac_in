@@ -19,7 +19,7 @@ const TopHeader: React.FC = () => {
                                     RESULTS |
                                 </a>
                                 <Link to="/career">CAREER |</Link>
-                                <Link to="/career">SHIFT SCHEDULE</Link>
+                                <Link to="/shift-schedule">SHIFT SCHEDULE</Link>
                             </ul>
                         </div>
                     </div>

@@ -150,7 +150,13 @@ export const routes = [
           crumb: () => <Link to="/">Notice</Link>,
         },
       },
-
+      {
+        path: "shift-schedule",
+        element: <ShiftSchedulePage />,
+        handle: {
+          crumb: () => <Link to="/">Shift Schedule</Link>,
+        },
+      },
       // AfterPostGraduationPage
       {
         path: "/about",
