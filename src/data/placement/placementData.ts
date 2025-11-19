@@ -8,6 +8,19 @@ import Early_Joining_Policy from "../../assets/pdf/placement/placement-policies/
 import Industrial_Visit_Policy from "../../assets/pdf/placement/placement-policies/industrial-visit-policy-191223123100-060324102231.pdf"
 import { AlumniRegistrationField } from "../../types/placement-type";
 
+
+export const PlacementCellOverviewData: customeOverViewType = {
+  heading: "Placement Cell",
+  content:
+    "At SRMU, we are proud to have been home to 12000+ well-placed alumni worldwide—our contribution to fueling national growth by providing top-notch talent to various corporate houses. SRMU ensures students unleash their full potential, reaching professional excellence. Hence, our integrated Training and Placement Department tirelessly transforms students' dreams and aspirations into reality.",
+};
+export const PlacementCellTopFooterData = [
+  {
+    content: `Want to learn more about SRMU?`,
+    btnText: "Request Registration",
+  },
+];
+
 export const studentTestimonialOverviewData: customeOverViewType = {
   heading: "All Testimonial",
   content:
