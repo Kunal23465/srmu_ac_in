@@ -1497,12 +1497,6 @@ section .card-color img {
 .programs-tabs button.programsection::after {
   opacity: 1;
 }
-<<<<<<< HEAD
-
-.rs__option {
-  color: black !important;
-  padding: 6px ;
-=======
 .clip-slanted {
   clip-path: polygon(0 0, 95% 0, 100% 100%, 0 100%);
 }
@@ -1550,7 +1544,6 @@ section .card-color img {
 
 .font19 {
   font-size: 1.188rem;
->>>>>>> 6546c5863d243c8f3537ac340afd8b0eba30466f
 }
 
 .flip-card {
