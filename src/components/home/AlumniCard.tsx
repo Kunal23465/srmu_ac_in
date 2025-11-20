@@ -1,5 +1,5 @@
 
-import React, { useState } from "react";
+import React from "react";
 
 type CustomCardProps = {
     image?: string; 
@@ -16,7 +16,7 @@ const AlumniCard: React.FC<CustomCardProps> = ({
     desc,
     fullDesc,
 }) => {
-    const [openModal, setOpenModal] = useState(false);
+ 
 
     if (!image) {
         return (

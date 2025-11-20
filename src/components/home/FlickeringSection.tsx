@@ -49,9 +49,8 @@ export default function FlickeringSection() {
 
                     {/* RIGHT SIDE */}
                     <div className="w-1/2 grid grid-cols-2 text-white text-lg">
-                        {flickcategories.map((item, index) => {
-                            const isRightColumn = index % 2 !== 0;
-                            const isLastRow = index >= flickcategories.length - 2;
+                        {flickcategories.map((item) => {
+                          
 
 
 
