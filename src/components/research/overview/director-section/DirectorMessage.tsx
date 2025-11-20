@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { MdArrowRightAlt } from "react-icons/md";
-
 import DirectorModal from "./DirectorModal";
 
 interface DirectorMessageProps {
