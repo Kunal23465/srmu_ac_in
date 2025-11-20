@@ -123,7 +123,7 @@
   display: none !important;
 }
 
-.photo_gallery > .slick-dots li button:before {
+.photo_gallery>.slick-dots li button:before {
   font-family: "slick";
   position: absolute;
   top: 0;
@@ -139,12 +139,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.photo_gallery > .slick-dots li.slick-active button:before {
+.photo_gallery>.slick-dots li.slick-active button:before {
   opacity: 0.9;
   background: #ffb703;
 }
 
-.photo_gallery > .slick-dots {
+.photo_gallery>.slick-dots {
   bottom: -40px !important;
 }
 
@@ -474,6 +474,7 @@ background: radial-gradient(circle, rgba(36,64,143,0.9444152661064426) 0%, rgba(
 }
 
 @media screen and (min-width: 592px) {
+
   /* ======================================== */
   .parent_grid_gallary .children img {
     width: 100%;
@@ -1134,9 +1135,10 @@ ul {
   list-style-type: disc;
 }
 
-.polygon_bg{
-clip-path: polygon(0 0, 92% 0, 96% 100%, 0 100%);
+.polygon_bg {
+  clip-path: polygon(0 0, 92% 0, 96% 100%, 0 100%);
 }
+
 .curr {
   font-size: calc(1.025rem + 0.9vw);
 }
@@ -1290,6 +1292,7 @@ clip-path: polygon(0 0, 92% 0, 96% 100%, 0 100%);
 }
 
 @media screen and (min-width: 592px) {
+
   /* ======================================== */
   .parent_grid_gallary .children img {
     width: 100%;
@@ -1401,12 +1404,12 @@ section .card-color img {
     flex-direction: column;
   }
 
-  section .card-color > div:first-child {
+  section .card-color>div:first-child {
     width: 100% !important;
     text-align: left;
   }
 
-  section .card-color > div:last-child {
+  section .card-color>div:last-child {
     width: 100% !important;
     margin-top: 2rem !important;
     position: relative !important;
@@ -1507,9 +1510,9 @@ section .card-color img {
 
 .rs__option {
   color: black !important;
-  padding: 6px ;
-  padding: 6px 
+  padding: 6px;
 }
+
 .clip-slanted {
   clip-path: polygon(0 0, 95% 0, 100% 100%, 0 100%);
 }
@@ -1521,11 +1524,13 @@ section .card-color img {
     opacity: 0;
     border-radius: 50%;
   }
+
   60% {
     transform: scale(1.05);
     opacity: 0.8;
     border-radius: 20px;
   }
+
   100% {
     transform: scale(1);
     opacity: 1;
@@ -1536,6 +1541,7 @@ section .card-color img {
 .bubble-animation {
   animation: bubbleScale 0.45s ease-out forwards;
 }
+
 .bubble-anim {
   transform-origin: center center;
 }
@@ -1587,12 +1593,13 @@ section .card-color img {
 
 .font28 {
   font-size: 1.75rem;
+  <<<<<<< HEAD=======
 }
 
 
 .slick-dots li button:before {
-  font-size: 14px;     
-  color: transparent;  
+  font-size: 14px;
+  color: transparent;
   border: 2px solid #fff;
   border-radius: 50%;
   width: 14px;
@@ -1600,18 +1607,20 @@ section .card-color img {
   display: block;
   content: "";
 }
+
 .slick-dots li.slick-active button:before {
-  background-color: #fff; 
+  background-color: #fff;
 }
 
 .hidden-dot {
   display: none;
 }
 
-.font36{
+.font36 {
   font-size: 3.125rem;
 }
 
-.font21{
-      font-size: 1.313rem;
+.font21 {
+  font-size: 1.313rem;
+  >>>>>>>12d40a6a9fec4537555802b82bf204696bf2a828
 }

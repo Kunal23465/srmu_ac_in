@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import logosrmcem from "../../assets/images/Updatedsrmcemlogo.png";
 import Classes from "../../utils/styles/Global.module.css";
 import { Link } from "react-router-dom";
-import { FaFacebookF, FaInstagram, FaLinkedinIn, FaPhone, FaTwitter } from "react-icons/fa";
+import { FaPhone} from "react-icons/fa";
 
 import { MdEmail, MdLocationPin } from "react-icons/md";
 import anti_sexual from "../../assets/pdf/Gendar Senstization and Sexual Harassment -ICC.pdf";
