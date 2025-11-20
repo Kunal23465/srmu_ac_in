@@ -1094,6 +1094,10 @@ footer:after {
   color: rgb(2, 48, 71) !important;
 }
 
+.background_dark_blue {
+  background-color: rgb(2, 48, 71) !important;
+}
+
 .color_border_blue {
   border: solid 1px rgb(15, 74, 133) !important;
 }
@@ -1503,11 +1507,13 @@ section .card-color img {
 
 .rs__option {
   color: black !important;
+  padding: 6px ;
   padding: 6px 
 }
 .clip-slanted {
   clip-path: polygon(0 0, 95% 0, 100% 100%, 0 100%);
 }
+
 
 @keyframes bubbleScale {
   0% {
@@ -1579,6 +1585,33 @@ section .card-color img {
   font-size: 1rem;
 }
 
-.font28{
-      font-size: 1.75rem;
+.font28 {
+  font-size: 1.75rem;
+}
+
+
+.slick-dots li button:before {
+  font-size: 14px;     
+  color: transparent;  
+  border: 2px solid #fff;
+  border-radius: 50%;
+  width: 14px;
+  height: 14px;
+  display: block;
+  content: "";
+}
+.slick-dots li.slick-active button:before {
+  background-color: #fff; 
+}
+
+.hidden-dot {
+  display: none;
+}
+
+.font36{
+  font-size: 3.125rem;
+}
+
+.font21{
+      font-size: 1.313rem;
 }
