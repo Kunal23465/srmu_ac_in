@@ -62,6 +62,7 @@ import AfterClass12thPage from "../pages/Home/AfterClass12thPage";
 import GreenInitiativesPage from "../pages/campus-life/green-initiatives/GreenInitiativesPage";
 import WomenEmpowermentPage from "../pages/campus-life/women-empowerment/WomenEmpowermentPage";
 import IndustryHonorsPage from "../pages/Home/IndustryHonorsPage";
+import PublicationPage from "../pages/Research/Publication/PublicationPage";
 
 interface IMatches {
   pathname: string;
@@ -468,6 +469,13 @@ export const routes = [
             element: <ConsultancyPage />,
             handle: {
               crumb: () => <Link to="/">Consultancy</Link>,
+            },
+          },
+          {
+            path: "publication",
+            element: <PublicationPage />,
+            handle: {
+              crumb: () => <Link to="/">Publication</Link>,
             },
           },
         ],
