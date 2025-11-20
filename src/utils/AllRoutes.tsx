@@ -57,12 +57,26 @@ import ConvocationPage from "../pages/campus-life/convocation/ConvocationPage";
 import { convocationData } from "../data/campus-life/convocation/convocation-data";
 import ConvocationDetailPage from "../pages/campus-life/convocation/ConvocationDetailPage";
 
+
+
+import ClubsPage from "../pages/campus-life/clubs/ClubsPage";
 import AfterClass10thPage from "../pages/Home/AfterClass10thPage";
 import AfterClass12thPage from "../pages/Home/AfterClass12thPage";
-import GreenInitiativesPage from "../pages/campus-life/green-initiatives/GreenInitiativesPage";
 import WomenEmpowermentPage from "../pages/campus-life/women-empowerment/WomenEmpowermentPage";
 import IndustryHonorsPage from "../pages/Home/IndustryHonorsPage";
 import PublicationPage from "../pages/Research/Publication/PublicationPage";
+import AfterGraduationPage from "../pages/Home/AfterGraduationPage";
+import AfterPolytechnicPage from "../pages/Home/AfterPolytechnicPage";
+import AfterPostGraduationPage from "../pages/Home/AfterPostGraduationPage";
+import OutreachActivationsPage from "../pages/campus-life/outreach-activations/OutreachActivationsPage";
+import StudentSenatePage from "../pages/campus-life/student-senate/StudentSenatePage";
+import StudentCornerPage from "../pages/campus-life/student-corner/StudentCornerPage";
+import GreenInitiativePage from "../pages/campus-life/green-initiative/GreenInitiativePage";
+import PlacementCellPage from "../pages/placement/placement-cell/PlacementCellPage";
+import NoticePage from "../pages/notice/NoticePage";
+import GrievanceRedressalSystemPage from "../pages/campus-life/grievance-redressal-system/GrievanceRedressalSystemPage";
+import AdmissionEnquiryPage from "../pages/admission-enquiry/AdmissionEnquiryPage";
+import AdmissionPolicyPage from "../pages/admissions/admission-policy/AdmissionPolicyPage";
 
 interface IMatches {
   pathname: string;
@@ -111,7 +125,42 @@ export const routes = [
           crumb: () => <Link to="/">Industry Honors</Link>,
         },
       },
-      // IndustryHonorsPage
+      {
+        path: "after-graduation",
+        element: <AfterGraduationPage />,
+        handle: {
+          crumb: () => <Link to="/">After Graduation</Link>,
+        },
+      },
+      {
+        path: "after-polytechnic",
+        element: <AfterPolytechnicPage />,
+        handle: {
+          crumb: () => <Link to="/">After Polytechnic</Link>,
+        },
+      },
+      {
+        path: "after-Graduation",
+        element: <AfterPostGraduationPage />,
+        handle: {
+          crumb: () => <Link to="/">After Graduation</Link>,
+        },
+      },
+      {
+        path: "notice",
+        element: <NoticePage />,
+        handle: {
+          crumb: () => <Link to="/">Notice</Link>,
+        },
+      },
+      {
+        path: "shift-schedule",
+        element: <ShiftSchedulePage />,
+        handle: {
+          crumb: () => <Link to="/">Shift Schedule</Link>,
+        },
+      },
+      // AfterPostGraduationPage
       {
         path: "/about",
         element: <AboutPage />,
@@ -257,7 +306,7 @@ export const routes = [
       },
 
       {
-        path: "/admissions",
+        path: "/admission",
         element: <AdmissonsPage />,
         handle: {
           crumb: () => <Link to="/">Admissions</Link>,
@@ -299,7 +348,13 @@ export const routes = [
               crumb: () => <Link to="/">Academic Bank of Credit</Link>,
             },
           },
-
+          {
+            path: "admission-policy",
+            element: <AdmissionPolicyPage />,
+            handle: {
+              crumb: () => <Link to="/">Academic Bank of Credit</Link>,
+            },
+          },
           {
             path: "program-finder",
             element: <ProgramFinderPage />,
@@ -350,9 +405,10 @@ export const routes = [
             },
           },
 
+
           {
             path: "green-initiative",
-            element: <GreenInitiativesPage />,
+            element: <GreenInitiativePage />,
             handle: {
               crumb: () => <Link to="/">Green Initiative</Link>,
             },
@@ -362,6 +418,41 @@ export const routes = [
             element: <WomenEmpowermentPage />,
             handle: {
               crumb: () => <Link to="/">Women Empowerment</Link>,
+            },
+          },
+          {
+            path: "student-senate",
+            element: <StudentSenatePage />,
+            handle: {
+              crumb: () => <Link to="/">Student Senate</Link>,
+            },
+          },
+          {
+            path: "student-corner",
+            element: <StudentCornerPage />,
+            handle: {
+              crumb: () => <Link to="/">Student Corner</Link>,
+            },
+          },
+          {
+            path: "outreach-activations",
+            element: <OutreachActivationsPage />,
+            handle: {
+              crumb: () => <Link to="/">Outreach Activations</Link>,
+            },
+          },
+          {
+            path: "clubs",
+            element: <ClubsPage />,
+            handle: {
+              crumb: () => <Link to="/">Clubs</Link>,
+            },
+          },
+          {
+            path: "grievance-redressal-system",
+            element: <GrievanceRedressalSystemPage />,
+            handle: {
+              crumb: () => <Link to="/">Grievance Redressal System</Link>,
             },
           },
           {
@@ -490,6 +581,13 @@ export const routes = [
 
         children: [
           {
+            path: "placement-cell",
+            element: <PlacementCellPage />,
+            handle: {
+              crumb: () => <Link to="/">Placement Cell</Link>,
+            },
+          },
+          {
             path: "student-testimonial",
             element: <StudentTestimonialPage />,
             handle: {
@@ -519,6 +617,13 @@ export const routes = [
           },
         ],
       },
+      {
+        path: "admission-enquiry",
+        element: <AdmissionEnquiryPage />,
+        handle: {
+          crumb: () => <Link to="/">Admission Enquiry</Link>,
+        },
+      }
     ],
   },
 ];

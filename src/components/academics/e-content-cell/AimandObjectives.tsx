@@ -6,7 +6,7 @@ const AimandObjectives = () => {
                 <strong>Aims & Objectives</strong>
             </h2>
 
-            <ul className="font18">
+            <ul className="font18 text-justify">
                 <li>
                     The Cell’s goal is to connect with as many online beneficiaries as possible by disseminating college knowledge resources and seeking outside experts to prepare students for the difficulties of the digital world.
                 </li>
@@ -18,10 +18,10 @@ const AimandObjectives = () => {
                 </li>
             </ul>
 
-            <p className="font18">
+            <p className="font18 text-justify">
                 The Uttar Pradesh higher education digital library (UPHED) is a unique initiative by Uttar Pradesh higher education, which enables the students from different backgrounds, disciplines and areas of expertise to gain knowledge by this digital repository.
             </p>
-            <p className="font18">
+            <p className="font18 text-justify">
                 As per the report shared on website of Uttar Pradesh Higher Education Digital Library (UPHEDL), the status of Shri Ramswaroop Memorial University among different universities and colleges of Uttar Pradesh till 30th July 2025.
             </p>
 

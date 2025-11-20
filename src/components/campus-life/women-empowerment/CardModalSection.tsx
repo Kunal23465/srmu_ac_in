@@ -8,15 +8,19 @@ export default function CardModalSection() {
     return (
         <section className="py-20">
             <div className="container mx-auto px-4">
-                <h2 className="text-4xl font-semibold text-center mb-12 text-[#0f4a85]">
+                <h2 className="font50 fw500 text-center text-[#0f4a85]">
                     Initiatives
                 </h2>
 
-                <div className="grid md:grid-cols-3 gap-6">
+                <p className="text-center mb-15">
+                    We believe in equality, inclusiveness, respect for human dignity, fairness and justice for all which is reflected in an unbiased recognition and representation of women and men in all areas to thrive.
+                </p>
+
+                <div className="grid md:grid-cols-3 gap-9">
                     {initiativesData.map((item, index) => (
                         <div
                             key={index}
-                            className="bg-[#fff6dd]  shadow-md rounded-xl p-6 flex flex-col justify-between hover:shadow-lg transition-all duration-300 border border-yellow-300"
+                            className="bg-[#fff6dd]  shadow-lg rounded-xl p-6 flex flex-col justify-between hover:shadow-2xl transition-all duration-300"
                             style={{ backgroundColor: item.bgColor }}
                         >
                             <h3 className="text-xl font-semibold font26 mb-3">
