@@ -4,6 +4,10 @@ import MemorialCollege from './MemorialCollege'
 import InnovationCulture from './InnovationCulture'
 import Apply from './Apply'
 import ProgramsSection from './ProgramSection'
+import AlumniSlider from './NotableAlumni'
+import FlickeringSection from './FlickeringSection'
+import TestimonialSlider from './TestimonialSlider'
+import DepartmentalVideoComponent from './DepartmentalVideoComponent'
 
 const Home: React.FC = () => {
   return (
@@ -13,7 +17,12 @@ const Home: React.FC = () => {
       <ProgramsSection />
       <Apply />
       <InnovationCulture />
-
+      <FlickeringSection />
+     <div className='bg-[#ecf0f9]'>
+       <TestimonialSlider/>
+     </div>
+      <AlumniSlider />
+    <DepartmentalVideoComponent />
     </div>
   )
 }
