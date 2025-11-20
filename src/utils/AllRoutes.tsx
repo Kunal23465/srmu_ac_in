@@ -72,6 +72,7 @@ import StudentSenatePage from "../pages/campus-life/student-senate/StudentSenate
 import StudentCornerPage from "../pages/campus-life/student-corner/StudentCornerPage";
 import GreenInitiativePage from "../pages/campus-life/green-initiative/GreenInitiativePage";
 import PlacementCellPage from "../pages/placement/placement-cell/PlacementCellPage";
+import NoticePage from "../pages/notice/NoticePage";
 import GrievanceRedressalSystemPage from "../pages/campus-life/grievance-redressal-system/GrievanceRedressalSystemPage";
 import AdmissionEnquiryPage from "../pages/admission-enquiry/AdmissionEnquiryPage";
 import AdmissionPolicyPage from "../pages/admissions/admission-policy/AdmissionPolicyPage";
@@ -142,6 +143,20 @@ export const routes = [
         element: <AfterPostGraduationPage />,
         handle: {
           crumb: () => <Link to="/">After Graduation</Link>,
+        },
+      },
+      {
+        path: "notice",
+        element: <NoticePage />,
+        handle: {
+          crumb: () => <Link to="/">Notice</Link>,
+        },
+      },
+      {
+        path: "shift-schedule",
+        element: <ShiftSchedulePage />,
+        handle: {
+          crumb: () => <Link to="/">Shift Schedule</Link>,
         },
       },
       // AfterPostGraduationPage
