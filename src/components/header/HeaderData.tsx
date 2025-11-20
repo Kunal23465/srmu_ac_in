@@ -184,7 +184,7 @@ export const HeaderData = [
                 item: "Convocation",
                 path: "/campus-life/convocation",
               },
-               {
+              {
                 item: "Green Initiative",
                 path: "/campus-life/green-initiative",
               },
@@ -210,8 +210,16 @@ export const HeaderData = [
           {
             id: 5,
             item: "Placements",
-            path: "/placements",
+            path: "#",
             subItem: [
+              {
+                item: "Placement Cell",
+                path: "/placements/placement-cell",
+              },
+              {
+                item: "Placement Plolicies",
+                path: "/placements/placement-policies",
+              },
               {
                 item: "Student testimonial",
                 path: "/placements/student-testimonial",

@@ -1134,6 +1134,9 @@ ul {
   list-style-type: disc;
 }
 
+.polygon_bg{
+clip-path: polygon(0 0, 92% 0, 96% 100%, 0 100%);
+}
 .curr {
   font-size: calc(1.025rem + 0.9vw);
 }
@@ -1505,10 +1508,12 @@ section .card-color img {
 .rs__option {
   color: black !important;
   padding: 6px ;
+  padding: 6px 
+}
 .clip-slanted {
   clip-path: polygon(0 0, 95% 0, 100% 100%, 0 100%);
 }
-}
+
 
 @keyframes bubbleScale {
   0% {

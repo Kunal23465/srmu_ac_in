@@ -8,6 +8,9 @@ import AlumniSlider from './NotableAlumni'
 import FlickeringSection from './FlickeringSection'
 import TestimonialSlider from './TestimonialSlider'
 import DepartmentalVideoComponent from './DepartmentalVideoComponent'
+import Placements from './Placements'
+import MobilePlacements from './MobilePlacements'
+import Events from './Events'
 
 const Home: React.FC = () => {
   return (
@@ -17,12 +20,24 @@ const Home: React.FC = () => {
       <ProgramsSection />
       <Apply />
       <InnovationCulture />
+      <Events />
       <FlickeringSection />
-     <div className='bg-[#ecf0f9]'>
-       <TestimonialSlider/>
-     </div>
+      <div className="hidden sm:block">
+        <Placements />
+      </div>
+      <div className="sm:hidden">
+        <MobilePlacements />
+      </div>
       <AlumniSlider />
-    <DepartmentalVideoComponent />
+      <div className='bg-[#ecf0f9]'>
+        <TestimonialSlider />
+      </div>
+
+      <DepartmentalVideoComponent />
+
+
+
+
     </div>
   )
 }
