@@ -13,11 +13,11 @@ const CareerCounselling: React.FC = () => {
       if (index > 0) setIndex((prev) => prev - 1);
     };
     return (
-      <div className="flex space-x-3">
+     <div className="flex space-x-3">
         <button
           onClick={prev}
-          className={`border border-black cursor-pointer text-2xl w-15 h-15 flex items-center justify-center transition 
-        ${index === 0 ? "opacity-50 cursor-not-allowed" : "hover:bg-blue-400 hover:text-[#14457B]"}`}
+          className={`border-2 border-slate-400 cursor-pointer text-4xl text-slate-400 w-13 h-13 flex items-center justify-center transition 
+      ${index === 0 ? "opacity-50 cursor-not-allowed" : "hover:bg-slate-400 hover:text-amber-100"}`}
           disabled={index === 0}
         >
           ‹
@@ -25,8 +25,8 @@ const CareerCounselling: React.FC = () => {
 
         <button
           onClick={next}
-          className={`border border-black cursor-pointer text-2xl w-15 h-15 flex items-center justify-center transition
-        ${index >= totalItems - 3 ? "opacity-50 cursor-not-allowed" : "hover:bg-blue-400 hover:text-[#14457B]"}`}
+          className={`border-2 border-slate-400 cursor-pointer text-4xl text-slate-400 w-13 h-13 flex items-center justify-center transition
+      ${index >= totalItems - 3 ? "opacity-50 cursor-not-allowed" : "hover:bg-slate-400 hover:text-amber-100"}`}
           disabled={index >= totalItems - 3}
         >
           ›
