@@ -15,11 +15,9 @@ const TopHeader: React.FC = () => {
                         <div>
                             <ul className="flex items-center text-[13px] flex-row gap-2 ">
                                 <Link to="/notice">NOTICE |</Link>
-                                <a target="_blank" href="https://erp.aktu.ac.in/WebPages/OneView/OneView.aspx">
-                                    RESULTS |
-                                </a>
-                                <Link to="/career">CAREER |</Link>
-                                <Link to="/shift-schedule">SHIFT SCHEDULE</Link>
+                               
+                                <Link to="/admission-enquiry">ADMISSION ENQUIRY |</Link>
+                                <Link to="/career">SHIFT SCHEDULE</Link>
                             </ul>
                         </div>
                     </div>
@@ -88,7 +86,6 @@ const TopHeader: React.FC = () => {
                                 <BsArrowUpRightCircle size={24} />
                                 <span className="text-black absolute bottom-[-20px] left-[-50px] whitespace-nowrap hidden group-hover:block   ">Apply Now 2024</span>
                             </Link>
-
 
                         </div>
                     </div>

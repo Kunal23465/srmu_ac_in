@@ -74,6 +74,8 @@ import GreenInitiativePage from "../pages/campus-life/green-initiative/GreenInit
 import PlacementCellPage from "../pages/placement/placement-cell/PlacementCellPage";
 import NoticePage from "../pages/notice/NoticePage";
 import GrievanceRedressalSystemPage from "../pages/campus-life/grievance-redressal-system/GrievanceRedressalSystemPage";
+import AdmissionEnquiryPage from "../pages/admission-enquiry/AdmissionEnquiryPage";
+import AdmissionPolicyPage from "../pages/admissions/admission-policy/AdmissionPolicyPage";
 
 interface IMatches {
   pathname: string;
@@ -345,7 +347,13 @@ export const routes = [
               crumb: () => <Link to="/">Academic Bank of Credit</Link>,
             },
           },
-
+          {
+            path: "admission-policy",
+            element: <AdmissionPolicyPage />,
+            handle: {
+              crumb: () => <Link to="/">Academic Bank of Credit</Link>,
+            },
+          },
           {
             path: "program-finder",
             element: <ProgramFinderPage />,
@@ -564,13 +572,13 @@ export const routes = [
         },
 
         children: [
-           {
+          {
             path: "placement-cell",
             element: <PlacementCellPage />,
             handle: {
               crumb: () => <Link to="/">Placement Cell</Link>,
             },
-          },         
+          },
           {
             path: "student-testimonial",
             element: <StudentTestimonialPage />,
@@ -601,6 +609,13 @@ export const routes = [
           },
         ],
       },
+      {
+        path: "admission-enquiry",
+        element: <AdmissionEnquiryPage />,
+        handle: {
+          crumb: () => <Link to="/">Admission Enquiry</Link>,
+        },
+      }
     ],
   },
 ];
