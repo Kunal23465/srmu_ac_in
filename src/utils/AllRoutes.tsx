@@ -67,13 +67,12 @@ import IndustryHonorsPage from "../pages/Home/IndustryHonorsPage";
 import AfterGraduationPage from "../pages/Home/AfterGraduationPage";
 import AfterPolytechnicPage from "../pages/Home/AfterPolytechnicPage";
 import AfterPostGraduationPage from "../pages/Home/AfterPostGraduationPage";
-import OutreachActivationsPage from "../pages/campus-life/outreach-activations/OutreachActivationsPage";
 import StudentSenatePage from "../pages/campus-life/student-senate/StudentSenatePage";
 import StudentCornerPage from "../pages/campus-life/student-corner/StudentCornerPage";
 import GreenInitiativePage from "../pages/campus-life/green-initiative/GreenInitiativePage";
-import OutreactActivationsPage from "../pages/campus-life/outreach-activations/OutreactActivationsPage";
 import PlacementCellPage from "../pages/placement/placement-cell/PlacementCellPage";
 import GrievanceRedressalSystemPage from "../pages/campus-life/grievance-redressal-system/GrievanceRedressalSystemPage";
+import OutreachActivationsPage from "../pages/campus-life/outreach-activations/OutreachActivationsPage";
 
 interface IMatches {
   pathname: string;
@@ -398,8 +397,6 @@ export const routes = [
             },
           },
           {
-            path: "outreach-activations",
-            element: <OutreactActivationsPage />,
             path: "student-senate",
             element: <StudentSenatePage />,
             handle: {
