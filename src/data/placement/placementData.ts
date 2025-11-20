@@ -65,7 +65,7 @@ export const policiesPdfData: TableRowData[] = [
     download: { type: 'pdf', url: Early_Joining_Policy },
   },
   {
-    id: 1,
+    id: 3,
     title: 'Industrial Visit Policy',
     download: { type: 'pdf', url: Industrial_Visit_Policy },
   },
@@ -169,3 +169,5 @@ export const validationSchemaForAlumniRegistration = Yup.object().shape({
   currentEmployer: Yup.string().required("Current Employer is required"),
   consent: Yup.boolean().oneOf([true], "Consent is required"),
 });
+
+

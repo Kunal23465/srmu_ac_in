@@ -71,8 +71,8 @@ import OutreachActivationsPage from "../pages/campus-life/outreach-activations/O
 import StudentSenatePage from "../pages/campus-life/student-senate/StudentSenatePage";
 import StudentCornerPage from "../pages/campus-life/student-corner/StudentCornerPage";
 import GreenInitiativePage from "../pages/campus-life/green-initiative/GreenInitiativePage";
-import OutreactActivationsPage from "../pages/campus-life/outreach-activations/OutreactActivationsPage";
 import PlacementCellPage from "../pages/placement/placement-cell/PlacementCellPage";
+import NoticePage from "../pages/notice/NoticePage";
 import GrievanceRedressalSystemPage from "../pages/campus-life/grievance-redressal-system/GrievanceRedressalSystemPage";
 
 interface IMatches {
@@ -141,6 +141,20 @@ export const routes = [
         element: <AfterPostGraduationPage />,
         handle: {
           crumb: () => <Link to="/">After Graduation</Link>,
+        },
+      },
+      {
+        path: "notice",
+        element: <NoticePage />,
+        handle: {
+          crumb: () => <Link to="/">Notice</Link>,
+        },
+      },
+      {
+        path: "shift-schedule",
+        element: <ShiftSchedulePage />,
+        handle: {
+          crumb: () => <Link to="/">Shift Schedule</Link>,
         },
       },
       // AfterPostGraduationPage
@@ -398,8 +412,6 @@ export const routes = [
             },
           },
           {
-            path: "outreach-activations",
-            element: <OutreactActivationsPage />,
             path: "student-senate",
             element: <StudentSenatePage />,
             handle: {
