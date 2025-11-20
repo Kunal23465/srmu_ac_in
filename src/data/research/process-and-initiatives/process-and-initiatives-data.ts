@@ -158,4 +158,5 @@ export const researchCenters: ResearchCenterItem[] = [
         image: "https://srmu.ac.in/storage/common-section/CIIE-IIH-16112310304414.jpg",
         pdfUrl: "https://srmu.ac.in/storage/common-section/CIIE_IIH-(1)-021123125257.pdf",
     },
+
 ];

@@ -64,6 +64,7 @@ import AfterClass10thPage from "../pages/Home/AfterClass10thPage";
 import AfterClass12thPage from "../pages/Home/AfterClass12thPage";
 import WomenEmpowermentPage from "../pages/campus-life/women-empowerment/WomenEmpowermentPage";
 import IndustryHonorsPage from "../pages/Home/IndustryHonorsPage";
+import PublicationPage from "../pages/Research/Publication/PublicationPage";
 import AfterGraduationPage from "../pages/Home/AfterGraduationPage";
 import AfterPolytechnicPage from "../pages/Home/AfterPolytechnicPage";
 import AfterPostGraduationPage from "../pages/Home/AfterPostGraduationPage";
@@ -559,6 +560,13 @@ export const routes = [
             element: <ConsultancyPage />,
             handle: {
               crumb: () => <Link to="/">Consultancy</Link>,
+            },
+          },
+          {
+            path: "publication",
+            element: <PublicationPage />,
+            handle: {
+              crumb: () => <Link to="/">Publication</Link>,
             },
           },
         ],
