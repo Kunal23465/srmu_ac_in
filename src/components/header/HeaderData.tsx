@@ -217,7 +217,7 @@ export const HeaderData = [
                 path: "/placements/placement-cell",
               },
               {
-                item: "Placement Plolicies",
+                item: "Placement Policies",
                 path: "/placements/placement-policies",
               },
               {
@@ -232,11 +232,9 @@ export const HeaderData = [
                 item: "Alumni Testimonials",
                 path: "/placements/notable-alumni",
               },
-
-              // student-testimonial
               {
-                item: "Placement Plolicies",
-                path: "/placements/placement-policies",
+                item: "Placement Overview",
+                path: "/placements/placement-overview",
               },
             ],
           },

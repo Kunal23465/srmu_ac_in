@@ -182,7 +182,11 @@
   background-position: center; */
   /* background: linear-gradient(180deg, #224984 0%, #152E45 100%); */
   background: rgb(34, 73, 132);
-  background: radial-gradient(circle, rgba(34, 73, 132, 1) 0%, rgba(21, 46, 69, 1) 100%);
+  background: radial-gradient(
+    circle,
+    rgba(34, 73, 132, 1) 0%,
+    rgba(21, 46, 69, 1) 100%
+  );
 }
 
 .abhivyakti_grid {
@@ -629,7 +633,13 @@ input::-webkit-inner-spin-button {
 }
 
 .border-gradient-green {
-  border-image-source: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #ffffff 20.5%, #ffffff 83.5%, rgba(255, 255, 255, 0) 100%);
+  border-image-source: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    #ffffff 20.5%,
+    #ffffff 83.5%,
+    rgba(255, 255, 255, 0) 100%
+  );
 }
 
 .mobile-scroll::-webkit-scrollbar {
@@ -1130,8 +1140,8 @@ ul {
   list-style-type: disc;
 }
 
-.polygon_bg{
-clip-path: polygon(0 0, 92% 0, 96% 100%, 0 100%);
+.polygon_bg {
+  clip-path: polygon(0 0, 92% 0, 96% 100%, 0 100%);
 }
 .curr {
   font-size: calc(1.025rem + 0.9vw);
@@ -1533,6 +1543,17 @@ section .card-color img {
   background-image: url("./assets/images/campus-life/women-empowerment/we-believe-in.jpg");
 }
 
+.placement-bg {
+  background-image: url("./assets/images/placements/placement-overview/placement-overview.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.placement-record-bg {
+  background-image: url("./assets/images/placements/placement-overview/placementrecords.jpeg");
+  background-size: cover;
+  background-position: center;
+}
+
 .font60 {
   font-size: 3.75rem;
 }
@@ -1574,6 +1595,21 @@ section .card-color img {
   font-size: 1rem;
 }
 
-.font28{
-      font-size: 1.75rem;
+.font28 {
+  font-size: 1.75rem;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

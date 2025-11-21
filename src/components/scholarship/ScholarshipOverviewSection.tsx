@@ -28,7 +28,7 @@ const CustomOverviewSection: React.FC<CustomOverviewSectionProps> = ({ data }) =
         <div className="py-8 md:py-12 lg:py-16">
             {/* Top Section (Heading + Content) */}
             <div
-                className={`flex flex-col gap-4 justify-between ${otherData && otherData?.length > 0 ? "md:flex-row" : "md:flex-row"
+                className={`flex flex-col whitespace-pre-line gap-4 justify-between ${otherData && otherData?.length > 0 ? "md:flex-row" : "md:flex-row"
                     }`}
             >
                 {/* Left Heading Section */}

@@ -73,6 +73,7 @@ import StudentCornerPage from "../pages/campus-life/student-corner/StudentCorner
 import GreenInitiativePage from "../pages/campus-life/green-initiative/GreenInitiativePage";
 import PlacementCellPage from "../pages/placement/placement-cell/PlacementCellPage";
 import GrievanceRedressalSystemPage from "../pages/campus-life/grievance-redressal-system/GrievanceRedressalSystemPage";
+import PlacementOverviewPage from "../pages/placement/placement-overview/PlacementOverviewPage";
 
 interface IMatches {
   pathname: string;
@@ -549,6 +550,13 @@ export const routes = [
         },
 
         children: [
+           {
+            path: "placement-overview",
+            element: <PlacementOverviewPage />,
+            handle: {
+              crumb: () => <Link to="/">Placement Overview</Link>,
+            },
+          },        
            {
             path: "placement-cell",
             element: <PlacementCellPage />,
