@@ -1634,3 +1634,10 @@ section .card-color img {
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+.placement-record-bg{
+    background-image: url(../src/assets/images/placements/placement-overview/placementrecords.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}
