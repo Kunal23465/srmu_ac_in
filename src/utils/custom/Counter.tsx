@@ -5,6 +5,7 @@ import { counterDataType } from "../../data/home/counterData";
 interface counterDataPropsType {
   counterData: counterDataType[];
   classes?: any;
+  aboutusClass?: any;
 }
 const Counter: React.FC<counterDataPropsType> = ({ counterData, classes }) => {
   return (

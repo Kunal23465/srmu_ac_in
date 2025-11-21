@@ -17,7 +17,6 @@ const About: React.FC = () => {
         <div>
             <div className={`${Classes["container"]}`}>
                 <CustomOverviewSection data={aboutOverviewData} />
-{/* @ts-ignore */}
                 <Counter counterData={counterDataForAboutPage} classes="counter" aboutusClass={"text-black mt-3"} />
             <CustomAboutUsSlider data={aboutSliderData}/>
             </div>
