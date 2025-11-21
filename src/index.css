@@ -123,7 +123,7 @@
   display: none !important;
 }
 
-.photo_gallery>.slick-dots li button:before {
+.photo_gallery > .slick-dots li button:before {
   font-family: "slick";
   position: absolute;
   top: 0;
@@ -139,12 +139,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.photo_gallery>.slick-dots li.slick-active button:before {
+.photo_gallery > .slick-dots li.slick-active button:before {
   opacity: 0.9;
   background: #ffb703;
 }
 
-.photo_gallery>.slick-dots {
+.photo_gallery > .slick-dots {
   bottom: -40px !important;
 }
 
@@ -478,7 +478,6 @@ background: radial-gradient(circle, rgba(36,64,143,0.9444152661064426) 0%, rgba(
 }
 
 @media screen and (min-width: 592px) {
-
   /* ======================================== */
   .parent_grid_gallary .children img {
     width: 100%;
@@ -1296,7 +1295,6 @@ ul {
 }
 
 @media screen and (min-width: 592px) {
-
   /* ======================================== */
   .parent_grid_gallary .children img {
     width: 100%;
@@ -1408,12 +1406,12 @@ section .card-color img {
     flex-direction: column;
   }
 
-  section .card-color>div:first-child {
+  section .card-color > div:first-child {
     width: 100% !important;
     text-align: left;
   }
 
-  section .card-color>div:last-child {
+  section .card-color > div:last-child {
     width: 100% !important;
     margin-top: 2rem !important;
     position: relative !important;
@@ -1521,7 +1519,6 @@ section .card-color img {
   clip-path: polygon(0 0, 95% 0, 100% 100%, 0 100%);
 }
 
-
 @keyframes bubbleScale {
   0% {
     transform: scale(0.5);
@@ -1599,7 +1596,6 @@ section .card-color img {
   font-size: 1.75rem;
 }
 
-
 .slick-dots li button:before {
   font-size: 14px;
   color: transparent;
@@ -1625,4 +1621,32 @@ section .card-color img {
 
 .font21 {
   font-size: 1.313rem;
+}
+
+
+.institute_box {
+  padding-right: var(--conatiner-offset);
+}
+
+.institute_inner {
+  padding-right: var(--offset);
+}
+
+/* FORCE SWIPER TO BE HORIZONTAL */
+.swiper-wrapper {
+    display: flex !important;
+    flex-direction: row !important;
+}
+
+.custom-dots .swiper-pagination-bullet {
+    opacity: 0.4;
+}
+
+.custom-dots .swiper-pagination-bullet-active {
+    background-color: #023047 !important;
+    opacity: 1;
+}
+
+.fontn15{
+  font-size: .938rem;
 }
