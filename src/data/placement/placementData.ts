@@ -8,6 +8,9 @@ import Early_Joining_Policy from "../../assets/pdf/placement/placement-policies/
 import Industrial_Visit_Policy from "../../assets/pdf/placement/placement-policies/industrial-visit-policy-191223123100-060324102231.pdf"
 import { AlumniRegistrationField } from "../../types/placement-type";
 
+import MBA21 from "../../assets/images/mba21-03022401044691.jpg";
+
+
 
 export const PlacementCellOverviewData: customeOverViewType = {
   heading: "Placement Cell",
@@ -70,6 +73,162 @@ export const policiesPdfData: TableRowData[] = [
     download: { type: 'pdf', url: Industrial_Visit_Policy },
   },
 ];
+
+
+
+
+
+
+export interface OpportunityCard {
+  id: number;
+  img: string;
+  course: string;
+  path: string;
+}
+
+export const opportunityCardData: OpportunityCard[] = [
+  {
+    id: 1,
+    img: MBA21,
+    course: "M.B.A (Master of Business Administration)",
+    path: "/placements",
+  },
+    {
+    id: 2,
+    img: MBA21,
+    course: "M.B.A. (Business Analytics) with L&T",
+    path: "/placements",
+  },  {
+    id: 3,
+    img: MBA21,
+    course: "M.Tech. in Computer Science Engineering",
+    path: "/placements",
+  },  {
+    id: 4,
+    img: MBA21,
+    course: "M.Tech. in Data Science",
+    path: "/placements",
+  },  {
+    id: 5,
+    img: MBA21,
+    course: "M.B.A (Master of Business Administration)",
+    path: "/placements",
+  },
+]
+ 
+
+
+
+interface CustomProgramEligibilityCriterionCardProps{
+    heading: string;
+    content: string;
+    extraContent?: string;
+
+}
+
+export const xyz: CustomProgramEligibilityCriterionCardProps = 
+  {
+    heading: "Eligibility Criterion",
+    content: "Candidate must have passed B.Tech (CSE) from any recognized University or AICTE recognized Institute/College with minimum aggregate marks of 50% or 5.5 CGPA for GEN/OBC and 45% marks or 5.0 CGPA for SC/ST Category.",
+    extraContent: "Candidate must have passed MCA/M.Sc(CS)/MA(CA)/M.Sc.(IT)/M.Sc.(Electronics)/B.Tech (EC) from any recognized University or AICTE recognized Institute/College with minimum aggregate marks of 50% or 5.5 CGPA for GEN/OBC and 45% marks or 5.0 CGPA for SC/ST Category."
+  };
+
+
+
+interface CustomProgramPLOAccordianProps {
+  POdata: { id: string | number; content: string }[];
+  PLOdata: { id: string | number; content: string }[];
+  PSOdata: { id: string | number; content: string }[];
+}
+
+
+export const abc: CustomProgramPLOAccordianProps = {
+  POdata: [
+    {
+      id: 1,
+      content:
+        "Practice the engineering skills in the profession of Internet of Things (IoT) to identify and solve contemporary problems. (Foundation)",
+    },
+    {
+      id: 2,
+      content:
+        "Practice the engineering skills in the profession of Internet of Things (IoT) to identify and solve contemporary problems. (Foundation)",
+    },
+  ],
+
+  PLOdata: [
+    {
+      id: 1,
+      content: "Sample text for PLO item 1.",
+    },
+    {
+      id: 2,
+      content: "Sample text for PLO item 2.",
+    },
+        {
+      id: 3,
+      content: "Sample text for PLO item 2.",
+    },    {
+      id: 4,
+      content: "Sample text for PLO item 2.",
+    },    {
+      id: 5,
+      content: "Sample text for PLO item 2.",
+    },
+        {
+      id: 2,
+      content: "Sample text for PLO item 2.",
+    },    {
+      id: 2,
+      content: "Sample text for PLO item 2.",
+    },    {
+      id: 2,
+      content: "Sample text for PLO item 2.",
+    },    {
+      id: 2,
+      content: "Sample text for PLO item 2.",
+    },    {
+      id: 2,
+      content: "Sample text for PLO item 2.",
+    },
+  ],
+
+  PSOdata: [
+    {
+      id: 1,
+      content: "Sample text for PSO item 1.",
+    },
+    {
+      id: 2,
+      content: "Sample text for PSO item 2.",
+    },
+  ],
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 export const alumniRegistrationOverviewData: customeOverViewType = {
   heading: "Alumni Registration",
   content:
