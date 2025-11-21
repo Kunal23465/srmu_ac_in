@@ -374,6 +374,25 @@ export const routes = [
         ],
       },
       {
+        path: "/programs",
+        element: <PlacementPage />,
+        // element: <StudentTestimonialPage />,
+        handle: {
+          crumb: () => <Link to="/">Programs</Link>,
+        },
+
+        children: [
+          {
+            path: "after-class-10th",
+            element: <AfterClass10thPage />,
+            handle: {
+              crumb: () => <Link to="/">After Class 10th</Link>,
+            },
+          },
+
+        ],
+      },
+      {
         path: "/campus-life",
         element: <CampusLifePage />,
         handle: {

@@ -425,6 +425,10 @@ background: radial-gradient(circle, rgba(36,64,143,0.9444152661064426) 0%, rgba(
   z-index: 1;
 }
 
+.manage-top-arrow.big {
+  right: 38%;
+}
+
 .manage-top-arrow::after {
   content: "";
   position: absolute;
