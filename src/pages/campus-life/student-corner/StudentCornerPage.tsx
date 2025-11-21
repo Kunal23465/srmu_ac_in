@@ -1,7 +1,7 @@
 import React from 'react'
 import StudentCornerComp from '../../../components/campus-life/student-corner/StudentCornerComp'
 
-const StudentCornerPage = () => {
+const StudentCornerPage:React.FC = () => {
   return (
     <div>
         <StudentCornerComp/>

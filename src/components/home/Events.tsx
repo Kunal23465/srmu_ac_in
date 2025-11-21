@@ -6,7 +6,7 @@ import { FaRegCalendar, FaTimes } from "react-icons/fa";
 import { eventsData } from "../../data/home/EventsData";
 
 const NewsCard = ({ image, description, date, onReadMore }: any) => {
-    const truncatedDesc = description.length > 80 ? description.slice(0, 80) + "..." : description;
+    const truncatedDesc = description.length > 300 ? description.slice(0, 300) + "..." : description;
 
     return (
         <div className="lg:flex items-center gap-x-5 border p-3 rounded-md border-[#ffb703] transition-all duration-200">
@@ -19,9 +19,13 @@ const NewsCard = ({ image, description, date, onReadMore }: any) => {
 
                 <p className="mt-2">{truncatedDesc}</p>
                 {description.length > 80 && (
-                    <div className="flex items-center justify-end mt-2">
-                        <button className=" bg-[#1B3A6F] text-white px-3 py-1 rounded-full" onClick={onReadMore}>
+                    <div className="flex items-center  mt-2">
+                       
+                        <button className=" flex items-center mt-8 bg-yellow-400 text-[#0F4A85] font-medium uppercase py-3 px-8 rounded-xl transition border border-yellow-400 hover:bg-transparent hover:text-yellow-400" onClick={onReadMore}>
                             Read More
+                            <svg className="ml-3 w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 225">
+                                <polygon fill="#0F4A85" points="420,94.5 420,94.5 328.3,2.7 310.3,20.7 389.4,99.8 1.9,99.8 1.9,125.2 389.4,125.2 310.3,204.2 328.3,222.2 438,112.5" />
+                            </svg>
                         </button>
                     </div>
                 )}
@@ -31,7 +35,7 @@ const NewsCard = ({ image, description, date, onReadMore }: any) => {
 };
 
 const NewsCard1 = ({ image, description, date, onReadMore }: any) => {
-    const truncatedDesc = description.length > 220 ? description.slice(0, 220) + "..." : description;
+    const truncatedDesc = description.length > 100 ? description.slice(0, 100) + "..." : description;
     return (
         <div className="w-full cursor-pointer">
             <img src={image} alt="Event" className="transition-all duration-200 rounded-md mb-4 w-[100%] object-cover max-h-[400px] object-bottom" />
@@ -43,8 +47,11 @@ const NewsCard1 = ({ image, description, date, onReadMore }: any) => {
                 <p className="mt-2">{truncatedDesc}</p>
                 {description.length > 220 && (
                     <div className="flex items-center justify-end mt-2">
-                        <button className=" bg-[#1B3A6F] text-white px-3 py-1 rounded-full" onClick={onReadMore}>
+                        <button className=" flex items-center mt-8 bg-yellow-400 text-[#0F4A85] font-medium uppercase py-3 px-8 rounded-xl transition border border-yellow-400 hover:bg-transparent hover:text-yellow-400" onClick={onReadMore}>
                             Read More
+                            <svg className="ml-3 w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 225">
+                                <polygon fill="#0F4A85" points="420,94.5 420,94.5 328.3,2.7 310.3,20.7 389.4,99.8 1.9,99.8 1.9,125.2 389.4,125.2 310.3,204.2 328.3,222.2 438,112.5" />
+                            </svg>
                         </button>
                     </div>
                 )}

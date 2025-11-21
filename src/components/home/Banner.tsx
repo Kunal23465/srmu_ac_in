@@ -1,9 +1,9 @@
 import React from "react";
 import Classes from "../../utils/styles/Global.module.css";
 import banner4 from "../../assets/images/home/banner-bg.jpg";
-import { bannerData } from "../../data/home/bannerData";
+
 import Slider from "react-slick";
-import { FaArrowLeftLong } from "react-icons/fa6";
+
 import { LiaLongArrowAltLeftSolid, LiaLongArrowAltRightSolid } from "react-icons/lia";
 
 // import { MdArrowRightAlt } from "react-icons/md";

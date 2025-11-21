@@ -1,5 +1,5 @@
 import * as React from "react";
-
+// @ts-ignore
 type ComponentConstructor<TProps> =
     | React.ComponentClass<TProps>
     | React.FunctionComponent<TProps>;

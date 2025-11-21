@@ -1,9 +1,10 @@
-import OutreachComponent from "../../../components/campus-life/outreach-activations/OutreachComponent"
+import React from 'react'
+import OutreachActivations from '../../../components/campus-life/outreach-activations/OutreachActivations'
 
-const OutreachActivationsPage = () => {
+const OutreachActivationsPage:React.FC = () => {
   return (
     <div>
-      <OutreachComponent/>
+      <OutreachActivations />
     </div>
   )
 }

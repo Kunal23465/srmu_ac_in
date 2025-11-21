@@ -57,3 +57,24 @@ export interface LinkType {
   title: string;
   url: string;
 }
+
+
+
+export interface VideoItem {
+  id: string;
+  title: string;
+  department: string;
+}
+
+export const getYouTubeId = (url: string): string | null => {
+  const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=)([^#&?]*).*/;
+  const match = url.match(regExp);
+  if (match && match[2].length === 11) {
+    return match[2];
+  }
+  return null;
+};
+
+export const getYouTubeThumbnailUrl = (videoId: string): string => {
+  return `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+};

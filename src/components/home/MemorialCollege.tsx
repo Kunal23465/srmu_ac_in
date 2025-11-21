@@ -13,7 +13,6 @@ import slider5 from "../../assets/images/home/slider-5.png";
 import slider6 from "../../assets/images/home/slider-6.png";
 import slider7 from "../../assets/images/home/slider-7.png";
 import slider8 from "../../assets/images/home/slider-8.png";
-import slider9 from "../../assets/images/home/slider-9.png";
 import { LiaLongArrowAltRightSolid } from "react-icons/lia";
 interface ArrowProps {
   onClick?: React.MouseEventHandler<HTMLDivElement>;

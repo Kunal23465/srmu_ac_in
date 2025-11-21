@@ -64,15 +64,17 @@ import AfterClass10thPage from "../pages/Home/AfterClass10thPage";
 import AfterClass12thPage from "../pages/Home/AfterClass12thPage";
 import WomenEmpowermentPage from "../pages/campus-life/women-empowerment/WomenEmpowermentPage";
 import IndustryHonorsPage from "../pages/Home/IndustryHonorsPage";
+import PublicationPage from "../pages/Research/Publication/PublicationPage";
 import AfterGraduationPage from "../pages/Home/AfterGraduationPage";
 import AfterPolytechnicPage from "../pages/Home/AfterPolytechnicPage";
 import AfterPostGraduationPage from "../pages/Home/AfterPostGraduationPage";
-import OutreachActivationsPage from "../pages/campus-life/outreach-activations/OutreachActivationsPage";
 import StudentSenatePage from "../pages/campus-life/student-senate/StudentSenatePage";
 import StudentCornerPage from "../pages/campus-life/student-corner/StudentCornerPage";
 import GreenInitiativePage from "../pages/campus-life/green-initiative/GreenInitiativePage";
 import PlacementCellPage from "../pages/placement/placement-cell/PlacementCellPage";
+import NoticePage from "../pages/notice/NoticePage";
 import GrievanceRedressalSystemPage from "../pages/campus-life/grievance-redressal-system/GrievanceRedressalSystemPage";
+import OutreachActivationsPage from "../pages/campus-life/outreach-activations/OutreachActivationsPage";
 import AdmissionEnquiryPage from "../pages/admission-enquiry/AdmissionEnquiryPage";
 import AdmissionPolicyPage from "../pages/admissions/admission-policy/AdmissionPolicyPage";
 import FacultyOfCivilEngineeringPage from "../pages/academics/faculty-of-civil-engineering/facultyOfCivilEngineeringPage";
@@ -143,6 +145,20 @@ export const routes = [
         element: <AfterPostGraduationPage />,
         handle: {
           crumb: () => <Link to="/">After Graduation</Link>,
+        },
+      },
+      {
+        path: "notice",
+        element: <NoticePage />,
+        handle: {
+          crumb: () => <Link to="/">Notice</Link>,
+        },
+      },
+      {
+        path: "shift-schedule",
+        element: <ShiftSchedulePage />,
+        handle: {
+          crumb: () => <Link to="/">Shift Schedule</Link>,
         },
       },
       // AfterPostGraduationPage
@@ -553,6 +569,13 @@ export const routes = [
             element: <ConsultancyPage />,
             handle: {
               crumb: () => <Link to="/">Consultancy</Link>,
+            },
+          },
+          {
+            path: "publication",
+            element: <PublicationPage />,
+            handle: {
+              crumb: () => <Link to="/">Publication</Link>,
             },
           },
         ],
