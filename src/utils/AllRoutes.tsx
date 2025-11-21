@@ -75,6 +75,7 @@ import PlacementCellPage from "../pages/placement/placement-cell/PlacementCellPa
 import GrievanceRedressalSystemPage from "../pages/campus-life/grievance-redressal-system/GrievanceRedressalSystemPage";
 import AdmissionEnquiryPage from "../pages/admission-enquiry/AdmissionEnquiryPage";
 import AdmissionPolicyPage from "../pages/admissions/admission-policy/AdmissionPolicyPage";
+import FacultyOfCivilEngineeringPage from "../pages/academics/faculty-of-civil-engineering/facultyOfCivilEngineeringPage";
 
 interface IMatches {
   pathname: string;
@@ -152,7 +153,7 @@ export const routes = [
           crumb: () => <Link to="/about">About Us</Link>,
         },
         children: [
-          {
+          { 
             path: "leadership-and-governance",
             element: <LeadershipAndGovernancePage />,
             handle: {
@@ -286,6 +287,14 @@ export const routes = [
               crumb: () => <Link to="/">Curriculum Design</Link>,
             },
           },
+          {
+            path: "faculty-of-civil-engineering",
+            element: <FacultyOfCivilEngineeringPage />,
+            handle: {
+              crumb: () => <Link to="/">Faculty Of Civil Engineering</Link>,
+            },
+          },
+
         ],
       },
 
