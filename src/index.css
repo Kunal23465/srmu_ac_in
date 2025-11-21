@@ -1104,6 +1104,10 @@ footer:after {
   color: rgb(2, 48, 71) !important;
 }
 
+.background_dark_blue {
+  background-color: rgb(2, 48, 71) !important;
+}
+
 .color_border_blue {
   border: solid 1px rgb(15, 74, 133) !important;
 }
@@ -1143,6 +1147,7 @@ ul {
 .polygon_bg {
   clip-path: polygon(0 0, 92% 0, 96% 100%, 0 100%);
 }
+
 .curr {
   font-size: calc(1.025rem + 0.9vw);
 }
@@ -1510,6 +1515,12 @@ section .card-color img {
 .programs-tabs button.programsection::after {
   opacity: 1;
 }
+
+.rs__option {
+  color: black !important;
+  padding: 6px;
+}
+
 .clip-slanted {
   clip-path: polygon(0 0, 95% 0, 100% 100%, 0 100%);
 }
@@ -1520,11 +1531,13 @@ section .card-color img {
     opacity: 0;
     border-radius: 50%;
   }
+
   60% {
     transform: scale(1.05);
     opacity: 0.8;
     border-radius: 20px;
   }
+
   100% {
     transform: scale(1);
     opacity: 1;
@@ -1535,23 +1548,13 @@ section .card-color img {
 .bubble-animation {
   animation: bubbleScale 0.45s ease-out forwards;
 }
+
 .bubble-anim {
   transform-origin: center center;
 }
 
 .women {
   background-image: url("./assets/images/campus-life/women-empowerment/we-believe-in.jpg");
-}
-
-.placement-bg {
-  background-image: url("./assets/images/placements/placement-overview/placement-overview.jpg");
-  background-size: cover;
-  background-position: center;
-}
-.placement-record-bg {
-  background-image: url("./assets/images/placements/placement-overview/placementrecords.jpeg");
-  background-size: cover;
-  background-position: center;
 }
 
 .font60 {
@@ -1599,17 +1602,35 @@ section .card-color img {
   font-size: 1.75rem;
 }
 
+.slick-dots li button:before {
+  font-size: 14px;
+  color: transparent;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  width: 14px;
+  height: 14px;
+  display: block;
+  content: "";
+}
 
+.slick-dots li.slick-active button:before {
+  background-color: #fff;
+}
 
+.hidden-dot {
+  display: none;
+}
 
+.font36 {
+  font-size: 3.125rem;
+}
 
+.font21 {
+  font-size: 1.313rem;
+}
 
-
-
-
-
-
-
-
-
-
+.placement-bg {
+  background-image: url(../src/assets/images/placements/placement-overview/placement-overview.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}

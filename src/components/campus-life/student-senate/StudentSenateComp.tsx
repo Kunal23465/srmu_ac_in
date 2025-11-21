@@ -1,4 +1,4 @@
-import React from 'react'
+import  { FC } from 'react'
 import Classes from "../../../utils/styles/Global.module.css";
 import CustomOverviewSection from '../../../utils/custom/CustomOverviewSection';
 import { StudentSenateOverviewData } from '../../../data/campus-life/student-senate/student-senate-data';
@@ -9,7 +9,7 @@ import CustomTopFooter from '../../../utils/custom/CustomTopFooter';
 import { feeStructureCustomTopFooter } from '../../../data/admissions/fee-structure/fee-structue-data';
 
 
-const StudentSenateComp = () => {
+const StudentSenateComp:FC = () => {
   return (
     <div>
       <div className={`${Classes["container"]}`}>
