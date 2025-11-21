@@ -425,6 +425,10 @@ background: radial-gradient(circle, rgba(36,64,143,0.9444152661064426) 0%, rgba(
   z-index: 1;
 }
 
+.manage-top-arrow.big {
+  right: 38%;
+}
+
 .manage-top-arrow::after {
   content: "";
   position: absolute;
@@ -1593,7 +1597,6 @@ section .card-color img {
 
 .font28 {
   font-size: 1.75rem;
-  <<<<<<< HEAD=======
 }
 
 
@@ -1622,5 +1625,4 @@ section .card-color img {
 
 .font21 {
   font-size: 1.313rem;
-  >>>>>>>12d40a6a9fec4537555802b82bf204696bf2a828
 }
