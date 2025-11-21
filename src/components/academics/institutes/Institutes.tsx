@@ -15,14 +15,9 @@ const Institutes: React.FC = () => {
     <>
       <div className={`${Classes["container"]}`}>
         <CustomOverviewSection data={AcademicsOverviewData} />
-
         <OurInstitutes />
         <InstituteCardList />
-
       </div>
-
-
-
       <EnquiryForm />
       <CustomTopFooter data={CustomTopFooterData1} />
 
