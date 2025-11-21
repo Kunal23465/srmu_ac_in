@@ -68,15 +68,16 @@ import PublicationPage from "../pages/Research/Publication/PublicationPage";
 import AfterGraduationPage from "../pages/Home/AfterGraduationPage";
 import AfterPolytechnicPage from "../pages/Home/AfterPolytechnicPage";
 import AfterPostGraduationPage from "../pages/Home/AfterPostGraduationPage";
-import OutreachActivationsPage from "../pages/campus-life/outreach-activations/OutreachActivationsPage";
 import StudentSenatePage from "../pages/campus-life/student-senate/StudentSenatePage";
 import StudentCornerPage from "../pages/campus-life/student-corner/StudentCornerPage";
 import GreenInitiativePage from "../pages/campus-life/green-initiative/GreenInitiativePage";
 import PlacementCellPage from "../pages/placement/placement-cell/PlacementCellPage";
 import NoticePage from "../pages/notice/NoticePage";
 import GrievanceRedressalSystemPage from "../pages/campus-life/grievance-redressal-system/GrievanceRedressalSystemPage";
+import OutreachActivationsPage from "../pages/campus-life/outreach-activations/OutreachActivationsPage";
 import AdmissionEnquiryPage from "../pages/admission-enquiry/AdmissionEnquiryPage";
 import AdmissionPolicyPage from "../pages/admissions/admission-policy/AdmissionPolicyPage";
+import FacultyOfCivilEngineeringPage from "../pages/academics/faculty-of-civil-engineering/facultyOfCivilEngineeringPage";
 
 interface IMatches {
   pathname: string;
@@ -168,7 +169,7 @@ export const routes = [
           crumb: () => <Link to="/about">About Us</Link>,
         },
         children: [
-          {
+          { 
             path: "leadership-and-governance",
             element: <LeadershipAndGovernancePage />,
             handle: {
@@ -302,6 +303,14 @@ export const routes = [
               crumb: () => <Link to="/">Curriculum Design</Link>,
             },
           },
+          {
+            path: "faculty-of-civil-engineering",
+            element: <FacultyOfCivilEngineeringPage />,
+            handle: {
+              crumb: () => <Link to="/">Faculty Of Civil Engineering</Link>,
+            },
+          },
+
         ],
       },
 
@@ -362,6 +371,25 @@ export const routes = [
               crumb: () => <Link to="/">Program Finder</Link>,
             },
           },
+        ],
+      },
+      {
+        path: "/programs",
+        element: <PlacementPage />,
+        // element: <StudentTestimonialPage />,
+        handle: {
+          crumb: () => <Link to="/">Programs</Link>,
+        },
+
+        children: [
+          {
+            path: "after-class-10th",
+            element: <AfterClass10thPage />,
+            handle: {
+              crumb: () => <Link to="/">After Class 10th</Link>,
+            },
+          },
+
         ],
       },
       {

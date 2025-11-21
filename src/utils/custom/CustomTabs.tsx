@@ -11,12 +11,23 @@ interface CustomTabsProps {
   activeKey?: string;
   onChange?: (key: string) => void;
 
+  variant?: "underline" | "boxed" | "pill" | "segment";
+
   fullWidthUnderlineColor?: string;
   activeUnderlineColor?: string;
 
   activeTextColor?: string;
   inactiveTextColor?: string;
   hoverTextColor?: string;
+
+  activeBgColor?: string;
+  inactiveBgColor?: string;
+
+  activeBorderColor?: string;
+  inactiveBorderColor?: string;
+
+  /**  NEW PROP */
+  pillContainerBgColor?: string;
 }
 
 const CustomTabs = ({
@@ -25,15 +36,28 @@ const CustomTabs = ({
   activeKey: controlledKey,
   onChange,
 
+  variant = "underline",
+
   fullWidthUnderlineColor = "#E5E7EB",
   activeUnderlineColor = "#000",
 
   activeTextColor = "#000",
   inactiveTextColor = "#777",
   hoverTextColor = "#000",
+
+  activeBgColor = "#ffffff",
+  inactiveBgColor = "transparent",
+
+  activeBorderColor = "#000",
+  inactiveBorderColor = "#D1D5DB",
+
+  /**  Default value */
+  pillContainerBgColor = "#f1f5f9",
 }: CustomTabsProps) => {
   const isControlled = controlledKey !== undefined;
-  const [internalKey, setInternalKey] = useState(defaultActiveKey || items[0]?.key);
+  const [internalKey, setInternalKey] = useState(
+    defaultActiveKey || items[0]?.key
+  );
 
   const currentKey = isControlled ? controlledKey : internalKey;
 
@@ -42,51 +66,94 @@ const CustomTabs = ({
     onChange?.(key);
   };
 
-  // --- Refs for underline animation ---
   const tabRefs = useRef<(HTMLDivElement | null)[]>([]);
   const underlineRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
+    if (variant !== "underline") return;
+
     const index = items.findIndex((t) => t.key === currentKey);
     const activeTab = tabRefs.current[index];
 
     if (activeTab && underlineRef.current) {
-      const rect = activeTab.getBoundingClientRect();
-
-      underlineRef.current.style.width = rect.width + "px";
+      underlineRef.current.style.width = activeTab.offsetWidth + "px";
       underlineRef.current.style.transform = `translateX(${activeTab.offsetLeft}px)`;
     }
-  }, [currentKey, items]);
+  }, [currentKey, items, variant]);
 
   return (
     <div className="custom-tabs-container">
-      {/* Tab Headers */}
-      <div className="tabs-header">
-        {items.map((tab, index) => (
-          <div
-            key={tab.key}
-            ref={(el) => (tabRefs.current[index] = el)}
-            className={`tab-item ${tab.key === currentKey ? "active" : ""}`}
-            onClick={() => handleClick(tab.key)}
-          >
-            {tab.label}
-          </div>
-        ))}
+      <div
+        className={`tabs-header 
+          ${variant === "boxed" ? "boxed-header" : ""}
+          ${variant === "pill" ? "pill-header" : ""}
+          ${variant === "segment" ? "segment-header" : ""}
+        `}
+        style={{
+          borderBottom:
+            variant === "underline"
+              ? `1px solid ${fullWidthUnderlineColor}`
+              : "none",
 
-        {/* Active underline */}
-        <div
-          ref={underlineRef}
-          className="active-underline"
-          style={{ backgroundColor: activeUnderlineColor }}
-        />
+          /**  Apply dynamic pill bg */
+          background: variant === "pill" ? pillContainerBgColor : "transparent",
+        }}
+      >
+        {items.map((tab, index) => {
+          const isActive = tab.key === currentKey;
+
+          return (
+            <div
+              key={tab.key}
+              ref={(el) => (tabRefs.current[index] = el)}
+              className={`tab-item ${isActive ? "active" : ""}`}
+              onClick={() => handleClick(tab.key)}
+              style={{
+                color: isActive ? activeTextColor : inactiveTextColor,
+                backgroundColor:
+                  variant === "underline"
+                    ? "transparent"
+                    : isActive
+                      ? activeBgColor
+                      : inactiveBgColor,
+                borderColor:
+                  variant === "pill"
+                    ? "transparent"
+                    : variant === "underline"
+                      ? "transparent"
+                      : isActive
+                        ? activeBorderColor
+                        : inactiveBorderColor,
+              }}
+              onMouseEnter={(e) => {
+                if (variant === "pill") return;   //  disable hover for pill
+                e.currentTarget.style.color = hoverTextColor;
+              }}
+              onMouseLeave={(e) => {
+                if (variant === "pill") return;   //  disable hover for pill
+                e.currentTarget.style.color = isActive
+                  ? activeTextColor
+                  : inactiveTextColor;
+              }}
+            >
+              {tab.label}
+            </div>
+          );
+        })}
+
+        {variant === "underline" && (
+          <div
+            ref={underlineRef}
+            className="active-underline"
+            style={{ backgroundColor: activeUnderlineColor }}
+          />
+        )}
       </div>
 
-      {/* Content */}
       <div className="tabs-content">
         {items.find((t) => t.key === currentKey)?.content}
       </div>
 
-      {/* Styles */}
       <style>
         {`
         .custom-tabs-container {
@@ -94,41 +161,60 @@ const CustomTabs = ({
         }
 
         .tabs-header {
-          position: relative;
           display: flex;
-          gap: 32px;
+          gap: 24px;
           padding-bottom: 10px;
-          border-bottom: 1px solid ${fullWidthUnderlineColor};
+          position: relative;
         }
 
         .tab-item {
           cursor: pointer;
           font-weight: 600;
           font-size: 15px;
-          padding-bottom: 6px;
-          color: ${inactiveTextColor};
-          transition: color 0.2s ease;
-          position: relative;
+          padding: 8px 14px;
+          transition: 0.2s;
+          border-radius: 6px;
+          border: 1px solid transparent;
         }
 
-        .tab-item:hover {
-          color: ${hoverTextColor};
-        }
-
-        .tab-item.active {
-          color: ${activeTextColor};
-        }
-
-        /* ACTIVE underline that moves + resizes smoothly */
         .active-underline {
           position: absolute;
           bottom: -1px;
           height: 2px;
-          width: 0px; 
-          transition: 
-            transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-            width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-          z-index: 2;
+          width: 0px;
+          transition: transform 0.3s ease, width 0.3s ease;
+        }
+
+        .boxed-header .tab-item {
+          border-width: 1px;
+        }
+
+        /*  Pill Variant */
+        .pill-header {
+          padding: 6px;
+          border-radius: 999px;
+          gap: 8px;
+          display: flex;
+          justify-content: center;
+          width: 100%;
+        }
+
+        .pill-header .tab-item {
+          border-radius: 999px;
+          padding: 10px 20px;
+        }
+
+        .segment-header {
+          border: 1px solid #d1d5db;
+          padding: 4px;
+          border-radius: 12px;
+          gap: 0;
+        }
+
+        .segment-header .tab-item {
+          flex: 1;
+          text-align: center;
+          border-radius: 10px;
         }
 
         .tabs-content {
