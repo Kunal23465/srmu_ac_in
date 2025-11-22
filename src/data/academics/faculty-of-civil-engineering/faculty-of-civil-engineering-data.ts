@@ -4,13 +4,18 @@ import { counterDataType } from "../../home/counterData";
 import missionImg from "../../../assets/images/academics/departments/dept-mission-icon1.png";
 import vissionImg from "../../../assets/images/academics/departments/dept-mission-icon2.png";
 
+import depSlide1 from "../../../assets/images/academics/departments/depSlide1.png";
+import depSlide2 from "../../../assets/images/academics/departments/depSlide2.png";
+import depSlide3 from "../../../assets/images/academics/departments/depSlide3.png";
+import depSlide4 from "../../../assets/images/academics/departments/depSlide4.png";
+import depSlide5 from "../../../assets/images/academics/departments/depSlide5.png";
 
 export interface DepartmentVMType {
-    id: number;
-    bgColor: string; // hex, rgb, or any css color
-    img: string; // image URL or path
-    heading: string; // "Mission" | "Vision" | etc.
-    points: string[]; // list of bullet points
+  id: number;
+  bgColor: string; // hex, rgb, or any css color
+  img: string; // image URL or path
+  heading: string; // "Mission" | "Vision" | etc.
+  points: string[]; // list of bullet points
 }
 
 export interface FeeTableRow {
@@ -23,6 +28,11 @@ export interface FeeTableData {
   notes: string[];
 }
 
+export interface departmentHighlightscardType {
+  image: string;
+  title: string;
+  description: string;
+}
 export const civilFacultyOverviewData: customeOverViewType = {
   heading: "Faculty of Civil Engineering",
   content:
@@ -60,8 +70,6 @@ export const CivildepartmentVMData = [
   },
 ];
 
-
-
 export const civilFeeData: FeeTableData = {
   columns: ["Fee Type", "1 Year", "2 Year", "3 Year"],
 
@@ -79,4 +87,34 @@ export const civilFeeData: FeeTableData = {
   notes: ["Alumni Fee: 500", "Degree Fee: 1000", "Both these fees are payable in the final year of the program"],
 };
 
-
+export const departmentHighlights: departmentHighlightscardType[] = [
+  {
+    image: depSlide1,
+    title: "Major Collaborations",
+    description:
+      "College of Arts and Sciences, Texas A&M University-San Antonio | National Institute of Hydrology (NIH) Roorkee | The Energy and Resources Institute (TERI), New Delhi | Ecosteps | WaterAid | CAD Desk",
+  },
+  {
+    image: depSlide2,
+    title: "Research Publication, Book Chapters, Conferences & Patents",
+    description:
+      "With a remarkable research record—300+ Research Publications in reputed journals, 50+ Book Chapters, 150+ Conference participations, and 14 Patented Innovations across Australia, Germany, and India.",
+  },
+  {
+    image: depSlide3,
+    title: "Consultancy Projects",
+    description:
+      "Under the leadership of Prof. (Dr.) Abhishek Saxena, the Faculty of Civil Engineering has completed 9+ consultancy assignments funded by the Ministry of Jal Shakti, World Bank, UNESCO, TERI, WaterAid, receiving over ₹2.25 Crores. Several more assignments are ongoing.",
+  },
+  {
+    image: depSlide4,
+    title: "Vibrant Section of Laboratories",
+    description:
+      "Equipped with best-in-class laboratories enabling intra- and interdisciplinary study, facilitating research experimentation, and supporting consultancy practices.",
+  },
+  {
+    image: depSlide5,
+    title: "Rich Academia–Industry Interface",
+    description: "A strong ecosystem of experts from diverse core fields combining young talent and experienced professionals with both industry and academic exposure.",
+  },
+];
