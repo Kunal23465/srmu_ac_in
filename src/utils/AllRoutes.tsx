@@ -81,6 +81,7 @@ import FacultyOfCivilEngineeringPage from "../pages/academics/faculty-of-civil-e
 import ConferenceDetailPage from "../components/research/publication/conference/ConferenceDetailPage";
 
 import FacultyOfCivilEngineeringPage from "../pages/academics/faculty-of-civil-engineering/FacultyOfCivilEngineeringPage";
+import InstituteofTechnologyPage from "../pages/academics/institutes/institute-department/InstituteofTechnologyPage";
 interface IMatches {
   pathname: string;
   params: Params<string>;
@@ -242,6 +243,22 @@ export const routes = [
           {
             path: "institutes-info",
             element: <InstitutePage />,
+            children: [
+              {
+                path: "faculty-of-civil-engineering",
+                element: <FacultyOfCivilEngineeringPage />,
+                handle: {
+                  crumb: () => <Link to="/">Faculty Of Civil Engineering</Link>,
+                },
+              },
+              {
+                path: "institute-of-technology",
+                element: <InstituteofTechnologyPage />,
+                handle: {
+                  crumb: () => <Link to="/">Institute of Technology</Link>,
+                },
+              },
+            ],
             handle: {
               crumb: () => <Link to="/"> Academics</Link>,
             },
@@ -305,6 +322,8 @@ export const routes = [
               crumb: () => <Link to="/">Curriculum Design</Link>,
             },
           },
+          
+
           {
             path: "faculty-of-civil-engineering",
             element: <FacultyOfCivilEngineeringPage />,

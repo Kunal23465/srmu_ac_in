@@ -3,23 +3,24 @@ import { useState } from "react";
 interface VisionMissionData {
     title: string;
     description: string[];
-    buttonText: string;
-    buttonBgColor: string;
+    buttonText?: string;
+    buttonBgColor?: string;
     imageUrl: string;
+    bgColor?: string;
+
 }
 
 interface VisionMissionProps {
-    backgroundColor: string;   // NEW PROP
+
     data: {
         vision: VisionMissionData;
         mission: VisionMissionData;
     };
 }
- 
+
 
 const CustomInstitueVissionMissionCard: React.FC<VisionMissionProps> = ({
     data,
-    backgroundColor
 }) => {
     const [activeTab, setActiveTab] = useState<"vision" | "mission">("vision");
 
@@ -29,13 +30,13 @@ const CustomInstitueVissionMissionCard: React.FC<VisionMissionProps> = ({
     return (
         <div className="relative py-20">
             <div
-                className={`relative ${backgroundColor} rounded-xl w-[1020px] overflow-visible text-white min-h-[500px]`}
+                className={`relative bg-[${data.vision.bgColor}] rounded-xl w-[1020px] overflow-visible text-white min-h-[500px]`}
             >
 
                 <div className="pl-12 pr-80 flex flex-col justify-center h-full py-16 relative z-10">
 
                     <div className="border border-white w-auto self-start rounded-full px-4 py-2 inline-block mb-6 text-md font-semibold">
-                        {currentData.title}
+                        {currentData?.title}
                     </div>
 
                     <ul className="list-disc ml-5 mt-5 space-y-3 text-md leading-relaxed text-justify">
