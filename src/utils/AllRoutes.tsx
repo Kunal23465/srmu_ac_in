@@ -80,6 +80,7 @@ import AdmissionPolicyPage from "../pages/admissions/admission-policy/AdmissionP
 import FacultyOfCivilEngineeringPage from "../pages/academics/faculty-of-civil-engineering/facultyOfCivilEngineeringPage";
 import ConferenceDetailPage from "../components/research/publication/conference/ConferenceDetailPage";
 
+import FacultyOfCivilEngineeringPage from "../pages/academics/faculty-of-civil-engineering/FacultyOfCivilEngineeringPage";
 interface IMatches {
   pathname: string;
   params: Params<string>;
@@ -371,6 +372,25 @@ export const routes = [
               crumb: () => <Link to="/">Program Finder</Link>,
             },
           },
+        ],
+      },
+      {
+        path: "/programs",
+        element: <PlacementPage />,
+        // element: <StudentTestimonialPage />,
+        handle: {
+          crumb: () => <Link to="/">Programs</Link>,
+        },
+
+        children: [
+          {
+            path: "after-class-10th",
+            element: <AfterClass10thPage />,
+            handle: {
+              crumb: () => <Link to="/">After Class 10th</Link>,
+            },
+          },
+
         ],
       },
       {
