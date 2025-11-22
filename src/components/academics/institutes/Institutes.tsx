@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Classes from "../../../utils/styles/Global.module.css";
 import CustomOverviewSection from '../../../utils/custom/CustomOverviewSection';
 import { AcademicsOverviewData } from '../../../data/academics/institute/institute-form-data';
@@ -11,6 +11,7 @@ import { CustomTopFooterData1 } from '../../../data/about/leadership-and-governa
 
 
 const Institutes: React.FC = () => {
+
   return (
     <>
       <div className={`${Classes["container"]}`}>
@@ -22,6 +23,8 @@ const Institutes: React.FC = () => {
       <CustomTopFooter data={CustomTopFooterData1} />
 
 
+
+      
 
     </>
   )
