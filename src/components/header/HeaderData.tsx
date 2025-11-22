@@ -12,9 +12,6 @@ export const HeaderData = [
             item: "Admission Enquiry",
           },
           {
-            item: "Career",
-          },
-          {
             item: "Shift Schedule",
             path: "/shift-schedule"
           }
@@ -292,7 +289,7 @@ export const HeaderData = [
             item: "Placements",
             path: "/placements",
             subItem: [
-             
+
               {
                 item: "Placement Overview",
                 path: "#",

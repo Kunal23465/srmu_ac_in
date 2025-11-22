@@ -1,7 +1,7 @@
 import React from 'react'
 import Classes from "../../../utils/styles/Global.module.css";
 import CustomOverviewSection from '../../../utils/custom/CustomOverviewSection';
-import { CivildepartmentVMData, civilFacultyOverviewData, civilFeeData, counterDataForFacultyCivil, departmentHighlights,  } from '../../../data/academics/faculty-of-civil-engineering/faculty-of-civil-engineering-data';
+import { CivildepartmentVMData, civilFacultyOverviewData, civilFeeData, counterDataForFacultyCivil, departmentHighlights, } from '../../../data/academics/faculty-of-civil-engineering/faculty-of-civil-engineering-data';
 import CustomTopFooter from '../../../utils/custom/CustomTopFooter';
 import { CustomTopFooterData1 } from '../../../data/about/leadership-and-governance/leadership-and-governance-data';
 import Counter from '../../../utils/custom/Counter';
@@ -22,7 +22,7 @@ const FacultyOfCivilEngineering: React.FC = () => {
         {
             key: "1",
             label: "ABOUT GRIEVANCE REDRESSAL SYSTEM",
-            content: <AboutGrievance data={grievanceData.about} />,
+            content: <CustomDepartmentFeeDetailsTable data={civilFeeData} />,
         },
         {
             key: "2",
@@ -33,21 +33,17 @@ const FacultyOfCivilEngineering: React.FC = () => {
 
     ];
 
-
-
-
-
-
     return (
         <div>
             <div className={`${Classes["container"]}`}>
                 <CustomOverviewSection data={civilFacultyOverviewData} />
                 <Counter counterData={counterDataForFacultyCivil} classes="counter" />
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12  mb-10">
+                {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-12  mb-10">
                     {CivildepartmentVMData.map((item) => (
                         <CustomDepartmentVissionMission key={item.id} data={item} />
                     ))}
-                </div>
+                </div> */}
+
                 <CustomTabs
                     items={items}
                     variant="pill"
@@ -62,7 +58,7 @@ const FacultyOfCivilEngineering: React.FC = () => {
 
 
                 <div className="">
-                    <CustomDepartmentFeeDetailsTable data={civilFeeData} />
+
                 </div>
 
 
@@ -76,7 +72,7 @@ const FacultyOfCivilEngineering: React.FC = () => {
                 renderCard={({ item }) => <CustomDepartmentHighlightCard item={item} />}
                 bgColor="#E7A615"
                 arrowColor="#000"
-              
+
                 breakpoints={{ desktop: 3, tablet: 2, mobile: 1 }}
             />
 
