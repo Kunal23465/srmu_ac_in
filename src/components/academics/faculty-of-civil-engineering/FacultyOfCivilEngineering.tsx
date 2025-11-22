@@ -1,7 +1,7 @@
 import React from 'react'
 import Classes from "../../../utils/styles/Global.module.css";
 import CustomOverviewSection from '../../../utils/custom/CustomOverviewSection';
-import { CivildepartmentVMData, civilFacultyOverviewData, civilFeeData, counterDataForFacultyCivil } from '../../../data/academics/faculty-of-civil-engineering/faculty-of-civil-engineering-data';
+import { CivildepartmentVMData, civilFacultyOverviewData, civilFeeData, counterDataForFacultyCivil, departmentHighlights,  } from '../../../data/academics/faculty-of-civil-engineering/faculty-of-civil-engineering-data';
 import CustomTopFooter from '../../../utils/custom/CustomTopFooter';
 import { CustomTopFooterData1 } from '../../../data/about/leadership-and-governance/leadership-and-governance-data';
 import Counter from '../../../utils/custom/Counter';
@@ -11,6 +11,8 @@ import CustomTabs from '../../../utils/custom/CustomTabs';
 import AboutGrievance from '../../campus-life/grievance-redressal-system/AboutGrievance';
 import { grievanceData } from '../../../data/campus-life/grievance-redressal-system/grievance-redressal-system-data';
 import TypesOfGrievance from '../../campus-life/grievance-redressal-system/TypesOfGrievance';
+import CustomDepartmentSlider from '../../../utils/custom/CustomDepartmentSlider';
+import CustomDepartmentHighlightCard from './CustomDepartmentHighlightCard';
 
 
 const FacultyOfCivilEngineering: React.FC = () => {
@@ -32,6 +34,10 @@ const FacultyOfCivilEngineering: React.FC = () => {
     ];
 
 
+
+
+
+
     return (
         <div>
             <div className={`${Classes["container"]}`}>
@@ -49,7 +55,7 @@ const FacultyOfCivilEngineering: React.FC = () => {
                     inactiveTextColor="#ffffff"
                     activeBgColor="#ffb703"
                     inactiveBgColor="#0f4a85"
-                    pillContainerBgColor="#0f4a85"     
+                    pillContainerBgColor="#0f4a85"
                 />
 
 
@@ -62,6 +68,17 @@ const FacultyOfCivilEngineering: React.FC = () => {
 
             </div>
             <CustomTopFooter data={CustomTopFooterData1} />
+
+            <CustomDepartmentSlider
+                heading="Key Highlights of Our Department"
+                description="Explore key achievements"
+                data={departmentHighlights}
+                renderCard={({ item }) => <CustomDepartmentHighlightCard item={item} />}
+                bgColor="#E7A615"
+                arrowColor="#000"
+              
+                breakpoints={{ desktop: 3, tablet: 2, mobile: 1 }}
+            />
 
         </div>
     )
