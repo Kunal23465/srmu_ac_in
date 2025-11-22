@@ -1,13 +1,11 @@
 import * as Yup from "yup";
 
-
 import { customeOverViewType } from "../../types/home-data-type";
 import { TableRowData } from "../../types/table-data-types";
 import Placement_Policy from "../../assets/pdf/placement/placement-policies/placement-policy-191223122840-060324102152.pdf";
 import Early_Joining_Policy from "../../assets/pdf/placement/placement-policies/early-joining-policy-191223122925-060324102214.pdf";
-import Industrial_Visit_Policy from "../../assets/pdf/placement/placement-policies/industrial-visit-policy-191223123100-060324102231.pdf"
+import Industrial_Visit_Policy from "../../assets/pdf/placement/placement-policies/industrial-visit-policy-191223123100-060324102231.pdf";
 import { AlumniRegistrationField } from "../../types/placement-type";
-
 
 export const PlacementCellOverviewData: customeOverViewType = {
   heading: "Placement Cell",
@@ -39,7 +37,6 @@ export const PlacementPoliciesOverviewData: customeOverViewType = {
     "University placement policies encompass a set of guidelines and strategies designed to facilitate the successful transition of students from academic studies to the professional realm. These policies typically involve collaboration with industries, organizing placement drives, career counseling, and skill development initiatives to enhance students' employability. Universities often cultivate partnerships with various companies and organizations, creating a bridge between students and potential employers. Additionally, placement policies may incorporate internships, workshops, and industry-oriented curricula to ensure students are well-equipped for the demands of the job market. The ultimate goal is to empower graduates with the necessary skills and knowledge to secure fulfilling and relevant employment opportunities upon completing their education.",
 };
 
-
 export const alumniRegistrationTopFooterData = [
   {
     content: `Want to learn more about SRMU?`,
@@ -56,26 +53,25 @@ export const PlacementPoliciesTopFooterData = [
 export const policiesPdfData: TableRowData[] = [
   {
     id: 1,
-    title: 'Placement Policy',
-    download: { type: 'pdf', url: Placement_Policy },
+    title: "Placement Policy",
+    download: { type: "pdf", url: Placement_Policy },
   },
   {
     id: 2,
-    title: 'Early Joining Policy',
-    download: { type: 'pdf', url: Early_Joining_Policy },
+    title: "Early Joining Policy",
+    download: { type: "pdf", url: Early_Joining_Policy },
   },
   {
     id: 3,
-    title: 'Industrial Visit Policy',
-    download: { type: 'pdf', url: Industrial_Visit_Policy },
+    title: "Industrial Visit Policy",
+    download: { type: "pdf", url: Industrial_Visit_Policy },
   },
 ];
+
 export const alumniRegistrationOverviewData: customeOverViewType = {
   heading: "Alumni Registration",
-  content:
-    "",
+  content: "",
 };
-
 
 export const alumniRegistrationFormData: AlumniRegistrationField[] = [
   {
@@ -169,5 +165,3 @@ export const validationSchemaForAlumniRegistration = Yup.object().shape({
   currentEmployer: Yup.string().required("Current Employer is required"),
   consent: Yup.boolean().oneOf([true], "Consent is required"),
 });
-
-

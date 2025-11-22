@@ -12,9 +12,6 @@ export const HeaderData = [
             item: "Admission Enquiry",
           },
           {
-            item: "Career",
-          },
-          {
             item: "Shift Schedule",
             path: "/shift-schedule"
           }
@@ -96,96 +93,120 @@ export const HeaderData = [
           {
             id: 2,
             item: "Programs",
-            path: "#",
+            path: "/programs",
             isMegaMenu: true,
             megaMenu: [
               {
-                heading: "After Class 10th",
-                path: "/programs/after-10th",
-                item: [
-                  { path: "/programs/after-10th/polytechnic", item: "Polytechnic" }
+                id: 0,
+                column: [
+                  {
+                    heading: "After Class 10th",
+                    path: "after-class-10th",
+                    item: [
+                      { path: "/programs/after-10th/polytechnic", item: "Polytechnic" }
+                    ]
+                  },
+
+                  {
+                    heading: "After Polytechnic",
+                    path: "/programs/after-polytechnic",
+                    item: [
+                      { path: "/programs/after-polytechnic/biotechnology", item: "Biotechnology" },
+                      { path: "/programs/after-polytechnic/computer-science", item: "Computer Science" },
+                      { path: "/programs/after-polytechnic/engineering", item: "Engineering" }
+                    ]
+                  },
+
                 ]
               },
-
               {
-                heading: "After Polytechnic",
-                path: "/programs/after-polytechnic",
-                item: [
-                  { path: "/programs/after-polytechnic/biotechnology", item: "Biotechnology" },
-                  { path: "/programs/after-polytechnic/computer-science", item: "Computer Science" },
-                  { path: "/programs/after-polytechnic/engineering", item: "Engineering" }
+                id: 1,
+                column: [{
+                  heading: "After Class 12th",
+                  path: "/programs/after-12th",
+                  item: [
+                    { path: "/programs/after-12th/computer-science", item: "Computer Science" },
+                    { path: "/programs/after-12th/computer-application", item: "Computer Application" },
+                    { path: "/programs/after-12th/allied-health-sciences", item: "Allied Health Sciences" },
+                    { path: "/programs/after-12th/agriculture", item: "Agriculture" },
+                    { path: "/programs/after-12th/biotechnology", item: "Biotechnology" },
+                    { path: "/programs/after-12th/engineering", item: "Engineering" },
+                    { path: "/programs/after-12th/pharmacy", item: "Pharmacy" },
+                    { path: "/programs/after-12th/management", item: "Management" },
+                    { path: "/programs/after-12th/law", item: "Law" },
+                    { path: "/programs/after-12th/media-studies", item: "Media Studies" },
+                    { path: "/programs/after-12th/commerce-economics", item: "Commerce & Economics" },
+                    { path: "/programs/after-12th/food-technology", item: "Food Technology" },
+                    { path: "/programs/after-12th/nutrition-dietetics", item: "Nutrition & Dietetics" },
+                    { path: "/programs/after-12th/arts-science", item: "Arts & Science" },
+                    { path: "/programs/after-12th/polytechnic-lateral", item: "Polytechnic (Lateral)" }
+                  ]
+                }
+
                 ]
               },
-
               {
-                heading: "After Class 12th",
-                path: "/programs/after-12th",
-                item: [
-                  { path: "/programs/after-12th/computer-science", item: "Computer Science" },
-                  { path: "/programs/after-12th/computer-application", item: "Computer Application" },
-                  { path: "/programs/after-12th/allied-health-sciences", item: "Allied Health Sciences" },
-                  { path: "/programs/after-12th/agriculture", item: "Agriculture" },
-                  { path: "/programs/after-12th/biotechnology", item: "Biotechnology" },
-                  { path: "/programs/after-12th/engineering", item: "Engineering" },
-                  { path: "/programs/after-12th/pharmacy", item: "Pharmacy" },
-                  { path: "/programs/after-12th/management", item: "Management" },
-                  { path: "/programs/after-12th/law", item: "Law" },
-                  { path: "/programs/after-12th/media-studies", item: "Media Studies" },
-                  { path: "/programs/after-12th/commerce-economics", item: "Commerce & Economics" },
-                  { path: "/programs/after-12th/food-technology", item: "Food Technology" },
-                  { path: "/programs/after-12th/nutrition-dietetics", item: "Nutrition & Dietetics" },
-                  { path: "/programs/after-12th/arts-science", item: "Arts & Science" },
-                  { path: "/programs/after-12th/polytechnic-lateral", item: "Polytechnic (Lateral)" }
-                ]
-              },
-
-              {
-                heading: "Industry Honors Programs",
-                path: "/programs/industry-honors",
-                item: [
-                  { path: "/programs/industry-honors/btech-cse-aiml", item: "B.Tech. in CSE (Artificial Intelligence & Machine Learning)" },
-                  { path: "/programs/industry-honors/btech-cse-cyber-security", item: "B.Tech. in CSE (Cyber Security) with L&T" },
-                  { path: "/programs/industry-honors/btech-cse-data-science", item: "B.Tech. in CSE (Data Science & AI) with L&T" },
-                  { path: "/programs/industry-honors/btech-me-ev", item: "B.Tech. in ME (EV Engineering) with L&T" },
-                  { path: "/programs/industry-honors/btech-ee-ev", item: "B.Tech. in EE (EV Engineering) with L&T" },
-                  { path: "/programs/industry-honors/btech-ece-ev", item: "B.Tech. in ECE (EV Engineering) with L&T" },
-                  { path: "/programs/industry-honors/btech-ce-adcons", item: "B.Tech. in CE (Ad. Cons. Prac.) with L&T" },
-                  { path: "/programs/industry-honors/bca-cyber-security", item: "B.C.A. (Cyber Security) with L&T" },
-                  { path: "/programs/industry-honors/bca-data-science", item: "B.C.A. (Data Science & AI) with L&T" },
-                  { path: "/programs/industry-honors/bba-business-analytics", item: "B.B.A. in Business Analytics with L&T" },
-                  { path: "/programs/industry-honors/bcom-hons-lt", item: "B.Com (Hons.) with L&T" },
-                  { path: "/programs/industry-honors/mba-business-analytics", item: "M.B.A. in Business Analytics with L&T" },
-                  { path: "/programs/industry-honors/mtech-ai-ml", item: "M.Tech. in Artificial Intelligence & Machine Learning" },
-                  { path: "/programs/industry-honors/mtech-data-science", item: "M.Tech. in Data Science" }
-                ]
-              },
-
-              {
-                heading: "After Graduation",
-                path: "/programs/after-graduation",
-                item: [
-                  { path: "/programs/after-graduation/agriculture", item: "Agriculture" },
-                  { path: "/programs/after-graduation/biotechnology", item: "Biotechnology" },
-                  { path: "/programs/after-graduation/computer-science", item: "Computer Science" },
-                  { path: "/programs/after-graduation/computer-application", item: "Computer Application" },
-                  { path: "/programs/after-graduation/engineering", item: "Engineering" },
-                  { path: "/programs/after-graduation/management", item: "Management" },
-                  { path: "/programs/after-graduation/law", item: "Law" },
-                  { path: "/programs/after-graduation/commerce-economics", item: "Commerce & Economics" },
-                  { path: "/programs/after-graduation/education", item: "Education" },
-                  { path: "/programs/after-graduation/media-studies", item: "Media Studies" },
-                  { path: "/programs/after-graduation/arts-science", item: "Arts & Science" },
-                  { path: "/programs/after-graduation/social-work", item: "Social Work" }
-                ]
-              },
-
-              {
-                heading: "After Post Graduation",
-                path: "/programs/after-post-graduation",
-                item: [
-                  { path: "/programs/after-post-graduation/phd", item: "Ph.D." }
+                id: 2,
+                column: [
+                  {
+                    heading: "Industry Honors Programs",
+                    path: "/programs/industry-honors",
+                    item: [
+                      { path: "/programs/industry-honors/btech-cse-aiml", item: "B.Tech. in CSE (Artificial Intelligence & Machine Learning)" },
+                      { path: "/programs/industry-honors/btech-cse-cyber-security", item: "B.Tech. in CSE (Cyber Security) with L&T" },
+                      { path: "/programs/industry-honors/btech-cse-data-science", item: "B.Tech. in CSE (Data Science & AI) with L&T" },
+                      { path: "/programs/industry-honors/btech-me-ev", item: "B.Tech. in ME (EV Engineering) with L&T" },
+                      { path: "/programs/industry-honors/btech-ee-ev", item: "B.Tech. in EE (EV Engineering) with L&T" },
+                      { path: "/programs/industry-honors/btech-ece-ev", item: "B.Tech. in ECE (EV Engineering) with L&T" },
+                      { path: "/programs/industry-honors/btech-ce-adcons", item: "B.Tech. in CE (Ad. Cons. Prac.) with L&T" },
+                      { path: "/programs/industry-honors/bca-cyber-security", item: "B.C.A. (Cyber Security) with L&T" },
+                      { path: "/programs/industry-honors/bca-data-science", item: "B.C.A. (Data Science & AI) with L&T" },
+                      { path: "/programs/industry-honors/bba-business-analytics", item: "B.B.A. in Business Analytics with L&T" },
+                      { path: "/programs/industry-honors/bcom-hons-lt", item: "B.Com (Hons.) with L&T" },
+                      { path: "/programs/industry-honors/mba-business-analytics", item: "M.B.A. in Business Analytics with L&T" },
+                      { path: "/programs/industry-honors/mtech-ai-ml", item: "M.Tech. in Artificial Intelligence & Machine Learning" },
+                      { path: "/programs/industry-honors/mtech-data-science", item: "M.Tech. in Data Science" }
+                    ]
+                  }
                 ]
               }
+
+
+              ,
+              {
+                id: 3,
+                column: [
+                  {
+                    heading: "After Graduation",
+                    path: "/programs/after-graduation",
+                    item: [
+                      { path: "/programs/after-graduation/agriculture", item: "Agriculture" },
+                      { path: "/programs/after-graduation/biotechnology", item: "Biotechnology" },
+                      { path: "/programs/after-graduation/computer-science", item: "Computer Science" },
+                      { path: "/programs/after-graduation/computer-application", item: "Computer Application" },
+                      { path: "/programs/after-graduation/engineering", item: "Engineering" },
+                      { path: "/programs/after-graduation/management", item: "Management" },
+                      { path: "/programs/after-graduation/law", item: "Law" },
+                      { path: "/programs/after-graduation/commerce-economics", item: "Commerce & Economics" },
+                      { path: "/programs/after-graduation/education", item: "Education" },
+                      { path: "/programs/after-graduation/media-studies", item: "Media Studies" },
+                      { path: "/programs/after-graduation/arts-science", item: "Arts & Science" },
+                      { path: "/programs/after-graduation/social-work", item: "Social Work" }
+                    ]
+                  },
+
+                  {
+                    heading: "After Post Graduation",
+                    path: "/programs/after-post-graduation",
+                    item: [
+                      { path: "/programs/after-post-graduation/phd", item: "Ph.D." }
+                    ]
+                  }
+
+                ]
+              }
+
+
             ]
           },
 
@@ -268,8 +289,24 @@ export const HeaderData = [
             item: "Placements",
             path: "/placements",
             subItem: [
+
               {
-                item: "Student testimonial",
+                item: "Placement Overview",
+                path: "#",
+              },
+              {
+                item: "Placement Cell",
+                path: "/placements/placement-cell",
+              },
+              {
+                item: "Placement Policies",
+                path: "/placements/placement-policies",
+              },
+
+
+
+              {
+                item: "Student Testimonials",
                 path: "/placements/student-testimonial",
               },
               {
@@ -277,9 +314,14 @@ export const HeaderData = [
                 path: "/placements/alumni-registration",
               },
               {
+                item: "Alumni Feedback",
+                path: "#",
+              },
+              {
                 item: "Alumni Testimonials",
                 path: "/placements/notable-alumni",
               },
+
             ],
           },
 
