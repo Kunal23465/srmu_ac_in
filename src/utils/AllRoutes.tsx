@@ -77,6 +77,9 @@ import GrievanceRedressalSystemPage from "../pages/campus-life/grievance-redress
 import OutreachActivationsPage from "../pages/campus-life/outreach-activations/OutreachActivationsPage";
 import AdmissionEnquiryPage from "../pages/admission-enquiry/AdmissionEnquiryPage";
 import AdmissionPolicyPage from "../pages/admissions/admission-policy/AdmissionPolicyPage";
+import FacultyOfCivilEngineeringPage from "../pages/academics/faculty-of-civil-engineering/facultyOfCivilEngineeringPage";
+import ConferenceDetailPage from "../components/research/publication/conference/ConferenceDetailPage";
+
 import FacultyOfCivilEngineeringPage from "../pages/academics/faculty-of-civil-engineering/FacultyOfCivilEngineeringPage";
 interface IMatches {
   pathname: string;
@@ -309,7 +312,6 @@ export const routes = [
               crumb: () => <Link to="/">Faculty Of Civil Engineering</Link>,
             },
           },
-
         ],
       },
 
@@ -431,7 +433,6 @@ export const routes = [
               crumb: () => <Link to="/">Central Library</Link>,
             },
           },
-
 
           {
             path: "green-initiative",
@@ -596,6 +597,13 @@ export const routes = [
               crumb: () => <Link to="/">Publication</Link>,
             },
           },
+          {
+            path: "conference/:name",
+            element: <ConferenceDetailPage />,
+            handle: {
+              crumb: () => <Link to="/">Publication</Link>,
+            },
+          },
         ],
       },
       {
@@ -650,7 +658,7 @@ export const routes = [
         handle: {
           crumb: () => <Link to="/">Admission Enquiry</Link>,
         },
-      }
+      },
     ],
   },
 ];
