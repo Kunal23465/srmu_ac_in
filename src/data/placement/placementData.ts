@@ -7,8 +7,6 @@ import Early_Joining_Policy from "../../assets/pdf/placement/placement-policies/
 import Industrial_Visit_Policy from "../../assets/pdf/placement/placement-policies/industrial-visit-policy-191223123100-060324102231.pdf";
 import { AlumniRegistrationField } from "../../types/placement-type";
 
-import MBA21 from "../../assets/images/mba21-03022401044691.jpg";
-
 export const PlacementCellOverviewData: customeOverViewType = {
   heading: "Placement Cell",
   content:

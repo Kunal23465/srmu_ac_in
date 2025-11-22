@@ -7,7 +7,7 @@ const OurTeam: React.FC = () => {
 
   const SliderControls: React.FC<{ totalItems: number }> = ({ totalItems }) => {
     const next = () => {
-      if (index < totalItems - 2) setIndex((prev) => prev + 1);
+      if (index < totalItems - 3) setIndex((prev) => prev + 1);
     };
 
     const prev = () => {
@@ -69,7 +69,7 @@ const OurTeam: React.FC = () => {
 
             <div className="flex flex-col sm:flex-row gap-6">
               {PlacementTeamCardData.slice(index, index + 3).map((item) => (
-                <div key={item.id} className="text-black flex-none rounded-xl w-full sm:w-1/2 lg:w-1/4 transition-all duration-300 transform hover:-translate-y-2">
+                <div key={item.id} className="text-black flex-none rounded-xl w-full sm:w-1/4 lg:w-1/4 xl:w-1/3 transition-all duration-300 transform hover:-translate-y-2">
                   <div className="relative w-full h-85">
                     <img src={item.img} alt={item.name} className="w-full h-full object-cover rounded-xl" />
                     <h3 className="absolute bottom-5 left-5 text-2xl text-white font-medium">
@@ -102,7 +102,7 @@ const OurTeam: React.FC = () => {
             </div>
             <div className="flex flex-col sm:flex-row gap-6">
               {TrainingTeamCardData.slice(index, index + 3).map((item) => (
-                <div key={item.id} className="text-black flex-none rounded-xl w-full sm:w-1/2 lg:w-1/4 transition-all duration-300 transform hover:-translate-y-2">
+                <div key={item.id} className="text-black flex-none rounded-xl w-full sm:w-1/4 lg:w-1/4 xl:w-1/3 transition-all duration-300 transform hover:-translate-y-2">
                   <div className="relative w-full h-85">
                     <img src={item.img} alt={item.name} className="w-full h-full object-cover rounded-xl" />
                     <h3 className="absolute bottom-5 left-5 text-2xl text-white font-medium">

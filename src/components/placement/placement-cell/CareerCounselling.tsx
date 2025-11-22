@@ -6,7 +6,7 @@ const CareerCounselling: React.FC = () => {
 
   const SliderControls: React.FC<{ totalItems: number }> = ({ totalItems }) => {
     const next = () => {
-      if (index < totalItems - 2) setIndex((prev) => prev + 1);
+      if (index < totalItems - 3) setIndex((prev) => prev + 1);
     };
 
     const prev = () => {
@@ -51,8 +51,8 @@ const CareerCounselling: React.FC = () => {
 
           <div className="flex flex-col sm:flex-row gap-6">
             {CareerCounsellingCardData.slice(index, index + 3).map((item) => (
-              <div key={item.id} className=" rounded-xl w-full sm:w-1/2 lg:w-1/4">
-                <div className="relative w-full h-100 group overflow-hidden rounded-xl">
+              <div key={item.id} className=" rounded-xl w-full sm:w-1/2 lg:w-1/3">
+                <div className="relative w-full h-105 group overflow-hidden rounded-xl">
                   <img src={item.img} alt={item.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                   <h3 className="absolute bottom-5 polygon_bg w-full text-xl text-white bg-black/60 p-4 font-medium transition-opacity duration-300 group-hover:opacity-0">
                     {item.name}
