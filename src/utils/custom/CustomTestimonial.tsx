@@ -59,9 +59,9 @@ const CustomTestimonial: React.FC<CustomTestimonialProps> = ({ data }) => {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-x-10  mt-40">
       {data.map(({ id, img, text, name, batch }) => (
-        <div key={id} className=" px-5 pb-5 shadow-xl rounded-2xl  mb-20">
+        <div key={id} className=" px-5 pb-5 shadow-lg border border-gray-200 rounded-2xl  mb-20">
           <img className="w-25 h-25 -mt-12.5 mb-5 mx-auto rounded-full" src={img} alt={name} />
-          <p className="text-[16px]! ">{text.substring(0,200)}...</p> {/* <-- truncation applied */}
+          <p className="text-[16px]! ">{text.substring(0,171)}...</p> {/* <-- truncation applied */}
           <button className="mb-4 ml-2 text-[16px] font-medium text-blue-800 italic underline" onClick={() => setIsExpanded(id)}>
             Read More
           </button>

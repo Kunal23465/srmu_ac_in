@@ -9,17 +9,20 @@ import CustomTopFooter from '../../../utils/custom/CustomTopFooter';
 import { CustomTopFooterData1 } from '../../../data/about/leadership-and-governance/leadership-and-governance-data';
 
 
-const Institutes:React.FC = () => {
+
+const Institutes: React.FC = () => {
   return (
     <>
       <div className={`${Classes["container"]}`}>
         <CustomOverviewSection data={AcademicsOverviewData} />
         <OurInstitutes />
         <InstituteCardList />
-
       </div>
       <EnquiryForm />
       <CustomTopFooter data={CustomTopFooterData1} />
+
+
+
     </>
   )
 }

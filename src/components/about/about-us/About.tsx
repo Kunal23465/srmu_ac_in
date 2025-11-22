@@ -9,7 +9,8 @@ import CustomTopFooter from '../../../utils/custom/CustomTopFooter';
 import MIssionAndVission from './MIssionAndVission';
 import CoreValues from './CoreValue';
 import KnowOurCampus from './KnowYourCampus';
-import Slider from './Slider';
+import CustomAboutUsSlider from '../../../utils/custom/CustomAboutUsSlider';
+import aboutSliderData from '../../../data/about/silder/slider-data';
 
 const About: React.FC = () => {
     return (
@@ -17,7 +18,7 @@ const About: React.FC = () => {
             <div className={`${Classes["container"]}`}>
                 <CustomOverviewSection data={aboutOverviewData} />
                 <Counter counterData={counterDataForAboutPage} classes="counter" aboutusClass={"text-black mt-3"} />
-                <Slider />
+            <CustomAboutUsSlider data={aboutSliderData}/>
             </div>
             <MIssionAndVission />
             <CoreValues />
