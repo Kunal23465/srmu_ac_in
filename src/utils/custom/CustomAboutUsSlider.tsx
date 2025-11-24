@@ -31,8 +31,8 @@ const CustomAboutUsSlider: React.FC<Props> = ({ data }) => {
 
   return (
     <div className="w-full flex justify-center py-20">
-      <div className="w-full max-w-7xl h-full flex flex-row items-start gap-10 p-4">
-        <div className="flex flex-col items-start min-w-[300px] mt-6">
+      <div className="w-full max-w-7xl h-full flex flex-col md:flex-row  items-start gap-10 p-4">
+        <div className="flex flex-col items-start md:min-w-[300px] mt-6">
           <h2 className="leading-[1.2] text-[#1a1a1a] font-medium text-[3.125rem] mb-[1rem]">{data.heading}</h2>
           <p className="text-[20px] text-gray-700 mb-8">{data.subheading}</p>
 
@@ -47,7 +47,7 @@ const CustomAboutUsSlider: React.FC<Props> = ({ data }) => {
           </div>
         </div>
 
-        <div className="flex-1 overflow-hidden">
+        <div className="md:flex-1 overflow-hidden">
           <Swiper
             modules={[Navigation, Pagination]}
             slidesPerView={3}
