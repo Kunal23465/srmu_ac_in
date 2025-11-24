@@ -19,7 +19,7 @@ export const InstituteofManagementCommerceandEconomicsTopFooterData = [
     btnText: "Request Registration",
   },
 ];
-
+// vision data
 export const visionMissionData = {
   vision: {
     title: "Our Vision",
