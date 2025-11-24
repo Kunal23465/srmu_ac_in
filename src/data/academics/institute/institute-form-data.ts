@@ -53,7 +53,7 @@ export const institutes: Institute[] = [
       "The Institute of Management, Commerce and Economics (IMCE) was started in the year 2012. IMCE seeks to be a trailblazer in management education through strong academic-industry collaboration for international alliances.",
     departments: 2,
     image: instituteofmang,
-    path: "/academics/institutes-info/institute-of-management-commerce-and-economics"
+    path: "/academics/institutes-info/institute-of-management-commerce-and-economics",
   },
   {
     id: 4,
@@ -62,7 +62,7 @@ export const institutes: Institute[] = [
       "Journalism and Mass Communication study is an encouragement to think about the forces involved in giving it shape. Mass Media industry is one of the fastest growing industries with the mission of social conscience.",
     departments: 1,
     image: instituteofmedia,
-    path: "/academics/institutes-info/institute-of-media-studies"
+    path: "/academics/institutes-info/institute-of-media-studies",
   },
   {
     id: 5,
@@ -71,7 +71,7 @@ export const institutes: Institute[] = [
       "The Institute boasts of being the heart and soul of the University as its various disciplines of knowledge is essentially required with all the academic programs that run across the University.",
     departments: 4,
     image: instituteofnatural,
-    path: "/academics/institutes-info/institute-of-natural-sciences-and-humanities"
+    path: "/academics/institutes-info/institute-of-natural-sciences-and-humanities",
   },
   {
     id: 6,
@@ -79,7 +79,7 @@ export const institutes: Institute[] = [
     description: "Due to its integration of chemistry and health sciences, pharmaceutical science is both a unique field and extremely important to human survival.",
     departments: 1,
     image: instituteofpharmaceutical,
-    path: "/academics/institutes-info/institute-of-pharmaceutical-sciences1"
+    path: "/academics/institutes-info/institute-of-pharmaceutical-sciences1",
   },
   {
     id: 7,
@@ -88,7 +88,7 @@ export const institutes: Institute[] = [
       "The Indian Council of Agricultural Sciences has already recognized the B.Sc.(Hons.) Agriculture 4 Years as a professional Degree with consequential benefits to the Students.",
     departments: 1,
     image: instituteofagri,
-    path: "/academics/institutes-info/institute-of-agricultural-sciences-and-technology"
+    path: "/academics/institutes-info/institute-of-agricultural-sciences-and-technology",
   },
   {
     id: 8,
@@ -97,7 +97,7 @@ export const institutes: Institute[] = [
       "The Institute of Legal Studies is a convergence of academic, cultural and intellectual resources. It aims at achieving the highest levels of distinction in the innovation and transmission of knowledge and understanding.",
     departments: 1,
     image: instituteoflegal,
-    path: "/academics/institutes-info/institute-of-legal-studies1"
+    path: "/academics/institutes-info/institute-of-legal-studies1",
   },
   {
     id: 9,
@@ -106,7 +106,7 @@ export const institutes: Institute[] = [
       "Pharmacy is one of the unique professions and also very vital for the sustenance of human lives as it involves the combination of chemical science with health sciences.",
     departments: 1,
     image: instituteofpharmacy,
-    path: "/academics/institutes-info/institute-of-pharmacy"
+    path: "/academics/institutes-info/institute-of-pharmacy",
   },
   {
     id: 10,
@@ -115,7 +115,7 @@ export const institutes: Institute[] = [
       "Institute of Education and Research, Shri Ramswoop Memorial University offers Bachelor's degree course. Institute tries its best to produce teachers embodied with traditions values.",
     departments: 1,
     image: instituteofedu,
-    path: "/academics/institutes-info/institute-of-education-and-research"
+    path: "/academics/institutes-info/institute-of-education-and-research",
   },
   {
     id: 11,
@@ -124,7 +124,7 @@ export const institutes: Institute[] = [
       "The Institute was established during the academic session 2015-16 and commenced its curriculum for Diploma in Mechanical, Civil, Electrical, Electronics and Communication and Computer Science Engineering.",
     departments: 1,
     image: instituteofpolytech,
-    path: "/academics/institutes-info/srmu-polytechnic1"
+    path: "/academics/institutes-info/srmu-polytechnic1",
   },
 ];
 
