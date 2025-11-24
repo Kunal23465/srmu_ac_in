@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+// Interfaces remain the same
 interface VisionMissionData {
     title: string;
     description: string[];
@@ -10,14 +11,12 @@ interface VisionMissionData {
 
 }
 
-interface VisionMissionProps {
-
+export interface VisionMissionProps {
     data: {
         vision: VisionMissionData;
         mission: VisionMissionData;
     };
 }
-
 
 const CustomInstitueVissionMissionCard: React.FC<VisionMissionProps> = ({
     data,
@@ -39,46 +38,65 @@ const CustomInstitueVissionMissionCard: React.FC<VisionMissionProps> = ({
                         {currentData?.title}
                     </div>
 
-                    <ul className="list-disc ml-5 mt-5 space-y-3 text-md leading-relaxed text-justify">
+                    {/* Description */}
+                    <ul className="list-disc ml-5 mt-5 space-y-3 text-xs sm:text-sm md:text-base leading-relaxed text-justify">
                         {currentData.description.map((item, i) => (
                             <li key={i}>{item}</li>
                         ))}
                     </ul>
 
-                    <div className="flex space-x-5 mt-20">
+                    {/* Buttons */}
+                    <div className="flex flex-row flex-nowrap 
+                        justify-center md:justify-start
+                        space-x-3 
+                        mt-10 md:mt-20"
+                    >
+
+                        {/* Vision Button */}
                         <button
-                            className={`flex uppercase items-center px-6 py-4 rounded-lg font-semibold transition cursor-pointer
-                                ${activeTab === "vision"
-                                    ? data.vision.buttonBgColor + " text-blue-900"
-                                    : "bg-white text-blue-900"}
-                            `}
+                            className={`min-w-30 sm:min-w-36 flex uppercase items-center justify-center 
+                                px-2 py-3 sm:py-5 sm:px-6 
+                                rounded-lg font-semibold transition cursor-pointer 
+                                text-xs sm:text-sm md:text-base
+                                ${
+                                    activeTab === "vision"
+                                        ? data.vision.buttonBgColor + " text-blue-900"
+                                        : "bg-white text-blue-900"
+                                }`}
                             onClick={() => setActiveTab("vision")}
                         >
-                            <span className="mr-2 text-lg text-bold">←</span>
+                            <span className="mr-1 sm:mr-2 text-base sm:text-lg font-bold">←</span>
                             {data.vision.buttonText}
                         </button>
 
+                        {/* Mission Button */}
                         <button
-                            className={`flex uppercase items-center px-6 py-4 rounded-lg font-semibold transition cursor-pointer
-                                ${activeTab === "mission"
-                                    ? data.mission.buttonBgColor + " text-blue-900"
-                                    : "bg-white text-blue-900"}
-                            `}
+                            className={`min-w-30 sm:min-w-36 flex uppercase items-center justify-center 
+                                px-2 py-3 sm:py-5 sm:px-6  
+                                rounded-lg font-semibold transition cursor-pointer 
+                                text-xs sm:text-sm md:text-base
+                                ${
+                                    activeTab === "mission"
+                                        ? data.mission.buttonBgColor + " text-blue-900"
+                                        : "bg-white text-blue-900"
+                                }`}
                             onClick={() => setActiveTab("mission")}
                         >
                             {data.mission.buttonText}
-                            <span className="ml-2">→</span>
+                            <span className="ml-1 sm:ml-2 text-base sm:text-lg">→</span>
                         </button>
-                    </div>
 
+                    </div>
                 </div>
 
+                {/* Image Right Side (hidden on mobile) */}
                 <img
                     src={currentData.imageUrl}
                     alt={currentData.title}
-                    className="absolute top-1/2 -translate-y-1/2 right-0 translate-x-1/2 w-[480px] h-[400px]"
+                    className="absolute top-1/2 -translate-y-1/2 right-0 translate-x-1/2 
+                               w-[300px] h-[250px] md:w-[480px] md:h-[400px] 
+                               object-cover hidden md:block"
                 />
-
             </div>
         </div>
     );

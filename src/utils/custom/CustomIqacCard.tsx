@@ -18,7 +18,7 @@ interface propsModal {
     isExpanded: number | null;
     id: number;
     setIsExpanded: any;
-    content: any;
+    content: string | React.ReactNode;
 }
 
 export const CustomModal: React.FC<propsModal> = ({ isExpanded, id, setIsExpanded, content }) => {
@@ -36,7 +36,12 @@ export const CustomModal: React.FC<propsModal> = ({ isExpanded, id, setIsExpande
                                 <MdClose size={18} />
                             </span>
 
-                            <div dangerouslySetInnerHTML={{ __html: content }} />
+                            {typeof content === "string" ? (
+                                <div dangerouslySetInnerHTML={{ __html: content }} />
+                            ) : (
+                                <div>{content}</div>
+                            )}
+
                         </div>
                     </div>
                 </>
