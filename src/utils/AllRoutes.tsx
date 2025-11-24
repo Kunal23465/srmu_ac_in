@@ -77,9 +77,22 @@ import GrievanceRedressalSystemPage from "../pages/campus-life/grievance-redress
 import OutreachActivationsPage from "../pages/campus-life/outreach-activations/OutreachActivationsPage";
 import AdmissionEnquiryPage from "../pages/admission-enquiry/AdmissionEnquiryPage";
 import AdmissionPolicyPage from "../pages/admissions/admission-policy/AdmissionPolicyPage";
-
 import FacultyOfCivilEngineeringPage from "../pages/academics/faculty-of-civil-engineering/FacultyOfCivilEngineeringPage";
+import PlacementOverviewPage from "../pages/placement/placement-overview/PlacementOverviewPage";
+
+
 import InstituteofTechnologyPage from "../pages/academics/institutes/institute-department/InstituteofTechnologyPage";
+import DepartmentOfElectricalAndElectronicsEngineeringPage from "../pages/academics/institutes/institute-department/electricalAndElectronics/DepartmentOfElectricalAndElectronicsEngineeringPage";
+import InstituteofBiosciencesandTechnologyPage from "../pages/academics/institutes/institute-department/InstituteofBiosciencesandTechnologyPage";
+import InstituteofManagementCommerceandEconomicsPage from "../pages/academics/institutes/institute-department/InstituteofManagementCommerceandEconomicsPage";
+import InstituteofMediaStudiesPage from "../pages/academics/institutes/institute-department/InstituteofMediaStudiesPage";
+import InstituteofNaturalSciencesandHumanitiesPage from "../pages/academics/institutes/institute-department/InstituteofNaturalSciencesandHumanitiesPage";
+import InstituteofPharmaceuticalSciencesPage from "../pages/academics/institutes/institute-department/InstituteofPharmaceuticalSciencesPage";
+import InstituteofAgriculturalSciencesandTechnologyPage from "../pages/academics/institutes/institute-department/InstituteofAgriculturalSciencesandTechnologyPage";
+import InstituteofLegalStudiesPage from "../pages/academics/institutes/institute-department/InstituteofLegalStudiesPage";
+import InstituteofPharmacyPage from "../pages/academics/institutes/institute-department/InstituteofPharmacyPage";
+import InstituteofEducationandResearchPage from "../pages/academics/institutes/institute-department/InstituteofEducationandResearchPage";
+import SRMUPolytechnicPage from "../pages/academics/institutes/institute-department/SRMUPolytechnicPage";
 import ConferenceDetailPage from "../components/research/publication/conference/ConferenceDetailPage";
 interface IMatches {
   pathname: string;
@@ -232,6 +245,13 @@ export const routes = [
         ],
       },
       {
+        path:"/department-of-electrical-and-electronics-engineering",
+        element:<DepartmentOfElectricalAndElectronicsEngineeringPage/>,
+         handle: {
+          crumb: () => <Link to="/">Department of Electrical and Electronics Engineering</Link>,
+        },
+      },
+      {
         path: "/academics",
         element: <AcademicsPage />,
         handle: {
@@ -255,6 +275,76 @@ export const routes = [
                 element: <InstituteofTechnologyPage />,
                 handle: {
                   crumb: () => <Link to="/">Institute of Technology</Link>,
+                },
+              },
+              {
+                path: "institute-of-biosciences-and-technology",
+                element: <InstituteofBiosciencesandTechnologyPage />,
+                handle: {
+                  crumb: () => <Link to="/">Institute of Biosciences and Technology</Link>,
+                },
+              },
+              {
+                path: "institute-of-management-commerce-and-economics",
+                element: <InstituteofManagementCommerceandEconomicsPage />,
+                handle: {
+                  crumb: () => <Link to="/">Institute of Management, Commerce and Economics</Link>,
+                },
+              },
+              {
+                path: "institute-of-media-studies",
+                element: <InstituteofMediaStudiesPage />,
+                handle: {
+                  crumb: () => <Link to="/">Institute of Media Studies</Link>,
+                },
+              },
+              {
+                path: "institute-of-natural-sciences-and-humanities",
+                element: <InstituteofNaturalSciencesandHumanitiesPage />,
+                handle: {
+                  crumb: () => <Link to="/">Institute of Natural Sciences and Humanities</Link>,
+                },
+              },
+              {
+                path: "institute-of-pharmaceutical-sciences1",
+                element: <InstituteofPharmaceuticalSciencesPage />,
+                handle: {
+                  crumb: () => <Link to="/">Institute of Pharmaceutical Sciences</Link>,
+                },
+              },
+              {
+                path: "institute-of-agricultural-sciences-and-technology",
+                element: <InstituteofAgriculturalSciencesandTechnologyPage />,
+                handle: {
+                  crumb: () => <Link to="/">Institute of Agricultural Sciences and Technology</Link>,
+                },
+              },
+              {
+                path: "institute-of-legal-studies1",
+                element: <InstituteofLegalStudiesPage />,
+                handle: {
+                  crumb: () => <Link to="/">Institute of Legal Studies</Link>,
+                },
+              },
+              {
+                path: "institute-of-pharmacy",
+                element: <InstituteofPharmacyPage />,
+                handle: {
+                  crumb: () => <Link to="/">Institute of Pharmacy</Link>,
+                },
+              },
+              {
+                path: "institute-of-education-and-research",
+                element: <InstituteofEducationandResearchPage />,
+                handle: {
+                  crumb: () => <Link to="/">Institute of Education and Research</Link>,
+                },
+              },
+              {
+                path: "srmu-polytechnic1",
+                element: <SRMUPolytechnicPage />,
+                handle: {
+                  crumb: () => <Link to="/">SRMU Polytechnic</Link>,
                 },
               },
             ],
@@ -325,7 +415,7 @@ export const routes = [
 
           {
             path: "faculty-of-civil-engineering",
-            element: <FacultyOfCivilEngineeringPage />,
+            element: <FacultyOfCivilEngineeringPage  />,
             handle: {
               crumb: () => <Link to="/">Faculty Of Civil Engineering</Link>,
             },
@@ -668,6 +758,15 @@ export const routes = [
               crumb: () => <Link to="/">Notable Alumni</Link>,
             },
           },
+          {
+            path: "placement-overview",
+            element: <PlacementOverviewPage />,
+            handle: {
+              crumb: () => <Link to="/">Placement Overview</Link>,
+            },
+          },
+
+          // PlacementOverviewPage
         ],
       },
       {
