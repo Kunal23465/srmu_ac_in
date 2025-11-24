@@ -18,7 +18,7 @@ const Banner: React.FC = () => {
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
-        autoplay: true,
+        // autoplay: true,
         autoplaySpeed: 2000,
         pauseOnHover: true,
     };
