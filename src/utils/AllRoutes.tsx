@@ -80,10 +80,10 @@ import AdmissionPolicyPage from "../pages/admissions/admission-policy/AdmissionP
 import FacultyOfCivilEngineeringPage from "../pages/academics/faculty-of-civil-engineering/FacultyOfCivilEngineeringPage";
 import PlacementOverviewPage from "../pages/placement/placement-overview/PlacementOverviewPage";
 
-import ConferenceDetailPage from "../components/research/publication/conference/ConferenceDetailPage";
 
 import InstituteofTechnologyPage from "../pages/academics/institutes/institute-department/InstituteofTechnologyPage";
 import DepartmentOfElectricalAndElectronicsEngineeringPage from "../pages/academics/institutes/institute-department/electricalAndElectronics/DepartmentOfElectricalAndElectronicsEngineeringPage";
+import ConferenceDetailPage from "../components/research/publication/conference/ConferenceDetailPage";
 interface IMatches {
   pathname: string;
   params: Params<string>;
