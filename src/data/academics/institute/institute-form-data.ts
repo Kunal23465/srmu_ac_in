@@ -1,17 +1,16 @@
 import { customeOverViewType } from "../../../types/home-data-type";
-import instituteoftech from "../../../assets/images/academics/institutes/instoftech-06052402531738.jpg"
-import instituteofbio from "../../../assets/images/academics/institutes/Institute-of-Bio-Sciences-Technology-17102303070795.jpg"
-import instituteofmang from "../../../assets/images/academics/institutes/corporate-manag-06052401232352.jpg"
-import instituteofagri from "../../../assets/images/academics/institutes/agri-06052403361755.jpg"
-import instituteoflegal from "../../../assets/images/academics/institutes/legal-07052411041620.jpg"
-import instituteofpharmacy from "../../../assets/images/academics/institutes/dpharma--08022401004122.jpg"
-import instituteofmedia from "../../../assets/images/academics/institutes/media1-06052403225269.jpg"
-import instituteofnatural from "../../../assets/images/academics/institutes/naturalscience-06052403201478.jpg"
-import instituteofpharmaceutical from "../../../assets/images/academics/institutes/pharmaceutical-12022411152655.jpg"
-import instituteofedu from "../../../assets/images/academics/institutes/economics--08022401082492.jpg"
-import instituteofpolytech from "../../../assets/images/academics/institutes/polytechnic11-08022412560314.jpg"
+import instituteoftech from "../../../assets/images/academics/institutes/instoftech-06052402531738.jpg";
+import instituteofbio from "../../../assets/images/academics/institutes/Institute-of-Bio-Sciences-Technology-17102303070795.jpg";
+import instituteofmang from "../../../assets/images/academics/institutes/corporate-manag-06052401232352.jpg";
+import instituteofagri from "../../../assets/images/academics/institutes/agri-06052403361755.jpg";
+import instituteoflegal from "../../../assets/images/academics/institutes/legal-07052411041620.jpg";
+import instituteofpharmacy from "../../../assets/images/academics/institutes/dpharma--08022401004122.jpg";
+import instituteofmedia from "../../../assets/images/academics/institutes/media1-06052403225269.jpg";
+import instituteofnatural from "../../../assets/images/academics/institutes/naturalscience-06052403201478.jpg";
+import instituteofpharmaceutical from "../../../assets/images/academics/institutes/pharmaceutical-12022411152655.jpg";
+import instituteofedu from "../../../assets/images/academics/institutes/economics--08022401082492.jpg";
+import instituteofpolytech from "../../../assets/images/academics/institutes/polytechnic11-08022412560314.jpg";
 import * as Yup from "yup";
-
 
 export const AcademicsOverviewData: customeOverViewType = {
   heading: "Academics",
@@ -19,16 +18,14 @@ export const AcademicsOverviewData: customeOverViewType = {
     "SRMU is committed to leveraging its wide-ranging facilities to world-class standards with a goal to provide the best academia and professional resources and to prepare students for global opportunities. This makes SRMU a repository of academic and extra-curricular excellence with its state-of-the-art infrastructure and amenities. University is a confluence of academic, cultural and intellectual resources. It seeks to achieve the highest levels of distinction in the innovation and transmission of knowledge and understanding. ",
 };
 
-
-
 export interface Institute {
   id: number;
   title: string;
   description: string;
   departments: number;
   image: string;
+  path?: string;
 }
-
 
 export const institutes: Institute[] = [
   {
@@ -37,7 +34,8 @@ export const institutes: Institute[] = [
     description:
       "The Institute of Technology is committed to provide focused learning in the fields of engineering with an aim of creating human resources with knowledge and skills to contribute successfully to a complex world.",
     departments: 5,
-    image: instituteoftech
+    image: instituteoftech,
+    path: "/academics/institutes-info/institute-of-technology",
   },
   {
     id: 2,
@@ -45,7 +43,8 @@ export const institutes: Institute[] = [
     description:
       "Biotechnology encompasses the applications of understanding of the biological systems to improve human life by addressing challenges and issues facing agricultural sciences, medical sciences, food sciences, etc.",
     departments: 3,
-    image: instituteofbio
+    image: instituteofbio,
+    path: "/academics/institutes-info/institute-of-biosciences-and-technology",
   },
   {
     id: 3,
@@ -53,7 +52,8 @@ export const institutes: Institute[] = [
     description:
       "The Institute of Management, Commerce and Economics (IMCE) was started in the year 2012. IMCE seeks to be a trailblazer in management education through strong academic-industry collaboration for international alliances.",
     departments: 2,
-    image: instituteofmang
+    image: instituteofmang,
+    path: "/academics/institutes-info/institute-of-management-commerce-and-economics"
   },
   {
     id: 4,
@@ -61,31 +61,34 @@ export const institutes: Institute[] = [
     description:
       "Journalism and Mass Communication study is an encouragement to think about the forces involved in giving it shape. Mass Media industry is one of the fastest growing industries with the mission of social conscience.",
     departments: 1,
-    image: instituteofmedia
+    image: instituteofmedia,
+    path: "/academics/institutes-info/institute-of-media-studies"
   },
   {
-    id:5,
+    id: 5,
     title: "Institute of Natural Sciences and Humanities",
     description:
       "The Institute boasts of being the heart and soul of the University as its various disciplines of knowledge is essentially required with all the academic programs that run across the University.",
     departments: 4,
-    image: instituteofnatural
+    image: instituteofnatural,
+    path: "/academics/institutes-info/institute-of-natural-sciences-and-humanities"
   },
   {
     id: 6,
     title: "Institute of Pharmaceutical Sciences",
-    description:
-      "Due to its integration of chemistry and health sciences, pharmaceutical science is both a unique field and extremely important to human survival.",
+    description: "Due to its integration of chemistry and health sciences, pharmaceutical science is both a unique field and extremely important to human survival.",
     departments: 1,
-    image: instituteofpharmaceutical
+    image: instituteofpharmaceutical,
+    path: "/academics/institutes-info/institute-of-pharmaceutical-sciences1"
   },
   {
     id: 7,
     title: "Institute of Agricultural Sciences and Technology",
     description:
       "The Indian Council of Agricultural Sciences has already recognized the B.Sc.(Hons.) Agriculture 4 Years as a professional Degree with consequential benefits to the Students.",
-    departments: 1, 
-    image: instituteofagri
+    departments: 1,
+    image: instituteofagri,
+    path: "/academics/institutes-info/institute-of-agricultural-sciences-and-technology"
   },
   {
     id: 8,
@@ -93,7 +96,8 @@ export const institutes: Institute[] = [
     description:
       "The Institute of Legal Studies is a convergence of academic, cultural and intellectual resources. It aims at achieving the highest levels of distinction in the innovation and transmission of knowledge and understanding.",
     departments: 1,
-    image: instituteoflegal
+    image: instituteoflegal,
+    path: "/academics/institutes-info/institute-of-legal-studies1"
   },
   {
     id: 9,
@@ -101,7 +105,8 @@ export const institutes: Institute[] = [
     description:
       "Pharmacy is one of the unique professions and also very vital for the sustenance of human lives as it involves the combination of chemical science with health sciences.",
     departments: 1,
-    image: instituteofpharmacy
+    image: instituteofpharmacy,
+    path: "/academics/institutes-info/institute-of-pharmacy"
   },
   {
     id: 10,
@@ -109,7 +114,8 @@ export const institutes: Institute[] = [
     description:
       "Institute of Education and Research, Shri Ramswoop Memorial University offers Bachelor's degree course. Institute tries its best to produce teachers embodied with traditions values.",
     departments: 1,
-    image: instituteofedu
+    image: instituteofedu,
+    path: "/academics/institutes-info/institute-of-education-and-research"
   },
   {
     id: 11,
@@ -117,13 +123,10 @@ export const institutes: Institute[] = [
     description:
       "The Institute was established during the academic session 2015-16 and commenced its curriculum for Diploma in Mechanical, Civil, Electrical, Electronics and Communication and Computer Science Engineering.",
     departments: 1,
-    image: instituteofpolytech
-  }
+    image: instituteofpolytech,
+    path: "/academics/institutes-info/srmu-polytechnic1"
+  },
 ];
-
-
-
-
 
 export const validationSchemaForEnquiry = Yup.object().shape({
   firstName: Yup.string().required("First Name is required"),

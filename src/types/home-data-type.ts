@@ -48,7 +48,8 @@ export interface otherDataTypes {
 }
 export interface customeOverViewType {
   heading: string;
-  content: string
+  content: string;
+  counterSibling?: string;
   otherData?: otherDataTypes[]
   links?: LinkType[];
 }

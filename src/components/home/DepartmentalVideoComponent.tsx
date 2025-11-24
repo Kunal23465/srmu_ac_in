@@ -35,6 +35,7 @@ const videos: VideoItem[] = [
 
 export default function DepartmentalVideo() {
     const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
+    const [activeSlide, setActiveSlide] = useState(0);
 
     const settings = {
         dots: false,
@@ -42,6 +43,7 @@ export default function DepartmentalVideo() {
         speed: 600,
         slidesToShow: 3,
         slidesToScroll: 1,
+        beforeChange: (_current: number, next: number) => setActiveSlide(next),
         autoplay: false,
         arrows: true,
         responsive: [
@@ -62,44 +64,48 @@ export default function DepartmentalVideo() {
 
             <div className="container mx-auto px-4">
                 <Slider {...settings}>
-                    {videos.map((video) => (
-                        <div key={video.id} className="px-3">
-                            <div className="relative group rounded-xl overflow-hidden shadow-lg cursor-pointer">
+                    {videos.map((video,index) => {
+                        const isSecondImage = (activeSlide + 1) % videos.length === index;
+                        return (
+                            <div key={video.id} className="px-3">
+                                <div className="relative group rounded-xl overflow-hidden shadow-lg cursor-pointer">
 
-                                {/* Thumbnail */}
-                                <img
-                                    src={video.thumbnail}
-                                    className="w-full h-[320px] object-cover rounded-xl"
-                                />
+                                    {/* Thumbnail */}
+                                    <img
+                                        src={video.thumbnail}
+                                        className={`w-full h-[320px] ${isSecondImage ? " w-full lg:h-[400px]" : " w-full "
+                  } object-cover rounded-xl`}
+                                    />
 
-                                {/* Play Button */}
-                                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                                    <button
-                                        onClick={(e) => {
-                                            e.stopPropagation(); // prevent card click
-                                            setSelectedVideo(video.id);
-                                        }}
-                                        className="bg-yellow-500 hover:bg-yellow-400 transition p-5 rounded-full shadow-xl pointer-events-auto"
-                                    >
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            className="h-10 w-10 text-white"
-                                            fill="currentColor"
-                                            viewBox="0 0 20 20"
+                                    {/* Play Button */}
+                                    <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                                        <button
+                                            onClick={(e) => {
+                                                e.stopPropagation(); // prevent card click
+                                                setSelectedVideo(video.id);
+                                            }}
+                                            className="bg-yellow-500 hover:bg-yellow-400 transition p-5 rounded-full shadow-xl pointer-events-auto"
                                         >
-                                            <path d="M6.5 5.5l8 4.5-8 4.5v-9z" />
-                                        </svg>
-                                    </button>
-                                </div>
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                className="h-10 w-10 text-white"
+                                                fill="currentColor"
+                                                viewBox="0 0 20 20"
+                                            >
+                                                <path d="M6.5 5.5l8 4.5-8 4.5v-9z" />
+                                            </svg>
+                                        </button>
+                                    </div>
 
 
-                                {/* Title */}
-                                <div className="absolute bottom-0 w-full bg-black/50 text-white text-lg font-semibold px-4 py-3">
-                                    {video.title}
+                                    {/* Title */}
+                                    <div className="absolute bottom-0 w-full bg-black/50 text-white text-lg font-semibold px-4 py-3">
+                                        {video.title}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    ))}
+                        )
+                    })}
                 </Slider>
             </div>
 

@@ -49,9 +49,9 @@ export const CivildepartmentVMData = [
   {
     id: 1,
     bgColor: "#E5F3FC",
-    img: missionImg,
-    heading: "Mission",
-    points: [
+    imageUrl: missionImg,
+    title: "Mission",
+    description: [
       "To provide a rigorous hands-on engineering education integrated in a student-centered environment equipped with life-long learning skills necessary for professional practice.",
       "To prepare our students to be technical, business and global leaders of tomorrow by inculcating team work and communication skills.",
       "To promote research, development and consultancy through constant interaction with industry and research organizations.",
@@ -61,9 +61,9 @@ export const CivildepartmentVMData = [
   {
     id: 2,
     bgColor: "#FFF2D2",
-    img: vissionImg,
-    heading: "Vision",
-    points: [
+    imageUrl: vissionImg,
+    title: "Vision",
+    description: [
       "To produce highly competent Civil Engineers of international standards for catering to local, national and global needs.",
       "To provide consultancy, research and development in various fields of Civil Engineering to meet current and future challenges.",
     ],

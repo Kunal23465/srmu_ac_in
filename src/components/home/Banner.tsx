@@ -24,7 +24,7 @@ const Banner: React.FC = () => {
     };
 
     return (
-        <div className={`w-full relative`}>
+        <div className={`w-full relative overflow-hidden`}>
             {/* Heading Section */}
 
             {/* Facilities Slider */}

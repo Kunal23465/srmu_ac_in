@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Institute } from "../../data/academics/institute/institute-form-data";
 import { FaArrowRight } from "react-icons/fa";
 
@@ -30,10 +31,10 @@ export const CustomInstituteCards: React.FC<CardProps> = ({ institute }) => {
                 <button className="px-12 py-4 rounded-xl border border-yellow-400 text-sm font-medium 
                                    cursor-pointer transition active:scale-95
                                    group-hover:bg-yellow-400 hover:bg-yellow-400 hover:border-yellow-400">
-                    <div className="flex items-center gap-2">
+                    <Link to={institute.path} className="flex items-center gap-2">
                         <span>MORE INFO</span>
                         <FaArrowRight />
-                    </div>
+                    </Link>
                 </button>
             </div>
         </div>
