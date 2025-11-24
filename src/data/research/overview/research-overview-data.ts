@@ -1,7 +1,37 @@
 
 import { customeOverViewType } from "../../../types/home-data-type";
 import { FacilityTypes, otherFacilitiesCardLayoutDataTypes } from "../../../types/overview-data-type";
-
+import img1 from "../../../assets/images/research/overview/whatsapp-image-2025-02-05-at-16.01.33-05022504034844.jpeg"
+import img2 from "../../../assets/images/research/overview/whatsapp-image-2025-11-03-at-15.21.11-1--04112510102869.jpeg";
+import img3 from "../../../assets/images/research/overview/prof.-b-m-dixit-photo-10062510410818.jpg";
+import img4 from "../../../assets/images/research/overview/dr.-manju-singh-11zon-2602240551361.jpg";
+import img5 from "../../../assets/images/research/overview/dsf-13022411374143.jpg";
+import img6 from "../../../assets/images/research/overview/whatsapp-image-2025-02-05-at-16.01.33-05022504034844.jpeg";
+import img7 from "../../../assets/images/research/overview/cs-13022411412647.jpg";
+import img8 from "../../../assets/images/research/overview/dfds-13022411455919.jpg";
+import img9 from "../../../assets/images/research/overview/fdg-13022412030547.jpg";
+import img10 from "../../../assets/images/research/overview/bf-13022412144875.jpg";
+import img11 from "../../../assets/images/research/overview/gsd-13022412174358.jpg";
+import img12 from "../../../assets/images/research/overview/gdf-13022412224824.jpg";
+import img13 from "../../../assets/images/research/overview/dfg-13022412245747.jpg";
+import icon1 from "../../../assets/images/research/overview/add-icon1-23102305153612.png"
+import icon2 from "../../../assets/images/research/overview/add-icon2-23102305160684.png"
+import icon3 from "../../../assets/images/research/overview/add-icon3-23102305155982.png"
+import icon4 from "../../../assets/images/research/overview/add-icon4-23102305161699.png"
+import img14 from "../../../assets/images/research/overview/policy-for-collaboration-(1)-11112303350010.jpg";
+import img15 from "../../../assets/images/research/overview/policy-for-consultancy-(1)-11112303322262.jpg";
+import img16 from "../../../assets/images/research/overview/policy-for-research-promotion-(1)-11112303343481.jpg"
+import img17 from "../../../assets/images/research/overview/researhethics-0605240238253.jpg"
+import img18 from "../../../assets/images/research/overview/Policy-for-Research-Fund-11112303330249.jpg"
+import img19 from "../../../assets/images/research/overview/Policy-for-IPR-11112303320677.jpg"
+import img20 from "../../../assets/images/research/overview/514x520-1602241232531.jpg";
+import pdf1 from "../../../assets/pdf/research/overview/Policy-for-Research-Promotion-031123124058.pdf";
+import pdf2 from "../../../assets/pdf/research/overview/Policy-for-Collaboration-031123124758.pdf";
+import pdf3 from "../../../assets/pdf/research/overview/Policy-for-Consultancy-031123124839.pdf";
+import pdf4 from "../../../assets/pdf/research/overview/Policy-for-Academic-Integrity-in-Research_2019-20-031123124907.pdf"
+import pdf5 from "../../../assets/pdf/research/overview/Policy-for-Allocation-of-University-Research-Fund--031123124939.pdf"
+import pdf6 from "../../../assets/pdf/research/overview/Model-Guidelines-on-Implementation-of-IPR-Policy_2-031123125149.pdf"
+import pdf7 from "../../../assets/pdf/research/overview/phd-ordinance-session-2022-23-130224114827.pdf"
 export const ResearchOverviewData: customeOverViewType = {
     heading: "Research Overview",
     content:
@@ -13,7 +43,7 @@ export const ResearchOverviewData: customeOverViewType = {
 export const DirectorSectionData = {
 
     imageUrl:
-        "https://srmu.ac.in/storage/teams/whatsapp-image-2025-02-05-at-16.01.33-05022504034844.jpeg",
+        img1,
     tab1: {
         name: "Dr. Rajeev Kumar",
         designation: "Offg. Deputy Director Res. & Cons., SRMU",
@@ -43,84 +73,84 @@ export const researchMembers: ResearchMember[] = [
         name: "Prof. (Dr.) Vijay Tiwari",
         designation: "Vice Chancellor",
         position: "Chairman",
-        image: "https://srmu.ac.in/storage/teams/whatsapp-image-2025-11-03-at-15.21.11-1--04112510102869.jpeg",
+        image: img2,
     },
     {
         id: 2,
         name: "Prof. (Dr.) B.M. Dixit",
         designation: "Director Student Welfare, SRMU",
         position: "Member (Ex-officio)",
-        image: "https://srmu.ac.in/storage/teams/prof.-b-m-dixit-photo-10062510410818.jpg",
+        image: img3,
     },
     {
         id: 3,
         name: "Prof. (Dr.) Manju Pandey",
         designation: "Director IQP, SRMU",
         position: "Member (Ex-officio)",
-        image: "https://srmu.ac.in/storage/teams/dr.-manju-singh-11zon-2602240551361.jpg",
+        image: img4,
     },
     {
         id: 4,
         name: "Prof. V. N. Rajasekharan Pillai",
         designation: "Ex. Chairman/Vice Chairman, University Grants Commission",
         position: "Hon’ble Member (External)",
-        image: "https://srmu.ac.in/storage/teams/dr.-manju-singh-11zon-2602240551361.jpg",
+        image: img5,
     },
     {
         id: 5,
         name: "Dr. Rajeev Kumar",
         designation: "Offg. Deputy Director Research & Consultancy, SRMU",
         position: "Convenor (Ex-officio)",
-        image: "https://srmu.ac.in/storage/teams/whatsapp-image-2025-02-05-at-16.01.33-05022504034844.jpeg",
+        image: img6,
     },
     {
         id: 6,
         name: "Prof. Mohd. Muzammil",
         designation: "Ex. Vice Chancellor, M.J.P. Rohilkhand University, Bareilly",
         position: "Hon’ble Member (External)",
-        image: "https://srmu.ac.in/storage/teams/cs-13022411412647.jpg",
+        image: img7,
     },
     {
         id: 7,
         name: "Prof. Alok Dhawan",
         designation: "Director, CSIR-IITR, Lucknow",
         position: "Hon’ble Member (External)",
-        image: "https://srmu.ac.in/storage/teams/dfds-13022411455919.jpg",
+        image: img8,
     },
     {
         id: 8,
         name: "Dr. Prabodh Trivedi",
         designation: "Director, CSIR-CIMAP, Lucknow",
         position: "Hon’ble Member (External)",
-        image: "https://srmu.ac.in/storage/teams/fdg-13022412030547.jpg",
+        image: img9,
     },
     {
         id: 9,
         name: "Prof. A.P. Mittal",
         designation: "Ex. Member Secretary, AICTE, GoI",
         position: "Hon’ble Member (External)",
-        image: "https://srmu.ac.in/storage/teams/bf-13022412144875.jpg",
+        image: img10,
     },
     {
         id: 10,
         name: "Dr. Madhu Dixit",
         designation: "Ex. Director, CSIR-CDRI, Lucknow",
         position: "Hon’ble Member (External)",
-        image: "https://srmu.ac.in/storage/teams/gsd-13022412174358.jpg",
+        image: img11,
     },
     {
         id: 11,
         name: "Prof. Shubhini Saraf",
         designation: "Professor, BBAU, Lucknow",
         position: "Hon’ble Member (External)",
-        image: "https://srmu.ac.in/storage/teams/gdf-13022412224824.jpg",
+        image: img12,
     },
     {
         id: 12,
         name: "Dr. D.K. Srivastava",
         designation: "Jt. Director CSTUP, Lucknow",
         position: "Hon’ble Member (External)",
-        image: "https://srmu.ac.in/storage/teams/dfg-13022412245747.jpg",
+        image: img13,
     },
 ];
 export interface ContactInfo {
@@ -144,22 +174,22 @@ export const contactInfo: ContactInfo[] = [
     {
         label: "ROOM NO.",
         value: "301, 3rd Floor, B-2 Block, SRMU Campus",
-        icon: "https://srmu.ac.in/storage/common-section/add-icon1-23102305153612.png",
+        icon: icon1,
     },
     {
         label: "CONTACT NO.",
         value: "7784940188",
-        icon: "https://srmu.ac.in/storage/common-section/add-icon2-23102305160684.png",
+        icon: icon2,
     },
     {
         label: "EXT. NO",
         value: "440, 442",
-        icon: "https://srmu.ac.in/storage/common-section/add-icon3-23102305155982.png",
+        icon: icon3,
     },
     {
         label: "EMAILS",
         value: ["director.research@srmuc.ac.in", "dd.research@srmuc.ac.in", "research@srmuc.ac.in"],
-        icon: "https://srmu.ac.in/storage/common-section/add-icon4-23102305161699.png",
+        icon: icon4,
     },
 ];
 
@@ -220,52 +250,53 @@ export const researchInstitutes: Institute[] = [
     },
 ];
 export const otherfacilitiesCardData: FacilityTypes[] = [
+
     {
         title: "Policy for Research Promotion",
         description: `
       SRMU's research promotion policy empowers and incentivizes faculty and students to engage in impactful research through grants, collaboration opportunities, and infrastructure support
     `,
-        imageUrl: "https://srmu.ac.in/storage/common-section/researhethics-0605240238253.jpg",
-        pdfUrl: "https://srmu.ac.in/storage/common-section/Policy-for-Research-Promotion-031123124058.pdf",
+        imageUrl: img16,
+        pdfUrl: pdf1,
     },
     {
         title: "Policy for Collaboration",
         description: `
           SRMU's research collaboration policy encourages dynamic partnerships, fostering interdisciplinary cooperation and knowledge exchange to drive impactful and innovative research outcomes.`,
-        imageUrl: "https://srmu.ac.in/storage/common-section/Policy-for-Research-Fund-11112303330249.jpg",
-        pdfUrl: "https://srmu.ac.in/storage/common-section/Policy-for-Collaboration-031123124758.pdf",
+        imageUrl: img14,
+        pdfUrl: pdf2,
     },
     {
         title: "Policy for Consultancy",
         description: `
           SRMU's research consultancy policy promotes collaborative projects, enabling faculty and students to offer expertise and solutions to industry challenges, fostering valuable partnerships.`,
-        imageUrl: "https://srmu.ac.in/storage/common-section/Policy-for-Research-Fund-11112303330249.jpg",
-        pdfUrl: "https://srmu.ac.in/storage/common-section/Policy-for-Consultancy-031123124839.pdf",
+        imageUrl: img15,
+        pdfUrl: pdf3,
     },
+
     {
         title: "Policy for Research Ethics",
         description: `
       SRMU's research ethics policy upholds the highest standards, ensuring integrity, transparency, and responsible conduct in all research activities, fostering a culture of ethical inquiry.
     `,
-        imageUrl: "https://srmu.ac.in/storage/common-section/policy-for-research-promotion-(1)-11112303343481.jpg",
-        pdfUrl: "https://srmu.ac.in/storage/common-section/Policy-for-Academic-Integrity-in-Research_2019-20-031123124907.pdf",
+        imageUrl: img17,
+        pdfUrl: pdf4,
     },
     {
         title: "Policy for Research Fund",
         description: `
      SRMU's research fund policy supports and allocates resources for innovative projects, empowering faculty and students to pursue impactful research across diverse disciplines.
     `,
-        imageUrl: "https://srmu.ac.in/storage/common-section/policy-for-collaboration-(1)-11112303350010.jpg",
-        pdfUrl: "https://srmu.ac.in/storage/common-section/Policy-for-Allocation-of-University-Research-Fund--031123124939.pdf",
+        imageUrl: img18,
+        pdfUrl: pdf5,
     },
     {
         title: "Policy for IPR",
         description:
             "SRMU's research IPR (Intellectual Property Rights) policy safeguards and promotes the ownership, protection, and commercialization of intellectual property arising from research endeavors.",
-        imageUrl: "https://srmu.ac.in/storage/common-section/policy-for-consultancy-(1)-11112303322262.jpg",
-        pdfUrl: "https://srmu.ac.in/storage/common-section/Model-Guidelines-on-Implementation-of-IPR-Policy_2-031123125149.pdf",
+        imageUrl: img19,
+        pdfUrl: pdf6,
     },
-
 ];
 
 export const otherFacilitiesCardLayoutData: otherFacilitiesCardLayoutDataTypes = {
@@ -280,6 +311,6 @@ export const phdOrdinanceData = {
     description: `The Ph.D. programme in the university from academic session 2022–2023 (even semester)
   and onwards will be governed by this ordinance which is written in accordance with
   the University Grant Commission Regulations, 2022.`,
-    imageUrl: "https://srmu.ac.in/storage/common-section/514x520-1602241232531.jpg",
-    pdfUrl: "https://srmu.ac.in/storage/common-section/phd-ordinance-session-2022-23-130224114827.pdf",
+    imageUrl: img20,
+    pdfUrl: pdf7,
 };
