@@ -3,9 +3,11 @@ import Slider from "react-slick";
 import Classes from "../../../../utils/styles/Global.module.css";
 import { ArrowButton } from "../../../../utils/custom/CustomCarousel";
 import { PublicationConferenceData } from "../../../../data/research/publication/publication-data";
+import { useNavigate } from "react-router-dom";
 const Conference: React.FC = () => {
   const sliderRef = React.useRef<Slider>(null);
   const [active, setActive] = useState("national");
+  const navigate = useNavigate();
   // Slick slider settings
   const settings = {
     dots: false,
@@ -71,7 +73,20 @@ const Conference: React.FC = () => {
           <Slider ref={sliderRef} {...settings} className="manage-academis">
             {PublicationConferenceData.map((facility, index) => {
               return (
-                <div key={index} className="p-2  my-4 ">
+                <div
+                  key={index}
+                  className="p-2  my-4 "
+                  onClick={() =>
+                    navigate(`/research/conference/${facility.title}`, {
+                      state: {
+                        title: facility.title,
+                        description: facility?.description,
+                        detailDescription: facility?.detailDescription,
+                        images: facility?.images,
+                      },
+                    })
+                  }
+                >
                   <div className=" bg-white border-3 border-gray-100  hover:border-amber-300 transition-all duration-200  rounded-xl flex flex-col h-full shadow-md hover:shadow-lg">
                     <img src={facility.img} alt={facility.title} className="w-full h-[200px] object-cover rounded-t-xl mb-4" />
                     <div className="h-[400px] overflow-y-auto faculty-card-scrollbar p-4">

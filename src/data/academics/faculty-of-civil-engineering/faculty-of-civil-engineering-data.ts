@@ -18,7 +18,8 @@ export interface DepartmentVMType {
   description: string[]; // bullet points
 }
 export interface FeeTableRow {
-  [key: string]: string | number; // dynamic cells
+  [key: string]: string | number | React.ReactNode; 
+  eligibilityContent?: string | React.ReactNode;
 }
 
 export interface FeeTableData {
@@ -26,6 +27,7 @@ export interface FeeTableData {
   rows: FeeTableRow[];
   notes: string[];
 }
+
 
 export interface departmentHighlightscardType {
   image: string;

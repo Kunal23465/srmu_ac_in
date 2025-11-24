@@ -1,5 +1,17 @@
 import { customeOverViewType } from "../../../types/home-data-type";
-
+import pdf1 from "../../../assets/pdf/research/process-and initiative/general-aptitude-question-paper-rat-2021-130224013624.pdf";
+import pdf2 from "../../../assets/pdf/research/process-and initiative/RAT_A-021123010319.pdf";
+import pdf3 from "../../../assets/pdf/research/process-and initiative/notice-23-final-result-for-admission-in-ph.d.-prog-130224120013.pdf";
+import pdf4 from "../../../assets/pdf/research/process-and initiative/2-Pre-PhD_Course_workdoc-1-021123031607.pdf";
+import pdf5 from "../../../assets/pdf/research/process-and initiative/PhD_Degree_Program_procedure-converted-021123031723.pdf";
+import pdf6 from "../../../assets/pdf/research/process-and initiative/phd-awarded-list-2023-24-130224120702.pdf";
+import pdf7 from "../../../assets/pdf/research/process-and initiative/Policy-for-Allocation-of-University-Research-Fund--021123034625.pdf";
+import img1 from "../../../assets/images/research/process-and-initiative/Institutions-16112310311961.jpg";
+import img2 from "../../../assets/images/research/process-and-initiative/ec-management-02022401090025.jpg";
+import img3 from "../../../assets/images/research/process-and-initiative/CIIE-IIH-16112310304414.jpg";
+import pdf8 from "../../../assets/pdf/research/process-and initiative/iic-compressed-130224033132.pdf";
+import pdf9 from "../../../assets/pdf/research/process-and initiative/centre-of-energy-conservation-and-management-130224033114.pdf";
+import pdf10 from "../../../assets/pdf/research/process-and initiative/CIIE_IIH-(1)-021123125257.pdf";
 export const ProcessInitiativeOverviewData: customeOverViewType = {
     heading: "Process And Initiatives",
     content:
@@ -59,15 +71,15 @@ The institute/faculty in the university shall be, in general, the place of work 
 export const pdfResources = [
     {
         title: "Syllabus of RAT",
-        link: "https://srmu.ac.in/storage/common-section/general-aptitude-question-paper-rat-2021-130224013624.pdf",
+        link: pdf1,
     },
     {
         title: "Previous Papers",
-        link: "https://srmu.ac.in/storage/common-section/RAT_A-021123010319.pdf",
+        link: pdf2,
     },
     {
         title: "Admission Results",
-        link: "https://srmu.ac.in/storage/common-section/notice-23-final-result-for-admission-in-ph.d.-prog-130224120013.pdf",
+        link: pdf3,
     },
 ];
 
@@ -105,22 +117,22 @@ export const phdPdfResources = [
     {
         title: "Pre- Ph.D. Course",
         description:"Pre-Ph.D. courses at SRMU provide essential foundational knowledge and skills, preparing aspiring scholars for the rigorous doctoral journey by focusing on key subject areas and research methodologies.",
-        link: "https://srmu.ac.in/storage/common-section/2-Pre-PhD_Course_workdoc-1-021123031607.pdf",
+        link: pdf4,
     },
     {
         title: "Ph.D. Program Process",
         description:"SRMU's Ph.D. program process involves a seamless journey, from admission guided by UGC regulations to rigorous research work, culminating in a dissertation.",
-        link: "https://srmu.ac.in/storage/common-section/PhD_Degree_Program_procedure-converted-021123031723.pdf",
+        link: pdf5,
     },
     {
         title: "Ph.D. Degree Awarded",
         description:"At SRMU, the Ph.D. degree is awarded upon successful completion of a comprehensive research project, demonstrating scholarly excellence and contributing valuable insights to the chosen field of study.",
-        link: "https://srmu.ac.in/storage/common-section/phd-awarded-list-2023-24-130224120702.pdf",
+        link: pdf6,
     },
     {
         title: "University Research Fellowship",
         description: "The University offers an opportunity to exceptional scholars to engage in advanced research, financial support and mentorship to drive impactful contributions in their respective fields.",
-        link: "https://srmu.ac.in/storage/common-section/Policy-for-Allocation-of-University-Research-Fund--021123034625.pdf",
+        link: pdf7,
     },
     
 ];
@@ -128,8 +140,8 @@ export const phdPdfResources = [
 export const institutionCouncilData = {
     title: "Institution's innovation Council",
     description: `Ministry of Education (MoE), Govt. of India has established ‘MoE’s Institution’s Innovation Cell (IIC)’ to systematically foster the culture of Innovation amongst all Higher Education Institutions (HEIs). The primary mandate of IIC is to encourage, inspire and nurture young students by supporting them to work with new ideas and transform them into prototypes while they are in formative years.`,
-    imageUrl: "https://srmu.ac.in/storage/common-section/Institutions-16112310311961.jpg",
-    pdfUrl: "https://srmu.ac.in/storage/common-section/iic-compressed-130224033132.pdf",
+    imageUrl: img1,
+    pdfUrl: pdf8,
 };
 
 
@@ -147,16 +159,16 @@ export const researchCenters: ResearchCenterItem[] = [
         title: "EC & Management",
         description:
             "The EC and Management research center provides opportunities for innovative research contributions in the fields of finance, business, and management.",
-        image: "https://srmu.ac.in/storage/common-section/ec-management-02022401090025.jpg",
-        pdfUrl: "https://srmu.ac.in/storage/common-section/centre-of-energy-conservation-and-management-130224033114.pdf",
+        image: img2,
+        pdfUrl: pdf9,
     },
     {
         id: 2,
         title: "CIIE & IIH",
         description:
             "The CIIE (Center for Innovation, Incubation, and Entrepreneurship) and IIH Research Centers provide a vibrant space for groundbreaking research projects in entrepreneurship and health sciences.",
-        image: "https://srmu.ac.in/storage/common-section/CIIE-IIH-16112310304414.jpg",
-        pdfUrl: "https://srmu.ac.in/storage/common-section/CIIE_IIH-(1)-021123125257.pdf",
+        image: img3,
+        pdfUrl: pdf10,
     },
 
 ];

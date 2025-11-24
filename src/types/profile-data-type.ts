@@ -1,3 +1,4 @@
+
 export interface ProfileData {
   name: string;
   title: string;
@@ -5,15 +6,16 @@ export interface ProfileData {
   office: string;
   imageSrc: string;
   experienceTotal: string;
-  experienceBreakdown: string;
-  supervisorDetail: string;
+  experienceBreakdown?: string;
+  supervisorDetail?: string;
   achievements: string[];
-  consultancyCount: number;
-  consultancyCost: string;
-  fundingAgencies: string;
-  eiaProjects: string[];
-  totalEiaProjects: string;
+  consultancyCount?: number;
+  consultancyCost?: string;
+  fundingAgencies?: string;
+  eiaProjects?: string[];
+  totalEiaProjects?: string;
   profileButtonText: string;
   profileButtonLink: string;
   backgroundColor: string;
+  modalContent: React.ReactNode;  
 }

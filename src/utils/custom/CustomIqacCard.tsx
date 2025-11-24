@@ -18,7 +18,7 @@ interface propsModal {
     isExpanded: number | null;
     id: number;
     setIsExpanded: any;
-    content: any;
+    content: string | React.ReactNode;
 }
 
 export const CustomModal: React.FC<propsModal> = ({ isExpanded, id, setIsExpanded, content }) => {
@@ -26,7 +26,7 @@ export const CustomModal: React.FC<propsModal> = ({ isExpanded, id, setIsExpande
         <>
             {isExpanded == id && (
                 <>
-                    <div className="backdrop-blur-sm bg-white/15 w-full h-screen fixed top-0 left-0 z-[999]"></div>
+                    <div className="backdrop-blur-sm bg-white/15 w-full h-screen fixed top-0 left-0 z-999"></div>
                     <div className="w-[90%]  max-w-[700px] xl:max-w-[1000px]  fixed top-[50%] left-[50%] border-t-4 border-b-4 border-t-[#ffb703] border-b-[#0f4a85] bg-white translate-x-[-50%] translate-y-[-50%] z-[9999]">
                         <div className="max-h-[650px] faculty-card-scrollbar overflow-y-auto px-5 py-10">
                             <span
@@ -36,7 +36,12 @@ export const CustomModal: React.FC<propsModal> = ({ isExpanded, id, setIsExpande
                                 <MdClose size={18} />
                             </span>
 
-                            <div dangerouslySetInnerHTML={{ __html: content }} />
+                            {typeof content === "string" ? (
+                                <div dangerouslySetInnerHTML={{ __html: content }} />
+                            ) : (
+                                <div>{content}</div>
+                            )}
+
                         </div>
                     </div>
                 </>
@@ -73,7 +78,7 @@ const CustomIqacCard: React.FC<IqacCardProps> = ({ title, icon, description, col
                 {/* Icon and Title Section */}
                 <div className="flex flex-col items-center justify-center w-full">
                     {icon && <img src={icon} alt={title} className="w-24 h-24 mb-2 object-cover" />}
-                    <h3 className="font-semibold text-white text-2xl text-center w-full max-w-[160px] mx-auto mt-5">{title}</h3>
+                    <h3 className="font-semibold text-white text-2xl text-center w-full max-w-40 mx-auto mt-5">{title}</h3>
                 </div>
 
                 {/* Hover Content */}
