@@ -15,9 +15,9 @@ const TopHeader: React.FC = () => {
                         <div>
                             <ul className="flex items-center text-[13px] flex-row gap-2 ">
                                 <Link to="/notice">NOTICE |</Link>
-                               
+
                                 <Link to="/admission-enquiry">ADMISSION ENQUIRY |</Link>
-                                <Link to="/career">SHIFT SCHEDULE</Link>
+                                <Link to="/shift-schedule">SHIFT SCHEDULE</Link>
                             </ul>
                         </div>
                     </div>

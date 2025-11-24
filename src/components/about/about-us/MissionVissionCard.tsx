@@ -10,12 +10,10 @@ interface MissionVisionCardProps {
 const MissionVissionCard: React.FC<MissionVisionCardProps> = ({ image, heading, points }) => {
     const [showAll, setShowAll] = useState(false);
 
-    // Only show first two points initially
     const visiblePoints = showAll ? points : points.slice(0, 2);
 
     return (
         <div className="w-full sm:w-[90%] md:w-[45%] lg:w-[40%] xl:w-[30%] bg-white shadow-lg rounded-2xl overflow-hidden cursor-pointer transition-all duration-300">
-            {/* Image (only image zooms on hover) */}
             <div className="overflow-hidden">
                 <img
                     src={image}
@@ -24,7 +22,6 @@ const MissionVissionCard: React.FC<MissionVisionCardProps> = ({ image, heading, 
                 />
             </div>
 
-            {/* Content */}
             <div className="p-6">
                 <h2 className="text-2xl font-semibold text-[#1B3A6F] mb-4">{heading}</h2>
                 <ul className="list-disc list-inside text-gray-700 space-y-2">
@@ -33,7 +30,7 @@ const MissionVissionCard: React.FC<MissionVisionCardProps> = ({ image, heading, 
                             key={index}
                             className="leading-relaxed pl-1 marker:text-[#FFD700] text-justify"
                             style={{
-                                textIndent: "-0.8em", // ensures 2nd line aligns properly with first line text
+                                textIndent: "-0.8em",
                                 paddingLeft: "1.2em",
                             }}
                         >
@@ -42,7 +39,6 @@ const MissionVissionCard: React.FC<MissionVisionCardProps> = ({ image, heading, 
                     ))}
                 </ul>
 
-                {/* Read More Button */}
                 {!showAll && points.length > 2 && (
                     <div className="flex justify-end mt-4">
                         <button

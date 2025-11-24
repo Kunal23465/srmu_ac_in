@@ -20,7 +20,7 @@ const CustomOverviewSection: React.FC<CustomOverviewSectionProps> = ({ data }) =
         </div>
         <div className={`  ${otherData && otherData?.length > 0 ? "" : "md:pl-8 md:py-4"}`}>
           <div className="text-justify">
-            {typeof content === "string" ? <p>{content}</p> : content}
+            {typeof content === "string" ? <p style={{ whiteSpace: "pre-line" }} >{content}</p> : content}
           </div>
         </div>
       </div>

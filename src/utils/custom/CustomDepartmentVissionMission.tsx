@@ -1,38 +1,88 @@
-import React from "react";
-import { DepartmentVMType } from "../../data/academics/faculty-of-civil-engineering/faculty-of-civil-engineering-data";
+import { useState } from "react";
 
-interface Props {
-  data: DepartmentVMType;
+export interface VisionMissionData {
+    title: string;
+    description: string[];
+    buttonText?: string;
+    buttonBgColor?: string;
+    imageUrl: string;
+    bgColor?: string;
+
 }
 
-const CustomDepartmentVissionMission: React.FC<Props> = ({ data }) => {
-  return (
-   
-      <div
-        className="flex flex-col p-[38px] min-h-[530px] min-w-[530px] rounded-3xl shadow-md"
-        style={{ backgroundColor: data.bgColor }}
-      >
-        {/* Image */}
-        <img
-          src={data.img}
-          alt="logo"
-          className="w-[120px] h-[120px] object-contain mb-4"
-        />
+export interface VisionMissionProps {
 
-        {/* Heading */}
-        <h1 className="text-[3rem] font-semibold mb-4 text-[#023047] ">
-          {data.heading}
-        </h1>
+    data: {
+        vision: VisionMissionData;
+        mission: VisionMissionData;
+        backgroundColor: string;
+    };
+}
 
-        {/* List Items */}
-        <ul className="list-disc pl-5 pt-[10px] space-y-2 text-[#212529] marker:text-[1.8rem]">
-          {data.points.map((point, index) => (
-            <li key={index} >{point}</li>
-          ))}
-        </ul>
 
-      </div>
-  );
+const CustomInstitueVissionMissionCard: React.FC<VisionMissionProps> = ({
+    data,
+}) => {
+    const [activeTab, setActiveTab] = useState<"vision" | "mission">("vision");
+
+    const currentData =
+        activeTab === "vision" ? data.vision : data.mission;
+
+    return (
+        <div className="relative py-20">
+            <div
+                className={`relative ${currentData.bgColor} rounded-xl w-[1020px] overflow-visible text-white min-h-[500px]`}
+            >
+
+                <div className="pl-12 pr-80 flex flex-col justify-center h-full py-16 relative z-10">
+
+                    <div className="border border-white w-auto self-start rounded-full px-4 py-2 inline-block mb-6 text-md font-semibold">
+                        {currentData?.title}
+                    </div>
+
+                    <ul className="list-disc ml-5 mt-5 space-y-3 text-md leading-relaxed text-justify">
+                        {currentData.description.map((item, i) => (
+                            <li key={i}>{item}</li>
+                        ))}
+                    </ul>
+
+             {  data.mission.buttonText && data.mission.buttonBgColor  &&     <div className="flex space-x-5 mt-20">
+                        <button
+                            className={`flex uppercase items-center px-6 py-4 rounded-lg font-semibold transition cursor-pointer
+                                ${activeTab === "vision"
+                                    ? data.vision.buttonBgColor + " text-blue-900"
+                                    : "bg-white text-blue-900"}
+                            `}
+                            onClick={() => setActiveTab("vision")}
+                        >
+                            <span className="mr-2 text-lg text-bold">←</span>
+                            {data.vision.buttonText}
+                        </button>
+
+                <button
+                    className={`flex uppercase items-center px-6 py-4 rounded-lg font-semibold transition cursor-pointer
+                        ${activeTab === "mission"
+                            ? data.mission.buttonBgColor + " text-blue-900"
+                            : "bg-white text-blue-900"}
+                    `}
+                    onClick={() => setActiveTab("mission")}
+                >
+                    {data.mission.buttonText}
+                    <span className="ml-2">→</span>
+                </button>
+                    </div>}
+
+                </div>
+
+                <img
+                    src={currentData.imageUrl}
+                    alt={currentData.title}
+                    className="absolute top-1/2 -translate-y-1/2 right-0 translate-x-1/2 w-[480px] h-[400px]"
+                />
+
+            </div>
+        </div>
+    );
 };
 
-export default CustomDepartmentVissionMission;
+export default CustomInstitueVissionMissionCard;
