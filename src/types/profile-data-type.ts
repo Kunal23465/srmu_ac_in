@@ -1,3 +1,4 @@
+
 export interface ProfileData {
   name: string;
   title: string;
@@ -16,4 +17,5 @@ export interface ProfileData {
   profileButtonText: string;
   profileButtonLink: string;
   backgroundColor: string;
+  modalContent: React.ReactNode;  
 }
