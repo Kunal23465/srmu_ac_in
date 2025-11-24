@@ -12,12 +12,11 @@ import depSlide5 from "../../../assets/images/academics/departments/depSlide5.pn
 
 export interface DepartmentVMType {
   id: number;
-  bgColor: string; // hex, rgb, or any css color
-  img: string; // image URL or path
-  heading: string; // "Mission" | "Vision" | etc.
-  points: string[]; // list of bullet points
+  bgColor: string; // hex, rgb, etc.
+  imageUrl: string; // image URL or path
+  title: string; // "Mission", "Vision", etc.
+  description: string[]; // bullet points
 }
-
 export interface FeeTableRow {
   [key: string]: string | number; // dynamic cells
 }

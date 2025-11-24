@@ -1,7 +1,7 @@
 import React from 'react'
 import Classes from "../../../utils/styles/Global.module.css";
 import CustomOverviewSection from '../../../utils/custom/CustomOverviewSection';
-import { civilFacultyOverviewData, civilFeeData, counterDataForFacultyCivil, departmentHighlights, } from '../../../data/academics/faculty-of-civil-engineering/faculty-of-civil-engineering-data';
+import { CivildepartmentVMData, civilFacultyOverviewData, civilFeeData, counterDataForFacultyCivil, departmentHighlights, } from '../../../data/academics/faculty-of-civil-engineering/faculty-of-civil-engineering-data';
 import CustomTopFooter from '../../../utils/custom/CustomTopFooter';
 import { CustomTopFooterData1 } from '../../../data/about/leadership-and-governance/leadership-and-governance-data';
 import Counter from '../../../utils/custom/Counter';
@@ -11,6 +11,7 @@ import { grievanceData } from '../../../data/campus-life/grievance-redressal-sys
 import TypesOfGrievance from '../../campus-life/grievance-redressal-system/TypesOfGrievance';
 import CustomDepartmentSlider from '../../../utils/custom/CustomDepartmentSlider';
 import CustomDepartmentHighlightCard from './CustomDepartmentHighlightCard';
+import CustomDepartmentVissionMission from '../../../utils/custom/CustomDepartmentVissionMission';
 
 
 const FacultyOfCivilEngineering: React.FC = () => {
@@ -36,11 +37,11 @@ const FacultyOfCivilEngineering: React.FC = () => {
             <div className={`${Classes["container"]}`}>
                 <CustomOverviewSection data={civilFacultyOverviewData} />
                 <Counter counterData={counterDataForFacultyCivil} classes="counter" />
-                {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-12  mb-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12  mb-10">
                     {CivildepartmentVMData.map((item) => (
                         <CustomDepartmentVissionMission key={item.id} data={item} />
                     ))}
-                </div> */}
+                </div>
 
                 <CustomTabs
                     items={items}
