@@ -1,10 +1,10 @@
 import React from 'react'
 import Classes from "../../../../utils/styles/Global.module.css";
 import CustomOverviewSection from '../../../../utils/custom/CustomOverviewSection'
-import CustomInstitueVissionMissionCard from '../../../../utils/custom/CustomDepartmentVissionMission'
 import CustomInstituteCoursesCard from '../../../../utils/custom/CustomInstituteCoursesCard'
 import { instituteCourseCardData, InstituteofManagementCommerceandEconomicsOverviewData, InstituteofManagementCommerceandEconomicsTopFooterData, InstituteofManagementCommerceandEconomicsvisionMissionData } from '../../../../data/academics/institute/institute-department/institute-of-management-commerce-and-economics-data';
 import CustomTopFooter from '../../../../utils/custom/CustomTopFooter';
+import CustomInstitueVissionMissionCard from '../../../../utils/custom/CustomInstitueVissionMissionCard';
 
 const InstituteofManagementCommerceandEconomics: React.FC = () => {
   return (
