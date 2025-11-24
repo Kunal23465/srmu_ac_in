@@ -1,24 +1,25 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 // Interfaces remain the same
 interface VisionMissionData {
     title: string;
     description: string[];
-    buttonText: string;
-    buttonBgColor: string;
+    buttonText?: string;
+    buttonBgColor?: string;
     imageUrl: string;
+    bgColor?: string;
+
 }
 
 export interface VisionMissionProps {
     data: {
-        backgroundColor: string;
         vision: VisionMissionData;
         mission: VisionMissionData;
     };
 }
 
 const CustomInstitueVissionMissionCard: React.FC<VisionMissionProps> = ({
-    data
+    data,
 }) => {
     const [activeTab, setActiveTab] = useState<"vision" | "mission">("vision");
 
@@ -26,20 +27,15 @@ const CustomInstitueVissionMissionCard: React.FC<VisionMissionProps> = ({
         activeTab === "vision" ? data.vision : data.mission;
 
     return (
-        <div className="relative py-12 md:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative py-20">
             <div
-                className={`relative ${data.backgroundColor} rounded-2xl 
-                w-full 
-                text-white 
-                lg:min-h-[550px] sm:min-h-[300px]
-                overflow-visible`}
+                className={`relative bg-[${data.vision.bgColor}] rounded-xl w-[1020px] overflow-visible text-white min-h-[500px]`}
             >
-                {/* Content Section */}
-                <div className="p-8 md:pl-12 lg:pl-16 md:pr-80 flex flex-col justify-center h-full py-16 relative z-10">
 
-                    {/* Title */}
-                    <div className="border border-white w-auto self-start rounded-full px-4 py-2 inline-block mb-6 text-sm md:text-base font-semibold">
-                        {currentData.title}
+                <div className="pl-12 pr-80 flex flex-col justify-center h-full py-16 relative z-10">
+
+                    <div className="border border-white w-auto self-start rounded-full px-4 py-2 inline-block mb-6 text-md font-semibold">
+                        {currentData?.title}
                     </div>
 
                     {/* Description */}
