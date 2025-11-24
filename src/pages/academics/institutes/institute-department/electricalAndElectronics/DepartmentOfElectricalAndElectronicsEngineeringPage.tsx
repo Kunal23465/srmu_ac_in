@@ -1,5 +1,5 @@
 import { FC } from "react";
-import classNamees from "../../../../utils/styles/Global.module.css";
+import classNamees from "../../../../../utils/styles/Global.module.css";
 import CustomOverviewSection from "../../../../../utils/custom/CustomOverviewSection";
 import CustomTopFooter from "../../../../../utils/custom/CustomTopFooter";
 import {
