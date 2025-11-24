@@ -1,7 +1,7 @@
 import Placement_Director from "../../../assets/images/placements/placement-cell/director-photo-21062505382147.jpg";
 const DirectorMessage = () => {
   return (
-      <div className="flex items-start flex-col lg:flex-row  gap-x-10 mt-20 mb-20">
+      <div className="flex items-start flex-col lg:flex-row  gap-x-10 my-20">
         <div className="w-full relative">
           <img className="xl:rounded-md sm:rounded-t-md  w-full lg:max-w-[500px]" alt="Mr. Rakesh Jaiswal" src={Placement_Director} />
           <div className="lg:absolute lg:bottom-5  lg:right-0 lg:rounded-xl   p-8 text-white bg-sky-900 rounded-b-xl ">

@@ -4,11 +4,12 @@ interface CustomOverviewSectionProps {
   data: {
     heading: string;
     content: string | React.ReactNode;
+    counterSibling?:string | React.ReactNode;
     otherData?: otherDataTypes[];
   };
 }
 const CustomOverviewSection: React.FC<CustomOverviewSectionProps> = ({ data }) => {
-  const { heading, content, otherData } = data;
+  const { heading, content, counterSibling,otherData } = data;
   return (
     <div className={` py-7 md:py-10 lg:py-14`}>
       <div className={`flex flex-col  gap-4 items-stretch  justify-between ${otherData && otherData?.length > 0 ? "md:flex-row" : "md:flex-row"}`}>
@@ -21,6 +22,7 @@ const CustomOverviewSection: React.FC<CustomOverviewSectionProps> = ({ data }) =
         <div className={`  ${otherData && otherData?.length > 0 ? "" : "md:pl-8 md:py-4"}`}>
           <div className="text-justify">
             {typeof content === "string" ? <p>{content}</p> : content}
+            {counterSibling && (   typeof counterSibling === "string" ? <p><br/>{counterSibling}</p> : counterSibling)}
           </div>
         </div>
       </div>

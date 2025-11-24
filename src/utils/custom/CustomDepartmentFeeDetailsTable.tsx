@@ -59,9 +59,6 @@
 
 // export default FeeTable;
 
-
-
-
 import React from "react";
 import { FeeTableData } from "../../data/academics/faculty-of-civil-engineering/faculty-of-civil-engineering-data";
 import { CustomModal } from "./CustomIqacCard";

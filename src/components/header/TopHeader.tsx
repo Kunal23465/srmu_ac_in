@@ -13,7 +13,7 @@ const TopHeader: React.FC = () => {
                 <div className="hidden lg:flex justify-between ">
                     <div className="left-part flex items-center">
                         <div>
-                            <ul className="flex items-center text-[13px] flex-row gap-2 ">
+                            <ul className="flex items-center text-sm flex-row gap-x-2 ">
                                 <Link to="/notice">NOTICE |</Link>
 
                                 <Link to="/admission-enquiry">ADMISSION ENQUIRY |</Link>
@@ -29,11 +29,11 @@ const TopHeader: React.FC = () => {
                                     <img src={user} alt="user" />
                                     Student Login
                                 </div>
-                                <div className="flex items-center text-white gap-x-2 pl-2 mr-4">
+                                <div className="flex items-center text-white gap-x-5 pl-2 mr-4">
                                     Staff Login
                                     <img src={search} alt="user" />
                                 </div>
-                                <button className="bg-white flex items-center px-2 py-1 gap-2 ">
+                                <button className="bg-white flex items-center px-2 py-2 gap-2 ">
                                     <a href="tel:18001035298" className="text-[#FFB703]  ">
                                         <IoCallSharp className="text-[1.5rem]" />
                                     </a>
@@ -42,7 +42,7 @@ const TopHeader: React.FC = () => {
                                         <p className=" ">18001035298</p>
                                     </div>
                                 </button>
-                                <Link to="enquiry-form" className="bg-[#FFB703] px-2 font-medium uppercase border-2 border-[#ffb703]  py-2.5 flex gapx-x-1 items-center">
+                                <Link to="enquiry-form" className="bg-[#FFB703] px-2 font-medium uppercase border-2 border-[#ffb703]  py-3.5 flex gapx-x-1 items-center">
                                     Student Portal
                                 </Link>
                             </div>

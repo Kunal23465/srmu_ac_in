@@ -3,30 +3,30 @@ import { ProfileData } from "../../types/profile-data-type";
 import { CustomModal } from "./CustomIqacCard";
 
 interface CustomInstituteProfileCardProps {
-    data: ProfileData;
+  data: ProfileData;
 }
 
 const formatBold = (text: string) => {
-    const parts = text.split(/(\*\*.*?\*\*)/g);
-    return parts.map((p, i) =>
-        p.startsWith("**") && p.endsWith("**") ? (
-            <span key={i} className="font-bold">
-                {p.slice(2, -2)}
-            </span>
-        ) : (
-            p
-        )
-    );
+  const parts = text.split(/(\*\*.*?\*\*)/g);
+  return parts.map((p, i) =>
+    p.startsWith("**") && p.endsWith("**") ? (
+      <span key={i} className="font-bold">
+        {p.slice(2, -2)}
+      </span>
+    ) : (
+      p
+    )
+  );
 };
 
 const DetailSection: React.FC<{ title: string; children: React.ReactNode }> = ({
-    title,
-    children,
+  title,
+  children,
 }) => (
-    <div className="mb-4">
-        <h3 className="text-lg font-bold text-white mb-1">{title}</h3>
-        <ul className="list-disc pl-5 space-y-1">{children}</ul>
-    </div>
+  <div className="mb-4">
+    <h3 className="text-lg font-bold text-white mb-1">{title}</h3>
+    <ul className="list-disc pl-5 space-y-1">{children}</ul>
+  </div>
 );
 
 const CustomInstituteProfileCard: React.FC<CustomInstituteProfileCardProps> = ({ data }) => {
@@ -59,23 +59,21 @@ const CustomInstituteProfileCard: React.FC<CustomInstituteProfileCardProps> = ({
                             {data.title}
                         </h1>
 
-                        <h2 className="font19 mb-2">
-                            {data.designation} {data.name}
-                        </h2>
+            <h2 className="font19 mb-2">{data.designation}</h2>
 
-                        <p className="fw500 mb-2">{data.office}</p>
+            <p className="fw500 mb-2">{data.office}</p>
 
-                        <DetailSection title="Experience & Achievements">
-                            <li>
-                                <span className="font-bold">
-                                    Total Experience: {data.experienceTotal}
-                                </span>{" "}
-                                ({data.experienceBreakdown})
-                            </li>
+            <DetailSection title="Experience & Achievements">
+              <li>
+                <span className="font-bold">
+                  Experience: {data.experienceTotal}
+                </span>
+                {data?.experienceBreakdown && data.experienceBreakdown}
+              </li>
 
-                            {data.achievements.map((item, idx) => (
-                                <li key={idx}>{formatBold(item)}</li>
-                            ))}
+              {data.achievements.map((item, idx) => (
+                <li key={idx}>{formatBold(item)}</li>
+              ))}
 
                             <li>
                                 <span className="font-bold">
@@ -101,15 +99,19 @@ const CustomInstituteProfileCard: React.FC<CustomInstituteProfileCardProps> = ({
                             </li>
                         </DetailSection>
 
-                        <DetailSection title="EIA Projects">
-                            {data.eiaProjects.map((item, idx) => (
-                                <li key={idx}>{formatBold(item)}</li>
-                            ))}
-                        </DetailSection>
+            {data?.eiaProjects && (
+              <DetailSection title="EIA Projects">
+                {data?.eiaProjects.map((item, idx) => (
+                  <li key={idx}>{formatBold(item)}</li>
+                ))}
+              </DetailSection>
+            )}
 
-                        <p className="text-sm font-bold mb-6">
-                            Total EIA Projects = {data.totalEiaProjects}
-                        </p>
+            {data?.totalEiaProjects && (
+              <p className="text-sm font-bold mb-6">
+                Total EIA Projects = {data.totalEiaProjects}
+              </p>
+            )}
 
                         <button
                             onClick={() => setIsOpen(true)}
@@ -143,7 +145,9 @@ const CustomInstituteProfileCard: React.FC<CustomInstituteProfileCardProps> = ({
                 content={data.modalContent}
             />
         </div>
-    );
+    //   </div>
+    // </div>
+  );
 };
 
 export default CustomInstituteProfileCard;
