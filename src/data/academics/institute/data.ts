@@ -1,5 +1,6 @@
 // import image1 from "../../../assets/images/academics/institutes/vision-card/Our-Mission-13102304092698.png"
 // import image2 from "../../../assets/images/academics/institutes/vision-card/Our-vision-13102304415245.png"
+// import { FacultyItem } from "../../../utils/custom/CustomFacultyListCard";
 // import { VisionMissionProps } from "../../../utils/custom/CustomInstitueVissionMissionCard";
 
 // export const headers = {
@@ -54,3 +55,43 @@
 //         imageUrl: image1
 //     }
 // };
+
+
+
+// export const facultyData: FacultyItem[] = [
+//   {
+//     id: 1,
+//     name: "Dr. Aditi Sharma",
+//     designation: "Professor & Head of Department",
+//     image: "https://via.placeholder.com/200",
+//     cardBgColor: "#001219",
+//   },
+//   {
+//     id: 2,
+//     name: "Prof. Rohit Malhotra",
+//     designation: "Associate Professor",
+//     image: "https://via.placeholder.com/200",
+//     cardBgColor: "#003049",
+//   },
+//   {
+//     id: 3,
+//     name: "Dr. Neha Kapoor",
+//     designation: "Assistant Professor",
+//     image: "https://via.placeholder.com/200",
+//     cardBgColor: "#370617",
+//   },
+//   {
+//     id: 4,
+//     name: "Mr. Arjun Pratap",
+//     designation: "Senior Lecturer",
+//     image: "https://via.placeholder.com/200",
+//     cardBgColor: "#283618",
+//   },
+//   {
+//     id: 5,
+//     name: "Dr. Suman Verma",
+//     designation: "Research Coordinator",
+//     image: "https://via.placeholder.com/200",
+//     cardBgColor: "#432818",
+//   },
+// ];
