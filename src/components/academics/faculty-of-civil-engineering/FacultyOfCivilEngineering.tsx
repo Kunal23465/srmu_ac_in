@@ -1,14 +1,12 @@
 import React from 'react'
 import Classes from "../../../utils/styles/Global.module.css";
 import CustomOverviewSection from '../../../utils/custom/CustomOverviewSection';
-import { CivildepartmentVMData, civilFacultyOverviewData, civilFeeData, counterDataForFacultyCivil, departmentHighlights, } from '../../../data/academics/faculty-of-civil-engineering/faculty-of-civil-engineering-data';
+import { civilFacultyOverviewData, civilFeeData, counterDataForFacultyCivil, departmentHighlights, } from '../../../data/academics/faculty-of-civil-engineering/faculty-of-civil-engineering-data';
 import CustomTopFooter from '../../../utils/custom/CustomTopFooter';
 import { CustomTopFooterData1 } from '../../../data/about/leadership-and-governance/leadership-and-governance-data';
 import Counter from '../../../utils/custom/Counter';
-import CustomDepartmentVissionMission from '../../../utils/custom/CustomDepartmentVissionMission';
 import CustomDepartmentFeeDetailsTable from '../../../utils/custom/CustomDepartmentFeeDetailsTable';
 import CustomTabs from '../../../utils/custom/CustomTabs';
-import AboutGrievance from '../../campus-life/grievance-redressal-system/AboutGrievance';
 import { grievanceData } from '../../../data/campus-life/grievance-redressal-system/grievance-redressal-system-data';
 import TypesOfGrievance from '../../campus-life/grievance-redressal-system/TypesOfGrievance';
 import CustomDepartmentSlider from '../../../utils/custom/CustomDepartmentSlider';
