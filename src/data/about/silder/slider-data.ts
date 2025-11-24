@@ -4,6 +4,12 @@ export type WhyItem = {
     description: string;
 };
 
+export type OurGoals = {
+  title: string;
+  subtitle: string;
+  description: string;
+};
+
 export type WhySliderData = {
     heading: string;
     subheading: string;
@@ -53,3 +59,38 @@ const data: WhySliderData = {
 };
 
 export default data;
+
+export const ourGoalsData: OurGoals[] = [
+  {
+    title: "Goal One",
+    subtitle: "TO CREATE CORPORATE READY PROFESSIONALS.",
+    description:
+      "We create opportunities for students to gain practical, real-world experience at SRMU, continuously refining our syllabus to align with industry demands",
+  },
+  {
+    title: "Goal Two",
+    subtitle: "TO BUILD STRONG RELATIONS WITH INDUSTRY STALWARTS.",
+    description: `
+        We stay in consistent touch with recruiters and top companies through regular HR conclaves and corporate meets. Additionally, we emphasize meaningful research and student-involved consultancy to provide tangible benefits to the industry`,
+  },
+  {
+    title: "Goal Three",
+    subtitle: "TO PROMOTING A GLOBAL OUTLOOK.",
+
+    description: `We cultivate a strong cultural and social awareness in our students around global aspects of business, technology, research, and development.`,
+  },
+  {
+    title: "Goal Four",
+    subtitle: "TO BUILD AN INDUSTRY INTERFACE.",
+
+    description: `
+        We guarantee exposure through guest lectures, industrial visits, workshops, research collaborations, and industrial training for our students.`,
+  },
+  {
+    title: "Goal Five",
+    subtitle: "TO PROVIDE 100% PLACEMENT ASSISTANCE.",
+
+    description: `
+        Our Complete Career Building Programme (CCBP) operates year-round, boosting student employability and giving them a competitive advantage. Key areas of focus include English communication, computer skills, group discussion techniques, mock personal interviews, subject knowledge, and confidence building.`,
+  },
+];

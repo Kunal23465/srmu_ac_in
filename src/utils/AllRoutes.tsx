@@ -77,9 +77,12 @@ import GrievanceRedressalSystemPage from "../pages/campus-life/grievance-redress
 import OutreachActivationsPage from "../pages/campus-life/outreach-activations/OutreachActivationsPage";
 import AdmissionEnquiryPage from "../pages/admission-enquiry/AdmissionEnquiryPage";
 import AdmissionPolicyPage from "../pages/admissions/admission-policy/AdmissionPolicyPage";
-
 import FacultyOfCivilEngineeringPage from "../pages/academics/faculty-of-civil-engineering/FacultyOfCivilEngineeringPage";
+import PlacementOverviewPage from "../pages/placement/placement-overview/PlacementOverviewPage";
+
+
 import InstituteofTechnologyPage from "../pages/academics/institutes/institute-department/InstituteofTechnologyPage";
+import DepartmentOfElectricalAndElectronicsEngineeringPage from "../pages/academics/institutes/institute-department/electricalAndElectronics/DepartmentOfElectricalAndElectronicsEngineeringPage";
 import InstituteofBiosciencesandTechnologyPage from "../pages/academics/institutes/institute-department/InstituteofBiosciencesandTechnologyPage";
 import InstituteofManagementCommerceandEconomicsPage from "../pages/academics/institutes/institute-department/InstituteofManagementCommerceandEconomicsPage";
 import InstituteofMediaStudiesPage from "../pages/academics/institutes/institute-department/InstituteofMediaStudiesPage";
@@ -240,6 +243,13 @@ export const routes = [
             },
           },
         ],
+      },
+      {
+        path:"/department-of-electrical-and-electronics-engineering",
+        element:<DepartmentOfElectricalAndElectronicsEngineeringPage/>,
+         handle: {
+          crumb: () => <Link to="/">Department of Electrical and Electronics Engineering</Link>,
+        },
       },
       {
         path: "/academics",
@@ -405,7 +415,7 @@ export const routes = [
 
           {
             path: "faculty-of-civil-engineering",
-            element: <FacultyOfCivilEngineeringPage />,
+            element: <FacultyOfCivilEngineeringPage  />,
             handle: {
               crumb: () => <Link to="/">Faculty Of Civil Engineering</Link>,
             },
@@ -748,6 +758,15 @@ export const routes = [
               crumb: () => <Link to="/">Notable Alumni</Link>,
             },
           },
+          {
+            path: "placement-overview",
+            element: <PlacementOverviewPage />,
+            handle: {
+              crumb: () => <Link to="/">Placement Overview</Link>,
+            },
+          },
+
+          // PlacementOverviewPage
         ],
       },
       {
