@@ -68,16 +68,19 @@ import PublicationPage from "../pages/Research/Publication/PublicationPage";
 import AfterGraduationPage from "../pages/Home/AfterGraduationPage";
 import AfterPolytechnicPage from "../pages/Home/AfterPolytechnicPage";
 import AfterPostGraduationPage from "../pages/Home/AfterPostGraduationPage";
-import OutreachActivationsPage from "../pages/campus-life/outreach-activations/OutreachActivationsPage";
 import StudentSenatePage from "../pages/campus-life/student-senate/StudentSenatePage";
 import StudentCornerPage from "../pages/campus-life/student-corner/StudentCornerPage";
 import GreenInitiativePage from "../pages/campus-life/green-initiative/GreenInitiativePage";
 import PlacementCellPage from "../pages/placement/placement-cell/PlacementCellPage";
 import NoticePage from "../pages/notice/NoticePage";
 import GrievanceRedressalSystemPage from "../pages/campus-life/grievance-redressal-system/GrievanceRedressalSystemPage";
+import OutreachActivationsPage from "../pages/campus-life/outreach-activations/OutreachActivationsPage";
 import AdmissionEnquiryPage from "../pages/admission-enquiry/AdmissionEnquiryPage";
 import AdmissionPolicyPage from "../pages/admissions/admission-policy/AdmissionPolicyPage";
 
+import FacultyOfCivilEngineeringPage from "../pages/academics/faculty-of-civil-engineering/FacultyOfCivilEngineeringPage";
+import InstituteofTechnologyPage from "../pages/academics/institutes/institute-department/InstituteofTechnologyPage";
+import ConferenceDetailPage from "../components/research/publication/conference/ConferenceDetailPage";
 interface IMatches {
   pathname: string;
   params: Params<string>;
@@ -239,6 +242,22 @@ export const routes = [
           {
             path: "institutes-info",
             element: <InstitutePage />,
+            children: [
+              {
+                path: "faculty-of-civil-engineering",
+                element: <FacultyOfCivilEngineeringPage />,
+                handle: {
+                  crumb: () => <Link to="/">Faculty Of Civil Engineering</Link>,
+                },
+              },
+              {
+                path: "institute-of-technology",
+                element: <InstituteofTechnologyPage />,
+                handle: {
+                  crumb: () => <Link to="/">Institute of Technology</Link>,
+                },
+              },
+            ],
             handle: {
               crumb: () => <Link to="/"> Academics</Link>,
             },
@@ -300,6 +319,15 @@ export const routes = [
             element: <CurriculumDesignPage />,
             handle: {
               crumb: () => <Link to="/">Curriculum Design</Link>,
+            },
+          },
+          
+
+          {
+            path: "faculty-of-civil-engineering",
+            element: <FacultyOfCivilEngineeringPage />,
+            handle: {
+              crumb: () => <Link to="/">Faculty Of Civil Engineering</Link>,
             },
           },
         ],
@@ -365,6 +393,25 @@ export const routes = [
         ],
       },
       {
+        path: "/programs",
+        element: <PlacementPage />,
+        // element: <StudentTestimonialPage />,
+        handle: {
+          crumb: () => <Link to="/">Programs</Link>,
+        },
+
+        children: [
+          {
+            path: "after-class-10th",
+            element: <AfterClass10thPage />,
+            handle: {
+              crumb: () => <Link to="/">After Class 10th</Link>,
+            },
+          },
+
+        ],
+      },
+      {
         path: "/campus-life",
         element: <CampusLifePage />,
         handle: {
@@ -404,7 +451,6 @@ export const routes = [
               crumb: () => <Link to="/">Central Library</Link>,
             },
           },
-
 
           {
             path: "green-initiative",
@@ -569,6 +615,13 @@ export const routes = [
               crumb: () => <Link to="/">Publication</Link>,
             },
           },
+          {
+            path: "conference/:name",
+            element: <ConferenceDetailPage />,
+            handle: {
+              crumb: () => <Link to="/">Publication</Link>,
+            },
+          },
         ],
       },
       {
@@ -623,7 +676,7 @@ export const routes = [
         handle: {
           crumb: () => <Link to="/">Admission Enquiry</Link>,
         },
-      }
+      },
     ],
   },
 ];

@@ -67,23 +67,28 @@ const TestimonialSlider = () => {
 
             <div className="relative w-full max-w-6xl mx-auto px-4">
                 <Slider {...settings}>
-                    {hometestimonial.map((item, index) => (
-                        <div key={item.id} className="flex justify-center px-0.5">
-                            <div
-                                className={`rounded-full transition-all duration-300 overflow-hidden border-4 ${activeIndex === index
+                    {hometestimonial.map((item, index) => {
+
+                        //  const isSecondImage = (activeSlide + 1) % images.length === index;
+
+                        return (
+                            <div key={item.id} className="flex justify-center px-0.5">
+                                <div
+                                    className={`rounded-full transition-all duration-300 overflow-hidden border-4 ${activeIndex === index
                                         ? "border-[#3A6EFF] scale-100 shadow-lg"
                                         : "border-gray-300"
-                                    }`}
-                                style={{ width: 130, height: 130 }} 
-                            >
-                                <img
-                                    src={item.img}
-                                    alt={item.name}
-                                    className="w-full h-full object-cover"
-                                />
+                                        }`}
+                                    style={{ width: 130, height: 130 }}
+                                >
+                                    <img
+                                        src={item.img}
+                                        alt={item.name}
+                                        className="w-full h-full object-cover"
+                                    />
+                                </div>
                             </div>
-                        </div>
-                    ))}
+                        )
+                    })}
                 </Slider>
             </div>
 

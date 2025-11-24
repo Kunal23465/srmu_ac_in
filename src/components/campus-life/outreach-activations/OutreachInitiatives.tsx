@@ -48,6 +48,12 @@ const OutreachInitiatives: React.FC = () => {
                                         alt="Image"
                                         className="w-full h-full object-cover"
                                     />
+                                    <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent" />
+
+                                    <div className="absolute bottom-4 left-4 text-white text-xl font-bold drop-shadow-md">
+                                        {initiative.front.title}
+
+                                    </div>
                                 </div>
 
                                 {/* Back */}

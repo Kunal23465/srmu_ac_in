@@ -9,11 +9,8 @@ const PlacementPolicies: React.FC = () => {
     <div>
       <div className={`${Classes["container"]}`}>
         <CustomOverviewSection data={PlacementPoliciesOverviewData} />
-        <CustomTable
-          columnOneHeader="Policies"
-          columnTwoHeader="Downloads"
-          data={policiesPdfData}
-        />
+
+        <CustomTable columnOneHeader="Policies" columnTwoHeader="Downloads" data={policiesPdfData} />
       </div>
       <CustomTopFooter data={PlacementPoliciesTopFooterData} />
     </div>
