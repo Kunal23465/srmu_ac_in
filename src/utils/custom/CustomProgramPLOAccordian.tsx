@@ -79,13 +79,6 @@ export default CustomProgramPLOAccordian;
 
 ------------ Example Data ----------
 
-interface CustomProgramPLOAccordianProps {
-  POdata: { id: string | number; content: string }[];
-  PLOdata: { id: string | number; content: string }[];
-  PSOdata: { id: string | number; content: string }[];
-}
-
-
 export const abc: CustomProgramPLOAccordianProps = {
   POdata: [
     {

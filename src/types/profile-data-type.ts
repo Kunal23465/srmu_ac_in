@@ -4,18 +4,21 @@ export interface ProfileData {
   title: string;
   designation: string;
   office: string;
+  qualification?: string;
+  emailID?: string;
+  orcidID?: string;
+  contactNum?: string;
   imageSrc: string;
   experienceTotal: string;
   experienceBreakdown?: string;
   supervisorDetail?: string;
-  achievements: string[];
+  achievements?: string[];
   consultancyCount?: number;
   consultancyCost?: string;
   fundingAgencies?: string;
   eiaProjects?: string[];
   totalEiaProjects?: string;
   profileButtonText: string;
-  profileButtonLink: string;
   backgroundColor: string;
   modalContent: React.ReactNode;  
 }
