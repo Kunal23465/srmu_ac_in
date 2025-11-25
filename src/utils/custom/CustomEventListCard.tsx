@@ -40,24 +40,24 @@ const CustomEventCard: React.FC<EventCardProps> = ({ item }) => {
                         </h2>
 
                         {item.topic && (
-                            <p className="text-sm sm:text-base text-gray-700">
+                            <p className="text-sm sm:text-base text-black">
                                 <strong>Topic:</strong> {item.topic}
                             </p>
                         )}
 
                         {item.speaker && (
-                            <p className="text-sm sm:text-base text-gray-700">
+                            <p className="text-sm sm:text-base text-black">
                                 <strong>Speaker:</strong> {item.speaker}
                             </p>
                         )}
 
                         {item.venue && (
-                            <p className="text-sm sm:text-base text-gray-700">
+                            <p className="text-sm sm:text-base text-black">
                                 <strong>Venue:</strong> {item.venue}
                             </p>
                         )}
 
-                        <p className="text-sm sm:text-base text-gray-700">
+                        <p className="text-sm sm:text-base text-black">
                             <strong>Date:</strong> {item.date}
                         </p>
                     </div>
