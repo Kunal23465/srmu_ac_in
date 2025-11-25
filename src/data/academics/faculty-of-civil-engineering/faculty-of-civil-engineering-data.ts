@@ -12,7 +12,7 @@ import depSlide5 from "../../../assets/images/academics/departments/depSlide5.pn
 import { FacultyItem } from "../../../utils/custom/CustomFacultyListCard";
 import { InstituteProfile } from "../../../types/profile-data-type";
 
-import professor from "../../../assets/images/academics/institutes/dr.r.s.bajpai.jpg"
+import professor from "../../../assets/images/academics/institutes/dr.r.s.bajpai.jpg";
 
 export interface DepartmentVMType {
   id: number;
@@ -22,7 +22,7 @@ export interface DepartmentVMType {
   description: string[]; // bullet points
 }
 export interface FeeTableRow {
-  [key: string]: string | number | React.ReactNode; 
+  [key: string]: string | number | React.ReactNode;
   eligibilityContent?: string | React.ReactNode;
 }
 
@@ -31,7 +31,6 @@ export interface FeeTableData {
   rows: FeeTableRow[];
   notes?: string[];
 }
-
 
 export interface departmentHighlightscardType {
   image: string;
@@ -101,7 +100,6 @@ export const civilFeeData1: FeeTableData = {
     { col1: "Other Fees", col2: 7000, col3: 7000, col4: 7000 },
     { col1: "Development Fund", col2: 5000, col3: 5000, col4: 5000 },
     { col1: "Caution Money", col2: 5000, col3: "NA", col4: "NA" },
-
   ],
 
   // notes: ["Alumni Fee: 500", "Degree Fee: 1000", "Both these fees are payable in the final year of the program"],
@@ -137,11 +135,6 @@ export const departmentHighlights: departmentHighlightscardType[] = [
     description: "A strong ecosystem of experts from diverse core fields combining young talent and experienced professionals with both industry and academic exposure.",
   },
 ];
-
-
-
-
-
 
 export const facultyData: FacultyItem[] = [
   {
@@ -181,106 +174,256 @@ export const facultyData: FacultyItem[] = [
   },
 ];
 
-
-
-
-
-
-
-
-export const civilIndshonoursEngineeringFeeTable: FeeTableData = {
+// industry honour table data 
+export const civilIndustryHonoursFeeTable: FeeTableData = {
   columns: ["Courses", "Duration", "Eligibility Criteria", "Course Fees (PA)"],
 
   rows: [
     {
-      course: "M.Tech. in Electric Vehicle Technology",
-      duration: "2 Years",
-      eligibility: "Click",
-      fee: "₹1,07,000/-",
-      eligibilityContent: `
-        <h2 class='font-bold text-lg mb-3'>Eligibility – M.Tech. in Electric Vehicle Technology</h2>
-        <ul class='list-disc pl-5 space-y-2'>
-            <li>B.E./B.Tech. in relevant discipline</li>
-            <li>Minimum required % as per university norms</li>
-            <li>As per SRMU PG admission guidelines</li>
-        </ul>
-      `,
-    },
-
-    {
-      course: "M.Tech. in Electric Vehicle Technology (Part Time)",
-      duration: "3 Years",
-      eligibility: "Click",
-      fee: "₹69,000/-",
-      eligibilityContent: `
-        <h2 class='font-bold text-lg mb-3'>Eligibility – M.Tech. EV (Part Time)</h2>
-        <ul class='list-disc pl-5 space-y-2'>
-            <li>Working professionals with B.E./B.Tech.</li>
-            <li>Experience as required by university norms</li>
-        </ul>
-      `,
-    },
-
-    {
-      course: "B.Tech. in EE (EV Engineering) with L&T",
+      course: "B.Tech. in CE (Advanced Practices in Construction) with L&T",
       duration: "4 Years",
       eligibility: "Click",
-      fee: "₹1,46,375/-",
+      fee: "Rs. 1,46,375/-",
       eligibilityContent: `
-        <h2 class='font-bold text-lg mb-3'>Eligibility – B.Tech. EE (EV) with L&T</h2>
-        <ul class='list-disc pl-5 space-y-2'>
-            <li>10+2 with PCM</li>
-            <li>Minimum marks as per SRMU norms</li>
-        </ul>
+        <h2 class='font-bold text-lg mb-3'>B.Tech. in CE (Advanced Practices in Construction) with L&T</h2>
+       <p> Candidate must have passed 10+2 or equivalent system from any recognized Central/ State Board with Physics and Mathematics as compulsory subjects along with one of the Chemistry/Computer Science/Technical Vocational Subject with minimum aggregate marks of 45%.</p>
+      `,
+    },
+
+  ]
+};
+
+export const civilIndustryIntegratedFeeTable: FeeTableData = {
+  columns: ["Courses", "Duration", "Eligibility Criteria", "Course Fees (PA)"],
+
+  rows: [
+    {
+      course: "B.Tech. in CE + M.B.A.",
+      duration: "5 Years",
+      eligibility: "Click",
+      fee: "Rs. 1,32,000/-",
+      eligibilityContent: `
+        <h2 class='font-bold text-lg mb-3'>B.Tech. in CE + M.B.A.</h2>
+        <p>
+          Candidate must have passed 10+2 or equivalent system from any recognized Central/State Board with 
+          Physics and Mathematics as compulsory subjects along with one of the Chemistry/Computer Science/
+          Technical Vocational Subject. Candidate must have obtained minimum 45% marks or equivalent grade 
+          for GEN/OBC and 40% marks or equivalent grade for SC/ST Category in the above subjects taken together.
+        </p>
       `,
     },
 
     {
-      course: "B.Tech. in EE (EV Engineering) (Lateral Entry) with L&T",
-      duration: "3 Years",
+      course: "B.Tech. + M.Tech. in Civil Engineering",
+      duration: "5 Years",
       eligibility: "Click",
-      fee: "₹1,51,375/-",
+      fee: "Rs. 1,32,000/-",
       eligibilityContent: `
-        <h2 class='font-bold text-lg mb-3'>Eligibility – B.Tech. EE (EV) Lateral</h2>
-        <ul class='list-disc pl-5 space-y-2'>
-            <li>Diploma in relevant engineering stream</li>
-            <li>Or B.Sc. with required subjects</li>
-        </ul>
-      `,
-    },
-
-    {
-      course: "B.Tech. in ECE (EV Engineering) with L&T",
-      duration: "4 Years",
-      eligibility: "Click",
-      fee: "₹1,46,375/-",
-      eligibilityContent: `
-        <h2 class='font-bold text-lg mb-3'>Eligibility – B.Tech. ECE (EV) with L&T</h2>
-        <ul class='list-disc pl-5 space-y-2'>
-            <li>10+2 with PCM</li>
-        </ul>
-      `,
-    },
-
-    {
-      course: "B.Tech. in ECE (EV Engineering) (Lateral Entry) with L&T",
-      duration: "3 Years",
-      eligibility: "Click",
-      fee: "₹1,51,375/-",
-      eligibilityContent: `
-        <h2 class='font-bold text-lg mb-3'>Eligibility – B.Tech. ECE (EV) Lateral</h2>
-        <ul class='list-disc pl-5 space-y-2'>
-            <li>Diploma in relevant engineering stream</li>
-            <li>Or B.Sc. with required subjects</li>
-        </ul>
+        <h2 class='font-bold text-lg mb-3'>B.Tech. + M.Tech. in Civil Engineering</h2>
+        <p>
+          Candidate must have passed 10+2 or equivalent system from any recognized Central/State Board with 
+          Physics and Mathematics as compulsory subjects along with one of the Chemistry/Computer Science/
+          Technical Vocational Subject. Candidate must have obtained minimum 45% marks or equivalent grade 
+          for GEN/OBC and 40% marks or equivalent grade for SC/ST Category in the above subjects taken together.
+        </p>
       `,
     },
   ],
-
-  notes: ["Course fees are payable annually", "Eligibility depends on SRMU criteria for UG & PG admissions"],
 };
 
+export const civilIndustryPostgraduateFeeTable: FeeTableData = {
+  columns: ["Courses", "Duration", "Eligibility Criteria", "Course Fees (PA)"],
 
+  rows: [
+    {
+      course: "M.Tech. in Environmental Engineering",
+      duration: "2 Years",
+      eligibility: "Click",
+      fee: "Rs. 1,07,000/-",
+      eligibilityContent: `
+        <h2 class='font-bold text-lg mb-3'>M.Tech. in Environmental Engineering</h2>
+        <p>
+          Candidates must have passed B.Tech. (any stream) from any recognised University or AICTE recognised 
+          Institute/College with minimum aggregate marks of 50% or 5.5 CGPA for GEN/OBC and 45% marks or 5.0 CGPA 
+          for SC/ST Category OR M.Sc. (any stream) with 45% marks or 5.0 CGPA for GEN/OBC and 40% marks or 
+          4.5 CGPA for SC/ST Category.
+        </p>
+      `,
+    },
+
+    {
+      course: "M.Tech. in Structural Engineering",
+      duration: "2 Years",
+      eligibility: "Click",
+      fee: "Rs. 1,07,000/-",
+      eligibilityContent: `
+        <h2 class='font-bold text-lg mb-3'>M.Tech. in Structural Engineering</h2>
+        <p>
+          Candidates must have passed B.Tech. in Civil Engineering from any recognised University or AICTE recognised 
+          Institute/College with minimum aggregate marks of 50% or 5.5 CGPA for GEN/OBC and 45% marks or 5.0 CGPA 
+          for SC/ST Category with 45% marks or 5.0 CGPA for GEN/OBC and 40% marks or 4.5 CGPA for SC/ST Category.
+        </p>
+      `,
+    },
+
+    {
+      course: "M.Tech. in Environmental Engineering (Part Time)",
+      duration: "3 Years",
+      eligibility: "Click",
+      fee: "Rs. 69,000/-",
+      eligibilityContent: `
+        <h2 class='font-bold text-lg mb-3'>M.Tech. in Environmental Engineering (Part Time)</h2>
+        <p>
+          Candidates must have passed B.Tech. (any stream) from any recognised University or AICTE recognised 
+          Institute/College with minimum aggregate marks of 50% or 5.5 CGPA for GEN/OBC and 45% marks or 5.0 CGPA 
+          for SC/ST Category OR M.Sc. (any stream) with 45% marks or 5.0 CGPA for GEN/OBC and 40% marks or 
+          4.5 CGPA for SC/ST Category.
+        </p>
+        <p class='mt-3'>
+          In addition to the above mentioned basic M.Tech (Regular) eligibility, candidates must have at least 
+          2 years Teaching/Industrial/Research/Professional Work Experience for the 3-year M.Tech. (Part Time) program.
+        </p>
+      `,
+    },
+
+    {
+      course: "M.Tech. in Structural Engineering (Part Time)",
+      duration: "3 Years",
+      eligibility: "Click",
+      fee: "Rs. 69,000/-",
+      eligibilityContent: `
+        <h2 class='font-bold text-lg mb-3'>M.Tech. in Structural Engineering (Part Time)</h2>
+        <p>
+          Candidates must have passed B.Tech. in Civil Engineering from any recognised University or AICTE recognised 
+          Institute/College with minimum aggregate marks of 50% or 5.5 CGPA for GEN/OBC and 45% marks or 5.0 CGPA 
+          for SC/ST Category with 45% marks or 5.0 CGPA for GEN/OBC and 40% marks or 4.5 CGPA for SC/ST Category.
+        </p>
+        <p class='mt-3'>
+          In addition to the above mentioned basic M.Tech (Regular) eligibility, candidates must have at least 
+          2 years Teaching/Industrial/Research/Professional Work Experience for the 3-year M.Tech. (Part Time) program.
+        </p>
+      `,
+    },
+
+    {
+      course: "M.Sc. (Environmental Science)",
+      duration: "2 Years",
+      eligibility: "Click",
+      fee: "Rs. 64,000/-",
+      eligibilityContent: `
+        <h2 class='font-bold text-lg mb-3'>M.Sc. (Environmental Science)</h2>
+        <p>
+          Candidate must have passed B.Sc. in Environmental Science / Microbiology / Botany / Zoology / Chemistry / 
+          Physics / Geography / Geology / Physiology / Biotechnology / Biochemistry OR B.Sc. (Hons) in Agriculture 
+          OR equivalent degree in the appropriate field of Engineering/Technology from any recognised University or 
+          AICTE recognised Institute/College with minimum aggregate marks of 45% or 5.0 CGPA for GEN/OBC and 40% marks 
+          or 4.5 CGPA for SC/ST Category.
+        </p>
+      `,
+    },
+  ],
+};
+
+export const civilIndustryUndergraduateFeeTable: FeeTableData = {
+  columns: ["Courses", "Duration", "Eligibility Criteria", "Course Fees (PA)"],
+
+  rows: [
+    {
+      course: "B.Tech. in Civil Engineering",
+      duration: "4 Years",
+      eligibility: "Click",
+      fee: "Rs. 1,32,000/-",
+      eligibilityContent: `
+        <h2 class='font-bold text-lg mb-3'>B.Tech. in Civil Engineering</h2>
+        <p>
+          Candidate must have passed 10+2 or equivalent system from any recognized Central/State Board 
+          with Physics and Mathematics as compulsory subjects along with one of the following: 
+          Chemistry, Computer Science, or Technical Vocational Subject.
+        </p>
+        <p class='mt-3'>
+          Candidate must have obtained minimum 45% marks or equivalent grade for GEN/OBC and 
+          40% marks or equivalent grade for SC/ST Category in the above subjects taken together.
+        </p>
+      `,
+    },
+
+    {
+      course: "B.Tech. in Civil Engineering (Lateral Entry)",
+      duration: "3 Years",
+      eligibility: "Click",
+      fee: "Rs. 1,37,000/-",
+      eligibilityContent: `
+        <h2 class='font-bold text-lg mb-3'>B.Tech. in Civil Engineering (Lateral Entry)</h2>
+        <p>
+          Candidate must have passed a 3 or 4-year Diploma in a technical stream from an institution 
+          recognized by AICTE or a State Board of Technical Education, OR must have passed 
+          B.Sc. degree in Biology, Microbiology, Botany, Zoology, Chemistry, Physics, Mathematics, 
+          Physiology, Biotechnology, Biochemistry, or Agriculture.
+        </p>
+        <p class='mt-3'>
+          Candidate must have obtained minimum aggregate marks of 45% or 5.0 CGPA for GEN/OBC and 
+          40% marks or 4.5 CGPA for SC/ST Category.
+        </p>
+      `,
+    },
+
+    {
+      course: "B.Tech. in CE + M.B.A.",
+      duration: "5 Years",
+      eligibility: "Click",
+      fee: "Rs. 1,32,000/-",
+      eligibilityContent: `
+        <h2 class='font-bold text-lg mb-3'>B.Tech. in CE + M.B.A.</h2>
+        <p>
+          Candidate must have passed 10+2 or equivalent system from any recognized Central/State Board 
+          with Physics and Mathematics as compulsory subjects along with one of the following: 
+          Chemistry, Computer Science, or Technical Vocational Subject.
+        </p>
+        <p class='mt-3'>
+          Candidate must have obtained minimum 45% marks or equivalent grade for GEN/OBC and 
+          40% marks or equivalent grade for SC/ST Category in the above subjects taken together.
+        </p>
+      `,
+    },
+
+    {
+      course: "B.Tech. + M.Tech. in Civil Engineering",
+      duration: "5 Years",
+      eligibility: "Click",
+      fee: "Rs. 1,32,000/-",
+      eligibilityContent: `
+        <h2 class='font-bold text-lg mb-3'>B.Tech. + M.Tech. in Civil Engineering</h2>
+        <p>
+          Candidate must have passed 10+2 or equivalent system from any recognized Central/State Board 
+          with Physics and Mathematics as compulsory subjects along with one of the following: 
+          Chemistry, Computer Science, or Technical Vocational Subject.
+        </p>
+        <p class='mt-3'>
+          Candidate must have obtained minimum 45% marks or equivalent grade for GEN/OBC and 
+          40% marks or equivalent grade for SC/ST Category in the above subjects taken together.
+        </p>
+      `,
+    },
+
+    {
+      course: "B.Tech. in CE (Advanced Practices in Construction) with L&T",
+      duration: "4 Years",
+      eligibility: "Click",
+      fee: "Rs. 1,46,375/-",
+      eligibilityContent: `
+        <h2 class='font-bold text-lg mb-3'>B.Tech. in CE (Advanced Practices in Construction) with L&T</h2>
+        <p>
+          Candidate must have passed 10+2 or equivalent system from any recognized Central/State Board 
+          with Physics and Mathematics as compulsory subjects along with one of the following: 
+          Chemistry, Computer Science, or Technical Vocational Subject.
+        </p>
+        <p class='mt-3'>
+          Candidate must have obtained minimum aggregate marks of 45%.
+        </p>
+      `,
+    },
+  ],
+};
 
 
 export const instituteProfilesCivil: InstituteProfile[] = [
@@ -291,10 +434,8 @@ export const instituteProfilesCivil: InstituteProfile[] = [
     position: "Offg. Director, IAP & Dean FoCE, SRMU, Lucknow–Deva Road",
     image: professor,
 
-    summary: "Total experience of 23+ years in industry and academics. Functional Area Expert for EIA studies and empanelled groundwater expert for various government bodies.",
-
-    detailsHeading: "",
-    useBullets: false,
+    detailsHeading: "Experience &Achievements:  ",
+    useBullets: true,
 
     details: [
       "**Total Experience**: 23+ years (Industry: 10 years, Academics: 13+ years)",
@@ -302,8 +443,8 @@ export const instituteProfilesCivil: InstituteProfile[] = [
       "Supervisor of 5 PhD; 7 scholars awarded",
       "Functional Area Expert for EIA studies (Category 'A' projects – HG & Geo) since 2011",
       "Empanelled Groundwater Expert for Central Ground Water Authority & Ministry of Jal Shakti",
-      "Consultancy Projects: 9 | Total Cost: Rs. 2.0+ Cr",
-      "Total EIA Projects = 19 (5 Category 'A' + 14 Category 'B')",
+      "Consultancy Projects: 9 | Total Cost: Rs. 2.0+ Cr Funding Agencies: World Bank; WaterAid, National Institute of Hydrology (NIH, Roorkee), UNESCO, Ministry of Jal Shakti, GoI, UP Rajya Vidyut Utpadan Nigam Limited, TERI, U.P. Ground Water Department, UPCST, etc.",
+      "EIA Projects [Functional Area Expert – HG & Geo (Hydrogeology & Geology) for category “A” projects]:(Ministry of Environment, Forest and Climate Change, Govt. of India) Total EIA Projects = 19 (5 Category “A” + 14 Category “B”)",
     ],
 
     modalContent: `

@@ -1,15 +1,15 @@
 import React from "react";
-import Classes from "../../../../utils/styles/Global.module.css";
+import Classes from "../../../../../utils/styles/Global.module.css";
 import {
   instituteCourseCardData,
   InstituteofTechnologyOverviewData,
   InstituteofTechnologyTopFooterData,
   visionMissionData,
-} from "../../../../data/academics/institute/institute-department/institute-of-technology-data";
-import CustomOverviewSection from "../../../../utils/custom/CustomOverviewSection";
-import CustomInstituteCoursesCard from "../../../../utils/custom/CustomInstituteCoursesCard";
-import CustomTopFooter from "../../../../utils/custom/CustomTopFooter";
-import CustomInstitueVissionMissionCard from "../../../../utils/custom/CustomInstitueVissionMissionCard";
+} from "../../../../../data/academics/institute/institute-department/institute-of-technology-data";
+import CustomOverviewSection from "../../../../../utils/custom/CustomOverviewSection";
+import CustomInstituteCoursesCard from "../../../../../utils/custom/CustomInstituteCoursesCard";
+import CustomTopFooter from "../../../../../utils/custom/CustomTopFooter";
+import CustomInstitueVissionMissionCard from "../../../../../utils/custom/CustomInstitueVissionMissionCard";
 
 const InstituteofTechnology: React.FC = () => {
   return (
@@ -24,8 +24,7 @@ const InstituteofTechnology: React.FC = () => {
           </div>
         </div>
       </div>
-            <CustomTopFooter data={InstituteofTechnologyTopFooterData} />
-
+      <CustomTopFooter data={InstituteofTechnologyTopFooterData} />
     </div>
   );
 };

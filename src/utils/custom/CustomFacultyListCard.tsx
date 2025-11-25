@@ -1,5 +1,5 @@
 import React from "react";
-
+ 
 export interface FacultyItem {
     id: number;
     name: string;
@@ -7,11 +7,11 @@ export interface FacultyItem {
     image: string;
     cardBgColor?: string;
 }
-
+ 
 interface CardListProps {
     item: FacultyItem;
 }
-
+ 
 const CustomFacultyListCard: React.FC<CardListProps> = ({ item }) => {
     return (
         <div className="">
@@ -31,11 +31,11 @@ const CustomFacultyListCard: React.FC<CardListProps> = ({ item }) => {
                         />
                     </div>
                 </div>
-
+ 
                 <h2 className="font18 text-[#ffb703] mt-12 text-left">
                     {item.name}
                 </h2>
-
+ 
                 <div className="w-full pt-4">
                     <p className="font14 tracking-widest text-[#ffb703] opacity-80 mb-1 uppercase">
                         DESIGNATION
@@ -46,9 +46,9 @@ const CustomFacultyListCard: React.FC<CardListProps> = ({ item }) => {
                 </div>
             </div>
         </div>
-
-
+ 
+ 
     );
 };
-
+ 
 export default CustomFacultyListCard;
