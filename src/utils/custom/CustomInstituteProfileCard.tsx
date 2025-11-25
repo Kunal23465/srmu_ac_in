@@ -98,13 +98,13 @@ const CustomInstituteProfileCard: React.FC<CustomInstituteProfileCardProps> = ({
 
               {profile.useBullets ? (
                 <ul className="list-disc pl-5 space-y-1 mb-6">
-                  {profile.details.slice(0, 5).map((d, i) => (
+                  {profile.details.map((d, i) => (
                     <li key={i}>{formatBold(d)}</li>
                   ))}
                 </ul>
               ) : (
                 <div className="space-y-1 mb-6">
-                  {profile.details.slice(0, 4).map((d, i) => (
+                  {profile.details.map((d, i) => (
                     <p key={i}>{formatBold(d)}</p>
                   ))}
                 </div>
