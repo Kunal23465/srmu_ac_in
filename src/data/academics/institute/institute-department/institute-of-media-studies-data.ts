@@ -1,7 +1,7 @@
 import { customeOverViewType } from "../../../../types/home-data-type";
 import vision from "../../../../assets/images/academics/departments/dept-mission-icon2.png";
 import mission from "../../../../assets/images/academics/departments/dept-mission-icon1.png";
-import { ProfileData } from "../../../../types/profile-data-type";
+// import { ProfileData } from "../../../../types/profile-data-type";
 import headImg from "../../../../assets/images/academics/departments/01-10062506001261.png"
 import { FeeTableData } from "../../faculty-of-civil-engineering/faculty-of-civil-engineering-data";
 import { FacultyItem } from "../../../../utils/custom/CustomFacultyListCard";
@@ -139,7 +139,7 @@ export const InstituteofMediaStudiesVMData = [
 
 
 
-export const SampleInstituteProfileData: ProfileData = {
+export const SampleInstituteProfileData = {
   name: "Prof. (Dr.) Razaur Rahman",
   title: "Department Head",
   designation: "Director IMS, SRMU, Lucknow-Deva Road",

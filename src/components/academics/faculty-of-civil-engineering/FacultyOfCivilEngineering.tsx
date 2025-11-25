@@ -7,8 +7,6 @@ import { CustomTopFooterData1 } from '../../../data/about/leadership-and-governa
 import Counter from '../../../utils/custom/Counter';
 import CustomDepartmentFeeDetailsTable from '../../../utils/custom/CustomDepartmentFeeDetailsTable';
 import CustomTabs from '../../../utils/custom/CustomTabs';
-import { grievanceData } from '../../../data/campus-life/grievance-redressal-system/grievance-redressal-system-data';
-import TypesOfGrievance from '../../campus-life/grievance-redressal-system/TypesOfGrievance';
 import CustomDepartmentSlider from '../../../utils/custom/CustomDepartmentSlider';
 import CustomDepartmentVissionMission from '../../../utils/custom/CustomDepartmentVissionMission';
 import CustomDepartmentHighlightCard from '../../../utils/custom/CustomDepartmentHighlightCard';
