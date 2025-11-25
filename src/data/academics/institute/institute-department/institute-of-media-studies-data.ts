@@ -1,6 +1,10 @@
 import { customeOverViewType } from "../../../../types/home-data-type";
 import vision from "../../../../assets/images/academics/departments/dept-mission-icon2.png";
 import mission from "../../../../assets/images/academics/departments/dept-mission-icon1.png";
+// import { ProfileData } from "../../../../types/profile-data-type";
+import headImg from "../../../../assets/images/academics/departments/01-10062506001261.png"
+import { FeeTableData } from "../../faculty-of-civil-engineering/faculty-of-civil-engineering-data";
+import { FacultyItem } from "../../../../utils/custom/CustomFacultyListCard";
 
 export const InstituteofMediaStudiesOverviewData: customeOverViewType = {
   heading: "Institute of Media Studies",
@@ -46,7 +50,7 @@ export const InstituteofMediaStudiesvisionMissionData = {
   }
 };
 
-export const InstituteofMediaStudiesCounterData = {
+export const InstituteofMediaStudiesCounterData1 = {
   counterData: [
     {
       id: 1,
@@ -77,7 +81,151 @@ export const InstituteofMediaStudiesCounterData = {
   aboutusClass: ""
 };
 
+export const InstituteofMediaStudiesCounterData2 = {
+  counterData: [
+    {
+      id: 1,
+      icon: "",
+      value: "200",
+      suffix: "",
+      label: "Guest lectures"
+    },
+    {
+      id: 2,
+      icon: "",
+      value: "150",
+      suffix: "",
+      label: "Field Visits"
+    },
+    {
+      id: 3,
+      icon: "",
+      value: "15",
+      suffix: "",
+      label: "Conference & Seminars"
+    },
+
+  ],
+
+  // Optional classes (can be null or ignored if unused)
+  classes: "",
+  aboutusClass: ""
+};
 
 
+export const InstituteofMediaStudiesVMData = [
+  {
+    id: 1,
+    bgColor: "#E5F3FC",
+    img: mission,
+    heading: "Mission",
+    points: [
+      "To make mass communicator and Journalist with social consciences.",
+      "To develop creative and critical thinking with human touch among our students.",
+      "To enlighten and enrich the educational experience by providing pragmatic learning.",
+      "To inculcate professional ethics and value system among media students.",
+    ],
+  },
+  {
+    id: 2,
+    bgColor: "#FFF2D2",
+    img: vision,
+    heading: "Vision",
+    points: [
+      "To be an institution of excellence in the field of communication, journalism and research.",
+    ],
+  },
+];
+
+
+
+export const SampleInstituteProfileData = {
+  name: "Prof. (Dr.) Razaur Rahman",
+  title: "Department Head",
+  designation: "Director IMS, SRMU, Lucknow-Deva Road",
+  office: "",
+  imageSrc: headImg,
+  experienceTotal: "35+ years",
+  achievements: [
+    "**Qualification:** B.Sc.(Hons.), MBA, Ph.D(Marketing)",
+    "**Specialization/ Area of Research:** Marketing &amp;&nbsp;Advertising, Visual Communication",
+    "**Email ID:** director.ims@srmu.ac.in",
+    "**ORCID ID:** https://orcid.org/0009-0009-5500-5590",
+    "**Contact No.:** +91-9415095499",
+  ],
+
+
+  profileButtonText: "View Profile",
+
+  backgroundColor: "bg-[#224984]", // Navy blue
+
+  modalContent: ""
+};
+
+
+
+
+
+
+
+export const InstituteofMediaStudiesData1: FeeTableData = {
+  columns: ["Courses", "Duration", "Eligibility Criteria", "Course Fees (PA)"],
+
+  rows: [
+    { col1: "M.A. in Journalism & Mass Communication", col2: "2 Years", col3: "Click to View", col4: "	Rs. 62,000/-" },
+  ],
+
+};
+
+export const InstituteofMediaStudiesData2: FeeTableData = {
+  columns: ["Courses", "Duration", "Eligibility Criteria", "Course Fees (PA)"],
+
+  rows: [
+    { col1: "B.A. in Journalism & Mass Communication", col2: "3 Years", col3: "Click to View", col4: "	Rs. 94,000/-" },
+  ],
+
+};
+
+
+
+
+
+
+
+export const InstituteofMediaStudiesfacultyData: FacultyItem[] = [
+  {
+    id: 1,
+    name: "Dr. Priya Sharma",
+    designation: "Associate Professor",
+    image: vision,
+    cardBgColor: "#1e3a8a",
+  },
+  {
+    id: 2,
+    name: "Dr. Rakesh Mehta",
+    designation: "Professor & Head of Department",
+    image: vision,
+    cardBgColor: "#6b21a8",
+  },
+  {
+    id: 3,
+    name: "Dr. Neha Patil",
+    designation: "Assistant Professor",
+    image: vision,
+  },
+  {
+    id: 4,
+    name: "Dr. Amit Verma",
+    designation: "Research Coordinator",
+    image: vision,
+    cardBgColor: "#0f766e",
+  },
+  {
+    id: 5,
+    name: "Prof. Kavita Deshmukh",
+    designation: "Senior Lecturer",
+    image: vision,
+  },
+];
 
 

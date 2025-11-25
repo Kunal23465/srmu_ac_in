@@ -25,15 +25,15 @@ export const InstituteofTechnologyTopFooterData = [
 
 
 export const visionMissionData = {
+  backgroundColor: "bg-blue-900",
   vision: {
     title: "Our Vision",
     description: [
-      "To be a Institute of excellence in the field of Engineering and Technology&nbsp;with emphasis on quality education, research, consultancy and innovations blended with values and commitment to society.",
+      "To be a Institute of excellence in the field of Engineering and Technology with emphasis on quality education, research, consultancy and innovations blended with values and commitment to society.",
     ],
     buttonText: "Vision",
     buttonBgColor: "bg-amber-400",
-    imageUrl: vision,
-    bgColor: "#0f4a85",
+    imageUrl: vision
   },
 
   mission: {
@@ -47,10 +47,10 @@ export const visionMissionData = {
     ],
     buttonText: "Mission",
     buttonBgColor: "bg-amber-400",
-    imageUrl: mission,
-    bgColor: "#0f4a85",
-  },
+    imageUrl: mission
+  }
 };
+
 
 export const instituteCourseCardData: CustomInstituteCourseCardProps[] = [
   {

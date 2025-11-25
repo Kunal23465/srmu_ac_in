@@ -28,7 +28,11 @@ interface CustomTabsProps {
 
   /**  NEW PROP */
   pillContainerBgColor?: string;
+  alignTabs?: "start" | "center" | "end" | "between" | "around" | "evenly";
 }
+
+
+
 
 const CustomTabs = ({
   items,
@@ -53,11 +57,22 @@ const CustomTabs = ({
 
   /**  Default value */
   pillContainerBgColor = "#f1f5f9",
+
+  alignTabs
 }: CustomTabsProps) => {
   const isControlled = controlledKey !== undefined;
   const [internalKey, setInternalKey] = useState(
     defaultActiveKey || items[0]?.key
   );
+
+  const justifyMap: Record<string, string> = {
+    start: "flex-start",
+    center: "center",
+    end: "flex-end",
+    between: "space-between",
+    around: "space-around",
+    evenly: "space-evenly",
+  };
 
   const currentKey = isControlled ? controlledKey : internalKey;
 
@@ -90,6 +105,7 @@ const CustomTabs = ({
           ${variant === "segment" ? "segment-header" : ""}
         `}
         style={{
+          justifyContent: alignTabs ? justifyMap[alignTabs] : "flex-start",
           borderBottom:
             variant === "underline"
               ? `1px solid ${fullWidthUnderlineColor}`
@@ -165,6 +181,7 @@ const CustomTabs = ({
           gap: 24px;
           padding-bottom: 10px;
           position: relative;
+
         }
 
         .tab-item {

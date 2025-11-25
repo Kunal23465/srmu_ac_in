@@ -38,13 +38,6 @@ export default CustomProgramEligibilityCriterionCard;
 
 -------- Example Data ---------
 
-interface CustomProgramEligibilityCriterionCardProps{
-    heading: string;
-    content: string;
-    extraContent?: string;
-
-}
-
 export const xyz: CustomProgramEligibilityCriterionCardProps = 
   {
     heading: "Eligibility Criterion",

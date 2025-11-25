@@ -5,6 +5,12 @@ import "slick-carousel/slick/slick-theme.css";
 // @ts-ignore
 import { OpportunityCard } from "../../data/placement/placementData";
 
+export interface OpportunityCard {
+  id: number;
+  img: string;
+  course: string;
+  path: string;
+}
 interface CustomProgramOppertunitySliderProps {
   data: OpportunityCard[];
 }
@@ -71,13 +77,6 @@ export default CustomProgramOppertunitySlider;
 
 
 ---------Example Data---------
-
-export interface OpportunityCard {
-  id: number;
-  img: string;
-  course: string;
-  path: string;
-}
 
 export const opportunityCardData: OpportunityCard[] = [
   {
