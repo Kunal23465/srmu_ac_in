@@ -24,7 +24,10 @@ const Institutes: React.FC = () => {
         <CustomOverviewSection data={AcademicsOverviewData} />
         <OurInstitutes />
         <InstituteCardList />
-        <CustomEventCard item={events} />
+
+        {events.map((ev) => (
+          <CustomEventCard key={ev.id} item={ev} />
+        ))}
       </div>
 
 
@@ -38,7 +41,7 @@ const Institutes: React.FC = () => {
 
 
 
-      
+
 
     </>
   )
