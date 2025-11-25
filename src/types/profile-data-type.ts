@@ -15,3 +15,4 @@ export interface InstituteProfile {
 
   modalContent?: string; // NEW -> full long modal description (paragraphs)
 }
+
