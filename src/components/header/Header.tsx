@@ -58,7 +58,7 @@ const Header = () => {
                     const isMega = data?.isMegaMenu === true;
 
                     return (
-                      <div key={index} className="relative px-[15px] group text-[15px] uppercase cursor-pointer">
+                      <div key={index} className="relative px-[15px] py-4 group text-[15px] uppercase cursor-pointer">
                         <Link to={data.path} className={`flex items-center text-white hover:text-[#ffb703] ${location.pathname === data.path ? "active" : ""}`}>
                           {data.item}
                         </Link>
