@@ -1,10 +1,12 @@
-import React from 'react'
-import InstituteofNaturalSciencesandHumanities from '../../../../components/academics/institutes/institute-department/InstituteofNaturalSciencesandHumanities'
+import React from "react";
+import InstituteofNaturalSciencesandHumanities from "../../../../components/academics/institutes/institute-department/InstituteofNaturalSciencesandHumanities/InstituteofNaturalSciencesandHumanities";
 
-const InstituteofNaturalSciencesandHumanitiesPage:React.FC = () => {
+const InstituteofNaturalSciencesandHumanitiesPage: React.FC = () => {
   return (
-    <div><InstituteofNaturalSciencesandHumanities /></div>
-  )
-}
+    <div>
+      <InstituteofNaturalSciencesandHumanities />
+    </div>
+  );
+};
 
-export default InstituteofNaturalSciencesandHumanitiesPage
+export default InstituteofNaturalSciencesandHumanitiesPage;
