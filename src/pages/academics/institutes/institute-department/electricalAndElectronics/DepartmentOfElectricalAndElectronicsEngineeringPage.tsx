@@ -25,8 +25,10 @@ const DepartmentOfElectricalAndElectronicsEngineeringPage: FC = () => {
           }
           classes="counter"
         />
+        {/* @ts-ignore */}
         <CustomInstitueVissionMissionCard data={missionandvisionofelectricalandelectronicsengineering} />
       </div>
+      {/* @ts-ignore */}
       <CustomInstituteProfileCard data={departmentHeadProfileData} />
       <ProgramsAndFees />
 
