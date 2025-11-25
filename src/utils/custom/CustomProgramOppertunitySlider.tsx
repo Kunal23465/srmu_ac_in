@@ -2,8 +2,13 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { OpportunityCard } from "../../data/placement/placementData";
 
+export interface OpportunityCard {
+  id: number;
+  img: string;
+  course: string;
+  path: string;
+}
 interface CustomProgramOppertunitySliderProps {
   data: OpportunityCard[];
 }
@@ -70,13 +75,6 @@ export default CustomProgramOppertunitySlider;
 
 
 ---------Example Data---------
-
-export interface OpportunityCard {
-  id: number;
-  img: string;
-  course: string;
-  path: string;
-}
 
 export const opportunityCardData: OpportunityCard[] = [
   {

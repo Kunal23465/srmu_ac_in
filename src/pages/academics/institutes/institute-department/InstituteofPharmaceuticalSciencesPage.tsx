@@ -1,5 +1,5 @@
 import React from 'react'
-import InstituteofPharmaceuticalSciences from '../../../../components/academics/institutes/institute-department/InstituteofPharmaceuticalSciences'
+import InstituteofPharmaceuticalSciences from '../../../../components/academics/institutes/institute-department/InstituteofPharmaceuticalSciences/InstituteofPharmaceuticalSciences'
 
 const InstituteofPharmaceuticalSciencesPage:React.FC = () => {
   return (
