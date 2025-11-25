@@ -7,11 +7,10 @@ import InstituteCardList from './InstituteCardList';
 import EnquiryForm from './EnquiryForm';
 import CustomTopFooter from '../../../utils/custom/CustomTopFooter';
 import { CustomTopFooterData1 } from '../../../data/about/leadership-and-governance/leadership-and-governance-data';
-// import CustomInstitueVissionMissionCard from '../../../utils/custom/CustomInstitueVissionMissionCard';
-// import CustomPlacedStudentTable from '../../../utils/custom/CustomPlacedStudentTable';
-// import { facultyData, headers, studentData, visionMissionData } from '../../../data/academics/institute/data';
-// import CustomFacultyListCard from '../../../utils/custom/CustomFacultyListCard';
-// import CustomInstitueVissionMissionCard from '../../../utils/custom/CustomInstitueVissionMissionCard';
+
+// import CustomDepartmentFeeDetailsTable from '../../../utils/custom/CustomDepartmentFeeDetailsTable';
+
+
 
 
 
@@ -23,21 +22,14 @@ const Institutes: React.FC = () => {
         <CustomOverviewSection data={AcademicsOverviewData} />
         <OurInstitutes />
         <InstituteCardList />
-        {/* <CustomInstitueVissionMissionCard data={visionMissionData} /> */}
       </div>
 
-      {/* <div className='bg-[#ecf0f9]'>
-<div className={`${Classes["container"]}`}>
-   <CustomPlacedStudentTable
-        students={studentData}
-        headers={headers}
-      />
 
-      <CustomFacultyListCard data={facultyData} />
-</div> 
-     </div> */}
 
-     
+
+
+
+
       <EnquiryForm />
       <CustomTopFooter data={CustomTopFooterData1} />
 

@@ -34,7 +34,7 @@ const CustomFacultyListCard: React.FC<CardListProps> = ({ data }) => {
             transition-transform duration-300 hover:-translate-y-2
           "
           style={{
-            backgroundColor: faculty.cardBgColor || "black",
+            backgroundColor: faculty.cardBgColor || "transparent",
           }}
         >
           <div className="w-full flex justify-center">
