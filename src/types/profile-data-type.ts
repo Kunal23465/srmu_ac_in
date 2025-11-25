@@ -17,5 +17,5 @@ export interface ProfileData {
   profileButtonText: string;
   profileButtonLink: string;
   backgroundColor: string;
-  modalContent: React.ReactNode;  
+  modalContent?: React.ReactNode;  
 }

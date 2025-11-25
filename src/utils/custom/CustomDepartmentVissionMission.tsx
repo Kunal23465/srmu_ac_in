@@ -25,7 +25,7 @@ const CustomDepartmentVissionMission: React.FC<Props> = ({ data }) => {
         </h1>
 
         {/* List Items */}
-        <ul className="list-disc pl-5 pt-[10px] space-y-2 text-[#212529] marker:text-[1.8rem]">
+        <ul className="list-disc pl-5 pt-2.5 space-y-2 text-[#212529] marker:text-[1.8rem]">
           {data.points.map((point, index) => (
             <li key={index} >{point}</li>
           ))}

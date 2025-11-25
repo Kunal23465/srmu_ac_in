@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 
-interface Student {
+export interface Student {
     name: string;
     program: string;
     company: string;
 }
 
-interface Headers {
+export interface Headers {
     name: string;
     program: string;
     company: string;
 }
 
-interface CustomPlacedStudentTableProps {
+export interface CustomPlacedStudentTableProps {
     students: Student[];
     headers: Headers;
 }

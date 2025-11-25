@@ -1,7 +1,7 @@
 import React from 'react'
 import InstituteofAgriculturalSciencesandTechnology from '../../../../components/academics/institutes/institute-department/InstituteofAgriculturalSciencesandTechnology'
 
-const InstituteofAgriculturalSciencesandTechnologyPage:React.FC = () => {
+const  InstituteofAgriculturalSciencesandTechnologyPage:React.FC = () => {
   return (
     <div><InstituteofAgriculturalSciencesandTechnology /></div>
   )

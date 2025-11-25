@@ -14,11 +14,11 @@ interface CardListProps {
 
 const CustomFacultyListCard: React.FC<CardListProps> = ({ data }) => {
     return (
-        <div className="flex gap-6 flex-wrap justify-center">
+        <div className="flex  gap-6 flex-wrap justify-center">
             {data.map((faculty) => (
                 <div
                     key={faculty.id}
-                    className="w-75 rounded-xl cursor-pointer overflow-hidden p-6 border-1/2 border-[#ffb703] shadow-xl transition-transform duration-300 hover:-translate-y-2"
+                    className="w-70 rounded-xl cursor-pointer overflow-hidden p-6 border border-[#c7cace] shadow-xl transition-transform duration-300 hover:-translate-y-2"
                     style={{
                         backgroundColor: faculty.cardBgColor || "black",
                     }}

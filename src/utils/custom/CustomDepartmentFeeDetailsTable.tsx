@@ -113,7 +113,7 @@ const CustomDepartmentFeeDetailsTable: React.FC<Props> = ({ data }) => {
                                     ) : val === "NA" ? "-" : val}
 
                                     {colIndex !== values.length - 1 && (
-                                        <span className="absolute right-0 h-10 w-[1px] bg-gray-300"></span>
+                                        <span className="absolute right-0 h-10 w-px bg-gray-300"></span>
                                     )}
                                 </div>
                             ))}
@@ -131,13 +131,13 @@ const CustomDepartmentFeeDetailsTable: React.FC<Props> = ({ data }) => {
                 })}
             </div>
 
-            <div className="mt-6 bg-[#ffffff] p-8 rounded-lg">
+          { data?.notes &&  <div className="mt-6 bg-[#ffffff] p-8 rounded-lg">
                 {data.notes.map((note, i) => (
                     <p key={i} className="text-sm pb-4 text-[#0c3b6a] font-semibold">
                         {note}
                     </p>
                 ))}
-            </div>
+            </div>}
 
         </div>
     );

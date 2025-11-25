@@ -1,5 +1,5 @@
 import React from "react";
-import classNamees from "../../../utils/styles/Global.module.css";
+import Classes from "../../../utils/styles/Global.module.css";
 import CustomTopFooter from "../../../utils/custom/CustomTopFooter";
 import {
   PlacementCellTopFooterData,
@@ -14,7 +14,7 @@ import PlacementDrives from "./PlacementDrives";
 const PlacementOverview: React.FC = () => {
   return (
     <div>
-      <div className={`${classNamees["container"]}`}>
+      <div className={`${Classes["container"]}`}>
         <CustomOverviewSection data={PlacementOverviewData} />
       </div>
         <PlacementStayWithUs/>  

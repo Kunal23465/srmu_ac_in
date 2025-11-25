@@ -26,7 +26,7 @@ export interface FeeTableRow {
 export interface FeeTableData {
   columns: string[];
   rows: FeeTableRow[];
-  notes: string[];
+  notes?: string[];
 }
 
 
