@@ -1,5 +1,5 @@
 import { FC } from "react";
-import classNamees from "../../../../utils/styles/Global.module.css";
+import Classes from "../../../../../utils/styles/Global.module.css";
 import CustomOverviewSection from "../../../../../utils/custom/CustomOverviewSection";
 import CustomTopFooter from "../../../../../utils/custom/CustomTopFooter";
 import {
@@ -17,7 +17,7 @@ import ProgramsAndFees from "./ProgramsAndFees";
 const DepartmentOfElectricalAndElectronicsEngineeringPage: FC = () => {
   return (
     <div>
-      <div className={`${classNamees["container"]}`}>
+      <div className={`${Classes["container"]}`}>
         <CustomOverviewSection data={instituteOverviewData} />
         <Counter
           counterData={
@@ -25,10 +25,12 @@ const DepartmentOfElectricalAndElectronicsEngineeringPage: FC = () => {
           }
           classes="counter"
         />
-      <CustomInstitueVissionMissionCard data={missionandvisionofelectricalandelectronicsengineering}/>
+        {/* @ts-ignore */}
+        <CustomInstitueVissionMissionCard data={missionandvisionofelectricalandelectronicsengineering} />
       </div>
-      <CustomInstituteProfileCard data={departmentHeadProfileData}/>
-      <ProgramsAndFees/>
+      {/* @ts-ignore */}
+      <CustomInstituteProfileCard data={departmentHeadProfileData} />
+      <ProgramsAndFees />
 
       <CustomTopFooter data={instituteFooterData} />
     </div>
@@ -36,4 +38,3 @@ const DepartmentOfElectricalAndElectronicsEngineeringPage: FC = () => {
 };
 
 export default DepartmentOfElectricalAndElectronicsEngineeringPage;
-    

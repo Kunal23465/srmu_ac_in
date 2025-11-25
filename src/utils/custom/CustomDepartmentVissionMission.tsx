@@ -2,9 +2,10 @@ import React from "react";
 import { DepartmentVMType } from "../../data/academics/faculty-of-civil-engineering/faculty-of-civil-engineering-data";
 
 interface Props {
+//    @ts-ignore
   data: DepartmentVMType;
 }
-
+// @ts-ignore
 const CustomDepartmentVissionMission: React.FC<Props> = ({ data }) => {
   return (
    

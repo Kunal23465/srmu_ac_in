@@ -2,8 +2,8 @@ import React from 'react'
 import Classes from "../../../../utils/styles/Global.module.css";
 import CustomOverviewSection from '../../../../utils/custom/CustomOverviewSection';
 import CustomTopFooter from '../../../../utils/custom/CustomTopFooter';
-import { InstituteofMediaStudiesCounterData, InstituteofMediaStudiesOverviewData, InstituteofMediaStudiesTopFooterData, InstituteofMediaStudiesvisionMissionData } from '../../../../data/academics/institute/institute-department/institute-of-media-studies-data';
-import CustomInstitueVissionMissionCard from '../../../../utils/custom/CustomDepartmentVissionMission';
+import { InstituteofMediaStudiesCounterData, InstituteofMediaStudiesOverviewData, InstituteofMediaStudiesTopFooterData } from '../../../../data/academics/institute/institute-department/institute-of-media-studies-data';
+
 import Counter from '../../../../utils/custom/Counter';
 
 

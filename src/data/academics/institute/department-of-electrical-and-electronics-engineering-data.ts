@@ -1,10 +1,8 @@
 import { customeOverViewType } from "../../../types/home-data-type";
-import { ProfileData } from "../../../types/profile-data-type";
+
 import { counterDataType } from "../../home/counterData";
 import drrsbajpai from "../../../assets/images/academics/institutes/dr.r.s.bajpai.jpg";
-import {
-  VisionMissionData,
-} from "../../../utils/custom/CustomDepartmentVissionMission";
+
 import visionImg from "../../../assets/images/academics/institutes/dept-vision.png";
 import misionImg from "../../../assets/images/academics/institutes/dept-mission.png";
 
@@ -61,7 +59,7 @@ export const counterDataForDepartmentOfElectricalAndElectronicsEngineering: coun
 //     },
 //   };
 
-export const departmentHeadProfileData: ProfileData = {
+export const departmentHeadProfileData = {
   name: "Prof. (Dr.) N.S. Bajpai",
   title: "Department Head",
   designation: "Dean, FoEEE, SRMU, Lucknow-Deva Road",
@@ -81,7 +79,7 @@ export const departmentHeadProfileData: ProfileData = {
   backgroundColor: "bg-[#224984]",
 };
 
-const misiondata: VisionMissionData = {
+const misiondata = {
   title: "Mission",
   description: [
     "To prepare engineering graduates with deep understanding of the fundamentals of Electrical & Electronics Engineering.",
@@ -93,7 +91,7 @@ const misiondata: VisionMissionData = {
   bgColor: "#E9F4FF",
 };
 
-const visiondata: VisionMissionData = {
+const visiondata= {
  
       title: "Vision",
       description: [

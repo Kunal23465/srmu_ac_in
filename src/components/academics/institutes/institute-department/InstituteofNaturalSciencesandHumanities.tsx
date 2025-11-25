@@ -10,6 +10,7 @@ const InstituteofNaturalSciencesandHumanities: React.FC = () => {
   return (
     <div> <div className={`${Classes["container"]}`}>
         <CustomOverviewSection data={InstituteofNaturalSciencesandHumanitiesOverviewData} />
+        {/*@ts-ignore */}
         <CustomInstitueVissionMissionCard data={InstituteofNaturalSciencesandHumanitiesvisionMissionData} />
         <div className="my-15 flex flex-col lg sm:flex-row">
           <div className="text-2xl mr-25 font-medium sm:text-5xl">Our Departments</div>
