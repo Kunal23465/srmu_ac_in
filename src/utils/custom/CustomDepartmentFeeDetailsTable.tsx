@@ -59,6 +59,7 @@
 
 // export default FeeTable;
 
+
 import React from "react";
 import { FeeTableData } from "../../data/academics/faculty-of-civil-engineering/faculty-of-civil-engineering-data";
 import { CustomModal } from "./CustomIqacCard";
@@ -131,13 +132,13 @@ const CustomDepartmentFeeDetailsTable: React.FC<Props> = ({ data }) => {
                 })}
             </div>
 
-            <div className="mt-6 bg-[#ffffff] p-8 rounded-lg">
+            {data.notes && <div className="mt-6 bg-[#ffffff] p-8 rounded-lg">
                 {data.notes.map((note, i) => (
                     <p key={i} className="text-sm pb-4 text-[#0c3b6a] font-semibold">
                         {note}
                     </p>
                 ))}
-            </div>
+            </div>}
 
         </div>
     );

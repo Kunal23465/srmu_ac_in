@@ -9,6 +9,7 @@ import depSlide2 from "../../../assets/images/academics/departments/depSlide2.pn
 import depSlide3 from "../../../assets/images/academics/departments/depSlide3.png";
 import depSlide4 from "../../../assets/images/academics/departments/depSlide4.png";
 import depSlide5 from "../../../assets/images/academics/departments/depSlide5.png";
+import { FacultyItem } from "../../../utils/custom/CustomFacultyListCard";
 
 export interface DepartmentVMType {
   id: number;
@@ -25,7 +26,7 @@ export interface FeeTableRow {
 export interface FeeTableData {
   columns: string[];
   rows: FeeTableRow[];
-  notes: string[];
+  notes?: string[];
 }
 
 
@@ -88,6 +89,20 @@ export const civilFeeData: FeeTableData = {
   notes: ["Alumni Fee: 500", "Degree Fee: 1000", "Both these fees are payable in the final year of the program"],
 };
 
+export const civilFeeData1: FeeTableData = {
+  columns: ["Fee Type", "1 Year", "2 Year", "3 Year"],
+
+  rows: [
+    { col1: "Tuition Fee", col2: 45000, col3: 45000, col4: 45000 },
+    { col1: "Examination Fee", col2: 5000, col3: 5000, col4: 5000 },
+    { col1: "Other Fees", col2: 7000, col3: 7000, col4: 7000 },
+    { col1: "Development Fund", col2: 5000, col3: 5000, col4: 5000 },
+    { col1: "Caution Money", col2: 5000, col3: "NA", col4: "NA" },
+
+  ],
+
+  // notes: ["Alumni Fee: 500", "Degree Fee: 1000", "Both these fees are payable in the final year of the program"],
+};
 export const departmentHighlights: departmentHighlightscardType[] = [
   {
     image: depSlide1,
@@ -119,3 +134,145 @@ export const departmentHighlights: departmentHighlightscardType[] = [
     description: "A strong ecosystem of experts from diverse core fields combining young talent and experienced professionals with both industry and academic exposure.",
   },
 ];
+
+
+
+
+
+
+export const facultyData: FacultyItem[] = [
+  {
+    id: 1,
+    name: "Dr. Aditi Sharma",
+    designation: "Professor & Head of Department",
+    image: "https://via.placeholder.com/200",
+    // cardBgColor: "#001219",
+  },
+  {
+    id: 2,
+    name: "Prof. Rohit Malhotra",
+    designation: "Associate Professor",
+    image: "https://via.placeholder.com/200",
+    // cardBgColor: "#003049",
+  },
+  {
+    id: 3,
+    name: "Dr. Neha Kapoor",
+    designation: "Assistant Professor",
+    image: "https://via.placeholder.com/200",
+    // cardBgColor: "#370617",
+  },
+  {
+    id: 4,
+    name: "Mr. Arjun Pratap",
+    designation: "Senior Lecturer",
+    image: "https://via.placeholder.com/200",
+    // cardBgColor: "#283618",
+  },
+  {
+    id: 5,
+    name: "Dr. Suman Verma",
+    designation: "Research Coordinator",
+    image: "https://via.placeholder.com/200",
+    // cardBgColor: "#432818",
+  },
+];
+
+
+
+
+
+
+
+
+export const civilIndshonoursEngineeringFeeTable: FeeTableData = {
+  columns: ["Courses", "Duration", "Eligibility Criteria", "Course Fees (PA)"],
+
+  rows: [
+    {
+      course: "M.Tech. in Electric Vehicle Technology",
+      duration: "2 Years",
+      eligibility: "Click to View",
+      fee: "₹1,07,000/-",
+      eligibilityContent: `
+        <h2 class='font-bold text-lg mb-3'>Eligibility – M.Tech. in Electric Vehicle Technology</h2>
+        <ul class='list-disc pl-5 space-y-2'>
+            <li>B.E./B.Tech. in relevant discipline</li>
+            <li>Minimum required % as per university norms</li>
+            <li>As per SRMU PG admission guidelines</li>
+        </ul>
+      `,
+    },
+
+    {
+      course: "M.Tech. in Electric Vehicle Technology (Part Time)",
+      duration: "3 Years",
+      eligibility: "Click to View",
+      fee: "₹69,000/-",
+      eligibilityContent: `
+        <h2 class='font-bold text-lg mb-3'>Eligibility – M.Tech. EV (Part Time)</h2>
+        <ul class='list-disc pl-5 space-y-2'>
+            <li>Working professionals with B.E./B.Tech.</li>
+            <li>Experience as required by university norms</li>
+        </ul>
+      `,
+    },
+
+    {
+      course: "B.Tech. in EE (EV Engineering) with L&T",
+      duration: "4 Years",
+      eligibility: "Click to View",
+      fee: "₹1,46,375/-",
+      eligibilityContent: `
+        <h2 class='font-bold text-lg mb-3'>Eligibility – B.Tech. EE (EV) with L&T</h2>
+        <ul class='list-disc pl-5 space-y-2'>
+            <li>10+2 with PCM</li>
+            <li>Minimum marks as per SRMU norms</li>
+        </ul>
+      `,
+    },
+
+    {
+      course: "B.Tech. in EE (EV Engineering) (Lateral Entry) with L&T",
+      duration: "3 Years",
+      eligibility: "Click to View",
+      fee: "₹1,51,375/-",
+      eligibilityContent: `
+        <h2 class='font-bold text-lg mb-3'>Eligibility – B.Tech. EE (EV) Lateral</h2>
+        <ul class='list-disc pl-5 space-y-2'>
+            <li>Diploma in relevant engineering stream</li>
+            <li>Or B.Sc. with required subjects</li>
+        </ul>
+      `,
+    },
+
+    {
+      course: "B.Tech. in ECE (EV Engineering) with L&T",
+      duration: "4 Years",
+      eligibility: "Click to View",
+      fee: "₹1,46,375/-",
+      eligibilityContent: `
+        <h2 class='font-bold text-lg mb-3'>Eligibility – B.Tech. ECE (EV) with L&T</h2>
+        <ul class='list-disc pl-5 space-y-2'>
+            <li>10+2 with PCM</li>
+        </ul>
+      `,
+    },
+
+    {
+      course: "B.Tech. in ECE (EV Engineering) (Lateral Entry) with L&T",
+      duration: "3 Years",
+      eligibility: "Click to View",
+      fee: "₹1,51,375/-",
+      eligibilityContent: `
+        <h2 class='font-bold text-lg mb-3'>Eligibility – B.Tech. ECE (EV) Lateral</h2>
+        <ul class='list-disc pl-5 space-y-2'>
+            <li>Diploma in relevant engineering stream</li>
+            <li>Or B.Sc. with required subjects</li>
+        </ul>
+      `,
+    },
+  ],
+
+  notes: ["Course fees are payable annually", "Eligibility depends on SRMU criteria for UG & PG admissions"],
+};
