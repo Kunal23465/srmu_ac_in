@@ -1,5 +1,5 @@
 import React from "react";
-import classNamees from "../../utils/styles/Global.module.css";
+import Classes from "../../utils/styles/Global.module.css";
 import CustomTopFooter from "../../utils/custom/CustomTopFooter";
 import CustomOverviewSection from "../../utils/custom/CustomOverviewSection";
 import { NoticeOverviewData, NoticeTopFooterData, NoticePdfData } from "../../data/notice/NoticeData";
@@ -7,7 +7,7 @@ import { NoticeOverviewData, NoticeTopFooterData, NoticePdfData } from "../../da
 const Notice: React.FC = () => {
   return (
     <div>
-      <div className={`${classNamees["container"]}`}>
+      <div className={`${Classes["container"]}`}>
         <CustomOverviewSection data={NoticeOverviewData} />
         <div className="bg-slate-100 my-25 py-16 px-12 rounded-xl">
           {NoticePdfData.map((item) => (
