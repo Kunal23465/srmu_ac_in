@@ -1,18 +1,17 @@
 import React from 'react'
 import Classes from "../../../utils/styles/Global.module.css";
 import CustomOverviewSection from '../../../utils/custom/CustomOverviewSection';
-import { CivildepartmentVMData, civilFacultyOverviewData, civilFeeData, counterDataForFacultyCivil, departmentHighlights, } from '../../../data/academics/faculty-of-civil-engineering/faculty-of-civil-engineering-data';
+import { CivildepartmentVMData, civilFacultyOverviewData, civilFeeData, civilFeeData1, civilIndshonoursEngineeringFeeTable, counterDataForFacultyCivil, departmentHighlights, facultyData, } from '../../../data/academics/faculty-of-civil-engineering/faculty-of-civil-engineering-data';
 import CustomTopFooter from '../../../utils/custom/CustomTopFooter';
 import { CustomTopFooterData1 } from '../../../data/about/leadership-and-governance/leadership-and-governance-data';
 import Counter from '../../../utils/custom/Counter';
-import CustomDepartmentVissionMission from '../../../utils/custom/CustomDepartmentVissionMission';
 import CustomDepartmentFeeDetailsTable from '../../../utils/custom/CustomDepartmentFeeDetailsTable';
 import CustomTabs from '../../../utils/custom/CustomTabs';
-import AboutGrievance from '../../campus-life/grievance-redressal-system/AboutGrievance';
-import { grievanceData } from '../../../data/campus-life/grievance-redressal-system/grievance-redressal-system-data';
-import TypesOfGrievance from '../../campus-life/grievance-redressal-system/TypesOfGrievance';
 import CustomDepartmentSlider from '../../../utils/custom/CustomDepartmentSlider';
-import CustomDepartmentHighlightCard from './CustomDepartmentHighlightCard';
+import CustomDepartmentVissionMission from '../../../utils/custom/CustomDepartmentVissionMission';
+import CustomDepartmentHighlightCard from '../../../utils/custom/CustomDepartmentHighlightCard';
+import facilitiesBg from "../../../assets/images/academics/departments/facilities-bg-lg.jpeg"
+import CustomFacultyListCard from '../../../utils/custom/CustomFacultyListCard';
 
 
 const FacultyOfCivilEngineering: React.FC = () => {
@@ -21,13 +20,22 @@ const FacultyOfCivilEngineering: React.FC = () => {
     const items = [
         {
             key: "1",
-            label: "ABOUT GRIEVANCE REDRESSAL SYSTEM",
-            content: <CustomDepartmentFeeDetailsTable data={civilFeeData} />,
+            label: "Industry Honours",
+            content: <CustomDepartmentFeeDetailsTable data={civilIndshonoursEngineeringFeeTable} />,
         },
         {
             key: "2",
-            label: "TYPES OF GRIEVANCE",
-            content: <TypesOfGrievance data={grievanceData.types} />,
+            label: "Integrated",
+            content: <CustomDepartmentFeeDetailsTable data={civilFeeData1} />,
+        },
+        {
+            key: "3",
+            label: "Postgraduate",
+            content: <CustomDepartmentFeeDetailsTable data={civilFeeData} />,
+        }, {
+            key: "4",
+            label: "Undergraduate",
+            content: <CustomDepartmentFeeDetailsTable data={civilFeeData} />,
         },
 
 
@@ -38,31 +46,57 @@ const FacultyOfCivilEngineering: React.FC = () => {
             <div className={`${Classes["container"]}`}>
                 <CustomOverviewSection data={civilFacultyOverviewData} />
                 <Counter counterData={counterDataForFacultyCivil} classes="counter" />
-                {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-12  mb-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12  mb-10 mt-10">
                     {CivildepartmentVMData.map((item) => (
                         <CustomDepartmentVissionMission key={item.id} data={item} />
                     ))}
-                </div> */}
-
-                <CustomTabs
-                    items={items}
-                    variant="pill"
-                    activeTextColor="#000000"
-                    inactiveTextColor="#ffffff"
-                    activeBgColor="#ffb703"
-                    inactiveBgColor="#0f4a85"
-                    pillContainerBgColor="#0f4a85"
-                />
-
-
-
-
-                <div className="">
-
                 </div>
 
 
+
+
+
+                <div className='my-[80px]'>
+
+                    <div className='flex w-full justify-center flex-col items-center'>
+                        <h1 className="leading-[1.2] font-medium text-[3.125rem] mb-3">
+                            Programs and Fees
+                        </h1>
+                        <p className='text-center text-[15px] mb-[45px]'>At SRMU we have always believed that a student SHOULD BE TRAINED FOR INDUSTRY, BY THE INDUSTRY. Keeping the culture of rich academia-industry interface, university is now offering specialized programs in different academic domains.</p>
+
+                    </div>
+                    <CustomTabs
+                        items={items}
+                        variant="pill"
+                        activeTextColor="#000000"
+                        inactiveTextColor="#ffffff"
+                        activeBgColor="#ffb703"
+                        inactiveBgColor="#0f4a85"
+                        pillContainerBgColor="#0f4a85"
+                        alignTabs='center'
+                    />
+
+                </div>
             </div>
+            <div>
+
+                <CustomDepartmentSlider
+                    heading="Faculty List"
+                    description="The University takes pride in recruiting distinguished faculty from reputed central universities and best institutes like- IIT, IIM, MNNIT and IIT-BHU. They bring to the classroom, passion and enthusiasm for teaching, providing an intimate, interactive, personalized approach to learning."
+                    data={facultyData}
+                    renderCard={({ item }) => <CustomFacultyListCard item={item} />}
+                    bgImage={facilitiesBg}
+                    arrowColor="#fff"
+
+                    headingColor="#ffffff"
+                    descriptionColor="#e5e5e5"
+
+                    arrowBorderColor="#0f4a85"
+                    // arrowBgColor="#fff2"
+                    breakpoints={{ desktop: 4, tablet: 3, mobile: 1 }}
+                />
+            </div>
+
             <CustomTopFooter data={CustomTopFooterData1} />
 
             <CustomDepartmentSlider

@@ -6,13 +6,12 @@ import CustomDepartmentVissionMission from "../../../../utils/custom/CustomDepar
 import CustomInstituteProfileCard from "../../../../utils/custom/CustomInstituteProfileCard";
 import ProgramsAndFees from "../../../../components/academics/institutes/institute-department/electricalAndElectronics/ProgramsAndFees";
 import CustomDepartmentSlider from "../../../../utils/custom/CustomDepartmentSlider";
-// import Classes from "../../../../utils/styles/Global.module.css";
 import Classes from "../../../../utils/styles/Global.module.css";
 import facultybg from "../../../../assets/images/placements/placement-overview/placementrecords.jpeg";
 import CustomFacultyListCard from "../../../../utils/custom/CustomFacultyListCard";
-import CustomDepartmentHighlightCard from "../../../../components/academics/faculty-of-civil-engineering/CustomDepartmentHighlightCard";
 import PlacedStudents from "../../../../components/academics/institutes/institute-department/electricalAndElectronics/PlacedStudents";
 import CustomTopFooter from "../../../../utils/custom/CustomTopFooter";
+import CustomDepartmentHighlightCard from "../../../../utils/custom/CustomDepartmentHighlightCard";
 
 
 const DepartmentOfElectricalAndElectronicsEngineeringPage: FC = () => {
@@ -40,10 +39,11 @@ const DepartmentOfElectricalAndElectronicsEngineeringPage: FC = () => {
         heading="Faculty List"
         description="The University takes pride in recruiting distinguished faculty from reputed central universities and best institutes like- IIT, IIM, MNNIT and IIT-BHU. They bring to the classroom, passion and enthusiasm for teaching, providing an intimate, interactive, personalized approach to learning."
         data={facultyDetails}
-        renderCard={({ item }) => <CustomFacultyListCard data={item} />}
+        renderCard={({ item }) => <CustomFacultyListCard item={item} />}
         bgImage={facultybg}
         arrowColor="#ffffff"
-        textColor="#ffffff"
+        headingColor="#ffffff"
+        descriptionColor="#ffffff"
         breakpoints={{ desktop: 4, tablet: 2, mobile: 1 }}
       />
 
@@ -59,7 +59,6 @@ const DepartmentOfElectricalAndElectronicsEngineeringPage: FC = () => {
         renderCard={({ item }) => <CustomDepartmentHighlightCard item={item} />}
         bgColor="#f8b922"
         arrowColor="#000"
-        textColor="#000"
         breakpoints={{ desktop: 3, tablet: 2, mobile: 1 }}
       />
       <CustomDepartmentSlider
@@ -69,7 +68,6 @@ const DepartmentOfElectricalAndElectronicsEngineeringPage: FC = () => {
         renderCard={({ item }) => <CustomDepartmentHighlightCard item={item} />}
         bgColor="#ffffff"
         arrowColor="#96a9c4"
-        textColor="#000"
         breakpoints={{ desktop: 3, tablet: 2, mobile: 1 }}
       />
       <CustomTopFooter data={instituteFooterData} />

@@ -79,7 +79,7 @@ import GrievanceRedressalSystemPage from "../pages/campus-life/grievance-redress
 import OutreachActivationsPage from "../pages/campus-life/outreach-activations/OutreachActivationsPage";
 import AdmissionEnquiryPage from "../pages/admission-enquiry/AdmissionEnquiryPage";
 import AdmissionPolicyPage from "../pages/admissions/admission-policy/AdmissionPolicyPage";
-import FacultyOfCivilEngineeringPage from "../pages/academics/faculty-of-civil-engineering/FacultyOfCivilEngineeringPage";
+import FacultyOfCivilEngineeringPage from "../pages/academics/institutes/institute-department/FacultyOfCivilEngineeringPage";
 import PlacementOverviewPage from "../pages/placement/placement-overview/PlacementOverviewPage";
 
 import InstituteofTechnologyPage from "../pages/academics/institutes/institute-department/InstituteofTechnologyPage";
@@ -96,6 +96,7 @@ import SRMUPolytechnicPage from "../pages/academics/institutes/institute-departm
 import ConferenceDetailPage from "../components/research/publication/conference/ConferenceDetailPage";
 import DepartmentOfElectricalAndElectronicsEngineeringPage from "../pages/academics/institutes/institute-department/DepartmentOfElectricalAndElectronicsEngineeringPage";
 import FacultyOfMechanicalEngineeringPage from "../pages/academics/institutes/institute-department/FacultyOfMechanicalEngineeringPage";
+import DepartmentOfCSEPage from "../pages/academics/institutes/institute-department/DepartmentOfCSEPage";
 interface IMatches {
   pathname: string;
   params: Params<string>;
@@ -250,7 +251,6 @@ export const routes = [
           },
         ],
       },
-
       {
         path: "/academics",
         element: <AcademicsPage />,
@@ -387,6 +387,13 @@ export const routes = [
               {
                 path: "srmu-polytechnic1",
                 element: <SRMUPolytechnicPage />,
+                handle: {
+                  crumb: () => <Link to="/">SRMU Polytechnic</Link>,
+                },
+              },
+              {
+                path: "department-of-Cse",
+                element: <DepartmentOfCSEPage />,
                 handle: {
                   crumb: () => <Link to="/">SRMU Polytechnic</Link>,
                 },

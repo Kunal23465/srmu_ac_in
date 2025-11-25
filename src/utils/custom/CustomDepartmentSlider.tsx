@@ -1,172 +1,201 @@
 import React, { useState, useEffect, useRef, TouchEvent } from "react";
 import Classes from "../../utils/styles/Global.module.css";
-import {
-  MdOutlineKeyboardArrowLeft,
-  MdOutlineKeyboardArrowRight,
-} from "react-icons/md";
+import { MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from "react-icons/md";
+
 
 export interface SliderRenderProps<T> {
-  item: T;
-  index: number;
+    item: T;
+    index: number;
 }
+
+
+
 
 export interface SliderProps<T> {
-  data: T[];
-  renderCard: (props: SliderRenderProps<T>) => React.ReactNode;
+    data: T[];
+    renderCard: (props: SliderRenderProps<T>) => React.ReactNode;
 
-  heading: string;
-  description?: string;
-  bgColor?: string;
-  bgImage?: string;
-  arrowColor?: string;
-  textColor?: string;
+    heading: string;
+    description?: string;
 
-  breakpoints?: {
-    desktop: number;
-    tablet: number;
-    mobile: number;
-  };
+    bgColor?: string;
+    bgImage?: string;
+
+    /** NEW PROPS */
+    headingColor?: string;
+    descriptionColor?: string;
+
+    arrowColor?: string;          // icon
+    arrowBorderColor?: string;    // border
+    arrowBgColor?: string;        // background color
+
+    breakpoints?: {
+        desktop: number;
+        tablet: number;
+        mobile: number;
+    };
 }
-
 function CustomDepartmentSlider<T>({
-  data,
-  renderCard,
-  heading,
-  description,
-  bgColor = "#ffffff",
-  bgImage,
-  textColor = "#000",
-  arrowColor = "#000",
-  breakpoints = { desktop: 3, tablet: 2, mobile: 1 },
+    data,
+    renderCard,
+    heading,
+    description,
+
+    bgColor = "#ffffff",
+    bgImage,
+
+    /** NEW DEFAULTS */
+    headingColor = "#000000",
+    descriptionColor = "#212529",
+
+    arrowColor = "#000",
+    arrowBorderColor = "#000",
+    arrowBgColor = "transparent",
+
+    breakpoints = { desktop: 3, tablet: 2, mobile: 1 },
 }: SliderProps<T>) {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [cardsPerView, setCardsPerView] = useState(breakpoints.desktop);
 
-  const trackRef = useRef<HTMLDivElement>(null);
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [cardsPerView, setCardsPerView] = useState(breakpoints.desktop);
 
-  // RESPONSIVE
-  const handleResize = () => {
-    if (window.innerWidth <= 600) setCardsPerView(breakpoints.mobile);
-    else if (window.innerWidth <= 1024) setCardsPerView(breakpoints.tablet);
-    else setCardsPerView(breakpoints.desktop);
-  };
+    const trackRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+    const handleResize = () => {
+        if (window.innerWidth <= 600) setCardsPerView(breakpoints.mobile);
+        else if (window.innerWidth <= 1024) setCardsPerView(breakpoints.tablet);
+        else setCardsPerView(breakpoints.desktop);
+    };
 
-  // SLIDE NAVIGATION
-  const handleNext = () => {
-    if (currentIndex < data.length - cardsPerView)
-      setCurrentIndex((p) => p + 1);
-  };
+    useEffect(() => {
+        handleResize();
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
 
-  const handlePrev = () => {
-    if (currentIndex > 0) setCurrentIndex((p) => p - 1);
-  };
+    const handleNext = () => {
+        if (currentIndex < data.length - cardsPerView) setCurrentIndex(p => p + 1);
+    };
 
-  // SWIPE
-  const startX = useRef(0);
-  const endX = useRef(0);
+    const handlePrev = () => {
+        if (currentIndex > 0) setCurrentIndex(p => p - 1);
+    };
 
-  const onTouchStart = (e: TouchEvent<HTMLDivElement>) =>
-    (startX.current = e.touches[0].clientX);
-  const onTouchMove = (e: TouchEvent<HTMLDivElement>) =>
-    (endX.current = e.touches[0].clientX);
-  const onTouchEnd = () => {
-    const distance = startX.current - endX.current;
-    if (distance > 50) handleNext();
-    if (distance < -50) handlePrev();
-  };
+    const startX = useRef(0);
+    const endX = useRef(0);
 
-  // DISABLE BUTTONS
-  const isAtStart = currentIndex === 0;
-  const isAtEnd = currentIndex >= data.length - cardsPerView;
+    const onTouchStart = (e: TouchEvent<HTMLDivElement>) =>
+        (startX.current = e.touches[0].clientX);
 
-  return (
-    <div
-      className="px-14 py-22"
-      style={{
-        background: bgImage ? `url(${bgImage}) center/cover` : bgColor,
-      }}
-    >
-      {/* ===== TOP SECTION ===== */}
-      <div
-        className={`flex justify-between items-start w-full mb-8 ${Classes["container"]}  `}
-      >
-        {/* LEFT 50% */}
-        <div className="px-3 ">
-          <h1
-            className="text-[45px] font-semibold  "
-            style={{ color: textColor }}
-          >
-            {heading}
-          </h1>
-          {description && (
-            <p className=" mt-2 text-[16px]" style={{ color: textColor }}>
-              {description}
-            </p>
-          )}
-        </div>
+    const onTouchMove = (e: TouchEvent<HTMLDivElement>) =>
+        (endX.current = e.touches[0].clientX);
 
-        {/* RIGHT 50% — ARROWS */}
-        <div className="flex justify-end gap-3 px-3">
-          <button
-            onClick={handlePrev}
-            disabled={isAtStart}
-            className={`border-2 w-12 h-12 flex items-center justify-center text-lg transition font-semibold ${
-              isAtStart
-                ? "opacity-40 cursor-not-allowed"
-                : "hover:cursor-pointer"
-            }`}
-            style={{ borderColor: arrowColor, color: arrowColor }}
-          >
-            <MdOutlineKeyboardArrowLeft size={35} />
-          </button>
+    const onTouchEnd = () => {
+        const distance = startX.current - endX.current;
+        if (distance > 50) handleNext();
+        if (distance < -50) handlePrev();
+    };
 
-          <button
-            onClick={handleNext}
-            disabled={isAtEnd}
-            className={`border-2 w-12 h-12 flex items-center justify-center text-lg transition font-semibold ${
-              isAtEnd ? "opacity-40 cursor-not-allowed" : "hover:cursor-pointer"
-            }`}
-            style={{ borderColor: arrowColor, color: arrowColor }}
-          >
-            <MdOutlineKeyboardArrowRight size={35} />
-          </button>
-        </div>
-      </div>
+    const isAtStart = currentIndex === 0;
+    const isAtEnd = currentIndex >= data.length - cardsPerView;
 
-      {/* ===== BOTTOM — FULL WIDTH SLIDER ===== */}
-      <div
-        className={`overflow-hidden w-full ${Classes["container"]}   `}
-        onTouchStart={onTouchStart}
-        onTouchMove={onTouchMove}
-        onTouchEnd={onTouchEnd}
-      >
+    return (
         <div
-          ref={trackRef}
-          className="flex transition-transform duration-700"
-          style={{
-            width: `${(100 / cardsPerView) * data.length}%`,
-            transform: `translateX(-${(100 / cardsPerView) * currentIndex}%)`,
-          }}
+            className="px-14 py-22"
+            style={{
+                background: bgImage ? `url(${bgImage}) center/cover` : bgColor,
+            }}
         >
-          {data.map((item, index) => (
-            <div
-              key={index}
-              className="p-3"
-              style={{ width: `${100 / cardsPerView}%` }}
-            >
-              {renderCard({ item, index })}
+            {/* ===== TOP SECTION ===== */}
+            <div className={`flex justify-between items-start w-full mb-8 ${Classes["container"]}`}>
+
+                {/* LEFT SECTION */}
+                <div className="px-3">
+                    <h1
+                        className="text-[45px] font-semibold"
+                        style={{ color: headingColor }}
+                    >
+                        {heading}
+                    </h1>
+
+                    {description && (
+                        <p
+                            className="mt-2 text-[16px]"
+                            style={{ color: descriptionColor }}
+                        >
+                            {description}
+                        </p>
+                    )}
+                </div>
+
+                {/* RIGHT SECTION – ARROWS */}
+                <div className="flex justify-end gap-3 px-3">
+
+                    {/* LEFT ARROW */}
+                    <button
+                        onClick={handlePrev}
+                        disabled={isAtStart}
+                        className={`border-2 w-12 h-12 flex items-center justify-center text-lg transition font-semibold ${isAtStart ? "opacity-40 cursor-not-allowed" : "hover:cursor-pointer"
+                            }`}
+                        style={{
+                            borderColor: arrowBorderColor,
+                            color: arrowColor,
+                            background: arrowBgColor,
+                        }}
+                    >
+                        <MdOutlineKeyboardArrowLeft size={35} />
+                    </button>
+
+                    {/* RIGHT ARROW */}
+                    <button
+                        onClick={handleNext}
+                        disabled={isAtEnd}
+                        className={`border-2 w-12 h-12 flex items-center justify-center text-lg transition font-semibold ${isAtEnd ? "opacity-40 cursor-not-allowed" : "hover:cursor-pointer"
+                            }`}
+                        style={{
+                            borderColor: arrowBorderColor,
+                            color: arrowColor,
+                            background: arrowBgColor,
+                        }}
+                    >
+                        <MdOutlineKeyboardArrowRight size={35} />
+                    </button>
+
+                </div>
+
             </div>
-          ))}
+
+            {/* ===== SLIDER ===== */}
+            <div
+                className={`overflow-hidden w-full ${Classes["container"]}`}
+                onTouchStart={onTouchStart}
+                onTouchMove={onTouchMove}
+                onTouchEnd={onTouchEnd}
+            >
+                <div
+                    ref={trackRef}
+                    className="flex transition-transform duration-700"
+                    style={{
+                        width: `${(100 / cardsPerView) * data.length}%`,
+                        transform: `translateX(-${(100 / cardsPerView) * currentIndex}%)`,
+                    }}
+                >
+                    {data.map((item, index) => (
+                        <div
+                            key={index}
+                            className="p-3"
+                            style={{ width: `${100 / cardsPerView}%` }}
+                        >
+                            {renderCard({ item, index })}
+                        </div>
+                    ))}
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  );
+    );
 }
 
 export default CustomDepartmentSlider;
+
+
+
+ 

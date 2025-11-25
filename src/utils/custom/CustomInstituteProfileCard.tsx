@@ -1,152 +1,229 @@
+// import React, { useState } from "react";
+// import { InstituteProfile } from "../../types/profile-data-type";
+// import { CustomModal } from "./CustomIqacCard";
+
+// interface CustomInstituteProfileCardProps {
+//   data?: InstituteProfile[];
+// }
+
+// const CustomInstituteProfileCard: React.FC<CustomInstituteProfileCardProps> = ({
+//   data,
+// }) => {
+//   const [expandedId, setExpandedId] = useState<number | null>(null);
+
+//   const formatBold = (text: string) => {
+//     const parts = text.split(/(\*\*.*?\*\*)/g);
+//     return parts.map((part, index) =>
+//       part.startsWith("**") && part.endsWith("**") ? (
+//         <span key={index} className="font-bold">
+//           {part.slice(2, -2)}
+//         </span>
+//       ) : (
+//         part
+//       )
+//     );
+//   };
+
+
+
+//   return (
+//     <section className="bg-[#0f4a85] py-10 md:py-16">
+//       <div className="max-w-6xl mx-auto space-y-12 px-4 md:px-0">
+//         {data?.map((profile) => (
+//           <div
+//             key={profile.id}
+//             className="flex flex-col md:flex-row items-start gap-8 md:gap-10"
+//           >
+//             {/* Image */}
+//             <div className="w-full md:w-1/3 flex justify-center md:justify-start">
+//               <img
+//                 src={profile.image}
+//                 alt={profile.name}
+//                 className="object-cover max-w-full h-auto rounded-4xl"
+//               />
+//             </div>
+
+//             {/* Text Content */}
+//             <div className="w-full md:w-2/3 text-white">
+//               <h2 className="font50  md:text-4xl fw500 mb-2">
+//                 {profile.title}
+//               </h2>
+
+//               <p className="font19  mb-1">{profile.name}</p>
+//               <p className="mb-4 fw500">{profile.position}</p>
+
+//               <p className="mb-6 max-w-full md:max-w-3xl">
+//                 {formatBold(profile.summary)}
+//               </p>
+
+//               {profile.detailsHeading && (
+//                 <h3 className="font-bold text-[18px] mb-2">
+//                   {profile.detailsHeading}
+//                 </h3>
+//               )}
+
+//               {profile.useBullets ? (
+//                 <ul className="list-disc pl-5 space-y-1 mb-6">
+//                   {profile.details.map((d, i) => (
+//                     <li key={i}>{formatBold(d)}</li>
+//                   ))}
+//                 </ul>
+//               ) : (
+//                 <div className="space-y-1 mb-6">
+//                   {profile.details.map((d, i) => (
+//                     <p key={i}>{formatBold(d)}</p>
+//                   ))}
+//                 </div>
+//               )}
+
+//               <button
+//                 onClick={() => setExpandedId(profile.id)}
+//                 className="inline-flex items-center gap-2 px-6 py-3 bg-[#ffb703] text-[#0f4a85] font-semibold rounded-md shadow hover:bg-[#ffc54a] transition"
+//               >
+//                 VIEW PROFILE
+//                 <span className="text-xl">→</span>
+//               </button>
+//             </div>
+//           </div>
+//         ))}
+//       </div>
+
+//       {/* MODALS */}
+//       {data?.map((profile) => (
+//         <CustomModal
+//           key={profile.id}
+//           id={profile.id}
+//           isExpanded={expandedId}
+//           setIsExpanded={setExpandedId}
+//           title=""
+//           content={
+//             <div className="text-black text-[17px] leading-relaxed">
+//               <h2 className="font19  fw500 mb-4 text-[#0f4a85]">{profile.name}</h2>
+//               {profile?.modalContent?.split("\n").map((p, i) => (
+//                 <p key={i}>{formatBold(p)}</p>
+//               ))}
+//             </div>
+//           }
+//           description=""
+//         />
+//       ))}
+//     </section>
+//   );
+// };
+
+// export default CustomInstituteProfileCard;
 import React, { useState } from "react";
-import { ProfileData } from "../../types/profile-data-type";
+import { InstituteProfile } from "../../types/profile-data-type";
 import { CustomModal } from "./CustomIqacCard";
 
 interface CustomInstituteProfileCardProps {
-  data: ProfileData;
+  data?: InstituteProfile[];
 }
-
-const formatBold = (text: string) => {
-  const parts = text.split(/(\*\*.*?\*\*)/g);
-  return parts.map((p, i) =>
-    p.startsWith("**") && p.endsWith("**") ? (
-      <span key={i} className="font-bold">
-        {p.slice(2, -2)}
-      </span>
-    ) : (
-      p
-    )
-  );
-};
-
-const DetailSection: React.FC<{ title: string; children: React.ReactNode }> = ({
-  title,
-  children,
-}) => (
-  <div className="mb-4">
-    <h3 className="text-lg font-bold text-white mb-1">{title}</h3>
-    <ul className="list-disc pl-5 space-y-1">{children}</ul>
-  </div>
-);
 
 const CustomInstituteProfileCard: React.FC<CustomInstituteProfileCardProps> = ({
   data,
 }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [expandedId, setExpandedId] = useState<number | null>(null);
+
+  const formatBold = (text: string) => {
+    const parts = text.split(/(\*\*.*?\*\*)/g);
+    return parts.map((part, index) =>
+      part.startsWith("**") && part.endsWith("**") ? (
+        <span key={index} className="font-bold">
+          {part.slice(2, -2)}
+        </span>
+      ) : (
+        part
+      )
+    );
+  };
+
+
 
   return (
-    <div
-      className={` p-6 sm:p-10 flex justify-center items-center ${
-        data.backgroundColor || "bg-blue-900"
-      }`}
-    >
-      <div className="text-white rounded-xl w-full max-w-6xl p-6 md:p-10">
-        <div className="flex flex-col md:flex-row gap-8">
-          <div className="flex justify-center md:justify-start">
-            <img
-              src={data.imageSrc}
-              alt={data.name}
-              className="w-full h-[200px] max-w-sm rounded-lg shadow-l object-cover"
-              onError={(e) => {
-                (e.target as HTMLImageElement).src =
-                  "https://placehold.co/300x400/003366/FFFFFF?text=Image+Not+Found";
-              }}
-            />
-          </div>
+    <section className="bg-[#0f4a85] py-10 md:py-16">
+      <div className="max-w-6xl mx-auto space-y-12 px-4 md:px-0">
+        {data?.map((profile) => (
+          <div
+            key={profile.id}
+            className="flex flex-col md:flex-row items-start gap-8 md:gap-10"
+          >
+            {/* Image */}
+            <div className="w-full md:w-1/3 flex justify-center md:justify-start">
+              <img
+                src={profile.image}
+                alt={profile.name}
+                className="object-cover max-w-full h-auto rounded-[32px]"
+              />
+            </div>
 
-          <div className="md:w-2/3">
-            <h1 className="font50 fw500 mb-1 text-white">{data.title}</h1>
+            {/* Text Content */}
+            <div className="w-full md:w-2/3 text-white">
+              <h2 className="font50  md:text-4xl fw500 mb-2">
+                {profile.title}
+              </h2>
 
-            <h2 className="font19 mb-2">{data.designation}</h2>
+              <p className="font19  mb-1">{profile.name}</p>
+              <p className="mb-4 fw500">{profile.position}</p>
 
-            <p className="fw500 mb-2">{data.office}</p>
+              <p className="mb-6 max-w-full md:max-w-3xl">
+                {formatBold(profile.summary)}
+              </p>
 
-            <DetailSection title="Experience & Achievements">
-              <li>
-                <span className="font-bold">
-                  Experience: {data.experienceTotal}
-                </span>
-                {data?.experienceBreakdown && data.experienceBreakdown}
-              </li>
-
-              {data.achievements.map((item, idx) => (
-                <li key={idx}>{formatBold(item)}</li>
-              ))}
-
-        {    data?.supervisorDetail &&   <li>
-                <span className="font-bold">{data.supervisorDetail}</span>
-              </li>}
-            </DetailSection>
-
-            {data.fundingAgencies}
-            {data?.consultancyCount &&
-              data?.consultancyCost &&
-              data?.fundingAgencies && (
-                <DetailSection title="Consultancy Projects">
-                  <li>
-                    <span className="font-bold">Total Projects:</span>{" "}
-                    {data.consultancyCount}
-                  </li>
-                  <li>
-                    <span className="font-bold">Total Cost:</span>{" "}
-                    {data.consultancyCost}
-                  </li>
-                  <li>
-                    <span className="font-bold">Funding Agencies:</span>{" "}
-                    {data.fundingAgencies}
-                  </li>
-                </DetailSection>
+              {profile.detailsHeading && (
+                <h3 className="font-bold text-[18px] mb-2">
+                  {profile.detailsHeading}
+                </h3>
               )}
 
-            {data?.eiaProjects && (
-              <DetailSection title="EIA Projects">
-                {data?.eiaProjects.map((item, idx) => (
-                  <li key={idx}>{formatBold(item)}</li>
-                ))}
-              </DetailSection>
-            )}
+              {profile.useBullets ? (
+                <ul className="list-disc pl-5 space-y-1 mb-6">
+                  {profile.details.map((d, i) => (
+                    <li key={i}>{formatBold(d)}</li>
+                  ))}
+                </ul>
+              ) : (
+                <div className="space-y-1 mb-6">
+                  {profile.details.map((d, i) => (
+                    <p key={i}>{formatBold(d)}</p>
+                  ))}
+                </div>
+              )}
 
-            {data?.totalEiaProjects && (
-              <p className="text-sm font-bold mb-6">
-                Total EIA Projects = {data.totalEiaProjects}
-              </p>
-            )}
-
-            <button
-              onClick={() => setIsOpen(true)}
-              className="inline-flex items-center justify-center px-8 py-3 text-base font-semibold text-blue-900 bg-yellow-500 rounded-lg shadow-lg transition duration-300 hover:scale-105"
-            >
-              {data.profileButtonText}
-              <svg
-                className="w-4 h-4 ml-2"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+              <button
+                onClick={() => setExpandedId(profile.id)}
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[#ffb703] text-[#0f4a85] font-semibold rounded-md shadow hover:bg-[#ffc54a] transition"
               >
-                <path
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                ></path>
-              </svg>
-            </button>
+                VIEW PROFILE
+                <span className="text-xl">→</span>
+              </button>
+            </div>
           </div>
-        </div>
+        ))}
       </div>
 
-      <CustomModal
-        isExpanded={isOpen ? 1 : null}
-        id={1}
-        setIsExpanded={() => setIsOpen(false)}
-        title="Profile Details"
-        description="Full profile information"
-        content={data.modalContent}
-      />
-    </div>
-    //   </div>
-    // </div>
+      {/* MODALS */}
+      {data?.map((profile) => (
+        <CustomModal
+          key={profile.id}
+          id={profile.id}
+          isExpanded={expandedId}
+          setIsExpanded={setExpandedId}
+          title=""
+          content={
+            <div className="text-black text-[17px] leading-relaxed">
+              <h2 className="font19  fw500 mb-4 text-[#0f4a85]">{profile.name}</h2>
+              {profile?.modalContent?.split("\n").map((p, i) => (
+                <p key={i}>{formatBold(p)}</p>
+              ))}
+            </div>
+          }
+          description=""
+        />
+      ))}
+    </section>
   );
 };
 
 export default CustomInstituteProfileCard;
+ 

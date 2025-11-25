@@ -1,5 +1,5 @@
 import { customeOverViewType } from "../../../types/home-data-type";
-import { ProfileData } from "../../../types/profile-data-type";
+
 import { counterDataType } from "../../home/counterData";
 import drrsbajpai from "../../../assets/images/academics/institutes/dr.r.s.bajpai.jpg";
 import visionImg from "../../../assets/images/academics/institutes/dept-vision.png";
@@ -110,7 +110,7 @@ export const counterDataForPlacedStudentsOFDepartmentOfElectricalAndElectronicsE
     { id: 3, value: "10", suffix: "", label: "Conference & Seminars" },
   ];
 
-export const departmentHeadProfileData: ProfileData = {
+export const departmentHeadProfileData= {
   name: "Prof. (Dr.) N.S. Bajpai",
   title: "Department Head",
   designation: "Dean, FoEEE, SRMU, Lucknow-Deva Road",

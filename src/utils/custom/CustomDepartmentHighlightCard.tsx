@@ -1,4 +1,4 @@
-import { departmentHighlightscardType } from "../../../data/academics/faculty-of-civil-engineering/faculty-of-civil-engineering-data";
+import { departmentHighlightscardType } from "../../data/academics/faculty-of-civil-engineering/faculty-of-civil-engineering-data";
 
 interface propstype {
     item: departmentHighlightscardType;
