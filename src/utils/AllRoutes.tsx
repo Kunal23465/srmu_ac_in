@@ -77,7 +77,7 @@ import GrievanceRedressalSystemPage from "../pages/campus-life/grievance-redress
 import OutreachActivationsPage from "../pages/campus-life/outreach-activations/OutreachActivationsPage";
 import AdmissionEnquiryPage from "../pages/admission-enquiry/AdmissionEnquiryPage";
 import AdmissionPolicyPage from "../pages/admissions/admission-policy/AdmissionPolicyPage";
-import FacultyOfCivilEngineeringPage from "../pages/academics/faculty-of-civil-engineering/FacultyOfCivilEngineeringPage";
+import FacultyOfCivilEngineeringPage from "../pages/academics/institutes/institute-department/FacultyOfCivilEngineeringPage";
 import PlacementOverviewPage from "../pages/placement/placement-overview/PlacementOverviewPage";
 
 
@@ -94,6 +94,7 @@ import InstituteofPharmacyPage from "../pages/academics/institutes/institute-dep
 import InstituteofEducationandResearchPage from "../pages/academics/institutes/institute-department/InstituteofEducationandResearchPage";
 import SRMUPolytechnicPage from "../pages/academics/institutes/institute-department/SRMUPolytechnicPage";
 import ConferenceDetailPage from "../components/research/publication/conference/ConferenceDetailPage";
+import DepartmentOfCSEPage from "../pages/academics/institutes/institute-department/DepartmentOfCSEPage";
 interface IMatches {
   pathname: string;
   params: Params<string>;
@@ -245,9 +246,9 @@ export const routes = [
         ],
       },
       {
-        path:"/department-of-electrical-and-electronics-engineering",
-        element:<DepartmentOfElectricalAndElectronicsEngineeringPage/>,
-         handle: {
+        path: "/department-of-electrical-and-electronics-engineering",
+        element: <DepartmentOfElectricalAndElectronicsEngineeringPage />,
+        handle: {
           crumb: () => <Link to="/">Department of Electrical and Electronics Engineering</Link>,
         },
       },
@@ -347,6 +348,13 @@ export const routes = [
                   crumb: () => <Link to="/">SRMU Polytechnic</Link>,
                 },
               },
+              {
+                path: "department-of-Cse",
+                element: <DepartmentOfCSEPage />,
+                handle: {
+                  crumb: () => <Link to="/">SRMU Polytechnic</Link>,
+                },
+              },
             ],
             handle: {
               crumb: () => <Link to="/"> Academics</Link>,
@@ -411,11 +419,11 @@ export const routes = [
               crumb: () => <Link to="/">Curriculum Design</Link>,
             },
           },
-          
+
 
           {
             path: "faculty-of-civil-engineering",
-            element: <FacultyOfCivilEngineeringPage  />,
+            element: <FacultyOfCivilEngineeringPage />,
             handle: {
               crumb: () => <Link to="/">Faculty Of Civil Engineering</Link>,
             },

@@ -7,6 +7,8 @@ import InstituteCardList from './InstituteCardList';
 import EnquiryForm from './EnquiryForm';
 import CustomTopFooter from '../../../utils/custom/CustomTopFooter';
 import { CustomTopFooterData1 } from '../../../data/about/leadership-and-governance/leadership-and-governance-data';
+import { events } from '../../../data/academics/institute/data';
+import CustomEventCard from '../../../utils/custom/CustomEventListCard';
 
 // import CustomDepartmentFeeDetailsTable from '../../../utils/custom/CustomDepartmentFeeDetailsTable';
 
@@ -22,6 +24,7 @@ const Institutes: React.FC = () => {
         <CustomOverviewSection data={AcademicsOverviewData} />
         <OurInstitutes />
         <InstituteCardList />
+        <CustomEventCard item={events} />
       </div>
 
 

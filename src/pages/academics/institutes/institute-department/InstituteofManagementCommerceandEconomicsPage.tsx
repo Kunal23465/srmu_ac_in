@@ -1,10 +1,12 @@
-import React from 'react'
-import InstituteofManagementCommerceandEconomics from '../../../../components/academics/institutes/institute-department/InstituteofManagementCommerceandEconomics'
+import React from "react";
+import InstituteofManagementCommerceandEconomics from "../../../../components/academics/institutes/institute-department/InstituteofManagementCommerceandEconomics/InstituteofManagementCommerceandEconomics";
 
-const InstituteofManagementCommerceandEconomicsPage:React.FC = () => {
+const InstituteofManagementCommerceandEconomicsPage: React.FC = () => {
   return (
-    <div><InstituteofManagementCommerceandEconomics /></div>
-  )
-}
+    <div>
+      <InstituteofManagementCommerceandEconomics />
+    </div>
+  );
+};
 
-export default InstituteofManagementCommerceandEconomicsPage
+export default InstituteofManagementCommerceandEconomicsPage;

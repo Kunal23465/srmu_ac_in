@@ -1,10 +1,12 @@
-import React from 'react'
-import InstituteofBiosciencesandTechnology from '../../../../components/academics/institutes/institute-department/InstituteofBiosciencesandTechnology'
+import React from "react";
+import InstituteofBiosciencesandTechnology from "../../../../components/academics/institutes/institute-department/InstituteofBiosciencesandTechnology/InstituteofBiosciencesandTechnology";
 
-const InstituteofBiosciencesandTechnologyPage:React.FC = () => {
+const InstituteofBiosciencesandTechnologyPage: React.FC = () => {
   return (
-    <div><InstituteofBiosciencesandTechnology /></div>
-  )
-}
+    <div>
+      <InstituteofBiosciencesandTechnology />
+    </div>
+  );
+};
 
-export default InstituteofBiosciencesandTechnologyPage
+export default InstituteofBiosciencesandTechnologyPage;
