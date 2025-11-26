@@ -1,147 +1,148 @@
 import React, { useState } from "react";
-import { ProfileData } from "../../types/profile-data-type";
 import { CustomModal } from "./CustomIqacCard";
+import { InstituteProfile } from "../../types/profile-data-type";
+import { instituteProfiles } from "../../data/academics/institute/institute-department/institute-of-media-studies-data";
 
 interface CustomInstituteProfileCardProps {
-  data: ProfileData;
+  data?: InstituteProfile[];
 }
 
-const formatBold = (text: string) => {
-  const parts = text.split(/(\*\*.*?\*\*)/g);
-  return parts.map((p, i) =>
-    p.startsWith("**") && p.endsWith("**") ? (
-      <span key={i} className="font-bold">
-        {p.slice(2, -2)}
-      </span>
-    ) : (
-      p
-    )
+const CustomInstituteProfileCard: React.FC<CustomInstituteProfileCardProps> = ({
+  data = instituteProfiles,
+}) => {
+  const [expandedId, setExpandedId] = useState<number | null>(null);
+
+  const formatBold = (text: string) => {
+    const parts = text.split(/(\*\*.*?\*\*)/g);
+    return parts.map((part, index) =>
+      part.startsWith("**") && part.endsWith("**") ? (
+        <span key={index} className="font-bold">
+          {part.slice(2, -2)}
+        </span>
+      ) : (
+        part
+      )
+    );
+  };
+
+  // Modal Renderer
+  const renderModalContent = (profile: InstituteProfile) => (
+    <div className="text-[#0f4a85]">
+      <h2 className="text-3xl md:text-4xl font-bold mb-3">{profile.title}</h2>
+      <p className="text-xl font-semibold mb-1">{profile.name}</p>
+      <p className="mb-4">{profile.position}</p>
+
+      {profile.modalContent && (
+        <div className="space-y-3 mb-6 text-[17px] leading-relaxed">
+          {profile.modalContent.split("\n").map((p, i) => (
+            <p key={i}>{formatBold(p)}</p>
+          ))}
+        </div>
+      )}
+
+      {profile.detailsHeading && (
+        <h3 className="text-lg font-bold mb-2">{profile.detailsHeading}</h3>
+      )}
+
+      {profile.useBullets ? (
+        <ul className="list-disc pl-5 space-y-2">
+          {profile.details.map((d, i) => (
+            <li key={i}>{formatBold(d)}</li>
+          ))}
+        </ul>
+      ) : (
+        <div className="space-y-2">
+          {profile.details.map((d, i) => (
+            <p key={i}>{formatBold(d)}</p>
+          ))}
+        </div>
+      )}
+    </div>
   );
-};
-
-const DetailSection: React.FC<{ title: string; children: React.ReactNode }> = ({ title, children }) => (
-  <div className="mb-4">
-    <h3 className="text-lg font-bold text-white mb-1">{title}</h3>
-    <ul className="list-disc pl-5 space-y-1">{children}</ul>
-  </div>
-);
-
-const CustomInstituteProfileCard: React.FC<CustomInstituteProfileCardProps> = ({ data }) => {
-  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className={`min-h-screen p-6 sm:p-10 flex justify-center items-center ${data.backgroundColor || "bg-blue-900"}`}>
-      <div className="text-white rounded-xl w-full max-w-6xl p-6 md:p-10">
-        <div className="flex flex-col md:flex-row gap-8">
-          <div className="flex justify-center md:justify-start">
-            <img
-              src={data.imageSrc}
-              alt={data.name}
-              className="w-full h-[200px] max-w-sm rounded-lg shadow-lg object-cover"
-              onError={(e) => {
-                (e.target as HTMLImageElement).src = "https://placehold.co/300x400/003366/FFFFFF?text=Image+Not+Found";
-              }}
-            />
+    <section className="bg-[#0f4a85] py-10 md:py-16">
+      <div className="max-w-6xl mx-auto space-y-12 px-4 md:px-0">
+        {data.map((profile) => (
+          <div
+            key={profile.id}
+            className="flex flex-col md:flex-row items-start gap-8 md:gap-10"
+          >
+            {/* Image */}
+            <div className="w-full md:w-1/3 flex justify-center md:justify-start">
+              <img
+                src={profile.image}
+                alt={profile.name}
+                className="object-cover max-w-full h-auto rounded-[32px]"
+              />
+            </div>
+
+            {/* Text Content */}
+            <div className="w-full md:w-2/3 text-white">
+              <h2 className="font50  md:text-4xl fw500 mb-2">
+                {profile.title}
+              </h2>
+
+              <p className="font19  mb-1">{profile.name}</p>
+              <p className="mb-4 fw500">{profile.position}</p>
+
+              <p className="mb-6 max-w-full md:max-w-3xl">
+                {formatBold(profile.summary)}
+              </p>
+
+              {/* CARD DETAILS SECTION */}
+              {profile.detailsHeading && (
+                <h3 className="font-bold text-[18px] mb-2">
+                  {profile.detailsHeading}
+                </h3>
+              )}
+
+              {profile.useBullets ? (
+                <ul className="list-disc pl-5 space-y-1 mb-6">
+                  {profile.details.slice(0, 5).map((d, i) => (
+                    <li key={i}>{formatBold(d)}</li>
+                  ))}
+                </ul>
+              ) : (
+                <div className="space-y-1 mb-6">
+                  {profile.details.slice(0, 4).map((d, i) => (
+                    <p key={i}>{formatBold(d)}</p>
+                  ))}
+                </div>
+              )}
+
+              <button
+                onClick={() => setExpandedId(profile.id)}
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[#ffb703] text-[#0f4a85] font-semibold rounded-md shadow hover:bg-[#ffc54a] transition"
+              >
+                VIEW PROFILE
+                <span className="text-xl">→</span>
+              </button>
+            </div>
           </div>
-
-          <div className="md:w-2/3">
-            <h1 className="font50 fw500 mb-1">{data.title}</h1>
-            <h2 className="font19 mb-2">{data.designation}</h2>
-            <p className="fw500 mb-2">{data.office}</p>
-
-            {data.qualification && (
-              <p className="mb-2">
-                <strong>Qualification:</strong> {data.qualification}
-              </p>
-            )}
-
-            {data.emailID && (
-              <p>
-                <strong>Email:</strong> {data.emailID}
-              </p>
-            )}
-
-            {data.orcidID && (
-              <p>
-                <strong>ORCID:</strong> {data.orcidID}
-              </p>
-            )}
-
-            {data.contactNum && (
-              <p className="mb-4">
-                <strong>Contact:</strong> {data.contactNum}
-              </p>
-            )}
-
-            {/* Experience & Achievements */}
-            <DetailSection title="">
-              <span className="font-bold">Experience: {data.experienceTotal}</span> {data.experienceBreakdown && data.experienceBreakdown}
-              {data?.achievements?.map((item, idx) => (
-                <p key={idx}>{formatBold(item)}</p>
-              ))}
-              {data.supervisorDetail && <span className="font-bold">{data.supervisorDetail}</span>}
-            </DetailSection>
-
-            {/* Consultancy Section */}
-            {(data.consultancyCount || data.consultancyCost || data.fundingAgencies) && (
-              <DetailSection title="Consultancy Projects">
-                {data.consultancyCount && (
-                  <p>
-                    <strong>Total Projects: </strong>
-                    {data.consultancyCount}
-                  </p>
-                )}
-
-                {data.consultancyCost && (
-                  <p>
-                    <strong>Total Cost: </strong>
-                    {data.consultancyCost}
-                  </p>
-                )}
-
-                {data.fundingAgencies && (
-                  <p>
-                    <strong>Funding Agencies: </strong>
-                    {data.fundingAgencies}
-                  </p>
-                )}
-              </DetailSection>
-            )}
-
-            {/* EIA Projects */}
-            {data?.eiaProjects?.length > 0 && (
-              <DetailSection title="EIA Projects">
-                {data.eiaProjects.map((item, idx) => (
-                  <p key={idx}>{formatBold(item)}</p>
-                ))}
-              </DetailSection>
-            )}
-
-            {data.totalEiaProjects && <p className="text-sm font-bold mb-6">Total EIA Projects = {data.totalEiaProjects}</p>}
-
-            <button
-              onClick={() => setIsOpen(true)}
-              className="inline-flex items-center justify-center px-8 py-3 text-base font-semibold text-blue-900 bg-yellow-500 rounded-lg shadow-lg transition duration-300 hover:scale-105"
-            >
-              {data.profileButtonText}
-              <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-              </svg>
-            </button>
-          </div>
-        </div>
+        ))}
       </div>
 
-      {/* MODAL */}
-      <CustomModal
-        isExpanded={isOpen ? 1 : null}
-        id={1}
-        setIsExpanded={() => setIsOpen(false)}
-        title={`Profile – ${data.name}`}
-        description="Full profile information"
-        content={data.modalContent}
-      />
-    </div>
+      {/* MODALS */}
+      {data.map((profile) => (
+        <CustomModal
+          key={profile.id}
+          id={profile.id}
+          isExpanded={expandedId}
+          setIsExpanded={setExpandedId}
+          title=""
+          content={
+            <div className="text-black text-[17px] leading-relaxed">
+              <h2 className="font19  fw500 mb-4 text-[#0f4a85]">{profile.name}</h2>
+              {profile.modalContent.split("\n").map((p, i) => (
+                <p key={i}>{formatBold(p)}</p>
+              ))}
+            </div>
+          }
+          description=""
+        />
+      ))}
+    </section>
   );
 };
 
