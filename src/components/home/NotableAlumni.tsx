@@ -1,7 +1,7 @@
 
-import React, { useRef } from "react";
+import { useRef } from "react";
 import AlumniSlider from "./AlumniSlider";
-import { HiOutlineArrowLeft, HiOutlineArrowRight } from "react-icons/hi";
+
 import { FaCircleChevronRight } from "react-icons/fa6";
 import { FaCircleChevronLeft } from "react-icons/fa6";
 import Slider from "react-slick";

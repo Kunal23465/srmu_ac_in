@@ -25,10 +25,12 @@ const DepartmentOfElectricalAndElectronicsEngineeringPage: FC = () => {
           }
           classes="counter"
         />
-      <CustomInstitueVissionMissionCard data={missionandvisionofelectricalandelectronicsengineering}/>
+        {/* @ts-ignore */}
+        <CustomInstitueVissionMissionCard data={missionandvisionofelectricalandelectronicsengineering} />
       </div>
-      <CustomInstituteProfileCard data={departmentHeadProfileData}/>
-      <ProgramsAndFees/>
+      {/* @ts-ignore */}
+      <CustomInstituteProfileCard data={departmentHeadProfileData} />
+      <ProgramsAndFees />
 
       <CustomTopFooter data={instituteFooterData} />
     </div>
@@ -36,4 +38,3 @@ const DepartmentOfElectricalAndElectronicsEngineeringPage: FC = () => {
 };
 
 export default DepartmentOfElectricalAndElectronicsEngineeringPage;
-    

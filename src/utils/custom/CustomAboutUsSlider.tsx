@@ -59,7 +59,7 @@ const CustomAboutUsSlider: React.FC<Props> = ({ data }) => {
             pagination={{
               el: ".custom-dots",
               clickable: true,
-              renderBullet: (i, className) => `<span class="${className} w-4 h-4 rounded-full border border-black block"></span>`,
+              renderBullet: (_, className) => `<span class="${className} w-4 h-4 rounded-full border border-black block"></span>`,
             }}
             breakpoints={{
               1024: { slidesPerView: 3 },

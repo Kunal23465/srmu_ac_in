@@ -1,7 +1,8 @@
+
 import React, { useState } from "react";
-import { CustomModal } from "./CustomIqacCard";
 import { InstituteProfile } from "../../types/profile-data-type";
-import { instituteProfiles } from "../../data/academics/institute/institute-department/institute-of-media-studies-data";
+import { CustomModal } from "./CustomIqacCard";
+import { instituteProfiles } from "../../data/academics/institute/data";
 
 interface CustomInstituteProfileCardProps {
   data?: InstituteProfile[];

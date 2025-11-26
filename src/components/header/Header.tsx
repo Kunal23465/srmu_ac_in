@@ -58,14 +58,14 @@ const Header = () => {
                     const isMega = data?.isMegaMenu === true;
 
                     return (
-                      <div key={index} className="relative px-[15px] group text-[15px] uppercase cursor-pointer">
+                      <div key={index} className="relative px-[15px] py-4 group text-[15px] uppercase cursor-pointer">
                         <Link to={data.path} className={`flex items-center text-white hover:text-[#ffb703] ${location.pathname === data.path ? "active" : ""}`}>
                           {data.item}
                         </Link>
 
                         {/* NORMAL DROPDOWN */}
                         {!isMega && data?.subItem && (
-                          <div className="absolute top-[60px] right-0 bg-white rounded-md manage-shadow-drop-down">
+                          <div className="absolute top-[60px] right-0 bg-white rounded-md">
                             <span className="hidden group-hover:block manage-top-arrow"></span>
 
                             <ul className="transition-all w-full min-w-[250px] duration-300 max-h-0 group-hover:max-h-[500px] overflow-hidden group-hover:border rounded-md ">
@@ -84,7 +84,7 @@ const Header = () => {
                             className="
                             fixed left-1/2 -translate-x-1/2
                             top-[120px] bg-white rounded-md
-                            hidden group-hover:flex manage-shadow-drop-down border-t-4 border-t-yellow-500 border-b-4 border-b-blue-500 w-[95vw] px-10 py-6 gap-9 z-[9999]"
+                            hidden group-hover:flex  border-t-4 border-t-yellow-500 border-b-4 border-b-blue-500 w-[95vw] px-10 py-6 gap-9 z-[9999]"
                           >
                             <span className="hidden group-hover:block manage-top-arrow big"></span>
 
