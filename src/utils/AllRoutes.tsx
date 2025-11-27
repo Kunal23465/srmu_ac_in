@@ -379,7 +379,7 @@ export const routes = [
                 path: "department-of-Cse",
                 element: <DepartmentOfCSEPage />,
                 handle: {
-                  crumb: () => <Link to="/">SRMU Polytechnic</Link>,
+                  crumb: () => <Link to="/">Department Of Computer Science And Engineering</Link>,
                 },
               },
             ],

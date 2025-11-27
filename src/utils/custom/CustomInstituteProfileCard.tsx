@@ -14,6 +14,7 @@ const CustomInstituteProfileCard: React.FC<CustomInstituteProfileCardProps> = ({
   console.log("data", data);
   const [expandedId, setExpandedId] = useState<number | null>(null);
 
+  // Make **bold** portions bold
   const formatBold = (text: string) => {
     const parts = text.split(/(\*\*.*?\*\*)/g);
     return parts.map((part, index) =>
@@ -88,9 +89,9 @@ const CustomInstituteProfileCard: React.FC<CustomInstituteProfileCardProps> = ({
               <p className="font19  mb-1">{profile.name}</p>
               <p className="mb-4 fw500">{profile.position}</p>
 
-              <p className="mb-6 max-w-full md:max-w-3xl">
+              {profile.summary && <p className="mb-6 max-w-full md:max-w-3xl">
                 {formatBold(profile.summary)}
-              </p>
+              </p>}
 
               {/* CARD DETAILS SECTION */}
               {profile.detailsHeading && (
