@@ -21,7 +21,8 @@ export const InstituteofManagementCommerceandEconomicsTopFooterData = [
 ];
 
 export const InstituteofManagementCommerceandEconomicsvisionMissionData = {
-  vision: {
+  backgroundColor: "#0f4a85",
+ vision: {
     title: "Our Vision",
     description: [
       "To be a leading institute where knowledge and excellence&nbsp;shall be delivered through strong academic business collaborations for holistic development of students which will make them more creative and productive members of the country.",
@@ -29,7 +30,6 @@ export const InstituteofManagementCommerceandEconomicsvisionMissionData = {
     buttonText: "Vision",
     buttonBgColor: "bg-amber-400",
     imageUrl: vision,
-    bgColor: "#0f4a85",
   },
 
   mission: {
@@ -42,7 +42,6 @@ export const InstituteofManagementCommerceandEconomicsvisionMissionData = {
     buttonText: "Mission",
     buttonBgColor: "bg-amber-400",
     imageUrl: mission,
-    bgColor: "#0f4a85",
   },
 };
 

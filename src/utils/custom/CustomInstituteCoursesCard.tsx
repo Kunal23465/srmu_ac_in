@@ -1,8 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export interface CustomInstituteCourseCardProps {
   imageUrl: string;
   departmentName: string;
+  path: string
 }
 
 interface CustomInstituteCourseCardComponentProps {
@@ -12,9 +14,10 @@ interface CustomInstituteCourseCardComponentProps {
 const CardItem: React.FC<CustomInstituteCourseCardProps> = ({
   imageUrl,
   departmentName,
+  path
 }) => {
   return (
-    <div
+    <Link to={path}
       className="
         relative
         w-full
@@ -34,7 +37,7 @@ const CardItem: React.FC<CustomInstituteCourseCardProps> = ({
       <div className="absolute inset-0 p-4 sm:p-6 flex items-end">
         <p className="text-white font15 fw500 leading-snug">{departmentName}</p>
       </div>
-    </div>
+    </Link>
   );
 };
 
@@ -45,7 +48,7 @@ const CustomInstituteCoursesCard: React.FC<CustomInstituteCourseCardComponentPro
     <div className="container mx-auto p-4">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-5">
         {data.map((card, index) => (
-          <CardItem key={index} imageUrl={card.imageUrl} departmentName={card.departmentName} />
+          <CardItem key={index} imageUrl={card.imageUrl} departmentName={card.departmentName} path={card.path}/>
         ))}
       </div>
     </div>

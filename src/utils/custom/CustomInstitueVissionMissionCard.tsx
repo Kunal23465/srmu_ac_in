@@ -28,7 +28,7 @@ const CustomInstitueVissionMissionCard: React.FC<VisionMissionProps> = ({
     return (
         // 1. Center the component with mx-auto
         <div className="relative py-12 md:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className={`relative ${data.backgroundColor} rounded-xl w-full text-white min-h-[500px] overflow-visible`}>
+            <div className={`relative bg-[${data.backgroundColor}] rounded-xl w-full text-white min-h-[500px] overflow-visible`}>
 
                 {/* 2. Content Area - Responsive padding and structure */}
                 <div className="p-8 md:pl-12 lg:pl-16 md:pr-80 flex flex-col justify-center h-full py-16 relative z-10">
@@ -49,7 +49,7 @@ const CustomInstitueVissionMissionCard: React.FC<VisionMissionProps> = ({
                     {/* Changes: Removed flex-col, space-y-4, sm: from layout classes. Reduced padding (px-4 py-2) */}
                     <div className="flex space-x-3 mt-10 md:mt-20">
                         <button
-                            className={`flex uppercase items-center **px-4 py-2** rounded-lg font-semibold transition cursor-pointer 
+                            className={`flex uppercase items-center px-4 py-3 rounded-lg font-semibold transition cursor-pointer 
                                 **text-xs sm:text-sm** w-auto self-start whitespace-nowrap
                                 ${activeTab === "vision"
                                     ? data.vision.buttonBgColor + " text-blue-900"
@@ -62,7 +62,7 @@ const CustomInstitueVissionMissionCard: React.FC<VisionMissionProps> = ({
                         </button>
 
                         <button
-                            className={`flex uppercase items-center **px-4 py-2** rounded-lg font-semibold transition cursor-pointer 
+                            className={`flex uppercase items-center px-4 py-3 rounded-lg font-semibold transition cursor-pointer 
                                 **text-xs sm:text-sm** w-auto self-start whitespace-nowrap
                                 ${activeTab === "mission"
                                     ? data.mission.buttonBgColor + " text-blue-900"

@@ -44,7 +44,11 @@ import ResearchOverviewPage from "../pages/Research/Overview/ResearchOverviewPag
 import ProcessAndInitiativePage from "../pages/Research/Process-and-Initiative/ProcessAndInitiativePage";
 import PhdNotificationSessionPage from "../pages/Research/Phd-notification-session/PhdNotificationSessionPage";
 import EventDetails from "../pages/campus-life/events/EventDetails";
-import tedxData, { conferenceData, festData, festivalsData } from "../data/campus-life/events/events-data";
+import tedxData, {
+  conferenceData,
+  festData,
+  festivalsData,
+} from "../data/campus-life/events/events-data";
 import InnovationPage from "../pages/Research/Innovation/InnovationPage";
 import PlacementPage from "../pages/placement/PlacementPage";
 import StudentTestimonialPage from "../pages/placement/student-testimonial/StudentTestimonialPage";
@@ -56,8 +60,6 @@ import AlumniTestimonialsPage from "../pages/placement/AlumniTestimonialsPage";
 import ConvocationPage from "../pages/campus-life/convocation/ConvocationPage";
 import { convocationData } from "../data/campus-life/convocation/convocation-data";
 import ConvocationDetailPage from "../pages/campus-life/convocation/ConvocationDetailPage";
-
-
 
 import ClubsPage from "../pages/campus-life/clubs/ClubsPage";
 import AfterClass10thPage from "../pages/Home/AfterClass10thPage";
@@ -80,9 +82,7 @@ import AdmissionPolicyPage from "../pages/admissions/admission-policy/AdmissionP
 import FacultyOfCivilEngineeringPage from "../pages/academics/institutes/institute-department/FacultyOfCivilEngineeringPage";
 import PlacementOverviewPage from "../pages/placement/placement-overview/PlacementOverviewPage";
 
-
 import InstituteofTechnologyPage from "../pages/academics/institutes/institute-department/InstituteofTechnologyPage";
-import DepartmentOfElectricalAndElectronicsEngineeringPage from "../pages/academics/institutes/institute-department/electricalAndElectronics/DepartmentOfElectricalAndElectronicsEngineeringPage";
 import InstituteofBiosciencesandTechnologyPage from "../pages/academics/institutes/institute-department/InstituteofBiosciencesandTechnologyPage";
 import InstituteofManagementCommerceandEconomicsPage from "../pages/academics/institutes/institute-department/InstituteofManagementCommerceandEconomicsPage";
 import InstituteofMediaStudiesPage from "../pages/academics/institutes/institute-department/InstituteofMediaStudiesPage";
@@ -94,7 +94,14 @@ import InstituteofPharmacyPage from "../pages/academics/institutes/institute-dep
 import InstituteofEducationandResearchPage from "../pages/academics/institutes/institute-department/InstituteofEducationandResearchPage";
 import SRMUPolytechnicPage from "../pages/academics/institutes/institute-department/SRMUPolytechnicPage";
 import ConferenceDetailPage from "../components/research/publication/conference/ConferenceDetailPage";
+import DepartmentOfElectricalAndElectronicsEngineeringPage from "../pages/academics/institutes/institute-department/DepartmentOfElectricalAndElectronicsEngineeringPage";
+import FacultyOfMechanicalEngineeringPage from "../pages/academics/institutes/institute-department/FacultyOfMechanicalEngineeringPage";
 import DepartmentOfCSEPage from "../pages/academics/institutes/institute-department/DepartmentOfCSEPage";
+import FacultyOfAlliedHealthSciencesPage from "../pages/academics/institutes/institute-department/FacultyOfAlliedHealthSciencesPage";
+import BtechInCSEAIAndML from "../pages/programs/btech-in-cse-ai-ml/BtechInCSEAIAndML";
+import ProgramsPage from "../pages/programs/ProgramsPage";
+import FacultyOfBiosciencesPage from "../pages/academics/institutes/institute-department/FacultyOfBiosciencesPage";
+import AwardOverviewPage from "../pages/about/award-overview/AwardOverviewPage";
 interface IMatches {
   pathname: string;
   params: Params<string>;
@@ -216,6 +223,13 @@ export const routes = [
             },
           },
           {
+            path: "award-overview",
+            element: <AwardOverviewPage />,
+            handle: {
+              crumb: () => <Link to="/">Award Overview</Link>,
+            },
+          },
+          {
             path: "iqac-overview",
             element: <IqacPage />,
             handle: {
@@ -246,13 +260,6 @@ export const routes = [
         ],
       },
       {
-        path: "/department-of-electrical-and-electronics-engineering",
-        element: <DepartmentOfElectricalAndElectronicsEngineeringPage />,
-        handle: {
-          crumb: () => <Link to="/">Department of Electrical and Electronics Engineering</Link>,
-        },
-      },
-      {
         path: "/academics",
         element: <AcademicsPage />,
         handle: {
@@ -269,6 +276,34 @@ export const routes = [
                 element: <FacultyOfCivilEngineeringPage />,
                 handle: {
                   crumb: () => <Link to="/">Faculty Of Civil Engineering</Link>,
+                },
+              },
+              {
+                path: "department-of-electrical-and-electronics-engineering",
+                element: <DepartmentOfElectricalAndElectronicsEngineeringPage />,
+                handle: {
+                  crumb: () => <Link to="/">Department of Electrical and Electronics Engineering</Link>,
+                },
+              },
+              {
+                path: "faculty-of-mechanical-engineering",
+                element: <FacultyOfMechanicalEngineeringPage />,
+                handle: {
+                  crumb: () => <Link to="/">Department of Electrical and Electronics Engineering</Link>,
+                },
+              },
+              {
+                path: "faculty-of-allied-health-sciences",
+                element: <FacultyOfAlliedHealthSciencesPage />,
+                handle: {
+                  crumb: () => <Link to="/">Faculty Of Allied Health Sciences</Link>,
+                },
+              },
+               {
+                path: "faculty-of-bioscience",
+                element: <FacultyOfBiosciencesPage />,
+                handle: {
+                  crumb: () => <Link to="/">Faculty Of Biosciences</Link>,
                 },
               },
               {
@@ -352,7 +387,7 @@ export const routes = [
                 path: "department-of-Cse",
                 element: <DepartmentOfCSEPage />,
                 handle: {
-                  crumb: () => <Link to="/">SRMU Polytechnic</Link>,
+                  crumb: () => <Link to="/">Department Of Computer Science And Engineering</Link>,
                 },
               },
             ],
@@ -419,7 +454,6 @@ export const routes = [
               crumb: () => <Link to="/">Curriculum Design</Link>,
             },
           },
-
 
           {
             path: "faculty-of-civil-engineering",
@@ -491,8 +525,8 @@ export const routes = [
         ],
       },
       {
-        path: "/programs",
-        element: <PlacementPage />,
+        path: "/program",
+        element: <ProgramsPage />,
         // element: <StudentTestimonialPage />,
         handle: {
           crumb: () => <Link to="/">Programs</Link>,
@@ -507,6 +541,13 @@ export const routes = [
             },
           },
 
+          {
+            path: "b-tech-cse-artificial-intelligence-machine-learning",
+            element: <BtechInCSEAIAndML />,
+            handle: {
+              crumb: () => <Link to="/">B.Tech. CSE (Artificial Intelligence & Machine Learning)</Link>,
+            },
+          },
         ],
       },
       {
@@ -792,9 +833,13 @@ function Breadcrumbs() {
   let matches: IMatches[] = useMatches();
 
   const crumbs = matches
-    .filter((match) => Boolean(match.handle && (match.handle as HandleType).crumb))
+    .filter((match) =>
+      Boolean(match.handle && (match.handle as HandleType).crumb)
+    )
     .map((match) => {
-      const crumb = (match.handle as HandleType).crumb(match.data as string | undefined);
+      const crumb = (match.handle as HandleType).crumb(
+        match.data as string | undefined
+      );
       return crumb as React.ReactNode;
     });
 
@@ -802,16 +847,24 @@ function Breadcrumbs() {
   // console.log("crumbs", crumbs);
   // console.log("matches", matches[1].pathname);
   return (
-    <section className={`banner-section ${matches[1].pathname === "/abhivyakti" ? "abhivyakt" : ""} flex items-center `}>
+    <section
+      className={`banner-section ${matches[1].pathname === "/abhivyakti" ? "abhivyakt" : ""
+        } flex items-center `}
+    >
       <div className={`${Classes["container"]} `}>
         <div className={`${Classes["page-title-content"]}`}>
           {/* <span className={`   text-[25px] sm:text-[40px] md:text-[54px] font-semibold text-white pointer-events-none`}>{crumbs[crumbs.length - 1]}</span> */}
           <nav aria-label="breadcrumb">
             <ol className="breadcrumb m-0 flex flex-wrap  gap-2">
               {crumbs.map((crumb, index) => (
-                <li key={index} className={`${Classes["breadcrumb-item"]} max-sm:text-[12px]`}>
+                <li
+                  key={index}
+                  className={`${Classes["breadcrumb-item"]} max-sm:text-[12px]`}
+                >
                   {index === crumbs.length - 1 ? (
-                    <span className={Classes["active_breadcrumbs"]}>{crumb}</span> // Current page - disabled link
+                    <span className={Classes["active_breadcrumbs"]}>
+                      {crumb}
+                    </span> // Current page - disabled link
                   ) : (
                     <Fragment>{crumb}</Fragment> // Clickable links
                   )}

@@ -23,9 +23,8 @@ export const InstituteofTechnologyTopFooterData = [
   },
 ];
 
-
 export const visionMissionData = {
-  backgroundColor: "bg-blue-900",
+  backgroundColor: "#0f4a85",
   vision: {
     title: "Our Vision",
     description: [
@@ -33,7 +32,7 @@ export const visionMissionData = {
     ],
     buttonText: "Vision",
     buttonBgColor: "bg-amber-400",
-    imageUrl: vision
+    imageUrl: vision,
   },
 
   mission: {
@@ -47,30 +46,34 @@ export const visionMissionData = {
     ],
     buttonText: "Mission",
     buttonBgColor: "bg-amber-400",
-    imageUrl: mission
-  }
+    imageUrl: mission,
+  },
 };
-
 
 export const instituteCourseCardData: CustomInstituteCourseCardProps[] = [
   {
     imageUrl: courseImg1,
     departmentName: "Faculty of Civil Engineering",
+    path: "/academics/institutes-info/faculty-of-civil-engineering",
   },
   {
     imageUrl: courseImg2,
     departmentName: "Department of Electrical and Electronics Engineering",
+    path: "/academics/institutes-info/department-of-electrical-and-electronics-engineering",
   },
   {
     imageUrl: courseImg3,
     departmentName: "Faculty of Mechanical Engineering",
+    path: "/academics/institutes-info/faculty-of-mechanical-engineering",
   },
   {
     imageUrl: courseImg4,
     departmentName: "Department of Computer Science and Engineering",
+    path: "/academics/institutes-info/department-of-Cse",
   },
   {
     imageUrl: courseImg5,
     departmentName: "Department of Computer Science and Information Systems",
+    path: "/academics/institutes-info/faculty-of-civil-engineering",
   },
 ];

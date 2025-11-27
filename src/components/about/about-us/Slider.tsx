@@ -117,5 +117,6 @@ const WhySRMU: React.FC<Props> = ({ items }) => {
 };
 
 export default function Slider() {
+    // @ts-ignore
     return <WhySRMU items={data} />;
 }

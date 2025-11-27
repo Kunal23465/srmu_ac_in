@@ -28,6 +28,7 @@ const PublicationSection: React.FC = () => {
                 From academic journals to conference documents to book chapters, research by SRMU students and faculty has been featured in numerous publications.
               </p>
             </div>
+            {/* @ts-ignore */}
             <CustomTabs items={items} />
           </div>
         </div>

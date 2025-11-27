@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import Slider from "react-slick";
 
 import media from "../../assets/images/home/departmentalvideos/media-28022504202912.png";

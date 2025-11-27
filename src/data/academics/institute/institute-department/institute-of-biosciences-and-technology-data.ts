@@ -5,7 +5,8 @@ import { CustomInstituteCourseCardProps } from "../../../../utils/custom/CustomI
 import courseImg1 from "../../../../assets/images/academics/departments/group-scientists-wearing-lab-coat-working-laborato-28012512230911.jpg";
 import courseImg2 from "../../../../assets/images/academics/departments/bioinformatics-07022411264512.jpg";
 import courseImg3 from "../../../../assets/images/academics/departments/biotech-07022411273155.jpg";
-
+import { InstituteProfile } from "../../../../types/profile-data-type";
+import TabishImg from "../../../../assets/images/academics/departments/dr.-tabish-kidwai-27022401392651.png"
 export const InstituteofBiosciencesandTechnologyOverviewData: customeOverViewType = {
   heading: "Institute of Biosciences and Technology",
   content:
@@ -22,6 +23,7 @@ export const InstituteofBiosciencesandTechnologyTopFooterData = [
 ];
 
 export const visionMissionData = {
+  backgroundColor: "#0f4a85",
   vision: {
     title: "Our Vision",
     description: [
@@ -30,7 +32,6 @@ export const visionMissionData = {
     buttonText: "Vision",
     buttonBgColor: "bg-amber-400",
     imageUrl: vision,
-    bgColor: "#0f4a85",
   },
 
   mission: {
@@ -43,9 +44,44 @@ export const visionMissionData = {
     buttonText: "Mission",
     buttonBgColor: "bg-amber-400",
     imageUrl: mission,
-    bgColor: "#0f4a85",
   },
 };
+
+
+
+export const instituteProfiles: InstituteProfile[] = [
+  {
+    id: 1,
+    title: "Institute Head",
+    name: "Dr. Tabish Qidwai",
+    position: "Offg. Director, IBST, SRMU, Lucknow–Deva Road",
+    image: TabishImg,
+
+    summary:
+      "",
+
+    detailsHeading: "",
+    useBullets: false,
+
+    details: [
+      "**Qualification: **M.Tech. (Biotechnology), Ph.D. (Biotechnology)",
+      "**Experience**: 13 years",
+      "**Specialization/ Area of Research: **Functional Genomics, Immunology and Infectious Disease Research including Malaria and COVID-19.",
+      "**Email ID: **director.bio@srmu.ac.in",
+      "**ORCID ID: **https://orcid.org/0000-0001-8247-7248",
+      "**Contact No.: **+91-9140631326",
+    ],
+
+    modalContent: `He has more than 35+ years of experience in Management & Media Education and the Industry.He has worked across the different domains including  Advertising, Media  and Management education. He has received laurels as a Director of the Year in 2023 and granted Patent on “Employability “in the managemnt stream in the same year. He began his career with a Publishing Company in New Delhi,India and moved to Academics in the year 1995.In his career span has been associated with leading media institutions such as Film Institute of eMITS,Lucknow and JIT Media Institute ,Barabanki.
+
+He has been guiding and counselling the students across various academic domains. He is capable to motivate young minds and developing synergy between the students and the teachers for their growth.His Research Interest  area is Advertising and Visual Communication.
+`
+  },
+
+
+]; 
+
+
 
 export const instituteCourseCardData: CustomInstituteCourseCardProps[] = [
   {

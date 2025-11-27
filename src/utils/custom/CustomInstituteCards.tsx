@@ -42,6 +42,7 @@ export const CustomInstituteCards: React.FC<CardProps> = ({ institute }) => {
                 <button className="px-5 py-2.5 sm:px-8 sm:py-3 rounded-xl border border-yellow-400 text-xs sm:text-sm font-medium
                                    cursor-pointer transition active:scale-95 whitespace-nowrap flex-shrink-0
                                    group-hover:bg-yellow-400 hover:bg-yellow-400 hover:border-yellow-400">
+                                    {/* @ts-ignore */}
                     <Link className="flex items-center gap-1 sm:gap-2 justify-center" to={institute.path}>
                         <span>MORE INFO</span>
                         <FaArrowRight className="h-3 w-3 sm:h-4 sm:w-4" />
