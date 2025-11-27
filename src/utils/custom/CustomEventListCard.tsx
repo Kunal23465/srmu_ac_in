@@ -6,7 +6,8 @@ export interface EventItem {
     topic?: string;
     speaker?: string;
     venue?: string;
-    date: string;
+    date?: string;
+    event?:string;
     image: string;
     cardBgColor?: string;
 }
@@ -19,7 +20,7 @@ const CustomEventCard: React.FC<EventCardProps> = ({ item }) => {
     return (
         <div
             key={item.id}
-            className="rounded-xl shadow-md p-8 border border-yellow-500 transition h-full"
+            className="rounded-xl hover:shadow-[0_2px_4px_0_rgba(0,0,0,0.05),0_8px_16px_0_rgba(0,0,0,0.1)] p-8 border border-yellow-500 transition h-full"
             style={{
                 backgroundColor: item.cardBgColor || "white",
             }}
@@ -47,6 +48,12 @@ const CustomEventCard: React.FC<EventCardProps> = ({ item }) => {
                     {item.speaker && (
                         <p className="text-sm sm:text-base text-black">
                             <strong>Speaker:</strong> {item.speaker}
+                        </p>
+                    )}
+
+                    {item.event && (
+                        <p className="text-sm sm:text-base text-black">
+                            <strong>Event:</strong> {item.event}
                         </p>
                     )}
 

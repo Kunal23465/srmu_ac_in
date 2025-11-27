@@ -4,9 +4,8 @@ import mission from "../../../../assets/images/academics/institutes/vision-card/
 import { CustomInstituteCourseCardProps } from "../../../../utils/custom/CustomInstituteCoursesCard";
 import courseImg1 from "../../../../assets/images/academics/departments/commerce-07052412092026.jpg";
 import courseImg2 from "../../../../assets/images/academics/departments/management1-07052412144882.jpg";
-import AswaniImg from "../../../../assets/images/academics/departments/aswani-26042512341893.jpg"
 import { InstituteProfile } from "../../../../types/profile-data-type";
-
+import AswaniImg from "../../../../assets/images/academics/departments/aswani-26042512341893.jpg"
 export const InstituteofManagementCommerceandEconomicsOverviewData: customeOverViewType = {
   heading: "Institute of Management, Commerce and Economics",
   content:
@@ -70,8 +69,7 @@ export const InstituteofManagementCommerceandEconomicsinstituteProfiles: Institu
       "**Contact No.: **+91-9935832234",
     ],
 
-    modalContent: `Dr. Aswani Kumar has an experience of more than 25 years in the field of academics, research and administration in several national and international institutes and Universities.  His experience lies in editing, reviewing research, academia and administration. He has a proven track record of strategic planning, academic excellence, and faculty development to enhance the institution’s reputation and student success. He has 18 research publications in international journals of repute & over 25 presentations at National and International Conferences. He was also involved in administrative responsibilities at International Universities. His experience also includes design of research and consultancy projects for government and corporate houses.
-`
+    modalContent: `Dr. Aswani Kumar has an experience of more than 25 years in the field of academics, research and administration in several national and international institutes and Universities.  His experience lies in editing, reviewing research, academia and administration. He has a proven track record of strategic planning, academic excellence, and faculty development to enhance the institution’s reputation and student success. He has 18 research publications in international journals of repute & over 25 presentations at National and International Conferences. He was also involved in administrative responsibilities at International Universities. His experience also includes design of research and consultancy projects for government and corporate houses.`
   },
 
 
@@ -81,12 +79,12 @@ export const instituteCourseCardData: CustomInstituteCourseCardProps[] = [
   {
     imageUrl: courseImg1,
     departmentName: "Faculty of Commerce and Economics",
-    path: "/academics/institutes-info/faculty-of-civil-engineering",
+    path: "/academics/institutes-info/faculty-of-commerce-and-economics",
   },
   {
     imageUrl: courseImg2,
     departmentName: "Faculty Of Management",
-    path: "/academics/institutes-info/faculty-of-civil-engineering",
+    path: "/academics/institutes-info/faculty-of-management",
   },
 
 ];

@@ -19,11 +19,9 @@ const InstituteofManagementCommerceandEconomics: React.FC = () => {
       <div className={`${Classes["container"]}`}>
         <CustomOverviewSection data={InstituteofManagementCommerceandEconomicsOverviewData} />
         <CustomInstitueVissionMissionCard data={InstituteofManagementCommerceandEconomicsvisionMissionData} />
-        </div>
-
-        <CustomInstituteProfileCard data={InstituteofManagementCommerceandEconomicsinstituteProfiles}/>
-                      <div className={`${Classes["container"]}`}>
-
+                </div>
+      <CustomInstituteProfileCard data={InstituteofManagementCommerceandEconomicsinstituteProfiles} />
+            <div className={`${Classes["container"]}`}>
         <div className="my-15 flex flex-col lg sm:flex-row">
           <div className="text-2xl mr-30 font-medium sm:text-5xl">Departments</div>
           <div>

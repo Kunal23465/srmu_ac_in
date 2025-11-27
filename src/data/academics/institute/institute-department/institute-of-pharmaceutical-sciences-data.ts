@@ -36,34 +36,6 @@ export const InstituteofPharmaceuticalSciencesTopFooterData = [
 ];
 
 
-
-export const InstituteofPharmaceuticalSciencesvisionMissionData = {
-  backgroundColor: "#F3F7FF",
-  
-  vision: {
-    title: "Vision",
-    description: [
-      "To provide value added educational environment for creating quality professionals in the field of pharmacy education, research, industry, hospital and other health related areas for the society well-being."
-    ],
-    buttonText: "View Mission",
-    buttonBgColor: "bg-blue-500",
-    imageUrl: vision
-  },
-
-  mission: {
-    title: "Mission",
-    description: [
-      "To develop grooming arena for better individuals and pharmacists.",
-      "To enhance the creativity, motivation, drive and inculcate professionalism to suit to the need of pharmaceutical industry.",
-      "To bring synergy between academic, R&D, technology and industry through training and exposure for such environment.",
-      "To promote the value of learning, self-growth, quality performance, and transition for students to productive and responsible participation in society."
-    ],
-    buttonText: "Back to Vision",
-    buttonBgColor: "bg-orange-500",
-    imageUrl: mission
-  }
-};
-
 export const InstituteofPharmaceuticalSciencesCounterData1 = {
   counterData: [
     {
@@ -134,10 +106,10 @@ export const InstituteofPharmaceuticalSciencesVMData = [
     img: mission,
     heading: "Mission",
     points: [
-      "To make mass communicator and Journalist with social consciences.",
-      "To develop creative and critical thinking with human touch among our students.",
-      "To enlighten and enrich the educational experience by providing pragmatic learning.",
-      "To inculcate professional ethics and value system among media students.",
+      "To develop grooming arena for better individuals and pharmacists.",
+      "To enhance the creativity, motivation, drive and inculcate professionalism to suit to the need of pharmaceutical industry.",
+      "To bring synergy between academic, R&D, technology and industry through training and exposure for such environment.",
+      "To promote the value of learning, self-growth, quality performance, and transition for students to productive and responsible participation in society.",
     ],
   },
   {
@@ -146,7 +118,7 @@ export const InstituteofPharmaceuticalSciencesVMData = [
     img: vision,
     heading: "Vision",
     points: [
-      "To be an institution of excellence in the field of communication, journalism and research.",
+      "To provide value added educational environment for creating quality professionals in the field of pharmacy education, research, industry, hospital and other health related areas for the society well-being.",
     ],
   },
 ];
