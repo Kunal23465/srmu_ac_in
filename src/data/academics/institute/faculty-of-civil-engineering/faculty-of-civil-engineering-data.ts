@@ -1,18 +1,20 @@
-import { customeOverViewType } from "../../../types/home-data-type";
-import { counterDataType } from "../../home/counterData";
 
-import missionImg from "../../../assets/images/academics/departments/dept-mission-icon1.png";
-import vissionImg from "../../../assets/images/academics/departments/dept-mission-icon2.png";
 
-import depSlide1 from "../../../assets/images/academics/departments/depSlide1.png";
-import depSlide2 from "../../../assets/images/academics/departments/depSlide2.png";
-import depSlide3 from "../../../assets/images/academics/departments/depSlide3.png";
-import depSlide4 from "../../../assets/images/academics/departments/depSlide4.png";
-import depSlide5 from "../../../assets/images/academics/departments/depSlide5.png";
-import { FacultyItem } from "../../../utils/custom/CustomFacultyListCard";
-import { InstituteProfile } from "../../../types/profile-data-type";
+import missionImg from "../../../../assets/images/academics/departments/dept-mission-icon1.png";
+import vissionImg from "../../../../assets/images/academics/departments/dept-mission-icon2.png";
 
-import professor from "../../../assets/images/academics/institutes/dr.r.s.bajpai.jpg";
+import depSlide1 from "../../../../assets/images/academics/departments/depSlide1.png";
+import depSlide2 from "../../../../assets/images/academics/departments/depSlide2.png";
+import depSlide3 from "../../../../assets/images/academics/departments/depSlide3.png";
+import depSlide4 from "../../../../assets/images/academics/departments/depSlide4.png";
+import depSlide5 from "../../../../assets/images/academics/departments/depSlide5.png";
+
+
+import professor from "../../../../assets/images/academics/institutes/dr.r.s.bajpai.jpg";
+import { customeOverViewType } from "../../../../types/home-data-type";
+import { counterDataType } from "../../../about/leadership-and-governance/leadership-and-governance-data";
+import { FacultyItem } from "../../../../utils/custom/CustomFacultyListCard";
+import { InstituteProfile } from "../../../../types/profile-data-type";
 
 export interface DepartmentVMType {
   id: number;
@@ -448,17 +450,17 @@ export const instituteProfilesCivil: InstituteProfile[] = [
     ],
 
     modalContent: `
-Prof. (Dr.) Abhishek Saxena, an environmentalist and academician, is currently working as Dean, Faculty of Civil Engineering with additional charge of Director in Institute of Architecture and Planning at Shri Ramswaroop Memorial University, Barabanki.
- 
-He is empanelled Functional Area Expert for EIA studies (Category "A" projects– HG) since 2011 (till date), empanelled by National Accreditation Board for Education and Training (NABET), Ministry of Environment, Forest and Climate Change (MoEFCC), Government of India. He is a renowned member of the National Level Expert Committee for “Auto Detection of Construction through Satellite Imageries”, Ghaziabad Development Authority since 2013. He is also Empanelled Groundwater Expert for CGWA (Central Ground Water Authority), Government of India (2021).
- 
-He received the “ITP Young Scientist Award 2006” by IWMI–TATA Water Policy Program for major findings in his Ph.D. research work, and the Guru Pranam Award 2016 by Amar Ujala for contributions in education and research. He is Principal Investigator in the project “Affordable filter for arsenic removal from drinking water using bio-adsorption techniques” funded by UPCST.
- 
-His career began with World Bank projects, later joining SMEC (Australia) where he worked on several ADB, JICA, World Bank, and GoI funded assignments. He played a major role in Water Resource Management of Uttar Pradesh (35 districts) under the World Bank UPWRSP Phase-I. UNICEF also utilized his expertise as State Water Safety Consultant for Uttar Pradesh.
- 
-He has more than 22 years of experience in water quality, EIA, groundwater and resource management. He holds the fellowship of “The Society of Earth Scientists” and “Indian Society of Remote Sensing”.
- 
-Prof. Saxena has 60+ publications in journals, conferences, books and book chapters and has been granted 8 International Patents. Under his guidance, 7 PhDs have been awarded and 5 are in progress.
-`,
+        <h2 class='Dr. Shobhit Sinha</h2>
+        <p><strong>Assistant Professor</strong></p>
+        <p>
+         Dr. Shobhit Sinha is a distinguished academician and industry expert having specialization in Machine Learning , Argumentation Mining and Java Framework , holding a PhD in Artificial Intelligence, Dr. Sinha combines a wealth of experience across both the Information Technology sector and the educational domain, making him a highly regarded professional in his field. With nine years of experience in the IT industry, Dr. Sinha has contributed to innovative solutions and advancements in technology, focusing primarily on the development and implementation of cutting-edge machine learning algorithms and Java-based frameworks. His expertise has been instrumental in driving impactful projects and fostering technological growth in the organizations he has worked with.Transitioning into academia, Dr. Sinha brings almost a decade of experience to the educational sector.
+        </p>
+        <p class='mt-3'>
+          He has a passion for nurturing talent and guiding young researchers, evident through his role as a supervisor for four PhD scholars, whom he is mentoring in their pursuit of groundbreaking research. His teaching and mentorship have inspired countless students and researchers to excel in the ever-evolving field of AI. Dr. Sinha is an accomplished researcher with numerous publications, including both research papers and book chapters in reputed indexed journals. His work has been recognized and cited by peers
+        </p>
+          <p class='mt-3'>
+         globally, reflecting his substantial contributions to advancing knowledge in Artificial Intelligence, Machine Learning, and Java Framework. Dr. Sinha&#39;s profound knowledge and experience enable him to address complex technological challenges, propose innovative solutions, and lead transformative initiatives in both the industry and academia. modal content
+        </p>
+      `,
   },
 ];

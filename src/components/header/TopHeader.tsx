@@ -14,9 +14,8 @@ const TopHeader: React.FC = () => {
                     <div className="left-part flex items-center">
                         <div>
                             <ul className="flex items-center text-sm flex-row gap-x-2 ">
-                                <Link to="/notice">NOTICE |</Link>
-
-                                <Link to="/admission-enquiry">ADMISSION ENQUIRY |</Link>
+                                <Link className="border-r pr-2" to="/notice">NOTICE </Link>
+                                <Link className="border-r pr-2" to="/admission-enquiry">ADMISSION ENQUIRY </Link>
                                 <Link to="/shift-schedule">SHIFT SCHEDULE</Link>
                             </ul>
                         </div>
@@ -25,11 +24,11 @@ const TopHeader: React.FC = () => {
                     <div className="right-part flex gap-3 items-center">
                         <div className="flex gap-2 items-center">
                             <div className="flex text-black items-center">
-                                <div className="flex items-center text-white gap-x-2 pr-2 border-r-2 border-white">
+                                <div className="flex items-center text-[13.74px] text-white gap-x-2 pr-2 border-r border-white">
                                     <img src={user} alt="user" />
                                     Student Login
                                 </div>
-                                <div className="flex items-center text-white gap-x-5 pl-2 mr-4">
+                                <div className="flex text-[13.74px] items-center text-white gap-x-5 pl-2 mr-3">
                                     Staff Login
                                     <img src={search} alt="user" />
                                 </div>

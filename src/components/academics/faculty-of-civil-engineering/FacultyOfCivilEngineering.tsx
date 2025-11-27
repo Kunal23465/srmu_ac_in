@@ -1,18 +1,18 @@
 import React from 'react'
 import Classes from "../../../utils/styles/Global.module.css";
 import CustomOverviewSection from '../../../utils/custom/CustomOverviewSection';
-import { CivildepartmentVMData, civilFacultyOverviewData,   civilIndustryHonoursFeeTable, civilIndustryIntegratedFeeTable, civilIndustryPostgraduateFeeTable, civilIndustryUndergraduateFeeTable, counterDataForFacultyCivil, departmentHighlights, facultyData, instituteProfilesCivil, } from '../../../data/academics/faculty-of-civil-engineering/faculty-of-civil-engineering-data';
 import CustomTopFooter from '../../../utils/custom/CustomTopFooter';
 import { CustomTopFooterData1 } from '../../../data/about/leadership-and-governance/leadership-and-governance-data';
 import Counter from '../../../utils/custom/Counter';
 import CustomDepartmentFeeDetailsTable from '../../../utils/custom/CustomDepartmentFeeDetailsTable';
-import CustomTabs from '../../../utils/custom/CustomTabs'
+import CustomTabs from '../../../utils/custom/CustomTabs';
 import CustomDepartmentSlider from '../../../utils/custom/CustomDepartmentSlider';
 import CustomDepartmentVissionMission from '../../../utils/custom/CustomDepartmentVissionMission';
 import CustomDepartmentHighlightCard from '../../../utils/custom/CustomDepartmentHighlightCard';
 import facilitiesBg from "../../../assets/images/academics/departments/facilities-bg-lg.jpeg"
 import CustomFacultyListCard from '../../../utils/custom/CustomFacultyListCard';
 import CustomInstituteProfileCard from '../../../utils/custom/CustomInstituteProfileCard';
+import { CivildepartmentVMData, civilFacultyOverviewData, civilIndustryHonoursFeeTable, civilIndustryIntegratedFeeTable, civilIndustryPostgraduateFeeTable, civilIndustryUndergraduateFeeTable,  counterDataForFacultyCivil,  departmentHighlights, facultyData, instituteProfilesCivil } from '../../../data/academics/institute/faculty-of-civil-engineering/faculty-of-civil-engineering-data';
 
 
 const FacultyOfCivilEngineering: React.FC = () => {
@@ -56,7 +56,7 @@ const FacultyOfCivilEngineering: React.FC = () => {
 
 
 
-
+{/* program and fee section  */}
                 <div className='my-[80px]'>
 
                     <div className='flex w-full justify-center flex-col items-center'>
@@ -78,6 +78,8 @@ const FacultyOfCivilEngineering: React.FC = () => {
                     />
 
                 </div>
+
+
             </div>
 
             <div>

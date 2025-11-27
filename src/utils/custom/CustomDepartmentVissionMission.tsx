@@ -1,5 +1,5 @@
 import React from "react";
-import { DepartmentVMType } from "../../data/academics/faculty-of-civil-engineering/faculty-of-civil-engineering-data";
+import { DepartmentVMType } from "../../data/academics/institute/faculty-of-civil-engineering/faculty-of-civil-engineering-data";
 
 interface Props {
     data: DepartmentVMType;
@@ -22,7 +22,6 @@ const CustomDepartmentVissionMission: React.FC<Props> = ({ data }) => {
             <h1 className="text-[3rem] font-semibold mb-4 text-[#023047]">
                 {data.title}
             </h1>
-
             {/* List Items */}
             <ul className="list-disc pl-5 pt-[10px] space-y-2 text-[#212529] marker:text-[1.8rem]">
                 {data.description?.map((item, index) => (

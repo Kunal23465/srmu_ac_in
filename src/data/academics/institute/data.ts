@@ -121,7 +121,7 @@ export const instituteProfiles: InstituteProfile[] = [
       "Total experience of 23+ years in industry and academics. Functional Area Expert for EIA studies and empanelled groundwater expert for various government bodies.",
 
     detailsHeading: "Experience & Achievements",
-    useBullets: true,
+    useBullets: false,
 
     details: [
       "**Total Experience**: 23+ years (Industry: 10 years, Academics: 13+ years)",
@@ -131,6 +131,7 @@ export const instituteProfiles: InstituteProfile[] = [
       "Empanelled Groundwater Expert for Central Ground Water Authority & Ministry of Jal Shakti",
       "Consultancy Projects: 9 | Total Cost: Rs. 2.0+ Cr",
       "Total EIA Projects = 19 (5 Category 'A' + 14 Category 'B')",
+      "iwjhfisnvjnsvjnsjnvnv"
     ],
 
     modalContent: `
@@ -163,6 +164,14 @@ export const events = [
   },
   {
     id: 2,
+    title: "National Workshop",
+    topic: "Role of AI in Achieving SDGs",
+    date: "04th–16th November, 2024",
+    image: img1,
+  },
+
+  {
+    id: 3,
     title: "National Workshop",
     topic: "Role of AI in Achieving SDGs",
     date: "04th–16th November, 2024",

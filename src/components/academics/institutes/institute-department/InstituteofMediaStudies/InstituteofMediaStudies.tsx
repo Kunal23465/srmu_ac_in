@@ -1,5 +1,4 @@
 import React from "react";
-import facilitiesBg from "../../../../../assets/images/eligibility-img.jpg"
 import Classes from "../../../../../utils/styles/Global.module.css";
 import CustomOverviewSection from "../../../../../utils/custom/CustomOverviewSection";
 import CustomTopFooter from "../../../../../utils/custom/CustomTopFooter";
@@ -8,7 +7,6 @@ import {
   InstituteofMediaStudiesCounterData2,
   InstituteofMediaStudiesData1,
   InstituteofMediaStudiesData2,
-  InstituteofMediaStudiesfacultyData,
   InstituteofMediaStudiesOverviewData,
   InstituteofMediaStudiesTopFooterData,
   InstituteofMediaStudiesVMData,
@@ -19,8 +17,6 @@ import CustomDepartmentVissionMission from "../../../../../utils/custom/CustomDe
 import CustomDepartmentFeeDetailsTable from "../../../../../utils/custom/CustomDepartmentFeeDetailsTable";
 import CustomTabs from "../../../../../utils/custom/CustomTabs";
 import CustomInstituteProfileCard from "../../../../../utils/custom/CustomInstituteProfileCard";
-import CustomFacultyListCard from "../../../../../utils/custom/CustomFacultyListCard";
-import CustomDepartmentSlider from "../../../../../utils/custom/CustomDepartmentSlider";
 
 const InstituteofMediaStudies: React.FC = () => {
   const items = [
@@ -47,6 +43,7 @@ const InstituteofMediaStudies: React.FC = () => {
         />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12  mb-10">
           {InstituteofMediaStudiesVMData.map((item) => (
+            // @ts-ignore
             <CustomDepartmentVissionMission key={item.id} data={item} />
           ))}
         </div>
