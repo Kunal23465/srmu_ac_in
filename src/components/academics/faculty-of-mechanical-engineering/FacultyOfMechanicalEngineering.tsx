@@ -29,6 +29,8 @@ import {
 } from "../../../data/academics/faculty-of-mechanical-engineering/faculty-of-mechanical-engineering";
 import CustomDepartmentEventSlider from "../../../utils/custom/CustomDepartmentEventSlider";
 import CustomEventCard from "../../../utils/custom/CustomEventListCard";
+import CustomTopFooter from "../../../utils/custom/CustomTopFooter";
+import { instituteFooterData } from "../../../data/academics/institute/department-of-electrical-and-electronics-engineering-data";
 
 const FacultyOfMechanicalEngineering = () => {
   const items = [
@@ -489,6 +491,8 @@ const FacultyOfMechanicalEngineering = () => {
         arrowColor="#96a9c4"
         arrowBorderColor="#0f4a85"
       />
+      <CustomTopFooter data={instituteFooterData} />
+
     </div>
   );
 };

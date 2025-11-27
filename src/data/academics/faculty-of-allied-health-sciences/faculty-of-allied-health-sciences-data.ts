@@ -20,6 +20,9 @@ import industrycollaboration from "../../../assets/images/academics/institutes/i
 import researchdevelopment from "../../../assets/images/academics/institutes/researchdevelopment.jpg";
 import studentsupport from "../../../assets/images/academics/institutes/studentsupport.jpg";
 import { EventItem } from "../../../utils/custom/CustomEventListCard";
+import biomedical from "../../../assets/images/academics/institutes/biomedical.jpg";
+import csir from "../../../assets/images/academics/institutes/csir.jpg";
+
 
 export const facultyofAHSOverviewData: customeOverViewType = {
   heading: "Faculty of Allied Health Sciences",
@@ -224,15 +227,15 @@ export const alliedHealthScienceHighlightsData: departmentHighlightscardType[] =
       topic: "Biomedical Research",
       venue: "SGPGI",
       date: "12th May, 2023",
-      image: "industrialVisit",
+      image: biomedical,
       cardBgColor: "#ffffff",
     },
     {
       id: 2,
       title: "Industrial Visit",
-      venue: "CSIR- Indian Industrial Toxicology Res",
+      venue: "CSIR- Indian Industrial Toxicology Research, Lucknow",
       date: "21st November, 2023",
-      image: "wsfwf-10062510290948.png",
+      image: csir,
       cardBgColor: "#ffffff",
     }
   
