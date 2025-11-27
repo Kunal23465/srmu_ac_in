@@ -41,31 +41,6 @@ export const InstituteofAgriculturalSciencesandTechnologyTopFooterData = [
   },
 ];
 
-export const InstituteofAgriculturalSciencesandTechnologyvisionMissionData = {
-  backgroundColor: "#F3F7FF",
-
-  vision: {
-    title: "Vision",
-    description: [
-      "To create efficient agricultural institution, which caters to increased demand for professionals and works as a Centre of excellence for education, research, development, extension and consultancy in agriculture and allied sectors resulting into increased contribution of this sector in National GDP through enhanced production, employment and incomes in rural and associated regions.",
-    ],
-    buttonText: "View Mission",
-    buttonBgColor: "bg-blue-500",
-    imageUrl: vision,
-  },
-
-  mission: {
-    title: "Mission",
-    description: [
-      "To Create a proficient agricultural education system at SRMU for meeting the enhanced demand for agricultural graduates and post graduates to take up challenging tasks in the field of education and interdisciplinary research for harnessing full potential of agriculture in the country.",
-      "To act as proficient extension agency for transferring new production technologies, and efficient marketing of farm produce with the objective of increasing the farm, thereby rural incomes and employment.",
-      "To provide consultancy for establishing agricultural projects.",
-    ],
-    buttonText: "Back to Vision",
-    buttonBgColor: "bg-orange-500",
-    imageUrl: mission,
-  },
-};
 
 export const InstituteofAgriculturalSciencesandTechnologyCounterData1 = {
   counterData: [
@@ -131,9 +106,9 @@ export const InstituteofAgriculturalSciencesandTechnologyVMData = [
   {
     id: 1,
     bgColor: "#E5F3FC",
-    imageUrl: mission,
-    title: "Mission",
-    description: [
+    img: mission,
+    heading: "Mission",
+    points: [
       "To make mass communicator and Journalist with social consciences.",
       "To develop creative and critical thinking with human touch among our students.",
       "To enlighten and enrich the educational experience by providing pragmatic learning.",
@@ -143,9 +118,9 @@ export const InstituteofAgriculturalSciencesandTechnologyVMData = [
   {
     id: 2,
     bgColor: "#FFF2D2",
-    imageUrl: vision,
-    title: "Vision",
-    description: ["To be an institution of excellence in the field of communication, journalism and research."],
+    img: vision,
+    heading: "Vision",
+    points: ["To be an institution of excellence in the field of communication, journalism and research."],
   },
 ];
 

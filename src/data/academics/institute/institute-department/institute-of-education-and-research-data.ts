@@ -7,20 +7,20 @@ import { FacultyItem } from "../../../../utils/custom/CustomFacultyListCard";
 
 import RituImg from "../../../../assets/images/academics/departments/dr.-ritu-chandra-11zon-26022405522894.jpg"
 
-import DefaultImg from "../../../../assets/images/academics/departments/default-img.png";
-import PramodImg from "../../../../assets/images/academics/departments/11zon-cropped-34-11zon-23022404545998.jpeg";
-import ShubhamImg from "../../../../assets/images/academics/departments/11zon-cropped-33-11zon-23022404522539.jpeg";
-import AbhishekKumarImg from "../../../../assets/images/academics/departments/11zon-cropped-36-11zon-23022405004966.jpeg";
-import AjeetImg from "../../../../assets/images/academics/departments/11zon-cropped-37-11zon-23022405033990.jpeg";
+import AparajitaImg from "../../../../assets/images/academics/departments/ewweg-03062512432898.png";
+import GyanPrakashImg from "../../../../assets/images/academics/departments/dr.-gyan-prakash-srivastava-foier-11zon-1--24022410500544.jpg";
+import SandeepaImg from "../../../../assets/images/academics/departments/dr.-sandeepa-kaur-bhatiani-23022405194899.jpg";
+import AshishImg from "../../../../assets/images/academics/departments/dr.-ashish-kumar-awasthi-foier-11zon-24022410455116.jpg";
+import RashmiImg from "../../../../assets/images/academics/departments/dr.-rashmi-chaturvedi-23022405293973.jpg";
 
 
-import depSlide1 from "../../../../assets/images/academics/departments/pharma-lab-07052412313791.jpg";
-import depSlide2 from "../../../../assets/images/academics/departments/bioinformatics-07022411264512.jpg";
-import depSlide3 from "../../../../assets/images/academics/departments/integration-07052412393563.jpg";
-import depSlide4 from "../../../../assets/images/academics/departments/corporate-manag-0605240138369.jpg";
-import depSlide5 from "../../../../assets/images/academics/departments/industrystalwart-06022401542865.jpg";
-import depSlide6 from "../../../../assets/images/academics/departments/skill-07052412400634.jpg";
-import depSlide7 from "../../../../assets/images/academics/institutes/holistic-.jpg";
+import depSlide1 from "../../../../assets/images/academics/departments/education-06022405372723.jpg";
+import depSlide2 from "../../../../assets/images/academics/departments/corporate-manag-0605240138369.jpg";
+import depSlide3 from "../../../../assets/images/academics/departments/bba21-06022405443777.jpg";
+import depSlide4 from "../../../../assets/images/academics/institutes/menteesystem.jpg";
+import depSlide5 from "../../../../assets/images/academics/departments/psychology-07022411114264.jpg";
+import depSlide6 from "../../../../assets/images/academics/departments/skill-07022411112023.jpg";
+import depSlide7 from "../../../../assets/images/academics/departments/nurturing-06052403541786.jpg";
 import { Headers, Student } from "../../../../utils/custom/CustomPlacedStudentTable";
 
 export const InstituteofEducationandResearchOverviewData: customeOverViewType = {
@@ -76,14 +76,14 @@ export const InstituteofEducationandResearchCounterData2 = {
     {
       id: 1,
       icon: "",
-      value: "100",
+      value: "75",
       suffix: "",
       label: "Guest lectures"
     },
     {
       id: 2,
       icon: "",
-      value: "40",
+      value: "160",
       suffix: "",
       label: "Field Visits"
     },
@@ -107,9 +107,9 @@ export const InstituteofEducationandResearchVMData = [
   {
     id: 1,
     bgColor: "#E5F3FC",
-    imageUrl: mission,
-    title: "Mission",
-    description: [
+    img: mission,
+    heading: "Mission",
+    points: [
       "To promote skillful learning through effective Undergraduate & Postgraduate programs, teaching and research specific to changing needs of the industry and society with interdisciplinary approach.",
       "To impart experiential learning with innovative teaching-learning methods for developing active and creative minds.",
       "To develop innate abilities of each student and nurture their potentialities with respect to individual differences and changing environment.",
@@ -119,9 +119,9 @@ export const InstituteofEducationandResearchVMData = [
   {
     id: 2,
     bgColor: "#FFF2D2",
-    imageUrl: vision,
-    title: "Vision",
-    description: [
+    img: vision,
+    heading: "Vision",
+    points: [
       "To achieve excellence in the fields of Education and Research through socially enriching and ethical responsible pursuits."
     ],
   },
@@ -174,8 +174,7 @@ export const InstituteofEducationandResearchData1: FeeTableData = {
   columns: ["COURSES", "DURATION", "ELIGIBILITY CRITERIA", "COURSE FEES (PA)"],
 
   rows: [
-    { col1: "B.Pharm. (Bachelor of Pharmacy)", col2: "4 Years", col3: "Click to View", col4: "	Rs. 1,32,000/-" },
-    { col1: "D. Pharm. (Diploma in Pharmacy)", col2: "2 Years", col3: "Click to View", col4: "	Rs. 92,000/-" },
+    { col1: "M.A. in Education", col2: "2 Years", col3: "Click to View", col4: "	Rs. 37,000/-" },
   ],
 
 };
@@ -183,8 +182,7 @@ export const InstituteofEducationandResearchData2: FeeTableData = {
   columns: ["COURSES", "DURATION", "ELIGIBILITY CRITERIA", "COURSE FEES (PA)"],
 
   rows: [
-    { col1: "B.Pharm. (Bachelor of Pharmacy)", col2: "4 Years", col3: "Click to View", col4: "	Rs. 1,32,000/-" },
-    { col1: "D. Pharm. (Diploma in Pharmacy)", col2: "2 Years", col3: "Click to View", col4: "	Rs. 92,000/-" },
+    { col1: "B.Ed. (Bachelor of Education)", col2: "2 Years", col3: "Click to View", col4: "	Rs. 62,000/-" },
   ],
 
 };
@@ -194,233 +192,79 @@ export const InstituteofEducationandResearchData2: FeeTableData = {
 export const InstituteofEducationandResearchfacultyData: FacultyItem[] = [
   {
     id: 1,
-    name: "Ms. Nimisha Singh",
+    name: "Dr. Aparajita Jaiswal",
     designation: "Assistant Professor",
-    image: DefaultImg,
+    image: AparajitaImg,
   },
   {
     id: 2,
-    name: "Mr. Ajeet Singh",
+    name: "Dr. Gyan Prakash Srivastava",
     designation: "Assistant Professor",
-    image: AjeetImg,
+    image: GyanPrakashImg,
   },
   {
     id: 3,
-    name: "Ms. Saumya Awasthi",
+    name: "Dr. Sandeepa Kaur Bhatiani",
     designation: "Assistant Professor",
-    image: DefaultImg,
+    image: SandeepaImg,
   },
   {
     id: 4,
-    name: "Ms. Zeba Siddiqui",
-    designation: "Associate Professor",
-    image: DefaultImg,
+    name: "Dr. Ashish Kumar Awasthi",
+    designation: "Assistant Professor",
+    image: AshishImg,
   },
   {
     id: 5,
-    name: "Mr. Azeem Ahmad",
+    name: "Dr. Rashmi Chaturvedi",
     designation: "Assistant Professor",
-    image: DefaultImg,
+    image: RashmiImg,
   },
   {
     id: 6,
-    name: "Mr. Nand Gopal Jaiswal",
-    designation: "Assistant Professor",
-    image: DefaultImg,
-  },
-  {
-    id: 7,
-    name: "Mr. Shailendra Kumar Yadav",
-    designation: "Assistant Professor",
-    image: DefaultImg,
-  },
-  {
-    id: 8,
-    name: "Ms. Rida Arif Kidwai",
-    designation: "Assistant Professor",
-    image: DefaultImg,
-  },
-  {
-    id: 9,
-    name: "Mr. Yogendra Kumar",
-    designation: "Associate Professor",
-    image: DefaultImg,
-  },
-  {
-    id: 10,
-    name: "Ms. Sunita",
-    designation: "Associate Professor",
-    image: DefaultImg,
-  },
-  {
-    id: 11,
-    name: "Mohd. Nazish Ansari",
-    designation: "Assistant Professor",
-    image: DefaultImg,
-  },
-  {
-    id: 12,
-    name: "Mr. Vijay Verma",
-    designation: "Assistant Professor",
-    image: DefaultImg,
-  },
-  {
-    id: 13,
-    name: "Mr. Saurabh Kumar Tiwari",
-    designation: "Lecturer",
-    image: DefaultImg,
-  },
-  {
-    id: 14,
-    name: "Mr. Ranjeet Kumar Maurya",
-    designation: "Lecturer",
-    image: DefaultImg,
-  },
-  {
-    id: 15,
-    name: "Mr. Abhishek Kumar",
-    designation: "Assistant Professor",
-    image: AbhishekKumarImg,
-  },
-  {
-    id: 16,
-    name: "Ms. Palak Agrawal",
-    designation: "Assistant Professor",
-    image: DefaultImg,
-  },
-  {
-    id: 17,
-    name: "Ms. Sushma Singh",
-    designation: "Assistant Professor",
-    image: DefaultImg,
-  },
-  {
-    id: 18,
-    name: "Mr. Neeraj Kumar Verma",
-    designation: "Assistant Professor",
-    image: DefaultImg,
-  },
-  {
-    id: 19,
-    name: "Mr. Sunil Kumar Singh",
-    designation: "Associate Professor",
-    image: DefaultImg,
-  },
-  {
-    id: 20,
-    name: "Ms. Pragti Singh",
-    designation: "Assistant Professor",
-    image: DefaultImg,
-  },
-  {
-    id: 21,
-    name: "Ms. Sarita Singh",
-    designation: "Associate Professor",
-    image: DefaultImg,
-  },
-  {
-    id: 22,
-    name: "Dr. Shikha Srivastava",
-    designation: "Associate Professor",
-    image: DefaultImg,
-  },
-  {
-    id: 23,
-    name: "Mr. Shubham Gautam",
-    designation: "Assistant Professor",
-    image: ShubhamImg,
-  },
-  {
-    id: 24,
-    name: "Ms. Apurwa Singh",
-    designation: "Assistant Professor",
-    image: DefaultImg,
-  },
-  {
-    id: 25,
-    name: "Dr. Yasmin Khatoon",
+    name: "Prof. (Dr.) Ritu Chandra",
     designation: "Professor",
-    image: DefaultImg,
+    image: RituImg,
   },
-  {
-    id: 26,
-    name: "Mr. Anupam Kumar Pal",
-    designation: "Assistant Professor",
-    image: DefaultImg,
-  },
-  {
-    id: 27,
-    name: "Mr. Pramod Chauhan",
-    designation: "Assistant Professor",
-    image: PramodImg,
-  },
-  {
-    id: 28,
-    name: "Mr. Zahid Hussain",
-    designation: "Assistant Professor",
-    image: DefaultImg,
-  },
-  {
-    id: 29,
-    name: "Ms. Shivangi Sharma",
-    designation: "Assistant Professor",
-    image: DefaultImg,
-  },
-  {
-    id: 30,
-    name: "Ms. Shraddha Pandey",
-    designation: "Assistant Professor",
-    image: DefaultImg,
-  },
-  {
-    id: 31,
-    name: "Ms. Geetika Mishra",
-    designation: "Assistant Professor",
-    image: DefaultImg,
-  },
-
 ];
-
 
 export const InstituteofEducationandResearchdepartmentHighlights: departmentHighlightscardType[] = [
   {
     image: depSlide1,
-    title: "State-of-the-art research facilities",
-    description: "With the help of industrial funding, the department maintains specialized high-end labs to offer students the best chances for experiential learning.",
+    title: "Programs designed in line with NEP-2020",
+    description: "As mandated by the National Education Policy (NEP)-2020, the department offers its programs in partnership with other university departments and institutions.",
   },
   {
     image: depSlide2,
-    title: "Research & innovation for augmented training",
-    description: "By utilizing cutting edge research, teaching, and innovative techniques, the department aims to establish a dynamic and stimulating learning environment.",
+    title: "Exposure to the latest ICT technologies",
+    description: "The department focus on imparting experiential learning with innovative teaching-learning methods for developing active and creative minds.",
   },
   {
     image: depSlide3,
-    title: "Modules as per NEP 2020 for deploying industry required skills",
-    description: "The department focuses on cutting-edge teaching methodologies drawn inline with NEP 2020 to help students develop their critical thinking abilities and improve their aptitude for learning.",
+    title: "Internships to enhance teaching skills",
+    description: "Curricula is based on regular internships in fourth semster twith focus on skilling in online teaching, digital lessons, and content development.",
   },
   {
     image: depSlide4,
-    title: "Outreach & collaboration for vibrant learning atmosphere",
-    description: "We want to establish significant collaborations that stimulate creativity and provide significant results in order to address intricate problems in the pharmaceutical domains.",
+    title: "Special classes for preparation of government examinations",
+    description: "There is a provison of providing special classes to all the students for assisting and preparing them for examinations like TET, CTET, TGT & PGT.",
   },
   {
     image: depSlide5,
-    title: "Guest lectures & industrial visits to foster learning",
-    description: "Imparting high quality professional education, training and research in the field of pharmaceutical science through regular interactions with industry.",
+    title: "Field visits to educational institutions",
+    description: "Department emphasizes on enhancing the experiential learning at educational institutions through outreach and extension initiatives.",
   },
   {
     image: depSlide6,
-    title: "Constant improvement of faculty skills through FDPs",
-    description: "Through regular FDPs, the department also prioritizes the ongoing professional development of its academic members and their exposure to cutting-edge techniques and technology.",
+    title: "Value added courses for skill enhancement",
+    description: "These extracurricular educational opportunities give students information and abilities that go beyond what is taught in the classroom.",
   },
   {
     image: depSlide7,
-    title: "Focus on students' holistic development",
-    description: "Students participate in extracurricular activities such as sports, music festivals, and cultural events both on campus and at the local and national levels.",
+    title: "Nurturing entrepreneurship & innovation",
+    description: "Department has developed an acadmeic model in assistance with industry to promote creativity, innovation and entrepreneurship among students.",
   },
 ];
-
-
 
 
 export const tableHeaders: Headers = {
@@ -431,58 +275,8 @@ export const tableHeaders: Headers = {
 
   export const placedStudents: Student[] = [
   {
-    name: "Akarsh Singh",
-    program: "D. Pharm. (Diploma in Pharmacy)",
-    company: "Cureton",
-  },
-  {
-    name: "Brijbhushan Singh",
-    program: "D. Pharm. (Diploma in Pharmacy)",
-    company: "Cureton",
-  },
-  {
-    name: "Md. Saquib",
-    program: "D. Pharm. (Diploma in Pharmacy)",
-    company: "Cureton",
-  },
-  {
-    name: "Md Amir Hasan",
-    program: "B.Pharm. (Bachelor of Pharmacy)",
-    company: "Cureton",
-  },
-  {
-    name: "Pratyush Pandey",
-    program: "B.Pharm. (Bachelor of Pharmacy)",
-    company: "Narayana diagnostic",
-  },
-  {
-    name: "Aniket Nigam",
-    program: "B.Pharm. (Bachelor of Pharmacy)",
-    company: "Narayana diagnostic",
-  },
-  {
-    name: "Pratyush Pandey",
-    program: "B.Pharm. (Bachelor of Pharmacy)",
-    company: "Accosts Remedies Pvt.Ltd.",
-  },
-  {
-    name: "Soumya Srivastava",
-    program: "B.Pharm. (Bachelor of Pharmacy)",
-    company: "Accosts Remedies Pvt.Ltd.",
-  },
-  {
-    name: "Aniket Nigam",
-    program: "B.Pharm. (Bachelor of Pharmacy)",
-    company: "Accosts Remedies Pvt.Ltd.",
-  },
-  {
-    name: "Harsh jaiswal",
-    program: "D. Pharm. (Diploma in Pharmacy)",
-    company: "Accosts Remedies Pvt.Ltd.",
-  },
-  {
-    name: "Uplakshya Yadav",
-    program: "D. Pharm. (Diploma in Pharmacy)",
-    company: "Accosts Remedies Pvt.Ltd.",
+    name: "Avni Verma",
+    program: "B.Ed. (Bachelor of Education)",
+    company: "City Montessari School",
   },
 ];

@@ -21,7 +21,7 @@ export const InstituteofManagementCommerceandEconomicsTopFooterData = [
 ];
 
 export const InstituteofManagementCommerceandEconomicsvisionMissionData = {
-     backgroundColor: "bg-blue-900",
+  backgroundColor: "#0f4a85",
  vision: {
     title: "Our Vision",
     description: [

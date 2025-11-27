@@ -131,9 +131,9 @@ export const InstituteofPharmaceuticalSciencesVMData = [
   {
     id: 1,
     bgColor: "#E5F3FC",
-    imageUrl: mission,
-    title: "Mission",
-    description: [
+    img: mission,
+    heading: "Mission",
+    points: [
       "To make mass communicator and Journalist with social consciences.",
       "To develop creative and critical thinking with human touch among our students.",
       "To enlighten and enrich the educational experience by providing pragmatic learning.",
@@ -143,9 +143,9 @@ export const InstituteofPharmaceuticalSciencesVMData = [
   {
     id: 2,
     bgColor: "#FFF2D2",
-    imageUrl: vision,
-    title: "Vision",
-    description: [
+    img: vision,
+    heading: "Vision",
+    points: [
       "To be an institution of excellence in the field of communication, journalism and research.",
     ],
   },

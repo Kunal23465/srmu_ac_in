@@ -16,6 +16,7 @@ export interface DepartmentVMType {
   bgColor: string; // hex, rgb, etc.
   img: string; // image URL or path
   heading: string; // "Mission", "Vision", etc.
+  description?: string;
   points: string[]; // bullet points
 }
 export interface FeeTableRow {
