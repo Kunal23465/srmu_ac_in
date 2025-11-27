@@ -5,7 +5,6 @@ export interface InstituteProfile {
   position: string;         // e.g. Dean FoCE, SRMU
   image: string;            // img path
 
- 
   summary: string;          // Short text to show on card
 
   detailsHeading?: string;  // Section title
@@ -16,4 +15,3 @@ export interface InstituteProfile {
 
   modalContent?: string;    // NEW -> full long modal description (paragraphs)
 }
-
