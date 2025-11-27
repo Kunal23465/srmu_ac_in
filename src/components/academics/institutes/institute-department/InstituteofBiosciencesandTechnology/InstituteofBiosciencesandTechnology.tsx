@@ -11,7 +11,7 @@ import CustomInstituteCoursesCard from "../../../../../utils/custom/CustomInstit
 import CustomTopFooter from "../../../../../utils/custom/CustomTopFooter";
 import CustomInstitueVissionMissionCard from "../../../../../utils/custom/CustomInstitueVissionMissionCard";
 import CustomInstituteProfileCard from "../../../../../utils/custom/CustomInstituteProfileCard";
-import { instituteProfiles } from "../../../../../data/academics/institute/institute-department/institute-of-biosciences-and-technology-data";
+import { InstituteofBiosciencesandTechnologyinstituteProfiles } from "../../../../../data/academics/institute/institute-department/institute-of-biosciences-and-technology-data";
 
 const InstituteofBiosciencesandTechnology: React.FC = () => {
   return (
@@ -20,7 +20,7 @@ const InstituteofBiosciencesandTechnology: React.FC = () => {
         <CustomOverviewSection data={InstituteofBiosciencesandTechnologyOverviewData} />
         <CustomInstitueVissionMissionCard data={visionMissionData} />
         </div>
-      <CustomInstituteProfileCard data={instituteProfiles} />
+      <CustomInstituteProfileCard data={InstituteofBiosciencesandTechnologyinstituteProfiles} />
             <div className={`${Classes["container"]}`}>
 
         <div className="my-15 flex flex-col lg sm:flex-row">
