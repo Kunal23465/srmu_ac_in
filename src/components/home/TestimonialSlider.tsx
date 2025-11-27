@@ -1,8 +1,8 @@
-import  { useState } from "react";
+import { useState } from "react";
 import Slider from "react-slick";
 import { hometestimonial } from "../../data/home/student-testimonialhome-data";
 import quote from "../../assets/images/home/quote.png"
-
+import Classes from "../../utils/styles/Global.module.css";
 const NextArrow = ({ onClick }: any) => (
     <button
         onClick={onClick}
@@ -65,20 +65,20 @@ const TestimonialSlider = () => {
                 Student Testimonials
             </h2>
 
-            <div className="relative w-full max-w-6xl mx-auto px-4">
+            <div className={`relative ${Classes["container"]}`}>
                 <Slider {...settings}>
                     {hometestimonial.map((item, index) => {
 
                         //  const isSecondImage = (activeSlide + 1) % images.length === index;
 
                         return (
-                            <div key={item.id} className="flex justify-center px-0.5">
+                            <div key={item.id} className="flex justify-center px-0.5 ">
                                 <div
-                                    className={`rounded-full transition-all duration-300 overflow-hidden border-4 ${activeIndex === index
+                                    className={`rounded-full transition-all duration-300 overflow-hidden border-4 w-[168px] h-[168px] ${activeIndex === index
                                         ? "border-[#3A6EFF] scale-100 shadow-lg"
                                         : "border-gray-300"
                                         }`}
-                                    style={{ width: 130, height: 130 }}
+
                                 >
                                     <img
                                         src={item.img}

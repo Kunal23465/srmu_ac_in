@@ -65,12 +65,12 @@ const Header = () => {
 
                         {/* NORMAL DROPDOWN */}
                         {!isMega && data?.subItem && (
-                          <div className="absolute top-[60px] right-0 bg-white rounded-md">
+                          <div className="absolute top-[60px] right-0 bg-white rounded-md shadow-md">
                             <span className="hidden group-hover:block manage-top-arrow"></span>
 
-                            <ul className="transition-all w-full min-w-[250px] duration-300 max-h-0 group-hover:max-h-[500px] overflow-hidden group-hover:border rounded-md ">
+                            <ul className="transition-all w-full min-w-[290px] duration-300 max-h-0 group-hover:max-h-[500px] overflow-hidden rounded-md ">
                               {data.subItem.map((value, i) => (
-                                <Link key={i} to={value.path} className={`block px-3 py-3 hover:text-[#ffb703] ${i !== 0 && "border-t border-gray-200"}`}>
+                                <Link key={i} to={value.path} className={`block text-sm px-3 py-3 hover:text-[#ffb703] ${i !== 0 && "border-t border-gray-200"}`}>
                                   {value.item}
                                 </Link>
                               ))}

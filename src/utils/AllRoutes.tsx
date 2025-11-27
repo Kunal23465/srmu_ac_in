@@ -850,9 +850,8 @@ function Breadcrumbs() {
   // console.log("matches", matches[1].pathname);
   return (
     <section
-      className={`banner-section ${
-        matches[1].pathname === "/abhivyakti" ? "abhivyakt" : ""
-      } flex items-center `}
+      className={`banner-section ${matches[1].pathname === "/abhivyakti" ? "abhivyakt" : ""
+        } flex items-center `}
     >
       <div className={`${Classes["container"]} `}>
         <div className={`${Classes["page-title-content"]}`}>
