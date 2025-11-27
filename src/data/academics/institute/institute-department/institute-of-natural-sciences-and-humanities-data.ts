@@ -55,17 +55,21 @@ export const InstituteofNaturalSciencesandHumanitiesinstituteCourseCardData: Cus
   {
     imageUrl: courseImg1,
     departmentName: "Faculty of Physical Sciences",
+    path: "/academics/institutes-info/faculty-of-civil-engineering",
   },
   {
     imageUrl: courseImg2,
     departmentName: "Faculty of Chemical Sciences",
+    path: "/academics/institutes-info/faculty-of-civil-engineering",
   },
   {
     imageUrl: courseImg3,
     departmentName: "Faculty of Mathematical and Statistical Sciences",
+    path: "/academics/institutes-info/faculty-of-civil-engineering",
   },
   {
     imageUrl: courseImg4,
     departmentName: "Faculty of Humanities and Social Sciences",
+    path: "/academics/institutes-info/faculty-of-civil-engineering",
   },
 ];

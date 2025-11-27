@@ -49,10 +49,12 @@ export const instituteCourseCardData: CustomInstituteCourseCardProps[] = [
   {
     imageUrl: courseImg1,
     departmentName: "Faculty of Commerce and Economics",
+    path: "/academics/institutes-info/faculty-of-civil-engineering",
   },
   {
     imageUrl: courseImg2,
     departmentName: "Faculty Of Management",
+    path: "/academics/institutes-info/faculty-of-civil-engineering",
   },
 
 ];
