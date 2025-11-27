@@ -213,42 +213,42 @@ export const HeaderData = [
           {
             id: 3,
             item: "Addmission",
-            path: "adsmission/admission-overview",
+            path: "admission/admission-overview",
             subItem: [
               {
                 item: "Overview",
-                path: "/adsmission/adsmission/admission-overview",
+                path: "/admission/admission-overview",
               },
               {
                 item: "How to Apply",
-                path: "/adsmission/civil-engineering",
+                path: "/admission/civil-engineering",
               },
               {
                 item: "Program Finder",
-                path: "/adsmission/program-finder",
+                path: "/admission/program-finder",
               },
               {
                 item: "Fee Structure",
-                path: "/adsmission/fee-structure",
+                path: "/admission/fee-structure",
               },
               {
                 item: "Scholarship",
-                path: "/adsmission/data-science",
+                path: "/admission/data-science",
               },
               {
                 item: "Shift Schedule (First Year Only)",
-                path: "/adsmission/shift-schedule",
+                path: "/admission/shift-schedule",
               },
               {
                 item: "Document Checklist",
-                path: "/adsmission/document-checklist",
+                path: "/admission/document-checklist",
               },
 
-              { item: "Admission Policies", path: "/adsmission/it" },
+              { item: "Admission Policies", path: "/admission/admission-policy" },
 
               {
                 item: "Admission FAQs",
-                path: "/adsmission/admission-faq",
+                path: "/admission/admission-faq",
               },
             ],
           },
@@ -280,6 +280,26 @@ export const HeaderData = [
               {
                 item: "Women Empowerment",
                 path: "/campus-life/women-empowerment",
+              },
+
+
+
+
+              {
+                item: "Outreach Activations",
+                path: "/campus-life/outreach-activations",
+              },
+              {
+                item: "Student Senate",
+                path: "/campus-life/student-senate",
+              },
+              {
+                item: "Student Corner",
+                path: "/campus-life/student-corner",
+              },
+              {
+                item: "Grievance Redressal System",
+                path: "/campus-life/grievance-redressal-system",
               },
             ],
           },
