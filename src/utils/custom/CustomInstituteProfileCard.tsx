@@ -106,7 +106,7 @@ const CustomInstituteProfileCard: React.FC<CustomInstituteProfileCardProps> = ({
                 </ul>
               ) : (
                 <div className="space-y-1 mb-6">
-                  {profile.details.slice(0, 4).map((d, i) => (
+                  {profile.details.slice(0, 6).map((d, i) => (
                     <p key={i}>{formatBold(d)}</p>
                   ))}
                 </div>

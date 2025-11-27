@@ -2,13 +2,25 @@ import { customeOverViewType } from "../../../../types/home-data-type";
 import vision from "../../../../assets/images/academics/departments/dept-mission-icon2.png";
 import mission from "../../../../assets/images/academics/departments/dept-mission-icon1.png";
 import { InstituteProfile} from "../../../../types/profile-data-type";
-import headImg from "../../../../assets/images/academics/departments/01-10062506001261.png"
-import { FeeTableData } from "../../faculty-of-civil-engineering/faculty-of-civil-engineering-data";
+import { departmentHighlightscardType, FeeTableData } from "../../faculty-of-civil-engineering/faculty-of-civil-engineering-data";
 import { FacultyItem } from "../../../../utils/custom/CustomFacultyListCard";
 
+import RazaurRahmanImg from "../../../../assets/images/academics/departments/01-10062506001261.png"
+import RahulImg from "../../../../assets/images/academics/departments/mr.-rahul-chaturvedi-23022404242613.jpg";
+import DhwaniImg from "../../../../assets/images/academics/departments/dr.-dhwani-singh-fomedia-n-2402241123395.jpg";
+import SandeepImg from "../../../../assets/images/academics/departments/default-img.png";
+import AmitImg from "../../../../assets/images/academics/departments/mr.-amit-kumar-singh-23022404392067.jpg";
+import PradeepImg from "../../../../assets/images/academics/departments/default-img.png";
+import MiliImg from "../../../../assets/images/academics/departments/dr.-mili-singh-1-11zon-26022405574118.jpg";
 
-import professor from "../../../../assets/images/academics/institutes/dr.r.s.bajpai.jpg"
-
+import depSlide1 from "../../../../assets/images/academics/institutes/holistic-.jpg";
+import depSlide2 from "../../../../assets/images/academics/departments/media-07052412412440.jpg";
+import depSlide3 from "../../../../assets/images/academics/departments/industrystalwart-06022403005880.jpg";
+import depSlide4 from "../../../../assets/images/academics/departments/media-visit-07052412425199.jpg";
+import depSlide5 from "../../../../assets/images/academics/departments/manage--06052401112298.jpg";
+import depSlide6 from "../../../../assets/images/academics/departments/entrepreneurialecosystem-0602240302151.jpg";
+import depSlide7 from "../../../../assets/images/academics/departments/mentor-07052412432565.jpg";
+import { Headers, Student } from "../../../../utils/custom/CustomPlacedStudentTable";
 
 export const InstituteofMediaStudiesOverviewData: customeOverViewType = {
   heading: "Institute of Media Studies",
@@ -121,9 +133,9 @@ export const InstituteofMediaStudiesVMData = [
   {
     id: 1,
     bgColor: "#E5F3FC",
-    img: mission,
-    heading: "Mission",
-    points: [
+    imageUrl: mission,
+    title: "Mission",
+    description: [
       "To make mass communicator and Journalist with social consciences.",
       "To develop creative and critical thinking with human touch among our students.",
       "To enlighten and enrich the educational experience by providing pragmatic learning.",
@@ -133,9 +145,9 @@ export const InstituteofMediaStudiesVMData = [
   {
     id: 2,
     bgColor: "#FFF2D2",
-    img: vision,
-    heading: "Vision",
-    points: [
+    imageUrl: vision,
+    title: "Vision",
+    description: [
       "To be an institution of excellence in the field of communication, journalism and research.",
     ],
   },
@@ -147,38 +159,28 @@ export const instituteProfiles: InstituteProfile[] = [
   {
     id: 1,
     title: "Department Head",
-    name: "Prof. (Dr.) Abhishek Saxena",
-    position: "Offg. Director, IAP & Dean FoCE, SRMU, Lucknow–Deva Road",
-    image: professor,
+    name: "Prof. (Dr.) Razaur Rahman",
+    position: "Director IMS, SRMU, Lucknow-Deva Road",
+    image: RazaurRahmanImg,
 
     summary:
-      "Total experience of 23+ years in industry and academics. Functional Area Expert for EIA studies and empanelled groundwater expert for various government bodies.",
+      "",
 
     detailsHeading: "",
     useBullets: false,
 
     details: [
-      "**Total Experience**: 23+ years (Industry: 10 years, Academics: 13+ years)",
-      "8 patents and 60 research papers/book chapters published in renowned journals",
-      "Supervisor of 5 PhD; 7 scholars awarded",
-      "Functional Area Expert for EIA studies (Category 'A' projects – HG & Geo) since 2011",
-      "Empanelled Groundwater Expert for Central Ground Water Authority & Ministry of Jal Shakti",
-      "Consultancy Projects: 9 | Total Cost: Rs. 2.0+ Cr",
-      "Total EIA Projects = 19 (5 Category 'A' + 14 Category 'B')",
+      "**Qualification: **B.Sc.(Hons.), MBA, Ph.D(Marketing)",
+      "**Experience**: 35+ years",
+      "**Specialization/ Area of Research: **Marketing & Advertising, Visual Communication",
+      "**Email ID: **director.ims@srmu.ac.in",
+      "**ORCID ID: **https://orcid.org/0009-0009-5500-5590",
+      "**Contact No.: **+91-9415095499",
     ],
 
-    modalContent: `
-Prof. (Dr.) Abhishek Saxena, an environmentalist and academician, is currently working as Dean, Faculty of Civil Engineering with additional charge of Director in Institute of Architecture and Planning at Shri Ramswaroop Memorial University, Barabanki.
+    modalContent: `He has more than 35+ years of experience in Management & Media Education and the Industry.He has worked across the different domains including  Advertising, Media  and Management education. He has received laurels as a Director of the Year in 2023 and granted Patent on “Employability “in the managemnt stream in the same year. He began his career with a Publishing Company in New Delhi,India and moved to Academics in the year 1995.In his career span has been associated with leading media institutions such as Film Institute of eMITS,Lucknow and JIT Media Institute ,Barabanki.
 
-He is empanelled Functional Area Expert for EIA studies (Category "A" projects– HG) since 2011 (till date), empanelled by National Accreditation Board for Education and Training (NABET), Ministry of Environment, Forest and Climate Change (MoEFCC), Government of India. He is a renowned member of the National Level Expert Committee for “Auto Detection of Construction through Satellite Imageries”, Ghaziabad Development Authority since 2013. He is also Empanelled Groundwater Expert for CGWA (Central Ground Water Authority), Government of India (2021).
-
-He received the “ITP Young Scientist Award 2006” by IWMI–TATA Water Policy Program for major findings in his Ph.D. research work, and the Guru Pranam Award 2016 by Amar Ujala for contributions in education and research. He is Principal Investigator in the project “Affordable filter for arsenic removal from drinking water using bio-adsorption techniques” funded by UPCST.
-
-His career began with World Bank projects, later joining SMEC (Australia) where he worked on several ADB, JICA, World Bank, and GoI funded assignments. He played a major role in Water Resource Management of Uttar Pradesh (35 districts) under the World Bank UPWRSP Phase-I. UNICEF also utilized his expertise as State Water Safety Consultant for Uttar Pradesh.
-
-He has more than 22 years of experience in water quality, EIA, groundwater and resource management. He holds the fellowship of “The Society of Earth Scientists” and “Indian Society of Remote Sensing”.
-
-Prof. Saxena has 60+ publications in journals, conferences, books and book chapters and has been granted 8 International Patents. Under his guidance, 7 PhDs have been awarded and 5 are in progress.
+He has been guiding and counselling the students across various academic domains. He is capable to motivate young minds and developing synergy between the students and the teachers for their growth.His Research Interest  area is Advertising and Visual Communication.
 `
   },
 
@@ -192,7 +194,7 @@ Prof. Saxena has 60+ publications in journals, conferences, books and book chapt
 
 
 export const InstituteofMediaStudiesData1: FeeTableData = {
-  columns: ["Courses", "Duration", "Eligibility Criteria", "Course Fees (PA)"],
+  columns: ["COURSES", "DURATION", "ELIGIBILITY CRITERIA", "COURSE FEES (PA)"],
 
   rows: [
     { col1: "M.A. in Journalism & Mass Communication", col2: "2 Years", col3: "Click to View", col4: "	Rs. 62,000/-" },
@@ -201,7 +203,7 @@ export const InstituteofMediaStudiesData1: FeeTableData = {
 };
 
 export const InstituteofMediaStudiesData2: FeeTableData = {
-  columns: ["Courses", "Duration", "Eligibility Criteria", "Course Fees (PA)"],
+  columns: ["COURSES", "DURATION", "ELIGIBILITY CRITERIA", "COURSE FEES (PA)"],
 
   rows: [
     { col1: "B.A. in Journalism & Mass Communication", col2: "3 Years", col3: "Click to View", col4: "	Rs. 94,000/-" },
@@ -218,37 +220,289 @@ export const InstituteofMediaStudiesData2: FeeTableData = {
 export const InstituteofMediaStudiesfacultyData: FacultyItem[] = [
   {
     id: 1,
-    name: "Dr. Priya Sharma",
-    designation: "Associate Professor",
-    image: vision,
-    cardBgColor: "#1e3a8a",
+    name: "Mr. Rahul Chaturvedi",
+    designation: "Assistant Professor",
+    image: RahulImg,
   },
   {
     id: 2,
-    name: "Dr. Rakesh Mehta",
-    designation: "Professor & Head of Department",
-    image: vision,
-    cardBgColor: "#6b21a8",
+    name: "Dr. Dhwani Singh",
+    designation: "Assistant Professor",
+    image: DhwaniImg,
   },
   {
     id: 3,
-    name: "Dr. Neha Patil",
+    name: "Mr. Sandeep Singh",
     designation: "Assistant Professor",
-    image: vision,
+    image: SandeepImg,
   },
   {
     id: 4,
-    name: "Dr. Amit Verma",
-    designation: "Research Coordinator",
-    image: vision,
-    cardBgColor: "#0f766e",
+    name: "Dr. Amit Kumar Singh",
+    designation: "Assistant Professor",
+    image: AmitImg,
   },
   {
     id: 5,
-    name: "Prof. Kavita Deshmukh",
-    designation: "Senior Lecturer",
-    image: vision,
+    name: "Dr. Pradeep Kumar",
+    designation: "Assistant Professor",
+    image: PradeepImg,
+  },
+  {
+    id: 6,
+    name: "Dr. Mili Singh",
+    designation: "Assistant Professor",
+    image: MiliImg,
   },
 ];
+
+
+
+
+export const InstituteofMediaStudiesdepartmentHighlights: departmentHighlightscardType[] = [
+  {
+    image: depSlide1,
+    title: "Activity based learning for holistic development",
+    description:
+      "The department offers hands-on training in media skills development to help students get a worldwide perspective on the most recent learning standards.",
+  },
+  {
+    image: depSlide2,
+    title: "State -of the-art media laboratories",
+    description:
+      "Modern facilities in terms of advanced labs with modern equipment and latest softwares are provided by the department so that students may contribute to high-quality media production.",
+  },
+  {
+    image: depSlide3,
+    title: "Regular workshops & sessions by industry stalwarts",
+    description:
+      "Distinguished scholars, filmmakers, journalists, and advertising experts frequently visit the department to share their knowledge with our students.",
+  },
+  {
+    image: depSlide4,
+    title: "Regular visits to events, programs & festivals",
+    description:
+      "The students are sufficiently exposed through field trips, seminars, workshops, special lectures, and projects to let them know the real work culture of media industry.",
+  },
+  {
+    image: depSlide5,
+    title: "Association & membership of professional bodies",
+    description: "Opportunities for internships are incorporated into the curriculum to assist students in gaining real-world experience and bridging the gap between academics and industry.",
+  },
+  {
+    image: depSlide6,
+    title: "Industry collaboration & consultancy for enhanced learning",
+    description: "The department's distinctive quality is its engagement in consulting practises, which are complemented by consistent academic work.",
+  },
+  {
+    image: depSlide7,
+    title: "Remedial classes for slow learners",
+    description: "Department regularly organizes special remedial classes for slow learners so that they can match their peer group and enhance their performance.",
+  },
+];
+
+
+
+
+
+export const tableHeaders: Headers = {
+    name: "NAME OF STUDENT",
+    program: "PROGRAM",
+    company: "COMPANY",
+  };
+ 
+ export const placedStudents: Student[] = [
+    {
+      name: "Sakshi Shukla",
+      program: "M.A. in Journalism & Mass Communication",
+      company: "Policy Bazaar",
+    },
+    {
+      name: "Amarnath Krishna Kashyap",
+      program: "B.A. in Journalism & Mass Communication",
+      company: "TTN24",
+    },
+    {
+      name: "Anurag Tewari",
+      program: "B.A. in Journalism & Mass Communication",
+      company: "Live UP Patrika",
+    },
+    {
+      name: "Arshita Singh",
+      program: "B.A. in Journalism & Mass Communication",
+      company: "Live UP Patrika",
+    },
+    {
+      name: "Surbhi Kumari",
+      program: "B.A. in Journalism & Mass Communication",
+      company: "Live UP Patrika",
+    },
+    {
+      name: "Anjali Shukla",
+      program: "B.A. in Journalism & Mass Communication",
+      company: "TTN24",
+    },
+    {
+      name: "Abhishreshtha Mishra",
+      program: "M.A. in Journalism & Mass Communication",
+      company: "Live UP Patrika",
+    },
+    {
+      name: "Shivam Mishra",
+      program: "B.A. in Journalism & Mass Communication",
+      company: "National Khabar",
+    },
+    {
+      name: "Disha Pandey",
+      program: "B.A. in Journalism & Mass Communication",
+      company: "National Khabar",
+    },
+    {
+      name: "Yash Yadav",
+      program: "B.A. in Journalism & Mass Communication",
+      company: "National Khabar",
+    },
+    {
+      name: "Aditya Jaiswal",
+      program: "B.A. in Journalism & Mass Communication",
+      company: "National Khabar",
+    },
+    {
+      name: "Shaheen Parveen Shahjahan",
+      program: "M.A. in Journalism & Mass Communication",
+      company: "IBN Bharat",
+    },
+    {
+      name: "Shivangi Singh",
+      program: "M.A. in Journalism & Mass Communication",
+      company: "IBN Bharat",
+    },
+    {
+      name: "Saumya Awasthi",
+      program: "M.A. in Journalism & Mass Communication",
+      company: "National Khabar",
+    },
+    {
+      name: "Atul Pandey",
+      program: "M.A. in Journalism & Mass Communication",
+      company: "National Khabar",
+    },
+    {
+      name: "Anamika Annu",
+      program: "M.A. in Journalism & Mass Communication",
+      company: "Doordarshan",
+    },
+    {
+      name: "Sonali Dubey",
+      program: "M.A. in Journalism & Mass Communication",
+      company: "Dainik jagran",
+    },
+    {
+      name: "Ritu Sharma",
+      program: "B.A. in Journalism & Mass Communication",
+      company: "HCL TSS Pvt Ltd",
+    },
+    {
+      name: "Mohd Zaid",
+      program: "B.A. in Journalism & Mass Communication",
+      company: "DC lnfotech",
+    },
+    {
+      name: "Mohammad Saad",
+      program: "B.A. in Journalism & Mass Communication",
+      company: "Next9News",
+    },
+    {
+      name: "Tanya Khandelwal",
+      program: "B.A. in Journalism & Mass Communication",
+      company: "Next9News",
+    },
+    {
+      name: "Gurpreet Kaur",
+      program: "B.A. in Journalism & Mass Communication",
+      company: "Next9News",
+    },
+    {
+      name: "Aanchal Singh",
+      program: "M.A. in Journalism & Mass Communication",
+      company: "Prabhat media creations",
+    },
+    {
+      name: "Rajeshwari Shukla",
+      program: "M.A. in Journalism & Mass Communication",
+      company: "Prabhat media creations",
+    },
+    {
+      name: "Avantika Awasthi",
+      program: "B.A. in Journalism & Mass Communication",
+      company: "K News",
+    },
+    {
+      name: "Rahul Singh",
+      program: "B.A. in Journalism & Mass Communication",
+      company: "ABHI TAK SUPERFAST NEWS",
+    },
+    {
+      name: "Praqya Srivastava",
+      program: "M.A. in Journalism & Mass Communication",
+      company: "Hars Tech",
+    },
+    {
+      name: "Danish Siddiqui",
+      program: "M.A. in Journalism & Mass Communication",
+      company: "Samgra chetna",
+    },
+    {
+      name: "Yashfi Hasan",
+      program: "B.A. in Journalism & Mass Communication",
+      company: "Samgra chetna",
+    },
+    {
+      name: "Manyata Verma",
+      program: "M.A. in Journalism & Mass Communication",
+      company: "Viral fission",
+    },
+    {
+      name: "Yash Tiwari",
+      program: "B.A. in Journalism & Mass Communication",
+      company: "PVR Cinemas",
+    },
+    {
+      name: "Jessica",
+      program: "B.A. in Journalism & Mass Communication",
+      company: "Red Bull India Pvt. Ltd.",
+    },
+    {
+      name: "Rohit Singh",
+      program: "B.A. in Journalism & Mass Communication",
+      company: "QConnect",
+    },
+    {
+      name: "Aastha Pal",
+      program: "B.A. in Journalism & Mass Communication",
+      company: "Cnews bharat",
+    },
+    {
+      name: "Danish Siddiqui",
+      program: "M.A. in Journalism & Mass Communication",
+      company: "Samgra chetna",
+    },
+    {
+      name: "Atul Kumar Pandey",
+      program: "M.A. in Journalism & Mass Communication",
+      company: "razy news",
+    },
+    {
+      name: "Yashfi Hasan",
+      program: "B.A. in Journalism & Mass Communication",
+      company: "Samgra chetna",
+    },
+    {
+      name: "Sanjay Awasthi",
+      program: "M.A. in Journalism & Mass Communication",
+      company: "Samgra chetna",
+    },
+  ];
+
 
 
