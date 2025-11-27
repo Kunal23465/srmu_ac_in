@@ -49,7 +49,7 @@ const CustomInstitueVissionMissionCard: React.FC<VisionMissionProps> = ({
                     {/* Changes: Removed flex-col, space-y-4, sm: from layout classes. Reduced padding (px-4 py-2) */}
                     <div className="flex space-x-3 mt-10 md:mt-20">
                         <button
-                            className={`flex uppercase items-center **px-4 py-2** rounded-lg font-semibold transition cursor-pointer 
+                            className={`flex uppercase items-center px-4 py-3 rounded-lg font-semibold transition cursor-pointer 
                                 **text-xs sm:text-sm** w-auto self-start whitespace-nowrap
                                 ${activeTab === "vision"
                                     ? data.vision.buttonBgColor + " text-blue-900"
@@ -62,7 +62,7 @@ const CustomInstitueVissionMissionCard: React.FC<VisionMissionProps> = ({
                         </button>
 
                         <button
-                            className={`flex uppercase items-center **px-4 py-2** rounded-lg font-semibold transition cursor-pointer 
+                            className={`flex uppercase items-center px-4 py-3 rounded-lg font-semibold transition cursor-pointer 
                                 **text-xs sm:text-sm** w-auto self-start whitespace-nowrap
                                 ${activeTab === "mission"
                                     ? data.mission.buttonBgColor + " text-blue-900"
