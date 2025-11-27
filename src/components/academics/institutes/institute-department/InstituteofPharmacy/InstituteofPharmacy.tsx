@@ -7,7 +7,6 @@ import {
   InstituteofPharmacyCounterData1,
   InstituteofPharmacyCounterData2,
   InstituteofPharmacyData1,
-  InstituteofPharmacyData2,
   InstituteofPharmacyfacultyData,
   InstituteofPharmacyOverviewData,
   InstituteofPharmacyTopFooterData,
@@ -31,13 +30,8 @@ const InstituteofPharmacy: React.FC = () => {
   const items = [
     {
       key: "1",
-      label: "Postgraduate",
-      content: <CustomDepartmentFeeDetailsTable data={InstituteofPharmacyData1} />,
-    },
-    {
-      key: "2",
       label: "Undergraduate",
-      content: <CustomDepartmentFeeDetailsTable data={InstituteofPharmacyData2} />,
+      content: <CustomDepartmentFeeDetailsTable data={InstituteofPharmacyData1} />,
     },
   ];
 
