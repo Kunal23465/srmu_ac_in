@@ -31,6 +31,8 @@ import learning from "../../../assets/images/academics/institutes/learning-.jpg"
 import holistic from "../../../assets/images/academics/institutes/holistic-.jpg";
 import corporate from "../../../assets/images/academics/institutes/corporate-manag-.jpg";
 import training from "../../../assets/images/academics/institutes/training-.jpg";
+import { FacultyItem } from "../../../utils/custom/CustomFacultyListCard";
+import { InstituteProfile } from "../../../types/profile-data-type";
 
 export const electricalDepartmentHighlightsData: departmentHighlightscardType[] =
   [
@@ -110,25 +112,40 @@ export const counterDataForPlacedStudentsOFDepartmentOfElectricalAndElectronicsE
     { id: 3, value: "10", suffix: "", label: "Conference & Seminars" },
   ];
 
-export const departmentHeadProfileData= {
-  name: "Prof. (Dr.) N.S. Bajpai",
-  title: "Department Head",
-  designation: "Dean, FoEEE, SRMU, Lucknow-Deva Road",
-  office: "",
-  imageSrc: drrsbajpai,
-  experienceTotal: "30+ years",
-  profileButtonText: "VIEW PROFILE",
-  profileButtonLink: "",
-  achievements: [
-    "**Qualification:** M.Tech. (Power Electronics), Ph.D. (Renewable Energy)",
-    "**Specialization/ Area of Research:** Power Electronics, Power Quality, Renewable Energy and Electric Vehicle Technology",
-    "**Email ID:** dean.eee@srmu.ac.in, nsbajpai.eee@srmu.ac.in",
-    "**ORCID ID:** https://orcid.org/0000-0001-6117-1756",
-    "**Contact No.:** +91-6319859195",
-  ],
 
-  backgroundColor: "bg-[#224984]",
-};
+export const departmentHeadProfileData: InstituteProfile[] = [
+  {
+    id: 1,
+    title: "Department Head",
+    name: "Prof. (Dr.) R.S. Bajpai",
+    position: "Dean, FoEEE, SRMU, Lucknow–Deva Road",
+    image: drrsbajpai,
+
+    summary: "",
+
+    useBullets: false,
+
+    details: [
+      "**Qualification:** M.Tech. (Power Electronics), Ph.D. (Renewable Energy)",
+      "**Experience:** 38+ years",
+      "**Specialization/ Area of Research:** Power Electronics, Power Quality, Renewable Energy and Electric Vehicle Technology",
+      "**Email ID:** dean.eee@srmu.ac.in, rsbajpai.ee@srmu.ac.in",
+      "**ORCID ID:** https://orcid.org/0000-0001-5117-1756",
+      "**Contact No.: +91-8318859195**"
+    ],
+
+    modalContent: `
+Prof. (Dr.) R S Bajpai, is currently HoD, Department of Electrical & Electronics Engineering. Previously, he served as a technical officer in Indian Air Force for 18 Years. Dr. Bajpai was born in Sep 1963 and holds M.Tech (Power Electronics) and Ph.D (Renewable Energy) from Motilal Nehru, National Institute of Technology (MNNIT) Allahabad. His area of interest is power electronics, power quality, renewable energy and electric vehicle technology. Professor Bajpai has 38 years of experience in teaching, research and academic administration. He is a renowned academician having more than three decades of experience in both industry & academic planning and administration; teaching, guiding, research.  He has published more than 40 research publications in various SCI/Scopus indexed journals, 03 book chapters and 04 patents. He has guided projects more than 60 students at UG level, 20 students at PG level and 10 research scholars.
+
+Dr. Bajpai has been a recipient of many recognitions and awards such as; Awarded Dr P S Nigam Power Sector Award during 86th Annual General Meeting, held at Institutions of Engineers (India), State Centre Lucknow in 2006, academic excellence award at SRMCEM, Lucknow in 2007, and best technical engineer award in the field of power generation and distribution to the telecommunication and radar centers at Air Force Station, Lonavla in , Pune in 1999. His current research is focused to develop control strategies for cutting edge technologies in Power Quality, Artificial Intelligence, Electric Vehicle technology, Renewable Energy (Wind,Solar and Fuel Cell), Hydrogen powered vehicles, Fuel cell vehicles, Fast battery charging, Battery thermal management, Battery Charging Station, Green Hydrogen Production etc. He has made significant contributions to the development of excellence centers and laboratories in higher education. Dr. Bajpai executed demonstrative laboratory experiments with hybrid power generating systems that include solar, wind, hydro, and compressed air storage to demonstrate real-time uninterrupted power distribution from both DC and AC networks. Dr. Bajpai has also developed a renewable energy park and designed laboratory experiments on EV technology to demonstrate their influence on environmental pollution.
+`
+  }
+];
+
+
+
+
+
 
 export const industryHonorsFeeData: FeeTableData = {
   columns: ["COURSES", "Duration", "Eligibility Criteria", "Course Fees (PA)"],
@@ -197,6 +214,7 @@ export const industryHonorsFeeData: FeeTableData = {
     },
 ]
 };
+
 export const integratedFeeData: FeeTableData = {
   columns: ["COURSES", "Duration", "Eligibility Criteria", "Course Fees (PA)"],
 
@@ -245,6 +263,7 @@ export const integratedFeeData: FeeTableData = {
     },
 ]
 };
+
 export const postGraduateFeeData: FeeTableData = {
   columns: ["COURSES", "Duration", "Eligibility Criteria", "Course Fees (PA)"],
 
@@ -337,6 +356,7 @@ export const postGraduateFeeData: FeeTableData = {
     },
 ]
 };
+
 export const underGraduateFeeData: FeeTableData = {
   columns: ["COURSES", "Duration", "Eligibility Criteria", "Course Fees (PA)"],
 
@@ -474,8 +494,9 @@ export const underGraduateFeeData: FeeTableData = {
 ]
 };
 
-export const facultyDetails = [
-  [
+
+export const facultyDetails: FacultyItem[] = [
+  
     {
       id: 1,
       name: "Dr. Vijay Laxmi Mishra",
@@ -483,8 +504,8 @@ export const facultyDetails = [
       image: vijayLaxmi,
       cardBgColor: "transparent",
     },
-  ],
-  [
+
+  
     {
       id: 2,
       name: "Dr. Mritunjay Rai",
@@ -492,8 +513,8 @@ export const facultyDetails = [
       image: mritunjayRai,
       cardBgColor: "transparent",
     },
-  ],
-  [
+
+ 
     {
       id: 3,
       name: "Dr. Vaibhava Srivastava",
@@ -501,8 +522,8 @@ export const facultyDetails = [
       image: vaibhavaSrivastava,
       cardBgColor: "transparent",
     },
-  ],
-  [
+
+ 
     {
       id: 4,
       name: "Mr. Pappu Kumar",
@@ -510,8 +531,8 @@ export const facultyDetails = [
       image: pappu,
       cardBgColor: "transparent",
     },
-  ],
-  [
+  
+  
     {
       id: 5,
       name: "Dr. Chhavi Mitharwal",
@@ -519,8 +540,8 @@ export const facultyDetails = [
       image: chhaviMitharwal,
       cardBgColor: "transparent",
     },
-  ],
-  [
+ 
+ 
     {
       id: 6,
       name: "Dr. Gaurav Verma",
@@ -528,8 +549,7 @@ export const facultyDetails = [
       image: gauravVerma,
       cardBgColor: "transparent",
     },
-  ],
-  [
+
     {
       id: 7,
       name: "Mr. Rohit Kumar",
@@ -537,8 +557,7 @@ export const facultyDetails = [
       image: rohitKumar,
       cardBgColor: "transparent",
     },
-  ],
-  [
+
     {
       id: 8,
       name: "Mr. Sandeep Tiwari",
@@ -546,8 +565,7 @@ export const facultyDetails = [
       image: sandeepTiwari,
       cardBgColor: "transparent",
     },
-  ],
-  [
+
     {
       id: 9,
       name: "Prof. (Dr.) R.S. Bajpai",
@@ -555,8 +573,7 @@ export const facultyDetails = [
       image: rsBajpai,
       cardBgColor: "transparent",
     },
-  ],
-  [
+ 
     {
       id: 10,
       name: "Ms. Shivani Singh",
@@ -564,8 +581,7 @@ export const facultyDetails = [
       image: shivaniSingh,
       cardBgColor: "transparent",
     },
-  ],
-  [
+ 
     {
       id: 11,
       name: "Dr. Shubham Mishra",
@@ -573,8 +589,7 @@ export const facultyDetails = [
       image: shubhaMishra,
       cardBgColor: "transparent",
     },
-  ],
-  [
+  
     {
       id: 12,
       name: "Mr. Sandeep Dixit",
@@ -582,8 +597,7 @@ export const facultyDetails = [
       image: sandeepDixit,
       cardBgColor: "transparent",
     },
-  ],
-  [
+  
     {
       id: 13,
       name: "Dr. Jay Kumar Pandey",
@@ -591,8 +605,7 @@ export const facultyDetails = [
       image: jayKumarPandey,
       cardBgColor: "transparent",
     },
-  ],
-  [
+
     {
       id: 14,
       name: "Mr. Anand Prakash Pandey",
@@ -600,8 +613,7 @@ export const facultyDetails = [
       image: anandPrakash,
       cardBgColor: "transparent",
     },
-  ],
-  [
+ 
     {
       id: 15,
       name: "Mr. Abhishek Kumar Saxena",
@@ -609,8 +621,7 @@ export const facultyDetails = [
       image: abhishekSaxena,
       cardBgColor: "transparent",
     },
-  ],
-  [
+ 
     {
       id: 16,
       name: "Dr. Alkesh Agarwal",
@@ -618,7 +629,7 @@ export const facultyDetails = [
       image: alkesh,
       cardBgColor: "transparent",
     },
-  ],
+
 ];
 
 export const DepartmentOfElectricalAndElectronicsEngineeringVMData = [

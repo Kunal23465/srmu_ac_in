@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 @import "tailwindcss";
+html {
+  scroll-behavior: smooth;
+  font-family: "Rubik", sans-serif;
+  color: #212529;
+}
 
 /* for banner section */
 .banner-section {
@@ -774,11 +779,6 @@ input::-webkit-inner-spin-button {
   }
 }
 
-html {
-  scroll-behavior: smooth;
-  font-family: "Rubik", sans-serif;
-  color: #212529;
-}
 
 .testmonial-slider .slick-dots {
   display: none !important;

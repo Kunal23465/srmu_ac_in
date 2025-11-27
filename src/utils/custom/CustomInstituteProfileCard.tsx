@@ -11,6 +11,7 @@ interface CustomInstituteProfileCardProps {
 const CustomInstituteProfileCard: React.FC<CustomInstituteProfileCardProps> = ({
   data = instituteProfiles,
 }) => {
+  console.log("data", data);
   const [expandedId, setExpandedId] = useState<number | null>(null);
 
   const formatBold = (text: string) => {
