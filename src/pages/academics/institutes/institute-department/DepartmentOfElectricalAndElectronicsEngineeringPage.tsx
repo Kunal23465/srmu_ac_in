@@ -1,6 +1,6 @@
 import { FC } from "react";
 import CustomOverviewSection from "../../../../utils/custom/CustomOverviewSection";
-import { counterDataForDepartmentOfElectricalAndElectronicsEngineering, departmentHeadProfileData, DepartmentOfElectricalAndElectronicsEngineeringVMData, electricalDepartmentHighlightsData, facultyDetails, instituteFooterData, instituteOverviewData } from "../../../../data/academics/institute/department-of-electrical-and-electronics-engineering-data";
+import { counterDataForDepartmentOfElectricalAndElectronicsEngineering, departmentHeadProfileData, DepartmentOfElectricalAndElectronicsEngineeringVMData, electricalDepartmentHighlightsData, facultyDetails,  instituteFooterData, instituteOverviewData } from "../../../../data/academics/institute/department-of-electrical-and-electronics-engineering-data";
 import Counter from "../../../../utils/custom/Counter";
 import CustomDepartmentVissionMission from "../../../../utils/custom/CustomDepartmentVissionMission";
 import CustomInstituteProfileCard from "../../../../utils/custom/CustomInstituteProfileCard";
@@ -15,6 +15,7 @@ import CustomDepartmentHighlightCard from "../../../../utils/custom/CustomDepart
 
 
 const DepartmentOfElectricalAndElectronicsEngineeringPage: FC = () => {
+   
   return (
     <div>
       <div className={`${Classes["container"]}`}>
@@ -33,7 +34,7 @@ const DepartmentOfElectricalAndElectronicsEngineeringPage: FC = () => {
       </div>
       <CustomInstituteProfileCard data={departmentHeadProfileData} />
       <div className={`${Classes["container"]}`}>
-        <ProgramsAndFees />
+        <ProgramsAndFees  /> 
       </div>
       <CustomDepartmentSlider
         heading="Faculty List"
@@ -42,6 +43,7 @@ const DepartmentOfElectricalAndElectronicsEngineeringPage: FC = () => {
         renderCard={({ item }) => <CustomFacultyListCard item={item} />}
         bgImage={facultybg}
         arrowColor="#ffffff"
+        arrowBorderColor="#0f4a85"
         headingColor="#ffffff"
         descriptionColor="#ffffff"
         breakpoints={{ desktop: 4, tablet: 2, mobile: 1 }}
@@ -49,7 +51,7 @@ const DepartmentOfElectricalAndElectronicsEngineeringPage: FC = () => {
 
       <section className="bg-[#edf0f9] py-14">
         <div className={`${Classes["container"]} bg-[#edf0f9]`}>
-          <PlacedStudents />
+          <PlacedStudents  />
         </div>
       </section>
       <CustomDepartmentSlider

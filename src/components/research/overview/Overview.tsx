@@ -11,12 +11,13 @@ import KeyHighlightsSection from "./key-highlights-section/KeyHighlightsSection"
 import PhdOrdinanceSection from "./phdOrdinances-section/PhdOrdinanceSection";
 
 const Overview: React.FC = () => {
+
   return (
     <>
       <div className={`${Classes["container"]}`}>
         <CustomOverviewSection data={ResearchOverviewData} />
       </div>
-
+      
       <DirectorSection />
       <UniversityResearchSection />
       <ResearchOfficeSection />

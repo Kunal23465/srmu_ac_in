@@ -24,6 +24,7 @@ export const InstituteofNaturalSciencesandHumanitiesTopFooterData = [
 
 
 export const InstituteofNaturalSciencesandHumanitiesvisionMissionData = {
+    backgroundColor: "bg-blue-900",
   vision: {
     title: "Our Vision",
     description: [
@@ -32,7 +33,6 @@ export const InstituteofNaturalSciencesandHumanitiesvisionMissionData = {
     buttonText: "Vision",
     buttonBgColor: "bg-amber-400",
     imageUrl: vision,
-    bgColor: "#0f4a85",
   },
 
   mission: {
@@ -47,8 +47,8 @@ export const InstituteofNaturalSciencesandHumanitiesvisionMissionData = {
     buttonText: "Mission",
     buttonBgColor: "bg-amber-400",
     imageUrl: mission,
-    bgColor: "#0f4a85",
   },
+
 };
 
 export const InstituteofNaturalSciencesandHumanitiesinstituteCourseCardData: CustomInstituteCourseCardProps[] = [
