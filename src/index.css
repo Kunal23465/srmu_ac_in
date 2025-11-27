@@ -123,7 +123,7 @@
   display: none !important;
 }
 
-.photo_gallery>.slick-dots li button:before {
+.photo_gallery > .slick-dots li button:before {
   font-family: "slick";
   position: absolute;
   top: 0;
@@ -139,12 +139,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.photo_gallery>.slick-dots li.slick-active button:before {
+.photo_gallery > .slick-dots li.slick-active button:before {
   opacity: 0.9;
   background: #ffb703;
 }
 
-.photo_gallery>.slick-dots {
+.photo_gallery > .slick-dots {
   bottom: -40px !important;
 }
 
@@ -182,11 +182,7 @@
   background-position: center; */
   /* background: linear-gradient(180deg, #224984 0%, #152E45 100%); */
   background: rgb(34, 73, 132);
-  background: radial-gradient(
-    circle,
-    rgba(34, 73, 132, 1) 0%,
-    rgba(21, 46, 69, 1) 100%
-  );
+  background: radial-gradient(circle, rgba(34, 73, 132, 1) 0%, rgba(21, 46, 69, 1) 100%);
 }
 
 .abhivyakti_grid {
@@ -429,8 +425,6 @@ background: radial-gradient(circle, rgba(36,64,143,0.9444152661064426) 0%, rgba(
   z-index: 1;
 }
 
-
-
 .manage-top-arrow::after {
   content: "";
   position: absolute;
@@ -495,7 +489,6 @@ background: radial-gradient(circle, rgba(36,64,143,0.9444152661064426) 0%, rgba(
 }
 
 @media screen and (min-width: 592px) {
-
   /* ======================================== */
   .parent_grid_gallary .children img {
     width: 100%;
@@ -651,13 +644,7 @@ input::-webkit-inner-spin-button {
 }
 
 .border-gradient-green {
-  border-image-source: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 0) 0%,
-    #ffffff 20.5%,
-    #ffffff 83.5%,
-    rgba(255, 255, 255, 0) 100%
-  );
+  border-image-source: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #ffffff 20.5%, #ffffff 83.5%, rgba(255, 255, 255, 0) 100%);
 }
 
 .mobile-scroll::-webkit-scrollbar {
@@ -1331,7 +1318,6 @@ ul {
 }
 
 @media screen and (min-width: 592px) {
-
   /* ======================================== */
   .parent_grid_gallary .children img {
     width: 100%;
@@ -1443,12 +1429,12 @@ section .card-color img {
     flex-direction: column;
   }
 
-  section .card-color>div:first-child {
+  section .card-color > div:first-child {
     width: 100% !important;
     text-align: left;
   }
 
-  section .card-color>div:last-child {
+  section .card-color > div:last-child {
     width: 100% !important;
     margin-top: 2rem !important;
     position: relative !important;
@@ -1631,7 +1617,6 @@ section .card-color img {
 
 .font28 {
   font-size: 1.75rem;
-
 }
 
 .slick-dots li button:before {
@@ -1667,18 +1652,11 @@ section .card-color img {
   background-repeat: no-repeat;
 }
 
-.placement-record-bg{
-    background-image: url(../src/assets/images/placements/placement-overview/placementrecords.jpeg);
+.placement-record-bg {
+  background-image: url(../src/assets/images/placements/placement-overview/placementrecords.jpeg);
   background-size: cover;
   background-repeat: no-repeat;
-
-  
 }
-
-
-
-
-
 
 /* Remove default slick arrow icons */
 .slick-prev:before,
@@ -1714,7 +1692,7 @@ section .card-color img {
 
 /* Hover effect */
 .custom-arrow:hover {
-  background: #FFCA28;
+  background: #ffca28;
   color: white;
   border: none;
 }
@@ -1729,7 +1707,6 @@ section .card-color img {
   right: -50px;
   top: 40%;
 }
-
 
 .institute_box {
   padding-right: var(--conatiner-offset);
@@ -1755,5 +1732,40 @@ section .card-color img {
 }
 
 .fontn15 {
-  font-size: .938rem;
+  font-size: 0.938rem;
+}
+
+.font30 {
+  font-size: 1.875rem;
+}
+
+.eligibility-container {
+  width: 100%;
+  min-height: 450px;
+  background-image: url("/src/assets/images/programs/btechincseaiandml/eligibility-img.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  padding: 50px ;
+  margin-bottom: 60px;
+  border-radius: 20px;
+}
+
+.eligibility-content {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: 20px;
+  color: white;
+}
+
+.eligibility-content h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.eligibility-content p {
+  line-height: 1.6;
+  font-size: 16px;
 }
