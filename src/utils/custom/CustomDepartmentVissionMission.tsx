@@ -1,40 +1,28 @@
 import React from "react";
-import { DepartmentVMType } from "../../data/academics/faculty-of-civil-engineering/faculty-of-civil-engineering-data";
+import { DepartmentVMType } from "../../data/academics/institute/faculty-of-civil-engineering/faculty-of-civil-engineering-data";
 
 interface Props {
-    data: DepartmentVMType;
+  data: DepartmentVMType;
 }
 
 const CustomDepartmentVissionMission: React.FC<Props> = ({ data }) => {
-    console.log("data",data)
-    return (
-        <div
-            className="flex flex-col p-[38px] min-h-[530px] min-w-[250px] rounded-3xl shadow-md"
-            style={{ backgroundColor: data.bgColor }}
-        >
-            {/* Image */}
-            <img
-                src={data.img}
-                alt="logo"
-                className="w-[120px] h-[120px] object-contain mb-4"
-            />
+  console.log("data", data);
+  return (
+    <div className="flex flex-col p-[38px] min-h-[530px] min-w-[250px] rounded-3xl shadow-md" style={{ backgroundColor: data.bgColor }}>
+      {/* Image */}
+      <img src={data.img} alt="logo" className="w-[120px] h-[120px] object-contain mb-4" />
 
-            {/* Heading */}
-            <h1 className="text-[3rem] font-semibold mb-4 text-[#023047]">
-                {data.heading}
-            </h1>
-{data.description && (<h2>{data.description}</h2>)}
-            {/* List Items */}
-            <ul className="list-disc pl-5 pt-2.5 space-y-2 text-[#212529] marker:text-[1.8rem]">
-                {data.points?.map((item, index) => (
-                    <li key={index}>{item}</li>
-                ))}
-            </ul>
-        </div>
-    );
+      {/* Heading */}
+      <h1 className="text-[3rem] font-semibold mb-4 text-[#023047]">{data.heading}</h1>
+      {data.description && <h2>{data.description}</h2>}
+      {/* List Items */}
+      <ul className="list-disc pl-5 pt-2.5 space-y-2 text-[#212529] marker:text-[1.8rem]">
+        {data.points?.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
+    </div>
+  );
 };
 
-
 export default CustomDepartmentVissionMission;
-
- 
