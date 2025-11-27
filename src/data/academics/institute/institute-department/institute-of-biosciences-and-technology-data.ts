@@ -49,7 +49,7 @@ export const visionMissionData = {
 
 
 
-export const instituteProfiles: InstituteProfile[] = [
+export const InstituteofBiosciencesandTechnologyinstituteProfiles: InstituteProfile[] = [
   {
     id: 1,
     title: "Institute Head",
