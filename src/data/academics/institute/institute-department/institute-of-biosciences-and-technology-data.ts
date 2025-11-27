@@ -87,13 +87,16 @@ export const instituteCourseCardData: CustomInstituteCourseCardProps[] = [
   {
     imageUrl: courseImg1,
     departmentName: "Faculty of Allied Health Sciences",
+    path: "/academics/institutes-info/faculty-of-civil-engineering",
   },
   {
     imageUrl: courseImg2,
     departmentName: "Faculty of Biosciences",
+    path: "/academics/institutes-info/faculty-of-civil-engineering",
   },
   {
     imageUrl: courseImg3,
     departmentName: "Faculty of Biotechnology",
+    path: "/academics/institutes-info/faculty-of-civil-engineering",
   },
 ];

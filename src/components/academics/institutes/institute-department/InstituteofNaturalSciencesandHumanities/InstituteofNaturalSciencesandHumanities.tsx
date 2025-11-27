@@ -5,11 +5,13 @@ import CustomInstituteCoursesCard from "../../../../../utils/custom/CustomInstit
 import CustomTopFooter from "../../../../../utils/custom/CustomTopFooter";
 import {
   InstituteofNaturalSciencesandHumanitiesinstituteCourseCardData,
+  InstituteofNaturalSciencesandHumanitiesinstituteProfiles,
   InstituteofNaturalSciencesandHumanitiesOverviewData,
   InstituteofNaturalSciencesandHumanitiesTopFooterData,
   InstituteofNaturalSciencesandHumanitiesvisionMissionData,
 } from "../../../../../data/academics/institute/institute-department/institute-of-natural-sciences-and-humanities-data";
 import CustomInstitueVissionMissionCard from "../../../../../utils/custom/CustomInstitueVissionMissionCard";
+import CustomInstituteProfileCard from "../../../../../utils/custom/CustomInstituteProfileCard";
 
 const InstituteofNaturalSciencesandHumanities: React.FC = () => {
   return (
@@ -17,8 +19,10 @@ const InstituteofNaturalSciencesandHumanities: React.FC = () => {
       {" "}
       <div className={`${Classes["container"]}`}>
         <CustomOverviewSection data={InstituteofNaturalSciencesandHumanitiesOverviewData} />
-        {/* @ts-ignore */}
         <CustomInstitueVissionMissionCard data={InstituteofNaturalSciencesandHumanitiesvisionMissionData} />
+                        </div>
+      <CustomInstituteProfileCard data={InstituteofNaturalSciencesandHumanitiesinstituteProfiles} />
+            <div className={`${Classes["container"]}`}>
         <div className="my-15 flex flex-col lg sm:flex-row">
           <div className="text-2xl mr-25 font-medium sm:text-5xl">Our Departments</div>
           <div>
