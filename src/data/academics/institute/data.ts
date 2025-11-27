@@ -115,8 +115,7 @@ export const instituteProfiles: InstituteProfile[] = [
     position: "Offg. Director, IAP & Dean FoCE, SRMU, Lucknow–Deva Road",
     image: professor,
 
-    summary:
-      "Total experience of 23+ years in industry and academics. Functional Area Expert for EIA studies and empanelled groundwater expert for various government bodies.",
+    summary: "Total experience of 23+ years in industry and academics. Functional Area Expert for EIA studies and empanelled groundwater expert for various government bodies.",
 
     detailsHeading: "Experience & Achievements",
     useBullets: false,
@@ -129,11 +128,11 @@ export const instituteProfiles: InstituteProfile[] = [
       "Empanelled Groundwater Expert for Central Ground Water Authority & Ministry of Jal Shakti",
       "Consultancy Projects: 9 | Total Cost: Rs. 2.0+ Cr",
       "Total EIA Projects = 19 (5 Category 'A' + 14 Category 'B')",
-      "iwjhfisnvjnsvjnsjnvnv"
+      "iwjhfisnvjnsvjnsjnvnv",
     ],
 
     modalContent: `
-Prof. (Dr.) Abhishek Saxena, an environmentalist and academician, is currently working as Dean, Faculty of Civil Engineering with additional charge of Director in Institute of Architecture and Planning at Shri Ramswaroop Memorial University, Barabanki.
+<h1 class="text-red-500">Prof. (Dr.) Abhishek Saxena</h1>, an environmentalist and academician, is currently working as Dean, Faculty of Civil Engineering with additional charge of Director in Institute of Architecture and Planning at Shri Ramswaroop Memorial University, Barabanki.
 
 He is empanelled Functional Area Expert for EIA studies (Category "A" projects– HG) since 2011 (till date), empanelled by National Accreditation Board for Education and Training (NABET), Ministry of Environment, Forest and Climate Change (MoEFCC), Government of India. He is a renowned member of the National Level Expert Committee for “Auto Detection of Construction through Satellite Imageries”, Ghaziabad Development Authority since 2013. He is also Empanelled Groundwater Expert for CGWA (Central Ground Water Authority), Government of India (2021).
 
@@ -144,10 +143,8 @@ His career began with World Bank projects, later joining SMEC (Australia) where 
 He has more than 22 years of experience in water quality, EIA, groundwater and resource management. He holds the fellowship of “The Society of Earth Scientists” and “Indian Society of Remote Sensing”.
 
 Prof. Saxena has 60+ publications in journals, conferences, books and book chapters and has been granted 8 International Patents. Under his guidance, 7 PhDs have been awarded and 5 are in progress.
-`
+`,
   },
-
-
 ];
 
 
