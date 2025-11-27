@@ -1,10 +1,26 @@
 import { customeOverViewType } from "../../../../types/home-data-type";
 import vision from "../../../../assets/images/academics/departments/dept-mission-icon2.png";
 import mission from "../../../../assets/images/academics/departments/dept-mission-icon1.png";
-// import { ProfileData } from "../../../../types/profile-data-type";
-import headImg from "../../../../assets/images/academics/departments/01-10062506001261.png"
-import { FeeTableData } from "../../faculty-of-civil-engineering/faculty-of-civil-engineering-data";
+import { InstituteProfile} from "../../../../types/profile-data-type";
+import { departmentHighlightscardType, FeeTableData } from "../../faculty-of-civil-engineering/faculty-of-civil-engineering-data";
 import { FacultyItem } from "../../../../utils/custom/CustomFacultyListCard";
+
+import RazaurRahmanImg from "../../../../assets/images/academics/departments/01-10062506001261.png"
+import RahulImg from "../../../../assets/images/academics/departments/mr.-rahul-chaturvedi-23022404242613.jpg";
+import DhwaniImg from "../../../../assets/images/academics/departments/dr.-dhwani-singh-fomedia-n-2402241123395.jpg";
+import SandeepImg from "../../../../assets/images/academics/departments/default-img.png";
+import AmitImg from "../../../../assets/images/academics/departments/mr.-amit-kumar-singh-23022404392067.jpg";
+import PradeepImg from "../../../../assets/images/academics/departments/default-img.png";
+import MiliImg from "../../../../assets/images/academics/departments/dr.-mili-singh-1-11zon-26022405574118.jpg";
+
+import depSlide1 from "../../../../assets/images/academics/institutes/holistic-.jpg";
+import depSlide2 from "../../../../assets/images/academics/departments/media-07052412412440.jpg";
+import depSlide3 from "../../../../assets/images/academics/departments/industrystalwart-06022403005880.jpg";
+import depSlide4 from "../../../../assets/images/academics/departments/media-visit-07052412425199.jpg";
+import depSlide5 from "../../../../assets/images/academics/departments/manage--06052401112298.jpg";
+import depSlide6 from "../../../../assets/images/academics/departments/entrepreneurialecosystem-0602240302151.jpg";
+import depSlide7 from "../../../../assets/images/academics/departments/mentor-07052412432565.jpg";
+import { Headers, Student } from "../../../../utils/custom/CustomPlacedStudentTable";
 
 export const InstituteofMediaStudiesOverviewData: customeOverViewType = {
   heading: "Institute of Media Studies",
@@ -117,9 +133,9 @@ export const InstituteofMediaStudiesVMData = [
   {
     id: 1,
     bgColor: "#E5F3FC",
-    img: mission,
-    heading: "Mission",
-    points: [
+    imageUrl: mission,
+    title: "Mission",
+    description: [
       "To make mass communicator and Journalist with social consciences.",
       "To develop creative and critical thinking with human touch among our students.",
       "To enlighten and enrich the educational experience by providing pragmatic learning.",
@@ -129,9 +145,9 @@ export const InstituteofMediaStudiesVMData = [
   {
     id: 2,
     bgColor: "#FFF2D2",
-    img: vision,
-    heading: "Vision",
-    points: [
+    imageUrl: vision,
+    title: "Vision",
+    description: [
       "To be an institution of excellence in the field of communication, journalism and research.",
     ],
   },
@@ -139,28 +155,37 @@ export const InstituteofMediaStudiesVMData = [
 
 
 
-export const SampleInstituteProfileData = {
-  name: "Prof. (Dr.) Razaur Rahman",
-  title: "Department Head",
-  designation: "Director IMS, SRMU, Lucknow-Deva Road",
-  office: "",
-  imageSrc: headImg,
-  experienceTotal: "35+ years",
-  achievements: [
-    "**Qualification:** B.Sc.(Hons.), MBA, Ph.D(Marketing)",
-    "**Specialization/ Area of Research:** Marketing &amp;&nbsp;Advertising, Visual Communication",
-    "**Email ID:** director.ims@srmu.ac.in",
-    "**ORCID ID:** https://orcid.org/0009-0009-5500-5590",
-    "**Contact No.:** +91-9415095499",
-  ],
+export const instituteProfiles: InstituteProfile[] = [
+  {
+    id: 1,
+    title: "Department Head",
+    name: "Prof. (Dr.) Razaur Rahman",
+    position: "Director IMS, SRMU, Lucknow-Deva Road",
+    image: RazaurRahmanImg,
+
+    summary:
+      "",
+
+    detailsHeading: "",
+    useBullets: false,
+
+    details: [
+      "**Qualification: **B.Sc.(Hons.), MBA, Ph.D(Marketing)",
+      "**Experience**: 35+ years",
+      "**Specialization/ Area of Research: **Marketing & Advertising, Visual Communication",
+      "**Email ID: **director.ims@srmu.ac.in",
+      "**ORCID ID: **https://orcid.org/0009-0009-5500-5590",
+      "**Contact No.: **+91-9415095499",
+    ],
+
+    modalContent: `He has more than 35+ years of experience in Management & Media Education and the Industry.He has worked across the different domains including  Advertising, Media  and Management education. He has received laurels as a Director of the Year in 2023 and granted Patent on “Employability “in the managemnt stream in the same year. He began his career with a Publishing Company in New Delhi,India and moved to Academics in the year 1995.In his career span has been associated with leading media institutions such as Film Institute of eMITS,Lucknow and JIT Media Institute ,Barabanki.
+
+He has been guiding and counselling the students across various academic domains. He is capable to motivate young minds and developing synergy between the students and the teachers for their growth.His Research Interest  area is Advertising and Visual Communication.
+`
+  },
 
 
-  profileButtonText: "View Profile",
-
-  backgroundColor: "bg-[#224984]", // Navy blue
-
-  modalContent: ""
-};
+]; 
 
 
 
@@ -169,7 +194,7 @@ export const SampleInstituteProfileData = {
 
 
 export const InstituteofMediaStudiesData1: FeeTableData = {
-  columns: ["Courses", "Duration", "Eligibility Criteria", "Course Fees (PA)"],
+  columns: ["COURSES", "DURATION", "ELIGIBILITY CRITERIA", "COURSE FEES (PA)"],
 
   rows: [
     { col1: "M.A. in Journalism & Mass Communication", col2: "2 Years", col3: "Click to View", col4: "	Rs. 62,000/-" },
@@ -178,7 +203,7 @@ export const InstituteofMediaStudiesData1: FeeTableData = {
 };
 
 export const InstituteofMediaStudiesData2: FeeTableData = {
-  columns: ["Courses", "Duration", "Eligibility Criteria", "Course Fees (PA)"],
+  columns: ["COURSES", "DURATION", "ELIGIBILITY CRITERIA", "COURSE FEES (PA)"],
 
   rows: [
     { col1: "B.A. in Journalism & Mass Communication", col2: "3 Years", col3: "Click to View", col4: "	Rs. 94,000/-" },
@@ -195,37 +220,289 @@ export const InstituteofMediaStudiesData2: FeeTableData = {
 export const InstituteofMediaStudiesfacultyData: FacultyItem[] = [
   {
     id: 1,
-    name: "Dr. Priya Sharma",
-    designation: "Associate Professor",
-    image: vision,
-    cardBgColor: "#1e3a8a",
+    name: "Mr. Rahul Chaturvedi",
+    designation: "Assistant Professor",
+    image: RahulImg,
   },
   {
     id: 2,
-    name: "Dr. Rakesh Mehta",
-    designation: "Professor & Head of Department",
-    image: vision,
-    cardBgColor: "#6b21a8",
+    name: "Dr. Dhwani Singh",
+    designation: "Assistant Professor",
+    image: DhwaniImg,
   },
   {
     id: 3,
-    name: "Dr. Neha Patil",
+    name: "Mr. Sandeep Singh",
     designation: "Assistant Professor",
-    image: vision,
+    image: SandeepImg,
   },
   {
     id: 4,
-    name: "Dr. Amit Verma",
-    designation: "Research Coordinator",
-    image: vision,
-    cardBgColor: "#0f766e",
+    name: "Dr. Amit Kumar Singh",
+    designation: "Assistant Professor",
+    image: AmitImg,
   },
   {
     id: 5,
-    name: "Prof. Kavita Deshmukh",
-    designation: "Senior Lecturer",
-    image: vision,
+    name: "Dr. Pradeep Kumar",
+    designation: "Assistant Professor",
+    image: PradeepImg,
+  },
+  {
+    id: 6,
+    name: "Dr. Mili Singh",
+    designation: "Assistant Professor",
+    image: MiliImg,
   },
 ];
+
+
+
+
+export const InstituteofMediaStudiesdepartmentHighlights: departmentHighlightscardType[] = [
+  {
+    image: depSlide1,
+    title: "Activity based learning for holistic development",
+    description:
+      "The department offers hands-on training in media skills development to help students get a worldwide perspective on the most recent learning standards.",
+  },
+  {
+    image: depSlide2,
+    title: "State -of the-art media laboratories",
+    description:
+      "Modern facilities in terms of advanced labs with modern equipment and latest softwares are provided by the department so that students may contribute to high-quality media production.",
+  },
+  {
+    image: depSlide3,
+    title: "Regular workshops & sessions by industry stalwarts",
+    description:
+      "Distinguished scholars, filmmakers, journalists, and advertising experts frequently visit the department to share their knowledge with our students.",
+  },
+  {
+    image: depSlide4,
+    title: "Regular visits to events, programs & festivals",
+    description:
+      "The students are sufficiently exposed through field trips, seminars, workshops, special lectures, and projects to let them know the real work culture of media industry.",
+  },
+  {
+    image: depSlide5,
+    title: "Association & membership of professional bodies",
+    description: "Opportunities for internships are incorporated into the curriculum to assist students in gaining real-world experience and bridging the gap between academics and industry.",
+  },
+  {
+    image: depSlide6,
+    title: "Industry collaboration & consultancy for enhanced learning",
+    description: "The department's distinctive quality is its engagement in consulting practises, which are complemented by consistent academic work.",
+  },
+  {
+    image: depSlide7,
+    title: "Remedial classes for slow learners",
+    description: "Department regularly organizes special remedial classes for slow learners so that they can match their peer group and enhance their performance.",
+  },
+];
+
+
+
+
+
+export const tableHeaders: Headers = {
+    name: "NAME OF STUDENT",
+    program: "PROGRAM",
+    company: "COMPANY",
+  };
+ 
+ export const placedStudents: Student[] = [
+    {
+      name: "Sakshi Shukla",
+      program: "M.A. in Journalism & Mass Communication",
+      company: "Policy Bazaar",
+    },
+    {
+      name: "Amarnath Krishna Kashyap",
+      program: "B.A. in Journalism & Mass Communication",
+      company: "TTN24",
+    },
+    {
+      name: "Anurag Tewari",
+      program: "B.A. in Journalism & Mass Communication",
+      company: "Live UP Patrika",
+    },
+    {
+      name: "Arshita Singh",
+      program: "B.A. in Journalism & Mass Communication",
+      company: "Live UP Patrika",
+    },
+    {
+      name: "Surbhi Kumari",
+      program: "B.A. in Journalism & Mass Communication",
+      company: "Live UP Patrika",
+    },
+    {
+      name: "Anjali Shukla",
+      program: "B.A. in Journalism & Mass Communication",
+      company: "TTN24",
+    },
+    {
+      name: "Abhishreshtha Mishra",
+      program: "M.A. in Journalism & Mass Communication",
+      company: "Live UP Patrika",
+    },
+    {
+      name: "Shivam Mishra",
+      program: "B.A. in Journalism & Mass Communication",
+      company: "National Khabar",
+    },
+    {
+      name: "Disha Pandey",
+      program: "B.A. in Journalism & Mass Communication",
+      company: "National Khabar",
+    },
+    {
+      name: "Yash Yadav",
+      program: "B.A. in Journalism & Mass Communication",
+      company: "National Khabar",
+    },
+    {
+      name: "Aditya Jaiswal",
+      program: "B.A. in Journalism & Mass Communication",
+      company: "National Khabar",
+    },
+    {
+      name: "Shaheen Parveen Shahjahan",
+      program: "M.A. in Journalism & Mass Communication",
+      company: "IBN Bharat",
+    },
+    {
+      name: "Shivangi Singh",
+      program: "M.A. in Journalism & Mass Communication",
+      company: "IBN Bharat",
+    },
+    {
+      name: "Saumya Awasthi",
+      program: "M.A. in Journalism & Mass Communication",
+      company: "National Khabar",
+    },
+    {
+      name: "Atul Pandey",
+      program: "M.A. in Journalism & Mass Communication",
+      company: "National Khabar",
+    },
+    {
+      name: "Anamika Annu",
+      program: "M.A. in Journalism & Mass Communication",
+      company: "Doordarshan",
+    },
+    {
+      name: "Sonali Dubey",
+      program: "M.A. in Journalism & Mass Communication",
+      company: "Dainik jagran",
+    },
+    {
+      name: "Ritu Sharma",
+      program: "B.A. in Journalism & Mass Communication",
+      company: "HCL TSS Pvt Ltd",
+    },
+    {
+      name: "Mohd Zaid",
+      program: "B.A. in Journalism & Mass Communication",
+      company: "DC lnfotech",
+    },
+    {
+      name: "Mohammad Saad",
+      program: "B.A. in Journalism & Mass Communication",
+      company: "Next9News",
+    },
+    {
+      name: "Tanya Khandelwal",
+      program: "B.A. in Journalism & Mass Communication",
+      company: "Next9News",
+    },
+    {
+      name: "Gurpreet Kaur",
+      program: "B.A. in Journalism & Mass Communication",
+      company: "Next9News",
+    },
+    {
+      name: "Aanchal Singh",
+      program: "M.A. in Journalism & Mass Communication",
+      company: "Prabhat media creations",
+    },
+    {
+      name: "Rajeshwari Shukla",
+      program: "M.A. in Journalism & Mass Communication",
+      company: "Prabhat media creations",
+    },
+    {
+      name: "Avantika Awasthi",
+      program: "B.A. in Journalism & Mass Communication",
+      company: "K News",
+    },
+    {
+      name: "Rahul Singh",
+      program: "B.A. in Journalism & Mass Communication",
+      company: "ABHI TAK SUPERFAST NEWS",
+    },
+    {
+      name: "Praqya Srivastava",
+      program: "M.A. in Journalism & Mass Communication",
+      company: "Hars Tech",
+    },
+    {
+      name: "Danish Siddiqui",
+      program: "M.A. in Journalism & Mass Communication",
+      company: "Samgra chetna",
+    },
+    {
+      name: "Yashfi Hasan",
+      program: "B.A. in Journalism & Mass Communication",
+      company: "Samgra chetna",
+    },
+    {
+      name: "Manyata Verma",
+      program: "M.A. in Journalism & Mass Communication",
+      company: "Viral fission",
+    },
+    {
+      name: "Yash Tiwari",
+      program: "B.A. in Journalism & Mass Communication",
+      company: "PVR Cinemas",
+    },
+    {
+      name: "Jessica",
+      program: "B.A. in Journalism & Mass Communication",
+      company: "Red Bull India Pvt. Ltd.",
+    },
+    {
+      name: "Rohit Singh",
+      program: "B.A. in Journalism & Mass Communication",
+      company: "QConnect",
+    },
+    {
+      name: "Aastha Pal",
+      program: "B.A. in Journalism & Mass Communication",
+      company: "Cnews bharat",
+    },
+    {
+      name: "Danish Siddiqui",
+      program: "M.A. in Journalism & Mass Communication",
+      company: "Samgra chetna",
+    },
+    {
+      name: "Atul Kumar Pandey",
+      program: "M.A. in Journalism & Mass Communication",
+      company: "razy news",
+    },
+    {
+      name: "Yashfi Hasan",
+      program: "B.A. in Journalism & Mass Communication",
+      company: "Samgra chetna",
+    },
+    {
+      name: "Sanjay Awasthi",
+      program: "M.A. in Journalism & Mass Communication",
+      company: "Samgra chetna",
+    },
+  ];
+
 
 

@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from "react";
 
-interface Student {
+export interface Student {
     name: string;
     program: string;
     company: string;
 }
 
-interface Headers {
+export interface Headers {
     name: string;
     program: string;
     company: string;
 }
 
-interface CustomPlacedStudentTableProps {
+export interface CustomPlacedStudentTableProps {
     students: Student[];
     headers: Headers;
 }
@@ -109,7 +109,7 @@ const CustomPlacedStudentTable: React.FC<CustomPlacedStudentTableProps> = ({
             </div>
 
             {showViewMoreButton && (
-                <div style={{ textAlign: "center", marginTop: "22px" }}>
+                <div style={{ textAlign: "center", marginTop: "22px"}}>
                     <button
                         onClick={handleViewMore}
                         className="
@@ -126,7 +126,7 @@ const CustomPlacedStudentTable: React.FC<CustomPlacedStudentTableProps> = ({
         hover:text-[#173E77]
         hover:border-[#173E77]
         transition-all
-        duration-300
+        duration-300 mb-15
     "
                     >
                         VIEW MORE →

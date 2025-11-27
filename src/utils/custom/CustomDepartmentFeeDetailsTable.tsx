@@ -114,7 +114,7 @@ const CustomDepartmentFeeDetailsTable: React.FC<Props> = ({ data }) => {
                                     ) : val === "NA" ? "-" : val}
 
                                     {colIndex !== values.length - 1 && (
-                                        <span className="absolute right-0 h-10 w-[1px] bg-gray-300"></span>
+                                        <span className="absolute right-0 h-10 w-px bg-gray-300"></span>
                                     )}
                                 </div>
                             ))}

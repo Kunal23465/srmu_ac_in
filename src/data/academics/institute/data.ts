@@ -2,9 +2,6 @@
 // import image2 from "../../../assets/images/academics/institutes/vision-card/Our-vision-13102304415245.png"
 // import { FacultyItem } from "../../../utils/custom/CustomFacultyListCard";
 // import { VisionMissionProps } from "../../../utils/custom/CustomInstitueVissionMissionCard";
-
-import img1 from "../../../assets/images/apply-img3.jpg"
-
 import { InstituteProfile } from "../../../types/profile-data-type";
 
 // import { InstituteProfile } from "../../../types/profile-data-type";
@@ -154,30 +151,30 @@ Prof. Saxena has 60+ publications in journals, conferences, books and book chapt
 
 
 
-export const events = [
-  {
-    id: 1,
-    title: "Industrial Visit",
-    venue: "Renewable Energy and Electric Vehicle Exhibition",
-    date: "24th August, 2025",
-    image: img1,
-  },
-  {
-    id: 2,
-    title: "National Workshop",
-    topic: "Role of AI in Achieving SDGs",
-    date: "04th–16th November, 2024",
-    image: img1,
-  },
+// export const events: EventItem[] = [
+//   {
+//     id: 1,
+//     title: "Industrial Visit",
+//     venue: "Renewable Energy and Electric Vehicle Exhibition",
+//     date: "24th August, 2025",
+//     image: img1,
+//   },
+//   {
+//     id: 2,
+//     title: "National Workshop",
+//     topic: "Role of AI in Achieving SDGs",
+//     date: "04th–16th November, 2024",
+//     image: img1,
+//   },
 
-  {
-    id: 3,
-    title: "National Workshop",
-    topic: "Role of AI in Achieving SDGs",
-    date: "04th–16th November, 2024",
-    image: img1,
-  },
-];
+//   {
+//     id: 3,
+//     title: "National Workshop",
+//     topic: "Role of AI in Achieving SDGs",
+//     date: "04th–16th November, 2024",
+//     image: img1,
+//   },
+// ];
 
 
 
