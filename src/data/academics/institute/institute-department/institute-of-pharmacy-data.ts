@@ -107,9 +107,9 @@ export const InstituteofPharmacyVMData = [
   {
     id: 1,
     bgColor: "#E5F3FC",
-    imageUrl: mission,
-    title: "Mission",
-    description: [
+    img: mission,
+    heading: "Mission",
+    points: [
       "To develop grooming arena for better individuals and pharmacists.",
       "To enhance the creativity, motivation, drive and inculcate professionalism to suit to the need of pharmaceutical industry.",
       "To bring synergy between academic, R&D, technology and industry through training and exposure for such environment.",
@@ -119,9 +119,9 @@ export const InstituteofPharmacyVMData = [
   {
     id: 2,
     bgColor: "#FFF2D2",
-    imageUrl: vision,
-    title: "Vision",
-    description: [
+    img: vision,
+    heading: "Vision",
+    points: [
       "To provide value added educational environment for creating quality professionals in the field of pharmacy education, research, industry, hospital and other health related areas for the society well-being."
     ],
   },
