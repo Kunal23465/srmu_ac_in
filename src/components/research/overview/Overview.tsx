@@ -17,13 +17,11 @@ const Overview: React.FC = () => {
       <div className={`${Classes["container"]}`}>
         <CustomOverviewSection data={ResearchOverviewData} />
       </div>
-      
       <DirectorSection />
       <UniversityResearchSection />
       <ResearchOfficeSection />
       <KeyHighlightsSection layoutData={otherFacilitiesCardLayoutData} facilities={otherfacilitiesCardData} />
       <PhdOrdinanceSection />
-
       <CustomTopFooter data={CustomTopFooterAbout} />
     </>
   );
