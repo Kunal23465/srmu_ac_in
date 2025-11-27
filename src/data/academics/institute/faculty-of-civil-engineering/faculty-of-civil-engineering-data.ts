@@ -1,5 +1,3 @@
-
-
 import missionImg from "../../../../assets/images/academics/departments/dept-mission-icon1.png";
 import vissionImg from "../../../../assets/images/academics/departments/dept-mission-icon2.png";
 
@@ -9,14 +7,11 @@ import depSlide3 from "../../../../assets/images/academics/departments/depSlide3
 import depSlide4 from "../../../../assets/images/academics/departments/depSlide4.png";
 import depSlide5 from "../../../../assets/images/academics/departments/depSlide5.png";
 
-
 import professor from "../../../../assets/images/academics/institutes/dr.r.s.bajpai.jpg";
 import { customeOverViewType } from "../../../../types/home-data-type";
 import { counterDataType } from "../../../about/leadership-and-governance/leadership-and-governance-data";
 import { FacultyItem } from "../../../../utils/custom/CustomFacultyListCard";
 import { InstituteProfile } from "../../../../types/profile-data-type";
-
-
 
 export interface DepartmentVMType {
   id: number;
@@ -58,9 +53,9 @@ export const CivildepartmentVMData = [
   {
     id: 1,
     bgColor: "#E5F3FC",
-    imageUrl: missionImg,
-    title: "Mission",
-    description: [
+    img: missionImg,
+    heading: "Mission",
+    points: [
       "To provide a rigorous hands-on engineering education integrated in a student-centered environment equipped with life-long learning skills necessary for professional practice.",
       "To prepare our students to be technical, business and global leaders of tomorrow by inculcating team work and communication skills.",
       "To promote research, development and consultancy through constant interaction with industry and research organizations.",
@@ -70,9 +65,9 @@ export const CivildepartmentVMData = [
   {
     id: 2,
     bgColor: "#FFF2D2",
-    imageUrl: vissionImg,
-    title: "Vision",
-    description: [
+    img: vissionImg,
+    heading: "Vision",
+    points: [
       "To produce highly competent Civil Engineers of international standards for catering to local, national and global needs.",
       "To provide consultancy, research and development in various fields of Civil Engineering to meet current and future challenges.",
     ],
@@ -179,7 +174,7 @@ export const facultyData: FacultyItem[] = [
   },
 ];
 
-// industry honour table data 
+// industry honour table data
 export const civilIndustryHonoursFeeTable: FeeTableData = {
   columns: ["Courses", "Duration", "Eligibility Criteria", "Course Fees (PA)"],
 
@@ -194,8 +189,7 @@ export const civilIndustryHonoursFeeTable: FeeTableData = {
        <p> Candidate must have passed 10+2 or equivalent system from any recognized Central/ State Board with Physics and Mathematics as compulsory subjects along with one of the Chemistry/Computer Science/Technical Vocational Subject with minimum aggregate marks of 45%.</p>
       `,
     },
-
-  ]
+  ],
 };
 
 export const civilIndustryIntegratedFeeTable: FeeTableData = {
@@ -429,7 +423,6 @@ export const civilIndustryUndergraduateFeeTable: FeeTableData = {
     },
   ],
 };
-
 
 export const instituteProfilesCivil: InstituteProfile[] = [
   {
