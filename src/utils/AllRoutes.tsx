@@ -98,6 +98,8 @@ import DepartmentOfElectricalAndElectronicsEngineeringPage from "../pages/academ
 import FacultyOfMechanicalEngineeringPage from "../pages/academics/institutes/institute-department/FacultyOfMechanicalEngineeringPage";
 import DepartmentOfCSEPage from "../pages/academics/institutes/institute-department/DepartmentOfCSEPage";
 import FacultyOfAlliedHealthSciencesPage from "../pages/academics/institutes/institute-department/FacultyOfAlliedHealthSciencesPage";
+import BtechInCSEAIAndML from "../pages/programs/btech-in-cse-ai-ml/BtechInCSEAIAndML";
+import ProgramsPage from "../pages/programs/ProgramsPage";
 interface IMatches {
   pathname: string;
   params: Params<string>;
@@ -541,8 +543,8 @@ export const routes = [
         ],
       },
       {
-        path: "/programs",
-        element: <PlacementPage />,
+        path: "/program",
+        element: <ProgramsPage />,
         // element: <StudentTestimonialPage />,
         handle: {
           crumb: () => <Link to="/">Programs</Link>,
@@ -556,6 +558,16 @@ export const routes = [
               crumb: () => <Link to="/">After Class 10th</Link>,
             },
           },
+
+          {
+            path: "b-tech-cse-artificial-intelligence-machine-learning",
+            element: <BtechInCSEAIAndML />,
+            handle: {
+              crumb: () => <Link to="/">
+                B.Tech. CSE (Artificial Intelligence & Machine Learning)</Link>,
+            },
+          },
+
         ],
       },
       {
