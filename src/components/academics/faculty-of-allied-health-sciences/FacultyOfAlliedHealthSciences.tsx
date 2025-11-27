@@ -23,6 +23,8 @@ import CustomDepartmentFeeDetailsTable from "../../../utils/custom/CustomDepartm
 import CustomDepartmentHighlightCard from "../../../utils/custom/CustomDepartmentHighlightCard";
 import CustomDepartmentEventSlider from "../../../utils/custom/CustomDepartmentEventSlider";
 import CustomEventCard from "../../../utils/custom/CustomEventListCard";
+import CustomTopFooter from "../../../utils/custom/CustomTopFooter";
+import { instituteFooterData } from "../../../data/academics/institute/department-of-electrical-and-electronics-engineering-data";
 
 const FacultyOfAlliedHealthSciences: FC = () => {
   const items = [
@@ -121,6 +123,7 @@ const FacultyOfAlliedHealthSciences: FC = () => {
         arrowColor="#96a9c4"
         arrowBorderColor="#0f4a85"
       />
+      <CustomTopFooter data={instituteFooterData} />
     </div>
   );
 };

@@ -100,6 +100,7 @@ import DepartmentOfCSEPage from "../pages/academics/institutes/institute-departm
 import FacultyOfAlliedHealthSciencesPage from "../pages/academics/institutes/institute-department/FacultyOfAlliedHealthSciencesPage";
 import BtechInCSEAIAndML from "../pages/programs/btech-in-cse-ai-ml/BtechInCSEAIAndML";
 import ProgramsPage from "../pages/programs/ProgramsPage";
+import FacultyOfBiosciencesPage from "../pages/academics/institutes/institute-department/FacultyOfBiosciencesPage";
 interface IMatches {
   pathname: string;
   params: Params<string>;
@@ -304,6 +305,13 @@ export const routes = [
                   crumb: () => (
                     <Link to="/">Faculty Of Allied Health Sciences</Link>
                   ),
+                },
+              },
+               {
+                path: "faculty-of-bioscience",
+                element: <FacultyOfBiosciencesPage />,
+                handle: {
+                  crumb: () => <Link to="/">Faculty Of Biosciences</Link>,
                 },
               },
               {

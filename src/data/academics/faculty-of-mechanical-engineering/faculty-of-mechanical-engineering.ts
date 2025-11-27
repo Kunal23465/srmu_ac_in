@@ -416,7 +416,8 @@ export const mechanicalDepartmentEventsData:EventItem[]  =[
     date: "23rd May, 2023",
     image: "visit2-09052411353246.jpg",
     cardBgColor: "#ffffff",
-  },
+  }
+  ,
   {
     id: 6,
     title: "Guest Lecture",
@@ -426,6 +427,17 @@ export const mechanicalDepartmentEventsData:EventItem[]  =[
     image: "guest6-09052411371380.jpg",
     cardBgColor: "#ffffff",
   }
+  ,
+  {
+    id: 7,
+    title: "Guest Lecture",
+    topic: "Indian Space Programme: Past Present and Future",
+    speaker: "Er. Amit Pandey",
+    date: "24th March, 2023",
+    image: "guest6-09052411371380.jpg",
+    cardBgColor: "#ffffff",
+  }
+  
 
 
 ];

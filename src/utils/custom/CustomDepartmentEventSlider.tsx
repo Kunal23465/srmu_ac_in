@@ -190,3 +190,4 @@ function CustomDepartmentEventSlider<T>({
 
 export default CustomDepartmentEventSlider;
 
+ 
