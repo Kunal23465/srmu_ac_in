@@ -44,7 +44,11 @@ import ResearchOverviewPage from "../pages/Research/Overview/ResearchOverviewPag
 import ProcessAndInitiativePage from "../pages/Research/Process-and-Initiative/ProcessAndInitiativePage";
 import PhdNotificationSessionPage from "../pages/Research/Phd-notification-session/PhdNotificationSessionPage";
 import EventDetails from "../pages/campus-life/events/EventDetails";
-import tedxData, { conferenceData, festData, festivalsData } from "../data/campus-life/events/events-data";
+import tedxData, {
+  conferenceData,
+  festData,
+  festivalsData,
+} from "../data/campus-life/events/events-data";
 import InnovationPage from "../pages/Research/Innovation/InnovationPage";
 import PlacementPage from "../pages/placement/PlacementPage";
 import StudentTestimonialPage from "../pages/placement/student-testimonial/StudentTestimonialPage";
@@ -56,8 +60,6 @@ import AlumniTestimonialsPage from "../pages/placement/AlumniTestimonialsPage";
 import ConvocationPage from "../pages/campus-life/convocation/ConvocationPage";
 import { convocationData } from "../data/campus-life/convocation/convocation-data";
 import ConvocationDetailPage from "../pages/campus-life/convocation/ConvocationDetailPage";
-
-
 
 import ClubsPage from "../pages/campus-life/clubs/ClubsPage";
 import AfterClass10thPage from "../pages/Home/AfterClass10thPage";
@@ -80,9 +82,7 @@ import AdmissionPolicyPage from "../pages/admissions/admission-policy/AdmissionP
 import FacultyOfCivilEngineeringPage from "../pages/academics/institutes/institute-department/FacultyOfCivilEngineeringPage";
 import PlacementOverviewPage from "../pages/placement/placement-overview/PlacementOverviewPage";
 
-
 import InstituteofTechnologyPage from "../pages/academics/institutes/institute-department/InstituteofTechnologyPage";
-import DepartmentOfElectricalAndElectronicsEngineeringPage from "../pages/academics/institutes/institute-department/electricalAndElectronics/DepartmentOfElectricalAndElectronicsEngineeringPage";
 import InstituteofBiosciencesandTechnologyPage from "../pages/academics/institutes/institute-department/InstituteofBiosciencesandTechnologyPage";
 import InstituteofManagementCommerceandEconomicsPage from "../pages/academics/institutes/institute-department/InstituteofManagementCommerceandEconomicsPage";
 import InstituteofMediaStudiesPage from "../pages/academics/institutes/institute-department/InstituteofMediaStudiesPage";
@@ -94,6 +94,8 @@ import InstituteofPharmacyPage from "../pages/academics/institutes/institute-dep
 import InstituteofEducationandResearchPage from "../pages/academics/institutes/institute-department/InstituteofEducationandResearchPage";
 import SRMUPolytechnicPage from "../pages/academics/institutes/institute-department/SRMUPolytechnicPage";
 import ConferenceDetailPage from "../components/research/publication/conference/ConferenceDetailPage";
+import DepartmentOfElectricalAndElectronicsEngineeringPage from "../pages/academics/institutes/institute-department/DepartmentOfElectricalAndElectronicsEngineeringPage";
+import FacultyOfMechanicalEngineeringPage from "../pages/academics/institutes/institute-department/FacultyOfMechanicalEngineeringPage";
 import DepartmentOfCSEPage from "../pages/academics/institutes/institute-department/DepartmentOfCSEPage";
 import BtechInCSEAIAndML from "../pages/programs/btech-in-cse-ai-ml/BtechInCSEAIAndML";
 import ProgramsPage from "../pages/programs/ProgramsPage";
@@ -198,7 +200,11 @@ export const routes = [
             path: "committees-and-cells",
             element: <CommitteeAndCellsPage />,
             handle: {
-              crumb: () => <Link to="/about/committees-and-cells">Committees and Cells</Link>,
+              crumb: () => (
+                <Link to="/about/committees-and-cells">
+                  Committees and Cells
+                </Link>
+              ),
             },
 
             children: committeeCards.map((card) => ({
@@ -248,13 +254,6 @@ export const routes = [
         ],
       },
       {
-        path: "/department-of-electrical-and-electronics-engineering",
-        element: <DepartmentOfElectricalAndElectronicsEngineeringPage />,
-        handle: {
-          crumb: () => <Link to="/">Department of Electrical and Electronics Engineering</Link>,
-        },
-      },
-      {
         path: "/academics",
         element: <AcademicsPage />,
         handle: {
@@ -274,6 +273,32 @@ export const routes = [
                 },
               },
               {
+                path: "department-of-electrical-and-electronics-engineering",
+                element: (
+                  <DepartmentOfElectricalAndElectronicsEngineeringPage />
+                ),
+                handle: {
+                  crumb: () => (
+                    <Link to="/">
+                      Department of Electrical and Electronics Engineering
+                    </Link>
+                  ),
+                },
+              },
+              {
+                path: "faculty-of-mechanical-engineering",
+                element: (
+                  <FacultyOfMechanicalEngineeringPage />
+                ),
+                handle: {
+                  crumb: () => (
+                    <Link to="/">
+                      Department of Electrical and Electronics Engineering
+                    </Link>
+                  ),
+                },
+              },
+              {
                 path: "institute-of-technology",
                 element: <InstituteofTechnologyPage />,
                 handle: {
@@ -284,14 +309,20 @@ export const routes = [
                 path: "institute-of-biosciences-and-technology",
                 element: <InstituteofBiosciencesandTechnologyPage />,
                 handle: {
-                  crumb: () => <Link to="/">Institute of Biosciences and Technology</Link>,
+                  crumb: () => (
+                    <Link to="/">Institute of Biosciences and Technology</Link>
+                  ),
                 },
               },
               {
                 path: "institute-of-management-commerce-and-economics",
                 element: <InstituteofManagementCommerceandEconomicsPage />,
                 handle: {
-                  crumb: () => <Link to="/">Institute of Management, Commerce and Economics</Link>,
+                  crumb: () => (
+                    <Link to="/">
+                      Institute of Management, Commerce and Economics
+                    </Link>
+                  ),
                 },
               },
               {
@@ -305,21 +336,31 @@ export const routes = [
                 path: "institute-of-natural-sciences-and-humanities",
                 element: <InstituteofNaturalSciencesandHumanitiesPage />,
                 handle: {
-                  crumb: () => <Link to="/">Institute of Natural Sciences and Humanities</Link>,
+                  crumb: () => (
+                    <Link to="/">
+                      Institute of Natural Sciences and Humanities
+                    </Link>
+                  ),
                 },
               },
               {
                 path: "institute-of-pharmaceutical-sciences1",
                 element: <InstituteofPharmaceuticalSciencesPage />,
                 handle: {
-                  crumb: () => <Link to="/">Institute of Pharmaceutical Sciences</Link>,
+                  crumb: () => (
+                    <Link to="/">Institute of Pharmaceutical Sciences</Link>
+                  ),
                 },
               },
               {
                 path: "institute-of-agricultural-sciences-and-technology",
                 element: <InstituteofAgriculturalSciencesandTechnologyPage />,
                 handle: {
-                  crumb: () => <Link to="/">Institute of Agricultural Sciences and Technology</Link>,
+                  crumb: () => (
+                    <Link to="/">
+                      Institute of Agricultural Sciences and Technology
+                    </Link>
+                  ),
                 },
               },
               {
@@ -340,7 +381,9 @@ export const routes = [
                 path: "institute-of-education-and-research",
                 element: <InstituteofEducationandResearchPage />,
                 handle: {
-                  crumb: () => <Link to="/">Institute of Education and Research</Link>,
+                  crumb: () => (
+                    <Link to="/">Institute of Education and Research</Link>
+                  ),
                 },
               },
               {
@@ -421,7 +464,6 @@ export const routes = [
               crumb: () => <Link to="/">Curriculum Design</Link>,
             },
           },
-
 
           {
             path: "faculty-of-civil-engineering",
@@ -700,7 +742,9 @@ export const routes = [
             path: "phd-notification-session",
             element: <PhdNotificationSessionPage />,
             handle: {
-              crumb: () => <Link to="/">Ph.D. Notification (Session: 2025-26)</Link>,
+              crumb: () => (
+                <Link to="/">Ph.D. Notification (Session: 2025-26)</Link>
+              ),
             },
           },
           {
@@ -803,9 +847,13 @@ function Breadcrumbs() {
   let matches: IMatches[] = useMatches();
 
   const crumbs = matches
-    .filter((match) => Boolean(match.handle && (match.handle as HandleType).crumb))
+    .filter((match) =>
+      Boolean(match.handle && (match.handle as HandleType).crumb)
+    )
     .map((match) => {
-      const crumb = (match.handle as HandleType).crumb(match.data as string | undefined);
+      const crumb = (match.handle as HandleType).crumb(
+        match.data as string | undefined
+      );
       return crumb as React.ReactNode;
     });
 
@@ -813,16 +861,25 @@ function Breadcrumbs() {
   // console.log("crumbs", crumbs);
   // console.log("matches", matches[1].pathname);
   return (
-    <section className={`banner-section ${matches[1].pathname === "/abhivyakti" ? "abhivyakt" : ""} flex items-center `}>
+    <section
+      className={`banner-section ${
+        matches[1].pathname === "/abhivyakti" ? "abhivyakt" : ""
+      } flex items-center `}
+    >
       <div className={`${Classes["container"]} `}>
         <div className={`${Classes["page-title-content"]}`}>
           {/* <span className={`   text-[25px] sm:text-[40px] md:text-[54px] font-semibold text-white pointer-events-none`}>{crumbs[crumbs.length - 1]}</span> */}
           <nav aria-label="breadcrumb">
             <ol className="breadcrumb m-0 flex flex-wrap  gap-2">
               {crumbs.map((crumb, index) => (
-                <li key={index} className={`${Classes["breadcrumb-item"]} max-sm:text-[12px]`}>
+                <li
+                  key={index}
+                  className={`${Classes["breadcrumb-item"]} max-sm:text-[12px]`}
+                >
                   {index === crumbs.length - 1 ? (
-                    <span className={Classes["active_breadcrumbs"]}>{crumb}</span> // Current page - disabled link
+                    <span className={Classes["active_breadcrumbs"]}>
+                      {crumb}
+                    </span> // Current page - disabled link
                   ) : (
                     <Fragment>{crumb}</Fragment> // Clickable links
                   )}

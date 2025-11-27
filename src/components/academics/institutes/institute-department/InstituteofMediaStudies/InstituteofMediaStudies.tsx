@@ -10,6 +10,7 @@ import {
   InstituteofMediaStudiesOverviewData,
   InstituteofMediaStudiesTopFooterData,
   InstituteofMediaStudiesVMData,
+  instituteProfiles,
   SampleInstituteProfileData,
 } from "../../../../../data/academics/institute/institute-department/institute-of-media-studies-data";
 import Counter from "../../../../../utils/custom/Counter";
@@ -17,6 +18,8 @@ import CustomDepartmentVissionMission from "../../../../../utils/custom/CustomDe
 import CustomDepartmentFeeDetailsTable from "../../../../../utils/custom/CustomDepartmentFeeDetailsTable";
 import CustomTabs from "../../../../../utils/custom/CustomTabs";
 import CustomInstituteProfileCard from "../../../../../utils/custom/CustomInstituteProfileCard";
+
+
 
 const InstituteofMediaStudies: React.FC = () => {
   const items = [
@@ -48,7 +51,7 @@ const InstituteofMediaStudies: React.FC = () => {
           ))}
         </div>
       </div>
-      <CustomInstituteProfileCard data={SampleInstituteProfileData} />
+      <CustomInstituteProfileCard data={instituteProfiles} />
       <div className={`${Classes["container"]} pt-5`}>
         <div className="py-15 text-center">
           <h1 className="text-5xl pb-5 font-medium">Programs and Fees</h1>

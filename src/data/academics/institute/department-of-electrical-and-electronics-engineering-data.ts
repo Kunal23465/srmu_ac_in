@@ -2,9 +2,81 @@ import { customeOverViewType } from "../../../types/home-data-type";
 
 import { counterDataType } from "../../home/counterData";
 import drrsbajpai from "../../../assets/images/academics/institutes/dr.r.s.bajpai.jpg";
-
 import visionImg from "../../../assets/images/academics/institutes/dept-vision.png";
 import misionImg from "../../../assets/images/academics/institutes/dept-mission.png";
+import {
+  departmentHighlightscardType,
+  FeeTableData,
+} from "../faculty-of-civil-engineering/faculty-of-civil-engineering-data";
+import vijayLaxmi from "../../../assets/images/academics/institutes/vijaylaxmi.png";
+import mritunjayRai from "../../../assets/images/academics/institutes/dr.-mritumjay-rai.jpg";
+import vaibhavaSrivastava from "../../../assets/images/academics/institutes/vaibhav.png";
+import pappu from "../../../assets/images/academics/institutes/paapu.png";
+import chhaviMitharwal from "../../../assets/images/academics/institutes/chavi.png";
+import gauravVerma from "../../../assets/images/academics/institutes/gaurav.png";
+import sandeepTiwari from "../../../assets/images/academics/institutes/sandeep.png";
+import rsBajpai from "../../../assets/images/academics/institutes/dr.r.s.bajpai.jpg";
+import shivaniSingh from "../../../assets/images/academics/institutes/er.shivani-singh.jpg";
+import shubhaMishra from "../../../assets/images/academics/institutes/er.shubham-mishra-.jpg";
+import sandeepDixit from "../../../assets/images/academics/institutes/sandeep.png";
+import jayKumarPandey from "../../../assets/images/academics/institutes/dr.-jay-kumar-pandey.jpg";
+import anandPrakash from "../../../assets/images/academics/institutes/er.anand-.png";
+import abhishekSaxena from "../../../assets/images/academics/institutes/er.abhishek-saxena.png";
+import rohitKumar from "../../../assets/images/academics/institutes/rohit.png";
+import alkesh from "../../../assets/images/academics/institutes/dr-alkesh-agarwal.jpg";
+import researchpapers from "../../../assets/images/academics/institutes/researchpapers-.jpg";
+import skill from "../../../assets/images/academics/institutes/skill-.jpg";
+import evtechnology from "../../../assets/images/academics/institutes/evtechnology-.jpg";
+import learning from "../../../assets/images/academics/institutes/learning-.jpg";
+import holistic from "../../../assets/images/academics/institutes/holistic-.jpg";
+import corporate from "../../../assets/images/academics/institutes/corporate-manag-.jpg";
+import training from "../../../assets/images/academics/institutes/training-.jpg";
+
+export const electricalDepartmentHighlightsData: departmentHighlightscardType[] =
+  [
+    {
+      image: researchpapers,
+      title: "Creating a research oriented environment",
+      description:
+        "Department is actively engaged in publishing research papers in international journals and conferences. In addition to the above the department is continuously organizing world class international conferences.",
+    },
+    {
+      image: skill,
+      title: "Value added courses for skill enhancement",
+      description:
+        "The department meets the unique learning needs of each student and assists them in building a solid foundation of knowledge and skills by providing a wide variety of these courses.",
+    },
+    {
+      image: evtechnology,
+      title: "Industry collaborative programs in EV technology",
+      description:
+        "The department has launched an EV concentration program, created by industry professionals with an emphasis on developing industrial skills related to e-mobility.",
+    },
+    {
+      image: learning,
+      title: "Immersive learning practices for skill deployment",
+      description:
+        "To provide a learning-based environment on technical concepts applied to real-life situations with measurable outcomes, students are provided with industrial visits, guest lectures and sharing of best practices.",
+    },
+    {
+      image: holistic,
+      title: "Encouraging the culture of innovation & entrepreneurship",
+      description:
+        "Center for Innovation, Incubation and Entrepreneurship (CIIE) with a vision to encourage the culture of innovation by igniting and molding young minds to work for novel ideas towards benefit of the society.",
+    },
+    {
+      image: corporate,
+      title: "Providing curriculum based on futuristic technologies",
+      description:
+        "Collaborations with industry leaders to set up lab facilities providing access to platforms related to these futuristic technologies to help students and faculty members enhance their skills.",
+    },
+    {
+      image: training,
+      title: "Impeccable training & placement opportunities",
+      description:
+        "The Department of Electrical & Electronics Engineering holds a strong unified team working towards training the students on right technologies in right environment to make them industry ready.",
+    },
+  ];
 
 export const instituteOverviewData: customeOverViewType = {
   heading: "Department of Electrical and Electronics Engineering",
@@ -31,33 +103,12 @@ export const counterDataForDepartmentOfElectricalAndElectronicsEngineering: coun
     { id: 3, value: "215", suffix: "", label: "Students" },
   ];
 
-// department-of-electrical-and-electronics-engineering-data.ts
-
-// export const missionandvisionofelectricalandelectronicsengineering: VisionMissionProps =
-//   {
-//     mission: {
-//       title: "Mission",
-//       description: [
-//         "To prepare engineering graduates with deep understanding of the fundamentals of Electrical & Electronics Engineering.",
-//         "To collaborate with industry, research organizations and academia for encouraging creativity and innovation.",
-//         "To achieve excellence in teaching and to provide a platform for developing new products and systems that can help industry and society as a whole.",
-//       ],
-//       buttonText: "Our Mission",
-//       buttonBgColor: "bg-blue-300",
-//       imageUrl: "mission-image-url.png",
-//       bgColor: "#E9F4FF",
-//     },
-//     vision: {
-//       title: "Vision",
-//       description: [
-//         "To impart quality education in the field of Electrical & Electronics Engineering and to produce globally competent engineers to serve the society.",
-//       ],
-//       buttonText: "Our Vision",
-//       buttonBgColor: "bg-yellow-300",
-//       imageUrl: "vision-image-url.png",
-//       bgColor: "#FFF8EA",
-//     },
-//   };
+export const counterDataForPlacedStudentsOFDepartmentOfElectricalAndElectronicsEngineering: counterDataType[] =
+  [
+    { id: 1, value: "200", suffix: "", label: "Guest lectures" },
+    { id: 2, value: "100", suffix: "", label: "Field Visits" },
+    { id: 3, value: "10", suffix: "", label: "Conference & Seminars" },
+  ];
 
 export const departmentHeadProfileData= {
   name: "Prof. (Dr.) N.S. Bajpai",
@@ -79,32 +130,516 @@ export const departmentHeadProfileData= {
   backgroundColor: "bg-[#224984]",
 };
 
-const misiondata= {
-  title: "Mission",
-  description: [
-    "To prepare engineering graduates with deep understanding of the fundamentals of Electrical & Electronics Engineering.",
-    "To collaborate with industry, research organizations and academia for encouraging creativity and innovation.",
-    "To achieve excellence in teaching and to provide a platform for developing new products and systems that can help industry and society as a whole.",
+export const industryHonorsFeeData: FeeTableData = {
+  columns: ["COURSES", "Duration", "Eligibility Criteria", "Course Fees (PA)"],
+
+  rows: [
+    {
+        course: "M.Tech. in Electric Vehicle Technology",
+        duration: "2 Years",
+        eligibility: "Click",
+        fee: "Rs. 1,07,000/-",
+        eligibilityContent: `
+            <h2 class='font-bold text-lg  flex justify-center  mb-3'>M.Tech. in Electric Vehicle Technology</h2>
+            <p>Candidate must have passed B. Tech from any recognised University or AICTE recognised Institute/College with minimum aggregate marks of 50% or 5.5 CGPA for GEN/OBC and 45% marks or 5.0 CGPA for SC/ST Category. Candidate will be offered admission in M. Tech. only in that stream of Engineering in which he has obtained B. Tech.</p>
+        `,
+    },
+    {
+        course: "M.Tech. in Electric Vehicle Technology (Part Time)",
+        duration: "3 Years",
+        eligibility: "Click",
+        fee: "Rs. 69,000/-",
+        eligibilityContent: `
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>M.Tech. in Electric Vehicle Technology (Part Time)</h2>
+            <p>Candidate must have passed B. Tech from any recognised University or AICTE recognised Institute/College with minimum aggregate marks of 50% or 5.5 CGPA for GEN/OBC and 45% marks or 5.0 CGPA for SC/ST Category. Candidate will be offered admission in M. Tech. only in that stream of Engineering in which he has obtained B. Tech.</p>
+            <p>In addition to the above mentioned basic M. Tech (Regular) eligibility, candidates must have at least 2 years Teaching/Industrial/Research/Professional Work Experience for 3 years M. Tech (Part Time) in CE, ME, CS, EC &amp; EE.</p>
+        `,
+    },
+    {
+        course: "B.Tech. in EE (EV Engineering) with L&T",
+        duration: "4 Years",
+        eligibility: "Click",
+        fee: "Rs. 1,46,375/-",
+        eligibilityContent: `
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Tech. in EE (EV Engineering) with L&T</h2>
+            <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/ State Board with Physics and Mathematics as compulsory subjects along with one of the Chemistry/Computer Science/Technical Vocational Subject with minimum aggregate marks of 45%.</p>
+        `,
+    },
+    {
+        course: "B.Tech. in EE (EV Engineering) (Lateral Entry) with L&T",
+        duration: "3 Years",
+        eligibility: "Click",
+        fee: "Rs. 1,51,375/-",
+        eligibilityContent: `
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Tech. in EE (EV Engineering) (Lateral Entry) with L&T</h2>
+            <p>Candidate must have passed 3 or 4 year Diploma in technical stream from institutions recognized by AICTE or a State Board of Technical Education or B.Sc. degree in Biology/ Microbiology/ Botony/ Zoology/ Chemistry/ Physics/ Maths/ Physiology/ Biotechnology/ Biochemistry/ Agriculture with minimum aggregate marks of 45% or 5.0 CGPA for GEN/OBC and 40% marks or 4.5 CGPA for SC/ST Category.</p>
+        `,
+    },
+    {
+        course: "B.Tech. in ECE (EV Engineering) with L&T",
+        duration: "4 Years",
+        eligibility: "Click",
+        fee: "Rs. 1,46,375/-",
+        eligibilityContent: `
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Tech. in ECE (EV Engineering) with L&T</h2>
+            <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/ State Board with Physics and Mathematics as compulsory subjects along with one of the Chemistry/Computer Science/Technical Vocational Subject with minimum aggregate marks of 45%.</p>
+        `,
+    },
+    {
+        course: "B.Tech. in ECE (EV Engineering) (Lateral Entry) with L&T",
+        duration: "3 Years",
+        eligibility: "Click",
+        fee: "Rs. 1,51,375/-",
+        eligibilityContent: `
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Tech. in ECE (EV Engineering) (Lateral Entry) with L&T</h2>
+            <p>Candidate must have passed 3 or 4 year Diploma in technical stream from institutions recognized by AICTE or a State Board of Technical Education or B.Sc. degree in Biology/ Microbiology/ Botony/ Zoology/ Chemistry/ Physics/ Maths/ Physiology/ Biotechnology/ Biochemistry/ Agriculture with minimum aggregate marks of 45% or 5.0 CGPA for GEN/OBC and 40% marks or 4.5 CGPA for SC/ST Category.</p>
+        `,
+    },
+]
+};
+export const integratedFeeData: FeeTableData = {
+  columns: ["COURSES", "Duration", "Eligibility Criteria", "Course Fees (PA)"],
+
+  rows: [
+    {
+        course: "B.Tech. + M.Tech. in Electrical Engineering",
+        duration: "5 Years",
+        eligibility: "Click",
+        fee: "Rs. 1,32,000/-",
+        eligibilityContent: `
+            <h2 class='font-bold flex justify-center  text-lg mb-3'>B.Tech. + M.Tech. in Electrical Engineering</h2>
+            <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/ State Board with Physics and Mathematics/Biology as compulsory subject alongwith Chemistry/ Biotechnology/ Computer Science/Technical Vocational Subject. Candidate must obtained minimum marks of 45% or equivalent grade for GEN/OBC and 40% marks or equivalent grade for SC/ST Category in the above subjects taken together.</p>
+        `,
+    },
+    {
+        course: "B.Tech in EE + M.B.A.",
+        duration: "5 Years",
+        eligibility: "Click",
+        fee: "Rs. 1,32,000/-",
+        eligibilityContent: `
+            <h2 class='font-bold  flex justify-center  text-lg mb-3'> B.Tech in EE + M.B.A.</h2>
+            <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/ State Board with Physics and Mathematics as compulsory subjects alongwith one of the Chemistry/Computer Science/Technical Vocational Subject. Candidate must obtained minimum 45% marks or equivalent grade for GEN/OBC and 40% marks or equivalent grade for SC/ST Category in the above subjects taken together.<br>
+            &nbsp;</p>
+        `,
+    },
+    {
+        course: "B.Tech. in ECE + M.B.A.",
+        duration: "5 Years",
+        eligibility: "Click",
+        fee: "Rs. 1,32,000/-",
+        eligibilityContent: `
+            <h2 class='font-bold  flex justify-center  text-lg mb-3'>B.Tech. in ECE + M.B.A.</h2>
+            <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/ State Board with Physics and Mathematics as compulsory subjects alongwith one of the Chemistry/Computer Science/Technical Vocational Subject. Candidate must obtained minimum 45% marks or equivalent grade for GEN/OBC and 40% marks or equivalent grade for SC/ST Category in the above subjects taken together.</p>
+        `,
+    },
+    {
+        course: "B.Tech. + M.Tech. in Electronics & Communication Engineering",
+        duration: "5 Years",
+        eligibility: "Click",
+        fee: "Rs. 1,32,000/-",
+        eligibilityContent: `
+            <h2 class='font-bold  flex justify-center  text-lg mb-3'>B.Tech. + M.Tech. in Electronics & Communication Engineering</h2>
+            <p>Candidate must have passed 3 or 4 year Diploma in technical stream from institutions recognized by AICTE or a State Board of Technical Education or B.Sc. degree in Biology/ Microbiology/ Botony/ Zoology/ Chemistry/ Physics/ Maths/ Physiology/ Biotechnology/ Biochemistry/ Agriculture with minimum aggregate marks of 45% or 5.0 CGPA for GEN/OBC and 40% marks or 4.5 CGPA for SC/ST Category.<br>
+            &nbsp;</p>
+        `,
+    },
+]
+};
+export const postGraduateFeeData: FeeTableData = {
+  columns: ["COURSES", "Duration", "Eligibility Criteria", "Course Fees (PA)"],
+
+  rows: [
+    {
+        course: "M.Tech. in Renewable Energy & Energy Audit",
+        duration: "2 Years",
+        eligibility: "Click",
+        fee: "Rs. 1,07,000/-",
+        eligibilityContent: `
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>M.Tech. in Renewable Energy & Energy Audit</h2>
+            <p>Candidate must have passed B. Tech from any recognised University or AICTE recognised Institute/College with minimum aggregate marks of 50% or 5.5 CGPA for GEN/OBC and 45% marks or 5.0 CGPA for SC/ST Category. Candidate will be offered admission in M. Tech. only in that stream of Engineering in which he has obtained B. Tech.</p>
+        `,
+    },
+    {
+        course: "M.Tech. in Renewable Energy & Energy Audit (Part Time)",
+        duration: "3 Years",
+        eligibility: "Click",
+        fee: "Rs. 69,000/-",
+        eligibilityContent: `
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>M.Tech. in Renewable Energy & Energy Audit (Part Time)</h2>
+            <p>Candidate must have passed B. Tech from any recognised University or AICTE recognised Institute/College with minimum aggregate marks of 50% or 5.5 CGPA for GEN/OBC and 45% marks or 5.0 CGPA for SC/ST Category. Candidate will be offered admission in M. Tech. only in that stream of Engineering in which he has obtained B. Tech.</p>
+            <p>In addition to the above mentioned basic M. Tech (Regular) eligibility, candidates must have at least 2 years Teaching/Industrial/Research/Professional Work Experience for 3 years M. Tech (Part Time) in CE, ME, CS, EC &amp; EE.</p>
+        `,
+    },
+    {
+        course: "M.Tech. in Digital Communication",
+        duration: "2 Years",
+        eligibility: "Click",
+        fee: "Rs. 1,07,000/-",
+        eligibilityContent: `
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>M.Tech. in Digital Communication</h2>
+            <p>Candidate must have passed B. Tech from any recognised University or AICTE recognised Institute/College with minimum aggregate marks of 50% or 5.5 CGPA for GEN/OBC and 45% marks or 5.0 CGPA for SC/ST Category. Candidate will be offered admission in M. Tech. only in that stream of Engineering in which he has obtained B. Tech.</p>
+        `,
+    },
+    {
+        course: "M.Tech. in Digital Communication (Part Time)",
+        duration: "3 Years",
+        eligibility: "Click",
+        fee: "Rs. 69,000/-",
+        eligibilityContent: `
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>M.Tech. in Digital Communication (Part Time)</h2>
+            <p>Candidate must have passed B. Tech from any recognised University or AICTE recognised Institute/College with minimum aggregate marks of 50% or 5.5 CGPA for GEN/OBC and 45% marks or 5.0 CGPA for SC/ST Category. Candidate will be offered admission in M. Tech. only in that stream of Engineering in which he has obtained B. Tech.</p>
+            <p>In addition to the above mentioned basic M. Tech (Regular) eligibility, candidates must have at least 2 years Teaching/Industrial/Research/Professional Work Experience for 3 years M. Tech (Part Time) in CE, ME, CS, EC &amp; EE.</p>
+        `,
+    },
+    {
+        course: "M.Tech. in Power Electronics & Electric Drives",
+        duration: "2 Years",
+        eligibility: "Click",
+        fee: "Rs. 1,07,000/-",
+        eligibilityContent: `
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>M.Tech. in Power Electronics & Electric Drives</h2>
+            <p>Candidate must have passed B. Tech from any recognised University or AICTE recognised Institute/College with minimum aggregate marks of 50% or 5.5 CGPA for GEN/OBC and 45% marks or 5.0 CGPA for SC/ST Category. Candidate will be offered admission in M. Tech. only in that stream of Engineering in which he has obtained B. Tech.</p>
+        `,
+    },
+    {
+        course: "M.Tech. in Power Electronics & Electric Drives (Part Time)",
+        duration: "3 Years",
+        eligibility: "Click",
+        fee: "Rs. 69,000/-",
+        eligibilityContent: `
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>M.Tech. in Power Electronics & Electric Drives (Part Time)</h2>
+            <p>Candidate must have passed B.Tech. (CSE) from any recognized University or AICTE recognized Institute/College with minimum aggregate marks of 50% or 5.5 CGPA for GEN/OBC and 45% marks or 5.0 CGPA for SC/ST Category.</p>
+            <p>OR</p>
+            <p>Candidate must have passed MCA/M.Sc.(CS)/MA(CA)/M.Sc.(IT)/M.Sc.(Electronics)/B.Tech. (EC) from any recognized University or AICTE recognized Institute/College with minimum aggregate marks of 50% or 5.5 CGPA for GEN/OBC and 45% marks or 5.0 CGPA for SC/ST Category.</p>
+            <p>In addition to above mentioned basic M.Tech. (Regular) eligibility, candidates must have at least 2 years of Teaching/Industrial/Research/Professional Work Experience for 3 years M.Tech. (Part Time) program.</p>
+        `,
+    },
+    {
+        course: "M.Tech. in Electric Vehicle Technology",
+        duration: "2 Years",
+        eligibility: "Click",
+        fee: "Rs. 1,07,000/-",
+        eligibilityContent: `
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>M.Tech. in Electric Vehicle Technology</h2>
+            <p>Candidate must have passed B. Tech from any recognised University or AICTE recognised Institute/College with minimum aggregate marks of 50% or 5.5 CGPA for GEN/OBC and 45% marks or 5.0 CGPA for SC/ST Category. Candidate will be offered admission in M. Tech. only in that stream of Engineering in which he has obtained B. Tech.</p>
+        `,
+    },
+    {
+        course: "M.Tech. in Electric Vehicle Technology (Part Time)",
+        duration: "3 Years",
+        eligibility: "Click",
+        fee: "Rs. 69,000/-",
+        eligibilityContent: `
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>M.Tech. in Electric Vehicle Technology (Part Time)</h2>
+            <p>Candidate must have passed B. Tech from any recognised University or AICTE recognised Institute/College with minimum aggregate marks of 50% or 5.5 CGPA for GEN/OBC and 45% marks or 5.0 CGPA for SC/ST Category. Candidate will be offered admission in M. Tech. only in that stream of Engineering in which he has obtained B. Tech.</p>
+            <p>In addition to the above mentioned basic M. Tech (Regular) eligibility, candidates must have at least 2 years Teaching/Industrial/Research/Professional Work Experience for 3 years M. Tech (Part Time) in CE, ME, CS, EC &amp; EE.</p>
+        `,
+    },
+]
+};
+export const underGraduateFeeData: FeeTableData = {
+  columns: ["COURSES", "Duration", "Eligibility Criteria", "Course Fees (PA)"],
+
+  rows:[
+    {
+        course: "B.Tech. + M.Tech. in Electrical Engineering",
+        duration: "5 Years",
+        eligibility: "Click",
+        fee: "Rs. 1,32,000/-",
+        eligibilityContent: `
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Tech. + M.Tech. in Electrical Engineering</h2>
+            <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/ State Board with Physics and Mathematics/Biology as compulsory subject alongwith Chemistry/ Biotechnology/ Computer Science/Technical Vocational Subject. Candidate must obtained minimum marks of 45% or equivalent grade for GEN/OBC and 40% marks or equivalent grade for SC/ST Category in the above subjects taken together.</p>
+        `,
+    },
+    {
+        course: "B.Tech in EE + M.B.A.",
+        duration: "5 Years",
+        eligibility: "Click",
+        fee: "Rs. 1,32,000/-",
+        eligibilityContent: `
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Tech in EE + M.B.A.</h2>
+            <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/ State Board with Physics and Mathematics as compulsory subjects alongwith one of the Chemistry/Computer Science/Technical Vocational Subject. Candidate must obtained minimum 45% marks or equivalent grade for GEN/OBC and 40% marks or equivalent grade for SC/ST Category in the above subjects taken together.<br>
+&nbsp;</p>
+        `,
+    },
+    {
+        course: "B.Tech. in ECE + M.B.A.",
+        duration: "5 Years",
+        eligibility: "Click",
+        fee: "Rs. 1,32,000/-",
+        eligibilityContent: `
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Tech. in ECE + M.B.A.</h2>
+            <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/ State Board with Physics and Mathematics as compulsory subjects alongwith one of the Chemistry/Computer Science/Technical Vocational Subject. Candidate must obtained minimum 45% marks or equivalent grade for GEN/OBC and 40% marks or equivalent grade for SC/ST Category in the above subjects taken together.</p>
+        `,
+    },
+    {
+        course: "B.Tech. in Electrical Engineering (Lateral Entry)",
+        duration: "3 Years",
+        eligibility: "Click",
+        fee: "Rs. 1,37,000/-",
+        eligibilityContent: `
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Tech. in Electrical Engineering (Lateral Entry)</h2>
+            <p>Candidate must have passed 3 or 4 year Diploma in technical stream from institutions recognized by AICTE or a State Board of Technical Education or B.Sc. degree in Biology/ Microbiology/ Botony/ Zoology/ Chemistry/ Physics/ Maths/ Physiology/ Biotechnology/ Biochemistry/ Agriculture with minimum aggregate marks of 45% or 5.0 CGPA for GEN/OBC and 40% marks or 4.5 CGPA for SC/ST Category.</p>
+            <section>&nbsp;</section>
+        `,
+    },
+    {
+        course: "B.Tech. in Electrical Engineering",
+        duration: "4 Years",
+        eligibility: "Click",
+        fee: "Rs. 1,32,000/-",
+        eligibilityContent: `
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Tech. in Electrical Engineering</h2>
+            <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/ State Board with Physics and Mathematics as compulsory subjects along with one of the Chemistry/Computer Science/Technical Vocational Subject with minimum aggregate marks of 45%.</p>
+            <section>&nbsp;</section>
+        `,
+    },
+    {
+        course: "B.Tech. in Electronics & Communication Engineering",
+        duration: "4 Years",
+        eligibility: "Click",
+        fee: "Rs. 1,32,000/-",
+        eligibilityContent: `
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Tech. in Electronics & Communication Engineering</h2>
+            <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/ State Board with Physics and Mathematics as compulsory subjects along with one of the Chemistry/Computer Science/Technical Vocational Subject with minimum aggregate marks of 45%.</p>
+            <section>&nbsp;</section>
+        `,
+    },
+    {
+        course: "B.Tech. in Electronics & Communication Engineering (Lateral Entry)",
+        duration: "3 Years",
+        eligibility: "Click",
+        fee: "Rs. 1,37,000/-",
+        eligibilityContent: `
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Tech. in Electronics & Communication Engineering (Lateral Entry)</h2>
+            <p>Candidate must have passed 3 or 4 year Diploma in technical stream from institutions recognized by AICTE or a State Board of Technical Education or B.Sc. degree in Biology/ Microbiology/ Botony/ Zoology/ Chemistry/ Physics/ Maths/ Physiology/ Biotechnology/ Biochemistry/ Agriculture with minimum aggregate marks of 45% or 5.0 CGPA for GEN/OBC and 40% marks or 4.5 CGPA for SC/ST Category.</p>
+            <section>&nbsp;</section>
+        `,
+    },
+    {
+        course: "B.Tech. + M.Tech. in Electronics & Communication Engineering",
+        duration: "5 Years",
+        eligibility: "Click",
+        fee: "Rs. 1,32,000/-",
+        eligibilityContent: `
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Tech. + M.Tech. in Electronics & Communication Engineering</h2>
+            <p>Candidate must have passed 3 or 4 year Diploma in technical stream from institutions recognized by AICTE or a State Board of Technical Education or B.Sc. degree in Biology/ Microbiology/ Botony/ Zoology/ Chemistry/ Physics/ Maths/ Physiology/ Biotechnology/ Biochemistry/ Agriculture with minimum aggregate marks of 45% or 5.0 CGPA for GEN/OBC and 40% marks or 4.5 CGPA for SC/ST Category.<br>
+&nbsp;</p>
+        `,
+    },
+    {
+        course: "B.Tech. in EE (EV Engineering) with L&T",
+        duration: "4 Years",
+        eligibility: "Click",
+        fee: "Rs. 1,46,375/-",
+        eligibilityContent: `
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Tech. in EE (EV Engineering) with L&T</h2>
+            <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/ State Board with Physics and Mathematics as compulsory subjects along with one of the Chemistry/Computer Science/Technical Vocational Subject with minimum aggregate marks of 45%.</p>
+            <section>&nbsp;</section>
+        `,
+    },
+    {
+        course: "B.Tech. in EE (EV Engineering) (Lateral Entry) with L&T",
+        duration: "3 Years",
+        eligibility: "Click",
+        fee: "Rs. 1,51,375/-",
+        eligibilityContent: `
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Tech. in EE (EV Engineering) (Lateral Entry) with L&T</h2>
+            <p>Candidate must have passed 3 or 4 year Diploma in technical stream from institutions recognized by AICTE or a State Board of Technical Education or B.Sc. degree in Biology/ Microbiology/ Botony/ Zoology/ Chemistry/ Physics/ Maths/ Physiology/ Biotechnology/ Biochemistry/ Agriculture with minimum aggregate marks of 45% or 5.0 CGPA for GEN/OBC and 40% marks or 4.5 CGPA for SC/ST Category.</p>
+            <section>&nbsp;</section>
+        `,
+    },
+    {
+        course: "B.Tech. in ECE (EV Engineering) with L&T",
+        duration: "4 Years",
+        eligibility: "Click",
+        fee: "Rs. 1,46,375/-",
+        eligibilityContent: `
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Tech. in ECE (EV Engineering) with L&T</h2>
+            <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/ State Board with Physics and Mathematics as compulsory subjects along with one of the Chemistry/Computer Science/Technical Vocational Subject with minimum aggregate marks of 45%.</p>
+            <section>&nbsp;</section>
+        `,
+    },
+    {
+        course: "B.Tech. in ECE (EV Engineering) (Lateral Entry) with L&T",
+        duration: "3 Years",
+        eligibility: "Click",
+        fee: "Rs. 1,51,375/-",
+        eligibilityContent: `
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Tech. in ECE (EV Engineering) (Lateral Entry) with L&T</h2>
+            <p>Candidate must have passed 3 or 4 year Diploma in technical stream from institutions recognized by AICTE or a State Board of Technical Education or B.Sc. degree in Biology/ Microbiology/ Botony/ Zoology/ Chemistry/ Physics/ Maths/ Physiology/ Biotechnology/ Biochemistry/ Agriculture with minimum aggregate marks of 45% or 5.0 CGPA for GEN/OBC and 40% marks or 4.5 CGPA for SC/ST Category.</p>
+            <section>&nbsp;</section>
+        `,
+    },
+]
+};
+
+export const facultyDetails = [
+  [
+    {
+      id: 1,
+      name: "Dr. Vijay Laxmi Mishra",
+      designation: "Assistant Professor",
+      image: vijayLaxmi,
+      cardBgColor: "transparent",
+    },
   ],
+  [
+    {
+      id: 2,
+      name: "Dr. Mritunjay Rai",
+      designation: "Assistant Professor",
+      image: mritunjayRai,
+      cardBgColor: "transparent",
+    },
+  ],
+  [
+    {
+      id: 3,
+      name: "Dr. Vaibhava Srivastava",
+      designation: "Assistant Professor",
+      image: vaibhavaSrivastava,
+      cardBgColor: "transparent",
+    },
+  ],
+  [
+    {
+      id: 4,
+      name: "Mr. Pappu Kumar",
+      designation: "Assistant Professor",
+      image: pappu,
+      cardBgColor: "transparent",
+    },
+  ],
+  [
+    {
+      id: 5,
+      name: "Dr. Chhavi Mitharwal",
+      designation: "Assistant Professor",
+      image: chhaviMitharwal,
+      cardBgColor: "transparent",
+    },
+  ],
+  [
+    {
+      id: 6,
+      name: "Dr. Gaurav Verma",
+      designation: "Assistant Professor",
+      image: gauravVerma,
+      cardBgColor: "transparent",
+    },
+  ],
+  [
+    {
+      id: 7,
+      name: "Mr. Rohit Kumar",
+      designation: "Assistant Professor",
+      image: rohitKumar,
+      cardBgColor: "transparent",
+    },
+  ],
+  [
+    {
+      id: 8,
+      name: "Mr. Sandeep Tiwari",
+      designation: "Assistant Professor",
+      image: sandeepTiwari,
+      cardBgColor: "transparent",
+    },
+  ],
+  [
+    {
+      id: 9,
+      name: "Prof. (Dr.) R.S. Bajpai",
+      designation: "Professor",
+      image: rsBajpai,
+      cardBgColor: "transparent",
+    },
+  ],
+  [
+    {
+      id: 10,
+      name: "Ms. Shivani Singh",
+      designation: "Assistant Professor-On Maternity Leave",
+      image: shivaniSingh,
+      cardBgColor: "transparent",
+    },
+  ],
+  [
+    {
+      id: 11,
+      name: "Dr. Shubham Mishra",
+      designation: "Assistant Professor",
+      image: shubhaMishra,
+      cardBgColor: "transparent",
+    },
+  ],
+  [
+    {
+      id: 12,
+      name: "Mr. Sandeep Dixit",
+      designation: "Assistant Professor",
+      image: sandeepDixit,
+      cardBgColor: "transparent",
+    },
+  ],
+  [
+    {
+      id: 13,
+      name: "Dr. Jay Kumar Pandey",
+      designation: "Assistant Professor",
+      image: jayKumarPandey,
+      cardBgColor: "transparent",
+    },
+  ],
+  [
+    {
+      id: 14,
+      name: "Mr. Anand Prakash Pandey",
+      designation: "Assistant Professor",
+      image: anandPrakash,
+      cardBgColor: "transparent",
+    },
+  ],
+  [
+    {
+      id: 15,
+      name: "Mr. Abhishek Kumar Saxena",
+      designation: "Assistant Professor",
+      image: abhishekSaxena,
+      cardBgColor: "transparent",
+    },
+  ],
+  [
+    {
+      id: 16,
+      name: "Dr. Alkesh Agarwal",
+      designation: "Associate Professor",
+      image: alkesh,
+      cardBgColor: "transparent",
+    },
+  ],
+];
 
-  imageUrl: misionImg,
-  bgColor: "#E9F4FF",
-};
-
-const visiondata = {
- 
-      title: "Vision",
-      description: [
-        "To impart quality education in the field of Electrical & Electronics Engineering and to produce globally competent engineers to serve the society.",
-      ],
-      imageUrl: visionImg,
-      bgColor: "#FFF8EA",
-    
-};
-
-
-export const missionandvisionofelectricalandelectronicsengineering = {
-  vision: visiondata,
-  mission: misiondata,
-  backgroundColor: "#E9F4FF",
-};
+export const DepartmentOfElectricalAndElectronicsEngineeringVMData = [
+  {
+    id: 1,
+    bgColor: "#E5F3FC",
+    img: misionImg,
+    heading: "Mission",
+    points: [
+      "To prepare engineering graduates with deep understanding of the fundamentals of Electrical & Electronics Engineering.",
+      "To collaborate with industry, research organizations and academia for encouraging creativity and innovation.",
+      "To achieve excellence in teaching and to provide a platform for developing new products and systems that can help industry and society as a whole.",
+    ],
+  },
+  {
+    id: 2,
+    bgColor: "#FFF2D2",
+    img: visionImg,
+    heading: "Vision",
+    points: [
+      "To impart quality education in the field of Electrical & Electronics Engineering and to produce globally competent engineers to serve the society.",
+    ],
+  },
+];

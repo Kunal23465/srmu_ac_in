@@ -134,7 +134,7 @@ function CustomDepartmentSlider<T>({
                     <button
                         onClick={handlePrev}
                         disabled={isAtStart}
-                        className={`border-2 w-[48px] h-[48px] flex items-center justify-center text-lg transition font-semibold ${isAtStart ? "opacity-40 cursor-not-allowed" : "hover:cursor-pointer"
+                        className={`border-2 w-12 h-12 flex items-center justify-center text-lg transition font-semibold ${isAtStart ? "opacity-40 cursor-not-allowed" : "hover:cursor-pointer"
                             }`}
                         style={{
                             borderColor: arrowBorderColor,
@@ -149,7 +149,7 @@ function CustomDepartmentSlider<T>({
                     <button
                         onClick={handleNext}
                         disabled={isAtEnd}
-                        className={`border-2 w-[48px] h-[48px] flex items-center justify-center text-lg transition font-semibold ${isAtEnd ? "opacity-40 cursor-not-allowed" : "hover:cursor-pointer"
+                        className={`border-2 w-12 h-12 flex items-center justify-center text-lg transition font-semibold ${isAtEnd ? "opacity-40 cursor-not-allowed" : "hover:cursor-pointer"
                             }`}
                         style={{
                             borderColor: arrowBorderColor,
@@ -198,3 +198,4 @@ export default CustomDepartmentSlider;
 
 
 
+ 
