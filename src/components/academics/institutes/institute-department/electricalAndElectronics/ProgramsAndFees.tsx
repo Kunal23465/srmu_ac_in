@@ -4,28 +4,30 @@ import CustomDepartmentFeeDetailsTable from "../../../../../utils/custom/CustomD
 import { industryHonorsFeeData, integratedFeeData, postGraduateFeeData, underGraduateFeeData } from "../../../../../data/academics/institute/department-of-electrical-and-electronics-engineering-data";
 
 const ProgramsAndFees: FC = () => {
-  const items = [
-    {
-      key: "1",
-      label: "Industry Honors",
-      content: <CustomDepartmentFeeDetailsTable data={industryHonorsFeeData} />,
-    },
-    {
-      key: "2",
-      label: "Integrated",
-      content: <CustomDepartmentFeeDetailsTable data={integratedFeeData} />,
-    },
-    {
-      key: "3",
-      label: "Postgraduate",
-      content: <CustomDepartmentFeeDetailsTable data={postGraduateFeeData} />,
-    },
-    {
-      key: "4",
-      label: "Undergraduate",
-      content: <CustomDepartmentFeeDetailsTable data={underGraduateFeeData} />,
-    },
-  ];
+
+   const items = [
+      {
+        key: "1",
+        label: "Industry Honors",
+        content: <CustomDepartmentFeeDetailsTable data={industryHonorsFeeData} />,
+      },
+      {
+        key: "2",
+        label: "Integrated",
+        content: <CustomDepartmentFeeDetailsTable data={integratedFeeData} />,
+      },
+      {
+        key: "3",
+        label: "Postgraduate",
+        content: <CustomDepartmentFeeDetailsTable data={postGraduateFeeData} />,
+      },
+      {
+        key: "4",
+        label: "Undergraduate",
+        content: <CustomDepartmentFeeDetailsTable data={underGraduateFeeData} />,
+      },
+    ];
+
   return (
     <div className="flex   flex-col items-center justify-center gap-3">
       <h1 className="text-4xl font-bold mb-4 mt-7 ">Programs and Fees</h1>
@@ -43,6 +45,7 @@ const ProgramsAndFees: FC = () => {
         activeBgColor="#ffb703"
         inactiveBgColor="#0f4a85"
         pillContainerBgColor="#0f4a85"
+        alignTabs="center"
       />
     </div>
   );

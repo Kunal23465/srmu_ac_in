@@ -97,6 +97,7 @@ import ConferenceDetailPage from "../components/research/publication/conference/
 import DepartmentOfElectricalAndElectronicsEngineeringPage from "../pages/academics/institutes/institute-department/DepartmentOfElectricalAndElectronicsEngineeringPage";
 import FacultyOfMechanicalEngineeringPage from "../pages/academics/institutes/institute-department/FacultyOfMechanicalEngineeringPage";
 import DepartmentOfCSEPage from "../pages/academics/institutes/institute-department/DepartmentOfCSEPage";
+import FacultyOfAlliedHealthSciencesPage from "../pages/academics/institutes/institute-department/FacultyOfAlliedHealthSciencesPage";
 interface IMatches {
   pathname: string;
   params: Params<string>;
@@ -285,14 +286,21 @@ export const routes = [
               },
               {
                 path: "faculty-of-mechanical-engineering",
-                element: (
-                  <FacultyOfMechanicalEngineeringPage />
-                ),
+                element: <FacultyOfMechanicalEngineeringPage />,
                 handle: {
                   crumb: () => (
                     <Link to="/">
                       Department of Electrical and Electronics Engineering
                     </Link>
+                  ),
+                },
+              },
+              {
+                path: "faculty-of-allied-health-sciences",
+                element: <FacultyOfAlliedHealthSciencesPage />,
+                handle: {
+                  crumb: () => (
+                    <Link to="/">Faculty Of Allied Health Sciences</Link>
                   ),
                 },
               },
