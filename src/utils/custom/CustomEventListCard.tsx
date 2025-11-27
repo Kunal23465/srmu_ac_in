@@ -20,7 +20,7 @@ const CustomEventCard: React.FC<EventCardProps> = ({ item }) => {
         <div
             key={item.id}
             className="rounded-xl shadow-md p-8 border border-yellow-500 transition h-full"
-            style={{    
+            style={{
                 backgroundColor: item.cardBgColor || "white",
             }}
         >

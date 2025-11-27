@@ -136,7 +136,7 @@ const CustomInstituteProfileCard: React.FC<CustomInstituteProfileCardProps> = ({
           content={
             <div className="text-black text-[17px] leading-relaxed">
               <h2 className="font19  fw500 mb-4 text-[#0f4a85]">{profile.name}</h2>
-              {profile.modalContent.split("\n").map((p, i) => (
+              {profile?.modalContent?.split("\n").map((p, i) => (
                 <p key={i}>{formatBold(p)}</p>
               ))}
             </div>

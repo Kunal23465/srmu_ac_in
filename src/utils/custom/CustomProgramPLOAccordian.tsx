@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Classes from "../../utils/styles/Global.module.css";
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 
-interface CustomProgramPLOAccordianProps {
+export interface CustomProgramPLOAccordianProps {
   POdata: { id: string | number; content: string }[];
   PLOdata: { id: string | number; content: string }[];
   PSOdata: { id: string | number; content: string }[];
