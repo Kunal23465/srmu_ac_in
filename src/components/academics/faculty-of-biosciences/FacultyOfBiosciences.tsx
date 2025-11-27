@@ -3,6 +3,8 @@ import CustomDepartmentVissionMission from "../../../utils/custom/CustomDepartme
 import Classes from "../../../utils/styles/Global.module.css";
 import CustomOverviewSection from "../../scholarship/ScholarshipOverviewSection";
 import {
+  bioscienceDepartmentEventsData,
+  bioscienceHighlightsData,
   counterDataFoFacultyOfBiosciencess,
   counterDataForPlacedStudentsOFBioscience,
   facultyDetailsOfBioScienceDepartment,
@@ -24,6 +26,9 @@ import CustomPlacedStudentTable, {
 } from "../../../utils/custom/CustomPlacedStudentTable";
 import { instituteFooterData } from "../../../data/academics/institute/department-of-electrical-and-electronics-engineering-data";
 import CustomTopFooter from "../../../utils/custom/CustomTopFooter";
+import CustomDepartmentHighlightCard from "../../../utils/custom/CustomDepartmentHighlightCard";
+import CustomEventCard from "../../../utils/custom/CustomEventListCard";
+import CustomDepartmentEventSlider from "../../../utils/custom/CustomDepartmentEventSlider";
 
 const FacultyOfBiosciences = () => {
   const items = [
@@ -436,6 +441,26 @@ const FacultyOfBiosciences = () => {
           />
         </div>
       </section>
+
+      <CustomDepartmentSlider
+        heading="Key Highlights of Our Department"
+        description=""
+        data={bioscienceHighlightsData}
+        renderCard={({ item }) => <CustomDepartmentHighlightCard item={item} />}
+        bgColor="#f8b922"
+        arrowColor="#000"
+        breakpoints={{ desktop: 3, tablet: 2, mobile: 1 }}
+      />
+
+      <CustomDepartmentEventSlider
+        heading="Events of Department"
+        description="SRMU is committed to leveraging its facilities and the system to world-class standards, with a goal to provide the best academic professional resources, to prepare its students for global opportunities. This makes SRMU a repository of academic and extra-curricular excellence."
+        data={bioscienceDepartmentEventsData}
+        renderCard={({ item }) => <CustomEventCard item={item} />}
+        bgColor="#ffffff"
+        arrowColor="#96a9c4"
+        arrowBorderColor="#0f4a85"
+      />
 
       <CustomTopFooter data={instituteFooterData} />
     </div>
