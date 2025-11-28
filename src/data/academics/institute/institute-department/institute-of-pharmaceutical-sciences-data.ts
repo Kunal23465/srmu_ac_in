@@ -17,6 +17,7 @@ import SafaImg from "../../../../assets/images/academics/departments/default-img
 import RaghvendraImg from "../../../../assets/images/academics/departments/default-img.png";
 import IteeImg from "../../../../assets/images/academics/departments/default-img.png";
 import AnshikaImg from "../../../../assets/images/academics/departments/default-img.png";
+import { EventItem } from "../../../../utils/custom/CustomEventListCard";
 
 
 
@@ -250,6 +251,7 @@ export const InstituteofPharmaceuticalSciencesfacultyData: FacultyItem[] = [
 
 
 
-
+export const InstituteofPharmaceuticalSciencesDepartmentEventsData: EventItem[] = [
+]
 
 
