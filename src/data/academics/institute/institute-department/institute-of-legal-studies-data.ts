@@ -25,28 +25,6 @@ export const InstituteofLegalStudiesTopFooterData = [
   },
 ];
 
-export const InstituteofLegalStudiesvisionMissionData = {
-  backgroundColor: "#F3F7FF",
-
-  vision: {
-    title: "Vision",
-    description: [
-      "To provide excellent law data base, teaching and learning of law to develop in the students, research scholars a sense of responsibility to serve the society by developing skills in advocacy, judicial services and other legal services.",
-    ],
-    imageUrl: vision,
-  },
-
-  mission: {
-    title: "Mission",
-    description: [
-      "To advance, disseminate learning with knowledge of law and legal process and their role in national development.",
-      "To update students in the right culture of Legal Education so that students become highly technical with advancements in field of law and to make them competent lawyers, judges, legal experts and academicians.",
-      "To organize seminars, symposiums, conferences, and moot courts to promote legal knowledge and legal process.",
-      "To make students competent to face any challenge in their professional and behavioral aspects of life, which become our motif and forte."
-    ],
-    imageUrl: mission,
-  },
-};
 
 export const InstituteofLegalStudiesCounterData1 = {
   counterData: [
