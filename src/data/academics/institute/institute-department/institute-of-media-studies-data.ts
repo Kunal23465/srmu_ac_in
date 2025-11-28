@@ -38,34 +38,6 @@ export const InstituteofMediaStudiesTopFooterData = [
 ];
 
 
-
-export const InstituteofMediaStudiesvisionMissionData = {
-  backgroundColor: "#F3F7FF",
-  
-  vision: {
-    title: "Vision",
-    description: [
-      "To be an institution of excellence in the field of communication, journalism and research."
-    ],
-    buttonText: "View Mission",
-    buttonBgColor: "bg-blue-500",
-    imageUrl: vision
-  },
-
-  mission: {
-    title: "Mission",
-    description: [
-      "To make mass communicator and Journalist with social consciences.",
-      "To develop creative and critical thinking with human touch among our students.",
-      "To enlighten and enrich the educational experience by providing pragmatic learning.",
-      "To inculcate professional ethics and value system among media students."
-    ],
-    buttonText: "Back to Vision",
-    buttonBgColor: "bg-orange-500",
-    imageUrl: mission
-  }
-};
-
 export const InstituteofMediaStudiesCounterData1 = {
   counterData: [
     {
