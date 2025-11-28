@@ -15,6 +15,7 @@ import {
   InstituteofEducationandResearchinstituteProfiles,
   placedStudents,
   tableHeaders,
+  InstituteofEducationandResearchDepartmentEventsData,
   } from "../../../../../data/academics/institute/institute-department/institute-of-education-and-research-data";
 import Counter from "../../../../../utils/custom/Counter";
 import CustomDepartmentVissionMission from "../../../../../utils/custom/CustomDepartmentVissionMission";
@@ -26,6 +27,8 @@ import CustomFacultyListCard from "../../../../../utils/custom/CustomFacultyList
 import facilitiesBg from '../../../../../assets/images/academics/departments/facilities-bg-lg.jpeg'
 import CustomDepartmentHighlightCard from "../../../../../utils/custom/CustomDepartmentHighlightCard";
 import CustomPlacedStudentTable from "../../../../../utils/custom/CustomPlacedStudentTable";
+import CustomDepartmentEventSlider from "../../../../../utils/custom/CustomDepartmentEventSlider";
+import CustomEventCard from "../../../../../utils/custom/CustomEventListCard";
 
 
 const InstituteofEducationandResearch: React.FC = () => {
@@ -124,7 +127,15 @@ const InstituteofEducationandResearch: React.FC = () => {
 
                 breakpoints={{ desktop: 3, tablet: 2, mobile: 1 }}
             />
-
+   <CustomDepartmentEventSlider
+        heading="Events of Department"
+        description="SRMU is committed to leveraging its facilities and the system to world-class standards, with a goal to provide the best academic professional resources, to prepare its students for global opportunities. This makes SRMU a repository of academic and extra-curricular excellence."
+        data={InstituteofEducationandResearchDepartmentEventsData}
+        renderCard={({ item }) => <CustomEventCard item={item} />}
+        bgColor="#ffffff"
+        arrowColor="#96a9c4"
+        arrowBorderColor="#0f4a85"
+      />
       <CustomTopFooter data={InstituteofEducationandResearchTopFooterData} />
     </div>
   );
