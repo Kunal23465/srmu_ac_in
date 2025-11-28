@@ -18,7 +18,43 @@ import dep2 from "../../../assets/images/programs/btechincseaiandml/dep2.jpg"
 import dep3 from "../../../assets/images/programs/btechincseaiandml/dep3.jpg"
 import dep4 from "../../../assets/images/programs/btechincseaiandml/dep4.jpg"
 import { CustomProgramPLOAccordianProps } from "../../../utils/custom/CustomProgramPLOAccordian";
+import { OpportunityCard } from "../../../types/opportunity-card-data-type";
 
+
+import MBA21 from "../../../assets/images/programs/btechincseaiandml/opportunities/mba21-03022401044691.jpg"
+import MBA31 from "../../../assets/images/programs/btechincseaiandml/opportunities/business-anlaytics-03022401050797.jpg"
+import MBA41 from "../../../assets/images/programs/btechincseaiandml/opportunities/computer-science1-03022411495890.jpg"
+import MBA51 from "../../../assets/images/programs/btechincseaiandml/opportunities/datascience.jpg"
+import { ScopeData } from "../../../utils/custom/CustomCompaniesScope";
+
+import bhel from "../../../assets/images/programs/btechincseaiandml/opportunities/scope/bhel-2012231030115 (1).jpg"
+import bsnl from "../../../assets/images/programs/btechincseaiandml/opportunities/scope/bsnl-20122310325462.jpg"
+import railways from "../../../assets/images/programs/btechincseaiandml/opportunities/scope/indian-railways-20122311083691.jpg"
+import isro from "../../../assets/images/programs/btechincseaiandml/opportunities/scope/isro-20122311090498.jpg"
+import nic from "../../../assets/images/programs/btechincseaiandml/opportunities/scope/nic-20122311081352.jpg"
+import nsdl from "../../../assets/images/programs/btechincseaiandml/opportunities/scope/nsdl-20122310322489.jpg"
+
+
+import amazon from "../../../assets/images/programs/btechincseaiandml/opportunities/scope/amazon-09022401521498.png"
+import capgemini from "../../../assets/images/programs/btechincseaiandml/opportunities/scope/capgemini-09022401592242.png"
+import ibm from "../../../assets/images/programs/btechincseaiandml/opportunities/scope/ibm-09022402035067.png"
+import google from "../../../assets/images/programs/btechincseaiandml/opportunities/scope/google-09022402425589.png"
+import microsoft from "../../../assets/images/programs/btechincseaiandml/opportunities/scope/microsoft-09022402444343.png"
+import cedcoss from "../../../assets/images/programs/btechincseaiandml/opportunities/scope/cedcoss-19022412083134.png"
+import thoughtworks from "../../../assets/images/programs/btechincseaiandml/opportunities/scope/thoughtworks-15022403093028.png"
+import globallogic from "../../../assets/images/programs/btechincseaiandml/opportunities/scope/globallogic-1902241229356.png"
+import accenture1 from "../../../assets/images/programs/btechincseaiandml/opportunities/scope/accenture1-19022412430348.png"
+import sopra from "../../../assets/images/programs/btechincseaiandml/opportunities/scope/sopra-steria-logo.svg-21022405241254.png"
+import cognizant from "../../../assets/images/programs/btechincseaiandml/opportunities/scope/cognizant-09022401240828.png"
+import tcs1 from "../../../assets/images/programs/btechincseaiandml/opportunities/scope/tcs-09022401312329.png"
+import infosys from "../../../assets/images/programs/btechincseaiandml/opportunities/scope/infosys-09022402390195.png"
+import phronesis from "../../../assets/images/programs/btechincseaiandml/opportunities/scope/phronesis-19022412021095.png"
+import unicode from "../../../assets/images/programs/btechincseaiandml/opportunities/scope/unicode-19022412132960.png"
+import srdt from "../../../assets/images/programs/btechincseaiandml/opportunities/scope/srdt-21022410530438.png"
+import intel from "../../../assets/images/programs/btechincseaiandml/opportunities/scope/intel-09022405520362.png"
+import josh from "../../../assets/images/programs/btechincseaiandml/opportunities/scope/josh-technology-20052511194750-removebg-preview-22052504291754.png"
+import facebookn from "../../../assets/images/programs/btechincseaiandml/opportunities/scope/facebookn-15022411032465.png"
+import qss from "../../../assets/images/programs/btechincseaiandml/opportunities/scope/qss-technosoft-21052501502590-removebg-preview-22052504251311.png"
 
 
 
@@ -393,107 +429,200 @@ export const abc: CustomProgramPLOAccordianProps = {
 
 
     PLOdata: [
-  {
-    id: 1,
-    content:
-      "Apply possessed knowledge of core subjects of production and industrial engineering to solve different problems.",
-  },
-  {
-    id: 2,
-    content:
-      "Problem analysis: Identify, formulate, research literature, and analyze complex engineering problems reaching substantiated conclusions using first principles of mathematics, natural sciences, and engineering sciences.",
-  },
-  {
-    id: 3,
-    content:
-      "Design/development of solutions: Design solutions for complex engineering problems and design system components or processes that meet the specified needs with appropriate consideration for the public health and safety, and the cultural, societal, and environmental considerations.",
-  },
-  {
-    id: 4,
-    content:
-      "Conduct investigations of complex problems: Use research-based knowledge and research methods including design of experiments, analysis and interpretation of data, and synthesis of the information to provide valid conclusions.",
-  },
-  {
-    id: 5,
-    content:
-      "Modern tool usage: Create, select, and apply appropriate techniques, resources, and modern engineering and IT tools including prediction and modeling to complex engineering activities with an understanding of the limitations.",
-  },
-  {
-    id: 6,
-    content:
-      "The engineer and society: Apply reasoning informed by the contextual knowledge to assess societal, health, safety, legal and cultural issues and the consequent responsibilities relevant to the professional engineering practice.",
-  },
-  {
-    id: 7,
-    content:
-      "Environment and sustainability: Understand the impact of the professional engineering solutions in societal and environmental contexts, and demonstrate the knowledge of, and need for sustainable development.",
-  },
-  {
-    id: 8,
-    content:
-      "Ethics: Apply ethical principles and commit to professional ethics and responsibilities and norms of the engineering practice.",
-  },
-  {
-    id: 9,
-    content:
-      "Individual and team work: Function effectively as an individual, and as a member or leader in diverse teams, and in multidisciplinary settings.",
-  },
-  {
-    id: 10,
-    content:
-      "Communication: Communicate effectively on complex engineering activities with the engineering community and with society at large, such as, being able to comprehend and write effective reports and design documentation, make effective presentations, and give and receive clear instructions.",
-  },
-  {
-    id: 11,
-    content:
-      "Project management and finance: Demonstrate knowledge and understanding of the engineering and management principles and apply these to one’s own work, as a member and leader in a team, to manage projects and in multidisciplinary environments.",
-  },
-  {
-    id: 12,
-    content:
-      "Life-long learning: Recognize the need for, and have the preparation and ability to engage in independent and life-long learning in the broadest context of technological change.",
-  },
-],
+        {
+            id: 1,
+            content:
+                "Apply possessed knowledge of core subjects of production and industrial engineering to solve different problems.",
+        },
+        {
+            id: 2,
+            content:
+                "Problem analysis: Identify, formulate, research literature, and analyze complex engineering problems reaching substantiated conclusions using first principles of mathematics, natural sciences, and engineering sciences.",
+        },
+        {
+            id: 3,
+            content:
+                "Design/development of solutions: Design solutions for complex engineering problems and design system components or processes that meet the specified needs with appropriate consideration for the public health and safety, and the cultural, societal, and environmental considerations.",
+        },
+        {
+            id: 4,
+            content:
+                "Conduct investigations of complex problems: Use research-based knowledge and research methods including design of experiments, analysis and interpretation of data, and synthesis of the information to provide valid conclusions.",
+        },
+        {
+            id: 5,
+            content:
+                "Modern tool usage: Create, select, and apply appropriate techniques, resources, and modern engineering and IT tools including prediction and modeling to complex engineering activities with an understanding of the limitations.",
+        },
+        {
+            id: 6,
+            content:
+                "The engineer and society: Apply reasoning informed by the contextual knowledge to assess societal, health, safety, legal and cultural issues and the consequent responsibilities relevant to the professional engineering practice.",
+        },
+        {
+            id: 7,
+            content:
+                "Environment and sustainability: Understand the impact of the professional engineering solutions in societal and environmental contexts, and demonstrate the knowledge of, and need for sustainable development.",
+        },
+        {
+            id: 8,
+            content:
+                "Ethics: Apply ethical principles and commit to professional ethics and responsibilities and norms of the engineering practice.",
+        },
+        {
+            id: 9,
+            content:
+                "Individual and team work: Function effectively as an individual, and as a member or leader in diverse teams, and in multidisciplinary settings.",
+        },
+        {
+            id: 10,
+            content:
+                "Communication: Communicate effectively on complex engineering activities with the engineering community and with society at large, such as, being able to comprehend and write effective reports and design documentation, make effective presentations, and give and receive clear instructions.",
+        },
+        {
+            id: 11,
+            content:
+                "Project management and finance: Demonstrate knowledge and understanding of the engineering and management principles and apply these to one’s own work, as a member and leader in a team, to manage projects and in multidisciplinary environments.",
+        },
+        {
+            id: 12,
+            content:
+                "Life-long learning: Recognize the need for, and have the preparation and ability to engage in independent and life-long learning in the broadest context of technological change.",
+        },
+    ],
 
 
-   PSOdata: [ 
-  {
-    id: 1,
-    content:
-      "Understand and develop computer programs in the areas related to algorithms, system software, multimedia, web design, big data analytics and networking by identifying, demonstrating and analyzing the knowledge of engineering in efficient design of computer-based systems of varying complexity.",
-  },
-  {
-    id: 2,
-    content:
-      "Applying algorithmic principles, innovative Computer science and engineering design and implementation skills to propose optimal solutions to complex problems by choosing a better platform for research in emerging areas.",
-  },
-  {
-    id: 3,
-    content:
-      "Identify standard Software Engineering practices and strategies by applying software project development methods using open-source programming environment to design and evaluate a quality product for business success.",
-  },
-  {
-    id: 4,
-    content:
-      "Demonstrate and examine basic understanding of engineering fundamentals, professional/social ethics and apply mathematical foundations to design and solve computational problems.",
-  },
-],
+    PSOdata: [
+        {
+            id: 1,
+            content:
+                "Understand and develop computer programs in the areas related to algorithms, system software, multimedia, web design, big data analytics and networking by identifying, demonstrating and analyzing the knowledge of engineering in efficient design of computer-based systems of varying complexity.",
+        },
+        {
+            id: 2,
+            content:
+                "Applying algorithmic principles, innovative Computer science and engineering design and implementation skills to propose optimal solutions to complex problems by choosing a better platform for research in emerging areas.",
+        },
+        {
+            id: 3,
+            content:
+                "Identify standard Software Engineering practices and strategies by applying software project development methods using open-source programming environment to design and evaluate a quality product for business success.",
+        },
+        {
+            id: 4,
+            content:
+                "Demonstrate and examine basic understanding of engineering fundamentals, professional/social ethics and apply mathematical foundations to design and solve computational problems.",
+        },
+    ],
 
 };
 
 
 
 export const careerData = [
-  { name: 'Data Scientist' },
-  { name: 'Data Analyst' },
-  { name: 'Data Engineer' },
-  { name: 'Machine Learning Engineer' },
-  { name: 'Research Scientist' },
-  { name: 'Robotics Engineer' },
-  { name: 'Software Engineer' },
-  { name: 'AI Researcher' },
-  { name: 'AI Developer' },
-  { name: 'Big Data Engineer' },
-  { name: 'Algorithm Specialist' },
-  { name: 'Business Intelligence Developer' },
+    { name: 'Data Scientist' },
+    { name: 'Data Analyst' },
+    { name: 'Data Engineer' },
+    { name: 'Machine Learning Engineer' },
+    { name: 'Research Scientist' },
+    { name: 'Robotics Engineer' },
+    { name: 'Software Engineer' },
+    { name: 'AI Researcher' },
+    { name: 'AI Developer' },
+    { name: 'Big Data Engineer' },
+    { name: 'Algorithm Specialist' },
+    { name: 'Business Intelligence Developer' },
 ];
+
+
+export const opportunityCardData: OpportunityCard[] = [
+    {
+        id: 1,
+        img: MBA21,
+        course: "M.B.A (Master of Business Administration)",
+        path: "/placements",
+    },
+    {
+        id: 2,
+        img: MBA31,
+        course: "M.B.A. (Business Analytics) with L&T",
+        path: "/placements",
+    }, {
+        id: 3,
+        img: MBA41,
+        course: "M.Tech. in Computer Science Engineering",
+        path: "/placements",
+    }, {
+        id: 4,
+        img: MBA51,
+        course: "M.Tech. in Data Science",
+        path: "/placements",
+    }
+]
+
+
+
+
+export const scopeData: ScopeData = {
+  title: "Scope in Companies",
+  description: [
+    "By pursuing this program, students gain deep knowledge of emerging technologies.",
+    "They also get exposure to endless career possibilities."
+  ],
+  rolesLeft: [
+    "Computer Vision Engineer",
+    "Data Analyst",
+    "NLP Engineer",
+    "ML Engineer",
+    "Research Scientist",
+    "Robotics Engineer",
+  ],
+  rolesRight: [
+    "Software Engineer",
+    "AI Researcher",
+    "AI Developer",
+    "Big Data Engineer",
+    "Algorithm Specialist",
+    "BI Developer",
+  ],
+
+  sectors: [
+    {
+      label: "GOVERNMENT SECTOR",
+      companies: [
+        { id: 1, logo: bhel },
+        { id: 2, logo: bsnl },
+        { id: 3, logo: nsdl },
+        { id: 4, logo: nic },
+        { id: 5, logo: railways },
+        { id: 6, logo: isro },
+      ],
+    },
+
+    {
+      label: "PRIVATE SECTOR",
+      companies: [
+        { id: 1, logo: amazon},
+        { id: 2, logo: capgemini },
+        { id: 3, logo: ibm},
+        { id: 4, logo: google },
+        { id: 5, logo: microsoft },
+        { id: 6, logo: cedcoss },
+        { id: 7, logo: thoughtworks},
+        { id: 8, logo: globallogic },
+        { id: 9, logo: accenture1 },
+        { id: 10, logo: sopra},
+        { id: 11, logo:cognizant },
+        { id: 12, logo:tcs },
+        { id: 13, logo:infosys },
+        { id: 14, logo:intel },
+        { id: 15, logo:facebookn },
+        { id: 16, logo:phronesis },
+        { id: 17, logo:unicode },
+        { id: 18, logo:srdt },
+        { id: 19, logo:josh },
+        { id: 20, logo:qss },
+      ],
+    },
+  ],
+};

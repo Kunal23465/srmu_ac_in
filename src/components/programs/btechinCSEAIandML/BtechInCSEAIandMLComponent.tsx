@@ -1,4 +1,4 @@
-import { abc, BtechCSEAIandMLOverviewData, careerData, counterDataForBtechinCSEAIandML, partnerDataforAIandML, ProgramFeesAIandML, scholarshipSchemesSample, steps, whyData } from "../../../data/programs/btechincseai-ml-data/btechincseai-ml-data";
+import { abc, BtechCSEAIandMLOverviewData, careerData, counterDataForBtechinCSEAIandML, opportunityCardData, partnerDataforAIandML, ProgramFeesAIandML, scholarshipSchemesSample, scopeData, steps, whyData } from "../../../data/programs/btechincseai-ml-data/btechincseai-ml-data";
 import Counter from "../../../utils/custom/Counter";
 import CustomOverviewSection from "../../../utils/custom/CustomOverviewSection";
 import Classes from "../../../utils/styles/Global.module.css";
@@ -10,7 +10,11 @@ import CustomDepartmentFeeDetailsTable from "../../../utils/custom/CustomDepartm
 import ScholarshipSchemes from "./ScholarshipScheme";
 import CustomDepartmentHighlights from "../../../utils/custom/CustomDepartmentHighlights";
 import CustomProgramPLOAccordian from "../../../utils/custom/CustomProgramPLOAccordian";
-import ScopeInCompanies from "./ScopeCompany";
+import CustomProgramOppertunitySlider from "../../../utils/custom/CustomProgramOppertunitySlider";
+import EnquiryForm from "../../academics/institutes/EnquiryForm";
+import CustomTopFooter from "../../../utils/custom/CustomTopFooter";
+import { CustomTopFooterData1 } from "../../../data/about/leadership-and-governance/leadership-and-governance-data";
+import { CustomCompaniesScope } from "../../../utils/custom/CustomCompaniesScope";
 // import CustomInstitueVissionMissionCard from "../../../utils/custom/CustomInstitueVissionMissionCard";
 // import { visionMissionData } from "../../../data/academics/institute/data";
 
@@ -18,15 +22,6 @@ import ScopeInCompanies from "./ScopeCompany";
 
 
 const BtechInCSEAIandMLComponent = () => {
-     const items = [
-        // {
-        //     key: "1",
-        //     label: "Industry Honours",
-        //     content: <CustomDepartmentFeeDetailsTable data={civilIndshonoursEngineeringFeeTable} />,
-        // },
-      
-
-    ];
 
     return (
         <div className="mt-20">
@@ -43,7 +38,6 @@ const BtechInCSEAIandMLComponent = () => {
 
                 <EligibilitySection />
 
-                {/* <CustomInstitueVissionMissionCard data={visionMissionData} /> */}
 
             </div>
             <div className="bg-[#ecf0f9] pb-10">
@@ -74,13 +68,37 @@ const BtechInCSEAIandMLComponent = () => {
 
             <ScholarshipSchemes data={scholarshipSchemesSample} />
 
-            <div className={`${Classes["container"]}`}>
+            <div className="mt-10">
+                <div className={`${Classes["container"]}`}>
                 <CustomDepartmentHighlights heading="Department Highlights" steps={steps} />;
+            </div>
             </div>
             <CustomProgramPLOAccordian POdata={abc.POdata} PLOdata={abc.PLOdata} PSOdata={abc.PSOdata} />
 
+            <div className="bg-[#dee4f2]">
+                <div className={`${Classes["container"]}`}>
+                    <CustomCompaniesScope data={scopeData} />
 
-            <ScopeInCompanies careerOptions={careerData} />
+                </div>
+            </div>
+
+
+
+
+
+
+            <div className={`${Classes["container"]}`}>
+                <CustomProgramOppertunitySlider data={opportunityCardData} />
+
+
+            </div>
+
+
+            <EnquiryForm />
+
+            <CustomTopFooter data={CustomTopFooterData1} />
+
+
         </div>
     )
 }
