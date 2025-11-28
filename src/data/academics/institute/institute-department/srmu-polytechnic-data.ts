@@ -117,10 +117,11 @@ export const SRMUPolytechnicVMData = [
     heading: "Mission",
     description: "Within the scope of academic excellence, innovation and leadership in physics, the Faculty of Physical Sciences considers its two fold mission which are as follows",
     points: [
-      "To promote skillful learning through effective Undergraduate & Postgraduate programs, teaching and research specific to changing needs of the industry and society with interdisciplinary approach.",
-      "To impart experiential learning with innovative teaching-learning methods for developing active and creative minds.",
-      "To develop innate abilities of each student and nurture their potentialities with respect to individual differences and changing environment.",
-      "To inculcate moral and ethical values among students."
+      "To provide current and in demand technical education to youth.",
+      "To generate knowledge by providing technical support through industry visits and expert lectures.",
+      "To inculcate moral, ethical and professional values amongst the students.",
+      "To respond effectively to the changing needs of the industry and community as a whole.",
+      "To promote quality education and training in multiple technical fields."
     ],
   },
   {
