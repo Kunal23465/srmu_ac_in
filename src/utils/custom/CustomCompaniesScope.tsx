@@ -37,12 +37,12 @@ export const CustomCompaniesScope: React.FC<CompaniesScopeProps> = ({ data }) =>
 
   const activeCompanies = sectors[activeTab].companies;
 
-  const itemsToShow =
-    activeCompanies.length <= 8
-      ? isSmallScreen
-        ? 2
-        : 5
+  const itemsToShow = isSmallScreen
+    ? 2
+    : activeCompanies.length <= 8
+      ? 5
       : 10;
+
 
   let visibleCompanies: CompanyItem[] = activeCompanies.slice(index, index + itemsToShow);
   if (visibleCompanies.length < itemsToShow) {

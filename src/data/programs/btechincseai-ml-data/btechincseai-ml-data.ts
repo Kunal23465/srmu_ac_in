@@ -13,12 +13,15 @@ import wipro from "../../../assets/images/programs/btechincseaiandml/wipro-21122
 import sap from "../../../assets/images/programs/btechincseaiandml/sap-2112231056559.png"
 import { FeeTableData } from "../../academics/faculty-of-civil-engineering/faculty-of-civil-engineering-data";
 
-import dep1 from "../../../assets/images/programs/btechincseaiandml/dep1.jpg"
-import dep2 from "../../../assets/images/programs/btechincseaiandml/dep2.jpg"
-import dep3 from "../../../assets/images/programs/btechincseaiandml/dep3.jpg"
-import dep4 from "../../../assets/images/programs/btechincseaiandml/dep4.jpg"
+
 import { CustomProgramPLOAccordianProps } from "../../../utils/custom/CustomProgramPLOAccordian";
 import { OpportunityCard } from "../../../types/opportunity-card-data-type";
+
+
+import dev1 from "../../../assets/images/programs/btechincseaiandml/opportunities/highlights/1.jpg"
+import dev2 from "../../../assets/images/programs/btechincseaiandml/opportunities/highlights/2.jpg"
+import dev3 from "../../../assets/images/programs/btechincseaiandml/opportunities/highlights/3.jpg"
+import dev4 from "../../../assets/images/programs/btechincseaiandml/opportunities/highlights/4.jpg"
 
 
 import MBA21 from "../../../assets/images/programs/btechincseaiandml/opportunities/mba21-03022401044691.jpg"
@@ -46,7 +49,6 @@ import globallogic from "../../../assets/images/programs/btechincseaiandml/oppor
 import accenture1 from "../../../assets/images/programs/btechincseaiandml/opportunities/scope/accenture1-19022412430348.png"
 import sopra from "../../../assets/images/programs/btechincseaiandml/opportunities/scope/sopra-steria-logo.svg-21022405241254.png"
 import cognizant from "../../../assets/images/programs/btechincseaiandml/opportunities/scope/cognizant-09022401240828.png"
-import tcs1 from "../../../assets/images/programs/btechincseaiandml/opportunities/scope/tcs-09022401312329.png"
 import infosys from "../../../assets/images/programs/btechincseaiandml/opportunities/scope/infosys-09022402390195.png"
 import phronesis from "../../../assets/images/programs/btechincseaiandml/opportunities/scope/phronesis-19022412021095.png"
 import unicode from "../../../assets/images/programs/btechincseaiandml/opportunities/scope/unicode-19022412132960.png"
@@ -111,7 +113,6 @@ export const counterDataForBtechinCSEAIandML: counterDataType[] = [
 ];
 
 
-// whyData.ts
 
 
 
@@ -187,7 +188,7 @@ export const partnerDataforAIandML = [
 
 
 export const ProgramFeesAIandML: FeeTableData = {
-    columns: ["Fee Type", "1st Year", "2nd Year", "3rd Year", "4th Year"],
+    columns: ["DURATION (IN YEAR)", "1YEAR", "2YEAR", "3YEAR", "4YEAR"],
 
     rows: [
         {
@@ -326,25 +327,7 @@ export const ProgramFeesAIandML: FeeTableData = {
 };
 
 
-export const scholarshipSchemesSample = {
-    title: "Scholarship Schemes",
-    description:
-        "Career Counselling at Shri Ramswaroop Memorial University offers counselling to students, guiding the young minds by helping them to understand their strength and also to sail through at all levels in the job market.",
-    schemes: [
-        { id: 1, name: "SRMUSET (Shri Ramswaroop Memorial University Scholarship Entrance Test)" },
-        { id: 2, name: "Merit Based Scholarship" },
-        { id: 3, name: "CUET Score Based" },
-        { id: 4, name: "National Entrance Score Based" },
-        { id: 5, name: "Students Opting For Career Progression" },
-        { id: 6, name: "Ward of Defense Persons/ Central Government/ State Government Employees" },
-        { id: 7, name: "Ward of Martyrs" },
-        { id: 8, name: "For National/ State Level Sportsperson" },
-        { id: 9, name: "Blood Relatives of Staff and Students of Ramswaroop Group" },
-        { id: 10, name: "Divyang & Female Candidates" },
-        { id: 11, name: "EWS (Economically Weaker Section)" },
-    ],
-    buttonText: "View Details",
-};
+
 
 
 
@@ -352,7 +335,7 @@ export const steps = [
     {
         id: 1,
         title: "Achievements",
-        image: "https://srmu.ac.in/storage/common-section/mission-08022405412963.jpg",
+        image: dev1,
         bulletPoints: [
             "Parv Awasthi has secured top 11 position in in DUEX DANZA, conducted by MANFEST- VARCHASVA ,IIM Lucknow during 10th -12th Feb 2023",
             "5 Students CSE (Shivam Agarwal,Debashish Bose,Aditya Agarwal,Abhishek Singh Bohra,Gaurav Singh) qualified GATE exam in 2022-2023",
@@ -362,13 +345,13 @@ export const steps = [
     {
         id: 2,
         title: "Research",
-        image: "https://srmu.ac.in/storage/common-section/vision-10102304420738.png",
+        image: dev2,
         bulletPoints: ["100+ Research Papers published in reputed journals", "08+ Books and Book Chapters published", "05+ Ph.D. Awarded", "04+ Patents Granted/ Published"],
     },
     {
         id: 3,
         title: "Labs",
-        image: "https://srmu.ac.in/storage/common-section/613x715-beyond-11zon-1-28022411364712-15052410402616.jpg",
+        image: dev3,
         bulletPoints: [
             "Google Android Lab",
             "L&T Certified Lab",
@@ -381,7 +364,7 @@ export const steps = [
     {
         id: 4,
         title: "Beyond Academics",
-        image: "https://srmu.ac.in/storage/common-section/core-values-08022405434112.jpg",
+        image: dev4,
         bulletPoints: [
             "Parv Awasthi has secured top 11 position in in DUEX DANZA, conducted by MANFEST- VARCHASVA ,IIM Lucknow during 10th -12th Feb 2023",
             "Gagan Singh Yadav achieved 1st position in Table Tennis at Ullas 2023, Annual Fest held at SRMU",
