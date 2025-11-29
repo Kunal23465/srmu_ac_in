@@ -104,6 +104,10 @@ import FacultyOfBiosciencesPage from "../pages/academics/institutes/institute-de
 import AwardOverviewPage from "../pages/about/award-overview/AwardOverviewPage";
 import DepartmentDetailPage from "../components/academics/institutes/institute-department/InstituteofManagementCommerceandEconomics/DepartmentDetailPage";
 import InstituteDepartmentPage from "../pages/academics/institutes/institute-department/InstituteDepartmentPage";
+import FacultyOfBiotechnologyPage from "../pages/academics/institutes/institute-department/FacultyOfBiotechnologyPage";
+import FacultyOfPhysicalSciencesPage from "../pages/academics/institutes/institute-department/FacultyOfPhysicalSciencesPage";
+import FacultyOfMathematicalAndStatisticalSciencesPage from "../pages/academics/institutes/institute-department/FacultyOfMathematicalAndStatisticalSciencesPage";
+import FacultyOfHumanitiesAndSocialSciencesPage from "../pages/academics/institutes/institute-department/FacultyOfHumanitiesAndSocialSciencesPage";
 interface IMatches {
   pathname: string;
   params: Params<string>;
@@ -313,6 +317,32 @@ export const routes = [
                 element: <FacultyOfBiosciencesPage />,
                 handle: {
                   crumb: () => <Link to="/">Faculty Of Biosciences</Link>,
+                },
+              },
+               {
+                path: "faculty-of-biotechnology",
+                element: <FacultyOfBiotechnologyPage />,
+                handle: {
+                  crumb: () => <Link to="/">Faculty Of Biotechnology</Link>,
+                },
+              },
+               {
+                path: "faculty-of-physical-sciences",
+                element: <FacultyOfPhysicalSciencesPage />,
+                handle: {
+                  crumb: () => <Link to="/">Faculty Of Physical Science</Link>,
+                path: "faculty-of-mathematical-and-statistical-sciences",
+                element: <FacultyOfMathematicalAndStatisticalSciencesPage />,
+                handle: {
+                  crumb: () => <Link to="/">Faculty of Mathematical and Statistical Sciences</Link>,
+                },
+              },
+              
+               {
+                path: "faculty-of-humanities-and-social-sciences",
+                element: <FacultyOfHumanitiesAndSocialSciencesPage />,
+                handle: {
+                  crumb: () => <Link to="/">Faculty of Humanities and Social Sciences</Link>,
                 },
               },
               {

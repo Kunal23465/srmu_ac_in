@@ -11,6 +11,7 @@ import {
   InstituteofPharmaceuticalSciencesTopFooterData,
   InstituteofPharmaceuticalSciencesVMData,
   InstituteofPharmaceuticalSciencesinstituteProfiles,
+  InstituteofPharmaceuticalSciencesDepartmentEventsData,
 } from "../../../../../data/academics/institute/institute-department/institute-of-pharmaceutical-sciences-data";
 import Counter from "../../../../../utils/custom/Counter";
 import CustomDepartmentVissionMission from "../../../../../utils/custom/CustomDepartmentVissionMission";
@@ -20,6 +21,8 @@ import CustomInstituteProfileCard from "../../../../../utils/custom/CustomInstit
 import CustomDepartmentSlider from "../../../../../utils/custom/CustomDepartmentSlider";
 import CustomFacultyListCard from "../../../../../utils/custom/CustomFacultyListCard";
 import facilitiesBg from "../../../../../assets/images/academics/departments/facilities-bg-lg.jpeg";
+import CustomDepartmentEventSlider from "../../../../../utils/custom/CustomDepartmentEventSlider";
+import CustomEventCard from "../../../../../utils/custom/CustomEventListCard";
 
 const InstituteofPharmaceuticalSciences: React.FC = () => {
   const items = [
@@ -95,7 +98,15 @@ const InstituteofPharmaceuticalSciences: React.FC = () => {
           />
         </div>
       </div>
-
+   <CustomDepartmentEventSlider
+        heading="Events of Department"
+        description="SRMU is committed to leveraging its facilities and the system to world-class standards, with a goal to provide the best academic professional resources, to prepare its students for global opportunities. This makes SRMU a repository of academic and extra-curricular excellence."
+        data={InstituteofPharmaceuticalSciencesDepartmentEventsData}
+        renderCard={({ item }) => <CustomEventCard item={item} />}
+        bgColor="#ffffff"
+        arrowColor="#96a9c4"
+        arrowBorderColor="#0f4a85"
+      />
       <CustomTopFooter data={InstituteofPharmaceuticalSciencesTopFooterData} />
     </div>
   );
