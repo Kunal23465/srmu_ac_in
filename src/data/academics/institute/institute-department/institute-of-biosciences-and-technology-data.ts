@@ -72,9 +72,11 @@ export const InstituteofBiosciencesandTechnologyinstituteProfiles: InstituteProf
       "**Contact No.: **+91-9140631326",
     ],
 
-    modalContent: `He has more than 35+ years of experience in Management & Media Education and the Industry.He has worked across the different domains including  Advertising, Media  and Management education. He has received laurels as a Director of the Year in 2023 and granted Patent on “Employability “in the managemnt stream in the same year. He began his career with a Publishing Company in New Delhi,India and moved to Academics in the year 1995.In his career span has been associated with leading media institutions such as Film Institute of eMITS,Lucknow and JIT Media Institute ,Barabanki.
+    modalContent: `Tabish Qidwai has done M.Tech and Ph.D. in Biotechnology Engineering. He has worked as a faculty member at B.B. Ambedkar Central University, Lucknow and Raja Balwant Singh College, Agra. He received various prestigious awards including the Rashtriya Gaurav Award for remarkable contributions to Science and Technology, Certificate of Excellence in Science and Technology, University Gold Medal, Research Excellence Award, Teaching and Learning Innovation Award and several certificate of appreciation for significant contribution to academics.
 
-He has been guiding and counselling the students across various academic domains. He is capable to motivate young minds and developing synergy between the students and the teachers for their growth.His Research Interest  area is Advertising and Visual Communication.
+    He has 13 years of teaching and research experience in genomics and immunology and infectious diseases. He has published nearly 52 book chapters, research articles, review articles in peer-reviewed international journals and authored/edited 5 books as a single author/editor. He has I 10 index 25 and h index 20 and more than 1000 citations. Currently, He is supervising 6 Ph.D. students and 1 Ph.D. is awarded under his supervision.
+
+He is a member of many national and international scientific societies and organizations. His research interests are focused on the functional genomics, immunology, and infectious disease research including malaria and COVID-19. Currently, he is working and writing articles/book chapters in collaboration with University of South Florida, USA, Biological Research Centre, Szeged, Hungary, The Arctic University of Norway, AIIMS Hyderabad, AIIMS Bhopal, IIT-BHU, IET Lucknow and University of Delhi.
 `
   },
 

@@ -22,6 +22,7 @@ import depSlide5 from "../../../../assets/images/academics/departments/psycholog
 import depSlide6 from "../../../../assets/images/academics/departments/skill-07022411112023.jpg";
 import depSlide7 from "../../../../assets/images/academics/departments/nurturing-06052403541786.jpg";
 import { Headers, Student } from "../../../../utils/custom/CustomPlacedStudentTable";
+import { EventItem } from "../../../../utils/custom/CustomEventListCard";
 
 export const InstituteofEducationandResearchOverviewData: customeOverViewType = {
   heading: "Institute of Education and Research",
@@ -278,5 +279,117 @@ export const tableHeaders: Headers = {
     name: "Avni Verma",
     program: "B.Ed. (Bachelor of Education)",
     company: "City Montessari School",
+  },
+];
+
+import img1 from "../../../../assets/images/academics/departments/guest7-09052401584927.jpg";
+import img2 from "../../../../assets/images/academics/departments/guest6-09052401590034.jpg";
+import img3 from "../../../../assets/images/academics/departments/guest4-09052401590829.jpg";
+import img4 from "../../../../assets/images/academics/departments/guest8-0905240159163.jpg";
+import img5 from "../../../../assets/images/academics/departments/nation6-09052402004527.jpg";
+import img6 from "../../../../assets/images/academics/departments/workship2-09052401593658.jpg";
+import img7 from "../../../../assets/images/academics/departments/webinar5-0905240159455.jpg";
+import img8 from "../../../../assets/images/academics/departments/workshop4-0905240159526.jpg";
+import img9 from "../../../../assets/images/academics/departments/webinar4-0905240200138.jpg";
+import img10 from "../../../../assets/images/academics/departments/nation4-09052402005583.jpg";
+import img11 from "../../../../assets/images/academics/departments/webinar1-09052402013920.jpg";
+
+
+export const InstituteofEducationandResearchDepartmentEventsData: EventItem[] = [
+  {
+    id: 1,
+    title: "Guest Lecture",
+    speaker: "Dr. Rashmi Saxena",
+    topic: "Skills of Counselling",
+    date: "23rd March, 2023",
+    image: img1,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 2,
+    title: "Guest Lecture",
+    speaker: "Dr. Richa Dubey",
+    topic: "Relevance of Innovative Pedagogy Techniques in Present Scenario",
+    date: "03rd April, 2023",
+    image: img2,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 3,
+    title: "Guest Lecture",
+    speaker: "Dr. Arti Bajpai",
+    topic: "Role of B.Ed. in Teaching Profession and Ethics of Teaching",
+    date: "08th September, 2022",
+    image: img3,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 4,
+    title: "Guest Lecture",
+    speaker: "Dr. Priyanka Shukla",
+    topic: "The Six Virtues for Good Life",
+    date: "15th October, 2023",
+    image: img4,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 5,
+    title: "Seminar",
+    topic: "New Education Policy and Quality Education for Sustainable Future",
+    date: "08th April, 2023",
+    image: img5,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 6,
+    title: "Workshop",
+    topic: "Intergenerational Solidarity: Creating a World for All Ages",
+    date: "10th August, 2022",
+    image: img6,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 7,
+    title: "Workshop",
+    topic: "Linguistic Competency: A Life Skill",
+    date: "26th September, 2022",
+    image: img7,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 8,
+    title: "Workshop",
+    topic: "Well Being, Positive Thinking, Career and Relationship",
+    date: "17th December, 2022",
+    image: img8,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 9,
+    title: "Webinar",
+    speaker: "Dr. Geetika Nidhi, Assistant Professor",
+    designation: "Faculty of Education, Integral University",
+    topic: "Relevance of Health, Hygiene and Yoga in Pandemic Times",
+    date: "23rd October, 2020",
+    image: img9,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 10,
+    title: "Seminar",
+    speaker: "Dr. Ritu Chandra",
+    topic: "Role of Education in Gender Sensitization",
+    date: "30th October, 2017",
+    image: img10,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 11,
+    title: "National Webinar",
+    speaker: "Ms. Pratibha Garg",
+    topic: "Online Teaching Learning Strategies",
+    date: "02nd June, 2020",
+    image: img11,
+    cardBgColor: "#ffffff",
   },
 ];
