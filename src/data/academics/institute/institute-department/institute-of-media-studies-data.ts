@@ -21,6 +21,7 @@ import depSlide5 from "../../../../assets/images/academics/departments/manage--0
 import depSlide6 from "../../../../assets/images/academics/departments/entrepreneurialecosystem-0602240302151.jpg";
 import depSlide7 from "../../../../assets/images/academics/departments/mentor-07052412432565.jpg";
 import { Headers, Student } from "../../../../utils/custom/CustomPlacedStudentTable";
+import { EventItem } from "../../../../utils/custom/CustomEventListCard";
 
 export const InstituteofMediaStudiesOverviewData: customeOverViewType = {
   heading: "Institute of Media Studies",
@@ -477,4 +478,94 @@ export const tableHeaders: Headers = {
   ];
 
 
+import img1 from "../../../../assets/images/academics/departments/med1-09052401031259.jpg"
+import img2 from "../../../../assets/images/academics/departments/med2-09052401030372.jpg"
+import img3 from "../../../../assets/images/academics/departments/med3-0905240102507.jpg"
+import img4 from "../../../../assets/images/academics/departments/guest6-09052401032821.jpg"
+import img5 from "../../../../assets/images/academics/departments/guest7-09052401033814.jpg"
+import img6 from "../../../../assets/images/academics/departments/guest2-0905240103534.jpg"
+import img7 from "../../../../assets/images/academics/departments/webinar5-09052401003870.jpg"
+import img8 from "../../../../assets/images/academics/departments/workshop4-09052401004722.jpg"
+import img9 from "../../../../assets/images/academics/departments/workshop3-09052401005812.jpg"
 
+export const InstituteofMediaStudiesDepartmentEventsData: EventItem[] = [
+  {
+    id: 1,
+    title: "Industrial Visit",
+    topic: "U.P. Photo Fair Trust",
+    venue: "Lucknow Management Association",
+    date: "07th-09th November, 2023",
+    image: img1,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 2,
+    title: "Industrial Visit",
+    venue: "Bharat Samachar Lucknow",
+    date: "24th July, 2023",
+    image: img2,
+    cardBgColor: "#ffffff",
+  },
+    {
+    id: 3,
+    title: "Guest Lecture",
+    speaker: "Mr. Adarsh Prakash Srivastava",
+    topic: "Empowering Society through informed news",
+    date: "25th July, 2023",
+    image: img6,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 4,
+    title: "Industrial Visit",
+    topic: "Twin Sisters with Cameras",
+    venue: "Jadunath Bhawan, Lucknow",
+    date: "07th July, 2023",
+    image: img3,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 5,
+    title: "Guest Lecture",
+    speaker: "Mr. Tushar Srivastava",
+    topic: "Challenges for Indian Media in Current Scenario",
+    date: "23rd March, 2023",
+    image: img4,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 6,
+    title: "Guest Lecture",
+    speaker: "Dr. Santosh Kumar",
+    topic: "The Generalistic Legacy of Dr. Ambedkar some reflections",
+    date: "13th April, 2023",
+    image: img5,
+    cardBgColor: "#ffffff",
+  },
+
+  {
+    id: 7,
+    title: "Workshop",
+    topic: "The Art of Anchoring",
+    date: "08th September, 2023",
+    image: img7,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 8,
+    title: "Workshop",
+    topic: "Report of the Canon sponsored Photography",
+    date: "02nd September, 2023",
+    image: img8,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 9,
+    title: "Workshop",
+    topic: "Reporting for Television & Web: Career Opportunities & Challenges",
+    date: "29th January, 2024",
+    image: img9,
+    cardBgColor: "#ffffff",
+  },
+];
+ 

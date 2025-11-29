@@ -8,6 +8,18 @@ import AryenduImg from "../../../../assets/images/academics/departments/prof-ary
 import PCMishraImg from "../../../../assets/images/academics/departments/dr.-p.c.-mishra-11zon-27022411543322.png";
 import DefaultImg from "../../../../assets/images/academics/departments/default-img.png";
 
+
+import img1 from "../../../../assets/images/academics/departments/whatsapp-image-2022-05-23-at-11.30.28-am-1--23022412570798.jpeg";
+import img2 from "../../../../assets/images/academics/departments/workshop4-09052412404740.jpg";
+import img3 from "../../../../assets/images/academics/departments/guest5-09052412400851.jpg";
+import img4 from "../../../../assets/images/academics/departments/guest7-09052412401831.jpg";
+import img5 from "../../../../assets/images/academics/departments/guest6-09052412402642.jpg";
+import img6 from "../../../../assets/images/academics/departments/workship2-09052412410615.jpg";
+import img7 from "../../../../assets/images/academics/departments/mootcourt-06022404053661.jpg";
+import img8 from "../../../../assets/images/academics/departments/514x520-23022412510691.jpg";
+import img9 from "../../../../assets/images/academics/departments/seminarhall-23022412514392.jpg";
+
+
 import { Headers, Student } from "../../../../utils/custom/CustomPlacedStudentTable";
 
 export const InstituteofLegalStudiesOverviewData: customeOverViewType = {
@@ -25,28 +37,6 @@ export const InstituteofLegalStudiesTopFooterData = [
   },
 ];
 
-export const InstituteofLegalStudiesvisionMissionData = {
-  backgroundColor: "#F3F7FF",
-
-  vision: {
-    title: "Vision",
-    description: [
-      "To provide excellent law data base, teaching and learning of law to develop in the students, research scholars a sense of responsibility to serve the society by developing skills in advocacy, judicial services and other legal services.",
-    ],
-    imageUrl: vision,
-  },
-
-  mission: {
-    title: "Mission",
-    description: [
-      "To advance, disseminate learning with knowledge of law and legal process and their role in national development.",
-      "To update students in the right culture of Legal Education so that students become highly technical with advancements in field of law and to make them competent lawyers, judges, legal experts and academicians.",
-      "To organize seminars, symposiums, conferences, and moot courts to promote legal knowledge and legal process.",
-      "To make students competent to face any challenge in their professional and behavioral aspects of life, which become our motif and forte."
-    ],
-    imageUrl: mission,
-  },
-};
 
 export const InstituteofLegalStudiesCounterData1 = {
   counterData: [
@@ -396,6 +386,7 @@ import depSlide4 from "../../../../assets/images/academics/departments/legalsupp
 import depSlide5 from "../../../../assets/images/academics/departments/industrystalwart-06022401542865.jpg";
 import depSlide6 from "../../../../assets/images/academics/departments/legalstudies-06022404143177.jpg";
 import depSlide7 from "../../../../assets/images/academics/departments/virtual-06022404142039.jpg";
+import { EventItem } from "../../../../utils/custom/CustomEventListCard";
 
 export const InstituteofLegalStudiesdepartmentHighlights: departmentHighlightscardType[] = [
   {
@@ -447,3 +438,84 @@ export const placedStudents: Student[] = [
   { name: "Anshika Mani Tripathi", program: "B.A. + LL.B. (Hons.)", company: "Legal brains" },
 ];
 
+
+
+export const InstituteofLegalStudiesDepartmentEventsData: EventItem[] = [
+  {
+    id: 1,
+    title: "Industrial Visit",
+    topic: "High Court Lucknow Bench",
+    venue: "Lucknow",
+    date: "31st October, 2023",
+    image: img1,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 2,
+    title: "Industrial Visit",
+    topic: "National Lok Adalat",
+    venue: "Barabanki",
+    date: "09th September, 2023",
+    image: img2,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 3,
+    title: "Guest Lecture",
+    speaker: "Prof. (Dr.) Lily Srivastava",
+    topic: "Tort Introduction, Tortious Liability and General Defenses",
+    date: "05th February, 2024",
+    image: img3,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 4,
+    title: "Guest Lecture",
+    speaker: "Dr. Ankit Awasthi",
+    topic: "Evolution of Legal Education: Navigating the Past, Embracing the Present and Charting a Course for the Future in Pursuit of Quality",
+    date: "24th January, 2024",
+    image: img4,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 5,
+    title: "Guest Lecture",
+    speaker: "Dr. Surendra Kumar",
+    topic: "Changing Dimensions of Strict Liability and Absolute Liability in Indian Legal System",
+    date: "02nd November, 2023",
+    image: img5,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 6,
+    title: "Workshop",
+    topic: "National Moot Court Competition at SRMU",
+    date: "24th-26th April, 2023",
+    image: img6,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 7,
+    title: "Workshop",
+    topic: "Basic of Publication, Presentation, Journal & Writing with JUS CORPUS",
+    date: "29th January, 2024",
+    image: img7,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 8,
+    title: "Workshop",
+    topic: "Changing Dimensions of Human Rights & its Relevancy in the 21st Century",
+    date: "09th December, 2023",
+    image: img8,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 9,
+    title: "Workshop",
+    topic: "Workshop on Constitutional Day",
+    date: "25th November, 2023",
+    image: img9,
+    cardBgColor: "#ffffff",
+  },
+];

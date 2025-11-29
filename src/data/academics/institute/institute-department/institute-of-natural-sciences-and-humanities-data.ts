@@ -42,7 +42,6 @@ export const InstituteofNaturalSciencesandHumanitiesvisionMissionData = {
       "To create an educational environment that fosters curiosity, integrates rigorous inquiry, creative imagination, and reflective thought process for academic excellence.",
       "To inculcate integrity towards work place and social sensibility for a better society.",
       "To choose participative learning in creating wisdom over developing intelligence alone for pursuing successful career in diverse fields.",
-      "To instill among students highest ethical standards and values with a sense of professionalism.",
       "To prepare undergraduate and postgraduate students who can take up future challenges of higher studies and research.",
     ],
     buttonText: "Mission",
@@ -75,7 +74,11 @@ export const InstituteofNaturalSciencesandHumanitiesinstituteProfiles: Institute
       "**Contact No.: **+91-9554966267",
     ],
 
-    modalContent: `Dr. Aswani Kumar has an experience of more than 25 years in the field of academics, research and administration in several national and international institutes and Universities.  His experience lies in editing, reviewing research, academia and administration. He has a proven track record of strategic planning, academic excellence, and faculty development to enhance the institution’s reputation and student success. He has 18 research publications in international journals of repute & over 25 presentations at National and International Conferences. He was also involved in administrative responsibilities at International Universities. His experience also includes design of research and consultancy projects for government and corporate houses.`
+    modalContent: `Dr. Bhanu Mani Dixit is Professor in Faculty of Physical Sciences and also holds position of Director – Student Welfare. He after earning two Postgraduate degrees first in Physics and then in Mathematics, obtained his Ph.D degree in cross-disciplinary topic of double beta decay which deals theoretically - nuclear structure frameworks and neutrino physics. His philosophy about effective teaching is that it requires understanding of a subject to a level which is appropriate for the transference of knowledge from the teacher’s perspective to that of the students. Further, he acknowledges the importance of innovation in delivery style apart from the up gradation of knowledge.
+
+For past two decades, he has taught over a dozen different courses at Undergraduate and Postgraduate levels, wrote popular science articles and delivered popular lectures, presented and published many research papers in conferences and in peer reviewed journals respectively. His current research interest includes medical physics and academic planning in higher education. To pursue his research interest, he is also guiding couple of students for a Ph.D. degree.
+
+Being associated with the present group since its inception way back in 2001, he was among the very few who were entrusted to raise this University in 2011 as a center of universal learning. His academic outlook towards teaching methodology, faculty constitution is to create conducive environment for academic learning, while in administration his active role in team building and establishing harmonious accord amongst hundreds of faculty members and thousands of students is pivotal and all inclusive.`
   },
 
 
