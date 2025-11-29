@@ -6,20 +6,29 @@ import { departmentHighlightscardType, FeeTableData } from "../../faculty-of-civ
 import { FacultyItem } from "../../../../utils/custom/CustomFacultyListCard";
 
 import VNPathakImg from "../../../../assets/images/academics/departments/prof.-dr-v.n.-pathak-2702240134036.png"
-import RahulImg from "../../../../assets/images/academics/departments/mr.-rahul-chaturvedi-23022404242613.jpg";
-import DhwaniImg from "../../../../assets/images/academics/departments/dr.-dhwani-singh-fomedia-n-2402241123395.jpg";
-import SandeepImg from "../../../../assets/images/academics/departments/default-img.png";
-import AmitImg from "../../../../assets/images/academics/departments/mr.-amit-kumar-singh-23022404392067.jpg";
-import PradeepImg from "../../../../assets/images/academics/departments/default-img.png";
-import MiliImg from "../../../../assets/images/academics/departments/dr.-mili-singh-1-11zon-26022405574118.jpg";
 
-import depSlide1 from "../../../../assets/images/academics/institutes/holistic-.jpg";
-import depSlide2 from "../../../../assets/images/academics/departments/media-07052412412440.jpg";
-import depSlide3 from "../../../../assets/images/academics/departments/industrystalwart-06022403005880.jpg";
-import depSlide4 from "../../../../assets/images/academics/departments/media-visit-07052412425199.jpg";
-import depSlide5 from "../../../../assets/images/academics/departments/manage--06052401112298.jpg";
-import depSlide6 from "../../../../assets/images/academics/departments/entrepreneurialecosystem-0602240302151.jpg";
-import depSlide7 from "../../../../assets/images/academics/departments/mentor-07052412432565.jpg";
+import AnkitImg from "../../../../assets/images/academics/departments/wsfq-02062505091245.png"
+import ArunImg from "../../../../assets/images/academics/departments/wsfq-02062505080511.png"
+import PunitImg from "../../../../assets/images/academics/departments/wsfq-02062505070943.png"
+import PoojaImg from "../../../../assets/images/academics/departments/wsfq-02062505062189.png"
+import SurajImg from "../../../../assets/images/academics/departments/wsfq-02062505051724.png"
+import AnuragImg from "../../../../assets/images/academics/departments/dr.anuragagnihotri-1007241201398.jpg"
+import DilipImg from "../../../../assets/images/academics/departments/dr.dilip-kumar-jaiswal-10072411575532.jpg"
+import VinayImg from "../../../../assets/images/academics/departments/11zon-cropped-49-11zon-24022411463862.jpeg"
+import MukeshImg from "../../../../assets/images/academics/departments/11zon-cropped-50-11zon-24022411503254.jpeg"
+import KulbhushanImg from "../../../../assets/images/academics/departments/02-10062505474470.png"
+import PrachiImg from "../../../../assets/images/academics/departments/dr.prachi-srivastava-10072412024848.jpg"
+import AnilImg from "../../../../assets/images/academics/departments/11zon-cropped-48-11zon-2402241142114.jpeg"
+import VimleshImg from "../../../../assets/images/academics/departments/vimlesh-10072412155832.jpg"
+import OmendraImg from "../../../../assets/images/academics/departments/omendra-mishra-10072412112493.jpg"
+import DhaneshImg from "../../../../assets/images/academics/departments/dhanesh-kumar-10072412142265.jpg"
+import AnujImg from "../../../../assets/images/academics/departments/anuj-kumar-agarwal-10072412092488.jpg"
+import AwanishImg from "../../../../assets/images/academics/departments/awanish-kumar-10072412073674.jpg"
+import PramodImg from "../../../../assets/images/academics/departments/11zon-cropped-45-11zon-24022411063791.jpeg"
+
+
+
+
 import { Headers, Student } from "../../../../utils/custom/CustomPlacedStudentTable";
 import { EventItem } from "../../../../utils/custom/CustomEventListCard";
 
@@ -75,21 +84,21 @@ export const FacultyOfMathematicalAndStatisticalSciencesCounterData2 = {
     {
       id: 1,
       icon: "",
-      value: "200",
+      value: "175",
       suffix: "",
       label: "Guest lectures"
     },
     {
       id: 2,
       icon: "",
-      value: "150",
+      value: "25",
       suffix: "",
       label: "Field Visits"
     },
     {
       id: 3,
       icon: "",
-      value: "15",
+      value: "10",
       suffix: "",
       label: "Conference & Seminars"
     },
@@ -171,7 +180,9 @@ export const FacultyOfMathematicalAndStatisticalSciencesData1: FeeTableData = {
   columns: ["COURSES", "DURATION", "ELIGIBILITY CRITERIA", "COURSE FEES (PA)"],
 
   rows: [
-    { col1: "M.A. in Journalism & Mass Communication", col2: "2 Years", col3: "Click to View", col4: "	Rs. 62,000/-" },
+    { col1: "M.Sc. in Mathematics", col2: "2 Years", col3: "Click to View", col4: "	Rs. 47,000/-" },
+    { col1: "M.Sc. in Statistics", col2: "2 Years", col3: "Click to View", col4: "	Rs. 47,000/-" },
+
   ],
 
 };
@@ -180,7 +191,7 @@ export const FacultyOfMathematicalAndStatisticalSciencesData2: FeeTableData = {
   columns: ["COURSES", "DURATION", "ELIGIBILITY CRITERIA", "COURSE FEES (PA)"],
 
   rows: [
-    { col1: "B.A. in Journalism & Mass Communication", col2: "3 Years", col3: "Click to View", col4: "	Rs. 94,000/-" },
+    { col1: "B.Sc. (Hons.) in Mathematics", col2: "3 Years", col3: "Click to View", col4: "	Rs. 42,000/-" },
   ],
 
 };
@@ -189,89 +200,72 @@ export const FacultyOfMathematicalAndStatisticalSciencesData2: FeeTableData = {
 
 
 
-
-
 export const FacultyOfMathematicalAndStatisticalSciencesfacultyData: FacultyItem[] = [
-  {
-    id: 1,
-    name: "Mr. Rahul Chaturvedi",
-    designation: "Assistant Professor",
-    image: RahulImg,
-  },
-  {
-    id: 2,
-    name: "Dr. Dhwani Singh",
-    designation: "Assistant Professor",
-    image: DhwaniImg,
-  },
-  {
-    id: 3,
-    name: "Mr. Sandeep Singh",
-    designation: "Assistant Professor",
-    image: SandeepImg,
-  },
-  {
-    id: 4,
-    name: "Dr. Amit Kumar Singh",
-    designation: "Assistant Professor",
-    image: AmitImg,
-  },
-  {
-    id: 5,
-    name: "Dr. Pradeep Kumar",
-    designation: "Assistant Professor",
-    image: PradeepImg,
-  },
-  {
-    id: 6,
-    name: "Dr. Mili Singh",
-    designation: "Assistant Professor",
-    image: MiliImg,
-  },
+  { id: 1,  name: "Mr. Ankit Goyal",                  designation: "Assistant Professor",      image: AnkitImg },
+  { id: 2,  name: "Dr. Arun Kumar Bhardwaj",          designation: "Assistant Professor",      image: ArunImg },
+  { id: 3,  name: "Dr. Punit Kumar Gupt",             designation: "Assistant Professor",      image: PunitImg },
+  { id: 4,  name: "Dr. Pooja Gautam",                 designation: "Assistant Professor",      image: PoojaImg },
+  { id: 5,  name: "Dr. Suraj Bhan",                   designation: "Assistant Professor",      image: SurajImg },
+  { id: 6,  name: "Prof. (Dr.) Anurag Agnihotri",     designation: "Associate Professor",      image: AnuragImg },
+  { id: 7,  name: "Prof. (Dr.) Dilip Kumar Jaiswal",  designation: "Professor",                image: DilipImg },
+  { id: 8,  name: "Dr. Vinay Verma",                  designation: "Assistant Professor",      image: VinayImg },
+  { id: 9,  name: "Dr. Mukesh Awasthi",               designation: "Associate Professor",      image: MukeshImg },
+  { id: 10, name: "Prof. (Dr.) V.N. Pathak",          designation: "Professor",                image: VNPathakImg },
+  { id: 11, name: "Prof. (Dr.) Kulbhushan Singh",     designation: "Professor",                image: KulbhushanImg },
+  { id: 12, name: "Prof. (Dr.) Prachi Srivastava",    designation: "Professor",                image: PrachiImg },
+  { id: 13, name: "Mr. Anil Kumar",                   designation: "Assistant Professor",      image: AnilImg },
+  { id: 14, name: "Dr. Vimlesh",                      designation: "Assistant Professor",      image: VimleshImg },
+  { id: 15, name: "Dr. Omendra Mishra",               designation: "Assistant Professor",      image: OmendraImg },
+  { id: 16, name: "Dr. Dhanesh Kumar",                designation: "Assistant Professor",      image: DhaneshImg },
+  { id: 17, name: "Dr. Anuj Kumar Agarwal",           designation: "Assistant Professor",      image: AnujImg },
+  { id: 18, name: "Dr. Awanish Kumar",                designation: "Assistant Professor",      image: AwanishImg },
+  { id: 19, name: "Dr. Pramod Kumar",                 designation: "Associate Professor",      image: PramodImg },
 ];
 
 
-
+import depSlide1 from "../../../../assets/images/academics/departments/maths1-07022412033456.jpg";
+import depSlide2 from "../../../../assets/images/academics/departments/curriculum-07052412202574.jpg";
+import depSlide3 from "../../../../assets/images/academics/departments/industrystalwart-06022403005880.jpg";
+import depSlide4 from "../../../../assets/images/academics/departments/workshop2-0705240116534.jpg";
+import depSlide5 from "../../../../assets/images/academics/departments/curriculum-07052412202574.jpg";
+import depSlide6 from "../../../../assets/images/academics/departments/manage--06052401112298.jpg";
+import depSlide7 from "../../../../assets/images/academics/departments/phd-07022412442258.jpg";
 
 export const FacultyOfMathematicalAndStatisticalSciencesdepartmentHighlights: departmentHighlightscardType[] = [
   {
+    title: "Excellent instruction and integrated research",
+    description: "The department fosters interdisciplinary research and partnerships with various organizations and departments in order to address practical issues and constraints.",
     image: depSlide1,
-    title: "Activity based learning for holistic development",
-    description:
-      "The department offers hands-on training in media skills development to help students get a worldwide perspective on the most recent learning standards.",
   },
   {
+    title: "Specific remediation courses for competitive exams",
+    description: "Students who are getting ready for highly competitive exams like IIT-JAM, Central Universities, JEST, etc. can benefit from the department's robust educational foundation in a variety of scientific subjects.",
     image: depSlide2,
-    title: "State -of the-art media laboratories",
-    description:
-      "Modern facilities in terms of advanced labs with modern equipment and latest softwares are provided by the department so that students may contribute to high-quality media production.",
   },
   {
+    title: "Highly skilled educators with a diversified portfolio",
+    description: "Department have faculty members who possess advanced degrees from institutes of national repute and have experience working on both domestic and foreign research initiatives.",
     image: depSlide3,
-    title: "Regular workshops & sessions by industry stalwarts",
-    description:
-      "Distinguished scholars, filmmakers, journalists, and advertising experts frequently visit the department to share their knowledge with our students.",
   },
   {
+    title: "State-of-the-art laboratories and facilities",
+    description: "Modern labs and facilities within the department enable students to benefit from immersive learning opportunities and hands-on training, preparing them for successful careers in academia, research, and industry.",
     image: depSlide4,
-    title: "Regular visits to events, programs & festivals",
-    description:
-      "The students are sufficiently exposed through field trips, seminars, workshops, special lectures, and projects to let them know the real work culture of media industry.",
   },
   {
+    title: "Academic framework and courses in accordance with NEP-2020",
+    description: "The department offers a variety of programs that are designed and implemented in compliance with NEP 2020, providing several options for admission and graduation. It is committed to providing a vibrant academic environment.",
     image: depSlide5,
-    title: "Association & membership of professional bodies",
-    description: "Opportunities for internships are incorporated into the curriculum to assist students in gaining real-world experience and bridging the gap between academics and industry.",
   },
   {
+    title: "Promoting research environment though industrial collaborations",
+    description: "To succeed in academic and industrial research, the department has successfully partnered with a number of prestigious and well-known research institutions as well as the companies.",
     image: depSlide6,
-    title: "Industry collaboration & consultancy for enhanced learning",
-    description: "The department's distinctive quality is its engagement in consulting practises, which are complemented by consistent academic work.",
   },
   {
+    title: "Alumni trailblazers leading at multiple fronts",
+    description: "Former students of the department now hold positions in reputable national and international government and non-governmental organizations as academics, analysts, researchers and entrepreneurs.",
     image: depSlide7,
-    title: "Remedial classes for slow learners",
-    description: "Department regularly organizes special remedial classes for slow learners so that they can match their peer group and enhance their performance.",
   },
 ];
 
@@ -287,285 +281,114 @@ export const tableHeaders: Headers = {
  
  export const placedStudents: Student[] = [
     {
-      name: "Sakshi Shukla",
-      program: "M.A. in Journalism & Mass Communication",
-      company: "Policy Bazaar",
+      name: "Ajay Srivastava",
+      program: "B.Sc. (Hons.) in Mathematics",
+      company: "Wipro WILP",
     },
     {
-      name: "Amarnath Krishna Kashyap",
-      program: "B.A. in Journalism & Mass Communication",
-      company: "TTN24",
-    },
-    {
-      name: "Anurag Tewari",
-      program: "B.A. in Journalism & Mass Communication",
-      company: "Live UP Patrika",
-    },
-    {
-      name: "Arshita Singh",
-      program: "B.A. in Journalism & Mass Communication",
-      company: "Live UP Patrika",
-    },
-    {
-      name: "Surbhi Kumari",
-      program: "B.A. in Journalism & Mass Communication",
-      company: "Live UP Patrika",
-    },
-    {
-      name: "Anjali Shukla",
-      program: "B.A. in Journalism & Mass Communication",
-      company: "TTN24",
-    },
-    {
-      name: "Abhishreshtha Mishra",
-      program: "M.A. in Journalism & Mass Communication",
-      company: "Live UP Patrika",
-    },
-    {
-      name: "Shivam Mishra",
-      program: "B.A. in Journalism & Mass Communication",
-      company: "National Khabar",
-    },
-    {
-      name: "Disha Pandey",
-      program: "B.A. in Journalism & Mass Communication",
-      company: "National Khabar",
-    },
-    {
-      name: "Yash Yadav",
-      program: "B.A. in Journalism & Mass Communication",
-      company: "National Khabar",
-    },
-    {
-      name: "Aditya Jaiswal",
-      program: "B.A. in Journalism & Mass Communication",
-      company: "National Khabar",
-    },
-    {
-      name: "Shaheen Parveen Shahjahan",
-      program: "M.A. in Journalism & Mass Communication",
-      company: "IBN Bharat",
-    },
-    {
-      name: "Shivangi Singh",
-      program: "M.A. in Journalism & Mass Communication",
-      company: "IBN Bharat",
-    },
-    {
-      name: "Saumya Awasthi",
-      program: "M.A. in Journalism & Mass Communication",
-      company: "National Khabar",
-    },
-    {
-      name: "Atul Pandey",
-      program: "M.A. in Journalism & Mass Communication",
-      company: "National Khabar",
-    },
-    {
-      name: "Anamika Annu",
-      program: "M.A. in Journalism & Mass Communication",
-      company: "Doordarshan",
-    },
-    {
-      name: "Sonali Dubey",
-      program: "M.A. in Journalism & Mass Communication",
-      company: "Dainik jagran",
-    },
-    {
-      name: "Ritu Sharma",
-      program: "B.A. in Journalism & Mass Communication",
-      company: "HCL TSS Pvt Ltd",
-    },
-    {
-      name: "Mohd Zaid",
-      program: "B.A. in Journalism & Mass Communication",
-      company: "DC lnfotech",
-    },
-    {
-      name: "Mohammad Saad",
-      program: "B.A. in Journalism & Mass Communication",
-      company: "Next9News",
-    },
-    {
-      name: "Tanya Khandelwal",
-      program: "B.A. in Journalism & Mass Communication",
-      company: "Next9News",
-    },
-    {
-      name: "Gurpreet Kaur",
-      program: "B.A. in Journalism & Mass Communication",
-      company: "Next9News",
-    },
-    {
-      name: "Aanchal Singh",
-      program: "M.A. in Journalism & Mass Communication",
-      company: "Prabhat media creations",
-    },
-    {
-      name: "Rajeshwari Shukla",
-      program: "M.A. in Journalism & Mass Communication",
-      company: "Prabhat media creations",
-    },
-    {
-      name: "Avantika Awasthi",
-      program: "B.A. in Journalism & Mass Communication",
-      company: "K News",
-    },
-    {
-      name: "Rahul Singh",
-      program: "B.A. in Journalism & Mass Communication",
-      company: "ABHI TAK SUPERFAST NEWS",
-    },
-    {
-      name: "Praqya Srivastava",
-      program: "M.A. in Journalism & Mass Communication",
-      company: "Hars Tech",
-    },
-    {
-      name: "Danish Siddiqui",
-      program: "M.A. in Journalism & Mass Communication",
-      company: "Samgra chetna",
-    },
-    {
-      name: "Yashfi Hasan",
-      program: "B.A. in Journalism & Mass Communication",
-      company: "Samgra chetna",
-    },
-    {
-      name: "Manyata Verma",
-      program: "M.A. in Journalism & Mass Communication",
-      company: "Viral fission",
-    },
-    {
-      name: "Yash Tiwari",
-      program: "B.A. in Journalism & Mass Communication",
-      company: "PVR Cinemas",
-    },
-    {
-      name: "Jessica",
-      program: "B.A. in Journalism & Mass Communication",
-      company: "Red Bull India Pvt. Ltd.",
-    },
-    {
-      name: "Rohit Singh",
-      program: "B.A. in Journalism & Mass Communication",
-      company: "QConnect",
-    },
-    {
-      name: "Aastha Pal",
-      program: "B.A. in Journalism & Mass Communication",
-      company: "Cnews bharat",
-    },
-    {
-      name: "Danish Siddiqui",
-      program: "M.A. in Journalism & Mass Communication",
-      company: "Samgra chetna",
-    },
-    {
-      name: "Atul Kumar Pandey",
-      program: "M.A. in Journalism & Mass Communication",
-      company: "razy news",
-    },
-    {
-      name: "Yashfi Hasan",
-      program: "B.A. in Journalism & Mass Communication",
-      company: "Samgra chetna",
-    },
-    {
-      name: "Sanjay Awasthi",
-      program: "M.A. in Journalism & Mass Communication",
-      company: "Samgra chetna",
+      name: "Saurabh",
+      program: "M.Sc. in Mathematics",
+      company: "SRMU",
     },
   ];
 
 
-import img1 from "../../../../assets/images/academics/departments/med1-09052401031259.jpg"
-import img2 from "../../../../assets/images/academics/departments/med2-09052401030372.jpg"
-import img3 from "../../../../assets/images/academics/departments/med3-0905240102507.jpg"
+import img1 from "../../../../assets/images/academics/departments/wfw2w-02062504460550.png"
+import img2 from "../../../../assets/images/academics/departments/wee-0206250448025.png"
+import img3 from "../../../../assets/images/academics/departments/guest7-09052401033814.jpg"
 import img4 from "../../../../assets/images/academics/departments/guest6-09052401032821.jpg"
 import img5 from "../../../../assets/images/academics/departments/guest7-09052401033814.jpg"
-import img6 from "../../../../assets/images/academics/departments/guest2-0905240103534.jpg"
-import img7 from "../../../../assets/images/academics/departments/webinar5-09052401003870.jpg"
-import img8 from "../../../../assets/images/academics/departments/workshop4-09052401004722.jpg"
-import img9 from "../../../../assets/images/academics/departments/workshop3-09052401005812.jpg"
+import img6 from "../../../../assets/images/academics/departments/international2-10022412523788.jpg"
+import img7 from "../../../../assets/images/academics/departments/workshop3-09052401005812.jpg"
+import img8 from "../../../../assets/images/academics/departments/nation6-09052402004527.jpg"
+import img9 from "../../../../assets/images/academics/departments/guest1-09052412554546.jpg"
+import img10 from "../../../../assets/images/academics/departments/internation1-09052401044878.jpg"
 
 export const FacultyOfMathematicalAndStatisticalSciencesDepartmentEventsData: EventItem[] = [
   {
     id: 1,
-    title: "Industrial Visit",
-    topic: "U.P. Photo Fair Trust",
-    venue: "Lucknow Management Association",
-    date: "07th-09th November, 2023",
+    title: "International Conference",
+    topic: "Sustainable Innovation Bridging Research And Industry For A Resilient Future",
+    date: "07th–09th April, 2025",
     image: img1,
     cardBgColor: "#ffffff",
   },
   {
     id: 2,
-    title: "Industrial Visit",
-    venue: "Bharat Samachar Lucknow",
-    date: "24th July, 2023",
+    title: "Guest Lecture",
+    speaker: "Dr. Preeti Bajpai, Professor of Mathematics, BITS Pilani, Dubai Campus",
+    topic: "Numbers and their Relevance in our Daily Life",
+    date: "08th November, 2024",
     image: img2,
     cardBgColor: "#ffffff",
   },
-    {
+  {
     id: 3,
     title: "Guest Lecture",
-    speaker: "Mr. Adarsh Prakash Srivastava",
-    topic: "Empowering Society through informed news",
-    date: "25th July, 2023",
-    image: img6,
+    speaker: "Prof. (Dr.) Arvind Bhatt",
+    topic: "An Overview of Central Limit Theorem",
+    date: "21st February, 2025",
+    image: img3,
     cardBgColor: "#ffffff",
   },
   {
     id: 4,
-    title: "Industrial Visit",
-    topic: "Twin Sisters with Cameras",
-    venue: "Jadunath Bhawan, Lucknow",
-    date: "07th July, 2023",
-    image: img3,
+    title: "Guest Lecture",
+    speaker: "Prof. (Dr.) Dinesh Kesari",
+    topic: "Basics of Linear Algebra",
+    date: "24th–25th March, 2023",
+    image: img4,
     cardBgColor: "#ffffff",
   },
   {
     id: 5,
     title: "Guest Lecture",
-    speaker: "Mr. Tushar Srivastava",
-    topic: "Challenges for Indian Media in Current Scenario",
-    date: "23rd March, 2023",
-    image: img4,
+    speaker: "Dr. B.S. Bhadauria",
+    topic: "Advanced Theoretical and Numerical Techniques",
+    date: "12th September, 2018",
+    image: img5,
     cardBgColor: "#ffffff",
   },
   {
     id: 6,
     title: "Guest Lecture",
-    speaker: "Dr. Santosh Kumar",
-    topic: "The Generalistic Legacy of Dr. Ambedkar some reflections",
-    date: "13th April, 2023",
-    image: img5,
+    speaker: "Dr. Vinay Singh",
+    topic: "Convex Optimization and Its Application",
+    date: "13th March, 2019",
+    image: img6,
     cardBgColor: "#ffffff",
   },
-
   {
     id: 7,
     title: "Workshop",
-    topic: "The Art of Anchoring",
-    date: "08th September, 2023",
+    topic: "Introduction to Vedic Ganit & Innovations",
+    date: "21st–26th February, 2022",
     image: img7,
     cardBgColor: "#ffffff",
   },
   {
     id: 8,
-    title: "Workshop",
-    topic: "Report of the Canon sponsored Photography",
-    date: "02nd September, 2023",
+    title: "Conference",
+    topic: "Conference on Analysis & Applications – An International Meet",
+    date: "17th–18th November, 2021",
     image: img8,
     cardBgColor: "#ffffff",
   },
   {
     id: 9,
-    title: "Workshop",
-    topic: "Reporting for Television & Web: Career Opportunities & Challenges",
-    date: "29th January, 2024",
+    title: "Conference",
+    topic: "Recent Trends in Mathematics with Applications",
+    date: "30th–31st January, 2020",
     image: img9,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 10,
+    title: "Seminar",
+    speaker: "Dr. Pankaj Mathur",
+    topic: "Emerging Trends in Mathematics and Its Application",
+    date: "26th September, 2022",
+    image: img10,
     cardBgColor: "#ffffff",
   },
 ];
