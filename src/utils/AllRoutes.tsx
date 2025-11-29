@@ -322,6 +322,9 @@ export const routes = [
                 element: <FacultyOfPhysicalSciencesPage />,
                 handle: {
                   crumb: () => <Link to="/">Faculty Of Physical Science</Link>,
+                }
+              },
+              {
                 path: "faculty-of-mathematical-and-statistical-sciences",
                 element: <FacultyOfMathematicalAndStatisticalSciencesPage />,
                 handle: {

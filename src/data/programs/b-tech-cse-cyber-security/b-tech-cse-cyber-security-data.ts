@@ -15,9 +15,7 @@ import dev3 from "../../../assets/images/programs/btechincseaiandml/opportunitie
 import dev4 from "../../../assets/images/programs/btechincseaiandml/opportunities/highlights/4.jpg"
 
 import MBA21 from "../../../assets/images/programs/btechincseaiandml/opportunities/mba21-03022401044691.jpg"
-import MBA31 from "../../../assets/images/programs/btechincseaiandml/opportunities/business-anlaytics-03022401050797.jpg"
 import MBA41 from "../../../assets/images/programs/btechincseaiandml/opportunities/computer-science1-03022411495890.jpg"
-import MBA51 from "../../../assets/images/programs/btechincseaiandml/opportunities/datascience.jpg"
 
 
 
@@ -168,8 +166,16 @@ export const counterDataForBtechinCSECyberSecurity: counterDataType[] = [
 ];
 
 
+export const eligibilityDataforCyberSecurity = {
+  heading: "Eligibility Criterion",
+  description:
+    "Candidate must have passed 10+2 or equivalent system from any recognized Central/ State Board with Physics and Mathematics as compulsory subjects alongwith one of the Chemistry/Computer Science/Technical Vocational Subject. Candidate must obtained minimum 45% marks or equivalent grade for GEN/OBC and 40% marks or equivalent grade for SC/ST Category in the above subjects taken together."
+};
 
-export const ProgramFeesAIandML: FeeTableData = {
+
+
+
+export const ProgramFeesForCyberSecurity: FeeTableData = {
     columns: ["DURATION (IN YEAR)", "1YEAR", "2YEAR", "3YEAR", "4YEAR"],
 
     rows: [
@@ -455,28 +461,31 @@ export const abc: CustomProgramPLOAccordianProps = {
 };
 
 
-export const scopeData: ScopeData = {
+export const scopeDataForCyberSecurity: ScopeData = {
     title: "Scope in Companies",
     description: [
         "By pursuing this program, students gain deep knowledge of emerging technologies.",
         "They also get exposure to endless career possibilities."
     ],
     rolesLeft: [
-        "Computer Vision Engineer",
-        "Data Analyst",
-        "NLP Engineer",
-        "ML Engineer",
-        "Research Scientist",
-        "Robotics Engineer",
+        "Cyber Security Analyst",
+        "Ethical Hacker",
+        "Security Engineer",
+        "Cloud Security Specialist",
+        "Cyber Security Consultant",
+        "Network Security Engineer",
+        "Penetration Tester",
     ],
+
     rolesRight: [
-        "Software Engineer",
-        "AI Researcher",
-        "AI Developer",
-        "Big Data Engineer",
-        "Algorithm Specialist",
-        "BI Developer",
+        "Incident Response Analyst",
+        "Digital Forensics Expert",
+        "Security Architect",
+        "IoT Security Specialist",
+        "Malware Analyst",
+        "Risk & Compliance Manager",
     ],
+
 
     sectors: [
         {
@@ -560,7 +569,7 @@ export const stepsforCyberSecurity = [
 ];
 
 
-export const opportunityCardData: OpportunityCard[] = [
+export const opportunityCardDataforCyberSecurity: OpportunityCard[] = [
     {
         id: 1,
         img: MBA21,
@@ -574,3 +583,5 @@ export const opportunityCardData: OpportunityCard[] = [
         path: "/placements",
     },
 ]
+
+

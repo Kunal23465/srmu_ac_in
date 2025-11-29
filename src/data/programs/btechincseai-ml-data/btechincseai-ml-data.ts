@@ -112,6 +112,14 @@ export const counterDataForBtechinCSEAIandML: counterDataType[] = [
     { id: 4, value: "30", suffix: "%", label: "Students have multiple job offers" },
 ];
 
+export const eligibilityDataforAIandML = {
+  heading: "Eligibility Criterion",
+  description:
+    "Candidate must have passed 10+2 or equivalent system from any recognized Central/State Board with Physics and Mathematics as compulsory subjects along with one of Chemistry/Computer Science/Technical Vocational Subject. Candidate must obtained minimum 45% marks for GEN/OBC and 40% marks for SC/ST category."
+};
+
+
+
 
 
 
@@ -337,7 +345,6 @@ export const steps = [
         title: "Achievements",
         image: dev1,
         bulletPoints: [
-            "Parv Awasthi has secured top 11 position in in DUEX DANZA, conducted by MANFEST- VARCHASVA ,IIM Lucknow during 10th -12th Feb 2023",
             "5 Students CSE (Shivam Agarwal,Debashish Bose,Aditya Agarwal,Abhishek Singh Bohra,Gaurav Singh) qualified GATE exam in 2022-2023",
             "Debashish Bose selected for M. Tech program in NIT Karnataka, Surthal",
         ],
@@ -359,6 +366,8 @@ export const steps = [
             "Cloud Computing Lab",
             "Research & Development Lab",
             "Cyber Security Lab",
+            "Python Programming Lab",
+            "Oracle Peoplesoft Lab",
         ],
     },
     {
@@ -366,7 +375,6 @@ export const steps = [
         title: "Beyond Academics",
         image: dev4,
         bulletPoints: [
-            "Parv Awasthi has secured top 11 position in in DUEX DANZA, conducted by MANFEST- VARCHASVA ,IIM Lucknow during 10th -12th Feb 2023",
             "Gagan Singh Yadav achieved 1st position in Table Tennis at Ullas 2023, Annual Fest held at SRMU",
             "Raj Singh Parihar achieved 2nd position in Football at Ullas 2023,Annual Fest held at SRMU",
         ],
