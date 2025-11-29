@@ -103,6 +103,7 @@ import ProgramsPage from "../pages/programs/ProgramsPage";
 import FacultyOfBiosciencesPage from "../pages/academics/institutes/institute-department/FacultyOfBiosciencesPage";
 import AwardOverviewPage from "../pages/about/award-overview/AwardOverviewPage";
 import FacultyOfBiotechnologyPage from "../pages/academics/institutes/institute-department/FacultyOfBiotechnologyPage";
+import FacultyOfPhysicalSciencesPage from "../pages/academics/institutes/institute-department/FacultyOfPhysicalSciencesPage";
 import FacultyOfMathematicalAndStatisticalSciencesPage from "../pages/academics/institutes/institute-department/FacultyOfMathematicalAndStatisticalSciencesPage";
 import FacultyOfHumanitiesAndSocialSciencesPage from "../pages/academics/institutes/institute-department/FacultyOfHumanitiesAndSocialSciencesPage";
 interface IMatches {
@@ -317,6 +318,10 @@ export const routes = [
                 },
               },
                {
+                path: "faculty-of-physical-sciences",
+                element: <FacultyOfPhysicalSciencesPage />,
+                handle: {
+                  crumb: () => <Link to="/">Faculty Of Physical Science</Link>,
                 path: "faculty-of-mathematical-and-statistical-sciences",
                 element: <FacultyOfMathematicalAndStatisticalSciencesPage />,
                 handle: {
