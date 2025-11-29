@@ -578,6 +578,13 @@ export const routes = [
               crumb: () => <Link to="/">Program Finder</Link>,
             },
           },
+                    {
+            path: "scholarship-scheme",
+            element: <ScholarshipPage />,
+            handle: {
+              crumb: () => <Link to="/">Scholarship</Link>,
+            },
+          },
         ],
       },
       {
@@ -751,13 +758,7 @@ export const routes = [
             ],
           },
 
-          {
-            path: "scholarship",
-            element: <ScholarshipPage />,
-            handle: {
-              crumb: () => <Link to="/">Scholarship</Link>,
-            },
-          },
+
         ],
       },
       {

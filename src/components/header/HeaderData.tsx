@@ -233,7 +233,7 @@ export const HeaderData = [
               },
               {
                 item: "Scholarship",
-                path: "/admission/data-science",
+                path: "/admission/scholarship-scheme",
               },
               {
                 item: "Shift Schedule (First Year Only)",
