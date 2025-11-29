@@ -74,6 +74,6 @@ export const instituteCourseCardData: CustomInstituteCourseCardProps[] = [
   {
     imageUrl: courseImg5,
     departmentName: "Department of Computer Science and Information Systems",
-    path: "/academics/institutes-info/faculty-of-civil-engineering",
+    path: "/academics/institutes-info/department-of-csis",
   },
 ];

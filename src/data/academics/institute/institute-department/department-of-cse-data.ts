@@ -7,6 +7,9 @@ import { InstituteProfile } from "../../../../types/profile-data-type";
 
 import professor from "../../../../assets/images/academics/departments/shobhit-sinha-1-1--05052510362381.jpeg";
 import { FeeTableData } from "../faculty-of-civil-engineering/faculty-of-civil-engineering-data";
+import { FacultyItem } from "../../../../utils/custom/CustomFacultyListCard";
+
+// import fimg1 from ""
 
 
 export interface Headers {
@@ -39,9 +42,9 @@ export const CSDepartmentVMData = [
   {
     id: 1,
     bgColor: "#E5F3FC",
-    imageUrl: missionImg,
-    title: "Mission",
-    description: [
+    img: missionImg,
+    heading: "Mission",
+    points: [
       "To expose graduate and postgraduate students to basic principles and cutting edge technologies in Computer Science and Engineering by adopting updated and industry ready model curriculum.",
       "To strengthen the students in multidisciplinary skills that are required to solve complex real world problems and work in collaborative projects by means of diverse teaching pedagogy.",
       "To promote research, innovation and industry collaboration amongst students and faculties and contribute towards the growth of the society by providing conducive environment and resources.",
@@ -51,9 +54,9 @@ export const CSDepartmentVMData = [
   {
     id: 2,
     bgColor: "#FFF2D2",
-    imageUrl: vissionImg,
-    title: "Vision",
-    description: [
+    img: vissionImg,
+    heading: "Vision",
+    points: [
       "To build the nation by fostering industry and research oriented studies in Computer Science and Engineering and become a centre of excellence in developing indigenous technologies for the advancement of the society.",
     ],
   },
@@ -63,11 +66,11 @@ export const instituteProfilesCSE: InstituteProfile[] = [
   {
     id: 1,
     title: "Department Head",
-    name: "Prof. (Dr.) Abhishek Saxena",
-    position: "Offg. Director, IAP & Dean FoCE, SRMU, Lucknow–Deva Road",
+    name: "Dr. Shobhit Sinha",
+    position: "HoD DCSE, SRMU, Lucknow-Deva Road",
     image: professor,
 
-    detailsHeading: "Experience &Achievements:  ",
+    // detailsHeading: "Experience &Achievements:  ",
     useBullets: false,
 
     details: [
@@ -80,7 +83,7 @@ export const instituteProfilesCSE: InstituteProfile[] = [
 
     modalContent: `
         <h2 class='Dr. Shobhit Sinha</h2>
-        <p><strong>Assistant Professor</strong></p>
+        <p class="text-[#ffb703] font-wieght-300 font-size-15px ">Assistant Professor</></p>
         <p>
          Dr. Shobhit Sinha is a distinguished academician and industry expert having specialization in Machine Learning , Argumentation Mining and Java Framework , holding a PhD in Artificial Intelligence, Dr. Sinha combines a wealth of experience across both the Information Technology sector and the educational domain, making him a highly regarded professional in his field. With nine years of experience in the IT industry, Dr. Sinha has contributed to innovative solutions and advancements in technology, focusing primarily on the development and implementation of cutting-edge machine learning algorithms and Java-based frameworks. His expertise has been instrumental in driving impactful projects and fostering technological growth in the organizations he has worked with.Transitioning into academia, Dr. Sinha brings almost a decade of experience to the educational sector.
         </p>
@@ -470,6 +473,123 @@ export const cseundergraduateFeeTable: FeeTableData = {
 
 
 
+// faculty -cse
+
+
+export const CsefacultyData: FacultyItem[] = [
+  {
+    id: 1,
+    name: "Dr. Rajeev Kumar",
+    designation: "Assistant Professor",
+    image: "https://via.placeholder.com/200",
+    // cardBgColor: "#001219",
+  },
+  {
+    id: 2,
+    name: "Mr. Kamlesh Chandra Maurya",
+    designation: "Assistant Professor",
+    image: "https://via.placeholder.com/200",
+    // cardBgColor: "#003049",
+  },
+  {
+    id: 3,
+    name: "Ms. Sakshi Singh",
+    designation: "Assistant Professor",
+    image: "https://via.placeholder.com/200",
+    // cardBgColor: "#370617",
+  },
+  {
+    id: 4,
+    name: "Ms. Reeta",
+    designation: "Assistant Professor",
+    image: "https://via.placeholder.com/200",
+    // cardBgColor: "#283618",
+  },
+  {
+    id: 5,
+    name: "Dr. Anil Kumar Pandey",
+    designation: "Assistant Professor",
+    image: "https://via.placeholder.com/200",
+    // cardBgColor: "#432818",
+  },
+  {
+    id: 5,
+    name: "Ms. Abhilasha Mandal",
+    designation: "Assistant Professor",
+    image: "https://via.placeholder.com/200",
+    // cardBgColor: "#432818",
+  },
+  {
+    id: 5,
+    name: "Mr. Anil Kumar",
+    designation: "Assistant Professor",
+    image: "https://via.placeholder.com/200",
+    // cardBgColor: "#432818",
+  },
+  {
+    id: 5,
+    name: "Ms. Anjali Awasthi",
+    designation: "Assistant Professor",
+    image: "https://via.placeholder.com/200",
+    // cardBgColor: "#432818",
+  },
+  {
+    id: 5,
+    name: "Mr. Ijtaba Saleem Khan",
+    designation: "Assistant Professor",
+    image: "https://via.placeholder.com/200",
+    // cardBgColor: "#432818",
+  },
+  {
+    id: 5,
+    name: "Dr. Satya Bhushan Verma",
+    designation: "Assistant Professor",
+    image: "https://via.placeholder.com/200",
+    // cardBgColor: "#432818",
+  },
+  {
+    id: 5,
+    name: "Mr. Aditya Pratap Singh",
+    designation: "Assistant Professor",
+    image: "https://via.placeholder.com/200",
+    // cardBgColor: "#432818",
+  },
+  {
+    id: 5,
+    name: "Ms. Arpita Vishwakarma",
+    designation: "Assistant Professor",
+    image: "https://via.placeholder.com/200",
+    // cardBgColor: "#432818",
+  },
+  {
+    id: 5,
+    name: "Mr. Neelesh Mishra",
+    designation: "Assistant Professor",
+    image: "https://via.placeholder.com/200",
+    // cardBgColor: "#432818",
+  },
+  {
+    id: 5,
+    name: "Ms. Prabha Singh",
+    designation: "Assistant Professor",
+    image: "https://via.placeholder.com/200",
+    // cardBgColor: "#432818",
+  },
+  {
+    id: 5,
+    name: "Ms. Atifa Parveen",
+    designation: "Assistant Professor",
+    image: "https://via.placeholder.com/200",
+    // cardBgColor: "#432818",
+  },
+  {
+    id: 5,
+    name: "Dr. Shobhit Sinha",
+    designation: "Assistant Professor",
+    image: "https://via.placeholder.com/200",
+    // cardBgColor: "#432818",
+  },
+];
 
 
 

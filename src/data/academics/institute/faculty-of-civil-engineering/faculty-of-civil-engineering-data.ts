@@ -14,12 +14,12 @@ import { FacultyItem } from "../../../../utils/custom/CustomFacultyListCard";
 import { InstituteProfile } from "../../../../types/profile-data-type";
 
 export interface DepartmentVMType {
-  id: number;
-  bgColor: string; // hex, rgb, etc.
+  id?: number;
+  bgColor?: string; // hex, rgb, etc.
   img: string; // image URL or path
-  heading: string; // "Mission", "Vision", etc.
+  heading?: string; // "Mission", "Vision", etc.
   description?: string;
-  points: string[]; // bullet points
+  points?: string[]; // bullet points
 }
 export interface FeeTableRow {
   [key: string]: string | number | React.ReactNode;
