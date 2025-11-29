@@ -368,7 +368,7 @@ export const InstituteofEducationandResearchDepartmentEventsData: EventItem[] = 
     id: 9,
     title: "Webinar",
     speaker: "Dr. Geetika Nidhi, Assistant Professor",
-    // designation: "Faculty of Education, Integral University",
+    designation: "Faculty of Education, Integral University",
     topic: "Relevance of Health, Hygiene and Yoga in Pandemic Times",
     date: "23rd October, 2020",
     image: img9,
