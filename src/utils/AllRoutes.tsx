@@ -102,6 +102,8 @@ import BtechInCSEAIAndML from "../pages/programs/btech-in-cse-ai-ml/BtechInCSEAI
 import ProgramsPage from "../pages/programs/ProgramsPage";
 import FacultyOfBiosciencesPage from "../pages/academics/institutes/institute-department/FacultyOfBiosciencesPage";
 import AwardOverviewPage from "../pages/about/award-overview/AwardOverviewPage";
+import DepartmentDetailPage from "../components/academics/institutes/institute-department/InstituteofManagementCommerceandEconomics/DepartmentDetailPage";
+import InstituteDepartmentPage from "../pages/academics/institutes/institute-department/InstituteDepartmentPage";
 interface IMatches {
   pathname: string;
   params: Params<string>;
@@ -272,6 +274,13 @@ export const routes = [
             element: <InstitutePage />,
             children: [
               {
+                path: "institute-departments/:name",
+                element: <InstituteDepartmentPage />,
+                handle: {
+                  crumb: () => <Link to="/">Faculty Of Civil Engineering</Link>,
+                },
+              },
+              {
                 path: "faculty-of-civil-engineering",
                 element: <FacultyOfCivilEngineeringPage />,
                 handle: {
@@ -299,7 +308,7 @@ export const routes = [
                   crumb: () => <Link to="/">Faculty Of Allied Health Sciences</Link>,
                 },
               },
-               {
+              {
                 path: "faculty-of-bioscience",
                 element: <FacultyOfBiosciencesPage />,
                 handle: {
@@ -325,6 +334,13 @@ export const routes = [
                 element: <InstituteofManagementCommerceandEconomicsPage />,
                 handle: {
                   crumb: () => <Link to="/">Institute of Management, Commerce and Economics</Link>,
+                },
+              },
+              {
+                path: "departmentDetails/:name",
+                element: <DepartmentDetailPage />,
+                handle: {
+                  crumb: () => <Link to="/">Faculty Of Commerce And Economics</Link>,
                 },
               },
               {

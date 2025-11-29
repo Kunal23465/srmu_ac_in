@@ -15,7 +15,7 @@ import {
   InstituteofEducationandResearchinstituteProfiles,
   placedStudents,
   tableHeaders,
-  } from "../../../../../data/academics/institute/institute-department/institute-of-education-and-research-data";
+} from "../../../../../data/academics/institute/institute-department/institute-of-education-and-research-data";
 import Counter from "../../../../../utils/custom/Counter";
 import CustomDepartmentVissionMission from "../../../../../utils/custom/CustomDepartmentVissionMission";
 import CustomDepartmentFeeDetailsTable from "../../../../../utils/custom/CustomDepartmentFeeDetailsTable";
@@ -23,10 +23,9 @@ import CustomTabs from "../../../../../utils/custom/CustomTabs";
 import CustomInstituteProfileCard from "../../../../../utils/custom/CustomInstituteProfileCard";
 import CustomDepartmentSlider from "../../../../../utils/custom/CustomDepartmentSlider";
 import CustomFacultyListCard from "../../../../../utils/custom/CustomFacultyListCard";
-import facilitiesBg from '../../../../../assets/images/academics/departments/facilities-bg-lg.jpeg'
+import facilitiesBg from "../../../../../assets/images/academics/departments/facilities-bg-lg.jpeg";
 import CustomDepartmentHighlightCard from "../../../../../utils/custom/CustomDepartmentHighlightCard";
 import CustomPlacedStudentTable from "../../../../../utils/custom/CustomPlacedStudentTable";
-
 
 const InstituteofEducationandResearch: React.FC = () => {
   const items = [
@@ -53,7 +52,6 @@ const InstituteofEducationandResearch: React.FC = () => {
         />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12  my-15">
           {InstituteofEducationandResearchVMData.map((item) => (
- 
             <CustomDepartmentVissionMission key={item.id} data={item} />
           ))}
         </div>
@@ -77,26 +75,23 @@ const InstituteofEducationandResearch: React.FC = () => {
           pillContainerBgColor="#0f4a85"
           alignTabs="center"
         />
-</div>
-<div>
-                <CustomDepartmentSlider
-                    heading="Faculty List"
-                    description="The University takes pride in recruiting distinguished faculty from reputed central universities and best institutes like- IIT, IIM, MNNIT and IIT-BHU. They bring to the classroom, passion and enthusiasm for teaching, providing an intimate, interactive, personalized approach to learning."
-                    data={InstituteofEducationandResearchfacultyData}
-                    renderCard={({ item }) => <CustomFacultyListCard item={item} />}
-                    bgImage={facilitiesBg}
-                    arrowColor="#fff"
- 
-                    headingColor="#ffffff"
-                    descriptionColor="#e5e5e5"
- 
-                    arrowBorderColor="#0f4a85"
-                    arrowBgColor="#fff2"
-                    breakpoints={{ desktop: 4, tablet: 3, mobile: 1 }}
-                /> 
-            </div>  
-                  <div className={`${Classes["container"]}`}>
-    </div>
+      </div>
+      <div>
+        <CustomDepartmentSlider
+          heading="Faculty List"
+          description="The University takes pride in recruiting distinguished faculty from reputed central universities and best institutes like- IIT, IIM, MNNIT and IIT-BHU. They bring to the classroom, passion and enthusiasm for teaching, providing an intimate, interactive, personalized approach to learning."
+          data={InstituteofEducationandResearchfacultyData}
+          renderCard={({ item }) => <CustomFacultyListCard item={item} />}
+          bgImage={facilitiesBg}
+          arrowColor="#fff"
+          headingColor="#ffffff"
+          descriptionColor="#e5e5e5"
+          arrowBorderColor="#0f4a85"
+          arrowBgColor="#fff2"
+          breakpoints={{ desktop: 4, tablet: 3, mobile: 1 }}
+        />
+      </div>
+      <div className={`${Classes["container"]}`}></div>
       <div className="pt-15 bg-[#ecf0f9]">
         <div className={`${Classes["container"]}`}>
           <h1 className="text-5xl pb-5 font-medium">Placed Students</h1>
@@ -109,25 +104,21 @@ const InstituteofEducationandResearch: React.FC = () => {
             classes={InstituteofEducationandResearchCounterData2.classes}
             aboutusClass={InstituteofEducationandResearchCounterData2.aboutusClass}
           />
-<CustomPlacedStudentTable
-            students={placedStudents}
-            headers={tableHeaders}
-          />
+          <CustomPlacedStudentTable students={placedStudents} headers={tableHeaders} />
         </div>
       </div>
- <CustomDepartmentSlider
-                heading="Key Highlights of Our Department"
-                data={InstituteofEducationandResearchdepartmentHighlights}
-                renderCard={({ item }) => <CustomDepartmentHighlightCard item={item} />}
-                bgColor="#E7A615"
-                arrowColor="#000"
-
-                breakpoints={{ desktop: 3, tablet: 2, mobile: 1 }}
-            />
+      <CustomDepartmentSlider
+        heading="Key Highlights of Our Department"
+        data={InstituteofEducationandResearchdepartmentHighlights}
+        renderCard={({ item }) => <CustomDepartmentHighlightCard item={item} />}
+        bgColor="#E7A615"
+        arrowColor="#000"
+        breakpoints={{ desktop: 3, tablet: 2, mobile: 1 }}
+      />
 
       <CustomTopFooter data={InstituteofEducationandResearchTopFooterData} />
     </div>
   );
 };
 
-export default InstituteofEducationandResearch
+export default InstituteofEducationandResearch;
