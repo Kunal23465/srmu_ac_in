@@ -14,8 +14,7 @@ import {
   SRMUPolytechnicinstituteProfiles,
   placedStudents,
   tableHeaders,
-  SRMUPolytechnicDepartmentEventsData,
-  } from "../../../../../data/academics/institute/institute-department/srmu-polytechnic-data";
+} from "../../../../../data/academics/institute/institute-department/srmu-polytechnic-data";
 import Counter from "../../../../../utils/custom/Counter";
 import CustomDepartmentVissionMission from "../../../../../utils/custom/CustomDepartmentVissionMission";
 import CustomDepartmentFeeDetailsTable from "../../../../../utils/custom/CustomDepartmentFeeDetailsTable";
@@ -23,12 +22,11 @@ import CustomTabs from "../../../../../utils/custom/CustomTabs";
 import CustomInstituteProfileCard from "../../../../../utils/custom/CustomInstituteProfileCard";
 import CustomDepartmentSlider from "../../../../../utils/custom/CustomDepartmentSlider";
 import CustomFacultyListCard from "../../../../../utils/custom/CustomFacultyListCard";
-import facilitiesBg from '../../../../../assets/images/academics/departments/facilities-bg-lg.jpeg'
+import facilitiesBg from "../../../../../assets/images/academics/departments/facilities-bg-lg.jpeg";
 import CustomDepartmentHighlightCard from "../../../../../utils/custom/CustomDepartmentHighlightCard";
 import CustomPlacedStudentTable from "../../../../../utils/custom/CustomPlacedStudentTable";
 import CustomDepartmentEventSlider from "../../../../../utils/custom/CustomDepartmentEventSlider";
 import CustomEventCard from "../../../../../utils/custom/CustomEventListCard";
-
 
 const SRMUPolytechnic: React.FC = () => {
   const items = [
@@ -37,21 +35,15 @@ const SRMUPolytechnic: React.FC = () => {
       label: "Polytechnic (Diploma)",
       content: <CustomDepartmentFeeDetailsTable data={SRMUPolytechnicData1} />,
     },
-
   ];
 
   return (
     <div>
       <div className={`${Classes["container"]}`}>
         <CustomOverviewSection data={SRMUPolytechnicOverviewData} />
-        <Counter
-          counterData={SRMUPolytechnicCounterData1.counterData}
-          classes={SRMUPolytechnicCounterData1.classes}
-          aboutusClass={SRMUPolytechnicCounterData1.aboutusClass}
-        />
+        <Counter counterData={SRMUPolytechnicCounterData1.counterData} classes={SRMUPolytechnicCounterData1.classes} aboutusClass={SRMUPolytechnicCounterData1.aboutusClass} />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12  my-15">
           {SRMUPolytechnicVMData.map((item) => (
- 
             <CustomDepartmentVissionMission key={item.id} data={item} />
           ))}
         </div>
@@ -75,26 +67,23 @@ const SRMUPolytechnic: React.FC = () => {
           pillContainerBgColor="#0f4a85"
           alignTabs="center"
         />
-</div>
-<div>
-                <CustomDepartmentSlider
-                    heading="Faculty List"
-                    description="The University takes pride in recruiting distinguished faculty from reputed central universities and best institutes like- IIT, IIM, MNNIT and IIT-BHU. They bring to the classroom, passion and enthusiasm for teaching, providing an intimate, interactive, personalized approach to learning."
-                    data={SRMUPolytechnicfacultyData}
-                    renderCard={({ item }) => <CustomFacultyListCard item={item} />}
-                    bgImage={facilitiesBg}
-                    arrowColor="#fff"
- 
-                    headingColor="#ffffff"
-                    descriptionColor="#e5e5e5"
- 
-                    arrowBorderColor="#0f4a85"
-                    arrowBgColor="#fff2"
-                    breakpoints={{ desktop: 4, tablet: 3, mobile: 1 }}
-                /> 
-            </div>  
-                  <div className={`${Classes["container"]}`}>
-    </div>
+      </div>
+      <div>
+        <CustomDepartmentSlider
+          heading="Faculty List"
+          description="The University takes pride in recruiting distinguished faculty from reputed central universities and best institutes like- IIT, IIM, MNNIT and IIT-BHU. They bring to the classroom, passion and enthusiasm for teaching, providing an intimate, interactive, personalized approach to learning."
+          data={SRMUPolytechnicfacultyData}
+          renderCard={({ item }) => <CustomFacultyListCard item={item} />}
+          bgImage={facilitiesBg}
+          arrowColor="#fff"
+          headingColor="#ffffff"
+          descriptionColor="#e5e5e5"
+          arrowBorderColor="#0f4a85"
+          arrowBgColor="#fff2"
+          breakpoints={{ desktop: 4, tablet: 3, mobile: 1 }}
+        />
+      </div>
+      <div className={`${Classes["container"]}`}></div>
       <div className="pt-15 bg-[#ecf0f9]">
         <div className={`${Classes["container"]}`}>
           <h1 className="text-5xl pb-5 font-medium">Placed Students</h1>
@@ -102,15 +91,8 @@ const SRMUPolytechnic: React.FC = () => {
             With 2000+ Job Offers given by 250+ Top corporates, an average package of 4.5 LPA and 100%* placement record in different professional programs, SRMU provides the best
             return on investment. More than 30% students have multiple job offers.
           </p>
-          <Counter
-            counterData={SRMUPolytechnicCounterData2.counterData}
-            classes={SRMUPolytechnicCounterData2.classes}
-            aboutusClass={SRMUPolytechnicCounterData2.aboutusClass}
-          />
-<CustomPlacedStudentTable
-            students={placedStudents}
-            headers={tableHeaders}
-          />
+          <Counter counterData={SRMUPolytechnicCounterData2.counterData} classes={SRMUPolytechnicCounterData2.classes} aboutusClass={SRMUPolytechnicCounterData2.aboutusClass} />
+          <CustomPlacedStudentTable students={placedStudents} headers={tableHeaders} />
         </div>
       </div>
  <CustomDepartmentSlider
@@ -136,4 +118,4 @@ const SRMUPolytechnic: React.FC = () => {
   );
 };
 
-export default SRMUPolytechnic
+export default SRMUPolytechnic;

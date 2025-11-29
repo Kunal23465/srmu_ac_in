@@ -29,12 +29,6 @@ const Institutes: React.FC = () => {
 
       {/* <CustomInstituteProfileCard data={instituteProfiles} /> */}
 
-
-
-
-
-
-
       <EnquiryForm />
       <CustomTopFooter data={CustomTopFooterData1} />
 
