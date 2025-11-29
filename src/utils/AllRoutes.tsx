@@ -103,6 +103,12 @@ import ProgramsPage from "../pages/programs/ProgramsPage";
 import FacultyOfBiosciencesPage from "../pages/academics/institutes/institute-department/FacultyOfBiosciencesPage";
 import AwardOverviewPage from "../pages/about/award-overview/AwardOverviewPage";
 import DepartmentOfCSISPage from "../pages/academics/institutes/institute-department/DepartmentOfCSISPage";
+import DepartmentDetailPage from "../components/academics/institutes/institute-department/InstituteofManagementCommerceandEconomics/DepartmentDetailPage";
+import InstituteDepartmentPage from "../pages/academics/institutes/institute-department/InstituteDepartmentPage";
+import FacultyOfBiotechnologyPage from "../pages/academics/institutes/institute-department/FacultyOfBiotechnologyPage";
+import FacultyOfPhysicalSciencesPage from "../pages/academics/institutes/institute-department/FacultyOfPhysicalSciencesPage";
+import FacultyOfMathematicalAndStatisticalSciencesPage from "../pages/academics/institutes/institute-department/FacultyOfMathematicalAndStatisticalSciencesPage";
+import FacultyOfHumanitiesAndSocialSciencesPage from "../pages/academics/institutes/institute-department/FacultyOfHumanitiesAndSocialSciencesPage";
 interface IMatches {
   pathname: string;
   params: Params<string>;
@@ -273,6 +279,13 @@ export const routes = [
             element: <InstitutePage />,
             children: [
               {
+                path: "institute-departments/:name",
+                element: <InstituteDepartmentPage />,
+                handle: {
+                  crumb: () => <Link to="/">Faculty Of Civil Engineering</Link>,
+                },
+              },
+              {
                 path: "faculty-of-civil-engineering",
                 element: <FacultyOfCivilEngineeringPage />,
                 handle: {
@@ -307,6 +320,35 @@ export const routes = [
                   crumb: () => <Link to="/">Faculty Of Biosciences</Link>,
                 },
               },
+               {
+                path: "faculty-of-biotechnology",
+                element: <FacultyOfBiotechnologyPage />,
+                handle: {
+                  crumb: () => <Link to="/">Faculty Of Biotechnology</Link>,
+                },
+              },
+               {
+                path: "faculty-of-physical-sciences",
+                element: <FacultyOfPhysicalSciencesPage />,
+                handle: {
+                  crumb: () => <Link to="/">Faculty Of Physical Science</Link>,
+                }
+              },
+              {
+                path: "faculty-of-mathematical-and-statistical-sciences",
+                element: <FacultyOfMathematicalAndStatisticalSciencesPage />,
+                handle: {
+                  crumb: () => <Link to="/">Faculty of Mathematical and Statistical Sciences</Link>,
+                },
+              },
+              
+               {
+                path: "faculty-of-humanities-and-social-sciences",
+                element: <FacultyOfHumanitiesAndSocialSciencesPage />,
+                handle: {
+                  crumb: () => <Link to="/">Faculty of Humanities and Social Sciences</Link>,
+                },
+              },
               {
                 path: "institute-of-technology",
                 element: <InstituteofTechnologyPage />,
@@ -326,6 +368,13 @@ export const routes = [
                 element: <InstituteofManagementCommerceandEconomicsPage />,
                 handle: {
                   crumb: () => <Link to="/">Institute of Management, Commerce and Economics</Link>,
+                },
+              },
+              {
+                path: "departmentDetails/:name",
+                element: <DepartmentDetailPage />,
+                handle: {
+                  crumb: () => <Link to="/">Faculty Of Commerce And Economics</Link>,
                 },
               },
               {

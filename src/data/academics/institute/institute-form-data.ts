@@ -11,6 +11,10 @@ import instituteofpharmaceutical from "../../../assets/images/academics/institut
 import instituteofedu from "../../../assets/images/academics/institutes/economics--08022401082492.jpg";
 import instituteofpolytech from "../../../assets/images/academics/institutes/polytechnic11-08022412560314.jpg";
 import * as Yup from "yup";
+import { instituteCourseCardData, InstituteofManagementCommerceandEconomicsinstituteProfiles, InstituteofManagementCommerceandEconomicsOverviewData, InstituteofManagementCommerceandEconomicsTopFooterData, InstituteofManagementCommerceandEconomicsvisionMissionData } from "./institute-department/institute-of-management-commerce-and-economics-data/institute-of-management-commerce-and-economics-data";
+
+
+
 
 export const AcademicsOverviewData: customeOverViewType = {
   heading: "Academics",
@@ -23,6 +27,7 @@ export interface Institute {
   title: string;
   description: string;
   departments: number;
+  departmentsData?: any;
   image: string;
   path?: string;
 }
@@ -53,7 +58,14 @@ export const institutes: Institute[] = [
       "The Institute of Management, Commerce and Economics (IMCE) was started in the year 2012. IMCE seeks to be a trailblazer in management education through strong academic-industry collaboration for international alliances.",
     departments: 2,
     image: instituteofmang,
-    path: "/academics/institutes-info/institute-of-management-commerce-and-economics",
+    path: "institute-of-management-commerce-and-economics",
+    departmentsData: {
+      overviewData: InstituteofManagementCommerceandEconomicsOverviewData,
+      visionMissionData: InstituteofManagementCommerceandEconomicsvisionMissionData,
+      profileCardData: InstituteofManagementCommerceandEconomicsinstituteProfiles,
+      instituteCourseCardData: instituteCourseCardData,
+      footerData: InstituteofManagementCommerceandEconomicsTopFooterData
+    }
   },
   {
     id: 4,

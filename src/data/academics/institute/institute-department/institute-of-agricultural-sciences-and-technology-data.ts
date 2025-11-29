@@ -25,6 +25,7 @@ import depSlide6 from "../../../../assets/images/academics/departments/biotech-l
 import depSlide7 from "../../../../assets/images/academics/departments/manage--06052401373517.jpg";
 
 import { Headers, Student } from "../../../../utils/custom/CustomPlacedStudentTable";
+import { EventItem } from "../../../../utils/custom/CustomEventListCard";
 
 export const InstituteofAgriculturalSciencesandTechnologyOverviewData: customeOverViewType = {
   heading: "Institute of Agricultural Sciences and Technology",
@@ -109,10 +110,9 @@ export const InstituteofAgriculturalSciencesandTechnologyVMData = [
     img: mission,
     heading: "Mission",
     points: [
-      "To make mass communicator and Journalist with social consciences.",
-      "To develop creative and critical thinking with human touch among our students.",
-      "To enlighten and enrich the educational experience by providing pragmatic learning.",
-      "To inculcate professional ethics and value system among media students.",
+      "To Create a proficient agricultural education system at SRMU for meeting the enhanced demand for agricultural graduates and post graduates to take up challenging tasks in the field of education and interdisciplinary research for harnessing full potential of agriculture in the country.",
+      "To act as proficient extension agency for transferring new production technologies, and efficient marketing of farm produce with the objective of increasing the farm, thereby rural incomes and employment.",
+      "To provide consultancy for establishing agricultural projects.",
     ],
   },
   {
@@ -120,7 +120,7 @@ export const InstituteofAgriculturalSciencesandTechnologyVMData = [
     bgColor: "#FFF2D2",
     img: vision,
     heading: "Vision",
-    points: ["To be an institution of excellence in the field of communication, journalism and research."],
+    points: ["To create efficient agricultural institution, which caters to increased demand for professionals and works as a Centre of excellence for education, research, development, extension and consultancy in agriculture and allied sectors resulting into increased contribution of this sector in National GDP through enhanced production, employment and incomes in rural and associated regions."],
   },
 ];
 
@@ -327,3 +327,168 @@ export const placedStudents: Student[] = [
   { name: "Kesharwani Mohit Dayashankar", program: "B.Sc.(Hons.) in Agriculture", company: "Piramal" },
 ];
 
+
+import img1 from "../../../../assets/images/academics/departments/agri1-09052412363771.jpg";
+import img2 from "../../../../assets/images/academics/departments/agri3-09052412364666.jpg";
+import img3 from "../../../../assets/images/academics/departments/agri2-09052412365475.jpg";
+import img4 from "../../../../assets/images/academics/departments/agri4-09052412370363.jpg";
+import img5 from "../../../../assets/images/academics/departments/agri5-09052412371288.jpg";
+import img6 from "../../../../assets/images/academics/departments/guest1-10022412515173.jpg";
+import img7 from "../../../../assets/images/academics/departments/internationalseminar-10022412520735.jpg";
+import img8 from "../../../../assets/images/academics/departments/guest1-10022412515173.jpg";
+import img9 from "../../../../assets/images/academics/departments/seminar1-10022412522592.jpg";
+import img10 from "../../../../assets/images/academics/departments/international2-10022412523788.jpg";
+import img11 from "../../../../assets/images/academics/departments/experttalk2-10022412524646.jpg";
+import img12 from "../../../../assets/images/academics/departments/guest3-10022412530337.jpg";
+import img13 from "../../../../assets/images/academics/departments/experttalk-10022412531278.jpg";
+import img14 from "../../../../assets/images/academics/departments/internation1-09052412375633.jpg";
+import img15 from "../../../../assets/images/academics/departments/webinar5-09052412382659.jpg";
+import img16 from "../../../../assets/images/academics/departments/webinar1-09052412380675.jpg";
+
+export const InstituteofAgriculturalSciencesandTechnologyDepartmentEventsData: EventItem[] = [
+  {
+    id: 1,
+    title: "Industrial Visit",
+    topic: "International Day for Rural Women",
+    venue: "Era University, Lucknow",
+    date: "15th October, 2022",
+    image: img1,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 2,
+    title: "Industrial Visit",
+    topic: "Threshing of Paddy by new type of Thresher",
+    venue: "M/s Govind Agro Industries, Barabanki",
+    date: "16th November, 2022",
+    image: img2,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 3,
+    title: "Industrial Visit",
+    topic: "Kisan Gosthi",
+    venue: "Barabanki",
+    date: "01st May, 2023",
+    image: img3,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 4,
+    title: "Industrial Visit",
+    venue: "Rako Agrochem Pvt. Ltd.",
+    date: "06th October, 2023",
+    image: img4,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 5,
+    title: "Industrial Visit",
+    topic: "Kisan Gosthi",
+    venue: "Barabanki",
+    date: "07th October, 2023",
+    image: img5,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 6,
+    title: "Guest Lecture",
+    speaker: "Dr. Atul Yadav",
+    topic: "Challenges and Opportunity in Post Harvest Management",
+    date: "29th August, 2022",
+    image: img6,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 7,
+    title: "Guest Lecture",
+    speaker: "Dr. Prakash Singh",
+    topic: "Importance of Extension Activities",
+    date: "09th September, 2022",
+    image: img7,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 8,
+    title: "Guest Lecture",
+    speaker: "Dr. Anupam Singh",
+    topic: "Career Opportunities in Agriculture: Scope & Future",
+    date: "07th October, 2022",
+    image: img8,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 9,
+    title: "Guest Lecture",
+    speaker: "Dr. Anand Singh Jeena",
+    topic: "Development of Gene Concept",
+    date: "19th October, 2022",
+    image: img9,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 10,
+    title: "Guest Lecture",
+    speaker: "Ms. Vandana Singh",
+    topic: "Self Help Group",
+    date: "28th November, 2022",
+    image: img10,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 11,
+    title: "Guest Lecture",
+    speaker: "Dr. Kailash Chandra Khulbe",
+    topic: "Intellectual Property Rights",
+    date: "20th February, 2023",
+    image: img11,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 12,
+    title: "Guest Lecture",
+    speaker: "Mr. Raj Kishor Dwivedi",
+    topic: "Mushroom Farming - Start Up for Urban Area",
+    date: "22nd September, 2023",
+    image: img12,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 13,
+    title: "Guest Lecture",
+    speaker: "Mr. Jagdeep Singh Salaria",
+    topic: "Start Up in Agriculture Sector - Urban & Rural",
+    date: "18th October, 2023",
+    image: img13,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 14,
+    title: "Seminar",
+    speaker: "Dr. Shaleen",
+    topic: "New Agri Business Opportunity in Organic farming and Millets: Future of Indian Agriculture",
+    date: "21st April, 2023",
+    image: img14,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 15,
+    title: "Webinar",
+    speaker: "Dr. P.K. Joshi",
+    designation:"Retd. Senior Advisor, International Food Policy Research Institute, Washington DC",
+    topic: "Agricultural Transformation in India: Challenges and Opportunities",
+    date: "15th January, 2021",
+    image: img15,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 16,
+    title: "Webinar",
+    speaker: "Dr. Neeru Dubey",
+    designation: "Assoc. Prof. & Dy. Director Amity University",
+    topic: "Sustainable Agriculture: Future of India",
+    date: "27th May, 2020",
+    image: img16,
+    cardBgColor: "#ffffff",
+  },
+];

@@ -69,7 +69,7 @@ export const instituteCourseCardData: CustomInstituteCourseCardProps[] = [
   {
     imageUrl: courseImg4,
     departmentName: "Department of Computer Science and Engineering",
-    path: "/academics/institutes-info/department-of-Cse",
+    path: "/academics/institutes-info/department-of-computer-science-and-engineering",
   },
   {
     imageUrl: courseImg5,

@@ -1,6 +1,6 @@
 import React from 'react'
 import Classes from "../../../../../utils/styles/Global.module.css";
-
+ 
 import { counterDataForFacultyCSE, CSDepartmentVMData, CsefacultyData, cseFacultyOverviewData, cseIndustryIntegratedFeeTable, cseIntegratedFeeTable, CseplacedStudents, csePostUndergraduateFeeTable, csetableHeaders, cseundergraduateFeeTable, instituteProfilesCSE } from '../../../../../data/academics/institute/institute-department/department-of-cse-data';
 import CustomOverviewSection from '../../../../../utils/custom/CustomOverviewSection';
 import Counter from '../../../../../utils/custom/Counter';
@@ -15,11 +15,11 @@ import CustomDepartmentSlider from '../../../../../utils/custom/CustomDepartment
 // import { facultyData } from '../../../../../data/academics/faculty-of-civil-engineering/faculty-of-civil-engineering-data';
 import CustomFacultyListCard from '../../../../../utils/custom/CustomFacultyListCard';
 import facilitiesBg from "../../../../../assets/images/academics/departments/facilities-bg-lg.jpeg"
-
-
+ 
+ 
 const DepartmentOfCSE: React.FC = () => {
-
-
+ 
+ 
     const items = [
         {
             key: "1",
@@ -40,10 +40,10 @@ const DepartmentOfCSE: React.FC = () => {
             label: "Undergraduate",
             content: <CustomDepartmentFeeDetailsTable data={cseundergraduateFeeTable} />,
         },
-
-
+ 
+ 
     ];
-
+ 
     return (
         <div>
             <div className={`${Classes["container"]}`}>
@@ -54,23 +54,23 @@ const DepartmentOfCSE: React.FC = () => {
                         <CustomDepartmentVissionMission key={item.id} data={item} />
                     ))}
                 </div>
-
+ 
             </div>
             <div>
                 <CustomInstituteProfileCard data={instituteProfilesCSE} />
             </div>
-
+ 
             <div className={`${Classes["container"]}`}>
-
+ 
                 {/* program and fee section  */}
                 <div className='my-[80px]'>
-
+ 
                     <div className='flex w-full justify-center flex-col items-center'>
                         <h1 className="leading-[1.2] font-medium text-[3.125rem] mb-3">
                             Programs and Fees
                         </h1>
                         <p className='text-center text-[15px] mb-[45px]'>At SRMU we have always believed that a student SHOULD BE TRAINED FOR INDUSTRY, BY THE INDUSTRY. Keeping the culture of rich academia-industry interface, university is now offering specialized programs in different academic domains.</p>
-
+ 
                     </div>
                     <CustomTabs
                         items={items}
@@ -82,13 +82,13 @@ const DepartmentOfCSE: React.FC = () => {
                         pillContainerBgColor="#0f4a85"
                         alignTabs='center'
                     />
-
+ 
                 </div>
-
-            
-
+ 
+           
+ 
             </div>
-
+ 
             <CustomDepartmentSlider
                 heading="Faculty List"
                 description="The University takes pride in recruiting distinguished faculty from reputed central universities and best institutes like- IIT, IIM, MNNIT and IIT-BHU. They bring to the classroom, passion and enthusiasm for teaching, providing an intimate, interactive, personalized approach to learning."
@@ -96,10 +96,10 @@ const DepartmentOfCSE: React.FC = () => {
                 renderCard={({ item }) => <CustomFacultyListCard item={item} />}
                 bgImage={facilitiesBg}
                 arrowColor="#fff"
-
+ 
                 headingColor="#ffffff"
                 descriptionColor="#e5e5e5"
-
+ 
                 arrowBorderColor="#0f4a85"
                 // arrowBgColor="#fff2"
                 breakpoints={{ desktop: 4, tablet: 3, mobile: 1 }}
@@ -123,13 +123,13 @@ const DepartmentOfCSE: React.FC = () => {
                     />
                 </div>
             </section>
-
-
-
-
-
+ 
+ 
+ 
+ 
+ 
             {/* <div>
-
+ 
                 <CustomDepartmentSlider
                     heading="Faculty List"
                     description="The University takes pride in recruiting distinguished faculty from reputed central universities and best institutes like- IIT, IIM, MNNIT and IIT-BHU. They bring to the classroom, passion and enthusiasm for teaching, providing an intimate, interactive, personalized approach to learning."
@@ -137,18 +137,18 @@ const DepartmentOfCSE: React.FC = () => {
                     renderCard={({ item }) => <CustomFacultyListCard item={item} />}
                     bgImage={facilitiesBg}
                     arrowColor="#fff"
-
+ 
                     headingColor="#ffffff"
                     descriptionColor="#e5e5e5"
-
+ 
                     arrowBorderColor="#0f4a85"
                     // arrowBgColor="#fff2"
                     breakpoints={{ desktop: 4, tablet: 3, mobile: 1 }}
                 />
             </div> */}
-
-
-
+ 
+ 
+ 
             {/* <CustomDepartmentSlider
                 heading="Key Highlights of Our Department"
                 description="Explore key achievements"
@@ -156,13 +156,13 @@ const DepartmentOfCSE: React.FC = () => {
                 renderCard={({ item }) => <CustomDepartmentHighlightCard item={item} />}
                 bgColor="#E7A615"
                 arrowColor="#000"
-
+ 
                 breakpoints={{ desktop: 3, tablet: 2, mobile: 1 }}
             /> */}
-
+ 
             <CustomTopFooter data={CustomTopFooterData1} />
         </div>
     )
 }
-
+ 
 export default DepartmentOfCSE

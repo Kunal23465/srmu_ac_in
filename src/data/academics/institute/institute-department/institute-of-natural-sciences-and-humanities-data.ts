@@ -6,7 +6,8 @@ import courseImg1 from "../../../../assets/images/academics/departments/physics1
 import courseImg2 from "../../../../assets/images/academics/departments/chemisty-07052401043586.jpg";
 import courseImg3 from "../../../../assets/images/academics/departments/maths-07022411311165.jpg";
 import courseImg4 from "../../../../assets/images/academics/departments/social-science-07052401093595.jpg";
-
+import { InstituteProfile } from "../../../../types/profile-data-type";
+import BMdixitImg from "../../../../assets/images/academics/departments/prof.-b-m-dixit-photo-10062510410818.jpg"
 export const InstituteofNaturalSciencesandHumanitiesOverviewData: customeOverViewType = {
   heading: "Institute of Natural Sciences and Humanities",
   content:
@@ -41,7 +42,6 @@ export const InstituteofNaturalSciencesandHumanitiesvisionMissionData = {
       "To create an educational environment that fosters curiosity, integrates rigorous inquiry, creative imagination, and reflective thought process for academic excellence.",
       "To inculcate integrity towards work place and social sensibility for a better society.",
       "To choose participative learning in creating wisdom over developing intelligence alone for pursuing successful career in diverse fields.",
-      "To instill among students highest ethical standards and values with a sense of professionalism.",
       "To prepare undergraduate and postgraduate students who can take up future challenges of higher studies and research.",
     ],
     buttonText: "Mission",
@@ -51,21 +51,58 @@ export const InstituteofNaturalSciencesandHumanitiesvisionMissionData = {
 
 };
 
+export const InstituteofNaturalSciencesandHumanitiesinstituteProfiles: InstituteProfile[] = [
+  {
+    id: 1,
+    title: "Institute Head",
+    name: "Prof. (Dr.) B.M. Dixit",
+    position: "Director, INSH, SRMU, Lucknow-Deva Road",
+    image: BMdixitImg,
+
+    summary:
+      "",
+
+    detailsHeading: "",
+    useBullets: false,
+
+    details: [
+      "**Qualification: **M.Sc. (Physics), M.Sc. (Maths), Ph.D.",
+      "**Experience**: 20+ years",
+      "**Specialization/ Area of Research: **Nuclear Structure Physics and Medical Physics",
+      "**Email ID: **director.insh@srmu.ac.in, director.sw@srmu.ac.in, bmdixit.ph@srmu.ac.in",
+      "**ORCID ID: **https://orcid.org/0000-0002-3490-9162",
+      "**Contact No.: **+91-9554966267",
+    ],
+
+    modalContent: `Dr. Bhanu Mani Dixit is Professor in Faculty of Physical Sciences and also holds position of Director – Student Welfare. He after earning two Postgraduate degrees first in Physics and then in Mathematics, obtained his Ph.D degree in cross-disciplinary topic of double beta decay which deals theoretically - nuclear structure frameworks and neutrino physics. His philosophy about effective teaching is that it requires understanding of a subject to a level which is appropriate for the transference of knowledge from the teacher’s perspective to that of the students. Further, he acknowledges the importance of innovation in delivery style apart from the up gradation of knowledge.
+
+For past two decades, he has taught over a dozen different courses at Undergraduate and Postgraduate levels, wrote popular science articles and delivered popular lectures, presented and published many research papers in conferences and in peer reviewed journals respectively. His current research interest includes medical physics and academic planning in higher education. To pursue his research interest, he is also guiding couple of students for a Ph.D. degree.
+
+Being associated with the present group since its inception way back in 2001, he was among the very few who were entrusted to raise this University in 2011 as a center of universal learning. His academic outlook towards teaching methodology, faculty constitution is to create conducive environment for academic learning, while in administration his active role in team building and establishing harmonious accord amongst hundreds of faculty members and thousands of students is pivotal and all inclusive.`
+  },
+
+
+]; 
+
 export const InstituteofNaturalSciencesandHumanitiesinstituteCourseCardData: CustomInstituteCourseCardProps[] = [
   {
     imageUrl: courseImg1,
     departmentName: "Faculty of Physical Sciences",
+    path: "/academics/institutes-info/faculty-of-physical-sciences",
   },
   {
     imageUrl: courseImg2,
     departmentName: "Faculty of Chemical Sciences",
+    path: "/academics/institutes-info/faculty-of-chemical-sciences",
   },
   {
     imageUrl: courseImg3,
     departmentName: "Faculty of Mathematical and Statistical Sciences",
+    path: "/academics/institutes-info/faculty-of-mathematical-and-statistical-sciences",
   },
   {
     imageUrl: courseImg4,
     departmentName: "Faculty of Humanities and Social Sciences",
+    path: "/academics/institutes-info/faculty-of-humanities-and-social-sciences",
   },
 ];

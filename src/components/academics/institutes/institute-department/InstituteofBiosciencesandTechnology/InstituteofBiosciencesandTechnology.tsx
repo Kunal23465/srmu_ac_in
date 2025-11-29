@@ -11,7 +11,7 @@ import CustomInstituteCoursesCard from "../../../../../utils/custom/CustomInstit
 import CustomTopFooter from "../../../../../utils/custom/CustomTopFooter";
 import CustomInstitueVissionMissionCard from "../../../../../utils/custom/CustomInstitueVissionMissionCard";
 import CustomInstituteProfileCard from "../../../../../utils/custom/CustomInstituteProfileCard";
-import { instituteProfiles } from "../../../../../data/academics/institute/institute-department/institute-of-biosciences-and-technology-data";
+import { InstituteofBiosciencesandTechnologyinstituteProfiles } from "../../../../../data/academics/institute/institute-department/institute-of-biosciences-and-technology-data";
 
 const InstituteofBiosciencesandTechnology: React.FC = () => {
   return (
@@ -19,10 +19,9 @@ const InstituteofBiosciencesandTechnology: React.FC = () => {
       <div className={`${Classes["container"]}`}>
         <CustomOverviewSection data={InstituteofBiosciencesandTechnologyOverviewData} />
         <CustomInstitueVissionMissionCard data={visionMissionData} />
-        </div>
-      <CustomInstituteProfileCard data={instituteProfiles} />
-            <div className={`${Classes["container"]}`}>
-
+      </div>
+      <CustomInstituteProfileCard data={InstituteofBiosciencesandTechnologyinstituteProfiles} />
+      <div className={`${Classes["container"]}`}>
         <div className="my-15 flex flex-col lg sm:flex-row">
           <div className="text-2xl mr-25 font-medium sm:text-5xl">Our Departments</div>
           <div>

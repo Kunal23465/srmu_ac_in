@@ -3,16 +3,35 @@ import { counterDataType } from "../../home/counterData";
 import visionImg from "../../../assets/images/academics/institutes/dept-vision.png";
 import misionImg from "../../../assets/images/academics/institutes/dept-mission.png";
 import drTabishQidwai from "../../../assets/images/academics/institutes/dr.-tabish-kidwai-.png";
-import { FeeTableData } from "../faculty-of-civil-engineering/faculty-of-civil-engineering-data";
+import {
+  departmentHighlightscardType,
+  FeeTableData,
+} from "../faculty-of-civil-engineering/faculty-of-civil-engineering-data";
 import { FacultyItem } from "../../../utils/custom/CustomFacultyListCard";
-import defaultSrmu from "../../../assets/images/academics/institutes/default-img.png"; 
+import defaultSrmu from "../../../assets/images/academics/institutes/default-img.png";
 import aparna from "../../../assets/images/academics/institutes/aparna.jpeg";
 import sapna from "../../../assets/images/academics/institutes/sapna.jpeg";
 import neeraj from "../../../assets/images/academics/institutes/neeraj.jpeg";
 import imran from "../../../assets/images/academics/institutes/imran.jpeg";
 import sukanya from "../../../assets/images/academics/institutes/sukanya.jpeg";
 import raviKumarDeshwal from "../../../assets/images/academics/institutes/raviKumarDeshwal.jpeg";
-
+import diverseprogram from "../../../assets/images/academics/institutes/diverseprogram.jpg";
+import statelab from "../../../assets/images/academics/institutes/statelab.jpg";
+import experiencedfaculty from "../../../assets/images/academics/institutes/experiencedfaculty.jpg";
+import industrycollaboration from "../../../assets/images/academics/institutes/industrycollaboration.jpg";
+import researchdevelopment from "../../../assets/images/academics/institutes/researchdevelopment.jpg";
+import studentsupport from "../../../assets/images/academics/institutes/studentsupport.jpg";
+import integrationNep from "../../../assets/images/academics/departments/integration-07052412393563.jpg";
+import { EventItem } from "../../../utils/custom/CustomEventListCard";
+import hpv from "../../../assets/images/academics/institutes/hpv.png";
+import csirCimap from "../../../assets/images/academics/institutes/csir-cimap.png";
+import foodSafety from "../../../assets/images/academics/institutes/foodsafety.png";
+import medicoLegal from "../../../assets/images/academics/institutes/medicoLegal.png";
+import ibst from "../../../assets/images/academics/institutes/ibst.png";
+import csiriitr from "../../../assets/images/academics/institutes/csir-iitr.png";
+import nukaad from "../../../assets/images/academics/institutes/nukaadNatak.pnng.png";
+import amulDairy from "../../../assets/images/academics/institutes/amulDiary.jpg";
+import industrialCsir from "../../../assets/images/academics/institutes/industrial-csir.jpg";
 
 export const facultyofBioscienceOverviewData: customeOverViewType = {
   heading: "Faculty of Biosciences",
@@ -94,52 +113,51 @@ export const postGraduateFeeDataOfBioscience: FeeTableData = {
   ],
 };
 
-
 export const underGraduateFeeDataOfBioscience: FeeTableData = {
   columns: ["COURSES", "Duration", "Eligibility Criteria", "Course Fees (PA)"],
 
-  rows:[
-  {
-    course: "B.Sc.(Hons.) in Biotechnology",
-    duration: "3 Years",
-    eligibility: "Click",
-    fee: "Rs. 62,000/-",
-    eligibilityContent:  `
+  rows: [
+    {
+      course: "B.Sc.(Hons.) in Biotechnology",
+      duration: "3 Years",
+      eligibility: "Click",
+      fee: "Rs. 62,000/-",
+      eligibilityContent: `
             <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Sc.(Hons.) in Biotechnology</h2>
             <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/ State Board with Physics and Mathematics/ Biology as compulsory subject alongwith Chemistry/Biotechnology/Computer Science with minimum aggregate marks of 45% or equivalent grade for GEN/OBC and 40% marks or equivalent grade for SC/ST Category.</p>
         `,
-  },
-  {
-    course: "B.Sc.(Hons.) in Food Technology",
-    duration: "3 Years",
-    eligibility: "Click",
-    fee: "Rs. 62,000/-",
-    eligibilityContent:  `
+    },
+    {
+      course: "B.Sc.(Hons.) in Food Technology",
+      duration: "3 Years",
+      eligibility: "Click",
+      fee: "Rs. 62,000/-",
+      eligibilityContent: `
             <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Sc.(Hons.) in Food Technology</h2>
             <p>Candidate must have passed 10+2 or equivalent system from any recognized Board with Physics and Mathematics/Biology as compulsory subject along with Chemistry/Biotechnology/Computer Science with minimum aggregate marks of 45% or equivalent grade for GEN /OBC and 40% marks or equivalent grade for SC/ ST Category.</p>
         `,
-  },
-  {
-    course: "B.Sc.(Hons.) in Microbiology",
-    duration: "3 Years",
-    eligibility: "Click",
-    fee: "Rs. 57,000/-",
-    eligibilityContent:  `
+    },
+    {
+      course: "B.Sc.(Hons.) in Microbiology",
+      duration: "3 Years",
+      eligibility: "Click",
+      fee: "Rs. 57,000/-",
+      eligibilityContent: `
             <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Sc.(Hons.) in Microbiology</h2>
             <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/ State Board with Physics and Mathematics/ Biology as compulsory subject alongwith Chemistry/Biotechnology/Computer Science with minimum aggregate marks of 45% or equivalent grade for GEN/OBC and 40% marks or equivalent grade for SC/ST Category.</p>
         `,
-  },
-  {
-    course: "B.Sc.(Hons.) Nutrition & Dietetics",
-    duration: "3 Years",
-    eligibility: "Click",
-    fee: "Rs. 60,000/-",
-    eligibilityContent:  `
+    },
+    {
+      course: "B.Sc.(Hons.) Nutrition & Dietetics",
+      duration: "3 Years",
+      eligibility: "Click",
+      fee: "Rs. 60,000/-",
+      eligibilityContent: `
             <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Sc. (Hons.) Nutrition & Dietetics</h2>
             <p>Candidate must have passed 10+2 examination/ equivalent with Biology or Life Sciences as one of the subjects with minimum aggregate marks of 50% or equivalent grade for GEN/OBC and 45% marks or equivalent grade for SC/ST Category.</p>
         `,
-  }
-]
+    },
+  ],
 };
 
 export const facultyDetailsOfBioScienceDepartment: FacultyItem[] = [
@@ -243,9 +261,132 @@ export const facultyDetailsOfBioScienceDepartment: FacultyItem[] = [
   },
 ];
 
-export const counterDataForPlacedStudentsOFBioscience: counterDataType[] =
-  [
-    { id: 1, value: "125", suffix: "", label: "Guest lectures" },
-    { id: 2, value: "50", suffix: "", label: "Field Visits" },
-    { id: 3, value: "15", suffix: "", label: "Conference & Seminars" },
-  ];
+export const counterDataForPlacedStudentsOFBioscience: counterDataType[] = [
+  { id: 1, value: "125", suffix: "", label: "Guest lectures" },
+  { id: 2, value: "50", suffix: "", label: "Field Visits" },
+  { id: 3, value: "15", suffix: "", label: "Conference & Seminars" },
+];
+
+export const bioscienceHighlightsData: departmentHighlightscardType[] = [
+  {
+    image: studentsupport,
+    title: "100% Faculty hold a Ph.D. degree",
+    description:
+      "The department has young, motivated and highly qualified faculty members committed towards student development.",
+  },
+  {
+    image: integrationNep,
+    title: "Modules designed as per NEP-2020",
+    description:
+      "NEP2020 was implemented in all undergraduate programs, with a multiple exit and entry system and outcome-based education that develops students' skills.",
+  },
+  {
+    image: statelab,
+    title: "Research laboratories furnished with modern equipment",
+    description:
+      "Students are motivated and assisted in developing practical skills related to managing, carrying out, evaluating, and debugging research protocols.",
+  },
+  {
+    image: researchdevelopment,
+    title: "Exemplary research towards consistent innovation",
+    description:
+      "To improve their technical abilities, students are encouraged to work on research projects in reputed companies and institutions locally as well as internationally.",
+  },
+  {
+    image: industrycollaboration,
+    title: "Creating synergies with industry-academia interface",
+    description:
+      "The department has joined hands with institutes of repute like CSIR-IITR, CISH & many more to promote teaching and research in the area of biosciences.",
+  },
+  {
+    image: diverseprogram,
+    title: "Creating a holistic practical learning environment",
+    description:
+      "Events including conferences, research talks, field trips, internships, and industrial visits are planned to offer an array of opportunities for professional and personal growth.",
+  },
+  {
+    image: experiencedfaculty,
+    title: "Mentoring of students for GATE/CSIR-UGC-NET-JRF",
+    description:
+      "The department has a well developed system of mentor-mentee through which remedial classes are offered for students preparing for government competitive exams.",
+  },
+];
+
+export const bioscienceDepartmentEventsData: EventItem[] = [
+  {
+    id: 1,
+    title: "International HPV Awareness Day",
+    topic:
+      "Laboratory Diagnosis of Cancer Casuing Microorganism and Their Prevention",
+    speaker: "Dr. Suruchi Shukla, Associate Professor, KGMU",
+    date: "04th March, 2025",
+    image: hpv,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 2,
+    title: "Industrial Visit",
+    venue: "CSIR-CIMAP",
+    date: "26th March, 2025",
+    image: csirCimap,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 3,
+    title: "Workshop",
+    topic: "General Awareness on Food Safety of Daily Life Commodities",
+    date: "14th November, 2024",
+    image: foodSafety,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 4,
+    title: "Guest Lecture",
+    speaker:
+      "Dr. Ghyasuddin Khan, Additional Director, State Medicolegal Cell, Lucknow",
+    date: "16th April, 2025",
+    image: medicoLegal,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 5,
+    title: "National Science day",
+    topic:
+      "National Science Day was celebrated vibrantly with IBST and INSH collaboration",
+    date: "28th Feb, 2024",
+    image: ibst,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 6,
+    title: "Guest Lecture",
+    speaker: "Dr. Vikas Srivastava, Principal Scientist, CSIR-IITR Lucknow",
+    date: "02nd August, 2024",
+    image: csiriitr,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 7,
+    title: "Nukkad Natak",
+    event:
+      "Participation of IBST students at Nukkad Natak, Barabanki (U.P. Govt.)",
+    image: nukaad,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 8,
+    title: "Industrial Visit",
+    venue: "Amul Bahas Dairy, Chak Kajehra, Lucknow",
+    date: "07th November, 2023",
+    image: amulDairy,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 9,
+    title: "Industrial Visit",
+    venue: "CSIR- Indian Industrial Toxicology Research, Lucknow",
+    date: "21st November, 2023",
+    image: industrialCsir,
+    cardBgColor: "#ffffff",
+  },
+];
