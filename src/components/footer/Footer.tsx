@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import logosrmcem from "../../assets/images/Updatedsrmcemlogo.png";
 import Classes from "../../utils/styles/Global.module.css";
 import { Link } from "react-router-dom";
-import { FaPhone} from "react-icons/fa";
+import { FaPhone } from "react-icons/fa";
 
 import { MdEmail, MdLocationPin } from "react-icons/md";
 import anti_sexual from "../../assets/pdf/Gendar Senstization and Sexual Harassment -ICC.pdf";
@@ -63,17 +63,17 @@ export const footerData = {
     {
       id: 0,
       title: "How to Apply",
-      path: mandatoryDiscloserPdf,
+      path: "#",
     },
     {
       id: 1,
       title: "Program Finder",
-      path: "/imp-policies",
+      path: "/admission/program-finder",
     },
     {
       id: 2,
       title: "Scholarships",
-      path: "/list-holidays",
+      path: "/admission/scholarship-scheme",
     },
   ],
 
@@ -88,17 +88,17 @@ export const footerData = {
     {
       id: 0,
       title: "Our Institutes",
-      path: "admissions/how-to-apply",
+      path: "/academics/institutes-info",
     },
     {
       id: 1,
       title: "IQAC Developments",
-      path: "admissions/course-offered",
+      path: "/about/iqac-overview",
     },
     {
       id: 2,
       title: "Placements",
-      path: "admissions/course-offered",
+      path: "/placements/placement-overview",
     },
 
   ],
@@ -106,17 +106,17 @@ export const footerData = {
     {
       id: 0,
       title: "Student Corner",
-      path: "admissions/how-to-apply",
+      path: "/campus-life/student-corner",
     },
     {
       id: 1,
       title: "Result Portal",
-      path: "admissions/course-offered",
+      path: "#",
     },
     {
       id: 2,
       title: "Grievance Redressal System",
-      path: "admissions/course-offered",
+      path: "/campus-life/grievance-redressal-system",
     },
 
   ],
@@ -124,7 +124,7 @@ export const footerData = {
     {
       id: 0,
       title: "Careers",
-      path: "/career",
+      path: "#",
     },
     {
       id: 1,
@@ -142,7 +142,7 @@ export const footerData = {
     {
       id: 0,
       title: "Central Library",
-      path: "/career",
+      path: "/campus-life/central-library",
     },
     {
       id: 1,
@@ -152,34 +152,34 @@ export const footerData = {
     {
       id: 2,
       title: "Clubs",
-      path: "/newsletters",
+      path: "/campus-life/clubs",
     },
     {
       id: 3,
       title: "Events",
-      path: "/newsletters",
+      path: "/campus-life/events",
     },
     {
       id: 4,
       title: "Blogs",
-      path: "/newsletters",
+      path: "#",
     },
   ],
   getResponsible: [
     {
       id: 0,
       title: "Green Initiative",
-      path: "tel:9415115062",
+      path: "/campus-life/green-initiative",
     },
     {
       id: 1,
       title: "Outreach Activations",
-      path: "#",
+      path: "/campus-life/outreach-activations",
     },
     {
       id: 2,
       title: "Women Empowerment",
-      path: anti_sexual,
+      path: "/campus-life/women-empowerment",
     },
   ],
 };

@@ -47,7 +47,7 @@ export const HeaderData = [
               { item: "Leadership & Governance", path: "/about/leadership-and-governance" },
               { item: "Committee & Cells", path: "/about/committees-and-cells" },
               { item: "Approval & Associations", path: "/about/recognition-approvals" },
-              { item: "Awards & Rankings", path: "#" },
+              { item: "Awards & Rankings", path: "/about/award-overview" },
               { item: "Quality Assurance Cell", path: "/about/iqac-overview" },
               { item: "NAAC", path: "/about/naac" },
               { item: "NIRF", path: "/about/nirf" },
@@ -93,7 +93,7 @@ export const HeaderData = [
           {
             id: 2,
             item: "Programs",
-            path: "/programs",
+            path: "#",
             isMegaMenu: true,
             megaMenu: [
               {
@@ -101,7 +101,7 @@ export const HeaderData = [
                 column: [
                   {
                     heading: "After Class 10th",
-                    path: "after-class-10th",
+                    path: "/programs/after-class-10th",
                     item: [
                       { path: "/programs/after-10th/polytechnic", item: "Polytechnic" }
                     ]
@@ -123,7 +123,7 @@ export const HeaderData = [
                 id: 1,
                 column: [{
                   heading: "After Class 12th",
-                  path: "/programs/after-12th",
+                  path: "/programs/after-class-12th",
                   item: [
                     { path: "/programs/after-12th/computer-science", item: "Computer Science" },
                     { path: "/programs/after-12th/computer-application", item: "Computer Application" },
@@ -312,7 +312,7 @@ export const HeaderData = [
 
               {
                 item: "Placement Overview",
-                path: "#",
+                path: "/placements/placement-overview",
               },
               {
                 item: "Placement Cell",
@@ -348,10 +348,16 @@ export const HeaderData = [
           {
             id: 6,
             item: "Research",
-            path: "#",
+            path: "/research/overview",
             subItem: [
-              { item: "Academics Facilities", path: "/facilities/academics" },
-              { item: "Other Facilities", path: "/facilities/other" },
+              { item: "Overview", path: "/research/overview" },
+              { item: "Process And Initiatives", path: "/research/process-and-initiatives" },
+
+              { item: "Ph.D. Notification (Session: 2025-26)", path: "/research/phd-notification-session" },
+              { item: "Publication", path: "/research/publication" },
+              { item: "Innovation", path: "/research/innovation" },
+              { item: "Consultancy", path: "/research/consultancy" },
+
             ],
           },
         ],

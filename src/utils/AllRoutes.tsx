@@ -128,48 +128,11 @@ export const routes = [
           crumb: () => <Link to="/">Home</Link>,
         },
       },
-      {
-        path: "after-class-10th",
-        element: <AfterClass10thPage />,
-        handle: {
-          crumb: () => <Link to="/">After Class 10th</Link>,
-        },
-      },
-      {
-        path: "after-class-12th",
-        element: <AfterClass12thPage />,
-        handle: {
-          crumb: () => <Link to="/">After Class 12th</Link>,
-        },
-      },
-      {
-        path: "industry-honors",
-        element: <IndustryHonorsPage />,
-        handle: {
-          crumb: () => <Link to="/">Industry Honors</Link>,
-        },
-      },
-      {
-        path: "after-graduation",
-        element: <AfterGraduationPage />,
-        handle: {
-          crumb: () => <Link to="/">After Graduation</Link>,
-        },
-      },
-      {
-        path: "after-polytechnic",
-        element: <AfterPolytechnicPage />,
-        handle: {
-          crumb: () => <Link to="/">After Polytechnic</Link>,
-        },
-      },
-      {
-        path: "after-Graduation",
-        element: <AfterPostGraduationPage />,
-        handle: {
-          crumb: () => <Link to="/">After Graduation</Link>,
-        },
-      },
+   
+
+    
+  
+    
       {
         path: "notice",
         element: <NoticePage />,
@@ -525,8 +488,8 @@ export const routes = [
         ],
       },
       {
-        path: "/program",
-        element: <ProgramsPage />,
+        path: "/programs",
+        element: "",
         // element: <StudentTestimonialPage />,
         handle: {
           crumb: () => <Link to="/">Programs</Link>,
@@ -541,6 +504,41 @@ export const routes = [
             },
           },
 
+          {
+            path: "after-polytechnic",
+            element: <AfterPolytechnicPage />,
+            handle: {
+              crumb: () => <Link to="/">After Polytechnic</Link>,
+            },
+          },
+          {
+            path: "after-class-12th",
+            element: <AfterClass12thPage />,
+            handle: {
+              crumb: () => <Link to="/">After Class 12th</Link>,
+            },
+          },
+          {
+            path: "industry-honors",
+            element: <IndustryHonorsPage />,
+            handle: {
+              crumb: () => <Link to="/">Industry Honors</Link>,
+            },
+          },
+          {
+            path: "after-graduation",
+            element: <AfterGraduationPage />,
+            handle: {
+              crumb: () => <Link to="/">After Graduation</Link>,
+            },
+          },
+          {
+            path: "after-post-graduation",
+            element: <AfterPostGraduationPage />,
+            handle: {
+              crumb: () => <Link to="/">After Graduation</Link>,
+            },
+          },
           {
             path: "b-tech-cse-artificial-intelligence-machine-learning",
             element: <BtechInCSEAIAndML />,
