@@ -1,5 +1,3 @@
-// ==================== Example Data ====================
-
 export const scholarshipData = {
   heading: "Scholarship Scheme",
   content:
@@ -16,3 +14,11 @@ export const scholarshipData = {
     },
   ],
 };
+
+export const ScholarshipTopFooterData = [
+  {
+    content: `Want to learn more about SRMU?`,
+    btnText: "Request Registration",
+  },
+];
+

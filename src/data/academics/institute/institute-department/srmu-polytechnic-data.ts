@@ -170,22 +170,82 @@ export const SRMUPolytechnicinstituteProfiles: InstituteProfile[] = [
 export const SRMUPolytechnicData1: FeeTableData = {
   columns: ["COURSES", "DURATION", "ELIGIBILITY CRITERIA", "COURSE FEES (PA)"],
 
-rows: [
-  { col1: "Diploma in Civil Engineering", col2: "3 Years", col3: "Click to View", col4: "Rs. 57,000/-" },
-  { col1: "Diploma in Civil Engineering (Lateral Entry)", col2: "2 Years", col3: "Click to View", col4: "Rs. 57,000/-" },
-  { col1: "Diploma in Mechanical Engineering (Production)", col2: "3 Years", col3: "Click to View", col4: "Rs. 57,000/-" },
-  { col1: "Diploma in Mechanical Engineering (Automobile)", col2: "3 Years", col3: "Click to View", col4: "Rs. 57,000/-" },
-  { col1: "Diploma in Mechanical Engineering (Production) (Lateral Entry)", col2: "2 Years", col3: "Click to View", col4: "Rs. 57,000/-" },
-  { col1: "Diploma in Mechanical Engineering (Automobile) (Lateral Entry)", col2: "2 Years", col3: "Click to View", col4: "Rs. 57,000/-" },
-  { col1: "Diploma in Computer Science Engineering", col2: "3 Years", col3: "Click to View", col4: "Rs. 57,000/-" },
-  { col1: "Diploma in Electronics & Communication Engineering", col2: "3 Years", col3: "Click to View", col4: "Rs. 57,000/-" },
-  { col1: "Diploma in Electrical Engineering", col2: "3 Years", col3: "Click to View", col4: "Rs. 57,000/-" },
-  { col1: "Diploma in Computer Science Engineering (Lateral Entry)", col2: "2 Years", col3: "Click to View", col4: "Rs. 57,000/-" },
-  { col1: "Diploma in Electronics & Communication Engineering (Lateral Entry)", col2: "2 Years", col3: "Click to View", col4: "Rs. 57,000/-" },
-  { col1: "Diploma in Electrical Engineering (Lateral Entry)", col2: "2 Years", col3: "Click to View", col4: "Rs. 57,000/-" },
-],
-
+  rows: [
+    {
+      course: "Diploma in Civil Engineering",
+      duration: "3 Years",
+      eligibility: "Click to View",
+      fee: "Rs. 57,000/-",
+    },
+    {
+      course: "Diploma in Civil Engineering (Lateral Entry)",
+      duration: "2 Years",
+      eligibility: "Click to View",
+      fee: "Rs. 57,000/-",
+    },
+    {
+      course: "Diploma in Mechanical Engineering (Production)",
+      duration: "3 Years",
+      eligibility: "Click to View",
+      fee: "Rs. 57,000/-",
+    },
+    {
+      course: "Diploma in Mechanical Engineering (Automobile)",
+      duration: "3 Years",
+      eligibility: "Click to View",
+      fee: "Rs. 57,000/-",
+    },
+    {
+      course: "Diploma in Mechanical Engineering (Production) (Lateral Entry)",
+      duration: "2 Years",
+      eligibility: "Click to View",
+      fee: "Rs. 57,000/-",
+    },
+    {
+      course: "Diploma in Mechanical Engineering (Automobile) (Lateral Entry)",
+      duration: "2 Years",
+      eligibility: "Click to View",
+      fee: "Rs. 57,000/-",
+    },
+    {
+      course: "Diploma in Computer Science Engineering",
+      duration: "3 Years",
+      eligibility: "Click to View",
+      fee: "Rs. 57,000/-",
+    },
+    {
+      course: "Diploma in Electronics & Communication Engineering",
+      duration: "3 Years",
+      eligibility: "Click to View",
+      fee: "Rs. 57,000/-",
+    },
+    {
+      course: "Diploma in Electrical Engineering",
+      duration: "3 Years",
+      eligibility: "Click to View",
+      fee: "Rs. 57,000/-",
+    },
+    {
+      course: "Diploma in Computer Science Engineering (Lateral Entry)",
+      duration: "2 Years",
+      eligibility: "Click to View",
+      fee: "Rs. 57,000/-",
+    },
+    {
+      course: "Diploma in Electronics & Communication Engineering (Lateral Entry)",
+      duration: "2 Years",
+      eligibility: "Click to View",
+      fee: "Rs. 57,000/-",
+    },
+    {
+      course: "Diploma in Electrical Engineering (Lateral Entry)",
+      duration: "2 Years",
+      eligibility: "Click to View",
+      fee: "Rs. 57,000/-",
+    },
+  ],
 };
+
 
 
 
@@ -334,7 +394,7 @@ export const tableHeaders: Headers = {
     company: "COMPANY",
   };
 
-export const placedStudents: Student[] = [
+export const SRMUPolytechnicplacedStudents: Student[] = [
   { name: "Syed Kaif Imam", program: "Diploma in Computer Science Engineering", company: "subros" },
   { name: "Faraj Haidar", program: "Diploma in Computer Science Engineering", company: "subros" },
   { name: "Aditya Maurya", program: "Diploma in Electrical Engineering", company: "subros" },

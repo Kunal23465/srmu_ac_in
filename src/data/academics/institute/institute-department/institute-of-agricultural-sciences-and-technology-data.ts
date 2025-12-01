@@ -156,20 +156,74 @@ Dr. Pal is a life member of eight (08) professional societies, including the Ind
 
 export const InstituteofAgriculturalSciencesandTechnologyData1: FeeTableData = {
   columns: ["COURSES", "DURATION", "ELIGIBILITY CRITERIA", "COURSE FEES (PA)"],
-
   rows: [
-    { col1: "M.Sc. (Horticulture) in Vegetable Science", col2: "2 Years", col3: "Click to View", col4: "	Rs. 50,000/-" },
-    { col1: "M.Sc. (Horticulture) in Vegetable Science", col2: "2 Years", col3: "Click to View", col4: "	Rs. 50,000/-" },
-    { col1: "M.Sc. (Horticulture) in Fruit Science", col2: "2 Years", col3: "Click to View", col4: "	Rs. 50,000/-" },
-    { col1: "M.Sc. in Agronomy", col2: "2 Years", col3: "Click to View", col4: "	Rs. 50,000/-" },
-    { col1: "M.Sc. in Soil Science & Agricultural Chemistry", col2: "2 Years", col3: "Click to View", col4: "	Rs. 50,000/-" },
+    {
+      course: "M.Sc. (Horticulture) in Vegetable Science",
+      duration: "2 Years",
+      eligibility: "Click",
+      fee: "Rs. 50,000/-",
+      eligibilityContent: `
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>M.Sc. (Horticulture) in Vegetable Science</h2>
+            <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/State Board in B.Sc.(Agriculture)/B.Sc.(Agriculture) (Hons.) or B.Sc.(Horticulture) with minimum aggregate marks of 50% or equivalent grade for GEN/OBC and 45% marks or equivalent grade for SC/ST Category.</p>
+        `,
+    },
+    {
+      course: "M.Sc. (Horticulture) in Fruit Science",
+      duration: "2 Years",
+      eligibility: "Click",
+      fee: "Rs. 50,000/-",
+      eligibilityContent: `
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>M.Sc. (Horticulture) in Fruit Science</h2>
+            <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/State Board in B.Sc.(Agriculture)/B.Sc.(Agriculture) (Hons.) or B.Sc.(Horticulture) with minimum aggregate marks of 50% or equivalent grade for GEN/OBC and 45% marks or equivalent grade for SC/ST Category.</p>
+        `,
+    },
+    {
+      course: "M.B.A. in Agribusiness Management",
+      duration: "2 Years",
+      eligibility: "Click",
+      fee: "Rs. 50,000/-",
+      eligibilityContent: `
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>M.B.A. in Agribusiness Management</h2>
+            <p>Candidate must have passed B.Tech.(Agri. Engg./Biotechnology/Food Tech)/B.Sc.Forestry/B.Sc.(Ag.)/B.Sc.(Horti.)Food Tech or Dairy Tech./B.Sc. Vet. Sci.&Animal Husbandry /B. Sc.Home Sci. from any recognized University or AICTE recognized Institute/College with minimum aggregate marks of 50% or 5.5 CGPA for GEN/OBC and 45% marks or 5.0 CGPA for SC/ST Category.</p>
+        `,
+    },
+    {
+      course: "M.Sc. in Agronomy",
+      duration: "2 Years",
+      eligibility: "Click",
+      fee: "Rs. 50,000/-",
+      eligibilityContent: `
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>M.Sc. in Agronomy</h2>
+            <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/State Board in B.Sc.(Agriculture)/B.Sc.(Agriculture) (Hons.) or B.Sc.(Horticulture) with minimum aggregate marks of 50% or equivalent grade for GEN/OBC and 45% marks or equivalent grade for SC/ST Category.</p>
+        `,
+    },
+    {
+      course: "M.Sc. in Soil Science & Agricultural Chemistry",
+      duration: "2 Years",
+      eligibility: "Click",
+      fee: "Rs. 50,000/-",
+      eligibilityContent: `
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>M.Sc. in Soil Science & Agricultural Chemistry</h2>
+            <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/State Board in B.Sc.(Agriculture)/B.Sc.(Agriculture) (Hons.) or B.Sc.(Horticulture) with minimum aggregate marks of 50% or equivalent grade for GEN/OBC and 45% marks or equivalent grade for SC/ST Category.</p>
+        `,
+    },
   ],
 };
 
 export const InstituteofAgriculturalSciencesandTechnologyData2: FeeTableData = {
   columns: ["COURSES", "DURATION", "ELIGIBILITY CRITERIA", "COURSE FEES (PA)"],
-
-  rows: [{ col1: "B.Sc.(Hons.) in Agriculture", col2: "4 Years", col3: "Click to View", col4: "	Rs. 62,000/-" }],
+  rows: [
+    {
+      course: "B.Sc.(Hons.) in Agriculture",
+      duration: "4 Years",
+      eligibility: "Click",
+      fee: "Rs. 62,000/-",
+      eligibilityContent: `
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Sc.(Hons.) in Agriculture</h2>
+            <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/State Board in B.Sc.(Agriculture)/B.Sc.(Agriculture) (Hons.) or B.Sc.(Horticulture) with minimum aggregate marks of 50% or equivalent grade for GEN/OBC and 45% marks or equivalent grade for SC/ST Category.</p>
+        `,
+    },
+  ]
 };
 
 
@@ -279,7 +333,7 @@ export const tableHeaders: Headers = {
   company: "COMPANY",
 };
 
-export const placedStudents: Student[] = [
+export const InstituteofAgriculturalSciencesandTechnologyplacedStudents: Student[] = [
   { name: "Syed Mohammad Areeb", program: "B.Sc.(Hons.) in Agriculture", company: "Pulsus Healthtech" },
   { name: "Tushar Pandey", program: "B.Sc.(Hons.) in Agriculture", company: "Pulsus Healthtech" },
   { name: "Vishvendra Pratap Singh", program: "B.Sc.(Hons.) in Agriculture", company: "Pulsus Healthtech" },

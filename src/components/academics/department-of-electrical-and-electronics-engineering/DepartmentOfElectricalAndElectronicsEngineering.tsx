@@ -8,7 +8,14 @@ import CustomOverviewSection from "../../../utils/custom/CustomOverviewSection";
 // import CustomDepartmentSlider from "../../../../utils/custom/CustomDepartmentSlider";
 import Classes from "../../../utils/styles/Global.module.css";
 import Counter from "../../../utils/custom/Counter";
-import { counterDataForDepartmentOfElectricalAndElectronicsEngineering, DepartmentOfElectricalAndElectronicsEngineeringVMData, electricalDepartmentHighlightsData, facultyDetails, instituteFooterData, instituteOverviewData } from "../../../data/academics/institute/department-of-electrical-and-electronics-engineering-data";
+import {
+  counterDataForDepartmentOfElectricalAndElectronicsEngineering,
+  DepartmentOfElectricalAndElectronicsEngineeringVMData,
+  electricalDepartmentHighlightsData,
+  ElectricalAndElectronicsfacultyDetails,
+  instituteFooterData,
+  electricalDepartmentinstituteOverviewData,
+} from "../../../data/academics/institute/department-of-electrical-and-electronics-engineering-data";
 import CustomDepartmentVissionMission from "../../../utils/custom/CustomDepartmentVissionMission";
 import CustomInstituteProfileCard from "../../../utils/custom/CustomInstituteProfileCard";
 import { instituteProfiles } from "../../../data/academics/institute/data";
@@ -31,13 +38,8 @@ const DepartmentOfElectricalAndElectronicsEngineering: FC = () => {
   return (
     <div>
       <div className={`${Classes["container"]}`}>
-        <CustomOverviewSection data={instituteOverviewData} />
-        <Counter
-          counterData={
-            counterDataForDepartmentOfElectricalAndElectronicsEngineering
-          }
-          classes="counter"
-        />
+        <CustomOverviewSection data={electricalDepartmentinstituteOverviewData} />
+        <Counter counterData={counterDataForDepartmentOfElectricalAndElectronicsEngineering} classes="counter" />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12  mb-10">
           {DepartmentOfElectricalAndElectronicsEngineeringVMData.map((item) => (
             <CustomDepartmentVissionMission key={item.id} data={item} />
@@ -46,12 +48,12 @@ const DepartmentOfElectricalAndElectronicsEngineering: FC = () => {
       </div>
       <CustomInstituteProfileCard data={instituteProfiles} />
       <div className={`${Classes["container"]}`}>
-        <ProgramsAndFees  /> 
+        <ProgramsAndFees />
       </div>
       <CustomDepartmentSlider
         heading="Faculty List"
         description="The University takes pride in recruiting distinguished faculty from reputed central universities and best institutes like- IIT, IIM, MNNIT and IIT-BHU. They bring to the classroom, passion and enthusiasm for teaching, providing an intimate, interactive, personalized approach to learning."
-        data={facultyDetails}
+        data={ElectricalAndElectronicsfacultyDetails}
         renderCard={({ item }) => <CustomFacultyListCard item={item} />}
         bgImage={facultybg}
         arrowColor="#ffffff"
@@ -63,7 +65,7 @@ const DepartmentOfElectricalAndElectronicsEngineering: FC = () => {
 
       <section className="bg-[#edf0f9] py-14">
         <div className={`${Classes["container"]} bg-[#edf0f9]`}>
-          <PlacedStudents  />
+          <PlacedStudents />
         </div>
       </section>
       <CustomDepartmentSlider
