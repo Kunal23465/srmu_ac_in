@@ -37,14 +37,25 @@ export const CustomInstituteCards: React.FC<CardProps> = ({ institute }) => {
                                    group-hover:bg-yellow-400 hover:bg-yellow-400 hover:border-yellow-400"
         >
           {/* @ts-ignore */}
-          <Link
-            className="flex items-center gap-1 sm:gap-2 justify-center"
-            to={`/academics/institutes-info/institute-departments/${institute.path}`}
-            state={institute.departmentsData}
-          >
-            <span>MORE INFO</span>
-            <FaArrowRight className="h-3 w-3 sm:h-4 sm:w-4" />
-          </Link>
+          {institute.departments === 1 ? (
+            <Link
+              className="flex items-center gap-1 sm:gap-2 justify-center"
+              to={`/academics/institutes-info/departmentDetails/${institute.path}`}
+              state={institute.departmentsData}
+            >
+              <span>MORE INFO</span>
+              <FaArrowRight className="h-3 w-3 sm:h-4 sm:w-4" />
+            </Link>
+          ) : (
+            <Link
+              className="flex items-center gap-1 sm:gap-2 justify-center"
+              to={`/academics/institutes-info/institute-departments/${institute.path}`}
+              state={institute.departmentsData}
+            >
+              <span>MORE INFO</span>
+              <FaArrowRight className="h-3 w-3 sm:h-4 sm:w-4" />
+            </Link>
+          )}
         </button>
       </div>
     </div>

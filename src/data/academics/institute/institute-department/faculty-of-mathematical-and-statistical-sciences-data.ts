@@ -48,37 +48,11 @@ export const FacultyOfMathematicalAndStatisticalSciencesTopFooterData = [
 ];
 
 
-export const FacultyOfMathematicalAndStatisticalSciencesCounterData1 = {
-  counterData: [
-    {
-      id: 1,
-      icon: "",
-      value: "2012",
-      suffix: "",
-      label: "Established"
-    },
-    {
-      id: 2,
-      icon: "",
-      value: "19",
-      suffix: "",
-      label: "Faculty & Staff"
-    },
-    {
-      id: 3,
-      icon: "",
-      value: "455",
-      suffix: "",
-      label: "Students"
-    },
-
-  ],
-
-  // Optional classes (can be null or ignored if unused)
-  classes: "",
-  aboutusClass: ""
-};
-
+export const FacultyOfMathematicalAndStatisticalSciencesCounterData1: counterDataType[] = [
+  { id: 1, value: "2012", suffix: "", label: "Established" },
+  { id: 2, value: "19", suffix: "", label: "Faculty & Staff" },
+  { id: 3, value: "455", suffix: "", label: "Students" },
+];
 export const FacultyOfMathematicalAndStatisticalSciencesCounterData2 = {
   counterData: [
     {
@@ -175,26 +149,39 @@ Dr. Pathak has published more than twenty research papers in reputed research jo
 
 
 
-
 export const FacultyOfMathematicalAndStatisticalSciencesData1: FeeTableData = {
   columns: ["COURSES", "DURATION", "ELIGIBILITY CRITERIA", "COURSE FEES (PA)"],
 
   rows: [
-    { col1: "M.Sc. in Mathematics", col2: "2 Years", col3: "Click to View", col4: "	Rs. 47,000/-" },
-    { col1: "M.Sc. in Statistics", col2: "2 Years", col3: "Click to View", col4: "	Rs. 47,000/-" },
-
+    {
+      course: "M.Sc. in Mathematics",
+      duration: "2 Years",
+      eligibility: "Click to View",
+      fee: "Rs. 47,000/-",
+    },
+    {
+      course: "M.Sc. in Statistics",
+      duration: "2 Years",
+      eligibility: "Click to View",
+      fee: "Rs. 47,000/-",
+    },
   ],
-
 };
+
 
 export const FacultyOfMathematicalAndStatisticalSciencesData2: FeeTableData = {
   columns: ["COURSES", "DURATION", "ELIGIBILITY CRITERIA", "COURSE FEES (PA)"],
 
   rows: [
-    { col1: "B.Sc. (Hons.) in Mathematics", col2: "3 Years", col3: "Click to View", col4: "	Rs. 42,000/-" },
+    {
+      course: "B.Sc. (Hons.) in Mathematics",
+      duration: "3 Years",
+      eligibility: "Click to View",
+      fee: "Rs. 42,000/-",
+    },
   ],
-
 };
+
 
 
 
@@ -279,7 +266,7 @@ export const tableHeaders: Headers = {
     company: "COMPANY",
   };
  
- export const placedStudents: Student[] = [
+export const MathematicalAndStatisticalSciencesplacedStudents: Student[] = [
     {
       name: "Ajay Srivastava",
       program: "B.Sc. (Hons.) in Mathematics",
@@ -303,6 +290,7 @@ import img7 from "../../../../assets/images/academics/departments/workshop3-0905
 import img8 from "../../../../assets/images/academics/departments/nation6-09052402004527.jpg"
 import img9 from "../../../../assets/images/academics/departments/guest1-09052412554546.jpg"
 import img10 from "../../../../assets/images/academics/departments/internation1-09052401044878.jpg"
+import { counterDataType } from "../../../home/counterData";
 
 export const FacultyOfMathematicalAndStatisticalSciencesDepartmentEventsData: EventItem[] = [
   {

@@ -15,34 +15,33 @@ import facilitiesBg from "../../../../../assets/images/academics/departments/fac
 import CustomDepartmentHighlightCard from "../../../../../utils/custom/CustomDepartmentHighlightCard";
 import CustomPlacedStudentTable from "../../../../../utils/custom/CustomPlacedStudentTable";
 import { tableHeaders } from "../../../../../data/academics/institute/institute-department/institute-of-management-commerce-and-economics-data/institute-of-management-commerce-and-economics-data";
+import CustomDepartmentEventSlider from "../../../../../utils/custom/CustomDepartmentEventSlider";
+import CustomEventCard from "../../../../../utils/custom/CustomEventListCard";
 const DepartmentDetailPage: React.FC = () => {
   const location = useLocation();
   const data = location.state;
 
-  const items = [
-    {
-      key: "1",
-      label: "Postgraduate",
-      content: <CustomDepartmentFeeDetailsTable data={data.feeTableData.tab1} />,
-    },
-    {
-      key: "2",
-      label: "Undergraduate",
-      content: <CustomDepartmentFeeDetailsTable data={data.feeTableData.tab2} />,
-    },
-  ];
+  console.log(data.counterData, "data in department detail page");
+  const items = Object.keys(data.feeTableData).map((key, index) => {
+    const tab = data.feeTableData[key];
+
+    return {
+      key: (index + 1).toString(),
+      label: tab.label,
+      content: <CustomDepartmentFeeDetailsTable data={tab.data} />,
+    };
+  });
   return (
     <div>
       <div className={`${Classes["container"]}`}>
         <CustomOverviewSection data={data.overviewData} />
-        <Counter counterData={data.counterData} classes="counter" />
+        <Counter counterData={data?.counterData} classes="counter" />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12  mb-10 mt-10">
           {data.mvData.map((item: any) => (
             <CustomDepartmentVissionMission key={item.id} data={item} />
           ))}
         </div>
       </div>
-
       <div>
         <CustomInstituteProfileCard data={data.departmentHeadData} />{" "}
       </div>
@@ -88,19 +87,32 @@ const DepartmentDetailPage: React.FC = () => {
             With 2000+ Job Offers given by 250+ Top corporates, an average package of 4.5 LPA and 100%* placement record in different professional programs, SRMU provides the best
             return on investment. More than 30% students have multiple job offers.
           </p>
-          <Counter counterData={data.counterData2.counterData} classes="counter" />
-          <CustomPlacedStudentTable students={data.placedStudentsData} headers={tableHeaders} />
+          {data.counterData2 && <Counter counterData={data.counterData2.counterData} classes="counter" />}
+          {data.placedStudentsData && <CustomPlacedStudentTable students={data.placedStudentsData} headers={tableHeaders} />}
         </div>
       </div>
-      <CustomDepartmentSlider
-        heading="Key Highlights of Our Department"
-        description="Explore key achievements"
-        data={data.departmentHighlightsData}
-        renderCard={({ item }: any) => <CustomDepartmentHighlightCard item={item} />}
-        bgColor="#E7A615"
-        arrowColor="#000"
-        breakpoints={{ desktop: 3, tablet: 2, mobile: 1 }}
-      />
+      {data.departmentHighlightsData && (
+        <CustomDepartmentSlider
+          heading="Key Highlights of Our Department"
+          description="Explore key achievements"
+          data={data.departmentHighlightsData}
+          renderCard={({ item }: any) => <CustomDepartmentHighlightCard item={item} />}
+          bgColor="#E7A615"
+          arrowColor="#000"
+          breakpoints={{ desktop: 3, tablet: 2, mobile: 1 }}
+        />
+      )}
+      {data.eventsData && (
+        <CustomDepartmentEventSlider
+          heading="Events of Department"
+          description="SRMU is committed to leveraging its facilities and the system to world-class standards, with a goal to provide the best academic professional resources, to prepare its students for global opportunities. This makes SRMU a repository of academic and extra-curricular excellence."
+          data={data.eventsData}
+          renderCard={({ item }: any) => <CustomEventCard item={item} />}
+          bgColor="#ffffff"
+          arrowColor="#96a9c4"
+          arrowBorderColor="#0f4a85"
+        />
+      )}
       <CustomTopFooter data={CustomTopFooterAbout} />
     </div>
   );
