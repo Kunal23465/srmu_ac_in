@@ -109,6 +109,7 @@ import FacultyOfBiotechnologyPage from "../pages/academics/institutes/institute-
 import FacultyOfPhysicalSciencesPage from "../pages/academics/institutes/institute-department/FacultyOfPhysicalSciencesPage";
 import FacultyOfMathematicalAndStatisticalSciencesPage from "../pages/academics/institutes/institute-department/FacultyOfMathematicalAndStatisticalSciencesPage";
 import FacultyOfHumanitiesAndSocialSciencesPage from "../pages/academics/institutes/institute-department/FacultyOfHumanitiesAndSocialSciencesPage";
+import AlumniFeedbackPage from "../pages/placement/AlumniFeedbackPage";
 interface IMatches {
   pathname: string;
   params: Params<string>;
@@ -210,7 +211,11 @@ export const routes = [
             path: "committees-and-cells",
             element: <CommitteeAndCellsPage />,
             handle: {
-              crumb: () => <Link to="/about/committees-and-cells">Committees and Cells</Link>,
+              crumb: () => (
+                <Link to="/about/committees-and-cells">
+                  Committees and Cells
+                </Link>
+              ),
             },
 
             children: committeeCards.map((card) => ({
@@ -294,23 +299,35 @@ export const routes = [
               },
               {
                 path: "department-of-electrical-and-electronics-engineering",
-                element: <DepartmentOfElectricalAndElectronicsEngineeringPage />,
+                element: (
+                  <DepartmentOfElectricalAndElectronicsEngineeringPage />
+                ),
                 handle: {
-                  crumb: () => <Link to="/">Department of Electrical and Electronics Engineering</Link>,
+                  crumb: () => (
+                    <Link to="/">
+                      Department of Electrical and Electronics Engineering
+                    </Link>
+                  ),
                 },
               },
               {
                 path: "faculty-of-mechanical-engineering",
                 element: <FacultyOfMechanicalEngineeringPage />,
                 handle: {
-                  crumb: () => <Link to="/">Department of Electrical and Electronics Engineering</Link>,
+                  crumb: () => (
+                    <Link to="/">
+                      Department of Electrical and Electronics Engineering
+                    </Link>
+                  ),
                 },
               },
               {
                 path: "faculty-of-allied-health-sciences",
                 element: <FacultyOfAlliedHealthSciencesPage />,
                 handle: {
-                  crumb: () => <Link to="/">Faculty Of Allied Health Sciences</Link>,
+                  crumb: () => (
+                    <Link to="/">Faculty Of Allied Health Sciences</Link>
+                  ),
                 },
               },
               {
@@ -320,33 +337,41 @@ export const routes = [
                   crumb: () => <Link to="/">Faculty Of Biosciences</Link>,
                 },
               },
-               {
+              {
                 path: "faculty-of-biotechnology",
                 element: <FacultyOfBiotechnologyPage />,
                 handle: {
                   crumb: () => <Link to="/">Faculty Of Biotechnology</Link>,
                 },
               },
-               {
+              {
                 path: "faculty-of-physical-sciences",
                 element: <FacultyOfPhysicalSciencesPage />,
                 handle: {
                   crumb: () => <Link to="/">Faculty Of Physical Science</Link>,
-                }
+                },
               },
               {
                 path: "faculty-of-mathematical-and-statistical-sciences",
                 element: <FacultyOfMathematicalAndStatisticalSciencesPage />,
                 handle: {
-                  crumb: () => <Link to="/">Faculty of Mathematical and Statistical Sciences</Link>,
+                  crumb: () => (
+                    <Link to="/">
+                      Faculty of Mathematical and Statistical Sciences
+                    </Link>
+                  ),
                 },
               },
-              
-               {
+
+              {
                 path: "faculty-of-humanities-and-social-sciences",
                 element: <FacultyOfHumanitiesAndSocialSciencesPage />,
                 handle: {
-                  crumb: () => <Link to="/">Faculty of Humanities and Social Sciences</Link>,
+                  crumb: () => (
+                    <Link to="/">
+                      Faculty of Humanities and Social Sciences
+                    </Link>
+                  ),
                 },
               },
               {
@@ -360,21 +385,29 @@ export const routes = [
                 path: "institute-of-biosciences-and-technology",
                 element: <InstituteofBiosciencesandTechnologyPage />,
                 handle: {
-                  crumb: () => <Link to="/">Institute of Biosciences and Technology</Link>,
+                  crumb: () => (
+                    <Link to="/">Institute of Biosciences and Technology</Link>
+                  ),
                 },
               },
               {
                 path: "institute-of-management-commerce-and-economics",
                 element: <InstituteofManagementCommerceandEconomicsPage />,
                 handle: {
-                  crumb: () => <Link to="/">Institute of Management, Commerce and Economics</Link>,
+                  crumb: () => (
+                    <Link to="/">
+                      Institute of Management, Commerce and Economics
+                    </Link>
+                  ),
                 },
               },
               {
                 path: "departmentDetails/:name",
                 element: <DepartmentDetailPage />,
                 handle: {
-                  crumb: () => <Link to="/">Faculty Of Commerce And Economics</Link>,
+                  crumb: () => (
+                    <Link to="/">Faculty Of Commerce And Economics</Link>
+                  ),
                 },
               },
               {
@@ -388,21 +421,31 @@ export const routes = [
                 path: "institute-of-natural-sciences-and-humanities",
                 element: <InstituteofNaturalSciencesandHumanitiesPage />,
                 handle: {
-                  crumb: () => <Link to="/">Institute of Natural Sciences and Humanities</Link>,
+                  crumb: () => (
+                    <Link to="/">
+                      Institute of Natural Sciences and Humanities
+                    </Link>
+                  ),
                 },
               },
               {
                 path: "institute-of-pharmaceutical-sciences1",
                 element: <InstituteofPharmaceuticalSciencesPage />,
                 handle: {
-                  crumb: () => <Link to="/">Institute of Pharmaceutical Sciences</Link>,
+                  crumb: () => (
+                    <Link to="/">Institute of Pharmaceutical Sciences</Link>
+                  ),
                 },
               },
               {
                 path: "institute-of-agricultural-sciences-and-technology",
                 element: <InstituteofAgriculturalSciencesandTechnologyPage />,
                 handle: {
-                  crumb: () => <Link to="/">Institute of Agricultural Sciences and Technology</Link>,
+                  crumb: () => (
+                    <Link to="/">
+                      Institute of Agricultural Sciences and Technology
+                    </Link>
+                  ),
                 },
               },
               {
@@ -423,7 +466,9 @@ export const routes = [
                 path: "institute-of-education-and-research",
                 element: <InstituteofEducationandResearchPage />,
                 handle: {
-                  crumb: () => <Link to="/">Institute of Education and Research</Link>,
+                  crumb: () => (
+                    <Link to="/">Institute of Education and Research</Link>
+                  ),
                 },
               },
               {
@@ -437,14 +482,22 @@ export const routes = [
                 path: "department-of-Cse",
                 element: <DepartmentOfCSEPage />,
                 handle: {
-                  crumb: () => <Link to="/">Department Of Computer Science And Engineering</Link>,
+                  crumb: () => (
+                    <Link to="/">
+                      Department Of Computer Science And Engineering
+                    </Link>
+                  ),
                 },
               },
               {
                 path: "department-of-csis",
                 element: <DepartmentOfCSISPage />,
                 handle: {
-                  crumb: () => <Link to="/">Department Of Computer Science And Information Systems</Link>,
+                  crumb: () => (
+                    <Link to="/">
+                      Department Of Computer Science And Information Systems
+                    </Link>
+                  ),
                 },
               },
             ],
@@ -601,7 +654,11 @@ export const routes = [
             path: "b-tech-cse-artificial-intelligence-machine-learning",
             element: <BtechInCSEAIAndML />,
             handle: {
-              crumb: () => <Link to="/">B.Tech. CSE (Artificial Intelligence & Machine Learning)</Link>,
+              crumb: () => (
+                <Link to="/">
+                  B.Tech. CSE (Artificial Intelligence & Machine Learning)
+                </Link>
+              ),
             },
           },
         ],
@@ -786,7 +843,9 @@ export const routes = [
             path: "phd-notification-session",
             element: <PhdNotificationSessionPage />,
             handle: {
-              crumb: () => <Link to="/">Ph.D. Notification (Session: 2025-26)</Link>,
+              crumb: () => (
+                <Link to="/">Ph.D. Notification (Session: 2025-26)</Link>
+              ),
             },
           },
           {
@@ -864,6 +923,13 @@ export const routes = [
             },
           },
           {
+            path: "alumni-feedback",
+            element: <AlumniFeedbackPage />,
+            handle: {
+              crumb: () => <Link to="/">Alumni Feedback</Link>,
+            },
+          },
+          {
             path: "placement-overview",
             element: <PlacementOverviewPage />,
             handle: {
@@ -904,8 +970,9 @@ function Breadcrumbs() {
   // console.log("matches", matches[1].pathname);
   return (
     <section
-      className={`banner-section ${matches[1].pathname === "/abhivyakti" ? "abhivyakt" : ""
-        } flex items-center `}
+      className={`banner-section ${
+        matches[1].pathname === "/abhivyakti" ? "abhivyakt" : ""
+      } flex items-center `}
     >
       <div className={`${Classes["container"]} `}>
         <div className={`${Classes["page-title-content"]}`}>
