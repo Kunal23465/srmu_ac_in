@@ -85,6 +85,8 @@ import ProgramsPage from "../pages/programs/ProgramsPage";
 import AwardOverviewPage from "../pages/about/award-overview/AwardOverviewPage";
 import DepartmentDetailPage from "../components/academics/institutes/institute-department/Institute-department/DepartmentDetailPage";
 import InstituteDepartmentPage from "../pages/academics/institutes/institute-department/InstituteDepartmentPage";
+import ContactUsPage from "../pages/contact-us/ContactUsPage";
+import NewsEventDetails from "../components/home/NewsEventDetails";
 interface IMatches {
   pathname: string;
   params: Params<string>;
@@ -111,11 +113,7 @@ export const routes = [
           crumb: () => <Link to="/">Home</Link>,
         },
       },
-   
 
-    
-  
-    
       {
         path: "notice",
         element: <NoticePage />,
@@ -362,7 +360,7 @@ export const routes = [
               crumb: () => <Link to="/">Program Finder</Link>,
             },
           },
-                    {
+          {
             path: "scholarship-scheme",
             element: <ScholarshipPage />,
             handle: {
@@ -576,8 +574,6 @@ export const routes = [
               })),
             ],
           },
-
-
         ],
       },
       {
@@ -699,6 +695,20 @@ export const routes = [
         element: <AdmissionEnquiryPage />,
         handle: {
           crumb: () => <Link to="/">Admission Enquiry</Link>,
+        },
+      },
+      {
+        path: "contact-us",
+        element: <ContactUsPage />,
+        handle: {
+          crumb: () => <Link to="/">Contact Us</Link>,
+        },
+      },
+      {
+        path: "news-and-events/:name",
+        element: <NewsEventDetails />,
+        handle: {
+          crumb: () => <Link to="/">Innovation Meets Agriculture At The SRMU Kisan Mela 2025</Link>,
         },
       },
     ],
