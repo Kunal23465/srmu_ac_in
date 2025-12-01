@@ -178,7 +178,7 @@ const CustomTabs = ({
 
         .tabs-header {
           display: flex;
-          gap: 24px;
+          gap: 18px;
           padding-bottom: 10px;
           position: relative;
 
@@ -197,7 +197,7 @@ const CustomTabs = ({
         .active-underline {
           position: absolute;
           bottom: -1px;
-          height: 2px;
+          height: 3px;
           width: 0px;
           transition: transform 0.3s ease, width 0.3s ease;
         }
