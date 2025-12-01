@@ -109,6 +109,10 @@ import FacultyOfBiotechnologyPage from "../pages/academics/institutes/institute-
 import FacultyOfPhysicalSciencesPage from "../pages/academics/institutes/institute-department/FacultyOfPhysicalSciencesPage";
 import FacultyOfMathematicalAndStatisticalSciencesPage from "../pages/academics/institutes/institute-department/FacultyOfMathematicalAndStatisticalSciencesPage";
 import FacultyOfHumanitiesAndSocialSciencesPage from "../pages/academics/institutes/institute-department/FacultyOfHumanitiesAndSocialSciencesPage";
+import { blogCards } from "../data/blog/blog-data";
+import BlogsPage from "../pages/blog/BlogsPage";
+import BlogDetailsPage from "../pages/blog/BlogDetailsPage";
+import RtiPage from "../pages/rti/RtiPage";
 interface IMatches {
   pathname: string;
   params: Params<string>;
@@ -320,14 +324,14 @@ export const routes = [
                   crumb: () => <Link to="/">Faculty Of Biosciences</Link>,
                 },
               },
-               {
+              {
                 path: "faculty-of-biotechnology",
                 element: <FacultyOfBiotechnologyPage />,
                 handle: {
                   crumb: () => <Link to="/">Faculty Of Biotechnology</Link>,
                 },
               },
-               {
+              {
                 path: "faculty-of-physical-sciences",
                 element: <FacultyOfPhysicalSciencesPage />,
                 handle: {
@@ -341,8 +345,8 @@ export const routes = [
                   crumb: () => <Link to="/">Faculty of Mathematical and Statistical Sciences</Link>,
                 },
               },
-              
-               {
+
+              {
                 path: "faculty-of-humanities-and-social-sciences",
                 element: <FacultyOfHumanitiesAndSocialSciencesPage />,
                 handle: {
@@ -881,6 +885,44 @@ export const routes = [
           crumb: () => <Link to="/">Admission Enquiry</Link>,
         },
       },
+
+      {
+        path: "/blogs",
+        element: <BlogsPage />,
+        handle: {
+          crumb: () => <Link to="/blogs">Blogs</Link>,
+        },
+        children: [
+          {
+            path: ":blogRouteKey",
+            element: <BlogDetailsPage />,
+            handle: {
+              crumb: (match?: any) => {
+                const key =
+                  match?.params?.blogRouteKey ??
+                  window.location.pathname.split("/").pop();
+
+                const blog = blogCards.find((b) => b.routeKey === key);
+
+                return <a>{blog?.breadcrumb ?? "Blog"}</a>;
+              },
+            },
+          },
+        ],
+      },
+
+      {
+        path: "/rti",
+        element: <RtiPage />,
+        handle: {
+          crumb: () => <Link to="/rti">RTI</Link>,
+        },
+      }
+
+
+
+
+
     ],
   },
 ];
