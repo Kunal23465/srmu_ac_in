@@ -99,7 +99,7 @@ const AlumniFeedbackForm: FC = () => {
 
   const renderTextarea = (field: EnquiryField, widthClass: string) => (
     <div
-      key={field.id}
+      key={field.id}   
       className={`mb-6 flex flex-col gap-1 px-3 ${widthClass}`}
     >
       <label className="mb-2!" htmlFor={field.name}>
