@@ -2,7 +2,7 @@ import React from "react";
 import CustomOverviewSection from "../../../../utils/custom/CustomOverviewSection";
 import Classes from "../../../../utils/styles/Global.module.css";
 import CustomTopFooter from "../../../../utils/custom/CustomTopFooter";
-import { RouteNum, Route10Data, Transportation1TopFooterData, TransportationOverviewData } from "../../../../data/campus-life/facilities/transportation/transportation-data";
+import { RouteNum, Transportation1TopFooterData, TransportationOverviewData } from "../../../../data/campus-life/facilities/transportation/transportation-data";
 import CustomTransportationTable from "../../../../utils/custom/CustomTransportationTable";
 
 const Transportation1: React.FC = () => {
