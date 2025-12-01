@@ -33,6 +33,7 @@ import corporate from "../../../assets/images/academics/institutes/corporate-man
 import training from "../../../assets/images/academics/institutes/training-.jpg";
 import { FacultyItem } from "../../../utils/custom/CustomFacultyListCard";
 import { InstituteProfile } from "../../../types/profile-data-type";
+import { Student } from "../../../utils/custom/CustomPlacedStudentTable";
 
 export const electricalDepartmentHighlightsData: departmentHighlightscardType[] =
   [
@@ -80,7 +81,7 @@ export const electricalDepartmentHighlightsData: departmentHighlightscardType[] 
     },
   ];
 
-export const instituteOverviewData: customeOverViewType = {
+export const electricalDepartmentinstituteOverviewData: customeOverViewType = {
   heading: "Department of Electrical and Electronics Engineering",
   content: `The department of Electrical & Electronics Engineering was established in 2012. Currently department is offering undergraduate, post graduate and doctorate programmes in various specialized disciplines of electrical & electronics engineering, EV field, Renewable energy, artificial intelligence, machine learning, drone technology and microelectronics are the emerging field & field of the near future.
 
@@ -105,15 +106,34 @@ export const counterDataForDepartmentOfElectricalAndElectronicsEngineering: coun
     { id: 3, value: "215", suffix: "", label: "Students" },
   ];
 
-export const counterDataForPlacedStudentsOFDepartmentOfElectricalAndElectronicsEngineering: counterDataType[] =
-  [
-    { id: 1, value: "200", suffix: "", label: "Guest lectures" },
-    { id: 2, value: "100", suffix: "", label: "Field Visits" },
-    { id: 3, value: "10", suffix: "", label: "Conference & Seminars" },
-  ];
 
+export const counterDataForPlacedStudentsOFDepartmentOfElectricalAndElectronicsEngineering = {
+  counterData: [
+    {
+      id: 1,
+      icon: "",
+      value: "200",
+      suffix: "",
+      label: "Guest lectures",
+    },
+    {
+      id: 2,
+      icon: "",
+      value: "100",
+      suffix: "",
+      label: "Field Visits",
+    },
+    {
+      id: 3,
+      icon: "",
+      value: "10",
+      suffix: "",
+      label: "Conference & Seminars",
+    },
+  ],
+};
 
-export const departmentHeadProfileData: InstituteProfile[] = [
+export const ElectricalAndElectronicsdepartmentHeadProfileData: InstituteProfile[] = [
   {
     id: 1,
     title: "Department Head",
@@ -141,11 +161,6 @@ Dr. Bajpai has been a recipient of many recognitions and awards such as; Awarded
 `
   }
 ];
-
-
-
-
-
 
 export const industryHonorsFeeData: FeeTableData = {
   columns: ["COURSES", "Duration", "Eligibility Criteria", "Course Fees (PA)"],
@@ -495,7 +510,7 @@ export const underGraduateFeeData: FeeTableData = {
 };
 
 
-export const facultyDetails: FacultyItem[] = [
+export const ElectricalAndElectronicsfacultyDetails: FacultyItem[] = [
   
     {
       id: 1,
@@ -653,4 +668,22 @@ export const DepartmentOfElectricalAndElectronicsEngineeringVMData = [
       "To impart quality education in the field of Electrical & Electronics Engineering and to produce globally competent engineers to serve the society.",
     ],
   },
+];
+
+export const DepartmentOfElectricalAndElectronicsPlacedStudents: Student[] = [
+  { name: "Lavisha Rupani", program: "B.Tech. in Electrical Engineering", company: "Cognizant" },
+  { name: "Gaurav Tiwari", program: "B.Tech. in Electrical Engineering", company: "Cognizant" },
+  { name: "Sudhanshu Ranjan", program: "B.Tech. in Electrical Engineering", company: "Hettich" },
+  { name: "Abhinav Singh", program: "B.Tech. in Electrical Engineering", company: "PayTM" },
+  { name: "Gauri Pandey", program: "B.Tech. in Electrical Engineering", company: "Collabera" },
+  { name: "Sakshi Mishra", program: "B.Tech. in Electrical Engineering", company: "Edge Technosoft" },
+  { name: "Ishika Jindal", program: "B.Tech. in Electrical Engineering", company: "Planet Spark" },
+  { name: "Aditya Gupta", program: "B.Tech. in Electrical Engineering", company: "Yes Papers" },
+  { name: "Shivam Kumar Rai", program: "B.Tech. in Electrical Engineering", company: "Collabera" },
+  { name: "Avanish Chaudhary", program: "B.Tech. in Electrical Engineering", company: "Collabera" },
+  { name: "Murlee Dhar Joshee", program: "B.Tech. in Electrical Engineering", company: "Teachnook" },
+  { name: "Shahsank Kumar", program: "B.Tech. in Electrical Engineering", company: "Through Nextgen Ventures" },
+  { name: "Arunima Srivastava", program: "B.Tech. in Electrical Engineering", company: "Teachnook" },
+  { name: "Gaurav Tiwari", program: "B.Tech. in Electrical Engineering", company: "Windmoller" },
+  { name: "Sumit Singh", program: "B.Tech. in Electrical Engineering", company: "VDart" },
 ];

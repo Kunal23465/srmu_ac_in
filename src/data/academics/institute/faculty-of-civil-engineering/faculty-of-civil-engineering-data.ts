@@ -12,6 +12,7 @@ import { customeOverViewType } from "../../../../types/home-data-type";
 import { counterDataType } from "../../../about/leadership-and-governance/leadership-and-governance-data";
 import { FacultyItem } from "../../../../utils/custom/CustomFacultyListCard";
 import { InstituteProfile } from "../../../../types/profile-data-type";
+import { Student } from "../../../../utils/custom/CustomPlacedStudentTable";
 
 export interface DepartmentVMType {
   id?: number;
@@ -74,37 +75,7 @@ export const CivildepartmentVMData = [
   },
 ];
 
-export const civilFeeData: FeeTableData = {
-  columns: ["Fee Type", "1 Year", "2 Year", "3 Year"],
-
-  rows: [
-    { col1: "Tuition Fee", col2: 45000, col3: 45000, col4: 45000 },
-    { col1: "Examination Fee", col2: 5000, col3: 5000, col4: 5000 },
-    { col1: "Other Fees", col2: 7000, col3: 7000, col4: 7000 },
-    { col1: "Development Fund", col2: 5000, col3: 5000, col4: 5000 },
-    { col1: "Caution Money", col2: 5000, col3: "NA", col4: "NA" },
-    { col1: "Total Fee", col2: 67000, col3: 62000, col4: 62000 },
-    { col1: "Hostel Fees (1st Yr)", col2: 85000, col3: 80000, col4: 80000 },
-    { col1: "Transportation", col2: 33000, col3: 33000, col4: 33000 },
-  ],
-
-  notes: ["Alumni Fee: 500", "Degree Fee: 1000", "Both these fees are payable in the final year of the program"],
-};
-
-export const civilFeeData1: FeeTableData = {
-  columns: ["Fee Type", "1 Year", "2 Year", "3 Year"],
-
-  rows: [
-    { col1: "Tuition Fee", col2: 45000, col3: 45000, col4: 45000 },
-    { col1: "Examination Fee", col2: 5000, col3: 5000, col4: 5000 },
-    { col1: "Other Fees", col2: 7000, col3: 7000, col4: 7000 },
-    { col1: "Development Fund", col2: 5000, col3: 5000, col4: 5000 },
-    { col1: "Caution Money", col2: 5000, col3: "NA", col4: "NA" },
-  ],
-
-  // notes: ["Alumni Fee: 500", "Degree Fee: 1000", "Both these fees are payable in the final year of the program"],
-};
-export const departmentHighlights: departmentHighlightscardType[] = [
+export const civildepartmentHighlights: departmentHighlightscardType[] = [
   {
     image: depSlide1,
     title: "Major Collaborations",
@@ -136,7 +107,7 @@ export const departmentHighlights: departmentHighlightscardType[] = [
   },
 ];
 
-export const facultyData: FacultyItem[] = [
+export const civilfacultyData: FacultyItem[] = [
   {
     id: 1,
     name: "Dr. Aditi Sharma",
@@ -459,4 +430,37 @@ export const instituteProfilesCivil: InstituteProfile[] = [
         </p>
       `,
   },
+];
+
+export const civilcounterData2 = {
+  counterData: [
+    {
+      id: 1,
+      icon: "",
+      value: "200",
+      suffix: "",
+      label: "Guest lectures",
+    },
+    {
+      id: 2,
+      icon: "",
+      value: "150",
+      suffix: "",
+      label: "Field Visits",
+    },
+    {
+      id: 3,
+      icon: "",
+      value: "25",
+      suffix: "",
+      label: "Conference & Seminars",
+    },
+  ],
+};
+export const civilPlacedStudents: Student[] = [
+  { name: "Pankaj Gupta", program: "B.Tech. in Civil Engineering", company: "Shapoorji Pallonji" },
+  { name: "Pawan Kumar Singh", program: "B.Tech. in Civil Engineering", company: "Shapoorji Pallonji" },
+  { name: "Ujjawal Pratap Singh", program: "B.Tech. in Civil Engineering", company: "Shapoorji Pallonji" },
+  { name: "Sarvagya Pandey", program: "B.Tech. in Civil Engineering", company: "Central Water Commission of India" },
+  { name: "Sudheer Yadav", program: "B.Tech. in Civil Engineering", company: "Power Grid Corporation of India" },
 ];

@@ -13,7 +13,7 @@ import {
   InstituteofEducationandResearchTopFooterData,
   InstituteofEducationandResearchVMData,
   InstituteofEducationandResearchinstituteProfiles,
-  placedStudents,
+  InstituteofEducationandResearchplacedStudents,
   tableHeaders,
   InstituteofEducationandResearchDepartmentEventsData,
 } from "../../../../../data/academics/institute/institute-department/institute-of-education-and-research-data";
@@ -49,9 +49,7 @@ const InstituteofEducationandResearch: React.FC = () => {
       <div className={`${Classes["container"]}`}>
         <CustomOverviewSection data={InstituteofEducationandResearchOverviewData} />
         <Counter
-          counterData={InstituteofEducationandResearchCounterData1.counterData}
-          classes={InstituteofEducationandResearchCounterData1.classes}
-          aboutusClass={InstituteofEducationandResearchCounterData1.aboutusClass}
+          counterData={InstituteofEducationandResearchCounterData1}
         />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12  my-15">
           {InstituteofEducationandResearchVMData.map((item) => (
@@ -107,7 +105,7 @@ const InstituteofEducationandResearch: React.FC = () => {
             classes={InstituteofEducationandResearchCounterData2.classes}
             aboutusClass={InstituteofEducationandResearchCounterData2.aboutusClass}
           />
-          <CustomPlacedStudentTable students={placedStudents} headers={tableHeaders} />
+          <CustomPlacedStudentTable students={InstituteofEducationandResearchplacedStudents} headers={tableHeaders} />
         </div>
       </div>
  <CustomDepartmentSlider
