@@ -85,6 +85,7 @@ import ProgramsPage from "../pages/programs/ProgramsPage";
 import AwardOverviewPage from "../pages/about/award-overview/AwardOverviewPage";
 import DepartmentDetailPage from "../components/academics/institutes/institute-department/Institute-department/DepartmentDetailPage";
 import InstituteDepartmentPage from "../pages/academics/institutes/institute-department/InstituteDepartmentPage";
+import TransportationPage from "../pages/campus-life/facilities/transportation/TransportationPage";
 interface IMatches {
   pathname: string;
   params: Params<string>;
@@ -447,6 +448,13 @@ export const routes = [
               crumb: () => <Link to="/">Facilities</Link>,
             },
           },
+           {
+          path: "transportation",
+          element: <TransportationPage />,
+          handle: {
+            crumb: () => <Link to="/">Transportation</Link>,
+          },
+        },
           {
             path: "convocation",
             element: <ConvocationPage />,
