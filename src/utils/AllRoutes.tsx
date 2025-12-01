@@ -85,6 +85,7 @@ import ProgramsPage from "../pages/programs/ProgramsPage";
 import AwardOverviewPage from "../pages/about/award-overview/AwardOverviewPage";
 import DepartmentDetailPage from "../components/academics/institutes/institute-department/Institute-department/DepartmentDetailPage";
 import InstituteDepartmentPage from "../pages/academics/institutes/institute-department/InstituteDepartmentPage";
+import AlumniFeedbackPage from "../pages/placement/AlumniFeedbackPage";
 interface IMatches {
   pathname: string;
   params: Params<string>;
@@ -149,7 +150,11 @@ export const routes = [
             path: "committees-and-cells",
             element: <CommitteeAndCellsPage />,
             handle: {
-              crumb: () => <Link to="/about/committees-and-cells">Committees and Cells</Link>,
+              crumb: () => (
+                <Link to="/about/committees-and-cells">
+                  Committees and Cells
+                </Link>
+              ),
             },
 
             children: committeeCards.map((card) => ({
@@ -228,7 +233,9 @@ export const routes = [
                 path: "departmentDetails/:name",
                 element: <DepartmentDetailPage />,
                 handle: {
-                  crumb: () => <Link to="/">Faculty Of Commerce And Economics</Link>,
+                  crumb: () => (
+                    <Link to="/">Faculty Of Commerce And Economics</Link>
+                  ),
                 },
               },
             ],
@@ -427,7 +434,11 @@ export const routes = [
             path: "b-tech-cse-artificial-intelligence-machine-learning",
             element: <BtechInCSEAIAndML />,
             handle: {
-              crumb: () => <Link to="/">B.Tech. CSE (Artificial Intelligence & Machine Learning)</Link>,
+              crumb: () => (
+                <Link to="/">
+                  B.Tech. CSE (Artificial Intelligence & Machine Learning)
+                </Link>
+              ),
             },
           },
         ],
@@ -606,7 +617,9 @@ export const routes = [
             path: "phd-notification-session",
             element: <PhdNotificationSessionPage />,
             handle: {
-              crumb: () => <Link to="/">Ph.D. Notification (Session: 2025-26)</Link>,
+              crumb: () => (
+                <Link to="/">Ph.D. Notification (Session: 2025-26)</Link>
+              ),
             },
           },
           {
@@ -684,6 +697,13 @@ export const routes = [
             },
           },
           {
+            path: "alumni-feedback",
+            element: <AlumniFeedbackPage />,
+            handle: {
+              crumb: () => <Link to="/">Alumni Feedback</Link>,
+            },
+          },
+          {
             path: "placement-overview",
             element: <PlacementOverviewPage />,
             handle: {
@@ -724,8 +744,9 @@ function Breadcrumbs() {
   // console.log("matches", matches[1].pathname);
   return (
     <section
-      className={`banner-section ${matches[1].pathname === "/abhivyakti" ? "abhivyakt" : ""
-        } flex items-center `}
+      className={`banner-section ${
+        matches[1].pathname === "/abhivyakti" ? "abhivyakt" : ""
+      } flex items-center `}
     >
       <div className={`${Classes["container"]} `}>
         <div className={`${Classes["page-title-content"]}`}>
