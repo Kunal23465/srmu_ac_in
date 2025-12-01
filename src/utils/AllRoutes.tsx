@@ -84,6 +84,8 @@ import BtechInCSEAIAndML from "../pages/programs/btech-in-cse-ai-ml/BtechInCSEAI
 import AwardOverviewPage from "../pages/about/award-overview/AwardOverviewPage";
 import DepartmentDetailPage from "../components/academics/institutes/institute-department/Institute-department/DepartmentDetailPage";
 import InstituteDepartmentPage from "../pages/academics/institutes/institute-department/InstituteDepartmentPage";
+import ContactUsPage from "../pages/contact-us/ContactUsPage";
+import NewsEventDetails from "../components/home/NewsEventDetails";
 import AlumniFeedbackPage from "../pages/placement/AlumniFeedbackPage";
 import OnlineAdmissionPage from "../pages/Home/OnlineAdmissionPage";
 import BlogsPage from "../pages/blog/BlogsPage";
@@ -719,6 +721,18 @@ export const routes = [
           crumb: () => <Link to="/">Admission Enquiry</Link>,
         },
       },
+      {
+        path: "contact-us",
+        element: <ContactUsPage />,
+        handle: {
+          crumb: () => <Link to="/">Contact Us</Link>,
+        },
+      },
+      {
+        path: "news-and-events/:name",
+        element: <NewsEventDetails />,
+        handle: {
+          crumb: () => <Link to="/">Innovation Meets Agriculture At The SRMU Kisan Mela 2025</Link>,
 
       {
         path: "/blogs",
