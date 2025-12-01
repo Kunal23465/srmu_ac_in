@@ -1,4 +1,4 @@
-import { counterDataType } from "../../home/counterData";
+
 import { customeOverViewType } from "../../../types/home-data-type";
 import { EventItem } from "../../../utils/custom/CustomEventListCard";
 import hpv from "../../../assets/images/academics/institutes/hpv.png";
@@ -31,6 +31,7 @@ import {
   departmentHighlightscardType,
   FeeTableData,
 } from "../faculty-of-civil-engineering/faculty-of-civil-engineering-data";
+import { counterDataType } from "../../about/leadership-and-governance/leadership-and-governance-data";
 
 export const facultyofBiotechnologyeOverviewData: customeOverViewType = {
   heading: "Faculty of Biotechnology",
@@ -290,12 +291,31 @@ export const facultyDetailsOfBiotechnologyDepartment: FacultyItem[] = [
   },
 ];
 
-export const counterDataForPlacedStudentsOFBiotechnology: counterDataType[] = [
-  { id: 1, value: "125", suffix: "", label: "Guest lectures" },
-  { id: 2, value: "50", suffix: "", label: "Field Visits" },
-  { id: 3, value: "15", suffix: "", label: "Conference & Seminars" },
-];
-
+export const counterDataForPlacedStudentsOFBiotechnology = {
+  counterData: [
+    {
+      id: 1,
+      icon: "",
+      value: "125",
+      suffix: "",
+      label: "Guest lectures",
+    },
+    {
+      id: 2,
+      icon: "",
+      value: "50",
+      suffix: "",
+      label: "Field Visits",
+    },
+    {
+      id: 3,
+      icon: "",
+      value: "15",
+      suffix: "",
+      label: "Conference & Seminars",
+    },
+  ],
+};
 export const biotechnologyHighlightsData: departmentHighlightscardType[] = [
   {
     image: studentsupport,

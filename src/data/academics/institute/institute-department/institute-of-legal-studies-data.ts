@@ -36,37 +36,13 @@ export const InstituteofLegalStudiesTopFooterData = [
     btnText: "Request Registration",
   },
 ];
+export const InstituteofLegalStudiesCounterData1: counterDataType[] = [
+  { id: 1, value: "2012", suffix: "", label: "Established" },
+  { id: 2, value: "39", suffix: "", label: "Faculty & Staff" },
+  { id: 3, value: "1100", suffix: "", label: "Students" },
+];
 
 
-export const InstituteofLegalStudiesCounterData1 = {
-  counterData: [
-    {
-      id: 1,
-      icon: "",
-      value: "2012",
-      suffix: "",
-      label: "Established",
-    },
-    {
-      id: 2,
-      icon: "",
-      value: "39",
-      suffix: "",
-      label: "Faculty & Staff",
-    },
-    {
-      id: 3,
-      icon: "",
-      value: "1100",
-      suffix: "",
-      label: "Students",
-    },
-  ],
-
-  // Optional classes (can be null or ignored if unused)
-  classes: "",
-  aboutusClass: "",
-};
 
 export const InstituteofLegalStudiesCounterData2 = {
   counterData: [
@@ -123,21 +99,74 @@ export const InstituteofLegalStudiesVMData = [
 
 export const InstituteofLegalStudiesData1: FeeTableData = {
   columns: ["COURSES", "DURATION", "ELIGIBILITY CRITERIA", "COURSE FEES (PA)"],
-
   rows: [
-    { col1: "MB.A. + LL.B. (Hons.)", col2: "5 Years", col3: "Click to View", col4: "	Rs. 90,000/-" },
-    { col1: "B.B.A. + LL.B. (Hons.)", col2: "5 Years", col3: "Click to View", col4: "	Rs. 80,000/-" },
-    ],
+    {
+      course: "MB.A. + LL.B. (Hons.)",
+      duration: "5 Years",
+      eligibility: "Click",
+      fee: "Rs. 90,000/-",
+      eligibilityContent: `
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>MB.A. + LL.B. (Hons.)</h2>
+            <p>Candidates must have passed Graduation in any stream from any recognised University or AICTE recognised Institute/ College with minimum aggregate marks of 45% or CGPA of 5.0 for Gen/ OBC category and 40% marks or CGPA of 4.5 for SC/ ST Category.</p>
+        `,
+    },
+    {
+      course: "B.B.A. + LL.B. (Hons.)",
+      duration: "5 Years",
+      eligibility: "Click",
+      fee: "Rs. 80,000/-",
+      eligibilityContent: `
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>B.B.A. + LL.B. (Hons.)</h2>
+            <p>Candidates must have passed Graduation in any stream from any recognised University or AICTE recognised Institute/ College with minimum aggregate marks of 45% or CGPA of 5.0 for Gen/ OBC category and 40% marks or CGPA of 4.5 for SC/ ST Category.</p>
+        `,
+    },
+  ],
 };
 
 export const InstituteofLegalStudiesData2: FeeTableData = {
   columns: ["COURSES", "DURATION", "ELIGIBILITY CRITERIA", "COURSE FEES (PA)"],
 
   rows: [
-    {      col1: "LL.M. in Criminal & Security Law",      col2: "1 Year",      col3: "Click to View",      col4: "Rs. 80,000/-",    },
-    {      col1: "LL.M. in Corporate & Commercial Law",      col2: "1 Year",      col3: "Click to View",      col4: "Rs. 80,000/-",    },
-    {      col1: "LL.M. in Constitutional & Administrative Law",      col2: "1 Year",      col3: "Click to View",      col4: "Rs. 80,000/-",    },
-    {      col1: "LL.M. in International & Comparative Law",      col2: "1 Year",      col3: "Click to View",      col4: "Rs. 80,000/-",    },
+    {
+      course: "LL.M. in Criminal & Security Law",
+      duration: "1 Years",
+      eligibility: "Click",
+      fee: "Rs. 80,000/-",
+      eligibilityContent: `
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>LL.M. in Criminal & Security Law</h2>
+            <p>Candidate must have passed 3 Years LL.B./5 Year integrated LL.B./ equivalent degree from any recognised University or AICTE recognised Institute/College with minimum aggregate marks of 50% or CGPA of 5.5 for Gen/OBC and 45% marks or CGPA of 5.0 for SC/ST category. Qualifying written test is mandatory.</p>
+        `,
+    },
+    {
+      course: "LL.M. in Corporate & Commercial Law",
+      duration: "1 Years",
+      eligibility: "Click",
+      fee: "Rs. 80,000/-",
+      eligibilityContent: `
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>LL.M. in Corporate & Commercial Law</h2>
+            <p>Candidate must have passed 3 Years LL.B./5 Year integrated LL.B./ equivalent degree from any recognised University or AICTE recognised Institute/College with minimum aggregate marks of 50% or CGPA of 5.5 for Gen/OBC and 45% marks or CGPA of 5.0 for SC/ST category. Qualifying written test is mandatory.</p>
+        `,
+    },
+    {
+      course: "LL.M. in Constitutional & Administrative Law",
+      duration: "1 Years",
+      eligibility: "Click",
+      fee: "Rs. 80,000/-",
+      eligibilityContent: `
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>LL.M. in Constitutional & Administrative Law</h2>
+            <p>Candidate must have passed 3 Years LL.B./5 Year integrated LL.B./ equivalent degree from any recognised University or AICTE recognised Institute/College with minimum aggregate marks of 50% or CGPA of 5.5 for Gen/OBC and 45% marks or CGPA of 5.0 for SC/ST category. Qualifying written test is mandatory.</p>
+        `,
+    },
+    {
+      course: "LL.M. in International & Comparative Law",
+      duration: "1 Years",
+      eligibility: "Click",
+      fee: "Rs. 80,000/-",
+      eligibilityContent: `
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>LL.M. in International & Comparative Law</h2>
+            <p>Candidate must have passed 3 Years LL.B./5 Year integrated LL.B./ equivalent degree from any recognised University or AICTE recognised Institute/College with minimum aggregate marks of 50% or CGPA of 5.5 for Gen/OBC and 45% marks or CGPA of 5.0 for SC/ST category. Qualifying written test is mandatory.</p>
+        `,
+    },
   ],
 };
 
@@ -145,10 +174,37 @@ export const InstituteofLegalStudiesData3: FeeTableData = {
   columns: ["COURSES", "DURATION", "ELIGIBILITY CRITERIA", "COURSE FEES (PA)"],
 
   rows: [
-  {      col1: "LL.B. (Bachelor of Law)",      col2: "3 Years",      col3: "Click to View",      col4: "Rs. 57,000/-",    },
-    {      col1: "B.A. + LL.B. (Hons.)",      col2: "5 Years",      col3: "Click to View",      col4: "Rs. 90,000/-",    },
-    {      col1: "B.B.A. + LL.B. (Hons.)",      col2: "5 Years",      col3: "Click to View",      col4: "Rs. 80,000/-",    },
-  ],
+    {
+      course: "LL.B. (Bachelor of Law)",
+      duration: "3 Years",
+      eligibility: "Click",
+      fee: "Rs. 57,000/-",
+      eligibilityContent: `
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>LL.B. (Bachelor of Law)</h2>
+            <p>Candidate must have passed Graduation from any recognised University or AICTE recognised Institute/College in any stream with minimum aggregate marks of 45% or equivalent grade for GEN, 42% for OBC and 40% marks or equivalent grade for SC/ST Category.</p>
+        `,
+    },
+    {
+      course: "B.A. + LL.B. (Hons.)",
+      duration: "5 Years",
+      eligibility: "Click",
+      fee: "Rs. 90,000/-",
+      eligibilityContent: `
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>B.A. + LL.B. (Hons.)</h2>
+            <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/State Board in any stream with minimum aggregate marks of 45% or equivalent grade for GEN/OBC and 40% marks or equivalent grade for SC/ST Category.</p>
+        `,
+    },
+    {
+      course: "B.B.A. + LL.B. (Hons.)",
+      duration: "5 Years",
+      eligibility: "Click",
+      fee: "Rs. 80,000/-",
+      eligibilityContent: `
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>B.B.A. + LL.B. (Hons.)</h2>
+            <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/State Board in any stream with minimum aggregate marks of 45% or equivalent grade for GEN/OBC and 40% marks or equivalent grade for SC/ST Category.</p>
+        `,
+    },
+  ]
 };
 
 
@@ -387,6 +443,7 @@ import depSlide5 from "../../../../assets/images/academics/departments/industrys
 import depSlide6 from "../../../../assets/images/academics/departments/legalstudies-06022404143177.jpg";
 import depSlide7 from "../../../../assets/images/academics/departments/virtual-06022404142039.jpg";
 import { EventItem } from "../../../../utils/custom/CustomEventListCard";
+import { counterDataType } from "../../../home/counterData";
 
 export const InstituteofLegalStudiesdepartmentHighlights: departmentHighlightscardType[] = [
   {
@@ -433,7 +490,7 @@ export const tableHeaders: Headers = {
   company: "COMPANY",
 };
 
-export const placedStudents: Student[] = [
+export const InstituteofLegalStudiesplacedStudents: Student[] = [
   { name: "Surabhi Pandey", program: "B.A. + LL.B. (Hons.)", company: "Legal brains" },
   { name: "Anshika Mani Tripathi", program: "B.A. + LL.B. (Hons.)", company: "Legal brains" },
 ];

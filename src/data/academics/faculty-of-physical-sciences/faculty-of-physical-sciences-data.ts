@@ -121,13 +121,31 @@ export const physicalScienceUndergraduateFeeTable: FeeTableData = {
   ],
 };
 
-
-export const counterDataForPlacedStudentsOFPhysicalScience: counterDataType[] = [
-    { id: 1, value: "150", suffix: "", label: "Guest lectures" },
-    { id: 2, value: "50", suffix: "", label: "Field Visits" },
-    { id: 3, value: "10", suffix: "", label: "Conference & Seminars" },
-];
-
+export const counterDataForPlacedStudentsOFPhysicalScience = {
+  counterData: [
+    {
+      id: 1,
+      icon: "",
+      value: "150",
+      suffix: "",
+      label: "Guest lectures",
+    },
+    {
+      id: 2,
+      icon: "",
+      value: "50",
+      suffix: "",
+      label: "Field Visits",
+    },
+    {
+      id: 3,
+      icon: "",
+      value: "10",
+      suffix: "",
+      label: "Conference & Seminars",
+    },
+  ],
+};
 export const facultyDetailsOfPhysicalScienceDepartment: FacultyItem[] = [
   {
     id: 1,

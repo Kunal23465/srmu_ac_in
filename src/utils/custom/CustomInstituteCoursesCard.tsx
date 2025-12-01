@@ -4,8 +4,9 @@ import { Link } from "react-router-dom";
 export interface CustomInstituteCourseCardProps {
   imageUrl: string;
   departmentName: string;
-  path: string
+  path: string;
   departmentDetails?: any;
+  
 }
 
 interface CustomInstituteCourseCardComponentProps {

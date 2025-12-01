@@ -1,5 +1,5 @@
 import { customeOverViewType } from "../../../types/home-data-type";
-import { counterDataType } from "../../home/counterData";
+
 import visionImg from "../../../assets/images/academics/institutes/dept-vision.png";
 import misionImg from "../../../assets/images/academics/institutes/dept-mission.png";
 import drTabishQidwai from "../../../assets/images/academics/institutes/dr.-tabish-kidwai-.png";
@@ -22,6 +22,7 @@ import studentsupport from "../../../assets/images/academics/institutes/students
 import { EventItem } from "../../../utils/custom/CustomEventListCard";
 import biomedical from "../../../assets/images/academics/institutes/biomedical.jpg";
 import csir from "../../../assets/images/academics/institutes/csir.jpg";
+import { counterDataType } from "../../about/leadership-and-governance/leadership-and-governance-data";
 
 
 export const facultyofAHSOverviewData: customeOverViewType = {
@@ -172,13 +173,31 @@ export const facultyDetailsOfAhsDepartment: FacultyItem[] = [
   },
 ];
 
-export const counterDataForPlacedStudentsOFAlliedHealthSciences: counterDataType[] =
-  [
-    { id: 1, value: "25", suffix: "", label: "Guest lectures" },
-    { id: 2, value: "10", suffix: "", label: "Field Visits" },
-    { id: 3, value: "5", suffix: "", label: "Conference & Seminars" },
-  ];
-
+export const counterDataForPlacedStudentsOFAlliedHealthSciences = {
+  counterData: [
+    {
+      id: 1,
+      icon: "",
+      value: "25",
+      suffix: "",
+      label: "Guest lectures",
+    },
+    {
+      id: 2,
+      icon: "",
+      value: "10",
+      suffix: "",
+      label: "Field Visits",
+    },
+    {
+      id: 3,
+      icon: "",
+      value: "5",
+      suffix: "",
+      label: "Conference & Seminars",
+    },
+  ],
+};
 export const alliedHealthScienceHighlightsData: departmentHighlightscardType[] =
   [
     {

@@ -592,15 +592,6 @@ export const CsefacultyData: FacultyItem[] = [
 ];
 
 
-
-
-
-
-
-
-
-
-
  export const csetableHeaders: Headers = {
    name: "NAME OF STUDENT",
    program: "PROGRAM",
