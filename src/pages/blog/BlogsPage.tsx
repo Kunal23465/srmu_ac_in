@@ -1,0 +1,54 @@
+// src/pages/blog/BlogsPage.tsx
+import React from 'react';
+import { useLocation, Outlet } from 'react-router-dom';
+import BlogCard from '../../components/blog/BlogCard';
+import { blogCards } from '../../data/blog/blog-data';
+import Classes from "../../utils/styles/Global.module.css"
+import PaginationBlog from '../../components/blog/Pagination';
+
+const BlogsPage: React.FC = () => {
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const page = parseInt(queryParams.get('page') || '1', 10);
+  const perPage = 9;
+
+  const totalPages = Math.ceil(blogCards.length / perPage);
+  const start = (page - 1) * perPage;
+  const currentBlogs = blogCards.slice(start, start + perPage);
+
+  const parentPath = "/blogs";
+
+  return (
+    <>
+      {location.pathname === parentPath ? (
+        <div className="py-12 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <div className={`${Classes["container"]}`}>
+              <h2 className="text-xl sm:text-2xl md:text-[50px] font50 fw500 text-[#023047] text-center mb-15">
+                Blogs
+              </h2>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                {currentBlogs.map((card) => (
+
+                  <BlogCard key={card.id} card={card} />
+
+
+                ))}
+              </div>
+              <PaginationBlog currentPage={page} totalPages={totalPages} baseRoute="/blogs" />
+
+            </div>
+
+
+
+          </div>
+        </div>
+      ) : (
+        <Outlet />
+      )}
+    </>
+  );
+};
+
+export default BlogsPage;

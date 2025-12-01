@@ -1309,6 +1309,10 @@ ul {
   font-size: 2.188rem;
 }
 
+.small-font{
+  font-size: .813rem;
+}
+
 .parent_grid_gallary .children img {
   width: 100%;
   object-fit: cover;
@@ -1513,6 +1517,10 @@ section .card-color img {
 
 .programs-tabs li {
   position: relative;
+}
+
+.blog-heading{
+  font-size: calc(1.275rem + .3vw);
 }
 
 .programs-tabs button::after {

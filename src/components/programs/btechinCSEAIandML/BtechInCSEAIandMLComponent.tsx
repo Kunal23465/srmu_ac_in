@@ -1,4 +1,4 @@
-import { abc, BtechCSEAIandMLOverviewData, counterDataForBtechinCSEAIandML, eligibilityDataforAIandML, opportunityCardData, partnerDataforAIandML, ProgramFeesAIandML, scopeData, steps, whyData } from "../../../data/programs/btechincseai-ml-data/btechincseai-ml-data";
+import { abcforALML, BtechCSEAIandMLOverviewData, counterDataForBtechinCSEAIandML, eligibilityDataforAIandML, opportunityCardDataAIML, partnerDataforAIandML, ProgramFeesAIandML, scopeData, steps, whyDataforAIML } from "../../../data/programs/btechincseai-ml-data/btechincseai-ml-data";
 import Counter from "../../../utils/custom/Counter";
 import CustomOverviewSection from "../../../utils/custom/CustomOverviewSection";
 import Classes from "../../../utils/styles/Global.module.css";
@@ -39,7 +39,7 @@ const BtechInCSEAIandMLComponent = () => {
                 <CustomDepartmentSlider
                     heading="Why SRMU?"
                     description=""
-                    data={whyData}
+                    data={whyDataforAIML}
                     renderCard={({ item }) => <WhyCardComp item={item} />}
                     bgColor="transparent"
 
@@ -67,14 +67,14 @@ const BtechInCSEAIandMLComponent = () => {
                 </div>
             </div>
 
-            <CustomProgramPLOAccordian POdata={abc.POdata} PLOdata={abc.PLOdata} PSOdata={abc.PSOdata} />
+            <CustomProgramPLOAccordian POdata={abcforALML.POdata} PLOdata={abcforALML.PLOdata} PSOdata={abcforALML.PSOdata} />
             <div className="bg-[#dee4f2]">
                 <div className={`${Classes["container"]}`}>
                     <CustomCompaniesScope data={scopeData} />
                 </div>
             </div>
             <div className={`${Classes["container"]}`}>
-                <CustomProgramOppertunitySlider data={opportunityCardData} />
+                <CustomProgramOppertunitySlider data={opportunityCardDataAIML} />
             </div>
             <EnquiryForm />
             <CustomTopFooter data={CustomTopFooterData1} />

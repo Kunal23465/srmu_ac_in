@@ -113,9 +113,9 @@ export const counterDataForBtechinCSEAIandML: counterDataType[] = [
 ];
 
 export const eligibilityDataforAIandML = {
-  heading: "Eligibility Criterion",
-  description:
-    "Candidate must have passed 10+2 or equivalent system from any recognized Central/State Board with Physics and Mathematics as compulsory subjects along with one of Chemistry/Computer Science/Technical Vocational Subject. Candidate must obtained minimum 45% marks for GEN/OBC and 40% marks for SC/ST category."
+    heading: "Eligibility Criterion",
+    description:
+        "Candidate must have passed 10+2 or equivalent system from any recognized Central/State Board with Physics and Mathematics as compulsory subjects along with one of Chemistry/Computer Science/Technical Vocational Subject. Candidate must obtained minimum 45% marks for GEN/OBC and 40% marks for SC/ST category."
 };
 
 
@@ -124,7 +124,7 @@ export const eligibilityDataforAIandML = {
 
 
 
-export const whyData: WhyCardProps[] = [
+export const whyDataforAIML: WhyCardProps[] = [
     {
         img: img1,
         text: "Continuous evaluation system providing students several opportunities to improve their grades",
@@ -384,38 +384,24 @@ export const steps = [
 
 
 
-export const abc: CustomProgramPLOAccordianProps = {
+export const abcforALML: CustomProgramPLOAccordianProps = {
     POdata: [
         {
             id: 1,
             content:
-                "To impart deep technical knowledge about the field of computer science and engineering.",
+                "Practice the engineering skills in the profession of Internet of Things (IoT) to identify and solve contemporary problems. (Foundation)",
         },
         {
             id: 2,
             content:
-                "To develop an understanding of computer science and engineering at different levels of abstraction including computer architecture and design, operating systems, database management, algorithms and applications.",
+                "Exhibit leadership capability with ethical and professional behavior through a lifelong learning attitude. (Lifelong Learning)",
         },
         {
             id: 3,
             content:
-                "To aware students with a strong foundation in the field of Mathematics and basics of engineering fundamentals necessary to analyze and evaluate real world engineering problems and to further prepare them for higher studies, R&D.",
+                "Promote Design, Research and Entrepreneurial skills to Support the growth of country economy. (R&D and Entrepreneur)",
         },
-        {
-            id: 4,
-            content:
-                "To develop life-long learning attitude among students and to make them aware about professional and social responsibility.",
-        },
-        {
-            id: 5,
-            content:
-                "To inculcate an understanding among the students for utilizing their knowledge of computer engineering and mathematical theory to solve current and future computing problems.",
-        },
-        {
-            id: 6,
-            content:
-                "To inspire leadership and professional values in the students.",
-        },
+
     ],
 
 
@@ -423,7 +409,7 @@ export const abc: CustomProgramPLOAccordianProps = {
         {
             id: 1,
             content:
-                "Apply possessed knowledge of core subjects of production and industrial engineering to solve different problems.",
+                "Engineering knowledge: Apply the knowledge of mathematics, science, engineering fundamentals, and an engineering specialization to the solution of complex engineering problems.",
         },
         {
             id: 2,
@@ -433,7 +419,7 @@ export const abc: CustomProgramPLOAccordianProps = {
         {
             id: 3,
             content:
-                "Design/development of solutions: Design solutions for complex engineering problems and design system components or processes that meet the specified needs with appropriate consideration for the public health and safety, and the cultural, societal, and environmental considerations.",
+                "Design/development of solutions: Design solutions for complex engineering problems and design system components or processes that meet the specified needs with appropriate consideration for public health and safety, and cultural, societal, and environmental considerations.",
         },
         {
             id: 4,
@@ -448,12 +434,12 @@ export const abc: CustomProgramPLOAccordianProps = {
         {
             id: 6,
             content:
-                "The engineer and society: Apply reasoning informed by the contextual knowledge to assess societal, health, safety, legal and cultural issues and the consequent responsibilities relevant to the professional engineering practice.",
+                "The engineer and society: Apply reasoning informed by contextual knowledge to assess societal, health, safety, legal, and cultural issues and the consequent responsibilities relevant to professional engineering practice.",
         },
         {
             id: 7,
             content:
-                "Environment and sustainability: Understand the impact of the professional engineering solutions in societal and environmental contexts, and demonstrate the knowledge of, and need for sustainable development.",
+                "Environment and sustainability: Understand the impact of professional engineering solutions in societal and environmental contexts, and demonstrate the knowledge of, and need for sustainable development.",
         },
         {
             id: 8,
@@ -468,12 +454,12 @@ export const abc: CustomProgramPLOAccordianProps = {
         {
             id: 10,
             content:
-                "Communication: Communicate effectively on complex engineering activities with the engineering community and with society at large, such as, being able to comprehend and write effective reports and design documentation, make effective presentations, and give and receive clear instructions.",
+                "Communication: Communicate effectively on complex engineering activities with the engineering community and society at large, including writing effective reports and design documentation, making presentations, and giving and receiving clear instructions.",
         },
         {
             id: 11,
             content:
-                "Project management and finance: Demonstrate knowledge and understanding of the engineering and management principles and apply these to one’s own work, as a member and leader in a team, to manage projects and in multidisciplinary environments.",
+                "Project management and finance: Demonstrate knowledge and understanding of engineering and management principles and apply these to one’s own work, as a member and leader in a team, to manage projects in multidisciplinary environments.",
         },
         {
             id: 12,
@@ -483,50 +469,34 @@ export const abc: CustomProgramPLOAccordianProps = {
     ],
 
 
+
     PSOdata: [
         {
             id: 1,
             content:
-                "Understand and develop computer programs in the areas related to algorithms, system software, multimedia, web design, big data analytics and networking by identifying, demonstrating and analyzing the knowledge of engineering in efficient design of computer-based systems of varying complexity.",
+                "Understand the fundamental concepts of Computer Science & Engineering with specialization in IoT and related mezzanine technologies.",
         },
         {
             id: 2,
             content:
-                "Applying algorithmic principles, innovative Computer science and engineering design and implementation skills to propose optimal solutions to complex problems by choosing a better platform for research in emerging areas.",
+                "Design and integrate hardware and software systems in the areas of IoT with a strong emphasis on lifelong learning to create feasible engineering solutions.",
         },
         {
             id: 3,
             content:
-                "Identify standard Software Engineering practices and strategies by applying software project development methods using open-source programming environment to design and evaluate a quality product for business success.",
+                "Analyze, design, implement, test, and deploy smart applications related to industry and research for the advancement of society.",
         },
-        {
-            id: 4,
-            content:
-                "Demonstrate and examine basic understanding of engineering fundamentals, professional/social ethics and apply mathematical foundations to design and solve computational problems.",
-        },
-    ],
+    ]
+
 
 };
 
 
 
-export const careerData = [
-    { name: 'Data Scientist' },
-    { name: 'Data Analyst' },
-    { name: 'Data Engineer' },
-    { name: 'Machine Learning Engineer' },
-    { name: 'Research Scientist' },
-    { name: 'Robotics Engineer' },
-    { name: 'Software Engineer' },
-    { name: 'AI Researcher' },
-    { name: 'AI Developer' },
-    { name: 'Big Data Engineer' },
-    { name: 'Algorithm Specialist' },
-    { name: 'Business Intelligence Developer' },
-];
 
 
-export const opportunityCardData: OpportunityCard[] = [
+
+export const opportunityCardDataAIML: OpportunityCard[] = [
     {
         id: 1,
         img: MBA21,
@@ -555,65 +525,65 @@ export const opportunityCardData: OpportunityCard[] = [
 
 
 export const scopeData: ScopeData = {
-  title: "Scope in Companies",
-  description: [
-    "By pursuing this program, students gain deep knowledge of emerging technologies.",
-    "They also get exposure to endless career possibilities."
-  ],
-  rolesLeft: [
-    "Computer Vision Engineer",
-    "Data Analyst",
-    "NLP Engineer",
-    "ML Engineer",
-    "Research Scientist",
-    "Robotics Engineer",
-  ],
-  rolesRight: [
-    "Software Engineer",
-    "AI Researcher",
-    "AI Developer",
-    "Big Data Engineer",
-    "Algorithm Specialist",
-    "BI Developer",
-  ],
+    title: "Scope in Companies",
+    description: [
+        "By pursuing this program, students gain deep knowledge of emerging technologies.",
+        "They also get exposure to endless career possibilities."
+    ],
+    rolesLeft: [
+        "Computer Vision Engineer",
+        "Data Analyst",
+        "NLP Engineer",
+        "ML Engineer",
+        "Research Scientist",
+        "Robotics Engineer",
+    ],
+    rolesRight: [
+        "Software Engineer",
+        "AI Researcher",
+        "AI Developer",
+        "Big Data Engineer",
+        "Algorithm Specialist",
+        "BI Developer",
+    ],
 
-  sectors: [
-    {
-      label: "GOVERNMENT SECTOR",
-      companies: [
-        { id: 1, logo: bhel },
-        { id: 2, logo: bsnl },
-        { id: 3, logo: nsdl },
-        { id: 4, logo: nic },
-        { id: 5, logo: railways },
-        { id: 6, logo: isro },
-      ],
-    },
+    sectors: [
+        {
+            label: "GOVERNMENT SECTOR",
+            companies: [
+                { id: 1, logo: bhel },
+                { id: 2, logo: bsnl },
+                { id: 3, logo: nsdl },
+                { id: 4, logo: nic },
+                { id: 5, logo: railways },
+                { id: 6, logo: isro },
+            ],
+        },
 
-    {
-      label: "PRIVATE SECTOR",
-      companies: [
-        { id: 1, logo: amazon},
-        { id: 2, logo: capgemini },
-        { id: 3, logo: ibm},
-        { id: 4, logo: google },
-        { id: 5, logo: microsoft },
-        { id: 6, logo: cedcoss },
-        { id: 7, logo: thoughtworks},
-        { id: 8, logo: globallogic },
-        { id: 9, logo: accenture1 },
-        { id: 10, logo: sopra},
-        { id: 11, logo:cognizant },
-        { id: 12, logo:tcs },
-        { id: 13, logo:infosys },
-        { id: 14, logo:intel },
-        { id: 15, logo:facebookn },
-        { id: 16, logo:phronesis },
-        { id: 17, logo:unicode },
-        { id: 18, logo:srdt },
-        { id: 19, logo:josh },
-        { id: 20, logo:qss },
-      ],
-    },
-  ],
+        {
+            label: "PRIVATE SECTOR",
+            companies: [
+                { id: 1, logo: amazon },
+                { id: 2, logo: capgemini },
+                { id: 3, logo: ibm },
+                { id: 4, logo: google },
+                { id: 5, logo: microsoft },
+                { id: 6, logo: cedcoss },
+                { id: 7, logo: thoughtworks },
+                { id: 8, logo: globallogic },
+                { id: 9, logo: accenture1 },
+                { id: 10, logo: sopra },
+                { id: 11, logo: cognizant },
+                { id: 12, logo: tcs },
+                { id: 13, logo: infosys },
+                { id: 14, logo: intel },
+                { id: 15, logo: facebookn },
+                { id: 16, logo: phronesis },
+                { id: 17, logo: unicode },
+                { id: 18, logo: srdt },
+                { id: 19, logo: josh },
+                { id: 20, logo: qss },
+            ],
+        },
+    ],
 };
