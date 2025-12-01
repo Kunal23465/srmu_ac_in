@@ -5,10 +5,10 @@ const ProgramsPage = () => {
 
     const location = useLocation()
     return (
-         <>
-      {location.pathname == "/about" ? <ProgramComp /> :
-        <Outlet />}
-    </>
+        <>
+            {location.pathname == "/programs" ? <ProgramComp /> :
+                <Outlet />}
+        </>
     )
 }
 
