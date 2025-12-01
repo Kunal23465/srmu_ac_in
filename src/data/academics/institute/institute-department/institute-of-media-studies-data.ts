@@ -21,6 +21,7 @@ import depSlide5 from "../../../../assets/images/academics/departments/manage--0
 import depSlide6 from "../../../../assets/images/academics/departments/entrepreneurialecosystem-0602240302151.jpg";
 import depSlide7 from "../../../../assets/images/academics/departments/mentor-07052412432565.jpg";
 import { Headers, Student } from "../../../../utils/custom/CustomPlacedStudentTable";
+import { EventItem } from "../../../../utils/custom/CustomEventListCard";
 
 export const InstituteofMediaStudiesOverviewData: customeOverViewType = {
   heading: "Institute of Media Studies",
@@ -37,37 +38,11 @@ export const InstituteofMediaStudiesTopFooterData = [
   },
 ];
 
-
-export const InstituteofMediaStudiesCounterData1 = {
-  counterData: [
-    {
-      id: 1,
-      icon: "",
-      value: "2012",
-      suffix: "",
-      label: "Established"
-    },
-    {
-      id: 2,
-      icon: "",
-      value: "8",
-      suffix: "",
-      label: "Faculty & Staff"
-    },
-    {
-      id: 3,
-      icon: "",
-      value: "200",
-      suffix: "",
-      label: "Students"
-    },
-
-  ],
-
-  // Optional classes (can be null or ignored if unused)
-  classes: "",
-  aboutusClass: ""
-};
+export const InstituteofMediaStudiesCounterData1: counterDataType[] = [
+  { id: 1, value: "2012", suffix: "", label: "Established" },
+  { id: 2, value: "9", suffix: "", label: "Faculty & Staff" },
+  { id: 3, value: "200", suffix: "", label: "Students" },
+];
 
 export const InstituteofMediaStudiesCounterData2 = {
   counterData: [
@@ -127,7 +102,7 @@ export const InstituteofMediaStudiesVMData = [
 
 
 
-export const instituteProfiles: InstituteProfile[] = [
+export const InstituteofMediaStudiesProfiles: InstituteProfile[] = [
   {
     id: 1,
     title: "Department Head",
@@ -167,20 +142,35 @@ He has been guiding and counselling the students across various academic domains
 
 export const InstituteofMediaStudiesData1: FeeTableData = {
   columns: ["COURSES", "DURATION", "ELIGIBILITY CRITERIA", "COURSE FEES (PA)"],
-
   rows: [
-    { col1: "M.A. in Journalism & Mass Communication", col2: "2 Years", col3: "Click to View", col4: "	Rs. 62,000/-" },
+    {
+      course: "M.A. in Journalism & Mass Communication",
+      duration: "2 Years",
+      eligibility: "Click",
+      fee: "Rs. 62,000/-",
+      eligibilityContent: `
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>M.A. in Journalism & Mass Communication</h2>
+            <p>Candidates must have passed Graduation in any stream from any recognised University or AICTE recognised Institute/ College with minimum aggregate marks of 45% or CGPA of 5.0 for Gen/ OBC category and 40% marks or CGPA of 4.5 for SC/ ST Category.</p>
+        `,
+    },
   ],
 
 };
 
 export const InstituteofMediaStudiesData2: FeeTableData = {
   columns: ["COURSES", "DURATION", "ELIGIBILITY CRITERIA", "COURSE FEES (PA)"],
-
   rows: [
-    { col1: "B.A. in Journalism & Mass Communication", col2: "3 Years", col3: "Click to View", col4: "	Rs. 94,000/-" },
+    {
+      course: "B.A. in Journalism & Mass Communication",
+      duration: "3 Years",
+      eligibility: "Click",
+      fee: "Rs. 94,000/-",
+      eligibilityContent: `
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>B.A. in Journalism & Mass Communication</h2>
+            <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/State Board in any stream with minimum aggregate marks of 45% or equivalent grade for GEN/OBC and 40% marks or equivalent grade for SC/ST Category.</p>
+        `,
+    },
   ],
-
 };
 
 
@@ -275,15 +265,13 @@ export const InstituteofMediaStudiesdepartmentHighlights: departmentHighlightsca
 
 
 
-
-
 export const tableHeaders: Headers = {
     name: "NAME OF STUDENT",
     program: "PROGRAM",
     company: "COMPANY",
   };
  
- export const placedStudents: Student[] = [
+export const InstituteofMediaStudiesplacedStudents: Student[] = [
     {
       name: "Sakshi Shukla",
       program: "M.A. in Journalism & Mass Communication",
@@ -477,4 +465,95 @@ export const tableHeaders: Headers = {
   ];
 
 
+import img1 from "../../../../assets/images/academics/departments/med1-09052401031259.jpg"
+import img2 from "../../../../assets/images/academics/departments/med2-09052401030372.jpg"
+import img3 from "../../../../assets/images/academics/departments/med3-0905240102507.jpg"
+import img4 from "../../../../assets/images/academics/departments/guest6-09052401032821.jpg"
+import img5 from "../../../../assets/images/academics/departments/guest7-09052401033814.jpg"
+import img6 from "../../../../assets/images/academics/departments/guest2-0905240103534.jpg"
+import img7 from "../../../../assets/images/academics/departments/webinar5-09052401003870.jpg"
+import img8 from "../../../../assets/images/academics/departments/workshop4-09052401004722.jpg"
+import img9 from "../../../../assets/images/academics/departments/workshop3-09052401005812.jpg"
+import { counterDataType } from "../../../about/leadership-and-governance/leadership-and-governance-data";
 
+export const InstituteofMediaStudiesDepartmentEventsData: EventItem[] = [
+  {
+    id: 1,
+    title: "Industrial Visit",
+    topic: "U.P. Photo Fair Trust",
+    venue: "Lucknow Management Association",
+    date: "07th-09th November, 2023",
+    image: img1,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 2,
+    title: "Industrial Visit",
+    venue: "Bharat Samachar Lucknow",
+    date: "24th July, 2023",
+    image: img2,
+    cardBgColor: "#ffffff",
+  },
+    {
+    id: 3,
+    title: "Guest Lecture",
+    speaker: "Mr. Adarsh Prakash Srivastava",
+    topic: "Empowering Society through informed news",
+    date: "25th July, 2023",
+    image: img6,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 4,
+    title: "Industrial Visit",
+    topic: "Twin Sisters with Cameras",
+    venue: "Jadunath Bhawan, Lucknow",
+    date: "07th July, 2023",
+    image: img3,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 5,
+    title: "Guest Lecture",
+    speaker: "Mr. Tushar Srivastava",
+    topic: "Challenges for Indian Media in Current Scenario",
+    date: "23rd March, 2023",
+    image: img4,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 6,
+    title: "Guest Lecture",
+    speaker: "Dr. Santosh Kumar",
+    topic: "The Generalistic Legacy of Dr. Ambedkar some reflections",
+    date: "13th April, 2023",
+    image: img5,
+    cardBgColor: "#ffffff",
+  },
+
+  {
+    id: 7,
+    title: "Workshop",
+    topic: "The Art of Anchoring",
+    date: "08th September, 2023",
+    image: img7,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 8,
+    title: "Workshop",
+    topic: "Report of the Canon sponsored Photography",
+    date: "02nd September, 2023",
+    image: img8,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 9,
+    title: "Workshop",
+    topic: "Reporting for Television & Web: Career Opportunities & Challenges",
+    date: "29th January, 2024",
+    image: img9,
+    cardBgColor: "#ffffff",
+  },
+];
+ 

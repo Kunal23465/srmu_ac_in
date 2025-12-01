@@ -26,12 +26,14 @@ const Counter: React.FC<counterDataPropsType> = ({ counterData, classes }) => {
                   start={0}
                   end={Number(item.value)}
                   duration={3}
+                  decimals={item.value.toString().includes(".") ? item.value.toString().split(".")[1].length : 0}
                   separator=""
                   suffix={item.suffix}
                   enableScrollSpy={true}
                 >
                   {({ countUpRef }) => <span ref={countUpRef} />}
                 </CountUp>
+
               )
             }
           </h1>

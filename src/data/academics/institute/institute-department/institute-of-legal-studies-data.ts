@@ -8,6 +8,18 @@ import AryenduImg from "../../../../assets/images/academics/departments/prof-ary
 import PCMishraImg from "../../../../assets/images/academics/departments/dr.-p.c.-mishra-11zon-27022411543322.png";
 import DefaultImg from "../../../../assets/images/academics/departments/default-img.png";
 
+
+import img1 from "../../../../assets/images/academics/departments/whatsapp-image-2022-05-23-at-11.30.28-am-1--23022412570798.jpeg";
+import img2 from "../../../../assets/images/academics/departments/workshop4-09052412404740.jpg";
+import img3 from "../../../../assets/images/academics/departments/guest5-09052412400851.jpg";
+import img4 from "../../../../assets/images/academics/departments/guest7-09052412401831.jpg";
+import img5 from "../../../../assets/images/academics/departments/guest6-09052412402642.jpg";
+import img6 from "../../../../assets/images/academics/departments/workship2-09052412410615.jpg";
+import img7 from "../../../../assets/images/academics/departments/mootcourt-06022404053661.jpg";
+import img8 from "../../../../assets/images/academics/departments/514x520-23022412510691.jpg";
+import img9 from "../../../../assets/images/academics/departments/seminarhall-23022412514392.jpg";
+
+
 import { Headers, Student } from "../../../../utils/custom/CustomPlacedStudentTable";
 
 export const InstituteofLegalStudiesOverviewData: customeOverViewType = {
@@ -24,59 +36,13 @@ export const InstituteofLegalStudiesTopFooterData = [
     btnText: "Request Registration",
   },
 ];
+export const InstituteofLegalStudiesCounterData1: counterDataType[] = [
+  { id: 1, value: "2012", suffix: "", label: "Established" },
+  { id: 2, value: "39", suffix: "", label: "Faculty & Staff" },
+  { id: 3, value: "1100", suffix: "", label: "Students" },
+];
 
-export const InstituteofLegalStudiesvisionMissionData = {
-  backgroundColor: "#F3F7FF",
 
-  vision: {
-    title: "Vision",
-    description: [
-      "To provide excellent law data base, teaching and learning of law to develop in the students, research scholars a sense of responsibility to serve the society by developing skills in advocacy, judicial services and other legal services.",
-    ],
-    imageUrl: vision,
-  },
-
-  mission: {
-    title: "Mission",
-    description: [
-      "To advance, disseminate learning with knowledge of law and legal process and their role in national development.",
-      "To update students in the right culture of Legal Education so that students become highly technical with advancements in field of law and to make them competent lawyers, judges, legal experts and academicians.",
-      "To organize seminars, symposiums, conferences, and moot courts to promote legal knowledge and legal process.",
-      "To make students competent to face any challenge in their professional and behavioral aspects of life, which become our motif and forte."
-    ],
-    imageUrl: mission,
-  },
-};
-
-export const InstituteofLegalStudiesCounterData1 = {
-  counterData: [
-    {
-      id: 1,
-      icon: "",
-      value: "2012",
-      suffix: "",
-      label: "Established",
-    },
-    {
-      id: 2,
-      icon: "",
-      value: "39",
-      suffix: "",
-      label: "Faculty & Staff",
-    },
-    {
-      id: 3,
-      icon: "",
-      value: "1100",
-      suffix: "",
-      label: "Students",
-    },
-  ],
-
-  // Optional classes (can be null or ignored if unused)
-  classes: "",
-  aboutusClass: "",
-};
 
 export const InstituteofLegalStudiesCounterData2 = {
   counterData: [
@@ -133,21 +99,74 @@ export const InstituteofLegalStudiesVMData = [
 
 export const InstituteofLegalStudiesData1: FeeTableData = {
   columns: ["COURSES", "DURATION", "ELIGIBILITY CRITERIA", "COURSE FEES (PA)"],
-
   rows: [
-    { col1: "MB.A. + LL.B. (Hons.)", col2: "5 Years", col3: "Click to View", col4: "	Rs. 90,000/-" },
-    { col1: "B.B.A. + LL.B. (Hons.)", col2: "5 Years", col3: "Click to View", col4: "	Rs. 80,000/-" },
-    ],
+    {
+      course: "MB.A. + LL.B. (Hons.)",
+      duration: "5 Years",
+      eligibility: "Click",
+      fee: "Rs. 90,000/-",
+      eligibilityContent: `
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>MB.A. + LL.B. (Hons.)</h2>
+            <p>Candidates must have passed Graduation in any stream from any recognised University or AICTE recognised Institute/ College with minimum aggregate marks of 45% or CGPA of 5.0 for Gen/ OBC category and 40% marks or CGPA of 4.5 for SC/ ST Category.</p>
+        `,
+    },
+    {
+      course: "B.B.A. + LL.B. (Hons.)",
+      duration: "5 Years",
+      eligibility: "Click",
+      fee: "Rs. 80,000/-",
+      eligibilityContent: `
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>B.B.A. + LL.B. (Hons.)</h2>
+            <p>Candidates must have passed Graduation in any stream from any recognised University or AICTE recognised Institute/ College with minimum aggregate marks of 45% or CGPA of 5.0 for Gen/ OBC category and 40% marks or CGPA of 4.5 for SC/ ST Category.</p>
+        `,
+    },
+  ],
 };
 
 export const InstituteofLegalStudiesData2: FeeTableData = {
   columns: ["COURSES", "DURATION", "ELIGIBILITY CRITERIA", "COURSE FEES (PA)"],
 
   rows: [
-    {      col1: "LL.M. in Criminal & Security Law",      col2: "1 Year",      col3: "Click to View",      col4: "Rs. 80,000/-",    },
-    {      col1: "LL.M. in Corporate & Commercial Law",      col2: "1 Year",      col3: "Click to View",      col4: "Rs. 80,000/-",    },
-    {      col1: "LL.M. in Constitutional & Administrative Law",      col2: "1 Year",      col3: "Click to View",      col4: "Rs. 80,000/-",    },
-    {      col1: "LL.M. in International & Comparative Law",      col2: "1 Year",      col3: "Click to View",      col4: "Rs. 80,000/-",    },
+    {
+      course: "LL.M. in Criminal & Security Law",
+      duration: "1 Years",
+      eligibility: "Click",
+      fee: "Rs. 80,000/-",
+      eligibilityContent: `
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>LL.M. in Criminal & Security Law</h2>
+            <p>Candidate must have passed 3 Years LL.B./5 Year integrated LL.B./ equivalent degree from any recognised University or AICTE recognised Institute/College with minimum aggregate marks of 50% or CGPA of 5.5 for Gen/OBC and 45% marks or CGPA of 5.0 for SC/ST category. Qualifying written test is mandatory.</p>
+        `,
+    },
+    {
+      course: "LL.M. in Corporate & Commercial Law",
+      duration: "1 Years",
+      eligibility: "Click",
+      fee: "Rs. 80,000/-",
+      eligibilityContent: `
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>LL.M. in Corporate & Commercial Law</h2>
+            <p>Candidate must have passed 3 Years LL.B./5 Year integrated LL.B./ equivalent degree from any recognised University or AICTE recognised Institute/College with minimum aggregate marks of 50% or CGPA of 5.5 for Gen/OBC and 45% marks or CGPA of 5.0 for SC/ST category. Qualifying written test is mandatory.</p>
+        `,
+    },
+    {
+      course: "LL.M. in Constitutional & Administrative Law",
+      duration: "1 Years",
+      eligibility: "Click",
+      fee: "Rs. 80,000/-",
+      eligibilityContent: `
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>LL.M. in Constitutional & Administrative Law</h2>
+            <p>Candidate must have passed 3 Years LL.B./5 Year integrated LL.B./ equivalent degree from any recognised University or AICTE recognised Institute/College with minimum aggregate marks of 50% or CGPA of 5.5 for Gen/OBC and 45% marks or CGPA of 5.0 for SC/ST category. Qualifying written test is mandatory.</p>
+        `,
+    },
+    {
+      course: "LL.M. in International & Comparative Law",
+      duration: "1 Years",
+      eligibility: "Click",
+      fee: "Rs. 80,000/-",
+      eligibilityContent: `
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>LL.M. in International & Comparative Law</h2>
+            <p>Candidate must have passed 3 Years LL.B./5 Year integrated LL.B./ equivalent degree from any recognised University or AICTE recognised Institute/College with minimum aggregate marks of 50% or CGPA of 5.5 for Gen/OBC and 45% marks or CGPA of 5.0 for SC/ST category. Qualifying written test is mandatory.</p>
+        `,
+    },
   ],
 };
 
@@ -155,10 +174,37 @@ export const InstituteofLegalStudiesData3: FeeTableData = {
   columns: ["COURSES", "DURATION", "ELIGIBILITY CRITERIA", "COURSE FEES (PA)"],
 
   rows: [
-  {      col1: "LL.B. (Bachelor of Law)",      col2: "3 Years",      col3: "Click to View",      col4: "Rs. 57,000/-",    },
-    {      col1: "B.A. + LL.B. (Hons.)",      col2: "5 Years",      col3: "Click to View",      col4: "Rs. 90,000/-",    },
-    {      col1: "B.B.A. + LL.B. (Hons.)",      col2: "5 Years",      col3: "Click to View",      col4: "Rs. 80,000/-",    },
-  ],
+    {
+      course: "LL.B. (Bachelor of Law)",
+      duration: "3 Years",
+      eligibility: "Click",
+      fee: "Rs. 57,000/-",
+      eligibilityContent: `
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>LL.B. (Bachelor of Law)</h2>
+            <p>Candidate must have passed Graduation from any recognised University or AICTE recognised Institute/College in any stream with minimum aggregate marks of 45% or equivalent grade for GEN, 42% for OBC and 40% marks or equivalent grade for SC/ST Category.</p>
+        `,
+    },
+    {
+      course: "B.A. + LL.B. (Hons.)",
+      duration: "5 Years",
+      eligibility: "Click",
+      fee: "Rs. 90,000/-",
+      eligibilityContent: `
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>B.A. + LL.B. (Hons.)</h2>
+            <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/State Board in any stream with minimum aggregate marks of 45% or equivalent grade for GEN/OBC and 40% marks or equivalent grade for SC/ST Category.</p>
+        `,
+    },
+    {
+      course: "B.B.A. + LL.B. (Hons.)",
+      duration: "5 Years",
+      eligibility: "Click",
+      fee: "Rs. 80,000/-",
+      eligibilityContent: `
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>B.B.A. + LL.B. (Hons.)</h2>
+            <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/State Board in any stream with minimum aggregate marks of 45% or equivalent grade for GEN/OBC and 40% marks or equivalent grade for SC/ST Category.</p>
+        `,
+    },
+  ]
 };
 
 
@@ -396,6 +442,8 @@ import depSlide4 from "../../../../assets/images/academics/departments/legalsupp
 import depSlide5 from "../../../../assets/images/academics/departments/industrystalwart-06022401542865.jpg";
 import depSlide6 from "../../../../assets/images/academics/departments/legalstudies-06022404143177.jpg";
 import depSlide7 from "../../../../assets/images/academics/departments/virtual-06022404142039.jpg";
+import { EventItem } from "../../../../utils/custom/CustomEventListCard";
+import { counterDataType } from "../../../home/counterData";
 
 export const InstituteofLegalStudiesdepartmentHighlights: departmentHighlightscardType[] = [
   {
@@ -442,8 +490,89 @@ export const tableHeaders: Headers = {
   company: "COMPANY",
 };
 
-export const placedStudents: Student[] = [
+export const InstituteofLegalStudiesplacedStudents: Student[] = [
   { name: "Surabhi Pandey", program: "B.A. + LL.B. (Hons.)", company: "Legal brains" },
   { name: "Anshika Mani Tripathi", program: "B.A. + LL.B. (Hons.)", company: "Legal brains" },
 ];
 
+
+
+export const InstituteofLegalStudiesDepartmentEventsData: EventItem[] = [
+  {
+    id: 1,
+    title: "Industrial Visit",
+    topic: "High Court Lucknow Bench",
+    venue: "Lucknow",
+    date: "31st October, 2023",
+    image: img1,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 2,
+    title: "Industrial Visit",
+    topic: "National Lok Adalat",
+    venue: "Barabanki",
+    date: "09th September, 2023",
+    image: img2,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 3,
+    title: "Guest Lecture",
+    speaker: "Prof. (Dr.) Lily Srivastava",
+    topic: "Tort Introduction, Tortious Liability and General Defenses",
+    date: "05th February, 2024",
+    image: img3,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 4,
+    title: "Guest Lecture",
+    speaker: "Dr. Ankit Awasthi",
+    topic: "Evolution of Legal Education: Navigating the Past, Embracing the Present and Charting a Course for the Future in Pursuit of Quality",
+    date: "24th January, 2024",
+    image: img4,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 5,
+    title: "Guest Lecture",
+    speaker: "Dr. Surendra Kumar",
+    topic: "Changing Dimensions of Strict Liability and Absolute Liability in Indian Legal System",
+    date: "02nd November, 2023",
+    image: img5,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 6,
+    title: "Workshop",
+    topic: "National Moot Court Competition at SRMU",
+    date: "24th-26th April, 2023",
+    image: img6,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 7,
+    title: "Workshop",
+    topic: "Basic of Publication, Presentation, Journal & Writing with JUS CORPUS",
+    date: "29th January, 2024",
+    image: img7,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 8,
+    title: "Workshop",
+    topic: "Changing Dimensions of Human Rights & its Relevancy in the 21st Century",
+    date: "09th December, 2023",
+    image: img8,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 9,
+    title: "Workshop",
+    topic: "Workshop on Constitutional Day",
+    date: "25th November, 2023",
+    image: img9,
+    cardBgColor: "#ffffff",
+  },
+];

@@ -22,6 +22,7 @@ import depSlide5 from "../../../../assets/images/academics/departments/industrys
 import depSlide6 from "../../../../assets/images/academics/departments/skill-07052412400634.jpg";
 import depSlide7 from "../../../../assets/images/academics/institutes/holistic-.jpg";
 import { Headers, Student } from "../../../../utils/custom/CustomPlacedStudentTable";
+import { EventItem } from "../../../../utils/custom/CustomEventListCard";
 
 export const InstituteofPharmacyOverviewData: customeOverViewType = {
   heading: "Institute of Pharmacy",
@@ -39,37 +40,13 @@ export const InstituteofPharmacyTopFooterData = [
 ];
 
 
+export const InstituteofPharmacyCounterData1: counterDataType[] = [
+  { id: 1, value: "2020", suffix: "", label: "Established" },
+  { id: 2, value: "53", suffix: "", label: "Faculty & Staff" },
+  { id: 3, value: "600", suffix: "", label: "Students" },
+];
 
-export const InstituteofPharmacyCounterData1 = {
-  counterData: [
-    {
-      id: 1,
-      icon: "",
-      value: "2020",
-      suffix: "",
-      label: "Established"
-    },
-    {
-      id: 2,
-      icon: "",
-      value: "53",
-      suffix: "",
-      label: "Faculty & Staff"
-    },
-    {
-      id: 3,
-      icon: "",
-      value: "600",
-      suffix: "",
-      label: "Students"
-    },
 
-  ],
-
-  // Optional classes (can be null or ignored if unused)
-  classes: "",
-  aboutusClass: ""
-};
 
 export const InstituteofPharmacyCounterData2 = {
   counterData: [
@@ -169,12 +146,28 @@ Her constant vision and proven success in Pharma lead her towards several awards
 
 export const InstituteofPharmacyData1: FeeTableData = {
   columns: ["COURSES", "DURATION", "ELIGIBILITY CRITERIA", "COURSE FEES (PA)"],
-
   rows: [
-    { col1: "B.Pharm. (Bachelor of Pharmacy)", col2: "4 Years", col3: "Click to View", col4: "	Rs. 1,32,000/-" },
-    { col1: "D. Pharm. (Diploma in Pharmacy)", col2: "2 Years", col3: "Click to View", col4: "	Rs. 92,000/-" },
+    {
+      course: "B.Pharm. (Bachelor of Pharmacy)",
+      duration: "4 Years",
+      eligibility: "Click",
+      fee: "Rs. 1,32,000/-",
+      eligibilityContent: `
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Pharm. (Bachelor of Pharmacy)</h2>
+            <p>Candidates must have passed Graduation in any stream from any recognised University or AICTE recognised Institute/ College with minimum aggregate marks of 45% or CGPA of 5.0 for Gen/ OBC category and 40% marks or CGPA of 4.5 for SC/ ST Category.</p>
+        `,
+    },
+    {
+      course: "D. Pharm. (Diploma in Pharmacy)",
+      duration: "2 Years",
+      eligibility: "Click",
+      fee: "Rs. 92,000/-",
+      eligibilityContent: `
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>D. Pharm. (Diploma in Pharmacy)</h2>
+            <p>Candidates must have passed Graduation in any stream from any recognised University or AICTE recognised Institute/ College with minimum aggregate marks of 45% or CGPA of 5.0 for Gen/ OBC category and 40% marks or CGPA of 4.5 for SC/ ST Category.</p>
+        `,
+    },
   ],
-
 };
 
 
@@ -422,7 +415,7 @@ export const tableHeaders: Headers = {
     company: "COMPANY",
   };
 
-  export const placedStudents: Student[] = [
+export const InstituteofPharmacyplacedStudents: Student[] = [
   {
     name: "Akarsh Singh",
     program: "D. Pharm. (Diploma in Pharmacy)",
@@ -477,5 +470,132 @@ export const tableHeaders: Headers = {
     name: "Uplakshya Yadav",
     program: "D. Pharm. (Diploma in Pharmacy)",
     company: "Accosts Remedies Pvt.Ltd.",
+  },
+];
+
+import img1 from "../../../../assets/images/academics/departments/visit2-09052412543960.jpg";
+import img2 from "../../../../assets/images/academics/departments/workshop4-09052412545855.jpg";
+import img3 from "../../../../assets/images/academics/departments/visit-1002241204236.jpg";
+import img4 from "../../../../assets/images/academics/departments/guest7-09052412552546.jpg";
+import img5 from "../../../../assets/images/academics/departments/webinar5-09052412530621.jpg";
+import img6 from "../../../../assets/images/academics/departments/national2-10022412140314.jpg";
+import img7 from "../../../../assets/images/academics/departments/internation1-09052412542038.jpg";
+import img8 from "../../../../assets/images/academics/departments/guest6-09052412553463.jpg";
+import img9 from "../../../../assets/images/academics/departments/phar2-09052412532387.jpg";
+import img10 from "../../../../assets/images/academics/departments/guest1-09052412554546.jpg";
+import img11 from "../../../../assets/images/academics/departments/guest5-09052412555893.jpg";
+import img12 from "../../../../assets/images/academics/departments/phar3-09052412533683.jpg";
+import img13 from "../../../../assets/images/academics/departments/phar4-09052412534457.jpg";
+import { counterDataType } from "../../../home/counterData";
+
+
+export const InstituteofPharmacyDepartmentEventsData: EventItem[] = [
+  {
+    id: 1,
+    title: "Industrial Visit",
+    venue: "Cytogene Research and Development Lucknow",
+    date: "19th August, 2023",
+    image: img1,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 2,
+    title: "Industrial Visit",
+    venue: "Jedux Parenteral Pvt. Ltd",
+    date: "04th September, 2023",
+    image: img2,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 3,
+    title: "Industrial Visit",
+    venue: "CDRI, Jankipuram, U.P",
+    date: "26th September, 2023",
+    image: img3,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 4,
+    title: "Guest Lecture",
+    speaker: "Mohd. Yaqub Khan",
+    topic: "Recent Progress of Microneedle Formulation in Covid Patients",
+    date: "08th August, 2023",
+    image: img4,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 5,
+    title: "Workshop",
+    topic: "Stress to Strength & Find a Leader in You",
+    date: "13th December, 2022",
+    image: img5,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 6,
+    title: "Conference",
+    topic: "Assessing and Implementing Pharmacy Best Practices",
+    date: "27th April, 2022",
+    image: img6,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 7,
+    title: "Seminar",
+    topic: "Opportunity To Study Abroad",
+    date: "22nd September, 2022",
+    image: img7,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 8,
+    title: "Guest Lecture",
+    speaker: "Ms. Shaily Chaudhary",
+    topic: "Entrepreneurship: Strategy For Leaders",
+    date: "14th September, 2023",
+    image: img8,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 9,
+    title: "Workshop",
+    topic: "Free Heart Disease Reversal Workshop",
+    date: "12th November, 2022",
+    image: img9,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 10,
+    title: "Guest Lecture",
+    speaker: "Dr. Shimpy Srivastava",
+    topic: "World Pharmacist Day",
+    date: "23rd September, 2023",
+    image: img10,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 11,
+    title: "Guest Lecture",
+    speaker: "Dr. Amit Verma",
+    topic: "World Pharmacist Day",
+    date: "25th September, 2023",
+    image: img11,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 12,
+    title: "Workshop",
+    topic: "Get Success in GPAT and other Pharma Competitive Exams",
+    date: "06th December, 2022",
+    image: img12,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 13,
+    title: "Workshop",
+    topic: "DNA Fingerprinting: A boon to Forensic Science",
+    date: "07th December, 2022",
+    image: img13,
+    cardBgColor: "#ffffff",
   },
 ];

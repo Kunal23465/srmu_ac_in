@@ -117,10 +117,11 @@ export const SRMUPolytechnicVMData = [
     heading: "Mission",
     description: "Within the scope of academic excellence, innovation and leadership in physics, the Faculty of Physical Sciences considers its two fold mission which are as follows",
     points: [
-      "To promote skillful learning through effective Undergraduate & Postgraduate programs, teaching and research specific to changing needs of the industry and society with interdisciplinary approach.",
-      "To impart experiential learning with innovative teaching-learning methods for developing active and creative minds.",
-      "To develop innate abilities of each student and nurture their potentialities with respect to individual differences and changing environment.",
-      "To inculcate moral and ethical values among students."
+      "To provide current and in demand technical education to youth.",
+      "To generate knowledge by providing technical support through industry visits and expert lectures.",
+      "To inculcate moral, ethical and professional values amongst the students.",
+      "To respond effectively to the changing needs of the industry and community as a whole.",
+      "To promote quality education and training in multiple technical fields."
     ],
   },
   {
@@ -169,22 +170,82 @@ export const SRMUPolytechnicinstituteProfiles: InstituteProfile[] = [
 export const SRMUPolytechnicData1: FeeTableData = {
   columns: ["COURSES", "DURATION", "ELIGIBILITY CRITERIA", "COURSE FEES (PA)"],
 
-rows: [
-  { col1: "Diploma in Civil Engineering", col2: "3 Years", col3: "Click to View", col4: "Rs. 57,000/-" },
-  { col1: "Diploma in Civil Engineering (Lateral Entry)", col2: "2 Years", col3: "Click to View", col4: "Rs. 57,000/-" },
-  { col1: "Diploma in Mechanical Engineering (Production)", col2: "3 Years", col3: "Click to View", col4: "Rs. 57,000/-" },
-  { col1: "Diploma in Mechanical Engineering (Automobile)", col2: "3 Years", col3: "Click to View", col4: "Rs. 57,000/-" },
-  { col1: "Diploma in Mechanical Engineering (Production) (Lateral Entry)", col2: "2 Years", col3: "Click to View", col4: "Rs. 57,000/-" },
-  { col1: "Diploma in Mechanical Engineering (Automobile) (Lateral Entry)", col2: "2 Years", col3: "Click to View", col4: "Rs. 57,000/-" },
-  { col1: "Diploma in Computer Science Engineering", col2: "3 Years", col3: "Click to View", col4: "Rs. 57,000/-" },
-  { col1: "Diploma in Electronics & Communication Engineering", col2: "3 Years", col3: "Click to View", col4: "Rs. 57,000/-" },
-  { col1: "Diploma in Electrical Engineering", col2: "3 Years", col3: "Click to View", col4: "Rs. 57,000/-" },
-  { col1: "Diploma in Computer Science Engineering (Lateral Entry)", col2: "2 Years", col3: "Click to View", col4: "Rs. 57,000/-" },
-  { col1: "Diploma in Electronics & Communication Engineering (Lateral Entry)", col2: "2 Years", col3: "Click to View", col4: "Rs. 57,000/-" },
-  { col1: "Diploma in Electrical Engineering (Lateral Entry)", col2: "2 Years", col3: "Click to View", col4: "Rs. 57,000/-" },
-],
-
+  rows: [
+    {
+      course: "Diploma in Civil Engineering",
+      duration: "3 Years",
+      eligibility: "Click to View",
+      fee: "Rs. 57,000/-",
+    },
+    {
+      course: "Diploma in Civil Engineering (Lateral Entry)",
+      duration: "2 Years",
+      eligibility: "Click to View",
+      fee: "Rs. 57,000/-",
+    },
+    {
+      course: "Diploma in Mechanical Engineering (Production)",
+      duration: "3 Years",
+      eligibility: "Click to View",
+      fee: "Rs. 57,000/-",
+    },
+    {
+      course: "Diploma in Mechanical Engineering (Automobile)",
+      duration: "3 Years",
+      eligibility: "Click to View",
+      fee: "Rs. 57,000/-",
+    },
+    {
+      course: "Diploma in Mechanical Engineering (Production) (Lateral Entry)",
+      duration: "2 Years",
+      eligibility: "Click to View",
+      fee: "Rs. 57,000/-",
+    },
+    {
+      course: "Diploma in Mechanical Engineering (Automobile) (Lateral Entry)",
+      duration: "2 Years",
+      eligibility: "Click to View",
+      fee: "Rs. 57,000/-",
+    },
+    {
+      course: "Diploma in Computer Science Engineering",
+      duration: "3 Years",
+      eligibility: "Click to View",
+      fee: "Rs. 57,000/-",
+    },
+    {
+      course: "Diploma in Electronics & Communication Engineering",
+      duration: "3 Years",
+      eligibility: "Click to View",
+      fee: "Rs. 57,000/-",
+    },
+    {
+      course: "Diploma in Electrical Engineering",
+      duration: "3 Years",
+      eligibility: "Click to View",
+      fee: "Rs. 57,000/-",
+    },
+    {
+      course: "Diploma in Computer Science Engineering (Lateral Entry)",
+      duration: "2 Years",
+      eligibility: "Click to View",
+      fee: "Rs. 57,000/-",
+    },
+    {
+      course: "Diploma in Electronics & Communication Engineering (Lateral Entry)",
+      duration: "2 Years",
+      eligibility: "Click to View",
+      fee: "Rs. 57,000/-",
+    },
+    {
+      course: "Diploma in Electrical Engineering (Lateral Entry)",
+      duration: "2 Years",
+      eligibility: "Click to View",
+      fee: "Rs. 57,000/-",
+    },
+  ],
 };
+
 
 
 
@@ -333,7 +394,7 @@ export const tableHeaders: Headers = {
     company: "COMPANY",
   };
 
-export const placedStudents: Student[] = [
+export const SRMUPolytechnicplacedStudents: Student[] = [
   { name: "Syed Kaif Imam", program: "Diploma in Computer Science Engineering", company: "subros" },
   { name: "Faraj Haidar", program: "Diploma in Computer Science Engineering", company: "subros" },
   { name: "Aditya Maurya", program: "Diploma in Electrical Engineering", company: "subros" },
@@ -534,4 +595,106 @@ export const placedStudents: Student[] = [
   { name: "Yuvraj Singh", program: "Diploma in Electrical Engineering", company: "JBM Auto" },
   { name: "Taran Preet Singh", program: "Diploma in Electrical Engineering", company: "JBM Auto" },
   { name: "Avinash Kumar Dubey", program: "Diploma in Mechanical Engineering (Production)", company: "Startek, Lucknow" },
+];
+
+
+import img1 from "../../../../assets/images/academics/departments/visit4-09052401060928.jpg";
+import img2 from "../../../../assets/images/academics/departments/visit2-09052401062027.jpg";
+import img3 from "../../../../assets/images/academics/departments/visit-1002240138332.jpg";
+import img4 from "../../../../assets/images/academics/departments/guest6-09052401064571.jpg";
+import img5 from "../../../../assets/images/academics/departments/guest7-09052401065435.jpg";
+import img6 from "../../../../assets/images/academics/departments/workshop4-0905240105378.jpg";
+import img7 from "../../../../assets/images/academics/departments/webinar5-09052401052852.jpg";
+import img8 from "../../../../assets/images/academics/departments/workship2-09052401051860.jpg";
+import img9 from "../../../../assets/images/academics/departments/internation1-09052401044878.jpg";
+import img10 from "../../../../assets/images/academics/departments/national2-09052401045858.jpg";
+import { EventItem } from "../../../../utils/custom/CustomEventListCard";
+
+
+export const SRMUPolytechnicDepartmentEventsData: EventItem[] = [
+  {
+    id: 1,
+    title: "Industrial Visit",
+    venue: "Gobind Industries Pvt. Ltd.",
+    date: "29th September, 2023",
+    image: img1,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 2,
+    title: "Industrial Visit",
+    topic: "Various Experiments related to Civil Engineering",
+    venue: "Scorpian Club",
+    date: "07th November, 2023",
+    image: img2,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 3,
+    title: "Industrial Visit",
+    topic: "Renewable Energy Resources and their Applications",
+    venue: "UP NEDA, Dewa Road",
+    date: "09th November, 2023",
+    image: img3,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 4,
+    title: "Guest Lecture",
+    speaker: "Er. Abhinav Srivastava",
+    topic: "Future Scope and to be Entrepreneur in the field of Solar Energy & LED Lights",
+    date: "21st September, 2023",
+    image: img4,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 5,
+    title: "Guest Lecture",
+    speaker: "Mr. K P Singh",
+    topic: "Modern CAD/CAM & Survey Expert",
+    date: "20th September, 2022",
+    image: img5,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 6,
+    title: "Workshop",
+    topic: "New Plasma Technology for Managing Municipal Solid Waste",
+    date: "11th July, 2023",
+    image: img6,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 7,
+    title: "Workshop",
+    topic: "Python - Data Science",
+    date: "26th October, 2023",
+    image: img7,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 8,
+    title: "Workshop",
+    topic: "3D Modelling for Civil Drawing",
+    date: "26th October, 2023",
+    image: img8,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 9,
+    title: "Seminar",
+    speaker: "Mr. A K Singh",
+    topic: "Network Security",
+    date: "09th October, 2022",
+    image: img9,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 10,
+    title: "Seminar",
+    topic: "Computer Hardware & Maintenance",
+    date: "02nd May, 2023",
+    image: img10,
+    cardBgColor: "#ffffff",
+  },
 ];

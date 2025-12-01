@@ -4,7 +4,7 @@ import { consultancyData } from "../../../../data/research/consultancy/consultan
 
 const ConsultancyTable: React.FC = () => {
   return (
-    <div className="overflow-x-auto">
+    <div className="overflow-x-auto pt-12 pb-26">
       <table className="min-w-full table-auto border-collapse text-lg">
         <thead className=" text-white">
           <tr>

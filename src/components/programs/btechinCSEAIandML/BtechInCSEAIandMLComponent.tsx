@@ -1,4 +1,4 @@
-import { abc, BtechCSEAIandMLOverviewData, counterDataForBtechinCSEAIandML, opportunityCardData, partnerDataforAIandML, ProgramFeesAIandML, scopeData, steps, whyData } from "../../../data/programs/btechincseai-ml-data/btechincseai-ml-data";
+import { abc, BtechCSEAIandMLOverviewData, counterDataForBtechinCSEAIandML, eligibilityDataforAIandML, opportunityCardData, partnerDataforAIandML, ProgramFeesAIandML, scopeData, steps, whyData } from "../../../data/programs/btechincseai-ml-data/btechincseai-ml-data";
 import Counter from "../../../utils/custom/Counter";
 import CustomOverviewSection from "../../../utils/custom/CustomOverviewSection";
 import Classes from "../../../utils/styles/Global.module.css";
@@ -33,7 +33,7 @@ const BtechInCSEAIandMLComponent = () => {
                 </p>
                 <CustomOverviewSection data={BtechCSEAIandMLOverviewData} />
                 <Counter counterData={counterDataForBtechinCSEAIandML} />
-                <CustomEligibilitySection />
+                <CustomEligibilitySection data={eligibilityDataforAIandML} />
             </div>
             <div className="bg-[#ecf0f9] pb-10">
                 <CustomDepartmentSlider

@@ -17,6 +17,8 @@ import SafaImg from "../../../../assets/images/academics/departments/default-img
 import RaghvendraImg from "../../../../assets/images/academics/departments/default-img.png";
 import IteeImg from "../../../../assets/images/academics/departments/default-img.png";
 import AnshikaImg from "../../../../assets/images/academics/departments/default-img.png";
+import { EventItem } from "../../../../utils/custom/CustomEventListCard";
+import { counterDataType } from "../../../home/counterData";
 
 
 
@@ -35,37 +37,12 @@ export const InstituteofPharmaceuticalSciencesTopFooterData = [
   },
 ];
 
+export const InstituteofPharmaceuticalSciencesCounterData1: counterDataType[] = [
+  { id: 1, value: "2023", suffix: "", label: "Established" },
+  { id: 2, value: "9", suffix: "", label: "Faculty & Staff" },
+  { id: 3, value: "60", suffix: "", label: "Students" },
+];
 
-export const InstituteofPharmaceuticalSciencesCounterData1 = {
-  counterData: [
-    {
-      id: 1,
-      icon: "",
-      value: "2023",
-      suffix: "",
-      label: "Established"
-    },
-    {
-      id: 2,
-      icon: "",
-      value: "9",
-      suffix: "",
-      label: "Faculty & Staff"
-    },
-    {
-      id: 3,
-      icon: "",
-      value: "60",
-      suffix: "",
-      label: "Students"
-    },
-
-  ],
-
-  // Optional classes (can be null or ignored if unused)
-  classes: "",
-  aboutusClass: ""
-};
 
 export const InstituteofPharmaceuticalSciencesCounterData2 = {
   counterData: [
@@ -164,22 +141,30 @@ He actively guides Ph.D. scholars, contributing to their research and academic g
 
 export const InstituteofPharmaceuticalSciencesData1: FeeTableData = {
   columns: ["COURSES", "DURATION", "ELIGIBILITY CRITERIA", "COURSE FEES (PA)"],
-
   rows: [
-    { col1: "B.Pharma. (Bachelor of Pharmacy)", col2: "4 Years", col3: "Click to View", col4: "Rs. 1,32,000/-" },
-    { col1: "D. Pharma. (Diploma in Pharmacy)", col2: "2 Years", col3: "Click to View", col4: "Rs. 92,000/-" },
+    {
+      course: "B.Pharma. (Bachelor of Pharmacy)",
+      duration: "4 Years",
+      eligibility: "Click",
+      fee: "Rs. 1,32,000/-",
+      eligibilityContent: `
+        <h2 class='font-bold text-lg mb-3'>B.Pharma. (Bachelor of Pharmacy)</h2>
+       <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/ State Board with Physics, Chemistry and Mathematics/Biology with minimum aggregate marks of 45% or equivalent grade for GEN/ OBC and 40% marks or equivalent grade for SC/ ST Category.</p>
+      `,
+    },
+    {
+      course: "D. Pharma. (Diploma in Pharmacy)",
+      duration: "2 Years",
+      eligibility: "Click",
+      fee: "Rs. 92,000/-",
+      eligibilityContent: `
+        <h2 class='font-bold text-lg mb-3'>D. Pharma. (Diploma in Pharmacy)</h2>
+       <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/ State Board with Physics, Chemistry and Mathematics/Biology with minimum aggregate marks of 45% or equivalent grade for GEN/ OBC and 40% marks or equivalent grade for SC/ ST Category.</p>
+      `,
+    },
   ],
-
 };
 
-export const InstituteofPharmaceuticalSciencesData2: FeeTableData = {
-  columns: ["Courses", "Duration", "Eligibility Criteria", "Course Fees (PA)"],
-
-  rows: [
-    { col1: "B.A. in Journalism & Mass Communication", col2: "3 Years", col3: "Click to View", col4: "	Rs. 94,000/-" },
-  ],
-
-};
 
 
 
@@ -250,6 +235,7 @@ export const InstituteofPharmaceuticalSciencesfacultyData: FacultyItem[] = [
 
 
 
-
+export const InstituteofPharmaceuticalSciencesDepartmentEventsData: EventItem[] = [
+]
 
 

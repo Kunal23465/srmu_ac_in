@@ -7,6 +7,9 @@ import courseImg2 from "../../../../assets/images/academics/departments/bioinfor
 import courseImg3 from "../../../../assets/images/academics/departments/biotech-07022411273155.jpg";
 import { InstituteProfile } from "../../../../types/profile-data-type";
 import TabishImg from "../../../../assets/images/academics/departments/dr.-tabish-kidwai-27022401392651.png"
+import { alliedHealthScienceDepartmentEventsData, alliedHealthScienceHighlightsData, counterDataFoFacultyOfAlliedHealthSciences, counterDataForPlacedStudentsOFAlliedHealthSciences, facultyDetailsOfAhsDepartment, facultyofAHSOverviewData, facultyOfAhsProfileData, facultyOfAlliedHealthSciencesVMData, underGraduateFeeDataOfAHS } from "../../faculty-of-allied-health-sciences/faculty-of-allied-health-sciences-data";
+import { bioscienceDepartmentEventsData, bioscienceHighlightsData, counterDataFoFacultyOfBiosciencess, counterDataForPlacedStudentsOFBioscience, facultyDetailsOfBioScienceDepartment, facultyofBioscienceOverviewData, facultyOfBioscienceProfileData, facultyOfBiosciencesVMData, postGraduateFeeDataOfBioscience, underGraduateFeeDataOfBioscience } from "../../faculty-of-biosciences/faculty-of-biosciences-data";
+import { biotechnologyDepartmentEventsData, biotechnologyHighlightsData, biotechnologyIndustryIntegratedFeeTable, biotechnologyIndustryPostgraduateFeeTable, biotechnologyIndustryUndergraduateFeeTable, counterDataFoFacultyOfBiotechnology, counterDataForPlacedStudentsOFBiotechnology, facultyDetailsOfBiotechnologyDepartment, facultyOfBiostechnologyProfileData, facultyOfBiostechnologyVMData, facultyofBiotechnologyeOverviewData } from "../../faculty-of-biotechnology/faculty-of-biotechnology-data";
 export const InstituteofBiosciencesandTechnologyOverviewData: customeOverViewType = {
   heading: "Institute of Biosciences and Technology",
   content:
@@ -22,7 +25,7 @@ export const InstituteofBiosciencesandTechnologyTopFooterData = [
   },
 ];
 
-export const visionMissionData = {
+export const InstituteofBiosciencesandTechnologyvisionMissionData = {
   backgroundColor: "#0f4a85",
   vision: {
     title: "Our Vision",
@@ -72,31 +75,79 @@ export const InstituteofBiosciencesandTechnologyinstituteProfiles: InstituteProf
       "**Contact No.: **+91-9140631326",
     ],
 
-    modalContent: `He has more than 35+ years of experience in Management & Media Education and the Industry.He has worked across the different domains including  Advertising, Media  and Management education. He has received laurels as a Director of the Year in 2023 and granted Patent on “Employability “in the managemnt stream in the same year. He began his career with a Publishing Company in New Delhi,India and moved to Academics in the year 1995.In his career span has been associated with leading media institutions such as Film Institute of eMITS,Lucknow and JIT Media Institute ,Barabanki.
+    modalContent: `Tabish Qidwai has done M.Tech and Ph.D. in Biotechnology Engineering. He has worked as a faculty member at B.B. Ambedkar Central University, Lucknow and Raja Balwant Singh College, Agra. He received various prestigious awards including the Rashtriya Gaurav Award for remarkable contributions to Science and Technology, Certificate of Excellence in Science and Technology, University Gold Medal, Research Excellence Award, Teaching and Learning Innovation Award and several certificate of appreciation for significant contribution to academics.
 
-He has been guiding and counselling the students across various academic domains. He is capable to motivate young minds and developing synergy between the students and the teachers for their growth.His Research Interest  area is Advertising and Visual Communication.
+    He has 13 years of teaching and research experience in genomics and immunology and infectious diseases. He has published nearly 52 book chapters, research articles, review articles in peer-reviewed international journals and authored/edited 5 books as a single author/editor. He has I 10 index 25 and h index 20 and more than 1000 citations. Currently, He is supervising 6 Ph.D. students and 1 Ph.D. is awarded under his supervision.
+
+He is a member of many national and international scientific societies and organizations. His research interests are focused on the functional genomics, immunology, and infectious disease research including malaria and COVID-19. Currently, he is working and writing articles/book chapters in collaboration with University of South Florida, USA, Biological Research Centre, Szeged, Hungary, The Arctic University of Norway, AIIMS Hyderabad, AIIMS Bhopal, IIT-BHU, IET Lucknow and University of Delhi.
 `
   },
 
 
-]; 
+];
 
 
 
-export const instituteCourseCardData: CustomInstituteCourseCardProps[] = [
+export const InstituteofBiosciencesandTechnologyinstituteCourseCardData: CustomInstituteCourseCardProps[] = [
   {
     imageUrl: courseImg1,
     departmentName: "Faculty of Allied Health Sciences",
-    path: "/academics/institutes-info/faculty-of-allied-health-sciences",
+    path: "faculty-of-allied-health-sciences",
+    departmentDetails: {
+      overviewData: facultyofAHSOverviewData,
+      counterData: counterDataFoFacultyOfAlliedHealthSciences,
+      mvData: facultyOfAlliedHealthSciencesVMData,
+      departmentHeadData: facultyOfAhsProfileData,
+      feeTableData: {
+
+        tab1: { label: "Undergraduate", data: underGraduateFeeDataOfAHS },
+      },
+      facultyData: facultyDetailsOfAhsDepartment,
+      departmentHighlightsData: alliedHealthScienceHighlightsData,
+      counterData2: counterDataForPlacedStudentsOFAlliedHealthSciences,
+      placedStudentsData: null,
+      eventsData: alliedHealthScienceDepartmentEventsData
+    }
   },
   {
     imageUrl: courseImg2,
     departmentName: "Faculty of Biosciences",
-    path: "/academics/institutes-info/faculty-of-biosciences",
+    path: "faculty-of-biosciences",
+    departmentDetails: {
+      overviewData: facultyofBioscienceOverviewData,
+      counterData: counterDataFoFacultyOfBiosciencess,
+      mvData: facultyOfBiosciencesVMData,
+      departmentHeadData: facultyOfBioscienceProfileData,
+      feeTableData: {
+        tab1: { label: "Postgraduate", data: postGraduateFeeDataOfBioscience },
+        tab2: { label: "Undergraduate", data: underGraduateFeeDataOfBioscience },
+      },
+      facultyData: facultyDetailsOfBioScienceDepartment,
+      departmentHighlightsData: bioscienceHighlightsData,
+      counterData2: counterDataForPlacedStudentsOFBioscience,
+      placedStudentsData: null,
+      eventsData: bioscienceDepartmentEventsData
+    }
   },
   {
     imageUrl: courseImg3,
     departmentName: "Faculty of Biotechnology",
-    path: "/academics/institutes-info/faculty-of-biotechnology",
+    path: "faculty-of-biotechnology",
+    departmentDetails: {
+      overviewData: facultyofBiotechnologyeOverviewData,
+      counterData: counterDataFoFacultyOfBiotechnology,
+      mvData: facultyOfBiostechnologyVMData,
+      departmentHeadData: facultyOfBiostechnologyProfileData,
+      feeTableData: {
+        tab1: { label: "Integrated", data: biotechnologyIndustryIntegratedFeeTable },
+        tab2: { label: "Postgraduate", data: biotechnologyIndustryPostgraduateFeeTable },
+        tab3: { label: "Undergraduate", data: biotechnologyIndustryUndergraduateFeeTable },
+      },
+      facultyData: facultyDetailsOfBiotechnologyDepartment,
+      departmentHighlightsData: biotechnologyHighlightsData,
+      counterData2: counterDataForPlacedStudentsOFBiotechnology,
+      placedStudentsData: null,
+      eventsData: biotechnologyDepartmentEventsData,
+    }
   },
 ];
