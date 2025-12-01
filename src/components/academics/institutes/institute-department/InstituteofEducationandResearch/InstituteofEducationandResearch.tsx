@@ -15,6 +15,7 @@ import {
   InstituteofEducationandResearchinstituteProfiles,
   placedStudents,
   tableHeaders,
+  InstituteofEducationandResearchDepartmentEventsData,
 } from "../../../../../data/academics/institute/institute-department/institute-of-education-and-research-data";
 import Counter from "../../../../../utils/custom/Counter";
 import CustomDepartmentVissionMission from "../../../../../utils/custom/CustomDepartmentVissionMission";
