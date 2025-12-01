@@ -8,6 +8,8 @@ import courseImg3 from "../../../../assets/images/academics/departments/maths-07
 import courseImg4 from "../../../../assets/images/academics/departments/social-science-07052401093595.jpg";
 import { InstituteProfile } from "../../../../types/profile-data-type";
 import BMdixitImg from "../../../../assets/images/academics/departments/prof.-b-m-dixit-photo-10062510410818.jpg"
+import { counterDataFoFacultyOfPhysicalScience, counterDataForPlacedStudentsOFPhysicalScience, facultyDetailsOfPhysicalScienceDepartment, facultyofPhysicalScienceOverviewData, facultyOfPhysicalScienceProfileData, facultyOfPhysicalScienceVMData, physicalScienceEventsData, physicalScienceHighlightsData, physicalSciencePostgraduateFeeTable, physicalScienceUndergraduateFeeTable } from "../../faculty-of-physical-sciences/faculty-of-physical-sciences-data";
+import { FacultyOfMathematicalAndStatisticalSciencesCounterData1, FacultyOfMathematicalAndStatisticalSciencesData1, FacultyOfMathematicalAndStatisticalSciencesData2, FacultyOfMathematicalAndStatisticalSciencesDepartmentEventsData, FacultyOfMathematicalAndStatisticalSciencesdepartmentHighlights, FacultyOfMathematicalAndStatisticalSciencesfacultyData, FacultyOfMathematicalAndStatisticalSciencesinstituteProfiles, FacultyOfMathematicalAndStatisticalSciencesOverviewData, FacultyOfMathematicalAndStatisticalSciencesVMData, MathematicalAndStatisticalSciencesplacedStudents } from "./faculty-of-mathematical-and-statistical-sciences-data";
 export const InstituteofNaturalSciencesandHumanitiesOverviewData: customeOverViewType = {
   heading: "Institute of Natural Sciences and Humanities",
   content:
@@ -82,27 +84,73 @@ Being associated with the present group since its inception way back in 2001, he
   },
 
 
-]; 
+];
 
 export const InstituteofNaturalSciencesandHumanitiesinstituteCourseCardData: CustomInstituteCourseCardProps[] = [
   {
     imageUrl: courseImg1,
     departmentName: "Faculty of Physical Sciences",
-    path: "/academics/institutes-info/faculty-of-physical-sciences",
-  },
-  {
-    imageUrl: courseImg2,
-    departmentName: "Faculty of Chemical Sciences",
-    path: "/academics/institutes-info/faculty-of-chemical-sciences",
+    path: "faculty-of-physical-sciences",
+    departmentDetails: {
+      overviewData: facultyofPhysicalScienceOverviewData,
+      counterData: counterDataFoFacultyOfPhysicalScience,
+      mvData: facultyOfPhysicalScienceVMData,
+      departmentHeadData: facultyOfPhysicalScienceProfileData,
+      feeTableData: {
+        tab1: { label: "Postgraduate", data: physicalSciencePostgraduateFeeTable },
+        tab2: { label: "Undergraduate", data: physicalScienceUndergraduateFeeTable },
+      },
+      facultyData: facultyDetailsOfPhysicalScienceDepartment,
+      departmentHighlightsData: physicalScienceHighlightsData,
+      counterData2: counterDataForPlacedStudentsOFPhysicalScience,
+      placedStudentsData: null,
+      eventsData: physicalScienceEventsData
+    }
   },
   {
     imageUrl: courseImg3,
     departmentName: "Faculty of Mathematical and Statistical Sciences",
-    path: "/academics/institutes-info/faculty-of-mathematical-and-statistical-sciences",
+    path: "faculty-of-mathematical-and-statistical-sciences",
+    departmentDetails: {
+      overviewData: FacultyOfMathematicalAndStatisticalSciencesOverviewData,
+      counterData: FacultyOfMathematicalAndStatisticalSciencesCounterData1,
+      mvData: FacultyOfMathematicalAndStatisticalSciencesVMData,
+      departmentHeadData: FacultyOfMathematicalAndStatisticalSciencesinstituteProfiles,
+      feeTableData: {
+        tab1: { label: "Postgraduate", data: FacultyOfMathematicalAndStatisticalSciencesData1 },
+        tab2: { label: "Undergraduate", data: FacultyOfMathematicalAndStatisticalSciencesData2 },
+      },
+      facultyData: FacultyOfMathematicalAndStatisticalSciencesfacultyData,
+      departmentHighlightsData: FacultyOfMathematicalAndStatisticalSciencesdepartmentHighlights,
+      counterData2: null,
+      placedStudentsData: MathematicalAndStatisticalSciencesplacedStudents,
+      eventsData: FacultyOfMathematicalAndStatisticalSciencesDepartmentEventsData
+    }
   },
-  {
-    imageUrl: courseImg4,
-    departmentName: "Faculty of Humanities and Social Sciences",
-    path: "/academics/institutes-info/faculty-of-humanities-and-social-sciences",
-  },
+  // {
+  //   imageUrl: courseImg2,
+  //   departmentName: "Faculty of Chemical Sciences",
+  //   path: "faculty-of-chemical-sciences",
+  //   // departmentDetails: {
+  //   //   overviewData: facultyofPhysicalScienceOverviewData,
+  //   //   counterData: counterDataFoFacultyOfPhysicalScience,
+  //   //   mvData: facultyOfPhysicalScienceVMData,
+  //   //   departmentHeadData: facultyOfPhysicalScienceProfileData,
+  //   //   feeTableData: {
+  //   //     tab1: { label: "Postgraduate", data: physicalSciencePostgraduateFeeTable },
+  //   //     tab2: { label: "Undergraduate", data: physicalScienceUndergraduateFeeTable },
+  //   //   },
+  //   //   facultyData: facultyDetailsOfPhysicalScienceDepartment,
+  //   //   departmentHighlightsData: physicalScienceHighlightsData,
+  //   //   counterData2: counterDataForPlacedStudentsOFPhysicalScience,
+  //   //   placedStudentsData: null,
+  //   //   eventsData: physicalScienceEventsData
+  //   // }
+  // },
+
+  // {
+  //   imageUrl: courseImg4,
+  //   departmentName: "Faculty of Humanities and Social Sciences",
+  //   path: "faculty-of-humanities-and-social-sciences",
+  // },
 ];

@@ -38,37 +38,11 @@ export const InstituteofMediaStudiesTopFooterData = [
   },
 ];
 
-
-export const InstituteofMediaStudiesCounterData1 = {
-  counterData: [
-    {
-      id: 1,
-      icon: "",
-      value: "2012",
-      suffix: "",
-      label: "Established"
-    },
-    {
-      id: 2,
-      icon: "",
-      value: "8",
-      suffix: "",
-      label: "Faculty & Staff"
-    },
-    {
-      id: 3,
-      icon: "",
-      value: "200",
-      suffix: "",
-      label: "Students"
-    },
-
-  ],
-
-  // Optional classes (can be null or ignored if unused)
-  classes: "",
-  aboutusClass: ""
-};
+export const InstituteofMediaStudiesCounterData1: counterDataType[] = [
+  { id: 1, value: "2012", suffix: "", label: "Established" },
+  { id: 2, value: "9", suffix: "", label: "Faculty & Staff" },
+  { id: 3, value: "200", suffix: "", label: "Students" },
+];
 
 export const InstituteofMediaStudiesCounterData2 = {
   counterData: [
@@ -128,7 +102,7 @@ export const InstituteofMediaStudiesVMData = [
 
 
 
-export const instituteProfiles: InstituteProfile[] = [
+export const InstituteofMediaStudiesProfiles: InstituteProfile[] = [
   {
     id: 1,
     title: "Department Head",
@@ -168,20 +142,35 @@ He has been guiding and counselling the students across various academic domains
 
 export const InstituteofMediaStudiesData1: FeeTableData = {
   columns: ["COURSES", "DURATION", "ELIGIBILITY CRITERIA", "COURSE FEES (PA)"],
-
   rows: [
-    { col1: "M.A. in Journalism & Mass Communication", col2: "2 Years", col3: "Click to View", col4: "	Rs. 62,000/-" },
+    {
+      course: "M.A. in Journalism & Mass Communication",
+      duration: "2 Years",
+      eligibility: "Click",
+      fee: "Rs. 62,000/-",
+      eligibilityContent: `
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>M.A. in Journalism & Mass Communication</h2>
+            <p>Candidates must have passed Graduation in any stream from any recognised University or AICTE recognised Institute/ College with minimum aggregate marks of 45% or CGPA of 5.0 for Gen/ OBC category and 40% marks or CGPA of 4.5 for SC/ ST Category.</p>
+        `,
+    },
   ],
 
 };
 
 export const InstituteofMediaStudiesData2: FeeTableData = {
   columns: ["COURSES", "DURATION", "ELIGIBILITY CRITERIA", "COURSE FEES (PA)"],
-
   rows: [
-    { col1: "B.A. in Journalism & Mass Communication", col2: "3 Years", col3: "Click to View", col4: "	Rs. 94,000/-" },
+    {
+      course: "B.A. in Journalism & Mass Communication",
+      duration: "3 Years",
+      eligibility: "Click",
+      fee: "Rs. 94,000/-",
+      eligibilityContent: `
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>B.A. in Journalism & Mass Communication</h2>
+            <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/State Board in any stream with minimum aggregate marks of 45% or equivalent grade for GEN/OBC and 40% marks or equivalent grade for SC/ST Category.</p>
+        `,
+    },
   ],
-
 };
 
 
@@ -276,15 +265,13 @@ export const InstituteofMediaStudiesdepartmentHighlights: departmentHighlightsca
 
 
 
-
-
 export const tableHeaders: Headers = {
     name: "NAME OF STUDENT",
     program: "PROGRAM",
     company: "COMPANY",
   };
  
- export const placedStudents: Student[] = [
+export const InstituteofMediaStudiesplacedStudents: Student[] = [
     {
       name: "Sakshi Shukla",
       program: "M.A. in Journalism & Mass Communication",
@@ -487,6 +474,7 @@ import img6 from "../../../../assets/images/academics/departments/guest2-0905240
 import img7 from "../../../../assets/images/academics/departments/webinar5-09052401003870.jpg"
 import img8 from "../../../../assets/images/academics/departments/workshop4-09052401004722.jpg"
 import img9 from "../../../../assets/images/academics/departments/workshop3-09052401005812.jpg"
+import { counterDataType } from "../../../about/leadership-and-governance/leadership-and-governance-data";
 
 export const InstituteofMediaStudiesDepartmentEventsData: EventItem[] = [
   {

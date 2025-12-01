@@ -40,37 +40,12 @@ export const InstituteofEducationandResearchTopFooterData = [
 ];
 
 
+export const InstituteofEducationandResearchCounterData1: counterDataType[] = [
+  { id: 1, value: "2012", suffix: "", label: "Established" },
+  { id: 2, value: "39", suffix: "", label: "Faculty & Staff" },
+  { id: 3, value: "1100", suffix: "", label: "Students" },
+];
 
-export const InstituteofEducationandResearchCounterData1 = {
-  counterData: [
-    {
-      id: 1,
-      icon: "",
-      value: "2014",
-      suffix: "",
-      label: "Established"
-    },
-    {
-      id: 2,
-      icon: "",
-      value: "6",
-      suffix: "",
-      label: "Faculty & Staff"
-    },
-    {
-      id: 3,
-      icon: "",
-      value: "150",
-      suffix: "",
-      label: "Students"
-    },
-
-  ],
-
-  // Optional classes (can be null or ignored if unused)
-  classes: "",
-  aboutusClass: ""
-};
 
 export const InstituteofEducationandResearchCounterData2 = {
   counterData: [
@@ -173,19 +148,33 @@ She has published a number of research articles in the area of Educational Psych
 
 export const InstituteofEducationandResearchData1: FeeTableData = {
   columns: ["COURSES", "DURATION", "ELIGIBILITY CRITERIA", "COURSE FEES (PA)"],
-
   rows: [
-    { col1: "M.A. in Education", col2: "2 Years", col3: "Click to View", col4: "	Rs. 37,000/-" },
+    {
+      course: "M.A. in Education",
+      duration: "2 Years",
+      eligibility: "Click",
+      fee: "Rs. 37,000/-",
+      eligibilityContent: `
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>M.A. in Education</h2>
+            <p>Candidates must have passed Graduation in any stream from any recognised University or AICTE recognised Institute/ College with minimum aggregate marks of 45% or CGPA of 5.0 for Gen/ OBC category and 40% marks or CGPA of 4.5 for SC/ ST Category.</p>
+        `,
+    },
   ],
-
 };
 export const InstituteofEducationandResearchData2: FeeTableData = {
   columns: ["COURSES", "DURATION", "ELIGIBILITY CRITERIA", "COURSE FEES (PA)"],
-
-  rows: [
-    { col1: "B.Ed. (Bachelor of Education)", col2: "2 Years", col3: "Click to View", col4: "	Rs. 62,000/-" },
+ rows: [
+    {
+      course: "B.Ed. (Bachelor of Education)",
+      duration: "2 Years",
+      eligibility: "Click",
+     fee: "Rs. 62,000/-",
+      eligibilityContent: `
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Ed. (Bachelor of Education)</h2>
+            <p>Candidates must have passed Graduation in any stream from any recognised University or AICTE recognised Institute/ College with minimum aggregate marks of 45% or CGPA of 5.0 for Gen/ OBC category and 40% marks or CGPA of 4.5 for SC/ ST Category.</p>
+        `,
+    },
   ],
-
 };
 
 
@@ -274,7 +263,7 @@ export const tableHeaders: Headers = {
     company: "COMPANY",
   };
 
-  export const placedStudents: Student[] = [
+export const InstituteofEducationandResearchplacedStudents: Student[] = [
   {
     name: "Avni Verma",
     program: "B.Ed. (Bachelor of Education)",
@@ -293,6 +282,7 @@ import img8 from "../../../../assets/images/academics/departments/workshop4-0905
 import img9 from "../../../../assets/images/academics/departments/webinar4-0905240200138.jpg";
 import img10 from "../../../../assets/images/academics/departments/nation4-09052402005583.jpg";
 import img11 from "../../../../assets/images/academics/departments/webinar1-09052402013920.jpg";
+import { counterDataType } from "../../../home/counterData";
 
 
 export const InstituteofEducationandResearchDepartmentEventsData: EventItem[] = [

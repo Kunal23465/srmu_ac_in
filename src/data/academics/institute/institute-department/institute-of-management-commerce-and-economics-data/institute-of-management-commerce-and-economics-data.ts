@@ -38,7 +38,7 @@ import depSlide5 from "../../../../../assets/images/academics/institutes/key-hig
 import depSlide6 from "../../../../../assets/images/academics/institutes/key-highlight/bsc-it-07022411165864.jpg";
 import depSlide7 from "../../../../../assets/images/academics/institutes/key-highlight/entrepreneurialecosystem-0702241115095.jpg";
 import { Student } from "../../../../../utils/custom/CustomPlacedStudentTable";
-import { counterDataForFacultyManagement, managementCounterData2, managementDepartmentHeadData, managementDepartmentHighlights, managementDepartmentVMData, managementfacultyData, managementFeeData, managementFeeData1, managementOverviewData, managementPlacedStudents } from "./faculty-of-management-data";
+import { counterDataForFacultyManagement, managementCounterData2, managementDepartmentHeadData, managementDepartmentHighlights, managementDepartmentVMData, managementfacultyData, managementFeeData, managementFeeData1, managementFeeData2, managementOverviewData, managementPlacedStudents } from "./faculty-of-management-data";
 export const InstituteofManagementCommerceandEconomicsOverviewData: customeOverViewType = {
   heading: "Institute of Management, Commerce and Economics",
   content:
@@ -179,21 +179,63 @@ export interface FeeTableData {
 }
 export const commerceAndEconomicsFeeData: FeeTableData = {
   columns: ["Courses", "Duration", "Eligibility Criteria", "Course Fees (PA)"],
-
   rows: [
-    { col1: "M.Com.", col2: "2 Years", col3: "Click to View", col4: "Rs. 50,000/-" },
-    { col1: "M.Sc. in Economics", col2: "2 Years", col3: "Click to View", col4: "Rs. 50,000/-" },
-
+    {
+      course: "M.Com.",
+      duration: "2 Years",
+      eligibility: "Click",
+      fee: "Rs. 50,000/-",
+      eligibilityContent: `
+        <h2 class='font-bold text-lg mb-3'>M.Com.</h2>
+       <p>Candidate must have passed B.Com. with minimum aggregate marks of 50% or equivalent grade for GEN/OBC and 45% marks or equivalent grade for SC/ST Category.</p>
+      `,
+    },
+    {
+      course: "M.Sc. in Economics",
+      duration: "2 Years",
+      eligibility: "Click",
+      fee: "Rs. 50,000/-",
+      eligibilityContent: `
+        <h2 class='font-bold text-lg mb-3'>M.Sc. in Economics</h2>
+       <p>Candidates must have completed a Bachelor’s degree in Economics or any related discipline (like Commerce, Mathematics, or Statistics) from a recognized university with a minimum of 50% marks (45% for SC/ST candidates).</p>
+      `,
+    },
   ],
 };
 
 export const commerceAndEconomicsFeeData1: FeeTableData = {
   columns: ["Courses", "Duration", "Eligibility Criteria", "Course Fees (PA)"],
-
   rows: [
-    { col1: "B.Com.(Hons.) with L&T", col2: "3 Years", col3: "Click to View", col4: "Rs. 87,000/-" },
-    { col1: "B.A.(Hons.) in Economics", col2: "3 Years", col3: "Click to View", col4: "Rs. 42,000/-" },
-    { col1: "B.Com. (Bachelor of Commerce)", col2: "4 Years", col3: "Click to View", col4: "Rs. 30,000/-" },
+    {
+      course: "B.Com.(Hons.) with L&T",
+      duration: "3 Years",
+      eligibility: "Click",
+      fee: "Rs. 87,000/-",
+      eligibilityContent: `
+        <h2 class='font-bold text-lg mb-3'>B.Com.(Hons.) with L&T</h2>
+       <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/State Board with Commerce or related subjects/Maths with minimum aggregate marks of 45% or equivalent grade for GEN/OBC and 40% marks or equivalent grade for SC/ST Category.</p>
+      `,
+    },
+    {
+      course: "B.A.(Hons.) in Economics",
+      duration: "3 Years",
+      eligibility: "Click",
+      fee: "Rs. 42,000/-",
+      eligibilityContent: `
+        <h2 class='font-bold text-lg mb-3'>B.A.(Hons.) in Economics</h2>
+       <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/State Board with Commerce or related subjects/Maths with minimum aggregate marks of 45% or equivalent grade for GEN/OBC and 40% marks or equivalent grade for SC/ST Category.</p>
+      `,
+    },
+    {
+      course: "B.Com. (Bachelor of Commerce)",
+      duration: "4 Years",
+      eligibility: "Click",
+      fee: "Rs. 30,000/-",
+      eligibilityContent: `
+        <h2 class='font-bold text-lg mb-3'>B.Com. (Bachelor of Commerce)</h2>
+       <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/State Board with Commerce or related subjects/Maths with minimum aggregate marks of 45% or equivalent grade for GEN/OBC and 40% marks or equivalent grade for SC/ST Category.</p>
+      `,
+    },
   ],
 };
 
@@ -450,15 +492,14 @@ export const instituteCourseCardData: CustomInstituteCourseCardProps[] = [
       mvData: commerceAndEconomicsDepartmentVMData,
       departmentHeadData: commerceAndEconomicsDepartmentHeadData,
       feeTableData: {
-        tab1: commerceAndEconomicsFeeData,
-        tab2: commerceAndEconomicsFeeData1
+        tab1: { label: "Postgraduate", data: commerceAndEconomicsFeeData },
+        tab2: { label: "Undergraduate", data: commerceAndEconomicsFeeData1 },
       },
       facultyData: facultyData,
       departmentHighlightsData: departmentHighlights,
       counterData2: counterData2,
       placedStudentsData: placedStudents,
     }
-
   },
   {
     imageUrl: courseImg2,
@@ -470,9 +511,11 @@ export const instituteCourseCardData: CustomInstituteCourseCardProps[] = [
       mvData: managementDepartmentVMData,
       departmentHeadData: managementDepartmentHeadData,
       feeTableData: {
-        tab1: managementFeeData,
-        tab2: managementFeeData1
+        tab1: { label: "Industry Honors", data: managementFeeData },
+        tab2: { label: "Postgraduate", data: managementFeeData1 },
+        tab3: { label: "Undergraduate", data: managementFeeData2 },
       },
+
       facultyData: managementfacultyData,
       departmentHighlightsData: managementDepartmentHighlights,
       counterData2: managementCounterData2,
