@@ -86,6 +86,10 @@ import DepartmentDetailPage from "../components/academics/institutes/institute-d
 import InstituteDepartmentPage from "../pages/academics/institutes/institute-department/InstituteDepartmentPage";
 import AlumniFeedbackPage from "../pages/placement/AlumniFeedbackPage";
 import OnlineAdmissionPage from "../pages/Home/OnlineAdmissionPage";
+import BlogsPage from "../pages/blog/BlogsPage";
+import BlogDetailsPage from "../pages/blog/BlogDetailsPage";
+import { blogCards } from "../data/blog/blog-data";
+import RtiPage from "../pages/rti/RtiPage";
 interface IMatches {
   pathname: string;
   params: Params<string>;
@@ -113,7 +117,7 @@ export const routes = [
         },
       },
 
-      { 
+      {
         path: "notice",
         element: <NoticePage />,
         handle: {
@@ -715,6 +719,44 @@ export const routes = [
           crumb: () => <Link to="/">Admission Enquiry</Link>,
         },
       },
+
+      {
+        path: "/blogs",
+        element: <BlogsPage />,
+        handle: {
+          crumb: () => <Link to="/blogs">Blogs</Link>,
+        },
+        children: [
+          {
+            path: ":blogRouteKey",
+            element: <BlogDetailsPage />,
+            handle: {
+              crumb: (match?: any) => {
+                const key =
+                  match?.params?.blogRouteKey ??
+                  window.location.pathname.split("/").pop();
+
+                const blog = blogCards.find((b) => b.routeKey === key);
+
+                return <a>{blog?.breadcrumb ?? "Blog"}</a>;
+              },
+            },
+          },
+        ],
+      },
+
+      {
+        path: "/rti",
+        element: <RtiPage />,
+        handle: {
+          crumb: () => <Link to="/rti">RTI</Link>,
+        },
+      },
+
+
+
+
+
       {
         path: "/online-admission",
         element: <OnlineAdmissionPage />,
@@ -745,9 +787,8 @@ function Breadcrumbs() {
   // console.log("matches", matches[1].pathname);
   return (
     <section
-      className={`banner-section ${
-        matches[1].pathname === "/abhivyakti" ? "abhivyakt" : ""
-      } flex items-center `}
+      className={`banner-section ${matches[1].pathname === "/abhivyakti" ? "abhivyakt" : ""
+        } flex items-center `}
     >
       <div className={`${Classes["container"]} `}>
         <div className={`${Classes["page-title-content"]}`}>

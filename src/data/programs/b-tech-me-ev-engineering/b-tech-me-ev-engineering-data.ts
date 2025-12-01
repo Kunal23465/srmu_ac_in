@@ -314,7 +314,7 @@ export const ProgramFeesForrBtechME_EVEngineering: FeeTableData = {
 };
 
 
-export const stepsforDataScience = [
+export const stepsforMEEV = [
     {
         id: 1,
         title: "Achievements",
@@ -372,37 +372,32 @@ export const stepsforDataScience = [
 
 ];
 
-export const abc: CustomProgramPLOAccordianProps = {
+export const abcforME: CustomProgramPLOAccordianProps = {
   POdata: [
     {
       id: 1,
       content:
-        "To impart deep technical knowledge about the field of computer science and engineering.",
+        "To prepare under graduate students to excel in technical profession/ industry and/or higher education by providing a strong foundation in mathematics, science and Engineering.",
     },
     {
       id: 2,
       content:
-        "To develop an understanding of computer science and engineering at different levels of abstraction including computer architecture and design, operating systems, database management, algorithms and applications.",
+        "To support professional industrial and economic development by providing students with opportunities for an intensive learning experience and direct application of knowledge in the field of Electrical engineering.",
     },
     {
       id: 3,
       content:
-        "To aware students with a strong foundation in the field of Mathematics and basics of engineering fundamentals necessary to analyze and evaluate real world engineering problems and to further prepare them for higher studies, R&D.",
+        "To stimulate students to contribute to their fields or professions and to excel them in professional ethics and leadership qualities.",
     },
     {
       id: 4,
       content:
-        "To develop life-long learning attitude among students and to make them aware about professional and social responsibility.",
+        "To inculcate in students, professional attitude, effective communication skills and capability to succeed in multi-disciplinary and diverse fields.",
     },
     {
       id: 5,
       content:
-        "To inculcate an understanding among the students for utilizing their knowledge of computer engineering and mathematical theory to solve current and future computing problems.",
-    },
-    {
-      id: 6,
-      content:
-        "To inspire leadership and professional values in the students.",
+        "To promote students to continue to pursue professional development, relevant to their career growth and to create enthusiasm for life-long learning.",
     },
   ],
 
@@ -411,7 +406,7 @@ export const abc: CustomProgramPLOAccordianProps = {
     {
       id: 1,
       content:
-        "Apply possessed knowledge of core subjects of production and industrial engineering to solve different problems.",
+        "Engineering knowledge: Apply the knowledge of mathematics, science, engineering fundamentals, and an engineering specialization to the solution of complex engineering problems.",
     },
     {
       id: 2,
@@ -421,32 +416,32 @@ export const abc: CustomProgramPLOAccordianProps = {
     {
       id: 3,
       content:
-        "Design/development of solutions: Design solutions for complex engineering problems and design system components or processes that meet the specified needs with appropriate consideration for the public health and safety, and the cultural, societal, and environmental considerations.",
+        "Design/development of solutions: Design solutions for complex engineering problems and design system components or processes that meet the specified needs with appropriate consideration for public health and safety, and cultural, societal, and environmental considerations.",
     },
     {
       id: 4,
       content:
-        "Conduct investigations of complex problems: Use research-based knowledge and research methods including design of experiments, analysis and interpretation of data, and synthesis of the information to provide valid conclusions.",
+        "Conduct investigations of complex problems: Use research-based knowledge and research methods including design of experiments, analysis and interpretation of data, and synthesis of information to provide valid conclusions.",
     },
     {
       id: 5,
       content:
-        "Modern tool usage: Create, select, and apply appropriate techniques, resources, and modern engineering and IT tools including prediction and modeling to complex engineering activities with an understanding of the limitations.",
+        "Modern tool usage: Create, select, and apply appropriate techniques, resources, and modern engineering and IT tools including prediction and modelling to complex engineering activities with an understanding of the limitations.",
     },
     {
       id: 6,
       content:
-        "The engineer and society: Apply reasoning informed by the contextual knowledge to assess societal, health, safety, legal and cultural issues and the consequent responsibilities relevant to the professional engineering practice.",
+        "The engineer and society: Apply reasoning informed by contextual knowledge to assess societal, health, safety, legal, and cultural issues and the consequent responsibilities relevant to professional engineering practice.",
     },
     {
       id: 7,
       content:
-        "Environment and sustainability: Understand the impact of the professional engineering solutions in societal and environmental contexts, and demonstrate the knowledge of, and need for sustainable development.",
+        "Environment and sustainability: Understand the impact of professional engineering solutions in societal and environmental contexts, and demonstrate the knowledge of, and need for sustainable development.",
     },
     {
       id: 8,
       content:
-        "Ethics: Apply ethical principles and commit to professional ethics and responsibilities and norms of the engineering practice.",
+        "Ethics: Apply ethical principles and commit to professional ethics, responsibilities, and norms of engineering practice.",
     },
     {
       id: 9,
@@ -456,12 +451,12 @@ export const abc: CustomProgramPLOAccordianProps = {
     {
       id: 10,
       content:
-        "Communication: Communicate effectively on complex engineering activities with the engineering community and with society at large, such as, being able to comprehend and write effective reports and design documentation, make effective presentations, and give and receive clear instructions.",
+        "Communication: Communicate effectively on complex engineering activities with the engineering community and society at large, including writing effective reports and design documentation, making presentations, and giving and receiving clear instructions.",
     },
     {
       id: 11,
       content:
-        "Project management and finance: Demonstrate knowledge and understanding of the engineering and management principles and apply these to one’s own work, as a member and leader in a team, to manage projects and in multidisciplinary environments.",
+        "Project management and finance: Demonstrate knowledge and understanding of engineering and management principles and apply these to one's own work, as a member and leader in a team, to manage projects in multidisciplinary environments.",
     },
     {
       id: 12,
@@ -471,33 +466,35 @@ export const abc: CustomProgramPLOAccordianProps = {
   ],
 
 
+
   PSOdata: [
     {
       id: 1,
       content:
-        "Understand and develop computer programs in the areas related to algorithms, system software, multimedia, web design, big data analytics and networking by identifying, demonstrating and analyzing the knowledge of engineering in efficient design of computer-based systems of varying complexity.",
+        "To analyze and understand the impact of engineering solutions on society and utilize multidisciplinary skills to work on tasks that contribute to the social and economic development of the community.",
     },
     {
       id: 2,
       content:
-        "Applying algorithmic principles, innovative Computer science and engineering design and implementation skills to propose optimal solutions to complex problems by choosing a better platform for research in emerging areas.",
+        "Ability to identify, formulate, and solve complex engineering problems by applying the knowledge gained from various subjects of Electrical Engineering.",
     },
     {
       id: 3,
       content:
-        "Identify standard Software Engineering practices and strategies by applying software project development methods using open-source programming environment to design and evaluate a quality product for business success.",
+        "Ability to develop and apply new knowledge using modern engineering tools, software, and equipment to analyze engineering problems, create awareness about non-conventional energy resources, and address the challenges related to the depletion of conventional energy sources.",
     },
     {
       id: 4,
       content:
-        "Demonstrate and examine basic understanding of engineering fundamentals, professional/social ethics and apply mathematical foundations to design and solve computational problems.",
+        "Ability to enhance techniques and skills required to succeed in competitive examinations such as GATE, GRE, TOEFL, and GMAT, while also developing technical, communication, and entrepreneurial skills for contributing to small-scale industries.",
     },
-  ],
+  ]
+
 
 };
 
 
-export const scopeDataForDataScience: ScopeData = {
+export const scopeDataForME: ScopeData = {
   title: "Scope in Companies",
   description: [
     "By pursuing this program, students gain deep knowledge of emerging technologies.",
@@ -551,7 +548,7 @@ rolesRight: [
 
 
 
-export const opportunityCardData: OpportunityCard[] = [
+export const opportunityCardDataforMEEV: OpportunityCard[] = [
     {
         id: 1,
         img: MBA21,
