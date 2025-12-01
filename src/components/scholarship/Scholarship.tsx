@@ -65,8 +65,7 @@ const Scholarship: React.FC = () => {
           alignTabs="start"
         />
       </div>
-            <CustomTopFooter data={ScholarshipTopFooterData} />
-
+      <CustomTopFooter data={ScholarshipTopFooterData} />
     </>
   );
 };
