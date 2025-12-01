@@ -81,11 +81,11 @@ import FacultyOfCivilEngineeringPage from "../pages/academics/institutes/institu
 import PlacementOverviewPage from "../pages/placement/placement-overview/PlacementOverviewPage";
 import ConferenceDetailPage from "../components/research/publication/conference/ConferenceDetailPage";
 import BtechInCSEAIAndML from "../pages/programs/btech-in-cse-ai-ml/BtechInCSEAIAndML";
-import ProgramsPage from "../pages/programs/ProgramsPage";
 import AwardOverviewPage from "../pages/about/award-overview/AwardOverviewPage";
 import DepartmentDetailPage from "../components/academics/institutes/institute-department/Institute-department/DepartmentDetailPage";
 import InstituteDepartmentPage from "../pages/academics/institutes/institute-department/InstituteDepartmentPage";
 import AlumniFeedbackPage from "../pages/placement/AlumniFeedbackPage";
+import OnlineAdmissionPage from "../pages/Home/OnlineAdmissionPage";
 interface IMatches {
   pathname: string;
   params: Params<string>;
@@ -112,12 +112,8 @@ export const routes = [
           crumb: () => <Link to="/">Home</Link>,
         },
       },
-   
 
-    
-  
-    
-      {
+      { 
         path: "notice",
         element: <NoticePage />,
         handle: {
@@ -369,7 +365,7 @@ export const routes = [
               crumb: () => <Link to="/">Program Finder</Link>,
             },
           },
-                    {
+          {
             path: "scholarship-scheme",
             element: <ScholarshipPage />,
             handle: {
@@ -587,8 +583,6 @@ export const routes = [
               })),
             ],
           },
-
-
         ],
       },
       {
@@ -719,6 +713,13 @@ export const routes = [
         element: <AdmissionEnquiryPage />,
         handle: {
           crumb: () => <Link to="/">Admission Enquiry</Link>,
+        },
+      },
+      {
+        path: "/online-admission",
+        element: <OnlineAdmissionPage />,
+        handle: {
+          crumb: () => <Link to="/">Online Admission</Link>,
         },
       },
     ],
