@@ -11,10 +11,10 @@ const PublicationSection: React.FC = () => {
     {
       key: "1",
       label: "JOURNALS",
-      children: <TabContent data={PublicationTabData.tab1} />,
+      content: <TabContent data={PublicationTabData.tab1} />,
     },
-    { key: "2", label: "CONFERENCE PROCEEDINGS", children: <TabContent data={PublicationTabData.tab2} /> },
-    { key: "3", label: "BOOKS & CHAPTERS", children: <TabContent data={PublicationTabData.tab3} /> },
+    { key: "2", label: "CONFERENCE PROCEEDINGS", content: <TabContent data={PublicationTabData.tab2} /> },
+    { key: "3", label: "BOOKS & CHAPTERS", content: <TabContent data={PublicationTabData.tab3} /> },
   ];
   return (
     <div>
@@ -29,7 +29,18 @@ const PublicationSection: React.FC = () => {
               </p>
             </div>
             {/* @ts-ignore */}
-            <CustomTabs items={items} />
+            <CustomTabs
+              items={items}
+              variant="underline"
+              activeTextColor="#ffb703"
+              activeUnderlineColor="#ffb703"
+              hoverTextColor="#ffb703"
+              inactiveTextColor="#ffffff"
+              activeBgColor="#ffb703"
+              inactiveBgColor="#0f4a85"
+              pillContainerBgColor="#ffb703"
+              alignTabs="start"
+            />
           </div>
         </div>
 

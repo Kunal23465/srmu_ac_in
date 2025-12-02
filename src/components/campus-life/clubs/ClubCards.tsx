@@ -2,13 +2,14 @@ import React, { useState } from 'react'
 import { cardclubCardsData } from '../../../data/campus-life/clubs/clubs-data';
 
 import { MdArrowRightAlt, MdClose } from 'react-icons/md';
+import { useNavigate } from 'react-router-dom';
 
 
 
 // @ts-ignore
 const CustomModal = ({ selected, setSelected }) => {
     if (!selected) return null;
-
+const navigate = useNavigate();
     return (
         <>
             {/* BACKDROP */}
@@ -36,7 +37,7 @@ const CustomModal = ({ selected, setSelected }) => {
                         <h2 className="text-3xl font-bold text-[#063970] mb-3">{selected.title}</h2>
                         <p className="text-gray-700 leading-relaxed mb-6">{selected.desc}</p>
 
-                        <button className="bg-[#ffb703]  border-2 uppercase   border-[#ffb703] hover:bg-transparent hover:text-[#ffb703] inline-flex gapx-x-1 items-center    px-3 py-1 rounded-lg text-nowrap mt-5 sm:mt-0  group  text-sm text-black font-normal"
+                        <button onClick={()=> navigate("/contact-us")} className="bg-[#ffb703]  border-2 uppercase   border-[#ffb703] hover:bg-transparent hover:text-[#ffb703] inline-flex gapx-x-1 items-center    px-3 py-1 rounded-lg text-nowrap mt-5 sm:mt-0  group  text-sm text-black font-normal"
                         >
                             MORE INFO CONTACT US <span className="transition-all duration-200  group-hover:rotate-[360deg]">
                                 <MdArrowRightAlt size={26} />

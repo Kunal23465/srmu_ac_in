@@ -7,7 +7,7 @@ interface Props {
 
 const ContactCard: React.FC<Props> = ({ item }) => {
   return (
-    <div className="border border-[#ffb703] bg-white text-[#0f4a85] p-8 rounded-md shadow-sm  hover:shadow-lg transition-all">
+    <div className="border border-[#ffb703] hover:border-[#0f4a85] bg-white text-black  hover:text-white hover:bg-[#0f4a85] p-8 rounded-md shadow-sm  hover:shadow-lg transition-all">
       <div className="flex justify-start items-center gap-4">
         <div className="text-3xl mb-2">
           <img src={item.icon} />

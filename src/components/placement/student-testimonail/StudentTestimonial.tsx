@@ -10,9 +10,7 @@ const StudentTestimonial: React.FC = () => {
     <div>
       <div className={`${Classes["container"]}`}>
         <CustomOverviewSection data={studentTestimonialOverviewData} />
-
-        <CustomTestimonial data={testimonialCardData}/>
-        
+        <CustomTestimonial data={testimonialCardData} />
       </div>
       <CustomTopFooter data={StudentTestimonialTopFooterData} />
     </div>

@@ -84,7 +84,10 @@ import BtechInCSEAIAndML from "../pages/programs/btech-in-cse-ai-ml/BtechInCSEAI
 import AwardOverviewPage from "../pages/about/award-overview/AwardOverviewPage";
 import DepartmentDetailPage from "../components/academics/institutes/institute-department/Institute-department/DepartmentDetailPage";
 import InstituteDepartmentPage from "../pages/academics/institutes/institute-department/InstituteDepartmentPage";
-import TransportationPage from "../pages/campus-life/facilities/transportation/TransportationPage";
+// import FacultyOfBiotechnologyPage from "../pages/academics/institutes/institute-department/FacultyOfBiotechnologyPage";
+// import FacultyOfPhysicalSciencesPage from "../pages/academics/institutes/institute-department/FacultyOfPhysicalSciencesPage";
+// import FacultyOfMathematicalAndStatisticalSciencesPage from "../pages/academics/institutes/institute-department/FacultyOfMathematicalAndStatisticalSciencesPage";
+// import FacultyOfHumanitiesAndSocialSciencesPage from "../pages/academics/institutes/institute-department/FacultyOfHumanitiesAndSocialSciencesPage";
 import CareerFormPage from "../pages/Home/CareerFormPage";
 import TermsConditionPage from "../pages/Home/TermsConditionPage";
 import HostelPage from "../pages/campus-life/facilities/HostelPage";
@@ -96,6 +99,7 @@ import BlogsPage from "../pages/blog/BlogsPage";
 import BlogDetailsPage from "../pages/blog/BlogDetailsPage";
 import { blogCards } from "../data/blog/blog-data";
 import RtiPage from "../pages/rti/RtiPage";
+import TransportationPage from "../pages/campus-life/facilities/transportation/TransportationPage";
 interface IMatches {
   pathname: string;
   params: Params<string>;
@@ -765,8 +769,8 @@ export const routes = [
         element: <NewsEventDetails />,
         handle: {
           crumb: () => <Link to="/">Innovation Meets Agriculture At The SRMU Kisan Mela 2025</Link>,
-        }
-      },
+        }},
+
       {
         path: "/blogs",
         element: <BlogsPage />,
