@@ -20,7 +20,7 @@ import { InstituteofAgriculturalSciencesandTechnologyCounterData2, InstituteofAg
 import { InstituteofLegalStudiesCounterData1, InstituteofLegalStudiesCounterData2, InstituteofLegalStudiesData1, InstituteofLegalStudiesData2, InstituteofLegalStudiesData3, InstituteofLegalStudiesDepartmentEventsData, InstituteofLegalStudiesdepartmentHighlights, InstituteofLegalStudiesfacultyData, InstituteofLegalStudiesOverviewData, InstituteofLegalStudiesplacedStudents, InstituteofLegalStudiesVMData } from "./institute-department/institute-of-legal-studies-data";
 import { InstituteofPharmacyCounterData1, InstituteofPharmacyCounterData2, InstituteofPharmacyData1, InstituteofPharmacyDepartmentEventsData, InstituteofPharmacydepartmentHighlights, InstituteofPharmacyfacultyData, InstituteofPharmacyinstituteProfiles, InstituteofPharmacyOverviewData, InstituteofPharmacyplacedStudents, InstituteofPharmacyVMData } from "./institute-department/institute-of-pharmacy-data";
 import { InstituteofEducationandResearchCounterData1, InstituteofEducationandResearchCounterData2, InstituteofEducationandResearchData1, InstituteofEducationandResearchData2, InstituteofEducationandResearchDepartmentEventsData, InstituteofEducationandResearchdepartmentHighlights, InstituteofEducationandResearchfacultyData, InstituteofEducationandResearchinstituteProfiles, InstituteofEducationandResearchOverviewData, InstituteofEducationandResearchplacedStudents, InstituteofEducationandResearchVMData } from "./institute-department/institute-of-education-and-research-data";
-import { SRMUPolytechnicCounterData2, SRMUPolytechnicData1, SRMUPolytechnicDepartmentEventsData, SRMUPolytechnicdepartmentHighlights, SRMUPolytechnicfacultyData, SRMUPolytechnicinstituteProfiles, SRMUPolytechnicOverviewData, SRMUPolytechnicplacedStudents, SRMUPolytechnicVMData } from "./institute-department/srmu-polytechnic-data";
+import { SRMUPolytechnicCounterData1, SRMUPolytechnicCounterData2, SRMUPolytechnicData1, SRMUPolytechnicDepartmentEventsData, SRMUPolytechnicdepartmentHighlights, SRMUPolytechnicfacultyData, SRMUPolytechnicinstituteProfiles, SRMUPolytechnicOverviewData, SRMUPolytechnicplacedStudents, SRMUPolytechnicVMData } from "./institute-department/srmu-polytechnic-data";
 import { InstituteofNaturalSciencesandHumanitiesinstituteCourseCardData, InstituteofNaturalSciencesandHumanitiesinstituteProfiles, InstituteofNaturalSciencesandHumanitiesOverviewData, InstituteofNaturalSciencesandHumanitiesTopFooterData, InstituteofNaturalSciencesandHumanitiesvisionMissionData } from "./institute-department/institute-of-natural-sciences-and-humanities-data";
 
 
@@ -261,7 +261,7 @@ export const institutes: Institute[] = [
     path: "srmu-polytechnic1",
     departmentsData: {
       overviewData: SRMUPolytechnicOverviewData,
-      counterData: InstituteofEducationandResearchCounterData1,
+      counterData: SRMUPolytechnicCounterData1,
       mvData: SRMUPolytechnicVMData,
       departmentHeadData: SRMUPolytechnicinstituteProfiles,
       feeTableData: {

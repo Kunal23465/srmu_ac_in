@@ -99,6 +99,7 @@ import BlogsPage from "../pages/blog/BlogsPage";
 import BlogDetailsPage from "../pages/blog/BlogDetailsPage";
 import { blogCards } from "../data/blog/blog-data";
 import RtiPage from "../pages/rti/RtiPage";
+import TransportationPage from "../pages/campus-life/facilities/transportation/TransportationPage";
 interface IMatches {
   pathname: string;
   params: Params<string>;
@@ -481,6 +482,13 @@ export const routes = [
               crumb: () => <Link to="/">Facilities</Link>,
             },
           },
+           {
+          path: "transportation",
+          element: <TransportationPage />,
+          handle: {
+            crumb: () => <Link to="/">Transportation</Link>,
+          },
+        },
           {
             path: "hostel",
             element: <HostelPage />,
@@ -795,10 +803,6 @@ export const routes = [
           crumb: () => <Link to="/rti">RTI</Link>,
         },
       },
-
-
-
-
 
       {
         path: "/online-admission",
