@@ -6,8 +6,8 @@ export interface counterDataType {
   suffix: string;
 }
 export const counterDataForHomePage: counterDataType[] = [
-  { id: 1, value: "20", suffix: "+", label: "Years Of Experience" },
-  { id: 2, value: "20", suffix: "+", label: "Number Of Courses" },
-  { id: 3, value: "3700", suffix: "+", label: "Students" },
-  { id: 4, value: "1000", suffix: "+", label: "Number Of Placements" },
+  { id: 1, value: "25", suffix: "+", label: "Years Of Experience" },
+  { id: 2, value: "100", suffix: "+", label: "Number Of Courses" },
+  { id: 3, value: "12000", suffix: "+", label: "Global Students" },
+  { id: 4, value: "15000", suffix: "+", label: "Number Of Placements" },
 ];
