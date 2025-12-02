@@ -84,6 +84,7 @@ import BtechInCSEAIAndML from "../pages/programs/btech-in-cse-ai-ml/BtechInCSEAI
 import AwardOverviewPage from "../pages/about/award-overview/AwardOverviewPage";
 import DepartmentDetailPage from "../components/academics/institutes/institute-department/Institute-department/DepartmentDetailPage";
 import InstituteDepartmentPage from "../pages/academics/institutes/institute-department/InstituteDepartmentPage";
+import TransportationPage from "../pages/campus-life/facilities/transportation/TransportationPage";
 import CareerFormPage from "../pages/Home/CareerFormPage";
 import TermsConditionPage from "../pages/Home/TermsConditionPage";
 import HostelPage from "../pages/campus-life/facilities/HostelPage";
@@ -477,6 +478,13 @@ export const routes = [
               crumb: () => <Link to="/">Facilities</Link>,
             },
           },
+           {
+          path: "transportation",
+          element: <TransportationPage />,
+          handle: {
+            crumb: () => <Link to="/">Transportation</Link>,
+          },
+        },
           {
             path: "hostel",
             element: <HostelPage />,
