@@ -482,13 +482,13 @@ export const routes = [
               crumb: () => <Link to="/">Facilities</Link>,
             },
           },
-           {
-          path: "transportation",
-          element: <TransportationPage />,
-          handle: {
-            crumb: () => <Link to="/">Transportation</Link>,
+          {
+            path: "transportation",
+            element: <TransportationPage />,
+            handle: {
+              crumb: () => <Link to="/">Transportation</Link>,
+            },
           },
-        },
           {
             path: "hostel",
             element: <HostelPage />,
@@ -769,7 +769,8 @@ export const routes = [
         element: <NewsEventDetails />,
         handle: {
           crumb: () => <Link to="/">Innovation Meets Agriculture At The SRMU Kisan Mela 2025</Link>,
-        }},
+        }
+      },
 
       {
         path: "/blogs",

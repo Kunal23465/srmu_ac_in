@@ -194,25 +194,26 @@ const ApprovalsSlider = () => {
                         </div>
 
                         {/* Navigation Buttons */}
-                        <div className="absolute top-[-175px] right-4 flex gap-3">
-                            <button
-                                onClick={() => sliderRef.current?.slickPrev()}
-                                disabled={isAtStart}
-                                className={`w-14 h-14 border border-black rounded-full flex items-center justify-center transition ${isAtStart ? "opacity-40 cursor-not-allowed" : ""
-                                    }`}
-                            >
-                                <BiChevronLeft size={22} />
-                            </button>
+                      
+                    </div>
+                    <div className="absolute top-0 right-4 flex gap-3">
+                        <button
+                            onClick={() => sliderRef.current?.slickPrev()}
+                            disabled={isAtStart}
+                            className={`w-12 h-12 border-2 border-black rounded-full flex items-center justify-center transition ${isAtStart ? "opacity-40 cursor-not-allowed" : " cursor-pointer "
+                                }`}
+                        >
+                            <BiChevronLeft size={26} />
+                        </button>
 
-                            <button
-                                onClick={() => sliderRef.current?.slickNext()}
-                                disabled={isAtEnd}
-                                className={`w-14 h-14 border-1 border-black rounded-full flex items-center justify-center transition ${isAtEnd ? "opacity-40 cursor-not-allowed" : ""
-                                    }`}
-                            >
-                                <BiChevronRight size={22} />
-                            </button>
-                        </div>
+                        <button
+                            onClick={() => sliderRef.current?.slickNext()}
+                            disabled={isAtEnd}
+                            className={`w-12 h-12 border-2 border-black rounded-full flex items-center justify-center transition ${isAtEnd ? "opacity-40 cursor-not-allowed" : " cursor-pointer "
+                                }`}
+                        >
+                            <BiChevronRight size={26} />
+                        </button>
                     </div>
                 </div>
             </section>

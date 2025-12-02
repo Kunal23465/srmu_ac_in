@@ -11,7 +11,7 @@ const NewsEventDetails: React.FC = () => {
       <div className="w-full mt-10 mb-4">
         <img src={news.image} className="w-full"/>
       </div>
-      <p>{news.description}</p>
+      <div dangerouslySetInnerHTML={{ __html: news.description }}></div>
     </div>
   );
 };
