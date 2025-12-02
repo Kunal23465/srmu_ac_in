@@ -33,7 +33,7 @@ export default function InnovationCulture() {
           </div>
 
           <a
-            href="#"
+            href="/research/overview"
             className="inline-flex items-center mt-8 bg-yellow-400 text-[#0F4A85] font-medium uppercase py-3 px-8 rounded-xl transition border border-yellow-400 hover:bg-transparent hover:text-yellow-400"
           >
             Know More
