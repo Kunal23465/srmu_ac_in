@@ -109,6 +109,9 @@ import FacultyOfBiotechnologyPage from "../pages/academics/institutes/institute-
 import FacultyOfPhysicalSciencesPage from "../pages/academics/institutes/institute-department/FacultyOfPhysicalSciencesPage";
 import FacultyOfMathematicalAndStatisticalSciencesPage from "../pages/academics/institutes/institute-department/FacultyOfMathematicalAndStatisticalSciencesPage";
 import FacultyOfHumanitiesAndSocialSciencesPage from "../pages/academics/institutes/institute-department/FacultyOfHumanitiesAndSocialSciencesPage";
+import CareerFormPage from "../pages/Home/CareerFormPage";
+import TermsConditionPage from "../pages/Home/TermsConditionPage";
+import HostelPage from "../pages/campus-life/facilities/HostelPage";
 interface IMatches {
   pathname: string;
   params: Params<string>;
@@ -135,11 +138,21 @@ export const routes = [
           crumb: () => <Link to="/">Home</Link>,
         },
       },
-   
+      {
+        path: "career-form",
+        element: <CareerFormPage />,
+        handle: {
+          crumb: () => <Link to="/">Career Form</Link>,
+        },
+      },
+      {
+        path: "terms-condition",
+        element: <TermsConditionPage />,
+        handle: {
+          crumb: () => <Link to="/">Terms & Conditions</Link>,
+        },
+      },
 
-    
-  
-    
       {
         path: "notice",
         element: <NoticePage />,
@@ -624,6 +637,13 @@ export const routes = [
             element: <FacilitiesPage />,
             handle: {
               crumb: () => <Link to="/">Facilities</Link>,
+            },
+          },
+          {
+            path: "hostel",
+            element: <HostelPage />,
+            handle: {
+              crumb: () => <Link to="/">Hostel</Link>,
             },
           },
           {
