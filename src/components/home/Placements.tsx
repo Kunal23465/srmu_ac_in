@@ -30,8 +30,8 @@ const Placements = () => {
     return (
         <section ref={sectionRef} className={` ${Classes["container"]} sm:mb-16 sm:mt-10`}>
             <div className="w-full">
-                <h1 className="text-center text-3xl lg:text-4xl font-bold py-6 ">{PlacementData[0].heading}</h1>
-                <p className="pb-6 text-center">{PlacementData[0].description}</p>
+                <h1 className="text-left font36 fw600 py-6 ">{PlacementData[0].heading}</h1>
+                <p className="pb-6 text-left font-semibold text-[#00000099]">{PlacementData[0].description}</p>
                 <div className="lg:flex justify-between gap-5 lg:pr-4 py-8">
                     {/* Left divs */}
                     <div className="flex flex-col gap-3 w-full min-w-[130px] lg:min-w-[150px]">

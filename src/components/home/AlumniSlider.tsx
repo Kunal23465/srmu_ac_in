@@ -1,8 +1,7 @@
-
 import Slider from "react-slick";
 import { alumniData } from "../../data/placement/alumni-testimonials-data";
 import AlumniCard from "./AlumniCard";
-
+import { useState, useEffect } from "react";
 
 type SliderRefType = React.RefObject<Slider>;
 
@@ -11,8 +10,21 @@ interface AlumniSliderProps {
 }
 
 const AlumniSlider: React.FC<AlumniSliderProps> = ({ sliderRef }) => {
+    const [showDots, setShowDots] = useState(true);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setShowDots(window.innerWidth >= 640); // hide dots for screens < 640px
+        };
+
+        handleResize(); // set initial value
+        window.addEventListener("resize", handleResize);
+
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
     const settings = {
-        dots: true,
+        dots: showDots,
         infinite: true,
         speed: 700,
         slidesToShow: 3,
@@ -20,7 +32,6 @@ const AlumniSlider: React.FC<AlumniSliderProps> = ({ sliderRef }) => {
         centerMode: true,
         centerPadding: "0px",
         arrows: false,
-        
         responsive: [
             { breakpoint: 1280, settings: { slidesToShow: 2 } },
             { breakpoint: 768, settings: { slidesToShow: 1 } }
@@ -29,15 +40,13 @@ const AlumniSlider: React.FC<AlumniSliderProps> = ({ sliderRef }) => {
 
     return (
         <div className="w-full">
-            <div className="w-full">
-                <Slider ref={sliderRef} {...settings}>
-                    {alumniData.map((item) => (
-                        <div key={item.id} className="px-4">
-                            <AlumniCard {...item} />
-                        </div>
-                    ))}
-                </Slider>
-            </div>
+            <Slider ref={sliderRef} {...settings}>
+                {alumniData.map((item) => (
+                    <div key={item.id} className="px-4">
+                        <AlumniCard {...item} />
+                    </div>
+                ))}
+            </Slider>
         </div>
     );
 };

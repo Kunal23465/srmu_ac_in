@@ -5,6 +5,9 @@ import { ReactNode } from "react";
 import { CiLocationOn } from "react-icons/ci";
 import { PiHeadphones } from "react-icons/pi";
 import { HiOutlineMail } from "react-icons/hi";
+// Yup Validation Schema
+import * as Yup from "yup";
+
 
 export interface AdmissionEnquiryItem {
   id: number;
@@ -19,7 +22,7 @@ export interface EnquiryField {
   labelname: string;
   name: string;
   placeholder?: string;
-  type: "text" | "email" | "select" | "checkbox" | "radio_group" | "textarea";
+  type: "text" | "email" | "select" | "checkbox" | "file" | "date" | "radio_group" | "textarea";
   options?: {
     id: number;
     name: string;
@@ -174,8 +177,7 @@ export const initialValuesForEnquiryForm = {
   consent: false,
 };
 
-// Yup Validation Schema
-import * as Yup from "yup";
+
 
 export const validationSchemaForEnquiryForm = Yup.object().shape({
   firstName: Yup.string().required("First Name is required"),

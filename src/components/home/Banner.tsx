@@ -80,7 +80,7 @@ const Banner: React.FC = () => {
 
             </Slider>
 
-            <div className={`flex justify-end space-x-2 absolute bottom-[10%] w-full border-2 left-[50%] -translate-x-[50%]   ${Classes["container"]} `}>
+            <div className={`flex justify-end space-x-2 absolute bottom-[10%] w-full  left-[50%] -translate-x-[50%]   ${Classes["container"]} `}>
                 {/* <button onClick={() => sliderRef.current?.slickPrev()}>11</button>
               <button onClick={() => sliderRef.current?.slickNext()}>22</button> */}
                 <ArrowButton onClick={() => sliderRef.current?.slickPrev()} direction="prev" colorCode={"[#000000]"} />
