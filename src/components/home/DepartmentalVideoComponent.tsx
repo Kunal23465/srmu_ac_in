@@ -60,7 +60,7 @@ export default function DepartmentalVideo() {
 
   return (
       <section className="py-7 md:py-10 lg:py-14">
-      <h2 className="text-center text-4xl font-bold mb-10">Departmental Video</h2>
+      <h2 className="text-center font36 fw600 mb-10">Departmental Video</h2>
 
       <div className="container mx-auto px-4">
         <Slider className="department-crousel" {...settings}>
@@ -79,7 +79,7 @@ export default function DepartmentalVideo() {
                         e.stopPropagation(); // prevent card click
                         setSelectedVideo(video.id);
                       }}
-                      className="bg-yellow-500 hover:bg-yellow-400 transition p-5 rounded-full shadow-xl pointer-events-auto"
+                      className="bg-[#ffb703] hover:bg-[#ffb703] transition p-5 rounded-full shadow-xl pointer-events-auto"
                     >
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-white" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M6.5 5.5l8 4.5-8 4.5v-9z" />

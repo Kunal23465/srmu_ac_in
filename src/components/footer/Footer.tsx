@@ -134,7 +134,7 @@ export const footerData = {
     {
       id: 2,
       title: "RTI",
-      path: "#",
+      path: "/rti",
     },
   ],
 

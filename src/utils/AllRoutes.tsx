@@ -451,7 +451,7 @@ export const routes = [
             path: "after-post-graduation",
             element: <AfterPostGraduationPage />,
             handle: {
-              crumb: () => <Link to="/">After Graduation</Link>,
+              crumb: () => <Link to="/">After Post Graduation</Link>,
             },
           },
           {
