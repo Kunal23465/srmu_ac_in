@@ -7,7 +7,7 @@ import { eventsData } from "../../data/home/EventsData";
 import { useNavigate } from "react-router-dom";
 
 const NewsCard = ({ image, description, date,title, onReadMore }: any) => {
-    const truncatedDesc = description.length > 300 ? description.slice(0, 300) + "..." : description;
+    const truncatedDesc = description.length > 300 ? description.slice(0, 220) + "..." : description;
 
     return (
       <div className="lg:flex items-center gap-x-5 border p-3 rounded-md border-[#ffb703] transition-all duration-200">
@@ -18,8 +18,8 @@ const NewsCard = ({ image, description, date,title, onReadMore }: any) => {
             {date}
           </div>
           <h1 className="font-bold text-xl">{title}</h1>
-          <p className="mt-2">{truncatedDesc}</p>
-          {description.length > 80 && (
+          <p className="mt-2" dangerouslySetInnerHTML={{ __html: truncatedDesc }}></p>
+          {description.length > 200 && (
             <div className="flex items-center  mt-2">
               <button
                 className=" flex items-center mt-8 bg-yellow-400 text-[#0F4A85] font-medium uppercase py-3 px-8 rounded-xl transition border border-yellow-400 hover:bg-transparent hover:text-yellow-400"
@@ -38,7 +38,7 @@ const NewsCard = ({ image, description, date,title, onReadMore }: any) => {
 };
 
 const NewsCard1 = ({ image, description, date, title,onReadMore }: any) => {
-    const truncatedDesc = description.length > 100 ? description.slice(0, 100) + "..." : description;
+    const truncatedDesc = description.length > 100 ? description.slice(0, 220) + "..." : description;
     return (
       <div className="w-full cursor-pointer">
         <img src={image} alt="Event" className="transition-all duration-200 rounded-md mb-4 w-[100%] object-cover max-h-[400px] object-bottom" />
@@ -48,9 +48,9 @@ const NewsCard1 = ({ image, description, date, title,onReadMore }: any) => {
             {date}
           </div>
           <h1 className="font-bold text-xl">{title}</h1>
-          <p className="mt-2">{truncatedDesc}</p>
-          {description.length > 220 && (
-            <div className="flex items-center justify-end mt-2">
+          <p className="mt-2" dangerouslySetInnerHTML={{ __html: truncatedDesc }}></p>
+          {description.length > 200 && (
+            <div className="flex items-center  mt-1.5">
               <button
                 className=" flex items-center mt-8 bg-yellow-400 text-[#0F4A85] font-medium uppercase py-3 px-8 rounded-xl transition border border-yellow-400 hover:bg-transparent hover:text-yellow-400"
                 onClick={onReadMore}
@@ -104,7 +104,7 @@ const navigate = useNavigate();
                 title={news.title}
                 description={news.description}
                 onReadMore={() => handleReadMore(news)}
-                guest={news.guest}
+                // guest={news.guest}
               />
             ))}
           </div>
