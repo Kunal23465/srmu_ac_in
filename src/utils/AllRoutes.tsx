@@ -81,11 +81,25 @@ import FacultyOfCivilEngineeringPage from "../pages/academics/institutes/institu
 import PlacementOverviewPage from "../pages/placement/placement-overview/PlacementOverviewPage";
 import ConferenceDetailPage from "../components/research/publication/conference/ConferenceDetailPage";
 import BtechInCSEAIAndML from "../pages/programs/btech-in-cse-ai-ml/BtechInCSEAIAndML";
-import ProgramsPage from "../pages/programs/ProgramsPage";
 import AwardOverviewPage from "../pages/about/award-overview/AwardOverviewPage";
 import DepartmentDetailPage from "../components/academics/institutes/institute-department/Institute-department/DepartmentDetailPage";
 import InstituteDepartmentPage from "../pages/academics/institutes/institute-department/InstituteDepartmentPage";
 import TransportationPage from "../pages/campus-life/facilities/transportation/TransportationPage";
+import FacultyOfBiotechnologyPage from "../pages/academics/institutes/institute-department/FacultyOfBiotechnologyPage";
+import FacultyOfPhysicalSciencesPage from "../pages/academics/institutes/institute-department/FacultyOfPhysicalSciencesPage";
+import FacultyOfMathematicalAndStatisticalSciencesPage from "../pages/academics/institutes/institute-department/FacultyOfMathematicalAndStatisticalSciencesPage";
+import FacultyOfHumanitiesAndSocialSciencesPage from "../pages/academics/institutes/institute-department/FacultyOfHumanitiesAndSocialSciencesPage";
+import CareerFormPage from "../pages/Home/CareerFormPage";
+import TermsConditionPage from "../pages/Home/TermsConditionPage";
+import HostelPage from "../pages/campus-life/facilities/HostelPage";
+import ContactUsPage from "../pages/contact-us/ContactUsPage";
+import NewsEventDetails from "../components/home/NewsEventDetails";
+import AlumniFeedbackPage from "../pages/placement/AlumniFeedbackPage";
+import OnlineAdmissionPage from "../pages/Home/OnlineAdmissionPage";
+import BlogsPage from "../pages/blog/BlogsPage";
+import BlogDetailsPage from "../pages/blog/BlogDetailsPage";
+import { blogCards } from "../data/blog/blog-data";
+import RtiPage from "../pages/rti/RtiPage";
 interface IMatches {
   pathname: string;
   params: Params<string>;
@@ -112,11 +126,21 @@ export const routes = [
           crumb: () => <Link to="/">Home</Link>,
         },
       },
-   
+      {
+        path: "career-form",
+        element: <CareerFormPage />,
+        handle: {
+          crumb: () => <Link to="/">Career Form</Link>,
+        },
+      },
+      {
+        path: "terms-condition",
+        element: <TermsConditionPage />,
+        handle: {
+          crumb: () => <Link to="/">Terms & Conditions</Link>,
+        },
+      },
 
-    
-  
-    
       {
         path: "notice",
         element: <NoticePage />,
@@ -150,7 +174,11 @@ export const routes = [
             path: "committees-and-cells",
             element: <CommitteeAndCellsPage />,
             handle: {
-              crumb: () => <Link to="/about/committees-and-cells">Committees and Cells</Link>,
+              crumb: () => (
+                <Link to="/about/committees-and-cells">
+                  Committees and Cells
+                </Link>
+              ),
             },
 
             children: committeeCards.map((card) => ({
@@ -229,7 +257,9 @@ export const routes = [
                 path: "departmentDetails/:name",
                 element: <DepartmentDetailPage />,
                 handle: {
-                  crumb: () => <Link to="/">Faculty Of Commerce And Economics</Link>,
+                  crumb: () => (
+                    <Link to="/">Faculty Of Commerce And Economics</Link>
+                  ),
                 },
               },
             ],
@@ -363,7 +393,7 @@ export const routes = [
               crumb: () => <Link to="/">Program Finder</Link>,
             },
           },
-                    {
+          {
             path: "scholarship-scheme",
             element: <ScholarshipPage />,
             handle: {
@@ -428,7 +458,11 @@ export const routes = [
             path: "b-tech-cse-artificial-intelligence-machine-learning",
             element: <BtechInCSEAIAndML />,
             handle: {
-              crumb: () => <Link to="/">B.Tech. CSE (Artificial Intelligence & Machine Learning)</Link>,
+              crumb: () => (
+                <Link to="/">
+                  B.Tech. CSE (Artificial Intelligence & Machine Learning)
+                </Link>
+              ),
             },
           },
         ],
@@ -455,6 +489,13 @@ export const routes = [
             crumb: () => <Link to="/">Transportation</Link>,
           },
         },
+          {
+            path: "hostel",
+            element: <HostelPage />,
+            handle: {
+              crumb: () => <Link to="/">Hostel</Link>,
+            },
+          },
           {
             path: "convocation",
             element: <ConvocationPage />,
@@ -584,8 +625,6 @@ export const routes = [
               })),
             ],
           },
-
-
         ],
       },
       {
@@ -614,7 +653,9 @@ export const routes = [
             path: "phd-notification-session",
             element: <PhdNotificationSessionPage />,
             handle: {
-              crumb: () => <Link to="/">Ph.D. Notification (Session: 2025-26)</Link>,
+              crumb: () => (
+                <Link to="/">Ph.D. Notification (Session: 2025-26)</Link>
+              ),
             },
           },
           {
@@ -692,6 +733,13 @@ export const routes = [
             },
           },
           {
+            path: "alumni-feedback",
+            element: <AlumniFeedbackPage />,
+            handle: {
+              crumb: () => <Link to="/">Alumni Feedback</Link>,
+            },
+          },
+          {
             path: "placement-overview",
             element: <PlacementOverviewPage />,
             handle: {
@@ -707,6 +755,63 @@ export const routes = [
         element: <AdmissionEnquiryPage />,
         handle: {
           crumb: () => <Link to="/">Admission Enquiry</Link>,
+        },
+      },
+      {
+        path: "contact-us",
+        element: <ContactUsPage />,
+        handle: {
+          crumb: () => <Link to="/">Contact Us</Link>,
+        },
+      },
+      {
+        path: "news-and-events/:name",
+        element: <NewsEventDetails />,
+        handle: {
+          crumb: () => <Link to="/">Innovation Meets Agriculture At The SRMU Kisan Mela 2025</Link>,
+
+      {
+        path: "/blogs",
+        element: <BlogsPage />,
+        handle: {
+          crumb: () => <Link to="/blogs">Blogs</Link>,
+        },
+        children: [
+          {
+            path: ":blogRouteKey",
+            element: <BlogDetailsPage />,
+            handle: {
+              crumb: (match?: any) => {
+                const key =
+                  match?.params?.blogRouteKey ??
+                  window.location.pathname.split("/").pop();
+
+                const blog = blogCards.find((b) => b.routeKey === key);
+
+                return <a>{blog?.breadcrumb ?? "Blog"}</a>;
+              },
+            },
+          },
+        ],
+      },
+
+      {
+        path: "/rti",
+        element: <RtiPage />,
+        handle: {
+          crumb: () => <Link to="/rti">RTI</Link>,
+        },
+      },
+
+
+
+
+
+      {
+        path: "/online-admission",
+        element: <OnlineAdmissionPage />,
+        handle: {
+          crumb: () => <Link to="/">Online Admission</Link>,
         },
       },
     ],

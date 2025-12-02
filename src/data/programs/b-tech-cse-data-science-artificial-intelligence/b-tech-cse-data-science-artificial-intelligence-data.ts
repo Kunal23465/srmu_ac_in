@@ -106,7 +106,7 @@ export const eligibilityDataforDataScience = {
 
 
 
-export const whyData: WhyCardProps[] = [
+export const whyDataforDataScience: WhyCardProps[] = [
   {
     img: img1,
     text: "Continuous evaluation system providing students several opportunities to improve their grades",
@@ -363,7 +363,7 @@ export const stepsforDataScience = [
 
 ];
 
-export const abc: CustomProgramPLOAccordianProps = {
+export const abcfordatascience: CustomProgramPLOAccordianProps = {
   POdata: [
     {
       id: 1,
