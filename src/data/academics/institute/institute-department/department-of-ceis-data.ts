@@ -106,7 +106,31 @@ export const instituteProfilesCSIS: InstituteProfile[] = [
 
 
 
-
+export const counterDataFor2Csis = {
+  counterData: [
+    {
+      id: 1,
+      icon: "",
+      value: "250",
+      suffix: "",
+      label: "Guest lectures",
+    },
+    {
+      id: 2,
+      icon: "",
+      value: "50",
+      suffix: "",
+      label: "Field Visits",
+    },
+    {
+      id: 3,
+      icon: "",
+      value: "20",
+      suffix: "",
+      label: "Conference & Seminars",
+    },
+  ],
+};
 
 
 export const csisIndustryIntegratedFeeTable: FeeTableData = {
@@ -417,11 +441,6 @@ export const CsisfacultyData: FacultyItem[] = [
   },
 ];
 
-export const counterForFacultyCSIS: counterDataType[] = [
-  { id: 1, value: "250", suffix: "", label: "Guest lectures" },
-  { id: 2, value: "50", suffix: "", label: "Field Visits" },
-  { id: 3, value: "20", suffix: "", label: "Conference & Seminars" },
-];
 
 
  export const csistableHeaders: Headers = {

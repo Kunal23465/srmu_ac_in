@@ -1,5 +1,5 @@
 import { customeOverViewType } from "../../../types/home-data-type";
-import { counterDataType } from "../../home/counterData";
+
 import visionImg from "../../../assets/images/academics/institutes/dept-vision.png";
 import misionImg from "../../../assets/images/academics/institutes/dept-mission.png";
 import drTabishQidwai from "../../../assets/images/academics/institutes/dr.-tabish-kidwai-.png";
@@ -32,6 +32,7 @@ import csiriitr from "../../../assets/images/academics/institutes/csir-iitr.png"
 import nukaad from "../../../assets/images/academics/institutes/nukaadNatak.pnng.png";
 import amulDairy from "../../../assets/images/academics/institutes/amulDiary.jpg";
 import industrialCsir from "../../../assets/images/academics/institutes/industrial-csir.jpg";
+import { counterDataType } from "../../about/leadership-and-governance/leadership-and-governance-data";
 
 export const facultyofBioscienceOverviewData: customeOverViewType = {
   heading: "Faculty of Biosciences",
@@ -261,12 +262,31 @@ export const facultyDetailsOfBioScienceDepartment: FacultyItem[] = [
   },
 ];
 
-export const counterDataForPlacedStudentsOFBioscience: counterDataType[] = [
-  { id: 1, value: "125", suffix: "", label: "Guest lectures" },
-  { id: 2, value: "50", suffix: "", label: "Field Visits" },
-  { id: 3, value: "15", suffix: "", label: "Conference & Seminars" },
-];
-
+export const counterDataForPlacedStudentsOFBioscience = {
+  counterData: [
+    {
+      id: 1,
+      icon: "",
+      value: "125",
+      suffix: "",
+      label: "Guest lectures",
+    },
+    {
+      id: 2,
+      icon: "",
+      value: "50",
+      suffix: "",
+      label: "Field Visits",
+    },
+    {
+      id: 3,
+      icon: "",
+      value: "15",
+      suffix: "",
+      label: "Conference & Seminars",
+    },
+  ],
+};
 export const bioscienceHighlightsData: departmentHighlightscardType[] = [
   {
     image: studentsupport,

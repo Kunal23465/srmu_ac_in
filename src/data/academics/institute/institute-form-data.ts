@@ -12,6 +12,16 @@ import instituteofedu from "../../../assets/images/academics/institutes/economic
 import instituteofpolytech from "../../../assets/images/academics/institutes/polytechnic11-08022412560314.jpg";
 import * as Yup from "yup";
 import { instituteCourseCardData, InstituteofManagementCommerceandEconomicsinstituteProfiles, InstituteofManagementCommerceandEconomicsOverviewData, InstituteofManagementCommerceandEconomicsTopFooterData, InstituteofManagementCommerceandEconomicsvisionMissionData } from "./institute-department/institute-of-management-commerce-and-economics-data/institute-of-management-commerce-and-economics-data";
+import { instituteofTechnologyCourseCardData, InstituteofTechnologyOverviewData, InstituteofTechnologyTopFooterData, visionMissionData } from "./institute-department/institute-of-technology-data";
+import { InstituteofBiosciencesandTechnologyinstituteCourseCardData, InstituteofBiosciencesandTechnologyinstituteProfiles, InstituteofBiosciencesandTechnologyOverviewData, InstituteofBiosciencesandTechnologyTopFooterData, InstituteofBiosciencesandTechnologyvisionMissionData } from "./institute-department/institute-of-biosciences-and-technology-data";
+import { InstituteofMediaStudiesCounterData1, InstituteofMediaStudiesCounterData2, InstituteofMediaStudiesData1, InstituteofMediaStudiesData2, InstituteofMediaStudiesDepartmentEventsData, InstituteofMediaStudiesdepartmentHighlights, InstituteofMediaStudiesfacultyData, InstituteofMediaStudiesOverviewData, InstituteofMediaStudiesplacedStudents, InstituteofMediaStudiesProfiles, InstituteofMediaStudiesVMData } from "./institute-department/institute-of-media-studies-data";
+import { InstituteofPharmaceuticalSciencesCounterData1, InstituteofPharmaceuticalSciencesCounterData2, InstituteofPharmaceuticalSciencesData1, InstituteofPharmaceuticalSciencesfacultyData, InstituteofPharmaceuticalSciencesinstituteProfiles, InstituteofPharmaceuticalSciencesOverviewData, InstituteofPharmaceuticalSciencesVMData } from "./institute-department/institute-of-pharmaceutical-sciences-data";
+import { InstituteofAgriculturalSciencesandTechnologyCounterData2, InstituteofAgriculturalSciencesandTechnologyData1, InstituteofAgriculturalSciencesandTechnologyData2, InstituteofAgriculturalSciencesandTechnologyDepartmentEventsData, InstituteofAgriculturalSciencesandTechnologydepartmentHighlights, InstituteofAgriculturalSciencesandTechnologyfacultyData, InstituteofAgriculturalSciencesandTechnologyinstituteProfiles, InstituteofAgriculturalSciencesandTechnologyOverviewData, InstituteofAgriculturalSciencesandTechnologyplacedStudents, InstituteofAgriculturalSciencesandTechnologyVMData } from "./institute-department/institute-of-agricultural-sciences-and-technology-data";
+import { InstituteofLegalStudiesCounterData1, InstituteofLegalStudiesCounterData2, InstituteofLegalStudiesData1, InstituteofLegalStudiesData2, InstituteofLegalStudiesData3, InstituteofLegalStudiesDepartmentEventsData, InstituteofLegalStudiesdepartmentHighlights, InstituteofLegalStudiesfacultyData, InstituteofLegalStudiesOverviewData, InstituteofLegalStudiesplacedStudents, InstituteofLegalStudiesVMData } from "./institute-department/institute-of-legal-studies-data";
+import { InstituteofPharmacyCounterData1, InstituteofPharmacyCounterData2, InstituteofPharmacyData1, InstituteofPharmacyDepartmentEventsData, InstituteofPharmacydepartmentHighlights, InstituteofPharmacyfacultyData, InstituteofPharmacyinstituteProfiles, InstituteofPharmacyOverviewData, InstituteofPharmacyplacedStudents, InstituteofPharmacyVMData } from "./institute-department/institute-of-pharmacy-data";
+import { InstituteofEducationandResearchCounterData1, InstituteofEducationandResearchCounterData2, InstituteofEducationandResearchData1, InstituteofEducationandResearchData2, InstituteofEducationandResearchDepartmentEventsData, InstituteofEducationandResearchdepartmentHighlights, InstituteofEducationandResearchfacultyData, InstituteofEducationandResearchinstituteProfiles, InstituteofEducationandResearchOverviewData, InstituteofEducationandResearchplacedStudents, InstituteofEducationandResearchVMData } from "./institute-department/institute-of-education-and-research-data";
+import { SRMUPolytechnicCounterData2, SRMUPolytechnicData1, SRMUPolytechnicDepartmentEventsData, SRMUPolytechnicdepartmentHighlights, SRMUPolytechnicfacultyData, SRMUPolytechnicinstituteProfiles, SRMUPolytechnicOverviewData, SRMUPolytechnicplacedStudents, SRMUPolytechnicVMData } from "./institute-department/srmu-polytechnic-data";
+import { InstituteofNaturalSciencesandHumanitiesinstituteCourseCardData, InstituteofNaturalSciencesandHumanitiesinstituteProfiles, InstituteofNaturalSciencesandHumanitiesOverviewData, InstituteofNaturalSciencesandHumanitiesTopFooterData, InstituteofNaturalSciencesandHumanitiesvisionMissionData } from "./institute-department/institute-of-natural-sciences-and-humanities-data";
 
 
 
@@ -40,7 +50,14 @@ export const institutes: Institute[] = [
       "The Institute of Technology is committed to provide focused learning in the fields of engineering with an aim of creating human resources with knowledge and skills to contribute successfully to a complex world.",
     departments: 5,
     image: instituteoftech,
-    path: "/academics/institutes-info/institute-of-technology",
+    path: "institute-of-technology",
+    departmentsData: {
+      overviewData: InstituteofTechnologyOverviewData,
+      visionMissionData: visionMissionData,
+      profileCardData: null,
+      instituteCourseCardData: instituteofTechnologyCourseCardData,
+      footerData: InstituteofTechnologyTopFooterData
+    }
   },
   {
     id: 2,
@@ -49,7 +66,14 @@ export const institutes: Institute[] = [
       "Biotechnology encompasses the applications of understanding of the biological systems to improve human life by addressing challenges and issues facing agricultural sciences, medical sciences, food sciences, etc.",
     departments: 3,
     image: instituteofbio,
-    path: "/academics/institutes-info/institute-of-biosciences-and-technology",
+    path: "institute-of-biosciences-and-technology",
+    departmentsData: {
+      overviewData: InstituteofBiosciencesandTechnologyOverviewData,
+      visionMissionData: InstituteofBiosciencesandTechnologyvisionMissionData,
+      profileCardData: InstituteofBiosciencesandTechnologyinstituteProfiles,
+      instituteCourseCardData: InstituteofBiosciencesandTechnologyinstituteCourseCardData,
+      footerData: InstituteofBiosciencesandTechnologyTopFooterData
+    }
   },
   {
     id: 3,
@@ -74,7 +98,22 @@ export const institutes: Institute[] = [
       "Journalism and Mass Communication study is an encouragement to think about the forces involved in giving it shape. Mass Media industry is one of the fastest growing industries with the mission of social conscience.",
     departments: 1,
     image: instituteofmedia,
-    path: "/academics/institutes-info/institute-of-media-studies",
+    path: "institute-of-media-studies",
+    departmentsData: {
+      overviewData: InstituteofMediaStudiesOverviewData,
+      counterData: InstituteofMediaStudiesCounterData1,
+      mvData: InstituteofMediaStudiesVMData,
+      departmentHeadData: InstituteofMediaStudiesProfiles,
+      feeTableData: {
+        tab1: { label: "Postgraduate", data: InstituteofMediaStudiesData1 },
+        tab2: { label: "Undergraduate", data: InstituteofMediaStudiesData2 },
+      },
+      facultyData: InstituteofMediaStudiesfacultyData,
+      departmentHighlightsData: InstituteofMediaStudiesdepartmentHighlights,
+      counterData2: InstituteofMediaStudiesCounterData2,
+      placedStudentsData: InstituteofMediaStudiesplacedStudents,
+      eventsData: InstituteofMediaStudiesDepartmentEventsData
+    }
   },
   {
     id: 5,
@@ -83,7 +122,14 @@ export const institutes: Institute[] = [
       "The Institute boasts of being the heart and soul of the University as its various disciplines of knowledge is essentially required with all the academic programs that run across the University.",
     departments: 4,
     image: instituteofnatural,
-    path: "/academics/institutes-info/institute-of-natural-sciences-and-humanities",
+    path: "institute-of-natural-sciences-and-humanities",
+    departmentsData: {
+      overviewData: InstituteofNaturalSciencesandHumanitiesOverviewData,
+      visionMissionData: InstituteofNaturalSciencesandHumanitiesvisionMissionData,
+      profileCardData: InstituteofNaturalSciencesandHumanitiesinstituteProfiles,
+      instituteCourseCardData: InstituteofNaturalSciencesandHumanitiesinstituteCourseCardData,
+      footerData: InstituteofNaturalSciencesandHumanitiesTopFooterData
+    }
   },
   {
     id: 6,
@@ -91,7 +137,21 @@ export const institutes: Institute[] = [
     description: "Due to its integration of chemistry and health sciences, pharmaceutical science is both a unique field and extremely important to human survival.",
     departments: 1,
     image: instituteofpharmaceutical,
-    path: "/academics/institutes-info/institute-of-pharmaceutical-sciences1",
+    path: "institute-of-pharmaceutical-sciences1",
+    departmentsData: {
+      overviewData: InstituteofPharmaceuticalSciencesOverviewData,
+      counterData: InstituteofPharmaceuticalSciencesCounterData1,
+      mvData: InstituteofPharmaceuticalSciencesVMData,
+      departmentHeadData: InstituteofPharmaceuticalSciencesinstituteProfiles,
+      feeTableData: {
+        tab1: { label: "Undergraduate", data: InstituteofPharmaceuticalSciencesData1 },
+      },
+      facultyData: InstituteofPharmaceuticalSciencesfacultyData,
+      departmentHighlightsData: null,
+      counterData2: InstituteofPharmaceuticalSciencesCounterData2,
+      placedStudentsData: null,
+      eventsData: null
+    }
   },
   {
     id: 7,
@@ -100,7 +160,22 @@ export const institutes: Institute[] = [
       "The Indian Council of Agricultural Sciences has already recognized the B.Sc.(Hons.) Agriculture 4 Years as a professional Degree with consequential benefits to the Students.",
     departments: 1,
     image: instituteofagri,
-    path: "/academics/institutes-info/institute-of-agricultural-sciences-and-technology",
+    path: "institute-of-agricultural-sciences-and-technology",
+    departmentsData: {
+      overviewData: InstituteofAgriculturalSciencesandTechnologyOverviewData,
+      counterData: InstituteofLegalStudiesCounterData1,
+      mvData: InstituteofAgriculturalSciencesandTechnologyVMData,
+      departmentHeadData: InstituteofAgriculturalSciencesandTechnologyinstituteProfiles,
+      feeTableData: {
+        tab1: { label: "Postgraduate", data: InstituteofAgriculturalSciencesandTechnologyData1 },
+        tab2: { label: "Undergraduate", data: InstituteofAgriculturalSciencesandTechnologyData2 },
+      },
+      facultyData: InstituteofAgriculturalSciencesandTechnologyfacultyData,
+      departmentHighlightsData: InstituteofAgriculturalSciencesandTechnologydepartmentHighlights,
+      counterData2: InstituteofAgriculturalSciencesandTechnologyCounterData2,
+      placedStudentsData: InstituteofAgriculturalSciencesandTechnologyplacedStudents,
+      eventsData: InstituteofAgriculturalSciencesandTechnologyDepartmentEventsData
+    }
   },
   {
     id: 8,
@@ -109,7 +184,23 @@ export const institutes: Institute[] = [
       "The Institute of Legal Studies is a convergence of academic, cultural and intellectual resources. It aims at achieving the highest levels of distinction in the innovation and transmission of knowledge and understanding.",
     departments: 1,
     image: instituteoflegal,
-    path: "/academics/institutes-info/institute-of-legal-studies1",
+    path: "institute-of-legal-studies1",
+    departmentsData: {
+      overviewData: InstituteofLegalStudiesOverviewData,
+      counterData: InstituteofPharmaceuticalSciencesCounterData1,
+      mvData: InstituteofLegalStudiesVMData,
+      departmentHeadData: InstituteofAgriculturalSciencesandTechnologyinstituteProfiles,
+      feeTableData: {
+        tab1: { label: "Integrated", data: InstituteofLegalStudiesData1 },
+        tab2: { label: "Postgraduate", data: InstituteofLegalStudiesData2 },
+        tab3: { label: "Undergraduate", data: InstituteofLegalStudiesData3 },
+      },
+      facultyData: InstituteofLegalStudiesfacultyData,
+      departmentHighlightsData: InstituteofLegalStudiesdepartmentHighlights,
+      counterData2: InstituteofLegalStudiesCounterData2,
+      placedStudentsData: InstituteofLegalStudiesplacedStudents,
+      eventsData: InstituteofLegalStudiesDepartmentEventsData
+    }
   },
   {
     id: 9,
@@ -118,7 +209,23 @@ export const institutes: Institute[] = [
       "Pharmacy is one of the unique professions and also very vital for the sustenance of human lives as it involves the combination of chemical science with health sciences.",
     departments: 1,
     image: instituteofpharmacy,
-    path: "/academics/institutes-info/institute-of-pharmacy",
+    path: "institute-of-pharmacy",
+    
+    departmentsData: {
+      overviewData: InstituteofPharmacyOverviewData,
+      counterData: InstituteofPharmacyCounterData1,
+      mvData: InstituteofPharmacyVMData,
+      departmentHeadData: InstituteofPharmacyinstituteProfiles,
+      feeTableData: {
+       
+        tab1: { label: "Undergraduate", data: InstituteofPharmacyData1 },
+      },
+      facultyData: InstituteofPharmacyfacultyData,
+      departmentHighlightsData: InstituteofPharmacydepartmentHighlights,
+      counterData2: InstituteofPharmacyCounterData2,
+      placedStudentsData: InstituteofPharmacyplacedStudents,
+      eventsData: InstituteofPharmacyDepartmentEventsData
+    }
   },
   {
     id: 10,
@@ -127,7 +234,22 @@ export const institutes: Institute[] = [
       "Institute of Education and Research, Shri Ramswoop Memorial University offers Bachelor's degree course. Institute tries its best to produce teachers embodied with traditions values.",
     departments: 1,
     image: instituteofedu,
-    path: "/academics/institutes-info/institute-of-education-and-research",
+    path: "institute-of-education-and-research",
+    departmentsData: {
+      overviewData: InstituteofEducationandResearchOverviewData,
+      counterData: InstituteofEducationandResearchCounterData1,
+      mvData: InstituteofEducationandResearchVMData,
+      departmentHeadData: InstituteofEducationandResearchinstituteProfiles,
+      feeTableData: {
+        tab1: { label: "Postgraduate", data: InstituteofEducationandResearchData1 },
+        tab2: { label: "Undergraduate", data: InstituteofEducationandResearchData2 },
+      },
+      facultyData: InstituteofEducationandResearchfacultyData,
+      departmentHighlightsData: InstituteofEducationandResearchdepartmentHighlights,
+      counterData2: InstituteofEducationandResearchCounterData2,
+      placedStudentsData: InstituteofEducationandResearchplacedStudents,
+      eventsData: InstituteofEducationandResearchDepartmentEventsData
+    }
   },
   {
     id: 11,
@@ -136,7 +258,21 @@ export const institutes: Institute[] = [
       "The Institute was established during the academic session 2015-16 and commenced its curriculum for Diploma in Mechanical, Civil, Electrical, Electronics and Communication and Computer Science Engineering.",
     departments: 1,
     image: instituteofpolytech,
-    path: "/academics/institutes-info/srmu-polytechnic1",
+    path: "srmu-polytechnic1",
+    departmentsData: {
+      overviewData: SRMUPolytechnicOverviewData,
+      counterData: InstituteofEducationandResearchCounterData1,
+      mvData: SRMUPolytechnicVMData,
+      departmentHeadData: SRMUPolytechnicinstituteProfiles,
+      feeTableData: {
+        tab1: { label: "Polytechnic (Diploma)", data: SRMUPolytechnicData1 },
+      },
+      facultyData: SRMUPolytechnicfacultyData,
+      departmentHighlightsData: SRMUPolytechnicdepartmentHighlights,
+      counterData2: SRMUPolytechnicCounterData2,
+      placedStudentsData: SRMUPolytechnicplacedStudents,
+      eventsData: SRMUPolytechnicDepartmentEventsData
+    }
   },
 ];
 

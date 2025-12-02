@@ -22,7 +22,7 @@ export interface EnquiryField {
   labelname: string;
   name: string;
   placeholder?: string;
-  type: "text" | "email" | "select" | "checkbox" | "file" | "date";
+  type: "text" | "email" | "select" | "checkbox" | "file" | "date" | "radio_group" | "textarea";
   options?: {
     id: number;
     name: string;
