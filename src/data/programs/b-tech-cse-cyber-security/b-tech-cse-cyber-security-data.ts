@@ -108,7 +108,7 @@ Ethical Hacking &amp; Penetration Testing<br/>
 };
 
 
-export const whyData: WhyCardProps[] = [
+export const whyDataforCyberSecurity: WhyCardProps[] = [
     {
         img: img1,
         text: "Continuous evaluation system providing students several opportunities to improve their grades",
@@ -336,7 +336,7 @@ export const partnerDataforCyberSecurity = [
 
 
 
-export const abc: CustomProgramPLOAccordianProps = {
+export const abcforcybersecurity: CustomProgramPLOAccordianProps = {
     POdata: [
         {
             id: 1,

@@ -335,7 +335,7 @@ export const HeaderData = [
               },
               {
                 item: "Alumni Feedback",
-                path: "#",
+                path: "/placements/alumni-feedback",
               },
               {
                 item: "Alumni Testimonials",

@@ -84,8 +84,14 @@ import BtechInCSEAIAndML from "../pages/programs/btech-in-cse-ai-ml/BtechInCSEAI
 import AwardOverviewPage from "../pages/about/award-overview/AwardOverviewPage";
 import DepartmentDetailPage from "../components/academics/institutes/institute-department/Institute-department/DepartmentDetailPage";
 import InstituteDepartmentPage from "../pages/academics/institutes/institute-department/InstituteDepartmentPage";
+import ContactUsPage from "../pages/contact-us/ContactUsPage";
+import NewsEventDetails from "../components/home/NewsEventDetails";
 import AlumniFeedbackPage from "../pages/placement/AlumniFeedbackPage";
 import OnlineAdmissionPage from "../pages/Home/OnlineAdmissionPage";
+import BlogsPage from "../pages/blog/BlogsPage";
+import BlogDetailsPage from "../pages/blog/BlogDetailsPage";
+import { blogCards } from "../data/blog/blog-data";
+import RtiPage from "../pages/rti/RtiPage";
 interface IMatches {
   pathname: string;
   params: Params<string>;
@@ -113,7 +119,7 @@ export const routes = [
         },
       },
 
-      { 
+      {
         path: "notice",
         element: <NoticePage />,
         handle: {
@@ -716,6 +722,56 @@ export const routes = [
         },
       },
       {
+        path: "contact-us",
+        element: <ContactUsPage />,
+        handle: {
+          crumb: () => <Link to="/">Contact Us</Link>,
+        },
+      },
+      {
+        path: "news-and-events/:name",
+        element: <NewsEventDetails />,
+        handle: {
+          crumb: () => <Link to="/">Innovation Meets Agriculture At The SRMU Kisan Mela 2025</Link>,
+
+      {
+        path: "/blogs",
+        element: <BlogsPage />,
+        handle: {
+          crumb: () => <Link to="/blogs">Blogs</Link>,
+        },
+        children: [
+          {
+            path: ":blogRouteKey",
+            element: <BlogDetailsPage />,
+            handle: {
+              crumb: (match?: any) => {
+                const key =
+                  match?.params?.blogRouteKey ??
+                  window.location.pathname.split("/").pop();
+
+                const blog = blogCards.find((b) => b.routeKey === key);
+
+                return <a>{blog?.breadcrumb ?? "Blog"}</a>;
+              },
+            },
+          },
+        ],
+      },
+
+      {
+        path: "/rti",
+        element: <RtiPage />,
+        handle: {
+          crumb: () => <Link to="/rti">RTI</Link>,
+        },
+      },
+
+
+
+
+
+      {
         path: "/online-admission",
         element: <OnlineAdmissionPage />,
         handle: {
@@ -745,9 +801,8 @@ function Breadcrumbs() {
   // console.log("matches", matches[1].pathname);
   return (
     <section
-      className={`banner-section ${
-        matches[1].pathname === "/abhivyakti" ? "abhivyakt" : ""
-      } flex items-center `}
+      className={`banner-section ${matches[1].pathname === "/abhivyakti" ? "abhivyakt" : ""
+        } flex items-center `}
     >
       <div className={`${Classes["container"]} `}>
         <div className={`${Classes["page-title-content"]}`}>
