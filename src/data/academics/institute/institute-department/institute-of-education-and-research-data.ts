@@ -39,38 +39,11 @@ export const InstituteofEducationandResearchTopFooterData = [
   },
 ];
 
-
-
-export const InstituteofEducationandResearchCounterData1 = {
-  counterData: [
-    {
-      id: 1,
-      icon: "",
-      value: "2014",
-      suffix: "",
-      label: "Established"
-    },
-    {
-      id: 2,
-      icon: "",
-      value: "6",
-      suffix: "",
-      label: "Faculty & Staff"
-    },
-    {
-      id: 3,
-      icon: "",
-      value: "150",
-      suffix: "",
-      label: "Students"
-    },
-
-  ],
-
-  // Optional classes (can be null or ignored if unused)
-  classes: "",
-  aboutusClass: ""
-};
+export const InstituteofEducationandResearchCounterData1: counterDataType[] = [
+  { id: 1, value: "2014", suffix: "", label: "Established" },
+  { id: 2, value: "6", suffix: "", label: "Faculty & Staff" },
+  { id: 3, value: "150", suffix: "", label: "Students" },
+];
 
 
 export const InstituteofEducationandResearchCounterData2 = {

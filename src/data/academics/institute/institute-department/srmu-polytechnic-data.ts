@@ -45,37 +45,12 @@ export const SRMUPolytechnicTopFooterData = [
 ];
 
 
+export const SRMUPolytechnicCounterData1: counterDataType[] = [
+  { id: 1, value: "2015", suffix: "", label: "Established" },
+  { id: 2, value: "23", suffix: "", label: "Faculty & Staff" },
+  { id: 3, value: "600", suffix: "", label: "Students" },
+];
 
-export const SRMUPolytechnicCounterData1 = {
-  counterData: [
-    {
-      id: 1,
-      icon: "",
-      value: "2015",
-      suffix: "",
-      label: "Established"
-    },
-    {
-      id: 2,
-      icon: "",
-      value: "23",
-      suffix: "",
-      label: "Faculty & Staff"
-    },
-    {
-      id: 3,
-      icon: "",
-      value: "600",
-      suffix: "",
-      label: "Students"
-    },
-
-  ],
-
-  // Optional classes (can be null or ignored if unused)
-  classes: "",
-  aboutusClass: ""
-};
 
 export const SRMUPolytechnicCounterData2 = {
   counterData: [
@@ -609,6 +584,7 @@ import img8 from "../../../../assets/images/academics/departments/workship2-0905
 import img9 from "../../../../assets/images/academics/departments/internation1-09052401044878.jpg";
 import img10 from "../../../../assets/images/academics/departments/national2-09052401045858.jpg";
 import { EventItem } from "../../../../utils/custom/CustomEventListCard";
+import { counterDataType } from "../../../home/counterData";
 
 
 export const SRMUPolytechnicDepartmentEventsData: EventItem[] = [
