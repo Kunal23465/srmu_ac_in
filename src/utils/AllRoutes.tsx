@@ -84,6 +84,13 @@ import BtechInCSEAIAndML from "../pages/programs/btech-in-cse-ai-ml/BtechInCSEAI
 import AwardOverviewPage from "../pages/about/award-overview/AwardOverviewPage";
 import DepartmentDetailPage from "../components/academics/institutes/institute-department/Institute-department/DepartmentDetailPage";
 import InstituteDepartmentPage from "../pages/academics/institutes/institute-department/InstituteDepartmentPage";
+import FacultyOfBiotechnologyPage from "../pages/academics/institutes/institute-department/FacultyOfBiotechnologyPage";
+import FacultyOfPhysicalSciencesPage from "../pages/academics/institutes/institute-department/FacultyOfPhysicalSciencesPage";
+import FacultyOfMathematicalAndStatisticalSciencesPage from "../pages/academics/institutes/institute-department/FacultyOfMathematicalAndStatisticalSciencesPage";
+import FacultyOfHumanitiesAndSocialSciencesPage from "../pages/academics/institutes/institute-department/FacultyOfHumanitiesAndSocialSciencesPage";
+import CareerFormPage from "../pages/Home/CareerFormPage";
+import TermsConditionPage from "../pages/Home/TermsConditionPage";
+import HostelPage from "../pages/campus-life/facilities/HostelPage";
 import ContactUsPage from "../pages/contact-us/ContactUsPage";
 import NewsEventDetails from "../components/home/NewsEventDetails";
 import AlumniFeedbackPage from "../pages/placement/AlumniFeedbackPage";
@@ -116,6 +123,20 @@ export const routes = [
         element: <HomePage />,
         handle: {
           crumb: () => <Link to="/">Home</Link>,
+        },
+      },
+      {
+        path: "career-form",
+        element: <CareerFormPage />,
+        handle: {
+          crumb: () => <Link to="/">Career Form</Link>,
+        },
+      },
+      {
+        path: "terms-condition",
+        element: <TermsConditionPage />,
+        handle: {
+          crumb: () => <Link to="/">Terms & Conditions</Link>,
         },
       },
 
@@ -458,6 +479,13 @@ export const routes = [
             element: <FacilitiesPage />,
             handle: {
               crumb: () => <Link to="/">Facilities</Link>,
+            },
+          },
+          {
+            path: "hostel",
+            element: <HostelPage />,
+            handle: {
+              crumb: () => <Link to="/">Hostel</Link>,
             },
           },
           {
