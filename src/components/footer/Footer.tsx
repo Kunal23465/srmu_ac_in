@@ -147,7 +147,7 @@ export const footerData = {
     {
       id: 1,
       title: "Newsletter",
-      path: "#",
+      path: "/news-letter",
     },
     {
       id: 2,

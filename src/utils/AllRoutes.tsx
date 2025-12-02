@@ -100,6 +100,7 @@ import BlogDetailsPage from "../pages/blog/BlogDetailsPage";
 import { blogCards } from "../data/blog/blog-data";
 import RtiPage from "../pages/rti/RtiPage";
 import TransportationPage from "../pages/campus-life/facilities/transportation/TransportationPage";
+import NewsLetterPage from "../pages/Home/NewsLetterPage";
 interface IMatches {
   pathname: string;
   params: Params<string>;
@@ -140,7 +141,13 @@ export const routes = [
           crumb: () => <Link to="/">Terms & Conditions</Link>,
         },
       },
-
+      {
+        path: "news-letter",
+        element: <NewsLetterPage />,
+        handle: {
+          crumb: () => <Link to="/">Newsletter</Link>,
+        },
+      },
       {
         path: "notice",
         element: <NoticePage />,
