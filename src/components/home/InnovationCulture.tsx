@@ -34,15 +34,9 @@ export default function InnovationCulture() {
             </ul>
           </div>
 
-<<<<<<< HEAD
           <Link
             to="/research/overview"
             className="inline-flex items-center cursor-pointer mt-8 gap-2 bg-[#ffb703] text-[#023047] fw500 uppercase py-3 px-8 rounded-xl transition border border-[#ffb703] hover:bg-transparent hover:text-[#ffb703]"
-=======
-          <a
-            href="/research/overview"
-            className="inline-flex items-center mt-8 bg-yellow-400 text-[#0F4A85] font-medium uppercase py-3 px-8 rounded-xl transition border border-yellow-400 hover:bg-transparent hover:text-yellow-400"
->>>>>>> 244cbf5b6cef6d620f006913e814d62555b80fd5
           >
             Know More <LiaLongArrowAltRightSolid size={24} />
           </Link>
