@@ -68,14 +68,14 @@ export const ArrowButton = ({ onClick, direction, colorCode }: { onClick: () => 
   <>
     {colorCode === "[#ffb703]" ? (
       <>
-        <button onClick={onClick} className={`rounded-full border-2 border-${colorCode} w-8 h-8 sm:w-12 sm:h-12 flex items-center justify-center hover:border-[#233E6F]`}>
-          <IoIosArrowBack className={`text-${colorCode} w-9 h-9 ${direction === "next" ? "transform rotate-180" : ""} hover:text-[#233E6F]`} />
+        <button onClick={onClick} className={` border-2 border-${colorCode} w-8 h-8 sm:w-12 sm:h-12 flex items-center justify-center hover:border-[#233E6F]!`}>
+          <IoIosArrowBack className={`text-${colorCode} w-9 h-9 ${direction === "next" ? "transform rotate-180" : ""} hover:text-[#ffffff]!`} />
         </button>
       </>
     ) : (
       <>
-        <button onClick={onClick} className={`rounded-full border-2 border-${colorCode} w-12 h-12 flex items-center justify-center hover:border-[#ffb703]`}>
-          <IoIosArrowBack className={`text-${colorCode} w-9 h-9 ${direction === "next" ? "transform rotate-180" : ""} hover:text-[#ffb703]`} />
+        <button onClick={onClick} className={` border-2 border-${colorCode} w-12 h-12 flex items-center justify-center hover:bg-[#233E6F]`}>
+          <IoIosArrowBack className={`text-${colorCode} w-9 h-9 ${direction === "next" ? "transform rotate-180" : ""} hover:text-[#ffffff]`} />
         </button>
       </>
     )}
