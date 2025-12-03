@@ -1,11 +1,11 @@
-import event1 from "../../assets/images/home/events/event1.jpg";
-import event2 from "../../assets/images/home/events/event2.jpg";
-import event3 from "../../assets/images/home/events/event3.jpg";
+import event1 from "../../assets/images/home/events/photo-2-19112503363848.jpeg";
+import event2 from "../../assets/images/home/events/photo-3-1--19112503413782.jpeg";
+import event3 from "../../assets/images/home/events/sr7d9018-1-1--06112511295974.jpg";
 // import event4 from "../../assets/images/home/events/event4.jpg";
 export const eventsData = [
   {
     id: 1,
-    image: event2, // Replace with actual image URLs
+    image: event3, // Replace with actual image URLs
     date: "November 03, 2025",
     title: "Expert Talk Session on Smart Meter Implementation: Data Science & Cybersecurity in AMI",
     description: `
@@ -30,7 +30,7 @@ export const eventsData = [
   },
   {
     id: 2,
-    image: event3, // Replace with actual image URLs
+    image: event1, // Replace with actual image URLs
     date: "November 14, 2025",
     title: 'Innovation Meets Agriculture at the SRMU Kisan Mela 2025"',
     description: `
@@ -42,7 +42,7 @@ export const eventsData = [
   },
   {
     id: 3,
-    image: event1, // Replace with actual image URLs
+    image: event2, // Replace with actual image URLs
     date: "November 11, 2025",
     title: "Empowering Future Engineers: L&T EduTech AI Lab Opens at SRMU",
     description: `
