@@ -20,12 +20,7 @@ const OverviewComp = () => {
         <CardList />
       </div>
       <AdvantageSlider />
-
-
-      <div className={`${Classes["container"]}`}>
         <LastMenu />
-
-      </div>
 
             <CustomTopFooter data={CustomTopFooterData1} />
 
