@@ -12,15 +12,21 @@ const WomenEmpowermentComp = () => {
         <div>
             <div className={`${Classes["container"]}`}>
                 <CustomOverviewSection data={WomenEmpowerOverviewData} />
-                
+
             </div>
 
-            <ImageSection/>
+
+            <div className="women">
+                <div className={`${Classes["container"]}`}>
+                    <ImageSection />
+                </div>
+            </div>
+
 
             <div className={`${Classes["container"]}`}>
-                <CardModalSection/>
+                <CardModalSection />
             </div>
-             <CustomTopFooter data={feeStructureCustomTopFooter} />
+            <CustomTopFooter data={feeStructureCustomTopFooter} />
         </div>
     )
 }

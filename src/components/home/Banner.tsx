@@ -1,6 +1,7 @@
 import React from "react";
 import Classes from "../../utils/styles/Global.module.css";
 import banner4 from "../../assets/images/home/banner-bg.jpg";
+import viewmorepdf from "../../assets/pdf/home/aa-career-360-270125114337.pdf"
 
 import Slider from "react-slick";
 
@@ -18,8 +19,8 @@ const Banner: React.FC = () => {
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
-        // autoplay: true,
-        autoplaySpeed: 2000,
+        autoplay: true,
+        autoplaySpeed: 3000,
         pauseOnHover: true,
     };
 
@@ -33,7 +34,7 @@ const Banner: React.FC = () => {
                     <div className="relative">
                         <img className="w-full min-h-[530px] sm:min-h-[600px] md:min-h-[800px] max-h-[calc(100vh-120px)] object-cover" src={banner4} alt="Banner" />
 
-                        <div className="overlay bg-[#0000004d] absolute top-0 left-0 w-full h-full flex pt-10 sm:pt-0 items-center ">
+                        <div className="overlay bg-[#0000000d] absolute top-0 left-0 w-full h-full flex pt-10 sm:pt-0 items-center ">
                             <div className={Classes["container"]}>
                                 <div className=" text-white px-5 py-5 md:py-10 rounded-tl-[50px] transition-all ease-in-out duration-300 rounded-br-[50px] hover:rounded-tl-none hover:rounded-br-none  hover:rounded-tr-[50px] hover:rounded-bl-[50px]">
                                     <div className="text-[20px] mb-4 " >Cheers to Success!!</div>
@@ -41,7 +42,10 @@ const Banner: React.FC = () => {
                                     <div className="text-[21px]" >Certified Excellence: Our Commitment to Quality and Standards</div>
 
                                     <div className="mt-10">
-                                        <button className="bg-[#ffb703] uppercase cursor-pointer  py-4 px-5 text-[#023047] flex gap-x-2 items-center rounded-lg">Know More <LiaLongArrowAltRightSolid size={24} /></button>
+                                        <a href={viewmorepdf} target="_blank">
+                                            <button className="bg-[#ffb703] uppercase cursor-pointer fw500 hover:bg-transparent hover:border hover:border-[#ffb703] hover:text-[#ffb703]  py-4 px-5 text-[#023047] flex gap-x-2 items-center rounded-lg">Know More <LiaLongArrowAltRightSolid size={24} /></button>
+
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -54,7 +58,7 @@ const Banner: React.FC = () => {
                     <div className="relative">
                         <img className="w-full min-h-[530px] sm:min-h-[600px] md:min-h-[800px] max-h-[calc(100vh-120px)] object-cover" src={banner4} alt="Banner" />
 
-                        <div className="overlay bg-[#0000004d] absolute top-0 left-0 w-full h-full flex pt-10 sm:pt-0 items-center ">
+                        <div className="overlay bg-[#0000000d] absolute top-0 left-0 w-full h-full flex pt-10 sm:pt-0 items-center ">
                             <div className={Classes["container"]}>
                                 <div className=" text-white px-5 py-5 md:py-10 rounded-tl-[50px] transition-all ease-in-out duration-300 rounded-br-[50px] hover:rounded-tl-none hover:rounded-br-none  hover:rounded-tr-[50px] hover:rounded-bl-[50px]">
                                     <div className="text-[20px] mb-4 " >Celebrating Excellence</div>
@@ -62,7 +66,10 @@ const Banner: React.FC = () => {
                                     <div className="text-[21px]" >Making it one of the Best B-Schools in the country in 2025</div>
 
                                     <div className="mt-10">
-                                        <button className="bg-[#ffb703] uppercase cursor-pointer  py-4 px-5 text-[#023047] flex gap-x-2 items-center rounded-lg">View More <LiaLongArrowAltRightSolid size={24} /></button>
+                                        <a href={viewmorepdf} target="_blank">
+                                            <button className="bg-[#ffb703] uppercase cursor-pointer fw500 hover:bg-transparent hover:border hover:border-[#ffb703] hover:text-[#ffb703]  py-4 px-5 text-[#023047] flex gap-x-2 items-center rounded-lg">View More <LiaLongArrowAltRightSolid size={24} /></button>
+
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -73,7 +80,7 @@ const Banner: React.FC = () => {
 
             </Slider>
 
-            <div className={`flex justify-end space-x-2 absolute bottom-[10%] w-full border-2 left-[50%] -translate-x-[50%]   ${Classes["container"]} `}>
+            <div className={`flex justify-end space-x-2 absolute bottom-[10%] w-full  left-[50%] -translate-x-[50%]   ${Classes["container"]} `}>
                 {/* <button onClick={() => sliderRef.current?.slickPrev()}>11</button>
               <button onClick={() => sliderRef.current?.slickNext()}>22</button> */}
                 <ArrowButton onClick={() => sliderRef.current?.slickPrev()} direction="prev" colorCode={"[#000000]"} />

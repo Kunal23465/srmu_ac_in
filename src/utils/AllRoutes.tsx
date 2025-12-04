@@ -100,6 +100,7 @@ import BlogDetailsPage from "../pages/blog/BlogDetailsPage";
 import { blogCards } from "../data/blog/blog-data";
 import RtiPage from "../pages/rti/RtiPage";
 import TransportationPage from "../pages/campus-life/facilities/transportation/TransportationPage";
+import NewsLetterPage from "../pages/Home/NewsLetterPage";
 interface IMatches {
   pathname: string;
   params: Params<string>;
@@ -140,7 +141,13 @@ export const routes = [
           crumb: () => <Link to="/">Terms & Conditions</Link>,
         },
       },
-
+      {
+        path: "news-letter",
+        element: <NewsLetterPage />,
+        handle: {
+          crumb: () => <Link to="/">Newsletter</Link>,
+        },
+      },
       {
         path: "notice",
         element: <NoticePage />,
@@ -451,7 +458,7 @@ export const routes = [
             path: "after-post-graduation",
             element: <AfterPostGraduationPage />,
             handle: {
-              crumb: () => <Link to="/">After Graduation</Link>,
+              crumb: () => <Link to="/">After Post Graduation</Link>,
             },
           },
           {
@@ -482,13 +489,13 @@ export const routes = [
               crumb: () => <Link to="/">Facilities</Link>,
             },
           },
-           {
-          path: "transportation",
-          element: <TransportationPage />,
-          handle: {
-            crumb: () => <Link to="/">Transportation</Link>,
+          {
+            path: "transportation",
+            element: <TransportationPage />,
+            handle: {
+              crumb: () => <Link to="/">Transportation</Link>,
+            },
           },
-        },
           {
             path: "hostel",
             element: <HostelPage />,
@@ -769,7 +776,8 @@ export const routes = [
         element: <NewsEventDetails />,
         handle: {
           crumb: () => <Link to="/">Innovation Meets Agriculture At The SRMU Kisan Mela 2025</Link>,
-        }},
+        }
+      },
 
       {
         path: "/blogs",

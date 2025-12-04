@@ -5,6 +5,7 @@ import AlumniSlider from "./AlumniSlider";
 import { FaCircleChevronRight } from "react-icons/fa6";
 import { FaCircleChevronLeft } from "react-icons/fa6";
 import Slider from "react-slick";
+import { Link } from "react-router-dom";
 
 
 
@@ -30,7 +31,7 @@ const NotableAlumniSection = () => {
 
         <div className="flex justify-between items-center mb-10">
           <div>
-            <h1 className="font36 fw600 mb-2">Notable Alumni</h1>
+            <h2 className="text-[28px] text-white sm:text-xl lg:text-[3.125rem] fw600">Notable Alumni</h2>
             <p className="text-gray-300">
               Hear from our distinguished alumni, who have made waves in their respective fields.
             </p>
@@ -54,14 +55,14 @@ const NotableAlumniSection = () => {
         <AlumniSlider sliderRef={sliderRef} />
 
         <div className="flex justify-center mt-10">
-          <button
+          <Link to="/placements/notable-alumni"
             className="
               bg-[#ffb703] 
               hover:bg-[#0f4a85]
                 hover:border-1
                 hover:border-[#ffb703]
                 hover:text-[#ffb703]
-                text-[#0f4a85]
+                text-[#023047]
               font-semibold 
               py-3 px-8 
               rounded-xl 
@@ -73,7 +74,7 @@ const NotableAlumniSection = () => {
             <span>
               VIEW ALL NOTABLE ALUMNI →
             </span>
-          </button>
+          </Link>
         </div>
       </div>
     </div>

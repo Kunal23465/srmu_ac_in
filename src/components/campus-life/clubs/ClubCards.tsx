@@ -2,13 +2,14 @@ import React, { useState } from 'react'
 import { cardclubCardsData } from '../../../data/campus-life/clubs/clubs-data';
 
 import { MdArrowRightAlt, MdClose } from 'react-icons/md';
+import { useNavigate } from 'react-router-dom';
 
 
 
 // @ts-ignore
 const CustomModal = ({ selected, setSelected }) => {
     if (!selected) return null;
-
+    const navigate = useNavigate();
     return (
         <>
             {/* BACKDROP */}
@@ -36,7 +37,7 @@ const CustomModal = ({ selected, setSelected }) => {
                         <h2 className="text-3xl font-bold text-[#063970] mb-3">{selected.title}</h2>
                         <p className="text-gray-700 leading-relaxed mb-6">{selected.desc}</p>
 
-                        <button className="bg-[#ffb703]  border-2 uppercase   border-[#ffb703] hover:bg-transparent hover:text-[#ffb703] inline-flex gapx-x-1 items-center    px-3 py-1 rounded-lg text-nowrap mt-5 sm:mt-0  group  text-sm text-black font-normal"
+                        <button onClick={() => navigate("/contact-us")} className="bg-[#ffb703]  border-2 uppercase   border-[#ffb703] hover:bg-transparent hover:text-[#ffb703] inline-flex gapx-x-1 items-center    px-3 py-1 rounded-lg text-nowrap mt-5 sm:mt-0  group  text-sm text-black font-normal"
                         >
                             MORE INFO CONTACT US <span className="transition-all duration-200  group-hover:rotate-[360deg]">
                                 <MdArrowRightAlt size={26} />
@@ -57,39 +58,37 @@ const ClubCards: React.FC = () => {
         <>
             <CustomModal selected={selected} setSelected={setSelected} />
 
-            <div className="w-[65%] grid grid-cols-3 gap-y-6 gap-x-2" >
+            <div className="w-full grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {cardclubCardsData.map((card, i) => (
                     <div
                         key={i}
                         // @ts-ignore
                         onClick={() => setSelected(card)}
-                        className="relative h-64 rounded-2xl overflow-hidden shadow-md group cursor-pointer  border-transparent hover:border-yellow-400 border-2 transition-all duration-300"
+                        className="relative w-full h-64 sm:h-64 md:h-64 rounded-2xl overflow-hidden shadow-md group cursor-pointer border-2 border-transparent hover:border-yellow-400 transition-all duration-300"
                     >
+                        {/* IMAGE */}
                         <img
                             src={card.img}
-                            className="absolute inset-0 h-full w-full object-cover group-hover:scale-110 transition-all duration-500"
+                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                         />
 
-                        {/* <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div> */}
-                        <div className="absolute inset-0  group-hover:bg-black/70 transition-all duration-500"></div>
+                        {/* HOVER OVERLAY */}
+                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-500"></div>
 
-                        {/* TEXT */}
+                        {/* TEXT CONTENT */}
                         <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-4 text-white">
-                            <h2 className="text-xl font-semibold mt-[270px] group-hover:mt-[80px] transition-all duration-500">
+                            <h2 className="text-xl font-semibold mt-auto mb-2 sm:mt-auto">
                                 {card.title}
                             </h2>
-
-                            <p className="opacity-0 group-hover:opacity-100 text-sm mt-auto mb-6 transition-all duration-500">
+                            <p className="opacity-0 group-hover:opacity-100 text-sm transition-opacity duration-500">
                                 {card.desc.slice(0, 50)}...
                             </p>
 
-                            <button
-                                className="bg-[#ffb703]  border-2 uppercase   border-[#ffb703] hover:bg-transparent hover:text-[#ffb703] inline-flex gapx-x-1 items-center    px-3 py-1 rounded-lg text-nowrap mt-5 sm:mt-0  group max-w-[150px] text-sm text-black font-normal"
-                            >
+                            <button className="bg-[#ffb703] border-2 border-[#ffb703] hover:bg-transparent hover:text-[#ffb703] inline-flex items-center px-3 py-1 rounded-lg mt-3 text-sm text-black font-normal group max-w-[150px]">
                                 Read More
-                                <span className="transition-all duration-200  group-hover:rotate-[360deg]">
+                                <span className="transition-all duration-200 group-hover:rotate-[360deg]">
                                     <MdArrowRightAlt size={26} />
-                                </span>{" "}
+                                </span>
                             </button>
                         </div>
                     </div>
@@ -97,6 +96,7 @@ const ClubCards: React.FC = () => {
             </div>
         </>
     );
-}
+};
+
 
 export default ClubCards;

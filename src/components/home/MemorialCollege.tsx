@@ -14,6 +14,11 @@ import slider6 from "../../assets/images/home/slider-6.png";
 import slider7 from "../../assets/images/home/slider-7.png";
 import slider8 from "../../assets/images/home/slider-8.png";
 import { LiaLongArrowAltRightSolid } from "react-icons/lia";
+import silder4pdf from "../../assets/pdf/home/final-kisan-mela-brochure-1-1--011125020631.pdf"
+import { Link } from "react-router-dom";
+import slider9 from "../../assets/images/home/cruusal.png"
+
+
 interface ArrowProps {
   onClick?: React.MouseEventHandler<HTMLDivElement>;
 }
@@ -89,11 +94,13 @@ const MemorialCollege: React.FC = () => {
             </div>
 
             <div className="mt-5 flex justify-center">
-              <button className="bg-[#023047] uppercase cursor-pointer  py-4 px-5 text-white flex gap-x-2 items-center rounded-lg">Find Out More about us <LiaLongArrowAltRightSolid size={24} /></button>
-            </div>
+              <Link to="/about">
+                <button className="bg-[#023047] hover:bg-white fw500 hover:text-[#023047] hover:border hover:border-[#023047] uppercase cursor-pointer py-4 px-5 text-white flex gap-x-2 items-center rounded-lg">
+                  Find Out More About Us <LiaLongArrowAltRightSolid size={24} />
+                </button> </Link>           </div>
           </div>
 
-         
+
 
         </div>
 
@@ -111,24 +118,43 @@ const MemorialCollege: React.FC = () => {
               <img src={slider3} alt="slider" className="w-full rounded-xl" />
             </div>
             <div className=" w-full">
-              <img src={slider4} alt="slider" className="w-full rounded-xl" />
+              <a href={silder4pdf} target="_blank">
+                <img src={slider4} alt="slider" className="w-full rounded-xl" />
+
+              </a>
             </div>
             <div className=" w-full">
-              <img src={slider5} alt="slider" className="w-full rounded-xl" />
+              <Link to="/admission/scholarship-scheme">
+                <img src={slider5} alt="slider" className="w-full rounded-xl" />
+              </Link>
             </div>
             <div className=" w-full">
-              <img src={slider6} alt="slider" className="w-full rounded-xl" />
+              <Link to="">
+                <img src={slider6} alt="slider" className="w-full rounded-xl" />
+              </Link>
+
             </div>
             <div className=" w-full">
-              <img src={slider7} alt="slider" className="w-full rounded-xl" />
+              <Link to="/programs/industry-honors">
+                <img src={slider7} alt="slider" className="w-full rounded-xl" />
+              </Link>
+
             </div>
             <div className=" w-full">
-              <img src={slider8} alt="slider" className="w-full rounded-xl" />
+              <Link to="/placements/placement-overview">
+                <img src={slider8} alt="slider" className="w-full rounded-xl" />
+              </Link>
+            </div>
+            <div className=" w-full">
+              <Link to="/research/consultancy">
+                <img src={slider9} alt="slider" className="w-full rounded-xl" />
+
+              </Link>
             </div>
           </Slider>
         </div>
-      </div>
-    </div>
+      </div >
+    </div >
   );
 };
 

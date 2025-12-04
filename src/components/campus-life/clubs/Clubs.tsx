@@ -13,10 +13,23 @@ const Clubs: React.FC = () => {
         <>
             <div className={`${Classes["container"]}`}>
                 <CustomOverviewSection data={ClubsOverviewData} />
-                <div className="flex items-start w-full  py-10 gap-x-8 bg-white">
-                    <ClubCards />
-                    <ClubForm />
+                <div className="w-full py-10 bg-white">
+                    {/* Large screens */}
+                    <div className="hidden lg:flex items-start w-full gap-x-8">
+                        <ClubCards />
+                        <ClubForm />
+                    </div>
+
+                    {/* Small screens */}
+                    <div className="flex flex-col lg:hidden gap-y-8">
+
+                        {/* No extra grid — ClubCards handles its own grid */}
+                        <ClubCards />
+
+                        <ClubForm />
+                    </div>
                 </div>
+
 
             </div>
             <CustomTopFooter data={feeStructureCustomTopFooter} />
