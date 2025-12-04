@@ -89,6 +89,7 @@ const Events: React.FC = () => {
       </p>
 
       {/* Desktop Layout */}
+      
       <div className="hidden lg:flex flex-row-reverse  gap-x-10 mt-6 md:mt-8 lg:mt-10">
         <div className="w-full lg:w-[40%] border p-3 rounded-lg border-[#ffb703] hover:shadow-2xl transition-all duration-200">
           {eventsData.slice(0, 1).map((news, index) => (
