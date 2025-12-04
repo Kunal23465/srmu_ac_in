@@ -3,10 +3,7 @@ import logosrmcem from "../../assets/images/Updatedsrmcemlogo.png";
 import Classes from "../../utils/styles/Global.module.css";
 import { Link } from "react-router-dom";
 import { FaPhone } from "react-icons/fa";
-
 import { MdEmail, MdLocationPin } from "react-icons/md";
-import anti_sexual from "../../assets/pdf/Gendar Senstization and Sexual Harassment -ICC.pdf";
-import mandatoryDiscloserPdf from "../../assets/pdf/Mandatory Disclosure-SRMCEM - 2023-24.pdf";
 import { CiGlobe } from "react-icons/ci";
 import { IoClose } from "react-icons/io5";
 import awards1 from "../../assets/images/award-footer1.png"
@@ -147,7 +144,7 @@ export const footerData = {
     {
       id: 1,
       title: "Newsletter",
-      path: "#",
+      path: "/news-letter",
     },
     {
       id: 2,
@@ -186,9 +183,9 @@ export const footerData = {
 
 const VideoPopUp = ({ setCheck }: any) => {
   return (
-    <div className="w-full bg-black bg-opacity-50 h-screen fixed top-0 left-0 flex items-center justify-center px-5 z-[9999]">
-      <div className="z-[999] w-full max-w-[95%] md:max-w-[80%] relative ">
-        <span onClick={() => setCheck(false)} className="w-6 h-6 z-[9999] text-black rounded-full bg-white cursor-pointer flex justify-center items-center absolute top-5 right-5">
+    <div className="w-full bg-black bg-opacity-50 h-screen fixed top-0 left-0 flex items-center justify-center px-5 z-9999">
+      <div className="z-999 w-full max-w-[95%] md:max-w-[80%] relative ">
+        <span onClick={() => setCheck(false)} className="w-6 h-6 z-9999 text-black rounded-full bg-white cursor-pointer flex justify-center items-center absolute top-5 right-5">
           <IoClose />
         </span>
         <video
@@ -285,7 +282,7 @@ const Footer: React.FC = () => {
                   to="https://www.facebook.com/SRMGPCOFFICIAL/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center transition-all duration-300 hover:rotate-[360deg]  hover:border-[#ffb703] hover:bg-transparent hover:text-[#ffb703] cursor-pointer"
+                  className="flex items-center justify-center transition-all duration-300  hover:border-[#ffb703] hover:bg-transparent hover:text-[#ffb703] cursor-pointer"
                   aria-label="Facebook"
                 >
                   <img src={fb} alt="facebook" />
@@ -293,7 +290,7 @@ const Footer: React.FC = () => {
                 <Link
                   to="https://x.com/SrmgpcL"
                   target="_blank"
-                  className=" flex items-center justify-center transition-all duration-300 hover:rotate-[360deg] hover:border-[#ffb703] hover:bg-transparent hover:text-[#ffb703] cursor-pointer"
+                  className=" flex items-center justify-center transition-all duration-300 hover:border-[#ffb703] hover:bg-transparent hover:text-[#ffb703] cursor-pointer"
                   aria-label="Twitter"
                 >
                   <img src={instagram} alt="instagram" />
@@ -301,7 +298,7 @@ const Footer: React.FC = () => {
                 <Link
                   to="https://www.instagram.com/srmgpc_official/#"
                   target="_blank"
-                  className=" flex items-center justify-center transition-all duration-300 hover:rotate-[360deg] hover:border-[#ffb703] hover:bg-transparent hover:text-[#ffb703] cursor-pointer"
+                  className=" flex items-center justify-center transition-all duration-300 hover:border-[#ffb703] hover:bg-transparent hover:text-[#ffb703] cursor-pointer"
                   aria-label="Instagram"
                 >
                   <img src={linkdin} alt="linkdin" />
@@ -309,7 +306,7 @@ const Footer: React.FC = () => {
                 <Link
                   to="https://www.linkedin.com/in/srmgpc"
                   target="_blank"
-                  className=" flex items-center justify-center transition-all duration-300 hover:rotate-[360deg] hover:border-[#ffb703] hover:bg-transparent hover:text-[#ffb703] cursor-pointer"
+                  className=" flex items-center justify-center transition-all duration-300 hover:border-[#ffb703] hover:bg-transparent hover:text-[#ffb703] cursor-pointer"
                   aria-label="LinkedIn"
                 >
                   <img src={twitter} alt="twitter" />
@@ -317,7 +314,7 @@ const Footer: React.FC = () => {
                 <Link
                   to="https://www.linkedin.com/in/srmgpc"
                   target="_blank"
-                  className=" flex items-center justify-center transition-all duration-300 hover:rotate-[360deg] hover:border-[#ffb703] hover:bg-transparent hover:text-[#ffb703] cursor-pointer"
+                  className=" flex items-center justify-center transition-all duration-300 hover:border-[#ffb703] hover:bg-transparent hover:text-[#ffb703] cursor-pointer"
                   aria-label="LinkedIn"
                 >
                   <img src={youtube} alt="youtube" />
@@ -455,6 +452,7 @@ const Footer: React.FC = () => {
         </div>
       </footer>
       {check && <VideoPopUp setCheck={setCheck} />}
+
     </>
   );
 };

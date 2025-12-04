@@ -14,21 +14,18 @@ const Hostel: React.FC = () => {
                 {hostelTermsData.map((item: HostelType, index: number) => (
                     <div key={index} className="mb-10">
 
-                        {/* ---- DESCRIPTION (with line breaks on "\") ---- */}
                         {item.description && (
                             <p className="mt-3 text-gray-700 leading-6 whitespace-pre-line">
                                 {item.description.replace(/\\/g, "\n")}
                             </p>
                         )}
 
-                        {/* ---- TITLE ---- */}
                         {item.title && (
                             <h2 className="text-[15px] text-[#212529] font-medium my-3">
                                 {item.title}
                             </h2>
                         )}
 
-                        {/* ---- LIST ITEMS ---- */}
                         {item.listItems && item.listItems.length > 0 && (
                             <ul className="list-disc ml-6 space-y-2">
                                 {item.listItems.map((point, idx) => (

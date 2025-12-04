@@ -6,14 +6,15 @@ const Transportation = () => {
     return (
         <div className="px-4 md:px-20 py-10">
             <div className="mb-8">
-                <h2 className="text-[#233E6F] font50 fw500">
+                <h2 className="text-2xl text-[#023047] sm:text-xl lg:text-[50px] fw600">
+
                     Transportation
                 </h2>
             </div>
 
             <div className='flex flex-col md:flex-row gap-8 md:gap-20 w-full'>
                 <div className="flex-1">
-                    <img src={bus} className='w-full h-auto object-cover rounded-lg' alt="Campus Bus"/>
+                    <img src={bus} className='w-full h-auto object-cover rounded-lg' alt="Campus Bus" />
                 </div>
 
                 <div className="flex-1 flex flex-col gap-4">

@@ -16,10 +16,27 @@ const FacilitiesComp = () => {
       <div className={`${Classes["container"]}`}>
         <CustomOverviewSection data={FacilitiesOverviewData} />
       </div>
-      <FinalSlider />
-      <Cafeteria />
+
+      <div className="bg-[#ecf0f9] h-full">
+        <div className={`${Classes["container"]}`}>
+          <FinalSlider />
+        </div>
+      </div>
+
+
+      <div className="cafeteria-bg">
+        <div className={`${Classes["container"]}`}>
+          <Cafeteria />
+
+        </div>
+      </div>
+
+
       <div className="bg-[#ecf0f9]">
-        <SportsAndGames />
+        <div className={`${Classes["container"]}`}>
+          <SportsAndGames />
+
+        </div>
       </div>
 
 
