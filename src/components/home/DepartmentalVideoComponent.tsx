@@ -60,7 +60,7 @@ export default function DepartmentalVideo() {
 
   return (
       <section className="py-7 md:py-10 lg:py-14">
-      <h2 className="text-center font36 fw600 mb-10">Departmental Video</h2>
+      <h2 className="text-[28px] text-center sm:text-xl lg:text-[3.125rem] fw600 mb-10">Departmental Video</h2>
 
       <div className="container mx-auto px-4">
         <Slider className="department-crousel" {...settings}>

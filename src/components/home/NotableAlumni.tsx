@@ -31,7 +31,7 @@ const NotableAlumniSection = () => {
 
         <div className="flex justify-between items-center mb-10">
           <div>
-            <h1 className="font36 fw600 mb-2">Notable Alumni</h1>
+            <h2 className="text-[28px] text-white sm:text-xl lg:text-[3.125rem] fw600">Notable Alumni</h2>
             <p className="text-gray-300">
               Hear from our distinguished alumni, who have made waves in their respective fields.
             </p>

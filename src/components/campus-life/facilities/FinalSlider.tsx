@@ -10,26 +10,26 @@ const FinalSlider: React.FC = () => {
   } | null>(null);
 
   return (
-    <div className="min-h-[500px] bg-[#ecf0f9] p-4 sm:p-8 font-sans">
-      <div className="max-w-7xl mx-auto">
-        <div className="flex justify-between items-end mb-8">
-          <div>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-800 mb-2">
+    <div className=" p-4 sm:p-8 font-sans">
+      <div className="">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-8 w-full">
+          <div className="w-full sm:w-auto">
+            <h2 className="text-2xl text-[#023047] sm:text-xl lg:text-[50px] fw600">
               Academic Facilities
             </h2>
-            <p className="text-gray-600 max-w-2xl">
+            <p className="">
               From innovative research spaces to interactive learning environments, SRMU offers a range of academic facilities.
             </p>
           </div>
 
           {scrollFunctions && (
-            <div className="flex space-x-3">
+            <div className="flex space-x-3 mt-4 sm:mt-0 self-start sm:self-auto">
               <button
                 onClick={() => scrollFunctions.scrollTo('left')}
                 disabled={!scrollFunctions.canScrollLeft}
-                className={`w-15 h-15 rounded-full flex items-center justify-center border-2 transition-all duration-300 cursor-pointer
+                className={`w-12 h-12 rounded-full flex items-center justify-center border-2 transition-all duration-300 cursor-pointer
                   ${scrollFunctions.canScrollLeft
-                    ? 'border-blue-500 text-blue-500   shadow-md'
+                    ? 'border-[#023047] text-[#023047] shadow-md'
                     : 'border-gray-300 text-gray-400 cursor-not-allowed'
                   }`}
               >
@@ -38,9 +38,9 @@ const FinalSlider: React.FC = () => {
               <button
                 onClick={() => scrollFunctions.scrollTo('right')}
                 disabled={!scrollFunctions.canScrollRight}
-                className={`w-15 h-15 rounded-full flex items-center justify-center border-2 transition-all duration-300 cursor-pointer
+                className={`w-12 h-12 rounded-full flex items-center justify-center border-2 transition-all duration-300 cursor-pointer
                   ${scrollFunctions.canScrollRight
-                    ? 'border-blue-500 text-blue-500  shadow-md'
+                    ? 'border-[#023047] text-[#023047] shadow-md'
                     : 'border-gray-300 text-gray-400 cursor-not-allowed'
                   }`}
               >

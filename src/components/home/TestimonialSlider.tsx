@@ -56,7 +56,7 @@ const TestimonialSlider = () => {
 
     return (
         <div className="py-20 bg-[#f7f9ff] flex flex-col items-center">
-            <h2 className="font36 fw600 mb-12 text-center">Student Testimonials</h2>
+            <h2 className="text-[28px] text-center sm:text-xl lg:text-[3.125rem] fw600 mb-12">Student Testimonials</h2>
 
             <div className={`relative ${Classes["container"]}`}>
                 <Slider {...settings}>

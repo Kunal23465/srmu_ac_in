@@ -1296,6 +1296,10 @@ ul {
   background-image: url("./assets/images/admissions/overview/placement-records-bg.jpg");
 }
 
+.cafeteria-bg{
+background-image: url("./assets/images/campus-life/facilities/facilities-bg.jpeg");
+}
+
 .vb {
   object-fit: contain;
   object-position: bottom;
@@ -1311,6 +1315,10 @@ ul {
 
 .small-font{
   font-size: .813rem;
+}
+
+.fw300 {
+    font-weight: 300 !important;
 }
 
 .parent_grid_gallary .children img {

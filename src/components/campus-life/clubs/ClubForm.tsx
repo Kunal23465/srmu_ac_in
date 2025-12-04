@@ -64,7 +64,7 @@ const ClubForm: React.FC = () => {
         { value: "The Golden Pen Club", label: "The Golden Pen Club" }
     ];
     return (
-        <div className="w-[35%] bg-[#063970] text-white p-8 rounded-2xl shadow-xl">
+        <div className="w-full lg:w-[35%] bg-[#063970] text-white p-8 rounded-2xl shadow-xl">
             <h2 className="text-3xl font-bold mb-6">Join Cultural Club</h2>
 
             <form onSubmit={formik.handleSubmit} className="flex flex-col gap-4">
