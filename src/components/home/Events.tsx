@@ -11,8 +11,8 @@ const NewsCard = ({ image, description, date, title, onReadMore }: any) => {
   const truncatedDesc = description.length > 134 ? description.slice(0, 134) + "..." : description;
 
   return (
-    <div className="lg:flex items-center gap-x-10 border p-3 rounded-md border-[#ffb703] transition-all duration-200">
-      <img src={image} alt="Event" className="transition-all aspect-[4/3] duration-200 rounded-md w-full lg:max-w-[300px] max-h-[400px] object-cover" />
+    <div className="lg:flex items-center gap-x-10 border p-3 rounded-lg border-[#ffb703] hover:shadow-2xl transition-all duration-200">
+      <img src={image} alt="Event" className="transition-all aspect-4/3 duration-200 rounded-md w-full lg:max-w-[300px] max-h-[400px] object-cover" />
       <div className="">
         <div className="flex items-center gap-x-2 text-[#00000099]">
           <FaRegCalendar color="#3f9cbb" />
@@ -27,7 +27,6 @@ const NewsCard = ({ image, description, date, title, onReadMore }: any) => {
               onClick={onReadMore}
             >
               Read More <LiaLongArrowAltRightSolid size={24} />
-
             </button>
           </div>
         )}
@@ -39,8 +38,8 @@ const NewsCard = ({ image, description, date, title, onReadMore }: any) => {
 const NewsCard1 = ({ image, description, date, title, onReadMore }: any) => {
   const truncatedDesc = description.length > 200 ? description.slice(0, 200) + "..." : description;
   return (
-    <div className="w-full cursor-pointer">
-      <img src={image} alt="Event" className="transition-all duration-200 rounded-md mb-4 w-[100%] object-cover max-h-[400px] object-bottom" />
+    <div className="w-full cursor-pointer ">
+      <img src={image} alt="Event" className="transition-all duration-200 rounded-lg mb-4 w-full object-cover max-h-[400px] object-bottom" />
       <div className="w-full">
         <div className="flex items-center gap-x-2 text-[#00000099]">
           <FaRegCalendar color="#3f9cbb" />
@@ -85,13 +84,11 @@ const Events: React.FC = () => {
   return (
     <div className={`${Classes["container"]} pt-7 sm:py-7 md:py-10 lg:py-14`}>
       <h2 className="text-left font36 fw600">Latest News and Events</h2>
-      <p className="text-left">
-        At University’s beautiful campus, you’ll find a diverse and welcoming community that will teach you life skills along with having fun.
-      </p>
+      <p className="text-left">At University’s beautiful campus, you’ll find a diverse and welcoming community that will teach you life skills along with having fun.</p>
 
       {/* Desktop Layout */}
       <div className="hidden lg:flex flex-row-reverse  gap-x-10 mt-6 md:mt-8 lg:mt-10">
-        <div className="w-full lg:w-[40%] border p-3 rounded-md border-[#ffb703] transition-all duration-200">
+        <div className="w-full lg:w-[40%] border p-3 rounded-lg border-[#ffb703] hover:shadow-2xl transition-all duration-200">
           {eventsData.slice(0, 1).map((news, index) => (
             <NewsCard1
               key={index}
@@ -100,7 +97,7 @@ const Events: React.FC = () => {
               title={news.title}
               description={news.description}
               onReadMore={() => handleReadMore(news)}
-              guest={news.guest}
+              guest={news?.guest}
             />
           ))}
         </div>
@@ -115,7 +112,7 @@ const Events: React.FC = () => {
       <div className="lg:hidden mt-5">
         <Slider {...sliderSettings}>
           {eventsData.map((news, index) => (
-            <div key={index} className="w-full lg:w-[60%] border min-h-[450px] sm:min-h-0 p-3 rounded-md border-[#ffb703] transition-all duration-200">
+            <div key={index} className="w-full lg:w-[60%] border min-h-[450px] sm:min-h-0 p-3 hover:shadow-2xl rounded-md border-[#ffb703] transition-all duration-200">
               <NewsCard1 image={news.image} date={news.date} description={news.description} onReadMore={() => handleReadMore(news)} />
             </div>
           ))}
