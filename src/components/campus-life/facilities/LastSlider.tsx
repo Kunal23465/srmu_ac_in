@@ -122,7 +122,7 @@ const LastSlider: React.FC = () => {
     return (
         <div className="w-full max-w-7xl">
             <div className="text-center mb-5">
-                <h2 className="text-2xl sm:text-xl lg:text-[50px] fw600">
+                 <h2 className="text-[1.6rem] text-[#023047] sm:text-xl lg:text-[50px] fw600">
                     Academic Wings
                 </h2>
 

@@ -11,7 +11,7 @@ import a8 from "../../../assets/images/campus-life/convocation/8.jpg"
 import a9 from "../../../assets/images/campus-life/convocation/9.jpg"
 
 export const ConvocationOverviewData: customeOverViewType = {
-    heading: "Central Library",
+    heading: "Convocation",
     content: `University convocation is a significant and ceremonial event marking the culmination of years of academic 
     dedication and achievement for graduating students. This formal gathering brings together students, faculty, staff, 
     families, and distinguished guests to celebrate the successful completion of academic programs. 

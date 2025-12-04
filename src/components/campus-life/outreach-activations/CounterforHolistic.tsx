@@ -27,7 +27,7 @@ const CounterforHolistic: React.FC<counterDataPropsType> = ({ counterData, class
 
           <div className="leading-10 text-justify">
             {/* NUMBER */}
-            <h1 className="font60 text-yellow-500">
+            <h1 className="lg:text-[3.75rem] sm:text-[35px] text-[35px] text-yellow-500">
               <CountUp
                 start={0}
                 end={Number(item.value)}
@@ -41,7 +41,7 @@ const CounterforHolistic: React.FC<counterDataPropsType> = ({ counterData, class
             </h1>
 
             {/* LABEL UNDER NUMBER ONLY */}
-            <p className="text-sm sm:text-base md:text-xl text-white mt-3">
+            <p className="lg:text-[1.313rem] sm:text-[18.382px] text-[18.382px] text-white mt-3">
               {item.label}
             </p>
           </div>
