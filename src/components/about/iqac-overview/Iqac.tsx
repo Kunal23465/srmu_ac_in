@@ -18,6 +18,7 @@ import CustomTable from "../../../utils/custom/CustomTable";
 import IqacCardsSection from "./IqacCard";
 import CustomTopFooter from "../../../utils/custom/CustomTopFooter";
 
+
 const Iqac: React.FC = () => {
   return (
     <>

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import CommitteeCards, { CommitteeCardType } from "../../components/about/committee-and-cells/CommitteeCards";
+import { MdArrowRightAlt } from "react-icons/md";
 
 interface CustomCommitteeCardSectionProps {
   data: CommitteeCardType[];
@@ -16,7 +17,7 @@ const CustomCommitteeCardSection: React.FC<CustomCommitteeCardSectionProps> = ({
 
   return (
     <section className="py-8">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {visibleCards.map((card, index) => (
           <CommitteeCards key={card.id} {...card} index={index} />
         ))}
@@ -26,9 +27,9 @@ const CustomCommitteeCardSection: React.FC<CustomCommitteeCardSectionProps> = ({
         <div className="text-center mt-8">
           <button
             onClick={handleViewMore}
-            className="px-6 py-3 view-button text-white rounded-md cursor-pointer transition-all duration-300"
+            className="inline-flex px-8 py-3 view-button uppercase font-medium text-white rounded-md cursor-pointer transition-all duration-300"
           >
-            View More
+            View More <span className="ml-1"><MdArrowRightAlt size={26} /></span>
           </button>
         </div>
       )}

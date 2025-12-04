@@ -18,20 +18,12 @@ const Leadership: React.FC = () => {
     <>
       <div className={`${Classes["container"]}`}>
         <CustomOverviewSection
-          data={{
-            ...LeadershiOverviewData,
-            content: (
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: LeadershiOverviewData.content,
-                }}
-              />
-            ),
-          }}
+          data={LeadershiOverviewData}
         />
 
       </div>
       <AlternateProfileSection people={profileData} />
+      <div className={`${Classes["container"]}`}>
 
       <CustomMembersSection
         title="Governing Body"
@@ -50,7 +42,7 @@ const Leadership: React.FC = () => {
         description="Academic Council has been constituted to evaluate, monitor and recommend in respect of various matters related to - review, design and evaluation of course curriculum etc."
         data={academicCouncilData}
       />
-
+</div>
       <CustomTopFooter data={CustomTopFooterData1} />
 
     </>

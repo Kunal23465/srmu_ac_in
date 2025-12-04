@@ -4,9 +4,9 @@ import { effortData } from "../../../data/about/aboutusData";
 
 const Effort: React.FC = () => {
     return (
-        <div className="flex justify-between w-full gap-x-16 py-10">
+        <div className="flex flex-col sm:flex-row justify-between w-full gap-x-16 py-10">
             {/* Left side - Image */}
-            <div className="w-full md:w-1/2 ">
+            <div className="w-full pb-10 md:w-1/2 ">
                 <img
                     src={ramswaroop}
                     alt="img"
@@ -16,8 +16,8 @@ const Effort: React.FC = () => {
 
             {/* Right side - Text */}
             <div className="w-full md:w-1/2 flex flex-col justify-center">
-                <h1 className="text-[2rem] leading-[1.2] mb-4 text=[#023047]">{effortData.heading}</h1>
-                <div className="space-y-3 text-gray-700 leading-relaxed">
+                <h1 className="text-2xl sm:text-[2rem] leading-[1.2] mb-4 text=[#023047]">{effortData.heading}</h1>
+                <div className="space-y-3 text-gray-700 text-sm  leading-relaxed">
                     <p>{effortData.desc.p1}</p>
                     <p>{effortData.desc.p2}</p>
                 </div>

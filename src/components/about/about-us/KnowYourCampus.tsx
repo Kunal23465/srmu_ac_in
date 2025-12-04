@@ -36,19 +36,19 @@ const KnowOurCampus: React.FC = () => {
                 />
 
                 {/* Overlapping Card */}
-                <div className="absolute top-1/2 right-[320px] transform -translate-y-1/2 bg-white shadow-lg p-8 w-[380px] rounded-md">
+                <div className="absolute top-1/2 right-[1%] sm:right-[18%]  transform -translate-y-1/2 bg-[#ecf0f9] shadow-lg p-8 w-[370px] h-[370px]">
 
                     {/* Navigation Arrows */}
-                    <div className="flex justify-end gap-2">
+                    <div className="flex -mt-8 pb-8 justify-center">
                         <button
                             onClick={handlePrev}
-                            className="p-2 bg-gray-100 hover:bg-gray-200 rounded"
+                            className="p-3 text-3xl font-bold text-white bg-[#023047]"
                         >
                             <BiChevronLeft />
                         </button>
                         <button
                             onClick={handleNext}
-                            className="p-2 bg-gray-100 hover:bg-gray-200 rounded"
+                            className="p-3 text-3xl font-bold text-white bg-[#023047]"
                         >
                             <BiChevronRight />
                         </button>

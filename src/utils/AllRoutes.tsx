@@ -167,7 +167,7 @@ export const routes = [
         path: "/about",
         element: <AboutPage />,
         handle: {
-          crumb: () => <Link to="/about">About Us</Link>,
+          crumb: () => <Link to="/about">About SRMU</Link>,
         },
         children: [
           {
