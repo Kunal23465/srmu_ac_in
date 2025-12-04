@@ -455,6 +455,7 @@ const Footer: React.FC = () => {
         </div>
       </footer>
       {check && <VideoPopUp setCheck={setCheck} />}
+
     </>
   );
 };
