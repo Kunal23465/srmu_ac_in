@@ -53,8 +53,8 @@ import iqacAnalysisReportAlumni from "../../../assets/pdf/iqac-overview/Analysis
 import iqacAnalysisReportEmployer from "../../../assets/pdf/iqac-overview/Analysis-Report-Employer-Feedback-051223045501.pdf";
 
 // iqac card
-import iqacCard1 from "../../../assets/images/about/iqac-overview/compositioniqac-08022402070016.jpg";
-import iqacCard2 from "../../../assets/images/about/iqac-overview/organisation-iqac-08022402064956.jpg";
+import iqacCard2 from "../../../assets/images/about/iqac-overview/compositioniqac-08022402070016.jpg";
+import iqacCard1 from "../../../assets/images/about/iqac-overview/organisation-iqac-08022402064956.jpg";
 import iqacCard3 from "../../../assets/images/about/iqac-overview/iiqa-iqac.jpg";
 import iqaccardpdf1 from "../../../assets/pdf/iqac-overview/IQACORGANISATIONCHART-041223011729.pdf";
 import iqaccardpdf2 from "../../../assets/pdf/iqac-overview/Composition-of-Internal-Quality-Assurance-Cell-IQA-041223011746.pdf";

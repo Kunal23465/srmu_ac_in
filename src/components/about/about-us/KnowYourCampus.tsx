@@ -1,68 +1,84 @@
-import React, { useState } from "react";
-import { campusSlides } from "../../../data/about/aboutusData";
+import React, { useRef, useState } from "react";
+import Slider from "react-slick";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
-import ourCampus from "../../../assets/images/about/aboutUs/knowyourcampusimg.jpg"
+import { campusSlides } from "../../../data/about/aboutusData";
+import ourCampus from "../../../assets/images/about/aboutUs/knowyourcampusimg.jpg";
 import Classes from "../../../utils/styles/Global.module.css";
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 const KnowOurCampus: React.FC = () => {
-    const [currentIndex, setCurrentIndex] = useState(0);
+  const sliderRef = useRef<any>(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
-    const handlePrev = () => {
-        setCurrentIndex((prev) => (prev === 0 ? campusSlides.length - 1 : prev - 1));
-    };
+  const settings = {
+    dots: false,
+    infinite: false, // IMPORTANT: disable logic works only when false
+    speed: 600,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    fade: false,
+    cssEase: "ease",
+    beforeChange: (_old: number, next: number) => setCurrentSlide(next),
+  };
 
-    const handleNext = () => {
-        setCurrentIndex((prev) => (prev === campusSlides.length - 1 ? 0 : prev + 1));
-    };
+  const isFirst = currentSlide === 0;
+  const isLast = currentSlide === campusSlides.length - 1;
 
-    const currentSlide = campusSlides[currentIndex];
+  return (
+    <section className="w-full">
+      {/* Top Header */}
+      <div className="bg-[#0f4a85] py-6">
+        <div className={`${Classes["container"]}`}>
+          <h2 className="text-white text-4xl font-bold">Know Our Campus</h2>
+        </div>
+      </div>
 
-    return (
-        <section className="w-full">
-            {/* Top Header Section */}
-            <div className="bg-[#0f4a85] py-6 ">
-                <div className={`${Classes["container"]}`}>
+      {/* Image Section */}
+      <div className="relative w-full">
+        <img src={ourCampus} alt="Campus" className="w-full h-[550px] object-cover" />
 
-                    <h2 className="text-white text-4xl font-bold">Know Our Campus</h2>
+        {/* Card */}
+        <div className="absolute top-1/2 right-[1%] sm:right-[18%] transform -translate-y-1/2 bg-[#ecf0f9] shadow-lg p-8 w-[370px] h-[370px]">
+          {/* Arrows */}
+          <div className="flex -mt-8 pb-8 justify-center">
+            {/* Prev */}
+            <button
+              onClick={() => !isFirst && sliderRef.current?.slickPrev()}
+              disabled={isFirst}
+              className={`p-1 text-5xl  
+                                ${isFirst ? "bg-gray-200 text-gray-400 font-normal cursor-not-allowed" : "cursor-pointer bg-[#023047] font-bold  text-white"}`}
+            >
+              <BiChevronLeft />
+            </button>
+
+            {/* Next */}
+            <button
+              onClick={() => !isLast && sliderRef.current?.slickNext()}
+              disabled={isLast}
+              className={`p-1 text-5xl
+                                ${isLast ? "bg-gray-200 text-gray-400 font-normal cursor-not-allowed" : "cursor-pointer bg-[#023047] font-bold text-white"}`}
+            >
+              <BiChevronRight />
+            </button>
+          </div>
+          {/* Slider */}
+          <Slider ref={sliderRef} {...settings}>
+            {campusSlides.map((item, index) => (
+              <div key={index}>
+                <div className="flex flex-col p-2 items-center justify-center gap-y-2">
+                  <h3 className="text-lg font-bold text-center uppercase mb-2">{item.title}</h3>
+                  <p className="mb-4 text-center">{item.description}</p>
                 </div>
-            </div>
-
-            {/* Image Section with Overlapping Card */}
-            <div className="relative w-full">
-                {/* Background Image */}
-                <img
-                    src={ourCampus}
-                    alt="Campus"
-                    className="w-full h-[550px] object-cover"
-                />
-
-                {/* Overlapping Card */}
-                <div className="absolute top-1/2 right-[1%] sm:right-[18%]  transform -translate-y-1/2 bg-[#ecf0f9] shadow-lg p-8 w-[370px] h-[370px]">
-
-                    {/* Navigation Arrows */}
-                    <div className="flex -mt-8 pb-8 justify-center">
-                        <button
-                            onClick={handlePrev}
-                            className="p-3 text-3xl font-bold text-white bg-[#023047]"
-                        >
-                            <BiChevronLeft />
-                        </button>
-                        <button
-                            onClick={handleNext}
-                            className="p-3 text-3xl font-bold text-white bg-[#023047]"
-                        >
-                            <BiChevronRight />
-                        </button>
-                    </div>
-                    <div className="flex flex-col items-center justify-center gap-y-2">
-
-                    <h3 className="text-lg font-bold mb-2">{currentSlide.title}</h3>
-                    <p className="text-gray-600 mb-4 text-center">{currentSlide.description}</p>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-    );
+              </div>
+            ))}
+          </Slider>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default KnowOurCampus;
