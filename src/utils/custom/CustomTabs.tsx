@@ -122,12 +122,12 @@ const CustomTabs = ({
             <div
               key={tab.key}
               ref={(el) => (tabRefs.current[index] = el)}
-              className={`tab-item block ${variant === "underline"} relative ${isActive ? "after:content-['']  after:absolute  after:w-full after:h-1   after:bg-[var(--underlineColor)] after:left-0 after:-bottom-2" : ""}`}
+              className={`tab-item block ${variant === "underline"} relative ${isActive ? "after:content-['']  after:absolute  after:w-full after:h-1   after:bg-[var(--underlineColor)] after:left-0 after:-bottom-[11px]" : ""}`}
               onClick={() => handleClick(tab.key)}
-             
+
               style={{
                 // @ts-ignore
-                "--underlineColor": activeUnderlineColor ,
+                "--underlineColor": activeUnderlineColor,
                 color: isActive ? activeTextColor : inactiveTextColor,
                 backgroundColor:
                   variant === "underline"
