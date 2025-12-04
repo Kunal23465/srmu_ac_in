@@ -10,7 +10,7 @@ const ImageCards: React.FC<CardProps> = ({ card }) => {
         <>
             <div
                 
-                className="block w-80 h-full rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
+                className="block w-full h-full rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
             >
                 <div className="relative w-full h-full">
                     <img

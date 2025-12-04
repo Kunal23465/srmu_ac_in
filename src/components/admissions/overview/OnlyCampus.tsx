@@ -1,21 +1,22 @@
 import React from 'react'
 import girl from "../../../assets/images/admissions/overview/girl-08022411552330.png"
+import Classes from "../../../utils/styles/Global.module.css";
 
-const OnlyCampus:React.FC = () => {
+const OnlyCampus: React.FC = () => {
     return (
         <div>
-            <section className="relative bg-cover bg-center bg-no-repeat py-50 skoi overflow-hidden">
-                <div className="absolute inset-0 bg-slate-900/70"></div>
+            <section className="relative bg-cover bg-center bg-no-repeat  skoi overflow-hidden">
+                <div className="absolute inset-0 bg-slate-700/10"></div>
 
-                <div className="relative container mx-auto px-4">
-                    <div className="flex flex-col md:flex-row items-start justify-between gap-10">
+                <div className={`${Classes["container"]}`}>
+                    <div className="flex flex-col md:flex-row items-start  ">
 
-                        <div className="text-white md:w-1/2 z-10">
+                        <div className="text-white md:w-[60%] lg:w-[70%]   z-10 py-20 text-justify">
                             <h2 className="text-3xl md:text-4xl font-semibold mb-4 leading-snug">
                                 Only Campus is the Region with a Future Driven Environment
                             </h2>
 
-                            <p className="mb-4 leading-relaxed">
+                            <p className="mb-2 leading-relaxed">
                                 SRMU, uniquely founded and led by two IIT Gold medalists in India, boasts 24 years of hands-on experience in managing esteemed Engineering and Management colleges within the Ramswaroop group. Our commitment is to elevate our facilities to international standards, providing top-notch academia and professional resources to prepare students for global opportunities.
                             </p>
 
@@ -29,8 +30,9 @@ const OnlyCampus:React.FC = () => {
 
                         </div>
 
-                        <div className="w-[420px]   
-                            md:absolute bottom-0 right-0 z-0 ">
+                        <div className="xl:w-[420px]  w-[320px]
+                         hidden md:block 
+                            md:absolute bottom-0 2xl:right-[180px] right-0 z-0  ">
                             <img
                                 src={girl}
                                 alt="Student"
