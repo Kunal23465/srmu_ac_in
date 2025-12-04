@@ -39,7 +39,7 @@ export default function TedxSharing() {
         <div className="w-full py-10 overflow-hidden">
             {/* Header */}
             <div className="flex items-center justify-between">
-                <h2 className="text-3xl md:text-5xl fw600 color_light_blue">
+                <h2 className="text-[28px] sm:text-[28px] lg:text-[3.125rem] fw600 color_light_blue">
                     Tedx Sharing
                 </h2>
 
@@ -75,7 +75,7 @@ export default function TedxSharing() {
             </div>
 
             {/* Subtitle */}
-            <span className="mb-6 text-sm md:text-lg w-full block mt-2">
+            <span className="mb-6 lg:text-[15px] text-[14px] sm:text-[14px] w-full block mt-2">
                 SRMU has been a pioneer of TEDx events in the region, sparking
                 meaningful conversations based on the mission:
                 "Ideas worth spreading."

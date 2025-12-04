@@ -11,6 +11,8 @@ const WhyCard: React.FC<WhyItem1 & { highlight?: boolean }> = ({
     description,
     highlight
 }) => (
+
+    
     <div
         className={`
             flex-1 min-w-[280px] h-full p-8 rounded-2xl shadow-lg

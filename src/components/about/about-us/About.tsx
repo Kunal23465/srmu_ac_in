@@ -9,8 +9,8 @@ import CustomTopFooter from "../../../utils/custom/CustomTopFooter";
 import MIssionAndVission from "./MIssionAndVission";
 import CoreValues from "./CoreValue";
 import KnowOurCampus from "./KnowYourCampus";
-import CustomAboutUsSlider from "../../../utils/custom/CustomAboutUsSlider";
 import aboutSliderData from "../../../data/about/silder/slider-data";
+import CustomAboutUsSlider from "../../../utils/custom/CustomAboutUsSlider";
 
 const About: React.FC = () => {
   return (

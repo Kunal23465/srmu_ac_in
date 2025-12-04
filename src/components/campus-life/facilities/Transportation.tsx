@@ -6,7 +6,7 @@ const Transportation = () => {
     return (
         <div className="px-4 md:px-20 py-10">
             <div className="mb-8">
-                <h2 className="text-2xl text-[#023047] sm:text-xl lg:text-[50px] fw600">
+                 <h2 className="text-[1.6rem] text-[#023047] sm:text-xl lg:text-[50px] fw600">
 
                     Transportation
                 </h2>

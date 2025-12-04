@@ -8,7 +8,6 @@ const Festivals: React.FC = () => {
     const [visibleCards, setVisibleCards] = useState(3);
     const navigate = useNavigate();
 
-    // 🔥 Detect mobile screen
     useEffect(() => {
         const updateCards = () => {
             if (window.innerWidth < 768) {
@@ -47,16 +46,15 @@ const Festivals: React.FC = () => {
                 <div className="absolute inset-0 bg-opacity-60"></div>
 
                 <div className="relative z-10 px-4 md:px-0">
-                    <h2 className="text-3xl md:text-5xl font-bold mb-4 text-yellow-400">
+                    <h2 className="text-[28px] sm:text-[28px] lg:text-[3.125rem] fw500 mb-4 text-[#ffb703]">
                         Festivals
                     </h2>
-                    <p className="max-w-3xl mx-auto text-sm md:text-lg leading-relaxed">
+                    <p className="max-w-3xl mx-auto lg:text-[15px] text-[14px] sm:text-[14px]  leading-relaxed">
                         The SRMU community celebrates various Indian festivals, shaping an
                         atmosphere of harmony and unity.
                     </p>
                 </div>
 
-                {/* Festival Tabs */}
                 <div
                     className="
                     absolute bottom-0 left-1/2 -translate-x-1/2 
@@ -72,7 +70,7 @@ const Festivals: React.FC = () => {
                                 setActiveIndex(idx);
                                 setStartCard(0);
                             }}
-                            className={`relative font-semibold text-base md:text-lg pb-2 transition-all duration-300 ${
+                            className={`relative lg:text-[15px] sm:text-[14px] text-[14px] fw500 pb-2 transition-all duration-300 ${
                                 activeIndex === idx
                                     ? "text-yellow-400 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[3px] after:bg-yellow-400"
                                     : "text-white hover:text-yellow-400"
@@ -87,7 +85,7 @@ const Festivals: React.FC = () => {
             {/* CONTENT SECTION */}
             <div className="max-w-7xl mx-auto py-12 px-4 md:px-0">
                 <div className="flex flex-col md:flex-row md:justify-between gap-4">
-                    <h3 className="text-xl md:text-2xl font-bold text-[#002D62]">
+                    <h3 className="lg:text-[1.75rem] text-[24.5px] sm:text-[24.5px] md:text-2xl font-bold text-[#002D62]">
                         {activeFestival.name}
                     </h3>
 
@@ -107,7 +105,7 @@ const Festivals: React.FC = () => {
                     </div>
                 </div>
 
-                <span className="leading-relaxed whitespace-pre-line text-justify text-sm md:text-base">
+                <span className="leading-relaxed whitespace-pre-line text-justify lg:text-[15px] text-[14px] sm:text-[14px]">
                     {activeFestival.description}
                 </span>
 
@@ -133,13 +131,13 @@ const Festivals: React.FC = () => {
 
                                 <div className="flex flex-col justify-between flex-1 p-5">
                                     <div>
-                                        <h4 className="text-lg color_light_blue">
+                                        <h4 className="text-[15.75px] sm:text-[15.75px] lg:text-[16.875px] color_light_blue">
                                             {card.title}
                                         </h4>
-                                        <span className="text-yellow-500 text-sm block mb-4">
+                                        <span className="text-yellow-500 lg:text-[.875rem] sm:text-[12.25px] text-[12.25px] block mb-4">
                                             {card.date}
                                         </span>
-                                        <span className="text-sm text-gray-600 leading-relaxed line-clamp-3">
+                                        <span className="lg:text-[15px] sm:text-[14px] text-[14px] text-gray-600 leading-relaxed line-clamp-3">
                                             {card.description}
                                         </span>
                                     </div>

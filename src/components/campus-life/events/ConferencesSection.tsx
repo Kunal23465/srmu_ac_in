@@ -8,7 +8,6 @@ const ConferencesSection: React.FC = () => {
     const [cardsPerPage, setCardsPerPage] = useState(3);
     const navigate = useNavigate();
 
-    // Detect screen size
     useEffect(() => {
         const updateCardsPerPage = () => {
             if (window.innerWidth < 640) {
@@ -45,8 +44,8 @@ const ConferencesSection: React.FC = () => {
 
     return (
         <section className="py-16 bg-white text-center">
-            <h2 className="font50 fw500 color_light_blue mb-4">Conferences</h2>
-            <p className="text-gray-600 w-full mx-auto mb-8">
+            <h2 className="lg:text-[3.125rem] text-[22.4px] sm:text-[22.4px] fw500 color_light_blue mb-4">Conferences</h2>
+            <p className="text-gray-600 w-full mx-auto mb-8 text-[14px] sm:text-[14px] lg:text-[15px]" >
                 SRMU both hosts and participates in a diverse set of academic conferences,
                 leveraging these platforms to exchange ideas and delve into emerging
                 research concerns across various disciplines.
@@ -58,7 +57,7 @@ const ConferencesSection: React.FC = () => {
                         setActiveTab("conference");
                         setStartIndex(0);
                     }}
-                    className={`px-6 py-3 rounded-lg font-semibold border cursor-pointer ${
+                    className={`px-6 py-3 rounded-lg text-[14px] sm:text-[14px] lg:text-[15px] border cursor-pointer ${
                         activeTab === "conference"
                             ? "color_background_blue text-white"
                             : "color_border_blue color_light_blue"
@@ -71,7 +70,7 @@ const ConferencesSection: React.FC = () => {
                         setActiveTab("seminar");
                         setStartIndex(0);
                     }}
-                    className={`px-6 py-3 rounded-lg font-semibold border cursor-pointer ${
+                    className={`px-6 py-3 rounded-lg text-[14px] sm:text-[14px] lg:text-[15px] border cursor-pointer ${
                         activeTab === "seminar"
                             ? "color_background_blue text-white"
                             : "color_border_blue color_light_blue"
@@ -109,7 +108,7 @@ const ConferencesSection: React.FC = () => {
                     {visibleCards.map((card, idx) => (
                         <div
                             key={idx}
-                            className="bg-white cursor-pointer rounded-2xl hover:border-yellow-500 shadow-md overflow-hidden hover:shadow-lg border border-gray-200 transition"
+                            className="bg-white cursor-pointer rounded-2xl hover:border-[#ffb703] shadow-md overflow-hidden hover:shadow-lg border border-gray-200 transition"
                         >
                             <img
                                 src={card.image}
@@ -117,18 +116,18 @@ const ConferencesSection: React.FC = () => {
                                 className="w-full h-56 object-cover"
                             />
                             <div className="p-5 text-left">
-                                <h3 className="text-lg font-semibold color_light_blue mb-1 mt-4">
+                                <h3 className=" lg:text-[1.125rem] sm:text-[16.875px] text-[16.875px] fw500 color_light_blue mb-1 mt-4">
                                     {card.title}
                                 </h3>
-                                <span className="text-sm text-yellow-500">
+                                <span className="lg:text-[.875rem] sm:text-[12.25px] text-[12.25px] text-[#ffb703]">
                                     {card.date}
                                 </span>
-                                <span className="text-gray-600 text-sm line-clamp-3 mt-2 mb-4">
+                                <span className="text-gray-600 text-[14px] sm:text-[14px] lg:text-[15px] line-clamp-3 mt-2 mb-4">
                                     {card.description}
                                 </span>
                                 <button
                                     onClick={() => navigate(card.routeKey)}
-                                    className="text-sm font-semibold border border-yellow-500 color_light_blue py-2 px-4 rounded-lg hover:bg-yellow-500 hover:text-white transition flex items-center gap-2"
+                                    className="lg:text-[12.195px] text-[11.38px] sm:text-[11.38px] fw500 border border-[#ffb703] color_light_blue py-2 px-4 rounded-lg hover:bg-[#ffb703] hover:text-white transition flex items-center gap-2"
                                 >
                                     MORE INFO →
                                 </button>

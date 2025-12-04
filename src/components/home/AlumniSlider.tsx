@@ -32,6 +32,9 @@ const AlumniSlider: React.FC<AlumniSliderProps> = ({ sliderRef }) => {
         centerMode: true,
         centerPadding: "0px",
         arrows: false,
+        swipeToSlide: true,
+        focusOnSelect: true,
+        touchThreshold: 10,
         responsive: [
             { breakpoint: 1280, settings: { slidesToShow: 2 } },
             { breakpoint: 768, settings: { slidesToShow: 1 } }
@@ -43,8 +46,11 @@ const AlumniSlider: React.FC<AlumniSliderProps> = ({ sliderRef }) => {
             <Slider ref={sliderRef} {...settings}>
                 {alumniData.map((item) => (
                     <div key={item.id} className="px-4">
-                        <AlumniCard {...item} />
+                        <div className="w-full h-full">
+                            <AlumniCard {...item} />
+                        </div>
                     </div>
+
                 ))}
             </Slider>
         </div>
