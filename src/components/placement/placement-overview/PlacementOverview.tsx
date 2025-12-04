@@ -22,8 +22,6 @@ const PlacementOverview: React.FC = () => {
         <PlacementRecords/>
         <PlacementTestimonials/>
         <PlacementDrives/>
-
-
       <CustomTopFooter data={PlacementCellTopFooterData} />
     </div>
   );
