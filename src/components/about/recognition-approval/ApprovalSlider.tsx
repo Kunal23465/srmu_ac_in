@@ -203,7 +203,7 @@ const ApprovalsSlider = () => {
               <button
                 onClick={() => sliderRef.current?.slickPrev()}
                 disabled={isAtStart}
-                className={`w-14 h-14 border border-black rounded-full flex items-center justify-center transition ${isAtStart ? "opacity-40 cursor-not-allowed" : ""}`}
+                className={`w-14 h-14 border border-black rounded-full flex items-center justify-center transition ${isAtStart ? "opacity-40 cursor-not-allowed" : " cursor-pointer"}`}
               >
                 <BiChevronLeft size={22} />
               </button>
@@ -211,7 +211,7 @@ const ApprovalsSlider = () => {
               <button
                 onClick={() => sliderRef.current?.slickNext()}
                 disabled={isAtEnd}
-                className={`w-14 h-14 border border-black rounded-full flex items-center justify-center transition ${isAtEnd ? "opacity-40 cursor-not-allowed" : ""}`}
+                className={`w-14 h-14 border border-black rounded-full flex items-center justify-center transition ${isAtEnd ? "opacity-40 cursor-not-allowed" : " cursor-pointer"}`}
               >
                 <BiChevronRight size={22} />
               </button>

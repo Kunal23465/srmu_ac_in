@@ -1,8 +1,8 @@
 import React from "react";
 import { associationsData } from "../../../data/about/recognition-approval/recognitionApprovalsData";
 
-const AssociationsMemberships:React.FC = () => {
-    const PdfSvgIcon: React.FC = () => (
+
+export const PdfSvgIcon: React.FC = () => (
   <svg viewBox="0 0 78.7 76.2" xmlns="http://www.w3.org/2000/svg" style={{ width: "20px", height: "20px" }}>
     <g>
       <path
@@ -15,6 +15,9 @@ const AssociationsMemberships:React.FC = () => {
     </g>
   </svg>
 );
+
+const AssociationsMemberships:React.FC = () => {
+
     return (
         <section className="pb-16 pt-10 bg-white text-center">
             <div className="max-w-7xl mx-auto px-4">
