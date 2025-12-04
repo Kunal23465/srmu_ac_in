@@ -62,8 +62,10 @@ import iqaccardpdf3 from "../../../assets/pdf/iqac-overview/iiqa-270224043528.pd
 
 export const iqacOverviewData: customeOverViewType = {
   heading: "IQAC Overview",
-  content: `Sustained quality assurance ensures that at both the institutional and disciplinary levels, there is a culture of continuous improvement and growth. Hence, at SRMU, an institution-wide quality management system serves as the foundation for external quality assurance mechanisms like accreditation. 
-          The Internal Quality Assurance Cell (IQAC) assesses accreditation requirements, and is dedicated to enhancing overall institutional performance through conscious and catalytic improvements.`,
+  content:
+    "Sustained quality assurance ensures that at both the institutional and disciplinary levels, there is a culture of continuous improvement and growth. Hence, at SRMU, an institution-wide quality management system serves as the foundation for external quality assurance mechanisms like accreditation. ",
+  counterSibling:
+    "The Internal Quality Assurance Cell (IQAC) assesses accreditation requirements, and is dedicated to enhancing overall institutional performance through conscious and catalytic improvements.",
 };
 
 export const iqacCards = [
@@ -77,12 +79,11 @@ export const iqacCards = [
   {
     title: "Objective",
     icon: iqaccard2,
-    description:
-      "The prime task of the IQAC is to develop a system for conscious, consistent and catalytic improvement in the overall performance of institution. For this, there is a need to channelize all the efforts and measures towards promoting the holistic academic excellence. The overall aim is to establish internalization of quality culture and institutional best practices.",
+    description: "To develop a system for conscious, consistent and catalytic action to improve the academic and administrative performance of the institution.",
     content: `
-      <div>
+      <div class="px-5">
         <h2 class="font-semibold text-2xl mb-3">Objective</h2>
-        <ul>
+        <ul class="list-disc marker:text-[#0f4a85] marker:text-2xl pl-5 space-y-2">
         <li>
         To develop a system for conscious, consistent and catalytic action to improve the academic and administrative performance of the institution.
         </li>
@@ -101,13 +102,13 @@ export const iqacCards = [
     description:
       "The IQAC will develop systems to: Ensure timely and efficient performance in academic, administrative, and financial tasks. Improve the relevance and quality of academic and research programs",
     content: `
-      <div>
+      <div class="px-5">
         <h2 class="font-semibold text-2xl mb-3">Strategies</h2>
         <p>
         <strong> 
          IQAC shall evolve mechanisms and procedures for</strong>
         </p>
-         <ul>
+        <ul class="list-disc marker:text-[#0f4a85] marker:text-2xl pl-5 space-y-2">
          <li>
          Ensuring timely, efficient and progressive performance of academic, administrative and financial tasks</li>
          <li> The relevance and quality of academic and research programmes;
@@ -153,13 +154,13 @@ Sharing of research findings and networking with other institutions in India and
     icon: iqaccard5,
     description: "Development and application of quality benchmarks/parameters for various academic and administrative activities of the institution",
     content: `
-      <div>
+      <div class="px-5">
         <h2 class="font-semibold text-2xl mb-3">Functions</h2>
         <p>
         <strong> 
        Some of the functions expected of the IQAC are:</strong>
         </p>
-         <ul>
+        <ul class="list-disc marker:text-[#0f4a85] marker:text-2xl pl-5 space-y-2">
          <li>
          Development and application of quality benchmarks/parameters for various academic and administrative activities of the institution;</li>
 

@@ -914,7 +914,7 @@ input::-webkit-inner-spin-button {
   background-image: url("/litile-banner.png");
   background-size: cover;
   background-repeat: no-repeat;
-  min-height: 180px;
+  min-height: 330px;
   width: 100%;
 }
 

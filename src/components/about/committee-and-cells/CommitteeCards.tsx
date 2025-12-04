@@ -27,19 +27,19 @@ const CommitteeCard: React.FC<CommitteeCardProps> = ({
         <h2 className="text-xl font-semibold text-gray-900 mb-3 transition-colors duration-300 group-hover:text-white">
           {title}
         </h2>
-        <p className="text-sm text-gray-600 leading-relaxed transition-colors duration-300 group-hover:text-gray-100">
+        <p className="leading-relaxed transition-colors duration-300 group-hover:text-gray-100">
           {description}
         </p>
       </div>
-      <div className="mt-4 pt-4 border-t border-gray-100 transition-colors duration-300 group-hover:border-gray-300">
+      <div className="mt-4 pt-4  transition-colors duration-300 group-hover:border-gray-300">
         <a
           href={readMoreLink}
-          className="text-sm font-medium text-blue-600 hover:text-blue-300 transition-colors duration-200 flex items-center group-hover:text-blue-200"
+          className="text-lg font-medium text-[rgb(15,74,133)] hover:text-blue-300 transition-colors duration-200 flex items-center group-hover:text-blue-200"
         >
           Read More
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-4 w-4 ml-1"
+            className="h-4 w-4 ml-2"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -61,13 +61,13 @@ const CommitteeCard: React.FC<CommitteeCardProps> = ({
       <img
         src={imagePath}
         alt={title}
-        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 cursor-pointer rounded-br-3xl"
+        className="w-full h-full max-h-[220px] object-cover transition-transform duration-500 group-hover:scale-105 cursor-pointer rounded-br-3xl"
       />
     </div>
   );
 
   return (
-    <div className="group bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col h-full hover:bg-[rgb(15,74,133)] p-2">
+    <div className="group border border-gray-200 bg-white rounded-sm  hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col h-full hover:bg-[rgb(15,74,133)] p-2">
 
       {!imageIsBottom && cardImage}
       {cardContent}

@@ -28,7 +28,7 @@ export const CustomModal: React.FC<propsModal> = ({ isExpanded, id, setIsExpande
                 <>
                     <div className="  w-full h-screen fixed top-0 left-0 z-999"
                       style={{ backdropFilter: "blur(1px)" }}></div>
-                    <div className="w-[90%]  max-w-[700px] xl:max-w-[1000px]  fixed top-[50%] left-[50%] border-t-4 border-b-4 border-t-[#ffb703] border-b-[#0f4a85] bg-white translate-x-[-50%] translate-y-[-50%] z-[9999]">
+                    <div className="w-[90%]  max-w-[700px] xl:max-w-[1050px]  fixed top-[50%] left-[50%] border-t-4 border-b-4 border-t-[#ffb703] border-b-[#0f4a85] bg-white translate-x-[-50%] translate-y-[-50%] z-[9999]">
                         <div className="max-h-[650px] faculty-card-scrollbar overflow-y-auto px-5 py-10">
                             <span
                                 onClick={() => setIsExpanded(null)}
@@ -63,7 +63,7 @@ const CustomIqacCard: React.FC<IqacCardProps> = ({ title, icon, description, col
         return text;
     };
 
-    const truncatedDescription = truncateDescription(description, 15);
+    const truncatedDescription = truncateDescription(description, 35);
 
     if (isExpanded !== null) {
         (document.body.style.overflow = "hidden"), (document.body.style.height = "100vh");
@@ -73,7 +73,7 @@ const CustomIqacCard: React.FC<IqacCardProps> = ({ title, icon, description, col
     return (
         <>
             <div
-                className={`group w-full  relative flex flex-col items-center justify-center ${index == 0 ? "rounded-l-md " : ""} ${index == length - 1 ? "rounded-r-md " : ""
+                className={`group w-full  relative flex flex-col items-center justify-center ${index == 0 ? "rounded-l-2xl " : ""} ${index == length - 1 ? "rounded-r-2xl " : ""
                     } ${colorCode} ${colorCode === "bg-[#233E6F]" ? "text-[#FFFFFF] ${colorCode}" : "text-black"}   h-[350px] cursor-pointer`}
             >
                 {/* Icon and Title Section */}
@@ -96,7 +96,7 @@ const CustomIqacCard: React.FC<IqacCardProps> = ({ title, icon, description, col
 
                     {/* Read More Button */}
                     {
-                        mode !== "hide" && <button className="text-[#000000] font-medium" onClick={() => setIsExpanded(index)}>
+                        mode !== "hide" && (index === 1 || index === 2 || index === 4) && <button className="text-[#000000] font-medium" onClick={() => setIsExpanded(index)}>
                             <b>Read More</b>
                         </button>
                     }

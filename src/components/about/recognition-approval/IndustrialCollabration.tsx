@@ -13,7 +13,7 @@ const IndustrialCollabration: React.FC = () => {
 
     const settings = {
         dots: false,
-        infinite: true,
+        infinite: false,
         speed: 200,
         slidesToShow: 1, // each "group" of images is one slide
         slidesToScroll: 1,
@@ -22,13 +22,13 @@ const IndustrialCollabration: React.FC = () => {
 
     return (
         <div className={` pt-7 md:pt-10 lg:pt-14`}>
-            <div className="bg-[#DFE4F2]  py-7 md:py-10 lg:py-14 px-4 md:px-6 lg:px-8">
+            <div className="bg-[#ecf0f9]  py-7 md:py-10 lg:py-14 px-4 md:px-6 lg:px-8">
                 {/* Heading and Arrows */}
                 <div className={`${Classes["container"]}`}>
 
                     <div className="flex justify-between items-center">
                         <div className="max-w-[70%]">
-                            <h1 className=" text-3xl lg:text-4xl text-[#172F64] font-bold pb-2">
+                            <h1 className=" text-3xl lg:text-5xl text-[#172F64] font-medium pb-2">
                                 Industrial Collaborations
                             </h1>
                             <p className="">SRMU’s industry-aligned curriculum and course design is its speciality, and hence, it works in tandem with multiple industry bodies.</p>
