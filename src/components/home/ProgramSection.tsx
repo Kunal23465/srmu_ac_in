@@ -26,7 +26,8 @@ const ProgramsSection: FC = () => {
         >
             <div className="container mx-auto max-w-7xl px-4">
                 <div className="text-white mb-10">
-                    <h2 className="font50 fw600">Our Programs</h2>
+                    <h2 className="text-[28px] sm:text-[28px] lg:text-[50px] fw600">
+                        Our Programs</h2>
                     <span className="text-lg mt-2 max-w-2xl opacity-90">
                         At University’s beautiful campus, you’ll find a diverse and welcoming community that will teach you life skills along with having fun.
                     </span>
@@ -79,8 +80,8 @@ const ProgramsSection: FC = () => {
                             ))}
 
                             <div className="text-center mt-10">
-                                <Link 
-                                   to="/online-admission"
+                                <Link
+                                    to="/online-admission"
                                     className="uppercase inline-flex items-center bg-[#ffb703] text-[#023047] font-semibold py-4 px-8 rounded-xl hover:bg-transparent hover:border-1 hover:text-[#ffb703] hover:border-[#ffb703] transition shadow-md"
                                 >
                                     Enroll Now

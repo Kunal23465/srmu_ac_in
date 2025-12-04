@@ -20,15 +20,14 @@ const Cafeteria: React.FC = () => {
 
     return (
         <div>
-            <section className="relative bg-cover bg-center bg-no-repeat py-8 skoi overflow-hidden">
-                <div className="absolute inset-0 "></div>
+            <section className="relative  py-8  overflow-hidden">
+                <div className="absolute "></div>
 
                 <div className="relative container mx-auto px-4">
                     <div className="flex flex-col md:flex-row items-start justify-center gap-27.5">
 
-                        {/* Text Section */}
                         <div className="text-white md:w-1/2 z-10 mt-14.5">
-                            <h2 className="text-3xl md:text-4xl font-semibold mb-4 leading-snug">
+                            <h2 className="text-2xl sm:text-xl lg:text-[50px] fw600 leading-snug mb-4 ">
                                 Cafeteria & Eating Joints
                             </h2>
 
@@ -37,9 +36,8 @@ const Cafeteria: React.FC = () => {
                             </span>
                         </div>
 
-                        {/* Carousel Section */}
                         <div className="relative w-full md:w-[400px]">
-                            <div className="relative h-30 overflow-hidden rounded-lg md:h-96">
+                            <div className="relative h-60 overflow-hidden rounded-lg md:h-96">
                                 {images.map((img, index) => (
                                     <div
                                         key={index}
@@ -55,7 +53,6 @@ const Cafeteria: React.FC = () => {
                                 ))}
                             </div>
 
-                            {/* Previous Button */}
                             <button
                                 type="button"
                                 className="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer focus:outline-none"
@@ -80,7 +77,6 @@ const Cafeteria: React.FC = () => {
                                 </span>
                             </button>
 
-                            {/* Next Button */}
                             <button
                                 type="button"
                                 className="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer focus:outline-none"

@@ -33,7 +33,8 @@ export default function FlickeringSection() {
                                 className={`absolute transition-opacity duration-500 ${activeId === item.id ? "opacity-100" : "opacity-0"
                                     }`}
                             >
-                                <h2 className="text-white font50 fw500 leading-tight mb-4">
+                                            <h2 className="text-2xl text-white sm:text-xl leading-tight mb-4 lg:text-[50px] fw600">
+
                                     {item.title}
                                 </h2>
                                 <p className="text-white font17 max-w-md">
