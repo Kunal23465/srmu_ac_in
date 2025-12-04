@@ -14,6 +14,11 @@ export const AwardOverviewData: customeOverViewType = {
 
 export const awardAndRankingData = [
     {
+        id: 0,
+        icon: "",
+        title: "",
+    },    
+    {
         id: 1,
         icon: img1,
         title: "Awarded as Best Innovative University by Assocham",
