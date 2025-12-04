@@ -31,7 +31,7 @@ const ResearchOfficeSection: React.FC = () => {
           ))}
         </div>
 
-        <div className="w-full px-8 bg-[#ecf0f9] rounded-b-2xl py-12">
+        <div className="w-full px-8 bg-[#ecf0f9] rounded-b-2xl py-12 overflow-x-scroll">
           <h2 className="text-xl font-bold mb-6">Research Coordinators of Different Departments</h2>
 
           {/* Header Row */}
