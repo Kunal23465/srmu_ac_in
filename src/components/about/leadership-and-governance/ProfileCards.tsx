@@ -8,7 +8,7 @@ interface ProfileCardProps {
 const ProfileCard: React.FC<ProfileCardProps> = ({ member }) => {
   return (
     <div
-      className="relative w-[250px] sm:w-[260px] md:w-[270px] lg:w-[280px] h-[300px]
+      className="relative w-full h-[300px]
       rounded-xl border border-gray-200 shadow-sm overflow-hidden
       transition-all duration-300 transform hover:-translate-y-2 hover:shadow-lg cursor-pointer bg-gray-100"
     >

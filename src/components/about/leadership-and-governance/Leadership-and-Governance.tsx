@@ -25,24 +25,24 @@ const Leadership: React.FC = () => {
       <AlternateProfileSection people={profileData} />
       <div className={`${Classes["container"]}`}>
 
-      <CustomMembersSection
-        title="Governing Body"
-        description="Our dedicated governing body steers administrative operations and takes key decisions to ensure a thriving academic environment."
-        data={governingBodyData}
-      />
+        <CustomMembersSection
+          title="Governing Body"
+          description="Our dedicated governing body steers administrative operations and takes key decisions to ensure a thriving academic environment."
+          data={governingBodyData}
+        />
 
-      <CustomMembersSection
-        title="Executive Council"
-        description="Our executive body oversees strategies, policies, and day-to-day operations to achieve academic and institutional goals."
-        data={executiveCouncilData}
-      />
+        <CustomMembersSection
+          title="Executive Council"
+          description="Our executive body oversees strategies, policies, and day-to-day operations to achieve academic and institutional goals."
+          data={executiveCouncilData}
+        />
 
-      <CustomMembersSection
-        title="Academic Council"
-        description="Academic Council has been constituted to evaluate, monitor and recommend in respect of various matters related to - review, design and evaluation of course curriculum etc."
-        data={academicCouncilData}
-      />
-</div>
+        <CustomMembersSection
+          title="Academic Council"
+          description="Academic Council has been constituted to evaluate, monitor and recommend in respect of various matters related to - review, design and evaluation of course curriculum etc."
+          data={academicCouncilData}
+        />
+      </div>
       <CustomTopFooter data={CustomTopFooterData1} />
 
     </>
