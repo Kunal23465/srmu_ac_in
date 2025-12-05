@@ -2,6 +2,7 @@ import React from "react";
 import Classes from "../../../../../utils/styles/Global.module.css";
 import CustomOverviewSection from "../../../../../utils/custom/CustomOverviewSection";
 import CustomTopFooter from "../../../../../utils/custom/CustomTopFooter";
+
 import {
   InstituteofMediaStudiesCounterData1,
   InstituteofMediaStudiesCounterData2,
@@ -10,6 +11,7 @@ import {
   InstituteofMediaStudiesOverviewData,
   InstituteofMediaStudiesTopFooterData,
   InstituteofMediaStudiesVMData,
+  // @ts-ignore
   SampleInstituteProfileData,
 } from "../../../../../data/academics/institute/institute-department/institute-of-media-studies-data";
 import Counter from "../../../../../utils/custom/Counter";
@@ -37,8 +39,11 @@ const InstituteofMediaStudies: React.FC = () => {
       <div className={`${Classes["container"]}`}>
         <CustomOverviewSection data={InstituteofMediaStudiesOverviewData} />
         <Counter
+          // @ts-ignore
           counterData={InstituteofMediaStudiesCounterData1.counterData}
+          // @ts-ignore
           classes={InstituteofMediaStudiesCounterData1.classes}
+          // @ts-ignore
           aboutusClass={InstituteofMediaStudiesCounterData1.aboutusClass}
         />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12  mb-10">
@@ -68,8 +73,8 @@ const InstituteofMediaStudies: React.FC = () => {
           pillContainerBgColor="#0f4a85"
         />
 
-<div>
-{/*  
+        <div>
+          {/*  
                 <CustomDepartmentSlider
                     heading="Faculty List"
                     description="The University takes pride in recruiting distinguished faculty from reputed central universities and best institutes like- IIT, IIM, MNNIT and IIT-BHU. They bring to the classroom, passion and enthusiasm for teaching, providing an intimate, interactive, personalized approach to learning."
@@ -85,7 +90,7 @@ const InstituteofMediaStudies: React.FC = () => {
                     // arrowBgColor="#fff2"
                     breakpoints={{ desktop: 4, tablet: 3, mobile: 1 }}
                 /> */}
-            </div>      </div>
+        </div>      </div>
       <div className="pt-15 bg-[#ecf0f9]">
         <div className={`${Classes["container"]}`}>
           <h1 className="text-5xl pb-5 font-medium">Placed Students</h1>

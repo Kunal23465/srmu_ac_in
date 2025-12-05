@@ -38,8 +38,11 @@ const InstituteofMediaStudies: React.FC = () => {
       <div className={`${Classes["container"]}`}>
         <CustomOverviewSection data={InstituteofMediaStudiesOverviewData} />
         <Counter
+        // @ts-ignore
           counterData={InstituteofMediaStudiesCounterData1.counterData}
+          // @ts-ignore
           classes={InstituteofMediaStudiesCounterData1.classes}
+          // @ts-ignore
           aboutusClass={InstituteofMediaStudiesCounterData1.aboutusClass}
         />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12  mb-10">
