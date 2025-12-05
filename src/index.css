@@ -5,9 +5,20 @@ html {
   font-family: "Rubik", sans-serif;
   color: #212529;
 }
-.writing-mode-vertical {
+/* .writing-mode-vertical {
   writing-mode: vertical-rl;
   text-orientation: mixed;
+} */
+@layer utilities {
+  .writing-mode-vertical {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+  }
+
+  .writing-mode-horizontal {
+    writing-mode: horizontal-tb; 
+    text-orientation: mixed;
+  }
 }
 
 /* for banner section */
