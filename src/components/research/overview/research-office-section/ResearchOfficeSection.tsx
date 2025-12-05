@@ -4,6 +4,15 @@ import ContactCard from "./ContactCard";
 
 
 const ResearchOfficeSection: React.FC = () => {
+  const instituteColors = [
+    "bg-[#6FB6E8]", // light blue
+    "bg-[#589FD8]",
+    "bg-[#0F1E3A]", // dark navy
+    "bg-[#0F1E3A]",
+    "bg-[#0F1E3A]",
+    "bg-[#0F1E3A]",
+    "bg-[#0F1E3A]",
+  ];
   return (
     <section className="bg-gray-50 py-16">
       <div className="container mx-auto px-5">
@@ -22,32 +31,34 @@ const ResearchOfficeSection: React.FC = () => {
           ))}
         </div>
 
-        {/* Coordinators Table */}
-        <div className="bg-white shadow-md rounded-lg overflow-hidden">
-          <div className="bg-[#0f4a85] text-white font-semibold grid grid-cols-4 py-3 px-4 text-sm">
-            <span>INSTITUTES</span>
-            <span>DEPARTMENT</span>
-            <span>NAME OF FACULTY</span>
-            <span>EMAIL ID</span>
+        <div className="w-full px-8 bg-[#ecf0f9] rounded-b-2xl py-12 overflow-x-scroll">
+          <h2 className="text-xl font-bold mb-6">Research Coordinators of Different Departments</h2>
+
+          {/* Header Row */}
+          <div className="grid grid-cols-[1.3fr_2fr_1.5fr_2fr] gap-4 mb-4">
+            <div className="bg-[#214a8a] text-white text-center py-3 rounded-md font-semibold">INSTITUTES</div>
+            <div className="bg-[#214a8a] text-white text-center py-3 rounded-md font-semibold">DEPARTMENT</div>
+            <div className="bg-[#214a8a] text-white text-center py-3 rounded-md font-semibold">NAME OF FACULTY</div>
+            <div className="bg-[#214a8a] text-white text-center py-3 rounded-md font-semibold">EMAIL ID</div>
           </div>
 
-          {researchInstitutes.map((inst, i) => (
-            <div key={i} className="grid grid-cols-4 border-t border-gray-200 text-sm">
-              {/* Institute cell */}
-              <div
-                className="bg-blue-100 font-semibold text-[#0f4a85] flex items-center justify-center px-3 py-4 text-center border-r border-gray-200"
-                row-span={inst.departments.length}
-              >
-                {inst.name}
-              </div>
+          {researchInstitutes.map((item, index) => (
+            <div key={index} className="grid grid-cols-[1.3fr_2fr_1.5fr_2fr] gap-4 mb-6">
+              {/* Institute Column */}
+              <div className={`${instituteColors[index]} text-white rounded-lg  flex justify-center items-center text-center px-4 font-medium`}>{item.name}</div>
 
-              {/* Departments */}
-              <div className="col-span-3">
-                {inst.departments.map((dep, j) => (
-                  <div key={j} className={`grid grid-cols-3 ${j < inst.departments.length - 1 ? "border-b border-gray-200" : ""}`}>
-                    <div className="px-3 py-3">{dep.department}</div>
-                    <div className="px-3 py-3">{dep.faculty}</div>
-                    <div className="px-3 py-3">{dep.email}</div>
+              {/* 3 Data Columns */}
+              <div className="col-span-3 space-y-3">
+                {item.departments.map((dept, idx) => (
+                  <div key={idx} className="grid grid-cols-[2fr_1.5fr_2fr] gap-x-4">
+                    {/* Department */}
+                    <div className="bg-white rounded-md shadow-sm px-4 py-3 text-sm flex items-center">{dept.department}</div>
+
+                    {/* Faculty */}
+                    <div className="bg-white rounded-md shadow-sm px-4 py-3 text-sm flex items-center justify-center text-center">{dept.faculty}</div>
+
+                    {/* Email */}
+                    <div className="bg-white rounded-md shadow-sm px-4 py-3 text-sm flex items-center justify-center text-center wrap-break-words">{dept.email}</div>
                   </div>
                 ))}
               </div>

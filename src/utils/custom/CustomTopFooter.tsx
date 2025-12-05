@@ -19,9 +19,9 @@ const CustomTopFooter: React.FC<propsType> = ({ data }) => {
         {data.map((ele: any, index) => {
           return (
             <div key={index} className="flex flex-col  sm:flex-row items-center sm:justify-between py-6 md:py-3 lg:py-0">
-              <h1 className="text-3xl lg:text-4xl text-center sm:text-left font-semibold">{ele.content}</h1>
+              <h1 className="text-3xl lg:text-4xl text-center text-[#0f4a85] sm:text-left font-semibold">{ele.content}</h1>
               <Link
-                to="/enquiry-form"
+                to="/online-admission"
                 className="bg-[#ffb703]  border-2 uppercase   border-[#ffb703] hover:bg-transparent hover:text-[#ffb703] inline-flex gapx-x-1 items-center   font-semibold px-5 lg:px-8 py-3 rounded-md text-nowrap mt-5 sm:mt-0  group "
               >
                 {ele.btnText}{" "}

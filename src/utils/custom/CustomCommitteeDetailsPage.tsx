@@ -2,6 +2,21 @@ import { CustomTopFooterData1 } from "../../data/about/leadership-and-governance
 import CustomTopFooter from "./CustomTopFooter";
 
 export default function CustomCommitteeDetailsPage({ committee }: { committee: any }) {
+
+ const formatBold = (text: string) => {
+    const parts = text.split(/(\*\*.*?\*\*)/g);
+    return parts.map((part, index) =>
+      part.startsWith("**") && part.endsWith("**") ? (
+        <span key={index} className="font-bold">
+          {part.slice(2, -2)}
+        </span>
+      ) : (
+        part
+      )
+    );
+  };
+
+
   if (!committee) {
     return (
       <div className="py-10 text-center">
@@ -16,20 +31,20 @@ export default function CustomCommitteeDetailsPage({ committee }: { committee: a
   return (
     <section className="py-12 bg-white">
       <div className="container mx-auto px-4 max-w-6xl">
-        <h1 className="text-3xl sm:text-4xl font-bold text-[#1a3c6b] mb-8 pb-2 inline-block">
+        <h1 className="text-3xl sm:text-4xl font-medium text-[#1a3c6b] mb-8 pb-2 inline-block">
           {committee.title}
         </h1>
 
         <div className="flex flex-col md:flex-row items-start gap-10 mt-8">
-          <div className="w-full md:w-1/2 flex justify-center md:justify-start">
+          <div className="w-full max-w-[400px] md:w-1/2 flex justify-center md:justify-start">
             <img
               src={committee.imagePath}
               alt={committee.title}
-              className="rounded-lg shadow-lg w-full max-w-[400px] md:max-w-[450px] object-cover"
+              className="shadow-lg w-full max-w-[400px] md:max-w-[450px] object-cover"
             />
           </div>
 
-          <div className="w-full md:w-1/2 text-gray-700 text-[17px] leading-relaxed">
+          <div className="w-full text-gray-700 text-[17px] leading-relaxed">
             <div className="whitespace-pre-line text-justify  pb-2 mb-5 text-gray-700 text-[17px] leading-relaxed">
               {committee.longDescription}
             </div>
@@ -68,7 +83,7 @@ export default function CustomCommitteeDetailsPage({ committee }: { committee: a
                           {line}
                         </a>
                       ) : (
-                        line
+                        formatBold(line)
                       )}
                     </li>
                   ))}

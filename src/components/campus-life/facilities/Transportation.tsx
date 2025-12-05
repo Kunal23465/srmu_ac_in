@@ -1,18 +1,20 @@
 import { FaArrowRightLong } from 'react-icons/fa6'
 import bus from "../../../assets/images/campus-life/facilities/1-1-18102301254317.png"
+import { Link } from 'react-router-dom'
 
 const Transportation = () => {
     return (
         <div className="px-4 md:px-20 py-10">
             <div className="mb-8">
-                <h2 className="text-[#233E6F] font50 fw500">
+                 <h2 className="text-[1.6rem] text-[#023047] sm:text-xl lg:text-[50px] fw600">
+
                     Transportation
                 </h2>
             </div>
 
             <div className='flex flex-col md:flex-row gap-8 md:gap-20 w-full'>
                 <div className="flex-1">
-                    <img src={bus} className='w-full h-auto object-cover rounded-lg' alt="Campus Bus"/>
+                    <img src={bus} className='w-full h-auto object-cover rounded-lg' alt="Campus Bus" />
                 </div>
 
                 <div className="flex-1 flex flex-col gap-4">
@@ -22,9 +24,9 @@ const Transportation = () => {
                     <p>
                         SRMU's transportation facility is not merely about facilitating movement; it prioritizes safety and comfort. The buses are equipped with modern amenities, and the experienced drivers adhere to stringent safety measures, creating a secure environment for all passengers. The system operates on a well-organized schedule, enabling timely arrivals and departures. This well-coordinated transportation network contributes significantly to the overall campus experience, allowing students and staff to navigate the expansive university grounds efficiently.
                     </p>
-                    <button className="bg-[#233E6F] hover:bg-white hover:text-[#233E6F] hover:border-1 hover:border-[#233E6F] cursor-pointer text-white px-4 py-3 text-sm rounded flex items-center gap-2 mt-4 w-max">
+                    <Link to="/campus-life/transportation" className="bg-[#233E6F] hover:bg-white hover:text-[#233E6F] hover:border-1 hover:border-[#233E6F] cursor-pointer text-white px-4 py-3 text-sm rounded flex items-center gap-2 mt-4 w-max">
                         Read More <FaArrowRightLong />
-                    </button>
+                    </Link>
                 </div>
             </div>
         </div>

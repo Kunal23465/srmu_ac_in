@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+// @ts-ignore
 import datalibrary, { WhyItem1 } from "../../../data/campus-life/central-library/central-library-data";
 
 type Props = {
@@ -11,6 +12,8 @@ const WhyCard: React.FC<WhyItem1 & { highlight?: boolean }> = ({
     description,
     highlight
 }) => (
+
+    
     <div
         className={`
             flex-1 min-w-[280px] h-full p-8 rounded-2xl shadow-lg

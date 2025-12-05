@@ -12,20 +12,21 @@ const Nirf: FC = () => {
     <>
       <div className={`${Classes["container"]}`}>
         <CustomOverviewSection data={NIRFOverviewData} />
+        <h1 className="text-3xl lg:text-5xl mt-10 lg:mt-20 font-semibold">NIRF Reports</h1>
        <CustomTable
-                    columnOneHeader="First Cycle"
+                    columnOneHeader="Overall"
                     columnTwoHeader="Downloads"
                     data={thirdCycleData}
                 />
 
                 <CustomTable
-                    columnOneHeader="First Cycle"
+                    columnOneHeader="Law"
                     columnTwoHeader="Downloads"
                     data={fourthCycleData}
                 />
 
                 <CustomTable
-                    columnOneHeader="First Cycle"
+                    columnOneHeader="Engineering"
                     columnTwoHeader="Downloads"
                     data={fifthCycleData}
                 />

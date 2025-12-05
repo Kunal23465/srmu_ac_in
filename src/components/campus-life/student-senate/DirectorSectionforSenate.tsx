@@ -28,8 +28,8 @@ const DirectorSectionforSenate: React.FC = () => {
 
             <div className="mt-6 space-y-4 items-center">
 
-              <div className="grid grid-cols-[140px_1fr] sm:grid-cols-[160px_1fr] gap-4">
-                <span className="fw500 py-1.5 text-[#0f4a85]">Qualification:</span>
+              <div className="grid grid-cols-[140px_1fr] sm:grid-cols-[160px_1fr] gap-1 sm:gap-4 lg:gap-4">
+                <span className="fw500  py-1.5 text-[#0f4a85]">Qualification:</span>
                 <div className="inline-flex items-center bg-white px-3 py-1.5">
                   {directorData.qualification}
                 </div>
@@ -49,9 +49,10 @@ const DirectorSectionforSenate: React.FC = () => {
               </div>
               <div className="grid grid-cols-[140px_1fr] sm:grid-cols-[160px_1fr] gap-4">
                 <span className="fw500 py-1.5 text-[#0f4a85]">E-mail:</span>
-                <div className="inline-flex items-center px-3 py-1.5">
+                <div className="inline-flex items-center px-3 py-1.5 break-all">
                   {directorData.email}
                 </div>
+
               </div>
 
               <div className="grid grid-cols-[140px_1fr] sm:grid-cols-[160px_1fr] gap-4">

@@ -99,7 +99,7 @@ const CustomTabs = ({
   return (
     <div className="custom-tabs-container">
       <div
-        className={`tabs-header 
+        className={`tabs-header overflow-x-auto overflow-y-hidden
           ${variant === "boxed" ? "boxed-header" : ""}
           ${variant === "pill" ? "pill-header" : ""}
           ${variant === "segment" ? "segment-header" : ""}
@@ -122,9 +122,12 @@ const CustomTabs = ({
             <div
               key={tab.key}
               ref={(el) => (tabRefs.current[index] = el)}
-              className={`tab-item ${isActive ? "active" : ""}`}
+              className={`tab-item block ${variant === "underline"} relative ${isActive ? "after:content-['']  after:absolute  after:w-full after:h-1   after:bg-[var(--underlineColor)] after:left-0 after:-bottom-[11px]" : ""}`}
               onClick={() => handleClick(tab.key)}
+
               style={{
+                // @ts-ignore
+                "--underlineColor": activeUnderlineColor,
                 color: isActive ? activeTextColor : inactiveTextColor,
                 backgroundColor:
                   variant === "underline"
@@ -152,18 +155,20 @@ const CustomTabs = ({
                   : inactiveTextColor;
               }}
             >
-              {tab.label}
+              <div className="text-nowrap w-full  ">
+                {tab.label}
+              </div>
             </div>
           );
         })}
 
-        {variant === "underline" && (
+        {/* {variant === "underline" && (
           <div
             ref={underlineRef}
             className="active-underline"
             style={{ backgroundColor: activeUnderlineColor }}
           />
-        )}
+        )} */}
       </div>
 
       <div className="tabs-content">
@@ -178,7 +183,7 @@ const CustomTabs = ({
 
         .tabs-header {
           display: flex;
-          gap: 24px;
+          gap: 18px;
           padding-bottom: 10px;
           position: relative;
 
@@ -197,7 +202,7 @@ const CustomTabs = ({
         .active-underline {
           position: absolute;
           bottom: -1px;
-          height: 2px;
+          height: 3px;
           width: 0px;
           transition: transform 0.3s ease, width 0.3s ease;
         }

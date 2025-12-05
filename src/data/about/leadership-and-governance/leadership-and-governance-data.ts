@@ -54,6 +54,7 @@ export interface counterDataType {
 
 export interface Member {
   name: string;
+  qoute?: string;
   title: string;
   position: string;
   image: string;
@@ -62,20 +63,22 @@ export interface Member {
 export const profileData = [
   {
     name: "Er. Pankaj Agarwal",
-    title: "Executive Director",
+    qoute:`"You're never given a dream without also being given the power to make it true."**- Richard Bach`,
+    title: "Chancellor",
     image: pankaj,
     description: [
-      "SRMCEM is committed to make available the best of education to the aspiring professionals. Here pursuit to excellence is a way of life. The sensitivity and thoughtfulness of its managerial leadership and value based performance initiatives of its faculty community has made this institution come a long way. SRMCEM is an expedition of quality professional education interspersed with a variety of co-curricular and extra-curricular activities of its own kind that obviously go beyond the conventional class room limitations. I am sure our students will keep achieving still greater heights and contribute to society as a good professional and a good citizen.",
+      "At Shri Ramswaroop Memorial University (SRMU) we believe that the university has a responsibility of not only providing their students with the best education but also make them an upstanding member of the society. We try to instill human values and treat our students with utmost care and attention since we believe that every student is a unique value addition. This is what separates SRMU from other institutes - our desire to be sensitive to individual needs and ensuring that our students understand their role as a citizen of the system. With 22 years of history, toppers of the state, best resources, and most importantly a healthy environment nurturing happy students, SRMU continues to be at the top and hopes to invite you to be a part of this family.",
     ],
     styleType: "StyleB",
   },
 
   {
     name: "Er. Pooja Agarwal",
-    title: "Additional Executive Director",
+    qoute:`" Education is the light which illuminates the path of life....`,
+    title: "Pro Chancellor",
     image: pooja,
     description: [
-      "At Shri Ramswaroop Memorial University (SRMU) we believe in the power of hardwork as a driving factor of success. We have faith that this institute will make you someone who is not afraid of working hard and going that extra mile which is what makes our students into pillars of the nation. It is our goal to make you into a student with a well-rounded personality, passion for driving change and most importantly keep you grounded in your culture. SRMCEM believes in making students into proud Indians who know their roots and have their wings in the sky.",
+      "At Shri Ramswaroop Memorial University (SRMU) we believe in the power of hardwork as a driving factor of success. We have faith that this institute will make you someone who is not afraid of working hard and going that extra mile which is what makes our students into pillars of the nation.** **It is our goal to make you into a student with a well-rounded personality, passion for driving change and most importantly keep you grounded in your culture. SRMU believes in making students into proud Indians who know their roots and have their wings in the sky.",
     ],
     styleType: "StyleB",
   },
@@ -84,11 +87,8 @@ export const profileData = [
     title: "Vice Chancellor",
     image: vijaytiwari,
     description: [
-      "At SRM University, we are committed to nurturing future-ready professionals through a dynamic and holistic education ecosystem that fully aligns with the vision of the National Education Policy (NEP) 2020.",
-      "Our academic framework emphasizes flexibility, multidisciplinary learning, and experiential education, ensuring that every student is equipped with the knowledge, creativity, and critical thinking skills essential for success in a rapidly evolving world.",
-      "We take pride in offering programs that are closely aligned with industry requirements, designed in consultation with experts and delivered through hands-on learning, internships, and research-driven pedagogy.",
-      "Our goal is to bridge the gap between academia and the professional world, preparing our students to become leaders, innovators, and entrepreneurs.",
-      "SRM University provides a safe, inclusive, and secure campus environment, fostering a culture of respect, collaboration, and intellectual curiosity.",
+      "At SRM University, we are committed to nurturing future-ready professionals through a dynamic and holistic education ecosystem that fully aligns with the vision of the National Education Policy (NEP) 2020. Our academic framework emphasizes flexibility, multidisciplinary learning, and experiential education, ensuring that every student is equipped with the knowledge, creativity, and critical thinking skills essential for success in a rapidly evolving world.",
+      "We take pride in offering programs that are closely aligned with industry requirements, designed in consultation with experts and delivered through hands-on learning, internships, and research-driven pedagogy. Our goal is to bridge the gap between academia and the professional world, preparing our students to become leaders, innovators, and entrepreneurs. SRM University provides a safe, inclusive, and secure campus environment, fostering a culture of respect, collaboration, and intellectual curiosity. Through our state-of-the-art laboratories, innovation centers, and research initiatives, we inspire students and faculty alike to pursue excellence and contribute meaningfully to society.",
       "We believe education is not just about knowledge—it is about empowering young minds to create, innovate, and transform the world for the better."
     ],
     styleType: "StyleA",
@@ -99,9 +99,7 @@ export const profileData = [
     image: neerja,
     description: [
       "Education is the pathway to a meaningful and socially productive life, fostering success, stability and growth.In today's fast-changing world, where new skills and strategies are in demand, education stands as the most powerful tool to meet emerging societal needs.",
-      "At SRMU, we are dedicated to shaping young minds that can transform the world for the better.",
-      "Our goal is to be a reservoir of learning that nurtures the potential and possibilities of students, and equips them with the tools to build brighter futures.",
-      "‘Learning is not attained by chance, it must be sought for with ardor and attended to with diligence’ — and providing this diligence and fostering a passion for learning is our top priority.",
+      "At SRMU, we are dedicated to shaping young minds that can transform the world for the better. Our goal is to be a reservoir of learning that nurtures the potential and possibilities of students, and equips them with the tools to build brighter futures. 'Learning is not attained by chance, it must be sought for with ardor and attended to with diligence' - and providing this diligence and fostering a passion for learning is our top priority.",
       "Let's embrace the art of learning, educate, and create a world full of opportunities together."
     ],
     styleType: "StyleA",
@@ -111,17 +109,16 @@ export const profileData = [
 
 
 export const LeadershiOverviewData: customeOverViewType = {
-  heading: "Leaders Vision",
+  heading: "Leadership & Governance",
   content:
-    `Founded by IIT Kanpur alumni and Gold Medalists, SRMUs inception in 1999 marked the start of a remarkable journey. Our visionary leadership team aimed to create a globally recognized institution that imparts knowledge, instills ethical values, and nurtures social and ecological sensibilities.
-
-Over time, this commitment to quality education has blossomed into a multifaceted university. Hear from SRMU’s Leadership as they reinforce this commitment:`,
+    "Founded by IIT Kanpur alumni and Gold Medalists, SRMUs inception in 1999 marked the start of a remarkable journey. Our visionary leadership team aimed to create a globally recognized institution that imparts knowledge, instills ethical values, and nurtures social and ecological sensibilities.",
+  counterSibling:"Over time, this commitment to quality education has blossomed into a multifaceted university. Hear from SRMU’s Leadership as they reinforce this commitment:"
 };
 
 export const CustomTopFooterData1 = [
   {
-    content: ` Unlock your potential and shape your future`,
-    btnText: "Register Now",
+    content: "Want to learn more about SRMU?",
+    btnText: "Request Registration",
   },
 ];
 

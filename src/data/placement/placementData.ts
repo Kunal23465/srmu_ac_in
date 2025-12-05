@@ -1376,7 +1376,7 @@ export const placementOverviewStayWithUsData = [
     number: "90%*",
     title: "Placement",
     description: "Students Placed in CMM level-5 Companies",
-    width: "w-[260px]",
+    width: "mx-w-[260px]",
   },
 ];
 
@@ -1387,4 +1387,189 @@ type Student = {
   companyLogo: string;
   package: string;
   image: string;
+};
+export interface Testimonial {
+  text: string;
+  author: string;
+  title: string;
+  image: string; 
+}
+
+export interface TestimonialData {
+  recruiters: Testimonial[];
+  students: Testimonial[];
+}
+export const testimonialData: TestimonialData = {
+  recruiters: [
+    {
+      text: "It was a pleasure to have the students as a part of our foundation family . The team was full of energy , Knowledge ,and ideas. The Students, volunteers, and placement team members were very co-operative and we are glad that the event was very successful. We look forward to have a synergistic relationship in Future and hire many more to join us form your esteemed institution for other projects.",
+      author: "Ms. Smily Gupta",
+      title: "Team Leader at Integrated Resource Inc.",
+      image: "/src/assets/images/placements/placement-overview/recruiters-testimonials.jpg"
+    },
+    {
+      text: "SRMU Placement team has been very cooperative. Students and Faculties welcome new learning opportunities.The eagerness to learn and grow help us improve our service offering to the institution from an industry perspective too.",
+      author: "Mr. Dheeraj Chhabra",
+      title: "Co-founder & Director at Learning Routes",
+      image: "/src/assets/images/placements/placement-overview/recruiters-testimonials.jpg"
+    },
+    {
+
+      text: "Shri Ramswaroop group has been one of the most premier educational groups of UP. It speaks volume about the efforts Ramswaroop group management, Faculty and T&P put into bring the students to the level of excellence they have achieved. Students at Ramswaroop group are competent, passionate and goal oriented which is equivalent to the student quality of any premium group across India.",
+      author: "Mr. Saurabh Singh",
+      title: "Associate Manager at HCL Technologies",
+      image: "/src/assets/images/placements/placement-overview/recruiters-testimonials.jpg"
+    },
+    {
+
+      text: "Very Well Managed and coordinated. Communication & Other personality of the students is well groomed.",
+      author: "Mr. Ankur Gahlawat",
+      title: "HR at Torrent Power",
+      image: "/src/assets/images/placements/placement-overview/recruiters-testimonials.jpg"
+    },
+    {
+      text: "Great Initiatives & properly Coordinated. It was great platform to understand talent pool.",
+      author: "Ms. Laveena Nihalani",
+      title: "Consultant at Capgemini",
+      image: "/src/assets/images/placements/placement-overview/recruiters-testimonials.jpg"
+    },
+    {
+      text: "Professionalism, sincerity and passion to do something for their students beyond limits has been the major strength of Shri Ramswaroop Group.",
+      author: "Ms. Sonal Arora",
+      title: "Senior HR Manager at Accenture",
+      image: "/src/assets/images/placements/placement-overview/recruiters-testimonials.jpg"
+    }
+  ],
+  students: [
+    {
+      text: "Student Testimonial 1: My experience at the university was transformative. The faculty support and placement cell guidance helped me secure my dream job. I highly recommend it!",
+      author: "Arjun Sharma",
+      title: "Placed at Global Corp",
+      image: "/src/assets/images/placements/placement-overview/recruiters-testimonials.jpg"
+    },
+    {
+      text: "Student Testimonial 2: The curriculum is modern and industry-relevant. The hands-on projects prepared me perfectly for my career.",
+      author: "Priya Singh",
+      title: "Software Developer",
+      image: "/src/assets/images/placements/placement-overview/students-testimonials.jpg"
+    },
+    {
+      text: "Student Testimonial 3: The placement cell organized excellent preparatory workshops. Thanks to them, I felt confident and well-equipped for all the interviews.",
+      author: "Vivek Kulkarni",
+      title: "Marketing Analyst",
+      image: "/src/assets/images/placements/placement-overview/recruiters-testimonials.jpg"
+    }
+  ]
+};
+
+
+export type Drive = {
+  id: number;
+  companyName: string;
+  companyLogo: string;
+  dateOfVisit: string;
+  description: string;
+};
+
+export const placementData: Record<string, Drive[]> = {
+  "2023": [
+    {
+      id: 1,
+      companyName: "TATA AIG Insurance",
+      companyLogo:
+        "/src/assets/images/placements/placement-overview/aditya-birla.png",
+      dateOfVisit: "03 September, 2023",
+      description:
+        "Tata AIG General Insurance Company Limited is a joint venture company…",
+    },
+    {
+      id: 2,
+      companyName: "YES BANK",
+      companyLogo:
+        "/src/assets/images/placements/placement-overview/aditya-birla.png",
+
+      dateOfVisit: "21 March, 2023",
+      description:
+        "At YES BANK, we are driven by a deep purpose and relentless commitment…",
+    },
+    {
+      id: 3,
+      companyName: "Zenus Group",
+      companyLogo:
+        "/src/assets/images/placements/placement-overview/aditya-birla.png",
+
+      dateOfVisit: "15 November, 2022",
+      description: "Zenus Group is a Telecom Company established in 2012…",
+    },
+    {
+      id: 4,
+      companyName: "Zenus Group",
+      companyLogo:
+        "/src/assets/images/placements/placement-overview/aditya-birla.png",
+
+      dateOfVisit: "15 November, 2022",
+      description: "Zenus Group is a Telecom Company established in 2012…",
+    },
+    {
+      id: 5,
+      companyName: "Zenus Group",
+      companyLogo:
+        "/src/assets/images/placements/placement-overview/aditya-birla.png",
+
+      dateOfVisit: "15 November, 2022",
+      description: "Zenus Group is a Telecom Company established in 2012…",
+    },
+  ],
+
+  "2024": [
+    {
+      id: 6,
+      companyName: "Accenture",
+      companyLogo:
+        "/src/assets/images/placements/placement-overview/aditya-birla.png",
+
+      dateOfVisit: "01 April, 2024",
+      description: "Accenture is a global professional services company…",
+    },
+    {
+      id: 7,
+      companyName: "Capgemini",
+      companyLogo:
+        "/src/assets/images/placements/placement-overview/aditya-birla.png",
+
+      dateOfVisit: "15 June, 2024",
+      description: "Capgemini is a French multinational IT services company…",
+    },
+    {
+      id: 8,
+      companyName: "Wipro",
+      companyLogo:
+        "/src/assets/images/placements/placement-overview/aditya-birla.png",
+
+      dateOfVisit: "12 May, 2024",
+      description: "Wipro is a leading global IT, consulting and BPO company…",
+    },
+  ],
+
+  "2025": [
+    {
+      id: 9,
+      companyName: "Cognizant",
+      companyLogo:
+        "/src/assets/images/placements/placement-overview/aditya-birla.png",
+
+      dateOfVisit: "10 February, 2025",
+      description:
+        "Cognizant is an American multinational IT services company…",
+    },
+    {
+      id: 10,
+      companyName: "Puma",
+      companyLogo:
+        "/src/assets/images/placements/placement-overview/aditya-birla.png",
+
+      dateOfVisit: "28 February, 2025",
+      description: "PUMA is a world-leading sportswear company…",
+    },
+  ],
 };

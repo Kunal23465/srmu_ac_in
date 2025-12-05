@@ -16,18 +16,7 @@ const Committees: React.FC = () => {
 
 
       <div className={`${Classes["container"]}`}>
-        <CustomOverviewSection
-          data={{
-            ...CommitteeOverviewData,
-            content: (
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: CommitteeOverviewData.content,
-                }}
-              />
-            ),
-          }}
-        />
+        <CustomOverviewSection data={CommitteeOverviewData} />
         <CustomCommitteeCardSection data={committeeCards} />
       </div>
 

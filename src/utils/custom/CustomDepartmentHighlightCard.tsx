@@ -18,4 +18,4 @@ const CustomDepartmentHighlightCard: React.FC<propstype> = ({ item }) => (
 
 
 
-export default CustomDepartmentHighlightCard;
+export default CustomDepartmentHighlightCard;   

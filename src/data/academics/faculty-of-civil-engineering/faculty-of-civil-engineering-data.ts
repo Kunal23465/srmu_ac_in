@@ -14,9 +14,10 @@ import { FacultyItem } from "../../../utils/custom/CustomFacultyListCard";
 export interface DepartmentVMType {
   id: number;
   bgColor: string; // hex, rgb, etc.
-  imageUrl: string; // image URL or path
-  title: string; // "Mission", "Vision", etc.
-  description: string[]; // bullet points
+  img: string; // image URL or path
+  heading: string; // "Mission", "Vision", etc.
+  description?: string;
+  points: string[]; // bullet points
 }
 export interface FeeTableRow {
   [key: string]: string | number | React.ReactNode; 
@@ -28,6 +29,8 @@ export interface FeeTableData {
   rows: FeeTableRow[];
   notes?: string[];
 }
+
+
 
 
 export interface departmentHighlightscardType {

@@ -1,5 +1,7 @@
 import React from "react";
 import MissionVissionCard from "./MissionVissionCard";
+import Classes from "../../../utils/styles/Global.module.css";
+
 import { missionvisionData, MissionVisionType } from "../../../data/about/aboutusData";
 
 const MissionAndVission: React.FC = () => {
@@ -19,8 +21,10 @@ const MissionAndVission: React.FC = () => {
                 </div>
 
                 {/* Cards Section */}
+                            <div className={`${Classes["container"]}`}>
+
                 <div
-                    className="flex flex-wrap justify-center gap-12 px-4 pb-20 absolute left-1/2 -translate-x-1/2 w-full top-[28%]"
+                    className="flex flex-col w-full sm:flex-row gap-6 sm:gap-12 pb-10 lg:pb-35 -mt-[120px]"
                 >
                     {missionvisionData.map((item: MissionVisionType) => (
                         <MissionVissionCard
@@ -31,9 +35,7 @@ const MissionAndVission: React.FC = () => {
                         />
                     ))}
                 </div>
-
-                {/* Spacer div below cards so they don't overlap next content */}
-                <div className="h-[700px]"></div>
+</div>
             </div>
         </>
     );

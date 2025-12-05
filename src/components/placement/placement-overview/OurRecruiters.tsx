@@ -27,8 +27,8 @@ const OurRecruiters: React.FC = () => {
       <div className="bg-[#DFE4F2] rounded-2xl  py-7 md:py-10 lg:py-14 px-4 md:px-6 lg:px-8">
         {/* Heading and Arrows */}
         <div className={`${Classes["container"]}`}>
-          <div className="flex justify-between items-center">
-            <div className="flex gap-20  ">
+          <div className="block md:flex justify-between items-center">
+          
               <h1 className=" text-5xl lg:text-5xl text-[#172F64] font-bold pb-2">
                 Our Recruiters
               </h1>
@@ -37,7 +37,7 @@ const OurRecruiters: React.FC = () => {
                 leaders, across disciplines, fields, and professional
                 landscapes.
               </p>
-            </div>
+           
           </div>
           <div className="mt-9 flex flex-col   ">
             <div className="flex items-end justify-end space-x-4">

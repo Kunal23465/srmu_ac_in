@@ -8,150 +8,7 @@ export interface SliderRenderProps<T> {
     index: number;
 }
 
-// export interface SliderProps<T> {
-//     data: T[];
-//     renderCard: (props: SliderRenderProps<T>) => React.ReactNode;
 
-//     heading: string;
-//     description?: string;
-//     bgColor?: string;
-//     bgImage?: string;
-//     arrowColor?: string;
-
-//     breakpoints?: {
-//         desktop: number;
-//         tablet: number;
-//         mobile: number;
-//     };
-// }
-
-// function CustomDepartmentSlider<T>({
-//     data,
-//     renderCard,
-//     heading,
-//     description,
-//     bgColor = "#ffffff",
-//     bgImage,
-//     arrowColor = "#000",
-//     breakpoints = { desktop: 3, tablet: 2, mobile: 1 },
-// }: SliderProps<T>) {
-//     const [currentIndex, setCurrentIndex] = useState(0);
-//     const [cardsPerView, setCardsPerView] = useState(breakpoints.desktop);
-
-//     const trackRef = useRef<HTMLDivElement>(null);
-
-//     // RESPONSIVE
-//     const handleResize = () => {
-//         if (window.innerWidth <= 600) setCardsPerView(breakpoints.mobile);
-//         else if (window.innerWidth <= 1024) setCardsPerView(breakpoints.tablet);
-//         else setCardsPerView(breakpoints.desktop);
-//     };
-
-//     useEffect(() => {
-//         handleResize();
-//         window.addEventListener("resize", handleResize);
-//         return () => window.removeEventListener("resize", handleResize);
-//     }, []);
-
-//     // SLIDE NAVIGATION
-//     const handleNext = () => {
-//         if (currentIndex < data.length - cardsPerView) setCurrentIndex((p) => p + 1);
-//     };
-
-//     const handlePrev = () => {
-//         if (currentIndex > 0) setCurrentIndex((p) => p - 1);
-//     };
-
-//     // SWIPE
-//     const startX = useRef(0);
-//     const endX = useRef(0);
-
-//     const onTouchStart = (e: TouchEvent<HTMLDivElement>) =>
-//         (startX.current = e.touches[0].clientX);
-//     const onTouchMove = (e: TouchEvent<HTMLDivElement>) =>
-//         (endX.current = e.touches[0].clientX);
-//     const onTouchEnd = () => {
-//         const distance = startX.current - endX.current;
-//         if (distance > 50) handleNext();
-//         if (distance < -50) handlePrev();
-//     };
-
-//     // DISABLE BUTTONS
-//     const isAtStart = currentIndex === 0;
-//     const isAtEnd = currentIndex >= data.length - cardsPerView;
-
-//     return (
-//         <div
-//             className="px-14 py-22"
-//             style={{
-//                 background: bgImage ? `url(${bgImage}) center/cover` : bgColor,
-//             }}
-//         >
-//             {/* ===== TOP SECTION ===== */}
-//             <div className={`flex justify-between items-start w-full mb-8 ${Classes["container"]}  `}>
-//                 {/* LEFT 50% */}
-//                 <div className="px-3 ">
-//                     <h1 className="text-[45px] font-semibold ">{heading}</h1>
-//                     {description && (
-//                         <p className="text-[#212529] mt-2 text-[16px]">{description}</p>
-//                     )}
-//                 </div>
-
-//                 {/* RIGHT 50% — ARROWS */}
-//                 <div className="flex justify-end gap-3 px-3">
-//                     <button
-//                         onClick={handlePrev}
-//                         disabled={isAtStart}
-//                         className={`border-2 w-[48px] h-[48px] flex items-center justify-center text-lg transition font-semibold ${isAtStart ? "opacity-40 cursor-not-allowed" : "hover:cursor-pointer"
-//                             }`}
-//                         style={{ borderColor: arrowColor, color: arrowColor }}
-//                     >
-//                         <MdOutlineKeyboardArrowLeft size={35} />
-//                     </button>
-
-//                     <button
-//                         onClick={handleNext}
-//                         disabled={isAtEnd}
-//                         className={`border-2 w-[48px] h-[48px] flex items-center justify-center text-lg transition font-semibold ${isAtEnd ? "opacity-40 cursor-not-allowed" : "hover:cursor-pointer"
-//                             }`}
-//                         style={{ borderColor: arrowColor, color: arrowColor }}
-//                     >
-//                         <MdOutlineKeyboardArrowRight size={35} />
-//                     </button>
-//                 </div>
-
-//             </div>
-
-//             {/* ===== BOTTOM — FULL WIDTH SLIDER ===== */}
-//             <div
-//                 className={`overflow-hidden w-full ${Classes["container"]}`}
-//                 onTouchStart={onTouchStart}
-//                 onTouchMove={onTouchMove}
-//                 onTouchEnd={onTouchEnd}
-//             >
-//                 <div
-//                     ref={trackRef}
-//                     className="flex transition-transform duration-700"
-//                     style={{
-//                         width: `${(100 / cardsPerView) * data.length}%`,
-//                         transform: `translateX(-${(100 / cardsPerView) * currentIndex
-//                             }%)`,
-//                     }}
-//                 >
-//                     {data.map((item, index) => (
-//                         <div
-//                             key={index}
-//                             className="p-3"
-//                             style={{ width: `${100 / cardsPerView}%` }}
-//                         >
-//                             {renderCard({ item, index })}
-//                         </div>
-//                     ))}
-//                 </div>
-//             </div>
-//         </div>
-//     );
-// }
 
 
 export interface SliderProps<T> {
@@ -277,7 +134,7 @@ function CustomDepartmentSlider<T>({
                     <button
                         onClick={handlePrev}
                         disabled={isAtStart}
-                        className={`border-2 w-[48px] h-[48px] flex items-center justify-center text-lg transition font-semibold ${isAtStart ? "opacity-40 cursor-not-allowed" : "hover:cursor-pointer"
+                        className={`border-2 w-12 h-12 flex items-center justify-center text-lg transition font-semibold ${isAtStart ? "opacity-40 cursor-not-allowed" : "hover:cursor-pointer"
                             }`}
                         style={{
                             borderColor: arrowBorderColor,
@@ -292,7 +149,7 @@ function CustomDepartmentSlider<T>({
                     <button
                         onClick={handleNext}
                         disabled={isAtEnd}
-                        className={`border-2 w-[48px] h-[48px] flex items-center justify-center text-lg transition font-semibold ${isAtEnd ? "opacity-40 cursor-not-allowed" : "hover:cursor-pointer"
+                        className={`border-2 w-12 h-12 flex items-center justify-center text-lg transition font-semibold ${isAtEnd ? "opacity-40 cursor-not-allowed" : "hover:cursor-pointer"
                             }`}
                         style={{
                             borderColor: arrowBorderColor,
@@ -341,3 +198,4 @@ export default CustomDepartmentSlider;
 
 
 
+ 

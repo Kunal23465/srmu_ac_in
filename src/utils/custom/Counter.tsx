@@ -18,9 +18,24 @@ const Counter: React.FC<counterDataPropsType> = ({ counterData, classes }) => {
                 <img src={item.icon} alt="" />
               </span>
             )}{" "}
-            <CountUp start={0} end={Number(item.value)} duration={3} separator="" suffix={item.suffix} enableScrollSpy={true}>
-              {({ countUpRef }) => <span ref={countUpRef} />}
-            </CountUp>
+            {
+              isNaN(Number(item.value)) ? (
+                <span>{item.value}</span>
+              ) : (
+                <CountUp
+                  start={0}
+                  end={Number(item.value)}
+                  duration={3}
+                  decimals={item.value.toString().includes(".") ? item.value.toString().split(".")[1].length : 0}
+                  separator=""
+                  suffix={item.suffix}
+                  enableScrollSpy={true}
+                >
+                  {({ countUpRef }) => <span ref={countUpRef} />}
+                </CountUp>
+
+              )
+            }
           </h1>
           <p className={`text-sm sm:text-base md:text-xl text-center  mt-3`}>{item.label}</p>
         </div>

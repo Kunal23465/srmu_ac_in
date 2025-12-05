@@ -19,8 +19,10 @@ import { customeOverViewType } from "../../../types/home-data-type";
 export const CommitteeOverviewData: customeOverViewType = {
   heading: "Committees & Cells",
   content:
-    `Education has the potential to change our world. It is a powerful tool for eradicating inequality, gender disparity, diminishing poverty, alleviation of disease and to develop means for creating a sustainable planet, infused with peace and prosperity. 
-    Founders of the University, Alumni and Gold Medalist from IIT Kanpur, envision Shri Ramswaroop Memorial University to be a globally recognized place of teaching-learning, doing research and preparing human capital with ethical, social and ecological sensibilities, thereby contributing to national prosperity.`
+    "Education has the potential to change our world. It is a powerful tool for eradicating inequality. gender disparity, diminishing poverty, alleviation of disease and to develop means for creating a sustainable planet, infused with peace and prosperity.",
+
+  counterSibling:
+  "Founders of the University, Alumni and Gold Medalist from IIT Kanpur, envision Shri Ramswaroop Memorial University to be a globally recognized place of teaching-learning, doing research and preparing human capital with ethical, social and ecological sensibilities, thereby contributing to national prosperity."
 };
 
 
@@ -77,9 +79,9 @@ To implement the same in the session 2023–24 also, the Anti-Ragging Committee 
     ],
 
     contact: [
-      "Chairman/ Chairperson, Committee members OR",
-      "Anti Ragging WhatsApp Number: 9554965584 OR",
-      "Mail at registrar.office@srmuu.ac.in / registrar@srmuu.ac.in / vc@srmuu.ac.in OR",
+      "Chairman/ Chairperson, Committee members **OR**",
+      "Anti Ragging WhatsApp Number: 9554965584 **OR**",
+      "Mail at registrar.office@srmuu.ac.in / registrar@srmuu.ac.in / vc@srmuu.ac.in **OR**",
       "Register at https://srmuu.ac.in/campus-life/grievance-redressal-system for Online Grievance Redressal",
     ],
 
@@ -125,9 +127,9 @@ The board comprises senior faculty members, administrative officers, and other k
     ],
 
     contact: [
-      "Chairman/ Chairperson, Committee members OR",
-      "Anti Ragging WhatsApp Number: 9554965584 OR",
-      "Mail at registrar.office@srmu.ac.in / registrar@srmu.ac.in / vc@srmu.ac.in OR",
+      "Chairman/ Chairperson, Committee members **OR**",
+      "Anti Ragging WhatsApp Number: 9554965584 **OR**",
+      "Mail at registrar.office@srmu.ac.in / registrar@srmu.ac.in / vc@srmu.ac.in **OR**",
       "Register at https://srmu.ac.in/campus-life/grievance-redressal-system for Online Grievance Redressal"
     ],
 
@@ -156,7 +158,7 @@ The University helps financially weaker students through the Student Welfare Fun
     ],
 
     contact: [
-      "Chairman/ Chairperson, Committee members OR",
+      "Chairman/ Chairperson, Committee members **OR**",
       "Mail at registrar.office@srmu.ac.in / registrar@srmu.ac.in / vc@srmu.ac.in",
       "Register at https://srmu.ac.in/campus-life/grievance-redressal-system for Online Grievance Redressal"
     ],
@@ -193,8 +195,8 @@ The purpose of this fund is to provide amenities to students that support their 
     ],
 
     contact: [
-      "Chairman/ Chairperson, Committee members OR",
-      "Mail at registrar.office@srmu.ac.in / registrar@srmu.ac.in / vc@srmu.ac.in OR",
+      "Chairman/ Chairperson, Committee members **OR**",
+      "Mail at registrar.office@srmu.ac.in / registrar@srmu.ac.in / vc@srmu.ac.in **OR**",
       "Register at https://srmu.ac.in/campus-life/grievance-redressal-system for Online Grievance Redressal"
     ],
 
@@ -226,8 +228,8 @@ It ensures that every individual on campus can exercise and acquire equal rights
     ],
 
     contact: [
-      "Chairman/ Chairperson, Committee members OR",
-      "Mail at registrar.office@srmu.ac.in / registrar@srmu.ac.in / vc@srmu.ac.in OR",
+      "Chairman/ Chairperson, Committee members **OR**",
+      "Mail at registrar.office@srmu.ac.in / registrar@srmu.ac.in / vc@srmu.ac.in **OR**",
       "Register at https://srmu.ac.in/campus-life/grievance-redressal-system for Online Grievance Redressal"
     ],
 
@@ -261,8 +263,8 @@ As per Section 4(1) of the Act, the Internal Complaints Committee has been const
     ],
 
     contact: [
-      "Chairman/ Chairperson, Committee members OR",
-      "Mail at registrar.office@srmu.ac.in / registrar@srmu.ac.in / vc@srmu.ac.in OR",
+      "Chairman/ Chairperson, Committee members **OR**",
+      "Mail at registrar.office@srmu.ac.in / registrar@srmu.ac.in / vc@srmu.ac.in **OR**",
       "Register at https://srmu.ac.in/campus-life/grievance-redressal-system for Online Grievance Redressal"
     ],
 
@@ -295,8 +297,8 @@ It aims to foster digital culture by following and implementing the Digital Acti
     ],
 
     contact: [
-      "Chairman/ Chairperson, Committee members OR",
-      "Mail at registrar.office@srmu.ac.in / registrar@srmu.ac.in / vc@srmu.ac.in OR",
+      "Chairman/ Chairperson, Committee members **OR**",
+      "Mail at registrar.office@srmu.ac.in / registrar@srmu.ac.in / vc@srmu.ac.in **OR**",
       "Register at https://srmu.ac.in/campus-life/grievance-redressal-system for Online Grievance Redressal"
     ],
 
@@ -328,8 +330,8 @@ It aims to create an enabling environment of gender justice and ensure safety an
     ],
 
     contact: [
-      "Chairman/ Chairperson, Committee members OR",
-      "Mail at registrar.office@srmu.ac.in / registrar@srmu.ac.in / vc@srmu.ac.in OR",
+      "Chairman/ Chairperson, Committee members **OR**",
+      "Mail at registrar.office@srmu.ac.in / registrar@srmu.ac.in / vc@srmu.ac.in **OR**",
       "Register at https://srmu.ac.in/campus-life/grievance-redressal-system for Online Grievance Redressal"
     ],
 
@@ -359,8 +361,8 @@ By granting scholarships and assistance, the Cell promotes higher education amon
     ],
 
     contact: [
-      "Chairman/ Chairperson, Committee members OR",
-      "Mail at registrar.office@srmu.ac.in / registrar@srmu.ac.in / vc@srmu.ac.in OR",
+      "Chairman/ Chairperson, Committee members **OR**",
+      "Mail at registrar.office@srmu.ac.in / registrar@srmu.ac.in / vc@srmu.ac.in **OR**",
       "Register at https://srmu.ac.in/campus-life/grievance-redressal-system for Online Grievance Redressal"
     ],
 
@@ -389,8 +391,8 @@ It provides support to help these students integrate into the mainstream while a
     ],
 
     contact: [
-      "Chairman/ Chairperson, Committee members OR",
-      "Mail at registrar.office@srmu.ac.in / registrar@srmu.ac.in / vc@srmu.ac.in OR",
+      "Chairman/ Chairperson, Committee members **OR**",
+      "Mail at registrar.office@srmu.ac.in / registrar@srmu.ac.in / vc@srmu.ac.in **OR**",
       "Register at https://srmu.ac.in/campus-life/grievance-redressal-system for Online Grievance Redressal"
     ],
 
@@ -423,8 +425,8 @@ The mission of the Unnat Bharat Cell is to enable universities to work with rura
     ],
 
     contact: [
-      "Chairman/ Chairperson, Committee members OR",
-      "Mail at registrar.office@srmu.ac.in / registrar@srmu.ac.in / vc@srmu.ac.in OR",
+      "Chairman/ Chairperson, Committee members **OR**",
+      "Mail at registrar.office@srmu.ac.in / registrar@srmu.ac.in / vc@srmu.ac.in **OR**",
       "Register at https://srmu.ac.in/campus-life/grievance-redressal-system for Online Grievance Redressal"
     ],
 
@@ -457,8 +459,8 @@ The committee has the authority to investigate complaints of harassment and othe
     ],
 
     contact: [
-      "Chairman/ Chairperson, Committee members OR",
-      "Mail at registrar.office@srmu.ac.in / registrar@srmu.ac.in / vc@srmu.ac.in OR",
+      "Chairman/ Chairperson, Committee members **OR**",
+      "Mail at registrar.office@srmu.ac.in / registrar@srmu.ac.in / vc@srmu.ac.in **OR**",
       "Register at https://srmu.ac.in/campus-life/grievance-redressal-system for Online Grievance Redressal"
     ],
 

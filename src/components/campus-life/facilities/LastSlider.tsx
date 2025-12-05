@@ -11,6 +11,7 @@ const LastSlider: React.FC = () => {
     });
 
     const [activeIndex, setActiveIndex] = useState(0);
+    const [selectedCard, setSelectedCard] = useState<number | null>(null); // ← highlight tapped card on mobile
 
     const calculateCardWidth = useCallback(() => {
         const sliderElement = sliderRef.current;
@@ -87,7 +88,13 @@ const LastSlider: React.FC = () => {
         const targetScrollLeft = index * width;
         sliderElement.scrollTo({ left: targetScrollLeft, behavior: "smooth" });
         setActiveIndex(index);
+        setSelectedCard(null); // reset selection when using dots
     };
+
+    // Reset selected card when user scrolls
+    const resetTapOnScroll = useCallback(() => {
+        setSelectedCard(null);
+    }, []);
 
     useEffect(() => {
         const sliderElement = sliderRef.current;
@@ -103,24 +110,27 @@ const LastSlider: React.FC = () => {
         window.addEventListener("resize", handleResize);
 
         sliderElement.addEventListener("scroll", updatePagination);
+        sliderElement.addEventListener("scroll", resetTapOnScroll);
 
         return () => {
             window.removeEventListener("resize", handleResize);
             sliderElement.removeEventListener("scroll", updatePagination);
+            sliderElement.removeEventListener("scroll", resetTapOnScroll);
         };
-    }, [calculateCardWidth, updatePagination]);
+    }, [calculateCardWidth, updatePagination, resetTapOnScroll]);
 
     return (
         <div className="w-full max-w-7xl">
             <div className="text-center mb-5">
-                <h2 className="font50 fw500">
+                 <h2 className="text-[1.6rem] text-[#023047] sm:text-xl lg:text-[50px] fw600">
                     Academic Wings
                 </h2>
 
                 <p>
-                    Shri Ramswaroop Memorial University (SRMU) features well-defined academic wings, each dedicated to fostering excellence in specific disciplines. These wings, equipped with state-of-the-art classrooms, laboratories, and research facilities, provide a conducive environment for specialized learning and academic exploration. With distinct academic wings, SRMU ensures a focused and comprehensive approach to education, nurturing the intellectual growth of students across various fields.
+                    Shri Ramswaroop Memorial University (SRMU) features well-defined academic wings...
                 </p>
             </div>
+
             <div
                 ref={sliderRef}
                 className="flex space-x-6 pb-4 overflow-x-scroll hide-scrollbar transition-all duration-300 ease-in-out"
@@ -133,30 +143,55 @@ const LastSlider: React.FC = () => {
                 onTouchCancel={handleMouseUpOrTouchEnd}
                 onTouchMove={handleMouseMoveOrTouchMove}
             >
-                {CARD_CONTENT.map((data) => (
-                    <div
-                        key={data.id}
-                        className="card group cursor-pointer bg-white min-w-[300px] md:min-w-[350px] lg:min-w-[410px] rounded-sm shadow-xl hover:bg-[#233E6F] hover:text-white hover:shadow-2xl transition duration-300 transform hover:scale-[1.01] p-2"
-                    >
-                        <img
-                            src={data.image}
-                            alt={data.title}
-                            onError={(e) =>
-                            ((e.target as HTMLImageElement).src =
-                                "https://placehold.co/600x400/9CA3AF/FFFFFF?text=Image+Load+Error")
-                            }
-                            className=" w-full h-60 object-cover rounded-tl-sm rounded-tr-sm rounded-bl-sm rounded-br-3xl"
-                        />
-                        <div className="p-6 hover:text-white">
-                            <h3 className="text-xl font-bold mb-3 text-gray-800 group-hover:text-white">
-                                {data.title}
-                            </h3>
-                            <p className="text-sm text-gray-600 group-hover:text-white leading-relaxed">
-                                {data.description}
-                            </p>
+                {CARD_CONTENT.map((data) => {
+                //@ts-ignore
+                    const isActive = selectedCard === data.id;
+
+                    return (
+                        <div
+                            key={data.id}
+                             //@ts-ignore
+                            onClick={() => setSelectedCard(data.id)}
+                            className={`card group cursor-pointer min-w-[300px] md:min-w-[350px] lg:min-w-[410px]
+                                rounded-sm shadow-xl transition duration-300 transform p-2
+                                hover:scale-[1.01]
+                                ${
+                                    isActive
+                                        ? "bg-[#233E6F] text-white shadow-2xl scale-[1.01]"
+                                        : "bg-white hover:bg-[#233E6F] hover:text-white hover:shadow-2xl"
+                                }
+                            `}
+                        >
+                            <img
+                                src={data.image}
+                                alt={data.title}
+                                onError={(e) =>
+                                    ((e.target as HTMLImageElement).src =
+                                        "https://placehold.co/600x400/9CA3AF/FFFFFF?text=Image+Load+Error")
+                                }
+                                className="w-full h-60 object-cover rounded-tl-sm rounded-tr-sm rounded-bl-sm rounded-br-3xl"
+                            />
+
+                            <div className="p-6">
+                                <h3
+                                    className={`font18 fw600  mb-3 group-hover:text-white 
+                                        ${isActive ? "text-white" : "text-gray-800"}
+                                    `}
+                                >
+                                    {data.title}
+                                </h3>
+
+                                <p
+                                    className={` leading-relaxed group-hover:text-white 
+                                        ${isActive ? "" : ""}
+                                    `}
+                                >
+                                    {data.description}
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                ))}
+                    );
+                })}
             </div>
 
             <div className="flex justify-center mt-6 space-x-2">

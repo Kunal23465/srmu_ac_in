@@ -10,7 +10,7 @@ export const Hello: FC<HelloProps> = ({ sliderRef }) => {
 
   const settings = {
     dots: false,
-    infinite: true,
+    infinite: false,
     speed: 200,
     slidesToShow: 1,
     slidesToScroll: 1,

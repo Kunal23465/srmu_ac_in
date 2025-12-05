@@ -1,16 +1,20 @@
+
 import React, { useState } from "react";
 import { InstituteProfile } from "../../types/profile-data-type";
 import { CustomModal } from "./CustomIqacCard";
+import { instituteProfiles } from "../../data/academics/institute/data";
 
 interface CustomInstituteProfileCardProps {
   data?: InstituteProfile[];
 }
 
 const CustomInstituteProfileCard: React.FC<CustomInstituteProfileCardProps> = ({
-  data,
+  data = instituteProfiles,
 }) => {
+  console.log("data", data);
   const [expandedId, setExpandedId] = useState<number | null>(null);
 
+  // Make **bold** portions bold
   const formatBold = (text: string) => {
     const parts = text.split(/(\*\*.*?\*\*)/g);
     return parts.map((part, index) =>
@@ -29,7 +33,7 @@ const CustomInstituteProfileCard: React.FC<CustomInstituteProfileCardProps> = ({
   return (
     <section className="bg-[#0f4a85] py-10 md:py-16">
       <div className="max-w-6xl mx-auto space-y-12 px-4 md:px-0">
-        {data?.map((profile) => (
+        {data.map((profile) => (
           <div
             key={profile.id}
             className="flex flex-col md:flex-row items-start gap-8 md:gap-10"
@@ -52,10 +56,11 @@ const CustomInstituteProfileCard: React.FC<CustomInstituteProfileCardProps> = ({
               <p className="font19  mb-1">{profile.name}</p>
               <p className="mb-4 fw500">{profile.position}</p>
 
-              <p className="mb-6 max-w-full md:max-w-3xl">
+              {profile.summary && <p className="mb-6 max-w-full md:max-w-3xl">
                 {formatBold(profile.summary)}
-              </p>
+              </p>}
 
+              {/* CARD DETAILS SECTION */}
               {profile.detailsHeading && (
                 <h3 className="font-bold text-[18px] mb-2">
                   {profile.detailsHeading}
@@ -64,13 +69,13 @@ const CustomInstituteProfileCard: React.FC<CustomInstituteProfileCardProps> = ({
 
               {profile.useBullets ? (
                 <ul className="list-disc pl-5 space-y-1 mb-6">
-                  {profile.details.map((d, i) => (
+                  {profile?.details?.map((d, i) => (
                     <li key={i}>{formatBold(d)}</li>
                   ))}
                 </ul>
               ) : (
                 <div className="space-y-1 mb-6">
-                  {profile.details.map((d, i) => (
+                  {profile?.details?.map((d, i) => (
                     <p key={i}>{formatBold(d)}</p>
                   ))}
                 </div>
@@ -89,7 +94,7 @@ const CustomInstituteProfileCard: React.FC<CustomInstituteProfileCardProps> = ({
       </div>
 
       {/* MODALS */}
-      {data?.map((profile) => (
+      {data.map((profile) => (
         <CustomModal
           key={profile.id}
           id={profile.id}
@@ -99,9 +104,13 @@ const CustomInstituteProfileCard: React.FC<CustomInstituteProfileCardProps> = ({
           content={
             <div className="text-black text-[17px] leading-relaxed">
               <h2 className="font19  fw500 mb-4 text-[#0f4a85]">{profile.name}</h2>
-              {profile?.modalContent?.split("\n").map((p, i) => (
+              {/* {profile?.modalContent?.split("\n").map((p, i) => (
                 <p key={i}>{formatBold(p)}</p>
-              ))}
+              ))} */}
+              <div
+                dangerouslySetInnerHTML={{ __html: profile.modalContent ?? "" }}
+              ></div>
+
             </div>
           }
           description=""

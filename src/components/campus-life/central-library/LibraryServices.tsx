@@ -1,49 +1,39 @@
-import React from 'react';
-import { LibraryService, libraryServices } from '../../../data/campus-life/central-library/central-library-data';
-import immm from "../../../assets/images/campus-life/central-library/core-values-08022405434112.jpg"
+import React from "react";
+import coreValuesImg from "../../../assets/images/about/aboutUs/core-values-img.jpg";
+import { libraryServices } from "../../../data/campus-life/central-library/central-library-data";
 
-const LibraryServices: React.FC = () => {
+const CoreValues: React.FC = () => {
     return (
-        <div className="relative max-w-10xl mx-auto my-20 p-4 lg:p-0">
+        <div className="flex items-center  py-20 px-6 relative">
+            <div className="relative border-4 border-[#ffb703] rounded-2xl shadow-gray-400 shadow-2xl w-full lg:w-[75%] p-7 md:p-12">
 
-            <div
-                className="absolute top-[-200px] right-0 w-full h-full lg:w-2/3 xl:w-[300px] 
-                   bg-gray-200 rounded-lg lg:rounded-none lg:rounded-tr-lg shadow-xl overflow-hidden"
-                style={{ zIndex: 1 }}
-            >
-                <img
-                    src={immm}
-                    alt="Students reading and studying outdoors"
-                    className="w-full h-full rounded-br-lg z-999"
-                />
-            </div>
+                {/* Left Side — Card Content */}
+                <div className="w-full lg:w-[75%] space-y-5 z-10">
+                    <h2 className="text-2xl sm:text-5xl font-semibold mb-1 sm:mb-6">
+                        Our Core Values
+                    </h2>
 
-            <div
-                className="relative lg:w-[80%] p-6 bg-white shadow-xl rounded-lg 
-                   border border-yellow-400 py-15 px-10 mt-12 lg:mt-0 h-full
-                   "
-                style={{ zIndex: 0 }}
-            >
-
-                <h2 className="text-2xl font-bold text-gray-800 mb-6">
-                    Library Services
-                </h2>
-
-                <div className="space-y-4">
-                    {libraryServices.map((service: LibraryService) => (
-                        <p key={service.title} className="text-sm leading-relaxed">
-                            <span className="font-bold text-gray-800">
-                                {service.title}:
-                            </span>{' '}
-                            <span className="text-gray-600">
-                                {service.description}
-                            </span>
-                        </p>
+                    {libraryServices.map((item, index) => (
+                        <div key={index} className="text-gray-800 leading-relaxed">
+                            <p>
+                                <span className="font-bold">{item.title}:</span>{" "}
+                                {item.description}
+                            </p>
+                        </div>
                     ))}
                 </div>
+
+                <div className="hidden lg:block absolute lg:top-[-18%] lg:right-[-38%] w-[300px] sm:w-[340px] lg:w-[450px] xl:w-[480px]">
+                    <img
+                        src={coreValuesImg}
+                        alt="Core Values"
+                        className="w-full h-auto object-cover rounded-xl"
+                    />
+                </div>
+
             </div>
         </div>
     );
 };
 
-export default LibraryServices;
+export default CoreValues;

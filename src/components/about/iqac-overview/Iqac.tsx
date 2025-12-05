@@ -18,6 +18,7 @@ import CustomTable from "../../../utils/custom/CustomTable";
 import IqacCardsSection from "./IqacCard";
 import CustomTopFooter from "../../../utils/custom/CustomTopFooter";
 
+
 const Iqac: React.FC = () => {
   return (
     <>
@@ -26,7 +27,7 @@ const Iqac: React.FC = () => {
         <CustomOverviewSection data={iqacOverviewData} />
 
         {/* IQAC Info Cards */}
-        <div className="grid-iqac-card manage main mb-5">
+        <div className="grid-iqac-card  gap-3 manage lg:gap-2 xl:gap-1 main mx-10 sm:mx-5 lg:mx-0 mb-5">
           {iqacCards?.map((card, index) => {
             const length = iqacCards.length;
             return (
@@ -50,7 +51,7 @@ const Iqac: React.FC = () => {
 
       <div className={`${Classes["container"]}`}>
         {/* Reports Section */}
-        <h1 className="text-3xl lg:text-4xl mt-14 font-semibold">Report</h1>
+        <h1 className="text-3xl lg:text-5xl mt-14 lg:mt-20 font-medium">Report</h1>
         <CustomTable
           columnOneHeader="University Annual Report"
           columnTwoHeader="Downloads"
@@ -78,7 +79,7 @@ const Iqac: React.FC = () => {
         />
 
         {/* Feedback Section */}
-        <h1 className="text-3xl lg:text-4xl mt-10 font-semibold">Feedback</h1>
+        <h1 className="text-3xl lg:text-5xl mt-10 md:mt-20 font-medium">Feedback</h1>
         <CustomTable
           columnOneHeader="Feedback Procedure"
           columnTwoHeader="Downloads"

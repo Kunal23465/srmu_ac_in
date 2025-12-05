@@ -3,6 +3,7 @@ import Classes from "../../../utils/styles/Global.module.css";
 
 interface Person {
   name: string;
+  qoute?: string;
   title: string;
   image: string;
   description: string[];
@@ -20,6 +21,15 @@ const AlternateProfileSection: React.FC<Props> = ({ people }) => {
     setExpanded((prev) => ({ ...prev, [name]: !prev[name] }));
   };
 
+    const formatWithLineBreaks = (text: string) => {
+      return text.split("**").map((part, index) => (
+        <React.Fragment key={index}>
+          {index > 0 && <br />}
+          {part.trim()}
+        </React.Fragment>
+      ));
+    };
+
   return (
     <>
       {people.map((person, index) => {
@@ -32,10 +42,13 @@ const AlternateProfileSection: React.FC<Props> = ({ people }) => {
               <section className="py-7 md:py-10 lg:py-14">
                 <div className="name-banner"></div>
                 <div
-                  className={`${Classes["container"]} -mt-[140px] md:-mt-[120px]`}
+                  className={`${Classes["container"]} -mt-[250px] md:-mt-[250px]`}
                 >
                   <div className="flex flex-col items-center md:items-start md:flex-row gap-x-10">
                     <div className="w-full max-w-[420px] md:hidden mb-4">
+                        <h1 className="text-white text-xl mb-14">
+                          {formatWithLineBreaks(person.qoute || "")}
+                        </h1>
                       <h2 className="name text-3xl lg:text-4xl font-bold text-white mb-2">
                         {person.name}
                       </h2>
@@ -44,23 +57,26 @@ const AlternateProfileSection: React.FC<Props> = ({ people }) => {
                       </span>
                     </div>
                     <div
-                      className={`box w-full max-w-[290px] sm:max-w-[420px] bg-white p-3 sm:p-5 rounded-xl border-2 border-white transition-all duration-200 hover:border-[#ffb703] ${
+                      className={`box w-full max-w-[290px] sm:max-w-[560px] bg-white p-3 sm:p-5 rounded-xl border-2 border-white transition-all duration-200 hover:border-[#ffb703] ${
                         person.name === "Er. Pankaj Agarwal" ? "md:order-2" : ""
                       }`}
                     >
                       <img className="w-full" src={person.image} alt={person.name} />
                     </div>
                     <div className="w-full flex-col">
-                      <div className="hidden md:block ">
-                        <h2 className="text-3xl lg:text-4xl font-bold text-white mb-2">
+                      <div className={`hidden md:block ${person.name === "Er. Pooja Agarwal" ? "text-right" : ""}`}>
+                        <h1 className="text-white text-xl mb-14">
+                          {formatWithLineBreaks(person.qoute || "")}
+                        </h1>
+                        <h2 className="text-2xl lg:text-4xl font-medium text-white mb-2">
                           {person.name}
                         </h2>
                         <p className="text-xl text-white font-medium ">
                           {person.title}
                         </p>
                       </div>
-                      <div className="content mt-7 md:mt-[60px] text-justify leading-8">
-                        <p>{person.description.join(" ")}</p>
+                      <div className={`content ${person.name === "Er. Pooja Agarwal" ? "md:mt-[140px]" : "md:mt-[75px]"} mt-7 text-justify`}>
+                        <p>{formatWithLineBreaks(person.description.join(""))}</p>
                       </div>
                     </div>
                   </div>
@@ -70,7 +86,7 @@ const AlternateProfileSection: React.FC<Props> = ({ people }) => {
 
             {!isStyleB && (
               <div className={`${Classes["container"]} py-7 md:py-10 lg:py-14`}>
-                <div className="w-full rounded-[10px] bg-white border border-gray-200 shadow-sm hover:shadow-md transition-all duration-200 px-5 py-10 sm:px-10 sm:py-12">
+                <div className="w-full rounded-[10px] bg-white border border-black shadow-sm hover:shadow-md transition-all duration-200 px-5 py-10 sm:px-10 sm:py-12">
                   <div className="flex flex-col md:flex-row items-start gap-5">
                     <div className="w-full mx-auto max-w-[320px] flex justify-center items-center">
                       <img

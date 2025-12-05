@@ -1,5 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 @import "tailwindcss";
+html {
+  scroll-behavior: smooth;
+  font-family: "Rubik", sans-serif;
+  color: #212529;
+}
+/* .writing-mode-vertical {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+} */
+@layer utilities {
+  .writing-mode-vertical {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+  }
+
+  .writing-mode-horizontal {
+    writing-mode: horizontal-tb; 
+    text-orientation: mixed;
+  }
+}
 
 /* for banner section */
 .banner-section {
@@ -123,7 +143,7 @@
   display: none !important;
 }
 
-.photo_gallery>.slick-dots li button:before {
+.photo_gallery > .slick-dots li button:before {
   font-family: "slick";
   position: absolute;
   top: 0;
@@ -139,12 +159,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.photo_gallery>.slick-dots li.slick-active button:before {
+.photo_gallery > .slick-dots li.slick-active button:before {
   opacity: 0.9;
   background: #ffb703;
 }
 
-.photo_gallery>.slick-dots {
+.photo_gallery > .slick-dots {
   bottom: -40px !important;
 }
 
@@ -182,11 +202,7 @@
   background-position: center; */
   /* background: linear-gradient(180deg, #224984 0%, #152E45 100%); */
   background: rgb(34, 73, 132);
-  background: radial-gradient(
-    circle,
-    rgba(34, 73, 132, 1) 0%,
-    rgba(21, 46, 69, 1) 100%
-  );
+  background: radial-gradient(circle, rgba(34, 73, 132, 1) 0%, rgba(21, 46, 69, 1) 100%);
 }
 
 .abhivyakti_grid {
@@ -245,13 +261,11 @@ background: radial-gradient(circle, rgba(36,64,143,0.9444152661064426) 0%, rgba(
 .grid-iqac-card {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(223px, 1fr));
-  gap: 4px;
 }
 
 .grid-iqac-card.manage {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 4px;
 }
 
 .grid-iqac-card.main {
@@ -429,8 +443,6 @@ background: radial-gradient(circle, rgba(36,64,143,0.9444152661064426) 0%, rgba(
   z-index: 1;
 }
 
-
-
 .manage-top-arrow::after {
   content: "";
   position: absolute;
@@ -495,22 +507,29 @@ background: radial-gradient(circle, rgba(36,64,143,0.9444152661064426) 0%, rgba(
 }
 
 @media screen and (min-width: 592px) {
-
   /* ======================================== */
   .parent_grid_gallary .children img {
     width: 100%;
     height: 100%;
-    max-height: 100%;
+    
     object-fit: cover;
     display: block;
     border-radius: 8px;
   }
+
+  .parent_grid_gallary .children {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+
 
   .parent_grid_gallary {
     max-width: 100%;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 15px;
+    grid-auto-rows: 200px;
   }
 
   .parent_grid_gallary .children:first-child {
@@ -651,13 +670,7 @@ input::-webkit-inner-spin-button {
 }
 
 .border-gradient-green {
-  border-image-source: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 0) 0%,
-    #ffffff 20.5%,
-    #ffffff 83.5%,
-    rgba(255, 255, 255, 0) 100%
-  );
+  border-image-source: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #ffffff 20.5%, #ffffff 83.5%, rgba(255, 255, 255, 0) 100%);
 }
 
 .mobile-scroll::-webkit-scrollbar {
@@ -785,12 +798,6 @@ input::-webkit-inner-spin-button {
   .card-bottom-part {
     min-height: 200px;
   }
-}
-
-html {
-  scroll-behavior: smooth;
-  font-family: "Rubik", sans-serif;
-  color: #212529;
 }
 
 .testmonial-slider .slick-dots {
@@ -923,7 +930,7 @@ html {
   background-image: url("/litile-banner.png");
   background-size: cover;
   background-repeat: no-repeat;
-  min-height: 180px;
+  min-height: 330px;
   width: 100%;
 }
 
@@ -1309,17 +1316,29 @@ ul {
   background-image: url("./assets/images/admissions/overview/placement-records-bg.jpg");
 }
 
+.cafeteria-bg {
+  background-image: url("./assets/images/campus-life/facilities/facilities-bg.jpeg");
+}
+
 .vb {
   object-fit: contain;
   object-position: bottom;
 }
 
 .fw45 {
-  font-size: 2.813rem;
+  font-size: 42px;
 }
 
 .fw35 {
   font-size: 2.188rem;
+}
+
+.small-font {
+  font-size: 0.813rem;
+}
+
+.fw300 {
+  font-weight: 300 !important;
 }
 
 .parent_grid_gallary .children img {
@@ -1331,7 +1350,6 @@ ul {
 }
 
 @media screen and (min-width: 592px) {
-
   /* ======================================== */
   .parent_grid_gallary .children img {
     width: 100%;
@@ -1443,12 +1461,12 @@ section .card-color img {
     flex-direction: column;
   }
 
-  section .card-color>div:first-child {
+  section .card-color > div:first-child {
     width: 100% !important;
     text-align: left;
   }
 
-  section .card-color>div:last-child {
+  section .card-color > div:last-child {
     width: 100% !important;
     margin-top: 2rem !important;
     position: relative !important;
@@ -1527,6 +1545,10 @@ section .card-color img {
 
 .programs-tabs li {
   position: relative;
+}
+
+.blog-heading {
+  font-size: calc(1.275rem + 0.3vw);
 }
 
 .programs-tabs button::after {
@@ -1631,7 +1653,6 @@ section .card-color img {
 
 .font28 {
   font-size: 1.75rem;
-
 }
 
 
@@ -1670,18 +1691,11 @@ section .card-color img {
   background-repeat: no-repeat;
 }
 
-.placement-record-bg{
-    background-image: url(../src/assets/images/placements/placement-overview/placementrecords.jpeg);
+.placement-record-bg {
+  background-image: url(../src/assets/images/placements/placement-overview/placementrecords.jpeg);
   background-size: cover;
   background-repeat: no-repeat;
-
-  
 }
-
-
-
-
-
 
 /* Remove default slick arrow icons */
 .slick-prev:before,
@@ -1717,7 +1731,7 @@ section .card-color img {
 
 /* Hover effect */
 .custom-arrow:hover {
-  background: #FFCA28;
+  background: #ffca28;
   color: white;
   border: none;
 }
@@ -1733,7 +1747,6 @@ section .card-color img {
   top: 40%;
 }
 
-
 .institute_box {
   padding-right: var(--conatiner-offset);
 }
@@ -1742,7 +1755,6 @@ section .card-color img {
   padding-right: var(--offset);
 }
 
-/* FORCE SWIPER TO BE HORIZONTAL */
 .swiper-wrapper {
   display: flex !important;
   flex-direction: row !important;
@@ -1758,5 +1770,48 @@ section .card-color img {
 }
 
 .fontn15 {
-  font-size: .938rem;
+  font-size: 0.938rem;
+}
+
+.font30 {
+  font-size: 1.875rem;
+}
+
+.eligibility-container {
+  width: 100%;
+  min-height: 450px;
+  background-image: url("/src/assets/images/programs/btechincseaiandml/eligibility-img.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  padding: 50px;
+  margin-bottom: 60px;
+  border-radius: 20px;
+}
+
+.eligibility-content {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: 20px;
+  color: white;
+}
+
+.eligibility-content h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.eligibility-content p {
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+.slick-slide {
+  pointer-events: none;
+}
+
+.slick-slide.slick-active {
+  pointer-events: auto;
 }

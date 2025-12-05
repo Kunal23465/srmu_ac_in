@@ -44,21 +44,21 @@ import ResearchOverviewPage from "../pages/Research/Overview/ResearchOverviewPag
 import ProcessAndInitiativePage from "../pages/Research/Process-and-Initiative/ProcessAndInitiativePage";
 import PhdNotificationSessionPage from "../pages/Research/Phd-notification-session/PhdNotificationSessionPage";
 import EventDetails from "../pages/campus-life/events/EventDetails";
-import tedxData, { conferenceData, festData, festivalsData } from "../data/campus-life/events/events-data";
+import tedxData, {
+  conferenceData,
+  festData,
+  festivalsData,
+} from "../data/campus-life/events/events-data";
 import InnovationPage from "../pages/Research/Innovation/InnovationPage";
 import PlacementPage from "../pages/placement/PlacementPage";
 import StudentTestimonialPage from "../pages/placement/student-testimonial/StudentTestimonialPage";
 import PlacementPoliciesPage from "../pages/placement/placement-policies/PlacementPoliciesPage";
 import ConsultancyPage from "../pages/Research/Consultancy/ConsultancyPage";
-
 import AlumniRegistrationPage from "../pages/placement/AlumniRegistrationPage";
 import AlumniTestimonialsPage from "../pages/placement/AlumniTestimonialsPage";
 import ConvocationPage from "../pages/campus-life/convocation/ConvocationPage";
 import { convocationData } from "../data/campus-life/convocation/convocation-data";
 import ConvocationDetailPage from "../pages/campus-life/convocation/ConvocationDetailPage";
-
-
-
 import ClubsPage from "../pages/campus-life/clubs/ClubsPage";
 import AfterClass10thPage from "../pages/Home/AfterClass10thPage";
 import AfterClass12thPage from "../pages/Home/AfterClass12thPage";
@@ -79,22 +79,28 @@ import AdmissionEnquiryPage from "../pages/admission-enquiry/AdmissionEnquiryPag
 import AdmissionPolicyPage from "../pages/admissions/admission-policy/AdmissionPolicyPage";
 import FacultyOfCivilEngineeringPage from "../pages/academics/institutes/institute-department/FacultyOfCivilEngineeringPage";
 import PlacementOverviewPage from "../pages/placement/placement-overview/PlacementOverviewPage";
-
-
-import InstituteofTechnologyPage from "../pages/academics/institutes/institute-department/InstituteofTechnologyPage";
-import DepartmentOfElectricalAndElectronicsEngineeringPage from "../pages/academics/institutes/institute-department/electricalAndElectronics/DepartmentOfElectricalAndElectronicsEngineeringPage";
-import InstituteofBiosciencesandTechnologyPage from "../pages/academics/institutes/institute-department/InstituteofBiosciencesandTechnologyPage";
-import InstituteofManagementCommerceandEconomicsPage from "../pages/academics/institutes/institute-department/InstituteofManagementCommerceandEconomicsPage";
-import InstituteofMediaStudiesPage from "../pages/academics/institutes/institute-department/InstituteofMediaStudiesPage";
-import InstituteofNaturalSciencesandHumanitiesPage from "../pages/academics/institutes/institute-department/InstituteofNaturalSciencesandHumanitiesPage";
-import InstituteofPharmaceuticalSciencesPage from "../pages/academics/institutes/institute-department/InstituteofPharmaceuticalSciencesPage";
-import InstituteofAgriculturalSciencesandTechnologyPage from "../pages/academics/institutes/institute-department/InstituteofAgriculturalSciencesandTechnologyPage";
-import InstituteofLegalStudiesPage from "../pages/academics/institutes/institute-department/InstituteofLegalStudiesPage";
-import InstituteofPharmacyPage from "../pages/academics/institutes/institute-department/InstituteofPharmacyPage";
-import InstituteofEducationandResearchPage from "../pages/academics/institutes/institute-department/InstituteofEducationandResearchPage";
-import SRMUPolytechnicPage from "../pages/academics/institutes/institute-department/SRMUPolytechnicPage";
 import ConferenceDetailPage from "../components/research/publication/conference/ConferenceDetailPage";
-import DepartmentOfCSEPage from "../pages/academics/institutes/institute-department/DepartmentOfCSEPage";
+import BtechInCSEAIAndML from "../pages/programs/btech-in-cse-ai-ml/BtechInCSEAIAndML";
+import AwardOverviewPage from "../pages/about/award-overview/AwardOverviewPage";
+import DepartmentDetailPage from "../components/academics/institutes/institute-department/Institute-department/DepartmentDetailPage";
+import InstituteDepartmentPage from "../pages/academics/institutes/institute-department/InstituteDepartmentPage";
+// import FacultyOfBiotechnologyPage from "../pages/academics/institutes/institute-department/FacultyOfBiotechnologyPage";
+// import FacultyOfPhysicalSciencesPage from "../pages/academics/institutes/institute-department/FacultyOfPhysicalSciencesPage";
+// import FacultyOfMathematicalAndStatisticalSciencesPage from "../pages/academics/institutes/institute-department/FacultyOfMathematicalAndStatisticalSciencesPage";
+// import FacultyOfHumanitiesAndSocialSciencesPage from "../pages/academics/institutes/institute-department/FacultyOfHumanitiesAndSocialSciencesPage";
+import CareerFormPage from "../pages/Home/CareerFormPage";
+import TermsConditionPage from "../pages/Home/TermsConditionPage";
+import HostelPage from "../pages/campus-life/facilities/HostelPage";
+import ContactUsPage from "../pages/contact-us/ContactUsPage";
+import NewsEventDetails from "../components/home/NewsEventDetails";
+import AlumniFeedbackPage from "../pages/placement/AlumniFeedbackPage";
+import OnlineAdmissionPage from "../pages/Home/OnlineAdmissionPage";
+import BlogsPage from "../pages/blog/BlogsPage";
+import BlogDetailsPage from "../pages/blog/BlogDetailsPage";
+import { blogCards } from "../data/blog/blog-data";
+import RtiPage from "../pages/rti/RtiPage";
+import TransportationPage from "../pages/campus-life/facilities/transportation/TransportationPage";
+import NewsLetterPage from "../pages/Home/NewsLetterPage";
 interface IMatches {
   pathname: string;
   params: Params<string>;
@@ -122,45 +128,24 @@ export const routes = [
         },
       },
       {
-        path: "after-class-10th",
-        element: <AfterClass10thPage />,
+        path: "career-form",
+        element: <CareerFormPage />,
         handle: {
-          crumb: () => <Link to="/">After Class 10th</Link>,
+          crumb: () => <Link to="/">Career Form</Link>,
         },
       },
       {
-        path: "after-class-12th",
-        element: <AfterClass12thPage />,
+        path: "terms-condition",
+        element: <TermsConditionPage />,
         handle: {
-          crumb: () => <Link to="/">After Class 12th</Link>,
+          crumb: () => <Link to="/">Terms & Conditions</Link>,
         },
       },
       {
-        path: "industry-honors",
-        element: <IndustryHonorsPage />,
+        path: "news-letter",
+        element: <NewsLetterPage />,
         handle: {
-          crumb: () => <Link to="/">Industry Honors</Link>,
-        },
-      },
-      {
-        path: "after-graduation",
-        element: <AfterGraduationPage />,
-        handle: {
-          crumb: () => <Link to="/">After Graduation</Link>,
-        },
-      },
-      {
-        path: "after-polytechnic",
-        element: <AfterPolytechnicPage />,
-        handle: {
-          crumb: () => <Link to="/">After Polytechnic</Link>,
-        },
-      },
-      {
-        path: "after-Graduation",
-        element: <AfterPostGraduationPage />,
-        handle: {
-          crumb: () => <Link to="/">After Graduation</Link>,
+          crumb: () => <Link to="/">Newsletter</Link>,
         },
       },
       {
@@ -182,7 +167,7 @@ export const routes = [
         path: "/about",
         element: <AboutPage />,
         handle: {
-          crumb: () => <Link to="/about">About Us</Link>,
+          crumb: () => <Link to="/about">About SRMU</Link>,
         },
         children: [
           {
@@ -196,7 +181,11 @@ export const routes = [
             path: "committees-and-cells",
             element: <CommitteeAndCellsPage />,
             handle: {
-              crumb: () => <Link to="/about/committees-and-cells">Committees and Cells</Link>,
+              crumb: () => (
+                <Link to="/about/committees-and-cells">
+                  Committees and Cells
+                </Link>
+              ),
             },
 
             children: committeeCards.map((card) => ({
@@ -213,6 +202,13 @@ export const routes = [
             element: <RecognitionApprovalsPage />,
             handle: {
               crumb: () => <Link to="/">Approvals & Associations</Link>,
+            },
+          },
+          {
+            path: "award-overview",
+            element: <AwardOverviewPage />,
+            handle: {
+              crumb: () => <Link to="/">Award Overview</Link>,
             },
           },
           {
@@ -240,17 +236,10 @@ export const routes = [
             path: "organization-structure-plan",
             element: <OragnisationStructurePage />,
             handle: {
-              crumb: () => <Link to="/">NIRF</Link>,
+              crumb: () => <Link to="/">Organization Structure & Plan</Link>,
             },
           },
         ],
-      },
-      {
-        path: "/department-of-electrical-and-electronics-engineering",
-        element: <DepartmentOfElectricalAndElectronicsEngineeringPage />,
-        handle: {
-          crumb: () => <Link to="/">Department of Electrical and Electronics Engineering</Link>,
-        },
       },
       {
         path: "/academics",
@@ -265,94 +254,19 @@ export const routes = [
             element: <InstitutePage />,
             children: [
               {
-                path: "faculty-of-civil-engineering",
-                element: <FacultyOfCivilEngineeringPage />,
+                path: "institute-departments/:name",
+                element: <InstituteDepartmentPage />,
                 handle: {
                   crumb: () => <Link to="/">Faculty Of Civil Engineering</Link>,
                 },
               },
               {
-                path: "institute-of-technology",
-                element: <InstituteofTechnologyPage />,
+                path: "departmentDetails/:name",
+                element: <DepartmentDetailPage />,
                 handle: {
-                  crumb: () => <Link to="/">Institute of Technology</Link>,
-                },
-              },
-              {
-                path: "institute-of-biosciences-and-technology",
-                element: <InstituteofBiosciencesandTechnologyPage />,
-                handle: {
-                  crumb: () => <Link to="/">Institute of Biosciences and Technology</Link>,
-                },
-              },
-              {
-                path: "institute-of-management-commerce-and-economics",
-                element: <InstituteofManagementCommerceandEconomicsPage />,
-                handle: {
-                  crumb: () => <Link to="/">Institute of Management, Commerce and Economics</Link>,
-                },
-              },
-              {
-                path: "institute-of-media-studies",
-                element: <InstituteofMediaStudiesPage />,
-                handle: {
-                  crumb: () => <Link to="/">Institute of Media Studies</Link>,
-                },
-              },
-              {
-                path: "institute-of-natural-sciences-and-humanities",
-                element: <InstituteofNaturalSciencesandHumanitiesPage />,
-                handle: {
-                  crumb: () => <Link to="/">Institute of Natural Sciences and Humanities</Link>,
-                },
-              },
-              {
-                path: "institute-of-pharmaceutical-sciences1",
-                element: <InstituteofPharmaceuticalSciencesPage />,
-                handle: {
-                  crumb: () => <Link to="/">Institute of Pharmaceutical Sciences</Link>,
-                },
-              },
-              {
-                path: "institute-of-agricultural-sciences-and-technology",
-                element: <InstituteofAgriculturalSciencesandTechnologyPage />,
-                handle: {
-                  crumb: () => <Link to="/">Institute of Agricultural Sciences and Technology</Link>,
-                },
-              },
-              {
-                path: "institute-of-legal-studies1",
-                element: <InstituteofLegalStudiesPage />,
-                handle: {
-                  crumb: () => <Link to="/">Institute of Legal Studies</Link>,
-                },
-              },
-              {
-                path: "institute-of-pharmacy",
-                element: <InstituteofPharmacyPage />,
-                handle: {
-                  crumb: () => <Link to="/">Institute of Pharmacy</Link>,
-                },
-              },
-              {
-                path: "institute-of-education-and-research",
-                element: <InstituteofEducationandResearchPage />,
-                handle: {
-                  crumb: () => <Link to="/">Institute of Education and Research</Link>,
-                },
-              },
-              {
-                path: "srmu-polytechnic1",
-                element: <SRMUPolytechnicPage />,
-                handle: {
-                  crumb: () => <Link to="/">SRMU Polytechnic</Link>,
-                },
-              },
-              {
-                path: "department-of-Cse",
-                element: <DepartmentOfCSEPage />,
-                handle: {
-                  crumb: () => <Link to="/">SRMU Polytechnic</Link>,
+                  crumb: () => (
+                    <Link to="/">Faculty Of Commerce And Economics</Link>
+                  ),
                 },
               },
             ],
@@ -420,7 +334,6 @@ export const routes = [
             },
           },
 
-
           {
             path: "faculty-of-civil-engineering",
             element: <FacultyOfCivilEngineeringPage />,
@@ -430,7 +343,6 @@ export const routes = [
           },
         ],
       },
-
       {
         path: "/admission",
         element: <AdmissonsPage />,
@@ -488,11 +400,18 @@ export const routes = [
               crumb: () => <Link to="/">Program Finder</Link>,
             },
           },
+          {
+            path: "scholarship-scheme",
+            element: <ScholarshipPage />,
+            handle: {
+              crumb: () => <Link to="/">Scholarship</Link>,
+            },
+          },
         ],
       },
       {
         path: "/programs",
-        element: <PlacementPage />,
+        element: "",
         // element: <StudentTestimonialPage />,
         handle: {
           crumb: () => <Link to="/">Programs</Link>,
@@ -507,6 +426,52 @@ export const routes = [
             },
           },
 
+          {
+            path: "after-polytechnic",
+            element: <AfterPolytechnicPage />,
+            handle: {
+              crumb: () => <Link to="/">After Polytechnic</Link>,
+            },
+          },
+          {
+            path: "after-class-12th",
+            element: <AfterClass12thPage />,
+            handle: {
+              crumb: () => <Link to="/">After Class 12th</Link>,
+            },
+          },
+          {
+            path: "industry-honors",
+            element: <IndustryHonorsPage />,
+            handle: {
+              crumb: () => <Link to="/">Industry Honors</Link>,
+            },
+          },
+          {
+            path: "after-graduation",
+            element: <AfterGraduationPage />,
+            handle: {
+              crumb: () => <Link to="/">After Graduation</Link>,
+            },
+          },
+          {
+            path: "after-post-graduation",
+            element: <AfterPostGraduationPage />,
+            handle: {
+              crumb: () => <Link to="/">After Post Graduation</Link>,
+            },
+          },
+          {
+            path: "b-tech-cse-artificial-intelligence-machine-learning",
+            element: <BtechInCSEAIAndML />,
+            handle: {
+              crumb: () => (
+                <Link to="/">
+                  B.Tech. CSE (Artificial Intelligence & Machine Learning)
+                </Link>
+              ),
+            },
+          },
         ],
       },
       {
@@ -522,6 +487,20 @@ export const routes = [
             element: <FacilitiesPage />,
             handle: {
               crumb: () => <Link to="/">Facilities</Link>,
+            },
+          },
+          {
+            path: "transportation",
+            element: <TransportationPage />,
+            handle: {
+              crumb: () => <Link to="/">Transportation</Link>,
+            },
+          },
+          {
+            path: "hostel",
+            element: <HostelPage />,
+            handle: {
+              crumb: () => <Link to="/">Hostel</Link>,
             },
           },
           {
@@ -653,14 +632,6 @@ export const routes = [
               })),
             ],
           },
-
-          {
-            path: "scholarship",
-            element: <ScholarshipPage />,
-            handle: {
-              crumb: () => <Link to="/">Scholarship</Link>,
-            },
-          },
         ],
       },
       {
@@ -689,7 +660,9 @@ export const routes = [
             path: "phd-notification-session",
             element: <PhdNotificationSessionPage />,
             handle: {
-              crumb: () => <Link to="/">Ph.D. Notification (Session: 2025-26)</Link>,
+              crumb: () => (
+                <Link to="/">Ph.D. Notification (Session: 2025-26)</Link>
+              ),
             },
           },
           {
@@ -767,6 +740,13 @@ export const routes = [
             },
           },
           {
+            path: "alumni-feedback",
+            element: <AlumniFeedbackPage />,
+            handle: {
+              crumb: () => <Link to="/">Alumni Feedback</Link>,
+            },
+          },
+          {
             path: "placement-overview",
             element: <PlacementOverviewPage />,
             handle: {
@@ -784,6 +764,61 @@ export const routes = [
           crumb: () => <Link to="/">Admission Enquiry</Link>,
         },
       },
+      {
+        path: "contact-us",
+        element: <ContactUsPage />,
+        handle: {
+          crumb: () => <Link to="/">Contact Us</Link>,
+        },
+      },
+      {
+        path: "news-and-events/:name",
+        element: <NewsEventDetails />,
+        handle: {
+          crumb: () => <Link to="/">Innovation Meets Agriculture At The SRMU Kisan Mela 2025</Link>,
+        }
+      },
+
+      {
+        path: "/blogs",
+        element: <BlogsPage />,
+        handle: {
+          crumb: () => <Link to="/blogs">Blogs</Link>,
+        },
+        children: [
+          {
+            path: ":blogRouteKey",
+            element: <BlogDetailsPage />,
+            handle: {
+              crumb: (match?: any) => {
+                const key =
+                  match?.params?.blogRouteKey ??
+                  window.location.pathname.split("/").pop();
+
+                const blog = blogCards.find((b) => b.routeKey === key);
+
+                return <a>{blog?.breadcrumb ?? "Blog"}</a>;
+              },
+            },
+          },
+        ],
+      },
+
+      {
+        path: "/rti",
+        element: <RtiPage />,
+        handle: {
+          crumb: () => <Link to="/rti">RTI</Link>,
+        },
+      },
+
+      {
+        path: "/online-admission",
+        element: <OnlineAdmissionPage />,
+        handle: {
+          crumb: () => <Link to="/">Online Admission</Link>,
+        },
+      },
     ],
   },
 ];
@@ -792,9 +827,13 @@ function Breadcrumbs() {
   let matches: IMatches[] = useMatches();
 
   const crumbs = matches
-    .filter((match) => Boolean(match.handle && (match.handle as HandleType).crumb))
+    .filter((match) =>
+      Boolean(match.handle && (match.handle as HandleType).crumb)
+    )
     .map((match) => {
-      const crumb = (match.handle as HandleType).crumb(match.data as string | undefined);
+      const crumb = (match.handle as HandleType).crumb(
+        match.data as string | undefined
+      );
       return crumb as React.ReactNode;
     });
 
@@ -802,16 +841,24 @@ function Breadcrumbs() {
   // console.log("crumbs", crumbs);
   // console.log("matches", matches[1].pathname);
   return (
-    <section className={`banner-section ${matches[1].pathname === "/abhivyakti" ? "abhivyakt" : ""} flex items-center `}>
+    <section
+      className={`banner-section ${matches[1].pathname === "/abhivyakti" ? "abhivyakt" : ""
+        } flex items-center `}
+    >
       <div className={`${Classes["container"]} `}>
         <div className={`${Classes["page-title-content"]}`}>
           {/* <span className={`   text-[25px] sm:text-[40px] md:text-[54px] font-semibold text-white pointer-events-none`}>{crumbs[crumbs.length - 1]}</span> */}
           <nav aria-label="breadcrumb">
             <ol className="breadcrumb m-0 flex flex-wrap  gap-2">
               {crumbs.map((crumb, index) => (
-                <li key={index} className={`${Classes["breadcrumb-item"]} max-sm:text-[12px]`}>
+                <li
+                  key={index}
+                  className={`${Classes["breadcrumb-item"]} max-sm:text-[12px]`}
+                >
                   {index === crumbs.length - 1 ? (
-                    <span className={Classes["active_breadcrumbs"]}>{crumb}</span> // Current page - disabled link
+                    <span className={Classes["active_breadcrumbs"]}>
+                      {crumb}
+                    </span> // Current page - disabled link
                   ) : (
                     <Fragment>{crumb}</Fragment> // Clickable links
                   )}

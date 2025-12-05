@@ -1,15 +1,12 @@
-// import image1 from "../../../assets/images/academics/institutes/vision-card/Our-Mission-13102304092698.png"
-// import image2 from "../../../assets/images/academics/institutes/vision-card/Our-vision-13102304415245.png"
+
 // import { FacultyItem } from "../../../utils/custom/CustomFacultyListCard";
 // import { VisionMissionProps } from "../../../utils/custom/CustomInstitueVissionMissionCard";
-
-import img1 from "../../../assets/images/apply-img3.jpg"
-
 import { InstituteProfile } from "../../../types/profile-data-type";
 
 // import { InstituteProfile } from "../../../types/profile-data-type";
 // import { FeeTableData } from "../faculty-of-civil-engineering/faculty-of-civil-engineering-data";
 import professor from "../../../assets/images/academics/institutes/dr.r.s.bajpai.jpg"
+
 
 // export const headers = {
 //     name: "NAME OF STUDENT",
@@ -42,7 +39,7 @@ import professor from "../../../assets/images/academics/institutes/dr.r.s.bajpai
 
 
 // export const visionMissionData: VisionMissionProps["data"] = {
-//     backgroundColor: "bg-blue-900",
+//     backgroundColor: "#0f4a85",
 //     vision: {
 //         title: "Our Vision",
 //         description: [
@@ -117,8 +114,7 @@ export const instituteProfiles: InstituteProfile[] = [
     position: "Offg. Director, IAP & Dean FoCE, SRMU, Lucknow–Deva Road",
     image: professor,
 
-    summary:
-      "Total experience of 23+ years in industry and academics. Functional Area Expert for EIA studies and empanelled groundwater expert for various government bodies.",
+    summary: "Total experience of 23+ years in industry and academics. Functional Area Expert for EIA studies and empanelled groundwater expert for various government bodies.",
 
     detailsHeading: "Experience & Achievements",
     useBullets: false,
@@ -131,11 +127,11 @@ export const instituteProfiles: InstituteProfile[] = [
       "Empanelled Groundwater Expert for Central Ground Water Authority & Ministry of Jal Shakti",
       "Consultancy Projects: 9 | Total Cost: Rs. 2.0+ Cr",
       "Total EIA Projects = 19 (5 Category 'A' + 14 Category 'B')",
-      "iwjhfisnvjnsvjnsjnvnv"
+      "iwjhfisnvjnsvjnsjnvnv",
     ],
 
     modalContent: `
-Prof. (Dr.) Abhishek Saxena, an environmentalist and academician, is currently working as Dean, Faculty of Civil Engineering with additional charge of Director in Institute of Architecture and Planning at Shri Ramswaroop Memorial University, Barabanki.
+<h1 class="text-red-500">Prof. (Dr.) Abhishek Saxena</h1>, an environmentalist and academician, is currently working as Dean, Faculty of Civil Engineering with additional charge of Director in Institute of Architecture and Planning at Shri Ramswaroop Memorial University, Barabanki.
 
 He is empanelled Functional Area Expert for EIA studies (Category "A" projects– HG) since 2011 (till date), empanelled by National Accreditation Board for Education and Training (NABET), Ministry of Environment, Forest and Climate Change (MoEFCC), Government of India. He is a renowned member of the National Level Expert Committee for “Auto Detection of Construction through Satellite Imageries”, Ghaziabad Development Authority since 2013. He is also Empanelled Groundwater Expert for CGWA (Central Ground Water Authority), Government of India (2021).
 
@@ -146,38 +142,36 @@ His career began with World Bank projects, later joining SMEC (Australia) where 
 He has more than 22 years of experience in water quality, EIA, groundwater and resource management. He holds the fellowship of “The Society of Earth Scientists” and “Indian Society of Remote Sensing”.
 
 Prof. Saxena has 60+ publications in journals, conferences, books and book chapters and has been granted 8 International Patents. Under his guidance, 7 PhDs have been awarded and 5 are in progress.
-`
-  },
-
-
-];
-
-
-
-export const events = [
-  {
-    id: 1,
-    title: "Industrial Visit",
-    venue: "Renewable Energy and Electric Vehicle Exhibition",
-    date: "24th August, 2025",
-    image: img1,
-  },
-  {
-    id: 2,
-    title: "National Workshop",
-    topic: "Role of AI in Achieving SDGs",
-    date: "04th–16th November, 2024",
-    image: img1,
-  },
-
-  {
-    id: 3,
-    title: "National Workshop",
-    topic: "Role of AI in Achieving SDGs",
-    date: "04th–16th November, 2024",
-    image: img1,
+`,
   },
 ];
+
+
+
+// export const events: EventItem[] = [
+//   {
+//     id: 1,
+//     title: "Industrial Visit",
+//     venue: "Renewable Energy and Electric Vehicle Exhibition",
+//     date: "24th August, 2025",
+//     image: img1,
+//   },
+//   {
+//     id: 2,
+//     title: "National Workshop",
+//     topic: "Role of AI in Achieving SDGs",
+//     date: "04th–16th November, 2024",
+//     image: img1,
+//   },
+
+//   {
+//     id: 3,
+//     title: "National Workshop",
+//     topic: "Role of AI in Achieving SDGs",
+//     date: "04th–16th November, 2024",
+//     image: img1,
+//   },
+// ];
 
 
 

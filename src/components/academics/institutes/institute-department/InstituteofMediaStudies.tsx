@@ -10,6 +10,7 @@ import {
   InstituteofMediaStudiesOverviewData,
   InstituteofMediaStudiesTopFooterData,
   InstituteofMediaStudiesVMData,
+  // @ts-ignore
   SampleInstituteProfileData,
 } from "../../../../data/academics/institute/institute-department/institute-of-media-studies-data";
 import Counter from "../../../../utils/custom/Counter";

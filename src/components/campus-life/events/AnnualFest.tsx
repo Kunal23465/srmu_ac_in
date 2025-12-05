@@ -53,8 +53,8 @@ const AnnualFest: React.FC = () => {
 
                 {/* Heading and description */}
                 <div className="flex flex-col md:flex-row justify-between md:items-start gap-4 mb-10">
-                    <h2 className="font50 fw500">Annual Fest</h2>
-                    <p className="text-sm text-white max-w-3xl leading-relaxed">
+                    <h2 className="text-[28px] sm:text-[28px] lg:text-[3.125rem] fw500">Annual Fest</h2>
+                    <p className="lg:text-[15px] text-[14px] sm:text-[14px] text-white max-w-3xl leading-relaxed">
                         Shri Ramswaroop Memorial University has a variety of annual festivities each year.
                         These celebrations and festivals give the students a great environment for idea sharing,
                         technological demonstration, creative thinking, and social and cultural efforts.
@@ -62,7 +62,7 @@ const AnnualFest: React.FC = () => {
                 </div>
 
                 {/* Tabs */}
-                <div className="flex gap-6 border-b border-yellow-200 mb-10 overflow-x-auto">
+                <div className="flex gap-6 border-b border-[#ffb703] mb-10 overflow-x-auto">
                     {tabs.map((tab) => (
                         <button
                             key={tab.key}
@@ -70,9 +70,9 @@ const AnnualFest: React.FC = () => {
                                 setActiveTab(tab.key);
                                 setCurrentIndex(0);
                             }}
-                            className={`pb-2 font-semibold text-sm cursor-pointer tracking-wide whitespace-nowrap relative ${activeTab === tab.key
-                                    ? "text-yellow-400 after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-yellow-400"
-                                    : "text-white hover:text-yellow-300"
+                            className={`pb-2 font-semibold lg:text-[15px] sm:text-[14px] text-[14px]  cursor-pointer tracking-wide whitespace-nowrap relative ${activeTab === tab.key
+                                ? "text-[#ffb703] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-[#ffb703]"
+                                : "text-white hover:text-[#ffb703]"
                                 }`}
                         >
                             {tab.label}
@@ -94,11 +94,11 @@ const AnnualFest: React.FC = () => {
                     {/* LEFT COLUMN */}
                     <div className="max-w-[480px] md:mx-0 mx-auto text-center md:text-left">
 
-                        <h3 className="lg:font40 fw500 text-left md:text-2xl  font-bold mb-4">
+                        <h3 className="lg:text-[2.5rem]  text-left text-[28px] sm:text-[28px]  fw500 mb-4">
                             {data.title}
                         </h3>
 
-                        <p className="text-white leading-relaxed mb-6 block text-justify md:text-left">
+                        <p className="text-white text-[14px] sm:text-[14px] lg:text-[15px] leading-relaxed mb-6 block text-justify md:text-left">
                             {data.description}
                         </p>
 
@@ -110,7 +110,7 @@ const AnnualFest: React.FC = () => {
                                 className="
                                     w-10 h-10 rounded-full border border-gray-400
                                     flex items-center justify-center
-                                    hover:bg-yellow-400 hover:text-black
+                                    hover:bg-[#ffb703] hover:text-black
                                     transition
                                     disabled:opacity-50 disabled:cursor-not-allowed
                                 "
@@ -126,7 +126,7 @@ const AnnualFest: React.FC = () => {
                                 className="
                                     w-10 h-10 rounded-full border border-gray-400
                                     flex items-center justify-center
-                                    hover:bg-yellow-400 hover:text-black
+                                    hover:bg-[#ffb703] hover:text-black
                                     transition
                                     disabled:opacity-50 disabled:cursor-not-allowed
                                 "
@@ -158,7 +158,7 @@ const AnnualFest: React.FC = () => {
                                     rounded-2xl
                                     overflow-hidden
                                     shadow-md
-                                    hover:border-2 hover:border-yellow-500
+                                    hover:border-2 hover:border-[#ffb703]
                                     hover:-translate-y-1
                                     transition-transform
                                 "
@@ -170,16 +170,16 @@ const AnnualFest: React.FC = () => {
                                 />
 
                                 <div className="p-4">
-                                    <h4 className="font-semibold color_light_blue mt-4 text-lg">
+                                    <h4 className="font-semibold color_light_blue text-[15.75px] sm:text-[15.75px] lg:text-[16.875px] mt-4">
                                         {card.title}
                                     </h4>
 
-                                    <p className="text-sm text-yellow-500 mb-2">
+                                    <p className="lg:text-[13.125px] sm:text-[12.25px] text-[12.25px] text-[#ffb703] mb-2">
                                         {card.date}
                                     </p>
 
                                     <p
-                                        className="text-sm text-gray-700 mt-2 line-clamp-2"
+                                        className="lg:text-[15px] sm:text-[14px] text-[14px]  text-gray-700 mt-2 line-clamp-2"
                                         dangerouslySetInnerHTML={{
                                             __html: card.description,
                                         }}
@@ -188,11 +188,11 @@ const AnnualFest: React.FC = () => {
                                     <button
                                         onClick={() => navigate(card.routeKey)}
                                         className="
-                                            mt-3 text-sm font-medium cursor-pointer color_light_blue 
-                                            border-1 border-yellow-500
+                                            mt-3 lg:text-[12.195px] text-[11.38px] sm:text-[11.38px] font-medium cursor-pointer color_light_blue 
+                                            border-1 border-[#ffb703]
                                             py-2 px-4
                                             rounded-lg
-                                            hover:bg-yellow-500
+                                            hover:bg-[#ffb703]
                                             flex items-center gap-1
                                         "
                                     >
