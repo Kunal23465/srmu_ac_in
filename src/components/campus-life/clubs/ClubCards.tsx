@@ -37,7 +37,7 @@ const CustomModal = ({ selected, setSelected }) => {
                         <h2 className="text-3xl font-bold text-[#063970] mb-3">{selected.title}</h2>
                         <p className="text-gray-700 leading-relaxed mb-6">{selected.desc}</p>
 
-                        <button onClick={() => navigate("/contact-us")} className="bg-[#ffb703]  border-2 uppercase   border-[#ffb703] hover:bg-transparent hover:text-[#ffb703] inline-flex gapx-x-1 items-center    px-3 py-1 rounded-lg text-nowrap mt-5 sm:mt-0  group  text-sm text-black font-normal"
+                        <button onClick={() => navigate("/contact-us")} className="bg-[#ffb703] fw500  border-2 uppercase   border-[#ffb703] hover:bg-transparent hover:text-[#ffb703] inline-flex gapx-x-1 items-center    px-3 py-1 rounded-lg text-nowrap mt-5 sm:mt-0  group  text-sm text-black font-normal"
                         >
                             MORE INFO CONTACT US <span className="transition-all duration-200  group-hover:rotate-[360deg]">
                                 <MdArrowRightAlt size={26} />
@@ -84,7 +84,7 @@ const ClubCards: React.FC = () => {
                                 {card.desc.slice(0, 50)}...
                             </p>
 
-                            <button className="bg-[#ffb703] border-2 border-[#ffb703] hover:bg-transparent hover:text-[#ffb703] inline-flex items-center px-3 py-1 rounded-lg mt-3 text-sm text-black font-normal group max-w-[150px]">
+                            <button className="bg-[#ffb703] uppercase fw500 border-2 border-[#ffb703] hover:bg-transparent hover:text-[#ffb703] inline-flex items-center px-3 py-1 rounded-lg mt-3 text-sm text-black font-normal group max-w-[150px]">
                                 Read More
                                 <span className="transition-all duration-200 group-hover:rotate-[360deg]">
                                     <MdArrowRightAlt size={26} />

@@ -115,7 +115,7 @@ export const coreValuesData: CoreValueType[] = [
 
 export interface CampusSlide {
   id: number;
-  image: string;
+  image?: string;
   title: string;
   description: string;
 }
@@ -123,20 +123,42 @@ export interface CampusSlide {
 export const campusSlides: CampusSlide[] = [
   {
     id: 1,
-    image: "/assets/images/campus1.jpg",
     title: "Holistic Development",
     description: "Encourage students to partake in social welfare activities and to inculcate responsibility towards society and environment.",
   },
   {
     id: 2,
-    image: "/assets/images/campus2.jpg",
-    title: "Innovative Learning",
-    description: "Our campus fosters creativity and innovation through modern labs, workshops, and interactive classrooms.",
+    title: "State-of-the-art Campus",
+    description: "Discover SRMU’s state-of-the-art facilities, lush green spaces, and dynamic academic environment. Embark on a journey through our vibrant campus, where innovation meets tradition.",
   },
   {
     id: 3,
-    image: "/assets/images/campus3.jpg",
-    title: "Vibrant Student Life",
-    description: "From cultural fests to technical events, SRMU offers an engaging and diverse student experience.",
+    title: "Cutting edge technology",
+    description: "“PeopleSoft Oracle” for student support, conduct of classroom activities, evaluation, management of student affairs, Finance and HR services, is used to enhance performance.",
+  },
+  {
+    id: 4,
+    title: "Focus on research",
+    description: "Robust Research Environment encourages the questioning spirit of faculty and students alike.",
+  },
+  {
+    id: 5,
+    title: "Dedicated Placement Cell",
+    description: "Ensures industry interface for guest lectures, field visits, collaborations for research, industrial training and generation of employment opportunities.",
+  },
+  {
+    id: 6,
+    title: "Exchange Programs",
+    description: "Student/faculty exchange programs with leading national and international educational institutes of repute.",
+  },
+  {
+    id: 7,
+    title: "Industry Honour Programme",
+    description: "SRMU and different industry leaders like IBM etc. have collaborated to provide students of these programs the most advanced and globally accepted curriculum.",
+  },
+  {
+    id: 8,
+    title: "Collaboration and Industry Interaction Cell",
+    description: "At SRMU we have a focused and dedicated cell to cater to the requirements of different academic departments by collaborating with different global and industrial organizations of repute.",
   },
 ];

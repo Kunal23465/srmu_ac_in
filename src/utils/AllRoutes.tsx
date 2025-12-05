@@ -236,7 +236,7 @@ export const routes = [
             path: "organization-structure-plan",
             element: <OragnisationStructurePage />,
             handle: {
-              crumb: () => <Link to="/">NIRF</Link>,
+              crumb: () => <Link to="/">Organization Structure & Plan</Link>,
             },
           },
         ],

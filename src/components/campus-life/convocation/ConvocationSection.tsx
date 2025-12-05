@@ -30,7 +30,7 @@ export default function ConvocationSection() {
                             to={card.routeKey}
                             className="inline-block mt-2 px-5 py-4 bg-yellow-500 text-[#023047] fw500 uppercase 
              hover:bg-white hover:border-2 hover:border-yellow-500 hover:text-yellow-500 
-             rounded-lg transition"
+             rounded-lg transition lg:text-[1rem] text-[14px] sm:text-[14px]"
                         >
                             Read More →
                         </Link>

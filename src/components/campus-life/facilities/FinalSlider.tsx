@@ -14,7 +14,7 @@ const FinalSlider: React.FC = () => {
       <div className="">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-8 w-full">
           <div className="w-full sm:w-auto">
-            <h2 className="text-2xl text-[#023047] sm:text-xl lg:text-[50px] fw600">
+            <h2 className="text-[1.6rem] text-[#023047] sm:text-xl lg:text-[50px] fw600">
               Academic Facilities
             </h2>
             <p className="">

@@ -8,7 +8,7 @@ export default function CardModalSection() {
     return (
         <section className="py-20">
             <div className="container mx-auto px-4">
-                <h2 className="font50 fw500 text-center text-[#0f4a85]">
+                 <h2 className="text-[2rem] text-center text-[#023047] sm:text-xl lg:text-[50px] fw600">
                     Initiatives
                 </h2>
 
@@ -23,11 +23,11 @@ export default function CardModalSection() {
                             className="bg-[#fff6dd]  shadow-lg rounded-xl p-6 flex flex-col justify-between hover:shadow-2xl transition-all duration-300"
                             style={{ backgroundColor: item.bgColor }}
                         >
-                            <h3 className="text-xl font-semibold font26 mb-3">
+                            <h3 className=" font-semibold lg:text-[1.625rem] text-[22.75px] sm:text-[22.75px] mb-3">
                                 {item.title}
                             </h3>
 
-                            <p className="text-gray-700 line-clamp-3">
+                            <p className="text-gray-700 lg:text-[15px] text-[14px] sm:text-[14px] line-clamp-3">
                                 {item.shortDescription}
                             </p>
 

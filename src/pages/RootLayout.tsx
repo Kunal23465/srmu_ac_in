@@ -6,13 +6,16 @@ import Footer from "../components/footer/Footer";
 import whatsapp from "../assets/images/whatsapp-icon.png";
 import chatbot from "../assets/images/bot-icon-squirrel-90.png";
 import bgImg from "../assets/images/chat-bg.jpg";
-
 import { FaTimes } from "react-icons/fa";
 
 const RootLayout: React.FC = () => {
   const location = useLocation();
-  const [openChat, setOpenChat] = useState(false);
 
+  const [openChat, setOpenChat] = useState(false);
+  const [showRightBar, setShowRightBar] = useState(false);
+const [hovered, setHovered] = useState<number | null>(null);
+
+  // Scroll to top on page change
   useEffect(() => {
     window.scrollTo({
       top: 0,
@@ -20,9 +23,18 @@ const RootLayout: React.FC = () => {
     });
   }, [location]);
 
-  const toggleChat = () => {
-    setOpenChat((prev) => !prev);
-  };
+  // RIGHT SIDE BAR SHOW/HIDE ON SCROLL
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) setShowRightBar(true);
+      else setShowRightBar(false);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const toggleChat = () => setOpenChat((prev) => !prev);
 
   return (
     <>
@@ -47,7 +59,7 @@ const RootLayout: React.FC = () => {
 
       {/* ================= CHAT POPUP ================= */}
       {openChat && (
-        <div className="fixed bottom-24 right-6 z-50 w-[350px] rounded-xl shadow-2xl overflow-hidden animate-fade-in">
+        <div className="fixed bottom-24 right-6 z-50 w-[350px] rounded-xl shadow-2xl overflow-hidden">
           <div className="bg-red-700 text-white flex justify-between items-center px-4 py-3">
             <h3 className="font-semibold">Chat Assistant</h3>
             <button onClick={toggleChat}>
@@ -83,8 +95,8 @@ const RootLayout: React.FC = () => {
         </div>
       )}
 
-      {/* ================= BOT / CROSS + TOOLTIP ================= */}
-      <button onClick={toggleChat} className="fixed bottom-6 right-6 z-50 flex items-center gap-2">
+      {/* ================= BOT BUTTON ================= */}
+      <button onClick={toggleChat} className="fixed bottom-12 sm:bottom-6 right-6 z-50 flex items-center gap-2">
         {!openChat && (
           <div className="relative mr-2">
             <div className="bg-red-700 text-white px-4 py-2 rounded-xl text-sm font-semibold shadow-md whitespace-nowrap">
@@ -97,30 +109,78 @@ const RootLayout: React.FC = () => {
           </div>
         )}
 
-        <div className="bg-white p-4 rounded-full shadow-lg hover:bg-red-800 hover:scale-110 transition-all duration-300">
-          {openChat ? <FaTimes className="text-red-800" size={22} /> : <img src={chatbot} className="w-8" />}
+        <div className={`${!openChat ? "bg-white" : "bg-red-900"} p-4 rounded-full shadow-lg hover:bg-red-800 hover:scale-110 transition-all duration-300`}>
+          {openChat ? <FaTimes className="text-white" size={22} /> : <img src={chatbot} className="w-8" />}
         </div>
       </button>
 
-      {/* ============= RIGHT SIDE FIXED SLIDERS ============= */}
-      <div className="fixed top-1/2 right-0 z-40 flex flex-col gap-3 -translate-y-1/2">
-        {/* Admission Enquiry */}
-        <a href="/admission-enquiry" className="group flex items-center justify-center bg-[#0c2f44] text-white p-2  rounded-l-md shadow-lg transition-all duration-500">
-          <span className="rotate-180 writing-mode-vertical text-sm tracking-wider">Admission Enquiry</span>
-        </a>
+      {/* ============= RIGHT SIDE SLIDERS (SHOW ON SCROLL) ============= */}
+      <div
+        className={`
+          w-full sm:w-auto
+    fixed bottom-0 sm:top-1/2 sm:-right-[58px]
+    flex sm:flex sm:flex-col sm:gap-y-31 sm:-translate-y-1/2
+    transition-all duration-500 ease-in-out
+    ${showRightBar ? "sm:translate-x-0" : "sm:translate-x-full"}
+  `}
+      >
+      {/* Admission Enquiry */}
+<a
+  onMouseEnter={() => setHovered(1)}
+  onMouseLeave={() => setHovered(null)}
+  href="/admission-enquiry"
+  className={`
+    w-full sm:w-auto sm:rotate-270 writing-mode-horizontal sm:writing-mode-vertical 
+    text-xs tracking-wider group flex items-center justify-center
+    bg-[#0c2f44] text-white px-2 py-3 sm:rounded-t-md shadow-xl
+    transition-all duration-500
 
-        {/* Online Admission Form */}
-        <a
-          href="https://studentportal.srmu.ac.in/login"
-          className="group flex items-center justify-center bg-[#fbbf24] text-black  p-2 rounded-l-md shadow-lg transition-all duration-500"
-        >
-          <span className="rotate-180 writing-mode-vertical text-xs font-semibold tracking-wider">Online Admission Form</span>
-        </a>
+    ${hovered === 1 ? "sm:scale-110" : ""}
+    ${hovered === 2 ? "sm:-translate-y-2" : ""}
+    ${hovered === 3 ? "sm:-translate-y-2" : ""}
+  `}
+>
+  <span>Admission Enquiry</span>
+</a>
 
-        {/* Scholarship Details */}
-        <a href="/admission/scholarship-scheme" className="group flex items-center justify-center bg-[#0c2f44] p-2 text-white rounded-l-md shadow-lg transition-all duration-500">
-          <span className="rotate-180 writing-mode-vertical text-sm tracking-wider">Scholarship Details</span>
-        </a>
+{/* Online Admission Form */}
+<a
+  onMouseEnter={() => setHovered(2)}
+  onMouseLeave={() => setHovered(null)}
+  href="https://studentportal.srmu.ac.in/login"
+  className={`
+    w-full sm:w-auto sm:rotate-270 writing-mode-horizontal sm:writing-mode-vertical 
+    text-xs tracking-wider group flex items-center justify-center
+    bg-[#ffb703] text-black px-2 py-3 sm:rounded-t-md shadow-xl
+    transition-all duration-500
+
+    ${hovered === 2 ? "sm:scale-110" : ""}
+    ${hovered === 1 ? "sm:translate-y-2" : ""}
+    ${hovered === 3 ? "sm:-translate-y-2" : ""}
+  `}
+>
+  <span>Online Admission Form</span>
+</a>
+
+{/* Scholarship Details */}
+<a
+  onMouseEnter={() => setHovered(3)}
+  onMouseLeave={() => setHovered(null)}
+  href="/admission/scholarship-scheme"
+  className={`
+    hidden sm:flex sm:rotate-270 writing-mode-horizontal sm:writing-mode-vertical 
+    text-xs tracking-wider items-center justify-center
+    bg-[#0c2f44] text-white px-2 py-3 sm:rounded-t-md shadow-xl
+    transition-all duration-500
+
+    ${hovered === 3 ? "sm:scale-110" : ""}
+    ${hovered === 1 ? "sm:translate-y-2" : ""}
+    ${hovered === 2 ? "sm:translate-y-2" : ""}
+  `}
+>
+  <span>Scholarship Details</span>
+</a>
+
       </div>
     </>
   );

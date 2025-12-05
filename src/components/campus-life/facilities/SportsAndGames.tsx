@@ -5,7 +5,7 @@ const SportsAndGames = () => {
         <>
 
             <div className="text-center ">
-                <h2 className="text-2xl pt-15 sm:text-3xl lg:text-[50px] font-semibold">
+                <h2 className="text-[1.6rem] pt-15 text-black sm:text-xl lg:text-[50px] fw600">
                     Sports and Games
                 </h2>
 
@@ -28,6 +28,10 @@ const SportsAndGames = () => {
 
                 <div className="children">
                     <img src={outreachImages[3].src} alt="" />
+                    <div className="bg-opacity-50 text-white flex items-center min-h-[70px] absolute bottom-0 left-0 w-full px-3 rounded-b-lg text-sm">
+                        Kabaddi
+                    </div>
+
                 </div>
 
                 <div className="children relative">
@@ -39,12 +43,16 @@ const SportsAndGames = () => {
 
                 <div className="children">
                     <img src={outreachImages[4].src} alt="" />
+
+                    <div className="bg-opacity-50 text-white flex items-center min-h-[70px] absolute bottom-0 left-0 w-full px-3 rounded-b-lg text-sm">
+                        Badminton
+                    </div>
                 </div>
 
                 <div className="children relative">
                     <img src={outreachImages[6].src} alt="Basketball" />
                     <div className="bg-opacity-50 text-white flex items-center min-h-[70px] absolute bottom-0 left-0 w-full px-3 rounded-b-lg text-sm">
-                        Basketball
+                        BasketBall
                     </div>
                 </div>
 
@@ -70,7 +78,12 @@ const SportsAndGames = () => {
                 </div>
 
                 <div className="children relative">
+
                     <img src={outreachImages[8].src} alt="" />
+
+                    <div className="bg-opacity-50 text-white flex items-center min-h-[70px] absolute bottom-0 left-0 w-full px-3 rounded-b-lg text-sm">
+                        Football
+                    </div>
                 </div>
             </div>
 

@@ -6,11 +6,11 @@ const CardList: React.FC = () => {
   return (
     <>
       <div className='mt-10'>
-        <h2 className='text-center curr'>
+        <h2 className='text-center curr  !text-[34px] font-medium py-10'>
           You have the option to choose from a variety of programs to choose from and start your journey at SRMU to shape and grow your career
         </h2>
       </div>
-      <div className="grid grid-cols-1 gap-50 p-8 md:grid-cols-2 lg:grid-cols-4 justify-items-center">
+      <div className="grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-6 mb-20 mt-6 ">
         {CARD_DATA.map((card) => (
           <ImageCards key={card.id} card={card} />
         ))}

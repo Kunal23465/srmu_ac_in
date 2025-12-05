@@ -13,7 +13,6 @@ type WhySliderData = {
 
 
 
-// --- Icon Replacements (for self-containment) ---
 const ChevronLeft = (props: { size: number, className?: string }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={props.size} height={props.size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={props.className}>
     <path d="m15 18-6-6 6-6" />
@@ -53,7 +52,7 @@ const WhyCard: React.FC<
 // --- Custom Slider Component ---
 type Props = { data: WhySliderData };
 
-const CustomAboutUsSlider: React.FC<Props> = ({ data }) => {
+ const CustomAboutUsSlider: React.FC<Props> = ({ data }) => {
   const numItems = data.items.length;
   const [currentIndex, setCurrentIndex] = useState(0);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -78,7 +77,7 @@ const CustomAboutUsSlider: React.FC<Props> = ({ data }) => {
   const handleNext = () => {
     setCurrentIndex(prev => (prev + 1) % numItems);
   };
-
+  
   // Calculate the index of the visually 'center' or 'most active' card
   const getHighlightIndex = useCallback((currentIdx: number, isMobileView: boolean) => {
     if (isMobileView) {
@@ -100,25 +99,25 @@ const CustomAboutUsSlider: React.FC<Props> = ({ data }) => {
   const desktopCardWidth = 33.33333; // % width of a card on desktop (w-1/3)
   const desktopGap = 20; // Estimated effective gap (px) between 3 cards due to px-3 padding
 
-  const transformStyle = useMemo(() => {
-    let translateX: string;
+ const transformStyle = useMemo(() => {
+  let translateX: string;
 
-    if (isMobile) {
-      translateX = `calc(-${currentIndex * mobileCardWidth}% - ${currentIndex * mobileCardMargin}px)`;
-    } else {
-      translateX = `calc(-${currentIndex * desktopCardWidth}% )`;
-    }
+  if (isMobile) {
+    translateX = `calc(-${currentIndex * mobileCardWidth}% - ${currentIndex * mobileCardMargin}px)`;
+  } else {
+    translateX = `calc(-${currentIndex * desktopCardWidth}% )`;
+  }
 
-    return {
-      transform: `translateX(${translateX})`,
-    };
-  }, [currentIndex, isMobile, mobileCardWidth, mobileCardMargin, desktopCardWidth]);
+  return {
+    transform: `translateX(${translateX})`,
+  };
+}, [currentIndex, isMobile, mobileCardWidth, mobileCardMargin, desktopCardWidth]);
 
 
 
   // Helper to apply classes for the container based on view
-  const slideContainerClasses = "flex w-full overflow-hidden items-stretch";
-
+const slideContainerClasses = "flex w-full overflow-hidden items-stretch";
+      
   // Helper to apply classes for individual slides:
   // We apply conditional styling directly to fix the Tailwind compilation issue
   const slideItemClassesBase = "flex-shrink-0";
@@ -130,7 +129,7 @@ const CustomAboutUsSlider: React.FC<Props> = ({ data }) => {
 
         {/* LEFT SECTION (Controls & Text) */}
         <div className="flex flex-col items-start lg:min-w-[300px] mt-6 lg:sticky lg:top-8">
-          <h2 className="leading-tight text-gray-900 font-extrabold text-5xl mb-4">
+          <h2 className="leading-tight text-gray-900 text-[22.4px] sm:text-[22.4px] lg:text-[2.5rem] fw500 mb-4">
             {data.heading.split(" ").map((word, idx) => (
               <span key={idx} className="block">{word}</span>
             ))}
@@ -163,28 +162,28 @@ const CustomAboutUsSlider: React.FC<Props> = ({ data }) => {
         <div className="w-full lg:flex-1 pt-6 pb-20 overflow-hidden">
           {/* Main Track Container: Applies the transform for sliding */}
           {/* Mobile: Use custom padding-left to visually center the first card */}
-          <div
-            className="flex w-full items-stretch transition-transform duration-500"
-            style={{
-              transform: transformStyle.transform,
-              paddingLeft: isMobile ? `${mobilePeekPadding}%` : 0
-            }}
-          >
+          <div 
+  className="flex w-full items-stretch transition-transform duration-500"
+  style={{ 
+    transform: transformStyle.transform,
+    paddingLeft: isMobile ? `${mobilePeekPadding}%` : 0
+  }}
+>
 
             {data.items.map((item, index) => {
               const isCenter = highlightedIndex === index;
               const isHovered = hoveredIndex === index;
 
               return (
-                <div
-                  key={index}
+                <div 
+                  key={index} 
                   className={slideItemClassesBase}
                   style={{
-                    // Apply width and margin based on view size
-                    width: isMobile ? `${mobileCardWidth}%` : `${desktopCardWidth}%`,
-                    marginRight: isMobile ? `${mobileCardMargin}px` : 0,
-                    paddingLeft: isMobile ? 0 : 6, // px-3 equivalent
-                    paddingRight: isMobile ? 0 : 6, // px-3 equivalent
+                      // Apply width and margin based on view size
+                      width: isMobile ? `${mobileCardWidth}%` : `${desktopCardWidth}%`,
+                      marginRight: isMobile ? `${mobileCardMargin}px` : 0,
+                      paddingLeft: isMobile ? 0 : 6, // px-3 equivalent
+                      paddingRight: isMobile ? 0 : 6, // px-3 equivalent
                   }}
                 >
                   <WhyCard
@@ -203,15 +202,15 @@ const CustomAboutUsSlider: React.FC<Props> = ({ data }) => {
           {/* Pagination Dots */}
           <div className="mt-14 flex justify-center gap-3">
             {data.items.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentIndex(index)}
-                className={`
+                <button
+                    key={index}
+                    onClick={() => setCurrentIndex(index)}
+                    className={`
                         w-3 h-3 rounded-full border border-gray-800 block transition-all duration-300
                         ${index === currentIndex ? 'bg-yellow-500 border-yellow-500 w-4 h-4' : 'bg-transparent'}
                     `}
-                aria-label={`Go to slide ${index + 1}`}
-              />
+                    aria-label={`Go to slide ${index + 1}`}
+                />
             ))}
           </div>
         </div>

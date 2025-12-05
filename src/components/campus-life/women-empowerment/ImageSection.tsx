@@ -17,7 +17,7 @@ export default function ImageSection() {
                                 className="flex items-start gap-3 text-wrap overflow-hidden break-words"
                             >
                                 <span className="text-yellow-400 text-sm">✔</span>
-                                <span className="text-sm md:text-sm text-xs leading-snug">
+                                <span className="text-sm md:text-sm  leading-snug">
                                     {text}
                                 </span>
                             </li>

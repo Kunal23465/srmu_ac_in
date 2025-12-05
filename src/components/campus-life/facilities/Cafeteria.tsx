@@ -27,7 +27,7 @@ const Cafeteria: React.FC = () => {
                     <div className="flex flex-col md:flex-row items-start justify-center gap-27.5">
 
                         <div className="text-white md:w-1/2 z-10 mt-14.5">
-                            <h2 className="text-2xl sm:text-xl lg:text-[50px] fw600 leading-snug mb-4 ">
+                             <h2 className="text-[1.6rem] text-white sm:text-xl lg:text-[50px] fw600">
                                 Cafeteria & Eating Joints
                             </h2>
 
