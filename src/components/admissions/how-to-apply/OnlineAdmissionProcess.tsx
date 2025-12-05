@@ -1,6 +1,6 @@
 import React from "react";
 
-const OnlineAdmissionProcess = () => {
+const OnlineAdmissionProcess:React.FC = () => {
     return (
         <section className="common_padding apply_sec_main">
             <div className="container">

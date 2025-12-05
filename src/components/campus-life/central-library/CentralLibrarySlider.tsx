@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+// @ts-ignore
 import datalibrary, { WhyItem1 } from "../../../data/campus-life/central-library/central-library-data";
 
 type Props = {

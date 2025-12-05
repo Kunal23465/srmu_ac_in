@@ -100,6 +100,7 @@ const Events: React.FC = () => {
               title={news.title}
               description={news.description}
               onReadMore={() => handleReadMore(news)}
+              // @ts-ignore
               guest={news?.guest}
             />
           ))}
