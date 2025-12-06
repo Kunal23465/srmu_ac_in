@@ -51,7 +51,7 @@ const Scholarship: React.FC = () => {
           </p>
         </div>
       </div>
-      <div className={`${Classes["container"]} -mt-[51px]`}>
+      <div className={`${Classes["container"]} -mt-[50px]`}>
         <CustomTabs
           items={items}
           variant="underline"

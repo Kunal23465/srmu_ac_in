@@ -71,7 +71,7 @@ const HowToApply: React.FC = () => {
               <button
                 onClick={() => sliderRef.current?.slickPrev()}
                 disabled={isAtStart}
-                className={`w-12 h-12 border-2 border-black flex hover:bg-[#0f4a85] items-center justify-center transition ${
+                className={`w-12 h-12 border-2 border-black flex hover:bg-[#0f4a85] text-[#0f4a85] hover:text-[#ffb703]  items-center justify-center transition ${
                   isAtStart ? "opacity-40 cursor-not-allowed" : " cursor-pointer"
                 }`}
               >

@@ -2,11 +2,11 @@ import React from 'react'
 
 const CommitteeMembers:React.FC = () => {
     return (
-        <div className='py-4 md:py-7 lg:py-7'>
+        <div className='mb-10 md:mb-20 py-4 md:py-7 lg:py-7'>
             <h2 className='font22 fw600 mb-4 color_light_blue'>
                 <strong>Committee Members</strong>
             </h2>
-            <ul className="font18">
+            <ul className=" ml-5 marker:text-2xl font18">
                 <li>Dr. Ritu Chandra- IQAC Chairperson</li>
                 <li>Dr. Sonal Prasad, Assistant Professor, Institute of Biosciences & Technology- Coordinator, E-Content Development Cell</li>
                 <li>Dr. Amit Kumar Singh, Assistant Professor, Faculty of Mechanical engineering</li>

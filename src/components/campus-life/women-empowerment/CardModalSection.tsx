@@ -20,7 +20,7 @@ export default function CardModalSection() {
                     {initiativesData.map((item, index) => (
                         <div
                             key={index}
-                            className="bg-[#fff6dd]  shadow-lg rounded-xl p-6 flex flex-col justify-between hover:shadow-2xl transition-all duration-300"
+                            className="bg-[#fff6dd]  shadow-lg rounded-2xl p-10 flex flex-col justify-between hover:shadow-2xl transition-all duration-300"
                             style={{ backgroundColor: item.bgColor }}
                         >
                             <h3 className=" font-semibold lg:text-[1.625rem] text-[22.75px] sm:text-[22.75px] mb-3">
