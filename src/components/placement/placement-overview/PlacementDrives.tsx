@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Slider from "react-slick";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { placementData } from "../../../data/placement/placementData";
@@ -7,29 +7,70 @@ const PlacementDrives: React.FC = () => {
   const [activeYear, setActiveYear] = useState("2023");
   const sliderRef = useRef<Slider | null>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 0);
 
   const students = placementData[activeYear] || [];
-  const totalSlides = Math.ceil(students.length / 3);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Function to determine slidesToShow based on window width
+  const getSlidesToShow = () => {
+    if (windowWidth >= 1024) return 3;
+    if (windowWidth >= 640) return 2;
+    return 1;
+  };
+
+  const slidesToShow = getSlidesToShow();
+  const totalSlides = Math.ceil(students.length / slidesToShow);
 
   const settings = {
     dots: false,
-    arrows: false, // we are using custom arrows
+    arrows: false,
     infinite: false,
     speed: 600,
-    slidesToShow: 3,
-    slidesToScroll: 3,
+    slidesToShow: slidesToShow,
+    slidesToScroll: slidesToShow,
+    centerMode: false,
     beforeChange: (_: number, next: number) => setCurrentSlide(next),
+    key: windowWidth,
 
     responsive: [
       {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          centerMode: false,
+        },
+      },
+      {
         breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          centerMode: false,
+        },
+      },
+      {
+        breakpoint: 640,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          centerMode: false,
         },
       },
     ],
   };
+
+  const isPrevDisabled = currentSlide === 0;
+  const isNextDisabled = currentSlide >= totalSlides - 1;
 
   return (
     <div className="relative bg-[#f1f1f1] w-full text-black py-20">
@@ -84,19 +125,19 @@ const PlacementDrives: React.FC = () => {
           {/* Prev */}
           <button
             onClick={() => sliderRef.current?.slickPrev()}
-            disabled={currentSlide === 0}
-            className={`p-2 border rounded-full transition ${currentSlide === 0 ? "border-gray-300 cursor-not-allowed opacity-40" : "border-[#224984]"}`}
+            disabled={isPrevDisabled}
+            className={`p-2 border rounded-full transition ${isPrevDisabled ? "border-gray-300 cursor-not-allowed opacity-40" : "border-[#224984]"}`}
           >
-            <ChevronLeft color={currentSlide === 0 ? "#999" : "#224984"} size={24} />
+            <ChevronLeft color={isPrevDisabled ? "#999" : "#224984"} size={24} />
           </button>
 
           {/* Next */}
           <button
             onClick={() => sliderRef.current?.slickNext()}
-            disabled={currentSlide >= totalSlides - 1}
-            className={`p-2 border rounded-full transition ${currentSlide >= totalSlides - 1 ? "border-gray-300 cursor-not-allowed opacity-40" : "border-[#224984]"}`}
+            disabled={isNextDisabled}
+            className={`p-2 border rounded-full transition ${isNextDisabled ? "border-gray-300 cursor-not-allowed opacity-40" : "border-[#224984]"}`}
           >
-            <ChevronRight color={currentSlide >= totalSlides - 1 ? "#999" : "#224984"} size={24} />
+            <ChevronRight color={isNextDisabled ? "#999" : "#224984"} size={24} />
           </button>
         </div>
       </div>

@@ -7,24 +7,26 @@ import { hometestimonial } from "../../data/home/student-testimonialhome-data";
 import quote from "../../assets/images/home/quote.png";
 import Classes from "../../utils/styles/Global.module.css";
 import { Link } from "react-router-dom";
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 
 const NextArrow = ({ onClick }: any) => (
     <button
         onClick={onClick}
-        className="absolute right-0 top-[20rem] bg-white shadow-lg w-15 h-15 flex items-center justify-center rounded-full border border-gray-200 hover:bg-gray-50 z-10 cursor-pointer"
+        className="hidden md:flex absolute right-0 top-1/2 translate-y-70  bg-white shadow-lg w-15 h-15 items-center justify-center rounded-full border border-gray-200 hover:bg-gray-50 z-10 cursor-pointer"
     >
-        <span className="text-xl text-gray-700">›</span>
+        <MdKeyboardArrowRight size="26" />
     </button>
 );
 
 const PrevArrow = ({ onClick }: any) => (
     <button
         onClick={onClick}
-        className="absolute left-0 top-[20rem] bg-white shadow-lg w-15 h-15 flex items-center justify-center rounded-full border border-gray-200 hover:bg-gray-50 z-10 cursor-pointer"
+        className="hidden md:flex absolute left-0 top-1/2 translate-y-70 bg-white shadow-lg w-15 h-15 items-center justify-center rounded-full border border-gray-200 hover:bg-gray-50 z-10 cursor-pointer"
     >
-        <span className="text-xl text-gray-700">‹</span>
+        <MdKeyboardArrowLeft size="26" />
     </button>
 );
+
 
 const TestimonialSlider = () => {
     const [activeIndex, setActiveIndex] = useState(0);
