@@ -16,7 +16,7 @@ interface CustomInstituteCourseCardComponentProps {
 const CardItem: React.FC<CustomInstituteCourseCardProps> = ({ imageUrl, departmentName, path, departmentDetails }) => {
   return (
     <Link
-      to={`/academics/institutes-info/departmentDetails/${path}`}
+      to={`/academics/${path}`}
       state={departmentDetails}
       className="
         relative

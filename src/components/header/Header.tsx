@@ -59,9 +59,9 @@ const Header = () => {
 
                     return (
                       <div key={index} className="relative px-[15px] py-4 group text-[15px] uppercase cursor-pointer">
-                        <Link to={data.path} className={`flex items-center text-white hover:text-[#ffb703] ${location.pathname === data.path ? "active" : ""}`}>
+                        <div  className={`flex items-center text-white hover:text-[#ffb703] ${location.pathname === data.path ? "active" : ""}`}>
                           {data.item}
-                        </Link>
+                        </div>
 
                         {/* NORMAL DROPDOWN */}
                         {!isMega && data?.subItem && (

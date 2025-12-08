@@ -10,7 +10,6 @@ interface AboutGrievanceProps {
   };
 }
 const TakingFeedback: React.FC<AboutGrievanceProps> = ({ data }) => {
-  console.log("data img floewwwww", data.flowimg)
   return (
     <div>
       <h2 className="text-[#0f4a85] font-semibold text-[19px] mb-4">{data.title}</h2>

@@ -6,7 +6,6 @@ interface Props {
 }
 
 const CustomDepartmentVissionMission: React.FC<Props> = ({ data }) => {
-  console.log("data", data);
   return (
     <div className="flex flex-col p-[38px] min-h-[530px] min-w-[250px] rounded-3xl shadow-md" style={{ backgroundColor: data.bgColor }}>
       {/* Image */}

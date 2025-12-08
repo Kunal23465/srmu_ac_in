@@ -186,14 +186,14 @@
 
 .page-title-content .breadcrumb-item a {
   color: #fff;
-  font-weight: 600;
-  font-size: 18px;
+  font-weight: 400;
+  font-size: 16px;
 }
 
 .active_breadcrumbs a {
   color: #ffb703 !important;
   cursor: default;
-  font-weight: 600;
+  font-weight: 400;
   pointer-events: none;
   font-size: 18px;
 }
