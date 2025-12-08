@@ -115,6 +115,7 @@ export default function DepartmentalVideo() {
       <h2 className="text-[28px] text-center sm:text-xl lg:text-[3.125rem] fw600 mb-10">Departmental Video</h2>
 
       <div className="container mx-auto px-4 mb-30">
+        {/* @ts-ignore */}
         <Slider className="department-crousel" {...settings}>
           {videos.map((video, index) => {
             const isSecondImage = (activeSlide) % videos.length === index;

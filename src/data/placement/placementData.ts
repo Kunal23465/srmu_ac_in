@@ -1364,13 +1364,13 @@ export const placementOverviewStayWithUsData = [
     title: "Students Success Stories",
     description:
       "More than 10 Years of Experience in Shaping Brilliant Careers",
-    width: "w-[220px]",
+    width: "w-[320px]",
   },
   {
     number: "1500+",
     title: "Job Offers",
     description: "given by 250+ top Companies",
-    width: "w-[220px]",
+    width: "w-[320px]",
   },
   {
     number: "90%*",
