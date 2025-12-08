@@ -18,7 +18,7 @@ const OutreachItems: React.FC = () => {
 
           <div>
             {desc.map((item, index) => (
-              <p key={index} className="mb-4 text-base md:text-lg">
+              <p key={index} className="mb-4 text-base md:text-lg text-justify">
                 {item.point}
               </p>
             ))}
