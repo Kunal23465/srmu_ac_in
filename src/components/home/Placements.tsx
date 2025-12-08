@@ -25,7 +25,6 @@ const Placements = () => {
     });
 
     console.log(":inView= ", inView);
-    // console.log(":slideInView= ", inView);
     return (
         <section ref={sectionRef} className={` ${Classes["container"]} sm:mb-16 sm:mt-10`}>
             <div className="w-full">

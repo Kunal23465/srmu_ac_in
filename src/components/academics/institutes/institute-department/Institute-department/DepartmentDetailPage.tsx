@@ -21,7 +21,6 @@ const DepartmentDetailPage: React.FC = () => {
   const location = useLocation();
   const data = location.state;
 
-  console.log(data.counterData, "data in department detail page");
   const items = Object.keys(data.feeTableData).map((key, index) => {
     const tab = data.feeTableData[key];
 
