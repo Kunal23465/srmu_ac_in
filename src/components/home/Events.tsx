@@ -47,8 +47,8 @@ const NewsCard1 = ({ image, description, date, title, onReadMore }: any) => {
         </div>
         <h1 className="font20 fw600">{title}</h1>
         <div className="mt-2 text-[#000000cc]" dangerouslySetInnerHTML={{ __html: truncatedDesc }}></div>
-        {description.length > 220 && (
-          <div className="flex items-center  mt-2">
+        {description.length > 200 && (
+          <div className="flex items-center mt-2">
             <button
               className=" flex items-center mt-8 gap-2 cursor-pointer bg-[#ffb703] text-[#023047] fw500 uppercase py-3 px-4 rounded-sm transition border border-[#ffb703] hover:bg-transparent hover:text-[#ffb703]"
               onClick={onReadMore}
