@@ -25,7 +25,7 @@ const ProgramFilter: React.FC = () => {
     return (
         <div className={`${Classes["container"]} pb-6 sm:py-10`}>
             {/* Filters */}
-            <div className="py-4 px-2 md:p-6 bg-[#244271]">
+            <div className="py-4 px-2 md:p-8 bg-[#0f4a85] rounded-lg">
                 <div className="flex flex-col md:flex-row gap-4">
                     <select
                         className="border p-2 rounded w-full md:w-1/3 bg-white"
@@ -69,11 +69,11 @@ const ProgramFilter: React.FC = () => {
                     filteredCourses.map((course) => (
                         <div
                             key={course.id}
-                            className="border p-4 mb-4 rounded-md flex flex-col lg:flex-row gap-4 lg:justify-between items-center"
+                            className="border border-gray-300 p-8 mb-4 rounded-md flex flex-col lg:flex-row gap-4 lg:justify-between items-center"
                         >
                             {/* Course Details */}
                             <div className="flex flex-col md:flex-row gap-2 w-full justify-between lg:w-[70%]">
-                                <h3 className="text-sm lg:text-base font-bold lg:w-[60%]">{course.name}</h3>
+                                <h3 className="text-sm text-[#0f4a85] lg:text-lg font-medium lg:w-[60%]">{course.name}</h3>
                                 <p className="text-sm lg:text-base lg:w-[20%]">{course.duration}</p>
                                 <p className="text-sm text-gray-600 lg:w-[20%]">{course.fee}</p>
                             </div>
@@ -82,13 +82,13 @@ const ProgramFilter: React.FC = () => {
                             <div className="flex flex-row gap-2 w-full lg:w-[30%] justify-between lg:justify-end">
                                 <Link
                                     to={course.path}
-                                    className="bg-[#233E6F] hover:bg-[#ffb703] text-white px-4 py-2 text-sm rounded flex items-center gap-2"
+                                    className="bg-[#023047] border border-[#023047] hover:bg-white hover:text-[#023047] transition-all duration-500 text-white px-6 py-3 text-sm font-medium rounded-lg flex items-center gap-2"
                                 >
                                     View Details <FaArrowRightLong />
                                 </Link>
                                 <Link
                                     to="/enquiry-form"
-                                    className="bg-[#ffb703] hover:bg-[#233E6F] text-white px-4 py-2 text-sm rounded inline-flex items-center gap-2"
+                                    className="bg-[#ffb703] border border-[#ffb703] hover:bg-white text-white hover:text-[#ffb703] transition-all duration-500 px-6 py-3 text-sm font-medium rounded-lg inline-flex items-center gap-2"
                                 >
                                     Apply Now <FaArrowRightLong />
                                 </Link>

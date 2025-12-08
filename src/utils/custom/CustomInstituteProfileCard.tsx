@@ -83,7 +83,7 @@ const CustomInstituteProfileCard: React.FC<CustomInstituteProfileCardProps> = ({
 
               <button
                 onClick={() => setExpandedId(profile.id)}
-                className="inline-flex items-center gap-2 px-6 py-3 bg-[#ffb703] text-[#0f4a85] font-semibold rounded-md shadow hover:bg-[#ffc54a] transition"
+                className="inline-flex cursor-pointer items-center gap-2 px-6 py-3 bg-[#ffb703] text-[#0f4a85] font-semibold rounded-md shadow hover:bg-[#ffc54a] transition"
               >
                 VIEW PROFILE
                 <span className="text-xl">→</span>

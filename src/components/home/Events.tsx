@@ -100,6 +100,7 @@ const Events: React.FC = () => {
               title={news.title}
               description={news.description}
               onReadMore={() => handleReadMore(news)}
+              // @ts-ignore
               guest={news?.guest}
             />
           ))}
@@ -112,7 +113,7 @@ const Events: React.FC = () => {
       </div>
 
       {/* Mobile Slider */}
-      <div className="lg:hidden mt-5">
+      <div className="lg:hidden mt-5 w-full overflow-hidden">
         <Slider {...sliderSettings}>
           {eventsData.map((news, index) => (
             <div key={index} className="w-full lg:w-[60%] border min-h-[450px] sm:min-h-0 p-3 hover:shadow-2xl rounded-md border-[#ffb703] transition-all duration-200">

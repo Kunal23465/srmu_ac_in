@@ -1,5 +1,4 @@
-import image1 from "../../../assets/images/academics/institutes/vision-card/Our-Mission-13102304092698.png"
-import image2 from "../../../assets/images/academics/institutes/vision-card/Our-vision-13102304415245.png"
+
 // import { FacultyItem } from "../../../utils/custom/CustomFacultyListCard";
 // import { VisionMissionProps } from "../../../utils/custom/CustomInstitueVissionMissionCard";
 import { InstituteProfile } from "../../../types/profile-data-type";
@@ -7,7 +6,7 @@ import { InstituteProfile } from "../../../types/profile-data-type";
 // import { InstituteProfile } from "../../../types/profile-data-type";
 // import { FeeTableData } from "../faculty-of-civil-engineering/faculty-of-civil-engineering-data";
 import professor from "../../../assets/images/academics/institutes/dr.r.s.bajpai.jpg"
-import { VisionMissionProps } from "../../../utils/custom/CustomInstitueVissionMissionCard";
+
 
 // export const headers = {
 //     name: "NAME OF STUDENT",

@@ -211,7 +211,7 @@ export const HeaderData = [
               },
               {
                 item: "How to Apply",
-                path: "/admission/civil-engineering",
+                path: "/admission/how-to-apply",
               },
               {
                 item: "Program Finder",

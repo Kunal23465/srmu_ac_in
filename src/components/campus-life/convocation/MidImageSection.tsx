@@ -4,7 +4,7 @@ import convocationimage from "../../../assets/images/campus-life/convocation/con
 const MidImageSection = () => {
     return (
         <section className="w-full">
-            <div className="relative w-full h-[500px] md:h-[600px]">
+            <div className="relative w-full h-[500px] md:h-[580px]">
                 <img
                     src={convocationimage}
                     alt="Graduation"

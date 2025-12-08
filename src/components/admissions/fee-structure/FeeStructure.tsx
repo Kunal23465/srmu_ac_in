@@ -15,6 +15,7 @@ const FeeStructure: React.FC = () => {
           columnTwoHeader="Downloads"
           data={ProgramFeeData}
         />
+        <div className='mb-10 sm:mb-20' />
 
       </div>
       <CustomTopFooter data={feeStructureCustomTopFooter} />

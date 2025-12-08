@@ -97,7 +97,7 @@ type Props = { data: WhySliderData };
   const mobilePeekPadding = 7.5; // % padding-left to initially center the first card
 
   const desktopCardWidth = 33.33333; // % width of a card on desktop (w-1/3)
-  const desktopGap = 20; // Estimated effective gap (px) between 3 cards due to px-3 padding
+
 
  const transformStyle = useMemo(() => {
   let translateX: string;
@@ -116,7 +116,7 @@ type Props = { data: WhySliderData };
 
 
   // Helper to apply classes for the container based on view
-const slideContainerClasses = "flex w-full overflow-hidden items-stretch";
+
       
   // Helper to apply classes for individual slides:
   // We apply conditional styling directly to fix the Tailwind compilation issue
@@ -124,7 +124,7 @@ const slideContainerClasses = "flex w-full overflow-hidden items-stretch";
 
 
   return (
-    <div className="w-full flex justify-center py-16 px-4  min-h-screen font-inter">
+    <div className="w-full flex justify-center py-16 px-4   font-inter">
       <div className="w-full max-w-7xl h-full flex flex-col lg:flex-row items-start gap-12">
 
         {/* LEFT SECTION (Controls & Text) */}

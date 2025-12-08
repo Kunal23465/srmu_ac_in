@@ -268,6 +268,7 @@ const PlacedStudents = () => {
         students have multiple job offers.
       </p>
       <Counter
+      // @ts-ignore
         counterData={
           counterDataForPlacedStudentsOFDepartmentOfElectricalAndElectronicsEngineering
         }
