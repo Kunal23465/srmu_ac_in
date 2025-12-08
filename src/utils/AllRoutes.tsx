@@ -101,6 +101,7 @@ import { blogCards } from "../data/blog/blog-data";
 import RtiPage from "../pages/rti/RtiPage";
 import TransportationPage from "../pages/campus-life/facilities/transportation/TransportationPage";
 import NewsLetterPage from "../pages/Home/NewsLetterPage";
+import HowToApplyPage from "../pages/admissions/how-to-apply/HowToApplyPage";
 interface IMatches {
   pathname: string;
   params: Params<string>;
@@ -356,6 +357,13 @@ export const routes = [
             element: <OverviewPage />,
             handle: {
               crumb: () => <Link to="/">Admission Overview</Link>,
+            },
+          },
+          {
+            path: "how-to-apply",
+            element: <HowToApplyPage />,
+            handle: {
+              crumb: () => <Link to="/">How To Apply</Link>,
             },
           },
           {

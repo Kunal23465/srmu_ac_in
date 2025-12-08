@@ -92,7 +92,7 @@ const AnnualFest: React.FC = () => {
                     "
                 >
                     {/* LEFT COLUMN */}
-                    <div className="max-w-[480px] md:mx-0 mx-auto text-center md:text-left">
+                    <div className="max-w-[430px] md:mx-0 mx-auto text-center md:text-left">
 
                         <h3 className="lg:text-[2.5rem]  text-left text-[28px] sm:text-[28px]  fw500 mb-4">
                             {data.title}
@@ -166,7 +166,7 @@ const AnnualFest: React.FC = () => {
                                 <img
                                     src={card.image}
                                     alt={card.title}
-                                    className="w-full h-48 object-cover"
+                                    className="w-full h-70 object-cover"
                                 />
 
                                 <div className="p-4">

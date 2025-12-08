@@ -10,7 +10,7 @@ const ProgramFinderIntro: React.FC = () => {
             </h2>
 
             {/* Intro Paragraph */}
-            <p className="text-[#212529] text-[13px] mb-8 leading-relaxed">
+            <p className="text-[#212529] text-[13px] sm:text-[16px] mb-8 leading-relaxed">
                 {programFinderIntroData.description}
             </p>
 
@@ -21,7 +21,7 @@ const ProgramFinderIntro: React.FC = () => {
                         <h3 className="text-[16px] font-semibold text-[#212529] mb-2">
                             {section.heading}
                         </h3>
-                        <p className="text-[#212529] text-[13px] leading-relaxed">{section.text}</p>
+                        <p className="text-[#212529] text-[13px] sm:text-[16px] leading-relaxed">{section.text}</p>
                     </div>
                 ))}
             </div>

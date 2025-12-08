@@ -1612,6 +1612,9 @@ section .card-color img {
 
 .women {
   background-image: url("./assets/images/campus-life/women-empowerment/we-believe-in.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .font60 {

@@ -1,7 +1,7 @@
 
 const TeachersUse = () => {
     return (
-        <div>
+        <div className="mb-10 md:mb-20">
             <h2 className="curr ">
                 <strong>
                     Teachers use ICT enabled tools for effective teaching and learning process
@@ -24,7 +24,7 @@ const TeachersUse = () => {
                 </p>
             </div>
 
-            <ul className="mb-4 font18">
+            <ul className="mb-4 ml-5 marker:text-2xl font18">
                 <li>E-Journals: IEEE (ASPP Online), DELNET, LexisNexis, Manupatra, EBSCO</li>
                 <li>E-Shodsindhu: NDL, WEL Books, SAA (South Asian Archive)</li>
                 <li>Shodhganga Membership: MoU has been signed to upload Thesis</li>
