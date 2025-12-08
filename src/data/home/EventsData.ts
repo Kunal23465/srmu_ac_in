@@ -32,7 +32,7 @@ export const eventsData = [
     id: 2,
     image: event1, // Replace with actual image URLs
     date: "November 14, 2025",
-    title: 'Innovation Meets Agriculture at the SRMU Kisan Mela 2025"',
+    title: 'Innovation Meets Agriculture at the SRMU Kisan Mela 2025',
     description: `
     <p> Shri Ramswaroop Memorial University (SRMU) organized a two-day “Kisan Mela 2025” under the theme Advanced Agriculture – Advanced India, bringing together farmers, agricultural scientists, and leading institutions. The event was inaugurated by Chancellor Er. Pankaj Agarwal and Pro-Chancellor Er. Pooja Agarwal, both IIT Kanpur Gold Medalists, along with senior university officials and experts from across the state. Farmers explored stalls showcasing organic products, improved seeds, and sustainable farming practices while gaining insights from specialists through technical sessions. </p>
 

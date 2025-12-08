@@ -67,7 +67,7 @@ const Events: React.FC = () => {
 
   const navigate = useNavigate();
   const handleReadMore = (news: any) => {
-    navigate(`/news-and-events/${news.title.replace(/\s+/g, '-').toLowerCase()}`, { state: news });
+    navigate(`/${news.title.replace(/\s+/g, '-').toLowerCase()}`, { state: news });
   };
 
 

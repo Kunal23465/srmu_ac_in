@@ -92,27 +92,26 @@ export const InstituteofBiosciencesandTechnologyinstituteCourseCardData: CustomI
   {
     imageUrl: courseImg1,
     departmentName: "Faculty of Allied Health Sciences",
-    path: "faculty-of-allied-health-sciences",
+    path: "institute-of-biosciences-and-technology/faculty-of-allied-health-sciences",
     departmentDetails: {
       overviewData: facultyofAHSOverviewData,
       counterData: counterDataFoFacultyOfAlliedHealthSciences,
       mvData: facultyOfAlliedHealthSciencesVMData,
       departmentHeadData: facultyOfAhsProfileData,
       feeTableData: {
-
         tab1: { label: "Undergraduate", data: underGraduateFeeDataOfAHS },
       },
       facultyData: facultyDetailsOfAhsDepartment,
       departmentHighlightsData: alliedHealthScienceHighlightsData,
       counterData2: counterDataForPlacedStudentsOFAlliedHealthSciences,
       placedStudentsData: null,
-      eventsData: alliedHealthScienceDepartmentEventsData
-    }
+      eventsData: alliedHealthScienceDepartmentEventsData,
+    },
   },
   {
     imageUrl: courseImg2,
     departmentName: "Faculty of Biosciences",
-    path: "faculty-of-biosciences",
+    path: "institute-of-biosciences-and-technology/faculty-of-biosciences",
     departmentDetails: {
       overviewData: facultyofBioscienceOverviewData,
       counterData: counterDataFoFacultyOfBiosciencess,
@@ -126,13 +125,13 @@ export const InstituteofBiosciencesandTechnologyinstituteCourseCardData: CustomI
       departmentHighlightsData: bioscienceHighlightsData,
       counterData2: counterDataForPlacedStudentsOFBioscience,
       placedStudentsData: null,
-      eventsData: bioscienceDepartmentEventsData
-    }
+      eventsData: bioscienceDepartmentEventsData,
+    },
   },
   {
     imageUrl: courseImg3,
     departmentName: "Faculty of Biotechnology",
-    path: "faculty-of-biotechnology",
+    path: "institute-of-biosciences-and-technology/faculty-of-biotechnology",
     departmentDetails: {
       overviewData: facultyofBiotechnologyeOverviewData,
       counterData: counterDataFoFacultyOfBiotechnology,
@@ -148,6 +147,6 @@ export const InstituteofBiosciencesandTechnologyinstituteCourseCardData: CustomI
       counterData2: counterDataForPlacedStudentsOFBiotechnology,
       placedStudentsData: null,
       eventsData: biotechnologyDepartmentEventsData,
-    }
+    },
   },
 ];

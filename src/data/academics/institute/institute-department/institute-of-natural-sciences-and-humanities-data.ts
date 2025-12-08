@@ -90,7 +90,7 @@ export const InstituteofNaturalSciencesandHumanitiesinstituteCourseCardData: Cus
   {
     imageUrl: courseImg1,
     departmentName: "Faculty of Physical Sciences",
-    path: "faculty-of-physical-sciences",
+    path: "institute-of-natural-sciences-and-humanities/faculty-of-physical-sciences",
     departmentDetails: {
       overviewData: facultyofPhysicalScienceOverviewData,
       counterData: counterDataFoFacultyOfPhysicalScience,
@@ -104,13 +104,13 @@ export const InstituteofNaturalSciencesandHumanitiesinstituteCourseCardData: Cus
       departmentHighlightsData: physicalScienceHighlightsData,
       counterData2: counterDataForPlacedStudentsOFPhysicalScience,
       placedStudentsData: null,
-      eventsData: physicalScienceEventsData
-    }
+      eventsData: physicalScienceEventsData,
+    },
   },
   {
     imageUrl: courseImg3,
     departmentName: "Faculty of Mathematical and Statistical Sciences",
-    path: "faculty-of-mathematical-and-statistical-sciences",
+    path: "institute-of-natural-sciences-and-humanities/faculty-of-mathematical-and-statistical-sciences",
     departmentDetails: {
       overviewData: FacultyOfMathematicalAndStatisticalSciencesOverviewData,
       counterData: FacultyOfMathematicalAndStatisticalSciencesCounterData1,
@@ -124,33 +124,8 @@ export const InstituteofNaturalSciencesandHumanitiesinstituteCourseCardData: Cus
       departmentHighlightsData: FacultyOfMathematicalAndStatisticalSciencesdepartmentHighlights,
       counterData2: null,
       placedStudentsData: MathematicalAndStatisticalSciencesplacedStudents,
-      eventsData: FacultyOfMathematicalAndStatisticalSciencesDepartmentEventsData
-    }
+      eventsData: FacultyOfMathematicalAndStatisticalSciencesDepartmentEventsData,
+    },
   },
-  // {
-  //   imageUrl: courseImg2,
-  //   departmentName: "Faculty of Chemical Sciences",
-  //   path: "faculty-of-chemical-sciences",
-  //   // departmentDetails: {
-  //   //   overviewData: facultyofPhysicalScienceOverviewData,
-  //   //   counterData: counterDataFoFacultyOfPhysicalScience,
-  //   //   mvData: facultyOfPhysicalScienceVMData,
-  //   //   departmentHeadData: facultyOfPhysicalScienceProfileData,
-  //   //   feeTableData: {
-  //   //     tab1: { label: "Postgraduate", data: physicalSciencePostgraduateFeeTable },
-  //   //     tab2: { label: "Undergraduate", data: physicalScienceUndergraduateFeeTable },
-  //   //   },
-  //   //   facultyData: facultyDetailsOfPhysicalScienceDepartment,
-  //   //   departmentHighlightsData: physicalScienceHighlightsData,
-  //   //   counterData2: counterDataForPlacedStudentsOFPhysicalScience,
-  //   //   placedStudentsData: null,
-  //   //   eventsData: physicalScienceEventsData
-  //   // }
-  // },
-
-  // {
-  //   imageUrl: courseImg4,
-  //   departmentName: "Faculty of Humanities and Social Sciences",
-  //   path: "faculty-of-humanities-and-social-sciences",
-  // },
+  
 ];

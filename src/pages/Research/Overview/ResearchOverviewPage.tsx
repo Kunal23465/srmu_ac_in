@@ -4,7 +4,7 @@ import { Outlet, useLocation } from 'react-router-dom';
 
 const ResearchOverviewPage: React.FC = () => {
   const location = useLocation();
-  return <>{location.pathname === "/research/overview" ? <Overview /> : <Outlet />}</>;
+  return <>{location.pathname === "/research" ? <Overview /> : <Outlet />}</>;
 }
 
 export default ResearchOverviewPage;

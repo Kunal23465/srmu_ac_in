@@ -7,6 +7,7 @@ import whatsapp from "../assets/images/whatsapp-icon.png";
 import chatbot from "../assets/images/bot-icon-squirrel-90.png";
 import bgImg from "../assets/images/chat-bg.jpg";
 import { FaTimes } from "react-icons/fa";
+import DynamicBreadcrumbs from "../components/breadcrumb/DynamicBreadcrumbs";
 
 const RootLayout: React.FC = () => {
   const location = useLocation();
@@ -40,8 +41,11 @@ const [hovered, setHovered] = useState<number | null>(null);
     <>
       <Header />
 
+
       <main className="mt-[41px] lg:mt-[45px]">
-        {location.pathname !== "/" && <Breadcrumbs />}
+        {location.pathname !== "/" && <DynamicBreadcrumbs />}
+       
+
         <Outlet />
       </main>
 

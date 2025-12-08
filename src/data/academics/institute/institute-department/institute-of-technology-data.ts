@@ -59,28 +59,28 @@ export const instituteofTechnologyCourseCardData: CustomInstituteCourseCardProps
   {
     imageUrl: courseImg1,
     departmentName: "Faculty of Civil Engineering",
-    path: "faculty-of-civil-engineering",
+    path: "institute-of-technology/faculty-of-civil-engineering",
     departmentDetails: {
       overviewData: civilFacultyOverviewData,
       counterData: counterDataForFacultyCivil,
       mvData: CivildepartmentVMData,
       departmentHeadData: instituteProfilesCivil,
-            feeTableData: {
-              tab1: { label: "Industry Honors", data: civilIndustryHonoursFeeTable },
-              tab2: { label: "Integrated", data: civilIndustryIntegratedFeeTable },
-              tab3: { label: "Postgraduate", data: civilIndustryPostgraduateFeeTable },
-              tab4: { label: "Undergraduate", data: civilIndustryUndergraduateFeeTable },
-            },
+      feeTableData: {
+        tab1: { label: "Industry Honors", data: civilIndustryHonoursFeeTable },
+        tab2: { label: "Integrated", data: civilIndustryIntegratedFeeTable },
+        tab3: { label: "Postgraduate", data: civilIndustryPostgraduateFeeTable },
+        tab4: { label: "Undergraduate", data: civilIndustryUndergraduateFeeTable },
+      },
       facultyData: civilfacultyData,
       departmentHighlightsData: civildepartmentHighlights,
       counterData2: civilcounterData2,
       placedStudentsData: civilPlacedStudents,
-    }
+    },
   },
   {
     imageUrl: courseImg2,
     departmentName: "Department of Electrical and Electronics Engineering",
-    path: "department-of-electrical-and-electronics-engineering",
+    path: "institute-of-technology/department-of-electrical-and-electronics-engineering",
     departmentDetails: {
       overviewData: electricalDepartmentinstituteOverviewData,
       counterData: counterDataForDepartmentOfElectricalAndElectronicsEngineering,
@@ -96,12 +96,12 @@ export const instituteofTechnologyCourseCardData: CustomInstituteCourseCardProps
       departmentHighlightsData: electricalDepartmentHighlightsData,
       counterData2: counterDataForPlacedStudentsOFDepartmentOfElectricalAndElectronicsEngineering,
       placedStudentsData: DepartmentOfElectricalAndElectronicsPlacedStudents,
-    }
+    },
   },
   {
     imageUrl: courseImg3,
     departmentName: "Faculty of Mechanical Engineering",
-    path: "faculty-of-mechanical-engineering",
+    path: "institute-of-technology/faculty-of-mechanical-engineering",
     departmentDetails: {
       overviewData: facultyofMEOverviewData,
       counterData: counterDataFoFacultyOfMechanicalEngineering,
@@ -117,13 +117,13 @@ export const instituteofTechnologyCourseCardData: CustomInstituteCourseCardProps
       departmentHighlightsData: mechanicalDepartmentHighlightsData,
       counterData2: counterDataForPlacedStudentsOFMechanicalEngineering,
       placedStudentsData: DepartmentOfElectricalAndElectronicsPlacedStudents,
-      eventsData: mechanicalDepartmentEventsData
-    }
+      eventsData: mechanicalDepartmentEventsData,
+    },
   },
   {
     imageUrl: courseImg4,
     departmentName: "Department of Computer Science and Engineering",
-    path: "department-of-computer-science-and-engineering",
+    path: "institute-of-technology/department-of-computer-science-and-engineering",
     departmentDetails: {
       overviewData: cseFacultyOverviewData,
       counterData: counterDataForFacultyCSE,
@@ -139,12 +139,12 @@ export const instituteofTechnologyCourseCardData: CustomInstituteCourseCardProps
       departmentHighlightsData: electricalDepartmentHighlightsData,
       counterData2: counterDataForPlacedStudentsOFDepartmentOfElectricalAndElectronicsEngineering,
       placedStudentsData: CseplacedStudents,
-    }
+    },
   },
   {
     imageUrl: courseImg5,
     departmentName: "Department of Computer Science and Information Systems",
-    path: "department-of-csis",
+    path: "institute-of-technology/department-of-csis",
     departmentDetails: {
       overviewData: csISFacultyOverviewData,
       counterData: counterDataForFacultyCSIS,
@@ -160,6 +160,6 @@ export const instituteofTechnologyCourseCardData: CustomInstituteCourseCardProps
       counterData2: counterDataFor2Csis,
       placedStudentsData: CsisplacedStudents,
       eventsData: csisDepartmentEventsData,
-    }
+    },
   },
 ];

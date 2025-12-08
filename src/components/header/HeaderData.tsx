@@ -46,7 +46,7 @@ export const HeaderData = [
               { item: "About SRMU", path: "/about" },
               { item: "Leadership & Governance", path: "/about/leadership-and-governance" },
               { item: "Committee & Cells", path: "/about/committees-and-cells" },
-              { item: "Approval & Associations", path: "/about/recognition-approvals" },
+              { item: "Approval & Associations", path: "/about/approvals-and-associations" },
               { item: "Awards & Rankings", path: "/about/award-overview" },
               { item: "Quality Assurance Cell", path: "/about/iqac-overview" },
               { item: "NAAC", path: "/about/naac" },
@@ -57,11 +57,11 @@ export const HeaderData = [
           {
             id: 1,
             item: "Academics",
-            path: "/academics/institutes-info",
+            path: "/academics",
             subItem: [
               {
                 item: "Institute",
-                path: "/academics/institutes-info",
+                path: "/academics",
               },
               {
                 item: "Policies & Reports",
@@ -203,11 +203,11 @@ export const HeaderData = [
           {
             id: 3,
             item: "Addmission",
-            path: "admission/admission-overview",
+            path: "admission",
             subItem: [
               {
                 item: "Overview",
-                path: "/admission/admission-overview",
+                path: "/admission",
               },
               {
                 item: "How to Apply",
@@ -246,9 +246,9 @@ export const HeaderData = [
           {
             id: 4,
             item: "Campus Life",
-            path: "/campus-life/facilities",
+            path: "/campus-life",
             subItem: [
-              { item: "Facilities", path: "/campus-life/facilities" },
+              { item: "Facilities", path: "/campus-life" },
 
               { item: "Central Library", path: "/campus-life/central-library" },
               {
@@ -298,7 +298,7 @@ export const HeaderData = [
             subItem: [
               {
                 item: "Placement Overview",
-                path: "/placements/placement-overview",
+                path: "/placements",
               },
               {
                 item: "Placement Cell",
@@ -331,9 +331,9 @@ export const HeaderData = [
           {
             id: 6,
             item: "Research",
-            path: "/research/overview",
+            path: "/research",
             subItem: [
-              { item: "Overview", path: "/research/overview" },
+              { item: "Overview", path: "/research" },
               { item: "Process And Initiatives", path: "/research/process-and-initiatives" },
 
               { item: "Ph.D. Notification (Session: 2025-26)", path: "/research/phd-notification-session" },
