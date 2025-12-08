@@ -136,6 +136,7 @@ const TestimonialSlider = () => {
             <h2 className="text-[28px] text-center sm:text-xl lg:text-[3.125rem] fw600 mb-12">Student Testimonials</h2>
 
             <div className={`relative ${Classes["container"]} w-full max-w-[1200px] mx-auto px-4`}>
+                {/* @ts-ignore */}
                 <Slider {...settings}>
                     {hometestimonial.map((item, index) => (
                         <div key={item.id} className="flex justify-center px-0.5">
