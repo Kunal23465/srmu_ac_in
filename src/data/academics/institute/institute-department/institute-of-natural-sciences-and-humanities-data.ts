@@ -3,9 +3,7 @@ import vision from "../../../../assets/images/academics/institutes/vision-card/O
 import mission from "../../../../assets/images/academics/institutes/vision-card/Our-Mission-13102304092698.png";
 import { CustomInstituteCourseCardProps } from "../../../../utils/custom/CustomInstituteCoursesCard";
 import courseImg1 from "../../../../assets/images/academics/departments/physics1-07022411301098.jpg";
-import courseImg2 from "../../../../assets/images/academics/departments/chemisty-07052401043586.jpg";
 import courseImg3 from "../../../../assets/images/academics/departments/maths-07022411311165.jpg";
-import courseImg4 from "../../../../assets/images/academics/departments/social-science-07052401093595.jpg";
 import { InstituteProfile } from "../../../../types/profile-data-type";
 import BMdixitImg from "../../../../assets/images/academics/departments/prof.-b-m-dixit-photo-10062510410818.jpg"
 import { counterDataFoFacultyOfPhysicalScience, counterDataForPlacedStudentsOFPhysicalScience, facultyDetailsOfPhysicalScienceDepartment, facultyofPhysicalScienceOverviewData, facultyOfPhysicalScienceProfileData, facultyOfPhysicalScienceVMData, physicalScienceEventsData, physicalScienceHighlightsData, physicalSciencePostgraduateFeeTable, physicalScienceUndergraduateFeeTable } from "../../faculty-of-physical-sciences/faculty-of-physical-sciences-data";

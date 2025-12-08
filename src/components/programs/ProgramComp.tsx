@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ProgramComp = () => {
+const ProgramComp:React.FC = () => {
   return (
     <div>ProgramComp</div>
   )

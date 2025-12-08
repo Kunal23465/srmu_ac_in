@@ -122,12 +122,12 @@ const LastSlider: React.FC = () => {
     return (
         <div className="w-full max-w-7xl">
             <div className="text-center mb-5">
-                 <h2 className="text-[1.6rem] text-[#023047] sm:text-xl lg:text-[50px] fw600">
+                 <h2 className="text-[1.6rem] font-medium text-[#023047] sm:text-xl lg:text-[50px] fw600">
                     Academic Wings
                 </h2>
 
-                <p>
-                    Shri Ramswaroop Memorial University (SRMU) features well-defined academic wings...
+                <p className="w-[82%] pb-10  mx-auto">
+                    Shri Ramswaroop Memorial University (SRMU) features well-defined academic wings, each dedicated to fostering excellence in specific disciplines. These wings, equipped with state-of-the-art classrooms, laboratories, and research facilities, provide a conducive environment for specialized learning and academic exploration. With distinct academic wings, SRMU ensures a focused and comprehensive approach to education, nurturing the intellectual growth of students across various fields.
                 </p>
             </div>
 

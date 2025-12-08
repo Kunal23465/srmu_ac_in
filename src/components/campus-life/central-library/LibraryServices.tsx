@@ -9,13 +9,13 @@ const CoreValues: React.FC = () => {
 
                 {/* Left Side — Card Content */}
                 <div className="w-full lg:w-[75%] space-y-5 z-10">
-                    <h2 className="text-2xl sm:text-5xl font-semibold mb-1 sm:mb-6">
-                        Our Core Values
+                    <h2 className="text-2xl sm:text-4xl font-medium mb-1 sm:mb-6">
+                        Library Services
                     </h2>
 
                     {libraryServices.map((item, index) => (
                         <div key={index} className="text-gray-800 leading-relaxed">
-                            <p>
+                            <p className="text-sm sm:text-lg">
                                 <span className="font-bold">{item.title}:</span>{" "}
                                 {item.description}
                             </p>

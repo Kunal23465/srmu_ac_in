@@ -121,11 +121,7 @@ const [hovered, setHovered] = useState<number | null>(null);
       {/* ============= RIGHT SIDE SLIDERS (SHOW ON SCROLL) ============= */}
       <div
         className={`
-          w-full sm:w-auto
-    fixed bottom-0 sm:top-1/2 sm:-right-[58px]
-    flex sm:flex sm:flex-col sm:gap-y-31 sm:-translate-y-1/2
-    transition-all duration-500 ease-in-out
-    ${showRightBar ? "sm:translate-x-0" : "sm:translate-x-full"}
+          w-full sm:w-auto fixed bottom-0 sm:top-1/2 sm:-right-[58px] flex sm:flex sm:flex-col sm:gap-y-[135px] sm:-translate-y-1/2 transition-all duration-500 ease-in-out ${showRightBar ? "sm:translate-x-0" : "sm:translate-x-full"}
   `}
       >
       {/* Admission Enquiry */}
@@ -134,7 +130,7 @@ const [hovered, setHovered] = useState<number | null>(null);
   onMouseLeave={() => setHovered(null)}
   href="/admission-enquiry"
   className={`
-    w-full sm:w-auto sm:rotate-270 writing-mode-horizontal sm:writing-mode-vertical 
+    w-full sm:w-auto sm:rotate-270 writing-mode-horizontal sm:writing-mode-vertical corner-box
     text-xs tracking-wider group flex items-center justify-center
     bg-[#0c2f44] text-white px-2 py-3 sm:rounded-t-md shadow-xl
     transition-all duration-500
@@ -153,7 +149,7 @@ const [hovered, setHovered] = useState<number | null>(null);
   onMouseLeave={() => setHovered(null)}
   href="https://studentportal.srmu.ac.in/login"
   className={`
-    w-full sm:w-auto sm:rotate-270 writing-mode-horizontal sm:writing-mode-vertical 
+    w-full sm:w-auto sm:rotate-270 writing-mode-horizontal sm:writing-mode-vertical  corner-box
     text-xs tracking-wider group flex items-center justify-center
     bg-[#ffb703] text-black px-2 py-3 sm:rounded-t-md shadow-xl
     transition-all duration-500
@@ -172,7 +168,7 @@ const [hovered, setHovered] = useState<number | null>(null);
   onMouseLeave={() => setHovered(null)}
   href="/admission/scholarship-scheme"
   className={`
-    hidden sm:flex sm:rotate-270 writing-mode-horizontal sm:writing-mode-vertical 
+    hidden sm:flex sm:rotate-270 writing-mode-horizontal sm:writing-mode-vertical corner-box
     text-xs tracking-wider items-center justify-center
     bg-[#0c2f44] text-white px-2 py-3 sm:rounded-t-md shadow-xl
     transition-all duration-500

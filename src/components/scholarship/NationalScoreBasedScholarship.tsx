@@ -22,7 +22,7 @@ const NationalScoreBasedScholarship: React.FC = () => {
             These scholarships will act as a bridge between the most challenging educational environment and the best inquisitive young mind of the country to join up and create
             everlasting marks on our society.
           </p>
-          <button className="text-white font-medium bg-[#0f4a85] border border-transparent transition-colors duration-500 hover:border-black hover:text-black hover:bg-white px-6 lg:px-8 py-3 lg:py-4 rounded-xl">
+          <button className="cursor-pointer text-white font-medium bg-[#0f4a85] border border-transparent transition-colors duration-500 hover:border-black hover:text-black hover:bg-white px-6 lg:px-8 py-3 lg:py-4 rounded-xl">
             APPLY NOW
           </button>
         </div>

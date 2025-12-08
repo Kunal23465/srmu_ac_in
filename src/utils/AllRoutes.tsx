@@ -91,9 +91,17 @@ import BlogDetailsPage from "../pages/blog/BlogDetailsPage";
 import RtiPage from "../pages/rti/RtiPage";
 import TransportationPage from "../pages/campus-life/facilities/transportation/TransportationPage";
 import NewsLetterPage from "../pages/Home/NewsLetterPage";
+import HowToApplyPage from "../pages/admissions/how-to-apply/HowToApplyPage";
+interface IMatches {
+  pathname: string;
+  params: Params<string>;
+  data: unknown;
+  handle: unknown;
+}
 
-
-
+type HandleType = {
+  crumb: (param?: string) => React.ReactNode;
+};
 export const routes = [
   {
     path: "/",
@@ -260,6 +268,12 @@ export const routes = [
 
 
         children: [
+        
+          {
+            path: "how-to-apply",
+            element: <HowToApplyPage />,
+         
+          },
           {
             path: "fee-structure",
             element: <FeeStructurePage />,

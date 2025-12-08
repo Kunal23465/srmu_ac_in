@@ -17,9 +17,7 @@ const WomenEmpowermentComp = () => {
 
 
             <div className="women">
-                <div className={`${Classes["container"]}`}>
                     <ImageSection />
-                </div>
             </div>
 
 
