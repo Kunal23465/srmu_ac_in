@@ -56,7 +56,7 @@ const CustomTable: React.FC<CustomTableProps> = ({
         <tbody>
           {data.map((row) => (
             <tr key={row.id} className="table-data-row">
-              <td className="row-title">{row.title}</td>
+              <td className="row-title title">{row.title}</td>
               <td className="row-download">
                 <DownloadIcon item={row.download} />
               </td>
