@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import Classes from "../../../../utils/styles/Global.module.css";
 import { MdArrowRightAlt } from "react-icons/md";
 import { researchMembers } from "../../../../data/research/overview/research-overview-data";
 import ResearchCard from "./ResearchCard";
@@ -17,10 +17,11 @@ const UniversityResearchSection: React.FC = () => {
   const visibleMembers = researchMembers.slice(0, visibleCount);
   return (
     <section className="text-white  py-16 relative overflow-hidden" style={{ backgroundImage: `url(${bgImg})`, backgroundSize: "cover", backgroundPosition: "center" }}>
-      <div className="container mx-auto px-5">
+            <div className={`${Classes["container"]}`}>
+<div className="container">
         <div className=" mb-10 border-b-3 border-white/50 pb-6">
-          <h2 className="text-3xl lg:text-4xl font-extrabold mb-3">University Research Advisory Board / Council</h2>
-          <p className="text-gray-200 max-w-3xl text-sm">
+          <h2 className="text-3xl lg:text-5xl font-medium mb-3 max-w-3xl">University Research Advisory Board / Council</h2>
+          <p className="text-gray-200 max-w-3xl">
             The University Research Advisory Board at SRMU provides strategic guidance and oversight, ensuring the promotion of high-quality and impactful research projects across
             the institution.
           </p>
@@ -45,7 +46,7 @@ const UniversityResearchSection: React.FC = () => {
             </div>
           )}
         </div>
-      </div>
+      </div></div>
     </section>
   );
 };

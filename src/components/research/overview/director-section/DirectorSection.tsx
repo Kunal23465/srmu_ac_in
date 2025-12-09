@@ -23,7 +23,8 @@ const DirectorSection: React.FC = () => {
   return (
     <div className="bg-[#ffb703] py-20">
       <div className={`${Classes["container"]} `}>
-        <div className="grid lg:grid-cols-2 gap-10 items-start">
+        <div className="grid lg:grid-cols-2 w-full gap-10 items-start">
+<div className="w-[109%]">
           <CustomTabs
             items={items}
             activeTextColor="#000000"
@@ -32,10 +33,10 @@ const DirectorSection: React.FC = () => {
             activeUnderlineColor="#000000"
             fullWidthUnderlineColor="#555555"
           />
+</div>
 
 
-
-          <div className="">
+          <div className="w-[80%] ml-auto">
             <img src={DirectorSectionData.imageUrl} alt="" className="rounded-xl" />
           </div>
         </div>

@@ -19,7 +19,7 @@ const PlacementRecords: React.FC = () => {
     infinite: false,
     speed: 600,
     slidesToShow: 5,
-    slidesToScroll: 5,
+    slidesToScroll: 1,
     beforeChange: (_: number, next: number) => setCurrentSlide(next),
 
     responsive: [
@@ -27,21 +27,21 @@ const PlacementRecords: React.FC = () => {
         breakpoint: 1280,
         settings: {
           slidesToShow: 4,
-          slidesToScroll: 4,
+          slidesToScroll: 1,
         },
       },
       {
         breakpoint: 1024,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 3,
+          slidesToScroll: 1,
         },
       },
       {
         breakpoint: 768,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 2,
+          slidesToScroll: 1,
         },
       },
       {
@@ -62,9 +62,9 @@ const PlacementRecords: React.FC = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         {/* HEADER + TABS */}
         <div className="block md:flex justify-between items-center">
-          <h2 className="text-4xl font-bold mb-2">Placement Records</h2>
+          <h2 className="text-3xl md:text-5xl font-medium mb-2">Placement Records</h2>
 
-          <div className="flex items-center w-fit mb-2 bg-white rounded">
+          <div className="flex items-center w-fit mb-2 bg-white">
             {["2023", "2024", "2025"].map((year) => (
               <button
                 key={year}
@@ -73,7 +73,7 @@ const PlacementRecords: React.FC = () => {
                   setCurrentSlide(0);
                   sliderRef.current?.slickGoTo(0);
                 }}
-                className={`px-10 py-3 text-sm font-semibold text-black transition ${activeYear === year ? "bg-yellow-400" : "hover:bg-yellow-400"}`}
+                className={`px-10 md:px-15 py-2 md:py-3 text-sm md:text-lg font-medium text-black transition ${activeYear === year ? "bg-[#ffb703]" : "hover:bg-[#ffb703]"}`}
               >
                 {year}
               </button>
@@ -82,59 +82,88 @@ const PlacementRecords: React.FC = () => {
         </div>
 
         {/* SUBTEXT */}
-        <p className="text-gray-300 mb-5 text-sm max-w-xl">Outstanding placement records showcase our commitment to student success and industry relevance</p>
+        <p className="text-white mb-5 max-w-2xl">Outstanding placement records showcase our commitment to student success and industry relevance</p>
 
         {/* BUTTONS */}
         <div className="flex gap-5 mb-6">
           <button
             onClick={() => sliderRef.current?.slickPrev()}
             disabled={isPrevDisabled}
-            className={`p-2 border border-white/40 rounded transition ${isPrevDisabled ? "opacity-40 cursor-not-allowed" : "hover:bg-white/20"}`}
+            className={`p-3 border-2 border-white transition ${isPrevDisabled ? "opacity-40 cursor-not-allowed" : "hover:bg-white/20"}`}
           >
-            <ChevronLeft size={20} />
+            <ChevronLeft size={26} />
           </button>
 
           <button
             onClick={() => sliderRef.current?.slickNext()}
             disabled={isNextDisabled}
-            className={`p-2 border border-white/40 rounded transition ${isNextDisabled ? "opacity-40 cursor-not-allowed" : "hover:bg-white/20"}`}
+            className={`p-3 border-2 border-white transition ${isNextDisabled ? "opacity-40 cursor-not-allowed" : "hover:bg-white/20"}`}
           >
-            <ChevronRight size={20} />
+            <ChevronRight size={26} />
           </button>
         </div>
 
         {/* SLIDER */}
-        <Slider ref={sliderRef} {...settings}>
-          {students.map((stu) => (
-            <div key={stu.id} className="px-2">
-              <div className="min-w-[200px] rounded-xl border border-white py-6 px-4 min-h-[310px] text-center">
-                <div className="min-h-[170px]">
-                  <img src={stu.image} alt={stu.name} className="w-20 h-20 rounded-full mx-auto mb-3 object-cover" />
+  <Slider ref={sliderRef} {...settings}>
+  {students.map((stu) => (
+    <div key={stu.id} className="px-2">
+      <div
+        className="
+          min-w-[200px] rounded-xl border border-white py-6 px-4 min-h-[310px] text-center 
+          transition-all duration-300
+          bg-transparent group
+          hover:bg-white hover:border-gray-300 hover:shadow-xl
+          hover:scale-[1.03] 
+          hover:text-black
+        "
+      >
+        <div className="min-h-[170px]">
+          <img
+            src={stu.image}
+            alt={stu.name}
+            className="w-20 h-20 rounded-full mx-auto mb-3 object-cover"
+          />
 
-                  <h4 className="text-lg font-semibold">{stu.name}</h4>
-                  <p className="text-xs text-gray-300 mt-1">{stu.degree}</p>
-                </div>
+          <h4 className="text-lg font-semibold transition-all duration-300">
+            {stu.name}
+          </h4>
 
-                <div className="mt-10 border border-gray-500"></div>
+          <p
+            className="
+              text-xs text-white mt-1 
+              transition-all duration-300
+              group-hover:text-black
+            "
+          >
+            {stu.degree}
+          </p>
+        </div>
 
-                <div className="mt-4 flex justify-center">
-                  <img src={stu.companyLogo} alt="Company Logo" className="h-6 object-contain" />
-                </div>
+        <div className="mt-10 border border-gray-500 transition-all duration-300 hover:border-gray-300"></div>
 
-                <p className="mt-2 text-sm text-gray-200">
-                  Package: <span className="font-semibold">{stu.package}</span>
-                </p>
-              </div>
-            </div>
-          ))}
-        </Slider>
+        <div className="mt-4 flex justify-center">
+          <img
+            src={stu.companyLogo}
+            alt="Company Logo"
+            className="h-6 object-contain"
+          />
+        </div>
+
+        <p className="mt-2 text-sm transition-all duration-300">
+          Package: <span className="font-semibold">{stu.package}</span>
+        </p>
+      </div>
+    </div>
+  ))}
+</Slider>
+
 
         {/* VIEW ALL  */}
         <div className="flex items-center justify-center text-center mt-12">
           <a
             href={placementPdf}
             target="_blank"
-            className="px-8 py-3 hover:bg-[#f8b922] bg-transparent flex items-center gap-2 hover:text-black border border-[#f8b922] text-[#f8b922] font-medium rounded-xl shadow"
+            className="px-8 py-3 hover:bg-[#f8b922] bg-transparent flex items-center gap-2 hover:text-black border border-[#f8b922] text-[#f8b922] font-medium rounded-lg transition-all duration-500 shadow"
             rel="noreferrer"
           >
             <span> VIEW ALL PLACED STUDENTS </span>

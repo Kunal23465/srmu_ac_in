@@ -1,11 +1,9 @@
 import React from "react";
 import Classes from "../../../../utils/styles/Global.module.css";
 import Slider from "react-slick";
-
-
-import { FaRegFilePdf } from "react-icons/fa";
 import { CustomFacilitiesTypes } from "../../../../types/overview-data-type";
 import { ArrowButton } from "../../../../utils/custom/CustomCarousel";
+import { PdfSvgIcon } from "../../../about/recognition-approval/ApprovalSlider";
 
 
 const KeyHighlightsSection: React.FC<CustomFacilitiesTypes> = ({ facilities, layoutData }) => {
@@ -46,7 +44,6 @@ const KeyHighlightsSection: React.FC<CustomFacilitiesTypes> = ({ facilities, lay
                 <ArrowButton onClick={() => sliderRef.current?.slickNext()} direction="next" colorCode={"[#000000]"} />
               </div>
             </div>
-            <p className="text-[#000000] mt-4 font-medium">{layoutData?.content}</p>
           </div>
 
           {/* Facilities Slider */}
@@ -70,9 +67,9 @@ const KeyHighlightsSection: React.FC<CustomFacilitiesTypes> = ({ facilities, lay
                       href={facility.pdfUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="m-4 flex gap-4 items-center mt-8 mb-6 w-fit bg-[#0f4a85] border-3 border-[#ffb703] uppercase text-white hover:text-[#0f4a85] py-2 px-4 rounded-lg hover:bg-white transition-colors duration-200"
+                      className="m-4 flex gap-4 font-medium items-center mt-8 mb-6 w-fit bg-[#0f4a85] border-2 border-[#ffb703] uppercase text-white group hover:text-[#0f4a85] py-2 px-4 rounded-lg hover:bg-white transition-colors duration-200"
                     >
-                      <FaRegFilePdf size={26} /> Download Pdf
+                      <span className="bg-white group-hover:bg-[#ffb703] transition-all duration-500 p-1 rounded-lg"><PdfSvgIcon /></span> Download Pdf
                     </a>
                   </div>
                 </div>
