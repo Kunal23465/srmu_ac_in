@@ -35,7 +35,7 @@ const maxIndex = currentTestimonials.length - 1;
   return (
     <div className="testimonials-section">
       <div className="content-container">
-        <h2 className="section-title text-center">What Our People say</h2>
+        <h2 className="text-3xl md:text-5xl font-medium text-center">What Our People say</h2>
         <p className="subtitle text-center max-w-3xl mx-auto">Testimonials from student, staff, and alumni on their placement experience at SRMU</p>
 
         <div className="block md:flex justify-between items-center min-h-[500px] gap-[60px] mt-12">
@@ -57,7 +57,7 @@ const maxIndex = currentTestimonials.length - 1;
               <Slider ref={sliderRef} {...settings}>
                 {currentTestimonials.map((testimonial, index) => (
                   <div key={index} className="testimonial-slide">
-                    <p className="testimonial-text leading-7 text-base">{testimonial.text}</p>
+                    <p className="testimonial-text leading-7 text-sm md:text-lg text-[#757575]">{testimonial.text}</p>
 
                     <div className="testimonial-author-info mt-8 flex items-center gap-4">
                       <img src={testimonial.image} alt={testimonial.author} className="author-image-small" />

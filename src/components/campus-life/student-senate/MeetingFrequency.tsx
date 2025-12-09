@@ -27,25 +27,14 @@ const MeetingFrequency: React.FC = () => {
                             key={idx}
                             onClick={() => setActiveIndex(idx)}
                             className={`
-        relative  text-lg transition-all px-3 
-         rounded-lg top-15
-        ${activeIndex === idx
-                                    ? `
-              md:text-yellow-400 
-              text-white
+        relative  text-lg transition-all p-3
+         rounded-lg top-19 md:top-20
+        ${activeIndex === idx ? `text-white
               md:after:content-[''] md:after:absolute md:after:left-0 
               md:after:bottom-0 md:after:w-full md:after:h-[3px] 
-              md:after:bg-yellow-400 border border-white
+              md:after:bg-[#ffb703] border border-white
   sm:border sm:border-white
-  md:border md:border-white
-  lg:border-none lg:hover:border-none
-            `
-                                    : `
-             
-            `
-                                }
-      `}
-                        >
+  md:border-none md:hover:border-none` : `md:after:hover:bg-[#ffb703]`}`} >
                             YEAR {item.year}
                         </button>
                     ))}
@@ -74,7 +63,7 @@ const MeetingFrequency: React.FC = () => {
                                     <ul className="space-y-4">
                                         {section.points.map((point, pIdx) => (
                                             <li key={pIdx} className="flex gap-3">
-                                                <span className="text-yellow-500 text-xl">✔</span>
+                                                <span className="text-[#ffb703] text-xl">✔</span>
                                                 <span className="text-justify leading-relaxed">{point}</span>
                                             </li>
                                         ))}
@@ -82,15 +71,15 @@ const MeetingFrequency: React.FC = () => {
                                 </div>
                             ))}
                         </div>
-                    ) : (
-                        <ul className="space-y-5">
+                    ) : (<div><p className="pb-5">Some important pointers taken up during the senate meeting are:</p>
+                        <ul className="space-y-5 ml-3">
                             {activeYear.issues?.map((issue, idx) => (
                                 <li key={idx} className="flex gap-3">
-                                    <span className="text-yellow-500 text-xl">✔</span>
+                                    <span className="text-[#ffb703] text-xl">✔</span>
                                     <span className="text-justify leading-relaxed">{issue}</span>
                                 </li>
                             ))}
-                        </ul>
+                        </ul></div>
                     )}
                 </div>
 

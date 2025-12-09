@@ -1,4 +1,4 @@
-// src/components/DynamicBreadcrumbs.tsx
+
 
 import { Link, useLocation } from "react-router-dom";
 import { Fragment } from "react";
@@ -9,9 +9,7 @@ import { childBackgrounds, formatSegment, pageBackgrounds } from "../../data/bre
 export default function DynamicBreadcrumbs() {
     const location = useLocation();
 
-    // ------------------------------
-    // 1. Generate Dynamic Crumbs
-    // ------------------------------
+    //  Generate Dynamic Crumbs
     const pathParts = location.pathname
         .split("/")
         .filter(Boolean)
@@ -28,9 +26,7 @@ export default function DynamicBreadcrumbs() {
             );
         }),
     ];
-    // ------------------------------
-    // 2. Resolve Background Image
-    // ------------------------------
+    //  Resolve Background Image
     const fullPath = pathParts.join("/");
 
     let backgroundImg = "";

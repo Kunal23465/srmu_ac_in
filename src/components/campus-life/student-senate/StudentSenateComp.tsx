@@ -19,7 +19,7 @@ const StudentSenateComp:FC = () => {
         <DirectorSectionforSenate />
       </div>
 
-      <div className={`${Classes["container"]}`}>
+      <div className={`${Classes["container"]} py-10 md:py-20`}>
         <CardListing />
       </div>
       <MeetingFrequency />

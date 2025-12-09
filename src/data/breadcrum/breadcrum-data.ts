@@ -9,7 +9,10 @@ import blogsbreadcrumbbg from "../../assets/images/breadcrumb/blogs-breadcrumb-b
 import placementbreadcrumbbg from "../../assets/images/breadcrumb/placement-breadcrum-bg.jpg";
 import agriBreadcrumbbg from "../../assets/images/breadcrumb/agri-banner-inner.jpg";
 
-export const pageBackgrounds = {
+// -----------------------
+// FIX 1: Allow string index
+// -----------------------
+export const pageBackgrounds: Record<string, string> = {
   about: aboutbreadcrumbbg,
   academics: academicbreadcrumbbg,
   admission: admissionbreadcrumbbg,
@@ -17,19 +20,21 @@ export const pageBackgrounds = {
   "campus-life": campuslifebreadcrumbbg,
   placements: placementbreadcrumbbg,
   blogs: blogsbreadcrumbbg,
+
   "innovation-meets-agriculture-at-the-srmu-kisan-mela-2025": agriBreadcrumbbg,
   "empowering-future-engineers:-l&t-edutech-ai-lab-opens-at-srmu": agriBreadcrumbbg,
   "expert-talk-session-on-smart-meter-implementation:-data-science-&-cybersecurity-in-ami": agriBreadcrumbbg,
-
-  // ...add all top-level nav keys you use
 };
 
-// child overrides (keys = full path relative to root, no leading slash)
-export const childBackgrounds = {
+// -----------------------
+// FIX 2: Allow dynamic child keys
+// -----------------------
+export const childBackgrounds: Record<string, string> = {
   "academics/academic-depository-nad-and-abc": campuslifebreadcrumbbg,
-  // only add entries for children that must override the parent
+  // add more child overrides if needed
 };
 
+// -----------------------
 export const formatSegment = (segment: string) => {
   return segment.replace(/-/g, " ").replace(/^\w/, (c) => c.toUpperCase());
 };

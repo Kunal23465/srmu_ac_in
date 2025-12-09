@@ -486,7 +486,7 @@ const AlumniFeedbackForm: FC = () => {
                   <div className="px-3 w-full">
                     <button
                       type="submit"
-                      className={`bg-[#ffb703] mt-6 font-medium hover:bg-white hover:text-[#ffb703] hover:border border-[#ffb703] hover:border-[#ffb703] cursor-pointer flex items-center gap-3 px-8 py-4 rounded-xl`}
+                      className={`bg-[#ffb703] mt-6 font-medium hover:bg-[#ECF0F9] transition-all duration-500 hover:text-[#ffb703] hover:border border-[#ffb703] hover:border-[#ffb703] cursor-pointer flex items-center gap-3 px-8 py-4 rounded-xl`}
                     >
                       <span>SUBMIT</span>
                       <HiOutlineArrowLongRight className="text-xl" />
