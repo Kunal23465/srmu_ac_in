@@ -20,7 +20,7 @@ const StudentCornerComp:React.FC = () => {
                     columnOneHeader="Tutorials"
                     columnTwoHeader="Downloads"
                     data={studentCornerFirstCycle}
-                />
+                /><div className='pb-10 md:pb-20' />
             </div>
         </div>
     )

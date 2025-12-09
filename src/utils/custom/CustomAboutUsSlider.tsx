@@ -124,7 +124,7 @@ type Props = { data: WhySliderData };
 
 
   return (
-    <div className="w-full flex justify-center py-16 px-4  min-h-screen font-inter">
+    <div className="w-full flex justify-center py-16 px-4   font-inter">
       <div className="w-full max-w-7xl h-full flex flex-col lg:flex-row items-start gap-12">
 
         {/* LEFT SECTION (Controls & Text) */}

@@ -16,9 +16,9 @@ import year18 from "../../../assets/images/campus-life/student-senate/18.jpg"
 
 export const StudentSenateOverviewData: customeOverViewType = {
   heading: "Student Senate",
-  content: `The SRMU student senate is an independent student body to address academic and administrative concerns, facilitating amicable solutions with university authorities. 
-It is an interface through which student concerns get represented to the university authorities with a fair and community-driven approach.
-`,
+  content: "The SRMU student senate is an independent student body to address academic and administrative concerns, facilitating amicable solutions with university authorities.",
+  counterSibling: "It is an interface through which student concerns get represented to the university authorities with a fair and community-driven approach."
+
 };
 
 

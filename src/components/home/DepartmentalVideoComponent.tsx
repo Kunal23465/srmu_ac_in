@@ -1,4 +1,4 @@
-import  { useState } from "react";
+import { useEffect, useState } from "react";
 import Slider from "react-slick";
 
 import media from "../../assets/images/home/departmentalvideos/media-28022504202912.png";
@@ -12,6 +12,7 @@ import computer from "../../assets/images/home/departmentalvideos/cs-28022504080
 import biotech from "../../assets/images/home/departmentalvideos/bt-28022504100056.png";
 import law from "../../assets/images/home/departmentalvideos/law-28022504141516.png";
 import pharma from "../../assets/images/home/departmentalvideos/pharma-28022504201232.png";
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 
 interface VideoItem {
   id: string;
@@ -33,20 +34,71 @@ const videos: VideoItem[] = [
   { id: "YOUR_VIDEO_ID_11", title: "Pharmacy: The Heart of Healthcare Innovation!", thumbnail: pharma },
 ];
 
+const NextArrow = ({ onClick }: any) => (
+  <button
+    onClick={onClick}
+    className="absolute right-[calc(50%-70px)] text-gray-500 hover:text-white -bottom-24 bg-white hover:bg-[#ffb703] shadow-lg w-15 h-15 flex items-center justify-center rounded-full  z-10 cursor-pointer"
+  >
+    <MdKeyboardArrowRight size="26" />
+  </button>
+);
+
+const PrevArrow = ({ onClick }: any) => (
+  <button
+    onClick={onClick}
+    className="absolute left-[calc(50%-70px)] text-gray-500 hover:text-white -bottom-24 bg-white hover:bg-[#ffb703] shadow-lg w-15 h-15 flex items-center justify-center rounded-full  z-10 cursor-pointer"
+  >
+    <MdKeyboardArrowLeft size="26" />
+  </button>
+);
 export default function DepartmentalVideo() {
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
   const [activeSlide, setActiveSlide] = useState(0);
+  const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 0);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Function to determine slidesToShow based on window width
+  const getSlidesToShow = () => {
+
+    if (windowWidth >= 1024) return 3;
+    if (windowWidth >= 600) return 2;
+
+    return 1;
+  };
+
+  // Function to determine if centerMode should be enabled
+  const shouldCenterMode = () => {
+    return windowWidth >= 768; // Enable center mode only on medium screens and above
+  };
+
+  // Function to determine if arrows should be shown
+  const shouldShowArrows = () => {
+    return windowWidth >= 375; // Show arrows only on medium screens and above
+  };
 
   const settings = {
     dots: false,
     infinite: true,
     speed: 600,
-    slidesToShow: 3,
+    slidesToShow: getSlidesToShow(),
     slidesToScroll: 1,
+    centerMode: shouldCenterMode(),
+    centerPadding: "0px",
+    arrows: shouldShowArrows(),
+    nextArrow: shouldShowArrows() ? <NextArrow /> : null,
+    prevArrow: shouldShowArrows() ? <PrevArrow /> : null,
     beforeChange: (_current: number, next: number) => setActiveSlide(next),
-    autoplay: false,
-    arrows: true,
+    key: windowWidth,
     responsive: [
+
       {
         breakpoint: 1024,
         settings: { slidesToShow: 2 },
@@ -59,13 +111,14 @@ export default function DepartmentalVideo() {
   };
 
   return (
-      <section className="py-7 md:py-10 lg:py-14">
+    <section className="py-7 md:py-10 lg:py-14">
       <h2 className="text-[28px] text-center sm:text-xl lg:text-[3.125rem] fw600 mb-10">Departmental Video</h2>
 
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 mb-30">
+        {/* @ts-ignore */}
         <Slider className="department-crousel" {...settings}>
           {videos.map((video, index) => {
-            const isSecondImage = (activeSlide + 1) % videos.length === index;
+            const isSecondImage = (activeSlide) % videos.length === index;
             return (
               <div key={video.id} className="px-3">
                 <div className="relative group rounded-xl overflow-hidden shadow-lg cursor-pointer">

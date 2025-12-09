@@ -1,16 +1,16 @@
-import React from 'react'
-import Banner from './Banner'
-import MemorialCollege from './MemorialCollege'
-import InnovationCulture from './InnovationCulture'
-import Apply from './Apply'
-import ProgramsSection from './ProgramSection'
-import AlumniSlider from './NotableAlumni'
-import FlickeringSection from './FlickeringSection'
-import TestimonialSlider from './TestimonialSlider'
-import DepartmentalVideoComponent from './DepartmentalVideoComponent'
-import Placements from './Placements'
-import MobilePlacements from './MobilePlacements'
-import Events from './Events'
+import React from "react";
+import Banner from "./Banner";
+import MemorialCollege from "./MemorialCollege";
+import InnovationCulture from "./InnovationCulture";
+import Apply from "./Apply";
+import ProgramsSection from "./ProgramSection";
+import AlumniSlider from "./NotableAlumni";
+import FlickeringSection from "./FlickeringSection";
+import TestimonialSlider from "./TestimonialSlider";
+import DepartmentalVideoComponent from "./DepartmentalVideoComponent";
+import Placements from "./Placements";
+import MobilePlacements from "./MobilePlacements";
+import Events from "./Events";
 
 const Home: React.FC = () => {
   return (
@@ -29,17 +29,13 @@ const Home: React.FC = () => {
         <MobilePlacements />
       </div>
       <AlumniSlider />
-      <div className='bg-[#ecf0f9]'>
+      <div className="bg-[#ecf0f9]">
         <TestimonialSlider />
       </div>
 
       <DepartmentalVideoComponent />
-
-
-
-
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

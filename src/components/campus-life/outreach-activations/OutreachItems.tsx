@@ -18,7 +18,7 @@ const OutreachItems: React.FC = () => {
 
           <div>
             {desc.map((item, index) => (
-              <p key={index} className="mb-4 text-base md:text-lg">
+              <p key={index} className="mb-4 text-base md:text-lg text-justify">
                 {item.point}
               </p>
             ))}
@@ -30,7 +30,7 @@ const OutreachItems: React.FC = () => {
           <img
             src={img}
             alt={title}
-            className="w-full h-auto md:h-full object-cover rounded-md"
+            className="hidden md:block w-full h-auto md:h-full object-cover rounded-md"
           />
         </div>
       </div>

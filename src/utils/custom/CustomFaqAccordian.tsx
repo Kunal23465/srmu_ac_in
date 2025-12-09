@@ -88,7 +88,7 @@ const CustomFaqAccordion: React.FC<Props> = ({ data }) => {
     };
 
     return (
-        <div className="w-full max-w-5xl mx-auto space-y-3 mt-10">
+        <div className="w-full mx-auto space-y-3 mt-10">
             {data.map((item, index) => (
                 <div
                     key={item.id}
@@ -98,7 +98,7 @@ const CustomFaqAccordion: React.FC<Props> = ({ data }) => {
                         onClick={() => toggleAccordion(index)}
                         className="flex justify-between items-center w-full p-4 text-left text-md font-medium text-gray-800 hover:bg-gray-100"
                     >
-                        <span>{`${item.id} ${item.question}`}</span>
+                        <span className="text-lg sm:text-xl font-bold">{`${item.id} ${item.question}`}</span>
                         {openIndex === index ? (
                             <ChevronUp className="w-5 h-5 text-gray-600" />
                         ) : (

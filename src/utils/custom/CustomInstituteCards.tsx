@@ -40,7 +40,7 @@ export const CustomInstituteCards: React.FC<CardProps> = ({ institute }) => {
           {institute.departments === 1 ? (
             <Link
               className="flex items-center gap-1 sm:gap-2 justify-center"
-              to={`/academics/institutes-info/departmentDetails/${institute.path}`}
+              to={`/academics/department/${institute.path}`}
               state={institute.departmentsData}
             >
               <span>MORE INFO</span>
@@ -49,7 +49,7 @@ export const CustomInstituteCards: React.FC<CardProps> = ({ institute }) => {
           ) : (
             <Link
               className="flex items-center gap-1 sm:gap-2 justify-center"
-              to={`/academics/institutes-info/institute-departments/${institute.path}`}
+              to={`/academics/${institute.path}`}
               state={institute.departmentsData}
             >
               <span>MORE INFO</span>

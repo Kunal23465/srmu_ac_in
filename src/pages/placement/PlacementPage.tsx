@@ -1,13 +1,13 @@
 import React from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
-import Placement from '../../components/placement/Placement'
+import PlacementOverview from '../../components/placement/placement-overview/PlacementOverview'
 
 const PlacementPage: React.FC = () => {
   const location = useLocation()
 
   return (
     <>
-      {location.pathname == "/placement" ? <Placement /> :
+      {location.pathname == "/placements" ? <PlacementOverview /> :
         <Outlet />}
     </>
   )

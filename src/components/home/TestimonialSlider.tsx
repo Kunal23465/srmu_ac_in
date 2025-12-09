@@ -1,64 +1,144 @@
-// Updated TestimonialSlider with mobile styling adjustments
-import { useState } from "react";
+// Updated TestimonialSlider with fully dynamic breakpoints
+import { useState, useEffect } from "react";
 import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import { hometestimonial } from "../../data/home/student-testimonialhome-data";
 import quote from "../../assets/images/home/quote.png";
 import Classes from "../../utils/styles/Global.module.css";
 import { Link } from "react-router-dom";
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 
 const NextArrow = ({ onClick }: any) => (
     <button
         onClick={onClick}
-        className="absolute right-0 top-[20rem] bg-white shadow-lg w-15 h-15 flex items-center justify-center rounded-full border border-gray-200 hover:bg-gray-50 z-10 cursor-pointer"
+        className="hidden md:flex absolute right-0 top-1/2 translate-y-70  bg-white shadow-lg w-15 h-15 items-center justify-center rounded-full border border-gray-200 hover:bg-gray-50 z-10 cursor-pointer"
     >
-        <span className="text-xl text-gray-700">›</span>
+        <MdKeyboardArrowRight size="26" />
     </button>
 );
 
 const PrevArrow = ({ onClick }: any) => (
     <button
         onClick={onClick}
-        className="absolute left-0 top-[20rem] bg-white shadow-lg w-15 h-15 flex items-center justify-center rounded-full border border-gray-200 hover:bg-gray-50 z-10 cursor-pointer"
+        className="hidden md:flex absolute left-0 top-1/2 translate-y-70 bg-white shadow-lg w-15 h-15 items-center justify-center rounded-full border border-gray-200 hover:bg-gray-50 z-10 cursor-pointer"
     >
-        <span className="text-xl text-gray-700">‹</span>
+        <MdKeyboardArrowLeft size="26" />
     </button>
 );
 
+
 const TestimonialSlider = () => {
     const [activeIndex, setActiveIndex] = useState(0);
+    const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 0);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    // Function to determine slidesToShow based on window width
+    const getSlidesToShow = () => {
+        if (windowWidth >= 1536) return 7; // 2xl
+        if (windowWidth >= 1280) return 5; // xl
+        if (windowWidth >= 1024) return 4; // lg
+        if (windowWidth >= 768) return 3;  // md
+        if (windowWidth >= 640) return 2;  // sm
+        return 1; // xs
+    };
+
+    // Function to determine if centerMode should be enabled
+    const shouldCenterMode = () => {
+        return windowWidth >= 768; // Enable center mode only on medium screens and above
+    };
+
+    // Function to determine if arrows should be shown
+    const shouldShowArrows = () => {
+        return windowWidth >= 375; // Show arrows only on medium screens and above
+    };
 
     const settings = {
         dots: false,
         infinite: true,
         speed: 600,
-        slidesToShow: 7,
+        slidesToShow: getSlidesToShow(),
         slidesToScroll: 1,
-        centerMode: true,
+        centerMode: shouldCenterMode(),
         centerPadding: "0px",
-        arrows: true,
-        nextArrow: <NextArrow />,
-        prevArrow: <PrevArrow />,
+        arrows: shouldShowArrows(),
+        nextArrow: shouldShowArrows() ? <NextArrow /> : null,
+        prevArrow: shouldShowArrows() ? <PrevArrow /> : null,
         beforeChange: (_: any, next: number) => setActiveIndex(next),
+        // This ensures slick carousel re-initializes when window size changes
+        key: windowWidth, // Add key to force re-render on window resize
         responsive: [
-            { breakpoint: 1280, settings: { slidesToShow: 5 } },
-            { breakpoint: 1024, settings: { slidesToShow: 4 } },
-            { breakpoint: 768, settings: { slidesToShow: 3 } },
+            {
+                breakpoint: 1536,
+                settings: {
+                    slidesToShow: 7,
+                    slidesToScroll: 1,
+                    centerMode: true,
+                    arrows: true,
+                },
+            },
+            {
+                breakpoint: 1280,
+                settings: {
+                    slidesToShow: 5,
+                    slidesToScroll: 1,
+                    centerMode: true,
+                    arrows: true,
+                },
+            },
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 1,
+                    centerMode: true,
+                    arrows: true,
+                },
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    centerMode: true,
+                    arrows: true,
+                },
+            },
+            {
+                breakpoint: 640,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    centerMode: false,
+                    arrows: true,
+                },
+            },
             {
                 breakpoint: 480,
                 settings: {
                     slidesToShow: 1,
-                    centerMode: true,
+                    slidesToScroll: 1,
+                    centerMode: false,
                     arrows: false,
                 },
             },
-        ],
+        ]
     };
 
     return (
         <div className="py-20 bg-[#f7f9ff] flex flex-col items-center">
             <h2 className="text-[28px] text-center sm:text-xl lg:text-[3.125rem] fw600 mb-12">Student Testimonials</h2>
 
-            <div className={`relative ${Classes["container"]}`}>
+            <div className={`relative ${Classes["container"]} w-full max-w-[1200px] mx-auto px-4`}>
+                {/* @ts-ignore */}
                 <Slider {...settings}>
                     {hometestimonial.map((item, index) => (
                         <div key={item.id} className="flex justify-center px-0.5">
@@ -95,8 +175,6 @@ const TestimonialSlider = () => {
                         VIEW ALL TESTIMONIALS →
                     </Link>
                 </div>
-
-
             </div>
         </div>
     );

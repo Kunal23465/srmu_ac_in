@@ -158,43 +158,35 @@ export interface LibraryService {
     title: string;
     description: string;
 }
-
 export const libraryServices: LibraryService[] = [
-    {
-        title: "Institute of Legal Studies Library",
-        description:
-            "The library provides a wide range of legal books, journals, and reference materials to support learning, research, and professional growth."
-    },
-    {
-        title: "Institute of Management, Commerce & Economics Library",
-        description:
-            "It offers a rich collection of books, journals, case studies, and digital resources to support learning, research, and industry-oriented knowledge in business, commerce, and economics."
-    },
-    {
-        title: "Institute of Media Studies Library",
-        description:
-            "The IMS Library provides books, journals, audio-visuals, and digital resources to help students learn, research, and train in journalism, mass communication, and media studies."
-    },
-    {
-        title: "Institute of Diploma Studies Library",
-        description:
-            "The library offers key textbooks and resources to support diploma courses and student learning."
-    },
-    {
-        title: "Institute of Education and Research Library",
-        description:
-            "It offers books, journals, and study materials to support learning, teaching, and research in the field of education."
-    },
-    {
-        title: "Institute of Pharmacy Library",
-        description:
-            "The Institute of Pharmacy Library has books, journals, and study materials to help students learn and do research in pharmacy."
-    },
-    {
-        title: "Institute of Pharmaceutical Sciences Library",
-        description:
-            "The library provides a wide collection of books, journals, and online resources to support students and faculty in their studies, research, and academic growth in pharmaceutical sciences."
-    },
+  {
+    title: "Remote Access to E-resources",
+    description: "The library provides remote access facility of the subscribed e-databases to students and faculty members."
+  },
+  {
+    title: "Digitization of the Library",
+    description: "40-computer section with Wi-Fi/LAN for student and faculty e-resource access."
+  },
+  {
+    title: "Kiosks",
+    description: "KOHA-enabled kiosks allow easy catalogue search and account check."
+  },
+  {
+    title: "Web OPAC",
+    description: "Library Web OPAC[](http://elibrary.srmu.ac.in:8999) provides 24x7 access to resources and account management."
+  },
+  {
+    title: "Online Information Search",
+    description: "In case of any query, library staff provides help and support to the library users via email and mobile phone also."
+  },
+  {
+    title: "Inter Library Loan (ILL) Service",
+    description: "The library has inter-library loan networking with DELNET and IIM, Lucknow."
+  },
+  {
+    title: "Reprography Services",
+    description: "The library has photocopy and scanning services for students and faculty members."
+  }
 ];
 
 

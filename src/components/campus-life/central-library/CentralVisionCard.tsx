@@ -24,15 +24,12 @@ const CentralVisionCard: React.FC<MissionVisionCardProps> = ({ image, heading, p
 
             <div className="p-6">
                 <h2 className="text-2xl font-semibold text-[#1B3A6F] mb-4">{heading}</h2>
-                <ul className="list-disc list-inside text-gray-700 space-y-2">
+                <ul className="list-disc pl-4 sm:pl-6 text-gray-700 space-y-2">
                     {visiblePoints.map((point, index) => (
                         <li
                             key={index}
-                            className="leading-relaxed pl-1 marker:text-[#FFD700] text-justify"
-                            style={{
-                                textIndent: "-0.8em",
-                                paddingLeft: "1.2em",
-                            }}
+                            className="text-sm sm:text-[16px] leading-relaxed marker:text-[#ffb703] marker:text-2xl text-justify"
+                         
                         >
                             {point}
                         </li>

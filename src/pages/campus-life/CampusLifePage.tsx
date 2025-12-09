@@ -1,11 +1,11 @@
 import { Outlet, useLocation } from 'react-router-dom'
-import CampuslifeComp from '../../components/campus-life/CampuslifeComp'
+import FacilitiesComp from '../../components/campus-life/facilities/FacilitiesComp'
 
 const CampusLifePage = () => {
     const location = useLocation()
   return (
     <>
-            {location.pathname == "/campus-life" ? <CampuslifeComp /> :
+      {location.pathname == "/campus-life" ? <FacilitiesComp /> :
                 <Outlet />}
         </>
   )

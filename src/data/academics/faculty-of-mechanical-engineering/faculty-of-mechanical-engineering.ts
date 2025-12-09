@@ -6,107 +6,105 @@ import { InstituteProfile } from "../../../types/profile-data-type";
 import rajeshPorwal from "../../../assets/images/academics/institutes/dr.-rajesh-porwal.jpg";
 import { departmentHighlightscardType, FeeTableData } from "../faculty-of-civil-engineering/faculty-of-civil-engineering-data";
 import { FacultyItem } from "../../../utils/custom/CustomFacultyListCard";
-import neerajKumarGupta from "../../../assets/images/academics/institutes/neerajGupta.jpeg"
-import arvindKumarVerma from "../../../assets/images/academics/institutes/mr.-arvind-kumar-verma.jpg"
-import rohitSingh from "../../../assets/images/academics/institutes/rohit-singh.jpeg"
-import rakeshDwivedi from "../../../assets/images/academics/institutes/rakesh.jpeg"
-import shashankKumarShukla from "../../../assets/images/academics/institutes/shashank.jpeg"
-import vinodKumar from "../../../assets/images/academics/institutes/vinod.jpeg"
-import niteshKumarPandey from "../../../assets/images/academics/institutes/nitish-pandey.jpeg"
-import umeshVishwakarma from "../../../assets/images/academics/institutes/umesh.jpeg"
-import vikramSingh from "../../../assets/images/academics/institutes/vikram.jpeg"
-import amitKumarSingh from "../../../assets/images/academics/institutes/amit-kumar-singh.jpeg"
-import rajeshKumarPorwal from "../../../assets/images/academics/institutes/dr.-rajesh-porwal.jpg"
-import stateoftheart from "../../../assets/images/academics/institutes/stateoftheart.jpg"
-import industryintegrated from "../../../assets/images/academics/institutes/industryintegrated.jpg"
-import menteesystem from "../../../assets/images/academics/institutes/menteesystem.jpg"
-import handsonlearning from "../../../assets/images/academics/institutes/handsonlearning.jpg"
-import guestsessions from "../../../assets/images/academics/institutes/guestsessions.jpg"
-import entrepreneurialmindsets from "../../../assets/images/academics/institutes/entrepreneurialmindsets.jpg"
-import interdisciplinaryresearch from "../../../assets/images/academics/institutes/interdisciplinaryresearch.jpg"
-import industrialVisit from  "../../../assets/images/academics/institutes/industrial-visit.png";
+import neerajKumarGupta from "../../../assets/images/academics/institutes/neerajGupta.jpeg";
+import arvindKumarVerma from "../../../assets/images/academics/institutes/mr.-arvind-kumar-verma.jpg";
+import rohitSingh from "../../../assets/images/academics/institutes/rohit-singh.jpeg";
+import rakeshDwivedi from "../../../assets/images/academics/institutes/rakesh.jpeg";
+import shashankKumarShukla from "../../../assets/images/academics/institutes/shashank.jpeg";
+import vinodKumar from "../../../assets/images/academics/institutes/vinod.jpeg";
+import niteshKumarPandey from "../../../assets/images/academics/institutes/nitish-pandey.jpeg";
+import umeshVishwakarma from "../../../assets/images/academics/institutes/umesh.jpeg";
+import vikramSingh from "../../../assets/images/academics/institutes/vikram.jpeg";
+import amitKumarSingh from "../../../assets/images/academics/institutes/amit-kumar-singh.jpeg";
+import rajeshKumarPorwal from "../../../assets/images/academics/institutes/dr.-rajesh-porwal.jpg";
+import stateoftheart from "../../../assets/images/academics/institutes/stateoftheart.jpg";
+import industryintegrated from "../../../assets/images/academics/institutes/industryintegrated.jpg";
+import menteesystem from "../../../assets/images/academics/institutes/menteesystem.jpg";
+import handsonlearning from "../../../assets/images/academics/institutes/handsonlearning.jpg";
+import guestsessions from "../../../assets/images/academics/institutes/guestsessions.jpg";
+import entrepreneurialmindsets from "../../../assets/images/academics/institutes/entrepreneurialmindsets.jpg";
+import interdisciplinaryresearch from "../../../assets/images/academics/institutes/interdisciplinaryresearch.jpg";
+import industrialVisit from "../../../assets/images/academics/institutes/industrial-visit.png";
 import { EventItem } from "../../../utils/custom/CustomEventListCard";
 
-
-
-export const facultyDetailsOfMeDepartment : FacultyItem[] = [
-    {
-        id: 1,
-        name: "Mr. Neeraj Kumar Gupta",
-        designation: "Assistant Professor",
-        image: neerajKumarGupta,
-        cardBgColor: "transparent",
-    },
-    {
-        id: 2,
-        name: "Mr. Arvind Kumar Verma",
-        designation: "Assistant Professor",
-        image: arvindKumarVerma,
-        cardBgColor: "transparent",
-    },
-    {
-        id: 3,
-        name: "Mr. Rohit Singh",
-        designation: "Assistant Professor",
-        image: rohitSingh,
-        cardBgColor: "transparent",
-    },
-    {
-        id: 4,
-        name: "Mr. Rakesh Dwivedi",
-        designation: "Assistant Professor",
-        image: rakeshDwivedi,
-        cardBgColor: "transparent",
-    },
-    {
-        id: 5,
-        name: "Mr. Shashank Kumar Shukla",
-        designation: "Assistant Professor",
-        image: shashankKumarShukla,
-        cardBgColor: "transparent",
-    },
-    {
-        id: 6,
-        name: "Mr. Vinod Kumar",
-        designation: "Assistant Professor",
-        image: vinodKumar,
-        cardBgColor: "transparent",
-    },
-    {
-        id: 7,
-        name: "Mr. Nitesh Kumar Pandey",
-        designation: "Assistant Professor",
-        image: niteshKumarPandey,
-        cardBgColor: "transparent",
-    },
-    {
-        id: 8,
-        name: "Mr. Umesh Vishwakarma",
-        designation: "Assistant Professor",
-        image: umeshVishwakarma,
-        cardBgColor: "transparent",
-    },
-    {
-        id: 9,
-        name: "Mr. Vikram Singh",
-        designation: "Assistant Professor",
-        image: vikramSingh,
-        cardBgColor: "transparent",
-    },
-    {
-        id: 10,
-        name: "Dr. Amit Kumar Singh",
-        designation: "Assistant Professor",
-        image: amitKumarSingh,
-        cardBgColor: "transparent",
-    },
-    {
-        id: 11,
-        name: "Prof. (Dr.) Rajesh Kumar Porwal",
-        designation: "Professor",
-        image: rajeshKumarPorwal,
-        cardBgColor: "transparent",
-    },
+export const facultyDetailsOfMeDepartment: FacultyItem[] = [
+  {
+    id: 1,
+    name: "Mr. Neeraj Kumar Gupta",
+    designation: "Assistant Professor",
+    image: neerajKumarGupta,
+    cardBgColor: "transparent",
+  },
+  {
+    id: 2,
+    name: "Mr. Arvind Kumar Verma",
+    designation: "Assistant Professor",
+    image: arvindKumarVerma,
+    cardBgColor: "transparent",
+  },
+  {
+    id: 3,
+    name: "Mr. Rohit Singh",
+    designation: "Assistant Professor",
+    image: rohitSingh,
+    cardBgColor: "transparent",
+  },
+  {
+    id: 4,
+    name: "Mr. Rakesh Dwivedi",
+    designation: "Assistant Professor",
+    image: rakeshDwivedi,
+    cardBgColor: "transparent",
+  },
+  {
+    id: 5,
+    name: "Mr. Shashank Kumar Shukla",
+    designation: "Assistant Professor",
+    image: shashankKumarShukla,
+    cardBgColor: "transparent",
+  },
+  {
+    id: 6,
+    name: "Mr. Vinod Kumar",
+    designation: "Assistant Professor",
+    image: vinodKumar,
+    cardBgColor: "transparent",
+  },
+  {
+    id: 7,
+    name: "Mr. Nitesh Kumar Pandey",
+    designation: "Assistant Professor",
+    image: niteshKumarPandey,
+    cardBgColor: "transparent",
+  },
+  {
+    id: 8,
+    name: "Mr. Umesh Vishwakarma",
+    designation: "Assistant Professor",
+    image: umeshVishwakarma,
+    cardBgColor: "transparent",
+  },
+  {
+    id: 9,
+    name: "Mr. Vikram Singh",
+    designation: "Assistant Professor",
+    image: vikramSingh,
+    cardBgColor: "transparent",
+  },
+  {
+    id: 10,
+    name: "Dr. Amit Kumar Singh",
+    designation: "Assistant Professor",
+    image: amitKumarSingh,
+    cardBgColor: "transparent",
+  },
+  {
+    id: 11,
+    name: "Prof. (Dr.) Rajesh Kumar Porwal",
+    designation: "Professor",
+    image: rajeshKumarPorwal,
+    cardBgColor: "transparent",
+  },
 ];
 
 export const facultyofMEOverviewData: customeOverViewType = {
@@ -140,9 +138,7 @@ export const facultyOfMechanicalEngineeringVMData = [
     bgColor: "#FFF2D2",
     img: visionImg,
     heading: "Vision",
-    points: [
-      "To be a center of excellence in the field of Mechanical Engineering where the best of teaching, learning, research and innovations converge.",
-    ],
+    points: ["To be a center of excellence in the field of Mechanical Engineering where the best of teaching, learning, research and innovations converge."],
   },
 ];
 
@@ -316,64 +312,76 @@ export const underGraduateFeeDataOfME: FeeTableData = {
   ],
 };
 
-export const counterDataForPlacedStudentsOFMechanicalEngineering: counterDataType[] =
-  [
-    { id: 1, value: "200", suffix: "", label: "Guest lectures" },
-    { id: 2, value: "100", suffix: "", label: "Field Visits" },
-    { id: 3, value: "10", suffix: "", label: "Conference & Seminars" },
-  ];
+export const counterDataForPlacedStudentsOFMechanicalEngineering = {
+  counterData: [
+    {
+      id: 1,
+      icon: "",
+      value: "200",
+      suffix: "",
+      label: "Guest lectures",
+    },
+    {
+      id: 2,
+      icon: "",
+      value: "100",
+      suffix: "",
+      label: "Field Visits",
+    },
+    {
+      id: 3,
+      icon: "",
+      value: "10",
+      suffix: "",
+      label: "Conference & Seminars",
+    },
+  ],
+};
 
+export const mechanicalDepartmentHighlightsData: departmentHighlightscardType[] = [
+  {
+    image: stateoftheart,
+    title: "State-of-the-art machinery and equipment",
+    description:
+      "The Faculty of Mechanical Engineering (FoME) is well equipped with fully functioned equipments with most modern infrastructure to accomplish the present day needs of the industries through hands-on training.",
+  },
+  {
+    image: industryintegrated,
+    title: "Offering industry integrated programs",
+    description:
+      "Keeping the culture of rich academia-industry interface, university is now offering specialized courses in field of mechanical engineering in association with different industry partners.",
+  },
+  {
+    image: menteesystem,
+    title: "Mentor-mentee system for personalized approach",
+    description: "The faculty member as Mentor pays individual attention to guide, mentor and counsel each student Mentee who come with their personal and professional problems.",
+  },
+  {
+    image: handsonlearning,
+    title: "Emphasizing & practising hand-on learning",
+    description: "FoME programs are designed to develop experiential knowledge and conceptual understanding to topics that are specifically related to futuristic technologies.",
+  },
+  {
+    image: guestsessions,
+    title: "Guest sessions by leading industry experts",
+    description:
+      "To give a guest lecture on the latest technological advancements, career possibilities, industry demands and trends, etc., the best academics and industry professionals are invited.",
+  },
+  {
+    image: entrepreneurialmindsets,
+    title: "Nurturing entrepreneurial mindsets",
+    description:
+      'The goal is to develop both the "entrepreneurial mindset" and the know-how needed to launch a business. It is emphasized that students should become "Employers of Tomorrow" in addition to professional entrepreneurs.',
+  },
+  {
+    image: interdisciplinaryresearch,
+    title: "Developing scope for interdisciplinary research",
+    description:
+      "The faculty members encourage students to apply their freshly acquired expertise to multidisciplinary research projects that result in the development of cutting-edge technologies through problem- and research-based learning.",
+  },
+];
 
-
-
-export const mechanicalDepartmentHighlightsData: departmentHighlightscardType[] =
-  [
-    {
-      image: stateoftheart, 
-      title: "State-of-the-art machinery and equipment",
-      description:
-        "The Faculty of Mechanical Engineering (FoME) is well equipped with fully functioned equipments with most modern infrastructure to accomplish the present day needs of the industries through hands-on training.",
-    },
-    {
-      image: industryintegrated,
-      title: "Offering industry integrated programs",
-      description:
-        "Keeping the culture of rich academia-industry interface, university is now offering specialized courses in field of mechanical engineering in association with different industry partners.",
-    },
-    {
-      image: menteesystem, 
-      title: "Mentor-mentee system for personalized approach",
-      description:
-        "The faculty member as Mentor pays individual attention to guide, mentor and counsel each student Mentee who come with their personal and professional problems.",
-    },
-    {
-      image: handsonlearning,
-      title: "Emphasizing & practising hand-on learning",
-      description:
-        "FoME programs are designed to develop experiential knowledge and conceptual understanding to topics that are specifically related to futuristic technologies.",
-    },
-    {
-      image: guestsessions, 
-      title: "Guest sessions by leading industry experts",
-      description:
-        "To give a guest lecture on the latest technological advancements, career possibilities, industry demands and trends, etc., the best academics and industry professionals are invited.",
-    },
-    {
-      image: entrepreneurialmindsets, 
-      title: "Nurturing entrepreneurial mindsets",
-      description:
-        "The goal is to develop both the \"entrepreneurial mindset\" and the know-how needed to launch a business. It is emphasized that students should become \"Employers of Tomorrow\" in addition to professional entrepreneurs.",
-    },
-    {
-      image: interdisciplinaryresearch, 
-      title: "Developing scope for interdisciplinary research",
-      description:
-        "The faculty members encourage students to apply their freshly acquired expertise to multidisciplinary research projects that result in the development of cutting-edge technologies through problem- and research-based learning.",
-    },
-  ];
-
-export const mechanicalDepartmentEventsData:EventItem[]  =[
- 
+export const mechanicalDepartmentEventsData: EventItem[] = [
   {
     id: 1,
     title: "Industrial Visit",
@@ -416,8 +424,7 @@ export const mechanicalDepartmentEventsData:EventItem[]  =[
     date: "23rd May, 2023",
     image: "visit2-09052411353246.jpg",
     cardBgColor: "#ffffff",
-  }
-  ,
+  },
   {
     id: 6,
     title: "Guest Lecture",
@@ -426,8 +433,7 @@ export const mechanicalDepartmentEventsData:EventItem[]  =[
     date: "24th March, 2023",
     image: "guest6-09052411371380.jpg",
     cardBgColor: "#ffffff",
-  }
-  ,
+  },
   {
     id: 7,
     title: "Guest Lecture",
@@ -436,8 +442,5 @@ export const mechanicalDepartmentEventsData:EventItem[]  =[
     date: "24th March, 2023",
     image: "guest6-09052411371380.jpg",
     cardBgColor: "#ffffff",
-  }
-  
-
-
+  },
 ];

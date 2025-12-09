@@ -1364,13 +1364,13 @@ export const placementOverviewStayWithUsData = [
     title: "Students Success Stories",
     description:
       "More than 10 Years of Experience in Shaping Brilliant Careers",
-    width: "w-[220px]",
+    width: "w-[320px]",
   },
   {
     number: "1500+",
     title: "Job Offers",
     description: "given by 250+ top Companies",
-    width: "w-[220px]",
+    width: "w-[320px]",
   },
   {
     number: "90%*",
@@ -1395,71 +1395,152 @@ export interface Testimonial {
   image: string; 
 }
 
+
+
+
+import img1 from "../../assets/images/placements/student-testimonials/img-20240131-wa0002-3101240315444.jpg";
+import img2 from "../../assets/images/placements/student-testimonials/img-20240131-wa0003-31012403282192.jpg";
+import img3 from "../../assets/images/placements/student-testimonials/picture1-31012403350939.png";
+import img4 from "../../assets/images/placements/student-testimonials/picture3-01022412241850.png";
+import img5 from "../../assets/images/placements/student-testimonials/picture4-01022412273742.png";
+import img6 from "../../assets/images/placements/student-testimonials/picture5-01022412303944.png";
+import img7 from "../../assets/images/placements/student-testimonials/picture6-0102240129089.png";
+import img8 from "../../assets/images/placements/student-testimonials/picture7-01022401361283.png";
+import img9 from "../../assets/images/placements/student-testimonials/fhv-28022405261954.jpg";
+import img10 from "../../assets/images/placements/student-testimonials/picture8-01022401475584.png";
+import img11 from "../../assets/images/placements/student-testimonials/1-28022405352914.jpg";
+import img12 from "../../assets/images/placements/student-testimonials/211-28022405403816.jpg";
+import img13 from "../../assets/images/placements/student-testimonials/333-28022405450187.jpg"
+import img14 from "../../assets/images/placements/student-testimonials/1111111-min-29022401052590.jpg";
+import img15 from "../../assets/images/placements/student-testimonials/anoop-min-29022401213035.jpg";
+import img16 from "../../assets/images/placements/student-testimonials/mathur-29022401292061.jpg";
+import img17 from "../../assets/images/placements/student-testimonials/avi-29022401325983.jpg";
+import img18 from "../../assets/images/placements/student-testimonials/a1-05102312223362.jpg";
+import img19 from "../../assets/images/placements/student-testimonials/a2-05102312300115.jpg";
+
 export interface TestimonialData {
   recruiters: Testimonial[];
   students: Testimonial[];
 }
 export const testimonialData: TestimonialData = {
   recruiters: [
-    {
-      text: "It was a pleasure to have the students as a part of our foundation family . The team was full of energy , Knowledge ,and ideas. The Students, volunteers, and placement team members were very co-operative and we are glad that the event was very successful. We look forward to have a synergistic relationship in Future and hire many more to join us form your esteemed institution for other projects.",
-      author: "Ms. Smily Gupta",
-      title: "Team Leader at Integrated Resource Inc.",
-      image: "/src/assets/images/placements/placement-overview/recruiters-testimonials.jpg"
-    },
-    {
-      text: "SRMU Placement team has been very cooperative. Students and Faculties welcome new learning opportunities.The eagerness to learn and grow help us improve our service offering to the institution from an industry perspective too.",
-      author: "Mr. Dheeraj Chhabra",
-      title: "Co-founder & Director at Learning Routes",
-      image: "/src/assets/images/placements/placement-overview/recruiters-testimonials.jpg"
-    },
-    {
-
-      text: "Shri Ramswaroop group has been one of the most premier educational groups of UP. It speaks volume about the efforts Ramswaroop group management, Faculty and T&P put into bring the students to the level of excellence they have achieved. Students at Ramswaroop group are competent, passionate and goal oriented which is equivalent to the student quality of any premium group across India.",
-      author: "Mr. Saurabh Singh",
-      title: "Associate Manager at HCL Technologies",
-      image: "/src/assets/images/placements/placement-overview/recruiters-testimonials.jpg"
-    },
-    {
-
-      text: "Very Well Managed and coordinated. Communication & Other personality of the students is well groomed.",
-      author: "Mr. Ankur Gahlawat",
-      title: "HR at Torrent Power",
-      image: "/src/assets/images/placements/placement-overview/recruiters-testimonials.jpg"
-    },
-    {
-      text: "Great Initiatives & properly Coordinated. It was great platform to understand talent pool.",
-      author: "Ms. Laveena Nihalani",
-      title: "Consultant at Capgemini",
-      image: "/src/assets/images/placements/placement-overview/recruiters-testimonials.jpg"
-    },
-    {
-      text: "Professionalism, sincerity and passion to do something for their students beyond limits has been the major strength of Shri Ramswaroop Group.",
-      author: "Ms. Sonal Arora",
-      title: "Senior HR Manager at Accenture",
-      image: "/src/assets/images/placements/placement-overview/recruiters-testimonials.jpg"
-    }
+ {
+    text: "It was a pleasure to have the students as a part of our foundation family. The team was full of energy, Knowledge, and ideas. The Students, volunteers, and placement team members were very co-operative and we are glad that the event was very successful. We look forward to have a synergistic relationship in Future and hire many more to join us from your esteemed institution for other projects.",
+    author: "Ms. Smily Gupta",
+    title: "Team Leader at Integrated Resource Inc.",
+    image: img1
+  },
+  {
+    text: "SRMU Placement team has been very cooperative. Students and Faculties welcome new learning opportunities. The eagerness to learn and grow help us improve our service offering to the institution from an industry perspective too.",
+    author: "Mr. Dheeraj Chhabra",
+    title: "Co-Founder & Director at Learning Routes",
+    image: img2
+  },
+  {
+    text: "Shri Ramswaroop group has been one of the most premier educational groups of UP. It speaks volume about the efforts Ramswaroop group management, Faculty and T&P put into bring the students to the level of excellence they have achieved. Students at Ramswaroop group are competent, passionate and goal oriented which is equivalent to the student quality of any premium group across India.",
+    author: "Mr. Saurabh Singh",
+    title: "Associate Manager at HCL Technologies",
+    image: img3
+  },
+  {
+    text: "Very Well Managed and coordinated. Communication & Other personality of the students is well groomed.",
+    author: "Mr. Ankur Gahlawat",
+    title: "HR at Torrent Power",
+    image: img4
+  },
+  {
+    text: "Great Initiatives & properly Coordinated. It was great platform to understand talent pool.",
+    author: "Ms. Laveena Nihalani",
+    title: "Consultant at Capgemini",
+    image: img5
+  },
+  {
+    text: "Professionalism, sincerity and passion to do something for their students beyond limits has been the major strength of Shri Ramswaroop Group.",
+    author: "Ms. Sonal Arora",
+    title: "Senior HR Manager at Accenture",
+    image: img6
+  },
+  {
+    text: "The arrangement was good, Appreciated the efforts of students.",
+    author: "Ms. Surbhi Jaiswal",
+    title: "HR at Just Dial",
+    image: img7
+  },
+  {
+    text: "Great feeling to be back as the recruiter of my own college. It was indeed an honor to be a part of the organization.",
+    author: "Mr. Mohit Goel",
+    title: "Product Manager at SAP",
+    image: img8
+  },
+  {
+    text: "Shri Ramswaroop Memorial Group have come a long way. We have seen the students grow in every level when compared to the before and after status of students taking the E-Learning’s and internships too. We look forward to being a part of the growth of Shri Ramswaroop Memorial in the days to come.",
+    author: "Ms. Mary Niang",
+    title: "Campus HR at Cognizant",
+    image: img9
+  },
+  {
+    text: "Students are good and trained well in the area. Good brand building embedded in the system.",
+    author: "Mr. Amit Vikram",
+    title: "Business Consulting (Digital Transformation) at Cognizant",
+    image: img10
+  },
+  {
+    text: "SRMGPC Placement team has been very cooperative. Students and faculties welcome new learning opportunities. The eagerness to learn and grow helps us improve our service offering to the Institution from an Industry perspective too.",
+    author: "Mr. Ashesh Prasad",
+    title: "Senior Manager Capability Building at TATA Steel",
+    image: img11
+  },
+  {
+    text: "Confident students, eager to learn. Reputed institute with good quality of students.",
+    author: "Mr. Mustafa Shahanshah",
+    title: "CTO at Alpha Fortress Private Limited",
+    image: img12
+  },
+  {
+    text: "Students have good command over the subjects and can comprehend well. They seem to have been groomed considering overall aspects.",
+    author: "Mr. Amit Jauhari",
+    title: "Regional Head-Talent Acquisition (North India) at Tata Consultancy Services",
+    image: img13
+  }
   ],
   students: [
-    {
-      text: "Student Testimonial 1: My experience at the university was transformative. The faculty support and placement cell guidance helped me secure my dream job. I highly recommend it!",
-      author: "Arjun Sharma",
-      title: "Placed at Global Corp",
-      image: "/src/assets/images/placements/placement-overview/recruiters-testimonials.jpg"
-    },
-    {
-      text: "Student Testimonial 2: The curriculum is modern and industry-relevant. The hands-on projects prepared me perfectly for my career.",
-      author: "Priya Singh",
-      title: "Software Developer",
-      image: "/src/assets/images/placements/placement-overview/students-testimonials.jpg"
-    },
-    {
-      text: "Student Testimonial 3: The placement cell organized excellent preparatory workshops. Thanks to them, I felt confident and well-equipped for all the interviews.",
-      author: "Vivek Kulkarni",
-      title: "Marketing Analyst",
-      image: "/src/assets/images/placements/placement-overview/recruiters-testimonials.jpg"
-    }
-  ]
+{
+    text: "SRMU provides the ambiance and serenity necessary for the pursuit of academic excellence. The central library of university is fully digitized. E-learning with web resources has also been provided. Excellent labs for gaining practical knowledge. Highly educated faculty with excellent teaching pedagogy.",
+    author: "Harshit Sinha",
+    title: "B.Tech. in ME (Batch: 2018), Placed in Byjus Think and Learn Pvt. Ltd.",
+    image: img14
+  },
+  {
+    text: "Our university is the best because here, the students live with full enthusiasm and energy. Our university has good infrastructure. It has a very quiet and green environment, which students need during their study. The interaction of teachers is very good. The hostel rooms are very clean and good. They provide a good meal to the students every time.",
+    author: "Anoop Dubey",
+    title: "B.Tech. in ME (Batch: 2022), Placed in Hettich India Pvt. Ltd.",
+    image: img15
+  },
+  {
+    text: "We were concerned about our future achievement, but once college was underway, everyone could see how the teachers played an important role in enhancing our education and gave us a pleasant and educated environment. After finishing the first year, we had the opportunity to meet our teachers and friends in person. We were all very excited to do so, and we also had great time taking part in various events and making a lot of memories. Now, we have got some special, lifelong friends. Finally, the college offered me a whole lot of career placement options, from which I chose to be placed with SBI Mutual Fund. I wanted to thank my professors for helping me prepare for this as well as our placement cell.",
+    author: "Anurag Mathur",
+    title: "M.B.A. (Batch: 2022), Placed in SBI Mutual Fund",
+    image: img16
+  },
+  {
+    text: "My experience at Ramswaroop University is great and memorable. The mentors at Ramswaroop University helped me enhance my academic and interpersonal skills. I am thankful to Training & Placement cell for providing a platform to enhance my skills and an opportunity to showcase them. In the last I am saying that The World is here at Ram Swaroop University.",
+    author: "Avinash Gupta",
+    title: "M.B.A. (Batch: 2022), Placed in B’orze Heager",
+    image: img17
+  },
+  {
+    text: "I am grateful to SRMU placement cell for providing us a platform to enhance our skills and their role in locating job opportunities to showcase them. Their constant support has landed me the first job of my career.",
+    author: "Zuhu Fatima",
+    title: "B.Tech. in CSE (Batch: 2020), Placed in Capgemini",
+    image: img18
+  },
+  {
+    text: "My sincere appreciation & gratitude to the Faculty & Placement Department. I am very grateful to them for effectively and sincerely helping me to grab first ever opportunity that came into my life.",
+    author: "Ayush Srivastav",
+    title: "B.Tech. in CSE (Batch: 2020), Placed in Cognizant",
+    image: img19
+  },
+]
 };
 
 

@@ -9,7 +9,7 @@ const StudentCentric:React.FC = () => {
             <p className='mb-4 font18'>
                 The following methodologies are used to enhance learning experiences during Teaching- Learning process:
             </p>
-            <ul className='mb-4 font18'>
+            <ul className='mb-4 ml-5 marker:text-2xl font18'>
                 <li>Sharing in advance (Lecture + Tutorial)</li>
                 <li>Demonstration of Concepts</li>
                 <li>Topics for Self Study in Assignments</li>

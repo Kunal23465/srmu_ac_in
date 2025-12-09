@@ -3,17 +3,17 @@ import { directorData } from "../../../data/campus-life/student-senate/student-s
 
 const DirectorSectionforSenate: React.FC = () => {
   return (
-    <section className="w-full py-20 px-6 flex justify-center">
+    <section className="w-full py-20 px-6 md:px-10 xl:px-0 flex justify-center">
       <div className="max-w-6xl w-full">
         <div className="flex flex-col md:flex-row gap-10">
 
           <div className="relative w-fit">
-            <div className="hidden lg:block absolute right-30 bottom-70 w-40 h-24 border-l-15 border-b-15 border-[#ffb703]" />
+            <div className="hidden lg:block absolute right-[28%] bottom-[42%] w-[80%] h-[43%] border-l-15 border-b-15 border-[#ffb703]" />
 
             <img
               src={directorData.image}
               alt="Director"
-              className="w-48 sm:w-56 md:w-64 h-auto object-cover border-15 border-white"
+              className="w-60 sm:w-80 md:w-90 h-auto object-cover border-15 border-white"
             />
           </div>
 
@@ -28,28 +28,28 @@ const DirectorSectionforSenate: React.FC = () => {
 
             <div className="mt-6 space-y-4 items-center">
 
-              <div className="grid grid-cols-[140px_1fr] sm:grid-cols-[160px_1fr] gap-1 sm:gap-4 lg:gap-4">
+              <div className="grid grid-cols-[153px_1fr] sm:grid-cols-[160px_1fr] gap-1 sm:gap-4 lg:gap-4">
                 <span className="fw500  py-1.5 text-[#0f4a85]">Qualification:</span>
-                <div className="inline-flex items-center bg-white px-3 py-1.5">
+                <div className="inline-flex items-center bg-white px-2 md:px-3 py-2 md:py-1.5 text:sm">
                   {directorData.qualification}
                 </div>
               </div>
               <div className="grid grid-cols-[140px_1fr] sm:grid-cols-[160px_1fr] gap-4">
                 <span className="fw500 py-1.5 text-[#0f4a85]">Experience:</span>
-                <div className="inline-flex items-center px-3 py-1.5">
+                <div className="inline-flex items-center px-2 md:px-3 py-2 md:py-1.5 text:sm">
                   {directorData.experience}
                 </div>
               </div>
 
               <div className="grid grid-cols-[140px_1fr] sm:grid-cols-[160px_1fr] gap-4">
                 <span className="fw500 py-1.5 text-[#0f4a85]">Ph.D Guided:</span>
-                <div className="inline-flex items-center bg-white px-3 py-1.5">
+                <div className="inline-flex items-center bg-white px-2 md:px-3 py-2 md:py-1.5 text:sm">
                   {directorData.phdGuided}
                 </div>
               </div>
               <div className="grid grid-cols-[140px_1fr] sm:grid-cols-[160px_1fr] gap-4">
                 <span className="fw500 py-1.5 text-[#0f4a85]">E-mail:</span>
-                <div className="inline-flex items-center px-3 py-1.5 break-all">
+                <div className="inline-flex items-center px-2 md:px-3 py-2 md:py-1.5 text:sm break-all">
                   {directorData.email}
                 </div>
 
@@ -57,14 +57,14 @@ const DirectorSectionforSenate: React.FC = () => {
 
               <div className="grid grid-cols-[140px_1fr] sm:grid-cols-[160px_1fr] gap-4">
                 <span className="fw500 py-1.5 text-[#0f4a85]">Contact No.:</span>
-                <div className="inline-flex items-center bg-white px-3 py-1.5">
+                <div className="inline-flex items-center bg-white px-2 md:px-3 py-2 md:py-1.5 text:sm">
                   {directorData.contact}
                 </div>
               </div>
 
               <div className="grid grid-cols-[140px_1fr] sm:grid-cols-[160px_1fr] gap-4">
                 <span className="fw500 py-1.5 text-[#0f4a85]">Extension No.:</span>
-                <div className="inline-flex items-center px-3 py-1.5">
+                <div className="inline-flex items-center px-2 md:px-3 py-2 md:py-1.5 text:sm">
                   {directorData.extension}
                 </div>
               </div>
@@ -74,7 +74,7 @@ const DirectorSectionforSenate: React.FC = () => {
                 <a
                   href={directorData.orcid}
                   target="_blank"
-                  className="inline-flex items-center bg-white px-3 py-1.5 underline break-all"
+                  className="inline-flex items-center bg-white px-2 md:px-3 py-2 md:py-1.5 text:sm underline break-all"
                 >
                   {directorData.orcid}
                 </a>

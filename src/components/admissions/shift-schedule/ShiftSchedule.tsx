@@ -15,6 +15,7 @@ const ShiftSchedule: React.FC = () => {
                     columnTwoHeader="Downloads"
                     data={ShiftDetailsData}
                 />
+                <div className='mb-10 sm:mb-20' />
 
             </div>
             <CustomTopFooter data={ShiftCustomTopFooter} />
