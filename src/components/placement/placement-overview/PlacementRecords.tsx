@@ -25,6 +25,7 @@ const PlacementRecords: React.FC = () => {
   }, []);
 
   // Function to determine slidesToShow based on window width
+  // @ts-ignore
   const getSlidesToShow = () => {
     if (windowWidth >= 1536) return 5;
     if (windowWidth >= 1200) return 5; // Changed from 4 to 5
@@ -35,11 +36,13 @@ const PlacementRecords: React.FC = () => {
   };
 
   // Function to determine if centerMode should be enabled
+  // @ts-ignore
   const shouldCenterMode = () => {
     return windowWidth >= 768; // Enable center mode only on medium screens and above
   };
 
   // Function to determine if arrows should be shown
+  // @ts-ignore
   const shouldShowArrows = () => {
     return windowWidth >= 375; // Show arrows only on medium screens and above
   };

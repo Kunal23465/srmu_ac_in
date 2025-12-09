@@ -1,5 +1,3 @@
-import { customeOverViewType } from "../../../types/home-data-type";
-
 import img1 from "../../../assets/images/admissions/how-to-apply/computerscie-0605240249197.jpg"
 import img2 from "../../../assets/images/admissions/how-to-apply/biotech-06052402473462.jpg"
 import img3 from "../../../assets/images/admissions/how-to-apply/new-test-concentrated-skilled-researchers-wearing--21062502031053.jpg"

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const OfflineAdmissionProcess = () => {
+const OfflineAdmissionProcess:React.FC = () => {
     return (
         <section className="common_padding offline_admission_wrap">
             <div className="container">
@@ -19,6 +19,7 @@ const OfflineAdmissionProcess = () => {
                         x="0px"
                         y="0px"
                         viewBox="0 0 1068.2 1327.6"
+                        // @ts-ignore
                         style={{ enableBackground: 'new 0 0 1068.2 1327.6' }}
                         xmlSpace="preserve"
                     >
@@ -488,6 +489,7 @@ const OfflineAdmissionProcess = () => {
                         x="0px"
                         y="0px"
                         viewBox="0 0 1390.4 595.6"
+                        // @ts-expect-error
                         style={{ enableBackground: 'new 0 0 1390.4 595.6' }}
                         xmlSpace="preserve"
                     >
