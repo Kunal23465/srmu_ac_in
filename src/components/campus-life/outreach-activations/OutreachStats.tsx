@@ -34,14 +34,14 @@ const OutreachStats: React.FC = () => {
                     const animatedValue = useCountUp(stat.value, 1500);
 
                     return (
-                        <div key={index} className="flex gap-5 items-center justify-center my-10">
-                            <img src={stat.img} alt={stat.label} className="w-24 h-24" />
+                        <div key={index} className="flex gap-5 px-10 md:px-0 items-center justify-center my-10">
+                            <img src={stat.img} alt={stat.label} className="w-16 h-16 md:w-24 md:h-24" />
 
                             <div>
-                                <h3 className="text-[58px] font-normal text-[#FFB701]">
+                                <h3 className="text-[35px] md:text-[58px] font-normal text-[#FFB701]">
                                     {startCount ? animatedValue : 0}+
                                 </h3>
-                                <p className="text-[22px] -mt-3 text-white text-center">
+                                <p className="text-[16px] md:text-[22px] -mt-3 text-white text-center">
                                     {stat.label}
                                 </p>
                             </div>

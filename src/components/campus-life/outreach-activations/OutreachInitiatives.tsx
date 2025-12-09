@@ -11,17 +11,17 @@ const OutreachInitiatives: React.FC = () => {
             <div className={`${Classes["container"]}`}>
                 <div className="text-center px-4">
                     <h1 className="text-4xl md:text-5xl font-medium mb-4">{title}</h1>
-                    <p className=" mx-auto text-gray-600">{desc}</p>
+                    <p className="text-gray-600">{desc}</p>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 mt-12 place-items-center">
+                <div className="grid grid-cols sm:grid-cols-2 md:grid-cols-3 gap-10 mt-12 ">
 
                     {initiatives.map((initiative, index) => (
                         <div
                             key={index}
                             className="
                             group 
-                            w-[90%] sm:w-[330px] md:w-[360px] lg:w-[380px] 
+                            w-full 
                             aspect-3/4 
                             bg-transparent rounded-2xl 
                             relative

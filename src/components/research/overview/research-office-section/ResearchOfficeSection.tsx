@@ -1,6 +1,7 @@
 import React from "react";
 import { contactInfo, researchInstitutes } from "../../../../data/research/overview/research-overview-data";
 import ContactCard from "./ContactCard";
+import Classes from "../../../../utils/styles/Global.module.css";
 
 
 const ResearchOfficeSection: React.FC = () => {
@@ -15,7 +16,8 @@ const ResearchOfficeSection: React.FC = () => {
   ];
   return (
     <section className="bg-gray-50 py-16">
-      <div className="container mx-auto px-5">
+      <div className={`${Classes["container"]}`}>
+      <div className="container">
         {/* Heading */}
         <div className="mb-8">
           <h2 className="text-3xl font-extrabold text-[#0f4a85] mb-2">Research Office</h2>
@@ -31,7 +33,7 @@ const ResearchOfficeSection: React.FC = () => {
           ))}
         </div>
 
-        <div className="w-full px-8 bg-[#ecf0f9] rounded-b-2xl py-12 overflow-x-scroll">
+        <div className="w-full px-8 md:px-10 bg-[#ecf0f9] rounded-bl-4xl py-12">
           <h2 className="text-xl font-bold mb-6">Research Coordinators of Different Departments</h2>
 
           {/* Header Row */}
@@ -65,7 +67,7 @@ const ResearchOfficeSection: React.FC = () => {
             </div>
           ))}
         </div>
-      </div>
+      </div></div>
     </section>
   );
 };

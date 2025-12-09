@@ -11,5 +11,4 @@ export interface CustomFacilitiesTypes {
 }
 export interface otherFacilitiesCardLayoutDataTypes {
     title: string;
-    content: string;
 }

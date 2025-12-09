@@ -30,7 +30,7 @@ const OutreachItems: React.FC = () => {
           <img
             src={img}
             alt={title}
-            className="w-full h-auto md:h-full object-cover rounded-md"
+            className="hidden md:block w-full h-auto md:h-full object-cover rounded-md"
           />
         </div>
       </div>
