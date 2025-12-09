@@ -95,7 +95,7 @@ export const footerData = {
     {
       id: 2,
       title: "Placements",
-      path: "/placements/placement-overview",
+      path: "/placements",
     },
 
   ],
