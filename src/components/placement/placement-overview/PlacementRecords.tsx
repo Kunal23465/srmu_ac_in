@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Slider from "react-slick";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { FaLongArrowAltRight } from "react-icons/fa";
@@ -9,22 +9,62 @@ const PlacementRecords: React.FC = () => {
   const [activeYear, setActiveYear] = useState("2023");
   const sliderRef = useRef<Slider | null>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 0);
+
 
   const students = placementOverviewplacementData[activeYear] || [];
   const totalSlides = Math.ceil(students.length / 5);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Function to determine slidesToShow based on window width
+  const getSlidesToShow = () => {
+    if (windowWidth >= 1536) return 5;
+    if (windowWidth >= 1200) return 5; // Changed from 4 to 5
+    if (windowWidth >= 1024) return 4; // Changed from 3 to 4
+    if (windowWidth >= 768) return 3;
+    if (windowWidth >= 640) return 2;
+    return 1; // xs
+  };
+
+  // Function to determine if centerMode should be enabled
+  const shouldCenterMode = () => {
+    return windowWidth >= 768; // Enable center mode only on medium screens and above
+  };
+
+  // Function to determine if arrows should be shown
+  const shouldShowArrows = () => {
+    return windowWidth >= 375; // Show arrows only on medium screens and above
+  };
+
   const settings = {
     dots: false,
-    arrows: false,
     infinite: false,
     speed: 600,
     slidesToShow: 5,
     slidesToScroll: 1,
     beforeChange: (_: number, next: number) => setCurrentSlide(next),
+    key: windowWidth, // Add key to force re-render on window resize
 
     responsive: [
       {
-        breakpoint: 1280,
+        breakpoint: 1536,
+        settings: {
+          slidesToShow: 5,
+          slidesToScroll: 1,
+          centerMode: false,
+          arrows: true,
+        },
+      },
+      {
+        breakpoint: 1200,
         settings: {
           slidesToShow: 4,
           slidesToScroll: 1,
@@ -45,12 +85,15 @@ const PlacementRecords: React.FC = () => {
         },
       },
       {
-        breakpoint: 500,
+        breakpoint: 640,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 2,
           slidesToScroll: 1,
+          centerMode: false,
+          arrows: true,
         },
       },
+
     ],
   };
 

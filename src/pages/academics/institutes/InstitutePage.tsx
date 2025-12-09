@@ -5,10 +5,9 @@ import { Outlet, useLocation } from 'react-router-dom'
 const InstitutePage: React.FC = () => {
   const pathname = useLocation().pathname
 
-  console.log("path name ", pathname)
   return (
     <div>
-      {pathname === "/academics/institutes-info" ? <Institutes /> : <Outlet />}
+      {pathname === "/academics" ? <Institutes /> : <Outlet />}
 
     </div>
   )

@@ -117,13 +117,13 @@ const ProgramsSection: FC = () => {
                             ))}
 
                             <div className="text-center mt-10">
-                                <a
-                                    href="online-admission"
+                                <Link
+                                    to="/online-admission"
                                     className="uppercase inline-flex items-center bg-[#ffb703] text-[#023047] font-semibold py-4 px-8 rounded-xl hover:bg-transparent hover:border-1 hover:text-[#ffb703] hover:border-[#ffb703] transition shadow-md"
                                 >
                                     Enroll Now
                                     <span className="ml-2">→</span>
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     )}

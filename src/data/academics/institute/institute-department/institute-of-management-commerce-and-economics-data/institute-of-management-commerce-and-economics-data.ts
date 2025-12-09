@@ -485,7 +485,7 @@ export const instituteCourseCardData: CustomInstituteCourseCardProps[] = [
   {
     imageUrl: courseImg1,
     departmentName: "Faculty of Commerce and Economics",
-    path: "faculty-of-commerce-and-economics",
+    path: "institute-of-management-commerce-and-economics/faculty-of-commerce-and-economics",
     departmentDetails: {
       overviewData: commerceAndEconomicsOverviewData,
       counterData: counterDataForFacultyCommerce,
@@ -499,12 +499,12 @@ export const instituteCourseCardData: CustomInstituteCourseCardProps[] = [
       departmentHighlightsData: departmentHighlights,
       counterData2: counterData2,
       placedStudentsData: placedStudents,
-    }
+    },
   },
   {
     imageUrl: courseImg2,
     departmentName: "Faculty Of Management",
-    path: "faculty-of-management",
+    path: "institute-of-management-commerce-and-economics/faculty-of-management",
     departmentDetails: {
       overviewData: managementOverviewData,
       counterData: counterDataForFacultyManagement,
@@ -520,8 +520,6 @@ export const instituteCourseCardData: CustomInstituteCourseCardProps[] = [
       departmentHighlightsData: managementDepartmentHighlights,
       counterData2: managementCounterData2,
       placedStudentsData: managementPlacedStudents,
-
-    }
+    },
   },
-
 ];

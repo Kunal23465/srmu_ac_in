@@ -267,7 +267,7 @@ const AdvantageSlider: React.FC = () => {
           ${index >= maxIndex ? "opacity-50 cursor-not-allowed" : "hover:bg-white hover:text-[#14457B]"}`}
         disabled={index >= maxIndex}
       >
-        ›
+        › 
       </button>
     </div>
   );
@@ -310,7 +310,7 @@ const AdvantageSlider: React.FC = () => {
                   </div>
 
                   <div className="mt-4 text-sm md:text-base leading-relaxed">
-                    <div className="opacity-80" dangerouslySetInnerHTML={{ __html: item.description }} />
+                    <div className="opacity-80 text-justify" dangerouslySetInnerHTML={{ __html: item.description }} />
 
                     {item.extraText && (
                       <div className="opacity-100 font-bold mt-3" dangerouslySetInnerHTML={{ __html: item.extraText }} />
@@ -319,9 +319,8 @@ const AdvantageSlider: React.FC = () => {
                 </div>
               </div>
             ))}
-          </div>
+          </div> 
         </div>
-
       </div>
     </div>
   );
