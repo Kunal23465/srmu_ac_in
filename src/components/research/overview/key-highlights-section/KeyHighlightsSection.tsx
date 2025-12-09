@@ -46,6 +46,7 @@ const KeyHighlightsSection: React.FC<CustomFacilitiesTypes> = ({ facilities, lay
             </div>
           </div>
 
+
           {/* Facilities Slider */}
           <Slider ref={sliderRef} {...settings} className="manage-academis">
             {facilities.map((facility, index) => {
