@@ -1829,3 +1829,17 @@ section .card-color img {
     transform: scale(1);
   }
 }
+
+/* SHOP SHUTTER ANIMATION */
+.shutter-wrapper {
+  overflow: hidden;
+  transition: max-height 0.6s ease-in-out;
+}
+
+.shutter-open {
+  max-height: 2000px; /* Large enough to show full content */
+}
+
+.shutter-closed {
+  max-height: 0;
+}

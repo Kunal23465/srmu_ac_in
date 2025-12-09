@@ -51,27 +51,29 @@ const KeyHighlightsSection: React.FC<CustomFacilitiesTypes> = ({ facilities, lay
           <Slider ref={sliderRef} {...settings} className="manage-academis">
             {facilities.map((facility, index) => {
               return (
-                <div key={index} className="p-2  my-4">
-                  <div className=" bg-white border border-gray-200 transition-all duration-200  rounded-lg flex flex-col h-full shadow-md hover:shadow-lg">
+                <div key={index} className="p-2 h-full sm:h-[600px] md:h-[650px] lg:h-[600px]  my-4">
+                  <div className=" bg-white hover:border-2 hover:border-[#0f4a85] transition-all duration-200  rounded-2xl flex flex-col h-full shadow-md hover:shadow-lg">
                     {/* Image */}
-                    <img src={facility.imageUrl} alt={facility.title} className="w-full h-[200px] object-cover rounded-md mb-4" />
-                    <div className="h-[300px] overflow-y-auto faculty-card-scrollbar p-4">
+                    <img src={facility.imageUrl} alt={facility.title} className="w-full h-[300px] object-cover rounded-t-2xl" />
+                    <div className="faculty-card-scrollbar p-8">
                       {/* Title */}
                       <h3 className="text-[#0f4a85] text-xl font-semibold mb-2">{facility.title}</h3>
                       {/* Description */}
-                      <p className="text-[#878484] grow text-justify pr-3">
+                      <p className="text-[#878484] grow text-justify">
                         {/* {facility.description} */}
                         <div dangerouslySetInnerHTML={{ __html: facility?.description }} />
                       </p>
-                    </div>
+                 
+                 
                     <a
                       href={facility.pdfUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="m-4 flex gap-4 font-medium items-center mt-8 mb-6 w-fit bg-[#0f4a85] border-2 border-[#ffb703] uppercase text-white group hover:text-[#0f4a85] py-2 px-4 rounded-lg hover:bg-white transition-colors duration-200"
-                    >
-                      <span className="bg-white group-hover:bg-[#ffb703] transition-all duration-500 p-1 rounded-lg"><PdfSvgIcon /></span> Download Pdf
-                    </a>
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex mt-5 overflow-auto items-center gap-3 bg-[#0f4a85] border-2 border-[#ffb703] text-white font-medium uppercase py-2 px-4 rounded-lg group hover:bg-white hover:text-[#0f4a85] transition-colors duration-200 w-fit"
+                              >
+                                <span className="bg-white p-1 rounded-lg transition-all duration-500 group-hover:bg-[#ffb703]"><PdfSvgIcon /></span>
+                                Download PDF
+                              </a>   </div>
                   </div>
                 </div>
               );
