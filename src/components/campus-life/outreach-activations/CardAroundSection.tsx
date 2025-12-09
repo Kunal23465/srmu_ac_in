@@ -27,11 +27,11 @@ const FlipCards: React.FC<Props> = ({ data }) => {
       {data.map((item) => (
         <div
           key={item.id}
-          className="w-full perspective"
+          className="w-full perspective overflow-hidden"
           onClick={() => handleFlip(item.id)}
         >
           <div className={`flip-card ${flippedCards[item.id] ? "flipped" : ""}`}>
-            {/* Front */}
+           
             <div className="flip-card-front">
               <img
                 src={item.image}
