@@ -13,15 +13,14 @@ const AcademicBank = () => {
       <div className={`${Classes["container"]}`}>
         <CustomOverviewSection data={AcademicBankCreditOverviewData} />
         <DigiLocker />
-        <ABC />
-        <Videos/>
+      </div>
+      <ABC />
+      <div className={`${Classes["container"]}`}>
+        <Videos />
       </div>
       <CustomTopFooter data={CustomTopFooterData1} />
-
-
-
     </>
-  )
-}
+  );
+};
 
-export default AcademicBank
+export default AcademicBank;
