@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import Classes from "../../utils/styles/Global.module.css";
 import TopHeader from "./TopHeader";
+import hamburger from "../../assets/images/home/menu-icon.png"
 
-import { GiHamburgerMenu } from "react-icons/gi";
 import { MdClose, MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { Link, useLocation } from "react-router-dom";
 import { HeaderData } from "./HeaderData";
@@ -35,7 +35,7 @@ const Header = () => {
 
   return (
     <div>
-      <header className="fixed top-0 left-0 w-full transition-all duration-500 z-[999]">
+<header className="fixed top-0 left-0 w-full z-[999] min-h-[350px] transition-all duration-500">
         <TopHeader />
 
         <div className={`py-2 items-stretch header ${isActive ? "bg-[#0e2f46] active" : ""}`}>
@@ -47,7 +47,7 @@ const Header = () => {
 
                 <h2 className={`font-bold lg:text-[1rem] xl:text-[1.4rem] text-white`}>
                   SHRI RAMSWAROOP
-                  <div className="text-[0.5rem] font-semibold">MEMORIAL COLLEGE OF ENGINEERING & MANAGEMENT</div>
+                  <div className="font-semibold leading-3 text-[0.8rem] sm:text-[0.5rem] lg:text-[0.9rem] xl:text-[1.2rem]">MEMORIAL UNIVERSITY</div>
                 </h2>
               </Link>
 
@@ -59,7 +59,7 @@ const Header = () => {
 
                     return (
                       <div key={index} className="relative px-[15px] py-4 group text-[15px] uppercase cursor-pointer">
-                        <div  className={`flex items-center text-white hover:text-[#ffb703] ${location.pathname === data.path ? "active" : ""}`}>
+                        <div className={`flex items-center text-white hover:text-[#ffb703] ${location.pathname === data.path ? "active" : ""}`}>
                           {data.item}
                         </div>
 
@@ -123,7 +123,12 @@ const Header = () => {
 
               {/* HAMBURGER */}
               <div className="lg:hidden my-auto">
-                <GiHamburgerMenu size={20} className="cursor-pointer text-white" onClick={() => setSideMenu(true)} />
+                <img
+                  src={hamburger}  // replace with your actual path
+                  alt="Menu"
+                  className="cursor-pointer w-[30px] h-[21px]"  // size similar to size={20}
+                  onClick={() => setSideMenu(true)}
+                />
               </div>
             </div>
           </div>
@@ -151,8 +156,8 @@ const Header = () => {
                     </Link>
 
                     {(data.subItem || isMega) && (
-                      <button onClick={() => setSubMenu(subMenu === data.id ? null : data.id)}>
-                        <MdOutlineKeyboardArrowDown size={22} className={`transition-all ${subMenu === data.id ? "rotate-180" : ""}`} />
+                      <button onClick={() => setSubMenu(subMenu === data.id ? null : data.id)} className="border-[1px] border-[#0000002e] px-[2px] py-[3px]">
+                        <MdOutlineKeyboardArrowDown size={25} className={`transition-all bg-[#00000008] text-[#616161]  ${subMenu === data.id ? "rotate-180" : ""}`} />
                       </button>
                     )}
                   </div>
@@ -168,7 +173,7 @@ const Header = () => {
                           <a
                             key={i}
                             href={value.path}
-                            className={`block px-5 py-3 hover:text-[#ffb703] ${i !== 0 && "border-t border-gray-200"}`}
+                            className={`block px-5 py-3 bg-[#00000036] hover:text-[#ffb703] ${i !== 0 && "border-t border-gray-200"}`}
                             onClick={(e) => {
                               e.preventDefault();
                               window.open(value.path, "_blank");
@@ -184,13 +189,13 @@ const Header = () => {
                         data.megaMenu?.map((ele) => {
                           return ele.column.map((section, secIdx) => (
                             <div key={secIdx}>
-                              <p className="font-semibold px-5 py-2 text-[#0e2f46] border-b border-gray-200">{section.heading}</p>
+                              <p className="font-semibold px-5 py-2 text-[#0e2f46]  border-b border-gray-200">{section.heading}</p>
 
                               {section.item.map((sub, subIdx) => (
                                 <a
                                   key={subIdx}
                                   href={sub.path}
-                                  className={`block px-5 py-2 text-gray-700 hover:text-[#ffb703]  border-b border-gray-200`}
+                                  className={`block px-5 py-2 text-gray-700   hover:text-[#ffb703]  border-b border-gray-200`}
                                   onClick={(e) => {
                                     e.preventDefault();
                                     window.open(sub.path, "_blank");

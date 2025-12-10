@@ -25,14 +25,26 @@ const Banner: React.FC = () => {
     };
 
     return (
-        <div className={`w-full relative overflow-hidden`}>
+        <div className="w-full relative overflow-hidden mobile-header-style">
             {/* Heading Section */}
 
             {/* Facilities Slider */}
             <Slider ref={sliderRef} {...settings} className="manage-academis">
                 <div className="banner-slider overflow-hidden relative ">
                     <div className="relative">
-                        <img className="w-full min-h-[530px] sm:min-h-[600px] md:min-h-[800px] max-h-[calc(100vh-120px)] object-cover" src={banner4} alt="Banner" />
+                        <img
+                            className="
+                             w-full
+                             h-[50vh]                 /* Mobile: Half screen */
+                             sm:h-auto               /* Tablet/Desktop: use min-height instead */
+                             sm:min-h-[530px]
+                             md:min-h-[600px]
+                             lg:min-h-[800px]
+                             max-h-[calc(100vh-120px)]
+                             object-cover"
+                            src={banner4}
+                            alt="Banner"
+                        />
 
                         <div className="overlay bg-[#0000000d] absolute top-0 left-0 w-full h-full flex pt-10 sm:pt-0 items-center ">
                             <div className={Classes["container"]}>
@@ -56,7 +68,19 @@ const Banner: React.FC = () => {
 
                 <div className="banner-slider overflow-hidden relative ">
                     <div className="relative">
-                        <img className="w-full min-h-[530px] sm:min-h-[600px] md:min-h-[800px] max-h-[calc(100vh-120px)] object-cover" src={banner4} alt="Banner" />
+                        <img
+                            className="
+                             w-full
+                             h-[50vh]                 /* Mobile: Half screen */
+                             sm:h-auto               /* Tablet/Desktop: use min-height instead */
+                             sm:min-h-[530px]
+                             md:min-h-[600px]
+                             lg:min-h-[800px]
+                             max-h-[calc(100vh-120px)]
+                             object-cover"
+                            src={banner4}
+                            alt="Banner"
+                        />
 
                         <div className="overlay bg-[#0000000d] absolute top-0 left-0 w-full h-full flex pt-10 sm:pt-0 items-center ">
                             <div className={Classes["container"]}>
