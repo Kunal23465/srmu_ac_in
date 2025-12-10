@@ -1,8 +1,8 @@
-import React from 'react'
-import { FaRegFilePdf } from 'react-icons/fa';
-import Slider from 'react-slick';
-import { ArrowButton } from '../../../../utils/custom/CustomCarousel';
+import React from "react";
+import Slider from "react-slick";
 import Classes from "../../../../utils/styles/Global.module.css";
+import { PdfSvgIcon } from "../../../about/recognition-approval/AssociateMembership";
+
 type TabContentProps = {
   data: {
     title: string;
@@ -14,76 +14,127 @@ type TabContentProps = {
     }[];
   };
 };
-const TabContent: React.FC <TabContentProps>= ({ data }) => {
+
+
+  export const CustomArrow = ({
+    onClick,
+    disabled,
+    direction,
+  }: {
+    onClick?: () => void;
+    disabled?: boolean;
+    direction: "prev" | "next";
+  }) => (
+    <button
+      onClick={!disabled ? onClick : undefined}
+      className={`
+        w-12 h-12 flex items-center justify-center
+        rounded-full border-2 border-white text-white
+        transition-all duration-300
+        ${disabled ? "opacity-30 cursor-not-allowed" : "hover:bg-white hover:text-[#0f4a85] cursor-pointer"}
+      `}
+    >
+      {direction === "prev" ? (
+        <span className="text-2xl font-bold">‹</span>
+      ) : (
+        <span className="text-2xl font-bold">›</span>
+      )}
+    </button>
+  );
+
+const TabContent: React.FC<TabContentProps> = ({ data }) => {
   const sliderRef = React.useRef<Slider>(null);
-  // Slick slider settings
+  const [currentSlide, setCurrentSlide] = React.useState(0);
+  const [slidesToShow, setSlidesToShow] = React.useState(2);
+
+  // ✔ Determine slidesToShow dynamically based on screen size
+  React.useEffect(() => {
+    const updateSlides = () => {
+      if (window.innerWidth < 768) setSlidesToShow(1);
+      else setSlidesToShow(2);
+    };
+    updateSlides();
+    window.addEventListener("resize", updateSlides);
+    return () => window.removeEventListener("resize", updateSlides);
+  }, []);
+
+  // Slick settings
   const settings = {
     dots: false,
     infinite: false,
     speed: 500,
-    slidesToShow: 2,
+    slidesToShow,
     slidesToScroll: 1,
-    responsive: [
-      {
-        breakpoint: 1024, // Tablet screens
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-      {
-        breakpoint: 768, // Mobile screens
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
+    beforeChange: (_: number, next: number) => setCurrentSlide(next),
   };
+
+
   return (
     <div>
       <div className={`${Classes.container} py-7 md:py-10 lg:py-14`}>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {/* Heading Section */}
-          <div className="flex flex-col text-start mb-4 sm:mb-8 text-white">
-            <div className="">
-              <h2 className="text-4xl font-bold">{data?.title}</h2>
-              <p className=" mt-4 font-medium">{data.description}</p>
-            </div>
+        <div className="flex flex-col md:flex-row justify-between gap-8">
+          
+          {/* LEFT PANEL – Title + Description + Arrows */}
+          <div className="flex flex-col w-full md:w-1/3 text-white">
+            <h2 className="text-4xl font-medium">{data.title}</h2>
+            <p className="mt-4">{data.description}</p>
 
-            <div className="flex space-x-2 mt-8">
-              <ArrowButton onClick={() => sliderRef.current?.slickPrev()} direction="prev" colorCode={"[#ffffff]"} />
-              <ArrowButton onClick={() => sliderRef.current?.slickNext()} direction="next" colorCode={"[#ffffff]"} />
+            {/* CUSTOM ARROWS */}
+            <div className="flex gap-4 mt-8">
+              <CustomArrow
+                direction="prev"
+                onClick={() => sliderRef.current?.slickPrev()}
+                disabled={currentSlide === 0}
+              />
+              <CustomArrow
+                direction="next"
+                onClick={() => sliderRef.current?.slickNext()}
+                disabled={currentSlide >= data.cardData.length - slidesToShow}
+              />
             </div>
           </div>
 
-          {/* Slider */}
-          <Slider ref={sliderRef} {...settings} className="manage-academis">
-            {data?.cardData.map((item:any, index:number) => {
-              return (
-                <div key={index} className="p-2  my-4">
-                  <div className=" bg-white transition-all duration-200  rounded-xl flex flex-col h-full shadow-md hover:shadow-lg">
-                    {/* Image */}
-                    <img src={item.imageUrl} alt={item.title} className="w-full h-[200px] object-cover rounded-xl mb-4" />
-                  
-                     
-                      <h3 className="text-[#0f4a85] text-xl font-semibold px-4 ">{item.title}</h3>
+          {/* RIGHT PANEL – Slider */}
+          <div className="w-full md:w-2/3">
+            <Slider ref={sliderRef} {...settings}>
+              {data.cardData.map((item, index) => (
+                <div key={index} className="p-2 my-4">
+                  <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
                     
+                    {/* Image */}
+                    <img
+                      src={item.imageUrl}
+                      alt={item.title}
+                      className="w-full h-[200px] object-cover"
+                    />
+
+                    {/* Title */}
+                    <h3 className="text-[#0f4a85] text-xl font-semibold p-4 pb-1">
+                      {item.title}
+                    </h3>
+
+                    {/* PDF Button */}
                     <a
                       href={item.pdfUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="m-4 flex gap-4 items-center  w-fit bg-[#0f4a85] border-3 border-[#ffb703] uppercase text-white hover:text-[#0f4a85] py-2 px-4 rounded-lg hover:bg-white transition-colors duration-200"
+                      className="m-4 flex gap-3 items-center w-fit border-2 border-[#ffb703] text-[#0f4a85] py-2 px-4 rounded-lg uppercase hover:bg-[#ffb703] transition-all"
                     >
-                      <FaRegFilePdf size={26} /> Download Pdf
+                      <span className="p-1 rounded bg-[#ffb703]">
+                        <PdfSvgIcon />
+                      </span>
+                      Download PDF
                     </a>
                   </div>
                 </div>
-              );
-            })}
-          </Slider>
+              ))}
+            </Slider>
+          </div>
+
         </div>
       </div>
     </div>
   );
 };
 
-export default TabContent
+export default TabContent;

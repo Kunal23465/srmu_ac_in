@@ -1,81 +1,118 @@
-import React from "react";
-import Classes from "../../../../utils/styles/Global.module.css";
+import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Classes from "../../../../utils/styles/Global.module.css";
 import { CustomFacilitiesTypes } from "../../../../types/overview-data-type";
-import { ArrowButton } from "../../../../utils/custom/CustomCarousel";
 import { PdfSvgIcon } from "../../../about/recognition-approval/ApprovalSlider";
-
+import { IoIosArrowBack } from "react-icons/io";
 
 const KeyHighlightsSection: React.FC<CustomFacilitiesTypes> = ({ facilities, layoutData }) => {
   const sliderRef = React.useRef<Slider>(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [totalSlides, setTotalSlides] = useState(0);
 
-  // Slick slider settings
   const settings = {
     dots: false,
     infinite: false,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
+    arrows: false,
+    afterChange: (current: number) => setCurrentSlide(current),
     responsive: [
-      {
-        breakpoint: 1024, // Tablet screens
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-      {
-        breakpoint: 768, // Mobile screens
-        settings: {
-          slidesToShow: 1,
-        },
-      },
+      { breakpoint: 1024, settings: { slidesToShow: 2 } },
+      { breakpoint: 768, settings: { slidesToShow: 1 } },
     ],
   };
+
+  useEffect(() => {
+    if (facilities) {
+      setTotalSlides(facilities.length);
+    }
+  }, [facilities]);
+
+  // Dynamically calculate visible slides based on screen size
+  const getVisibleSlides = () => {
+    if (window.innerWidth >= 1024) return 3;
+    if (window.innerWidth >= 768) return 2;
+    return 1;
+  };
+
+  const isFirstSlide = currentSlide === 0;
+  const isLastSlide = currentSlide >= totalSlides - getVisibleSlides();
+
   return (
     <div className="bg-[#ffb703]">
       <div className={`${Classes.container} py-7 md:py-10 lg:py-14`}>
         <div className="sm:p-6">
-          {/* Heading Section */}
-          <div className="flex flex-col text-start mb-4 sm:mb-8">
-            <div className="flex justify-between items-center">
-              <h2 className="text-4xl font-bold">{layoutData?.title}</h2>
-              <div className="flex space-x-2">
-                <ArrowButton onClick={() => sliderRef.current?.slickPrev()} direction="prev" colorCode={"[#000000]"} />
-                <ArrowButton onClick={() => sliderRef.current?.slickNext()} direction="next" colorCode={"[#000000]"} />
-              </div>
+          {/* Header */}
+          <div className="flex justify-between items-center mb-10">
+            <h2 className="text-4xl font-bold text-black">{layoutData?.title}</h2>
+
+            {/* Custom Prev / Next Buttons with < > */}
+            <div className="flex gap-4">
+              <button
+                onClick={() => sliderRef.current?.slickPrev()}
+                disabled={isFirstSlide}
+                className={`w-12 h-12 border-2  flex items-center justify-center text-2xl font-light transition-all
+                  ${isFirstSlide
+                    ? "bg-transparent border-gray-500 text-gray-500 cursor-not-allowed"
+                    : "bg-transparent border-black hover:bg-[#0f4a85] hover:text-white"
+                  }`}
+                aria-label="Previous"
+              >
+                <IoIosArrowBack />
+              </button>
+
+              <button
+                onClick={() => sliderRef.current?.slickNext()}
+                disabled={isLastSlide}
+                className={`w-12 h-12 border-2 flex items-center justify-center text-2xl font-light transition-all
+                  ${isLastSlide
+                    ? "bg-transparent border-gray-500 text-gray-500 cursor-not-allowed"
+                    : "bg-transparent border-black hover:bg-[#0f4a85] hover:text-white"
+                  }`}
+                aria-label="Next"
+              >
+                <IoIosArrowBack className="rotate-180" />
+              </button>
             </div>
           </div>
 
-
-          {/* Facilities Slider */}
-          <Slider ref={sliderRef} {...settings} className="manage-academis">
-            {facilities.map((facility, index) => {
-              return (
-                <div key={index} className="p-2  my-4">
-                  <div className=" bg-white border border-gray-200 transition-all duration-200  rounded-lg flex flex-col h-full shadow-md hover:shadow-lg">
-                    {/* Image */}
-                    <img src={facility.imageUrl} alt={facility.title} className="w-full h-[200px] object-cover rounded-md mb-4" />
-                    <div className="h-[300px] overflow-y-auto faculty-card-scrollbar p-4">
-                      {/* Title */}
-                      <h3 className="text-[#0f4a85] text-xl font-semibold mb-2">{facility.title}</h3>
-                      {/* Description */}
-                      <p className="text-[#878484] grow text-justify pr-3">
-                        {/* {facility.description} */}
-                        <div dangerouslySetInnerHTML={{ __html: facility?.description }} />
-                      </p>
-                    </div>
+          {/* Slider */}
+          <Slider ref={sliderRef} {...settings}>
+            {facilities.map((facility, index) => (
+              <div key={index} className="px-3 h-full sm:h-[600px] md:h-[650px] lg:h-[600px]">
+                <div className="bg-white rounded-2xl hover:border-2 hover:border-[#0f4a85] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 h-full flex flex-col">
+                  <img
+                    src={facility.imageUrl}
+                    alt={facility.title}
+                    className="w-full h-80 object-cover"
+                  />
+                  <div className="p-6 flex flex-col flex-grow">
+                    <h3 className="text-2xl font-bold text-[#0f4a85] mb-3">
+                      {facility.title}
+                    </h3>
+                    <div
+                      className="text-gray-700 text-justify flex-grow mb-6"
+                      dangerouslySetInnerHTML={{ __html: facility.description }}
+                    />
                     <a
                       href={facility.pdfUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="m-4 flex gap-4 font-medium items-center mt-8 mb-6 w-fit bg-[#0f4a85] border-2 border-[#ffb703] uppercase text-white group hover:text-[#0f4a85] py-2 px-4 rounded-lg hover:bg-white transition-colors duration-200"
+                      className="inline-flex items-center gap-3 bg-[#0f4a85] text-white font-medium uppercase py-3 px-6 rounded-lg hover:bg-[#0d3d70] transition w-fit group"
                     >
-                      <span className="bg-white group-hover:bg-[#ffb703] transition-all duration-500 p-1 rounded-lg"><PdfSvgIcon /></span> Download Pdf
+                      <span className="bg-white p-2 rounded group-hover:bg-[#ffb703] transition">
+                        <PdfSvgIcon />
+                      </span>
+                      Download PDF
                     </a>
                   </div>
                 </div>
-              );
-            })}
+              </div>
+            ))}
           </Slider>
         </div>
       </div>

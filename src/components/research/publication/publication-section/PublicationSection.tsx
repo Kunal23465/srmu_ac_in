@@ -4,8 +4,8 @@ import bgImage from "../../../../assets/images/research/overview/facilities-bg-l
 import CustomTabs from "../../../../utils/custom/CustomTabs";
 import TabContent from "./TabContent";
 import { PublicationFloatingCardData, PublicationTabData } from "../../../../data/research/publication/publication-data";
+import { PdfSvgIcon } from "../../../about/recognition-approval/ApprovalSlider";
 
-import { FaRegFilePdf } from "react-icons/fa";
 const PublicationSection: React.FC = () => {
   const items = [
     {
@@ -18,12 +18,12 @@ const PublicationSection: React.FC = () => {
   ];
   return (
     <div>
-      <div className="relative px-6 w-full mt-16">
+      <div className="relative px-0 md:px-6 w-full mt-16">
         {/* Blue Background Section */}
-        <div className="bg-[#e8effc] rounded-[30px] h-[1000px]" style={{ backgroundImage: `url(${bgImage})`, backgroundSize: "cover", backgroundPosition: "center" }}>
+        <div className="bg-[#e8effc] rounded-[20px] h-[1100px] md:h-[1000px]" style={{ backgroundImage: `url(${bgImage})`, backgroundSize: "cover", backgroundPosition: "center" }}>
           <div className={Classes["container"]}>
             <div className="py-14 md:py-20 text-center text-white">
-              <h2 className="text-[50px] font-bold ">Publication</h2>
+              <h2 className="text-3xl md:text-[50px] font-medium mb-2 ">Publication</h2>
               <p className="text-[15px]">
                 From academic journals to conference documents to book chapters, research by SRMU students and faculty has been featured in numerous publications.
               </p>
@@ -34,8 +34,8 @@ const PublicationSection: React.FC = () => {
               variant="underline"
               activeTextColor="#ffb703"
               activeUnderlineColor="#ffb703"
-              hoverTextColor="#ffb703"
-              inactiveTextColor="#ffffff"
+              hoverTextColor="#ffffff"
+              inactiveTextColor="#e8effc"
               activeBgColor="#ffb703"
               inactiveBgColor="#0f4a85"
               pillContainerBgColor="#ffb703"
@@ -45,27 +45,27 @@ const PublicationSection: React.FC = () => {
         </div>
 
         {/* Floating Cards OUTSIDE Blue Section */}
-        <div className={`${Classes["container"]} mt-[-200px] p-4 md:px-6 bg-white rounded-xl shadow-xl`}>
-          <div className="container mx-auto px-4 flex flex-col-reverse lg:flex-row items-center gap-10">
+        <div className={`${Classes["container"]} mt-15 md:mt-[-200px] p-4 md:px-6 bg-white rounded-xl shadow-xl`}>
+          <div className="container flex flex-col-reverse lg:flex-row items-center">
             {/* Left Content */}
-            <div className="w-full lg:w-1/2 space-y-6 ">
-              <h2 className="text-3xl md:text-4xl font-bold text-[#0f4a85]">{PublicationFloatingCardData.title}</h2>
-              <p className="text-gray-700 text-base leading-relaxed">{PublicationFloatingCardData.description}</p>
+            <div className="w-full lg:w-[32%] space-y-6 px-0 md:px-10 py-5 ">
+              <h2 className="text-3xl md:text-5xl pt-10 font-medium text-[#023047]">{PublicationFloatingCardData.title}</h2>
+              <p className="text-gray-700 text-sm md:text-base! leading-relaxed">{PublicationFloatingCardData.description}</p>
 
               <a
                 href={PublicationFloatingCardData.pdfUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 bg-[#0f4a85] border-3 border-[#ffb703] text-white font-semibold uppercase py-3 px-5 rounded-lg hover:bg-white hover:text-[#0f4a85] transition-colors duration-200 w-fit"
+                className="inline-flex items-center gap-3 bg-[#0f4a85] border-2 group border-[#ffb703] text-white font-semibold uppercase py-3 px-5 rounded-lg hover:bg-white hover:text-[#0f4a85] transition-colors duration-200 w-fit"
               >
-                <FaRegFilePdf size={22} />
+            <span className="bg-white p-1 rounded-lg transition-all duration-500 group-hover:bg-[#ffb703]"><PdfSvgIcon /></span>
                 Download PDF
               </a>
             </div>
 
             {/* Right Image */}
-            <div className="w-full lg:w-1/2 flex justify-center">
-              <img src={PublicationFloatingCardData.imgUrl} alt={PublicationFloatingCardData.title} className="rounded-2xl shadow-lg w-full max-w-[500px] object-cover" />
+            <div className="w-full lg:w-[68%] flex justify-center">
+              <img src={PublicationFloatingCardData.imgUrl} alt={PublicationFloatingCardData.title} className="rounded-2xl md:mr-10 md:ml-auto shadow-lg w-full max-w-[550px] object-cover" />
             </div>
           </div>
         </div>

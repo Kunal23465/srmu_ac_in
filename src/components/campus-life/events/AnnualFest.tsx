@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { festData } from "../../../data/campus-life/events/events-data";
 import { useNavigate } from "react-router-dom";
+import Classes from "../../../utils/styles/Global.module.css";
 
 const tabs = [
     { key: "anubhuti", label: "ANUBHUTI" },
@@ -49,7 +50,7 @@ const AnnualFest: React.FC = () => {
 
     return (
         <section className="relative bg-cover bg-center text-white py-20 back cursor-pointer">
-            <div className="max-w-7xl mx-auto px-6">
+      <div className={`${Classes["container"]}`}>
 
                 {/* Heading and description */}
                 <div className="flex flex-col md:flex-row justify-between md:items-start gap-4 mb-10">
@@ -84,15 +85,14 @@ const AnnualFest: React.FC = () => {
                 <div
                     className="
                         grid
-                        lg:grid-cols-[40%_60%]
-                        md:grid-cols-[45%_55%]
+                        md:grid-cols-2
                         grid-cols-1
                         gap-10
                         items-start
                     "
                 >
                     {/* LEFT COLUMN */}
-                    <div className="max-w-[430px] md:mx-0 mx-auto text-center md:text-left">
+                    <div className="max-w-[400px] xl:max-w-[430px] md:mx-0 mx-auto text-center md:text-left">
 
                         <h3 className="lg:text-[2.5rem]  text-left text-[28px] sm:text-[28px]  fw500 mb-4">
                             {data.title}
@@ -143,6 +143,8 @@ const AnnualFest: React.FC = () => {
                             gap-8
                             justify-center
                             flex-wrap
+                            lg:w-[120%]
+                            lg:-ml-[20%]
                             md:flex-nowrap
                             transition-all duration-500
                         "

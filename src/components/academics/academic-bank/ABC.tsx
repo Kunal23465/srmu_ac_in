@@ -1,7 +1,11 @@
+import Classes from "../../../utils/styles/Global.module.css";
+
 export const ABC = () => {
     return (
-        <div className="abc-wrapper">
-            <h2 className="font22 mb-4 color_light_blue">
+        <div className="bg-[#f1f1f1] py-20">
+                  <div className={`${Classes["container"]}`}>
+
+            <h2 className="text-2xl mb-4 color_light_blue">
                 <strong>Academic Bank of Credits (ABC)</strong>
             </h2>
 
@@ -29,6 +33,7 @@ export const ABC = () => {
 
             <div className="mb-4">
                 <a href="#" className="color_light_blue font-semibold">USER MANUAL:STUDENT REGISTRATION AND CREDIT TRANSFER UNDER ABC</a>
+            </div>
             </div>
         </div>
     )

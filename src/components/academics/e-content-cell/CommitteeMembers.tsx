@@ -3,8 +3,8 @@ import React from 'react'
 const CommitteeMembers:React.FC = () => {
     return (
         <div className='mb-10 md:mb-20 py-4 md:py-7 lg:py-7'>
-            <h2 className='font22 fw600 mb-4 color_light_blue'>
-                <strong>Committee Members</strong>
+            <h2 className="text-xl font-extrabold mb-4 color_light_blue">
+                Committee Members
             </h2>
             <ul className=" ml-5 marker:text-2xl font18">
                 <li>Dr. Ritu Chandra- IQAC Chairperson</li>
