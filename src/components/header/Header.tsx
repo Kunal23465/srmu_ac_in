@@ -176,7 +176,7 @@ const Header = () => {
                             className={`block px-5 py-3 bg-[#00000036] hover:text-[#ffb703] ${i !== 0 && "border-t border-gray-200"}`}
                             onClick={(e) => {
                               e.preventDefault();
-                              window.open(value.path, "_blank");
+                              window.open(value.path, "_self");
                               setSideMenu(false);
                             }}
                           >
@@ -198,7 +198,7 @@ const Header = () => {
                                   className={`block px-5 py-2 text-gray-700   hover:text-[#ffb703]  border-b border-gray-200`}
                                   onClick={(e) => {
                                     e.preventDefault();
-                                    window.open(sub.path, "_blank");
+                                    window.open(sub.path, "_self");
                                     setSideMenu(false);
                                   }}
                                 >

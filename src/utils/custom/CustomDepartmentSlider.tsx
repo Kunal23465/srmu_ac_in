@@ -100,13 +100,17 @@ function CustomDepartmentSlider<T>({
 
     return (
         <div
-            className="px-14 py-22"
+            className=" py-22"
             style={{
                 background: bgImage ? `url(${bgImage}) center/cover` : bgColor,
             }}
         >
             {/* ===== TOP SECTION ===== */}
-            <div className={`flex justify-between items-start w-full mb-8 ${Classes["container"]}`}>
+            <div
+                className={`w-full mb-8 ${Classes["container"]}
+                flex flex-col items-start
+                md:flex-row md:justify-between md:items-start`}
+            >
 
                 {/* LEFT SECTION */}
                 <div className="px-3">
@@ -128,7 +132,15 @@ function CustomDepartmentSlider<T>({
                 </div>
 
                 {/* RIGHT SECTION – ARROWS */}
-                <div className="flex justify-end gap-3 px-3">
+                <div
+                    className="
+        flex gap-3 px-3
+        mt-4
+        flex-row              /* always keep arrows in a row */
+        md:mt-0 md:justify-end
+    "
+                >
+
 
                     {/* LEFT ARROW */}
                     <button
@@ -198,4 +210,3 @@ export default CustomDepartmentSlider;
 
 
 
- 

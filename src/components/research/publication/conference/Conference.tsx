@@ -64,8 +64,8 @@ const Conference: React.FC = () => {
 
         <div className="sm:p-6">
           <div className="flex flex-col text-start mb-14 md:mb-8">
-            <div className="relative justify-center gap-10 items-center">
-              
+            <div className="relative flex justify-center items-center">
+
               {/* Toggle Buttons */}
               <div className="flex items-center mx-auto bg-[#0f4a85] rounded-full p-1 w-[300px]">
                 <button
@@ -87,15 +87,20 @@ const Conference: React.FC = () => {
                 </button>
               </div>
 
-              <div className="absolute right-0 top-23 md:top-3 flex gap-3 ml-auto">
-                <CustomArrow
-                  direction="prev"
-                  onClick={() => sliderRef.current?.slickPrev()}
-                />
-                <CustomArrow
-                  direction="next"
-                  onClick={() => sliderRef.current?.slickNext()}
-                />
+
+              <div className="">
+                <div className="absolute top-20 right-0 ml-auto">
+                  <div className="flex gap-3">
+                    <CustomArrow
+                      direction="prev"
+                      onClick={() => sliderRef.current?.slickPrev()}
+                    />
+                    <CustomArrow
+                      direction="next"
+                      onClick={() => sliderRef.current?.slickNext()}
+                    />
+                  </div>
+                </div>
               </div>
 
             </div>
@@ -118,7 +123,7 @@ const Conference: React.FC = () => {
                   })
                 }
               >
-                <div className="bg-white border-2 border-gray-100 hover:border-amber-300 transition-all duration-200 rounded-xl flex flex-col h-full shadow-md hover:shadow-lg">
+                <div className="bg-white border-2 w-full border-gray-100 hover:border-amber-300 transition-all duration-200 rounded-xl flex flex-col h-full max-w-[400px] shadow-md hover:shadow-lg">
                   <img
                     src={facility.img}
                     alt={facility.title}

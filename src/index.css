@@ -1737,17 +1737,17 @@ section .card-color img {
 }
 
 /* Remove default slick arrow icons */
-.slick-prev:before,
+/* .slick-prev:before,
 .slick-next:before {
   content: "" !important;
-}
+} */
 
 /* Force arrows to always display */
-.slick-slider .slick-arrow {
+/* .slick-slider .slick-arrow {
   display: block !important;
   opacity: 1 !important;
   visibility: visible !important;
-}
+} */
 
 /* Shared button style */
 .custom-arrow {
@@ -1877,11 +1877,13 @@ section .card-color img {
 
 .shutter-closed {
   max-height: 0;
+}
 
 /* Apply only on small screens (mobile) */
 @media (max-width: 639px) {
   .mobile-header-style {
     padding-top: 50px;
     background-color: #0e2f46;
+    margin-bottom: 10px;
   }
 }
