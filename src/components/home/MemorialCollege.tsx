@@ -78,14 +78,20 @@ const MemorialCollege: React.FC = () => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
   return (
-    <div id="first" className="w-full -mt-[68px]  pb-7 md:pb-10 lg:pb-14">
-      <div className="circle-part flex justify-center z-[99] relative">
-        <img className="cursor-pointer " onClick={() => handleScroll("first")} src={curve_btn} alt="curve" />
+    <div id="first" className="w-full -mt-[68px]   pb-7 md:pb-10 lg:pb-14">
+      <div className="circle-part flex justify-center z-[99] relative hidden md:flex">
+        <img
+          className="cursor-pointer"
+          onClick={() => handleScroll("first")}
+          src={curve_btn}
+          alt="curve"
+        />
       </div>
+
       <div className={`${Classes["container"]}  `}>
         <div className="rounded-[10px] mt-6 lg:mt-10">
           <div className="content px-5 xl:px-10  py-4 md:py-8 lg:py-10 z-50 relative">
-            <h3 className="text-3xl lg:text-5xl text-[#023047]  font-bold text-center lg:leading-[50px] mt-5 lg:mt-10">Shri Ramswaroop Memorial University</h3>
+            <h3 className="text-3xl lg:text-5xl text-[#023047]  font-bold text-center lg:leading-[50px] mt-15 lg:mt-10">Shri Ramswaroop Memorial University</h3>
             <p className="leading-7 font-semibold text-[#0009]  text-center mt-5 ">
               Experience a world of countless opportunities at SRMU – where we nurture brilliant minds and shape dreams into futures.  As leaders in engineering and business education for over two decades, we are committed to academic excellence, innovation, and the holistic development of every student.
             </p>

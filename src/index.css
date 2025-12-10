@@ -1866,3 +1866,12 @@ section .card-color img {
     transform: scale(1);
   }
 }
+
+
+/* Apply only on small screens (mobile) */
+@media (max-width: 639px) {
+  .mobile-header-style {
+    padding-top: 50px;
+    background-color: #0e2f46;
+  }
+}
