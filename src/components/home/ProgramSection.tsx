@@ -36,19 +36,20 @@ const ProgramsSection: FC = () => {
                 <div className="w-full flex flex-col md:flex-row gap-y-10 md:gap-10">
                     {/* Tabs */}
                     <div className="w-full md:max-w-[350px] programs-tabs">
-                        <ul className="flex flex-row md:flex-col overflow-x-auto">
-                            {tabs.map((tab) => (
-                                <li key={tab.id}>
-                                    <button
-                                        onClick={() => setActiveTab(tab.id)}
-                                        className={`block w-full text-left uppercase text-white text-nowrap md:font-medium rounded-md py-5 md:pl-6 md:pr-16 mb-1 px-5 text-base md:text-[1.25rem] cursor-pointer transition-all
-                                     ${activeTab === tab.id ? "programsection shadow-lg" : "bg-transparent"}`}
-                                    >
-                                        {tab.title}
-                                    </button>
-                                </li>
-                            ))}
-                        </ul>
+                       <ul className="flex flex-row md:flex-col overflow-x-auto">
+  {tabs.map((tab) => (
+    <li key={tab.id}>
+      <button
+        onClick={() => setActiveTab(tab.id)}
+        className={`block w-full text-left uppercase text-white text-nowrap md:font-medium rounded-md py-5 md:pl-6 md:pr-16 mb-1 px-5 text-base md:text-[1.25rem] cursor-pointer transition-all
+          ${activeTab === tab.id ? "programsection shadow-lg text-[#0d6efd]" : "bg-transparent text-white"}`}
+      >
+        {tab.title}
+      </button>
+    </li>
+  ))}
+</ul>
+
                     </div>
 
                     {/* Programs Section */}
