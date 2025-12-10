@@ -23,7 +23,7 @@ html {
   }
 }
 
-/* for banner section */
+
 .banner-section {
   background-image: url("/srmu-banner-img.jpg");
   background-size: cover;
@@ -1078,11 +1078,27 @@ footer:after {
   border-bottom: 1px solid #e0e0e0;
   font-size: 1.12em;
   color: #333333;
+    border-bottom: none;
+
+}
+.custom-table tbody tr {
+  position: relative;
 }
 
-.custom-table tbody tr:last-child td {
-  border-bottom: none;
+.custom-table tbody tr::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background-color: #e0e0e0;
 }
+
+.custom-table tbody tr:last-child::after {
+  display: none;
+}
+
 
 .row-download {
   display: flex;
@@ -1633,7 +1649,14 @@ section .card-color img {
   font-size: 1.188rem;
 }
 
+.perspective {
+  perspective: 1000px;
+}
+
 .flip-card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4; /* keeps consistent responsive height */
   transform-style: preserve-3d;
   transition: transform 0.6s ease;
 }
@@ -1642,9 +1665,21 @@ section .card-color img {
   transform: rotateY(180deg);
 }
 
-.flip-card-face {
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  inset: 0; /* ensures faces overlap exactly */
   backface-visibility: hidden;
+  border-radius: 1rem;
 }
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+.flip-card-front img {
+  min-width: 300px;
+}
+
 
 .font17 {
   font-size: 1.063rem;
