@@ -39,7 +39,6 @@ const PlacementDrives: React.FC = () => {
     slidesToScroll: slidesToShow,
     centerMode: false,
     beforeChange: (_: number, next: number) => setCurrentSlide(next),
-    key: windowWidth,
 
     responsive: [
       {

@@ -50,11 +50,10 @@ const PlacementRecords: React.FC = () => {
     speed: 600,
     slidesToShow: getSlidesToShow(),
     slidesToScroll: 1,
-    centerMode: false, // Changed from shouldCenterMode() to false
+  centerMode: false, // Changed from shouldCenterMode() to false
     centerPadding: "0px",
     arrows: shouldShowArrows(),
     beforeChange: (_: number, next: number) => setCurrentSlide(next),
-    key: windowWidth, // Add key to force re-render on window resize
 
     responsive: [
       {
@@ -89,7 +88,7 @@ const PlacementRecords: React.FC = () => {
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
-          centerMode: false, // Turn off centerMode
+         centerMode: false, // Turn off centerMode
           arrows: true,
         },
       },
@@ -159,7 +158,7 @@ const PlacementRecords: React.FC = () => {
         <Slider ref={sliderRef} {...settings}>
           {students.map((stu) => (
             <div key={stu.id} className="px-2">
-              <div className="min-w-[200px] rounded-xl border border-white py-6 px-4 min-h-[310px] text-center">
+              <div className="w-full rounded-xl border border-white py-6 px-4 min-h-[310px] text-center">
                 <div className="min-h-[170px]">
                   <img src={stu.image} alt={stu.name} className="w-20 h-20 rounded-full mx-auto mb-3 object-cover" />
 
