@@ -75,7 +75,7 @@ const TabContent: React.FC<TabContentProps> = ({ data }) => {
         <div className="flex flex-col md:flex-row justify-between gap-8">
           
           {/* LEFT PANEL – Title + Description + Arrows */}
-          <div className="flex flex-col w-full md:w-1/3 text-white">
+          <div className="w-full md:w-1/3 px-2 sm:px-5 md:px-0 text-white">
             <h2 className="text-4xl font-medium">{data.title}</h2>
             <p className="mt-4">{data.description}</p>
 
@@ -95,11 +95,11 @@ const TabContent: React.FC<TabContentProps> = ({ data }) => {
           </div>
 
           {/* RIGHT PANEL – Slider */}
-          <div className="w-full md:w-2/3">
+          <div className="w-full md:w-2/3 px-2 sm:px-5 md:px-0">
             <Slider ref={sliderRef} {...settings}>
               {data.cardData.map((item, index) => (
-                <div key={index} className="p-2 my-4">
-                  <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
+                <div key={index} >
+                  <div className="bg-white mx-2 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
                     
                     {/* Image */}
                     <img
@@ -107,7 +107,7 @@ const TabContent: React.FC<TabContentProps> = ({ data }) => {
                       alt={item.title}
                       className="w-full h-[200px] object-cover"
                     />
-
+<div className="p-4">
                     {/* Title */}
                     <h3 className="text-[#0f4a85] text-xl font-semibold p-4 pb-1">
                       {item.title}
@@ -118,13 +118,14 @@ const TabContent: React.FC<TabContentProps> = ({ data }) => {
                       href={item.pdfUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="m-4 flex gap-3 items-center w-fit border-2 border-[#ffb703] text-[#0f4a85] py-2 px-4 rounded-lg uppercase hover:bg-[#ffb703] transition-all"
+                      className="flex gap-3 items-center w-fit border-2 border-[#ffb703] text-[#0f4a85] py-2 px-4 rounded-lg uppercase hover:bg-[#ffb703] transition-all"
                     >
                       <span className="p-1 rounded bg-[#ffb703]">
                         <PdfSvgIcon />
                       </span>
                       Download PDF
                     </a>
+                    </div>
                   </div>
                 </div>
               ))}

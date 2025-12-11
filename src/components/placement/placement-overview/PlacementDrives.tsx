@@ -88,7 +88,7 @@ const PlacementDrives: React.FC = () => {
                   setCurrentSlide(0);
                   sliderRef.current?.slickGoTo(0);
                 }}
-                className={`px-10 py-3 text-sm font-semibold transition ${activeYear === year ? "bg-yellow-400 text-black" : "text-black hover:bg-yellow-400"}`}
+                className={`px-5 sm:px-10 md:px-15 py-3 text-sm font-semibold transition ${activeYear === year ? "bg-yellow-400 text-black" : "text-black hover:bg-yellow-400"}`}
               >
                 {year}
               </button>

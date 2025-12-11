@@ -13,11 +13,11 @@ const PhdNotificationSession: React.FC = () => {
         <SeatsAvailableSection />
         <div className="mt-10">
           <h1 className="text-3xl font-bold text-black mb-2">Mode of Application</h1>
-          <div className="flex items-center justify-start gap-10">
-            <button className=" bg-[#0f4a85] border-2 border-[#0f4a85] text-white font-medium uppercase py-3 px-5 rounded-lg hover:bg-white hover:text-[#0f4a85] transition-colors duration-500 w-fit">
+          <div className="flex flex-col md:flex-row items-center justify-start gap-5 md:gap-10">
+            <button className=" bg-[#0f4a85] border-2 border-[#0f4a85] text-white font-medium uppercase py-1 md:py-3 px-2 md:px-5 rounded-lg hover:bg-white hover:text-[#0f4a85] transition-colors duration-500 w-fit">
               Online Application
             </button>
-            <button className=" bg-[#0f4a85] border-2 border-[#0f4a85]  text-white font-medium uppercase py-3 px-5 rounded-lg hover:bg-white hover:text-[#0f4a85] transition-colors duration-500 w-fit">
+            <button className=" bg-[#0f4a85] border-2 border-[#0f4a85]  text-white font-medium uppercase py-1 md:py-3 px-2 md:px-5 rounded-lg hover:bg-white hover:text-[#0f4a85] transition-colors duration-500 w-fit">
               Offline Application
             </button>
           </div>
