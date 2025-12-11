@@ -19,7 +19,7 @@ export default function PhotoSection({ photos }: PhotoSectionProps) {
 
     return (
         <div>
-            <div className="hidden md:block">
+            <div className="">
                 <Fancybox
                     options={{
                         Carousel: {
@@ -53,18 +53,7 @@ export default function PhotoSection({ photos }: PhotoSectionProps) {
                 </Fancybox>
             </div>
 
-            <div className="md:hidden wood-slider">
-                <Slider {...settings}>
-                    {safePhotos.slice(0, 9).map((img, index) => (
-                        <img
-                            key={index}
-                            className="w-full h-full object-cover rounded-md"
-                            src={img}
-                            alt="Gallery"
-                        />
-                    ))}
-                </Slider>
-            </div>
+            
         </div>
     );
 }

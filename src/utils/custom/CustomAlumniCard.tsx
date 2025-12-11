@@ -21,7 +21,7 @@ const CustomAlumniCard: React.FC<CustomCardProps> = ({
     return (
         <>
             {/* CARD */}
-            <div className="relative w-[400px] h-[450px] rounded-xl overflow-hidden shadow-md group cursor-pointer bg-white">
+            <div className="relative w-full sm:w-3/4 md:w-full mx-auto h-[450px] rounded-xl overflow-hidden shadow-md group cursor-pointer bg-white">
 
                 {/* Base image */}
                 <img

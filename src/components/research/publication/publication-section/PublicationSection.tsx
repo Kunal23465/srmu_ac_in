@@ -46,9 +46,9 @@ const PublicationSection: React.FC = () => {
 
         {/* Floating Cards OUTSIDE Blue Section */}
         <div className={`${Classes["container"]} mt-15 md:mt-[-200px] p-4 md:px-6 bg-white rounded-xl shadow-xl`}>
-          <div className="container flex flex-col-reverse lg:flex-row items-center">
+          <div className="container flex flex-col-reverse md:flex-row items-center">
             {/* Left Content */}
-            <div className="w-full lg:w-[32%] space-y-6 px-0 md:px-10 py-5 ">
+            <div className="w-full md:w-[32%] space-y-6 px-0 md:px-10 py-5 ">
               <h2 className="text-3xl md:text-5xl pt-10 font-medium text-[#023047]">{PublicationFloatingCardData.title}</h2>
               <p className="text-gray-700 text-sm md:text-base! leading-relaxed">{PublicationFloatingCardData.description}</p>
 
@@ -56,16 +56,16 @@ const PublicationSection: React.FC = () => {
                 href={PublicationFloatingCardData.pdfUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 bg-[#0f4a85] border-2 group border-[#ffb703] text-white font-semibold uppercase py-3 px-5 rounded-lg hover:bg-white hover:text-[#0f4a85] transition-colors duration-200 w-fit"
+                className="inline-flex items-center gap-3 bg-[#0f4a85] border-2 group border-[#ffb703] text-white font-semibold uppercase py-3 px-5 rounded-md hover:bg-white hover:text-[#0f4a85] transition-colors duration-200 w-fit"
               >
-            <span className="bg-white p-1 rounded-lg transition-all duration-500 group-hover:bg-[#ffb703]"><PdfSvgIcon /></span>
+            <span className="bg-white p-1 rounded-md transition-all duration-500 group-hover:bg-[#ffb703]"><PdfSvgIcon /></span>
                 Download PDF
               </a>
             </div>
 
             {/* Right Image */}
-            <div className="w-full lg:w-[68%] flex justify-center">
-              <img src={PublicationFloatingCardData.imgUrl} alt={PublicationFloatingCardData.title} className="rounded-2xl md:mr-10 md:ml-auto shadow-lg w-full max-w-[550px] object-cover" />
+            <div className="w-full md:w-[68%] flex justify-center">
+              <img src={PublicationFloatingCardData.imgUrl} alt={PublicationFloatingCardData.title} className="rounded-2xl md:mr-10 md:ml-auto shadow-md w-full max-w-[550px] object-cover" />
             </div>
           </div>
         </div>

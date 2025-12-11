@@ -67,10 +67,10 @@ const Conference: React.FC = () => {
             <div className="relative justify-center gap-10 items-center">
               
               {/* Toggle Buttons */}
-              <div className="flex items-center mx-auto bg-[#0f4a85] rounded-full p-1 w-[300px]">
+              <div className="flex items-center mx-auto bg-[#0f4a85] rounded-full p-1 w-[250px] md:w-[280px]">
                 <button
                   onClick={() => setActive("national")}
-                  className={`px-6 py-2 rounded-full text-lg font-normal transition-all
+                  className={`px-6 py-2 rounded-full text-sm md:text-lg font-normal transition-all
                     ${active === "national" ? "bg-[#f4b400] text-black" : "text-white"}
                   `}
                 >
@@ -79,7 +79,7 @@ const Conference: React.FC = () => {
 
                 <button
                   onClick={() => setActive("international")}
-                  className={`px-6 py-2 rounded-full text-lg font-normal transition-all
+                  className={`px-6 py-2 rounded-full text-sm md:text-lg font-normal transition-all
                     ${active === "international" ? "bg-[#f4b400] text-black" : "text-white"}
                   `}
                 >
@@ -87,7 +87,7 @@ const Conference: React.FC = () => {
                 </button>
               </div>
 
-              <div className="absolute right-0 top-23 md:top-3 flex gap-3 ml-auto">
+              <div className="absolute right-0 top-16 md:top-2 flex gap-3">
                 <CustomArrow
                   direction="prev"
                   onClick={() => sliderRef.current?.slickPrev()}
@@ -102,7 +102,7 @@ const Conference: React.FC = () => {
           </div>
 
           {/* Slider Section */}
-          <Slider ref={sliderRef} {...settings} className="manage-academis">
+          <Slider ref={sliderRef} {...settings} className="manage-academis overflow-hidden">
             {PublicationConferenceData.map((facility, index) => (
               <div
                 key={index}
