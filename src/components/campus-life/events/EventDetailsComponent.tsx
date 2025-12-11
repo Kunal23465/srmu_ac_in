@@ -35,7 +35,7 @@ const EventDetailsComponent = <T extends CardBase>({ card }: Props<T>) => {
         )}
 
         {card.photos && card.photos.length > 0 && (
-          <div className="mt-10">
+          <div className="py-10 md:py-20">
             <PhotoSection photos={card.photos} />
           </div>
         )}

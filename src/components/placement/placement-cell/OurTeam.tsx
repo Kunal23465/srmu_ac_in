@@ -33,7 +33,7 @@ const OurTeam: React.FC = () => {
 
   // Custom navigation buttons
   const SliderControls = () => (
-    <div className="flex space-x-3">
+    <div className="flex mt-3 md:mt-0 space-x-3">
       <button
         onClick={() => sliderRef.current?.slickPrev()}
         className="border-2 border-slate-400 cursor-pointer text-4xl text-slate-400 
@@ -61,11 +61,11 @@ const OurTeam: React.FC = () => {
   return (
     <div>
       <center>
-        <p className="text-yellow-400 text-5xl mb-20">Our Team</p>
+        <p className="text-yellow-400 text-3xl md:text-5xl mb-5 lg:mb-20">Our Team</p>
 
         {/* TAB SWITCH */}
         <span
-          className={`text-2xl pb-5 border-b-4 cursor-pointer transition-all duration-300
+          className={`text-lg md:text-2xl pb-2 md:pb-5 border-b-4 cursor-pointer transition-all duration-300
             ${team === "Placement" ? "border-amber-400" : "border-transparent hover:border-amber-400"}`}
           onClick={() => setTeam("Placement")}
         >
@@ -73,7 +73,7 @@ const OurTeam: React.FC = () => {
         </span>
 
         <span
-          className={`text-2xl pb-5 ml-5 border-b-4 cursor-pointer transition-all duration-300
+          className={`text-lg md:text-2xl pb-2 md:pb-5 ml-2 md:ml-5 border-b-4 cursor-pointer transition-all duration-300
             ${team === "Training" ? "border-amber-400" : "border-transparent hover:border-amber-400"}`}
           onClick={() => setTeam("Training")}
         >
@@ -85,7 +85,7 @@ const OurTeam: React.FC = () => {
       <div className="w-full py-16 px-6">
         <div className="max-w-7xl mx-auto">
           {/* HEADER + ARROWS */}
-          <div className="flex justify-between items-start mb-12">
+          <div className="flex flex-col md:flex-row justify-between items-start mb-12">
             <div className="max-w-5xl">
               <h1 className="text-3xl md:text-5xl font-bold">
                 {team === "Placement"

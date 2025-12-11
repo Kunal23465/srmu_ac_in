@@ -15,9 +15,9 @@ const DirectorMessage = () => {
           </div>
         </div>
         <div className="w-full">
-          <h2 className="text-5xl font-medium mb-10">Message From Director</h2>
+          <h2 className="text-2xl md:text-5xl font-medium mb-5 mt-2 lg:mt-0 md:mb-10">Message From Director</h2>
 
-          <p className="text-justify">
+          <p className="text-justify text-[#000000b3] text-sm! md:text-[16px]!">
             <strong>Dear Recruiters,</strong>
             <br />
             Greetings from the Training and Placement Department of Shri Ramswaroop Memorial University (SRMU), Lucknow. SRMU is one of North India's emerging universities with over

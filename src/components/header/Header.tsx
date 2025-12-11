@@ -35,7 +35,7 @@ const Header = () => {
 
   return (
     <div>
-<header className="fixed top-0 left-0 w-full z-[999] min-h-[350px] transition-all duration-500">
+<header className="fixed top-0 left-0 w-full z-[999]  transition-all duration-500">
         <TopHeader />
 
         <div className={`py-2 items-stretch header ${isActive ? "bg-[#0e2f46] active" : ""}`}>
