@@ -14,9 +14,9 @@ const SpecialScholarship: React.FC = () => {
       <div className="flex flex-col lg:flex-row justify-between gap-10">
         <div className="w-full lg:max-w-[310px]">
           <p className="pb-2 sm:pb-5 ">"You can’t build a society purely on interests you need a sense of belonging"</p>
-          <button className="cursor-pointer text-white font-medium bg-[#0f4a85] border border-transparent transition-colors duration-500 hover:border-black hover:text-black hover:bg-white px-6 lg:px-8 py-3 lg:py-4 rounded-xl">
+          <a href="\online-admission" className="cursor-pointer text-white font-medium bg-[#0f4a85] border border-transparent transition-colors duration-500 hover:border-black hover:text-black hover:bg-white px-6 lg:px-8 py-3 lg:py-4 rounded-xl">
             APPLY NOW
-          </button>
+          </a>
         </div>
         <div className="w-full lg:max-w-[870px]">
           <strong>

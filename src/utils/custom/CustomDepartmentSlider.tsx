@@ -115,7 +115,7 @@ function CustomDepartmentSlider<T>({
                 {/* LEFT SECTION */}
                 <div className="px-3">
                     <h1
-                        className="text-[45px] font-semibold"
+                        className="text-[30px] sm:text-[45px] font-semibold"
                         style={{ color: headingColor }}
                     >
                         {heading}

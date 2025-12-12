@@ -23,10 +23,10 @@ const ContactUs: React.FC = () => {
       </div>
       <div className="relative w-full mt-16 mb-8">
         {/* Blue Background Section */}
-        <div className="bg-[#0f4a85] h-[1000px]">
+        <div className="bg-[#0f4a85] h-[550px] md:h-[1000px]">
           <div className={Classes["container"]}>
             <div className="py-20">
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 ">
+              <div className="flex overflow-scroll md:overflow-hidden pb-2 md:mb-0 md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 ">
                 {contactCardData.map((item) => (
                   <div key={item.id} className="rounded-lg bg-white px-8 py-10 text-center border-b-[5px] border-b-[#ffb703] hover:shadow-xl w-full max-w-[300px]">
                     <div className="flex justify-center items-center mb-4">
@@ -44,7 +44,7 @@ const ContactUs: React.FC = () => {
         </div>
 
         {/* Floating Cards OUTSIDE Blue Section */}
-        <div className={`${Classes["container"]} mt-[-200px] p-4 md:px-6 bg-[#f3f6fc] rounded-xl shadow-xl`}>
+        <div className={`${Classes["container"]} mt-[50px] md:mt-[250px] lg:[mt-100px] xl:mt-[-200px] p-4 md:px-6 bg-[#f3f6fc] rounded-xl shadow-xl`}>
           {/* <div className="bg-[#f1f1f1] py-20"></div> */}
           <div className="w-full  px-6 py-8 rounded-2xl">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">

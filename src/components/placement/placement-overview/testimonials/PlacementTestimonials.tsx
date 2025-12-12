@@ -42,12 +42,12 @@ const maxIndex = currentTestimonials.length - 1;
           {/* LEFT SIDE */}
           <div className="flex-1 max-w-[600px]">
             {/* Tabs */}
-            <div className="flex justify-start mb-10 gap-0">
-              <button className={`tab-button ${activeTab === "recruiters" ? "active" : ""}`} onClick={() => handleTabChange("recruiters")}>
+            <div className="flex justify-start mb-10 overflow-x-auto gap-0">
+              <button className={`tab-button px-3 sm:px-6 py-1 sm:py-3 texm-sm! sm:text-[16px]! ${activeTab === "recruiters" ? "active" : ""}`} onClick={() => handleTabChange("recruiters")}>
                 RECRUITERS TESTIMONIALS
               </button>
 
-              <button className={`tab-button ${activeTab === "students" ? "active" : ""}`} onClick={() => handleTabChange("students")}>
+              <button className={`tab-button px-3 sm:px-6 py-1 sm:py-3 texm-sm! sm:text-[16px]! ${activeTab === "students" ? "active" : ""}`} onClick={() => handleTabChange("students")}>
                 STUDENT TESTIMONIALS
               </button>
             </div>

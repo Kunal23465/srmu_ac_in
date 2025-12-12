@@ -17,11 +17,11 @@ const PlacementOverview: React.FC = () => {
       <div className={`${Classes["container"]}`}>
         <CustomOverviewSection data={PlacementOverviewData} />
       </div>
-        {/* <PlacementStayWithUs/>   */}
-        {/* <PlacementOverviewSlider/> */}
-        {/* <PlacementRecords/> */}
+        <PlacementStayWithUs/>  
+        <PlacementOverviewSlider/>
+        <PlacementRecords/>
         <PlacementTestimonials/>
-        {/* <PlacementDrives/> */}
+        <PlacementDrives/>
       <CustomTopFooter data={PlacementCellTopFooterData} />
     </div>
   );

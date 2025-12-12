@@ -14,7 +14,7 @@ const ProgramFinder: React.FC = () => {
                     <h1 className='text-[#023047] text-[3.125rem] leading-[1.2] font-medium'>
                         Program Finder
                     </h1>
-                    <div className='w-[140px] h-[3px] bg-amber-400 mt-4'></div>
+                    <div className='w-[140px] h-[3px] bg-amber-400 mt-4 mb-4 md:mb-0'></div>
                 </div>
 
                 <ProgramFilter />
