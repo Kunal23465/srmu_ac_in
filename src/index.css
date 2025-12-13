@@ -1680,6 +1680,13 @@ section .card-color img {
   min-width: 300px;
 }
 
+/* Desktop hover flip ONLY */
+@media (hover: hover) and (pointer: fine) {
+  .perspective:hover .flip-card {
+    transform: rotateY(180deg);
+  }
+}
+
 
 .font17 {
   font-size: 1.063rem;
