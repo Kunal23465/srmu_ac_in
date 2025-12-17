@@ -211,6 +211,7 @@
 
 import React, { useEffect, useState } from "react";
 import { advantageData } from "../../../data/admissions/overview/slider-data";
+import Classes from "../../../utils/styles/Global.module.css";
 
 const AdvantageSlider: React.FC = () => {
   const [index, setIndex] = useState(0);
@@ -252,9 +253,9 @@ const AdvantageSlider: React.FC = () => {
     <div className="flex space-x-3">
       <button
         onClick={prev}
-        className={`border border-white text-white cursor-pointer text-xl md:text-2xl 
-          w-10 h-10 md:w-14 md:h-14 flex items-center justify-center rounded-md transition
-          ${index === 0 ? "opacity-50 cursor-not-allowed" : "hover:bg-white hover:text-[#14457B]"}`}
+        className={`border-2 border-white text-white cursor-pointer text-2xl md:text-3xl 
+          w-10 h-10 md:w-14 md:h-14 flex items-center justify-center  transition-all duration-500
+          ${index === 0 ? "opacity-50 cursor-not-allowed" : "hover:bg-[#ffb703] "}`}
         disabled={index === 0}
       >
         ‹
@@ -262,9 +263,9 @@ const AdvantageSlider: React.FC = () => {
 
       <button
         onClick={next}
-        className={`border border-white text-white cursor-pointer text-xl md:text-2xl 
-          w-10 h-10 md:w-14 md:h-14 flex items-center justify-center rounded-md transition
-          ${index >= maxIndex ? "opacity-50 cursor-not-allowed" : "hover:bg-white hover:text-[#14457B]"}`}
+        className={`border-2 border-white text-white cursor-pointer text-2xl md:text-3xl 
+          w-10 h-10 md:w-14 md:h-14 flex items-center justify-center transition-all duration-500
+          ${index >= maxIndex ? "opacity-50 cursor-not-allowed" : "hover:bg-[#ffb703]"}`}
         disabled={index >= maxIndex}
       >
         › 
@@ -277,7 +278,7 @@ const AdvantageSlider: React.FC = () => {
 
   return (
     <div className="w-full color_background_blue text-white py-12 md:py-16 px-4 md:px-6">
-      <div className="max-w-7xl mx-auto">
+        <div className={`${Classes["container"]}`}>
         {/* Heading + Buttons */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 md:mb-12 gap-4">
           <div className="max-w-4xl">

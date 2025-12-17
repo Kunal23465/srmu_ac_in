@@ -84,7 +84,7 @@ const KeyHighlightsSection: React.FC<CustomFacilitiesTypes> = ({ facilities, lay
           <Slider ref={sliderRef} {...settings}>
             {facilities.map((facility, index) => (
               <div key={index} className="px-3 h-full sm:h-[600px] md:h-[650px] lg:h-[600px]">
-                <div className="bg-white rounded-2xl hover:border-2 hover:border-[#0f4a85] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 h-full flex flex-col">
+                <div className="bg-white rounded-2xl hover:border-2 hover:border-[#0f4a85] overflow-hidden h-full flex flex-col">
                   <img
                     src={facility.imageUrl}
                     alt={facility.title}
@@ -102,9 +102,9 @@ const KeyHighlightsSection: React.FC<CustomFacilitiesTypes> = ({ facilities, lay
                       href={facility.pdfUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-3 bg-[#0f4a85] text-white font-medium uppercase py-3 px-6 rounded-lg hover:bg-[#0d3d70] transition w-fit group"
+                      className="inline-flex items-center gap-3 bg-[#0f4a85] text-white hover:text-[#0f4a85] font-medium uppercase py-3 px-6 rounded-lg hover:bg-white hover:border-2 hover:border-[#ffb703] transition-all duration-500 w-fit group"
                     >
-                      <span className="bg-white p-2 rounded group-hover:bg-[#ffb703] transition">
+                      <span className="bg-white p-2 rounded group-hover:bg-[#ffb703] transition-all duration-500">
                         <PdfSvgIcon />
                       </span>
                       Download PDF
