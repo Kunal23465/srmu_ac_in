@@ -1859,7 +1859,7 @@ section .card-color img {
     transform: scale(1.08);
   }
 
-  /* max zoom */
+  /* max zoom */ 
   100% {
     transform: scale(1);
   }
@@ -1887,4 +1887,4 @@ section .card-color img {
     margin-bottom: 10px;
   }
 }
-}
+
