@@ -2,10 +2,12 @@ import { uiReducer } from "../ui/ui-slice";
 import programFinderReducer from "../program-finder/programFinder-slice";
 import { programTypeReducer } from "../program-finder/program-type/programType-slice";
 import { disciplineSliceReducer } from "../program-finder/discipline/discipline-slice";
+import { noticeSliceReducer } from "../notice/noticeSlice";
 const allReducer = {
   ui: uiReducer,
   getProgramFinder: programFinderReducer,
   getProgramType: programTypeReducer,
-  getDiscipline: disciplineSliceReducer
+  getDiscipline: disciplineSliceReducer,
+  getNotice: noticeSliceReducer
 };
 export default allReducer;

@@ -5,7 +5,7 @@ const NoticePage: React.FC = () => {
 
   return (
     <>
-<Notice/>
+      <Notice />
     </>
   )
 }
