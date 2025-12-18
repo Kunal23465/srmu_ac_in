@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { MdClose } from "react-icons/md";
 
 interface IqacCardProps {
@@ -53,6 +53,21 @@ export const CustomModal: React.FC<propsModal> = ({ isExpanded, id, setIsExpande
 
 const CustomIqacCard: React.FC<IqacCardProps> = ({ title, icon, description, colorCode, index, length, content, mode }) => {
     const [isExpanded, setIsExpanded] = useState<number | null>(null);
+    const [active , setActive] = useState<boolean>(false);
+
+useEffect(() => {
+    // Detect mobile once
+    if (window.innerWidth <= 600) {
+        setActive(false); // start closed
+    }
+}, []);
+
+const handleMobileToggle = () => {
+    if (window.innerWidth <= 600) {
+        setActive(prev => !prev);
+    }
+};
+
 
     // Function to truncate the description to 30 words
     const truncateDescription = (text: string, wordLimit: number) => {
@@ -83,7 +98,17 @@ const CustomIqacCard: React.FC<IqacCardProps> = ({ title, icon, description, col
                 </div>
 
                 {/* Hover Content */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 bg-white bg-opacity-100 transition-opacity duration-300 shadow-2xl  z-1 -m-5 mb-0 rounded-t-2xl after:rounded-b-2xl   after:h-5 after:w-full after:bg-[#ffb703] after:content-[''] after:absolute after:-bottom-5 after:left-0 after:right-0 ">
+<div
+    aria-pressed={active}
+    onClick={handleMobileToggle}
+    className="absolute inset-0 flex flex-col items-center justify-center opacity-0 
+               aria-pressed:opacity-100 group-hover:opacity-100 
+               bg-white bg-opacity-100 transition-opacity duration-300 shadow-2xl z-1 
+               -m-5 mb-0 rounded-t-2xl
+               after:rounded-b-2xl after:h-5 after:w-full after:bg-[#ffb703]
+               after:content-[''] after:absolute after:-bottom-5 after:left-0 after:right-0"
+>
+
                     <h3 className="font-semibold text-[#ffb703] text-xl text-center">{title}</h3>
 
                     {/* Description Section */}

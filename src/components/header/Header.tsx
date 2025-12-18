@@ -6,6 +6,9 @@ import hamburger from "../../assets/images/home/menu-icon.png"
 import { MdClose, MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { Link, useLocation } from "react-router-dom";
 import { HeaderData } from "./HeaderData";
+import { AppDispatch, RootState } from "../../store";
+import { fetchProgramMenu, NavbarProgramType } from "../../store/header/programMenuThunk";
+import { useDispatch, useSelector } from "react-redux";
 
 const Header = () => {
   const location = useLocation();
@@ -14,7 +17,14 @@ const Header = () => {
   const [sideMenu, setSideMenu] = useState(false);
   const [subMenu, setSubMenu] = useState<number | null>(null);
   const [isActive, setIsActive] = useState(false);
+  // const [programMenu, setProgramMenu] = useState<NavbarProgramType[]>([]);
+  const dispatch = useDispatch<AppDispatch>();
+  const { data:programMenu, loading } = useSelector((state: RootState) => state.programMenu);
+const slugify = (str: string) => str.toLowerCase().trim().replace(/\s+/g, "-");
 
+  useEffect(() => {
+    dispatch(fetchProgramMenu());
+  }, [dispatch]);
   useEffect(() => {
     const handleScroll = () => {
       setIsActive(window.scrollY > 35);
@@ -58,17 +68,15 @@ const Header = () => {
                     const isMega = data?.isMegaMenu === true;
 
                     return (
-                      <div key={index} className="relative px-[15px] py-4 group text-[15px] uppercase cursor-pointer">
-                        <div className={`flex items-center text-white hover:text-[#ffb703] ${location.pathname === data.path ? "active" : ""}`}>
-                          {data.item}
-                        </div>
+                      <div key={index} className="relative px-[15px] py-4 group text-[15px]  cursor-pointer">
+                        <div className={`flex items-center text-white hover:text-[#ffb703] uppercase ${location.pathname === data.path ? "active" : ""}`}>{data.item}</div>
 
                         {/* NORMAL DROPDOWN */}
                         {!isMega && data?.subItem && (
                           <div className="absolute top-[60px] right-0 bg-white rounded-md shadow-md">
                             <span className="hidden group-hover:block manage-top-arrow"></span>
 
-                            <ul className="transition-all w-full min-w-[290px] duration-300 max-h-0 group-hover:max-h-[500px] overflow-hidden rounded-md ">
+                            <ul className="transition-all  w-full min-w-[290px] duration-300 max-h-0 group-hover:max-h-[500px] overflow-hidden rounded-md ">
                               {data.subItem.map((value, i) => (
                                 <Link key={i} to={value.path} className={`block text-sm px-3 py-3 hover:text-[#ffb703] ${i !== 0 && "border-t border-gray-200"}`}>
                                   {value.item}
@@ -79,7 +87,7 @@ const Header = () => {
                         )}
 
                         {/* MEGA MENU */}
-                        {isMega && data?.megaMenu && (
+                        {/* {isMega && data?.megaMenu && (
                           <div
                             className="
                             fixed left-1/2 -translate-x-1/2
@@ -109,6 +117,75 @@ const Header = () => {
                                         </ul>
                                       </div>
                                     ))}
+                                  </div>
+                                );
+                              })}
+                            </div>
+                          </div>
+                        )} */}
+                        {isMega && (
+                          <div
+                            className="
+    fixed left-1/2 -translate-x-1/2
+    top-[120px] bg-white rounded-md
+    hidden group-hover:flex
+    border-t-4 border-t-yellow-500
+    border-b-4 border-b-blue-500
+    w-[95vw] px-10 py-6 gap-9 z-[9999]"
+                          >
+                            <div className="grid grid-cols-4 gap-6 w-full">
+                              {programMenu.map((type) => {
+                                const programTypeSlug = slugify(type.programTypeName);
+
+                                return (
+                                  <div key={type.programTypeId}>
+                                    {/* BLUE HEADING */}
+                                    <h3 className="font-medium text-base p-3 rounded-lg text-[#0f4a85]">
+                                      <Link
+                                        to={`/programs/${programTypeSlug}`}
+                                        state={{
+                                          programTypeId: type.programTypeId,
+                                        }}
+                                        className=""
+                                      >
+                                        {type.programTypeName}
+                                      </Link>
+                                    </h3>
+
+                                    <ul className="mt-2 px-3 space-y-2 list-none!">
+                                      {/* CASE 1: programs exist */}
+                                      {type.programs.length > 0 &&
+                                        type.programs.map((prog) => (
+                                          <li key={prog.programId}>
+                                            <Link
+                                              to={`/programs/${programTypeSlug}/${slugify(prog.programName)}`}
+                                              state={{
+                                                programTypeId: type.programTypeId,
+                                              }}
+                                              className="text-sm text-gray-700 hover:text-[#ffb703]"
+                                            >
+                                              {prog.programName}
+                                            </Link>
+                                          </li>
+                                        ))}
+
+                                      {/* CASE 2: disciplines */}
+                                      {type.programs.length === 0 &&
+                                        type.disciplines.map((disc) => (
+                                          <li key={disc.disciplineId}>
+                                            <Link
+                                              to={`/programs/${programTypeSlug}/${slugify(disc.disciplineName)}`}
+                                              state={{
+                                                programTypeId: type.programTypeId,
+                                                disciplineId: disc.disciplineId,
+                                              }}
+                                              className="text-sm text-gray-700 hover:text-[#ffb703]"
+                                            >
+                                              {disc.disciplineName}
+                                            </Link>
+                                          </li>
+                                        ))}
+                                    </ul>
                                   </div>
                                 );
                               })}

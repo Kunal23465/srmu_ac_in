@@ -1,5 +1,6 @@
 import { CustomTopFooterData1 } from "../../data/about/leadership-and-governance/leadership-and-governance-data";
 import CustomTopFooter from "./CustomTopFooter";
+import Classes from "../../utils/styles/Global.module.css";
 
 export default function CustomCommitteeDetailsPage({ committee }: { committee: any }) {
 
@@ -29,8 +30,8 @@ export default function CustomCommitteeDetailsPage({ committee }: { committee: a
   }
 
   return (
-    <section className="py-12 bg-white">
-      <div className="container mx-auto px-4 max-w-6xl">
+    <section className="pt-12 bg-white">
+      <div className={`${Classes["container"]}`}>
         <h1 className="text-3xl sm:text-4xl font-medium text-[#1a3c6b] mb-8 pb-2 inline-block">
           {committee.title}
         </h1>
