@@ -283,42 +283,40 @@ export const routes = [
         element: <RootPrograms />,
         children: [
           {
-            path: "after-class-10th",
-            element: <AfterClass10thPage />,
-            children: [
-              {
-                path: ":pathname",
-                element: <AfterClass10thInnerPage />,
-              },
-            ],
+            path: ":programType",
+            element: <ProgramFinderPage />,
+          },
+          {
+            path: ":programType/:item",
+            element: <ProgramFinderPage />,
           },
 
-          {
-            path: "after-polytechnic",
-            element: <AfterPolytechnicPage />,
-          },
-          {
-            path: "after-class-12th",
-            element: <AfterClass12thPage />,
-          },
-          {
-            path: "industry-honors",
-            element: <IndustryHonorsPage />,
-            children: [
-              {
-                path: ":pathname",
-                element: <BtechInCSEAIAndML />,
-              },
-            ],
-          },
-          {
-            path: "after-graduation",
-            element: <AfterGraduationPage />,
-          },
-          {
-            path: "after-post-graduation",
-            element: <AfterPostGraduationPage />,
-          },
+          // {
+          //   path: "after-polytechnic",
+          //   element: <AfterPolytechnicPage />,
+          // },
+          // {
+          //   path: "after-class-12th",
+          //   element: <AfterClass12thPage />,
+          // },
+          // {
+          //   path: "industry-honors",
+          //   element: <IndustryHonorsPage />,
+          //   children: [
+          //     {
+          //       path: ":pathname",
+          //       element: <BtechInCSEAIAndML />,
+          //     },
+          //   ],
+          // },
+          // {
+          //   path: "after-graduation",
+          //   element: <AfterGraduationPage />,
+          // },
+          // {
+          //   path: "after-post-graduation",
+          //   element: <AfterPostGraduationPage />,
+          // },
 
           // {
           //   path: `b-tech-cse-artificial-intelligence-machine-learning:pathName`,
