@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Classes from "../../utils/styles/Global.module.css";
 import TopHeader from "./TopHeader";
-import hamburger from "../../assets/images/home/menu-icon.png"
+import hamburger from "../../assets/images/home/menu-icon.png";
 
 import { MdClose, MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { Link, useLocation } from "react-router-dom";
@@ -13,14 +13,14 @@ import { useDispatch, useSelector } from "react-redux";
 const Header = () => {
   const location = useLocation();
   const { bottomHeaderData } = HeaderData[0];
-
+  const columnGroups = [["After Class 10th", "After Polytechnic"], ["After Class 12th"], ["Industry Honors Programs"], ["After Graduation", "After Post Graduation"]];
   const [sideMenu, setSideMenu] = useState(false);
   const [subMenu, setSubMenu] = useState<number | null>(null);
   const [isActive, setIsActive] = useState(false);
   // const [programMenu, setProgramMenu] = useState<NavbarProgramType[]>([]);
   const dispatch = useDispatch<AppDispatch>();
-  const { data:programMenu, loading } = useSelector((state: RootState) => state.programMenu);
-const slugify = (str: string) => str.toLowerCase().trim().replace(/\s+/g, "-");
+  const { data: programMenu, loading } = useSelector((state: RootState) => state.programMenu);
+  const slugify = (str: string) => str.toLowerCase().trim().replace(/\s+/g, "-");
 
   useEffect(() => {
     dispatch(fetchProgramMenu());
@@ -45,7 +45,7 @@ const slugify = (str: string) => str.toLowerCase().trim().replace(/\s+/g, "-");
 
   return (
     <div>
-<header className="fixed top-0 left-0 w-full z-[999]  transition-all duration-500">
+      <header className="fixed top-0 left-0 w-full z-[999]  transition-all duration-500">
         <TopHeader />
 
         <div className={`py-2 items-stretch header ${isActive ? "bg-[#0e2f46] active" : ""}`}>
@@ -133,62 +133,61 @@ const slugify = (str: string) => str.toLowerCase().trim().replace(/\s+/g, "-");
     border-b-4 border-b-blue-500
     w-[95vw] px-10 py-6 gap-9 z-[9999]"
                           >
+                            <span className="hidden group-hover:block manage-top-arrow big"></span>
                             <div className="grid grid-cols-4 gap-6 w-full">
-                              {programMenu.map((type) => {
-                                const programTypeSlug = slugify(type.programTypeName);
+                              {columnGroups.map((group, colIndex) => (
+                                <div key={colIndex} className="space-y-6">
+                                  {programMenu
+                                    .filter((type) => group.includes(type.programTypeName))
+                                    .map((type) => {
+                                      const programTypeSlug = slugify(type.programTypeName);
 
-                                return (
-                                  <div key={type.programTypeId}>
-                                    {/* BLUE HEADING */}
-                                    <h3 className="font-medium text-base p-3 rounded-lg text-[#0f4a85]">
-                                      <Link
-                                        to={`/programs/${programTypeSlug}`}
-                                        state={{
-                                          programTypeId: type.programTypeId,
-                                        }}
-                                        className=""
-                                      >
-                                        {type.programTypeName}
-                                      </Link>
-                                    </h3>
-
-                                    <ul className="mt-2 px-3 space-y-2 list-none!">
-                                      {/* CASE 1: programs exist */}
-                                      {type.programs.length > 0 &&
-                                        type.programs.map((prog) => (
-                                          <li key={prog.programId}>
-                                            <Link
-                                              to={`/programs/${programTypeSlug}/${slugify(prog.programName)}`}
-                                              state={{
-                                                programTypeId: type.programTypeId,
-                                              }}
-                                              className="text-sm text-gray-700 hover:text-[#ffb703]"
-                                            >
-                                              {prog.programName}
+                                      return (
+                                        <div key={type.programTypeId}>
+                                          {/* BLUE HEADING */}
+                                          <h3 className="font-medium text-base p-3 rounded-lg inline-block hover:bg-[#ffb703] text-[#0f4a85] hover:text-black">
+                                            <Link to={`/programs/${programTypeSlug}`} state={{ programTypeId: type.programTypeId }}>
+                                              {type.programTypeName}
                                             </Link>
-                                          </li>
-                                        ))}
+                                          </h3>
 
-                                      {/* CASE 2: disciplines */}
-                                      {type.programs.length === 0 &&
-                                        type.disciplines.map((disc) => (
-                                          <li key={disc.disciplineId}>
-                                            <Link
-                                              to={`/programs/${programTypeSlug}/${slugify(disc.disciplineName)}`}
-                                              state={{
-                                                programTypeId: type.programTypeId,
-                                                disciplineId: disc.disciplineId,
-                                              }}
-                                              className="text-sm text-gray-700 hover:text-[#ffb703]"
-                                            >
-                                              {disc.disciplineName}
-                                            </Link>
-                                          </li>
-                                        ))}
-                                    </ul>
-                                  </div>
-                                );
-                              })}
+                                          <ul className="mt-2 px-3 space-y-2 list-none!">
+                                            {/* CASE 1: programs */}
+                                            {type.programs.length > 0 &&
+                                              type.programs.map((prog) => (
+                                                <li key={prog.programId}>
+                                                  <Link
+                                                    to={`/programs/${programTypeSlug}/${slugify(prog.programName)}`}
+                                                    state={{ programTypeId: type.programTypeId }}
+                                                    className="text-sm text-gray-700 hover:text-[#ffb703]"
+                                                  >
+                                                    {prog.programName}
+                                                  </Link>
+                                                </li>
+                                              ))}
+
+                                            {/* CASE 2: disciplines */}
+                                            {type.programs.length === 0 &&
+                                              type.disciplines.map((disc) => (
+                                                <li key={disc.disciplineId}>
+                                                  <Link
+                                                    to={`/programs/${programTypeSlug}/${slugify(disc.disciplineName)}`}
+                                                    state={{
+                                                      programTypeId: type.programTypeId,
+                                                      disciplineId: disc.disciplineId,
+                                                    }}
+                                                    className="text-sm text-gray-700 hover:text-[#ffb703]"
+                                                  >
+                                                    {disc.disciplineName}
+                                                  </Link>
+                                                </li>
+                                              ))}
+                                          </ul>
+                                        </div>
+                                      );
+                                    })}
+                                </div>
+                              ))}
                             </div>
                           </div>
                         )}
@@ -201,9 +200,9 @@ const slugify = (str: string) => str.toLowerCase().trim().replace(/\s+/g, "-");
               {/* HAMBURGER */}
               <div className="lg:hidden my-auto">
                 <img
-                  src={hamburger}  // replace with your actual path
+                  src={hamburger} // replace with your actual path
                   alt="Menu"
-                  className="cursor-pointer w-[30px] h-[21px]"  // size similar to size={20}
+                  className="cursor-pointer w-[30px] h-[21px]" // size similar to size={20}
                   onClick={() => setSideMenu(true)}
                 />
               </div>
