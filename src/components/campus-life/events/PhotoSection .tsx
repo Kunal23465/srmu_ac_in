@@ -1,4 +1,3 @@
-import Slider from "react-slick";
 import Fancybox from "./Fancybox";
 
 interface PhotoSectionProps {
@@ -7,19 +6,9 @@ interface PhotoSectionProps {
 
 export default function PhotoSection({ photos }: PhotoSectionProps) {
     const safePhotos = photos ?? [];
-
-    const settings = {
-        dots: true,
-        infinite: true, // ← infinite carousel
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-    };
-
     return (
         <div>
-            <div className="hidden md:block">
+            <div className="">
                 <Fancybox
                     options={{
                         Carousel: {
@@ -53,18 +42,7 @@ export default function PhotoSection({ photos }: PhotoSectionProps) {
                 </Fancybox>
             </div>
 
-            <div className="md:hidden wood-slider">
-                <Slider {...settings}>
-                    {safePhotos.slice(0, 9).map((img, index) => (
-                        <img
-                            key={index}
-                            className="w-full h-full object-cover rounded-md"
-                            src={img}
-                            alt="Gallery"
-                        />
-                    ))}
-                </Slider>
-            </div>
+            
         </div>
     );
 }

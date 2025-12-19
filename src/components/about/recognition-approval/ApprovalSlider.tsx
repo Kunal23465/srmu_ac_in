@@ -107,13 +107,14 @@
 
 import { useRef, useState } from "react";
 import Slider from "react-slick";
+import Classes from "../../../utils/styles/Global.module.css";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { approvalData } from "../../../data/about/recognition-approval/recognitionApprovalsData";
 
 export const PdfSvgIcon: React.FC = () => (
-  <svg viewBox="0 0 78.7 76.2" xmlns="http://www.w3.org/2000/svg" style={{ width: "30px", height: "30px" }}>
+  <svg viewBox="0 0 78.7 76.2" xmlns="http://www.w3.org/2000/svg" style={{ width: "25px", height: "25px" }}>
     <g>
       <path
         d="M63.6,43.8c-2.5,0-5.5,0.2-8.7,0.6L50.3,45l-3.8-4.7c-2.2-2.7-4.6-6-5.5-7.5l-1.4-2.4l1.7-6.4c2.2-8.4,2.4-15.1,0.4-18.9
@@ -159,8 +160,10 @@ const ApprovalsSlider = () => {
   return (
     <>
       <section className="bg-[#ffb703] pt-16 pb-[300px] relative overflow-visible">
-        <div className="max-w-7xl mx-auto px-4 relative">
+              <div className={`${Classes["container"]}`}>
+        <div className="px-4 md:px-0 relative">
           {/* Heading */}
+          <div className="flex flex-col md:flex-row">
           <div className="text-left mb-10">
             <h2 className="text-4xl font-bold text-black mb-4">Approvals</h2>
             <p className="text-black max-w-3xl">
@@ -169,7 +172,24 @@ const ApprovalsSlider = () => {
               recognition from Statutory Bodies wherever they are necessary or required.
             </p>
           </div>
+              <div className="flex gap-3 ml-0 md:ml-auto">
+              <button
+                onClick={() => sliderRef.current?.slickPrev()}
+                disabled={isAtStart}
+                className={`w-14 h-14 border border-black rounded-full flex items-center justify-center transition ${isAtStart ? "opacity-40 cursor-not-allowed" : " cursor-pointer"}`}
+              >
+                <BiChevronLeft size={22} />
+              </button>
 
+              <button
+                onClick={() => sliderRef.current?.slickNext()}
+                disabled={isAtEnd}
+                className={`w-14 h-14 border border-black rounded-full flex items-center justify-center transition ${isAtEnd ? "opacity-40 cursor-not-allowed" : " cursor-pointer"}`}
+              >
+                <BiChevronRight size={22} />
+              </button>
+            </div>
+</div>
           {/* Slider container */}
           <div className="relative">
             {/* Slider box that overlaps */}
@@ -205,25 +225,9 @@ const ApprovalsSlider = () => {
             </div>
 
             {/* Navigation Buttons */}
-            <div className="absolute top-[-175px] right-4 flex gap-3">
-              <button
-                onClick={() => sliderRef.current?.slickPrev()}
-                disabled={isAtStart}
-                className={`w-14 h-14 border border-black rounded-full flex items-center justify-center transition ${isAtStart ? "opacity-40 cursor-not-allowed" : " cursor-pointer"}`}
-              >
-                <BiChevronLeft size={22} />
-              </button>
 
-              <button
-                onClick={() => sliderRef.current?.slickNext()}
-                disabled={isAtEnd}
-                className={`w-14 h-14 border border-black rounded-full flex items-center justify-center transition ${isAtEnd ? "opacity-40 cursor-not-allowed" : " cursor-pointer"}`}
-              >
-                <BiChevronRight size={22} />
-              </button>
-            </div>
           </div>
-        </div>
+        </div></div>
       </section>
       <div className="h-[160px] mt-10 "></div>
     </>

@@ -47,8 +47,8 @@ const DepartmentDetailPage: React.FC = () => {
       {/* program and fee section  */}
       <div className={`${Classes["container"]} my-20`}>
         <div className="flex w-full justify-center flex-col items-center">
-          <h1 className="leading-[1.2] font-medium text-[3.125rem] mb-3">Programs and Fees</h1>
-          <p className="text-center text-[15px] mb-[45px]">
+          <h1 className="leading-[1.2] font-medium text-3xl md:text-[3.125rem] mb-3">Programs and Fees</h1>
+          <p className="text-center text-sm md:text-[15px] mb-[45px]">
             At SRMU we have always believed that a student SHOULD BE TRAINED FOR INDUSTRY, BY THE INDUSTRY. Keeping the culture of rich academia-industry interface, university is
             now offering specialized programs in different academic domains.
           </p>
@@ -81,7 +81,7 @@ const DepartmentDetailPage: React.FC = () => {
       </div>
       <div className="pt-15 bg-[#ecf0f9]">
         <div className={`${Classes["container"]}`}>
-          <h1 className="text-5xl pb-5 font-medium">Placed Students</h1>
+          <h1 className="text-3xl md:text-5xl pb-5 font-medium">Placed Students</h1>
           <p>
             With 2000+ Job Offers given by 250+ Top corporates, an average package of 4.5 LPA and 100%* placement record in different professional programs, SRMU provides the best
             return on investment. More than 30% students have multiple job offers.

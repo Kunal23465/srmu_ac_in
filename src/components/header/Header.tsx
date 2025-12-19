@@ -1,20 +1,32 @@
 import { useEffect, useState } from "react";
 import Classes from "../../utils/styles/Global.module.css";
 import TopHeader from "./TopHeader";
+import hamburger from "../../assets/images/home/menu-icon.png";
 
-import { GiHamburgerMenu } from "react-icons/gi";
 import { MdClose, MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { Link, useLocation } from "react-router-dom";
 import { HeaderData } from "./HeaderData";
+import { AppDispatch, RootState } from "../../store";
+// @ts-ignore
+import { fetchProgramMenu, NavbarProgramType } from "../../store/header/programMenuThunk";
+import { useDispatch, useSelector } from "react-redux";
 
 const Header = () => {
   const location = useLocation();
   const { bottomHeaderData } = HeaderData[0];
-
+  const columnGroups = [["After Class 10th", "After Polytechnic"], ["After Class 12th"], ["Industry Honors Programs"], ["After Graduation", "After Post Graduation"]];
   const [sideMenu, setSideMenu] = useState(false);
   const [subMenu, setSubMenu] = useState<number | null>(null);
   const [isActive, setIsActive] = useState(false);
+  // const [programMenu, setProgramMenu] = useState<NavbarProgramType[]>([]);
+  const dispatch = useDispatch<AppDispatch>();
+  // @ts-ignore
+  const { data: programMenu, loading } = useSelector((state: RootState) => state.programMenu);
+  const slugify = (str: string) => str.toLowerCase().trim().replace(/\s+/g, "-");
 
+  useEffect(() => {
+    dispatch(fetchProgramMenu());
+  }, [dispatch]);
   useEffect(() => {
     const handleScroll = () => {
       setIsActive(window.scrollY > 35);
@@ -35,7 +47,7 @@ const Header = () => {
 
   return (
     <div>
-      <header className="fixed top-0 left-0 w-full transition-all duration-500 z-[999]">
+      <header className="fixed top-0 left-0 w-full z-[999]  transition-all duration-500">
         <TopHeader />
 
         <div className={`py-2 items-stretch header ${isActive ? "bg-[#0e2f46] active" : ""}`}>
@@ -47,7 +59,7 @@ const Header = () => {
 
                 <h2 className={`font-bold lg:text-[1rem] xl:text-[1.4rem] text-white`}>
                   SHRI RAMSWAROOP
-                  <div className="text-[0.5rem] font-semibold">MEMORIAL COLLEGE OF ENGINEERING & MANAGEMENT</div>
+                  <div className="font-semibold leading-3 text-[0.8rem] sm:text-[0.5rem] lg:text-[0.9rem] xl:text-[1.2rem]">MEMORIAL UNIVERSITY</div>
                 </h2>
               </Link>
 
@@ -58,17 +70,15 @@ const Header = () => {
                     const isMega = data?.isMegaMenu === true;
 
                     return (
-                      <div key={index} className="relative px-[15px] py-4 group text-[15px] uppercase cursor-pointer">
-                        <div  className={`flex items-center text-white hover:text-[#ffb703] ${location.pathname === data.path ? "active" : ""}`}>
-                          {data.item}
-                        </div>
+                      <div key={index} className="relative px-[15px] py-4 group text-[15px]  cursor-pointer">
+                        <div className={`flex items-center text-white hover:text-[#ffb703] uppercase ${location.pathname === data.path ? "active" : ""}`}>{data.item}</div>
 
                         {/* NORMAL DROPDOWN */}
                         {!isMega && data?.subItem && (
                           <div className="absolute top-[60px] right-0 bg-white rounded-md shadow-md">
                             <span className="hidden group-hover:block manage-top-arrow"></span>
 
-                            <ul className="transition-all w-full min-w-[290px] duration-300 max-h-0 group-hover:max-h-[500px] overflow-hidden rounded-md ">
+                            <ul className="transition-all  w-full min-w-[290px] duration-300 max-h-0 group-hover:max-h-[500px] overflow-hidden rounded-md ">
                               {data.subItem.map((value, i) => (
                                 <Link key={i} to={value.path} className={`block text-sm px-3 py-3 hover:text-[#ffb703] ${i !== 0 && "border-t border-gray-200"}`}>
                                   {value.item}
@@ -79,7 +89,7 @@ const Header = () => {
                         )}
 
                         {/* MEGA MENU */}
-                        {isMega && data?.megaMenu && (
+                        {/* {isMega && data?.megaMenu && (
                           <div
                             className="
                             fixed left-1/2 -translate-x-1/2
@@ -114,6 +124,74 @@ const Header = () => {
                               })}
                             </div>
                           </div>
+                        )} */}
+                        {isMega && (
+                          <div
+                            className="
+    fixed left-1/2 -translate-x-1/2
+    top-[120px] bg-white rounded-md
+    hidden group-hover:flex
+    border-t-4 border-t-yellow-500
+    border-b-4 border-b-blue-500
+    w-[95vw] px-10 py-6 gap-9 z-[9999]"
+                          >
+                            <span className="hidden group-hover:block manage-top-arrow big"></span>
+                            <div className="grid grid-cols-4 gap-6 w-full">
+                              {columnGroups.map((group, colIndex) => (
+                                <div key={colIndex} className="space-y-6">
+                                  {programMenu
+                                    .filter((type) => group.includes(type.programTypeName))
+                                    .map((type) => {
+                                      const programTypeSlug = slugify(type.programTypeName);
+
+                                      return (
+                                        <div key={type.programTypeId}>
+                                          {/* BLUE HEADING */}
+                                          <h3 className="font-medium text-base p-3 rounded-lg inline-block hover:bg-[#ffb703] text-[#0f4a85] hover:text-black">
+                                            <Link to={`/programs/${programTypeSlug}`} state={{ programTypeId: type.programTypeId }}>
+                                              {type.programTypeName}
+                                            </Link>
+                                          </h3>
+
+                                          <ul className="mt-2 px-3 space-y-2 list-none!">
+                                            {/* CASE 1: programs */}
+                                            {type.programs.length > 0 &&
+                                              type.programs.map((prog) => (
+                                                <li key={prog.programId}>
+                                                  <Link
+                                                    to={`/programs/${programTypeSlug}/${slugify(prog.programName)}`}
+                                                    state={{ programTypeId: type.programTypeId }}
+                                                    className="text-sm text-gray-700 hover:text-[#ffb703]"
+                                                  >
+                                                    {prog.programName}
+                                                  </Link>
+                                                </li>
+                                              ))}
+
+                                            {/* CASE 2: disciplines */}
+                                            {type.programs.length === 0 &&
+                                              type.disciplines.map((disc) => (
+                                                <li key={disc.disciplineId}>
+                                                  <Link
+                                                    to={`/programs/${programTypeSlug}/${slugify(disc.disciplineName)}`}
+                                                    state={{
+                                                      programTypeId: type.programTypeId,
+                                                      disciplineId: disc.disciplineId,
+                                                    }}
+                                                    className="text-sm text-gray-700 hover:text-[#ffb703]"
+                                                  >
+                                                    {disc.disciplineName}
+                                                  </Link>
+                                                </li>
+                                              ))}
+                                          </ul>
+                                        </div>
+                                      );
+                                    })}
+                                </div>
+                              ))}
+                            </div>
+                          </div>
                         )}
                       </div>
                     );
@@ -123,7 +201,12 @@ const Header = () => {
 
               {/* HAMBURGER */}
               <div className="lg:hidden my-auto">
-                <GiHamburgerMenu size={20} className="cursor-pointer text-white" onClick={() => setSideMenu(true)} />
+                <img
+                  src={hamburger} // replace with your actual path
+                  alt="Menu"
+                  className="cursor-pointer w-[30px] h-[21px]" // size similar to size={20}
+                  onClick={() => setSideMenu(true)}
+                />
               </div>
             </div>
           </div>
@@ -151,8 +234,8 @@ const Header = () => {
                     </Link>
 
                     {(data.subItem || isMega) && (
-                      <button onClick={() => setSubMenu(subMenu === data.id ? null : data.id)}>
-                        <MdOutlineKeyboardArrowDown size={22} className={`transition-all ${subMenu === data.id ? "rotate-180" : ""}`} />
+                      <button onClick={() => setSubMenu(subMenu === data.id ? null : data.id)} className="border-[1px] border-[#0000002e] px-[2px] py-[3px]">
+                        <MdOutlineKeyboardArrowDown size={25} className={`transition-all bg-[#00000008] text-[#616161]  ${subMenu === data.id ? "rotate-180" : ""}`} />
                       </button>
                     )}
                   </div>
@@ -168,10 +251,10 @@ const Header = () => {
                           <a
                             key={i}
                             href={value.path}
-                            className={`block px-5 py-3 hover:text-[#ffb703] ${i !== 0 && "border-t border-gray-200"}`}
+                            className={`block px-5 py-3 bg-[#00000036] hover:text-[#ffb703] ${i !== 0 && "border-t border-gray-200"}`}
                             onClick={(e) => {
                               e.preventDefault();
-                              window.open(value.path, "_blank");
+                              window.open(value.path, "_self");
                               setSideMenu(false);
                             }}
                           >
@@ -184,16 +267,16 @@ const Header = () => {
                         data.megaMenu?.map((ele) => {
                           return ele.column.map((section, secIdx) => (
                             <div key={secIdx}>
-                              <p className="font-semibold px-5 py-2 text-[#0e2f46] border-b border-gray-200">{section.heading}</p>
+                              <p className="font-semibold px-5 py-2 text-[#0e2f46]  border-b border-gray-200">{section.heading}</p>
 
                               {section.item.map((sub, subIdx) => (
                                 <a
                                   key={subIdx}
                                   href={sub.path}
-                                  className={`block px-5 py-2 text-gray-700 hover:text-[#ffb703]  border-b border-gray-200`}
+                                  className={`block px-5 py-2 text-gray-700   hover:text-[#ffb703]  border-b border-gray-200`}
                                   onClick={(e) => {
                                     e.preventDefault();
-                                    window.open(sub.path, "_blank");
+                                    window.open(sub.path, "_self");
                                     setSideMenu(false);
                                   }}
                                 >

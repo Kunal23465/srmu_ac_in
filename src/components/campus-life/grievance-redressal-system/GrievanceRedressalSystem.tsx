@@ -54,15 +54,15 @@ const GrievanceRedressalSystem: React.FC = () => {
       <ProcessFlowCall />
       <ProcessFlowStudent />
       <div className="bg-[#f1f1f1] py-20">
-        <div className={`${Classes["container"]} flex flex-col md:flex-row items-center justify-center gap-6`}>
+        <div className={`${Classes["container"]} `}>
+         <div className="flex flex-col md:flex-row items-center justify-center gap-6">
           {/* LEFT CARD */}
           <div>
-            {" "}
-            <a
+                   <a
               href="#"
               className="
         block rounded-[10px] bg-white shadow-[0_4px_16px_rgba(0,0,0,0.16)]
-        px-8 py-16 w-[385px] h-[186px] text-center text-[20px] font-semibold leading-snug
+        px-8 py-16 w-[300px] sm:w-[340px] xl:w-[385px] h-[186px] text-center text-[20px] font-semibold leading-snug
         border-t-[5px] border-b-[5px] 
         border-t-[#0f4a85] 
         border-b-[#ffb703]
@@ -79,7 +79,7 @@ const GrievanceRedressalSystem: React.FC = () => {
               href="#"
               className="
         block rounded-[10px] bg-white shadow-[0_4px_16px_rgba(0,0,0,0.16)]
-        px-8 py-16 w-[385px] h-[186px] text-center text-[20px] font-semibold leading-snug
+        px-8 py-16 w-[300px] sm:w-[340px] xl:w-[385px] h-[186px] text-center text-[20px] font-semibold leading-snug
         border-t-[5px] border-b-[5px]
         border-t-[#0f4a85]
         border-b-[#ffb703]
@@ -88,7 +88,7 @@ const GrievanceRedressalSystem: React.FC = () => {
             >
               Click Here To <br /> Login
             </a>
-          </div>
+          </div></div>
         </div>
       </div>
 

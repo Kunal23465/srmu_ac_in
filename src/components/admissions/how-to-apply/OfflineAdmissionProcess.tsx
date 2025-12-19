@@ -489,7 +489,7 @@ const OfflineAdmissionProcess:React.FC = () => {
                         x="0px"
                         y="0px"
                         viewBox="0 0 1390.4 595.6"
-                        // @ts-expect-error
+                        // @ts-ignore
                         style={{ enableBackground: 'new 0 0 1390.4 595.6' }}
                         xmlSpace="preserve"
                     >

@@ -61,9 +61,9 @@ const settings = {
       <div className="max-w-7xl mx-auto">
 
         {/* HEADER + BUTTONS */}
-        <div className="flex justify-between items-start mb-12">
+        <div className="flex flex-col md:flex-row justify-between items-start mb-12">
           <div className="max-w-5xl">
-            <h1 className="text-5xl md:text-5xl font-bold">
+            <h1 className="text-3xl md:text-5xl font-bold">
               Career Counselling and Guidance
             </h1>
 

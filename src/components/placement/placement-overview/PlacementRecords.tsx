@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import Classes from "../../../utils/styles/Global.module.css";
 import Slider from "react-slick";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { FaLongArrowAltRight } from "react-icons/fa";
@@ -35,6 +36,7 @@ const PlacementRecords: React.FC = () => {
     return 1; // xs
   };
 
+  // @ts-ignore
   // Function to determine if centerMode should be enabled
   // @ts-ignore
   const shouldCenterMode = () => {
@@ -51,10 +53,12 @@ const PlacementRecords: React.FC = () => {
     dots: false,
     infinite: false,
     speed: 600,
-    slidesToShow: 5,
+    slidesToShow: getSlidesToShow(),
     slidesToScroll: 1,
+  centerMode: false, // Changed from shouldCenterMode() to false
+    centerPadding: "0px",
+    arrows: shouldShowArrows(),
     beforeChange: (_: number, next: number) => setCurrentSlide(next),
-    key: windowWidth, // Add key to force re-render on window resize
 
     responsive: [
       {
@@ -71,20 +75,26 @@ const PlacementRecords: React.FC = () => {
         settings: {
           slidesToShow: 4,
           slidesToScroll: 1,
+          centerMode: false,
+          arrows: true,
         },
       },
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 4,
           slidesToScroll: 1,
+          centerMode: false,
+          arrows: true,
         },
       },
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 3,
           slidesToScroll: 1,
+         centerMode: false, // Turn off centerMode
+          arrows: true,
         },
       },
       {
@@ -105,7 +115,7 @@ const PlacementRecords: React.FC = () => {
 
   return (
     <div className="relative placement-record-bg w-full text-white py-24">
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
+      <div className={`${Classes["container"]}`}>
         {/* HEADER + TABS */}
         <div className="block md:flex justify-between items-center">
           <h2 className="text-3xl md:text-5xl font-medium mb-2">Placement Records</h2>
@@ -119,7 +129,7 @@ const PlacementRecords: React.FC = () => {
                   setCurrentSlide(0);
                   sliderRef.current?.slickGoTo(0);
                 }}
-                className={`px-10 md:px-15 py-2 md:py-3 text-sm md:text-lg font-medium text-black transition ${activeYear === year ? "bg-[#ffb703]" : "hover:bg-[#ffb703]"}`}
+                className={`px-5 sm:px-10 xl:px-15 py-3 text-sm md:text-[18px] font-medium text-black transition ${activeYear === year ? "bg-[#ffb703]" : "hover:bg-[#ffb703]"}`}
               >
                 {year}
               </button>
@@ -128,88 +138,59 @@ const PlacementRecords: React.FC = () => {
         </div>
 
         {/* SUBTEXT */}
-        <p className="text-white mb-5 max-w-2xl">Outstanding placement records showcase our commitment to student success and industry relevance</p>
+        <p className="text-white mb-5 text-sm max-w-xl">Outstanding placement records showcase our commitment to student success and industry relevance</p>
 
         {/* BUTTONS */}
         <div className="flex gap-5 mb-6">
           <button
             onClick={() => sliderRef.current?.slickPrev()}
             disabled={isPrevDisabled}
-            className={`p-3 border-2 border-white transition ${isPrevDisabled ? "opacity-40 cursor-not-allowed" : "hover:bg-white/20"}`}
+            className={`p-2 border-2 border-white transition ${isPrevDisabled ? "opacity-40 cursor-not-allowed" : "hover:bg-[#ffb703]"}`}
           >
-            <ChevronLeft size={26} />
+            <ChevronLeft size={25} />
           </button>
 
           <button
             onClick={() => sliderRef.current?.slickNext()}
             disabled={isNextDisabled}
-            className={`p-3 border-2 border-white transition ${isNextDisabled ? "opacity-40 cursor-not-allowed" : "hover:bg-white/20"}`}
+            className={`p-2 border-2 border-white  transition ${isNextDisabled ? "opacity-40 cursor-not-allowed" : "hover:bg-[#ffb703]"}`}
           >
-            <ChevronRight size={26} />
+            <ChevronRight size={25} />
           </button>
         </div>
 
         {/* SLIDER */}
-  <Slider ref={sliderRef} {...settings}>
-  {students.map((stu) => (
-    <div key={stu.id} className="px-2">
-      <div
-        className="
-          min-w-[200px] rounded-xl border border-white py-6 px-4 min-h-[310px] text-center 
-          transition-all duration-300
-          bg-transparent group
-          hover:bg-white hover:border-gray-300 hover:shadow-xl
-          hover:scale-[1.03] 
-          hover:text-black
-        "
-      >
-        <div className="min-h-[170px]">
-          <img
-            src={stu.image}
-            alt={stu.name}
-            className="w-20 h-20 rounded-full mx-auto mb-3 object-cover"
-          />
+        <Slider ref={sliderRef} {...settings}>
+          {students.map((stu) => (
+            <div key={stu.id} className="px-2">
+              <div className="w-full rounded-xl border border-white group hover:bg-white transition-all duration-500 py-6 px-4 h-[425px] sm:h-[340px] md:h-[380px] lg:h-[340px] text-center">
+                <div className="min-h-[170px]">
+                  <img src={stu.image} alt={stu.name} className="w-20 h-20 rounded-full mx-auto mb-3 object-cover" />
 
-          <h4 className="text-lg font-semibold transition-all duration-300">
-            {stu.name}
-          </h4>
+                  <h4 className="text-lg text-white group-hover:text-black font-semibold">{stu.name}</h4>
+                  <p className="text-sm text-white group-hover:text-black mt-1">{stu.degree}</p>
+                </div>
 
-          <p
-            className="
-              text-xs text-white mt-1 
-              transition-all duration-300
-              group-hover:text-black
-            "
-          >
-            {stu.degree}
-          </p>
-        </div>
+                <div className="mt-10 border border-gray-500"></div>
 
-        <div className="mt-10 border border-gray-500 transition-all duration-300 hover:border-gray-300"></div>
+                <div className="mt-4 flex justify-center">
+                  <img src={stu.companyLogo} alt="Company Logo" className="h-6 object-contain" />
+                </div>
 
-        <div className="mt-4 flex justify-center">
-          <img
-            src={stu.companyLogo}
-            alt="Company Logo"
-            className="h-6 object-contain"
-          />
-        </div>
-
-        <p className="mt-2 text-sm transition-all duration-300">
-          Package: <span className="font-semibold">{stu.package}</span>
-        </p>
-      </div>
-    </div>
-  ))}
-</Slider>
-
+                <p className="mt-2 text-sm text-white group-hover:text-black">
+                  Package: <span className="font-semibold">{stu.package}</span>
+                </p>
+              </div>
+            </div>
+          ))}
+        </Slider>
 
         {/* VIEW ALL  */}
         <div className="flex items-center justify-center text-center mt-12">
           <a
             href={placementPdf}
             target="_blank"
-            className="px-8 py-3 hover:bg-[#f8b922] bg-transparent flex items-center gap-2 hover:text-black border border-[#f8b922] text-[#f8b922] font-medium rounded-lg transition-all duration-500 shadow"
+            className="px-8 py-3 hover:bg-[#f8b922] transition-all duration-500 bg-transparent flex items-center gap-2 hover:text-black border border-[#f8b922] text-[#f8b922] font-medium rounded-xl shadow"
             rel="noreferrer"
           >
             <span> VIEW ALL PLACED STUDENTS </span>

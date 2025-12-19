@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { InstituteProfile } from "../../types/profile-data-type";
 import { CustomModal } from "./CustomIqacCard";
 import { instituteProfiles } from "../../data/academics/institute/data";
+import Classes from "../../utils/styles/Global.module.css";
 
 interface CustomInstituteProfileCardProps {
   data?: InstituteProfile[];
@@ -31,7 +32,7 @@ const CustomInstituteProfileCard: React.FC<CustomInstituteProfileCardProps> = ({
 
   return (
     <section className="bg-[#0f4a85] py-10 md:py-16">
-      <div className="max-w-6xl mx-auto space-y-12 px-4 md:px-0">
+            <div className={`${Classes["container"]} space-y-12 px-4 md:px-0`}>
         {data.map((profile) => (
           <div
             key={profile.id}
@@ -48,7 +49,7 @@ const CustomInstituteProfileCard: React.FC<CustomInstituteProfileCardProps> = ({
 
             {/* Text Content */}
             <div className="w-full md:w-2/3 text-white">
-              <h2 className="font50  md:text-4xl fw500 mb-2">
+              <h2 className="font50 text-3xl! md:text-4xl fw500 mb-2">
                 {profile.title}
               </h2>
 

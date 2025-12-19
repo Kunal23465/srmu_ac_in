@@ -149,7 +149,7 @@ export const HeaderData = [
                     heading: "Industry Honors Programs",
                     path: "/programs/industry-honors",
                     item: [
-                      { path: "/programs/industry-honors/btech-cse-aiml", item: "B.Tech. in CSE (Artificial Intelligence & Machine Learning)" },
+                      { path: "/programs/industry-honors/industry_honors_btech_cse_aiml", item: "B.Tech. in CSE (Artificial Intelligence & Machine Learning)" },
                       { path: "/programs/industry-honors/btech-cse-cyber-security", item: "B.Tech. in CSE (Cyber Security) with L&T" },
                       { path: "/programs/industry-honors/btech-cse-data-science", item: "B.Tech. in CSE (Data Science & AI) with L&T" },
                       { path: "/programs/industry-honors/btech-me-ev", item: "B.Tech. in ME (EV Engineering) with L&T" },

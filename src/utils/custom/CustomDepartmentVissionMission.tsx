@@ -12,10 +12,10 @@ const CustomDepartmentVissionMission: React.FC<Props> = ({ data }) => {
       <img src={data.img} alt="logo" className="w-[120px] h-[120px] object-contain mb-4" />
 
       {/* Heading */}
-      <h1 className="text-[3rem] font-semibold mb-4 text-[#023047]">{data.heading}</h1>
+      <h1 className="text-3xl md:text-[3rem] font-semibold mb-2 md:mb-4 text-[#023047]">{data.heading}</h1>
       {data.description && <h2>{data.description}</h2>}
       {/* List Items */}
-      <ul className="list-disc pl-5 pt-2.5 space-y-2 text-[#212529] marker:text-[1.8rem]">
+      <ul className="list-disc pl-5 pt-2.5 space-y-1 md:space-y-2 text-[#212529] text-sm md:text-[16px] marker:text-[1.8rem]">
         {data.points?.map((item, index) => (
           <li key={index}>{item}</li>
         ))}

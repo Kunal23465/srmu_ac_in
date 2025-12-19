@@ -23,7 +23,7 @@ html {
   }
 }
 
-/* for banner section */
+
 .banner-section {
   background-image: url("/srmu-banner-img.jpg");
   background-size: cover;
@@ -1078,11 +1078,27 @@ footer:after {
   border-bottom: 1px solid #e0e0e0;
   font-size: 1.12em;
   color: #333333;
+    border-bottom: none;
+
+}
+.custom-table tbody tr {
+  position: relative;
 }
 
-.custom-table tbody tr:last-child td {
-  border-bottom: none;
+.custom-table tbody tr::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background-color: #e0e0e0;
 }
+
+.custom-table tbody tr:last-child::after {
+  display: none;
+}
+
 
 .row-download {
   display: flex;
@@ -1121,9 +1137,9 @@ footer:after {
   color: rgb(15, 74, 133);
 }
 
-.font22 {
+/* .font22 {
   font-size: 1.375rem;
-}
+} */
 
 .fw600 {
   font-weight: 600 !important;
@@ -1189,13 +1205,13 @@ ul {
   font-size: 1.125rem;
 } */
 
-.abc-wrapper {
+/* .abc-wrapper {
   background: #eceff1;
   padding: 40px 0;
 
   width: min(1260px, 100%);
   margin: 0 auto;
-}
+} */
 
 .abc-wrapper {
   position: relative;
@@ -1633,7 +1649,14 @@ section .card-color img {
   font-size: 1.188rem;
 }
 
+.perspective {
+  perspective: 1000px;
+}
+
 .flip-card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4; /* keeps consistent responsive height */
   transform-style: preserve-3d;
   transition: transform 0.6s ease;
 }
@@ -1642,9 +1665,28 @@ section .card-color img {
   transform: rotateY(180deg);
 }
 
-.flip-card-face {
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  inset: 0; /* ensures faces overlap exactly */
   backface-visibility: hidden;
+  border-radius: 1rem;
 }
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+.flip-card-front img {
+  min-width: 300px;
+}
+
+/* Desktop hover flip ONLY */
+@media (hover: hover) and (pointer: fine) {
+  .perspective:hover .flip-card {
+    transform: rotateY(180deg);
+  }
+}
+
 
 .font17 {
   font-size: 1.063rem;
@@ -1707,14 +1749,14 @@ section .card-color img {
 /* Remove default slick arrow icons */
 .slick-prev:before,
 .slick-next:before {
-  content: "" !important;
+  display: none !important;
+
 }
 
 /* Force arrows to always display */
 .slick-slider .slick-arrow {
-  display: block !important;
-  opacity: 1 !important;
-  visibility: visible !important;
+  display: none !important;
+
 }
 
 /* Shared button style */
@@ -1827,8 +1869,30 @@ section .card-color img {
     transform: scale(1.08);
   }
 
-  /* max zoom */
+  /* max zoom */ 
   100% {
     transform: scale(1);
   }
 }
+
+/* SHOP SHUTTER ANIMATION */
+.shutter-wrapper {
+  overflow: hidden;
+  transition: max-height 0.6s ease-in-out;
+}
+
+.shutter-open {
+  max-height: 2000px; /* Large enough to show full content */
+}
+
+.shutter-closed {
+  max-height: 0;
+}
+/* Apply only on small screens (mobile) */
+@media (max-width: 639px) {
+  .mobile-header-style {
+    padding-top: 50px;
+    background-color: #0e2f46;
+  }
+}
+

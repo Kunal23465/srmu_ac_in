@@ -23,13 +23,13 @@ const ConsultancyTable: React.FC = () => {
               key={data.id}
               className={index % 2 === 1 ? "bg-[#fff8e5]" : "bg-white"} // Alternate row coloring
             >
-              <td className="px-6 py-4 border-none">{data.id}</td>
-              <td className="px-6 py-4 border-none">{data.consultant}</td>
-              <td className="px-6 py-4 border-none">{data.assignment}</td>
-              <td className="px-6 py-4 border-none">{data.fundingAgency}</td>
-              <td className="px-6 py-4 border-none">{data.cost}</td>
-              <td className="px-6 py-4 border-none">{data.year}</td>
-              <td className="px-6 py-4 border-none">{data.status}</td>
+              <td className="px-6 py-6 md:py-10 text-sm md:text-[15px] border-none">{data.id}</td>
+              <td className="px-6 py-6 md:py-10 text-sm md:text-[15px] border-none">{data.consultant}</td>
+              <td className="px-6 py-6 md:py-10 text-sm md:text-[15px] border-none">{data.assignment}</td>
+              <td className="px-6 py-6 md:py-10 text-sm md:text-[15px] border-none">{data.fundingAgency}</td>
+              <td className="px-6 py-6 md:py-10 text-sm md:text-[15px] border-none">{data.cost}</td>
+              <td className="px-6 py-6 md:py-10 text-sm md:text-[15px] border-none">{data.year}</td>
+              <td className="px-6 py-6 md:py-10 text-sm md:text-[15px] border-none">{data.status}</td>
             </tr>
           ))}
         </tbody>

@@ -35,19 +35,19 @@ const maxIndex = currentTestimonials.length - 1;
   return (
     <div className="testimonials-section">
       <div className="content-container">
-        <h2 className="text-3xl md:text-5xl font-medium text-center">What Our People say</h2>
+        <h2 className="text-3xl md:text-5xl mb-2 font-medium text-center">What Our People say</h2>
         <p className="subtitle text-center max-w-3xl mx-auto">Testimonials from student, staff, and alumni on their placement experience at SRMU</p>
 
         <div className="block md:flex justify-between items-center min-h-[500px] gap-[60px] mt-12">
           {/* LEFT SIDE */}
           <div className="flex-1 max-w-[600px]">
             {/* Tabs */}
-            <div className="flex justify-start mb-10 gap-3">
-              <button className={`tab-button ${activeTab === "recruiters" ? "active" : ""}`} onClick={() => handleTabChange("recruiters")}>
+            <div className="flex justify-start mb-10 overflow-x-auto gap-0">
+              <button className={`tab-button px-3 sm:px-6 py-1 sm:py-3 texm-sm! sm:text-[16px]! ${activeTab === "recruiters" ? "active" : ""}`} onClick={() => handleTabChange("recruiters")}>
                 RECRUITERS TESTIMONIALS
               </button>
 
-              <button className={`tab-button ${activeTab === "students" ? "active" : ""}`} onClick={() => handleTabChange("students")}>
+              <button className={`tab-button px-3 sm:px-6 py-1 sm:py-3 texm-sm! sm:text-[16px]! ${activeTab === "students" ? "active" : ""}`} onClick={() => handleTabChange("students")}>
                 STUDENT TESTIMONIALS
               </button>
             </div>

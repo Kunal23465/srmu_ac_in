@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import Header from "../components/header/Header";
-
+// @ts-ignore
+import { Breadcrumbs } from "../utils/AllRoutes";
 import Footer from "../components/footer/Footer";
 import whatsapp from "../assets/images/whatsapp-icon.png";
 import chatbot from "../assets/images/bot-icon-squirrel-90.png";
@@ -56,7 +57,7 @@ const [hovered, setHovered] = useState<number | null>(null);
         href="https://wa.me/9120007948"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-32 left-6 z-50 rounded-full shadow-lg hover:scale-110 transition-all duration-300"
+        className="fixed bottom-32 md:bottom-23 left-6 md:left-9 z-50 rounded-full shadow-lg hover:scale-110 transition-all duration-300"
       >
         <img src={whatsapp} className="w-14 h-14" />
       </a>
@@ -121,7 +122,7 @@ const [hovered, setHovered] = useState<number | null>(null);
       {/* ============= RIGHT SIDE SLIDERS (SHOW ON SCROLL) ============= */}
       <div
         className={`
-          w-full sm:w-auto fixed bottom-0 sm:top-1/2 sm:-right-[58px] flex sm:flex sm:flex-col sm:gap-y-[135px] sm:-translate-y-1/2 transition-all duration-500 ease-in-out ${showRightBar ? "sm:translate-x-0" : "sm:translate-x-full"}
+          w-full sm:w-auto fixed bottom-0 sm:top-1/2 sm:-right-[58px] flex sm:flex sm:flex-col sm:gap-y-[124px] sm:-translate-y-1/2 transition-all duration-500 ease-in-out ${showRightBar ? "sm:translate-x-0" : "sm:translate-x-full"}
   `}
       >
       {/* Admission Enquiry */}
@@ -130,7 +131,7 @@ const [hovered, setHovered] = useState<number | null>(null);
   onMouseLeave={() => setHovered(null)}
   href="/admission-enquiry"
   className={`
-    w-full sm:w-auto sm:rotate-270 writing-mode-horizontal sm:writing-mode-vertical corner-box
+    w-full sm:w-auto sm:rotate-270 writing-mode-horizontal sm:writing-mode-vertical 
     text-xs tracking-wider group flex items-center justify-center
     bg-[#0c2f44] text-white px-2 py-3 sm:rounded-t-md shadow-xl
     transition-all duration-500
@@ -149,7 +150,7 @@ const [hovered, setHovered] = useState<number | null>(null);
   onMouseLeave={() => setHovered(null)}
   href="https://studentportal.srmu.ac.in/login"
   className={`
-    w-full sm:w-auto sm:rotate-270 writing-mode-horizontal sm:writing-mode-vertical  corner-box
+    w-full sm:w-auto sm:rotate-270 writing-mode-horizontal sm:writing-mode-vertical
     text-xs tracking-wider group flex items-center justify-center
     bg-[#ffb703] text-black px-2 py-3 sm:rounded-t-md shadow-xl
     transition-all duration-500
@@ -168,7 +169,7 @@ const [hovered, setHovered] = useState<number | null>(null);
   onMouseLeave={() => setHovered(null)}
   href="/admission/scholarship-scheme"
   className={`
-    hidden sm:flex sm:rotate-270 writing-mode-horizontal sm:writing-mode-vertical corner-box
+    hidden sm:flex sm:rotate-270 writing-mode-horizontal sm:writing-mode-vertical
     text-xs tracking-wider items-center justify-center
     bg-[#0c2f44] text-white px-2 py-3 sm:rounded-t-md shadow-xl
     transition-all duration-500
