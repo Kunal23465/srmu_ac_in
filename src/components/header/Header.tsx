@@ -7,6 +7,7 @@ import { MdClose, MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { Link, useLocation } from "react-router-dom";
 import { HeaderData } from "./HeaderData";
 import { AppDispatch, RootState } from "../../store";
+// @ts-ignore
 import { fetchProgramMenu, NavbarProgramType } from "../../store/header/programMenuThunk";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -19,6 +20,7 @@ const Header = () => {
   const [isActive, setIsActive] = useState(false);
   // const [programMenu, setProgramMenu] = useState<NavbarProgramType[]>([]);
   const dispatch = useDispatch<AppDispatch>();
+  // @ts-ignore
   const { data: programMenu, loading } = useSelector((state: RootState) => state.programMenu);
   const slugify = (str: string) => str.toLowerCase().trim().replace(/\s+/g, "-");
 

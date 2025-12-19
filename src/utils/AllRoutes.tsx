@@ -49,14 +49,14 @@ import ConvocationPage from "../pages/campus-life/convocation/ConvocationPage";
 import { convocationData } from "../data/campus-life/convocation/convocation-data";
 import ConvocationDetailPage from "../pages/campus-life/convocation/ConvocationDetailPage";
 import ClubsPage from "../pages/campus-life/clubs/ClubsPage";
-import AfterClass10thPage from "../pages/after-class-10th/AfterClass10thPage";
-import AfterClass12thPage from "../pages/Home/AfterClass12thPage";
+// import AfterClass10thPage from "../pages/after-class-10th/AfterClass10thPage";
+// import AfterClass12thPage from "../pages/Home/AfterClass12thPage";
 import WomenEmpowermentPage from "../pages/campus-life/women-empowerment/WomenEmpowermentPage";
-import IndustryHonorsPage from "../pages/Home/IndustryHonorsPage";
+// import IndustryHonorsPage from "../pages/Home/IndustryHonorsPage";
 import PublicationPage from "../pages/Research/Publication/PublicationPage";
-import AfterGraduationPage from "../pages/Home/AfterGraduationPage";
-import AfterPolytechnicPage from "../pages/Home/AfterPolytechnicPage";
-import AfterPostGraduationPage from "../pages/Home/AfterPostGraduationPage";
+// import AfterGraduationPage from "../pages/Home/AfterGraduationPage";
+// import AfterPolytechnicPage from "../pages/Home/AfterPolytechnicPage";
+// import AfterPostGraduationPage from "../pages/Home/AfterPostGraduationPage";
 import StudentSenatePage from "../pages/campus-life/student-senate/StudentSenatePage";
 import StudentCornerPage from "../pages/campus-life/student-corner/StudentCornerPage";
 import GreenInitiativePage from "../pages/campus-life/green-initiative/GreenInitiativePage";
@@ -67,7 +67,7 @@ import OutreachActivationsPage from "../pages/campus-life/outreach-activations/O
 import AdmissionEnquiryPage from "../pages/admission-enquiry/AdmissionEnquiryPage";
 import AdmissionPolicyPage from "../pages/admissions/admission-policy/AdmissionPolicyPage";
 import ConferenceDetailPage from "../components/research/publication/conference/ConferenceDetailPage";
-import BtechInCSEAIAndML from "../pages/programs/btech-in-cse-ai-ml/BtechInCSEAIAndML";
+// import BtechInCSEAIAndML from "../pages/programs/btech-in-cse-ai-ml/BtechInCSEAIAndML";
 import AwardOverviewPage from "../pages/about/award-overview/AwardOverviewPage";
 import DepartmentDetailPage from "../components/academics/institutes/institute-department/Institute-department/DepartmentDetailPage";
 import InstituteDepartmentPage from "../pages/academics/institutes/institute-department/InstituteDepartmentPage";
@@ -89,7 +89,7 @@ import TransportationPage from "../pages/campus-life/facilities/transportation/T
 import NewsLetterPage from "../pages/Home/NewsLetterPage";
 import HowToApplyPage from "../pages/admissions/how-to-apply/HowToApplyPage";
 import RootPrograms from "../pages/programs/RootPrograms";
-import AfterClass10thInnerPage from "../pages/after-class-10th/AfterClass10thInnerPage";
+// import AfterClass10thInnerPage from "../pages/after-class-10th/AfterClass10thInnerPage";
 import ProgramDetailsPage from "../pages/programs/details-page/ProgramDetailsPage";
 // interface IMatches {
 //   pathname: string;

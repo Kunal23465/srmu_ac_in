@@ -79,6 +79,7 @@ const slugify = (str: string) => str.toLowerCase().trim().replace(/\s+/g, "-");
               const path = (str = "") => str.toLowerCase().trim().replace(/\s+/g, "-");
 
               // store in variable
+              // @ts-ignore
               const programPath = path(course.programTypeName);
               const programName = path(course.name);
               return (

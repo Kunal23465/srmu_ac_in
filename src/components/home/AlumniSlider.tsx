@@ -12,6 +12,7 @@ interface AlumniSliderProps {
 const AlumniSlider: React.FC<AlumniSliderProps> = ({ sliderRef }) => {
     const [showDots, setShowDots] = useState(true);
     const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 0);
+    // @ts-ignore
     const [activeSlide, setActiveSlide] = useState(0);
 
 

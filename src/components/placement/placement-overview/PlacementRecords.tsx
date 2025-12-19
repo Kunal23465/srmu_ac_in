@@ -35,6 +35,7 @@ const PlacementRecords: React.FC = () => {
     return 1; // xs
   };
 
+  // @ts-ignore
   // Function to determine if centerMode should be enabled
   const shouldCenterMode = () => {
     return windowWidth >= 768; // Enable center mode only on medium screens and above

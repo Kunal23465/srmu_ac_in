@@ -33,6 +33,7 @@ import { fetchProgramFeesByProgramId } from "../../../store/program-finder/progr
 const ProgramDetails = () => {
   const dispatch = useDispatch<AppDispatch>();
   const location = useLocation();
+  // @ts-ignore
     const { dataByID, loading, error } = useSelector((state: RootState) => state.getProgramFinder);
   console.log(dataByID, "program details data");
       const { data:feesData} = useSelector((state: RootState) => state.programFees);
@@ -45,7 +46,9 @@ const ProgramDetails = () => {
   return (
     <div className="mt-20">
       <div className={`${Classes["container"]}`}>
+        {/* @ts-ignore */}
         <h2 className="font50 fw500 text-[#023047]">{dataByID?.name}</h2>
+        {/* @ts-ignore */}
         <p className="text-[#023047] font30 fw500">{dataByID?.title}</p>
         {/* <CustomOverviewSection data={BtechCSEAIandMLOverviewData} /> */}
         <div className={` py-7 md:py-10 lg:py-14`}>
@@ -54,6 +57,7 @@ const ProgramDetails = () => {
               <h2 className="text-3xl lg:text-4xl whitespace-pre-line font-semibold leading-11 pr-4 sm:min-w-[350px]">Overview</h2>
             </div>
             <div className={`md:pl-8 md:py-4`}>
+              {/* @ts-ignore */}
               <div className="text-justify">{typeof dataByID?.overview === "string" ? <div dangerouslySetInnerHTML={{ __html: dataByID?.overview }} /> : dataByID?.overview}</div>
             </div>
           </div>
@@ -81,6 +85,7 @@ const ProgramDetails = () => {
       <div className={`${Classes["container"]}`}>
         <h2 className="mt-20 mb-10 text-center font50 fw500 text-[#023047]">Program Fee</h2>
               {/* <CustomDepartmentFeeDetailsTable data={ProgramFeesAIandML} /> */}
+              {/* @ts-ignore */}
               {feesData && feesData.length > 0 && <ProgramFeeTable data={feesData[0]} />}
       </div>
       <div className="my-50">

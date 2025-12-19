@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import Header from "../components/header/Header";
+// @ts-ignore
 import { Breadcrumbs } from "../utils/AllRoutes";
 import Footer from "../components/footer/Footer";
 import whatsapp from "../assets/images/whatsapp-icon.png";

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, {useState } from 'react'
 import { cardclubCardsData } from '../../../data/campus-life/clubs/clubs-data';
 
 import { MdArrowRightAlt, MdClose } from 'react-icons/md';

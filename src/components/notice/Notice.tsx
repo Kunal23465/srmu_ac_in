@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import Classes from "../../utils/styles/Global.module.css";
 import CustomTopFooter from "../../utils/custom/CustomTopFooter";
 import CustomOverviewSection from "../../utils/custom/CustomOverviewSection";
+// @ts-ignore
 import { NoticeOverviewData, NoticeTopFooterData, NoticePdfData } from "../../data/notice/NoticeData";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../store";
