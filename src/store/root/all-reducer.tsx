@@ -4,6 +4,7 @@ import { programTypeReducer } from "../program-finder/program-type/programType-s
 import { disciplineSliceReducer } from "../program-finder/discipline/discipline-slice";
 import { noticeSliceReducer } from "../notice/noticeSlice";
 import { programMenuReducer } from "../header/programMenuSlice";
+import { programFeesReducer } from "../program-finder/program-fees/programFeesSlice";
 const allReducer = {
   ui: uiReducer,
   getProgramFinder: programFinderReducer,
@@ -11,5 +12,6 @@ const allReducer = {
   getDiscipline: disciplineSliceReducer,
   getNotice: noticeSliceReducer,
   programMenu: programMenuReducer,
+  programFees: programFeesReducer,
 };
 export default allReducer;

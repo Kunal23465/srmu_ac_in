@@ -90,6 +90,7 @@ import NewsLetterPage from "../pages/Home/NewsLetterPage";
 import HowToApplyPage from "../pages/admissions/how-to-apply/HowToApplyPage";
 import RootPrograms from "../pages/programs/RootPrograms";
 import AfterClass10thInnerPage from "../pages/after-class-10th/AfterClass10thInnerPage";
+import ProgramDetailsPage from "../pages/programs/details-page/ProgramDetailsPage";
 // interface IMatches {
 //   pathname: string;
 //   params: Params<string>;
@@ -290,7 +291,10 @@ export const routes = [
             path: ":programType/:item",
             element: <ProgramFinderPage />,
           },
-
+          {
+            path: "details/:programName",
+            element: <ProgramDetailsPage />,
+          },
           // {
           //   path: "after-polytechnic",
           //   element: <AfterPolytechnicPage />,

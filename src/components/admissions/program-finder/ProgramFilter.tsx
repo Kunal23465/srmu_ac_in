@@ -20,7 +20,7 @@ interface PropsTypes {
 const ProgramFilter: React.FC<PropsTypes> = ({ data, programTypeOptions, disciplineOptions, selectedProgramType, selectedDiscipline, searchTerm, onSearchChange, onProgramTypeChange, onDisciplineChange }) => {
   const [visibleCount, setVisibleCount] = useState(5);
   const visibleCourses = data.slice(0, visibleCount);
-
+const slugify = (str: string) => str.toLowerCase().trim().replace(/\s+/g, "-");
   return (
     <div className={`${Classes["container"]} pb-6 sm:py-10`}>
       {/* Filters */}
@@ -92,11 +92,11 @@ const ProgramFilter: React.FC<PropsTypes> = ({ data, programTypeOptions, discipl
                   <div className="flex flex-row gap-2 w-full lg:w-[30%] justify-between lg:justify-end">
                     <Link
                       state={{
-                        programTypeId: course.programTypeId,
-                        programDisciplineId: course.programDisciplineId,
-                        name: course.name,
+                        programId: course.programId,
+                        // programDisciplineId: course.programDisciplineId,
+                        // name: course.name,
                       }}
-                      to={`/programs/${programPath}/${programName}`}
+                      to={`/programs/details/${slugify(programName)}`}
                       className="bg-[#023047] border border-[#023047] hover:bg-white hover:text-[#023047] transition-all duration-500 text-white px-6 py-3 text-sm font-medium rounded-lg flex items-center gap-2"
                     >
                       View Details <FaArrowRightLong />
