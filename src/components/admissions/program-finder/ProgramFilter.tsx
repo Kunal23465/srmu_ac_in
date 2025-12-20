@@ -1,8 +1,9 @@
-import React, {useState } from "react";
+import React, { useState } from "react";
 import Classes from "../../../utils/styles/Global.module.css";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { ProgramData } from "../../../store/program-finder/programFinder-slice";
+import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 
 interface PropsTypes {
   data: ProgramData[];
@@ -16,11 +17,20 @@ interface PropsTypes {
   onDisciplineChange: (val: number | string) => void;
 }
 
-
-const ProgramFilter: React.FC<PropsTypes> = ({ data, programTypeOptions, disciplineOptions, selectedProgramType, selectedDiscipline, searchTerm, onSearchChange, onProgramTypeChange, onDisciplineChange }) => {
+const ProgramFilter: React.FC<PropsTypes> = ({
+  data,
+  programTypeOptions,
+  disciplineOptions,
+  selectedProgramType,
+  selectedDiscipline,
+  searchTerm,
+  onSearchChange,
+  onProgramTypeChange,
+  onDisciplineChange,
+}) => {
   const [visibleCount, setVisibleCount] = useState(5);
   const visibleCourses = data.slice(0, visibleCount);
-const slugify = (str: string) => str.toLowerCase().trim().replace(/\s+/g, "-");
+  const slugify = (str: string) => str.toLowerCase().trim().replace(/\s+/g, "-");
   return (
     <div className={`${Classes["container"]} pb-6 sm:py-10`}>
       {/* Filters */}
@@ -114,10 +124,13 @@ const slugify = (str: string) => str.toLowerCase().trim().replace(/\s+/g, "-");
             })}
 
             {/* Load More Button */}
-            {visibleCount && (
-              <div className="text-center mt-6">
-                <button onClick={() => setVisibleCount((prev) => prev + 5)} className="bg-[#0f4a85] text-white px-6 py-3 rounded-lg hover:bg-[#08345f] transition">
-                  Load More
+            {visibleCount < data.length && (
+              <div className="flex justify-center mt-6">
+                <button
+                  onClick={() => setVisibleCount((prev) => prev + 5)}
+                  className="bg-[#0f4a85] flex items-center gap-x-3 text-white px-6 py-3 cursor-pointer rounded-lg hover:bg-[#08345f] transition uppercase"
+                >
+                  View More <HiOutlineArrowNarrowRight size={24} />
                 </button>
               </div>
             )}

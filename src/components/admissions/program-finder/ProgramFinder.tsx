@@ -33,7 +33,7 @@ const ProgramFinder: React.FC = () => {
   const { programTypeId: programTypeIdFromState, disciplineId: disciplineIdFromState } = location.state || {};
 
   /* ===========================
-       Debounce Search
+           Debounce Search
      =========================== */
   useEffect(() => {
     const timer = setTimeout(() => {
