@@ -16,10 +16,11 @@ const ProgramsSection: FC = () => {
   const dispatch = useDispatch<AppDispatch>();
   const [activeTab, setActiveTab] = useState<number | null>(null);
   const [selectedProgramType, setSelectedProgramType] = useState<number | null>(null);
+  // @ts-ignore
   const [isMobile, setIsMobile] = useState(false);
   const { programType } = useSelector((state: RootState) => state.getProgramType);
   const { discipline } = useSelector((state: RootState) => state.getDiscipline);
-const slugify = (str: string) => str.toLowerCase().trim().replace(/\s+/g, "-");
+  const slugify = (str: string) => str.toLowerCase().trim().replace(/\s+/g, "-");
   /* ===========================
      Detect Mobile
      =========================== */
@@ -124,7 +125,7 @@ const slugify = (str: string) => str.toLowerCase().trim().replace(/\s+/g, "-");
             <div className="text-center mt-10">
               <Link
                 to="/online-admission"
-                className="uppercase inline-flex items-center bg-[#ffb703] text-[#023047] font-semibold py-4 px-8 rounded-xl hover:bg-transparent hover:border-1 hover:text-[#ffb703] hover:border-[#ffb703] transition shadow-md"
+                className="uppercase inline-flex items-center bg-[#ffb703] text-[#023047] font-medium py-4 px-8 rounded-xl hover:bg-transparent hover:border-1 hover:text-[#ffb703] hover:border-[#ffb703] transition shadow-md"
               >
                 Enroll Now
                 <span className="ml-2">→</span>

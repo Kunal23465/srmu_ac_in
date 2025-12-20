@@ -10,7 +10,7 @@ import { AppDispatch, RootState } from "../../store";
 // @ts-ignore
 import { fetchProgramMenu, NavbarProgramType } from "../../store/header/programMenuThunk";
 import { useDispatch, useSelector } from "react-redux";
-
+import logo from "../../assets/images/logo.png";
 const Header = () => {
   const location = useLocation();
   const { bottomHeaderData } = HeaderData[0];
@@ -50,17 +50,17 @@ const Header = () => {
       <header className="fixed top-0 left-0 w-full z-[999]  transition-all duration-500">
         <TopHeader />
 
-        <div className={`py-2 items-stretch header ${isActive ? "bg-[#0e2f46] active" : ""}`}>
+        <div className={`py-2 items-stretch header ${isActive ? "bg-[#14284e] active" : ""}`}>
           <div className={`${Classes["container"]} relative`}>
             <div className="flex flex-row justify-between">
               {/* LOGO */}
               <Link to="/" className="logo_div flex items-center lg:gap-1 xl:gap-3 cursor-pointer">
-                <img src={bottomHeaderData[0].logo} alt="logo" className="h-[35px] lg:h-[57px]" />
+                <img src={logo} alt="logo" />
 
-                <h2 className={`font-bold lg:text-[1rem] xl:text-[1.4rem] text-white`}>
+                {/* <h2 className={`font-bold lg:text-[1rem] xl:text-[1.4rem] text-white`}>
                   SHRI RAMSWAROOP
                   <div className="font-semibold leading-3 text-[0.8rem] sm:text-[0.5rem] lg:text-[0.9rem] xl:text-[1.2rem]">MEMORIAL UNIVERSITY</div>
-                </h2>
+                </h2> */}
               </Link>
 
               {/* DESKTOP MENU */}

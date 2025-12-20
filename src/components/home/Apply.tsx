@@ -55,7 +55,7 @@ const Apply: React.FC = () => {
               <div key={item.id} className={`sm:w-[125%] relative px-6 py-4 ${item.id === active ? "bg-[#eefcff] border border-[#219ebc] rounded-lg" : ""}`}>
                 <div /* @ts-ignore */
                   onClick={() => setActive((ele) => (ele !== item.id ? item.id : null))}
-                  className={`cursor-pointer font-medium text-xl flex items-center gap-x-2 ${item.id === active ? "text-[#219ebc]" : ""}`}
+                  className={`cursor-pointer text-[18px] flex items-center gap-x-2 ${item.id === active ? "text-[#219ebc]" : ""}`}
                 >
                   <span className={`transform ${item.id === active ? "rotate-90" : ""}`}>
                     <FaAngleRight color="#219ebc" />
