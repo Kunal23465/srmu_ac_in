@@ -15,6 +15,7 @@ export interface ProgramData {
     showOnNavbar: boolean | null;
 }
 
+
 interface initialTypes {
     loading: boolean,
     error: null | string,
