@@ -10,7 +10,7 @@ import { AppDispatch, RootState } from "../../store";
 // @ts-ignore
 import { fetchProgramMenu, NavbarProgramType } from "../../store/header/programMenuThunk";
 import { useDispatch, useSelector } from "react-redux";
-
+import logo from "../../assets/images/logo.png";
 const Header = () => {
   const location = useLocation();
   const { bottomHeaderData } = HeaderData[0];
@@ -50,17 +50,17 @@ const Header = () => {
       <header className="fixed top-0 left-0 w-full z-[999]  transition-all duration-500">
         <TopHeader />
 
-        <div className={`py-2 items-stretch header ${isActive ? "bg-[#0e2f46] active" : ""}`}>
+        <div className={`py-2 items-stretch header ${isActive ? "bg-[#14284e] active" : ""}`}>
           <div className={`${Classes["container"]} relative`}>
             <div className="flex flex-row justify-between">
               {/* LOGO */}
               <Link to="/" className="logo_div flex items-center lg:gap-1 xl:gap-3 cursor-pointer">
-                <img src={bottomHeaderData[0].logo} alt="logo" className="h-[35px] lg:h-[57px]" />
+                <img src={logo} alt="logo" />
 
-                <h2 className={`font-bold lg:text-[1rem] xl:text-[1.4rem] text-white`}>
+                {/* <h2 className={`font-bold lg:text-[1rem] xl:text-[1.4rem] text-white`}>
                   SHRI RAMSWAROOP
                   <div className="font-semibold leading-3 text-[0.8rem] sm:text-[0.5rem] lg:text-[0.9rem] xl:text-[1.2rem]">MEMORIAL UNIVERSITY</div>
-                </h2>
+                </h2> */}
               </Link>
 
               {/* DESKTOP MENU */}
@@ -80,7 +80,7 @@ const Header = () => {
 
                             <ul className="transition-all  w-full min-w-[290px] duration-300 max-h-0 group-hover:max-h-[500px] overflow-hidden rounded-md ">
                               {data.subItem.map((value, i) => (
-                                <Link key={i} to={value.path} className={`block text-sm px-3 py-3 hover:text-[#ffb703] ${i !== 0 && "border-t border-gray-200"}`}>
+                                <Link key={i} to={value.path} className={`block text-[15px] px-3 py-3 hover:text-[#ffb703] ${i !== 0 && "border-t border-gray-200"}`}>
                                   {value.item}
                                 </Link>
                               ))}
@@ -111,7 +111,7 @@ const Header = () => {
                                         <ul className="mt-2 px-3 space-y-2 list-none!">
                                           {section.item.map((sub, subIdx) => (
                                             <li key={subIdx}>
-                                              <Link to={sub.path} className="text-sm text-gray-700 hover:text-[#ffb703]">
+                                              <Link to={sub.path} className="text-[15px] text-gray-700 hover:text-[#ffb703]">
                                                 {sub.item}
                                               </Link>
                                             </li>
@@ -161,7 +161,7 @@ const Header = () => {
                                                   <Link
                                                     to={`/programs/${programTypeSlug}/${slugify(prog.programName)}`}
                                                     state={{ programTypeId: type.programTypeId }}
-                                                    className="text-sm text-gray-700 hover:text-[#ffb703]"
+                                                    className="text-[15px] text-gray-700 hover:text-[#ffb703]"
                                                   >
                                                     {prog.programName}
                                                   </Link>
@@ -178,7 +178,7 @@ const Header = () => {
                                                       programTypeId: type.programTypeId,
                                                       disciplineId: disc.disciplineId,
                                                     }}
-                                                    className="text-sm text-gray-700 hover:text-[#ffb703]"
+                                                    className="text-[15px] text-gray-700 hover:text-[#ffb703]"
                                                   >
                                                     {disc.disciplineName}
                                                   </Link>
@@ -226,7 +226,7 @@ const Header = () => {
               const isMega = data?.isMegaMenu === true;
 
               return (
-                <li key={index} className={`relative w-full text-sm uppercase cursor-pointer py-2 ${index !== 0 && "border-t border-gray-200"}`}>
+                <li key={index} className={`relative w-full text-[15px] uppercase cursor-pointer py-2 ${index !== 0 && "border-t border-gray-200"}`}>
                   {/* ROW (NO WRAPPING OF SUBMENU INSIDE LINK) */}
                   <div className="flex justify-between items-center px-2">
                     <Link to={data.path} className="hover:text-[#ffb703]" onClick={() => setSideMenu(false)}>
