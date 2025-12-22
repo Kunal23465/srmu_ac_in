@@ -1,5 +1,6 @@
 import React from "react";
 import Classes from "../../../../utils/styles/Global.module.css";
+// @ts-ignore
 import { FaRegFilePdf } from "react-icons/fa";
 import { patentData } from "../../../../data/research/publication/publication-data";
 import { PdfSvgIcon } from "../../../about/recognition-approval/ApprovalSlider";

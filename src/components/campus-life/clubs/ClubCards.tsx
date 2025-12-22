@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, {useState } from 'react'
 import { cardclubCardsData } from '../../../data/campus-life/clubs/clubs-data';
 
 import { MdArrowRightAlt, MdClose } from 'react-icons/md';
@@ -61,7 +61,7 @@ const CustomModal = ({ selected, setSelected }) => {
                                 mt-5 group"
                             >
                                 MORE INFO CONTACT US
-                                <span className="transition-all duration-200 group-hover:rotate-[360deg]">
+                                <span className="transition-all duration-200 group-hover:rotate-360">
                                     <MdArrowRightAlt size={26} />
                                 </span>
                             </button>
@@ -75,57 +75,76 @@ const CustomModal = ({ selected, setSelected }) => {
 
 
 const ClubCards: React.FC = () => {
-    const [selected, setSelected] = useState(null);
+  const [selected, setSelected] = useState<any>(null);
+  const [openCardIndex, setOpenCardIndex] = useState<number | null>(null);
 
-    return (
-        <>
-            <CustomModal selected={selected} setSelected={setSelected} />
+  const toggleCard = (index: number) => {
+    setOpenCardIndex(openCardIndex === index ? null : index);
+  };
 
-            <div className="w-full grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {cardclubCardsData.map((card, i) => (
-                    <div
-                        key={i}
-                        // @ts-ignore
-                        onClick={() => setSelected(card)}
-                        className="relative w-full h-64 sm:h-64 md:h-64 rounded-2xl overflow-hidden shadow-md group cursor-pointer border-2 border-transparent hover:border-yellow-400 transition-all duration-300"
-                    >
-                        {/* IMAGE */}
-                        <img
-                            src={card.img}
-                            className="w-full h-full object-cover transition-transform duration-500"
-                        />
+  return (
+    <>
+      <CustomModal selected={selected} setSelected={setSelected} />
 
-                        {/* HOVER OVERLAY */}
-                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-500"></div>
+      <div className="w-full grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {cardclubCardsData.map((card, i) => {
+          const isOpen = openCardIndex === i;
 
-                        {/* TEXT CONTENT */}
-                        <div className="absolute translate-y-30 group-hover:translate-y-5 sm:group-hover:translate-y-8 transition-all duration-500 inset-0 flex flex-col items-center justify-center text-center p-4 text-white">
-                            <h2 className="text-xl font-semibold mb-2">
-                                {card.title}
-                            </h2>
-                            <p className="opacity-0  group-hover:opacity-100 text-sm transition-all duration-500">
-                                {card.desc.slice(0, 50)}...
-                               <br /> <button className="bg-[#ffb703] transition-all duration-500 uppercase fw500 border-2 border-[#ffb703] hover:bg-transparent hover:text-[#ffb703] inline-flex items-center px-3 py-1 rounded-lg mt-3 text-sm text-black font-normal group max-w-[150px]">
-                                Read More
-                                <span className="transition-all duration-500 ">
-                                    <MdArrowRightAlt size={26} />
-                                </span>
-                            </button>
-                            </p>
+          return (
+            <div
+              key={i}
+              onClick={() => toggleCard(i)}
+              className="relative w-full h-75 sm:h-64 md:h-64 rounded-2xl overflow-hidden shadow-md group cursor-pointer border-2 border-transparent hover:border-yellow-400 transition-all duration-300"
+            >
+              <img
+                src={card.img}
+                className="w-full h-full object-cover transition-transform duration-500"
+              />
 
-                            
-                        </div>
-                    </div>
-                ))}
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-500"></div>
+
+              <div
+                className={`
+                  absolute inset-0 flex flex-col items-center justify-center text-center p-4 text-white
+                  transition-all duration-500
+                  ${isOpen ? "translate-y-5" : "translate-y-30"}
+                  lg:group-hover:translate-y-5
+                `}
+              >
+                <h2 className="text-xl font-semibold mb-2">{card.title}</h2>
+
+                <p
+                  className={`
+                    opacity-0 text-sm transition-all duration-500
+                    ${isOpen ? "opacity-100" : "opacity-0"}
+                    lg:group-hover:opacity-100
+                  `}
+                >
+                  {card.desc.slice(0, 50)}...
+                  <br />
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setSelected(card);
+                    }}
+                    className="bg-[#ffb703] transition-all duration-500 uppercase fw500 border-2 border-[#ffb703] hover:bg-transparent hover:text-[#ffb703] inline-flex items-center px-3 py-1 rounded-lg mt-3 text-sm text-black font-normal group max-w-[150px]"
+                  >
+                    Read More
+                    <span className="transition-all duration-500">
+                      <MdArrowRightAlt size={26} />
+                    </span>
+                  </button>
+                </p>
+              </div>
             </div>
-        </>
-    );
+          );
+        })}
+      </div>
+    </>
+  );
 };
 
-
 export default ClubCards;
-
-
 
 
 

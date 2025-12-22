@@ -1,10 +1,8 @@
-import React from 'react'
-import ProgramFinder from '../../../components/admissions/program-finder/ProgramFinder'
+import React from "react";
+import ProgramFinder from "../../../components/admissions/program-finder/ProgramFinder";
 
 const ProgramFinderPage: React.FC = () => {
-    return (
-        <ProgramFinder />
-    )
-}
+  return <ProgramFinder />;
+};
 
-export default ProgramFinderPage
+export default ProgramFinderPage;

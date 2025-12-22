@@ -89,7 +89,7 @@ const Conference: React.FC = () => {
 
 
               <div className="">
-                <div className="absolute top-20 right-0 ml-auto">
+                <div className="absolute top-15 md:top-1 right-0 ml-auto">
                   <div className="flex gap-3">
                     <CustomArrow
                       direction="prev"

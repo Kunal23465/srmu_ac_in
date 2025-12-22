@@ -37,11 +37,7 @@ import ResearchOverviewPage from "../pages/Research/Overview/ResearchOverviewPag
 import ProcessAndInitiativePage from "../pages/Research/Process-and-Initiative/ProcessAndInitiativePage";
 import PhdNotificationSessionPage from "../pages/Research/Phd-notification-session/PhdNotificationSessionPage";
 import EventDetails from "../pages/campus-life/events/EventDetails";
-import tedxData, {
-  conferenceData,
-  festData,
-  festivalsData,
-} from "../data/campus-life/events/events-data";
+import tedxData, { conferenceData, festData, festivalsData } from "../data/campus-life/events/events-data";
 import InnovationPage from "../pages/Research/Innovation/InnovationPage";
 import PlacementPage from "../pages/placement/PlacementPage";
 import StudentTestimonialPage from "../pages/placement/student-testimonial/StudentTestimonialPage";
@@ -53,14 +49,14 @@ import ConvocationPage from "../pages/campus-life/convocation/ConvocationPage";
 import { convocationData } from "../data/campus-life/convocation/convocation-data";
 import ConvocationDetailPage from "../pages/campus-life/convocation/ConvocationDetailPage";
 import ClubsPage from "../pages/campus-life/clubs/ClubsPage";
-import AfterClass10thPage from "../pages/Home/AfterClass10thPage";
-import AfterClass12thPage from "../pages/Home/AfterClass12thPage";
+// import AfterClass10thPage from "../pages/after-class-10th/AfterClass10thPage";
+// import AfterClass12thPage from "../pages/Home/AfterClass12thPage";
 import WomenEmpowermentPage from "../pages/campus-life/women-empowerment/WomenEmpowermentPage";
-import IndustryHonorsPage from "../pages/Home/IndustryHonorsPage";
+// import IndustryHonorsPage from "../pages/Home/IndustryHonorsPage";
 import PublicationPage from "../pages/Research/Publication/PublicationPage";
-import AfterGraduationPage from "../pages/Home/AfterGraduationPage";
-import AfterPolytechnicPage from "../pages/Home/AfterPolytechnicPage";
-import AfterPostGraduationPage from "../pages/Home/AfterPostGraduationPage";
+// import AfterGraduationPage from "../pages/Home/AfterGraduationPage";
+// import AfterPolytechnicPage from "../pages/Home/AfterPolytechnicPage";
+// import AfterPostGraduationPage from "../pages/Home/AfterPostGraduationPage";
 import StudentSenatePage from "../pages/campus-life/student-senate/StudentSenatePage";
 import StudentCornerPage from "../pages/campus-life/student-corner/StudentCornerPage";
 import GreenInitiativePage from "../pages/campus-life/green-initiative/GreenInitiativePage";
@@ -71,7 +67,7 @@ import OutreachActivationsPage from "../pages/campus-life/outreach-activations/O
 import AdmissionEnquiryPage from "../pages/admission-enquiry/AdmissionEnquiryPage";
 import AdmissionPolicyPage from "../pages/admissions/admission-policy/AdmissionPolicyPage";
 import ConferenceDetailPage from "../components/research/publication/conference/ConferenceDetailPage";
-import BtechInCSEAIAndML from "../pages/programs/btech-in-cse-ai-ml/BtechInCSEAIAndML";
+// import BtechInCSEAIAndML from "../pages/programs/btech-in-cse-ai-ml/BtechInCSEAIAndML";
 import AwardOverviewPage from "../pages/about/award-overview/AwardOverviewPage";
 import DepartmentDetailPage from "../components/academics/institutes/institute-department/Institute-department/DepartmentDetailPage";
 import InstituteDepartmentPage from "../pages/academics/institutes/institute-department/InstituteDepartmentPage";
@@ -92,16 +88,19 @@ import RtiPage from "../pages/rti/RtiPage";
 import TransportationPage from "../pages/campus-life/facilities/transportation/TransportationPage";
 import NewsLetterPage from "../pages/Home/NewsLetterPage";
 import HowToApplyPage from "../pages/admissions/how-to-apply/HowToApplyPage";
-interface IMatches {
-  pathname: string;
-  params: Params<string>;
-  data: unknown;
-  handle: unknown;
-}
+import RootPrograms from "../pages/programs/RootPrograms";
+// import AfterClass10thInnerPage from "../pages/after-class-10th/AfterClass10thInnerPage";
+import ProgramDetailsPage from "../pages/programs/details-page/ProgramDetailsPage";
+// interface IMatches {
+//   pathname: string;
+//   params: Params<string>;
+//   data: unknown;
+//   handle: unknown;
+// }
 
-type HandleType = {
-  crumb: (param?: string) => React.ReactNode;
-};
+// type HandleType = {
+//   crumb: (param?: string) => React.ReactNode;
+// };
 export const routes = [
   {
     path: "/",
@@ -118,27 +117,22 @@ export const routes = [
       {
         path: "career-form",
         element: <CareerFormPage />,
-
       },
       {
         path: "terms-condition",
         element: <TermsConditionPage />,
-
       },
       {
         path: "news-letter",
         element: <NewsLetterPage />,
-
       },
       {
         path: "notice",
         element: <NoticePage />,
-
       },
       {
         path: "shift-schedule",
         element: <ShiftSchedulePage />,
-
       },
       // AfterPostGraduationPage
       {
@@ -149,7 +143,6 @@ export const routes = [
           {
             path: "leadership-and-governance",
             element: <LeadershipAndGovernancePage />,
-
           },
           {
             path: "committees-and-cells",
@@ -158,39 +151,32 @@ export const routes = [
             children: committeeCards.map((card) => ({
               path: card.routeKey,
               element: <CustomCommitteeDetailsPage committee={card} />,
-
             })),
           },
 
           {
             path: "approvals-and-associations",
             element: <RecognitionApprovalsPage />,
-
           },
           {
             path: "award-overview",
             element: <AwardOverviewPage />,
-
           },
           {
             path: "iqac-overview",
             element: <IqacPage />,
-
           },
           {
             path: "naac",
             element: <NAACPage />,
-
           },
           {
             path: "nirf",
             element: <NIRFPage />,
-
           },
           {
             path: "organization-structure-plan",
             element: <OragnisationStructurePage />,
-
           },
         ],
       },
@@ -199,7 +185,6 @@ export const routes = [
         element: <InstitutePage />,
 
         children: [
-
           {
             path: ":departmentName",
             element: <InstituteDepartmentPage />,
@@ -215,44 +200,36 @@ export const routes = [
           {
             path: "policies-reports",
             element: <PoliciesReportsPage />,
-
           },
           {
             path: "academic-calender",
             element: <AcademicCalendarsPage />,
-
           },
           {
             path: "teaching-learning-process",
             element: <TeachingLearningProcessPage />,
-
           },
           {
             path: "academic-depository-nad-and-abc",
             element: <AcademicBankOfCreditPage />,
-
           },
 
           {
             path: "e-content-development-cell",
             element: <EContentCellPage />,
-
           },
 
           {
             path: "swayam-nptel-local-chapter",
             element: <SwayamNptelPage />,
-
           },
           {
             path: "iirs-isro",
             element: <IirsIsroPage />,
-
           },
           {
             path: "curriculum-design",
             element: <CurriculumDesignPage />,
-
           },
 
           // {
@@ -266,100 +243,100 @@ export const routes = [
         path: "admission",
         element: <OverviewPage />,
 
-
         children: [
-        
           {
             path: "how-to-apply",
             element: <HowToApplyPage />,
-         
           },
           {
             path: "fee-structure",
             element: <FeeStructurePage />,
-
           },
           {
             path: "shift-schedule",
             element: <ShiftSchedulePage />,
-
           },
           {
             path: "document-checklist",
             element: <DocumentChecklistPage />,
-
           },
           {
             path: "admission-faq",
             element: <AdmissionFaqPage />,
-
           },
           {
             path: "admission-policy",
             element: <AdmissionPolicyPage />,
-
           },
           {
             path: "program-finder",
             element: <ProgramFinderPage />,
-
           },
           {
             path: "scholarship-scheme",
             element: <ScholarshipPage />,
-
           },
         ],
       },
-      
+
       {
         path: "/programs",
-        element: "",
-
-
+        element: <RootPrograms />,
         children: [
           {
-            path: "after-class-10th",
-            element: <AfterClass10thPage />,
-
-          },
-
-          {
-            path: "after-polytechnic",
-            element: <AfterPolytechnicPage />,
-
+            path: ":programType",
+            element: <ProgramFinderPage />,
           },
           {
-            path: "after-class-12th",
-            element: <AfterClass12thPage />,
-
+            path: ":programType/:item",
+            element: <ProgramFinderPage />,
           },
           {
-            path: "industry-honors",
-            element: <IndustryHonorsPage />,
-
+            path: "details/:programName",
+            element: <ProgramDetailsPage />,
           },
-          {
-            path: "after-graduation",
-            element: <AfterGraduationPage />,
+          // {
+          //   path: "after-polytechnic",
+          //   element: <AfterPolytechnicPage />,
+          // },
+          // {
+          //   path: "after-class-12th",
+          //   element: <AfterClass12thPage />,
+          // },
+          // {
+          //   path: "industry-honors",
+          //   element: <IndustryHonorsPage />,
+          //   children: [
+          //     {
+          //       path: ":pathname",
+          //       element: <BtechInCSEAIAndML />,
+          //     },
+          //   ],
+          // },
+          // {
+          //   path: "after-graduation",
+          //   element: <AfterGraduationPage />,
+          // },
+          // {
+          //   path: "after-post-graduation",
+          //   element: <AfterPostGraduationPage />,
+          // },
 
-          },
-          {
-            path: "after-post-graduation",
-            element: <AfterPostGraduationPage />,
+          // {
+          //   path: `b-tech-cse-artificial-intelligence-machine-learning:pathName`,
+          //   element: <BtechInCSEAIAndML />,
 
-          },
-          {
-            path: "b-tech-cse-artificial-intelligence-machine-learning",
-            element: <BtechInCSEAIAndML />,
+          // },
+          // {
+          //   path: "*",
+          //   element: <BtechInCSEAIAndML />,
 
-          },
+          // },
         ],
       },
       {
         path: "/campus-life",
         element: <CampusLifePage />,
-
 
         children: [
           // {
@@ -370,12 +347,10 @@ export const routes = [
           {
             path: "transportation",
             element: <TransportationPage />,
-
           },
           {
             path: "hostel",
             element: <HostelPage />,
-
           },
           {
             path: "convocation",
@@ -386,57 +361,46 @@ export const routes = [
                 item.cards.map((card) => ({
                   path: card.routeKey,
                   element: <ConvocationDetailPage card={card} />,
-
-                }
-                ))
+                }))
               ),
             ],
           },
           {
             path: "central-library",
             element: <CentralLibraryPage />,
-
           },
 
           {
             path: "green-initiative",
             element: <GreenInitiativePage />,
-
           },
           {
             path: "women-empowerment",
             element: <WomenEmpowermentPage />,
-
           },
           {
             path: "student-senate",
             element: <StudentSenatePage />,
-
           },
           {
             path: "student-corner",
             element: <StudentCornerPage />,
-
           },
           {
             path: "outreach-activations",
             element: <OutreachActivationsPage />,
-
           },
           {
             path: "clubs",
             element: <ClubsPage />,
-
           },
           {
             path: "grievance-redressal-system",
             element: <GrievanceRedressalSystemPage />,
-
           },
           {
             path: "events",
             element: <EventPage />,
-
 
             children: [
               // Fest data
@@ -444,34 +408,29 @@ export const routes = [
                 fest.cards.map((card) => ({
                   path: card.routeKey,
                   element: <EventDetails card={card} />,
-
                 }))
               ),
 
               ...conferenceData.conferences.map((card) => ({
                 path: card.routeKey,
                 element: <EventDetails card={card} />,
-
               })),
 
               ...conferenceData.seminars.map((card) => ({
                 path: card.routeKey,
                 element: <EventDetails card={card} />,
-
               })),
 
               ...Object.values(festivalsData).flatMap((festival) =>
                 festival.cards.map((card) => ({
                   path: card.routeKey,
                   element: <EventDetails card={card} />,
-
                 }))
               ),
 
               ...tedxData.map((card) => ({
                 path: card.routeKey,
                 element: <EventDetails card={card} />,
-
               })),
             ],
           },
@@ -481,41 +440,30 @@ export const routes = [
         path: "/research",
         element: <ResearchOverviewPage />,
 
-
         children: [
-        
           {
             path: "process-and-initiatives",
             element: <ProcessAndInitiativePage />,
-
           },
           {
             path: "phd-notification-session",
             element: <PhdNotificationSessionPage />,
-
           },
           {
             path: "innovation",
             element: <InnovationPage />,
-
           },
           {
             path: "consultancy",
             element: <ConsultancyPage />,
-
-
           },
           {
             path: "publication",
             element: <PublicationPage />,
-
-
           },
           {
             path: "conference/:name",
             element: <ConferenceDetailPage />,
-
-
           },
         ],
       },
@@ -523,79 +471,56 @@ export const routes = [
         path: "/placements",
         element: <PlacementPage />,
 
-
-
         children: [
           {
             path: "placement-cell",
             element: <PlacementCellPage />,
-
-
           },
           {
             path: "student-testimonial",
             element: <StudentTestimonialPage />,
-
-
           },
           {
             path: "placement-policies",
             element: <PlacementPoliciesPage />,
-
-
           },
           {
             path: "alumni-registration",
             element: <AlumniRegistrationPage />,
-
-
           },
           {
             path: "notable-alumni",
             element: <AlumniTestimonialsPage />,
-
-
           },
           {
             path: "alumni-feedback",
             element: <AlumniFeedbackPage />,
-
-
           },
-      
+
           // PlacementOverviewPage
         ],
       },
       {
         path: "admission-enquiry",
         element: <AdmissionEnquiryPage />,
-
-
       },
       {
         path: "contact-us",
         element: <ContactUsPage />,
-
-
       },
       {
         path: ":name",
         element: <NewsEventDetails />,
-
-
       },
 
       {
         path: "/blogs",
         element: <BlogsPage />,
 
-
         children: [
           {
             path: ":blogRouteKey",
             element: <BlogDetailsPage />,
-
-
           },
         ],
       },
@@ -603,19 +528,12 @@ export const routes = [
       {
         path: "/rti",
         element: <RtiPage />,
-
-
-
       },
 
       {
         path: "/online-admission",
         element: <OnlineAdmissionPage />,
-
-
       },
     ],
   },
 ];
-
-

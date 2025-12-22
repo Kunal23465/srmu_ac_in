@@ -1,4 +1,5 @@
 import React from "react";
+// @ts-ignore
 import { FaRegFilePdf } from "react-icons/fa";
 import { phdOrdinanceData } from "../../../../data/research/overview/research-overview-data";
 import Classes from "../../../../utils/styles/Global.module.css";

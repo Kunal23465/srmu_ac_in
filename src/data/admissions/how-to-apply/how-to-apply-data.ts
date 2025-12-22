@@ -1,3 +1,4 @@
+// @ts-ignore
 import { customeOverViewType } from "../../../types/home-data-type";
 
 import img1 from "../../../assets/images/admissions/how-to-apply/computerscie-0605240249197.jpg"

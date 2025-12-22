@@ -15,7 +15,7 @@ const PlacementStayWithUs: React.FC = () => {
           Stay With Us
         </button>
 
-        <h1 className="text-5xl leading-snug ">
+        <h1 className="text-3xl md:text-5xl leading-snug ">
           Over the years, our students have landed
           <br /> top-tier opportunities in leading companies
         </h1>

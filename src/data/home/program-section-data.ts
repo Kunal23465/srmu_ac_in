@@ -13,11 +13,8 @@ import media from "../../assets/images/home/program-section/undergraduate/media-
 import natural from "../../assets/images/home/program-section/undergraduate/natural-science.jpg"
 import nutrition from "../../assets/images/home/program-section/undergraduate/nutrition-07052411002636.jpg"
 import pharmacy from "../../assets/images/home/program-section/undergraduate/pharmacy-06052402060294.jpg"
-
 import socialwork from "../../assets/images/home/program-section/postgrad/socialwork-22022410252366.jpg"
 import humanities from "../../assets/images/home/program-section/postgrad/humanities-22022410271022.jpg"
-
-
 import polytechniclateral from "../../assets/images/home/program-section/polytechnic/polytechnic-lateral.jpg"
 import polytechnicdiploma from "../../assets/images/home/program-section/polytechnic/polytechnic-diploma.jpg"
 

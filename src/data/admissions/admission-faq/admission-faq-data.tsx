@@ -28,7 +28,7 @@ export const faqData: AccordionItem[] = [
         question: "What is the criterion for admission in SRMU?",
         layoutType: "text",
         content:
-            "Prospective candidates seeking admission to any undergraduate, postgraduate, integrated, or diploma program must ensure they meet the prescribed eligibility criteria for the specific course. Explore the eligibility criteria for different courses at https://srmu.ac.in/pdf/EligibilityCriteriaforAdmissions.pdf.",
+            "Prospective candidates seeking admission to any undergraduate, postgraduate, integrated, or diploma program must ensure they meet the prescribed eligibility criteria for the specific course. Explore the eligibility criteria for different courses at <strong>https://srmu.ac.in/pdf/EligibilityCriteriaforAdmissions.pdf</strong>.",
     },
     {
         id: 2,
@@ -42,7 +42,7 @@ export const faqData: AccordionItem[] = [
         question: "How can I apply for a particular course?",
         layoutType: "text",
         content:
-            "After getting the information regarding the courses and knowing eligibility criteria, students can apply for any course by paying the required amount for reserving the seat either offline or online at https://srmu.ac.in/online-admission.",
+            "After getting the information regarding the courses and knowing eligibility criteria, students can apply for any course by paying the required amount for reserving the seat either offline or online at <strong>https://srmu.ac.in/online-admission</strong>.",
     },
     {
         id: 4,
@@ -89,7 +89,7 @@ export const faqData: AccordionItem[] = [
             "While filling the online application form, I am facing issues related to payment (payment failed/ payment awaited/ payment failure).",
         layoutType: "text",
         content:
-            "In such cases, you need to contact us on our Tollfree number 18001026004 or WhatsApp at 9554965586. Normally, if payment gets deducted due to issues with banking servers/payment gateways/internet connection, the amount is credited back by concerned agencies within 2–7 days. You can also contact our representatives for assistance to apply through offline mode by making form fee payment to the university bank account.",
+            "In all such cases you need to contact us on our Tollfree number 18001026004 or Whatsapp on 9554965586. Normally in cases where payment gets deducted due to issues of banking servers/ payment gateway/ internet connection, amount is credited back by concerned agencies within a period of 2-7 days. <br><br><strong>You are advised to contact us in case of any issues in online application process. In such cases our representative will help you to apply through offline mode by asking you to make form fee payment in university bank account.</strong>",
     },
     {
         id: 10,

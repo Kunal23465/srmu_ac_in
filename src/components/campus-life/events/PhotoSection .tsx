@@ -1,4 +1,3 @@
-import Slider from "react-slick";
 import Fancybox from "./Fancybox";
 
 interface PhotoSectionProps {
@@ -7,16 +6,6 @@ interface PhotoSectionProps {
 
 export default function PhotoSection({ photos }: PhotoSectionProps) {
     const safePhotos = photos ?? [];
-
-    const settings = {
-        dots: true,
-        infinite: true, // ← infinite carousel
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-    };
-
     return (
         <div>
             <div className="">

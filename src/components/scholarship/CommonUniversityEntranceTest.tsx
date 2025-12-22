@@ -9,9 +9,9 @@ const CommonUniversityEntranceTest: React.FC = () => {
       <div className="flex flex-col sm:flex-row justify-between gap-6">
         <div className="w-full sm:w-xl">
           <p className="text-xl sm:text-2xl font-medium uppercase pb-2 sm:pb-5 ">APPLY FOR 2026</p>
-          <button className="cursor-pointer text-white font-medium bg-[#0f4a85] border border-transparent transition-colors duration-500 hover:border-black hover:text-black hover:bg-white px-6 lg:px-8 py-3 lg:py-4 rounded-xl">
+          <a href="\online-admission" className="cursor-pointer text-white font-medium bg-[#0f4a85] border border-transparent transition-colors duration-500 hover:border-black hover:text-black hover:bg-white px-6 lg:px-8 py-3 lg:py-4 rounded-xl">
             APPLY NOW
-          </button>
+          </a>
         </div>
         <div className="">
           <h2 className="text-lg sm:text-xl font-bold uppercase">Counselling Schedule & Process</h2>
@@ -83,7 +83,7 @@ const CommonUniversityEntranceTest: React.FC = () => {
             <CustomScholarshiptable head={ScholarshipTableHeadData} data={ScholarshipTableData} />
             <p className="py-5">
               <strong>Please check your CUET – 2026 result by clicking:</strong>
-              <a href="https://cuet.samarth.ac.in/" target="_blank">
+              <a href="https://cuet.samarth.ac.in/" target="_blank" className="underline">
                 {" "}
                 https://cuet.samarth.ac.in/
               </a>

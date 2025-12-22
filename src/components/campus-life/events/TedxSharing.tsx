@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import tedxData from "../../../data/campus-life/events/events-data";
 import { useNavigate } from "react-router-dom";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
