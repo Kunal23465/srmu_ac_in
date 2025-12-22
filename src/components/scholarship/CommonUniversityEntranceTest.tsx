@@ -83,7 +83,7 @@ const CommonUniversityEntranceTest: React.FC = () => {
             <CustomScholarshiptable head={ScholarshipTableHeadData} data={ScholarshipTableData} />
             <p className="py-5">
               <strong>Please check your CUET – 2026 result by clicking:</strong>
-              <a href="https://cuet.samarth.ac.in/" target="_blank">
+              <a href="https://cuet.samarth.ac.in/" target="_blank" className="underline">
                 {" "}
                 https://cuet.samarth.ac.in/
               </a>
