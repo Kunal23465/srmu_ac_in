@@ -1737,17 +1737,18 @@ section .card-color img {
 }
 
 /* Remove default slick arrow icons */
-/* .slick-prev:before,
+.slick-prev:before,
 .slick-next:before {
-  content: "" !important;
-} */
+  /* content: "" !important; */
+  display: none !important;
+} 
 
 /* Force arrows to always display */
-/* .slick-slider .slick-arrow {
-  display: block !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-} */
+ .slick-slider .slick-arrow {
+  display: none !important;
+  /* opacity: 1 !important;
+  visibility: visible !important; */
+}
 
 /* Shared button style */
 .custom-arrow {
@@ -1887,4 +1888,4 @@ section .card-color img {
     margin-bottom: 10px;
   }
 }
-}
+
