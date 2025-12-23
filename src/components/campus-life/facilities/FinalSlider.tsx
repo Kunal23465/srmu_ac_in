@@ -14,10 +14,10 @@ const FinalSlider: React.FC = () => {
       <div className="">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-8 w-full">
           <div className="w-full sm:w-auto">
-            <h2 className="text-[1.6rem] text-[#023047] sm:text-xl lg:text-[50px] fw600">
+            <h2 className="lg:text-[50px] md:text-[46.875px] text-[22.4px] sm:text-[22.4px]  text-[#023047] fw600">
               Academic Facilities
             </h2>
-            <p className="">
+            <p className="text-[15px] lg:text-[16px] md:text-[15px] sm:text-[15px]">
               From innovative research spaces to interactive learning environments, SRMU offers a range of academic facilities.
             </p>
           </div>
