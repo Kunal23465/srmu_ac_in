@@ -27,11 +27,11 @@ const Cafeteria: React.FC = () => {
                     <div className="flex flex-col md:flex-row items-start justify-center gap-27.5">
 
                         <div className="text-white md:w-1/2 z-10 mt-14.5">
-                             <h2 className="text-[1.6rem] text-white sm:text-xl lg:text-[50px] fw600">
+                             <h2 className="lg:text-[50px] md:text-[46.875px] text-[22.4px] sm:text-[22.4px] text-white  fw600">
                                 Cafeteria & Eating Joints
                             </h2>
 
-                            <span className="mb-4 leading-relaxed">
+                            <span className="mb-4 text-[15px] lg:text-[16px] md:text-[15px] sm:text-[15px] leading-relaxed">
                                 The university boasts a vibrant cafeteria and various eating joints, creating a diverse culinary landscape for students. These spaces not only serve as hubs for delicious and nourishing meals but also foster a sense of community and relaxation, where students can unwind and socialize between classes.
                             </span>
                         </div>
