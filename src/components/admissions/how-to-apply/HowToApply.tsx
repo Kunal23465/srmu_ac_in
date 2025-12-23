@@ -125,6 +125,9 @@ const HowToApply: React.FC = () => {
       </div>
       <CustomTopFooter data={HowToApplyTopFooterData} />
     </div>
+
+    </div>
+    </div>
   );
 };
 
