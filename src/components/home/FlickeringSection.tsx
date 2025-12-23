@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { flickcategories } from "../../data/home/flick-section-data";
-
+import Classes from "../../utils/styles/Global.module.css";
 export default function FlickeringSection() {
   const [activeId, setActiveId] = useState("section_25");
 
@@ -20,7 +20,7 @@ export default function FlickeringSection() {
       </div>
 
       {/* CONTENT */}
-      <div className="relative z-10 container mx-auto h-full flex items-center px-6">
+      <div className={`relative z-10 ${Classes["container"]} mx-auto h-full flex items-center px-6`}>
         {/* DESKTOP LAYOUT (unchanged) */}
         <div className="hidden md:flex w-full justify-center gap-5 items-stretch">
           {/* LEFT SIDE DESKTOP */}
@@ -41,7 +41,7 @@ export default function FlickeringSection() {
                 onClick={() => setActiveId(item.id)}
                 onMouseEnter={() => setActiveId(item.id)}
                 className={`
-                  flex items-center justify-start px-6 py-12 transition-all text-left relative overflow-hidden text-[1.5rem] cursor-pointer
+                  flex items-center justify-start px-3 xl:px-6 py-6 lg:py-8 xl:py-12 transition-all text-left relative overflow-hidden text-sm lg:text-base xl:text-[1.5rem] cursor-pointer
                   ${
                     item.id === "section_24"
                       ? "border-r border-b border-white/30"

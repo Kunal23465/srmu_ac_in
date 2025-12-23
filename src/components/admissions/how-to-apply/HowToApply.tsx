@@ -54,14 +54,8 @@ const HowToApply: React.FC = () => {
          </div>
         </div>
       </div>
-     
-    </div>
-
-
-</div>
-        <OnlineAdmissionProcess />
+      <OnlineAdmissionProcess />
       <div className={`${Classes["container"]}`}>
-
         <div className="">
           <div className="flex">
             <div>

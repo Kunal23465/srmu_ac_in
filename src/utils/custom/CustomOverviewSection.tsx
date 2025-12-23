@@ -27,7 +27,15 @@ const CustomOverviewSection: React.FC<CustomOverviewSectionProps> = ({ data }) =
               content
             )}
 
-            {counterSibling && (typeof counterSibling === "string" ? <p><br />{counterSibling}</p> : counterSibling)}
+            {counterSibling &&
+              (typeof counterSibling === "string" ? (
+                <p>
+                  <br />
+                  {counterSibling}
+                </p>
+              ) : (
+                counterSibling
+              ))}
           </div>
         </div>
       </div>
