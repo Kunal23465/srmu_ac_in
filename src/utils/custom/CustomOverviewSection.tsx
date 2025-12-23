@@ -14,20 +14,28 @@ const CustomOverviewSection: React.FC<CustomOverviewSectionProps> = ({ data }) =
     <div className={` py-7 md:py-10 lg:py-14`}>
       <div className={`flex flex-col  gap-4 items-stretch  justify-between ${otherData && otherData?.length > 0 ? "md:flex-row" : "md:flex-row"}`}>
         <div
-          className={`w-auto  ${otherData && otherData?.length > 0 ? "md:border-r-4" : " border-l-4 pl-2 md:pl-0 md:border-l-0  md:border-r-4"
+          className={`w-auto  ${otherData && otherData?.length > 0 ? "md:border-r-4" : " border-l-4 pl-2 md:pl-0 md:border-l-0  md:border-r-5"
             }  border-[#ffb703] flex flex-col justify-center`}
         >
-          <h2 className="text-3xl lg:text-4xl whitespace-pre-line font-semibold leading-11 pr-4 sm:min-w-[350px]">{heading}</h2>
+          <h2 className="text-[28px] lg:text-[46.875px] md:text-[46.875px] sm:text-[28px] text-[#023047] fw500 whitespace-pre-line font-semibold leading-15 pr-4 sm:min-w-[350px]">{heading}</h2>
         </div>
         <div className={`  ${otherData && otherData?.length > 0 ? "" : "md:pl-8 md:py-4"}`}>
-          <div className="text-justify">
+          <div className="text-justify lg:pr-30 md:pr-0 sm:pr-0 text-[15px] lg:text-[16px] md:text-[15px] sm:text-[15px]">
             {typeof content === "string" ? (
               <div dangerouslySetInnerHTML={{ __html: content }} />
             ) : (
               content
             )}
 
-            {counterSibling && (typeof counterSibling === "string" ? <p><br />{counterSibling}</p> : counterSibling)}
+            {counterSibling &&
+              (typeof counterSibling === "string" ? (
+                <p>
+                  <br />
+                  {counterSibling}
+                </p>
+              ) : (
+                counterSibling
+              ))}
           </div>
         </div>
       </div>

@@ -84,7 +84,7 @@ const MemorialCollege: React.FC = () => {
 
       <div className={`${Classes["container"]}  `}>
         <div className="rounded-[10px] mt-6 lg:mt-10">
-          <div className="content px-5 xl:px-10  py-4 md:py-8 lg:py-10 z-50 relative">
+          <div className="content   py-4 md:py-8 lg:py-10 z-50 relative">
             <h3 className="text-3xl lg:text-[47px] lg:leading-[50px] text-[#023047]  font-bold text-center  mt-15 lg:mt-10">Shri Ramswaroop Memorial University</h3>
             <p className="leading-7 text-[15px] text-[#0009] font-bold text-center mt-5 ">
               Experience a world of countless opportunities at SRMU – where we nurture brilliant minds and shape dreams into futures. As leaders in engineering and business
@@ -96,7 +96,7 @@ const MemorialCollege: React.FC = () => {
 
             <div className="mt-5 flex justify-center">
               <Link to="/about">
-                <button className="bg-[#023047] hover:bg-white fw500 hover:text-[#023047] hover:border hover:border-[#023047] uppercase cursor-pointer py-4 px-5 text-white flex gap-x-2 items-center rounded-lg">
+                <button className="bg-[#023047] hover:bg-white fw500 hover:text-[#023047] hover:border hover:border-[#023047] uppercase cursor-pointer py-4 px-8 text-white flex gap-x-2 items-center rounded-lg">
                   Find Out More About Us <LiaLongArrowAltRightSolid size={24} />
                 </button>{" "}
               </Link>{" "}

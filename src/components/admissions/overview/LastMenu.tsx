@@ -43,15 +43,15 @@ const LastMenu: React.FC = () => {
         />
       </div>
 
-      <div className="text-center max-w-4xl z-20">
+      <div className="text-center max-w-[900px] z-20">
 
         <p
-          className="fw45 font-semibold leading-tight mb-6"
+          className="lg:text-[45px] md:text-[42.195px] sm:text-[28px] text-[28px] font-semibold leading-tight mb-6"
         >
           <span className='color_light_blue'>The well-crafted programs</span> of SRMU will keep you ahead of others in <span className='color_light_blue'>terms of skill development and employability.</span>
         </p>
 
-        <p className="fw35 fw500 font-medium">
+        <p className="lg:text-[35px] md:text-[32.82px] sm:text-[28px] text-[28px] fw500 font-medium">
           Come and join the rich legacy of 24 years.
         </p>
 

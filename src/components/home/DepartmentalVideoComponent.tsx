@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Slider from "react-slick";
-
+import Classes from "../../utils/styles/Global.module.css";
 import media from "../../assets/images/home/departmentalvideos/media-28022504202912.png";
 import business from "../../assets/images/home/departmentalvideos/business.png";
 import civil from "../../assets/images/home/departmentalvideos/civil.png";
@@ -54,20 +54,19 @@ const PrevArrow = ({ onClick }: any) => (
 export default function DepartmentalVideo() {
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
   const [activeSlide, setActiveSlide] = useState(0);
-  const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 0);
+  const [windowWidth, setWindowWidth] = useState(typeof window !== "undefined" ? window.innerWidth : 0);
 
   useEffect(() => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
     };
 
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   // Function to determine slidesToShow based on window width
   const getSlidesToShow = () => {
-
     if (windowWidth >= 1024) return 3;
     if (windowWidth >= 600) return 2;
 
@@ -98,7 +97,6 @@ export default function DepartmentalVideo() {
     beforeChange: (_current: number, next: number) => setActiveSlide(next),
     key: windowWidth,
     responsive: [
-
       {
         breakpoint: 1024,
         settings: { slidesToShow: 2 },
@@ -114,11 +112,11 @@ export default function DepartmentalVideo() {
     <section className="py-7 md:py-10 lg:py-14">
       <h2 className="text-[28px] text-center sm:text-xl lg:text-[3.125rem] fw600 mb-10">Departmental Video</h2>
 
-      <div className="container mx-auto px-4 mb-30">
+      <div className={`${Classes["container"]} mb-30`}>
         {/* @ts-ignore */}
         <Slider className="department-crousel" {...settings}>
           {videos.map((video, index) => {
-            const isSecondImage = (activeSlide) % videos.length === index;
+            const isSecondImage = activeSlide % videos.length === index;
             return (
               <div key={video.id} className="px-3">
                 <div className="relative group rounded-xl overflow-hidden shadow-lg cursor-pointer">

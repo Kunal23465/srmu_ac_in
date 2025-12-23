@@ -54,7 +54,7 @@ const ProgramDetails = () => {
         <div className={` py-7 md:py-10 lg:py-14`}>
           <div className={`flex flex-col  gap-4 items-stretch  justify-between md:flex-row `}>
             <div className={`w-auto  ${" border-l-4 pl-2 md:pl-0 md:border-l-0  md:border-r-4"}  border-[#ffb703] flex flex-col justify-center`}>
-              <h2 className="text-3xl lg:text-4xl whitespace-pre-line font-semibold leading-11 pr-4 sm:min-w-[350px]">Overview</h2>
+              <h2 className="text-[28px]  lg:text-[3.125rem] whitespace-pre-line font-semibold leading-11 pr-4 sm:min-w-[350px]">Overview</h2>
             </div>
             <div className={`md:pl-8 md:py-4`}>
               {/* @ts-ignore */}
@@ -84,9 +84,9 @@ const ProgramDetails = () => {
       </div>
       <div className={`${Classes["container"]}`}>
         <h2 className="mt-20 mb-10 text-center font50 fw500 text-[#023047]">Program Fee</h2>
-              {/* <CustomDepartmentFeeDetailsTable data={ProgramFeesAIandML} /> */}
-              {/* @ts-ignore */}
-              {feesData && feesData.length > 0 && <ProgramFeeTable data={feesData[0]} />}
+        {/* <CustomDepartmentFeeDetailsTable data={ProgramFeesAIandML} /> */}
+        {/* @ts-ignore */}
+        {feesData && feesData.length > 0 && <ProgramFeeTable data={feesData[0]} />}
       </div>
       <div className="my-50">
         <CustomProgramScholarshipSchemeCard />

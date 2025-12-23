@@ -122,11 +122,11 @@ const LastSlider: React.FC = () => {
     return (
         <div className="w-full max-w-7xl">
             <div className="text-center mb-5">
-                 <h2 className="text-[1.6rem] font-medium text-[#023047] sm:text-xl lg:text-[50px] fw600">
+                 <h2 className="lg:text-[50px] md:text-[46.875px] text-[22.4px] sm:text-[22.4px] font-medium text-[#023047] fw600">
                     Academic Wings
                 </h2>
 
-                <p className="w-[82%] pb-10  mx-auto">
+                <p className="w-[82%] pb-10  mx-auto text-[15px] lg:text-[16px] md:text-[15px] sm:text-[15px]">
                     Shri Ramswaroop Memorial University (SRMU) features well-defined academic wings, each dedicated to fostering excellence in specific disciplines. These wings, equipped with state-of-the-art classrooms, laboratories, and research facilities, provide a conducive environment for specialized learning and academic exploration. With distinct academic wings, SRMU ensures a focused and comprehensive approach to education, nurturing the intellectual growth of students across various fields.
                 </p>
             </div>
@@ -182,7 +182,7 @@ const LastSlider: React.FC = () => {
                                 </h3>
 
                                 <p
-                                    className={` leading-relaxed group-hover:text-white 
+                                    className={` leading-relaxed group-hover:text-white text-[15px] lg:text-[16px] md:text-[15px] sm:text-[15px]
                                         ${isActive ? "" : ""}
                                     `}
                                 >

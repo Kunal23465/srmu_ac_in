@@ -6,7 +6,7 @@ const CardList: React.FC = () => {
   return (
     <>
       <div className='mt-10'>
-        <h2 className='text-center curr  text-[34px]! font-medium py-10'>
+        <h2 className='text-center curr  lg:text-[35px] text-[21px] md:text-[32.82px] fw500 sm:text-[21px] py-10'>
           You have the option to choose from a variety of programs to choose from and start your journey at SRMU to shape and grow your career
         </h2>
       </div>

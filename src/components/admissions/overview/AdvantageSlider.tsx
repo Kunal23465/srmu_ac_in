@@ -281,9 +281,9 @@ const AdvantageSlider: React.FC = () => {
         <div className={`${Classes["container"]}`}>
         {/* Heading + Buttons */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 md:mb-12 gap-4">
-          <div className="max-w-4xl">
-            <h1 className="text-3xl md:text-[46px] font-bold leading-tight">SRMU Advantage</h1>
-            <p className="mt-3 text-sm md:text-lg opacity-100 font-light">
+          <div className="">
+            <h1 className="lg:text-[50px] text-[28px] sm:text-[28px] md:text-[46.875px] fw600 leading-tight">SRMU Advantage</h1>
+            <p className="mt-3 lg:text-[16px] text-[15px] md:text-[15px] sm:text-[15px]">
               SRMU builds the visionary leaders of tomorrow, promising holistic development,
               and the stepping stones to global success.
             </p>
@@ -304,17 +304,17 @@ const AdvantageSlider: React.FC = () => {
                 <div className="bg-white text-black p-6 md:p-8 shadow-xl rounded-xl h-full">
                   <div className="flex gap-3 items-start">
                     <img src={item.icon} alt={item.title} className="h-10 md:h-12" />
-                    <h3 className="text-xl md:text-2xl font-normal leading-snug">
+                    <h3 className="lg:text-[22px] md:text-[20.625px] text-[19.25px] sm:text-[19.25px] leading-snug">
                       {item.title} <br />
-                      <span className="font-semibold text-xl md:text-2xl">{item.subtitle}</span>
+                      <span className="lg:text-[22px] md:text-[20.625px] text-[19.25px] sm:text-[19.25px] fw500">{item.subtitle}</span>
                     </h3>
                   </div>
 
-                  <div className="mt-4 text-sm md:text-base leading-relaxed">
+                  <div className="mt-4 lg:text-[16px] text-[15px] md:text-[15px] sm:text-[15px] leading-relaxed">
                     <div className="opacity-80 text-justify" dangerouslySetInnerHTML={{ __html: item.description }} />
 
                     {item.extraText && (
-                      <div className="opacity-100 font-bold mt-3" dangerouslySetInnerHTML={{ __html: item.extraText }} />
+                      <div className="opacity-100 lg:text-[16px] text-[15px] md:text-[15px] sm:text-[15px] fw500 font-bold mt-3" dangerouslySetInnerHTML={{ __html: item.extraText }} />
                     )}
                   </div>
                 </div>

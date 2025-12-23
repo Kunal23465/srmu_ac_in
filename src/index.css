@@ -1060,7 +1060,6 @@ footer:after {
 .custom-table th {
   padding: 25px 20px;
   text-align: left;
-  font-size: 1.25em;
   font-weight: 600;
 }
 
@@ -1077,8 +1076,6 @@ footer:after {
   background-color: #ffffff;
   padding: 15px 20px;
   border-bottom: 1px solid #e0e0e0;
-  font-size: 1.12em;
-  color: #333333;
   border-bottom: none;
 
 }
@@ -1199,9 +1196,7 @@ ul {
   clip-path: polygon(0 0, 92% 0, 96% 100%, 0 100%);
 }
 
-.curr {
-  font-size: calc(1.025rem + 0.9vw);
-}
+
 
 /* p {
   font-size: 1.125rem;
@@ -1539,13 +1534,13 @@ section .card-color img {
 
 .humming ul li {
   position: relative;
-  padding-left: 40px;
+  padding-left: 60px;
 }
 
 .humming ul li::before {
   content: "";
   position: absolute;
-  left: 0;
+  left: 20px;
   top: 50%;
   transform: translateY(-50%);
   width: 21px;

@@ -8,6 +8,21 @@ interface Props {
     data: AccordionItem[];
 }
 
+const HtmlContent: React.FC<{ html?: string; className?: string }> = ({
+    html,
+    className,
+}) => {
+    if (!html) return null;
+
+    return (
+        <div
+            className={className}
+            dangerouslySetInnerHTML={{ __html: html }}
+        />
+    );
+};
+
+
 const CustomFaqAccordion: React.FC<Props> = ({ data }) => {
     const [openIndex, setOpenIndex] = useState<number>(0);
 
@@ -18,18 +33,23 @@ const CustomFaqAccordion: React.FC<Props> = ({ data }) => {
     const renderContent = (item: AccordionItem) => {
         switch (item.layoutType) {
             case "text":
-                return <p className="text-gray-700 !text-sm">{item.content}</p>;
+                return (
+                    <HtmlContent
+                        html={item.content}
+                        className="text-gray-700 !text-[17px] leading-relaxed"
+                    />
+                );
 
             case "list":
                 return (
                     <>
                         {item.content && (
-                            <span className="text-gray-700 mb-3 leading-relaxed !text-sm">{item.content}</span>
+                            <span className="text-gray-700 mb-3 leading-relaxed !text-[17px]">{item.content}</span>
                         )}
                         <ul className="list-decimal pl-6 text-gray-700 space-y-1">
                             {item.listItems?.map((li, idx) => (
                                 <li key={idx}>
-                                    <span className="font-semibold !text-sm ">{li}</span>
+                                    <span className="font-semibold !text-[17px] ">{li}</span>
                                 </li>
                             ))}
                         </ul>
@@ -100,9 +120,9 @@ const CustomFaqAccordion: React.FC<Props> = ({ data }) => {
                     >
                         <span className="text-lg sm:text-xl font-bold">{`${item.id} ${item.question}`}</span>
                         {openIndex === index ? (
-                            <ChevronUp className="w-5 h-5 text-gray-600" />
+                            <ChevronUp className="w-6 h-6 min-w-6 min-h-6 text-gray-600 cursor-pointer" />
                         ) : (
-                            <ChevronDown className="w-5 h-5 text-gray-600" />
+                            <ChevronDown className="w-6 h-6 min-w-6 min-h-6  text-gray-600 cursor-pointer" />
                         )}
                     </button>
 
