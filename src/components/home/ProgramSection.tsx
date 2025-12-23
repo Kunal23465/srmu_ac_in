@@ -5,13 +5,14 @@ import { AppDispatch, RootState } from "../../store";
 import { fetchProgramType } from "../../store/program-finder/program-type/programTypeThunk";
 import { fetchProgramDiscipline } from "../../store/program-finder/discipline/disciplineThunk";
 import placeholderImg from "../../assets/images/placeholder-1.png";
-const PROGRAM_TYPE_LABEL_MAP: Record<string, string> = {
-  "After Class 10th": "Polytechnic (Diploma)",
-  "After Class 12th": "Undergraduate",
-  "Industry Honors Programs": "Industry Honors",
-  "After Graduation": "Postgraduate",
-  "After Postgraduation": "Integrated",
-};
+import { LiaLongArrowAltRightSolid } from "react-icons/lia";
+// const PROGRAM_TYPE_LABEL_MAP: Record<string, string> = {
+//   "After Class 10th": "Polytechnic (Diploma)",
+//   "After Class 12th": "Undergraduate",
+//   "Industry Honors Programs": "Industry Honors",
+//   "After Graduation": "Postgraduate",
+//   "After Postgraduation": "Integrated",
+// };
 const ProgramsSection: FC = () => {
   const dispatch = useDispatch<AppDispatch>();
   const [activeTab, setActiveTab] = useState<number | null>(null);
@@ -59,6 +60,8 @@ const ProgramsSection: FC = () => {
     }
   }, [dispatch, selectedProgramType]);
 
+  // console.log("discipline", discipline);
+
   return (
     <section
       className="bg-cover bg-center bg-fixed py-20 mb-20"
@@ -83,17 +86,21 @@ const ProgramsSection: FC = () => {
             <ul className="flex flex-row md:flex-col overflow-x-auto">
               {programType?.map((tab: any) => (
                 <li key={tab.programTypeId}>
-                  <button
-                    onClick={() => {
-                      setActiveTab(tab.programTypeId);
-                      setSelectedProgramType(tab.programTypeId);
-                    }}
-                    className={`block w-full text-left uppercase text-nowrap text-white rounded-md py-5 md:pl-6 md:pr-16 mb-1 px-5 text-base md:text-[1.25rem] cursor-pointer transition-all
+                  {tab.showOnHome && (
+                    <>
+                      <button
+                        onClick={() => {
+                          setActiveTab(tab.programTypeId);
+                          setSelectedProgramType(tab.programTypeId);
+                        }}
+                        className={`block w-full text-left uppercase text-nowrap text-white rounded-md py-5 md:pl-6 md:pr-16 mb-1 px-5 text-base md:text-[1.25rem] cursor-pointer transition-all
                     ${activeTab === tab.programTypeId ? "programsection shadow-lg text-[#0d6efd]" : "bg-transparent text-white"}`}
-                  >
-                    {PROGRAM_TYPE_LABEL_MAP[tab.name] ?? tab.name}
-                    {/* {tab.name} */}
-                  </button>
+                      >
+                        {/* {PROGRAM_TYPE_LABEL_MAP[tab.name] ?? tab.name} */}
+                        {tab.name}
+                      </button>
+                    </>
+                  )}
                 </li>
               ))}
             </ul>
@@ -128,7 +135,7 @@ const ProgramsSection: FC = () => {
                 className="uppercase inline-flex items-center bg-[#ffb703] text-[#023047] font-medium py-4 px-8 rounded-xl hover:bg-transparent hover:border-1 hover:text-[#ffb703] hover:border-[#ffb703] transition shadow-md"
               >
                 Enroll Now
-                <span className="ml-2">→</span>
+                <LiaLongArrowAltRightSolid size={24} />
               </Link>
             </div>
           </div>

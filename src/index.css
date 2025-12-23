@@ -1539,13 +1539,13 @@ section .card-color img {
 
 .humming ul li {
   position: relative;
-  padding-left: 40px;
+  padding-left: 60px;
 }
 
 .humming ul li::before {
   content: "";
   position: absolute;
-  left: 0;
+  left: 20px;
   top: 50%;
   transform: translateY(-50%);
   width: 21px;

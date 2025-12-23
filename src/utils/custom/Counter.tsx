@@ -12,7 +12,7 @@ const Counter: React.FC<counterDataPropsType> = ({ counterData, classes }) => {
     <div className={`parent-box ${classes ? classes : ""}   py-7 md:py-10 lg:py-14`}>
       {counterData.map((item: any) => (
         <div key={item.id}>
-          <h1 className={`text-3xl lg:text-[47px] font-semibold ${item.icon ? "text-white" : "text-[#ffb703]"}   text-center flex items-center justify-center`}>
+          <h1 className={`text-3xl lg:text-[50px] font-semibold ${item.icon ? "text-white" : "text-[#ffb703]"}   text-center flex items-center justify-center`}>
             {item.icon && (
               <span className="pt-2 pr-1">
                 <img src={item.icon} alt="" />

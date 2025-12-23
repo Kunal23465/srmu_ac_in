@@ -14,20 +14,25 @@ const CustomOverviewSection: React.FC<CustomOverviewSectionProps> = ({ data }) =
     <div className={` py-7 md:py-10 lg:py-14`}>
       <div className={`flex flex-col  gap-4 items-stretch  justify-between ${otherData && otherData?.length > 0 ? "md:flex-row" : "md:flex-row"}`}>
         <div
-          className={`w-auto  ${otherData && otherData?.length > 0 ? "md:border-r-4" : " border-l-4 pl-2 md:pl-0 md:border-l-0  md:border-r-4"
-            }  border-[#ffb703] flex flex-col justify-center`}
+          className={`w-auto  ${
+            otherData && otherData?.length > 0 ? "md:border-r-4" : " border-l-4 pl-2 md:pl-0 md:border-l-0  md:border-r-4"
+          }  border-[#ffb703] flex flex-col justify-center`}
         >
-          <h2 className="text-3xl lg:text-4xl whitespace-pre-line font-semibold leading-11 pr-4 sm:min-w-[350px]">{heading}</h2>
+          <h2 className="text-[28px]  lg:text-[3.125rem] whitespace-pre-line font-semibold leading-11 pr-4 sm:min-w-[350px]">{heading}</h2>
         </div>
         <div className={`  ${otherData && otherData?.length > 0 ? "" : "md:pl-8 md:py-4"}`}>
           <div className="text-justify">
-            {typeof content === "string" ? (
-              <div dangerouslySetInnerHTML={{ __html: content }} />
-            ) : (
-              content
-            )}
+            {typeof content === "string" ? <div dangerouslySetInnerHTML={{ __html: content }} /> : content}
 
-            {counterSibling && (typeof counterSibling === "string" ? <p><br />{counterSibling}</p> : counterSibling)}
+            {counterSibling &&
+              (typeof counterSibling === "string" ? (
+                <p>
+                  <br />
+                  {counterSibling}
+                </p>
+              ) : (
+                counterSibling
+              ))}
           </div>
         </div>
       </div>

@@ -46,8 +46,8 @@ const Apply: React.FC = () => {
   return (
     <div className={`${Classes.container} pb-7 md:pb-10 lg:pb-14`}>
       <div className="flex flex-col-reverse sm:flex-row gap-x-10 gap-y-6">
-        <div className="left-part w-full sm:max-w-[500px] sm:min-w-[500px]">
-          <h2 className="text-[28px] text-[#023047] sm:text-xl lg:text-[3.125rem] fw600">Apply to SRMU</h2>
+        <div className="left-part w-full sm:max-w-[500px] ">
+          <h2 className="text-[28px] text-[#023047]  lg:text-[3.125rem] fw600">Apply to SRMU</h2>
           <p className="">Whether you’re looking for an undergraduate degree or to develop industry-specific skills, SRMU has every pathway available for you.</p>
 
           <div className="mt-4 sm:mt-8">
@@ -66,14 +66,14 @@ const Apply: React.FC = () => {
                 <div className={`mt-2 overflow-hidden  ease-in-out ${item.id === active ? "max-h-[1500px]" : "max-h-0"}`}>
                   {item.content}
 
-                  {item.id === active && <img src={item.imgSrc} alt="Program visual" className="mt-4 rounded-lg block sm:hidden w-full" />}
+                  {item.id === active && <img src={item.imgSrc} alt="Program visual" className="mt-4 rounded-lg block lg:hidden w-full" />}
                 </div>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="right-part w-full sm:w-auto hidden sm:block">
+        <div className="right-part w-full sm:w-auto min-w-[400px] hidden lg:block">
           <img
             className="w-full h-auto rounded-lg max-w-[720px] max-h-[500px]"
             src={active !== null ? dynamicAccordionData?.[active]?.imgSrc : dynamicAccordionData?.[0]?.imgSrc}
