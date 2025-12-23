@@ -40,7 +40,7 @@ const Apply: React.FC = () => {
 
   /* ===========================
           Initial Load
-         =========================== */
+     =========================== */
   useEffect(() => {
     dispatch(fetchProgramByFlag());
   }, [dispatch]);
