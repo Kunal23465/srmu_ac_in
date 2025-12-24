@@ -16,7 +16,7 @@ const OnlyCampus: React.FC = () => {
                                 Only Campus is the Region with a Future Driven Environment
                             </h2>
 
-                            <p className="mb-2 text-[15px] lg:text-[16px] sm:text-[15px] leading-relaxed text-justify">
+                            <p className="mb-2 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] leading-relaxed text-justify">
                                 SRMU, uniquely founded and led by two IIT Gold medalists in India, boasts 24 years of hands-on experience in managing esteemed Engineering and Management colleges within the Ramswaroop group. Our commitment is to elevate our facilities to international standards, providing top-notch academia and professional resources to prepare students for global opportunities.
                             </p>
 

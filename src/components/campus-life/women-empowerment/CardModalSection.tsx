@@ -8,11 +8,11 @@ export default function CardModalSection() {
     return (
         <section className="py-20">
             <div className="container mx-auto px-4">
-                 <h2 className="text-[2rem] text-center text-[#023047] sm:text-xl lg:text-[50px] fw600">
+                 <h2 className="lg:text-[50px] md:text-[46.875px] text-[22.4px] sm:text-[22.4px] text-center text-[#023047]  fw600">
                     Initiatives
                 </h2>
 
-                <p className="text-center mb-15">
+                <p className="text-center text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] mb-15">
                     We believe in equality, inclusiveness, respect for human dignity, fairness and justice for all which is reflected in an unbiased recognition and representation of women and men in all areas to thrive.
                 </p>
 
@@ -23,11 +23,11 @@ export default function CardModalSection() {
                             className="bg-[#fff6dd]  shadow-lg rounded-2xl p-10 flex flex-col justify-between hover:shadow-2xl transition-all duration-300"
                             style={{ backgroundColor: item.bgColor }}
                         >
-                            <h3 className=" font-semibold lg:text-[1.625rem] text-[22.75px] sm:text-[22.75px] mb-3">
+                            <h3 className=" font-semibold lg:text-[26px] md:text-[24.375px] text-[22.75px] sm:text-[22.75px] mb-3">
                                 {item.title}
                             </h3>
 
-                            <p className="text-gray-700 lg:text-[15px] text-[14px] sm:text-[14px] line-clamp-3">
+                            <p className="text-gray-700 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] line-clamp-3">
                                 {item.shortDescription}
                             </p>
 
