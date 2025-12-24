@@ -15,6 +15,7 @@ interface PropsTypes {
   onSearchChange: (val: string) => void;
   onProgramTypeChange: (val: number | string) => void;
   onDisciplineChange: (val: number | string) => void;
+  isTypeFlag?: boolean;
 }
 
 const ProgramFilter: React.FC<PropsTypes> = ({
@@ -27,6 +28,7 @@ const ProgramFilter: React.FC<PropsTypes> = ({
   onSearchChange,
   onProgramTypeChange,
   onDisciplineChange,
+  isTypeFlag,
 }) => {
   const [visibleCount, setVisibleCount] = useState(5);
   const visibleCourses = data.slice(0, visibleCount);
@@ -44,7 +46,7 @@ const ProgramFilter: React.FC<PropsTypes> = ({
               setVisibleCount(5);
             }}
           >
-            <option value="">Select Program Type</option>
+            <option value="">{isTypeFlag ? " Select Program Flag" : "Select Program Type"} </option>
             {programTypeOptions.map((type: any) => (
               <option key={type.programTypeId} value={type.programTypeId}>
                 {type.name}
