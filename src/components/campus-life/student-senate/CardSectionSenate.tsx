@@ -40,9 +40,9 @@ export const CardSectionSenate: React.FC<CardProps> = ({ student }) => {
                 className="rounded-t-xl w-full h-60 object-cover hover:scale-110 transition-all duration-500"
             /></div>
 
-            <h2 className="mt-6 font26 px-8 fw500 color_light_blue">{student.title}</h2>
+            <h2 className="mt-6 lg:text-[26px] md:text-[24.375px] text-[22.75px] sm:text-[22.75px] px-8 fw500 color_light_blue">{student.title}</h2>
 
-            <p className="mt-2 px-8 leading-relaxed flex-grow">
+            <p className="mt-2 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] px-8 leading-relaxed flex-grow">
                 {student.description.substring(0, 100)+"..."}
             </p>
         

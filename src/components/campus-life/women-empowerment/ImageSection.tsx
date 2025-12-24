@@ -11,7 +11,7 @@ export default function ImageSection() {
 
             <div className="relative max-w-6xl mx-auto px-6 grid md:grid-cols-1 gap-10 items-center">
                 <div>
-                    <h2 className="text-2xl text-white sm:text-xl lg:text-[50px] fw600">
+                    <h2 className="lg:text-[50px] md:text-[46.875px] text-[22.4px] sm:text-[22.4px] text-white  fw600">
                         We Believe in</h2>
 
                     <ul className="space-y-3 text-white text-base leading-relaxed max-w-3xl">
@@ -21,7 +21,7 @@ export default function ImageSection() {
                                 className="flex items-start gap-3 text-wrap overflow-hidden break-words"
                             >
                                 <span className="text-yellow-400 text-sm">✔</span>
-                                <span className="text-sm md:text-sm  leading-snug">
+                                <span className="text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px]  leading-snug">
                                     {text}
                                 </span>
                             </li>
@@ -34,10 +34,10 @@ export default function ImageSection() {
                 >
                     {stats.map((s, i) => (
                         <div key={i} className="mb-6 md:mb-0">
-                            <p className="font60 text-yellow-500 md:text-[60px] text-[20px]">
+                            <p className="lg:text-[60px] md:text-[56.25px] text-[35px] sm:text-[35px] text-yellow-500 ">
                                 {s.value}
                             </p>
-                            <p className="font20 md:text-[20px] text-[14px]">{s.label}</p>
+                            <p className="lg:text-[20px] md:text-[18.75px] sm:text-[17.5px] text-[17.5px]">{s.label}</p>
                         </div>
                     ))}
                 </div>

@@ -47,7 +47,7 @@ const HowToApply: React.FC = () => {
           <h2 className="text-[#023047] lg:text-[50px] md:text-[46.875px] text-[22.4px] sm:text-[22.4px] fw500 whitespace-pre-line leading-15 pr-4 sm:min-w-[350px]">How To Apply</h2>
         </div>
         <div className="md:pl-8 md:py-4">
-          <div className="text-justify text-[15px] lg:text-[16px] md:text-[15px] sm:text-[15px]">
+          <div className="text-justify text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px]">
            <p className="pb-4">To begin your journey at Shri Ramswaroop Memorial University (SRMU), visit the official website and head to the “<a className="font-medium italic underline" href="https://studentportal.srmu.ac.in/?_gl=1*16w4y3g*_gcl_au*NzM0NDM3NTE2LjE3NjMxMTgyMjg.*_ga*MTM1NTE3MDg2Ny4xNzYzMTE4MjI4*_ga_QZEQ59Q6ZL*czE3NjQ5MjYxMTckbzk4JGcxJHQxNzY0OTI3OTMxJGo2MCRsMCRoMzQ0NzE0NDMw" >Apply Now</a>” section.</p>
            <p className="pb-4">Choose your desired undergraduate or postgraduate program, review the eligibility criteria and admission guidelines, and fill out the online application form with accurate personal and academic details.</p>
            <p>Make sure to upload the required documents and follow the instructions provided to complete the process smoothly.</p>
@@ -107,16 +107,16 @@ const HowToApply: React.FC = () => {
             <div className="py-10 sm:py-0 w-full">
               <h1 className="text-3xl leading-tight sm:text-5xl font-medium mr-0 sm:mr-0 lg:mr-35">Get Advantage of studying in a NAAC Accredited University</h1>
               <ul className="list-disc marker:text-amber-400 marker:text-3xl mr-0 sm:mr-0 lg:mr-35">
-  <li className="ml-6 text-sm lg:text-[16px] leading-4 lg:leading-6">26+ Years of Academic Excellence</li>
-  <li className="ml-6 text-sm lg:text-[16px] leading-4 lg:leading-6">Global & Industry Collaborations</li>
-  <li className="ml-6 text-sm lg:text-[16px] leading-4 lg:leading-6">Advanced Labs & World-Class Infrastructure</li>
-  <li className="ml-6 text-sm lg:text-[16px] leading-4 lg:leading-6">Strong Placement Record with MNCs & Fortune 500</li>
-  <li className="ml-6 text-sm lg:text-[16px] leading-4 lg:leading-6">Industry-Aligned, Skill-Based Programs (AI, Data Science, etc.)</li>
-  <li className="ml-6 text-sm lg:text-[16px] leading-4 lg:leading-6">Support for Research, Innovation & Startups</li>
-  <li className="ml-6 text-sm lg:text-[16px] leading-4 lg:leading-6">Experienced Faculty with Industry Exposure</li>
-  <li className="ml-6 text-sm lg:text-[16px] leading-4 lg:leading-6">Well-Connected, Student-Friendly Green Campus</li>
-  <li className="ml-6 text-sm lg:text-[16px] leading-4 lg:leading-6">Flexible Academics as per NEP 2020</li>
-  <li className="ml-6 text-sm lg:text-[16px] leading-4 lg:leading-6">Attractive Scholarships & Affordable Fee Structure</li>
+  <li className="ml-6 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] leading-4 lg:leading-6">26+ Years of Academic Excellence</li>
+  <li className="ml-6 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] leading-4 lg:leading-6">Global & Industry Collaborations</li>
+  <li className="ml-6 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] leading-4 lg:leading-6">Advanced Labs & World-Class Infrastructure</li>
+  <li className="ml-6 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] leading-4 lg:leading-6">Strong Placement Record with MNCs & Fortune 500</li>
+  <li className="ml-6 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] leading-4 lg:leading-6">Industry-Aligned, Skill-Based Programs (AI, Data Science, etc.)</li>
+  <li className="ml-6 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] leading-4 lg:leading-6">Support for Research, Innovation & Startups</li>
+  <li className="ml-6 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] leading-4 lg:leading-6">Experienced Faculty with Industry Exposure</li>
+  <li className="ml-6 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px]  leading-4 lg:leading-6">Well-Connected, Student-Friendly Green Campus</li>
+  <li className="ml-6 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] leading-4 lg:leading-6">Flexible Academics as per NEP 2020</li>
+  <li className="ml-6 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] leading-4 lg:leading-6">Attractive Scholarships & Affordable Fee Structure</li>
 </ul>
 
             </div>
@@ -124,6 +124,9 @@ const HowToApply: React.FC = () => {
         </div>
       </div>
       <CustomTopFooter data={HowToApplyTopFooterData} />
+    </div>
+
+    </div>
     </div>
   );
 };

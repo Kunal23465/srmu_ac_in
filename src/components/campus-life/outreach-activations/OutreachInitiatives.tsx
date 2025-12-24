@@ -28,8 +28,8 @@ const OutreachInitiatives: React.FC = () => {
     <div className="pt-20 pb-28 bg-[#f2f2f2]">
       <div className={`${Classes["container"]}`}>
         <div className="text-center px-4">
-          <h1 className="text-4xl md:text-5xl font-medium mb-4">{title}</h1>
-          <p className="text-gray-600">{desc}</p>
+          <h1 className="lg:text-[50px] md:text-[46.875px] text-[22.4px] sm:text-[22.4px] fw500 mb-4">{title}</h1>
+          <p className="text-gray-600 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px]">{desc}</p>
         </div>
 
         <div className="grid grid-cols sm:grid-cols-2 md:grid-cols-3 gap-10 mt-12 ">
@@ -67,7 +67,7 @@ const OutreachInitiatives: React.FC = () => {
                   <img src={initiative.front.img} alt="Image" className="w-full h-full object-cover" />
                   <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent" />
 
-                  <div className="absolute bottom-4 left-4 text-white text-xl font-bold drop-shadow-md">{initiative.front.title}</div>
+                  <div className="absolute bottom-4 left-4 text-white lg:text-[26px] md:text-[24.375px] text-[22.75px] sm:text-[22.75px] font-semibold drop-shadow-md">{initiative.front.title}</div>
                 </div>
 
                 {/* Back */}
