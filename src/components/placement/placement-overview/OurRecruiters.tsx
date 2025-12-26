@@ -27,12 +27,12 @@ const OurRecruiters: React.FC = () => {
       <div className="bg-[#DFE4F2] rounded-3xl  py-7 md:py-10 lg:py-14 px-4 md:px-6 lg:px-8">
         {/* Heading and Arrows */}
         <div className={`${Classes["container"]}`}>
-          <div className="block md:flex justify-between">
+          <div className="block md:flex justify-between items-center">
           
-              <h1 className=" text-2xl md:text-5xl text-[#172F64] font-medium md:font-bold pb-2">
+              <h1 className=" lg:text-[50px] md:text-[46.875] text-[22.4px] sm:text-[22.4px] fw500 text-[#172F64]  pb-2">
                 Our Recruiters
               </h1>
-              <p className="w-full md:w-[60%] md:ml-auto">
+              <p className="w-full md:w-[60%] text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] md:ml-auto">
                 Our recruitment partners include a wide range of industry
                 leaders, across disciplines, fields, and professional
                 landscapes.

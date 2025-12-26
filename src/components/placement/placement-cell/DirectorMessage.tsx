@@ -5,9 +5,9 @@ const DirectorMessage = () => {
         <div className="w-full relative">
           <img className="xl:rounded-md sm:rounded-t-md  w-full lg:max-w-[500px]" alt="Mr. Rakesh Jaiswal" src={Placement_Director} />
           <div className="lg:absolute lg:bottom-5  lg:right-0 lg:rounded-xl   p-8 text-white bg-sky-900 rounded-b-xl ">
-            <p className="text-xl font-medium">Mr. Rakesh Jaiswal</p>
-            <p className="text-xs pb-4">Director Placement</p>
-            <p>
+            <p className="lg:text-[20px] md:text-[18.75px] sm:text-[17.5px] text-[17.5px] font-medium">Mr. Rakesh Jaiswal</p>
+            <p className="lg:text-[13px] md:text-[12.195px] sm:text-[11.382px] text-[11.382px] pb-4">Director Placement</p>
+            <p className="lg:text-[15px] md:text-[14px] sm:text-[13.132px] text-[13.132px]">
               +91- 9312113944
               <br />
               director.placement@srmu.ac.in
@@ -15,9 +15,9 @@ const DirectorMessage = () => {
           </div>
         </div>
         <div className="w-full">
-          <h2 className="text-2xl md:text-5xl font-medium mb-5 mt-2 lg:mt-0 md:mb-10">Message From Director</h2>
+          <h2 className="text-[#023047] lg:text-[50px] md:text-[46.875] text-[22.4px] sm:text-[22.4px] fw500 mb-5 mt-2 lg:mt-0 md:mb-10">Message From Director</h2>
 
-          <p className="text-justify text-[#000000b3] text-sm! md:text-[16px]!">
+          <p className="text-justify text-[#000000b3] text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px]">
             <strong>Dear Recruiters,</strong>
             <br />
             Greetings from the Training and Placement Department of Shri Ramswaroop Memorial University (SRMU), Lucknow. SRMU is one of North India's emerging universities with over

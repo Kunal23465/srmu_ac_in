@@ -115,9 +115,9 @@ const PlacementRecords: React.FC = () => {
       <div className={`${Classes["container"]}`}>
         {/* HEADER + TABS */}
         <div className="block md:flex justify-between items-center">
-          <h2 className="text-3xl md:text-5xl font-medium mb-2">Placement Records</h2>
+          <h2 className="lg:text-[50px] md:text-[46.875px] text-[22.4px] sm:text-[22.4px] font-medium mb-2">Placement Records</h2>
 
-          <div className="flex items-center w-fit mb-2 bg-white">
+          <div className="flex items-center lg:text-[19px] md:text-[17.82px] sm:text-[16.632px] text-[16.632px] w-fit mb-2 bg-white">
             {["2023", "2024", "2025"].map((year) => (
               <button
                 key={year}
@@ -135,7 +135,7 @@ const PlacementRecords: React.FC = () => {
         </div>
 
         {/* SUBTEXT */}
-        <p className="text-white mb-5 text-sm max-w-xl">Outstanding placement records showcase our commitment to student success and industry relevance</p>
+        <p className="text-white mb-5 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] max-w-xl">Outstanding placement records showcase our commitment to student success and industry relevance</p>
 
         {/* BUTTONS */}
         <div className="flex gap-5 mb-6">
@@ -164,8 +164,8 @@ const PlacementRecords: React.FC = () => {
                 <div className="min-h-[170px]">
                   <img src={stu.image} alt={stu.name} className="w-20 h-20 rounded-full mx-auto mb-3 object-cover" />
 
-                  <h4 className="text-lg text-white group-hover:text-black font-semibold">{stu.name}</h4>
-                  <p className="text-sm text-white group-hover:text-black mt-1">{stu.degree}</p>
+                  <h4 className=" lg:text-[19px] md:text-[17.82px] sm:text-[16.632px] text-[16.632px] text-white group-hover:text-black font-semibold">{stu.name}</h4>
+                  <p className="lg:text-[15px] md:text-[14px] sm:text-[13.132px] text-[13.132px]  text-white group-hover:text-black mt-1">{stu.degree}</p>
                 </div>
 
                 <div className="mt-10 border border-gray-500"></div>
@@ -174,7 +174,7 @@ const PlacementRecords: React.FC = () => {
                   <img src={stu.companyLogo} alt="Company Logo" className="h-6 object-contain" />
                 </div>
 
-                <p className="mt-2 text-sm text-white group-hover:text-black">
+                <p className="mt-2 text-[14px] md:text-[13.125px] sm:text-[12.25px] text-white group-hover:text-black">
                   Package: <span className="font-semibold">{stu.package}</span>
                 </p>
               </div>
@@ -187,7 +187,7 @@ const PlacementRecords: React.FC = () => {
           <a
             href={placementPdf}
             target="_blank"
-            className="px-8 py-3 hover:bg-[#f8b922] transition-all duration-500 bg-transparent flex items-center gap-2 hover:text-black border border-[#f8b922] text-[#f8b922] font-medium rounded-xl shadow"
+            className="px-8 py-3 hover:bg-[#f8b922] transition-all text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] duration-500 bg-transparent flex items-center gap-2 hover:text-black border border-[#f8b922] text-[#f8b922] font-medium rounded-xl shadow"
             rel="noreferrer"
           >
             <span> VIEW ALL PLACED STUDENTS </span>
