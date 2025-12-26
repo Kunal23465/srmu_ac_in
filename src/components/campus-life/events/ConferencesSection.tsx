@@ -59,7 +59,7 @@ useEffect(() => {
             setActiveTab("conference");
             setStartIndex(0);
           }}
-          className={`px-6 py-3 rounded-lg text-[14px] sm:text-[14px] lg:text-[15px] transition-all duration-500 border cursor-pointer ${
+          className={`px-6 py-3 rounded-lg lg:text-[15px] md:text-[14px] sm:text-[13.132px] text-[13.132px] transition-all duration-500 border cursor-pointer ${
             activeTab === "conference" ? "color_background_blue text-white" : "color_border_blue color_light_blue"
           }`}
         >
@@ -70,7 +70,7 @@ useEffect(() => {
             setActiveTab("seminar");
             setStartIndex(0);
           }}
-          className={`px-10 py-3 rounded-lg text-[14px] sm:text-[14px] lg:text-[15px] transition-all duration-500 border cursor-pointer ${
+          className={`px-10 py-3 rounded-lg lg:text-[15px] md:text-[14px] sm:text-[13.132px] text-[13.132px] transition-all duration-500 border cursor-pointer ${
             activeTab === "seminar" ? "color_background_blue text-white" : "color_border_blue color_light_blue"
           }`}
         >
@@ -107,7 +107,7 @@ useEffect(() => {
               <div className="p-5 text-left">
                 <h3 className=" lg:text-[1.125rem] sm:text-[16.875px] text-[16.875px] fw500 color_light_blue mb-1 mt-4">{card.title}</h3>
                 <span className="lg:text-[.875rem] sm:text-[12.25px] text-[12.25px] text-[#ffb703]">{card.date}</span>
-                <span className="text-gray-600 text-[14px] sm:text-[14px] lg:text-[15px] line-clamp-3 mt-2 mb-4">{card.description}</span>
+                <span className="text-gray-600 text-[14px] lg:text-[15px] md:text-[14px] sm:text-[13.132px] text-[13.132px]line-clamp-3 mt-2 mb-4">{card.description}</span>
                 <button
                   onClick={() => navigate(card.routeKey)}
                   className="lg:text-[12.195px] text-[11.38px] sm:text-[11.38px] transition-all duration-500 fw500 border-2 border-[#ffb703] color_light_blue py-3 px-8 rounded-lg  group-hover:bg-[#ffb703] hover:text-white flex items-center gap-2"

@@ -11,7 +11,7 @@ const AdmissionProcessSection: React.FC = () => {
       <section className={`${Classes["container"]} py-16 px-6 md:px-16`}>
 
         {/* Heading */}
-        <h2 className="text-2xl md:text-3xl font-semibold text-[#0f4a85] mb-6">
+        <h2 className="lg:text-[28px] md:text-[26.25px] sm:text-[24.5px] text-[24.5px] md:text-3xl font-semibold text-[#0f4a85] mb-6">
           {admissionProcessData.title}
         </h2>
 
@@ -19,8 +19,8 @@ const AdmissionProcessSection: React.FC = () => {
         <div className="text-gray-800 space-y-4 mb-6">
           {admissionProcessData.shortDescription.map((item, index) => (
             <div key={index}>
-              <h3 className="font-semibold">{item.subHeading}</h3>
-              <p className="text-sm!">{item.text}</p>
+              <h3 className="lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px] fw500">{item.subHeading}</h3>
+              <p className="lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px]">{item.text}</p>
             </div>
           ))}
         </div>
@@ -44,7 +44,7 @@ const AdmissionProcessSection: React.FC = () => {
         {/* READ MORE / READ LESS BUTTON */}
         <button
           onClick={() => setShowMore(!showMore)}
-          className="text-[#0f4a85] font-semibold block mb-10 transition-colors"
+          className="text-[#0f4a85] lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px]  font-semibold block mb-10 transition-colors"
         >
           {showMore ? "READ LESS" : "READ MORE"}
         </button>
@@ -56,7 +56,7 @@ const AdmissionProcessSection: React.FC = () => {
               key={index}
               className="w-80 bg-white shadow-lg rounded-xl py-14 px-10 text-center hover:shadow-2xl transition-shadow"
             >
-              <h4 className="font-semibold text-lg mb-4">{item.title}</h4>
+              <h4 className="font-semibold lg:text-[18px] md:text-[16.875px] sm:text-[15.75px] text-[15.75px] mb-4">{item.title}</h4>
               <div>
                 <a
                   href={item.link}

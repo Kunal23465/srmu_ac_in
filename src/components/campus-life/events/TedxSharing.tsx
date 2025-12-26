@@ -51,7 +51,7 @@ export default function TedxSharing() {
             </div>
 
             {/* Subtitle */}
-            <span className="mb-6 lg:text-[15px] text-[14px] sm:text-[14px] w-full block mt-2">
+            <span className="mb-6 lg:text-[15px] md:text-[14px] sm:text-[13.132px] text-[13.132px] w-full block mt-2">
                 SRMU has been a pioneer of TEDx events in the region, sparking
                 meaningful conversations based on the mission:
                 "Ideas worth spreading."

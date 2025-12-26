@@ -40,9 +40,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 
       {/* Text */}
       <div className="w-full md:w-2/3">
-        <h3 className="text-xl font-semibold text-gray-800 mb-2">{title}</h3>
+        <h3 className="lg:text-[26px] md:text-[24.375px] sm:text-[22.75px] text-[22.75px] fw500 text-gray-800 mb-2">{title}</h3>
 
-        <p className="text-gray-600 text-sm leading-relaxed mb-4">{description}</p>
+        <p className="text-gray-600 lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px] leading-relaxed mb-4">{description}</p>
 
         {/* ---- Shutter Wrapper ---- */}
         <div

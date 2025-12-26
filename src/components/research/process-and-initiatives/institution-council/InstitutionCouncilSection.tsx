@@ -17,14 +17,14 @@ const InstitutionCouncilSection: React.FC = () => {
 
         {/* Right Image */}
         <div className="w-full lg:w-1/2 space-y-3 lg:space-y-6 ">
-          <h2 className="text-3xl w-full lg:w-3/4 lg::text-5xl font-medium text-black">{title}</h2>
-          <p className="text-gray-700 w-full lg:w-[60%] mb-10 lg:mb-20 text-sm! lg:text-base! leading-relaxed">{description}</p>
+          <h2 className="lg:text-[40px] md:text-[37.5px] sm:text-[22.4px] text-[22.4px] w-full lg:w-3/4 fw500 text-black">{title}</h2>
+          <p className="text-gray-700 w-full lg:w-[60%] mb-10 lg:mb-20 lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px] lg:text-base! leading-relaxed">{description}</p>
 
           <a
             href={pdfUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 bg-[#0f4a85] border-2 border-[#ffb703] text-white font-semibold uppercase py-2 px-4 rounded-lg group hover:bg-white hover:text-[#0f4a85] transition-colors duration-500 w-fit"
+            className="inline-flex items-center gap-3 bg-[#0f4a85] border-2 lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px] border-[#ffb703] text-white font-semibold uppercase py-2 px-4 rounded-lg group hover:bg-white hover:text-[#0f4a85] transition-colors duration-500 w-fit"
           >
             <span className="p-1 rounded-lg bg-white group-hover:bg-[#ffb703]">
                             <PdfSvgIcon /></span>

@@ -48,7 +48,7 @@ const KeyHighlightsSection: React.FC<CustomFacilitiesTypes> = ({ facilities, lay
         <div className="sm:p-6">
           {/* Header */}
           <div className="flex justify-between items-center mb-10">
-            <h2 className="text-4xl font-bold text-black">{layoutData?.title}</h2>
+            <h2 className="lg:text-[50px] md:text-[46.875px] text-[22.4px] sm:text-[22.4px] fw500 text-black">{layoutData?.title}</h2>
 
             {/* Custom Prev / Next Buttons with < > */}
             <div className="flex gap-4">
@@ -91,18 +91,18 @@ const KeyHighlightsSection: React.FC<CustomFacilitiesTypes> = ({ facilities, lay
                     className="w-full h-80 object-cover"
                   />
                   <div className="p-6 flex flex-col flex-grow">
-                    <h3 className="text-2xl font-bold text-[#0f4a85] mb-3">
+                    <h3 className="lg:text-[26px] md:text-[24.375px] sm:text-[22.75px] text-[22.75px] font-semibold text-[#0f4a85] mb-3">
                       {facility.title}
                     </h3>
                     <div
-                      className="text-gray-700 text-justify flex-grow mb-6"
+                      className="text-gray-700 text-justify lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px] flex-grow mb-6"
                       dangerouslySetInnerHTML={{ __html: facility.description }}
                     />
                     <a
                       href={facility.pdfUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-3 bg-[#0f4a85] text-white hover:text-[#0f4a85] font-medium uppercase py-3 px-6 rounded-lg hover:bg-white hover:border-2 hover:border-[#ffb703] transition-all duration-500 w-fit group"
+                      className="inline-flex items-center lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px]  gap-3 bg-[#0f4a85] text-white hover:text-[#0f4a85] font-medium uppercase py-3 px-6 rounded-lg hover:bg-white hover:border-2 hover:border-[#ffb703] transition-all duration-500 w-fit group"
                     >
                       <span className="bg-white p-2 rounded group-hover:bg-[#ffb703] transition-all duration-500">
                         <PdfSvgIcon />

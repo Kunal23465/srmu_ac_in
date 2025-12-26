@@ -8,13 +8,13 @@ const ConsultancyTable: React.FC = () => {
       <table className="min-w-full table-auto border-collapse text-lg">
         <thead className=" text-white">
           <tr>
-            <th className="px-6 py-3 border border-[#1d2b58] bg-[#1d2b58]">S.No</th>
-            <th className="px-6 py-3 border border-[#213e78] bg-[#213e78]">Name Of Consultant/ Principal Investigator</th>
-            <th className="px-6 py-3 border border-[#05519c] bg-[#05519c]">Name Of Assignment</th>
-            <th className="px-6 py-3 border border-[#307fc2] bg-[#307fc2]">Name Of Funding Agency</th>
-            <th className="px-6 py-3 border border-[#489dd6] bg-[#489dd6]">Total Cost (INR In Lakhs)</th>
-            <th className="px-6 py-3 border border-[#64b6e5] bg-[#64b6e5]">Year</th>
-            <th className="px-6 py-3 border border-[#86cbf3] bg-[#86cbf3]">Status</th>
+            <th className="px-6 py-3 border lg:text-[15px] md:text-[14px] sm:text-[13.132px] text-[13.132px] border-[#1d2b58] bg-[#1d2b58]">S.No</th>
+            <th className="px-6 py-3 border lg:text-[15px] md:text-[14px] sm:text-[13.132px] text-[13.132px] border-[#213e78] bg-[#213e78]">Name Of Consultant/ Principal Investigator</th>
+            <th className="px-6 py-3 border lg:text-[15px] md:text-[14px] sm:text-[13.132px] text-[13.132px] border-[#05519c] bg-[#05519c]">Name Of Assignment</th>
+            <th className="px-6 py-3 border lg:text-[15px] md:text-[14px] sm:text-[13.132px] text-[13.132px] border-[#307fc2] bg-[#307fc2]">Name Of Funding Agency</th>
+            <th className="px-6 py-3 border lg:text-[15px] md:text-[14px] sm:text-[13.132px] text-[13.132px] border-[#489dd6] bg-[#489dd6]">Total Cost (INR In Lakhs)</th>
+            <th className="px-6 py-3 border lg:text-[15px] md:text-[14px] sm:text-[13.132px] text-[13.132px] border-[#64b6e5] bg-[#64b6e5]">Year</th>
+            <th className="px-6 py-3 border lg:text-[15px] md:text-[14px] sm:text-[13.132px] text-[13.132px] border-[#86cbf3] bg-[#86cbf3]">Status</th>
           </tr>
         </thead>
         <tbody>
@@ -23,13 +23,13 @@ const ConsultancyTable: React.FC = () => {
               key={data.id}
               className={index % 2 === 1 ? "bg-[#fff8e5]" : "bg-white"} // Alternate row coloring
             >
-              <td className="px-6 py-6 md:py-10 text-sm md:text-[15px] border-none">{data.id}</td>
-              <td className="px-6 py-6 md:py-10 text-sm md:text-[15px] border-none">{data.consultant}</td>
-              <td className="px-6 py-6 md:py-10 text-sm md:text-[15px] border-none">{data.assignment}</td>
-              <td className="px-6 py-6 md:py-10 text-sm md:text-[15px] border-none">{data.fundingAgency}</td>
-              <td className="px-6 py-6 md:py-10 text-sm md:text-[15px] border-none">{data.cost}</td>
-              <td className="px-6 py-6 md:py-10 text-sm md:text-[15px] border-none">{data.year}</td>
-              <td className="px-6 py-6 md:py-10 text-sm md:text-[15px] border-none">{data.status}</td>
+              <td className="px-6 py-6 md:py-10 lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px] border-none">{data.id}</td>
+              <td className="px-6 py-6 md:py-10 lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px] border-none">{data.consultant}</td>
+              <td className="px-6 py-6 md:py-10 lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px] border-none">{data.assignment}</td>
+              <td className="px-6 py-6 md:py-10 lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px] border-none">{data.fundingAgency}</td>
+              <td className="px-6 py-6 md:py-10 lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px] border-none">{data.cost}</td>
+              <td className="px-6 py-6 md:py-10 lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px] border-none">{data.year}</td>
+              <td className="px-6 py-6 md:py-10 lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px] border-none">{data.status}</td>
             </tr>
           ))}
         </tbody>
