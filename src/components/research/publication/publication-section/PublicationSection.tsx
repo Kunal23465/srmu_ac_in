@@ -23,8 +23,8 @@ const PublicationSection: React.FC = () => {
         <div className="bg-[#e8effc] rounded-[20px] h-[1100px] md:h-[1000px]" style={{ backgroundImage: `url(${bgImage})`, backgroundSize: "cover", backgroundPosition: "center" }}>
           <div className={Classes["container"]}>
             <div className="py-14 md:py-20 text-center text-white">
-              <h2 className="text-3xl md:text-[50px] font-medium mb-2 ">Publication</h2>
-              <p className="text-[15px]">
+              <h2 className="lg:text-[50px] md:text-[46.875px] text-[22.4px] sm:text-[22.4px] fw500 mb-2 ">Publication</h2>
+              <p className="lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px]">
                 From academic journals to conference documents to book chapters, research by SRMU students and faculty has been featured in numerous publications.
               </p>
             </div>
@@ -49,16 +49,16 @@ const PublicationSection: React.FC = () => {
           <div className="container flex flex-col-reverse md:flex-row items-center">
             {/* Left Content */}
             <div className="w-full md:w-[32%] space-y-6 px-0 md:px-10 py-5 ">
-              <h2 className="text-3xl md:text-5xl pt-10 font-medium text-[#023047]">{PublicationFloatingCardData.title}</h2>
-              <p className="text-gray-700 text-sm md:text-base! leading-relaxed">{PublicationFloatingCardData.description}</p>
+              <h2 className="lg:text-[50px] md:text-[46.875px] text-[22.4px] sm:text-[22.4px] pt-10 fw500 text-[#023047]">{PublicationFloatingCardData.title}</h2>
+              <p className="text-gray-700 lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px] leading-relaxed">{PublicationFloatingCardData.description}</p>
 
               <a
                 href={PublicationFloatingCardData.pdfUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 bg-[#0f4a85] border-2 group border-[#ffb703] text-white font-semibold uppercase py-3 px-5 rounded-md hover:bg-white hover:text-[#0f4a85] transition-colors duration-200 w-fit"
+                className="inline-flex items-center gap-3 bg-[#0f4a85] lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px] border-2 group border-[#ffb703] text-white font-semibold uppercase py-3 px-5 rounded-md hover:bg-white hover:text-[#0f4a85] transition-colors duration-200 w-fit"
               >
-            <span className="bg-white p-1 rounded-md transition-all duration-500 group-hover:bg-[#ffb703]"><PdfSvgIcon /></span>
+            <span className="bg-white p-1  rounded-md transition-all duration-500 group-hover:bg-[#ffb703]"><PdfSvgIcon /></span>
                 Download PDF
               </a>
             </div>

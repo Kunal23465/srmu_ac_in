@@ -56,8 +56,8 @@ const Conference: React.FC = () => {
     <div>
       <div className={Classes["container"]}>
         <div className="py-14 md:py-20 text-center text-black">
-          <h2 className="text-[20px] md:text-[50px] font-medium ">Conference</h2>
-          <p className="text-sm! md:text-[15px]!">
+          <h2 className="lg:text-[50px] md:text-[46.875px] text-[22.4px] sm:text-[22.4px] fw500 text-[#023047]">Conference</h2>
+          <p className="lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px]">
             SRMU hosts and participates in various conferences, accelerating knowledge-sharing among researchers, scholars, and experts from diverse fields.
           </p>
         </div>
@@ -70,7 +70,7 @@ const Conference: React.FC = () => {
               <div className="flex items-center mx-auto bg-[#0f4a85] rounded-full p-1 w-[250px] md:w-[280px]">
                 <button
                   onClick={() => setActive("national")}
-                  className={`px-6 py-2 rounded-full text-sm md:text-lg font-normal transition-all
+                  className={`px-6 py-2 rounded-full lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px] transition-all
                     ${active === "national" ? "bg-[#f4b400] text-black" : "text-white"}
                   `}
                 >
@@ -79,7 +79,7 @@ const Conference: React.FC = () => {
 
                 <button
                   onClick={() => setActive("international")}
-                  className={`px-6 py-2 rounded-full text-sm md:text-lg font-normal transition-all
+                  className={`px-6 py-2 rounded-full lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px] transition-all
                     ${active === "international" ? "bg-[#f4b400] text-black" : "text-white"}
                   `}
                 >
@@ -131,14 +131,14 @@ const Conference: React.FC = () => {
                   />
 
                   <div className="h-[500px] overflow-y-auto faculty-card-scrollbar p-8">
-                    <h3 className="text-[#0f4a85] text-xl font-semibold mb-2">{facility.title}</h3>
+                    <h3 className="text-[#0f4a85] lg:text-[24px] md:text-[21.585px] sm:text-[18.975px] text-[18.975px] fw500 mb-2">{facility.title}</h3>
 
-                    <p className="bg-amber-400 text-[#0f4a85] w-fit rounded-2xl px-3 py-1 mb-4">
+                    <p className="bg-amber-400 text-[#0f4a85] lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px] w-fit rounded-2xl px-3 py-1 mb-4">
                       {facility.date}
                     </p>
 
                     <div
-                      className="text-[#555555] text-base grow text-justify"
+                      className="text-[#555555] lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px] text-base grow text-justify"
                       dangerouslySetInnerHTML={{ __html: facility?.description }}
                     />
                   </div>

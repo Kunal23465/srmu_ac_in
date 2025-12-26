@@ -192,7 +192,7 @@ const CustomTabs = ({
         .tab-item {
           cursor: pointer;
           font-weight: 500;
-          font-size: 15px;
+          font-size: 17.82px;
           padding: 8px 14px;
           transition: 0.2s;
           border-radius: 6px;
