@@ -57,7 +57,7 @@ export default function FlickeringSection() {
                       ? "border-t border-l border-white/30"
                       : ""
                   }
-                  ${activeId === item.id ? "bg-[#ffb703] text-gray-900 font-semibold" : "hover:bg-white/10"}
+                  ${activeId === item.id ? "bg-[#ffb703] text-white font-semibold" : "hover:bg-white/10"}
                 `}
               >
                 {item.title.split(":")[0]}

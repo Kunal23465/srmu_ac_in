@@ -1,7 +1,7 @@
 
 import pankaj from "../../../assets/images/about/leadershipGovernance/pankaj.png";
 import pooja from "../../../assets/images/about/leadershipGovernance/pooja.png";
-import vijaytiwari from "../../../assets/images/about/leadershipGovernance/vijaytiwari.jpeg"
+import vijaytiwari from "../../../assets/images/about/leadershipGovernance/vijaytiwari.jpg"
 import dixit from "../../../assets/images/about/leadershipGovernance/dixit.jpg"
 import neerja from "../../../assets/images/about/leadershipGovernance/neerja.jpg"
 import ritu from "../../../assets/images/about/leadershipGovernance/ritu.jpg"

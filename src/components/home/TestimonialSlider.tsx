@@ -8,6 +8,7 @@ import quote from "../../assets/images/home/quote.png";
 import Classes from "../../utils/styles/Global.module.css";
 import { Link } from "react-router-dom";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
+import { LiaLongArrowAltRightSolid } from "react-icons/lia";
 
 const NextArrow = ({ onClick }: any) => (
   <button
@@ -166,9 +167,9 @@ const TestimonialSlider = () => {
         <div className="mt-10 text-center">
           <Link
             to="/placements/student-testimonial"
-            className="inline-block bg-[#023047] text-white px-6 py-3 rounded-md cursor-pointer text-sm font-medium hover:bg-white hover:text-[#023047] hover:border hover:border-[#023047]"
+            className=" bg-[#023047] inline-flex gap-x-2 items-center text-white px-6 py-3 rounded-md cursor-pointer text-[16px] font-medium hover:bg-white hover:text-[#023047] border hover:border-[#023047]"
           >
-            VIEW ALL TESTIMONIALS →
+            VIEW ALL TESTIMONIALS <LiaLongArrowAltRightSolid size={24} />
           </Link>
         </div>
       </div>
