@@ -44,7 +44,7 @@ const InstituteDepartment: React.FC = () => {
       <div className={`${Classes["container"]}`}>
         <div className="my-15 flex flex-col lg sm:flex-row">
           <div className="text-2xl w-full md:w-[30%] mr-0 md:mr-30 font-medium sm:text-5xl">
-            Departments
+            Our Departments
           </div>
           <div className="w-full md:w-[70%]">
             <CustomInstituteCoursesCard data={finalData.instituteCourseCardData} />

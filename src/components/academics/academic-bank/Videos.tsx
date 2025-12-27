@@ -5,7 +5,7 @@ const Videos = () => {
 
     return (
         <div className="abc-videos-section">
-            <h2 className="abc-videos-title font22 color_light_blue">Informative Videos on ABC</h2>
+            <h2 className="abc-videos-title lg:text-[22px] sm:text-[19.5px] text-[19.5px] md:text-[20.625px] color_light_blue ">Informative Videos on ABC</h2>
 
             <div className="abc-videos-grid">
                 {videos.map((url, idx) => (

@@ -25,7 +25,7 @@ const CustomDepartmentFeeDetailsTable: React.FC<Props> = ({ data }) => {
                         style={{ gridTemplateColumns: gridTemplate }}
                     >
                         {data.columns.map((col, index) => (
-                            <div key={index} className="px-10 text-[16px] whitespace-nowrap">
+                            <div key={index} className="px-5 uppercase lg:text-[15px] md:text-[14px] sm:text-[13.132px] text-[13.132px] whitespace-nowrap">
                                 {col}
                             </div>
                         ))}
@@ -47,11 +47,11 @@ const CustomDepartmentFeeDetailsTable: React.FC<Props> = ({ data }) => {
                                     {values.map((val, colIndex) => (
                                         <div
                                             key={colIndex}
-                                            className="text-center text-[#212523] font-normal flex items-center justify-start px-8 relative whitespace-nowrap"
+                                            className="text-center text-[#212523] fw500 lg:text-[19px] md:text-[17.82px] sm:text-[16.632px] text-[16.632px] font-normal flex items-center justify-start px-8 relative whitespace-nowrap"
                                         >
                                             {val === "Click" ? (
                                                 <span
-                                                    className="color_light_blue fw500 cursor-pointer"
+                                                    className="color_light_blue lg:text-[19px] md:text-[17.82px] sm:text-[16.632px] text-[16.632px] fw500 cursor-pointer"
                                                     onClick={() => setExpandedId(rowIndex)}
                                                 >
                                                     Click to View

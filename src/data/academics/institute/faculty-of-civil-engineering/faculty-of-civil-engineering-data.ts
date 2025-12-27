@@ -6,8 +6,9 @@ import depSlide2 from "../../../../assets/images/academics/departments/depSlide2
 import depSlide3 from "../../../../assets/images/academics/departments/depSlide3.png";
 import depSlide4 from "../../../../assets/images/academics/departments/depSlide4.png";
 import depSlide5 from "../../../../assets/images/academics/departments/depSlide5.png";
+import abhishek from "../../../../assets/images/academics/departments/abhishek-saxena-1.jpg"
 
-import professor from "../../../../assets/images/academics/institutes/dr.r.s.bajpai.jpg";
+// import professor from "../../../../assets/images/academics/departments/abhishek-saxena-1.jpg";
 import { customeOverViewType } from "../../../../types/home-data-type";
 import { counterDataType } from "../../../about/leadership-and-governance/leadership-and-governance-data";
 import { FacultyItem } from "../../../../utils/custom/CustomFacultyListCard";
@@ -401,19 +402,19 @@ export const instituteProfilesCivil: InstituteProfile[] = [
     title: "Department Head",
     name: "Prof. (Dr.) Abhishek Saxena",
     position: "Offg. Director, IAP & Dean FoCE, SRMU, Lucknow–Deva Road",
-    image: professor,
+    image: abhishek,
 
     detailsHeading: "Experience &Achievements:  ",
     useBullets: true,
 
     details: [
       "**Total Experience**: 23+ years (Industry: 10 years, Academics: 13+ years)",
-      "8 patents and 60 research papers/book chapters published in renowned journals",
-      "Supervisor of 5 PhD; 7 scholars awarded",
+      "**8 patents and 60 research papers/book chapters published** in renowned journals",
+      "**Supervisor of 5 PhD; 7 scholars awarded**",
       "Functional Area Expert for EIA studies (Category 'A' projects – HG & Geo) since 2011",
       "Empanelled Groundwater Expert for Central Ground Water Authority & Ministry of Jal Shakti",
-      "Consultancy Projects: 9 | Total Cost: Rs. 2.0+ Cr Funding Agencies: World Bank; WaterAid, National Institute of Hydrology (NIH, Roorkee), UNESCO, Ministry of Jal Shakti, GoI, UP Rajya Vidyut Utpadan Nigam Limited, TERI, U.P. Ground Water Department, UPCST, etc.",
-      "EIA Projects [Functional Area Expert – HG & Geo (Hydrogeology & Geology) for category “A” projects]:(Ministry of Environment, Forest and Climate Change, Govt. of India) Total EIA Projects = 19 (5 Category “A” + 14 Category “B”)",
+      "**Consultancy Projects: 9 | Total Cost: Rs. 2.0+ Cr** Funding Agencies: World Bank; WaterAid, National Institute of Hydrology (NIH, Roorkee), UNESCO, Ministry of Jal Shakti, GoI, UP Rajya Vidyut Utpadan Nigam Limited, TERI, U.P. Ground Water Department, UPCST, etc.",
+      "**EIA Projects [Functional Area Expert – HG & Geo (Hydrogeology & Geology) for category “A” projects]**:(Ministry of Environment, Forest and Climate Change, Govt. of India) Total EIA Projects = 19 (5 Category “A” + 14 Category “B”)",
     ],
 
     modalContent: `
