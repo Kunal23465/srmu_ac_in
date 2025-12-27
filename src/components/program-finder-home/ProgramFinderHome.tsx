@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 import { AppDispatch, RootState } from "../../store";
 import { fetchAllProgramFinder } from "../../store/program-finder/programFinderThunk";
-import { fetchProgramType } from "../../store/program-finder/program-type/programTypeThunk";
+// import { fetchProgramType } from "../../store/program-finder/program-type/programTypeThunk";
 import { fetchProgramDiscipline } from "../../store/program-finder/discipline/disciplineThunk";
 
 import CustomTopFooter from "../../utils/custom/CustomTopFooter";
