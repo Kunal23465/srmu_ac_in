@@ -28,23 +28,27 @@ const CustomInstitueVissionMissionCard: React.FC<VisionMissionProps> = ({
 
     return (
         // 1. Center the component with mx-auto
-      <div className={`${Classes["container"]} py-20`}>
+        <div className={`${Classes["container"]} py-20`}>
             <div className={`relative bg-[${data.backgroundColor}] w-full md:w-3/4 rounded-2xl  text-white min-h-[500px] overflow-visible`}>
 
                 {/* 2. Content Area - Responsive padding and structure */}
                 <div className="p-8 md:pl-12 lg:pl-16 md:pr-80 flex flex-col justify-center h-full py-16 relative z-10">
 
                     {/* Title */}
-                    <div className="border border-white w-auto self-start rounded-full px-4 py-2 inline-block mb-6 text-sm md:text-md font-semibold">
+                    <div className="border border-white w-auto self-start rounded-full px-4 py-2 inline-block mb-6 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px]">
                         {currentData.title}
                     </div>
 
                     {/* Description List - Responsive margins/text size */}
-                    <ul className="list-disc ml-5 mt-5 space-y-3 text-sm md:text-md leading-relaxed text-justify">
+                    <ul className="list-disc ml-5 mt-5 space-y-3 
+  text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] 
+  leading-relaxed text-justify 
+  marker:text-yellow-500">
                         {currentData.description.map((item, i) => (
                             <li key={i}>{item}</li>
                         ))}
                     </ul>
+
 
                     {/* Buttons - **UPDATED for always-row layout and smaller size** */}
                     {/* Changes: Removed flex-col, space-y-4, sm: from layout classes. Reduced padding (px-4 py-2) */}
@@ -58,7 +62,7 @@ const CustomInstitueVissionMissionCard: React.FC<VisionMissionProps> = ({
                             `}
                             onClick={() => setActiveTab("vision")}
                         >
-                            <span className="mr-1 text-lg font-bold">←</span>
+                            <span className="mr-1 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] fw500">←</span>
                             {data.vision.buttonText}
                         </button>
 
@@ -72,7 +76,7 @@ const CustomInstitueVissionMissionCard: React.FC<VisionMissionProps> = ({
                             onClick={() => setActiveTab("mission")}
                         >
                             {data.mission.buttonText}
-                            <span className="ml-1 text-lg font-bold">→</span>
+                            <span className="ml-1 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] fw500">→</span>
                         </button>
                     </div>
 

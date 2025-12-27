@@ -63,13 +63,13 @@ const CustomPlacedStudentTable: React.FC<CustomPlacedStudentTableProps> = ({
                         marginBottom: "40px", // mb-10
                     }}
                 >
-                    <div className="pl-6" style={{ width: "250px", minWidth: "250px" }}>
+                    <div className="pl-6 lg:text-[15px] md:text-[14px] sm:text-[13.132px] text-[13.132px]" style={{ width: "250px", minWidth: "250px" }}>
                         {headers.name}
                     </div>
-                    <div style={{ width: "250px", minWidth: "250px" }}>
+                    <div className="lg:text-[15px] md:text-[14px] sm:text-[13.132px] text-[13.132px]" style={{ width: "250px", minWidth: "250px" }}>
                         {headers.program}
                     </div>
-                    <div style={{ width: "250px", minWidth: "250px" }}>
+                    <div className="lg:text-[15px] md:text-[14px] sm:text-[13.132px] text-[13.132px]" style={{ width: "250px", minWidth: "250px" }}>
                         {headers.company}
                     </div>
                 </div>
@@ -91,14 +91,14 @@ const CustomPlacedStudentTable: React.FC<CustomPlacedStudentTableProps> = ({
                             className="flex items-center border-b border-gray-400 p-8 lg:justify-around md:justify-start"
                             style={{ minWidth: "750px" }}
                         >
-                            <div style={{ width: "250px", minWidth: "250px" }}>
+                            <div className="lg:text-[19px] md:text-[17.82px] sm:text-[16.632px] text-[16.632px]" style={{ width: "250px", minWidth: "250px" }}>
                                 {student.name}
                             </div>
-                            <div style={{ width: "250px", minWidth: "250px" }}>
+                            <div className="lg:text-[19px] md:text-[17.82px] sm:text-[16.632px] text-[16.632px]" style={{ width: "250px", minWidth: "250px" }}>
                                 {student.program}
                             </div>
                             <div
-                                className="whitespace-pre-wrap"
+                                className="whitespace-pre-wrap lg:text-[19px] md:text-[17.82px] sm:text-[16.632px] text-[16.632px]"
                                 style={{ width: "250px", minWidth: "250px" }}
                             >
                                 {formatCompanyName(student.company)}
