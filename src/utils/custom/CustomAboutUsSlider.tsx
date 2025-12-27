@@ -67,13 +67,12 @@ const WhyCard: React.FC<
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       className={`
-        h-full p-6 rounded-2xl shadow-xl transition-all duration-300 transform
+        h-full px-8 py-12 rounded-2xl shadow-xl transition-all duration-300 transform
         ${active ? "bg-yellow-500 text-gray-800" : "bg-white text-gray-700"}
-        ${active ? "scale-[1.03] shadow-2xl ring-4 ring-yellow-400/50" : ""}
       `}
     >
-      <h3 className={`text-2xl mb-4 font-semibold ${active ? "text-gray-900" : "text-blue-600"}`}>{title}</h3>
-      <p className="text-base">{description}</p>
+      <h3 className={`text-2xl mb-4 font-semibold text-[#0f4a85]`}>{title}</h3>
+      <p className="text-[15.945px]">{description}</p>
     </div>
   );
 };
@@ -113,14 +112,14 @@ const CustomAboutUsSlider: React.FC<Props> = ({ data }) => {
     beforeChange: (_: number, next: number) => setCurrent(next),
     appendDots: (dots: React.ReactNode) => (
       <div className="mt-14">
-        <ul className="flex justify-center gap-3">{dots}</ul>
+        <ul className="flex justify-center gap-0">{dots}</ul>
       </div>
     ),
     customPaging: (i: number) => (
       <div
         className={`
-          w-3 h-3 rounded-full border border-gray-800 transition-all duration-300
-          ${i === current ? "bg-yellow-500 border-yellow-500 w-4 h-4" : ""}
+          w-4 h-4 rounded-full border border-[#023047] transition-all duration-300
+          ${i === current ? "bg-[#023047] border-[#023047] w-5 h-5" : ""}
         `}
       />
     ),
@@ -161,14 +160,14 @@ const CustomAboutUsSlider: React.FC<Props> = ({ data }) => {
           <div className="flex gap-4">
             <button
               onClick={() => sliderRef.current?.slickPrev()}
-              className="w-12 h-12 flex items-center justify-center border-2 border-gray-900 rounded-full hover:bg-gray-900 hover:text-white transition"
+              className="w-12 h-12 flex items-center justify-center border-2 border-gray-900 hover:border-[#ffb703] rounded-full hover:bg-[#ffb703] hover:text-white transition-colors duration-300"
             >
               <ChevronLeft size={24} />
             </button>
 
             <button
               onClick={() => sliderRef.current?.slickNext()}
-              className="w-12 h-12 flex items-center justify-center border-2 border-gray-900 rounded-full hover:bg-gray-900 hover:text-white transition"
+              className="w-12 h-12 flex items-center justify-center border-2 border-gray-900 hover:border-[#ffb703] rounded-full hover:bg-[#ffb703] hover:text-white transition-colors duration-300"
             >
               <ChevronRight size={24} />
             </button>

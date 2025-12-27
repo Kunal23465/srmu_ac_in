@@ -18,10 +18,10 @@ const OrganisationStructure: FC = () => {
         description={strategicData.description}
         image={strategicData.image}
       />
-      <h2 className="text-3xl lg:text-4xl font-bold text-center text-blue-900 mt-12">
+      <h2 className="lg:text-[50px] md:text-[46.875px] sm:text-[22.4px] text-[22.4px] fw500  text-center text-[#023047] mt-12">
           Organizational Structure
         </h2>
-        <p className="text-gray-600 text-center mb-8">
+        <p className="text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] text-center mb-8">
           SRMU’s organizational structure is designed to promote synergy,
           efficiency, and excellence across academic, administrative, and
           support functions.

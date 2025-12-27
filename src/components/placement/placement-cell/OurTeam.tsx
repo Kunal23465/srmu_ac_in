@@ -61,7 +61,7 @@ const OurTeam: React.FC = () => {
   return (
     <div>
       <center>
-        <p className="text-yellow-400 text-3xl md:text-5xl mb-5 lg:mb-20">Our Team</p>
+        <p className="text-yellow-400 lg:text-[50px] md:text-[46.875] text-[22.4px] sm:text-[22.4px] fw500 mb-5 lg:mb-20">Our Team</p>
 
         {/* TAB SWITCH */}
         <span

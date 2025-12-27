@@ -49,32 +49,32 @@ const CustomInstituteProfileCard: React.FC<CustomInstituteProfileCardProps> = ({
 
             {/* Text Content */}
             <div className="w-full md:w-2/3 text-white">
-              <h2 className="font50 text-3xl! md:text-4xl fw500 mb-2">
+              <h2 className="lg:text-[50px] md:text-[46.875px] text-[22.4px] sm:text-[22.4px] fw500 mb-2">
                 {profile.title}
               </h2>
 
-              <p className="font19  mb-1">{profile.name}</p>
-              <p className="mb-4 fw500">{profile.position}</p>
+              <p className="lg:text-[19px] md:text-[17.82px] sm:text-[16.632px] text-[16.632px]  mb-1">{profile.name}</p>
+              <p className="mb-4 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px]  fw500">{profile.position}</p>
 
-              {profile.summary && <p className="mb-6 max-w-full md:max-w-3xl">
+              {profile.summary && <p className="mb-6 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] max-w-full md:max-w-3xl">
                 {formatBold(profile.summary)}
               </p>}
 
               {/* CARD DETAILS SECTION */}
               {profile.detailsHeading && (
-                <h3 className="font-bold text-[18px] mb-2">
+                <h3 className="font-bold text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] text-[18px] mb-2">
                   {profile.detailsHeading}
                 </h3>
               )}
 
               {profile.useBullets ? (
-                <ul className="list-disc pl-5 space-y-1 mb-6">
+                <ul className="list-disc text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] pl-5 space-y-1 mb-6">
                   {profile?.details?.map((d, i) => (
                     <li key={i}>{formatBold(d)}</li>
                   ))}
                 </ul>
               ) : (
-                <div className="space-y-1 mb-6">
+                <div className="space-y-1 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] mb-6">
                   {profile?.details?.map((d, i) => (
                     <p key={i}>{formatBold(d)}</p>
                   ))}
@@ -83,7 +83,7 @@ const CustomInstituteProfileCard: React.FC<CustomInstituteProfileCardProps> = ({
 
               <button
                 onClick={() => setExpandedId(profile.id)}
-                className="inline-flex cursor-pointer items-center gap-2 px-6 py-3 bg-[#ffb703] text-[#0f4a85] font-semibold rounded-md shadow hover:bg-[#ffc54a] transition"
+                className="inline-flex text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] cursor-pointer items-center gap-2 px-6 py-3 bg-[#ffb703] text-[#0f4a85] font-semibold rounded-md shadow hover:bg-[#ffc54a] transition"
               >
                 VIEW PROFILE
                 <span className="text-xl">→</span>

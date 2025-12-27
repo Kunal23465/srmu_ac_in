@@ -76,9 +76,9 @@ const PlacementDrives: React.FC = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         {/* HEADER + TABS */}
         <div className="block md:flex justify-between items-center">
-          <h2 className="text-4xl font-semibold mb-2">Placement Drives</h2>
+          <h2 className="lg:text-[50px] md:text-[46.875] text-[22.4px] sm:text-[22.4px] fw500 mb-2">Placement Drives</h2>
 
-          <div className="flex items-center w-fit mb-2 bg-white rounded">
+          <div className="flex  items-center w-fit mb-2 bg-white rounded">
             {["2025", "2024", "2023"].map((year) => (
               <button
                 key={year}
@@ -87,7 +87,7 @@ const PlacementDrives: React.FC = () => {
                   setCurrentSlide(0);
                   sliderRef.current?.slickGoTo(0);
                 }}
-                className={`px-5 sm:px-10 md:px-15 py-3 text-sm font-semibold transition ${activeYear === year ? "bg-yellow-400 text-black" : "text-black hover:bg-yellow-400"}`}
+                className={`px-5 lg:text-[19px] md:text-[17.82px] sm:text-[16.632px] text-[16.632px] sm:px-10 md:px-15 py-3 font-semibold transition ${activeYear === year ? "bg-yellow-400 text-black" : "text-black hover:bg-yellow-400"}`}
               >
                 {year}
               </button>
@@ -96,7 +96,7 @@ const PlacementDrives: React.FC = () => {
         </div>
 
         {/* SUBTEXT */}
-        <p className="text-gray-700 mb-8 text-sm max-w-xl">Dynamic placement drives connect our students with leading employers, facilitating successful career launches.</p>
+        <p className="text-gray-700 mb-8 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] max-w-xl">Dynamic placement drives connect our students with leading employers, facilitating successful career launches.</p>
 
         <div className="h-0.5 bg-black mb-12"></div>
 
@@ -109,11 +109,11 @@ const PlacementDrives: React.FC = () => {
                   <img src={drive.companyLogo} className="h-20 object-contain" alt="company logo" />
                 </div>
 
-                <p className="text-sm font-semibold mb-1">
+                <p className="text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] mb-1">
                   <strong>Date of Visit:</strong> {drive.dateOfVisit}
                 </p>
 
-                <p className="text-sm text-gray-700">{drive.description}</p>
+                <p className="text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] text-gray-700">{drive.description}</p>
               </div>
             </div>
           ))}

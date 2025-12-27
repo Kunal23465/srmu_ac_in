@@ -44,7 +44,7 @@ const Festivals: React.FC = () => {
 
         <div className="relative z-10 px-4 md:px-0">
           <h2 className="text-[28px] sm:text-[28px] lg:text-[3.125rem] fw500 mb-4 text-[#ffb703]">Festivals</h2>
-          <p className="max-w-3xl md:max-w-[45%] mx-auto lg:text-[15px] text-[14px] sm:text-[14px] mb-10 leading-relaxed">
+          <p className="max-w-3xl md:max-w-[45%] mx-auto lg:text-[15px] md:text-[14px] sm:text-[13.132px] text-[13.132px] mb-10 leading-relaxed">
             The SRMU community celebrates various Indian festivals, shaping an atmosphere of harmony and unity. Each festival becomes a lively tapestry of cultural expressions,
             bringing students, faculty, and staff together to share these rich traditions.
           </p>
@@ -80,7 +80,7 @@ const Festivals: React.FC = () => {
         <div className="flex flex-col md:flex-row md:justify-between gap-4">
             <div>
           <h3 className="lg:text-[1.75rem] text-[24.5px] sm:text-[24.5px] md:text-2xl pb-3 sm:pb-5 font-bold text-[#002D62]">{activeFestival.name}</h3>
-        <p className="leading-relaxed w-full md:w-3/4 xl:w-[65%] whitespace-pre-line text-justify lg:text-[15px] text-[14px] sm:text-[14px]">{activeFestival.description}</p>
+        <p className="leading-relaxed w-full md:w-3/4 xl:w-[65%] whitespace-pre-line text-justify lg:text-[15px] md:text-[14px] sm:text-[13.132px] text-[13.132px]">{activeFestival.description}</p>
 </div>
 <div className="flex justify-end gap-3 mb-6">
 
@@ -137,7 +137,7 @@ const Festivals: React.FC = () => {
                 <div>
                   <h4 className="text-[15.75px] sm:text-[15.75px] lg:text-[16.875px] color_light_blue">{card.title}</h4>
                   <span className="text-yellow-500 lg:text-[.875rem] sm:text-[12.25px] text-[12.25px] block mb-4">{card.date}</span>
-                  <span className="lg:text-[15px] sm:text-[14px] text-[14px] text-gray-600 leading-relaxed line-clamp-3">{card.description}</span>
+                  <span className="lg:text-[15px] md:text-[14px] sm:text-[13.132px] text-[13.132px] text-gray-600 leading-relaxed line-clamp-3">{card.description}</span>
                 </div>
 
                 <div className="mt-4">

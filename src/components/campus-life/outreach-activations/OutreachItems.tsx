@@ -12,13 +12,13 @@ const OutreachItems: React.FC = () => {
       >
         {/* Text Section */}
         <div className="w-full md:w-1/2">
-          <h2 className="text-3xl md:text-5xl font-medium text-[#023047] mb-8">
+          <h2 className="lg:text-[50px] md:text-[46.875px] text-[22.4px] sm:text-[22.4px] font-medium text-[#023047] mb-8">
             {title}
           </h2>
 
           <div>
             {desc.map((item, index) => (
-              <p key={index} className="mb-4 text-base md:text-lg text-justify">
+              <p key={index} className="mb-4 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] text-justify">
                 {item.point}
               </p>
             ))}

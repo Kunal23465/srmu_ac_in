@@ -1136,6 +1136,19 @@ footer:after {
   color: rgb(15, 74, 133);
 }
 
+/* Existing CSS stays exactly the same */
+
+/* YouTube specific styling */
+.download-icon.video-icon svg {
+  background-color: red;
+}
+
+/* Optional: hover effect for YouTube */
+.download-icon.video-icon:hover svg {
+  background-color: white;
+}
+
+
 /* .font22 {
   font-size: 1.375rem;
 } */

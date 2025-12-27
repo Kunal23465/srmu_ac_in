@@ -35,19 +35,19 @@ const maxIndex = currentTestimonials.length - 1;
   return (
     <div className="testimonials-section">
       <div className="content-container">
-        <h2 className="text-3xl md:text-5xl mb-2 font-medium text-center">What Our People say</h2>
-        <p className="subtitle text-center max-w-3xl mx-auto">Testimonials from student, staff, and alumni on their placement experience at SRMU</p>
+        <h2 className="text-[#023047] lg:text-[50px] md:text-[46.875] text-[22.4px] sm:text-[22.4px] fw500 mb-2  text-center">What Our People say</h2>
+        <p className="subtitle text-center max-w-3xl text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] mx-auto">Testimonials from student, staff, and alumni on their placement experience at SRMU</p>
 
         <div className="block md:flex justify-between items-center min-h-[500px] gap-[60px] mt-12">
           {/* LEFT SIDE */}
           <div className="flex-1 max-w-[600px]">
             {/* Tabs */}
             <div className="flex justify-start mb-10 overflow-x-auto gap-0">
-              <button className={`tab-button px-3 sm:px-6 py-1 sm:py-3 texm-sm! sm:text-[16px]! ${activeTab === "recruiters" ? "active" : ""}`} onClick={() => handleTabChange("recruiters")}>
+              <button className={`tab-button px-3 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] sm:px-6 py-1 sm:py-3 texm-sm! ${activeTab === "recruiters" ? "active" : ""}`} onClick={() => handleTabChange("recruiters")}>
                 RECRUITERS TESTIMONIALS
               </button>
 
-              <button className={`tab-button px-3 sm:px-6 py-1 sm:py-3 texm-sm! sm:text-[16px]! ${activeTab === "students" ? "active" : ""}`} onClick={() => handleTabChange("students")}>
+              <button className={`tab-button px-3 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] sm:px-6 py-1 sm:py-3 texm-sm!  ${activeTab === "students" ? "active" : ""}`} onClick={() => handleTabChange("students")}>
                 STUDENT TESTIMONIALS
               </button>
             </div>
@@ -57,14 +57,14 @@ const maxIndex = currentTestimonials.length - 1;
               <Slider ref={sliderRef} {...settings}>
                 {currentTestimonials.map((testimonial, index) => (
                   <div key={index} className="testimonial-slide">
-                    <p className="testimonial-text leading-7 text-sm md:text-lg text-[#757575]">{testimonial.text}</p>
+                    <p className="testimonial-text leading-7 lg:text-[19px] md:text-[17.82px] sm:text-[16.632px] text-[16.632px]  text-[#757575]">{testimonial.text}</p>
 
                     <div className="testimonial-author-info mt-8 flex items-center gap-4">
                       <img src={testimonial.image} alt={testimonial.author} className="author-image-small" />
 
                       <div className="author-details">
-                        <p className="author-name font-semibold">{testimonial.author} |</p>
-                        <p className="author-title text-sm">{testimonial.title}</p>
+                        <p className="author-name lg:text-[22px] md:text-[20.625px] sm:text-[19.25px] text-[19.25px]">{testimonial.author} |</p>
+                        <p className="author-title text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px]">{testimonial.title}</p>
                       </div>
                     </div>
                   </div>

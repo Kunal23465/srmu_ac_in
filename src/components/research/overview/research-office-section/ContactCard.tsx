@@ -12,18 +12,18 @@ const ContactCard: React.FC<Props> = ({ item }) => {
         <div className="text-3xl mb-2">
           <img src={item.icon} />
         </div>
-        <h4 className="font-semibold uppercase text-sm mb-1">{item.label}</h4>
+        <h4 className="font-semibold uppercase lg:text-[17px] md:text-[15.945px] sm:text-[14.882px] mb-1">{item.label}</h4>
       </div>
       {Array.isArray(item.value) ? (
-        <div className="text-xs!">
+        <div className="lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px]">
           {item.value.map((val, i) => (
-            <p key={i} className="text-sm!">
+            <p key={i} className="lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px]">
               {val}
             </p>
           ))}
         </div>
       ) : (
-        <p className="text-sm!">{item.value}</p>
+        <p className="lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px]">{item.value}</p>
       )}
     </div>
   );

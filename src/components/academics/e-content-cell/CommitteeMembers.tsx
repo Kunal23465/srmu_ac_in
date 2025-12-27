@@ -3,10 +3,10 @@ import React from 'react'
 const CommitteeMembers:React.FC = () => {
     return (
         <div className='mb-10 md:mb-20 py-4 md:py-7 lg:py-7'>
-            <h2 className="text-xl font-extrabold mb-4 color_light_blue">
+            <h2 className="lg:text-[22px] md:text-[20.625px] text-[19.25px] sm:text-[19.25px] fw500 mb-4 color_light_blue">
                 Committee Members
             </h2>
-            <ul className=" ml-5 marker:text-2xl font18">
+            <ul className=" ml-5 marker:text-2xl lg:text-[18px] text-[15.75px] md:text-[16.875px] sm:text-[15.75px]">
                 <li>Dr. Ritu Chandra- IQAC Chairperson</li>
                 <li>Dr. Sonal Prasad, Assistant Professor, Institute of Biosciences & Technology- Coordinator, E-Content Development Cell</li>
                 <li>Dr. Amit Kumar Singh, Assistant Professor, Faculty of Mechanical engineering</li>
@@ -21,11 +21,11 @@ const CommitteeMembers:React.FC = () => {
             </ul>
 
             <p>&nbsp;</p>
-            <p className="font18">
+            <p className="lg:text-[18px] text-[15.75px] md:text-[16.875px] sm:text-[15.75px]">
                 <strong>
-                    For any query please contact
+                    For any query please contact: 
                 </strong>
-                <a href="mailto:e-contentdevelopmentcell@srmu.ac.in">e-contentdevelopmentcell@srmu.ac.in</a>
+                <a className='lg:text-[18px] text-[15.75px] md:text-[16.875px] sm:text-[15.75px]' href="mailto:e-contentdevelopmentcell@srmu.ac.in">e-contentdevelopmentcell@srmu.ac.in</a>
             </p>
         </div>
     )

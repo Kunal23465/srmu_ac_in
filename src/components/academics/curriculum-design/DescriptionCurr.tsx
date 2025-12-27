@@ -3,7 +3,7 @@ import { FC } from "react"
 const DescriptionCurr : FC = () => {
     return (
         <div>
-            <div className="mb-4 font18">
+            <div className="mb-4 lg:text-[18px] text-[15.75px] md:text-[16.875px] sm:text-[15.75px]">
                 <p className="text-justify">
                     <strong>
                         Curriculum developed and implemented have relevance to the local, national, regional and global developmental needs which is reflected in Programme outcomes (POs), Programme Specific Outcomes(PSOs) and Course Outcomes(COs) of the Programmes offered by the Institution.

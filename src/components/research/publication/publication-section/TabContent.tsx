@@ -76,8 +76,8 @@ const TabContent: React.FC<TabContentProps> = ({ data }) => {
           
           {/* LEFT PANEL – Title + Description + Arrows */}
           <div className="w-full md:w-1/3 px-2 sm:px-5 md:px-0 text-white">
-            <h2 className="text-4xl font-medium">{data.title}</h2>
-            <p className="mt-4">{data.description}</p>
+            <h2 className="lg:text-[40px] md:text-[37.5px] sm:text-[22.4px] text-[22.4px] fw500">{data.title}</h2>
+            <p className="mt-4 lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px]">{data.description}</p>
 
             {/* CUSTOM ARROWS */}
             <div className="flex gap-4 mt-8">
@@ -109,7 +109,7 @@ const TabContent: React.FC<TabContentProps> = ({ data }) => {
                     />
 <div className="p-4">
                     {/* Title */}
-                    <h3 className="text-[#0f4a85] text-xl font-semibold p-4 pb-1">
+                    <h3 className="text-[#0f4a85] lg:text-[22px] md:text-[20.625px] text-[19.25px] sm:text-[19.25px] font-semibold p-4 pb-1">
                       {item.title}
                     </h3>
 

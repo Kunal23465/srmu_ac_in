@@ -20,8 +20,8 @@ const UniversityResearchSection: React.FC = () => {
             <div className={`${Classes["container"]}`}>
 <div className="container">
         <div className=" mb-10 border-b-3 border-white/50 pb-6">
-          <h2 className="text-3xl lg:text-5xl font-medium mb-3 max-w-3xl">University Research Advisory Board / Council</h2>
-          <p className="text-gray-200 max-w-3xl">
+          <h2 className="lg:text-[50px] md:text-[46.875px] text-[22.4px] sm:text-[22.4px] fw500 mb-3 max-w-3xl lg:leading-15 sm:leading-25 md:leading-20">University Research Advisory Board / Council</h2>
+          <p className="text-gray-200 lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px] max-w-3xl">
             The University Research Advisory Board at SRMU provides strategic guidance and oversight, ensuring the promotion of high-quality and impactful research projects across
             the institution.
           </p>
@@ -38,7 +38,7 @@ const UniversityResearchSection: React.FC = () => {
             <div className="text-center mt-10">
               <button
                 onClick={handleViewAll}
-                className="bg-[#ffb703] text-[#0f4a85] hover:bg-transparent hover:text-[#ffb703] border border-[#ffb703] font-semibold px-6 py-3 rounded-md inline-flex items-center gap-2 transition-all group"
+                className="bg-[#ffb703] lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px] text-[#0f4a85] hover:bg-transparent hover:text-[#ffb703] border border-[#ffb703] font-semibold px-6 py-3 rounded-md inline-flex items-center gap-2 transition-all group"
               >
                 VIEW ALL
                 <MdArrowRightAlt size={24} className="transition-transform group-hover:translate-x-1" />

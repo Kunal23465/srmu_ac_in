@@ -12,7 +12,7 @@ const Nirf: FC = () => {
     <>
       <div className={`${Classes["container"]}`}>
         <CustomOverviewSection data={NIRFOverviewData} />
-        <h1 className="text-3xl lg:text-5xl mt-10 lg:mt-20 font-semibold">NIRF Reports</h1>
+        <h1 className="lg:text-[50px] md:text-[46.875px] sm:text-[22.4px] text-[22.4px] fw500 mt-14 mb-5 text-[#023047] lg:mt-20 font-semibold">NIRF Reports</h1>
        <CustomTable
                     columnOneHeader="Overall"
                     columnTwoHeader="Downloads"

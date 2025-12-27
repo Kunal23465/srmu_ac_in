@@ -55,7 +55,7 @@ const AnnualFest: React.FC = () => {
                 {/* Heading and description */}
                 <div className="flex flex-col md:flex-row justify-between md:items-start gap-4 mb-10">
                     <h2 className="text-[28px] sm:text-[28px] lg:text-[3.125rem] fw500">Annual Fest</h2>
-                    <p className="lg:text-[15px] text-[14px] sm:text-[14px] text-white max-w-3xl leading-relaxed">
+                    <p className="lg:text-[15px] md:text-[14px] sm:text-[13.132px] text-[13.132px] text-white max-w-3xl leading-relaxed">
                         Shri Ramswaroop Memorial University has a variety of annual festivities each year.
                         These celebrations and festivals give the students a great environment for idea sharing,
                         technological demonstration, creative thinking, and social and cultural efforts.
@@ -71,7 +71,7 @@ const AnnualFest: React.FC = () => {
                                 setActiveTab(tab.key);
                                 setCurrentIndex(0);
                             }}
-                            className={`pb-2 font-semibold lg:text-[15px] sm:text-[14px] text-[14px]  cursor-pointer tracking-wide whitespace-nowrap relative ${activeTab === tab.key
+                            className={`pb-2 font-semibold lg:text-[15px] md:text-[14px] sm:text-[13.132px] text-[13.132px]  cursor-pointer tracking-wide whitespace-nowrap relative ${activeTab === tab.key
                                 ? "text-[#ffb703] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-[#ffb703]"
                                 : "text-white hover:text-[#ffb703]"
                                 }`}
@@ -98,7 +98,7 @@ const AnnualFest: React.FC = () => {
                             {data.title}
                         </h3>
 
-                        <p className="text-white text-[14px] sm:text-[14px] lg:text-[15px] leading-relaxed mb-6 block text-justify md:text-left">
+                        <p className="text-white lg:text-[15px] md:text-[14px] sm:text-[13.132px] text-[13.132px] leading-relaxed mb-6 block text-justify md:text-left">
                             {data.description}
                         </p>
 
@@ -176,12 +176,12 @@ const AnnualFest: React.FC = () => {
                                         {card.title}
                                     </h4>
 
-                                    <p className="lg:text-[13.125px] sm:text-[12.25px] text-[12.25px] text-[#ffb703] mb-2">
+                                    <p className="lg:text-[13px] md:text-[12.195px] sm:text-[11.382px] text-[11.382px] text-[#ffb703] mb-2">
                                         {card.date}
                                     </p>
 
                                     <p
-                                        className="lg:text-[15px] sm:text-[14px] text-[14px]  text-gray-700 mt-2 line-clamp-2"
+                                        className="lg:text-[15px] md:text-[14px] sm:text-[13.132px] text-[13.132px]  text-gray-700 mt-2 line-clamp-2"
                                         dangerouslySetInnerHTML={{
                                             __html: card.description,
                                         }}

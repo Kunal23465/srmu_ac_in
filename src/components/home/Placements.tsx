@@ -29,7 +29,7 @@ const Placements = () => {
       <div className="w-full">
         <div className="!text-left">
           <h2 className="text-[28px] lg:text-[3.125rem] fw600">{PlacementData[0].heading}</h2>
-          <p className="pb-6 font-semibold text-[#00000099]">{PlacementData[0].description}</p>
+          <p className="pb-6 text-[16px] font-semibold text-[#00000099]">{PlacementData[0].description}</p>
         </div>
         <div className="lg:flex justify-between gap-5 lg:pr-4 py-8">
           {/* Left divs */}
@@ -46,7 +46,7 @@ const Placements = () => {
                   suffix={item.symbol}
                   redraw={true}
                 >
-                  {({ countUpRef }) => <span ref={countUpRef} className="text-[35px] font-semibold mb-2 " />}
+                  {({ countUpRef }) => <span ref={countUpRef} className="text-[44px] lg:text-[50px] font-semibold mb-2 " />}
                 </CountUp>
                 <p className="text-[17px] font-poppins">{item.description}</p>
               </div>
@@ -67,7 +67,7 @@ const Placements = () => {
                         suffix={slide.symbol}
                         redraw={true}
                       >
-                        {({ countUpRef }) => <span ref={countUpRef} className="text-[35px] font-semibold mb-2 text-white " />}
+                        {({ countUpRef }) => <span ref={countUpRef} className="text-[44px] lg:text-[50px] font-semibold mb-2 text-white " />}
                       </CountUp>
                       <p className="mt-1 text-white text-[17px] font-poppins font-normal">{slide.description}</p>
                     </div>
@@ -92,7 +92,7 @@ const Placements = () => {
                     suffix={item.symbol}
                     redraw={true}
                   >
-                    {({ countUpRef }) => <span ref={countUpRef} className="text-[35px] font-semibold mb-2 " />}
+                    {({ countUpRef }) => <span ref={countUpRef} className="text-[44px] lg:text-[50px] font-semibold mb-2 " />}
                   </CountUp>
                   <p className="text-[17px] font-poppins">{item.description}</p>
                 </div>
@@ -107,7 +107,7 @@ const Placements = () => {
                   suffix={PlacementData[0].middlebelowDiv.symbol}
                   redraw={true}
                 >
-                  {({ countUpRef }) => <span ref={countUpRef} className="text-[35px] font-semibold mb-2 " />}
+                  {({ countUpRef }) => <span ref={countUpRef} className="text-[44px] lg:text-[50px] font-semibold mb-2 " />}
                 </CountUp>
                 <p className="text-[17px] font-poppins">{PlacementData[0].middlebelowDiv.description}</p>
               </div>
@@ -127,7 +127,7 @@ const Placements = () => {
                       suffix={slide.symbol}
                       redraw={true}
                     >
-                      {({ countUpRef }) => <span ref={countUpRef} className="text-[35px] font-semibold mb-2 " />}
+                      {({ countUpRef }) => <span ref={countUpRef} className="text-[44px] lg:text-[50px] font-semibold mb-2 " />}
                     </CountUp>
                     <p className="mt-1 text-[17px] font-poppins font-normal">{slide.description}</p>
                   </div>

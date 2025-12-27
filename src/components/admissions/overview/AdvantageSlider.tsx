@@ -283,7 +283,7 @@ const AdvantageSlider: React.FC = () => {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 md:mb-12 gap-4">
           <div className="">
             <h1 className="lg:text-[50px] text-[28px] sm:text-[28px] md:text-[46.875px] fw600 leading-tight">SRMU Advantage</h1>
-            <p className="mt-3 lg:text-[16px] text-[15px] md:text-[15px] sm:text-[15px]">
+            <p className="mt-3 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px]">
               SRMU builds the visionary leaders of tomorrow, promising holistic development,
               and the stepping stones to global success.
             </p>
@@ -310,11 +310,11 @@ const AdvantageSlider: React.FC = () => {
                     </h3>
                   </div>
 
-                  <div className="mt-4 lg:text-[16px] text-[15px] md:text-[15px] sm:text-[15px] leading-relaxed">
+                  <div className="mt-4 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] leading-relaxed">
                     <div className="opacity-80 text-justify" dangerouslySetInnerHTML={{ __html: item.description }} />
 
                     {item.extraText && (
-                      <div className="opacity-100 lg:text-[16px] text-[15px] md:text-[15px] sm:text-[15px] fw500 font-bold mt-3" dangerouslySetInnerHTML={{ __html: item.extraText }} />
+                      <div className="opacity-100 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] fw500 font-bold mt-3" dangerouslySetInnerHTML={{ __html: item.extraText }} />
                     )}
                   </div>
                 </div>

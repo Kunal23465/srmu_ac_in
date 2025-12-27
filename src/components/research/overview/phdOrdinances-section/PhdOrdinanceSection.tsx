@@ -15,8 +15,8 @@ const PhdOrdinanceSection: React.FC = () => {
       <div className="container mx-auto px-4 flex flex-col-reverse lg:flex-row items-center gap-10">
         {/* Left Content */}
         <div className="w-full lg:w-1/2 space-y-6 ">
-          <h2 className="text-3xl md:text-4xl font-medium text-[#0f4a85]">{title}</h2>
-          <p className="text-gray-700 text-base leading-relaxed">{description}</p>
+          <h2 className="lg:text-[40px] md:text-[37.5px] sm:text-[22.4px] text-[22.4px] font-medium text-[#0f4a85]">{title}</h2>
+          <p className="text-gray-700 lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px] text-base leading-relaxed">{description}</p>
 
           <a
             href={pdfUrl}
@@ -24,7 +24,7 @@ const PhdOrdinanceSection: React.FC = () => {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 bg-[#0f4a85] border-2 border-[#ffb703] text-white font-medium uppercase py-2 px-4 rounded-lg group hover:bg-white hover:text-[#0f4a85] transition-colors duration-200 w-fit"
           >
-            <span className="bg-white p-1 rounded-lg transition-all duration-500 group-hover:bg-[#ffb703]"><PdfSvgIcon /></span>
+            <span className="bg-white p-1 rounded-lg lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px] transition-all duration-500 group-hover:bg-[#ffb703]"><PdfSvgIcon /></span>
             Download PDF
           </a>
         </div>

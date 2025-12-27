@@ -11,7 +11,7 @@ const ResearchCentersSection: React.FC = () => {
       <div className="bg-[#dee6f7] rounded-none md:rounded-[30px] h-[1050px] md:h-[600px] ">
         <div className={Classes["container"]}>
           <div className="py-14 md:py-20">
-            <h2 className="text-3xl md:text-5xl font-medium text-gray-900">Research Centers</h2>
+            <h2 className="lg:text-[50px] md:text-[46.875px] text-[22.4px] sm:text-[22.4px] fw500 text-gray-900">Research Centers</h2>
           </div>
         </div>
       </div>
@@ -23,8 +23,8 @@ const ResearchCentersSection: React.FC = () => {
             <img src={item.image} alt={item.title} className="w-full h-64 object-cover" />
 
             <div className="p-10">
-              <h3 className="text-lg font-bold text-[#0f4a85] mb-2">{item.title}</h3>
-              <p className="text-gray-600 text-sm leading-6 mb-5">{item.description}</p>
+              <h3 className="lg:text-[22px] md:text-[20.625px] sm:text-[19.25px] text-[19.25px] fw500 text-[#0f4a85] mb-2">{item.title}</h3>
+              <p className="text-gray-600 lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px] leading-6 mb-5">{item.description}</p>
 
               <a
                 href={item.pdfUrl}

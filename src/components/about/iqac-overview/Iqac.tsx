@@ -51,7 +51,7 @@ const Iqac: React.FC = () => {
 
       <div className={`${Classes["container"]}`}>
         {/* Reports Section */}
-        <h1 className="text-3xl lg:text-5xl mt-14 lg:mt-20 font-medium">Report</h1>
+        <h1 className="lg:text-[50px] md:text-[46.875px] sm:text-[22.4px] text-[22.4px] fw500 mt-14 mb-5 text-[#023047] lg:mt-20">Report</h1>
         <CustomTable
           columnOneHeader="University Annual Report"
           columnTwoHeader="Downloads"
@@ -79,7 +79,7 @@ const Iqac: React.FC = () => {
         />
 
         {/* Feedback Section */}
-        <h1 className="text-3xl lg:text-5xl mt-10 md:mt-20 font-medium">Feedback</h1>
+        <h1 className="lg:text-[50px] md:text-[46.875px] sm:text-[22.4px] text-[22.4px] fw500 mt-14 mb-5 text-[#023047] md:mt-20">Feedback</h1>
         <CustomTable
           columnOneHeader="Feedback Procedure"
           columnTwoHeader="Downloads"

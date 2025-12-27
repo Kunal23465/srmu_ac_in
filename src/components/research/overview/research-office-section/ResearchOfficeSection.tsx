@@ -20,8 +20,8 @@ const ResearchOfficeSection: React.FC = () => {
       <div className="container">
         {/* Heading */}
         <div className="mb-8">
-          <h2 className="text-3xl font-extrabold text-[#0f4a85] mb-2">Research Office</h2>
-          <p className="text-gray-700 max-w-3xl">
+          <h2 className="text-[#023047] lg:text-[50px] md:text-[46.875px] text-[22.4px] sm:text-[22.4px] fw500 mb-2">Research Office</h2>
+          <p className="text-gray-700 lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px] max-w-3xl">
             The Research Office at SRMU facilitates and supports the entire research lifecycle, from the conceptualization stage to the final project.
           </p>
         </div>
@@ -35,7 +35,7 @@ const ResearchOfficeSection: React.FC = () => {
 
     <div className="w-full px-8 md:px-10 bg-[#ecf0f9] rounded-bl-4xl py-12">
 
-  <h2 className="text-xl font-bold mb-6">
+  <h2 className="lg:text-[25px] md:text-[23.445px] sm:text-[21.882px] text-[21.882px] font-bold mb-6">
     Research Coordinators of Different Departments
   </h2>
 
@@ -46,19 +46,19 @@ const ResearchOfficeSection: React.FC = () => {
   <thead>
     <tr className="bg-[#214a8a] text-white">
       {/* Institute – Hidden on mobile */}
-      <th className="hidden md:table-cell text-center py-4 px-6 font-semibold rounded-sm">
+      <th className="hidden lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px] md:table-cell text-center py-4 px-6 font-semibold rounded-sm">
         INSTITUTES
       </th>
 
-      <th className="text-center py-4 px-6 font-semibold rounded-sm">
+      <th className="text-center lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px] py-4 px-6 font-semibold rounded-sm">
         DEPARTMENT
       </th>
 
-      <th className="text-center py-4 px-6 font-semibold rounded-sm">
+      <th className="text-center lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px]  py-4 px-6 font-semibold rounded-sm">
         NAME OF FACULTY
       </th>
 
-      <th className="text-center py-4 px-6 font-semibold rounded-sm">
+      <th className="text-center lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px] py-4 px-6 font-semibold rounded-sm">
         EMAIL ID
       </th>
     </tr>
@@ -77,24 +77,24 @@ const ResearchOfficeSection: React.FC = () => {
                 <td
                   rowSpan={item.departments.length}
                   className={`hidden md:table-cell ${instituteColor} text-white 
-                  text-center py-6 px-4 font-semibold align-middle rounded-md`}
+                  text-center py-6 px-4 lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px] font-semibold align-middle rounded-md`}
                 >
                   {item.name}
                 </td>
               )}
 
               {/* Department */}
-              <td className="bg-white px-4 py-4 text-sm text-gray-800 text-center md:text-left">
+              <td className="bg-white px-4 lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px] py-4 text-sm text-gray-800 text-center md:text-left">
                 {dept.department}
               </td>
 
               {/* Faculty */}
-              <td className="bg-white px-4 py-4 text-sm text-gray-800 text-center">
+              <td className="bg-white px-4 lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px] py-4 text-sm text-gray-800 text-center">
                 {dept.faculty}
               </td>
 
               {/* Email */}
-              <td className="bg-white px-4 py-4 text-sm text-center break-all">
+              <td className="bg-white px-4 lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px] py-4 text-sm text-center break-all">
                 <a href={`mailto:${dept.email}`} className="text-[#0f4a85] hover:underline">
                   {dept.email}
                 </a>
