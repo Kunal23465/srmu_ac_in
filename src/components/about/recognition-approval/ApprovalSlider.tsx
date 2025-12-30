@@ -112,6 +112,7 @@ import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { approvalData } from "../../../data/about/recognition-approval/recognitionApprovalsData";
+import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
 
 export const PdfSvgIcon: React.FC = () => (
   <svg viewBox="0 0 78.7 76.2" xmlns="http://www.w3.org/2000/svg" style={{ width: "25px", height: "25px" }}>
@@ -176,21 +177,21 @@ const ApprovalsSlider = () => {
                 <button
                   onClick={() => sliderRef.current?.slickPrev()}
                   disabled={isAtStart}
-                  className={`w-14 h-14 border border-black rounded-full flex items-center justify-center transition ${
+                  className={`w-13 h-13 border-2 border-black rounded-full flex items-center justify-center transition ${
                     isAtStart ? "opacity-40 cursor-not-allowed" : " cursor-pointer"
                   }`}
                 >
-                  <BiChevronLeft size={22} />
+                  <FaAngleLeft size={20} />
                 </button>
 
                 <button
                   onClick={() => sliderRef.current?.slickNext()}
                   disabled={isAtEnd}
-                  className={`w-14 h-14 border border-black rounded-full flex items-center justify-center transition ${
+                  className={`w-13 h-13 border-2 border-black rounded-full flex items-center justify-center transition ${
                     isAtEnd ? "opacity-40 cursor-not-allowed" : " cursor-pointer"
                   }`}
                 >
-                  <BiChevronRight size={22} />
+                  <FaAngleRight size={20} />
                 </button>
               </div>
             </div>
