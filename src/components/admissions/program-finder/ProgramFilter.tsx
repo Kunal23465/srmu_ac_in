@@ -30,6 +30,7 @@ const ProgramFilter: React.FC<PropsTypes> = ({
   onDisciplineChange,
   isTypeFlag,
 }) => {
+  console.log(selectedProgramType, "selectedProgramType");
   const [visibleCount, setVisibleCount] = useState(5);
   const visibleCourses = data.slice(0, visibleCount);
   const slugify = (str: string) => str.toLowerCase().trim().replace(/\s+/g, "-");
@@ -47,11 +48,17 @@ const ProgramFilter: React.FC<PropsTypes> = ({
             }}
           >
             <option value="">{isTypeFlag ? " Select Program Flag" : "Select Program Type"} </option>
-            {programTypeOptions.map((type: any) => (
-              <option key={type.programTypeId} value={type.programTypeId}>
-                {type.name}
-              </option>
-            ))}
+            {isTypeFlag
+              ? programTypeOptions.map((flag: any) => (
+                  <option key={flag.programFlagId} value={flag.programFlagId}>
+                    {flag.name}
+                  </option>
+                ))
+              : programTypeOptions.map((type: any) => (
+                  <option key={type.programTypeId} value={type.programTypeId}>
+                    {type.name}
+                  </option>
+                ))}
           </select>
 
           <select

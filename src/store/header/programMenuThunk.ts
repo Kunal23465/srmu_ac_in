@@ -16,6 +16,7 @@ export interface NavbarDiscipline {
 
 export interface NavbarProgramType {
   programTypeId: number;
+  programFlagId:number;
   programFlagName: string;
   disciplines: NavbarDiscipline[];
   programs: NavbarProgram[];

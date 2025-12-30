@@ -143,13 +143,13 @@ const Header = () => {
                                   {programMenu
                                     .filter((type) => group.includes(type.programFlagName))
                                     .map((type) => {
-                                      const programTypeSlug = slugify(type.programFlagName);
+                                      const programFlagSlug = slugify(type.programFlagName);
 
                                       return (
-                                        <div key={type.programTypeId}>
+                                        <div key={type.programFlagId}>
                                           {/* BLUE HEADING */}
                                           <h3 className="font-medium text-base p-3 rounded-lg inline-block hover:bg-[#ffb703] text-[#0f4a85] hover:text-black">
-                                            <Link to={`/programs/${programTypeSlug}`} state={{ programTypeId: type.programTypeId }}>
+                                            <Link to={`/programs/${programFlagSlug}`} state={{ programTypeId: type.programFlagId }}>
                                               {type.programFlagName}
                                             </Link>
                                           </h3>
@@ -160,8 +160,8 @@ const Header = () => {
                                               type.programs.map((prog) => (
                                                 <li key={prog.programId}>
                                                   <Link
-                                                    to={`/programs/${programTypeSlug}/${slugify(prog.programName)}`}
-                                                    state={{ programTypeId: type.programTypeId }}
+                                                    to={`/programs/${programFlagSlug}/${slugify(prog.programName)}`}
+                                                    state={{ programTypeId: type.programFlagId }}
                                                     className="text-[15px] text-gray-700 hover:text-[#ffb703]"
                                                   >
                                                     {prog.programName}
@@ -174,7 +174,7 @@ const Header = () => {
                                               type.disciplines.map((disc) => (
                                                 <li key={disc.disciplineId}>
                                                   <Link
-                                                    to={`/programs/${programTypeSlug}/${slugify(disc.disciplineName)}`}
+                                                    to={`/programs/${programFlagSlug}/${slugify(disc.disciplineName)}`}
                                                     state={{
                                                       programTypeId: type.programTypeId,
                                                       disciplineId: disc.disciplineId,

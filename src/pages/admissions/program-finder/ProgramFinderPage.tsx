@@ -1,8 +1,9 @@
 import React from "react";
-import ProgramFinder from "../../../components/admissions/program-finder/ProgramFinder";
+import ProgramFinderHome from "../../../components/program-finder-home/ProgramFinderHome";
+// import ProgramFinder from "../../../components/admissions/program-finder/ProgramFinder";
 
 const ProgramFinderPage: React.FC = () => {
-  return <ProgramFinder />;
+  return <ProgramFinderHome />;
 };
 
 export default ProgramFinderPage;

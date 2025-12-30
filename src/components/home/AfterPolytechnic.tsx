@@ -6,16 +6,16 @@ import ProgramFinder from "./ProgramFinder";
 import { afterClass10thProgramData, afterPolytechnicProgramDescription } from "../../data/home/courseData";
 import ProgramDescription from "./ProgramDescription";
 const AfterPolytechnic: React.FC = () => {
-    return (
-        <>
-            <div className={`${Classes["container"]}`}>
-                {/* @ts-ignore */}
-                <ProgramFinder data={afterClass10thProgramData} />
-                <ProgramDescription data={afterPolytechnicProgramDescription} />
-            </div>
-            <CustomTopFooter data={CustomTopFooterData1} />
-        </>
-    );
+  return (
+    <>
+      <div className={`${Classes["container"]}`}>
+        {/* @ts-ignore */}
+        <ProgramFinder data={afterClass10thProgramData} />
+        <ProgramDescription data={afterPolytechnicProgramDescription} />
+      </div>
+      <CustomTopFooter data={CustomTopFooterData1} />
+    </>
+  );
 };
 
-export default AfterPolytechnic
+export default AfterPolytechnic;
