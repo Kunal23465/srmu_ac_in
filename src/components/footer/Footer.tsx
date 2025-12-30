@@ -6,14 +6,14 @@ import { FaPhone } from "react-icons/fa";
 import { MdEmail, MdLocationPin } from "react-icons/md";
 import { CiGlobe } from "react-icons/ci";
 import { IoClose } from "react-icons/io5";
-import awards1 from "../../assets/images/award-footer1.png"
-import awards2 from "../../assets/images/award-footer2.png"
-import scanner from "../../assets/images/merchandise-scan.jpeg"
-import fb from "../../assets/images/social-icons/fb.png"
-import instagram from "../../assets/images/social-icons/instagram.png"
-import linkdin from "../../assets/images/social-icons/linkdin.png"
-import twitter from "../../assets/images/social-icons/twitter.png"
-import youtube from "../../assets/images/social-icons/youtube.png"
+import awards1 from "../../assets/images/award-footer1.png";
+import awards2 from "../../assets/images/award-footer2.png";
+import scanner from "../../assets/images/merchandise-scan.jpeg";
+import fb from "../../assets/images/social-icons/fb.png";
+import instagram from "../../assets/images/social-icons/instagram.png";
+import linkdin from "../../assets/images/social-icons/linkdin.png";
+import twitter from "../../assets/images/social-icons/twitter.png";
+import youtube from "../../assets/images/social-icons/youtube.png";
 export const footerData = {
   logo: { src: logosrmcem, alt: "SRMCEM Logo" },
   description:
@@ -97,7 +97,6 @@ export const footerData = {
       title: "Placements",
       path: "/placements",
     },
-
   ],
   getHelped: [
     {
@@ -115,7 +114,6 @@ export const footerData = {
       title: "Grievance Redressal System",
       path: "/campus-life/grievance-redressal-system",
     },
-
   ],
   getConected: [
     {
@@ -188,31 +186,20 @@ const VideoPopUp = ({ setCheck }: any) => {
         <span onClick={() => setCheck(false)} className="w-6 h-6 z-9999 text-black rounded-full bg-white cursor-pointer flex justify-center items-center absolute top-5 right-5">
           <IoClose />
         </span>
-        <video
-          autoPlay
-          loop
-          controls
-          className="w-full h-auto"
-        >
-          <source
-            src="https://srmcem.ac.in/assets/0403.mp4"
-            type="video/mp4"
-          />
+        <video autoPlay loop controls className="w-full h-auto">
+          <source src="https://srmcem.ac.in/assets/0403.mp4" type="video/mp4" />
         </video>
       </div>
     </div>
   );
 };
 
-
-
 const Footer: React.FC = () => {
   const [check, setCheck] = useState(false);
   if (check) {
     document.body.style.height = "100vh";
     document.body.style.overflowY = "hidden";
-  }
-  else {
+  } else {
     document.body.style.height = "auto";
     document.body.style.overflowY = "auto";
   }
@@ -371,7 +358,6 @@ const Footer: React.FC = () => {
                   </li>
                 ))}
               </ul>
-
             </div>
             <div className="w-full grid-third">
               <h3 className="font-semibold text-sm sm:text-base mb-3 text-[#ffb703] uppercase ">Get Responsible</h3>
@@ -381,7 +367,6 @@ const Footer: React.FC = () => {
                     <div className="flex items-center group hover:text-[#ffb703] ">
                       {link.title === "Anti-Sexual Harassment - ICC" || link.title === "Grievance Redressal System" ? (
                         <a href={link.path} target="_blank" className=" text-[14px]  group-hover:text-[#ffb703]">
-
                           {link.title}
                         </a>
                       ) : (
@@ -393,8 +378,6 @@ const Footer: React.FC = () => {
                   </li>
                 ))}
               </ul>
-
-
 
               <h3 className="font-semibold text-sm sm:text-base mt-4 mb-3 text-[#ffb703] uppercase">Get Helped</h3>
               <ul className="space-y-2  pb-4 list-none! border-b-2 border-dashed border-white">
@@ -427,12 +410,14 @@ const Footer: React.FC = () => {
                 ))}
               </ul>
 
-
               {/* usefulLinks */}
             </div>
             <div className="w-full grid-fourth">
               <h3 className="font-semibold text-sm sm:text-base mb-3 text-[#ffb703] Get Responsible uppercase">Explore / Engage</h3>
-              <button onClick={() => setCheck(true)} className="border-2 mb-4 hover:bg-white hover:text-[#0f4a85] border-[#ffb703] rounded-md flex items-center space-x-4 px-4 py-3">
+              <button
+                onClick={() => setCheck(true)}
+                className="border-2 mb-4 hover:bg-white hover:text-[#0f4a85] border-[#ffb703] rounded-md flex items-center space-x-4 px-4 py-3"
+              >
                 <span className="mr-2">
                   <CiGlobe size={28} color="#ffb703" />
                 </span>{" "}
@@ -446,17 +431,37 @@ const Footer: React.FC = () => {
               <h3 className="font-semibold text-sm sm:text-base pt-4 mb-3 text-[#ffb703]  Get Responsible uppercase">MERCH SHOP</h3>
               <h4 className="font-semibold text-xs text-white">To Shop SRMU Merchandise Scan the Code</h4>
               <img src={scanner} alt="scanner" className="max-w-[150px] mt-2" />
-
             </div>
           </div>
         </div>
       </footer>
       {check && <VideoPopUp setCheck={setCheck} />}
-
+      {/* Bottom-Footer */}
+      <div className="w-full bg-[#0f4a85] py-4">
+        <div className={`${Classes["container"]}`}>
+          <div className="flex justify-between items-center">
+            <div className="text-sm font-medium text-white">Copyright © 2025 Shri Ramswaroop Memorial University</div>
+            <div>
+              <ul className="flex gap-x-7 items-center text-white font-medium text-sm list-none!">
+                <li className="relative inline-block after:content-[''] after:h-5 after:w-0.5! after:bg-white after:absolute after:top-0 after:-right-4">
+                  <Link to="#">Privacy Policy</Link>
+                </li>
+                <li className="relative inline-block after:content-[''] after:h-5 after:w-0.5! after:bg-white after:absolute after:top-0 after:-right-4">
+                  <Link to="#">Disclaimer</Link>
+                </li>
+                <li>
+                  <Link to="#">Terms and Conditions</Link>
+                </li>
+              </ul>
+            </div>
+            <div className="flex items-center gap-x-1 font-medium text-white text-sm">
+              Design By: <Link to="https://www.indiainternets.com/"> indiainternets.com </Link>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 };
-
-
 
 export default Footer;
