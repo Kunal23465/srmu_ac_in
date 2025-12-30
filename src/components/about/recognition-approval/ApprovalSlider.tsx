@@ -108,7 +108,6 @@
 import { useRef, useState } from "react";
 import Slider from "react-slick";
 import Classes from "../../../utils/styles/Global.module.css";
-import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { approvalData } from "../../../data/about/recognition-approval/recognitionApprovalsData";
