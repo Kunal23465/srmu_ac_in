@@ -118,7 +118,7 @@ const PlacementRecords: React.FC = () => {
       <div className={`${Classes["container"]}`}>
         {/* HEADER + TABS */}
         <div className="block md:flex justify-between items-center">
-          <h2 className="lg:text-[50px] md:text-[46.875px] text-[22.4px] sm:text-[22.4px] font-medium mb-2">Placement Records</h2>
+          <h2 className="text-[28px] lg:text-[3.125rem] font-medium mb-2">Placement Records</h2>
 
           <div className="flex items-center lg:text-[19px] md:text-[17.82px] sm:text-[16.632px] text-[16.632px] w-fit mb-2 bg-white">
             {["2023", "2024", "2025"].map((year) => (
@@ -138,7 +138,9 @@ const PlacementRecords: React.FC = () => {
         </div>
 
         {/* SUBTEXT */}
-        <p className="text-white mb-5 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] max-w-xl">Outstanding placement records showcase our commitment to student success and industry relevance</p>
+        <p className="text-white mb-5 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] max-w-xl">
+          Outstanding placement records showcase our commitment to student success and industry relevance
+        </p>
 
         {/* BUTTONS */}
         <div className="flex gap-5 mb-6">

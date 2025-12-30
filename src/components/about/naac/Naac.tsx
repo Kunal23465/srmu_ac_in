@@ -13,13 +13,13 @@ const Naac: FC = () => {
                 <CustomOverviewSection data={NAACOverviewData} />
 
 
-                <h1 className="lg:text-[50px] md:text-[46.875px] sm:text-[22.4px] text-[22.4px] fw500 mt-14 mb-5 text-[#023047] lg:mt-20 ">NAAC Reports</h1>
+                <h1 className="text-[28px] lg:text-[3.125rem] fw500 mt-14 mb-5 text-[#023047] lg:mt-20 ">NAAC Reports</h1>
                 <CustomTable
                     columnOneHeader="First Cycle"
                     columnTwoHeader="Downloads"
                     data={firstCycleData}
                 />
-                <h1 className="lg:text-[50px] md:text-[46.875px] sm:text-[22.4px] text-[22.4px] fw500 mt-14 mb-5 text-[#023047] lg:mt-20">AQAR</h1>
+                <h1 className="text-[28px] lg:text-[3.125rem] fw500 mt-14 mb-5 text-[#023047] lg:mt-20">AQAR</h1>
                 <CustomTable
                     columnOneHeader="Annual Reports"
                     columnTwoHeader="Downloads"

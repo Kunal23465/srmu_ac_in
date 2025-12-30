@@ -27,7 +27,7 @@ export default function FlickeringSection() {
           <div className="w-1/2 relative flex items-center">
             {flickcategories.map((item) => (
               <div key={item.id} className={`absolute transition-opacity duration-500 ${activeId === item.id ? "opacity-100" : "opacity-0"}`}>
-                <h2 className="text-3xl lg:text-[47px] lg:leading-[70px] text-white   mb-4 fw600">{item.title}</h2>
+                <h2 className="text-[28px] lg:text-[3.125rem] lg:leading-[70px] text-white   mb-4 fw600">{item.title}</h2>
                 <p className="text-white font17 max-w-md">{item.description}</p>
               </div>
             ))}

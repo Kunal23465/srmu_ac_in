@@ -15,10 +15,10 @@ export interface NavbarDiscipline {
 }
 
 export interface NavbarProgramType {
-    programTypeId: number;
-    programTypeName: string;
-    disciplines: NavbarDiscipline[];
-    programs: NavbarProgram[];
+  programTypeId: number;
+  programFlagName: string;
+  disciplines: NavbarDiscipline[];
+  programs: NavbarProgram[];
 }
 
 /* ===== THUNK ===== */

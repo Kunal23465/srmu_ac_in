@@ -259,25 +259,18 @@ const PlacedStudents = () => {
   ];
 
   return (
-    <div >
-      <h1 className="lg:text-[50px] md:text-[46.875px] text-[22.4px] sm:text-[22.4px] fw500 mb-3">Placed Students</h1>
+    <div>
+      <h1 className="text-[28px] lg:text-[3.125rem] fw500 mb-3">Placed Students</h1>
       <p className="text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] ">
-        With 2000+ Job Offers given by 250+ Top corporates, an average package
-        of 4.5 LPA and 100%* placement record in different professional
-        programs, SRMU provides the best return on investment. More than 30%
-        students have multiple job offers.
+        With 2000+ Job Offers given by 250+ Top corporates, an average package of 4.5 LPA and 100%* placement record in different professional programs, SRMU provides the best
+        return on investment. More than 30% students have multiple job offers.
       </p>
       <Counter
-      // @ts-ignore
-        counterData={
-          counterDataForPlacedStudentsOFDepartmentOfElectricalAndElectronicsEngineering
-        }
+        // @ts-ignore
+        counterData={counterDataForPlacedStudentsOFDepartmentOfElectricalAndElectronicsEngineering}
         classes="counter"
       />
-      <CustomPlacedStudentTable
-        students={placedStudents}
-        headers={tableHeaders}
-      />
+      <CustomPlacedStudentTable students={placedStudents} headers={tableHeaders} />
     </div>
   );
 };

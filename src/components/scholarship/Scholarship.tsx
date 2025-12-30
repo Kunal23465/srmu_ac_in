@@ -45,7 +45,7 @@ const Scholarship: React.FC = () => {
       </div>
       <div className="text-white bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${BGImg})` }}>
         <div className={`${Classes["container"]}`}>
-          <h1 className="lg:text-[50px] md:text-[46.875px] text-[22.4px] sm:text-[22.4px] fw500 pt-10 sm:pt-20 pb-3 text-center">Scholarship</h1>
+          <h1 className="text-[28px] lg:text-[3.125rem] fw500 pt-10 sm:pt-20 pb-3 text-center">Scholarship</h1>
           <p className="ttext-[15px] lg:text-[16px] md:text-[15px] sm:text-[15px] text-center pb-38">
             SRMU provides a range of merit-based and need-driven scholarships designed to support and recognize exceptional talent.
           </p>

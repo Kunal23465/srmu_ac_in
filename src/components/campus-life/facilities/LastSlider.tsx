@@ -120,91 +120,84 @@ const LastSlider: React.FC = () => {
     }, [calculateCardWidth, updatePagination, resetTapOnScroll]);
 
     return (
-        <div className="w-full max-w-7xl">
-            <div className="text-center mb-5">
-                 <h2 className="lg:text-[50px] md:text-[46.875px] text-[22.4px] sm:text-[22.4px] font-medium text-[#023047] fw600">
-                    Academic Wings
-                </h2>
+      <div className="w-full max-w-7xl">
+        <div className="text-center mb-5">
+          <h2 className="text-[28px] lg:text-[3.125rem] font-medium text-[#023047] fw600">Academic Wings</h2>
 
-                <p className="w-[82%] pb-10  mx-auto text-[15px] lg:text-[16px] md:text-[15px] sm:text-[15px]">
-                    Shri Ramswaroop Memorial University (SRMU) features well-defined academic wings, each dedicated to fostering excellence in specific disciplines. These wings, equipped with state-of-the-art classrooms, laboratories, and research facilities, provide a conducive environment for specialized learning and academic exploration. With distinct academic wings, SRMU ensures a focused and comprehensive approach to education, nurturing the intellectual growth of students across various fields.
-                </p>
-            </div>
+          <p className="w-[82%] pb-10  mx-auto text-[15px] lg:text-[16px] md:text-[15px] sm:text-[15px]">
+            Shri Ramswaroop Memorial University (SRMU) features well-defined academic wings, each dedicated to fostering excellence in specific disciplines. These wings, equipped
+            with state-of-the-art classrooms, laboratories, and research facilities, provide a conducive environment for specialized learning and academic exploration. With
+            distinct academic wings, SRMU ensures a focused and comprehensive approach to education, nurturing the intellectual growth of students across various fields.
+          </p>
+        </div>
 
-            <div
-                ref={sliderRef}
-                className="flex space-x-6 pb-4 overflow-x-scroll hide-scrollbar transition-all duration-300 ease-in-out"
-                onMouseDown={handleMouseDownOrTouchStart}
-                onMouseLeave={handleMouseUpOrTouchEnd}
-                onMouseUp={handleMouseUpOrTouchEnd}
-                onMouseMove={handleMouseMoveOrTouchMove}
-                onTouchStart={handleMouseDownOrTouchStart}
-                onTouchEnd={handleMouseUpOrTouchEnd}
-                onTouchCancel={handleMouseUpOrTouchEnd}
-                onTouchMove={handleMouseMoveOrTouchMove}
-            >
-                {CARD_CONTENT.map((data) => {
+        <div
+          ref={sliderRef}
+          className="flex space-x-6 pb-4 overflow-x-scroll hide-scrollbar transition-all duration-300 ease-in-out"
+          onMouseDown={handleMouseDownOrTouchStart}
+          onMouseLeave={handleMouseUpOrTouchEnd}
+          onMouseUp={handleMouseUpOrTouchEnd}
+          onMouseMove={handleMouseMoveOrTouchMove}
+          onTouchStart={handleMouseDownOrTouchStart}
+          onTouchEnd={handleMouseUpOrTouchEnd}
+          onTouchCancel={handleMouseUpOrTouchEnd}
+          onTouchMove={handleMouseMoveOrTouchMove}
+        >
+          {CARD_CONTENT.map((data) => {
+            //@ts-ignore
+            const isActive = selectedCard === data.id;
+
+            return (
+              <div
+                key={data.id}
                 //@ts-ignore
-                    const isActive = selectedCard === data.id;
-
-                    return (
-                        <div
-                            key={data.id}
-                             //@ts-ignore
-                            onClick={() => setSelectedCard(data.id)}
-                            className={`card group cursor-pointer min-w-[300px] md:min-w-[350px] lg:min-w-[410px]
+                onClick={() => setSelectedCard(data.id)}
+                className={`card group cursor-pointer min-w-[300px] md:min-w-[350px] lg:min-w-[410px]
                                 rounded-sm shadow-xl transition duration-300 transform p-2
                                 hover:scale-[1.01]
-                                ${
-                                    isActive
-                                        ? "bg-[#233E6F] text-white shadow-2xl scale-[1.01]"
-                                        : "bg-white hover:bg-[#233E6F] hover:text-white hover:shadow-2xl"
-                                }
+                                ${isActive ? "bg-[#233E6F] text-white shadow-2xl scale-[1.01]" : "bg-white hover:bg-[#233E6F] hover:text-white hover:shadow-2xl"}
                             `}
-                        >
-                            <img
-                                src={data.image}
-                                alt={data.title}
-                                onError={(e) =>
-                                    ((e.target as HTMLImageElement).src =
-                                        "https://placehold.co/600x400/9CA3AF/FFFFFF?text=Image+Load+Error")
-                                }
-                                className="w-full h-60 object-cover rounded-tl-sm rounded-tr-sm rounded-bl-sm rounded-br-3xl"
-                            />
+              >
+                <img
+                  src={data.image}
+                  alt={data.title}
+                  onError={(e) => ((e.target as HTMLImageElement).src = "https://placehold.co/600x400/9CA3AF/FFFFFF?text=Image+Load+Error")}
+                  className="w-full h-60 object-cover rounded-tl-sm rounded-tr-sm rounded-bl-sm rounded-br-3xl"
+                />
 
-                            <div className="p-6">
-                                <h3
-                                    className={`font18 fw600  mb-3 group-hover:text-white 
+                <div className="p-6">
+                  <h3
+                    className={`font18 fw600  mb-3 group-hover:text-white 
                                         ${isActive ? "text-white" : "text-gray-800"}
                                     `}
-                                >
-                                    {data.title}
-                                </h3>
+                  >
+                    {data.title}
+                  </h3>
 
-                                <p
-                                    className={` leading-relaxed group-hover:text-white text-[15px] lg:text-[16px] md:text-[15px] sm:text-[15px]
+                  <p
+                    className={` leading-relaxed group-hover:text-white text-[15px] lg:text-[16px] md:text-[15px] sm:text-[15px]
                                         ${isActive ? "" : ""}
                                     `}
-                                >
-                                    {data.description}
-                                </p>
-                            </div>
-                        </div>
-                    );
-                })}
-            </div>
-
-            <div className="flex justify-center mt-6 space-x-2">
-                {CARD_CONTENT.map((_, index) => (
-                    <div
-                        key={index}
-                        onClick={() => handleDotClick(index)}
-                        className={`w-3 h-3 rounded-full border border-gray-500 cursor-pointer transition duration-300 
-                            ${index === activeIndex ? "bg-white" : "bg-white/70"}`}
-                    ></div>
-                ))}
-            </div>
+                  >
+                    {data.description}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
         </div>
+
+        <div className="flex justify-center mt-6 space-x-2">
+          {CARD_CONTENT.map((_, index) => (
+            <div
+              key={index}
+              onClick={() => handleDotClick(index)}
+              className={`w-3 h-3 rounded-full border border-gray-500 cursor-pointer transition duration-300 
+                            ${index === activeIndex ? "bg-white" : "bg-white/70"}`}
+            ></div>
+          ))}
+        </div>
+      </div>
     );
 };
 

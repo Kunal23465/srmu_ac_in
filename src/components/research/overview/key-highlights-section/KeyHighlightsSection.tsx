@@ -48,7 +48,7 @@ const KeyHighlightsSection: React.FC<CustomFacilitiesTypes> = ({ facilities, lay
         <div className="sm:p-6">
           {/* Header */}
           <div className="flex justify-between items-center mb-10">
-            <h2 className="lg:text-[50px] md:text-[46.875px] text-[22.4px] sm:text-[22.4px] fw500 text-black">{layoutData?.title}</h2>
+            <h2 className="text-[28px] lg:text-[3.125rem] fw500 text-black">{layoutData?.title}</h2>
 
             {/* Custom Prev / Next Buttons with < > */}
             <div className="flex gap-4">
@@ -56,10 +56,7 @@ const KeyHighlightsSection: React.FC<CustomFacilitiesTypes> = ({ facilities, lay
                 onClick={() => sliderRef.current?.slickPrev()}
                 disabled={isFirstSlide}
                 className={`w-12 h-12 border-2  flex items-center justify-center text-2xl font-light transition-all
-                  ${isFirstSlide
-                    ? "bg-transparent border-gray-500 text-gray-500 cursor-not-allowed"
-                    : "bg-transparent border-black hover:bg-[#0f4a85] hover:text-white"
-                  }`}
+                  ${isFirstSlide ? "bg-transparent border-gray-500 text-gray-500 cursor-not-allowed" : "bg-transparent border-black hover:bg-[#0f4a85] hover:text-white"}`}
                 aria-label="Previous"
               >
                 <IoIosArrowBack />
@@ -69,10 +66,7 @@ const KeyHighlightsSection: React.FC<CustomFacilitiesTypes> = ({ facilities, lay
                 onClick={() => sliderRef.current?.slickNext()}
                 disabled={isLastSlide}
                 className={`w-12 h-12 border-2 flex items-center justify-center text-2xl font-light transition-all
-                  ${isLastSlide
-                    ? "bg-transparent border-gray-500 text-gray-500 cursor-not-allowed"
-                    : "bg-transparent border-black hover:bg-[#0f4a85] hover:text-white"
-                  }`}
+                  ${isLastSlide ? "bg-transparent border-gray-500 text-gray-500 cursor-not-allowed" : "bg-transparent border-black hover:bg-[#0f4a85] hover:text-white"}`}
                 aria-label="Next"
               >
                 <IoIosArrowBack className="rotate-180" />
@@ -85,15 +79,9 @@ const KeyHighlightsSection: React.FC<CustomFacilitiesTypes> = ({ facilities, lay
             {facilities.map((facility, index) => (
               <div key={index} className="px-3 h-full sm:h-[600px] md:h-[650px] lg:h-[600px]">
                 <div className="bg-white rounded-2xl hover:border-2 hover:border-[#0f4a85] overflow-hidden h-full flex flex-col">
-                  <img
-                    src={facility.imageUrl}
-                    alt={facility.title}
-                    className="w-full h-80 object-cover"
-                  />
+                  <img src={facility.imageUrl} alt={facility.title} className="w-full h-80 object-cover" />
                   <div className="p-6 flex flex-col flex-grow">
-                    <h3 className="lg:text-[26px] md:text-[24.375px] sm:text-[22.75px] text-[22.75px] font-semibold text-[#0f4a85] mb-3">
-                      {facility.title}
-                    </h3>
+                    <h3 className="lg:text-[26px] md:text-[24.375px] sm:text-[22.75px] text-[22.75px] font-semibold text-[#0f4a85] mb-3">{facility.title}</h3>
                     <div
                       className="text-gray-700 text-justify lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px] flex-grow mb-6"
                       dangerouslySetInnerHTML={{ __html: facility.description }}

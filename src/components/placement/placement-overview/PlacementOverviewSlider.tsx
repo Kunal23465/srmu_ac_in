@@ -80,9 +80,7 @@ const OurGoal: React.FC<Props> = ({ items }) => {
       <div className={`${Classes["container"]} block md:flex flex-row items-start gap-5 p-4`}>
         {/* LEFT CONTENT */}
         <div className="flex flex-col items-start w-full md:w-[30%] mt-6">
-          <h2 className="leading-[1.2] text-[#1a1a1a] font-medium lg:text-[50px] md:text-[46.875px] text-[22.4px] sm:text-[22.4px] mb-4">
-            Our Goals
-          </h2>
+          <h2 className="leading-[1.2] text-[#1a1a1a] font-medium text-[28px] lg:text-[3.125rem] mb-4">Our Goals</h2>
 
           <p className="text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] max-w-full md:max-w-[320px] text-gray-700 mb-8">
             Placements are essential for students to smoothly transition into the workforce and find steady careers.

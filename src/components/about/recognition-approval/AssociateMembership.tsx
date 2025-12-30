@@ -25,48 +25,33 @@ export const PdfSvgIcon: React.FC = () => (
 const AssociationsMemberships:React.FC = () => {
 
     return (
-        <section className="pb-16 pt-10 bg-white text-center">
-            <div className="max-w-7xl mx-auto px-4">
-                <h2 className="text-3xl md:text-5xl font-medium mt-25 sm:mt-20 lg:mb-15  mb-4">
-                    ASSOCIATIONS & MEMBERSHIPS
-                </h2>
-                <p className="text-gray-700 mb-10">
-                    SRMU is a part of a diverse set of networks and associations.
-                </p>
+      <section className="pb-16 pt-10 bg-white text-center">
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 className="text-[28px] lg:text-[3.125rem] font-medium mt-25 sm:mt-20 lg:mb-15  mb-4">ASSOCIATIONS & MEMBERSHIPS</h2>
+          <p className="text-gray-700 mb-10">SRMU is a part of a diverse set of networks and associations.</p>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {associationsData.map((item) => (
-                        <div
-                            key={item.id}
-                            className="bg-white shadow-xl hover:-translate-y-2  rounded-sm p-6 flex flex-col items-center justify-between transition-all duration-500"
-                        >
-                            <img
-                                src={item.logo}
-                                alt={item.name}
-                                className="h-20 object-contain mb-4"
-                            />
-                            <h3 className="text-lg font-semibold text-gray-800 text-center mb-4">
-                                {item.name}
-                            </h3>
-                         <a
-                        href={item.pdfLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="group text-sm flex items-center justify-center gap-2 border border-[#ffb703] bg-white hover:bg-[#ffb703] text-[#0f4a85]
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {associationsData.map((item) => (
+              <div key={item.id} className="bg-white shadow-xl hover:-translate-y-2  rounded-sm p-6 flex flex-col items-center justify-between transition-all duration-500">
+                <img src={item.logo} alt={item.name} className="h-20 object-contain mb-4" />
+                <h3 className="text-lg font-semibold text-gray-800 text-center mb-4">{item.name}</h3>
+                <a
+                  href={item.pdfLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group text-sm flex items-center justify-center gap-2 border border-[#ffb703] bg-white hover:bg-[#ffb703] text-[#0f4a85]
              font-medium px-2 py-1 rounded-lg transition-all duration-500"
-                      >
-                        <span
-                          className="bg-[#ffb703] p-1 rounded-md transition-all group-hover:bg-white"
-                        >
-                          <PdfSvgIcon />
-                        </span>
-                        DOWNLOAD PDF
-                      </a>
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </section>
+                >
+                  <span className="bg-[#ffb703] p-1 rounded-md transition-all group-hover:bg-white">
+                    <PdfSvgIcon />
+                  </span>
+                  DOWNLOAD PDF
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     );
 };
 

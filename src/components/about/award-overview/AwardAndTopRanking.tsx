@@ -20,10 +20,10 @@ const AwardAndTopRanking: React.FC = () => {
             {/* Left Section */}
             <div className="mr-0 lg:-mr-8 lg:p-1">
               <h2 className="fw500 mb-4 leading-tight">
-                <span className="block lg:text-[50px] md:text-[46.875px] sm:text-[22.4px] text-[22.4px] whitespace-nowrap">
+                <span className="block text-[28px] lg:text-[3.125rem] whitespace-nowrap">
                   Awards & Top
                 </span>
-                <span className="block lg:text-[50px] md:text-[46.875px] sm:text-[22.4px] text-[22.4px]">
+                <span className="block text-[28px] lg:text-[3.125rem]">
                   Rankings
                 </span>
               </h2>
@@ -35,7 +35,7 @@ const AwardAndTopRanking: React.FC = () => {
             </div>
 
             {/* Cards */}
-            <div className="mx-auto xl:-ml-50 xl:w-[120%] lg:col-span-3 px-10 sm:px-15 lg:px-0 grid grid-cols-2 w-full lg:grid-cols-3 xl:grid-cols-4 gap-x-6 gap-y-16">
+            <div className="mx-auto xl:-ml-50 xl:w-[120%] lg:col-span-3 px-10 sm:px-15 lg:px-0 grid grid-cols-2 w-full xl:grid-cols-3 xl:grid-cols-4 gap-x-6 gap-y-16">
               {awardAndRankingData.map((item, index) => (
                 <div
                   key={item.id}

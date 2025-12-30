@@ -61,7 +61,7 @@ const OurTeam: React.FC = () => {
   return (
     <div>
       <center>
-        <p className="text-yellow-400 lg:text-[50px] md:text-[46.875] text-[22.4px] sm:text-[22.4px] fw500 mb-5 lg:mb-20">Our Team</p>
+        <p className="text-yellow-400 text-[28px] lg:text-[3.125rem] fw500 mb-5 lg:mb-20">Our Team</p>
 
         {/* TAB SWITCH */}
         <span
@@ -87,11 +87,7 @@ const OurTeam: React.FC = () => {
           {/* HEADER + ARROWS */}
           <div className="flex flex-col md:flex-row justify-between items-start mb-12">
             <div className="max-w-5xl">
-              <h1 className="text-3xl md:text-5xl font-bold">
-                {team === "Placement"
-                  ? "Meet Our Placement Team"
-                  : "Meet Our Training Team"}
-              </h1>
+              <h1 className="text-3xl md:text-5xl font-bold">{team === "Placement" ? "Meet Our Placement Team" : "Meet Our Training Team"}</h1>
 
               <p className="mt-3 text-sm md:text-base opacity-100 font-light">
                 {team === "Placement"
@@ -109,17 +105,11 @@ const OurTeam: React.FC = () => {
               <div key={item.id} className="px-3">
                 <div className="text-black flex-none rounded-xl transition-all duration-300 transform hover:-translate-y-2">
                   <div className="relative w-full h-85 rounded-xl overflow-hidden">
-                    <img
-                      src={item.img}
-                      alt={item.name}
-                      className="w-full h-full object-cover rounded-xl"
-                    />
+                    <img src={item.img} alt={item.name} className="w-full h-full object-cover rounded-xl" />
                     <h3 className="absolute bottom-5 left-5 text-2xl text-white font-medium">
                       {item.name}
                       <br />
-                      <span className="text-amber-400 text-[16px]">
-                        {item.position}
-                      </span>
+                      <span className="text-amber-400 text-[16px]">{item.position}</span>
                     </h3>
                   </div>
                 </div>

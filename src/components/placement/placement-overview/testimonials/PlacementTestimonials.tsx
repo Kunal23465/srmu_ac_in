@@ -35,19 +35,27 @@ const maxIndex = currentTestimonials.length - 1;
   return (
     <div className="testimonials-section">
       <div className="content-container">
-        <h2 className="text-[#023047] lg:text-[50px] md:text-[46.875] text-[22.4px] sm:text-[22.4px] fw500 mb-2  text-center">What Our People say</h2>
-        <p className="subtitle text-center max-w-3xl text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] mx-auto">Testimonials from student, staff, and alumni on their placement experience at SRMU</p>
+        <h2 className="text-[#023047] text-[28px] lg:text-[3.125rem] fw500 mb-2  text-center">What Our People say</h2>
+        <p className="subtitle text-center max-w-3xl text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] mx-auto">
+          Testimonials from student, staff, and alumni on their placement experience at SRMU
+        </p>
 
         <div className="block md:flex justify-between items-center min-h-[500px] gap-[60px] mt-12">
           {/* LEFT SIDE */}
           <div className="flex-1 max-w-[600px]">
             {/* Tabs */}
             <div className="flex justify-start mb-10 overflow-x-auto gap-0">
-              <button className={`tab-button px-3 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] sm:px-6 py-1 sm:py-3 texm-sm! ${activeTab === "recruiters" ? "active" : ""}`} onClick={() => handleTabChange("recruiters")}>
+              <button
+                className={`tab-button px-3 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] sm:px-6 py-1 sm:py-3 texm-sm! ${activeTab === "recruiters" ? "active" : ""}`}
+                onClick={() => handleTabChange("recruiters")}
+              >
                 RECRUITERS TESTIMONIALS
               </button>
 
-              <button className={`tab-button px-3 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] sm:px-6 py-1 sm:py-3 texm-sm!  ${activeTab === "students" ? "active" : ""}`} onClick={() => handleTabChange("students")}>
+              <button
+                className={`tab-button px-3 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] sm:px-6 py-1 sm:py-3 texm-sm!  ${activeTab === "students" ? "active" : ""}`}
+                onClick={() => handleTabChange("students")}
+              >
                 STUDENT TESTIMONIALS
               </button>
             </div>

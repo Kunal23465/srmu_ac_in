@@ -56,7 +56,7 @@ const FacultyOfCivilEngineering: React.FC = () => {
           {/* program and fee section  */}
           <div className="my-[80px]">
             <div className="flex w-full justify-center flex-col items-center">
-              <h1 className="leading-[1.2] lg:text-[50px] md:text-[46.875px] text-[22.4px] sm:text-[22.4px] fw500 mb-3">Programs and Fees</h1>
+              <h1 className="leading-[1.2] text-[28px] lg:text-[3.125rem] fw500 mb-3">Programs and Fees</h1>
               <p className="text-center text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] mb-[45px]">
                 At SRMU we have always believed that a student SHOULD BE TRAINED FOR INDUSTRY, BY THE INDUSTRY. Keeping the culture of rich academia-industry interface, university
                 is now offering specialized programs in different academic domains.

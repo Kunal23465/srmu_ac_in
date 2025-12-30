@@ -90,7 +90,7 @@ const ProgramFinderHome: React.FC = () => {
     <>
       <div className={`${Classes.container} mt-16`}>
         <div className="w-full flex items-center justify-center flex-col">
-          <h1 className="text-[#023047] lg:text-[50px] md:text-[46.875] text-[22.4px] sm:text-[22.4px] fw500">Program Finder</h1>
+          <h1 className="text-[#023047] text-[28px] lg:text-[3.125rem] fw500">Program Finder</h1>
           <div className="w-[140px] h-[3px] bg-amber-400 mt-4 mb-4" />
         </div>
 

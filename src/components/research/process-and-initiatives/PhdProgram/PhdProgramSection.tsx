@@ -8,15 +8,15 @@ const PhdProgramSection: React.FC = () => {
       <div className="absolute inset-0"></div>
 
       {/* Content */}
-            <div className={`${Classes["container"]}`}>
-
-      <div className="relative z-10 flex flex-col items-center justify-center text-center py-16 px-6 md:py-20">
-        <h2 className="lg:text-[50px] md:text-[46.875px] text-[22.4px] sm:text-[22.4px] fw500 text-[#ffb703] mb-6">Ph.D. Program</h2>
-        <p className="max-w-3xl lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px] md:text-base leading-relaxed">
-          SRMU's Ph.D. program provides a rigorous and research-intensive environment, offering aspiring scholars the opportunity to delve into advanced studies, contribute to
-          knowledge creation, and make impactful contributions to their respective fields.
-        </p>
-      </div></div>
+      <div className={`${Classes["container"]}`}>
+        <div className="relative z-10 flex flex-col items-center justify-center text-center py-16 px-6 md:py-20">
+          <h2 className="text-[28px] lg:text-[3.125rem] fw500 text-[#ffb703] mb-6">Ph.D. Program</h2>
+          <p className="max-w-3xl lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px] md:text-base leading-relaxed">
+            SRMU's Ph.D. program provides a rigorous and research-intensive environment, offering aspiring scholars the opportunity to delve into advanced studies, contribute to
+            knowledge creation, and make impactful contributions to their respective fields.
+          </p>
+        </div>
+      </div>
     </section>
   );
 };

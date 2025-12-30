@@ -6,48 +6,35 @@ export default function CardModalSection() {
     const [isExpanded, setIsExpanded] = useState<number | null>(null);
 
     return (
-        <section className="py-20">
-            <div className="container mx-auto px-4">
-                 <h2 className="lg:text-[50px] md:text-[46.875px] text-[22.4px] sm:text-[22.4px] text-center text-[#023047]  fw600">
-                    Initiatives
-                </h2>
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <h2 className="text-[28px] lg:text-[3.125rem] text-center text-[#023047]  fw600">Initiatives</h2>
 
-                <p className="text-center text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] mb-15">
-                    We believe in equality, inclusiveness, respect for human dignity, fairness and justice for all which is reflected in an unbiased recognition and representation of women and men in all areas to thrive.
-                </p>
+          <p className="text-center text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] mb-15">
+            We believe in equality, inclusiveness, respect for human dignity, fairness and justice for all which is reflected in an unbiased recognition and representation of women
+            and men in all areas to thrive.
+          </p>
 
-                <div className="grid md:grid-cols-3 gap-9">
-                    {initiativesData.map((item, index) => (
-                        <div
-                            key={index}
-                            className="bg-[#fff6dd]  shadow-lg rounded-2xl p-10 flex flex-col justify-between hover:shadow-2xl transition-all duration-300"
-                            style={{ backgroundColor: item.bgColor }}
-                        >
-                            <h3 className=" font-semibold lg:text-[26px] md:text-[24.375px] text-[22.75px] sm:text-[22.75px] mb-3">
-                                {item.title}
-                            </h3>
+          <div className="grid md:grid-cols-3 gap-9">
+            {initiativesData.map((item, index) => (
+              <div
+                key={index}
+                className="bg-[#fff6dd]  shadow-lg rounded-2xl p-10 flex flex-col justify-between hover:shadow-2xl transition-all duration-300"
+                style={{ backgroundColor: item.bgColor }}
+              >
+                <h3 className=" font-semibold lg:text-[26px] md:text-[24.375px] text-[22.75px] sm:text-[22.75px] mb-3">{item.title}</h3>
 
-                            <p className="text-gray-700 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] line-clamp-3">
-                                {item.shortDescription}
-                            </p>
+                <p className="text-gray-700 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] line-clamp-3">{item.shortDescription}</p>
 
-                            <button
-                                onClick={() => setIsExpanded(index)}
-                                className="cursor-pointer fw600 underline transition-all text-left"
-                            >
-                                Read more
-                            </button>
+                <button onClick={() => setIsExpanded(index)} className="cursor-pointer fw600 underline transition-all text-left">
+                  Read more
+                </button>
 
-                            <CustomModal
-                                id={index}
-                                isExpanded={isExpanded}
-                                setIsExpanded={setIsExpanded}
-                                content={item.fullDescription}
-                            />
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </section>
+                <CustomModal id={index} isExpanded={isExpanded} setIsExpanded={setIsExpanded} content={item.fullDescription} />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     );
 }

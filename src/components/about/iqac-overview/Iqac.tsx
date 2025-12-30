@@ -51,48 +51,19 @@ const Iqac: React.FC = () => {
 
       <div className={`${Classes["container"]}`}>
         {/* Reports Section */}
-        <h1 className="lg:text-[50px] md:text-[46.875px] sm:text-[22.4px] text-[22.4px] fw500 mt-14 mb-5 text-[#023047] lg:mt-20">Report</h1>
-        <CustomTable
-          columnOneHeader="University Annual Report"
-          columnTwoHeader="Downloads"
-          data={UniversityannualReportData}
-        />
-        <CustomTable
-          columnOneHeader="IQAC Annual Report"
-          columnTwoHeader="Downloads"
-          data={iqacAnnualReportData}
-        />
-        <CustomTable
-          columnOneHeader="IQAC Action Taken Report"
-          columnTwoHeader="Downloads"
-          data={iqacActionTakenReportData}
-        />
-        <CustomTable
-          columnOneHeader="Minutes of Meeting"
-          columnTwoHeader="Downloads"
-          data={iqacMinutesOfMeetingData}
-        />
-        <CustomTable
-          columnOneHeader="Undertaking"
-          columnTwoHeader="Downloads"
-          data={iqacUndertakingData}
-        />
+        <h1 className="text-[28px] lg:text-[3.125rem] fw500 mt-14 mb-5 text-[#023047] lg:mt-20">Report</h1>
+        <CustomTable columnOneHeader="University Annual Report" columnTwoHeader="Downloads" data={UniversityannualReportData} />
+        <CustomTable columnOneHeader="IQAC Annual Report" columnTwoHeader="Downloads" data={iqacAnnualReportData} />
+        <CustomTable columnOneHeader="IQAC Action Taken Report" columnTwoHeader="Downloads" data={iqacActionTakenReportData} />
+        <CustomTable columnOneHeader="Minutes of Meeting" columnTwoHeader="Downloads" data={iqacMinutesOfMeetingData} />
+        <CustomTable columnOneHeader="Undertaking" columnTwoHeader="Downloads" data={iqacUndertakingData} />
 
         {/* Feedback Section */}
-        <h1 className="lg:text-[50px] md:text-[46.875px] sm:text-[22.4px] text-[22.4px] fw500 mt-14 mb-5 text-[#023047] md:mt-20">Feedback</h1>
-        <CustomTable
-          columnOneHeader="Feedback Procedure"
-          columnTwoHeader="Downloads"
-          data={iqacFeedbackData}
-        />
-        <CustomTable
-          columnOneHeader="Analysis Report"
-          columnTwoHeader="Downloads"
-          data={iqacAnalysisReportData}
-        />
+        <h1 className="text-[28px] lg:text-[3.125rem] fw500 mt-14 mb-5 text-[#023047] md:mt-20">Feedback</h1>
+        <CustomTable columnOneHeader="Feedback Procedure" columnTwoHeader="Downloads" data={iqacFeedbackData} />
+        <CustomTable columnOneHeader="Analysis Report" columnTwoHeader="Downloads" data={iqacAnalysisReportData} />
       </div>
       <CustomTopFooter data={iqacCustomTopFooter} />
-
     </>
   );
 };

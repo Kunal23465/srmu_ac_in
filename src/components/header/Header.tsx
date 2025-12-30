@@ -45,6 +45,7 @@ const Header = () => {
     }
   }, [sideMenu]);
 
+  console.log("programMenu", programMenu);
   return (
     <div>
       <header className="fixed top-0 left-0 w-full z-[999]  transition-all duration-500">
@@ -140,16 +141,16 @@ const Header = () => {
                               {columnGroups.map((group, colIndex) => (
                                 <div key={colIndex} className="space-y-6">
                                   {programMenu
-                                    .filter((type) => group.includes(type.programTypeName))
+                                    .filter((type) => group.includes(type.programFlagName))
                                     .map((type) => {
-                                      const programTypeSlug = slugify(type.programTypeName);
+                                      const programTypeSlug = slugify(type.programFlagName);
 
                                       return (
                                         <div key={type.programTypeId}>
                                           {/* BLUE HEADING */}
                                           <h3 className="font-medium text-base p-3 rounded-lg inline-block hover:bg-[#ffb703] text-[#0f4a85] hover:text-black">
                                             <Link to={`/programs/${programTypeSlug}`} state={{ programTypeId: type.programTypeId }}>
-                                              {type.programTypeName}
+                                              {type.programFlagName}
                                             </Link>
                                           </h3>
 

@@ -50,7 +50,7 @@ const Apply: React.FC = () => {
     <div className={`${Classes.container} pb-7 md:pb-10 lg:pb-14`}>
       <div className="flex flex-col-reverse sm:flex-row gap-x-10 gap-y-6">
         <div className="left-part w-full sm:max-w-[500px] ">
-          <h2 className="text-[28px] text-[#023047]  lg:text-[3.125rem] fw600">Apply to SRMU</h2>
+          <h2 className="text-[28px] lg:text-[3.125rem] text-[#023047]   fw600">Apply to SRMU</h2>
           <p className="">Whether you’re looking for an undergraduate degree or to develop industry-specific skills, SRMU has every pathway available for you.</p>
 
           <div className="mt-4 sm:mt-8">

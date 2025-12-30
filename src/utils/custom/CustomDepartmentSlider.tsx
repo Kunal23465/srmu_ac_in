@@ -99,110 +99,92 @@ function CustomDepartmentSlider<T>({
     const isAtEnd = currentIndex >= data.length - cardsPerView;
 
     return (
+      <div
+        className=" py-22"
+        style={{
+          background: bgImage ? `url(${bgImage}) center/cover` : bgColor,
+        }}
+      >
+        {/* ===== TOP SECTION ===== */}
         <div
-            className=" py-22"
-            style={{
-                background: bgImage ? `url(${bgImage}) center/cover` : bgColor,
-            }}
-        >
-            {/* ===== TOP SECTION ===== */}
-            <div
-                className={`w-full mb-8 ${Classes["container"]}
+          className={`w-full mb-8 ${Classes["container"]}
                 flex flex-col items-start
                 md:flex-row md:justify-between md:items-start`}
-            >
+        >
+          {/* LEFT SECTION */}
+          <div className="px-3">
+            <h1 className="text-[28px] lg:text-[3.125rem] fw500" style={{ color: headingColor }}>
+              {heading}
+            </h1>
 
-                {/* LEFT SECTION */}
-                <div className="px-3">
-                    <h1
-                        className="lg:text-[50px] md:text-[46.875px] text-[22.4px] sm:text-[22.4px] fw500"
-                        style={{ color: headingColor }}
-                    >
-                        {heading}
-                    </h1>
+            {description && (
+              <p className="mt-2 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px]" style={{ color: descriptionColor }}>
+                {description}
+              </p>
+            )}
+          </div>
 
-                    {description && (
-                        <p
-                            className="mt-2 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px]"
-                            style={{ color: descriptionColor }}
-                        >
-                            {description}
-                        </p>
-                    )}
-                </div>
-
-                {/* RIGHT SECTION – ARROWS */}
-                <div
-                    className="
+          {/* RIGHT SECTION – ARROWS */}
+          <div
+            className="
         flex gap-3 px-3
         mt-4
         flex-row              /* always keep arrows in a row */
         md:mt-0 md:justify-end
     "
-                >
-
-
-                    {/* LEFT ARROW */}
-                    <button
-                        onClick={handlePrev}
-                        disabled={isAtStart}
-                        className={`border-2 w-12 h-12 flex items-center justify-center text-lg transition font-semibold ${isAtStart ? "opacity-40 cursor-not-allowed" : "hover:cursor-pointer"
-                            }`}
-                        style={{
-                            borderColor: arrowBorderColor,
-                            color: arrowColor,
-                            background: arrowBgColor,
-                        }}
-                    >
-                        <MdOutlineKeyboardArrowLeft size={35} />
-                    </button>
-
-                    {/* RIGHT ARROW */}
-                    <button
-                        onClick={handleNext}
-                        disabled={isAtEnd}
-                        className={`border-2 w-12 h-12 flex items-center justify-center text-lg transition font-semibold ${isAtEnd ? "opacity-40 cursor-not-allowed" : "hover:cursor-pointer"
-                            }`}
-                        style={{
-                            borderColor: arrowBorderColor,
-                            color: arrowColor,
-                            background: arrowBgColor,
-                        }}
-                    >
-                        <MdOutlineKeyboardArrowRight size={35} />
-                    </button>
-
-                </div>
-
-            </div>
-
-            {/* ===== SLIDER ===== */}
-            <div
-                className={`overflow-hidden w-full ${Classes["container"]}`}
-                onTouchStart={onTouchStart}
-                onTouchMove={onTouchMove}
-                onTouchEnd={onTouchEnd}
+          >
+            {/* LEFT ARROW */}
+            <button
+              onClick={handlePrev}
+              disabled={isAtStart}
+              className={`border-2 w-12 h-12 flex items-center justify-center text-lg transition font-semibold ${
+                isAtStart ? "opacity-40 cursor-not-allowed" : "hover:cursor-pointer"
+              }`}
+              style={{
+                borderColor: arrowBorderColor,
+                color: arrowColor,
+                background: arrowBgColor,
+              }}
             >
-                <div
-                    ref={trackRef}
-                    className="flex transition-transform duration-700"
-                    style={{
-                        width: `${(100 / cardsPerView) * data.length}%`,
-                        transform: `translateX(-${(100 / cardsPerView) * currentIndex}%)`,
-                    }}
-                >
-                    {data.map((item, index) => (
-                        <div
-                            key={index}
-                            className="p-3"
-                            style={{ width: `${100 / cardsPerView}%` }}
-                        >
-                            {renderCard({ item, index })}
-                        </div>
-                    ))}
-                </div>
-            </div>
+              <MdOutlineKeyboardArrowLeft size={35} />
+            </button>
+
+            {/* RIGHT ARROW */}
+            <button
+              onClick={handleNext}
+              disabled={isAtEnd}
+              className={`border-2 w-12 h-12 flex items-center justify-center text-lg transition font-semibold ${
+                isAtEnd ? "opacity-40 cursor-not-allowed" : "hover:cursor-pointer"
+              }`}
+              style={{
+                borderColor: arrowBorderColor,
+                color: arrowColor,
+                background: arrowBgColor,
+              }}
+            >
+              <MdOutlineKeyboardArrowRight size={35} />
+            </button>
+          </div>
         </div>
+
+        {/* ===== SLIDER ===== */}
+        <div className={`overflow-hidden w-full ${Classes["container"]}`} onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}>
+          <div
+            ref={trackRef}
+            className="flex transition-transform duration-700"
+            style={{
+              width: `${(100 / cardsPerView) * data.length}%`,
+              transform: `translateX(-${(100 / cardsPerView) * currentIndex}%)`,
+            }}
+          >
+            {data.map((item, index) => (
+              <div key={index} className="p-3" style={{ width: `${100 / cardsPerView}%` }}>
+                {renderCard({ item, index })}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
     );
 }
 

@@ -7,14 +7,10 @@ const OutreachItems: React.FC = () => {
 
   return (
     <div className="mt-10 bg-[#f2f2f2]">
-      <div
-        className={`${Classes["container"]} py-20 flex flex-col md:flex-row gap-8 items-center w-full`}
-      >
+      <div className={`${Classes["container"]} py-20 flex flex-col md:flex-row gap-8 items-center w-full`}>
         {/* Text Section */}
         <div className="w-full md:w-1/2">
-          <h2 className="lg:text-[50px] md:text-[46.875px] text-[22.4px] sm:text-[22.4px] font-medium text-[#023047] mb-8">
-            {title}
-          </h2>
+          <h2 className="text-[28px] lg:text-[3.125rem] font-medium text-[#023047] mb-8">{title}</h2>
 
           <div>
             {desc.map((item, index) => (
@@ -27,11 +23,7 @@ const OutreachItems: React.FC = () => {
 
         {/* Image Section */}
         <div className="w-full md:w-1/2 h-full">
-          <img
-            src={img}
-            alt={title}
-            className="hidden md:block w-full h-auto md:h-full object-cover rounded-md"
-          />
+          <img src={img} alt={title} className="hidden md:block w-full h-auto md:h-full object-cover rounded-md" />
         </div>
       </div>
     </div>
