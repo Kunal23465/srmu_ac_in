@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { conferenceData } from "../../../data/campus-life/events/events-data";
 import { useNavigate } from "react-router-dom";
-import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
+
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 
 const ConferencesSection: React.FC = () => {
   const [activeTab, setActiveTab] = useState<"conference" | "seminar">("conference");
@@ -87,7 +88,7 @@ useEffect(() => {
               startIndex === 0 ? "opacity-40 cursor-not-allowed" : "cursor-pointer"
             }`}
           >
-                <BiChevronLeft size={40} />
+            <MdKeyboardArrowLeft size="26" />
           </button>
           <button
             onClick={nextSlide}
@@ -96,13 +97,16 @@ useEffect(() => {
               startIndex + cardsPerPage >= data.length ? "opacity-40 cursor-not-allowed" : "cursor-pointer"
             }`}
           >
-                <BiChevronRight size={40} />
+            <MdKeyboardArrowRight size="26" />
           </button>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 transition-all duration-500">
           {visibleCards.map((card, idx) => (
-            <div key={idx} className="bg-white cursor-pointer rounded-2xl transition-all duration-500 group hover:border-[#ffb703] shadow-md overflow-hidden hover:shadow-lg border-2 border-transparent ">
+            <div
+              key={idx}
+              className="bg-white cursor-pointer rounded-2xl transition-all duration-500 group hover:border-[#ffb703] shadow-md overflow-hidden hover:shadow-lg border-2 border-transparent "
+            >
               <img src={card.image} alt={card.title} className="w-full h-56 object-cover" />
               <div className="p-5 text-left">
                 <h3 className=" lg:text-[1.125rem] sm:text-[16.875px] text-[16.875px] fw500 color_light_blue mb-1 mt-4">{card.title}</h3>

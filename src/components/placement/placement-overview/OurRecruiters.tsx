@@ -1,10 +1,11 @@
 import React, { useRef } from "react";
-import { IoIosArrowBack } from "react-icons/io";
+
 import Classes from "../../../utils/styles/Global.module.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import CustomTabs from "../../../utils/custom/CustomTabs";
 import { Hello } from "./Hello";
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 
 const OurRecruiters: React.FC = () => {
   const sliderRef = useRef<any>(null);
@@ -55,19 +56,19 @@ const OurRecruiters: React.FC = () => {
 
 const NextArrow = ({ onClick }: { onClick: () => void }) => (
   <button
-    className="border-2 border-[#172F64] text-[#172F64] w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full shadow-md "
+    className="text-gray-700 hover:text-white hover:bg-[#ffb703] hover:border-[#ffb703] bg-white shadow-lg w-13 h-13 flex items-center justify-center rounded-full border border-gray-200 z-10 cursor-pointer"
     onClick={onClick}
   >
-    <IoIosArrowBack className="w-9 h-9 transform rotate-180" />
+    <MdKeyboardArrowRight size="26" />
   </button>
 );
 
 const PrevArrow = ({ onClick }: { onClick: () => void }) => (
   <button
-    className="border-2 border-[#172F64] text-[#172F64] w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full shadow-md "
+    className="text-gray-700 hover:text-white hover:bg-[#ffb703] hover:border-[#ffb703] bg-white shadow-lg w-13 h-13 flex items-center justify-center rounded-full border border-gray-200 z-10 cursor-pointer"
     onClick={onClick}
   >
-    <IoIosArrowBack className="w-9 h-9" />
+    <MdKeyboardArrowLeft size="26" />
   </button>
 );
 

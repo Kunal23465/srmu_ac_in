@@ -87,28 +87,29 @@ const AlumniCard: React.FC<CustomCardProps> = ({ image, name, title, desc, fullD
         {/* WHITE BACKDROP */}
         <div
           className={`
-                        absolute top-0 left-0 inset-[12px]
+                        absolute top-0 left-0 inset-[12px] flex justify-center items-center overflow-hidden
                         bg-white w-full h-[27.5rem]  rounded-xl
                         transition-transform duration-700 ease-out
                         group-hover:scale-100
                         ${showDetails ? "scale-100" : "scale-0"}
                     `}
-        ></div>
-
-        {/* DETAILS */}
-        <div
-          className={`
-                        relative z-10 p-6 text-black text-center
-                        transition-all duration-500 delay-[50ms]
+        >
+          <div
+            className={`
+                        relative z-10 p-6 opacity-0 text-black text-center 
+                       
                         group-hover:opacity-100 group-hover:scale-100
                         ${showDetails ? "opacity-100 scale-100" : "opacity-0 scale-95"}
                     `}
-        >
-          <h2 className="text-xl font-bold mb-2">{name}</h2>
-          <p className="text-sm mb-4">{title}</p>
+          >
+            <h2 className="text-xl font-bold mb-2">{name}</h2>
+            <p className="text-sm mb-4">{title}</p>
 
-          <p className="text-xs leading-relaxed line-clamp-[15]">{fullDesc}</p>
+            <p className="text-xs leading-relaxed line-clamp-[15]">{fullDesc}</p>
+          </div>
         </div>
+
+        {/* DETAILS */}
       </div>
     </div>
   );

@@ -111,7 +111,8 @@ import Classes from "../../../utils/styles/Global.module.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { approvalData } from "../../../data/about/recognition-approval/recognitionApprovalsData";
-import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
+
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 
 export const PdfSvgIcon: React.FC = () => (
   <svg viewBox="0 0 78.7 76.2" xmlns="http://www.w3.org/2000/svg" style={{ width: "25px", height: "25px" }}>
@@ -176,21 +177,21 @@ const ApprovalsSlider = () => {
                 <button
                   onClick={() => sliderRef.current?.slickPrev()}
                   disabled={isAtStart}
-                  className={`w-13 h-13 border-2 border-black rounded-full flex items-center justify-center transition ${
+                  className={`text-gray-700  hover:text-[#ffb703]  bg-white shadow-lg w-13 h-13 flex items-center justify-center rounded-full border border-gray-200 z-10 cursor-pointer ${
                     isAtStart ? "opacity-40 cursor-not-allowed" : " cursor-pointer"
                   }`}
                 >
-                  <FaAngleLeft size={20} />
+                  <MdKeyboardArrowLeft size="26" />
                 </button>
 
                 <button
                   onClick={() => sliderRef.current?.slickNext()}
                   disabled={isAtEnd}
-                  className={`w-13 h-13 border-2 border-black rounded-full flex items-center justify-center transition ${
+                  className={`text-gray-700  hover:text-[#ffb703]  bg-white shadow-lg w-13 h-13 flex items-center justify-center rounded-full border border-gray-200 z-10 cursor-pointer ${
                     isAtEnd ? "opacity-40 cursor-not-allowed" : " cursor-pointer"
                   }`}
                 >
-                  <FaAngleRight size={20} />
+                  <MdKeyboardArrowRight size="26" />
                 </button>
               </div>
             </div>

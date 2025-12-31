@@ -6,18 +6,16 @@ import ProgramFinder from "./ProgramFinder";
 import { afterClass10thProgramData, afterGraduationProgramDescription } from "../../data/home/courseData";
 import ProgramDescription from "./ProgramDescription";
 const AfterGraduation: React.FC = () => {
-    return (
-        <>
-            <div className={`${Classes["container"]}`}>
-                {/* @ts-ignore */}
-                <ProgramFinder data={afterClass10thProgramData} />
-                <ProgramDescription data={afterGraduationProgramDescription} />
-            </div>
-            <CustomTopFooter data={CustomTopFooterData1} />
-        </>
-    );
+  return (
+    <>
+      <div className={`${Classes["container"]}`}>
+        {/* @ts-ignore */}
+        <ProgramFinder data={afterClass10thProgramData} />
+        <ProgramDescription data={afterGraduationProgramDescription} />
+      </div>
+      <CustomTopFooter data={CustomTopFooterData1} />
+    </>
+  );
 };
 
-
-
-export default AfterGraduation
+export default AfterGraduation;

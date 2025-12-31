@@ -1,10 +1,11 @@
 import React, { useState, useRef, useEffect } from "react";
 import Classes from "../../../utils/styles/Global.module.css";
 import Slider from "react-slick";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+
 import { FaLongArrowAltRight } from "react-icons/fa";
 import { placementOverviewplacementData } from "../../../data/placement/placementData";
 import placementPdf from "../../../assets/pdf/placement/placement-policies/2023-placement-record-100124102503-1-1--210625040129.pdf";
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 
 const PlacementRecords: React.FC = () => {
   const [activeYear, setActiveYear] = useState("2023");
@@ -149,7 +150,7 @@ const PlacementRecords: React.FC = () => {
             disabled={isPrevDisabled}
             className={`p-2 border-2 border-white transition ${isPrevDisabled ? "opacity-40 cursor-not-allowed" : "hover:bg-[#ffb703]"}`}
           >
-            <ChevronLeft size={25} />
+            <MdKeyboardArrowLeft size="26" />
           </button>
 
           <button
@@ -157,7 +158,7 @@ const PlacementRecords: React.FC = () => {
             disabled={isNextDisabled}
             className={`p-2 border-2 border-white  transition ${isNextDisabled ? "opacity-40 cursor-not-allowed" : "hover:bg-[#ffb703]"}`}
           >
-            <ChevronRight size={25} />
+            <MdKeyboardArrowRight size="26" />
           </button>
         </div>
 

@@ -6,9 +6,10 @@ import img from "../../../assets/images/admissions/how-to-apply/howtoapply-08022
 import OnlineAdmissionProcess from "./OnlineAdmissionProcess";
 
 import Slider from "react-slick";
-import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 
 const HowToApply: React.FC = () => {
   const sliderRef = useRef<Slider | null>(null);
@@ -77,7 +78,7 @@ const HowToApply: React.FC = () => {
                       isAtStart ? "opacity-40 cursor-not-allowed" : " cursor-pointer"
                     }`}
                   >
-                    <BiChevronLeft size={40} />
+                    <MdKeyboardArrowLeft size="26" />
                   </button>
 
                   <button
@@ -87,7 +88,7 @@ const HowToApply: React.FC = () => {
                       isAtEnd ? "opacity-40 cursor-not-allowed" : " cursor-pointer"
                     }`}
                   >
-                    <BiChevronRight size={40} />
+                    <MdKeyboardArrowRight size="26" />
                   </button>
                 </div>
               </div>

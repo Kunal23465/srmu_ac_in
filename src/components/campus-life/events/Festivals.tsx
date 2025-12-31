@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { festivalsData } from "../../../data/campus-life/events/events-data";
 import { useNavigate } from "react-router-dom";
-import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
+
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 
 const Festivals: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -78,46 +79,36 @@ const Festivals: React.FC = () => {
       {/* CONTENT SECTION */}
       <div className="max-w-7xl mx-auto py-12 px-4 md:px-0">
         <div className="flex flex-col md:flex-row md:justify-between gap-4">
-            <div>
-          <h3 className="lg:text-[1.75rem] text-[24.5px] sm:text-[24.5px] md:text-2xl pb-3 sm:pb-5 font-bold text-[#002D62]">{activeFestival.name}</h3>
-        <p className="leading-relaxed w-full md:w-3/4 xl:w-[65%] whitespace-pre-line text-justify lg:text-[15px] md:text-[14px] sm:text-[13.132px] text-[13.132px]">{activeFestival.description}</p>
-</div>
-<div className="flex justify-end gap-3 mb-6">
-
-  {/* PREVIOUS BUTTON */}
-  <button
-    onClick={prev}
-    disabled={startCard === 0}
-    className={`w-12 h-12 border-2 border-black flex items-center justify-center 
+          <div>
+            <h3 className="lg:text-[1.75rem] text-[24.5px] sm:text-[24.5px] md:text-2xl pb-3 sm:pb-5 font-bold text-[#002D62]">{activeFestival.name}</h3>
+            <p className="leading-relaxed w-full md:w-3/4 xl:w-[65%] whitespace-pre-line text-justify lg:text-[15px] md:text-[14px] sm:text-[13.132px] text-[13.132px]">
+              {activeFestival.description}
+            </p>
+          </div>
+          <div className="flex justify-end gap-3 mb-6">
+            {/* PREVIOUS BUTTON */}
+            <button
+              onClick={prev}
+              disabled={startCard === 0}
+              className={`w-12 h-12 border-2 border-black flex items-center justify-center 
       hover:bg-[#0f4a85] text-[#0f4a85] hover:text-[#ffb703] transition 
-      ${
-        startCard === 0
-          ? "opacity-40 cursor-not-allowed"
-          : "cursor-pointer"
-      }`}
-  >
-    <BiChevronLeft size={40} />
-  </button>
+      ${startCard === 0 ? "opacity-40 cursor-not-allowed" : "cursor-pointer"}`}
+            >
+              <MdKeyboardArrowLeft size="26" />
+            </button>
 
-  {/* NEXT BUTTON */}
-  <button
-    onClick={next}
-    disabled={startCard + visibleCards >= totalCards}
-    className={`w-12 h-12 border-2 border-black flex items-center justify-center 
+            {/* NEXT BUTTON */}
+            <button
+              onClick={next}
+              disabled={startCard + visibleCards >= totalCards}
+              className={`w-12 h-12 border-2 border-black flex items-center justify-center 
       hover:bg-[#0f4a85] text-[#0f4a85] hover:text-[#ffb703] transition 
-      ${
-        startCard + visibleCards >= totalCards
-          ? "opacity-40 cursor-not-allowed"
-          : "cursor-pointer"
-      }`}
-  >
-    <BiChevronRight size={40} />
-  </button>
-
-</div>
-
+      ${startCard + visibleCards >= totalCards ? "opacity-40 cursor-not-allowed" : "cursor-pointer"}`}
+            >
+              <MdKeyboardArrowRight size="26" />
+            </button>
+          </div>
         </div>
-
 
         {/* CARD GRID */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10 transition-all duration-500">

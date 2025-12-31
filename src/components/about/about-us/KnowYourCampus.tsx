@@ -1,12 +1,13 @@
 import React, { useRef, useState } from "react";
 import Slider from "react-slick";
-import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
+
 import { campusSlides } from "../../../data/about/aboutusData";
 import ourCampus from "../../../assets/images/about/aboutUs/knowyourcampusimg.jpg";
 import Classes from "../../../utils/styles/Global.module.css";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 
 const KnowOurCampus: React.FC = () => {
   const sliderRef = useRef<any>(null);
@@ -51,7 +52,7 @@ const KnowOurCampus: React.FC = () => {
               className={`p-1 text-5xl  
                                 ${isFirst ? "bg-gray-200 text-gray-400 font-normal cursor-not-allowed" : "cursor-pointer bg-[#023047] font-bold  text-white"}`}
             >
-              <BiChevronLeft />
+              <MdKeyboardArrowLeft size="26" />
             </button>
 
             {/* Next */}
@@ -61,7 +62,7 @@ const KnowOurCampus: React.FC = () => {
               className={`p-1 text-5xl
                                 ${isLast ? "bg-gray-200 text-gray-400 font-normal cursor-not-allowed" : "cursor-pointer bg-[#023047] font-bold text-white"}`}
             >
-              <BiChevronRight />
+              <MdKeyboardArrowRight size="26" />
             </button>
           </div>
           {/* Slider */}

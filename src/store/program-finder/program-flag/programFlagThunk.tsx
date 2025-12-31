@@ -5,7 +5,7 @@ export interface ProgramFlagName {
   name?: string;
 }
 
-export const fetchProgramByFlag = createAsyncThunk("data/fetchProgramData", async (params?: ProgramFlagName) => {
+export const fetchProgramByFlag = createAsyncThunk("data/programFlags", async (params?: ProgramFlagName) => {
   const response = await API.get("/academicProgram/programFlags", {
     params,
   });

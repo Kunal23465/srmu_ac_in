@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
-import SliderLogic from './SliderLogic';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import React, { useState } from "react";
+import SliderLogic from "./SliderLogic";
+
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 
 const FinalSlider: React.FC = () => {
   const [scrollFunctions, setScrollFunctions] = useState<{
-    scrollTo: (dir: 'left' | 'right') => void;
+    scrollTo: (dir: "left" | "right") => void;
     canScrollLeft: boolean;
     canScrollRight: boolean;
   } | null>(null);
@@ -25,18 +26,18 @@ const FinalSlider: React.FC = () => {
               <button
                 onClick={() => scrollFunctions.scrollTo("left")}
                 disabled={!scrollFunctions.canScrollLeft}
-                className={`w-12 h-12 rounded-full flex items-center justify-center border-2 transition-all duration-300 cursor-pointer
-                  ${scrollFunctions.canScrollLeft ? "border-[#023047] text-[#023047] shadow-md" : "border-gray-300 text-gray-400 cursor-not-allowed"}`}
+                className={`text-gray-700 hover:text-white hover:bg-[#ffb703] hover:border-[#ffb703] bg-white shadow-lg w-13 h-13 flex items-center justify-center rounded-full border border-gray-200 z-10 cursor-pointer
+                  ${scrollFunctions.canScrollLeft ? "cursor-pointer" : "opacity-40 cursor-not-allowed"}`}
               >
-                <ChevronLeft size={20} />
+                <MdKeyboardArrowLeft size="26" />
               </button>
               <button
                 onClick={() => scrollFunctions.scrollTo("right")}
                 disabled={!scrollFunctions.canScrollRight}
-                className={`w-12 h-12 rounded-full flex items-center justify-center border-2 transition-all duration-300 cursor-pointer
-                  ${scrollFunctions.canScrollRight ? "border-[#023047] text-[#023047] shadow-md" : "border-gray-300 text-gray-400 cursor-not-allowed"}`}
+                className={`text-gray-700 hover:text-white hover:bg-[#ffb703] hover:border-[#ffb703] bg-white shadow-lg w-13 h-13 flex items-center justify-center rounded-full border border-gray-200 z-10 cursor-pointer 
+                  ${scrollFunctions.canScrollRight ? "cursor-pointer" : "opacity-40 cursor-not-allowed"}`}
               >
-                <ChevronRight size={20} />
+                <MdKeyboardArrowRight size="26" />
               </button>
             </div>
           )}

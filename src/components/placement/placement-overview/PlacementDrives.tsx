@@ -1,13 +1,13 @@
 import React, { useState, useRef, useEffect } from "react";
 import Slider from "react-slick";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import { placementData } from "../../../data/placement/placementData";
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 
 const PlacementDrives: React.FC = () => {
   const [activeYear, setActiveYear] = useState("2023");
   const sliderRef = useRef<Slider | null>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 0);
+  const [windowWidth, setWindowWidth] = useState(typeof window !== "undefined" ? window.innerWidth : 0);
 
   const students = placementData[activeYear] || [];
 
@@ -16,8 +16,8 @@ const PlacementDrives: React.FC = () => {
       setWindowWidth(window.innerWidth);
     };
 
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   // Function to determine slidesToShow based on window width
@@ -129,18 +129,22 @@ const PlacementDrives: React.FC = () => {
           <button
             onClick={() => sliderRef.current?.slickPrev()}
             disabled={isPrevDisabled}
-            className={`p-2 border rounded-full transition ${isPrevDisabled ? "border-gray-300 cursor-not-allowed opacity-40" : "border-[#224984]"}`}
+            className={`text-gray-700 hover:text-white hover:bg-[#ffb703] hover:border-[#ffb703] bg-white shadow-lg w-13 h-13 flex items-center justify-center rounded-full border border-gray-200 z-10 cursor-pointer ${
+              isPrevDisabled ? "cursor-not-allowed opacity-40" : "cursor-pointer"
+            }`}
           >
-            <ChevronLeft color={isPrevDisabled ? "#999" : "#224984"} size={24} />
+            <MdKeyboardArrowLeft size={26} />
           </button>
 
           {/* Next */}
           <button
             onClick={() => sliderRef.current?.slickNext()}
             disabled={isNextDisabled}
-            className={`p-2 border rounded-full transition ${isNextDisabled ? "border-gray-300 cursor-not-allowed opacity-40" : "border-[#224984]"}`}
+            className={`text-gray-700 hover:text-white hover:bg-[#ffb703] hover:border-[#ffb703] bg-white shadow-lg w-13 h-13 flex items-center justify-center rounded-full border border-gray-200 z-10 cursor-pointer ${
+              isNextDisabled ? "cursor-not-allowed opacity-40" : "cursor-pointer"
+            }`}
           >
-            <ChevronRight color={isNextDisabled ? "#999" : "#224984"} size={24} />
+            <MdKeyboardArrowRight size={26} />
           </button>
         </div>
       </div>

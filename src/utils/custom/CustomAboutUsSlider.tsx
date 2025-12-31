@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import Slider from "react-slick";
 
 /* ---------------- TYPES ---------------- */
@@ -18,39 +19,7 @@ type Props = {
 };
 
 /* ---------------- ICONS ---------------- */
-const ChevronLeft = ({ size, className }: { size: number; className?: string }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width={size}
-    height={size}
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className={className}
-  >
-    <path d="m15 18-6-6 6-6" />
-  </svg>
-);
 
-const ChevronRight = ({ size, className }: { size: number; className?: string }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width={size}
-    height={size}
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className={className}
-  >
-    <path d="m9 18 6-6-6-6" />
-  </svg>
-);
 
 /* ---------------- CARD ---------------- */
 const WhyCard: React.FC<
@@ -160,16 +129,16 @@ const CustomAboutUsSlider: React.FC<Props> = ({ data }) => {
           <div className="flex gap-4">
             <button
               onClick={() => sliderRef.current?.slickPrev()}
-              className="w-12 h-12 flex items-center justify-center border-2 border-gray-900 hover:border-[#ffb703] rounded-full hover:bg-[#ffb703] hover:text-white transition-colors duration-300"
+              className="text-gray-700 hover:text-white hover:bg-[#ffb703] hover:border-[#ffb703] bg-white shadow-lg w-13 h-13 flex items-center justify-center rounded-full border border-gray-200 z-10 cursor-pointer"
             >
-              <ChevronLeft size={24} />
+              <MdKeyboardArrowLeft size="26" />
             </button>
 
             <button
               onClick={() => sliderRef.current?.slickNext()}
-              className="w-12 h-12 flex items-center justify-center border-2 border-gray-900 hover:border-[#ffb703] rounded-full hover:bg-[#ffb703] hover:text-white transition-colors duration-300"
+              className="text-gray-700 hover:text-white hover:bg-[#ffb703] hover:border-[#ffb703] bg-white shadow-lg w-13 h-13 flex items-center justify-center rounded-full border border-gray-200 z-10 cursor-pointer"
             >
-              <ChevronRight size={24} />
+              <MdKeyboardArrowRight size="26" />
             </button>
           </div>
         </div>

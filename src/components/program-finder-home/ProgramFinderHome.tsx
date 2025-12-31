@@ -17,22 +17,22 @@ const ProgramFinderHome: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
   const location = useLocation();
   const { data } = useSelector((state: RootState) => state.getProgramFinder);
-  const { programType } = useSelector((state: RootState) => state.getProgramType);
+  // const { programType } = useSelector((state: RootState) => state.getProgramType);
   const { discipline } = useSelector((state: RootState) => state.getDiscipline);
   const { data: programFlag } = useSelector((state: RootState) => state.getProgramByFlag);
-  const [selectedProgramType, setSelectedProgramType] = useState<number | string>("");
+  const [selectedProgramFlag, setSelectedProgramFlag] = useState<number | string>("");
   const [selectedDiscipline, setSelectedDiscipline] = useState<number | string>("");
   // Search states
   const [searchTerm, setSearchTerm] = useState("");
   const [debouncedSearch, setDebouncedSearch] = useState("");
 
-  const selectedProgramTypeObj = programType?.find((pt) => pt.programTypeId == selectedProgramType);
+  const selectedProgramFlagObj = programFlag?.find((pt) => pt.programTypeId == selectedProgramFlag);
 
   const selectedDisciplineObj = discipline?.find((d) => d.programDisciplineId == selectedDiscipline);
 
-  const introDescription = selectedDisciplineObj?.description || selectedProgramTypeObj?.description || "";
+  const introDescription = selectedDisciplineObj?.description || selectedProgramFlagObj?.description || "";
 
-  const { programTypeId: programTypeIdFromState, disciplineId: disciplineIdFromState } = location.state || {};
+  const { programTypeId: programFlagIdFromState, disciplineId: disciplineIdFromState } = location.state || {};
 
   /* ===========================
            Debounce Search
@@ -51,12 +51,12 @@ const ProgramFinderHome: React.FC = () => {
   useEffect(() => {
     dispatch(
       fetchAllProgramFinder({
-        programTypeId: selectedProgramType || undefined,
+        programFlagId: selectedProgramFlag || undefined,
         programDisciplineId: selectedDiscipline || undefined,
         name: debouncedSearch || undefined,
       })
     );
-  }, [dispatch, selectedProgramType, selectedDiscipline, debouncedSearch]);
+  }, [dispatch, selectedProgramFlag, selectedDiscipline, debouncedSearch]);
 
   /* ===========================
       Initial Load
@@ -70,20 +70,20 @@ const ProgramFinderHome: React.FC = () => {
       Refetch discipline
      =========================== */
   useEffect(() => {
-    if (selectedProgramType) {
-      dispatch(fetchProgramDiscipline({ programTypeId: selectedProgramType }));
+    if (selectedProgramFlag) {
+      dispatch(fetchProgramDiscipline({ programFlagId: selectedProgramFlag }));
     }
-  }, [dispatch, selectedProgramType]);
+  }, [dispatch, selectedProgramFlag]);
 
   /* ===========================
       From Route State
      =========================== */
   useEffect(() => {
-    if (programTypeIdFromState || disciplineIdFromState) {
-      if (programTypeIdFromState) setSelectedProgramType(programTypeIdFromState);
+    if (programFlagIdFromState || disciplineIdFromState) {
+      if (programFlagIdFromState) setSelectedProgramFlag(programFlagIdFromState);
       if (disciplineIdFromState) setSelectedDiscipline(disciplineIdFromState);
     }
-  }, [programTypeIdFromState, disciplineIdFromState]);
+  }, [programFlagIdFromState, disciplineIdFromState]);
 
   console.log("programFlag", programFlag);
   return (
@@ -98,11 +98,11 @@ const ProgramFinderHome: React.FC = () => {
           data={data}
           programTypeOptions={programFlag}
           disciplineOptions={discipline}
-          selectedProgramType={selectedProgramType}
+          selectedProgramType={selectedProgramFlag}
           selectedDiscipline={selectedDiscipline}
           searchTerm={searchTerm}
           onSearchChange={setSearchTerm}
-          onProgramTypeChange={setSelectedProgramType}
+          onProgramTypeChange={setSelectedProgramFlag}
           onDisciplineChange={setSelectedDiscipline}
           isTypeFlag={true}
         />

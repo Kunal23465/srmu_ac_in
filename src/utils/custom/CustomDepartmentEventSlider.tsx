@@ -1,8 +1,8 @@
 import React, { useState, useRef, TouchEvent } from "react";
 import Classes from "../../utils/styles/Global.module.css";
 import {
-  MdOutlineKeyboardArrowLeft,
-  MdOutlineKeyboardArrowRight,
+  MdKeyboardArrowLeft,
+  MdKeyboardArrowRight,
 } from "react-icons/md";
 
 export interface SliderRenderProps<T> {
@@ -99,22 +99,14 @@ function CustomDepartmentEventSlider<T>({
         background: bgImage ? `url(${bgImage}) center/cover` : bgColor,
       }}
     >
-      <div
-        className={`flex flex-col md:flex-row justify-between items-start w-full mb-8 ${Classes["container"]}`}
-      >
+      <div className={`flex flex-col md:flex-row justify-between items-start w-full mb-8 ${Classes["container"]}`}>
         <div className="px-3 w-full md:w-auto mb-4 md:mb-0">
-          <h2
-            className="text-4xl lg:text-[45px] font-semibold"
-            style={{ color: headingColor }}
-          >
+          <h2 className="text-4xl lg:text-[45px] font-semibold" style={{ color: headingColor }}>
             {heading}
           </h2>
 
           {description && (
-            <p
-              className="mt-2 text-base lg:text-[16px] max-w-4xl"
-              style={{ color: descriptionColor }}
-            >
+            <p className="mt-2 text-base lg:text-[16px] max-w-4xl" style={{ color: descriptionColor }}>
               {description}
             </p>
           )}
@@ -133,7 +125,7 @@ function CustomDepartmentEventSlider<T>({
               background: arrowBgColor,
             }}
           >
-            <MdOutlineKeyboardArrowLeft size={35} />
+            <MdKeyboardArrowLeft size="26" />
           </button>
 
           <button
@@ -148,17 +140,12 @@ function CustomDepartmentEventSlider<T>({
               background: arrowBgColor,
             }}
           >
-            <MdOutlineKeyboardArrowRight size={35} />
+            <MdKeyboardArrowRight size="26" />
           </button>
         </div>
       </div>
 
-      <div
-        className={`overflow-hidden w-full ${Classes["container"]}`}
-        onTouchStart={onTouchStart}
-        onTouchMove={onTouchMove}
-        onTouchEnd={onTouchEnd}
-      >
+      <div className={`overflow-hidden w-full ${Classes["container"]}`} onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}>
         <div
           ref={trackRef}
           className="flex transition-transform duration-700 "
@@ -168,11 +155,7 @@ function CustomDepartmentEventSlider<T>({
           }}
         >
           {pages.map((page, pageIndex) => (
-            <div
-              key={pageIndex}
-              className="p-5 shrink-0"
-              style={{ width: `${100 / totalPages}%` }} 
-            >
+            <div key={pageIndex} className="p-5 shrink-0" style={{ width: `${100 / totalPages}%` }}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {page.map((item, index) => (
                   <div key={index} className="col-span-1">

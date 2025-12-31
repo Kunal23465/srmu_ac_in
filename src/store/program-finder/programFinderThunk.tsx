@@ -2,9 +2,10 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import API from "../../apis/axiosinstance";
 
 export interface ProgramFinderParams {
-    programTypeId?: number | string;
-    programDisciplineId?: number | string;
-    name?: string;
+  programTypeId?: number | string;
+  programFlagId?: number | string;
+  programDisciplineId?: number | string;
+  name?: string;
 }
 
 export const fetchAllProgramFinder = createAsyncThunk(
