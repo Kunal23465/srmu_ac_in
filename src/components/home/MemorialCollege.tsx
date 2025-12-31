@@ -4,7 +4,6 @@ import Classes from "../../utils/styles/Global.module.css";
 import Counter from "../../utils/custom/Counter";
 import { counterDataForHomePage } from "../../data/home/counterData";
 import Slider from "react-slick";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 import slider1 from "../../assets/images/home/slider-img1.png";
 import slider2 from "../../assets/images/home/slider-2.png";
 import slider3 from "../../assets/images/home/slider-3.png";
@@ -17,6 +16,7 @@ import { LiaLongArrowAltRightSolid } from "react-icons/lia";
 import silder4pdf from "../../assets/pdf/home/final-kisan-mela-brochure-1-1--011125020631.pdf";
 import { Link } from "react-router-dom";
 import slider9 from "../../assets/images/home/cruusal.png";
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 
 interface ArrowProps {
   onClick?: React.MouseEventHandler<HTMLDivElement>;
@@ -27,7 +27,7 @@ const NextArrow: React.FC<ArrowProps> = ({ onClick }) => (
     className="absolute top-[80px] p-1 sm:top-[calc(50%)] lg:text-[25px] 2xl:text-[30px] xl:p-2  right-2 xl:right-8 2xl:right-10 transform sm:-translate-y-1/2  hover:text-[#ffb703]   text-white  cursor-pointer z-10"
     onClick={onClick}
   >
-    <FaChevronRight />
+    <MdKeyboardArrowRight size="26" />
   </div>
 );
 
@@ -36,7 +36,7 @@ const PrevArrow: React.FC<ArrowProps> = ({ onClick }) => (
     className="absolute top-[80px] p-1 sm:top-[calc(50%)] lg:text-[25px] 2xl:text-[30px] xl:p-2  transform sm:-translate-y-1/2 left-2 xl:left-8 2xl:left-10    hover:text-[#ffb703]  text-white  cursor-pointer z-10"
     onClick={onClick}
   >
-    <FaChevronLeft />
+    <MdKeyboardArrowLeft size="26" />
   </div>
 );
 const MemorialCollege: React.FC = () => {

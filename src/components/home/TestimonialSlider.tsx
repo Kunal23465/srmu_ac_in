@@ -13,7 +13,7 @@ import { LiaLongArrowAltRightSolid } from "react-icons/lia";
 const NextArrow = ({ onClick }: any) => (
   <button
     onClick={onClick}
-    className="hidden md:flex absolute right-0 top-1/2 translate-y-70  bg-white shadow-lg w-15 h-15 items-center justify-center rounded-full border border-gray-200 hover:bg-gray-50 z-10 cursor-pointer"
+    className="hidden md:flex absolute right-0 top-1/2 translate-y-70 text-gray-700 hover:bg-[#ffb703] hover:border-[#ffb703] hover:text-white  bg-white shadow-lg w-13 h-13 items-center justify-center rounded-full border border-gray-200 z-10 cursor-pointer"
   >
     <MdKeyboardArrowRight size="26" />
   </button>
@@ -22,7 +22,7 @@ const NextArrow = ({ onClick }: any) => (
 const PrevArrow = ({ onClick }: any) => (
   <button
     onClick={onClick}
-    className="hidden md:flex absolute left-0 top-1/2 translate-y-70 bg-white shadow-lg w-15 h-15 items-center justify-center rounded-full border border-gray-200 hover:bg-gray-50 z-10 cursor-pointer"
+    className="hidden md:flex absolute left-0 top-1/2 translate-y-70 text-gray-700 hover:bg-[#ffb703] hover:border-[#ffb703] hover:text-white   bg-white shadow-lg w-13 h-13 items-center justify-center rounded-full border border-gray-200 z-10 cursor-pointer"
   >
     <MdKeyboardArrowLeft size="26" />
   </button>

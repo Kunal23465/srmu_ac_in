@@ -220,8 +220,8 @@ const Footer: React.FC = () => {
                   </h2>
                 </div>
               </div>
-              <div className="space-y-4 mt-4">
-                <div className="flex flex-col gap-1">
+              <div className="space-y-8 mt-8">
+                <div className="flex flex-col gap-2">
                   <div className="flex items-center gap-x-1">
                     <span>
                       <Link
@@ -237,7 +237,7 @@ const Footer: React.FC = () => {
                   </div>
                   <p className="text-[14px]!">{footerData.contact.address}</p>
                 </div>
-                <div className="flex flex-col gap-1 ">
+                <div className="flex flex-col gap-2 ">
                   <div className="flex items-center gap-x-2">
                     <span>
                       <Link to="tel:7570003074" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
@@ -248,7 +248,7 @@ const Footer: React.FC = () => {
                   </div>
                   <p className="text-[14px]!">{footerData.contact.phone1}</p>
                 </div>
-                <div className="flex gap-1 flex-col">
+                <div className="flex gap-2 flex-col">
                   <div className="flex items-center gap-x-2">
                     <span className="text-[1.2rem]">
                       <Link to="https://mail.google.com/mail/u/0/?view=cm&fs=1&to=admissions@srmcem.ac.in" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
@@ -264,7 +264,7 @@ const Footer: React.FC = () => {
                   </p>
                 </div>
               </div>
-              <div className="flex space-x-2 mt-4">
+              <div className="flex space-x-2 mt-10 sm:mt-20">
                 <Link
                   to="https://www.facebook.com/SRMGPCOFFICIAL/"
                   target="_blank"
@@ -310,7 +310,7 @@ const Footer: React.FC = () => {
             </div>
             <div className=" w-full grid-second">
               <h3 className="font-semibold text-sm sm:text-base mb-3 text-[#ffb703]  Get Responsible uppercase">Get Enrolled</h3>
-              <ul className="space-y-2 pb-4 list-none! border-b-2 border-dashed border-white ">
+              <ul className="space-y-4 pb-8 list-none! border-b-2 border-dashed border-[#e1f1fd94] ">
                 {footerData.getEnrolled.map((link, index) => (
                   <li key={index}>
                     <div className="flex items-center group hover:text-[#ffb703] ">
@@ -328,8 +328,8 @@ const Footer: React.FC = () => {
                   </li>
                 ))}
               </ul>
-              <h3 className="font-semibold text-sm sm:text-base mt-4 mb-3 text-[#ffb703] uppercase">Get Evolved</h3>
-              <ul className="space-y-2  pb-4 list-none! border-b-2 border-dashed border-white">
+              <h3 className="font-semibold text-sm sm:text-base mt-8 mb-4 text-[#ffb703] uppercase">Get Evolved</h3>
+              <ul className="space-y-4  pb-8 list-none! border-b-2 border-dashed border-[#e1f1fd94]">
                 {footerData.getEvolved.map((link, index) => (
                   <li key={index}>
                     <div className="flex items-center group hover:text-[#ffb703]">
@@ -340,8 +340,8 @@ const Footer: React.FC = () => {
                   </li>
                 ))}
               </ul>
-              <h3 className="font-semibold text-sm sm:text-base mb-3 text-[#ffb703] mt-4 Get Responsible uppercase">Get Delighted</h3>
-              <ul className="space-y-2 pb-4 list-none! ">
+              <h3 className="font-semibold text-sm sm:text-base mb-4 text-[#ffb703] mt-8 Get Responsible uppercase">Get Delighted</h3>
+              <ul className="space-y-4 pb-8 list-none! ">
                 {footerData.getDelighted.map((link, index) => (
                   <li key={index}>
                     <div className="flex items-center group hover:text-[#ffb703]">
@@ -361,7 +361,7 @@ const Footer: React.FC = () => {
             </div>
             <div className="w-full grid-third">
               <h3 className="font-semibold text-sm sm:text-base mb-3 text-[#ffb703] uppercase ">Get Responsible</h3>
-              <ul className="space-y-2  pb-4 list-none! border-b-2 border-dashed border-white">
+              <ul className="space-y-4  pb-8 list-none! border-b-2 border-dashed border-[#e1f1fd94]">
                 {footerData.getResponsible.map((link, index) => (
                   <li key={index}>
                     <div className="flex items-center group hover:text-[#ffb703] ">
@@ -379,8 +379,8 @@ const Footer: React.FC = () => {
                 ))}
               </ul>
 
-              <h3 className="font-semibold text-sm sm:text-base mt-4 mb-3 text-[#ffb703] uppercase">Get Helped</h3>
-              <ul className="space-y-2  pb-4 list-none! border-b-2 border-dashed border-white">
+              <h3 className="font-semibold text-sm sm:text-base mt-8 mb-4 text-[#ffb703] uppercase">Get Helped</h3>
+              <ul className="space-y-4  pb-8 list-none! border-b-2 border-dashed border-[#e1f1fd94]">
                 {footerData.getHelped.map((link, index) => (
                   <li key={index}>
                     <div className="flex items-center group hover:text-[#ffb703]">
@@ -391,8 +391,8 @@ const Footer: React.FC = () => {
                   </li>
                 ))}
               </ul>
-              <h3 className="font-semibold text-sm sm:text-base mb-3 text-[#ffb703] mt-4 Get Responsible uppercase">Get Connected</h3>
-              <ul className="space-y-2 pb-4 list-none! ">
+              <h3 className="font-semibold text-sm sm:text-base mb-4 text-[#ffb703] mt-8 Get Responsible uppercase">Get Connected</h3>
+              <ul className="space-y-4 pb-8 list-none! ">
                 {footerData.getConected.map((link, index) => (
                   <li key={index}>
                     <div className="flex items-center group hover:text-[#ffb703]">
@@ -413,7 +413,7 @@ const Footer: React.FC = () => {
               {/* usefulLinks */}
             </div>
             <div className="w-full grid-fourth">
-              <h3 className="font-semibold text-sm sm:text-base mb-3 text-[#ffb703] Get Responsible uppercase">Explore / Engage</h3>
+              <h3 className="font-semibold text-sm sm:text-base mb-4 text-[#ffb703] Get Responsible uppercase">Explore / Engage</h3>
               <button
                 onClick={() => setCheck(true)}
                 className="border-2 mb-4 hover:bg-white hover:text-[#0f4a85] border-[#ffb703] rounded-md flex items-center space-x-4 px-4 py-3"
@@ -423,12 +423,12 @@ const Footer: React.FC = () => {
                 </span>{" "}
                 Virtual Tour
               </button>
-              <h3 className="font-semibold text-sm sm:text-base pt-4 mb-3 text-[#ffb703]  Get Responsible uppercase">Awards</h3>
-              <div className="flex gap-x-4">
+              <h3 className="font-semibold text-sm sm:text-base pt-10 mb-4 text-[#ffb703]  Get Responsible uppercase">Awards</h3>
+              <div className="flex gap-x-4 mb-4">
                 <img src={awards1} alt="awards1" />
                 <img src={awards2} alt="awards1" />
               </div>
-              <h3 className="font-semibold text-sm sm:text-base pt-4 mb-3 text-[#ffb703]  Get Responsible uppercase">MERCH SHOP</h3>
+              <h3 className="font-semibold text-sm sm:text-base pt-8 mb-4 text-[#ffb703]  Get Responsible uppercase">MERCH SHOP</h3>
               <h4 className="font-semibold text-xs text-white">To Shop SRMU Merchandise Scan the Code</h4>
               <img src={scanner} alt="scanner" className="max-w-[150px] mt-2" />
             </div>

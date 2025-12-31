@@ -1,11 +1,12 @@
 import React, { useRef, useState, useEffect } from "react";
 import Slider from "react-slick";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+
 import { OurGoals, ourGoalsData } from "../../../data/about/silder/slider-data";
 import Classes from "../../../utils/styles/Global.module.css";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 
 type Props = {
   items: OurGoals[];
@@ -93,21 +94,21 @@ const OurGoal: React.FC<Props> = ({ items }) => {
             <button
               onClick={prev}
               disabled={disablePrev}
-              className={`w-12 h-12 flex items-center justify-center border-2 border-gray-300 text-gray-800 bg-white rounded-full transition
+              className={`text-gray-700 hover:text-white hover:bg-[#ffb703] hover:border-[#ffb703] bg-white shadow-lg w-13 h-13 flex items-center justify-center rounded-full border border-gray-200 z-10 cursor-pointer
                 ${disablePrev ? "opacity-40 cursor-not-allowed" : "hover:bg-gray-100"}
               `}
             >
-              <ChevronLeft size={24} />
+              <MdKeyboardArrowLeft size="26" />
             </button>
 
             <button
               onClick={next}
               disabled={disableNext}
-              className={`w-12 h-12 flex items-center justify-center border-2 border-gray-300 text-gray-800 bg-white rounded-full transition
+              className={`text-gray-700 hover:text-white hover:bg-[#ffb703] hover:border-[#ffb703] bg-white shadow-lg w-13 h-13 flex items-center justify-center rounded-full border border-gray-200 z-10 cursor-pointer
                 ${disableNext ? "opacity-40 cursor-not-allowed" : "hover:bg-gray-100"}
               `}
             >
-              <ChevronRight size={24} />
+              <MdKeyboardArrowRight size="26" />
             </button>
           </div>
         </div>

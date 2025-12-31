@@ -37,7 +37,7 @@ const videos: VideoItem[] = [
 const NextArrow = ({ onClick }: any) => (
   <button
     onClick={onClick}
-    className="absolute right-[calc(50%-70px)] text-gray-500 hover:text-white -bottom-24 bg-white hover:bg-[#ffb703] shadow-lg w-15 h-15 flex items-center justify-center rounded-full  z-10 cursor-pointer"
+    className="absolute right-[calc(50%-70px)] text-gray-500 hover:text-white -bottom-24 border bg-white border-gray-200 hover:border-[#ffb703] hover:bg-[#ffb703] shadow-lg w-13 h-13 flex items-center justify-center rounded-full  z-10 cursor-pointer"
   >
     <MdKeyboardArrowRight size="26" />
   </button>
@@ -46,7 +46,7 @@ const NextArrow = ({ onClick }: any) => (
 const PrevArrow = ({ onClick }: any) => (
   <button
     onClick={onClick}
-    className="absolute left-[calc(50%-70px)] text-gray-500 hover:text-white -bottom-24 bg-white hover:bg-[#ffb703] shadow-lg w-15 h-15 flex items-center justify-center rounded-full  z-10 cursor-pointer"
+    className="absolute left-[calc(50%-70px)] text-gray-500 hover:text-white -bottom-24 border bg-white border-gray-200 hover:border-[#ffb703] hover:bg-[#ffb703] shadow-lg w-13 h-13 flex items-center justify-center rounded-full  z-10 cursor-pointer"
   >
     <MdKeyboardArrowLeft size="26" />
   </button>

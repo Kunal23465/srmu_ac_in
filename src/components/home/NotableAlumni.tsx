@@ -1,11 +1,11 @@
 import { useRef } from "react";
 import AlumniSlider from "./AlumniSlider";
 import Classes from "../../utils/styles/Global.module.css";
-import { FaCircleChevronRight } from "react-icons/fa6";
-import { FaCircleChevronLeft } from "react-icons/fa6";
+
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
 import { LiaLongArrowAltRightSolid } from "react-icons/lia";
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 
 type SliderRef = Slider | null;
 
@@ -29,11 +29,17 @@ const NotableAlumniSection = () => {
             <p className="text-gray-300">Hear from our distinguished alumni, who have made waves in their respective fields.</p>
           </div>
           <div className="hidden sm:flex space-x-2">
-            <button className="p-2  transition-colors" onClick={goToPrev}>
-              <FaCircleChevronLeft size={36} />
+            <button
+              className="text-gray-700 hover:text-white hover:bg-[#ffb703] hover:border-[#ffb703] bg-white shadow-lg w-13 h-13 flex items-center justify-center rounded-full border border-gray-200 z-10 cursor-pointer"
+              onClick={goToPrev}
+            >
+              <MdKeyboardArrowLeft size="26" />
             </button>
-            <button className="p-2    transition-colors" onClick={goToNext}>
-              <FaCircleChevronRight size={36} />
+            <button
+              className="text-gray-700 hover:text-white hover:bg-[#ffb703] hover:border-[#ffb703] bg-white shadow-lg w-13 h-13 flex items-center justify-center rounded-full border border-gray-200 z-10 cursor-pointer"
+              onClick={goToNext}
+            >
+              <MdKeyboardArrowRight size="26" />
             </button>
           </div>
         </div>

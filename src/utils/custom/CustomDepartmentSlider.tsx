@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, TouchEvent } from "react";
 import Classes from "../../utils/styles/Global.module.css";
-import { MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from "react-icons/md";
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight} from "react-icons/md";
 
 
 export interface SliderRenderProps<T> {
@@ -146,7 +146,7 @@ function CustomDepartmentSlider<T>({
                 background: arrowBgColor,
               }}
             >
-              <MdOutlineKeyboardArrowLeft size={35} />
+              <MdKeyboardArrowLeft size="26" />
             </button>
 
             {/* RIGHT ARROW */}
@@ -162,7 +162,7 @@ function CustomDepartmentSlider<T>({
                 background: arrowBgColor,
               }}
             >
-              <MdOutlineKeyboardArrowRight size={35} />
+              <MdKeyboardArrowRight size="26" />
             </button>
           </div>
         </div>

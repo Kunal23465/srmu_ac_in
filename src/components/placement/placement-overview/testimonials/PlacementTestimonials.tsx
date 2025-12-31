@@ -1,9 +1,10 @@
 import { FC, useRef, useState } from "react";
 import Slider from "react-slick";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
+
 import "./Testimonials.css";
 import OurRecruiters from "../OurRecruiters";
 import { Testimonial, testimonialData } from "../../../../data/placement/placementData";
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 
 type ActiveTab = "recruiters" | "students";
 
@@ -82,7 +83,7 @@ const maxIndex = currentTestimonials.length - 1;
             <div className="mt-10 flex gap-6 justify-end">
               {/* ARROWS */}
               <button
-                className="arrow-button"
+                className="arrow-button text-gray-700 hover:text-white hover:bg-[#ffb703] hover:border-[#ffb703] bg-white shadow-lg w-13 h-13 flex items-center justify-center rounded-full border border-gray-200 z-10 cursor-pointer"
                 onClick={() => sliderRef.current?.slickPrev()}
                 disabled={currentIndex === 0}
                 style={{
@@ -90,11 +91,11 @@ const maxIndex = currentTestimonials.length - 1;
                   cursor: currentIndex === 0 ? "not-allowed" : "pointer",
                 }}
               >
-                <FaArrowLeft fill="gray" />
+                <MdKeyboardArrowLeft fill="gray" size="26" />
               </button>
 
               <button
-                className="arrow-button"
+                className="arrow-button text-gray-700 hover:text-white hover:bg-[#ffb703] hover:border-[#ffb703] bg-white shadow-lg w-13 h-13 flex items-center justify-center rounded-full border border-gray-200 z-10 cursor-pointer"
                 onClick={() => sliderRef.current?.slickNext()}
                 disabled={currentIndex === maxIndex}
                 style={{
@@ -102,7 +103,7 @@ const maxIndex = currentTestimonials.length - 1;
                   cursor: currentIndex === maxIndex ? "not-allowed" : "pointer",
                 }}
               >
-                <FaArrowRight fill="gray" />
+                <MdKeyboardArrowRight fill="gray" size="26" />
               </button>
             </div>
           </div>
