@@ -444,13 +444,13 @@ const Footer: React.FC = () => {
             <div>
               <ul className="flex gap-x-7 items-center text-white font-medium text-sm list-none!">
                 <li className="relative inline-block after:content-[''] after:h-5 after:w-0.5! after:bg-white after:absolute after:top-0 after:-right-4">
-                  <Link to="#">Privacy Policy</Link>
+                  <Link to="/privacy-policy">Privacy Policy</Link>
                 </li>
                 <li className="relative inline-block after:content-[''] after:h-5 after:w-0.5! after:bg-white after:absolute after:top-0 after:-right-4">
-                  <Link to="#">Disclaimer</Link>
+                  <Link to="/disclaimer">Disclaimer</Link>
                 </li>
                 <li>
-                  <Link to="#">Terms and Conditions</Link>
+                  <Link to="/terms-conditions">Terms and Conditions</Link>
                 </li>
               </ul>
             </div>

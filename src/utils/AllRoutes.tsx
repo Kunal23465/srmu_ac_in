@@ -91,6 +91,9 @@ import HowToApplyPage from "../pages/admissions/how-to-apply/HowToApplyPage";
 import RootPrograms from "../pages/programs/RootPrograms";
 // import AfterClass10thInnerPage from "../pages/after-class-10th/AfterClass10thInnerPage";
 import ProgramDetailsPage from "../pages/programs/details-page/ProgramDetailsPage";
+import PrivacyPolicyPage from "../pages/privacy-policy/PrivacyPolicyPage";
+import DisclaimerPage from "../pages/disclaimer/DisclaimerPage";
+import TermsAndConditionPage from "../pages/terms-condition/TermsAndConditionPage";
 // interface IMatches {
 //   pathname: string;
 //   params: Params<string>;
@@ -534,6 +537,18 @@ export const routes = [
         path: "/online-admission",
         element: <OnlineAdmissionPage />,
       },
+      {
+        path: "/privacy-policy",
+        element: <PrivacyPolicyPage />
+      },
+      {
+        path: "/disclaimer",
+        element: <DisclaimerPage />
+      },
+      {
+        path: "/terms-conditions",
+        element: <TermsAndConditionPage/>
+      }
     ],
   },
 ];
