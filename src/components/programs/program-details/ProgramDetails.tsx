@@ -1,5 +1,4 @@
 import {
-  abcforALML,
   counterDataForBtechinCSEAIandML,
   eligibilityDataforAIandML,
   opportunityCardDataAIML,
@@ -29,20 +28,24 @@ import { fetchProgramFinderByID } from "../../../store/program-finder/programFin
 import { useEffect } from "react";
 import ProgramFeeTable from "./ProgramFeeTable";
 import { fetchProgramFeesByProgramId } from "../../../store/program-finder/program-fees/programFeesThunk";
+import { fetchWhySrmuSectionById } from "../../../store/program-finder/why-srmu/whySrmuSectionThunk";
 
 const ProgramDetails = () => {
   const dispatch = useDispatch<AppDispatch>();
   const location = useLocation();
   // @ts-ignore
-    const { dataByID, loading, error } = useSelector((state: RootState) => state.getProgramFinder);
+  const { dataByID, loading, error } = useSelector((state: RootState) => state.getProgramFinder);
   console.log(dataByID, "program details data");
-      const { data:feesData} = useSelector((state: RootState) => state.programFees);
+  const { data: feesData } = useSelector((state: RootState) => state.programFees);
+  const { data: whySrmuData } = useSelector((state: RootState) => state.getWhySrmuSection);
 
-    
   useEffect(() => {
-      dispatch(fetchProgramFinderByID(location.state.programId || undefined));
-      dispatch(fetchProgramFeesByProgramId(location.state.programId || undefined));
+    dispatch(fetchWhySrmuSectionById({ programId: location.state.programId || undefined }));
+    dispatch(fetchProgramFinderByID(location.state.programId || undefined));
+    dispatch(fetchProgramFeesByProgramId(location.state.programId || undefined));
   }, [dispatch, location.state.programId]);
+
+  console.log("whySrmuData==", whySrmuData);
   return (
     <div className="mt-20">
       <div className={`${Classes["container"]}`}>
@@ -72,10 +75,8 @@ const ProgramDetails = () => {
           data={whyDataforAIML}
           renderCard={({ item }) => <WhyCardComp item={item} />}
           bgColor="transparent"
-          arrowColor="#ffb703"
           headingColor="black"
           descriptionColor="#e5e5e5"
-          arrowBorderColor="#023047"
           breakpoints={{ desktop: 4, tablet: 3, mobile: 1 }}
         />
         <div className={`${Classes["container"]}`}>
@@ -97,8 +98,8 @@ const ProgramDetails = () => {
           <CustomDepartmentHighlights heading="Department Highlights" steps={steps} />
         </div>
       </div>
-
-      <CustomProgramPLOAccordian POdata={abcforALML.POdata} PLOdata={abcforALML.PLOdata} PSOdata={abcforALML.PSOdata} />
+      {/* @ts-ignore */}
+      <CustomProgramPLOAccordian POdata={dataByID?.programObjective} PLOdata={dataByID?.programLearningOutcomes} PSOdata={dataByID?.specificOutcomes} />
       <div className="bg-[#dee4f2]">
         <div className={`${Classes["container"]}`}>
           <CustomCompaniesScope data={scopeData} />

@@ -56,8 +56,6 @@ const DepartmentOfElectricalAndElectronicsEngineering: FC = () => {
         data={ElectricalAndElectronicsfacultyDetails}
         renderCard={({ item }) => <CustomFacultyListCard item={item} />}
         bgImage={facultybg}
-        arrowColor="#ffffff"
-        arrowBorderColor="#0f4a85"
         headingColor="#ffffff"
         descriptionColor="#ffffff"
         breakpoints={{ desktop: 4, tablet: 2, mobile: 1 }}
@@ -74,7 +72,7 @@ const DepartmentOfElectricalAndElectronicsEngineering: FC = () => {
         data={electricalDepartmentHighlightsData}
         renderCard={({ item }) => <CustomDepartmentHighlightCard item={item} />}
         bgColor="#f8b922"
-        arrowColor="#000"
+       
         breakpoints={{ desktop: 3, tablet: 2, mobile: 1 }}
       />
       <CustomDepartmentSlider
@@ -83,7 +81,7 @@ const DepartmentOfElectricalAndElectronicsEngineering: FC = () => {
         data={electricalDepartmentHighlightsData}
         renderCard={({ item }) => <CustomDepartmentHighlightCard item={item} />}
         bgColor="#ffffff"
-        arrowColor="#96a9c4"
+      
         breakpoints={{ desktop: 3, tablet: 2, mobile: 1 }}
       />
       <CustomTopFooter data={instituteFooterData} />

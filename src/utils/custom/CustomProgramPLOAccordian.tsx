@@ -3,21 +3,20 @@ import Classes from "../../utils/styles/Global.module.css";
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 
 export interface CustomProgramPLOAccordianProps {
-  POdata: { id: string | number; content: string }[];
-  PLOdata: { id: string | number; content: string }[];
-  PSOdata: { id: string | number; content: string }[];
+  POdata: string | any[];
+  PLOdata: string | any[];
+  PSOdata: string | any[];
 }
 
-const CustomProgramPLOAccordian: React.FC<CustomProgramPLOAccordianProps> = ({ POdata, PLOdata, PSOdata }) => {
+const CustomProgramPLOAccordian: React.FC<CustomProgramPLOAccordianProps> = ({ POdata }) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-  const toggle = (index: number) =>
-    setOpenIndex(openIndex === index ? null : index);
+  const toggle = (index: number) => setOpenIndex(openIndex === index ? null : index);
 
   const sections = [
     { title: "Program Objectives", data: POdata },
-    { title: "Program Learning Outcomes", data: PLOdata },
-    { title: "Program Specific Outcomes", data: PSOdata },
+    { title: "Program Learning Outcomes", data: POdata },
+    { title: "Program Specific Outcomes", data: POdata },
   ];
 
   return (
@@ -30,18 +29,11 @@ const CustomProgramPLOAccordian: React.FC<CustomProgramPLOAccordianProps> = ({ P
           {sections.map((section, index) => (
             <div key={index}>
               {/* Accordion Header */}
-              <div
-                className="flex cursor-pointer select-none"
-                onClick={() => toggle(index)}
-              >
+              <div className="flex cursor-pointer select-none" onClick={() => toggle(index)}>
                 <span className="py-8 w-[90%] text-2xl border-r border-gray-300 font-medium">{section.title}</span>
 
                 {/* Rotating Icon */}
-                <HiOutlineArrowNarrowRight  size={36}
-                  className={`m-auto transition-transform duration-600 ease-in-out ${
-                    openIndex === index ? "rotate-90" : ""
-                  }`}
-                />
+                <HiOutlineArrowNarrowRight size={36} className={`m-auto transition-transform duration-600 ease-in-out ${openIndex === index ? "rotate-90" : ""}`} />
               </div>
 
               {/* Accordion Body */}
@@ -50,13 +42,9 @@ const CustomProgramPLOAccordian: React.FC<CustomProgramPLOAccordianProps> = ({ P
                   openIndex === index ? "max-h-200 opacity-100" : "max-h-0 opacity-0"
                 }`}
               >
-                <ol className="list-[lower-roman] list-inside pb-5 pr-20">
-                  {section.data.map((item) => (
-                    <li key={item.id} className="py-1.5 pl-5">
-                      {item.content}
-                    </li>
-                  ))}
-                </ol>
+                <div className=" pb-5 pr-20">
+                  <div className="py-1.5 pl-5" dangerouslySetInnerHTML={{ __html: section?.data }} />
+                </div>
               </div>
 
               <hr className="text-gray-300" />
@@ -69,7 +57,6 @@ const CustomProgramPLOAccordian: React.FC<CustomProgramPLOAccordianProps> = ({ P
 };
 
 export default CustomProgramPLOAccordian;
-
 
 /*
 ----------- How To Use ------------
