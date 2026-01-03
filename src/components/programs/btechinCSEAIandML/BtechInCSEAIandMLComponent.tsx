@@ -1,4 +1,4 @@
-import { abcforALML, BtechCSEAIandMLOverviewData, counterDataForBtechinCSEAIandML, eligibilityDataforAIandML, opportunityCardDataAIML, partnerDataforAIandML, ProgramFeesAIandML, scopeData, steps, whyDataforAIML } from "../../../data/programs/btechincseai-ml-data/btechincseai-ml-data";
+import {  abcforALML, BtechCSEAIandMLOverviewData, counterDataForBtechinCSEAIandML, eligibilityDataforAIandML, opportunityCardDataAIML, partnerDataforAIandML, ProgramFeesAIandML, scopeData, steps, whyDataforAIML } from "../../../data/programs/btechincseai-ml-data/btechincseai-ml-data";
 import Counter from "../../../utils/custom/Counter";
 import CustomOverviewSection from "../../../utils/custom/CustomOverviewSection";
 import Classes from "../../../utils/styles/Global.module.css";
@@ -42,11 +42,8 @@ const BtechInCSEAIandMLComponent = () => {
                     data={whyDataforAIML}
                     renderCard={({ item }) => <WhyCardComp item={item} />}
                     bgColor="transparent"
-
-                    arrowColor="#ffb703"
                     headingColor="black"
                     descriptionColor="#e5e5e5"
-                    arrowBorderColor="#023047"
                     breakpoints={{ desktop: 4, tablet: 3, mobile: 1 }}
                 />
                 <div className={`${Classes["container"]}`}>

@@ -85,10 +85,10 @@ const FacultyOfCivilEngineering: React.FC = () => {
             data={civilfacultyData}
             renderCard={({ item }) => <CustomFacultyListCard item={item} />}
             bgImage={facilitiesBg}
-            arrowColor="#fff"
+         
             headingColor="#ffffff"
             descriptionColor="#e5e5e5"
-            arrowBorderColor="#0f4a85"
+            // arrowBorderColor="#0f4a85"
             // arrowBgColor="#fff2"
             breakpoints={{ desktop: 4, tablet: 3, mobile: 1 }}
           />
@@ -102,7 +102,7 @@ const FacultyOfCivilEngineering: React.FC = () => {
           data={civildepartmentHighlights}
           renderCard={({ item }) => <CustomDepartmentHighlightCard item={item} />}
           bgColor="#E7A615"
-          arrowColor="#000"
+         
           breakpoints={{ desktop: 3, tablet: 2, mobile: 1 }}
         />
       </div>

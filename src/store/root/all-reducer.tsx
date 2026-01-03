@@ -6,6 +6,7 @@ import { noticeSliceReducer } from "../notice/noticeSlice";
 import { programMenuReducer } from "../header/programMenuSlice";
 import { programFeesReducer } from "../program-finder/program-fees/programFeesSlice";
 import { programFlagSliceReducer } from "../program-finder/program-flag/programFlag-slice";
+import { whySrmuSectionSliceReducer } from "../program-finder/why-srmu/whySrmuSection-Slice";
 const allReducer = {
   ui: uiReducer,
   getProgramFinder: programFinderReducer,
@@ -15,5 +16,6 @@ const allReducer = {
   programMenu: programMenuReducer,
   programFees: programFeesReducer,
   getProgramByFlag: programFlagSliceReducer,
+  getWhySrmuSection: whySrmuSectionSliceReducer,
 };
 export default allReducer;

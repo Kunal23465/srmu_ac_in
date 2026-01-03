@@ -14,7 +14,7 @@ import sap from "../../../assets/images/programs/btechincseaiandml/sap-211223105
 import { FeeTableData } from "../../academics/faculty-of-civil-engineering/faculty-of-civil-engineering-data";
 
 
-import { CustomProgramPLOAccordianProps } from "../../../utils/custom/CustomProgramPLOAccordian";
+// import { CustomProgramPLOAccordianProps } from "../../../utils/custom/CustomProgramPLOAccordian";
 import { OpportunityCard } from "../../../types/opportunity-card-data-type";
 
 
@@ -57,6 +57,7 @@ import intel from "../../../assets/images/programs/btechincseaiandml/opportuniti
 import josh from "../../../assets/images/programs/btechincseaiandml/opportunities/scope/josh-technology-20052511194750-removebg-preview-22052504291754.png"
 import facebookn from "../../../assets/images/programs/btechincseaiandml/opportunities/scope/facebookn-15022411032465.png"
 import qss from "../../../assets/images/programs/btechincseaiandml/opportunities/scope/qss-technosoft-21052501502590-removebg-preview-22052504251311.png"
+import { CustomProgramPLOAccordianProps } from "../../../utils/custom/CustomProgramPLOAccordian";
 
 
 

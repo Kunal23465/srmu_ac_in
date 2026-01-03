@@ -21,7 +21,7 @@ import lnt from "../../../assets/images/programs/btechincseaiandml/lt-logo-1280x
 import wipro from "../../../assets/images/programs/btechincseaiandml/wipro-21122310564977.png"
 import sap from "../../../assets/images/programs/btechincseaiandml/sap-2112231056559.png"
 import { FeeTableData } from "../../academics/faculty-of-civil-engineering/faculty-of-civil-engineering-data";
-import { CustomProgramPLOAccordianProps } from "../../../utils/custom/CustomProgramPLOAccordian";
+// import { CustomProgramPLOAccordianProps } from "../../../utils/custom/CustomProgramPLOAccordian";
 import { ScopeData } from "../../../utils/custom/CustomCompaniesScope";
 
 
@@ -363,129 +363,129 @@ export const stepsforDataScience = [
 
 ];
 
-export const abcfordatascience: CustomProgramPLOAccordianProps = {
-  POdata: [
-    {
-      id: 1,
-      content:
-        "To impart deep technical knowledge about the field of computer science and engineering.",
-    },
-    {
-      id: 2,
-      content:
-        "To develop an understanding of computer science and engineering at different levels of abstraction including computer architecture and design, operating systems, database management, algorithms and applications.",
-    },
-    {
-      id: 3,
-      content:
-        "To aware students with a strong foundation in the field of Mathematics and basics of engineering fundamentals necessary to analyze and evaluate real world engineering problems and to further prepare them for higher studies, R&D.",
-    },
-    {
-      id: 4,
-      content:
-        "To develop life-long learning attitude among students and to make them aware about professional and social responsibility.",
-    },
-    {
-      id: 5,
-      content:
-        "To inculcate an understanding among the students for utilizing their knowledge of computer engineering and mathematical theory to solve current and future computing problems.",
-    },
-    {
-      id: 6,
-      content:
-        "To inspire leadership and professional values in the students.",
-    },
-  ],
+// export const abcfordatascience: CustomProgramPLOAccordianProps = {
+//   POdata: [
+//     {
+//       id: 1,
+//       content:
+//         "To impart deep technical knowledge about the field of computer science and engineering.",
+//     },
+//     {
+//       id: 2,
+//       content:
+//         "To develop an understanding of computer science and engineering at different levels of abstraction including computer architecture and design, operating systems, database management, algorithms and applications.",
+//     },
+//     {
+//       id: 3,
+//       content:
+//         "To aware students with a strong foundation in the field of Mathematics and basics of engineering fundamentals necessary to analyze and evaluate real world engineering problems and to further prepare them for higher studies, R&D.",
+//     },
+//     {
+//       id: 4,
+//       content:
+//         "To develop life-long learning attitude among students and to make them aware about professional and social responsibility.",
+//     },
+//     {
+//       id: 5,
+//       content:
+//         "To inculcate an understanding among the students for utilizing their knowledge of computer engineering and mathematical theory to solve current and future computing problems.",
+//     },
+//     {
+//       id: 6,
+//       content:
+//         "To inspire leadership and professional values in the students.",
+//     },
+//   ],
 
 
-  PLOdata: [
-    {
-      id: 1,
-      content:
-        "Apply possessed knowledge of core subjects of production and industrial engineering to solve different problems.",
-    },
-    {
-      id: 2,
-      content:
-        "Problem analysis: Identify, formulate, research literature, and analyze complex engineering problems reaching substantiated conclusions using first principles of mathematics, natural sciences, and engineering sciences.",
-    },
-    {
-      id: 3,
-      content:
-        "Design/development of solutions: Design solutions for complex engineering problems and design system components or processes that meet the specified needs with appropriate consideration for the public health and safety, and the cultural, societal, and environmental considerations.",
-    },
-    {
-      id: 4,
-      content:
-        "Conduct investigations of complex problems: Use research-based knowledge and research methods including design of experiments, analysis and interpretation of data, and synthesis of the information to provide valid conclusions.",
-    },
-    {
-      id: 5,
-      content:
-        "Modern tool usage: Create, select, and apply appropriate techniques, resources, and modern engineering and IT tools including prediction and modeling to complex engineering activities with an understanding of the limitations.",
-    },
-    {
-      id: 6,
-      content:
-        "The engineer and society: Apply reasoning informed by the contextual knowledge to assess societal, health, safety, legal and cultural issues and the consequent responsibilities relevant to the professional engineering practice.",
-    },
-    {
-      id: 7,
-      content:
-        "Environment and sustainability: Understand the impact of the professional engineering solutions in societal and environmental contexts, and demonstrate the knowledge of, and need for sustainable development.",
-    },
-    {
-      id: 8,
-      content:
-        "Ethics: Apply ethical principles and commit to professional ethics and responsibilities and norms of the engineering practice.",
-    },
-    {
-      id: 9,
-      content:
-        "Individual and team work: Function effectively as an individual, and as a member or leader in diverse teams, and in multidisciplinary settings.",
-    },
-    {
-      id: 10,
-      content:
-        "Communication: Communicate effectively on complex engineering activities with the engineering community and with society at large, such as, being able to comprehend and write effective reports and design documentation, make effective presentations, and give and receive clear instructions.",
-    },
-    {
-      id: 11,
-      content:
-        "Project management and finance: Demonstrate knowledge and understanding of the engineering and management principles and apply these to one’s own work, as a member and leader in a team, to manage projects and in multidisciplinary environments.",
-    },
-    {
-      id: 12,
-      content:
-        "Life-long learning: Recognize the need for, and have the preparation and ability to engage in independent and life-long learning in the broadest context of technological change.",
-    },
-  ],
+//   PLOdata: [
+//     {
+//       id: 1,
+//       content:
+//         "Apply possessed knowledge of core subjects of production and industrial engineering to solve different problems.",
+//     },
+//     {
+//       id: 2,
+//       content:
+//         "Problem analysis: Identify, formulate, research literature, and analyze complex engineering problems reaching substantiated conclusions using first principles of mathematics, natural sciences, and engineering sciences.",
+//     },
+//     {
+//       id: 3,
+//       content:
+//         "Design/development of solutions: Design solutions for complex engineering problems and design system components or processes that meet the specified needs with appropriate consideration for the public health and safety, and the cultural, societal, and environmental considerations.",
+//     },
+//     {
+//       id: 4,
+//       content:
+//         "Conduct investigations of complex problems: Use research-based knowledge and research methods including design of experiments, analysis and interpretation of data, and synthesis of the information to provide valid conclusions.",
+//     },
+//     {
+//       id: 5,
+//       content:
+//         "Modern tool usage: Create, select, and apply appropriate techniques, resources, and modern engineering and IT tools including prediction and modeling to complex engineering activities with an understanding of the limitations.",
+//     },
+//     {
+//       id: 6,
+//       content:
+//         "The engineer and society: Apply reasoning informed by the contextual knowledge to assess societal, health, safety, legal and cultural issues and the consequent responsibilities relevant to the professional engineering practice.",
+//     },
+//     {
+//       id: 7,
+//       content:
+//         "Environment and sustainability: Understand the impact of the professional engineering solutions in societal and environmental contexts, and demonstrate the knowledge of, and need for sustainable development.",
+//     },
+//     {
+//       id: 8,
+//       content:
+//         "Ethics: Apply ethical principles and commit to professional ethics and responsibilities and norms of the engineering practice.",
+//     },
+//     {
+//       id: 9,
+//       content:
+//         "Individual and team work: Function effectively as an individual, and as a member or leader in diverse teams, and in multidisciplinary settings.",
+//     },
+//     {
+//       id: 10,
+//       content:
+//         "Communication: Communicate effectively on complex engineering activities with the engineering community and with society at large, such as, being able to comprehend and write effective reports and design documentation, make effective presentations, and give and receive clear instructions.",
+//     },
+//     {
+//       id: 11,
+//       content:
+//         "Project management and finance: Demonstrate knowledge and understanding of the engineering and management principles and apply these to one’s own work, as a member and leader in a team, to manage projects and in multidisciplinary environments.",
+//     },
+//     {
+//       id: 12,
+//       content:
+//         "Life-long learning: Recognize the need for, and have the preparation and ability to engage in independent and life-long learning in the broadest context of technological change.",
+//     },
+//   ],
 
 
-  PSOdata: [
-    {
-      id: 1,
-      content:
-        "Understand and develop computer programs in the areas related to algorithms, system software, multimedia, web design, big data analytics and networking by identifying, demonstrating and analyzing the knowledge of engineering in efficient design of computer-based systems of varying complexity.",
-    },
-    {
-      id: 2,
-      content:
-        "Applying algorithmic principles, innovative Computer science and engineering design and implementation skills to propose optimal solutions to complex problems by choosing a better platform for research in emerging areas.",
-    },
-    {
-      id: 3,
-      content:
-        "Identify standard Software Engineering practices and strategies by applying software project development methods using open-source programming environment to design and evaluate a quality product for business success.",
-    },
-    {
-      id: 4,
-      content:
-        "Demonstrate and examine basic understanding of engineering fundamentals, professional/social ethics and apply mathematical foundations to design and solve computational problems.",
-    },
-  ],
+//   PSOdata: [
+//     {
+//       id: 1,
+//       content:
+//         "Understand and develop computer programs in the areas related to algorithms, system software, multimedia, web design, big data analytics and networking by identifying, demonstrating and analyzing the knowledge of engineering in efficient design of computer-based systems of varying complexity.",
+//     },
+//     {
+//       id: 2,
+//       content:
+//         "Applying algorithmic principles, innovative Computer science and engineering design and implementation skills to propose optimal solutions to complex problems by choosing a better platform for research in emerging areas.",
+//     },
+//     {
+//       id: 3,
+//       content:
+//         "Identify standard Software Engineering practices and strategies by applying software project development methods using open-source programming environment to design and evaluate a quality product for business success.",
+//     },
+//     {
+//       id: 4,
+//       content:
+//         "Demonstrate and examine basic understanding of engineering fundamentals, professional/social ethics and apply mathematical foundations to design and solve computational problems.",
+//     },
+//   ],
 
-};
+// };
 
 
 export const scopeDataForDataScience: ScopeData = {

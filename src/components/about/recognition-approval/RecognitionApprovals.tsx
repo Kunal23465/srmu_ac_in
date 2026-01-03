@@ -16,6 +16,7 @@ const RecognitionApproval: React.FC = () => {
       </div>
       <ApprovalsSlider />
       <AssociationsMemberships />
+      {/* @ts-ignore */}
       <IndustrialCollabration />
       <CustomTopFooter data={CustomTopFooterAbout} />
     </>

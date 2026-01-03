@@ -39,7 +39,7 @@ const CustomProgramOppertunitySlider: React.FC<CustomProgramOppertunitySliderPro
     infinite: false,
     slidesToShow: 4,
     slidesToScroll: 1,
-    arrows: true,
+    arrows: false,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
     responsive: [
@@ -58,7 +58,9 @@ const CustomProgramOppertunitySlider: React.FC<CustomProgramOppertunitySliderPro
           <div key={item.id} className="p-6 text-center">
             <img className="m-auto border-4 border-amber-400 hover:border-black rounded-full object-cover w-full aspect-square max-w-64" src={item.img} alt={item.course} />
 
-            <a href={item.path} className="text-xl md:text-2xl font-medium text-[#0f4a85] mt-4">{item.course}</a>
+            <a href={item.path} className="text-xl md:text-2xl font-medium text-[#0f4a85] mt-4">
+              {item.course}
+            </a>
           </div>
         ))}
       </Slider>
@@ -67,9 +69,6 @@ const CustomProgramOppertunitySlider: React.FC<CustomProgramOppertunitySliderPro
 };
 
 export default CustomProgramOppertunitySlider;
-
-
-
 
 /*
 ---------How To use-----------

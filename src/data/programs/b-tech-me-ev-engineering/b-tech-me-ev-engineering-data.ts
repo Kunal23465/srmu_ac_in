@@ -54,7 +54,7 @@ import defaultimg from "../../../assets/images/programs/btechincseaiandml/opport
 import mca from "../../../assets/images/programs/btechincseaiandml/opportunities/scope/mca.jpg"
 
 import drdo from "../../../assets/images/programs/btechincseaiandml/opportunities/scope/drdo-20122311091998.jpg"
-import { CustomProgramPLOAccordianProps } from "../../../utils/custom/CustomProgramPLOAccordian";
+// import { CustomProgramPLOAccordianProps } from "../../../utils/custom/CustomProgramPLOAccordian";
 import { ScopeData } from "../../../utils/custom/CustomCompaniesScope";
 import { OpportunityCard } from "../../../types/opportunity-card-data-type";
 
@@ -372,126 +372,126 @@ export const stepsforMEEV = [
 
 ];
 
-export const abcforME: CustomProgramPLOAccordianProps = {
-  POdata: [
-    {
-      id: 1,
-      content:
-        "To prepare under graduate students to excel in technical profession/ industry and/or higher education by providing a strong foundation in mathematics, science and Engineering.",
-    },
-    {
-      id: 2,
-      content:
-        "To support professional industrial and economic development by providing students with opportunities for an intensive learning experience and direct application of knowledge in the field of Electrical engineering.",
-    },
-    {
-      id: 3,
-      content:
-        "To stimulate students to contribute to their fields or professions and to excel them in professional ethics and leadership qualities.",
-    },
-    {
-      id: 4,
-      content:
-        "To inculcate in students, professional attitude, effective communication skills and capability to succeed in multi-disciplinary and diverse fields.",
-    },
-    {
-      id: 5,
-      content:
-        "To promote students to continue to pursue professional development, relevant to their career growth and to create enthusiasm for life-long learning.",
-    },
-  ],
+// export const abcforME: CustomProgramPLOAccordianProps = {
+//   POdata: [
+//     {
+//       id: 1,
+//       content:
+//         "To prepare under graduate students to excel in technical profession/ industry and/or higher education by providing a strong foundation in mathematics, science and Engineering.",
+//     },
+//     {
+//       id: 2,
+//       content:
+//         "To support professional industrial and economic development by providing students with opportunities for an intensive learning experience and direct application of knowledge in the field of Electrical engineering.",
+//     },
+//     {
+//       id: 3,
+//       content:
+//         "To stimulate students to contribute to their fields or professions and to excel them in professional ethics and leadership qualities.",
+//     },
+//     {
+//       id: 4,
+//       content:
+//         "To inculcate in students, professional attitude, effective communication skills and capability to succeed in multi-disciplinary and diverse fields.",
+//     },
+//     {
+//       id: 5,
+//       content:
+//         "To promote students to continue to pursue professional development, relevant to their career growth and to create enthusiasm for life-long learning.",
+//     },
+//   ],
 
 
-  PLOdata: [
-    {
-      id: 1,
-      content:
-        "Engineering knowledge: Apply the knowledge of mathematics, science, engineering fundamentals, and an engineering specialization to the solution of complex engineering problems.",
-    },
-    {
-      id: 2,
-      content:
-        "Problem analysis: Identify, formulate, research literature, and analyze complex engineering problems reaching substantiated conclusions using first principles of mathematics, natural sciences, and engineering sciences.",
-    },
-    {
-      id: 3,
-      content:
-        "Design/development of solutions: Design solutions for complex engineering problems and design system components or processes that meet the specified needs with appropriate consideration for public health and safety, and cultural, societal, and environmental considerations.",
-    },
-    {
-      id: 4,
-      content:
-        "Conduct investigations of complex problems: Use research-based knowledge and research methods including design of experiments, analysis and interpretation of data, and synthesis of information to provide valid conclusions.",
-    },
-    {
-      id: 5,
-      content:
-        "Modern tool usage: Create, select, and apply appropriate techniques, resources, and modern engineering and IT tools including prediction and modelling to complex engineering activities with an understanding of the limitations.",
-    },
-    {
-      id: 6,
-      content:
-        "The engineer and society: Apply reasoning informed by contextual knowledge to assess societal, health, safety, legal, and cultural issues and the consequent responsibilities relevant to professional engineering practice.",
-    },
-    {
-      id: 7,
-      content:
-        "Environment and sustainability: Understand the impact of professional engineering solutions in societal and environmental contexts, and demonstrate the knowledge of, and need for sustainable development.",
-    },
-    {
-      id: 8,
-      content:
-        "Ethics: Apply ethical principles and commit to professional ethics, responsibilities, and norms of engineering practice.",
-    },
-    {
-      id: 9,
-      content:
-        "Individual and team work: Function effectively as an individual, and as a member or leader in diverse teams, and in multidisciplinary settings.",
-    },
-    {
-      id: 10,
-      content:
-        "Communication: Communicate effectively on complex engineering activities with the engineering community and society at large, including writing effective reports and design documentation, making presentations, and giving and receiving clear instructions.",
-    },
-    {
-      id: 11,
-      content:
-        "Project management and finance: Demonstrate knowledge and understanding of engineering and management principles and apply these to one's own work, as a member and leader in a team, to manage projects in multidisciplinary environments.",
-    },
-    {
-      id: 12,
-      content:
-        "Life-long learning: Recognize the need for, and have the preparation and ability to engage in independent and life-long learning in the broadest context of technological change.",
-    },
-  ],
+//   PLOdata: [
+//     {
+//       id: 1,
+//       content:
+//         "Engineering knowledge: Apply the knowledge of mathematics, science, engineering fundamentals, and an engineering specialization to the solution of complex engineering problems.",
+//     },
+//     {
+//       id: 2,
+//       content:
+//         "Problem analysis: Identify, formulate, research literature, and analyze complex engineering problems reaching substantiated conclusions using first principles of mathematics, natural sciences, and engineering sciences.",
+//     },
+//     {
+//       id: 3,
+//       content:
+//         "Design/development of solutions: Design solutions for complex engineering problems and design system components or processes that meet the specified needs with appropriate consideration for public health and safety, and cultural, societal, and environmental considerations.",
+//     },
+//     {
+//       id: 4,
+//       content:
+//         "Conduct investigations of complex problems: Use research-based knowledge and research methods including design of experiments, analysis and interpretation of data, and synthesis of information to provide valid conclusions.",
+//     },
+//     {
+//       id: 5,
+//       content:
+//         "Modern tool usage: Create, select, and apply appropriate techniques, resources, and modern engineering and IT tools including prediction and modelling to complex engineering activities with an understanding of the limitations.",
+//     },
+//     {
+//       id: 6,
+//       content:
+//         "The engineer and society: Apply reasoning informed by contextual knowledge to assess societal, health, safety, legal, and cultural issues and the consequent responsibilities relevant to professional engineering practice.",
+//     },
+//     {
+//       id: 7,
+//       content:
+//         "Environment and sustainability: Understand the impact of professional engineering solutions in societal and environmental contexts, and demonstrate the knowledge of, and need for sustainable development.",
+//     },
+//     {
+//       id: 8,
+//       content:
+//         "Ethics: Apply ethical principles and commit to professional ethics, responsibilities, and norms of engineering practice.",
+//     },
+//     {
+//       id: 9,
+//       content:
+//         "Individual and team work: Function effectively as an individual, and as a member or leader in diverse teams, and in multidisciplinary settings.",
+//     },
+//     {
+//       id: 10,
+//       content:
+//         "Communication: Communicate effectively on complex engineering activities with the engineering community and society at large, including writing effective reports and design documentation, making presentations, and giving and receiving clear instructions.",
+//     },
+//     {
+//       id: 11,
+//       content:
+//         "Project management and finance: Demonstrate knowledge and understanding of engineering and management principles and apply these to one's own work, as a member and leader in a team, to manage projects in multidisciplinary environments.",
+//     },
+//     {
+//       id: 12,
+//       content:
+//         "Life-long learning: Recognize the need for, and have the preparation and ability to engage in independent and life-long learning in the broadest context of technological change.",
+//     },
+//   ],
 
 
 
-  PSOdata: [
-    {
-      id: 1,
-      content:
-        "To analyze and understand the impact of engineering solutions on society and utilize multidisciplinary skills to work on tasks that contribute to the social and economic development of the community.",
-    },
-    {
-      id: 2,
-      content:
-        "Ability to identify, formulate, and solve complex engineering problems by applying the knowledge gained from various subjects of Electrical Engineering.",
-    },
-    {
-      id: 3,
-      content:
-        "Ability to develop and apply new knowledge using modern engineering tools, software, and equipment to analyze engineering problems, create awareness about non-conventional energy resources, and address the challenges related to the depletion of conventional energy sources.",
-    },
-    {
-      id: 4,
-      content:
-        "Ability to enhance techniques and skills required to succeed in competitive examinations such as GATE, GRE, TOEFL, and GMAT, while also developing technical, communication, and entrepreneurial skills for contributing to small-scale industries.",
-    },
-  ]
+//   PSOdata: [
+//     {
+//       id: 1,
+//       content:
+//         "To analyze and understand the impact of engineering solutions on society and utilize multidisciplinary skills to work on tasks that contribute to the social and economic development of the community.",
+//     },
+//     {
+//       id: 2,
+//       content:
+//         "Ability to identify, formulate, and solve complex engineering problems by applying the knowledge gained from various subjects of Electrical Engineering.",
+//     },
+//     {
+//       id: 3,
+//       content:
+//         "Ability to develop and apply new knowledge using modern engineering tools, software, and equipment to analyze engineering problems, create awareness about non-conventional energy resources, and address the challenges related to the depletion of conventional energy sources.",
+//     },
+//     {
+//       id: 4,
+//       content:
+//         "Ability to enhance techniques and skills required to succeed in competitive examinations such as GATE, GRE, TOEFL, and GMAT, while also developing technical, communication, and entrepreneurial skills for contributing to small-scale industries.",
+//     },
+//   ]
 
 
-};
+// };
 
 
 export const scopeDataForME: ScopeData = {

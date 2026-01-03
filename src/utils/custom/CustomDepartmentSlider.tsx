@@ -1,194 +1,160 @@
-import React, { useState, useEffect, useRef, TouchEvent } from "react";
+import React, { useRef, useState, useEffect } from "react";
+import Slider from "react-slick";
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import Classes from "../../utils/styles/Global.module.css";
-import { MdKeyboardArrowLeft, MdKeyboardArrowRight} from "react-icons/md";
 
+type Breakpoints = {
+  desktop: number;
+  tablet: number;
+  mobile: number;
+};
 
-export interface SliderRenderProps<T> {
-    item: T;
-    index: number;
-}
+type CustomDepartmentSliderProps<T> = {
+  heading?: string;
+  description?: string;
+  data: T[];
+  renderCard: ({ item, index }: { item: T; index: number }) => React.ReactNode;
 
+  bgColor?: string;
+  bgImage?: string;
 
+  headingColor?: string;
+  descriptionColor?: string;
 
+  breakpoints: Breakpoints;
+};
 
-export interface SliderProps<T> {
-    data: T[];
-    renderCard: (props: SliderRenderProps<T>) => React.ReactNode;
+const CustomDepartmentSlider = <T,>({
+  heading,
+  description,
+  data,
+  renderCard,
+  bgColor = "transparent",
+  bgImage,
+  headingColor = "#000",
+  descriptionColor = "#666",
+  breakpoints,
+}: CustomDepartmentSliderProps<T>) => {
+  const sliderRef = useRef<Slider | null>(null);
 
-    heading: string;
-    description?: string;
+  const [isSliding, setIsSliding] = useState(false);
+  const [currentSlidesToShow, setCurrentSlidesToShow] = useState(breakpoints.desktop);
 
-    bgColor?: string;
-    bgImage?: string;
+  /** 🔹 Detect screen size on load */
+  useEffect(() => {
+    const updateSlides = () => {
+      const width = window.innerWidth;
 
-    /** NEW PROPS */
-    headingColor?: string;
-    descriptionColor?: string;
-
-    arrowColor?: string;          // icon
-    arrowBorderColor?: string;    // border
-    arrowBgColor?: string;        // background color
-
-    breakpoints?: {
-        desktop: number;
-        tablet: number;
-        mobile: number;
-    };
-}
-function CustomDepartmentSlider<T>({
-    data,
-    renderCard,
-    heading,
-    description,
-
-    bgColor = "#ffffff",
-    bgImage,
-
-    /** NEW DEFAULTS */
-    headingColor = "#000000",
-    descriptionColor = "#212529",
-
-    arrowColor = "#000",
-    arrowBorderColor = "#000",
-    arrowBgColor = "transparent",
-
-    breakpoints = { desktop: 3, tablet: 2, mobile: 1 },
-}: SliderProps<T>) {
-
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const [cardsPerView, setCardsPerView] = useState(breakpoints.desktop);
-
-    const trackRef = useRef<HTMLDivElement>(null);
-
-    const handleResize = () => {
-        if (window.innerWidth <= 600) setCardsPerView(breakpoints.mobile);
-        else if (window.innerWidth <= 1024) setCardsPerView(breakpoints.tablet);
-        else setCardsPerView(breakpoints.desktop);
+      if (width < 640) {
+        setCurrentSlidesToShow(breakpoints.mobile);
+      } else if (width < 1024) {
+        setCurrentSlidesToShow(breakpoints.tablet);
+      } else {
+        setCurrentSlidesToShow(breakpoints.desktop);
+      }
     };
 
-    useEffect(() => {
-        handleResize();
-        window.addEventListener("resize", handleResize);
-        return () => window.removeEventListener("resize", handleResize);
-    }, []);
+    updateSlides();
+    window.addEventListener("resize", updateSlides);
 
-    const handleNext = () => {
-        if (currentIndex < data.length - cardsPerView) setCurrentIndex(p => p + 1);
-    };
+    return () => window.removeEventListener("resize", updateSlides);
+  }, [breakpoints]);
 
-    const handlePrev = () => {
-        if (currentIndex > 0) setCurrentIndex(p => p - 1);
-    };
+  const infinite = data.length > currentSlidesToShow;
 
-    const startX = useRef(0);
-    const endX = useRef(0);
+  const settings = {
+    dots: false,
+    arrows: false,
+    infinite,
+    speed: 600,
+    slidesToShow: currentSlidesToShow,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3500,
+    pauseOnHover: true,
 
-    const onTouchStart = (e: TouchEvent<HTMLDivElement>) =>
-        (startX.current = e.touches[0].clientX);
+    beforeChange: () => setIsSliding(true),
+    afterChange: () => setIsSliding(false),
 
-    const onTouchMove = (e: TouchEvent<HTMLDivElement>) =>
-        (endX.current = e.touches[0].clientX);
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: breakpoints.tablet,
+        },
+      },
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: breakpoints.mobile,
+        },
+      },
+    ],
+  };
 
-    const onTouchEnd = () => {
-        const distance = startX.current - endX.current;
-        if (distance > 50) handleNext();
-        if (distance < -50) handlePrev();
-    };
+  const prev = () => sliderRef.current?.slickPrev();
+  const next = () => sliderRef.current?.slickNext();
 
-    const isAtStart = currentIndex === 0;
-    const isAtEnd = currentIndex >= data.length - cardsPerView;
-
-    return (
-      <div
-        className=" py-22"
-        style={{
-          background: bgImage ? `url(${bgImage}) center/cover` : bgColor,
-        }}
-      >
-        {/* ===== TOP SECTION ===== */}
-        <div
-          className={`w-full mb-8 ${Classes["container"]}
-                flex flex-col items-start
-                md:flex-row md:justify-between md:items-start`}
-        >
-          {/* LEFT SECTION */}
-          <div className="px-3">
-            <h1 className="text-[28px] lg:text-[3.125rem] fw500" style={{ color: headingColor }}>
+  return (
+    <section
+      className="py-16"
+      style={{
+        backgroundColor: bgColor,
+        backgroundImage: bgImage ? `url(${bgImage})` : undefined,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      <div className={`${Classes["container"]} px-4`}>
+        {/* 🔥 Heading + Arrows */}
+        <div className="flex items-center justify-between mb-6">
+          {heading && (
+            <h2 className="font-semibold" style={{ color: headingColor, fontSize: "2.5rem" }}>
               {heading}
-            </h1>
+            </h2>
+          )}
 
-            {description && (
-              <p className="mt-2 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px]" style={{ color: descriptionColor }}>
-                {description}
-              </p>
-            )}
-          </div>
-
-          {/* RIGHT SECTION – ARROWS */}
-          <div
-            className="
-        flex gap-3 px-3
-        mt-4
-        flex-row              /* always keep arrows in a row */
-        md:mt-0 md:justify-end
-    "
-          >
-            {/* LEFT ARROW */}
+          <div className="flex gap-4">
             <button
-              onClick={handlePrev}
-              disabled={isAtStart}
-              className={`border-2 w-12 h-12 flex items-center justify-center text-lg transition font-semibold ${
-                isAtStart ? "opacity-40 cursor-not-allowed" : "hover:cursor-pointer"
-              }`}
-              style={{
-                borderColor: arrowBorderColor,
-                color: arrowColor,
-                background: arrowBgColor,
-              }}
+              onClick={prev}
+              disabled={!infinite || isSliding}
+              className={`w-12 h-12 flex items-center justify-center border-2 border-gray-300 text-gray-800 bg-white rounded-full transition
+                ${!infinite || isSliding ? "opacity-40 cursor-not-allowed" : "hover:bg-gray-100"}`}
             >
-              <MdKeyboardArrowLeft size="26" />
+              <MdKeyboardArrowLeft size={26} />
             </button>
 
-            {/* RIGHT ARROW */}
             <button
-              onClick={handleNext}
-              disabled={isAtEnd}
-              className={`border-2 w-12 h-12 flex items-center justify-center text-lg transition font-semibold ${
-                isAtEnd ? "opacity-40 cursor-not-allowed" : "hover:cursor-pointer"
-              }`}
-              style={{
-                borderColor: arrowBorderColor,
-                color: arrowColor,
-                background: arrowBgColor,
-              }}
+              onClick={next}
+              disabled={!infinite || isSliding}
+              className={`w-12 h-12 flex items-center justify-center border-2 border-gray-300 text-gray-800 bg-white rounded-full transition
+                ${!infinite || isSliding ? "opacity-40 cursor-not-allowed" : "hover:bg-gray-100"}`}
             >
-              <MdKeyboardArrowRight size="26" />
+              <MdKeyboardArrowRight size={26} />
             </button>
           </div>
         </div>
 
-        {/* ===== SLIDER ===== */}
-        <div className={`overflow-hidden w-full ${Classes["container"]}`} onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}>
-          <div
-            ref={trackRef}
-            className="flex transition-transform duration-700"
-            style={{
-              width: `${(100 / cardsPerView) * data.length}%`,
-              transform: `translateX(-${(100 / cardsPerView) * currentIndex}%)`,
-            }}
-          >
-            {data.map((item, index) => (
-              <div key={index} className="p-3" style={{ width: `${100 / cardsPerView}%` }}>
-                {renderCard({ item, index })}
-              </div>
-            ))}
-          </div>
-        </div>
+        {/* Description */}
+        {description && (
+          <p className="mb-10 max-w-4xl" style={{ color: descriptionColor }}>
+            {description}
+          </p>
+        )}
+
+        {/* Slider */}
+        <Slider ref={sliderRef} {...settings}>
+          {data.map((item, index) => (
+            <div key={index} className="px-3">
+              {renderCard({ item, index })}
+            </div>
+          ))}
+        </Slider>
       </div>
-    );
-}
+    </section>
+  );
+};
 
 export default CustomDepartmentSlider;
-
-
-
