@@ -85,7 +85,7 @@ export const footerData = {
     {
       id: 0,
       title: "Our Institutes",
-      path: "/academics/institutes-info",
+      path: "/academics",
     },
     {
       id: 1,
@@ -439,7 +439,7 @@ const Footer: React.FC = () => {
       {/* Bottom-Footer */}
       <div className="w-full bg-[#0f4a85] py-4">
         <div className={`${Classes["container"]}`}>
-          <div className="flex justify-between items-center">
+          <div className=" pb-10 sm:pb-0 flex justify-between gap-5 flex-wrap items-center">
             <div className="text-sm font-medium text-white">Copyright © 2025 Shri Ramswaroop Memorial University</div>
             <div>
               <ul className="flex gap-x-7 items-center text-white font-medium text-sm list-none!">

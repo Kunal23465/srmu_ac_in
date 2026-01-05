@@ -62,7 +62,7 @@ const TestimonialSlider = () => {
   };
 
   const settings = {
-    dots: false,
+    dots: true,
     infinite: true,
     speed: 600,
     slidesToShow: getSlidesToShow(),

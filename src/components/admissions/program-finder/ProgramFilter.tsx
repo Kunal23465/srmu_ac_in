@@ -4,7 +4,7 @@ import { FaArrowRightLong } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { ProgramData } from "../../../store/program-finder/programFinder-slice";
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
-
+import { GoSearch } from "react-icons/go";
 interface PropsTypes {
   data: ProgramData[];
   programTypeOptions: any[];
@@ -76,17 +76,19 @@ const ProgramFilter: React.FC<PropsTypes> = ({
               </option>
             ))}
           </select>
-
-          <input
-            type="text"
-            placeholder="Search Course"
-            className="border p-2 rounded w-full md:w-1/3 bg-white"
-            value={searchTerm}
-            onChange={(e) => {
-              onSearchChange(e.target.value);
-              setVisibleCount(5);
-            }}
-          />
+          <div className="relative w-full md:w-1/3">
+            <input
+              type="text"
+              placeholder="Search Course"
+              className="border p-2 rounded w-full  bg-white placeholder:text-black"
+              value={searchTerm}
+              onChange={(e) => {
+                onSearchChange(e.target.value);
+                setVisibleCount(5);
+              }}
+            />
+            <GoSearch color="#FFB703" size={22} className="absolute top-2 right-2" />
+          </div>
         </div>
       </div>
 

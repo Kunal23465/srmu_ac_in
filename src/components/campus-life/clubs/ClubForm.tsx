@@ -82,11 +82,11 @@ const ClubForm: React.FC = () => {
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
                             value={formik.values[field.name as keyof typeof formik.values]}
-                            className="w-full p-3 rounded-lg bg-white text-black focus:outline-yellow-400"
+                            className="w-full p-3 rounded-lg bg-white text-black  focus:outline-yellow-400"
                         />
                         {formik.touched[field.name as keyof typeof formik.touched] &&
                             formik.errors[field.name as keyof typeof formik.errors] && (
-                                <p className="text-red-300 text-sm mt-1">
+                                <p className="text-[#ff0000] text-sm mt-1">
                                     {formik.errors[field.name as keyof typeof formik.errors]}
                                 </p>
                             )}
@@ -102,7 +102,7 @@ const ClubForm: React.FC = () => {
                         value={formik.values.year}
                         className="w-full p-3 rounded-lg bg-white text-black focus:outline-yellow-400"
                     >
-                        <option value="">Select Year</option>
+                        <option className="text-red-500!" value="">Select Year</option>
                         {years.map((y) => (
                             <option key={y} value={y}>
                                 {y}
@@ -111,7 +111,7 @@ const ClubForm: React.FC = () => {
                     </select>
 
                     {formik.touched.year && formik.errors.year && (
-                        <p className="text-red-300 text-sm mt-1">{formik.errors.year}</p>
+                        <p className="text-[#ff0000] text-sm mt-1">{formik.errors.year}</p>
                     )}
                 </div>
 
@@ -133,7 +133,7 @@ const ClubForm: React.FC = () => {
                         />
                         {formik.touched[field.name as keyof typeof formik.touched] &&
                             formik.errors[field.name as keyof typeof formik.errors] && (
-                                <p className="text-red-300 text-sm mt-1">
+                                <p className="text-[#ff0000] text-sm mt-1">
                                     {formik.errors[field.name as keyof typeof formik.errors]}
                                 </p>
                             )}
@@ -162,7 +162,7 @@ const ClubForm: React.FC = () => {
 
 
                     {formik.touched.club && formik.errors.club && (
-                        <p className="text-red-300 text-sm mt-1">
+                        <p className="text-[#ff0000] text-sm mt-1">
                             {formik.errors.club as string}
                         </p>
                     )}

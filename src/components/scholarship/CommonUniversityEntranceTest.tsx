@@ -8,8 +8,11 @@ const CommonUniversityEntranceTest: React.FC = () => {
       <h1 className="text-2xl sm:text-5xl pb-2 sm:pb-15 font-medium">Common University Entrance Test</h1>
       <div className="flex flex-col sm:flex-row justify-between gap-6">
         <div className="w-full sm:w-xl">
-          <p className="text-xl sm:text-2xl font-medium uppercase pb-2 sm:pb-5 ">APPLY FOR 2026</p>
-          <a href="\online-admission" className="cursor-pointer text-white font-medium bg-[#0f4a85] border border-transparent transition-colors duration-500 hover:border-black hover:text-black hover:bg-white px-6 lg:px-8 py-3 lg:py-4 rounded-xl">
+          <p className="text-xl sm:text-2xl font-medium uppercase pb-5 sm:pb-10 ">APPLY FOR 2026</p>
+          <a
+            href="\online-admission"
+            className="cursor-pointer text-white font-medium bg-[#0f4a85] border border-transparent transition-colors duration-500 hover:border-black hover:text-black hover:bg-white px-6 lg:px-8 py-3 lg:py-4 rounded-xl"
+          >
             APPLY NOW
           </a>
         </div>

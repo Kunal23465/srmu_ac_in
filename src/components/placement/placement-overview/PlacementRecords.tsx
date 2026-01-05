@@ -11,8 +11,7 @@ const PlacementRecords: React.FC = () => {
   const [activeYear, setActiveYear] = useState("2023");
   const sliderRef = useRef<Slider | null>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 0);
-
+  const [windowWidth, setWindowWidth] = useState(typeof window !== "undefined" ? window.innerWidth : 0);
 
   const students = placementOverviewplacementData[activeYear] || [];
   const totalSlides = Math.ceil(students.length / 5);
@@ -22,8 +21,8 @@ const PlacementRecords: React.FC = () => {
       setWindowWidth(window.innerWidth);
     };
 
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   // Function to determine slidesToShow based on window width
@@ -56,7 +55,7 @@ const PlacementRecords: React.FC = () => {
     speed: 600,
     slidesToShow: getSlidesToShow(),
     slidesToScroll: 1,
-  centerMode: false, // Changed from shouldCenterMode() to false
+    centerMode: false, // Changed from shouldCenterMode() to false
     centerPadding: "0px",
     arrows: shouldShowArrows(),
     beforeChange: (_: number, next: number) => setCurrentSlide(next),
@@ -94,7 +93,7 @@ const PlacementRecords: React.FC = () => {
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
-         centerMode: false, // Turn off centerMode
+          centerMode: false, // Turn off centerMode
           arrows: true,
         },
       },
@@ -107,7 +106,6 @@ const PlacementRecords: React.FC = () => {
           arrows: true,
         },
       },
-
     ],
   };
 
@@ -167,22 +165,23 @@ const PlacementRecords: React.FC = () => {
           {students.map((stu) => (
             <div key={stu.id} className="px-2">
               <div className="w-full rounded-xl border border-white group hover:bg-white transition-all duration-500 py-6 px-4 h-[425px] sm:h-[340px] md:h-[380px] lg:h-[340px] text-center">
-                <div className="min-h-[170px]">
+                <div className="min-h-[230px]">
                   <img src={stu.image} alt={stu.name} className="w-20 h-20 rounded-full mx-auto mb-3 object-cover" />
 
                   <h4 className=" lg:text-[19px] md:text-[17.82px] sm:text-[16.632px] text-[16.632px] text-white group-hover:text-black font-semibold">{stu.name}</h4>
                   <p className="lg:text-[15px] md:text-[14px] sm:text-[13.132px] text-[13.132px]  text-white group-hover:text-black mt-1">{stu.degree}</p>
                 </div>
 
-                <div className="mt-10 border border-gray-500"></div>
+                {/* <div className="mt-10 border border-gray-500"></div> */}
+                <div className=" border-t-2 border-gray-500">
+                  <div className="mt-4 flex justify-center">
+                    <img src={stu.companyLogo} alt="Company Logo" className="w-full max-w-[100px] object-contain" />
+                  </div>
 
-                <div className="mt-4 flex justify-center">
-                  <img src={stu.companyLogo} alt="Company Logo" className="h-6 object-contain" />
+                  <p className="mt-2 text-[14px] md:text-[13.125px] sm:text-[12.25px] text-white group-hover:text-black">
+                    Package: <span className="font-semibold">{stu.package}</span>
+                  </p>
                 </div>
-
-                <p className="mt-2 text-[14px] md:text-[13.125px] sm:text-[12.25px] text-white group-hover:text-black">
-                  Package: <span className="font-semibold">{stu.package}</span>
-                </p>
               </div>
             </div>
           ))}

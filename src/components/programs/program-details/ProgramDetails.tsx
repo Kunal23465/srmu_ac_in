@@ -5,7 +5,6 @@ import {
   partnerDataforAIandML,
   scopeData,
   steps,
-  whyDataforAIML,
 } from "../../../data/programs/btechincseai-ml-data/btechincseai-ml-data";
 import Counter from "../../../utils/custom/Counter";
 import Classes from "../../../utils/styles/Global.module.css";
@@ -72,7 +71,7 @@ const ProgramDetails = () => {
         <CustomDepartmentSlider
           heading="Why SRMU?"
           description=""
-          data={whyDataforAIML}
+          data={whySrmuData}
           renderCard={({ item }) => <WhyCardComp item={item} />}
           bgColor="transparent"
           headingColor="black"

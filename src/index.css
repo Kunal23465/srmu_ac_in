@@ -1741,6 +1741,10 @@ section .card-color img {
   background-color: #fff;
 }
 
+.notable .slick-dots {
+  bottom: 0 !important;
+}
+
 .hidden-dot {
   display: none;
 }
@@ -1758,6 +1762,7 @@ section .card-color img {
   background-image: url(../src/assets/images/placements/placement-overview/placement-overview.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
 }
 
 .placement-record-bg {
