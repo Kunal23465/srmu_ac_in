@@ -1,68 +1,38 @@
-name: Deploy React App for srmuacin to Ubuntu dev Server 10.8.20.32
+name: Deploy Srmu_ac_in UI
+
 on:
   push:
-    branches: [ Dev ]
+    branches:
+      - Dev
   pull_request:
-    branches: [ Dev ]
+    branches:
+      - Dev
 
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-latest
+    runs-on: dev   # 👈 self-hosted runner label
 
     steps:
-      # 1. Checkout code
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # 2. Setup Node.js with caching
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
 
-      # 3. Install dependencies
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --legacy-peer-deps
 
-      # 4. Auto-install matching Vitest coverage dependency
-      - name: Install matching Vitest coverage dependency
-        run: |
-          VITEST_VERSION=$(node -p "require('./package.json').devDependencies.vitest || require('./package.json').dependencies.vitest")
-          echo "Detected Vitest version: $VITEST_VERSION"
-
-          if [[ $VITEST_VERSION == 3* ]]; then
-            echo "Installing @vitest/coverage-v8@3.x to match Vitest v3..."
-            npm install -D @vitest/coverage-v8@3
-          else
-            echo "Installing latest @vitest/coverage-v8 for Vitest v4+..."
-            npm install -D @vitest/coverage-v8@latest
-          fi
-
-      # 5. Run Vitest with coverage (non-blocking in CI)
-      - name: Run Vitest tests with coverage
-        run: |
-          npx vitest run --coverage || echo "Vitest tests failed or coverage issue, skipping deployment..."
-
-      # 6. Build React app
       - name: Build React app
         run: npm run build
 
-      # 7. Setup SSH key
-      - name: Setup SSH key
+      - name: Deploy build to Nginx directory
         if: github.event_name == 'push'
         run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/private_key
-          chmod 600 ~/.ssh/private_key
-          ssh-keyscan -p 228 -H 103.176.170.234 >> ~/.ssh/known_hosts
+           rm -rf /var/www/vhost/srmuacin/*
+           cp -R dist/* /var/www/vhost/srmuacin/
 
-      # 8. Deploy build to server
-      - name: Deploy build to server
+      - name: Reload Nginx
         if: github.event_name == 'push'
-        run: |
-          scp -i ~/.ssh/private_key -P 228 -r dist/* ubuntu@103.176.170.234:/home/ubuntu/srmuac/
-          ssh -i ~/.ssh/private_key -p 228 ubuntu@103.176.170.234 << 'ENDSSH'
-            sudo rsync -av --delete /home/ubuntu/srmuac/ /var/www/vhost/srmuacin/
-            sudo systemctl restart nginx
-          ENDSSH
+        run: systemctl reload nginx
