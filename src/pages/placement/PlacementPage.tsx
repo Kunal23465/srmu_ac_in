@@ -1,16 +1,11 @@
-import React from 'react'
-import { Outlet, useLocation } from 'react-router-dom'
-import PlacementOverview from '../../components/placement/placement-overview/PlacementOverview'
+import React from "react";
+import { Outlet, useLocation } from "react-router-dom";
+import PlacementOverview from "../../components/placement/placement-overview/PlacementOverview";
 
 const PlacementPage: React.FC = () => {
-  const location = useLocation()
+  const location = useLocation();
 
-  return (
-    <>
-      {location.pathname == "/placements" ? <PlacementOverview /> :
-        <Outlet />}
-    </>
-  )
-}
+  return <>{location.pathname == "/placements" ? <PlacementOverview /> : <Outlet />}</>;
+};
 
-export default PlacementPage
+export default PlacementPage;

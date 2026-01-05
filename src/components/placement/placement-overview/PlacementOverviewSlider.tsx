@@ -124,7 +124,7 @@ const OurGoal: React.FC<Props> = ({ items }) => {
           </Slider>
 
           <div className="flex justify-center gap-2 mt-4">
-            {Array.from({ length: totalDots }).map((_, i) => (
+            {Array.from({ length: totalDots+1 }).map((_, i) => (
               <button
                 key={i}
                 onClick={() => sliderRef.current?.slickGoTo(i)}

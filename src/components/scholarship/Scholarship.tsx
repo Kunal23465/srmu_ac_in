@@ -2,7 +2,7 @@ import React from "react";
 import Classes from "../../utils/styles/Global.module.css";
 import ScholarshipOverviewSection from "./ScholarshipOverviewSection";
 import { scholarshipData, ScholarshipTopFooterData } from "../../data/admissions/scholarship/scholarship-data";
-import BGImg from "../../assets/images/admissions/overview/placement-records-bg.jpg";
+import BGImg from "../../assets/images/admissions/overview/banner-scholorship.jpeg";
 import CustomTabs from "../../utils/custom/CustomTabs";
 import CommonUniversityEntranceTest from "./CommonUniversityEntranceTest";
 import NationalScoreBasedScholarship from "./NationalScoreBasedScholarship";
@@ -43,7 +43,7 @@ const Scholarship: React.FC = () => {
       <div className={`${Classes["container"]}`}>
         <ScholarshipOverviewSection data={scholarshipData} />
       </div>
-      <div className="text-white bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${BGImg})` }}>
+      <div className="text-white bg-cover bg-no-repeat" style={{ backgroundImage: `url(${BGImg})` }}>
         <div className={`${Classes["container"]}`}>
           <h1 className="text-[28px] lg:text-[3.125rem] fw500 pt-10 sm:pt-20 pb-3 text-center">Scholarship</h1>
           <p className="ttext-[15px] lg:text-[16px] md:text-[15px] sm:text-[15px] text-center pb-38">

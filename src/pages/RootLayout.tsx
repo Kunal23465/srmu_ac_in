@@ -57,7 +57,7 @@ const [hovered, setHovered] = useState<number | null>(null);
         href="https://wa.me/9120007948"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-32 md:bottom-23 left-6 md:left-9 z-50 rounded-full shadow-lg hover:scale-110 transition-all duration-300"
+        className="fixed bottom-32 md:bottom-23 left-6 md:left-9 z-9999 rounded-full shadow-lg hover:scale-110 transition-all duration-300"
       >
         <img src={whatsapp} className="w-14 h-14" />
       </a>
@@ -122,7 +122,7 @@ const [hovered, setHovered] = useState<number | null>(null);
       {/* ============= RIGHT SIDE SLIDERS (SHOW ON SCROLL) ============= */}
       <div
         className={`
-          w-full sm:w-auto fixed bottom-0 sm:top-1/2 sm:-right-[58px] flex sm:flex sm:flex-col sm:gap-y-[124px] sm:-translate-y-1/2 transition-all duration-500 ease-in-out ${showRightBar ? "sm:translate-x-0" : "sm:translate-x-full"}
+          w-full sm:w-auto z-9999 fixed bottom-0 sm:top-1/2 sm:-right-[58px] flex sm:flex sm:flex-col sm:gap-y-[124px] sm:-translate-y-1/2 transition-all duration-500 ease-in-out ${showRightBar ? "sm:translate-x-0" : "sm:translate-x-full"}
   `}
       >
       {/* Admission Enquiry */}

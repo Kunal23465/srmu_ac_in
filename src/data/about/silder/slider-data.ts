@@ -64,8 +64,7 @@ export const ourGoalsData: OurGoals[] = [
   {
     title: "Goal One",
     subtitle: "TO CREATE CORPORATE READY PROFESSIONALS.",
-    description:
-      "We create opportunities for students to gain practical, real-world experience at SRMU, continuously refining our syllabus to align with industry demands",
+    description: "We create opportunities for students to gain practical, real-world experience at SRMU, continuously refining our syllabus to align with industry demands",
   },
   {
     title: "Goal Two",

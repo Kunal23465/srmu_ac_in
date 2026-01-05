@@ -31,9 +31,6 @@ interface CustomTabsProps {
   alignTabs?: "start" | "center" | "end" | "between" | "around" | "evenly";
 }
 
-
-
-
 const CustomTabs = ({
   items,
   defaultActiveKey,
@@ -58,12 +55,10 @@ const CustomTabs = ({
   /**  Default value */
   pillContainerBgColor = "#f1f5f9",
 
-  alignTabs
+  alignTabs,
 }: CustomTabsProps) => {
   const isControlled = controlledKey !== undefined;
-  const [internalKey, setInternalKey] = useState(
-    defaultActiveKey || items[0]?.key
-  );
+  const [internalKey, setInternalKey] = useState(defaultActiveKey || items[0]?.key);
 
   const justifyMap: Record<string, string> = {
     start: "flex-start",
@@ -106,10 +101,7 @@ const CustomTabs = ({
         `}
         style={{
           justifyContent: alignTabs ? justifyMap[alignTabs] : "flex-start",
-          borderBottom:
-            variant === "underline"
-              ? `1px solid ${fullWidthUnderlineColor}`
-              : "none",
+          borderBottom: variant === "underline" ? `1px solid ${fullWidthUnderlineColor}` : "none",
 
           /**  Apply dynamic pill bg */
           background: variant === "pill" ? pillContainerBgColor : "transparent",
@@ -122,42 +114,27 @@ const CustomTabs = ({
             <div
               key={tab.key}
               ref={(el) => (tabRefs.current[index] = el)}
-              className={`tab-item block ${variant === "underline"} relative ${isActive ? "after:content-['']  after:absolute  after:w-full after:h-1   after:bg-[var(--underlineColor)] after:left-0 after:-bottom-[11px]" : ""}`}
+              className={`tab-item block ${variant === "underline"} relative ${
+                isActive ? "after:content-['']  after:absolute  after:w-full after:h-1   after:bg-[var(--underlineColor)] after:left-0 after:-bottom-[11px]" : ""
+              }`}
               onClick={() => handleClick(tab.key)}
-
               style={{
                 // @ts-ignore
                 "--underlineColor": activeUnderlineColor,
                 color: isActive ? activeTextColor : inactiveTextColor,
-                backgroundColor:
-                  variant === "underline"
-                    ? "transparent"
-                    : isActive
-                      ? activeBgColor
-                      : inactiveBgColor,
-                borderColor:
-                  variant === "pill"
-                    ? "transparent"
-                    : variant === "underline"
-                      ? "transparent"
-                      : isActive
-                        ? activeBorderColor
-                        : inactiveBorderColor,
+                backgroundColor: variant === "underline" ? "transparent" : isActive ? activeBgColor : inactiveBgColor,
+                borderColor: variant === "pill" ? "transparent" : variant === "underline" ? "transparent" : isActive ? activeBorderColor : inactiveBorderColor,
               }}
               onMouseEnter={(e) => {
-                if (variant === "pill") return;   //  disable hover for pill
+                if (variant === "pill") return; //  disable hover for pill
                 e.currentTarget.style.color = hoverTextColor;
               }}
               onMouseLeave={(e) => {
-                if (variant === "pill") return;   //  disable hover for pill
-                e.currentTarget.style.color = isActive
-                  ? activeTextColor
-                  : inactiveTextColor;
+                if (variant === "pill") return; //  disable hover for pill
+                e.currentTarget.style.color = isActive ? activeTextColor : inactiveTextColor;
               }}
             >
-              <div className="text-nowrap w-full  ">
-                {tab.label}
-              </div>
+              <div className="text-nowrap w-full  ">{tab.label}</div>
             </div>
           );
         })}
@@ -171,9 +148,7 @@ const CustomTabs = ({
         )} */}
       </div>
 
-      <div className="tabs-content">
-        {items.find((t) => t.key === currentKey)?.content}
-      </div>
+      <div className="tabs-content">{items.find((t) => t.key === currentKey)?.content}</div>
 
       <style>
         {`
@@ -192,8 +167,8 @@ const CustomTabs = ({
         .tab-item {
           cursor: pointer;
           font-weight: 500;
-          font-size: 17.82px;
-          padding: 8px 14px;
+          font-size: 16px;
+          padding: 8px 2px;
           transition: 0.2s;
           border-radius: 6px;
           border: 1px solid transparent;
