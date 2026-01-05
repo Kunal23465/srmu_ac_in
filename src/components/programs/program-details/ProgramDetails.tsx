@@ -107,7 +107,9 @@ const ProgramDetails = () => {
       <div className={`${Classes["container"]}`}>
         <CustomProgramOppertunitySlider data={opportunityCardDataAIML} />
       </div>
+      
       <EnquiryForm />
+
       <CustomTopFooter data={CustomTopFooterData1} />
     </div>
   );
