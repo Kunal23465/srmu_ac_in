@@ -107,19 +107,54 @@ import acres99 from "../../assets/images/placements/placement-overview/placement
 import hdfcLife from "../../assets/images/placements/placement-overview/placement-records/logos/hdfc-life.png";
 import airtel from "../../assets/images/placements/placement-overview/placement-records/logos/airtel.png";
 import ptc_industries from "../../assets/images/placements/placement-overview/placement-records/logos/ptc-industries.png";
-import josh_technology from "../../assets/images/placements/placement-overview/placement-records/logos/josh-technology.png";
+// import josh_technology from "../../assets/images/placements/placement-overview/placement-records/logos/josh-technology.png";
 import cognizant from "../../assets/images/placements/placement-overview/placement-records/logos/cognizant.png";
 import qss from "../../assets/images/placements/placement-overview/placement-records/logos/qss.png";
 import jeevasnathi from "../../assets/images/placements/placement-overview/placement-records/logos/jeevasnathi.png";
 import torrent_power from "../../assets/images/placements/placement-overview/placement-records/logos/torrent-power.png";
 import internshala from "../../assets/images/placements/placement-overview/placement-records/logos/torrent-power.png";
 import download from "../../assets/images/placements/placement-overview/placement-records/logos/download.png";
-import download1 from "../../assets/images/placements/placement-overview/placement-records/logos/download1.png";
+// import download1 from "../../assets/images/placements/placement-overview/placement-records/logos/download1.png";
 import download2 from "../../assets/images/placements/placement-overview/placement-records/logos/download2.png";
 import adverb from "../../assets/images/placements/placement-overview/placement-records/logos/addverb.png";
 import ck from "../../assets/images/placements/placement-overview/placement-records/logos/ck.png";
 import classic from "../../assets/images/placements/placement-overview/placement-records/logos/classic.png";
 import adani from "../../assets/images/placements/placement-overview/placement-records/logos/adani.png";
+import priyanshuYyadavMin from "../../assets/images/placements/placement-overview/placement-records/images/priyanshu-yadav-min-.jpg";
+import snehaPalMin from "../../assets/images/placements/placement-overview/placement-records/images/sneha-pal-min-.jpeg";
+import sudiptaChattargi from "../../assets/images/placements/placement-overview/placement-records/images/sudipta-chattargi-mba.jpg";
+import khushbooSaxenaMin from "../../assets/images/placements/placement-overview/placement-records/images/khushboo-saxena-min.jpg";
+import rahulBail from "../../assets/images/placements/placement-overview/placement-records/images/rahul-bail-08-min-.jpg";
+import vatsalaRai from "../../assets/images/placements/placement-overview/placement-records/images/vatsala-rai--.jpeg";
+import vishakhaSingh from "../../assets/images/placements/placement-overview/placement-records/images/vishakha-singh-min-jpg.jpg";
+import pooja from "../../assets/images/placements/placement-overview/placement-records/images/pooja.jpg";
+import abhishekTiwari from "../../assets/images/placements/placement-overview/placement-records/images/abhishek-tiwari.jpg";
+import vibhavPathak from "../../assets/images/placements/placement-overview/placement-records/images/vibhav-pathak.jpg";
+import janhviSrivastava from "../../assets/images/placements/placement-overview/placement-records/images/janhvi-srivastava-min.jpg";
+import shreyaNigam from "../../assets/images/placements/placement-overview/placement-records/images/shreya-nigam.jpg";
+import arvilRishi from "../../assets/images/placements/placement-overview/placement-records/images/arvil-rishi-hitalia-.jpeg";
+import satyamVishwakarma from "../../assets/images/placements/placement-overview/placement-records/images/satyam-vishwakarma.jpeg";
+import sujeetMaurya from "../../assets/images/placements/placement-overview/placement-records/images/sujeet-maurya-.jpg";
+import akshayKumar from "../../assets/images/placements/placement-overview/placement-records/images/akshay-kumar.jpg";
+import gungun from "../../assets/images/placements/placement-overview/placement-records/images/gungun-.jpg";
+import nehaSingh from "../../assets/images/placements/placement-overview/placement-records/images/neha-singh-.jpg";
+import supriyaRai from "../../assets/images/placements/placement-overview/placement-records/images/supriya-rai-.jpeg";
+import tejasvaMaurya from "../../assets/images/placements/placement-overview/placement-records/images/tejasva-maurya-.jpg";
+import satyendraKumar from "../../assets/images/placements/placement-overview/placement-records/images/satyendra-kumar.jpg";
+import amanSingh from "../../assets/images/placements/placement-overview/placement-records/images/aman-singh.jpg";
+import simranSingh from "../../assets/images/placements/placement-overview/placement-records/images/simran-singh.jpg";
+import alviZaheer from "../../assets/images/placements/placement-overview/placement-records/images/alvia-zaheer-.jpg";
+import anshikaTiwari from "../../assets/images/placements/placement-overview/placement-records/images/anshika-.jpg";
+import shubhangiGupta from "../../assets/images/placements/placement-overview/placement-records/images/shubhangi-gupta-.jpg";
+import anjaliSinghBisht from "../../assets/images/placements/placement-overview/placement-records/images/anjali-singh-bisht-.jpg";
+import atulVerma from "../../assets/images/placements/placement-overview/placement-records/images/atul-verma-.jpg";
+import anshulPandey from "../../assets/images/placements/placement-overview/placement-records/images/anshul-pandey-mba-.jpeg";
+import anshikaShukla from "../../assets/images/placements/placement-overview/placement-records/images/anshika-shukla-.jpg";
+import pankajGupta from "../../assets/images/placements/placement-overview/placement-records/images/pankaj-gupta--.jpeg";
+import pawanKumarSingh from "../../assets/images/placements/placement-overview/placement-records/images/pawan-kumar-.jpeg";
+import ujjawalPratapSingh from "../../assets/images/placements/placement-overview/placement-records/images/ujjawal-pratap-singh.jpeg";
+import vishalPratap from "../../assets/images/placements/placement-overview/placement-records/images/vishal-pratap-singh-.jpg";
+import harshUpadhyay from "../../assets/images/placements/placement-overview/placement-records/images/harsh-upadhyay-min-.jpg";
 // adani
 export const placementOverviewplacementData: Record<string, Student[]> = {
   "2023": [
@@ -741,7 +776,7 @@ export const placementOverviewplacementData: Record<string, Student[]> = {
       id: 11,
       name: "Priyanshu Yadav",
       degree: "M.B.A. (Master of Business Administration)",
-      image: "https://srmu.ac.in/storage/institute-student-placed-href/priyanshu-yadav-min-19052512212764.JPG",
+      image: priyanshuYyadavMin,
       companyLogo: learningRoute,
       package: "6.06 LPA",
     },
@@ -749,7 +784,7 @@ export const placementOverviewplacementData: Record<string, Student[]> = {
       id: 12,
       name: "Sneha Pal",
       degree: "M.B.A. (Master of Business Administration)",
-      image: "https://srmu.ac.in/storage/institute-student-placed-href/sneha-pal-min-19052512214969.jpeg",
+      image: snehaPalMin,
       companyLogo: learningRoute,
       package: "6.06 LPA",
     },
@@ -757,7 +792,7 @@ export const placementOverviewplacementData: Record<string, Student[]> = {
       id: 13,
       name: "Sudipta",
       degree: "B.B.A. (Bachelor of Business Administration)",
-      image: "https://srmu.ac.in/storage/institute-student-placed-href/sudipta-chattargi-mba-min-19052512221551.JPG",
+      image: sudiptaChattargi,
       companyLogo: learningRoute,
       package: "6.06 LPA",
     },
@@ -765,7 +800,7 @@ export const placementOverviewplacementData: Record<string, Student[]> = {
       id: 14,
       name: "Khushboo Saxena",
       degree: "M.B.A. (Master of Business Administration)",
-      image: "https://srmu.ac.in/storage/institute-student-placed-href/khushboo-saxena-min-19052512313554.JPG",
+      image: khushbooSaxenaMin,
       companyLogo: registerkaro,
       package: "6.48 LPA",
     },
@@ -773,7 +808,7 @@ export const placementOverviewplacementData: Record<string, Student[]> = {
       id: 15,
       name: "Rahul Bali",
       degree: "B.Tech. in Computer Science Engineering",
-      image: "https://srmu.ac.in/storage/institute-student-placed-href/rahul-bail-08-min-19052512320968.JPG",
+      image: rahulBail,
       companyLogo: registerkaro,
       package: "6.60 LPA",
     },
@@ -781,7 +816,7 @@ export const placementOverviewplacementData: Record<string, Student[]> = {
       id: 16,
       name: "Vatsala Rai",
       degree: "B.C.A. (Bachelor of Computer Applications)",
-      image: "https://srmu.ac.in/storage/institute-student-placed-href/vatsala-rai-min-1905251232384.jpeg",
+      image: vatsalaRai,
       companyLogo: registerkaro,
       package: "6.00 LPA",
     },
@@ -789,7 +824,7 @@ export const placementOverviewplacementData: Record<string, Student[]> = {
       id: 17,
       name: "Vishakha Singh",
       degree: "M.B.A. (Master of Business Administration)",
-      image: "https://srmu.ac.in/storage/institute-student-placed-href/vishakha-singh-min-19052512330980.JPG",
+      image: vishakhaSingh,
       companyLogo: registerkaro,
       package: "3.00 LPA",
     },
@@ -797,7 +832,7 @@ export const placementOverviewplacementData: Record<string, Student[]> = {
       id: 18,
       name: "Pooja Singh",
       degree: "M.B.A. (Master of Business Administration)",
-      image: "https://srmu.ac.in/storage/institute-student-placed-href/pooja-19052512352240.jpg",
+      image: pooja,
       companyLogo: acres99,
       package: "5.08 LPA",
     },
@@ -805,7 +840,7 @@ export const placementOverviewplacementData: Record<string, Student[]> = {
       id: 19,
       name: "Abhishek Tiwari",
       degree: "M.B.A. (Master of Business Administration)",
-      image: "https://srmu.ac.in/storage/institute-student-placed-href/abhishek-tiwari-19052512375326.jpg",
+      image: abhishekTiwari,
       companyLogo: hdfcLife,
       package: "4.75 LPA",
     },
@@ -813,7 +848,7 @@ export const placementOverviewplacementData: Record<string, Student[]> = {
       id: 20,
       name: "Vibhav Pathak",
       degree: "M.B.A. (Master of Business Administration)",
-      image: "https://srmu.ac.in/storage/institute-student-placed-href/vibhav-pathak-1905251241307.jpg",
+      image: vibhavPathak,
       companyLogo: hdfcLife,
       package: "4.75 LPA",
     },
@@ -821,7 +856,7 @@ export const placementOverviewplacementData: Record<string, Student[]> = {
       id: 21,
       name: "Janhvi Srivastava",
       degree: "M.B.A. (Master of Business Administration)",
-      image: "https://srmu.ac.in/storage/institute-student-placed-href/janhvi-srivastava-min-1905251258158.JPG",
+      image: janhviSrivastava,
       companyLogo: airtel,
       package: "4.50 LPA",
     },
@@ -829,7 +864,7 @@ export const placementOverviewplacementData: Record<string, Student[]> = {
       id: 22,
       name: "Shreya Nigam",
       degree: "B.Tech. in Computer Science Engineering",
-      image: "https://srmu.ac.in/storage/institute-student-placed-href/shreya-nigam-b.tech-cs-19052503434613.jpg",
+      image: shreyaNigam,
       companyLogo: sap,
       package: "6.52 LPA",
     },
@@ -837,7 +872,7 @@ export const placementOverviewplacementData: Record<string, Student[]> = {
       id: 23,
       name: "Arvil Rishi Hitalia",
       degree: "B.Tech. in Mechanical Engineering",
-      image: "https://srmu.ac.in/storage/institute-student-placed-href/arvil-rishi-hitalia-min-19052503481218.jpeg",
+      image: arvilRishi,
       companyLogo: ptc_industries,
       package: "2.64 LPA",
     },
@@ -845,7 +880,7 @@ export const placementOverviewplacementData: Record<string, Student[]> = {
       id: 24,
       name: "Satyam Vishwakarma",
       degree: "B.Tech. in Electrical Engineering",
-      image: "https://srmu.ac.in/storage/institute-student-placed-href/satyam-vishwakarma-min-1--1905250349408.jpeg",
+      image: satyamVishwakarma,
       companyLogo: ptc_industries,
       package: "2.50 LPA",
     },
@@ -853,7 +888,7 @@ export const placementOverviewplacementData: Record<string, Student[]> = {
       id: 25,
       name: "Sujeet Maurya",
       degree: "B.Tech. in Electrical Engineering",
-      image: "https://srmu.ac.in/storage/institute-student-placed-href/sujeet-maurya-min-19052503491914.JPG",
+      image: sujeetMaurya,
       companyLogo: ptc_industries,
       package: "2.50 LPA",
     },
@@ -861,23 +896,15 @@ export const placementOverviewplacementData: Record<string, Student[]> = {
       id: 26,
       name: "Akshay Kumar",
       degree: "B.Tech. in Computer Science Engineering",
-      image: "https://srmu.ac.in/storage/institute-student-placed-href/akshay-kumar-cs-1905250357044.jpg",
+      image: akshayKumar,
       companyLogo: sap,
       package: "6.52 LPA",
-    },
-    {
-      id: 27,
-      name: "Akshay Kumar",
-      degree: "B.Tech. in Computer Science Engineering",
-      image: "https://srmu.ac.in/storage/institute-student-placed-href/img-20240615-wa0001-akshay-kumar-21052510372132.jpg",
-      companyLogo: josh_technology,
-      package: "14.23 LPA",
     },
     {
       id: 28,
       name: "Gungun",
       degree: "M.B.A. (Master of Business Administration)",
-      image: "https://srmu.ac.in/storage/institute-student-placed-href/gungun-min-21052510395167.JPG",
+      image: gungun,
       companyLogo: jaroEducation,
       package: "12.16 LPA",
     },
@@ -885,7 +912,7 @@ export const placementOverviewplacementData: Record<string, Student[]> = {
       id: 29,
       name: "Neha Singh",
       degree: "M.B.A. (Master of Business Administration)",
-      image: "https://srmu.ac.in/storage/institute-student-placed-href/neha-singh-min-21052510404722.JPG",
+      image: nehaSingh,
       companyLogo: jaroEducation,
       package: "12.16 LPA",
     },
@@ -893,7 +920,7 @@ export const placementOverviewplacementData: Record<string, Student[]> = {
       id: 30,
       name: "Supriya Rai",
       degree: "M.B.A. (Master of Business Administration)",
-      image: "https://srmu.ac.in/storage/institute-student-placed-href/supriya-rai-min-21052510420011.jpeg",
+      image: supriyaRai,
       companyLogo: jaroEducation,
       package: "6.78 LPA",
     },
@@ -901,7 +928,7 @@ export const placementOverviewplacementData: Record<string, Student[]> = {
       id: 31,
       name: "Tejasva Maurya",
       degree: "B.Tech. in Computer Science Engineering",
-      image: "https://srmu.ac.in/storage/institute-student-placed-href/tejasva-maurya-14-21052511075526.JPG",
+      image: tejasvaMaurya,
       companyLogo: cognizant,
       package: "6.75 LPA",
     },
@@ -909,7 +936,7 @@ export const placementOverviewplacementData: Record<string, Student[]> = {
       id: 32,
       name: "Satyendra Kumar",
       degree: "B.Tech. in Computer Science Engineering",
-      image: "https://srmu.ac.in/storage/institute-student-placed-href/satyendra-kumar-b.tech-cs-min-22052502272560.jpg",
+      image: satyendraKumar,
       companyLogo: qss,
       package: "7.20 LPA",
     },
@@ -917,7 +944,7 @@ export const placementOverviewplacementData: Record<string, Student[]> = {
       id: 33,
       name: "Aman Singh",
       degree: "B.Tech. in Computer Science Engineering",
-      image: "https://srmu.ac.in/storage/institute-student-placed-href/aman-singh-b.tech-cs-min-22052502275557.JPG",
+      image: amanSingh,
       companyLogo: qss,
       package: "7.20 LPA",
     },
@@ -925,7 +952,7 @@ export const placementOverviewplacementData: Record<string, Student[]> = {
       id: 34,
       name: "Simran Singh",
       degree: "M.B.A. (Master of Business Administration)",
-      image: "https://srmu.ac.in/storage/institute-student-placed-href/simran-singh-min-22052502310799.JPG",
+      image: simranSingh,
       companyLogo: planetSpark,
       package: "6.50 LPA",
     },
@@ -933,7 +960,7 @@ export const placementOverviewplacementData: Record<string, Student[]> = {
       id: 35,
       name: "Alviya Zaheer",
       degree: "B.Tech. in Computer Science Engineering",
-      image: "https://srmu.ac.in/storage/institute-student-placed-href/alvia-zaheer-min-22052502321325.JPG",
+      image: alviZaheer,
       companyLogo: planetSpark,
       package: "6.50 LPA",
     },
@@ -941,7 +968,7 @@ export const placementOverviewplacementData: Record<string, Student[]> = {
       id: 36,
       name: "Anshika Tiwari",
       degree: "M.B.A. (Master of Business Administration)",
-      image: "https://srmu.ac.in/storage/institute-student-placed-href/anshika-tiwari-min-22052502345811.JPG",
+      image: anshikaTiwari,
       companyLogo: planetSpark,
       package: "6.50 LPA",
     },
@@ -949,7 +976,7 @@ export const placementOverviewplacementData: Record<string, Student[]> = {
       id: 37,
       name: "Shubhangi Gupta",
       degree: "B.Tech. in Computer Science Engineering",
-      image: "https://srmu.ac.in/storage/institute-student-placed-href/shubhangi-gupta-160-min-1--22052503145813.JPG",
+      image: shubhangiGupta,
       companyLogo: hikeeduc,
       package: "6.42 LPA",
     },
@@ -957,7 +984,7 @@ export const placementOverviewplacementData: Record<string, Student[]> = {
       id: 38,
       name: "Anjali Singh Bisht",
       degree: "M.B.A. (Master of Business Administration)",
-      image: "https://srmu.ac.in/storage/institute-student-placed-href/anjali-singh-bisht-min-22052503205856.JPG",
+      image: anjaliSinghBisht,
       companyLogo: jeevasnathi,
       package: "4.60 LPA",
     },
@@ -965,7 +992,7 @@ export const placementOverviewplacementData: Record<string, Student[]> = {
       id: 39,
       name: "Atul Verma",
       degree: "B.Tech. in Electrical Engineering",
-      image: "https://srmu.ac.in/storage/institute-student-placed-href/atul-verma-min-1--22052503231679.JPG",
+      image: atulVerma,
       companyLogo: torrent_power,
       package: "4.50 LPA",
     },
@@ -973,7 +1000,7 @@ export const placementOverviewplacementData: Record<string, Student[]> = {
       id: 40,
       name: "Anshul Pandey",
       degree: "M.B.A. (Business Analytics) with L&T",
-      image: "https://srmu.ac.in/storage/institute-student-placed-href/anshul-pandey-mba-22052503465829.jpeg",
+      image: anshulPandey,
       companyLogo: internshala,
       package: "6.60 LPA",
     },
@@ -981,23 +1008,16 @@ export const placementOverviewplacementData: Record<string, Student[]> = {
       id: 41,
       name: "Anshika Shukla",
       degree: "M.B.A. (Master of Business Administration)",
-      image: "https://srmu.ac.in/storage/institute-student-placed-href/anshika-shukla-min-2205250348294.JPG",
+      image: anshikaShukla,
       companyLogo: download,
       package: "5.20 LPA",
     },
-    {
-      id: 42,
-      name: "Anshika Shukla",
-      degree: "M.B.A. (Master of Business Administration)",
-      image: "https://srmu.ac.in/storage/institute-student-placed-href/anshika-shukla-min-1--22052503495782.JPG",
-      companyLogo: download1,
-      package: "5.04 LPA",
-    },
+
     {
       id: 43,
       name: "Pankaj Gupta",
       degree: "B.Tech. in Civil Engineering",
-      image: "https://srmu.ac.in/storage/institute-student-placed-href/pankaj-gupta--22052504192080.jpeg",
+      image: pankajGupta,
       companyLogo: download2,
       package: "4.25 LPA",
     },
@@ -1005,7 +1025,7 @@ export const placementOverviewplacementData: Record<string, Student[]> = {
       id: 44,
       name: "Pawan Kumar Singh",
       degree: "B.Tech. in Civil Engineering",
-      image: "https://srmu.ac.in/storage/institute-student-placed-href/pawan-kumar-singh-22052504201442.jpeg",
+      image: pawanKumarSingh,
       companyLogo: download2,
       package: "4.25 LPA",
     },
@@ -1013,7 +1033,7 @@ export const placementOverviewplacementData: Record<string, Student[]> = {
       id: 45,
       name: "Ujjawal Pratap Singh",
       degree: "B.Tech. in Civil Engineering",
-      image: "https://srmu.ac.in/storage/institute-student-placed-href/ujjawal-pratap-singh-22052504213117.jpeg",
+      image: ujjawalPratapSingh,
       companyLogo: download2,
       package: "4.25 LPA",
     },
@@ -1021,7 +1041,7 @@ export const placementOverviewplacementData: Record<string, Student[]> = {
       id: 46,
       name: "Sudipta",
       degree: "B.B.A. (Bachelor of Business Administration)",
-      image: "https://srmu.ac.in/storage/institute-student-placed-href/sudipta-chattargi-mba-2205250438183.JPG",
+      image: sudiptaChattargi,
       companyLogo: adverb,
       package: "5.00 LPA",
     },
@@ -1029,7 +1049,7 @@ export const placementOverviewplacementData: Record<string, Student[]> = {
       id: 47,
       name: "Vatsala Rai",
       degree: "B.C.A. (Bachelor of Computer Applications)",
-      image: "https://srmu.ac.in/storage/institute-student-placed-href/vatsala-rai--22052504385881.jpeg",
+      image: vatsalaRai,
       companyLogo: ck,
       package: "4.50 LPA",
     },
@@ -1037,7 +1057,7 @@ export const placementOverviewplacementData: Record<string, Student[]> = {
       id: 48,
       name: "Vishal Pratap Singh",
       degree: "M.B.A. (Master of Business Administration)",
-      image: "https://srmu.ac.in/storage/institute-student-placed-href/vishal-pratap-singh-min-22052504451314.JPG",
+      image: vishalPratap,
       companyLogo: classic,
       package: "4.50 LPA",
     },
@@ -1045,7 +1065,7 @@ export const placementOverviewplacementData: Record<string, Student[]> = {
       id: 49,
       name: "Harsh Upadhyay",
       degree: "M.B.A. (Master of Business Administration)",
-      image: "https://srmu.ac.in/storage/institute-student-placed-href/harsh-upadhyay-min-22052504454062.JPG",
+      image: harshUpadhyay,
       companyLogo: classic,
       package: "4.50 LPA",
     },
@@ -1053,7 +1073,7 @@ export const placementOverviewplacementData: Record<string, Student[]> = {
       id: 50,
       name: "Navish Kumar Singh",
       degree: "B.Tech. in Electronics & Communication Engineering",
-      image: "https://srmu.ac.in/themes/images/avatar-1.jpg",
+      image: avatar,
       companyLogo: adani,
       package: "LPA",
     },
