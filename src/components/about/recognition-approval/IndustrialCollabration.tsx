@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 import Slider from "react-slick";
-import { IoIosArrowBack } from "react-icons/io";
 import { CollabrationSliderData } from "../../../data/about/recognition-approval/recognitionApprovalsData";
 import Classes from "../../../utils/styles/Global.module.css";
 import "slick-carousel/slick/slick.css";
