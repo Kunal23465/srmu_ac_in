@@ -124,12 +124,17 @@ export const footerData = {
     {
       id: 1,
       title: "Contact us",
-      path: "#",
+      path: "contact-us",
     },
     {
       id: 2,
       title: "RTI",
       path: "/rti",
+    },
+    {
+      id: 2,
+      title: "Mandatory Disclosure",
+      path: "mandatory-disclouser",
     },
   ],
 
