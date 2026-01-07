@@ -37,8 +37,8 @@ const HowToApply: React.FC = () => {
 
   return (
     <div>
-      <div className={`${Classes["container"]}`}>
-        <div className={` py-7 md:py-10 lg:py-14`}>
+      <div className={` pt-7 md:pt-10 lg:pt-14`}>
+        <div className={`${Classes["container"]}`}>
           <div className={`flex flex-col md:flex-row  gap-4 items-stretch  justify-between `}>
             <div className="w-auto border-l-4 pl-2 md:pl-0 md:border-l-0  md:border-r-5 border-[#ffb703] flex flex-col justify-center">
               <h2 className="text-[#023047] text-[28px] lg:text-[3.125rem] fw500 whitespace-pre-line leading-15 pr-4 sm:min-w-[350px]">How To Apply</h2>
@@ -63,78 +63,80 @@ const HowToApply: React.FC = () => {
               </div>
             </div>
           </div>
-          <OnlineAdmissionProcess />
-          <div className={`${Classes["container"]}`}>
-            <div className="">
-              <div className="flex">
-                <div>
-                  <h1 className="text-3xl sm:text-5xl font-bold">SRMU Offers</h1>
-                </div>
-                <div className="ml-auto flex gap-5">
-                  <button
-                    onClick={() => sliderRef.current?.slickPrev()}
-                    disabled={isAtStart}
-                    className={`w-12 h-12 border-2 border-black flex hover:bg-[#0f4a85] text-[#0f4a85] hover:text-[#ffb703]  items-center justify-center transition ${
-                      isAtStart ? "opacity-40 cursor-not-allowed" : " cursor-pointer"
-                    }`}
-                  >
-                    <MdKeyboardArrowLeft size="26" />
-                  </button>
-
-                  <button
-                    onClick={() => sliderRef.current?.slickNext()}
-                    disabled={isAtEnd}
-                    className={`w-12 h-12 border-2 border-black flex hover:bg-[#0f4a85] text-[#0f4a85] hover:text-[#ffb703] items-center justify-center transition ${
-                      isAtEnd ? "opacity-40 cursor-not-allowed" : " cursor-pointer"
-                    }`}
-                  >
-                    <MdKeyboardArrowRight size="26" />
-                  </button>
-                </div>
-              </div>
-              <div className="py-10 sm:py-20">
-                <Slider ref={sliderRef} {...settings}>
-                  {SRMUoffersData.map((item) => (
-                    <div key={item.id} className="px-3">
-                      <div className="p-7 pb-5 h-100 lg:h-120 xl:h-100 w-full  hover:text-white transition-all duration-300 hover:bg-[#0f4a85] border border-gray-200 rounded-xl">
-                        <img src={item.img} alt={item.title} className="rounded-xl object-cover h-[85%] w-full mb-4" />
-
-                        <h3 className="text-2xl font-medium mb-1">{item.title}</h3>
-                      </div>
-                    </div>
-                  ))}
-                </Slider>
-              </div>
-            </div>
-          </div>
-          <div className="bg-[#f5f5f5]">
-            <div className={`${Classes["container"]} py-10 lg:py-20`}>
-              <div className="flex flex-col lg:flex-row gap-6 lg:gap-25  px-10 lg:px-0">
-                <div className="pt-6 lg:pt-0 w-full">
-                  <img src={img} />
-                </div>
-                <div className="py-10 sm:py-0 w-full">
-                  <h1 className="text-3xl leading-tight sm:text-5xl font-medium mr-0 sm:mr-0 lg:mr-35">Get Advantage of studying in a NAAC Accredited University</h1>
-                  <ul className="list-disc marker:text-amber-400 marker:text-3xl mr-0 sm:mr-0 lg:mr-35">
-                    <li className="ml-6 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] leading-4 lg:leading-6">26+ Years of Academic Excellence</li>
-                    <li className="ml-6 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] leading-4 lg:leading-6">Global & Industry Collaborations</li>
-                    <li className="ml-6 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] leading-4 lg:leading-6">Advanced Labs & World-Class Infrastructure</li>
-                    <li className="ml-6 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] leading-4 lg:leading-6">Strong Placement Record with MNCs & Fortune 500</li>
-                    <li className="ml-6 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] leading-4 lg:leading-6">
-                      Industry-Aligned, Skill-Based Programs (AI, Data Science, etc.)
-                    </li>
-                    <li className="ml-6 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] leading-4 lg:leading-6">Support for Research, Innovation & Startups</li>
-                    <li className="ml-6 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] leading-4 lg:leading-6">Experienced Faculty with Industry Exposure</li>
-                    <li className="ml-6 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px]  leading-4 lg:leading-6">Well-Connected, Student-Friendly Green Campus</li>
-                    <li className="ml-6 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] leading-4 lg:leading-6">Flexible Academics as per NEP 2020</li>
-                    <li className="ml-6 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] leading-4 lg:leading-6">Attractive Scholarships & Affordable Fee Structure</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <CustomTopFooter data={HowToApplyTopFooterData} />
         </div>
+        <div className="w-full">
+          <OnlineAdmissionProcess />
+        </div>
+        <div className={`${Classes["container"]}`}>
+          <div className="">
+            <div className="flex">
+              <div>
+                <h1 className="text-3xl sm:text-5xl font-bold">SRMU Offers</h1>
+              </div>
+              <div className="ml-auto flex gap-5">
+                <button
+                  onClick={() => sliderRef.current?.slickPrev()}
+                  disabled={isAtStart}
+                  className={`w-12 h-12 border-2 border-black flex hover:bg-[#0f4a85] text-[#0f4a85] hover:text-[#ffb703]  items-center justify-center transition ${
+                    isAtStart ? "opacity-40 cursor-not-allowed" : " cursor-pointer"
+                  }`}
+                >
+                  <MdKeyboardArrowLeft size="26" />
+                </button>
+
+                <button
+                  onClick={() => sliderRef.current?.slickNext()}
+                  disabled={isAtEnd}
+                  className={`w-12 h-12 border-2 border-black flex hover:bg-[#0f4a85] text-[#0f4a85] hover:text-[#ffb703] items-center justify-center transition ${
+                    isAtEnd ? "opacity-40 cursor-not-allowed" : " cursor-pointer"
+                  }`}
+                >
+                  <MdKeyboardArrowRight size="26" />
+                </button>
+              </div>
+            </div>
+            <div className="py-10 sm:py-20">
+              <Slider ref={sliderRef} {...settings}>
+                {SRMUoffersData.map((item) => (
+                  <div key={item.id} className="px-3">
+                    <div className="p-7 pb-5 h-100 lg:h-120 xl:h-100 w-full  hover:text-white transition-all duration-300 hover:bg-[#0f4a85] border border-gray-200 rounded-xl">
+                      <img src={item.img} alt={item.title} className="rounded-xl object-cover h-[85%] w-full mb-4" />
+
+                      <h3 className="text-2xl font-medium mb-1">{item.title}</h3>
+                    </div>
+                  </div>
+                ))}
+              </Slider>
+            </div>
+          </div>
+        </div>
+        <div className="bg-[#f5f5f5]">
+          <div className={`${Classes["container"]} py-10 lg:py-20`}>
+            <div className="flex flex-col lg:flex-row gap-6 lg:gap-25  px-10 lg:px-0">
+              <div className="pt-6 lg:pt-0 w-full">
+                <img src={img} />
+              </div>
+              <div className="py-10 sm:py-0 w-full">
+                <h1 className="text-3xl leading-tight sm:text-5xl font-medium mr-0 sm:mr-0 lg:mr-35">Get Advantage of studying in a NAAC Accredited University</h1>
+                <ul className="list-disc marker:text-amber-400 marker:text-3xl mr-0 sm:mr-0 lg:mr-35">
+                  <li className="ml-6 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] leading-4 lg:leading-6">26+ Years of Academic Excellence</li>
+                  <li className="ml-6 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] leading-4 lg:leading-6">Global & Industry Collaborations</li>
+                  <li className="ml-6 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] leading-4 lg:leading-6">Advanced Labs & World-Class Infrastructure</li>
+                  <li className="ml-6 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] leading-4 lg:leading-6">Strong Placement Record with MNCs & Fortune 500</li>
+                  <li className="ml-6 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] leading-4 lg:leading-6">
+                    Industry-Aligned, Skill-Based Programs (AI, Data Science, etc.)
+                  </li>
+                  <li className="ml-6 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] leading-4 lg:leading-6">Support for Research, Innovation & Startups</li>
+                  <li className="ml-6 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] leading-4 lg:leading-6">Experienced Faculty with Industry Exposure</li>
+                  <li className="ml-6 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px]  leading-4 lg:leading-6">Well-Connected, Student-Friendly Green Campus</li>
+                  <li className="ml-6 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] leading-4 lg:leading-6">Flexible Academics as per NEP 2020</li>
+                  <li className="ml-6 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] leading-4 lg:leading-6">Attractive Scholarships & Affordable Fee Structure</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <CustomTopFooter data={HowToApplyTopFooterData} />
       </div>
     </div>
   );

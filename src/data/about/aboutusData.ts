@@ -18,6 +18,11 @@ export const aboutOverviewData: customeOverViewType = {
   content:
     "Our journey began in 1999, with just 22 students and an unwavering commitment to quality education. Today, SRMU stands as a beacon of academic, cultural, and intellectual excellence, with 11 institutes, a faculty of industry leaders and a vibrant student body.",
 };
+export const mandatoryDisclousertOverviewData: customeOverViewType = {
+  heading: "Mandatory Disclosure",
+  content:
+    "Shri Ramswaroop Memorial University (SRMU) is established as per the applicable provisions of the Uttar Pradesh State Private Universities Act and functions in accordance with the regulations, guidelines, and norms prescribed by the University Grants Commission (UGC) and other statutory regulatory bodies, wherever applicable. The University maintains transparency in academic, administrative, and financial matters and makes all required information available in the public domain to ensure accountability and adherence to regulatory requirements.",
+};
 
 export const counterDataForAboutPage: counterDataType[] = [
   { id: 1, value: "25", suffix: "+", label: "Years Of Experience" },

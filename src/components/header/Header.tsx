@@ -148,13 +148,13 @@ const Header = () => {
                                       return (
                                         <div key={type.programFlagId}>
                                           {/* BLUE HEADING */}
-                                          <h3 className="font-medium text-base p-3 rounded-lg inline-block hover:bg-[#ffb703] text-[#0f4a85] hover:text-black">
+                                          <h3 className="font-medium text-[17px] p-3 rounded-lg inline-block hover:bg-[#ffb703] text-[#0f4a85] hover:text-black">
                                             <Link to={`/programs/${programFlagSlug}`} state={{ programTypeId: type.programFlagId }}>
                                               {type.programFlagName}
                                             </Link>
                                           </h3>
 
-                                          <ul className="mt-2 px-3 space-y-2 list-none!">
+                                          <ul className="mt-2 list-none!">
                                             {/* CASE 1: programs */}
                                             {type.programs.length > 0 &&
                                               type.programs.map((prog) => (
@@ -162,7 +162,7 @@ const Header = () => {
                                                   <Link
                                                     to={`/programs/${programFlagSlug}/${slugify(prog.programName)}`}
                                                     state={{ programTypeId: type.programFlagId }}
-                                                    className="text-[15px] text-gray-700 hover:text-[#ffb703]"
+                                                    className="text-[15px] px-3 py-2 rounded-md text-[#212529] hover:text-[#ffb703] border border-white hover:border-[#ffb703] block"
                                                   >
                                                     {prog.programName}
                                                   </Link>
@@ -179,7 +179,7 @@ const Header = () => {
                                                       programTypeId: type.programTypeId,
                                                       disciplineId: disc.disciplineId,
                                                     }}
-                                                    className="text-[15px] text-gray-700 hover:text-[#ffb703]"
+                                                    className="text-[15px] px-3 py-2 rounded-md text-[#212529] hover:text-[#ffb703] border border-white hover:border-[#ffb703] block"
                                                   >
                                                     {disc.disciplineName}
                                                   </Link>

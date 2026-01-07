@@ -1,290 +1,164 @@
 import React from "react";
 import Classes from "../../../utils/styles/Global.module.css";
-
-const OnlineAdmissionProcess:React.FC = () => {
-    return (
-           <div className="bg-[#f5f5f5] my-10 md:my-20">
+import admission_bg from "../../../assets/images/admission-bg.png";
+import computer from "../../../assets/images/computer.png";
+import mobile from "../../../assets/images/mobile.png";
+import bgImage from "../../../assets/images/research/overview/facilities-bg-lg.jpeg";
+import offlineAddmission from "../../../assets/images/offline-admission.png";
+import offlineAddmissionMobile from "../../../assets/images/offline-admission-mobile.png";
+const OnlineAdmissionProcess: React.FC = () => {
+  return (
+    <>
+      <div className="bg-[#f5f5f5] mt-10 lg:mt-20 px-10 pb-10">
         <div className={`${Classes["container"]} py-10 lg:py-20`}>
-        <section className="common_padding apply_sec_main">
-            <div className="container">
-                <div className="text-center mt-5 sec_head max_width1100 max-w-[1100px] mx-auto mb-10 md:mb-20">
-                    <h2 className="font50 fw500 color_theme line_height mb-2">
-                        Online Admission Process
-                    </h2>
+          <section className="common_padding apply_sec_main">
+            <div className="text-center mt-5 sec_head max_width1100 max-w-[1100px] mx-auto mb-10 md:mb-20 ">
+              <h2 className=" text-2xl md:text-3xl lg:text-[50px] fw500 color_theme line_height mb-2">Online Admission Process</h2>
 
-                    <div>
-                        <p>
-                            Applicants must fill out the online form with personal, academic,
-                            and program details, upload required documents, and pay the
-                            application fee. Ensure all information is accurate and follow
-                            university instructions for a smooth application process.
-                        </p>
-                    </div>
-                </div>
-
-                <div className="apply_bg_sec" style={{ position: "relative" }}>
-                    <span className="circle_box circle_box1"></span>
-                    <span className="circle_box circle_box2"></span>
-                    <span className="circle_box circle_box3"></span>
-<div className="grid grid-col-1 md:grid-cols-2 ml-0 md:ml-[15%] my-10 md:my-20 gap-10 md:gap-20">
-                    {/* STEP 1 */}
-                    <div className="text-center" id="html1">
-                        <div className="icon">
-                            <img className="mx-auto w-34 h-25"
-                                data-aos="zoom-out-up"
-                                data-aos-duration="1000"
-                                src="https://srmu.ac.in/storage/common-section/web-12122306581468-24062510244640.png"
-                                alt="1"
-                            />
-                            <div className="mx-auto mt-35 rounded-full h-30 w-30 bg-white"></div>
-                      </div>
-
-                        <div className="data -mt-38">
-                            <div className="data_inner">
-                                <div
-                                    className="font32 fw600 color_light_blue"
-                                    data-aos="zoom-in"
-                                    data-aos-duration="1500"
-                                >
-                                    1.
-                                </div>
-
-                                <div
-                                    className="color_light_blue font17 fw500 line_height w-full sm:w-3/4 mx-auto"
-                                    data-aos="fade-up"
-                                    data-aos-duration="3000"
-                                >
-                                    <p>
-                                        To apply online, visit{" "}
-                                        <a
-                                            href="https://www.srmu.ac.in"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                        >
-                                            www.srmu.ac.in
-                                        </a>{" "}
-                                        and click on the “Online Admission Form” block, or go
-                                        directly to{" "}
-                                        <a
-                                            href="https://studentportal.srmu.ac.in"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                        >
-                                            https://studentportal.srmu.ac.in
-                                        </a>
-                                    </p>
-                                    <hr className="block md:hidden text-gray-300 mt-8" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* STEP 2 */}
-                    <div className="text-center" id="html2">
-                        <div className="icon">
-                            <img className="mx-auto w-20 h-25"
-                                data-aos="zoom-out-up"
-                                data-aos-duration="1000"
-                                src="https://srmu.ac.in/storage/common-section/register-12122306592573-24062510362073.png"
-                                alt="2"
-                            />
-                                                        <div className="mx-auto mt-35 rounded-full h-30 w-30 bg-white"></div>
-
-                        </div>
-
-                        <div className="data -mt-38">
-                            <div className="data_inner">
-                                <div
-                                    className="relative font32 fw600 color_light_blue"
-                                    data-aos="zoom-in"
-                                    data-aos-duration="1500"
-                                >
-                                    2.
-                                </div>
-
-                                <div
-                                    className="color_light_blue font17 fw500 line_height w-full sm:w-3/4 mx-auto"
-                                    data-aos="fade-up"
-                                    data-aos-duration="3000"
-                                >
-                                    <p>
-                                        Fill in all mandatory fields and click the “Register”
-                                        button. You will be redirected to the login screen, where
-                                        your registered mobile number will be required.
-                                    </p>
-                                    <hr className="block md:hidden text-gray-300 mt-8" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* STEP 3 */}
-                    <div className="text-center" id="html4">
-                        <div className="icon">
-                            <img className="mx-auto w-20 h-25"
-                                data-aos="zoom-out-up"
-                                data-aos-duration="1000"
-                                src="https://srmu.ac.in/storage/common-section/register-12122307001499.png"
-                                alt="3"
-                            />
-                                                        <div className="mx-auto mt-35 rounded-full h-30 w-30 bg-white"></div>
-
-                        </div>
-
-                        <div className="data -mt-38">
-                            <div className="data_inner">
-                                <div
-                                    className="relative font32 fw600 color_light_blue"
-                                    data-aos="zoom-in"
-                                    data-aos-duration="1500"
-                                >
-                                    3.
-
-                                </div>
-
-                                <div
-                                    className="color_light_blue font17 fw500 line_height w-full sm:w-3/4 mx-auto"
-                                    data-aos="fade-up"
-                                    data-aos-duration="3000"
-                                >
-                                    <p>
-                                        Enter your registered mobile number, click “Send OTP”, then
-                                        enter the OTP and click “Verify OTP” to access the student
-                                        dashboard.
-                                    </p>
-                                    <hr className="block md:hidden text-gray-300 mt-8" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* STEP 4 */}
-                    <div className="text-center" id="html3">
-                        <div className="icon">
-                            <img className="mx-auto w-20 h-25"
-                                data-aos="zoom-out-up"
-                                data-aos-duration="1000"
-                                src="https://srmu.ac.in/storage/common-section/register-12122306592573.png"
-                                alt="4"
-                            />
-                            <div className="mx-auto mt-35 rounded-full h-30 w-30 bg-white"></div>
-                        </div>
-
-                        <div className="data -mt-38">
-                            <div className="data_inner">
-                                <div
-                                    className="relative font32 fw600 color_light_blue"
-                                    data-aos="zoom-in"
-                                    data-aos-duration="1500"
-                                >
-                                    4.
-
-                                </div>
-
-                                <div
-                                    className="color_light_blue font17 fw500 line_height w-full sm:w-3/4 mx-auto"
-                                    data-aos="fade-up"
-                                    data-aos-duration="3000"
-                                >
-                                    <p>
-                                        Select “General Information,” fill required fields, and
-                                        press “Submit”. Enter basic details, then press “Save” to
-                                        proceed.
-                                    </p>
-                                    <hr className="block md:hidden text-gray-300 mt-8" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* STEP 5 */}
-                    <div className="text-center" id="html5">
-                        <div className="icon">
-                            <img className="mx-auto w-20 h-25"
-                                data-aos="zoom-out-up"
-                                data-aos-duration="1000"
-                                src="https://srmu.ac.in/storage/common-section/register-1212230700471.png"
-                                alt="5"
-                            />
-                            <div className="mx-auto mt-35 rounded-full h-30 w-30 bg-white"></div>
-                        </div>
-
-                        <div className="data -mt-38">
-                            <div className="data_inner">
-                                <div
-                                    className="relative font32 fw600 color_light_blue"
-                                    data-aos="zoom-in"
-                                    data-aos-duration="1500"
-                                >
-                                    5.
-                                </div>
-
-                                <div
-                                    className="color_light_blue font17 fw500 line_height w-full sm:w-3/4 mx-auto"
-                                    data-aos="fade-up"
-                                    data-aos-duration="3000"
-                                >
-                                    <p>
-                                        Go to “Application Fee,” review information, click “Pay
-                                        Application Fee,” and complete the payment.
-                                    </p>
-                                    <hr className="block md:hidden text-gray-300 mt-8" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* STEP 6 */}
-                    <div className="text-center" id="html6">
-                        <div className="icon">
-                            <img className="mx-auto w-20 h-25"
-                                data-aos="zoom-out-up"
-                                data-aos-duration="1000"
-                                src="https://srmu.ac.in/storage/common-section/register-12122307012275.png"
-                                alt="6"
-                            />
-                            <div className="mx-auto mt-35 rounded-full h-30 w-30 bg-white"></div>
-                        </div>
-
-                        <div className="data -mt-38">
-                            <div className="data_inner">
-                                <div
-                                    className="relative font32 fw600 color_light_blue"
-                                    data-aos="zoom-in"
-                                    data-aos-duration="1500"
-                                >
-                                    6.
-                                </div>
-
-                                <div
-                                    className="color_light_blue font17 fw500 line_height w-full sm:w-3/4 mx-auto"
-                                    data-aos="fade-up"
-                                    data-aos-duration="3000"
-                                >
-                                    <p>
-                                        Go to “Registration Fee,” review the info, select amount of
-                                        10,000 or more, and make the payment using available
-                                        options.
-                                    </p>
-                                    <hr className="block md:hidden text-gray-300 mt-8" />
-                                </div>
-                            </div>
-                        </div>
-                    </div></div>
-
-                    {/* SVG */}
-                    <svg
-                        version="1.1"
-                        viewBox="0 0 973.2 830.1"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        {/* --- SVG CONTENT KEPT SAME --- */}
-                        {/* You can keep your full SVG here, unchanged */}
-                    </svg>
-                </div>
+              <div>
+                <p>
+                  Applicants must fill out the online form with personal, academic, and program details, upload required documents, and pay the application fee. Ensure all
+                  information is accurate and follow university instructions for a smooth application process.
+                </p>
+              </div>
             </div>
-        </section></div></div>
-    );
+
+            <div className="admission_process relative my-10 lg:mt-70 lg:mb-60">
+              <div className="container_bg">
+                <img src={admission_bg} className="w-full relative z-100 hidden lg:block" alt="admission" />
+              </div>
+              <div className="contain_part">
+                <div className="circle_box one"></div>
+                <div className="circle_box two"></div>
+                <div className="circle_box three"></div>
+                <div className="box1">
+                  <div className="flex justify-center">
+                    <img src={computer} className="w-full max-w-[100px]" alt="" />
+                  </div>
+
+                  <div className="box-content">
+                    <div className="circle"></div>
+                    <div className="content">
+                      <h3 className="text-[30px] font-semibold text-center mb-4 text-[#0f4a85] ">1.</h3>
+                      <p className="font-medium mt-3 text-[#0f4a85] text-lg text-center">
+                        To apply online, visit{" "}
+                        <a data-end="116" data-start="76" href="https://www.srmu.ac.in" rel="noopener" target="_new">
+                          www.srmu.ac.in
+                        </a>{" "}
+                        and click on the "Online Admission Form" block, or go directly to the form at{" "}
+                        <a data-end="263" data-start="195" href="https://studentportal.srmu.ac.in" rel="noopener" target="_new">
+                          https://studentportal.srmu.ac.in
+                        </a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="box2">
+                  <div className="flex justify-center">
+                    <img src={mobile} className="w-full max-w-20" alt="" />
+                  </div>
+
+                  <div className="box-content">
+                    <div className="circle"></div>
+                    <div className="content">
+                      <h3 className="text-[30px] font-semibold text-center mb-4 text-[#0f4a85] ">2.</h3>
+                      <p className="font-medium mt-3 text-[#0f4a85] text-lg text-center">
+                        Fill in all mandatory fields and click the "Register" button to proceed. This will take you to the login screen, where you'll be prompted to enter your
+                        registered mobile number.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="box3">
+                  <div className="flex justify-center">
+                    <img src={mobile} className="w-full max-w-20" alt="" />
+                  </div>
+
+                  <div className="box-content">
+                    <div className="circle"></div>
+                    <div className="content">
+                      <h3 className="text-[30px] font-semibold text-center mb-4 text-[#0f4a85] ">4.</h3>
+                      {/* className="font-medium mt-3 text-[#0f4a85] text-lg text-center" */}
+                      <p className="font-medium mt-3 text-[#0f4a85] text-lg text-center">
+                        Select "General Information," fill required fields, press"Submit". Enter basic details, then press "Save" to proceed.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="box4">
+                  <div className="flex justify-center">
+                    <img src={mobile} className="w-full max-w-20" alt="" />
+                  </div>
+
+                  <div className="box-content">
+                    <div className="circle"></div>
+                    <div className="content">
+                      <h3 className="text-[30px] font-semibold text-center mb-4 text-[#0f4a85] ">3.</h3>
+                      <p className="font-medium mt-3 text-[#0f4a85] text-lg text-center">
+                        Enter your registered mobile number, click "Send OTP", then enter the OTP and click "Verify OTP" to access the student dashboard.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="box5">
+                  <div className="flex justify-center">
+                    <img src={mobile} className="w-full max-w-20" alt="" />
+                  </div>
+
+                  <div className="box-content">
+                    <div className="circle"></div>
+                    <div className="content">
+                      <h3 className="text-[30px] font-semibold text-center mb-4 text-[#0f4a85] ">5.</h3>
+                      {/* className="font-medium mt-3 text-[#0f4a85] text-lg text-center" */}
+                      <p className="font-medium mt-3 text-[#0f4a85] text-lg text-center">
+                        Go to "Application Fee," review the info, press "Pay Application Fee," and complete the payment using one of the payment options.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="box6">
+                  <div className="flex justify-center">
+                    <img src={mobile} className="w-full max-w-20" alt="" />
+                  </div>
+
+                  <div className="box-content">
+                    <div className="circle"></div>
+                    <div className="content">
+                      <h3 className="text-[30px] font-semibold text-center mb-4 text-[#0f4a85] ">6.</h3>
+                      <p className="font-medium mt-3 text-[#0f4a85] text-lg text-center">
+                        Go to "Registration Fee," review the info, select amount of 10,000 or more, and complete the payment using any of the given payment options.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+      <div
+        className="relative mb-10 lg:mb-10 "
+        style={{
+          backgroundImage: `url(${bgImage})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        {/* py-10 lg:py-20 */}
+        <div className={`${Classes["container"]} py-10 lg:py-20 `}>
+          <div className="text-center mt-5  mb-10 md:mb-20">
+            <h2 className="text-2xl md:text-3xl lg:text-[50px] fw500 text-white  mb-2">Offline Admission Process</h2>
+
+            <div>
+              <p className="text-white">Career Counselling at SRMU helps students identify their strengths and guides them to navigate the job market with confidence.</p>
+            </div>
+          </div>
+          <img src={offlineAddmission} alt="offlineAddmission" className="hidden md:block" />
+          <img src={offlineAddmissionMobile} alt="offlineAddmissionMobile" className="block md:hidden" />
+        </div>
+      </div>
+    </>
+  );
 };
 
 export default OnlineAdmissionProcess;

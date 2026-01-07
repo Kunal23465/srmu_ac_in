@@ -94,6 +94,7 @@ import ProgramDetailsPage from "../pages/programs/details-page/ProgramDetailsPag
 import PrivacyPolicyPage from "../pages/privacy-policy/PrivacyPolicyPage";
 import DisclaimerPage from "../pages/disclaimer/DisclaimerPage";
 import TermsAndConditionPage from "../pages/terms-condition/TermsAndConditionPage";
+import MandatoryDisclouserPage from "../pages/mandatory-disclouser/MandatoryDisclouserPage";
 // interface IMatches {
 //   pathname: string;
 //   params: Params<string>;
@@ -512,6 +513,11 @@ export const routes = [
         element: <ContactUsPage />,
       },
       {
+        path: "mandatory-disclouser",
+        element: <MandatoryDisclouserPage />,
+      },
+      // MandatoryDisclouserPage
+      {
         path: ":name",
         element: <NewsEventDetails />,
       },
@@ -539,16 +545,16 @@ export const routes = [
       },
       {
         path: "/privacy-policy",
-        element: <PrivacyPolicyPage />
+        element: <PrivacyPolicyPage />,
       },
       {
         path: "/disclaimer",
-        element: <DisclaimerPage />
+        element: <DisclaimerPage />,
       },
       {
         path: "/terms-conditions",
-        element: <TermsAndConditionPage/>
-      }
+        element: <TermsAndConditionPage />,
+      },
     ],
   },
 ];
