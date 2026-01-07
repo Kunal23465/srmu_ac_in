@@ -2,11 +2,12 @@ import React from "react";
 import Classes from "../../../utils/styles/Global.module.css";
 import CustomOverviewSection from "../../../utils/custom/CustomOverviewSection";
 import { approvalOverviewData } from "../../../data/about/recognition-approval/recognitionApprovalsData";
-import IndustrialCollabration from "./IndustrialCollabration";
+
 import AssociationsMemberships from "./AssociateMembership";
 import CustomTopFooter from "../../../utils/custom/CustomTopFooter";
 import { CustomTopFooterAbout } from "../../../data/about/aboutusData";
 import ApprovalsSlider from "./ApprovalSlider";
+import IndustrialCollabration from "./IndustrialCollabration";
 
 const RecognitionApproval: React.FC = () => {
   return (
