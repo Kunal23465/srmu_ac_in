@@ -1,5 +1,4 @@
 import {
-  counterDataForBtechinCSEAIandML,
   eligibilityDataforAIandML,
   opportunityCardDataAIML,
   partnerDataforAIandML,
@@ -28,6 +27,7 @@ import { useEffect } from "react";
 import ProgramFeeTable from "./ProgramFeeTable";
 import { fetchProgramFeesByProgramId } from "../../../store/program-finder/program-fees/programFeesThunk";
 import { fetchWhySrmuSectionById } from "../../../store/program-finder/why-srmu/whySrmuSectionThunk";
+import { getCounterById } from "../../../store/program-finder/counter/getCounterThunk";
 
 const ProgramDetails = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -37,14 +37,37 @@ const ProgramDetails = () => {
   console.log(dataByID, "program details data");
   const { data: feesData } = useSelector((state: RootState) => state.programFees);
   const { data: whySrmuData } = useSelector((state: RootState) => state.getWhySrmuSection);
-
+  const { data: counterData } = useSelector((state: RootState) => state.getCounterById);
   useEffect(() => {
     dispatch(fetchWhySrmuSectionById({ programId: location.state.programId || undefined }));
     dispatch(fetchProgramFinderByID(location.state.programId || undefined));
     dispatch(fetchProgramFeesByProgramId(location.state.programId || undefined));
+    dispatch(getCounterById(location.state.programId || undefined));
+    // getCounterById;
   }, [dispatch, location.state.programId]);
 
-  console.log("whySrmuData==", whySrmuData);
+  // counter data key change
+  const convertedCounterData = counterData.map((item) => {
+    let value = item.value;
+    let suffix = "";
+
+    // Extract numeric value and suffix
+    const match = value.match(/^(\d+)(.*)$/);
+
+    if (match) {
+      value = match[1];
+      suffix = match[2];
+    }
+
+    return {
+      id: item.programSubFieldId,
+      value,
+      suffix,
+      label: item.title,
+    };
+  });
+
+  console.log("counterData==", counterData);
   return (
     <div className="mt-20">
       <div className={`${Classes["container"]}`}>
@@ -64,7 +87,7 @@ const ProgramDetails = () => {
             </div>
           </div>
         </div>
-        <Counter counterData={counterDataForBtechinCSEAIandML} />
+        <Counter counterData={convertedCounterData} />
         <CustomEligibilitySection data={eligibilityDataforAIandML} />
       </div>
       <div className="bg-[#ecf0f9] pb-10">
