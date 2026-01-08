@@ -44,7 +44,7 @@ const CustomTable: React.FC<CustomTableProps> = ({ columnOneHeader, columnTwoHea
         </thead>
         <tbody>
           {data.map((row) => (
-            <tr key={row.id} className="table-data-row md:text-[18.75px] text-[17.5px] sm:text-[17.5px] lg:text-[20px] fw500 ">
+            <tr key={row.id} className="table-data-row md:text-[18.75px] text-[17.5px]  fw500 ">
               <td className="row-title title text-[#023047]">{row.title}</td>
               <td className="row-download">
                 <DownloadIcon item={row.download} />

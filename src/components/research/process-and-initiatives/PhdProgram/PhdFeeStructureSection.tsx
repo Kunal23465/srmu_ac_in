@@ -18,7 +18,9 @@ const PhdFeeStructureSection: React.FC = () => {
           {/* Header */}
           <div className="grid grid-cols-3 bg-[#ffb703] text-[#0f2f54] lg:text-[15px] md:text-[14px] sm:text-[13.132px] text-[13.132px] px-6 py-4 mb-5 md:mb-8 rounded-xl">
             {tableHeadings.map((heading, index) => (
-              <div key={index}>{heading}</div>
+              <div key={index} className="font-medium">
+                {heading}
+              </div>
             ))}
           </div>
 
