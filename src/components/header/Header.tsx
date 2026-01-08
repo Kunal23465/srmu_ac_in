@@ -160,8 +160,8 @@ const Header = () => {
                                               type.programs.map((prog) => (
                                                 <li key={prog.programId}>
                                                   <Link
-                                                    to={`/programs/${programFlagSlug}/${slugify(prog.programName)}`}
-                                                    state={{ programTypeId: type.programFlagId }}
+                                                    to={`/programs/details/${slugify(prog.programName)}`}
+                                                    state={{ programTypeId: type.programFlagId, programId: prog.programId }}
                                                     className="text-[15px] px-3 py-2 rounded-md text-[#212529] hover:text-[#ffb703] border border-white hover:border-[#ffb703] block"
                                                   >
                                                     {prog.programName}
