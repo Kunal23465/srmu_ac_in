@@ -95,6 +95,7 @@ import PrivacyPolicyPage from "../pages/privacy-policy/PrivacyPolicyPage";
 import DisclaimerPage from "../pages/disclaimer/DisclaimerPage";
 import TermsAndConditionPage from "../pages/terms-condition/TermsAndConditionPage";
 import MandatoryDisclouserPage from "../pages/mandatory-disclouser/MandatoryDisclouserPage";
+import PhdOfflineApplicationPage from "../pages/Research/phd-offline-application/PhdOfflineApplicationPage";
 // interface IMatches {
 //   pathname: string;
 //   params: Params<string>;
@@ -453,6 +454,12 @@ export const routes = [
             path: "phd-notification-session",
             element: <PhdNotificationSessionPage />,
           },
+          {
+            path: "phd-offline-application",
+            element: <PhdOfflineApplicationPage />,
+          },
+
+          // PhdOfflineApplicationPage
           {
             path: "innovation",
             element: <InnovationPage />,

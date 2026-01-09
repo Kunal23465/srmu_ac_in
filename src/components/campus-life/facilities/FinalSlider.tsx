@@ -11,7 +11,7 @@ const FinalSlider: React.FC = () => {
   } | null>(null);
 
   return (
-    <div className=" p-4 sm:p-8 font-sans">
+    <div className=" py-4 sm:py-8 font-sans">
       <div className="">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-8 w-full">
           <div className="w-full sm:w-auto">
