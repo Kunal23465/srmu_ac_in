@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const Transportation = () => {
     return (
-      <div className="px-4 md:px-20 py-10">
+      <div className=" py-10">
         <div className="mb-8">
           <h2 className="text-[28px] lg:text-[3.125rem] text-[#023047]  fw600">Transportation</h2>
         </div>

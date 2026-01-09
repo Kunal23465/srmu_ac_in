@@ -71,8 +71,12 @@ const Header = () => {
                     const isMega = data?.isMegaMenu === true;
 
                     return (
-                      <div key={index} className="relative px-[15px] py-4 group text-[15px]  cursor-pointer">
-                        <div className={`flex items-center text-white hover:text-[#ffb703] uppercase ${location.pathname === data.path ? "active" : ""}`}>{data.item}</div>
+                      <div key={index} className="relative px-[5px] lg:px-2.5 xl:px-[15px] py-4 group text-[15px]  cursor-pointer">
+                        <div
+                          className={`flex items-center text-[13px] xl:text-[15px] text-white hover:text-[#ffb703] uppercase ${location.pathname === data.path ? "active" : ""}`}
+                        >
+                          {data.item}
+                        </div>
 
                         {/* NORMAL DROPDOWN */}
                         {!isMega && data?.subItem && (

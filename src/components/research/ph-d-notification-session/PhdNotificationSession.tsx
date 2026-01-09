@@ -5,6 +5,7 @@ import { PhdNotificationOverviewData } from "../../../data/research/phd-Notifica
 import SeatsAvailableSection from "./seat-available-section/SeatsAvailableSection";
 import CustomTopFooter from "../../../utils/custom/CustomTopFooter";
 import { CustomTopFooterAbout } from "../../../data/about/aboutusData";
+import { Link } from "react-router-dom";
 const importantDates = [
   {
     id: 0,
@@ -61,12 +62,19 @@ const PhdNotificationSession: React.FC = () => {
         <div className="mt-0">
           <h1 className="lg:text-[32px] md:text-[27.255px] sm:text-[21.925px] text-[21.925px] fw500 text-black mb-2">Mode of Application</h1>
           <div className="flex flex-col md:flex-row items-center justify-start gap-5 md:gap-10">
-            <button className=" bg-[#0f4a85] cursor-pointer text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] border-2 border-[#0f4a85] text-white font-medium uppercase py-1 md:py-3 px-2 md:px-5 rounded-lg hover:bg-white hover:text-[#0f4a85] transition-colors duration-500 w-fit">
+            <Link
+              target="_blank"
+              to="https://phdadmission.srmu.ac.in/"
+              className=" bg-[#0f4a85] cursor-pointer text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] border-2 border-[#0f4a85] text-white font-medium uppercase py-1 md:py-3 px-2 md:px-5 rounded-lg hover:bg-white hover:text-[#0f4a85] transition-colors duration-500 w-fit"
+            >
               Online Application
-            </button>
-            <button className=" bg-[#0f4a85] cursor-pointer text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] border-2 border-[#0f4a85]  text-white font-medium uppercase py-1 md:py-3 px-2 md:px-5 rounded-lg hover:bg-white hover:text-[#0f4a85] transition-colors duration-500 w-fit">
+            </Link>
+            <Link
+              to="/research/phd-offline-application"
+              className=" bg-[#0f4a85] cursor-pointer text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] border-2 border-[#0f4a85]  text-white font-medium uppercase py-1 md:py-3 px-2 md:px-5 rounded-lg hover:bg-white hover:text-[#0f4a85] transition-colors duration-500 w-fit"
+            >
               Offline Application
-            </button>
+            </Link>
           </div>
         </div>
         <div className="mt-10">

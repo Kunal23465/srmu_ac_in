@@ -1,10 +1,4 @@
-import {
-  eligibilityDataforAIandML,
-  opportunityCardDataAIML,
-  partnerDataforAIandML,
-  scopeData,
-  steps,
-} from "../../../data/programs/btechincseai-ml-data/btechincseai-ml-data";
+import { eligibilityDataforAIandML, opportunityCardDataAIML, partnerDataforAIandML, scopeData, steps } from "../../../data/programs/btechincseai-ml-data/btechincseai-ml-data";
 import Counter from "../../../utils/custom/Counter";
 import Classes from "../../../utils/styles/Global.module.css";
 import CustomDepartmentSlider from "../../../utils/custom/CustomDepartmentSlider";
