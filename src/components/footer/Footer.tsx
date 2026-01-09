@@ -419,15 +419,17 @@ const Footer: React.FC = () => {
             </div>
             <div className="w-full grid-fourth">
               <h3 className="font-semibold text-sm sm:text-base mb-4 text-[#ffb703] Get Responsible uppercase">Explore / Engage</h3>
-              <button
-                onClick={() => setCheck(true)}
-                className="border-2 mb-4 hover:bg-white hover:text-[#0f4a85] border-[#ffb703] rounded-md flex items-center space-x-4 px-4 py-3"
+              <Link
+                target="_blank"
+                to="https://www.youtube.com/watch?v=vs_TEm1_XS8"
+                // onClick={() => setCheck(true)}
+                className="border-2  mb-4 hover:bg-white hover:text-[#0f4a85] border-[#ffb703] rounded-md inline-flex items-center space-x-4 px-4 py-3"
               >
                 <span className="mr-2">
                   <CiGlobe size={28} color="#ffb703" />
                 </span>{" "}
                 Virtual Tour
-              </button>
+              </Link>
               <h3 className="font-semibold text-sm sm:text-base pt-10 mb-4 text-[#ffb703]  Get Responsible uppercase">Awards</h3>
               <div className="flex gap-x-4 mb-4">
                 <img src={awards1} alt="awards1" />
