@@ -1280,8 +1280,8 @@ export interface Testimonial {
   image: string;
 }
 
-import img1 from "../../assets/images/placements/student-testimonials/img-20240131-wa0002-3101240315444.jpg";
-import img2 from "../../assets/images/placements/student-testimonials/img-20240131-wa0003-31012403282192.jpg";
+import img1 from "../../assets/images/placements/student-testimonials/testimonial1.jpg";
+import img2 from "../../assets/images/placements/student-testimonials/testimonial2.jpg";
 import img3 from "../../assets/images/placements/student-testimonials/picture1-31012403350939.png";
 import img4 from "../../assets/images/placements/student-testimonials/picture3-01022412241850.png";
 import img5 from "../../assets/images/placements/student-testimonials/picture4-01022412273742.png";
