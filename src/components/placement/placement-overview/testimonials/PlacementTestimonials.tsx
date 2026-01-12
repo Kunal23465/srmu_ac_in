@@ -5,20 +5,20 @@ import "./Testimonials.css";
 import OurRecruiters from "../OurRecruiters";
 import { Testimonial, testimonialData } from "../../../../data/placement/placementData";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
-
+import recruiters_testimonials from "../../../../assets/images/placements/placement-overview/recruiters-testimonials.jpg";
+import students_testimonials from "../../../../assets/images/placements/placement-overview/students-testimonials.jpg";
 type ActiveTab = "recruiters" | "students";
 
 const PlacementTestimonials: FC = () => {
   const [activeTab, setActiveTab] = useState<ActiveTab>("recruiters");
   const sliderRef = useRef<Slider>(null);
-const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const currentTestimonials: Testimonial[] = testimonialData[activeTab];
-const maxIndex = currentTestimonials.length - 1;
+  const maxIndex = currentTestimonials.length - 1;
   const handleTabChange = (tab: ActiveTab) => {
     setActiveTab(tab);
     sliderRef.current?.slickGoTo(0);
     setCurrentIndex(0);
-
   };
 
   const settings = {
@@ -110,7 +110,12 @@ const maxIndex = currentTestimonials.length - 1;
 
           {/* RIGHT SIDE IMAGE */}
           <div className="flex justify-center items-center mx-w-[420px] mx-h-[420px] overflow-hidden rounded-full bg-gray-100">
-            <img
+            {activeTab === "recruiters" ? (
+              <img src={recruiters_testimonials} className="w-full h-full object-cover rounded-full" alt="Testimonial Subject" />
+            ) : (
+              <img src={students_testimonials} className="w-full h-full object-cover rounded-full" alt="Testimonial Subject" />
+            )}
+            {/* <img
               src={
                 activeTab === "recruiters"
                   ? "/src/assets/images/placements/placement-overview/recruiters-testimonials.jpg"
@@ -118,7 +123,7 @@ const maxIndex = currentTestimonials.length - 1;
               }
               className="w-full h-full object-cover rounded-full"
               alt="Testimonial Subject"
-            />
+            /> */}
           </div>
         </div>
       </div>

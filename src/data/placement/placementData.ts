@@ -1432,20 +1432,20 @@ export type Drive = {
   dateOfVisit: string;
   description: string;
 };
-
+import logo_2023_1 from "../../assets/images/placements/placement-overview/aditya-birla.png";
 export const placementData: Record<string, Drive[]> = {
   "2023": [
     {
       id: 1,
       companyName: "TATA AIG Insurance",
-      companyLogo: "/src/assets/images/placements/placement-overview/aditya-birla.png",
+      companyLogo: logo_2023_1,
       dateOfVisit: "03 September, 2023",
       description: "Tata AIG General Insurance Company Limited is a joint venture company…",
     },
     {
       id: 2,
       companyName: "YES BANK",
-      companyLogo: "/src/assets/images/placements/placement-overview/aditya-birla.png",
+      companyLogo: logo_2023_1,
 
       dateOfVisit: "21 March, 2023",
       description: "At YES BANK, we are driven by a deep purpose and relentless commitment…",
@@ -1453,7 +1453,7 @@ export const placementData: Record<string, Drive[]> = {
     {
       id: 3,
       companyName: "Zenus Group",
-      companyLogo: "/src/assets/images/placements/placement-overview/aditya-birla.png",
+      companyLogo: logo_2023_1,
 
       dateOfVisit: "15 November, 2022",
       description: "Zenus Group is a Telecom Company established in 2012…",
@@ -1461,7 +1461,7 @@ export const placementData: Record<string, Drive[]> = {
     {
       id: 4,
       companyName: "Zenus Group",
-      companyLogo: "/src/assets/images/placements/placement-overview/aditya-birla.png",
+      companyLogo: logo_2023_1,
 
       dateOfVisit: "15 November, 2022",
       description: "Zenus Group is a Telecom Company established in 2012…",
@@ -1469,7 +1469,7 @@ export const placementData: Record<string, Drive[]> = {
     {
       id: 5,
       companyName: "Zenus Group",
-      companyLogo: "/src/assets/images/placements/placement-overview/aditya-birla.png",
+      companyLogo: logo_2023_1,
 
       dateOfVisit: "15 November, 2022",
       description: "Zenus Group is a Telecom Company established in 2012…",
@@ -1480,7 +1480,7 @@ export const placementData: Record<string, Drive[]> = {
     {
       id: 6,
       companyName: "Accenture",
-      companyLogo: "/src/assets/images/placements/placement-overview/aditya-birla.png",
+      companyLogo: logo_2023_1,
 
       dateOfVisit: "01 April, 2024",
       description: "Accenture is a global professional services company…",
@@ -1488,7 +1488,7 @@ export const placementData: Record<string, Drive[]> = {
     {
       id: 7,
       companyName: "Capgemini",
-      companyLogo: "/src/assets/images/placements/placement-overview/aditya-birla.png",
+      companyLogo: logo_2023_1,
 
       dateOfVisit: "15 June, 2024",
       description: "Capgemini is a French multinational IT services company…",
@@ -1496,7 +1496,7 @@ export const placementData: Record<string, Drive[]> = {
     {
       id: 8,
       companyName: "Wipro",
-      companyLogo: "/src/assets/images/placements/placement-overview/aditya-birla.png",
+      companyLogo: logo_2023_1,
 
       dateOfVisit: "12 May, 2024",
       description: "Wipro is a leading global IT, consulting and BPO company…",
@@ -1507,7 +1507,7 @@ export const placementData: Record<string, Drive[]> = {
     {
       id: 9,
       companyName: "Cognizant",
-      companyLogo: "/src/assets/images/placements/placement-overview/aditya-birla.png",
+      companyLogo: logo_2023_1,
 
       dateOfVisit: "10 February, 2025",
       description: "Cognizant is an American multinational IT services company…",
@@ -1515,7 +1515,7 @@ export const placementData: Record<string, Drive[]> = {
     {
       id: 10,
       companyName: "Puma",
-      companyLogo: "/src/assets/images/placements/placement-overview/aditya-birla.png",
+      companyLogo: logo_2023_1,
 
       dateOfVisit: "28 February, 2025",
       description: "PUMA is a world-leading sportswear company…",
