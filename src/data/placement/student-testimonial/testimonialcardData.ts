@@ -9,8 +9,8 @@ import img8 from "../../../assets/images/placements/student-testimonials/nishcal
 import img9 from "../../../assets/images/placements/student-testimonials/a2-05102312300115.jpg";
 import img10 from "../../../assets/images/placements/student-testimonials/a1-05102312223362.jpg";
 import img11 from "../../../assets/images/placements/student-testimonials/a10-05102312565292.jpg";
-import img12 from "../../../assets/images/placements/student-testimonials/img-20240131-wa0002-3101240315444.jpg";
-import img13 from "../../../assets/images/placements/student-testimonials/img-20240131-wa0003-31012403282192.jpg";
+import img12 from "../../../assets/images/placements/student-testimonials/testimonial1.jpg";
+import img13 from "../../../assets/images/placements/student-testimonials/testimonial2.jpg";
 import img14 from "../../../assets/images/placements/student-testimonials/picture1-31012403350939.png";
 import img15 from "../../../assets/images/placements/student-testimonials/picture3-01022412241850.png";
 import img16 from "../../../assets/images/placements/student-testimonials/picture4-01022412273742.png";
@@ -93,9 +93,6 @@ export const testimonialCardData: testimonialCard[] = [
     batch: "B.Tech. in BT (Batch: 2020), Placed in Extra Marks",
   },
 
-
-
-  
   {
     id: 3,
     img: img3,
