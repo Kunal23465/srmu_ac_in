@@ -110,7 +110,17 @@ const PlacementTestimonials: FC = () => {
 
           {/* RIGHT SIDE IMAGE */}
           <div className="flex justify-center items-center mx-w-[420px] mx-h-[420px] overflow-hidden rounded-full bg-gray-100">
-            {activeTab === "recruiters" ? recruiters_testimonials : students_testimonials}
+            {activeTab === "recruiters" ?  <img
+              src={
+               recruiters_testimonials}
+              className="w-full h-full object-cover rounded-full"
+              alt="Testimonial Subject"
+            />  : <img
+              src={
+              students_testimonials}
+              className="w-full h-full object-cover rounded-full"
+              alt="Testimonial Subject"
+            />}
             {/* <img
               src={
                 activeTab === "recruiters"
