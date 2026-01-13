@@ -162,7 +162,7 @@ export const footerData = {
     {
       id: 4,
       title: "Blogs",
-      path: "#",
+      path: "/blogs",
     },
   ],
   getResponsible: [

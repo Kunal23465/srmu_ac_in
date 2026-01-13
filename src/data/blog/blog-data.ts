@@ -1,5 +1,4 @@
-import lab from "../../assets/images/blogs/lab-technician-doctor-analyzing-virus-evolution-lo-04092501501148.jpg"
-
+import lab from "../../assets/images/blogs/lab-technician-doctor-analyzing-virus-evolution-lo-04092501501148.jpg";
 
 export interface BlogCardType {
   id: number;
@@ -10,8 +9,9 @@ export interface BlogCardType {
   breadcrumb: string;
   description?: string;
   longContent: string;
+  postedOn?: string;
+  blogId?: number;
 }
-
 
 export const blogCards: BlogCardType[] = [
   {
@@ -120,8 +120,7 @@ export const blogCards: BlogCardType[] = [
 <br/>
 <h2 class="blog-heading fw500">A Step Toward a Promising Future</h2>
 <p class="font16">Pursuing a postgraduate degree in biotechnology is more than an academic milestone, it is an investment in a future of discovery, innovation, and meaningful contribution to society. With the right preparation, clear goals, and strong fundamentals, you can secure admission into leading programs. Institutions like SRMU provide the right blend of academic rigor, hands-on learning, and career support, making them an excellent choice for aspiring biotechnology professionals.</p>
-`
-    ,
+`,
   },
   {
     id: 2,
@@ -129,7 +128,7 @@ export const blogCards: BlogCardType[] = [
     date: "September 04, 2025",
     imagePath: lab,
     routeKey: "Career-Opportunities-After-BTech-CSE",
-    breadcrumb: "B.Tech CSE Careers",   // ← CUSTOM BREADCRUMB
+    breadcrumb: "B.Tech CSE Careers", // ← CUSTOM BREADCRUMB
     longContent: `...`,
   },
   {
@@ -138,7 +137,7 @@ export const blogCards: BlogCardType[] = [
     date: "September 04, 2025",
     imagePath: lab,
     routeKey: "Career-Guide-BCA",
-    breadcrumb: "BCA Career Guide",   // ← CUSTOM BREADCRUMB
+    breadcrumb: "BCA Career Guide", // ← CUSTOM BREADCRUMB
     longContent: `...`,
   },
   {
@@ -147,16 +146,16 @@ export const blogCards: BlogCardType[] = [
     date: "September 04, 2025",
     imagePath: lab,
     routeKey: "Career-Guide-BCA",
-    breadcrumb: "BCA Career Guide",   // ← CUSTOM BREADCRUMB
+    breadcrumb: "BCA Career Guide", // ← CUSTOM BREADCRUMB
     longContent: `...`,
   },
-   {
+  {
     id: 5,
     title: "A Student's Guide to Building a Career with a BCA Degree",
     date: "September 04, 2025",
     imagePath: lab,
     routeKey: "Career-Guide-BCA",
-    breadcrumb: "BCA Career Guide",   // ← CUSTOM BREADCRUMB
+    breadcrumb: "BCA Career Guide", // ← CUSTOM BREADCRUMB
     longContent: `...`,
   },
   {
@@ -165,7 +164,7 @@ export const blogCards: BlogCardType[] = [
     date: "September 04, 2025",
     imagePath: lab,
     routeKey: "Career-Guide-BCA",
-    breadcrumb: "BCA Career Guide",   // ← CUSTOM BREADCRUMB
+    breadcrumb: "BCA Career Guide", // ← CUSTOM BREADCRUMB
     longContent: `...`,
   },
   {
@@ -174,7 +173,7 @@ export const blogCards: BlogCardType[] = [
     date: "September 04, 2025",
     imagePath: lab,
     routeKey: "Career-Guide-BCA",
-    breadcrumb: "BCA Career Guide",   // ← CUSTOM BREADCRUMB
+    breadcrumb: "BCA Career Guide", // ← CUSTOM BREADCRUMB
     longContent: `...`,
   },
   {
@@ -183,7 +182,7 @@ export const blogCards: BlogCardType[] = [
     date: "September 04, 2025",
     imagePath: lab,
     routeKey: "Career-Guide-BCA",
-    breadcrumb: "BCA Career Guide",   // ← CUSTOM BREADCRUMB
+    breadcrumb: "BCA Career Guide", // ← CUSTOM BREADCRUMB
     longContent: `...`,
   },
   {
@@ -192,7 +191,7 @@ export const blogCards: BlogCardType[] = [
     date: "September 04, 2025",
     imagePath: lab,
     routeKey: "Career-Guide-BCA",
-    breadcrumb: "BCA Career Guide",   // ← CUSTOM BREADCRUMB
+    breadcrumb: "BCA Career Guide", // ← CUSTOM BREADCRUMB
     longContent: `...`,
   },
   {
@@ -201,7 +200,7 @@ export const blogCards: BlogCardType[] = [
     date: "September 04, 2025",
     imagePath: lab,
     routeKey: "Career-Guide-BCA",
-    breadcrumb: "BCA Career Guide",   // ← CUSTOM BREADCRUMB
+    breadcrumb: "BCA Career Guide", // ← CUSTOM BREADCRUMB
     longContent: `...`,
   },
   {
@@ -210,7 +209,7 @@ export const blogCards: BlogCardType[] = [
     date: "September 04, 2025",
     imagePath: lab,
     routeKey: "Career-Guide-BCA",
-    breadcrumb: "BCA Career Guide",   // ← CUSTOM BREADCRUMB
+    breadcrumb: "BCA Career Guide", // ← CUSTOM BREADCRUMB
     longContent: `...`,
   },
   {
@@ -219,8 +218,7 @@ export const blogCards: BlogCardType[] = [
     date: "September 04, 2025",
     imagePath: lab,
     routeKey: "Career-Guide-BCA",
-    breadcrumb: "BCA Career Guide",   // ← CUSTOM BREADCRUMB
+    breadcrumb: "BCA Career Guide", // ← CUSTOM BREADCRUMB
     longContent: `...`,
   },
-  
 ];

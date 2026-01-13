@@ -1385,6 +1385,20 @@ ul {
   object-position: top;
 }
 
+.hover-parline {
+  position: relative;
+}
+
+.hover-parline:hover::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 5px;
+  background: #ffb703;
+}
+
 @media screen and (min-width: 592px) {
 
   /* ======================================== */

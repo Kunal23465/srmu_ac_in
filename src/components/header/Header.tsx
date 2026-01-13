@@ -16,6 +16,7 @@ const Header = () => {
   const { bottomHeaderData } = HeaderData[0];
   const columnGroups = [["After Class 10th", "After Polytechnic"], ["After Class 12th"], ["Industry Honors Programs"], ["After Graduation", "After Post Graduation"]];
   const [sideMenu, setSideMenu] = useState(false);
+  const [showMegaMenu, setShowMegaMenu] = useState(false);
   const [subMenu, setSubMenu] = useState<number | null>(null);
   const [isActive, setIsActive] = useState(false);
   // const [programMenu, setProgramMenu] = useState<NavbarProgramType[]>([]);
@@ -57,11 +58,6 @@ const Header = () => {
               {/* LOGO */}
               <Link to="/" className="logo_div flex items-center lg:gap-1 xl:gap-3 cursor-pointer">
                 <img src={logo} alt="logo" />
-
-                {/* <h2 className={`font-bold lg:text-[1rem] xl:text-[1.4rem] text-white`}>
-                  SHRI RAMSWAROOP
-                  <div className="font-semibold leading-3 text-[0.8rem] sm:text-[0.5rem] lg:text-[0.9rem] xl:text-[1.2rem]">MEMORIAL UNIVERSITY</div>
-                </h2> */}
               </Link>
 
               {/* DESKTOP MENU */}
@@ -71,21 +67,22 @@ const Header = () => {
                     const isMega = data?.isMegaMenu === true;
 
                     return (
-                      <div key={index} className="relative px-[5px] lg:px-2.5 xl:px-[15px] py-4 group text-[15px]  cursor-pointer">
+                      <div onMouseEnter={() => setShowMegaMenu(true)}
+                        onMouseLeave={() => setShowMegaMenu(false)} key={index} className="relative px-[5px]  lg:px-2.5 xl:px-[15px] py-4 group text-[15px]  cursor-pointer">
                         <div
-                          className={`flex items-center text-[13px] xl:text-[15px] text-white hover:text-[#ffb703] uppercase ${location.pathname === data.path ? "active" : ""}`}
+                          className={`flex items-center text-[13px] xl:text-[15px] text-white group-hover:text-[#ffb703] uppercase ${location.pathname === data.path ? "active" : ""}`}
                         >
                           {data.item}
                         </div>
 
                         {/* NORMAL DROPDOWN */}
-                        {!isMega && data?.subItem && (
-                          <div className="absolute top-[60px] right-0 bg-white rounded-md shadow-md">
+                        {!isMega && showMegaMenu && data?.subItem && (
+                          <div className="absolute top-[50px] right-0 bg-white rounded-md shadow-md">
                             <span className="hidden group-hover:block manage-top-arrow"></span>
 
                             <ul className="transition-all  w-full min-w-[290px] duration-300 max-h-0 group-hover:max-h-[500px] overflow-hidden rounded-md ">
                               {data.subItem.map((value, i) => (
-                                <Link key={i} to={value.path} className={`block text-[15px] px-3 py-3 hover:text-[#ffb703] ${i !== 0 && "border-t border-gray-200"}`}>
+                                <Link key={i} onClick={() => setShowMegaMenu(false)} to={value.path} className={`block text-[15px] px-3 py-3 hover-parline hover:text-[#ffb703] ${i !== 0 && "border-t border-gray-200"}`}>
                                   {value.item}
                                 </Link>
                               ))}
@@ -93,44 +90,8 @@ const Header = () => {
                           </div>
                         )}
 
-                        {/* MEGA MENU */}
-                        {/* {isMega && data?.megaMenu && (
-                          <div
-                            className="
-                            fixed left-1/2 -translate-x-1/2
-                            top-[120px] bg-white rounded-md
-                            hidden group-hover:flex  border-t-4 border-t-yellow-500 border-b-4 border-b-blue-500 w-[95vw] px-10 py-6 gap-9 z-[9999]"
-                          >
-                            <span className="hidden group-hover:block manage-top-arrow big"></span>
 
-                            <div className="grid grid-cols-4 gap-6 w-full">
-                              {data.megaMenu.map((data) => {
-                                return (
-                                  <div className="w-full">
-                                    {data.column.map((section, secIdx) => (
-                                      <div key={secIdx} className="mb-6">
-                                        <Link to={section.path} className="font-medium text-base p-3 rounded-lg inline-block hover:bg-[#ffb703]  text-[#0f4a85] hover:text-black">
-                                          {section.heading}
-                                        </Link>
-
-                                        <ul className="mt-2 px-3 space-y-2 list-none!">
-                                          {section.item.map((sub, subIdx) => (
-                                            <li key={subIdx}>
-                                              <Link to={sub.path} className="text-[15px] text-gray-700 hover:text-[#ffb703]">
-                                                {sub.item}
-                                              </Link>
-                                            </li>
-                                          ))}
-                                        </ul>
-                                      </div>
-                                    ))}
-                                  </div>
-                                );
-                              })}
-                            </div>
-                          </div>
-                        )} */}
-                        {isMega && (
+                        {isMega && showMegaMenu && (
                           <div
                             className="
     fixed left-1/2 -translate-x-1/2
@@ -138,7 +99,7 @@ const Header = () => {
     hidden group-hover:flex
     border-t-4 border-t-yellow-500
     border-b-4 border-b-blue-500
-    w-[95vw] px-10 py-6 gap-9 z-[9999]"
+    w-[95vw] px-10 py-6 gap-9 z-9999"
                           >
                             <span className="hidden group-hover:block manage-top-arrow big"></span>
                             <div className="grid grid-cols-4 gap-6 w-full">
@@ -153,7 +114,7 @@ const Header = () => {
                                         <div key={type.programFlagId}>
                                           {/* BLUE HEADING */}
                                           <h3 className="font-medium text-[17px] p-3 rounded-lg inline-block hover:bg-[#ffb703] text-[#0f4a85] hover:text-black">
-                                            <Link to={`/programs/${programFlagSlug}`} state={{ programTypeId: type.programFlagId }}>
+                                            <Link onClick={() => setShowMegaMenu(false)} to={`/programs/${programFlagSlug}`} state={{ programTypeId: type.programFlagId }}>
                                               {type.programFlagName}
                                             </Link>
                                           </h3>
@@ -164,6 +125,7 @@ const Header = () => {
                                               type.programs.map((prog) => (
                                                 <li key={prog.programId}>
                                                   <Link
+                                                    onClick={() => setShowMegaMenu(false)}
                                                     to={`/programs/details/${slugify(prog.programName)}`}
                                                     state={{ programTypeId: type.programFlagId, programId: prog.programId }}
                                                     className="text-[15px] px-3 py-2 rounded-md text-[#212529] hover:text-[#ffb703] border border-white hover:border-[#ffb703] block"
@@ -178,6 +140,7 @@ const Header = () => {
                                               type.disciplines.map((disc) => (
                                                 <li key={disc.disciplineId}>
                                                   <Link
+                                                    onClick={() => setShowMegaMenu(false)}
                                                     to={`/programs/${programFlagSlug}/${slugify(disc.disciplineName)}`}
                                                     state={{
                                                       programTypeId: type.programTypeId,

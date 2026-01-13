@@ -89,7 +89,7 @@ const ProgramDetails = () => {
           heading="Why SRMU?"
           description=""
           data={whySrmuData}
-          renderCard={({ item }) => <WhyCardComp item={item} />}
+          renderCard={({ item, index }) => <WhyCardComp item={item} imageIndex={index % 4} />}
           bgColor="transparent"
           headingColor="black"
           descriptionColor="#e5e5e5"
