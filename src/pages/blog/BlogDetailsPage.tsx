@@ -1,6 +1,5 @@
 import React from "react";
-import { useLocation, useParams } from "react-router-dom";
-import { blogCards } from "../../data/blog/blog-data";
+import { useLocation } from "react-router-dom";
 import Classes from "../../utils/styles/Global.module.css";
 import CustomTopFooter from "../../utils/custom/CustomTopFooter";
 import { CustomTopFooterAbout } from "../../data/about/aboutusData";
