@@ -535,7 +535,7 @@ export const routes = [
 
         children: [
           {
-            path: ":blogRouteKey",
+            path: ":title",
             element: <BlogDetailsPage />,
           },
         ],
