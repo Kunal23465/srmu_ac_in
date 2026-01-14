@@ -34,6 +34,8 @@ const ProgramFinderHome: React.FC = () => {
 
   const { programTypeId: programFlagIdFromState, disciplineId: disciplineIdFromState } = location.state || {};
 
+
+  console.log("programFlagIdFromState,disciplineIdFromState", programFlagIdFromState, disciplineIdFromState)
   /* ===========================
            Debounce Search
      =========================== */
@@ -85,7 +87,7 @@ const ProgramFinderHome: React.FC = () => {
     }
   }, [programFlagIdFromState, disciplineIdFromState]);
 
-  console.log("programFlag", programFlag);
+  console.log("programFlagIdFromState", programFlagIdFromState);
   return (
     <>
       <div className={`${Classes.container} mt-16`}>
