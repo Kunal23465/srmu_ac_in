@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import { ProgramData } from "../../../store/program-finder/programFinder-slice";
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 import { GoSearch } from "react-icons/go";
+import { RootState } from "../../../store";
+import { useSelector } from "react-redux";
 interface PropsTypes {
   data: ProgramData[];
   programTypeOptions: any[];
@@ -30,10 +32,12 @@ const ProgramFilter: React.FC<PropsTypes> = ({
   onDisciplineChange,
   isTypeFlag,
 }) => {
-  console.log(selectedProgramType, "selectedProgramType");
+  // console.log(selectedDiscipline, "selectedDiscipline");
   const [visibleCount, setVisibleCount] = useState(5);
   const visibleCourses = data.slice(0, visibleCount);
+  const { loading } = useSelector((state: RootState) => state.getProgramFinder);
   const slugify = (str: string) => str.toLowerCase().trim().replace(/\s+/g, "-");
+
   return (
     <div className={`${Classes["container"]} pb-6 sm:py-10`}>
       {/* Filters */}
@@ -50,15 +54,15 @@ const ProgramFilter: React.FC<PropsTypes> = ({
             <option value="">{isTypeFlag ? " Select Program Flag" : "Select Program Type"} </option>
             {isTypeFlag
               ? programTypeOptions.map((flag: any) => (
-                  <option key={flag.programFlagId} value={flag.programFlagId}>
-                    {flag.name}
-                  </option>
-                ))
+                <option key={flag.programFlagId} value={flag.programFlagId}>
+                  {flag.name}
+                </option>
+              ))
               : programTypeOptions.map((type: any) => (
-                  <option key={type.programTypeId} value={type.programTypeId}>
-                    {type.name}
-                  </option>
-                ))}
+                <option key={type.programTypeId} value={type.programTypeId}>
+                  {type.name}
+                </option>
+              ))}
           </select>
 
           <select
@@ -93,63 +97,72 @@ const ProgramFilter: React.FC<PropsTypes> = ({
       </div>
 
       {/* Course List */}
-      <div className="mt-8">
-        {visibleCourses.length > 0 ? (
-          <>
-            {visibleCourses.map((course, i) => {
-              const path = (str = "") => str.toLowerCase().trim().replace(/\s+/g, "-");
 
-              // store in variable
-              // @ts-ignore
-              const programPath = path(course.programTypeName);
-              const programName = path(course.name);
-              return (
-                <div key={i} className="border border-gray-300 p-8 mb-4 rounded-md flex flex-col lg:flex-row gap-4 lg:justify-between items-center">
-                  <div className="flex flex-col md:flex-row gap-2 w-full justify-between lg:w-[70%]">
-                    <h3 className=" text-[#0f4a85] lg:text-[20px] md:text-[18.75px] sm:text-[17.5px] text-[17.5px] fw500  lg:w-[60%]">{course.name}</h3>
-                    <p className="lg:text-[18px] text-[15.75px] md:text-[16.875px] sm:text-[15.75px] lg:w-[20%]">{course.totalDurationYear}</p>
-                    <p className="text-sm lg:text-base lg:w-[20%]">Rs. {course.totalFees}/-</p>
-                  </div>
+      {
+        loading ? <div className="space-y-4 mt-8">
+          {[...Array(3)].map((_, i) => (
+            <div key={i} className="skeleton_card w-full h-30"></div>
+          ))
+          }
+        </div> : <div className="mt-8">
+          {visibleCourses.length > 0 ? (
+            <>
+              {visibleCourses.map((course, i) => {
+                const path = (str = "") => str.toLowerCase().trim().replace(/\s+/g, "-");
 
-                  <div className="flex flex-row gap-2 w-full lg:w-[30%] justify-between lg:justify-end">
-                    <Link
-                      state={{
-                        programId: course.programId,
-                        // programDisciplineId: course.programDisciplineId,
-                        // name: course.name,
-                      }}
-                      to={`/programs/details/${slugify(programName)}`}
-                      className="bg-[#023047] border border-[#023047] hover:bg-white hover:text-[#023047] transition-all duration-500 text-white px-6 py-3 text-sm font-medium rounded-lg flex items-center gap-2"
-                    >
-                      View Details <FaArrowRightLong />
-                    </Link>
-                    <Link
-                      to="/enquiry-form"
-                      className="bg-[#ffb703] border border-[#ffb703] hover:bg-white text-white hover:text-[#ffb703] transition-all duration-500 px-6 py-3 text-sm font-medium rounded-lg inline-flex items-center gap-2"
-                    >
-                      Apply Now <FaArrowRightLong />
-                    </Link>
+                // store in variable
+                // @ts-ignore
+                const programPath = path(course.programTypeName);
+                const programName = path(course.name);
+                return (
+                  <div key={i} className="border border-gray-300 p-8 mb-4 rounded-md flex flex-col lg:flex-row gap-4 lg:justify-between items-center">
+                    <div className="flex flex-col md:flex-row gap-2 w-full justify-between lg:w-[70%]">
+                      <h3 className=" text-[#0f4a85] lg:text-[20px] md:text-[18.75px] sm:text-[17.5px] text-[17.5px] fw500  lg:w-[60%]">{course.name}</h3>
+                      <p className="lg:text-[18px] text-[15.75px] md:text-[16.875px] sm:text-[15.75px] lg:w-[20%]">{course.totalDurationYear}</p>
+                      <p className="text-sm lg:text-base lg:w-[20%]">Rs. {course.totalFees}/-</p>
+                    </div>
+
+                    <div className="flex flex-row gap-2 w-full lg:w-[30%] justify-between lg:justify-end">
+                      <Link
+                        state={{
+                          programId: course.programId,
+                          // programDisciplineId: course.programDisciplineId,
+                          // name: course.name,
+                        }}
+                        to={`/programs/details/${slugify(programName)}`}
+                        className="bg-[#023047] border border-[#023047] hover:bg-white hover:text-[#023047] transition-all duration-500 text-white px-6 py-3 text-sm font-medium rounded-lg flex items-center gap-2"
+                      >
+                        View Details <FaArrowRightLong />
+                      </Link>
+                      <Link
+                        to="/enquiry-form"
+                        className="bg-[#ffb703] border border-[#ffb703] hover:bg-white text-white hover:text-[#ffb703] transition-all duration-500 px-6 py-3 text-sm font-medium rounded-lg inline-flex items-center gap-2"
+                      >
+                        Apply Now <FaArrowRightLong />
+                      </Link>
+                    </div>
                   </div>
+                );
+              })}
+
+              {/* Load More Button */}
+              {visibleCount < data.length && (
+                <div className="flex justify-center mt-6">
+                  <button
+                    onClick={() => setVisibleCount((prev) => prev + 5)}
+                    className="bg-[#0f4a85] flex items-center gap-x-3 text-white px-6 py-3 cursor-pointer rounded-lg hover:bg-[#08345f] transition uppercase"
+                  >
+                    View More <HiOutlineArrowNarrowRight size={24} />
+                  </button>
                 </div>
-              );
-            })}
+              )}
+            </>
+          ) : (
+            <p className="text-center text-gray-600 text-lg font-medium py-10">No data found!!!</p>
+          )}
+        </div>
+      }
 
-            {/* Load More Button */}
-            {visibleCount < data.length && (
-              <div className="flex justify-center mt-6">
-                <button
-                  onClick={() => setVisibleCount((prev) => prev + 5)}
-                  className="bg-[#0f4a85] flex items-center gap-x-3 text-white px-6 py-3 cursor-pointer rounded-lg hover:bg-[#08345f] transition uppercase"
-                >
-                  View More <HiOutlineArrowNarrowRight size={24} />
-                </button>
-              </div>
-            )}
-          </>
-        ) : (
-          <p className="text-center text-gray-600 text-lg font-medium py-10">No data found!!!</p>
-        )}
-      </div>
     </div>
   );
 };

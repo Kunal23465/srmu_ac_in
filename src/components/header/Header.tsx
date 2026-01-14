@@ -143,7 +143,7 @@ const Header = () => {
                                                     onClick={() => setShowMegaMenu(false)}
                                                     to={`/programs/${programFlagSlug}/${slugify(disc.disciplineName)}`}
                                                     state={{
-                                                      programTypeId: type.programTypeId,
+                                                      programTypeId: type.programFlagId,
                                                       disciplineId: disc.disciplineId,
                                                     }}
                                                     className="text-[15px] px-3 py-2 rounded-md text-[#212529] hover:text-[#ffb703] border border-white hover:border-[#ffb703] block"

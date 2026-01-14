@@ -1399,6 +1399,37 @@ ul {
   background: #ffb703;
 }
 
+.skeleton_card {
+  position: relative;
+  overflow: hidden;
+
+  /* Base skeleton color */
+  background-color: #e5e7eb;
+  border-radius: 8px;
+}
+
+/* Shimmer layer */
+.skeleton_card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  transform: translateX(-100%);
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.7),
+      transparent);
+
+  animation: shimmer_skeleton 1.4s infinite;
+}
+
+/* Animation */
+@keyframes shimmer_skeleton {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
 @media screen and (min-width: 592px) {
 
   /* ======================================== */

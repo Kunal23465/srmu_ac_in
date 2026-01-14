@@ -20,7 +20,7 @@ const ProgramsSection: FC = () => {
   // @ts-ignore
   const [isMobile, setIsMobile] = useState(false);
   const { programType } = useSelector((state: RootState) => state.getProgramType);
-  const { discipline } = useSelector((state: RootState) => state.getDiscipline);
+  const { discipline, loading } = useSelector((state: RootState) => state.getDiscipline);
   const slugify = (str: string) => str.toLowerCase().trim().replace(/\s+/g, "-");
   /* ===========================
      Detect Mobile
@@ -60,7 +60,7 @@ const ProgramsSection: FC = () => {
     }
   }, [dispatch, selectedProgramType]);
 
-  console.log("discipline", discipline);
+  console.log("discipline===", discipline);
 
   return (
     <section
@@ -111,25 +111,46 @@ const ProgramsSection: FC = () => {
              ======================= */}
           <div className="w-full md:ml-6">
             <ul className="grid gap-6 [grid-template-columns:repeat(auto-fit,minmax(170px,170px))] list-none">
-              {discipline?.map((item: any) => (
-                <>
-                  {item.showOnHome && (
-                    <li key={item.programDisciplineId} className="list-none">
-                      <Link
-                        to={`/programs/${slugify(item.name)}`}
-                        state={{
-                          programTypeId: selectedProgramType,
-                          disciplineId: item.programDisciplineId,
-                        }}
-                        className="block overflow-hidden bg-transparent transition-all hover:-translate-y-2 duration-300"
-                      >
-                        <img src={item.imagePath || placeholderImg} alt={item.name} className="w-full h-40 object-cover border-white border-2 rounded-xl" />
-                        <div className="text-left text-white mt-4 text-base">{item.name}</div>
-                      </Link>
-                    </li>
-                  )}
+
+              {
+                loading ? <>
+                  {[...Array(12)].map((_, i) => (
+                    <div key={i} className="skeleton_card w-full h-40"></div>
+                  ))
+                  }
+
+
+                </> : <>
+                  {discipline?.map((item: any) => (
+                    <>
+                      {item.showOnHome && (
+                        <>
+
+                          <li key={item.programDisciplineId} className="list-none">
+                            <Link
+                              to={`/programs/${slugify(item.name)}`}
+                              state={{
+                                programTypeId: selectedProgramType,
+                                disciplineId: item.programDisciplineId,
+                              }}
+                              className="block overflow-hidden bg-transparent transition-all hover:-translate-y-2 duration-300"
+                            >
+                              <img src={item.imagePath || placeholderImg} alt={item.name} className="w-full h-40 object-cover border-white border-2 rounded-xl" />
+                              <div className="text-left text-white mt-4 text-base">{item.name}</div>
+                            </Link>
+                          </li>
+                        </>
+                      )}
+
+                    </>
+                  ))}
                 </>
-              ))}
+              }
+
+
+
+
+
             </ul>
 
             {/* Enroll Button */}
