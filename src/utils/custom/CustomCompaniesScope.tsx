@@ -20,10 +20,11 @@ export interface ScopeData {
 
 interface CompaniesScopeProps {
   data: ScopeData;
+  list?: string
 }
 
-export const CustomCompaniesScope: React.FC<CompaniesScopeProps> = ({ data }) => {
-  const { title, description, rolesLeft, rolesRight, sectors } = data;
+export const CustomCompaniesScope: React.FC<CompaniesScopeProps> = ({ data, list }) => {
+  const {  sectors } = data;
 
   const [activeTab, setActiveTab] = useState(0);
   const [index, setIndex] = useState(0);
@@ -67,35 +68,33 @@ export const CustomCompaniesScope: React.FC<CompaniesScopeProps> = ({ data }) =>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 pb-10">
           <div>
             <h2 className="font50 text-[#023047] fw500 leading-tight">
-              {(() => {
-                const words = title.split(" ");
-                return (
-                  <>
-                    <span className="block">{words[0]}</span>
-                    <span className="block">{words.slice(1).join(" ")}</span>
-                  </>
-                );
-              })()}
+
+
+              <span className="block">Scope</span>
+              <span className="block">in Companies</span>
+
             </h2>
           </div>
 
           <div>
             <div className="flex flex-col gap-4 mb-10">
-              {description.map((p, i) => (
-                <p key={i} className="text-black leading-relaxed">
-                  {p}
-                </p>
-              ))}
+
+              <p className="text-black leading-relaxed">
+                By pursuing this program, students gain deep knowledge of emerging technologies.They also get exposure to endless career possibilities.
+              </p>
+
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3">
-              {[...rolesLeft, ...rolesRight].map((r, i) => (
+
+            {/* {[...rolesLeft, ...rolesRight].map((r, i) => (
                 <div key={i} className="flex gap-2 items-start">
                   <span className="text-[#ffb703] font-bold mt-0.5">✔</span>
                   <span className="flex-1 text-black font18">{r}</span>
                 </div>
-              ))}
-            </div>
+              ))} */}
+            {/* @ts-ignore */}
+            <div className="scope_list" dangerouslySetInnerHTML={{ __html: list }} />
+
           </div>
         </div>
 

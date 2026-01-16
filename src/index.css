@@ -421,6 +421,28 @@ background: radial-gradient(circle, rgba(36,64,143,0.9444152661064426) 0%, rgba(
   bottom: -50px !important;
 }
 
+.scope_list ul {
+  list-style: none !important;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 5px 20px;
+}
+
+.scope_list ul li {
+  position: relative;
+  margin-left: 10px;
+}
+
+.scope_list ul li::after {
+  content: "✔";
+  position: absolute;
+  top: 1px;
+  left: -17px;
+  color: #ffb703;
+  font-weight: 800;
+
+}
+
 @media screen and (min-width: 1024px) {
   .campus-crousel .slick-track {
     min-height: 356px;
@@ -778,7 +800,13 @@ input::-webkit-inner-spin-button {
 /* grid-column: span 2 / span 2; */
 @media screen and (max-width: 1400px) {
   .manage-top-arrow.big {
-    right: 48% !important;
+    right: 44% !important;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .manage-top-arrow.big {
+    right: 42% !important;
   }
 }
 

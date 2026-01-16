@@ -38,12 +38,11 @@ const CustomProgramPLOAccordian: React.FC<CustomProgramPLOAccordianProps> = ({ P
 
               {/* Accordion Body */}
               <div
-                className={`overflow-hidden border-r w-[90%] border-gray-300 transition-all duration-600 ease-in-out ${
-                  openIndex === index ? "max-h-200 opacity-100" : "max-h-0 opacity-0"
-                }`}
+                className={`overflow-hidden border-r w-[90%] border-gray-300 transition-all duration-600 ease-in-out ${openIndex === index ? "max-h-200 opacity-100" : "max-h-0 opacity-0"
+                  }`}
               >
                 <div className=" pb-5 pr-20">
-                  <div className="py-1.5 pl-5" dangerouslySetInnerHTML={{ __html: section?.data }} />
+                  <div className="py-1.5 pl-5 [&_ol]:list-disc" dangerouslySetInnerHTML={{ __html: section?.data }} />
                 </div>
               </div>
 

@@ -33,6 +33,7 @@ const BtechInCSEAIandMLComponent = () => {
                 </p>
                 <CustomOverviewSection data={BtechCSEAIandMLOverviewData} />
                 <Counter counterData={counterDataForBtechinCSEAIandML} />
+                {/* @ts-ignore */}
                 <CustomEligibilitySection data={eligibilityDataforAIandML} />
             </div>
             <div className="bg-[#ecf0f9] pb-10">

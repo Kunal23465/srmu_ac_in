@@ -15,14 +15,25 @@ interface Props {
 }
 
 const ProgramFeeTable: React.FC<Props> = ({ data }) => {
-  const years = Object.keys(data.fees[0].yearWiseAmount);
+
+  function getMaxYearWiseFees(fees: any[]) {
+    const maxLength = Math.max(
+      ...fees.map(fee => Object.keys(fee.yearWiseAmount).length)
+    );
+    return fees.filter(
+      fee => Object.keys(fee.yearWiseAmount).length === maxLength
+    );
+  }
+
+  const check = getMaxYearWiseFees(data.fees)
+  const years = Object.keys(check[0].yearWiseAmount);
   const notes = [
     `Alumni Fee: <span class="inlie-block ml-1 text-lg font-medium"> 500 </span>`,
     `Degree Fee:  <span class="inlie-block ml-1 text-lg font-medium"> 1000 </span>`,
     ` <span class="inlie-block text-lg font-medium"> Both these fees are payable in the final year of the program </span>`,
   ];
   const gridTemplate = `3fr repeat(${years.length}, 1fr)`;
-
+  console.log("hello", check)
   return (
     <div className="w-full p-6 bg-[#ecf0f9] rounded-2xl border border-[#c6d4ea] my-14">
       {/* Header */}
@@ -46,9 +57,8 @@ const ProgramFeeTable: React.FC<Props> = ({ data }) => {
             {years.map((year, i) => (
               <div
                 key={year}
-                className={`text-center relative ${
-                  years.length !== i + 1 && "after:content-[''] after:absolute after:w-0.5 after:h-10 after:bg-[#dfe3ee] after:-top-2 after:right-0"
-                }  `}
+                className={`text-center relative ${years.length !== i + 1 && "after:content-[''] after:absolute after:w-0.5 after:h-10 after:bg-[#dfe3ee] after:-top-2 after:right-0"
+                  }  `}
               >
                 {fee.yearWiseAmount[year] || "-"}
               </div>

@@ -24,6 +24,7 @@ type CustomDepartmentSliderProps<T> = {
   descriptionColor?: string;
 
   breakpoints: Breakpoints;
+
 };
 
 const CustomDepartmentSlider = <T,>({
@@ -36,6 +37,7 @@ const CustomDepartmentSlider = <T,>({
   headingColor = "#000",
   descriptionColor = "#666",
   breakpoints,
+
 }: CustomDepartmentSliderProps<T>) => {
   const sliderRef = useRef<Slider | null>(null);
 
