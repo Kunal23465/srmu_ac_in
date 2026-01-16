@@ -57,7 +57,7 @@ const Header = () => {
             <div className="flex flex-row justify-between">
               {/* LOGO */}
               <Link to="/" className="logo_div flex items-center lg:gap-1 xl:gap-3 cursor-pointer">
-                <img src={logo} alt="logo" />
+                <img src={logo} alt="logo" className="max-w-[220px] xl:max-w-full" />
               </Link>
 
               {/* DESKTOP MENU */}
@@ -68,9 +68,9 @@ const Header = () => {
 
                     return (
                       <div onMouseEnter={() => setShowMegaMenu(true)}
-                        onMouseLeave={() => setShowMegaMenu(false)} key={index} className="relative px-[5px]  lg:px-2.5 xl:px-[15px] py-4 group text-[15px]  cursor-pointer">
+                        onMouseLeave={() => setShowMegaMenu(false)} key={index} className="relative  px-[5px]  lg:px-2.5 xl:px-[15px] py-4 group text-[15px]  cursor-pointer">
                         <div
-                          className={`flex items-center text-[13px] xl:text-[15px] text-white group-hover:text-[#ffb703] uppercase ${location.pathname === data.path ? "active" : ""}`}
+                          className={`flex items-center  text-[13px] xl:text-[15px] text-white group-hover:text-[#ffb703] uppercase ${location.pathname === data.path ? "active" : ""}`}
                         >
                           {data.item}
                         </div>
@@ -95,7 +95,7 @@ const Header = () => {
                           <div
                             className="
     fixed left-1/2 -translate-x-1/2
-    top-[120px] bg-white rounded-md
+    top-[108px] xl:top-[120px] bg-white rounded-md
     hidden group-hover:flex
     border-t-4 border-t-yellow-500
     border-b-4 border-b-blue-500
@@ -145,11 +145,14 @@ const Header = () => {
                                                     state={{
                                                       programTypeId: type.programFlagId,
                                                       disciplineId: disc.disciplineId,
+
                                                     }}
                                                     className="text-[15px] px-3 py-2 rounded-md text-[#212529] hover:text-[#ffb703] border border-white hover:border-[#ffb703] block"
                                                   >
                                                     {disc.disciplineName}
                                                   </Link>
+
+
                                                 </li>
                                               ))}
                                           </ul>

@@ -115,7 +115,11 @@ const ProgramFilter: React.FC<PropsTypes> = ({
                 const programPath = path(course.programTypeName);
                 const programName = path(course.name);
                 return (
-                  <div key={i} className="border border-gray-300 p-8 mb-4 rounded-md flex flex-col lg:flex-row gap-4 lg:justify-between items-center">
+                  <Link state={{
+                    programId: course.programId,
+                    // programDisciplineId: course.programDisciplineId,
+                    // name: course.name,
+                  }} to={`/programs/details/${slugify(programName)}`} key={i} className="border border-gray-300 p-8 mb-4 rounded-md flex flex-col lg:flex-row gap-4 lg:justify-between items-center">
                     <div className="flex flex-col md:flex-row gap-2 w-full justify-between lg:w-[70%]">
                       <h3 className=" text-[#0f4a85] lg:text-[20px] md:text-[18.75px] sm:text-[17.5px] text-[17.5px] fw500  lg:w-[60%]">{course.name}</h3>
                       <p className="lg:text-[18px] text-[15.75px] md:text-[16.875px] sm:text-[15.75px] lg:w-[20%]">{course.totalDurationYear}</p>
@@ -135,13 +139,13 @@ const ProgramFilter: React.FC<PropsTypes> = ({
                         View Details <FaArrowRightLong />
                       </Link>
                       <Link
-                        to="/enquiry-form"
+                        to="#"
                         className="bg-[#ffb703] border border-[#ffb703] hover:bg-white text-white hover:text-[#ffb703] transition-all duration-500 px-6 py-3 text-sm font-medium rounded-lg inline-flex items-center gap-2"
                       >
                         Apply Now <FaArrowRightLong />
                       </Link>
                     </div>
-                  </div>
+                  </Link>
                 );
               })}
 
