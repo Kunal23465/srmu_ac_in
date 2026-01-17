@@ -8,15 +8,15 @@ export interface CustomProgramPLOAccordianProps {
   PSOdata: string | any[];
 }
 
-const CustomProgramPLOAccordian: React.FC<CustomProgramPLOAccordianProps> = ({ POdata }) => {
+const CustomProgramPLOAccordian: React.FC<CustomProgramPLOAccordianProps> = ({ POdata, PLOdata, PSOdata }) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggle = (index: number) => setOpenIndex(openIndex === index ? null : index);
 
   const sections = [
     { title: "Program Objectives", data: POdata },
-    { title: "Program Learning Outcomes", data: POdata },
-    { title: "Program Specific Outcomes", data: POdata },
+    { title: "Program Learning Outcomes", data: PLOdata },
+    { title: "Program Specific Outcomes", data: PSOdata },
   ];
 
   return (

@@ -9,8 +9,8 @@ const CustomEligibilitySection: FC<EligibilityProps> = ({ data }) => {
     <div>
       <section className="eligibility-container">
         <div className="eligibility-content">
-          <h2>Eligibility Criterion</h2>
-          <div dangerouslySetInnerHTML={{ __html: data }} />
+          <h2>Eligibility Criterion11</h2>
+          <div className="text-white!" dangerouslySetInnerHTML={{ __html: data }} />
         </div>
       </section>
     </div>

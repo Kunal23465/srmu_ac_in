@@ -94,7 +94,7 @@ const CustomTabs = ({
   return (
     <div className="custom-tabs-container">
       <div
-        className={`tabs-header overflow-x-auto overflow-y-hidden
+        className={`tabs-header gap-x-2 xl:gap-x-4 overflow-x-auto overflow-y-hidden
           ${variant === "boxed" ? "boxed-header" : ""}
           ${variant === "pill" ? "pill-header" : ""}
           ${variant === "segment" ? "segment-header" : ""}
@@ -114,9 +114,8 @@ const CustomTabs = ({
             <div
               key={tab.key}
               ref={(el) => (tabRefs.current[index] = el)}
-              className={`tab-item block ${variant === "underline"} relative ${
-                isActive ? "after:content-['']  after:absolute  after:w-full after:h-1   after:bg-[var(--underlineColor)] after:left-0 after:-bottom-[11px]" : ""
-              }`}
+              className={`tab-item text-sm xl:text-base block ${variant === "underline"} relative ${isActive ? "after:content-['']  after:absolute  after:w-full after:h-1   after:bg-[var(--underlineColor)] after:left-0 after:-bottom-[11px]" : ""
+                }`}
               onClick={() => handleClick(tab.key)}
               style={{
                 // @ts-ignore
@@ -158,7 +157,6 @@ const CustomTabs = ({
 
         .tabs-header {
           display: flex;
-          gap: 18px;
           padding-bottom: 10px;
           position: relative;
 
@@ -167,8 +165,7 @@ const CustomTabs = ({
         .tab-item {
           cursor: pointer;
           font-weight: 500;
-          font-size: 16px;
-          padding: 8px 2px;
+          padding: 8px 0px;
           transition: 0.2s;
           border-radius: 6px;
           border: 1px solid transparent;

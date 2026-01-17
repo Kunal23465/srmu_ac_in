@@ -134,13 +134,13 @@ const ProgramFilter: React.FC<PropsTypes> = ({
                           // name: course.name,
                         }}
                         to={`/programs/details/${slugify(programName)}`}
-                        className="bg-[#023047] border border-[#023047] hover:bg-white hover:text-[#023047] transition-all duration-500 text-white px-6 py-3 text-sm font-medium rounded-lg flex items-center gap-2"
+                        className="bg-[#023047] text-nowrap border border-[#023047] hover:bg-white hover:text-[#023047] transition-all duration-500 text-white px-6 py-3 text-sm font-medium rounded-lg flex items-center gap-2"
                       >
                         View Details <FaArrowRightLong />
                       </Link>
                       <Link
                         to="#"
-                        className="bg-[#ffb703] border border-[#ffb703] hover:bg-white text-white hover:text-[#ffb703] transition-all duration-500 px-6 py-3 text-sm font-medium rounded-lg inline-flex items-center gap-2"
+                        className="bg-[#ffb703] border text-nowrap border-[#ffb703] hover:bg-white text-white hover:text-[#ffb703] transition-all duration-500 px-6 py-3 text-sm font-medium rounded-lg inline-flex items-center gap-2"
                       >
                         Apply Now <FaArrowRightLong />
                       </Link>

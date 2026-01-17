@@ -79,7 +79,7 @@ const KeyHighlightsSection: React.FC<CustomFacilitiesTypes> = ({ facilities, lay
             {facilities.map((facility, index) => (
               <div key={index} className="px-3 h-full sm:h-[600px] md:h-[650px] lg:h-[600px]">
                 <div className="bg-white rounded-2xl hover:border-2 hover:border-[#0f4a85] overflow-hidden h-full flex flex-col">
-                  <img src={facility.imageUrl} alt={facility.title} className="w-full h-80 object-cover" />
+                  <img src={facility.imageUrl} alt={facility.title} className="w-full aspect-2/1.5 object-cover" />
                   <div className="p-6 flex flex-col flex-grow">
                     <h3 className="lg:text-[26px] md:text-[24.375px] sm:text-[22.75px] text-[22.75px] font-semibold text-[#0f4a85] mb-3">{facility.title}</h3>
                     <div

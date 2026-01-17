@@ -112,6 +112,8 @@ const ProgramFinderHome: React.FC = () => {
     selectedProgramFlagObj?.description ||
     "";
 
+
+  console.log("programTypeId=", programTypeId)
   return (
     <>
       <div className={`${Classes.container} mt-16`}>

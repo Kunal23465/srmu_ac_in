@@ -8,7 +8,7 @@ export const fetchProgramFeesByProgramId = createAsyncThunk(
         const response = await API.get(
             "/academicProgram/programFees",
             {
-                params: { programId }, // ?programId=123
+                params: { programId }, 
             }
         );
         return response.data;

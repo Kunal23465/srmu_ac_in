@@ -1,11 +1,14 @@
 // DepartmentHighlights.tsx
 import React, { useEffect, useRef, useState } from "react";
-
+import dev1 from "../../assets/images/programs/btechincseaiandml/opportunities/highlights/1.jpg"
+import dev2 from "../../assets/images/programs/btechincseaiandml/opportunities/highlights/2.jpg"
+import dev3 from "../../assets/images/programs/btechincseaiandml/opportunities/highlights/3.jpg"
+import dev4 from "../../assets/images/programs/btechincseaiandml/opportunities/highlights/4.jpg"
 interface HighlightStep {
   id: number;
   title: string;
-  bulletPoints: string[];
-  image: string;
+  brief: string[];
+  imagePath: string;
 }
 
 interface DepartmentHighlightsProps {
@@ -15,7 +18,7 @@ interface DepartmentHighlightsProps {
 
 const CustomDepartmentHighlights: React.FC<DepartmentHighlightsProps> = ({ heading, steps }) => {
   const containerRef = useRef<HTMLDivElement>(null);
-
+  const dummyImages = [dev1, dev2, dev3, dev4]
   const [activeIndex, setActiveIndex] = useState(0);
   const [progress, setProgress] = useState(0);
 
@@ -43,6 +46,9 @@ const CustomDepartmentHighlights: React.FC<DepartmentHighlightsProps> = ({ headi
     return () => window.removeEventListener("scroll", handleScroll);
   }, [steps]);
 
+
+  console.log("active", activeIndex)
+  console.log("steps", steps)
   return (
     <div ref={containerRef} className="relative w-full h-[180vh] bg-white">
       {/* Sticky Section */}
@@ -76,21 +82,28 @@ const CustomDepartmentHighlights: React.FC<DepartmentHighlightsProps> = ({ headi
             <div className="grid grid-cols-2 gap-10 items-start">
               {/* Content */}
               <div>
-                <h3 className="text-2xl font-bold mb-6">{steps[activeIndex].title}</h3>
+                <h3 className="text-2xl font-bold mb-6">{steps[activeIndex]?.title || ""}</h3>
 
-                <ul className="space-y-4">
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: steps[activeIndex]?.brief || "",
+                  }}
+                />
+
+
+                {/* <ul className="space-y-4">
                   {steps[activeIndex].bulletPoints.map((point, i) => (
                     <li key={i} className="flex gap-3 text-gray-700 text-[15px]">
                       <span className="text-yellow-500 font-bold">✓</span>
                       <span>{point}</span>
                     </li>
                   ))}
-                </ul>
+                </ul> */}
               </div>
 
               {/* Image */}
               <div className="flex justify-center items-center">
-                <img src={steps[activeIndex].image} alt={steps[activeIndex].title} className="w-full shadow-md h-[320px] object-cover transition-all duration-500" />
+                <img src={steps[activeIndex]?.imagePath || dummyImages[activeIndex]} alt={steps[activeIndex]?.title || ""} className="w-full shadow-md h-[320px] object-cover transition-all duration-500" />
               </div>
             </div>
           </div>
@@ -145,4 +158,4 @@ export default CustomDepartmentHighlights;
 // ];
 
 
-{/* <CoustomDepartmentHighlights heading="Department Highlights" steps={steps} />; */}
+{/* <CoustomDepartmentHighlights heading="Department Highlights" steps={steps} />; */ }

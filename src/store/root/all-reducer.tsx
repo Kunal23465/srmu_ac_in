@@ -9,6 +9,7 @@ import { programFlagSliceReducer } from "../program-finder/program-flag/programF
 import { whySrmuSectionSliceReducer } from "../program-finder/why-srmu/whySrmuSection-Slice";
 import { getCounterSliceReducer } from "../program-finder/counter/getCounter-Slice";
 import { blogsSliceReducer } from "../blogs/blogsSlice";
+import { programHeighLightSliceReducer } from "../program-finder/program-heighlight/programHeighlightSlice";
 const allReducer = {
   ui: uiReducer,
   getProgramFinder: programFinderReducer,
@@ -21,5 +22,6 @@ const allReducer = {
   getWhySrmuSection: whySrmuSectionSliceReducer,
   getCounterById: getCounterSliceReducer,
   getAllBlogs: blogsSliceReducer,
+  getDepartmentHeighlightById: programHeighLightSliceReducer,
 };
 export default allReducer;
