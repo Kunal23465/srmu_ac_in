@@ -1,4 +1,4 @@
-import {  abcforALML, BtechCSEAIandMLOverviewData, counterDataForBtechinCSEAIandML, eligibilityDataforAIandML, opportunityCardDataAIML, partnerDataforAIandML, ProgramFeesAIandML, scopeData, steps, whyDataforAIML } from "../../../data/programs/btechincseai-ml-data/btechincseai-ml-data";
+import { abcforALML, BtechCSEAIandMLOverviewData, counterDataForBtechinCSEAIandML, eligibilityDataforAIandML, opportunityCardDataAIML, partnerDataforAIandML, ProgramFeesAIandML, scopeData, whyDataforAIML } from "../../../data/programs/btechincseai-ml-data/btechincseai-ml-data";
 import Counter from "../../../utils/custom/Counter";
 import CustomOverviewSection from "../../../utils/custom/CustomOverviewSection";
 import Classes from "../../../utils/styles/Global.module.css";
@@ -6,7 +6,7 @@ import CustomDepartmentSlider from "../../../utils/custom/CustomDepartmentSlider
 import WhyCardComp from "./WhyCardComp";
 import PartnerLogos from "./PartnerLogos";
 import CustomDepartmentFeeDetailsTable from "../../../utils/custom/CustomDepartmentFeeDetailsTable";
-import CustomDepartmentHighlights from "../../../utils/custom/CustomDepartmentHighlights";
+// import CustomDepartmentHighlights from "../../../utils/custom/CustomDepartmentHighlights";
 import CustomProgramPLOAccordian from "../../../utils/custom/CustomProgramPLOAccordian";
 import CustomProgramOppertunitySlider from "../../../utils/custom/CustomProgramOppertunitySlider";
 import EnquiryForm from "../../academics/institutes/EnquiryForm";
@@ -59,11 +59,11 @@ const BtechInCSEAIandMLComponent = () => {
                 <CustomProgramScholarshipSchemeCard />
             </div>
 
-            <div className="my-50">
+            {/* <div className="my-50">
                 <div className={`${Classes["container"]}`}>
                     <CustomDepartmentHighlights heading="Department Highlights" steps={steps} />
                 </div>
-            </div>
+            </div> */}
 
             <CustomProgramPLOAccordian POdata={abcforALML.POdata} PLOdata={abcforALML.PLOdata} PSOdata={abcforALML.PSOdata} />
             <div className="bg-[#dee4f2]">

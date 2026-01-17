@@ -27,11 +27,11 @@ const Apply: React.FC = () => {
     id: index,
     title: item.name,
     imgSrc: item.imagePath || img1, // fallback image
-    programTypeId: item.programTypeId,
+    programTypeId: item.programFlagId,
     content: (
       <>
         <p className="text-[#333] font-normal">{getShortText(item.brief, 22)}</p>
-        <Link to={`/programs/${slugify(item.name)}`} state={{ programTypeId: item.programTypeId }} className="text-[#ffb703] font-medium">
+        <Link to={`/programs/${slugify(item.name)}`} state={{ programTypeId: item.programFlagId }} className="text-[#ffb703] font-medium">
           Read More
         </Link>
       </>
@@ -45,7 +45,7 @@ const Apply: React.FC = () => {
     dispatch(fetchProgramByFlag());
   }, [dispatch]);
 
-  console.log("===data===", data);
+  console.log("===dynamicAccordionData===", dynamicAccordionData);
   return (
     <div className={`${Classes.container} pb-7 md:pb-10 lg:pb-14`}>
       <div className="flex flex-col-reverse sm:flex-row gap-x-10 gap-y-6">
@@ -66,7 +66,7 @@ const Apply: React.FC = () => {
                   {item.title}
                 </div>
 
-                <div className={`mt-2 overflow-hidden  ease-in-out ${item.id === active ? "max-h-[1500px]" : "max-h-0"}`}>
+                <div className={`mt-2  overflow-hidden  ease-in-out  ${item.id === active ? "max-h-[1500px]" : "max-h-0"}`}>
                   {item.content}
 
                   {item.id === active && <img src={item.imgSrc} alt="Program visual" className="mt-4 rounded-lg block lg:hidden w-full" />}

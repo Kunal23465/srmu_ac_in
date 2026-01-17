@@ -1,4 +1,4 @@
-import {  opportunityCardDataAIML, partnerDataforAIandML, scopeData, steps } from "../../../data/programs/btechincseai-ml-data/btechincseai-ml-data";
+import { opportunityCardDataAIML, partnerDataforAIandML, scopeData } from "../../../data/programs/btechincseai-ml-data/btechincseai-ml-data";
 import Counter from "../../../utils/custom/Counter";
 import Classes from "../../../utils/styles/Global.module.css";
 import CustomDepartmentSlider from "../../../utils/custom/CustomDepartmentSlider";
@@ -22,6 +22,7 @@ import ProgramFeeTable from "./ProgramFeeTable";
 import { fetchProgramFeesByProgramId } from "../../../store/program-finder/program-fees/programFeesThunk";
 import { fetchWhySrmuSectionById } from "../../../store/program-finder/why-srmu/whySrmuSectionThunk";
 import { getCounterById } from "../../../store/program-finder/counter/getCounterThunk";
+import { fetchProgramHeighlightById } from "../../../store/program-finder/program-heighlight/programHeighlightThunk";
 
 // type dataByID=any[]
 
@@ -31,6 +32,7 @@ const ProgramDetails = () => {
   const location = useLocation();
   // @ts-ignore
   const { dataByID, loading, error } = useSelector((state: RootState) => state.getProgramFinder);
+  const { data: departmentHeghlightData } = useSelector((state: RootState) => state.getDepartmentHeighlightById);
   console.log(dataByID, "program details data");
   const { data: feesData } = useSelector((state: RootState) => state.programFees);
   const { data: whySrmuData } = useSelector((state: RootState) => state.getWhySrmuSection);
@@ -40,11 +42,11 @@ const ProgramDetails = () => {
     dispatch(fetchProgramFinderByID(location.state.programId || undefined));
     dispatch(fetchProgramFeesByProgramId(location.state.programId || undefined));
     dispatch(getCounterById(location.state.programId || undefined));
+    dispatch(fetchProgramHeighlightById(location.state.programId || undefined))
     if (location.state.programId == 81) {
-      setIsPhd(true)
-    }
-    else {
-      setIsPhd(false)
+      setIsPhd(true);
+    } else {
+      setIsPhd(false);
     }
     // getCounterById;
   }, [dispatch, location.state.programId]);
@@ -70,7 +72,9 @@ const ProgramDetails = () => {
     };
   });
 
-  console.log("phd", isPhd);
+
+  // program heighlight
+
   return (
     <div className="mt-20">
       <div className={`${Classes["container"]}`}>
@@ -106,12 +110,11 @@ const ProgramDetails = () => {
           breakpoints={{ desktop: 4, tablet: 3, mobile: 1 }}
         />
 
-        {
-          !isPhd && <div className={`${Classes["container"]}`}>
+        {!isPhd && (
+          <div className={`${Classes["container"]}`}>
             <PartnerLogos data={partnerDataforAIandML} />
           </div>
-        }
-
+        )}
       </div>
       <div className={`${Classes["container"]}`}>
         <h2 className="mt-20 mb-10 text-center font50 fw500 text-[#023047]">Program Fee</h2>
@@ -119,22 +122,21 @@ const ProgramDetails = () => {
         {/* @ts-ignore */}
         {feesData && feesData.length > 0 && <ProgramFeeTable data={feesData[0]} />}
       </div>
-      {
-        !isPhd && <div className="my-50">
+      {!isPhd && (
+        <div className="my-50">
           <CustomProgramScholarshipSchemeCard />
         </div>
-      }
-      {
-        !isPhd && <div className="my-50">
+      )}
+      {!isPhd && (
+        <div className="my-50">
           <div className={`${Classes["container"]}`}>
-            <CustomDepartmentHighlights heading="Department Highlights" steps={steps} />
+            <CustomDepartmentHighlights heading="Department Highlights" steps={departmentHeghlightData} />
           </div>
         </div>
-      }
-
+      )}
 
       {
-        //  @ts-ignore 
+        //  @ts-ignore
         !isPhd && <CustomProgramPLOAccordian POdata={dataByID?.programObjective} PLOdata={dataByID?.programLearningOutcomes} PSOdata={dataByID?.specificOutcomes} />
       }
 
@@ -145,12 +147,11 @@ const ProgramDetails = () => {
         </div>
       </div>
 
-      {
-        !isPhd && <div className={`${Classes["container"]}`}>
+      {!isPhd && (
+        <div className={`${Classes["container"]}`}>
           <CustomProgramOppertunitySlider data={opportunityCardDataAIML} />
         </div>
-      }
-
+      )}
 
       <EnquiryForm />
 
