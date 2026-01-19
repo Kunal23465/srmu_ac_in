@@ -46,6 +46,10 @@ html {
   background-position: center;
 }
 
+.banner-section.big-banner {
+  min-height: 800px;
+}
+
 .view-button {
   background-color: rgb(15, 74, 133);
   border: rgb(15, 74, 133) 1px solid;
@@ -802,6 +806,10 @@ input::-webkit-inner-spin-button {
   .manage-top-arrow.big {
     right: 44% !important;
   }
+
+  .banner-section.big-banner {
+    min-height: 600px;
+  }
 }
 
 @media screen and (max-width: 1280px) {
@@ -813,6 +821,10 @@ input::-webkit-inner-spin-button {
 @media screen and (max-width: 1024px) {
   .slider_placement_dots_law .slick-dots {
     bottom: -28px !important;
+  }
+
+  .banner-section.big-banner {
+    min-height: 400px;
   }
 }
 
