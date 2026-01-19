@@ -40,10 +40,10 @@ export default function DynamicBreadcrumbs() {
         backgroundImg = matchedParent ? pageBackgrounds[matchedParent] : "";
     }
 
-
+    console.log("===", location.pathname)
     return (
         <section
-            className="banner-section flex items-end pb-[45px]"
+            className={`banner-section ${location.pathname ==="/online-admission" && "big-banner"} flex items-end pb-[45px]`}
             style={{
                 backgroundImage: backgroundImg ? `url(${backgroundImg})` : undefined,
                 backgroundSize: "cover",

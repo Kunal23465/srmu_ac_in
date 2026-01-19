@@ -8,7 +8,7 @@ import campuslifebreadcrumbbg from "../../assets/images/breadcrumb/campus-life-b
 import blogsbreadcrumbbg from "../../assets/images/breadcrumb/blogs-breadcrumb-bg.jpg";
 import placementbreadcrumbbg from "../../assets/images/breadcrumb/placement-breadcrum-bg.jpg";
 import agriBreadcrumbbg from "../../assets/images/breadcrumb/agri-banner-inner.jpg";
-
+import onlineApplicationBanner from "../../assets/images/online-application-banner.jpeg"
 // -----------------------
 // FIX 1: Allow string index
 // -----------------------
@@ -20,7 +20,7 @@ export const pageBackgrounds: Record<string, string> = {
   "campus-life": campuslifebreadcrumbbg,
   placements: placementbreadcrumbbg,
   blogs: blogsbreadcrumbbg,
-
+  "online-admission":onlineApplicationBanner,
   "innovation-meets-agriculture-at-the-srmu-kisan-mela-2025": agriBreadcrumbbg,
   "empowering-future-engineers:-l&t-edutech-ai-lab-opens-at-srmu": agriBreadcrumbbg,
   "expert-talk-session-on-smart-meter-implementation:-data-science-&-cybersecurity-in-ami": agriBreadcrumbbg,
