@@ -29,6 +29,7 @@ const ProgramFinderHome: React.FC = () => {
 
   const [searchTerm, setSearchTerm] = useState("");
   const [debouncedSearch, setDebouncedSearch] = useState("");
+ 
 
   const isInitialized = useRef(false);
 
@@ -113,7 +114,6 @@ const ProgramFinderHome: React.FC = () => {
     "";
 
 
-  console.log("programTypeId=", programTypeId)
   return (
     <>
       <div className={`${Classes.container} mt-16`}>

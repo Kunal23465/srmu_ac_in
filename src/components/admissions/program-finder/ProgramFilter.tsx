@@ -40,66 +40,68 @@ const ProgramFilter: React.FC<PropsTypes> = ({
   return (
     <div className={`${Classes["container"]} pb-6 sm:py-10`}>
       {/* Filters */}
-      <div className="py-4 px-2 md:p-8 bg-[#0f4a85] rounded-lg">
-        <div className="flex flex-col md:flex-row gap-4">
-          <select
-            className="border p-2 rounded w-full md:w-1/3 bg-white"
-            value={selectedProgramType}
-            onChange={(e) => {
-              onProgramTypeChange(e.target.value);
-              setVisibleCount(5);
-            }}
-          >
-            <option value="">{isTypeFlag ? " Select Program Flag" : "Select Program Type"} </option>
-            {isTypeFlag
-              ? programTypeOptions.map((flag: any) => (
-                <option key={flag.programFlagId} value={flag.programFlagId}>
-                  {flag.name}
-                </option>
-              ))
-              : programTypeOptions.map((type: any) => (
-                <option key={type.programTypeId} value={type.programTypeId}>
-                  {type.name}
-                </option>
-              ))}
-          </select>
-
-          <select
-            className="border p-2 rounded w-full md:w-1/3 bg-white"
-            value={selectedDiscipline}
-            onChange={(e) => {
-              onDisciplineChange(e.target.value);
-              setVisibleCount(5);
-            }}
-          >
-            <option value="">Select Discipline</option>
-            {disciplineOptions.map((ele) => (
-              <option key={ele.programDisciplineId} value={ele.programDisciplineId}>
-                {ele.name}
-              </option>
-            ))}
-          </select>
-          <div className="relative w-full md:w-1/3">
-            <input
-              type="text"
-              placeholder="Search Course"
-              className="border p-2 rounded w-full  bg-white placeholder:text-black"
-              value={searchTerm}
+      {
+        !loading && <div className="py-4 px-2 md:p-8 bg-[#0f4a85] rounded-lg">
+          <div className="flex flex-col md:flex-row gap-4">
+            <select
+              className="border p-2 rounded w-full md:w-1/3 bg-white"
+              value={selectedProgramType}
               onChange={(e) => {
-                onSearchChange(e.target.value);
+                onProgramTypeChange(e.target.value);
                 setVisibleCount(5);
               }}
-            />
-            <GoSearch color="#FFB703" size={22} className="absolute top-2 right-2" />
+            >
+              <option value="">{isTypeFlag ? " Select Program Flag" : "Select Program Type"} </option>
+              {isTypeFlag
+                ? programTypeOptions.map((flag: any) => (
+                  <option key={flag.programFlagId} value={flag.programFlagId}>
+                    {flag.name}
+                  </option>
+                ))
+                : programTypeOptions.map((type: any) => (
+                  <option key={type.programTypeId} value={type.programTypeId}>
+                    {type.name}
+                  </option>
+                ))}
+            </select>
+
+            <select
+              className="border p-2 rounded w-full md:w-1/3 bg-white"
+              value={selectedDiscipline}
+              onChange={(e) => {
+                onDisciplineChange(e.target.value);
+                setVisibleCount(5);
+              }}
+            >
+              <option value="">Select Discipline</option>
+              {disciplineOptions.map((ele) => (
+                <option key={ele.programDisciplineId} value={ele.programDisciplineId}>
+                  {ele.name}
+                </option>
+              ))}
+            </select>
+            <div className="relative w-full md:w-1/3">
+              <input
+                type="text"
+                placeholder="Search Course"
+                className="border p-2 rounded w-full  bg-white placeholder:text-black"
+                value={searchTerm}
+                onChange={(e) => {
+                  onSearchChange(e.target.value);
+                  setVisibleCount(5);
+                }}
+              />
+              <GoSearch color="#FFB703" size={22} className="absolute top-2 right-2" />
+            </div>
           </div>
         </div>
-      </div>
+      }
 
       {/* Course List */}
 
       {
         loading ? <div className="space-y-4 mt-8">
-          {[...Array(3)].map((_, i) => (
+          {[...Array(4)].map((_, i) => (
             <div key={i} className="skeleton_card w-full h-30"></div>
           ))
           }
