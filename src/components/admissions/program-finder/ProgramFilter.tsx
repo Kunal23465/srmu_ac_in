@@ -37,7 +37,6 @@ const ProgramFilter: React.FC<PropsTypes> = ({
   const visibleCourses = data.slice(0, visibleCount);
   const { loading } = useSelector((state: RootState) => state.getProgramFinder);
   const slugify = (str: string) => str.toLowerCase().trim().replace(/\s+/g, "-");
-
   return (
     <div className={`${Classes["container"]} pb-6 sm:py-10`}>
       {/* Filters */}

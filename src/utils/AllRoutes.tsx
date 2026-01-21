@@ -289,6 +289,10 @@ export const routes = [
         element: <RootPrograms />,
         children: [
           {
+            path: "program-finder",
+            element: <ProgramFinderPage />,
+          },
+          {
             path: ":programType",
             element: <ProgramFinderPage />,
           },
