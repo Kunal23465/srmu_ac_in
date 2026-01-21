@@ -24,7 +24,6 @@ import FeeStructurePage from "../pages/admissions/fee-structure/FeeStructurePage
 import ShiftSchedulePage from "../pages/admissions/shift-schedule/ShiftSchedulePage";
 import DocumentChecklistPage from "../pages/admissions/document-checklist/DocumentChecklistPage";
 import AdmissionFaqPage from "../pages/admissions/admission-faq/AdmissionFaqPage";
-import ProgramFinderPage from "../pages/admissions/program-finder/ProgramFinderPage";
 import ScholarshipPage from "../pages/admissions/scholarship/ScholarshipPage";
 import LeadershipAndGovernancePage from "../pages/about/Leadership-and-Governance/LeadershipAndGovernancePage";
 import CommitteeAndCellsPage from "../pages/about/Committee-and-Cells/CommitteeAndCellsPage";
@@ -96,6 +95,8 @@ import DisclaimerPage from "../pages/disclaimer/DisclaimerPage";
 import TermsAndConditionPage from "../pages/terms-condition/TermsAndConditionPage";
 import MandatoryDisclouserPage from "../pages/mandatory-disclouser/MandatoryDisclouserPage";
 import PhdOfflineApplicationPage from "../pages/Research/phd-offline-application/PhdOfflineApplicationPage";
+import AddmissionProgramFinderPage from "../pages/admissions/program-finder/AddmissionProgramFinderPage";
+import ProgramFinderPage from "../pages/programs/ProgramFinderPage";
 // interface IMatches {
 //   pathname: string;
 //   params: Params<string>;
@@ -275,7 +276,7 @@ export const routes = [
           },
           {
             path: "program-finder",
-            element: <ProgramFinderPage />,
+            element: <AddmissionProgramFinderPage />,
           },
           {
             path: "scholarship-scheme",
