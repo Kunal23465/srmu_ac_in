@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 @import "tailwindcss";
 
@@ -441,16 +440,17 @@ background: radial-gradient(circle, rgba(36,64,143,0.9444152661064426) 0%, rgba(
 
 
 .scope_list ul li::after {
-  content: "\f00c";
-  /* Font Awesome check */
-  font-family: "Font Awesome 6 Free";
-  font-weight: 900;
-  /* REQUIRED for solid icons */
+  content: "";
   position: absolute;
-  top: 1px;
+  top: 4px;
   left: -17px;
-  color: #ffb703;
-  font-size: 14px;
+  width: 8px;
+  height: 14px;
+
+  border-right: 2px solid #ffb703;
+  border-bottom: 2px solid #ffb703;
+
+  transform: rotate(45deg);
 }
 
 @media screen and (min-width: 1024px) {
