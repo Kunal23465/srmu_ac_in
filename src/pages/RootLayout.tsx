@@ -55,17 +55,17 @@ const RootLayout: React.FC = () => {
         href="https://wa.me/9120007948"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-32 md:bottom-23 left-6 md:left-9 z-9999 rounded-full shadow-lg hover:scale-110 transition-all duration-300"
+        className="fixed bottom-32 md:bottom-23 left-6 md:left-9 z-9999! rounded-full shadow-lg hover:scale-110 transition-all duration-300"
       >
         <img src={whatsapp} className="w-14 h-14" />
       </a>
 
       {/* ================= CHAT POPUP ================= */}
       {openChat && (
-        <div className="fixed bottom-24 right-6 z-50 w-[350px] rounded-xl shadow-2xl overflow-hidden">
+        <div className="fixed bottom-24 right-6 z-9999 w-[350px] rounded-xl shadow-2xl overflow-hidden">
           <div className="bg-[#dfa000] text-white flex justify-between items-center px-4 py-3">
             <h3 className="font-semibold">Chat Assistant</h3>
-            <button onClick={toggleChat}>
+            <button className="cursor-pointer" onClick={toggleChat}>
               <FaTimes size={18} />
             </button>
           </div>
@@ -99,7 +99,7 @@ const RootLayout: React.FC = () => {
       )}
 
       {/* ================= BOT BUTTON ================= */}
-      <button onClick={toggleChat} className="fixed bottom-12 sm:bottom-6 right-6 z-50 flex items-center gap-2">
+      <button onClick={toggleChat} className="fixed bottom-12 sm:bottom-6 right-6 z-200 flex items-center gap-2">
         {!openChat && (
           <div className="relative mr-2">
             <div className="bg-[#ffb703] text-white px-4 py-2 rounded-xl text-sm font-semibold shadow-md whitespace-nowrap">
@@ -120,8 +120,7 @@ const RootLayout: React.FC = () => {
       {/* ============= RIGHT SIDE SLIDERS (SHOW ON SCROLL) ============= */}
       <div
         className={`
-          w-full sm:w-auto z-9999 fixed bottom-0 sm:top-1/2 sm:-right-[58px] flex sm:flex sm:flex-col sm:gap-y-[124px] sm:-translate-y-1/2 transition-all duration-500 ease-in-out ${
-            showRightBar ? "sm:translate-x-0" : "sm:translate-x-full"
+          w-full sm:w-auto z-200 fixed bottom-0 sm:top-1/2 sm:-right-[58px] flex sm:flex sm:flex-col sm:gap-y-[124px] sm:-translate-y-1/2 transition-all duration-500 ease-in-out ${showRightBar ? "sm:translate-x-0" : "sm:translate-x-full"
           }
   `}
       >
