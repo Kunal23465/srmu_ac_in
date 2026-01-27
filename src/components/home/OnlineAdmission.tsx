@@ -2,6 +2,7 @@ import { FC } from "react";
 import { HiOutlineArrowLongRight } from "react-icons/hi2";
 import CustomTopFooter from "../../utils/custom/CustomTopFooter";
 import { instituteFooterData } from "../../data/academics/institute/department-of-electrical-and-electronics-engineering-data";
+import { Link } from "react-router-dom";
 
 const OnlineAdmission: FC = () => {
   return (
@@ -24,13 +25,12 @@ const OnlineAdmission: FC = () => {
               UPI and other digital payments methods.
             </p>
 
-            <button
-              onClick={() => console.log("Apply button clicked")}
+            <Link to="https://studentportal.srmu.ac.in/login"
               className="inline-flex border hover:border-gray-800 items-center justify-center mb-10 bg-gray-800 hover:text-gray-800 hover:bg-white text-white font-medium  transition duration-300 gap-3 px-8 py-4 rounded-xl  "
             >
               <span>CLICK TO APPLY</span>
               <HiOutlineArrowLongRight className="text-xl" />
-            </button>
+            </Link>
 
             <p className="text-sm md:text-base text-gray-600 mb-2">
               Application Processing Fee is Rs. 500/- for Polytechnic (Diploma)
