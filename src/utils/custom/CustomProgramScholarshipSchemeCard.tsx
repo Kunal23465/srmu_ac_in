@@ -4,9 +4,9 @@ import BGimg from "../../assets/images/research/overview/facilities-bg-lg.jpeg";
 
 const CustomProgramScholarshipSchemeCard: React.FC = () => {
   return (
-    <div className="bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${BGimg})`} }>
+    <div className="bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${BGimg})` }}>
       <div className={`${Classes["container"]}`}>
-        
+
         <div className="flex flex-col sm:flex-row text-white py-20 gap-10 sm:gap-0">
 
           {/* LEFT SECTION */}
@@ -40,8 +40,16 @@ const CustomProgramScholarshipSchemeCard: React.FC = () => {
                 "Divyang & Female Candidates",
                 "EWS (Economically Weaker Section)",
               ].map((item, i) => (
-                <li key={i} className="flex items-start gap-3">
-                  <span className="text-amber-400 font-bold">✔</span>
+                <li key={i} className="flex items-start gap-1">
+                  <span className="text-amber-400 font-bold pt-1.5">
+                    <img
+                      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23ffb703' d='M6.173 13.414L1.757 9l1.414-1.414 3.002 3.002 6.41-6.41L14 5.586z'/%3E%3C/svg%3E"
+                      alt="check icon"
+                      width="16"
+                      height="16"
+                    />
+
+                  </span>
                   {item}
                 </li>
               ))}
