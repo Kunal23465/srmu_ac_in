@@ -107,7 +107,7 @@ export const footerData = {
     {
       id: 1,
       title: "Result Portal",
-      path: "#",
+      path: "https://results.srmu.ac.in/",
     },
     {
       id: 2,

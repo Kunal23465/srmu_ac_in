@@ -128,7 +128,7 @@ const ProgramsSection: FC = () => {
 
                           <li key={item.programDisciplineId} className="list-none">
                             <Link
-                              to={`/programs/${slugify(item.name)}`}
+                              to={`/admission/program-finder`}
                               state={{
                                 programTypeId: selectedProgramType,
                                 disciplineId: item.programDisciplineId,
