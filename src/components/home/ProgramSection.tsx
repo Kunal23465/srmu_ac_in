@@ -21,7 +21,7 @@ const ProgramsSection: FC = () => {
   const [isMobile, setIsMobile] = useState(false);
   const { programType } = useSelector((state: RootState) => state.getProgramType);
   const { discipline, loading } = useSelector((state: RootState) => state.getDiscipline);
-  const slugify = (str: string) => str.toLowerCase().trim().replace(/\s+/g, "-");
+  // const slugify = (str: string) => str.toLowerCase().trim().replace(/\s+/g, "-");
   /* ===========================
      Detect Mobile
      =========================== */
