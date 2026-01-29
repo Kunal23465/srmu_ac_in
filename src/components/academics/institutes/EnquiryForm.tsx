@@ -1,7 +1,7 @@
 import React from "react";
 import girlImg from "../../../assets/images/academics/institutes/enquiry-form-16012411503754.png";
 import Classes from "../../../utils/styles/Global.module.css";
-import program from "../../../assets/images/academics/institutes/programs-bg.jpg"
+import program from "../../../assets/images/academics/institutes/programs_bg-new.png"
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { EnquiryFormData, initialValuesForEnquiry, validationSchemaForEnquiry } from "../../../data/academics/institute/institute-form-data";
 import SelectInputForEnquiry from "./SelectInputForEnquiry";

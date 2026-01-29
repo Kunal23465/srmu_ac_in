@@ -50,7 +50,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           style={{ maxHeight }}
         >
           <div ref={contentRef}>
-            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+            <p className="text-gray-600  leading-relaxed mb-4">
               {fullDescription}
             </p>
           </div>
@@ -59,7 +59,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         {/* Read More / Read Less Toggle */}
         <button
           onClick={() => setShowMore(!showMore)}
-          className="text-[#0f4a85] flex gap-1 items-center font-semibold mt-2 transition-colors"
+          className="text-[#0f4a85] flex gap-1 items-center font-semibold mt-2 transition-colors cursor-pointer"
         >
           {showMore ? "READ LESS" : "READ MORE"} <LuArrowRight className="text-lg" />
         </button>

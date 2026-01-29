@@ -23,6 +23,7 @@ import { fetchProgramFeesByProgramId } from "../../../store/program-finder/progr
 import { fetchWhySrmuSectionById } from "../../../store/program-finder/why-srmu/whySrmuSectionThunk";
 import { getCounterById } from "../../../store/program-finder/counter/getCounterThunk";
 import { fetchProgramHeighlightById } from "../../../store/program-finder/program-heighlight/programHeighlightThunk";
+import { Helmet } from "react-helmet-async";
 
 // type dataByID=any[]
 
@@ -76,87 +77,96 @@ const ProgramDetails = () => {
   // program heighlight
 
   return (
-    <div className="mt-20">
-      <div className={`${Classes["container"]}`}>
+    <>
+      <Helmet>
         {/* @ts-ignore */}
-        <h2 className="font50 fw500 text-[#023047]">{dataByID?.name}</h2>
+        <title>{dataByID?.metaTitle ?? ""}</title>
         {/* @ts-ignore */}
-        <p className="text-[#023047] font30 fw500">{dataByID?.title}</p>
-        {/* <CustomOverviewSection data={BtechCSEAIandMLOverviewData} /> */}
-        <div className={` py-7 md:py-10 lg:py-14`}>
-          <div className={`flex flex-col  gap-4 items-stretch  justify-between md:flex-row `}>
-            <div className={`w-auto  ${" border-l-4 pl-2 md:pl-0 md:border-l-0  md:border-r-4"}  border-[#ffb703] flex flex-col justify-center`}>
-              <h2 className="text-[28px]  lg:text-[3.125rem] whitespace-pre-line font-semibold leading-11 pr-4 sm:min-w-[350px]">Overview</h2>
-            </div>
-            <div className={`md:pl-8 md:py-4`}>
-              {/* @ts-ignore */}
-              <div className="text-justify">{typeof dataByID?.overview === "string" ? <div dangerouslySetInnerHTML={{ __html: dataByID?.overview }} /> : dataByID?.overview}</div>
+        <meta name="description" content={dataByID?.metaDescription ?? ""} />
+      </Helmet>
+      <div className="mt-20">
+        <div className={`${Classes["container"]}`}>
+          {/* @ts-ignore */}
+          <h2 className="font50 fw500 text-[#023047]">{dataByID?.name}</h2>
+          {/* @ts-ignore */}
+          <p className="text-[#023047] font30 fw500">{dataByID?.title}</p>
+          {/* <CustomOverviewSection data={BtechCSEAIandMLOverviewData} /> */}
+          <div className={` py-7 md:py-10 lg:py-14`}>
+            <div className={`flex flex-col  gap-4 items-stretch  justify-between md:flex-row `}>
+              <div className={`w-auto  ${" border-l-4 pl-2 md:pl-0 md:border-l-0  md:border-r-4"}  border-[#ffb703] flex flex-col justify-center`}>
+                <h2 className="text-[28px]  lg:text-[3.125rem] whitespace-pre-line font-semibold leading-11 pr-4 sm:min-w-[350px]">Overview</h2>
+              </div>
+              <div className={`md:pl-8 md:py-4`}>
+                {/* @ts-ignore */}
+                <div className="text-justify">{typeof dataByID?.overview === "string" ? <div dangerouslySetInnerHTML={{ __html: dataByID?.overview }} /> : dataByID?.overview}</div>
+              </div>
             </div>
           </div>
+          <Counter counterData={convertedCounterData} />
+          {/* @ts-ignore */}
+          <CustomEligibilitySection data={dataByID?.eligibility} />
         </div>
-        <Counter counterData={convertedCounterData} />
-        {/* @ts-ignore */}
-        <CustomEligibilitySection data={dataByID?.eligibility} />
-      </div>
-      <div className="bg-[#ecf0f9] pb-10">
-        <CustomDepartmentSlider
-          heading={`${!isPhd ? "Why SRMU?" : "Ph.D. Process"} `}
-          description=""
-          data={whySrmuData}
-          renderCard={({ item, index }) => <WhyCardComp item={item} imageIndex={index % 4} />}
-          bgColor="transparent"
-          headingColor="black"
-          descriptionColor="#e5e5e5"
-          breakpoints={{ desktop: 4, tablet: 3, mobile: 1 }}
-        />
+        <div className="bg-[#ecf0f9] pb-10">
+          <CustomDepartmentSlider
+            heading={`${!isPhd ? "Why SRMU?" : "Ph.D. Process"} `}
+            description=""
+            data={whySrmuData}
+            renderCard={({ item, index }) => <WhyCardComp item={item} imageIndex={index % 4} />}
+            bgColor="transparent"
+            headingColor="black"
+            descriptionColor="#e5e5e5"
+            breakpoints={{ desktop: 4, tablet: 3, mobile: 1 }}
+          />
+
+          {!isPhd && (
+            <div className={`${Classes["container"]}`}>
+              <PartnerLogos data={partnerDataforAIandML} />
+            </div>
+          )}
+        </div>
+        <div className={`${Classes["container"]}`}>
+          <h2 className="mt-20 mb-10 text-center font50 fw500 text-[#023047]">Program Fee</h2>
+          {/* <CustomDepartmentFeeDetailsTable data={ProgramFeesAIandML} /> */}
+          {/* @ts-ignore */}
+          {feesData && feesData.length > 0 && <ProgramFeeTable data={feesData[0]} />}
+        </div>
+        {!isPhd && (
+          <div className="my-50">
+            <CustomProgramScholarshipSchemeCard />
+          </div>
+        )}
+        {!isPhd && (
+          <div className="my-50">
+            <div className={`${Classes["container"]}`}>
+              <CustomDepartmentHighlights heading="Department Highlights" steps={departmentHeghlightData} />
+            </div>
+          </div>
+        )}
+
+        {
+          //  @ts-ignore
+          !isPhd && <CustomProgramPLOAccordian POdata={dataByID?.programObjective} PLOdata={dataByID?.programLearningOutcomes} PSOdata={dataByID?.specificOutcomes} />
+        }
+
+        <div className="bg-[#dee4f2]">
+          <div className={`${Classes["container"]}`}>
+            {/* @ts-ignore */}
+            <CustomCompaniesScope data={scopeData} list={dataByID?.scope} />
+          </div>
+        </div>
 
         {!isPhd && (
           <div className={`${Classes["container"]}`}>
-            <PartnerLogos data={partnerDataforAIandML} />
+            <CustomProgramOppertunitySlider data={opportunityCardDataAIML} />
           </div>
         )}
+
+        <EnquiryForm />
+
+        <CustomTopFooter data={CustomTopFooterData1} />
       </div>
-      <div className={`${Classes["container"]}`}>
-        <h2 className="mt-20 mb-10 text-center font50 fw500 text-[#023047]">Program Fee</h2>
-        {/* <CustomDepartmentFeeDetailsTable data={ProgramFeesAIandML} /> */}
-        {/* @ts-ignore */}
-        {feesData && feesData.length > 0 && <ProgramFeeTable data={feesData[0]} />}
-      </div>
-      {!isPhd && (
-        <div className="my-50">
-          <CustomProgramScholarshipSchemeCard />
-        </div>
-      )}
-      {!isPhd && (
-        <div className="my-50">
-          <div className={`${Classes["container"]}`}>
-            <CustomDepartmentHighlights heading="Department Highlights" steps={departmentHeghlightData} />
-          </div>
-        </div>
-      )}
+    </>
 
-      {
-        //  @ts-ignore
-        !isPhd && <CustomProgramPLOAccordian POdata={dataByID?.programObjective} PLOdata={dataByID?.programLearningOutcomes} PSOdata={dataByID?.specificOutcomes} />
-      }
-
-      <div className="bg-[#dee4f2]">
-        <div className={`${Classes["container"]}`}>
-          {/* @ts-ignore */}
-          <CustomCompaniesScope data={scopeData} list={dataByID?.scope} />
-        </div>
-      </div>
-
-      {!isPhd && (
-        <div className={`${Classes["container"]}`}>
-          <CustomProgramOppertunitySlider data={opportunityCardDataAIML} />
-        </div>
-      )}
-
-      <EnquiryForm />
-
-      <CustomTopFooter data={CustomTopFooterData1} />
-    </div>
   );
 };
 
