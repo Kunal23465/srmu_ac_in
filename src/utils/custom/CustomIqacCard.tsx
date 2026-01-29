@@ -27,7 +27,7 @@ export const CustomModal: React.FC<propsModal> = ({ isExpanded, id, setIsExpande
             {isExpanded == id && (
                 <>
                     <div className="  w-full h-screen fixed top-0 left-0 z-999"
-                      style={{ backdropFilter: "blur(1px)" }}></div>
+                        style={{ backdropFilter: "blur(1px)" }}></div>
                     <div className="w-[90%]  max-w-[700px] xl:max-w-[1050px]  fixed top-[50%] left-[50%] border-t-4 border-b-4 border-t-[#ffb703] border-b-[#0f4a85] bg-white translate-x-[-50%] translate-y-[-50%] z-9999">
                         <div className="max-h-[650px] faculty-card-scrollbar overflow-y-auto px-5 py-10">
                             <span
@@ -53,20 +53,20 @@ export const CustomModal: React.FC<propsModal> = ({ isExpanded, id, setIsExpande
 
 const CustomIqacCard: React.FC<IqacCardProps> = ({ title, icon, description, colorCode, index, length, content, mode }) => {
     const [isExpanded, setIsExpanded] = useState<number | null>(null);
-    const [active , setActive] = useState<boolean>(false);
+    const [active, setActive] = useState<boolean>(false);
 
-useEffect(() => {
-    // Detect mobile once
-    if (window.innerWidth <= 600) {
-        setActive(false); // start closed
-    }
-}, []);
+    useEffect(() => {
+        // Detect mobile once
+        if (window.innerWidth <= 600) {
+            setActive(false); // start closed
+        }
+    }, []);
 
-const handleMobileToggle = () => {
-    if (window.innerWidth <= 600) {
-        setActive(prev => !prev);
-    }
-};
+    const handleMobileToggle = () => {
+        if (window.innerWidth <= 600) {
+            setActive(prev => !prev);
+        }
+    };
 
 
     // Function to truncate the description to 30 words
@@ -80,11 +80,11 @@ const handleMobileToggle = () => {
 
     const truncatedDescription = truncateDescription(description, 35);
 
-    if (isExpanded !== null) {
-        (document.body.style.overflow = "hidden"), (document.body.style.height = "100vh");
-    } else {
-        (document.body.style.overflow = "auto"), (document.body.style.height = "auto");
-    }
+    // if (isExpanded !== null) {
+    //     (document.body.style.overflow = "hidden"), (document.body.style.height = "100vh");
+    // } else {
+    //     (document.body.style.overflow = "auto"), (document.body.style.height = "auto");
+    // }
     return (
         <>
             <div
@@ -98,16 +98,16 @@ const handleMobileToggle = () => {
                 </div>
 
                 {/* Hover Content */}
-<div
-    aria-pressed={active}
-    onClick={handleMobileToggle}
-    className="absolute inset-0 flex flex-col items-center justify-center opacity-0 
+                <div
+                    aria-pressed={active}
+                    onClick={handleMobileToggle}
+                    className="absolute inset-0 flex flex-col items-center justify-center opacity-0 
                aria-pressed:opacity-100 group-hover:opacity-100 
                bg-white bg-opacity-100 transition-opacity duration-300 shadow-2xl z-1 
                -m-5 mb-0 rounded-t-2xl
                after:rounded-b-2xl after:h-5 after:w-full after:bg-[#ffb703]
                after:content-[''] after:absolute after:-bottom-5 after:left-0 after:right-0"
->
+                >
 
                     <h3 className="font-semibold text-[#ffb703] text-xl text-center">{title}</h3>
 
