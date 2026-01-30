@@ -1,20 +1,36 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import Classes from "../../../../utils/styles/Global.module.css";
 import { PublicationConferenceData } from "../../../../data/research/publication/publication-data";
 import { useNavigate } from "react-router-dom";
 
 const Conference: React.FC = () => {
+  const [windowWidth, setWindowWidth] = useState(typeof window !== "undefined" ? window.innerWidth : 0);
   const sliderRef = React.useRef<Slider>(null);
   const [active, setActive] = useState("national");
   const navigate = useNavigate();
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
 
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Function to determine slidesToShow based on window width
+  const getSlidesToShow = () => {
+    if (windowWidth >= 1024) return 3;
+    if (windowWidth >= 600) return 2;
+
+    return 1;
+  };
   // Slick slider settings
   const settings = {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: getSlidesToShow(),
     slidesToScroll: 1,
     responsive: [
       {
@@ -42,7 +58,7 @@ const Conference: React.FC = () => {
     <button
       onClick={onClick}
       className="
-        w-12 h-12 flex items-center justify-center
+        w-12 h-12 flex items-center justify-center cursor-pointer
         rounded-full bg-[#f4b400]
         text-[#0f4a85] text-2xl font-bold
         transition-all duration-300
@@ -87,7 +103,7 @@ const Conference: React.FC = () => {
               </div>
 
               <div className="">
-                <div className="absolute top-15 md:top-1 right-0 ml-auto">
+                <div className="absolute top-15 md:top-1 z-300 right-10 lg:right-0 ml-auto">
                   <div className="flex gap-3">
                     <CustomArrow direction="prev" onClick={() => sliderRef.current?.slickPrev()} />
                     <CustomArrow direction="next" onClick={() => sliderRef.current?.slickNext()} />
