@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import CustomTabs from "../../../utils/custom/CustomTabs";
 import { Hello } from "./Hello";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
+import CompanyHello from "./CompanyHello";
 
 const OurRecruiters: React.FC = () => {
   const sliderRef = useRef<any>(null);
@@ -19,7 +20,7 @@ const OurRecruiters: React.FC = () => {
     {
       key: "2",
       label: "COMPANIES VISITED FOR PLACEMENT -2025",
-      content: <Hello sliderRef={sliderRef} />,
+      content: <CompanyHello sliderRef={sliderRef} />,
     },
   ];
 

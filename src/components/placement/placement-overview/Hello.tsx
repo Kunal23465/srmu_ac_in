@@ -1,6 +1,7 @@
 import { FC } from 'react'
 import Slider from 'react-slick';
-import { CollabrationSliderData } from '../../../data/about/recognition-approval/recognitionApprovalsData';
+import { topRecruiters } from '../../../data/placement/topRecruiters';
+
 
 interface HelloProps {
   sliderRef: any;
@@ -20,7 +21,7 @@ export const Hello: FC<HelloProps> = ({ sliderRef }) => {
   return (
     <div className="mt-8 md:mt-10 lg:mt-16">
       <Slider ref={sliderRef} {...settings}>
-        {CollabrationSliderData.map((data, index) => (
+        {topRecruiters.map((data, index) => (
           <div key={index}>
             <div className="flex flex-col gap-6">
 

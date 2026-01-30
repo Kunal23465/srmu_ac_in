@@ -1432,93 +1432,641 @@ export type Drive = {
   dateOfVisit: string;
   description: string;
 };
-import logo_2023_1 from "../../assets/images/placements/placement-overview/aditya-birla.png";
+
+
+// 2023
+import img2023_1 from "../../assets/images/placements/placement-drive/2023/1.png";
+import img2023_2 from "../../assets/images/placements/placement-drive/2023/2.png";
+import img2023_3 from "../../assets/images/placements/placement-drive/2023/3.png";
+import img2023_4 from "../../assets/images/placements/placement-drive/2023/4.png";
+import img2023_5 from "../../assets/images/placements/placement-drive/2023/5.png";
+import img2023_6 from "../../assets/images/placements/placement-drive/2023/6.png";
+import img2023_7 from "../../assets/images/placements/placement-drive/2023/7.png";
+import img2023_8 from "../../assets/images/placements/placement-drive/2023/8.png";
+import img2023_9 from "../../assets/images/placements/placement-drive/2023/9.png";
+import img2023_10 from "../../assets/images/placements/placement-drive/2023/10.png";
+import img2023_11 from "../../assets/images/placements/placement-drive/2023/11.png";
+import img2023_12 from "../../assets/images/placements/placement-drive/2023/12.png";
+import img2023_13 from "../../assets/images/placements/placement-drive/2023/13.png";
+import img2023_14 from "../../assets/images/placements/placement-drive/2023/14.png";
+import img2023_15 from "../../assets/images/placements/placement-drive/2023/15.png";
+import img2023_16 from "../../assets/images/placements/placement-drive/2023/16.png";
+import img2023_17 from "../../assets/images/placements/placement-drive/2023/17.png";
+import img2023_18 from "../../assets/images/placements/placement-drive/2023/18.png";
+import img2023_19 from "../../assets/images/placements/placement-drive/2023/19.png";
+import img2023_20 from "../../assets/images/placements/placement-drive/2023/20.png";
+import img2023_21 from "../../assets/images/placements/placement-drive/2023/21.png";
+import img2023_22 from "../../assets/images/placements/placement-drive/2023/22.png";
+import img2023_23 from "../../assets/images/placements/placement-drive/2023/23.png";
+import img2023_24 from "../../assets/images/placements/placement-drive/2023/24.png";
+import img2023_25 from "../../assets/images/placements/placement-drive/2023/25.png";
+import img2023_26 from "../../assets/images/placements/placement-drive/2023/26.png";
+
+// 2024
+import img2024_1 from "../../assets/images/placements/placement-drive/2024/1.png";
+import img2024_2 from "../../assets/images/placements/placement-drive/2024/2.png";
+import img2024_3 from "../../assets/images/placements/placement-drive/2024/3.png";
+import img2024_4 from "../../assets/images/placements/placement-drive/2024/4.png";
+import img2024_5 from "../../assets/images/placements/placement-drive/2024/5.png";
+import img2024_6 from "../../assets/images/placements/placement-drive/2024/6.png";
+import img2024_7 from "../../assets/images/placements/placement-drive/2024/7.png";
+import img2024_8 from "../../assets/images/placements/placement-drive/2024/8.png";
+import img2024_9 from "../../assets/images/placements/placement-drive/2024/9.png";
+import img2024_10 from "../../assets/images/placements/placement-drive/2024/10.png";
+import img2024_11 from "../../assets/images/placements/placement-drive/2024/11.png";
+import img2024_12 from "../../assets/images/placements/placement-drive/2024/12.png";
+import img2024_13 from "../../assets/images/placements/placement-drive/2024/13.png";
+import img2024_14 from "../../assets/images/placements/placement-drive/2024/14.png";
+import img2024_15 from "../../assets/images/placements/placement-drive/2024/15.png";
+import img2024_16 from "../../assets/images/placements/placement-drive/2024/16.png";
+import img2024_17 from "../../assets/images/placements/placement-drive/2024/17.png";
+import img2024_18 from "../../assets/images/placements/placement-drive/2024/18.png";
+import img2024_19 from "../../assets/images/placements/placement-drive/2024/19.png";
+import img2024_20 from "../../assets/images/placements/placement-drive/2024/20.png";
+import img2024_21 from "../../assets/images/placements/placement-drive/2024/21.png";
+import img2024_22 from "../../assets/images/placements/placement-drive/2024/22.png";
+import img2024_23 from "../../assets/images/placements/placement-drive/2024/23.png";
+import img2024_24 from "../../assets/images/placements/placement-drive/2024/24.png";
+import img2024_25 from "../../assets/images/placements/placement-drive/2024/25.png";
+
+// 2025
+import img2025_1 from "../../assets/images/placements/placement-drive/2025/1.png";
+import img2025_2 from "../../assets/images/placements/placement-drive/2025/2.png";
+import img2025_3 from "../../assets/images/placements/placement-drive/2025/3.png";
+import img2025_4 from "../../assets/images/placements/placement-drive/2025/4.png";
+import img2025_5 from "../../assets/images/placements/placement-drive/2025/5.png";
+import img2025_6 from "../../assets/images/placements/placement-drive/2025/6.png";
+import img2025_7 from "../../assets/images/placements/placement-drive/2025/7.png";
+import img2025_8 from "../../assets/images/placements/placement-drive/2025/8.png";
+import img2025_9 from "../../assets/images/placements/placement-drive/2025/9.png";
+import img2025_10 from "../../assets/images/placements/placement-drive/2025/10.png";
+import img2025_11 from "../../assets/images/placements/placement-drive/2025/11.png";
+import img2025_12 from "../../assets/images/placements/placement-drive/2025/12.png";
+import img2025_13 from "../../assets/images/placements/placement-drive/2025/13.png";
+import img2025_14 from "../../assets/images/placements/placement-drive/2025/14.png";
+import img2025_15 from "../../assets/images/placements/placement-drive/2025/15.png";
+import img2025_16 from "../../assets/images/placements/placement-drive/2025/16.png";
+import img2025_17 from "../../assets/images/placements/placement-drive/2025/17.png";
+import img2025_18 from "../../assets/images/placements/placement-drive/2025/18.png";
+import img2025_19 from "../../assets/images/placements/placement-drive/2025/19.png";
+import img2025_20 from "../../assets/images/placements/placement-drive/2025/20.png";
+import img2025_21 from "../../assets/images/placements/placement-drive/2025/21.png";
+import img2025_22 from "../../assets/images/placements/placement-drive/2025/22.png";
+import img2025_23 from "../../assets/images/placements/placement-drive/2025/23.png";
+import img2025_24 from "../../assets/images/placements/placement-drive/2025/24.png";
+import img2025_25 from "../../assets/images/placements/placement-drive/2025/25.png";
+import img2025_26 from "../../assets/images/placements/placement-drive/2025/26.png";
 export const placementData: Record<string, Drive[]> = {
   "2023": [
     {
       id: 1,
-      companyName: "TATA AIG Insurance",
-      companyLogo: logo_2023_1,
-      dateOfVisit: "03 September, 2023",
-      description: "Tata AIG General Insurance Company Limited is a joint venture company…",
+      companyName: "Aditya Birla Group",
+      companyLogo: img2023_1,
+      dateOfVisit: "10 December, 2022",
+      description: "Aditya Birla Group businesses are global powerhouses across sectors such as metals, pulp and fibre, chemicals, textiles, carbon black, telecom and cement.",
     },
     {
       id: 2,
-      companyName: "YES BANK",
-      companyLogo: logo_2023_1,
-
-      dateOfVisit: "21 March, 2023",
-      description: "At YES BANK, we are driven by a deep purpose and relentless commitment…",
+      companyName: "Collabera",
+      companyLogo: img2023_2,
+      dateOfVisit: "23 November, 2022",
+      description: "Collabera Inc is a global IT consulting company with headquarters in Basking Ridge, New Jersey, and Asia Pacific headquarters in Vadodara, Gujarat.",
     },
     {
       id: 3,
-      companyName: "Zenus Group",
-      companyLogo: logo_2023_1,
-
-      dateOfVisit: "15 November, 2022",
-      description: "Zenus Group is a Telecom Company established in 2012…",
+      companyName: "Corizo",
+      companyLogo: img2023_3,
+      dateOfVisit: "31 January, 2023",
+      description: "Corizo is an edtech platform providing internships, professional training programs, career guidance, and mentorship.",
     },
     {
       id: 4,
-      companyName: "Zenus Group",
-      companyLogo: logo_2023_1,
-
-      dateOfVisit: "15 November, 2022",
-      description: "Zenus Group is a Telecom Company established in 2012…",
+      companyName: "Coditas",
+      companyLogo: img2023_4,
+      dateOfVisit: "25 August, 2022",
+      description: "Coditas is a new-age offshore product development organization offering services across the full software development lifecycle.",
     },
     {
       id: 5,
+      companyName: "Tech Mahindra",
+      companyLogo: img2023_5,
+      dateOfVisit: "23 August, 2022",
+      description: "Tech Mahindra is an Indian multinational IT services and consulting company, part of the Mahindra Group.",
+    },
+    {
+      id: 6,
+      companyName: "Anix",
+      companyLogo: img2023_6,
+      dateOfVisit: "07 November, 2022",
+      description: "Anix is a skill development organization with over a decade of experience working with government bodies and educational institutions.",
+    },
+    {
+      id: 7,
+      companyName: "Codeyoung",
+      companyLogo: img2023_7,
+      dateOfVisit: "17 January, 2023",
+      description: "Codeyoung is an online platform where children learn creative coding, problem-solving, and innovation through live classes.",
+    },
+    {
+      id: 8,
+      companyName: "PlanetSpark",
+      companyLogo: img2023_8,
+      dateOfVisit: "15 December, 2022",
+      description: "PlanetSpark focuses on developing communication and leadership skills for learners from childhood to adulthood.",
+    },
+    {
+      id: 9,
+      companyName: "TATA AIG Insurance",
+      companyLogo: img2023_9,
+      dateOfVisit: "03 September, 2022",
+      description: "Tata AIG General Insurance Company Limited is a joint venture between Tata Group and American International Group (AIG).",
+    },
+    {
+      id: 10,
+      companyName: "YES Bank",
+      companyLogo: img2023_10,
+      dateOfVisit: "01 March, 2023",
+      description: "YES Bank provides comprehensive digital banking services across retail, SME, wholesale, and rural segments.",
+    },
+    {
+      id: 11,
       companyName: "Zenus Group",
-      companyLogo: logo_2023_1,
-
+      companyLogo: img2023_11,
       dateOfVisit: "15 November, 2022",
-      description: "Zenus Group is a Telecom Company established in 2012…",
+      description: "Zenus Group is a telecom company established in 2012, providing solutions for service providers and equipment manufacturers.",
+    },
+    {
+      id: 12,
+      companyName: "Speed Volvo",
+      companyLogo: img2023_12,
+      dateOfVisit: "27 January, 2023",
+      description: "Speed Volvo is committed to delivering exceptional customer service in automobile sales and servicing.",
+    },
+    {
+      id: 13,
+      companyName: "PVR Cinemas",
+      companyLogo: img2023_13,
+      dateOfVisit: "31 January, 2023",
+      description: "PVR Cinemas is India’s largest movie theatre chain with more than 400 screens across 70 cities.",
+    },
+    {
+      id: 14,
+      companyName: "Pulsus Healthtech",
+      companyLogo: img2023_14,
+      dateOfVisit: "30 November, 2022",
+      description: "Pulsus Healthtech is a scientific and medical publisher specializing in open-access and peer-reviewed journals.",
+    },
+    {
+      id: 15,
+      companyName: "Jaro Education",
+      companyLogo: img2023_15,
+      dateOfVisit: "25 November, 2022",
+      description: "Jaro Education is India’s leading online higher education company and a pioneer in executive education.",
+    },
+    {
+      id: 16,
+      companyName: "Integrated Resources",
+      companyLogo: img2023_16,
+      dateOfVisit: "02 March, 2023",
+      description: "Integrated Resources delivers premium talent solutions backed by over 20 years of industry experience.",
+    },
+    {
+      id: 17,
+      companyName: "Learning Route",
+      companyLogo: img2023_17,
+      dateOfVisit: "29 August, 2022",
+      description: "Learning Route helps professionals choose the right courses aligned with their interests and career goals.",
+    },
+    {
+      id: 18,
+      companyName: "Vastu Housing Finance",
+      companyLogo: img2023_18,
+      dateOfVisit: "08 November, 2022",
+      description: "Vastu Housing Finance Corporation provides affordable housing finance solutions to underserved segments.",
+    },
+    {
+      id: 19,
+      companyName: "MyCaptain",
+      companyLogo: img2023_19,
+      dateOfVisit: "01 December, 2022",
+      description: "MyCaptain offers cohort-based courses helping students and early professionals build modern career skills.",
+    },
+    {
+      id: 20,
+      companyName: "Paytm",
+      companyLogo: img2023_20,
+      dateOfVisit: "30 August, 2022",
+      description: "Paytm led India’s digital payments revolution and supports millions of merchants with payment solutions.",
+    },
+    {
+      id: 21,
+      companyName: "SkillVertex",
+      companyLogo: img2023_21,
+      dateOfVisit: "17 January, 2023",
+      description: "SkillVertex provides industry-focused upskilling programs for students and working professionals.",
+    },
+    {
+      id: 22,
+      companyName: "Torrent Group",
+      companyLogo: img2023_22,
+      dateOfVisit: "15 September, 2023",
+      description: "Torrent Group operates in healthcare and power sectors and has expanded into city gas distribution.",
+    },
+    {
+      id: 23,
+      companyName: "Hettich",
+      companyLogo: img2023_23,
+      dateOfVisit: "23 August, 2022",
+      description: "Hettich is a global manufacturer of furniture fittings, headquartered in Germany.",
+    },
+    {
+      id: 24,
+      companyName: "EduGorilla",
+      companyLogo: img2023_24,
+      dateOfVisit: "04 March, 2023",
+      description: "EduGorilla is an edtech company providing exam preparation resources through online and offline channels.",
+    },
+    {
+      id: 25,
+      companyName: "TCS",
+      companyLogo: img2023_25,
+      dateOfVisit: "20 August, 2022",
+      description: "Tata Consultancy Services (TCS) is a global IT services company and part of the Tata Group.",
+    },
+    {
+      id: 26,
+      companyName: "Red Bull India Pvt. Ltd.",
+      companyLogo: img2023_26,
+      dateOfVisit: "—",
+      description: "Red Bull India Pvt. Ltd. is part of the global Red Bull brand, known for its energy drinks and strong presence in sports and youth culture.",
     },
   ],
 
   "2024": [
     {
+      id: 1,
+      companyName: "Amazon",
+      companyLogo: img2024_1,
+      dateOfVisit: "11 September, 2023",
+      description:
+        "Amazon is guided by principles such as customer obsession, passion for invention, commitment to operational excellence, and long-term thinking, striving to be Earth’s most customer-centric company.",
+    },
+    {
+      id: 2,
+      companyName: "CEDCOSS",
+      companyLogo: img2024_2,
+      dateOfVisit: "14 September, 2023",
+      description: "Founded in 2010, CEDCOSS focuses on development and customization of open-source software, delivering efficient and quality-driven IT solutions.",
+    },
+    {
+      id: 3,
+      companyName: "Birlasoft",
+      companyLogo: img2024_3,
+      dateOfVisit: "10 January, 2024",
+      description: "Birlasoft is a global leader in Cloud, AI, and Digital technologies, combining deep domain expertise with enterprise solutions.",
+    },
+    {
+      id: 4,
+      companyName: "Corizo",
+      companyLogo: img2024_4,
+      dateOfVisit: "24 August, 2023",
+      description: "Corizo bridges the gap between formal education and industry requirements through internships, professional training, and mentorship.",
+    },
+    {
+      id: 5,
+      companyName: "HCL",
+      companyLogo: img2024_5,
+      dateOfVisit: "21 November, 2023",
+      description: "HCL delivers innovative technology solutions powered by a global workforce of over 224,700 professionals across 60 countries.",
+    },
+    {
       id: 6,
-      companyName: "Accenture",
-      companyLogo: logo_2023_1,
-
-      dateOfVisit: "01 April, 2024",
-      description: "Accenture is a global professional services company…",
+      companyName: "Ericsson",
+      companyLogo: img2024_6,
+      dateOfVisit: "31 January, 2024",
+      description: "Ericsson is a global leader in information and communication technology, headquartered in Stockholm, Sweden, with operations worldwide.",
     },
     {
       id: 7,
-      companyName: "Capgemini",
-      companyLogo: logo_2023_1,
-
-      dateOfVisit: "15 June, 2024",
-      description: "Capgemini is a French multinational IT services company…",
+      companyName: "Teachnook",
+      companyLogo: img2024_7,
+      dateOfVisit: "20 February, 2024",
+      description: "Teachnook is an e-learning platform focused on practical, outcome-based learning and industry-oriented hiring solutions.",
     },
     {
       id: 8,
-      companyName: "Wipro",
-      companyLogo: logo_2023_1,
-
-      dateOfVisit: "12 May, 2024",
-      description: "Wipro is a leading global IT, consulting and BPO company…",
+      companyName: "SAP",
+      companyLogo: img2024_8,
+      dateOfVisit: "18 July, 2023",
+      description: "SAP develops enterprise software solutions that help organizations of all sizes run their businesses efficiently and sustainably.",
+    },
+    {
+      id: 9,
+      companyName: "Intellipaat",
+      companyLogo: img2024_9,
+      dateOfVisit: "06 February, 2024",
+      description: "Intellipaat is a global professional training provider offering certification programs in data science, AI, cloud, and emerging technologies.",
+    },
+    {
+      id: 10,
+      companyName: "Muthoot Finance",
+      companyLogo: img2024_10,
+      dateOfVisit: "30 September, 2023",
+      description: "Muthoot Finance is India’s largest gold loan NBFC, offering financial services including loans, insurance, and money transfer solutions.",
+    },
+    {
+      id: 11,
+      companyName: "HDFC Sales",
+      companyLogo: img2024_11,
+      dateOfVisit: "16 December, 2023",
+      description: "HDFC Sales, a subsidiary of HDFC Bank, provides customized solutions in mortgages, life insurance, and general insurance.",
+    },
+    {
+      id: 12,
+      companyName: "BYJU'S",
+      companyLogo: img2024_12,
+      dateOfVisit: "13 October, 2023",
+      description: "BYJU'S is one of the world’s largest edtech companies, offering innovative learning programs for students across the globe.",
+    },
+    {
+      id: 13,
+      companyName: "IndiaMART",
+      companyLogo: img2024_13,
+      dateOfVisit: "02 December, 2023",
+      description: "IndiaMART is India’s largest B2B online marketplace, connecting buyers and suppliers across multiple industries.",
+    },
+    {
+      id: 14,
+      companyName: "Subros",
+      companyLogo: img2024_14,
+      dateOfVisit: "12 January, 2024",
+      description: "Subros Limited is India’s leading manufacturer of thermal products for automotive applications, in collaboration with Denso.",
+    },
+    {
+      id: 15,
+      companyName: "eTeam",
+      companyLogo: img2024_15,
+      dateOfVisit: "10 September, 2023",
+      description: "eTeam promotes a high-performance corporate culture through internal training and continuous professional development.",
+    },
+    {
+      id: 16,
+      companyName: "Accosts Remedies Pvt. Ltd.",
+      companyLogo: img2024_16,
+      dateOfVisit: "04 November, 2023",
+      description: "Accosts Remedies has over 32 years of experience in manufacturing and distributing pharmaceutical medicines.",
+    },
+    {
+      id: 17,
+      companyName: "Motherson",
+      companyLogo: img2024_17,
+      dateOfVisit: "21 February, 2024",
+      description: "Motherson is one of the world’s largest automotive component manufacturers serving global vehicle brands.",
+    },
+    {
+      id: 18,
+      companyName: "JBM Auto",
+      companyLogo: img2024_18,
+      dateOfVisit: "31 October, 2023",
+      description: "JBM Auto Limited manufactures auto systems and operates in the e-mobility and electric bus segment.",
+    },
+    {
+      id: 19,
+      companyName: "Krishna Maruti Group",
+      companyLogo: img2024_19,
+      dateOfVisit: "08 January, 2024",
+      description: "Krishna Maruti Group is a leading automotive component manufacturer and an ancillary of Maruti Suzuki.",
+    },
+    {
+      id: 20,
+      companyName: "KP Reliable Group",
+      companyLogo: img2024_20,
+      dateOfVisit: "20 September, 2023",
+      description: "KP Reliable Group is a quality assurance company providing inspection and quality control services across industries.",
+    },
+    {
+      id: 21,
+      companyName: "Royal Enfield",
+      companyLogo: img2024_21,
+      dateOfVisit: "15 November, 2023",
+      description: "Royal Enfield is the world’s oldest motorcycle brand in continuous production, headquartered in Chennai, India.",
+    },
+    {
+      id: 22,
+      companyName: "Pulsus",
+      companyLogo: img2024_22,
+      dateOfVisit: "10 January, 2024",
+      description: "Pulsus is a global healthcare and medical publishing organization serving professionals across multiple continents.",
+    },
+    {
+      id: 23,
+      companyName: "99acres",
+      companyLogo: img2024_23,
+      dateOfVisit: "31 October, 2023",
+      description: "99acres is India’s leading property portal enabling buyers, sellers, and agents to connect efficiently.",
+    },
+    {
+      id: 24,
+      companyName: "Base Infra Solutions",
+      companyLogo: img2024_24,
+      dateOfVisit: "22 December, 2023",
+      description: "Base Infra Solutions is a fast-growing proptech platform offering real estate and mortgage solutions across India.",
+    },
+    {
+      id: 25,
+      companyName: "Chetu",
+      companyLogo: img2024_25,
+      dateOfVisit: "26 November, 2023",
+      description: "Chetu is a US-based software development company delivering custom technology solutions with a global workforce.",
     },
   ],
 
   "2025": [
     {
-      id: 9,
+      id: 1,
+      companyName: "Zimyo",
+      companyLogo: img2025_1,
+      dateOfVisit: "25 September, 2024",
+      description:
+        "Zimyo is a cutting-edge HR and payroll software company that simplifies workforce management through innovative and user-friendly solutions, including employee engagement, performance tracking, and seamless payroll processing.",
+    },
+    {
+      id: 2,
+      companyName: "99acres",
+      companyLogo: img2025_2,
+      dateOfVisit: "26 November, 2024",
+      description:
+        "99acres is a leading Indian real estate platform that facilitates buying, selling, and renting residential and commercial properties, offering extensive listings, price trends, and locality insights.",
+    },
+    {
+      id: 3,
+      companyName: "Accenture",
+      companyLogo: img2025_3,
+      dateOfVisit: "14 October, 2024",
+      description:
+        "Accenture is a global professional services company specializing in IT consulting, digital transformation, and cloud solutions to drive innovation and business growth.",
+    },
+    {
+      id: 4,
+      companyName: "Addverb",
+      companyLogo: img2025_4,
+      dateOfVisit: "30 September, 2024",
+      description:
+        "Addverb is a leading robotics and automation company delivering advanced solutions in warehouse automation, robotics, and industrial IoT to enhance supply chain efficiency.",
+    },
+    {
+      id: 5,
+      companyName: "AIS (Asahi India Glass)",
+      companyLogo: img2025_5,
+      dateOfVisit: "01 October, 2024",
+      description: "AIS is India’s leading integrated glass solutions provider for automotive and architectural applications, offering sustainable, high-quality glass products.",
+    },
+    {
+      id: 6,
+      companyName: "CapitalVia",
+      companyLogo: img2025_6,
+      dateOfVisit: "25 November, 2024",
+      description: "CapitalVia is a financial advisory firm specializing in real-time market research and investment guidance for stock and commodity markets.",
+    },
+    {
+      id: 7,
       companyName: "Cognizant",
-      companyLogo: logo_2023_1,
-
-      dateOfVisit: "10 February, 2025",
-      description: "Cognizant is an American multinational IT services company…",
+      companyLogo: img2025_7,
+      dateOfVisit: "15 October, 2024",
+      description: "Cognizant is a global technology and professional services company focused on digital transformation, IT consulting, and business process optimization.",
+    },
+    {
+      id: 8,
+      companyName: "DeltaX",
+      companyLogo: img2025_8,
+      dateOfVisit: "04 October, 2024",
+      description: "DeltaX is an AI-driven digital marketing platform that optimizes advertising performance through automation and data-driven insights.",
+    },
+    {
+      id: 9,
+      companyName: "EZ Works",
+      companyLogo: img2025_9,
+      dateOfVisit: "13 November, 2024",
+      description: "EZ Works provides technology-driven solutions aimed at simplifying everyday tasks and enhancing efficiency for businesses and individuals.",
     },
     {
       id: 10,
-      companyName: "Puma",
-      companyLogo: logo_2023_1,
-
-      dateOfVisit: "28 February, 2025",
-      description: "PUMA is a world-leading sportswear company…",
+      companyName: "Godrej Agrovet",
+      companyLogo: img2025_10,
+      dateOfVisit: "26 September, 2024",
+      description: "Godrej Agrovet is a diversified agribusiness company focusing on animal feed, crop protection, seeds, and processed foods, promoting sustainable farming.",
+    },
+    {
+      id: 11,
+      companyName: "GrayQuest",
+      companyLogo: img2025_11,
+      dateOfVisit: "22 November, 2024",
+      description: "GrayQuest is a fintech company providing flexible education financing solutions for institutions and students.",
+    },
+    {
+      id: 12,
+      companyName: "Jaro Education",
+      companyLogo: img2025_12,
+      dateOfVisit: "14 November, 2024",
+      description: "Jaro Education offers online higher education programs in collaboration with top universities, focusing on career-oriented learning.",
+    },
+    {
+      id: 13,
+      companyName: "JBM Group",
+      companyLogo: img2025_13,
+      dateOfVisit: "04 October, 2024",
+      description: "JBM Group is a diversified conglomerate operating in automotive, engineering, and renewable energy sectors.",
+    },
+    {
+      id: 14,
+      companyName: "JTC",
+      companyLogo: img2025_14,
+      dateOfVisit: "26 September, 2024",
+      description: "JTC provides integrated services across construction, engineering, and technology solutions with a focus on sustainability.",
+    },
+    {
+      id: 15,
+      companyName: "Learning Routes",
+      companyLogo: img2025_15,
+      dateOfVisit: "08 October, 2024",
+      description: "Learning Routes offers professional development and skill-building programs through digital and on-site learning models.",
+    },
+    {
+      id: 16,
+      companyName: "MoneySukh",
+      companyLogo: img2025_16,
+      dateOfVisit: "07 October, 2024",
+      description: "MoneySukh is a financial advisory platform providing personalized investment and wealth management solutions.",
+    },
+    {
+      id: 17,
+      companyName: "PTC Industries",
+      companyLogo: img2025_17,
+      dateOfVisit: "16 November, 2024",
+      description: "PTC Industries is a manufacturer of precision investment castings serving aerospace, defense, automotive, and energy sectors.",
+    },
+    {
+      id: 18,
+      companyName: "Railtech Infraventure",
+      companyLogo: img2025_18,
+      dateOfVisit: "21 November, 2024",
+      description: "Railtech Infraventure provides infrastructure solutions for the railway sector, including construction, maintenance, and signaling services.",
+    },
+    {
+      id: 19,
+      companyName: "Red Bull",
+      companyLogo: img2025_19,
+      dateOfVisit: "27 September, 2024",
+      description: "Red Bull is a globally recognized energy drink company known for premium beverages and strong sports and esports sponsorships.",
+    },
+    {
+      id: 20,
+      companyName: "RegisterKaro",
+      companyLogo: img2025_20,
+      dateOfVisit: "29 November, 2024",
+      description: "RegisterKaro simplifies business registration and legal compliance services for startups and entrepreneurs.",
+    },
+    {
+      id: 21,
+      companyName: "Reliable Data Services",
+      companyLogo: img2025_21,
+      dateOfVisit: "05 October, 2024",
+      description: "Reliable Data Services provides IT solutions including data processing, analytics, and software development.",
+    },
+    {
+      id: 22,
+      companyName: "SBI General Insurance",
+      companyLogo: img2025_22,
+      dateOfVisit: "19 November, 2024",
+      description: "SBI General Insurance offers a wide range of general insurance products including health, motor, home, and travel insurance.",
+    },
+    {
+      id: 23,
+      companyName: "Calvin Klein",
+      companyLogo: img2025_23,
+      dateOfVisit: "04 December, 2024",
+      description: "Calvin Klein is a global fashion brand known for minimalist and modern designs across apparel, accessories, and fragrances.",
+    },
+    {
+      id: 24,
+      companyName: "Torrent Gas",
+      companyLogo: img2025_24,
+      dateOfVisit: "12 November, 2024",
+      description: "Torrent Gas provides clean and affordable PNG and CNG energy solutions as part of the Torrent Group.",
+    },
+    {
+      id: 25,
+      companyName: "Torrent Power",
+      companyLogo: img2025_25,
+      dateOfVisit: "14 November, 2024",
+      description: "Torrent Power is a major Indian power utility engaged in electricity generation, transmission, and distribution.",
+    },
+    {
+      id: 26,
+      companyName: "Vidhyashala",
+      companyLogo: img2025_26,
+      dateOfVisit: "03 December, 2024",
+      description: "Vidhyashala is an educational platform focused on providing quality learning experiences through courses, tutoring, and academic resources.",
     },
   ],
 };

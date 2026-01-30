@@ -41,7 +41,7 @@ const PlacementTestimonials: FC = () => {
           Testimonials from student, staff, and alumni on their placement experience at SRMU
         </p>
 
-        <div className="block md:flex justify-between items-center min-h-[500px] gap-[60px] mt-12">
+        <div className="block md:flex justify-between items-start min-h-[500px] gap-[60px] mt-12">
           {/* LEFT SIDE */}
           <div className="flex-1 max-w-[600px]">
             {/* Tabs */}
@@ -110,14 +110,14 @@ const PlacementTestimonials: FC = () => {
 
           {/* RIGHT SIDE IMAGE */}
           <div className="flex justify-center items-center mx-w-[420px] mx-h-[420px] overflow-hidden rounded-full bg-gray-100">
-            {activeTab === "recruiters" ?  <img
+            {activeTab === "recruiters" ? <img
               src={
-               recruiters_testimonials}
+                recruiters_testimonials}
               className="w-full h-full object-cover rounded-full"
               alt="Testimonial Subject"
-            />  : <img
+            /> : <img
               src={
-              students_testimonials}
+                students_testimonials}
               className="w-full h-full object-cover rounded-full"
               alt="Testimonial Subject"
             />}
