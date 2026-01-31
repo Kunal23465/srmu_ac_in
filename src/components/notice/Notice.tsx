@@ -16,10 +16,18 @@ const Notice: React.FC = () => {
   }, []);
   console.log("data notice", data);
   if (loading) {
-    return (
-      <h3 className="text-center text-2xl font-semibold">Loading ...</h3>
-    )
+    return <h3 className="text-center text-2xl font-semibold">Loading ...</h3>;
   }
+  function formatDate(dateStr: any) {
+    const date = new Date(dateStr);
+
+    return date.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric"
+    });
+  }
+
   return (
     <div>
       <div className={`${Classes["container"]}`}>
@@ -32,7 +40,7 @@ const Notice: React.FC = () => {
                   {item.title}
                   <br />
                   <br />
-                  <span className="font-normal bg-amber-400 px-3 py-1 rounded-3xl">{item.noticeDate}</span>
+                  <span className="font-normal bg-amber-400 px-3 py-1 rounded-3xl"> {formatDate(item.noticeDate)}</span>
                 </p>
               </a>
               <hr className="text-gray-300" />
