@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logosrmcem from "../../assets/images/Updatedsrmcemlogo.png";
+import logosrmcem from "../../assets/images/logo.png";
 import Classes from "../../utils/styles/Global.module.css";
 import { Link } from "react-router-dom";
 import { FaPhone } from "react-icons/fa";
@@ -216,14 +216,14 @@ const Footer: React.FC = () => {
             <div className="w-fullspace-y-4 flex flex-col grid-first">
               <div className="flex items-center gap-3">
                 <div>
-                  <img src={logosrmcem} alt="" className="w-12 sm:w-16 h-12 sm:h-16 " />
+                  <img src={logosrmcem} alt="logo" className="max-w-[220px] xl:max-w-full" />
                 </div>
-                <div>
+                {/* <div>
                   <h2 className="text-white font-bold text-[1.3rem] sm:text-[1.6rem]">
                     SHRI RAMSWAROOP
                     <div className="text-[0.6rem] font-semibold">MEMORIAL COLLEGE OF ENGINEERING & MANAGEMENT</div>
                   </h2>
-                </div>
+                </div> */}
               </div>
               <div className="space-y-8 mt-8">
                 <div className="flex flex-col gap-2">

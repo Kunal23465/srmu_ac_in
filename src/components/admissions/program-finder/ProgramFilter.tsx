@@ -108,7 +108,7 @@ const ProgramFilter: React.FC<PropsTypes> = ({
         </div> : <div className="mt-8">
           {visibleCourses.length > 0 ? (
             <>
-              {visibleCourses.map((course, i) => {
+              {visibleCourses.map((course) => {
                 const path = (str = "") => str.toLowerCase().trim().replace(/\s+/g, "-");
 
                 // store in variable

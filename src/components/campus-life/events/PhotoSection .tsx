@@ -12,7 +12,7 @@ export default function PhotoSection({ photos }: PhotoSectionProps) {
                 <Fancybox
                     options={{
                         Carousel: {
-                            infinite: true, 
+                            infinite: true,
                         },
                     }}
                 >
@@ -32,7 +32,7 @@ export default function PhotoSection({ photos }: PhotoSectionProps) {
 
                                 <span
                                     className="absolute top-0 left-0 w-full h-full flex items-center justify-center
-                                               opacity-0 group-hover:opacity-100 transition-all bg-black/40"
+                                               opacity-0 group-hover:opacity-50 transition-all bg-[#ffb703]"
                                 >
                                     <i className="fa-solid fa-expand text-white text-4xl"></i>
                                 </span>
@@ -42,7 +42,7 @@ export default function PhotoSection({ photos }: PhotoSectionProps) {
                 </Fancybox>
             </div>
 
-            
+
         </div>
     );
 }
