@@ -318,9 +318,9 @@ export const festData: Record<string, FestData> = {
         title: "Anubhuti 2025",
         date: "February 08, 2025",
         routeKey: "anubhuti-2025",
-        metaTitle: "Anubhuti 2024 | Shri Ramswaroop Memorial University, Lucknow",
+        metaTitle: "Anubhuti 2025 | SRMU",
         metaDescription:
-          "Shri Ramswaroop Memorial University recently organized its annual cultural fest Anubhuti 2k24. This year&#039;s edition was a celebration of creativity, talent, and innovation like never before. Inaugural ceremony started with lamp lighting by Chancellor Er. Pankaj Agarwal, Pro-Chancellor Er. Pooja Agarwal, Vice-Chancellor Prof. Devendra Kumar Sharma and Registrar Dr. Neeraja Jindal",
+          "Anubhuti-2025, the annual cultural festival of Shri Ramswaroop Memorial University (SRMU), unfolded with grandeur and spirited participation from students, faculty, and dignitaries. The three-day celebration began with an inaugural ceremony led by Padma Shri awardee Prof. H.C. Verma and the university’s leadership.",
         description:
           "<b>Anubhuti-2025</b>, the annual cultural festival of <b>Shri Ramswaroop Memorial University (SRMU)</b>, unfolded with grandeur and spirited participation from students, faculty, and dignitaries. The three-day celebration began with an inaugural ceremony led by Padma Shri awardee Prof. H.C. Verma and the university’s leadership. Day one showcased a rich blend of intellectual and cultural brilliance—ranging from <b>`Seven Deadly Sins` by the Expression Club</b>, an inspiring talk by <b>RJ Prateek</b>, and the <b>`Pitch Fest`</b>, to engaging competitions such as essay writing, extempore, poetry, robotics, and a laser show. The <b>Business Conclave, Cyber Awareness Workshop</b>, and <b>Physics in Daily Life</b> sessions under the <b>Avsar 2025</b> segment elevated the academic spirit of the event.",
         image: anubhuti1,
@@ -347,9 +347,9 @@ export const festData: Record<string, FestData> = {
         title: "Anubhuti 2022",
         date: "May 05, 2022",
         routeKey: "anubhuti-2022",
-        metaTitle: "Anubhuti 2024 | Shri Ramswaroop Memorial University, Lucknow",
+        metaTitle: "Anubhuti 2022 | Shri Ramswaroop Memorial University, Lucknow",
         metaDescription:
-          "Shri Ramswaroop Memorial University recently organized its annual cultural fest Anubhuti 2k24. This year&#039;s edition was a celebration of creativity, talent, and innovation like never before. Inaugural ceremony started with lamp lighting by Chancellor Er. Pankaj Agarwal, Pro-Chancellor Er. Pooja Agarwal, Vice-Chancellor Prof. Devendra Kumar Sharma and Registrar Dr. Neeraja Jindal",
+          "The much-anticipated annual cultural extravaganza, Anubhuti 2k22, unfolded with fervor as colleges from across the region converged to partake in a myriad of captivating events.",
 
         description:
           "The much-anticipated annual cultural extravaganza, Anubhuti 2k22, unfolded with fervor as colleges from across the region converged to partake in a myriad of captivating events. Adding to the excitement was the presence of Zubair Hashmi, a luminary whose name resonates with talent and charisma. Zubair's participation injected an extra dose of energy into the festivities, drawing crowds with eager anticipation. Whether showcasing his musical prowess, engaging in thought-provoking discussions, or simply interacting with attendees, Zubair's presence illuminated the event, leaving an indelible mark on all who attended. His involvement not only elevated the stature of Anubhuti but also served as a source of inspiration for budding talents, embodying the essence of creativity and excellence that defines this cultural celebration.",
@@ -363,9 +363,9 @@ export const festData: Record<string, FestData> = {
         title: "Anubhuti 2020",
         date: "February 25, 2020",
         routeKey: "anubhuti-2020",
-        metaTitle: "Anubhuti 2024 | Shri Ramswaroop Memorial University, Lucknow",
+        metaTitle: "Anubhuti 2020 | Shri Ramswaroop Memorial University, Lucknow",
         metaDescription:
-          "Shri Ramswaroop Memorial University recently organized its annual cultural fest Anubhuti 2k24. This year&#039;s edition was a celebration of creativity, talent, and innovation like never before. Inaugural ceremony started with lamp lighting by Chancellor Er. Pankaj Agarwal, Pro-Chancellor Er. Pooja Agarwal, Vice-Chancellor Prof. Devendra Kumar Sharma and Registrar Dr. Neeraja Jindal",
+          "The Annual fest &#039;&#039;Anubhuti&quot; was held at Shri Ramswaroop Memorial University premises in a very befitting manner. It was a three days program from 25 to 27 February 2020. The program was inaugurated by Vice-chancellor Prof (Dr) A.K. Singh by lighting the lamp.",
 
         description:
           "The Annual fest `Anubhuti` was held at Shri Ramswaroop Memorial University premises in a very befitting manner. It was a three days program from 25 to 27 February 2020. The program was inaugurated by Vice-chancellor Prof (Dr) A.K. Singh by lighting the lamp. `Anubhuti fest` is a time when the entire university comprising of faculty members, students from various disciplines, staff members come together and endeavour to bring out the extraordinary talent in participants. On this event Pro-Chancellor Er. Pooja Agarwal delivered a valuable speech. In her speech she gave much importance to the need for organising such a program. She encouraged the students for their laudable performances.",
@@ -392,9 +392,9 @@ export const festData: Record<string, FestData> = {
         title: "Anubhuti 2019",
         date: "February 27, 2019",
         routeKey: "anubhuti-2019",
-        metaTitle: "Anubhuti 2024 | Shri Ramswaroop Memorial University, Lucknow",
+        metaTitle: "Anubhuti 2019 | Shri Ramswaroop Memorial University, Lucknow",
         metaDescription:
-          "Shri Ramswaroop Memorial University recently organized its annual cultural fest Anubhuti 2k24. This year&#039;s edition was a celebration of creativity, talent, and innovation like never before. Inaugural ceremony started with lamp lighting by Chancellor Er. Pankaj Agarwal, Pro-Chancellor Er. Pooja Agarwal, Vice-Chancellor Prof. Devendra Kumar Sharma and Registrar Dr. Neeraja Jindal",
+          "Anubhuti, the annual fest at SRM University, is a vibrant celebration that brings together students, faculty, and enthusiasts from various disciplines. This extravaganza is a testament to the rich cultural diversity and talent that thrives within the university community.",
 
         description:
           "Anubhuti, the annual fest at SRM University, is a vibrant celebration that brings together students, faculty, and enthusiasts from various disciplines. This extravaganza is a testament to the rich cultural diversity and talent that thrives within the university community. The event spans across several days, offering a plethora of activities, performances, and competitions that cater to the diverse interests and talents of the students.",
@@ -408,9 +408,9 @@ export const festData: Record<string, FestData> = {
         title: "Anubhuti 2018",
         date: "February 24, 2018",
         routeKey: "anubhuti-2018",
-        metaTitle: "Anubhuti 2024 | Shri Ramswaroop Memorial University, Lucknow",
+        metaTitle: "Anubhuti 2018 | Shri Ramswaroop Memorial University, Lucknow",
         metaDescription:
-          "Shri Ramswaroop Memorial University recently organized its annual cultural fest Anubhuti 2k24. This year&#039;s edition was a celebration of creativity, talent, and innovation like never before. Inaugural ceremony started with lamp lighting by Chancellor Er. Pankaj Agarwal, Pro-Chancellor Er. Pooja Agarwal, Vice-Chancellor Prof. Devendra Kumar Sharma and Registrar Dr. Neeraja Jindal",
+          "New energies, new team and a completely different perspective brought together the formation of this year’s Anubhuti. The theme was Emblazon. Every year the university is successful in delivering a grand colorful event.",
 
         description:
           "New energies, new team and a completely different perspective brought together the formation of this year’s Anubhuti. The theme was Emblazon. Every year the university is successful in delivering a grand colorful event. With a motto of “Entertainment with Education”, Anubhuti offers an opportunity for the students to delve into themselves and come up with those talents which might be even unknown to them and helps them internalize those talents for their overall development. It is actually the best platform for the students to test their skills on management, organization capacity, leadership, team spirit and creativity as well as teaches them to face bravely those various problems that hinder them from reaching the glorious zeniths in their career and life.",
@@ -424,9 +424,9 @@ export const festData: Record<string, FestData> = {
         title: "Anubhuti 2017",
         date: "February 22, 2017",
         routeKey: "anubhuti-2017",
-        metaTitle: "Anubhuti 2024 | Shri Ramswaroop Memorial University, Lucknow",
+        metaTitle: "Anubhuti 2017 | Shri Ramswaroop Memorial University, Lucknow",
         metaDescription:
-          "Shri Ramswaroop Memorial University recently organized its annual cultural fest Anubhuti 2k24. This year&#039;s edition was a celebration of creativity, talent, and innovation like never before. Inaugural ceremony started with lamp lighting by Chancellor Er. Pankaj Agarwal, Pro-Chancellor Er. Pooja Agarwal, Vice-Chancellor Prof. Devendra Kumar Sharma and Registrar Dr. Neeraja Jindal",
+          "Anubhuti, the annual event that captivates hearts and minds, is a celebration that transcends the ordinary and delves into the realms of creativity, culture, and camaraderie.",
 
         description:
           "Anubhuti, the annual event that captivates hearts and minds, is a celebration that transcends the ordinary and delves into the realms of creativity, culture, and camaraderie. Each year, this eagerly anticipated extravaganza brings together a diverse tapestry of talents and passions, creating an immersive experience that leaves an indelible mark on participants and attendees alike. From vibrant cultural performances that showcase the rich tapestry of traditions to thought-provoking seminars and workshops that ignite intellectual curiosity, Anubhuti is a melting pot of expression and exploration. The event serves as a platform for individuals to not only showcase their talents but also to foster a sense of unity and belonging, forging connections that extend beyond the confines of the event itself.",
@@ -447,6 +447,9 @@ export const festData: Record<string, FestData> = {
         title: "FRESHERS’ PARTY ‘HARMONY 2K23’",
         date: "October 20, 2023",
         routeKey: "freshers-party-harmony-2k23",
+        metaTitle: "FRESHERS’ PARTY ‘HARMONY 2K23’ | SRMU",
+        metaDescription:
+          "Harmony’23, the grand fresher’s party, brought a wave of nostalgia and joy to Shri Ramswaroop Memorial University. Themed “Retro Rewind,” the fresher’s party transported everyone back in time with timeless music, vintage fashion, and old-school glam. The entire event shimmered with retro charm as students dressed in classic styles, celebrating the spirit of the past with a fresh and youthful twist.",
         description:
           "<i>Harmony’23</i>, the grand fresher’s party, brought a wave of nostalgia and joy to Shri Ramswaroop Memorial University. Themed “Retro Rewind,” the fresher’s party transported everyone back in time with timeless music, vintage fashion, and old-school glam. The entire event shimmered with retro charm as students dressed in classic styles, celebrating the spirit of the past with a fresh and youthful twist.",
         image: harmony1,
@@ -459,6 +462,9 @@ export const festData: Record<string, FestData> = {
         title: "FRESHERS’ PARTY ‘HARMONY 2K22’",
         date: "October 08, 2022",
         routeKey: "freshers-party-harmony-2k22",
+        metaTitle: "FRESHERS’ PARTY ‘HARMONY 2K22’ | Shri Ramswaroop Memorial University, Lucknow",
+        metaDescription:
+          "The annual freshers&#039; party, &#039;Harmony,&#039; at Shri Ramswaroop Memorial University (SRMU), became a delightful extravaganza where new students reveled in the festivities, forging connections, and creating cherished memories.",
         description: `'Harmony,' the much-anticipated freshers' party at Shri Ramswaroop Memorial University (SRMU), is an enchanting celebration that serves as a welcoming rite for new students entering the university. It's a night of vibrant energy, where the senior and junior students come together to create an atmosphere of warmth and camaraderie. The event is meticulously organized to provide freshers with an opportunity to unwind, make new friends, and immerse themselves in the diverse cultural tapestry of the university. From dazzling decorations to pulsating music, 'Harmony' sets the stage for an unforgettable evening that marks the beginning of lifelong friendships and memorable experiences.`,
         image: harmony2,
         photos: [harmony2022_1, harmony2022_2, harmony2022_3, harmony2022_4, harmony2022_5, harmony2022_6],
@@ -468,6 +474,9 @@ export const festData: Record<string, FestData> = {
         title: "FRESHERS’ PARTY ‘HARMONY 2K21’",
         date: "November 29, 2021",
         routeKey: "freshers-party-harmony-2k21",
+        metaTitle: "FRESHERS’ PARTY ‘HARMONY 2K21’ | Shri Ramswaroop Memorial University, Lucknow",
+        metaDescription:
+          "&#039;Harmony,&#039; the much-anticipated freshers&#039; party at Shri Ramswaroop Memorial University (SRMU), is an enchanting celebration that serves as a welcoming rite for new students entering the university.",
         description:
           "'Harmony,' the much-anticipated freshers' party at Shri Ramswaroop Memorial University (SRMU), is an enchanting celebration that serves as a welcoming rite for new students entering the university. It's a night of vibrant energy, where the senior and junior students come together to create an atmosphere of warmth and camaraderie. The event is meticulously organized to provide freshers with an opportunity to unwind, make new friends, and immerse themselves in the diverse cultural tapestry of the university. From dazzling decorations to pulsating music, 'Harmony' sets the stage for an unforgettable evening that marks the beginning of lifelong friendships and memorable experiences.",
         image: harmony3,
@@ -480,6 +489,9 @@ export const festData: Record<string, FestData> = {
         title: "FRESHERS’ PARTY ‘HARMONY 2K19’",
         date: "September 06, 2019",
         routeKey: "freshers-party-harmony-2k19",
+        metaTitle: "FRESHERS’ PARTY ‘HARMONY 2K19’ | Shri Ramswaroop Memorial University, Lucknow",
+        metaDescription:
+          "&#039;Harmony,&#039; the freshers party at Shri Ramswaroop Memorial University (SRMU), is an eagerly awaited annual celebration that serves as a vibrant initiation for the newest members of the university community.",
         description:
           "'Harmony,' the freshers party at Shri Ramswaroop Memorial University (SRMU), is an eagerly awaited annual celebration that serves as a vibrant initiation for the newest members of the university community. This lively event is meticulously organized to provide incoming students with a warm and welcoming introduction to campus life. 'Harmony' creates an atmosphere of inclusivity and camaraderie, encouraging freshers to interact, make new friends, and embark on their academic journey with a sense of unity. From energetic performances to interactive games and engaging activities, the party is designed to break the ice and foster a sense of belonging, ensuring that each fresher feels a part of the larger SRMU family.",
         image: harmony4,
@@ -490,6 +502,9 @@ export const festData: Record<string, FestData> = {
         title: "FRESHERS’ PARTY ‘HARMONY 2K18’",
         date: "September 07,  2018",
         routeKey: "freshers-party-harmony-2k18",
+        metaTitle: "FRESHERS’ PARTY ‘HARMONY 2K18’ | Shri Ramswaroop Memorial University, Lucknow",
+        metaDescription:
+          "A little lilting music and the chink of ice, new faces, smiles all along, resounding laughter- yes it is party time! Students need moments to chill out. The very purpose of Freshers Day party is to welcome newcomers in a friendly atmosphere and avoid social evils, to encourage their creative impulses to boost their confidence.",
         description:
           "A little lilting music and the chink of ice, new faces, smiles all along, resounding laughter- yes it is party time! Students need moments to chill out. The very purpose of Freshers Day party is to welcome newcomers in a friendly atmosphere and avoid social evils, to encourage their creative impulses to boost their confidence. Freshers Day in any college is an event which students eagerly look forward to. The annual event, Freshers Party 'Harmony,' celebrated at Shri Ramswaroop Memorial University (SRMU), is a much-anticipated occasion that warmly welcomes new students into the university's vibrant community. 'Harmony' represents more than just a party; it symbolizes the spirit of unity and camaraderie that defines the SRMU ethos. From colorful decorations to lively performances, the atmosphere pulsates with excitement and anticipation as freshmen immerse themselves in the festivities and embrace the welcoming embrace of their peers and mentors.",
         image: harmony5,
@@ -500,6 +515,10 @@ export const festData: Record<string, FestData> = {
         title: "FRESHERS’ PARTY ‘HARMONY 2K17’",
         date: "September 01, 2017",
         routeKey: "freshers-party-harmony-2k17",
+        metaTitle: "FRESHERS’ PARTY ‘HARMONY 2K17’ | Shri Ramswaroop Memorial University, Lucknow",
+        metaDescription:
+          "The very purpose of the Freshers Day party is to welcome newcomers in a friendly atmosphere and avoid social evils, to encourage their creative impulses to boost their confidence. Freshers Day in any college is an event that students eagerly look forward to. The academic year begins with the celebration of Freshers Day.",
+
         description:
           "The very purpose of the Freshers Day party is to welcome newcomers in a friendly atmosphere and avoid social evils, to encourage their creative impulses to boost their confidence. Freshers Day in any college is an event that students eagerly look forward to. The academic year begins with the celebration of Freshers Day. A little lilting music and the chink of ice, new faces, smiles all along, resounding laughter- yes it is party time! Students need moments to chill out. The annual event, 'Harmony,' is a much-anticipated freshers' party celebrated with zest and enthusiasm at Shri Ramswaroop Memorial University (SRMU). This vibrant occasion marks the induction of new students into the university community, offering them a warm and festive welcome. 'Harmony' is not merely a party; it's an immersive experience that introduces the freshers to the lively spirit of campus life. With captivating performances, engaging activities, and an atmosphere filled with joy, the event is a blend of entertainment and camaraderie, providing a memorable kickstart to the academic journey of the incoming students.",
         image: harmony6,
@@ -529,6 +548,9 @@ export const festData: Record<string, FestData> = {
         title: "Ullas 2023",
         date: "March 15-17, 2023",
         routeKey: "ullas-2023",
+        metaTitle: "Ullas 2023 | Shri Ramswaroop Memorial University, Lucknow",
+        metaDescription:
+          "&#039;Ullas,&#039; the annual sports fest at Shri Ramswaroop Memorial University (SRMU), is a dynamic celebration of athleticism, sportsmanship, and the spirit of healthy competition. The event transforms the university campus into a vibrant arena where students from various disciplines come together to showcase their sporting prowess and enthusiasm.",
         description:
           "'Ullas', the annual sports fest at Shri Ramswaroop Memorial University (SRMU), is a dynamic celebration of athleticism, sportsmanship, and the spirit of healthy competition. The event transforms the university campus into a vibrant arena where students from various disciplines come together to showcase their sporting prowess and enthusiasm. 'Ullas' encompasses a wide array of sports and activities, from track and field events to team sports, fostering an environment where both competitive and recreational athletes can participate and shine. The festival not only promotes physical fitness but also encourages teamwork, leadership, and a sense of camaraderie among the participants.",
         image: ullas1,
@@ -539,6 +561,10 @@ export const festData: Record<string, FestData> = {
         title: "Ullas 2022",
         date: "May 02-05, 2022",
         routeKey: "ullas-2022",
+        metaTitle: "Ullas 2022 | Shri Ramswaroop Memorial University, Lucknow",
+        metaDescription:
+          "&#039;Ullas,&#039; the annual sports fest at Shri Ramswaroop Memorial University (SRMU), serves as a dynamic platform to promote sports, physical fitness, and a spirit of healthy competition among students. The festival is a testament to SRMU&#039;s commitment to fostering a culture of athleticism and well-being on campus.",
+
         description:
           "'Ullas', the annual sports fest at Shri Ramswaroop Memorial University (SRMU), serves as a dynamic platform to promote sports, physical fitness, and a spirit of healthy competition among students. The festival is a testament to SRMU's commitment to fostering a culture of athleticism and well-being on campus. 'Ullas' features a diverse range of sports and recreational activities, encouraging students to actively engage in physical pursuits, discover their talents, and develop a passion for sportsmanship.",
         image: ullas2,
@@ -557,6 +583,8 @@ export interface EventCard {
   routeKey: string;
   photos?: string[];
   extraDescription?: string;
+  metaTitle?: string;
+  metaDescription?: string;
 }
 
 export interface ConferenceData {
@@ -570,6 +598,9 @@ export const conferenceData: ConferenceData = {
       title: "ICANSVME-24",
       routeKey: "icansvme-24",
       date: "January 22–24, 2024",
+      metaTitle: "ICANSVME-24 | Shri Ramswaroop Memorial University, Lucknow",
+      metaDescription:
+        "Shri Ramswaroop Memorial University, Deva Road-Lucknow, Barabanki, is hosting a three-day international conference titled &quot;Advancement in Natural Sciences: Vedic to Modern Era.&quot;",
       description:
         "A three days international conference on ‘Advancement in Natural Sciences: Vedic to Modern Era’ is being organized in Shri Ramswaroop Memorial University, Deva Road-Lucknow, Barabanki. The inaugural session of the conference was addressed by Prof. A.S. Vidhyarthi, VC Bikaner Technical University, he explained that the invention of Puspak Viman took place in Treta Yug, It was sound proof and moves according to the will of pilot. Prof. P K Bajpai VC JP University, Chapra emphasised the importance of learning science and technology according to Indian culture. The key note speakers were Dr. Shibesh Kumar PICS, Odisha, Dr Dinesh Kumar, SGPGI, Prof. Surya Narayan Gautam, Prof, Iyenger, Dr, Vishal Dwivedi, Tampere University, Finland and Prof. A.K. Thakur GGV Bilaspur also explained about the importance of Vedic Science.",
       image: ican,
@@ -582,6 +613,9 @@ export const conferenceData: ConferenceData = {
       title: "SOLARIS-2020",
       date: "February 07–09, 2020",
       routeKey: "solaris-2020",
+      metaTitle: "SOLARIS-2020 | Shri Ramswaroop Memorial University, Lucknow",
+      metaDescription:
+        "Faculty of Physical Sciences, Institute of Natural Sciences and Humanities, SRMU in collaboration with BERS, Sukrit Solar Pvt Limited and Gajah Solar Power Pvt. Limited organized the “SOLARIS 2020 - a National Conference on Sustainable Environment and Climate” from 7-9 February 2020.",
       description:
         "Faculty of Physical Sciences, Institute of Natural Sciences and Humanities, SRMU in collaboration with BERS, Sukrit Solar Pvt Limited and Gajah Solar Power Pvt. Limited organized the “SOLARIS 2020 - a National Conference on Sustainable Environment and Climate” from 7-9 February 2020. The Guest of honour in SOLARIS 2020 was Prof. Vineet Saini (DST, GOI) and Chief guest was Prof. A.S.K. Sinha (Director, RGIPT). More than 20 invited lectures, poster sessions and 6 technical sessions were conducted during the conference.",
       image: SOLARIS2020,
@@ -593,6 +627,9 @@ export const conferenceData: ConferenceData = {
     {
       title: "NCRTMA-20",
       routeKey: "ncrtma-20",
+      metaTitle: "NCRTMA-20 | Shri Ramswaroop Memorial University, Lucknow",
+      metaDescription:
+        "Faculty of Mathematical &amp; Statistical Sciences, Institute of Natural Sciences and Humanities, organized two days “2nd National Conference on Recent Trends in Mathematics with Applications”. Chief guest of NCRTMA-20 was Prof. (Dr.) Ram Bilas Misra (Ex Vice-Chancellor Dr. RML Avadh University, Ayodhya). More than 15 invited lectures were delivered by eminent mathematicians from Central University, IIT, NIT, IIIT and State University.",
       date: "January 30–31, 2020",
       description: `Faculty of Mathematical & Statistical Sciences, Institute of Natural Sciences and Humanities, organized two days “2nd National Conference on Recent Trends in Mathematics with Applications”. Chief guest of NCRTMA-20 was Prof. (Dr.) Ram Bilas Misra (Ex Vice-Chancellor Dr. RML Avadh University, Ayodhya). More than 15 invited lectures were delivered by eminent mathematicians from Central University, IIT, NIT, IIIT and State University.`,
       image: ncrtma,
@@ -604,6 +641,9 @@ export const conferenceData: ConferenceData = {
     {
       title: "ICON-CUTE 2019",
       routeKey: "icon-cute-2019",
+      metaTitle: "ICON-CUTE 2019 | Shri Ramswaroop Memorial University, Lucknow",
+      metaDescription:
+        "Shri Ramswaroop Memorial University organized a three-day International Conference on Cutting edge technologies in Engineering. Padam Shri Dr. Kota Harinarayana who happens to be a distinguished Scientist, Chief Architect-Light Combat Aircraft, addressed the audience about the topic from &quot;Manned fighter&quot; to &quot;Unmanned Combat Aircraft&quot;.",
       date: "November 14-16, 2019",
       description: `Shri Ramswaroop Memorial University organized a three-day International Conference on Cutting edge technologies in Engineering. Padam Shri Dr. Kota Harinarayana who happens to be a distinguished Scientist, Chief Architect-Light Combat Aircraft, addressed the audience about the topic from "Manned fighter" to "Unmanned Combat Aircraft". He told the gathering about Aircraft, UAV technologies effect of anatomy, increasing role of technology adoption. Er. Yogesh Kumar Ex-director, of HAL Bangalore, India addressed the topic of future technology in Aviation. Dr. Syed Umar Amin, Professor R K Pant, Er. Amit Agarwal also graced the occasion.`,
       image: iconcute,
@@ -616,6 +656,10 @@ export const conferenceData: ConferenceData = {
     {
       title: "NatConBio-2019",
       routeKey: "natcoinbio-2019",
+      metaTitle: "NatConBio-2019 | Shri Ramswaroop Memorial University, Lucknow",
+      metaDescription:
+        "National Conference on Biotechnology Innovation: Interdisciplinary Approach to Agriculture, Food, Health, Environment and Sustainable Development (NatConBio-2019)” conference was organized by Faculty of Bio-Sciences and Faculty of Biotechnology, Institute of Bio-Sciences and Technology in association with Society for Biotechnologists (India) during September 27-28, 2019 at SRMU.",
+
       date: "September 27-28, 2019",
       description: `“National Conference on Biotechnology Innovation: Interdisciplinary Approach to Agriculture, Food, Health, Environment and Sustainable Development (NatConBio-2019)” conference was organized by Faculty of Bio-Sciences and Faculty of Biotechnology, Institute of Bio-Sciences and Technology in association with Society for Biotechnologists (India) during September 27-28, 2019 at SRMU.`,
       image: natconbio,
@@ -627,6 +671,9 @@ export const conferenceData: ConferenceData = {
     {
       title: "ICMTCE 2019",
       routeKey: "second-international-li",
+      metaTitle: "ICMTCE 2019 | Shri Ramswaroop Memorial University, Lucknow",
+      metaDescription:
+        "The International conference on Modern Trends in Civil Engineering organized by the Faculty of Civil Engineering was a conglomeration of experts from across the globe. It created a zone of information and knowledge exchange at a common platform enhancing the scope of research in the university. A number of research papers and poster presentations were received contributing to the success and achievement of the goal of the conference.The lecture on computing and novel technologies by Mr. Saksin Sam Chongolnee during the conference ICMTCE 2019 was a great learning opportunity for students as well as faculty members.",
       date: "March 01-02, 2019",
       description: `The International conference on Modern Trends in Civil Engineering organized by the Faculty of Civil Engineering was a conglomeration of experts from across the globe. It created a zone of information and knowledge exchange at a common platform enhancing the scope of research in the university. A number of research papers and poster presentations were received contributing to the success and achievement of the goal of the conference.The lecture on computing and novel technologies by Mr. Saksin Sam Chongolnee during the conference ICMTCE 2019 was a great learning opportunity for students as well as faculty members.`,
       image: icmtce,
@@ -638,6 +685,9 @@ export const conferenceData: ConferenceData = {
     {
       title: "NCRTMA-19",
       routeKey: "second-international-li",
+      metaTitle: "NCRTMA-19 | Shri Ramswaroop Memorial University, Lucknow",
+      metaDescription:
+        "The two day National Conference on “Recent Trends in Mathematics with Applications” was organized by the Faculty of Mathematical &amp; Statistical Sciences, Shri Ramswaroop Memorial University, Lucknow -Deva Road, Uttar Pradesh serves as a pivotal platform for mathematicians, scholars, and researchers to engage in insightful discussions on the contemporary developments in the field.",
       date: "February 21-22, 2019",
       description: `The two day National Conference on “Recent Trends in Mathematics with Applications” was organized by the Faculty of Mathematical & Statistical Sciences, Shri Ramswaroop Memorial University, Lucknow -Deva Road, Uttar Pradesh serves as a pivotal platform for mathematicians, scholars, and researchers to engage in insightful discussions on the contemporary developments in the field.`,
       image: ncrtma19,
@@ -649,6 +699,9 @@ export const conferenceData: ConferenceData = {
     {
       title: "Second International Literary Conference",
       routeKey: "second-international-li",
+      metaTitle: "Second International Literary Conference | Shri Ramswaroop Memorial University, Lucknow",
+      metaDescription:
+        "The two day international conference on “Rethinking the Global South: Literatures, Cultures and Media” in collaboration with Challenging Precarity: A Global Network, UK was organized by the Department of Humanities &amp; Social Sciences, Shri Ramswaroop Memorial University.",
       date: "February 02-03, 2019",
       description: `The two day international conference on “Rethinking the Global South: Literatures, Cultures and Media” in collaboration with Challenging Precarity: A Global Network, UK was organized by the Department of Humanities & Social Sciences, Shri Ramswaroop Memorial University. In the International Conference the effort was  to revisit and rethink the conceptual framework of the Global South by putting queries on; “does the Global South find itself a victim or a benefactor in the global capitalism, the methodology of the productions of the Global South compete the productions of the North, the different experiences of globalization within the Global South, the ways in which the globalization bridge the gap between the North and the South, is global south a promise or predicament in the process of globalization”. Eminent intellectuals like Prof.Janet Wilson (Northampton University, UK),Prof. Roderick McGillis(Calgary University, Canada), Dr. Halina Marlewicz (Jagiellonian University, USA), Prof. Lisa Bloom(UC Berkeley, California, USA) and many more such dignitaries across the national and international circuit would be part of the event.`,
       image: secondinternationlibrary,
@@ -659,6 +712,9 @@ export const conferenceData: ConferenceData = {
     {
       title: "RAICS-18",
       routeKey: "raics-18",
+      metaTitle: "RAICS-18 | Shri Ramswaroop Memorial University, Lucknow",
+      metaDescription:
+        "The Faculty of Chemical Sciences organized the 1st national conference on “Recent Approaches and Innovations in Chemical Sciences (RAICS)” which included wide area of disciplines including materials chemistry, nanochemistry, synthetic chemistry, natural products, supramolecular chemistry, medicinal chemistry, polymer chemistry, green chemistry, theoretical chemistry and environmental chemistry.",
       date: "November 02-03, 2018",
       description: `The Faculty of Chemical Sciences organized the 1st national conference on “Recent Approaches and Innovations in Chemical Sciences (RAICS)” which included wide area of disciplines including materials chemistry, nanochemistry, synthetic chemistry, natural products, supramolecular chemistry, medicinal chemistry, polymer chemistry, green chemistry, theoretical chemistry and environmental chemistry. The conference aims to accrue various novel developments and amelioration for collaborative sharing, discussion and implicate further progress by learned academicians, industrial experts and science enthusiasts through this platform.`,
       image: raics,
@@ -671,6 +727,9 @@ export const conferenceData: ConferenceData = {
     {
       title: "Kitaab",
       routeKey: "kitaab",
+      metaTitle: "Kitaab | Shri Ramswaroop Memorial University, Lucknow",
+      metaDescription:
+        "The International Literary Festival, organized in collaboration with &#039;Kitaab&#039;, Singapore at Shri Ramswaroop Memorial University (SRMU), stands as a beacon for literary enthusiasts, bringing together writers, poets, and thinkers from diverse cultural backgrounds.",
       date: "April 07-08, 2018",
       description: `The two-day long International Literary Festival in collaboration with ‘Kitaab’, Singapore was inaugurated on 7th April, 2018 at Shri Ramswaroop Memorial University. The Fest witnessed a confluence of many luminaries from the academic and cultural field. Mr. Zafar Anjum, founder of ‘Kitaab’, Mr. Shishir Sharma (actor), Sudeep Sen, Miniya Chatterji, Kavitha Rao, Dr. Surya Prasad Dixit and Mr. Yogesh Praveen to name a few of the icons. The theme of the festival was ‘Micro Literature in the age of Social Media’. It also was the launch pad of the best Asian short stories and short films by ‘Filmwallas’. There was also a screening of a short film "More Chai Please" by Mr. Zafar Anjum.`,
       image: kitaab,
@@ -682,6 +741,9 @@ export const conferenceData: ConferenceData = {
     {
       title: "First International Literary Conference",
       routeKey: "first-international-literary-conference",
+      metaTitle: "First International Literary Conference | Shri Ramswaroop Memorial University, Lucknow",
+      metaDescription:
+        "Shri Ramswaroop Memorial University organized the First Internatinal Literary Conference (Sponsored by the University of Rome Tor Vergata, Italy &amp; South Asian Diaspora International Researcher&#039;s Network, Monash University , Australia). This conference, The Cultures of New India was a two day event. It witnessed some of the distinguished speakers from around the globe like Dr. Shashi Tharoor, Janet Wilson, Tabish Khair, Claire Chambers, Joel Kuortti, Florian Stadtler, Veronica Thompson and many more.",
       date: "Februaryb 17-18, 2017",
       description: `Shri Ramswaroop Memorial University organized the First Internatinal Literary Conference (Sponsored by the University of Rome Tor Vergata, Italy & South Asian Diaspora International Researcher's Network, Monash University , Australia). This conference, The Cultures of New India was a two day event. It witnessed some of the distinguished speakers from around the globe like Dr. Shashi Tharoor, Janet Wilson, Tabish Khair, Claire Chambers, Joel Kuortti, Florian Stadtler, Veronica Thompson and many more. `,
       image: firstinternationaliterary,
@@ -695,6 +757,9 @@ export const conferenceData: ConferenceData = {
     {
       title: "New Education Policy and Quality Education for Sustainable Future",
       routeKey: "new-education-policy-and-quality-education-for-sustainable-future",
+      metaTitle: "New Education Policy and Quality Education for Sustainable Future | Shri Ramswaroop Memorial University, Lucknow",
+      metaDescription:
+        "The one-day seminar on &#039;New Education Policy and Quality Education for Sustainable Future,&#039; organized at Shri Ramswaroop Memorial University (SRMU), served as a thought-provoking forum for educators, policymakers, and stakeholders in the field of education.",
       date: "April 08, 2023",
       description: `The one-day seminar on 'New Education Policy and Quality Education for Sustainable Future,' organized at Shri Ramswaroop Memorial University (SRMU), served as a thought-provoking forum for educators, policymakers, and stakeholders in the field of education. The event provided an insightful exploration into the implications and potential impact of the New Education Policy on the delivery of quality education and its role in shaping a sustainable future. Through engaging panel discussions, expert presentations, and interactive sessions, the seminar facilitated a comprehensive understanding of the policy's objectives, challenges, and its potential to transform the educational landscape. Participants delved into discussions on innovative teaching methodologies, technology integration, and curriculum development aligned with sustainability goals, envisioning a future where education plays a pivotal role in fostering holistic development and societal well-being. The seminar not only contributed to the ongoing discourse on educational reforms but also positioned SRMU as a proactive hub for dialogue and collaboration in shaping the future of education.`,
       image: seminar1,
@@ -712,6 +777,8 @@ export interface FestivalCard {
   routeKey: string;
   photos?: string[];
   extraDescription?: string;
+  metaTitle?: string;
+  metaDescription?: string;
 }
 
 export interface Festival {
@@ -729,6 +796,9 @@ export const festivalsData: Festival[] = [
         title: "Rang Barse 2K23",
         image: holi1,
         date: "March 4, 2023",
+        metaTitle: "Rang Barse 2K23 | Shri Ramswaroop Memorial University, Lucknow",
+        metaDescription:
+          "Rangostav, a spirited celebration organized at SRM University in honor of Holi, embodies the essence of this vibrant festival. The campus transforms into a riot of colors as students and faculty come together to revel in the joyous occasion.",
         description: `Rangostav, a spirited celebration organized at SRM University in honor of Holi, embodies the essence of this vibrant festival. The campus transforms into a riot of colors as students and faculty come together to revel in the joyous occasion. The event features traditional rituals, lively music, and a riotous play of colors, where participants gleefully throw vibrant powders at each other, symbolizing the triumph of good over evil. Rangostav is a platform for cultural exchange, fostering unity and camaraderie among the diverse student body. With lively dance performances, delicious Holi delicacies, and a jubilant atmosphere, Rangostav at SRM University is a jubilant expression of the festival, creating lasting memories of shared laughter and colorful camaraderie.`,
         routeKey: "rang-barse-2k23",
         photos: [g1, g2, g3, g4, g5, g6],
@@ -738,6 +808,9 @@ export const festivalsData: Festival[] = [
         title: "Rang Barse 2K22",
         image: holi2,
         date: "March 14,  2022",
+        metaTitle: "Rang Barse 2K22 | Shri Ramswaroop Memorial University, Lucknow",
+        metaDescription:
+          "Rang Barse, the exuberant Holi celebration, unfolds as a kaleidoscopic extravaganza that paints the canvas of life with vibrant hues. This lively event is a melting pot of cultural traditions, bringing people from diverse backgrounds together to revel in the joyous arrival of spring.",
         description: `Rang Barse, the exuberant Holi celebration, unfolds as a kaleidoscopic extravaganza that paints the canvas of life with vibrant hues. This lively event is a melting pot of cultural traditions, bringing people from diverse backgrounds together to revel in the joyous arrival of spring. As the beats of traditional music fill the air, participants engage in a riot of colors, playfully dousing each other in vibrant powders and water balloons. The festival transcends the barriers of age, caste, and creed, fostering a sense of unity and shared jubilation. It's a time when the community comes alive with infectious laughter, music, and dance, creating a collective memory that lingers long after the last traces of color have faded.`,
         routeKey: "rang-barse-2k22",
         photos: [h1, h2, h3, h4, h5],
@@ -747,6 +820,9 @@ export const festivalsData: Festival[] = [
         title: "Rang Barse 2K21",
         image: holi3,
         date: "March 24, 2021",
+        metaTitle: "Rang Barse 2K21 | Shri Ramswaroop Memorial University, Lucknow",
+        metaDescription:
+          "&#039;Rang Barse&#039; at our institution has evolved into a joyous annual tradition, creating a delightful intersection where students and faculty come together to revel in the spirit of Holi. The event sparks a palpable sense of excitement as both academic and administrative staff, along with enthusiastic students, eagerly anticipate the color-filled festivities.",
         description: `'Rang Barse' at our institution has evolved into a joyous annual tradition, creating a delightful intersection where students and faculty come together to revel in the spirit of Holi. The event sparks a palpable sense of excitement as both academic and administrative staff, along with enthusiastic students, eagerly anticipate the color-filled festivities. Amidst the vibrant hues, traditional music, and infectious laughter, the boundaries that typically define student-faculty relationships dissolve, fostering an environment of shared enjoyment and celebration.`,
         routeKey: "rang-barse-2k21",
         photos: [i1, i2, i3],
@@ -762,6 +838,9 @@ export const festivalsData: Festival[] = [
         title: "Dandiya Delightzzz 2K23",
         image: dandiya1,
         date: "November 06, 2023",
+        metaTitle: "Dandiya Delightzzz 2K23 | Shri Ramswaroop Memorial University, Lucknow",
+        metaDescription:
+          "The SRMU Annual Festival, &#039;Dandiya Delightzz,&#039; unfolds as a dazzling celebration of culture, rhythm, and communal joy. This vibrant event encapsulates the spirit of Navratri, bringing together students, faculty, and staff in a spirited dance extravaganza.",
         description: `The SRMU Annual Festival, 'Dandiya Delightzz,' unfolds as a dazzling celebration of culture, rhythm, and communal joy. This vibrant event encapsulates the spirit of Navratri, bringing together students, faculty, and staff in a spirited dance extravaganza. As the campus transforms into a kaleidoscope of colors and lights, the infectious beats of traditional dandiya music reverberate through the air. 'Dandiya Delightzz' is a testimony to the rich cultural diversity within SRMU, where participants, bedecked in traditional attire, twirl and sway to the energetic tunes, creating an atmosphere of sheer revelry and unity.`,
         routeKey: "dandiya-delightzzz-2k23",
         photos: [j1, j2, j3],
@@ -771,6 +850,9 @@ export const festivalsData: Festival[] = [
         title: "Dandiya Delightzzz 2K21",
         image: dandiya2,
         date: "October 12, 2021",
+        metaTitle: "Dandiya Delightzzz 2K21 | Shri Ramswaroop Memorial University, Lucknow",
+        metaDescription:
+          "The SRMU annual festival &#039;Dandiya Delightzz&#039; stands as a vibrant celebration of culture, rhythm, and community spirit. Held against the backdrop of traditional Indian festivities, this event transforms the campus into a colorful spectacle of dance, music, and camaraderie.",
         description: `The SRMU annual festival 'Dandiya Delightzz' stands as a vibrant celebration of culture, rhythm, and community spirit. Held against the backdrop of traditional Indian festivities, this event transforms the campus into a colorful spectacle of dance, music, and camaraderie. With students, faculty, and staff adorned in traditional attire, the festival exudes an atmosphere of joy and festivity, resonating with the pulsating beats of dandiya and garba rhythms.`,
         routeKey: "dandiya-delightzzz-2k21",
         photos: [k1, k2, k3],
@@ -780,6 +862,9 @@ export const festivalsData: Festival[] = [
         title: "Dandiya Delightzzz 2K19",
         image: dandiya3,
         date: "October 22, 2019",
+        metaTitle: "Dandiya Delightzzz 2K19 | Shri Ramswaroop Memorial University, Lucknow",
+        metaDescription:
+          "&#039;SRMU Annual Festival: Dandiya Delightzz&#039; is a spectacular celebration that brings the entire Shri Ramswaroop Memorial University (SRMU) community together for an enchanting night of traditional dance, vibrant music, and joyous festivities. The event is a colorful ode to the cultural richness of India, specifically highlighting the spirited dance form of Dandiya Raas.",
         description: `'SRMU Annual Festival: Dandiya Delightzz' is a spectacular celebration that brings the entire Shri Ramswaroop Memorial University (SRMU) community together for an enchanting night of traditional dance, vibrant music, and joyous festivities. The event is a colorful ode to the cultural richness of India, specifically highlighting the spirited dance form of Dandiya Raas. As the university decks out in lively decorations, students and faculty eagerly don traditional attire, adding to the festive ambiance. The rhythmic beats of dandiya sticks striking together create a pulsating energy that reverberates throughout the campus, transforming it into a lively dance floor.`,
         routeKey: "dandiya-delightzzz-2k19",
         photos: [l1, l2, l3],
@@ -798,6 +883,8 @@ export interface TedxCardData {
   routeKey: string;
   photos?: string[];
   extraDescription?: string;
+  metaTitle?: string;
+  metaDescription?: string;
 }
 
 const tedxData: TedxCardData[] = [
@@ -805,6 +892,9 @@ const tedxData: TedxCardData[] = [
     id: "innovatia",
     title: "TEDx SRMUInnovatia",
     date: "November 18, 2019",
+    metaTitle: "TEDx SRMUInnovatia | Shri Ramswaroop Memorial University, Lucknow",
+    metaDescription:
+      "TEDxSRMUInnovatia, a dynamic event organized at Shri Ramswaroop Memorial University (SRMU), uniquely focuses on student participation through engaging Mock TEDx Talks and an Entrepreneurship Quiz.",
     image: tedx1,
     description: `TEDxSRMUInnovatia, a dynamic event organized at Shri Ramswaroop Memorial University (SRMU), uniquely focuses on student participation through engaging Mock TEDx Talks and an Entrepreneurship Quiz. This platform empowers students to unleash their creativity and share innovative ideas in a simulated TEDx-style presentation, offering them a chance to articulate their visions, research findings, and projects. The Mock TEDx Talks foster a culture of public speaking, idea dissemination, and inspire a spirit of intellectual exploration among the student community.`,
     routeKey: "tedx-srmuinnovatia",
@@ -815,6 +905,9 @@ const tedxData: TedxCardData[] = [
     id: "women",
     title: "TEDx SRMUWomen",
     date: "December 03, 2018",
+    metaTitle: "TEDx SRMUWomen | Shri Ramswaroop Memorial University, Lucknow",
+    metaDescription:
+      "TEDx Women, organized at Shri Ramswaroop Memorial University (SRMU), stands as a powerful platform for highlighting and celebrating the diverse voices and achievements of women across various fields. This event, affiliated with the renowned TEDx program, provides a stage for inspirational talks, discussions, and performances that revolve around the experiences, challenges, and triumphs of women.",
     image: tedx2,
     description: `TEDx Women, organized at Shri Ramswaroop Memorial University (SRMU), stands as a powerful platform for highlighting and celebrating the diverse voices and achievements of women across various fields. This event, affiliated with the renowned TEDx program, provides a stage for inspirational talks, discussions, and performances that revolve around the experiences, challenges, and triumphs of women. From trailblazing entrepreneurs to influential thought leaders, speakers at TEDx Women at SRMU share their stories and insights, inspiring the audience to envision a world where women's contributions are recognized and valued.`,
     routeKey: "tedx-srmuwomen1",
@@ -825,6 +918,9 @@ const tedxData: TedxCardData[] = [
     id: "global",
     title: "TEDx SRMUGlobal",
     date: "October 01, 2018",
+    metaTitle: "TEDx SRMUGlobal | Shri Ramswaroop Memorial University, Lucknow",
+    metaDescription:
+      "TEDx SRMU GLOBAL, organized at Shri Ramswaroop Memorial University (SRMU), transcends geographical boundaries to create an intellectually stimulating platform that showcases a diverse array of global perspectives and groundbreaking ideas.",
     image: tedx3,
     description: `TEDx SRMU GLOBAL, organized at Shri Ramswaroop Memorial University (SRMU), transcends geographical boundaries to create an intellectually stimulating platform that showcases a diverse array of global perspectives and groundbreaking ideas. As an extension of the renowned TEDx program, this event brings together speakers and thought leaders from across the globe, offering a unique opportunity for the audience to engage with innovative concepts, inspiring stories, and transformative visions. The talks span a spectrum of topics, ranging from technology and science to culture, education, and social issues, fostering an environment of cross-cultural dialogue and collaborative thinking.`,
     routeKey: "tedx-srmuglobal",
@@ -835,6 +931,9 @@ const tedxData: TedxCardData[] = [
     id: "live",
     title: "TEDx SRMULive",
     date: "April 20, 2018",
+    metaTitle: "TEDx SRMULive | Shri Ramswaroop Memorial University, Lucknow",
+    metaDescription:
+      "TEDx SRMULive, an exhilarating and intellectually stimulating event organized at Shri Ramswaroop Memorial University (SRMU), stands as a testament to the institution&#039;s commitment to fostering innovative ideas and insightful dialogue. This live edition of the renowned TEDx series serves as a platform where thought leaders, professionals, and visionaries converge to share their inspiring stories and groundbreaking ideas.",
     image: tedx4,
     description: `TEDx SRMULive, an exhilarating and intellectually stimulating event organized at Shri Ramswaroop Memorial University (SRMU), stands as a testament to the institution's commitment to fostering innovative ideas and insightful dialogue. This live edition of the renowned TEDx series serves as a platform where thought leaders, professionals, and visionaries converge to share their inspiring stories and groundbreaking ideas. With a diverse lineup of speakers covering a spectrum of topics, TEDx SRMULive transcends conventional boundaries, offering the university community a unique opportunity to engage with transformative concepts and perspectives.`,
     routeKey: "tedx-srmulive",
@@ -845,6 +944,9 @@ const tedxData: TedxCardData[] = [
     id: "srm",
     title: "TEDx SRMU",
     date: "January 20, 2018",
+    metaTitle: "TEDx SRMU | Shri Ramswaroop Memorial University, Lucknow",
+    metaDescription:
+      "TEDxSRMU, organized at Shri Ramswaroop Memorial University (SRMU), offers a profound exploration into how the changing world impacts the lives of individuals. Through captivating talks and discussions, speakers delve into the myriad ways in which technological advancements, social transformations, and global challenges reshape our perceptions, behaviors, and interactions.",
     image: tedx5,
     description: `TEDxSRMU, organized at Shri Ramswaroop Memorial University (SRMU), offers a profound exploration into how the changing world impacts the lives of individuals. Through captivating talks and discussions, speakers delve into the myriad ways in which technological advancements, social transformations, and global challenges reshape our perceptions, behaviors, and interactions. The event serves as a platform for thought-provoking reflections on topics such as artificial intelligence, climate change, globalization, and cultural shifts, illuminating the complex interplay between societal changes and personal experiences.`,
     routeKey: "tedx-srmu",
@@ -855,6 +957,9 @@ const tedxData: TedxCardData[] = [
     id: "wom",
     title: "TEDx SRMUWomen",
     date: "November 08, 2017",
+    metaTitle: "TEDx SRMUWomen | SRMU Lucknow",
+    metaDescription:
+      "TEDxSRMU Women, organized at Shri Ramswaroop Memorial University (SRMU), is a transformative event that serves as a local gathering for women empowerment, bringing together dynamic and accomplished women from diverse backgrounds.",
     image: tedx6,
     description: `TEDxSRMU Women, organized at Shri Ramswaroop Memorial University (SRMU), is a transformative event that serves as a local gathering for women empowerment, bringing together dynamic and accomplished women from diverse backgrounds. This platform provides a unique space for these empowered ladies to share their experiences, insights, and stories of growth, emphasizing the importance of women's empowerment in various spheres of life. The event celebrates the achievements of women who have overcome challenges, shattered glass ceilings, and made significant contributions to their fields, inspiring others to pursue their goals with determination and resilience.`,
     routeKey: "tedx-women",
