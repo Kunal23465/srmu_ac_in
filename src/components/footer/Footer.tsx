@@ -60,7 +60,7 @@ export const footerData = {
     {
       id: 0,
       title: "How to Apply",
-      path: "#",
+      path: "admission/how-to-apply",
     },
     {
       id: 1,

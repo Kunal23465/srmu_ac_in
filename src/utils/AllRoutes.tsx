@@ -371,7 +371,7 @@ export const routes = [
                 item.cards.map((card) => ({
                   path: card.routeKey,
                   element: <ConvocationDetailPage card={card} />,
-                }))
+                })),
               ),
             ],
           },
@@ -418,7 +418,7 @@ export const routes = [
                 fest.cards.map((card) => ({
                   path: card.routeKey,
                   element: <EventDetails card={card} />,
-                }))
+                })),
               ),
 
               ...conferenceData.conferences.map((card) => ({
@@ -435,7 +435,7 @@ export const routes = [
                 festival.cards.map((card) => ({
                   path: card.routeKey,
                   element: <EventDetails card={card} />,
-                }))
+                })),
               ),
 
               ...tedxData.map((card) => ({

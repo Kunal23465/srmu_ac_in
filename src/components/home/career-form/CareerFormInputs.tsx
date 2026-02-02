@@ -36,7 +36,7 @@ const CareerFormInputs: React.FC = () => {
                                             return (
                                                 <div
                                                     key={field.id}
-                                                    className={`mb-[1.5rem] flex flex-col gap-1 px-[0.75rem] ${isCheckbox ? "w-full" : "w-full md:w-1/3"
+                                                    className={`mb-[1.5rem] flex flex-col gap-1 px-3 ${isCheckbox ? "w-full" : "w-full md:w-1/3"
                                                         }`}
                                                 >
                                                     {!isCheckbox && field.type !== "file" && (

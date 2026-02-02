@@ -13,11 +13,8 @@ const CareerForm:React.FC = () => {
       <div className={`${Classes["container"]}`}>
       <CustomOverviewSection data={careerFormOverviewData} />
       <div className='pt-20 pb-6'>
-
       <CareerFormInputs/>
       </div>
-
-      
       </div>
       <CustomTopFooter data={NoticeTopFooterData} />
 

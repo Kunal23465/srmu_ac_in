@@ -11,9 +11,13 @@ import PlacementOverviewSlider from "./PlacementOverviewSlider";
 import PlacementRecords from "./PlacementRecords";
 import PlacementTestimonials from "./testimonials/PlacementTestimonials";
 import PlacementDrives from "./PlacementDrives";
+import { Helmet } from "react-helmet-async";
 const PlacementOverview: React.FC = () => {
   return (
-    <div>
+    <>
+      <Helmet> <title>Placement Overview | Shri Ramswaroop Memorial University, Lucknow</title>
+        <meta name="description" content="Over the years, our students have landed top-tier opportunities in leading companies. Our recruitment partners include a wide range of industry leaders, across disciplines, fields, and professional landscapes." />
+      </Helmet>
       <div className={`${Classes["container"]}`}>
         <CustomOverviewSection data={PlacementOverviewData} />
       </div>
@@ -23,7 +27,7 @@ const PlacementOverview: React.FC = () => {
       <PlacementTestimonials />
       <PlacementDrives />
       <CustomTopFooter data={PlacementCellTopFooterData} />
-    </div>
+    </>
   );
 };
 
