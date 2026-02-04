@@ -20,8 +20,8 @@ import CustomEventCard from "../../../../../utils/custom/CustomEventListCard";
 const DepartmentDetailPage: React.FC = () => {
   const location = useLocation();
   const data = location.state;
-
-  const items = Object.keys(data.feeTableData).map((key, index) => {
+  const feeTableData = data.feeTableData ?? {};
+  const items = Object.keys(feeTableData).map((key, index) => {
     const tab = data.feeTableData[key];
 
     return {
@@ -33,10 +33,11 @@ const DepartmentDetailPage: React.FC = () => {
   return (
     <div>
       <div className={`${Classes["container"]}`}>
-        <CustomOverviewSection data={data.overviewData} />
-        <Counter counterData={data?.counterData} classes="counter" />
+        {!data.overviewData && <p>Not exist records</p>}
+        {data.overviewData && <CustomOverviewSection data={data.overviewData} />}
+        {data?.counterData && <Counter counterData={data?.counterData} classes="counter" />}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12  mb-10 mt-10">
-          {data.mvData.map((item: any) => (
+          {data?.mvData?.map((item: any) => (
             <CustomDepartmentVissionMission key={item.id} data={item} />
           ))}
         </div>
@@ -65,19 +66,20 @@ const DepartmentDetailPage: React.FC = () => {
         />
       </div>
       <div>
-        <CustomDepartmentSlider
+        {!data.facultyData && <p>Not exist data for slider</p>}
+        {data.facultyData && <CustomDepartmentSlider
           heading="Faculty List"
           description="The University takes pride in recruiting distinguished faculty from reputed central universities and best institutes like- IIT, IIM, MNNIT and IIT-BHU. They bring to the classroom, passion and enthusiasm for teaching, providing an intimate, interactive, personalized approach to learning."
           data={data.facultyData}
           renderCard={({ item }: any) => <CustomFacultyListCard item={item} />}
           bgImage={facilitiesBg}
-       
+
           headingColor="#ffffff"
           descriptionColor="#e5e5e5"
           // arrowBorderColor="#0f4a85"
           // arrowBgColor="#fff2"
           breakpoints={{ desktop: 4, tablet: 3, mobile: 1 }}
-        />
+        />}
       </div>
       <div className="pt-15 bg-[#ecf0f9]">
         <div className={`${Classes["container"]}`}>
@@ -97,7 +99,7 @@ const DepartmentDetailPage: React.FC = () => {
           data={data.departmentHighlightsData}
           renderCard={({ item }: any) => <CustomDepartmentHighlightCard item={item} />}
           bgColor="#E7A615"
-        
+
           breakpoints={{ desktop: 3, tablet: 2, mobile: 1 }}
         />
       )}

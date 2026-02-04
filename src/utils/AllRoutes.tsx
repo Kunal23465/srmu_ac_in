@@ -286,7 +286,7 @@ export const routes = [
       },
 
       {
-        path: "/programs",
+        path: "/program",
         element: <RootPrograms />,
         children: [
           {
@@ -297,12 +297,12 @@ export const routes = [
             path: ":programType",
             element: <ProgramFinderPage />,
           },
+          // {
+          //   path: ":programType/:item",
+          //   element: <ProgramFinderPage />,
+          // },
           {
-            path: ":programType/:item",
-            element: <ProgramFinderPage />,
-          },
-          {
-            path: "details/:programName",
+            path: ":programName",
             element: <ProgramDetailsPage />,
           },
           // {
@@ -343,6 +343,10 @@ export const routes = [
 
           // },
         ],
+      },
+      {
+        path: ":programType/:item",
+        element: <ProgramFinderPage />,
       },
       {
         path: "/campus-life",

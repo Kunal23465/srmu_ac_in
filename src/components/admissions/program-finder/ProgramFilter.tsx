@@ -123,7 +123,7 @@ const ProgramFilter: React.FC<PropsTypes> = ({
                         // programDisciplineId: course.programDisciplineId,
                         // name: course.name,
                       }}
-                        to={`/programs/details/${slugify(programName)}`} className=" text-[#0f4a85] lg:text-[20px] md:text-[18.75px] sm:text-[17.5px] text-[17.5px] fw500  lg:w-[60%]">{course.name}</Link>
+                        to={`/program/${slugify(programName)}`} className=" text-[#0f4a85] lg:text-[20px] md:text-[18.75px] sm:text-[17.5px] text-[17.5px] fw500  lg:w-[60%]">{course.name}</Link>
                       <p className="lg:text-[18px] text-[15.75px] md:text-[16.875px] sm:text-[15.75px] lg:w-[20%]">{course.totalDurationYear}</p>
                       <p className="text-sm lg:text-base lg:w-[20%]">Rs. {course.totalFees}/-</p>
                     </div>
@@ -135,7 +135,7 @@ const ProgramFilter: React.FC<PropsTypes> = ({
                           // programDisciplineId: course.programDisciplineId,
                           // name: course.name,
                         }}
-                        to={`/programs/details/${slugify(programName)}`}
+                        to={`/program/${slugify(programName)}`}
                         className="bg-[#023047] text-nowrap border border-[#023047] hover:bg-white hover:text-[#023047] transition-all duration-500 text-white px-6 py-3 text-sm font-medium rounded-lg flex items-center gap-2"
                       >
                         View Details <FaArrowRightLong />

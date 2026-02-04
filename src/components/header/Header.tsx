@@ -23,7 +23,14 @@ const Header = () => {
   const dispatch = useDispatch<AppDispatch>();
   // @ts-ignore
   const { data: programMenu, loading } = useSelector((state: RootState) => state.programMenu);
-  const slugify = (str: string) => str.toLowerCase().trim().replace(/\s+/g, "-");
+  // const slugify = (str: string) => str.toLowerCase().trim().replace(/\s+/g, "-");
+  const slugify = (str: string) =>
+    str
+      .toLowerCase()
+      .trim()
+      .replace(/[()]/g, "")      // remove brackets
+      .replace(/\s+/g, "-");     // replace spaces with hyphen
+
 
   useEffect(() => {
     dispatch(fetchProgramMenu());
@@ -116,13 +123,13 @@ const Header = () => {
                                   {programMenu
                                     .filter((type) => group.includes(type.programFlagName))
                                     .map((type) => {
-                                      // const programFlagSlug = slugify(type.programFlagName);
+                                      const programFlagSlug = slugify(type.programFlagName);
 
                                       return (
                                         <div key={type.programFlagId}>
                                           {/* BLUE HEADING */}
                                           <h3 className="font-medium text-[17px] p-3 rounded-lg inline-block hover:bg-[#ffb703] text-[#0f4a85] hover:text-black">
-                                            <Link onClick={() => setShowMegaMenu(false)} to={`/programs/program-finder`} state={{ programTypeId: type.programFlagId }}>
+                                            <Link onClick={() => setShowMegaMenu(false)} to={`/program/${programFlagSlug}`} state={{ programTypeId: type.programFlagId }}>
                                               {type.programFlagName}
                                             </Link>
                                           </h3>
@@ -134,7 +141,7 @@ const Header = () => {
                                                 <li key={prog.programId}>
                                                   <Link
                                                     onClick={() => setShowMegaMenu(false)}
-                                                    to={`/programs/details/${slugify(prog.programName)}`}
+                                                    to={`/program/${slugify(prog.programName)}`}
                                                     state={{ programTypeId: type.programFlagId, programId: prog.programId }}
                                                     className="text-[15px] px-3 py-2 rounded-md text-[#212529] hover:text-[#ffb703] border border-white hover:border-[#ffb703] block"
                                                   >
@@ -149,7 +156,7 @@ const Header = () => {
                                                 <li key={disc.disciplineId}>
                                                   <Link
                                                     onClick={() => setShowMegaMenu(false)}
-                                                    to={`/programs/program-finder`}
+                                                    to={`/${programFlagSlug}/${slugify(disc.disciplineName)}`}
                                                     state={{
                                                       programTypeId: type.programFlagId,
                                                       disciplineId: disc.disciplineId,

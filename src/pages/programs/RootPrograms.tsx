@@ -4,10 +4,10 @@ import { Outlet } from "react-router-dom";
 
 
 const RootPrograms: FC = () => {
-    
+
     return (
         <div>
-          
+
             <main>
                 <Outlet />
             </main>
