@@ -4,7 +4,6 @@ import { Outlet, useLocation } from "react-router-dom";
 
 const AfterClass10thPage: React.FC = () => {
   const location = useLocation().pathname;
-  console.log("location", location)
   return (
     <div>
       {

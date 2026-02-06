@@ -32,7 +32,6 @@ const ProgramFilter: React.FC<PropsTypes> = ({
   onDisciplineChange,
   isTypeFlag,
 }) => {
-  // console.log(selectedDiscipline, "selectedDiscipline");
   const [visibleCount, setVisibleCount] = useState(5);
   const visibleCourses = data.slice(0, visibleCount);
   const { loading } = useSelector((state: RootState) => state.getProgramFinder);

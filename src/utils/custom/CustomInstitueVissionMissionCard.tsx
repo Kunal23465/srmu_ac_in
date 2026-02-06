@@ -40,14 +40,30 @@ const CustomInstitueVissionMissionCard: React.FC<VisionMissionProps> = ({
                     </div>
 
                     {/* Description List - Responsive margins/text size */}
-                    <ul className="list-disc ml-5 mt-5 space-y-3 
+                    {/* <ul className="list-disc ml-5 mt-5 space-y-3 
   text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] 
   leading-relaxed text-justify 
   marker:text-yellow-500">
                         {currentData.description.map((item, i) => (
                             <li key={i}>{item}</li>
                         ))}
-                    </ul>
+                    </ul> */}
+
+                    <div className="
+    [&>ul]:list-disc
+    [&>ul]:ml-5
+    [&>ul]:mt-5
+    [&>ul]:space-y-3
+
+    [&>ul]:text-[14px]
+    [&>ul]:sm:text-[14px]
+    [&>ul]:md:text-[15px]
+    [&>ul]:lg:text-[16px]
+
+    [&>ul]:leading-relaxed
+    [&>ul]:text-justify
+    [&>ul]:marker:text-yellow-500
+  " dangerouslySetInnerHTML={{ __html: currentData.description }} />
 
 
                     {/* Buttons - **UPDATED for always-row layout and smaller size** */}

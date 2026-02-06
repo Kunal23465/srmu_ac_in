@@ -14,7 +14,6 @@ const Notice: React.FC = () => {
   useEffect(() => {
     dispatch(fetchNotice());
   }, []);
-  console.log("data notice", data);
   if (loading) {
     return <h3 className="text-center text-2xl font-semibold">Loading ...</h3>;
   }

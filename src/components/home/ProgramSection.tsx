@@ -59,9 +59,6 @@ const ProgramsSection: FC = () => {
       dispatch(fetchProgramDiscipline({ programTypeId: selectedProgramType }));
     }
   }, [dispatch, selectedProgramType]);
-
-  console.log("discipline===", discipline);
-
   return (
     <section
       className="bg-cover bg-center bg-fixed py-20 mb-20"

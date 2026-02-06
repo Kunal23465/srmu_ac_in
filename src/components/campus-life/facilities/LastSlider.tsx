@@ -35,8 +35,6 @@ const LastSliderSlick: React.FC = () => {
       { breakpoint: 640, settings: { slidesToShow: 1 } },
     ],
   };
-
-  console.log("CARD_CONTENT", CARD_CONTENT);
   return (
     <div className="w-full max-w-7xl mx-auto">
       {/* 🔹 INTERNAL CSS FOR EQUAL HEIGHT */}

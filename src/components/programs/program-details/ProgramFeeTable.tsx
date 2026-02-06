@@ -33,7 +33,6 @@ const ProgramFeeTable: React.FC<Props> = ({ data }) => {
     ` <span class="inlie-block text-lg font-medium"> Both these fees are payable in the final year of the program </span>`,
   ];
   const gridTemplate = `3fr repeat(${years.length}, 1fr)`;
-  console.log("hello", check)
   return (
     <div className="w-full p-6 bg-[#ecf0f9] rounded-2xl border border-[#c6d4ea] my-14">
       {/* Header */}

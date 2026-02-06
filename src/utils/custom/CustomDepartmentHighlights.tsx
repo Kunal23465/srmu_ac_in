@@ -45,10 +45,6 @@ const CustomDepartmentHighlights: React.FC<DepartmentHighlightsProps> = ({ headi
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, [steps]);
-
-
-  console.log("active", activeIndex)
-  console.log("steps", steps)
   return (
     <div ref={containerRef} className="relative w-full h-[180vh] bg-white">
       {/* Sticky Section */}

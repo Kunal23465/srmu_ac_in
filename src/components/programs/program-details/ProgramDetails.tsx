@@ -34,7 +34,6 @@ const ProgramDetails = () => {
   // @ts-ignore
   const { dataByID, loading, error } = useSelector((state: RootState) => state.getProgramFinder);
   const { data: departmentHeghlightData } = useSelector((state: RootState) => state.getDepartmentHeighlightById);
-  console.log(dataByID, "program details data");
   const { data: feesData } = useSelector((state: RootState) => state.programFees);
   const { data: whySrmuData } = useSelector((state: RootState) => state.getWhySrmuSection);
   const { data: counterData } = useSelector((state: RootState) => state.getCounterById);

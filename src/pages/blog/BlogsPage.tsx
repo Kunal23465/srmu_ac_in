@@ -28,7 +28,6 @@ const BlogsPage: React.FC = () => {
     dispatch(fetchBlogs());
   }, []);
 
-  console.log("blogs", blogCards);
   return (
     <>
       {location.pathname === parentPath ? (

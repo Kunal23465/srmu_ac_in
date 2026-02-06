@@ -41,8 +41,6 @@ const EnquiryForm: React.FC<EnquiryFormProps> = ({ onSubmitHandlerForAdmission }
                 initialValues={initialValuesForEnquiry}
                 validationSchema={validationSchemaForEnquiry}
                 onSubmit={async (values, actions) => {
-                  console.log("values", values, actions);
-
                   const valuesForEnquiry = { values, actions };
                   onSubmitHandlerForAdmission && onSubmitHandlerForAdmission(valuesForEnquiry);
                 }}

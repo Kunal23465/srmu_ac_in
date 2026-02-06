@@ -31,6 +31,7 @@ const validationSchema = Yup.object({
 });
 
 const ClubForm: React.FC = () => {
+    // @ts-ignore
     const formik = useFormik({
         initialValues: {
             fullName: "",
@@ -42,7 +43,6 @@ const ClubForm: React.FC = () => {
             club: [] as string[],
         },
         validationSchema,
-        onSubmit: (values) => console.log(values),
     });
 
     const clubOptions: ClubOption[] = [

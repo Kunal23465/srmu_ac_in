@@ -10,6 +10,9 @@ import { whySrmuSectionSliceReducer } from "../program-finder/why-srmu/whySrmuSe
 import { getCounterSliceReducer } from "../program-finder/counter/getCounter-Slice";
 import { blogsSliceReducer } from "../blogs/blogsSlice";
 import { programHeighLightSliceReducer } from "../program-finder/program-heighlight/programHeighlightSlice";
+import { getInsituteInfoSliceReducer } from "../insitute-info/getInsitiuteInfo-slice";
+import { getAllDepartmentByIdSliceReducer } from "../department/get-all-department-by-id/getAllDepartmentById-slice";
+import { getDepartmentByIdSliceReducer } from "../department/department-details/getDepartmentDetailsById-slice";
 const allReducer = {
   ui: uiReducer,
   getProgramFinder: programFinderReducer,
@@ -23,5 +26,8 @@ const allReducer = {
   getCounterById: getCounterSliceReducer,
   getAllBlogs: blogsSliceReducer,
   getDepartmentHeighlightById: programHeighLightSliceReducer,
+  getInsituteInfo: getInsituteInfoSliceReducer,
+  getAllDepartmentByInsituteId:getAllDepartmentByIdSliceReducer,
+  getDepartmentById: getDepartmentByIdSliceReducer
 };
 export default allReducer;

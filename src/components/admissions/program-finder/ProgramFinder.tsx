@@ -14,7 +14,7 @@ import Classes from "../../../utils/styles/Global.module.css";
 const ProgramFinder: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
   const location = useLocation();
-  const { data, loading } = useSelector((state: RootState) => state.getProgramFinder);
+  const { data } = useSelector((state: RootState) => state.getProgramFinder);
   const { programType } = useSelector((state: RootState) => state.getProgramType);
   const { discipline } = useSelector((state: RootState) => state.getDiscipline);
   const [selectedProgramType, setSelectedProgramType] = useState<number | string>("");
@@ -85,10 +85,6 @@ const ProgramFinder: React.FC = () => {
       if (disciplineIdFromState) setSelectedDiscipline(disciplineIdFromState);
     }
   }, [programTypeIdFromState, disciplineIdFromState]);
-
-
-
-  console.log("loading", loading)
   return (
     <>
       <div className={`${Classes.container} mt-16`}>

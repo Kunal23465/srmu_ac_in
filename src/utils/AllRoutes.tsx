@@ -198,6 +198,7 @@ export const routes = [
           {
             path: ":departmentName/:detailName",
             element: <DepartmentDetailPage />,
+            // element: <p>Hello Bro</p>,
           },
           {
             path: "department/:detailName",
@@ -293,10 +294,10 @@ export const routes = [
             path: "program-finder",
             element: <ProgramFinderPage />,
           },
-          {
-            path: ":programType",
-            element: <ProgramFinderPage />,
-          },
+          // {
+          //   path: ":programType",
+          //   element: <ProgramFinderPage />,
+          // },
           // {
           //   path: ":programType/:item",
           //   element: <ProgramFinderPage />,

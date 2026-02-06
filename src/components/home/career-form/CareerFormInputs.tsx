@@ -22,8 +22,8 @@ const CareerFormInputs: React.FC = () => {
                         <Formik
                             initialValues={initialCareerFormValues}
                             validationSchema={careerFormValidationSchema}
+                            // @ts-ignore
                             onSubmit={async (values, actions) => {
-                                console.log("Submitted values:", values);
                                 actions.resetForm();
                             }}
                         >

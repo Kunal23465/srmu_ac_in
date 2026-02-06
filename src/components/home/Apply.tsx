@@ -44,8 +44,6 @@ const Apply: React.FC = () => {
   useEffect(() => {
     dispatch(fetchProgramByFlag());
   }, [dispatch]);
-
-  console.log("===dynamicAccordionData===", dynamicAccordionData);
   return (
     <div className={`${Classes.container} pb-7 md:pb-10 lg:pb-14`}>
       <div className="flex flex-col-reverse sm:flex-row gap-x-10 gap-y-6">

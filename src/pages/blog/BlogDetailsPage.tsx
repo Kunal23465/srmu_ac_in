@@ -29,7 +29,6 @@ const BlogDetailsPage: React.FC = () => {
   //     "status": true
   // }
 
-  console.log("inner data", data);
   return (
     <>
       <div className={`${Classes["container"]}`}>
@@ -38,18 +37,19 @@ const BlogDetailsPage: React.FC = () => {
             {/* Date */}
 
             {/* Title */}
-            <h1 className="font32 fw500 text-[#023047]">{data.title}</h1>
+            <h1 className="font32 fw500 text-[#023047] leading-9">{data.title}</h1>
 
-            <div className="inline-block mb-10 bg-[#ffb703] px-2 rounded-xl text-[#0f4a85] ">{data.postedOn}</div>
+            <div className="inline-block mb-10 bg-[#ffb703] px-4 rounded-2xl text-[#0f4a85] mt-2 py-1">{data.postedOn}</div>
 
             {/* Image */}
             <div className="mb-8">
               <img src={data.imagePath} alt={data.title} className="w-full h-full object-cover  shadow-lg" />
             </div>
 
-            <div className="mt-8 text-[17px] prose prose-lg text-justify ">
+            <div className="mt-8 text-[15px] prose prose-lg text-justify [&_li]:mb-2 [&_p]:mb-3 [&_h4]:text-[#212529] [&_h4]:font-normal!  [&_h4]:text-[22.5px]  [&_h4]:mb-3 [&_ul]:mb-8 [&_li]:ml-6 [&_a]:text-[#ffb703]">
               <div dangerouslySetInnerHTML={{ __html: data.description }} />
             </div>
+
           </div>
         </div>
       </div>

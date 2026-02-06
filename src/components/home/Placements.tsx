@@ -22,8 +22,6 @@ const Placements = () => {
     threshold: 0.1, // You can adjust this value based on when you want the counting to start
     triggerOnce: false, // Allow multiple triggers
   });
-
-  console.log(":inView= ", inView);
   return (
     <section ref={sectionRef} className={` ${Classes["container"]} sm:mb-16 sm:mt-10`}>
       <div className="w-full">

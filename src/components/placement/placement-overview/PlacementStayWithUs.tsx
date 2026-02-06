@@ -18,10 +18,10 @@ const PlacementStayWithUs: React.FC = () => {
             <br /> top-tier opportunities in leading companies
           </h1>
 
-          <div className="mt-8 lg:mt-16 flex flex-wrap gap-10 lg:gap-20">
+          <div className="mt-8 lg:mt-16 flex flex-wrap gap-5 xl:gap-10 2xl:gap-20 ">
             {placementOverviewStayWithUsData.map((item, index) => (
-              <div key={index}>
-                <h2 className="text-[#ffb703] lg:text-[60px] md:text-[56.25px] text-[35px] sm:text-[35px] ">{item.number}</h2>
+              <div key={index} >
+                <h2 className="text-[#ffb703] xl:text-[60px] lg:text-[56.25px] text-[32px] sm:text-[35px] ">{item.number}</h2>
 
                 <p className="mt-3 lg:mt-5 lg:text-[21px] md:text-[19.695px] sm:text-[18.382px] text-[18.382px]">{item.title}</p>
 

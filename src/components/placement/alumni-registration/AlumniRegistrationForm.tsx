@@ -11,13 +11,13 @@ const AlumniRegistrationForm: React.FC = () => {
             <div className={Classes.container}>
                 <div className={Classes.career_inner_page}>
                     <div className="name color_light_blue fw500 font22 font-medium mb-[1.5rem] text-[1.375rem] text-customBlue">
-                       Enter Your Details
+                        Enter Your Details
                     </div>
                     <Formik
                         initialValues={initialValuesForAlumniRegistration}
                         validationSchema={validationSchemaForAlumniRegistration}
+                        // @ts-ignore
                         onSubmit={async (values, actions) => {
-                            console.log("Submitted values:", values);
                             actions.resetForm();
                         }}
                     >
@@ -29,9 +29,8 @@ const AlumniRegistrationForm: React.FC = () => {
                                         return (
                                             <div
                                                 key={field.id}
-                                                className={`mb-[1.5rem] flex flex-col gap-1 px-[0.75rem] ${
-                                                    isCheckbox ? "w-full" : "w-full md:w-1/3"
-                                                }`}
+                                                className={`mb-[1.5rem] flex flex-col gap-1 px-[0.75rem] ${isCheckbox ? "w-full" : "w-full md:w-1/3"
+                                                    }`}
                                             >
                                                 {!isCheckbox && (
                                                     <label className="!mb-[0.5rem]" htmlFor={field.name}>

@@ -17,8 +17,8 @@ const AdmissionEnquiryForm: React.FC = () => {
                         <Formik
                             initialValues={initialValuesForEnquiryForm}
                             validationSchema={validationSchemaForEnquiryForm}
+                            // @ts-ignore
                             onSubmit={async (values, actions) => {
-                                console.log("Submitted values:", values);
                                 actions.resetForm();
                             }}
                         >

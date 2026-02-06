@@ -11,7 +11,8 @@ import agriBreadcrumbbg from "../../assets/images/breadcrumb/agri-banner-inner.j
 import onlineApplicationBanner from "../../assets/images/online-application-banner.jpeg";
 import programFinderBanner from "../../assets/images/breadcrumb/Program Finder.png";
 import noticeBanner from "../../assets/images/breadcrumb/Notice.png";
-import shiftSchedule from "../../assets/images/breadcrumb/shift-schedule.png";
+import shiftSchedule from "../../assets/images/breadcrumb/Shedule.png";
+import greenInitive from "../../assets/images/breadcrumb/Green Initiative.png";
 // -----------------------
 // FIX 1: Allow string index
 // -----------------------
@@ -21,6 +22,7 @@ export const pageBackgrounds: Record<string, string> = {
   admission: admissionbreadcrumbbg,
   research: researchbreadcrumbbg,
   notice: noticeBanner,
+  "campus-life/green-initiative": greenInitive,
   "campus-life": campuslifebreadcrumbbg,
   "admission/program-finder": programFinderBanner,
   "admission/shift-schedule": shiftSchedule,

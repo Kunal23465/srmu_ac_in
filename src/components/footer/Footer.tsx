@@ -75,10 +75,10 @@ export const footerData = {
   ],
 
   socialMedia: [
-    { platform: "facebook", link: "https://www.facebook.com/SRMCEMOFFICIAL" },
-    { platform: "twitter", link: "https://x.com/SrmgpcL" },
-    { platform: "instagram", link: "https://www.instagram.com/srmgpc_official/" },
-    { platform: "linkedin", link: "https://www.linkedin.com/school/shri-ramswaroop-memorial-college-of-engineering-and-management-lucknow/posts/?feedView=all&viewAsMember=true " },
+    { platform: "facebook", link: "https://www.facebook.com/SRMUOFFICIAL/" },
+    { platform: "twitter", link: "https://twitter.com/srmu_lucknow" },
+    { platform: "instagram", link: "https://www.instagram.com/srmulucknow_official/" },
+    { platform: "linkedin", link: "https://www.linkedin.com/school/shri-ramswaroop-memorial-university/" },
   ],
 
   getEvolved: [
@@ -271,7 +271,7 @@ const Footer: React.FC = () => {
               </div>
               <div className="flex space-x-2 mt-10 sm:mt-20">
                 <Link
-                  to="https://www.facebook.com/SRMGPCOFFICIAL/"
+                  to="https://www.facebook.com/SRMUOFFICIAL/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center transition-all duration-300  hover:border-[#ffb703] hover:bg-transparent hover:text-[#ffb703] cursor-pointer"
@@ -280,7 +280,7 @@ const Footer: React.FC = () => {
                   <img src={fb} alt="facebook" />
                 </Link>
                 <Link
-                  to="https://x.com/SrmgpcL"
+                  to="https://twitter.com/srmu_lucknow"
                   target="_blank"
                   className=" flex items-center justify-center transition-all duration-300 hover:border-[#ffb703] hover:bg-transparent hover:text-[#ffb703] cursor-pointer"
                   aria-label="Twitter"
@@ -288,7 +288,7 @@ const Footer: React.FC = () => {
                   <img src={instagram} alt="instagram" />
                 </Link>
                 <Link
-                  to="https://www.instagram.com/srmgpc_official/#"
+                  to="https://www.instagram.com/srmulucknow_official/"
                   target="_blank"
                   className=" flex items-center justify-center transition-all duration-300 hover:border-[#ffb703] hover:bg-transparent hover:text-[#ffb703] cursor-pointer"
                   aria-label="Instagram"
@@ -296,7 +296,7 @@ const Footer: React.FC = () => {
                   <img src={linkdin} alt="linkdin" />
                 </Link>
                 <Link
-                  to="https://www.linkedin.com/in/srmgpc"
+                  to="https://www.linkedin.com/school/shri-ramswaroop-memorial-university/"
                   target="_blank"
                   className=" flex items-center justify-center transition-all duration-300 hover:border-[#ffb703] hover:bg-transparent hover:text-[#ffb703] cursor-pointer"
                   aria-label="LinkedIn"
@@ -304,7 +304,7 @@ const Footer: React.FC = () => {
                   <img src={twitter} alt="twitter" />
                 </Link>
                 <Link
-                  to="https://www.linkedin.com/in/srmgpc"
+                  to="https://www.youtube.com/channel/UCQBjHzkED5ESWvlQiwLNZ4Q"
                   target="_blank"
                   className=" flex items-center justify-center transition-all duration-300 hover:border-[#ffb703] hover:bg-transparent hover:text-[#ffb703] cursor-pointer"
                   aria-label="LinkedIn"

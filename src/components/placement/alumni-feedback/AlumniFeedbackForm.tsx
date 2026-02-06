@@ -128,8 +128,8 @@ const AlumniFeedbackForm: FC = () => {
             <Formik
               initialValues={initialValuesForAluminiFeedbackForm}
               validationSchema={validationSchemaForAlumniFeedbackForm}
+              // @ts-ignore
               onSubmit={async (values, actions) => {
-                console.log("Submitted values:", values);
                 actions.resetForm();
               }}
             >

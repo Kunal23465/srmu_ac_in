@@ -16,7 +16,6 @@ const RootLayout: React.FC = () => {
   const [openChat, setOpenChat] = useState(false);
   const [showRightBar, setShowRightBar] = useState(false);
   const [hovered, setHovered] = useState<number | null>(null);
-  console.log(location.pathname)
   // Scroll to top on page change
   useEffect(() => {
     window.scrollTo({
