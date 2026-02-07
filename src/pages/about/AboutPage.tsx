@@ -11,7 +11,7 @@ const AboutPage: React.FC = () => {
       <title>About SRMU | Vision &amp; Mission | Core Values | Fountainhead of Inspiration | Kulgeet</title>
       <meta name="description" content="Our journey began in 1999, with just 22 students and an unwavering commitment to quality education. SRMU is committed to building a transformative learning experience for all." />
     </Helmet>
-    {location.pathname == "/about" ? <About /> : <Outlet />}
+    {location.pathname == "/about-us" ? <About /> : <Outlet />}
   </>;
 };
 

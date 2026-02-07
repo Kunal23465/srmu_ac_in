@@ -263,7 +263,7 @@ const Header = () => {
                                     <div key={type.programFlagId}>
                                       <h3 className="font-medium text-sm p-2 rounded-lg bg-gray-100 text-[#0f4a85] border-b border-gray-300">
                                         <Link
-                                          to={`/program/${programFlagSlug}`}
+                                          to={`/${programFlagSlug}`}
                                           state={{ programTypeId: type.programFlagId }}
                                           onClick={() => setSideMenu(false)}
                                           className="hover:text-[#ffb703] block"

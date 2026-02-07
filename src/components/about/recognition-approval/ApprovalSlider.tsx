@@ -105,7 +105,7 @@
 
 // export default ApprovalsSlider;
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Slider from "react-slick";
 import Classes from "../../../utils/styles/Global.module.css";
 import "slick-carousel/slick/slick.css";
@@ -135,16 +135,39 @@ export const PdfSvgIcon: React.FC = () => (
 );
 
 const ApprovalsSlider = () => {
+  const [windowWidth, setWindowWidth] = useState(typeof window !== "undefined" ? window.innerWidth : 0);
   const sliderRef = useRef<Slider | null>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const totalSlides = approvalData.length;
 
+
+
+  // 🔍 Determine when to disable arrows
+  const isAtStart = currentSlide === 0;
+  const isAtEnd = currentSlide >= totalSlides - (window.innerWidth < 768 ? 1 : window.innerWidth < 1024 ? 2 : 3);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Function to determine slidesToShow based on window width
+  const getSlidesToShow = () => {
+    if (windowWidth >= 1024) return 3;
+    if (windowWidth >= 600) return 2;
+
+    return 1;
+  };
   const settings = {
     dots: false,
     infinite: false, //
     speed: 600,
-    slidesToShow: 3,
+    slidesToShow: getSlidesToShow(),
     slidesToScroll: 1,
     arrows: false,
     beforeChange: (_: number, next: number) => setCurrentSlide(next),
@@ -153,11 +176,6 @@ const ApprovalsSlider = () => {
       { breakpoint: 768, settings: { slidesToShow: 1 } },
     ],
   };
-
-  // 🔍 Determine when to disable arrows
-  const isAtStart = currentSlide === 0;
-  const isAtEnd = currentSlide >= totalSlides - (window.innerWidth < 768 ? 1 : window.innerWidth < 1024 ? 2 : 3);
-
   return (
     <>
       <section className="bg-[#ffb703] pt-16 pb-[300px] relative overflow-visible">
@@ -177,9 +195,8 @@ const ApprovalsSlider = () => {
                 <button
                   onClick={() => sliderRef.current?.slickPrev()}
                   disabled={isAtStart}
-                  className={`text-gray-700  hover:text-[#ffb703]  bg-white shadow-lg w-13 h-13 flex items-center justify-center rounded-full border border-gray-200 z-10 cursor-pointer ${
-                    isAtStart ? "opacity-40 cursor-not-allowed" : " cursor-pointer"
-                  }`}
+                  className={`text-gray-700  hover:text-[#ffb703]  bg-white shadow-lg w-13 h-13 flex items-center justify-center rounded-full border border-gray-200 z-10 cursor-pointer ${isAtStart ? "opacity-40 cursor-not-allowed" : " cursor-pointer"
+                    }`}
                 >
                   <MdKeyboardArrowLeft size="26" />
                 </button>
@@ -187,9 +204,8 @@ const ApprovalsSlider = () => {
                 <button
                   onClick={() => sliderRef.current?.slickNext()}
                   disabled={isAtEnd}
-                  className={`text-gray-700  hover:text-[#ffb703]  bg-white shadow-lg w-13 h-13 flex items-center justify-center rounded-full border border-gray-200 z-10 cursor-pointer ${
-                    isAtEnd ? "opacity-40 cursor-not-allowed" : " cursor-pointer"
-                  }`}
+                  className={`text-gray-700  hover:text-[#ffb703]  bg-white shadow-lg w-13 h-13 flex items-center justify-center rounded-full border border-gray-200 z-10 cursor-pointer ${isAtEnd ? "opacity-40 cursor-not-allowed" : " cursor-pointer"
+                    }`}
                 >
                   <MdKeyboardArrowRight size="26" />
                 </button>
