@@ -17,7 +17,7 @@ const TopHeader: React.FC = () => {
                 <Link className="border-r pr-2" to="/notice">
                   NOTICE{" "}
                 </Link>
-                <Link className="border-r pr-2" to="/admission-enquiry">
+                <Link className="border-r pr-2" to="https://admissionenquiry.srmu.ac.in/">
                   ADMISSION ENQUIRY{" "}
                 </Link>
                 <Link to="/shift-schedule">SHIFT SCHEDULE</Link>
@@ -47,10 +47,10 @@ const TopHeader: React.FC = () => {
                 </button>
                 <Link
                   target="_blank"
-                  to="https://phdadmission.srmu.ac.in/"
+                  to="https://studentportal.srmu.ac.in/login"
                   className="bg-[#FFB703] px-2 font-medium uppercase border-2 border-[#ffb703]  py-3.5 flex gapx-x-1 items-center"
                 >
-                  PH.D. FORM
+                  Apply Now
                 </Link>
               </div>
             </div>

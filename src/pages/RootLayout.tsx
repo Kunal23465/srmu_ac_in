@@ -5,7 +5,7 @@ import Header from "../components/header/Header";
 import { Breadcrumbs } from "../utils/AllRoutes";
 import Footer from "../components/footer/Footer";
 import whatsapp from "../assets/images/whatsapp-icon.png";
-import chatbot from "../assets/images/output-onlinepngtools.png";
+// import chatbot from "../assets/images/output-onlinepngtools.png";
 import bgImg from "../assets/images/chat-bg.jpg";
 import { FaTimes } from "react-icons/fa";
 import DynamicBreadcrumbs from "../components/breadcrumb/DynamicBreadcrumbs";
@@ -98,7 +98,7 @@ const RootLayout: React.FC = () => {
       )}
 
       {/* ================= BOT BUTTON ================= */}
-      <button onClick={toggleChat} className="fixed bottom-12 sm:bottom-6 right-6 z-200 flex items-center gap-2">
+      {/* <button onClick={toggleChat} className="fixed bottom-12 sm:bottom-6 right-6 z-200 flex items-center gap-2">
         {!openChat && (
           <div className="relative mr-2">
             <div className="bg-[#ffb703] text-white px-4 py-2 rounded-xl text-sm font-semibold shadow-md whitespace-nowrap">
@@ -106,7 +106,7 @@ const RootLayout: React.FC = () => {
               <span className="text-xs font-normal">Chat with Us Instantly!</span>
             </div>
 
-            {/* arrow */}
+           
             <div className="absolute right-[-6px] top-1/2 -translate-y-1/2 w-3 h-3 bg-[#ffb703] rotate-45"></div>
           </div>
         )}
@@ -114,7 +114,7 @@ const RootLayout: React.FC = () => {
         <div className={`${!openChat ? "bg-white" : "bg-[#dfa000]"} p-4 rounded-full shadow-lg hover:bg-[#dfa000] hover:scale-110 transition-all duration-300`}>
           {openChat ? <FaTimes className="text-white" size={22} /> : <img src={chatbot} className="w-8" />}
         </div>
-      </button>
+      </button> */}
 
       {/* ============= RIGHT SIDE SLIDERS (SHOW ON SCROLL) ============= */}
       <div
@@ -127,7 +127,7 @@ const RootLayout: React.FC = () => {
         <a
           onMouseEnter={() => setHovered(1)}
           onMouseLeave={() => setHovered(null)}
-          href="/admission-enquiry"
+          href="https://admissionenquiry.srmu.ac.in/"
           className={`
     w-full sm:w-auto sm:rotate-270 writing-mode-horizontal sm:writing-mode-vertical relative z-400
     text-xs tracking-wider group flex items-center justify-center

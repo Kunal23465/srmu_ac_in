@@ -8,14 +8,14 @@ interface cardtype {
 const AdmissionCard: React.FC<cardtype> = ({ admissionEnquiryData }) => {
     return (
         <div className="bg-[#0f4a85] py-18 min-h-[500px]  mt-14">
-            <div className="max-w-7xl mx-auto flex flex-col md:flex-row flex-wrap justify-center gap-6 px-4">
+            <div className="w-full mx-auto flex flex-col md:flex-row flex-wrap lg:flex-nowrap justify-center gap-6 px-4">
 
                 {admissionEnquiryData.map((item: AdmissionEnquiryItem) => (
                     <div
                         key={item.id}
                         className="
               block rounded-[10px] bg-white shadow-[0_4px_16px_rgba(0,0,0,0.16)]
-              px-8 py-5 w-[385px] h-[220px] text-center
+              px-8 py-5 w-full max-w-[385px] h-[220px] text-center
               border-t-[5px] border-b-[5px]
               border-t-[#0f4a85] border-b-[#ffb703]
               transition-all duration-500 ease-out

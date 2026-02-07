@@ -26,7 +26,7 @@ html {
 
 
 .banner-section {
-  background-image: url("/srmu-banner-img.jpg");
+  background-image: url("/Shedule.png");
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 430px;
@@ -38,13 +38,13 @@ html {
 }
 
 /* for banner section */
-.banner-section {
+/* .banner-section {
   background-image: url("/srmu-banner-img.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 400px;
   background-position: center;
-}
+} */
 
 .banner-section.big-banner {
   min-height: 800px;

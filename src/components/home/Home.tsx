@@ -11,6 +11,8 @@ import DepartmentalVideoComponent from "./DepartmentalVideoComponent";
 import Placements from "./Placements";
 import MobilePlacements from "./MobilePlacements";
 import Events from "./Events";
+import CustomTopFooter from "../../utils/custom/CustomTopFooter";
+import { CustomTopFooterAbout } from "../../data/about/aboutusData";
 
 const Home: React.FC = () => {
   return (
@@ -34,6 +36,9 @@ const Home: React.FC = () => {
       </div>
 
       <DepartmentalVideoComponent />
+
+
+      <CustomTopFooter data={CustomTopFooterAbout} />
     </div>
   );
 };

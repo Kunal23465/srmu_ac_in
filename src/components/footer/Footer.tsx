@@ -462,7 +462,7 @@ const Footer: React.FC = () => {
               </ul>
             </div>
             <div className="flex items-center gap-x-1 font-medium text-white text-sm">
-              Design By: <Link to="https://www.indiainternets.com/"> indiainternets.com </Link>
+              Design By: <Link to="https://srdt.co.in/"> SRDT </Link>
             </div>
           </div>
         </div>

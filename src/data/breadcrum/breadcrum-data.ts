@@ -44,5 +44,6 @@ export const childBackgrounds: Record<string, string> = {
 
 // -----------------------
 export const formatSegment = (segment: string) => {
-  return segment.replace(/-/g, " ").replace(/^\w/, (c) => c.toUpperCase());
+  return segment.replace(/[_-]/g, " ").replace(/^\w/, (c) => c.toUpperCase());
 };
+

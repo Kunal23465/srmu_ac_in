@@ -1,20 +1,16 @@
-import scst from "../../../assets/images/about/committeesAndCells/sc-st.jpg"
-import discri from "../../../assets/images/about/committeesAndCells/anti-discrimination-cell.jpg"
-import comp from "../../../assets/images/about/committeesAndCells/complaint.jpg"
-import saving from "../../../assets/images/about/committeesAndCells/saving-money.jpg"
-import rag from "../../../assets/images/about/committeesAndCells/anti-ragging-committee.jpg"
-import board from "../../../assets/images/about/committeesAndCells/proctorial-board1.jpg"
-import digital from "../../../assets/images/about/committeesAndCells/digital-learning-monitoring.jpg"
-import gender from "../../../assets/images/about/committeesAndCells/gender-sensitization-cell.jpg"
-import obc from "../../../assets/images/about/committeesAndCells/OBC-CELL.jpg"
-import minority from "../../../assets/images/about/committeesAndCells/minority-cell.jpg"
-import unnat from "../../../assets/images/about/committeesAndCells/unnat.jpg"
-import grievance from "../../../assets/images/about/committeesAndCells/Student-Grievance-and-Redressal-Committee.jpg"
+import scst from "../../../assets/images/about/committeesAndCells/sc-st.jpg";
+import discri from "../../../assets/images/about/committeesAndCells/anti-discrimination-cell.jpg";
+import comp from "../../../assets/images/about/committeesAndCells/complaint.jpg";
+import saving from "../../../assets/images/about/committeesAndCells/saving-money.jpg";
+import rag from "../../../assets/images/about/committeesAndCells/anti-ragging-committee.jpg";
+import board from "../../../assets/images/about/committeesAndCells/proctorial-board1.jpg";
+import digital from "../../../assets/images/about/committeesAndCells/digital-learning-monitoring.jpg";
+import gender from "../../../assets/images/about/committeesAndCells/gender-sensitization-cell.jpg";
+import obc from "../../../assets/images/about/committeesAndCells/OBC-CELL.jpg";
+import minority from "../../../assets/images/about/committeesAndCells/minority-cell.jpg";
+import unnat from "../../../assets/images/about/committeesAndCells/unnat.jpg";
+import grievance from "../../../assets/images/about/committeesAndCells/Student-Grievance-and-Redressal-Committee.jpg";
 import { customeOverViewType } from "../../../types/home-data-type";
-
-
-
-
 
 export const CommitteeOverviewData: customeOverViewType = {
   heading: "Committees & Cells",
@@ -22,24 +18,21 @@ export const CommitteeOverviewData: customeOverViewType = {
     "Education has the potential to change our world. It is a powerful tool for eradicating inequality. gender disparity, diminishing poverty, alleviation of disease and to develop means for creating a sustainable planet, infused with peace and prosperity.",
 
   counterSibling:
-  "Founders of the University, Alumni and Gold Medalist from IIT Kanpur, envision Shri Ramswaroop Memorial University to be a globally recognized place of teaching-learning, doing research and preparing human capital with ethical, social and ecological sensibilities, thereby contributing to national prosperity."
+    "Founders of the University, Alumni and Gold Medalist from IIT Kanpur, envision Shri Ramswaroop Memorial University to be a globally recognized place of teaching-learning, doing research and preparing human capital with ethical, social and ecological sensibilities, thereby contributing to national prosperity.",
 };
-
-
 
 export interface Card {
   id: number;
   title: string;
   breadcrumb: string;
-  routeKey: string;                
+  routeKey: string;
   description: string;
   longDescription?: string;
   members?: string[];
   contact?: string[];
   imagePath: string;
-  readMoreLink: string;           
+  readMoreLink: string;
 }
-
 
 export const committeeCards: Card[] = [
   {
@@ -47,10 +40,9 @@ export const committeeCards: Card[] = [
     title: "Anti Ragging Committee",
     breadcrumb: "Anti Ragging Committee",
 
-    routeKey: "anti-ragging",        
+    routeKey: "anti-ragging",
 
-    description:
-      'Ragging is a Criminal Offence as per "The UP Prohibition of Ragging in the Educational Institutions Act 2010"...',
+    description: 'Ragging is a Criminal Offence as per "The UP Prohibition of Ragging in the Educational Institutions Act 2010"...',
 
     longDescription: `
 Ragging is a Criminal Offence as per “The UP Prohibition of Ragging in the Educational Institutions Act 2010” passed by the Uttar Pradesh legislature and by order of the Hon’ble Supreme Court dated 08 May, 2009.
@@ -87,7 +79,7 @@ To implement the same in the session 2023–24 also, the Anti-Ragging Committee 
 
     imagePath: rag,
 
-    readMoreLink: "/about/committees-and-cells/anti-ragging",
+    readMoreLink: "/about-us/committees-and-cells/anti-ragging",
   },
   {
     id: 2,
@@ -123,18 +115,18 @@ The board comprises senior faculty members, administrative officers, and other k
       "Mr. S. K. Singh (SRMU-Polytechnic), Member",
       "Ms. Sonali Kalkar (SRMU-Polytechnic), Member",
       "Dr. Gyan Prakash Srivastava (IER), Member",
-      "Mr. Lalit Mohan Singh Negi, Admin Officer, Member"
+      "Mr. Lalit Mohan Singh Negi, Admin Officer, Member",
     ],
 
     contact: [
       "Chairman/ Chairperson, Committee members **OR**",
       "Anti Ragging WhatsApp Number: 9554965584 **OR**",
       "Mail at registrar.office@srmu.ac.in / registrar@srmu.ac.in / vc@srmu.ac.in **OR**",
-      "Register at https://srmu.ac.in/campus-life/grievance-redressal-system for Online Grievance Redressal"
+      "Register at https://srmu.ac.in/campus-life/grievance-redressal-system for Online Grievance Redressal",
     ],
 
-    imagePath: board, 
-    readMoreLink: "/about/committees-and-cells/proctorial-board",
+    imagePath: board,
+    readMoreLink: "/about-us/committees-and-cells/proctorial-board",
   },
   {
     id: 3,
@@ -151,24 +143,19 @@ The SC/ST Welfare Committee is constituted to oversee the welfare of SC and ST s
 The University helps financially weaker students through the Student Welfare Fund and facilitates SC/ST students to avail the benefits of scholarship schemes of the Central and State Governments.
     `,
 
-    members: [
-      "Prof. B. M. Dixit",
-      "Mr. Abhay Singh",
-      "Mr. Sunny Kumar"
-    ],
+    members: ["Prof. B. M. Dixit", "Mr. Abhay Singh", "Mr. Sunny Kumar"],
 
     contact: [
       "Chairman/ Chairperson, Committee members **OR**",
       "Mail at registrar.office@srmu.ac.in / registrar@srmu.ac.in / vc@srmu.ac.in",
-      "Register at https://srmu.ac.in/campus-life/grievance-redressal-system for Online Grievance Redressal"
+      "Register at https://srmu.ac.in/campus-life/grievance-redressal-system for Online Grievance Redressal",
     ],
 
-    imagePath: scst, 
+    imagePath: scst,
 
-    readMoreLink: "/about/committees-and-cells/sc-st-welfare-committee",
-
-  }, 
-    {
+    readMoreLink: "/about-us/committees-and-cells/sc-st-welfare-committee",
+  },
+  {
     id: 4,
     title: "Students Welfare Fund Committee",
     breadcrumb: "Students Welfare Fund Committee",
@@ -191,20 +178,19 @@ The purpose of this fund is to provide amenities to students that support their 
       "Mr. Anuj Pratap Singh, B.A. (H) Political Science II Year, 202110204150013",
       "Mr. Abhay Singh, Deputy Registrar (Academics) (Member)",
       "Mr. Gaurav Kumar Chaturvedi, B. Tech (ME) IV Year, 202010102110704",
-      "Ms. Shweta Shukla, LL.B. III Year, 202010301110017"
+      "Ms. Shweta Shukla, LL.B. III Year, 202010301110017",
     ],
 
     contact: [
       "Chairman/ Chairperson, Committee members **OR**",
       "Mail at registrar.office@srmu.ac.in / registrar@srmu.ac.in / vc@srmu.ac.in **OR**",
-      "Register at https://srmu.ac.in/campus-life/grievance-redressal-system for Online Grievance Redressal"
+      "Register at https://srmu.ac.in/campus-life/grievance-redressal-system for Online Grievance Redressal",
     ],
 
-    imagePath: saving, 
+    imagePath: saving,
 
-    readMoreLink: "/about/committees-and-cells/students-welfare-fund-committee",
-  
-  }, 
+    readMoreLink: "/about-us/committees-and-cells/students-welfare-fund-committee",
+  },
   {
     id: 5,
     title: "Anti-Discrimination Cell",
@@ -212,8 +198,7 @@ The purpose of this fund is to provide amenities to students that support their 
 
     routeKey: "anti-discrimination-cell",
 
-    description:
-      "The University provides equal opportunity to all students regardless of caste, religion, language, or gender, ensuring a harmonious and just campus environment.",
+    description: "The University provides equal opportunity to all students regardless of caste, religion, language, or gender, ensuring a harmonious and just campus environment.",
 
     longDescription: `
 The Anti-Discrimination Cell has been constituted in compliance with UGC regulations (Promotion of Equity in Higher Educational Institutions). 
@@ -224,18 +209,18 @@ It ensures that every individual on campus can exercise and acquire equal rights
       "Dr. Ritu Chandra, Principal, IER (Chairperson)",
       "Dr. Anushree Singh, Dean, Faculty of Management (Member)",
       "Dr. Shweta Shukla, Asst. Professor, Faculty of Humanities & Social Sciences (Member)",
-      "Dr. Om Prakash, Director, Training & Placement (Member)"
+      "Dr. Om Prakash, Director, Training & Placement (Member)",
     ],
 
     contact: [
       "Chairman/ Chairperson, Committee members **OR**",
       "Mail at registrar.office@srmu.ac.in / registrar@srmu.ac.in / vc@srmu.ac.in **OR**",
-      "Register at https://srmu.ac.in/campus-life/grievance-redressal-system for Online Grievance Redressal"
+      "Register at https://srmu.ac.in/campus-life/grievance-redressal-system for Online Grievance Redressal",
     ],
 
-    imagePath: discri, 
-    readMoreLink: "/about/committees-and-cells/anti-discrimination-cell",
-  }, 
+    imagePath: discri,
+    readMoreLink: "/about-us/committees-and-cells/anti-discrimination-cell",
+  },
   {
     id: 6,
     title: "Internal Complaints Committee",
@@ -259,21 +244,21 @@ As per Section 4(1) of the Act, the Internal Complaints Committee has been const
       "Concerned Director/ Dean/ HOD",
       "Abhay Singh, Deputy Registrar, Academics (Member Secretary)",
       "Dr. Devendra, Assistant Professor, ILS (Member)",
-      "Ms. Manjiri Kureel, Assistant Professor, Faculty of Humanities & Social Sciences (Member)"
+      "Ms. Manjiri Kureel, Assistant Professor, Faculty of Humanities & Social Sciences (Member)",
     ],
 
     contact: [
       "Chairman/ Chairperson, Committee members **OR**",
       "Mail at registrar.office@srmu.ac.in / registrar@srmu.ac.in / vc@srmu.ac.in **OR**",
-      "Register at https://srmu.ac.in/campus-life/grievance-redressal-system for Online Grievance Redressal"
+      "Register at https://srmu.ac.in/campus-life/grievance-redressal-system for Online Grievance Redressal",
     ],
 
-    imagePath: comp, 
+    imagePath: comp,
 
-    readMoreLink: "/about/committees-and-cells/internal-complaints-committee",
-  }, 
+    readMoreLink: "/about-us/committees-and-cells/internal-complaints-committee",
+  },
   {
-     id: 7,
+    id: 7,
     title: "Digital Learning Monitoring Cell",
     breadcrumb: "Digital Learning Monitoring Cell",
 
@@ -293,18 +278,18 @@ It aims to foster digital culture by following and implementing the Digital Acti
       "Mr. Rakesh Kumar Vishwakarma, Assistant System Administrator (Member)",
       "Mr. Rakesh Jaiswal, Finance Officer (Member)",
       "Dr. P.C Mishra, Associate Professor, ILS (Member)",
-      "Dr. Tabish Qidwai, Associate Professor, IBST (Member)"
+      "Dr. Tabish Qidwai, Associate Professor, IBST (Member)",
     ],
 
     contact: [
       "Chairman/ Chairperson, Committee members **OR**",
       "Mail at registrar.office@srmu.ac.in / registrar@srmu.ac.in / vc@srmu.ac.in **OR**",
-      "Register at https://srmu.ac.in/campus-life/grievance-redressal-system for Online Grievance Redressal"
+      "Register at https://srmu.ac.in/campus-life/grievance-redressal-system for Online Grievance Redressal",
     ],
 
-    imagePath: digital, 
-    readMoreLink: "/about/committees-and-cells/digital-learning-monitoring-cell",
-  }, 
+    imagePath: digital,
+    readMoreLink: "/about-us/committees-and-cells/digital-learning-monitoring-cell",
+  },
   {
     id: 8,
     title: "Gender Sensitization Cell",
@@ -326,51 +311,46 @@ It aims to create an enabling environment of gender justice and ensure safety an
       "Mr. Abhay Singh, Dy. Registrar (Academics) (Member)",
       "Dr. Veena Singh, Asst. Professor, IMCE & Power Angel, 1090 Women Help Line (Member)",
       "Mr. Shashank Srivastava, Dy. Registrar (HR) (Member)",
-      "Mr. Sandeep Dixit, Assistant Professor, FoEE, IOT (Member)"
+      "Mr. Sandeep Dixit, Assistant Professor, FoEE, IOT (Member)",
     ],
 
     contact: [
       "Chairman/ Chairperson, Committee members **OR**",
       "Mail at registrar.office@srmu.ac.in / registrar@srmu.ac.in / vc@srmu.ac.in **OR**",
-      "Register at https://srmu.ac.in/campus-life/grievance-redressal-system for Online Grievance Redressal"
+      "Register at https://srmu.ac.in/campus-life/grievance-redressal-system for Online Grievance Redressal",
     ],
 
-    imagePath: gender, 
+    imagePath: gender,
 
-    readMoreLink: "/about/committees-and-cells/gender-sensitization-cell",
+    readMoreLink: "/about-us/committees-and-cells/gender-sensitization-cell",
   },
   {
-     id: 9,
+    id: 9,
     title: "OBC Cell",
     breadcrumb: "OBC Cell",
 
     routeKey: "obc-cell",
 
-    description:
-      "The OBC Cell empowers OBC students by overseeing the implementation of government programs, scholarships, and benefits to promote higher education.",
+    description: "The OBC Cell empowers OBC students by overseeing the implementation of government programs, scholarships, and benefits to promote higher education.",
 
     longDescription: `
 The OBC Cell at Shri Ramswaroop Memorial University ensures correct execution of State Government, UGC, and Indian government programs related to stipends, scholarships, and other benefits for reserved groups. 
 By granting scholarships and assistance, the Cell promotes higher education among Other Backward Classes (OBC) students.
     `,
 
-    members: [
-      "Prof. B.M. Dixit",
-      "Mr. Abhay Singh",
-      "Dr. Dilip Kumar"
-    ],
+    members: ["Prof. B.M. Dixit", "Mr. Abhay Singh", "Dr. Dilip Kumar"],
 
     contact: [
       "Chairman/ Chairperson, Committee members **OR**",
       "Mail at registrar.office@srmu.ac.in / registrar@srmu.ac.in / vc@srmu.ac.in **OR**",
-      "Register at https://srmu.ac.in/campus-life/grievance-redressal-system for Online Grievance Redressal"
+      "Register at https://srmu.ac.in/campus-life/grievance-redressal-system for Online Grievance Redressal",
     ],
 
-    imagePath: obc, 
-    readMoreLink: "/about/committees-and-cells/obc-cell",
-  }, 
+    imagePath: obc,
+    readMoreLink: "/about-us/committees-and-cells/obc-cell",
+  },
   {
-     id: 10,
+    id: 10,
     title: "Minority Cell",
     breadcrumb: "Minority Cell",
 
@@ -384,31 +364,26 @@ The Minority Cell at Shri Ramswaroop Memorial University aims to assist students
 It provides support to help these students integrate into the mainstream while addressing the specific needs of minority groups.
     `,
 
-    members: [
-      "Prof. B.M. Dixit",
-      "Mr. Abhay Singh",
-      "Dr. Dilip Kumar"
-    ],
+    members: ["Prof. B.M. Dixit", "Mr. Abhay Singh", "Dr. Dilip Kumar"],
 
     contact: [
       "Chairman/ Chairperson, Committee members **OR**",
       "Mail at registrar.office@srmu.ac.in / registrar@srmu.ac.in / vc@srmu.ac.in **OR**",
-      "Register at https://srmu.ac.in/campus-life/grievance-redressal-system for Online Grievance Redressal"
+      "Register at https://srmu.ac.in/campus-life/grievance-redressal-system for Online Grievance Redressal",
     ],
 
-    imagePath: minority, 
+    imagePath: minority,
 
-    readMoreLink: "/about/committees-and-cells/minority-cell",
-  }, 
+    readMoreLink: "/about-us/committees-and-cells/minority-cell",
+  },
   {
-      id: 11,
+    id: 11,
     title: "Unnat Bharat Cell",
     breadcrumb: "Unnat Bharat Cell",
 
     routeKey: "unnat-bharat-cell",
 
-    description:
-      "The Unnat Bharat Cell enables the University to collaborate with rural communities to identify development challenges and implement sustainable solutions.",
+    description: "The Unnat Bharat Cell enables the University to collaborate with rural communities to identify development challenges and implement sustainable solutions.",
 
     longDescription: `
 Unnat Bharat Abhiyan is inspired by the vision of transformational change in rural development by leveraging knowledge institutions. 
@@ -421,27 +396,26 @@ The mission of the Unnat Bharat Cell is to enable universities to work with rura
       "Dr. Prashant Srivastava, ILS – Member",
       "Dr. Amar Pal Singh, INSH – Member",
       "Dr. Ashish Kumar Srivastava, IER – Member",
-      "Dr. Tabish Qidwai, IBST – Member"
+      "Dr. Tabish Qidwai, IBST – Member",
     ],
 
     contact: [
       "Chairman/ Chairperson, Committee members **OR**",
       "Mail at registrar.office@srmu.ac.in / registrar@srmu.ac.in / vc@srmu.ac.in **OR**",
-      "Register at https://srmu.ac.in/campus-life/grievance-redressal-system for Online Grievance Redressal"
+      "Register at https://srmu.ac.in/campus-life/grievance-redressal-system for Online Grievance Redressal",
     ],
 
-    imagePath: unnat, 
-    readMoreLink: "/about/committees-and-cells/unnat-bharat-cell",
-  }, 
+    imagePath: unnat,
+    readMoreLink: "/about-us/committees-and-cells/unnat-bharat-cell",
+  },
   {
-     id: 12,
+    id: 12,
     title: "Student Grievance and Redressal Committee",
     breadcrumb: "Student Grievance and Redressal Committee",
 
     routeKey: "student-grievance-redressal-committee",
 
-    description:
-      "The Student Grievance and Redressal Committee addresses student complaints and fosters accountability to maintain a peaceful learning environment.",
+    description: "The Student Grievance and Redressal Committee addresses student complaints and fosters accountability to maintain a peaceful learning environment.",
 
     longDescription: `
 The Student Grievance and Redressal Committee investigates and evaluates complaints submitted by students. 
@@ -455,17 +429,17 @@ The committee has the authority to investigate complaints of harassment and othe
       "Dr. R. S. Bajpai, Dean, FoEE – Member",
       "Dr. Ritu Chandra, Principal, IER – Member",
       "Mr. Abhay Singh, Dy. Registrar, Academics – Member",
-      "Mr. Abhishek Kumar Singh, B.A. LL.B. (H) - Convenor"
+      "Mr. Abhishek Kumar Singh, B.A. LL.B. (H) - Convenor",
     ],
 
     contact: [
       "Chairman/ Chairperson, Committee members **OR**",
       "Mail at registrar.office@srmu.ac.in / registrar@srmu.ac.in / vc@srmu.ac.in **OR**",
-      "Register at https://srmu.ac.in/campus-life/grievance-redressal-system for Online Grievance Redressal"
+      "Register at https://srmu.ac.in/campus-life/grievance-redressal-system for Online Grievance Redressal",
     ],
 
-    imagePath: grievance, 
+    imagePath: grievance,
 
-    readMoreLink: "/about/committees-and-cells/student-grievance-redressal-committee",
-  }
+    readMoreLink: "/about-us/committees-and-cells/student-grievance-redressal-committee",
+  },
 ];

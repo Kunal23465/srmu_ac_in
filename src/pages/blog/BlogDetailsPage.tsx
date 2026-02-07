@@ -43,7 +43,7 @@ const BlogDetailsPage: React.FC = () => {
 
             {/* Image */}
             <div className="mb-8">
-              <img src={data.imagePath} alt={data.title} className="w-full h-full object-cover  shadow-lg" />
+              <img src={data.imagePath} alt={data.title} className="w-full h-full max-h-[60vh] object-cover  shadow-lg" />
             </div>
 
             <div className="mt-8 text-[15px] prose prose-lg text-justify [&_li]:mb-2 [&_p]:mb-3 [&_h4]:text-[#212529] [&_h4]:font-normal!  [&_h4]:text-[22.5px]  [&_h4]:mb-3 [&_ul]:mb-8 [&_li]:ml-6 [&_a]:text-[#ffb703]">

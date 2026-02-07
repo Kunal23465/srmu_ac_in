@@ -87,7 +87,7 @@ import RtiPage from "../pages/rti/RtiPage";
 import TransportationPage from "../pages/campus-life/facilities/transportation/TransportationPage";
 import NewsLetterPage from "../pages/Home/NewsLetterPage";
 import HowToApplyPage from "../pages/admissions/how-to-apply/HowToApplyPage";
-import RootPrograms from "../pages/programs/RootPrograms";
+// import RootPrograms from "../pages/programs/RootPrograms";
 // import AfterClass10thInnerPage from "../pages/after-class-10th/AfterClass10thInnerPage";
 import ProgramDetailsPage from "../pages/programs/details-page/ProgramDetailsPage";
 import PrivacyPolicyPage from "../pages/privacy-policy/PrivacyPolicyPage";
@@ -142,7 +142,7 @@ export const routes = [
       },
       // AfterPostGraduationPage
       {
-        path: "/about",
+        path: "/about-us",
         element: <AboutPage />,
 
         children: [
@@ -286,69 +286,39 @@ export const routes = [
         ],
       },
 
+      // {
+      //   path: "/program",
+      //   element: <RootPrograms />,
+      //   children: [
+      //     {
+      //       path: ":programType/",
+      //       element: <ProgramFinderPage />,
+      //     },
+      //     {
+      //       path: ":programType/:item",
+      //       element: <ProgramFinderPage />,
+      //     },
+      //     {
+      //       path: "details/:programName",
+      //       element: <ProgramDetailsPage />,
+      //     },
+
+      //   ],
+      // },
+
       {
-        path: "/program",
-        element: <RootPrograms />,
-        children: [
-          {
-            path: "program-finder",
-            element: <ProgramFinderPage />,
-          },
-          // {
-          //   path: ":programType",
-          //   element: <ProgramFinderPage />,
-          // },
-          // {
-          //   path: ":programType/:item",
-          //   element: <ProgramFinderPage />,
-          // },
-          {
-            path: ":programName",
-            element: <ProgramDetailsPage />,
-          },
-          // {
-          //   path: "after-polytechnic",
-          //   element: <AfterPolytechnicPage />,
-          // },
-          // {
-          //   path: "after-class-12th",
-          //   element: <AfterClass12thPage />,
-          // },
-          // {
-          //   path: "industry-honors",
-          //   element: <IndustryHonorsPage />,
-          //   children: [
-          //     {
-          //       path: ":pathname",
-          //       element: <BtechInCSEAIAndML />,
-          //     },
-          //   ],
-          // },
-          // {
-          //   path: "after-graduation",
-          //   element: <AfterGraduationPage />,
-          // },
-          // {
-          //   path: "after-post-graduation",
-          //   element: <AfterPostGraduationPage />,
-          // },
-
-          // {
-          //   path: `b-tech-cse-artificial-intelligence-machine-learning:pathName`,
-          //   element: <BtechInCSEAIAndML />,
-
-          // },
-          // {
-          //   path: "*",
-          //   element: <BtechInCSEAIAndML />,
-
-          // },
-        ],
-      },
-      {
-        path: ":programType/:item",
+        path: "/:programType",
         element: <ProgramFinderPage />,
       },
+      {
+        path: "/:programType/:item",
+        element: <ProgramFinderPage />,
+      },
+      {
+        path: "/program/:programName",
+        element: <ProgramDetailsPage />,
+      },
+
       {
         path: "/campus-life",
         element: <CampusLifePage />,

@@ -107,7 +107,7 @@ const ProgramsSection: FC = () => {
               RIGHT CONTENT
              ======================= */}
           <div className="w-full md:ml-6">
-            <ul className="grid gap-6 [grid-template-columns:repeat(auto-fit,minmax(170px,170px))] list-none">
+            <ul className="grid gap-6 grid-cols-2 md:[grid-template-columns:repeat(auto-fit,minmax(170px,170px))] list-none">
 
               {
                 loading ? <>

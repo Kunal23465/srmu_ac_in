@@ -41,7 +41,7 @@ export default function DynamicBreadcrumbs() {
     }
     return (
         <section
-            className={`banner-section ${location.pathname ==="/online-admission" && "big-banner"} flex items-end pb-[45px]`}
+            className={`banner-section ${location.pathname === "/online-admission" && "big-banner"} flex items-end pb-[45px]`}
             style={{
                 backgroundImage: backgroundImg ? `url(${backgroundImg})` : undefined,
                 backgroundSize: "cover",
@@ -52,20 +52,23 @@ export default function DynamicBreadcrumbs() {
                 <div className={Classes["page-title-content"]}>
                     <nav aria-label="breadcrumb ml-4">
                         <ol className="breadcrumb m-0 flex flex-wrap gap-2">
-                            {crumbs.map((crumb, index) => (
-                                <li
-                                    key={index}
-                                    className={`${Classes["breadcrumb-item"]} max-sm:text-[12px] uppercase `}
-                                >
-                                    {index === crumbs.length - 1 ? (
-                                        <span className={Classes["active_breadcrumbs"]}>
-                                            {crumb}
-                                        </span>
-                                    ) : (
-                                        <Fragment>{crumb}</Fragment>
-                                    )}
-                                </li>
-                            ))}
+                            {crumbs.map((crumb, index) => {
+                                console.log("crumbs", crumb)
+                                return (
+                                    <li
+                                        key={index}
+                                        className={`${Classes["breadcrumb-item"]} max-sm:text-[12px] uppercase `}
+                                    >
+                                        {index === crumbs.length - 1 ? (
+                                            <span className={Classes["active_breadcrumbs"]}>
+                                                {crumb}
+                                            </span>
+                                        ) : (
+                                            <Fragment>{crumb}</Fragment>
+                                        )}
+                                    </li>
+                                )
+                            })}
                         </ol>
                     </nav>
                 </div>

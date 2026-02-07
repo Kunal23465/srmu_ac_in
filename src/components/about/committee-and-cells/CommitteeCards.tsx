@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export interface CommitteeCardType {
   id: number;
@@ -32,8 +33,8 @@ const CommitteeCard: React.FC<CommitteeCardProps> = ({
         </p>
       </div>
       <div className="mt-4 pt-4  transition-colors duration-300 group-hover:border-gray-300">
-        <a
-          href={readMoreLink}
+        <Link
+          to={readMoreLink}
           className="text-lg font-medium text-[rgb(15,74,133)] hover:text-blue-300 transition-colors duration-200 flex items-center group-hover:text-blue-200"
         >
           Read More
@@ -51,7 +52,7 @@ const CommitteeCard: React.FC<CommitteeCardProps> = ({
               d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
             />
           </svg>
-        </a>
+        </Link>
       </div>
     </div>
   );

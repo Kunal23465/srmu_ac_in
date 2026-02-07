@@ -128,7 +128,7 @@ const Header = () => {
                                         <div key={type.programFlagId}>
                                           {/* BLUE HEADING */}
                                           <h3 className="font-medium text-[17px] p-3 rounded-lg inline-block hover:bg-[#ffb703] text-[#0f4a85] hover:text-black">
-                                            <Link onClick={() => setShowMegaMenu(false)} to={`/program/${programFlagSlug}`} state={{ programTypeId: type.programFlagId }}>
+                                            <Link onClick={() => setShowMegaMenu(false)} to={`/${programFlagSlug}`} state={{ programTypeId: type.programFlagId }}>
                                               {type.programFlagName}
                                             </Link>
                                           </h3>

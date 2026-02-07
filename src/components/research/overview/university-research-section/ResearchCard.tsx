@@ -1,6 +1,6 @@
 import React from "react";
 import { ResearchMember } from "../../../../data/research/overview/research-overview-data";
-
+import avtar from "../../../../assets/images/user.png"
 interface Props {
   member: ResearchMember;
 }
@@ -9,7 +9,7 @@ const ResearchCard: React.FC<Props> = ({ member }) => {
   return (
     <div className="flex flex-col justify-between gap-3 border border-white/70 text-center rounded-xl p-5 shadow-md hover:text-black hover:bg-white hover:shadow-lg transition-all">
       <div>
-        <img src={member.image} alt={member.name} className="w-20 h-20 mx-auto rounded-full mb-3 object-cover" />
+        <img src={member.image || avtar} alt={member.name} className="w-20 h-20 mx-auto rounded-full mb-3 object-cover" />
         <h3 className=" lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px] text-base">{member.name}</h3>
         <p className="lg:text-[13px] md:text-[12.195px] sm:text-[11.382px] text-[11.382px] mt-1">{member.designation}</p>
       </div>
