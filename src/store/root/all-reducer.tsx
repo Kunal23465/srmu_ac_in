@@ -13,6 +13,7 @@ import { programHeighLightSliceReducer } from "../program-finder/program-heighli
 import { getInsituteInfoSliceReducer } from "../insitute-info/getInsitiuteInfo-slice";
 import { getAllDepartmentByIdSliceReducer } from "../department/get-all-department-by-id/getAllDepartmentById-slice";
 import { getDepartmentByIdSliceReducer } from "../department/department-details/getDepartmentDetailsById-slice";
+import { careerFormReducer } from "../career-form/careerFormSlice";
 const allReducer = {
   ui: uiReducer,
   getProgramFinder: programFinderReducer,
@@ -27,7 +28,8 @@ const allReducer = {
   getAllBlogs: blogsSliceReducer,
   getDepartmentHeighlightById: programHeighLightSliceReducer,
   getInsituteInfo: getInsituteInfoSliceReducer,
-  getAllDepartmentByInsituteId:getAllDepartmentByIdSliceReducer,
-  getDepartmentById: getDepartmentByIdSliceReducer
+  getAllDepartmentByInsituteId: getAllDepartmentByIdSliceReducer,
+  getDepartmentById: getDepartmentByIdSliceReducer,
+  careerForm: careerFormReducer,
 };
 export default allReducer;
