@@ -94,7 +94,7 @@ const CustomTabs = ({
   return (
     <div className="custom-tabs-container">
       <div
-        className={`tabs-header gap-x-2 xl:gap-x-4 overflow-x-auto overflow-y-hidden
+        className={`tabs-header gap-x-2 xl:gap-x-4 overflow-x-auto border-2 border-red-500 overflow-y-hidden
           ${variant === "boxed" ? "boxed-header" : ""}
           ${variant === "pill" ? "pill-header" : ""}
           ${variant === "segment" ? "segment-header" : ""}
@@ -114,8 +114,9 @@ const CustomTabs = ({
             <div
               key={tab.key}
               ref={(el) => (tabRefs.current[index] = el)}
-              className={`tab-item text-sm xl:text-base block ${variant === "underline"} relative ${isActive ? "after:content-['']  after:absolute  after:w-full after:h-1   after:bg-[var(--underlineColor)] after:left-0 after:-bottom-[11px]" : ""
-                }`}
+              className={`tab-item text-sm xl:text-base block ${variant === "underline"} relative ${
+                isActive ? "after:content-['']  after:absolute  after:w-full after:h-1   after:bg-[var(--underlineColor)] after:left-0 after:-bottom-[11px]" : ""
+              }`}
               onClick={() => handleClick(tab.key)}
               style={{
                 // @ts-ignore
@@ -214,6 +215,21 @@ const CustomTabs = ({
         .tabs-content {
           padding-top: 20px;
         }
+     
+
+      @media screen and (max-width: 768px) {
+  .pill-header {
+  padding:auto 20px !important;
+    border-radius: 20px !important;
+  }
+      .pill-header .tab-item {
+          border-radius: 20px;
+          padding: 5px 10px;
+        }
+}
+
+
+
       `}
       </style>
     </div>
