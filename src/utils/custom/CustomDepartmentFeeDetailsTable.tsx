@@ -47,7 +47,7 @@ const CustomDepartmentFeeDetailsTable: React.FC<Props> = ({ data }) => {
                                     {values.map((val, colIndex) => (
                                         <div
                                             key={colIndex}
-                                            className={`text-center text-[#212523] fw500 lg:text-[19px] md:text-[17.82px] sm:text-[16.632px] text-[16.632px] font-normal flex items-center justify-start px-8 relative ${colIndex !== 0 && "whitespace-nowrap"} `}
+                                            className={`text-left text-[#212523] fw500 lg:text-[19px] md:text-[17.82px] sm:text-[16.632px] text-[16.632px] font-normal flex items-center justify-start px-8 relative ${colIndex !== 0 && "whitespace-nowrap"} `}
                                         >
                                             {val === "Click" ? (
                                                 <span

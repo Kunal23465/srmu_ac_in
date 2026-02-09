@@ -94,7 +94,7 @@ const CustomTabs = ({
   return (
     <div className="custom-tabs-container">
       <div
-        className={`tabs-header gap-x-2 xl:gap-x-4 overflow-x-auto border-2 border-red-500 overflow-y-hidden
+        className={`tabs-header gap-x-2 xl:gap-x-4 overflow-x-auto overflow-y-hidden
           ${variant === "boxed" ? "boxed-header" : ""}
           ${variant === "pill" ? "pill-header" : ""}
           ${variant === "segment" ? "segment-header" : ""}
