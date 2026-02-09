@@ -97,6 +97,7 @@ import MandatoryDisclouserPage from "../pages/mandatory-disclouser/MandatoryDisc
 import PhdOfflineApplicationPage from "../pages/Research/phd-offline-application/PhdOfflineApplicationPage";
 import AddmissionProgramFinderPage from "../pages/admissions/program-finder/AddmissionProgramFinderPage";
 import ProgramFinderPage from "../pages/programs/ProgramFinderPage";
+import ProgramTypePage from "../pages/programs/ProgramTypePage/ProgramTypePage";
 // interface IMatches {
 //   pathname: string;
 //   params: Params<string>;
@@ -308,7 +309,8 @@ export const routes = [
 
       {
         path: "/:programType",
-        element: <ProgramFinderPage />,
+        // element: <ProgramFinderPage />,
+        element: <ProgramTypePage />,
       },
       {
         path: "/:programType/:item",

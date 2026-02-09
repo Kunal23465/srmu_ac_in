@@ -104,7 +104,7 @@ const Header = () => {
                             </ul>
                           </div>
                         )}
-
+                        {isMega && showMegaMenu && !data?.subItem && <span className="hidden group-hover:block manage-top-arrow big"></span>}
                         {isMega && showMegaMenu && (
                           <div
                             className="
@@ -115,7 +115,7 @@ const Header = () => {
                               border-b-4 border-b-blue-500
                               w-[95vw] px-10 py-6 gap-9 z-9999 max-h-[75vh] overflow-y-auto"
                           >
-                            <span className="hidden group-hover:block manage-top-arrow big"></span>
+                            {/* <span className="hidden group-hover:block manage-top-arrow big"></span> */}
                             <div className="grid grid-cols-4 gap-6 w-full">
                               {columnGroups.map((group, colIndex) => (
                                 <div key={colIndex} className="space-y-6">

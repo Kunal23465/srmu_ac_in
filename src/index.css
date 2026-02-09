@@ -497,7 +497,7 @@ background: radial-gradient(circle, rgba(36,64,143,0.9444152661064426) 0%, rgba(
   width: 30px;
   height: 34px;
   position: absolute;
-  top: -35px;
+  top: 19px;
   right: 44%;
   clip-path: polygon(50% 53%, 6% 100%, 94% 100%);
   z-index: 1;
