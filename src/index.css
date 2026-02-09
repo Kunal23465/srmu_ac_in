@@ -541,7 +541,15 @@ background: radial-gradient(circle, rgba(36,64,143,0.9444152661064426) 0%, rgba(
   }
 }
 
+@media screen and (max-width: 592px) {
+  .grid-iqac-card.manage {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
 @media screen and (min-width: 592px) {
+
 
   /* ======================================== */
   .parent_grid_gallary .children img {

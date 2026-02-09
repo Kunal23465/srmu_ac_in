@@ -27,7 +27,7 @@ const Iqac: React.FC = () => {
         <CustomOverviewSection data={iqacOverviewData} />
 
         {/* IQAC Info Cards */}
-        <div className="grid-iqac-card  gap-3 manage lg:gap-2 xl:gap-1 main mx-10 sm:mx-5 lg:mx-0 mb-5 mt-12">
+        <div className="grid-iqac-card  gap-3 manage lg:gap-2 xl:gap-1 main sm:mx-5 lg:mx-0 mb-5 mt-12">
           {iqacCards?.map((card, index) => {
             const length = iqacCards.length;
             return (
