@@ -7,8 +7,6 @@ const ProgramFinderPage: React.FC = () => {
 
 
   return <>
-
-
     <ProgramFinderHome />
   </>;
 };

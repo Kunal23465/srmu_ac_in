@@ -29,7 +29,7 @@ const ProgramFinderHome: React.FC = () => {
 
   const [searchTerm, setSearchTerm] = useState("");
   const [debouncedSearch, setDebouncedSearch] = useState("");
- 
+
 
   const isInitialized = useRef(false);
 
@@ -112,6 +112,7 @@ const ProgramFinderHome: React.FC = () => {
     selectedDisciplineObj?.description ||
     selectedProgramFlagObj?.description ||
     "";
+
 
 
   return (

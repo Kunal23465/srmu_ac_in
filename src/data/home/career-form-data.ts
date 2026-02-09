@@ -189,7 +189,7 @@ export const careerApplyFormData: EnquiryField[] = [
     labelname: "Expected CTC (Annual)",
     name: "ctc",
     placeholder: "Enter CTC",
-    type: "text",
+    type: "number",
   },
 ];
 
@@ -212,7 +212,19 @@ export const initialCareerFormValues = {
   ctc: "",
 };
 
+const isAtLeast18 = (date: Date) => {
+  const today = new Date();
+  const birthDate = new Date(date);
 
+  let age = today.getFullYear() - birthDate.getFullYear();
+  const monthDiff = today.getMonth() - birthDate.getMonth();
+
+  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+    age--;
+  }
+
+  return age >= 18;
+};
 export const careerFormValidationSchema = Yup.object().shape({
   category: Yup.string().required("Job Category is required"),
   firstName: Yup.string().required("First Name is required"),
@@ -221,6 +233,20 @@ export const careerFormValidationSchema = Yup.object().shape({
   contactNumber: Yup.string()
     .matches(/^[0-9]{10}$/, "Contact No must be 10 digits")
     .required("Contact is required"),
+  dateOfBirth: Yup.date()
+    .nullable()
+    .test("age", "You must be at least 18 years old", (value) => {
+      if (!value) return true; // DOB empty → valid
+      return isAtLeast18(value); // DOB filled → 18+ check
+    }),
+
+  ctc: Yup.string()
+    .nullable()
+    .test("ctc-length", "CTC must be between 3 to 7 digits", (value) => {
+      if (!value) return true; // empty allowed
+      return /^[0-9]{3,7}$/.test(value);
+    }),
+
   // dateOfBirth: Yup.string().required("DOB is required"),
   // experience: Yup.string().required("Experience is required"),
   // gender: Yup.string().required("Gender is required"),
