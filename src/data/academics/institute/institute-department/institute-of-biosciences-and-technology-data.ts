@@ -124,6 +124,7 @@ export const InstituteofBiosciencesandTechnologyinstituteCourseCardData: CustomI
   //     eventsData: alliedHealthScienceDepartmentEventsData,
   //   },
   // },
+  
   {
     imageUrl: courseImg2,
     departmentName: "Faculty of Biosciences",
