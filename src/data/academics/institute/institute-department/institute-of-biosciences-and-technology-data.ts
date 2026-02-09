@@ -2,14 +2,37 @@ import { customeOverViewType } from "../../../../types/home-data-type";
 import vision from "../../../../assets/images/academics/institutes/vision-card/Our-vision-13102304415245.png";
 import mission from "../../../../assets/images/academics/institutes/vision-card/Our-Mission-13102304092698.png";
 import { CustomInstituteCourseCardProps } from "../../../../utils/custom/CustomInstituteCoursesCard";
-import courseImg1 from "../../../../assets/images/academics/departments/group-scientists-wearing-lab-coat-working-laborato-28012512230911.jpg";
+// import courseImg1 from "../../../../assets/images/academics/departments/group-scientists-wearing-lab-coat-working-laborato-28012512230911.jpg";
 import courseImg2 from "../../../../assets/images/academics/departments/bioinformatics-07022411264512.jpg";
 import courseImg3 from "../../../../assets/images/academics/departments/biotech-07022411273155.jpg";
 import { InstituteProfile } from "../../../../types/profile-data-type";
-import TabishImg from "../../../../assets/images/academics/departments/dr.-tabish-kidwai-27022401392651.png"
-import { alliedHealthScienceDepartmentEventsData, alliedHealthScienceHighlightsData, counterDataFoFacultyOfAlliedHealthSciences, counterDataForPlacedStudentsOFAlliedHealthSciences, facultyDetailsOfAhsDepartment, facultyofAHSOverviewData, facultyOfAhsProfileData, facultyOfAlliedHealthSciencesVMData, underGraduateFeeDataOfAHS } from "../../faculty-of-allied-health-sciences/faculty-of-allied-health-sciences-data";
-import { bioscienceDepartmentEventsData, bioscienceHighlightsData, counterDataFoFacultyOfBiosciencess, counterDataForPlacedStudentsOFBioscience, facultyDetailsOfBioScienceDepartment, facultyofBioscienceOverviewData, facultyOfBioscienceProfileData, facultyOfBiosciencesVMData, postGraduateFeeDataOfBioscience, underGraduateFeeDataOfBioscience } from "../../faculty-of-biosciences/faculty-of-biosciences-data";
-import { biotechnologyDepartmentEventsData, biotechnologyHighlightsData, biotechnologyIndustryIntegratedFeeTable, biotechnologyIndustryPostgraduateFeeTable, biotechnologyIndustryUndergraduateFeeTable, counterDataFoFacultyOfBiotechnology, counterDataForPlacedStudentsOFBiotechnology, facultyDetailsOfBiotechnologyDepartment, facultyOfBiostechnologyProfileData, facultyOfBiostechnologyVMData, facultyofBiotechnologyeOverviewData } from "../../faculty-of-biotechnology/faculty-of-biotechnology-data";
+import TabishImg from "../../../../assets/images/academics/departments/dr.-tabish-kidwai-27022401392651.png";
+// import { alliedHealthScienceDepartmentEventsData, alliedHealthScienceHighlightsData, counterDataFoFacultyOfAlliedHealthSciences, counterDataForPlacedStudentsOFAlliedHealthSciences, facultyDetailsOfAhsDepartment, facultyofAHSOverviewData, facultyOfAhsProfileData, facultyOfAlliedHealthSciencesVMData, underGraduateFeeDataOfAHS } from "../../faculty-of-allied-health-sciences/faculty-of-allied-health-sciences-data";
+import {
+  bioscienceDepartmentEventsData,
+  bioscienceHighlightsData,
+  counterDataFoFacultyOfBiosciencess,
+  counterDataForPlacedStudentsOFBioscience,
+  facultyDetailsOfBioScienceDepartment,
+  facultyofBioscienceOverviewData,
+  facultyOfBioscienceProfileData,
+  facultyOfBiosciencesVMData,
+  postGraduateFeeDataOfBioscience,
+  underGraduateFeeDataOfBioscience,
+} from "../../faculty-of-biosciences/faculty-of-biosciences-data";
+import {
+  biotechnologyDepartmentEventsData,
+  biotechnologyHighlightsData,
+  biotechnologyIndustryIntegratedFeeTable,
+  biotechnologyIndustryPostgraduateFeeTable,
+  biotechnologyIndustryUndergraduateFeeTable,
+  counterDataFoFacultyOfBiotechnology,
+  counterDataForPlacedStudentsOFBiotechnology,
+  facultyDetailsOfBiotechnologyDepartment,
+  facultyOfBiostechnologyProfileData,
+  facultyOfBiostechnologyVMData,
+  facultyofBiotechnologyeOverviewData,
+} from "../../faculty-of-biotechnology/faculty-of-biotechnology-data";
 export const InstituteofBiosciencesandTechnologyOverviewData: customeOverViewType = {
   heading: "Institute of Biosciences and Technology",
   content:
@@ -50,8 +73,6 @@ export const InstituteofBiosciencesandTechnologyvisionMissionData = {
   },
 };
 
-
-
 export const InstituteofBiosciencesandTechnologyinstituteProfiles: InstituteProfile[] = [
   {
     id: 1,
@@ -60,8 +81,7 @@ export const InstituteofBiosciencesandTechnologyinstituteProfiles: InstituteProf
     position: "Offg. Director, IBST, SRMU, Lucknow–Deva Road",
     image: TabishImg,
 
-    summary:
-      "",
+    summary: "",
 
     detailsHeading: "",
     useBullets: false,
@@ -80,34 +100,30 @@ export const InstituteofBiosciencesandTechnologyinstituteProfiles: InstituteProf
     He has 13 years of teaching and research experience in genomics and immunology and infectious diseases. He has published nearly 52 book chapters, research articles, review articles in peer-reviewed international journals and authored/edited 5 books as a single author/editor. He has I 10 index 25 and h index 20 and more than 1000 citations. Currently, He is supervising 6 Ph.D. students and 1 Ph.D. is awarded under his supervision.
 
 He is a member of many national and international scientific societies and organizations. His research interests are focused on the functional genomics, immunology, and infectious disease research including malaria and COVID-19. Currently, he is working and writing articles/book chapters in collaboration with University of South Florida, USA, Biological Research Centre, Szeged, Hungary, The Arctic University of Norway, AIIMS Hyderabad, AIIMS Bhopal, IIT-BHU, IET Lucknow and University of Delhi.
-`
+`,
   },
-
-
 ];
 
-
-
 export const InstituteofBiosciencesandTechnologyinstituteCourseCardData: CustomInstituteCourseCardProps[] = [
-  {
-    imageUrl: courseImg1,
-    departmentName: "Faculty of Allied Health Sciences",
-    path: "institute-of-biosciences-and-technology/faculty-of-allied-health-sciences",
-    departmentDetails: {
-      overviewData: facultyofAHSOverviewData,
-      counterData: counterDataFoFacultyOfAlliedHealthSciences,
-      mvData: facultyOfAlliedHealthSciencesVMData,
-      departmentHeadData: facultyOfAhsProfileData,
-      feeTableData: {
-        tab1: { label: "Undergraduate", data: underGraduateFeeDataOfAHS },
-      },
-      facultyData: facultyDetailsOfAhsDepartment,
-      departmentHighlightsData: alliedHealthScienceHighlightsData,
-      counterData2: counterDataForPlacedStudentsOFAlliedHealthSciences,
-      placedStudentsData: null,
-      eventsData: alliedHealthScienceDepartmentEventsData,
-    },
-  },
+  // {
+  //   imageUrl: courseImg1,
+  //   departmentName: "Faculty of Allied Health Sciences",
+  //   path: "institute-of-biosciences-and-technology/faculty-of-allied-health-sciences",
+  //   departmentDetails: {
+  //     overviewData: facultyofAHSOverviewData,
+  //     counterData: counterDataFoFacultyOfAlliedHealthSciences,
+  //     mvData: facultyOfAlliedHealthSciencesVMData,
+  //     departmentHeadData: facultyOfAhsProfileData,
+  //     feeTableData: {
+  //       tab1: { label: "Undergraduate", data: underGraduateFeeDataOfAHS },
+  //     },
+  //     facultyData: facultyDetailsOfAhsDepartment,
+  //     departmentHighlightsData: alliedHealthScienceHighlightsData,
+  //     counterData2: counterDataForPlacedStudentsOFAlliedHealthSciences,
+  //     placedStudentsData: null,
+  //     eventsData: alliedHealthScienceDepartmentEventsData,
+  //   },
+  // },
   {
     imageUrl: courseImg2,
     departmentName: "Faculty of Biosciences",
