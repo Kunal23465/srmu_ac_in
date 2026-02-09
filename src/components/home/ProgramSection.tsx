@@ -13,6 +13,7 @@ import { LiaLongArrowAltRightSolid } from "react-icons/lia";
 //   "After Graduation": "Postgraduate",
 //   "After Postgraduation": "Integrated",
 // };
+import { GoArrowUpRight } from "react-icons/go";
 const ProgramsSection: FC = () => {
   const dispatch = useDispatch<AppDispatch>();
   const [activeTab, setActiveTab] = useState<number | null>(null);
@@ -90,11 +91,12 @@ const ProgramsSection: FC = () => {
                           setActiveTab(tab.programTypeId);
                           setSelectedProgramType(tab.programTypeId);
                         }}
-                        className={`block w-full text-left uppercase text-nowrap text-white rounded-md py-5 md:pl-6 md:pr-16 mb-1 px-5 text-base md:text-[1.25rem] cursor-pointer transition-all
+                        className={` w-full text-left uppercase flex gap-x-2 item-center text-nowrap text-white rounded-md py-5 md:pl-6 md:pr-16 mb-1 px-5 text-base md:text-[1.25rem] cursor-pointer transition-all
                     ${activeTab === tab.programTypeId ? "programsection shadow-lg text-[#0d6efd]" : "bg-transparent text-white"}`}
                       >
                         {/* {PROGRAM_TYPE_LABEL_MAP[tab.name] ?? tab.name} */}
                         {tab.name}
+                        <span className=" block md:hidden text-white"><GoArrowUpRight size={24} /></span>
                       </button>
                     </>
                   )}

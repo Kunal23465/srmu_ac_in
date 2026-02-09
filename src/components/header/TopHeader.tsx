@@ -1,12 +1,13 @@
 import Classes from "../../utils/styles/Global.module.css";
 import { GrSearch } from "react-icons/gr";
 import { IoCallSharp } from "react-icons/io5";
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { BsArrowUpRightCircle } from "react-icons/bs";
 import user from "../../assets/images/home/user-icon.png";
 import search from "../../assets/images/home/searching-icon.png";
+import { FaCaretDown, FaCaretUp } from "react-icons/fa";
 const TopHeader: React.FC = () => {
+  const [isDropdown, setIsDropdown] = useState(false)
   return (
     <div className={`${Classes["top_header"]}  text-white bg-white lg:bg-[#0f4a85]  text-[0.89rem]`}>
       <div className={`${Classes["container"]}`}>
@@ -69,34 +70,29 @@ const TopHeader: React.FC = () => {
             <FaCaretDown />
           </div> */}
           <div className="left-part flex items-center">
-            <div>
-              <ul className="flex items-center text-[11px] sm:text-[13px] flex-row gap-1 text-black">
-                <Link to="/notice">NOTICE |</Link>
-                <a target="_blank" href="https://erp.aktu.ac.in/WebPages/OneView/OneView.aspx">
-                  RESULTS |
-                </a>
-                <Link to="/career">CAREER |</Link>
-                {/* <Link to="/uptac-2025" className="uppercase blink_uptac text-black font-semibold px-2 pt-1.5 pb-1 rounded-full flex items-center justify-center">
-                  UPTAC-2025
-                </Link> */}
-              </ul>
+            <div className="relative">
+              <button onClick={() => setIsDropdown(prev => !prev)} className="text-black text-lg font-semibold flex items-center gap-x-1 cursor-pointer">Login  {isDropdown ? <FaCaretUp /> : <FaCaretDown />} </button>
+              {isDropdown && <div className="bg-white absolute -bottom-[70px] border border-gray-100 z-9999 p-3 text-balck! w-[200px]">
+                <Link target="_blank" to="https://eyojan.srmu.ac.in/" className="text-black block">Studen Login</Link>
+                <Link target="_blank" to="https://eyojan.srmu.ac.in/" className="text-black block mt-2">Staff Login</Link>
+              </div>}
             </div>
           </div>
           <div className="right-part flex items-center">
             <div className="flex gap-1">
-              <div className="py-3 border-l border-black px-2 hidden">
-                <GrSearch className="text-[1.5rem] text-black" />
+              <div className="py-3 border-l border-[#ccc] px-2 ">
+                <GrSearch size={24} className="text-[1.5rem] text-[#666]" />
               </div>
-              <a href="tel:18001035298" className="py-3  border-l border-black pl-2 pr-1 ">
-                <IoCallSharp className="text-[1rem] text-[#FFB703]" />
+              <a href="tel:18001035298" className="py-3 flex items-center border-l border-[#ccc] pl-2 pr-1 ">
+                <IoCallSharp size={24} className="text-[1rem] text-[#FFB703]" />
               </a>
 
               <Link
-                to="enquiry-form"
-                className="bg-[#FFB703] px-1 group relative text-white lg:text-black font-semibold border-2 border-[#ffb703] text-[12px]  sm:text-sm flex gapx-x-1 items-center"
+                target="_blank"
+                to="https://studentportal.srmu.ac.in/login"
+                className="bg-[#FFB703] px-2 font-medium uppercase border-2 border-[#ffb703]  py-3.5 flex gapx-x-1 items-center"
               >
-                <BsArrowUpRightCircle size={24} />
-                <span className="text-black absolute bottom-[-20px] left-[-50px] whitespace-nowrap hidden group-hover:block   ">Apply Now 2024</span>
+                Apply Now
               </Link>
             </div>
           </div>

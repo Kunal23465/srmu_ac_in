@@ -90,7 +90,7 @@ export const footerData = {
     {
       id: 1,
       title: "IQAC Developments",
-      path: "/about/iqac-overview",
+      path: "/about-us/iqac-overview",
     },
     {
       id: 2,

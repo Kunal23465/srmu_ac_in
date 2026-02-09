@@ -9,9 +9,12 @@ interface AlumniSliderProps {
   sliderRef: SliderRefType;
 }
 
+const MAX_DOTS = 10;
+
 const AlumniSlider: React.FC<AlumniSliderProps> = ({ sliderRef }) => {
-  const [windowWidth, setWindowWidth] = useState(typeof window !== "undefined" ? window.innerWidth : 0);
-  // @ts-ignore
+  const [windowWidth, setWindowWidth] = useState(
+    typeof window !== "undefined" ? window.innerWidth : 0
+  );
   const [activeSlide, setActiveSlide] = useState(0);
 
   useEffect(() => {
@@ -34,7 +37,7 @@ const AlumniSlider: React.FC<AlumniSliderProps> = ({ sliderRef }) => {
   const shouldShowArrows = () => windowWidth >= 375;
 
   const settings = {
-    dots: true, //
+    dots: true,
     infinite: alumniData.length > getSlidesToShow(),
     speed: 700,
     slidesToShow: getSlidesToShow(),
@@ -45,7 +48,27 @@ const AlumniSlider: React.FC<AlumniSliderProps> = ({ sliderRef }) => {
     swipeToSlide: true,
     focusOnSelect: true,
     touchThreshold: 10,
+
     beforeChange: (_: number, next: number) => setActiveSlide(next),
+
+    // 🔥 EXACT BEHAVIOR YOU ASKED FOR
+    appendDots: (dots: React.ReactNode[]) => {
+      const totalDots = dots.length;
+
+      if (totalDots <= MAX_DOTS) {
+        return <ul>{dots}</ul>;
+      }
+
+      let start = activeSlide - 1;
+
+      if (start < 0) start = 0;
+      if (start + MAX_DOTS > totalDots) {
+        start = totalDots - MAX_DOTS;
+      }
+
+      return <ul>{dots.slice(start, start + MAX_DOTS)}</ul>;
+    },
+
     responsive: [
       {
         breakpoint: 1024,
@@ -69,7 +92,11 @@ const AlumniSlider: React.FC<AlumniSliderProps> = ({ sliderRef }) => {
   return (
     <div className="w-full overflow-hidden">
       <div className="-mx-2 sm:-mx-4">
-        <Slider className="notable slider_placement_dots_law placement_dots_law_left pb-10" ref={sliderRef} {...settings}>
+        <Slider
+          className="notable slider_placement_dots_law placement_dots_law_left pb-10"
+          ref={sliderRef}
+          {...settings}
+        >
           {alumniData.map((item) => (
             <div key={item.id}>
               <div className="px-2 sm:px-4">
