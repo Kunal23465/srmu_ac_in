@@ -31,32 +31,32 @@ export const CustomInstituteCards: React.FC<CardProps> = ({ institute }) => {
 
         {/* *** ADJUSTED BUTTON CLASS *** - Used 'flex-shrink-0' to ensure the button doesn't shrink and force the text to wrap.
          */}
-        <button
-          className="px-5 py-2.5 sm:px-8  sm:py-3 rounded-xl border border-yellow-400 text-xs sm:text-sm font-medium
+
+        {/* @ts-ignore */}
+        {institute.departments === 1 ? (
+          <Link
+            className="px-5 py-2.5 sm:px-8  sm:py-3 rounded-xl border border-yellow-400 text-xs sm:text-sm font-medium
                                    cursor-pointer transition active:scale-95 whitespace-nowrap shrink-0
-                                   group-hover:bg-yellow-400 hover:bg-yellow-400 hover:border-yellow-400"
-        >
-          {/* @ts-ignore */}
-          {institute.departments === 1 ? (
-            <Link
-              className="flex items-center gap-1 sm:gap-2 justify-center"
-              to={`/academics/department/${institute.path}`}
-              state={institute.departmentsData}
-            >
-              <span className="lg:text-[13px] md:text-[12.195px] sm:text-[11.382px] text-[11.382px]">MORE INFO</span>
-              <FaArrowRight className="h-3 w-3 sm:h-4 sm:w-4" />
-            </Link>
-          ) : (
-            <Link
-              className="flex items-center gap-1 sm:gap-2 justify-center"
-              to={`/academics/${institute.path}`}
-              state={institute.departmentsData}
-            >
-              <span>MORE INFO</span>
-              <FaArrowRight className="h-3 w-3 sm:h-4 sm:w-4" />
-            </Link>
-          )}
-        </button>
+                                   group-hover:bg-yellow-400 hover:bg-yellow-400 hover:border-yellow-400 flex items-center gap-1 sm:gap-2 justify-center"
+            to={`/academics/department/${institute.path}`}
+            state={institute.departmentsData}
+          >
+            <span className="lg:text-[13px] md:text-[12.195px] sm:text-[11.382px] text-[11.382px]">MORE INFO</span>
+            <FaArrowRight className="h-3 w-3 sm:h-4 sm:w-4" />
+          </Link>
+        ) : (
+          <Link
+            className=" px-5 py-2.5 sm:px-8  sm:py-3 rounded-xl border border-yellow-400 text-xs sm:text-sm font-medium
+                                   cursor-pointer transition active:scale-95 whitespace-nowrap shrink-0
+                                   group-hover:bg-yellow-400 hover:bg-yellow-400 hover:border-yellow-400 flex items-center gap-1 sm:gap-2 justify-center"
+            to={`/academics/${institute.path}`}
+            state={institute.departmentsData}
+          >
+            <span>MORE INFO</span>
+            <FaArrowRight className="h-3 w-3 sm:h-4 sm:w-4" />
+          </Link>
+        )}
+
       </div>
     </div>
   );
