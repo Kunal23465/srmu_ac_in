@@ -34,6 +34,7 @@ const CustomDepartmentSlider = <T,>({
   renderCard,
   bgColor = "transparent",
   bgImage,
+  // @ts-ignore
   headingColor = "#000",
   descriptionColor = "#666",
   breakpoints,
