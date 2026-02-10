@@ -30,7 +30,7 @@ const SRMUSET: React.FC = () => {
         <div className="w-full lg:max-w-[860px]">
           <div className="py-8 px-4 border border-amber-400 rounded-3xl overflow-auto">
             <p className="text-lg sm:text-xl text-center pb-5 uppercase font-bold">Engineering</p>
-            <CustomScholarshipTable head={srmusetScholarshipEngineeringTableHeadData} data={srmusetScholarshipEngineeringTableData} showThirdColumn={true} />
+            <CustomScholarshipTable head={srmusetScholarshipEngineeringTableHeadData} data={srmusetScholarshipEngineeringTableData} showThirdColumn={false} />
           </div>
         </div>
       </div>
