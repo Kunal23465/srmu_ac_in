@@ -46,10 +46,11 @@ const TestimonialSlider = () => {
     if (windowWidth >= 1536) return 7; // 2xl
     if (windowWidth >= 1280) return 5; // xl
     if (windowWidth >= 1024) return 4; // lg
-    if (windowWidth >= 768) return 3; // md
-    if (windowWidth >= 640) return 2; // sm
-    return 1; // xs
+    if (windowWidth >= 768) return 3;  // md
+    if (windowWidth >= 640) return 2;  // sm
+    return 3; // ✅ mobile: show 3 images
   };
+
 
   // Function to determine if centerMode should be enabled
   const shouldCenterMode = () => {
@@ -60,6 +61,13 @@ const TestimonialSlider = () => {
   const shouldShowArrows = () => {
     return windowWidth >= 375; // Show arrows only on medium screens and above
   };
+
+  const isMobile = windowWidth < 640;
+
+  const displayIndex = isMobile
+    ? (activeIndex + 1) % hometestimonial.length
+    : activeIndex;
+
 
   const settings = {
     dots: true,
@@ -124,12 +132,13 @@ const TestimonialSlider = () => {
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 3,
           slidesToScroll: 1,
           centerMode: false,
           arrows: false,
         },
       },
+
     ],
   };
 
@@ -141,12 +150,19 @@ const TestimonialSlider = () => {
         {/* @ts-ignore */}
         <Slider {...settings}>
           {hometestimonial.map((item, index) => (
-            <div key={item.id} className="flex justify-center px-0.5">
+            <div key={item.id} className="flex justify-center px-0.5 md:px-2">
               <div
-                className={`rounded-full transition-all duration-300 overflow-hidden border-4 w-[168px] h-[168px] mx-auto ${
-                  activeIndex === index ? "border-[#3A6EFF] scale-100 shadow-lg" : "border-gray-300"
-                }`}
+                className={`rounded-full transition-all duration-300 overflow-hidden border-2 
+    w-[90px] h-[90px] 
+    sm:w-[120px] sm:h-[120px] 
+    md:w-[168px] md:h-[168px] 
+    mx-auto ${(isMobile ? index === displayIndex : index === activeIndex)
+
+                    ? "border-[#3A6EFF] scale-100 shadow-lg"
+                    : "border-gray-300"
+                  }`}
               >
+
                 <img src={item.img} alt={item.name} className="w-full h-full object-cover" />
               </div>
             </div>
@@ -160,9 +176,18 @@ const TestimonialSlider = () => {
           <img src={quote} className="w-10 md:w-auto" />
         </div>
 
-        <h3 className="font21 fw600 mt-4">{hometestimonial[activeIndex].name}</h3>
-        <p className="text-[#00000099] text-sm">{hometestimonial[activeIndex].batch}</p>
-        <p className="mt-4 text-[#00000099] leading-relaxed font19">{hometestimonial[activeIndex].text}</p>
+        <h3 className="font21 fw600 mt-4">
+          {hometestimonial[displayIndex].name}
+        </h3>
+
+        <p className="text-[#00000099] text-sm">
+          {hometestimonial[displayIndex].batch}
+        </p>
+
+        <p className="mt-4 text-[#00000099] leading-relaxed font19">
+          {hometestimonial[displayIndex].text}
+        </p>
+
 
         <div className="mt-10 text-center">
           <Link

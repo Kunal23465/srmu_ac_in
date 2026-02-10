@@ -240,7 +240,7 @@ const Footer: React.FC = () => {
                     </span>
                     <h3 className="font-semibold text-sm sm:text-base text-[#ffb703] uppercase">Address</h3>
                   </div>
-                  <p className="text-[14px]!">{footerData.contact.address}</p>
+                  <p className="lg:!text-[14px] !text-[13.132px]">{footerData.contact.address}</p>
                 </div>
                 <div className="flex flex-col gap-2 ">
                   <div className="flex items-center gap-x-2">
@@ -251,7 +251,7 @@ const Footer: React.FC = () => {
                     </span>
                     <h3 className="font-semibold text-sm sm:text-base text-[#ffb703] uppercase">Phone</h3>
                   </div>
-                  <p className="text-[14px]!">{footerData.contact.phone1}</p>
+                  <p className="lg:!text-[14px] !text-[13.132px]">{footerData.contact.phone1}</p>
                 </div>
                 <div className="flex gap-2 flex-col">
                   <div className="flex items-center gap-x-2">
@@ -263,7 +263,7 @@ const Footer: React.FC = () => {
                     <h3 className="font-semibold text-sm sm:text-base text-[#ffb703] uppercase">Email</h3>
                   </div>
                   <p>
-                    <Link to={`mailto:${footerData.contact.email}`} className=" text-[14px]!">
+                    <Link to={`mailto:${footerData.contact.email}`} className=" lg:!text-[14px] !text-[13.132px]">
                       {footerData.contact.email}
                     </Link>
                   </p>
@@ -320,12 +320,12 @@ const Footer: React.FC = () => {
                   <li key={index}>
                     <div className="flex items-center group hover:text-[#ffb703] ">
                       {link.title === "Mandatory Disclosure" || link.title === "Anti-Sexual Harassment - IIC" ? (
-                        <a href={link.path} target="_blank" className=" text-[14px]  group-hover:text-[#ffb703]">
+                        <a href={link.path} target="_blank" className=" lg:!text-[14px] !text-[13.132px]  group-hover:text-[#ffb703]">
                           {" "}
                           {link.title}
                         </a>
                       ) : (
-                        <Link to={link.path} className=" text-[14px] text-white group-hover:text-[#ffb703]">
+                        <Link to={link.path} className=" lg:!text-[14px] !text-[13.132px] text-white group-hover:text-[#ffb703]">
                           {link.title}
                         </Link>
                       )}
@@ -338,7 +338,7 @@ const Footer: React.FC = () => {
                 {footerData.getEvolved.map((link, index) => (
                   <li key={index}>
                     <div className="flex items-center group hover:text-[#ffb703]">
-                      <Link to={link.path} className={`text-[14px] text-white group-hover:text-[#ffb703] }`}>
+                      <Link to={link.path} className={`lg:!text-[14px] !text-[13.132px] text-white group-hover:text-[#ffb703] }`}>
                         {link.title}
                       </Link>
                     </div>
@@ -351,11 +351,11 @@ const Footer: React.FC = () => {
                   <li key={index}>
                     <div className="flex items-center group hover:text-[#ffb703]">
                       {link.title === "Grievance Redressal" ? (
-                        <a href={link.path} target="_blank" className=" text-[14px] text-white group-hover:text-[#ffb703]">
+                        <a href={link.path} target="_blank" className=" lg:!text-[14px] !text-[13.132px] text-white group-hover:text-[#ffb703]">
                           {link.title}
                         </a>
                       ) : (
-                        <Link to={link.path} className=" text-[14px] text-white group-hover:text-[#ffb703]">
+                        <Link to={link.path} className=" lg:!text-[14px] !text-[13.132px] text-white group-hover:text-[#ffb703]">
                           {link.title}
                         </Link>
                       )}
@@ -371,11 +371,11 @@ const Footer: React.FC = () => {
                   <li key={index}>
                     <div className="flex items-center group hover:text-[#ffb703] ">
                       {link.title === "Anti-Sexual Harassment - ICC" || link.title === "Grievance Redressal System" ? (
-                        <a href={link.path} target="_blank" className=" text-[14px]  group-hover:text-[#ffb703]">
+                        <a href={link.path} target="_blank" className=" lg:!text-[14px] !text-[13.132px]  group-hover:text-[#ffb703]">
                           {link.title}
                         </a>
                       ) : (
-                        <Link to={link.path} className=" text-[14px] text-white group-hover:text-[#ffb703]">
+                        <Link to={link.path} className=" lg:!text-[14px] !text-[13.132px] text-white group-hover:text-[#ffb703]">
                           {link.title}
                         </Link>
                       )}
@@ -389,7 +389,7 @@ const Footer: React.FC = () => {
                 {footerData.getHelped.map((link, index) => (
                   <li key={index}>
                     <div className="flex items-center group hover:text-[#ffb703]">
-                      <Link to={link.path} className={`text-[14px] text-white group-hover:text-[#ffb703] }`}>
+                      <Link to={link.path} className={`lg:!text-[14px] !text-[13.132px] text-white group-hover:text-[#ffb703] }`}>
                         {link.title}
                       </Link>
                     </div>
@@ -402,11 +402,11 @@ const Footer: React.FC = () => {
                   <li key={index}>
                     <div className="flex items-center group hover:text-[#ffb703]">
                       {link.title === "Grievance Redressal" ? (
-                        <a href={link.path} target="_blank" className=" text-[14px] text-white group-hover:text-[#ffb703]">
+                        <a href={link.path} target="_blank" className=" lg:!text-[14px] !text-[13.132px] text-white group-hover:text-[#ffb703]">
                           {link.title}
                         </a>
                       ) : (
-                        <Link to={link.path} className=" text-[14px] text-white group-hover:text-[#ffb703]">
+                        <Link to={link.path} className=" lg:!text-[14px] !text-[13.132px] text-white group-hover:text-[#ffb703]">
                           {link.title}
                         </Link>
                       )}
@@ -437,7 +437,7 @@ const Footer: React.FC = () => {
               </div>
               <h3 className="font-semibold text-sm sm:text-base pt-8 mb-4 text-[#ffb703]  Get Responsible uppercase">MERCH SHOP</h3>
               <h4 className="font-semibold text-xs text-white">To Shop SRMU Merchandise Scan the Code</h4>
-              <img src={scanner} alt="scanner" className="max-w-[150px] mt-2" />
+              <img src={scanner} alt="scanner" className="max-w-[170px] mt-4" />
             </div>
           </div>
         </div>
