@@ -32,7 +32,7 @@ const ProgramFeeTable: React.FC<Props> = ({ data }) => {
   const notes = [
     `Alumni Fee: <span class="inline-block ml-1 text-lg font-medium">500</span>`,
     `Degree Fee: <span class="inline-block ml-1 text-lg font-medium">1000</span>`,
-    `<span class="inline-block text-lg font-medium">Both these fees are payable in the final year of the program</span>`,
+    `<span class="inline-block text-[13px] font-medium">Both these fees are payable in the final year of the program</span>`,
   ];
 
   return (
@@ -63,14 +63,14 @@ const ProgramFeeTable: React.FC<Props> = ({ data }) => {
                 key={fee.feeTypeId}
                 className="bg-white rounded-md"
               >
-                <td className="px-8 py-6 text-[#023047] border-r border-[#dfe3ee]">
+                <td className="px-8 text-[13px] py-6 text-[#023047] border-r border-[#dfe3ee]">
                   {fee.feeTypeName}
                 </td>
 
                 {years.map((year) => (
                   <td
                     key={year}
-                    className="text-center px-6 py-6 border-r last:border-r-0 border-[#dfe3ee]"
+                    className="text-center text-[14px] px-6 py-6 border-r last:border-r-0 border-[#dfe3ee]"
                   >
                     {fee.yearWiseAmount[year] ?? "-"}
                   </td>

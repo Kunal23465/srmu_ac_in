@@ -211,7 +211,7 @@ const Footer: React.FC = () => {
   return (
     <>
       <footer className={` text-white py-20`}>
-        <div className={`${Classes["container"]} relative z-100 py-20`}>
+        <div className={`${Classes["container"]} relative z-100 py-10 sm:py-20`}>
           <div className="w-full manage_footer_column ">
             <div className="w-fullspace-y-4 flex flex-col grid-first">
               <div className="flex items-center gap-3">
@@ -238,7 +238,7 @@ const Footer: React.FC = () => {
                         <MdLocationPin size={24} />
                       </Link>
                     </span>
-                    <h3 className="font-semibold text-sm sm:text-base text-[#ffb703] uppercase">Address</h3>
+                    <h3 className="font-semibold text-[14px] sm:text-base text-[#ffb703] uppercase">Address</h3>
                   </div>
                   <p className="lg:!text-[14px] !text-[13.132px]">{footerData.contact.address}</p>
                 </div>
@@ -249,7 +249,7 @@ const Footer: React.FC = () => {
                         <FaPhone />
                       </Link>
                     </span>
-                    <h3 className="font-semibold text-sm sm:text-base text-[#ffb703] uppercase">Phone</h3>
+                    <h3 className="font-semibold text-[14px] sm:text-base text-[#ffb703] uppercase">Phone</h3>
                   </div>
                   <p className="lg:!text-[14px] !text-[13.132px]">{footerData.contact.phone1}</p>
                 </div>
@@ -260,7 +260,7 @@ const Footer: React.FC = () => {
                         <MdEmail />
                       </Link>
                     </span>
-                    <h3 className="font-semibold text-sm sm:text-base text-[#ffb703] uppercase">Email</h3>
+                    <h3 className="font-semibold text-[14px] sm:text-base text-[#ffb703] uppercase">Email</h3>
                   </div>
                   <p>
                     <Link to={`mailto:${footerData.contact.email}`} className=" lg:!text-[14px] !text-[13.132px]">
@@ -314,7 +314,7 @@ const Footer: React.FC = () => {
               </div>
             </div>
             <div className=" w-full grid-second">
-              <h3 className="font-semibold text-sm sm:text-base mb-3 text-[#ffb703]  Get Responsible uppercase">Get Enrolled</h3>
+              <h3 className="font-semibold text-[14px] sm:text-base mb-3 text-[#ffb703]  Get Responsible uppercase">Get Enrolled</h3>
               <ul className="space-y-4 pb-8 list-none! sm:border-b-2 border-dashed border-[#e1f1fd94] ">
                 {footerData.getEnrolled.map((link, index) => (
                   <li key={index}>
@@ -333,7 +333,7 @@ const Footer: React.FC = () => {
                   </li>
                 ))}
               </ul>
-              <h3 className="font-semibold text-sm sm:text-base mt-8 mb-4 text-[#ffb703] uppercase">Get Evolved</h3>
+              <h3 className="font-semibold text-[14px] sm:text-base mt-8 mb-4 text-[#ffb703] uppercase">Get Evolved</h3>
               <ul className="space-y-4  pb-8 list-none! sm:border-b-2 border-dashed border-[#e1f1fd94]">
                 {footerData.getEvolved.map((link, index) => (
                   <li key={index}>
@@ -345,7 +345,7 @@ const Footer: React.FC = () => {
                   </li>
                 ))}
               </ul>
-              <h3 className="font-semibold text-sm sm:text-base mb-4 text-[#ffb703] mt-8 Get Responsible uppercase">Get Delighted</h3>
+              <h3 className="font-semibold text-[14px] sm:text-base mb-4 text-[#ffb703] mt-8 Get Responsible uppercase">Get Delighted</h3>
               <ul className="space-y-4 pb-8 list-none! ">
                 {footerData.getDelighted.map((link, index) => (
                   <li key={index}>
@@ -365,7 +365,7 @@ const Footer: React.FC = () => {
               </ul>
             </div>
             <div className="w-full grid-third">
-              <h3 className="font-semibold text-sm sm:text-base mb-3 text-[#ffb703] uppercase ">Get Responsible</h3>
+              <h3 className="font-semibold text-[14px] sm:text-base mb-3 text-[#ffb703] uppercase ">Get Responsible</h3>
               <ul className="space-y-4  pb-8 list-none! sm:border-b-2 border-dashed border-[#e1f1fd94]">
                 {footerData.getResponsible.map((link, index) => (
                   <li key={index}>
@@ -384,7 +384,7 @@ const Footer: React.FC = () => {
                 ))}
               </ul>
 
-              <h3 className="font-semibold text-sm sm:text-base mt-8 mb-4 text-[#ffb703] uppercase">Get Helped</h3>
+              <h3 className="font-semibold text-[14px] sm:text-base mt-8 mb-4 text-[#ffb703] uppercase">Get Helped</h3>
               <ul className="space-y-4  pb-8 list-none! sm:border-b-2 border-dashed border-[#e1f1fd94]">
                 {footerData.getHelped.map((link, index) => (
                   <li key={index}>
@@ -396,7 +396,7 @@ const Footer: React.FC = () => {
                   </li>
                 ))}
               </ul>
-              <h3 className="font-semibold text-sm sm:text-base mb-4 text-[#ffb703] mt-8 Get Responsible uppercase">Get Connected</h3>
+              <h3 className="font-semibold text-[14px] sm:text-base mb-4 text-[#ffb703] mt-8 Get Responsible uppercase">Get Connected</h3>
               <ul className="space-y-4 pb-8 list-none! ">
                 {footerData.getConected.map((link, index) => (
                   <li key={index}>
@@ -418,7 +418,7 @@ const Footer: React.FC = () => {
               {/* usefulLinks */}
             </div>
             <div className="w-full grid-fourth">
-              <h3 className="font-semibold text-sm sm:text-base mb-4 text-[#ffb703] Get Responsible uppercase">Explore / Engage</h3>
+              <h3 className="font-semibold text-[14px] sm:text-base mb-4 text-[#ffb703] Get Responsible uppercase">Explore / Engage</h3>
               <Link
                 target="_blank"
                 to="https://www.youtube.com/watch?v=vs_TEm1_XS8"
@@ -430,13 +430,13 @@ const Footer: React.FC = () => {
                 </span>{" "}
                 Virtual Tour
               </Link>
-              <h3 className="font-semibold text-sm sm:text-base pt-10 mb-4 text-[#ffb703]  Get Responsible uppercase">Awards</h3>
+              <h3 className="font-semibold text-[14px] sm:text-base pt-10 mb-4 text-[#ffb703]  Get Responsible uppercase">Awards</h3>
               <div className="flex gap-x-4 mb-4">
                 <img src={awards1} alt="awards1" />
                 <img src={awards2} alt="awards1" />
               </div>
-              <h3 className="font-semibold text-sm sm:text-base pt-8 mb-4 text-[#ffb703]  Get Responsible uppercase">MERCH SHOP</h3>
-              <h4 className="font-semibold text-xs text-white">To Shop SRMU Merchandise Scan the Code</h4>
+              <h3 className="font-semibold text-[14px] sm:text-base pt-8 mb-4 text-[#ffb703]  Get Responsible uppercase">MERCH SHOP</h3>
+              <h4 className="font-semibold lg:!text-[14px] !text-[13.132px] text-white">To Shop SRMU Merchandise Scan the Code</h4>
               <img src={scanner} alt="scanner" className="max-w-[170px] mt-4" />
             </div>
           </div>
@@ -447,9 +447,9 @@ const Footer: React.FC = () => {
       <div className="w-full bg-[#0f4a85] py-4">
         <div className={`${Classes["container"]}`}>
           <div className=" pb-10 sm:pb-0 flex justify-between gap-5 flex-wrap items-center">
-            <div className="text-sm  text-white">Copyright © 2025 Shri Ramswaroop Memorial University</div>
+            <div className="text-[13px]  text-white">Copyright © 2025 Shri Ramswaroop Memorial University</div>
             <div>
-              <ul className="flex flex-wrap gap-x-7 items-center text-white font-medium text-sm list-none!">
+              <ul className="flex flex-wrap gap-x-7 items-center text-white font-medium text-[13px] list-none!">
                 <li className="relative inline-block after:content-[''] after:h-5 after:w-0.5! after:bg-white after:absolute after:top-0 after:-right-4">
                   <Link className="text-nowrap" to="/privacy-policy">Privacy Policy</Link>
                 </li>
@@ -461,7 +461,7 @@ const Footer: React.FC = () => {
                 </li>
               </ul>
             </div>
-            <div className="flex items-center gap-x-1 text-white text-sm">
+            <div className="flex items-center gap-x-1 text-white text-[13px]">
               Design By: <Link to="https://srdt.co.in/"> SRDT </Link>
             </div>
           </div>

@@ -75,7 +75,7 @@ const CustomDepartmentHighlights: React.FC<DepartmentHighlightsProps> = ({
               </h3>
 
               <div
-                className="text-gray-700 text-[15px] leading-relaxed [&_ul]:list-disc!  [&_li]:ml-5!"
+                className="text-gray-700 text-[13px] leading-relaxed [&_ul]:list-disc! [&_li]:ml-5! [&_span]:text-[13px]!  [&_li]:text-[13px]!"
                 dangerouslySetInnerHTML={{ __html: step.brief }}
               />
             </div>

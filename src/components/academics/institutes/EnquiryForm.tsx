@@ -22,7 +22,7 @@ const EnquiryForm: React.FC<EnquiryFormProps> = ({ onSubmitHandlerForAdmission }
   let cityData: any = [];
 
 
- 
+
 
   return (
     <section className={`${Classes["enquiry_form_footer"]}  lg:pl-10 pr-5 `}>
@@ -59,34 +59,34 @@ const EnquiryForm: React.FC<EnquiryFormProps> = ({ onSubmitHandlerForAdmission }
                                   data.name === "coreStateId"
                                     ? "coreStateId"
                                     : data.name === "coreCityId"
-                                    ? "coreCityId"
-                                    : data.name === "academicCareerId"
-                                    ? "academicCareerId"
-                                    : data.name === "academicProgramId"
-                                    ? "academicProgramId"
-                                    : ""
+                                      ? "coreCityId"
+                                      : data.name === "academicCareerId"
+                                        ? "academicCareerId"
+                                        : data.name === "academicProgramId"
+                                          ? "academicProgramId"
+                                          : ""
                                 }
                                 keyForName={
                                   data.name === "coreStateId"
                                     ? "name"
                                     : data.name === "coreCityId"
-                                    ? "name"
-                                    : data.name === "academicCareerId"
-                                    ? "description"
-                                    : data.name === "academicProgramId"
-                                    ? "description"
-                                    : ""
+                                      ? "name"
+                                      : data.name === "academicCareerId"
+                                        ? "description"
+                                        : data.name === "academicProgramId"
+                                          ? "description"
+                                          : ""
                                 }
                                 options={
                                   data.name === "coreStateId"
                                     ? stateData
                                     : data.name === "coreCityId"
-                                    ? cityData
-                                    : data.name === "academicCareerId"
-                                    ? careerData
-                                    : data.name === "academicProgramId"
-                                    ? programData
-                                    : []
+                                      ? cityData
+                                      : data.name === "academicCareerId"
+                                        ? careerData
+                                        : data.name === "academicProgramId"
+                                          ? programData
+                                          : []
                                 }
                               />
                             ) : (
@@ -98,7 +98,7 @@ const EnquiryForm: React.FC<EnquiryFormProps> = ({ onSubmitHandlerForAdmission }
                                   type={data.type}
                                   name={data.name}
                                   placeholder={data.placeholder}
-                                  className="h-[3.2rem] px-[0.75rem] py-[0.375rem] bg-white border border-[#ced4da] rounded-md w-full focus:outline-none placeholder:text-gray-900"
+                                  className="h-[3.2rem] px-[0.75rem] py-[0.375rem] bg-[#ccc] border border-[#ccc] rounded-md w-full focus:outline-none placeholder:text-gray-900"
                                 />
                                 <ErrorMessage name={data.name} component="div" className="text-red-500 text-sm" />
                               </>
@@ -110,7 +110,7 @@ const EnquiryForm: React.FC<EnquiryFormProps> = ({ onSubmitHandlerForAdmission }
                     <div className="px-[0.75rem] w-full">
                       <div className="mt-[1.5rem]">
                         <div className="flex gap-x-2 items-start text-white mt-4">
-                          <Field type="checkbox" name="consent" className="mt-1.5 block" />
+                          <Field type="checkbox" checked name="consent" className="mt-1.5 block" />
                           <p>I authorize SRM Group and its representatives to Call, SMS, Email or Whatsapp me about the programs and scholarships offered.</p>
                         </div>
                         <ErrorMessage name="consent" component="div" className="text-red-500 text-sm mt-1" />

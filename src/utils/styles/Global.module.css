@@ -195,14 +195,22 @@
   cursor: default;
   font-weight: 400;
   pointer-events: none;
-  font-size: 18px;
+  font-size: 16px;
 }
-
-
 
 .page-title-content .breadcrumb-item+.breadcrumb-item::before {
   content: "/ ";
   color: #ffff;
+}
+
+@media screen and (max-width: 592px) {
+  .page-title-content .breadcrumb-item a {
+    font-size: 12px;
+  }
+
+  .active_breadcrumbs a {
+    font-size: 12px;
+  }
 }
 
 /* Enquiry Form in Admission Process */
@@ -313,7 +321,6 @@
 .enquiry_form_inner .enquiry_form_right {
   width: 100%;
   padding: 6rem 0rem 6rem 6rem;
-
 }
 
 /* Responsive Adjustments */
@@ -344,7 +351,7 @@
   }
 }
 
-@media (max-width:1199px) {
+@media (max-width: 1199px) {
   .enquiry_form_inner .enquiry_form_left {
     width: 100%;
     max-width: 350px;
@@ -361,11 +368,10 @@
   .enquiry_form_inner .enquiry_form_right {
     width: 100%;
     padding: 6rem 0rem 6rem 3rem;
-
   }
 }
 
-@media (max-width:1024px) {
+@media (max-width: 1024px) {
   .enquiry_form_bg {
     position: absolute;
     z-index: -1;
@@ -377,22 +383,17 @@
   .enquiry_form_inner .enquiry_form_right {
     width: 100%;
     padding: 3rem 0rem 3rem 0rem;
-
   }
 }
 
-
-
-@media(max-width:992px) {
+@media (max-width: 992px) {
   .enquiry_form_inner .enquiry_form_left {
     display: none;
   }
 }
 
-
-@media(max-width:992px) {
+@media (max-width: 992px) {
   .enquiry_form_footer {
     padding-bottom: 2rem;
   }
 }
-

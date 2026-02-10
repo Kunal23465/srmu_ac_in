@@ -28,7 +28,7 @@ const SelectInputForEnquiry: React.FC<type> = ({ data, options, keyForName, keyF
             <Field
                 as="select"
                 {...field}
-                className="h-[3.2rem] px-[0.75rem] py-[0.375rem] bg-white border border-[#ced4da] rounded-md w-full focus:outline-none"
+                className="h-[3.2rem] px-[0.75rem] py-[0.375rem] bg-[#ccc] border border-[#ccc] rounded-md w-full focus:outline-none"
                 // name={data.name}
                 // id={data.name}
                 onChange={(e: React.ChangeEvent<HTMLSelectElement>) => {

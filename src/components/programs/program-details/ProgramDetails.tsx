@@ -87,9 +87,9 @@ const ProgramDetails = () => {
       <div className="mt-20">
         <div className={`${Classes["container"]}`}>
           {/* @ts-ignore */}
-          <h2 className="lg:text-[50px] md:text-[46.875px] text-[28px] fw500 text-[#023047]">{dataByID?.name}</h2>
+          <h2 className="lg:text-[50px] leading-[1.2] md:text-[46.875px] text-[28px] fw500 text-[#023047]">{dataByID?.name}</h2>
           {/* @ts-ignore */}
-          <p className="text-[#023047] text-[20px] sm:text-[24px] lg:text-[2rem] fw500">{dataByID?.title}</p>
+          <p className="text-[#023047] mt-3 leading-[1.2] text-[18px] sm:text-[24px] lg:text-[2rem] fw500">{dataByID?.title}</p>
           {/* <CustomOverviewSection data={BtechCSEAIandMLOverviewData} /> */}
           <div className={` py-7 md:py-10 lg:py-14`}>
             <div className={`block  lg:flex   gap-4  md:items-stretch   justify-between md:flex-row items-start`}>

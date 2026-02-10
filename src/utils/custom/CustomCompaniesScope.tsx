@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 
 interface CompanyItem {
   id: number;
@@ -145,13 +146,13 @@ export const CustomCompaniesScope: React.FC<CompaniesScopeProps> = ({ data, list
               onClick={handlePrev}
               className="w-13 h-13 bg-white rounded-full border-2 border-[#023047] cursor-pointer shadow-lg flex items-center justify-center text-2xl text-[#023047] "
             >
-              &lt;
+              <FaAngleLeft />
             </button>
             <button
               onClick={handleNext}
               className="w-13 h-13 bg-white rounded-full border-2 border-[#023047] cursor-pointer shadow-lg flex items-center justify-center text-2xl text-[#023047] "
             >
-              &gt;
+              <FaAngleRight />
             </button>
           </div>
 
