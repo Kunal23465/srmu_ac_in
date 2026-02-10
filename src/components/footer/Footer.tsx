@@ -315,7 +315,7 @@ const Footer: React.FC = () => {
             </div>
             <div className=" w-full grid-second">
               <h3 className="font-semibold text-sm sm:text-base mb-3 text-[#ffb703]  Get Responsible uppercase">Get Enrolled</h3>
-              <ul className="space-y-4 pb-8 list-none! border-b-2 border-dashed border-[#e1f1fd94] ">
+              <ul className="space-y-4 pb-8 list-none! sm:border-b-2 border-dashed border-[#e1f1fd94] ">
                 {footerData.getEnrolled.map((link, index) => (
                   <li key={index}>
                     <div className="flex items-center group hover:text-[#ffb703] ">
@@ -334,7 +334,7 @@ const Footer: React.FC = () => {
                 ))}
               </ul>
               <h3 className="font-semibold text-sm sm:text-base mt-8 mb-4 text-[#ffb703] uppercase">Get Evolved</h3>
-              <ul className="space-y-4  pb-8 list-none! border-b-2 border-dashed border-[#e1f1fd94]">
+              <ul className="space-y-4  pb-8 list-none! sm:border-b-2 border-dashed border-[#e1f1fd94]">
                 {footerData.getEvolved.map((link, index) => (
                   <li key={index}>
                     <div className="flex items-center group hover:text-[#ffb703]">
@@ -366,7 +366,7 @@ const Footer: React.FC = () => {
             </div>
             <div className="w-full grid-third">
               <h3 className="font-semibold text-sm sm:text-base mb-3 text-[#ffb703] uppercase ">Get Responsible</h3>
-              <ul className="space-y-4  pb-8 list-none! border-b-2 border-dashed border-[#e1f1fd94]">
+              <ul className="space-y-4  pb-8 list-none! sm:border-b-2 border-dashed border-[#e1f1fd94]">
                 {footerData.getResponsible.map((link, index) => (
                   <li key={index}>
                     <div className="flex items-center group hover:text-[#ffb703] ">
@@ -385,7 +385,7 @@ const Footer: React.FC = () => {
               </ul>
 
               <h3 className="font-semibold text-sm sm:text-base mt-8 mb-4 text-[#ffb703] uppercase">Get Helped</h3>
-              <ul className="space-y-4  pb-8 list-none! border-b-2 border-dashed border-[#e1f1fd94]">
+              <ul className="space-y-4  pb-8 list-none! sm:border-b-2 border-dashed border-[#e1f1fd94]">
                 {footerData.getHelped.map((link, index) => (
                   <li key={index}>
                     <div className="flex items-center group hover:text-[#ffb703]">
@@ -447,21 +447,21 @@ const Footer: React.FC = () => {
       <div className="w-full bg-[#0f4a85] py-4">
         <div className={`${Classes["container"]}`}>
           <div className=" pb-10 sm:pb-0 flex justify-between gap-5 flex-wrap items-center">
-            <div className="text-sm font-medium text-white">Copyright © 2025 Shri Ramswaroop Memorial University</div>
+            <div className="text-sm  text-white">Copyright © 2025 Shri Ramswaroop Memorial University</div>
             <div>
-              <ul className="flex gap-x-7 items-center text-white font-medium text-sm list-none!">
+              <ul className="flex flex-wrap gap-x-7 items-center text-white font-medium text-sm list-none!">
                 <li className="relative inline-block after:content-[''] after:h-5 after:w-0.5! after:bg-white after:absolute after:top-0 after:-right-4">
-                  <Link to="/privacy-policy">Privacy Policy</Link>
+                  <Link className="text-nowrap" to="/privacy-policy">Privacy Policy</Link>
                 </li>
                 <li className="relative inline-block after:content-[''] after:h-5 after:w-0.5! after:bg-white after:absolute after:top-0 after:-right-4">
-                  <Link to="/disclaimer">Disclaimer</Link>
+                  <Link className="text-nowrap" to="/disclaimer">Disclaimer</Link>
                 </li>
                 <li>
-                  <Link to="/terms-conditions">Terms and Conditions</Link>
+                  <Link className="text-nowrap" to="/terms-conditions">Terms and Conditions</Link>
                 </li>
               </ul>
             </div>
-            <div className="flex items-center gap-x-1 font-medium text-white text-sm">
+            <div className="flex items-center gap-x-1 text-white text-sm">
               Design By: <Link to="https://srdt.co.in/"> SRDT </Link>
             </div>
           </div>
