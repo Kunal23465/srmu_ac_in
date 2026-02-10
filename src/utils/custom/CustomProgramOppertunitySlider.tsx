@@ -20,7 +20,7 @@ function NextArrow(props: any) {
     <button
       type="button"
       onClick={onClick}
-      className="custom-arrow right-0! right-arrow"
+      className="custom-arrow -right-7! right-arrow"
       aria-label="Next"
     >
       ›
@@ -34,7 +34,7 @@ function PrevArrow(props: any) {
     <button
       type="button"
       onClick={onClick}
-      className="custom-arrow left-0! left-arrow"
+      className="custom-arrow -left-7! left-arrow"
       aria-label="Previous"
     >
       ‹
@@ -89,7 +89,7 @@ const CustomProgramOppertunitySlider: React.FC<
             <img
               src={item.img}
               alt={item.course}
-              className="m-auto border-4 border-amber-400 hover:border-black rounded-full object-cover w-full aspect-square max-w-64"
+              className="m-auto border-4 border-amber-400 hover:border-black rounded-full object-cover w-full aspect-square max-w-58 sm:max-w-64"
             />
 
             <a
