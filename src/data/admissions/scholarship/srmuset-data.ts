@@ -27,7 +27,7 @@ export const srmusetScholarshipEngineeringTableData: RowData[] = [
   {
     col1: "60.1 - 70",
     col2: "40% of semester tuition fee",
-    col3: "20% of semester tuition fee",
+    // col3: "20% of semester tuition fee",
   },
   {
     col1: "< 60",
