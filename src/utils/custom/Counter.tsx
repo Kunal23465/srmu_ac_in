@@ -12,7 +12,7 @@ const Counter: React.FC<counterDataPropsType> = ({ counterData, classes }) => {
     <div className={`parent-box ${classes ? classes : ""}   py-7 md:py-10 lg:py-14`}>
       {counterData.map((item: any) => (
         <div key={item.id}>
-          <h1 className={`text-3xl lg:text-[50px] font-semibold ${item.icon ? "text-white" : "text-[#ffb703]"}   text-center flex items-center justify-center`}>
+          <h1 className={`lg:text-[50px] md:text-[46.875px] text-[21px] font-semibold ${item.icon ? "text-white" : "text-[#ffb703]"}   text-center flex items-center justify-center`}>
             {item.icon && (
               <span className="pt-2 pr-1">
                 <img src={item.icon} alt="" />
@@ -34,7 +34,7 @@ const Counter: React.FC<counterDataPropsType> = ({ counterData, classes }) => {
               </CountUp>
             )}
           </h1>
-          <p className={`text-[15px] text-center  mt-3`}>{item.label}</p>
+          <p className={`lg:text-[22px] md:text-[20.625px] text-[14px] text-center  mt-3`}>{item.label}</p>
         </div>
       ))}
     </div>

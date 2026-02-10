@@ -22,10 +22,10 @@ const images = [whyIcon1, whyIcon2, whyIcon3, whyIcon4]
 const WhyCardComp: React.FC<WhyCardCompProps> = ({ item, imageIndex }) => {
   const { imagePath, title, bgColor = "#144981", iconColor = "#f5c242" } = item;
   return (
-    <div className="w-full max-w-[280px] min-h-[250px] rounded-xl flex flex-col items-center justify-center text-center px-6 py-8 shadow-lg" style={{ backgroundColor: bgColor }}>
+    <div className="w-full sm:max-w-[280px] min-h-[250px] rounded-xl flex flex-col items-center justify-center text-center px-6 py-8 shadow-lg" style={{ backgroundColor: bgColor }}>
       <img src={imagePath || images[imageIndex]} alt="why card icon" className="w-[60px] h-[60px] object-contain" style={{ filter: iconColor ? `drop-shadow(0 0 0 ${iconColor})` : undefined }} />
 
-      <p className="text-white text-[16px] leading-relaxed mt-4">{title || ""}</p>
+      <p className="text-white lg:text-[16px] md:text-[15px] text-[14px] leading-relaxed mt-4">{title || ""}</p>
     </div>
   );
 };

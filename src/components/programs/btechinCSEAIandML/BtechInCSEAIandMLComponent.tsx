@@ -25,7 +25,7 @@ const BtechInCSEAIandMLComponent = () => {
     return (
         <div className="mt-20">
             <div className={`${Classes["container"]}`}>
-                <h2 className="font50 fw500 text-[#023047]">
+                <h2 className="font50  fw500 text-[#023047]">
                     B.Tech. in CSE (Artificial Intelligence & Machine Learning)
                 </h2>
                 <p className="text-[#023047] font30 fw500">

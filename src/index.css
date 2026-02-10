@@ -1961,7 +1961,7 @@ section .card-color img {
 }
 
 .eligibility-content h2 {
-  font-size: 32px;
+  /* font-size: 32px; */
   margin-bottom: 20px;
   font-weight: bold;
 }
@@ -2022,6 +2022,11 @@ section .card-color img {
     padding-top: 50px;
     background-color: #0e2f46;
   }
+}
+@media (max-width: 592px) {
+.eligibility-container {
+  padding: 25px;
+}
 }
 
 /* admission */

@@ -86,9 +86,9 @@ const ProgramDetails = () => {
       <div className="mt-20">
         <div className={`${Classes["container"]}`}>
           {/* @ts-ignore */}
-          <h2 className="font50 fw500 text-[#023047]">{dataByID?.name}</h2>
+          <h2 className="lg:text-[50px] md:text-[46.875px] text-[28px] fw500 text-[#023047]">{dataByID?.name}</h2>
           {/* @ts-ignore */}
-          <p className="text-[#023047] font30 fw500">{dataByID?.title}</p>
+          <p className="text-[#023047] lg:text-[30px] md:text-[28.125px] text-[26.25px] fw500">{dataByID?.title}</p>
           {/* <CustomOverviewSection data={BtechCSEAIandMLOverviewData} /> */}
           <div className={` py-7 md:py-10 lg:py-14`}>
             <div className={`flex flex-col  gap-4 items-stretch  justify-between md:flex-row `}>
@@ -97,7 +97,7 @@ const ProgramDetails = () => {
               </div>
               <div className={`md:pl-8 md:py-4`}>
                 {/* @ts-ignore */}
-                <div className="text-justify">{typeof dataByID?.overview === "string" ? <div dangerouslySetInnerHTML={{ __html: dataByID?.overview }} /> : dataByID?.overview}</div>
+                <div className="text-justify lg:text-[16px] md:text-[15px] text-[14px]">{typeof dataByID?.overview === "string" ? <div dangerouslySetInnerHTML={{ __html: dataByID?.overview }} /> : dataByID?.overview}</div>
               </div>
             </div>
           </div>

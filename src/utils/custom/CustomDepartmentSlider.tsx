@@ -141,7 +141,7 @@ const CustomDepartmentSlider = <T,>({
 
         {/* Description */}
         {description && (
-          <p className="mb-10 max-w-4xl" style={{ color: descriptionColor }}>
+          <p className="mb-10 max-w-4xl " style={{ color: descriptionColor }}>
             {description}
           </p>
         )}
