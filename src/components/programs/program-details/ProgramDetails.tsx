@@ -30,6 +30,7 @@ import { Helmet } from "react-helmet-async";
 const ProgramDetails = () => {
   const dispatch = useDispatch<AppDispatch>();
   const [isPhd, setIsPhd] = useState(false);
+  const [expanded, setExpanded] = useState(false);
   const location = useLocation();
   // @ts-ignore
   const { dataByID, loading, error } = useSelector((state: RootState) => state.getProgramFinder);
@@ -91,14 +92,24 @@ const ProgramDetails = () => {
           <p className="text-[#023047] lg:text-[30px] md:text-[28.125px] text-[26.25px] fw500">{dataByID?.title}</p>
           {/* <CustomOverviewSection data={BtechCSEAIandMLOverviewData} /> */}
           <div className={` py-7 md:py-10 lg:py-14`}>
-            <div className={`flex flex-col  gap-4 items-stretch  justify-between md:flex-row `}>
-              <div className={`w-auto  ${" border-l-4 pl-2 md:pl-0 md:border-l-0  md:border-r-4"}  border-[#ffb703] flex flex-col justify-center`}>
+            <div className={`block  lg:flex   gap-4  md:items-stretch   justify-between md:flex-row items-start`}>
+              <div className={`w-auto mb-4 lg:mb-0  ${" border-l-4 pl-2 lg:pl-0 lg:border-l-0  lg:border-r-4"}  border-[#ffb703] flex flex-col justify-center`}>
                 <h2 className="text-[28px]  lg:text-[3.125rem] whitespace-pre-line font-semibold leading-11 pr-4 sm:min-w-[350px]">Overview</h2>
               </div>
-              <div className={`md:pl-8 md:py-4`}>
+              <div
+                className={`text-justify md:line-clamp-none ${expanded ? "line-clamp-none" : "line-clamp-5"}`}
+              >
                 {/* @ts-ignore */}
                 <div className="text-justify lg:text-[16px] md:text-[15px] text-[14px]">{typeof dataByID?.overview === "string" ? <div dangerouslySetInnerHTML={{ __html: dataByID?.overview }} /> : dataByID?.overview}</div>
               </div>
+
+              {/* Read more / less — ONLY below md */}
+              <button
+                onClick={() => setExpanded(!expanded)}
+                className=" text-[#0f4a85] font-medium md:hidden underline"
+              >
+                {expanded ? "Read less" : "Read more"}
+              </button>
             </div>
           </div>
           <Counter counterData={convertedCounterData} />
