@@ -507,7 +507,7 @@ export const routes = [
       },
       // MandatoryDisclouserPage
       {
-        path: "news/:name",
+        path: ":name",
         element: <NewsEventDetails />,
       },
 
