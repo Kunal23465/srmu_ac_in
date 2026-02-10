@@ -95,7 +95,7 @@ const MemorialCollege: React.FC = () => {
             </div>
 
             <div className="mt-5 flex justify-center">
-              <Link to="/about">
+              <Link to="/about-us">
                 <button className="bg-[#023047] hover:bg-white fw500 hover:text-[#023047] hover:border hover:border-[#023047] uppercase cursor-pointer py-4 px-8 text-white flex gap-x-2 items-center rounded-lg">
                   Find Out More About Us <LiaLongArrowAltRightSolid size={24} />
                 </button>{" "}
