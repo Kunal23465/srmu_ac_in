@@ -21,11 +21,11 @@ const OurTeam: React.FC = () => {
     arrows: false, // We'll use custom buttons
     responsive: [
       {
-        breakpoint: 1024, 
+        breakpoint: 1024,
         settings: { slidesToShow: 2 },
       },
       {
-        breakpoint: 640, 
+        breakpoint: 640,
         settings: { slidesToShow: 1 },
       },
     ],
@@ -61,7 +61,7 @@ const OurTeam: React.FC = () => {
   return (
     <div>
       <center>
-        <p className="text-yellow-400 text-[28px] lg:text-[3.125rem] fw500 mb-5 lg:mb-20">Our Team</p>
+        <p className="text-yellow-400 text-[22px] sm:text-[28px] lg:text-[3.125rem] fw500 mb-5 lg:mb-20">Our Team</p>
 
         {/* TAB SWITCH */}
         <span

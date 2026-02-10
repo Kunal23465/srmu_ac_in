@@ -27,7 +27,7 @@ export default function FlickeringSection() {
           <div className="w-1/2 relative flex items-center">
             {flickcategories.map((item) => (
               <div key={item.id} className={`absolute transition-opacity duration-500 ${activeId === item.id ? "opacity-100" : "opacity-0"}`}>
-                <h2 className="text-[28px] lg:text-[3.125rem] lg:leading-[70px] text-white   mb-4 fw600">{item.title}</h2>
+                <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] lg:leading-[70px] text-white   mb-4 fw600">{item.title}</h2>
                 <p className="text-white font17 max-w-md">{item.description}</p>
               </div>
             ))}
@@ -42,20 +42,19 @@ export default function FlickeringSection() {
                 onMouseEnter={() => setActiveId(item.id)}
                 className={`
                   flex items-center justify-start px-3 xl:px-6 py-6 lg:py-8 xl:py-12 transition-all text-left relative overflow-hidden text-sm lg:text-base xl:text-[1.5rem] cursor-pointer
-                  ${
-                    item.id === "section_24"
-                      ? "border-r border-b border-white/30"
-                      : item.id === "section_25"
+                  ${item.id === "section_24"
+                    ? "border-r border-b border-white/30"
+                    : item.id === "section_25"
                       ? ""
                       : item.id === "section_26"
-                      ? "border-r border-b border-white/30"
-                      : item.id === "section_64"
-                      ? "border-t border-l border-b border-white/30"
-                      : item.id === "section_65"
-                      ? "border-t border-r border-white/30"
-                      : item.id === "section_66"
-                      ? "border-t border-l border-white/30"
-                      : ""
+                        ? "border-r border-b border-white/30"
+                        : item.id === "section_64"
+                          ? "border-t border-l border-b border-white/30"
+                          : item.id === "section_65"
+                            ? "border-t border-r border-white/30"
+                            : item.id === "section_66"
+                              ? "border-t border-l border-white/30"
+                              : ""
                   }
                   ${activeId === item.id ? "bg-[#ffb703] text-white font-semibold" : "hover:bg-white/10"}
                 `}

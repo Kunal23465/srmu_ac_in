@@ -23,14 +23,14 @@ const CustomProgramPLOAccordian: React.FC<CustomProgramPLOAccordianProps> = ({ P
     <div className="bg-slate-100">
       <div className={`${Classes["container"]}`}>
         <div className="py-20">
-          <h1 className="text-5xl text-[rgb(2_48_71)] font-medium mb-15 text-center">PO, PLO & PSO</h1>
+          <h1 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] text-[rgb(2_48_71)] font-medium mb-15 text-center">PO, PLO & PSO</h1>
           <hr className="text-gray-300" />
 
           {sections.map((section, index) => (
             <div key={index}>
               {/* Accordion Header */}
               <div className="flex cursor-pointer select-none" onClick={() => toggle(index)}>
-                <span className="py-8 w-[90%] text-2xl border-r border-gray-300 font-medium">{section.title}</span>
+                <span className="py-8 w-[90%] text-xl md:text-2xl border-r border-gray-300 font-medium">{section.title}</span>
 
                 {/* Rotating Icon */}
                 <HiOutlineArrowNarrowRight size={36} className={`m-auto transition-transform duration-600 ease-in-out ${openIndex === index ? "rotate-90" : ""}`} />

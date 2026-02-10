@@ -23,7 +23,7 @@ const PublicationSection: React.FC = () => {
         <div className="bg-[#e8effc] rounded-[20px] h-[1100px] md:h-[1000px]" style={{ backgroundImage: `url(${bgImage})`, backgroundSize: "cover", backgroundPosition: "center" }}>
           <div className={Classes["container"]}>
             <div className="py-14 md:py-20 text-center text-white">
-              <h2 className="text-[28px] lg:text-[3.125rem] fw500 mb-2 ">Publication</h2>
+              <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] fw500 mb-2 ">Publication</h2>
               <p className="lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px]">
                 From academic journals to conference documents to book chapters, research by SRMU students and faculty has been featured in numerous publications.
               </p>
@@ -49,7 +49,7 @@ const PublicationSection: React.FC = () => {
           <div className="container flex flex-col-reverse md:flex-row items-center">
             {/* Left Content */}
             <div className="w-full md:w-[32%] space-y-6 px-0 md:px-10 py-5 ">
-              <h2 className="text-[28px] lg:text-[3.125rem] pt-10 fw500 text-[#023047]">{PublicationFloatingCardData.title}</h2>
+              <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] pt-10 fw500 text-[#023047]">{PublicationFloatingCardData.title}</h2>
               <p className="text-gray-700 lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px] leading-relaxed">{PublicationFloatingCardData.description}</p>
 
               <a

@@ -1,9 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-// @ts-ignore
-import { OpportunityCard } from "../../data/placement/placementData";
 
 export interface OpportunityCard {
   id: number;
@@ -11,6 +9,7 @@ export interface OpportunityCard {
   course: string;
   path: string;
 }
+
 interface CustomProgramOppertunitySliderProps {
   data: OpportunityCard[];
 }
@@ -18,7 +17,12 @@ interface CustomProgramOppertunitySliderProps {
 function NextArrow(props: any) {
   const { onClick } = props;
   return (
-    <button onClick={onClick} className="custom-arrow right-arrow">
+    <button
+      type="button"
+      onClick={onClick}
+      className="custom-arrow right-0! right-arrow"
+      aria-label="Next"
+    >
       ›
     </button>
   );
@@ -27,19 +31,43 @@ function NextArrow(props: any) {
 function PrevArrow(props: any) {
   const { onClick } = props;
   return (
-    <button onClick={onClick} className="custom-arrow left-arrow">
+    <button
+      type="button"
+      onClick={onClick}
+      className="custom-arrow left-0! left-arrow"
+      aria-label="Previous"
+    >
       ‹
     </button>
   );
 }
 
-const CustomProgramOppertunitySlider: React.FC<CustomProgramOppertunitySliderProps> = ({ data }) => {
+const CustomProgramOppertunitySlider: React.FC<
+  CustomProgramOppertunitySliderProps
+> = ({ data }) => {
+  const [windowWidth, setWindowWidth] = useState(
+    typeof window !== "undefined" ? window.innerWidth : 0
+  );
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const getSlidesToShow = () => {
+    if (windowWidth >= 1200) return 4;
+    if (windowWidth >= 1024) return 3;
+    if (windowWidth >= 600) return 2;
+    return 1;
+  };
+
   const settings = {
     dots: true,
     infinite: false,
-    slidesToShow: 4,
+    slidesToShow: getSlidesToShow(),
     slidesToScroll: 1,
-    arrows: false,
+    arrows: true, // ✅ REQUIRED
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
     responsive: [
@@ -50,15 +78,24 @@ const CustomProgramOppertunitySlider: React.FC<CustomProgramOppertunitySliderPro
   };
 
   return (
-    <div className="slider-container p-10">
-      <p className="my-15 text-center text-5xl font-medium">Further Study Opportunities</p>
+    <div className="slider-container p-10 relative">
+      <p className="my-10 text-center text-[22px] sm:text-[28px] lg:text-[3.125rem] font-medium">
+        Further Study Opportunities
+      </p>
 
       <Slider {...settings}>
         {data.map((item) => (
-          <div key={item.id} className="p-6 text-center">
-            <img className="m-auto border-4 border-amber-400 hover:border-black rounded-full object-cover w-full aspect-square max-w-64" src={item.img} alt={item.course} />
+          <div key={item.id} className="p-2 sm:p-6 text-center">
+            <img
+              src={item.img}
+              alt={item.course}
+              className="m-auto border-4 border-amber-400 hover:border-black rounded-full object-cover w-full aspect-square max-w-64"
+            />
 
-            <a href={item.path} className="text-xl md:text-2xl font-medium text-[#0f4a85] mt-4">
+            <a
+              href={item.path}
+              className="text-lg block md:text-2xl font-medium text-[#0f4a85] mt-5"
+            >
               {item.course}
             </a>
           </div>
@@ -69,42 +106,3 @@ const CustomProgramOppertunitySlider: React.FC<CustomProgramOppertunitySliderPro
 };
 
 export default CustomProgramOppertunitySlider;
-
-/*
----------How To use-----------
-<CustomProgramOppertunitySlider data={opportunityCardData}/>
-
-
----------Example Data---------
-
-export const opportunityCardData: OpportunityCard[] = [
-  {
-    id: 1,
-    img: MBA21,
-    course: "M.B.A (Master of Business Administration)",
-    path: "/placements",
-  },
-    {
-    id: 2,
-    img: MBA21,
-    course: "M.B.A. (Business Analytics) with L&T",
-    path: "/placements",
-  },  {
-    id: 3,
-    img: MBA21,
-    course: "M.Tech. in Computer Science Engineering",
-    path: "/placements",
-  },  {
-    id: 4,
-    img: MBA21,
-    course: "M.Tech. in Data Science",
-    path: "/placements",
-  },  {
-    id: 5,
-    img: MBA21,
-    course: "M.B.A (Master of Business Administration)",
-    path: "/placements",
-  },
-]
- 
-  */

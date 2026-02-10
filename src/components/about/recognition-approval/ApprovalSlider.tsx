@@ -184,7 +184,7 @@ const ApprovalsSlider = () => {
             {/* Heading */}
             <div className="flex flex-col md:flex-row">
               <div className="text-left mb-10">
-                <h2 className="text-[28px] lg:text-[3.125rem]  fw600 text-black mb-4">Approvals</h2>
+                <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem]  fw600 text-black mb-4">Approvals</h2>
                 <p className="text-black max-w-3xl">
                   The Uttar Pradesh State Legislature established SRMU as a full-fledged university, and it is included among the list of universities that the University Grants
                   Commission maintains under Section 2(f), with the authority to award degrees in accordance with Section 22(1) of the UGC Act, 1956. SRMU has received permissions

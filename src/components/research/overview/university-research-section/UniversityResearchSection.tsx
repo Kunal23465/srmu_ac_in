@@ -20,7 +20,7 @@ const UniversityResearchSection: React.FC = () => {
       <div className={`${Classes["container"]}`}>
         <div className="container">
           <div className=" mb-10 border-b-3 border-white/50 pb-6">
-            <h2 className="text-[28px] lg:text-[3.125rem] fw500 mb-3 max-w-3xl lg:leading-15 sm:leading-25 md:leading-20">University Research Advisory Board / Council</h2>
+            <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] fw500 mb-3 max-w-3xl lg:leading-15 sm:leading-25 md:leading-20">University Research Advisory Board / Council</h2>
             <p className="text-gray-200 lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px] max-w-3xl">
               The University Research Advisory Board at SRMU provides strategic guidance and oversight, ensuring the promotion of high-quality and impactful research projects
               across the institution.

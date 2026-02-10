@@ -25,7 +25,7 @@ const ProgramFinderHome: React.FC = ({ data }: any) => {
 
   return (
     <div className={`${Classes["container"]} pb-6 sm:py-10`}>
-      <h2 className="text-[28px] lg:text-[3.125rem] text-center font-bold mb-5 sm:mb-16 relative after:content-[''] after:w-[150px] after:h-1 after:bg-[#ffb703] after:absolute after:-bottom-4 after:left-[50%] after:translate-x-[-50%] ">
+      <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] text-center font-bold mb-5 sm:mb-16 relative after:content-[''] after:w-[150px] after:h-1 after:bg-[#ffb703] after:absolute after:-bottom-4 after:left-[50%] after:translate-x-[-50%] ">
         Program Finder
       </h2>
 

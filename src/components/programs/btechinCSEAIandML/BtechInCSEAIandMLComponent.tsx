@@ -52,7 +52,7 @@ const BtechInCSEAIandMLComponent = () => {
                 </div>
             </div>
             <div className={`${Classes["container"]}`}>
-                <h2 className="mt-20 mb-10 text-center font50 fw500 text-[#023047]">Program Fee</h2>
+                <h2 className="mt-20 mb-10 text-center text-[22px] sm:text-[28px] lg:text-[3.125rem] fw500 text-[#023047]">Program Fee</h2>
                 <CustomDepartmentFeeDetailsTable data={ProgramFeesAIandML} />
             </div>
             <div className="my-50">

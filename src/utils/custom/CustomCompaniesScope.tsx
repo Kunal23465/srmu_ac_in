@@ -24,7 +24,7 @@ interface CompaniesScopeProps {
 }
 
 export const CustomCompaniesScope: React.FC<CompaniesScopeProps> = ({ data, list }) => {
-  const {  sectors } = data;
+  const { sectors } = data;
 
   const [activeTab, setActiveTab] = useState(0);
   const [index, setIndex] = useState(0);
@@ -67,7 +67,7 @@ export const CustomCompaniesScope: React.FC<CompaniesScopeProps> = ({ data, list
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 pb-10">
           <div>
-            <h2 className="font50 text-[#023047] fw500 leading-tight">
+            <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] text-[#023047] fw500 leading-tight">
 
 
               <span className="block">Scope</span>

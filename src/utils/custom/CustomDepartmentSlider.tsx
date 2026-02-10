@@ -113,7 +113,7 @@ const CustomDepartmentSlider = <T,>({
         {/* 🔥 Heading + Arrows */}
         <div className="flex items-center justify-between mb-6">
           {heading && (
-            <h2 className="font-semibold" style={{ color: headingColor, fontSize: "2.5rem" }}>
+            <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] font-semibold" >
               {heading}
             </h2>
           )}

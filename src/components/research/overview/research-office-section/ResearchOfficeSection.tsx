@@ -20,7 +20,7 @@ const ResearchOfficeSection: React.FC = () => {
         <div className="container">
           {/* Heading */}
           <div className="mb-8">
-            <h2 className="text-[#023047] text-[28px] lg:text-[3.125rem] fw500 mb-2">Research Office</h2>
+            <h2 className="text-[#023047] text-[22px] sm:text-[28px] lg:text-[3.125rem] fw500 mb-2">Research Office</h2>
             <p className="text-gray-700 lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px] max-w-3xl">
               The Research Office at SRMU facilitates and supports the entire research lifecycle, from the conceptualization stage to the final project.
             </p>

@@ -72,7 +72,7 @@ const Conference: React.FC = () => {
     <div>
       <div className={Classes["container"]}>
         <div className="py-14 md:py-20 text-center text-black">
-          <h2 className="text-[28px] lg:text-[3.125rem] fw500 text-[#023047]">Conference</h2>
+          <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] fw500 text-[#023047]">Conference</h2>
           <p className="lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px]">
             SRMU hosts and participates in various conferences, accelerating knowledge-sharing among researchers, scholars, and experts from diverse fields.
           </p>

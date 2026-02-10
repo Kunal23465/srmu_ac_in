@@ -28,7 +28,7 @@ const OutreachInitiatives: React.FC = () => {
     <div className="pt-20 pb-28 bg-[#f2f2f2]">
       <div className={`${Classes["container"]}`}>
         <div className="text-center px-4">
-          <h1 className="text-[28px] lg:text-[3.125rem] fw500 mb-4">{title}</h1>
+          <h1 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] fw500 mb-4">{title}</h1>
           <p className="text-gray-600 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px]">{desc}</p>
         </div>
 

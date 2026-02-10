@@ -58,7 +58,7 @@ const LastSliderSlick: React.FC = () => {
 
       {/* Heading */}
       <div className="text-center mb-5">
-        <h2 className="text-[28px] lg:text-[3.125rem] font-medium text-[#023047] fw600">Academic Wings</h2>
+        <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] font-medium text-[#023047] fw600">Academic Wings</h2>
 
         <p className="w-[82%] pb-10 mx-auto text-[15px] lg:text-[16px]">
           Shri Ramswaroop Memorial University (SRMU) features well-defined academic wings, each dedicated to fostering excellence in specific disciplines.

@@ -36,7 +36,7 @@ const PlacementTestimonials: FC = () => {
   return (
     <div className="testimonials-section">
       <div className="content-container">
-        <h2 className="text-[#023047] text-[28px] lg:text-[3.125rem] fw500 mb-2  text-center">What Our People say</h2>
+        <h2 className="text-[#023047] text-[22px] sm:text-[28px] lg:text-[3.125rem] fw500 mb-2  text-center">What Our People say</h2>
         <p className="subtitle text-center max-w-3xl text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] mx-auto">
           Testimonials from student, staff, and alumni on their placement experience at SRMU
         </p>

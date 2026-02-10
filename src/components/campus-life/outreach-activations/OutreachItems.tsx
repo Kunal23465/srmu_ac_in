@@ -10,7 +10,7 @@ const OutreachItems: React.FC = () => {
       <div className={`${Classes["container"]} py-20 flex flex-col md:flex-row gap-8 items-center w-full`}>
         {/* Text Section */}
         <div className="w-full md:w-1/2">
-          <h2 className="text-[28px] lg:text-[3.125rem] font-medium text-[#023047] mb-8">{title}</h2>
+          <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] font-medium text-[#023047] mb-8">{title}</h2>
 
           <div>
             {desc.map((item, index) => (

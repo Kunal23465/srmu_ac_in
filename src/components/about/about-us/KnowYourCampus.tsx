@@ -33,7 +33,7 @@ const KnowOurCampus: React.FC = () => {
       {/* Top Header */}
       <div className="bg-[#0f4a85] py-6">
         <div className={`${Classes["container"]}`}>
-          <h2 className="text-[28px] lg:text-[3.125rem] fw600 text-white">Know Our Campus</h2>
+          <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] fw600 text-white">Know Our Campus</h2>
         </div>
       </div>
 

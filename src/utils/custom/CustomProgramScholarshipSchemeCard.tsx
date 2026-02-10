@@ -11,8 +11,8 @@ const CustomProgramScholarshipSchemeCard: React.FC = () => {
 
           {/* LEFT SECTION */}
           <div className="px-5 sm:px-0">
-            <h1 className="text-3xl sm:text-5xl pb-2 font-medium">Scholarship</h1>
-            <h1 className="text-3xl sm:text-5xl pb-3 font-medium">Schemes</h1>
+            <h1 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] pb-2 font-medium">Scholarship</h1>
+            <h1 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] pb-3 font-medium">Schemes</h1>
 
             <p className="pb-10 sm:pb-20 max-w-full sm:max-w-110 text-sm sm:text-base">
               Career Counselling at Shri Ramswaroop Memorial University offers counselling to students, guiding the young minds by helping them to understand their strength and also

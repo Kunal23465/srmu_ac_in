@@ -41,7 +41,7 @@ const HowToApply: React.FC = () => {
         <div className={`${Classes["container"]}`}>
           <div className={`flex flex-col md:flex-row  gap-4 items-stretch  justify-between `}>
             <div className="w-auto border-l-4 pl-2 md:pl-0 md:border-l-0  md:border-r-5 border-[#ffb703] flex flex-col justify-center">
-              <h2 className="text-[#023047] text-[28px] lg:text-[3.125rem] fw500 whitespace-pre-line leading-15 pr-4 sm:min-w-[350px]">How To Apply</h2>
+              <h2 className="text-[#023047] text-[22px] sm:text-[28px] lg:text-[3.125rem] fw500 whitespace-pre-line leading-15 pr-4 sm:min-w-[350px]">How To Apply</h2>
             </div>
             <div className="md:pl-8 md:py-4">
               <div className="text-justify text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px]">
@@ -77,9 +77,8 @@ const HowToApply: React.FC = () => {
                 <button
                   onClick={() => sliderRef.current?.slickPrev()}
                   disabled={isAtStart}
-                  className={`w-12 h-12 border-2 border-black flex hover:bg-[#0f4a85] text-[#0f4a85] hover:text-[#ffb703]  items-center justify-center transition ${
-                    isAtStart ? "opacity-40 cursor-not-allowed" : " cursor-pointer"
-                  }`}
+                  className={`w-12 h-12 border-2 border-black flex hover:bg-[#0f4a85] text-[#0f4a85] hover:text-[#ffb703]  items-center justify-center transition ${isAtStart ? "opacity-40 cursor-not-allowed" : " cursor-pointer"
+                    }`}
                 >
                   <MdKeyboardArrowLeft size="26" />
                 </button>
@@ -87,9 +86,8 @@ const HowToApply: React.FC = () => {
                 <button
                   onClick={() => sliderRef.current?.slickNext()}
                   disabled={isAtEnd}
-                  className={`w-12 h-12 border-2 border-black flex hover:bg-[#0f4a85] text-[#0f4a85] hover:text-[#ffb703] items-center justify-center transition ${
-                    isAtEnd ? "opacity-40 cursor-not-allowed" : " cursor-pointer"
-                  }`}
+                  className={`w-12 h-12 border-2 border-black flex hover:bg-[#0f4a85] text-[#0f4a85] hover:text-[#ffb703] items-center justify-center transition ${isAtEnd ? "opacity-40 cursor-not-allowed" : " cursor-pointer"
+                    }`}
                 >
                   <MdKeyboardArrowRight size="26" />
                 </button>

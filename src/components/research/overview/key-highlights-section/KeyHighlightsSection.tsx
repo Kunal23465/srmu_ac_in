@@ -48,7 +48,7 @@ const KeyHighlightsSection: React.FC<CustomFacilitiesTypes> = ({ facilities, lay
         <div className="sm:p-6">
           {/* Header */}
           <div className="flex justify-between items-center mb-10">
-            <h2 className="text-[28px] lg:text-[3.125rem] fw500 text-black">{layoutData?.title}</h2>
+            <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] fw500 text-black">{layoutData?.title}</h2>
 
             {/* Custom Prev / Next Buttons with < > */}
             <div className="flex gap-4">

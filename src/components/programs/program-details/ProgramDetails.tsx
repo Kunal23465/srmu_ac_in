@@ -89,12 +89,12 @@ const ProgramDetails = () => {
           {/* @ts-ignore */}
           <h2 className="lg:text-[50px] md:text-[46.875px] text-[28px] fw500 text-[#023047]">{dataByID?.name}</h2>
           {/* @ts-ignore */}
-          <p className="text-[#023047] lg:text-[30px] md:text-[28.125px] text-[26.25px] fw500">{dataByID?.title}</p>
+          <p className="text-[#023047] text-[20px] sm:text-[24px] lg:text-[2rem] fw500">{dataByID?.title}</p>
           {/* <CustomOverviewSection data={BtechCSEAIandMLOverviewData} /> */}
           <div className={` py-7 md:py-10 lg:py-14`}>
             <div className={`block  lg:flex   gap-4  md:items-stretch   justify-between md:flex-row items-start`}>
               <div className={`w-auto mb-4 lg:mb-0  ${" border-l-4 pl-2 lg:pl-0 lg:border-l-0  lg:border-r-4"}  border-[#ffb703] flex flex-col justify-center`}>
-                <h2 className="text-[28px]  lg:text-[3.125rem] whitespace-pre-line font-semibold leading-11 pr-4 sm:min-w-[350px]">Overview</h2>
+                <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] whitespace-pre-line font-semibold leading-11 pr-4 sm:min-w-[350px]">Overview</h2>
               </div>
               <div
                 className={`text-justify md:line-clamp-none ${expanded ? "line-clamp-none" : "line-clamp-5"}`}
@@ -135,18 +135,18 @@ const ProgramDetails = () => {
           )}
         </div>
         <div className={`${Classes["container"]}`}>
-          <h2 className="mt-20 mb-10 text-center font50 fw500 text-[#023047]">Program Fee</h2>
+          <h2 className="mt-20 mb-10 text-center text-[22px] sm:text-[28px] lg:text-[3.125rem] fw500 text-[#023047]">Program Fee</h2>
           {/* <CustomDepartmentFeeDetailsTable data={ProgramFeesAIandML} /> */}
           {/* @ts-ignore */}
           {feesData && feesData.length > 0 && <ProgramFeeTable data={feesData[0]} />}
         </div>
         {!isPhd && (
-          <div className="my-50">
+          <div className="my-10 ">
             <CustomProgramScholarshipSchemeCard />
           </div>
         )}
         {!isPhd && (
-          <div className="my-50">
+          <div className="my-10 ">
             <div className={`${Classes["container"]}`}>
               <CustomDepartmentHighlights heading="Department Highlights" steps={departmentHeghlightData} />
             </div>

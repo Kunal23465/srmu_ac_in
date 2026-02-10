@@ -51,7 +51,7 @@ const Iqac: React.FC = () => {
 
       <div className={`${Classes["container"]}`}>
         {/* Reports Section */}
-        <h1 className="text-[28px] lg:text-[3.125rem] fw500 mt-14 mb-5 text-[#023047] lg:mt-20">Report</h1>
+        <h1 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] fw500 mt-14 mb-5 text-[#023047] lg:mt-20">Report</h1>
         <CustomTable columnOneHeader="University Annual Report" columnTwoHeader="Downloads" data={UniversityannualReportData} />
         <CustomTable columnOneHeader="IQAC Annual Report" columnTwoHeader="Downloads" data={iqacAnnualReportData} />
         <CustomTable columnOneHeader="IQAC Action Taken Report" columnTwoHeader="Downloads" data={iqacActionTakenReportData} />
@@ -59,7 +59,7 @@ const Iqac: React.FC = () => {
         <CustomTable columnOneHeader="Undertaking" columnTwoHeader="Downloads" data={iqacUndertakingData} />
 
         {/* Feedback Section */}
-        <h1 className="text-[28px] lg:text-[3.125rem] fw500 mt-14 mb-5 text-[#023047] md:mt-20">Feedback</h1>
+        <h1 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] fw500 mt-14 mb-5 text-[#023047] md:mt-20">Feedback</h1>
         <CustomTable columnOneHeader="Feedback Procedure" columnTwoHeader="Downloads" data={iqacFeedbackData} />
         <CustomTable columnOneHeader="Analysis Report" columnTwoHeader="Downloads" data={iqacAnalysisReportData} />
       </div>

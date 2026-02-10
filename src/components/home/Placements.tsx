@@ -26,7 +26,7 @@ const Placements = () => {
     <section ref={sectionRef} className={` ${Classes["container"]} sm:mb-16 sm:mt-10`}>
       <div className="w-full">
         <div className="!text-left">
-          <h2 className="text-[28px] lg:text-[3.125rem] fw600">{PlacementData[0].heading}</h2>
+          <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] fw600">{PlacementData[0].heading}</h2>
           <p className="pb-6 text-[16px] font-semibold text-[#00000099]">{PlacementData[0].description}</p>
         </div>
         <div className="lg:flex justify-between gap-5 lg:pr-4 py-8">

@@ -76,7 +76,7 @@ const PlacementDrives: React.FC = () => {
 
         {/* HEADER + TABS */}
         <div className="block md:flex justify-between items-center">
-          <h2 className="text-[28px] lg:text-[3.125rem] fw500 mb-2">
+          <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] fw500 mb-2">
             Placement Drives
           </h2>
 

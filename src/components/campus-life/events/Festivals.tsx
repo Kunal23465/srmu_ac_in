@@ -44,7 +44,7 @@ const Festivals: React.FC = () => {
         <div className="absolute inset-0 bg-opacity-60"></div>
 
         <div className="relative z-10 px-4 md:px-0">
-          <h2 className="text-[28px] sm:text-[28px] lg:text-[3.125rem] fw500 mb-4 text-[#ffb703]">Festivals</h2>
+          <h2 className="text-[28px] sm:text-[22px] sm:text-[28px] lg:text-[3.125rem] fw500 mb-4 text-[#ffb703]">Festivals</h2>
           <p className="max-w-3xl md:max-w-[45%] mx-auto lg:text-[15px] md:text-[14px] sm:text-[13.132px] text-[13.132px] mb-10 leading-relaxed">
             The SRMU community celebrates various Indian festivals, shaping an atmosphere of harmony and unity. Each festival becomes a lively tapestry of cultural expressions,
             bringing students, faculty, and staff together to share these rich traditions.
@@ -66,9 +66,8 @@ const Festivals: React.FC = () => {
                 setActiveIndex(idx);
                 setStartCard(0);
               }}
-              className={`relative lg:text-[18px] sm:text-[16px] text-[14px] fw500 pb-3 transition-all duration-300 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[4px] ${
-                activeIndex === idx ? "text-white  after:bg-[#ffb703]" : "text-white hover:after:bg-[#ffb703]"
-              }`}
+              className={`relative lg:text-[18px] sm:text-[16px] text-[14px] fw500 pb-3 transition-all duration-300 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[4px] ${activeIndex === idx ? "text-white  after:bg-[#ffb703]" : "text-white hover:after:bg-[#ffb703]"
+                }`}
             >
               {festival.name}
             </button>

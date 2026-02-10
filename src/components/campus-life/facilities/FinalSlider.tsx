@@ -15,7 +15,7 @@ const FinalSlider: React.FC = () => {
       <div className="">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-8 w-full">
           <div className="w-full sm:w-auto">
-            <h2 className="text-[28px] lg:text-[3.125rem]  text-[#023047] fw600">Academic Facilities</h2>
+            <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem]  text-[#023047] fw600">Academic Facilities</h2>
             <p className="text-[15px] lg:text-[16px] md:text-[15px] sm:text-[15px]">
               From innovative research spaces to interactive learning environments, SRMU offers a range of academic facilities.
             </p>

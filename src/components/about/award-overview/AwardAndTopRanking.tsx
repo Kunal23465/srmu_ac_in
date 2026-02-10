@@ -20,10 +20,10 @@ const AwardAndTopRanking: React.FC = () => {
             {/* Left Section */}
             <div className="mr-0 lg:-mr-8 lg:p-1">
               <h2 className="fw500 mb-4 leading-tight">
-                <span className="block text-[28px] lg:text-[3.125rem] whitespace-nowrap">
+                <span className="block text-[22px] sm:text-[28px] lg:text-[3.125rem] whitespace-nowrap">
                   Awards & Top
                 </span>
-                <span className="block text-[28px] lg:text-[3.125rem]">
+                <span className="block text-[22px] sm:text-[28px] lg:text-[3.125rem]">
                   Rankings
                 </span>
               </h2>

@@ -117,7 +117,7 @@ const PlacementRecords: React.FC = () => {
       <div className={`${Classes["container"]}`}>
         {/* HEADER + TABS */}
         <div className="block md:flex justify-between items-center">
-          <h2 className="text-[28px] lg:text-[3.125rem] font-medium mb-2">Placement Records</h2>
+          <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] font-medium mb-2">Placement Records</h2>
 
           <div className="flex items-center lg:text-[19px] md:text-[17.82px] sm:text-[16.632px] text-[16.632px] w-fit mb-2 bg-white">
             {["2023", "2024", "2025"].map((year) => (

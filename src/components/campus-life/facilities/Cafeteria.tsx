@@ -26,7 +26,7 @@ const Cafeteria: React.FC = () => {
         <div className="relative w-full">
           <div className="w-full flex flex-col md:flex-row items-start justify-between gap-27.5">
             <div className="text-white md:w-1/2 z-10 mt-14.5">
-              <h2 className="text-[28px] lg:text-[3.125rem] text-white  fw600">Cafeteria & Eating Joints</h2>
+              <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] text-white  fw600">Cafeteria & Eating Joints</h2>
 
               <span className="mb-4 text-[15px] lg:text-[16px] md:text-[15px] sm:text-[15px] leading-relaxed">
                 The university boasts a vibrant cafeteria and various eating joints, creating a diverse culinary landscape for students. These spaces not only serve as hubs for
@@ -39,9 +39,8 @@ const Cafeteria: React.FC = () => {
                 {images.map((img, index) => (
                   <div
                     key={index}
-                    className={`absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 transition-opacity duration-700 ease-in-out ${
-                      index === activeIndex ? "opacity-100" : "opacity-0"
-                    }`}
+                    className={`absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 transition-opacity duration-700 ease-in-out ${index === activeIndex ? "opacity-100" : "opacity-0"
+                      }`}
                   >
                     <img src={img} alt={`Cafeteria ${index + 1}`} className="w-full h-full object-cover rounded-lg" />
                   </div>

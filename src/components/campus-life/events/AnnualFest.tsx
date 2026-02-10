@@ -50,11 +50,11 @@ const AnnualFest: React.FC = () => {
 
     return (
         <section className="relative bg-cover bg-center text-white py-20 back cursor-pointer">
-      <div className={`${Classes["container"]}`}>
+            <div className={`${Classes["container"]}`}>
 
                 {/* Heading and description */}
                 <div className="flex flex-col md:flex-row justify-between md:items-start gap-4 mb-10">
-                    <h2 className="text-[28px] sm:text-[28px] lg:text-[3.125rem] fw500">Annual Fest</h2>
+                    <h2 className="text-[28px] sm:text-[22px] sm:text-[28px] lg:text-[3.125rem] fw500">Annual Fest</h2>
                     <p className="lg:text-[15px] md:text-[14px] sm:text-[13.132px] text-[13.132px] text-white max-w-3xl leading-relaxed">
                         Shri Ramswaroop Memorial University has a variety of annual festivities each year.
                         These celebrations and festivals give the students a great environment for idea sharing,

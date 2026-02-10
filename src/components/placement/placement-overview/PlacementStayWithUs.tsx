@@ -13,7 +13,7 @@ const PlacementStayWithUs: React.FC = () => {
         <div className="relative z-10 w-full px-5 sm:px-10 lg:px-0">
           <button className="px-4 py-2 border border-white rounded-full  mb-6">Stay With Us</button>
 
-          <h1 className="text-[28px] lg:text-[3.125rem] leading-snug ">
+          <h1 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] leading-snug ">
             Over the years, our students have landed
             <br /> top-tier opportunities in leading companies
           </h1>

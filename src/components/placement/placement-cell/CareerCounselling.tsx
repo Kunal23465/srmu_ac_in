@@ -62,7 +62,7 @@ const CareerCounselling: React.FC = () => {
         {/* HEADER + BUTTONS */}
         <div className="flex flex-col md:flex-row justify-between items-start mb-12">
           <div className="max-w-5xl">
-            <h1 className="text-[#023047] text-[28px] lg:text-[3.125rem] fw500">Career Counselling and Guidance</h1>
+            <h1 className="text-[#023047] text-[22px] sm:text-[28px] lg:text-[3.125rem] fw500">Career Counselling and Guidance</h1>
 
             <p className="mt-3 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] opacity-100 font-light">
               Career Counselling at Shri Ramswaroop Memorial University offers counselling to students, guiding the young minds by helping them to understand their strength and

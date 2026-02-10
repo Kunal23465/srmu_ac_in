@@ -11,7 +11,7 @@ const ResearchCentersSection: React.FC = () => {
       <div className="bg-[#dee6f7] rounded-none md:rounded-[30px] h-[1050px] md:h-[600px] ">
         <div className={Classes["container"]}>
           <div className="py-14 md:py-20">
-            <h2 className="text-[28px] lg:text-[3.125rem] fw500 text-gray-900">Research Centers</h2>
+            <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] fw500 text-gray-900">Research Centers</h2>
           </div>
         </div>
       </div>

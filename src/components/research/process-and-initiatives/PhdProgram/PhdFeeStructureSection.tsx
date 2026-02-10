@@ -10,7 +10,7 @@ const PhdFeeStructureSection: React.FC = () => {
     <section className=" text-white py-16" style={{ backgroundImage: `url(${bgImage})`, backgroundSize: "cover", backgroundPosition: "center" }}>
       <div className={`${Classes["container"]} px-5 md:px-0`}>
         {/* Title */}
-        <h2 className="text-[28px] lg:text-[3.125rem] fw500 mb-4">{title}</h2>
+        <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] fw500 mb-4">{title}</h2>
         <p className="max-w-4xl lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px] mb-10 md:mb-15">{description}</p>
 
         {/* Table */}

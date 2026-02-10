@@ -4,7 +4,7 @@ const SportsAndGames = () => {
   return (
     <>
       <div className="text-center ">
-        <h2 className="text-[28px] lg:text-[3.125rem] pt-15 text-black  fw600">Sports and Games</h2>
+        <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] pt-15 text-black  fw600">Sports and Games</h2>
 
         <p className="mt-4 mb-8 text-[15px] lg:text-[16px] md:text-[15px] sm:text-[15px]">
           SRMU offers top-notch sports and recreational facilities, covering a range of indoor and outdoor activities such as chess, carrom, badminton, tennis, basketball,

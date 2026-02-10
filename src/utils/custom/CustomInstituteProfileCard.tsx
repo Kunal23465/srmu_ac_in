@@ -37,7 +37,7 @@ const CustomInstituteProfileCard: React.FC<CustomInstituteProfileCardProps> = ({
 
             {/* Text Content */}
             <div className="w-full md:w-2/3 text-white">
-              <h2 className="text-[28px] lg:text-[3.125rem] fw500 mb-2">{profile.title}</h2>
+              <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] fw500 mb-2">{profile.title}</h2>
 
               <p className="lg:text-[19px] md:text-[17.82px] sm:text-[16.632px] text-[16.632px]  mb-1">{profile.name}</p>
               <p className="mb-4 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px]  fw500">{profile.position}</p>

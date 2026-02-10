@@ -1,9 +1,9 @@
 import React from 'react'
 
-const OurInstitutes:React.FC = () => {
+const OurInstitutes: React.FC = () => {
   return (
     <div className="text-center">
-      <h2 className="curr text-[28px] lg:text-[3.125rem] fw500">
+      <h2 className="curr text-[22px] sm:text-[28px] lg:text-[3.125rem] fw500">
         <>Our Institutes</>
       </h2>
 

@@ -1,3 +1,5 @@
+import React from "react";
+
 interface ProgramFee {
   feeTypeId: number;
   feeTypeName: string;
@@ -15,8 +17,7 @@ interface Props {
 }
 
 const ProgramFeeTable: React.FC<Props> = ({ data }) => {
-
-  function getMaxYearWiseFees(fees: any[]) {
+  function getMaxYearWiseFees(fees: ProgramFee[]) {
     const maxLength = Math.max(
       ...fees.map(fee => Object.keys(fee.yearWiseAmount).length)
     );
@@ -25,56 +26,81 @@ const ProgramFeeTable: React.FC<Props> = ({ data }) => {
     );
   }
 
-  const check = getMaxYearWiseFees(data.fees)
+  const check = getMaxYearWiseFees(data.fees);
   const years = Object.keys(check[0].yearWiseAmount);
+
   const notes = [
-    `Alumni Fee: <span class="inlie-block ml-1 text-lg font-medium"> 500 </span>`,
-    `Degree Fee:  <span class="inlie-block ml-1 text-lg font-medium"> 1000 </span>`,
-    ` <span class="inlie-block text-lg font-medium"> Both these fees are payable in the final year of the program </span>`,
+    `Alumni Fee: <span class="inline-block ml-1 text-lg font-medium">500</span>`,
+    `Degree Fee: <span class="inline-block ml-1 text-lg font-medium">1000</span>`,
+    `<span class="inline-block text-lg font-medium">Both these fees are payable in the final year of the program</span>`,
   ];
-  const gridTemplate = `3fr repeat(${years.length}, 1fr)`;
+
   return (
-    <div className="w-full p-6 bg-[#ecf0f9] rounded-2xl border border-[#c6d4ea] my-14">
-      {/* Header */}
-      <div className="grid bg-[#ecf0f9] py-6 px-4 font-semibold text-[#0a4a85]" style={{ gridTemplateColumns: gridTemplate }}>
-        <div className="px-8">Duration (in Year)</div>
-        {years.map((year) => (
-          <div key={year} className="text-center">
-            {year} Year
-          </div>
-        ))}
-      </div>
+    <>
+      <div className="w-full p-6 bg-[#ecf0f9] rounded-2xl border border-[#c6d4ea] my-14 overflow-x-auto">
+        <table className="w-full border-collapse">
+          {/* Header */}
+          <thead>
+            <tr className="bg-[#ecf0f9] text-[#0a4a85] font-semibold">
+              <th className="text-left px-8 py-6 border-r border-[#dfe3ee]">
+                Duration (in Year)
+              </th>
+              {years.map((year) => (
+                <th
+                  key={year}
+                  className="text-center px-6 py-6 border-r last:border-r-0 border-[#dfe3ee]"
+                >
+                  {year} Year
+                </th>
+              ))}
+            </tr>
+          </thead>
 
-      {/* Rows */}
-      <div className="mt-4 space-y-4">
-        {data.fees.map((fee, index) => (
-          <div key={index} className="grid bg-white rounded-md p-6" style={{ gridTemplateColumns: gridTemplate }}>
-            <div className={`px-8  text-[#023047] relative after:content-[''] after:absolute after:w-0.5 after:h-10 after:bg-[#dfe3ee] after:-top-2 after:right-0 `}>
-              {fee.feeTypeName}
-            </div>
-
-            {years.map((year, i) => (
-              <div
-                key={year}
-                className={`text-center relative ${years.length !== i + 1 && "after:content-[''] after:absolute after:w-0.5 after:h-10 after:bg-[#dfe3ee] after:-top-2 after:right-0"
-                  }  `}
+          {/* Body */}
+          <tbody className="space-y-4">
+            {data.fees.map((fee) => (
+              <tr
+                key={fee.feeTypeId}
+                className="bg-white rounded-md"
               >
-                {fee.yearWiseAmount[year] || "-"}
-              </div>
+                <td className="px-8 py-6 text-[#023047] border-r border-[#dfe3ee]">
+                  {fee.feeTypeName}
+                </td>
+
+                {years.map((year) => (
+                  <td
+                    key={year}
+                    className="text-center px-6 py-6 border-r last:border-r-0 border-[#dfe3ee]"
+                  >
+                    {fee.yearWiseAmount[year] ?? "-"}
+                  </td>
+                ))}
+              </tr>
             ))}
-          </div>
-        ))}
+            <tr>
+              <td colSpan={5}>
+                {notes.length > 0 && (
+                  <div className="mt-6 bg-white p-8 rounded-lg">
+                    {notes.map((note, i) => (
+                      <p
+                        key={i}
+                        className="pb-4 text-[#0c3b6a]"
+                        dangerouslySetInnerHTML={{ __html: note }}
+                      />
+                    ))}
+                  </div>
+                )}
+              </td>
+            </tr>
+          </tbody>
+          {/* Notes */}
+
+
+        </table>
+
+
       </div>
-      {notes && (
-        <div className="mt-6 bg-[#ffffff] p-8 rounded-lg">
-          {notes.map((note, i) => (
-            <p key={i} className="pb-4 text-[#0c3b6a]">
-              <div dangerouslySetInnerHTML={{ __html: note }} />
-            </p>
-          ))}
-        </div>
-      )}
-    </div>
+    </>
   );
 };
 
