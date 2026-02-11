@@ -14,6 +14,7 @@ import { getInsituteInfoSliceReducer } from "../insitute-info/getInsitiuteInfo-s
 import { getAllDepartmentByIdSliceReducer } from "../department/get-all-department-by-id/getAllDepartmentById-slice";
 import { getDepartmentByIdSliceReducer } from "../department/department-details/getDepartmentDetailsById-slice";
 import { careerFormReducer } from "../career-form/careerFormSlice";
+import { bannerReducer } from "../home-banner/bannerSlice";
 const allReducer = {
   ui: uiReducer,
   getProgramFinder: programFinderReducer,
@@ -31,5 +32,6 @@ const allReducer = {
   getAllDepartmentByInsituteId: getAllDepartmentByIdSliceReducer,
   getDepartmentById: getDepartmentByIdSliceReducer,
   careerForm: careerFormReducer,
+  getbanner: bannerReducer,
 };
 export default allReducer;
