@@ -14,7 +14,7 @@ const CustomProgramEligibilityCriterionCard: React.FC<CustomProgramEligibilityCr
       style={{ backgroundImage: `url(${EligibilityImg})` }}
     >
       <div className="max-w-[50%] xl:ml-auto lg:ml-auto sm:ml-15">
-        <p className="text-3xl font-medium pb-3">{data.heading}</p>
+        <p className="text-[22px] sm:text-[28px] lg:text-[3.125rem] font-medium pb-3">{data.heading}</p>
         <p className="pb-4">{data.content}</p>
 
         {data.extraContent && (

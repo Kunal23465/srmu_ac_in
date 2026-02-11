@@ -9,7 +9,7 @@ const ContactCard: React.FC<Props> = ({ item }) => {
   return (
     <div className="border border-[#ffb703] hover:border-[#0f4a85] bg-white text-black  hover:text-white hover:bg-[#0f4a85] p-8 rounded-md shadow-sm  hover:shadow-lg transition-all duration-500">
       <div className="flex justify-start items-center gap-4">
-        <div className="text-3xl mb-2">
+        <div className="text-[22px] sm:text-[28px] lg:text-[3.125rem] mb-2">
           <img src={item.icon} />
         </div>
         <h4 className="font-semibold uppercase lg:text-[17px] md:text-[15.945px] sm:text-[14.882px] mb-1">{item.label}</h4>

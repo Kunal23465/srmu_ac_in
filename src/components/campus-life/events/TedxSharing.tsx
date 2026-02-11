@@ -101,7 +101,7 @@ export default function TedxSharing() {
                 <h3
                   className={`
                                         absolute left-1/2 -translate-x-1/2 text-white 
-                                        text-xl sm:text-2xl md:text-3xl font-medium drop-shadow-xl text-center
+                                        text-[22px] sm:text-[28px] lg:text-[3.125rem] font-medium drop-shadow-xl text-center
                                         transition-all duration-500 z-20
                                         ${isHover ? "-translate-y-50 sm:-translate-y-70 md:-translate-y-100" : "-translate-y-20"}
                                     `}

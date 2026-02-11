@@ -59,7 +59,7 @@ const CustomTabs = ({
 }: CustomTabsProps) => {
   const isControlled = controlledKey !== undefined;
   const [internalKey, setInternalKey] = useState(defaultActiveKey || items[0]?.key);
-
+  const [isMobile, setIsMobile] = useState(false);
   const justifyMap: Record<string, string> = {
     start: "flex-start",
     center: "center",
@@ -91,6 +91,18 @@ const CustomTabs = ({
     }
   }, [currentKey, items, variant]);
 
+
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768); // mobile breakpoint
+    };
+
+    handleResize(); // initial check
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   return (
     <div className="custom-tabs-container">
       <div
@@ -100,8 +112,15 @@ const CustomTabs = ({
           ${variant === "segment" ? "segment-header" : ""}
         `}
         style={{
-          justifyContent: alignTabs ? justifyMap[alignTabs] : "flex-start",
-          borderBottom: variant === "underline" ? `1px solid ${fullWidthUnderlineColor}` : "none",
+          justifyContent: isMobile
+            ? "flex-start"
+            : alignTabs
+              ? justifyMap[alignTabs]
+              : "flex-start",
+          borderBottom:
+            variant === "underline"
+              ? `1px solid ${fullWidthUnderlineColor}`
+              : "none",
 
           /**  Apply dynamic pill bg */
           background: variant === "pill" ? pillContainerBgColor : "transparent",
@@ -114,9 +133,8 @@ const CustomTabs = ({
             <div
               key={tab.key}
               ref={(el) => (tabRefs.current[index] = el)}
-              className={`tab-item text-sm xl:text-base block ${variant === "underline"} relative ${
-                isActive ? "after:content-['']  after:absolute  after:w-full after:h-1   after:bg-[var(--underlineColor)] after:left-0 after:-bottom-[11px]" : ""
-              }`}
+              className={`tab-item text-sm xl:text-base block ${variant === "underline"} relative ${isActive ? "after:content-['']  after:absolute  after:w-full after:h-1   after:bg-[var(--underlineColor)] after:left-0 after:-bottom-[11px]" : ""
+                }`}
               onClick={() => handleClick(tab.key)}
               style={{
                 // @ts-ignore

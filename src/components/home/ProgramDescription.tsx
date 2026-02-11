@@ -9,7 +9,7 @@ const ProgramDescription: React.FC <propsTypes> = ({data}) => {
     <div className="pb-6 sm:pb-10">
       {data.map((item:any) => (
         <>
-          <h1 className="text-3xl font-semibold mb-2">{item.heading}</h1>
+          <h1 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] font-semibold mb-2">{item.heading}</h1>
           <p className="mb-2">{item.para}</p>
           {item.content.map((ele:any) => (
             <div className="mb-2">

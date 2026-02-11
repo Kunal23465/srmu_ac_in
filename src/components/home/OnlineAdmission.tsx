@@ -10,7 +10,7 @@ const OnlineAdmission: FC = () => {
       <div className="flex flex-col items-center justify-center my-17 bg-gray-50 px-4 py-2">
         <div className="max-w-7xl w-full bg-white rounded-3xl shadow-xl overflow-hidden border-t-8 border-b-8 border-b-[#f8b923] border-t-[#234a84] ">
           <div className="p-8 md:p-16 text-center">
-            <h1 className="text-3xl md:text-4xl font-extrabold text-gray-800 mb-2">
+            <h1 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] font-semibold text-gray-800 mb-2">
               Welcome to SRMU
             </h1>
             <p className="text-lg md:text-xl  text-[#f8b922] mb-2">

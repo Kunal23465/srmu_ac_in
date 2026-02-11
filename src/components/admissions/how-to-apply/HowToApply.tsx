@@ -71,7 +71,7 @@ const HowToApply: React.FC = () => {
           <div className="">
             <div className="flex">
               <div>
-                <h1 className="text-3xl sm:text-5xl font-bold">SRMU Offers</h1>
+                <h1 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] font-bold">SRMU Offers</h1>
               </div>
               <div className="ml-auto flex gap-5">
                 <button
@@ -115,7 +115,7 @@ const HowToApply: React.FC = () => {
                 <img src={img} />
               </div>
               <div className="py-10 sm:py-0 w-full">
-                <h1 className="text-3xl leading-tight sm:text-5xl font-medium mr-0 sm:mr-0 lg:mr-35">Get Advantage of studying in a NAAC Accredited University</h1>
+                <h1 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] leading-tight  font-medium mr-0 sm:mr-0 lg:mr-35">Get Advantage of studying in a NAAC Accredited University</h1>
                 <ul className="list-disc marker:text-amber-400 marker:text-3xl mr-0 sm:mr-0 lg:mr-35">
                   <li className="ml-6 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] leading-4 lg:leading-6">26+ Years of Academic Excellence</li>
                   <li className="ml-6 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] leading-4 lg:leading-6">Global & Industry Collaborations</li>

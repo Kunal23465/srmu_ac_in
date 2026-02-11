@@ -70,7 +70,7 @@ const ProgramsSection: FC = () => {
       <div className="container mx-auto max-w-7xl px-4">
         {/* Heading */}
         <div className="text-white mb-10">
-          <h2 className="text-[28px] sm:text-[28px] lg:text-[50px] fw600">Our Programs</h2>
+          <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] fw500">Our Programs</h2>
           <span className="text-lg mt-2 max-w-2xl opacity-90">
             At University’s beautiful campus, you’ll find a diverse and welcoming community that will teach you life skills along with having fun.
           </span>

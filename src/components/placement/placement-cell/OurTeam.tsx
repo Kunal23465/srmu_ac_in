@@ -87,7 +87,7 @@ const OurTeam: React.FC = () => {
           {/* HEADER + ARROWS */}
           <div className="flex flex-col md:flex-row justify-between items-start mb-12">
             <div className="max-w-5xl">
-              <h1 className="text-3xl md:text-5xl font-bold">{team === "Placement" ? "Meet Our Placement Team" : "Meet Our Training Team"}</h1>
+              <h1 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] font-bold">{team === "Placement" ? "Meet Our Placement Team" : "Meet Our Training Team"}</h1>
 
               <p className="mt-3 text-sm md:text-base opacity-100 font-light">
                 {team === "Placement"

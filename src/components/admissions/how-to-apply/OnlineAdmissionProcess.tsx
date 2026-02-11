@@ -13,7 +13,7 @@ const OnlineAdmissionProcess: React.FC = () => {
         <div className={`${Classes["container"]} py-10 lg:py-20`}>
           <section className="common_padding apply_sec_main">
             <div className="text-center mt-5 sec_head max_width1100 max-w-[1100px] mx-auto mb-10 md:mb-20 ">
-              <h2 className=" text-2xl md:text-3xl lg:text-[50px] fw500 color_theme line_height mb-2">Online Admission Process</h2>
+              <h2 className=" text-[22px] sm:text-[28px] lg:text-[3.125rem] fw500 color_theme line_height mb-2">Online Admission Process</h2>
 
               <div>
                 <p>
@@ -147,7 +147,7 @@ const OnlineAdmissionProcess: React.FC = () => {
         {/* py-10 lg:py-20 */}
         <div className={`${Classes["container"]} py-10 lg:py-20 `}>
           <div className="text-center mt-5  mb-10 md:mb-20">
-            <h2 className="text-2xl md:text-3xl lg:text-[50px] fw500 text-white  mb-2">Offline Admission Process</h2>
+            <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] fw500 text-white  mb-2">Offline Admission Process</h2>
 
             <div>
               <p className="text-white">Career Counselling at SRMU helps students identify their strengths and guides them to navigate the job market with confidence.</p>
