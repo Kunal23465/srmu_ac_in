@@ -120,7 +120,7 @@ const Events: React.FC = () => {
 
   return (
     <div className={`${Classes["container"]} pt-7 sm:py-7 md:py-10 lg:py-14`}>
-      <h2 className="text-[28px] text-left lg:text-[3.125rem] fw600">Latest News and Events</h2>
+      <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] fw500 text-left">Latest News and Events</h2>
 
       <p className="text-jsutify">At University’s beautiful campus, you’ll find a diverse and welcoming community that will teach you life skills along with having fun.</p>
 

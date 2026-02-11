@@ -1,10 +1,10 @@
 import React from "react";
 import CustomScholarshipTable from "../../utils/custom/CustomScholarshiptable";
 import {
-  SpecialScholarship_SRMGPCtoSRMU_TableData,
-  SpecialScholarship_SRMGPCtoSRMU_TableHeadData,
-  SpecialScholarship_SRMUtoSRMU_TableData,
-  SpecialScholarship_SRMUtoSRMU_TableHeadData,
+  SpecialScholarship_Category_TableData,
+  SpecialScholarship_Category_TableHeadData,
+  // SpecialScholarship_SRMUtoSRMU_TableData,
+  // SpecialScholarship_SRMUtoSRMU_TableHeadData,
 } from "../../data/admissions/scholarship/special-scholarship-data";
 
 const SpecialScholarship: React.FC = () => {
@@ -18,7 +18,7 @@ const SpecialScholarship: React.FC = () => {
             APPLY NOW
           </a>
         </div>
-        <div className="w-full lg:max-w-[870px]">
+        {/* <div className="w-full lg:max-w-[870px]">
           <strong>
             As a heartfelt tribute to the brave hearts of our defence forces, who selflessly safeguard our nation, SRMU is proud to extend special fee concessions to their wards.
             This is our small gesture of gratitude for their immense sacrifice and unwavering dedication.
@@ -149,6 +149,11 @@ const SpecialScholarship: React.FC = () => {
               </tbody>
             </table>
           </div>
+        </div> */}
+        <div className="py-8 px-4 border border-amber-400 rounded-3xl overflow-auto w-full max-w-[860px]">
+          <p className="text-lg sm:text-xl text-center pb-5 uppercase font-bold">
+            Special Scholarships (Applicable for All Years) </p>
+          <CustomScholarshipTable head={SpecialScholarship_Category_TableHeadData} data={SpecialScholarship_Category_TableData} />
         </div>
       </div>
     </div>

@@ -8,7 +8,7 @@ export default function InnovationCulture() {
       <div className="card-color rounded-3xl overflow-hidden p-10 lg:p-[5rem] flex flex-col lg:flex-row max-w-[1300px] w-full items-center relative text-white">
         <div className="w-full pb-10 lg:pb-0">
           <div className="pb-8">
-            <h2 className="uppercase text-[2.5rem] fw500 leading-tight">Excellent Research and Innovation Culture</h2>
+            <h2 className="uppercase text-[22px] sm:text-[28px] lg:text-[3.125rem] fw500 leading-tight">Excellent Research and Innovation Culture</h2>
           </div>
 
           <div className="humming">

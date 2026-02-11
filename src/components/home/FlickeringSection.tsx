@@ -73,7 +73,7 @@ export default function FlickeringSection() {
           <div>
             {flickcategories.map((item) => (
               <div key={item.id} className={`transition-opacity duration-500 ${activeId === item.id ? "opacity-100" : "opacity-0 hidden"}`}>
-                <h2 className="text-white text-3xl font-semibold mb-3">{item.title}</h2>
+                <h2 className="text-white text-[22px] sm:text-[28px] lg:text-[3.125rem] font-semibold mb-3">{item.title}</h2>
                 <p className="text-white text-base">{item.description}</p>
               </div>
             ))}

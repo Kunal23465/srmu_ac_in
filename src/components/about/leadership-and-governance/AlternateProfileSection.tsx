@@ -45,7 +45,7 @@ const AlternateProfileSection: React.FC<Props> = ({ people }) => {
                   <div className="flex flex-col items-center md:items-start md:flex-row gap-x-10">
                     <div className="w-full max-w-[420px] md:hidden mb-4">
                       <h1 className="text-white text-xl mb-14">{formatWithLineBreaks(person.qoute || "")}</h1>
-                      <h2 className="name text-3xl lg:text-4xl font-bold text-white mb-2">{person.name}</h2>
+                      <h2 className="name text-[22px] sm:text-[28px] lg:text-[3.125rem] font-bold text-white mb-2">{person.name}</h2>
                       <span className="text-xl text-white font-medium ">{person.title}</span>
                     </div>
                     <div
@@ -83,7 +83,7 @@ const AlternateProfileSection: React.FC<Props> = ({ people }) => {
                     </div>
 
                     <div className="w-full mt-8 md:mt-0">
-                      <h2 className="text-3xl lg:text-4xl font-bold text-black mb-2">{person.name}</h2>
+                      <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] font-bold text-black mb-2">{person.name}</h2>
                       <span className="text-xl text-gray-700 font-medium">{person.title}</span>
 
                       <div className="text-justify mt-3 lg:mt-4 text-[#5B5B5B] leading-8">

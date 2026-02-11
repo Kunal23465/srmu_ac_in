@@ -30,7 +30,7 @@ const MobilePlacements = () => {
     return (
       <section ref={sectionRef} className={`${Classes["container"]} sm:mb-16 sm:mt-10`}>
         <div className="w-full">
-          <h1 className="text-center text-3xl lg:text-4xl font-bold py-6 ">{PlacementData[0].heading}</h1>
+          <h1 className="text-center text-[22px] sm:text-[28px] lg:text-[3.125rem] font-bold py-6 ">{PlacementData[0].heading}</h1>
           <p className="pb-6 text-center">{PlacementData[0].description}</p>
           <div className="lg:flex justify-between gap-5 lg:pr-4 py-8">
             {/* Left divs */}

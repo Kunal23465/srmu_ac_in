@@ -129,12 +129,12 @@ export const CustomCompaniesScope: React.FC<CompaniesScopeProps> = ({ data, list
           {visibleCompanies.map((c) => (
             <div
               key={c.id}
-              className="w-full aspect-[6/4] bg-white border border-gray-200 rounded-xl shadow-sm flex items-center justify-center hover:shadow-md transition cursor-pointer p-2 sm:p-3"
+              className="w-full aspect-[6/3] md:aspect-[6/4] bg-white border border-gray-200 rounded-xl shadow-sm flex items-center justify-center hover:shadow-md transition cursor-pointer p-5 sm:p-4"
             >
               <img
                 src={c.logo}
                 alt={`Logo ${c.id}`}
-                className="w-full h-full max-w-[60%] sm:max-w-[80%] max-h-[60%] object-contain"
+                className="w-full h-auto object-contain"
               />
             </div>
           ))}

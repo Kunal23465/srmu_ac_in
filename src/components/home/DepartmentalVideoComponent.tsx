@@ -21,17 +21,23 @@ interface VideoItem {
 }
 
 const videos: VideoItem[] = [
-  { id: "YOUR_VIDEO_ID_1", title: "From Classrooms to Newsrooms – The Media Journey!", thumbnail: media },
-  { id: "YOUR_VIDEO_ID_2", title: "Building Business Minds for a Global Tomorrow!", thumbnail: business },
-  { id: "YOUR_VIDEO_ID_3", title: "From Blueprints to Landmarks – The Power of Civil Engineering!", thumbnail: civil },
-  { id: "YOUR_VIDEO_ID_4", title: "Mechanical Engineering: The Force Behind Technology!", thumbnail: mechanical },
-  { id: "YOUR_VIDEO_ID_5", title: "Think, Explore, Transform – The World of Humanities!", thumbnail: humanities },
-  { id: "YOUR_VIDEO_ID_6", title: "Building Smart Solutions for a Connected World!", thumbnail: smart },
-  { id: "YOUR_VIDEO_ID_7", title: "Innovate, Cultivate, Transform – The Future of Agriculture!", thumbnail: agri },
-  { id: "YOUR_VIDEO_ID_8", title: "From Algorithms to AI – The Future Starts Here!", thumbnail: computer },
-  { id: "YOUR_VIDEO_ID_9", title: "From Genes to Genius – The Power of Biotech!", thumbnail: biotech },
-  { id: "YOUR_VIDEO_ID_10", title: "Your Pathway to Legal Excellence!", thumbnail: law },
-  { id: "YOUR_VIDEO_ID_11", title: "Pharmacy: The Heart of Healthcare Innovation!", thumbnail: pharma },
+  { id: "FQt5z2-XIfg", title: "From Algorithms to AI – The Future Starts Here!", thumbnail: computer },
+  { id: "LMt5X0_iuGw", title: "From Genes to Genius – The Power of Biotech!", thumbnail: biotech },
+  { id: "sLJc5bDlAsg", title: "Your Pathway to Legal Excellence!", thumbnail: law },
+  { id: "YMCptyli9C0", title: "Pharmacy: The Heart of Healthcare Innovation!", thumbnail: pharma },
+  { id: "m7n97pW1FaU", title: "From Classrooms to Newsrooms – The Media Journey!", thumbnail: media },
+
+
+
+  { id: "Eo-yCQugDpE", title: "Building Business Minds for a Global Tomorrow!", thumbnail: business },
+  { id: "PZUaocjH1Hw", title: "From Blueprints to Landmarks – The Power of Civil Engineering!", thumbnail: civil },
+  { id: "kds7jlLDefQ", title: "Mechanical Engineering: The Force Behind Technology!", thumbnail: mechanical },
+  { id: "zBfTj2jDbHc", title: "Think, Explore, Transform – The World of Humanities!", thumbnail: humanities },
+  { id: "JaoVvAr4PP0", title: "Building Smart Solutions for a Connected World!", thumbnail: smart },
+  { id: "FQt5z2-XIfg", title: "Innovate, Cultivate, Transform – The Future of Agriculture!", thumbnail: agri },
+
+
+
 ];
 
 const NextArrow = ({ onClick }: any) => (
@@ -150,7 +156,7 @@ export default function DepartmentalVideo() {
       {/* Modal */}
       {selectedVideo && (
         <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-[999]">
-          <button onClick={() => setSelectedVideo(null)} className="absolute top-6 right-8 text-white text-3xl font-bold">
+          <button onClick={() => setSelectedVideo(null)} className="absolute top-6 right-8 text-white text-[22px] sm:text-[28px] lg:text-[3.125rem] font-bold">
             ✕
           </button>
 

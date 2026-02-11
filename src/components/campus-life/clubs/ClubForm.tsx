@@ -65,7 +65,7 @@ const ClubForm: React.FC = () => {
     ];
     return (
         <div className="w-full lg:w-[35%] bg-[#0f4a85] text-white p-8 rounded-2xl shadow-xl">
-            <h2 className="text-3xl font-medium mb-6">Join Cultural Club</h2>
+            <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] font-medium mb-6">Join Cultural Club</h2>
 
             <form onSubmit={formik.handleSubmit} className="flex flex-col gap-4">
 

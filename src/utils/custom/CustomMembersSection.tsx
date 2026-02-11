@@ -18,7 +18,7 @@ const CustomMembersSection: React.FC<MembersSectionProps> = ({ title, descriptio
   return (
     <section className="py-16">
       <div className="container mx-auto px-4 text-center">
-        <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">{title}</h2>
+        <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] font-bold text-gray-900 mb-2">{title}</h2>
         <p className="text-gray-600 mb-10">{description}</p>
 
         <div

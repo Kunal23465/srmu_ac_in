@@ -4,24 +4,24 @@ import ScholarshipOverviewSection from "./ScholarshipOverviewSection";
 import { scholarshipData, ScholarshipTopFooterData } from "../../data/admissions/scholarship/scholarship-data";
 import BGImg from "../../assets/images/admissions/overview/banner-scholorship.jpeg";
 import CustomTabs from "../../utils/custom/CustomTabs";
-import CommonUniversityEntranceTest from "./CommonUniversityEntranceTest";
-import NationalScoreBasedScholarship from "./NationalScoreBasedScholarship";
+// import CommonUniversityEntranceTest from "./CommonUniversityEntranceTest";
+// import NationalScoreBasedScholarship from "./NationalScoreBasedScholarship";
 import SRMUSET from "./SRMUSET";
 import SpecialScholarship from "./SpecialScholarship";
 import MeritBasedScholarship from "./MeritBasedScholarship";
 import CustomTopFooter from "../../utils/custom/CustomTopFooter";
 const Scholarship: React.FC = () => {
   const items = [
-    {
-      key: "1",
-      label: "COMMON UNIVERSITY ENTRANCE TEST",
-      content: <CommonUniversityEntranceTest />,
-    },
-    {
-      key: "2",
-      label: "NATIONAL SCORE BASED SCHOLARSHIP",
-      content: <NationalScoreBasedScholarship />,
-    },
+    // {
+    //   key: "1",
+    //   label: "COMMON UNIVERSITY ENTRANCE TEST",
+    //   content: <CommonUniversityEntranceTest />,
+    // },
+    // {
+    //   key: "2",
+    //   label: "NATIONAL SCORE BASED SCHOLARSHIP",
+    //   content: <NationalScoreBasedScholarship />,
+    // },
     {
       key: "3",
       label: "SRMUSET",
@@ -62,7 +62,7 @@ const Scholarship: React.FC = () => {
           hoverTextColor="#fff"
           activeBgColor="#00000000"
           inactiveBgColor="#00000000"
-          alignTabs="start"
+          alignTabs="center"
         />
       </div>
       <CustomTopFooter data={ScholarshipTopFooterData} />

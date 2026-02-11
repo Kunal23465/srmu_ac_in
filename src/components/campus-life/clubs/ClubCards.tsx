@@ -45,7 +45,7 @@ const CustomModal = ({ selected, setSelected }) => {
 
                         {/* CONTENT */}
                         <div>
-                            <h2 className="text-3xl font-bold text-[#063970] mb-3">
+                <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] font-bold text-[#063970] mb-3">
                                 {selected.title}
                             </h2>
 

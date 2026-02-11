@@ -11,7 +11,7 @@ const AdmissionProcessSection: React.FC = () => {
       <section className={`${Classes["container"]} py-16 px-6 md:px-16`}>
 
         {/* Heading */}
-        <h2 className="lg:text-[28px] md:text-[26.25px] sm:text-[24.5px] text-[24.5px] md:text-3xl font-semibold text-[#0f4a85] mb-6">
+        <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] font-semibold text-[#0f4a85] mb-6">
           {admissionProcessData.title}
         </h2>
 

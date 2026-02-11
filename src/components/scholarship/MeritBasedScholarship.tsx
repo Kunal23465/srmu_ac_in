@@ -1,6 +1,8 @@
 import React from "react";
 import CustomScholarshipTable from "../../utils/custom/CustomScholarshiptable";
 import {
+  LLMBasedScholarshipDiplomaDArchTableData,
+  LLMBasedScholarshipDiplomaDArchTableHeadData,
   MeritBasedScholarshipBTech_Lateral_BArchTableData,
   MeritBasedScholarshipBTech_Lateral_BArchTableHeadData,
   MeritBasedScholarshipDiplomaDArchTableData,
@@ -25,22 +27,26 @@ const MeritBasedScholarship: React.FC = () => {
             APPLY NOW
           </a>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 w-full lg:max-w-[860px] gap-5">
+        <div className="grid grid-cols-1 xl:grid-cols-2 w-full xl:max-w-[860px] gap-5">
           <div className="py-8 px-4 border border-amber-400 rounded-3xl overflow-auto">
-            <p className="text-lg sm:text-xl text-center pb-5 uppercase font-medium ">Under Graduate & Integrated</p>
-            <CustomScholarshipTable head={MeritBasedScholarshipUnderGraduateIntegratedTableHeadData} data={MeritBasedScholarshipUnderGraduateIntegratedTableData} />
+            <p className="text-lg sm:text-xl text-center pb-5 uppercase font-medium ">Scholarship Slabs and Quantum </p>
+            <CustomScholarshipTable head={MeritBasedScholarshipUnderGraduateIntegratedTableHeadData} data={MeritBasedScholarshipUnderGraduateIntegratedTableData} showThirdColumn={true} />
           </div>
           <div className="py-8 px-4 border border-amber-400 rounded-3xl overflow-auto">
-            <p className="text-lg sm:text-xl text-center pb-5 uppercase font-medium">B.Tech (Lateral) & B.Arch.</p>
+            <p className="text-lg sm:text-xl text-center pb-5 uppercase font-medium">PG Programmes (Except LLM – One Year)- Applicable to Bed LLB </p>
             <CustomScholarshipTable head={MeritBasedScholarshipBTech_Lateral_BArchTableHeadData} data={MeritBasedScholarshipBTech_Lateral_BArchTableData} />
           </div>
           <div className="py-8 px-4 border border-amber-400 rounded-3xl overflow-auto">
-            <p className="text-lg sm:text-xl text-center pb-5 uppercase font-medium">Post Graduate</p>
+            <p className="text-lg sm:text-xl text-center pb-5 uppercase font-medium">B.Tech Core(Civil/ Mechanical, EC and Electrical) Programmes (Annual Scholarship Amount) </p>
             <CustomScholarshipTable head={MeritBasedScholarshipPostGraduateTableHeadData} data={MeritBasedScholarshipPostGraduateTableData} />
           </div>
           <div className="py-8 px-4 border border-amber-400 rounded-3xl overflow-auto">
-            <p className="text-lg sm:text-xl text-center pb-5 uppercase font-medium">Diploma & D.Arch.</p>
+            <p className="text-lg sm:text-xl text-center pb-5 uppercase font-medium">Polytechnic Programmes (Annual Scholarship Amount) </p>
             <CustomScholarshipTable head={MeritBasedScholarshipDiplomaDArchTableHeadData} data={MeritBasedScholarshipDiplomaDArchTableData} />
+          </div>
+          <div className="py-8 px-4 border border-amber-400 rounded-3xl overflow-auto">
+            <p className="text-lg sm:text-xl text-center pb-5 uppercase font-medium">LLM (One& Two Year Programme) </p>
+            <CustomScholarshipTable head={LLMBasedScholarshipDiplomaDArchTableHeadData} data={LLMBasedScholarshipDiplomaDArchTableData} />
           </div>
         </div>
       </div>

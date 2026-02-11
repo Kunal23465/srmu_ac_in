@@ -21,7 +21,7 @@ export default function CustomCommitteeDetailsPage({ committee }: { committee: a
   if (!committee) {
     return (
       <div className="py-10 text-center">
-        <h1 className="text-3xl font-semibold mb-4">Committee Not Found</h1>
+        <h1 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] font-semibold mb-4">Committee Not Found</h1>
         <p className="text-gray-600">
           The committee you are looking for doesn't exist or the link is incorrect.
         </p>
@@ -32,7 +32,7 @@ export default function CustomCommitteeDetailsPage({ committee }: { committee: a
   return (
     <section className="pt-12 bg-white">
       <div className={`${Classes["container"]}`}>
-        <h1 className="text-3xl sm:text-4xl font-medium text-[#1a3c6b] mb-8 pb-2 inline-block">
+        <h1 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] font-medium text-[#1a3c6b] mb-8 pb-2 inline-block">
           {committee.title}
         </h1>
 
