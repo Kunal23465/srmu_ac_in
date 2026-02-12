@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -10,13 +10,30 @@ import {
 const OurTeam: React.FC = () => {
   const [team, setTeam] = useState("Placement");
   const sliderRef = useRef<Slider | null>(null);
+  const [windowWidth, setWindowWidth] = useState(typeof window !== "undefined" ? window.innerWidth : 0);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Function to determine slidesToShow based on window width
+  const getSlidesToShow = () => {
+    if (windowWidth >= 1024) return 3;
+    if (windowWidth >= 600) return 2;
+
+    return 2;
+  };
   // Slider settings
   const settings = {
     dots: false,
     infinite: false,
     speed: 600,
-    slidesToShow: 3,
+    slidesToShow: getSlidesToShow(),
     slidesToScroll: 1,
     arrows: false, // We'll use custom buttons
     responsive: [
@@ -26,7 +43,7 @@ const OurTeam: React.FC = () => {
       },
       {
         breakpoint: 640,
-        settings: { slidesToShow: 1 },
+        settings: { slidesToShow: 2 },
       },
     ],
   };
@@ -82,7 +99,7 @@ const OurTeam: React.FC = () => {
       </center>
 
       {/* SECTION CONTENT */}
-      <div className="w-full py-16 px-6">
+      <div className="w-full py-8 sm:py-16 sm:px-6">
         <div className="max-w-7xl mx-auto">
           {/* HEADER + ARROWS */}
           <div className="flex flex-col md:flex-row justify-between items-start mb-12">
@@ -106,10 +123,10 @@ const OurTeam: React.FC = () => {
                 <div className="text-black flex-none rounded-xl transition-all duration-300 transform hover:-translate-y-2">
                   <div className="relative w-full h-85 rounded-xl overflow-hidden">
                     <img src={item.img} alt={item.name} className="w-full h-full object-cover rounded-xl" />
-                    <h3 className="absolute bottom-5 left-5 text-2xl text-white font-medium">
+                    <h3 className="absolute bottom-5 left-5 text-xl sm:text-2xl text-white font-medium">
                       {item.name}
                       <br />
-                      <span className="text-amber-400 text-[16px]">{item.position}</span>
+                      <span className="text-amber-400 text-sm sm:text-[16px]">{item.position}</span>
                     </h3>
                   </div>
                 </div>

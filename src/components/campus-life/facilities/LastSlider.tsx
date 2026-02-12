@@ -1,20 +1,40 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import { CARD_CONTENT } from "../../../data/campus-life/facilities/facilities-data";
-
+import Classes from "../../../utils/styles/Global.module.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const LastSliderSlick: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [selectedCard, setSelectedCard] = useState<number | null>(null);
+  const [windowWidth, setWindowWidth] = useState(typeof window !== "undefined" ? window.innerWidth : 0);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Function to determine slidesToShow based on window width
+  const getSlidesToShow = () => {
+    if (windowWidth >= 1024) return 3;
+    if (windowWidth >= 600) return 2;
+
+    return 1;
+  };
+
+
 
   const settings = {
     dots: true,
     arrows: false,
     infinite: false,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: getSlidesToShow(),
     slidesToScroll: 1,
     swipeToSlide: true,
     afterChange: (current: number) => {
@@ -22,8 +42,8 @@ const LastSliderSlick: React.FC = () => {
       setSelectedCard(null);
     },
     appendDots: (dots: React.ReactNode) => (
-      <div className="mt-6">
-        <ul className="flex justify-center gap-2">{dots}</ul>
+      <div className="mt-8">
+        <ul className="flex justify-center sm:gap-2">{dots}</ul>
       </div>
     ),
     customPaging: (i: number) => (
@@ -36,7 +56,7 @@ const LastSliderSlick: React.FC = () => {
     ],
   };
   return (
-    <div className="w-full max-w-7xl mx-auto">
+    <div className={Classes["container"]}>
       {/* 🔹 INTERNAL CSS FOR EQUAL HEIGHT */}
       <style>
         {`
@@ -57,11 +77,11 @@ const LastSliderSlick: React.FC = () => {
       </style>
 
       {/* Heading */}
-      <div className="text-center mb-5">
+      <div className="text-center">
         <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] font-medium text-[#023047] fw600">Academic Wings</h2>
 
-        <p className="w-[82%] pb-10 mx-auto text-[15px] lg:text-[16px]">
-          Shri Ramswaroop Memorial University (SRMU) features well-defined academic wings, each dedicated to fostering excellence in specific disciplines.
+        <p className="w-full sm:w-[82%] pb-5 ms:pb-10 mx-auto text-sm lg:text-[16px]">
+          Shri Ramswaroop Memorial University (SRMU) features well-defined academic wings, each dedicated to fostering excellence in specific disciplines. These wings, equipped with state-of-the-art classrooms, laboratories, and research facilities, provide a conducive environment for specialized learning and academic exploration. With distinct academic wings, SRMU ensures a focused and comprehensive approach to education, nurturing the intellectual growth of students across various fields.
         </p>
       </div>
 
@@ -71,7 +91,7 @@ const LastSliderSlick: React.FC = () => {
           const isActive = selectedCard === i;
 
           return (
-            <div key={data.id} className="px-3 h-full">
+            <div key={data.id} className="sm:px-3 h-full">
               {/* CARD */}
               <div
                 onClick={() => setSelectedCard(i)}
@@ -90,10 +110,10 @@ const LastSliderSlick: React.FC = () => {
                 />
 
                 {/* CONTENT */}
-                <div className="p-6 flex flex-col flex-grow">
-                  <h3 className={`font18 fw600 mb-3 group-hover:text-white ${isActive ? "text-white" : "text-gray-800"}`}>{data.title}</h3>
+                <div className="px-1 py-4 sm:p-6 flex flex-col flex-grow">
+                  <h3 className={`text-[15px] sm:text-lg font-semibold mb-1 sm:mb-3 group-hover:text-white ${isActive ? "text-white" : "text-gray-900"}`}>{data.title}</h3>
 
-                  <p className="leading-relaxed text-[15px] lg:text-[16px] group-hover:text-white flex-grow">{data.description}</p>
+                  <p className="leading-relaxed text-black text-sm lg:text-[16px] group-hover:text-white flex-grow">{data.description}</p>
                 </div>
               </div>
             </div>

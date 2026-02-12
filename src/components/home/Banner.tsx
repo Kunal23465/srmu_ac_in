@@ -49,9 +49,9 @@ const Banner: React.FC = () => {
                         <div className="overlay bg-[#0000000d] absolute top-0 left-0 w-full h-full flex pt-10 sm:pt-0 items-center ">
                             <div className={Classes["container"]}>
                                 <div className=" text-white sm:px-5 sm:py-5 md:py-10 rounded-tl-[50px] transition-all ease-in-out duration-300 rounded-br-[50px] hover:rounded-tl-none hover:rounded-br-none  hover:rounded-tr-[50px] hover:rounded-bl-[50px]">
-                                    <div className="text-[20px] mb-4 " >Cheers to Success!!</div>
-                                    <div className="text-[32px] lg:text-[46px] xl:text-[52px] font-medium leading-[1.2] mb-4" >Now, SRMU is <br /> ISO 9001, ISO 14001, and ISO 50001 certified organization</div>
-                                    <div className="text-[21px]" >Certified Excellence: Our Commitment to Quality and Standards</div>
+                                    <div className="text-[18px] sm:text-[20px] mb-4 " >Cheers to Success!!</div>
+                                    <div className="text-[22px] sm:text-[32px] lg:text-[46px] xl:text-[52px] font-medium leading-[1.2] mb-4" >Now, SRMU is <br /> ISO 9001, ISO 14001, and ISO 50001 certified organization</div>
+                                    <div className="text-[12px] sm:text-[21px]" >Certified Excellence: Our Commitment to Quality and Standards</div>
 
                                     <div className="mt-10">
                                         <a href={viewmorepdf} target="_blank">
@@ -85,9 +85,9 @@ const Banner: React.FC = () => {
                         <div className="overlay bg-[#0000000d] absolute top-0 left-0 w-full h-full flex pt-10 sm:pt-0 items-center ">
                             <div className={Classes["container"]}>
                                 <div className=" text-white sm:px-5 sm:py-5 md:py-10 rounded-tl-[50px] transition-all ease-in-out duration-300 rounded-br-[50px] hover:rounded-tl-none hover:rounded-br-none  hover:rounded-tr-[50px] hover:rounded-bl-[50px]">
-                                    <div className="text-[20px] mb-4 " >Celebrating Excellence</div>
-                                    <div className="text-[32px] lg:text-[46px] xl:text-[52px] font-medium leading-[1.2] mb-4" >SRMU rated AA+ <br /> by Career 360</div>
-                                    <div className="text-[21px]" >Making it one of the Best B-Schools in the country in 2025</div>
+                                    <div className="text-[18px] sm:text-[20px] mb-4 " >Celebrating Excellence</div>
+                                    <div className="text-[22px] sm:text-[32px] lg:text-[46px] xl:text-[52px] font-medium leading-[1.2] mb-4" >SRMU rated AA+ <br /> by Career 360</div>
+                                    <div className="text-[12px] sm:text-[21px]" >Making it one of the Best B-Schools in the country in 2025</div>
 
                                     <div className="mt-10">
                                         <a href={viewmorepdf} target="_blank">

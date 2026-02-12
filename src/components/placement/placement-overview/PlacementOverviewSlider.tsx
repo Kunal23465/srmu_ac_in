@@ -15,8 +15,8 @@ type Props = {
 const Goals: React.FC<OurGoals & { highlight?: boolean }> = ({ title, subtitle, description }) => (
   <div
     className="
-      h-full p-8 rounded-2xl bg-white
-      hover:bg-[#fffefa] border border-white hover:border-[#f7b822]
+      h-full p-4 sm:p-8 rounded-2xl bg-white
+      hover:bg-[#fffefa] border border-[#f7b822] sm:border-white hover:border-[#f7b822]
     "
   >
     <h3 className="lg:text-[28px] sm:text-[14.882px] text-[14.882px] md:text-[15.945px] font-bold mb-4 color_light_blue">{title}</h3>
@@ -117,7 +117,7 @@ const OurGoal: React.FC<Props> = ({ items }) => {
         <div className="flex-1 w-full md:w-3/5 h-full xl:h-[320px]">
           <Slider ref={sliderRef} {...settings}>
             {items.map((item, i) => (
-              <div key={i} className="px-3 mx-1 w-auto h-full xl:h-[320px]">
+              <div key={i} className="px-0 sm:px-3 mx-1 w-auto h-full xl:h-[320px]">
                 <Goals {...item} />
               </div>
             ))}

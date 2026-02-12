@@ -36,7 +36,7 @@ const CustomFaqAccordion: React.FC<Props> = ({ data }) => {
                 return (
                     <HtmlContent
                         html={item.content}
-                        className="text-gray-700 !text-[17px] leading-relaxed"
+                        className="text-gray-700 !text-[16px] leading-relaxed"
                     />
                 );
 
@@ -44,12 +44,12 @@ const CustomFaqAccordion: React.FC<Props> = ({ data }) => {
                 return (
                     <>
                         {item.content && (
-                            <span className="text-gray-700 mb-3 leading-relaxed !text-[17px]">{item.content}</span>
+                            <span className="text-gray-700 mb-3 leading-relaxed !text-[16px]">{item.content}</span>
                         )}
                         <ul className="list-decimal pl-6 text-gray-700 space-y-1">
                             {item.listItems?.map((li, idx) => (
                                 <li key={idx}>
-                                    <span className="font-semibold !text-[17px] ">{li}</span>
+                                    <span className="font-semibold !text-[16px] ">{li}</span>
                                 </li>
                             ))}
                         </ul>
@@ -112,11 +112,11 @@ const CustomFaqAccordion: React.FC<Props> = ({ data }) => {
             {data.map((item, index) => (
                 <div
                     key={item.id}
-                    className="border border-gray-300 rounded-sm overflow-hidden shadow-sm transition-all duration-300"
+                    className="border border-gray-300 rounded-sm overflow-hidden shadow-sm transition-all duration-300 py-4"
                 >
                     <button
                         onClick={() => toggleAccordion(index)}
-                        className="flex justify-between items-center w-full p-4 text-left text-md font-medium text-gray-800 hover:bg-gray-100"
+                        className="flex justify-between items-center w-full px-4 text-left text-md font-medium text-gray-800 "
                     >
                         <span className="text-lg sm:text-xl font-bold">{`${item.id} ${item.question}`}</span>
                         {openIndex === index ? (
@@ -127,7 +127,7 @@ const CustomFaqAccordion: React.FC<Props> = ({ data }) => {
                     </button>
 
                     <div
-                        className={`transition-all duration-500 ease-in-out overflow-hidden ${openIndex === index ? "max-h-[1000px] p-4" : "max-h-0 p-0"
+                        className={`transition-all duration-500 ease-in-out overflow-hidden ${openIndex === index ? "max-h-[1000px] pb-4 px-4" : "max-h-0 px-4"
                             }`}
                     >
                         {renderContent(item)}

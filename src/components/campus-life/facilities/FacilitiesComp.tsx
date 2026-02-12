@@ -44,7 +44,7 @@ const FacilitiesComp = () => {
         <Transportation />
       </div>
 
-      <div className="font-sans bg-[#ffb703] min-h-screen flex items-center justify-center p-8 overflow-hidden">
+      <div className="font-sans bg-[#ffb703] min-h-screen flex items-center justify-center py-8 sm:p-8 overflow-hidden">
         <LastSlider />
       </div>
 

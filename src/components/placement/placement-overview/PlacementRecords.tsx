@@ -33,7 +33,7 @@ const PlacementRecords: React.FC = () => {
     if (windowWidth >= 1024) return 4; // Changed from 3 to 4
     if (windowWidth >= 768) return 3;
     if (windowWidth >= 640) return 2;
-    return 1; // xs
+    return 2; // xs
   };
 
   // @ts-ignore
@@ -113,7 +113,7 @@ const PlacementRecords: React.FC = () => {
   const isNextDisabled = currentSlide >= totalSlides - 1;
 
   return (
-    <div className="relative placement-record-bg w-full text-white py-24">
+    <div className="relative placement-record-bg w-full text-white py-8 sm:py-24">
       <div className={`${Classes["container"]}`}>
         {/* HEADER + TABS */}
         <div className="block md:flex justify-between items-center">
@@ -164,18 +164,18 @@ const PlacementRecords: React.FC = () => {
         <Slider ref={sliderRef} {...settings}>
           {students.map((stu) => (
             <div key={stu.id} className="px-2">
-              <div className="w-full rounded-xl border border-white group hover:bg-white transition-all duration-500 py-6 px-4 h-[425px] sm:h-[340px] md:h-[380px] lg:h-[340px] text-center">
-                <div className="min-h-[230px]">
+              <div className="w-full rounded-xl border border-white group hover:bg-white transition-all duration-500 py-3 px-2 sm:py-6 sm:px-4 sm:h-[340px] md:h-[380px] lg:h-[340px] text-center">
+                <div className="min-h-[180px] sm:min-h-[230px]">
                   <img src={stu.image} alt={stu.name} className="w-20 h-20 rounded-full mx-auto mb-3 object-cover" />
 
-                  <h4 className=" lg:text-[19px] md:text-[17.82px] sm:text-[16.632px] text-[16.632px] text-white group-hover:text-black font-semibold">{stu.name}</h4>
-                  <p className="lg:text-[15px] md:text-[14px] sm:text-[13.132px] text-[13.132px]  text-white group-hover:text-black mt-1">{stu.degree}</p>
+                  <h4 className=" lg:text-[19px] md:text-[17.82px] sm:text-[16.632px] text-[14px] text-white group-hover:text-black font-semibold">{stu.name}</h4>
+                  <p className="lg:text-[15px] md:text-[14px] sm:text-[13.132px] text-[12.132px]  text-white group-hover:text-black mt-1">{stu.degree}</p>
                 </div>
 
                 {/* <div className="mt-10 border border-gray-500"></div> */}
                 <div className=" border-t-2 border-gray-500">
                   <div className="mt-4 flex justify-center">
-                    <img src={stu.companyLogo} alt="Company Logo" className="w-full max-w-[100px] object-contain" />
+                    <img src={stu.companyLogo} alt="Company Logo" className="w-full max-w-[100px] object-contain brightness-[100] sm:brightness-100" />
                   </div>
 
                   <p className="mt-2 text-[14px] md:text-[13.125px] sm:text-[12.25px] text-white group-hover:text-black">

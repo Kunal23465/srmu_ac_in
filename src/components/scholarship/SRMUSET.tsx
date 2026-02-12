@@ -9,7 +9,7 @@ const SRMUSET: React.FC = () => {
       <div className="flex flex-col lg:flex-row justify-between gap-10">
         <div className="w-full lg:max-w-[310px]">
           <p className="pb-2 sm:pb-5 text-sm sm:text-[16px]">
-            Applications opening from <strong>05th Nov 2025</strong> for SRMUSET (Scholarship cum Entrance Test){" "}
+            Applications opening from <strong>01 Feb 2026</strong> for SRMUSET (Scholarship cum Entrance Test){" "}
             <a
               className="font-bold underline"
               href="https://srmuset.srmu.ac.in/?_gl=1*109ctap*_gcl_au*NzM0NDM3NTE2LjE3NjMxMTgyMjg.*_ga*MTM1NTE3MDg2Ny4xNzYzMTE4MjI4*_ga_QZEQ59Q6ZL*czE3NjQ1NjE5MjIkbzc3JGcxJHQxNzY0NTY0MTI0JGo2MCRsMCRoNjA4MTA1OTI2"
@@ -30,8 +30,8 @@ const SRMUSET: React.FC = () => {
         <div>
           <div className="w-full grid grid-cols-1 xl:grid-cols-2 lg:max-w-[860px] gap-5">
             <div className="py-8 px-4 border border-amber-400 rounded-3xl overflow-auto">
-              <p className="text-lg sm:text-xl text-center pb-5 uppercase font-bold">Scholarship Slabs and Quantum  </p>
-              <CustomScholarshipTable head={srmusetScholarshipEngineeringTableHeadData} data={srmusetScholarshipEngineeringTableData}/>
+              <p className="text-lg sm:text-xl text-center pb-5 uppercase font-bold">UG & Integrated Programmes including D.Pharm (Except B.Tech Core- Civil/ Mechanical, EC and Electrical)</p>
+              <CustomScholarshipTable head={srmusetScholarshipEngineeringTableHeadData} data={srmusetScholarshipEngineeringTableData} />
             </div>
             <div className="py-8 px-4 border border-amber-400 rounded-3xl overflow-auto">
               <p className="text-lg sm:text-xl text-center pb-5 uppercase font-bold">B.Tech Core(Civil/ Mechanical, EC and Electrical) Programmes (Annual Scholarship Amount) </p>

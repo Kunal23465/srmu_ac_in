@@ -15,7 +15,7 @@ const DirectorMessage = () => {
         </div>
       </div>
       <div className="w-full">
-        <h2 className="text-[#023047] text-[22px] sm:text-[28px] lg:text-[3.125rem] fw500 mb-5 mt-2 lg:mt-0 md:mb-10">Message From Director</h2>
+        <h2 className="text-[#023047] text-[22px] sm:text-[28px] lg:text-[3.125rem] fw500 mb-2 mt-2  md:mb-10">Message From Director</h2>
 
         <p className="text-justify text-[#000000b3] text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px]">
           <strong>Dear Recruiters,</strong>

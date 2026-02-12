@@ -57,7 +57,7 @@ const CareerCounselling: React.FC = () => {
   );
 
   return (
-    <div className="w-full py-16 px-6">
+    <div className="w-full py-16 sm:px-6">
       <div className="max-w-7xl mx-auto">
         {/* HEADER + BUTTONS */}
         <div className="flex flex-col md:flex-row justify-between items-start mb-12">
@@ -73,7 +73,7 @@ const CareerCounselling: React.FC = () => {
             </p>
           </div>
 
-          <div className="flex space-x-2 mt-2">
+          <div className="flex space-x-2 mt-10 sm:mt-2">
             <SliderControls />
           </div>
         </div>

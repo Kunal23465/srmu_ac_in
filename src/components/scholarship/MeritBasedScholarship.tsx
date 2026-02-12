@@ -29,7 +29,7 @@ const MeritBasedScholarship: React.FC = () => {
         </div>
         <div className="grid grid-cols-1 xl:grid-cols-2 w-full xl:max-w-[860px] gap-5">
           <div className="py-8 px-4 border border-amber-400 rounded-3xl overflow-auto">
-            <p className="text-lg sm:text-xl text-center pb-5 uppercase font-medium ">Scholarship Slabs and Quantum </p>
+            <p className="text-lg sm:text-xl text-center pb-5 uppercase font-medium ">UG & Integrated Programmes including D.Pharm (Except B.Tech Core- Civil/ Mechanical, EC and Electrical) </p>
             <CustomScholarshipTable head={MeritBasedScholarshipUnderGraduateIntegratedTableHeadData} data={MeritBasedScholarshipUnderGraduateIntegratedTableData}  />
           </div>
           <div className="py-8 px-4 border border-amber-400 rounded-3xl overflow-auto">

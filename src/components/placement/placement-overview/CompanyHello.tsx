@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, useEffect, useState } from 'react'
 import Slider from 'react-slick';
 import { companyVisited } from '../../../data/placement/companyVisited';
 
@@ -8,40 +8,57 @@ interface HelloProps {
 
 export const CompanyHello: FC<HelloProps> = ({ sliderRef }) => {
 
-    const settings = {
-        dots: false,
-        infinite: false,
-        speed: 200,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: false,
+ const [windowWidth, setWindowWidth] = useState(typeof window !== "undefined" ? window.innerWidth : 0);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
     };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Function to determine slidesToShow based on window width
+  const getSlidesToShow = () => {
+    if (windowWidth >= 1200) return 5;
+    if (windowWidth >= 998) return 4;
+    if (windowWidth >= 600) return 3;
+
+    return 2;
+  };
+  const settings = {
+    dots: false,
+    infinite: false,
+    speed: 200,
+    slidesToShow: getSlidesToShow(),
+    slidesToScroll: 1,
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 998,
+        settings: { slidesToShow: 3 },
+      },
+      {
+        breakpoint: 600,
+        settings: { slidesToShow: 2 },
+      },
+    ],
+  };
 
     return (
         <div className="mt-8 md:mt-10 lg:mt-16">
-            <Slider ref={sliderRef} {...settings}>
+            <Slider ref={sliderRef} {...settings} className='-mx-3'>
                 {companyVisited.map((data, index) => (
-                    <div key={index}>
-                        <div className="flex flex-col gap-6">
+                    <>
 
-                            <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
-                                {data.slides.slice(0, 6).map((slide, i) => (
-                                    <li key={i} className="flex justify-center items-center bg-white p-3 rounded-lg shadow-sm hover:shadow-md transition">
-                                        <img src={slide.img} className="h-[60px] w-auto object-contain" />
-                                    </li>
-                                ))}
-                            </ul>
 
-                            <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
-                                {data.slides.slice(6, 12).map((slide, i) => (
-                                    <li key={i} className="flex justify-center items-center bg-white p-3 rounded-lg shadow-sm hover:shadow-md transition">
-                                        <img src={slide.img} className="h-[60px] w-auto object-contain" />
-                                    </li>
-                                ))}
-                            </ul>
-
+                        <div key={index} className="flex mx-3 justify-center items-center bg-white px-3 py-4 rounded-lg shadow-sm hover:shadow-md transition">
+                            <img src={data?.img} className="h-[90px] w-auto object-contain" />
                         </div>
-                    </div>
+
+
+                    </>
                 ))}
             </Slider>
         </div>

@@ -110,25 +110,30 @@ const HowToApply: React.FC = () => {
         </div>
         <div className="bg-[#f5f5f5]">
           <div className={`${Classes["container"]} py-10 lg:py-20`}>
-            <div className="flex flex-col lg:flex-row gap-6 lg:gap-25  px-10 lg:px-0">
+            <div className="flex flex-col lg:flex-row gap-6 lg:gap-25 px-0 lg:px-0">
               <div className="pt-6 lg:pt-0 w-full">
-                <img src={img} />
+                <img
+                  src={img}
+                  alt=""
+                  className="w-full h-auto block"
+                />
               </div>
-              <div className="py-10 sm:py-0 w-full">
-                <h1 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] leading-tight  font-medium mr-0 sm:mr-0 lg:mr-35">Get Advantage of studying in a NAAC Accredited University</h1>
+
+              <div className="py-2 sm:py-0 w-full">
+                <h1 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] leading-tight text-[#023047]  font-medium mr-0 sm:mr-0 lg:mr-35">Get Advantage of studying in a NAAC Accredited University</h1>
                 <ul className="list-disc marker:text-amber-400 marker:text-3xl mr-0 sm:mr-0 lg:mr-35">
-                  <li className="ml-6 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] leading-4 lg:leading-6">26+ Years of Academic Excellence</li>
-                  <li className="ml-6 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] leading-4 lg:leading-6">Global & Industry Collaborations</li>
-                  <li className="ml-6 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] leading-4 lg:leading-6">Advanced Labs & World-Class Infrastructure</li>
-                  <li className="ml-6 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] leading-4 lg:leading-6">Strong Placement Record with MNCs & Fortune 500</li>
+                  <li className="ml-6 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] leading-2 lg:leading-6">26+ Years of Academic Excellence</li>
+                  <li className="ml-6 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] leading-2 lg:leading-6">Global & Industry Collaborations</li>
+                  <li className="ml-6 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] leading-2 lg:leading-6">Advanced Labs & World-Class Infrastructure</li>
+                  <li className="ml-6 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] leading-2 lg:leading-6">Strong Placement Record with MNCs & Fortune 500</li>
                   <li className="ml-6 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] leading-4 lg:leading-6">
                     Industry-Aligned, Skill-Based Programs (AI, Data Science, etc.)
                   </li>
-                  <li className="ml-6 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] leading-4 lg:leading-6">Support for Research, Innovation & Startups</li>
-                  <li className="ml-6 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] leading-4 lg:leading-6">Experienced Faculty with Industry Exposure</li>
-                  <li className="ml-6 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px]  leading-4 lg:leading-6">Well-Connected, Student-Friendly Green Campus</li>
-                  <li className="ml-6 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] leading-4 lg:leading-6">Flexible Academics as per NEP 2020</li>
-                  <li className="ml-6 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] leading-4 lg:leading-6">Attractive Scholarships & Affordable Fee Structure</li>
+                  <li className="ml-6 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] leading-2 lg:leading-6">Support for Research, Innovation & Startups</li>
+                  <li className="ml-6 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] leading-2 lg:leading-6">Experienced Faculty with Industry Exposure</li>
+                  <li className="ml-6 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px]  leading-2 lg:leading-6">Well-Connected, Student-Friendly Green Campus</li>
+                  <li className="ml-6 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] leading-2 lg:leading-6">Flexible Academics as per NEP 2020</li>
+                  <li className="ml-6 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] leading-2 lg:leading-6">Attractive Scholarships & Affordable Fee Structure</li>
                 </ul>
               </div>
             </div>

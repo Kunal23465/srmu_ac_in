@@ -1,10 +1,8 @@
 import React from 'react'
 import Scholarship from '../../../components/scholarship/Scholarship'
 import { Helmet } from 'react-helmet-async'
-
 const ScholarshipPage: React.FC = () => {
     return (
-
         <>
 
             <Helmet>
