@@ -28,19 +28,19 @@ const NationalScoreBasedScholarship: React.FC = () => {
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 w-full lg:max-w-[860px] gap-5">
           <div className="py-8 px-4 border border-amber-400 rounded-3xl overflow-auto">
-            <p className="text-lg sm:text-xl text-center pb-5 uppercase font-bold">Engineering</p>
+            <p className="text-[15px] sm:text-[17.82px]  text-center pb-5 uppercase font-bold text-[#212529]">Engineering</p>
             <CustomScholarshipTable head={ScholarshipEngineeringTableHeadData} data={ScholarshipEngineeringTableData} />
           </div>
           <div className="py-8 px-4 border border-amber-400 rounded-3xl overflow-auto">
-            <p className="text-lg sm:text-xl text-center pb-5 uppercase font-bold">Management</p>
+            <p className="text-[15px] sm:text-[17.82px]  text-center pb-5 uppercase font-bold text-[#212529]">Management</p>
             <CustomScholarshipTable head={ScholarshipManagement1TableHeadData} data={ScholarshipManagement1TableData} />
           </div>
           <div className="py-8 px-4 border border-amber-400 rounded-3xl overflow-auto">
-            <p className="text-lg sm:text-xl text-center pb-5 uppercase font-bold">Management</p>
+            <p className="text-[15px] sm:text-[17.82px]  text-center pb-5 uppercase font-bold text-[#212529]">Management</p>
             <CustomScholarshipTable head={ScholarshipManagement2TableHeadData} data={ScholarshipManagement2TableData} />
           </div>
           <div className="py-8 px-4 border border-amber-400 rounded-3xl overflow-auto">
-            <p className="text-lg sm:text-xl text-center pb-5 uppercase font-bold">Law</p>
+            <p className="text-[15px] sm:text-[17.82px]  text-center pb-5 uppercase font-bold text-[#212529]">Law</p>
             <CustomScholarshipTable head={ScholarshipLawTableHeadData} data={ScholarshipLawTableData} />
           </div>
         </div>

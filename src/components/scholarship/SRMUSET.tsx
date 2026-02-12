@@ -30,29 +30,29 @@ const SRMUSET: React.FC = () => {
         <div>
           <div className="w-full grid grid-cols-1 xl:grid-cols-2 lg:max-w-[860px] gap-5">
             <div className="py-8 px-4 border border-amber-400 rounded-3xl overflow-auto">
-              <p className="text-lg sm:text-xl text-center pb-5 uppercase font-bold">UG & Integrated Programmes including D.Pharm (Except B.Tech Core- Civil/ Mechanical, EC and Electrical)</p>
+              <p className="text-[15px] sm:text-[17.82px]  text-center pb-5 uppercase font-bold text-[#212529]">UG & Integrated Programmes including D.Pharm (Except B.Tech Core- Civil/ Mechanical, EC and Electrical)</p>
               <CustomScholarshipTable head={srmusetScholarshipEngineeringTableHeadData} data={srmusetScholarshipEngineeringTableData} />
             </div>
             <div className="py-8 px-4 border border-amber-400 rounded-3xl overflow-auto">
-              <p className="text-lg sm:text-xl text-center pb-5 uppercase font-bold">B.Tech Core(Civil/ Mechanical, EC and Electrical) Programmes (Annual Scholarship Amount) </p>
+              <p className="text-[15px] sm:text-[17.82px]  text-center pb-5 uppercase font-bold text-[#212529]">B.Tech Core(Civil/ Mechanical, EC and Electrical) Programmes (Annual Scholarship Amount) </p>
               <CustomScholarshipTable head={secondTableHeadData} data={secondTableData} showThirdColumn={false} />
             </div>
             <div className="py-8 px-4 border border-amber-400 rounded-3xl overflow-auto">
-              <p className="text-lg sm:text-xl text-center pb-5 uppercase font-bold">
+              <p className="text-[15px] sm:text-[17.82px]  text-center pb-5 uppercase font-bold text-[#212529]">
                 Polytechnic Programmes (Annual Scholarship Amount)</p>
               <CustomScholarshipTable head={thirdTableHeadData} data={thirdTableData} showThirdColumn={false} />
             </div>
           </div>
           {/* <div className="w-full lg:max-w-[860px] mt-3">
             <div className="py-8 px-4 border border-amber-400 rounded-3xl overflow-auto">
-              <p className="text-lg sm:text-xl text-center pb-5 uppercase font-bold">B.Tech Core(Civil/ Mechanical, EC and Electrical) Programmes (Annual Scholarship Amount) </p>
+              <p className="text-[15px] sm:text-[17.82px]  text-center pb-5 uppercase font-bold text-[#212529]">B.Tech Core(Civil/ Mechanical, EC and Electrical) Programmes (Annual Scholarship Amount) </p>
               <CustomScholarshipTable head={srmusetScholarshipEngineeringTableHeadData} data={srmusetScholarshipEngineeringTableData} showThirdColumn={false} />
             </div>
           </div> */}
         </div>
         {/* <div className="w-full lg:max-w-[860px]">
           <div className="py-8 px-4 border border-amber-400 rounded-3xl overflow-auto">
-            <p className="text-lg sm:text-xl text-center pb-5 uppercase font-bold">Engineering11</p>
+            <p className="text-[15px] sm:text-[17.82px]  text-center pb-5 uppercase font-bold text-[#212529]">Engineering11</p>
             <CustomScholarshipTable head={srmusetScholarshipEngineeringTableHeadData} data={srmusetScholarshipEngineeringTableData} showThirdColumn={false} />
           </div>
         </div> */}

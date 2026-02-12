@@ -85,11 +85,11 @@ const SpecialScholarship: React.FC = () => {
           </ul>
           <div className="grid grid-cols-1 lg:grid-cols-2 w-full lg:max-w-[860px] gap-5">
             <div className="py-8 px-4 border border-amber-400 rounded-3xl overflow-auto">
-              <p className="text-lg sm:text-xl text-center pb-5 uppercase font-bold">SRMU to SRMU</p>
+              <p className="text-[15px] sm:text-[17.82px]  text-center pb-5 uppercase font-bold text-[#212529]">SRMU to SRMU</p>
               <CustomScholarshipTable head={SpecialScholarship_SRMUtoSRMU_TableHeadData} data={SpecialScholarship_SRMUtoSRMU_TableData} />
             </div>
             <div className="py-8 px-4 border border-amber-400 rounded-3xl overflow-auto">
-              <p className="text-lg sm:text-xl text-center pb-5 uppercase font-bold">SRMGPC to SRMU</p>
+              <p className="text-[15px] sm:text-[17.82px]  text-center pb-5 uppercase font-bold text-[#212529]">SRMGPC to SRMU</p>
               <CustomScholarshipTable head={SpecialScholarship_SRMGPCtoSRMU_TableHeadData} data={SpecialScholarship_SRMGPCtoSRMU_TableData} />
             </div>
           </div>
@@ -151,7 +151,7 @@ const SpecialScholarship: React.FC = () => {
           </div>
         </div> */}
         <div className="py-8 px-4 border border-amber-400 rounded-3xl overflow-auto w-full max-w-[860px]">
-          <p className="text-lg sm:text-xl text-center pb-5 uppercase font-bold">
+          <p className="text-[15px] sm:text-[17.82px]  text-center pb-5 uppercase font-bold text-[#212529]">
             Special Scholarships (Applicable for All Years) </p>
           <CustomScholarshipTable head={SpecialScholarship_Category_TableHeadData} data={SpecialScholarship_Category_TableData} />
         </div>
