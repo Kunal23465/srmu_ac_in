@@ -7,15 +7,15 @@ interface Props {
 // @ts-ignore
 const CustomDepartmentVissionMission: React.FC<Props> = ({ data }) => {
   return (
-    <div className="flex flex-col p-[38px] min-h-[530px] min-w-[250px] rounded-3xl shadow-md" style={{ backgroundColor: data.bgColor }}>
+    <div className="flex flex-col px-3 py-6 sm:p-[38px] min-h-[350px] sm:min-h-[530px] min-w-[250px] rounded-3xl shadow-md" style={{ backgroundColor: data.bgColor }}>
       {/* Image */}
-      <img src={data.img} alt="logo" className="w-[120px] h-[120px] object-contain mb-4" />
+      <img src={data.img} alt="logo" className="w-[80px] h-[80px] sm:w-[120px] sm:h-[120px] object-contain mb-4" />
 
       {/* Heading */}
-      <h1 className="lg:text-[45px] md:text-[42.195px] sm:text-[39.82px] text-[39.82px] fw500 mb-2 md:mb-4 text-[#023047]">{data.heading}</h1>
+      <h1 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] fw500 mb-0 md:mb-4 text-[#023047]">{data.heading}</h1>
       {data.description && <h2 className="text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px]">{data.description}</h2>}
       {/* List Items */}
-      <ul className="list-disc pl-5 pt-2.5 space-y-1 md:space-y-2 text-[#212529] text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] marker:text-[1.8rem]">
+      <ul className="list-disc pl-5 pt-1 sm:pt-2.5 space-y-1 md:space-y-2 text-[#212529] text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] marker:text-[1.8rem]">
         {data.points?.map((item, index) => (
           <li key={index}>{item}</li>
         ))}

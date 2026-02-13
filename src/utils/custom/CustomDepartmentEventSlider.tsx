@@ -28,7 +28,7 @@ export interface SliderProps<T> {
   arrowBgColor?: string;
 }
 
-const ITEMS_PER_PAGE = 4; 
+const ITEMS_PER_PAGE = 4;
 
 function CustomDepartmentEventSlider<T>({
   data,
@@ -94,14 +94,14 @@ function CustomDepartmentEventSlider<T>({
 
   return (
     <div
-      className="px-4 md:px-14 py-8 md:py-16 lg:py-22 w-full"
+      className="sm:px-4 md:px-14 py-8 md:py-16 lg:py-22 w-full"
       style={{
         background: bgImage ? `url(${bgImage}) center/cover` : bgColor,
       }}
     >
       <div className={`flex flex-col md:flex-row justify-between items-start w-full mb-8 ${Classes["container"]}`}>
-        <div className="px-3 w-full md:w-auto mb-4 md:mb-0">
-          <h2 className="text-4xl lg:text-[45px] font-semibold" style={{ color: headingColor }}>
+        <div className="sm:px-3 w-full md:w-auto mb-4 md:mb-0">
+          <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] font-semibold" style={{ color: headingColor }}>
             {heading}
           </h2>
 
@@ -116,9 +116,8 @@ function CustomDepartmentEventSlider<T>({
           <button
             onClick={handlePrev}
             disabled={isAtStart}
-            className={`border-2 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center text-lg transition font-semibold ${
-              isAtStart ? "opacity-40 cursor-not-allowed" : "hover:opacity-70"
-            }`}
+            className={`border-2 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center text-lg transition font-semibold ${isAtStart ? "opacity-40 cursor-not-allowed" : "hover:opacity-70"
+              }`}
             style={{
               borderColor: arrowBorderColor,
               color: arrowColor,
@@ -131,9 +130,8 @@ function CustomDepartmentEventSlider<T>({
           <button
             onClick={handleNext}
             disabled={isAtEnd}
-            className={`border-2 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center text-lg transition font-semibold ${
-              isAtEnd ? "opacity-40 cursor-not-allowed" : "hover:opacity-70"
-            }`}
+            className={`border-2 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center text-lg transition font-semibold ${isAtEnd ? "opacity-40 cursor-not-allowed" : "hover:opacity-70"
+              }`}
             style={{
               borderColor: arrowBorderColor,
               color: arrowColor,
@@ -155,7 +153,7 @@ function CustomDepartmentEventSlider<T>({
           }}
         >
           {pages.map((page, pageIndex) => (
-            <div key={pageIndex} className="p-5 shrink-0" style={{ width: `${100 / totalPages}%` }}>
+            <div key={pageIndex} className="py-5 sm:p-5 shrink-0" style={{ width: `${100 / totalPages}%` }}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {page.map((item, index) => (
                   <div key={index} className="col-span-1">
@@ -173,4 +171,3 @@ function CustomDepartmentEventSlider<T>({
 
 export default CustomDepartmentEventSlider;
 
- 

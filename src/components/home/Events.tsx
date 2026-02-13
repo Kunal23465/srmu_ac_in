@@ -44,7 +44,7 @@ const NewsCard = ({ image, description, date, title, onReadMore }: any) => {
           {date}
         </div>
 
-        <h1 className="font20 fw600">{title}</h1>
+        <h1 className="text-sm sm:text-[20px] fw600">{title}</h1>
 
         <div className="mt-2 text-[#000000cc] text-justify" dangerouslySetInnerHTML={{ __html: truncatedDesc }} />
 
@@ -79,7 +79,7 @@ const NewsCard1 = ({ image, description, date, title, onReadMore }: any) => {
           {date}
         </div>
 
-        <h1 className="font20 fw600">{title}</h1>
+        <h1 className="text-sm sm:text-[20px] fw600">{title}</h1>
 
         <div className="mt-2 text-[#000000cc] text-justify" dangerouslySetInnerHTML={{ __html: truncatedDesc }} />
 
@@ -119,7 +119,7 @@ const Events: React.FC = () => {
   };
 
   return (
-    <div className={`${Classes["container"]} pt-7 sm:py-7 md:py-10 lg:py-14`}>
+    <div className={`${Classes["container"]} pt-7 pb-4 sm:py-7 md:py-10 lg:py-14`}>
       <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] fw500 text-left">Latest News and Events</h2>
 
       <p className="text-jsutify">At University’s beautiful campus, you’ll find a diverse and welcoming community that will teach you life skills along with having fun.</p>

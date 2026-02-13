@@ -12,7 +12,7 @@ interface PartnerLogosProps {
 const PartnerLogos: React.FC<PartnerLogosProps> = ({ data }) => {
   return (
     <div className="w-full flex flex-col items-center">
-<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-30 place-items-center">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-30 place-items-center">
         {data.map((item, index) => (
           <div key={index} className="flex flex-col items-center gap-5">
             <img
@@ -20,7 +20,7 @@ const PartnerLogos: React.FC<PartnerLogosProps> = ({ data }) => {
               alt={item.title}
               className="w-[210px] object-contain"
             />
-            <p className="font20 fw600 text-center">
+            <p className="text-sm sm:text-[20px] fw600 text-center">
               {item.title}
             </p>
           </div>

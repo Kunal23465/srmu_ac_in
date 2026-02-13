@@ -115,7 +115,7 @@ const ProgramFilter: React.FC<PropsTypes> = ({
                 const programPath = path(course.programTypeName);
                 const programName = path(course.name);
                 return (
-                  <div className="border border-gray-300 p-8 mb-4 rounded-md flex flex-col lg:flex-row gap-4 lg:justify-between items-center">
+                  <div className="border border-gray-300 px-3 py-4 sm:p-8 mb-4 rounded-md flex flex-col lg:flex-row gap-4 lg:justify-between items-center">
                     <div className="flex flex-col md:flex-row gap-2 w-full justify-between lg:w-[70%]">
                       <Link state={{
                         programId: course.programId,

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FeeTableData } from "../../data/academics/faculty-of-civil-engineering/faculty-of-civil-engineering-data";
 import { CustomModal } from "./CustomIqacCard";
 
@@ -8,11 +8,31 @@ interface Props {
 
 const CustomDepartmentFeeDetailsTable: React.FC<Props> = ({ data }) => {
     const [expandedId, setExpandedId] = React.useState<number | null>(null);
+    const [gridTemplate, setGridTemplate] = useState("");
+    useEffect(() => {
+        const updateGrid = () => {
+            if (window.innerWidth > 592) {
+                setGridTemplate(
+                    `3fr repeat(${data.columns.length - 1}, 1fr)`
+                );
+            } else {
+                setGridTemplate(
+                    `1fr repeat(${data.columns.length - 1}, 1fr)`
+                );
+            }
+        };
 
-    const gridTemplate = `3fr repeat(${data.columns.length - 1}, 1fr)`;
+        updateGrid(); // run on mount
+        window.addEventListener("resize", updateGrid);
+
+        return () => window.removeEventListener("resize", updateGrid);
+    }, [data.columns.length]);
+
+
+    // const gridTemplate = `3fr repeat(${data.columns.length - 1}, 1fr)`;
 
     return (
-        <div className="w-full p-6 pb-[60px] bg-[#ecf0f9] rounded-2xl border border-[#c6d4ea] my-14">
+        <div className="w-full px-2 py-3 sm:p-6 pb-[60px] bg-[#ecf0f9] rounded-2xl border border-[#c6d4ea] my-14">
 
             {/* Scrollable wrapper ONLY on small & medium screens */}
             <div className="overflow-x-auto lg:overflow-visible">
@@ -41,13 +61,13 @@ const CustomDepartmentFeeDetailsTable: React.FC<Props> = ({ data }) => {
                             return (
                                 <div
                                     key={rowIndex}
-                                    className="grid bg-white rounded-md p-9"
+                                    className="grid bg-white rounded-md px-2 py-5 sm:p-9"
                                     style={{ gridTemplateColumns: gridTemplate }}
                                 >
                                     {values.map((val, colIndex) => (
                                         <div
                                             key={colIndex}
-                                            className={`text-left text-[#212523] fw500 lg:text-[19px] md:text-[17.82px] sm:text-[16.632px] text-[16.632px] font-normal flex items-center justify-start px-8 relative ${colIndex !== 0 && "whitespace-nowrap"} `}
+                                            className={`text-left  text-[#212523] fw500 lg:text-[19px] md:text-[17.82px] sm:text-[16.632px] text-[16.632px] font-normal flex items-center justify-start px-8 relative  ${colIndex !== 0 ? "whitespace-nowrap" : "whitespace-wrap max-w-[200px] sm:max-w-auto"} `}
                                         >
                                             {val === "Click" ? (
                                                 <span

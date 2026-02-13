@@ -1,16 +1,26 @@
 import Classes from "../../utils/styles/Global.module.css";
 import { GrSearch } from "react-icons/gr";
 import { IoCallSharp } from "react-icons/io5";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import user from "../../assets/images/home/user-icon.png";
 import search from "../../assets/images/home/searching-icon.png";
 import { FaCaretDown, FaCaretUp } from "react-icons/fa";
 const TopHeader: React.FC = () => {
   const [isDropdown, setIsDropdown] = useState(false)
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 592);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 592);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   return (
-    <div className={`${Classes["top_header"]}  text-white bg-white lg:bg-[#0f4a85]  text-[0.89rem]`}>
-      <div className={`${Classes["container"]}`}>
+    <div className={`  ${Classes["top_header"]}  text-white bg-white lg:bg-[#0f4a85]  text-[0.89rem]`}>
+      <div className={`${isDesktop ? Classes["container"] : ""}`}    >
         <div className="hidden lg:flex justify-between ">
           <div className="left-part flex items-center">
             <div>
@@ -69,7 +79,7 @@ const TopHeader: React.FC = () => {
             </a>
             <FaCaretDown />
           </div> */}
-          <div className="left-part flex items-center">
+          <div className="left-part flex items-center ml-2">
             <div className="relative">
               <button onClick={() => setIsDropdown(prev => !prev)} className="text-black text-lg font-semibold flex items-center gap-x-1 cursor-pointer">Login  {isDropdown ? <FaCaretUp /> : <FaCaretDown />} </button>
               {isDropdown && <div className="bg-white absolute -bottom-[70px] border border-gray-100 z-9999 p-3 text-balck! w-[200px]">

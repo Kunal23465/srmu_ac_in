@@ -5,7 +5,7 @@ export default function FlickeringSection() {
   const [activeId, setActiveId] = useState("section_25");
 
   return (
-    <section className="relative h-[75vh] overflow-hidden">
+    <section className="relative h-[55vh] sm:h-[75vh] overflow-hidden">
       {/* BACKGROUND IMAGES */}
       <div className="absolute inset-0">
         {flickcategories.map((item) => (
