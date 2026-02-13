@@ -35,7 +35,7 @@ const AwardAndTopRanking: React.FC = () => {
             </div>
 
             {/* Cards */}
-            <div className="mx-auto xl:-ml-50 xl:w-[120%] lg:col-span-3 px-10 sm:px-15 lg:px-0 grid grid-cols-2 w-full xl:grid-cols-3 xl:grid-cols-4 gap-x-6 gap-y-16">
+            <div className="mx-auto xl:-ml-50 xl:w-[120%] lg:col-span-3 px-0 sm:px-15 lg:px-0  grid grid-cols-2 w-full xl:grid-cols-3 xl:grid-cols-4 gap-x-6 gap-y-16">
               {awardAndRankingData.map((item, index) => (
                 <div
                   key={item.id}

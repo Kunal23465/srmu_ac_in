@@ -45,7 +45,7 @@ const CustomOverviewSection: React.FC<CustomOverviewSectionProps> = ({ data }) =
 
                 {/* Right Content Section */}
                 <div className={`${otherData && otherData?.length > 0 ? "" : "md:pl-8 md:py-4"}`}>
-                    <div className="text-justify lg:pr-30 md:pr-0 sm:pr-0 text-[15px] lg:text-[16px] md:text-[15px] sm:text-[15px]">
+                    <div className="text-justify lg:pr-30 md:pr-0 sm:pr-0 text-sm lg:text-[16px] md:text-[15px] sm:text-[15px]">
                         {typeof content === "string" ? <p>{content}</p> : content}
                     </div>
                     {/* Additional Other Data (Paragraphs, Lists, Eligibility, etc.) */}

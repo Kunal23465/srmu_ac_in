@@ -8,13 +8,13 @@ const ConsultancyTable: React.FC = () => {
       <table className="min-w-full table-auto border-collapse text-lg">
         <thead className=" text-white">
           <tr>
-            <th className="px-6 py-3 border lg:text-[15px] md:text-[14px] sm:text-[13.132px] text-[13.132px] border-[#1d2b58] bg-[#1d2b58]">S.No</th>
-            <th className="px-6 py-3 border lg:text-[15px] md:text-[14px] sm:text-[13.132px] text-[13.132px] border-[#213e78] bg-[#213e78]">Name Of Consultant/ Principal Investigator</th>
-            <th className="px-6 py-3 border lg:text-[15px] md:text-[14px] sm:text-[13.132px] text-[13.132px] border-[#05519c] bg-[#05519c]">Name Of Assignment</th>
-            <th className="px-6 py-3 border lg:text-[15px] md:text-[14px] sm:text-[13.132px] text-[13.132px] border-[#307fc2] bg-[#307fc2]">Name Of Funding Agency</th>
-            <th className="px-6 py-3 border lg:text-[15px] md:text-[14px] sm:text-[13.132px] text-[13.132px] border-[#489dd6] bg-[#489dd6]">Total Cost (INR In Lakhs)</th>
-            <th className="px-6 py-3 border lg:text-[15px] md:text-[14px] sm:text-[13.132px] text-[13.132px] border-[#64b6e5] bg-[#64b6e5]">Year</th>
-            <th className="px-6 py-3 border lg:text-[15px] md:text-[14px] sm:text-[13.132px] text-[13.132px] border-[#86cbf3] bg-[#86cbf3]">Status</th>
+            <th className="px-6 py-3 border lg:text-[15px] md:text-[14px] sm:text-[13.132px] text-nowrap text-[13.132px] border-[#1d2b58] bg-[#1d2b58]">S.No</th>
+            <th className="px-6 py-3 border lg:text-[15px] md:text-[14px] sm:text-[13.132px] min-w-[200px] text-[13.132px] border-[#213e78] bg-[#213e78]">Name Of Consultant/ Principal Investigator</th>
+            <th className="px-6 py-3 border lg:text-[15px] md:text-[14px] sm:text-[13.132px] text-nowrap text-[13.132px] border-[#05519c] bg-[#05519c] min-w-[300px]">Name Of Assignment</th>
+            <th className="px-6 py-3 border lg:text-[15px] md:text-[14px] sm:text-[13.132px] text-nowrap text-[13.132px] border-[#307fc2] bg-[#307fc2]">Name Of Funding Agency</th>
+            <th className="px-6 py-3 border lg:text-[15px] md:text-[14px] sm:text-[13.132px] text-nowrap text-[13.132px] border-[#489dd6] bg-[#489dd6]">Total Cost (INR In Lakhs)</th>
+            <th className="px-6 py-3 border lg:text-[15px] md:text-[14px] sm:text-[13.132px] text-nowrap text-[13.132px] border-[#64b6e5] bg-[#64b6e5] min-w-[100px]">Year</th>
+            <th className="px-6 py-3 border lg:text-[15px] md:text-[14px] sm:text-[13.132px] text-nowrap text-[13.132px] border-[#86cbf3] bg-[#86cbf3]">Status</th>
           </tr>
         </thead>
         <tbody>

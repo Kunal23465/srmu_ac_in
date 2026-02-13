@@ -39,12 +39,12 @@ const KnowOurCampus: React.FC = () => {
 
       {/* Image Section */}
       <div className="relative w-full">
-        <img src={ourCampus} alt="Campus" className="w-full h-[550px] object-cover" />
+        <img src={ourCampus} alt="Campus" className="w-full h-[100px] sm:h-[550px] object-cover" />
 
         {/* Card */}
-        <div className="absolute top-1/2 right-[1%] sm:right-[18%] transform -translate-y-1/2 bg-[#ecf0f9] shadow-lg p-8 w-[370px] h-[370px]">
+        <div className="absolute top-[47%] sm:top-1/2 right-2   sm:right-[18%]   transform -translate-y-1/2 bg-[#ecf0f9] shadow-lg p-5 sm:p-8 w-[370px] h-[250px] sm:h-[370px]">
           {/* Arrows */}
-          <div className="flex -mt-8 pb-8 justify-center">
+          <div className="flex -mt-[19px] sm:-mt-8 pb-8 justify-center">
             {/* Prev */}
             <button
               onClick={() => !isFirst && sliderRef.current?.slickPrev()}

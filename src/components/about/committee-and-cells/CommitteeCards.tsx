@@ -23,19 +23,19 @@ const CommitteeCard: React.FC<CommitteeCardProps> = ({
   const imageIsBottom = index % 2 !== 0;
 
   const cardContent = (
-    <div className="p-6 flex flex-col justify-between flex-grow transition-colors duration-300 group-hover:text-white cursor-pointer">
+    <div className="py-4 sm:p-6 flex flex-col justify-between flex-grow transition-colors duration-300 group-hover:text-white cursor-pointer">
       <div>
-        <h2 className="text-xl font-semibold text-gray-900 mb-3 transition-colors duration-300 group-hover:text-white">
+        <h2 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2 sm:mb-3 transition-colors duration-300 group-hover:text-white">
           {title}
         </h2>
-        <p className="leading-relaxed transition-colors duration-300 group-hover:text-gray-100">
+        <p className="leading-relaxed text-sm sm:text-base transition-colors duration-300 group-hover:text-gray-100">
           {description}
         </p>
       </div>
-      <div className="mt-4 pt-4  transition-colors duration-300 group-hover:border-gray-300">
+      <div className="sm:mt-4 pt-4  transition-colors duration-300 group-hover:border-gray-300">
         <Link
           to={readMoreLink}
-          className="text-lg font-medium text-[rgb(15,74,133)] hover:text-blue-300 transition-colors duration-200 flex items-center group-hover:text-blue-200"
+          className="text-base sm:text-lg font-medium text-[rgb(15,74,133)] hover:text-blue-300 transition-colors duration-200 flex items-center group-hover:text-blue-200"
         >
           Read More
           <svg

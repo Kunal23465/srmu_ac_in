@@ -8,20 +8,21 @@ interface ProfileCardProps {
 const ProfileCard: React.FC<ProfileCardProps> = ({ member }) => {
   return (
     <div
-      className="relative w-full h-[300px]
+      className="relative w-full sm:h-[300px]
       rounded-xl border border-gray-200 shadow-sm overflow-hidden
-      transition-all duration-300 transform hover:-translate-y-2 hover:shadow-lg cursor-pointer bg-gray-100"
+      transition-all duration-300 transform hover:-translate-y-2 hover:shadow-lg cursor-pointer bg-[#92969c] sm:bg-gray-100"
     >
-      <div className="w-full aspect-[4/5] overflow-hidden rounded-2xl bg-gray-100 shadow-sm">
-  <img
-    src={member.image}
-    alt={member.name}
-    className="w-full h-full object-cover object-center scale-125 transition-transform duration-500 hover:scale-130"
-  />
-</div>
+      <div className="w-full relative aspect-[4/5] overflow-hidden rounded-2xl sm:bg-gray-100 shadow-sm">
+        <img
+          src={member.image}
+          alt={member.name}
+          className="w-full h-full object-cover object-center scale-125 transition-transform duration-500 hover:scale-130"
+        />
+        <span className="block sm:hidden bg-black/40 w-full h-full absolute top-0 left-0"></span>
+      </div>
 
 
-      <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/70 via-black/40 to-transparent text-white">
+      <div className="absolute bottom-0 left-0 right-0 p-4 sm:bg-gradient-to-t sm:from-black/70 sm:via-black/40 sm:to-transparent text-white">
         <h3 className="text-lg font-semibold">{member.name}</h3>
         <p className="text-sm font-medium opacity-90">{member.title}</p>
         <p className="text-xs opacity-80 mt-1">{member.position}</p>

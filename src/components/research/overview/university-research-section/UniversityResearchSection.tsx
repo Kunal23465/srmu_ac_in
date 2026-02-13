@@ -27,7 +27,7 @@ const UniversityResearchSection: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-6">
             {visibleMembers.map((member) => (
               <ResearchCard key={member.id} member={member} />
             ))}

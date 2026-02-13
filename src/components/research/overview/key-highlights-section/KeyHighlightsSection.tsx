@@ -11,21 +11,6 @@ const KeyHighlightsSection: React.FC<CustomFacilitiesTypes> = ({ facilities, lay
   const sliderRef = React.useRef<Slider>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [totalSlides, setTotalSlides] = useState(0);
-
-  const settings = {
-    dots: false,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    arrows: false,
-    afterChange: (current: number) => setCurrentSlide(current),
-    responsive: [
-      { breakpoint: 1024, settings: { slidesToShow: 2 } },
-      { breakpoint: 768, settings: { slidesToShow: 1 } },
-    ],
-  };
-
   useEffect(() => {
     if (facilities) {
       setTotalSlides(facilities.length);
@@ -38,6 +23,22 @@ const KeyHighlightsSection: React.FC<CustomFacilitiesTypes> = ({ facilities, lay
     if (window.innerWidth >= 768) return 2;
     return 1;
   };
+
+  const settings = {
+    dots: false,
+    infinite: false,
+    speed: 500,
+    slidesToShow: getVisibleSlides(),
+    slidesToScroll: 1,
+    arrows: false,
+    afterChange: (current: number) => setCurrentSlide(current),
+    responsive: [
+      { breakpoint: 1024, settings: { slidesToShow: 2 } },
+      { breakpoint: 768, settings: { slidesToShow: 1 } },
+    ],
+  };
+
+
 
   const isFirstSlide = currentSlide === 0;
   const isLastSlide = currentSlide >= totalSlides - getVisibleSlides();

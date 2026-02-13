@@ -4,7 +4,7 @@ const DescriptionCurr: FC = () => {
   return (
     <div>
       <div className="mb-4 lg:text-[18px] text-[15.75px] md:text-[16.875px] sm:text-[15.75px]">
-        <p className="text-justify">
+        <p className="text-justify text-base sm:text-[18px]">
           <strong>
             Curriculum developed and implemented have relevance to the local, national, regional and global developmental needs which is reflected in Programme outcomes (POs),
             Programme Specific Outcomes(PSOs) and Course Outcomes(COs) of the Programmes offered by the Institution.
@@ -12,7 +12,7 @@ const DescriptionCurr: FC = () => {
         </p>
       </div>
 
-      <div className="mb-4 font18 text-justify">
+      <div className="mb-4 text-sm sm:font18 text-justify">
         <p>
           The <strong>Program Outcomes</strong> of the courses are designed as per the objectives which intent to develop core competencies in enhancing knowledge, critical
           thinking, synthesis of information, critical reflection. The decision making capacity develops, there is an inculcation of practical- application based learning in
@@ -21,7 +21,7 @@ const DescriptionCurr: FC = () => {
         </p>
       </div>
 
-      <div className="mb-4 font18 text-justify">
+      <div className="mb-4 text-sm sm:font18 text-justify">
         <p>
           The <strong>Program Specific Objectives</strong> are designed to disseminate theoretical as well as practical knowledge so as to establish unison between academic and
           professional needs collaboratively through project based learning. In this way, the students are skilled naturally to become efficient working professionals. The goal is
@@ -29,7 +29,7 @@ const DescriptionCurr: FC = () => {
         </p>
       </div>
 
-      <div className="mb-4 font18 text-justify">
+      <div className="mb-4 text-sm sm:font18 text-justify">
         <p>
           The <strong>Course Outcomes</strong> are developed to inculcate in students the knowledge of specific courses at all domains. Our curriculum encourages the students to
           understand the facts and figures including the fundamental concepts taught by efficient faculty members with tremendous exposure through Guest Lectures, National/
@@ -37,24 +37,24 @@ const DescriptionCurr: FC = () => {
         </p>
       </div>
 
-      <div className="mb-4 font18 text-justify">
+      <div className="mb-4 text-sm sm:font18 text-justify">
         <p>
           The <strong>Choice Based Credit System</strong> gives the opportunity to students for a flexible learning through their choices which helps them to increase their credits
           as well. Our students are motivated to develop theoretical and methodological thinking thereby enabling them to practically apply the knowledge gathered.
         </p>
       </div>
 
-      <h2 className="curr text-[32px] mt-10">
+      <h2 className="curr text-[18px] sm:text-[32px] mt-10">
         <strong>Curriculum Enrichment</strong>
       </h2>
-      <div className="mb-4 font18 text-justify">
+      <div className="mb-4 text-sm sm:font18 text-justify">
         <p>
           The University curriculum is enriched with the courses pertaining to crucial areas of concurrent concern viz. Gender Sensitivity, Environment & Sustainability and
           Professional Ethics and Human Values. These programs comprise both theory and practical sessions for the better comprehension of the users.
         </p>
       </div>
 
-      <div className="mb-4 font18 text-justify">
+      <div className="mb-4 text-sm sm:font18 text-justify">
         <p>
           <strong>Gender Sensitization</strong> encapsulates creating awareness about gender issues and working towards evolving an enabling environment of gender justice where men
           and women can work together with a sense of personal security and dignity. Gender is being taught as a subject across various disciplines and departments. The subjects
@@ -64,7 +64,7 @@ const DescriptionCurr: FC = () => {
         </p>
       </div>
 
-      <div className="mb-4 font18 text-justify">
+      <div className="mb-4 text-sm sm:font18 text-justify">
         <p>
           In a view to obtain the underlined objectives of Gender Sensitization, the university puts in several measures like conduction of lecture series by eminent personalities
           and alumni, street plays and cultural events with incorporation of real life experience in the form of field work & community outreach is organized on a regular basis.
@@ -74,7 +74,7 @@ const DescriptionCurr: FC = () => {
         </p>
       </div>
 
-      <div className="mb-4 font18 text-justify">
+      <div className="mb-4 text-sm sm:font18 text-justify">
         <p>
           <strong>Environmental Studies</strong> is a mandatory subject applicable across all UG courses. It addresses various aspects of today’s concern of society like
           environment,sustainability, ecology, pollution and conservation. Activities such as seminars, workshops, guest lectures by experts, industrial visits and field excursions
@@ -85,7 +85,7 @@ const DescriptionCurr: FC = () => {
         </p>
       </div>
 
-      <div className="mb-4 font18 text-justify">
+      <div className="mb-4 text-sm sm:font18 text-justify">
         <p>
           The University ensures substantial <strong>Human Values and Professional Ethics</strong> through a dedicated course across different programmes.The University holds
           plethora of workshops and expert lectures, interaction with spiritual gurus and luminaries to inculcate and upgrade social, moral and ethical values in the student.

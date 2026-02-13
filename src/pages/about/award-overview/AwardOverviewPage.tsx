@@ -3,12 +3,12 @@ import AwardOverview from "../../../components/about/award-overview/AwardOvervie
 import { Helmet } from "react-helmet-async";
 
 const AwardOverviewPage: React.FC = () => {
-  return<>
+  return <>
     <Helmet>
       <title>Award Overview | Shri Ramswaroop Memorial University, Lucknow</title>
       <meta name="description" content="SRMU is proud of its numerous prestigious awards and recognitions, showcasing its dedication to academic excellence, innovative methods, and contributions to higher education." />
     </Helmet>
-    <AwardOverview />;
+    <AwardOverview />
   </>
 
 };

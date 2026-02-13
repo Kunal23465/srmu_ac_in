@@ -33,23 +33,23 @@ const ResearchOfficeSection: React.FC = () => {
             ))}
           </div>
 
-          <div className="w-full px-8 md:px-10 bg-[#ecf0f9] rounded-bl-4xl py-12">
+          <div className="w-full px-4 sm:px-8 md:px-10 bg-[#ecf0f9] rounded-bl-4xl py-8 sm:py-12">
             <h2 className="lg:text-[25px] md:text-[23.445px] sm:text-[21.882px] text-[21.882px] font-bold mb-6">Research Coordinators of Different Departments</h2>
 
             {/* SCROLL CONTAINER */}
             <div className="overflow-x-auto">
-              <table className="w-full border-separate border-spacing-3">
+              <table className="w-full border-separate border-spacing-2 sm:border-spacing-3">
                 {/* TABLE HEADER */}
                 <thead>
                   <tr className="bg-[#214a8a] text-white">
                     {/* Institute – Hidden on mobile */}
                     <th className="hidden lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px] md:table-cell text-center py-4 px-6 font-semibold rounded-sm">INSTITUTES</th>
 
-                    <th className="text-center lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px] py-4 px-6 font-semibold rounded-sm">DEPARTMENT</th>
+                    <th className="text-center lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px] py-4 px-6 font-semibold rounded-sm text-nowrap">DEPARTMENT</th>
 
-                    <th className="text-center lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px]  py-4 px-6 font-semibold rounded-sm">NAME OF FACULTY</th>
+                    <th className="text-center lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px]  py-4 px-6 font-semibold rounded-sm text-nowrap">NAME OF FACULTY</th>
 
-                    <th className="text-center lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px] py-4 px-6 font-semibold rounded-sm">EMAIL ID</th>
+                    <th className="text-center lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px] py-4 px-6 font-semibold rounded-sm text-nowrap">EMAIL ID</th>
                   </tr>
                 </thead>
 

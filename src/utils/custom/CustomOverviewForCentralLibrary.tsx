@@ -32,7 +32,7 @@ const CustomOverviewSectionForCentralLibrary: React.FC<CustomOverviewSectionProp
                     </h2>
                 </div>
                 <div className={`${otherData && otherData.length > 0 ? "" : "md:pl-8 md:py-4"}`}>
-                    <p className="text-justify lg:pr-30 md:pr-0 sm:pr-0 text-[15px] lg:text-[16px] md:text-[15px] sm:text-[15px]">{content}</p>
+                    <p className="text-justify lg:pr-30 md:pr-0 sm:pr-0 text-sm lg:text-[16px] md:text-[15px] sm:text-[15px]">{content}</p>
 
                     {links && links.length > 0 && (
                         <div className="mt-6 space-y-2">

@@ -49,9 +49,8 @@ const AlternateProfileSection: React.FC<Props> = ({ people }) => {
                       <span className="text-xl text-white font-medium ">{person.title}</span>
                     </div>
                     <div
-                      className={`box w-full max-w-[290px] sm:max-w-[560px] bg-white p-3 sm:p-5 rounded-xl border-2 border-white transition-all duration-200 hover:border-[#ffb703] ${
-                        person.name === "Er. Pankaj Agarwal" ? "md:order-2" : ""
-                      }`}
+                      className={`box w-full max-w-[290px] sm:max-w-[560px] bg-white p-3 sm:p-5 rounded-xl border-2 border-white transition-all duration-200 hover:border-[#ffb703] ${person.name === "Er. Pankaj Agarwal" ? "md:order-2" : ""
+                        }`}
                     >
                       <img className="w-full" src={person.image} alt={person.name} />
                     </div>
@@ -61,7 +60,7 @@ const AlternateProfileSection: React.FC<Props> = ({ people }) => {
                         <h2 className="text-2xl lg:text-[30px] font-medium text-white mb-2">{person.name}</h2>
                         <p className="text-xl text-white font-medium ">{person.title}</p>
                       </div>
-                      <div className={`content ${person.name === "Er. Pooja Agarwal" ? "md:mt-[140px]" : "md:mt-[75px]"} mt-7 text-justify`}>
+                      <div className={`content text-sm sm:text-base ${person.name === "Er. Pooja Agarwal" ? "md:mt-[140px]" : "md:mt-[75px]"} mt-7 text-justify`}>
                         <p>{formatWithLineBreaks(person.description.join(""))}</p>
                       </div>
                     </div>
@@ -73,9 +72,8 @@ const AlternateProfileSection: React.FC<Props> = ({ people }) => {
             {!isStyleB && (
               <div className={`${Classes["container"]} py-7 md:py-10 lg:py-14`}>
                 <div
-                  className={`w-full rounded-[10px]  ${
-                    index == 2 ? "bg-[#f4f9ff]" : "bg-white"
-                  }  border border-black shadow-sm hover:shadow-md transition-all duration-200 px-5 py-10 sm:px-10`}
+                  className={`w-full rounded-[10px]  ${index == 2 ? "bg-[#f4f9ff]" : "bg-white"
+                    }  border border-black shadow-sm hover:shadow-md transition-all duration-200 px-5 py-10 sm:px-10`}
                 >
                   <div className="flex flex-col md:flex-row items-start gap-5">
                     <div className="w-full mx-auto max-w-[360px] flex justify-center items-center">
@@ -86,7 +84,7 @@ const AlternateProfileSection: React.FC<Props> = ({ people }) => {
                       <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] font-bold text-black mb-2">{person.name}</h2>
                       <span className="text-xl text-gray-700 font-medium">{person.title}</span>
 
-                      <div className="text-justify mt-3 lg:mt-4 text-[#5B5B5B] leading-8">
+                      <div className="mt-3 text-sm sm:text-base lg:mt-4 text-[#5B5B5B] sm:leading-8">
                         {isExpanded ? (
                           person.description.map((para, i) => (
                             <p key={i} className="mb-4">

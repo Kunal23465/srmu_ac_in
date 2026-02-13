@@ -22,7 +22,7 @@ const CustomMembersSection: React.FC<MembersSectionProps> = ({ title, descriptio
         <p className="text-gray-600 mb-10">{description}</p>
 
         <div
-          className="grid grid-cols-[repeat(auto-fit,minmax(230px,1fr))] sm:grid-cols-2 md:grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-5
+          className="grid grid-cols-2 md:grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-5
  justify-items-center text-left"
         >
           {data.slice(0, visibleCount).map((member, index) => (

@@ -38,13 +38,13 @@ const CustomTable: React.FC<CustomTableProps> = ({ columnOneHeader, columnTwoHea
       <table className="custom-table">
         <thead>
           <tr className="table-header-row">
-            <th className="column-one-header text-[21px] sm:text-[21px] md:text-[22.5px] lg:text-[24px]">{columnOneHeader}</th>
-            <th className="column-two-header text-[21px] sm:text-[21px] md:text-[22.5px] lg:text-[24px]">{columnTwoHeader}</th>
+            <th className="column-one-header text-[18px] sm:text-[21px] md:text-[22.5px] lg:text-[24px]">{columnOneHeader}</th>
+            <th className="column-two-header text-[18px] sm:text-[21px] md:text-[22.5px] lg:text-[24px]">{columnTwoHeader}</th>
           </tr>
         </thead>
         <tbody>
           {data.map((row) => (
-            <tr key={row.id} className="table-data-row md:text-[18.75px] text-[17.5px]">
+            <tr key={row.id} className="table-data-row text-base md:text-[18.75px] sm:text-[17.5px]">
               <td className="row-title title text-[#023047]">{row.title}</td>
               <td className="row-download">
                 <DownloadIcon item={row.download} />
