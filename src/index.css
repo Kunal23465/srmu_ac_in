@@ -2158,6 +2158,32 @@ section .card-color img {
 }
 
 @media only screen and (max-width:590px) {
+  /* manage-program-flow */
+
+
+
+  /* width */
+  .manage-program-flow::-webkit-scrollbar {
+    height: 10px;
+    width: 100%;
+    border-radius: 10px;
+  }
+  /* Track */
+  .manage-program-flow::-webkit-scrollbar-track {
+    background: #ccc;
+    border-radius: 10px;
+  }
+  /* Handle */
+  .manage-program-flow::-webkit-scrollbar-thumb {
+    background: #ffb703;
+    border-radius: 10px;
+  }
+
+
+
+
+
+
   .admission_process .box1 {
     max-width: 500px;
     position: static;

@@ -98,26 +98,46 @@ const ProgramsSection: FC = () => {
         <div className="w-full flex flex-col md:flex-row gap-y-10 md:gap-10">
           {/* ================= LEFT TABS (UNCHANGED) ================= */}
           <div className="w-full md:max-w-[350px] programs-tabs">
-            <ul className="flex flex-row md:flex-col overflow-x-auto">
+            <ul className="flex flex-row md:flex-col pb-5 sm:pb-0 manage-program-flow overflow-x-auto ">
               {programType?.map((tab: any) => (
                 <li key={tab.programTypeId}>
                   {tab.showOnHome && (
-                    <button
-                      onClick={() => {
-                        setActiveTab(tab.programTypeId);
-                        setSelectedProgramType(tab.programTypeId);
-                      }}
-                      className={`w-full text-left uppercase flex gap-x-2 items-center text-nowrap text-white rounded-md py-5 md:pl-6 md:pr-16 mb-1 px-5 text-base md:text-[1.25rem] cursor-pointer transition-all
+                    <>
+                      <button
+                        onClick={() => {
+                          setActiveTab(tab.programTypeId);
+                          setSelectedProgramType(tab.programTypeId);
+                        }}
+                        className={`w-full  text-left uppercase hidden sm:flex gap-x-2 items-center text-nowrap text-white rounded-md py-5 md:pl-6 md:pr-16 mb-1 px-5 text-base md:text-[1.25rem] cursor-pointer transition-all
                         ${activeTab === tab.programTypeId
-                          ? "programsection shadow-lg text-[#0d6efd]"
-                          : "bg-transparent text-white"
-                        }`}
-                    >
-                      {tab.name}
-                      <span className="block md:hidden text-white">
-                        <GoArrowUpRight size={24} />
-                      </span>
-                    </button>
+                            ? "programsection shadow-lg text-[#0d6efd]"
+                            : "bg-transparent text-white"
+                          }`}
+                      >
+                        {tab.name}
+                        <span className="block md:hidden text-white">
+                          <GoArrowUpRight size={24} />
+                        </span>
+                      </button>
+                      <button
+                        onClick={() => {
+                          setActiveTab(tab.programTypeId);
+                          setSelectedProgramType(tab.programTypeId);
+                        }}
+                        className={`w-full  text-left uppercase flex flex-col sm:hidden gap-2 px-2 items-center text-nowrap text-white rounded-md py-5 md:pl-6 md:pr-16 mb-1 sm:px-5 text-xs sm:text-base md:text-[1.25rem] cursor-pointer transition-all
+                      `}
+                      >
+
+                        <span className={`block md:hidden    ${activeTab === tab.programTypeId
+                          ? "programsection shadow-lg w-12 h-12 flex justify-center rounded-full items-center "
+                          : "bg-white w-12 h-12 flex justify-center rounded-full items-center text-[#219ebc]"
+                          }`}>
+                          <GoArrowUpRight size={24} />
+                        </span>
+                        {tab.name}
+
+                      </button>
+                    </>
                   )}
                 </li>
               ))}
@@ -152,7 +172,7 @@ const ProgramsSection: FC = () => {
                               <img
                                 src={item.imagePath || placeholderImg}
                                 alt={item.name}
-                                className="w-full h-28 object-cover border-white border-2 rounded-xl"
+                                className="w-full h-36 object-cover border-white border-2 rounded-xl"
                               />
                               <div className="text-left text-white mt-2 text-xs">
                                 {item.name}
