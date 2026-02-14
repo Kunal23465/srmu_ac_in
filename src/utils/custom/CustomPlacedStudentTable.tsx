@@ -52,55 +52,50 @@ const CustomPlacedStudentTable: React.FC<CustomPlacedStudentTableProps> = ({
 
                 {/* ---------- HEADER SEPARATED WITH MB-10 ---------- */}
                 <div
-                    className="rounded-xl flex lg:justify-around md:justify-start"
+                    className="rounded-xl flex lg:justify-around md:justify-start min-w-[600px] sm:min-w-[750px]"
                     style={{
                         background: "#173E77",
                         color: "white",
                         padding: "25px 0",
                         fontWeight: 600,
                         fontSize: "14px",
-                        minWidth: "750px",
                         marginBottom: "40px", // mb-10
                     }}
                 >
-                    <div className="pl-6 lg:text-[15px] md:text-[14px] sm:text-[13.132px] text-[13.132px]" style={{ width: "250px", minWidth: "250px" }}>
+                    <div className="pl-6 lg:text-[15px] md:text-[14px] sm:text-[13.132px] text-[13.132px] w-[190px] max-w-[190px] sm:w-[250px] sm:min-w-[250px] ">
                         {headers.name}
                     </div>
-                    <div className="lg:text-[15px] md:text-[14px] sm:text-[13.132px] text-[13.132px]" style={{ width: "250px", minWidth: "250px" }}>
+                    <div className="lg:text-[15px] md:text-[14px] sm:text-[13.132px] text-[13.132px] w-[250px] min-w-[250px]">
                         {headers.program}
                     </div>
-                    <div className="lg:text-[15px] md:text-[14px] sm:text-[13.132px] text-[13.132px]" style={{ width: "250px", minWidth: "250px" }}>
+                    <div className="lg:text-[15px] md:text-[14px] sm:text-[13.132px] text-[13.132px] w-[160px] max-w-[160px] sm:w-[250px] sm:min-w-[250px]">
                         {headers.company}
                     </div>
                 </div>
 
                 {/* ---------------- TABLE BODY ---------------- */}
-                <div
+                <div className="min-w-[570px] sm:min-w-[750px]"
                     style={{
                         width: "100%",
                         background: "white",
                         boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
                         borderRadius: "10px",
                         display: "inline-block",
-                        minWidth: "750px",
                     }}
                 >
                     {students.slice(0, visibleCount).map((student, idx) => (
                         <div
                             key={idx}
-                            className="flex items-center border-b border-gray-400 p-8 lg:justify-around md:justify-start"
-                            style={{ minWidth: "750px" }}
+                            className="flex items-center border-b border-gray-400 p-8 lg:justify-around md:justify-start min-w-[600px] sm:min-w-[750px]"
                         >
-                            <div className="lg:text-[19px] md:text-[17.82px] sm:text-[16.632px] text-[16.632px]" style={{ width: "250px", minWidth: "250px" }}>
+                            <div className="lg:text-[19px] md:text-[17.82px] sm:text-[16.632px] text-[16.632px] w-[190px] max-w-[190px] sm:w-[250px] sm:min-w-[250px]" >
                                 {student.name}
                             </div>
-                            <div className="lg:text-[19px] md:text-[17.82px] sm:text-[16.632px] text-[16.632px]" style={{ width: "250px", minWidth: "250px" }}>
+                            <div className="lg:text-[19px] md:text-[17.82px] sm:text-[16.632px] text-[16.632px] w-[250px] min-w-[250px]" >
                                 {student.program}
                             </div>
                             <div
-                                className="whitespace-pre-wrap lg:text-[19px] md:text-[17.82px] sm:text-[16.632px] text-[16.632px]"
-                                style={{ width: "250px", minWidth: "250px" }}
-                            >
+                                className="whitespace-pre-wrap lg:text-[19px] md:text-[17.82px] sm:text-[16.632px] text-[16.632px] w-[160px] max-w-[160px] sm:w-[250px] sm:min-w-[250px]" >
                                 {formatCompanyName(student.company)}
                             </div>
                         </div>
@@ -109,7 +104,7 @@ const CustomPlacedStudentTable: React.FC<CustomPlacedStudentTableProps> = ({
             </div>
 
             {showViewMoreButton && (
-                <div style={{ textAlign: "center", marginTop: "22px"}}>
+                <div style={{ textAlign: "center", marginTop: "22px" }}>
                     <button
                         onClick={handleViewMore}
                         className="

@@ -45,7 +45,7 @@ const CustomDepartmentFeeDetailsTable: React.FC<Props> = ({ data }) => {
                         style={{ gridTemplateColumns: gridTemplate }}
                     >
                         {data.columns.map((col, index) => (
-                            <div key={index} className="px-5 uppercase lg:text-[15px] md:text-[14px] sm:text-[13.132px] text-[13.132px] whitespace-nowrap">
+                            <div key={index} className="px-5 uppercase text-[15px]  whitespace-nowrap">
                                 {col}
                             </div>
                         ))}
@@ -64,25 +64,29 @@ const CustomDepartmentFeeDetailsTable: React.FC<Props> = ({ data }) => {
                                     className="grid bg-white rounded-md px-2 py-5 sm:p-9"
                                     style={{ gridTemplateColumns: gridTemplate }}
                                 >
-                                    {values.map((val, colIndex) => (
-                                        <div
-                                            key={colIndex}
-                                            className={`text-left  text-[#212523] fw500 lg:text-[19px] md:text-[17.82px] sm:text-[16.632px] text-[16.632px] font-normal flex items-center justify-start px-8 relative  ${colIndex !== 0 ? "whitespace-nowrap" : "whitespace-wrap max-w-[200px] sm:max-w-auto"} `}
-                                        >
-                                            {val === "Click" ? (
-                                                <span
-                                                    className="color_light_blue lg:text-[19px] md:text-[17.82px] sm:text-[16.632px] text-[16.632px] fw500 cursor-pointer"
-                                                    onClick={() => setExpandedId(rowIndex)}
-                                                >
-                                                    Click to View
-                                                </span>
-                                            ) : val === "NA" ? "-" : val}
+                                    {values.map((val, colIndex) => {
+                                        console.log("value====", val)
+                                        return (
+                                            <div
+                                                key={colIndex}
+                                                className={`text-left text-sm  text-[#212523] fw500 lg:text-[19px] md:text-[17.82px] sm:text-[16.632px] text-[16.632px] font-normal flex items-center justify-start px-8 relative  ${colIndex !== 0 ? "whitespace-nowrap" : "whitespace-wrap max-w-[200px] sm:max-w-full"} `}
+                                            >
+                                                {val === "Click" ? (
+                                                    <span
+                                                        className="color_light_blue lg:text-[19px] md:text-[17.82px] sm:text-[16.632px] text-[16.632px] fw500 cursor-pointer"
+                                                        onClick={() => setExpandedId(rowIndex)}
+                                                    >
+                                                        Click to View
+                                                    </span>
+                                                ) : val === "NA" ? "-" : colIndex === 0 ? <span className="color_light_blue lg:text-[19px] md:text-[17.82px] sm:text-[16.632px] text-[16.632px] fw500 cursor-pointer"
+                                                    onClick={() => setExpandedId(rowIndex)}> {val} </span> : val}
 
-                                            {colIndex !== values.length - 1 && (
-                                                <span className="absolute right-0 h-10 w-px bg-gray-300"></span>
-                                            )}
-                                        </div>
-                                    ))}
+                                                {colIndex !== values.length - 1 && (
+                                                    <span className="absolute right-0 h-10 w-px bg-gray-300"></span>
+                                                )}
+                                            </div>
+                                        )
+                                    })}
 
                                     <CustomModal
                                         id={rowIndex}
