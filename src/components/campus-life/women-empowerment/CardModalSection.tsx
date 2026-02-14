@@ -6,8 +6,8 @@ export default function CardModalSection() {
   const [isExpanded, setIsExpanded] = useState<number | null>(null);
 
   return (
-    <section className="py-20">
-      <div className="container mx-auto px-4">
+    <section className="py-10 sm:py-20">
+      <div className="container mx-auto sm:px-4">
         <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] text-center text-[#023047]  fw600">Initiatives</h2>
 
         <p className="text-center text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] mb-15">
@@ -19,10 +19,10 @@ export default function CardModalSection() {
           {initiativesData.map((item, index) => (
             <div
               key={index}
-              className="bg-[#fff6dd]  shadow-lg rounded-2xl p-10 flex flex-col justify-between hover:shadow-2xl transition-all duration-300"
+              className="bg-[#fff6dd]  shadow-lg rounded-2xl px-5 py-8 sm:p-10 flex flex-col justify-between hover:shadow-2xl transition-all duration-300"
               style={{ backgroundColor: item.bgColor }}
             >
-              <h3 className=" font-semibold lg:text-[26px] md:text-[24.375px] text-[22.75px] sm:text-[22.75px] mb-3">{item.title}</h3>
+              <h3 className=" font-semibold text-[22px] sm:text-[28px] lg:text-[3.125rem] mb-3">{item.title}</h3>
 
               <p className="text-gray-700 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] line-clamp-3">{item.shortDescription}</p>
 
