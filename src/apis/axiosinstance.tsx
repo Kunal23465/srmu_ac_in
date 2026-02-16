@@ -5,7 +5,7 @@ const API = axios.create({
   // baseURL: "http://10.8.20.38:7005",
   // For test
 
-  baseURL: "https://srmuwebservice.srmu.ac.in:7005",
+  baseURL: "https://webservices.srmu.ac.in:7005",
 });
 
 export default API;
