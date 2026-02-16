@@ -38,7 +38,7 @@ const ProgramFeeTable: React.FC<Props> = ({ data }) => {
   return (
     <>
       <div className="w-full p-6 bg-[#ecf0f9] rounded-2xl border border-[#c6d4ea] my-14 overflow-x-auto">
-        <table className="w-full border-collapse">
+        <table className="w-full border-separate border-spacing-y-3">
           {/* Header */}
           <thead>
             <tr className="bg-[#ecf0f9] text-[#0a4a85] font-semibold">
@@ -58,19 +58,19 @@ const ProgramFeeTable: React.FC<Props> = ({ data }) => {
 
           {/* Body */}
           <tbody className="space-y-4">
-            {data.fees.map((fee) => (
+            {data.fees.map((fee, index) => (
               <tr
                 key={fee.feeTypeId}
-                className="bg-white rounded-md"
+                className="bg-white rounded-md py-4"
               >
-                <td className="px-8 text-[13px] py-6 text-[#023047] border-r border-[#dfe3ee]">
+                <td className="px-8 text-[13px] py-6 text-[#023047] border-r border-[#dfe3ee] rounded-l-[10px]">
                   {fee.feeTypeName}
                 </td>
 
                 {years.map((year) => (
                   <td
                     key={year}
-                    className="text-center text-[14px] px-6 py-6 border-r last:border-r-0 border-[#dfe3ee]"
+                    className={`text-center text-[14px] px-6 py-6 border-r last:border-r-0 border-[#dfe3ee]  ${index === years.length - 1 ? "rounded-r-[10px] border-r-0" : ""}`}
                   >
                     {fee.yearWiseAmount[year] ?? "-"}
                   </td>
