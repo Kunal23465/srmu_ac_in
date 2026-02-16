@@ -1,57 +1,99 @@
-import React from "react";
+import React, { useEffect } from "react";
 import girlImg from "../../../assets/images/academics/institutes/enquiry-form-16012411503754.png";
 import Classes from "../../../utils/styles/Global.module.css";
-import program from "../../../assets/images/academics/institutes/programs_bg-new.png"
+import program from "../../../assets/images/academics/institutes/programs_bg-new.png";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { EnquiryFormData, initialValuesForEnquiry, validationSchemaForEnquiry } from "../../../data/academics/institute/institute-form-data";
 import SelectInputForEnquiry from "./SelectInputForEnquiry";
-
-
-
+import { AppDispatch, RootState } from "../../../store";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchAllActiveCareer } from "../../../store/student-enquiry/career/careerThunk";
+import { fetchAllActiveProgram } from "../../../store/student-enquiry/program/programThunk";
+import { fetchAllActiveState } from "../../../store/student-enquiry/state/stateThunk";
+import { fetchAllActiveCityByStateId } from "../../../store/student-enquiry/city/cityThunk";
+import { submitEnquiryForm } from "../../../store/student-enquiry/submit-enquiry/enquiryThunk";
+import { GrToast } from "react-icons/gr";
+import { toNamePathStr } from "antd/es/form/hooks/useForm";
 
 interface EnquiryFormProps {
   onSubmitHandlerForAdmission?: (res: any) => void;
 }
-const EnquiryForm: React.FC<EnquiryFormProps> = ({ onSubmitHandlerForAdmission }) => {
 
+const EnquiryForm: React.FC<EnquiryFormProps> = () => {
+  const dispatch = useDispatch<AppDispatch>();
 
-  // for select feild
-  let careerData: any = [];
-  let programData: any = [];
-  let stateData: any = [];
-  let cityData: any = [];
+  const { data: careerData } = useSelector((state: RootState) => state.career);
+  const { data: programData } = useSelector((state: RootState) => state.program);
+  const { data: stateData } = useSelector((state: RootState) => state.state);
+  const { data: cityData } = useSelector((state: RootState) => state.city);
 
-
-
+  // Initial Load
+  useEffect(() => {
+    dispatch(fetchAllActiveCareer());
+    dispatch(fetchAllActiveState());
+  }, [dispatch]);
 
   return (
-    <section className={`${Classes["enquiry_form_footer"]}  lg:pl-10 pr-5 `}>
-      <div className={` relative`}>
-        <div className={`${Classes["enquiry_form_bg"]}`}>
-          <img src={program} className={`${Classes["img-fluid"]}`} alt="Enquiry Form" />
+    <section className={`${Classes["enquiry_form_footer"]} lg:pl-10 pr-5`}>
+      <div className="relative">
+        <div className={Classes["enquiry_form_bg"]}>
+          <img src={program} className={Classes["img-fluid"]} alt="Enquiry Form" />
         </div>
-        <div className={`${Classes["container"]}`}>
-          <div className={`${Classes["enquiry_form_inner"]}  `}>
-            <div className={`${Classes["enquiry_form_left"]} mt-[3rem] lg:mt-0 `}>
-              <img src={girlImg} className="aspect-[1/0.9] object-cover " alt="Enquiry" />
+
+        <div className={Classes["container"]}>
+          <div className={Classes["enquiry_form_inner"]}>
+            <div className={`${Classes["enquiry_form_left"]} mt-[3rem] lg:mt-0`}>
+              <img src={girlImg} className="aspect-[1/0.9] object-cover" alt="Enquiry" />
             </div>
-            <div className={`${Classes["enquiry_form_right"]}`}>
-              <div className="font35 color_white text-white text-[2rem] mb-[1rem] font-base ">Enquiry Form</div>
+
+            <div className={Classes["enquiry_form_right"]}>
+              <div className="font35 text-white text-[2rem] mb-[1rem]">Enquiry Form</div>
+
               <Formik
                 initialValues={initialValuesForEnquiry}
                 validationSchema={validationSchemaForEnquiry}
                 onSubmit={async (values, actions) => {
-                  const valuesForEnquiry = { values, actions };
-                  onSubmitHandlerForAdmission && onSubmitHandlerForAdmission(valuesForEnquiry);
+                  const payload = {
+                    name: `${values.firstName} ${values.lastName}`, 
+                    email: values.email,
+                    phone: values.phone, 
+                    academicCareerId: values.academicCareerId,
+                    academicProgramId: values.academicProgramId,
+                    coreStateId: values.coreStateId,
+                    coreCityId: values.coreCityId,
+                    leadSourceId: values.leadSourceId,
+                  };
+
+                  const result = await dispatch(submitEnquiryForm(payload));
+
+                  if (submitEnquiryForm.fulfilled.match(result)) {
+                    actions.resetForm();
+                    alert("Enquiry Submitted Successfully");
+                  }
                 }}
               >
-                {() => (
-                  <Form className="mx-[-0.75rem]">
-                    <div className="flex flex-wrap w-[100%] ">
-                      {EnquiryFormData.map((data) => {
-                        return (
+                {({ values }) => {
+                  // Dependent API Calls
+
+                  useEffect(() => {
+                    if (values.academicCareerId) {
+                      dispatch(fetchAllActiveProgram(Number(values.academicCareerId)));
+                    }
+                  }, [values.academicCareerId]);
+
+                  useEffect(() => {
+                    if (values.coreStateId) {
+                      dispatch(fetchAllActiveCityByStateId(Number(values.coreStateId)));
+                    }
+                  }, [values.coreStateId]);
+
+                  return (
+                    <Form className="mx-[-0.75rem]">
+                      <div className="flex flex-wrap w-full">
+                        {EnquiryFormData.map((data) => (
                           <div key={data.id} className="mb-[1.5rem] flex flex-col gap-1 w-full md:w-1/3 px-[0.75rem]">
-                            <label className="!mb-[0.5rem] text-white">{data.labelname}</label>
+                            <label className="text-white">{data.labelname}</label>
+
                             {data.type === "select" ? (
                               <SelectInputForEnquiry
                                 data={data}
@@ -66,17 +108,7 @@ const EnquiryForm: React.FC<EnquiryFormProps> = ({ onSubmitHandlerForAdmission }
                                           ? "academicProgramId"
                                           : ""
                                 }
-                                keyForName={
-                                  data.name === "coreStateId"
-                                    ? "name"
-                                    : data.name === "coreCityId"
-                                      ? "name"
-                                      : data.name === "academicCareerId"
-                                        ? "description"
-                                        : data.name === "academicProgramId"
-                                          ? "description"
-                                          : ""
-                                }
+                                keyForName={data.name === "coreStateId" || data.name === "coreCityId" ? "name" : "description"}
                                 options={
                                   data.name === "coreStateId"
                                     ? stateData
@@ -90,40 +122,36 @@ const EnquiryForm: React.FC<EnquiryFormProps> = ({ onSubmitHandlerForAdmission }
                                 }
                               />
                             ) : (
-                              // : data.type === "tel" ? (
-                              //   <PhoneInputForEnquiry values={values} name={data.name} placeholder={data.placeholder} isValid={isValid} dirty={dirty} />
-                              // ) :
                               <>
-                                <Field
-                                  type={data.type}
-                                  name={data.name}
-                                  placeholder={data.placeholder}
-                                  className="h-[3.2rem] px-[0.75rem] py-[0.375rem] bg-[#ccc] border border-[#ccc] rounded-md w-full focus:outline-none placeholder:text-gray-900"
-                                />
+                                <Field type={data.type} name={data.name} placeholder={data.placeholder} className="h-[3.2rem] px-[0.75rem] bg-[#ccc] border rounded-md w-full" />
                                 <ErrorMessage name={data.name} component="div" className="text-red-500 text-sm" />
                               </>
                             )}
                           </div>
-                        );
-                      })}
-                    </div>
-                    <div className="px-[0.75rem] w-full">
-                      <div className="mt-[1.5rem]">
-                        <div className="flex gap-x-2 items-start text-white mt-4">
-                          <Field type="checkbox" checked name="consent" className="mt-1.5 block" />
-                          <p>I authorize SRM Group and its representatives to Call, SMS, Email or Whatsapp me about the programs and scholarships offered.</p>
-                        </div>
-                        <ErrorMessage name="consent" component="div" className="text-red-500 text-sm mt-1" />
-                        <button
-                          type="submit"
-                          className="mt-8 w-full text-center bg-[#ffb703] border-2 border-[#ffb703] hover:border-white hover:bg-transparent hover:text-white text-xl lg:text-[22px] font-semibold px-5 lg:px-8 py-3 rounded-md text-nowrap"
-                        >
-                          <div>Submit</div>
-                        </button>
+                        ))}
                       </div>
-                    </div>
-                  </Form>
-                )}
+
+                      {/* Consent */}
+                      <div className="px-[0.75rem] w-full">
+                        <div className="mt-[1.5rem]">
+                          <div className="flex gap-x-2 items-start text-white mt-4">
+                            <Field type="checkbox" name="consent" className="mt-1.5" />
+                            <p>I authorize SRM Group and its representatives to Call, SMS, Email or Whatsapp me about the programs and scholarships offered.</p>
+                          </div>
+
+                          <ErrorMessage name="consent" component="div" className="text-red-500 text-sm mt-1" />
+
+                          <button
+                            type="submit"
+                            className="mt-8 w-full bg-[#ffb703] border-2 border-[#ffb703] hover:border-white hover:bg-transparent hover:text-white text-xl font-semibold py-3 rounded-md"
+                          >
+                            Submit
+                          </button>
+                        </div>
+                      </div>
+                    </Form>
+                  );
+                }}
               </Formik>
             </div>
           </div>

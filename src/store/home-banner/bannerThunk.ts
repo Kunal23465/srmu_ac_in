@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import API from "../../apis/axiosinstance";
+import {API} from "../../apis/axiosinstance";
 
 /* ===== API RESPONSE TYPES ===== */
 

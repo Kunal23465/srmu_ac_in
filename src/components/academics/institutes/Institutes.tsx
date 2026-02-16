@@ -31,11 +31,6 @@ const Institutes: React.FC = () => {
 
       <EnquiryForm />
       <CustomTopFooter data={CustomTopFooterData1} />
-
-
-
-
-
     </>
   )
 }

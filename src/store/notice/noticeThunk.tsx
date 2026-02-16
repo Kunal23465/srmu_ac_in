@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import API from "../../apis/axiosinstance";
+import {API} from "../../apis/axiosinstance";
 export const fetchNotice = createAsyncThunk(
     "data/fetchDiscipline",
     async () => {

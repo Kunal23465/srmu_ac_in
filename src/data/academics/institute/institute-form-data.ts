@@ -300,9 +300,7 @@ export const initialValuesForEnquiry = {
   coreCityId: "",
   academicCareerId: "",
   academicProgramId: "",
-  coreSessionId: 4,
   leadSourceId: 43,
-
   consent: false,
 };
 

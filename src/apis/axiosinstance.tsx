@@ -1,11 +1,33 @@
 import axios from "axios";
 
-const API = axios.create({
+export const API = axios.create({
   // For Local
   // baseURL: "http://10.8.20.38:7005",
   // For test
-
   baseURL: "https://srmuwebservice.srmu.ac.in:7005",
+  ///for prod
+  // baseURL: "https://webservice.srmu.ac.in:7005",
 });
 
-export default API;
+// export default API;
+
+export const studentEnquiryAPI = axios.create({
+  // For Local
+  // baseURL: "http://10.8.20.38:7005",
+  // For test
+  baseURL: "https://unifcrmpre.srmu.ac.in:7074/",
+  //// for prod
+  // baseURL: "https://unifcrm.srmu.ac.in:7074/",
+});
+export const submitEnquiryAPI = axios.create({
+  // For Local
+  // baseURL: "http://10.8.20.38:7005",
+  // For test
+  baseURL: "https://unifcrmpre.srmu.ac.in:4040/",
+
+  //// for prod
+  // baseURL: "https://unifcrm.srmu.ac.in:4040/",
+});
+
+
+

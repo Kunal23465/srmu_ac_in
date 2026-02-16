@@ -15,6 +15,12 @@ import { getAllDepartmentByIdSliceReducer } from "../department/get-all-departme
 import { getDepartmentByIdSliceReducer } from "../department/department-details/getDepartmentDetailsById-slice";
 import { careerFormReducer } from "../career-form/careerFormSlice";
 import { bannerReducer } from "../home-banner/bannerSlice";
+import { careerReducer } from "../student-enquiry/career/careerSlice";
+import { programReducer } from "../student-enquiry/program/programSlice";
+import { stateReducer } from "../student-enquiry/state/stateSlice";
+import { cityReducer } from "../student-enquiry/city/citySlice";
+import { enquiryReducer } from "../student-enquiry/submit-enquiry/enquirySlice";
+
 const allReducer = {
   ui: uiReducer,
   getProgramFinder: programFinderReducer,
@@ -33,5 +39,10 @@ const allReducer = {
   getDepartmentById: getDepartmentByIdSliceReducer,
   careerForm: careerFormReducer,
   getbanner: bannerReducer,
+  career: careerReducer,
+  program: programReducer,
+  state: stateReducer,
+  city: cityReducer,
+  enquiry: enquiryReducer,
 };
 export default allReducer;
