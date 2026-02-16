@@ -10,7 +10,6 @@ export const API = axios.create({
 });
 
 // export default API;
-
 export const studentEnquiryAPI = axios.create({
   // For Local
   // baseURL: "http://10.8.20.38:7005",
