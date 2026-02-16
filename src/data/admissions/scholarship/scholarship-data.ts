@@ -1,15 +1,17 @@
 export const scholarshipData = {
   heading: "Scholarship Scheme",
   content:
-    "At SRMU, we invest in empowering our students through financial aid, fostering a diverse and inclusive learning environment. SRMU’s scholarship programs are tailored to recognize academic dedication, leadership, and diverse talents. From merit-based awards to specialized grants, SRMU is dedicated to making quality education accessible and empowering students to pursue their aspirations.",
+    "SRMU offers limited scholarships to support meritorious and deserving students at the time of admission. Scholarships are awarded strictly as per approved eligibility criteria and are applicable only in the first year of admission.",
   otherData: [
     {
-      paraContent: ["Please note that:"],
+      paraContent: ["Key Points:"],
       listContent: [
-        { item: "A student will be able to avail one of the given scholarship schemes." },
-        { item: "No concession for transfer cases in second and third year." },
-        { item: "No concession in LL.M. and D.Pharma. programs." },
-        { item: "Scholarship provided will be applicable only in the first year of admission." },
+        { item: "Merit and SET-Based scholarships applicable only for First Year." },
+        { item: "No scholarship for LL.M. programs." },
+        { item: "Scholarships are available under limited seats in all categories." },
+        { item: "Only one scholarship scheme can be availed by a student." },
+        { item: "Special scholarships are granted subject to submission of satisfactory documents and approval." },
+        { item: "Scholarship may be withdrawn in case of delayed or non-payment of fees." },
       ],
     },
   ],
@@ -21,4 +23,3 @@ export const ScholarshipTopFooterData = [
     btnText: "Request Registration",
   },
 ];
-
