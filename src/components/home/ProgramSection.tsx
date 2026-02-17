@@ -7,7 +7,6 @@ import { fetchProgramDiscipline } from "../../store/program-finder/discipline/di
 import placeholderImg from "../../assets/images/placeholder-1.png";
 import { LiaLongArrowAltRightSolid } from "react-icons/lia";
 import { GoArrowUpRight } from "react-icons/go";
-
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -80,7 +79,7 @@ const ProgramsSection: FC = () => {
       className="bg-cover bg-center bg-fixed py-20 mb-20"
       style={{
         backgroundImage:
-          "url('https://srmu.ac.in/storage/common-section/1657x580-new-09022401172650.png')",
+          "url('programs-bg.png')",
       }}
     >
       <div className="container mx-auto max-w-7xl px-4">
