@@ -243,7 +243,7 @@ export const executiveCouncilData: Member[] = [
     image: defaultimg,
   },
   {
-    name: "Ms. Shamoli Agarwal",
+    name: "Ms. Shanoli Agarwal",
     title: "(Ex-Officio Member)",
     position: "Director, Admissions, SRMU, Lucknow–Deva Road",
     image: shanoli,

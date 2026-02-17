@@ -70,12 +70,12 @@ const MemorialCollege: React.FC = () => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
   const dispatch = useDispatch<AppDispatch>();
-  const { data:banner } = useSelector((state: RootState) => state.getbanner);
-  
+  const { data: banner } = useSelector((state: RootState) => state.getbanner);
+
   console.log(banner, "banner in memorial college");
-    useEffect(() => {
-      dispatch(fetchBanner());
-    }, [dispatch]);
+  useEffect(() => {
+    dispatch(fetchBanner());
+  }, [dispatch]);
   return (
     <div id="first" className="w-full -mt-[68px]   pb-7 md:pb-10 lg:pb-14">
       <div className="circle-part justify-center z-99 relative hidden md:flex">
@@ -109,11 +109,11 @@ const MemorialCollege: React.FC = () => {
         <div className="w-full max-w-5xl mx-auto">
           <Slider {...settings}>
             {banner?.map((item) => (
-            <div className=" w-full" key={item.bannerId}>
-              <Link to={item.link}>
-                <img src={item.imagePath} alt="slider" className="w-full rounded-xl" />
-              </Link>
-            </div>))}
+              <div className=" w-full" key={item.bannerId}>
+                <Link target="_blank" to={item.link}>
+                  <img src={item.imagePath} alt="slider" className="w-full rounded-xl" />
+                </Link>
+              </div>))}
           </Slider>
         </div>
       </div>
