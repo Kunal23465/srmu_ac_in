@@ -13,7 +13,7 @@ import { CustomTopFooterData1 } from "../../../data/about/leadership-and-governa
 import { CustomCompaniesScope } from "../../../utils/custom/CustomCompaniesScope";
 import CustomProgramScholarshipSchemeCard from "../../../utils/custom/CustomProgramScholarshipSchemeCard";
 import CustomEligibilitySection from "../../../utils/custom/CustomEligibilitySection";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../../store";
 import { fetchProgramFinderByID } from "../../../store/program-finder/programFinderThunk";
@@ -24,6 +24,8 @@ import { fetchWhySrmuSectionById } from "../../../store/program-finder/why-srmu/
 import { getCounterById } from "../../../store/program-finder/counter/getCounterThunk";
 import { fetchProgramHeighlightById } from "../../../store/program-finder/program-heighlight/programHeighlightThunk";
 import { Helmet } from "react-helmet-async";
+import { FaArrowRightLong } from "react-icons/fa6";
+import { fetchRecruiterById } from "../../../store/recruiter/recruiterThunk";
 
 // type dataByID=any[]
 
@@ -38,12 +40,14 @@ const ProgramDetails = () => {
   const { data: feesData } = useSelector((state: RootState) => state.programFees);
   const { data: whySrmuData } = useSelector((state: RootState) => state.getWhySrmuSection);
   const { data: counterData } = useSelector((state: RootState) => state.getCounterById);
+  const { data: recruiterData } = useSelector((state: RootState) => state.getRecruiter);
   useEffect(() => {
     dispatch(fetchWhySrmuSectionById({ programId: location.state.programId || undefined }));
     dispatch(fetchProgramFinderByID(location.state.programId || undefined));
     dispatch(fetchProgramFeesByProgramId(location.state.programId || undefined));
     dispatch(getCounterById(location.state.programId || undefined));
     dispatch(fetchProgramHeighlightById(location.state.programId || undefined))
+    dispatch(fetchRecruiterById({ programId: location.state.programId || undefined }));
     if (location.state.programId == 81) {
       setIsPhd(true);
     } else {
@@ -75,7 +79,7 @@ const ProgramDetails = () => {
 
 
   // program heighlight
-
+  console.log("recruiterData===", recruiterData)
   return (
     <>
       <Helmet>
@@ -84,8 +88,17 @@ const ProgramDetails = () => {
         {/* @ts-ignore */}
         <meta name="description" content={dataByID?.metaDescription ?? ""} />
       </Helmet>
-      <div className="mt-20">
-        <div className={`${Classes["container"]}`}>
+      <div className="mt-20 ">
+
+        <div className={`${Classes["container"]} relative`}>
+          <Link
+            target="_blank"
+            // @ts-ignore
+            to={dataByID?.documentPath}
+            className="bg-[#ffb703] absolute -top-18 lg:-top-44 right-0 border text-nowrap border-[#ffb703] hover:bg-white text-[#023047] hover:text-[#ffb703] transition-all duration-500 px-3 lg:px-6 py-2 lg:py-3 text-sm sm:text-base font-medium rounded-lg inline-flex items-center gap-2"
+          >
+            Download Syllabus <FaArrowRightLong />
+          </Link>
           {/* @ts-ignore */}
           <h2 className="lg:text-[50px] leading-[1.2] md:text-[46.875px] text-[28px] fw500 text-[#023047]">{dataByID?.name}</h2>
           {/* @ts-ignore */}

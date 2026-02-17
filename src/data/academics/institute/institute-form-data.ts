@@ -11,20 +11,117 @@ import instituteofpharmaceutical from "../../../assets/images/academics/institut
 import instituteofedu from "../../../assets/images/academics/institutes/economics--08022401082492.jpg";
 import instituteofpolytech from "../../../assets/images/academics/institutes/polytechnic11-08022412560314.jpg";
 import * as Yup from "yup";
-import { instituteCourseCardData, InstituteofManagementCommerceandEconomicsinstituteProfiles, InstituteofManagementCommerceandEconomicsOverviewData, InstituteofManagementCommerceandEconomicsTopFooterData, InstituteofManagementCommerceandEconomicsvisionMissionData } from "./institute-department/institute-of-management-commerce-and-economics-data/institute-of-management-commerce-and-economics-data";
-import { instituteofTechnologyCourseCardData, InstituteofTechnologyOverviewData, InstituteofTechnologyTopFooterData, visionMissionData } from "./institute-department/institute-of-technology-data";
-import { InstituteofBiosciencesandTechnologyinstituteCourseCardData, InstituteofBiosciencesandTechnologyinstituteProfiles, InstituteofBiosciencesandTechnologyOverviewData, InstituteofBiosciencesandTechnologyTopFooterData, InstituteofBiosciencesandTechnologyvisionMissionData } from "./institute-department/institute-of-biosciences-and-technology-data";
-import { InstituteofMediaStudiesCounterData1, InstituteofMediaStudiesCounterData2, InstituteofMediaStudiesData1, InstituteofMediaStudiesData2, InstituteofMediaStudiesDepartmentEventsData, InstituteofMediaStudiesdepartmentHighlights, InstituteofMediaStudiesfacultyData, InstituteofMediaStudiesOverviewData, InstituteofMediaStudiesplacedStudents, InstituteofMediaStudiesProfiles, InstituteofMediaStudiesVMData } from "./institute-department/institute-of-media-studies-data";
-import { InstituteofPharmaceuticalSciencesCounterData1, InstituteofPharmaceuticalSciencesCounterData2, InstituteofPharmaceuticalSciencesData1, InstituteofPharmaceuticalSciencesfacultyData, InstituteofPharmaceuticalSciencesinstituteProfiles, InstituteofPharmaceuticalSciencesOverviewData, InstituteofPharmaceuticalSciencesVMData } from "./institute-department/institute-of-pharmaceutical-sciences-data";
-import { InstituteofAgriculturalSciencesandTechnologyCounterData2, InstituteofAgriculturalSciencesandTechnologyData1, InstituteofAgriculturalSciencesandTechnologyData2, InstituteofAgriculturalSciencesandTechnologyDepartmentEventsData, InstituteofAgriculturalSciencesandTechnologydepartmentHighlights, InstituteofAgriculturalSciencesandTechnologyfacultyData, InstituteofAgriculturalSciencesandTechnologyinstituteProfiles, InstituteofAgriculturalSciencesandTechnologyOverviewData, InstituteofAgriculturalSciencesandTechnologyplacedStudents, InstituteofAgriculturalSciencesandTechnologyVMData } from "./institute-department/institute-of-agricultural-sciences-and-technology-data";
-import { InstituteofLegalStudiesCounterData1, InstituteofLegalStudiesCounterData2, InstituteofLegalStudiesData1, InstituteofLegalStudiesData2, InstituteofLegalStudiesData3, InstituteofLegalStudiesDepartmentEventsData, InstituteofLegalStudiesdepartmentHighlights, InstituteofLegalStudiesfacultyData, InstituteofLegalStudiesOverviewData, InstituteofLegalStudiesplacedStudents, InstituteofLegalStudiesVMData } from "./institute-department/institute-of-legal-studies-data";
-import { InstituteofPharmacyCounterData1, InstituteofPharmacyCounterData2, InstituteofPharmacyData1, InstituteofPharmacyDepartmentEventsData, InstituteofPharmacydepartmentHighlights, InstituteofPharmacyfacultyData, InstituteofPharmacyinstituteProfiles, InstituteofPharmacyOverviewData, InstituteofPharmacyplacedStudents, InstituteofPharmacyVMData } from "./institute-department/institute-of-pharmacy-data";
-import { InstituteofEducationandResearchCounterData1, InstituteofEducationandResearchCounterData2, InstituteofEducationandResearchData1, InstituteofEducationandResearchData2, InstituteofEducationandResearchDepartmentEventsData, InstituteofEducationandResearchdepartmentHighlights, InstituteofEducationandResearchfacultyData, InstituteofEducationandResearchinstituteProfiles, InstituteofEducationandResearchOverviewData, InstituteofEducationandResearchplacedStudents, InstituteofEducationandResearchVMData } from "./institute-department/institute-of-education-and-research-data";
-import { SRMUPolytechnicCounterData1, SRMUPolytechnicCounterData2, SRMUPolytechnicData1, SRMUPolytechnicDepartmentEventsData, SRMUPolytechnicdepartmentHighlights, SRMUPolytechnicfacultyData, SRMUPolytechnicinstituteProfiles, SRMUPolytechnicOverviewData, SRMUPolytechnicplacedStudents, SRMUPolytechnicVMData } from "./institute-department/srmu-polytechnic-data";
-import { InstituteofNaturalSciencesandHumanitiesinstituteCourseCardData, InstituteofNaturalSciencesandHumanitiesinstituteProfiles, InstituteofNaturalSciencesandHumanitiesOverviewData, InstituteofNaturalSciencesandHumanitiesTopFooterData, InstituteofNaturalSciencesandHumanitiesvisionMissionData } from "./institute-department/institute-of-natural-sciences-and-humanities-data";
-
-
-
+import {
+  instituteCourseCardData,
+  InstituteofManagementCommerceandEconomicsinstituteProfiles,
+  InstituteofManagementCommerceandEconomicsOverviewData,
+  InstituteofManagementCommerceandEconomicsTopFooterData,
+  InstituteofManagementCommerceandEconomicsvisionMissionData,
+} from "./institute-department/institute-of-management-commerce-and-economics-data/institute-of-management-commerce-and-economics-data";
+import {
+  instituteofTechnologyCourseCardData,
+  InstituteofTechnologyOverviewData,
+  InstituteofTechnologyTopFooterData,
+  visionMissionData,
+} from "./institute-department/institute-of-technology-data";
+import {
+  InstituteofBiosciencesandTechnologyinstituteCourseCardData,
+  InstituteofBiosciencesandTechnologyinstituteProfiles,
+  InstituteofBiosciencesandTechnologyOverviewData,
+  InstituteofBiosciencesandTechnologyTopFooterData,
+  InstituteofBiosciencesandTechnologyvisionMissionData,
+} from "./institute-department/institute-of-biosciences-and-technology-data";
+import {
+  InstituteofMediaStudiesCounterData1,
+  InstituteofMediaStudiesCounterData2,
+  InstituteofMediaStudiesData1,
+  InstituteofMediaStudiesData2,
+  InstituteofMediaStudiesDepartmentEventsData,
+  InstituteofMediaStudiesdepartmentHighlights,
+  InstituteofMediaStudiesfacultyData,
+  InstituteofMediaStudiesOverviewData,
+  InstituteofMediaStudiesplacedStudents,
+  InstituteofMediaStudiesProfiles,
+  InstituteofMediaStudiesVMData,
+} from "./institute-department/institute-of-media-studies-data";
+import {
+  InstituteofPharmaceuticalSciencesCounterData1,
+  InstituteofPharmaceuticalSciencesCounterData2,
+  InstituteofPharmaceuticalSciencesData1,
+  InstituteofPharmaceuticalSciencesfacultyData,
+  InstituteofPharmaceuticalSciencesinstituteProfiles,
+  InstituteofPharmaceuticalSciencesOverviewData,
+  InstituteofPharmaceuticalSciencesVMData,
+} from "./institute-department/institute-of-pharmaceutical-sciences-data";
+import {
+  InstituteofAgriculturalSciencesandTechnologyCounterData2,
+  InstituteofAgriculturalSciencesandTechnologyData1,
+  InstituteofAgriculturalSciencesandTechnologyData2,
+  InstituteofAgriculturalSciencesandTechnologyDepartmentEventsData,
+  InstituteofAgriculturalSciencesandTechnologydepartmentHighlights,
+  InstituteofAgriculturalSciencesandTechnologyfacultyData,
+  InstituteofAgriculturalSciencesandTechnologyinstituteProfiles,
+  InstituteofAgriculturalSciencesandTechnologyOverviewData,
+  InstituteofAgriculturalSciencesandTechnologyplacedStudents,
+  InstituteofAgriculturalSciencesandTechnologyVMData,
+} from "./institute-department/institute-of-agricultural-sciences-and-technology-data";
+import {
+  InstituteofLegalStudiesCounterData1,
+  InstituteofLegalStudiesCounterData2,
+  InstituteofLegalStudiesData1,
+  InstituteofLegalStudiesData2,
+  InstituteofLegalStudiesData3,
+  InstituteofLegalStudiesDepartmentEventsData,
+  InstituteofLegalStudiesdepartmentHighlights,
+  InstituteofLegalStudiesfacultyData,
+  InstituteofLegalStudiesOverviewData,
+  InstituteofLegalStudiesplacedStudents,
+  InstituteofLegalStudiesVMData,
+} from "./institute-department/institute-of-legal-studies-data";
+import {
+  InstituteofPharmacyCounterData1,
+  InstituteofPharmacyCounterData2,
+  InstituteofPharmacyData1,
+  InstituteofPharmacyDepartmentEventsData,
+  InstituteofPharmacydepartmentHighlights,
+  InstituteofPharmacyfacultyData,
+  InstituteofPharmacyinstituteProfiles,
+  InstituteofPharmacyOverviewData,
+  InstituteofPharmacyplacedStudents,
+  InstituteofPharmacyVMData,
+} from "./institute-department/institute-of-pharmacy-data";
+import {
+  InstituteofEducationandResearchCounterData1,
+  InstituteofEducationandResearchCounterData2,
+  InstituteofEducationandResearchData1,
+  InstituteofEducationandResearchData2,
+  InstituteofEducationandResearchDepartmentEventsData,
+  InstituteofEducationandResearchdepartmentHighlights,
+  InstituteofEducationandResearchfacultyData,
+  InstituteofEducationandResearchinstituteProfiles,
+  InstituteofEducationandResearchOverviewData,
+  InstituteofEducationandResearchplacedStudents,
+  InstituteofEducationandResearchVMData,
+} from "./institute-department/institute-of-education-and-research-data";
+import {
+  SRMUPolytechnicCounterData1,
+  SRMUPolytechnicCounterData2,
+  SRMUPolytechnicData1,
+  SRMUPolytechnicDepartmentEventsData,
+  SRMUPolytechnicdepartmentHighlights,
+  SRMUPolytechnicfacultyData,
+  SRMUPolytechnicinstituteProfiles,
+  SRMUPolytechnicOverviewData,
+  SRMUPolytechnicplacedStudents,
+  SRMUPolytechnicVMData,
+} from "./institute-department/srmu-polytechnic-data";
+import {
+  InstituteofNaturalSciencesandHumanitiesinstituteCourseCardData,
+  InstituteofNaturalSciencesandHumanitiesinstituteProfiles,
+  InstituteofNaturalSciencesandHumanitiesOverviewData,
+  InstituteofNaturalSciencesandHumanitiesTopFooterData,
+  InstituteofNaturalSciencesandHumanitiesvisionMissionData,
+} from "./institute-department/institute-of-natural-sciences-and-humanities-data";
 
 export const AcademicsOverviewData: customeOverViewType = {
   heading: "Academics",
@@ -56,8 +153,8 @@ export const institutes: Institute[] = [
       visionMissionData: visionMissionData,
       profileCardData: null,
       instituteCourseCardData: instituteofTechnologyCourseCardData,
-      footerData: InstituteofTechnologyTopFooterData
-    }
+      footerData: InstituteofTechnologyTopFooterData,
+    },
   },
   {
     id: 2,
@@ -72,8 +169,8 @@ export const institutes: Institute[] = [
       visionMissionData: InstituteofBiosciencesandTechnologyvisionMissionData,
       profileCardData: InstituteofBiosciencesandTechnologyinstituteProfiles,
       instituteCourseCardData: InstituteofBiosciencesandTechnologyinstituteCourseCardData,
-      footerData: InstituteofBiosciencesandTechnologyTopFooterData
-    }
+      footerData: InstituteofBiosciencesandTechnologyTopFooterData,
+    },
   },
   {
     id: 3,
@@ -88,8 +185,8 @@ export const institutes: Institute[] = [
       visionMissionData: InstituteofManagementCommerceandEconomicsvisionMissionData,
       profileCardData: InstituteofManagementCommerceandEconomicsinstituteProfiles,
       instituteCourseCardData: instituteCourseCardData,
-      footerData: InstituteofManagementCommerceandEconomicsTopFooterData
-    }
+      footerData: InstituteofManagementCommerceandEconomicsTopFooterData,
+    },
   },
   {
     id: 4,
@@ -112,8 +209,8 @@ export const institutes: Institute[] = [
       departmentHighlightsData: InstituteofMediaStudiesdepartmentHighlights,
       counterData2: InstituteofMediaStudiesCounterData2,
       placedStudentsData: InstituteofMediaStudiesplacedStudents,
-      eventsData: InstituteofMediaStudiesDepartmentEventsData
-    }
+      eventsData: InstituteofMediaStudiesDepartmentEventsData,
+    },
   },
   {
     id: 5,
@@ -128,8 +225,8 @@ export const institutes: Institute[] = [
       visionMissionData: InstituteofNaturalSciencesandHumanitiesvisionMissionData,
       profileCardData: InstituteofNaturalSciencesandHumanitiesinstituteProfiles,
       instituteCourseCardData: InstituteofNaturalSciencesandHumanitiesinstituteCourseCardData,
-      footerData: InstituteofNaturalSciencesandHumanitiesTopFooterData
-    }
+      footerData: InstituteofNaturalSciencesandHumanitiesTopFooterData,
+    },
   },
   {
     id: 6,
@@ -150,8 +247,8 @@ export const institutes: Institute[] = [
       departmentHighlightsData: null,
       counterData2: InstituteofPharmaceuticalSciencesCounterData2,
       placedStudentsData: null,
-      eventsData: null
-    }
+      eventsData: null,
+    },
   },
   {
     id: 7,
@@ -174,8 +271,8 @@ export const institutes: Institute[] = [
       departmentHighlightsData: InstituteofAgriculturalSciencesandTechnologydepartmentHighlights,
       counterData2: InstituteofAgriculturalSciencesandTechnologyCounterData2,
       placedStudentsData: InstituteofAgriculturalSciencesandTechnologyplacedStudents,
-      eventsData: InstituteofAgriculturalSciencesandTechnologyDepartmentEventsData
-    }
+      eventsData: InstituteofAgriculturalSciencesandTechnologyDepartmentEventsData,
+    },
   },
   {
     id: 8,
@@ -199,8 +296,8 @@ export const institutes: Institute[] = [
       departmentHighlightsData: InstituteofLegalStudiesdepartmentHighlights,
       counterData2: InstituteofLegalStudiesCounterData2,
       placedStudentsData: InstituteofLegalStudiesplacedStudents,
-      eventsData: InstituteofLegalStudiesDepartmentEventsData
-    }
+      eventsData: InstituteofLegalStudiesDepartmentEventsData,
+    },
   },
   {
     id: 9,
@@ -210,22 +307,21 @@ export const institutes: Institute[] = [
     departments: 1,
     image: instituteofpharmacy,
     path: "institute-of-pharmacy",
-    
+
     departmentsData: {
       overviewData: InstituteofPharmacyOverviewData,
       counterData: InstituteofPharmacyCounterData1,
       mvData: InstituteofPharmacyVMData,
       departmentHeadData: InstituteofPharmacyinstituteProfiles,
       feeTableData: {
-       
         tab1: { label: "Undergraduate", data: InstituteofPharmacyData1 },
       },
       facultyData: InstituteofPharmacyfacultyData,
       departmentHighlightsData: InstituteofPharmacydepartmentHighlights,
       counterData2: InstituteofPharmacyCounterData2,
       placedStudentsData: InstituteofPharmacyplacedStudents,
-      eventsData: InstituteofPharmacyDepartmentEventsData
-    }
+      eventsData: InstituteofPharmacyDepartmentEventsData,
+    },
   },
   {
     id: 10,
@@ -248,8 +344,8 @@ export const institutes: Institute[] = [
       departmentHighlightsData: InstituteofEducationandResearchdepartmentHighlights,
       counterData2: InstituteofEducationandResearchCounterData2,
       placedStudentsData: InstituteofEducationandResearchplacedStudents,
-      eventsData: InstituteofEducationandResearchDepartmentEventsData
-    }
+      eventsData: InstituteofEducationandResearchDepartmentEventsData,
+    },
   },
   {
     id: 11,
@@ -271,8 +367,8 @@ export const institutes: Institute[] = [
       departmentHighlightsData: SRMUPolytechnicdepartmentHighlights,
       counterData2: SRMUPolytechnicCounterData2,
       placedStudentsData: SRMUPolytechnicplacedStudents,
-      eventsData: SRMUPolytechnicDepartmentEventsData
-    }
+      eventsData: SRMUPolytechnicDepartmentEventsData,
+    },
   },
 ];
 
@@ -300,7 +396,7 @@ export const initialValuesForEnquiry = {
   coreCityId: "",
   academicCareerId: "",
   academicProgramId: "",
-  leadSourceId: 43,
+  leadSourceId: 19,
   consent: false,
 };
 

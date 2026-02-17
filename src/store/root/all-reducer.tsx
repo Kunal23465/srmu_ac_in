@@ -20,6 +20,7 @@ import { programReducer } from "../student-enquiry/program/programSlice";
 import { stateReducer } from "../student-enquiry/state/stateSlice";
 import { cityReducer } from "../student-enquiry/city/citySlice";
 import { enquiryReducer } from "../student-enquiry/submit-enquiry/enquirySlice";
+import { recruiterSliceReducer } from "../recruiter/recruiterSlice";
 
 const allReducer = {
   ui: uiReducer,
@@ -44,5 +45,6 @@ const allReducer = {
   state: stateReducer,
   city: cityReducer,
   enquiry: enquiryReducer,
+  getRecruiter: recruiterSliceReducer,
 };
 export default allReducer;

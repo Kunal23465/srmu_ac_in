@@ -63,7 +63,7 @@ const ProgramFeeTable: React.FC<Props> = ({ data }) => {
                 key={fee.feeTypeId}
                 className="bg-white rounded-md py-4"
               >
-                <td className="px-8 text-[13px] py-6 text-[#023047] border-r border-[#dfe3ee] rounded-l-[10px]">
+                <td className="px-8 text-[13px] sm:text-base py-6 text-[#023047] border-r border-[#dfe3ee] rounded-l-[10px]">
                   {fee.feeTypeName}
                 </td>
 
@@ -77,7 +77,7 @@ const ProgramFeeTable: React.FC<Props> = ({ data }) => {
                 ))}
               </tr>
             ))}
-            <tr>
+            {/* <tr>
               <td colSpan={5}>
                 {notes.length > 0 && (
                   <div className="mt-6 bg-white p-8 rounded-lg">
@@ -91,7 +91,7 @@ const ProgramFeeTable: React.FC<Props> = ({ data }) => {
                   </div>
                 )}
               </td>
-            </tr>
+            </tr> */}
           </tbody>
           {/* Notes */}
 
