@@ -29,6 +29,7 @@ const ProgramFeeTable: React.FC<Props> = ({ data }) => {
   const check = getMaxYearWiseFees(data.fees);
   const years = Object.keys(check[0].yearWiseAmount);
 
+  // @ts-ignore
   const notes = [
     `Alumni Fee: <span class="inline-block ml-1 text-lg font-medium">500</span>`,
     `Degree Fee: <span class="inline-block ml-1 text-lg font-medium">1000</span>`,
