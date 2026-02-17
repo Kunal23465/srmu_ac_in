@@ -29,24 +29,24 @@ const PdfSvgIcon: React.FC = () => (
 );
 
 export const CardSectionSenate: React.FC<CardProps> = ({ student }) => {
-    
+
     return (
         <div className="bg-white rounded-2xl mx-auto shadow-md w-full max-w-lg flex flex-col h-full 
                         border-2 border-transparent hover:border-[#ffb703] overflow-hidden transition-all duration-500">
-<div className="overflow-hidden">
-            <img
-                src={student.image}
-                alt={student.title}
-                className="rounded-t-xl w-full h-60 object-cover hover:scale-110 transition-all duration-500"
-            /></div>
+            <div className="overflow-hidden">
+                <img
+                    src={student.image}
+                    alt={student.title}
+                    className="rounded-t-xl w-full h-60 object-cover hover:scale-110 transition-all duration-500"
+                /></div>
 
-            <h2 className="mt-6 lg:text-[26px] md:text-[24.375px] text-[22.75px] sm:text-[22.75px] px-8 fw500 color_light_blue">{student.title}</h2>
+            <h2 className="mt-6 lg:text-[26px] md:text-[24.375px] text-[22.75px] sm:text-[22.75px] px-4 sm:px-8 fw500 color_light_blue">{student.title}</h2>
 
-            <p className="mt-2 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] px-8 leading-relaxed flex-grow">
-                {student.description.substring(0, 100)+"..."}
+            <p className="mt-2 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] px-4 sm:px-8 leading-relaxed flex-grow">
+                {student.description.substring(0, 100) + "..."}
             </p>
-        
-            <div className="p-8 flex items-center justify-between">
+
+            <div className="px-4 py-8 sm:p-8 flex items-center justify-between">
                 <a
                     href={student.pdfLink}
                     target="_blank"
@@ -55,12 +55,12 @@ export const CardSectionSenate: React.FC<CardProps> = ({ student }) => {
                    text-white bg-[#0f4a85] hover:bg-white hover:text-[#ffb703] 
                    font-semibold px-4 py-2 rounded-lg transition-all"
                 >
-                    
+
                     <div className="bg-white rounded-md p-2 transition-all group-hover:bg-[#ffb703]">
-{/* @ts-ignore */}
-                        <PdfSvgIcon className="transition-all group-hover:fill-white group-hover:text-white" /> 
+                        {/* @ts-ignore */}
+                        <PdfSvgIcon className="transition-all group-hover:fill-white group-hover:text-white" />
                     </div>
-                   <span> DOWNLOAD PDF</span>
+                    <span> DOWNLOAD PDF</span>
                 </a>
             </div>
 

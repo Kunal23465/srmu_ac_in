@@ -4,7 +4,7 @@ import convocationimage from "../../../assets/images/campus-life/convocation/con
 const MidImageSection = () => {
     return (
         <section className="w-full">
-            <div className="relative w-full h-[500px] md:h-[580px]">
+            <div className="relative w-full h-[300px] sm:h-[500px] md:h-[580px]">
                 <img
                     src={convocationimage}
                     alt="Graduation"
@@ -14,7 +14,7 @@ const MidImageSection = () => {
                 <div className="absolute inset-0 bg-black/10" />
 
                 <div className="absolute inset-0 flex items-end mb-10 px-6 md:px-16">
-                    <h2 className="text-white font32 fw500 leading-snug max-w-3xl">
+                    <h2 className="text-white text-[22px] sm:text-[28px] lg:text-[3.125rem] fw500 leading-snug max-w-3xl">
                         "As you start this new chapter, remember that learning is a lifelong
                         journey, and your convocation is just the beginning."
                     </h2>

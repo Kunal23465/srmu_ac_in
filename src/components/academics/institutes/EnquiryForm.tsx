@@ -13,7 +13,6 @@ import { fetchAllActiveState } from "../../../store/student-enquiry/state/stateT
 import { fetchAllActiveCityByStateId } from "../../../store/student-enquiry/city/cityThunk";
 import { submitEnquiryForm } from "../../../store/student-enquiry/submit-enquiry/enquiryThunk";
 
-
 interface EnquiryFormProps {
   onSubmitHandlerForAdmission?: (res: any) => void;
 }

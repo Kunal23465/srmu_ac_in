@@ -6,7 +6,7 @@ const CommitteeMembers: React.FC = () => {
       <h2 className="lg:text-[22px] md:text-[20.625px] text-[19.25px] sm:text-[19.25px] fw500 mb-4 color_light_blue">
         <strong>Committee Members</strong>
       </h2>
-      <ul className=" ml-5 space-y-2 marker:text-2xl lg:text-[18px] text-[15.75px] md:text-[16.875px] sm:text-[15.75px]">
+      <ul className=" ml-5 space-y-1 sm:space-y-2 marker:text-2xl lg:text-[18px] text-sm! md:text-[16.875px] sm:text-[15.75px]">
         <li>Dr. Ritu Chandra- IQAC Chairperson</li>
         <li>Dr. Sonal Prasad, Assistant Professor, Institute of Biosciences & Technology- Coordinator, E-Content Development Cell</li>
         <li>Dr. Amit Kumar Singh, Assistant Professor, Faculty of Mechanical engineering</li>

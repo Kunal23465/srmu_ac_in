@@ -23,9 +23,9 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ member }) => {
 
 
       <div className="absolute bottom-0 left-0 right-0 p-4 sm:bg-gradient-to-t sm:from-black/70 sm:via-black/40 sm:to-transparent text-white">
-        <h3 className="text-lg font-semibold">{member.name}</h3>
-        <p className="text-sm font-medium opacity-90">{member.title}</p>
-        <p className="text-xs opacity-80 mt-1">{member.position}</p>
+        <h3 className="text-xs sm:text-lg font-semibold">{member.name}</h3>
+        <p className="text-[10px]! sm:text-xs! font-medium opacity-90">{member.title}</p>
+        <p className="text-[9px]! sm:text-xs! opacity-80 mt-1">{member.position}</p>
       </div>
     </div>
   );

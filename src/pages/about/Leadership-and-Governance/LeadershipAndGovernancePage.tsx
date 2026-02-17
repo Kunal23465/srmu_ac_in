@@ -9,7 +9,7 @@ const LeadershipAndGovernancePage: React.FC = () => {
       <meta name="description" content="At SRMU we strive to provide students with a platform to attain their dreams. Our vision at SRMU is to make learning a harmonious experience, enabling our students to shine in each and every aspect of life." />
   </Helmet>
     <Leadership />
-  </> ;
+  </> 
 };
 
 export default LeadershipAndGovernancePage;
