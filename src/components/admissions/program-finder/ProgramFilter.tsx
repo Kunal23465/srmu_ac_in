@@ -36,14 +36,21 @@ const ProgramFilter: React.FC<PropsTypes> = ({
   const visibleCourses = data.slice(0, visibleCount);
   const { loading } = useSelector((state: RootState) => state.getProgramFinder);
   // const slugify = (str: string) => str.toLowerCase().trim().replace(/\s+/g, "-");
-  const slugify = (str: string) =>
-    str
+  const slugify = (str: string) => {
+    return str
       .toLowerCase()
       .trim()
-      .replace(/[()]/g, "")      // remove brackets
-      .replace(/\./g, "-")       // convert . to -
-      .replace(/\s+/g, "-")      // spaces to -
-      .replace(/-+/g, "-");      // convert multiple -- into single -
+      .replace(/[()]/g, "")            // remove brackets
+      .replace(/&/g, "")               // remove &
+      .replace(/\./g, "-")             // convert . to -
+      .replace(/\s+/g, "-")            // spaces to -
+      .replace(/-+/g, "-")             // remove multiple -
+      .replace(/-in-/g, "-")           // remove only '-in-'
+      .replace(/^b-c-a\b/, "bca")      // convert b-c-a to bca
+      .replace(/^-|-$/g, "");          // remove starting/ending -
+  };
+
+
 
 
   return (
