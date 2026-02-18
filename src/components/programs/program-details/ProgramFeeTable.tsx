@@ -59,7 +59,7 @@ const ProgramFeeTable: React.FC<Props> = ({ data }) => {
 
           {/* Body */}
           <tbody className="space-y-4">
-            {data.fees.map((fee, index) => (
+            {data.fees.map((fee) => (
               <tr
                 key={fee.feeTypeId}
                 className="bg-white rounded-md py-4"
