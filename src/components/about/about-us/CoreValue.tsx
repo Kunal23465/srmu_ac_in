@@ -5,7 +5,7 @@ import { coreValuesData } from "../../../data/about/aboutusData";
 const CoreValues: React.FC = () => {
   return (
     <div className="flex items-center py-10 sm:py-20 sm:px-6 relative">
-      <div className="relative border-4 border-[#ffb703] rounded-2xl shadow-gray-400 shadow-2xl w-full lg:w-[75%] p-7 md:p-12">
+      <div className="relative border-4 border-[#ffb703] rounded-2xl shadow-gray-400 shadow-2xl w-full lg:w-[75%] px-3 py-5 sm:p-7 md:p-12">
         {/* Left Side — Card Content */}
         <div className="w-full lg:w-[75%] space-y-5 z-10">
           <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] font-semibold mb-1 sm:mb-6">Our Core Values</h2>

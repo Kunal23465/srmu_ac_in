@@ -35,7 +35,14 @@ const ProgramFilter: React.FC<PropsTypes> = ({
   const [visibleCount, setVisibleCount] = useState(5);
   const visibleCourses = data.slice(0, visibleCount);
   const { loading } = useSelector((state: RootState) => state.getProgramFinder);
-  const slugify = (str: string) => str.toLowerCase().trim().replace(/\s+/g, "-");
+  // const slugify = (str: string) => str.toLowerCase().trim().replace(/\s+/g, "-");
+  const slugify = (str: string) =>
+    str
+      .toLowerCase()
+      .trim()
+      .replace(/[()]/g, "")   // remove brackets
+      .replace(/\s+/g, "-");  // replace spaces with hyphen
+
   return (
     <div className={`${Classes["container"]} pb-6 sm:py-10`}>
       {/* Filters */}

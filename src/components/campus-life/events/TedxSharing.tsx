@@ -14,15 +14,14 @@ export default function TedxSharing() {
   };
 
   const slideRight = () => {
-    if (currentIndex < tedxData.length - 1)
-      setCurrentIndex(currentIndex + 1);
+    if (currentIndex < tedxData.length - 1) setCurrentIndex(currentIndex + 1);
   };
 
   return (
     <div className="w-full py-10 overflow-hidden">
       {/* Header */}
       <div className="flex items-center justify-between">
-        <h2 className="text-[28px] sm:text-[22px] sm:text-[28px] lg:text-[3.125rem] fw600 color_light_blue">Tedx Sharing</h2>
+        <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] fw600 color_light_blue">Tedx Sharing</h2>
 
         <div className="flex gap-3">
           <button
@@ -101,7 +100,7 @@ export default function TedxSharing() {
                 <h3
                   className={`
                                         absolute left-1/2 -translate-x-1/2 text-white 
-                                        text-[22px] sm:text-[28px] lg:text-[3.125rem] font-medium drop-shadow-xl text-center
+                                        text-base sm:text-[22px] font-medium drop-shadow-xl text-center
                                         transition-all duration-500 z-20
                                         ${isHover ? "-translate-y-50 sm:-translate-y-70 md:-translate-y-100" : "-translate-y-20"}
                                     `}
@@ -111,12 +110,12 @@ export default function TedxSharing() {
 
                 <div
                   className={`
-                                        absolute left-1/2 -translate-x-1/2 w-full px-4 md:px-8 text-center
+                                        absolute left-1/2 -translate-x-1/2 w-full text-sm px-2 sm:px-4 md:px-8 text-center
                                         transition-all duration-700 z-20
                                         ${isHover ? "opacity-100 top-30 md:top-35" : "opacity-0 top-60"}
                                     `}
                 >
-                  <span className="text-xs sm:text-sm md:text-base leading-relaxed max-w-sm mx-auto mb-3 text-white">{item.description}</span>
+                  <span className="text-xs sm:text-sm md:text-base  max-w-sm mx-auto mb-3 text-white">{item.description}</span>
                 </div>
 
                 <button
