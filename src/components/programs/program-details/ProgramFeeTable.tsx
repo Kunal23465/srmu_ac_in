@@ -68,7 +68,7 @@ const ProgramFeeTable: React.FC<Props> = ({ data }) => {
                   {fee.feeTypeName}
                 </td>
 
-                {years.map((year) => (
+                {years.map((year, index) => (
                   <td
                     key={year}
                     className={`text-center text-[14px] px-6 py-6 border-r last:border-r-0 border-[#dfe3ee]  ${index === years.length - 1 ? "rounded-r-[10px] border-r-0" : ""}`}

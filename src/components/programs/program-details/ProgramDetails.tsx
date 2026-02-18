@@ -113,7 +113,7 @@ const ProgramDetails = () => {
                 className={`text-justify md:line-clamp-none ${expanded ? "line-clamp-none" : "line-clamp-5"}`}
               >
                 {/* @ts-ignore */}
-                <div className="text-justify [&_p]:mb-3! [&_strong]:text-[16px]! [&_strong]:mb-3! lg:text-[16px] md:text-[15px] text-[14px]">{typeof dataByID?.overview === "string" ? <div dangerouslySetInnerHTML={{ __html: dataByID?.overview }} /> : dataByID?.overview}</div>
+                <div className="text-justify [&_p]:mb-3! [&_strong]:text-[16px]! [&_strong]:mb-3! lg:text-[16px] md:text-[15px] text-[14px] [&_ul]:ml-4!">{typeof dataByID?.overview === "string" ? <div dangerouslySetInnerHTML={{ __html: dataByID?.overview }} /> : dataByID?.overview}</div>
               </div>
 
               {/* Read more / less — ONLY below md */}

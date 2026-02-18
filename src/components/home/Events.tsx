@@ -71,7 +71,7 @@ const NewsCard1 = ({ image, description, date, title, onReadMore }: any) => {
 
   return (
     <div className="w-full cursor-pointer">
-      <img src={image} alt="Event" className="transition-all duration-200 rounded-lg mb-4 w-full object-cover max-h-[400px] object-bottom" />
+      <img src={image} alt="Event" className="transition-all duration-200 rounded-lg mb-4 w-full object-cover aspect-[5/3] object-bottom" />
 
       <div>
         <div className="flex items-center gap-x-2 text-[#00000099]">
@@ -79,14 +79,14 @@ const NewsCard1 = ({ image, description, date, title, onReadMore }: any) => {
           {date}
         </div>
 
-        <h1 className="text-sm sm:text-[20px] fw600">{title}</h1>
+        <h1 className="text-sm sm:text-[20px] fw600 min-h-16 sm:min-h-auto">{title}</h1>
 
         <div className="mt-2 text-[#000000cc] text-justify" dangerouslySetInnerHTML={{ __html: truncatedDesc }} />
 
         {description.length > sliceLength && (
-          <div className="flex items-center mt-2">
+          <div className="flex items-center mt-4">
             <button
-              className="flex items-center mt-8 gap-2 bg-[#ffb703] text-[#023047] fw500 uppercase py-3 px-4 rounded-sm transition border border-[#ffb703] hover:bg-transparent hover:text-[#ffb703]"
+              className="flex items-center sm:mt-8 gap-2 bg-[#ffb703] text-[#023047] fw500 uppercase py-3 px-4 rounded-sm transition border border-[#ffb703] hover:bg-transparent hover:text-[#ffb703]"
               onClick={onReadMore}
             >
               Read More <LiaLongArrowAltRightSolid size={24} />
@@ -143,7 +143,7 @@ const Events: React.FC = () => {
       <div className="lg:hidden mt-5 w-full overflow-hidden">
         <Slider {...sliderSettings}>
           {eventsData.map((news, index) => (
-            <div key={index} className="w-full border min-h-[450px] sm:min-h-0 p-3 hover:shadow-2xl rounded-md border-[#ffb703] transition-all duration-200">
+            <div key={index} className="w-full border sm:min-h-0 p-3 hover:shadow-2xl rounded-md border-[#ffb703] transition-all duration-200">
               <NewsCard1 image={news.image} date={news.date} title={news.title} description={news.description} onReadMore={() => handleReadMore(news)} />
             </div>
           ))}

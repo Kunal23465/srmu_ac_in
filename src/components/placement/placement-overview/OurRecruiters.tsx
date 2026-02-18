@@ -19,7 +19,7 @@ const OurRecruiters: React.FC = () => {
     },
     {
       key: "2",
-      label: "COMPANIES VISITED FOR PLACEMENT -2025",
+      label: "COMPANIES VISITED FOR PLACEMENT",
       content: <CompanyHello sliderRef={sliderRef} />,
     },
   ];

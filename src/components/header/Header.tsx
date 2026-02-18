@@ -90,7 +90,7 @@ const Header = () => {
                         {!isMega && showMegaMenu && data?.subItem && (
                           <div className="absolute top-[50px] right-0 bg-white rounded-md shadow-md">
                             <span className="hidden group-hover:block manage-top-arrow"></span>
-                            <ul className="transition-all w-full min-w-[290px] duration-300 max-h-0 group-hover:max-h-[500px] overflow-hidden rounded-md ">
+                            <ul className="transition-all w-full min-w-[290px] duration-300 max-h-0 group-hover:max-h-[550px] overflow-hidden rounded-md ">
                               {data.subItem.map((value, i) => (
                                 <Link
                                   key={i}
