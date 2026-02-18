@@ -47,8 +47,10 @@ const ProgramFilter: React.FC<PropsTypes> = ({
       .replace(/-+/g, "-")             // remove multiple -
       .replace(/-in-/g, "-")           // remove only '-in-'
       .replace(/^b-c-a\b/, "bca")      // convert b-c-a to bca
+      .replace(/-with-.*/, "")         // remove '-with' and everything after
       .replace(/^-|-$/g, "");          // remove starting/ending -
   };
+
 
 
 
