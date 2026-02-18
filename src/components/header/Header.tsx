@@ -25,12 +25,22 @@ const Header = () => {
   // @ts-ignore
   const { data: programMenu, loading } = useSelector((state: RootState) => state.programMenu);
 
+  // const slugify = (str: string) =>
+  //   str
+  //     .toLowerCase()
+  //     .trim()
+  //     .replace(/[()]/g, "")      // remove brackets
+  //     .replace(/\s+/g, "-");     // replace spaces with hyphen
+
+
   const slugify = (str: string) =>
     str
       .toLowerCase()
       .trim()
       .replace(/[()]/g, "")      // remove brackets
-      .replace(/\s+/g, "-");     // replace spaces with hyphen
+      .replace(/\./g, "-")       // convert . to -
+      .replace(/\s+/g, "-")      // spaces to -
+      .replace(/-+/g, "-");
 
   useEffect(() => {
     dispatch(fetchProgramMenu());

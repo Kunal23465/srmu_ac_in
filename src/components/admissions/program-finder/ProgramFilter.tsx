@@ -40,8 +40,11 @@ const ProgramFilter: React.FC<PropsTypes> = ({
     str
       .toLowerCase()
       .trim()
-      .replace(/[()]/g, "")   // remove brackets
-      .replace(/\s+/g, "-");  // replace spaces with hyphen
+      .replace(/[()]/g, "")      // remove brackets
+      .replace(/\./g, "-")       // convert . to -
+      .replace(/\s+/g, "-")      // spaces to -
+      .replace(/-+/g, "-");      // convert multiple -- into single -
+
 
   return (
     <div className={`${Classes["container"]} pb-6 sm:py-10`}>
