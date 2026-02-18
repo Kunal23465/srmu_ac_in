@@ -10,7 +10,7 @@ import { AppDispatch, RootState } from "../../store";
 // @ts-ignore
 import { fetchProgramMenu, NavbarProgramType } from "../../store/header/programMenuThunk";
 import { useDispatch, useSelector } from "react-redux";
-import logo from "../../assets/images/logo.png";
+import logo from "../../assets/images/logo.svg";
 
 const Header = () => {
   const location = useLocation();
