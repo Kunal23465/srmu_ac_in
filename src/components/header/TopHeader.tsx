@@ -56,13 +56,22 @@ const TopHeader: React.FC = () => {
                     <p className=" ">18001026004</p>
                   </div>
                 </button>
-                <Link
+                {/* <Link
                   target="_blank"
                   to="https://studentportal.srmu.ac.in/login"
                   className="bg-[#FFB703] px-2 font-medium uppercase border-2 border-[#ffb703]  py-3.5 flex gapx-x-1 items-center"
                 >
                   Apply Now
+                </Link> */}
+                <Link
+                  target="_blank"
+                  to="https://anubhuti.attechx.com/"
+                  className="bg-[#FFB703] px-2 font-medium uppercase border-2 border-[#ffb703]  py-3.5 flex gapx-x-1 items-center"
+                >
+                  Anubhuti’26
                 </Link>
+
+                {/* Anubhuti’26 */}
               </div>
             </div>
           </div>
@@ -97,13 +106,21 @@ const TopHeader: React.FC = () => {
                 <IoCallSharp size={24} className="text-[1rem] text-[#FFB703]" />
               </a>
 
-              <Link
+              {/* <Link
                 target="_blank"
                 to="https://studentportal.srmu.ac.in/login"
                 className="bg-[#FFB703] px-2 font-medium uppercase border-2 border-[#ffb703]  py-3.5 flex gapx-x-1 items-center"
               >
                 Apply Now
+              </Link> */}
+              <Link
+                target="_blank"
+                to="https://anubhuti.attechx.com/"
+                className="bg-[#FFB703] px-2 font-medium uppercase border-2 border-[#ffb703]  py-3.5 flex gapx-x-1 items-center"
+              >
+                Anubhuti’26
               </Link>
+              {/* https://anubhuti.attechx.com/ */}
             </div>
           </div>
         </div>

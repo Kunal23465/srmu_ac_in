@@ -12,7 +12,7 @@ const CommitteeAndCellsPage: React.FC = () => {
         <title>Committees and Cells | Shri Ramswaroop Memorial University, Lucknow</title>
         <meta name="description" content="Explore Committees and Cells at SRMU Lucknow for dynamic engagement and academic support." />
       </Helmet>
-      {location.pathname === "/about-us/committees-and-cells" ? (
+      {location.pathname === "/committees-and-cells" ? (
         <CommitteeAndCells />
       ) : (
         <Outlet />

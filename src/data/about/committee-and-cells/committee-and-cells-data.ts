@@ -79,7 +79,7 @@ To implement the same in the session 2023–24 also, the Anti-Ragging Committee 
 
     imagePath: rag,
 
-    readMoreLink: "/about-us/committees-and-cells/anti-ragging",
+    readMoreLink: "/committees-and-cells/anti-ragging",
   },
   {
     id: 2,
@@ -126,7 +126,7 @@ The board comprises senior faculty members, administrative officers, and other k
     ],
 
     imagePath: board,
-    readMoreLink: "/about-us/committees-and-cells/proctorial-board",
+    readMoreLink: "/committees-and-cells/proctorial-board",
   },
   {
     id: 3,
@@ -153,7 +153,7 @@ The University helps financially weaker students through the Student Welfare Fun
 
     imagePath: scst,
 
-    readMoreLink: "/about-us/committees-and-cells/sc-st-welfare-committee",
+    readMoreLink: "/committees-and-cells/sc-st-welfare-committee",
   },
   {
     id: 4,
@@ -189,7 +189,7 @@ The purpose of this fund is to provide amenities to students that support their 
 
     imagePath: saving,
 
-    readMoreLink: "/about-us/committees-and-cells/students-welfare-fund-committee",
+    readMoreLink: "/committees-and-cells/students-welfare-fund-committee",
   },
   {
     id: 5,
@@ -219,7 +219,7 @@ It ensures that every individual on campus can exercise and acquire equal rights
     ],
 
     imagePath: discri,
-    readMoreLink: "/about-us/committees-and-cells/anti-discrimination-cell",
+    readMoreLink: "/committees-and-cells/anti-discrimination-cell",
   },
   {
     id: 6,
@@ -255,7 +255,7 @@ As per Section 4(1) of the Act, the Internal Complaints Committee has been const
 
     imagePath: comp,
 
-    readMoreLink: "/about-us/committees-and-cells/internal-complaints-committee",
+    readMoreLink: "/committees-and-cells/internal-complaints-committee",
   },
   {
     id: 7,
@@ -288,7 +288,7 @@ It aims to foster digital culture by following and implementing the Digital Acti
     ],
 
     imagePath: digital,
-    readMoreLink: "/about-us/committees-and-cells/digital-learning-monitoring-cell",
+    readMoreLink: "/committees-and-cells/digital-learning-monitoring-cell",
   },
   {
     id: 8,
@@ -322,7 +322,7 @@ It aims to create an enabling environment of gender justice and ensure safety an
 
     imagePath: gender,
 
-    readMoreLink: "/about-us/committees-and-cells/gender-sensitization-cell",
+    readMoreLink: "/committees-and-cells/gender-sensitization-cell",
   },
   {
     id: 9,
@@ -347,7 +347,7 @@ By granting scholarships and assistance, the Cell promotes higher education amon
     ],
 
     imagePath: obc,
-    readMoreLink: "/about-us/committees-and-cells/obc-cell",
+    readMoreLink: "/committees-and-cells/obc-cell",
   },
   {
     id: 10,
@@ -374,7 +374,7 @@ It provides support to help these students integrate into the mainstream while a
 
     imagePath: minority,
 
-    readMoreLink: "/about-us/committees-and-cells/minority-cell",
+    readMoreLink: "/committees-and-cells/minority-cell",
   },
   {
     id: 11,
@@ -406,7 +406,7 @@ The mission of the Unnat Bharat Cell is to enable universities to work with rura
     ],
 
     imagePath: unnat,
-    readMoreLink: "/about-us/committees-and-cells/unnat-bharat-cell",
+    readMoreLink: "/committees-and-cells/unnat-bharat-cell",
   },
   {
     id: 12,
@@ -440,6 +440,6 @@ The committee has the authority to investigate complaints of harassment and othe
 
     imagePath: grievance,
 
-    readMoreLink: "/about-us/committees-and-cells/student-grievance-redressal-committee",
+    readMoreLink: "/committees-and-cells/student-grievance-redressal-committee",
   },
 ];

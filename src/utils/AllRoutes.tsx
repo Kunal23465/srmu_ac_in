@@ -147,46 +147,65 @@ export const routes = [
         element: <AboutPage />,
 
         children: [
-          {
-            path: "leadership-and-governance",
-            element: <LeadershipAndGovernancePage />,
-          },
-          {
-            path: "committees-and-cells",
-            element: <CommitteeAndCellsPage />,
+          // {
+          //   path: "leadership-and-governance",
+          //   element: <LeadershipAndGovernancePage />,
+          // },
+          // {
+          //   path: "committees-and-cells",
+          //   element: <CommitteeAndCellsPage />,
 
-            children: committeeCards.map((card) => ({
-              path: card.routeKey,
-              element: <CustomCommitteeDetailsPage committee={card} />,
-            })),
-          },
+          //   children: committeeCards.map((card) => ({
+          //     path: card.routeKey,
+          //     element: <CustomCommitteeDetailsPage committee={card} />,
+          //   })),
+          // },
 
-          {
-            path: "approvals-and-associations",
-            element: <RecognitionApprovalsPage />,
-          },
-          {
-            path: "award-overview",
-            element: <AwardOverviewPage />,
-          },
-          {
-            path: "iqac-overview",
-            element: <IqacPage />,
-          },
-          {
-            path: "naac",
-            element: <NAACPage />,
-          },
-          {
-            path: "nirf",
-            element: <NIRFPage />,
-          },
-          {
-            path: "organization-structure-plan",
-            element: <OragnisationStructurePage />,
-          },
+          
         ],
       },
+
+      {
+        path: "/leadership-and-governance",
+        element: <LeadershipAndGovernancePage />,
+      },
+      {
+        path: "/committees-and-cells",
+        element: <CommitteeAndCellsPage />,
+
+        children: committeeCards.map((card) => ({
+          path: card.routeKey,
+          element: <CustomCommitteeDetailsPage committee={card} />,
+        })),
+      },
+      {
+        path: "/approvals-and-associations",
+        element: <RecognitionApprovalsPage />,
+      },
+      {
+        path: "/award-overview",
+        element: <AwardOverviewPage />,
+      },
+      {
+        path: "/iqac-overview",
+        element: <IqacPage />,
+      },
+      {
+        path: "/naac",
+        element: <NAACPage />,
+      },
+      {
+        path: "/nirf",
+        element: <NIRFPage />,
+      },
+      {
+        path: "/organization-structure-plan",
+        element: <OragnisationStructurePage />,
+      },
+
+
+
+
       {
         path: "academics",
         element: <InstitutePage />,

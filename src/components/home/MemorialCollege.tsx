@@ -108,12 +108,21 @@ const MemorialCollege: React.FC = () => {
 
         <div className="w-full max-w-5xl mx-auto">
           <Slider {...settings}>
-            {banner?.map((item) => (
-              <div className=" w-full" key={item.bannerId}>
-                <Link target="_blank" to={item.link}>
-                  <img src={item.imagePath} alt="slider" className="w-full rounded-xl" />
-                </Link>
-              </div>))}
+            {banner
+              ?.slice()          
+              .reverse()       
+              .map((item) => (
+                <div className="w-full" key={item.bannerId}>
+                  <Link target="_blank" to={item.link}>
+                    <img
+                      src={item.imagePath}
+                      alt="slider"
+                      className="w-full rounded-xl"
+                    />
+                  </Link>
+                </div>
+              ))}
+
           </Slider>
         </div>
       </div>
