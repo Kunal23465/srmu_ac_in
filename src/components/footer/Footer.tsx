@@ -280,7 +280,7 @@ const Footer: React.FC = () => {
                   <img src={fb} alt="facebook" />
                 </Link>
                 <Link
-                  to="https://twitter.com/srmu_lucknow"
+                  to="https://www.instagram.com/srmulucknow_official/"
                   target="_blank"
                   className=" flex items-center justify-center transition-all duration-300 hover:border-[#ffb703] hover:bg-transparent hover:text-[#ffb703] cursor-pointer"
                   aria-label="Twitter"
@@ -288,7 +288,7 @@ const Footer: React.FC = () => {
                   <img src={instagram} alt="instagram" />
                 </Link>
                 <Link
-                  to="https://www.instagram.com/srmulucknow_official/"
+                  to=" https://www.linkedin.com/school/shri-ramswaroop-memorial-university/  "
                   target="_blank"
                   className=" flex items-center justify-center transition-all duration-300 hover:border-[#ffb703] hover:bg-transparent hover:text-[#ffb703] cursor-pointer"
                   aria-label="Instagram"
@@ -296,7 +296,7 @@ const Footer: React.FC = () => {
                   <img src={linkdin} alt="linkdin" />
                 </Link>
                 <Link
-                  to="https://www.linkedin.com/school/shri-ramswaroop-memorial-university/"
+                  to=" https://twitter.com/srmu_lucknow"
                   target="_blank"
                   className=" flex items-center justify-center transition-all duration-300 hover:border-[#ffb703] hover:bg-transparent hover:text-[#ffb703] cursor-pointer"
                   aria-label="LinkedIn"
