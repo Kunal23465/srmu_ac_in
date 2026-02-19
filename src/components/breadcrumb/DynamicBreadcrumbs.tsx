@@ -53,7 +53,7 @@ export default function DynamicBreadcrumbs() {
                     <nav aria-label="breadcrumb ml-4">
                         <ol className="breadcrumb m-0 flex flex-wrap gap-2 ">
                             {crumbs.map((crumb, index) => {
-                                console.log("crumbs", crumb)
+                     
                                 return (
                                     <li
                                         key={index}

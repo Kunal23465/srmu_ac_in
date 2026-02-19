@@ -73,7 +73,7 @@ const Header = () => {
   }, [sideMenu]);
 
 
-  console.log("programMenu", programMenu)
+
   return (
     <div>
       <header className="fixed top-0 left-0 w-full z-[999] transition-all duration-500">
@@ -193,7 +193,15 @@ const Header = () => {
                                               type.programs.map((prog) => (
                                                 <li key={prog.programId}>
                                                   <Link
-                                                    onClick={() => setShowMegaMenu(false)}
+                                                    // onClick={() => setShowMegaMenu(false)}
+
+                                                    onClick={() => {
+                                                      localStorage.setItem(
+                                                        "programId",
+                                                        prog.programId.toString()
+                                                      );
+                                                      setShowMegaMenu(false);
+                                                    }}
                                                     to={`/program/${slugify(prog.programName)}`}
                                                     state={{
                                                       programTypeId: type.programFlagId,

@@ -21,84 +21,93 @@ export interface ScopeData {
 
 interface CompaniesScopeProps {
   data: ScopeData;
-  list?: string
+  list?: string;
 }
 
-export const CustomCompaniesScope: React.FC<CompaniesScopeProps> = ({ data, list }) => {
+export const CustomCompaniesScope: React.FC<CompaniesScopeProps> = ({
+  data,
+  list,
+}) => {
   const { sectors } = data;
 
   const [activeTab, setActiveTab] = useState(0);
   const [index, setIndex] = useState(0);
-  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 640);
+  const [isSmallScreen, setIsSmallScreen] = useState(
+    window.innerWidth < 640
+  );
 
+  // Responsive detection
   useEffect(() => {
-    const handleResize = () => setIsSmallScreen(window.innerWidth < 640);
+    const handleResize = () =>
+      setIsSmallScreen(window.innerWidth < 640);
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    return () =>
+      window.removeEventListener("resize", handleResize);
   }, []);
 
-  const activeCompanies = sectors[activeTab].companies;
+  const activeCompanies =
+    sectors?.[activeTab]?.companies || [];
 
-  const itemsToShow = isSmallScreen
-    ? 2
-    : activeCompanies.length <= 8
-      ? 5
-      : 10;
+  const itemsToShow = isSmallScreen ? 2 : 5;
 
+  // Reset index when tab or screen changes
+  useEffect(() => {
+    setIndex(0);
+  }, [activeTab, isSmallScreen]);
 
-  let visibleCompanies: CompanyItem[] = activeCompanies.slice(index, index + itemsToShow);
-  if (visibleCompanies.length < itemsToShow) {
-    visibleCompanies = [
-      ...visibleCompanies,
-      ...activeCompanies.slice(0, itemsToShow - visibleCompanies.length),
-    ];
-  }
+  // No duplicate, no wrap logic
+  const visibleCompanies = activeCompanies.slice(
+    index,
+    index + itemsToShow
+  );
 
-  const handlePrev = () => {
-    setIndex((prev) => (prev === 0 ? activeCompanies.length - 1 : prev - 1));
-  };
-
+  // Next slide
   const handleNext = () => {
-    setIndex((prev) => (prev + 1) % activeCompanies.length);
+    if (index + itemsToShow < activeCompanies.length) {
+      setIndex((prev) => prev + 1);
+    }
   };
+
+  // Previous slide
+  const handlePrev = () => {
+    if (index > 0) {
+      setIndex((prev) => prev - 1);
+    }
+  };
+
+  const showControls =
+    activeCompanies.length > itemsToShow;
 
   return (
     <div className="min-h-screen py-16 px-4 sm:px-6 lg:px-8">
       <div className="mx-auto">
 
+        {/* Top Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 pb-10">
           <div>
             <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] text-[#023047] fw500 leading-tight">
-
-
               <span className="block">Scope</span>
               <span className="block">in Companies</span>
-
             </h2>
           </div>
 
           <div>
             <div className="flex flex-col gap-4 mb-10">
-
               <p className="text-black leading-relaxed">
-                By pursuing this program, students gain deep knowledge of emerging technologies.They also get exposure to endless career possibilities.
+                By pursuing this program, students gain deep knowledge of
+                emerging technologies. They also get exposure to endless
+                career possibilities.
               </p>
-
             </div>
 
-
-            {/* {[...rolesLeft, ...rolesRight].map((r, i) => (
-                <div key={i} className="flex gap-2 items-start">
-                  <span className="text-[#ffb703] font-bold mt-0.5">✔</span>
-                  <span className="flex-1 text-black font18">{r}</span>
-                </div>
-              ))} */}
-            {/* @ts-ignore */}
-            <div className="scope_list" dangerouslySetInnerHTML={{ __html: list }} />
-
+            <div
+              className="scope_list"
+              dangerouslySetInnerHTML={{ __html: list || "" }}
+            />
           </div>
         </div>
 
+        {/* Tabs */}
         <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between mt-16 mb-8 gap-4 lg:gap-0">
           <p className="font19 fw600 text-black">
             You can easily be absorbed in above positions at Organizations like:
@@ -108,12 +117,12 @@ export const CustomCompaniesScope: React.FC<CompaniesScopeProps> = ({ data, list
             {sectors.map((sector, i) => (
               <button
                 key={i}
-                onClick={() => {
-                  setActiveTab(i);
-                  setIndex(0);
-                }}
+                onClick={() => setActiveTab(i)}
                 className={`pb-2 transition-colors border-b-3 whitespace-nowrap cursor-pointer
-          ${activeTab === i ? "border-[#023047]" : "border-transparent text-gray-500"}`}
+                ${activeTab === i
+                    ? "border-[#023047]"
+                    : "border-transparent text-gray-500"
+                  }`}
               >
                 {sector.label}
               </button>
@@ -121,10 +130,10 @@ export const CustomCompaniesScope: React.FC<CompaniesScopeProps> = ({ data, list
           </div>
         </div>
 
+        {/* Logo Grid (Design Same) */}
         <div
-          className={`grid gap-4 mt-10
-            grid-cols-2 sm:grid-cols-2 md:grid-cols-5
-          `}
+          className="grid gap-4 mt-10
+            grid-cols-2 sm:grid-cols-2 md:grid-cols-5"
         >
           {visibleCompanies.map((c) => (
             <div
@@ -140,31 +149,43 @@ export const CustomCompaniesScope: React.FC<CompaniesScopeProps> = ({ data, list
           ))}
         </div>
 
-        <div className="mt-12 flex items-center relative">
-          <div className="flex gap-2 z-10">
-            <button
-              onClick={handlePrev}
-              className="w-13 h-13 bg-white rounded-full border-2 border-[#023047] cursor-pointer shadow-lg flex items-center justify-center text-2xl text-[#023047] "
-            >
-              <FaAngleLeft />
-            </button>
-            <button
-              onClick={handleNext}
-              className="w-13 h-13 bg-white rounded-full border-2 border-[#023047] cursor-pointer shadow-lg flex items-center justify-center text-2xl text-[#023047] "
-            >
-              <FaAngleRight />
-            </button>
-          </div>
+        {/* Arrows & Progress (Only if Needed) */}
+        {showControls && (
+          <div className="mt-12 flex items-center relative">
+            <div className="flex gap-2 z-10">
+              <button
+                onClick={handlePrev}
+                disabled={index === 0}
+                className="w-13 h-13 bg-white rounded-full border-2 border-[#023047] cursor-pointer shadow-lg flex items-center justify-center text-2xl text-[#023047] disabled:opacity-40"
+              >
+                <FaAngleLeft />
+              </button>
 
-          <div className="flex-1 h-1 bg-gray-300 rounded-full ml-4 relative">
-            <div
-              className="h-1 bg-[#023047] rounded-full transition-all"
-              style={{
-                width: `${Math.min(index + itemsToShow, activeCompanies.length) / activeCompanies.length * 100}%`,
-              }}
-            ></div>
+              <button
+                onClick={handleNext}
+                disabled={
+                  index + itemsToShow >=
+                  activeCompanies.length
+                }
+                className="w-13 h-13 bg-white rounded-full border-2 border-[#023047] cursor-pointer shadow-lg flex items-center justify-center text-2xl text-[#023047] disabled:opacity-40"
+              >
+                <FaAngleRight />
+              </button>
+            </div>
+
+            <div className="flex-1 h-1 bg-gray-300 rounded-full ml-4 relative">
+              <div
+                className="h-1 bg-[#023047] rounded-full transition-all"
+                style={{
+                  width: `${((index + itemsToShow) /
+                      activeCompanies.length) *
+                    100
+                    }%`,
+                }}
+              />
+            </div>
           </div>
-        </div>
+        )}
 
         <div className="h-16"></div>
       </div>

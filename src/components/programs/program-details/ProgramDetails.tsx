@@ -1,9 +1,9 @@
-import { opportunityCardDataAIML, partnerDataforAIandML, scopeData } from "../../../data/programs/btechincseai-ml-data/btechincseai-ml-data";
+import { opportunityCardDataAIML, } from "../../../data/programs/btechincseai-ml-data/btechincseai-ml-data";
 import Counter from "../../../utils/custom/Counter";
 import Classes from "../../../utils/styles/Global.module.css";
 import CustomDepartmentSlider from "../../../utils/custom/CustomDepartmentSlider";
 import WhyCardComp from "./WhyCardComp";
-import PartnerLogos from "./PartnerLogos";
+
 import CustomDepartmentHighlights from "../../../utils/custom/CustomDepartmentHighlights";
 import CustomProgramPLOAccordian from "../../../utils/custom/CustomProgramPLOAccordian";
 import CustomProgramOppertunitySlider from "../../../utils/custom/CustomProgramOppertunitySlider";
@@ -13,7 +13,7 @@ import { CustomTopFooterData1 } from "../../../data/about/leadership-and-governa
 import { CustomCompaniesScope } from "../../../utils/custom/CustomCompaniesScope";
 import CustomProgramScholarshipSchemeCard from "../../../utils/custom/CustomProgramScholarshipSchemeCard";
 import CustomEligibilitySection from "../../../utils/custom/CustomEligibilitySection";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../../store";
 import { fetchProgramFinderByID } from "../../../store/program-finder/programFinderThunk";
@@ -28,33 +28,40 @@ import { FaArrowRightLong } from "react-icons/fa6";
 import { fetchRecruiterById } from "../../../store/recruiter/recruiterThunk";
 
 // type dataByID=any[]
-
-const ProgramDetails = () => {
+interface PropsTypes {
+  programId: number;
+}
+const ProgramDetails: React.FC<PropsTypes> = ({ programId }) => {
+  const getIdLocalId = useSelector((state: RootState) => state.programId);
   const dispatch = useDispatch<AppDispatch>();
   const [isPhd, setIsPhd] = useState(false);
   const [expanded, setExpanded] = useState(false);
-  const location = useLocation();
+
   // @ts-ignore
   const { dataByID, loading, error } = useSelector((state: RootState) => state.getProgramFinder);
   const { data: departmentHeghlightData } = useSelector((state: RootState) => state.getDepartmentHeighlightById);
   const { data: feesData } = useSelector((state: RootState) => state.programFees);
   const { data: whySrmuData } = useSelector((state: RootState) => state.getWhySrmuSection);
   const { data: counterData } = useSelector((state: RootState) => state.getCounterById);
-  const { data: recruiterData } = useSelector((state: RootState) => state.getRecruiter);
+  const { data: recruiterData, loading: recruiterLoading } = useSelector((state: RootState) => state.getRecruiter);
   useEffect(() => {
-    dispatch(fetchWhySrmuSectionById({ programId: location.state.programId || undefined }));
-    dispatch(fetchProgramFinderByID(location.state.programId || undefined));
-    dispatch(fetchProgramFeesByProgramId(location.state.programId || undefined));
-    dispatch(getCounterById(location.state.programId || undefined));
-    dispatch(fetchProgramHeighlightById(location.state.programId || undefined))
-    dispatch(fetchRecruiterById({ programId: location.state.programId || undefined }));
-    if (location.state.programId == 81) {
+    dispatch(fetchWhySrmuSectionById({ programId: programId || undefined }));
+    // @ts-ignore
+    dispatch(fetchProgramFinderByID(programId || undefined));
+    // @ts-ignore
+    dispatch(fetchProgramFeesByProgramId(programId || undefined));
+    // @ts-ignore
+    dispatch(getCounterById(programId || undefined));
+    // @ts-ignore
+    dispatch(fetchProgramHeighlightById(programId || undefined))
+    dispatch(fetchRecruiterById({ programId: programId || undefined }));
+    if (programId == 81) {
       setIsPhd(true);
     } else {
       setIsPhd(false);
     }
     // getCounterById;
-  }, [dispatch, location.state.programId]);
+  }, [dispatch, programId]);
 
   // counter data key change
   const convertedCounterData = counterData.map((item) => {
@@ -79,7 +86,59 @@ const ProgramDetails = () => {
 
 
   // program heighlight
-  console.log("recruiterData===", recruiterData)
+
+
+
+  // sector logo
+  // @ts-ignore
+  const formatRecruiters = (apiData) => {
+    // @ts-ignore
+    const government = [];
+    // @ts-ignore
+    const privateSector = [];
+    // @ts-ignore
+    apiData.forEach((item) => {
+      if (!item.status) return; // optional safety
+
+      const company = {
+        id: item.recruiterId,
+        logo: item.imagePath,
+        title: item.title,
+      };
+
+      if (item.companyType === "GOVERNMENT") {
+        government.push(company);
+      } else if (item.companyType === "PRIVATE") {
+        privateSector.push(company);
+      }
+    });
+
+    return {
+      sectors: [
+        {
+          label: "PRIVATE SECTOR",
+          // @ts-ignore
+          companies: privateSector,
+        },
+        {
+          label: "GOVERNMENT SECTOR",
+          // @ts-ignore
+          companies: government,
+        },
+      ],
+    };
+  };
+
+
+
+
+
+  console.log("getIdLocalId", getIdLocalId)
+
+  if (recruiterLoading) {
+    return <p>loading....</p>
+  }
+
   return (
     <>
       <Helmet>
@@ -143,7 +202,39 @@ const ProgramDetails = () => {
 
           {!isPhd && (
             <div className={`${Classes["container"]}`}>
-              <PartnerLogos data={partnerDataforAIandML} />
+              {/* recruiterData */}
+              {/* <PartnerLogos data={partnerDataforAIandML} /> */}
+
+              <div className="grid w-full grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-5 sm:gap:15 lg:gap-30 place-items-start">
+
+                {
+                  recruiterData.filter((ele) => ele.featured).map((item, index) => (
+                    <div key={index} className="flex border w-full md:border-none border-[#ccc] py-2 px-3 sm:p-0 flex-col items-start gap-5">
+                      <img
+                        src={item.imagePath}
+                        alt={item.title}
+                        className=" w-[105px] sm:w-[170px] md:w-[210px] object-contain"
+                      />
+                      {/* <p className="text-base sm:text-lg fw600 text-center">
+                        {item.title}
+                      </p> */}
+                      <div className="[&_p]:font-semibold md:[&_p]:text-lg [&_p]:text-left" dangerouslySetInnerHTML={{ __html: item.brief }} />
+                    </div>
+                  ))
+                }
+                {/* {data.map((item, index) => (
+                  <div key={index} className="flex border w-full md:border-none border-[#ccc] py-2 px-3 sm:p-0 flex-col items-center gap-5">
+                    <img
+                      src={item.img}
+                      alt={item.title}
+                      className=" w-[105px] sm:w-[170px] md:w-[210px] object-contain"
+                    />
+                    <p className="text-base sm:text-lg fw600 text-center">
+                      {item.title}
+                    </p>
+                  </div>
+                ))} */}
+              </div>
             </div>
           )}
         </div>
@@ -174,7 +265,7 @@ const ProgramDetails = () => {
         <div className="bg-[#dee4f2]">
           <div className={`${Classes["container"]}`}>
             {/* @ts-ignore */}
-            <CustomCompaniesScope data={scopeData} list={dataByID?.scope} />
+            <CustomCompaniesScope data={formatRecruiters(recruiterData)} list={dataByID?.scope} />
           </div>
         </div>
 

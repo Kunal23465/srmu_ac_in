@@ -15,7 +15,7 @@ export const fetchAllProgramFinder = createAsyncThunk("data/fetchProgramData", a
   return response.data;
 });
 // fetchProgramFinderByID or fetchProgramDetailsById
-export const fetchProgramFinderByID = createAsyncThunk("data/fetchProgramDataById", async (id: number) => {
+export const fetchProgramFinderByID = createAsyncThunk("data/fetchProgramDataById", async (id: number ) => {
   const response = await API.get(`/academicProgram/programDetailsById/${id}`);
   return response.data;
 });

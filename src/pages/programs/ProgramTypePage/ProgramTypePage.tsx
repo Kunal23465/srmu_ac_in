@@ -7,7 +7,8 @@ import { Helmet } from 'react-helmet-async'
 
 const ProgramTypePage: React.FC = () => {
     const { data } = useSelector((state: RootState) => state.programMenu)
-    const location = useLocation()
+    const location = useLocation();
+    console.log("location", location)
 
     const slugToTitle = (slug = "") =>
         slug

@@ -7,6 +7,7 @@ import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 import { GoSearch } from "react-icons/go";
 import { RootState } from "../../../store";
 import { useSelector } from "react-redux";
+
 interface PropsTypes {
   data: ProgramData[];
   programTypeOptions: any[];
@@ -32,6 +33,7 @@ const ProgramFilter: React.FC<PropsTypes> = ({
   onDisciplineChange,
   isTypeFlag,
 }) => {
+
   const [visibleCount, setVisibleCount] = useState(5);
   const visibleCourses = data.slice(0, visibleCount);
   const { loading } = useSelector((state: RootState) => state.getProgramFinder);
@@ -148,11 +150,23 @@ const ProgramFilter: React.FC<PropsTypes> = ({
 
                     <div className="flex flex-row gap-2 w-full lg:w-[30%] justify-between lg:justify-end">
                       <Link
-                        state={{
-                          programId: course.programId,
-                          // programDisciplineId: course.programDisciplineId,
-                          // name: course.name,
+
+                        onMouseDown={() => {
+                          console.log("=======down", course.programId.toString())
+                          localStorage.setItem("programId", course.programId.toString());
                         }}
+                        onClick={() => {
+                          console.log("=======click", course.programId.toString())
+                          localStorage.setItem("programId", course.programId.toString());
+                        }}
+
+                        // state={{
+                        //   programId: course.programId,
+
+                        // }}
+                        // onClick={() => {
+                        //   dispatch(setProgramId(course.programId.toString()));
+                        // }}
                         to={`/program/${slugify(programName)}`}
                         className="bg-[#023047] text-nowrap border border-[#023047] hover:bg-white hover:text-[#023047] transition-all duration-500 text-white px-6 py-3 text-sm font-medium rounded-lg flex items-center gap-2"
                       >

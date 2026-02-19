@@ -72,7 +72,6 @@ const MemorialCollege: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
   const { data: banner } = useSelector((state: RootState) => state.getbanner);
 
-  console.log(banner, "banner in memorial college");
   useEffect(() => {
     dispatch(fetchBanner());
   }, [dispatch]);

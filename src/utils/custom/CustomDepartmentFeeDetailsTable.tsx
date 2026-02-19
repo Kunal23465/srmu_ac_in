@@ -65,7 +65,7 @@ const CustomDepartmentFeeDetailsTable: React.FC<Props> = ({ data }) => {
                                     style={{ gridTemplateColumns: gridTemplate }}
                                 >
                                     {values.map((val, colIndex) => {
-                                        console.log("value====", val)
+                                   
                                         return (
                                             <div
                                                 key={colIndex}

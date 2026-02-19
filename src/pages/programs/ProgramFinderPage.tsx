@@ -53,9 +53,7 @@ const ProgramFinderPage: React.FC = () => {
     );
   }, [programTypeData, programNameSlug]);
 
-  console.log("programTypeSlug:", programTypeSlug);
-  console.log("programNameSlug:", programNameSlug);
-  console.log("finalFilterData:", finalFilterData);
+
 
   return (
     <>

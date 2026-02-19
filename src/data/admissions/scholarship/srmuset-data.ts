@@ -2,8 +2,8 @@ import { HeadData, RowData } from "../../../utils/custom/CustomScholarshiptable"
 
 export const srmusetScholarshipEngineeringTableHeadData: HeadData[] = [
   {
-    head1: "SCHOLARSHIP ",
-    head2: "SET ",
+    head1: "SET PERFORMANCE (%)",
+    head2: "SCHOLARSHIP",
   },
 ];
 
@@ -36,8 +36,8 @@ export const srmusetScholarshipEngineeringTableData: RowData[] = [
 
 export const secondTableHeadData: HeadData[] = [
   {
-    head1: "SCHOLARSHIP",
-    head2: "Scholarship Amount (%)",
+    head1: "SET PERFORMANCE (%)",
+    head2: "SCHOLARSHIP",
   },
 ];
 
@@ -62,8 +62,8 @@ export const secondTableData: RowData[] = [
 
 export const thirdTableHeadData: HeadData[] = [
   {
-    head1: "SCHOLARSHIP",
-    head2: "Scholarship Amount (%)",
+    head1: "SET PERFORMANCE (%)",
+    head2: "SCHOLARSHIP",
   },
 ];
 

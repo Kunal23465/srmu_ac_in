@@ -161,7 +161,7 @@ export const routes = [
           //   })),
           // },
 
-          
+
         ],
       },
 
@@ -338,6 +338,7 @@ export const routes = [
       {
         path: "/program/:programName",
         element: <ProgramDetailsPage />,
+
       },
 
       {
