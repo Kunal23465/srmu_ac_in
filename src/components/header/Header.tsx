@@ -203,10 +203,10 @@ const Header = () => {
                                                       setShowMegaMenu(false);
                                                     }}
                                                     to={`/program/${slugify(prog.programName)}`}
-                                                    state={{
-                                                      programTypeId: type.programFlagId,
-                                                      programId: prog.programId,
-                                                    }}
+                                                    // state={{
+                                                    //   programTypeId: type.programFlagId,
+                                                    //   programId: prog.programId,
+                                                    // }}
                                                     className="text-[15px] px-3 py-2 rounded-md text-[#212529] hover:text-[#ffb703] border border-white hover:border-[#ffb703] block"
                                                   >
                                                     {prog.programName}
@@ -344,9 +344,17 @@ const Header = () => {
                                             <li key={prog.programId}>
                                               <Link
                                                 to={`/program/${slugify(prog.programName)}`}
-                                                state={{ programTypeId: type.programFlagId, programId: prog.programId }}
+                                                // state={{ programTypeId: type.programFlagId, programId: prog.programId }}
+                                                onClick={() => {
+                                                  localStorage.setItem(
+                                                    "programId",
+                                                    prog.programId.toString()
+                                                  );
+                                                  setSideMenu(false)
+                                                }}
+                                                // to={`/program/${slugify(prog.programName)}`}
                                                 className="text-sm px-3 py-2 text-[#212529] hover:text-[#ffb703] block hover:bg-gray-50 rounded"
-                                                onClick={() => setSideMenu(false)}
+                                                // onClick={() => setSideMenu(false)}
                                               >
                                                 {prog.programName}
                                               </Link>
