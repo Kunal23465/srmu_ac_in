@@ -153,8 +153,8 @@ const Header = () => {
                                             </Link>
                                           </h3>
 
-                                          <ul className="mt-2 list-none!">
-                                            {/* CASE 1: programs */}
+                                          {/* <ul className="mt-2 list-none!">
+                                            
                                             {type.programFlagId == 7 &&
                                               type.programs.map((prog) => (
                                                 <li key={prog.programId}>
@@ -169,8 +169,8 @@ const Header = () => {
                                                 </li>
                                               ))}
 
-                                            {/* CASE 2: disciplines */}
-                                            {type.programs.length === 0 &&
+                                            CASE 2: disciplines *
+                                            {
                                               type.disciplines.map((disc) => (
                                                 <li key={disc.disciplineId}>
                                                   <Link
@@ -186,7 +186,45 @@ const Header = () => {
                                                   </Link>
                                                 </li>
                                               ))}
+                                          </ul> */}
+                                          <ul className="mt-2 list-none!">
+                                            {type.programFlagId === 7 ? (
+                                              // CASE 1: programs
+                                              type.programs.map((prog) => (
+                                                <li key={prog.programId}>
+                                                  <Link
+                                                    onClick={() => setShowMegaMenu(false)}
+                                                    to={`/program/${slugify(prog.programName)}`}
+                                                    state={{
+                                                      programTypeId: type.programFlagId,
+                                                      programId: prog.programId,
+                                                    }}
+                                                    className="text-[15px] px-3 py-2 rounded-md text-[#212529] hover:text-[#ffb703] border border-white hover:border-[#ffb703] block"
+                                                  >
+                                                    {prog.programName}
+                                                  </Link>
+                                                </li>
+                                              ))
+                                            ) : (
+                                              // CASE 2: disciplines (for all other ids)
+                                              type.disciplines.map((disc) => (
+                                                <li key={disc.disciplineId}>
+                                                  <Link
+                                                    onClick={() => setShowMegaMenu(false)}
+                                                    to={`/${programFlagSlug}/${slugify(disc.disciplineName)}`}
+                                                    state={{
+                                                      programTypeId: type.programFlagId,
+                                                      disciplineId: disc.disciplineId,
+                                                    }}
+                                                    className="text-[15px] px-3 py-2 rounded-md text-[#212529] hover:text-[#ffb703] border border-white hover:border-[#ffb703] block"
+                                                  >
+                                                    {disc.disciplineName}
+                                                  </Link>
+                                                </li>
+                                              ))
+                                            )}
                                           </ul>
+
                                         </div>
                                       );
                                     })}

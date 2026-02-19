@@ -106,8 +106,8 @@ const ProgramDetails = () => {
           {/* <CustomOverviewSection data={BtechCSEAIandMLOverviewData} /> */}
           <div className={` py-7 md:py-10 lg:py-14`}>
             <div className={`block  lg:flex   gap-4  md:items-stretch   justify-between md:flex-row items-start`}>
-              <div className={`w-auto mb-4 lg:mb-0  ${" border-l-4 pl-2 lg:pl-0 lg:border-l-0  lg:border-r-4"}  border-[#ffb703] flex flex-col justify-center`}>
-                <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] whitespace-pre-line font-semibold leading-11 pr-4 sm:min-w-[350px]">Overview</h2>
+              <div className={`w-auto mb-4 lg:mb-0  ${" border-l-4 pl-2 lg:pl-0 lg:border-l-0  lg:border-r-4"}  border-[#ffb703] flex flex-col justify-start`}>
+                <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] whitespace-pre-line font-semibold leading-11 pr-4 sm:min-w-[350px] mt-5">Overview</h2>
               </div>
               <div
                 className={`text-justify md:line-clamp-none ${expanded ? "line-clamp-none" : "line-clamp-5"}`}
