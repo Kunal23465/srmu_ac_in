@@ -34,7 +34,7 @@ import { HeadData, RowData } from "../../../utils/custom/CustomScholarshiptable"
 
 export const MeritBasedScholarshipUnderGraduateIntegratedTableHeadData: HeadData[] = [
   {
-    head1: "Academic Performance (%) ",
+    head1: "SCHOLARSHIP ",
     head2: "MBS ",
   },
 ];
@@ -68,7 +68,7 @@ export const MeritBasedScholarshipUnderGraduateIntegratedTableData: RowData[] = 
 
 export const MeritBasedScholarshipBTech_Lateral_BArchTableHeadData: HeadData[] = [
   {
-    head1: "Academic Performance (%) ",
+    head1: "SCHOLARSHIP",
     head2: "MBS",
   },
 ];
@@ -98,7 +98,7 @@ export const MeritBasedScholarshipBTech_Lateral_BArchTableData: RowData[] = [
 
 export const MeritBasedScholarshipPostGraduateTableHeadData: HeadData[] = [
   {
-    head1: "Academic Performance (%)",
+    head1: "SCHOLARSHIP",
     head2: "Scholarship Amount %",
   },
 ];
@@ -124,7 +124,7 @@ export const MeritBasedScholarshipPostGraduateTableData: RowData[] = [
 
 export const MeritBasedScholarshipDiplomaDArchTableHeadData: HeadData[] = [
   {
-    head1: "Academic Performance (%)",
+    head1: "SCHOLARSHIP",
     head2: "Scholarship Amount %",
   },
 ];
@@ -150,7 +150,7 @@ export const MeritBasedScholarshipDiplomaDArchTableData: RowData[] = [
 
 export const LLMBasedScholarshipDiplomaDArchTableHeadData: HeadData[] = [
   {
-    head1: "Academic Performance (%)",
+    head1: "SCHOLARSHIP",
     head2: "Scholarship Amount %",
   },
 ];

@@ -34,12 +34,12 @@ const SRMUSET: React.FC = () => {
               <CustomScholarshipTable head={srmusetScholarshipEngineeringTableHeadData} data={srmusetScholarshipEngineeringTableData} />
             </div>
             <div className="py-8 px-4 border border-amber-400 rounded-3xl overflow-auto">
-              <p className="text-[15px] sm:text-[17.82px]  text-center pb-5 uppercase font-bold text-[#212529]">B.Tech Core(Civil/ Mechanical, EC and Electrical) Programmes (Annual Scholarship Amount) </p>
+              <p className="text-[15px] sm:text-[17.82px]  text-center pb-5 uppercase font-bold text-[#212529]">B.Tech Core(Civil/ Mechanical, EC and Electrical) Programmes </p>
               <CustomScholarshipTable head={secondTableHeadData} data={secondTableData} showThirdColumn={false} />
             </div>
             <div className="py-8 px-4 border border-amber-400 rounded-3xl overflow-auto">
               <p className="text-[15px] sm:text-[17.82px]  text-center pb-5 uppercase font-bold text-[#212529]">
-                Polytechnic Programmes (Annual Scholarship Amount)</p>
+                Polytechnic Programmes</p>
               <CustomScholarshipTable head={thirdTableHeadData} data={thirdTableData} showThirdColumn={false} />
             </div>
           </div>

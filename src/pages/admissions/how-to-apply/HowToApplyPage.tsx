@@ -2,7 +2,7 @@ import React from 'react'
 import HowToApply from '../../../components/admissions/how-to-apply/HowToApply'
 import { Helmet } from 'react-helmet-async'
 
-const HowToApplyPage:React.FC = () => {
+const HowToApplyPage: React.FC = () => {
   return (
     <div>
       <Helmet>

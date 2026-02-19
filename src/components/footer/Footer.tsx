@@ -288,7 +288,7 @@ const Footer: React.FC = () => {
                   <img src={instagram} alt="instagram" />
                 </Link>
                 <Link
-                  to=" https://www.linkedin.com/school/shri-ramswaroop-memorial-university/  "
+                  to="https://www.linkedin.com/school/shri-ramswaroop-memorial-university/"
                   target="_blank"
                   className=" flex items-center justify-center transition-all duration-300 hover:border-[#ffb703] hover:bg-transparent hover:text-[#ffb703] cursor-pointer"
                   aria-label="Instagram"

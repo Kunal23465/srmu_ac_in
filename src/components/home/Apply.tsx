@@ -53,7 +53,7 @@ const Apply: React.FC = () => {
 
           <div className="mt-4 sm:mt-8">
             {dynamicAccordionData.map((item) => (
-              <div key={item.id} className={`sm:w-[125%] relative px-6 py-4 ${item.id === active ? "bg-[#eefcff] border border-[#219ebc] rounded-lg" : ""}`}>
+              <div key={item.id} className={`sm:w-[125%] relative px-2 py-2 sm:px-6 sm:py-4 ${item.id === active ? "bg-[#eefcff] border border-[#219ebc] rounded-lg" : ""}`}>
                 <div /* @ts-ignore */
                   onClick={() => setActive((ele) => (ele !== item.id ? item.id : null))}
                   className={`cursor-pointer text-[18px] flex items-center gap-x-2 ${item.id === active ? "text-[#219ebc]" : ""}`}
@@ -64,7 +64,7 @@ const Apply: React.FC = () => {
                   {item.title}
                 </div>
 
-                <div className={`mt-2  overflow-hidden  ease-in-out  ${item.id === active ? "max-h-[1500px]" : "max-h-0"}`}>
+                <div className={`  overflow-hidden  ease-in-out  ${item.id === active ? "max-h-[1500px] mt-2" : "max-h-0"}`}>
                   {item.content}
 
                   {item.id === active && <img src={item.imgSrc} alt="Program visual" className="mt-4 rounded-lg block lg:hidden w-full" />}

@@ -72,6 +72,8 @@ const Header = () => {
     }
   }, [sideMenu]);
 
+
+  console.log("programMenu", programMenu)
   return (
     <div>
       <header className="fixed top-0 left-0 w-full z-[999] transition-all duration-500">
@@ -153,7 +155,7 @@ const Header = () => {
 
                                           <ul className="mt-2 list-none!">
                                             {/* CASE 1: programs */}
-                                            {type.programs.length > 0 &&
+                                            {type.programFlagId == 7 &&
                                               type.programs.map((prog) => (
                                                 <li key={prog.programId}>
                                                   <Link

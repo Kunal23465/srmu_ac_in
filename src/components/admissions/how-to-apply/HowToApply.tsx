@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Classes from "../../../utils/styles/Global.module.css";
 import { HowToApplyTopFooterData, SRMUoffersData } from "../../../data/admissions/how-to-apply/how-to-apply-data";
 import CustomTopFooter from "../../../utils/custom/CustomTopFooter";
@@ -14,6 +14,24 @@ import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 const HowToApply: React.FC = () => {
   const sliderRef = useRef<Slider | null>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [windowWidth, setWindowWidth] = useState(typeof window !== "undefined" ? window.innerWidth : 0);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Function to determine slidesToShow based on window width
+  const getSlidesToShow = () => {
+    if (windowWidth >= 1024) return 3;
+    if (windowWidth >= 600) return 2;
+
+    return 1;
+  };
 
   const totalSlides = SRMUoffersData.length;
 
@@ -21,7 +39,7 @@ const HowToApply: React.FC = () => {
     dots: false,
     infinite: false,
     speed: 600,
-    slidesToShow: 3,
+    slidesToShow: getSlidesToShow(),
     slidesToScroll: 1,
     arrows: false,
     beforeChange: (_: number, next: number) => setCurrentSlide(next),
