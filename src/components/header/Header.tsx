@@ -194,7 +194,13 @@ const Header = () => {
                                                 <li key={prog.programId}>
                                                   <Link
                                                     // onClick={() => setShowMegaMenu(false)}
+                                                    onMouseDown={() => {
+                                                      localStorage.setItem(
+                                                        "programId",
+                                                        prog.programId.toString()
+                                                      );
 
+                                                    }}
                                                     onClick={() => {
                                                       localStorage.setItem(
                                                         "programId",
@@ -350,7 +356,7 @@ const Header = () => {
                                                     "programId",
                                                     prog.programId.toString()
                                                   );
-                                                  setSideMenu(false)
+
                                                 }}
                                                 onClick={() => {
                                                   localStorage.setItem(
