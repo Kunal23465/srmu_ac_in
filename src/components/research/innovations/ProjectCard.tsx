@@ -13,56 +13,65 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   title,
   description,
   image,
-  fullDescription,
+  fullDescription = "",
   reversed,
 }) => {
   const [showMore, setShowMore] = useState(false);
-  const contentRef = useRef<HTMLDivElement>(null);
-  const [maxHeight, setMaxHeight] = useState("0px");
+  const [isMobile, setIsMobile] = useState(false);
 
+  // Detect screen size
   useEffect(() => {
-    if (showMore && contentRef.current) {
-      setMaxHeight(contentRef.current.scrollHeight + "px");
-    } else {
-      setMaxHeight("0px");
-    }
-  }, [showMore]);
+    const checkScreen = () => {
+      setIsMobile(window.innerWidth < 768); // md breakpoint
+    };
+
+    checkScreen();
+    window.addEventListener("resize", checkScreen);
+    return () => window.removeEventListener("resize", checkScreen);
+  }, []);
+
+  // Word limit based on device
+  const wordLimit = isMobile ? 50 : 100;
+
+  const words = fullDescription.split(" ");
+  const limitedText =
+    words.length > wordLimit
+      ? words.slice(0, wordLimit).join(" ") + "..."
+      : fullDescription;
 
   return (
     <div
       className={`bg-white hover:bg-[#fff9eb] rounded-2xl shadow-md p-6 flex flex-col md:flex-row gap-6 items-start border border-gray-200 hover:border-[#ffb703]
-    ${reversed ? "md:flex-row-reverse" : ""}`}
+      ${reversed ? "md:flex-row-reverse" : ""}`}
     >
       {/* Image */}
       <div className="w-full md:w-1/3">
-        <img src={image} alt={title} className="w-full h-56 object-cover rounded-xl" />
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-56 object-cover rounded-xl"
+        />
       </div>
 
       {/* Text */}
       <div className="w-full md:w-2/3">
-        <h3 className="lg:text-[26px] md:text-[24.375px] sm:text-[22.75px] text-[22.75px] fw500 text-gray-800 mb-2">{title}</h3>
+        <h3 className="text-[18px] sm:text-[24px]   fw500 text-gray-800 mb-2">
+          {title}
+        </h3>
 
-        <p className="text-gray-600 lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px] leading-relaxed mb-4">{description}</p>
+        <p className="text-gray-600 leading-relaxed mb-4">
+          {showMore ? fullDescription : limitedText}
+        </p>
 
-        {/* ---- Shutter Wrapper ---- */}
-        <div
-          className="overflow-hidden transition-all duration-500"
-          style={{ maxHeight }}
-        >
-          <div ref={contentRef}>
-            <p className="text-gray-600  leading-relaxed mb-4">
-              {fullDescription}
-            </p>
-          </div>
-        </div>
-
-        {/* Read More / Read Less Toggle */}
-        <button
-          onClick={() => setShowMore(!showMore)}
-          className="text-[#0f4a85] flex gap-1 items-center font-semibold mt-2 transition-colors cursor-pointer"
-        >
-          {showMore ? "READ LESS" : "READ MORE"} <LuArrowRight className="text-lg" />
-        </button>
+        {words.length > wordLimit && (
+          <button
+            onClick={() => setShowMore(!showMore)}
+            className="text-[#0f4a85] flex gap-1 items-center font-semibold mt-2 transition-colors cursor-pointer"
+          >
+            {showMore ? "READ LESS" : "READ MORE"}
+            <LuArrowRight className="text-lg" />
+          </button>
+        )}
       </div>
     </div>
   );

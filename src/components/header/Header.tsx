@@ -345,6 +345,13 @@ const Header = () => {
                                               <Link
                                                 to={`/program/${slugify(prog.programName)}`}
                                                 // state={{ programTypeId: type.programFlagId, programId: prog.programId }}
+                                                onMouseDown={() => {
+                                                  localStorage.setItem(
+                                                    "programId",
+                                                    prog.programId.toString()
+                                                  );
+                                                  setSideMenu(false)
+                                                }}
                                                 onClick={() => {
                                                   localStorage.setItem(
                                                     "programId",
@@ -354,7 +361,7 @@ const Header = () => {
                                                 }}
                                                 // to={`/program/${slugify(prog.programName)}`}
                                                 className="text-sm px-3 py-2 text-[#212529] hover:text-[#ffb703] block hover:bg-gray-50 rounded"
-                                                // onClick={() => setSideMenu(false)}
+                                              // onClick={() => setSideMenu(false)}
                                               >
                                                 {prog.programName}
                                               </Link>

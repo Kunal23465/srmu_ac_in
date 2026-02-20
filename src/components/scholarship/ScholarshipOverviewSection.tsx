@@ -66,9 +66,9 @@ const CustomOverviewSection: React.FC<CustomOverviewSectionProps> = ({ data }) =
 
                                     {/* List Content */}
                                     {ele.listContent && (
-                                        <ul className="list-disc ml-5 space-y-4 text-gray-800" >
+                                        <ul className="text-sm sm:text-base list-disc ml-5 space-y-2 sm:space-y-4 text-gray-800" >
                                             {ele.listContent.map((item, i) => (
-                                                <li key={i} className="mt-1">
+                                                <li key={i} className="sm:mt-1">
                                                     {item.boldItem && <span className="font-semibold">{item.boldItem}</span>}{" "}
                                                     {item.item}
                                                 </li>
