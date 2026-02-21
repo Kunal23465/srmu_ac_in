@@ -1,4 +1,4 @@
-import { opportunityCardDataAIML } from "../../../data/programs/btechincseai-ml-data/btechincseai-ml-data";
+import { opportunityCardDataAIML, partnerDataforAIandML } from "../../../data/programs/btechincseai-ml-data/btechincseai-ml-data";
 import Counter from "../../../utils/custom/Counter";
 import Classes from "../../../utils/styles/Global.module.css";
 import CustomDepartmentSlider from "../../../utils/custom/CustomDepartmentSlider";
@@ -26,6 +26,7 @@ import { fetchProgramHeighlightById } from "../../../store/program-finder/progra
 import { Helmet } from "react-helmet-async";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { fetchRecruiterById } from "../../../store/recruiter/recruiterThunk";
+import PartnerLogos from "./PartnerLogos";
 
 // type dataByID=any[]
 interface PropsTypes {
@@ -191,20 +192,18 @@ const ProgramDetails: React.FC<PropsTypes> = ({ programId }) => {
           {!isPhd && (
             <div className={`${Classes["container"]}`}>
               {/* recruiterData */}
-              {/* <PartnerLogos data={partnerDataforAIandML} /> */}
+              <PartnerLogos data={partnerDataforAIandML} />
 
               <div className="grid w-full grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-5 sm:gap:15 lg:gap-30 place-items-start">
-                {recruiterData
+                {/* {recruiterData
                   .filter((ele) => ele.featured)
                   .map((item, index) => (
                     <div key={index} className="flex border w-full md:border-none border-[#ccc] py-2 px-3 sm:p-0 flex-col items-start gap-5">
                       <img src={item.imagePath} alt={item.title} className=" w-[105px] sm:w-[170px] md:w-[210px] object-contain" />
-                      {/* <p className="text-base sm:text-lg fw600 text-center">
-                        {item.title}
-                      </p> */}
+                     
                       <div className="[&_p]:font-semibold md:[&_p]:text-lg [&_p]:text-left" dangerouslySetInnerHTML={{ __html: item.brief }} />
                     </div>
-                  ))}
+                  ))} */}
                 {/* {data.map((item, index) => (
                   <div key={index} className="flex border w-full md:border-none border-[#ccc] py-2 px-3 sm:p-0 flex-col items-center gap-5">
                     <img
