@@ -1,4 +1,4 @@
-import { opportunityCardDataAIML, } from "../../../data/programs/btechincseai-ml-data/btechincseai-ml-data";
+import { opportunityCardDataAIML } from "../../../data/programs/btechincseai-ml-data/btechincseai-ml-data";
 import Counter from "../../../utils/custom/Counter";
 import Classes from "../../../utils/styles/Global.module.css";
 import CustomDepartmentSlider from "../../../utils/custom/CustomDepartmentSlider";
@@ -32,14 +32,13 @@ interface PropsTypes {
   programId: number;
 }
 const ProgramDetails: React.FC<PropsTypes> = ({ programId }) => {
-  const getIdLocalId = useSelector((state: RootState) => state.programId);
   const dispatch = useDispatch<AppDispatch>();
   const [isPhd, setIsPhd] = useState(false);
   const [expanded, setExpanded] = useState(false);
 
   // @ts-ignore
   const { dataByID, loading, error } = useSelector((state: RootState) => state.getProgramFinder);
-  const { data: departmentHeghlightData } = useSelector((state: RootState) => state.getDepartmentHeighlightById);
+  const { data: departmentHeghlightData, loading: departmentHeghlightLoading } = useSelector((state: RootState) => state.getDepartmentHeighlightById);
   const { data: feesData } = useSelector((state: RootState) => state.programFees);
   const { data: whySrmuData } = useSelector((state: RootState) => state.getWhySrmuSection);
   const { data: counterData } = useSelector((state: RootState) => state.getCounterById);
@@ -53,7 +52,7 @@ const ProgramDetails: React.FC<PropsTypes> = ({ programId }) => {
     // @ts-ignore
     dispatch(getCounterById(programId || undefined));
     // @ts-ignore
-    dispatch(fetchProgramHeighlightById(programId || undefined))
+    dispatch(fetchProgramHeighlightById(programId || undefined));
     dispatch(fetchRecruiterById({ programId: programId || undefined }));
     if (programId == 81) {
       setIsPhd(true);
@@ -84,10 +83,7 @@ const ProgramDetails: React.FC<PropsTypes> = ({ programId }) => {
     };
   });
 
-
   // program heighlight
-
-
 
   // sector logo
   // @ts-ignore
@@ -129,14 +125,10 @@ const ProgramDetails: React.FC<PropsTypes> = ({ programId }) => {
     };
   };
 
-
-
-
-
-  console.log("getIdLocalId", getIdLocalId)
+  console.log("departmentHeghlightData", departmentHeghlightData);
 
   if (recruiterLoading) {
-    return <p>loading....</p>
+    return <p>loading....</p>;
   }
 
   return (
@@ -148,7 +140,6 @@ const ProgramDetails: React.FC<PropsTypes> = ({ programId }) => {
         <meta name="description" content={dataByID?.metaDescription ?? ""} />
       </Helmet>
       <div className="mt-20 ">
-
         <div className={`${Classes["container"]} relative`}>
           <Link
             target="_blank"
@@ -168,18 +159,15 @@ const ProgramDetails: React.FC<PropsTypes> = ({ programId }) => {
               <div className={`w-auto mb-4 lg:mb-0  ${" border-l-4 pl-2 lg:pl-0 lg:border-l-0  lg:border-r-4"}  border-[#ffb703] flex flex-col justify-start`}>
                 <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] whitespace-pre-line font-semibold leading-11 pr-4 sm:min-w-[350px] mt-5">Overview</h2>
               </div>
-              <div
-                className={`text-justify md:line-clamp-none ${expanded ? "line-clamp-none" : "line-clamp-5"}`}
-              >
-                {/* @ts-ignore */}
-                <div className="text-justify [&_p]:mb-3! [&_strong]:text-[16px]! [&_strong]:mb-3! lg:text-[16px] md:text-[15px] text-[14px] [&_ul]:ml-4!">{typeof dataByID?.overview === "string" ? <div dangerouslySetInnerHTML={{ __html: dataByID?.overview }} /> : dataByID?.overview}</div>
+              <div className={`text-justify md:line-clamp-none ${expanded ? "line-clamp-none" : "line-clamp-5"}`}>
+                <div className="text-justify [&_p]:mb-3! [&_strong]:text-[16px]! [&_strong]:mb-3! lg:text-[16px] md:text-[15px] text-[14px] [&_ul]:ml-4!">
+                  {/* @ts-ignore */}
+                  {typeof dataByID?.overview === "string" ? <div dangerouslySetInnerHTML={{ __html: dataByID?.overview }} /> : dataByID?.overview}
+                </div>
               </div>
 
               {/* Read more / less — ONLY below md */}
-              <button
-                onClick={() => setExpanded(!expanded)}
-                className=" text-[#0f4a85] font-medium md:hidden underline"
-              >
+              <button onClick={() => setExpanded(!expanded)} className=" text-[#0f4a85] font-medium md:hidden underline">
                 {expanded ? "Read less" : "Read more"}
               </button>
             </div>
@@ -206,22 +194,17 @@ const ProgramDetails: React.FC<PropsTypes> = ({ programId }) => {
               {/* <PartnerLogos data={partnerDataforAIandML} /> */}
 
               <div className="grid w-full grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-5 sm:gap:15 lg:gap-30 place-items-start">
-
-                {
-                  recruiterData.filter((ele) => ele.featured).map((item, index) => (
+                {recruiterData
+                  .filter((ele) => ele.featured)
+                  .map((item, index) => (
                     <div key={index} className="flex border w-full md:border-none border-[#ccc] py-2 px-3 sm:p-0 flex-col items-start gap-5">
-                      <img
-                        src={item.imagePath}
-                        alt={item.title}
-                        className=" w-[105px] sm:w-[170px] md:w-[210px] object-contain"
-                      />
+                      <img src={item.imagePath} alt={item.title} className=" w-[105px] sm:w-[170px] md:w-[210px] object-contain" />
                       {/* <p className="text-base sm:text-lg fw600 text-center">
                         {item.title}
                       </p> */}
                       <div className="[&_p]:font-semibold md:[&_p]:text-lg [&_p]:text-left" dangerouslySetInnerHTML={{ __html: item.brief }} />
                     </div>
-                  ))
-                }
+                  ))}
                 {/* {data.map((item, index) => (
                   <div key={index} className="flex border w-full md:border-none border-[#ccc] py-2 px-3 sm:p-0 flex-col items-center gap-5">
                     <img
@@ -249,12 +232,19 @@ const ProgramDetails: React.FC<PropsTypes> = ({ programId }) => {
             <CustomProgramScholarshipSchemeCard />
           </div>
         )}
-        {!isPhd && (
-          <div className="my-10 ">
-            <div className={`${Classes["container"]}`}>
-              <CustomDepartmentHighlights heading="Department Highlights" steps={departmentHeghlightData} />
-            </div>
-          </div>
+
+        {departmentHeghlightLoading ? (
+          <p>Loading.....</p>
+        ) : (
+          <>
+            {!isPhd && (
+              <div className="my-10 ">
+                <div className={`${Classes["container"]}`}>
+                  <CustomDepartmentHighlights heading="Department Highlights" steps={departmentHeghlightData} />
+                </div>
+              </div>
+            )}
+          </>
         )}
 
         {
@@ -280,7 +270,6 @@ const ProgramDetails: React.FC<PropsTypes> = ({ programId }) => {
         <CustomTopFooter data={CustomTopFooterData1} />
       </div>
     </>
-
   );
 };
 
