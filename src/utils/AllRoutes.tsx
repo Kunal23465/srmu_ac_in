@@ -96,8 +96,10 @@ import TermsAndConditionPage from "../pages/terms-condition/TermsAndConditionPag
 import MandatoryDisclouserPage from "../pages/mandatory-disclouser/MandatoryDisclouserPage";
 import PhdOfflineApplicationPage from "../pages/Research/phd-offline-application/PhdOfflineApplicationPage";
 import AddmissionProgramFinderPage from "../pages/admissions/program-finder/AddmissionProgramFinderPage";
-import ProgramFinderPage from "../pages/programs/ProgramFinderPage";
+// import ProgramFinderPage from "../pages/programs/ProgramFinderPage";
 import ProgramTypePage from "../pages/programs/ProgramTypePage/ProgramTypePage";
+import PageNotFound from "../pages/PageNotFound";
+import ProgramTypeItemPage from "../pages/ProgramTypeItemPage";
 // interface IMatches {
 //   pathname: string;
 //   params: Params<string>;
@@ -333,7 +335,7 @@ export const routes = [
       },
       {
         path: "/:programType/:item",
-        element: <ProgramFinderPage />,
+        element: <ProgramTypeItemPage />,
       },
       {
         path: "/program/:programName",
@@ -564,6 +566,12 @@ export const routes = [
         path: "/terms-conditions",
         element: <TermsAndConditionPage />,
       },
+
     ],
+
+  },
+  {
+    path: "/*",
+    element: <PageNotFound />,
   },
 ];
