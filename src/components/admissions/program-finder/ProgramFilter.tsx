@@ -138,11 +138,15 @@ const ProgramFilter: React.FC<PropsTypes> = ({
                 return (
                   <div className="border border-gray-300 px-3 py-4 sm:p-8 mb-4 rounded-md flex flex-col lg:flex-row gap-4 lg:justify-between items-center">
                     <div className="flex flex-col md:flex-row gap-2 w-full justify-between lg:w-[70%]">
-                      <Link state={{
-                        programId: course.programId,
-                        // programDisciplineId: course.programDisciplineId,
-                        // name: course.name,
+                      <Link onMouseDown={() => {
+                        console.log("=======down", course.programId.toString())
+                        localStorage.setItem("programId", course.programId.toString());
                       }}
+                        onClick={() => {
+                          console.log("=======click", course.programId.toString())
+                          localStorage.setItem("programId", course.programId.toString());
+                        }}
+
                         to={`/program/${slugify(programName)}`} className=" text-[#0f4a85] lg:text-[20px] md:text-[18.75px] sm:text-[17.5px] text-[17.5px] fw500  lg:w-[60%]">{course.name}</Link>
                       <p className="lg:text-[18px] text-[15.75px] md:text-[16.875px] sm:text-[15.75px] lg:w-[20%]">{course.totalDurationYear}</p>
                       <p className="text-sm lg:text-base lg:w-[20%]">Rs. {course.totalFees}/-</p>
