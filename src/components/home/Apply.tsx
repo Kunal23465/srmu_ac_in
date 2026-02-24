@@ -31,7 +31,7 @@ const Apply: React.FC = () => {
     content: (
       <>
         <p className="text-[#333] font-normal">{getShortText(item.brief, 22)}</p>
-        <Link to={`/programs/${slugify(item.name)}`} state={{ programTypeId: item.programFlagId }} className="text-[#ffb703] font-medium">
+        <Link to={`/${slugify(item.name)}`} state={{ programTypeId: item.programFlagId }} className="text-[#ffb703] font-medium">
           Read More
         </Link>
       </>
