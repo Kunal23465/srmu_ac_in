@@ -26,7 +26,8 @@ import { fetchProgramHeighlightById } from "../../../store/program-finder/progra
 import { Helmet } from "react-helmet-async";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { fetchRecruiterById } from "../../../store/recruiter/recruiterThunk";
-import PartnerLogos from "./PartnerLogos";
+// import PartnerLogos from "./PartnerLogos";
+import { fetchWhySrmuLogoById } from "../../../store/why-srmu/whySrmuLogoThunk";
 
 // type dataByID=any[]
 interface PropsTypes {
@@ -44,6 +45,7 @@ const ProgramDetails: React.FC<PropsTypes> = ({ programId }) => {
   const { data: whySrmuData } = useSelector((state: RootState) => state.getWhySrmuSection);
   const { data: counterData } = useSelector((state: RootState) => state.getCounterById);
   const { data: recruiterData, loading: recruiterLoading } = useSelector((state: RootState) => state.getRecruiter);
+  const { data: whySrmuLogo } = useSelector((state: RootState) => state.whySrmuLogoById);
   useEffect(() => {
     dispatch(fetchWhySrmuSectionById({ programId: programId || undefined }));
     // @ts-ignore
@@ -55,6 +57,7 @@ const ProgramDetails: React.FC<PropsTypes> = ({ programId }) => {
     // @ts-ignore
     dispatch(fetchProgramHeighlightById(programId || undefined));
     dispatch(fetchRecruiterById({ programId: programId || undefined }));
+    dispatch(fetchWhySrmuLogoById({ programId: programId || undefined }));
     if (programId == 81) {
       setIsPhd(true);
     } else {
@@ -126,7 +129,7 @@ const ProgramDetails: React.FC<PropsTypes> = ({ programId }) => {
     };
   };
 
-  console.log("departmentHeghlightData", departmentHeghlightData);
+  console.log("whySrmuLogo", whySrmuLogo);
 
   if (recruiterLoading) {
     return <p>loading....</p>;
@@ -192,7 +195,7 @@ const ProgramDetails: React.FC<PropsTypes> = ({ programId }) => {
           {!isPhd && (
             <div className={`${Classes["container"]}`}>
               {/* recruiterData */}
-              <PartnerLogos data={partnerDataforAIandML} />
+              {/* <PartnerLogos data={partnerDataforAIandML} /> */}
 
               <div className="grid w-full grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-5 sm:gap:15 lg:gap-30 place-items-start">
                 {/* {recruiterData
@@ -204,15 +207,44 @@ const ProgramDetails: React.FC<PropsTypes> = ({ programId }) => {
                       <div className="[&_p]:font-semibold md:[&_p]:text-lg [&_p]:text-left" dangerouslySetInnerHTML={{ __html: item.brief }} />
                     </div>
                   ))} */}
-                {/* {data.map((item, index) => (
+                {
+                  whySrmuLogo.length > 0 ? (<> {
+                    whySrmuLogo.map((item, index) => (
+                      <div key={index} className="flex border w-full md:border-none border-[#ccc] py-2 px-3 sm:p-0 flex-col items-center gap-5">
+                        <img
+                          src={item.image}
+                          alt={item.name}
+                          className=" w-[105px] sm:w-[170px] md:w-[210px] object-contain"
+                        />
+                        <p className="text-base sm:text-lg fw600 text-center">
+                          {item.name}
+                        </p>
+                      </div>
+                    ))
+                  }</>) : (<> {
+                    partnerDataforAIandML.map((item, index) => (
+                      <div key={index} className="flex border w-full md:border-none border-[#ccc] py-2 px-3 sm:p-0 flex-col items-center gap-5">
+                        <img
+                          src={item.img}
+                          alt={item.title}
+                          className=" w-[105px] sm:w-[170px] md:w-[210px] object-contain"
+                        />
+                        <p className="text-base sm:text-lg fw600 text-center">
+                          {item.title}
+                        </p>
+                      </div>
+                    ))
+                  }</>)
+                }
+                {/* {whySrmuLogo.map((item, index) => (
                   <div key={index} className="flex border w-full md:border-none border-[#ccc] py-2 px-3 sm:p-0 flex-col items-center gap-5">
                     <img
-                      src={item.img}
-                      alt={item.title}
+                      src={item.image}
+                      alt={item.name}
                       className=" w-[105px] sm:w-[170px] md:w-[210px] object-contain"
                     />
                     <p className="text-base sm:text-lg fw600 text-center">
-                      {item.title}
+                      {item.name}
                     </p>
                   </div>
                 ))} */}
