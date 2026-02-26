@@ -308,26 +308,6 @@ export const routes = [
         ],
       },
 
-      // {
-      //   path: "/program",
-      //   element: <RootPrograms />,
-      //   children: [
-      //     {
-      //       path: ":programType/",
-      //       element: <ProgramFinderPage />,
-      //     },
-      //     {
-      //       path: ":programType/:item",
-      //       element: <ProgramFinderPage />,
-      //     },
-      //     {
-      //       path: "details/:programName",
-      //       element: <ProgramDetailsPage />,
-      //     },
-
-      //   ],
-      // },
-
       {
         path: "/:programType",
         // element: <ProgramFinderPage />,

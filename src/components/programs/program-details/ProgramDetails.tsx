@@ -28,18 +28,13 @@ import { FaArrowRightLong } from "react-icons/fa6";
 import { fetchRecruiterById } from "../../../store/recruiter/recruiterThunk";
 // import PartnerLogos from "./PartnerLogos";
 import { fetchWhySrmuLogoById } from "../../../store/why-srmu/whySrmuLogoThunk";
-
-// type dataByID=any[]
-interface PropsTypes {
-  programId: number;
-}
-const ProgramDetails: React.FC<PropsTypes> = ({ programId }) => {
+const ProgramDetails: React.FC = () => {
+  const programId: any = localStorage.getItem("programId");
   const dispatch = useDispatch<AppDispatch>();
   const [isPhd, setIsPhd] = useState(false);
   const [expanded, setExpanded] = useState(false);
-
-  // @ts-ignore
-  const { dataByID, loading, error } = useSelector((state: RootState) => state.getProgramFinder);
+  console.log(programId, "programId in detail page")
+  const { dataByID } = useSelector((state: RootState) => state.getProgramFinder);
   const { data: departmentHeghlightData, loading: departmentHeghlightLoading } = useSelector((state: RootState) => state.getDepartmentHeighlightById);
   const { data: feesData } = useSelector((state: RootState) => state.programFees);
   const { data: whySrmuData } = useSelector((state: RootState) => state.getWhySrmuSection);
@@ -47,23 +42,20 @@ const ProgramDetails: React.FC<PropsTypes> = ({ programId }) => {
   const { data: recruiterData, loading: recruiterLoading } = useSelector((state: RootState) => state.getRecruiter);
   const { data: whySrmuLogo } = useSelector((state: RootState) => state.whySrmuLogoById);
   useEffect(() => {
-    dispatch(fetchWhySrmuSectionById({ programId: programId || undefined }));
-    // @ts-ignore
-    dispatch(fetchProgramFinderByID(programId || undefined));
-    // @ts-ignore
-    dispatch(fetchProgramFeesByProgramId(programId || undefined));
-    // @ts-ignore
-    dispatch(getCounterById(programId || undefined));
-    // @ts-ignore
-    dispatch(fetchProgramHeighlightById(programId || undefined));
-    dispatch(fetchRecruiterById({ programId: programId || undefined }));
-    dispatch(fetchWhySrmuLogoById({ programId: programId || undefined }));
+    if (programId !== null) {
+      dispatch(fetchWhySrmuSectionById({ programId: programId}));
+      dispatch(fetchProgramFinderByID(programId));
+      dispatch(fetchProgramFeesByProgramId(programId));
+      dispatch(getCounterById(programId));
+      dispatch(fetchProgramHeighlightById(programId));
+      dispatch(fetchRecruiterById({ programId: programId}));
+      dispatch(fetchWhySrmuLogoById({ programId: programId}));
+    }
     if (programId == 81) {
       setIsPhd(true);
     } else {
       setIsPhd(false);
     }
-    // getCounterById;
   }, [dispatch, programId]);
 
   // counter data key change
