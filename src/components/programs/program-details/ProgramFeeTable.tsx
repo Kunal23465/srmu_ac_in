@@ -78,10 +78,10 @@ const ProgramFeeTable: React.FC<Props> = ({ data }) => {
                 ))}
               </tr>
             ))}
-            {/* <tr>
+            <tr>
               <td colSpan={5}>
                 {notes.length > 0 && (
-                  <div className="mt-6 bg-white p-8 rounded-lg">
+                  <div className="mt-4 bg-white p-8 rounded-lg">
                     {notes.map((note, i) => (
                       <p
                         key={i}
@@ -92,7 +92,7 @@ const ProgramFeeTable: React.FC<Props> = ({ data }) => {
                   </div>
                 )}
               </td>
-            </tr> */}
+            </tr>
           </tbody>
           {/* Notes */}
 
