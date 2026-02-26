@@ -31,7 +31,7 @@ const Notice: React.FC = () => {
     <div>
       <div className={`${Classes["container"]}`}>
         <CustomOverviewSection data={NoticeOverviewData} />
-        <div className="bg-slate-100 my-25 py-16 px-12 rounded-xl">
+        <div className="bg-slate-100 mb-15 py-16 px-12 rounded-xl">
           {data.map((item) => (
             <div key={item.noticeId} className="">
               <a href={item.imagePath} target="_blank">
