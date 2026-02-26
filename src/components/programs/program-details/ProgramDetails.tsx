@@ -33,7 +33,9 @@ const ProgramDetails: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
   const [isPhd, setIsPhd] = useState(false);
   const [expanded, setExpanded] = useState(false);
-  console.log(programId, "programId in detail page")
+
+  const { programId: baseProgramId } = useSelector((state: RootState) => state.programId)
+  console.log(baseProgramId, "programId in detail page")
   const { dataByID } = useSelector((state: RootState) => state.getProgramFinder);
   const { data: departmentHeghlightData, loading: departmentHeghlightLoading } = useSelector((state: RootState) => state.getDepartmentHeighlightById);
   const { data: feesData } = useSelector((state: RootState) => state.programFees);
@@ -43,19 +45,20 @@ const ProgramDetails: React.FC = () => {
   const { data: whySrmuLogo } = useSelector((state: RootState) => state.whySrmuLogoById);
   useEffect(() => {
     if (programId !== null) {
-      dispatch(fetchWhySrmuSectionById({ programId: programId}));
+      dispatch(fetchWhySrmuSectionById({ programId: programId }));
       dispatch(fetchProgramFinderByID(programId));
       dispatch(fetchProgramFeesByProgramId(programId));
       dispatch(getCounterById(programId));
       dispatch(fetchProgramHeighlightById(programId));
-      dispatch(fetchRecruiterById({ programId: programId}));
-      dispatch(fetchWhySrmuLogoById({ programId: programId}));
+      dispatch(fetchRecruiterById({ programId: programId }));
+      dispatch(fetchWhySrmuLogoById({ programId: programId }));
     }
     if (programId == 81) {
       setIsPhd(true);
     } else {
       setIsPhd(false);
     }
+
   }, [dispatch, programId]);
 
   // counter data key change

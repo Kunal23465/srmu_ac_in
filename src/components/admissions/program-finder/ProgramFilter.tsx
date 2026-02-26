@@ -5,8 +5,9 @@ import { Link } from "react-router-dom";
 import { ProgramData } from "../../../store/program-finder/programFinder-slice";
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 import { GoSearch } from "react-icons/go";
-import { RootState } from "../../../store";
-import { useSelector } from "react-redux";
+import { AppDispatch, RootState } from "../../../store";
+import { useDispatch, useSelector } from "react-redux";
+import { setProgramId } from "../../../store/program-finder/program/programSlice";
 
 interface PropsTypes {
   data: ProgramData[];
@@ -33,7 +34,7 @@ const ProgramFilter: React.FC<PropsTypes> = ({
   onDisciplineChange,
   isTypeFlag,
 }) => {
-
+  const dispatch = useDispatch<AppDispatch>();
   const [visibleCount, setVisibleCount] = useState(5);
   const visibleCourses = data.slice(0, visibleCount);
   const { loading } = useSelector((state: RootState) => state.getProgramFinder);
@@ -140,11 +141,12 @@ const ProgramFilter: React.FC<PropsTypes> = ({
                     <div className="flex flex-col md:flex-row gap-2 w-full justify-between lg:w-[70%]">
                       <Link onMouseDown={() => {
                         console.log("=======down", course.programId.toString())
-                        localStorage.setItem("programId", course.programId.toString());
+                        dispatch(setProgramId(course.programId.toString()))
+
                       }}
                         onClick={() => {
                           console.log("=======click", course.programId.toString())
-                          localStorage.setItem("programId", course.programId.toString());
+                          dispatch(setProgramId(course.programId.toString()))
                         }}
 
                         to={`/program/${slugify(programName)}`} className=" text-[#0f4a85] lg:text-[20px] md:text-[18.75px] sm:text-[17.5px] text-[17.5px] fw500  lg:w-[60%]">{course.name}</Link>
@@ -157,11 +159,11 @@ const ProgramFilter: React.FC<PropsTypes> = ({
 
                         onMouseDown={() => {
                           console.log("=======down", course.programId.toString())
-                          localStorage.setItem("programId", course.programId.toString());
+                          dispatch(setProgramId(course.programId.toString()))
                         }}
                         onClick={() => {
                           console.log("=======click", course.programId.toString())
-                          localStorage.setItem("programId", course.programId.toString());
+                          dispatch(setProgramId(course.programId.toString()))
                         }}
 
                         // state={{

@@ -11,6 +11,7 @@ import { AppDispatch, RootState } from "../../store";
 import { fetchProgramMenu, NavbarProgramType } from "../../store/header/programMenuThunk";
 import { useDispatch, useSelector } from "react-redux";
 import logo from "../../assets/images/logo.svg";
+import { setProgramId } from "../../store/program-finder/program/programSlice";
 
 const Header = () => {
   const location = useLocation();
@@ -195,17 +196,19 @@ const Header = () => {
                                                   <Link
                                                     // onClick={() => setShowMegaMenu(false)}
                                                     onMouseDown={() => {
-                                                      localStorage.setItem(
-                                                        "programId",
-                                                        prog.programId.toString()
-                                                      );
+                                                      dispatch(setProgramId(prog.programId.toString()))
+                                                      // localStorage.setItem(
+                                                      //   "programId",
+                                                      //   prog.programId.toString()
+                                                      // );
 
                                                     }}
                                                     onClick={() => {
-                                                      localStorage.setItem(
-                                                        "programId",
-                                                        prog.programId.toString()
-                                                      );
+                                                      // localStorage.setItem(
+                                                      //   "programId",
+                                                      //   prog.programId.toString()
+                                                      // );
+                                                      dispatch(setProgramId(prog.programId.toString()))
                                                       setShowMegaMenu(false);
                                                     }}
                                                     to={`/program/${slugify(prog.programName)}`}
@@ -352,17 +355,19 @@ const Header = () => {
                                                 to={`/program/${slugify(prog.programName)}`}
                                                 // state={{ programTypeId: type.programFlagId, programId: prog.programId }}
                                                 onMouseDown={() => {
-                                                  localStorage.setItem(
-                                                    "programId",
-                                                    prog.programId.toString()
-                                                  );
+                                                  dispatch(setProgramId(prog.programId.toString()))
+                                                  // localStorage.setItem(
+                                                  //   "programId",
+                                                  //   prog.programId.toString()
+                                                  // );
 
                                                 }}
                                                 onClick={() => {
-                                                  localStorage.setItem(
-                                                    "programId",
-                                                    prog.programId.toString()
-                                                  );
+                                                  
+                                                  // localStorage.setItem(
+                                                  //   "programId",
+                                                  //   prog.programId.toString()
+                                                  // );
                                                   setSideMenu(false)
                                                 }}
                                                 // to={`/program/${slugify(prog.programName)}`}
