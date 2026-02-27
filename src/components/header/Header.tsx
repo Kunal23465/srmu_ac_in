@@ -77,7 +77,7 @@ const Header = () => {
 
   return (
     <div>
-      <header className="fixed top-0 left-0 w-full z-[999] transition-all duration-500">
+      <header className="fixed top-0 left-0 w-full z-999 transition-all duration-500">
         <TopHeader />
 
         <div className={`py-2 items-stretch header ${isActive ? "bg-[#14284e] active" : ""}`}>
@@ -297,7 +297,7 @@ const Header = () => {
                     {(data.subItem || isMega) && (
                       <button
                         onClick={() => setSubMenu(subMenu === data.id ? null : data.id)}
-                        className="border-[1px] border-[#0000002e] px-[2px] py-[3px]"
+                        className="border border-[#0000002e] px-0.5 py-[3px]"
                       >
                         <MdOutlineKeyboardArrowDown
                           size={25}

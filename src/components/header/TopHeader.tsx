@@ -39,14 +39,14 @@ const TopHeader: React.FC = () => {
           <div className="right-part flex gap-3 items-center">
             <div className="flex gap-2 items-center">
               <div className="flex text-black items-center">
-                <div className="flex items-center text-[13.74px] text-white gap-x-2 pr-2 border-r border-white">
+                <Link target="_blank" to="https://eyojan.srmu.ac.in/" className="flex items-center text-[13.74px] text-white gap-x-2 pr-2 border-r border-white">
                   <img src={user} alt="user" />
                   Student Login
-                </div>
-                <div className="flex text-[13.74px] items-center text-white gap-x-5 pl-2 mr-3">
+                </Link>
+                <Link target="_blank" to="https://eyojan.srmu.ac.in/" className="flex text-[13.74px] items-center text-white gap-x-5 pl-2 mr-3">
                   Staff Login
                   <img src={search} alt="user" />
-                </div>
+                </Link>
                 <button className="bg-white flex items-center px-2 py-2 gap-2 ">
                   <a href="tel:18001026004" className="text-[#FFB703]  ">
                     <IoCallSharp className="text-[1.5rem]" />
@@ -92,7 +92,7 @@ const TopHeader: React.FC = () => {
             <div className="relative">
               <button onClick={() => setIsDropdown(prev => !prev)} className="text-black text-lg font-semibold flex items-center gap-x-1 cursor-pointer">Login  {isDropdown ? <FaCaretUp /> : <FaCaretDown />} </button>
               {isDropdown && <div className="bg-white absolute -bottom-[70px] border border-gray-100 z-9999 p-3 text-balck! w-[200px]">
-                <Link target="_blank" to="https://eyojan.srmu.ac.in/" className="text-black block">Studen Login</Link>
+                <Link target="_blank" to="https://eyojan.srmu.ac.in/" className="text-black block">Student Login</Link>
                 <Link target="_blank" to="https://eyojan.srmu.ac.in/" className="text-black block mt-2">Staff Login</Link>
               </div>}
             </div>
