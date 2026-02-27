@@ -4,10 +4,14 @@ import mission from "../../../../assets/images/academics/institutes/vision-card/
 import { CustomInstituteCourseCardProps } from "../../../../utils/custom/CustomInstituteCoursesCard";
 import courseImg1 from "../../../../assets/images/academics/departments/physics1-07022411301098.jpg";
 import courseImg3 from "../../../../assets/images/academics/departments/maths-07022411311165.jpg";
+import courseImg2 from "../../../../assets/images/academics/departments/chemisty.jpg";
+import courseImg4 from "../../../../assets/images/academics/departments/social-science-07052401093595.jpg";
 import { InstituteProfile } from "../../../../types/profile-data-type";
 import BMdixitImg from "../../../../assets/images/academics/departments/prof.-b-m-dixit-photo-10062510410818.jpg"
 import { counterDataFoFacultyOfPhysicalScience, counterDataForPlacedStudentsOFPhysicalScience, facultyDetailsOfPhysicalScienceDepartment, facultyofPhysicalScienceOverviewData, facultyOfPhysicalScienceProfileData, facultyOfPhysicalScienceVMData, physicalScienceEventsData, physicalScienceHighlightsData, physicalSciencePostgraduateFeeTable, physicalScienceUndergraduateFeeTable } from "../../faculty-of-physical-sciences/faculty-of-physical-sciences-data";
 import { FacultyOfMathematicalAndStatisticalSciencesCounterData1, FacultyOfMathematicalAndStatisticalSciencesData1, FacultyOfMathematicalAndStatisticalSciencesData2, FacultyOfMathematicalAndStatisticalSciencesDepartmentEventsData, FacultyOfMathematicalAndStatisticalSciencesdepartmentHighlights, FacultyOfMathematicalAndStatisticalSciencesfacultyData, FacultyOfMathematicalAndStatisticalSciencesinstituteProfiles, FacultyOfMathematicalAndStatisticalSciencesOverviewData, FacultyOfMathematicalAndStatisticalSciencesVMData, MathematicalAndStatisticalSciencesplacedStudents } from "./faculty-of-mathematical-and-statistical-sciences-data";
+import { FacultyofChemicalSciencesCounterData1, FacultyofChemicalSciencesCounterData2, FacultyofChemicalSciencesData1, FacultyofChemicalSciencesData2, FacultyofChemicalSciencesinstituteProfiles, FacultyofChemicalSciencesOverviewData, FacultyofChemicalSciencesVMData } from "./faculty-of-chemical-sciences-data";
+import { FacultyofHumanitiesandSocialSciencesCounterData1, FacultyofHumanitiesandSocialSciencesCounterData2, FacultyofHumanitiesandSocialSciencesData1, FacultyofHumanitiesandSocialSciencesData2, FacultyofHumanitiesandSocialSciencesinstituteProfiles, FacultyofHumanitiesandSocialSciencesOverviewData, FacultyofHumanitiesandSocialSciencesVMData } from "./faculty-of-humanities-and-social-sciences-data";
 export const InstituteofNaturalSciencesandHumanitiesOverviewData: customeOverViewType = {
   heading: "Institute of Natural Sciences and Humanities",
   content:
@@ -106,6 +110,26 @@ export const InstituteofNaturalSciencesandHumanitiesinstituteCourseCardData: Cus
     },
   },
   {
+    imageUrl: courseImg2,
+    departmentName: "Faculty of Chemical Sciences",
+    path: "institute-of-natural-sciences-and-humanities/faculty-of-chemical-sciences",
+    departmentDetails: {
+      overviewData: FacultyofChemicalSciencesOverviewData,
+      counterData: FacultyofChemicalSciencesCounterData1,
+      mvData: FacultyofChemicalSciencesVMData,
+      departmentHeadData: FacultyofChemicalSciencesinstituteProfiles,
+      feeTableData: {
+        tab1: { label: "Postgraduate", data: FacultyofChemicalSciencesData1 },
+        tab2: { label: "Undergraduate", data: FacultyofChemicalSciencesData2 },
+      },
+      facultyData: FacultyOfMathematicalAndStatisticalSciencesfacultyData,
+      departmentHighlightsData: FacultyOfMathematicalAndStatisticalSciencesdepartmentHighlights,
+      counterData2: FacultyofChemicalSciencesCounterData2,
+      placedStudentsData: MathematicalAndStatisticalSciencesplacedStudents,
+      eventsData: FacultyOfMathematicalAndStatisticalSciencesDepartmentEventsData,
+    },
+  },
+  {
     imageUrl: courseImg3,
     departmentName: "Faculty of Mathematical and Statistical Sciences",
     path: "institute-of-natural-sciences-and-humanities/faculty-of-mathematical-and-statistical-sciences",
@@ -125,5 +149,26 @@ export const InstituteofNaturalSciencesandHumanitiesinstituteCourseCardData: Cus
       eventsData: FacultyOfMathematicalAndStatisticalSciencesDepartmentEventsData,
     },
   },
-  
+
+  {
+    imageUrl: courseImg4,
+    departmentName: "Faculty of Humanities and Social Sciences",
+    path: "institute-of-natural-sciences-and-humanities/faculty-of-humanities-and-social-sciences",
+    departmentDetails: {
+      overviewData: FacultyofHumanitiesandSocialSciencesOverviewData,
+      counterData: FacultyofHumanitiesandSocialSciencesCounterData1,
+
+      mvData: FacultyofHumanitiesandSocialSciencesVMData,
+      departmentHeadData: FacultyofHumanitiesandSocialSciencesinstituteProfiles,
+      feeTableData: {
+        tab1: { label: "Postgraduate", data: FacultyofHumanitiesandSocialSciencesData1 },
+        tab2: { label: "Undergraduate", data: FacultyofHumanitiesandSocialSciencesData2 },
+      },
+      facultyData: FacultyOfMathematicalAndStatisticalSciencesfacultyData,
+      departmentHighlightsData: FacultyOfMathematicalAndStatisticalSciencesdepartmentHighlights,
+      counterData2: FacultyofHumanitiesandSocialSciencesCounterData2,
+      placedStudentsData: MathematicalAndStatisticalSciencesplacedStudents,
+      eventsData: FacultyOfMathematicalAndStatisticalSciencesDepartmentEventsData,
+    },
+  },
 ];
