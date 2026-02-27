@@ -297,8 +297,7 @@ const Header = () => {
                     {(data.subItem || isMega) && (
                       <button
                         onClick={() => setSubMenu(subMenu === data.id ? null : data.id)}
-                        className="border border-[#0000002e] px-0.5 py-[3px]"
-                      >
+                        className="border border-[#0000002e] px-0.5 py-[3px]">
                         <MdOutlineKeyboardArrowDown
                           size={25}
                           className={`transition-all bg-[#00000008] text-[#616161] ${subMenu === data.id ? "rotate-180" : ""}`}
