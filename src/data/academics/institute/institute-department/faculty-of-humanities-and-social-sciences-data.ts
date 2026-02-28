@@ -5,6 +5,28 @@ import mission from "../../../../assets/images/academics/departments/dept-missio
 import shilpaImg from "../../../../assets/images/academics/departments/shilpa-shukla-21062411183124.jpg";
 import { InstituteProfile } from "../../../../types/profile-data-type";
 import { FeeTableData } from "../faculty-of-civil-engineering/faculty-of-civil-engineering-data";
+import { FacultyItem } from "../../../../utils/custom/CustomFacultyListCard";
+import afiya from "../../../../assets/images/academics/departments/faculty-of-humeneties/Afiya Bano.jpeg"
+import aisha from "../../../../assets/images/academics/departments/faculty-of-humeneties/Afiya Bano.jpeg"
+import andleeb from "../../../../assets/images/academics/departments/faculty-of-humeneties/Afiya Bano.jpeg"
+import anil from "../../../../assets/images/academics/departments/faculty-of-humeneties/Afiya Bano.jpeg";
+import anil17 from "../../../../assets/images/academics/departments/faculty-of-humeneties/Afiya Bano.jpeg"
+import aparna from "../../../../assets/images/academics/departments/faculty-of-humeneties/Afiya Bano.jpeg";
+import arun from "../../../../assets/images/academics/departments/faculty-of-humeneties/Afiya Bano.jpeg";
+import devina from "../../../../assets/images/academics/departments/faculty-of-humeneties/Afiya Bano.jpeg"
+import jitendra from "../../../../assets/images/academics/departments/faculty-of-humeneties/Afiya Bano.jpeg"
+import laxmi from "../../../../assets/images/academics/departments/faculty-of-humeneties/Afiya Bano.jpeg"
+import manjari from "../../../../assets/images/academics/departments/faculty-of-humeneties/Afiya Bano.jpeg"
+import pallavi from "../../../../assets/images/academics/departments/faculty-of-humeneties/Afiya Bano.jpeg"
+import pavitra from "../../../../assets/images/academics/departments/faculty-of-humeneties/Afiya Bano.jpeg"
+import pradeep from "../../../../assets/images/academics/departments/faculty-of-humeneties/Afiya Bano.jpeg"
+import ram from "../../../../assets/images/academics/departments/faculty-of-humeneties/Afiya Bano.jpeg"
+import rashmi from "../../../../assets/images/academics/departments/faculty-of-humeneties/Afiya Bano.jpeg";
+import ritika from "../../../../assets/images/academics/departments/faculty-of-humeneties/Afiya Bano.jpeg";
+import shefalica from "../../../../assets/images/academics/departments/faculty-of-humeneties/Afiya Bano.jpeg";
+import shilpa from "../../../../assets/images/academics/departments/faculty-of-humeneties/Afiya Bano.jpeg";
+import shipra from "../../../../assets/images/academics/departments/faculty-of-humeneties/Afiya Bano.jpeg";
+import shweta from "../../../../assets/images/academics/departments/faculty-of-humeneties/Afiya Bano.jpeg";
 export const FacultyofHumanitiesandSocialSciencesOverviewData: customeOverViewType = {
   heading: "Faculty of Humanities and Social Sciences",
   content: `Department of Humanities and Social Sciences is a huge department comprising of UGC - NET/JRF qualified faculty members holding doctorate degrees from institutions of national repute. The department is oriented towards promoting quality education and research. The faculty members are devoted to imparting qualitative learning aptitude among the students that enable them crack various competitive examinations like UPSC, PSC, UGC- NET/ JRF etc. The department has been successful in organizing Guest Lectures, Training Workshops, Literary Fest, Socio-economic development programmes and International Conferences on various themes of Global literature, culture, polity, personality development and social thought.`,
@@ -172,3 +194,132 @@ export const FacultyofHumanitiesandSocialSciencesCounterData2 = {
   classes: "",
   aboutusClass: "",
 };
+
+export const FacultyOfHumanitiesAndSocialSciencesfacultyData: FacultyItem[] = [
+  {
+    id: 1,
+    name: "Dr. Jitendra Kumar Yadav",
+    designation: "Associate Professor",
+    image: jitendra,
+  },
+  {
+    id: 2,
+    name: "Dr. Arun Kumar Singh",
+    designation: "Assistant Professor",
+    image: arun,
+  },
+  {
+    id: 3,
+    name: "Dr. Shipra Shukla",
+    designation: "Assistant Professor",
+    image: shipra,
+  },
+  {
+    id: 4,
+    name: "Dr. Aparna Mishra",
+    designation: "Assistant Professor",
+    image: aparna,
+  },
+  {
+    id: 5,
+    name: "Ms. Laxmi Singh",
+    designation: "Assistant Professor",
+    image: laxmi,
+  },
+  {
+    id: 6,
+    name: "Dr. Anil Kumar",
+    designation: "Assistant Professor",
+    image: anil,
+  },
+  {
+    id: 7,
+    name: "Dr. Pradeep Kumar Singh",
+    designation: "Assistant Professor",
+    image: pradeep,
+  },
+  {
+    id: 8,
+    name: "Dr. Shefalica Singh",
+    designation: "Assistant Professor",
+    image: shefalica,
+  },
+  {
+    id: 9,
+    name: "Ms. Aisha Haleem",
+    designation: "Assistant Professor",
+    image: aisha,
+  },
+  {
+    id: 10,
+    name: "Dr. Pallavi Sharma",
+    designation: "Assistant Professor",
+    image: pallavi,
+  },
+  {
+    id: 11,
+    name: "Dr. Andleeb Zahra",
+    designation: "Assistant Professor",
+    image: andleeb,
+  },
+  {
+    id: 12,
+    name: "Dr. Ritika Srivastava",
+    designation: "Assistant Professor",
+    image: ritika,
+  },
+  {
+    id: 13,
+    name: "Dr. Rashmi Saxena",
+    designation: "Assistant Professor",
+    image: rashmi,
+  },
+  {
+    id: 14,
+    name: "Dr. Shweta Shukla",
+    designation: "Assistant Professor",
+    image: shweta,
+  },
+  {
+    id: 15,
+    name: "Dr. Pavitra Bajpai",
+    designation: "Assistant Professor",
+    image: pavitra,
+  },
+  {
+    id: 16,
+    name: "Dr. Ram Pratap Yadav",
+    designation: "Assistant Professor",
+    image: ram,
+  },
+  {
+    id: 17,
+    name: "Dr. Anil Kumar",
+    designation: "Assistant Professor",
+    image: anil17,
+  },
+  {
+    id: 18,
+    name: "Dr. Manjari Kureel",
+    designation: "Assistant Professor",
+    image: manjari,
+  },
+  {
+    id: 19,
+    name: "Dr. Afiya Bano",
+    designation: "Assistant Professor",
+    image: afiya,
+  },
+  {
+    id: 20,
+    name: "Dr. Devina Sharma",
+    designation: "Assistant Professor",
+    image: devina,
+  },
+  {
+    id: 21,
+    name: "Dr. Shilpa Shukla",
+    designation: "Professor",
+    image: shilpa,
+  },
+];

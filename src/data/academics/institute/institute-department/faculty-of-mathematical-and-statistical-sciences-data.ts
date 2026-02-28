@@ -1,41 +1,37 @@
 import { customeOverViewType } from "../../../../types/home-data-type";
 import vision from "../../../../assets/images/academics/departments/dept-mission-icon2.png";
 import mission from "../../../../assets/images/academics/departments/dept-mission-icon1.png";
-import { InstituteProfile} from "../../../../types/profile-data-type";
+import { InstituteProfile } from "../../../../types/profile-data-type";
 import { departmentHighlightscardType, FeeTableData } from "../../faculty-of-civil-engineering/faculty-of-civil-engineering-data";
 import { FacultyItem } from "../../../../utils/custom/CustomFacultyListCard";
 
-import VNPathakImg from "../../../../assets/images/academics/departments/prof.-dr-v.n.-pathak-2702240134036.png"
+import VNPathakImg from "../../../../assets/images/academics/departments/prof.-dr-v.n.-pathak-2702240134036.png";
 
-import AnkitImg from "../../../../assets/images/academics/departments/wsfq-02062505091245.png"
-import ArunImg from "../../../../assets/images/academics/departments/wsfq-02062505080511.png"
-import PunitImg from "../../../../assets/images/academics/departments/wsfq-02062505070943.png"
-import PoojaImg from "../../../../assets/images/academics/departments/wsfq-02062505062189.png"
-import SurajImg from "../../../../assets/images/academics/departments/wsfq-02062505051724.png"
-import AnuragImg from "../../../../assets/images/academics/departments/dr.anuragagnihotri-1007241201398.jpg"
-import DilipImg from "../../../../assets/images/academics/departments/dr.dilip-kumar-jaiswal-10072411575532.jpg"
-import VinayImg from "../../../../assets/images/academics/departments/11zon-cropped-49-11zon-24022411463862.jpeg"
-import MukeshImg from "../../../../assets/images/academics/departments/11zon-cropped-50-11zon-24022411503254.jpeg"
-import KulbhushanImg from "../../../../assets/images/academics/departments/02-10062505474470.png"
-import PrachiImg from "../../../../assets/images/academics/departments/dr.prachi-srivastava-10072412024848.jpg"
-import AnilImg from "../../../../assets/images/academics/departments/11zon-cropped-48-11zon-2402241142114.jpeg"
-import VimleshImg from "../../../../assets/images/academics/departments/vimlesh-10072412155832.jpg"
-import OmendraImg from "../../../../assets/images/academics/departments/omendra-mishra-10072412112493.jpg"
-import DhaneshImg from "../../../../assets/images/academics/departments/dhanesh-kumar-10072412142265.jpg"
-import AnujImg from "../../../../assets/images/academics/departments/anuj-kumar-agarwal-10072412092488.jpg"
-import AwanishImg from "../../../../assets/images/academics/departments/awanish-kumar-10072412073674.jpg"
-import PramodImg from "../../../../assets/images/academics/departments/11zon-cropped-45-11zon-24022411063791.jpeg"
-
-
-
+import AnkitImg from "../../../../assets/images/academics/departments/wsfq-02062505091245.png";
+import ArunImg from "../../../../assets/images/academics/departments/wsfq-02062505080511.png";
+import PunitImg from "../../../../assets/images/academics/departments/wsfq-02062505070943.png";
+import PoojaImg from "../../../../assets/images/academics/departments/wsfq-02062505062189.png";
+import SurajImg from "../../../../assets/images/academics/departments/wsfq-02062505051724.png";
+import AnuragImg from "../../../../assets/images/academics/departments/dr.anuragagnihotri-1007241201398.jpg";
+import DilipImg from "../../../../assets/images/academics/departments/dr.dilip-kumar-jaiswal-10072411575532.jpg";
+import VinayImg from "../../../../assets/images/academics/departments/11zon-cropped-49-11zon-24022411463862.jpeg";
+import MukeshImg from "../../../../assets/images/academics/departments/11zon-cropped-50-11zon-24022411503254.jpeg";
+import KulbhushanImg from "../../../../assets/images/academics/departments/02-10062505474470.png";
+import PrachiImg from "../../../../assets/images/academics/departments/dr.prachi-srivastava-10072412024848.jpg";
+import AnilImg from "../../../../assets/images/academics/departments/11zon-cropped-48-11zon-2402241142114.jpeg";
+import VimleshImg from "../../../../assets/images/academics/departments/vimlesh-10072412155832.jpg";
+import OmendraImg from "../../../../assets/images/academics/departments/omendra-mishra-10072412112493.jpg";
+import DhaneshImg from "../../../../assets/images/academics/departments/dhanesh-kumar-10072412142265.jpg";
+import AnujImg from "../../../../assets/images/academics/departments/anuj-kumar-agarwal-10072412092488.jpg";
+import AwanishImg from "../../../../assets/images/academics/departments/awanish-kumar-10072412073674.jpg";
+import PramodImg from "../../../../assets/images/academics/departments/11zon-cropped-45-11zon-24022411063791.jpeg";
 
 import { Headers, Student } from "../../../../utils/custom/CustomPlacedStudentTable";
 import { EventItem } from "../../../../utils/custom/CustomEventListCard";
 
 export const FacultyOfMathematicalAndStatisticalSciencesOverviewData: customeOverViewType = {
   heading: "Faculty of Mathematical and Statistical Sciences",
-  content:
-    `Mathematics is the key of Science, "A Science is exact only if employs Mathematics". Mathematics has played a very important role in building up modern civilization by perfecting all Sciences. Mathematics has a beauty all of its own. In an increasingly complex world it is also the essential infrastructure which is supporting science, engineering, business and commerce. So, Mathematics is not only interesting and challenging but relevant also, as it can prepare students for great jobs by bridging the gap between technology and society in a wide variety of places along with higher studies prospects.`,
+  content: `Mathematics is the key of Science, "A Science is exact only if employs Mathematics". Mathematics has played a very important role in building up modern civilization by perfecting all Sciences. Mathematics has a beauty all of its own. In an increasingly complex world it is also the essential infrastructure which is supporting science, engineering, business and commerce. So, Mathematics is not only interesting and challenging but relevant also, as it can prepare students for great jobs by bridging the gap between technology and society in a wide variety of places along with higher studies prospects.`,
   counterSibling:
     "The Faculty of Mathematical and Statistical Sciences is unique in nature for its interdisciplinary, UG and PG programs. The soul of all departments came into existence in the academic year 2012. It started flourishing and owned the glory of great success in the field of teaching and research under the able guidance of teachers in the subsequent years. The Faculty's academic programs led to B.Sc. (Honors), M.Sc. (Mathematics) and Ph.D. degrees in a wide range of areas. The Faculty of Mathematical and Statistical Sciences is one of the most important faculties of the Institute. In addition to a rigorous curriculum, the Faculty offers a vibrant environment for students. As per the need of the hour the Faculty gives exposure of many software’s like MATLAB, LATEX, MATHEMATICA, SCILAB etc. In addition to teaching and research, faculty members have been keenly engaged in organizing guest lectures, National and International conferences, Webinars, Quizzes and so many extra-curricular activities. Faculty also plays a substantial and innovative role in bringing mathematical science to the community.",
 };
@@ -46,7 +42,6 @@ export const FacultyOfMathematicalAndStatisticalSciencesTopFooterData = [
     btnText: "Request Registration",
   },
 ];
-
 
 export const FacultyOfMathematicalAndStatisticalSciencesCounterData1: counterDataType[] = [
   { id: 1, value: "2012", suffix: "", label: "Established" },
@@ -60,30 +55,28 @@ export const FacultyOfMathematicalAndStatisticalSciencesCounterData2 = {
       icon: "",
       value: "175",
       suffix: "",
-      label: "Guest lectures"
+      label: "Guest lectures",
     },
     {
       id: 2,
       icon: "",
       value: "25",
       suffix: "",
-      label: "Field Visits"
+      label: "Field Visits",
     },
     {
       id: 3,
       icon: "",
       value: "10",
       suffix: "",
-      label: "Conference & Seminars"
+      label: "Conference & Seminars",
     },
-
   ],
 
   // Optional classes (can be null or ignored if unused)
   classes: "",
-  aboutusClass: ""
+  aboutusClass: "",
 };
-
 
 export const FacultyOfMathematicalAndStatisticalSciencesVMData = [
   {
@@ -110,8 +103,6 @@ export const FacultyOfMathematicalAndStatisticalSciencesVMData = [
   },
 ];
 
-
-
 export const FacultyOfMathematicalAndStatisticalSciencesinstituteProfiles: InstituteProfile[] = [
   {
     id: 1,
@@ -120,8 +111,7 @@ export const FacultyOfMathematicalAndStatisticalSciencesinstituteProfiles: Insti
     position: "Dean, FoMS, SRMU, Lucknow-Deva Road",
     image: VNPathakImg,
 
-    summary:
-      "",
+    summary: "",
 
     detailsHeading: "",
     useBullets: false,
@@ -138,16 +128,9 @@ export const FacultyOfMathematicalAndStatisticalSciencesinstituteProfiles: Insti
     modalContent: `Prof. (Dr.) V. N. Pathak is a senior academician in the field of Mathematics . He has vast teaching and research experience of more than twenty years. He obtained his Post Graduate Degree in 1997 from Dr. Ram Manohar Lohia Avadh University, Faizabad and Doctoral degree in the area of Differential Geometry from the University of Lucknow in 2004. Dr. Pathak joined Shri Ramswaroop Memorial University as a Professor and Controller of Examination in 2015. Before joining the University he was Professor and Head, Department of Mathematics, Shri Ramswaroop Group of Professional Colleges for more than 13 years. Dr. Pathak served as a visiting faculty in various Institutions like Institute of Engineering and Technology, Lucknow, University of Lucknow, CMS Degree College, Lucknow. 
 
 Dr. Pathak has published more than twenty research papers in reputed research journals. He attended and chaired the sessions in several National and International Conferences. Dr. Pathak has received Best Faculty Award thrice in SRMGPC in the years 2003, 2007 and 2014 respectively. Currently he is guiding three research scholars in the field of Differential Geometry and Operation Research. Dr. Pathak is life-time member of International Academy of Physical Sciences, Tensor Society of India, National Academy of Mathematics and Vibha Vigyan Bharti. Presently he is working as a Professor and Dean in Faculty of Mathematical and Statistical Sciences.
-`
+`,
   },
-
-
-]; 
-
-
-
-
-
+];
 
 export const FacultyOfMathematicalAndStatisticalSciencesData1: FeeTableData = {
   columns: ["COURSES", "DURATION", "ELIGIBILITY CRITERIA", "COURSE FEES (PA)"],
@@ -168,7 +151,6 @@ export const FacultyOfMathematicalAndStatisticalSciencesData1: FeeTableData = {
   ],
 };
 
-
 export const FacultyOfMathematicalAndStatisticalSciencesData2: FeeTableData = {
   columns: ["COURSES", "DURATION", "ELIGIBILITY CRITERIA", "COURSE FEES (PA)"],
 
@@ -182,33 +164,27 @@ export const FacultyOfMathematicalAndStatisticalSciencesData2: FeeTableData = {
   ],
 };
 
-
-
-
-
-
 export const FacultyOfMathematicalAndStatisticalSciencesfacultyData: FacultyItem[] = [
-  { id: 1,  name: "Mr. Ankit Goyal",                  designation: "Assistant Professor",      image: AnkitImg },
-  { id: 2,  name: "Dr. Arun Kumar Bhardwaj",          designation: "Assistant Professor",      image: ArunImg },
-  { id: 3,  name: "Dr. Punit Kumar Gupt",             designation: "Assistant Professor",      image: PunitImg },
-  { id: 4,  name: "Dr. Pooja Gautam",                 designation: "Assistant Professor",      image: PoojaImg },
-  { id: 5,  name: "Dr. Suraj Bhan",                   designation: "Assistant Professor",      image: SurajImg },
-  { id: 6,  name: "Prof. (Dr.) Anurag Agnihotri",     designation: "Associate Professor",      image: AnuragImg },
-  { id: 7,  name: "Prof. (Dr.) Dilip Kumar Jaiswal",  designation: "Professor",                image: DilipImg },
-  { id: 8,  name: "Dr. Vinay Verma",                  designation: "Assistant Professor",      image: VinayImg },
-  { id: 9,  name: "Dr. Mukesh Awasthi",               designation: "Associate Professor",      image: MukeshImg },
-  { id: 10, name: "Prof. (Dr.) V.N. Pathak",          designation: "Professor",                image: VNPathakImg },
-  { id: 11, name: "Prof. (Dr.) Kulbhushan Singh",     designation: "Professor",                image: KulbhushanImg },
-  { id: 12, name: "Prof. (Dr.) Prachi Srivastava",    designation: "Professor",                image: PrachiImg },
-  { id: 13, name: "Mr. Anil Kumar",                   designation: "Assistant Professor",      image: AnilImg },
-  { id: 14, name: "Dr. Vimlesh",                      designation: "Assistant Professor",      image: VimleshImg },
-  { id: 15, name: "Dr. Omendra Mishra",               designation: "Assistant Professor",      image: OmendraImg },
-  { id: 16, name: "Dr. Dhanesh Kumar",                designation: "Assistant Professor",      image: DhaneshImg },
-  { id: 17, name: "Dr. Anuj Kumar Agarwal",           designation: "Assistant Professor",      image: AnujImg },
-  { id: 18, name: "Dr. Awanish Kumar",                designation: "Assistant Professor",      image: AwanishImg },
-  { id: 19, name: "Dr. Pramod Kumar",                 designation: "Associate Professor",      image: PramodImg },
+  { id: 1, name: "Mr. Ankit Goyal", designation: "Assistant Professor", image: AnkitImg },
+  { id: 2, name: "Dr. Arun Kumar Bhardwaj", designation: "Assistant Professor", image: ArunImg },
+  { id: 3, name: "Dr. Punit Kumar Gupt", designation: "Assistant Professor", image: PunitImg },
+  { id: 4, name: "Dr. Pooja Gautam", designation: "Assistant Professor", image: PoojaImg },
+  { id: 5, name: "Dr. Suraj Bhan", designation: "Assistant Professor", image: SurajImg },
+  { id: 6, name: "Prof. (Dr.) Anurag Agnihotri", designation: "Associate Professor", image: AnuragImg },
+  { id: 7, name: "Prof. (Dr.) Dilip Kumar Jaiswal", designation: "Professor", image: DilipImg },
+  { id: 8, name: "Dr. Vinay Verma", designation: "Assistant Professor", image: VinayImg },
+  { id: 9, name: "Dr. Mukesh Awasthi", designation: "Associate Professor", image: MukeshImg },
+  { id: 10, name: "Prof. (Dr.) V.N. Pathak", designation: "Professor", image: VNPathakImg },
+  { id: 11, name: "Prof. (Dr.) Kulbhushan Singh", designation: "Professor", image: KulbhushanImg },
+  { id: 12, name: "Prof. (Dr.) Prachi Srivastava", designation: "Professor", image: PrachiImg },
+  { id: 13, name: "Mr. Anil Kumar", designation: "Assistant Professor", image: AnilImg },
+  { id: 14, name: "Dr. Vimlesh", designation: "Assistant Professor", image: VimleshImg },
+  { id: 15, name: "Dr. Omendra Mishra", designation: "Assistant Professor", image: OmendraImg },
+  { id: 16, name: "Dr. Dhanesh Kumar", designation: "Assistant Professor", image: DhaneshImg },
+  { id: 17, name: "Dr. Anuj Kumar Agarwal", designation: "Assistant Professor", image: AnujImg },
+  { id: 18, name: "Dr. Awanish Kumar", designation: "Assistant Professor", image: AwanishImg },
+  { id: 19, name: "Dr. Pramod Kumar", designation: "Associate Professor", image: PramodImg },
 ];
-
 
 import depSlide1 from "../../../../assets/images/academics/departments/maths1-07022412033456.jpg";
 import depSlide2 from "../../../../assets/images/academics/departments/curriculum-07052412202574.jpg";
@@ -221,75 +197,77 @@ import depSlide7 from "../../../../assets/images/academics/departments/phd-07022
 export const FacultyOfMathematicalAndStatisticalSciencesdepartmentHighlights: departmentHighlightscardType[] = [
   {
     title: "Excellent instruction and integrated research",
-    description: "The department fosters interdisciplinary research and partnerships with various organizations and departments in order to address practical issues and constraints.",
+    description:
+      "The department fosters interdisciplinary research and partnerships with various organizations and departments in order to address practical issues and constraints.",
     image: depSlide1,
   },
   {
     title: "Specific remediation courses for competitive exams",
-    description: "Students who are getting ready for highly competitive exams like IIT-JAM, Central Universities, JEST, etc. can benefit from the department's robust educational foundation in a variety of scientific subjects.",
+    description:
+      "Students who are getting ready for highly competitive exams like IIT-JAM, Central Universities, JEST, etc. can benefit from the department's robust educational foundation in a variety of scientific subjects.",
     image: depSlide2,
   },
   {
     title: "Highly skilled educators with a diversified portfolio",
-    description: "Department have faculty members who possess advanced degrees from institutes of national repute and have experience working on both domestic and foreign research initiatives.",
+    description:
+      "Department have faculty members who possess advanced degrees from institutes of national repute and have experience working on both domestic and foreign research initiatives.",
     image: depSlide3,
   },
   {
     title: "State-of-the-art laboratories and facilities",
-    description: "Modern labs and facilities within the department enable students to benefit from immersive learning opportunities and hands-on training, preparing them for successful careers in academia, research, and industry.",
+    description:
+      "Modern labs and facilities within the department enable students to benefit from immersive learning opportunities and hands-on training, preparing them for successful careers in academia, research, and industry.",
     image: depSlide4,
   },
   {
     title: "Academic framework and courses in accordance with NEP-2020",
-    description: "The department offers a variety of programs that are designed and implemented in compliance with NEP 2020, providing several options for admission and graduation. It is committed to providing a vibrant academic environment.",
+    description:
+      "The department offers a variety of programs that are designed and implemented in compliance with NEP 2020, providing several options for admission and graduation. It is committed to providing a vibrant academic environment.",
     image: depSlide5,
   },
   {
     title: "Promoting research environment though industrial collaborations",
-    description: "To succeed in academic and industrial research, the department has successfully partnered with a number of prestigious and well-known research institutions as well as the companies.",
+    description:
+      "To succeed in academic and industrial research, the department has successfully partnered with a number of prestigious and well-known research institutions as well as the companies.",
     image: depSlide6,
   },
   {
     title: "Alumni trailblazers leading at multiple fronts",
-    description: "Former students of the department now hold positions in reputable national and international government and non-governmental organizations as academics, analysts, researchers and entrepreneurs.",
+    description:
+      "Former students of the department now hold positions in reputable national and international government and non-governmental organizations as academics, analysts, researchers and entrepreneurs.",
     image: depSlide7,
   },
 ];
 
-
-
-
-
 export const tableHeaders: Headers = {
-    name: "NAME OF STUDENT",
-    program: "PROGRAM",
-    company: "COMPANY",
-  };
- 
+  name: "NAME OF STUDENT",
+  program: "PROGRAM",
+  company: "COMPANY",
+};
+
 export const MathematicalAndStatisticalSciencesplacedStudents: Student[] = [
-    {
-      name: "Ajay Srivastava",
-      program: "B.Sc. (Hons.) in Mathematics",
-      company: "Wipro WILP",
-    },
-    {
-      name: "Saurabh",
-      program: "M.Sc. in Mathematics",
-      company: "SRMU",
-    },
-  ];
+  {
+    name: "Ajay Srivastava",
+    program: "B.Sc. (Hons.) in Mathematics",
+    company: "Wipro WILP",
+  },
+  {
+    name: "Saurabh",
+    program: "M.Sc. in Mathematics",
+    company: "SRMU",
+  },
+];
 
-
-import img1 from "../../../../assets/images/academics/departments/wfw2w-02062504460550.png"
-import img2 from "../../../../assets/images/academics/departments/wee-0206250448025.png"
-import img3 from "../../../../assets/images/academics/departments/guest7-09052401033814.jpg"
-import img4 from "../../../../assets/images/academics/departments/guest6-09052401032821.jpg"
-import img5 from "../../../../assets/images/academics/departments/guest7-09052401033814.jpg"
-import img6 from "../../../../assets/images/academics/departments/international2-10022412523788.jpg"
-import img7 from "../../../../assets/images/academics/departments/workshop3-09052401005812.jpg"
-import img8 from "../../../../assets/images/academics/departments/nation6-09052402004527.jpg"
-import img9 from "../../../../assets/images/academics/departments/guest1-09052412554546.jpg"
-import img10 from "../../../../assets/images/academics/departments/internation1-09052401044878.jpg"
+import img1 from "../../../../assets/images/academics/departments/wfw2w-02062504460550.png";
+import img2 from "../../../../assets/images/academics/departments/wee-0206250448025.png";
+import img3 from "../../../../assets/images/academics/departments/guest7-09052401033814.jpg";
+import img4 from "../../../../assets/images/academics/departments/guest6-09052401032821.jpg";
+import img5 from "../../../../assets/images/academics/departments/guest7-09052401033814.jpg";
+import img6 from "../../../../assets/images/academics/departments/international2-10022412523788.jpg";
+import img7 from "../../../../assets/images/academics/departments/workshop3-09052401005812.jpg";
+import img8 from "../../../../assets/images/academics/departments/nation6-09052402004527.jpg";
+import img9 from "../../../../assets/images/academics/departments/guest1-09052412554546.jpg";
+import img10 from "../../../../assets/images/academics/departments/internation1-09052401044878.jpg";
 import { counterDataType } from "../../../home/counterData";
 
 export const FacultyOfMathematicalAndStatisticalSciencesDepartmentEventsData: EventItem[] = [
@@ -380,4 +358,3 @@ export const FacultyOfMathematicalAndStatisticalSciencesDepartmentEventsData: Ev
     cardBgColor: "#ffffff",
   },
 ];
- 

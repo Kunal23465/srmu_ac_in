@@ -1,16 +1,12 @@
 import HomePage from "../pages/Home/HomePage";
 import RootLayout from "../pages/RootLayout";
 import AboutPage from "../pages/about/AboutPage";
-
 import { committeeCards } from "../data/about/committee-and-cells/committee-and-cells-data";
 import CustomCommitteeDetailsPage from "./custom/CustomCommitteeDetailsPage";
-
 import OverviewPage from "../pages/admissions/overview/OverviewPage";
-
 import CampusLifePage from "../pages/campus-life/CampusLifePage";
 import CentralLibraryPage from "../pages/campus-life/central-library/CentralLibraryPage";
 import EventPage from "../pages/campus-life/events/EventPage";
-
 import InstitutePage from "../pages/academics/institutes/InstitutePage";
 import PoliciesReportsPage from "../pages/academics/Policies-Reports/PoliciesReportsPage";
 import AcademicCalendarsPage from "../pages/academics/academic-calendars/AcademicCalendarsPage";
@@ -204,10 +200,6 @@ export const routes = [
         path: "/organization-structure-plan",
         element: <OragnisationStructurePage />,
       },
-
-
-
-
       {
         path: "academics",
         element: <InstitutePage />,
@@ -320,7 +312,6 @@ export const routes = [
       {
         path: "/program/:programName",
         element: <ProgramDetailsPage />,
-
       },
 
       {
@@ -512,7 +503,6 @@ export const routes = [
         path: ":name",
         element: <NewsEventDetails />,
       },
-
       {
         path: "/blogs",
         element: <BlogsPage />,
@@ -524,12 +514,10 @@ export const routes = [
           },
         ],
       },
-
       {
         path: "/rti",
         element: <RtiPage />,
       },
-
       {
         path: "/online-admission",
         element: <OnlineAdmissionPage />,
@@ -546,7 +534,6 @@ export const routes = [
         path: "/terms-conditions",
         element: <TermsAndConditionPage />,
       },
-
     ],
 
   },

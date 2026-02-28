@@ -7,11 +7,53 @@ import courseImg3 from "../../../../assets/images/academics/departments/maths-07
 import courseImg2 from "../../../../assets/images/academics/departments/chemisty.jpg";
 import courseImg4 from "../../../../assets/images/academics/departments/social-science-07052401093595.jpg";
 import { InstituteProfile } from "../../../../types/profile-data-type";
-import BMdixitImg from "../../../../assets/images/academics/departments/prof.-b-m-dixit-photo-10062510410818.jpg"
-import { counterDataFoFacultyOfPhysicalScience, counterDataForPlacedStudentsOFPhysicalScience, facultyDetailsOfPhysicalScienceDepartment, facultyofPhysicalScienceOverviewData, facultyOfPhysicalScienceProfileData, facultyOfPhysicalScienceVMData, physicalScienceEventsData, physicalScienceHighlightsData, physicalSciencePostgraduateFeeTable, physicalScienceUndergraduateFeeTable } from "../../faculty-of-physical-sciences/faculty-of-physical-sciences-data";
-import { FacultyOfMathematicalAndStatisticalSciencesCounterData1, FacultyOfMathematicalAndStatisticalSciencesData1, FacultyOfMathematicalAndStatisticalSciencesData2, FacultyOfMathematicalAndStatisticalSciencesDepartmentEventsData, FacultyOfMathematicalAndStatisticalSciencesdepartmentHighlights, FacultyOfMathematicalAndStatisticalSciencesfacultyData, FacultyOfMathematicalAndStatisticalSciencesinstituteProfiles, FacultyOfMathematicalAndStatisticalSciencesOverviewData, FacultyOfMathematicalAndStatisticalSciencesVMData, MathematicalAndStatisticalSciencesplacedStudents } from "./faculty-of-mathematical-and-statistical-sciences-data";
-import { FacultyofChemicalSciencesCounterData1, FacultyofChemicalSciencesCounterData2, FacultyofChemicalSciencesData1, FacultyofChemicalSciencesData2, FacultyofChemicalSciencesinstituteProfiles, FacultyofChemicalSciencesOverviewData, FacultyofChemicalSciencesVMData } from "./faculty-of-chemical-sciences-data";
-import { FacultyofHumanitiesandSocialSciencesCounterData1, FacultyofHumanitiesandSocialSciencesCounterData2, FacultyofHumanitiesandSocialSciencesData1, FacultyofHumanitiesandSocialSciencesData2, FacultyofHumanitiesandSocialSciencesinstituteProfiles, FacultyofHumanitiesandSocialSciencesOverviewData, FacultyofHumanitiesandSocialSciencesVMData } from "./faculty-of-humanities-and-social-sciences-data";
+import BMdixitImg from "../../../../assets/images/academics/departments/prof.-b-m-dixit-photo-10062510410818.jpg";
+import {
+  counterDataFoFacultyOfPhysicalScience,
+  counterDataForPlacedStudentsOFPhysicalScience,
+  facultyDetailsOfPhysicalScienceDepartment,
+  facultyofPhysicalScienceOverviewData,
+  facultyOfPhysicalScienceProfileData,
+  facultyOfPhysicalScienceVMData,
+  physicalScienceEventsData,
+  physicalScienceHighlightsData,
+  physicalSciencePostgraduateFeeTable,
+  physicalScienceUndergraduateFeeTable,
+} from "../../faculty-of-physical-sciences/faculty-of-physical-sciences-data";
+import {
+  FacultyOfMathematicalAndStatisticalSciencesCounterData1,
+  FacultyOfMathematicalAndStatisticalSciencesData1,
+  FacultyOfMathematicalAndStatisticalSciencesData2,
+  FacultyOfMathematicalAndStatisticalSciencesDepartmentEventsData,
+  FacultyOfMathematicalAndStatisticalSciencesdepartmentHighlights,
+  FacultyOfMathematicalAndStatisticalSciencesfacultyData,
+  FacultyOfMathematicalAndStatisticalSciencesinstituteProfiles,
+  FacultyOfMathematicalAndStatisticalSciencesOverviewData,
+  FacultyOfMathematicalAndStatisticalSciencesVMData,
+  MathematicalAndStatisticalSciencesplacedStudents,
+} from "./faculty-of-mathematical-and-statistical-sciences-data";
+import {
+  DepartmentHighlightsOfFacultiesOfChemicalScienceData,
+  EventsOfDepartmentsOfFacultiesOfChemicalScienceData,
+  FacultyofChemicalSciencesCounterData1,
+  FacultyofChemicalSciencesCounterData2,
+  FacultyofChemicalSciencesData1,
+  FacultyofChemicalSciencesData2,
+  FacultyofChemicalSciencesinstituteProfiles,
+  FacultyofChemicalSciencesOverviewData,
+  FacultyofChemicalSciencesVMData,
+  PlacedStudentsDataOfFacultyChemicalScienceData,
+} from "./faculty-of-chemical-sciences-data";
+import {
+  FacultyofHumanitiesandSocialSciencesCounterData1,
+  FacultyofHumanitiesandSocialSciencesCounterData2,
+  FacultyofHumanitiesandSocialSciencesData1,
+  FacultyofHumanitiesandSocialSciencesData2,
+  FacultyOfHumanitiesAndSocialSciencesfacultyData,
+  FacultyofHumanitiesandSocialSciencesinstituteProfiles,
+  FacultyofHumanitiesandSocialSciencesOverviewData,
+  FacultyofHumanitiesandSocialSciencesVMData,
+} from "./faculty-of-humanities-and-social-sciences-data";
 export const InstituteofNaturalSciencesandHumanitiesOverviewData: customeOverViewType = {
   heading: "Institute of Natural Sciences and Humanities",
   content:
@@ -26,7 +68,6 @@ export const InstituteofNaturalSciencesandHumanitiesTopFooterData = [
     btnText: "Request Registration",
   },
 ];
-
 
 export const InstituteofNaturalSciencesandHumanitiesvisionMissionData = {
   backgroundColor: "#0f4a85",
@@ -52,7 +93,6 @@ export const InstituteofNaturalSciencesandHumanitiesvisionMissionData = {
     buttonBgColor: "bg-amber-400",
     imageUrl: mission,
   },
-
 };
 
 export const InstituteofNaturalSciencesandHumanitiesinstituteProfiles: InstituteProfile[] = [
@@ -63,8 +103,7 @@ export const InstituteofNaturalSciencesandHumanitiesinstituteProfiles: Institute
     position: "Director, INSH, SRMU, Lucknow-Deva Road",
     image: BMdixitImg,
 
-    summary:
-      "",
+    summary: "",
 
     detailsHeading: "",
     useBullets: false,
@@ -82,10 +121,8 @@ export const InstituteofNaturalSciencesandHumanitiesinstituteProfiles: Institute
 
 For past two decades, he has taught over a dozen different courses at Undergraduate and Postgraduate levels, wrote popular science articles and delivered popular lectures, presented and published many research papers in conferences and in peer reviewed journals respectively. His current research interest includes medical physics and academic planning in higher education. To pursue his research interest, he is also guiding couple of students for a Ph.D. degree.
 
-Being associated with the present group since its inception way back in 2001, he was among the very few who were entrusted to raise this University in 2011 as a center of universal learning. His academic outlook towards teaching methodology, faculty constitution is to create conducive environment for academic learning, while in administration his active role in team building and establishing harmonious accord amongst hundreds of faculty members and thousands of students is pivotal and all inclusive.`
+Being associated with the present group since its inception way back in 2001, he was among the very few who were entrusted to raise this University in 2011 as a center of universal learning. His academic outlook towards teaching methodology, faculty constitution is to create conducive environment for academic learning, while in administration his active role in team building and establishing harmonious accord amongst hundreds of faculty members and thousands of students is pivotal and all inclusive.`,
   },
-
-
 ];
 
 export const InstituteofNaturalSciencesandHumanitiesinstituteCourseCardData: CustomInstituteCourseCardProps[] = [
@@ -122,11 +159,11 @@ export const InstituteofNaturalSciencesandHumanitiesinstituteCourseCardData: Cus
         tab1: { label: "Postgraduate", data: FacultyofChemicalSciencesData1 },
         tab2: { label: "Undergraduate", data: FacultyofChemicalSciencesData2 },
       },
-      facultyData: FacultyOfMathematicalAndStatisticalSciencesfacultyData,
+      facultyData: DepartmentHighlightsOfFacultiesOfChemicalScienceData,
       departmentHighlightsData: FacultyOfMathematicalAndStatisticalSciencesdepartmentHighlights,
       counterData2: FacultyofChemicalSciencesCounterData2,
-      placedStudentsData: MathematicalAndStatisticalSciencesplacedStudents,
-      eventsData: FacultyOfMathematicalAndStatisticalSciencesDepartmentEventsData,
+      // placedStudentsData: MathematicalAndStatisticalSciencesplacedStudents,
+      eventsData: EventsOfDepartmentsOfFacultiesOfChemicalScienceData,
     },
   },
   {
@@ -164,7 +201,7 @@ export const InstituteofNaturalSciencesandHumanitiesinstituteCourseCardData: Cus
         tab1: { label: "Postgraduate", data: FacultyofHumanitiesandSocialSciencesData1 },
         tab2: { label: "Undergraduate", data: FacultyofHumanitiesandSocialSciencesData2 },
       },
-      facultyData: FacultyOfMathematicalAndStatisticalSciencesfacultyData,
+      facultyData: FacultyOfHumanitiesAndSocialSciencesfacultyData,
       departmentHighlightsData: FacultyOfMathematicalAndStatisticalSciencesdepartmentHighlights,
       counterData2: FacultyofHumanitiesandSocialSciencesCounterData2,
       placedStudentsData: MathematicalAndStatisticalSciencesplacedStudents,
