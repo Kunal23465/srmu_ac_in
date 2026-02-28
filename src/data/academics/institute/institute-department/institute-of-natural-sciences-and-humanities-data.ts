@@ -42,7 +42,6 @@ import {
   FacultyofChemicalSciencesinstituteProfiles,
   FacultyofChemicalSciencesOverviewData,
   FacultyofChemicalSciencesVMData,
-  PlacedStudentsDataOfFacultyChemicalScienceData,
 } from "./faculty-of-chemical-sciences-data";
 import {
   FacultyofHumanitiesandSocialSciencesCounterData1,
