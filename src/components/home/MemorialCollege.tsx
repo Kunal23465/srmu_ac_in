@@ -75,6 +75,9 @@ const MemorialCollege: React.FC = () => {
   useEffect(() => {
     dispatch(fetchBanner());
   }, [dispatch]);
+
+
+  console.log("banner", banner)
   return (
     <div id="first" className="w-full -mt-[68px]   pb-7 md:pb-10 lg:pb-14">
       <div className="circle-part justify-center z-99 relative hidden md:flex">
@@ -108,18 +111,36 @@ const MemorialCollege: React.FC = () => {
         <div className="w-full max-w-5xl mx-auto">
           <Slider {...settings}>
             {banner
-              ?.slice()          
-              .reverse()       
+              ?.slice()
+              .reverse()
               .map((item) => (
-                <div className="w-full" key={item.bannerId}>
-                  <Link target="_blank" to={item.link}>
-                    <img
-                      src={item.imagePath}
-                      alt="slider"
-                      className="w-full rounded-xl"
-                    />
-                  </Link>
-                </div>
+                <>
+                  {
+                    item.bannerType == "Pdf" ? <div className="w-full" key={item.bannerId}>
+                      {/* @ts-ignore */}
+                      <Link target="_blank" to={item.pdfPath}>
+                        <img
+                          /* @ts-ignore */
+                          src={item.imagePath}
+                          alt="slider"
+                          className="w-full rounded-xl"
+                        />
+                      </Link>
+                    </div> :
+                      <div className="w-full" key={item.bannerId}>
+                        {/* @ts-ignore */}
+                        <Link target="_blank" to={item.link}>
+                          <img
+                            /* @ts-ignore */
+                            src={item.imagePath}
+                            alt="slider"
+                            className="w-full rounded-xl"
+                          />
+                        </Link>
+                      </div>
+                  }
+
+                </>
               ))}
 
           </Slider>

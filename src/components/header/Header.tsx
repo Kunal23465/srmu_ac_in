@@ -206,7 +206,7 @@ const Header = () => {
                   src={hamburger}
                   alt="Menu"
                   className="cursor-pointer w-[30px] h-[21px]"
-                  onClick={() => setSideMenu(true)}
+                  onClick={() => setSideMenu((pre) => !pre)}
                 />
               </div>
             </div>
