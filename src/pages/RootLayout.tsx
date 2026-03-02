@@ -9,6 +9,7 @@ import whatsapp from "../assets/images/whatsapp-icon.png";
 import bgImg from "../assets/images/chat-bg.jpg";
 import { FaTimes } from "react-icons/fa";
 import DynamicBreadcrumbs from "../components/breadcrumb/DynamicBreadcrumbs";
+import Chatbot from "../components/Chatbot";
 
 const RootLayout: React.FC = () => {
   const location = useLocation();
@@ -115,7 +116,7 @@ const RootLayout: React.FC = () => {
           {openChat ? <FaTimes className="text-white" size={22} /> : <img src={chatbot} className="w-8" />}
         </div>
       </button> */}
-
+      <Chatbot />
       {/* ============= RIGHT SIDE SLIDERS (SHOW ON SCROLL) ============= */}
       <div
         className={`
