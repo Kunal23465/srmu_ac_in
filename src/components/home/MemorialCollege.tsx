@@ -38,8 +38,14 @@ const MemorialCollege: React.FC = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+
+    autoplay: true,          // ✅ enable auto slide
+    autoplaySpeed: 3000,     // ✅ 3 seconds
+    pauseOnHover: true,      // optional (good UX)
+
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
+
     responsive: [
       {
         breakpoint: 1024,
@@ -48,6 +54,7 @@ const MemorialCollege: React.FC = () => {
           slidesToScroll: 1,
           infinite: true,
           dots: true,
+          autoplay: true,
         },
       },
       {
@@ -55,6 +62,7 @@ const MemorialCollege: React.FC = () => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          autoplay: true,
         },
       },
       {
@@ -62,6 +70,7 @@ const MemorialCollege: React.FC = () => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          autoplay: true,
         },
       },
     ],
