@@ -23,7 +23,6 @@ export const submitEnquiryAPI = axios.create({
   // baseURL: "http://10.8.20.38:7005",
   // For test
   // baseURL: "https://unifcrmpre.srmu.ac.in:4040/",
-
   // for prod
   baseURL: "https://crmservices.srmu.ac.in:4040/",
 });
