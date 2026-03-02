@@ -42,6 +42,7 @@
     .grecaptcha-badge {
       visibility: hidden !important;
     }
+
   </style>
 
   <!-- Schema -->
@@ -157,5 +158,18 @@
     });
   </script>
 
+
+<script>
+const forceUpdate = setInterval(() => {
+  const element = document.querySelector(".message-content");
+
+  if (element) {
+    element.innerHTML = `
+       Clear Every Doubt Instantly.<br>
+      <small>Chat with Us Instantly!</small>
+    `;
+  }
+}, 10);
+</script>
 </body>
 </html>
