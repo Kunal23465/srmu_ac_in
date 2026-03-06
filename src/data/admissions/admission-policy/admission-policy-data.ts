@@ -1,17 +1,15 @@
 import { customeOverViewType } from "../../../types/home-data-type";
 import { TableRowData } from "../../../types/table-data-types";
-import sanctionedIntake2024_25 from "../../../assets/pdf/admissons/admission-policy/sanctioned-intake-2024-25-230224031406.pdf"
+import sanctionedIntake2024_25 from "../../../assets/pdf/admissons/admission-policy/sanctioned-intake-2024-25-230224031406.pdf";
 import eligibilityCriterion2024_25 from "../../../assets/pdf/admissons/admission-policy/eligibility-criteria-for-admissions-2024-25--230224031713.pdf";
-import feeRefundPolicy from "../../../assets/pdf/admissons/admission-policy/fee-refund-policy-session-2020-21--230224031816.pdf";
+import feeRefundPolicy from "../../../assets/pdf/admissons/admission-policy/Fee Refund Policy Session 2026-27.pdf";
 import admissionEnrollmentRules from "../../../assets/pdf/admissons/admission-policy/admissioncumenrollmentrules2019-20-191223122553-260224123143.pdf";
 import adb from "../../../assets/pdf/admissons/admission-policy/booklet-2024-ok-compressed-1--290224051456.pdf";
-
 
 export const admissionPoliciesOverviewData: customeOverViewType = {
   heading: "Admission Policies",
   content: `The university's admission policies outline the guidelines and practices for student applications and admittance into its various programs via an open and responsible admissions process. The institution uses the academic freedom granted to it by the institution Grants Commission to properly, clearly, concisely, and consistently accept students to different programs.`,
 };
-
 
 export const admissionBrochureData: TableRowData[] = [
   {

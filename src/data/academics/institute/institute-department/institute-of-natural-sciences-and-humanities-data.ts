@@ -48,9 +48,12 @@ import {
   FacultyofHumanitiesandSocialSciencesCounterData2,
   FacultyofHumanitiesandSocialSciencesData1,
   FacultyofHumanitiesandSocialSciencesData2,
+  FacultyOfHumanitiesAndSocialSciencesDepartmentEventsData,
   FacultyOfHumanitiesAndSocialSciencesfacultyData,
+  FacultyOfHumanitiesAndSocialSciencesHighlights,
   FacultyofHumanitiesandSocialSciencesinstituteProfiles,
   FacultyofHumanitiesandSocialSciencesOverviewData,
+  FacultyOfHumanitiesAndSocialSciencesPlacedStudents,
   FacultyofHumanitiesandSocialSciencesVMData,
 } from "./faculty-of-humanities-and-social-sciences-data";
 export const InstituteofNaturalSciencesandHumanitiesOverviewData: customeOverViewType = {
@@ -201,10 +204,10 @@ export const InstituteofNaturalSciencesandHumanitiesinstituteCourseCardData: Cus
         tab2: { label: "Undergraduate", data: FacultyofHumanitiesandSocialSciencesData2 },
       },
       facultyData: FacultyOfHumanitiesAndSocialSciencesfacultyData,
-      departmentHighlightsData: FacultyOfMathematicalAndStatisticalSciencesdepartmentHighlights,
+      departmentHighlightsData: FacultyOfHumanitiesAndSocialSciencesHighlights,
       counterData2: FacultyofHumanitiesandSocialSciencesCounterData2,
-      placedStudentsData: MathematicalAndStatisticalSciencesplacedStudents,
-      eventsData: FacultyOfMathematicalAndStatisticalSciencesDepartmentEventsData,
+      placedStudentsData: FacultyOfHumanitiesAndSocialSciencesPlacedStudents,
+      eventsData: FacultyOfHumanitiesAndSocialSciencesDepartmentEventsData,
     },
   },
 ];
