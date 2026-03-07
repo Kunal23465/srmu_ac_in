@@ -27,6 +27,26 @@ import shefalica from "../../../../assets/images/academics/departments/faculty-o
 import shilpa from "../../../../assets/images/academics/departments/faculty-of-humeneties/Shilpa Shukla.jpg";
 import shipra from "../../../../assets/images/academics/departments/faculty-of-humeneties/Shipra Shukla.jpg";
 import shweta from "../../../../assets/images/academics/departments/faculty-of-humeneties/Shweta Shukla.jpg";
+
+import eventsImg1 from "../../../../assets/images/academics/departments/faculty-of-humeneties/Events/img1.jpg";
+import eventsImg2 from "../../../../assets/images/academics/departments/faculty-of-humeneties/Events/img2.jpg";
+import eventsImg3 from "../../../../assets/images/academics/departments/faculty-of-humeneties/Events/img3.jpg";
+import eventsImg4 from "../../../../assets/images/academics/departments/faculty-of-humeneties/Events/img4.jpg";
+import eventsImg5 from "../../../../assets/images/academics/departments/faculty-of-humeneties/Events/img5.jpg";
+import eventsImg6 from "../../../../assets/images/academics/departments/faculty-of-humeneties/Events/img6.jpg";
+import eventsImg7 from "../../../../assets/images/academics/departments/faculty-of-humeneties/Events/img7.jpg";
+import eventsImg8 from "../../../../assets/images/academics/departments/faculty-of-humeneties/Events/img8.jpg";
+import eventsImg9 from "../../../../assets/images/academics/departments/faculty-of-humeneties/Events/img9.jpg";
+import eventsImg10 from "../../../../assets/images/academics/departments/faculty-of-humeneties/Events/img10.jpg";
+import eventsImg11 from "../../../../assets/images/academics/departments/faculty-of-humeneties/Events/img11.jpg";
+
+import heighLightsImg1 from "../../../../assets/images/academics/departments/faculty-of-humeneties/heighlights/img1.jpg";
+import heighLightsImg2 from "../../../../assets/images/academics/departments/faculty-of-humeneties/heighlights/img2.jpg";
+import heighLightsImg3 from "../../../../assets/images/academics/departments/faculty-of-humeneties/heighlights/img3.jpg";
+import heighLightsImg4 from "../../../../assets/images/academics/departments/faculty-of-humeneties/heighlights/img4.jpg";
+import heighLightsImg5 from "../../../../assets/images/academics/departments/faculty-of-humeneties/heighlights/img5.jpg";
+import heighLightsImg6 from "../../../../assets/images/academics/departments/faculty-of-humeneties/heighlights/img6.jpg";
+import heighLightsImg7 from "../../../../assets/images/academics/departments/faculty-of-humeneties/heighlights/img7.jpg";
 import { Student } from "./department-of-cse-data";
 import { EventItem } from "../../../../utils/custom/CustomEventListCard";
 export const FacultyofHumanitiesandSocialSciencesOverviewData: customeOverViewType = {
@@ -327,109 +347,43 @@ export const FacultyOfHumanitiesAndSocialSciencesfacultyData: FacultyItem[] = [
 ];
 export const FacultyOfHumanitiesAndSocialSciencesHighlights: departmentHighlightscardType[] = [
   {
-    title: "Dr. Jitendra Kumar Yadav",
-    description: "Associate Professor",
-    image: "https://testweb.srmu.ac.in/storage/teams/11zon-cropped-51-11zon-24022411552388.jpeg",
+    title: "Employability embedded as a theme in the courses",
+    description:
+      "Our students have employability embedded as a theme in their courses and faculty members ensure knowledge transfer and consultancy activities with public and private enterprises.",
+    image: heighLightsImg1,
   },
   {
-    title: "Dr. Arun Kumar Singh",
-    description: "Assistant Professor",
-    image: "https://testweb.srmu.ac.in/storage/teams/11zon-cropped-63-11zon-24022412420575.jpeg",
+    title: "Focused classes for students preparing for civil services",
+    description: "Individual student mentorship & remedial classes for better learning with focused preparation for government competitive examinations.",
+    image: heighLightsImg2,
   },
   {
-    title: "Dr. Shipra Shukla",
-    description: "Assistant Professor",
-    image: "https://testweb.srmu.ac.in/storage/teams/shipra-shukla-21062410305431.jpg",
+    title: "Skill enhancement as per NEP 2020",
+    description:
+      "Students receive practical experience which helps them apply their academic knowledge in real-world situations, develops their practical abilities, and increases their employability.",
+    image: heighLightsImg3,
   },
   {
-    title: "Dr. Aparna Mishra",
-    description: "Assistant Professor",
-    image: "https://testweb.srmu.ac.in/storage/teams/11zon-cropped-64-11zon-2402241246085.jpeg",
+    title: "Multiple activities for improving experiential learning",
+    description:
+      "For betterment of the students, the department is involved in organizing seminars, workshops, national & international conferences, field visits, social work and guest lectures.",
+    image: heighLightsImg4,
   },
   {
-    title: "Ms. Laxmi Singh",
-    description: "Assistant Professor",
-    image: "https://testweb.srmu.ac.in/storage/teams/11zon-cropped-65-11zon-24022412490935.jpeg",
+    title: "Opportunity of learning skill-oriented courses",
+    description: "The department provides various value added courses to the students to make them research oriented and develop critical thinking among them.",
+    image: heighLightsImg5,
   },
   {
-    title: "Dr. Anil Kumar",
-    description: "Assistant Professor",
-    image: "https://testweb.srmu.ac.in/storage/teams/anil-kumar-21062410351813.jpg",
+    title: "Only campus in the region providing glocal syllabi",
+    description: "Department has created a vibrant learning environment that celebrates diversity and promotes innovation by understanding both global & local scenarios.",
+    image: heighLightsImg6,
   },
   {
-    title: "Dr. Pradeep Kumar Singh",
-    description: "Assistant Professor",
-    image: "https://testweb.srmu.ac.in/storage/teams/11zon-cropped-67-11zon-24022401000860.jpeg",
-  },
-  {
-    title: "Dr. Shefalica Singh",
-    description: "Assistant Professor",
-    image: "https://testweb.srmu.ac.in/storage/teams/11zon-cropped-68-11zon-24022401032815.jpeg",
-  },
-  {
-    title: "Ms. Aisha Haleem",
-    description: "Assistant Professor",
-    image: "https://testweb.srmu.ac.in/storage/teams/11zon-cropped-70-11zon-24022401243876.jpeg",
-  },
-  {
-    title: "Dr. Pallavi Sharma",
-    description: "Assistant Professor",
-    image: "https://testweb.srmu.ac.in/storage/teams/11zon-cropped-69-11zon-24022401064879.jpeg",
-  },
-  {
-    title: "Dr. Andleeb Zahra",
-    description: "Assistant Professor",
-    image: "https://testweb.srmu.ac.in/storage/teams/11zon-cropped-61-11zon-2402241237123.jpeg",
-  },
-  {
-    title: "Dr. Ritika Srivastava",
-    description: "Assistant Professor",
-    image: "https://testweb.srmu.ac.in/storage/teams/11zon-cropped-53-11zon-24022412052050.jpeg",
-  },
-  {
-    title: "Dr. Rashmi Saxena",
-    description: "Assistant Professor",
-    image: "https://testweb.srmu.ac.in/storage/teams/11zon-cropped-54-11zon-24022412090693.jpeg",
-  },
-  {
-    title: "Dr. Shweta Shukla",
-    description: "Assistant Professor",
-    image: "https://testweb.srmu.ac.in/storage/teams/shweta-shukla-21062410384041.jpg",
-  },
-  {
-    title: "Dr. Pavitra Bajpai",
-    description: "Assistant Professor",
-    image: "https://testweb.srmu.ac.in/storage/teams/11zon-cropped-56-11zon-24022412164143.jpeg",
-  },
-  {
-    title: "Dr. Ram Pratap Yadav",
-    description: "Assistant Professor",
-    image: "https://testweb.srmu.ac.in/storage/teams/ram-pratap-yadav-21062410403441.jpg",
-  },
-  {
-    title: "Dr. Anil Kumar",
-    description: "Assistant Professor",
-    image: "https://testweb.srmu.ac.in/storage/teams/11zon-cropped-57-11zon-24022412234281.jpeg",
-  },
-  {
-    title: "Dr. Manjari Kureel",
-    description: "Assistant Professor",
-    image: "https://testweb.srmu.ac.in/storage/teams/11zon-cropped-58-11zon-2402241228557.jpeg",
-  },
-  {
-    title: "Dr. Afiya Bano",
-    description: "Assistant Professor",
-    image: "https://testweb.srmu.ac.in/storage/teams/11zon-cropped-59-11zon-24022412313355.jpeg",
-  },
-  {
-    title: "Dr. Devina Sharma",
-    description: "Assistant Professor",
-    image: "https://testweb.srmu.ac.in/storage/teams/11zon-cropped-60-11zon-24022412342499.jpeg",
-  },
-  {
-    title: "Dr. Shilpa Shukla",
-    description: "Professor",
-    image: "https://testweb.srmu.ac.in/storage/teams/shilpa-shukla-21062411183124.jpg",
+    title: "Faculty having competency to explore themes of humanities",
+    description:
+      "Faculty have been recruited from prestigious institutions and have a non-conventional mindset so that they can evolve different aspects of humanities through innovative pedagogy.",
+    image: heighLightsImg7,
   },
 ];
 
@@ -493,7 +447,7 @@ export const FacultyOfHumanitiesAndSocialSciencesDepartmentEventsData: EventItem
     speaker: "Dr. Subhash Yadav",
     topic: "Epidimiology and Treatment of Osteoporosis in India",
     date: "02nd August, 2023",
-    image: "https://testweb.srmu.ac.in/storage/events/guest8-09052401565461.jpg",
+    image: eventsImg1,
     cardBgColor: "#ffffff",
   },
   {
@@ -502,7 +456,7 @@ export const FacultyOfHumanitiesAndSocialSciencesDepartmentEventsData: EventItem
     speaker: "Mr. Paritosh Parmar",
     topic: "Career in Civil Services",
     date: "11th September, 2023",
-    image: "https://testweb.srmu.ac.in/storage/events/guest6-09052401570467.jpg",
+    image: eventsImg2,
     cardBgColor: "#ffffff",
   },
   {
@@ -511,7 +465,7 @@ export const FacultyOfHumanitiesAndSocialSciencesDepartmentEventsData: EventItem
     speaker: "Dr. Mithilesh Chaturvedi",
     topic: "Adolescent Health",
     date: "30th September, 2023",
-    image: "https://testweb.srmu.ac.in/storage/events/guest2-09052401573075.jpg",
+    image: eventsImg3,
     cardBgColor: "#ffffff",
   },
   {
@@ -519,7 +473,7 @@ export const FacultyOfHumanitiesAndSocialSciencesDepartmentEventsData: EventItem
     title: "Workshop",
     topic: "Cross Cultural Communication",
     date: "24th September, 2023",
-    image: "https://testweb.srmu.ac.in/storage/events/workship2-09052401560833.jpg",
+    image: eventsImg4,
     cardBgColor: "#ffffff",
   },
   {
@@ -527,7 +481,7 @@ export const FacultyOfHumanitiesAndSocialSciencesDepartmentEventsData: EventItem
     title: "Industrial Visit",
     topic: "Budget Session",
     date: "24th February, 2023",
-    image: "https://testweb.srmu.ac.in/storage/events/visit-10022411563546.jpg",
+    image: eventsImg5,
     cardBgColor: "#ffffff",
   },
   {
@@ -535,7 +489,7 @@ export const FacultyOfHumanitiesAndSocialSciencesDepartmentEventsData: EventItem
     title: "Workshop",
     topic: "Health Promotion of Mental Helath and Life Skills",
     date: "05th April, 2023",
-    image: "https://testweb.srmu.ac.in/storage/events/workshop3-09052401555523.jpg",
+    image: eventsImg6,
     cardBgColor: "#ffffff",
   },
   {
@@ -543,7 +497,7 @@ export const FacultyOfHumanitiesAndSocialSciencesDepartmentEventsData: EventItem
     title: "Workshop",
     topic: "SIFPSA",
     date: "28th August, 2023",
-    image: "https://testweb.srmu.ac.in/storage/events/workshop4-09052401554527.jpg",
+    image: eventsImg7,
     cardBgColor: "#ffffff",
   },
   {
@@ -551,7 +505,7 @@ export const FacultyOfHumanitiesAndSocialSciencesDepartmentEventsData: EventItem
     title: "Seminar",
     topic: "Human Helath and Drug Addiction Issues and Challenges",
     date: "26th June, 2023",
-    image: "https://testweb.srmu.ac.in/storage/events/nation6-09052401564037.jpg",
+    image: eventsImg8,
     cardBgColor: "#ffffff",
   },
   {
@@ -559,7 +513,7 @@ export const FacultyOfHumanitiesAndSocialSciencesDepartmentEventsData: EventItem
     title: "International Conference",
     topic: "Rethinking the Global South Literatures, Cultures and Media",
     date: "02nd-03rd February, 2019",
-    image: "https://testweb.srmu.ac.in/storage/events/nation5-09052401563145.jpg",
+    image: eventsImg9,
     cardBgColor: "#ffffff",
   },
   {
@@ -568,7 +522,7 @@ export const FacultyOfHumanitiesAndSocialSciencesDepartmentEventsData: EventItem
     speaker: "Mr. Utkarsh Mishra",
     topic: "Preventions of Cruelty on Animals",
     date: "12th April, 2023",
-    image: "https://testweb.srmu.ac.in/storage/events/guest7-09052401573962.jpg",
+    image: eventsImg10,
     cardBgColor: "#ffffff",
   },
   {
@@ -576,7 +530,7 @@ export const FacultyOfHumanitiesAndSocialSciencesDepartmentEventsData: EventItem
     title: "Workshop",
     topic: "Awareness regarding the Bones & Skeleton",
     date: "30th September, 2023",
-    image: "https://testweb.srmu.ac.in/storage/events/webinar5-09052401553462.jpg",
+    image: eventsImg11,
     cardBgColor: "#ffffff",
   },
 ];

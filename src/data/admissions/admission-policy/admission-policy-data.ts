@@ -1,7 +1,7 @@
 import { customeOverViewType } from "../../../types/home-data-type";
 import { TableRowData } from "../../../types/table-data-types";
 import sanctionedIntake2024_25 from "../../../assets/pdf/admissons/admission-policy/sanctioned-intake-2024-25-230224031406.pdf";
-import eligibilityCriterion2024_25 from "../../../assets/pdf/admissons/admission-policy/eligibility-criteria-for-admissions-2024-25--230224031713.pdf";
+import eligibilityCriterion2026_27 from "../../../assets/pdf/admissons/admission-policy/Eligibility Criteria for Admissions 2026-27.pdf";
 import feeRefundPolicy from "../../../assets/pdf/admissons/admission-policy/Fee Refund Policy Session 2026-27.pdf";
 import admissionEnrollmentRules from "../../../assets/pdf/admissons/admission-policy/admissioncumenrollmentrules2019-20-191223122553-260224123143.pdf";
 import adb from "../../../assets/pdf/admissons/admission-policy/booklet-2024-ok-compressed-1--290224051456.pdf";
@@ -27,8 +27,8 @@ export const PoliciesAndDownloadsData: TableRowData[] = [
   },
   {
     id: 2,
-    title: "Eligibility Criterion (Session: 2024-25)",
-    download: { type: "pdf", url: eligibilityCriterion2024_25 },
+    title: "Eligibility Criterion (Session: 2026-27)",
+    download: { type: "pdf", url: eligibilityCriterion2026_27 },
   },
   {
     id: 3,

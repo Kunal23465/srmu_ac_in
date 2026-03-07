@@ -34,10 +34,7 @@ const Home: React.FC = () => {
       <div className="bg-[#ecf0f9]">
         <TestimonialSlider />
       </div>
-
       <DepartmentalVideoComponent />
-
-
       <CustomTopFooter data={CustomTopFooterAbout} />
     </div>
   );

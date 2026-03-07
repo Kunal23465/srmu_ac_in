@@ -2,7 +2,7 @@ import React from "react";
 import Classes from "../../utils/styles/Global.module.css";
 import banner4 from "../../assets/images/home/banner-bg.jpg";
 import viewmorepdf from "../../assets/pdf/home/aa-career-360-270125114337.pdf"
-
+import srmuRatedPdf from "../../assets/pdf/home/Best B School certificate.pdf"
 import Slider from "react-slick";
 
 import { LiaLongArrowAltLeftSolid, LiaLongArrowAltRightSolid } from "react-icons/lia";
@@ -35,8 +35,8 @@ const Banner: React.FC = () => {
                         <img
                             className="
                              w-full
-                             h-[50vh]                 /* Mobile: Half screen */
-                             sm:h-auto               /* Tablet/Desktop: use min-height instead */
+                             h-[50vh]                
+                             sm:h-auto           
                              sm:min-h-[530px]
                              md:min-h-[600px]
                              lg:min-h-[800px]
@@ -71,8 +71,8 @@ const Banner: React.FC = () => {
                         <img
                             className="
                              w-full
-                             h-[50vh]                 /* Mobile: Half screen */
-                             sm:h-auto               /* Tablet/Desktop: use min-height instead */
+                             h-[50vh]                
+                             sm:h-auto            
                              sm:min-h-[530px]
                              md:min-h-[600px]
                              lg:min-h-[800px]
@@ -90,7 +90,7 @@ const Banner: React.FC = () => {
                                     <div className="text-[12px] sm:text-[21px]" >Making it one of the Best B-Schools in the country in 2025</div>
 
                                     <div className="mt-10">
-                                        <a href={viewmorepdf} target="_blank">
+                                        <a href={srmuRatedPdf} target="_blank">
                                             <button className="bg-[#ffb703] uppercase cursor-pointer fw500 hover:bg-transparent hover:border hover:border-[#ffb703] hover:text-[#ffb703]  py-4 px-5 text-[#023047] flex gap-x-2 items-center rounded-lg">View More <LiaLongArrowAltRightSolid size={24} /></button>
 
                                         </a>
