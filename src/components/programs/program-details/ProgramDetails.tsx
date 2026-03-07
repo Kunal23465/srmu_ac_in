@@ -124,7 +124,7 @@ const ProgramDetails: React.FC = () => {
     };
   };
 
-  console.log("whySrmuLogo", whySrmuLogo);
+  console.log("dataByID", dataByID);
 
   if (recruiterLoading) {
     return <p>loading....</p>;
@@ -140,14 +140,17 @@ const ProgramDetails: React.FC = () => {
       </Helmet>
       <div className="mt-20 ">
         <div className={`${Classes["container"]} relative`}>
-          <Link
-            target="_blank"
+          {
             // @ts-ignore
-            to={dataByID?.documentPath}
-            className="bg-[#ffb703] absolute -top-18 lg:-top-44 right-0 border text-nowrap border-[#ffb703] hover:bg-white text-[#023047] hover:text-[#ffb703] transition-all duration-500 px-3 lg:px-6 py-2 lg:py-3 text-sm sm:text-base font-medium rounded-lg inline-flex items-center gap-2"
-          >
-            Download Syllabus <FaArrowRightLong />
-          </Link>
+            dataByID?.documentPath && dataByID?.documentPath != null && <Link Link
+              target="_blank"
+              // @ts-ignore
+              to={dataByID?.documentPath}
+              className="bg-[#ffb703] absolute -top-18 lg:-top-44 right-0 border text-nowrap border-[#ffb703] hover:bg-white text-[#023047] hover:text-[#ffb703] transition-all duration-500 px-3 lg:px-6 py-2 lg:py-3 text-sm sm:text-base font-medium rounded-lg inline-flex items-center gap-2"
+            >
+              Download Syllabus <FaArrowRightLong />
+            </Link>
+          }
           {/* @ts-ignore */}
           <h2 className="lg:text-[50px] leading-[1.2] md:text-[46.875px] text-[28px] fw500 text-[#023047]">{dataByID?.name}</h2>
           {/* @ts-ignore */}
@@ -294,7 +297,7 @@ const ProgramDetails: React.FC = () => {
         <EnquiryForm />
 
         <CustomTopFooter data={CustomTopFooterData1} />
-      </div>
+      </div >
     </>
   );
 };

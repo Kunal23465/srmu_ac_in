@@ -87,7 +87,7 @@ const Banner: React.FC = () => {
                                 <div className=" text-white sm:px-5 sm:py-5 md:py-10 rounded-tl-[50px] transition-all ease-in-out duration-300 rounded-br-[50px] hover:rounded-tl-none hover:rounded-br-none  hover:rounded-tr-[50px] hover:rounded-bl-[50px]">
                                     <div className="text-[18px] sm:text-[20px] mb-4 " >Celebrating Excellence</div>
                                     <div className="text-[22px] sm:text-[32px] lg:text-[46px] xl:text-[52px] font-medium leading-[1.2] mb-4" >SRMU rated AA+ <br /> by Career 360</div>
-                                    <div className="text-[12px] sm:text-[21px]" >Making it one of the Best B-Schools in the country in 2025</div>
+                                    <div className="text-[12px] sm:text-[21px]" >Making it one of the Best B-Schools in the country in 2026</div>
 
                                     <div className="mt-10">
                                         <a href={srmuRatedPdf} target="_blank">
