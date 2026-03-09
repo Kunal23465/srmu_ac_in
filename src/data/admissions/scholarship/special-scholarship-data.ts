@@ -1,22 +1,20 @@
 import { HeadData, RowData } from "../../../utils/custom/CustomScholarshiptable";
 
 export const SpecialScholarship_SRMUtoSRMU_TableHeadData: HeadData[] = [
-    {
-        head1: "CGPA Scored",
-        head2: "Scholarship"
-    }
-]
+  {
+    head1: "CGPA Scored",
+    head2: "Scholarship",
+  },
+];
 
 export const SpecialScholarship_SRMUtoSRMU_TableData: RowData[] = [
   {
     col1: "> 8.5",
     col2: "100% of yearly tuition fee",
-
   },
   {
     col1: "7.5 - 8.5",
     col2: "100% of semester tuition fee",
-
   },
   {
     col1: "6.5 - 7.5",
@@ -26,10 +24,7 @@ export const SpecialScholarship_SRMUtoSRMU_TableData: RowData[] = [
     col1: "< 6.5",
     col2: "30% of semester tuition fee",
   },
-  
 ];
-
-
 
 export const SpecialScholarship_Category_TableHeadData: HeadData[] = [
   {
@@ -39,10 +34,6 @@ export const SpecialScholarship_Category_TableHeadData: HeadData[] = [
 ];
 
 export const SpecialScholarship_Category_TableData: RowData[] = [
-  {
-    col1: "Quantum",
-    col2: "25%",
-  },
   {
     col1: "Defence, Paramilitary & Police",
     col2: "25%",
@@ -88,4 +79,3 @@ export const SpecialScholarship_Category_TableData: RowData[] = [
     col2: "25%",
   },
 ];
-

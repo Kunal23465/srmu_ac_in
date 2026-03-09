@@ -23,6 +23,7 @@ import { enquiryReducer } from "../student-enquiry/submit-enquiry/enquirySlice";
 import { recruiterSliceReducer } from "../recruiter/recruiterSlice";
 import { programIdReducer } from "../program-finder/program/programSlice";
 import { whySrmuLogoSliceReducer } from "../why-srmu/whySrmuLogoSlice";
+import { getHomeEventsDataSliceReducer } from "../home-events/getHomeEventsSlice";
 
 const allReducer = {
   ui: uiReducer,
@@ -49,6 +50,7 @@ const allReducer = {
   enquiry: enquiryReducer,
   getRecruiter: recruiterSliceReducer,
   programId: programIdReducer,
-  whySrmuLogoById: whySrmuLogoSliceReducer
+  whySrmuLogoById: whySrmuLogoSliceReducer,
+  getHomeEventsData: getHomeEventsDataSliceReducer,
 };
 export default allReducer;

@@ -110,7 +110,6 @@ export const routes = [
   {
     path: "/",
     element: <RootLayout />,
-
     children: [
       {
         index: true,
@@ -302,7 +301,6 @@ export const routes = [
 
       {
         path: "/:programType",
-        // element: <ProgramFinderPage />,
         element: <ProgramTypePage />,
       },
       {
@@ -312,6 +310,10 @@ export const routes = [
       {
         path: "/program/:programName",
         element: <ProgramDetailsPage />,
+      },
+      {
+        path: "/news/:programName",
+        element: <NewsEventDetails />,
       },
 
       {

@@ -6,6 +6,9 @@ import { FaRegCalendar } from "react-icons/fa";
 import { eventsData } from "../../data/home/EventsData";
 import { useNavigate } from "react-router-dom";
 import { LiaLongArrowAltRightSolid } from "react-icons/lia";
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch, RootState } from "../../store";
+import { fetchHomeEventsData } from "../../store/home-events/getHomeEventsThunk";
 
 /* -------------------- Responsive Slice Hook -------------------- */
 const useResponsiveSlice = () => {
@@ -51,7 +54,7 @@ const NewsCard = ({ image, description, date, title, onReadMore }: any) => {
         {description.length > sliceLength && (
           <div className="flex items-center mt-2">
             <button
-              className="flex items-center mt-8 gap-2 bg-[#ffb703] text-[#023047] fw500 uppercase py-3 px-4 rounded-sm transition border border-[#ffb703] hover:bg-transparent hover:text-[#ffb703]"
+              className="flex items-center cursor-pointer mt-8 gap-2 bg-[#ffb703] text-[#023047] fw500 uppercase py-3 px-4 rounded-sm transition border border-[#ffb703] hover:bg-transparent hover:text-[#ffb703]"
               onClick={onReadMore}
             >
               Read More <LiaLongArrowAltRightSolid size={24} />
@@ -86,7 +89,7 @@ const NewsCard1 = ({ image, description, date, title, onReadMore }: any) => {
         {description.length > sliceLength && (
           <div className="flex items-center mt-4">
             <button
-              className="flex items-center sm:mt-8 gap-2 bg-[#ffb703] text-[#023047] fw500 uppercase py-3 px-4 rounded-sm transition border border-[#ffb703] hover:bg-transparent hover:text-[#ffb703]"
+              className="flex items-center sm:mt-8 cursor-pointer gap-2 bg-[#ffb703] text-[#023047] fw500 uppercase py-3 px-4 rounded-sm transition border border-[#ffb703] hover:bg-transparent hover:text-[#ffb703]"
               onClick={onReadMore}
             >
               Read More <LiaLongArrowAltRightSolid size={24} />
@@ -100,6 +103,8 @@ const NewsCard1 = ({ image, description, date, title, onReadMore }: any) => {
 
 /* -------------------- Main Component -------------------- */
 const Events: React.FC = () => {
+  const dispatch = useDispatch<AppDispatch>();
+  const { data } = useSelector((state: RootState) => state.getHomeEventsData)
   const navigate = useNavigate();
 
   const handleReadMore = (news: any) => {
@@ -118,6 +123,12 @@ const Events: React.FC = () => {
     autoplaySpeed: 3000,
   };
 
+  useEffect(() => {
+    dispatch(fetchHomeEventsData(1));
+  }, [])
+
+
+  console.log("Events Data", data)
   return (
     <div className={`${Classes["container"]} pt-7 pb-4 sm:py-7 md:py-10 lg:py-14`}>
       <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] fw500 text-left">Latest News and Events</h2>
