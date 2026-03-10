@@ -24,6 +24,7 @@ import { recruiterSliceReducer } from "../recruiter/recruiterSlice";
 import { programIdReducer } from "../program-finder/program/programSlice";
 import { whySrmuLogoSliceReducer } from "../why-srmu/whySrmuLogoSlice";
 import { getHomeEventsDataSliceReducer } from "../home-events/getHomeEventsSlice";
+import { getPlacementRecordTabDataSliceReducer } from "../placement/placement-record/placementRecordTabDataSlice";
 
 const allReducer = {
   ui: uiReducer,
@@ -52,5 +53,6 @@ const allReducer = {
   programId: programIdReducer,
   whySrmuLogoById: whySrmuLogoSliceReducer,
   getHomeEventsData: getHomeEventsDataSliceReducer,
+  getPlacementRecordTabData: getPlacementRecordTabDataSliceReducer
 };
 export default allReducer;
