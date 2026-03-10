@@ -147,6 +147,7 @@ const RootLayout: React.FC = () => {
         <a
           onMouseEnter={() => setHovered(2)}
           onMouseLeave={() => setHovered(null)}
+          target="_blank"
           href="https://studentportal.srmu.ac.in/login"
           className={`
     w-full sm:w-auto sm:rotate-270 writing-mode-horizontal sm:writing-mode-vertical relative z-400
