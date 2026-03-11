@@ -1,13 +1,19 @@
-// store/slices/programSlice.ts
-
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface ProgramState {
   programId: string | null;
 }
 
+// SSR safe initial state
+const getProgramId = () => {
+  if (typeof window !== "undefined") {
+    return localStorage.getItem("programId");
+  }
+  return null;
+};
+
 const initialState: ProgramState = {
-  programId: localStorage.getItem("programId"),
+  programId: getProgramId(),
 };
 
 const programSlice = createSlice({
@@ -16,11 +22,18 @@ const programSlice = createSlice({
   reducers: {
     setProgramId: (state, action: PayloadAction<string>) => {
       state.programId = action.payload;
-      localStorage.setItem("programId", action.payload);
+
+      if (typeof window !== "undefined") {
+        localStorage.setItem("programId", action.payload);
+      }
     },
+
     clearProgramId: (state) => {
       state.programId = null;
-      localStorage.removeItem("programId");
+
+      if (typeof window !== "undefined") {
+        localStorage.removeItem("programId");
+      }
     },
   },
 });

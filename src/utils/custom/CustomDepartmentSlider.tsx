@@ -48,7 +48,8 @@ const CustomDepartmentSlider = <T,>({
   /** 🔹 Detect screen size on load */
   useEffect(() => {
     const updateSlides = () => {
-      const width = window.innerWidth;
+      const width =
+        typeof window !== "undefined" ? window.innerWidth : 0;
 
       if (width < 640) {
         setCurrentSlidesToShow(breakpoints.mobile);

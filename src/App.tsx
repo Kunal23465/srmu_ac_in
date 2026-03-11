@@ -1,18 +1,7 @@
-import React from 'react'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import { HelmetProvider } from "react-helmet-async";
-import { routes } from './utils/AllRoutes';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import { AllRoutes } from "./utils/AllRoutes";
 
-const App: React.FC = () => {
-  const router = createBrowserRouter(routes);
-  return (
-    <HelmetProvider>
-      <RouterProvider router={router} />
-    </HelmetProvider>
-  )
-
+function App() {
+  return <AllRoutes />;
 }
 
-export default App
+export default App;

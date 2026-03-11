@@ -29,10 +29,10 @@ import { fetchRecruiterById } from "../../../store/recruiter/recruiterThunk";
 // import PartnerLogos from "./PartnerLogos";
 import { fetchWhySrmuLogoById } from "../../../store/why-srmu/whySrmuLogoThunk";
 const ProgramDetails: React.FC = () => {
-  const programId: any = localStorage.getItem("programId");
   const dispatch = useDispatch<AppDispatch>();
   const [isPhd, setIsPhd] = useState(false);
   const [expanded, setExpanded] = useState(false);
+  const [programId, setProgramId] = useState<string | null>(null);
 
   const { programId: baseProgramId } = useSelector((state: RootState) => state.programId)
   console.log(baseProgramId, "programId in detail page")
@@ -43,17 +43,27 @@ const ProgramDetails: React.FC = () => {
   const { data: counterData } = useSelector((state: RootState) => state.getCounterById);
   const { data: recruiterData, loading: recruiterLoading } = useSelector((state: RootState) => state.getRecruiter);
   const { data: whySrmuLogo } = useSelector((state: RootState) => state.whySrmuLogoById);
+
+  // Initialize programId from localStorage on client side only
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const storedProgramId = localStorage.getItem("programId");
+      setProgramId(storedProgramId);
+    }
+  }, []);
+
   useEffect(() => {
     if (programId !== null) {
-      dispatch(fetchWhySrmuSectionById({ programId: programId }));
-      dispatch(fetchProgramFinderByID(programId));
-      dispatch(fetchProgramFeesByProgramId(programId));
-      dispatch(getCounterById(programId));
-      dispatch(fetchProgramHeighlightById(programId));
-      dispatch(fetchRecruiterById({ programId: programId }));
-      dispatch(fetchWhySrmuLogoById({ programId: programId }));
+      const numericProgramId = Number(programId);
+      dispatch(fetchWhySrmuSectionById({ programId: numericProgramId }));
+      dispatch(fetchProgramFinderByID(numericProgramId));
+      dispatch(fetchProgramFeesByProgramId(numericProgramId));
+      dispatch(getCounterById(numericProgramId));
+      dispatch(fetchProgramHeighlightById(numericProgramId));
+      dispatch(fetchRecruiterById({ programId: numericProgramId }));
+      dispatch(fetchWhySrmuLogoById({ programId: numericProgramId }));
     }
-    if (programId == 81) {
+    if (programId == "81") {
       setIsPhd(true);
     } else {
       setIsPhd(false);

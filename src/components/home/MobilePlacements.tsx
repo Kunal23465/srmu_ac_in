@@ -1,4 +1,5 @@
 import Slider from "react-slick";
+import { Fragment } from "react";
 import Classes from "../../utils/styles/Global.module.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -36,7 +37,7 @@ const MobilePlacements = () => {
             {/* Left divs */}
             <div className="flex items-stretch gap-3 w-full min-w-[130px] lg:min-w-[150px]">
               {MobilePlacementData[0].leftDivstoBeFlex.map((item) => (
-                <>
+                <div key={item.id}>
                   {item.isSlider ? (
                     <div className="w-full px-3  pt-4 pb-10 bg-[#8fcedd] text-gray-900 rounded-md shadow-md min-w-[115px] lg:min-w-[calc(33%-50px)] lg:h-[550px] flex flex-col justify-between">
                       <Slider {...sliderSettings} className="slider_placement_dots_law ">
@@ -80,7 +81,7 @@ const MobilePlacements = () => {
                       <p className="text-sm sm:text-base text-left font-poppins">{item.description}</p>
                     </div>
                   )}
-                </>
+                </div>
               ))}
             </div>
 
@@ -112,7 +113,7 @@ const MobilePlacements = () => {
             {/* ===== */}
             <div className="flex items-stretch gap-3 w-full min-w-[130px] lg:min-w-[150px] mt-3">
               {MobilePlacementData[0].secondLeftDivstoBeFlex.map((item) => (
-                <>
+                <Fragment key={item.id}>
                   {item.isSlider ? (
                     <div className="w-full  px-3 py-4  bg-[#8fcedd] text-gray-900 rounded-md shadow-md min-w-[115px] lg:min-w-[calc(33%-50px)] lg:h-[550px] flex flex-col justify-between">
                       <Slider {...sliderSettings} className="slider_placement_dots_law placement_dots_law_left">
@@ -159,7 +160,7 @@ const MobilePlacements = () => {
                       <p className="text-sm sm:text-base text-left font-poppins">{item.description}</p>
                     </div>
                   )}
-                </>
+                </Fragment>
               ))}
             </div>
 

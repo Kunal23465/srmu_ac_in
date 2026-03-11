@@ -19,14 +19,18 @@ const RootLayout: React.FC = () => {
   const [hovered, setHovered] = useState<number | null>(null);
   // Scroll to top on page change
   useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+    if (typeof window !== "undefined") {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
   }, [location]);
 
   // RIGHT SIDE BAR SHOW/HIDE ON SCROLL
   useEffect(() => {
+    if (typeof window === "undefined") return;
+    
     const handleScroll = () => {
       if (window.scrollY > 10) setShowRightBar(true);
       else setShowRightBar(false);

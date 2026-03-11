@@ -12,7 +12,8 @@ const ConferencesSection: React.FC = () => {
 
   useEffect(() => {
     const updateCardsPerPage = () => {
-      const width = window.innerWidth;
+      const width =
+        typeof window !== "undefined" ? window.innerWidth : 0;
 
       if (width < 770) {
         setCardsPerPage(1); // mobile

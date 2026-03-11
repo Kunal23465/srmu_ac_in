@@ -33,7 +33,7 @@ export const CustomCompaniesScope: React.FC<CompaniesScopeProps> = ({
   const [activeTab, setActiveTab] = useState(0);
   const [index, setIndex] = useState(0);
   const [isSmallScreen, setIsSmallScreen] = useState(
-    window.innerWidth < 640
+    typeof window !== "undefined" ? window.innerWidth < 640 : false
   );
 
   // Responsive detection

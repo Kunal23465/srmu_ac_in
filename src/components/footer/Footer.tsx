@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import logosrmcem from "../../assets/images/logo.svg";
 import Classes from "../../utils/styles/Global.module.css";
 import { Link } from "react-router-dom";
@@ -201,13 +201,22 @@ const VideoPopUp = ({ setCheck }: any) => {
 
 const Footer: React.FC = () => {
   const [check, setCheck] = useState(false);
-  if (check) {
-    document.body.style.height = "100vh";
-    document.body.style.overflowY = "hidden";
-  } else {
-    document.body.style.height = "auto";
-    document.body.style.overflowY = "auto";
-  }
+  useEffect(() => {
+    if (typeof document === "undefined") return;
+
+    if (check) {
+      document.body.style.height = "100vh";
+      document.body.style.overflowY = "hidden";
+    } else {
+      document.body.style.height = "auto";
+      document.body.style.overflowY = "auto";
+    }
+
+    return () => {
+      document.body.style.height = "auto";
+      document.body.style.overflowY = "auto";
+    };
+  }, [check]);
   return (
     <>
       <footer className={` text-white py-20`}>
@@ -295,14 +304,14 @@ const Footer: React.FC = () => {
                 >
                   <img src={linkdin} alt="linkdin" />
                 </Link>
-                <Link
-                  to=" https://twitter.com/srmu_lucknow"
+                <a
+                  href=" https://twitter.com/srmu_lucknow"
                   target="_blank"
                   className=" flex items-center justify-center transition-all duration-300 hover:border-[#ffb703] hover:bg-transparent hover:text-[#ffb703] cursor-pointer"
                   aria-label="LinkedIn"
                 >
                   <img src={twitter} alt="twitter" />
-                </Link>
+                </a>
                 <Link
                   to="https://www.youtube.com/channel/UCQBjHzkED5ESWvlQiwLNZ4Q"
                   target="_blank"

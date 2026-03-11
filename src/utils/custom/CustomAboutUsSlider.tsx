@@ -109,7 +109,7 @@ const CustomAboutUsSlider: React.FC<Props> = ({ data }) => {
   };
 
   /* Highlight logic (same as your custom slider) */
-  const highlightedIndex = window.innerWidth < 1024 ? current : (current + 1) % data.items.length;
+  const highlightedIndex = windowWidth < 1024 ? current : (current + 1) % data.items.length;
 
   return (
     <div className="w-full flex justify-center py-16 px-4 font-inter">

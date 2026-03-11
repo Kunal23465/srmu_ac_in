@@ -145,7 +145,7 @@ const ApprovalsSlider = () => {
 
   // 🔍 Determine when to disable arrows
   const isAtStart = currentSlide === 0;
-  const isAtEnd = currentSlide >= totalSlides - (window.innerWidth < 768 ? 1 : window.innerWidth < 1024 ? 2 : 3);
+  const isAtEnd = currentSlide >= totalSlides - (windowWidth < 768 ? 1 : windowWidth < 1024 ? 2 : 3);
 
   useEffect(() => {
     const handleResize = () => {

@@ -19,6 +19,8 @@ export const useScrollSteps = (stepsLength: number) => {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
+    
     const handleScroll = () => {
       if (!containerRef.current) return;
 

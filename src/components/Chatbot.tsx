@@ -12,6 +12,8 @@ declare global {
 
 const Chatbot: React.FC = () => {
     useEffect(() => {
+        if (typeof window === "undefined") return;
+
         const loadScript = (src: string): Promise<void> => {
             return new Promise((resolve) => {
                 const script = document.createElement("script");
@@ -23,14 +25,21 @@ const Chatbot: React.FC = () => {
         };
 
         const loadResources = async () => {
+            if (typeof window === "undefined" || typeof document === "undefined") {
+                return;
+            }
+
             await loadScript("https://code.jquery.com/jquery-3.6.1.min.js");
             await loadScript("https://js.pusher.com/7.0/pusher.min.js");
+
             await loadScript(
                 "https://arsinfotech.in/chatbot/admin/public/chatbot/chatbot.js"
             );
+
             await loadScript(
                 "https://arsinfotech.in/chatbot/admin/public/livechat/user.js"
             );
+
             await loadScript(
                 "https://www.google.com/recaptcha/api.js?render=6Leef4opAAAAAIHXI82ZE6l8ezbNjJe2_1nwDlUH"
             );
@@ -46,6 +55,7 @@ const Chatbot: React.FC = () => {
                             const el = document.querySelector(
                                 ".g-recaptcha-response"
                             ) as HTMLInputElement | null;
+
                             if (el) el.value = token;
                         });
                 });

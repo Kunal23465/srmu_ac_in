@@ -96,6 +96,7 @@ import AddmissionProgramFinderPage from "../pages/admissions/program-finder/Addm
 import ProgramTypePage from "../pages/programs/ProgramTypePage/ProgramTypePage";
 import PageNotFound from "../pages/PageNotFound";
 import ProgramTypeItemPage from "../pages/ProgramTypeItemPage";
+import { useRoutes } from "react-router-dom";
 // interface IMatches {
 //   pathname: string;
 //   params: Params<string>;
@@ -106,6 +107,12 @@ import ProgramTypeItemPage from "../pages/ProgramTypeItemPage";
 // type HandleType = {
 //   crumb: (param?: string) => React.ReactNode;
 // };
+
+export function AllRoutes() {
+  const element = useRoutes(routes);
+  return element;
+}
+
 export const routes = [
   {
     path: "/",

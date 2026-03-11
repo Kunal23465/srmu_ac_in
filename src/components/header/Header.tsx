@@ -56,6 +56,8 @@ const Header = () => {
   }, []);
 
   useEffect(() => {
+    if (typeof document === "undefined") return;
+
     if (sideMenu) {
       document.body.style.height = "100vh";
       document.body.style.overflow = "hidden";

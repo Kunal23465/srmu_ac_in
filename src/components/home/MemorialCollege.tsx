@@ -76,7 +76,11 @@ const MemorialCollege: React.FC = () => {
     ],
   };
   const handleScroll = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    if (typeof document === "undefined") return;
+
+    document.getElementById(id)?.scrollIntoView({
+      behavior: "smooth",
+    });
   };
   const dispatch = useDispatch<AppDispatch>();
   const { data: banner } = useSelector((state: RootState) => state.getbanner);

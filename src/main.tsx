@@ -1,12 +1,17 @@
+import { hydrateRoot } from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+import { Provider } from "react-redux";
+import { HelmetProvider } from "react-helmet-async";
+import App from "./App";
+import { store } from "./store";
 
-import { createRoot } from 'react-dom/client'
-import App from './App.tsx'
-import './index.css'
-import { Provider } from 'react-redux'
-import { store } from './store/index.tsx'
-createRoot(document.getElementById('root')!).render(
-  <Provider store={store}>
-    <App />
-  </Provider>
-  ,
-)
+hydrateRoot(
+  document.getElementById("root")!,
+  <HelmetProvider>
+    <Provider store={store}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Provider>
+  </HelmetProvider>
+);

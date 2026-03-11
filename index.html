@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png" href="./src/assets/images/fav-icon.png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <!-- explicitly load Tailwind CSS early to avoid flash -->
+  <link rel="stylesheet" href="/src/index.css" />
 
   <!-- Google Tag Manager -->
   <script>(function (w, d, s, l, i) {
@@ -108,8 +110,7 @@
   </noscript>
 
   <!-- React App -->
-  <div id="root"></div>
-
+<div id="root"><!--app-html--></div>
   <!-- ================= LIVE CHAT HTML ================= -->
 
   <div class="live-chat-container" id="liveChatContainer">
@@ -143,8 +144,11 @@
     data-key="WJ7Vitr1kuP5UtQX10hjIvfh3QXV8twrYqB7xo4leYDQatWIU2JvNN16GAGig0Wx">
   </div>
 
-  <!-- React Main -->
-  <script type="module" src="/src/main.tsx"></script>
+  <!-- Loader shown until React hydrates -->
+  <div id="loader" class="loader"></div>
+
+  <!-- React Client Entry -->
+  <script type="module" src="/src/entry-client.tsx"></script>
 
   <!-- reCAPTCHA execution -->
   <script>

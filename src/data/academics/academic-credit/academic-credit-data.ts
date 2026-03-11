@@ -7,9 +7,25 @@ export const AcademicBankCreditOverviewData: customeOverViewType = {
 };
 
 export const videos = [
-  "https://www.youtube.com/embed/5GLUuX-SqmU",
-  "https://www.youtube.com/embed/kK4tA-pMBcM",
-  "https://www.youtube.com/embed/WW07HV_Rj4E",
-  "https://www.youtube.com/embed/ndbBOe3ylfc",
+  {
+    id: "5GLUuX-SqmU",
+    thumbnail: "https://img.youtube.com/vi/5GLUuX-SqmU/maxresdefault.jpg",
+    title: "Video 1",
+  },
+  {
+    id: "kK4tA-pMBcM",
+    thumbnail: "https://img.youtube.com/vi/kK4tA-pMBcM/maxresdefault.jpg",
+    title: "Video 2",
+  },
+  {
+    id: "WW07HV_Rj4E",
+    thumbnail: "https://img.youtube.com/vi/WW07HV_Rj4E/maxresdefault.jpg",
+    title: "Video 3",
+  },
+  {
+    id: "ndbBOe3ylfc",
+    thumbnail: "https://img.youtube.com/vi/ndbBOe3ylfc/maxresdefault.jpg",
+    title: "Video 4",
+  },
 ];
 

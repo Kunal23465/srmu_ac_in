@@ -57,13 +57,13 @@ const CustomIqacCard: React.FC<IqacCardProps> = ({ title, icon, description, col
 
     useEffect(() => {
         // Detect mobile once
-        if (window.innerWidth <= 600) {
+        if (typeof window !== "undefined" && window.innerWidth <= 600) {
             setActive(false); // start closed
         }
     }, []);
 
     const handleMobileToggle = () => {
-        if (window.innerWidth <= 600) {
+        if (typeof window !== "undefined" && window.innerWidth <= 600) {
             setActive(prev => !prev);
         }
     };

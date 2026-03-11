@@ -38,7 +38,7 @@ const SliderLogic: FC<SliderLogicProps> = ({ setScrollToFunctions }) => {
 
   const scrollTo = (direction: 'left' | 'right') => {
     const container = cardsContainerRef.current;
-    if (!container) return;
+    if (!container || typeof window === "undefined") return;
 
     const firstCard = container.querySelector<HTMLDivElement>('.card-slider');
     if (!firstCard) return;
