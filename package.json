@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "tsx server.ts",
     "build": "vite build --outDir dist/client && vite build --ssr src/entry-server.tsx --outDir dist/server",
-    "preview": "node server.js"
+    "preview": "node dist/server/entry-server.js"
   },
   "dependencies": {
     "@fancyapps/fancybox": "^3.5.7",
