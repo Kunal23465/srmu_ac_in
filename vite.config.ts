@@ -1,20 +1,16 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
-  plugins: [react(), tailwindcss()],
+  plugins: [react()],
 
   ssr: {
-    noExternal: ["antd", "@ant-design/icons", "react-helmet-async", "rc-util", "rc-pagination", "rc-picker", "rc-select", "rc-tree", "rc-field-form"],
+    noExternal: ["antd", "@ant-design", "rc-util", "rc-pagination", "rc-picker", "rc-tree", "rc-table", "rc-field-form", "rc-input", "rc-select", "rc-textarea", "rc-tooltip"],
   },
 
-  optimizeDeps: {
-    include: ["antd", "@ant-design/icons", "react-helmet-async", "rc-util"],
-  },
-
-  server: {
-    host: "10.8.20.38",
-    port: 3031,
+  build: {
+    rollupOptions: {
+      external: [],
+    },
   },
 });
