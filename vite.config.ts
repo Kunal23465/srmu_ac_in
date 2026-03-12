@@ -4,9 +4,15 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   plugins: [tailwindcss(), react()],
+
   ssr: {
-    noExternal: ["react-router", "react-router-dom"],
+    noExternal: ["antd", "react-router", "react-router-dom"],
   },
+
+  optimizeDeps: {
+    include: ["antd"],
+  },
+
   server: {
     host: "10.8.20.38",
     port: 3031,
