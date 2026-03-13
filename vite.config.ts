@@ -27,7 +27,7 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
 
   ssr: {
-    noExternal: ["antd", "@ant-design/icons", "rc-input", "rc-util", "rc-field-form", "rc-pagination", "rc-picker", "rc-select", "rc-tree", "rc-table"],
+    noExternal: ["antd", "@ant-design/icons", "rc-input", "rc-util", "rc-field-form", "rc-pagination", "rc-picker", "rc-select", "rc-tree", "rc-table", "react-helmet-async"],
   },
 
   build: {
