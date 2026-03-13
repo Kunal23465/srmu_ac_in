@@ -48,6 +48,6 @@ export default defineConfig({
   },
 
   build: {
-    target: "esnext",
+    target: "node20",
   },
 });
