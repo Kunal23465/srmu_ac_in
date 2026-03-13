@@ -3,11 +3,11 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-"scripts": {
-  "dev": "tsx server.ts",
-  "build": "vite build",
-  "preview": "NODE_ENV=production tsx server.ts"
-},
+  "scripts": {
+    "dev": "tsx server.ts",
+    "build": "vite build --outDir dist/client && vite build --ssr src/entry-server.tsx --outDir dist/server",
+    "preview": "NODE_ENV=production node server.ts"
+  },
   "dependencies": {
     "@fancyapps/fancybox": "^3.5.7",
     "@fancyapps/ui": "^6.1.5",
@@ -15,7 +15,7 @@
     "@tailwindcss/vite": "^4.1.16",
     "antd": "^5.28.1",
     "axios": "^1.13.2",
-    "express": "^5.2.1",
+    "express": "^4.22.1",
     "formik": "^2.4.8",
     "framer-motion": "^12.23.24",
     "icons": "^1.0.0",

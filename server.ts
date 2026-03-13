@@ -7,46 +7,61 @@ import { fileURLToPath } from "url";
 const host = "10.8.20.38";
 const port = 3031;
 
-// ESM me __dirname create karna padta hai
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+
+const isProduction = process.env.NODE_ENV === "production";
 
 async function createServer() {
   const app = express();
 
-  const vite = await createViteServer({
-    server: {
-      middlewareMode: true,
-      host,
-      port,
-    },
-    appType: "custom",
-  });
+  let vite: any;
 
-  app.use(vite.middlewares);
+  if (!isProduction) {
+    // DEV MODE
+    vite = await createViteServer({
+      server: {
+        middlewareMode: true,
+        host,
+        port,
+      },
+      appType: "custom",
+    });
 
-  app.use(async (req, res) => {
+    app.use(vite.middlewares);
+  } else {
+    // PRODUCTION MODE
+    app.use(express.static(path.resolve(__dirname, "dist/client")));
+  }
+
+  app.use("*", async (req, res) => {
     const url = req.originalUrl;
 
     try {
-      // index.html read
-      const templatePath = path.resolve(__dirname, "index.html");
-      let template = fs.readFileSync(templatePath, "utf-8");
+      let template;
+      let render;
 
-      // vite transform
-      template = await vite.transformIndexHtml(url, template);
+      if (!isProduction) {
+        // DEV
+        template = fs.readFileSync(path.resolve(__dirname, "index.html"), "utf-8");
 
-      // load SSR entry
-      const { render } = await vite.ssrLoadModule("/src/entry-server.tsx");
+        template = await vite.transformIndexHtml(url, template);
 
-      // render React app
+        render = (await vite.ssrLoadModule("/src/entry-server.tsx")).render;
+      } else {
+        // PRODUCTION
+        template = fs.readFileSync(path.resolve(__dirname, "dist/client/index.html"), "utf-8");
+
+        render = (await import("./dist/server/entry-server.js")).render;
+      }
+
       const appHtml = render(url);
 
       const html = template.replace(`<!--app-html-->`, appHtml);
 
       res.status(200).set({ "Content-Type": "text/html" }).end(html);
     } catch (e) {
-      vite.ssrFixStacktrace(e as Error);
+      if (vite) vite.ssrFixStacktrace(e as Error);
       console.error(e);
       res.status(500).end((e as Error).message);
     }
