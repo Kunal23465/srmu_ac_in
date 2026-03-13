@@ -5,6 +5,10 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   plugins: [react(), tailwindcss()],
 
+  optimizeDeps: {
+    include: ["antd", "@ant-design/icons", "@ant-design/icons-svg"],
+  },
+
   ssr: {
     noExternal: [
       "antd",
@@ -22,16 +26,8 @@ export default defineConfig({
     ],
   },
 
-  optimizeDeps: {
-    include: ["antd", "@ant-design/icons", "@ant-design/icons-svg"],
-  },
-
   build: {
     target: "node20",
-  },
-
-  server: {
-    host: "0.0.0.0",
-    port: 3031,
+    ssrManifest: true,
   },
 });
