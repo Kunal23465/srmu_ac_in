@@ -6,12 +6,12 @@ import { store } from "./store";
 import App from "./App";
 import "./index.css";
 
-const { HelmetProvider } = helmetPkg;
+const HelmetProvider = helmetPkg.HelmetProvider;
 
 export function render(url: string) {
     const helmetContext: any = {};
 
-    return ReactDOMServer.renderToString(
+    const html = ReactDOMServer.renderToString(
         <HelmetProvider context={helmetContext}>
             <Provider store={store}>
                 <StaticRouter location={url}>
@@ -20,4 +20,6 @@ export function render(url: string) {
             </Provider>
         </HelmetProvider>
     );
+
+    return { html, helmet: helmetContext.helmet };
 }
