@@ -1,7 +1,8 @@
-import { AllRoutes } from "./utils/AllRoutes";
+import { AllRoutesNew } from "./utils/AllRoutesNew";
+
 
 function App() {
-  return <AllRoutes />;
+  return <AllRoutesNew />;
 }
 
 export default App;

@@ -31,7 +31,11 @@ async function createServer() {
     app.use(vite.middlewares);
   } else {
     // PRODUCTION MODE
-    app.use(express.static(path.resolve(__dirname, "dist/client")));
+    app.use(
+      express.static(path.resolve(__dirname, "dist/client"), {
+        index: false,
+      }),
+    );
   }
 
   app.use("*", async (req, res) => {
@@ -54,9 +58,15 @@ async function createServer() {
 
         render = (await import("./dist/server/entry-server.js")).render;
       }
-
-      const appHtml = render(url);
-
+      // let appHtml = "";
+      // try {
+      //   appHtml = await render(url);
+      //   console.log("SSR OK");
+      // } catch (err) {
+      //   console.error("SSR ERROR:", err);
+      // }
+      const appHtml = await render(url);
+      console.log("SSR HTML LENGTH:", appHtml?.length);
       const html = template.replace(`<!--app-html-->`, appHtml);
 
       res.status(200).set({ "Content-Type": "text/html" }).end(html);
