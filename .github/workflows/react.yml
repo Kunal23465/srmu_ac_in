@@ -36,9 +36,7 @@ jobs:
           npm run build
 
       - name: Restart SSR server with PM2
-        if: github.event_name == 'push'
         run: |
           cd /home/ubuntu/srmuac/SRMU_AC_IN_UI
-          pm2 describe srmu-ac > /dev/null 2>&1 \
-            && pm2 reload srmu-ac \
-            pm2 save
+          pm2 restart srmu-ac
+          pm2 save
