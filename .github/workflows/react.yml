@@ -41,5 +41,4 @@ jobs:
           cd /home/ubuntu/srmuac/SRMU_AC_IN_UI
           pm2 describe srmu-ac > /dev/null 2>&1 \
             && pm2 reload srmu-ac \
-            || pm2 start server.ts --name srmu-ac --interpreter tsx
-          pm2 save
+            pm2 save
