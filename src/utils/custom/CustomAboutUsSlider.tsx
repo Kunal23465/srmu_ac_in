@@ -1,6 +1,6 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
+import useEmblaCarousel from "embla-carousel-react";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
-import Slider from "react-slick";
 
 /* ---------------- TYPES ---------------- */
 type WhyItem = {
@@ -17,9 +17,6 @@ type WhySliderData = {
 type Props = {
   data: WhySliderData;
 };
-
-/* ---------------- ICONS ---------------- */
-
 
 /* ---------------- CARD ---------------- */
 const WhyCard: React.FC<
@@ -48,75 +45,85 @@ const WhyCard: React.FC<
 
 /* ---------------- SLIDER ---------------- */
 const CustomAboutUsSlider: React.FC<Props> = ({ data }) => {
-  const sliderRef = useRef<Slider | null>(null);
   const [current, setCurrent] = useState(0);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  const [windowWidth, setWindowWidth] = useState(typeof window !== "undefined" ? window.innerWidth : 0);
+  const [windowWidth, setWindowWidth] = useState(0);
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: true,
+    align: "start",
+    skipSnaps: false,
+    dragFree: false,
+  });
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
+
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
     };
 
+    handleResize();
+
     window.addEventListener("resize", handleResize);
+
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  useEffect(() => {
+    if (!emblaApi) return;
+
+    const onSelect = () => {
+      setSelectedIndex(emblaApi.selectedScrollSnap());
+      setCurrent(emblaApi.selectedScrollSnap());
+    };
+
+    emblaApi.on("select", onSelect);
+    onSelect();
+
+    return () => {
+      emblaApi.off("select", onSelect);
+    };
+  }, [emblaApi]);
+
   // Function to determine slidesToShow based on window width
-  const getSlidesToShow = () => {
+  const getSlidesToShow = useCallback(() => {
     if (windowWidth >= 1400) return 3;
     if (windowWidth >= 1024) return 2;
-
     return 1;
+  }, [windowWidth]);
+
+  const goToNext = () => emblaApi?.scrollNext();
+  const goToPrev = () => emblaApi?.scrollPrev();
+
+  // Get slide width based on window width
+  const getSlideWidth = () => {
+    const slidesToShow = getSlidesToShow();
+    return `${100 / slidesToShow}%`;
   };
 
-  const settings = {
-    dots: true,
-    arrows: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: getSlidesToShow(),
-    slidesToScroll: 1,
-    centerMode: false,
-    beforeChange: (_: number, next: number) => setCurrent(next),
-    appendDots: (dots: React.ReactNode) => (
-      <div className="mt-14">
-        <ul className="flex justify-center gap-0">{dots}</ul>
-      </div>
-    ),
-    customPaging: (i: number) => (
-      <div
-        className={`
-          w-4 h-4 rounded-full border border-[#023047] transition-all duration-300
-          ${i === current ? "bg-[#023047] border-[#023047] w-5 h-5" : ""}
-        `}
-      />
-    ),
-    responsive: [
-      {
-        breakpoint: 1400,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
-  };
+  // Force re-initialization when window width changes
+  useEffect(() => {
+    if (emblaApi) {
+      emblaApi.reInit();
+    }
+  }, [windowWidth, emblaApi]);
 
   /* Highlight logic (same as your custom slider) */
-  const highlightedIndex = windowWidth < 1024 ? current : (current + 1) % data.items.length;
+  const highlightedIndex = windowWidth < 1024 ? selectedIndex : (selectedIndex + 1) % data.items.length;
+
+  // Custom dots - scroll to specific slide
+  const scrollTo = (index: number) => {
+    emblaApi?.scrollTo(index);
+  };
 
   return (
     <div className="w-full flex justify-center py-16 px-4 font-inter">
       <div className="w-full max-w-7xl flex flex-col lg:flex-row gap-12">
         {/* LEFT SECTION */}
         <div className="flex flex-col w-[300px] lg:sticky lg:top-8">
-          <h2 className="text-[28px]  lg:text-[3.125rem] fw600 mb-4">
+          <h2 className="text-[28px] lg:text-[3.125rem] fw600 mb-4">
             {data.heading.split(" ").map((w, i) => (
               <span key={i} className="block">
                 {w}
@@ -128,14 +135,14 @@ const CustomAboutUsSlider: React.FC<Props> = ({ data }) => {
 
           <div className="flex gap-4">
             <button
-              onClick={() => sliderRef.current?.slickPrev()}
+              onClick={goToPrev}
               className="text-gray-700 hover:text-white hover:bg-[#ffb703] hover:border-[#ffb703] bg-white shadow-lg w-13 h-13 flex items-center justify-center rounded-full border border-gray-200 z-10 cursor-pointer"
             >
               <MdKeyboardArrowLeft size="26" />
             </button>
 
             <button
-              onClick={() => sliderRef.current?.slickNext()}
+              onClick={goToNext}
               className="text-gray-700 hover:text-white hover:bg-[#ffb703] hover:border-[#ffb703] bg-white shadow-lg w-13 h-13 flex items-center justify-center rounded-full border border-gray-200 z-10 cursor-pointer"
             >
               <MdKeyboardArrowRight size="26" />
@@ -145,13 +152,45 @@ const CustomAboutUsSlider: React.FC<Props> = ({ data }) => {
 
         {/* RIGHT SECTION */}
         <div className="w-full lg:max-w-[calc(100%-300px)]">
-          <Slider ref={sliderRef} {...settings}>
-            {data.items.map((item, index) => (
-              <div key={index} className="px-3 py-4">
-                <WhyCard {...item} highlight={highlightedIndex === index} hovered={hoveredIndex === index} setHovered={(v) => setHoveredIndex(v ? index : null)} />
-              </div>
-            ))}
-          </Slider>
+          {/* Embla Carousel */}
+          <div className="overflow-hidden" ref={emblaRef}>
+            <div className="flex">
+              {data.items.map((item, index) => (
+                <div
+                  key={index}
+                  className="flex-shrink-0 flex-grow-0 px-3 py-4"
+                  style={{ flexBasis: getSlideWidth() }}
+                >
+                  <WhyCard
+                    {...item}
+                    highlight={highlightedIndex === index}
+                    hovered={hoveredIndex === index}
+                    setHovered={(v) => setHoveredIndex(v ? index : null)}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Custom Dots - exactly matching original design */}
+          <div className="mt-14">
+            <ul className="flex justify-center gap-0 list-none!">
+              {data.items.map((_, index) => (
+                <li
+                  key={index}
+                  className="mx-1"
+                  onClick={() => scrollTo(index)}
+                >
+                  <div
+                    className={`
+                      w-5 h-5 rounded-full border border-[#023047] transition-all duration-300 cursor-pointer
+                      ${index === selectedIndex ? "bg-[#023047] border-[#023047] w-5 h-5" : ""}
+                    `}
+                  />
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </div>

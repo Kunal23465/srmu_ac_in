@@ -1,84 +1,65 @@
-import { useEffect, useState } from "react";
-import Slider from "react-slick";
+import { useEffect, useState, useRef } from "react";
+import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
+
 import Classes from "../../utils/styles/Global.module.css";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import { videos } from "../../data/academics/academic-credit/academic-credit-data";
 
-/* images imports same as before */
-
-const NextArrow = ({ onClick }: any) => (
-  <button
-    onClick={onClick}
-    className="absolute right-[calc(50%-70px)] text-gray-500 hover:text-white -bottom-24 border bg-white border-gray-200 hover:border-[#ffb703] hover:bg-[#ffb703] shadow-lg w-13 h-13 flex items-center justify-center rounded-full z-10 cursor-pointer"
-  >
-    <MdKeyboardArrowRight size={26} />
-  </button>
-);
-
-const PrevArrow = ({ onClick }: any) => (
-  <button
-    onClick={onClick}
-    className="absolute left-[calc(50%-70px)] text-gray-500 hover:text-white -bottom-24 border bg-white border-gray-200 hover:border-[#ffb703] hover:bg-[#ffb703] shadow-lg w-13 h-13 flex items-center justify-center rounded-full z-10 cursor-pointer"
-  >
-    <MdKeyboardArrowLeft size={26} />
-  </button>
-);
-
 export default function DepartmentalVideo() {
+
+  const autoplay = useRef(
+    Autoplay({ delay: 4000, stopOnInteraction: false })
+  );
+
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    { loop: true, align: "center" },
+    [autoplay.current]
+  );
 
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
   const [activeSlide, setActiveSlide] = useState(0);
-  const [windowWidth, setWindowWidth] = useState(0);
+  const [slidesToShow, setSlidesToShow] = useState(3);
 
+  /** responsive slides */
   useEffect(() => {
 
-    if (typeof window === "undefined") return;
+    const updateSlides = () => {
+      const width = window.innerWidth;
 
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
+      if (width < 600) setSlidesToShow(1);
+      else if (width < 1024) setSlidesToShow(2);
+      else setSlidesToShow(3);
     };
 
-    handleResize();
+    updateSlides();
+    window.addEventListener("resize", updateSlides);
 
-    window.addEventListener("resize", handleResize);
-
-    return () => window.removeEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", updateSlides);
 
   }, []);
 
-  const getSlidesToShow = () => {
-    if (windowWidth >= 1024) return 3;
-    if (windowWidth >= 600) return 2;
-    return 1;
-  };
+  /** track active slide */
+  useEffect(() => {
 
-  const shouldCenterMode = () => windowWidth >= 768;
-  const shouldShowArrows = () => windowWidth >= 375;
+    if (!emblaApi) return;
 
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 600,
-    slidesToShow: getSlidesToShow(),
-    slidesToScroll: 1,
-    centerMode: shouldCenterMode(),
-    centerPadding: "0px",
-    arrows: shouldShowArrows(),
-    nextArrow: shouldShowArrows() ? <NextArrow /> : undefined,
-    prevArrow: shouldShowArrows() ? <PrevArrow /> : undefined,
-    beforeChange: (_: number, next: number) => setActiveSlide(next),
+    const onSelect = () => {
+      setActiveSlide(emblaApi.selectedScrollSnap());
+    };
 
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: { slidesToShow: 2 }
-      },
-      {
-        breakpoint: 600,
-        settings: { slidesToShow: 1 }
-      }
-    ]
-  };
+    emblaApi.on("select", onSelect);
+
+    return () => {
+      emblaApi.off("select", onSelect);
+    };
+
+  }, [emblaApi]);
+
+  const prev = () => emblaApi?.scrollPrev();
+  const next = () => emblaApi?.scrollNext();
+
+  const slideWidth = 100 / slidesToShow;
 
   return (
     <section className="py-7 md:py-10 lg:py-14">
@@ -89,56 +70,83 @@ export default function DepartmentalVideo() {
 
       <div className={`${Classes["container"]} mb-30`}>
 
-        <Slider key={windowWidth} className="department-crousel" {...settings}>
+        {/* Embla */}
+        <div className="overflow-hidden relative" ref={emblaRef}>
 
-          {videos.map((video, index) => {
+          <div className="flex">
 
-            const isSecondImage = activeSlide % videos.length === index;
+            {videos.map((video: any, index) => {
 
-            return (
-//@ts-ignore
-              <div key={video.id} className="px-3">
+              const isActive = activeSlide === index;
 
-                <div className="relative group rounded-xl overflow-hidden shadow-lg cursor-pointer">
-                 
-                  <img
-                    //@ts-ignore
-                    src={video.thumbnail}
-                    className={`w-full h-[320px] ${isSecondImage ? "lg:h-[400px]" : ""
-                      } object-cover rounded-xl`}
-                  />
+              return (
 
-                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <div
+                  key={video.id}
+                  className="shrink-0 px-3 flex items-center"
+                  style={{ flex: `0 0 ${slideWidth}%` }}
+                >
 
-                    <button
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        //@ts-ignore
-                        setSelectedVideo(video.id);
-                      }}
-                      className="bg-[#ffb703] transition p-5 rounded-full shadow-xl pointer-events-auto"
-                    >
-                      ▶
-                    </button>
+                  <div className="relative group rounded-xl overflow-hidden shadow-lg cursor-pointer">
 
-                  </div>
+                    <img
+                      src={video.thumbnail}
+                      className={`w-full object-cover rounded-xl transition-all duration-300 ${isActive ? "lg:h-[400px]" : "h-[320px]"
+                        }`}
+                    />
 
-                  <div className="absolute bottom-0 w-full bg-black/50 text-white text-lg font-semibold px-4 py-3">
-                    {/* @ts-ignore */}
-                    {video.title}
+                    <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setSelectedVideo(video.id);
+                        }}
+                        className="bg-[#ffb703] transition p-5 rounded-full shadow-xl pointer-events-auto"
+                      >
+                        ▶
+                      </button>
+
+                    </div>
+
+                    <div className="absolute bottom-0 w-full bg-black/50 text-white text-lg font-semibold px-4 py-3">
+                      {video.title}
+                    </div>
+
                   </div>
 
                 </div>
 
-              </div>
+              );
 
-            );
-          })}
+            })}
 
-        </Slider>
+          </div>
+
+        </div>
+
+        {/* Arrows */}
+        <div className="flex justify-center gap-6 mt-10">
+
+          <button
+            onClick={prev}
+            className="text-gray-500 hover:text-white border bg-white border-gray-200 hover:border-[#ffb703] hover:bg-[#ffb703] shadow-lg w-13 h-13 flex items-center justify-center rounded-full cursor-pointer"
+          >
+            <MdKeyboardArrowLeft size={26} />
+          </button>
+
+          <button
+            onClick={next}
+            className="text-gray-500 hover:text-white border bg-white border-gray-200 hover:border-[#ffb703] hover:bg-[#ffb703] shadow-lg w-13 h-13 flex items-center justify-center rounded-full cursor-pointer"
+          >
+            <MdKeyboardArrowRight size={26} />
+          </button>
+
+        </div>
 
       </div>
 
+      {/* Video Modal */}
       {selectedVideo && (
 
         <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-[999]">
@@ -168,4 +176,4 @@ export default function DepartmentalVideo() {
 
     </section>
   );
-} 
+}

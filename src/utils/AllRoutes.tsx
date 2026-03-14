@@ -44,14 +44,8 @@ import ConvocationPage from "../pages/campus-life/convocation/ConvocationPage";
 import { convocationData } from "../data/campus-life/convocation/convocation-data";
 import ConvocationDetailPage from "../pages/campus-life/convocation/ConvocationDetailPage";
 import ClubsPage from "../pages/campus-life/clubs/ClubsPage";
-// import AfterClass10thPage from "../pages/after-class-10th/AfterClass10thPage";
-// import AfterClass12thPage from "../pages/Home/AfterClass12thPage";
 import WomenEmpowermentPage from "../pages/campus-life/women-empowerment/WomenEmpowermentPage";
-// import IndustryHonorsPage from "../pages/Home/IndustryHonorsPage";
 import PublicationPage from "../pages/Research/Publication/PublicationPage";
-// import AfterGraduationPage from "../pages/Home/AfterGraduationPage";
-// import AfterPolytechnicPage from "../pages/Home/AfterPolytechnicPage";
-// import AfterPostGraduationPage from "../pages/Home/AfterPostGraduationPage";
 import StudentSenatePage from "../pages/campus-life/student-senate/StudentSenatePage";
 import StudentCornerPage from "../pages/campus-life/student-corner/StudentCornerPage";
 import GreenInitiativePage from "../pages/campus-life/green-initiative/GreenInitiativePage";
@@ -62,14 +56,9 @@ import OutreachActivationsPage from "../pages/campus-life/outreach-activations/O
 import AdmissionEnquiryPage from "../pages/admission-enquiry/AdmissionEnquiryPage";
 import AdmissionPolicyPage from "../pages/admissions/admission-policy/AdmissionPolicyPage";
 import ConferenceDetailPage from "../components/research/publication/conference/ConferenceDetailPage";
-// import BtechInCSEAIAndML from "../pages/programs/btech-in-cse-ai-ml/BtechInCSEAIAndML";
 import AwardOverviewPage from "../pages/about/award-overview/AwardOverviewPage";
 import DepartmentDetailPage from "../components/academics/institutes/institute-department/Institute-department/DepartmentDetailPage";
 import InstituteDepartmentPage from "../pages/academics/institutes/institute-department/InstituteDepartmentPage";
-// import FacultyOfBiotechnologyPage from "../pages/academics/institutes/institute-department/FacultyOfBiotechnologyPage";
-// import FacultyOfPhysicalSciencesPage from "../pages/academics/institutes/institute-department/FacultyOfPhysicalSciencesPage";
-// import FacultyOfMathematicalAndStatisticalSciencesPage from "../pages/academics/institutes/institute-department/FacultyOfMathematicalAndStatisticalSciencesPage";
-// import FacultyOfHumanitiesAndSocialSciencesPage from "../pages/academics/institutes/institute-department/FacultyOfHumanitiesAndSocialSciencesPage";
 import CareerFormPage from "../pages/Home/CareerFormPage";
 import TermsConditionPage from "../pages/Home/TermsConditionPage";
 import HostelPage from "../pages/campus-life/facilities/HostelPage";
@@ -83,8 +72,6 @@ import RtiPage from "../pages/rti/RtiPage";
 import TransportationPage from "../pages/campus-life/facilities/transportation/TransportationPage";
 import NewsLetterPage from "../pages/Home/NewsLetterPage";
 import HowToApplyPage from "../pages/admissions/how-to-apply/HowToApplyPage";
-// import RootPrograms from "../pages/programs/RootPrograms";
-// import AfterClass10thInnerPage from "../pages/after-class-10th/AfterClass10thInnerPage";
 import ProgramDetailsPage from "../pages/programs/details-page/ProgramDetailsPage";
 import PrivacyPolicyPage from "../pages/privacy-policy/PrivacyPolicyPage";
 import DisclaimerPage from "../pages/disclaimer/DisclaimerPage";
@@ -92,21 +79,11 @@ import TermsAndConditionPage from "../pages/terms-condition/TermsAndConditionPag
 import MandatoryDisclouserPage from "../pages/mandatory-disclouser/MandatoryDisclouserPage";
 import PhdOfflineApplicationPage from "../pages/Research/phd-offline-application/PhdOfflineApplicationPage";
 import AddmissionProgramFinderPage from "../pages/admissions/program-finder/AddmissionProgramFinderPage";
-// import ProgramFinderPage from "../pages/programs/ProgramFinderPage";
 import ProgramTypePage from "../pages/programs/ProgramTypePage/ProgramTypePage";
 import PageNotFound from "../pages/PageNotFound";
 import ProgramTypeItemPage from "../pages/ProgramTypeItemPage";
 import { useRoutes } from "react-router-dom";
-// interface IMatches {
-//   pathname: string;
-//   params: Params<string>;
-//   data: unknown;
-//   handle: unknown;
-// }
 
-// type HandleType = {
-//   crumb: (param?: string) => React.ReactNode;
-// };
 
 export function AllRoutes() {
   const element = useRoutes(routes);
@@ -121,9 +98,6 @@ export const routes = [
       {
         index: true,
         element: <HomePage />,
-        // handle: {
-        //   crumb: () => <Link to="/">Home</Link>,
-        // },
       },
       {
         path: "career-form",
@@ -145,28 +119,12 @@ export const routes = [
         path: "shift-schedule",
         element: <ShiftSchedulePage />,
       },
-      // AfterPostGraduationPage
+
       {
         path: "/about-us",
         element: <AboutPage />,
 
-        children: [
-          // {
-          //   path: "leadership-and-governance",
-          //   element: <LeadershipAndGovernancePage />,
-          // },
-          // {
-          //   path: "committees-and-cells",
-          //   element: <CommitteeAndCellsPage />,
 
-          //   children: committeeCards.map((card) => ({
-          //     path: card.routeKey,
-          //     element: <CustomCommitteeDetailsPage committee={card} />,
-          //   })),
-          // },
-
-
-        ],
       },
 
       {
@@ -218,7 +176,6 @@ export const routes = [
           {
             path: ":departmentName/:detailName",
             element: <DepartmentDetailPage />,
-            // element: <p>Hello Bro</p>,
           },
           {
             path: "department/:detailName",
@@ -259,11 +216,7 @@ export const routes = [
             element: <CurriculumDesignPage />,
           },
 
-          // {
-          //   path: "faculty-of-civil-engineering",
-          //   element: <FacultyOfCivilEngineeringPage />,
 
-          // },
         ],
       },
       {
@@ -310,6 +263,8 @@ export const routes = [
         path: "/:programType",
         element: <ProgramTypePage />,
       },
+
+
       {
         path: "/:programType/:item",
         element: <ProgramTypeItemPage />,
@@ -328,11 +283,7 @@ export const routes = [
         element: <CampusLifePage />,
 
         children: [
-          // {
-          //   path: "facilities",
-          //   element: <FacilitiesPage />,
 
-          // },
           {
             path: "transportation",
             element: <TransportationPage />,
@@ -425,6 +376,7 @@ export const routes = [
           },
         ],
       },
+
       {
         path: "/research",
         element: <ResearchOverviewPage />,
@@ -442,8 +394,6 @@ export const routes = [
             path: "phd-offline-application",
             element: <PhdOfflineApplicationPage />,
           },
-
-          // PhdOfflineApplicationPage
           {
             path: "innovation",
             element: <InnovationPage />,
@@ -492,9 +442,9 @@ export const routes = [
             element: <AlumniFeedbackPage />,
           },
 
-          // PlacementOverviewPage
         ],
       },
+
       {
         path: "admission-enquiry",
         element: <AdmissionEnquiryPage />,
@@ -507,7 +457,7 @@ export const routes = [
         path: "mandatory-disclouser",
         element: <MandatoryDisclouserPage />,
       },
-      // MandatoryDisclouserPage
+
       {
         path: ":name",
         element: <NewsEventDetails />,
@@ -523,6 +473,7 @@ export const routes = [
           },
         ],
       },
+      // ============================================Above Done===================================================
       {
         path: "/rti",
         element: <RtiPage />,

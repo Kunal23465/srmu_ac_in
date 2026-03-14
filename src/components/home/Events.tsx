@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Classes from "../../utils/styles/Global.module.css";
 
-import Slider from "react-slick";
 import { FaRegCalendar } from "react-icons/fa";
 import { eventsData } from "../../data/home/EventsData";
 import { useNavigate } from "react-router-dom";
@@ -10,38 +9,62 @@ import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../store";
 import { fetchHomeEventsData } from "../../store/home-events/getHomeEventsThunk";
 
+import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
+
 /* -------------------- Responsive Slice Hook -------------------- */
+
 const useResponsiveSlice = () => {
+
   const [sliceLength, setSliceLength] = useState(100);
 
   useEffect(() => {
+
     const handleResize = () => {
+
       if (window.innerWidth >= 1280) {
-        setSliceLength(200); // xl and above
+        setSliceLength(200);
       } else {
-        setSliceLength(100); // below xl
+        setSliceLength(100);
       }
+
     };
 
     handleResize();
+
     window.addEventListener("resize", handleResize);
+
     return () => window.removeEventListener("resize", handleResize);
+
   }, []);
 
   return sliceLength;
+
 };
 
 /* -------------------- News Card (Right Side) -------------------- */
+
 const NewsCard = ({ image, description, date, title, onReadMore }: any) => {
+
   const sliceLength = useResponsiveSlice();
 
-  const truncatedDesc = description.length > sliceLength ? description.slice(0, sliceLength) + "..." : description;
+  const truncatedDesc =
+    description.length > sliceLength
+      ? description.slice(0, sliceLength) + "..."
+      : description;
 
   return (
+
     <div className="lg:flex items-center gap-x-10 border p-3 rounded-lg border-[#ffb703] hover:shadow-2xl transition-all duration-200">
-      <img src={image} alt="Event" className="transition-all aspect-4/3 duration-200 rounded-md w-full max-w-[200px] xl:max-w-[300px] max-h-[400px] object-cover" />
+
+      <img
+        src={image}
+        alt="Event"
+        className="transition-all aspect-4/3 duration-200 rounded-md w-full max-w-[200px] xl:max-w-[300px] max-h-[400px] object-cover"
+      />
 
       <div>
+
         <div className="flex items-center gap-x-2 text-[#00000099]">
           <FaRegCalendar color="#3f9cbb" />
           {date}
@@ -49,119 +72,223 @@ const NewsCard = ({ image, description, date, title, onReadMore }: any) => {
 
         <h1 className="text-sm sm:text-[20px] fw600">{title}</h1>
 
-        <div className="mt-2 text-[#000000cc] text-justify" dangerouslySetInnerHTML={{ __html: truncatedDesc }} />
+        <div
+          className="mt-2 text-[#000000cc] text-justify"
+          dangerouslySetInnerHTML={{ __html: truncatedDesc }}
+        />
 
         {description.length > sliceLength && (
+
           <div className="flex items-center mt-2">
+
             <button
               className="flex items-center cursor-pointer mt-8 gap-2 bg-[#ffb703] text-[#023047] fw500 uppercase py-3 px-4 rounded-sm transition border border-[#ffb703] hover:bg-transparent hover:text-[#ffb703]"
               onClick={onReadMore}
             >
+
               Read More <LiaLongArrowAltRightSolid size={24} />
+
             </button>
+
           </div>
+
         )}
+
       </div>
+
     </div>
+
   );
+
 };
 
-/* -------------------- News Card 1 (Left / Slider) -------------------- */
+/* -------------------- News Card 1 -------------------- */
+
 const NewsCard1 = ({ image, description, date, title, onReadMore }: any) => {
+
   const sliceLength = useResponsiveSlice();
 
-  const truncatedDesc = description.length > sliceLength ? description.slice(0, sliceLength) + "..." : description;
+  const truncatedDesc =
+    description.length > sliceLength
+      ? description.slice(0, sliceLength) + "..."
+      : description;
 
   return (
+
     <div className="w-full cursor-pointer">
-      <img src={image} alt="Event" className="transition-all duration-200 rounded-lg mb-4 w-full object-cover aspect-[5/3] object-bottom" />
+
+      <img
+        src={image}
+        alt="Event"
+        className="transition-all duration-200 rounded-lg mb-4 w-full object-cover aspect-[5/3] object-bottom"
+      />
 
       <div>
+
         <div className="flex items-center gap-x-2 text-[#00000099]">
           <FaRegCalendar color="#3f9cbb" />
           {date}
         </div>
 
-        <h1 className="text-sm sm:text-[20px] fw600 min-h-16 sm:min-h-auto">{title}</h1>
+        <h1 className="text-sm sm:text-[20px] fw600 min-h-16 sm:min-h-auto">
+          {title}
+        </h1>
 
-        <div className="mt-2 text-[#000000cc] text-justify" dangerouslySetInnerHTML={{ __html: truncatedDesc }} />
+        <div
+          className="mt-2 text-[#000000cc] text-justify"
+          dangerouslySetInnerHTML={{ __html: truncatedDesc }}
+        />
 
         {description.length > sliceLength && (
+
           <div className="flex items-center mt-4">
+
             <button
               className="flex items-center sm:mt-8 cursor-pointer gap-2 bg-[#ffb703] text-[#023047] fw500 uppercase py-3 px-4 rounded-sm transition border border-[#ffb703] hover:bg-transparent hover:text-[#ffb703]"
               onClick={onReadMore}
             >
+
               Read More <LiaLongArrowAltRightSolid size={24} />
+
             </button>
+
           </div>
+
         )}
+
       </div>
+
     </div>
+
   );
+
 };
 
 /* -------------------- Main Component -------------------- */
+
 const Events: React.FC = () => {
+
   const dispatch = useDispatch<AppDispatch>();
-  const { data } = useSelector((state: RootState) => state.getHomeEventsData)
+
+  const { data } = useSelector(
+    (state: RootState) => state.getHomeEventsData
+  );
+
   const navigate = useNavigate();
 
+  const autoplay = useRef(
+    Autoplay({ delay: 3000, stopOnInteraction: false })
+  );
+
+  const [emblaRef] = useEmblaCarousel(
+    { loop: true },
+    [autoplay.current]
+  );
+
   const handleReadMore = (news: any) => {
+
     navigate(`news/${news.title.replace(/\s+/g, "-").toLowerCase()}`, {
       state: news,
     });
-  };
 
-  const sliderSettings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
   };
 
   useEffect(() => {
+
     dispatch(fetchHomeEventsData(1));
-  }, [])
 
+  }, []);
 
-  console.log("Events Data", data)
   return (
-    <div className={`${Classes["container"]} pt-7 pb-4 sm:py-7 md:py-10 lg:py-14`}>
-      <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] fw500 text-left">Latest News and Events</h2>
 
-      <p className="text-jsutify">At University’s beautiful campus, you’ll find a diverse and welcoming community that will teach you life skills along with having fun.</p>
+    <div className={`${Classes["container"]} pt-7 pb-4 sm:py-7 md:py-10 lg:py-14`}>
+
+      <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] fw500 text-left">
+        Latest News and Events
+      </h2>
+
+      <p className="text-jsutify">
+        At University’s beautiful campus, you’ll find a diverse and welcoming
+        community that will teach you life skills along with having fun.
+      </p>
 
       {/* ---------------- Desktop Layout ---------------- */}
+
       <div className="hidden lg:flex flex-row-reverse gap-x-10 mt-6 md:mt-8 lg:mt-10">
+
         <div className="w-full lg:w-[40%] border p-3 rounded-lg border-[#ffb703] hover:shadow-2xl transition-all duration-200">
+
           {eventsData.slice(0, 1).map((news, index) => (
-            <NewsCard1 key={index} image={news.image} date={news.date} title={news.title} description={news.description} onReadMore={() => handleReadMore(news)} />
+
+            <NewsCard1
+              key={index}
+              image={news.image}
+              date={news.date}
+              title={news.title}
+              description={news.description}
+              onReadMore={() => handleReadMore(news)}
+            />
+
           ))}
+
         </div>
 
         <div className="w-full lg:w-[60%] flex flex-col gap-y-5">
+
           {eventsData.slice(1, 3).map((news, index) => (
-            <NewsCard key={index} image={news.image} date={news.date} title={news.title} description={news.description} onReadMore={() => handleReadMore(news)} />
+
+            <NewsCard
+              key={index}
+              image={news.image}
+              date={news.date}
+              title={news.title}
+              description={news.description}
+              onReadMore={() => handleReadMore(news)}
+            />
+
           ))}
+
         </div>
+
       </div>
 
       {/* ---------------- Mobile Slider ---------------- */}
+
       <div className="lg:hidden mt-5 w-full overflow-hidden">
-        <Slider {...sliderSettings}>
-          {eventsData.map((news, index) => (
-            <div key={index} className="w-full border sm:min-h-0 p-3 hover:shadow-2xl rounded-md border-[#ffb703] transition-all duration-200">
-              <NewsCard1 image={news.image} date={news.date} title={news.title} description={news.description} onReadMore={() => handleReadMore(news)} />
-            </div>
-          ))}
-        </Slider>
+
+        <div className="overflow-hidden" ref={emblaRef}>
+
+          <div className="flex">
+
+            {eventsData.map((news, index) => (
+
+              <div
+                key={index}
+                className="flex-[0_0_100%] w-full border sm:min-h-0 p-3 hover:shadow-2xl rounded-md border-[#ffb703] transition-all duration-200"
+              >
+
+                <NewsCard1
+                  image={news.image}
+                  date={news.date}
+                  title={news.title}
+                  description={news.description}
+                  onReadMore={() => handleReadMore(news)}
+                />
+
+              </div>
+
+            ))}
+
+          </div>
+
+        </div>
+
       </div>
+
     </div>
+
   );
+
 };
 
 export default Events;

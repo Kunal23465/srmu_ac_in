@@ -5,6 +5,12 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   plugins: [react(), tailwindcss()],
 
+  server: {
+    host: "0.0.0.0",
+    port: 3031,
+    allowedHosts: ["test.srmu.ac.in", ".srmu.ac.in"],
+  },
+
   optimizeDeps: {
     include: ["antd", "@ant-design/icons", "@ant-design/icons-svg"],
   },
@@ -23,6 +29,7 @@ export default defineConfig({
       "rc-tree",
       "rc-table",
       "react-helmet-async",
+      "react-slick",
     ],
   },
 

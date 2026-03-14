@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import useEmblaCarousel from "embla-carousel-react";
 import { hometestimonial } from "../../data/home/student-testimonialhome-data";
 import quote from "../../assets/images/home/quote.png";
 import Classes from "../../utils/styles/Global.module.css";
@@ -9,19 +7,23 @@ import { Link } from "react-router-dom";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import { LiaLongArrowAltRightSolid } from "react-icons/lia";
 
-const NextArrow = ({ onClick }: any) => (
+interface ArrowProps {
+  onClick?: () => void;
+}
+
+const NextArrow = ({ onClick }: ArrowProps) => (
   <button
     onClick={onClick}
-    className="hidden md:flex absolute right-0 top-1/2 translate-y-70 text-gray-700 hover:bg-[#ffb703] hover:border-[#ffb703] hover:text-white bg-white shadow-lg w-13 h-13 items-center justify-center rounded-full border border-gray-200 z-10 cursor-pointer"
+    className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 bg-white shadow-lg w-12 h-12 items-center justify-center rounded-full border border-gray-200 z-10 hover:bg-[#ffb703] hover:text-white"
   >
     <MdKeyboardArrowRight size={26} />
   </button>
 );
 
-const PrevArrow = ({ onClick }: any) => (
+const PrevArrow = ({ onClick }: ArrowProps) => (
   <button
     onClick={onClick}
-    className="hidden md:flex absolute left-0 top-1/2 translate-y-70 text-gray-700 hover:bg-[#ffb703] hover:border-[#ffb703] hover:text-white bg-white shadow-lg w-13 h-13 items-center justify-center rounded-full border border-gray-200 z-10 cursor-pointer"
+    className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 bg-white shadow-lg w-12 h-12 items-center justify-center rounded-full border border-gray-200 z-10 hover:bg-[#ffb703] hover:text-white"
   >
     <MdKeyboardArrowLeft size={26} />
   </button>
@@ -29,79 +31,29 @@ const PrevArrow = ({ onClick }: any) => (
 
 const TestimonialSlider = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [windowWidth, setWindowWidth] = useState(0);
+
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: true,
+    align: "center",
+  });
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
+    if (!emblaApi) return;
 
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
+    const onSelect = () => {
+      setActiveIndex(emblaApi.selectedScrollSnap());
     };
 
-    handleResize();
+    emblaApi.on("select", onSelect);
+    onSelect();
 
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+    return () => emblaApi.off("select", onSelect);
+  }, [emblaApi]);
 
-  const getSlidesToShow = () => {
-    if (windowWidth >= 1536) return 7;
-    if (windowWidth >= 1280) return 5;
-    if (windowWidth >= 1024) return 4;
-    if (windowWidth >= 768) return 3;
-    if (windowWidth >= 640) return 2;
-    return 3;
-  };
+  const goNext = () => emblaApi?.scrollNext();
+  const goPrev = () => emblaApi?.scrollPrev();
 
-  const shouldCenterMode = () => windowWidth >= 768;
-  const shouldShowArrows = () => windowWidth >= 375;
-
-  const isMobile = windowWidth < 640;
-
-  const displayIndex = isMobile
-    ? (activeIndex + 1) % hometestimonial.length
-    : activeIndex;
-
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 600,
-    slidesToShow: getSlidesToShow(),
-    slidesToScroll: 1,
-    centerMode: shouldCenterMode(),
-    centerPadding: "0px",
-    arrows: shouldShowArrows(),
-    nextArrow: shouldShowArrows() ? <NextArrow /> : undefined,
-    prevArrow: shouldShowArrows() ? <PrevArrow /> : undefined,
-    beforeChange: (_: any, next: number) => setActiveIndex(next),
-
-    responsive: [
-      {
-        breakpoint: 1536,
-        settings: { slidesToShow: 7, centerMode: true, arrows: true },
-      },
-      {
-        breakpoint: 1280,
-        settings: { slidesToShow: 5, centerMode: true, arrows: true },
-      },
-      {
-        breakpoint: 1024,
-        settings: { slidesToShow: 4, centerMode: true, arrows: true },
-      },
-      {
-        breakpoint: 768,
-        settings: { slidesToShow: 3, centerMode: true, arrows: true },
-      },
-      {
-        breakpoint: 640,
-        settings: { slidesToShow: 2, centerMode: false, arrows: true },
-      },
-      {
-        breakpoint: 480,
-        settings: { slidesToShow: 3, centerMode: false, arrows: false },
-      },
-    ],
-  };
+  const displayIndex = activeIndex % hometestimonial.length;
 
   return (
     <div className="py-20 bg-[#f7f9ff] flex flex-col items-center">
@@ -110,35 +62,49 @@ const TestimonialSlider = () => {
       </h2>
 
       <div
-        className={`relative ${Classes["container"]} w-full max-w-[1200px] mx-auto px-4`}
+        className={`relative ${Classes["container"]} w-full max-w-[1200px] mx-auto`}
       >
-        <Slider key={windowWidth} {...settings}>
-          {hometestimonial.map((item, index) => (
-            <div key={item.id} className="flex justify-center px-0.5 md:px-2">
+        {/* arrows */}
+        <PrevArrow onClick={goPrev} />
+        <NextArrow onClick={goNext} />
+
+        {/* slider */}
+        <div className="overflow-hidden px-14" ref={emblaRef}>
+          <div className="flex gap-4">
+            {hometestimonial.map((item, index) => (
               <div
-                className={`rounded-full transition-all duration-300 overflow-hidden border-2 
-                w-[90px] h-[90px] 
-                sm:w-[120px] sm:h-[120px] 
-                md:w-[168px] md:h-[168px] 
-                mx-auto ${isMobile ? index === displayIndex : index === activeIndex
-                    ? "border-[#3A6EFF] scale-100 shadow-lg"
-                    : "border-gray-300"
-                  }`}
+                key={item.id}
+                className="flex-[0_0_14.285%]"
               >
-                <img
-                  src={item.img}
-                  alt={item.name}
-                  className="w-full h-full object-cover"
-                />
+                <div className="flex justify-center">
+                  <div
+                    className={`rounded-full transition-all duration-300 overflow-hidden border-2
+                    w-[90px] h-[90px]
+                    sm:w-[120px] sm:h-[120px]
+                    md:w-[168px] md:h-[168px]
+                    ${index === activeIndex
+                        ? "border-[#3A6EFF] scale-100 shadow-lg"
+                        : "border-gray-300"
+                      }`}
+                  >
+                    <img
+                      src={item.img}
+                      alt={item.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
               </div>
-            </div>
-          ))}
-        </Slider>
+            ))}
+          </div>
+        </div>
       </div>
+
+      {/* testimonial text */}
 
       <div className="max-w-3xl mx-auto text-center px-4 mt-10">
         <div className="flex justify-center">
-          <img src={quote} className="w-10 md:w-auto" />
+          <img src={quote} className="w-10 md:w-auto" alt="quote" />
         </div>
 
         <h3 className="font21 fw600 mt-4">
@@ -153,10 +119,10 @@ const TestimonialSlider = () => {
           {hometestimonial[displayIndex].text}
         </p>
 
-        <div className="mt-10 text-center">
+        <div className="mt-10">
           <Link
             to="/placements/student-testimonial"
-            className="bg-[#023047] inline-flex gap-x-2 items-center text-white px-6 py-3 rounded-md text-[16px] font-medium hover:bg-white hover:text-[#023047] border hover:border-[#023047]"
+            className="bg-[#023047] inline-flex gap-x-2 items-center text-white px-6 py-3 rounded-md hover:bg-white hover:text-[#023047] border hover:border-[#023047]"
           >
             VIEW ALL TESTIMONIALS
             <LiaLongArrowAltRightSolid size={24} />

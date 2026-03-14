@@ -4,7 +4,7 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 
-const host = "10.8.20.38";
+const host = "0.0.0.0";
 const port = 3031;
 
 const __filename = fileURLToPath(import.meta.url);

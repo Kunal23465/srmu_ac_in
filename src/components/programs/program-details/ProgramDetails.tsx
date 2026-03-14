@@ -165,7 +165,7 @@ const ProgramDetails: React.FC = () => {
           <h2 className="lg:text-[50px] leading-[1.2] md:text-[46.875px] text-[28px] fw500 text-[#023047]">{dataByID?.name}</h2>
           {/* @ts-ignore */}
           <p className="text-[#023047] mt-3 leading-[1.2] text-[18px] sm:text-[24px] lg:text-[2rem] fw500">{dataByID?.title}</p>
-          {/* <CustomOverviewSection data={BtechCSEAIandMLOverviewData} /> */}
+
           <div className={` py-7 md:py-10 lg:py-14`}>
             <div className={`block  lg:flex   gap-4  md:items-stretch   justify-between md:flex-row items-start`}>
               <div className={`w-auto mb-4 lg:mb-0  ${" border-l-4 pl-2 lg:pl-0 lg:border-l-0  lg:border-r-4"}  border-[#ffb703] flex flex-col justify-start`}>
@@ -186,7 +186,7 @@ const ProgramDetails: React.FC = () => {
           </div>
           <Counter counterData={convertedCounterData} />
           {/* @ts-ignore */}
-          <CustomEligibilitySection data={dataByID?.eligibility} />
+          {/* <CustomEligibilitySection data={dataByID?.eligibility} /> */}
         </div>
         <div className="bg-[#ecf0f9] pb-10">
           <CustomDepartmentSlider
@@ -202,19 +202,9 @@ const ProgramDetails: React.FC = () => {
 
           {!isPhd && (
             <div className={`${Classes["container"]}`}>
-              {/* recruiterData */}
-              {/* <PartnerLogos data={partnerDataforAIandML} /> */}
 
               <div className={`grid w-full grid-cols-2  ${whySrmuLogo.length > 4 ? "sm:grid-cols-3 lg:grid-cols-6 lg:gap-10" : "sm:grid-cols-2 md:grid-cols-4 sm:gap:15 lg:gap-20"}  gap-5   place-items-start`}>
-                {/* {recruiterData
-                  .filter((ele) => ele.featured)
-                  .map((item, index) => (
-                    <div key={index} className="flex border w-full md:border-none border-[#ccc] py-2 px-3 sm:p-0 flex-col items-start gap-5">
-                      <img src={item.imagePath} alt={item.title} className=" w-[105px] sm:w-[170px] md:w-[210px] object-contain" />
-                     
-                      <div className="[&_p]:font-semibold md:[&_p]:text-lg [&_p]:text-left" dangerouslySetInnerHTML={{ __html: item.brief }} />
-                    </div>
-                  ))} */}
+
                 {
                   whySrmuLogo.length > 0 ? (<> {
                     whySrmuLogo.map((item, index) => (
@@ -244,25 +234,14 @@ const ProgramDetails: React.FC = () => {
                     ))
                   }</>)
                 }
-                {/* {whySrmuLogo.map((item, index) => (
-                  <div key={index} className="flex border w-full md:border-none border-[#ccc] py-2 px-3 sm:p-0 flex-col items-center gap-5">
-                    <img
-                      src={item.image}
-                      alt={item.name}
-                      className=" w-[105px] sm:w-[170px] md:w-[210px] object-contain"
-                    />
-                    <p className="text-base sm:text-lg fw600 text-center">
-                      {item.name}
-                    </p>
-                  </div>
-                ))} */}
+
               </div>
             </div>
           )}
         </div>
         <div className={`${Classes["container"]}`}>
           <h2 className="mt-20 mb-10 text-center text-[22px] sm:text-[28px] lg:text-[3.125rem] fw500 text-[#023047]">Program Fee</h2>
-          {/* <CustomDepartmentFeeDetailsTable data={ProgramFeesAIandML} /> */}
+
           {/* @ts-ignore */}
           {feesData && feesData.length > 0 && <ProgramFeeTable data={feesData[0]} />}
         </div>

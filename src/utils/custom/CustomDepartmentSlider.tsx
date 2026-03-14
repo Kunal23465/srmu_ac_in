@@ -1,8 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
-import Slider from "react-slick";
+import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import Classes from "../../utils/styles/Global.module.css";
 
 type Breakpoints = {
@@ -16,15 +15,11 @@ type CustomDepartmentSliderProps<T> = {
   description?: string;
   data: T[];
   renderCard: ({ item, index }: { item: T; index: number }) => React.ReactNode;
-
   bgColor?: string;
   bgImage?: string;
-
   headingColor?: string;
   descriptionColor?: string;
-
   breakpoints: Breakpoints;
-
 };
 
 const CustomDepartmentSlider = <T,>({
@@ -34,22 +29,37 @@ const CustomDepartmentSlider = <T,>({
   renderCard,
   bgColor = "transparent",
   bgImage,
-  // @ts-ignore
   headingColor = "#000",
   descriptionColor = "#666",
   breakpoints,
-
 }: CustomDepartmentSliderProps<T>) => {
-  const sliderRef = useRef<Slider | null>(null);
-
+  const [hasMounted, setHasMounted] = useState(false);
   const [isSliding, setIsSliding] = useState(false);
   const [currentSlidesToShow, setCurrentSlidesToShow] = useState(breakpoints.desktop);
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    {
+      loop: data.length > currentSlidesToShow,
+      align: "start",
+      skipSnaps: false,
+      dragFree: false,
+    },
+    [
+      Autoplay({
+        delay: 3500,
+        stopOnInteraction: true,
+        stopOnMouseEnter: true,
+      }),
+    ]
+  );
 
-  /** 🔹 Detect screen size on load */
+  /** 🔹 Detect screen size on load - SSR safe */
   useEffect(() => {
+    setHasMounted(true);
+
     const updateSlides = () => {
-      const width =
-        typeof window !== "undefined" ? window.innerWidth : 0;
+      if (typeof window === "undefined") return;
+
+      const width = window.innerWidth;
 
       if (width < 640) {
         setCurrentSlidesToShow(breakpoints.mobile);
@@ -66,40 +76,112 @@ const CustomDepartmentSlider = <T,>({
     return () => window.removeEventListener("resize", updateSlides);
   }, [breakpoints]);
 
+  /** 🔹 Re-initialize embla when slidesToShow changes */
+  useEffect(() => {
+    if (emblaApi && hasMounted) {
+      emblaApi.reInit({
+        loop: data.length > currentSlidesToShow,
+      });
+    }
+  }, [currentSlidesToShow, emblaApi, data.length, hasMounted]);
+
+  /** 🔹 Handle slide change events */
+  useEffect(() => {
+    if (!emblaApi || !hasMounted) return;
+
+    const onSelect = () => {
+      // You can add any slide change logic here if needed
+    };
+
+    const onSettle = () => {
+      setIsSliding(false);
+    };
+
+    emblaApi.on("select", onSelect);
+    emblaApi.on("settle", onSettle);
+
+    return () => {
+      emblaApi.off("select", onSelect);
+      emblaApi.off("settle", onSettle);
+    };
+  }, [emblaApi, hasMounted]);
+
   const infinite = data.length > currentSlidesToShow;
 
-  const settings = {
-    dots: false,
-    arrows: false,
-    infinite,
-    speed: 600,
-    slidesToShow: currentSlidesToShow,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3500,
-    pauseOnHover: true,
-
-    beforeChange: () => setIsSliding(true),
-    afterChange: () => setIsSliding(false),
-
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: breakpoints.tablet,
-        },
-      },
-      {
-        breakpoint: 640,
-        settings: {
-          slidesToShow: breakpoints.mobile,
-        },
-      },
-    ],
+  const prev = () => {
+    if (!infinite || isSliding || !emblaApi) return;
+    setIsSliding(true);
+    emblaApi.scrollPrev();
   };
 
-  const prev = () => sliderRef.current?.slickPrev();
-  const next = () => sliderRef.current?.slickNext();
+  const next = () => {
+    if (!infinite || isSliding || !emblaApi) return;
+    setIsSliding(true);
+    emblaApi.scrollNext();
+  };
+
+  // Get slide width based on current slides to show
+  const getSlideWidth = () => {
+    return `${100 / currentSlidesToShow}%`;
+  };
+
+  // Don't render slider until after mount to prevent SSR mismatch
+  if (!hasMounted) {
+    return (
+      <section
+        className="py-16"
+        style={{
+          backgroundColor: bgColor,
+          backgroundImage: bgImage ? `url(${bgImage})` : undefined,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <div className={`${Classes["container"]} px-4`}>
+          {/* 🔥 Heading + Arrows (static) */}
+          <div className="flex items-center justify-between mb-6">
+            {heading && (
+              <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] font-semibold" style={{ color: headingColor }}>
+                {heading}
+              </h2>
+            )}
+
+            <div className="flex gap-4">
+              <button
+                disabled
+                className="w-12 h-12 flex items-center justify-center border-2 border-gray-300 text-gray-800 bg-white rounded-full opacity-40 cursor-not-allowed"
+              >
+                <MdKeyboardArrowLeft size={26} />
+              </button>
+
+              <button
+                disabled
+                className="w-12 h-12 flex items-center justify-center border-2 border-gray-300 text-gray-800 bg-white rounded-full opacity-40 cursor-not-allowed"
+              >
+                <MdKeyboardArrowRight size={26} />
+              </button>
+            </div>
+          </div>
+
+          {/* Description */}
+          {description && (
+            <p className="mb-10 max-w-4xl" style={{ color: descriptionColor }}>
+              {description}
+            </p>
+          )}
+
+          {/* Static Grid for SSR */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {data.slice(0, currentSlidesToShow).map((item, index) => (
+              <div key={index} className="px-3">
+                {renderCard({ item, index })}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section
@@ -115,7 +197,7 @@ const CustomDepartmentSlider = <T,>({
         {/* 🔥 Heading + Arrows */}
         <div className="flex items-center justify-between mb-6">
           {heading && (
-            <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] font-semibold" style={{ color: headingColor }} >
+            <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] font-semibold" style={{ color: headingColor }}>
               {heading}
             </h2>
           )}
@@ -143,19 +225,25 @@ const CustomDepartmentSlider = <T,>({
 
         {/* Description */}
         {description && (
-          <p className="mb-10 max-w-4xl " style={{ color: descriptionColor }}>
+          <p className="mb-10 max-w-4xl" style={{ color: descriptionColor }}>
             {description}
           </p>
         )}
 
-        {/* Slider */}
-        <Slider ref={sliderRef} {...settings}>
-          {data.map((item, index) => (
-            <div key={index} className="px-3">
-              {renderCard({ item, index })}
-            </div>
-          ))}
-        </Slider>
+        {/* Embla Carousel */}
+        <div className="overflow-hidden" ref={emblaRef}>
+          <div className="flex">
+            {data.map((item, index) => (
+              <div
+                key={index}
+                className="flex-shrink-0 flex-grow-0 px-3"
+                style={{ flexBasis: getSlideWidth() }}
+              >
+                {renderCard({ item, index })}
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

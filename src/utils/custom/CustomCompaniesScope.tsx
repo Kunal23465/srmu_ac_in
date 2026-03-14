@@ -32,21 +32,26 @@ export const CustomCompaniesScope: React.FC<CompaniesScopeProps> = ({
 
   const [activeTab, setActiveTab] = useState(0);
   const [index, setIndex] = useState(0);
-  const [isSmallScreen, setIsSmallScreen] = useState(
-    typeof window !== "undefined" ? window.innerWidth < 640 : false
-  );
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+  const [hasMounted, setHasMounted] = useState(false);
 
-  // Responsive detection
+  // Responsive detection - SSR safe
   useEffect(() => {
-    const handleResize = () =>
-      setIsSmallScreen(window.innerWidth < 640);
+    setHasMounted(true);
+
+    const handleResize = () => {
+      if (typeof window !== "undefined") {
+        setIsSmallScreen(window.innerWidth < 640);
+      }
+    };
+
+    handleResize();
     window.addEventListener("resize", handleResize);
-    return () =>
-      window.removeEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const activeCompanies =
-    sectors?.[activeTab]?.companies || [];
+  const activeCompanies = sectors?.[activeTab]?.companies || [];
 
   const itemsToShow = isSmallScreen ? 2 : 5;
 
@@ -75,9 +80,12 @@ export const CustomCompaniesScope: React.FC<CompaniesScopeProps> = ({
     }
   };
 
-  const showControls =
-    activeCompanies.length > itemsToShow;
+  const showControls = activeCompanies.length > itemsToShow;
 
+  // Default itemsToShow for SSR (matches desktop)
+  const ssrItemsToShow = 5;
+  console.log("List========", list);
+  console.log("Data========", data);
   return (
     <div className="min-h-screen py-16 px-4 sm:px-6 lg:px-8">
       <div className="mx-auto">
@@ -117,7 +125,10 @@ export const CustomCompaniesScope: React.FC<CompaniesScopeProps> = ({
             {sectors.map((sector, i) => (
               <button
                 key={i}
-                onClick={() => setActiveTab(i)}
+                onClick={() => {
+                  setActiveTab(i);
+                  if (hasMounted) setIndex(0);
+                }}
                 className={`pb-2 transition-colors border-b-3 whitespace-nowrap cursor-pointer
                 ${activeTab === i
                     ? "border-[#023047]"
@@ -135,7 +146,7 @@ export const CustomCompaniesScope: React.FC<CompaniesScopeProps> = ({
           className="grid gap-4 mt-10
             grid-cols-2 sm:grid-cols-2 md:grid-cols-5"
         >
-          {visibleCompanies.map((c) => (
+          {(hasMounted ? visibleCompanies : activeCompanies.slice(0, ssrItemsToShow)).map((c) => (
             <div
               key={c.id}
               className="w-full aspect-[6/3] md:aspect-[6/4] bg-white border border-gray-200 rounded-xl shadow-sm flex items-center justify-center hover:shadow-md transition cursor-pointer p-5 sm:p-4"
@@ -150,7 +161,7 @@ export const CustomCompaniesScope: React.FC<CompaniesScopeProps> = ({
         </div>
 
         {/* Arrows & Progress (Only if Needed) */}
-        {showControls && (
+        {showControls && hasMounted && (
           <div className="mt-12 flex items-center relative">
             <div className="flex gap-2 z-10">
               <button
@@ -178,13 +189,18 @@ export const CustomCompaniesScope: React.FC<CompaniesScopeProps> = ({
                 className="h-1 bg-[#023047] rounded-full transition-all"
                 style={{
                   width: `${((index + itemsToShow) /
-                      activeCompanies.length) *
+                    activeCompanies.length) *
                     100
                     }%`,
                 }}
               />
             </div>
           </div>
+        )}
+
+        {/* Static spacer for SSR to maintain layout */}
+        {!hasMounted && showControls && (
+          <div className="mt-12 h-13" />
         )}
 
         <div className="h-16"></div>
