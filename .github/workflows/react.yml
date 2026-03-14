@@ -21,14 +21,25 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Sync project to deployment folder
+        run: |
+          rsync -av --delete ./ /home/ubuntu/srmuac/SRMU_AC_IN_UI/
+
       - name: Install dependencies
-        run: npm ci --legacy-peer-deps
+        run: |
+          cd /home/ubuntu/srmuac/SRMU_AC_IN_UI
+          npm ci --legacy-peer-deps
 
       - name: Build Vite SSR
-        run: npm run build
+        run: |
+          cd /home/ubuntu/srmuac/SRMU_AC_IN_UI
+          npm run build
 
       - name: Restart SSR server with PM2
         if: github.event_name == 'push'
         run: |
-          pm2 restart srmu-ac || pm2 start "npx tsx server.ts" --name srmu-ac
+          cd /home/ubuntu/srmuac/SRMU_AC_IN_UI
+          pm2 describe srmu-ac > /dev/null 2>&1 \
+            && pm2 reload srmu-ac \
+            || pm2 start server.ts --name srmu-ac --interpreter tsx
           pm2 save
