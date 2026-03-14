@@ -1,6 +1,6 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
+import useEmblaCarousel from "embla-carousel-react";
 import Classes from "../../../utils/styles/Global.module.css";
-import Slider from "react-slick";
 
 import { FaLongArrowAltRight } from "react-icons/fa";
 import placementPdf from "../../../assets/pdf/placement/placement-policies/2023-placement-record-100124102503-1-1--210625040129.pdf";
@@ -35,17 +35,39 @@ const PlacementRecords: React.FC = () => {
   );
 
   const [activeYear, setActiveYear] = useState<number | null>(null);
-  const sliderRef = useRef<Slider | null>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [hasMounted, setHasMounted] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(0);
+
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: false,
+    align: "start",
+    skipSnaps: false,
+    dragFree: false,
+  });
+
+  /* ---------------- SSR MOUNT ---------------- */
+  useEffect(() => {
+    setHasMounted(true);
+
+    const handleResize = () => {
+      if (typeof window !== "undefined") {
+        setWindowWidth(window.innerWidth);
+      }
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   /* ---------------- FETCH DATA ---------------- */
-
   useEffect(() => {
     dispatch(fetchPlacementRecordTabData());
   }, [dispatch]);
 
   /* ---------------- GET YEARS ---------------- */
-
   const getPlacementYears = (data: PlacementRecord[]): number[] => {
     return [...new Set(data.map((d) => Number(d.yearOfPlacement)))].sort(
       (a, b) => b - a
@@ -55,76 +77,174 @@ const PlacementRecords: React.FC = () => {
   const years = getPlacementYears(data || []);
 
   /* ---------------- DEFAULT YEAR ---------------- */
-
   useEffect(() => {
     if (years.length && !activeYear) {
       setActiveYear(years[0]);
     }
-  }, [years]);
+  }, [years, activeYear]);
 
   /* ---------------- FILTER STUDENTS ---------------- */
-
   const students =
     data?.filter(
       (item: PlacementRecord) => Number(item.yearOfPlacement) === activeYear
     ) || [];
 
+  /* ---------------- SLIDE CHANGE HANDLER ---------------- */
+  useEffect(() => {
+    if (!emblaApi || !hasMounted) return;
+
+    const onSelect = () => {
+      setCurrentSlide(emblaApi.selectedScrollSnap());
+    };
+
+    emblaApi.on("select", onSelect);
+    onSelect();
+
+    return () => {
+      emblaApi.off("select", onSelect);
+    };
+  }, [emblaApi, hasMounted]);
+
+  /* ---------------- RE-INIT WHEN YEAR OR WIDTH CHANGES ---------------- */
+  useEffect(() => {
+    if (emblaApi && hasMounted) {
+      emblaApi.reInit();
+      setCurrentSlide(0); // Reset to first slide when year changes
+    }
+  }, [windowWidth, activeYear, emblaApi, hasMounted]);
+
   /* ---------------- SLIDER SETTINGS ---------------- */
+  const getSlidesToShow = useCallback(() => {
+    if (windowWidth >= 1280) return 5;
+    if (windowWidth >= 1024) return 4;
+    if (windowWidth >= 768) return 3;
+    if (windowWidth >= 480) return 2;
+    return 1;
+  }, [windowWidth]);
 
-  const slidesToShow = 5;
+  const slidesToShow = getSlidesToShow();
   const totalSlides = Math.ceil(students.length / slidesToShow);
-
-  const settings = {
-    dots: false,
-    infinite: false,
-    speed: 600,
-    slidesToShow: 5,
-    slidesToScroll: 1,
-    arrows: false,
-    beforeChange: (_: number, next: number) => setCurrentSlide(next),
-
-    responsive: [
-      {
-        breakpoint: 1280,
-        settings: {
-          slidesToShow: 4,
-        },
-      },
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
-  };
 
   const isPrevDisabled = currentSlide === 0;
   const isNextDisabled = currentSlide >= totalSlides - 1;
 
-  /* ---------------- RESET SLIDER WHEN TAB CHANGE ---------------- */
+  /* ---------------- NAVIGATION ---------------- */
+  const goToPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev();
+  }, [emblaApi]);
 
-  useEffect(() => {
-    setCurrentSlide(0);
-    sliderRef.current?.slickGoTo(0);
-  }, [activeYear]);
+  const goToNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext();
+  }, [emblaApi]);
+
+  // Get slide width based on slides to show
+  const getSlideWidth = () => {
+    return `${100 / slidesToShow}%`;
+  };
 
   /* ---------------- LOADING ---------------- */
-
   if (loading) {
     return <p className="text-center my-5">Loading...</p>;
+  }
+
+  // Static grid for SSR
+  if (!hasMounted) {
+    return (
+      <div className="relative placement-record-bg w-full text-white py-8 sm:py-24">
+        <div className={`${Classes["container"]}`}>
+          {/* HEADER + TABS */}
+          <div className="block md:flex justify-between items-center">
+            <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] font-medium mb-2">
+              Placement Records
+            </h2>
+
+            <div className="flex items-center bg-white">
+              {years.map((year) => (
+                <button
+                  key={year}
+                  className={`px-5 sm:px-10 xl:px-15 py-3 text-black font-medium transition ${activeYear === year ? "bg-[#ffb703]" : "hover:bg-[#ffb703]"
+                    }`}
+                >
+                  {year}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* TEXT */}
+          <p className="text-white mb-5 text-[14px] max-w-xl">
+            Outstanding placement records showcase our commitment to student
+            success and industry relevance
+          </p>
+
+          {/* ARROWS (disabled) */}
+          <div className="flex gap-5 mb-6">
+            <button
+              disabled
+              className="p-2 border-2 border-white opacity-40 cursor-not-allowed"
+            >
+              <MdKeyboardArrowLeft size="26" />
+            </button>
+
+            <button
+              disabled
+              className="p-2 border-2 border-white opacity-40 cursor-not-allowed"
+            >
+              <MdKeyboardArrowRight size="26" />
+            </button>
+          </div>
+
+          {/* STATIC GRID */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+            {students.slice(0, 5).map((stu: PlacementRecord) => (
+              <div key={stu.instituteStudentPlacedId} className="px-2">
+                <div className="w-full rounded-xl border border-white py-3 px-2 text-center">
+                  <div className="min-h-[200px]">
+                    <img
+                      src={stu.imagePath ?? "https://placehold.co/600x400"}
+                      alt={stu.studentName}
+                      className="w-20 h-20 rounded-full mx-auto mb-3 object-cover"
+                    />
+                    <h4 className="text-white font-semibold">
+                      {stu.studentName}
+                    </h4>
+                    <p className="text-white mt-1">{stu.programName}</p>
+                  </div>
+                  <div className="border-t-2 border-gray-500 pt-4">
+                    <div className="mt-4 flex justify-center">
+                      <img
+                        src={stu.recruiterImage ?? "https://placehold.co/600x400"}
+                        alt="logo"
+                        className="w-full max-w-[100px] h-14 object-contain brightness-[100] sm:brightness-100"
+                      />
+                    </div>
+                    <p className="text-white mt-2">
+                      Package:
+                      <span className="font-semibold ml-1">
+                        {stu.studentPackage}
+                      </span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* VIEW ALL */}
+          <div className="flex justify-center mt-12">
+            <a
+              href={placementPdf}
+              target="_blank"
+              rel="noreferrer"
+              className="px-8 py-3 border border-[#f8b922] text-[#f8b922] rounded-xl flex items-center gap-2 hover:bg-[#f8b922] hover:text-black transition"
+            >
+              VIEW ALL PLACED STUDENTS
+              <FaLongArrowAltRight />
+            </a>
+          </div>
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -132,7 +252,6 @@ const PlacementRecords: React.FC = () => {
       <div className={`${Classes["container"]}`}>
 
         {/* HEADER + TABS */}
-
         <div className="block md:flex justify-between items-center">
           <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] font-medium mb-2">
             Placement Records
@@ -143,7 +262,7 @@ const PlacementRecords: React.FC = () => {
               <button
                 key={year}
                 onClick={() => setActiveYear(year)}
-                className={`px-5 sm:px-10 xl:px-15 py-3 text-black font-medium transition ${activeYear === year
+                className={`px-5 sm:px-10 xl:px-15 py-3 text-black font-medium transition cursor-pointer ${activeYear === year
                   ? "bg-[#ffb703]"
                   : "hover:bg-[#ffb703]"
                   }`}
@@ -155,19 +274,17 @@ const PlacementRecords: React.FC = () => {
         </div>
 
         {/* TEXT */}
-
         <p className="text-white mb-5 text-[14px] max-w-xl">
           Outstanding placement records showcase our commitment to student
           success and industry relevance
         </p>
 
         {/* ARROWS */}
-
         <div className="flex gap-5 mb-6">
           <button
-            onClick={() => sliderRef.current?.slickPrev()}
+            onClick={goToPrev}
             disabled={isPrevDisabled}
-            className={`p-2 border-2 border-white ${isPrevDisabled
+            className={`p-2 border-2 border-white transition cursor-pointer ${isPrevDisabled
               ? "opacity-40 cursor-not-allowed"
               : "hover:bg-[#ffb703]"
               }`}
@@ -176,9 +293,9 @@ const PlacementRecords: React.FC = () => {
           </button>
 
           <button
-            onClick={() => sliderRef.current?.slickNext()}
+            onClick={goToNext}
             disabled={isNextDisabled}
-            className={`p-2 border-2 border-white ${isNextDisabled
+            className={`p-2 border-2 border-white transition cursor-pointer ${isNextDisabled
               ? "opacity-40 cursor-not-allowed"
               : "hover:bg-[#ffb703]"
               }`}
@@ -187,57 +304,52 @@ const PlacementRecords: React.FC = () => {
           </button>
         </div>
 
-        {/* SLIDER */}
-
-        <Slider ref={sliderRef} {...settings}>
-          {students.map((stu: PlacementRecord) => (
-            <div key={stu.instituteStudentPlacedId} className="px-2">
-              <div className="w-full rounded-xl border border-white group hover:bg-white transition-all duration-500 py-3 px-2 text-center">
-
-                <div className="min-h-[200px]">
-
-                  <img
-                    src={stu.imagePath ?? "https://placehold.co/600x400"}
-                    alt={stu.studentName}
-                    className="w-20 h-20 rounded-full mx-auto mb-3 object-cover"
-                  />
-
-                  <h4 className="text-white group-hover:text-black font-semibold">
-                    {stu.studentName}
-                  </h4>
-
-                  <p className="text-white group-hover:text-black mt-1">
-                    {stu.programName}
-                  </p>
-
-                </div>
-
-                <div className="border-t-2 border-gray-500 pt-4">
-
-                  <div className="mt-4 flex justify-center">
+        {/* EMBLA CAROUSEL */}
+        <div className="overflow-hidden" ref={emblaRef}>
+          <div className="flex">
+            {students.map((stu: PlacementRecord) => (
+              <div
+                key={stu.instituteStudentPlacedId}
+                className="flex-shrink-0 flex-grow-0 px-2"
+                style={{ flexBasis: getSlideWidth() }}
+              >
+                <div className="w-full rounded-xl border border-white group hover:bg-white transition-all duration-500 py-3 px-2 text-center">
+                  <div className="min-h-[200px]">
                     <img
-                      src={stu.recruiterImage ?? "https://placehold.co/600x400"}
-                      alt="logo"
-                      className="w-full max-w-[100px] h-14 object-contain brightness-[100] sm:brightness-100"
+                      src={stu.imagePath ?? "https://placehold.co/600x400"}
+                      alt={stu.studentName}
+                      className="w-20 h-20 rounded-full mx-auto mb-3 object-cover"
                     />
+                    <h4 className="text-white group-hover:text-black font-semibold">
+                      {stu.studentName}
+                    </h4>
+                    <p className="text-white group-hover:text-black mt-1">
+                      {stu.programName}
+                    </p>
                   </div>
 
-                  <p className="text-white group-hover:text-black mt-2">
-                    Package:
-                    <span className="font-semibold ml-1">
-                      {stu.studentPackage}
-                    </span>
-                  </p>
-
+                  <div className="border-t-2 border-gray-500 pt-4">
+                    <div className="mt-4 flex justify-center">
+                      <img
+                        src={stu.recruiterImage ?? "https://placehold.co/600x400"}
+                        alt="logo"
+                        className="w-full max-w-[100px] h-14 object-contain brightness-[100] sm:brightness-100 group-hover:brightness-100"
+                      />
+                    </div>
+                    <p className="text-white group-hover:text-black mt-2">
+                      Package:
+                      <span className="font-semibold ml-1">
+                        {stu.studentPackage}
+                      </span>
+                    </p>
+                  </div>
                 </div>
-
               </div>
-            </div>
-          ))}
-        </Slider>
+            ))}
+          </div>
+        </div>
 
         {/* VIEW ALL */}
-
         <div className="flex justify-center mt-12">
           <a
             href={placementPdf}

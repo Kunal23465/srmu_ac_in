@@ -29,7 +29,6 @@ export default defineConfig({
       "rc-tree",
       "rc-table",
       "react-helmet-async",
-      "react-slick",
     ],
   },
 

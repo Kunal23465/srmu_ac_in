@@ -1,11 +1,9 @@
-import React, { useRef, useState, useEffect } from "react";
-import Slider from "react-slick";
+import React, { useRef, useState, useEffect, useCallback } from "react";
+import useEmblaCarousel from "embla-carousel-react";
 
 import { OurGoals, ourGoalsData } from "../../../data/about/silder/slider-data";
 import Classes from "../../../utils/styles/Global.module.css";
 
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 
 type Props = {
@@ -26,55 +24,141 @@ const Goals: React.FC<OurGoals & { highlight?: boolean }> = ({ title, subtitle, 
 );
 
 const OurGoal: React.FC<Props> = ({ items }) => {
-  const sliderRef = useRef<Slider | null>(null);
   const [index, setIndex] = useState(0);
+  const [hasMounted, setHasMounted] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(0);
 
-  // Dynamic slidesToShow based on screen size – fixes mobile refresh issue
-  const getSlidesToShow = () => {
-    if (typeof window === "undefined") return 2;
-    return window.innerWidth < 640 ? 1 : 2;
-  };
-
-  const [slidesToShow, setSlidesToShow] = useState(getSlidesToShow());
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: false,
+    align: "start",
+    skipSnaps: false,
+    dragFree: false,
+  });
 
   useEffect(() => {
+    setHasMounted(true);
+
     const handleResize = () => {
-      setSlidesToShow(window.innerWidth < 640 ? 1 : 2);
+      if (typeof window !== "undefined") {
+        setWindowWidth(window.innerWidth);
+      }
     };
-    handleResize(); // Initial check
+
+    handleResize();
     window.addEventListener("resize", handleResize);
+
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const settings = {
-    arrows: false,
-    infinite: false,
-    speed: 500,
-    slidesToShow: slidesToShow, // Now dynamic!
-    slidesToScroll: 1,
-    beforeChange: (_: number, next: number) => setIndex(next),
-    responsive: [
-      {
-        breakpoint: 640,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
-  };
+  useEffect(() => {
+    if (!emblaApi || !hasMounted) return;
+
+    const onSelect = () => {
+      setIndex(emblaApi.selectedScrollSnap());
+    };
+
+    emblaApi.on("select", onSelect);
+    onSelect();
+
+    return () => {
+      emblaApi.off("select", onSelect);
+    };
+  }, [emblaApi, hasMounted]);
+
+  /** Re-initialize embla when window width changes */
+  useEffect(() => {
+    if (emblaApi && hasMounted) {
+      emblaApi.reInit();
+    }
+  }, [windowWidth, emblaApi, hasMounted]);
+
+  // Dynamic slidesToShow based on screen size
+  const getSlidesToShow = useCallback(() => {
+    if (windowWidth < 640) return 1;
+    return 2;
+  }, [windowWidth]);
+
+  const slidesToShow = getSlidesToShow();
 
   const disablePrev = index === 0;
   const disableNext = index >= items.length - slidesToShow;
 
   const next = () => {
-    if (!disableNext) sliderRef.current?.slickNext();
+    if (!disableNext) emblaApi?.scrollNext();
   };
 
   const prev = () => {
-    if (!disablePrev) sliderRef.current?.slickPrev();
+    if (!disablePrev) emblaApi?.scrollPrev();
+  };
+
+  const scrollTo = (slideIndex: number) => {
+    emblaApi?.scrollTo(slideIndex);
+  };
+
+  // Get slide width based on slides to show
+  const getSlideWidth = () => {
+    return `${100 / slidesToShow}%`;
   };
 
   const totalDots = Math.max(0, items.length - slidesToShow);
+
+  // Static grid for SSR
+  if (!hasMounted) {
+    return (
+      <div className="w-full flex justify-center pt-10 md:pt-20">
+        <div className={`${Classes["container"]} block md:flex flex-row items-start gap-5 p-4`}>
+          {/* LEFT CONTENT */}
+          <div className="flex flex-col items-start w-full md:w-[30%] mt-6">
+            <h2 className="leading-[1.2] text-[#1a1a1a] font-medium text-[22px] sm:text-[28px] lg:text-[3.125rem] mb-4">Our Goals</h2>
+
+            <p className="text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] max-w-full md:max-w-[320px] text-gray-700 mb-8">
+              Placements are essential for students to smoothly transition into the workforce and find steady careers.
+              <br />
+              <br />
+              At SRMU, our placement cell sets six goals for students, recognizing that training and development are ongoing processes, with placement as their ultimate achievement.
+            </p>
+
+            <div className="flex gap-4 mb-8">
+              <button
+                disabled
+                className="text-gray-700 bg-white shadow-lg w-13 h-13 flex items-center justify-center rounded-full border border-gray-200 opacity-40 cursor-not-allowed"
+              >
+                <MdKeyboardArrowLeft size="26" />
+              </button>
+
+              <button
+                disabled
+                className="text-gray-700 bg-white shadow-lg w-13 h-13 flex items-center justify-center rounded-full border border-gray-200 opacity-40 cursor-not-allowed"
+              >
+                <MdKeyboardArrowRight size="26" />
+              </button>
+            </div>
+          </div>
+
+          {/* STATIC GRID SECTION */}
+          <div className="flex-1 w-full md:w-3/5 h-full xl:h-[320px]">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {items.slice(0, 2).map((item, i) => (
+                <div key={i} className="px-0 sm:px-3 mx-1 w-auto h-full xl:h-[320px]">
+                  <Goals {...item} />
+                </div>
+              ))}
+            </div>
+
+            <div className="flex justify-center gap-2 mt-4">
+              {Array.from({ length: totalDots + 1 }).map((_, i) => (
+                <button
+                  key={i}
+                  className={`w-4 h-4 rounded-full transition-all ${i === 0 ? "bg-[#0f4a85] scale-110" : "border-2 border-[#0f4a85] bg-white"
+                    }`}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="w-full flex justify-center pt-10 md:pt-20">
@@ -113,24 +197,34 @@ const OurGoal: React.FC<Props> = ({ items }) => {
           </div>
         </div>
 
-        {/* SLIDER SECTION */}
+        {/* EMBLA CAROUSEL SECTION */}
         <div className="flex-1 w-full md:w-3/5 h-full xl:h-[320px]">
-          <Slider ref={sliderRef} {...settings}>
-            {items.map((item, i) => (
-              <div key={i} className="px-0 sm:px-3 mx-1 w-auto h-full xl:h-[320px]">
-                <Goals {...item} />
-              </div>
-            ))}
-          </Slider>
+          <div className="overflow-hidden" ref={emblaRef}>
+            <div className="flex">
+              {items.map((item, i) => (
+                <div
+                  key={i}
+                  className="flex-shrink-0 flex-grow-0 px-0 sm:px-3 mx-1"
+                  style={{ flexBasis: getSlideWidth() }}
+                >
+                  <div className="h-full xl:h-[320px]">
+                    <Goals {...item} />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
 
+          {/* DOTS */}
           <div className="flex justify-center gap-2 mt-4">
             {Array.from({ length: totalDots + 1 }).map((_, i) => (
               <button
                 key={i}
-                onClick={() => sliderRef.current?.slickGoTo(i)}
-                className={`w-4 h-4 rounded-full transition-all
-                  ${i === index ? "bg-[#0f4a85] scale-110" : "border-2 border-[#0f4a85] bg-white"}
+                onClick={() => scrollTo(i)}
+                className={`w-4 h-4 rounded-full transition-all cursor-pointer
+                  ${i === index ? "bg-[#0f4a85] scale-110" : "border-2 border-[#0f4a85] bg-white hover:bg-[#0f4a85]/20"}
                 `}
+                aria-label={`Go to slide ${i + 1}`}
               />
             ))}
           </div>

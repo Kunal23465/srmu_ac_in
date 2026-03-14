@@ -1,8 +1,5 @@
 import React, { useRef } from "react";
-
 import Classes from "../../../utils/styles/Global.module.css";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import CustomTabs from "../../../utils/custom/CustomTabs";
 import { Hello } from "./Hello";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";

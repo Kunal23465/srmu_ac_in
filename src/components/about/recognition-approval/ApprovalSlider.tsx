@@ -1,115 +1,6 @@
-// import React, { useRef } from "react";
-// import Slider from "react-slick";
-// import { FaFilePdf } from "react-icons/fa";
-
-// import "slick-carousel/slick/slick.css";
-// import "slick-carousel/slick/slick-theme.css";
-// import { approvalData } from "../../../data/about/recognition-approval/recognitionApprovalsData";
-// import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
-
-// const ApprovalsSlider = () => {
-//     const sliderRef = useRef<Slider | null>(null);
-
-//     const settings = {
-//         dots: false,
-//         infinite: true,
-//         speed: 600,
-//         slidesToShow: 3,
-//         slidesToScroll: 1,
-//         arrows: false,
-//         responsive: [
-//             { breakpoint: 1024, settings: { slidesToShow: 2 } },
-//             { breakpoint: 768, settings: { slidesToShow: 1 } },
-//         ],
-//     };
-
-//     return (
-//         <>
-//             <section className="bg-[#ffb703] pt-16 pb-[300px] relative overflow-visible">
-//                 <div className="max-w-7xl mx-auto px-4 relative">
-//                     {/* Heading */}
-//                     <div className="text-left mb-10">
-//                         <h2 className="text-4xl font-bold text-black mb-4">Approvals</h2>
-//                         <p className="text-black max-w-3xl">
-//                             The Uttar Pradesh State Legislature established SRMU as a full-fledged
-//                             university, and it is included among the list of universities that the
-//                             University Grants Commission maintains under Section 2(f), with the
-//                             authority to award degrees in accordance with Section 22(1) of the UGC Act,
-//                             1956. SRMU has received permissions and recognition from Statutory Bodies
-//                             wherever they are necessary or required.
-//                         </p>
-//                     </div>
-
-//                     {/* Slider container */}
-//                     <div className="relative">
-//                         {/* Slider box that overlaps */}
-//                         <div className="absolute left-0 w-full top-12">
-//                             <Slider ref={sliderRef} {...settings}>
-//                                 {approvalData.map((item) => (
-//                                     <div key={item.id} className="px-3">
-//                                         <div className="bg-white shadow-md rounded-2xl p-6 flex flex-col items-center text-center min-h-[380px] hover:shadow-xl transition-all">
-//                                             <img
-//                                                 src={item.logo}
-//                                                 alt={item.title}
-//                                                 className="h-20 object-contain mb-4"
-//                                             />
-//                                             <h3 className="text-lg font-bold text-gray-800 mb-1">
-//                                                 {item.title}
-//                                             </h3>
-//                                             <p className="text-gray-600 font-semibold mb-3">
-//                                                 {item.subtitle}
-//                                             </p>
-//                                             <p className="text-gray-500 text-sm mb-6">
-//                                                 {item.description}
-//                                             </p>
-
-//                                             <a
-//                                                 href={item.pdfLink}
-//                                                 target="_blank"
-//                                                 rel="noopener noreferrer"
-//                                                 className="flex items-center justify-center gap-2 border border-yellow-400 text-blue-900 bg-yellow-100 hover:bg-yellow-500 hover:text-white font-semibold px-4 py-2 rounded-md transition-all"
-//                                             >
-//                                                 <FaFilePdf size={18} />
-//                                                 DOWNLOAD PDF
-//                                             </a>
-//                                         </div>
-//                                     </div>
-//                                 ))}
-//                             </Slider>
-
-//                         </div>
-//                         {/* Navigation Buttons */}
-//                         <div className="absolute top-[-175px] right-4 flex gap-3">
-//                             <button
-//                                 onClick={() => sliderRef.current?.slickPrev()}
-//                                 className="w-14 h-14 border border-black rounded-full flex items-center justify-center   transition"
-//                             >
-//                                 <BiChevronLeft size={22} />
-//                             </button>
-//                             <button
-//                                 onClick={() => sliderRef.current?.slickNext()}
-//                                 className="w-14 h-14 border border-black rounded-full flex items-center justify-center   transition"
-//                             >
-//                                 <BiChevronRight size={22} />
-//                             </button>
-//                         </div>
-//                     </div>
-//                 </div>
-//             </section>
-//             <div className="h-[160px] mt-10 "></div>
-//         </>
-
-//     );
-
-// };
-
-// export default ApprovalsSlider;
-
-import { useEffect, useRef, useState } from "react";
-import Slider from "react-slick";
+import { useEffect, useState, useCallback } from "react";
+import useEmblaCarousel from "embla-carousel-react";
 import Classes from "../../../utils/styles/Global.module.css";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import { approvalData } from "../../../data/about/recognition-approval/recognitionApprovalsData";
 
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
@@ -135,47 +26,150 @@ export const PdfSvgIcon: React.FC = () => (
 );
 
 const ApprovalsSlider = () => {
-  const [windowWidth, setWindowWidth] = useState(typeof window !== "undefined" ? window.innerWidth : 0);
-  const sliderRef = useRef<Slider | null>(null);
+  const [windowWidth, setWindowWidth] = useState(0);
+  const [hasMounted, setHasMounted] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
+
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: false,
+    align: "start",
+    skipSnaps: false,
+    dragFree: false,
+  });
 
   const totalSlides = approvalData.length;
 
-
-
-  // 🔍 Determine when to disable arrows
-  const isAtStart = currentSlide === 0;
-  const isAtEnd = currentSlide >= totalSlides - (windowWidth < 768 ? 1 : windowWidth < 1024 ? 2 : 3);
-
   useEffect(() => {
+    setHasMounted(true);
+
     const handleResize = () => {
-      setWindowWidth(window.innerWidth);
+      if (typeof window !== "undefined") {
+        setWindowWidth(window.innerWidth);
+      }
     };
 
+    handleResize();
     window.addEventListener("resize", handleResize);
+
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Function to determine slidesToShow based on window width
-  const getSlidesToShow = () => {
-    if (windowWidth >= 1024) return 3;
-    if (windowWidth >= 600) return 2;
+  useEffect(() => {
+    if (!emblaApi || !hasMounted) return;
 
+    const onSelect = () => {
+      setCurrentSlide(emblaApi.selectedScrollSnap());
+    };
+
+    emblaApi.on("select", onSelect);
+    onSelect();
+
+    return () => {
+      emblaApi.off("select", onSelect);
+    };
+  }, [emblaApi, hasMounted]);
+
+  /** Re-initialize embla when window width changes */
+  useEffect(() => {
+    if (emblaApi && hasMounted) {
+      emblaApi.reInit();
+    }
+  }, [windowWidth, emblaApi, hasMounted]);
+
+  // Function to determine slidesToShow based on window width
+  const getSlidesToShow = useCallback(() => {
+    if (windowWidth >= 1024) return 3;
+    if (windowWidth >= 768) return 2;
     return 1;
+  }, [windowWidth]);
+
+  // 🔍 Determine when to disable arrows
+  const isAtStart = currentSlide === 0;
+  const isAtEnd = currentSlide >= totalSlides - getSlidesToShow();
+
+  const goToNext = () => emblaApi?.scrollNext();
+  const goToPrev = () => emblaApi?.scrollPrev();
+
+  // Get slide width based on slides to show
+  const getSlideWidth = () => {
+    const slidesToShow = getSlidesToShow();
+    return `${100 / slidesToShow}%`;
   };
-  const settings = {
-    dots: false,
-    infinite: false, //
-    speed: 600,
-    slidesToShow: getSlidesToShow(),
-    slidesToScroll: 1,
-    arrows: false,
-    beforeChange: (_: number, next: number) => setCurrentSlide(next),
-    responsive: [
-      { breakpoint: 1024, settings: { slidesToShow: 2 } },
-      { breakpoint: 768, settings: { slidesToShow: 1 } },
-    ],
-  };
+
+  // Static grid for SSR
+  if (!hasMounted) {
+    return (
+      <>
+        <section className="bg-[#ffb703] pt-16 pb-[300px] relative overflow-visible">
+          <div className={`${Classes["container"]}`}>
+            <div className="px-4 md:px-0 relative">
+              {/* Heading */}
+              <div className="flex flex-col md:flex-row">
+                <div className="text-left mb-10">
+                  <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] fw600 text-black mb-4">Approvals</h2>
+                  <p className="text-black max-w-3xl">
+                    The Uttar Pradesh State Legislature established SRMU as a full-fledged university, and it is included among the list of universities that the University Grants
+                    Commission maintains under Section 2(f), with the authority to award degrees in accordance with Section 22(1) of the UGC Act, 1956. SRMU has received permissions
+                    and recognition from Statutory Bodies wherever they are necessary or required.
+                  </p>
+                </div>
+                <div className="flex gap-3 ml-0 md:ml-auto">
+                  <button
+                    disabled
+                    className="text-gray-700 bg-white shadow-lg w-13 h-13 flex items-center justify-center rounded-full border border-gray-200 opacity-40 cursor-not-allowed"
+                  >
+                    <MdKeyboardArrowLeft size="26" />
+                  </button>
+
+                  <button
+                    disabled
+                    className="text-gray-700 bg-white shadow-lg w-13 h-13 flex items-center justify-center rounded-full border border-gray-200 opacity-40 cursor-not-allowed"
+                  >
+                    <MdKeyboardArrowRight size="26" />
+                  </button>
+                </div>
+              </div>
+              {/* Slider container */}
+              <div className="relative">
+                {/* Static grid for SSR */}
+                <div className="absolute left-0 w-full top-12">
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {approvalData.slice(0, 3).map((item) => (
+                      <div key={item.id} className="relative px-3 pb-[135px]">
+                        <div className="bg-white shadow-lg shadow-gray-400/40 rounded-2xl p-10 flex flex-col items-center text-center min-h-[400px] sm:min-h-[450px] md:min-h-[520px] xl:min-h-[450px] transition-all duration-300">
+                          <img src={item.logo} alt={item.title} className="h-20 object-contain mb-4" />
+                          <h3 className="text-lg font-bold text-center text-gray-800 mb-1">{item.title}</h3>
+                          <p className="text-gray-800 text-lg mb-3">{item.subtitle}</p>
+                          <p className="text-gray-700 text-md pb-10 mb-6">{item.description}</p>
+                          <div className="absolute bottom-45">
+                            <a
+                              href={item.pdfLink}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="group flex items-center gap-2 border-2 border-[#ffb703] 
+                                text-white bg-[#0f4a85] hover:bg-white hover:text-[#0f4a85]
+                                font-semibold px-4 py-2 rounded-lg transition-all duration-500"
+                            >
+                              <span className="bg-white p-1 rounded-md transition-all group-hover:bg-[#ffb703]">
+                                <PdfSvgIcon />
+                              </span>
+                              DOWNLOAD PDF
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div className="h-[160px] mt-10"></div>
+      </>
+    );
+  }
+
   return (
     <>
       <section className="bg-[#ffb703] pt-16 pb-[300px] relative overflow-visible">
@@ -184,7 +178,7 @@ const ApprovalsSlider = () => {
             {/* Heading */}
             <div className="flex flex-col md:flex-row">
               <div className="text-left mb-10">
-                <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem]  fw600 text-black mb-4">Approvals</h2>
+                <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] fw600 text-black mb-4">Approvals</h2>
                 <p className="text-black max-w-3xl">
                   The Uttar Pradesh State Legislature established SRMU as a full-fledged university, and it is included among the list of universities that the University Grants
                   Commission maintains under Section 2(f), with the authority to award degrees in accordance with Section 22(1) of the UGC Act, 1956. SRMU has received permissions
@@ -193,18 +187,18 @@ const ApprovalsSlider = () => {
               </div>
               <div className="flex gap-3 ml-0 md:ml-auto">
                 <button
-                  onClick={() => sliderRef.current?.slickPrev()}
+                  onClick={goToPrev}
                   disabled={isAtStart}
-                  className={`text-gray-700  hover:text-[#ffb703]  bg-white shadow-lg w-13 h-13 flex items-center justify-center rounded-full border border-gray-200 z-10 cursor-pointer ${isAtStart ? "opacity-40 cursor-not-allowed" : " cursor-pointer"
+                  className={`text-gray-700 hover:text-[#ffb703] bg-white shadow-lg w-13 h-13 flex items-center justify-center rounded-full border border-gray-200 z-10 cursor-pointer ${isAtStart ? "opacity-40 cursor-not-allowed" : "cursor-pointer hover:bg-gray-100"
                     }`}
                 >
                   <MdKeyboardArrowLeft size="26" />
                 </button>
 
                 <button
-                  onClick={() => sliderRef.current?.slickNext()}
+                  onClick={goToNext}
                   disabled={isAtEnd}
-                  className={`text-gray-700  hover:text-[#ffb703]  bg-white shadow-lg w-13 h-13 flex items-center justify-center rounded-full border border-gray-200 z-10 cursor-pointer ${isAtEnd ? "opacity-40 cursor-not-allowed" : " cursor-pointer"
+                  className={`text-gray-700 hover:text-[#ffb703] bg-white shadow-lg w-13 h-13 flex items-center justify-center rounded-full border border-gray-200 z-10 cursor-pointer ${isAtEnd ? "opacity-40 cursor-not-allowed" : "cursor-pointer hover:bg-gray-100"
                     }`}
                 >
                   <MdKeyboardArrowRight size="26" />
@@ -213,43 +207,47 @@ const ApprovalsSlider = () => {
             </div>
             {/* Slider container */}
             <div className="relative">
-              {/* Slider box that overlaps */}
-              <div className="absolute left-0 w-full top-12">
-                <Slider ref={sliderRef} {...settings}>
+              {/* Embla Carousel */}
+              <div className="absolute left-0 w-full top-12 overflow-hidden" ref={emblaRef}>
+                <div className="flex">
                   {approvalData.map((item) => (
-                    <div key={item.id} className="relative px-3 pb-[135px]">
-                      <div className="bg-white shadow-lg shadow-gray-400/40 rounded-2xl p-10 flex flex-col items-center text-center min-h-[400px] sm:min-h-[450px] md:min-h-[520px] xl:min-h-[450px] transition-all duration-300">
-                        <img src={item.logo} alt={item.title} className="h-20 object-contain mb-4" />
-                        <h3 className="text-lg font-bold text-center text-gray-800 mb-1">{item.title}</h3>
-                        <p className="text-gray-800 text-lg mb-3">{item.subtitle}</p>
-                        <p className="text-gray-700 text-md pb-10 mb-6">{item.description}</p>
-                        <div className="absolute bottom-45">
-                          <a
-                            href={item.pdfLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="group flex items-center gap-2 border-2 border-[#ffb703] 
-             text-white bg-[#0f4a85] hover:bg-white hover:text-[#0f4a85]
-             font-semibold px-4 py-2 rounded-lg transition-all duration-500"
-                          >
-                            <span className="bg-white p-1 rounded-md transition-all group-hover:bg-[#ffb703]">
-                              <PdfSvgIcon />
-                            </span>
-                            DOWNLOAD PDF
-                          </a>
+                    <div
+                      key={item.id}
+                      className="flex-shrink-0 flex-grow-0 px-3"
+                      style={{ flexBasis: getSlideWidth() }}
+                    >
+                      <div className="relative pb-[135px]">
+                        <div className="bg-white shadow-lg shadow-gray-400/40 rounded-2xl p-10 flex flex-col items-center text-center min-h-[400px] sm:min-h-[450px] md:min-h-[520px] xl:min-h-[450px] transition-all duration-300">
+                          <img src={item.logo} alt={item.title} className="h-20 object-contain mb-4" />
+                          <h3 className="text-lg font-bold text-center text-gray-800 mb-1">{item.title}</h3>
+                          <p className="text-gray-800 text-lg mb-3">{item.subtitle}</p>
+                          <p className="text-gray-700 text-md pb-10 mb-6">{item.description}</p>
+                          <div className="absolute bottom-45">
+                            <a
+                              href={item.pdfLink}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="group flex items-center gap-2 border-2 border-[#ffb703] 
+                                text-white bg-[#0f4a85] hover:bg-white hover:text-[#0f4a85]
+                                font-semibold px-4 py-2 rounded-lg transition-all duration-500"
+                            >
+                              <span className="bg-white p-1 rounded-md transition-all group-hover:bg-[#ffb703]">
+                                <PdfSvgIcon />
+                              </span>
+                              DOWNLOAD PDF
+                            </a>
+                          </div>
                         </div>
                       </div>
                     </div>
                   ))}
-                </Slider>
+                </div>
               </div>
-
-              {/* Navigation Buttons */}
             </div>
           </div>
         </div>
       </section>
-      <div className="h-[160px] mt-10 "></div>
+      <div className="h-[160px] mt-10"></div>
     </>
   );
 };
