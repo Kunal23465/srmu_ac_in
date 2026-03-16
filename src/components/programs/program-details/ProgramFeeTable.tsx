@@ -17,6 +17,10 @@ interface Props {
 }
 
 const ProgramFeeTable: React.FC<Props> = ({ data }) => {
+  if (!data?.fees?.length) {
+    return null;
+  }
+
   function getMaxYearWiseFees(fees: ProgramFee[]) {
     const maxLength = Math.max(
       ...fees.map(fee => Object.keys(fee.yearWiseAmount).length)
@@ -27,6 +31,9 @@ const ProgramFeeTable: React.FC<Props> = ({ data }) => {
   }
 
   const check = getMaxYearWiseFees(data.fees);
+  if (!check.length) {
+    return null;
+  }
   const years = Object.keys(check[0].yearWiseAmount);
 
   // @ts-ignore

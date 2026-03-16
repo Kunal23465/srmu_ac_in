@@ -166,6 +166,19 @@ const NewsCard1 = ({ image, description, date, title, onReadMore }: any) => {
 
 /* -------------------- Main Component -------------------- */
 
+const formatEventDate = (value: string) => {
+  const parsed = new Date(value);
+  if (Number.isNaN(parsed.getTime())) {
+    return value;
+  }
+
+  return new Intl.DateTimeFormat("en-US", {
+    month: "long",
+    day: "2-digit",
+    year: "numeric",
+  }).format(parsed);
+};
+
 const Events: React.FC = () => {
 
   const dispatch = useDispatch<AppDispatch>();
@@ -185,6 +198,21 @@ const Events: React.FC = () => {
     [autoplay.current]
   );
 
+  const sourceData = data?.length ? data : eventsData;
+
+  const homeEvents = sourceData.map((news: any, index: number) => {
+    const rawDate = news?.date || news?.eventDate || news?.createdAt || "";
+
+    return {
+      ...news,
+      id: news?.eventId || news?.id || index,
+      image: news?.imagePath || news?.image || "",
+      date: typeof rawDate === "string" ? formatEventDate(rawDate) : "",
+      title: news?.title || "News & Event",
+      description: news?.description || news?.brief || "",
+    };
+  });
+
   const handleReadMore = (news: any) => {
 
     navigate(`news/${news.title.replace(/\s+/g, "-").toLowerCase()}`, {
@@ -194,10 +222,10 @@ const Events: React.FC = () => {
   };
 
   useEffect(() => {
-
-    dispatch(fetchHomeEventsData(1));
-
-  }, []);
+    if (!data?.length) {
+      dispatch(fetchHomeEventsData(1));
+    }
+  }, [dispatch, data?.length]);
 
   return (
 
@@ -218,7 +246,7 @@ const Events: React.FC = () => {
 
         <div className="w-full lg:w-[40%] border p-3 rounded-lg border-[#ffb703] hover:shadow-2xl transition-all duration-200">
 
-          {eventsData.slice(0, 1).map((news, index) => (
+          {homeEvents.slice(0, 1).map((news, index) => (
 
             <NewsCard1
               key={index}
@@ -235,7 +263,7 @@ const Events: React.FC = () => {
 
         <div className="w-full lg:w-[60%] flex flex-col gap-y-5">
 
-          {eventsData.slice(1, 3).map((news, index) => (
+          {homeEvents.slice(1, 3).map((news, index) => (
 
             <NewsCard
               key={index}
@@ -260,7 +288,7 @@ const Events: React.FC = () => {
 
           <div className="flex">
 
-            {eventsData.map((news, index) => (
+            {homeEvents.map((news, index) => (
 
               <div
                 key={index}

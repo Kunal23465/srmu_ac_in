@@ -2,7 +2,7 @@ import { hydrateRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { Provider } from "react-redux";
-import { store } from "./store";
+import { createStore } from "./store";
 import App from "./App";
 import "./index.css";
 
@@ -11,6 +11,12 @@ const rootElement = document.getElementById("root");
 if (!rootElement) {
     throw new Error("Root element not found");
 }
+
+// Get preloaded state from server
+const preloadedState = (window as any).__PRELOADED_STATE__ || {};
+delete (window as any).__PRELOADED_STATE__;
+
+const store = createStore(preloadedState);
 
 try {
     hydrateRoot(

@@ -12,6 +12,12 @@ const __dirname = path.dirname(__filename);
 
 const isProduction = process.env.NODE_ENV === "production";
 
+// In local dev, some corporate/self-signed TLS chains can block SSR API calls.
+// Allow opt-in relaxed TLS via env (default true in non-production).
+if (!isProduction && process.env.SSR_ALLOW_INSECURE_TLS !== "false") {
+  process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+}
+
 async function createServer() {
   const app = express();
 
@@ -66,15 +72,20 @@ async function createServer() {
       //   console.error("SSR ERROR:", err);
       // }
       let appHtml = "";
+      let preloadedState = {};
       try {
-        appHtml = await render(url);
+        const result = await render(url);
+        appHtml = result.appHtml;
+        preloadedState = result.preloadedState;
         console.log("SSR OK, HTML length:", appHtml?.length || 0);
       } catch (err) {
         console.error("SSR ERROR:", err);
         // Fallback to basic HTML if SSR fails
         appHtml = '<div id="root"><div>Loading...</div></div>';
       }
-      const html = template.replace(`<!--app-html-->`, appHtml);
+      const html = template
+        .replace(`<!--app-html-->`, appHtml)
+        .replace(`<!--preloaded-state-->`, `<script>window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, "\\u003c")}</script>`);
 
       res.status(200).set({ "Content-Type": "text/html" }).end(html);
     } catch (e) {

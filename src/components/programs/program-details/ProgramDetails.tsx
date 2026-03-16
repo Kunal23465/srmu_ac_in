@@ -13,10 +13,10 @@ import { CustomTopFooterData1 } from "../../../data/about/leadership-and-governa
 import { CustomCompaniesScope } from "../../../utils/custom/CustomCompaniesScope";
 import CustomProgramScholarshipSchemeCard from "../../../utils/custom/CustomProgramScholarshipSchemeCard";
 import CustomEligibilitySection from "../../../utils/custom/CustomEligibilitySection";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../../store";
-import { fetchProgramFinderByID } from "../../../store/program-finder/programFinderThunk";
+import { fetchAllProgramFinder, fetchProgramFinderByID } from "../../../store/program-finder/programFinderThunk";
 import { useEffect, useState } from "react";
 import ProgramFeeTable from "./ProgramFeeTable";
 import { fetchProgramFeesByProgramId } from "../../../store/program-finder/program-fees/programFeesThunk";
@@ -28,14 +28,29 @@ import { FaArrowRightLong } from "react-icons/fa6";
 import { fetchRecruiterById } from "../../../store/recruiter/recruiterThunk";
 // import PartnerLogos from "./PartnerLogos";
 import { fetchWhySrmuLogoById } from "../../../store/why-srmu/whySrmuLogoThunk";
+import { setProgramId as setProgramIdInStore } from "../../../store/program-finder/program/programSlice";
 const ProgramDetails: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
+  const { programName } = useParams();
   const [isPhd, setIsPhd] = useState(false);
   const [expanded, setExpanded] = useState(false);
-  const [programId, setProgramId] = useState<string | null>(null);
+  const [resolvedProgramId, setResolvedProgramId] = useState<string | null>(null);
+
+  const slugifyProgramName = (value: string) =>
+    value
+      .toLowerCase()
+      .trim()
+      .replace(/[()]/g, "")
+      .replace(/&/g, "")
+      .replace(/\./g, "-")
+      .replace(/\s+/g, "-")
+      .replace(/-+/g, "-")
+      .replace(/-in-/g, "-")
+      .replace(/^b-c-a\b/, "bca")
+      .replace(/-with-.*/, "")
+      .replace(/^-|-$/g, "");
 
   const { programId: baseProgramId } = useSelector((state: RootState) => state.programId)
-  console.log(baseProgramId, "programId in detail page")
   const { dataByID } = useSelector((state: RootState) => state.getProgramFinder);
   const { data: departmentHeghlightData, loading: departmentHeghlightLoading } = useSelector((state: RootState) => state.getDepartmentHeighlightById);
   const { data: feesData } = useSelector((state: RootState) => state.programFees);
@@ -43,33 +58,116 @@ const ProgramDetails: React.FC = () => {
   const { data: counterData } = useSelector((state: RootState) => state.getCounterById);
   const { data: recruiterData, loading: recruiterLoading } = useSelector((state: RootState) => state.getRecruiter);
   const { data: whySrmuLogo } = useSelector((state: RootState) => state.whySrmuLogoById);
-
-  // Initialize programId from localStorage on client side only
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const storedProgramId = localStorage.getItem("programId");
-      setProgramId(storedProgramId);
-    }
-  }, []);
+  const normalizedFeesData = Array.isArray(feesData) ? feesData[0] : feesData;
 
   useEffect(() => {
-    if (programId !== null) {
-      const numericProgramId = Number(programId);
-      dispatch(fetchWhySrmuSectionById({ programId: numericProgramId }));
-      dispatch(fetchProgramFinderByID(numericProgramId));
-      dispatch(fetchProgramFeesByProgramId(numericProgramId));
-      dispatch(getCounterById(numericProgramId));
-      dispatch(fetchProgramHeighlightById(numericProgramId));
-      dispatch(fetchRecruiterById({ programId: numericProgramId }));
-      dispatch(fetchWhySrmuLogoById({ programId: numericProgramId }));
+    let mounted = true;
+
+    const resolveProgramId = async () => {
+      if (baseProgramId) {
+        if (mounted) setResolvedProgramId(baseProgramId);
+        return;
+      }
+
+      const programIdFromStore = (dataByID as any)?.programId;
+      if (programIdFromStore) {
+        if (mounted) setResolvedProgramId(String(programIdFromStore));
+        return;
+      }
+
+      if (typeof window !== "undefined") {
+        const storedProgramId = localStorage.getItem("programId");
+        if (storedProgramId) {
+          if (mounted) setResolvedProgramId(storedProgramId);
+          return;
+        }
+      }
+
+      if (!programName) {
+        return;
+      }
+
+      const decodedName = decodeURIComponent(programName).replace(/-/g, " ");
+      const byNameAction = await dispatch(fetchAllProgramFinder({ name: decodedName }));
+      if (!mounted) {
+        return;
+      }
+
+      const byNamePrograms =
+        fetchAllProgramFinder.fulfilled.match(byNameAction) && Array.isArray(byNameAction.payload)
+          ? byNameAction.payload
+          : [];
+
+      let matchedProgram = byNamePrograms.find(
+        (item: any) => slugifyProgramName(item?.name || "") === programName.toLowerCase()
+      );
+
+      if (!matchedProgram) {
+        const allProgramsAction = await dispatch(fetchAllProgramFinder());
+        if (!mounted) {
+          return;
+        }
+
+        const allPrograms =
+          fetchAllProgramFinder.fulfilled.match(allProgramsAction) && Array.isArray(allProgramsAction.payload)
+            ? allProgramsAction.payload
+            : [];
+
+        matchedProgram = allPrograms.find(
+          (item: any) => slugifyProgramName(item?.name || "") === programName.toLowerCase()
+        );
+      }
+
+      if (matchedProgram?.programId) {
+        const id = String(matchedProgram.programId);
+        setResolvedProgramId(id);
+        dispatch(setProgramIdInStore(id));
+      }
+    };
+
+    void resolveProgramId();
+
+    return () => {
+      mounted = false;
+    };
+  }, [baseProgramId, dataByID, dispatch, programName]);
+
+  useEffect(() => {
+    if (resolvedProgramId !== null) {
+      const numericProgramId = Number(resolvedProgramId);
+      const hasSSRProgramData = Number((dataByID as any)?.programId) === numericProgramId;
+      const hasSSRFeesData = Number((normalizedFeesData as any)?.programId) === numericProgramId;
+      const hasSSRWhySrmu = Array.isArray(whySrmuData) && whySrmuData.length > 0;
+      const hasSSRCounter = Array.isArray(counterData) && counterData.length > 0;
+      const hasSSRHighlights = Array.isArray(departmentHeghlightData) && departmentHeghlightData.length > 0;
+      const hasSSRRecruiters = Array.isArray(recruiterData) && recruiterData.length > 0;
+      const hasSSRWhyLogos = Array.isArray(whySrmuLogo) && whySrmuLogo.length > 0;
+
+      if (!hasSSRWhySrmu) dispatch(fetchWhySrmuSectionById({ programId: numericProgramId }));
+      if (!hasSSRProgramData) dispatch(fetchProgramFinderByID(numericProgramId));
+      if (!hasSSRFeesData) dispatch(fetchProgramFeesByProgramId(numericProgramId));
+      if (!hasSSRCounter) dispatch(getCounterById(numericProgramId));
+      if (!hasSSRHighlights) dispatch(fetchProgramHeighlightById(numericProgramId));
+      if (!hasSSRRecruiters) dispatch(fetchRecruiterById({ programId: numericProgramId }));
+      if (!hasSSRWhyLogos) dispatch(fetchWhySrmuLogoById({ programId: numericProgramId }));
     }
-    if (programId == "81") {
+    if (resolvedProgramId == "81") {
       setIsPhd(true);
     } else {
       setIsPhd(false);
     }
 
-  }, [dispatch, programId]);
+  }, [
+    counterData,
+    dataByID,
+    departmentHeghlightData,
+    dispatch,
+    normalizedFeesData,
+    recruiterData,
+    resolvedProgramId,
+    whySrmuData,
+    whySrmuLogo,
+  ]);
 
   // counter data key change
   const convertedCounterData = counterData.map((item) => {
@@ -133,8 +231,6 @@ const ProgramDetails: React.FC = () => {
       ],
     };
   };
-
-  console.log("dataByID", dataByID);
 
   if (recruiterLoading) {
     return <p>loading....</p>;
@@ -243,7 +339,7 @@ const ProgramDetails: React.FC = () => {
           <h2 className="mt-20 mb-10 text-center text-[22px] sm:text-[28px] lg:text-[3.125rem] fw500 text-[#023047]">Program Fee</h2>
 
           {/* @ts-ignore */}
-          {feesData && feesData.length > 0 && <ProgramFeeTable data={feesData[0]} />}
+          {normalizedFeesData?.fees?.length > 0 && <ProgramFeeTable data={normalizedFeesData} />}
         </div>
         {!isPhd && (
           <div className="my-10 ">

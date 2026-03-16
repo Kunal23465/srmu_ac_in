@@ -1,12 +1,23 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import Classes from "../../utils/styles/Global.module.css";
 import CustomTopFooter from "../../utils/custom/CustomTopFooter";
 import { CustomTopFooterAbout } from "../../data/about/aboutusData";
+import { useSelector } from "react-redux";
+import { RootState } from "../../store";
+import { Helmet } from "react-helmet-async";
 
 const BlogDetailsPage: React.FC = () => {
-  const location = useLocation().state;
-  const data = location.data;
+  const location = useLocation();
+  const { title } = useParams();
+  const { data: blogs } = useSelector((state: RootState) => state.getAllBlogs);
+
+  const dataFromState = (location.state as any)?.data;
+  const decodedTitle = decodeURIComponent(title || "").replace(/_/g, " ").trim().toLowerCase();
+
+  const data =
+    dataFromState ||
+    blogs.find((item: any) => item.title?.trim().toLowerCase() === decodedTitle);
   // const { id } = useParams<{ id: string }>();
   // const blog = blogCards.find((b) => b.routeKey === id);
 
@@ -29,8 +40,20 @@ const BlogDetailsPage: React.FC = () => {
   //     "status": true
   // }
 
+  if (!data) {
+    return (
+      <div className={`${Classes["container"]} py-16`}>
+        <h1 className="text-2xl font-medium text-[#023047]">Blog not found</h1>
+      </div>
+    );
+  }
+
   return (
     <>
+      <Helmet>
+        <title>{data.title}</title>
+        <meta name="description" content={data.title} />
+      </Helmet>
       <div className={`${Classes["container"]}`}>
         <div className="py-12 bg-white">
           <div className="container mx-auto px-4">
