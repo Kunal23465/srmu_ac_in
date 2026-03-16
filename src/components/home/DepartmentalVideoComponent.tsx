@@ -5,6 +5,7 @@ import Autoplay from "embla-carousel-autoplay";
 import Classes from "../../utils/styles/Global.module.css";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import { videos } from "../../data/academics/academic-credit/academic-credit-data";
+import { FaCaretRight } from "react-icons/fa";
 
 export default function DepartmentalVideo() {
 
@@ -104,7 +105,7 @@ export default function DepartmentalVideo() {
                         }}
                         className="bg-[#ffb703] transition p-5 rounded-full shadow-xl pointer-events-auto"
                       >
-                        ▶
+                        <FaCaretRight />
                       </button>
 
                     </div>

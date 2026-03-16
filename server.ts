@@ -65,8 +65,15 @@ async function createServer() {
       // } catch (err) {
       //   console.error("SSR ERROR:", err);
       // }
-      const appHtml = await render(url);
-      console.log("SSR HTML LENGTH:", appHtml?.length);
+      let appHtml = "";
+      try {
+        appHtml = await render(url);
+        console.log("SSR OK, HTML length:", appHtml?.length || 0);
+      } catch (err) {
+        console.error("SSR ERROR:", err);
+        // Fallback to basic HTML if SSR fails
+        appHtml = '<div id="root"><div>Loading...</div></div>';
+      }
       const html = template.replace(`<!--app-html-->`, appHtml);
 
       res.status(200).set({ "Content-Type": "text/html" }).end(html);

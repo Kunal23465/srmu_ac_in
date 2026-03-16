@@ -1,16 +1,16 @@
-import React from "react";
+import React, { Suspense } from "react";
 import Banner from "./Banner";
 import MemorialCollege from "./MemorialCollege";
 import InnovationCulture from "./InnovationCulture";
 import Apply from "./Apply";
-import ProgramsSection from "./ProgramSection";
-import AlumniSlider from "./NotableAlumni";
-import FlickeringSection from "./FlickeringSection";
-import TestimonialSlider from "./TestimonialSlider";
-import DepartmentalVideoComponent from "./DepartmentalVideoComponent";
-import Placements from "./Placements";
-import MobilePlacements from "./MobilePlacements";
-import Events from "./Events";
+const ProgramsSection = React.lazy(() => import("./ProgramSection"));
+const AlumniSlider = React.lazy(() => import("./NotableAlumni"));
+const FlickeringSection = React.lazy(() => import("./FlickeringSection"));
+const TestimonialSlider = React.lazy(() => import("./TestimonialSlider"));
+const DepartmentalVideoComponent = React.lazy(() => import("./DepartmentalVideoComponent"));
+const Placements = React.lazy(() => import("./Placements"));
+const MobilePlacements = React.lazy(() => import("./MobilePlacements"));
+const Events = React.lazy(() => import("./Events"));
 import CustomTopFooter from "../../utils/custom/CustomTopFooter";
 import { CustomTopFooterAbout } from "../../data/about/aboutusData";
 
@@ -19,22 +19,38 @@ const Home: React.FC = () => {
     <div>
       <Banner />
       <MemorialCollege />
-      <ProgramsSection />
+      <Suspense fallback={<div>Loading...</div>}>
+        <ProgramsSection />
+      </Suspense>
       <Apply />
       <InnovationCulture />
-      <Events />
-      <FlickeringSection />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Events />
+      </Suspense>
+      <Suspense fallback={<div>Loading...</div>}>
+        <FlickeringSection />
+      </Suspense>
       <div className="hidden sm:block">
-        <Placements />
+        <Suspense fallback={<div>Loading...</div>}>
+          <Placements />
+        </Suspense>
       </div>
       <div className="sm:hidden">
-        <MobilePlacements />
+        <Suspense fallback={<div>Loading...</div>}>
+          <MobilePlacements />
+        </Suspense>
       </div>
-      <AlumniSlider />
+      <Suspense fallback={<div>Loading...</div>}>
+        <AlumniSlider />
+      </Suspense>
       <div className="bg-[#ecf0f9]">
-        <TestimonialSlider />
+        <Suspense fallback={<div>Loading...</div>}>
+          <TestimonialSlider />
+        </Suspense>
       </div>
-      <DepartmentalVideoComponent />
+      <Suspense fallback={<div>Loading...</div>}>
+        <DepartmentalVideoComponent />
+      </Suspense>
       <CustomTopFooter data={CustomTopFooterAbout} />
     </div>
   );

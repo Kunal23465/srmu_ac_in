@@ -6,16 +6,39 @@ import { store } from "./store";
 import App from "./App";
 import "./index.css";
 
-hydrateRoot(
-    document.getElementById("root")!,
-    <HelmetProvider>
-        <Provider store={store}>
-            <BrowserRouter>
-                <App />
-            </BrowserRouter>
-        </Provider>
-    </HelmetProvider>
-);
+const rootElement = document.getElementById("root");
+
+if (!rootElement) {
+    throw new Error("Root element not found");
+}
+
+try {
+    hydrateRoot(
+        rootElement,
+        <HelmetProvider>
+            <Provider store={store}>
+                <BrowserRouter>
+                    <App />
+                </BrowserRouter>
+            </Provider>
+        </HelmetProvider>
+    );
+} catch (error) {
+    console.error("Hydration failed, falling back to client-side rendering", error);
+    // Fallback to createRoot if hydration fails
+    import("react-dom/client").then(({ createRoot }) => {
+        const root = createRoot(rootElement);
+        root.render(
+            <HelmetProvider>
+                <Provider store={store}>
+                    <BrowserRouter>
+                        <App />
+                    </BrowserRouter>
+                </Provider>
+            </HelmetProvider>
+        );
+    });
+}
 
 // remove loader once hydration is complete
 if (typeof document !== "undefined") {

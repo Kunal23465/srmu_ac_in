@@ -44,10 +44,14 @@ const Header = () => {
 
 
   useEffect(() => {
-    dispatch(fetchProgramMenu());
-  }, [dispatch]);
+    if (!programMenu || programMenu.length === 0) {
+      dispatch(fetchProgramMenu());
+    }
+  }, [dispatch, programMenu]);
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
+
     const handleScroll = () => {
       setIsActive(window.scrollY > 35);
     };
