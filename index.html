@@ -67,23 +67,7 @@
     })(window, document, "clarity", "script", "o9lqqntpki");
   </script>
 
-  <!-- ================= CHATBOT REQUIRED FILES ================= -->
-
-  <!-- jQuery (required) -->
-  <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-
-  <!-- Pusher -->
-  <script src="https://js.pusher.com/7.0/pusher.min.js"></script>
-
-  <!-- Chatbot Styles -->
   <link rel="stylesheet" href="https://arsinfotech.in/chatbot/admin/public/livechat/user_style.css">
-
-  <!-- Chatbot Scripts -->
-  <script src="https://arsinfotech.in/chatbot/admin/public/chatbot/chatbot.js"></script>
-  <script src="https://arsinfotech.in/chatbot/admin/public/livechat/user.js"></script>
-
-  <!-- Google reCAPTCHA -->
-  <script src="https://www.google.com/recaptcha/api.js?render=6Leef4opAAAAAIHXI82ZE6l8ezbNjJe2_1nwDlUH"></script>
 
   <style>
     @media(max-width:767px) {
@@ -110,8 +94,7 @@
   </noscript>
 
   <!-- React App -->
-<div id="root"><!--app-html--></div>
-  <!-- ================= LIVE CHAT HTML ================= -->
+  <div id="root"><!--app-html--></div>
 
   <div class="live-chat-container" id="liveChatContainer">
     <div class="live-chat-header">
@@ -123,7 +106,7 @@
         </div>
       </div>
       <div class="chat-actions">
-        <button onclick="liveChatOperation()" class="action-btn close-chat-btn">
+        <button onclick="window.liveChatOperation && window.liveChatOperation()" class="action-btn close-chat-btn">
           <i class="fas fa-times"></i>
         </button>
       </div>
@@ -133,13 +116,12 @@
       <div class="input-wrapper">
         <input type="text" id="messageInput" placeholder="Type a message">
       </div>
-      <button class="send-btn" onclick="sendMessage()">
+      <button class="send-btn" onclick="window.sendMessage && window.sendMessage()">
         <i class="fas fa-paper-plane"></i>
       </button>
     </div>
   </div>
 
-  <!-- Chatbot Container -->
   <div id="chatbot-container"
     data-key="WJ7Vitr1kuP5UtQX10hjIvfh3QXV8twrYqB7xo4leYDQatWIU2JvNN16GAGig0Wx">
   </div>
@@ -149,33 +131,57 @@
 
   <!--preloaded-state-->
 
+  <script defer src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+  <script defer src="https://js.pusher.com/7.0/pusher.min.js"></script>
+  <script defer src="https://arsinfotech.in/chatbot/admin/public/chatbot/chatbot.js"></script>
+  <script defer src="https://arsinfotech.in/chatbot/admin/public/livechat/user.js"></script>
+  <script defer src="https://www.google.com/recaptcha/api.js?render=6Leef4opAAAAAIHXI82ZE6l8ezbNjJe2_1nwDlUH"></script>
+
   <!-- React Client Entry -->
   <script type="module" src="/src/entry-client.tsx"></script>
 
-  <!-- reCAPTCHA execution -->
   <script>
-    grecaptcha.ready(function () {
-      grecaptcha.execute('6Leef4opAAAAAIHXI82ZE6l8ezbNjJe2_1nwDlUH', { action: 'submit' })
-        .then(function (token) {
-          if (document.querySelector('.g-recaptcha-response')) {
-            document.querySelector('.g-recaptcha-response').value = token;
-          }
+    window.addEventListener("load", function () {
+      if (window.grecaptcha && window.grecaptcha.ready) {
+        window.grecaptcha.ready(function () {
+          window.grecaptcha.execute("6Leef4opAAAAAIHXI82ZE6l8ezbNjJe2_1nwDlUH", { action: "submit" })
+            .then(function (token) {
+              var el = document.querySelector(".g-recaptcha-response");
+              if (el) {
+                el.value = token;
+              }
+            });
         });
+      }
     });
   </script>
 
-
 <script>
-const forceUpdate = setInterval(() => {
-  const element = document.querySelector(".message-content");
+  const updateChatMessage = () => {
+    const element = document.querySelector(".message-content");
 
-  if (element) {
+    if (!element) {
+      return false;
+    }
+
     element.innerHTML = `
       Clear All Doubts Instantly.<br>
       <small>Chat with Us Instantly!</small>
     `;
+
+    return true;
+  };
+
+  if (!updateChatMessage()) {
+    let attempts = 0;
+    const forceUpdate = setInterval(() => {
+      attempts += 1;
+
+      if (updateChatMessage() || attempts >= 40) {
+        clearInterval(forceUpdate);
+      }
+    }, 250);
   }
-}, 10);
 </script>
 </body>
 </html>

@@ -49,11 +49,20 @@ html {
   to { transform: rotate(360deg); }
 }
 
-/* hide root until hydrated */
-#root {
-  visibility: hidden;
+body:not(.app-ready) {
+  overflow: hidden;
 }
 
+body:not(.app-ready) #root {
+  visibility: hidden;
+  opacity: 0;
+}
+
+body.app-ready #root {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 180ms ease;
+}
 
 .banner-section {
   background-image: url("/Shedule.png");

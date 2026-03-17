@@ -42,8 +42,10 @@ const Apply: React.FC = () => {
           Initial Load
      =========================== */
   useEffect(() => {
-    dispatch(fetchProgramByFlag());
-  }, [dispatch]);
+    if (data.length === 0) {
+      dispatch(fetchProgramByFlag());
+    }
+  }, [data.length, dispatch]);
   return (
     <div className={`${Classes.container} pb-7 md:pb-10 lg:pb-14`}>
       <div className="flex flex-col-reverse sm:flex-row gap-x-10 gap-y-6">

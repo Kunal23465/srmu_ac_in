@@ -21,6 +21,7 @@ const ProgramsSection: FC = () => {
 
   const { programType } = useSelector((state: RootState) => state.getProgramType);
   const { discipline, loading } = useSelector((state: RootState) => state.getDiscipline);
+  const hasSkippedInitialDisciplineFetch = useRef(false);
 
   const autoplay = useRef(
     Autoplay({ delay: 3000, stopOnInteraction: false })
@@ -53,8 +54,10 @@ const ProgramsSection: FC = () => {
   =========================== */
 
   useEffect(() => {
-    dispatch(fetchProgramType());
-  }, [dispatch]);
+    if (programType.length === 0) {
+      dispatch(fetchProgramType());
+    }
+  }, [dispatch, programType.length]);
 
   /* ===========================
      Default Tab
@@ -63,8 +66,11 @@ const ProgramsSection: FC = () => {
   useEffect(() => {
 
     if (programType?.length && !selectedProgramType) {
-      setActiveTab(programType[0].programTypeId);
-      setSelectedProgramType(programType[0].programTypeId);
+      const defaultProgramType =
+        programType.find((item: any) => item?.showOnHome) ?? programType[0];
+
+      setActiveTab(defaultProgramType.programTypeId);
+      setSelectedProgramType(defaultProgramType.programTypeId);
     }
 
   }, [programType, selectedProgramType]);
@@ -75,11 +81,21 @@ const ProgramsSection: FC = () => {
 
   useEffect(() => {
 
-    if (selectedProgramType) {
-      dispatch(fetchProgramDiscipline({ programTypeId: selectedProgramType }));
+    if (!selectedProgramType) {
+      return;
     }
 
-  }, [dispatch, selectedProgramType]);
+    if (!hasSkippedInitialDisciplineFetch.current) {
+      hasSkippedInitialDisciplineFetch.current = true;
+
+      if (discipline.length > 0) {
+        return;
+      }
+    }
+
+    dispatch(fetchProgramDiscipline({ programTypeId: selectedProgramType }));
+
+  }, [discipline.length, dispatch, selectedProgramType]);
 
   /* ===========================
      Split cards for 2x2 layout

@@ -167,7 +167,9 @@ const NewsCard1 = ({ image, description, date, title, onReadMore }: any) => {
 /* -------------------- Main Component -------------------- */
 
 const formatEventDate = (value: string) => {
+
   const parsed = new Date(value);
+
   if (Number.isNaN(parsed.getTime())) {
     return value;
   }
@@ -177,7 +179,37 @@ const formatEventDate = (value: string) => {
     day: "2-digit",
     year: "numeric",
   }).format(parsed);
+
 };
+
+const normalizeEvent = (news: any, index: number) => {
+
+  const rawDate = news?.date || news?.eventDate || news?.createdAt || "";
+  const description = news?.description || news?.brief || "";
+  const title = news?.title || news?.name || "News & Event";
+  const image = news?.imagePath || news?.image || "";
+
+  return {
+    ...news,
+    id: news?.eventId || news?.id || index,
+    image,
+    date: typeof rawDate === "string" ? formatEventDate(rawDate) : "",
+    title,
+    description,
+  };
+
+};
+
+const slugifyEventTitle = (value: string) =>
+  value
+    .toLowerCase()
+    .trim()
+    .replace(/[()]/g, "")
+    .replace(/&/g, "and")
+    .replace(/[^\w\s-]/g, "")
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-")
+    .replace(/^-|-$/g, "");
 
 const Events: React.FC = () => {
 
@@ -186,6 +218,16 @@ const Events: React.FC = () => {
   const { data } = useSelector(
     (state: RootState) => state.getHomeEventsData
   );
+
+  const normalizedApiEvents = (Array.isArray(data) ? data : [])
+    .map((news: any, index: number) => normalizeEvent(news, index))
+    .filter((news: any) => news.image && news.title && news.description);
+
+  const fallbackEvents = eventsData.map((news, index) => normalizeEvent(news, index));
+  const events =
+    normalizedApiEvents.length > 0
+      ? [...normalizedApiEvents, ...fallbackEvents].slice(0, Math.max(3, normalizedApiEvents.length))
+      : fallbackEvents;
 
   const navigate = useNavigate();
 
@@ -198,34 +240,21 @@ const Events: React.FC = () => {
     [autoplay.current]
   );
 
-  const sourceData = data?.length ? data : eventsData;
-
-  const homeEvents = sourceData.map((news: any, index: number) => {
-    const rawDate = news?.date || news?.eventDate || news?.createdAt || "";
-
-    return {
-      ...news,
-      id: news?.eventId || news?.id || index,
-      image: news?.imagePath || news?.image || "",
-      date: typeof rawDate === "string" ? formatEventDate(rawDate) : "",
-      title: news?.title || "News & Event",
-      description: news?.description || news?.brief || "",
-    };
-  });
-
   const handleReadMore = (news: any) => {
 
-    navigate(`news/${news.title.replace(/\s+/g, "-").toLowerCase()}`, {
+    navigate(`/news/${slugifyEventTitle(news.title || "")}`, {
       state: news,
     });
 
   };
 
   useEffect(() => {
-    if (!data?.length) {
+
+    if (data.length === 0) {
       dispatch(fetchHomeEventsData(1));
     }
-  }, [dispatch, data?.length]);
+
+  }, [data.length, dispatch]);
 
   return (
 
@@ -246,7 +275,7 @@ const Events: React.FC = () => {
 
         <div className="w-full lg:w-[40%] border p-3 rounded-lg border-[#ffb703] hover:shadow-2xl transition-all duration-200">
 
-          {homeEvents.slice(0, 1).map((news, index) => (
+          {events.slice(0, 1).map((news, index) => (
 
             <NewsCard1
               key={index}
@@ -263,7 +292,7 @@ const Events: React.FC = () => {
 
         <div className="w-full lg:w-[60%] flex flex-col gap-y-5">
 
-          {homeEvents.slice(1, 3).map((news, index) => (
+          {events.slice(1, 3).map((news, index) => (
 
             <NewsCard
               key={index}
@@ -288,7 +317,7 @@ const Events: React.FC = () => {
 
           <div className="flex">
 
-            {homeEvents.map((news, index) => (
+            {events.map((news, index) => (
 
               <div
                 key={index}

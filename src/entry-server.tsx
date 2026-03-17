@@ -2,7 +2,7 @@ import ReactDOMServer from "react-dom/server";
 import { StaticRouter } from "react-router-dom/server";
 import { HelmetProvider } from "react-helmet-async";
 import { Provider } from "react-redux";
-import { createStore } from "./store";
+import { createStore, type RootState } from "./store";
 import { fetchNotice } from "./store/notice/noticeThunk";
 import { fetchBanner } from "./store/home-banner/bannerThunk";
 import { fetchProgramByFlag } from "./store/program-finder/program-flag/programFlagThunk";
@@ -24,6 +24,25 @@ import { fetchAllActiveCareer } from "./store/student-enquiry/career/careerThunk
 import { fetchAllActiveState } from "./store/student-enquiry/state/stateThunk";
 import App from "./App";
 import "./index.css";
+
+const GLOBAL_LAYOUT_CACHE_TTL_MS = 5 * 60 * 1000;
+
+type GlobalLayoutCacheEntry = {
+    expiresAt: number;
+    preloadedState: Partial<RootState>;
+    programMenuData: any[];
+};
+
+let globalLayoutCache: GlobalLayoutCacheEntry | null = null;
+let globalLayoutCachePromise: Promise<GlobalLayoutCacheEntry> | null = null;
+
+const getGlobalLayoutCache = () => {
+    if (globalLayoutCache && globalLayoutCache.expiresAt > Date.now()) {
+        return globalLayoutCache;
+    }
+
+    return null;
+};
 
 async function preloadHomePageData(store: ReturnType<typeof createStore>) {
     const bannerPromise = store.dispatch(fetchBanner());
@@ -84,17 +103,43 @@ const slugifyForMenu = (value: string) =>
         .replace(/-+/g, "-")
         .replace(/^-|-$/g, "");
 
-async function preloadGlobalLayoutData(store: ReturnType<typeof createStore>) {
+async function buildGlobalLayoutCacheEntry(): Promise<GlobalLayoutCacheEntry> {
+    const store = createStore();
     const [menuAction] = await Promise.all([
         store.dispatch(fetchProgramMenu()),
         store.dispatch(fetchAllActiveCareer()),
         store.dispatch(fetchAllActiveState()),
     ]);
 
-    if (!fetchProgramMenu.fulfilled.match(menuAction)) {
-        return [];
+    const programMenuData =
+        fetchProgramMenu.fulfilled.match(menuAction) && Array.isArray(menuAction.payload)
+            ? menuAction.payload
+            : [];
+
+    const cacheEntry: GlobalLayoutCacheEntry = {
+        expiresAt: Date.now() + GLOBAL_LAYOUT_CACHE_TTL_MS,
+        preloadedState: structuredClone(store.getState()),
+        programMenuData,
+    };
+
+    globalLayoutCache = cacheEntry;
+    return cacheEntry;
+}
+
+async function getGlobalLayoutCacheEntry() {
+    const cachedEntry = getGlobalLayoutCache();
+
+    if (cachedEntry) {
+        return cachedEntry;
     }
-    return Array.isArray(menuAction.payload) ? menuAction.payload : [];
+
+    if (!globalLayoutCachePromise) {
+        globalLayoutCachePromise = buildGlobalLayoutCacheEntry().finally(() => {
+            globalLayoutCachePromise = null;
+        });
+    }
+
+    return globalLayoutCachePromise;
 }
 
 async function preloadProgramDetailsPageData(
@@ -221,14 +266,19 @@ async function preloadPlacementOverviewPageData(store: ReturnType<typeof createS
 }
 
 export async function render(url: string) {
+    const renderStartedAt = Date.now();
     const helmetContext: any = {};
-    const store = createStore();
 
     // Normalize URL to match routes (strip query string and trailing slash)
     const normalizedPathname = new URL(url, "http://localhost").pathname.replace(/\/+$/, "") || "/";
-    const programMenuData = await preloadGlobalLayoutData(store);
+    const globalLayoutStartedAt = Date.now();
+    const globalLayoutEntry = await getGlobalLayoutCacheEntry();
+    const store = createStore(globalLayoutEntry.preloadedState);
+    const programMenuData = globalLayoutEntry.programMenuData;
+    const globalLayoutDuration = Date.now() - globalLayoutStartedAt;
 
     // Preload route-specific data for SSR
+    const routePreloadStartedAt = Date.now();
     if (normalizedPathname === "/") {
         await preloadHomePageData(store);
     } else if (normalizedPathname === "/notice") {
@@ -244,7 +294,9 @@ export async function render(url: string) {
     } else {
         await preloadDynamicProgramFinderPageData(store, normalizedPathname, programMenuData);
     }
+    const routePreloadDuration = Date.now() - routePreloadStartedAt;
 
+    const renderToStringStartedAt = Date.now();
     const appHtml = ReactDOMServer.renderToString(
         <HelmetProvider context={helmetContext}>
             <Provider store={store}>
@@ -253,6 +305,12 @@ export async function render(url: string) {
                 </StaticRouter>
             </Provider>
         </HelmetProvider>
+    );
+    const renderToStringDuration = Date.now() - renderToStringStartedAt;
+    const totalDuration = Date.now() - renderStartedAt;
+
+    console.info(
+        `[SSR] ${normalizedPathname} total=${totalDuration}ms global=${globalLayoutDuration}ms route=${routePreloadDuration}ms render=${renderToStringDuration}ms`
     );
 
     return { appHtml, preloadedState: store.getState() };

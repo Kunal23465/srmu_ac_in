@@ -25,8 +25,10 @@ const BlogsPage: React.FC = () => {
   const parentPath = "/blogs";
 
   useEffect(() => {
-    dispatch(fetchBlogs());
-  }, []);
+    if (blogCards.length === 0) {
+      dispatch(fetchBlogs());
+    }
+  }, [blogCards.length, dispatch]);
 
   return (
     <>

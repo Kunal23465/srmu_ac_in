@@ -16,7 +16,12 @@ const initialState: initialStateTypes = {
 const getHomeEventsDataSlice = createSlice({
     name: "getHomeEventsData",
     initialState,
-    reducers: {},
+    reducers: {
+        setHomeEventsData(state, action) {
+            state.loading = false;
+            state.data = action.payload;
+        },
+    },
     extraReducers: (builder) => {
         builder
             .addCase(fetchHomeEventsData.pending, (state) => {
@@ -31,4 +36,5 @@ const getHomeEventsDataSlice = createSlice({
     },
 });
 
+export const { setHomeEventsData } = getHomeEventsDataSlice.actions;
 export const getHomeEventsDataSliceReducer = getHomeEventsDataSlice.reducer;

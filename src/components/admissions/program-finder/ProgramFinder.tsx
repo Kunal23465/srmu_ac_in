@@ -47,6 +47,15 @@ const ProgramFinder: React.FC = () => {
       Fetch Program List
      =========================== */
   useEffect(() => {
+    if (
+      !selectedProgramType &&
+      !selectedDiscipline &&
+      !debouncedSearch &&
+      data.length > 0
+    ) {
+      return;
+    }
+
     dispatch(
       fetchAllProgramFinder({
         programTypeId: selectedProgramType || undefined,
@@ -60,12 +69,14 @@ const ProgramFinder: React.FC = () => {
       Initial Load
      =========================== */
   useEffect(() => {
+    if (programType.length === 0) {
+      dispatch(fetchProgramType());
+    }
 
-    dispatch(fetchProgramType());
-    dispatch(fetchProgramDiscipline());
-
-
-  }, [dispatch]);
+    if (discipline.length === 0) {
+      dispatch(fetchProgramDiscipline());
+    }
+  }, [discipline.length, dispatch, programType.length]);
 
   /* ===========================
       Refetch discipline

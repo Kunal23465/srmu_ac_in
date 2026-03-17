@@ -38,8 +38,10 @@ const MemorialCollege: React.FC = () => {
   const { data: banner } = useSelector((state: RootState) => state.getbanner);
 
   useEffect(() => {
-    dispatch(fetchBanner());
-  }, [dispatch]);
+    if (banner.length === 0) {
+      dispatch(fetchBanner());
+    }
+  }, [banner.length, dispatch]);
 
   return (
     <div id="first" className="w-full -mt-[60px] pb-7 md:pb-10 lg:pb-14">
