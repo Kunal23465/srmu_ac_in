@@ -87,7 +87,10 @@ async function createServer() {
         .replace(`<!--app-html-->`, appHtml)
         .replace(`<!--preloaded-state-->`, `<script>window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, "\\u003c")}</script>`);
 
-      res.status(200).set({ "Content-Type": "text/html" }).end(html);
+      res
+        .status(200)
+        .set({ "Content-Type": "text/html; charset=utf-8" })
+        .end(html);
     } catch (e) {
       if (vite) vite.ssrFixStacktrace(e as Error);
       console.error(e);

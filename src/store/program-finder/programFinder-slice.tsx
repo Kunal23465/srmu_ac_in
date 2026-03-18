@@ -15,18 +15,28 @@ export interface ProgramData {
     showOnNavbar: boolean | null;
 }
 
+export interface ProgramDetailsData extends ProgramData {
+    programId: number;
+    metaTitle?: string | null;
+    metaDescription?: string | null;
+    documentPath?: string | null;
+    scope?: string | null;
+    programObjective?: string;
+    programLearningOutcomes?: string;
+    specificOutcomes?: string;
+}
 
 interface initialTypes {
     loading: boolean,
     error: null | string,
     data: ProgramData[],
-    dataByID:any[]
+    dataByID: ProgramDetailsData | null
 }
 const initialState: initialTypes = {
     loading: false,
     error: null,
     data: [],
-    dataByID:[],
+    dataByID: null,
 }
 const programFinderSlice = createSlice({
     name: 'programFinder',

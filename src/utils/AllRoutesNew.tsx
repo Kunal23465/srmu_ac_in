@@ -455,26 +455,26 @@ export const routes = [
           },
         ],
       },
-       {
-              path: "/rti",
-              element: <RtiPage />,
-            },
-            {
-              path: "/online-admission",
-              element: <OnlineAdmissionPage />,
-            },
-            {
-              path: "/privacy-policy",
-              element: <PrivacyPolicyPage />,
-            },
-            {
-              path: "/disclaimer",
-              element: <DisclaimerPage />,
-            },
-            {
-              path: "/terms-conditions",
-              element: <TermsAndConditionPage />,
-            },
+      {
+        path: "/rti",
+        element: <RtiPage />,
+      },
+      {
+        path: "/online-admission",
+        element: <OnlineAdmissionPage />,
+      },
+      {
+        path: "/privacy-policy",
+        element: <PrivacyPolicyPage />,
+      },
+      {
+        path: "/disclaimer",
+        element: <DisclaimerPage />,
+      },
+      {
+        path: "/terms-conditions",
+        element: <TermsAndConditionPage />,
+      },
     ],
   },
   {

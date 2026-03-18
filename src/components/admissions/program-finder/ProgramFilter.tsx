@@ -9,10 +9,25 @@ import { AppDispatch, RootState } from "../../../store";
 import { useDispatch, useSelector } from "react-redux";
 import { setProgramId } from "../../../store/program-finder/program/programSlice";
 
+interface ProgramTypeOption {
+  programTypeId: number | string;
+  name: string;
+}
+
+interface ProgramFlagOption {
+  programFlagId: number | string;
+  name: string;
+}
+
+interface DisciplineOption {
+  programDisciplineId: number | string;
+  name: string;
+}
+
 interface PropsTypes {
   data: ProgramData[];
-  programTypeOptions: any[];
-  disciplineOptions: any[];
+  programTypeOptions: Array<ProgramTypeOption | ProgramFlagOption>;
+  disciplineOptions: DisciplineOption[];
   selectedProgramType: number | string;
   selectedDiscipline: number | string;
   searchTerm: string;
@@ -55,6 +70,9 @@ const ProgramFilter: React.FC<PropsTypes> = ({
       .replace(/^-|-$/g, "");          // remove starting/ending -
   };
 
+  const handleProgramSelect = (programId: number) => {
+    dispatch(setProgramId(programId.toString()));
+  };
 
 
 
@@ -75,12 +93,12 @@ const ProgramFilter: React.FC<PropsTypes> = ({
             >
               <option value="">{isTypeFlag ? " Select Program Flag" : "Select Program Type"} </option>
               {isTypeFlag
-                ? programTypeOptions.map((flag: any) => (
+                ? (programTypeOptions as ProgramFlagOption[]).map((flag) => (
                   <option key={flag.programFlagId} value={flag.programFlagId}>
                     {flag.name}
                   </option>
                 ))
-                : programTypeOptions.map((type: any) => (
+                : (programTypeOptions as ProgramTypeOption[]).map((type) => (
                   <option key={type.programTypeId} value={type.programTypeId}>
                     {type.name}
                   </option>
@@ -131,50 +149,30 @@ const ProgramFilter: React.FC<PropsTypes> = ({
           {visibleCourses.length > 0 ? (
             <>
               {visibleCourses.map((course) => {
-                const path = (str = "") => str.toLowerCase().trim().replace(/\s+/g, "-");
-
-                // store in variable
-                // @ts-ignore
-                const programPath = path(course.programTypeName);
-                const programName = path(course.name);
+                const programName = slugify(course.name);
                 return (
-                  <div className="border border-gray-300 px-3 py-4 sm:p-8 mb-4 rounded-md flex flex-col lg:flex-row gap-4 lg:justify-between items-center">
+                  <div
+                    key={course.programId}
+                    className="border border-gray-300 px-3 py-4 sm:p-8 mb-4 rounded-md flex flex-col lg:flex-row gap-4 lg:justify-between items-center"
+                  >
                     <div className="flex flex-col md:flex-row gap-2 w-full justify-between lg:w-[70%]">
-                      <Link onMouseDown={() => {
-                        console.log("=======down", course.programId.toString())
-                        dispatch(setProgramId(course.programId.toString()))
-
-                      }}
-                        onClick={() => {
-                          console.log("=======click", course.programId.toString())
-                          dispatch(setProgramId(course.programId.toString()))
-                        }}
-
-                        to={`/program/${slugify(programName)}`} className=" text-[#0f4a85] lg:text-[20px] md:text-[18.75px] sm:text-[17.5px] text-[17.5px] fw500  lg:w-[60%]">{course.name}</Link>
+                      <Link
+                        onClick={() => handleProgramSelect(course.programId)}
+                        to={`/program/${programName}`}
+                        className=" text-[#0f4a85] lg:text-[20px] md:text-[18.75px] sm:text-[17.5px] text-[17.5px] fw500  lg:w-[60%]"
+                      >
+                        {course.name}
+                      </Link>
                       <p className="lg:text-[18px] text-[15.75px] md:text-[16.875px] sm:text-[15.75px] lg:w-[20%]">{course.totalDurationYear}</p>
                       <p className="text-sm lg:text-base lg:w-[20%]">Rs. {course.totalFees}/-</p>
                     </div>
 
                     <div className="flex flex-row gap-2 w-full lg:w-[30%] justify-between lg:justify-end">
                       <Link
-
-                        onMouseDown={() => {
-                          console.log("=======down", course.programId.toString())
-                          dispatch(setProgramId(course.programId.toString()))
-                        }}
                         onClick={() => {
-                          console.log("=======click", course.programId.toString())
-                          dispatch(setProgramId(course.programId.toString()))
+                          handleProgramSelect(course.programId);
                         }}
-
-                        // state={{
-                        //   programId: course.programId,
-
-                        // }}
-                        // onClick={() => {
-                        //   dispatch(setProgramId(course.programId.toString()));
-                        // }}
-                        to={`/program/${slugify(programName)}`}
+                        to={`/program/${programName}`}
                         className="bg-[#023047] text-nowrap border border-[#023047] hover:bg-white hover:text-[#023047] transition-all duration-500 text-white px-6 py-3 text-sm font-medium rounded-lg flex items-center gap-2"
                       >
                         View Details <FaArrowRightLong />

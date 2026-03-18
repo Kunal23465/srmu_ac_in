@@ -64,26 +64,21 @@ const ProgramDetails: React.FC = () => {
     let mounted = true;
 
     const resolveProgramId = async () => {
-      if (baseProgramId) {
-        if (mounted) setResolvedProgramId(baseProgramId);
-        return;
-      }
-
-      const programIdFromStore = (dataByID as any)?.programId;
-      if (programIdFromStore) {
-        if (mounted) setResolvedProgramId(String(programIdFromStore));
-        return;
-      }
-
-      if (typeof window !== "undefined") {
-        const storedProgramId = localStorage.getItem("programId");
-        if (storedProgramId) {
-          if (mounted) setResolvedProgramId(storedProgramId);
-          return;
-        }
-      }
-
       if (!programName) {
+        if (mounted) {
+          setResolvedProgramId(baseProgramId ?? null);
+        }
+        return;
+      }
+
+      const currentProgram =
+        dataByID && !Array.isArray(dataByID) ? dataByID : null;
+      const currentProgramSlug = slugifyProgramName(currentProgram?.name || "");
+
+      if (currentProgram?.programId && currentProgramSlug === programName.toLowerCase()) {
+        if (mounted) {
+          setResolvedProgramId(String(currentProgram.programId));
+        }
         return;
       }
 
@@ -130,44 +125,38 @@ const ProgramDetails: React.FC = () => {
     return () => {
       mounted = false;
     };
-  }, [baseProgramId, dataByID, dispatch, programName]);
+  }, [baseProgramId, dispatch, programName]);
 
   useEffect(() => {
-    if (resolvedProgramId !== null) {
-      const numericProgramId = Number(resolvedProgramId);
-      const hasSSRProgramData = Number((dataByID as any)?.programId) === numericProgramId;
-      const hasSSRFeesData = Number((normalizedFeesData as any)?.programId) === numericProgramId;
-      const hasSSRWhySrmu = Array.isArray(whySrmuData) && whySrmuData.length > 0;
-      const hasSSRCounter = Array.isArray(counterData) && counterData.length > 0;
-      const hasSSRHighlights = Array.isArray(departmentHeghlightData) && departmentHeghlightData.length > 0;
-      const hasSSRRecruiters = Array.isArray(recruiterData) && recruiterData.length > 0;
-      const hasSSRWhyLogos = Array.isArray(whySrmuLogo) && whySrmuLogo.length > 0;
-
-      if (!hasSSRWhySrmu) dispatch(fetchWhySrmuSectionById({ programId: numericProgramId }));
-      if (!hasSSRProgramData) dispatch(fetchProgramFinderByID(numericProgramId));
-      if (!hasSSRFeesData) dispatch(fetchProgramFeesByProgramId(numericProgramId));
-      if (!hasSSRCounter) dispatch(getCounterById(numericProgramId));
-      if (!hasSSRHighlights) dispatch(fetchProgramHeighlightById(numericProgramId));
-      if (!hasSSRRecruiters) dispatch(fetchRecruiterById({ programId: numericProgramId }));
-      if (!hasSSRWhyLogos) dispatch(fetchWhySrmuLogoById({ programId: numericProgramId }));
-    }
-    if (resolvedProgramId == "81") {
-      setIsPhd(true);
-    } else {
+    if (!resolvedProgramId) {
       setIsPhd(false);
+      return;
     }
 
-  }, [
-    counterData,
-    dataByID,
-    departmentHeghlightData,
-    dispatch,
-    normalizedFeesData,
-    recruiterData,
-    resolvedProgramId,
-    whySrmuData,
-    whySrmuLogo,
-  ]);
+    const numericProgramId = Number(resolvedProgramId);
+    if (!Number.isFinite(numericProgramId) || numericProgramId <= 0) {
+      return;
+    }
+
+    const hasProgramDataForCurrentId = Number((dataByID as any)?.programId) === numericProgramId;
+    const hasFeesDataForCurrentId = Number((normalizedFeesData as any)?.programId) === numericProgramId;
+
+    if (!hasProgramDataForCurrentId) {
+      dispatch(fetchProgramFinderByID(numericProgramId));
+    }
+
+    if (!hasFeesDataForCurrentId) {
+      dispatch(fetchProgramFeesByProgramId(numericProgramId));
+    }
+
+    dispatch(fetchWhySrmuSectionById({ programId: numericProgramId }));
+    dispatch(getCounterById(numericProgramId));
+    dispatch(fetchProgramHeighlightById(numericProgramId));
+    dispatch(fetchRecruiterById({ programId: numericProgramId }));
+    dispatch(fetchWhySrmuLogoById({ programId: numericProgramId }));
+
+    setIsPhd(resolvedProgramId === "81");
+  }, [dispatch, resolvedProgramId]);
 
   // counter data key change
   const convertedCounterData = counterData.map((item) => {

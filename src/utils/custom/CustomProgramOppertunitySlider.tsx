@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 
 export interface OpportunityCard {
   id: number;
@@ -12,28 +13,44 @@ interface CustomProgramOppertunitySliderProps {
   data: OpportunityCard[];
 }
 
-function NextArrow({ onClick }: { onClick?: () => void }) {
+function NextArrow({
+  onClick,
+  disabled = false,
+}: {
+  onClick?: () => void;
+  disabled?: boolean;
+}) {
   return (
     <button
       type="button"
       onClick={onClick}
-      className="custom-arrow -right-7! right-arrow absolute top-1/2 -translate-y-1/2 z-10 cursor-pointer"
+      disabled={disabled}
+      className={`custom-arrow right-arrow absolute top-1/2 -translate-y-1/2 z-10 ${disabled ? "opacity-40 cursor-not-allowed" : "cursor-pointer"
+        }`}
       aria-label="Next"
     >
-      ›
+      <MdKeyboardArrowRight size={28} />
     </button>
   );
 }
 
-function PrevArrow({ onClick }: { onClick?: () => void }) {
+function PrevArrow({
+  onClick,
+  disabled = false,
+}: {
+  onClick?: () => void;
+  disabled?: boolean;
+}) {
   return (
     <button
       type="button"
       onClick={onClick}
-      className="custom-arrow -left-7! left-arrow absolute top-1/2 -translate-y-1/2 z-10 cursor-pointer"
+      disabled={disabled}
+      className={`custom-arrow left-arrow absolute top-1/2 -translate-y-1/2 z-10 ${disabled ? "opacity-40 cursor-not-allowed" : "cursor-pointer"
+        }`}
       aria-label="Previous"
     >
-      ‹
+      <MdKeyboardArrowLeft size={28} />
     </button>
   );
 }
@@ -43,6 +60,10 @@ const CustomProgramOppertunitySlider: React.FC<
 > = ({ data }) => {
   const [windowWidth, setWindowWidth] = useState(0);
   const [hasMounted, setHasMounted] = useState(false);
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
+  const [canScrollPrev, setCanScrollPrev] = useState(false);
+  const [canScrollNext, setCanScrollNext] = useState(false);
 
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: false,
@@ -80,6 +101,26 @@ const CustomProgramOppertunitySlider: React.FC<
     }
   }, [windowWidth, emblaApi, hasMounted]);
 
+  useEffect(() => {
+    if (!emblaApi || !hasMounted) return;
+
+    const updateSliderState = () => {
+      setSelectedIndex(emblaApi.selectedScrollSnap());
+      setScrollSnaps(emblaApi.scrollSnapList());
+      setCanScrollPrev(emblaApi.canScrollPrev());
+      setCanScrollNext(emblaApi.canScrollNext());
+    };
+
+    emblaApi.on("select", updateSliderState);
+    emblaApi.on("reInit", updateSliderState);
+    updateSliderState();
+
+    return () => {
+      emblaApi.off("select", updateSliderState);
+      emblaApi.off("reInit", updateSliderState);
+    };
+  }, [emblaApi, hasMounted]);
+
   const goToNext = () => emblaApi?.scrollNext();
   const goToPrev = () => emblaApi?.scrollPrev();
 
@@ -89,6 +130,8 @@ const CustomProgramOppertunitySlider: React.FC<
     return `${100 / slidesToShow}%`;
   };
 
+
+  console.log("data===============", data)
   // Static grid for SSR
   if (!hasMounted) {
     return (
@@ -99,8 +142,8 @@ const CustomProgramOppertunitySlider: React.FC<
 
         <div className="relative">
           {/* Static arrows (disabled) */}
-          <PrevArrow />
-          <NextArrow />
+          <PrevArrow disabled />
+          <NextArrow disabled />
 
           {/* Static grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
@@ -134,8 +177,8 @@ const CustomProgramOppertunitySlider: React.FC<
 
       <div className="relative">
         {/* Custom Arrows */}
-        <PrevArrow onClick={goToPrev} />
-        <NextArrow onClick={goToNext} />
+        <PrevArrow onClick={goToPrev} disabled={!canScrollPrev} />
+        <NextArrow onClick={goToNext} disabled={!canScrollNext} />
 
         {/* Embla Carousel */}
         <div className="overflow-hidden" ref={emblaRef}>
@@ -166,37 +209,11 @@ const CustomProgramOppertunitySlider: React.FC<
         </div>
       </div>
 
-      {/* Custom Dots - to match slick's dots */}
-      <style jsx>{`
-        .slider-container :global(.embla__dots) {
-          display: flex;
-          justify-content: center;
-          gap: 8px;
-          margin-top: 20px;
-        }
-        
-        .slider-container :global(.embla__dot) {
-          width: 10px;
-          height: 10px;
-          border-radius: 50%;
-          background-color: #ccc;
-          border: none;
-          cursor: pointer;
-          transition: all 0.3s ease;
-        }
-        
-        .slider-container :global(.embla__dot.is-selected) {
-          background-color: #0f4a85;
-          width: 12px;
-          height: 12px;
-        }
-      `}</style>
-
       <div className="embla__dots flex justify-center gap-2 mt-5">
-        {data.map((_, index) => (
+        {scrollSnaps.map((_, index) => (
           <button
             key={index}
-            className={`embla__dot w-2.5 h-2.5 rounded-full transition-all duration-300 ${index === (emblaApi?.selectedScrollSnap() || 0)
+            className={`embla__dot w-2.5 h-2.5 rounded-full transition-all duration-300 ${index === selectedIndex
               ? "bg-[#0f4a85] w-3 h-3"
               : "bg-gray-300"
               }`}
