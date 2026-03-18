@@ -24,6 +24,7 @@ import { fetchAllActiveCareer } from "./store/student-enquiry/career/careerThunk
 import { fetchAllActiveState } from "./store/student-enquiry/state/stateThunk";
 import App from "./App";
 import "./index.css";
+import { fetchPlacementDriveTabData } from "./store/placement/placement-drive/placementDriveTabDataThunk";
 
 const GLOBAL_LAYOUT_CACHE_TTL_MS = 5 * 60 * 1000;
 
@@ -263,7 +264,9 @@ async function preloadBlogsPageData(store: ReturnType<typeof createStore>) {
 
 async function preloadPlacementOverviewPageData(store: ReturnType<typeof createStore>) {
     await store.dispatch(fetchPlacementRecordTabData());
+    await store.dispatch(fetchPlacementDriveTabData());
 }
+
 
 export async function render(url: string) {
     const renderStartedAt = Date.now();

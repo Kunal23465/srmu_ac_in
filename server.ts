@@ -1,4 +1,5 @@
 import express from "express";
+import { createServer as createHttpServer } from "http";
 import { createServer as createViteServer } from "vite";
 import fs from "fs";
 import path from "path";
@@ -12,6 +13,23 @@ const __dirname = path.dirname(__filename);
 
 const isProduction = process.env.NODE_ENV === "production";
 
+function isDocumentRequest(req: express.Request) {
+  if (req.method !== "GET" && req.method !== "HEAD") {
+    return false;
+  }
+
+  const pathname = req.path || "/";
+  const hasFileExtension = path.extname(pathname) !== "";
+
+  if (hasFileExtension) {
+    return false;
+  }
+
+  const acceptHeader = req.headers.accept ?? "";
+
+  return acceptHeader.includes("text/html");
+}
+
 // In local dev, some corporate/self-signed TLS chains can block SSR API calls.
 // Allow opt-in relaxed TLS via env (default true in non-production).
 if (!isProduction && process.env.SSR_ALLOW_INSECURE_TLS !== "false") {
@@ -20,16 +38,31 @@ if (!isProduction && process.env.SSR_ALLOW_INSECURE_TLS !== "false") {
 
 async function createServer() {
   const app = express();
+  const httpServer = createHttpServer(app);
+  const wellKnownDir = path.resolve(__dirname, "public/.well-known");
 
   let vite: any;
+
+  app.use(
+    "/.well-known",
+    express.static(wellKnownDir, {
+      fallthrough: true,
+      index: false,
+    }),
+  );
+  app.use("/.well-known", (_req, res) => {
+    res.status(404).type("text/plain").end("Not found");
+  });
 
   if (!isProduction) {
     // DEV MODE
     vite = await createViteServer({
       server: {
         middlewareMode: true,
-        host,
-        port,
+        hmr: {
+          server: httpServer,
+          clientPort: port,
+        },
       },
       appType: "custom",
     });
@@ -45,6 +78,11 @@ async function createServer() {
   }
 
   app.use("*", async (req, res) => {
+    if (!isDocumentRequest(req)) {
+      res.status(404).type("text/plain").end("Not found");
+      return;
+    }
+
     const url = req.originalUrl;
 
     try {
@@ -87,10 +125,7 @@ async function createServer() {
         .replace(`<!--app-html-->`, appHtml)
         .replace(`<!--preloaded-state-->`, `<script>window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, "\\u003c")}</script>`);
 
-      res
-        .status(200)
-        .set({ "Content-Type": "text/html; charset=utf-8" })
-        .end(html);
+      res.status(200).set({ "Content-Type": "text/html; charset=utf-8" }).end(html);
     } catch (e) {
       if (vite) vite.ssrFixStacktrace(e as Error);
       console.error(e);
@@ -98,7 +133,7 @@ async function createServer() {
     }
   });
 
-  app.listen(port, host, () => {
+  httpServer.listen(port, host, () => {
     console.log(`SSR server running at http://${host}:${port}`);
   });
 }

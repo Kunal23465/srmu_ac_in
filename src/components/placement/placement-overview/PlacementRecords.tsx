@@ -64,10 +64,10 @@ const PlacementRecords: React.FC = () => {
 
   /* ---------------- FETCH DATA ---------------- */
   useEffect(() => {
-    if (data.length === 0) {
-      dispatch(fetchPlacementRecordTabData());
-    }
-  }, [data.length, dispatch]);
+
+    dispatch(fetchPlacementRecordTabData());
+
+  }, [dispatch]);
 
   /* ---------------- GET YEARS ---------------- */
   const getPlacementYears = (data: PlacementRecord[]): number[] => {
