@@ -7,7 +7,7 @@ export default defineConfig({
 
   server: {
     host: "0.0.0.0",
-    port: 3038,
+    port: 3031,
     allowedHosts: ["test.srmu.ac.in", ".srmu.ac.in"],
   },
 
