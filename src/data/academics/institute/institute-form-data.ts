@@ -136,7 +136,7 @@ export interface Institute {
   departments: number;
   departmentsData?: any;
   image: string;
-  path?: string;
+  path: string;
 }
 
 export const institutes: Institute[] = [
@@ -147,7 +147,7 @@ export const institutes: Institute[] = [
       "The Institute of Technology is committed to provide focused learning in the fields of engineering with an aim of creating human resources with knowledge and skills to contribute successfully to a complex world.",
     departments: 5,
     image: instituteoftech,
-    path: "institute-of-technology",
+    path: "/institute-of-technology",
     departmentsData: {
       overviewData: InstituteofTechnologyOverviewData,
       visionMissionData: visionMissionData,
@@ -163,7 +163,7 @@ export const institutes: Institute[] = [
       "Biotechnology encompasses the applications of understanding of the biological systems to improve human life by addressing challenges and issues facing agricultural sciences, medical sciences, food sciences, etc.",
     departments: 2,
     image: instituteofbio,
-    path: "institute-of-biosciences-and-technology",
+    path: "/institute-of-biosciences-and-technology",
     departmentsData: {
       overviewData: InstituteofBiosciencesandTechnologyOverviewData,
       visionMissionData: InstituteofBiosciencesandTechnologyvisionMissionData,
@@ -179,7 +179,7 @@ export const institutes: Institute[] = [
       "The Institute of Management, Commerce and Economics (IMCE) was started in the year 2012. IMCE seeks to be a trailblazer in management education through strong academic-industry collaboration for international alliances.",
     departments: 2,
     image: instituteofmang,
-    path: "institute-of-management-commerce-and-economics",
+    path: "/institute-of-management-commerce-and-economics",
     departmentsData: {
       overviewData: InstituteofManagementCommerceandEconomicsOverviewData,
       visionMissionData: InstituteofManagementCommerceandEconomicsvisionMissionData,
@@ -195,7 +195,7 @@ export const institutes: Institute[] = [
       "Journalism and Mass Communication study is an encouragement to think about the forces involved in giving it shape. Mass Media industry is one of the fastest growing industries with the mission of social conscience.",
     departments: 1,
     image: instituteofmedia,
-    path: "institute-of-media-studies",
+    path: "/institute-of-media-studies",
     departmentsData: {
       overviewData: InstituteofMediaStudiesOverviewData,
       counterData: InstituteofMediaStudiesCounterData1,
@@ -219,7 +219,7 @@ export const institutes: Institute[] = [
       "The Institute boasts of being the heart and soul of the University as its various disciplines of knowledge is essentially required with all the academic programs that run across the University.",
     departments: 4,
     image: instituteofnatural,
-    path: "institute-of-natural-sciences-and-humanities",
+    path: "/institute-of-natural-sciences-and-humanities",
     departmentsData: {
       overviewData: InstituteofNaturalSciencesandHumanitiesOverviewData,
       visionMissionData: InstituteofNaturalSciencesandHumanitiesvisionMissionData,
@@ -234,7 +234,7 @@ export const institutes: Institute[] = [
     description: "Due to its integration of chemistry and health sciences, pharmaceutical science is both a unique field and extremely important to human survival.",
     departments: 1,
     image: instituteofpharmaceutical,
-    path: "institute-of-pharmaceutical-sciences1",
+    path: "/institute-of-pharmaceutical-sciences1",
     departmentsData: {
       overviewData: InstituteofPharmaceuticalSciencesOverviewData,
       counterData: InstituteofPharmaceuticalSciencesCounterData1,
@@ -257,7 +257,7 @@ export const institutes: Institute[] = [
       "The Indian Council of Agricultural Sciences has already recognized the B.Sc.(Hons.) Agriculture 4 Years as a professional Degree with consequential benefits to the Students.",
     departments: 1,
     image: instituteofagri,
-    path: "institute-of-agricultural-sciences-and-technology",
+    path: "/institute-of-agricultural-sciences-and-technology",
     departmentsData: {
       overviewData: InstituteofAgriculturalSciencesandTechnologyOverviewData,
       counterData: InstituteofLegalStudiesCounterData1,
@@ -281,7 +281,7 @@ export const institutes: Institute[] = [
       "The Institute of Legal Studies is a convergence of academic, cultural and intellectual resources. It aims at achieving the highest levels of distinction in the innovation and transmission of knowledge and understanding.",
     departments: 1,
     image: instituteoflegal,
-    path: "institute-of-legal-studies1",
+    path: "/institute-of-legal-studies1",
     departmentsData: {
       overviewData: InstituteofLegalStudiesOverviewData,
       counterData: InstituteofPharmaceuticalSciencesCounterData1,
@@ -306,7 +306,7 @@ export const institutes: Institute[] = [
       "Pharmacy is one of the unique professions and also very vital for the sustenance of human lives as it involves the combination of chemical science with health sciences.",
     departments: 1,
     image: instituteofpharmacy,
-    path: "institute-of-pharmacy",
+    path: "/institute-of-pharmacy",
 
     departmentsData: {
       overviewData: InstituteofPharmacyOverviewData,
@@ -330,7 +330,7 @@ export const institutes: Institute[] = [
       "Institute of Education and Research, Shri Ramswoop Memorial University offers Bachelor's degree course. Institute tries its best to produce teachers embodied with traditions values.",
     departments: 1,
     image: instituteofedu,
-    path: "institute-of-education-and-research",
+    path: "/institute-of-education-and-research",
     departmentsData: {
       overviewData: InstituteofEducationandResearchOverviewData,
       counterData: InstituteofEducationandResearchCounterData1,
@@ -354,7 +354,7 @@ export const institutes: Institute[] = [
       "The Institute was established during the academic session 2015-16 and commenced its curriculum for Diploma in Mechanical, Civil, Electrical, Electronics and Communication and Computer Science Engineering.",
     departments: 1,
     image: instituteofpolytech,
-    path: "srmu-polytechnic1",
+    path: "/srmu-polytechnic1",
     departmentsData: {
       overviewData: SRMUPolytechnicOverviewData,
       counterData: SRMUPolytechnicCounterData1,

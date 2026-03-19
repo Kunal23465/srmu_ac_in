@@ -1,15 +1,17 @@
-import { counterDataForPlacedStudentsOFDepartmentOfElectricalAndElectronicsEngineering } from "../../../../../data/academics/institute/department-of-electrical-and-electronics-engineering-data";
 import Counter from "../../../../../utils/custom/Counter";
 import CustomPlacedStudentTable, { Headers, Student } from "../../../../../utils/custom/CustomPlacedStudentTable";
-
-const PlacedStudents = () => {
+type Props = {
+  placedStudents: Student[];
+  counterData: any;
+};
+const PlacedStudents:React.FC<Props>= ({placedStudents,counterData}) => {
   const tableHeaders: Headers = {
     name: "NAME OF STUDENT",
     program: "PROGRAM",
     company: "COMPANY",
   };
 
-  const placedStudents: Student[] = [
+  const placedStudentsGHNJGHN: Student[] = [
     {
       name: "Lavisha Rupani",
       program: "B.Tech. in Electrical Engineering",
@@ -266,8 +268,7 @@ const PlacedStudents = () => {
         return on investment. More than 30% students have multiple job offers.
       </p>
       <Counter
-        // @ts-ignore
-        counterData={counterDataForPlacedStudentsOFDepartmentOfElectricalAndElectronicsEngineering}
+        counterData={counterData}
         classes="counter"
       />
       <CustomPlacedStudentTable students={placedStudents} headers={tableHeaders} />

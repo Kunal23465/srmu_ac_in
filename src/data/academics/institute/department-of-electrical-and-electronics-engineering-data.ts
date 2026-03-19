@@ -1,6 +1,5 @@
 import { customeOverViewType } from "../../../types/home-data-type";
 
-import { counterDataType } from "../../home/counterData";
 import drrsbajpai from "../../../assets/images/academics/institutes/dr.r.s.bajpai.jpg";
 import visionImg from "../../../assets/images/academics/institutes/dept-vision.png";
 import misionImg from "../../../assets/images/academics/institutes/dept-mission.png";
@@ -34,6 +33,7 @@ import training from "../../../assets/images/academics/institutes/training-.jpg"
 import { FacultyItem } from "../../../utils/custom/CustomFacultyListCard";
 import { InstituteProfile } from "../../../types/profile-data-type";
 import { Student } from "../../../utils/custom/CustomPlacedStudentTable";
+import { counterDataType } from "../../about/leadership-and-governance/leadership-and-governance-data";
 
 export const electricalDepartmentHighlightsData: departmentHighlightscardType[] =
   [
@@ -107,8 +107,8 @@ export const counterDataForDepartmentOfElectricalAndElectronicsEngineering: coun
   ];
 
 
-export const counterDataForPlacedStudentsOFDepartmentOfElectricalAndElectronicsEngineering = {
-  counterData: [
+export const counterDataForPlacedStudentsOFDepartmentOfElectricalAndElectronicsEngineering: counterDataType[] = 
+ [
     {
       id: 1,
       icon: "",
@@ -130,8 +130,7 @@ export const counterDataForPlacedStudentsOFDepartmentOfElectricalAndElectronicsE
       suffix: "",
       label: "Conference & Seminars",
     },
-  ],
-};
+  ];
 
 export const ElectricalAndElectronicsdepartmentHeadProfileData: InstituteProfile[] = [
   {

@@ -5,7 +5,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 
 const host = "0.0.0.0";
-const port = 3031;
+const port = 5173;
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -47,6 +47,7 @@ async function createServer() {
   app.use("*", async (req, res) => {
     const url = req.originalUrl;
 
+    
     try {
       let template;
       let render;

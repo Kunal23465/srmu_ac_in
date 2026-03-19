@@ -120,6 +120,32 @@ export const counterDataFoFacultyOfMechanicalEngineering: counterDataType[] = [
   { id: 3, value: "287", suffix: "", label: "Students" },
 ];
 
+
+export const counterDataForPlacedStudentsOFMechanicalEngineering: counterDataType[] =  [
+    {
+      id: 1,
+      icon: "",
+      value: "200",
+      suffix: "",
+      label: "Guest lectures",
+    },
+    {
+      id: 2,
+      icon: "",
+      value: "100",
+      suffix: "",
+      label: "Field Visits",
+    },
+    {
+      id: 3,
+      icon: "",
+      value: "10",
+      suffix: "",
+      label: "Conference & Seminars",
+    },
+  ];
+
+
 export const facultyOfMechanicalEngineeringVMData = [
   {
     id: 1,
@@ -312,31 +338,7 @@ export const underGraduateFeeDataOfME: FeeTableData = {
   ],
 };
 
-export const counterDataForPlacedStudentsOFMechanicalEngineering = {
-  counterData: [
-    {
-      id: 1,
-      icon: "",
-      value: "200",
-      suffix: "",
-      label: "Guest lectures",
-    },
-    {
-      id: 2,
-      icon: "",
-      value: "100",
-      suffix: "",
-      label: "Field Visits",
-    },
-    {
-      id: 3,
-      icon: "",
-      value: "10",
-      suffix: "",
-      label: "Conference & Seminars",
-    },
-  ],
-};
+
 
 export const mechanicalDepartmentHighlightsData: departmentHighlightscardType[] = [
   {

@@ -29,7 +29,7 @@ const Counter: React.FC<counterDataPropsType> = ({ counterData, classes }) => {
 
     <div className={`parent-box ${classes || ""} py-7 md:py-10 lg:py-14`}>
 
-      {counterData.map((item: any) => {
+      {counterData?.map((item: any) => {
 
         const numericValue = Number(item.value);
         const isNumeric = !isNaN(numericValue);

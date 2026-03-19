@@ -4,7 +4,15 @@ import InstituteDepartment from '../../../../components/academics/institutes/ins
 const InstituteDepartmentPage: React.FC = () => {
   return (
     <div>
-      <InstituteDepartment/>
+      {/* {pathname === "/institute-of-technology" ? (
+        <> */}
+
+          <InstituteDepartment />
+        {/* </>
+      ) : (
+        <Outlet />
+      )} */}
+
     </div>
   )
 }

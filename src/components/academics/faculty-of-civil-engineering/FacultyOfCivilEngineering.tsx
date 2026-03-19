@@ -12,7 +12,8 @@ import CustomDepartmentHighlightCard from '../../../utils/custom/CustomDepartmen
 import facilitiesBg from "../../../assets/images/academics/departments/facilities-bg-lg.jpeg"
 import CustomFacultyListCard from '../../../utils/custom/CustomFacultyListCard';
 import CustomInstituteProfileCard from '../../../utils/custom/CustomInstituteProfileCard';
-import { civildepartmentHighlights, CivildepartmentVMData, civilfacultyData, civilFacultyOverviewData, civilIndustryHonoursFeeTable, civilIndustryIntegratedFeeTable, civilIndustryPostgraduateFeeTable, civilIndustryUndergraduateFeeTable, counterDataForFacultyCivil, instituteProfilesCivil } from '../../../data/academics/institute/faculty-of-civil-engineering/faculty-of-civil-engineering-data';
+import { civilcounterData2, civildepartmentHighlights, CivildepartmentVMData, civilfacultyData, civilFacultyOverviewData, civilIndustryHonoursFeeTable, civilIndustryIntegratedFeeTable, civilIndustryPostgraduateFeeTable, civilIndustryUndergraduateFeeTable, civilPlacedStudents, counterDataForFacultyCivil, instituteProfilesCivil } from '../../../data/academics/institute/faculty-of-civil-engineering/faculty-of-civil-engineering-data';
+import PlacedStudents from '../institutes/institute-department/electricalAndElectronics/PlacedStudents';
 
 
 const FacultyOfCivilEngineering: React.FC = () => {
@@ -94,8 +95,11 @@ const FacultyOfCivilEngineering: React.FC = () => {
         />
       </div>
 
-      <CustomTopFooter data={CustomTopFooterData1} />
-
+      <section className="bg-[#edf0f9] py-14">
+        <div className={`${Classes["container"]} bg-[#edf0f9]`}>
+          <PlacedStudents placedStudents={civilPlacedStudents} counterData={civilcounterData2} />
+        </div>
+      </section>
       <CustomDepartmentSlider
         heading="Key Highlights of Our Department"
         description=""
@@ -105,6 +109,8 @@ const FacultyOfCivilEngineering: React.FC = () => {
 
         breakpoints={{ desktop: 3, tablet: 2, mobile: 1 }}
       />
+      <CustomTopFooter data={CustomTopFooterData1} />
+
     </div>
   );
 }

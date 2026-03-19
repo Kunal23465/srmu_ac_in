@@ -59,7 +59,7 @@ export const instituteofTechnologyCourseCardData: CustomInstituteCourseCardProps
   {
     imageUrl: courseImg1,
     departmentName: "Faculty of Civil Engineering",
-    path: "institute-of-technology/faculty-of-civil-engineering",
+    path: "faculty-of-civil-engineering",
     departmentDetails: {
       overviewData: civilFacultyOverviewData,
       counterData: counterDataForFacultyCivil,
@@ -80,7 +80,7 @@ export const instituteofTechnologyCourseCardData: CustomInstituteCourseCardProps
   {
     imageUrl: courseImg2,
     departmentName: "Department of Electrical and Electronics Engineering",
-    path: "institute-of-technology/department-of-electrical-and-electronics-engineering",
+    path: "department-of-electrical-and-electronics-engineering",
     departmentDetails: {
       overviewData: electricalDepartmentinstituteOverviewData,
       counterData: counterDataForDepartmentOfElectricalAndElectronicsEngineering,
@@ -101,7 +101,7 @@ export const instituteofTechnologyCourseCardData: CustomInstituteCourseCardProps
   {
     imageUrl: courseImg3,
     departmentName: "Faculty of Mechanical Engineering",
-    path: "institute-of-technology/faculty-of-mechanical-engineering",
+    path: "faculty-of-mechanical-engineering",
     departmentDetails: {
       overviewData: facultyofMEOverviewData,
       counterData: counterDataFoFacultyOfMechanicalEngineering,
@@ -123,7 +123,7 @@ export const instituteofTechnologyCourseCardData: CustomInstituteCourseCardProps
   {
     imageUrl: courseImg4,
     departmentName: "Department of Computer Science and Engineering",
-    path: "institute-of-technology/department-of-computer-science-and-engineering",
+    path: "department-of-computer-science-and-engineering",
     departmentDetails: {
       overviewData: cseFacultyOverviewData,
       counterData: counterDataForFacultyCSE,
@@ -144,7 +144,7 @@ export const instituteofTechnologyCourseCardData: CustomInstituteCourseCardProps
   {
     imageUrl: courseImg5,
     departmentName: "Department of Computer Science and Information Systems",
-    path: "institute-of-technology/department-of-csis",
+    path: "department-of-csis",
     departmentDetails: {
       overviewData: csISFacultyOverviewData,
       counterData: counterDataForFacultyCSIS,

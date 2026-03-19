@@ -2,7 +2,7 @@ import { customeOverViewType } from "../../../../types/home-data-type";
 import vision from "../../../../assets/images/academics/institutes/vision-card/Our-vision-13102304415245.png";
 import mission from "../../../../assets/images/academics/institutes/vision-card/Our-Mission-13102304092698.png";
 import { CustomInstituteCourseCardProps } from "../../../../utils/custom/CustomInstituteCoursesCard";
-// import courseImg1 from "../../../../assets/images/academics/departments/group-scientists-wearing-lab-coat-working-laborato-28012512230911.jpg";
+import courseImg1 from "../../../../assets/images/academics/departments/group-scientists-wearing-lab-coat-working-laborato-28012512230911.jpg";
 import courseImg2 from "../../../../assets/images/academics/departments/bioinformatics-07022411264512.jpg";
 import courseImg3 from "../../../../assets/images/academics/departments/biotech-07022411273155.jpg";
 import { InstituteProfile } from "../../../../types/profile-data-type";
@@ -33,6 +33,7 @@ import {
   facultyOfBiostechnologyVMData,
   facultyofBiotechnologyeOverviewData,
 } from "../../faculty-of-biotechnology/faculty-of-biotechnology-data";
+import { alliedHealthScienceDepartmentEventsData, alliedHealthScienceHighlightsData, counterDataFoFacultyOfAlliedHealthSciences, counterDataForPlacedStudentsOFAlliedHealthSciences, facultyDetailsOfAhsDepartment, facultyofAHSOverviewData, facultyOfAhsProfileData, facultyOfAlliedHealthSciencesVMData, underGraduateFeeDataOfAHS } from "../../faculty-of-allied-health-sciences/faculty-of-allied-health-sciences-data";
 export const InstituteofBiosciencesandTechnologyOverviewData: customeOverViewType = {
   heading: "Institute of Biosciences and Technology",
   content:
@@ -105,30 +106,30 @@ He is a member of many national and international scientific societies and organ
 ];
 
 export const InstituteofBiosciencesandTechnologyinstituteCourseCardData: CustomInstituteCourseCardProps[] = [
-  // {
-  //   imageUrl: courseImg1,
-  //   departmentName: "Faculty of Allied Health Sciences",
-  //   path: "institute-of-biosciences-and-technology/faculty-of-allied-health-sciences",
-  //   departmentDetails: {
-  //     overviewData: facultyofAHSOverviewData,
-  //     counterData: counterDataFoFacultyOfAlliedHealthSciences,
-  //     mvData: facultyOfAlliedHealthSciencesVMData,
-  //     departmentHeadData: facultyOfAhsProfileData,
-  //     feeTableData: {
-  //       tab1: { label: "Undergraduate", data: underGraduateFeeDataOfAHS },
-  //     },
-  //     facultyData: facultyDetailsOfAhsDepartment,
-  //     departmentHighlightsData: alliedHealthScienceHighlightsData,
-  //     counterData2: counterDataForPlacedStudentsOFAlliedHealthSciences,
-  //     placedStudentsData: null,
-  //     eventsData: alliedHealthScienceDepartmentEventsData,
-  //   },
-  // },
+  {
+    imageUrl: courseImg1,
+    departmentName: "Faculty of Allied Health Sciences",
+    path: "faculty-of-allied-health-sciences",
+    departmentDetails: {
+      overviewData: facultyofAHSOverviewData,
+      counterData: counterDataFoFacultyOfAlliedHealthSciences,
+      mvData: facultyOfAlliedHealthSciencesVMData,
+      departmentHeadData: facultyOfAhsProfileData,
+      feeTableData: {
+        tab1: { label: "Undergraduate", data: underGraduateFeeDataOfAHS },
+      },
+      facultyData: facultyDetailsOfAhsDepartment,
+      departmentHighlightsData: alliedHealthScienceHighlightsData,
+      counterData2: counterDataForPlacedStudentsOFAlliedHealthSciences,
+      placedStudentsData: null,
+      eventsData: alliedHealthScienceDepartmentEventsData,
+    },
+  },
   
   {
     imageUrl: courseImg2,
     departmentName: "Faculty of Biosciences",
-    path: "institute-of-biosciences-and-technology/faculty-of-biosciences",
+    path: "faculty-of-biosciences",
     departmentDetails: {
       overviewData: facultyofBioscienceOverviewData,
       counterData: counterDataFoFacultyOfBiosciencess,
@@ -148,7 +149,7 @@ export const InstituteofBiosciencesandTechnologyinstituteCourseCardData: CustomI
   {
     imageUrl: courseImg3,
     departmentName: "Faculty of Biotechnology",
-    path: "institute-of-biosciences-and-technology/faculty-of-biotechnology",
+    path: "faculty-of-biotechnology",
     departmentDetails: {
       overviewData: facultyofBiotechnologyeOverviewData,
       counterData: counterDataFoFacultyOfBiotechnology,
