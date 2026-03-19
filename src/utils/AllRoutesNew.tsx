@@ -723,16 +723,18 @@ export const routes = [
       },
 
       {
-        path: "faculty-of-mechanical-engineering",
+        path: "/faculty-of-mechanical-engineering",
         element: <FacultyOfMechanicalEngineeringPage />,
 
       },
 
       {
-        path: "faculty-of-allied-health-sciences",
+        path: "/faculty-of-allied-health-sciences",
         element: <FacultyOfAlliedHealthSciencesPage />,
 
       },
+
+     
     ],
   },
   {

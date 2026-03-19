@@ -17,10 +17,11 @@ import {
   electricalDepartmentinstituteOverviewData,
   DepartmentOfElectricalAndElectronicsPlacedStudents,
   counterDataForPlacedStudentsOFDepartmentOfElectricalAndElectronicsEngineering,
+  ElectricalAndElectronicsdepartmentHeadProfileData,
 } from "../../../data/academics/institute/department-of-electrical-and-electronics-engineering-data";
 import CustomDepartmentVissionMission from "../../../utils/custom/CustomDepartmentVissionMission";
 import CustomInstituteProfileCard from "../../../utils/custom/CustomInstituteProfileCard";
-import { instituteProfiles } from "../../../data/academics/institute/data";
+// import { instituteProfiles } from "../../../data/academics/institute/data";
 import ProgramsAndFees from "../institutes/institute-department/electricalAndElectronics/ProgramsAndFees";
 import CustomDepartmentSlider from "../../../utils/custom/CustomDepartmentSlider";
 import CustomFacultyListCard from "../../../utils/custom/CustomFacultyListCard";
@@ -48,7 +49,7 @@ const DepartmentOfElectricalAndElectronicsEngineering: FC = () => {
           ))}
         </div>
       </div>
-      <CustomInstituteProfileCard data={instituteProfiles} />
+      <CustomInstituteProfileCard data={ElectricalAndElectronicsdepartmentHeadProfileData} />
       <div className={`${Classes["container"]}`}>
         <ProgramsAndFees />
       </div>
