@@ -131,7 +131,7 @@ export const InstituteofNaturalSciencesandHumanitiesinstituteCourseCardData: Cus
   {
     imageUrl: courseImg1,
     departmentName: "Faculty of Physical Sciences",
-    path: "institute-of-natural-sciences-and-humanities/faculty-of-physical-sciences",
+    path: "faculty-of-physical-sciences",
     departmentDetails: {
       overviewData: facultyofPhysicalScienceOverviewData,
       counterData: counterDataFoFacultyOfPhysicalScience,

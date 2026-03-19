@@ -50,7 +50,30 @@ export const counterDataForFacultyCivil: counterDataType[] = [
   { id: 2, value: "19", suffix: "", label: "Faculty & Staff" },
   { id: 3, value: "353", suffix: "", label: "Students" },
 ];
-
+export const civilcounterData2: counterDataType[] = 
+  [
+    {
+      id: 1,
+      icon: "",
+      value: "200",
+      suffix: "",
+      label: "Guest lectures",
+    },
+    {
+      id: 2,
+      icon: "",
+      value: "150",
+      suffix: "",
+      label: "Field Visits",
+    },
+    {
+      id: 3,
+      icon: "",
+      value: "25",
+      suffix: "",
+      label: "Conference & Seminars",
+    },
+  ];
 export const CivildepartmentVMData = [
   {
     id: 1,
@@ -433,31 +456,7 @@ export const instituteProfilesCivil: InstituteProfile[] = [
   },
 ];
 
-export const civilcounterData2 = {
-  counterData: [
-    {
-      id: 1,
-      icon: "",
-      value: "200",
-      suffix: "",
-      label: "Guest lectures",
-    },
-    {
-      id: 2,
-      icon: "",
-      value: "150",
-      suffix: "",
-      label: "Field Visits",
-    },
-    {
-      id: 3,
-      icon: "",
-      value: "25",
-      suffix: "",
-      label: "Conference & Seminars",
-    },
-  ],
-};
+
 export const civilPlacedStudents: Student[] = [
   { name: "Pankaj Gupta", program: "B.Tech. in Civil Engineering", company: "Shapoorji Pallonji" },
   { name: "Pawan Kumar Singh", program: "B.Tech. in Civil Engineering", company: "Shapoorji Pallonji" },

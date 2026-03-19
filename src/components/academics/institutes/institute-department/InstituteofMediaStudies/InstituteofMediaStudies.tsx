@@ -9,10 +9,9 @@ import {
   InstituteofMediaStudiesData1,
   InstituteofMediaStudiesData2,
   InstituteofMediaStudiesOverviewData,
+  InstituteofMediaStudiesProfiles,
   InstituteofMediaStudiesTopFooterData,
   InstituteofMediaStudiesVMData,
-  // @ts-ignore
-  SampleInstituteProfileData,
 } from "../../../../../data/academics/institute/institute-department/institute-of-media-studies-data";
 import Counter from "../../../../../utils/custom/Counter";
 import CustomDepartmentVissionMission from "../../../../../utils/custom/CustomDepartmentVissionMission";
@@ -38,14 +37,14 @@ const InstituteofMediaStudies: React.FC = () => {
     <div>
       <div className={`${Classes["container"]}`}>
         <CustomOverviewSection data={InstituteofMediaStudiesOverviewData} />
-        <Counter
+        {/* <Counter
           // @ts-ignore
           counterData={InstituteofMediaStudiesCounterData1.counterData}
           // @ts-ignore
           classes={InstituteofMediaStudiesCounterData1.classes}
           // @ts-ignore
           aboutusClass={InstituteofMediaStudiesCounterData1.aboutusClass}
-        />
+        /> */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12  mb-10">
           {InstituteofMediaStudiesVMData.map((item) => (
             // @ts-ignore
@@ -54,7 +53,7 @@ const InstituteofMediaStudies: React.FC = () => {
         </div>
       </div>
       {/* @ts-ignore */}
-      <CustomInstituteProfileCard data={SampleInstituteProfileData} />
+      <CustomInstituteProfileCard data={InstituteofMediaStudiesProfiles} />
       <div className={`${Classes["container"]} pt-5`}>
         <div className="py-15 text-center">
           <h1 className="text-5xl pb-5 font-medium">Programs and Fees</h1>

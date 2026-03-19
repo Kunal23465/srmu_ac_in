@@ -15,6 +15,8 @@ import {
   ElectricalAndElectronicsfacultyDetails,
   instituteFooterData,
   electricalDepartmentinstituteOverviewData,
+  DepartmentOfElectricalAndElectronicsPlacedStudents,
+  counterDataForPlacedStudentsOFDepartmentOfElectricalAndElectronicsEngineering,
 } from "../../../data/academics/institute/department-of-electrical-and-electronics-engineering-data";
 import CustomDepartmentVissionMission from "../../../utils/custom/CustomDepartmentVissionMission";
 import CustomInstituteProfileCard from "../../../utils/custom/CustomInstituteProfileCard";
@@ -63,7 +65,7 @@ const DepartmentOfElectricalAndElectronicsEngineering: FC = () => {
 
       <section className="bg-[#edf0f9] py-14">
         <div className={`${Classes["container"]} bg-[#edf0f9]`}>
-          <PlacedStudents />
+          <PlacedStudents placedStudents={DepartmentOfElectricalAndElectronicsPlacedStudents} counterData={counterDataForPlacedStudentsOFDepartmentOfElectricalAndElectronicsEngineering}/>
         </div>
       </section>
       <CustomDepartmentSlider

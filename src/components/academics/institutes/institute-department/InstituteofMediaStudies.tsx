@@ -53,7 +53,7 @@ const InstituteofMediaStudies: React.FC = () => {
         </div>
       </div>
       {/* @ts-ignore */}
-      <CustomInstituteProfileCard data={SampleInstituteProfileData} />
+      <CustomInstituteProfileCard />
       <div className={`${Classes["container"]} pt-5`}>
         <div className="py-15 text-center">
           <h1 className="text-5xl pb-5 font-medium">Programs and Fees</h1>

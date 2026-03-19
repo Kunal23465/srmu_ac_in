@@ -38,6 +38,31 @@ export const counterDataFoFacultyOfAlliedHealthSciences: counterDataType[] = [
   { id: 3, value: "300", suffix: "", label: "Students" },
 ];
 
+
+export const counterDataForPlacedStudentsOFAlliedHealthSciences: counterDataType[] =  [
+    {
+      id: 1,
+      icon: "",
+      value: "25",
+      suffix: "",
+      label: "Guest lectures",
+    },
+    {
+      id: 2,
+      icon: "",
+      value: "10",
+      suffix: "",
+      label: "Field Visits",
+    },
+    {
+      id: 3,
+      icon: "",
+      value: "5",
+      suffix: "",
+      label: "Conference & Seminars",
+    },
+  ];
+
 export const facultyOfAlliedHealthSciencesVMData = [
   {
     id: 1,
@@ -173,31 +198,7 @@ export const facultyDetailsOfAhsDepartment: FacultyItem[] = [
   },
 ];
 
-export const counterDataForPlacedStudentsOFAlliedHealthSciences = {
-  counterData: [
-    {
-      id: 1,
-      icon: "",
-      value: "25",
-      suffix: "",
-      label: "Guest lectures",
-    },
-    {
-      id: 2,
-      icon: "",
-      value: "10",
-      suffix: "",
-      label: "Field Visits",
-    },
-    {
-      id: 3,
-      icon: "",
-      value: "5",
-      suffix: "",
-      label: "Conference & Seminars",
-    },
-  ],
-};
+
 export const alliedHealthScienceHighlightsData: departmentHighlightscardType[] =
   [
     {

@@ -485,7 +485,7 @@ export const instituteCourseCardData: CustomInstituteCourseCardProps[] = [
   {
     imageUrl: courseImg1,
     departmentName: "Faculty of Commerce and Economics",
-    path: "institute-of-management-commerce-and-economics/faculty-of-commerce-and-economics",
+    path: "/faculty-of-commerce-and-economics",
     departmentDetails: {
       overviewData: commerceAndEconomicsOverviewData,
       counterData: counterDataForFacultyCommerce,
@@ -504,7 +504,7 @@ export const instituteCourseCardData: CustomInstituteCourseCardProps[] = [
   {
     imageUrl: courseImg2,
     departmentName: "Faculty Of Management",
-    path: "institute-of-management-commerce-and-economics/faculty-of-management",
+    path: "/faculty-of-management",
     departmentDetails: {
       overviewData: managementOverviewData,
       counterData: counterDataForFacultyManagement,

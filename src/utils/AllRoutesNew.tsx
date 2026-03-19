@@ -83,6 +83,20 @@ import OnlineAdmissionPage from "../pages/Home/OnlineAdmissionPage";
 import PrivacyPolicyPage from "../pages/privacy-policy/PrivacyPolicyPage";
 import DisclaimerPage from "../pages/disclaimer/DisclaimerPage";
 import TermsAndConditionPage from "../pages/terms-condition/TermsAndConditionPage";
+import InstituteofBiosciencesandTechnologyPage from "../pages/academics/institutes/institute-department/InstituteofBiosciencesandTechnologyPage";
+import InstituteofManagementCommerceandEconomicsPage from "../pages/academics/institutes/institute-department/InstituteofManagementCommerceandEconomicsPage";
+import InstituteofMediaStudiesPage from "../pages/academics/institutes/institute-department/InstituteofMediaStudiesPage";
+import InstituteofNaturalSciencesandHumanitiesPage from "../pages/academics/institutes/institute-department/InstituteofNaturalSciencesandHumanitiesPage";
+import InstituteofPharmaceuticalSciencesPage from "../pages/academics/institutes/institute-department/InstituteofPharmaceuticalSciencesPage";
+import InstituteofAgriculturalSciencesandTechnologyPage from "../pages/academics/institutes/institute-department/InstituteofAgriculturalSciencesandTechnologyPage";
+import InstituteofLegalStudiesPage from "../pages/academics/institutes/institute-department/InstituteofLegalStudiesPage";
+import InstituteofPharmacyPage from "../pages/academics/institutes/institute-department/InstituteofPharmacyPage";
+import InstituteofEducationandResearchPage from "../pages/academics/institutes/institute-department/InstituteofEducationandResearchPage";
+import SRMUPolytechnicPage from "../pages/academics/institutes/institute-department/SRMUPolytechnicPage";
+import FacultyOfCivilEngineeringPage from "../pages/academics/institutes/institute-department/FacultyOfCivilEngineeringPage";
+import DepartmentOfElectricalAndElectronicsEngineeringPage from "../pages/academics/institutes/institute-department/DepartmentOfElectricalAndElectronicsEngineeringPage";
+import FacultyOfMechanicalEngineeringPage from "../pages/academics/institutes/institute-department/FacultyOfMechanicalEngineeringPage";
+import FacultyOfAlliedHealthSciencesPage from "../pages/academics/institutes/institute-department/FacultyOfAlliedHealthSciencesPage";
 
 export function AllRoutesNew() {
   const element = useRoutes(routes);
@@ -127,10 +141,7 @@ export const routes = [
         path: "/news/:programName",
         element: <NewsEventDetails />,
       },
-      {
-        path: "/:programType",
-        element: <ProgramTypePage />,
-      },
+
       {
         path: "/:programType/:item",
         element: <ProgramTypeItemPage />,
@@ -181,14 +192,14 @@ export const routes = [
         element: <InstitutePage />,
 
         children: [
-          {
-            path: ":departmentName",
-            element: <InstituteDepartmentPage />,
-          },
-          {
-            path: ":departmentName/:detailName",
-            element: <DepartmentDetailPage />,
-          },
+          // {
+          //   path: ":departmentName",
+          //   element: <InstituteDepartmentPage />,
+          // },
+          // {
+          //   path: ":departmentName/:detailName",
+          //   element: <DepartmentDetailPage />,
+          // },
           {
             path: "department/:detailName",
             element: <DepartmentDetailPage />,
@@ -471,6 +482,7 @@ export const routes = [
         path: "/terms-conditions",
         element: <TermsAndConditionPage />,
       },
+
       {
         path: "/microbiology/undergraduate",
         element: <AddmissionProgramFinderPage />,
@@ -631,6 +643,95 @@ export const routes = [
       {
         path: "/management/industry-honors1",
         element: <AddmissionProgramFinderPage />,
+      },
+      {
+        path: "/institute-of-technology",
+        element: <InstituteDepartmentPage />,
+      },
+
+
+      {
+        path: "/institute-of-biosciences-and-technology",
+        element: <InstituteofBiosciencesandTechnologyPage />,
+      },
+
+      {
+        path: "/institute-of-management-commerce-and-economics",
+        element: <InstituteofManagementCommerceandEconomicsPage />,
+
+      },
+
+      {
+        path: "/institute-of-media-studies",
+        element: <InstituteofMediaStudiesPage />,
+
+      },
+
+
+      {
+        path: "/institute-of-natural-sciences-and-humanities",
+        element: <InstituteofNaturalSciencesandHumanitiesPage />,
+
+      },
+
+      {
+        path: "/institute-of-pharmaceutical-sciences1",
+        element: <InstituteofPharmaceuticalSciencesPage />,
+
+      },
+
+      {
+        path: "/institute-of-agricultural-sciences-and-technology",
+        element: <InstituteofAgriculturalSciencesandTechnologyPage />,
+
+      },
+
+      {
+        path: "/institute-of-legal-studies1",
+        element: <InstituteofLegalStudiesPage />,
+
+      },
+
+      {
+        path: "/institute-of-pharmacy",
+        element: <InstituteofPharmacyPage />,
+
+      },
+
+      {
+        path: "/institute-of-education-and-research",
+        element: <InstituteofEducationandResearchPage />,
+
+      },
+
+      {
+        path: "/srmu-polytechnic1",
+        element: <SRMUPolytechnicPage />,
+
+      },
+
+      {
+        path: "/faculty-of-civil-engineering",
+        element: <FacultyOfCivilEngineeringPage />,
+
+      },
+
+      {
+        path: "/department-of-electrical-and-electronics-engineering",
+        element: <DepartmentOfElectricalAndElectronicsEngineeringPage />,
+
+      },
+
+      {
+        path: "faculty-of-mechanical-engineering",
+        element: <FacultyOfMechanicalEngineeringPage />,
+
+      },
+
+      {
+        path: "faculty-of-allied-health-sciences",
+        element: <FacultyOfAlliedHealthSciencesPage />,
+
       },
     ],
   },

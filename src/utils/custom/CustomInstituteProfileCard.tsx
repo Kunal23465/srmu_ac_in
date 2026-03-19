@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import { InstituteProfile } from "../../types/profile-data-type";
 import { CustomModal } from "./CustomIqacCard";
-import { instituteProfiles } from "../../data/academics/institute/data";
 import Classes from "../../utils/styles/Global.module.css";
 
 interface CustomInstituteProfileCardProps {
   data?: InstituteProfile[];
 }
 
-const CustomInstituteProfileCard: React.FC<CustomInstituteProfileCardProps> = ({ data = instituteProfiles }) => {
+const CustomInstituteProfileCard: React.FC<CustomInstituteProfileCardProps> = ({ data }) => {
   const [expandedId, setExpandedId] = useState<number | null>(null);
 
   // Make **bold** portions bold
