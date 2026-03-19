@@ -12,7 +12,7 @@ const OverviewPage: React.FC = () => {
         <title>Admission Overview | Shri Ramswaroop Memorial University, Lucknow</title>
         <meta name="description" content="Unlock your academic potential with SRMU&#039;s streamlined admission process. Explore entry requirements, application procedures, and our various academic pathways" />
       </Helmet>
-      {location.pathname == "/admission" ? <OverviewComp /> :
+      {location.pathname == "/admission-overview" ? <OverviewComp /> :
         <Outlet />}
     </>
   )

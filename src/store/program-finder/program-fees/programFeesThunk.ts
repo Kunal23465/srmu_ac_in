@@ -4,11 +4,11 @@ import {API} from "../../../apis/axiosinstance";
 
 export const fetchProgramFeesByProgramId = createAsyncThunk(
     "programFees/fetchByProgramId",
-    async (programId: number) => {
+    async (programSlug: string) => {
         const response = await API.get(
             "/academicProgram/programFees",
             {
-                params: { programId }, 
+                params: { programSlug }, 
             }
         );
         return response.data;

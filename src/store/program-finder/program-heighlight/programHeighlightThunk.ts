@@ -13,16 +13,16 @@ import { API } from "../../../apis/axiosinstance";
 
 export const fetchProgramHeighlightById = createAsyncThunk(
   "program/fetchProgramHeighlightById",
-  async (programId: number) => {
+  async (slug: string) => {
     const response = await API.get("/academicProgram/programDepartmentHighlight", {
-      params: { programId },
+      params: { slug },
     });
     return response.data;
   },
   {
-    condition: (programId) => {
-      // If programId is falsy, cancel API call
-      if (!programId) {
+    condition: (programSlug) => {
+      // If programSlug is falsy, cancel API call
+      if (!programSlug) {
         return false;
       }
       return true;

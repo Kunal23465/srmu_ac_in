@@ -3,7 +3,6 @@ import Counter from "../../../utils/custom/Counter";
 import Classes from "../../../utils/styles/Global.module.css";
 import CustomDepartmentSlider from "../../../utils/custom/CustomDepartmentSlider";
 import WhyCardComp from "./WhyCardComp";
-
 import CustomDepartmentHighlights from "../../../utils/custom/CustomDepartmentHighlights";
 import CustomProgramPLOAccordian from "../../../utils/custom/CustomProgramPLOAccordian";
 import CustomProgramOppertunitySlider from "../../../utils/custom/CustomProgramOppertunitySlider";
@@ -12,7 +11,6 @@ import CustomTopFooter from "../../../utils/custom/CustomTopFooter";
 import { CustomTopFooterData1 } from "../../../data/about/leadership-and-governance/leadership-and-governance-data";
 import { CustomCompaniesScope } from "../../../utils/custom/CustomCompaniesScope";
 import CustomProgramScholarshipSchemeCard from "../../../utils/custom/CustomProgramScholarshipSchemeCard";
-import CustomEligibilitySection from "../../../utils/custom/CustomEligibilitySection";
 import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../../store";
@@ -142,18 +140,18 @@ const ProgramDetails: React.FC = () => {
     const hasFeesDataForCurrentId = Number((normalizedFeesData as any)?.programId) === numericProgramId;
 
     if (!hasProgramDataForCurrentId) {
-      dispatch(fetchProgramFinderByID(numericProgramId));
+      dispatch(fetchProgramFinderByID(programName));
     }
 
     if (!hasFeesDataForCurrentId) {
-      dispatch(fetchProgramFeesByProgramId(numericProgramId));
+      dispatch(fetchProgramFeesByProgramId(programName));
     }
 
-    dispatch(fetchWhySrmuSectionById({ programId: numericProgramId }));
-    dispatch(getCounterById(numericProgramId));
-    dispatch(fetchProgramHeighlightById(numericProgramId));
-    dispatch(fetchRecruiterById({ programId: numericProgramId }));
-    dispatch(fetchWhySrmuLogoById({ programId: numericProgramId }));
+    dispatch(fetchWhySrmuSectionById({ slug: programName }));
+    dispatch(getCounterById({ slug: programName }));
+    dispatch(fetchProgramHeighlightById(programName));
+    dispatch(fetchRecruiterById({ slug: programName }));
+    dispatch(fetchWhySrmuLogoById({ slug: programName }));
 
     setIsPhd(resolvedProgramId === "81");
   }, [dispatch, resolvedProgramId]);

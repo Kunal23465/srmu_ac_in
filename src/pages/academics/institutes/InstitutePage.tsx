@@ -8,7 +8,7 @@ const InstitutePage: React.FC = () => {
 
   return (
     <div>
-      {pathname === "/academics" ? (
+      {pathname === "/institutes-info" ? (
         <>
           <Helmet>
             <title>Institutes Program | Shri Ramswaroop Memorial University, Lucknow</title>

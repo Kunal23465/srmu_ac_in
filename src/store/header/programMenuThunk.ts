@@ -1,25 +1,29 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import {API} from "../../apis/axiosinstance";
+import { API } from "../../apis/axiosinstance";
 
 /* ===== API RESPONSE TYPES ===== */
 
 export interface NavbarProgram {
     programId: number;
+    programSlug?: string;
     programName: string;
 }
 
 export interface NavbarDiscipline {
     disciplineId: number;
     disciplineName: string;
+    disciplineSlug?: string;
     programs: NavbarProgram[];
 }
 
 export interface NavbarProgramType {
-  programTypeId: number;
-  programFlagId:number;
-  programFlagName: string;
-  disciplines: NavbarDiscipline[];
-  programs: NavbarProgram[];
+    programTypeSlug?: string;
+    programFlagSlug?: string;
+    programTypeId: number;
+    programFlagId: number;
+    programFlagName: string;
+    disciplines: NavbarDiscipline[];
+    programs: NavbarProgram[];
 }
 
 /* ===== THUNK ===== */

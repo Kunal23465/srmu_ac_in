@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useLocation } from "react-router-dom";
 import { AppDispatch, RootState } from "../../../store";
 import { fetchAllProgramFinder } from "../../../store/program-finder/programFinderThunk";
 import { fetchProgramType } from "../../../store/program-finder/program-type/programTypeThunk";
@@ -10,17 +9,21 @@ import ProgramFinderIntro from "./ProgramFinderIntro";
 import CustomTopFooter from "../../../utils/custom/CustomTopFooter";
 import { feeStructureCustomTopFooter } from "../../../data/admissions/fee-structure/fee-structue-data";
 import Classes from "../../../utils/styles/Global.module.css";
+import { useLocation } from "react-router-dom";
 
 const ProgramFinder: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
-  const location = useLocation();
+  // const { programType:programTypeSlug, item } = useParams();
   const { data } = useSelector((state: RootState) => state.getProgramFinder);
   const { programType } = useSelector((state: RootState) => state.getProgramType);
   const { discipline } = useSelector((state: RootState) => state.getDiscipline);
-  const [selectedProgramType, setSelectedProgramType] = useState<number | string>("");
-  const [selectedDiscipline, setSelectedDiscipline] = useState<number | string>("");
-
-  // Search states
+  const [selectedProgramType, setSelectedProgramType] = useState<string>("");
+  const [selectedDiscipline, setSelectedDiscipline] = useState<string>("");
+  const location = useLocation();
+  const pathParts = location.pathname.split("/");
+  const disciplineIdFromState = pathParts[1];
+  const programTypeIdFromState = pathParts[2];
+  console.log(disciplineIdFromState, programTypeIdFromState, "location");
   const [searchTerm, setSearchTerm] = useState("");
   const [debouncedSearch, setDebouncedSearch] = useState("");
 
@@ -30,7 +33,7 @@ const ProgramFinder: React.FC = () => {
 
   const introDescription = selectedDisciplineObj?.description || selectedProgramTypeObj?.description || "";
 
-  const { programTypeId: programTypeIdFromState, disciplineId: disciplineIdFromState } = location.state || {};
+  // const { programTypeId: programTypeIdFromState, disciplineId: disciplineIdFromState } = location.state || {};
 
   /* ===========================
            Debounce Search
@@ -47,21 +50,16 @@ const ProgramFinder: React.FC = () => {
       Fetch Program List
      =========================== */
   useEffect(() => {
-    if (
-      !selectedProgramType &&
-      !selectedDiscipline &&
-      !debouncedSearch &&
-      data.length > 0
-    ) {
+    if (!selectedProgramType && !selectedDiscipline && !debouncedSearch && data.length > 0) {
       return;
     }
 
     dispatch(
       fetchAllProgramFinder({
-        programTypeId: selectedProgramType || undefined,
-        programDisciplineId: selectedDiscipline || undefined,
+        programTypeSlug: selectedProgramType || undefined,
+        programDisciplineSlug: selectedDiscipline || undefined,
         name: debouncedSearch || undefined,
-      })
+      }),
     );
   }, [dispatch, selectedProgramType, selectedDiscipline, debouncedSearch]);
 
@@ -83,7 +81,7 @@ const ProgramFinder: React.FC = () => {
      =========================== */
   useEffect(() => {
     if (selectedProgramType) {
-      dispatch(fetchProgramDiscipline({ programTypeId: selectedProgramType }));
+      dispatch(fetchProgramDiscipline({ programTypeSlug: selectedProgramType }));
     }
   }, [dispatch, selectedProgramType]);
 
@@ -103,7 +101,6 @@ const ProgramFinder: React.FC = () => {
           <h1 className="text-[#023047] text-[22px] sm:text-[28px] lg:text-[3.125rem] fw500">Program Finder</h1>
           <div className="w-[140px] h-[3px] bg-amber-400 mt-4 mb-4" />
         </div>
-
         <ProgramFilter
           data={data}
           programTypeOptions={programType}

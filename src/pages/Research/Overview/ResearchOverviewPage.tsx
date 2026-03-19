@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet-async';
 
 const ResearchOverviewPage: React.FC = () => {
   const location = useLocation();
-  return <>{location.pathname === "/research" ? <> <Helmet>
+  return <>{location.pathname === "/research-overview" ? <> <Helmet>
     
      <title>Research Overview | Shri Ramswaroop Memorial University, Lucknow</title>
     <meta name="description" content="SRMU fosters a vibrant research environment, encouraging faculty and students to engage in cutting-edge research across diverse disciplines." />

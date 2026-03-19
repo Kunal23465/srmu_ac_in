@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { AppDispatch, RootState } from "../../store";
 
 import { fetchAllProgramFinder } from "../../store/program-finder/programFinderThunk";
@@ -16,24 +16,19 @@ import ProgramFilter from "../admissions/program-finder/ProgramFilter";
 
 const ProgramFinderHome: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
-  const location = useLocation();
+  const { programType, item } = useParams();
 
   const { data } = useSelector((state: RootState) => state.getProgramFinder);
   const { discipline } = useSelector((state: RootState) => state.getDiscipline);
-  const { data: programFlag } = useSelector(
-    (state: RootState) => state.getProgramByFlag
-  );
+  const { data: programFlag } = useSelector((state: RootState) => state.getProgramByFlag);
 
-  const [selectedProgramFlag, setSelectedProgramFlag] = useState<number | string>("");
-  const [selectedDiscipline, setSelectedDiscipline] = useState<number | string>("");
+  const [selectedProgramFlag, setSelectedProgramFlag] = useState<string>("");
+  const [selectedDiscipline, setSelectedDiscipline] = useState<string>("");
 
   const [searchTerm, setSearchTerm] = useState("");
   const [debouncedSearch, setDebouncedSearch] = useState("");
 
-
   const isInitialized = useRef(false);
-
-  const { programTypeId, disciplineId } = location.state || {};
 
   /* ===========================
         Initial Static APIs
@@ -44,15 +39,15 @@ const ProgramFinderHome: React.FC = () => {
   }, [dispatch]);
 
   /* ===========================
-        Apply Route State
+        Apply Route Params (Slug)
      =========================== */
   useEffect(() => {
-    if (programTypeId || disciplineId) {
-      setSelectedProgramFlag(programTypeId || "");
-      setSelectedDiscipline(disciplineId || "");
+    if (programType || item) {
+      setSelectedProgramFlag(programType || "");
+      setSelectedDiscipline(item || "");
     }
     isInitialized.current = true;
-  }, [programTypeId, disciplineId]);
+  }, [programType, item]);
 
   /* ===========================
         Debounce Search
@@ -66,62 +61,51 @@ const ProgramFinderHome: React.FC = () => {
   }, [searchTerm]);
 
   /* ===========================
-        Fetch Discipline by Flag
+        Fetch Discipline by Flag (Slug)
      =========================== */
   useEffect(() => {
     if (selectedProgramFlag) {
-      dispatch(fetchProgramDiscipline({ programFlagId: selectedProgramFlag }));
+      dispatch(
+        fetchProgramDiscipline({
+          programFlagSlug: selectedProgramFlag,
+        }),
+      );
     }
   }, [dispatch, selectedProgramFlag]);
 
   /* ===========================
-        Fetch Program List
+        Fetch Program List (Slug based)
      =========================== */
   useEffect(() => {
     if (!isInitialized.current) return;
 
-    if (
-      !selectedProgramFlag &&
-      !selectedDiscipline &&
-      !debouncedSearch
-    ) {
+    if (!selectedProgramFlag && !selectedDiscipline && !debouncedSearch) {
       return;
     }
 
     dispatch(
       fetchAllProgramFinder({
-        programFlagId: selectedProgramFlag || undefined,
-        programDisciplineId: selectedDiscipline || undefined,
+        programFlagSlug: selectedProgramFlag || undefined,
+        programDisciplineSlug: selectedDiscipline || undefined,
         name: debouncedSearch || undefined,
-      })
+      }),
     );
   }, [dispatch, selectedProgramFlag, selectedDiscipline, debouncedSearch]);
 
   /* ===========================
-        Intro Description
+        Intro Description (Slug match)
      =========================== */
-  const selectedProgramFlagObj = programFlag?.find(
-    (pt) => pt.programTypeId == selectedProgramFlag
-  );
+  const selectedProgramFlagObj = programFlag?.find((pt) => pt.slug === selectedProgramFlag);
 
-  const selectedDisciplineObj = discipline?.find(
-    (d) => d.programDisciplineId == selectedDiscipline
-  );
+  const selectedDisciplineObj = discipline?.find((d) => d.slug === selectedDiscipline);
 
-  const introDescription =
-    selectedDisciplineObj?.description ||
-    selectedProgramFlagObj?.description ||
-    "";
-
-
+  const introDescription = selectedDisciplineObj?.description || selectedProgramFlagObj?.description || "";
 
   return (
     <>
       <div className={`${Classes.container} mt-16`}>
         <div className="w-full flex items-center justify-center flex-col">
-          <h1 className="text-[#023047] text-[22px] sm:text-[28px] lg:text-[3.125rem] fw500">
-            Program Finder
-          </h1>
+          <h1 className="text-[#023047] text-[22px] sm:text-[28px] lg:text-[3.125rem] fw500">Program Finder</h1>
           <div className="w-[140px] h-[3px] bg-amber-400 mt-4 mb-4" />
         </div>
 

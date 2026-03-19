@@ -4,7 +4,7 @@ import PlacementOverview from "../../components/placement/placement-overview/Pla
 const PlacementPage: React.FC = () => {
   const location = useLocation();
 
-  return <>{location.pathname == "/placements" ? <PlacementOverview />   : <Outlet />}</>;
+  return <>{location.pathname == "/placement-overview" ? <PlacementOverview />   : <Outlet />}</>;
 };
 
 export default PlacementPage;

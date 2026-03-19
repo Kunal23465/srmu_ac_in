@@ -6,7 +6,7 @@ const ConvocationPage = () => {
 
   const location = useLocation();
 
-  const isRootEventsPage = location.pathname === "/campus-life/convocation";
+  const isRootEventsPage = location.pathname === "/convocation";
 
 
   return (

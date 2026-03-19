@@ -46,7 +46,7 @@ export const HeaderData = [
               { item: "About SRMU", path: "about-us" },
               { item: "Leadership & Governance", path: "leadership-and-governance" },
               { item: "Committee & Cells", path: "committees-and-cells" },
-              { item: "Approval & Associations", path: "approvals-and-associations" },
+              { item: "Approval & Associations", path: "recognition-approvals" },
               { item: "Awards & Rankings", path: "award-overview" },
               { item: "Quality Assurance Cell", path: "iqac-overview" },
               { item: "NAAC", path: "naac" },
@@ -57,36 +57,36 @@ export const HeaderData = [
           {
             id: 1,
             item: "Academics",
-            path: "/academics",
+            path: "/institutes-info",
             subItem: [
               {
                 item: "Institute",
-                path: "/academics",
+                path: "/institutes-info",
               },
               {
                 item: "Policies & Reports",
-                path: "/academics/policies-reports",
+                path: "/policies-reports",
               },
               {
                 item: "Curriculum Design",
-                path: "/academics/curriculum-design",
+                path: "/curriculum-design",
               },
               {
                 item: "Teaching Learning Process",
-                path: "/academics/teaching-learning-process",
+                path: "/teaching-learning-process",
               },
               {
                 item: "Academic Calendar",
-                path: "/academics/academic-calender",
+                path: "/academic-calendars",
               },
 
               {
                 item: "Academic Bank of Credit",
-                path: "/academics/academic-depository-nad-and-abc",
+                path: "/campus-life/academic-depository-nad-and-abc",
               },
               {
                 item: "E-Content Cell",
-                path: "/academics/e-content-development-cell",
+                path: "/e-content-development-cell",
               },
             ],
           },
@@ -203,42 +203,42 @@ export const HeaderData = [
           {
             id: 3,
             item: "Admission",
-            path: "admission",
+            path: "admission-overview",
             subItem: [
               {
                 item: "Overview",
-                path: "/admission",
+                path: "/admission-overview",
               },
               {
                 item: "How to Apply",
-                path: "/admission/how-to-apply",
+                path: "/how-to-apply",
               },
               {
                 item: "Program Finder",
-                path: "/admission/program-finder",
+                path: "/program-finder",
               },
               {
                 item: "Fee Structure",
-                path: "/admission/fee-structure",
+                path: "/fee-structure",
               },
               {
                 item: "Scholarship",
-                path: "/admission/scholarship-scheme",
+                path: "/scholarship-scheme",
               },
               {
                 item: "Shift Schedule (First Year Only)",
-                path: "/admission/shift-schedule",
+                path: "/shift-schedule",
               },
               {
                 item: "Document Checklist",
-                path: "/admission/document-checklist",
+                path: "/document-checklist",
               },
 
-              { item: "Admission Policies", path: "/admission/admission-policy" },
+              { item: "Admission Policies", path: "/admission-policies" },
 
               {
                 item: "Admission FAQs",
-                path: "/admission/admission-faq",
+                path: "/admission-faqs",
               },
             ],
           },
@@ -246,47 +246,46 @@ export const HeaderData = [
           {
             id: 4,
             item: "Campus Life",
-            path: "/campus-life",
+            path: "/facilities",
             subItem: [
-              { item: "Facilities", path: "/campus-life" },
+              { item: "Facilities", path: "/facilities" },
 
-              { item: "Central Library", path: "/campus-life/central-library" },
+              { item: "Central Library", path: "/central-library" },
               {
                 item: "Events",
-                path: "/campus-life/events",
+                path: "/events",
               },
               {
                 item: "Clubs",
-                path: "/campus-life/clubs",
+                path: "/clubs",
               },
               {
                 item: "Convocation",
-                path: "/campus-life/convocation",
+                path: "/convocation",
               },
               {
                 item: "Green Initiative",
-                path: "/campus-life/green-initiative",
+                path: "/green-initiative",
               },
               {
                 item: "Women Empowerment",
-                path: "/campus-life/women-empowerment",
+                path: "/women-empowerment",
               },
-
               {
                 item: "Outreach Activations",
-                path: "/campus-life/outreach-activations",
+                path: "/outreach-activations",
               },
               {
                 item: "Student Senate",
-                path: "/campus-life/student-senate",
+                path: "/student-senate",
               },
               {
                 item: "Student Corner",
-                path: "/campus-life/student-corner",
+                path: "/student-corner",
               },
               {
                 item: "Grievance Redressal System",
-                path: "/campus-life/grievance-redressal-system",
+                path: "/grievance-redressal-system",
               },
             ],
           },
@@ -294,36 +293,36 @@ export const HeaderData = [
           {
             id: 5,
             item: "Placements",
-            path: "/placements",
+            path: "/placement-overview",
             subItem: [
               {
                 item: "Placement Overview",
-                path: "/placements",
+                path: "/placement-overview",
               },
               {
                 item: "Placement Cell",
-                path: "/placements/placement-cell",
+                path: "/placements",
               },
               {
                 item: "Placement Policies",
-                path: "/placements/placement-policies",
+                path: "/placement-policies",
               },
 
               {
                 item: "Student Testimonials",
-                path: "/placements/student-testimonial",
+                path: "/all-testimonial",
               },
               {
                 item: "Alumni Registration",
-                path: "/placements/alumni-registration",
+                path: "/alumni-registration",
               },
               {
                 item: "Alumni Feedback",
-                path: "/placements/alumni-feedback",
+                path: "/alumni-feedback",
               },
               {
                 item: "Alumni Testimonials",
-                path: "/placements/notable-alumni",
+                path: "/notable-alumni",
               },
             ],
           },
@@ -331,15 +330,15 @@ export const HeaderData = [
           {
             id: 6,
             item: "Research",
-            path: "/research",
+            path: "/research-overview",
             subItem: [
-              { item: "Overview", path: "/research" },
-              { item: "Process And Initiatives", path: "/research/process-and-initiatives" },
+              { item: "Overview", path: "/research-overview" },
+              { item: "Process And Initiatives", path: "/process-and-initiatives" },
 
-              { item: "Ph.D. Notification (Session: 2025-26)", path: "/research/phd-notification-session" },
-              { item: "Publication", path: "/research/publication" },
-              { item: "Innovation", path: "/research/innovation" },
-              { item: "Consultancy", path: "/research/consultancy" },
+              { item: "Ph.D. Notification (Session: 2025-26)", path: "/ph-d-notification-session-2025-26" },
+              { item: "Publication", path: "/publication" },
+              { item: "Innovation", path: "/innovation" },
+              { item: "Consultancy", path: "/consultancy" },
             ],
           },
         ],
