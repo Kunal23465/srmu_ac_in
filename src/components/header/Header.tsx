@@ -2,13 +2,11 @@ import { useEffect, useState } from "react";
 import Classes from "../../utils/styles/Global.module.css";
 import TopHeader from "./TopHeader";
 import hamburger from "../../assets/images/home/menu-icon.png";
-
 import { MdClose, MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { Link, useLocation } from "react-router-dom";
 import { HeaderData } from "./HeaderData";
 import { AppDispatch, RootState } from "../../store";
-// @ts-ignore
-import { fetchProgramMenu, NavbarProgramType } from "../../store/header/programMenuThunk";
+import { fetchProgramMenu } from "../../store/header/programMenuThunk";
 import { useDispatch, useSelector } from "react-redux";
 import logo from "../../assets/images/logo.svg";
 import { setProgramId } from "../../store/program-finder/program/programSlice";
@@ -25,23 +23,6 @@ const Header = () => {
   const dispatch = useDispatch<AppDispatch>();
   // @ts-ignore
   const { data: programMenu, loading } = useSelector((state: RootState) => state.programMenu);
-
-  const slugify = (str: string) => {
-    return str
-      .toLowerCase()
-      .trim()
-      .replace(/[()]/g, "")            // remove brackets
-      .replace(/&/g, "")               // remove &
-      .replace(/\./g, "-")             // convert . to -
-      .replace(/\s+/g, "-")            // spaces to -
-      .replace(/-+/g, "-")             // remove multiple -
-      .replace(/-in-/g, "-")           // remove only '-in-'
-      .replace(/^b-c-a\b/, "bca")      // convert b-c-a to bca
-      .replace(/-with-.*/, "")         // remove '-with' and everything after
-      .replace(/^-|-$/g, "");          // remove starting/ending -
-  };
-
-
 
   useEffect(() => {
     if (!programMenu || programMenu.length === 0) {
@@ -139,59 +120,53 @@ const Header = () => {
                                   {programMenu
                                     .filter((type) => group.includes(type.programFlagName))
                                     .map((type) => {
-                                      const programFlagSlug = slugify(type.programFlagName);
-
+                                      
                                       return (
                                         <div key={type.programFlagId}>
                                           {/* BLUE HEADING */}
                                           <h3 className="font-medium text-[17px] p-3 rounded-lg inline-block hover:bg-[#ffb703] text-[#0f4a85] hover:text-black">
-                                            <Link onClick={() => setShowMegaMenu(false)} to={`/${programFlagSlug}`} state={{ programTypeId: type.programFlagId }}>
+                                            <Link onClick={() => setShowMegaMenu(false)} to={`/${type.programFlagSlug}`} state={{ programTypeId: type.programFlagId }}>
                                               {type.programFlagName}
                                             </Link>
                                           </h3>
                                           <ul className="mt-2 list-none!">
-                                            {type.programFlagId === 7 ? (
-                                              // CASE 1: programs
-                                              type.programs.map((prog) => (
-                                                <li key={prog.programId}>
-                                                  <Link
-                                                    // onClick={() => setShowMegaMenu(false)}
-                                                    onMouseDown={() => {
-                                                      dispatch(setProgramId(prog.programId.toString()))
-
-                                                    }}
-                                                    onClick={() => {
-
-                                                      dispatch(setProgramId(prog.programId.toString()))
-                                                      setShowMegaMenu(false);
-                                                    }}
-                                                    to={`/program/${slugify(prog.programName)}`}
-                                                    className="text-[15px] px-3 py-2 rounded-md text-[#212529] hover:text-[#ffb703] border border-white hover:border-[#ffb703] block"
-                                                  >
-                                                    {prog.programName}
-                                                  </Link>
-                                                </li>
-                                              ))
-                                            ) : (
-                                              // CASE 2: disciplines (for all other ids)
-                                              type.disciplines.map((disc) => (
-                                                <li key={disc.disciplineId}>
-                                                  <Link
-                                                    onClick={() => setShowMegaMenu(false)}
-                                                    to={`/${programFlagSlug}/${slugify(disc.disciplineName)}`}
-                                                    state={{
-                                                      programTypeId: type.programFlagId,
-                                                      disciplineId: disc.disciplineId,
-                                                    }}
-                                                    className="text-[15px] px-3 py-2 rounded-md text-[#212529] hover:text-[#ffb703] border border-white hover:border-[#ffb703] block"
-                                                  >
-                                                    {disc.disciplineName}
-                                                  </Link>
-                                                </li>
-                                              ))
-                                            )}
+                                            {type.programFlagId === 7
+                                              ? // CASE 1: programs
+                                                type.programs.map((prog) => (
+                                                  <li key={prog.programId}>
+                                                    <Link
+                                                      // onClick={() => setShowMegaMenu(false)}
+                                                      onMouseDown={() => {
+                                                        dispatch(setProgramId(prog.programId.toString()));
+                                                      }}
+                                                      onClick={() => {
+                                                        dispatch(setProgramId(prog.programId.toString()));
+                                                        setShowMegaMenu(false);
+                                                      }}
+                                                      to={`/program/${prog.programSlug}`}
+                                                      className="text-[15px] px-3 py-2 rounded-md text-[#212529] hover:text-[#ffb703] border border-white hover:border-[#ffb703] block"
+                                                    >
+                                                      {prog.programName}
+                                                    </Link>
+                                                  </li>
+                                                ))
+                                              : // CASE 2: disciplines (for all other ids)
+                                                type.disciplines.map((disc) => (
+                                                  <li key={disc.disciplineId}>
+                                                    <Link
+                                                      onClick={() => setShowMegaMenu(false)}
+                                                      to={`/${type.programFlagSlug}/${disc.disciplineSlug}`}
+                                                      state={{
+                                                        programTypeId: type.programFlagId,
+                                                        disciplineId: disc.disciplineId,
+                                                      }}
+                                                      className="text-[15px] px-3 py-2 rounded-md text-[#212529] hover:text-[#ffb703] border border-white hover:border-[#ffb703] block"
+                                                    >
+                                                      {disc.disciplineName}
+                                                    </Link>
+                                                  </li>
+                                                ))}
                                           </ul>
-
                                         </div>
                                       );
                                     })}
@@ -281,13 +256,11 @@ const Header = () => {
                               {programMenu
                                 .filter((type) => group.includes(type.programFlagName))
                                 .map((type) => {
-                                  const programFlagSlug = slugify(type.programFlagName);
-
                                   return (
                                     <div key={type.programFlagId}>
                                       <h3 className="font-medium text-sm p-2 rounded-lg bg-gray-100 text-[#0f4a85] border-b border-gray-300">
                                         <Link
-                                          to={`/${programFlagSlug}`}
+                                          to={`/${type.programFlagSlug}`}
                                           state={{ programTypeId: type.programFlagId }}
                                           onClick={() => setSideMenu(false)}
                                           className="hover:text-[#ffb703] block"
@@ -295,86 +268,42 @@ const Header = () => {
                                           {type.programFlagName}
                                         </Link>
                                       </h3>
-
-                                      {/* <ul className="ml-2 mt-1 space-y-1 list-none!">
-                                        {type.programs.length > 0 ? (
-                                          type.programs.map((prog) => (
-                                            <li key={prog.programId}>
-                                              <Link
-                                                to={`/program/${slugify(prog.programName)}`}
-                                                // state={{ programTypeId: type.programFlagId, programId: prog.programId }}
-                                                onMouseDown={() => {
-                                                  dispatch(setProgramId(prog.programId.toString()))
-
-                                                }}
-                                                onClick={() => {
-                                                  dispatch(setProgramId(prog.programId.toString()))
-                                                  setSideMenu(false)
-                                                }}
-                                                // to={`/program/${slugify(prog.programName)}`}
-                                                className="text-sm px-3 py-2 text-[#212529] hover:text-[#ffb703] block hover:bg-gray-50 rounded"
-                                              // onClick={() => setSideMenu(false)}
-                                              >
-                                                {prog.programName}
-                                              </Link>
-                                            </li>
-                                          ))
-                                        ) : (
-                                          type.disciplines.map((disc) => (
-                                            <li key={disc.disciplineId}>
-                                              <Link
-                                                to={`/${programFlagSlug}/${slugify(disc.disciplineName)}`}
-                                                state={{
-                                                  programTypeId: type.programFlagId,
-                                                  disciplineId: disc.disciplineId
-                                                }}
-                                                className="text-sm px-3 py-2 text-[#212529] hover:text-[#ffb703] block hover:bg-gray-50 rounded"
-                                                onClick={() => setSideMenu(false)}
-                                              >
-                                                {disc.disciplineName}
-                                              </Link>
-                                            </li>
-                                          ))
-                                        )}
-                                      </ul> */}
                                       <ul className="ml-2 mt-1 space-y-1 list-none!">
-                                        {type.programFlagId === 7 ? (
-                                          // CASE 1: programs (only for id 7)
-                                          type.programs.map((prog) => (
-                                            <li key={prog.programId}>
-                                              <Link
-                                                to={`/program/${slugify(prog.programName)}`}
-                                                onMouseDown={() => {
-                                                  dispatch(setProgramId(prog.programId.toString()))
-                                                }}
-                                                onClick={() => {
-                                                  dispatch(setProgramId(prog.programId.toString()))
-                                                  setSideMenu(false)
-                                                }}
-                                                className="text-sm px-3 py-2 text-[#212529] hover:text-[#ffb703] block hover:bg-gray-50 rounded"
-                                              >
-                                                {prog.programName}
-                                              </Link>
-                                            </li>
-                                          ))
-                                        ) : (
-                                          // CASE 2: disciplines (for all other ids)
-                                          type.disciplines.map((disc) => (
-                                            <li key={disc.disciplineId}>
-                                              <Link
-                                                to={`/${programFlagSlug}/${slugify(disc.disciplineName)}`}
-                                                state={{
-                                                  programTypeId: type.programFlagId,
-                                                  disciplineId: disc.disciplineId
-                                                }}
-                                                className="text-sm px-3 py-2 text-[#212529] hover:text-[#ffb703] block hover:bg-gray-50 rounded"
-                                                onClick={() => setSideMenu(false)}
-                                              >
-                                                {disc.disciplineName}
-                                              </Link>
-                                            </li>
-                                          ))
-                                        )}
+                                        {type.programFlagId === 7
+                                          ? // CASE 1: programs (only for id 7)
+                                            type.programs.map((prog) => (
+                                              <li key={prog.programId}>
+                                                <Link
+                                                  to={`/program/${prog.programSlug}`}
+                                                  onMouseDown={() => {
+                                                    dispatch(setProgramId(prog.programId.toString()));
+                                                  }}
+                                                  onClick={() => {
+                                                    dispatch(setProgramId(prog.programId.toString()));
+                                                    setSideMenu(false);
+                                                  }}
+                                                  className="text-sm px-3 py-2 text-[#212529] hover:text-[#ffb703] block hover:bg-gray-50 rounded"
+                                                >
+                                                  {prog.programName}
+                                                </Link>
+                                              </li>
+                                            ))
+                                          : // CASE 2: disciplines (for all other ids)
+                                            type.disciplines.map((disc) => (
+                                              <li key={disc.disciplineId}>
+                                                <Link
+                                                  to={`/${type.programFlagSlug}/${disc.disciplineSlug}`}
+                                                  state={{
+                                                    programTypeId: type.programFlagId,
+                                                    disciplineId: disc.disciplineId,
+                                                  }}
+                                                  className="text-sm px-3 py-2 text-[#212529] hover:text-[#ffb703] block hover:bg-gray-50 rounded"
+                                                  onClick={() => setSideMenu(false)}
+                                                >
+                                                  {disc.disciplineName}
+                                                </Link>
+                                              </li>
+                                            ))}
                                       </ul>
                                     </div>
                                   );

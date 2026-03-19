@@ -18,7 +18,7 @@ const ProgramsSection: FC = () => {
   const [activeTab, setActiveTab] = useState<number | null>(null);
   const [selectedProgramType, setSelectedProgramType] = useState<number | null>(null);
   const [isMobile, setIsMobile] = useState(false);
-
+console.log(selectedProgramType,"<<<<< selectedProgramType");
   const { programType } = useSelector((state: RootState) => state.getProgramType);
   const { discipline, loading } = useSelector((state: RootState) => state.getDiscipline);
   const hasSkippedInitialDisciplineFetch = useRef(false);
@@ -68,9 +68,9 @@ const ProgramsSection: FC = () => {
     if (programType?.length && !selectedProgramType) {
       const defaultProgramType =
         programType.find((item: any) => item?.showOnHome) ?? programType[0];
-
+console.log(defaultProgramType,"<<<<< defaultProgramType");
       setActiveTab(defaultProgramType.programTypeId);
-      setSelectedProgramType(defaultProgramType.programTypeId);
+      setSelectedProgramType(defaultProgramType.slug);
     }
 
   }, [programType, selectedProgramType]);
@@ -93,7 +93,7 @@ const ProgramsSection: FC = () => {
       }
     }
 
-    dispatch(fetchProgramDiscipline({ programTypeId: selectedProgramType }));
+    dispatch(fetchProgramDiscipline({ programTypeSlug: selectedProgramType }));
 
   }, [discipline.length, dispatch, selectedProgramType]);
 
@@ -146,7 +146,7 @@ const ProgramsSection: FC = () => {
                       <button
                         onClick={() => {
                           setActiveTab(tab.programTypeId);
-                          setSelectedProgramType(tab.programTypeId);
+                          setSelectedProgramType(tab.slug);
                         }}
                         className={`w-full text-left uppercase hidden sm:flex gap-x-2 items-center text-nowrap text-white rounded-md py-5 md:pl-6 md:pr-16 mb-1 px-5 text-base md:text-[1.25rem] cursor-pointer transition-all
                         ${activeTab === tab.programTypeId
@@ -163,7 +163,7 @@ const ProgramsSection: FC = () => {
                       <button
                         onClick={() => {
                           setActiveTab(tab.programTypeId);
-                          setSelectedProgramType(tab.programTypeId);
+                          setSelectedProgramType(tab.slug);
                         }}
                         className="w-full text-left uppercase flex flex-col sm:hidden gap-2 px-2 items-center text-nowrap text-white rounded-md py-5 mb-1 text-xs cursor-pointer"
                       >
@@ -217,7 +217,7 @@ const ProgramsSection: FC = () => {
 
                             <Link
                               key={item.programDisciplineId}
-                              to="/admission/program-finder"
+                              to="/program-finder"
                               state={{
                                 programTypeId: selectedProgramType,
                                 disciplineId: item.programDisciplineId,
@@ -258,7 +258,7 @@ const ProgramsSection: FC = () => {
                           <li key={item.programDisciplineId} className="list-none">
 
                             <Link
-                              to={`/admission/program-finder`}
+                              to={`/program-finder`}
                               state={{
                                 programTypeId: selectedProgramType,
                                 disciplineId: item.programDisciplineId,

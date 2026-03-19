@@ -153,7 +153,7 @@ export const routes = [
         })),
       },
       {
-        path: "/approvals-and-associations",
+        path: "/recognition-approvals",
         element: <RecognitionApprovalsPage />,
       },
       {
@@ -177,7 +177,7 @@ export const routes = [
         element: <OragnisationStructurePage />,
       },
       {
-        path: "academics",
+        path: "institutes-info",
         element: <InstitutePage />,
 
         children: [
@@ -193,244 +193,240 @@ export const routes = [
             path: "department/:detailName",
             element: <DepartmentDetailPage />,
           },
-          {
-            path: "policies-reports",
-            element: <PoliciesReportsPage />,
-          },
-          {
-            path: "academic-calender",
-            element: <AcademicCalendarsPage />,
-          },
-          {
-            path: "teaching-learning-process",
-            element: <TeachingLearningProcessPage />,
-          },
-          {
-            path: "academic-depository-nad-and-abc",
-            element: <AcademicBankOfCreditPage />,
-          },
-
-          {
-            path: "e-content-development-cell",
-            element: <EContentCellPage />,
-          },
-
-          {
-            path: "swayam-nptel-local-chapter",
-            element: <SwayamNptelPage />,
-          },
-          {
-            path: "iirs-isro",
-            element: <IirsIsroPage />,
-          },
-          {
-            path: "curriculum-design",
-            element: <CurriculumDesignPage />,
-          },
         ],
       },
       {
-        path: "admission",
+        path: "academic-calendars",
+        element: <AcademicCalendarsPage />,
+      },
+      {
+        path: "policies-reports",
+        element: <PoliciesReportsPage />,
+      },
+
+      {
+        path: "teaching-learning-process",
+        element: <TeachingLearningProcessPage />,
+      },
+      {
+        path: "campus-life/academic-depository-nad-and-abc",
+        element: <AcademicBankOfCreditPage />,
+      },
+      {
+        path: "e-content-development-cell",
+        element: <EContentCellPage />,
+      },
+
+      {
+        path: "swayam-nptel-local-chapter",
+        element: <SwayamNptelPage />,
+      },
+      {
+        path: "iirs-isro",
+        element: <IirsIsroPage />,
+      },
+      {
+        path: "curriculum-design",
+        element: <CurriculumDesignPage />,
+      },
+      {
+        path: "admission-overview",
         element: <OverviewPage />,
+        children: [],
+      },
 
-        children: [
-          {
-            path: "how-to-apply",
-            element: <HowToApplyPage />,
-          },
-          {
-            path: "fee-structure",
-            element: <FeeStructurePage />,
-          },
-          {
-            path: "shift-schedule",
-            element: <ShiftSchedulePage />,
-          },
-          {
-            path: "document-checklist",
-            element: <DocumentChecklistPage />,
-          },
-          {
-            path: "admission-faq",
-            element: <AdmissionFaqPage />,
-          },
-          {
-            path: "admission-policy",
-            element: <AdmissionPolicyPage />,
-          },
-          {
-            path: "program-finder",
-            element: <AddmissionProgramFinderPage />,
-          },
-          {
-            path: "scholarship-scheme",
-            element: <ScholarshipPage />,
-          },
-        ],
+      {
+        path: "how-to-apply",
+        element: <HowToApplyPage />,
       },
       {
-        path: "/campus-life",
+        path: "program-finder",
+        element: <AddmissionProgramFinderPage />,
+      },
+      {
+        path: "fee-structure",
+        element: <FeeStructurePage />,
+      },
+      {
+        path: "scholarship-scheme",
+        element: <ScholarshipPage />,
+      },
+      {
+        path: "shift-schedule",
+        element: <ShiftSchedulePage />,
+      },
+      {
+        path: "document-checklist",
+        element: <DocumentChecklistPage />,
+      },
+      {
+        path: "admission-faqs",
+        element: <AdmissionFaqPage />,
+      },
+      {
+        path: "admission-policies",
+        element: <AdmissionPolicyPage />,
+      },
+      {
+        path: "/facilities",
         element: <CampusLifePage />,
+        children: [],
+      },
+      {
+        path: "central-library",
+        element: <CentralLibraryPage />,
+      },
+      {
+        path: "events",
+        element: <EventPage />,
 
         children: [
-          {
-            path: "transportation",
-            element: <TransportationPage />,
-          },
-          {
-            path: "hostel",
-            element: <HostelPage />,
-          },
-          {
-            path: "convocation",
-            element: <ConvocationPage />,
+          // Fest data
+          ...Object.values(festData).flatMap((fest) =>
+            fest.cards.map((card) => ({
+              path: card.routeKey,
+              element: <EventDetails card={card} />,
+            })),
+          ),
 
-            children: [
-              ...Object.values(convocationData).flatMap((item) =>
-                item.cards.map((card) => ({
-                  path: card.routeKey,
-                  element: <ConvocationDetailPage card={card} />,
-                })),
-              ),
-            ],
-          },
-          {
-            path: "central-library",
-            element: <CentralLibraryPage />,
-          },
+          ...conferenceData.conferences.map((card) => ({
+            path: card.routeKey,
+            element: <EventDetails card={card} />,
+          })),
 
-          {
-            path: "green-initiative",
-            element: <GreenInitiativePage />,
-          },
-          {
-            path: "women-empowerment",
-            element: <WomenEmpowermentPage />,
-          },
-          {
-            path: "student-senate",
-            element: <StudentSenatePage />,
-          },
-          {
-            path: "student-corner",
-            element: <StudentCornerPage />,
-          },
-          {
-            path: "outreach-activations",
-            element: <OutreachActivationsPage />,
-          },
-          {
-            path: "clubs",
-            element: <ClubsPage />,
-          },
-          {
-            path: "grievance-redressal-system",
-            element: <GrievanceRedressalSystemPage />,
-          },
-          {
-            path: "events",
-            element: <EventPage />,
+          ...conferenceData.seminars.map((card) => ({
+            path: card.routeKey,
+            element: <EventDetails card={card} />,
+          })),
 
-            children: [
-              // Fest data
-              ...Object.values(festData).flatMap((fest) =>
-                fest.cards.map((card) => ({
-                  path: card.routeKey,
-                  element: <EventDetails card={card} />,
-                })),
-              ),
+          ...Object.values(festivalsData).flatMap((festival) =>
+            festival.cards.map((card) => ({
+              path: card.routeKey,
+              element: <EventDetails card={card} />,
+            })),
+          ),
 
-              ...conferenceData.conferences.map((card) => ({
-                path: card.routeKey,
-                element: <EventDetails card={card} />,
-              })),
-
-              ...conferenceData.seminars.map((card) => ({
-                path: card.routeKey,
-                element: <EventDetails card={card} />,
-              })),
-
-              ...Object.values(festivalsData).flatMap((festival) =>
-                festival.cards.map((card) => ({
-                  path: card.routeKey,
-                  element: <EventDetails card={card} />,
-                })),
-              ),
-
-              ...tedxData.map((card) => ({
-                path: card.routeKey,
-                element: <EventDetails card={card} />,
-              })),
-            ],
-          },
+          ...tedxData.map((card) => ({
+            path: card.routeKey,
+            element: <EventDetails card={card} />,
+          })),
         ],
       },
       {
-        path: "/placements",
+        path: "clubs",
+        element: <ClubsPage />,
+      },
+      {
+        path: "convocation",
+        element: <ConvocationPage />,
+
+        children: [
+          ...Object.values(convocationData).flatMap((item) =>
+            item.cards.map((card) => ({
+              path: card.routeKey,
+              element: <ConvocationDetailPage card={card} />,
+            })),
+          ),
+        ],
+      },
+      {
+        path: "transportation",
+        element: <TransportationPage />,
+      },
+      {
+        path: "hostel",
+        element: <HostelPage />,
+      },
+
+      {
+        path: "green-initiative",
+        element: <GreenInitiativePage />,
+      },
+      {
+        path: "women-empowerment",
+        element: <WomenEmpowermentPage />,
+      },
+      {
+        path: "student-senate",
+        element: <StudentSenatePage />,
+      },
+      {
+        path: "student-corner",
+        element: <StudentCornerPage />,
+      },
+      {
+        path: "outreach-activations",
+        element: <OutreachActivationsPage />,
+      },
+
+      {
+        path: "grievance-redressal-system",
+        element: <GrievanceRedressalSystemPage />,
+      },
+      {
+        path: "/placement-overview",
         element: <PlacementPage />,
 
-        children: [
-          {
-            path: "placement-cell",
-            element: <PlacementCellPage />,
-          },
-          {
-            path: "student-testimonial",
-            element: <StudentTestimonialPage />,
-          },
-          {
-            path: "placement-policies",
-            element: <PlacementPoliciesPage />,
-          },
-          {
-            path: "alumni-registration",
-            element: <AlumniRegistrationPage />,
-          },
-          {
-            path: "notable-alumni",
-            element: <AlumniTestimonialsPage />,
-          },
-          {
-            path: "alumni-feedback",
-            element: <AlumniFeedbackPage />,
-          },
-        ],
+        children: [],
       },
-
       {
-        path: "/research",
+        path: "placements",
+        element: <PlacementCellPage />,
+      },
+      {
+        path: "all-testimonial",
+        element: <StudentTestimonialPage />,
+      },
+      {
+        path: "placement-policies",
+        element: <PlacementPoliciesPage />,
+      },
+      {
+        path: "alumni-registration",
+        element: <AlumniRegistrationPage />,
+      },
+      {
+        path: "notable-alumni",
+        element: <AlumniTestimonialsPage />,
+      },
+      {
+        path: "alumni-feedback",
+        element: <AlumniFeedbackPage />,
+      },
+      {
+        path: "/research-overview",
         element: <ResearchOverviewPage />,
 
         children: [
-          {
-            path: "process-and-initiatives",
-            element: <ProcessAndInitiativePage />,
-          },
-          {
-            path: "phd-notification-session",
-            element: <PhdNotificationSessionPage />,
-          },
-          {
-            path: "phd-offline-application",
-            element: <PhdOfflineApplicationPage />,
-          },
-          {
-            path: "innovation",
-            element: <InnovationPage />,
-          },
-          {
-            path: "consultancy",
-            element: <ConsultancyPage />,
-          },
-          {
-            path: "publication",
-            element: <PublicationPage />,
-          },
           {
             path: "conference/:name",
             element: <ConferenceDetailPage />,
           },
         ],
+      },
+      {
+        path: "process-and-initiatives",
+        element: <ProcessAndInitiativePage />,
+      },
+      {
+        path: "ph-d-notification-session-2025-26",
+        element: <PhdNotificationSessionPage />,
+      },
+      {
+        path: "phd-offline-application",
+        element: <PhdOfflineApplicationPage />,
+      },
+      {
+        path: "innovation",
+        element: <InnovationPage />,
+      },
+      {
+        path: "consultancy",
+        element: <ConsultancyPage />,
+      },
+      {
+        path: "publication",
+        element: <PublicationPage />,
       },
       {
         path: "admission-enquiry",
@@ -474,6 +470,167 @@ export const routes = [
       {
         path: "/terms-conditions",
         element: <TermsAndConditionPage />,
+      },
+      {
+        path: "/microbiology/undergraduate",
+        element: <AddmissionProgramFinderPage />,
+      },
+      {
+        path: "/nutrition-dietetics/undergraduate",
+        element: <AddmissionProgramFinderPage />,
+      },
+      {
+        path: "/artificial-intelligence/undergraduate",
+        element: <AddmissionProgramFinderPage />,
+      },
+      {
+        path: "/computer-science-engineering/undergraduate",
+        element: <AddmissionProgramFinderPage />,
+      },
+      {
+        path: "/computer-application/undergraduate",
+        element: <AddmissionProgramFinderPage />,
+      },
+      {
+        path: "/agriculture/undergraduate",
+        element: <AddmissionProgramFinderPage />,
+      },
+      {
+        path: "/bio-technology/undergraduate",
+        element: <AddmissionProgramFinderPage />,
+      },
+      {
+        path: "/engineering/undergraduate",
+        element: <AddmissionProgramFinderPage />,
+      },
+      {
+        path: "/management/undergraduate",
+        element: <AddmissionProgramFinderPage />,
+      },
+      {
+        path: "/commerce-and-economics/undergraduate",
+        element: <AddmissionProgramFinderPage />,
+      },
+      {
+        path: "/media-studies/undergraduate",
+        element: <AddmissionProgramFinderPage />,
+      },
+      {
+        path: "/legal-studies-law/undergraduate",
+        element: <AddmissionProgramFinderPage />,
+      },
+      {
+        path: "/pharmacy/undergraduate",
+        element: <AddmissionProgramFinderPage />,
+      },
+      {
+        path: "/allied-health-sciences/undergraduate",
+        element: <AddmissionProgramFinderPage />,
+      },
+      {
+        path: "/natural-sciences/undergraduate",
+        element: <AddmissionProgramFinderPage />,
+      },
+      {
+        path: "/humanities/undergraduate",
+        element: <AddmissionProgramFinderPage />,
+      },
+
+      {
+        path: "/artificial-intelligence/postgraduate",
+        element: <AddmissionProgramFinderPage />,
+      },
+      {
+        path: "/computer-science-engineering/postgraduate",
+        element: <AddmissionProgramFinderPage />,
+      },
+      {
+        path: "/computer-application/postgraduate",
+        element: <AddmissionProgramFinderPage />,
+      },
+      {
+        path: "/agriculture/postgraduate",
+        element: <AddmissionProgramFinderPage />,
+      },
+      {
+        path: "/bio-technology/postgraduate",
+        element: <AddmissionProgramFinderPage />,
+      },
+      {
+        path: "/engineering/postgraduate",
+        element: <AddmissionProgramFinderPage />,
+      },
+      {
+        path: "/management/postgraduate",
+        element: <AddmissionProgramFinderPage />,
+      },
+      {
+        path: "/commerce-and-economics/postgraduate",
+        element: <AddmissionProgramFinderPage />,
+      },
+      {
+        path: "/media-studies/postgraduate",
+        element: <AddmissionProgramFinderPage />,
+      },
+      {
+        path: "/legal-studies-law/postgraduate",
+        element: <AddmissionProgramFinderPage />,
+      },
+      {
+        path: "/natural-sciences/postgraduate",
+        element: <AddmissionProgramFinderPage />,
+      },
+      {
+        path: "/social-work/postgraduate",
+        element: <AddmissionProgramFinderPage />,
+      },
+      {
+        path: "/humanities/postgraduate",
+        element: <AddmissionProgramFinderPage />,
+      },
+      {
+        path: "/computer-science-engineering/integrated",
+        element: <AddmissionProgramFinderPage />,
+      },
+      {
+        path: "/bio-technology/integrated",
+        element: <AddmissionProgramFinderPage />,
+      },
+      {
+        path: "/engineering/integrated",
+        element: <AddmissionProgramFinderPage />,
+      },
+      {
+        path: "/legal-studies-law/integrated",
+        element: <AddmissionProgramFinderPage />,
+      },
+      {
+        path: "/polytechnic-lateral/polytechnic-diploma",
+        element: <AddmissionProgramFinderPage />,
+      },
+      {
+        path: "/polytechnic/polytechnic-diploma",
+        element: <AddmissionProgramFinderPage />,
+      },
+      {
+        path: "/artificial-intelligence/industry-honors1",
+        element: <AddmissionProgramFinderPage />,
+      },
+      {
+        path: "/computer-science-engineering/industry-honors1",
+        element: <AddmissionProgramFinderPage />,
+      },
+      {
+        path: "/computer-application/industry-honors1",
+        element: <AddmissionProgramFinderPage />,
+      },
+      {
+        path: "/engineering/industry-honors1",
+        element: <AddmissionProgramFinderPage />,
+      },
+      {
+        path: "/management/industry-honors1",
+        element: <AddmissionProgramFinderPage />,
       },
     ],
   },

@@ -24,7 +24,7 @@ export const pageBackgrounds: Record<string, string> = {
   notice: noticeBanner,
   "campus-life/green-initiative": greenInitive,
   "campus-life": campuslifebreadcrumbbg,
-  "admission/program-finder": programFinderBanner,
+  "program-finder": programFinderBanner,
   "admission/shift-schedule": shiftSchedule,
   placements: placementbreadcrumbbg,
   blogs: blogsbreadcrumbbg,

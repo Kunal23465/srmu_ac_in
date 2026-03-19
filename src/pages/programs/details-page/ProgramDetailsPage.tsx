@@ -3,9 +3,6 @@ import ProgramDetails from "../../../components/programs/program-details/Program
 
 const ProgramDetailsPage = () => {
 
-
-
-
   return <>
 
     <ProgramDetails />

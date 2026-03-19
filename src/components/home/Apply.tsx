@@ -25,13 +25,13 @@ const Apply: React.FC = () => {
 
   const dynamicAccordionData = data?.map((item: any, index: number) => ({
     id: index,
-    title: item.name,
+    title: item.displayTitle,
     imgSrc: item.imagePath || img1, // fallback image
     programTypeId: item.programFlagId,
     content: (
       <>
         <p className="text-[#333] font-normal">{getShortText(item.brief, 22)}</p>
-        <Link to={`/${slugify(item.name)}`} state={{ programTypeId: item.programFlagId }} className="text-[#ffb703] font-medium">
+        <Link to={`/${item.slug}`} state={{ programTypeId: item.programFlagId }} className="text-[#ffb703] font-medium">
           Read More
         </Link>
       </>

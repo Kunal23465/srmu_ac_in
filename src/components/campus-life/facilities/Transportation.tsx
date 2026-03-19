@@ -28,7 +28,7 @@ const Transportation = () => {
             to navigate the expansive university grounds efficiently.
           </p>
           <Link
-            to="/campus-life/transportation"
+            to="/transportation"
             className="bg-[#233E6F] hover:bg-white hover:text-[#233E6F] hover:border hover:border-[#233E6F] cursor-pointer text-white px-6 py-3 transition-all duration-500 lg:text-[13px] md:text-[12.195px] sm:text-[11.382px] text-[11.382px] uppercase rounded-lg flex items-center gap-2 mt-4 w-max"
           >
             Read More <FaArrowRightLong />

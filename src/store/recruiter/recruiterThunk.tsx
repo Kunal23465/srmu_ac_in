@@ -3,7 +3,7 @@ import { API } from "../../apis/axiosinstance";
 
 
 export interface ProgramFinderParams {
-    programId?: number | string;
+    slug?: string | undefined;
 }
 
 export const fetchRecruiterById = createAsyncThunk("data/fetchRecruiter", async (params?: ProgramFinderParams) => {

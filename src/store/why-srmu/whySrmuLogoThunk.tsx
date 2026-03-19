@@ -3,7 +3,7 @@ import { API } from "../../apis/axiosinstance";
 
 
 export interface ProgramFinderParams {
-    programId?: number | string;
+    slug?: string | undefined;
 }
 
 export const fetchWhySrmuLogoById = createAsyncThunk("data/whySrmuLogo", async (params?: ProgramFinderParams) => {

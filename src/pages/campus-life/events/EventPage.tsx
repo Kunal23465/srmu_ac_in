@@ -5,7 +5,7 @@ import { Helmet } from "react-helmet-async";
 const EventPage = () => {
   const location = useLocation();
 
-  const isRootEventsPage = location.pathname === "/campus-life/events";
+  const isRootEventsPage = location.pathname === "/events";
 
   return (
     <div>

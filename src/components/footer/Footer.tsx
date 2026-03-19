@@ -60,12 +60,12 @@ export const footerData = {
     {
       id: 0,
       title: "How to Apply",
-      path: "admission/how-to-apply",
+      path: "how-to-apply",
     },
     {
       id: 1,
       title: "Program Finder",
-      path: "/admission/program-finder",
+      path: "/program-finder",
     },
     {
       id: 2,

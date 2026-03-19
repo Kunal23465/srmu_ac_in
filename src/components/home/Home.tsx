@@ -4,7 +4,8 @@ import MemorialCollege from "./MemorialCollege";
 import InnovationCulture from "./InnovationCulture";
 import Apply from "./Apply";
 import Events from "./Events";
-const ProgramsSection = React.lazy(() => import("./ProgramSection"));
+// const ProgramsSection = React.lazy(() => import("./ProgramSection"));
+const ProgramsSectionStatic = React.lazy(() => import("./ProgramSectionStatic"));
 const AlumniSlider = React.lazy(() => import("./NotableAlumni"));
 const FlickeringSection = React.lazy(() => import("./FlickeringSection"));
 const TestimonialSlider = React.lazy(() => import("./TestimonialSlider"));
@@ -14,13 +15,15 @@ const MobilePlacements = React.lazy(() => import("./MobilePlacements"));
 import CustomTopFooter from "../../utils/custom/CustomTopFooter";
 import { CustomTopFooterAbout } from "../../data/about/aboutusData";
 
+
 const Home: React.FC = () => {
   return (
     <div>
       <Banner />
       <MemorialCollege />
       <Suspense fallback={<div className="text-center bg-gray-100 py-8 rounded-lg my-5">Loading...</div>}>
-        <ProgramsSection />
+        {/* <ProgramsSection /> */}
+        <ProgramsSectionStatic />
       </Suspense>
       <Apply />
       <InnovationCulture />
