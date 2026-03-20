@@ -5,7 +5,7 @@ import vissionImg from "../../../../assets/images/academics/departments/dept-mis
 import { counterDataType } from "../../../home/counterData";
 import { InstituteProfile } from "../../../../types/profile-data-type";
 
-import professor from "../../../../assets/images/academics/departments/shobhit-sinha-1-1--05052510362381.jpeg";
+import professor from "../../../../assets/images/academics/departments/csis/dr.-bineet-gupta.jpg";
 import { departmentHighlightscardType, FeeTableData } from "../faculty-of-civil-engineering/faculty-of-civil-engineering-data";
 import { FacultyItem } from "../../../../utils/custom/CustomFacultyListCard";
 import { EventItem } from "../../../../utils/custom/CustomEventListCard";
@@ -106,8 +106,8 @@ export const instituteProfilesCSIS: InstituteProfile[] = [
 
 
 
-export const counterDataFor2Csis = {
-  counterData: [
+export const counterDataFor2Csis: counterDataType[] = 
+  [
     {
       id: 1,
       icon: "",
@@ -129,8 +129,7 @@ export const counterDataFor2Csis = {
       suffix: "",
       label: "Conference & Seminars",
     },
-  ],
-};
+  ];
 
 
 export const csisIndustryIntegratedFeeTable: FeeTableData = {

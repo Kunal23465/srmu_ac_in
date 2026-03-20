@@ -44,8 +44,8 @@ export const InstituteofMediaStudiesCounterData1: counterDataType[] = [
   { id: 3, value: "200", suffix: "", label: "Students" },
 ];
 
-export const InstituteofMediaStudiesCounterData2 = {
-  counterData: [
+export const InstituteofMediaStudiesCounterData2: counterDataType[] = 
+ [
     {
       id: 1,
       icon: "",
@@ -68,12 +68,7 @@ export const InstituteofMediaStudiesCounterData2 = {
       label: "Conference & Seminars"
     },
 
-  ],
-
-  // Optional classes (can be null or ignored if unused)
-  classes: "",
-  aboutusClass: ""
-};
+  ];
 
 
 export const InstituteofMediaStudiesVMData = [

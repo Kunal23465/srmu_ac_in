@@ -161,7 +161,7 @@ export const institutes: Institute[] = [
     title: "Institute of Biosciences and Technology",
     description:
       "Biotechnology encompasses the applications of understanding of the biological systems to improve human life by addressing challenges and issues facing agricultural sciences, medical sciences, food sciences, etc.",
-    departments: 2,
+    departments: 3,
     image: instituteofbio,
     path: "/institute-of-biosciences-and-technology",
     departmentsData: {

@@ -44,8 +44,8 @@ export const InstituteofPharmaceuticalSciencesCounterData1: counterDataType[] = 
 ];
 
 
-export const InstituteofPharmaceuticalSciencesCounterData2 = {
-  counterData: [
+export const InstituteofPharmaceuticalSciencesCounterData2: counterDataType[] = 
+ [
     {
       id: 1,
       icon: "",
@@ -68,12 +68,7 @@ export const InstituteofPharmaceuticalSciencesCounterData2 = {
       label: "Conference & Seminars"
     },
 
-  ],
-
-  // Optional classes (can be null or ignored if unused)
-  classes: "",
-  aboutusClass: ""
-};
+  ];
 
 
 export const InstituteofPharmaceuticalSciencesVMData = [

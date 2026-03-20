@@ -240,7 +240,7 @@ export const commerceAndEconomicsFeeData1: FeeTableData = {
 };
 
 
-export const facultyData: FacultyItem[] = [
+export const facultyDataCommerceAndEconomics: FacultyItem[] = [
   {
     id: 1,
     name: "Ms.Avantika Tripathi",
@@ -414,8 +414,7 @@ export const departmentHighlights: departmentHighlightscardType[] = [
       "Department has strong corporate linkages with firms operating in the field of finance and accounting resulting in lucrative internship and placement opportunities.",
   },
 ];
-export const counterData2 = {
-  counterData: [
+export const counterData2: counterDataType[] =  [
     {
       id: 1,
       icon: "",
@@ -437,8 +436,7 @@ export const counterData2 = {
       suffix: "",
       label: "Conference & Seminars",
     },
-  ],
-};
+  ];
 export interface Headers {
   name: string;
   program: string;
@@ -485,7 +483,7 @@ export const instituteCourseCardData: CustomInstituteCourseCardProps[] = [
   {
     imageUrl: courseImg1,
     departmentName: "Faculty of Commerce and Economics",
-    path: "/faculty-of-commerce-and-economics",
+    path: "faculty-of-commerce-and-economics",
     departmentDetails: {
       overviewData: commerceAndEconomicsOverviewData,
       counterData: counterDataForFacultyCommerce,
@@ -495,7 +493,7 @@ export const instituteCourseCardData: CustomInstituteCourseCardProps[] = [
         tab1: { label: "Postgraduate", data: commerceAndEconomicsFeeData },
         tab2: { label: "Undergraduate", data: commerceAndEconomicsFeeData1 },
       },
-      facultyData: facultyData,
+      facultyData: facultyDataCommerceAndEconomics,
       departmentHighlightsData: departmentHighlights,
       counterData2: counterData2,
       placedStudentsData: placedStudents,
@@ -504,7 +502,7 @@ export const instituteCourseCardData: CustomInstituteCourseCardProps[] = [
   {
     imageUrl: courseImg2,
     departmentName: "Faculty Of Management",
-    path: "/faculty-of-management",
+    path: "faculty-of-management",
     departmentDetails: {
       overviewData: managementOverviewData,
       counterData: counterDataForFacultyManagement,

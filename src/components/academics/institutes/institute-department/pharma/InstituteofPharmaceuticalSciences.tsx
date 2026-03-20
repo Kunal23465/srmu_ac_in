@@ -20,6 +20,8 @@ import CustomInstituteProfileCard from "../../../../../utils/custom/CustomInstit
 import CustomDepartmentSlider from "../../../../../utils/custom/CustomDepartmentSlider";
 import CustomFacultyListCard from "../../../../../utils/custom/CustomFacultyListCard";
 import facilitiesBg from "../../../../../assets/images/academics/departments/facilities-bg-lg.jpeg";
+import PlacedStudents from "../electricalAndElectronics/PlacedStudents";
+import { DepartmentOfElectricalAndElectronicsPlacedStudents } from "../../../../../data/academics/institute/department-of-electrical-and-electronics-engineering-data";
 
 const InstituteofPharmaceuticalSciences: React.FC = () => {
   const items = [
@@ -43,6 +45,11 @@ const InstituteofPharmaceuticalSciences: React.FC = () => {
           //@ts-ignore
           aboutusClass={InstituteofPharmaceuticalSciencesCounterData1.aboutusClass}
         /> */}
+
+        <Counter
+          counterData={InstituteofPharmaceuticalSciencesCounterData1}
+          classes="counter"
+        />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12  my-15">
           {InstituteofPharmaceuticalSciencesVMData.map((item) => (
             <CustomDepartmentVissionMission key={item.id} data={item} />
@@ -76,15 +83,15 @@ const InstituteofPharmaceuticalSciences: React.FC = () => {
           data={InstituteofPharmaceuticalSciencesfacultyData}
           renderCard={({ item }) => <CustomFacultyListCard item={item} />}
           bgImage={facilitiesBg}
-   
+
           headingColor="#ffffff"
           descriptionColor="#e5e5e5"
-       
-         
+
+
           breakpoints={{ desktop: 4, tablet: 3, mobile: 1 }}
         />
       </div>
-      <div className={`${Classes["container"]}`}></div>
+      {/* <div className={`${Classes["container"]}`}></div>
       <div className="pt-15 bg-[#ecf0f9]">
         <div className={`${Classes["container"]}`}>
           <h1 className="text-5xl pb-5 font-medium">Placed Students</h1>
@@ -98,7 +105,29 @@ const InstituteofPharmaceuticalSciences: React.FC = () => {
             aboutusClass={InstituteofPharmaceuticalSciencesCounterData2.aboutusClass}
           />
         </div>
-      </div>
+      </div> */}
+
+      {/* <section className="bg-[#edf0f9] py-14">
+        <div className={`${Classes["container"]} bg-[#edf0f9]`}>
+          <h1 className="text-3xl font-semibold mb-3">Placed Students</h1>
+          <p className="text-sm ">
+            With 2000+ Job Offers given by 250+ Top corporates, an average
+            package of 4.5 LPA and 100%* placement record in different
+            professional programs, SRMU provides the best return on investment.
+            More than 30% students have multiple job offers.
+          </p>
+         
+        </div>
+      </section> */}
+
+       <section className="bg-[#edf0f9] py-14">
+            <div className={`${Classes["container"]} bg-[#edf0f9]`}>
+              <PlacedStudents placedStudents={DepartmentOfElectricalAndElectronicsPlacedStudents} counterData={InstituteofPharmaceuticalSciencesCounterData2} />
+            </div>
+          </section>
+
+
+
 
       <CustomTopFooter data={InstituteofPharmaceuticalSciencesTopFooterData} />
     </div>

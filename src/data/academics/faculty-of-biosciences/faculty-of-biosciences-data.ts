@@ -47,6 +47,32 @@ export const counterDataFoFacultyOfBiosciencess: counterDataType[] = [
   { id: 3, value: "820", suffix: "", label: "Students" },
 ];
 
+
+export const counterDataForPlacedStudentsOFBioscience: counterDataType[] = 
+   [
+    {
+      id: 1,
+      icon: "",
+      value: "125",
+      suffix: "",
+      label: "Guest lectures",
+    },
+    {
+      id: 2,
+      icon: "",
+      value: "50",
+      suffix: "",
+      label: "Field Visits",
+    },
+    {
+      id: 3,
+      icon: "",
+      value: "15",
+      suffix: "",
+      label: "Conference & Seminars",
+    },
+  ];
+
 export const facultyOfBiosciencesVMData = [
   {
     id: 1,
@@ -262,31 +288,7 @@ export const facultyDetailsOfBioScienceDepartment: FacultyItem[] = [
   },
 ];
 
-export const counterDataForPlacedStudentsOFBioscience = {
-  counterData: [
-    {
-      id: 1,
-      icon: "",
-      value: "125",
-      suffix: "",
-      label: "Guest lectures",
-    },
-    {
-      id: 2,
-      icon: "",
-      value: "50",
-      suffix: "",
-      label: "Field Visits",
-    },
-    {
-      id: 3,
-      icon: "",
-      value: "15",
-      suffix: "",
-      label: "Conference & Seminars",
-    },
-  ],
-};
+
 export const bioscienceHighlightsData: departmentHighlightscardType[] = [
   {
     image: studentsupport,

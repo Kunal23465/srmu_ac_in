@@ -291,8 +291,8 @@ export const managementDepartmentHighlights: departmentHighlightscardType[] = [
             "100% placement record with more than 30% students having multiple job offers in management, department provides the best return on investment.",
     },
 ];
-export const managementCounterData2 = {
-    counterData: [
+export const managementCounterData2: counterDataType[] = 
+ [
         {
             id: 1,
             icon: "",
@@ -314,8 +314,7 @@ export const managementCounterData2 = {
             suffix: "",
             label: "Conference & Seminars",
         },
-    ],
-};
+    ];
 export interface Headers {
     name: string;
     program: string;

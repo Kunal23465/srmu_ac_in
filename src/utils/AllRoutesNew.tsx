@@ -10,7 +10,7 @@ import ShiftSchedulePage from "../pages/admissions/shift-schedule/ShiftScheduleP
 import AboutPage from "../pages/about/AboutPage";
 import NewsEventDetails from "../components/home/NewsEventDetails";
 import ProgramDetailsPage from "../pages/programs/details-page/ProgramDetailsPage";
-import ProgramTypePage from "../pages/programs/ProgramTypePage/ProgramTypePage";
+// import ProgramTypePage from "../pages/programs/ProgramTypePage/ProgramTypePage";
 import ProgramTypeItemPage from "../pages/ProgramTypeItemPage";
 import LeadershipAndGovernancePage from "../pages/about/Leadership-and-Governance/LeadershipAndGovernancePage";
 import CommitteeAndCellsPage from "../pages/about/Committee-and-Cells/CommitteeAndCellsPage";
@@ -97,6 +97,16 @@ import FacultyOfCivilEngineeringPage from "../pages/academics/institutes/institu
 import DepartmentOfElectricalAndElectronicsEngineeringPage from "../pages/academics/institutes/institute-department/DepartmentOfElectricalAndElectronicsEngineeringPage";
 import FacultyOfMechanicalEngineeringPage from "../pages/academics/institutes/institute-department/FacultyOfMechanicalEngineeringPage";
 import FacultyOfAlliedHealthSciencesPage from "../pages/academics/institutes/institute-department/FacultyOfAlliedHealthSciencesPage";
+import FacultyOfBiosciencesPage from "../pages/academics/institutes/institute-department/FacultyOfBiosciencesPage";
+import FacultyOfBiotechnologyPage from "../pages/academics/institutes/institute-department/FacultyOfBiotechnologyPage";
+import FacultyOfHumanitiesAndSocialSciencesPage from "../pages/academics/institutes/institute-department/FacultyOfHumanitiesAndSocialSciencesPage";
+import FacultyOfMathematicalAndStatisticalSciencesPage from "../pages/academics/institutes/institute-department/FacultyOfMathematicalAndStatisticalSciencesPage";
+import FacultyOfPhysicalSciencesPage from "../pages/academics/institutes/institute-department/FacultyOfPhysicalSciencesPage";
+import DepartmentOfComputerScienceAndEngineeringPage from "../pages/academics/institutes/institute-department/DepartmentOfComputerScienceAndEngineeringPage";
+import DepartmentOfComputerScienceAndInformationSystemsPage from "../pages/academics/institutes/institute-department/DepartmentOfComputerScienceAndInformationSystemsPage";
+import FacultyOfCommerceAndEconomicsPage from "../pages/academics/institutes/institute-department/FacultyOfCommerceAndEconomicsPage";
+import FacultyOfManagementPage from "../pages/academics/institutes/institute-department/FacultyOfManagementPage";
+import FacultyOfChemicalSciencesPage from "../pages/academics/institutes/institute-department/FacultyOfChemicalSciencesPage";
 
 export function AllRoutesNew() {
   const element = useRoutes(routes);
@@ -734,7 +744,60 @@ export const routes = [
 
       },
 
-     
+      {
+        path: "/faculty-of-biosciences",
+        element: <FacultyOfBiosciencesPage />,
+
+      },
+      {
+        path: "/faculty-of-biotechnology",
+        element: <FacultyOfBiotechnologyPage />,
+
+      },
+
+
+      {
+        path: "/faculty-of-humanities-and-social-sciences",
+        element: <FacultyOfHumanitiesAndSocialSciencesPage />,
+
+      },
+      {
+        path: "/faculty-of-mathematical-and-statistical-sciences",
+        element: <FacultyOfMathematicalAndStatisticalSciencesPage />,
+
+      },
+      {
+        path: "/faculty-of-physical-sciences",
+        element: <FacultyOfPhysicalSciencesPage />,
+
+      },
+      {
+        path: "/department-of-computer-science-and-engineering",
+        element: <DepartmentOfComputerScienceAndEngineeringPage />,
+
+      },
+
+      {
+        path: "/department-of-computer-science-and-information-systems",
+        element: <DepartmentOfComputerScienceAndInformationSystemsPage />,
+
+      },
+
+      {
+        path: "/faculty-of-commerce-and-economics",
+        element: <FacultyOfCommerceAndEconomicsPage />,
+
+      },
+      {
+        path: "/faculty-of-management",
+        element: <FacultyOfManagementPage />,
+
+      },
+      {
+        path: "/faculty-of-chemical-sciences",
+        element: <FacultyOfChemicalSciencesPage />,
+
+      },
     ],
   },
   {
