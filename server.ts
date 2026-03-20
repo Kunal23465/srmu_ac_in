@@ -42,22 +42,22 @@ async function createServer() {
   const app = express();
   app.use(compression());
   // ✅ Redirect www → non-www
-  app.use((req, res, next) => {
-    const host = req.headers.host;
+  // app.use((req, res, next) => {
+  //   const host = req.headers.host;
 
-    // Skip localhost / dev
-    if (!host || host.includes("localhost")) {
-      return next();
-    }
+  //   // Skip localhost / dev
+  //   if (!host || host.includes("localhost")) {
+  //     return next();
+  //   }
 
-    // If URL has www → redirect to non-www
-    if (host.startsWith("www.")) {
-      const newHost = host.replace("www.", "");
-      return res.redirect(301, `https://${newHost}${req.originalUrl}`);
-    }
+  //   // If URL has www → redirect to non-www
+  //   if (host.startsWith("www.")) {
+  //     const newHost = host.replace("www.", "");
+  //     return res.redirect(301, `https://${newHost}${req.originalUrl}`);
+  //   }
 
-    next();
-  });
+  //   next();
+  // });
   const httpServer = createHttpServer(app);
   const wellKnownDir = path.resolve(__dirname, "public/.well-known");
 
