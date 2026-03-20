@@ -48,8 +48,8 @@ export const FacultyOfMathematicalAndStatisticalSciencesCounterData1: counterDat
   { id: 2, value: "19", suffix: "", label: "Faculty & Staff" },
   { id: 3, value: "455", suffix: "", label: "Students" },
 ];
-export const FacultyOfMathematicalAndStatisticalSciencesCounterData2 = {
-  counterData: [
+export const FacultyOfMathematicalAndStatisticalSciencesCounterData2: counterDataType[] = 
+[
     {
       id: 1,
       icon: "",
@@ -71,12 +71,7 @@ export const FacultyOfMathematicalAndStatisticalSciencesCounterData2 = {
       suffix: "",
       label: "Conference & Seminars",
     },
-  ],
-
-  // Optional classes (can be null or ignored if unused)
-  classes: "",
-  aboutusClass: "",
-};
+  ];
 
 export const FacultyOfMathematicalAndStatisticalSciencesVMData = [
   {

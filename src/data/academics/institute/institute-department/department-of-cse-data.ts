@@ -471,6 +471,30 @@ export const cseundergraduateFeeTable: FeeTableData = {
 };
 
 
+export const counterDataForPlacedStudentsOFComputerScience: counterDataType[] =  [
+    {
+      id: 1,
+      icon: "",
+      value: "250",
+      suffix: "",
+      label: "Guest lectures",
+    },
+    {
+      id: 2,
+      icon: "",
+      value: "50",
+      suffix: "",
+      label: "Field Visits",
+    },
+    {
+      id: 3,
+      icon: "",
+      value: "20",
+      suffix: "",
+      label: "Conference & Seminars",
+    },
+  ];
+
 
 
 // faculty -cse

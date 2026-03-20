@@ -61,6 +61,31 @@ export const FacultyofHumanitiesandSocialSciencesCounterData1: counterDataType[]
   { id: 3, value: "625", suffix: "", label: "Students" },
 ];
 
+export const FacultyofHumanitiesandSocialSciencesCounterData2: counterDataType[] = 
+ [
+    {
+      id: 1,
+      icon: "",
+      value: "250",
+      suffix: "",
+      label: "Guest lectures",
+    },
+    {
+      id: 2,
+      icon: "",
+      value: "50",
+      suffix: "",
+      label: "Field Visits",
+    },
+    {
+      id: 3,
+      icon: "",
+      value: "20",
+      suffix: "",
+      label: "Conference & Seminars",
+    },
+  ];
+
 export const FacultyofHumanitiesandSocialSciencesVMData = [
   {
     id: 1,
@@ -187,35 +212,7 @@ export const FacultyofHumanitiesandSocialSciencesData2: FeeTableData = {
   ],
 };
 
-export const FacultyofHumanitiesandSocialSciencesCounterData2 = {
-  counterData: [
-    {
-      id: 1,
-      icon: "",
-      value: "250",
-      suffix: "",
-      label: "Guest lectures",
-    },
-    {
-      id: 2,
-      icon: "",
-      value: "50",
-      suffix: "",
-      label: "Field Visits",
-    },
-    {
-      id: 3,
-      icon: "",
-      value: "20",
-      suffix: "",
-      label: "Conference & Seminars",
-    },
-  ],
 
-  // Optional classes (can be null or ignored if unused)
-  classes: "",
-  aboutusClass: "",
-};
 
 export const FacultyOfHumanitiesAndSocialSciencesfacultyData: FacultyItem[] = [
   {

@@ -8,7 +8,11 @@ import {
   InstituteofMediaStudiesCounterData2,
   InstituteofMediaStudiesData1,
   InstituteofMediaStudiesData2,
+  InstituteofMediaStudiesDepartmentEventsData,
+  InstituteofMediaStudiesdepartmentHighlights,
+  InstituteofMediaStudiesfacultyData,
   InstituteofMediaStudiesOverviewData,
+  InstituteofMediaStudiesplacedStudents,
   InstituteofMediaStudiesProfiles,
   InstituteofMediaStudiesTopFooterData,
   InstituteofMediaStudiesVMData,
@@ -18,6 +22,14 @@ import CustomDepartmentVissionMission from "../../../../../utils/custom/CustomDe
 import CustomDepartmentFeeDetailsTable from "../../../../../utils/custom/CustomDepartmentFeeDetailsTable";
 import CustomTabs from "../../../../../utils/custom/CustomTabs";
 import CustomInstituteProfileCard from "../../../../../utils/custom/CustomInstituteProfileCard";
+import CustomDepartmentSlider from "../../../../../utils/custom/CustomDepartmentSlider";
+import CustomFacultyListCard from "../../../../../utils/custom/CustomFacultyListCard";
+import facilitiesBg from "../../../../../assets/images/academics/departments/maths/facilities-bg-lg.jpeg"
+import PlacedStudents from "../electricalAndElectronics/PlacedStudents";
+import CustomDepartmentHighlightCard from "../../../../../utils/custom/CustomDepartmentHighlightCard";
+import CustomDepartmentEventSlider from "../../../../../utils/custom/CustomDepartmentEventSlider";
+import CustomEventCard from "../../../../../utils/custom/CustomEventListCard";
+
 
 const InstituteofMediaStudies: React.FC = () => {
   const items = [
@@ -45,6 +57,11 @@ const InstituteofMediaStudies: React.FC = () => {
           // @ts-ignore
           aboutusClass={InstituteofMediaStudiesCounterData1.aboutusClass}
         /> */}
+
+        <Counter
+          counterData={InstituteofMediaStudiesCounterData1}
+          classes="counter"
+        />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12  mb-10">
           {InstituteofMediaStudiesVMData.map((item) => (
             // @ts-ignore
@@ -73,24 +90,26 @@ const InstituteofMediaStudies: React.FC = () => {
         />
 
         <div>
-          {/*  
-                <CustomDepartmentSlider
-                    heading="Faculty List"
-                    description="The University takes pride in recruiting distinguished faculty from reputed central universities and best institutes like- IIT, IIM, MNNIT and IIT-BHU. They bring to the classroom, passion and enthusiasm for teaching, providing an intimate, interactive, personalized approach to learning."
-                    data={InstituteofMediaStudiesfacultyData}
-                    renderCard={({ item }) => <CustomFacultyListCard item={item} />}
-                    bgImage={facilitiesBg}
-                    arrowColor="#fff"
- 
-                    // headingColor="#ffffff"
-                    descriptionColor="#e5e5e5"
- 
-                    arrowBorderColor="#0f4a85"
-                    // arrowBgColor="#fff2"
-                    breakpoints={{ desktop: 4, tablet: 3, mobile: 1 }}
-                /> */}
+
+        
         </div>      </div>
-      <div className="pt-15 bg-[#ecf0f9]">
+
+          <CustomDepartmentSlider
+            heading="Faculty List"
+            description="The University takes pride in recruiting distinguished faculty from reputed central universities and best institutes like- IIT, IIM, MNNIT and IIT-BHU. They bring to the classroom, passion and enthusiasm for teaching, providing an intimate, interactive, personalized approach to learning."
+            data={InstituteofMediaStudiesfacultyData}
+            renderCard={({ item }) => <CustomFacultyListCard item={item} />}
+            bgImage={facilitiesBg}
+            // arrowColor="#fff"
+
+            // headingColor="#ffffff"
+            descriptionColor="#e5e5e5"
+
+            // arrowBorderColor="#0f4a85"
+            // arrowBgColor="#fff2"
+            breakpoints={{ desktop: 4, tablet: 3, mobile: 1 }}
+          />
+      {/* <div className="pt-15 bg-[#ecf0f9]">
         <div className={`${Classes["container"]}`}>
           <h1 className="text-5xl pb-5 font-medium">Placed Students</h1>
           <p>
@@ -103,8 +122,35 @@ const InstituteofMediaStudies: React.FC = () => {
             aboutusClass={InstituteofMediaStudiesCounterData2.aboutusClass}
           />
 
+
         </div>
-      </div>
+      </div> */}
+      
+          <section className="bg-[#edf0f9] py-14">
+            <div className={`${Classes["container"]} bg-[#edf0f9]`}>
+              <PlacedStudents placedStudents={InstituteofMediaStudiesplacedStudents} counterData={InstituteofMediaStudiesCounterData2} />
+            </div>
+          </section>
+
+      <CustomDepartmentSlider
+        heading="Key Highlights of Our Department"
+        data={InstituteofMediaStudiesdepartmentHighlights}
+        renderCard={({ item }) => <CustomDepartmentHighlightCard item={item} />}
+        bgColor="#E7A615"
+        // arrowColor="#000"
+
+        breakpoints={{ desktop: 3, tablet: 2, mobile: 1 }}
+      />
+
+      <CustomDepartmentEventSlider
+        heading="Events of Department"
+        description="SRMU is committed to leveraging its facilities and the system to world-class standards, with a goal to provide the best academic professional resources, to prepare its students for global opportunities. This makes SRMU a repository of academic and extra-curricular excellence."
+        data={InstituteofMediaStudiesDepartmentEventsData}
+        renderCard={({ item }) => <CustomEventCard item={item} />}
+        bgColor="#ffffff"
+        arrowColor="#96a9c4"
+        arrowBorderColor="#0f4a85"
+      />
 
       <CustomTopFooter data={InstituteofMediaStudiesTopFooterData} />
     </div>

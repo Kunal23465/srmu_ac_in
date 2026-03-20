@@ -151,7 +151,7 @@ export const InstituteofNaturalSciencesandHumanitiesinstituteCourseCardData: Cus
   {
     imageUrl: courseImg2,
     departmentName: "Faculty of Chemical Sciences",
-    path: "institute-of-natural-sciences-and-humanities/faculty-of-chemical-sciences",
+    path: "faculty-of-chemical-sciences",
     departmentDetails: {
       overviewData: FacultyofChemicalSciencesOverviewData,
       counterData: FacultyofChemicalSciencesCounterData1,
@@ -171,7 +171,7 @@ export const InstituteofNaturalSciencesandHumanitiesinstituteCourseCardData: Cus
   {
     imageUrl: courseImg3,
     departmentName: "Faculty of Mathematical and Statistical Sciences",
-    path: "institute-of-natural-sciences-and-humanities/faculty-of-mathematical-and-statistical-sciences",
+    path: "faculty-of-mathematical-and-statistical-sciences",
     departmentDetails: {
       overviewData: FacultyOfMathematicalAndStatisticalSciencesOverviewData,
       counterData: FacultyOfMathematicalAndStatisticalSciencesCounterData1,
@@ -192,7 +192,7 @@ export const InstituteofNaturalSciencesandHumanitiesinstituteCourseCardData: Cus
   {
     imageUrl: courseImg4,
     departmentName: "Faculty of Humanities and Social Sciences",
-    path: "institute-of-natural-sciences-and-humanities/faculty-of-humanities-and-social-sciences",
+    path: "faculty-of-humanities-and-social-sciences",
     departmentDetails: {
       overviewData: FacultyofHumanitiesandSocialSciencesOverviewData,
       counterData: FacultyofHumanitiesandSocialSciencesCounterData1,

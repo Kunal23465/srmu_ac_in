@@ -9,7 +9,9 @@ import CustomDepartmentHighlightCard from "../../../utils/custom/CustomDepartmen
 import CustomDepartmentVissionMission from "../../../utils/custom/CustomDepartmentVissionMission";
 import facultybg from "../../../assets/images/placements/placement-overview/placementrecords.jpeg";
 import CustomDepartmentFeeDetailsTable from "../../../utils/custom/CustomDepartmentFeeDetailsTable";
+//@ts-ignore
 import CustomPlacedStudentTable, {
+    //@ts-ignore
     Headers,
     Student,
 } from "../../../utils/custom/CustomPlacedStudentTable";
@@ -63,11 +65,11 @@ const FacultyOfMechanicalEngineering = () => {
         },
     ];
 
-    const tableHeaders: Headers = {
-        name: "NAME OF STUDENT",
-        program: "PROGRAM",
-        company: "COMPANY",
-    };
+    // const tableHeaders: Headers = {
+    //     name: "NAME OF STUDENT",
+    //     program: "PROGRAM",
+    //     company: "COMPANY",
+    // };
 
     const placedStudents: Student[] = [
         {
@@ -454,7 +456,7 @@ const FacultyOfMechanicalEngineering = () => {
                 descriptionColor="#ffffff"
                 breakpoints={{ desktop: 4, tablet: 2, mobile: 1 }}
             />
-            <section className="bg-[#edf0f9] py-14">
+            {/* <section className="bg-[#edf0f9] py-14">
                 <div className={`${Classes["container"]} bg-[#edf0f9]`}>
                     <h1 className="text-3xl font-semibold mb-3">Placed Students</h1>
                     <p className="text-sm ">
@@ -472,7 +474,14 @@ const FacultyOfMechanicalEngineering = () => {
                         headers={tableHeaders}
                     />
                 </div>
+            </section> */}
+
+             <section className="bg-[#edf0f9] py-14">
+                <div className={`${Classes["container"]} bg-[#edf0f9]`}>
+                    <PlacedStudents placedStudents={placedStudents} counterData={counterDataForPlacedStudentsOFMechanicalEngineering} />
+                </div>
             </section>
+
             <CustomDepartmentSlider
                 heading="Key Highlights of Our Department"
                 description=""
@@ -484,12 +493,7 @@ const FacultyOfMechanicalEngineering = () => {
             />
 
 
-            <section className="bg-[#edf0f9] py-14">
-                <div className={`${Classes["container"]} bg-[#edf0f9]`}>
-                    <PlacedStudents placedStudents={placedStudents} counterData={counterDataForPlacedStudentsOFMechanicalEngineering} />
-                </div>
-            </section>
-
+           
             <CustomDepartmentEventSlider
                 heading="Events of Department"
                 description="SRMU is committed to leveraging its facilities and the system to world-class standards, with a goal to provide the best academic professional resources, to prepare its students for global opportunities. This makes SRMU a repository of academic and extra-curricular excellence."

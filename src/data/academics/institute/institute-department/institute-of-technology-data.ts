@@ -144,7 +144,7 @@ export const instituteofTechnologyCourseCardData: CustomInstituteCourseCardProps
   {
     imageUrl: courseImg5,
     departmentName: "Department of Computer Science and Information Systems",
-    path: "department-of-csis",
+    path: "department-of-computer-science-and-information-systems",
     departmentDetails: {
       overviewData: csISFacultyOverviewData,
       counterData: counterDataForFacultyCSIS,

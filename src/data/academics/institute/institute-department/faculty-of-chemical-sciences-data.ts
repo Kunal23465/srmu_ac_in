@@ -121,8 +121,7 @@ export const FacultyofChemicalSciencesData2: FeeTableData = {
   ],
 };
 
-export const FacultyofChemicalSciencesCounterData2 = {
-  counterData: [
+export const FacultyofChemicalSciencesCounterData2: counterDataType[] =  [
     {
       id: 1,
       icon: "",
@@ -144,12 +143,7 @@ export const FacultyofChemicalSciencesCounterData2 = {
       suffix: "",
       label: "Conference & Seminars",
     },
-  ],
-
-  // Optional classes (can be null or ignored if unused)
-  classes: "",
-  aboutusClass: "",
-};
+  ];
 export const PlacedStudentsDataOfFacultyChemicalScienceData: FacultyItem[] = [
   {
     id: 1,
