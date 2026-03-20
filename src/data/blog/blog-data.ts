@@ -11,6 +11,7 @@ export interface BlogCardType {
   longContent: string;
   postedOn?: string;
   blogId?: number;
+  slug?:string;
 }
 
 export const blogCards: BlogCardType[] = [

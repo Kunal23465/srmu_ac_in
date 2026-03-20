@@ -30,6 +30,8 @@ const BlogsPage: React.FC = () => {
     }
   }, [blogCards.length, dispatch]);
 
+  console.log("blogCards",blogCards)
+
   return (
     <>
       {location.pathname === parentPath ? (
