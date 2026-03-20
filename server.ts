@@ -4,6 +4,8 @@ import { createServer as createViteServer } from "vite";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import compression from "compression";
+import { minify } from "html-minifier-terser";
 
 const host = "0.0.0.0";
 const port = 3031;
@@ -38,6 +40,24 @@ if (!isProduction && process.env.SSR_ALLOW_INSECURE_TLS !== "false") {
 
 async function createServer() {
   const app = express();
+  app.use(compression());
+  // ✅ Redirect www → non-www
+  app.use((req, res, next) => {
+    const host = req.headers.host;
+
+    // Skip localhost / dev
+    if (!host || host.includes("localhost")) {
+      return next();
+    }
+
+    // If URL has www → redirect to non-www
+    if (host.startsWith("www.")) {
+      const newHost = host.replace("www.", "");
+      return res.redirect(301, `https://${newHost}${req.originalUrl}`);
+    }
+
+    next();
+  });
   const httpServer = createHttpServer(app);
   const wellKnownDir = path.resolve(__dirname, "public/.well-known");
 
@@ -73,6 +93,12 @@ async function createServer() {
     app.use(
       express.static(path.resolve(__dirname, "dist/client"), {
         index: false,
+        maxAge: "30d", // cache for 30 days
+        setHeaders: (res, filePath) => {
+          if (filePath.match(/\.(jpg|jpeg|png|gif|webp|svg)$/)) {
+            res.setHeader("Cache-Control", "public, max-age=2592000, immutable");
+          }
+        },
       }),
     );
   }
@@ -139,7 +165,19 @@ async function createServer() {
         .replace(`<!--app-html-->`, appHtml)
         .replace(`<!--preloaded-state-->`, `<script>window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, "\\u003c")}</script>`);
 
-      res.status(200).set({ "Content-Type": "text/html; charset=utf-8" }).end(html);
+      // ✅ Minify HTML
+      let finalHtml = html;
+
+      if (isProduction) {
+        finalHtml = await minify(html, {
+          collapseWhitespace: true,
+          removeComments: true,
+          minifyCSS: true,
+          minifyJS: true,
+        });
+      }
+
+      res.status(200).set({ "Content-Type": "text/html; charset=utf-8" }).end(finalHtml);
     } catch (e) {
       if (vite) vite.ssrFixStacktrace(e as Error);
       console.error(e);

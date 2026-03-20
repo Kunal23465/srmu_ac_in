@@ -9,7 +9,7 @@ const HomePage: React.FC = () => {
     <>
       <Helmet>
         <title>Shri Ramswaroop Memorial University | SRMU</title>
-        <meta name="description" content="Shri Ramswaroop Memorial University is located in Lucknow-Deva Road, Barabanki, Uttar Pradesh, India. SRMU takes pride in its excellent faculty hailing from leading central universities and premier institutes like IIT(s) and NIT(s) etc." />
+        <meta name="description" content="SRMU, one of the best universities in Lucknow, known for expert faculty, advanced learning, and excellent career opportunities." />
       </Helmet>
 
       {pathname === "/" ? <Home /> : <Outlet />}
