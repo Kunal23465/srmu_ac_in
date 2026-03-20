@@ -92,6 +92,7 @@ export default function DepartmentalVideo() {
 
                     <img
                       src={video.thumbnail}
+                      alt={`Video: ${video.title}`}
                       className={`w-full object-cover rounded-xl transition-all duration-300 ${isActive ? "lg:h-[400px]" : "h-[320px]"
                         }`}
                     />

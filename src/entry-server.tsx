@@ -210,8 +210,8 @@ async function preloadBlogsPageData(store: ReturnType<typeof createStore>) {
 }
 
 async function preloadPlacementOverviewPageData(store: ReturnType<typeof createStore>) {
-    await store.dispatch(fetchPlacementRecordTabData());
-    await store.dispatch(fetchPlacementDriveTabData());
+  await store.dispatch(fetchPlacementRecordTabData());
+  await store.dispatch(fetchPlacementDriveTabData());
   await store.dispatch(fetchPlacementRecordTabData());
 }
 

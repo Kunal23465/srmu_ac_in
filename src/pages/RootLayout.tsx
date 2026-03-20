@@ -30,7 +30,7 @@ const RootLayout: React.FC = () => {
   // RIGHT SIDE BAR SHOW/HIDE ON SCROLL
   useEffect(() => {
     if (typeof window === "undefined") return;
-    
+
     const handleScroll = () => {
       if (window.scrollY > 10) setShowRightBar(true);
       else setShowRightBar(false);
@@ -61,7 +61,7 @@ const RootLayout: React.FC = () => {
         rel="noopener noreferrer"
         className="fixed bottom-14 left-6  z-9999! rounded-full shadow-lg hover:scale-110 transition-all duration-300"
       >
-        <img src={whatsapp} className="w-14 h-14" />
+        <img src={whatsapp} alt="WhatsApp contact button" className="w-14 h-14" />
       </a>
 
       {/* ================= CHAT POPUP ================= */}
