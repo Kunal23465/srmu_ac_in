@@ -18,33 +18,33 @@ const PlacementDrives: React.FC = () => {
     (state: RootState) => state.getPlacementDriveTabData
   );
 
-  /* -------------------- FETCH API (ONLY ONCE) -------------------- */
+  /* -------------------- FETCH API -------------------- */
   useEffect(() => {
     dispatch(fetchPlacementDriveTabData());
   }, [dispatch]);
 
-  /* -------------------- YEARS (DESCENDING) -------------------- */
+  /* -------------------- YEARS -------------------- */
   const years = useMemo(() => {
     if (Array.isArray(data) && data.length > 0) {
-      return [...new Set(data.map((item) => item.year))].sort(
-        (a, b) => Number(b) - Number(a)
-      );
+      return [...new Set(data.map((item) => item.year))]
+        .filter(Boolean)
+        .sort((a, b) => Number(b) - Number(a));
     }
-    return ["2025", "2024", "2023"];
+    return [];
   }, [data]);
 
   /* -------------------- DEFAULT YEAR -------------------- */
   useEffect(() => {
-    if (years.length > 0 && !activeYear) {
-      setActiveYear(years[0]);
+    if (years.length > 0) {
+      setActiveYear((prev) => prev || years[0]);
     }
-  }, [years, activeYear]);
+  }, [years]);
 
-  /* -------------------- FILTER DATA BY YEAR -------------------- */
+  /* -------------------- FILTER DATA -------------------- */
   const students = useMemo(() => {
-    if (Array.isArray(data) && data.length > 0) {
+    if (Array.isArray(data) && data.length > 0 && activeYear) {
       return data
-        .filter((item) => item.year === activeYear)
+        .filter((item) => String(item.year) === String(activeYear))
         .sort(
           (a, b) =>
             new Date(b.dateOfVisit).getTime() -
@@ -145,15 +145,17 @@ const PlacementDrives: React.FC = () => {
             Placement Drives
           </h2>
 
+          {/* ✅ ALWAYS SHOW TABS */}
           <div className="flex items-center w-fit mb-2 bg-white rounded">
             {years.map((year) => (
               <button
                 key={year}
                 onClick={() => goToYear(year)}
                 className={`px-5 sm:px-10 py-3 font-semibold transition cursor-pointer
-                  ${activeYear === year
-                    ? "bg-yellow-400 text-black"
-                    : "text-black hover:bg-yellow-400"
+                  ${
+                    activeYear === year
+                      ? "bg-yellow-400 text-black"
+                      : "text-black hover:bg-yellow-400"
                   }`}
               >
                 {year}
@@ -217,9 +219,10 @@ const PlacementDrives: React.FC = () => {
             onClick={goToPrev}
             disabled={isPrevDisabled}
             className={`bg-white w-13 h-13 rounded-full border border-gray-200 cursor-pointer shadow-lg flex items-center justify-center transition
-              ${isPrevDisabled
-                ? "opacity-40 cursor-not-allowed"
-                : "hover:bg-[#ffb703] hover:text-white"
+              ${
+                isPrevDisabled
+                  ? "opacity-40 cursor-not-allowed"
+                  : "hover:bg-[#ffb703] hover:text-white"
               }`}
           >
             <MdKeyboardArrowLeft size={26} />
@@ -229,9 +232,10 @@ const PlacementDrives: React.FC = () => {
             onClick={goToNext}
             disabled={isNextDisabled}
             className={`bg-white w-13 h-13 rounded-full border border-gray-200 cursor-pointer shadow-lg flex items-center justify-center transition
-              ${isNextDisabled
-                ? "opacity-40 cursor-not-allowed"
-                : "hover:bg-[#ffb703] hover:text-white"
+              ${
+                isNextDisabled
+                  ? "opacity-40 cursor-not-allowed"
+                  : "hover:bg-[#ffb703] hover:text-white"
               }`}
           >
             <MdKeyboardArrowRight size={26} />
