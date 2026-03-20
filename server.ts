@@ -6,7 +6,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 
 const host = "0.0.0.0";
-const port = 5173;
+const port = 3031;
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
