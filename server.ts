@@ -30,7 +30,7 @@ function isDocumentRequest(req: express.Request) {
   return acceptHeader.includes("text/html");
 }
 
-// ⚠️ Allow insecure TLS ONLY in development
+
 if (!isProduction && process.env.SSR_ALLOW_INSECURE_TLS !== "false") {
   process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 }
@@ -42,10 +42,10 @@ async function createServer() {
 
   let vite: any;
 
-  // ✅ Enable compression (performance boost)
+
   app.use(compression());
 
-  // ✅ .well-known handling
+
   app.use(
     "/.well-known",
     express.static(wellKnownDir, {
@@ -59,7 +59,6 @@ async function createServer() {
   });
 
   if (!isProduction) {
-    // ================= DEV MODE =================
     vite = await createViteServer({
       server: {
         middlewareMode: true,
@@ -73,28 +72,28 @@ async function createServer() {
 
     app.use(vite.middlewares);
   } else {
-    // ================= PRODUCTION MODE =================
+   
 
     const clientDist = path.resolve(__dirname, "dist/client");
 
     app.use(
       express.static(clientDist, {
         index: false,
-        maxAge: "1y", // cache base
+        maxAge: "1y", 
 
         setHeaders: (res, filePath) => {
-          // ✅ Images (FIX for your error)
+         
           if (filePath.match(/\.(jpg|jpeg|png|gif|webp|svg)$/)) {
             res.setHeader("Cache-Control", "public, max-age=31536000, immutable");
             res.setHeader("Expires", new Date(Date.now() + 31536000000).toUTCString());
           }
 
-          // ✅ JS & CSS (long cache)
+         
           if (filePath.match(/\.(js|css)$/)) {
             res.setHeader("Cache-Control", "public, max-age=31536000, immutable");
           }
 
-          // ❗ HTML should NOT be cached
+       
           if (filePath.endsWith(".html")) {
             res.setHeader("Cache-Control", "no-cache");
           }
@@ -103,7 +102,7 @@ async function createServer() {
     );
   }
 
-  // ================= SSR HANDLER =================
+  
   app.use("*", async (req, res) => {
     if (!isDocumentRequest(req)) {
       res.status(404).type("text/plain").end("Not found");
@@ -117,14 +116,14 @@ async function createServer() {
       let render;
 
       if (!isProduction) {
-        // DEV
+   
         template = fs.readFileSync(path.resolve(__dirname, "index.html"), "utf-8");
 
         template = await vite.transformIndexHtml(url, template);
 
         render = (await vite.ssrLoadModule("/src/entry-server.tsx")).render;
       } else {
-        // PROD
+      
         template = fs.readFileSync(path.resolve(__dirname, "dist/client/index.html"), "utf-8");
 
         render = (await import("./dist/server/entry-server.js")).render;
@@ -170,7 +169,7 @@ async function createServer() {
   });
 
   httpServer.listen(port, host, () => {
-    console.log(`✅ SSR server running at http://${host}:${port}`);
+    console.log(` SSR server running at http://${host}:${port}`);
   });
 }
 
