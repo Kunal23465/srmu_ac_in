@@ -85,7 +85,6 @@ async function createServer() {
 
     const url = req.originalUrl;
 
-    
     try {
       let template;
       let render;
@@ -112,17 +111,31 @@ async function createServer() {
       // }
       let appHtml = "";
       let preloadedState = {};
+      let helmet: Record<string, any> = {};
       try {
         const result = await render(url);
         appHtml = result.appHtml;
         preloadedState = result.preloadedState;
+        helmet = (result as any).helmet || {};
         console.log("SSR OK, HTML length:", appHtml?.length || 0);
       } catch (err) {
         console.error("SSR ERROR:", err);
         // Fallback to basic HTML if SSR fails
         appHtml = '<div id="root"><div>Loading...</div></div>';
       }
+      const helmetHead = [
+        helmet.title?.toString(),
+        helmet.meta?.toString(),
+        helmet.link?.toString(),
+        helmet.style?.toString(),
+        helmet.script?.toString(),
+        helmet.noscript?.toString(),
+      ]
+        .filter(Boolean)
+        .join("");
+
       const html = template
+        .replace(`<!--helmet-head-->`, helmetHead)
         .replace(`<!--app-html-->`, appHtml)
         .replace(`<!--preloaded-state-->`, `<script>window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, "\\u003c")}</script>`);
 

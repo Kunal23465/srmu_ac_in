@@ -262,5 +262,9 @@ export async function render(url: string) {
 
   console.info(`[SSR] ${normalizedPathname} total=${totalDuration}ms global=${globalLayoutDuration}ms route=${routePreloadDuration}ms render=${renderToStringDuration}ms`);
 
-  return { appHtml, preloadedState: store.getState() };
+  return {
+    appHtml,
+    preloadedState: store.getState(),
+    helmet: helmetContext.helmet,
+  };
 }
