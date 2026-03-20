@@ -4,6 +4,7 @@ import { createServer as createViteServer } from "vite";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import compression from "compression";
 
 const host = "0.0.0.0";
 const port = 3031;
@@ -26,12 +27,10 @@ function isDocumentRequest(req: express.Request) {
   }
 
   const acceptHeader = req.headers.accept ?? "";
-
   return acceptHeader.includes("text/html");
 }
 
-// In local dev, some corporate/self-signed TLS chains can block SSR API calls.
-// Allow opt-in relaxed TLS via env (default true in non-production).
+// ⚠️ Allow insecure TLS ONLY in development
 if (!isProduction && process.env.SSR_ALLOW_INSECURE_TLS !== "false") {
   process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 }
@@ -43,6 +42,10 @@ async function createServer() {
 
   let vite: any;
 
+  // ✅ Enable compression (performance boost)
+  app.use(compression());
+
+  // ✅ .well-known handling
   app.use(
     "/.well-known",
     express.static(wellKnownDir, {
@@ -50,12 +53,13 @@ async function createServer() {
       index: false,
     }),
   );
+
   app.use("/.well-known", (_req, res) => {
     res.status(404).type("text/plain").end("Not found");
   });
 
   if (!isProduction) {
-    // DEV MODE
+    // ================= DEV MODE =================
     vite = await createViteServer({
       server: {
         middlewareMode: true,
@@ -69,14 +73,37 @@ async function createServer() {
 
     app.use(vite.middlewares);
   } else {
-    // PRODUCTION MODE
+    // ================= PRODUCTION MODE =================
+
+    const clientDist = path.resolve(__dirname, "dist/client");
+
     app.use(
-      express.static(path.resolve(__dirname, "dist/client"), {
+      express.static(clientDist, {
         index: false,
+        maxAge: "1y", // cache base
+
+        setHeaders: (res, filePath) => {
+          // ✅ Images (FIX for your error)
+          if (filePath.match(/\.(jpg|jpeg|png|gif|webp|svg)$/)) {
+            res.setHeader("Cache-Control", "public, max-age=31536000, immutable");
+            res.setHeader("Expires", new Date(Date.now() + 31536000000).toUTCString());
+          }
+
+          // ✅ JS & CSS (long cache)
+          if (filePath.match(/\.(js|css)$/)) {
+            res.setHeader("Cache-Control", "public, max-age=31536000, immutable");
+          }
+
+          // ❗ HTML should NOT be cached
+          if (filePath.endsWith(".html")) {
+            res.setHeader("Cache-Control", "no-cache");
+          }
+        },
       }),
     );
   }
 
+  // ================= SSR HANDLER =================
   app.use("*", async (req, res) => {
     if (!isDocumentRequest(req)) {
       res.status(404).type("text/plain").end("Not found");
@@ -97,32 +124,27 @@ async function createServer() {
 
         render = (await vite.ssrLoadModule("/src/entry-server.tsx")).render;
       } else {
-        // PRODUCTION
+        // PROD
         template = fs.readFileSync(path.resolve(__dirname, "dist/client/index.html"), "utf-8");
 
         render = (await import("./dist/server/entry-server.js")).render;
       }
-      // let appHtml = "";
-      // try {
-      //   appHtml = await render(url);
-      //   console.log("SSR OK");
-      // } catch (err) {
-      //   console.error("SSR ERROR:", err);
-      // }
+
       let appHtml = "";
       let preloadedState = {};
       let helmet: Record<string, any> = {};
+
       try {
         const result = await render(url);
         appHtml = result.appHtml;
         preloadedState = result.preloadedState;
         helmet = (result as any).helmet || {};
-        console.log("SSR OK, HTML length:", appHtml?.length || 0);
+        console.log("SSR OK:", url);
       } catch (err) {
         console.error("SSR ERROR:", err);
-        // Fallback to basic HTML if SSR fails
         appHtml = '<div id="root"><div>Loading...</div></div>';
       }
+
       const helmetHead = [
         helmet.title?.toString(),
         helmet.meta?.toString(),
@@ -148,7 +170,7 @@ async function createServer() {
   });
 
   httpServer.listen(port, host, () => {
-    console.log(`SSR server running at http://${host}:${port}`);
+    console.log(`✅ SSR server running at http://${host}:${port}`);
   });
 }
 

@@ -133,6 +133,7 @@ const MobilePlacements = () => {
                   >
 
                     {renderCounter(
+                      //@ts-ignore
                       item.title,
                       item.symbol,
                       "text-[44px] lg:text-[50px] font-semibold mb-2"
@@ -243,6 +244,7 @@ const MobilePlacements = () => {
                   >
 
                     {renderCounter(
+                      //@ts-ignore
                       item.title,
                       item.symbol,
                       "text-[44px] lg:text-[50px] font-semibold mb-2"

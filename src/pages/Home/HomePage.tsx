@@ -9,7 +9,7 @@ const HomePage: React.FC = () => {
     <>
       <Helmet>
         <title>Shri Ramswaroop Memorial University | SRMU</title>
-        <meta name="description" content="SRMU, one of the best universities in Lucknow, known for expert faculty, advanced learning, and excellent career opportunities." />
+        <meta name="description" content="SRMU, one of the best university in Lucknow, known for expert faculty, advanced learning, and excellent career opportunities." />
       </Helmet>
 
       {pathname === "/" ? <Home /> : <Outlet />}
