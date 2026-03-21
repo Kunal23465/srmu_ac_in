@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Classes from "../../utils/styles/Global.module.css";
 import { FaAngleRight } from "react-icons/fa";
-import img1 from "../../assets/images/home/apply-srmu1.jpg";
+import img1 from "../../assets/images/home/apply-srmu1.webp";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../store";

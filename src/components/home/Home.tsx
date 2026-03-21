@@ -1,58 +1,84 @@
 import React, { Suspense } from "react";
 import Banner from "./Banner";
 import MemorialCollege from "./MemorialCollege";
-import InnovationCulture from "./InnovationCulture";
 import Apply from "./Apply";
-import Events from "./Events";
-// const ProgramsSection = React.lazy(() => import("./ProgramSection"));
+import DeferredSection from "./DeferredSection";
+import DeferredSectionFallback from "./DeferredSectionFallback";
+import { CustomTopFooterAbout } from "../../data/about/aboutusData";
+import CustomTopFooter from "../../utils/custom/CustomTopFooter";
+
 const ProgramsSectionStatic = React.lazy(() => import("./ProgramSectionStatic"));
+const InnovationCulture = React.lazy(() => import("./InnovationCulture"));
+const Events = React.lazy(() => import("./Events"));
 const AlumniSlider = React.lazy(() => import("./NotableAlumni"));
 const FlickeringSection = React.lazy(() => import("./FlickeringSection"));
 const TestimonialSlider = React.lazy(() => import("./TestimonialSlider"));
 const DepartmentalVideoComponent = React.lazy(() => import("./DepartmentalVideoComponent"));
 const Placements = React.lazy(() => import("./Placements"));
 const MobilePlacements = React.lazy(() => import("./MobilePlacements"));
-import CustomTopFooter from "../../utils/custom/CustomTopFooter";
-import { CustomTopFooterAbout } from "../../data/about/aboutusData";
 
+const renderSectionFallback = (minHeight: number) => <DeferredSectionFallback minHeight={minHeight} />;
 
 const Home: React.FC = () => {
   return (
     <div>
       <Banner />
       <MemorialCollege />
-      <Suspense fallback={<div className="text-center bg-gray-100 py-8 rounded-lg my-5">Loading...</div>}>
-        {/* <ProgramsSection /> */}
-        <ProgramsSectionStatic />
-      </Suspense>
       <Apply />
-      <InnovationCulture />
-      <Events />
-      <Suspense fallback={<div className="text-center bg-gray-100 py-8 rounded-lg my-5">Loading...</div>}>
-        <FlickeringSection />
-      </Suspense>
-      <div className="hidden sm:block">
-        <Suspense fallback={<div className="text-center bg-gray-100 py-8 rounded-lg my-5">Loading...</div>}>
-          <Placements />
+      <DeferredSection minHeight={720} eagerOnIdle rootMargin="180px 0px" fallback={renderSectionFallback(720)}>
+        <Suspense fallback={renderSectionFallback(720)}>
+          <ProgramsSectionStatic />
         </Suspense>
-      </div>
-      <div className="sm:hidden">
-        <Suspense fallback={<div className="text-center bg-gray-100 py-8 rounded-lg my-5">Loading...</div>}>
-          <MobilePlacements />
+      </DeferredSection>
+      <DeferredSection minHeight={460} rootMargin="220px 0px" fallback={renderSectionFallback(460)}>
+        <Suspense fallback={renderSectionFallback(460)}>
+          <InnovationCulture />
         </Suspense>
-      </div>
-      <Suspense fallback={<div className="text-center bg-gray-100 py-8 rounded-lg my-5">Loading...</div>}>
-        <AlumniSlider />
-      </Suspense>
-      <div className="bg-[#ecf0f9]">
-        <Suspense fallback={<div className="text-center bg-gray-100 py-8 rounded-lg my-5">Loading...</div>}>
-          <TestimonialSlider />
+      </DeferredSection>
+      <DeferredSection minHeight={560} rootMargin="260px 0px" fallback={renderSectionFallback(560)}>
+        <Suspense fallback={renderSectionFallback(560)}>
+          <Events />
         </Suspense>
-      </div>
-      <Suspense fallback={<div className="text-center bg-gray-100 py-8 rounded-lg my-5">Loading...</div>}>
-        <DepartmentalVideoComponent />
-      </Suspense>
-      <CustomTopFooter data={CustomTopFooterAbout} />
+      </DeferredSection>
+      <DeferredSection minHeight={260} rootMargin="300px 0px" fallback={renderSectionFallback(260)}>
+        <Suspense fallback={renderSectionFallback(260)}>
+          <FlickeringSection />
+        </Suspense>
+      </DeferredSection>
+      <DeferredSection minHeight={560} rootMargin="320px 0px" fallback={renderSectionFallback(560)}>
+        <div className="hidden sm:block">
+          <Suspense fallback={renderSectionFallback(560)}>
+            <Placements />
+          </Suspense>
+        </div>
+        <div className="sm:hidden">
+          <Suspense fallback={renderSectionFallback(560)}>
+            <MobilePlacements />
+          </Suspense>
+        </div>
+      </DeferredSection>
+      <DeferredSection minHeight={420} rootMargin="320px 0px" fallback={renderSectionFallback(420)}>
+        <Suspense fallback={renderSectionFallback(420)}>
+          <AlumniSlider />
+        </Suspense>
+      </DeferredSection>
+      <DeferredSection minHeight={420} rootMargin="340px 0px" fallback={renderSectionFallback(420)}>
+        <div className="bg-[#ecf0f9]">
+          <Suspense fallback={renderSectionFallback(420)}>
+            <TestimonialSlider />
+          </Suspense>
+        </div>
+      </DeferredSection>
+      <DeferredSection minHeight={420} rootMargin="360px 0px" fallback={renderSectionFallback(420)}>
+        <Suspense fallback={renderSectionFallback(420)}>
+          <DepartmentalVideoComponent />
+        </Suspense>
+      </DeferredSection>
+      <DeferredSection minHeight={220} rootMargin="360px 0px" fallback={renderSectionFallback(220)}>
+        <Suspense fallback={renderSectionFallback(220)}>
+          <CustomTopFooter data={CustomTopFooterAbout} />
+        </Suspense>
+      </DeferredSection>
     </div>
   );
 };

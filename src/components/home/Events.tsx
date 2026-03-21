@@ -60,6 +60,8 @@ const NewsCard = ({ image, description, date, title, onReadMore }: any) => {
       <img
         src={image}
         alt="Event"
+        loading="lazy"
+        decoding="async"
         className="transition-all aspect-4/3 duration-200 rounded-md w-full max-w-[200px] xl:max-w-[300px] max-h-[400px] object-cover"
       />
 
@@ -120,6 +122,8 @@ const NewsCard1 = ({ image, description, date, title, onReadMore }: any) => {
       <img
         src={image}
         alt="Event"
+        loading="lazy"
+        decoding="async"
         className="transition-all duration-200 rounded-lg mb-4 w-full object-cover aspect-[5/3] object-bottom"
       />
 
@@ -130,9 +134,9 @@ const NewsCard1 = ({ image, description, date, title, onReadMore }: any) => {
           {date}
         </div>
 
-        <h1 className="text-sm sm:text-[20px] fw600 min-h-16 sm:min-h-auto">
+        <h3 className="text-sm sm:text-[20px] fw600 min-h-16 sm:min-h-auto">
           {title}
-        </h1>
+        </h3>
 
         <div
           className="mt-2 text-[#000000cc] text-justify"

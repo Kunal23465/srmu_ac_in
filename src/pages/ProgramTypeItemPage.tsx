@@ -1,28 +1,36 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
+import { RootState } from "../store";
+import PageNotFound from "./PageNotFound";
 import ProgramFinderPage from "./programs/ProgramFinderPage";
-// import { useParams } from "react-router-dom";
-// import PageNotFound from "./PageNotFound";
 
-// const validPrograms = [
-//     "after-class-10th",
-//     "after-class-12th",
-//     "industry-honors-programs",
-//     "after-polytechnic",
-//     "after-graduation",
-//     "after-post-graduation",
-// ];
+const slugify = (value = "") =>
+    value
+        .toLowerCase()
+        .trim()
+        .replace(/[()]/g, "")
+        .replace(/&/g, "and")
+        .replace(/\./g, "-")
+        .replace(/\s+/g, "-")
+        .replace(/-+/g, "-")
+        .replace(/^-|-$/g, "");
 
 const ProgramTypeItemPage: React.FC = () => {
-    // const { type } = useParams();
+    const { programType, item } = useParams();
+    const { data } = useSelector((state: RootState) => state.programMenu);
 
-    // const isValid = type && validPrograms.includes(type);
+    const isValidRoute = data.some((programFlag: any) => {
+        if (slugify(programFlag?.programFlagName || "") !== (programType || "").toLowerCase()) {
+            return false;
+        }
 
-    return (
-        // <div className="fixed inset-0 z-[9999] bg-white overflow-auto">
-        //     {!isValid ? <PageNotFound /> : <ProgramFinderPage />}
-        // </div>
-        <ProgramFinderPage />
-    );
+        return (programFlag?.disciplines || []).some(
+            (discipline: any) => slugify(discipline?.disciplineName || "") === (item || "").toLowerCase()
+        );
+    });
+
+    return isValidRoute ? <ProgramFinderPage /> : <PageNotFound />;
 };
 
 export default ProgramTypeItemPage;

@@ -66,9 +66,9 @@ const MobilePlacements = () => {
 
       <div className="w-full">
 
-        <h1 className="text-center text-[22px] sm:text-[28px] lg:text-[3.125rem] font-bold py-6 ">
+        <h2 className="text-center text-[22px] sm:text-[28px] lg:text-[3.125rem] font-bold py-6 ">
           {PlacementData[0].heading}
-        </h1>
+        </h2>
 
         <p className="pb-6 text-center">
           {PlacementData[0].description}

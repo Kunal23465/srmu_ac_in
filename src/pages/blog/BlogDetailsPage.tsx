@@ -5,7 +5,8 @@ import CustomTopFooter from "../../utils/custom/CustomTopFooter";
 import { CustomTopFooterAbout } from "../../data/about/aboutusData";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store";
-import { Helmet } from "react-helmet-async";
+import SeoHead from "../../components/seo/SeoHead";
+import { SITE_NAME, stripHtml, toAbsoluteUrl } from "../../utils/seo";
 
 const BlogDetailsPage: React.FC = () => {
   const location = useLocation();
@@ -42,18 +43,46 @@ const BlogDetailsPage: React.FC = () => {
 
   if (!data) {
     return (
-      <div className={`${Classes["container"]} py-16`}>
-        <h1 className="text-2xl font-medium text-[#023047]">Blog not found</h1>
-      </div>
+      <>
+        <SeoHead
+          title={`Blog Not Found | ${SITE_NAME}, Lucknow`}
+          description="The requested SRMU blog article could not be found."
+          pathname={location.pathname}
+          noindex
+        />
+        <div className={`${Classes["container"]} py-16`}>
+          <h1 className="text-2xl font-medium text-[#023047]">Blog not found</h1>
+        </div>
+      </>
     );
   }
 
+  const blogDescription =
+    stripHtml(data.metaDescription || data.description || data.title).slice(0, 160) ||
+    `Read the latest SRMU blog: ${data.title}.`;
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: data.title,
+    datePublished: data.postedOn,
+    image: toAbsoluteUrl(data.imagePath),
+    description: blogDescription,
+    publisher: {
+      "@type": "CollegeOrUniversity",
+      name: SITE_NAME,
+    },
+  };
+
   return (
     <>
-      <Helmet>
-        <title>{data.title}</title>
-        <meta name="description" content={data.title} />
-      </Helmet>
+      <SeoHead
+        title={`${data.title} | ${SITE_NAME}, Lucknow`}
+        description={blogDescription}
+        pathname={location.pathname}
+        type="article"
+        image={data.imagePath}
+        jsonLd={articleSchema}
+      />
       <div className={`${Classes["container"]}`}>
         <div className="py-12 bg-white">
           <div className="container mx-auto px-4">

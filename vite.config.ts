@@ -35,5 +35,28 @@ export default defineConfig({
   build: {
     target: "node20",
     ssrManifest: true,
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes("node_modules")) {
+            if (id.includes("antd") || id.includes("@ant-design") || id.includes("rc-")) {
+              return "antd-vendor";
+            }
+
+            if (id.includes("@reduxjs/toolkit") || id.includes("react-redux") || id.includes("redux")) {
+              return "redux-vendor";
+            }
+
+            if (id.includes("embla-carousel") || id.includes("framer-motion") || id.includes("react-countup")) {
+              return "ui-vendor";
+            }
+
+            return "vendor";
+          }
+
+          return undefined;
+        },
+      },
+    },
   },
 });

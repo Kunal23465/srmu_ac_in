@@ -43,6 +43,28 @@ async function createServer() {
 
   let vite: any;
 
+  app.set("trust proxy", true);
+
+  app.use((req, res, next) => {
+    if (!isProduction) {
+      next();
+      return;
+    }
+
+    const host = req.headers.host ?? "";
+
+    if (!host.toLowerCase().startsWith("www.")) {
+      next();
+      return;
+    }
+
+    const forwardedProto = (req.headers["x-forwarded-proto"] as string | undefined)?.split(",")[0]?.trim();
+    const protocol = forwardedProto || req.protocol || "https";
+    const canonicalHost = host.replace(/^www\./i, "");
+
+    res.redirect(301, `${protocol}://${canonicalHost}${req.originalUrl}`);
+  });
+
   app.use(
     "/.well-known",
     express.static(wellKnownDir, {
@@ -73,6 +95,16 @@ async function createServer() {
     app.use(
       express.static(path.resolve(__dirname, "dist/client"), {
         index: false,
+        immutable: true,
+        maxAge: "1y",
+        setHeaders: (res, filePath) => {
+          if (!/\.(?:png|jpe?g|gif|svg|webp|avif|ico|pdf|css|js|woff2?)$/i.test(filePath)) {
+            return;
+          }
+
+          const expiresAt = new Date(Date.now() + 365 * 24 * 60 * 60 * 1000);
+          res.setHeader("Expires", expiresAt.toUTCString());
+        },
       }),
     );
   }
@@ -112,18 +144,22 @@ async function createServer() {
       let appHtml = "";
       let preloadedState = {};
       let helmet: Record<string, any> = {};
+      let statusCode = 200;
       try {
         const result = await render(url);
         appHtml = result.appHtml;
         preloadedState = result.preloadedState;
         helmet = (result as any).helmet || {};
+        statusCode = (result as any).statusCode || 200;
         console.log("SSR OK, HTML length:", appHtml?.length || 0);
       } catch (err) {
         console.error("SSR ERROR:", err);
         // Fallback to basic HTML if SSR fails
         appHtml = '<div id="root"><div>Loading...</div></div>';
+        statusCode = 500;
       }
       const helmetHead = [
+        helmet.priority?.toString(),
         helmet.title?.toString(),
         helmet.meta?.toString(),
         helmet.link?.toString(),
@@ -139,7 +175,7 @@ async function createServer() {
         .replace(`<!--app-html-->`, appHtml)
         .replace(`<!--preloaded-state-->`, `<script>window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, "\\u003c")}</script>`);
 
-      res.status(200).set({ "Content-Type": "text/html; charset=utf-8" }).end(html);
+      res.status(statusCode).set({ "Content-Type": "text/html; charset=utf-8" }).end(html);
     } catch (e) {
       if (vite) vite.ssrFixStacktrace(e as Error);
       console.error(e);

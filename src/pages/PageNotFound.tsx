@@ -1,9 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import SeoHead from "../components/seo/SeoHead";
 
 const PageNotFound:React.FC = () => {
     return (
         <div className="min-h-screen flex items-center justify-center bg-gray-50 px-6">
+            <SeoHead
+                title="404 Page Not Found | Shri Ramswaroop Memorial University, Lucknow"
+                description="The requested page could not be found on the SRMU website."
+                pathname="/404"
+                noindex
+            />
             <div className="text-center">
 
                 {/* 404 Number */}

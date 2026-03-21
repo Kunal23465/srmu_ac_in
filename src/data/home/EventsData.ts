@@ -1,6 +1,6 @@
-import event1 from "../../assets/images/home/events/photo-2-19112503363848.jpeg";
-import event2 from "../../assets/images/home/events/photo-3-1--19112503413782.jpeg";
-import event3 from "../../assets/images/home/events/sr7d9018-1-1--06112511295974.jpg";
+import event1 from "../../assets/images/home/events/photo-2-19112503363848.webp";
+import event2 from "../../assets/images/home/events/photo-3-1--19112503413782.webp";
+import event3 from "../../assets/images/home/events/sr7d9018-1-1--06112511295974.webp";
 // import event4 from "../../assets/images/home/events/event4.jpg";
 export const eventsData = [
   {

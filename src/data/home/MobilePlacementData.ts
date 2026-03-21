@@ -1,11 +1,11 @@
-import leftslider1 from "../../assets/images/home/placement/leftslider1.png";
-import leftslider2 from "../../assets/images/home/placement/leftslider2.png";
-import leftslider3 from "../../assets/images/home/placement/leftslider3.png";
-import leftslider4 from "../../assets/images/home/placement/leftslider4.png";
-import leftslider5 from "../../assets/images/home/placement/leftslider5.png";
-import rightslider1 from "../../assets/images/home/placement/rightslider1.png";
-import rightslider2 from "../../assets/images/home/placement/rightslider2.png";
-import rightslider3 from "../../assets/images/home/placement/rightslider3.png";
+import leftslider1 from "../../assets/images/home/placement/leftslider1.webp";
+import leftslider2 from "../../assets/images/home/placement/leftslider2.webp";
+import leftslider3 from "../../assets/images/home/placement/leftslider3.webp";
+import leftslider4 from "../../assets/images/home/placement/leftslider4.webp";
+import leftslider5 from "../../assets/images/home/placement/leftslider5.webp";
+import rightslider1 from "../../assets/images/home/placement/rightslider1.webp";
+import rightslider2 from "../../assets/images/home/placement/rightslider2.webp";
+import rightslider3 from "../../assets/images/home/placement/rightslider3.webp";
 const MobilePlacementData = [
     {
         heading: "Placement",

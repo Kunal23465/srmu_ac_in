@@ -1,4 +1,5 @@
 import ReactDOMServer from "react-dom/server";
+import { matchRoutes } from "react-router-dom";
 import { StaticRouter } from "react-router-dom/server";
 import { HelmetProvider } from "react-helmet-async";
 import { Provider } from "react-redux";
@@ -8,7 +9,6 @@ import { fetchBanner } from "./store/home-banner/bannerThunk";
 import { fetchProgramByFlag } from "./store/program-finder/program-flag/programFlagThunk";
 import { fetchProgramType } from "./store/program-finder/program-type/programTypeThunk";
 import { fetchProgramDiscipline } from "./store/program-finder/discipline/disciplineThunk";
-import { fetchHomeEventsData } from "./store/home-events/getHomeEventsThunk";
 import { fetchAllProgramFinder, fetchProgramFinderByID } from "./store/program-finder/programFinderThunk";
 import { fetchProgramFeesByProgramId } from "./store/program-finder/program-fees/programFeesThunk";
 import { fetchWhySrmuSectionById } from "./store/program-finder/why-srmu/whySrmuSectionThunk";
@@ -25,8 +25,11 @@ import { fetchAllActiveState } from "./store/student-enquiry/state/stateThunk";
 import App from "./App";
 import "./index.css";
 import { fetchPlacementDriveTabData } from "./store/placement/placement-drive/placementDriveTabDataThunk";
+import { routes } from "./utils/AllRoutesNew";
+import { eventsData } from "./data/home/EventsData";
 
 const GLOBAL_LAYOUT_CACHE_TTL_MS = 5 * 60 * 1000;
+const HOME_PAGE_CACHE_TTL_MS = 5 * 60 * 1000;
 
 type GlobalLayoutCacheEntry = {
   expiresAt: number;
@@ -34,8 +37,15 @@ type GlobalLayoutCacheEntry = {
   programMenuData: any[];
 };
 
+type HomePageCacheEntry = {
+  expiresAt: number;
+  preloadedState: Partial<RootState>;
+};
+
 let globalLayoutCache: GlobalLayoutCacheEntry | null = null;
 let globalLayoutCachePromise: Promise<GlobalLayoutCacheEntry> | null = null;
+let homePageCache: HomePageCacheEntry | null = null;
+let homePageCachePromise: Promise<HomePageCacheEntry> | null = null;
 
 const getGlobalLayoutCache = () => {
   if (globalLayoutCache && globalLayoutCache.expiresAt > Date.now()) {
@@ -45,29 +55,34 @@ const getGlobalLayoutCache = () => {
   return null;
 };
 
+const getHomePageCache = () => {
+  if (homePageCache && homePageCache.expiresAt > Date.now()) {
+    return homePageCache;
+  }
+
+  return null;
+};
+
+const pickHomePageState = (state: RootState): Partial<RootState> => ({
+  getbanner: structuredClone(state.getbanner),
+  getProgramByFlag: structuredClone(state.getProgramByFlag),
+});
+
 async function preloadHomePageData(store: ReturnType<typeof createStore>) {
-  const bannerPromise = store.dispatch(fetchBanner());
-  const flagPromise = store.dispatch(fetchProgramByFlag());
-  const eventsPromise = store.dispatch(fetchHomeEventsData(1));
+  const state = store.getState();
+  const pendingPromises: Array<Promise<unknown>> = [];
 
-  const programTypeAction = await store.dispatch(fetchProgramType());
-
-  let defaultProgramTypeId: number | string | null = null;
-
-  if (fetchProgramType.fulfilled.match(programTypeAction)) {
-    const programTypes = Array.isArray(programTypeAction.payload) ? programTypeAction.payload : [];
-    const defaultProgramType = programTypes.find((item: any) => item?.showOnHome) ?? programTypes[0];
-
-    defaultProgramTypeId = defaultProgramType?.programTypeId ?? null;
+  if (state.getbanner.data.length === 0 && !state.getbanner.loading) {
+    pendingPromises.push(store.dispatch(fetchBanner()));
   }
 
-  const pendingPromises: Array<Promise<unknown>> = [bannerPromise, flagPromise, eventsPromise];
-
-  if (defaultProgramTypeId) {
-    pendingPromises.push(store.dispatch(fetchProgramDiscipline({ programTypeId: defaultProgramTypeId })));
+  if (state.getProgramByFlag.data.length === 0 && !state.getProgramByFlag.loading) {
+    pendingPromises.push(store.dispatch(fetchProgramByFlag()));
   }
 
-  await Promise.allSettled(pendingPromises);
+  if (pendingPromises.length > 0) {
+    await Promise.allSettled(pendingPromises);
+  }
 }
 
 const slugifyProgramName = (value: string) =>
@@ -87,6 +102,84 @@ const slugifyProgramName = (value: string) =>
 const slugifyForMenu = (value: string) =>
   value.toLowerCase().trim().replace(/[()]/g, "").replace(/&/g, "and").replace(/\./g, "-").replace(/\s+/g, "-").replace(/-+/g, "-").replace(/^-|-$/g, "");
 
+const slugifyEventTitle = (value: string) =>
+  value
+    .toLowerCase()
+    .trim()
+    .replace(/[()]/g, "")
+    .replace(/&/g, "and")
+    .replace(/[^\w\s-]/g, "")
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-")
+    .replace(/^-|-$/g, "");
+
+const hasValidDynamicProgramFinderRoute = (normalizedPathname: string, programMenuData: any[]) => {
+  const segments = normalizedPathname.split("/").filter(Boolean);
+
+  if (segments.length !== 2) {
+    return false;
+  }
+
+  const [programTypeSlug, disciplineSlug] = segments;
+  const matchedProgramFlag = programMenuData.find((item: any) => slugifyForMenu(item?.programFlagName || "") === programTypeSlug);
+
+  if (!matchedProgramFlag) {
+    return false;
+  }
+
+  return (matchedProgramFlag?.disciplines || []).some(
+    (discipline: any) => slugifyForMenu(discipline?.disciplineName || "") === disciplineSlug
+  );
+};
+
+const hasMatchingNewsEvent = (normalizedPathname: string) => {
+  const routeMatch = normalizedPathname.match(/^\/news\/([^/]+)$/);
+  const newsSlug = routeMatch?.[1];
+
+  if (!newsSlug) {
+    return false;
+  }
+
+  return eventsData.some((item: any) => slugifyEventTitle(item?.title || item?.name || "") === newsSlug);
+};
+
+const hasMatchingBlog = (normalizedPathname: string, state: RootState) => {
+  const routeMatch = normalizedPathname.match(/^\/blogs\/([^/]+)$/);
+  const encodedTitle = routeMatch?.[1];
+
+  if (!encodedTitle) {
+    return false;
+  }
+
+  const decodedTitle = decodeURIComponent(encodedTitle).replace(/_/g, " ").trim().toLowerCase();
+  const blogs = state.getAllBlogs?.data || [];
+
+  return blogs.some((item: any) => item?.title?.trim().toLowerCase() === decodedTitle);
+};
+
+const getStatusCode = (normalizedPathname: string, state: RootState, programMenuData: any[]) => {
+  const matches = matchRoutes(routes, normalizedPathname);
+  const matchedLeafPath = matches?.at(-1)?.route?.path;
+
+  if (!matches || matchedLeafPath === "/*") {
+    return 404;
+  }
+
+  if (matchedLeafPath === "/:programType/:item") {
+    return hasValidDynamicProgramFinderRoute(normalizedPathname, programMenuData) ? 200 : 404;
+  }
+
+  if (normalizedPathname.startsWith("/news/")) {
+    return hasMatchingNewsEvent(normalizedPathname) ? 200 : 404;
+  }
+
+  if (normalizedPathname.startsWith("/blogs/")) {
+    return hasMatchingBlog(normalizedPathname, state) ? 200 : 404;
+  }
+
+  return 200;
+};
+
 async function buildGlobalLayoutCacheEntry(): Promise<GlobalLayoutCacheEntry> {
   const store = createStore();
   const [menuAction] = await Promise.all([store.dispatch(fetchProgramMenu()), store.dispatch(fetchAllActiveCareer()), store.dispatch(fetchAllActiveState())]);
@@ -100,6 +193,19 @@ async function buildGlobalLayoutCacheEntry(): Promise<GlobalLayoutCacheEntry> {
   };
 
   globalLayoutCache = cacheEntry;
+  return cacheEntry;
+}
+
+async function buildHomePageCacheEntry(): Promise<HomePageCacheEntry> {
+  const store = createStore();
+  await Promise.allSettled([store.dispatch(fetchBanner()), store.dispatch(fetchProgramByFlag())]);
+
+  const cacheEntry: HomePageCacheEntry = {
+    expiresAt: Date.now() + HOME_PAGE_CACHE_TTL_MS,
+    preloadedState: pickHomePageState(store.getState()),
+  };
+
+  homePageCache = cacheEntry;
   return cacheEntry;
 }
 
@@ -117,6 +223,22 @@ async function getGlobalLayoutCacheEntry() {
   }
 
   return globalLayoutCachePromise;
+}
+
+async function getHomePageCacheEntry() {
+  const cachedEntry = getHomePageCache();
+
+  if (cachedEntry) {
+    return cachedEntry;
+  }
+
+  if (!homePageCachePromise) {
+    homePageCachePromise = buildHomePageCacheEntry().finally(() => {
+      homePageCachePromise = null;
+    });
+  }
+
+  return homePageCachePromise;
 }
 
 async function preloadProgramDetailsPageData(store: ReturnType<typeof createStore>, normalizedPathname: string, programMenuData: any[]) {
@@ -223,8 +345,14 @@ export async function render(url: string) {
   // Normalize URL to match routes (strip query string and trailing slash)
   const normalizedPathname = new URL(url, "http://localhost").pathname.replace(/\/+$/, "") || "/";
   const globalLayoutStartedAt = Date.now();
-  const globalLayoutEntry = await getGlobalLayoutCacheEntry();
-  const store = createStore(globalLayoutEntry.preloadedState);
+  const [globalLayoutEntry, homePageEntry] = await Promise.all([
+    getGlobalLayoutCacheEntry(),
+    normalizedPathname === "/" ? getHomePageCacheEntry() : Promise.resolve(null),
+  ]);
+  const store = createStore({
+    ...globalLayoutEntry.preloadedState,
+    ...(homePageEntry?.preloadedState || {}),
+  });
   const programMenuData = globalLayoutEntry.programMenuData;
   const globalLayoutDuration = Date.now() - globalLayoutStartedAt;
 
@@ -266,5 +394,6 @@ export async function render(url: string) {
     appHtml,
     preloadedState: store.getState(),
     helmet: helmetContext.helmet,
+    statusCode: getStatusCode(normalizedPathname, store.getState(), programMenuData),
   };
 }

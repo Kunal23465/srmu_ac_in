@@ -18,7 +18,7 @@ const About: FC = () => {
             </div>
 
             <p>
-                <img src={isro}/>
+                <img src={isro} alt="IIRS ISRO program" />
             </p>
         </div>
     )

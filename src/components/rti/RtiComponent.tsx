@@ -11,7 +11,7 @@ const RtiComponent = () => {
         <div>
             <div className={`${Classes["container"]}`}>
                 <CustomOverviewSection data={RTIOverviewData} />
-                <img src={rti} />
+                <img src={rti} alt="RTI information" />
             </div>
             <CustomTopFooter data={CustomTopFooterData1} />
 

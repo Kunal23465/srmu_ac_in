@@ -1,5 +1,5 @@
 import { LiaLongArrowAltRightSolid } from "react-icons/lia";
-import girlsimage from "../../assets/images/home/girls-image.png";
+import girlsimage from "../../assets/images/home/girls-image.webp";
 import { Link } from "react-router-dom";
 import Classes from "../../utils/styles/Global.module.css";
 export default function InnovationCulture() {

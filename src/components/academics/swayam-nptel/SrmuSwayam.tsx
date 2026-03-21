@@ -21,7 +21,7 @@ const SrmuSwayam = () => {
             </div>
 
             <p>
-                <img src={nptel} />
+                <img src={nptel} alt="SRMU SWAYAM NPTEL local chapter" />
             </p>
         </div>
     )

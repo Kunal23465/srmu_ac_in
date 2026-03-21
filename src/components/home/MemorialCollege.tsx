@@ -118,6 +118,8 @@ const MemorialCollege: React.FC = () => {
                         <img
                           src={item.imagePath}
                           alt="slider"
+                          loading="lazy"
+                          decoding="async"
                           className="w-full rounded-xl"
                         />
                       </Link>
@@ -126,6 +128,8 @@ const MemorialCollege: React.FC = () => {
                         <img
                           src={item.imagePath}
                           alt="slider"
+                          loading="lazy"
+                          decoding="async"
                           className="w-full rounded-xl"
                         />
                       </Link>

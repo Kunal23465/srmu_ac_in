@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import Header from "../components/header/Header";
 // @ts-ignore
@@ -10,9 +10,14 @@ import bgImg from "../assets/images/chat-bg.jpg";
 import { FaTimes } from "react-icons/fa";
 import DynamicBreadcrumbs from "../components/breadcrumb/DynamicBreadcrumbs";
 import Chatbot from "../components/Chatbot";
+import SeoHead from "../components/seo/SeoHead";
+import { buildSiteSchema, getDefaultSeo, normalizePath } from "../utils/seo";
 
 const RootLayout: React.FC = () => {
   const location = useLocation();
+  const normalizedPath = normalizePath(location.pathname);
+  const fallbackSeo = useMemo(() => getDefaultSeo(normalizedPath), [normalizedPath]);
+  const siteSchema = useMemo(() => buildSiteSchema(normalizedPath), [normalizedPath]);
 
   const [openChat, setOpenChat] = useState(false);
   const [showRightBar, setShowRightBar] = useState(false);
@@ -44,6 +49,7 @@ const RootLayout: React.FC = () => {
 
   return (
     <>
+      <SeoHead title={fallbackSeo.title} description={fallbackSeo.description} pathname={normalizedPath} jsonLd={siteSchema} />
       <Header />
 
       <main className="mt-[41px] lg:mt-[45px]">
@@ -117,7 +123,7 @@ const RootLayout: React.FC = () => {
         )}
 
         <div className={`${!openChat ? "bg-white" : "bg-[#dfa000]"} p-4 rounded-full shadow-lg hover:bg-[#dfa000] hover:scale-110 transition-all duration-300`}>
-          {openChat ? <FaTimes className="text-white" size={22} /> : <img src={chatbot} className="w-8" />}
+          {openChat ? <FaTimes className="text-white" size={22} /> : <img src={chatbot} alt="Open chat assistant" className="w-8" />}
         </div>
       </button> */}
       <Chatbot />

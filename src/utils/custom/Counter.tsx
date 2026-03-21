@@ -38,7 +38,7 @@ const Counter: React.FC<counterDataPropsType> = ({ counterData, classes }) => {
 
           <div key={item.id}>
 
-            <h1
+            <div
               className={`lg:text-[50px] md:text-[46.875px] text-[21px] font-semibold ${item.icon ? "text-white" : "text-[#ffb703]"
                 } text-center flex items-center justify-center`}
             >
@@ -77,7 +77,7 @@ const Counter: React.FC<counterDataPropsType> = ({ counterData, classes }) => {
 
               )}
 
-            </h1>
+            </div>
 
             <p className="lg:text-[22px] md:text-[20.625px] text-[14px] text-center mt-3">
               {item.label}

@@ -5,6 +5,8 @@ import Classes from "../../utils/styles/Global.module.css";
 import { AppDispatch, RootState } from "../../store";
 import { fetchHomeEventsData } from "../../store/home-events/getHomeEventsThunk";
 import { eventsData } from "../../data/home/EventsData";
+import SeoHead from "../seo/SeoHead";
+import { SITE_NAME, stripHtml, toAbsoluteUrl } from "../../utils/seo";
 
 const formatEventDate = (value: string) => {
   const parsed = new Date(value);
@@ -73,21 +75,55 @@ const NewsEventDetails: React.FC = () => {
 
   if (!news) {
     return (
-      <div className={`${Classes["container"]} py-20`}>
-        <h1 className="font-bold text-4xl">News Not Found</h1>
-      </div>
+      <>
+        <SeoHead
+          title={`News Not Found | ${SITE_NAME}, Lucknow`}
+          description="The requested news or event detail page could not be found."
+          pathname={location.pathname}
+          noindex
+        />
+        <div className={`${Classes["container"]} py-20`}>
+          <h1 className="font-bold text-4xl">News Not Found</h1>
+        </div>
+      </>
     );
   }
 
+  const newsDescription =
+    stripHtml(news.description || news.title).slice(0, 160) ||
+    `Read the latest SRMU update: ${news.title}.`;
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    headline: news.title,
+    datePublished: news.date,
+    image: toAbsoluteUrl(news.image),
+    description: newsDescription,
+    publisher: {
+      "@type": "CollegeOrUniversity",
+      name: SITE_NAME,
+    },
+  };
+
   return (
-    <div className={`${Classes["container"]} py-20`}>
-      <h1 className="font-bold text-4xl">{news.title}</h1>
-      <div className="mt-6 font-normal bg-amber-400 text-blue-900 w-fit px-3 py-1 rounded-2xl">{news.date}</div>
-      <div className="w-full mt-10 mb-4">
-        <img src={news.image} className="w-full"/>
+    <>
+      <SeoHead
+        title={`${news.title} | ${SITE_NAME}, Lucknow`}
+        description={newsDescription}
+        pathname={location.pathname}
+        type="article"
+        image={news.image}
+        jsonLd={articleSchema}
+      />
+      <div className={`${Classes["container"]} py-20`}>
+        <h1 className="font-bold text-4xl">{news.title}</h1>
+        <div className="mt-6 font-normal bg-amber-400 text-blue-900 w-fit px-3 py-1 rounded-2xl">{news.date}</div>
+        <div className="w-full mt-10 mb-4">
+          <img src={news.image} alt={news.title} className="w-full"/>
+        </div>
+        <div dangerouslySetInnerHTML={{ __html: news.description }}></div>
       </div>
-      <div dangerouslySetInnerHTML={{ __html: news.description }}></div>
-    </div>
+    </>
   );
 };
 
