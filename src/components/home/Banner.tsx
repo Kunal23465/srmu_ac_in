@@ -21,14 +21,14 @@ const Banner: React.FC = () => {
     }, [emblaApi]);
 
     return (
-        <div className="w-full relative overflow-hidden mobile-header-style">
+        <div className="w-full relative overflow-hidden mobile-header-style rounded-b-[28px] sm:rounded-none">
             {/* Slider */}
-            <div className="overflow-hidden" ref={emblaRef}>
+            <div className="overflow-hidden rounded-b-[28px] sm:rounded-none" ref={emblaRef}>
                 <div className="flex">
                     {/* Slide 1 */}
                     <div className="min-w-full banner-slider overflow-hidden relative">
                         <div className="relative">
-                            <img className="w-full h-[44vh] sm:h-auto sm:min-h-[470px] md:min-h-[520px] lg:min-h-[640px] max-h-[calc(100vh-140px)] object-cover" src={banner4} alt="Banner" fetchpriority="high" loading="eager" decoding="async" />
+                            <img className="w-full h-[44vh] sm:h-auto sm:min-h-[470px] md:min-h-[520px] lg:min-h-[640px] max-h-[calc(100vh-140px)] object-cover rounded-b-[28px] sm:rounded-none" src={banner4} alt="Banner" fetchpriority="high" loading="eager" decoding="async" />
 
                             <div className="overlay bg-[#0000000d] absolute top-0 left-0 w-full h-full flex pt-10 sm:pt-0 items-center">
                                 <div className={Classes["container"]}>
@@ -59,7 +59,7 @@ const Banner: React.FC = () => {
                     {/* Slide 2 */}
                     <div className="min-w-full banner-slider overflow-hidden relative">
                         <div className="relative">
-                            <img className="w-full h-[44vh] sm:h-auto sm:min-h-[470px] md:min-h-[520px] lg:min-h-[640px] max-h-[calc(100vh-140px)] object-cover" src={banner4} alt="Banner" loading="lazy" decoding="async" />
+                            <img className="w-full h-[44vh] sm:h-auto sm:min-h-[470px] md:min-h-[520px] lg:min-h-[640px] max-h-[calc(100vh-140px)] object-cover rounded-b-[28px] sm:rounded-none" src={banner4} alt="Banner" loading="lazy" decoding="async" />
 
                             <div className="overlay bg-[#0000000d] absolute top-0 left-0 w-full h-full flex pt-10 sm:pt-0 items-center">
                                 <div className={Classes["container"]}>

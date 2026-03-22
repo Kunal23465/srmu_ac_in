@@ -1,13 +1,12 @@
 import React, { useEffect } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
-import curve_btn from "../../assets/images/curve.png";
 import Classes from "../../utils/styles/Global.module.css";
 import Counter from "../../utils/custom/Counter";
 import { counterDataForHomePage } from "../../data/home/counterData";
 import { LiaLongArrowAltRightSolid } from "react-icons/lia";
 import { Link } from "react-router-dom";
-import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
+import { MdKeyboardArrowDown, MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import { fetchBanner } from "../../store/home-banner/bannerThunk";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../store";
@@ -46,12 +45,18 @@ const MemorialCollege: React.FC = () => {
   return (
     <div id="first" className="w-full -mt-[50px] pb-8 md:pb-10 lg:pb-12">
       <div className="circle-part justify-center z-99 relative hidden md:flex">
-        <img
-          className="cursor-pointer"
+        <button
+          type="button"
           onClick={() => handleScroll("first")}
-          src={curve_btn}
-          alt="curve"
-        />
+          aria-label="Scroll to slider"
+          className="relative h-[98px] w-[220px] cursor-pointer border-0 bg-transparent p-0 appearance-none"
+        >
+          <span className="absolute inset-x-0 bottom-0 h-[42px] rounded-t-[26px] bg-white" />
+          <span className="absolute left-1/2 top-0 h-[70px] w-[126px] -translate-x-1/2 rounded-t-full bg-white" />
+          <span className="absolute left-1/2 top-[18px] flex h-[82px] w-[82px] -translate-x-1/2 items-center justify-center rounded-full bg-[#2ea4c6] text-white shadow-[0_10px_24px_rgba(46,164,198,0.28)]">
+            <MdKeyboardArrowDown size={30} />
+          </span>
+        </button>
       </div>
 
       <div className={`${Classes["container"]}`}>

@@ -8,6 +8,13 @@ import { buildRobotsTxt, buildSitemapXml } from "./src/utils/sitemap";
 
 const host = "0.0.0.0";
 const port = 3031;
+const siteUrl = process.env.VITE_SITE_URL || "https://srmu.ac.in";
+const canonicalSiteUrl = new URL(siteUrl);
+const canonicalOrigin = canonicalSiteUrl.origin.replace(/\/+$/, "");
+const canonicalProtocol = canonicalSiteUrl.protocol.replace(":", "");
+const canonicalHost = canonicalSiteUrl.host.toLowerCase();
+const STATIC_ASSET_CACHE_SECONDS = 365 * 24 * 60 * 60;
+const STATIC_ASSET_PATTERN = /\.(?:avif|bmp|css|gif|ico|jpe?g|js|mjs|pdf|png|svg|webp|woff2?|ttf|otf)$/i;
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -16,9 +23,15 @@ const isProduction = process.env.NODE_ENV === "production";
 
 function getRequestSiteUrl(req: express.Request) {
   const forwardedProto = (req.headers["x-forwarded-proto"] as string | undefined)?.split(",")[0]?.trim();
-  const protocol = forwardedProto || req.protocol || "http";
-  const host = req.headers.host || `localhost:${port}`;
-  return `${protocol}://${host}`;
+  const forwardedHost = (req.headers["x-forwarded-host"] as string | undefined)?.split(",")[0]?.trim();
+  const protocol = (forwardedProto || req.protocol || canonicalProtocol).toLowerCase();
+  const requestHost = (forwardedHost || req.headers.host || canonicalHost).toLowerCase();
+
+  if (isProduction) {
+    return canonicalOrigin;
+  }
+
+  return `${protocol}://${requestHost}`;
 }
 
 function isDocumentRequest(req: express.Request) {
@@ -36,6 +49,16 @@ function isDocumentRequest(req: express.Request) {
   const acceptHeader = req.headers.accept ?? "";
 
   return acceptHeader.includes("text/html");
+}
+
+function setStaticAssetCacheHeaders(res: express.Response, filePath: string) {
+  if (!STATIC_ASSET_PATTERN.test(filePath)) {
+    return;
+  }
+
+  const expiresAt = new Date(Date.now() + STATIC_ASSET_CACHE_SECONDS * 1000);
+  res.setHeader("Cache-Control", `public, max-age=${STATIC_ASSET_CACHE_SECONDS}, immutable`);
+  res.setHeader("Expires", expiresAt.toUTCString());
 }
 
 // In local dev, some corporate/self-signed TLS chains can block SSR API calls.
@@ -59,18 +82,22 @@ async function createServer() {
       return;
     }
 
-    const host = req.headers.host ?? "";
-
-    if (!host.toLowerCase().startsWith("www.")) {
+    if (req.method !== "GET" && req.method !== "HEAD") {
       next();
       return;
     }
 
     const forwardedProto = (req.headers["x-forwarded-proto"] as string | undefined)?.split(",")[0]?.trim();
-    const protocol = forwardedProto || req.protocol || "https";
-    const canonicalHost = host.replace(/^www\./i, "");
+    const forwardedHost = (req.headers["x-forwarded-host"] as string | undefined)?.split(",")[0]?.trim();
+    const requestProtocol = (forwardedProto || req.protocol || canonicalProtocol).toLowerCase();
+    const requestHost = (forwardedHost || req.headers.host || "").toLowerCase();
 
-    res.redirect(301, `${protocol}://${canonicalHost}${req.originalUrl}`);
+    if (requestProtocol === canonicalProtocol && requestHost === canonicalHost) {
+      next();
+      return;
+    }
+
+    res.redirect(301, `${canonicalOrigin}${req.originalUrl}`);
   });
 
   app.use(
@@ -121,15 +148,8 @@ async function createServer() {
       express.static(path.resolve(__dirname, "dist/client"), {
         index: false,
         immutable: true,
-        maxAge: "1y",
-        setHeaders: (res, filePath) => {
-          if (!/\.(?:png|jpe?g|gif|svg|webp|avif|ico|pdf|css|js|woff2?)$/i.test(filePath)) {
-            return;
-          }
-
-          const expiresAt = new Date(Date.now() + 365 * 24 * 60 * 60 * 1000);
-          res.setHeader("Expires", expiresAt.toUTCString());
-        },
+        maxAge: `${STATIC_ASSET_CACHE_SECONDS}s`,
+        setHeaders: setStaticAssetCacheHeaders,
       }),
     );
   }
