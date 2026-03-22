@@ -124,6 +124,8 @@ const ProgramDetails: React.FC = () => {
         return;
       }
 
+      // Fetch once per slug change. Re-running this effect when individual slices
+      // settle can trigger a second burst of the same requests in the browser.
       setIsProgramRouteLoading(true);
       setHasProgramRouteLoaded(false);
 
@@ -148,7 +150,7 @@ const ProgramDetails: React.FC = () => {
     return () => {
       cancelled = true;
     };
-  }, [dispatch, hasCurrentFeesData, hasCurrentProgramData, normalizedProgramSlug, programName]);
+  }, [dispatch, normalizedProgramSlug, programName]);
 
   // counter data key change
   const convertedCounterData = counterData.map((item) => {
