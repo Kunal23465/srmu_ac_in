@@ -67,7 +67,7 @@ const MemorialCollege: React.FC = () => {
             </h3>
 
             <p className="leading-7 text-[15px] text-[#0009] font-bold text-center mt-4">
-              Experience a world of countless opportunities at SRMU – where we
+              Experience a world of countless opportunities at SRMU - where we
               nurture brilliant minds and shape dreams into futures. As leaders
               in engineering and business education for over two decades, we are
               committed to academic excellence, innovation, and the holistic

@@ -6,13 +6,14 @@ import { RootState } from '../../../store'
 import PageNotFound from '../../PageNotFound'
 import { normalizeProgramRouteSlug, resolveTopLevelProgramRoute } from '../../../utils/programCategoryRoute'
 import SeoHead from '../../../components/seo/SeoHead'
-import { SITE_NAME } from '../../../utils/seo'
+import { SITE_NAME, humanizeSlug } from '../../../utils/seo'
 
 const ProgramTypePage: React.FC = () => {
     const { data } = useSelector((state: RootState) => state.programMenu)
     const location = useLocation();
     const routeSlug = useMemo(() => normalizeProgramRouteSlug(location.pathname), [location.pathname]);
     const routeMatch = useMemo(() => resolveTopLevelProgramRoute(routeSlug), [routeSlug]);
+    const routeLabel = useMemo(() => humanizeSlug(routeSlug || "programs"), [routeSlug]);
 
     const dataForMeta = useMemo(() => {
         if (!routeMatch) {
@@ -34,13 +35,14 @@ const ProgramTypePage: React.FC = () => {
 
     return (
         <div>
-            {
-                dataForMeta && <SeoHead
-                    title={dataForMeta.metaTitle || `${dataForMeta.programFlagName || dataForMeta.disciplineName || "Programs"} | ${SITE_NAME}, Lucknow`}
-                    description={dataForMeta.metaDescription || `Explore programs, admissions information, and eligibility details for ${dataForMeta.programFlagName || dataForMeta.disciplineName || "SRMU programs"}.`}
-                    pathname={location.pathname}
-                />
-            }
+            <SeoHead
+                title={dataForMeta?.metaTitle || `${dataForMeta?.programFlagName || dataForMeta?.disciplineName || routeLabel} Programs | ${SITE_NAME}, Lucknow`}
+                description={
+                    dataForMeta?.metaDescription ||
+                    `Explore ${dataForMeta?.programFlagName || dataForMeta?.disciplineName || routeLabel} programs at ${SITE_NAME}, Lucknow. Check courses, eligibility, fees, and admissions details.`
+                }
+                pathname={location.pathname}
+            />
 
             <ProgramFinderPage />
         </div>

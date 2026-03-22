@@ -9,7 +9,7 @@ const HomePage: React.FC = () => {
     <>
       <SeoHead
         title="Best University in Lucknow | Shri Ramswaroop Memorial University (SRMU)"
-        description="Shri Ramswaroop Memorial University (SRMU) is a leading private university in Lucknow offering BTech, MBA, BBA, BCA, pharmacy, law, agriculture, and other UG, PG, and PhD programs with strong academics and career opportunities."
+        description="Study at Shri Ramswaroop Memorial University (SRMU), a leading private university in Lucknow offering BTech, MBA, BBA, BCA and more."
         pathname={pathname}
       />
 

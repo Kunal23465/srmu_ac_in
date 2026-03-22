@@ -19,21 +19,24 @@ const ProgramFinderPage: React.FC = () => {
   }, [data, location.pathname]);
 
   const finalFilterData = finalFilterMatch?.matchedDiscipline;
+  const fallbackTitle = `Programs at ${SITE_NAME} | BTech, MBA, BBA, BCA Courses in Lucknow`;
+  const fallbackDescription =
+    `Explore UG, PG, diploma, and PhD programs at ${SITE_NAME}, Lucknow. Compare courses, eligibility, fees, admissions, and career opportunities.`;
 
 
 
   return (
     <>
-      {finalFilterData && (
-        <SeoHead
-          title={finalFilterData.metaTitle || `${finalFilterData.disciplineName || "Programs"} | ${SITE_NAME}, Lucknow`}
-          description={
-            finalFilterData.metaDescription ||
-            `Explore ${stripHtml(finalFilterData.disciplineName || "programs")} at ${SITE_NAME}, Lucknow. Browse courses, admissions information, eligibility, and fee details.`
-          }
-          pathname={location.pathname}
-        />
-      )}
+      <SeoHead
+        title={finalFilterData?.metaTitle || (finalFilterData?.disciplineName ? `${finalFilterData.disciplineName} Programs | ${SITE_NAME}, Lucknow` : fallbackTitle)}
+        description={
+          finalFilterData?.metaDescription ||
+          (finalFilterData?.disciplineName
+            ? `Explore ${stripHtml(finalFilterData.disciplineName)} programs at ${SITE_NAME}, Lucknow. Browse courses, admissions information, eligibility, and fee details.`
+            : fallbackDescription)
+        }
+        pathname={location.pathname}
+      />
 
       <ProgramFinderHome />
     </>
