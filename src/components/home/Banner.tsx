@@ -1,6 +1,4 @@
-import React, { useCallback } from "react";
-import useEmblaCarousel from "embla-carousel-react";
-import Autoplay from "embla-carousel-autoplay";
+import React, { useEffect, useState } from "react";
 import Classes from "../../utils/styles/Global.module.css";
 import banner4 from "../../assets/images/home/banner-bg.webp";
 import viewmorepdf from "../../assets/pdf/home/aa-career-360-270125114337.pdf";
@@ -8,81 +6,119 @@ import srmuRatedPdf from "../../assets/pdf/home/Best B School certificate.pdf";
 import { LiaLongArrowAltLeftSolid, LiaLongArrowAltRightSolid } from "react-icons/lia";
 
 const Banner: React.FC = () => {
-    const autoplay = React.useRef(Autoplay({ delay: 3000, stopOnInteraction: false }));
+    const [selectedIndex, setSelectedIndex] = useState(0);
+    const [previousIndex, setPreviousIndex] = useState<number | null>(null);
+    const [direction, setDirection] = useState<"next" | "prev">("next");
 
-    const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [autoplay.current]);
+    const slides = [
+        {
+            eyebrow: "Cheers to Success!!",
+            title: (
+                <>
+                    Now, SRMU is <br />
+                    ISO 9001, ISO 14001, and ISO 50001 certified organization
+                </>
+            ),
+            description: "Certified Excellence: Our Commitment to Quality and Standards",
+            href: viewmorepdf,
+            cta: "Know More",
+            imageAlt: "SRMU certification banner",
+            headingTag: "h1",
+            contentWidthClass: "max-w-[860px]",
+        },
+        {
+            eyebrow: "Celebrating Excellence",
+            title: (
+                <>
+                    SRMU rated AA+ <br />
+                    by Career 360
+                </>
+            ),
+            description: "Making it one of the Best B-Schools in the country in 2026",
+            href: srmuRatedPdf,
+            cta: "View More",
+            imageAlt: "SRMU Career 360 rating banner",
+            headingTag: "h2",
+            contentWidthClass: "max-w-[650px]",
+        },
+    ] as const;
 
-    const prev = useCallback(() => {
-        if (emblaApi) emblaApi.scrollPrev();
-    }, [emblaApi]);
+    const transitionTo = (nextIndex: number, nextDirection: "next" | "prev") => {
+        setPreviousIndex(selectedIndex);
+        setDirection(nextDirection);
+        setSelectedIndex(nextIndex);
+    };
 
-    const next = useCallback(() => {
-        if (emblaApi) emblaApi.scrollNext();
-    }, [emblaApi]);
+    useEffect(() => {
+        const timer = window.setInterval(() => {
+            transitionTo((selectedIndex + 1) % slides.length, "next");
+        }, 5000);
+
+        return () => window.clearInterval(timer);
+    }, [selectedIndex, slides.length]);
+
+    const prev = () => {
+        transitionTo((selectedIndex - 1 + slides.length) % slides.length, "prev");
+    };
+
+    const next = () => {
+        transitionTo((selectedIndex + 1) % slides.length, "next");
+    };
 
     return (
         <div className="w-full relative overflow-hidden mobile-header-style rounded-b-[28px] sm:rounded-none">
-            {/* Slider */}
-            <div className="overflow-hidden rounded-b-[28px] sm:rounded-none" ref={emblaRef}>
-                <div className="flex">
-                    {/* Slide 1 */}
-                    <div className="min-w-full banner-slider overflow-hidden relative">
-                        <div className="relative">
-                            <img className="w-full h-[44vh] sm:h-auto sm:min-h-[470px] md:min-h-[520px] lg:min-h-[640px] max-h-[calc(100vh-140px)] object-cover rounded-b-[28px] sm:rounded-none" src={banner4} alt="Banner" fetchpriority="high" loading="eager" decoding="async" />
+            <div className="overflow-hidden rounded-b-[28px] sm:rounded-none">
+                <div className="relative">
+                    <img
+                        className="w-full h-[44vh] sm:h-auto sm:min-h-[470px] md:min-h-[520px] lg:min-h-[640px] max-h-[calc(100vh-140px)] object-cover rounded-b-[28px] sm:rounded-none"
+                        src={banner4}
+                        alt={slides[selectedIndex].imageAlt}
+                        fetchpriority="high"
+                        loading="eager"
+                        decoding="async"
+                    />
 
-                            <div className="overlay bg-[#0000000d] absolute top-0 left-0 w-full h-full flex pt-10 sm:pt-0 items-center">
-                                <div className={Classes["container"]}>
-                                    <div className="max-w-[650px] text-white sm:px-4 sm:py-4 md:py-8 rounded-tl-[50px] transition-all duration-300 rounded-br-[50px]">
-                                        <div className="text-[16px] sm:text-[18px] mb-2.5">Cheers to Success!!</div>
+                    <div className="overlay bg-[#0000000d] absolute top-0 left-0 w-full h-full flex pt-10 sm:pt-0 items-center">
+                        <div className={Classes["container"]}>
+                            <div className={`relative min-h-[240px] sm:min-h-[280px] md:min-h-[320px] -translate-y-4 sm:-translate-y-6 lg:-translate-y-10 ${slides[selectedIndex].contentWidthClass}`}>
+                                {slides.map((slide, index) => {
+                                    const isActive = index === selectedIndex;
+                                    const isPrevious = index === previousIndex;
+                                    const HeadingTag = slide.headingTag;
+                                    const animationClass = isActive
+                                        ? direction === "next"
+                                            ? "hero-text-enter-right"
+                                            : "hero-text-enter-left"
+                                        : isPrevious
+                                            ? direction === "next"
+                                                ? "hero-text-exit-left"
+                                                : "hero-text-exit-right"
+                                            : "hero-text-hidden";
 
-                                        <h1 className="text-[21px] sm:text-[28px] lg:text-[38px] xl:text-[42px] font-medium leading-[1.12] mb-2.5">
-                                            Now, SRMU is <br />
-                                            ISO 9001, ISO 14001, and ISO 50001 certified organization
-                                        </h1>
+                                    return (
+                                        <div
+                                            key={slide.eyebrow}
+                                            className={`absolute inset-0 z-10 text-white sm:px-4 sm:py-4 md:py-8 rounded-tl-[50px] rounded-br-[50px] pointer-events-none ${animationClass} ${isActive ? "z-20" : ""}`}
+                                        >
+                                            <div className="text-[16px] sm:text-[18px] mb-2.5">{slide.eyebrow}</div>
 
-                                        <div className="text-[12px] sm:text-[17px]">Certified Excellence: Our Commitment to Quality and Standards</div>
+                                            <HeadingTag className="text-[26px] sm:text-[34px] lg:text-[48px] xl:text-[56px] font-medium leading-[1.12] mb-2.5">
+                                                {slide.title}
+                                            </HeadingTag>
 
-                                        <div className="mt-6">
-                                            <a href={viewmorepdf} target="_blank">
-                                                <button className="bg-[#ffb703] uppercase py-3 px-4.5 text-[#023047] flex gap-x-2 items-center rounded-lg">
-                                                    Know More
-                                                    <LiaLongArrowAltRightSolid size={22} />
-                                                </button>
-                                            </a>
+                                            <div className="text-[12px] sm:text-[17px]">{slide.description}</div>
+
+                                            <div className="mt-6">
+                                                <a href={slide.href} target="_blank">
+                                                    <button className="bg-[#ffb703] uppercase py-3 px-4.5 text-[#023047] flex gap-x-2 items-center rounded-lg">
+                                                        {slide.cta}
+                                                        <LiaLongArrowAltRightSolid size={22} />
+                                                    </button>
+                                                </a>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Slide 2 */}
-                    <div className="min-w-full banner-slider overflow-hidden relative">
-                        <div className="relative">
-                            <img className="w-full h-[44vh] sm:h-auto sm:min-h-[470px] md:min-h-[520px] lg:min-h-[640px] max-h-[calc(100vh-140px)] object-cover rounded-b-[28px] sm:rounded-none" src={banner4} alt="Banner" loading="lazy" decoding="async" />
-
-                            <div className="overlay bg-[#0000000d] absolute top-0 left-0 w-full h-full flex pt-10 sm:pt-0 items-center">
-                                <div className={Classes["container"]}>
-                                    <div className="max-w-[650px] text-white sm:px-4 sm:py-4 md:py-8 rounded-tl-[50px] rounded-br-[50px]">
-                                        <div className="text-[16px] sm:text-[18px] mb-2.5">Celebrating Excellence</div>
-
-                                        <h2 className="text-[21px] sm:text-[28px] lg:text-[38px] xl:text-[42px] font-medium leading-[1.12] mb-2.5">
-                                            SRMU rated AA+ <br />
-                                            by Career 360
-                                        </h2>
-
-                                        <div className="text-[12px] sm:text-[17px]">Making it one of the Best B-Schools in the country in 2026</div>
-
-                                        <div className="mt-6">
-                                            <a href={srmuRatedPdf} target="_blank">
-                                                <button className="bg-[#ffb703] uppercase py-3 px-4.5 text-[#023047] flex gap-x-2 items-center rounded-lg">
-                                                    View More
-                                                    <LiaLongArrowAltRightSolid size={22} />
-                                                </button>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
+                                    );
+                                })}
                             </div>
                         </div>
                     </div>

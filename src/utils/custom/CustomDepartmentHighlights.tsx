@@ -84,6 +84,35 @@ const CustomDepartmentHighlights: React.FC<
 
   const { containerRef, activeIndex, progress } =
     useScrollSteps(steps.length);
+  const [currentAnimatedIndex, setCurrentAnimatedIndex] = useState(0);
+  const [previousAnimatedIndex, setPreviousAnimatedIndex] = useState<number | null>(null);
+  const [transitionDirection, setTransitionDirection] = useState<"forward" | "backward">("forward");
+
+  useEffect(() => {
+    if (steps.length === 0) {
+      setCurrentAnimatedIndex(0);
+      setPreviousAnimatedIndex(null);
+      return;
+    }
+
+    if (activeIndex === currentAnimatedIndex) {
+      return;
+    }
+
+    setPreviousAnimatedIndex(currentAnimatedIndex);
+    setTransitionDirection(activeIndex > currentAnimatedIndex ? "forward" : "backward");
+    setCurrentAnimatedIndex(activeIndex);
+
+    const timer = window.setTimeout(() => {
+      setPreviousAnimatedIndex(null);
+    }, 650);
+
+    return () => window.clearTimeout(timer);
+  }, [activeIndex, currentAnimatedIndex, steps.length]);
+
+  const animatedIndexes = previousAnimatedIndex === null
+    ? [currentAnimatedIndex]
+    : [previousAnimatedIndex, currentAnimatedIndex];
 
   return (
     <>
@@ -152,27 +181,77 @@ const CustomDepartmentHighlights: React.FC<
 
               {/* Content + Image */}
               <div className="grid grid-cols-2 gap-10 items-start">
-                <div className="transition-all duration-500 ease-in-out">
-                  <h3 className="text-2xl font-bold mb-6">
-                    {steps[activeIndex]?.title}
-                  </h3>
+                <div className="relative min-h-[340px] overflow-hidden">
+                  {animatedIndexes.map((index) => {
+                    const step = steps[index];
 
-                  <div
-                    dangerouslySetInnerHTML={{
-                      __html: steps[activeIndex]?.brief,
-                    }}
-                  />
+                    if (!step) {
+                      return null;
+                    }
+
+                    const isCurrent = index === currentAnimatedIndex;
+                    const isPrevious = index === previousAnimatedIndex;
+                    const animationClass = isCurrent
+                      ? transitionDirection === "forward"
+                        ? "department-highlight-text-enter-right"
+                        : "department-highlight-text-enter-left"
+                      : isPrevious
+                        ? transitionDirection === "forward"
+                          ? "department-highlight-text-exit-left"
+                          : "department-highlight-text-exit-right"
+                        : "department-highlight-hidden";
+
+                    return (
+                      <div
+                        key={`${step.id}-${isCurrent ? "current" : "previous"}`}
+                        className={`absolute inset-0 ${animationClass}`}
+                      >
+                        <h3 className="text-2xl font-bold mb-6">
+                          {step.title}
+                        </h3>
+
+                        <div
+                          dangerouslySetInnerHTML={{
+                            __html: step.brief,
+                          }}
+                        />
+                      </div>
+                    );
+                  })}
                 </div>
 
-                <div className="flex justify-center items-center">
-                  <img
-                    src={
-                      steps[activeIndex]?.imagePath ||
-                      dummyImages[activeIndex]
+                <div className="relative flex justify-center items-center min-h-[320px] overflow-hidden">
+                  {animatedIndexes.map((index) => {
+                    const step = steps[index];
+
+                    if (!step) {
+                      return null;
                     }
-                    alt={steps[activeIndex]?.title}
-                    className="w-full h-[320px] object-cover shadow-md transition-all duration-500 ease-in-out"
-                  />
+
+                    const isCurrent = index === currentAnimatedIndex;
+                    const isPrevious = index === previousAnimatedIndex;
+                    const animationClass = isCurrent
+                      ? transitionDirection === "forward"
+                        ? "department-highlight-image-enter-right"
+                        : "department-highlight-image-enter-left"
+                      : isPrevious
+                        ? transitionDirection === "forward"
+                          ? "department-highlight-image-exit-left"
+                          : "department-highlight-image-exit-right"
+                        : "department-highlight-hidden";
+
+                    return (
+                      <img
+                        key={`${step.id}-${isCurrent ? "current" : "previous"}-image`}
+                        src={
+                          step.imagePath ||
+                          dummyImages[index]
+                        }
+                        alt={step.title}
+                        className={`absolute inset-0 w-full h-[320px] object-cover shadow-md ${animationClass}`}
+                      />
+                    );
+                  })}
                 </div>
               </div>
             </div>

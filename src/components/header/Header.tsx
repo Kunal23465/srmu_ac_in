@@ -124,7 +124,7 @@ const Header = () => {
                           <div
                             className="
                               fixed left-1/2 -translate-x-1/2
-                              top-[108px] xl:top-[120px] bg-white rounded-md
+                              top-[100px] xl:top-[112px] bg-white rounded-md
                               hidden group-hover:flex
                               border-t-4 border-t-yellow-500
                               border-b-4 border-b-blue-500
