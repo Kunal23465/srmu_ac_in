@@ -246,6 +246,23 @@ export const getProgramCategoryPathMatch = (programMenuData: any[], firstSegment
 export const hasValidProgramCategoryRoute = (programMenuData: any[], firstSegment = "", secondSegment = "") =>
   Boolean(getProgramCategoryPathMatch(programMenuData, firstSegment, secondSegment));
 
+export const buildProgramCategoryPath = (programFlagSlug = "", disciplineSlug?: string | null) => {
+  const normalizedProgramFlagSlug = normalizeSlug(programFlagSlug);
+  const normalizedDisciplineSlug = normalizeSlug(disciplineSlug || "");
+  const canonicalProgramFlagSlug = CURRENT_TO_LEGACY_PROGRAM_FLAG_SLUG[normalizedProgramFlagSlug] || normalizedProgramFlagSlug;
+  const canonicalDisciplineSlug = DISCIPLINE_SLUG_ALIASES[normalizedDisciplineSlug] || normalizedDisciplineSlug;
+
+  if (!canonicalProgramFlagSlug) {
+    return "/";
+  }
+
+  if (!canonicalDisciplineSlug) {
+    return `/${canonicalProgramFlagSlug}`;
+  }
+
+  return `/${canonicalProgramFlagSlug}/${canonicalDisciplineSlug}`;
+};
+
 export const resolveTopLevelProgramRoute = (programSlug = "") => {
   const normalizedSlug = normalizeSlug(programSlug);
 

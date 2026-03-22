@@ -11,6 +11,22 @@ import { useDispatch, useSelector } from "react-redux";
 import logo from "../../assets/images/logo.svg";
 import { setProgramId } from "../../store/program-finder/program/programSlice";
 import { getPreferredProgramRouteSlug } from "../../utils/legacyProgramRoutes";
+import { buildProgramCategoryPath } from "../../utils/programCategoryRoute";
+
+const getProgramFlagRoutePath = (type: any) =>
+  buildProgramCategoryPath(type?.programFlagSlug || type?.programTypeSlug || type?.programFlagName || "");
+
+const getDisciplineRoutePath = (type: any, discipline: any) =>
+  buildProgramCategoryPath(
+    type?.programFlagSlug || type?.programTypeSlug || type?.programFlagName || "",
+    discipline?.disciplineSlug || discipline?.disciplineName || ""
+  );
+
+const getProgramRoutePath = (program: any) =>
+  `/program/${getPreferredProgramRouteSlug({
+    slug: program?.programSlug || program?.slug || "",
+    name: program?.programName || program?.name || "",
+  })}`;
 
 const Header = () => {
   const location = useLocation();
@@ -126,7 +142,7 @@ const Header = () => {
                                         <div key={type.programFlagId}>
                                           {/* BLUE HEADING */}
                                           <h3 className="font-medium text-[17px] p-3 rounded-lg inline-block hover:bg-[#ffb703] text-[#0f4a85] hover:text-black">
-                                            <Link onClick={() => setShowMegaMenu(false)} to={`/${type.programFlagSlug}`} state={{ programTypeId: type.programFlagId }}>
+                                            <Link onClick={() => setShowMegaMenu(false)} to={getProgramFlagRoutePath(type)} state={{ programTypeId: type.programFlagId }}>
                                               {type.programFlagName}
                                             </Link>
                                           </h3>
@@ -144,7 +160,7 @@ const Header = () => {
                                                         dispatch(setProgramId(prog.programId.toString()));
                                                         setShowMegaMenu(false);
                                                       }}
-                                                      to={`/program/${getPreferredProgramRouteSlug(prog.programSlug)}`}
+                                                      to={getProgramRoutePath(prog)}
                                                       className="text-[15px] px-3 py-2 rounded-md text-[#212529] hover:text-[#ffb703] border border-white hover:border-[#ffb703] block"
                                                     >
                                                       {prog.programName}
@@ -156,7 +172,7 @@ const Header = () => {
                                                   <li key={disc.disciplineId}>
                                                     <Link
                                                       onClick={() => setShowMegaMenu(false)}
-                                                      to={`/${type.programFlagSlug}/${disc.disciplineSlug}`}
+                                                      to={getDisciplineRoutePath(type, disc)}
                                                       state={{
                                                         programTypeId: type.programFlagId,
                                                         disciplineId: disc.disciplineId,
@@ -261,7 +277,7 @@ const Header = () => {
                                     <div key={type.programFlagId}>
                                       <h3 className="font-medium text-sm p-2 rounded-lg bg-gray-100 text-[#0f4a85] border-b border-gray-300">
                                         <Link
-                                          to={`/${type.programFlagSlug}`}
+                                          to={getProgramFlagRoutePath(type)}
                                           state={{ programTypeId: type.programFlagId }}
                                           onClick={() => setSideMenu(false)}
                                           className="hover:text-[#ffb703] block"
@@ -275,7 +291,7 @@ const Header = () => {
                                             type.programs.map((prog) => (
                                               <li key={prog.programId}>
                                                 <Link
-                                                  to={`/program/${getPreferredProgramRouteSlug(prog.programSlug)}`}
+                                                  to={getProgramRoutePath(prog)}
                                                   onMouseDown={() => {
                                                     dispatch(setProgramId(prog.programId.toString()));
                                                   }}
@@ -293,7 +309,7 @@ const Header = () => {
                                             type.disciplines.map((disc) => (
                                               <li key={disc.disciplineId}>
                                                 <Link
-                                                  to={`/${type.programFlagSlug}/${disc.disciplineSlug}`}
+                                                  to={getDisciplineRoutePath(type, disc)}
                                                   state={{
                                                     programTypeId: type.programFlagId,
                                                     disciplineId: disc.disciplineId,
