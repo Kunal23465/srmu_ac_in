@@ -39,9 +39,9 @@ const ProgramsSectionStatic: FC = () => {
   }, [activePrograms]);
 
   return (
-    <section className="bg-cover bg-center bg-fixed py-20 mb-20" style={{ backgroundImage: "url('programs-bg.png')" }}>
+    <section className="bg-cover bg-center bg-fixed py-8 md:py-10 lg:py-12" style={{ backgroundImage: "url('programs-bg.png')" }}>
       <div className="container mx-auto max-w-7xl px-4">
-        <div className="text-white mb-10">
+        <div className="text-white mb-8">
           <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] fw500">Our Programs</h2>
 
           <span className="text-lg mt-2 max-w-2xl opacity-90 block">
@@ -49,14 +49,14 @@ const ProgramsSectionStatic: FC = () => {
           </span>
         </div>
 
-        <div className="w-full flex flex-col md:flex-row gap-y-10 md:gap-10">
+        <div className="w-full flex flex-col md:flex-row gap-y-8 md:gap-8">
           <div className="w-full md:max-w-[350px] programs-tabs">
             <ul className="flex flex-row md:flex-col pb-5 sm:pb-0 manage-program-flow overflow-x-auto">
               {tabs.map((tab) => (
                 <li key={tab.id}>
                   <button
                     onClick={() => setActiveTab(tab.id)}
-                    className={`w-full text-left uppercase hidden sm:flex gap-x-2 items-center text-nowrap rounded-md py-5 md:pl-6 md:pr-16 mb-1 px-5 text-base md:text-[1.25rem] cursor-pointer transition-all ${
+                    className={`w-full text-left uppercase hidden sm:flex gap-x-2 items-center text-nowrap rounded-md py-4 md:pl-5 md:pr-14 mb-1 px-4 text-base md:text-[1.125rem] cursor-pointer transition-all ${
                       activeTab === tab.id ? "programsection shadow-lg text-white" : "bg-transparent text-white"
                     }`}
                   >
@@ -68,7 +68,7 @@ const ProgramsSectionStatic: FC = () => {
 
                   <button
                     onClick={() => setActiveTab(tab.id)}
-                    className="w-full text-left uppercase flex flex-col sm:hidden gap-2 px-2 items-center text-nowrap text-white rounded-md py-5 mb-1 text-xs cursor-pointer"
+                    className="w-full text-left uppercase flex flex-col sm:hidden gap-2 px-2 items-center text-nowrap text-white rounded-md py-4 mb-1 text-xs cursor-pointer"
                   >
                     <span
                       className={`block ${
@@ -105,7 +105,7 @@ const ProgramsSectionStatic: FC = () => {
                 </div>
               </div>
             ) : (
-              <ul className="grid gap-6 grid-cols-2 md:[grid-template-columns:repeat(auto-fit,minmax(170px,170px))] list-none">
+              <ul className="grid gap-5 grid-cols-2 md:[grid-template-columns:repeat(auto-fit,minmax(170px,170px))] list-none">
                 {activePrograms.map((item, idx) => (
                   <li key={`${item.name}-${idx}`} className="list-none">
                     <a href={item.link} rel="noopener noreferrer" className="block overflow-hidden bg-transparent transition-all hover:-translate-y-2 duration-300">
@@ -118,10 +118,10 @@ const ProgramsSectionStatic: FC = () => {
               </ul>
             )}
 
-            <div className="text-center mt-10">
+            <div className="text-center mt-8">
               <Link
                 to="/online-admission"
-                className="uppercase inline-flex items-center bg-[#ffb703] text-[#023047] font-medium py-4 px-8 rounded-xl hover:bg-transparent hover:border-1 hover:text-[#ffb703] hover:border-[#ffb703] transition shadow-md"
+                className="uppercase inline-flex items-center bg-[#ffb703] text-[#023047] font-medium py-3.5 px-7 rounded-xl hover:bg-transparent hover:border-1 hover:text-[#ffb703] hover:border-[#ffb703] transition shadow-md"
               >
                 Enroll Now
                 <LiaLongArrowAltRightSolid size={24} />

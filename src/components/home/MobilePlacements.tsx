@@ -62,11 +62,11 @@ const MobilePlacements = () => {
   };
 
   return (
-    <section ref={sectionRef} className={`${Classes["container"]} sm:mb-16 sm:mt-10`}>
+    <section ref={sectionRef} className={`${Classes["container"]} py-8 md:py-10 lg:py-12`}>
 
       <div className="w-full">
 
-        <h2 className="text-center text-[22px] sm:text-[28px] lg:text-[3.125rem] font-bold py-6 ">
+        <h2 className="text-center text-[22px] sm:text-[28px] lg:text-[3rem] font-bold py-5 ">
           {PlacementData[0].heading}
         </h2>
 
@@ -74,7 +74,7 @@ const MobilePlacements = () => {
           {PlacementData[0].description}
         </p>
 
-        <div className="w-full lg:flex justify-between gap-5 lg:pr-4 py-8">
+        <div className="w-full lg:flex justify-between gap-4 lg:pr-4 pt-4 md:pt-5">
 
           {/* Left Divs */}
 
@@ -86,7 +86,7 @@ const MobilePlacements = () => {
 
                 {item.isSlider ? (
 
-                  <div className="w-full px-3 pt-4 pb-10 bg-[#8fcedd] text-gray-900 rounded-md shadow-md flex flex-col justify-between">
+                  <div className="w-full px-3 pt-4 pb-8 bg-[#8fcedd] text-gray-900 rounded-md shadow-md flex flex-col justify-between">
 
                     <div ref={emblaRef1} className="overflow-hidden slider_placement_dots_law">
 
@@ -274,7 +274,7 @@ const MobilePlacements = () => {
 
                 <div
                   key={item.id}
-                  className={`w-full px-4 pt-4 pb-10 rounded-md shadow-md grid place-content-center ${item.id === 1
+                    className={`w-full px-4 pt-4 pb-8 rounded-md shadow-md grid place-content-center ${item.id === 1
                     ? "bg-[#ffb703] text-white"
                     : "bg-[#8fcedd] text-white"
                     }`}

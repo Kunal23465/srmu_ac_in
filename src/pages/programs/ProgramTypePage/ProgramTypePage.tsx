@@ -3,42 +3,43 @@ import ProgramFinderPage from '../ProgramFinderPage'
 import { useLocation } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { RootState } from '../../../store'
-import { Helmet } from 'react-helmet-async'
+import PageNotFound from '../../PageNotFound'
+import { normalizeProgramRouteSlug, resolveTopLevelProgramRoute } from '../../../utils/programCategoryRoute'
+import SeoHead from '../../../components/seo/SeoHead'
+import { SITE_NAME } from '../../../utils/seo'
 
 const ProgramTypePage: React.FC = () => {
     const { data } = useSelector((state: RootState) => state.programMenu)
     const location = useLocation();
-    console.log("location", location)
+    const routeSlug = useMemo(() => normalizeProgramRouteSlug(location.pathname), [location.pathname]);
+    const routeMatch = useMemo(() => resolveTopLevelProgramRoute(routeSlug), [routeSlug]);
 
-    const slugToTitle = (slug = "") =>
-        slug
-            .replace(/^\/+/, "")
-            .replace(/-/g, " ")
-            .replace(/\b\w/g, (char) => char.toUpperCase())
-
-    // ✅ derive program type directly from URL
-    const programTypeValue = useMemo(() => {
-        return slugToTitle(location.pathname)
-    }, [location.pathname])
-
-    // ✅ filter AFTER value is ready
     const dataForMeta = useMemo(() => {
-        return data.filter(
-            (item) => item.programFlagName === programTypeValue
-        )
-    }, [data, programTypeValue])
+        if (!routeMatch) {
+            return null;
+        }
 
-    // console.log("programTypeValue:", programTypeValue)
+        if (routeMatch.kind === "programFlag") {
+            return data.find((item) => normalizeProgramRouteSlug(item.programFlagSlug || item.programFlagName || "") === routeMatch.slug) || null;
+        }
+
+        return data
+            .flatMap((item) => item.disciplines || [])
+            .find((discipline) => normalizeProgramRouteSlug(discipline.disciplineSlug || discipline.disciplineName || "") === routeMatch.slug) || null;
+    }, [data, routeMatch])
+
+    if (!routeMatch) {
+        return <PageNotFound />
+    }
 
     return (
         <div>
             {
-                dataForMeta[0] && <Helmet>
-                    {/* @ts-ignore */}
-                    <title>{dataForMeta[0].metaTitle}</title>
-                    {/* @ts-ignore */}
-                    <meta name="description" content={dataForMeta[0].metaDescription} />
-                </Helmet>
+                dataForMeta && <SeoHead
+                    title={dataForMeta.metaTitle || `${dataForMeta.programFlagName || dataForMeta.disciplineName || "Programs"} | ${SITE_NAME}, Lucknow`}
+                    description={dataForMeta.metaDescription || `Explore programs, admissions information, and eligibility details for ${dataForMeta.programFlagName || dataForMeta.disciplineName || "SRMU programs"}.`}
+                    pathname={location.pathname}
+                />
             }
 
             <ProgramFinderPage />

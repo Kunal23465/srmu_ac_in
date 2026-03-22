@@ -1,13 +1,14 @@
 import React from "react";
 import Leadership from "../../../components/about/leadership-and-governance/Leadership-and-Governance";
-import { Helmet } from "react-helmet-async";
+import SeoHead from "../../../components/seo/SeoHead";
 
 const LeadershipAndGovernancePage: React.FC = () => {
   return<>
-  <Helmet>
-      <title>Leadership and Governance | Shri Ramswaroop Memorial University, Lucknow</title>
-      <meta name="description" content="At SRMU we strive to provide students with a platform to attain their dreams. Our vision at SRMU is to make learning a harmonious experience, enabling our students to shine in each and every aspect of life." />
-  </Helmet>
+  <SeoHead
+      title="Leadership and Governance | Shri Ramswaroop Memorial University, Lucknow"
+      description="At SRMU we strive to provide students with a platform to attain their dreams. Our vision is to make learning a harmonious experience, enabling students to shine in every aspect of life."
+      pathname="/leadership-and-governance"
+  />
     <Leadership />
   </> 
 };

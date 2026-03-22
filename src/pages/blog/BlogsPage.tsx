@@ -8,7 +8,7 @@ import PaginationBlog from "../../components/blog/Pagination";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../store";
 import { fetchBlogs } from "../../store/blogs/blogsThunk";
-import { Helmet } from "react-helmet-async";
+import SeoHead from "../../components/seo/SeoHead";
 
 const BlogsPage: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -30,16 +30,15 @@ const BlogsPage: React.FC = () => {
     }
   }, [blogCards.length, dispatch]);
 
-  console.log("blogCards",blogCards)
-
   return (
     <>
       {location.pathname === parentPath ? (
         <>
-          <Helmet>
-            <title>Blog | Shri Ramswaroop Memorial University, Lucknow</title>
-            <meta name="description" content="Stay updated with the latest news, campus events, academic insights, and student stories from Shri Ramswaroop Memorial University, Lucknow. Explore inspiring blogs from SRMU’s vibrant community." />
-          </Helmet>
+          <SeoHead
+            title="Blog | Shri Ramswaroop Memorial University, Lucknow"
+            description="Stay updated with the latest news, campus events, academic insights, and student stories from Shri Ramswaroop Memorial University, Lucknow. Explore inspiring blogs from SRMU's vibrant community."
+            pathname={parentPath}
+          />
           <div className="py-12 bg-gray-50">
             <div className="container mx-auto px-4">
               <div className={`${Classes["container"]}`}>

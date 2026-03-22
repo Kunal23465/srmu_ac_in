@@ -5,6 +5,7 @@ import Classes from "../../utils/styles/Global.module.css";
 import { AppDispatch, RootState } from "../../store";
 import { fetchHomeEventsData } from "../../store/home-events/getHomeEventsThunk";
 import { eventsData } from "../../data/home/EventsData";
+import { findNewsBySlug } from "../../utils/routeMatching";
 import SeoHead from "../seo/SeoHead";
 import { SITE_NAME, stripHtml, toAbsoluteUrl } from "../../utils/seo";
 
@@ -38,17 +39,6 @@ const normalizeEvent = (news: any, index: number) => {
   };
 };
 
-const slugifyEventTitle = (value: string) =>
-  value
-    .toLowerCase()
-    .trim()
-    .replace(/[()]/g, "")
-    .replace(/&/g, "and")
-    .replace(/[^\w\s-]/g, "")
-    .replace(/\s+/g, "-")
-    .replace(/-+/g, "-")
-    .replace(/^-|-$/g, "");
-
 const NewsEventDetails: React.FC = () => {
   const location = useLocation();
   const { programName, name } = useParams();
@@ -70,8 +60,8 @@ const NewsEventDetails: React.FC = () => {
 
   const news =
     stateNews ||
-    normalizedStoreEvents.find((item) => slugifyEventTitle(item.title || "") === paramName) ||
-    normalizedFallbackEvents.find((item) => slugifyEventTitle(item.title || "") === paramName);
+    findNewsBySlug(normalizedStoreEvents, paramName || "") ||
+    findNewsBySlug(normalizedFallbackEvents, paramName || "");
 
   if (!news) {
     return (
@@ -118,9 +108,11 @@ const NewsEventDetails: React.FC = () => {
       <div className={`${Classes["container"]} py-20`}>
         <h1 className="font-bold text-4xl">{news.title}</h1>
         <div className="mt-6 font-normal bg-amber-400 text-blue-900 w-fit px-3 py-1 rounded-2xl">{news.date}</div>
-        <div className="w-full mt-10 mb-4">
-          <img src={news.image} alt={news.title} className="w-full"/>
-        </div>
+        {news.image ? (
+          <div className="w-full mt-10 mb-4">
+            <img src={news.image} alt={news.title} className="w-full"/>
+          </div>
+        ) : null}
         <div dangerouslySetInnerHTML={{ __html: news.description }}></div>
       </div>
     </>

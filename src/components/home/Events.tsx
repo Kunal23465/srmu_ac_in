@@ -262,7 +262,7 @@ const Events: React.FC = () => {
 
   return (
 
-    <div className={`${Classes["container"]} pt-7 pb-4 sm:py-7 md:py-10 lg:py-14`}>
+    <div className={`${Classes["container"]} py-8 md:py-10 lg:py-12`}>
 
       <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] fw500 text-left">
         Latest News and Events
@@ -275,7 +275,7 @@ const Events: React.FC = () => {
 
       {/* ---------------- Desktop Layout ---------------- */}
 
-      <div className="hidden lg:flex flex-row-reverse gap-x-10 mt-6 md:mt-8 lg:mt-10">
+      <div className="hidden lg:flex flex-row-reverse gap-x-8 mt-5 md:mt-7 lg:mt-8">
 
         <div className="w-full lg:w-[40%] border p-3 rounded-lg border-[#ffb703] hover:shadow-2xl transition-all duration-200">
 

@@ -129,9 +129,6 @@ const CustomProgramOppertunitySlider: React.FC<
     const slidesToShow = getSlidesToShow();
     return `${100 / slidesToShow}%`;
   };
-
-
-  console.log("data===============", data)
   // Static grid for SSR
   if (!hasMounted) {
     return (

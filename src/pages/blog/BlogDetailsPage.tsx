@@ -7,18 +7,19 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../store";
 import SeoHead from "../../components/seo/SeoHead";
 import { SITE_NAME, stripHtml, toAbsoluteUrl } from "../../utils/seo";
+import { findBlogBySlug } from "../../utils/routeMatching";
 
 const BlogDetailsPage: React.FC = () => {
   const location = useLocation();
-  const { title } = useParams();
+  const { title, slug } = useParams();
   const { data: blogs } = useSelector((state: RootState) => state.getAllBlogs);
 
   const dataFromState = (location.state as any)?.data;
-  const decodedTitle = decodeURIComponent(title || "").replace(/_/g, " ").trim().toLowerCase();
+  const slugOrTitle = slug || title || "";
 
   const data =
     dataFromState ||
-    blogs.find((item: any) => item.title?.trim().toLowerCase() === decodedTitle);
+    findBlogBySlug(Array.isArray(blogs) ? blogs : [], slugOrTitle);
   // const { id } = useParams<{ id: string }>();
   // const blog = blogCards.find((b) => b.routeKey === id);
 
@@ -94,9 +95,11 @@ const BlogDetailsPage: React.FC = () => {
             <div className="inline-block mb-10 bg-[#ffb703] px-4 rounded-2xl text-[#0f4a85] mt-2 py-1">{data.postedOn}</div>
 
             {/* Image */}
-            <div className="mb-8">
-              <img src={data.imagePath} alt={data.title} className="w-full h-full max-h-[60vh] object-cover  shadow-lg" />
-            </div>
+            {data.imagePath ? (
+              <div className="mb-8">
+                <img src={data.imagePath} alt={data.title} className="w-full h-full max-h-[60vh] object-cover  shadow-lg" />
+              </div>
+            ) : null}
 
             <div className="mt-8 text-[15px] prose prose-lg text-justify [&_li]:mb-2 [&_p]:mb-3 [&_h4]:text-[#212529] [&_h4]:font-normal!  [&_h4]:text-[22.5px]  [&_h4]:mb-3 [&_ul]:mb-8 [&_li]:ml-6 [&_a]:text-[#ffb703]">
               <div dangerouslySetInnerHTML={{ __html: data.description }} />

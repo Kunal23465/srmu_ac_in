@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { conferenceData } from "../../../data/campus-life/events/events-data";
 import { useNavigate } from "react-router-dom";
+import { normalizeRouteSlug } from "../../../utils/routeMatching";
 
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 
@@ -121,7 +122,7 @@ const ConferencesSection: React.FC = () => {
                   {truncateText(card.description)}
                 </span>
                 <button
-                  onClick={() => navigate(card.routeKey)}
+                  onClick={() => navigate(`/event/${normalizeRouteSlug(card.title)}`)}
                   className="mt-8 lg:text-[12.195px] text-[11.38px] sm:text-[11.38px] transition-all duration-500 fw500 border-2 border-[#ffb703] color_light_blue py-3 px-8 rounded-lg  group-hover:bg-[#ffb703] hover:text-white flex items-center gap-2"
                 >
                   MORE INFO →

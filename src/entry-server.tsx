@@ -27,6 +27,11 @@ import "./index.css";
 import { fetchPlacementDriveTabData } from "./store/placement/placement-drive/placementDriveTabDataThunk";
 import { routes } from "./utils/AllRoutesNew";
 import { eventsData } from "./data/home/EventsData";
+import { legacyNewsArticles } from "./data/legacy/legacyContent";
+import { resolveProgramRouteSlug } from "./utils/legacyProgramRoutes";
+import { slugify } from "./utils/slugify";
+import { findBlogBySlug, findCommitteeCardBySlug, findConferenceBySlug, findEventCardBySlug, findNewsBySlug } from "./utils/routeMatching";
+import { getProgramCategoryPathMatch, hasValidTopLevelProgramRoute, resolveTopLevelProgramRoute } from "./utils/programCategoryRoute";
 
 const GLOBAL_LAYOUT_CACHE_TTL_MS = 5 * 60 * 1000;
 const HOME_PAGE_CACHE_TTL_MS = 5 * 60 * 1000;
@@ -46,6 +51,11 @@ let globalLayoutCache: GlobalLayoutCacheEntry | null = null;
 let globalLayoutCachePromise: Promise<GlobalLayoutCacheEntry> | null = null;
 let homePageCache: HomePageCacheEntry | null = null;
 let homePageCachePromise: Promise<HomePageCacheEntry> | null = null;
+
+const getRouteElementPreload = (route: { element?: { type?: { preload?: () => Promise<unknown> } } }) => {
+  const preload = route.element?.type?.preload;
+  return typeof preload === "function" ? preload : null;
+};
 
 const getGlobalLayoutCache = () => {
   if (globalLayoutCache && globalLayoutCache.expiresAt > Date.now()) {
@@ -85,34 +95,6 @@ async function preloadHomePageData(store: ReturnType<typeof createStore>) {
   }
 }
 
-const slugifyProgramName = (value: string) =>
-  value
-    .toLowerCase()
-    .trim()
-    .replace(/[()]/g, "")
-    .replace(/&/g, "")
-    .replace(/\./g, "-")
-    .replace(/\s+/g, "-")
-    .replace(/-+/g, "-")
-    .replace(/-in-/g, "-")
-    .replace(/^b-c-a\b/, "bca")
-    .replace(/-with-.*/, "")
-    .replace(/^-|-$/g, "");
-
-const slugifyForMenu = (value: string) =>
-  value.toLowerCase().trim().replace(/[()]/g, "").replace(/&/g, "and").replace(/\./g, "-").replace(/\s+/g, "-").replace(/-+/g, "-").replace(/^-|-$/g, "");
-
-const slugifyEventTitle = (value: string) =>
-  value
-    .toLowerCase()
-    .trim()
-    .replace(/[()]/g, "")
-    .replace(/&/g, "and")
-    .replace(/[^\w\s-]/g, "")
-    .replace(/\s+/g, "-")
-    .replace(/-+/g, "-")
-    .replace(/^-|-$/g, "");
-
 const hasValidDynamicProgramFinderRoute = (normalizedPathname: string, programMenuData: any[]) => {
   const segments = normalizedPathname.split("/").filter(Boolean);
 
@@ -120,16 +102,17 @@ const hasValidDynamicProgramFinderRoute = (normalizedPathname: string, programMe
     return false;
   }
 
-  const [programTypeSlug, disciplineSlug] = segments;
-  const matchedProgramFlag = programMenuData.find((item: any) => slugifyForMenu(item?.programFlagName || "") === programTypeSlug);
+  return Boolean(getProgramCategoryPathMatch(programMenuData, segments[0], segments[1]));
+};
 
-  if (!matchedProgramFlag) {
+const hasValidTopLevelProgramFinderRoute = (normalizedPathname: string) => {
+  const segments = normalizedPathname.split("/").filter(Boolean);
+
+  if (segments.length !== 1) {
     return false;
   }
 
-  return (matchedProgramFlag?.disciplines || []).some(
-    (discipline: any) => slugifyForMenu(discipline?.disciplineName || "") === disciplineSlug
-  );
+  return hasValidTopLevelProgramRoute(segments[0]);
 };
 
 const hasMatchingNewsEvent = (normalizedPathname: string) => {
@@ -140,21 +123,41 @@ const hasMatchingNewsEvent = (normalizedPathname: string) => {
     return false;
   }
 
-  return eventsData.some((item: any) => slugifyEventTitle(item?.title || item?.name || "") === newsSlug);
+  return Boolean(findNewsBySlug([...eventsData, ...legacyNewsArticles], newsSlug));
 };
 
 const hasMatchingBlog = (normalizedPathname: string, state: RootState) => {
-  const routeMatch = normalizedPathname.match(/^\/blogs\/([^/]+)$/);
-  const encodedTitle = routeMatch?.[1];
+  const routeMatch = normalizedPathname.match(/^\/(?:blog|blogs)\/([^/]+)$/);
+  const slug = routeMatch?.[1];
 
-  if (!encodedTitle) {
+  if (!slug) {
     return false;
   }
 
-  const decodedTitle = decodeURIComponent(encodedTitle).replace(/_/g, " ").trim().toLowerCase();
   const blogs = state.getAllBlogs?.data || [];
 
-  return blogs.some((item: any) => item?.title?.trim().toLowerCase() === decodedTitle);
+  return Boolean(findBlogBySlug(blogs, slug));
+};
+
+const hasMatchingLegacyEvent = (normalizedPathname: string) => {
+  const routeMatch = normalizedPathname.match(/^\/event\/([^/]+)$/);
+  const eventSlug = routeMatch?.[1];
+
+  return Boolean(eventSlug && findEventCardBySlug(eventSlug));
+};
+
+const hasMatchingLegacyCommittee = (normalizedPathname: string) => {
+  const routeMatch = normalizedPathname.match(/^\/committe\/([^/]+)$/);
+  const committeeSlug = routeMatch?.[1];
+
+  return Boolean(committeeSlug && findCommitteeCardBySlug(committeeSlug));
+};
+
+const hasMatchingConference = (normalizedPathname: string) => {
+  const routeMatch = normalizedPathname.match(/^\/(?:conference|research\/conference|research-overview\/conference)\/([^/]+)$/);
+  const conferenceSlug = routeMatch?.[1];
+
+  return Boolean(conferenceSlug && findConferenceBySlug(conferenceSlug));
 };
 
 const getStatusCode = (normalizedPathname: string, state: RootState, programMenuData: any[]) => {
@@ -169,12 +172,39 @@ const getStatusCode = (normalizedPathname: string, state: RootState, programMenu
     return hasValidDynamicProgramFinderRoute(normalizedPathname, programMenuData) ? 200 : 404;
   }
 
+  if (matchedLeafPath === "/:programType") {
+    return hasValidTopLevelProgramFinderRoute(normalizedPathname) ? 200 : 404;
+  }
+
   if (normalizedPathname.startsWith("/news/")) {
     return hasMatchingNewsEvent(normalizedPathname) ? 200 : 404;
   }
 
-  if (normalizedPathname.startsWith("/blogs/")) {
+  if (normalizedPathname.startsWith("/blog/") || normalizedPathname.startsWith("/blogs/")) {
     return hasMatchingBlog(normalizedPathname, state) ? 200 : 404;
+  }
+
+  if (normalizedPathname.startsWith("/event/")) {
+    return hasMatchingLegacyEvent(normalizedPathname) ? 200 : 404;
+  }
+
+  if (normalizedPathname.startsWith("/committe/")) {
+    return hasMatchingLegacyCommittee(normalizedPathname) ? 200 : 404;
+  }
+
+  if (
+    normalizedPathname.startsWith("/conference/") ||
+    normalizedPathname.startsWith("/research/conference/") ||
+    normalizedPathname.startsWith("/research-overview/conference/")
+  ) {
+    return hasMatchingConference(normalizedPathname) ? 200 : 404;
+  }
+
+  if (normalizedPathname.startsWith("/program/")) {
+    const routeMatch = normalizedPathname.match(/^\/program\/([^/]+)$/);
+    const requestedProgramSlug = resolveProgramRouteSlug(routeMatch?.[1] || "");
+
+    return Boolean(state.getProgramFinder?.dataByID?.programId && state.getProgramFinder?.currentDetailsSlug === requestedProgramSlug) ? 200 : 404;
   }
 
   return 200;
@@ -241,44 +271,25 @@ async function getHomePageCacheEntry() {
   return homePageCachePromise;
 }
 
-async function preloadProgramDetailsPageData(store: ReturnType<typeof createStore>, normalizedPathname: string, programMenuData: any[]) {
-  const routeMatch = normalizedPathname.match(/^\/program\/([^/]+)$/);
-  const programSlug = routeMatch?.[1];
+async function preloadMatchedRouteComponents(normalizedPathname: string) {
+  const matches = matchRoutes(routes, normalizedPathname) || [];
+  const preloaders = matches
+    .map((match) => getRouteElementPreload(match.route as { element?: { type?: { preload?: () => Promise<unknown> } } }))
+    .filter((preload): preload is () => Promise<unknown> => Boolean(preload));
 
-  if (!programSlug) {
+  if (preloaders.length === 0) {
     return;
   }
 
-  let numericProgramId = Number.NaN;
+  await Promise.allSettled(preloaders.map((preload) => preload()));
+}
 
-  // First try matching from preloaded navbar menu programs by slug.
-  const menuMatchedProgram = (programMenuData || [])
-    .flatMap((flag: any) => flag?.programs || [])
-    .find((program: any) => slugifyProgramName(program?.programName || "") === programSlug.toLowerCase());
+async function preloadProgramDetailsPageData(store: ReturnType<typeof createStore>, normalizedPathname: string, programMenuData: any[]) {
+  const routeMatch = normalizedPathname.match(/^\/program\/([^/]+)$/);
+  const programSlug = resolveProgramRouteSlug(routeMatch?.[1] || "");
 
-  if (menuMatchedProgram?.programId) {
-    numericProgramId = Number(menuMatchedProgram.programId);
-  }
-
-  const decodedName = decodeURIComponent(programSlug).replace(/-/g, " ");
-  const byNameAction = await store.dispatch(fetchAllProgramFinder({ name: decodedName }));
-  const byNamePrograms = fetchAllProgramFinder.fulfilled.match(byNameAction) && Array.isArray(byNameAction.payload) ? byNameAction.payload : [];
-
-  let matchedProgram = byNamePrograms.find((item: any) => slugifyProgramName(item?.name || "") === programSlug.toLowerCase());
-
-  // Fallback to all programs when name filtering misses due punctuation/slugs.
-  if (!matchedProgram) {
-    const allProgramsAction = await store.dispatch(fetchAllProgramFinder());
-    const allPrograms = fetchAllProgramFinder.fulfilled.match(allProgramsAction) && Array.isArray(allProgramsAction.payload) ? allProgramsAction.payload : [];
-    matchedProgram = allPrograms.find((item: any) => slugifyProgramName(item?.name || "") === programSlug.toLowerCase());
-  }
-
-  if (!Number.isFinite(numericProgramId)) {
-    numericProgramId = Number(matchedProgram?.programId);
-  }
-
-  if (Number.isFinite(numericProgramId) && numericProgramId > 0) {
-    store.dispatch(setProgramId(String(numericProgramId)));
+  if (!programSlug) {
+    return;
   }
 
   await Promise.allSettled([
@@ -302,7 +313,32 @@ async function preloadDynamicProgramFinderPageData(store: ReturnType<typeof crea
     return;
   }
 
-  const programFlag = programMenuData.find((item: any) => slugifyForMenu(item?.programFlagName || "") === segments[0]);
+  if (segments.length === 1) {
+    const topLevelRoute = resolveTopLevelProgramRoute(segments[0]);
+
+    if (!topLevelRoute) {
+      return;
+    }
+
+    if (topLevelRoute.kind === "programFlag") {
+      await Promise.allSettled([
+        store.dispatch(fetchProgramByFlag()),
+        store.dispatch(fetchProgramDiscipline({ programFlagSlug: topLevelRoute.slug })),
+        store.dispatch(fetchAllProgramFinder({ programFlagSlug: topLevelRoute.slug })),
+      ]);
+      return;
+    }
+
+    await Promise.allSettled([
+      store.dispatch(fetchProgramByFlag()),
+      store.dispatch(fetchProgramDiscipline()),
+      store.dispatch(fetchAllProgramFinder({ programDisciplineSlug: topLevelRoute.slug })),
+    ]);
+    return;
+  }
+
+  const routeMatch = getProgramCategoryPathMatch(programMenuData, segments[0], segments[1]);
+  const programFlag = routeMatch?.matchedProgramFlag;
 
   if (!programFlag) {
     return;
@@ -313,11 +349,10 @@ async function preloadDynamicProgramFinderPageData(store: ReturnType<typeof crea
   };
 
   if (segments.length === 2) {
-    const discipline = (programFlag.disciplines || []).find((item: any) => slugifyForMenu(item?.disciplineName || "") === segments[1]);
-    if (!discipline) {
+    if (!routeMatch?.matchedDiscipline) {
       return;
     }
-    filters.programDisciplineId = discipline.disciplineId;
+    filters.programDisciplineId = routeMatch.matchedDiscipline.disciplineId;
   }
 
   await Promise.allSettled([
@@ -358,6 +393,7 @@ export async function render(url: string) {
 
   // Preload route-specific data for SSR
   const routePreloadStartedAt = Date.now();
+  const routeComponentPreloadPromise = preloadMatchedRouteComponents(normalizedPathname);
   if (normalizedPathname === "/") {
     await preloadHomePageData(store);
   } else if (normalizedPathname === "/notice") {
@@ -366,13 +402,18 @@ export async function render(url: string) {
     await preloadAdmissionProgramFinderPageData(store);
   } else if (normalizedPathname === "/placements") {
     await preloadPlacementOverviewPageData(store);
-  } else if (normalizedPathname === "/blogs" || normalizedPathname.startsWith("/blogs/")) {
+  } else if (
+    normalizedPathname === "/blogs" ||
+    normalizedPathname.startsWith("/blogs/") ||
+    normalizedPathname.startsWith("/blog/")
+  ) {
     await preloadBlogsPageData(store);
   } else if (normalizedPathname.startsWith("/program/")) {
     await preloadProgramDetailsPageData(store, normalizedPathname, programMenuData);
   } else {
     await preloadDynamicProgramFinderPageData(store, normalizedPathname, programMenuData);
   }
+  await routeComponentPreloadPromise;
   const routePreloadDuration = Date.now() - routePreloadStartedAt;
 
   const renderToStringStartedAt = Date.now();
@@ -385,11 +426,6 @@ export async function render(url: string) {
       </Provider>
     </HelmetProvider>,
   );
-  const renderToStringDuration = Date.now() - renderToStringStartedAt;
-  const totalDuration = Date.now() - renderStartedAt;
-
-  console.info(`[SSR] ${normalizedPathname} total=${totalDuration}ms global=${globalLayoutDuration}ms route=${routePreloadDuration}ms render=${renderToStringDuration}ms`);
-
   return {
     appHtml,
     preloadedState: store.getState(),

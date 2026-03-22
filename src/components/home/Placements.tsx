@@ -62,7 +62,7 @@ const Placements = () => {
 
     <section
       ref={sectionRef}
-      className={`${Classes["container"]} sm:mb-16 sm:mt-10`}
+      className={`${Classes["container"]} py-8 md:py-10 lg:py-12`}
     >
 
       <div className="w-full">
@@ -79,7 +79,7 @@ const Placements = () => {
 
         </div>
 
-        <div className="lg:flex justify-between gap-5 lg:pr-4 py-8">
+        <div className="lg:flex justify-between gap-4 pt-4 md:pt-5">
 
           {/* Left divs */}
 
@@ -89,7 +89,7 @@ const Placements = () => {
 
               <div
                 key={item.id}
-                className={`px-4 pt-4 pb-10 rounded-md shadow-md h-[170px] lg:h-[270px] ${item.id === 1
+                className={`px-4 pt-4 pb-8 rounded-md shadow-md h-[160px] lg:h-[245px] ${item.id === 1
                   ? "bg-[#023047] text-white"
                   : "bg-[#ffb703] text-white"
                   }`}
@@ -113,7 +113,7 @@ const Placements = () => {
 
           {/* Left slider */}
 
-          <div className="mt-3 lg:mt-0 px-4 py-10 lg:p-4 bg-[#8fcedd] text-gray-900 rounded-md shadow-md min-w-[115px] lg:min-w-[calc(33%-70px)] lg:h-[550px] flex flex-col justify-between">
+          <div className="mt-3 lg:mt-0 px-4 py-8 lg:px-0 lg:pt-4 lg:pb-0 bg-[#8fcedd] text-gray-900 rounded-md shadow-md min-w-[115px] lg:min-w-[calc(33%-70px)] lg:h-[500px] flex flex-col justify-between overflow-hidden">
 
             <div
               className="overflow-hidden slider_placement_dots_law placement_dots_law_left"
@@ -126,10 +126,10 @@ const Placements = () => {
 
                   <div
                     key={slide.id}
-                    className="flex-[0_0_100%] text-center relative h-full flex flex-col justify-between lg:h-[535px] overflow-hidden"
+                    className="flex-[0_0_100%] text-center relative h-full flex flex-col justify-between lg:h-[485px] overflow-hidden"
                   >
 
-                    <div className="flex-grow text-left">
+                    <div className="flex-grow text-left lg:px-4">
 
                       {renderCounter(
                         slide.title,
@@ -143,11 +143,11 @@ const Placements = () => {
 
                     </div>
 
-                    <div className="hidden lg:block absolute -bottom-10 left-1/2 -translate-x-1/2 w-full">
+                    <div className="hidden lg:block absolute bottom-0 left-0 w-full">
                       <img
                         src={slide.img}
                         alt={`slide ${slide.id}`}
-                        className="w-full h-[400px] object-contain"
+                        className="w-full h-[360px] object-contain"
                       />
                     </div>
 
@@ -171,7 +171,7 @@ const Placements = () => {
 
                 <div
                   key={item.id}
-                  className={`w-full px-4 pt-4 pb-10 rounded-md shadow-md lg:h-[270px] ${item.id === 1
+                  className={`w-full px-4 pt-4 pb-8 rounded-md shadow-md lg:h-[245px] ${item.id === 1
                     ? "bg-[#ffb703] text-white"
                     : "bg-[#8fcedd] text-white"
                     }`}
@@ -195,7 +195,7 @@ const Placements = () => {
 
             <div>
 
-              <div className="px-4 pt-4 pb-10 bg-[#023047] text-white rounded-md shadow-md lg:h-[270px]">
+              <div className="px-4 pt-4 pb-8 bg-[#023047] text-white rounded-md shadow-md lg:h-[245px]">
 
                 {renderCounter(
                   PlacementData[0].middlebelowDiv.title,
@@ -215,7 +215,7 @@ const Placements = () => {
 
           {/* Right slider */}
 
-          <div className="mt-3 lg:mt-0 px-4 py-10 lg:p-4 bg-[#8fcedd] text-gray-900 rounded-md shadow-md flex flex-col justify-between lg:h-[550px] min-w-[150px] lg:min-w-[calc(33%-70px)]">
+          <div className="mt-3 lg:mt-0 px-4 py-8 lg:px-0 lg:pt-4 lg:pb-0 bg-[#8fcedd] text-gray-900 rounded-md shadow-md flex flex-col justify-between lg:h-[500px] min-w-[150px] lg:min-w-[calc(33%-70px)] overflow-hidden">
 
             <div
               className="overflow-hidden slider_placement_dots_law placement_dots_law_right"
@@ -231,7 +231,7 @@ const Placements = () => {
                     className="flex-[0_0_100%] text-center h-full flex flex-col justify-between relative lg:h-[535px] overflow-hidden"
                   >
 
-                    <div className="flex-grow text-left text-white">
+                    <div className="flex-grow text-left text-white lg:px-4">
 
                       {renderCounter(
                         slide.title,
@@ -245,11 +245,11 @@ const Placements = () => {
 
                     </div>
 
-                    <div className="hidden lg:block absolute -bottom-10 left-1/2 -translate-x-1/2 w-full">
+                    <div className="hidden lg:block absolute bottom-0 left-0 w-full">
                       <img
                         src={slide.img}
                         alt={`slide ${slide.id}`}
-                        className="w-full h-[400px] object-contain rounded-md"
+                        className="w-full h-[400px] object-contain"
                       />
                     </div>
 

@@ -1,13 +1,14 @@
 import React from "react";
 import AwardOverview from "../../../components/about/award-overview/AwardOverview";
-import { Helmet } from "react-helmet-async";
+import SeoHead from "../../../components/seo/SeoHead";
 
 const AwardOverviewPage: React.FC = () => {
   return <>
-    <Helmet>
-      <title>Award Overview | Shri Ramswaroop Memorial University, Lucknow</title>
-      <meta name="description" content="SRMU is proud of its numerous prestigious awards and recognitions, showcasing its dedication to academic excellence, innovative methods, and contributions to higher education." />
-    </Helmet>
+    <SeoHead
+      title="Award Overview | Shri Ramswaroop Memorial University, Lucknow"
+      description="SRMU is proud of its numerous prestigious awards and recognitions, showcasing its dedication to academic excellence, innovative methods, and contributions to higher education."
+      pathname="/award-overview"
+    />
     <AwardOverview />
   </>
 

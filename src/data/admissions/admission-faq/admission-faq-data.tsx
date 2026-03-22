@@ -1,4 +1,8 @@
 import { customeOverViewType } from "../../../types/home-data-type";
+import { SITE_URL } from "../../../utils/seo";
+
+const eligibilityCriteriaUrl = `${SITE_URL}/pdf/EligibilityCriteriaforAdmissions.pdf`;
+const onlineAdmissionUrl = `${SITE_URL}/online-admission`;
 
 export const admissionFaqOverviewData: customeOverViewType = {
     heading: "Admission-FAQs",
@@ -28,7 +32,7 @@ export const faqData: AccordionItem[] = [
         question: "What is the criterion for admission in SRMU?",
         layoutType: "text",
         content:
-            "Prospective candidates seeking admission to any undergraduate, postgraduate, integrated, or diploma program must ensure they meet the prescribed eligibility criteria for the specific course. Explore the eligibility criteria for different courses at <strong>https://srmu.ac.in/pdf/EligibilityCriteriaforAdmissions.pdf</strong>.",
+            `Prospective candidates seeking admission to any undergraduate, postgraduate, integrated, or diploma program must ensure they meet the prescribed eligibility criteria for the specific course. Explore the eligibility criteria for different courses at <strong>${eligibilityCriteriaUrl}</strong>.`,
     },
     {
         id: 2,
@@ -42,7 +46,7 @@ export const faqData: AccordionItem[] = [
         question: "How can I apply for a particular course?",
         layoutType: "text",
         content:
-            "After getting the information regarding the courses and knowing eligibility criteria, students can apply for any course by paying the required amount for reserving the seat either offline or online at <strong>https://srmu.ac.in/online-admission</strong>.",
+            `After getting the information regarding the courses and knowing eligibility criteria, students can apply for any course by paying the required amount for reserving the seat either offline or online at <strong>${onlineAdmissionUrl}</strong>.`,
     },
     {
         id: 4,

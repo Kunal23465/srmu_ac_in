@@ -21,7 +21,7 @@ const ImageCards: React.FC<CardProps> = ({ card }) => {
                     />
 
                     <Link
-                        to="program-finder"
+                        to={card.linkTo}
                         className=" absolute bottom-5  left-5 cursor-pointer bg-amber-400
                         w-[180px] sm:w-[200px] md:w-45
                     p-4 md:p-6

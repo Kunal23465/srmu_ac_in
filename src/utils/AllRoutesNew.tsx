@@ -1,112 +1,116 @@
 import RootLayout from "../pages/RootLayout";
-import PageNotFound from "../pages/PageNotFound";
 import { useRoutes } from "react-router-dom";
 import HomePage from "../pages/Home/HomePage";
-import CareerFormPage from "../pages/Home/CareerFormPage";
-import TermsConditionPage from "../pages/Home/TermsConditionPage";
-import NewsLetterPage from "../pages/Home/NewsLetterPage";
-import NoticePage from "../pages/notice/NoticePage";
-import ShiftSchedulePage from "../pages/admissions/shift-schedule/ShiftSchedulePage";
-import AboutPage from "../pages/about/AboutPage";
-import NewsEventDetails from "../components/home/NewsEventDetails";
-import ProgramDetailsPage from "../pages/programs/details-page/ProgramDetailsPage";
-// import ProgramTypePage from "../pages/programs/ProgramTypePage/ProgramTypePage";
-import ProgramTypeItemPage from "../pages/ProgramTypeItemPage";
-import LeadershipAndGovernancePage from "../pages/about/Leadership-and-Governance/LeadershipAndGovernancePage";
-import CommitteeAndCellsPage from "../pages/about/Committee-and-Cells/CommitteeAndCellsPage";
-import CustomCommitteeDetailsPage from "./custom/CustomCommitteeDetailsPage";
+import { lazyPage } from "./lazyRoute";
 import { committeeCards } from "../data/about/committee-and-cells/committee-and-cells-data";
-import RecognitionApprovalsPage from "../pages/about/recognition-approval/RecognitionApprovalsPage";
-import AwardOverviewPage from "../pages/about/award-overview/AwardOverviewPage";
-import IqacPage from "../pages/about/iqac-overview/IqacPage";
-import NAACPage from "../pages/about/NAAC/NAACPage";
-import NIRFPage from "../pages/about/NIRF/NIRFPage";
-import OragnisationStructurePage from "../pages/about/organisation-structure-plan/OrganisationStructurePlan";
-import InstitutePage from "../pages/academics/institutes/InstitutePage";
-import InstituteDepartmentPage from "../pages/academics/institutes/institute-department/InstituteDepartmentPage";
-import PoliciesReportsPage from "../pages/academics/Policies-Reports/PoliciesReportsPage";
-import AcademicCalendarsPage from "../pages/academics/academic-calendars/AcademicCalendarsPage";
-import TeachingLearningProcessPage from "../pages/academics/teaching-learning-process/TeachingLearningProcessPage";
-import AcademicBankOfCreditPage from "../pages/academics/academic-bank-credit/AcademicBankOfCreditPage";
-import EContentCellPage from "../pages/academics/e-content-cell/EContentCellPage";
-import SwayamNptelPage from "../pages/academics/swayam-nptel/SwayamNptelPage";
-import IirsIsroPage from "../pages/academics/iirs-isro/IirsIsroPage";
-import CurriculumDesignPage from "../pages/academics/curriculum-design/CurriculumDesignPage";
-import DepartmentDetailPage from "../components/academics/institutes/institute-department/Institute-department/DepartmentDetailPage";
-import OverviewPage from "../pages/admissions/overview/OverviewPage";
-import HowToApplyPage from "../pages/admissions/how-to-apply/HowToApplyPage";
-import FeeStructurePage from "../pages/admissions/fee-structure/FeeStructurePage";
-import DocumentChecklistPage from "../pages/admissions/document-checklist/DocumentChecklistPage";
-import AdmissionFaqPage from "../pages/admissions/admission-faq/AdmissionFaqPage";
-import AdmissionPolicyPage from "../pages/admissions/admission-policy/AdmissionPolicyPage";
-import AddmissionProgramFinderPage from "../pages/admissions/program-finder/AddmissionProgramFinderPage";
-import ScholarshipPage from "../pages/admissions/scholarship/ScholarshipPage";
-import CampusLifePage from "../pages/campus-life/CampusLifePage";
-import TransportationPage from "../pages/campus-life/facilities/transportation/TransportationPage";
-import HostelPage from "../pages/campus-life/facilities/HostelPage";
-import ConvocationPage from "../pages/campus-life/convocation/ConvocationPage";
-import ConvocationDetailPage from "../pages/campus-life/convocation/ConvocationDetailPage";
 import { convocationData } from "../data/campus-life/convocation/convocation-data";
-import CentralLibraryPage from "../pages/campus-life/central-library/CentralLibraryPage";
-import GreenInitiativePage from "../pages/campus-life/green-initiative/GreenInitiativePage";
-import WomenEmpowermentPage from "../pages/campus-life/women-empowerment/WomenEmpowermentPage";
-import StudentSenatePage from "../pages/campus-life/student-senate/StudentSenatePage";
-import StudentCornerPage from "../pages/campus-life/student-corner/StudentCornerPage";
-import OutreachActivationsPage from "../pages/campus-life/outreach-activations/OutreachActivationsPage";
-import ClubsPage from "../pages/campus-life/clubs/ClubsPage";
-import GrievanceRedressalSystemPage from "../pages/campus-life/grievance-redressal-system/GrievanceRedressalSystemPage";
-import EventPage from "../pages/campus-life/events/EventPage";
-import EventDetails from "../pages/campus-life/events/EventDetails";
 import tedxData, { conferenceData, festData, festivalsData } from "../data/campus-life/events/events-data";
-import ResearchOverviewPage from "../pages/Research/Overview/ResearchOverviewPage";
-import ProcessAndInitiativePage from "../pages/Research/Process-and-Initiative/ProcessAndInitiativePage";
-import PhdNotificationSessionPage from "../pages/Research/Phd-notification-session/PhdNotificationSessionPage";
-import PhdOfflineApplicationPage from "../pages/Research/phd-offline-application/PhdOfflineApplicationPage";
-import InnovationPage from "../pages/Research/Innovation/InnovationPage";
-import ConsultancyPage from "../pages/Research/Consultancy/ConsultancyPage";
-import PublicationPage from "../pages/Research/Publication/PublicationPage";
-import ConferenceDetailPage from "../components/research/publication/conference/ConferenceDetailPage";
-import PlacementPage from "../pages/placement/PlacementPage";
-import PlacementCellPage from "../pages/placement/placement-cell/PlacementCellPage";
-import StudentTestimonialPage from "../pages/placement/student-testimonial/StudentTestimonialPage";
-import AlumniRegistrationPage from "../pages/placement/AlumniRegistrationPage";
-import AlumniFeedbackPage from "../pages/placement/AlumniFeedbackPage";
-import AlumniTestimonialsPage from "../pages/placement/AlumniTestimonialsPage";
-import PlacementPoliciesPage from "../pages/placement/placement-policies/PlacementPoliciesPage";
-import AdmissionEnquiryPage from "../pages/admission-enquiry/AdmissionEnquiryPage";
-import ContactUsPage from "../pages/contact-us/ContactUsPage";
-import MandatoryDisclouserPage from "../pages/mandatory-disclouser/MandatoryDisclouserPage";
-import BlogsPage from "../pages/blog/BlogsPage";
-import BlogDetailsPage from "../pages/blog/BlogDetailsPage";
-import RtiPage from "../pages/rti/RtiPage";
-import OnlineAdmissionPage from "../pages/Home/OnlineAdmissionPage";
-import PrivacyPolicyPage from "../pages/privacy-policy/PrivacyPolicyPage";
-import DisclaimerPage from "../pages/disclaimer/DisclaimerPage";
-import TermsAndConditionPage from "../pages/terms-condition/TermsAndConditionPage";
-import InstituteofBiosciencesandTechnologyPage from "../pages/academics/institutes/institute-department/InstituteofBiosciencesandTechnologyPage";
-import InstituteofManagementCommerceandEconomicsPage from "../pages/academics/institutes/institute-department/InstituteofManagementCommerceandEconomicsPage";
-import InstituteofMediaStudiesPage from "../pages/academics/institutes/institute-department/InstituteofMediaStudiesPage";
-import InstituteofNaturalSciencesandHumanitiesPage from "../pages/academics/institutes/institute-department/InstituteofNaturalSciencesandHumanitiesPage";
-import InstituteofPharmaceuticalSciencesPage from "../pages/academics/institutes/institute-department/InstituteofPharmaceuticalSciencesPage";
-import InstituteofAgriculturalSciencesandTechnologyPage from "../pages/academics/institutes/institute-department/InstituteofAgriculturalSciencesandTechnologyPage";
-import InstituteofLegalStudiesPage from "../pages/academics/institutes/institute-department/InstituteofLegalStudiesPage";
-import InstituteofPharmacyPage from "../pages/academics/institutes/institute-department/InstituteofPharmacyPage";
-import InstituteofEducationandResearchPage from "../pages/academics/institutes/institute-department/InstituteofEducationandResearchPage";
-import SRMUPolytechnicPage from "../pages/academics/institutes/institute-department/SRMUPolytechnicPage";
-import FacultyOfCivilEngineeringPage from "../pages/academics/institutes/institute-department/FacultyOfCivilEngineeringPage";
-import DepartmentOfElectricalAndElectronicsEngineeringPage from "../pages/academics/institutes/institute-department/DepartmentOfElectricalAndElectronicsEngineeringPage";
-import FacultyOfMechanicalEngineeringPage from "../pages/academics/institutes/institute-department/FacultyOfMechanicalEngineeringPage";
-import FacultyOfAlliedHealthSciencesPage from "../pages/academics/institutes/institute-department/FacultyOfAlliedHealthSciencesPage";
-import FacultyOfBiosciencesPage from "../pages/academics/institutes/institute-department/FacultyOfBiosciencesPage";
-import FacultyOfBiotechnologyPage from "../pages/academics/institutes/institute-department/FacultyOfBiotechnologyPage";
-import FacultyOfHumanitiesAndSocialSciencesPage from "../pages/academics/institutes/institute-department/FacultyOfHumanitiesAndSocialSciencesPage";
-import FacultyOfMathematicalAndStatisticalSciencesPage from "../pages/academics/institutes/institute-department/FacultyOfMathematicalAndStatisticalSciencesPage";
-import FacultyOfPhysicalSciencesPage from "../pages/academics/institutes/institute-department/FacultyOfPhysicalSciencesPage";
-import DepartmentOfComputerScienceAndEngineeringPage from "../pages/academics/institutes/institute-department/DepartmentOfComputerScienceAndEngineeringPage";
-import DepartmentOfComputerScienceAndInformationSystemsPage from "../pages/academics/institutes/institute-department/DepartmentOfComputerScienceAndInformationSystemsPage";
-import FacultyOfCommerceAndEconomicsPage from "../pages/academics/institutes/institute-department/FacultyOfCommerceAndEconomicsPage";
-import FacultyOfManagementPage from "../pages/academics/institutes/institute-department/FacultyOfManagementPage";
-import FacultyOfChemicalSciencesPage from "../pages/academics/institutes/institute-department/FacultyOfChemicalSciencesPage";
+
+const PageNotFound = lazyPage(() => import("../pages/PageNotFound"));
+const LegacyEventDetailsPage = lazyPage(() => import("./legacyRouteResolvers").then((mod) => ({ default: mod.LegacyEventDetailsPage })));
+const LegacyCommitteeDetailsPage = lazyPage(() => import("./legacyRouteResolvers").then((mod) => ({ default: mod.LegacyCommitteeDetailsPage })));
+const CareerFormPage = lazyPage(() => import("../pages/Home/CareerFormPage"));
+const TermsConditionPage = lazyPage(() => import("../pages/Home/TermsConditionPage"));
+const NewsLetterPage = lazyPage(() => import("../pages/Home/NewsLetterPage"));
+const NoticePage = lazyPage(() => import("../pages/notice/NoticePage"));
+const ShiftSchedulePage = lazyPage(() => import("../pages/admissions/shift-schedule/ShiftSchedulePage"));
+const AboutPage = lazyPage(() => import("../pages/about/AboutPage"));
+const NewsEventDetails = lazyPage(() => import("../components/home/NewsEventDetails"));
+const ProgramDetailsPage = lazyPage(() => import("../pages/programs/details-page/ProgramDetailsPage"));
+const ProgramTypePage = lazyPage(() => import("../pages/programs/ProgramTypePage/ProgramTypePage"));
+const ProgramTypeItemPage = lazyPage(() => import("../pages/ProgramTypeItemPage"));
+const LeadershipAndGovernancePage = lazyPage(() => import("../pages/about/Leadership-and-Governance/LeadershipAndGovernancePage"));
+const CommitteeAndCellsPage = lazyPage(() => import("../pages/about/Committee-and-Cells/CommitteeAndCellsPage"));
+const CustomCommitteeDetailsPage = lazyPage(() => import("./custom/CustomCommitteeDetailsPage"));
+const RecognitionApprovalsPage = lazyPage(() => import("../pages/about/recognition-approval/RecognitionApprovalsPage"));
+const AwardOverviewPage = lazyPage(() => import("../pages/about/award-overview/AwardOverviewPage"));
+const IqacPage = lazyPage(() => import("../pages/about/iqac-overview/IqacPage"));
+const NAACPage = lazyPage(() => import("../pages/about/NAAC/NAACPage"));
+const NIRFPage = lazyPage(() => import("../pages/about/NIRF/NIRFPage"));
+const OragnisationStructurePage = lazyPage(() => import("../pages/about/organisation-structure-plan/OrganisationStructurePlan"));
+const InstitutePage = lazyPage(() => import("../pages/academics/institutes/InstitutePage"));
+const InstituteDepartmentPage = lazyPage(() => import("../pages/academics/institutes/institute-department/InstituteDepartmentPage"));
+const PoliciesReportsPage = lazyPage(() => import("../pages/academics/Policies-Reports/PoliciesReportsPage"));
+const AcademicCalendarsPage = lazyPage(() => import("../pages/academics/academic-calendars/AcademicCalendarsPage"));
+const TeachingLearningProcessPage = lazyPage(() => import("../pages/academics/teaching-learning-process/TeachingLearningProcessPage"));
+const AcademicBankOfCreditPage = lazyPage(() => import("../pages/academics/academic-bank-credit/AcademicBankOfCreditPage"));
+const EContentCellPage = lazyPage(() => import("../pages/academics/e-content-cell/EContentCellPage"));
+const SwayamNptelPage = lazyPage(() => import("../pages/academics/swayam-nptel/SwayamNptelPage"));
+const IirsIsroPage = lazyPage(() => import("../pages/academics/iirs-isro/IirsIsroPage"));
+const CurriculumDesignPage = lazyPage(() => import("../pages/academics/curriculum-design/CurriculumDesignPage"));
+const DepartmentDetailPage = lazyPage(() => import("../components/academics/institutes/institute-department/Institute-department/DepartmentDetailPage"));
+const OverviewPage = lazyPage(() => import("../pages/admissions/overview/OverviewPage"));
+const HowToApplyPage = lazyPage(() => import("../pages/admissions/how-to-apply/HowToApplyPage"));
+const FeeStructurePage = lazyPage(() => import("../pages/admissions/fee-structure/FeeStructurePage"));
+const DocumentChecklistPage = lazyPage(() => import("../pages/admissions/document-checklist/DocumentChecklistPage"));
+const AdmissionFaqPage = lazyPage(() => import("../pages/admissions/admission-faq/AdmissionFaqPage"));
+const AdmissionPolicyPage = lazyPage(() => import("../pages/admissions/admission-policy/AdmissionPolicyPage"));
+const AddmissionProgramFinderPage = lazyPage(() => import("../pages/admissions/program-finder/AddmissionProgramFinderPage"));
+const ScholarshipPage = lazyPage(() => import("../pages/admissions/scholarship/ScholarshipPage"));
+const CampusLifePage = lazyPage(() => import("../pages/campus-life/CampusLifePage"));
+const TransportationPage = lazyPage(() => import("../pages/campus-life/facilities/transportation/TransportationPage"));
+const HostelPage = lazyPage(() => import("../pages/campus-life/facilities/HostelPage"));
+const ConvocationPage = lazyPage(() => import("../pages/campus-life/convocation/ConvocationPage"));
+const ConvocationDetailPage = lazyPage(() => import("../pages/campus-life/convocation/ConvocationDetailPage"));
+const CentralLibraryPage = lazyPage(() => import("../pages/campus-life/central-library/CentralLibraryPage"));
+const GreenInitiativePage = lazyPage(() => import("../pages/campus-life/green-initiative/GreenInitiativePage"));
+const WomenEmpowermentPage = lazyPage(() => import("../pages/campus-life/women-empowerment/WomenEmpowermentPage"));
+const StudentSenatePage = lazyPage(() => import("../pages/campus-life/student-senate/StudentSenatePage"));
+const StudentCornerPage = lazyPage(() => import("../pages/campus-life/student-corner/StudentCornerPage"));
+const OutreachActivationsPage = lazyPage(() => import("../pages/campus-life/outreach-activations/OutreachActivationsPage"));
+const ClubsPage = lazyPage(() => import("../pages/campus-life/clubs/ClubsPage"));
+const GrievanceRedressalSystemPage = lazyPage(() => import("../pages/campus-life/grievance-redressal-system/GrievanceRedressalSystemPage"));
+const EventPage = lazyPage(() => import("../pages/campus-life/events/EventPage"));
+const EventDetails = lazyPage(() => import("../pages/campus-life/events/EventDetails"));
+const ResearchOverviewPage = lazyPage(() => import("../pages/Research/Overview/ResearchOverviewPage"));
+const ProcessAndInitiativePage = lazyPage(() => import("../pages/Research/Process-and-Initiative/ProcessAndInitiativePage"));
+const PhdNotificationSessionPage = lazyPage(() => import("../pages/Research/Phd-notification-session/PhdNotificationSessionPage"));
+const PhdOfflineApplicationPage = lazyPage(() => import("../pages/Research/phd-offline-application/PhdOfflineApplicationPage"));
+const InnovationPage = lazyPage(() => import("../pages/Research/Innovation/InnovationPage"));
+const ConsultancyPage = lazyPage(() => import("../pages/Research/Consultancy/ConsultancyPage"));
+const PublicationPage = lazyPage(() => import("../pages/Research/Publication/PublicationPage"));
+const ConferenceDetailPage = lazyPage(() => import("../components/research/publication/conference/ConferenceDetailPage"));
+const PlacementPage = lazyPage(() => import("../pages/placement/PlacementPage"));
+const PlacementCellPage = lazyPage(() => import("../pages/placement/placement-cell/PlacementCellPage"));
+const StudentTestimonialPage = lazyPage(() => import("../pages/placement/student-testimonial/StudentTestimonialPage"));
+const AlumniRegistrationPage = lazyPage(() => import("../pages/placement/AlumniRegistrationPage"));
+const AlumniFeedbackPage = lazyPage(() => import("../pages/placement/AlumniFeedbackPage"));
+const AlumniTestimonialsPage = lazyPage(() => import("../pages/placement/AlumniTestimonialsPage"));
+const PlacementPoliciesPage = lazyPage(() => import("../pages/placement/placement-policies/PlacementPoliciesPage"));
+const AdmissionEnquiryPage = lazyPage(() => import("../pages/admission-enquiry/AdmissionEnquiryPage"));
+const ContactUsPage = lazyPage(() => import("../pages/contact-us/ContactUsPage"));
+const MandatoryDisclouserPage = lazyPage(() => import("../pages/mandatory-disclouser/MandatoryDisclouserPage"));
+const BlogsPage = lazyPage(() => import("../pages/blog/BlogsPage"));
+const BlogDetailsPage = lazyPage(() => import("../pages/blog/BlogDetailsPage"));
+const RtiPage = lazyPage(() => import("../pages/rti/RtiPage"));
+const OnlineAdmissionPage = lazyPage(() => import("../pages/Home/OnlineAdmissionPage"));
+const PrivacyPolicyPage = lazyPage(() => import("../pages/privacy-policy/PrivacyPolicyPage"));
+const DisclaimerPage = lazyPage(() => import("../pages/disclaimer/DisclaimerPage"));
+const TermsAndConditionPage = lazyPage(() => import("../pages/terms-condition/TermsAndConditionPage"));
+const InstituteofBiosciencesandTechnologyPage = lazyPage(() => import("../pages/academics/institutes/institute-department/InstituteofBiosciencesandTechnologyPage"));
+const InstituteofManagementCommerceandEconomicsPage = lazyPage(() => import("../pages/academics/institutes/institute-department/InstituteofManagementCommerceandEconomicsPage"));
+const InstituteofMediaStudiesPage = lazyPage(() => import("../pages/academics/institutes/institute-department/InstituteofMediaStudiesPage"));
+const InstituteofNaturalSciencesandHumanitiesPage = lazyPage(() => import("../pages/academics/institutes/institute-department/InstituteofNaturalSciencesandHumanitiesPage"));
+const InstituteofPharmaceuticalSciencesPage = lazyPage(() => import("../pages/academics/institutes/institute-department/InstituteofPharmaceuticalSciencesPage"));
+const InstituteofAgriculturalSciencesandTechnologyPage = lazyPage(() => import("../pages/academics/institutes/institute-department/InstituteofAgriculturalSciencesandTechnologyPage"));
+const InstituteofLegalStudiesPage = lazyPage(() => import("../pages/academics/institutes/institute-department/InstituteofLegalStudiesPage"));
+const InstituteofPharmacyPage = lazyPage(() => import("../pages/academics/institutes/institute-department/InstituteofPharmacyPage"));
+const InstituteofEducationandResearchPage = lazyPage(() => import("../pages/academics/institutes/institute-department/InstituteofEducationandResearchPage"));
+const SRMUPolytechnicPage = lazyPage(() => import("../pages/academics/institutes/institute-department/SRMUPolytechnicPage"));
+const FacultyOfCivilEngineeringPage = lazyPage(() => import("../pages/academics/institutes/institute-department/FacultyOfCivilEngineeringPage"));
+const DepartmentOfElectricalAndElectronicsEngineeringPage = lazyPage(() => import("../pages/academics/institutes/institute-department/DepartmentOfElectricalAndElectronicsEngineeringPage"));
+const FacultyOfMechanicalEngineeringPage = lazyPage(() => import("../pages/academics/institutes/institute-department/FacultyOfMechanicalEngineeringPage"));
+const FacultyOfAlliedHealthSciencesPage = lazyPage(() => import("../pages/academics/institutes/institute-department/FacultyOfAlliedHealthSciencesPage"));
+const FacultyOfBiosciencesPage = lazyPage(() => import("../pages/academics/institutes/institute-department/FacultyOfBiosciencesPage"));
+const FacultyOfBiotechnologyPage = lazyPage(() => import("../pages/academics/institutes/institute-department/FacultyOfBiotechnologyPage"));
+const FacultyOfHumanitiesAndSocialSciencesPage = lazyPage(() => import("../pages/academics/institutes/institute-department/FacultyOfHumanitiesAndSocialSciencesPage"));
+const FacultyOfMathematicalAndStatisticalSciencesPage = lazyPage(() => import("../pages/academics/institutes/institute-department/FacultyOfMathematicalAndStatisticalSciencesPage"));
+const FacultyOfPhysicalSciencesPage = lazyPage(() => import("../pages/academics/institutes/institute-department/FacultyOfPhysicalSciencesPage"));
+const DepartmentOfComputerScienceAndEngineeringPage = lazyPage(() => import("../pages/academics/institutes/institute-department/DepartmentOfComputerScienceAndEngineeringPage"));
+const DepartmentOfComputerScienceAndInformationSystemsPage = lazyPage(() => import("../pages/academics/institutes/institute-department/DepartmentOfComputerScienceAndInformationSystemsPage"));
+const FacultyOfCommerceAndEconomicsPage = lazyPage(() => import("../pages/academics/institutes/institute-department/FacultyOfCommerceAndEconomicsPage"));
+const FacultyOfManagementPage = lazyPage(() => import("../pages/academics/institutes/institute-department/FacultyOfManagementPage"));
+const FacultyOfChemicalSciencesPage = lazyPage(() => import("../pages/academics/institutes/institute-department/FacultyOfChemicalSciencesPage"));
 
 export function AllRoutesNew() {
   const element = useRoutes(routes);
@@ -135,6 +139,14 @@ export const routes = [
         element: <NewsLetterPage />,
       },
       {
+        path: "newsletter",
+        element: <NewsLetterPage />,
+      },
+      {
+        path: "newsletters",
+        element: <NewsLetterPage />,
+      },
+      {
         path: "notice",
         element: <NoticePage />,
       },
@@ -150,6 +162,10 @@ export const routes = [
       {
         path: "/news/:programName",
         element: <NewsEventDetails />,
+      },
+      {
+        path: "/:programType",
+        element: <ProgramTypePage />,
       },
 
       {
@@ -172,6 +188,10 @@ export const routes = [
           path: card.routeKey,
           element: <CustomCommitteeDetailsPage committee={card} />,
         })),
+      },
+      {
+        path: "/committe/:slug",
+        element: <LegacyCommitteeDetailsPage />,
       },
       {
         path: "/recognition-approvals",
@@ -235,6 +255,10 @@ export const routes = [
       },
       {
         path: "e-content-development-cell",
+        element: <EContentCellPage />,
+      },
+      {
+        path: "campus-life/e-content-cell",
         element: <EContentCellPage />,
       },
 
@@ -334,6 +358,10 @@ export const routes = [
         ],
       },
       {
+        path: "event/:slug",
+        element: <LegacyEventDetailsPage />,
+      },
+      {
         path: "clubs",
         element: <ClubsPage />,
       },
@@ -382,6 +410,10 @@ export const routes = [
 
       {
         path: "grievance-redressal-system",
+        element: <GrievanceRedressalSystemPage />,
+      },
+      {
+        path: "campus-life/grievance-redressal-system",
         element: <GrievanceRedressalSystemPage />,
       },
       {
@@ -438,7 +470,19 @@ export const routes = [
         element: <PhdOfflineApplicationPage />,
       },
       {
+        path: "ph-d-application-offline-mode",
+        element: <PhdOfflineApplicationPage />,
+      },
+      {
+        path: "research/phd-offline-application",
+        element: <PhdOfflineApplicationPage />,
+      },
+      {
         path: "innovation",
+        element: <InnovationPage />,
+      },
+      {
+        path: "innovations",
         element: <InnovationPage />,
       },
       {
@@ -471,6 +515,18 @@ export const routes = [
             element: <BlogDetailsPage />,
           },
         ],
+      },
+      {
+        path: "/blog/:slug",
+        element: <BlogDetailsPage />,
+      },
+      {
+        path: "/conference/:name",
+        element: <ConferenceDetailPage />,
+      },
+      {
+        path: "/research/conference/:name",
+        element: <ConferenceDetailPage />,
       },
       {
         path: "/rti",

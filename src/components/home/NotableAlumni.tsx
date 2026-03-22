@@ -28,9 +28,9 @@ const NotableAlumniSection = () => {
   const goToPrev = () => emblaApi?.scrollPrev();
 
   return (
-    <div className="w-full flex justify-center py-10 bg-[#0f4a85]">
+    <div className="w-full flex justify-center py-8 md:py-10 lg:py-12 bg-[#0f4a85]">
       <div className={`w-full ${Classes["container"]} p-4 text-white`}>
-        <div className="flex justify-between items-center mb-10">
+        <div className="flex justify-between items-center mb-8">
           <div>
             <h2 className="text-[28px] text-white lg:text-[3.125rem] fw600">
               Notable Alumni
@@ -79,7 +79,7 @@ const NotableAlumniSection = () => {
           </div>
         </div>
 
-        <div className="flex justify-center mt-10">
+        <div className="flex justify-center mt-8">
           <Link
             to="/placements/notable-alumni"
             className="

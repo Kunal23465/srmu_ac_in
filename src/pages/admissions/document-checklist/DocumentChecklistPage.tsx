@@ -1,15 +1,16 @@
 import React from 'react'
 import DocumentChecklist from '../../../components/admissions/document-checklist/DocumentChecklist'
-import { Helmet } from 'react-helmet-async'
+import SeoHead from '../../../components/seo/SeoHead'
 
 const DocumentChecklistPage: React.FC = () => {
 
     return (
         <>
-            <Helmet>
-                <title>Admission Document Checklist , Admission Supportive Document Check List</title>
-                <meta name="description" content="Admission Document Checklist" />
-            </Helmet>
+            <SeoHead
+                title="Admission Document Checklist | Shri Ramswaroop Memorial University, Lucknow"
+                description="Review the SRMU admission document checklist and supportive document requirements for a smooth application and verification process."
+                pathname="/document-checklist"
+            />
             <DocumentChecklist />
         </>
     )

@@ -1,6 +1,7 @@
 import * as Yup from "yup";
 import { customeOverViewType } from "../../types/home-data-type";
 import { TableRowData } from "../../types/table-data-types";
+import { toAbsoluteUrl } from "../../utils/seo";
 import Placement_Policy from "../../assets/pdf/placement/placement-policies/placement-policy-191223122840-060324102152.pdf";
 import Early_Joining_Policy from "../../assets/pdf/placement/placement-policies/early-joining-policy-191223122925-060324102214.pdf";
 import Industrial_Visit_Policy from "../../assets/pdf/placement/placement-policies/industrial-visit-policy-191223123100-060324102231.pdf";
@@ -78,6 +79,8 @@ import nausheenBano from "../../assets/images/placements/placement-overview/plac
 import anshikaRathore from "../../assets/images/placements/placement-overview/placement-records/images/anshika-rathorejpg.jpg";
 import anjaneeKumarYadav from "../../assets/images/placements/placement-overview/placement-records/images/anjanee-kumar-.jpg";
 import shreyaBajpai from "../../assets/images/placements/placement-overview/placement-records/images/shreya-bajpai.jpg";
+
+const corizoLogo = toAbsoluteUrl("/storage/recruiters/corizo-15022401483366.png") || "";
 import arunimaSrivastava from "../../assets/images/placements/placement-overview/placement-records/images/arunima-srivastavajpg.jpg";
 import shivendraPratapSingh from "../../assets/images/placements/placement-overview/placement-records/images/shivendra-pratap-singh.jpg";
 import vanshikaVerma from "../../assets/images/placements/placement-overview/placement-records/images/vanshika-verma-.jpg";
@@ -471,7 +474,7 @@ export const placementOverviewplacementData: Record<string, Student[]> = {
       name: "Sahul Pandey",
       degree: "B.B.A. (Bachelor of Business Administration)",
       image: sahulPandey,
-      companyLogo: "https://srmu.ac.in/storage/recruiters/corizo-15022401483366.png",
+      companyLogo: corizoLogo,
       package: "4.20 LPA",
     },
     {
@@ -479,7 +482,7 @@ export const placementOverviewplacementData: Record<string, Student[]> = {
       name: "Harshita Shukla",
       degree: "B.Tech. in Biotechnology",
       image: harshitaShukla,
-      companyLogo: "https://srmu.ac.in/storage/recruiters/corizo-15022401483366.png",
+      companyLogo: corizoLogo,
       package: "4.20 LPA",
     },
     {
@@ -487,7 +490,7 @@ export const placementOverviewplacementData: Record<string, Student[]> = {
       name: "Tushar Suryavanshi",
       degree: "B.Sc.(Hons.) in Agriculture",
       image: tusharSuryavanshi,
-      companyLogo: "https://srmu.ac.in/storage/recruiters/corizo-15022401483366.png",
+      companyLogo: corizoLogo,
       package: "4.20 LPA",
     },
     {

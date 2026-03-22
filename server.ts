@@ -4,6 +4,7 @@ import { createServer as createViteServer } from "vite";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import { buildRobotsTxt, buildSitemapXml } from "./src/utils/sitemap";
 
 const host = "0.0.0.0";
 const port = 3031;
@@ -12,6 +13,13 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const isProduction = process.env.NODE_ENV === "production";
+
+function getRequestSiteUrl(req: express.Request) {
+  const forwardedProto = (req.headers["x-forwarded-proto"] as string | undefined)?.split(",")[0]?.trim();
+  const protocol = forwardedProto || req.protocol || "http";
+  const host = req.headers.host || `localhost:${port}`;
+  return `${protocol}://${host}`;
+}
 
 function isDocumentRequest(req: express.Request) {
   if (req.method !== "GET" && req.method !== "HEAD") {
@@ -76,6 +84,23 @@ async function createServer() {
     res.status(404).type("text/plain").end("Not found");
   });
 
+  app.get("/robots.txt", (req, res) => {
+    res
+      .status(200)
+      .type("text/plain; charset=utf-8")
+      .send(buildRobotsTxt(getRequestSiteUrl(req)));
+  });
+
+  app.get("/sitemap.xml", async (req, res) => {
+    try {
+      const sitemapXml = await buildSitemapXml(getRequestSiteUrl(req));
+      res.status(200).type("application/xml; charset=utf-8").send(sitemapXml);
+    } catch (error) {
+      process.stderr.write(`SITEMAP ERROR: ${String(error)}\n`);
+      res.status(500).type("text/plain; charset=utf-8").send("Failed to generate sitemap");
+    }
+  });
+
   if (!isProduction) {
     // DEV MODE
     vite = await createViteServer({
@@ -134,13 +159,6 @@ async function createServer() {
 
         render = (await import("./dist/server/entry-server.js")).render;
       }
-      // let appHtml = "";
-      // try {
-      //   appHtml = await render(url);
-      //   console.log("SSR OK");
-      // } catch (err) {
-      //   console.error("SSR ERROR:", err);
-      // }
       let appHtml = "";
       let preloadedState = {};
       let helmet: Record<string, any> = {};
@@ -151,9 +169,8 @@ async function createServer() {
         preloadedState = result.preloadedState;
         helmet = (result as any).helmet || {};
         statusCode = (result as any).statusCode || 200;
-        console.log("SSR OK, HTML length:", appHtml?.length || 0);
       } catch (err) {
-        console.error("SSR ERROR:", err);
+        process.stderr.write(`SSR ERROR: ${String(err)}\n`);
         // Fallback to basic HTML if SSR fails
         appHtml = '<div id="root"><div>Loading...</div></div>';
         statusCode = 500;
@@ -178,13 +195,13 @@ async function createServer() {
       res.status(statusCode).set({ "Content-Type": "text/html; charset=utf-8" }).end(html);
     } catch (e) {
       if (vite) vite.ssrFixStacktrace(e as Error);
-      console.error(e);
+      process.stderr.write(`${String(e)}\n`);
       res.status(500).end((e as Error).message);
     }
   });
 
   httpServer.listen(port, host, () => {
-    console.log(`SSR server running at http://${host}:${port}`);
+    process.stdout.write(`SSR server running at http://${host}:${port}\n`);
   });
 }
 

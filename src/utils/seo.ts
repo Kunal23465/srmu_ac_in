@@ -1,9 +1,11 @@
-export const SITE_URL = "https://srmu.ac.in";
+const rawSiteUrl = import.meta.env.VITE_SITE_URL || "https://srmu.ac.in";
+
+export const SITE_URL = rawSiteUrl.replace(/\/+$/, "");
 export const SITE_NAME = "Shri Ramswaroop Memorial University";
 export const DEFAULT_TITLE = `${SITE_NAME} | SRMU`;
 export const DEFAULT_DESCRIPTION =
   "SRMU, one of the best university in Lucknow, known for expert faculty, advanced learning, and excellent career opportunities.";
-export const DEFAULT_SOCIAL_IMAGE = "https://srmu.ac.in/storage/settings/srmu-lo1-050324113149.svg";
+export const DEFAULT_SOCIAL_IMAGE = `${SITE_URL}/storage/settings/srmu-lo1-050324113149.svg`;
 
 const PAGE_LABELS: Record<string, string> = {
   "/": SITE_NAME,

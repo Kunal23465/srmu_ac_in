@@ -1,14 +1,15 @@
 import React from 'react'
 import AlumniRegistration from '../../components/placement/alumni-registration/AlumniRegistration'
-import { Helmet } from 'react-helmet-async'
+import SeoHead from '../../components/seo/SeoHead'
 
 const AlumniRegistrationPage: React.FC = () => {
   return (
     <div>
-      <Helmet>
-        <title>Alumni Registration | Shri Ramswaroop Memorial University, Lucknow</title>
-        <meta name="description" content="Join the SRMU Alumni Network today and stay connected with Shri Ramswaroop Memorial University, Lucknow!" />
-      </Helmet>
+      <SeoHead
+        title="Alumni Registration | Shri Ramswaroop Memorial University, Lucknow"
+        description="Join the SRMU Alumni Network today and stay connected with Shri Ramswaroop Memorial University, Lucknow!"
+        pathname="/alumni-registration"
+      />
       <AlumniRegistration />
     </div>
   )

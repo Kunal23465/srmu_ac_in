@@ -9,6 +9,7 @@ import professor from "../../../../assets/images/academics/departments/csis/dr.-
 import { departmentHighlightscardType, FeeTableData } from "../faculty-of-civil-engineering/faculty-of-civil-engineering-data";
 import { FacultyItem } from "../../../../utils/custom/CustomFacultyListCard";
 import { EventItem } from "../../../../utils/custom/CustomEventListCard";
+import { toAbsoluteUrl } from "../../../../utils/seo";
 
 // import fimg1 from ""
 
@@ -23,6 +24,8 @@ export interface Student {
   program: string;
   company: string;
 }
+
+const siteAsset = (path: string) => toAbsoluteUrl(path) || path;
 
 export const csISFacultyOverviewData: customeOverViewType = {
   heading: "Department Of Computer Science And Information Systems",
@@ -316,126 +319,126 @@ export const CsisfacultyData: FacultyItem[] = [
     id: 1,
     name: "Dr. Jitendra Kumar Yadav",
     designation: "Associate Professor",
-    image: "https://srmu.ac.in/storage/teams/11zon-cropped-51-11zon-24022411552388.jpeg",
+    image: siteAsset("/storage/teams/11zon-cropped-51-11zon-24022411552388.jpeg"),
   },
   {
     id: 2,
     name: "Dr. Arun Kumar Singh",
     designation: "Assistant Professor",
-    image: "https://srmu.ac.in/storage/teams/11zon-cropped-63-11zon-24022412420575.jpeg",
+    image: siteAsset("/storage/teams/11zon-cropped-63-11zon-24022412420575.jpeg"),
   },
   {
     id: 3,
     name: "Dr. Shipra Shukla",
     designation: "Assistant Professor",
-    image: "https://srmu.ac.in/storage/teams/shipra-shukla-21062410305431.jpg",
+    image: siteAsset("/storage/teams/shipra-shukla-21062410305431.jpg"),
   },
   {
     id: 4,
     name: "Dr. Aparna Mishra",
     designation: "Assistant Professor",
-    image: "https://srmu.ac.in/storage/teams/11zon-cropped-64-11zon-2402241246085.jpeg",
+    image: siteAsset("/storage/teams/11zon-cropped-64-11zon-2402241246085.jpeg"),
   },
   {
     id: 5,
     name: "Ms. Laxmi Singh",
     designation: "Assistant Professor",
-    image: "https://srmu.ac.in/storage/teams/11zon-cropped-65-11zon-24022412490935.jpeg",
+    image: siteAsset("/storage/teams/11zon-cropped-65-11zon-24022412490935.jpeg"),
   },
   {
     id: 6,
     name: "Dr. Anil Kumar",
     designation: "Assistant Professor",
-    image: "https://srmu.ac.in/storage/teams/anil-kumar-21062410351813.jpg",
+    image: siteAsset("/storage/teams/anil-kumar-21062410351813.jpg"),
   },
   {
     id: 7,
     name: "Dr. Pradeep Kumar Singh",
     designation: "Assistant Professor",
-    image: "https://srmu.ac.in/storage/teams/11zon-cropped-67-11zon-24022401000860.jpeg",
+    image: siteAsset("/storage/teams/11zon-cropped-67-11zon-24022401000860.jpeg"),
   },
   {
     id: 8,
     name: "Dr. Shefalica Singh",
     designation: "Assistant Professor",
-    image: "https://srmu.ac.in/storage/teams/11zon-cropped-68-11zon-24022401032815.jpeg",
+    image: siteAsset("/storage/teams/11zon-cropped-68-11zon-24022401032815.jpeg"),
   },
   {
     id: 9,
     name: "Ms. Aisha Haleem",
     designation: "Assistant Professor",
-    image: "https://srmu.ac.in/storage/teams/11zon-cropped-70-11zon-24022401243876.jpeg",
+    image: siteAsset("/storage/teams/11zon-cropped-70-11zon-24022401243876.jpeg"),
   },
   {
     id: 10,
     name: "Dr. Pallavi Sharma",
     designation: "Assistant Professor",
-    image: "https://srmu.ac.in/storage/teams/11zon-cropped-69-11zon-24022401064879.jpeg",
+    image: siteAsset("/storage/teams/11zon-cropped-69-11zon-24022401064879.jpeg"),
   },
   {
     id: 11,
     name: "Dr. Andleeb Zahra",
     designation: "Assistant Professor",
-    image: "https://srmu.ac.in/storage/teams/11zon-cropped-61-11zon-2402241237123.jpeg",
+    image: siteAsset("/storage/teams/11zon-cropped-61-11zon-2402241237123.jpeg"),
   },
   {
     id: 12,
     name: "Dr. Ritika Srivastava",
     designation: "Assistant Professor",
-    image: "https://srmu.ac.in/storage/teams/11zon-cropped-53-11zon-24022412052050.jpeg",
+    image: siteAsset("/storage/teams/11zon-cropped-53-11zon-24022412052050.jpeg"),
   },
   {
     id: 13,
     name: "Dr. Rashmi Saxena",
     designation: "Assistant Professor",
-    image: "https://srmu.ac.in/storage/teams/11zon-cropped-54-11zon-24022412090693.jpeg",
+    image: siteAsset("/storage/teams/11zon-cropped-54-11zon-24022412090693.jpeg"),
   },
   {
     id: 14,
     name: "Dr. Shweta Shukla",
     designation: "Assistant Professor",
-    image: "https://srmu.ac.in/storage/teams/shweta-shukla-21062410384041.jpg",
+    image: siteAsset("/storage/teams/shweta-shukla-21062410384041.jpg"),
   },
   {
     id: 15,
     name: "Dr. Pavitra Bajpai",
-    image: "https://srmu.ac.in/storage/teams/11zon-cropped-56-11zon-24022412164143.jpeg",
+    image: siteAsset("/storage/teams/11zon-cropped-56-11zon-24022412164143.jpeg"),
     designation: "Assistant Professor",
   },
   {
     id: 16,
     name: "Dr. Ram Pratap Yadav",
-    image: "https://srmu.ac.in/storage/teams/ram-pratap-yadav-21062410403441.jpg",
+    image: siteAsset("/storage/teams/ram-pratap-yadav-21062410403441.jpg"),
     designation: "Assistant Professor",
   },
   {
     id: 17,
     name: "Dr. Anil Kumar",
-    image: "https://srmu.ac.in/storage/teams/11zon-cropped-57-11zon-24022412234281.jpeg",
+    image: siteAsset("/storage/teams/11zon-cropped-57-11zon-24022412234281.jpeg"),
     designation: "Assistant Professor",
   },
   {
     id: 18,
     name: "Dr. Manjari Kureel",
-    image: "https://srmu.ac.in/storage/teams/11zon-cropped-58-11zon-2402241228557.jpeg",
+    image: siteAsset("/storage/teams/11zon-cropped-58-11zon-2402241228557.jpeg"),
     designation: "Assistant Professor",
   },
   {
     id: 19,
     name: "Dr. Afiya Bano",
-    image: "https://srmu.ac.in/storage/teams/11zon-cropped-59-11zon-24022412313355.jpeg",
+    image: siteAsset("/storage/teams/11zon-cropped-59-11zon-24022412313355.jpeg"),
     designation: "Assistant Professor",
   },
   {
     id: 20,
     name: "Dr. Devina Sharma",
-    image: "https://srmu.ac.in/storage/teams/11zon-cropped-60-11zon-24022412342499.jpeg",
+    image: siteAsset("/storage/teams/11zon-cropped-60-11zon-24022412342499.jpeg"),
     designation: "Assistant Professor",
   },
   {
     id: 21,
     name: "Dr. Shilpa Shukla",
-    image: "https://srmu.ac.in/storage/teams/shilpa-shukla-21062411183124.jpg",
+    image: siteAsset("/storage/teams/shilpa-shukla-21062411183124.jpg"),
     designation: "Professor",
   },
 ];
@@ -467,40 +470,40 @@ export const CsisplacedStudents: Student[] = [
 
 export const departmentHighlightsCsis: departmentHighlightscardType[] = [
   {
-    image: "https://srmu.ac.in/storage/common-section/commerce1-07022412450975.jpg",
+    image: siteAsset("/storage/common-section/commerce1-07022412450975.jpg"),
     title: "Employability embedded as a theme in the courses",
     description:
       "Our students have employability embedded as a theme in their courses and faculty members ensure knowledge transfer and consultancy activities with public and private enterprises.",
   },
   {
-    image: "https://srmu.ac.in/storage/common-section/mentor-07052401175363.jpg",
+    image: siteAsset("/storage/common-section/mentor-07052401175363.jpg"),
     title: "Focused classes for students preparing for civil services",
     description: "Individual student mentorship and remedial classes for better learning with focused preparation for government competitive examinations.",
   },
   {
-    image: "https://srmu.ac.in/storage/common-section/researhethics-07052401194820.jpg",
+    image: siteAsset("/storage/common-section/researhethics-07052401194820.jpg"),
     title: "Skill enhancement as per NEP 2020",
     description:
       "Students receive practical experience which helps them apply their academic knowledge in real-world situations, develops practical abilities, and increases employability.",
   },
   {
-    image: "https://srmu.ac.in/storage/common-section/holistic-07022412523126.jpg",
+    image: siteAsset("/storage/common-section/holistic-07022412523126.jpg"),
     title: "Multiple activities for improving experiential learning",
     description:
       "For betterment of the students, the department organizes seminars, workshops, national & international conferences, field visits, social work, and guest lectures.",
   },
   {
-    image: "https://srmu.ac.in/storage/common-section/workshop1-07052401182610.jpg",
+    image: siteAsset("/storage/common-section/workshop1-07052401182610.jpg"),
     title: "Opportunity of learning skill-oriented courses",
     description: "The department provides various value-added courses to make students research-oriented and develop critical thinking among them.",
   },
   {
-    image: "https://srmu.ac.in/storage/common-section/virtual-07022401103942.jpg",
+    image: siteAsset("/storage/common-section/virtual-07022401103942.jpg"),
     title: "Only campus in the region providing glocal syllabi",
     description: "The department has built a vibrant learning environment celebrating diversity and promoting innovation by integrating global and local scenarios.",
   },
   {
-    image: "https://srmu.ac.in/storage/common-section/faculty-07052401185631.jpg",
+    image: siteAsset("/storage/common-section/faculty-07052401185631.jpg"),
     title: "Faculty having competency to explore themes of humanities",
     description: "Faculty members from prestigious institutions bring an innovative, non-conventional mindset to explore various aspects of humanities through modern pedagogy.",
   },
@@ -516,7 +519,7 @@ export const csisDepartmentEventsData: EventItem[] = [
     topic: "Epidimiology and Treatment of Osteoporosis in India",
     speaker: "Dr. Subhash Yadav",
     date: "02nd August, 2023",
-    image: "https://srmu.ac.in/storage/events/guest8-09052401565461.jpg",
+    image: siteAsset("/storage/events/guest8-09052401565461.jpg"),
     cardBgColor: "#ffffff",
   },
   {
@@ -525,7 +528,7 @@ export const csisDepartmentEventsData: EventItem[] = [
     topic: "Career in Civil Services",
     speaker: "Mr. Paritosh Parmar",
     date: "11th September, 2023",
-    image: "https://srmu.ac.in/storage/events/guest6-09052401570467.jpg",
+    image: siteAsset("/storage/events/guest6-09052401570467.jpg"),
     cardBgColor: "#ffffff",
   },
   {
@@ -534,7 +537,7 @@ export const csisDepartmentEventsData: EventItem[] = [
     topic: "Adolescent Health",
     speaker: "Dr. Mithilesh Chaturvedi",
     date: "30th September, 2023",
-    image: "https://srmu.ac.in/storage/events/guest2-09052401573075.jpg",
+    image: siteAsset("/storage/events/guest2-09052401573075.jpg"),
     cardBgColor: "#ffffff",
   },
   {
@@ -542,7 +545,7 @@ export const csisDepartmentEventsData: EventItem[] = [
     title: "Workshop",
     topic: "Cross Cultural Communication",
     date: "24th September, 2023",
-    image: "https://srmu.ac.in/storage/events/workship2-09052401560833.jpg",
+    image: siteAsset("/storage/events/workship2-09052401560833.jpg"),
     cardBgColor: "#ffffff",
   },
   {
@@ -551,7 +554,7 @@ export const csisDepartmentEventsData: EventItem[] = [
     topic: "Budget Session",
     venue: "Vidhan Sabha",
     date: "24th February, 2023",
-    image: "https://srmu.ac.in/storage/events/visit-10022411563546.jpg",
+    image: siteAsset("/storage/events/visit-10022411563546.jpg"),
     cardBgColor: "#ffffff",
   },
   {
@@ -559,7 +562,7 @@ export const csisDepartmentEventsData: EventItem[] = [
     title: "Workshop",
     topic: "Health Promotion of Mental Health and Life Skills",
     date: "05th April, 2023",
-    image: "https://srmu.ac.in/storage/events/workshop3-09052401555523.jpg",
+    image: siteAsset("/storage/events/workshop3-09052401555523.jpg"),
     cardBgColor: "#ffffff",
   },
   {
@@ -567,7 +570,7 @@ export const csisDepartmentEventsData: EventItem[] = [
     title: "Workshop",
     topic: "SIFPSA",
     date: "28th August, 2023",
-    image: "https://srmu.ac.in/storage/events/workshop4-09052401554527.jpg",
+    image: siteAsset("/storage/events/workshop4-09052401554527.jpg"),
     cardBgColor: "#ffffff",
   },
   {
@@ -575,7 +578,7 @@ export const csisDepartmentEventsData: EventItem[] = [
     title: "Seminar",
     topic: "Human Health and Drug Addiction Issues and Challenges",
     date: "26th June, 2023",
-    image: "https://srmu.ac.in/storage/events/nation6-09052401564037.jpg",
+    image: siteAsset("/storage/events/nation6-09052401564037.jpg"),
     cardBgColor: "#ffffff",
   },
   {
@@ -583,7 +586,7 @@ export const csisDepartmentEventsData: EventItem[] = [
     title: "International Conference",
     topic: "Rethinking the Global South Literatures, Cultures and Media",
     date: "02nd–03rd February, 2019",
-    image: "https://srmu.ac.in/storage/events/nation5-09052401563145.jpg",
+    image: siteAsset("/storage/events/nation5-09052401563145.jpg"),
     cardBgColor: "#ffffff",
   },
   {
@@ -592,7 +595,7 @@ export const csisDepartmentEventsData: EventItem[] = [
     topic: "Preventions of Cruelty on Animals",
     speaker: "Mr. Utkarsh Mishra",
     date: "12th April, 2023",
-    image: "https://srmu.ac.in/storage/events/guest7-09052401573962.jpg",
+    image: siteAsset("/storage/events/guest7-09052401573962.jpg"),
     cardBgColor: "#ffffff",
   },
   {
@@ -600,7 +603,7 @@ export const csisDepartmentEventsData: EventItem[] = [
     title: "Workshop",
     topic: "Awareness regarding the Bones & Skeleton",
     date: "30th September, 2023",
-    image: "https://srmu.ac.in/storage/events/webinar5-09052401553462.jpg",
+    image: siteAsset("/storage/events/webinar5-09052401553462.jpg"),
     cardBgColor: "#ffffff",
   },
 ];

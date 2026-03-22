@@ -44,7 +44,7 @@ const MemorialCollege: React.FC = () => {
   }, [banner.length, dispatch]);
 
   return (
-    <div id="first" className="w-full -mt-[60px] pb-7 md:pb-10 lg:pb-14">
+    <div id="first" className="w-full -mt-[50px] pb-8 md:pb-10 lg:pb-12">
       <div className="circle-part justify-center z-99 relative hidden md:flex">
         <img
           className="cursor-pointer"
@@ -55,13 +55,13 @@ const MemorialCollege: React.FC = () => {
       </div>
 
       <div className={`${Classes["container"]}`}>
-        <div className="rounded-[10px] mt-6 lg:mt-10">
-          <div className="content py-4 md:py-8 lg:py-10 z-50 relative">
-            <h3 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] lg:leading-[50px] text-[#023047] font-bold text-center mt-15 lg:mt-10">
+        <div className="rounded-[10px] mt-5 lg:mt-8">
+          <div className="content py-3 md:py-6 lg:py-8 z-50 relative">
+            <h3 className="text-[22px] sm:text-[28px] lg:text-[3rem] lg:leading-[48px] text-[#023047] font-bold text-center mt-10 lg:mt-8">
               Shri Ramswaroop Memorial University
             </h3>
 
-            <p className="leading-7 text-[15px] text-[#0009] font-bold text-center mt-5">
+            <p className="leading-7 text-[15px] text-[#0009] font-bold text-center mt-4">
               Experience a world of countless opportunities at SRMU – where we
               nurture brilliant minds and shape dreams into futures. As leaders
               in engineering and business education for over two decades, we are
@@ -73,9 +73,9 @@ const MemorialCollege: React.FC = () => {
               <Counter counterData={counterDataForHomePage} classes="counter" />
             </div>
 
-            <div className="mt-5 flex justify-center">
+            <div className="mt-4 flex justify-center">
               <Link to="/about-us">
-                <button className="bg-[#023047] hover:bg-white fw500 hover:text-[#023047] hover:border hover:border-[#023047] uppercase cursor-pointer py-4 px-8 text-white flex gap-x-2 items-center rounded-lg">
+                <button className="bg-[#023047] hover:bg-white fw500 hover:text-[#023047] hover:border hover:border-[#023047] uppercase cursor-pointer py-3.5 px-7 text-white flex gap-x-2 items-center rounded-lg">
                   Find Out More About Us{" "}
                   <LiaLongArrowAltRightSolid size={24} />
                 </button>

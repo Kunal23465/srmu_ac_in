@@ -23,7 +23,6 @@ const ProgramFinder: React.FC = () => {
   const pathParts = location.pathname.split("/");
   const disciplineIdFromState = pathParts[1];
   const programTypeIdFromState = pathParts[2];
-  console.log(disciplineIdFromState, programTypeIdFromState, "location");
   const [searchTerm, setSearchTerm] = useState("");
   const [debouncedSearch, setDebouncedSearch] = useState("");
 

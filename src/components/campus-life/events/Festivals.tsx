@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { festivalsData } from "../../../data/campus-life/events/events-data";
 import { useNavigate } from "react-router-dom";
+import { normalizeRouteSlug } from "../../../utils/routeMatching";
 
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 
@@ -132,7 +133,7 @@ const Festivals: React.FC = () => {
 
                 <div className="mt-4">
                   <button
-                    onClick={() => navigate(card.routeKey)}
+                    onClick={() => navigate(`/event/${normalizeRouteSlug(card.title)}`)}
                     className="
                                                 text-sm font-semibold border-2 border-yellow-500 
                                                 color_light_blue py-3 px-6 rounded-lg 

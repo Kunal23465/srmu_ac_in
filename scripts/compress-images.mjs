@@ -89,7 +89,7 @@ const main = async () => {
     const result = await compressFile(filePath);
     if (result) {
       results.push(result);
-      console.log(`compressed ${path.relative(process.cwd(), filePath)}: ${formatBytes(result.before)} -> ${formatBytes(result.after)}`);
+      process.stdout.write(`compressed ${path.relative(process.cwd(), filePath)}: ${formatBytes(result.before)} -> ${formatBytes(result.after)}\n`);
     }
   }
 
@@ -97,12 +97,12 @@ const main = async () => {
   const totalAfter = results.reduce((sum, result) => sum + result.after, 0);
   const totalSaved = totalBefore - totalAfter;
 
-  console.log("");
-  console.log(`files changed: ${results.length}`);
-  console.log(`total saved: ${formatBytes(totalSaved)}`);
+  process.stdout.write("\n");
+  process.stdout.write(`files changed: ${results.length}\n`);
+  process.stdout.write(`total saved: ${formatBytes(totalSaved)}\n`);
 };
 
 main().catch((error) => {
-  console.error(error);
+  process.stderr.write(`${String(error)}\n`);
   process.exitCode = 1;
 });

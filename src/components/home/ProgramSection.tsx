@@ -18,7 +18,6 @@
 //   const [activeTab, setActiveTab] = useState<number | null>(null);
 //   const [selectedProgramType, setSelectedProgramType] = useState<number | null>(null);
 //   const [isMobile, setIsMobile] = useState(false);
-// console.log(selectedProgramType,"<<<<< selectedProgramType");
 //   const { programType } = useSelector((state: RootState) => state.getProgramType);
 //   const { discipline, loading } = useSelector((state: RootState) => state.getDiscipline);
 //   const hasSkippedInitialDisciplineFetch = useRef(false);
@@ -68,7 +67,6 @@
 //     if (programType?.length && !selectedProgramType) {
 //       const defaultProgramType =
 //         programType.find((item: any) => item?.showOnHome) ?? programType[0];
-// console.log(defaultProgramType,"<<<<< defaultProgramType");
 //       setActiveTab(defaultProgramType.programTypeId);
 //       setSelectedProgramType(defaultProgramType.slug);
 //     }

@@ -10,6 +10,7 @@ import { fetchProgramMenu } from "../../store/header/programMenuThunk";
 import { useDispatch, useSelector } from "react-redux";
 import logo from "../../assets/images/logo.svg";
 import { setProgramId } from "../../store/program-finder/program/programSlice";
+import { getPreferredProgramRouteSlug } from "../../utils/legacyProgramRoutes";
 
 const Header = () => {
   const location = useLocation();
@@ -62,7 +63,7 @@ const Header = () => {
             <div className="flex flex-row justify-between">
               {/* LOGO */}
               <Link to="/" className="logo_div flex items-center lg:gap-1 xl:gap-3 cursor-pointer">
-                <img src={logo} alt="logo" className="max-w-[220px] xl:max-w-full" />
+                <img src={logo} alt="logo" className="max-w-[205px] xl:max-w-[245px]" />
               </Link>
 
               {/* DESKTOP MENU */}
@@ -143,7 +144,7 @@ const Header = () => {
                                                         dispatch(setProgramId(prog.programId.toString()));
                                                         setShowMegaMenu(false);
                                                       }}
-                                                      to={`/program/${prog.programSlug}`}
+                                                      to={`/program/${getPreferredProgramRouteSlug(prog.programSlug)}`}
                                                       className="text-[15px] px-3 py-2 rounded-md text-[#212529] hover:text-[#ffb703] border border-white hover:border-[#ffb703] block"
                                                     >
                                                       {prog.programName}
@@ -274,7 +275,7 @@ const Header = () => {
                                             type.programs.map((prog) => (
                                               <li key={prog.programId}>
                                                 <Link
-                                                  to={`/program/${prog.programSlug}`}
+                                                  to={`/program/${getPreferredProgramRouteSlug(prog.programSlug)}`}
                                                   onMouseDown={() => {
                                                     dispatch(setProgramId(prog.programId.toString()));
                                                   }}

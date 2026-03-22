@@ -27,7 +27,6 @@ const CareerFormInputs: React.FC = () => {
                 await dispatch(saveCareerForm(values));
                 actions.setSubmitting(false);
                 // actions.resetForm();
-                console.log(values,"form values");
               }}
             >
               {() => (

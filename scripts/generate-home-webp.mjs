@@ -53,13 +53,13 @@ const main = async () => {
 
     await fs.writeFile(absoluteOutput, buffer);
 
-    console.log(
-      `${path.relative(process.cwd(), absoluteInput)} -> ${path.relative(process.cwd(), absoluteOutput)}: ${formatBytes(before.size)} -> ${formatBytes(buffer.length)}`
+    process.stdout.write(
+      `${path.relative(process.cwd(), absoluteInput)} -> ${path.relative(process.cwd(), absoluteOutput)}: ${formatBytes(before.size)} -> ${formatBytes(buffer.length)}\n`
     );
   }
 };
 
 main().catch((error) => {
-  console.error(error);
+  process.stderr.write(`${String(error)}\n`);
   process.exitCode = 1;
 });

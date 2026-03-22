@@ -1,13 +1,14 @@
-import { Helmet } from 'react-helmet-async'
 import RtiComponent from '../../components/rti/RtiComponent'
+import SeoHead from '../../components/seo/SeoHead'
 
 const RtiPage = () => {
   return (
     <div>
-      <Helmet>
-        <title>RTI | Shri Ramswaroop Memorial University, Lucknow</title>
-        <meta name="description" content="RMU Lucknow RTI" />
-      </Helmet>
+      <SeoHead
+        title="RTI | Shri Ramswaroop Memorial University, Lucknow"
+        description="Access Right to Information (RTI) details, university disclosures, and related contact information for Shri Ramswaroop Memorial University, Lucknow."
+        pathname="/rti"
+      />
         <RtiComponent/>
     </div>
   )

@@ -56,8 +56,8 @@ const TestimonialSlider = () => {
   const displayIndex = activeIndex % hometestimonial.length;
 
   return (
-    <div className="py-20 bg-[#f7f9ff] flex flex-col items-center">
-      <h2 className="text-[28px] text-center lg:text-[3.125rem] fw600 mb-12">
+    <div className="py-8 md:py-10 lg:py-12 bg-[#f7f9ff] flex flex-col items-center">
+      <h2 className="text-[28px] text-center lg:text-[3rem] fw600 mb-10">
         Student Testimonials
       </h2>
 
@@ -78,20 +78,42 @@ const TestimonialSlider = () => {
               >
                 <div className="flex justify-center">
                   <div
-                    className={`rounded-full transition-all duration-300 overflow-hidden border-2
-                    w-[90px] h-[90px]
-                    sm:w-[120px] sm:h-[120px]
-                    md:w-[168px] md:h-[168px]
-                    ${index === activeIndex
-                        ? "border-[#3A6EFF] scale-100 shadow-lg"
-                        : "border-gray-300"
-                      }`}
+                    className={`relative rounded-full transition-all duration-300
+                    w-[92px] h-[92px]
+                    sm:w-[122px] sm:h-[122px]
+                    md:w-[176px] md:h-[176px]
+                    ${index === activeIndex ? "scale-100" : "scale-[0.86] md:scale-[0.82]"}`}
                   >
-                    <img
-                      src={item.img}
-                      alt={item.name}
-                      className="w-full h-full object-cover"
+                    <div
+                      className={`absolute inset-0 rounded-full transition-all duration-300 ${
+                        index === activeIndex
+                          ? "bg-[radial-gradient(circle_at_center,_rgba(58,110,255,0.22),_rgba(58,110,255,0)_68%)] scale-[1.14]"
+                          : "bg-[radial-gradient(circle_at_center,_rgba(2,48,71,0.08),_rgba(2,48,71,0)_72%)]"
+                      }`}
                     />
+                    <div
+                      className={`relative h-full w-full rounded-full p-[4px] transition-all duration-300 ${
+                        index === activeIndex
+                          ? "bg-[linear-gradient(145deg,#ffb703,#3a6eff)] shadow-[0_18px_40px_rgba(58,110,255,0.22)]"
+                          : "bg-white shadow-[0_10px_24px_rgba(2,48,71,0.08)]"
+                      }`}
+                    >
+                      <div
+                        className={`h-full w-full overflow-hidden rounded-full border transition-all duration-300 ${
+                          index === activeIndex ? "border-white/80 bg-white" : "border-[#d8deea] bg-[#eef3fb]"
+                        }`}
+                      >
+                        <img
+                          src={item.img}
+                          alt={item.name}
+                          className={`block aspect-square h-full w-full object-cover object-top transition-all duration-300 ${
+                            index === activeIndex
+                              ? "scale-105 saturate-110 contrast-105"
+                              : "grayscale-[0.12] brightness-[0.97]"
+                          }`}
+                        />
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -102,7 +124,7 @@ const TestimonialSlider = () => {
 
       {/* testimonial text */}
 
-      <div className="max-w-3xl mx-auto text-center px-4 mt-10">
+      <div className="max-w-3xl mx-auto text-center px-4 mt-8">
         <div className="flex justify-center">
           <img src={quote} className="w-10 md:w-auto" alt="quote" />
         </div>
@@ -119,9 +141,9 @@ const TestimonialSlider = () => {
           {hometestimonial[displayIndex].text}
         </p>
 
-        <div className="mt-10">
+        <div className="mt-8">
           <Link
-            to="/placements/student-testimonial"
+            to="/all-testimonial"
             className="bg-[#023047] inline-flex gap-x-2 items-center text-white px-6 py-3 rounded-md hover:bg-white hover:text-[#023047] border hover:border-[#023047]"
           >
             VIEW ALL TESTIMONIALS

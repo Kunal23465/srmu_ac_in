@@ -1,14 +1,15 @@
 import React from 'react'
 import Clubs from '../../../components/campus-life/clubs/Clubs'
-import { Helmet } from 'react-helmet-async'
+import SeoHead from '../../../components/seo/SeoHead'
 
 const ClubsPage: React.FC = () => {
     return (
         <>
-            <Helmet>
-                <title>Clubs | Shri Ramswaroop Memorial University, Lucknow</title>
-                <meta name="description" content="Getting involved in a student club at SRMU isn&#039;t merely about picking up a hobby; it&#039;s a life-changing journey. It links you to a lively community, fosters personal development, and, above all, brings in lots of fun!" />
-            </Helmet>
+            <SeoHead
+                title="Clubs | Shri Ramswaroop Memorial University, Lucknow"
+                description="Getting involved in a student club at SRMU isn't merely about picking up a hobby; it's a life-changing journey that links you to a lively community, fosters personal development, and brings in lots of fun."
+                pathname="/clubs"
+            />
             <Clubs />
         </>
 

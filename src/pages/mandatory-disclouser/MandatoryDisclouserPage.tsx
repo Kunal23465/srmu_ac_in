@@ -4,14 +4,15 @@ import CustomOverviewSection from "../../utils/custom/CustomOverviewSection";
 import Classes from "../../utils/styles/Global.module.css";
 import standard from "../../assets/pdf/standard-inspection-form-26-27-261225040325.pdf";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+import SeoHead from "../../components/seo/SeoHead";
 const MandatoryDisclouserPage: React.FC = () => {
   return (
     <>
-      <Helmet>
-        <title>Shri Ramswaroop Memorial University | SRMU</title>
-        <meta name="description" content="Shri Ramswaroop Memorial University is located in Lucknow-Deva Road, Barabanki, Uttar Pradesh, India. SRMU takes pride in its excellent faculty hailing from leading central universities and premier institutes like IIT(s) and NIT(s) etc." />
-      </Helmet>
+      <SeoHead
+        title="Mandatory Disclosure | Shri Ramswaroop Memorial University, Lucknow"
+        description="Access mandatory disclosure information, institutional compliance details, and public reference documents published by Shri Ramswaroop Memorial University."
+        pathname="/mandatory-disclouser"
+      />
       <div className={`${Classes["container"]}`}>
         <CustomOverviewSection data={mandatoryDisclousertOverviewData} />
         <div className="py-7 md:py-10 lg:py-14">

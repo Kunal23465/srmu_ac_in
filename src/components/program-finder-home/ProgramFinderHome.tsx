@@ -13,6 +13,7 @@ import Classes from "../../utils/styles/Global.module.css";
 
 import ProgramFinderIntro from "../admissions/program-finder/ProgramFinderIntro";
 import ProgramFilter from "../admissions/program-finder/ProgramFilter";
+import { resolveTopLevelProgramRoute } from "../../utils/programCategoryRoute";
 
 const ProgramFinderHome: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -43,8 +44,22 @@ const ProgramFinderHome: React.FC = () => {
      =========================== */
   useEffect(() => {
     if (programType || item) {
-      setSelectedProgramFlag(programType || "");
-      setSelectedDiscipline(item || "");
+      if (item) {
+        setSelectedProgramFlag(programType || "");
+        setSelectedDiscipline(item || "");
+      } else {
+        const topLevelRoute = resolveTopLevelProgramRoute(programType || "");
+        if (topLevelRoute?.kind === "programFlag") {
+          setSelectedProgramFlag(topLevelRoute.slug);
+          setSelectedDiscipline("");
+        } else if (topLevelRoute?.kind === "discipline") {
+          setSelectedProgramFlag("");
+          setSelectedDiscipline(topLevelRoute.slug);
+        } else {
+          setSelectedProgramFlag(programType || "");
+          setSelectedDiscipline("");
+        }
+      }
     }
     isInitialized.current = true;
   }, [programType, item]);

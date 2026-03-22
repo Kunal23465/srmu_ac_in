@@ -32,7 +32,7 @@ export const CARD_DATA: CardData[] = [
     subtitle: "10th",
     imageAlt: "Smiling student after 10th class",
     imageUrl: smiling, // Replace with your actual image path
-    linkTo: "/after-10th",
+    linkTo: "/after-class-10th",
   },
   {
     id: 2,
@@ -40,7 +40,7 @@ export const CARD_DATA: CardData[] = [
     subtitle: "12th",
     imageAlt: "Students studying in a library after 12th class",
     imageUrl: second, // Replace with your actual image path
-    linkTo: "/after-12th",
+    linkTo: "/after-class-12th",
   },
   {
     id: 3,

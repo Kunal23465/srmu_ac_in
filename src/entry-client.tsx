@@ -66,7 +66,6 @@ const AppReady = () => {
 try {
     hydrateRoot(rootElement, <AppReady />);
 } catch (error) {
-    console.error("Hydration failed, falling back to client-side rendering", error);
     // Fallback to createRoot if hydration fails
     import("react-dom/client").then(({ createRoot }) => {
         const root = createRoot(rootElement);

@@ -11,45 +11,44 @@ import CustomTopFooter from "../../../utils/custom/CustomTopFooter";
 import { CustomTopFooterData1 } from "../../../data/about/leadership-and-governance/leadership-and-governance-data";
 import { CustomCompaniesScope } from "../../../utils/custom/CustomCompaniesScope";
 import CustomProgramScholarshipSchemeCard from "../../../utils/custom/CustomProgramScholarshipSchemeCard";
-import { Link, useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../../store";
-import { fetchAllProgramFinder, fetchProgramFinderByID } from "../../../store/program-finder/programFinderThunk";
+import { fetchProgramFinderByID } from "../../../store/program-finder/programFinderThunk";
 import { useEffect, useState } from "react";
 import ProgramFeeTable from "./ProgramFeeTable";
 import { fetchProgramFeesByProgramId } from "../../../store/program-finder/program-fees/programFeesThunk";
 import { fetchWhySrmuSectionById } from "../../../store/program-finder/why-srmu/whySrmuSectionThunk";
 import { getCounterById } from "../../../store/program-finder/counter/getCounterThunk";
 import { fetchProgramHeighlightById } from "../../../store/program-finder/program-heighlight/programHeighlightThunk";
-import { Helmet } from "react-helmet-async";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { fetchRecruiterById } from "../../../store/recruiter/recruiterThunk";
 // import PartnerLogos from "./PartnerLogos";
 import { fetchWhySrmuLogoById } from "../../../store/why-srmu/whySrmuLogoThunk";
 import { setProgramId as setProgramIdInStore } from "../../../store/program-finder/program/programSlice";
+import PageNotFound from "../../../pages/PageNotFound";
+import { resolveProgramRouteSlug } from "../../../utils/legacyProgramRoutes";
+import SeoHead from "../../seo/SeoHead";
+import { DEFAULT_SOCIAL_IMAGE, SITE_NAME, buildCanonicalUrl, stripHtml } from "../../../utils/seo";
+
+const ProgramDetailsLoader = () => (
+  <div className="mt-20 min-h-[60vh]">
+    <div className="flex h-full min-h-[60vh] flex-col items-center justify-center gap-4">
+      <div className="h-12 w-12 animate-spin rounded-full border-4 border-[#d7e3f4] border-t-[#023047]" />
+      <p className="text-base font-medium text-[#023047]">Loading program details...</p>
+    </div>
+  </div>
+);
+
 const ProgramDetails: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
+  const location = useLocation();
   const { programName } = useParams();
-  const [isPhd, setIsPhd] = useState(false);
   const [expanded, setExpanded] = useState(false);
-  const [resolvedProgramId, setResolvedProgramId] = useState<string | null>(null);
+  const [isProgramRouteLoading, setIsProgramRouteLoading] = useState(false);
+  const [hasProgramRouteLoaded, setHasProgramRouteLoaded] = useState(false);
 
-  const slugifyProgramName = (value: string) =>
-    value
-      .toLowerCase()
-      .trim()
-      .replace(/[()]/g, "")
-      .replace(/&/g, "")
-      .replace(/\./g, "-")
-      .replace(/\s+/g, "-")
-      .replace(/-+/g, "-")
-      .replace(/-in-/g, "-")
-      .replace(/^b-c-a\b/, "bca")
-      .replace(/-with-.*/, "")
-      .replace(/^-|-$/g, "");
-
-  const { programId: baseProgramId } = useSelector((state: RootState) => state.programId)
-  const { dataByID } = useSelector((state: RootState) => state.getProgramFinder);
+  const { dataByID, currentDetailsSlug } = useSelector((state: RootState) => state.getProgramFinder);
   const { data: departmentHeghlightData, loading: departmentHeghlightLoading } = useSelector((state: RootState) => state.getDepartmentHeighlightById);
   const { data: feesData } = useSelector((state: RootState) => state.programFees);
   const { data: whySrmuData } = useSelector((state: RootState) => state.getWhySrmuSection);
@@ -57,104 +56,99 @@ const ProgramDetails: React.FC = () => {
   const { data: recruiterData, loading: recruiterLoading } = useSelector((state: RootState) => state.getRecruiter);
   const { data: whySrmuLogo } = useSelector((state: RootState) => state.whySrmuLogoById);
   const normalizedFeesData = Array.isArray(feesData) ? feesData[0] : feesData;
+  const normalizedProgramSlug = resolveProgramRouteSlug(programName || "");
+  const hasCurrentProgramData = Boolean(dataByID?.programId && currentDetailsSlug === normalizedProgramSlug);
+  const currentProgramId = Number(dataByID?.programId);
+  const hasCurrentFeesData = Number((normalizedFeesData as any)?.programId) === currentProgramId;
+  const isPhd = currentProgramId === 81;
+  const programLabel = dataByID?.name || programName?.replace(/-/g, " ") || "Program";
+  const programTitle = dataByID?.title?.trim() || "";
+  const seoTitle =
+    dataByID?.metaTitle?.trim() ||
+    `${programLabel}${programTitle ? ` - ${programTitle}` : ""} | ${SITE_NAME}, Lucknow`;
+  const seoDescription =
+    dataByID?.metaDescription?.trim() ||
+    stripHtml(dataByID?.overview || dataByID?.description || programTitle || programLabel).slice(0, 160) ||
+    `Explore ${programLabel} at ${SITE_NAME}, Lucknow. Check eligibility, fees, curriculum, and career opportunities.`;
+  const durationValue = Number(dataByID?.totalDurationYear);
+  const courseDuration =
+    Number.isFinite(durationValue) && durationValue > 0 ? `P${durationValue}Y` : undefined;
+  const firstYearTuitionFee = normalizedFeesData?.fees?.reduce((sum: number, fee: any) => {
+    const yearOneAmount = Number(fee?.yearWiseAmount?.["1"] || 0);
+    return sum + yearOneAmount;
+  }, 0);
+  const courseSchema = {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    name: programLabel,
+    description: seoDescription,
+    provider: {
+      "@type": "CollegeOrUniversity",
+      name: SITE_NAME,
+    },
+    url: buildCanonicalUrl(location.pathname),
+    timeRequired: courseDuration,
+    ...(firstYearTuitionFee
+      ? {
+          offers: {
+            "@type": "Offer",
+            category: "Tuition Fee",
+            priceCurrency: "INR",
+            price: firstYearTuitionFee,
+          },
+        }
+      : {}),
+  };
 
   useEffect(() => {
-    let mounted = true;
+    if (!hasCurrentProgramData || !dataByID?.programId) {
+      return;
+    }
 
-    const resolveProgramId = async () => {
+    dispatch(setProgramIdInStore(String(dataByID.programId)));
+  }, [dataByID?.programId, dispatch, hasCurrentProgramData]);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    const loadProgramRouteData = async () => {
       if (!programName) {
-        if (mounted) {
-          setResolvedProgramId(baseProgramId ?? null);
-        }
+        setIsProgramRouteLoading(false);
+        setHasProgramRouteLoaded(true);
         return;
       }
 
-      const currentProgram =
-        dataByID && !Array.isArray(dataByID) ? dataByID : null;
-      const currentProgramSlug = slugifyProgramName(currentProgram?.name || "");
-
-      if (currentProgram?.programId && currentProgramSlug === programName.toLowerCase()) {
-        if (mounted) {
-          setResolvedProgramId(String(currentProgram.programId));
-        }
+      if (hasCurrentProgramData && hasCurrentFeesData) {
+        setIsProgramRouteLoading(false);
+        setHasProgramRouteLoaded(true);
         return;
       }
 
-      const decodedName = decodeURIComponent(programName).replace(/-/g, " ");
-      const byNameAction = await dispatch(fetchAllProgramFinder({ name: decodedName }));
-      if (!mounted) {
-        return;
-      }
+      setIsProgramRouteLoading(true);
+      setHasProgramRouteLoaded(false);
 
-      const byNamePrograms =
-        fetchAllProgramFinder.fulfilled.match(byNameAction) && Array.isArray(byNameAction.payload)
-          ? byNameAction.payload
-          : [];
+      await Promise.allSettled([
+        dispatch(fetchProgramFinderByID(normalizedProgramSlug)),
+        dispatch(fetchProgramFeesByProgramId(normalizedProgramSlug)),
+        dispatch(fetchWhySrmuSectionById({ slug: normalizedProgramSlug })),
+        dispatch(getCounterById({ slug: normalizedProgramSlug })),
+        dispatch(fetchProgramHeighlightById(normalizedProgramSlug)),
+        dispatch(fetchRecruiterById({ slug: normalizedProgramSlug })),
+        dispatch(fetchWhySrmuLogoById({ slug: normalizedProgramSlug })),
+      ]);
 
-      let matchedProgram = byNamePrograms.find(
-        (item: any) => slugifyProgramName(item?.name || "") === programName.toLowerCase()
-      );
-
-      if (!matchedProgram) {
-        const allProgramsAction = await dispatch(fetchAllProgramFinder());
-        if (!mounted) {
-          return;
-        }
-
-        const allPrograms =
-          fetchAllProgramFinder.fulfilled.match(allProgramsAction) && Array.isArray(allProgramsAction.payload)
-            ? allProgramsAction.payload
-            : [];
-
-        matchedProgram = allPrograms.find(
-          (item: any) => slugifyProgramName(item?.name || "") === programName.toLowerCase()
-        );
-      }
-
-      if (matchedProgram?.programId) {
-        const id = String(matchedProgram.programId);
-        setResolvedProgramId(id);
-        dispatch(setProgramIdInStore(id));
+      if (!cancelled) {
+        setIsProgramRouteLoading(false);
+        setHasProgramRouteLoaded(true);
       }
     };
 
-    void resolveProgramId();
+    void loadProgramRouteData();
 
     return () => {
-      mounted = false;
+      cancelled = true;
     };
-  }, [baseProgramId, dispatch, programName]);
-
-  useEffect(() => {
-    if (!resolvedProgramId) {
-      setIsPhd(false);
-      return;
-    }
-
-    const numericProgramId = Number(resolvedProgramId);
-    if (!Number.isFinite(numericProgramId) || numericProgramId <= 0) {
-      return;
-    }
-
-    const hasProgramDataForCurrentId = Number((dataByID as any)?.programId) === numericProgramId;
-    const hasFeesDataForCurrentId = Number((normalizedFeesData as any)?.programId) === numericProgramId;
-
-    if (!hasProgramDataForCurrentId) {
-      dispatch(fetchProgramFinderByID(programName));
-    }
-
-    if (!hasFeesDataForCurrentId) {
-      dispatch(fetchProgramFeesByProgramId(programName));
-    }
-
-    dispatch(fetchWhySrmuSectionById({ slug: programName }));
-    dispatch(getCounterById({ slug: programName }));
-    dispatch(fetchProgramHeighlightById(programName));
-    dispatch(fetchRecruiterById({ slug: programName }));
-    dispatch(fetchWhySrmuLogoById({ slug: programName }));
-
-    setIsPhd(resolvedProgramId === "81");
-  }, [dispatch, resolvedProgramId]);
+  }, [dispatch, hasCurrentFeesData, hasCurrentProgramData, normalizedProgramSlug, programName]);
 
   // counter data key change
   const convertedCounterData = counterData.map((item) => {
@@ -219,23 +213,32 @@ const ProgramDetails: React.FC = () => {
     };
   };
 
+  if (isProgramRouteLoading || !hasCurrentProgramData) {
+    if (hasProgramRouteLoaded && !hasCurrentProgramData) {
+      return <PageNotFound />;
+    }
+
+    return <ProgramDetailsLoader />;
+  }
+
   if (recruiterLoading) {
-    return <p>loading....</p>;
+    return <ProgramDetailsLoader />;
   }
 
   return (
     <>
-      <Helmet>
-        {/* @ts-ignore */}
-        <title>{dataByID?.metaTitle ?? ""}</title>
-        {/* @ts-ignore */}
-        <meta name="description" content={dataByID?.metaDescription ?? ""} />
-      </Helmet>
+      <SeoHead
+        title={seoTitle}
+        description={seoDescription}
+        pathname={location.pathname}
+        image={DEFAULT_SOCIAL_IMAGE}
+        jsonLd={courseSchema}
+      />
       <div className="mt-20 ">
         <div className={`${Classes["container"]} relative`}>
           {
             // @ts-ignore
-            dataByID?.documentPath && dataByID?.documentPath != null && <Link Link
+            dataByID?.documentPath && dataByID?.documentPath != null && <Link
               target="_blank"
               // @ts-ignore
               to={dataByID?.documentPath}

@@ -94,8 +94,8 @@ const CustomDepartmentHighlights: React.FC<
         </h2>
 
         <div className="space-y-10">
-          {steps.map((step) => (
-            <div key={step.id}>
+          {steps.map((step, index) => (
+            <div key={`${step.id}-${index}-${step.title}`}>
               <h3 className="text-xl font-semibold mb-3 text-[#0b2c3d]">
                 {step.title}
               </h3>
@@ -131,7 +131,7 @@ const CustomDepartmentHighlights: React.FC<
                 </div>
 
                 {steps.map((step, index) => (
-                  <div key={step.id} className="flex items-center gap-6">
+                  <div key={`${step.id}-${index}-${step.title}`} className="flex items-center gap-6">
                     <div
                       className={`w-4 h-4 rounded-full z-10 transition-all duration-500 ${index <= activeIndex
                         ? "bg-[#0b2c3d] scale-110"

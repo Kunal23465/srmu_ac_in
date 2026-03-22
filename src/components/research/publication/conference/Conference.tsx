@@ -3,6 +3,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import Classes from "../../../../utils/styles/Global.module.css";
 import { PublicationConferenceData } from "../../../../data/research/publication/publication-data";
 import { useNavigate } from "react-router-dom";
+import { normalizeRouteSlug } from "../../../../utils/routeMatching";
 
 const Conference: React.FC = () => {
   const [windowWidth, setWindowWidth] = useState(0);
@@ -134,7 +135,7 @@ const Conference: React.FC = () => {
                   key={index}
                   className="p-2 my-4 cursor-pointer"
                   onClick={() =>
-                    navigate(`/research/conference/${facility.title}`, {
+                    navigate(`/conference/${normalizeRouteSlug(facility.title)}`, {
                       state: {
                         title: facility.title,
                         description: facility?.description,
@@ -221,7 +222,7 @@ const Conference: React.FC = () => {
                   className="flex-shrink-0 flex-grow-0 p-2 my-4 cursor-pointer"
                   style={{ flexBasis: getSlideWidth() }}
                   onClick={() =>
-                    navigate(`/research/conference/${facility.title}`, {
+                    navigate(`/conference/${normalizeRouteSlug(facility.title)}`, {
                       state: {
                         title: facility.title,
                         description: facility?.description,

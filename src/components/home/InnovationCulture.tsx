@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Classes from "../../utils/styles/Global.module.css";
 export default function InnovationCulture() {
   return (
-    <section className={`${Classes["container"]} py-10 sm:py-16  `}>
+    <section className={`${Classes["container"]} py-8 md:py-10 lg:py-12`}>
       <div className="card-color rounded-3xl overflow-hidden px-3 py-4 sm:p-10 lg:p-[5rem] flex flex-col lg:flex-row max-w-[1300px] w-full items-center relative text-white">
         <div className="w-full pb-4 lg:pb-0">
           <div className="pb-4 sm:pb-8">

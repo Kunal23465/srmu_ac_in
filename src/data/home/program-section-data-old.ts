@@ -30,6 +30,9 @@ interface ProgramTab {
   programs: ProgramItem[];
 }
 
+const undergraduateAiPath = "/artificial-intelligence/undergraduate";
+const postgraduateAiPath = "/artificial-intelligence/postgraduate";
+
 export const tabs: ProgramTab[] = [
   {
     id: 1,
@@ -38,83 +41,83 @@ export const tabs: ProgramTab[] = [
       {
         name: "Microbiology",
         img: microbiology,
-        link: "https://srmu.ac.in/microbiology/undergraduate",
+        link: "/microbiology/undergraduate",
       },
       {
         name: "Nutrition & Dietetics",
         img: nutrition,
-        link: "https://srmu.ac.in/nutrition-dietetics/undergraduate",
+        link: "/nutrition-dietetics/undergraduate",
       },
       {
         name: "Artificial Intelligence",
         img: ai,
-        link: "https://srmu.ac.in/artificial-intelligence/undergraduate",
+        link: undergraduateAiPath,
       },
       {
         name: "Computer Science Engineering",
         img: computer,
-        link: "https://srmu.ac.in/artificial-intelligence/undergraduate",
+        link: undergraduateAiPath,
       },
       {
         name: "Computer Application",
         img: comapplication,
-        link: "https://srmu.ac.in/artificial-intelligence/undergraduate",
+        link: undergraduateAiPath,
       },
       {
         name: "Agriculture",
         img: agriculture,
-        link: "https://srmu.ac.in/artificial-intelligence/undergraduate",
+        link: undergraduateAiPath,
       },
       
       {
         name: "Biotechnology",
         img: biotech,
-        link: "https://srmu.ac.in/artificial-intelligence/undergraduate",
+        link: undergraduateAiPath,
       },
       {
         name: "Engineering",
         img: engineering,
-        link: "https://srmu.ac.in/artificial-intelligence/undergraduate",
+        link: undergraduateAiPath,
       },
       {
         name: "Management",
         img: management,
-        link: "https://srmu.ac.in/artificial-intelligence/undergraduate",
+        link: undergraduateAiPath,
       },
       {
         name: "Commerce and Economics",
         img: economics,
-        link: "https://srmu.ac.in/artificial-intelligence/undergraduate",
+        link: undergraduateAiPath,
       },
       {
         name: "Media Studies (Journalism)",
         img: media,
-        link: "https://srmu.ac.in/artificial-intelligence/undergraduate",
+        link: undergraduateAiPath,
       },
       {
         name: "Legal Studies (Law)",
         img: law,
-        link: "https://srmu.ac.in/artificial-intelligence/undergraduate",
+        link: undergraduateAiPath,
       },
       {
         name: "Pharmacy",
         img: pharmacy,
-        link: "https://srmu.ac.in/artificial-intelligence/undergraduate",
+        link: undergraduateAiPath,
       },
       {
         name: "Allied Health Sciences",
         img: allied,
-        link: "https://srmu.ac.in/artificial-intelligence/undergraduate",
+        link: undergraduateAiPath,
       },
       {
         name: "Natural Sciences",
         img: natural,
-        link: "https://srmu.ac.in/artificial-intelligence/undergraduate",
+        link: undergraduateAiPath,
       },
       {
         name: "Humanities",
         img: humanities,
-        link: "https://srmu.ac.in/artificial-intelligence/undergraduate",
+        link: undergraduateAiPath,
       },
      
     ],
@@ -126,68 +129,68 @@ export const tabs: ProgramTab[] = [
       {
         name: "Artificial Intelligence",
         img: ai,
-        link: "https://srmu.ac.in/artificial-intelligence/postgraduate",
+        link: postgraduateAiPath,
       },
       {
         name: "Computer Science Engineering",
         img: computer,
-        link: "https://srmu.ac.in/artificial-intelligence/postgraduate",
+        link: postgraduateAiPath,
       },
       {
         name: "Computer Application",
         img: comapplication,
-        link: "https://srmu.ac.in/artificial-intelligence/postgraduate",
+        link: postgraduateAiPath,
       },
       
       {
         name: "Agriculture",
         img: agriculture,
-        link: "https://srmu.ac.in/artificial-intelligence/postgraduate",
+        link: postgraduateAiPath,
       },
       {
         name: "Biotechnology",
         img: biotech,
-        link: "https://srmu.ac.in/artificial-intelligence/postgraduate",
+        link: postgraduateAiPath,
       },
       {
         name: "Engineering",
         img: engineering,
-        link: "https://srmu.ac.in/artificial-intelligence/postgraduate",
+        link: postgraduateAiPath,
       },
       {
         name: "Management",
         img: management,
-        link: "https://srmu.ac.in/artificial-intelligence/postgraduate",
+        link: postgraduateAiPath,
       },
       {
         name: "Commerce and Economics",
         img: economics,
-        link: "https://srmu.ac.in/artificial-intelligence/postgraduate",
+        link: postgraduateAiPath,
       },
       {
         name: "Media Studies (Journalism)",
         img: media,
-        link: "https://srmu.ac.in/artificial-intelligence/postgraduate",
+        link: postgraduateAiPath,
       },
        {
         name: "Legal  Studies (Law)",
         img: law,
-        link: "https://srmu.ac.in/artificial-intelligence/postgraduate",
+        link: postgraduateAiPath,
       },
       {
         name: "Natural Sciences",
         img: natural,
-        link: "https://srmu.ac.in/artificial-intelligence/postgraduate",
+        link: postgraduateAiPath,
       },
       {
         name: "Social Work",
         img: socialwork,
-        link: "https://srmu.ac.in/artificial-intelligence/postgraduate",
+        link: postgraduateAiPath,
       },
        {
         name: "Humanities",
         img: humanities,
-        link: "https://srmu.ac.in/artificial-intelligence/postgraduate",
+        link: postgraduateAiPath,
       },
     ],
   },
@@ -198,22 +201,22 @@ export const tabs: ProgramTab[] = [
       {
         name: "Computer Science Engineering",
         img: computer,
-        link: "https://srmu.ac.in/artificial-intelligence/postgraduate",
+        link: postgraduateAiPath,
       },
       {
         name: "Biotechnology",
         img: biotech,
-        link: "https://srmu.ac.in/artificial-intelligence/postgraduate",
+        link: postgraduateAiPath,
       },
       {
         name: "Engineering",
         img: engineering,
-        link: "https://srmu.ac.in/artificial-intelligence/postgraduate",
+        link: postgraduateAiPath,
       },
       {
         name: "Legal Studies (Law)",
         img: law,
-        link: "https://srmu.ac.in/artificial-intelligence/postgraduate",
+        link: postgraduateAiPath,
       },
     ],
   },
@@ -224,12 +227,12 @@ export const tabs: ProgramTab[] = [
       {
         name: "Polytechnic (Lateral)",
         img: polytechniclateral,
-        link: "https://srmu.ac.in/artificial-intelligence/postgraduate",
+        link: postgraduateAiPath,
       },
       {
         name: "Polytechnic (Diploma)",
         img: polytechnicdiploma,
-        link: "https://srmu.ac.in/artificial-intelligence/postgraduate",
+        link: postgraduateAiPath,
       },
      
     ],
@@ -241,27 +244,27 @@ export const tabs: ProgramTab[] = [
       {
         name: "Artificial Intelligence",
         img: ai,
-        link: "https://srmu.ac.in/artificial-intelligence/postgraduate",
+        link: postgraduateAiPath,
       },
       {
         name: "Computer Science Engineering",
         img: computer,
-        link: "https://srmu.ac.in/artificial-intelligence/postgraduate",
+        link: postgraduateAiPath,
       },
       {
         name: "Computer Application",
         img: comapplication,
-        link: "https://srmu.ac.in/artificial-intelligence/postgraduate",
+        link: postgraduateAiPath,
       },
       {
         name: "Engineering",
         img: engineering,
-        link: "https://srmu.ac.in/artificial-intelligence/postgraduate",
+        link: postgraduateAiPath,
       },
       {
         name: "Management",
         img: management,
-        link: "https://srmu.ac.in/artificial-intelligence/postgraduate",
+        link: postgraduateAiPath,
       },
      
     ],

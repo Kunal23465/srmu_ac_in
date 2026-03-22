@@ -271,7 +271,7 @@ export const approvalData: ApprovalDataType[] = [
     pdfLink: ugcpdf,
   },
   {
-    id: 1,
+    id: 4,
     title: "BCI APPROVAL",
     subtitle: "[BAR COUNCIL OF INDIA]",
     description:
@@ -280,7 +280,7 @@ export const approvalData: ApprovalDataType[] = [
     pdfLink: bicpdf,
   },
   {
-    id: 2,
+    id: 5,
     title: "PCI APROVAL",
     subtitle: "[PHARMACY COUNCIL OF INDIA]",
     description:
@@ -289,7 +289,7 @@ export const approvalData: ApprovalDataType[] = [
     pdfLink: pic1,
   },
   {
-    id: 3,
+    id: 6,
     title: "PCI APROVAL",
     subtitle: "[PHARMACY COUNCIL OF INDIA]",
     description:
@@ -299,7 +299,7 @@ export const approvalData: ApprovalDataType[] = [
   },
 
   {
-    id: 1,
+    id: 7,
     title: "NCTE APPROVAL",
     subtitle: "[NATIONAL COUNCIL FOR TEACHER EDUCATION]",
     description:
@@ -308,7 +308,7 @@ export const approvalData: ApprovalDataType[] = [
     pdfLink: nctepdf,
   },
     {
-    id: 2,
+    id: 8,
     title: "AIU MEMBERSHIP",
     subtitle: "[MEMBER OF ASSOCIATION OF INDIA UNIVERSITIES]",
     description:
@@ -317,7 +317,7 @@ export const approvalData: ApprovalDataType[] = [
     pdfLink: aiupdf,
   },
   {
-    id: 3,
+    id: 9,
     title: "AICTE JUDGEMENT",
     subtitle: "[ALL INDIA COUNCIL FOR TECHNICAL EDUCATION]",
     description:
@@ -326,7 +326,7 @@ export const approvalData: ApprovalDataType[] = [
     pdfLink: aictepdf,
   },
   {
-    id: 1,
+    id: 10,
     title: "COA APPROVAL",
     subtitle: "[COUNCIL OF ARCHITECTURE]",
     description:

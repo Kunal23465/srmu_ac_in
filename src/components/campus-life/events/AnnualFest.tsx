@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { festData } from "../../../data/campus-life/events/events-data";
 import { useNavigate } from "react-router-dom";
 import Classes from "../../../utils/styles/Global.module.css";
+import { normalizeRouteSlug } from "../../../utils/routeMatching";
 
 const tabs = [
     { key: "anubhuti", label: "ANUBHUTI" },
@@ -188,7 +189,7 @@ const AnnualFest: React.FC = () => {
                                     ></p>
 
                                     <button
-                                        onClick={() => navigate(card.routeKey)}
+                                        onClick={() => navigate(`/event/${normalizeRouteSlug(card.title)}`)}
                                         className="
                                             mt-3 lg:text-[12.195px] text-[11.38px] sm:text-[11.38px] font-medium cursor-pointer color_light_blue 
                                             border-1 border-[#ffb703]

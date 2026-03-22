@@ -3,29 +3,9 @@ import ProgramFinderHome from "../../components/program-finder-home/ProgramFinde
 import { useLocation } from "react-router-dom";
 import { RootState } from "../../store";
 import { useSelector } from "react-redux";
-import { Helmet } from "react-helmet-async";
-
-/* ------------------ helpers ------------------ */
-
-// convert text to slug (API + URL comparison)
-const slugify = (text = "") =>
-  text
-    .toLowerCase()
-    .replace(/&/g, "and")
-    .replace(/[().]/g, "")
-    .replace(/\s+/g, "-")
-    .replace(/-+/g, "-")
-    .trim();
-
-// parse URL path
-const parseProgramFromPath = (pathname = "") => {
-  const parts = pathname.replace(/^\/+/, "").split("/");
-
-  return {
-    programTypeSlug: parts[0] || "",
-    programNameSlug: parts[1] || "",
-  };
-};
+import { getProgramCategoryPathMatch } from "../../utils/programCategoryRoute";
+import SeoHead from "../../components/seo/SeoHead";
+import { SITE_NAME, stripHtml } from "../../utils/seo";
 
 /* ------------------ component ------------------ */
 
@@ -33,38 +13,26 @@ const ProgramFinderPage: React.FC = () => {
   const location = useLocation();
   const { data } = useSelector((state: RootState) => state.programMenu);
 
-  // get slugs from URL
-  const { programTypeSlug, programNameSlug } = useMemo(
-    () => parseProgramFromPath(location.pathname),
-    [location.pathname]
-  );
+  const finalFilterMatch = useMemo(() => {
+    const [firstSegment = "", secondSegment = ""] = location.pathname.replace(/^\/+/, "").split("/");
+    return getProgramCategoryPathMatch(data, firstSegment, secondSegment);
+  }, [data, location.pathname]);
 
-  // find program type using slug comparison
-  const programTypeData = useMemo(() => {
-    return data.find(
-      (item) => slugify(item.programFlagName) === programTypeSlug
-    );
-  }, [data, programTypeSlug]);
-
-  // find discipline using slug comparison
-  const finalFilterData = useMemo(() => {
-    return programTypeData?.disciplines?.find(
-      (item) => slugify(item.disciplineName) === programNameSlug
-    );
-  }, [programTypeData, programNameSlug]);
+  const finalFilterData = finalFilterMatch?.matchedDiscipline;
 
 
 
   return (
     <>
-      {/* ✅ SEO Meta */}
       {finalFilterData && (
-        <Helmet>
-          {/* @ts-ignore */}
-          <title>{finalFilterData.metaTitle}</title>
-          {/* @ts-ignore */}
-          <meta name="description" content={finalFilterData.metaDescription} />
-        </Helmet>
+        <SeoHead
+          title={finalFilterData.metaTitle || `${finalFilterData.disciplineName || "Programs"} | ${SITE_NAME}, Lucknow`}
+          description={
+            finalFilterData.metaDescription ||
+            `Explore ${stripHtml(finalFilterData.disciplineName || "programs")} at ${SITE_NAME}, Lucknow. Browse courses, admissions information, eligibility, and fee details.`
+          }
+          pathname={location.pathname}
+        />
       )}
 
       <ProgramFinderHome />

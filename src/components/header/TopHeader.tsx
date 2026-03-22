@@ -27,31 +27,31 @@ const TopHeader: React.FC = () => {
 
   return (
     <div
-      className={`${Classes["top_header"]} text-white bg-white lg:bg-[#0f4a85] text-[0.89rem]`}
+      className={`${Classes["top_header"]} text-white bg-white lg:bg-[#0f4a85] text-[0.84rem]`}
     >
       <div className={`${isDesktop ? Classes["container"] : ""}`}>
         {/* DESKTOP HEADER */}
         <div className="hidden lg:flex justify-between ">
           <div className="left-part flex items-center">
-            <ul className="flex items-center text-sm flex-row gap-x-2 ">
-              <Link className="border-r pr-2" to="/notice">
+            <ul className="flex items-center text-[13px] flex-row">
+              <Link className="px-[0.7rem] border-r border-white" to="/notice">
                 NOTICE
               </Link>
               <Link
-                className="border-r pr-2"
+                className="px-[0.7rem] border-r border-white"
                 to="https://admissionenquiry.srmu.ac.in/"
               >
                 ADMISSION ENQUIRY
               </Link>
-              <Link to="/shift-schedule">SHIFT SCHEDULE</Link>
+              <Link className="px-[0.7rem]" to="/shift-schedule">SHIFT SCHEDULE</Link>
             </ul>
           </div>
 
-          <div className="right-part flex gap-3 items-center">
+          <div className="right-part flex gap-0 items-stretch">
             <Link
               target="_blank"
               to="https://eyojan.srmu.ac.in/"
-              className="flex items-center text-[13.74px] text-white gap-x-2 pr-2 border-r border-white"
+              className="relative flex items-center text-[13px] text-white gap-x-2 px-[0.7rem] after:absolute after:right-0 after:top-1/2 after:h-[55%] after:w-px after:-translate-y-1/2 after:bg-white"
             >
               <img src={user} alt="user" />
               Student Login
@@ -60,26 +60,26 @@ const TopHeader: React.FC = () => {
             <Link
               target="_blank"
               to="https://eyojan.srmu.ac.in/"
-              className="flex text-[13.74px] items-center text-white gap-x-5 pl-2 mr-3"
+              className="flex text-[13px] items-center text-white gap-x-5 px-[0.7rem]"
             >
               Staff Login
               <img src={search} alt="user" />
             </Link>
 
-            <button className="bg-white flex items-center px-2 py-2 gap-2 ">
+            <button className="bg-white flex items-center px-4 py-0 gap-2 border-l border-[#ccc]">
               <a href="tel:18001026004" className="text-[#FFB703]">
                 <IoCallSharp className="text-[1.5rem]" />
               </a>
               <div className="flex flex-col text-start ">
-                <p className="text-xs font-normal text-black">Admission Helpline</p>
-                <p className="text-black">18001026004</p>
+                <p className="text-[11px] font-normal text-black">Admission Helpline</p>
+                <p className="text-[13px] text-black">18001026004</p>
               </div>
             </button>
 
             <Link
               target="_blank"
               to="https://studentportal.srmu.ac.in/login"
-              className="bg-[#FFB703] px-2 font-medium uppercase border-2 border-[#ffb703] py-3.5 flex items-center"
+              className="bg-[#FFB703] px-4 text-[13px] font-medium uppercase border border-[#ffb703] py-[0.875rem] flex items-center text-black"
             >
               Apply Now
             </Link>

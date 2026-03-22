@@ -8,6 +8,7 @@ import { GoSearch } from "react-icons/go";
 import { AppDispatch, RootState } from "../../../store";
 import { useDispatch, useSelector } from "react-redux";
 import { setProgramId } from "../../../store/program-finder/program/programSlice";
+import { getPreferredProgramRouteSlug } from "../../../utils/legacyProgramRoutes";
 
 interface ProgramTypeOption {
   programTypeId: number | string;
@@ -145,7 +146,7 @@ const ProgramFilter: React.FC<PropsTypes> = ({
                     <div className="flex flex-col md:flex-row gap-2 w-full justify-between lg:w-[70%]">
                       <Link
                         onClick={() => handleProgramSelect(course.programId)}
-                        to={`/program/${course.slug}`}
+                        to={`/program/${getPreferredProgramRouteSlug(course)}`}
                         className="text-[#0f4a85] lg:text-[20px] md:text-[18.75px] sm:text-[17.5px] text-[17.5px] fw500 lg:w-[60%]"
                       >
                         {course.name}
@@ -159,7 +160,7 @@ const ProgramFilter: React.FC<PropsTypes> = ({
                     <div className="flex flex-row gap-2 w-full lg:w-[30%] justify-between lg:justify-end">
                       <Link
                         onClick={() => handleProgramSelect(course.programId)}
-                        to={`/program/${course.slug}`}
+                        to={`/program/${getPreferredProgramRouteSlug(course)}`}
                         className="bg-[#023047] text-nowrap border border-[#023047] hover:bg-white hover:text-[#023047] transition-all duration-500 text-white px-6 py-3 text-sm font-medium rounded-lg flex items-center gap-2"
                       >
                         View Details <FaArrowRightLong />

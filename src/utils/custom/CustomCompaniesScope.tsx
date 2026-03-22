@@ -84,8 +84,6 @@ export const CustomCompaniesScope: React.FC<CompaniesScopeProps> = ({
 
   // Default itemsToShow for SSR (matches desktop)
   const ssrItemsToShow = 5;
-  console.log("List========", list);
-  console.log("Data========", data);
   return (
     <div className="min-h-screen py-16 px-4 sm:px-6 lg:px-8">
       <div className="mx-auto">

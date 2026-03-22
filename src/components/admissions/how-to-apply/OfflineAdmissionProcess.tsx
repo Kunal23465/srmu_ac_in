@@ -1,6 +1,9 @@
 import React from 'react';
+import { buildCanonicalUrl } from '../../../utils/seo';
 
 const OfflineAdmissionProcess:React.FC = () => {
+    const contactUsUrl = buildCanonicalUrl('/contact-us');
+
     return (
         <section className="common_padding offline_admission_wrap">
             <div className="container">
@@ -47,7 +50,7 @@ const OfflineAdmissionProcess:React.FC = () => {
                                 className="st4 st5 st3"
                                 style={{ textDecoration: 'underline' }}
                             >
-                                <a href="https://srmu.ac.in/contact-us">https://srmu.ac.in/contact-us</a>
+                                <a href={contactUsUrl}>{contactUsUrl}</a>
                             </text>
                         </g>
                         <rect x="699.9" y="223.1" className="st0" width="199" height="97.8" />
@@ -1078,14 +1081,14 @@ const OfflineAdmissionProcess:React.FC = () => {
                                     For details visit:
                                 </text>
                             </g>
-                            <a href="https://srmu.ac.in/contact-us">
+                            <a href={contactUsUrl}>
                                 <text
                                     transform="matrix(1 0 0 1 13.8346 578.3301)"
                                     fill="#FFFFFF"
                                     fontFamily="'Rubik'"
                                     fontSize="14px"
                                 >
-                                    https://srmu.ac.in/contact-us
+                                    {contactUsUrl}
                                 </text>
                             </a>
                             <rect x="207.5" y="12.4" fill="none" width="201.9" height="99.2" />

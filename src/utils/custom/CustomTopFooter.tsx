@@ -15,10 +15,10 @@ interface propsType {
 const CustomTopFooter: React.FC<propsType> = ({ data }) => {
   return (
     <div className="bg-[#E9F4FF]">
-      <div className={`${Classes["container"]} py-[28px] md:py-[32px]`}>
+      <div className={`${Classes["container"]} py-8 md:py-10 lg:py-12`}>
         {data.map((ele: any, index) => {
           return (
-            <div key={index} className="flex flex-col  sm:flex-row items-center sm:justify-between py-6 md:py-3 lg:py-0">
+            <div key={index} className="flex flex-col sm:flex-row items-center sm:justify-between gap-5">
               <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] text-center text-[#0f4a85] sm:text-left font-semibold">{ele.content}</h2>
               <Link
                 to="/online-admission"

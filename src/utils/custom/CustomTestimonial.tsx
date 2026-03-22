@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { testimonialCard } from "../../data/placement/student-testimonial/testimonialcardData";
 import { MdClose } from "react-icons/md";
 interface CustomTestimonialProps {
@@ -49,26 +48,38 @@ const CustomModal: React.FC<propsModal> = ({ id, img, text, name, batch, isExpan
 const CustomTestimonial: React.FC<CustomTestimonialProps> = ({ data }) => {
   const [isExpanded, setIsExpanded] = useState<number | null>(null);
 
-  if (isExpanded !== null) {
-    (document.body.style.overflow = "hidden"), (document.body.style.height = "100vh");
-  } else {
-    (document.body.style.overflow = "auto"), (document.body.style.height = "auto");
-  }
+  useEffect(() => {
+    if (typeof document === "undefined") return;
+
+    document.body.style.overflow = isExpanded !== null ? "hidden" : "auto";
+    document.body.style.height = isExpanded !== null ? "100vh" : "auto";
+
+    return () => {
+      document.body.style.overflow = "auto";
+      document.body.style.height = "auto";
+    };
+  }, [isExpanded]);
 
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-x-10  mt-40">
       {data.map(({ id, img, text, name, batch }) => (
-        <div key={id} className=" px-5 pb-5 shadow-lg border border-gray-200 rounded-2xl  mb-20">
-          <img className="w-25 h-25 -mt-12.5 mb-5 mx-auto rounded-full" src={img} alt={name} />
-          <p className="text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] ">{text.substring(0, 171)}...</p> {/* <-- truncation applied */}
-          <button className="mb-4 ml-2 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] font-medium text-blue-800 italic underline" onClick={() => setIsExpanded(id)}>
-            Read More
+        <div key={id}>
+          <button
+            type="button"
+            onClick={() => setIsExpanded(id)}
+            className="mb-20 cursor-pointer rounded-2xl border border-gray-200 px-5 pb-5 text-left shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-[#0f4a85]/20 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-[#0f4a85]/30"
+          >
+            <img className="w-25 h-25 -mt-12.5 mb-5 mx-auto rounded-full" src={img} alt={name} />
+            <p className="text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] ">{text.substring(0, 171)}...</p>
+            <span className="mb-4 ml-2 inline-block text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] font-medium text-blue-800 italic underline">
+              Read More
+            </span>
+            <br />
+            <strong className="text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px]">{name}</strong>
+            <p className=" text-gray-700 lg:text-[12px] md:text-[11.25px] sm:text-[10.5px] text-[10.5px]">{batch}</p>
           </button>
-          <br />
           <CustomModal setIsExpanded={setIsExpanded} id={id} img={img} text={text} name={name} batch={batch} isExpanded={isExpanded} />
-          <strong className="text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px]">{name}</strong>
-          <p className=" text-gray-700 lg:text-[12px] md:text-[11.25px] sm:text-[10.5px] text-[10.5px]">{batch}</p>
         </div>
       ))}
     </div>

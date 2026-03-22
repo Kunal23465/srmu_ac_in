@@ -28,25 +28,25 @@ const Banner: React.FC = () => {
                     {/* Slide 1 */}
                     <div className="min-w-full banner-slider overflow-hidden relative">
                         <div className="relative">
-                            <img className="w-full h-[50vh] sm:h-auto sm:min-h-[530px] md:min-h-[600px] lg:min-h-[800px] max-h-[calc(100vh-120px)] object-cover" src={banner4} alt="Banner" fetchpriority="high" loading="eager" decoding="async" />
+                            <img className="w-full h-[44vh] sm:h-auto sm:min-h-[470px] md:min-h-[520px] lg:min-h-[640px] max-h-[calc(100vh-140px)] object-cover" src={banner4} alt="Banner" fetchpriority="high" loading="eager" decoding="async" />
 
                             <div className="overlay bg-[#0000000d] absolute top-0 left-0 w-full h-full flex pt-10 sm:pt-0 items-center">
                                 <div className={Classes["container"]}>
-                                    <div className="text-white sm:px-5 sm:py-5 md:py-10 rounded-tl-[50px] transition-all duration-300 rounded-br-[50px]">
-                                        <div className="text-[18px] sm:text-[20px] mb-4">Cheers to Success!!</div>
+                                    <div className="max-w-[650px] text-white sm:px-4 sm:py-4 md:py-8 rounded-tl-[50px] transition-all duration-300 rounded-br-[50px]">
+                                        <div className="text-[16px] sm:text-[18px] mb-2.5">Cheers to Success!!</div>
 
-                                        <h1 className="text-[22px] sm:text-[32px] lg:text-[46px] xl:text-[52px] font-medium leading-[1.2] mb-4">
+                                        <h1 className="text-[21px] sm:text-[28px] lg:text-[38px] xl:text-[42px] font-medium leading-[1.12] mb-2.5">
                                             Now, SRMU is <br />
                                             ISO 9001, ISO 14001, and ISO 50001 certified organization
                                         </h1>
 
-                                        <div className="text-[12px] sm:text-[21px]">Certified Excellence: Our Commitment to Quality and Standards</div>
+                                        <div className="text-[12px] sm:text-[17px]">Certified Excellence: Our Commitment to Quality and Standards</div>
 
-                                        <div className="mt-10">
+                                        <div className="mt-6">
                                             <a href={viewmorepdf} target="_blank">
-                                                <button className="bg-[#ffb703] uppercase py-4 px-5 text-[#023047] flex gap-x-2 items-center rounded-lg">
+                                                <button className="bg-[#ffb703] uppercase py-3 px-4.5 text-[#023047] flex gap-x-2 items-center rounded-lg">
                                                     Know More
-                                                    <LiaLongArrowAltRightSolid size={24} />
+                                                    <LiaLongArrowAltRightSolid size={22} />
                                                 </button>
                                             </a>
                                         </div>
@@ -59,25 +59,25 @@ const Banner: React.FC = () => {
                     {/* Slide 2 */}
                     <div className="min-w-full banner-slider overflow-hidden relative">
                         <div className="relative">
-                            <img className="w-full h-[50vh] sm:h-auto sm:min-h-[530px] md:min-h-[600px] lg:min-h-[800px] max-h-[calc(100vh-120px)] object-cover" src={banner4} alt="Banner" loading="lazy" decoding="async" />
+                            <img className="w-full h-[44vh] sm:h-auto sm:min-h-[470px] md:min-h-[520px] lg:min-h-[640px] max-h-[calc(100vh-140px)] object-cover" src={banner4} alt="Banner" loading="lazy" decoding="async" />
 
                             <div className="overlay bg-[#0000000d] absolute top-0 left-0 w-full h-full flex pt-10 sm:pt-0 items-center">
                                 <div className={Classes["container"]}>
-                                    <div className="text-white sm:px-5 sm:py-5 md:py-10 rounded-tl-[50px] rounded-br-[50px]">
-                                        <div className="text-[18px] sm:text-[20px] mb-4">Celebrating Excellence</div>
+                                    <div className="max-w-[650px] text-white sm:px-4 sm:py-4 md:py-8 rounded-tl-[50px] rounded-br-[50px]">
+                                        <div className="text-[16px] sm:text-[18px] mb-2.5">Celebrating Excellence</div>
 
-                                        <h2 className="text-[22px] sm:text-[32px] lg:text-[46px] xl:text-[52px] font-medium leading-[1.2] mb-4">
+                                        <h2 className="text-[21px] sm:text-[28px] lg:text-[38px] xl:text-[42px] font-medium leading-[1.12] mb-2.5">
                                             SRMU rated AA+ <br />
                                             by Career 360
                                         </h2>
 
-                                        <div className="text-[12px] sm:text-[21px]">Making it one of the Best B-Schools in the country in 2026</div>
+                                        <div className="text-[12px] sm:text-[17px]">Making it one of the Best B-Schools in the country in 2026</div>
 
-                                        <div className="mt-10">
+                                        <div className="mt-6">
                                             <a href={srmuRatedPdf} target="_blank">
-                                                <button className="bg-[#ffb703] uppercase py-4 px-5 text-[#023047] flex gap-x-2 items-center rounded-lg">
+                                                <button className="bg-[#ffb703] uppercase py-3 px-4.5 text-[#023047] flex gap-x-2 items-center rounded-lg">
                                                     View More
-                                                    <LiaLongArrowAltRightSolid size={24} />
+                                                    <LiaLongArrowAltRightSolid size={22} />
                                                 </button>
                                             </a>
                                         </div>
@@ -90,13 +90,13 @@ const Banner: React.FC = () => {
             </div>
 
             {/* arrows */}
-            <div className={`flex justify-end space-x-2 absolute bottom-[10%] w-full left-[50%] -translate-x-[50%] ${Classes["container"]}`}>
+            <div className={`flex justify-end space-x-2 absolute bottom-[8%] w-full left-[50%] -translate-x-[50%] ${Classes["container"]}`}>
                 <button onClick={prev}>
-                    <LiaLongArrowAltLeftSolid size={24} className="text-white w-9 h-9" />
+                    <LiaLongArrowAltLeftSolid size={22} className="text-white w-8 h-8" />
                 </button>
 
                 <button onClick={next}>
-                    <LiaLongArrowAltRightSolid size={24} className="text-white w-9 h-9" />
+                    <LiaLongArrowAltRightSolid size={22} className="text-white w-8 h-8" />
                 </button>
             </div>
         </div>

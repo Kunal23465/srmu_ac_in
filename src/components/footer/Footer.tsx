@@ -70,7 +70,7 @@ export const footerData = {
     {
       id: 2,
       title: "Scholarships",
-      path: "/admission/scholarship-scheme",
+      path: "/scholarship-scheme",
     },
   ],
 
@@ -85,7 +85,7 @@ export const footerData = {
     {
       id: 0,
       title: "Our Institutes",
-      path: "/academics",
+      path: "/institutes-info",
     },
     {
       id: 1,
@@ -102,7 +102,7 @@ export const footerData = {
     {
       id: 0,
       title: "Student Corner",
-      path: "/campus-life/student-corner",
+      path: "/student-corner",
     },
     {
       id: 1,
@@ -142,7 +142,7 @@ export const footerData = {
     {
       id: 0,
       title: "Central Library",
-      path: "/campus-life/central-library",
+      path: "/central-library",
     },
     {
       id: 1,
@@ -152,12 +152,12 @@ export const footerData = {
     {
       id: 2,
       title: "Clubs",
-      path: "/campus-life/clubs",
+      path: "/clubs",
     },
     {
       id: 3,
       title: "Events",
-      path: "/campus-life/events",
+      path: "/events",
     },
     {
       id: 4,
@@ -174,12 +174,12 @@ export const footerData = {
     {
       id: 1,
       title: "Outreach Activations",
-      path: "/campus-life/outreach-activations",
+      path: "/outreach-activations",
     },
     {
       id: 2,
       title: "Women Empowerment",
-      path: "/campus-life/women-empowerment",
+      path: "/women-empowerment",
     },
   ],
 };

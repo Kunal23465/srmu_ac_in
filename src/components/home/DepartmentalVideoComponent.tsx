@@ -63,13 +63,13 @@ export default function DepartmentalVideo() {
   const slideWidth = 100 / slidesToShow;
 
   return (
-    <section className="py-7 md:py-10 lg:py-14">
+    <section className="py-8 md:py-10 lg:py-12">
 
-      <h2 className="text-[28px] text-center sm:text-xl lg:text-[3.125rem] fw600 mb-10">
+      <h2 className="text-[28px] text-center sm:text-xl lg:text-[3rem] fw600 mb-8">
         Departmental Video
       </h2>
 
-      <div className={`${Classes["container"]} mb-30`}>
+      <div className={`${Classes["container"]}`}>
 
         {/* Embla */}
         <div className="overflow-hidden relative" ref={emblaRef}>
@@ -128,7 +128,7 @@ export default function DepartmentalVideo() {
         </div>
 
         {/* Arrows */}
-        <div className="flex justify-center gap-6 mt-10">
+        <div className="flex justify-center gap-6 mt-8">
 
           <button
             onClick={prev}
