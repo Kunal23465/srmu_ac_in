@@ -1,3 +1,5 @@
+import siteLogo from "../assets/images/srmu-lo1-050324113149.svg";
+
 const rawSiteUrl = import.meta.env.VITE_SITE_URL || "https://srmu.ac.in";
 
 export const SITE_URL = rawSiteUrl.replace(/\/+$/, "");
@@ -5,7 +7,9 @@ export const SITE_NAME = "Shri Ramswaroop Memorial University";
 export const DEFAULT_TITLE = "Best University in Lucknow | Shri Ramswaroop Memorial University (SRMU)";
 export const DEFAULT_DESCRIPTION =
   "Study at Shri Ramswaroop Memorial University (SRMU), a leading private university in Lucknow offering BTech, MBA, BBA, BCA and more.";
-export const DEFAULT_SOCIAL_IMAGE = `${SITE_URL}/storage/settings/srmu-lo1-050324113149.svg`;
+export const DEFAULT_SOCIAL_IMAGE = /^https?:\/\//i.test(siteLogo)
+  ? siteLogo
+  : `${SITE_URL}${siteLogo.startsWith("/") ? siteLogo : `/${siteLogo}`}`;
 
 const PAGE_LABELS: Record<string, string> = {
   "/": SITE_NAME,
@@ -84,12 +88,6 @@ export const getDefaultSeo = (pathname = "/") => {
 export const buildSiteSchema = (pathname = "/") => {
   const normalizedPath = normalizePath(pathname);
   const graph: Array<Record<string, unknown>> = [
-    {
-      "@type": "CollegeOrUniversity",
-      name: SITE_NAME,
-      url: SITE_URL,
-      logo: DEFAULT_SOCIAL_IMAGE,
-    },
     {
       "@type": "WebSite",
       name: SITE_NAME,

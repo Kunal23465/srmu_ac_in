@@ -32,6 +32,67 @@
     })(window, document, "script", "dataLayer", "GTM-5MHCHMHC");
   </script>
 
+  <!-- Meta Pixel Code -->
+  <script>
+    !(function (f, b, e, v, n, t, s) {
+      if (f.fbq) return;
+      n = f.fbq = function () {
+        n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+      };
+      if (!f._fbq) f._fbq = n;
+      n.push = n;
+      n.loaded = true;
+      n.version = "2.0";
+      n.queue = [];
+      t = b.createElement(e);
+      t.async = true;
+      t.src = v;
+      s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s);
+    })(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
+    fbq("init", "600748770079503");
+    fbq("track", "PageView");
+  </script>
+
+  <script type="text/javascript">
+    (function (c, l, a, r, i, t, y) {
+      c[a] =
+        c[a] ||
+        function () {
+          (c[a].q = c[a].q || []).push(arguments);
+        };
+      t = l.createElement(r);
+      t.async = 1;
+      t.src = "https://www.clarity.ms/tag/" + i;
+      y = l.getElementsByTagName(r)[0];
+      y.parentNode.insertBefore(t, y);
+    })(window, document, "clarity", "script", "o9lqqntpki");
+  </script>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Shri Ramswaroop Memorial University",
+      "url": "https://srmu.ac.in/",
+      "logo": "https://srmu.ac.in/srmu-lo1-050324113149.svg",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Shri Ramswaroop Memorial University, Village - Hadauri, Post - Tindola",
+        "addressLocality": "Lucknow-Deva Road, Barabanki",
+        "postalCode": "225003",
+        "addressCountry": "IN"
+      },
+      "sameAs": [
+        "https://www.facebook.com/SRMUOFFICIAL/",
+        "https://x.com/srmu_lucknow",
+        "https://www.linkedin.com/in/srmulko/?original_referer=http%3A%2F%2Fsrmu.ac.in%2F",
+        "https://www.instagram.com/srmulucknow_official/",
+        "https://www.youtube.com/channel/UCQBjHzkED5ESWvlQiwLNZ4Q"
+      ]
+    }
+  </script>
+
   <!-- Helmet SSR meta placeholders -->
   <!--helmet-head-->
 
@@ -139,54 +200,8 @@
       });
     };
 
-    const loadMetaPixel = async () => {
-      if (window.fbq) {
-        return;
-      }
-
-      const fbq = function () {
-        if (fbq.callMethod) {
-          fbq.callMethod.apply(fbq, arguments);
-        } else {
-          fbq.queue.push(arguments);
-        }
-      };
-
-      fbq.queue = [];
-      fbq.loaded = true;
-      fbq.version = "2.0";
-      fbq.push = fbq;
-      window.fbq = fbq;
-      window._fbq = fbq;
-
-      await loadScript("https://connect.facebook.net/en_US/fbevents.js");
-
-      window.fbq("init", "600748770079503");
-      window.fbq("track", "PageView");
-    };
-
-    const loadClarity = async () => {
-      if (window.clarity) {
-        return;
-      }
-
-      const clarity = function () {
-        clarity.q = clarity.q || [];
-        clarity.q.push(arguments);
-      };
-
-      window.clarity = clarity;
-
-      await loadScript("https://www.clarity.ms/tag/o9lqqntpki");
-    };
-
     const loadAnalyticsAssets = async () => {
       loadStyle("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css");
-
-      await Promise.allSettled([
-        loadMetaPixel(),
-        loadClarity(),
-      ]);
     };
 
     const loadNonCriticalAssets = async () => {
