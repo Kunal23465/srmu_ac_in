@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 
 import { campusSlides } from "../../../data/about/aboutusData";
-import ourCampus from "../../../assets/images/about/aboutUs/knowyourcampusimg.jpg";
+import ourCampus from "../../../assets/images/about/aboutUs/knowyourcampusimg.webp";
 import Classes from "../../../utils/styles/Global.module.css";
 
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";

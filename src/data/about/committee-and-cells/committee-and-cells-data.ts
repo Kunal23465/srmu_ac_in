@@ -7,7 +7,7 @@ import board from "../../../assets/images/about/committeesAndCells/proctorial-bo
 import digital from "../../../assets/images/about/committeesAndCells/digital-learning-monitoring.jpg";
 import gender from "../../../assets/images/about/committeesAndCells/gender-sensitization-cell.jpg";
 import obc from "../../../assets/images/about/committeesAndCells/OBC-CELL.jpg";
-import minority from "../../../assets/images/about/committeesAndCells/minority-cell.jpg";
+import minority from "../../../assets/images/about/committeesAndCells/minority-cell.webp";
 import unnat from "../../../assets/images/about/committeesAndCells/unnat.jpg";
 import grievance from "../../../assets/images/about/committeesAndCells/Student-Grievance-and-Redressal-Committee.jpg";
 import { customeOverViewType } from "../../../types/home-data-type";

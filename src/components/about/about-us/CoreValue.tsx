@@ -1,5 +1,5 @@
 import React from "react";
-import coreValuesImg from "../../../assets/images/about/aboutUs/core-values-img.jpg";
+import coreValuesImg from "../../../assets/images/about/aboutUs/core-values-img.webp";
 import { coreValuesData } from "../../../data/about/aboutusData";
 
 const CoreValues: React.FC = () => {
