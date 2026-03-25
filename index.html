@@ -4,12 +4,26 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Best University in Lucknow | Shri Ramswaroop Memorial University (SRMU)</title>
-  <meta
-    name="description"
-    content="Study at Shri Ramswaroop Memorial University (SRMU), a leading private university in Lucknow offering BTech, MBA, BBA, BCA and more."
-  />
   <link rel="icon" type="image/png" href="./src/assets/images/fav-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    rel="preload"
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+  />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+    media="print"
+    onload="this.media='all'"
+  />
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+    />
+  </noscript>
   <!-- explicitly load Tailwind CSS early to avoid flash -->
   <link rel="stylesheet" href="/src/index.css" />
 
@@ -132,7 +146,11 @@
   <div class="live-chat-container" id="liveChatContainer">
     <div class="live-chat-header">
       <div class="user-info">
-        <div class="avatar"><i class="fas fa-user"></i></div>
+        <div class="avatar">
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+            <path d="M12 12a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9Zm0 2.25c-4.3 0-7.5 2.66-7.5 5.25 0 .41.34.75.75.75h13.5a.75.75 0 0 0 .75-.75c0-2.59-3.2-5.25-7.5-5.25Z"></path>
+          </svg>
+        </div>
         <div class="user-details">
           <h2>Admin Support</h2>
           <p class="status">Online</p>
@@ -140,7 +158,10 @@
       </div>
       <div class="chat-actions">
         <button onclick="window.liveChatOperation && window.liveChatOperation()" class="action-btn close-chat-btn">
-          <i class="fas fa-times"></i>
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M6 6 18 18"></path>
+            <path d="M18 6 6 18"></path>
+          </svg>
         </button>
       </div>
     </div>
@@ -150,7 +171,9 @@
         <input type="text" id="messageInput" placeholder="Type a message">
       </div>
       <button class="send-btn" onclick="window.sendMessage && window.sendMessage()">
-        <i class="fas fa-paper-plane"></i>
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+          <path d="M21.73 2.27a.75.75 0 0 0-.79-.18L2.69 9.4a.75.75 0 0 0 .05 1.41l7.22 2.26 2.26 7.22a.75.75 0 0 0 1.41.05l7.31-18.25a.75.75 0 0 0-.21-.82Zm-8.32 15.7-1.58-5.06a.75.75 0 0 0-.49-.49L6.28 10.84l11.15-4.47-4.02 11.6Z"></path>
+        </svg>
       </button>
     </div>
   </div>
@@ -200,12 +223,9 @@
       });
     };
 
-    const loadAnalyticsAssets = async () => {
-      loadStyle("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css");
-    };
+    const loadAnalyticsAssets = async () => {};
 
     const loadNonCriticalAssets = async () => {
-      loadStyle("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css");
       loadStyle("https://arsinfotech.in/chatbot/admin/public/livechat/user_style.css");
 
       try {

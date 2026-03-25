@@ -113,7 +113,7 @@ const MemorialCollege: React.FC = () => {
               {banner
                 ?.slice()
                 .reverse()
-                .map((item: any) => (
+                .map((item: any, index: number) => (
                   <div
                     className="w-full flex-[0_0_100%]"
                     key={item.bannerId}
@@ -123,7 +123,8 @@ const MemorialCollege: React.FC = () => {
                         <img
                           src={item.imagePath}
                           alt="slider"
-                          loading="lazy"
+                          loading={index === 0 ? "eager" : "lazy"}
+                          fetchPriority={index === 0 ? "high" : "auto"}
                           decoding="async"
                           className="w-full rounded-xl"
                         />
@@ -133,7 +134,8 @@ const MemorialCollege: React.FC = () => {
                         <img
                           src={item.imagePath}
                           alt="slider"
-                          loading="lazy"
+                          loading={index === 0 ? "eager" : "lazy"}
+                          fetchPriority={index === 0 ? "high" : "auto"}
                           decoding="async"
                           className="w-full rounded-xl"
                         />

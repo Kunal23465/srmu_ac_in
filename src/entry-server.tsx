@@ -16,7 +16,6 @@ import { getCounterById } from "./store/program-finder/counter/getCounterThunk";
 import { fetchProgramHeighlightById } from "./store/program-finder/program-heighlight/programHeighlightThunk";
 import { fetchRecruiterById } from "./store/recruiter/recruiterThunk";
 import { fetchWhySrmuLogoById } from "./store/why-srmu/whySrmuLogoThunk";
-import { setProgramId } from "./store/program-finder/program/programSlice";
 import { fetchProgramMenu } from "./store/header/programMenuThunk";
 import { fetchBlogs } from "./store/blogs/blogsThunk";
 import { fetchPlacementRecordTabData } from "./store/placement/placement-record/placementRecordTabDataThunk";
@@ -29,7 +28,6 @@ import { routes } from "./utils/AllRoutesNew";
 import { eventsData } from "./data/home/EventsData";
 import { legacyNewsArticles } from "./data/legacy/legacyContent";
 import { resolveProgramRouteSlug } from "./utils/legacyProgramRoutes";
-import { slugify } from "./utils/slugify";
 import { findBlogBySlug, findCommitteeCardBySlug, findConferenceBySlug, findEventCardBySlug, findNewsBySlug } from "./utils/routeMatching";
 import { getProgramCategoryPathMatch, hasValidTopLevelProgramRoute, resolveTopLevelProgramRoute } from "./utils/programCategoryRoute";
 
@@ -162,7 +160,7 @@ const hasMatchingConference = (normalizedPathname: string) => {
 
 const getStatusCode = (normalizedPathname: string, state: RootState, programMenuData: any[]) => {
   const matches = matchRoutes(routes, normalizedPathname);
-  const matchedLeafPath = matches?.at(-1)?.route?.path;
+  const matchedLeafPath = matches && matches.length > 0 ? matches[matches.length - 1]?.route?.path : undefined;
 
   if (!matches || matchedLeafPath === "/*") {
     return 404;
@@ -284,7 +282,7 @@ async function preloadMatchedRouteComponents(normalizedPathname: string) {
   await Promise.allSettled(preloaders.map((preload) => preload()));
 }
 
-async function preloadProgramDetailsPageData(store: ReturnType<typeof createStore>, normalizedPathname: string, programMenuData: any[]) {
+async function preloadProgramDetailsPageData(store: ReturnType<typeof createStore>, normalizedPathname: string) {
   const routeMatch = normalizedPathname.match(/^\/program\/([^/]+)$/);
   const programSlug = resolveProgramRouteSlug(routeMatch?.[1] || "");
 
@@ -339,25 +337,30 @@ async function preloadDynamicProgramFinderPageData(store: ReturnType<typeof crea
 
   const routeMatch = getProgramCategoryPathMatch(programMenuData, segments[0], segments[1]);
   const programFlag = routeMatch?.matchedProgramFlag;
+  const programFlagSlug = routeMatch?.programFlagSlug;
+  const programDisciplineSlug = routeMatch?.disciplineSlug;
 
-  if (!programFlag) {
+  if (!programFlag || !programFlagSlug) {
     return;
   }
 
-  const filters: { programFlagId: number | string; programDisciplineId?: number | string } = {
-    programFlagId: programFlag.programFlagId,
+  const filters: {
+    programFlagSlug: string;
+    programDisciplineSlug?: string;
+  } = {
+    programFlagSlug,
   };
 
   if (segments.length === 2) {
-    if (!routeMatch?.matchedDiscipline) {
+    if (!routeMatch?.matchedDiscipline || !programDisciplineSlug) {
       return;
     }
-    filters.programDisciplineId = routeMatch.matchedDiscipline.disciplineId;
+    filters.programDisciplineSlug = programDisciplineSlug;
   }
 
   await Promise.allSettled([
     store.dispatch(fetchProgramByFlag()),
-    store.dispatch(fetchProgramDiscipline({ programFlagId: filters.programFlagId })),
+    store.dispatch(fetchProgramDiscipline({ programFlagSlug })),
     store.dispatch(fetchAllProgramFinder(filters)),
   ]);
 }
@@ -374,12 +377,10 @@ async function preloadPlacementOverviewPageData(store: ReturnType<typeof createS
 
 
 export async function render(url: string) {
-  const renderStartedAt = Date.now();
   const helmetContext: any = {};
 
   // Normalize URL to match routes (strip query string and trailing slash)
   const normalizedPathname = new URL(url, "http://localhost").pathname.replace(/\/+$/, "") || "/";
-  const globalLayoutStartedAt = Date.now();
   const [globalLayoutEntry, homePageEntry] = await Promise.all([
     getGlobalLayoutCacheEntry(),
     normalizedPathname === "/" ? getHomePageCacheEntry() : Promise.resolve(null),
@@ -389,10 +390,8 @@ export async function render(url: string) {
     ...(homePageEntry?.preloadedState || {}),
   });
   const programMenuData = globalLayoutEntry.programMenuData;
-  const globalLayoutDuration = Date.now() - globalLayoutStartedAt;
 
   // Preload route-specific data for SSR
-  const routePreloadStartedAt = Date.now();
   const routeComponentPreloadPromise = preloadMatchedRouteComponents(normalizedPathname);
   if (normalizedPathname === "/") {
     await preloadHomePageData(store);
@@ -409,14 +408,12 @@ export async function render(url: string) {
   ) {
     await preloadBlogsPageData(store);
   } else if (normalizedPathname.startsWith("/program/")) {
-    await preloadProgramDetailsPageData(store, normalizedPathname, programMenuData);
+    await preloadProgramDetailsPageData(store, normalizedPathname);
   } else {
     await preloadDynamicProgramFinderPageData(store, normalizedPathname, programMenuData);
   }
   await routeComponentPreloadPromise;
-  const routePreloadDuration = Date.now() - routePreloadStartedAt;
 
-  const renderToStringStartedAt = Date.now();
   const appHtml = ReactDOMServer.renderToString(
     <HelmetProvider context={helmetContext}>
       <Provider store={store}>
