@@ -1,8 +1,8 @@
 import { customeOverViewType } from "../../../types/home-data-type";
 import { MissionVisionType } from "../../about/aboutusData";
 import { counterDataType } from "../../about/leadership-and-governance/leadership-and-governance-data";
-import visionImg from "../../../assets/images/about/aboutUs/vision.png";
-import missionImg from "../../../assets/images/about/aboutUs/mission-img.jpg";
+import visionImg from "../../../assets/images/about/aboutUs/vision.webp";
+import missionImg from "../../../assets/images/about/aboutUs/mission-img.webp";
 import { WhySliderData } from "../../about/silder/slider-data";
 
 

@@ -9,7 +9,7 @@ import CustomTabs from '../../../utils/custom/CustomTabs';
 import CustomDepartmentSlider from '../../../utils/custom/CustomDepartmentSlider';
 import CustomDepartmentVissionMission from '../../../utils/custom/CustomDepartmentVissionMission';
 import CustomDepartmentHighlightCard from '../../../utils/custom/CustomDepartmentHighlightCard';
-import facilitiesBg from "../../../assets/images/academics/departments/facilities-bg-lg.jpeg"
+import facilitiesBg from "../../../assets/images/academics/departments/facilities-bg-lg.webp"
 import CustomFacultyListCard from '../../../utils/custom/CustomFacultyListCard';
 import CustomInstituteProfileCard from '../../../utils/custom/CustomInstituteProfileCard';
 import { civilcounterData2, civildepartmentHighlights, CivildepartmentVMData, civilfacultyData, civilFacultyOverviewData, civilIndustryHonoursFeeTable, civilIndustryIntegratedFeeTable, civilIndustryPostgraduateFeeTable, civilIndustryUndergraduateFeeTable, civilPlacedStudents, counterDataForFacultyCivil, instituteProfilesCivil } from '../../../data/academics/institute/faculty-of-civil-engineering/faculty-of-civil-engineering-data';

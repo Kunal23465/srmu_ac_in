@@ -1,22 +1,22 @@
 import { customeOverViewType } from "../../../../types/home-data-type";
-import vision from "../../../../assets/images/academics/departments/dept-mission-icon2.png";
-import mission from "../../../../assets/images/academics/departments/dept-mission-icon1.png";
+import vision from "../../../../assets/images/academics/departments/dept-mission-icon2.webp";
+import mission from "../../../../assets/images/academics/departments/dept-mission-icon1.webp";
 import { InstituteProfile} from "../../../../types/profile-data-type";
 import { FeeTableData } from "../../faculty-of-civil-engineering/faculty-of-civil-engineering-data";
 import { FacultyItem } from "../../../../utils/custom/CustomFacultyListCard";
 
-import AmitKumarImg from "../../../../assets/images/academics/departments/whatsapp-image-2024-09-24-at-15.45.03-24092404003842.jpeg"
+import AmitKumarImg from "../../../../assets/images/academics/departments/whatsapp-image-2024-09-24-at-15.45.03-24092404003842.webp"
 
-import LokeshImg from "../../../../assets/images/academics/departments/whatsapp-image-2025-01-08-at-12.46.07-20012510384135.jpeg";
-import SantoshImg from "../../../../assets/images/academics/departments/default-img.png";
-import HariOmImg from "../../../../assets/images/academics/departments/default-img.png";
-import RadheyshyamImg from "../../../../assets/images/academics/departments/default-img.png";
-import RitulImg from "../../../../assets/images/academics/departments/default-img.png";
-import AmitImg from "../../../../assets/images/academics/departments/default-img.png";
-import SafaImg from "../../../../assets/images/academics/departments/default-img.png";
-import RaghvendraImg from "../../../../assets/images/academics/departments/default-img.png";
-import IteeImg from "../../../../assets/images/academics/departments/default-img.png";
-import AnshikaImg from "../../../../assets/images/academics/departments/default-img.png";
+import LokeshImg from "../../../../assets/images/academics/departments/whatsapp-image-2025-01-08-at-12.46.07-20012510384135.webp";
+import SantoshImg from "../../../../assets/images/academics/departments/default-img.webp";
+import HariOmImg from "../../../../assets/images/academics/departments/default-img.webp";
+import RadheyshyamImg from "../../../../assets/images/academics/departments/default-img.webp";
+import RitulImg from "../../../../assets/images/academics/departments/default-img.webp";
+import AmitImg from "../../../../assets/images/academics/departments/default-img.webp";
+import SafaImg from "../../../../assets/images/academics/departments/default-img.webp";
+import RaghvendraImg from "../../../../assets/images/academics/departments/default-img.webp";
+import IteeImg from "../../../../assets/images/academics/departments/default-img.webp";
+import AnshikaImg from "../../../../assets/images/academics/departments/default-img.webp";
 import { EventItem } from "../../../../utils/custom/CustomEventListCard";
 import { counterDataType } from "../../../home/counterData";
 

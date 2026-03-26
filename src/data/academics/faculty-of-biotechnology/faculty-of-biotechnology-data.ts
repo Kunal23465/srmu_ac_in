@@ -1,31 +1,31 @@
 
 import { customeOverViewType } from "../../../types/home-data-type";
 import { EventItem } from "../../../utils/custom/CustomEventListCard";
-import hpv from "../../../assets/images/academics/institutes/hpv.png";
-import ibst from "../../../assets/images/academics/institutes/ibst.png";
+import hpv from "../../../assets/images/academics/institutes/hpv.webp";
+import ibst from "../../../assets/images/academics/institutes/ibst.webp";
 import { FacultyItem } from "../../../utils/custom/CustomFacultyListCard";
-import statelab from "../../../assets/images/academics/institutes/statelab.jpg";
-import csiriitr from "../../../assets/images/academics/institutes/csir-iitr.png";
-import technoCup from "../../../assets/images/academics/institutes/technoCup.jpg";
-import csirCimap from "../../../assets/images/academics/institutes/csir-cimap.png";
-import foodSafety from "../../../assets/images/academics/institutes/foodsafety.png";
-import biomedical from "../../../assets/images/academics/institutes/biomedical.jpg";
-import visionImg from "../../../assets/images/academics/institutes/dept-vision.png";
-import misionImg from "../../../assets/images/academics/institutes/dept-mission.png";
-import medicoLegal from "../../../assets/images/academics/institutes/medicoLegal.png";
-import nukaad from "../../../assets/images/academics/institutes/nukaadNatak.pnng.png";
-import defaultSrmu from "../../../assets/images/academics/institutes/default-img.png";
-import mediaclplant from "../../../assets/images/academics/institutes/mediaclplant.jpg";
-import studentsupport from "../../../assets/images/academics/institutes/studentsupport.jpg";
-import anchilicVigyan from "../../../assets/images/academics/institutes/anchilicVigyan.jpg";
-import antiinfectives from "../../../assets/images/academics/institutes/antiinfectives.jpg";
-import nanotechnology from "../../../assets/images/academics/institutes/nanotechnology.jpg";
-import drTabishQidwai from "../../../assets/images/academics/institutes/dr.-tabish-kidwai-.png";
-import experiencedfaculty from "../../../assets/images/academics/institutes/experiencedfaculty.jpg";
-import drugDiscovery from "../../../assets/images/academics/institutes/workshop-drug-discovery.jpg";
-import researchdevelopment from "../../../assets/images/academics/institutes/researchdevelopment.jpg";
-import integrationNep from "../../../assets/images/academics/departments/integration-07052412393563.jpg";
-import industrycollaboration from "../../../assets/images/academics/institutes/industrycollaboration.jpg";
+import statelab from "../../../assets/images/academics/institutes/statelab.webp";
+import csiriitr from "../../../assets/images/academics/institutes/csir-iitr.webp";
+import technoCup from "../../../assets/images/academics/institutes/technoCup.webp";
+import csirCimap from "../../../assets/images/academics/institutes/csir-cimap.webp";
+import foodSafety from "../../../assets/images/academics/institutes/foodsafety.webp";
+import biomedical from "../../../assets/images/academics/institutes/biomedical.webp";
+import visionImg from "../../../assets/images/academics/institutes/dept-vision.webp";
+import misionImg from "../../../assets/images/academics/institutes/dept-mission.webp";
+import medicoLegal from "../../../assets/images/academics/institutes/medicoLegal.webp";
+import nukaad from "../../../assets/images/academics/institutes/nukaadNatak.pnng.webp";
+import defaultSrmu from "../../../assets/images/academics/institutes/default-img.webp";
+import mediaclplant from "../../../assets/images/academics/institutes/mediaclplant.webp";
+import studentsupport from "../../../assets/images/academics/institutes/studentsupport.webp";
+import anchilicVigyan from "../../../assets/images/academics/institutes/anchilicVigyan.webp";
+import antiinfectives from "../../../assets/images/academics/institutes/antiinfectives.webp";
+import nanotechnology from "../../../assets/images/academics/institutes/nanotechnology.webp";
+import drTabishQidwai from "../../../assets/images/academics/institutes/dr.-tabish-kidwai-.webp";
+import experiencedfaculty from "../../../assets/images/academics/institutes/experiencedfaculty.webp";
+import drugDiscovery from "../../../assets/images/academics/institutes/workshop-drug-discovery.webp";
+import researchdevelopment from "../../../assets/images/academics/institutes/researchdevelopment.webp";
+import integrationNep from "../../../assets/images/academics/departments/integration-07052412393563.webp";
+import industrycollaboration from "../../../assets/images/academics/institutes/industrycollaboration.webp";
 
 import {
   departmentHighlightscardType,

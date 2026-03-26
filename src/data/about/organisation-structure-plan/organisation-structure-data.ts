@@ -1,5 +1,5 @@
 import { customeOverViewType } from "../../../types/home-data-type";
-import strategy from "../../../assets/images/about/organisationStructure/strategy.jpg"
+import strategy from "../../../assets/images/about/organisationStructure/strategy.webp"
 
 export const OrganisationStructureOverviewData: customeOverViewType = {
   heading: "Organization Structure & Plan",

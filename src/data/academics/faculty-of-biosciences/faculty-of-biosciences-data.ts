@@ -1,37 +1,37 @@
 import { customeOverViewType } from "../../../types/home-data-type";
 
-import visionImg from "../../../assets/images/academics/institutes/dept-vision.png";
-import misionImg from "../../../assets/images/academics/institutes/dept-mission.png";
-import drTabishQidwai from "../../../assets/images/academics/institutes/dr.-tabish-kidwai-.png";
+import visionImg from "../../../assets/images/academics/institutes/dept-vision.webp";
+import misionImg from "../../../assets/images/academics/institutes/dept-mission.webp";
+import drTabishQidwai from "../../../assets/images/academics/institutes/dr.-tabish-kidwai-.webp";
 import {
   departmentHighlightscardType,
   FeeTableData,
 } from "../faculty-of-civil-engineering/faculty-of-civil-engineering-data";
 import { FacultyItem } from "../../../utils/custom/CustomFacultyListCard";
-import defaultSrmu from "../../../assets/images/academics/institutes/default-img.png";
-import aparna from "../../../assets/images/academics/institutes/aparna.jpeg";
-import sapna from "../../../assets/images/academics/institutes/sapna.jpeg";
-import neeraj from "../../../assets/images/academics/institutes/neeraj.jpeg";
-import imran from "../../../assets/images/academics/institutes/imran.jpeg";
-import sukanya from "../../../assets/images/academics/institutes/sukanya.jpeg";
-import raviKumarDeshwal from "../../../assets/images/academics/institutes/raviKumarDeshwal.jpeg";
-import diverseprogram from "../../../assets/images/academics/institutes/diverseprogram.jpg";
-import statelab from "../../../assets/images/academics/institutes/statelab.jpg";
-import experiencedfaculty from "../../../assets/images/academics/institutes/experiencedfaculty.jpg";
-import industrycollaboration from "../../../assets/images/academics/institutes/industrycollaboration.jpg";
-import researchdevelopment from "../../../assets/images/academics/institutes/researchdevelopment.jpg";
-import studentsupport from "../../../assets/images/academics/institutes/studentsupport.jpg";
-import integrationNep from "../../../assets/images/academics/departments/integration-07052412393563.jpg";
+import defaultSrmu from "../../../assets/images/academics/institutes/default-img.webp";
+import aparna from "../../../assets/images/academics/institutes/aparna.webp";
+import sapna from "../../../assets/images/academics/institutes/sapna.webp";
+import neeraj from "../../../assets/images/academics/institutes/neeraj.webp";
+import imran from "../../../assets/images/academics/institutes/imran.webp";
+import sukanya from "../../../assets/images/academics/institutes/sukanya.webp";
+import raviKumarDeshwal from "../../../assets/images/academics/institutes/raviKumarDeshwal.webp";
+import diverseprogram from "../../../assets/images/academics/institutes/diverseprogram.webp";
+import statelab from "../../../assets/images/academics/institutes/statelab.webp";
+import experiencedfaculty from "../../../assets/images/academics/institutes/experiencedfaculty.webp";
+import industrycollaboration from "../../../assets/images/academics/institutes/industrycollaboration.webp";
+import researchdevelopment from "../../../assets/images/academics/institutes/researchdevelopment.webp";
+import studentsupport from "../../../assets/images/academics/institutes/studentsupport.webp";
+import integrationNep from "../../../assets/images/academics/departments/integration-07052412393563.webp";
 import { EventItem } from "../../../utils/custom/CustomEventListCard";
-import hpv from "../../../assets/images/academics/institutes/hpv.png";
-import csirCimap from "../../../assets/images/academics/institutes/csir-cimap.png";
-import foodSafety from "../../../assets/images/academics/institutes/foodsafety.png";
-import medicoLegal from "../../../assets/images/academics/institutes/medicoLegal.png";
-import ibst from "../../../assets/images/academics/institutes/ibst.png";
-import csiriitr from "../../../assets/images/academics/institutes/csir-iitr.png";
-import nukaad from "../../../assets/images/academics/institutes/nukaadNatak.pnng.png";
-import amulDairy from "../../../assets/images/academics/institutes/amulDiary.jpg";
-import industrialCsir from "../../../assets/images/academics/institutes/industrial-csir.jpg";
+import hpv from "../../../assets/images/academics/institutes/hpv.webp";
+import csirCimap from "../../../assets/images/academics/institutes/csir-cimap.webp";
+import foodSafety from "../../../assets/images/academics/institutes/foodsafety.webp";
+import medicoLegal from "../../../assets/images/academics/institutes/medicoLegal.webp";
+import ibst from "../../../assets/images/academics/institutes/ibst.webp";
+import csiriitr from "../../../assets/images/academics/institutes/csir-iitr.webp";
+import nukaad from "../../../assets/images/academics/institutes/nukaadNatak.pnng.webp";
+import amulDairy from "../../../assets/images/academics/institutes/amulDiary.webp";
+import industrialCsir from "../../../assets/images/academics/institutes/industrial-csir.webp";
 import { counterDataType } from "../../about/leadership-and-governance/leadership-and-governance-data";
 
 export const facultyofBioscienceOverviewData: customeOverViewType = {

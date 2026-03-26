@@ -1,18 +1,18 @@
 // top-level parent backgrounds (keys = top-level path without leading slash)
 
-import aboutbreadcrumbbg from "../../assets/images/breadcrumb/about-breadcrum-bg.jpg";
-import academicbreadcrumbbg from "../../assets/images/breadcrumb/institutes-info-breadcrum-bg.jpg";
-import admissionbreadcrumbbg from "../../assets/images/breadcrumb/admission-breadcrum-bg.jpg";
-import researchbreadcrumbbg from "../../assets/images/breadcrumb/Research.png";
-import campuslifebreadcrumbbg from "../../assets/images/breadcrumb/campus.png";
-import blogsbreadcrumbbg from "../../assets/images/breadcrumb/blogs-breadcrumb-bg.jpg";
-import placementbreadcrumbbg from "../../assets/images/breadcrumb/placement-breadcrum-bg.jpg";
-import agriBreadcrumbbg from "../../assets/images/breadcrumb/agri-banner-inner.jpg";
+import aboutbreadcrumbbg from "../../assets/images/breadcrumb/about-breadcrum-bg.webp";
+import academicbreadcrumbbg from "../../assets/images/breadcrumb/institutes-info-breadcrum-bg.webp";
+import admissionbreadcrumbbg from "../../assets/images/breadcrumb/admission-breadcrum-bg.webp";
+import researchbreadcrumbbg from "../../assets/images/breadcrumb/Research.webp";
+import campuslifebreadcrumbbg from "../../assets/images/breadcrumb/campus.webp";
+import blogsbreadcrumbbg from "../../assets/images/breadcrumb/blogs-breadcrumb-bg.webp";
+import placementbreadcrumbbg from "../../assets/images/breadcrumb/placement-breadcrum-bg.webp";
+import agriBreadcrumbbg from "../../assets/images/breadcrumb/agri-banner-inner.webp";
 import onlineApplicationBanner from "../../assets/images/online-application-banner.jpeg";
-import programFinderBanner from "../../assets/images/breadcrumb/Program Finder.png";
-import noticeBanner from "../../assets/images/breadcrumb/Notice.png";
-import shiftSchedule from "../../assets/images/breadcrumb/Shedule.png";
-import greenInitive from "../../assets/images/breadcrumb/Green Initiative.png";
+import programFinderBanner from "../../assets/images/breadcrumb/Program Finder.webp";
+import noticeBanner from "../../assets/images/breadcrumb/Notice.webp";
+import shiftSchedule from "../../assets/images/breadcrumb/Shedule.webp";
+import greenInitive from "../../assets/images/breadcrumb/Green Initiative.webp";
 // -----------------------
 // FIX 1: Allow string index
 // -----------------------
@@ -46,4 +46,3 @@ export const childBackgrounds: Record<string, string> = {
 export const formatSegment = (segment: string) => {
   return segment.replace(/[_-]/g, " ").replace(/^\w/, (c) => c.toUpperCase());
 };
-

@@ -1,5 +1,5 @@
 import { FC } from "react"
-import structure from "../../../assets/images/about/organisationStructure/structure.jpeg"
+import structure from "../../../assets/images/about/organisationStructure/structure.webp"
 
 const OrganisationChart: FC = () => {
     return (

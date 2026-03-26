@@ -4,7 +4,7 @@ import CustomOverviewSection from "../../../utils/custom/CustomOverviewSection";
 import { aboutOverviewData, counterDataForAboutPage, CustomTopFooterAbout } from "../../../data/about/aboutusData";
 import Counter from "../../../utils/custom/Counter";
 import Effort from "./Effort";
-import kulgeetimg from "../../../assets/images/about/aboutUs/kulgeet-img.png";
+import kulgeetimg from "../../../assets/images/about/aboutUs/kulgeet-img.webp";
 import CustomTopFooter from "../../../utils/custom/CustomTopFooter";
 import MIssionAndVission from "./MIssionAndVission";
 import CoreValues from "./CoreValue";

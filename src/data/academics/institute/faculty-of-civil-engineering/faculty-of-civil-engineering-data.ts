@@ -1,14 +1,14 @@
-import missionImg from "../../../../assets/images/academics/departments/dept-mission-icon1.png";
-import vissionImg from "../../../../assets/images/academics/departments/dept-mission-icon2.png";
+import missionImg from "../../../../assets/images/academics/departments/dept-mission-icon1.webp";
+import vissionImg from "../../../../assets/images/academics/departments/dept-mission-icon2.webp";
 
-import depSlide1 from "../../../../assets/images/academics/departments/depSlide1.png";
-import depSlide2 from "../../../../assets/images/academics/departments/depSlide2.png";
-import depSlide3 from "../../../../assets/images/academics/departments/depSlide3.png";
-import depSlide4 from "../../../../assets/images/academics/departments/depSlide4.png";
-import depSlide5 from "../../../../assets/images/academics/departments/depSlide5.png";
-import abhishek from "../../../../assets/images/academics/departments/abhishek-saxena-1.jpg"
+import depSlide1 from "../../../../assets/images/academics/departments/depSlide1.webp";
+import depSlide2 from "../../../../assets/images/academics/departments/depSlide2.webp";
+import depSlide3 from "../../../../assets/images/academics/departments/depSlide3.webp";
+import depSlide4 from "../../../../assets/images/academics/departments/depSlide4.webp";
+import depSlide5 from "../../../../assets/images/academics/departments/depSlide5.webp";
+import abhishek from "../../../../assets/images/academics/departments/abhishek-saxena-1.webp"
 
-// import professor from "../../../../assets/images/academics/departments/abhishek-saxena-1.jpg";
+// import professor from "../../../../assets/images/academics/departments/abhishek-saxena-1.webp";
 import { customeOverViewType } from "../../../../types/home-data-type";
 import { counterDataType } from "../../../about/leadership-and-governance/leadership-and-governance-data";
 import { FacultyItem } from "../../../../utils/custom/CustomFacultyListCard";

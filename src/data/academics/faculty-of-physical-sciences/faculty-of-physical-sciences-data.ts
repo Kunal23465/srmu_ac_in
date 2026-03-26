@@ -1,21 +1,21 @@
 import { counterDataType } from "../../home/counterData";
 import { customeOverViewType } from "../../../types/home-data-type";
-import visionImg from "../../../assets/images/academics/institutes/dept-vision.png";
-import misionImg from "../../../assets/images/academics/institutes/dept-mission.png";
+import visionImg from "../../../assets/images/academics/institutes/dept-vision.webp";
+import misionImg from "../../../assets/images/academics/institutes/dept-mission.webp";
 import { departmentHighlightscardType, FeeTableData } from "../faculty-of-civil-engineering/faculty-of-civil-engineering-data";
 import { FacultyItem } from "../../../utils/custom/CustomFacultyListCard";
-import ramGopalSingh from "../../../assets/images/academics/institutes/ram-gopal-singh.png";
-import mukeshMishra from "../../../assets/images/academics/institutes/mukesh-mishra.jpg";
-import nitishKumarSingh from "../../../assets/images/academics/institutes/nitish-kumar-singh.jpg";
-import nirmalKumar from "../../../assets/images/academics/institutes/nirmal-kumar-verma.jpg";
-import bmDixit from "../../../assets/images/academics/institutes/prof.-b-m-dixit.jpg";
-import studentsupport from "../../../assets/images/academics/institutes/studentsupport.jpg";
-import researchCollaboration from "../../../assets/images/academics/institutes/researchCollaboration.jpg";
-import remedialClasses from "../../../assets/images/academics/institutes/remedialClasses.jpg";
-import highlyQualifiedFaculty from "../../../assets/images/academics/institutes/highlyQualifiedFaculty.jpg";
-import modernLabs from "../../../assets/images/academics/institutes/modernLabs.jpg";
-import nepCurricula from "../../../assets/images/academics/institutes/nepCurricula.jpg";
-import nationalCollaboration from "../../../assets/images/academics/institutes/nationalCollaboration.jpg";
+import ramGopalSingh from "../../../assets/images/academics/institutes/ram-gopal-singh.webp";
+import mukeshMishra from "../../../assets/images/academics/institutes/mukesh-mishra.webp";
+import nitishKumarSingh from "../../../assets/images/academics/institutes/nitish-kumar-singh.webp";
+import nirmalKumar from "../../../assets/images/academics/institutes/nirmal-kumar-verma.webp";
+import bmDixit from "../../../assets/images/academics/institutes/prof.-b-m-dixit.webp";
+import studentsupport from "../../../assets/images/academics/institutes/studentsupport.webp";
+import researchCollaboration from "../../../assets/images/academics/institutes/researchCollaboration.webp";
+import remedialClasses from "../../../assets/images/academics/institutes/remedialClasses.webp";
+import highlyQualifiedFaculty from "../../../assets/images/academics/institutes/highlyQualifiedFaculty.webp";
+import modernLabs from "../../../assets/images/academics/institutes/modernLabs.webp";
+import nepCurricula from "../../../assets/images/academics/institutes/nepCurricula.webp";
+import nationalCollaboration from "../../../assets/images/academics/institutes/nationalCollaboration.webp";
 import { EventItem } from "../../../utils/custom/CustomEventListCard";
 
 

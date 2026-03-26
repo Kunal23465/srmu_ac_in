@@ -1,12 +1,12 @@
 import { customeOverViewType } from "../../../../types/home-data-type";
-import vision from "../../../../assets/images/academics/institutes/vision-card/Our-vision-13102304415245.png";
-import mission from "../../../../assets/images/academics/institutes/vision-card/Our-Mission-13102304092698.png";
+import vision from "../../../../assets/images/academics/institutes/vision-card/Our-vision-13102304415245.webp";
+import mission from "../../../../assets/images/academics/institutes/vision-card/Our-Mission-13102304092698.webp";
 import { CustomInstituteCourseCardProps } from "../../../../utils/custom/CustomInstituteCoursesCard";
-import courseImg1 from "../../../../assets/images/academics/departments/group-scientists-wearing-lab-coat-working-laborato-28012512230911.jpg";
-import courseImg2 from "../../../../assets/images/academics/departments/bioinformatics-07022411264512.jpg";
-import courseImg3 from "../../../../assets/images/academics/departments/biotech-07022411273155.jpg";
+import courseImg1 from "../../../../assets/images/academics/departments/group-scientists-wearing-lab-coat-working-laborato-28012512230911.webp";
+import courseImg2 from "../../../../assets/images/academics/departments/bioinformatics-07022411264512.webp";
+import courseImg3 from "../../../../assets/images/academics/departments/biotech-07022411273155.webp";
 import { InstituteProfile } from "../../../../types/profile-data-type";
-import TabishImg from "../../../../assets/images/academics/departments/dr.-tabish-kidwai-27022401392651.png";
+import TabishImg from "../../../../assets/images/academics/departments/dr.-tabish-kidwai-27022401392651.webp";
 // import { alliedHealthScienceDepartmentEventsData, alliedHealthScienceHighlightsData, counterDataFoFacultyOfAlliedHealthSciences, counterDataForPlacedStudentsOFAlliedHealthSciences, facultyDetailsOfAhsDepartment, facultyofAHSOverviewData, facultyOfAhsProfileData, facultyOfAlliedHealthSciencesVMData, underGraduateFeeDataOfAHS } from "../../faculty-of-allied-health-sciences/faculty-of-allied-health-sciences-data";
 import {
   bioscienceDepartmentEventsData,

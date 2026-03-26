@@ -1,4 +1,4 @@
-import nptel from "../../../assets/images/academics/swayam/nptel-130925102034 (1).jpg"
+import nptel from "../../../assets/images/academics/swayam/nptel-130925102034 (1).webp"
 
 
 const SrmuSwayam = () => {

@@ -1,23 +1,23 @@
 import { customeOverViewType } from "../../../../types/home-data-type";
-import vision from "../../../../assets/images/academics/departments/dept-mission-icon2.png";
-import mission from "../../../../assets/images/academics/departments/dept-mission-icon1.png";
+import vision from "../../../../assets/images/academics/departments/dept-mission-icon2.webp";
+import mission from "../../../../assets/images/academics/departments/dept-mission-icon1.webp";
 import { departmentHighlightscardType, FeeTableData } from "../../faculty-of-civil-engineering/faculty-of-civil-engineering-data";
 import { FacultyItem } from "../../../../utils/custom/CustomFacultyListCard";
 
-import AryenduImg from "../../../../assets/images/academics/departments/prof-aryendu-dwivedi-law-2009250517023.jpg";
-import PCMishraImg from "../../../../assets/images/academics/departments/dr.-p.c.-mishra-11zon-27022411543322.png";
-import DefaultImg from "../../../../assets/images/academics/departments/default-img.png";
+import AryenduImg from "../../../../assets/images/academics/departments/prof-aryendu-dwivedi-law-2009250517023.webp";
+import PCMishraImg from "../../../../assets/images/academics/departments/dr.-p.c.-mishra-11zon-27022411543322.webp";
+import DefaultImg from "../../../../assets/images/academics/departments/default-img.webp";
 
 
-import img1 from "../../../../assets/images/academics/departments/whatsapp-image-2022-05-23-at-11.30.28-am-1--23022412570798.jpeg";
-import img2 from "../../../../assets/images/academics/departments/workshop4-09052412404740.jpg";
-import img3 from "../../../../assets/images/academics/departments/guest5-09052412400851.jpg";
-import img4 from "../../../../assets/images/academics/departments/guest7-09052412401831.jpg";
-import img5 from "../../../../assets/images/academics/departments/guest6-09052412402642.jpg";
-import img6 from "../../../../assets/images/academics/departments/workship2-09052412410615.jpg";
-import img7 from "../../../../assets/images/academics/departments/mootcourt-06022404053661.jpg";
-import img8 from "../../../../assets/images/academics/departments/514x520-23022412510691.jpg";
-import img9 from "../../../../assets/images/academics/departments/seminarhall-23022412514392.jpg";
+import img1 from "../../../../assets/images/academics/departments/whatsapp-image-2022-05-23-at-11.30.28-am-1--23022412570798.webp";
+import img2 from "../../../../assets/images/academics/departments/workshop4-09052412404740.webp";
+import img3 from "../../../../assets/images/academics/departments/guest5-09052412400851.webp";
+import img4 from "../../../../assets/images/academics/departments/guest7-09052412401831.webp";
+import img5 from "../../../../assets/images/academics/departments/guest6-09052412402642.webp";
+import img6 from "../../../../assets/images/academics/departments/workship2-09052412410615.webp";
+import img7 from "../../../../assets/images/academics/departments/mootcourt-06022404053661.webp";
+import img8 from "../../../../assets/images/academics/departments/514x520-23022412510691.webp";
+import img9 from "../../../../assets/images/academics/departments/seminarhall-23022412514392.webp";
 
 
 import { Headers, Student } from "../../../../utils/custom/CustomPlacedStudentTable";
@@ -435,13 +435,13 @@ export const InstituteofLegalStudiesfacultyData: FacultyItem[] = [
   },
 ];
 
-import depSlide1 from "../../../../assets/images/academics/departments/curriculum-07052412202574.jpg";
-import depSlide2 from "../../../../assets/images/academics/departments/corporate-manag-0605240138369.jpg";
-import depSlide3 from "../../../../assets/images/academics/departments/mootcourt-06022404053661.jpg";
-import depSlide4 from "../../../../assets/images/academics/departments/legalsupp-06022404091718.jpg";
-import depSlide5 from "../../../../assets/images/academics/departments/industrystalwart-06022401542865.jpg";
-import depSlide6 from "../../../../assets/images/academics/departments/legalstudies-06022404143177.jpg";
-import depSlide7 from "../../../../assets/images/academics/departments/virtual-06022404142039.jpg";
+import depSlide1 from "../../../../assets/images/academics/departments/curriculum-07052412202574.webp";
+import depSlide2 from "../../../../assets/images/academics/departments/corporate-manag-0605240138369.webp";
+import depSlide3 from "../../../../assets/images/academics/departments/mootcourt-06022404053661.webp";
+import depSlide4 from "../../../../assets/images/academics/departments/legalsupp-06022404091718.webp";
+import depSlide5 from "../../../../assets/images/academics/departments/industrystalwart-06022401542865.webp";
+import depSlide6 from "../../../../assets/images/academics/departments/legalstudies-06022404143177.webp";
+import depSlide7 from "../../../../assets/images/academics/departments/virtual-06022404142039.webp";
 import { EventItem } from "../../../../utils/custom/CustomEventListCard";
 import { counterDataType } from "../../../home/counterData";
 

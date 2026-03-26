@@ -1,15 +1,15 @@
-import scst from "../../../assets/images/about/committeesAndCells/sc-st.jpg";
-import discri from "../../../assets/images/about/committeesAndCells/anti-discrimination-cell.jpg";
-import comp from "../../../assets/images/about/committeesAndCells/complaint.jpg";
-import saving from "../../../assets/images/about/committeesAndCells/saving-money.jpg";
-import rag from "../../../assets/images/about/committeesAndCells/anti-ragging-committee.jpg";
-import board from "../../../assets/images/about/committeesAndCells/proctorial-board1.jpg";
-import digital from "../../../assets/images/about/committeesAndCells/digital-learning-monitoring.jpg";
-import gender from "../../../assets/images/about/committeesAndCells/gender-sensitization-cell.jpg";
-import obc from "../../../assets/images/about/committeesAndCells/OBC-CELL.jpg";
+import scst from "../../../assets/images/about/committeesAndCells/sc-st.webp";
+import discri from "../../../assets/images/about/committeesAndCells/anti-discrimination-cell.webp";
+import comp from "../../../assets/images/about/committeesAndCells/complaint.webp";
+import saving from "../../../assets/images/about/committeesAndCells/saving-money.webp";
+import rag from "../../../assets/images/about/committeesAndCells/anti-ragging-committee.webp";
+import board from "../../../assets/images/about/committeesAndCells/proctorial-board1.webp";
+import digital from "../../../assets/images/about/committeesAndCells/digital-learning-monitoring.webp";
+import gender from "../../../assets/images/about/committeesAndCells/gender-sensitization-cell.webp";
+import obc from "../../../assets/images/about/committeesAndCells/OBC-CELL.webp";
 import minority from "../../../assets/images/about/committeesAndCells/minority-cell.webp";
-import unnat from "../../../assets/images/about/committeesAndCells/unnat.jpg";
-import grievance from "../../../assets/images/about/committeesAndCells/Student-Grievance-and-Redressal-Committee.jpg";
+import unnat from "../../../assets/images/about/committeesAndCells/unnat.webp";
+import grievance from "../../../assets/images/about/committeesAndCells/Student-Grievance-and-Redressal-Committee.webp";
 import { customeOverViewType } from "../../../types/home-data-type";
 import { SITE_URL } from "../../../utils/seo";
 

@@ -1,11 +1,11 @@
-import bestclass from "../../../assets/images/admissions/overview/best-in-class-facilities-21122306243021.png"
-import industrydriven from "../../../assets/images/admissions/overview/industry-driven-environment-21122306245548.png"
-import scholarshipschemes from "../../../assets/images/admissions/overview/scholarship-schemes-21122306252422.png"
-import lifebeyond from "../../../assets/images/admissions/overview/life-beyond.png"
-import globalexp from "../../../assets/images/admissions/overview/global-explore.png"
-import valueadded from "../../../assets/images/admissions/overview/value-added.png"
-import placement from "../../../assets/images/admissions/overview/dedicated-placement.png"
-import research from "../../../assets/images/admissions/overview/best-in-class-facilities-21122306254545.png"
+import bestclass from "../../../assets/images/admissions/overview/best-in-class-facilities-21122306243021.webp"
+import industrydriven from "../../../assets/images/admissions/overview/industry-driven-environment-21122306245548.webp"
+import scholarshipschemes from "../../../assets/images/admissions/overview/scholarship-schemes-21122306252422.webp"
+import lifebeyond from "../../../assets/images/admissions/overview/life-beyond.webp"
+import globalexp from "../../../assets/images/admissions/overview/global-explore.webp"
+import valueadded from "../../../assets/images/admissions/overview/value-added.webp"
+import placement from "../../../assets/images/admissions/overview/dedicated-placement.webp"
+import research from "../../../assets/images/admissions/overview/best-in-class-facilities-21122306254545.webp"
 
 export interface AdvantageItem {
   id: number;

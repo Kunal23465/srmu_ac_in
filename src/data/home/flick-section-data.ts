@@ -1,9 +1,9 @@
-import facalties from "../../assets/images/banner/facalties-banner.jpg";
-import green from "../../assets/images/banner/green-banner.jpg";
-import clubs from "../../assets/images/banner/clubs-banner.jpg";
-import innovation from "../../assets/images/banner/innovation-banner.jpg";
-import consultancy from "../../assets/images/banner/consultancy-banner.jpg";
-import events from "../../assets/images/banner/events-banner.jpg";
+import facalties from "../../assets/images/banner/facalties-banner.webp";
+import green from "../../assets/images/banner/green-banner.webp";
+import clubs from "../../assets/images/banner/clubs-banner.webp";
+import innovation from "../../assets/images/banner/innovation-banner.webp";
+import consultancy from "../../assets/images/banner/consultancy-banner.webp";
+import events from "../../assets/images/banner/events-banner.webp";
 interface CategoryItem {
   id: string;
   title: string;

@@ -1,11 +1,11 @@
 import { customeOverViewType } from "../../../types/home-data-type";
-import img1 from "../../../assets/images/about/awards/w2-1-27122302514034-27122302561964.png";
-import img2 from "../../../assets/images/about/awards/w1-27122302515286.png";
-import img3 from "../../../assets/images/about/awards/w7-2712230252062.png";
-import img4 from "../../../assets/images/about/awards/w6-27122302521592.png";
-import img5 from "../../../assets/images/about/awards/w5-27122302523038.png";
-import img6 from "../../../assets/images/about/awards/w4-27122302524356.png";
-import img7 from "../../../assets/images/about/awards/w3-27122302530885.png";
+import img1 from "../../../assets/images/about/awards/w2-1-27122302514034-27122302561964.webp";
+import img2 from "../../../assets/images/about/awards/w1-27122302515286.webp";
+import img3 from "../../../assets/images/about/awards/w7-2712230252062.webp";
+import img4 from "../../../assets/images/about/awards/w6-27122302521592.webp";
+import img5 from "../../../assets/images/about/awards/w5-27122302523038.webp";
+import img6 from "../../../assets/images/about/awards/w4-27122302524356.webp";
+import img7 from "../../../assets/images/about/awards/w3-27122302530885.webp";
 export const AwardOverviewData: customeOverViewType = {
     heading: "Award Overview",
     content:

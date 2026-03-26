@@ -1,14 +1,14 @@
 import { customeOverViewType } from "../../../types/home-data-type";
-import convoationceremony from "../../../assets/images/campus-life/convocation/convocation-ceremony.jpg"
-import a1 from "../../../assets/images/campus-life/convocation/1.jpg"
-import a2 from "../../../assets/images/campus-life/convocation/2.jpg"
-import a3 from "../../../assets/images/campus-life/convocation/3.jpg"
-import a4 from "../../../assets/images/campus-life/convocation/4.jpg"
-import a5 from "../../../assets/images/campus-life/convocation/5.jpg"
-import a6 from "../../../assets/images/campus-life/convocation/6.jpg"
-import a7 from "../../../assets/images/campus-life/convocation/7.jpg"
-import a8 from "../../../assets/images/campus-life/convocation/8.jpg"
-import a9 from "../../../assets/images/campus-life/convocation/9.jpg"
+import convoationceremony from "../../../assets/images/campus-life/convocation/convocation-ceremony.webp"
+import a1 from "../../../assets/images/campus-life/convocation/1.webp"
+import a2 from "../../../assets/images/campus-life/convocation/2.webp"
+import a3 from "../../../assets/images/campus-life/convocation/3.webp"
+import a4 from "../../../assets/images/campus-life/convocation/4.webp"
+import a5 from "../../../assets/images/campus-life/convocation/5.webp"
+import a6 from "../../../assets/images/campus-life/convocation/6.webp"
+import a7 from "../../../assets/images/campus-life/convocation/7.webp"
+import a8 from "../../../assets/images/campus-life/convocation/8.webp"
+import a9 from "../../../assets/images/campus-life/convocation/9.webp"
 
 export const ConvocationOverviewData: customeOverViewType = {
     heading: "Convocation",

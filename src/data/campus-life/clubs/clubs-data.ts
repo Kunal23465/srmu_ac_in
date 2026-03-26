@@ -1,17 +1,17 @@
 import { customeOverViewType } from "../../../types/home-data-type";
-import card1 from "../../../assets/images/campus-life/clubs/Razzmatazz-27102311264840.jpg";
-import card2 from "../../../assets/images/campus-life/clubs/Beat-The-Beats-27102311275077.jpg";
-import card3 from "../../../assets/images/campus-life/clubs/Expressions-27102311144566.jpg";
-import card4 from "../../../assets/images/campus-life/clubs/Manch-27102311283786.jpg";
-import card5 from "../../../assets/images/campus-life/clubs/Power-Angels-Power-Heroes-(1090)-27102311293999.jpg";
-import card6 from "../../../assets/images/campus-life/clubs/Tech-Fusion-27102311165074.jpg";
-import card7 from "../../../assets/images/campus-life/clubs/Ozone-27102311322269.jpg";
-import card8 from "../../../assets/images/campus-life/clubs/Sur-Jhankar-27102311340739.jpg";
-import card9 from "../../../assets/images/campus-life/clubs/Positive-Psychology-27102311350122.jpg";
-import card10 from "../../../assets/images/campus-life/clubs/Srijan-27102311354548.jpg";
-import card11 from "../../../assets/images/campus-life/clubs/Snapshot-27102311503974.jpg";
-import card12 from "../../../assets/images/campus-life/clubs/default-img.png";
-import card13 from "../../../assets/images/campus-life/clubs/Golden-Pen-27102311540454.jpg";
+import card1 from "../../../assets/images/campus-life/clubs/Razzmatazz-27102311264840.webp";
+import card2 from "../../../assets/images/campus-life/clubs/Beat-The-Beats-27102311275077.webp";
+import card3 from "../../../assets/images/campus-life/clubs/Expressions-27102311144566.webp";
+import card4 from "../../../assets/images/campus-life/clubs/Manch-27102311283786.webp";
+import card5 from "../../../assets/images/campus-life/clubs/Power-Angels-Power-Heroes-(1090)-27102311293999.webp";
+import card6 from "../../../assets/images/campus-life/clubs/Tech-Fusion-27102311165074.webp";
+import card7 from "../../../assets/images/campus-life/clubs/Ozone-27102311322269.webp";
+import card8 from "../../../assets/images/campus-life/clubs/Sur-Jhankar-27102311340739.webp";
+import card9 from "../../../assets/images/campus-life/clubs/Positive-Psychology-27102311350122.webp";
+import card10 from "../../../assets/images/campus-life/clubs/Srijan-27102311354548.webp";
+import card11 from "../../../assets/images/campus-life/clubs/Snapshot-27102311503974.webp";
+import card12 from "../../../assets/images/campus-life/clubs/default-img.webp";
+import card13 from "../../../assets/images/campus-life/clubs/Golden-Pen-27102311540454.webp";
 
 export const ClubsOverviewData: customeOverViewType = {
   heading: "Clubs",

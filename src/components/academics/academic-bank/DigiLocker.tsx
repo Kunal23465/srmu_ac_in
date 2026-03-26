@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import digilocker from "../../../assets/images/academics/acardemic-credit/digilockerimage.png"
+import digilocker from "../../../assets/images/academics/acardemic-credit/digilockerimage.webp"
 
 const DigiLocker: FC = () => {
     return (

@@ -1,5 +1,5 @@
 import { customeOverViewType } from "../../../types/home-data-type";
-import flowimg from "../../../assets/images/campus-life/clubs/stude_feed.png";
+import flowimg from "../../../assets/images/campus-life/clubs/stude_feed.webp";
 
 export const greenRedressalOverviewData: customeOverViewType = {
   heading: "Grievance Redressal System",

@@ -19,7 +19,7 @@ import CustomTabs from "../../../../../utils/custom/CustomTabs";
 import CustomInstituteProfileCard from "../../../../../utils/custom/CustomInstituteProfileCard";
 import CustomDepartmentSlider from "../../../../../utils/custom/CustomDepartmentSlider";
 import CustomFacultyListCard from "../../../../../utils/custom/CustomFacultyListCard";
-import facilitiesBg from "../../../../../assets/images/academics/departments/facilities-bg-lg.jpeg";
+import facilitiesBg from "../../../../../assets/images/academics/departments/facilities-bg-lg.webp";
 import PlacedStudents from "../electricalAndElectronics/PlacedStudents";
 import { DepartmentOfElectricalAndElectronicsPlacedStudents } from "../../../../../data/academics/institute/department-of-electrical-and-electronics-engineering-data";
 

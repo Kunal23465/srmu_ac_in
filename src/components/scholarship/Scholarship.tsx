@@ -2,7 +2,7 @@ import React from "react";
 import Classes from "../../utils/styles/Global.module.css";
 import ScholarshipOverviewSection from "./ScholarshipOverviewSection";
 import { scholarshipData, ScholarshipTopFooterData } from "../../data/admissions/scholarship/scholarship-data";
-import BGImg from "../../assets/images/admissions/overview/banner-scholorship.jpeg";
+import BGImg from "../../assets/images/admissions/overview/banner-scholorship.webp";
 import CustomTabs from "../../utils/custom/CustomTabs";
 // import CommonUniversityEntranceTest from "./CommonUniversityEntranceTest";
 // import NationalScoreBasedScholarship from "./NationalScoreBasedScholarship";

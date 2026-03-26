@@ -1,4 +1,4 @@
-import convocationimage from "../../../assets/images/campus-life/convocation/convocation-hat.jpg"
+import convocationimage from "../../../assets/images/campus-life/convocation/convocation-hat.webp"
 
 
 const MidImageSection = () => {

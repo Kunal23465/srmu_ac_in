@@ -14,7 +14,7 @@ import CustomDepartmentEventSlider from "../../../utils/custom/CustomDepartmentE
 import CustomEventCard from "../../../utils/custom/CustomEventListCard";
 import CustomTopFooter from "../../../utils/custom/CustomTopFooter";
 import PlacedStudents from "../institutes/institute-department/electricalAndElectronics/PlacedStudents";
-import facilitiesBg from "../../../assets/images/academics/departments/maths/facilities-bg-lg.jpeg"
+import facilitiesBg from "../../../assets/images/academics/departments/maths/facilities-bg-lg.webp"
 
 
 

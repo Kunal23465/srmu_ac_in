@@ -22,7 +22,7 @@ import CustomDepartmentFeeDetailsTable from "../../../../../utils/custom/CustomD
 import CustomTabs from "../../../../../utils/custom/CustomTabs";
 import CustomDepartmentSlider from "../../../../../utils/custom/CustomDepartmentSlider";
 import CustomFacultyListCard from "../../../../../utils/custom/CustomFacultyListCard";
-import facilitiesBg from "../../../../../assets/images/academics/departments/facilities-bg-lg.jpeg";
+import facilitiesBg from "../../../../../assets/images/academics/departments/facilities-bg-lg.webp";
 import CustomDepartmentHighlightCard from "../../../../../utils/custom/CustomDepartmentHighlightCard";
 import CustomPlacedStudentTable from "../../../../../utils/custom/CustomPlacedStudentTable";
 

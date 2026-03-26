@@ -1,25 +1,25 @@
 import { customeOverViewType } from "../../../../types/home-data-type";
-import vision from "../../../../assets/images/academics/departments/dept-mission-icon2.png";
-import mission from "../../../../assets/images/academics/departments/dept-mission-icon1.png";
+import vision from "../../../../assets/images/academics/departments/dept-mission-icon2.webp";
+import mission from "../../../../assets/images/academics/departments/dept-mission-icon1.webp";
 import { InstituteProfile} from "../../../../types/profile-data-type";
 import { departmentHighlightscardType, FeeTableData } from "../../faculty-of-civil-engineering/faculty-of-civil-engineering-data";
 import { FacultyItem } from "../../../../utils/custom/CustomFacultyListCard";
 
-import RazaurRahmanImg from "../../../../assets/images/academics/departments/01-10062506001261.png"
-import RahulImg from "../../../../assets/images/academics/departments/mr.-rahul-chaturvedi-23022404242613.jpg";
-import DhwaniImg from "../../../../assets/images/academics/departments/dr.-dhwani-singh-fomedia-n-2402241123395.jpg";
-import SandeepImg from "../../../../assets/images/academics/departments/default-img.png";
-import AmitImg from "../../../../assets/images/academics/departments/mr.-amit-kumar-singh-23022404392067.jpg";
-import PradeepImg from "../../../../assets/images/academics/departments/default-img.png";
-import MiliImg from "../../../../assets/images/academics/departments/dr.-mili-singh-1-11zon-26022405574118.jpg";
+import RazaurRahmanImg from "../../../../assets/images/academics/departments/01-10062506001261.webp"
+import RahulImg from "../../../../assets/images/academics/departments/mr.-rahul-chaturvedi-23022404242613.webp";
+import DhwaniImg from "../../../../assets/images/academics/departments/dr.-dhwani-singh-fomedia-n-2402241123395.webp";
+import SandeepImg from "../../../../assets/images/academics/departments/default-img.webp";
+import AmitImg from "../../../../assets/images/academics/departments/mr.-amit-kumar-singh-23022404392067.webp";
+import PradeepImg from "../../../../assets/images/academics/departments/default-img.webp";
+import MiliImg from "../../../../assets/images/academics/departments/dr.-mili-singh-1-11zon-26022405574118.webp";
 
-import depSlide1 from "../../../../assets/images/academics/institutes/holistic-.jpg";
-import depSlide2 from "../../../../assets/images/academics/departments/media-07052412412440.jpg";
-import depSlide3 from "../../../../assets/images/academics/departments/industrystalwart-06022403005880.jpg";
-import depSlide4 from "../../../../assets/images/academics/departments/media-visit-07052412425199.jpg";
-import depSlide5 from "../../../../assets/images/academics/departments/manage--06052401112298.jpg";
-import depSlide6 from "../../../../assets/images/academics/departments/entrepreneurialecosystem-0602240302151.jpg";
-import depSlide7 from "../../../../assets/images/academics/departments/mentor-07052412432565.jpg";
+import depSlide1 from "../../../../assets/images/academics/institutes/holistic-.webp";
+import depSlide2 from "../../../../assets/images/academics/departments/media-07052412412440.webp";
+import depSlide3 from "../../../../assets/images/academics/departments/industrystalwart-06022403005880.webp";
+import depSlide4 from "../../../../assets/images/academics/departments/media-visit-07052412425199.webp";
+import depSlide5 from "../../../../assets/images/academics/departments/manage--06052401112298.webp";
+import depSlide6 from "../../../../assets/images/academics/departments/entrepreneurialecosystem-0602240302151.webp";
+import depSlide7 from "../../../../assets/images/academics/departments/mentor-07052412432565.webp";
 import { Headers, Student } from "../../../../utils/custom/CustomPlacedStudentTable";
 import { EventItem } from "../../../../utils/custom/CustomEventListCard";
 
@@ -460,15 +460,15 @@ export const InstituteofMediaStudiesplacedStudents: Student[] = [
   ];
 
 
-import img1 from "../../../../assets/images/academics/departments/med1-09052401031259.jpg"
-import img2 from "../../../../assets/images/academics/departments/med2-09052401030372.jpg"
-import img3 from "../../../../assets/images/academics/departments/med3-0905240102507.jpg"
-import img4 from "../../../../assets/images/academics/departments/guest6-09052401032821.jpg"
-import img5 from "../../../../assets/images/academics/departments/guest7-09052401033814.jpg"
-import img6 from "../../../../assets/images/academics/departments/guest2-0905240103534.jpg"
-import img7 from "../../../../assets/images/academics/departments/webinar5-09052401003870.jpg"
-import img8 from "../../../../assets/images/academics/departments/workshop4-09052401004722.jpg"
-import img9 from "../../../../assets/images/academics/departments/workshop3-09052401005812.jpg"
+import img1 from "../../../../assets/images/academics/departments/med1-09052401031259.webp"
+import img2 from "../../../../assets/images/academics/departments/med2-09052401030372.webp"
+import img3 from "../../../../assets/images/academics/departments/med3-0905240102507.webp"
+import img4 from "../../../../assets/images/academics/departments/guest6-09052401032821.webp"
+import img5 from "../../../../assets/images/academics/departments/guest7-09052401033814.webp"
+import img6 from "../../../../assets/images/academics/departments/guest2-0905240103534.webp"
+import img7 from "../../../../assets/images/academics/departments/webinar5-09052401003870.webp"
+import img8 from "../../../../assets/images/academics/departments/workshop4-09052401004722.webp"
+import img9 from "../../../../assets/images/academics/departments/workshop3-09052401005812.webp"
 import { counterDataType } from "../../../about/leadership-and-governance/leadership-and-governance-data";
 
 export const InstituteofMediaStudiesDepartmentEventsData: EventItem[] = [

@@ -1,13 +1,13 @@
 import { customeOverViewType } from "../../../../types/home-data-type";
-import vision from "../../../../assets/images/academics/institutes/vision-card/Our-vision-13102304415245.png";
-import mission from "../../../../assets/images/academics/institutes/vision-card/Our-Mission-13102304092698.png";
+import vision from "../../../../assets/images/academics/institutes/vision-card/Our-vision-13102304415245.webp";
+import mission from "../../../../assets/images/academics/institutes/vision-card/Our-Mission-13102304092698.webp";
 import { CustomInstituteCourseCardProps } from "../../../../utils/custom/CustomInstituteCoursesCard";
-import courseImg1 from "../../../../assets/images/academics/departments/physics1-07022411301098.jpg";
-import courseImg3 from "../../../../assets/images/academics/departments/maths-07022411311165.jpg";
-import courseImg2 from "../../../../assets/images/academics/departments/chemisty.jpg";
-import courseImg4 from "../../../../assets/images/academics/departments/social-science-07052401093595.jpg";
+import courseImg1 from "../../../../assets/images/academics/departments/physics1-07022411301098.webp";
+import courseImg3 from "../../../../assets/images/academics/departments/maths-07022411311165.webp";
+import courseImg2 from "../../../../assets/images/academics/departments/chemisty.webp";
+import courseImg4 from "../../../../assets/images/academics/departments/social-science-07052401093595.webp";
 import { InstituteProfile } from "../../../../types/profile-data-type";
-import BMdixitImg from "../../../../assets/images/academics/departments/prof.-b-m-dixit-photo-10062510410818.jpg";
+import BMdixitImg from "../../../../assets/images/academics/departments/prof.-b-m-dixit-photo-10062510410818.webp";
 import {
   counterDataFoFacultyOfPhysicalScience,
   counterDataForPlacedStudentsOFPhysicalScience,

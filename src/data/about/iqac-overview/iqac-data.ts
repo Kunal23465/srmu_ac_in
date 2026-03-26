@@ -1,9 +1,9 @@
 import { customeOverViewType } from "../../../types/home-data-type";
-import iqaccard1 from "../../../assets/images/about/iqac-overview/iqccard-1.png";
-import iqaccard2 from "../../../assets/images/about/iqac-overview/iqaccard-2.png";
-import iqaccard3 from "../../../assets/images/about/iqac-overview/iqaccard-3.png";
-import iqaccard4 from "../../../assets/images/about/iqac-overview/iqaccard-4.png";
-import iqaccard5 from "../../../assets/images/about/iqac-overview/iqaccard-5.png";
+import iqaccard1 from "../../../assets/images/about/iqac-overview/iqccard-1.webp";
+import iqaccard2 from "../../../assets/images/about/iqac-overview/iqaccard-2.webp";
+import iqaccard3 from "../../../assets/images/about/iqac-overview/iqaccard-3.webp";
+import iqaccard4 from "../../../assets/images/about/iqac-overview/iqaccard-4.webp";
+import iqaccard5 from "../../../assets/images/about/iqac-overview/iqaccard-5.webp";
 import { TableRowData } from "../../../types/table-data-types";
 
 // iqac pdf
@@ -53,9 +53,9 @@ import iqacAnalysisReportAlumni from "../../../assets/pdf/iqac-overview/Analysis
 import iqacAnalysisReportEmployer from "../../../assets/pdf/iqac-overview/Analysis-Report-Employer-Feedback-051223045501.pdf";
 
 // iqac card
-import iqacCard2 from "../../../assets/images/about/iqac-overview/compositioniqac-08022402070016.jpg";
-import iqacCard1 from "../../../assets/images/about/iqac-overview/organisation-iqac-08022402064956.jpg";
-import iqacCard3 from "../../../assets/images/about/iqac-overview/iiqa-iqac.jpg";
+import iqacCard2 from "../../../assets/images/about/iqac-overview/compositioniqac-08022402070016.webp";
+import iqacCard1 from "../../../assets/images/about/iqac-overview/organisation-iqac-08022402064956.webp";
+import iqacCard3 from "../../../assets/images/about/iqac-overview/iiqa-iqac.webp";
 import iqaccardpdf1 from "../../../assets/pdf/iqac-overview/IQACORGANISATIONCHART-041223011729.pdf";
 import iqaccardpdf2 from "../../../assets/pdf/iqac-overview/Composition-of-Internal-Quality-Assurance-Cell-IQA-041223011746.pdf";
 import iqaccardpdf3 from "../../../assets/pdf/iqac-overview/iiqa-270224043528.pdf";

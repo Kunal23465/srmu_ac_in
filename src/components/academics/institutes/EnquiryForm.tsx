@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import girlImg from "../../../assets/images/academics/institutes/enquiry-form-16012411503754.png";
+import girlImg from "../../../assets/images/academics/institutes/enquiry-form-16012411503754.webp";
 import Classes from "../../../utils/styles/Global.module.css";
-import program from "../../../assets/images/academics/institutes/programs_bg-new.png";
+import program from "../../../assets/images/academics/institutes/programs_bg-new.webp";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { EnquiryFormData, initialValuesForEnquiry, validationSchemaForEnquiry } from "../../../data/academics/institute/institute-form-data";
 import SelectInputForEnquiry from "./SelectInputForEnquiry";

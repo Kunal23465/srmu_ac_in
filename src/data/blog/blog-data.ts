@@ -1,4 +1,4 @@
-import lab from "../../assets/images/blogs/lab-technician-doctor-analyzing-virus-evolution-lo-04092501501148.jpg";
+import lab from "../../assets/images/blogs/lab-technician-doctor-analyzing-virus-evolution-lo-04092501501148.webp";
 
 export interface BlogCardType {
   id: number;

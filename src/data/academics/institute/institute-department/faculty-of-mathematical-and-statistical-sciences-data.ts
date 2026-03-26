@@ -1,30 +1,30 @@
 import { customeOverViewType } from "../../../../types/home-data-type";
-import vision from "../../../../assets/images/academics/departments/dept-mission-icon2.png";
-import mission from "../../../../assets/images/academics/departments/dept-mission-icon1.png";
+import vision from "../../../../assets/images/academics/departments/dept-mission-icon2.webp";
+import mission from "../../../../assets/images/academics/departments/dept-mission-icon1.webp";
 import { InstituteProfile } from "../../../../types/profile-data-type";
 import { departmentHighlightscardType, FeeTableData } from "../../faculty-of-civil-engineering/faculty-of-civil-engineering-data";
 import { FacultyItem } from "../../../../utils/custom/CustomFacultyListCard";
 
-import VNPathakImg from "../../../../assets/images/academics/departments/prof.-dr-v.n.-pathak-2702240134036.png";
+import VNPathakImg from "../../../../assets/images/academics/departments/prof.-dr-v.n.-pathak-2702240134036.webp";
 
-import AnkitImg from "../../../../assets/images/academics/departments/wsfq-02062505091245.png";
-import ArunImg from "../../../../assets/images/academics/departments/wsfq-02062505080511.png";
-import PunitImg from "../../../../assets/images/academics/departments/wsfq-02062505070943.png";
-import PoojaImg from "../../../../assets/images/academics/departments/wsfq-02062505062189.png";
-import SurajImg from "../../../../assets/images/academics/departments/wsfq-02062505051724.png";
-import AnuragImg from "../../../../assets/images/academics/departments/dr.anuragagnihotri-1007241201398.jpg";
-import DilipImg from "../../../../assets/images/academics/departments/dr.dilip-kumar-jaiswal-10072411575532.jpg";
-import VinayImg from "../../../../assets/images/academics/departments/11zon-cropped-49-11zon-24022411463862.jpeg";
-import MukeshImg from "../../../../assets/images/academics/departments/11zon-cropped-50-11zon-24022411503254.jpeg";
-import KulbhushanImg from "../../../../assets/images/academics/departments/02-10062505474470.png";
-import PrachiImg from "../../../../assets/images/academics/departments/dr.prachi-srivastava-10072412024848.jpg";
-import AnilImg from "../../../../assets/images/academics/departments/11zon-cropped-48-11zon-2402241142114.jpeg";
-import VimleshImg from "../../../../assets/images/academics/departments/vimlesh-10072412155832.jpg";
-import OmendraImg from "../../../../assets/images/academics/departments/omendra-mishra-10072412112493.jpg";
-import DhaneshImg from "../../../../assets/images/academics/departments/dhanesh-kumar-10072412142265.jpg";
-import AnujImg from "../../../../assets/images/academics/departments/anuj-kumar-agarwal-10072412092488.jpg";
-import AwanishImg from "../../../../assets/images/academics/departments/awanish-kumar-10072412073674.jpg";
-import PramodImg from "../../../../assets/images/academics/departments/11zon-cropped-45-11zon-24022411063791.jpeg";
+import AnkitImg from "../../../../assets/images/academics/departments/wsfq-02062505091245.webp";
+import ArunImg from "../../../../assets/images/academics/departments/wsfq-02062505080511.webp";
+import PunitImg from "../../../../assets/images/academics/departments/wsfq-02062505070943.webp";
+import PoojaImg from "../../../../assets/images/academics/departments/wsfq-02062505062189.webp";
+import SurajImg from "../../../../assets/images/academics/departments/wsfq-02062505051724.webp";
+import AnuragImg from "../../../../assets/images/academics/departments/dr.anuragagnihotri-1007241201398.webp";
+import DilipImg from "../../../../assets/images/academics/departments/dr.dilip-kumar-jaiswal-10072411575532.webp";
+import VinayImg from "../../../../assets/images/academics/departments/11zon-cropped-49-11zon-24022411463862.webp";
+import MukeshImg from "../../../../assets/images/academics/departments/11zon-cropped-50-11zon-24022411503254.webp";
+import KulbhushanImg from "../../../../assets/images/academics/departments/02-10062505474470.webp";
+import PrachiImg from "../../../../assets/images/academics/departments/dr.prachi-srivastava-10072412024848.webp";
+import AnilImg from "../../../../assets/images/academics/departments/11zon-cropped-48-11zon-2402241142114.webp";
+import VimleshImg from "../../../../assets/images/academics/departments/vimlesh-10072412155832.webp";
+import OmendraImg from "../../../../assets/images/academics/departments/omendra-mishra-10072412112493.webp";
+import DhaneshImg from "../../../../assets/images/academics/departments/dhanesh-kumar-10072412142265.webp";
+import AnujImg from "../../../../assets/images/academics/departments/anuj-kumar-agarwal-10072412092488.webp";
+import AwanishImg from "../../../../assets/images/academics/departments/awanish-kumar-10072412073674.webp";
+import PramodImg from "../../../../assets/images/academics/departments/11zon-cropped-45-11zon-24022411063791.webp";
 
 import { Headers, Student } from "../../../../utils/custom/CustomPlacedStudentTable";
 import { EventItem } from "../../../../utils/custom/CustomEventListCard";
@@ -181,13 +181,13 @@ export const FacultyOfMathematicalAndStatisticalSciencesfacultyData: FacultyItem
   { id: 19, name: "Dr. Pramod Kumar", designation: "Associate Professor", image: PramodImg },
 ];
 
-import depSlide1 from "../../../../assets/images/academics/departments/maths1-07022412033456.jpg";
-import depSlide2 from "../../../../assets/images/academics/departments/curriculum-07052412202574.jpg";
-import depSlide3 from "../../../../assets/images/academics/departments/industrystalwart-06022403005880.jpg";
-import depSlide4 from "../../../../assets/images/academics/departments/workshop2-0705240116534.jpg";
-import depSlide5 from "../../../../assets/images/academics/departments/curriculum-07052412202574.jpg";
-import depSlide6 from "../../../../assets/images/academics/departments/manage--06052401112298.jpg";
-import depSlide7 from "../../../../assets/images/academics/departments/phd-07022412442258.jpg";
+import depSlide1 from "../../../../assets/images/academics/departments/maths1-07022412033456.webp";
+import depSlide2 from "../../../../assets/images/academics/departments/curriculum-07052412202574.webp";
+import depSlide3 from "../../../../assets/images/academics/departments/industrystalwart-06022403005880.webp";
+import depSlide4 from "../../../../assets/images/academics/departments/workshop2-0705240116534.webp";
+import depSlide5 from "../../../../assets/images/academics/departments/curriculum-07052412202574.webp";
+import depSlide6 from "../../../../assets/images/academics/departments/manage--06052401112298.webp";
+import depSlide7 from "../../../../assets/images/academics/departments/phd-07022412442258.webp";
 
 export const FacultyOfMathematicalAndStatisticalSciencesdepartmentHighlights: departmentHighlightscardType[] = [
   {
@@ -253,16 +253,16 @@ export const MathematicalAndStatisticalSciencesplacedStudents: Student[] = [
   },
 ];
 
-import img1 from "../../../../assets/images/academics/departments/wfw2w-02062504460550.png";
-import img2 from "../../../../assets/images/academics/departments/wee-0206250448025.png";
-import img3 from "../../../../assets/images/academics/departments/guest7-09052401033814.jpg";
-import img4 from "../../../../assets/images/academics/departments/guest6-09052401032821.jpg";
-import img5 from "../../../../assets/images/academics/departments/guest7-09052401033814.jpg";
-import img6 from "../../../../assets/images/academics/departments/international2-10022412523788.jpg";
-import img7 from "../../../../assets/images/academics/departments/workshop3-09052401005812.jpg";
-import img8 from "../../../../assets/images/academics/departments/nation6-09052402004527.jpg";
-import img9 from "../../../../assets/images/academics/departments/guest1-09052412554546.jpg";
-import img10 from "../../../../assets/images/academics/departments/internation1-09052401044878.jpg";
+import img1 from "../../../../assets/images/academics/departments/wfw2w-02062504460550.webp";
+import img2 from "../../../../assets/images/academics/departments/wee-0206250448025.webp";
+import img3 from "../../../../assets/images/academics/departments/guest7-09052401033814.webp";
+import img4 from "../../../../assets/images/academics/departments/guest6-09052401032821.webp";
+import img5 from "../../../../assets/images/academics/departments/guest7-09052401033814.webp";
+import img6 from "../../../../assets/images/academics/departments/international2-10022412523788.webp";
+import img7 from "../../../../assets/images/academics/departments/workshop3-09052401005812.webp";
+import img8 from "../../../../assets/images/academics/departments/nation6-09052402004527.webp";
+import img9 from "../../../../assets/images/academics/departments/guest1-09052412554546.webp";
+import img10 from "../../../../assets/images/academics/departments/internation1-09052401044878.webp";
 import { counterDataType } from "../../../home/counterData";
 
 export const FacultyOfMathematicalAndStatisticalSciencesDepartmentEventsData: EventItem[] = [

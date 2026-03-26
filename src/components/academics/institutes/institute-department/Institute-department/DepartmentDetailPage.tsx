@@ -11,7 +11,7 @@ import { useLocation } from "react-router-dom";
 import { CustomTopFooterAbout } from "../../../../../data/about/aboutusData";
 import CustomDepartmentSlider from "../../../../../utils/custom/CustomDepartmentSlider";
 import CustomFacultyListCard from "../../../../../utils/custom/CustomFacultyListCard";
-import facilitiesBg from "../../../../../assets/images/academics/departments/facilities-bg-lg.jpeg";
+import facilitiesBg from "../../../../../assets/images/academics/departments/facilities-bg-lg.webp";
 import CustomDepartmentHighlightCard from "../../../../../utils/custom/CustomDepartmentHighlightCard";
 import CustomPlacedStudentTable from "../../../../../utils/custom/CustomPlacedStudentTable";
 import { tableHeaders } from "../../../../../data/academics/institute/institute-department/institute-of-management-commerce-and-economics-data/institute-of-management-commerce-and-economics-data";

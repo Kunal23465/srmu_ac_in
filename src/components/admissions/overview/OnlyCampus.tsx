@@ -1,5 +1,5 @@
 import React from 'react'
-import girl from "../../../assets/images/admissions/overview/girl-08022411552330.png"
+import girl from "../../../assets/images/admissions/overview/girl-08022411552330.webp"
 import Classes from "../../../utils/styles/Global.module.css";
 
 const OnlyCampus: React.FC = () => {

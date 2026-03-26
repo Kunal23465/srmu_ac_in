@@ -1,26 +1,26 @@
 import { customeOverViewType } from "../../../../types/home-data-type";
-import vision from "../../../../assets/images/academics/departments/dept-mission-icon2.png";
-import mission from "../../../../assets/images/academics/departments/dept-mission-icon1.png";
+import vision from "../../../../assets/images/academics/departments/dept-mission-icon2.webp";
+import mission from "../../../../assets/images/academics/departments/dept-mission-icon1.webp";
 import { InstituteProfile} from "../../../../types/profile-data-type";
 import { departmentHighlightscardType, FeeTableData } from "../../faculty-of-civil-engineering/faculty-of-civil-engineering-data";
 import { FacultyItem } from "../../../../utils/custom/CustomFacultyListCard";
 
-import RituImg from "../../../../assets/images/academics/departments/dr.-ritu-chandra-11zon-26022405522894.jpg"
+import RituImg from "../../../../assets/images/academics/departments/dr.-ritu-chandra-11zon-26022405522894.webp"
 
-import AparajitaImg from "../../../../assets/images/academics/departments/ewweg-03062512432898.png";
-import GyanPrakashImg from "../../../../assets/images/academics/departments/dr.-gyan-prakash-srivastava-foier-11zon-1--24022410500544.jpg";
-import SandeepaImg from "../../../../assets/images/academics/departments/dr.-sandeepa-kaur-bhatiani-23022405194899.jpg";
-import AshishImg from "../../../../assets/images/academics/departments/dr.-ashish-kumar-awasthi-foier-11zon-24022410455116.jpg";
-import RashmiImg from "../../../../assets/images/academics/departments/dr.-rashmi-chaturvedi-23022405293973.jpg";
+import AparajitaImg from "../../../../assets/images/academics/departments/ewweg-03062512432898.webp";
+import GyanPrakashImg from "../../../../assets/images/academics/departments/dr.-gyan-prakash-srivastava-foier-11zon-1--24022410500544.webp";
+import SandeepaImg from "../../../../assets/images/academics/departments/dr.-sandeepa-kaur-bhatiani-23022405194899.webp";
+import AshishImg from "../../../../assets/images/academics/departments/dr.-ashish-kumar-awasthi-foier-11zon-24022410455116.webp";
+import RashmiImg from "../../../../assets/images/academics/departments/dr.-rashmi-chaturvedi-23022405293973.webp";
 
 
-import depSlide1 from "../../../../assets/images/academics/departments/education-06022405372723.jpg";
-import depSlide2 from "../../../../assets/images/academics/departments/corporate-manag-0605240138369.jpg";
-import depSlide3 from "../../../../assets/images/academics/departments/bba21-06022405443777.jpg";
-import depSlide4 from "../../../../assets/images/academics/institutes/menteesystem.jpg";
-import depSlide5 from "../../../../assets/images/academics/departments/psychology-07022411114264.jpg";
-import depSlide6 from "../../../../assets/images/academics/departments/skill-07022411112023.jpg";
-import depSlide7 from "../../../../assets/images/academics/departments/nurturing-06052403541786.jpg";
+import depSlide1 from "../../../../assets/images/academics/departments/education-06022405372723.webp";
+import depSlide2 from "../../../../assets/images/academics/departments/corporate-manag-0605240138369.webp";
+import depSlide3 from "../../../../assets/images/academics/departments/bba21-06022405443777.webp";
+import depSlide4 from "../../../../assets/images/academics/institutes/menteesystem.webp";
+import depSlide5 from "../../../../assets/images/academics/departments/psychology-07022411114264.webp";
+import depSlide6 from "../../../../assets/images/academics/departments/skill-07022411112023.webp";
+import depSlide7 from "../../../../assets/images/academics/departments/nurturing-06052403541786.webp";
 import { Headers, Student } from "../../../../utils/custom/CustomPlacedStudentTable";
 import { EventItem } from "../../../../utils/custom/CustomEventListCard";
 
@@ -270,17 +270,17 @@ export const InstituteofEducationandResearchplacedStudents: Student[] = [
   },
 ];
 
-import img1 from "../../../../assets/images/academics/departments/guest7-09052401584927.jpg";
-import img2 from "../../../../assets/images/academics/departments/guest6-09052401590034.jpg";
-import img3 from "../../../../assets/images/academics/departments/guest4-09052401590829.jpg";
-import img4 from "../../../../assets/images/academics/departments/guest8-0905240159163.jpg";
-import img5 from "../../../../assets/images/academics/departments/nation6-09052402004527.jpg";
-import img6 from "../../../../assets/images/academics/departments/workship2-09052401593658.jpg";
-import img7 from "../../../../assets/images/academics/departments/webinar5-0905240159455.jpg";
-import img8 from "../../../../assets/images/academics/departments/workshop4-0905240159526.jpg";
-import img9 from "../../../../assets/images/academics/departments/webinar4-0905240200138.jpg";
-import img10 from "../../../../assets/images/academics/departments/nation4-09052402005583.jpg";
-import img11 from "../../../../assets/images/academics/departments/webinar1-09052402013920.jpg";
+import img1 from "../../../../assets/images/academics/departments/guest7-09052401584927.webp";
+import img2 from "../../../../assets/images/academics/departments/guest6-09052401590034.webp";
+import img3 from "../../../../assets/images/academics/departments/guest4-09052401590829.webp";
+import img4 from "../../../../assets/images/academics/departments/guest8-0905240159163.webp";
+import img5 from "../../../../assets/images/academics/departments/nation6-09052402004527.webp";
+import img6 from "../../../../assets/images/academics/departments/workship2-09052401593658.webp";
+import img7 from "../../../../assets/images/academics/departments/webinar5-0905240159455.webp";
+import img8 from "../../../../assets/images/academics/departments/workshop4-0905240159526.webp";
+import img9 from "../../../../assets/images/academics/departments/webinar4-0905240200138.webp";
+import img10 from "../../../../assets/images/academics/departments/nation4-09052402005583.webp";
+import img11 from "../../../../assets/images/academics/departments/webinar1-09052402013920.webp";
 import { counterDataType } from "../../../home/counterData";
 
 

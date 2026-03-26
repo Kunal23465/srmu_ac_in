@@ -1383,7 +1383,7 @@ ul {
 }
 
 /* .hero-banner {
-  background: url("./assets/images/admissions/overview/placement-records-bg.jpg") center/cover no-repeat;
+  background: url("./assets/images/admissions/overview/placement-records-bg.webp") center/cover no-repeat;
   padding: 100px 0;
   color: #fff;
   position: relative;
@@ -1432,7 +1432,7 @@ ul {
 } */
 
 .skoi {
-  background-image: url("./assets/images/admissions/overview/placement-records-bg.jpg");
+  background-image: url("./assets/images/admissions/overview/placement-records-bg.webp");
 }
 
 .cafeteria-bg {

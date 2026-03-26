@@ -24,7 +24,7 @@ import CustomTabs from "../../../../../utils/custom/CustomTabs";
 import CustomInstituteProfileCard from "../../../../../utils/custom/CustomInstituteProfileCard";
 import CustomDepartmentSlider from "../../../../../utils/custom/CustomDepartmentSlider";
 import CustomFacultyListCard from "../../../../../utils/custom/CustomFacultyListCard";
-import facilitiesBg from "../../../../../assets/images/academics/departments/maths/facilities-bg-lg.jpeg"
+import facilitiesBg from "../../../../../assets/images/academics/departments/maths/facilities-bg-lg.webp"
 import PlacedStudents from "../electricalAndElectronics/PlacedStudents";
 import CustomDepartmentHighlightCard from "../../../../../utils/custom/CustomDepartmentHighlightCard";
 import CustomDepartmentEventSlider from "../../../../../utils/custom/CustomDepartmentEventSlider";

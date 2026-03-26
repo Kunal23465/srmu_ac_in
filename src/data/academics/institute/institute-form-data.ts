@@ -1,15 +1,15 @@
 import { customeOverViewType } from "../../../types/home-data-type";
-import instituteoftech from "../../../assets/images/academics/institutes/instoftech-06052402531738.jpg";
-import instituteofbio from "../../../assets/images/academics/institutes/Institute-of-Bio-Sciences-Technology-17102303070795.jpg";
-import instituteofmang from "../../../assets/images/academics/institutes/corporate-manag-06052401232352.jpg";
-import instituteofagri from "../../../assets/images/academics/institutes/agri-06052403361755.jpg";
-import instituteoflegal from "../../../assets/images/academics/institutes/legal-07052411041620.jpg";
-import instituteofpharmacy from "../../../assets/images/academics/institutes/dpharma--08022401004122.jpg";
-import instituteofmedia from "../../../assets/images/academics/institutes/media1-06052403225269.jpg";
-import instituteofnatural from "../../../assets/images/academics/institutes/naturalscience-06052403201478.jpg";
-import instituteofpharmaceutical from "../../../assets/images/academics/institutes/pharmaceutical-12022411152655.jpg";
-import instituteofedu from "../../../assets/images/academics/institutes/economics--08022401082492.jpg";
-import instituteofpolytech from "../../../assets/images/academics/institutes/polytechnic11-08022412560314.jpg";
+import instituteoftech from "../../../assets/images/academics/institutes/instoftech-06052402531738.webp";
+import instituteofbio from "../../../assets/images/academics/institutes/Institute-of-Bio-Sciences-Technology-17102303070795.webp";
+import instituteofmang from "../../../assets/images/academics/institutes/corporate-manag-06052401232352.webp";
+import instituteofagri from "../../../assets/images/academics/institutes/agri-06052403361755.webp";
+import instituteoflegal from "../../../assets/images/academics/institutes/legal-07052411041620.webp";
+import instituteofpharmacy from "../../../assets/images/academics/institutes/dpharma--08022401004122.webp";
+import instituteofmedia from "../../../assets/images/academics/institutes/media1-06052403225269.webp";
+import instituteofnatural from "../../../assets/images/academics/institutes/naturalscience-06052403201478.webp";
+import instituteofpharmaceutical from "../../../assets/images/academics/institutes/pharmaceutical-12022411152655.webp";
+import instituteofedu from "../../../assets/images/academics/institutes/economics--08022401082492.webp";
+import instituteofpolytech from "../../../assets/images/academics/institutes/polytechnic11-08022412560314.webp";
 import * as Yup from "yup";
 import {
   instituteCourseCardData,

@@ -1,26 +1,26 @@
 import { customeOverViewType } from "../../../../types/home-data-type";
-import vision from "../../../../assets/images/academics/departments/dept-mission-icon2.png";
-import mission from "../../../../assets/images/academics/departments/dept-mission-icon1.png";
+import vision from "../../../../assets/images/academics/departments/dept-mission-icon2.webp";
+import mission from "../../../../assets/images/academics/departments/dept-mission-icon1.webp";
 import { InstituteProfile} from "../../../../types/profile-data-type";
 import { departmentHighlightscardType, FeeTableData } from "../../faculty-of-civil-engineering/faculty-of-civil-engineering-data";
 import { FacultyItem } from "../../../../utils/custom/CustomFacultyListCard";
 
-import ManjuImg from "../../../../assets/images/academics/departments/dr.-manju-singh-11zon-2602240551361.jpg"
+import ManjuImg from "../../../../assets/images/academics/departments/dr.-manju-singh-11zon-2602240551361.webp"
 
-import DefaultImg from "../../../../assets/images/academics/departments/default-img.png";
-import PramodImg from "../../../../assets/images/academics/departments/11zon-cropped-34-11zon-23022404545998.jpeg";
-import ShubhamImg from "../../../../assets/images/academics/departments/11zon-cropped-33-11zon-23022404522539.jpeg";
-import AbhishekKumarImg from "../../../../assets/images/academics/departments/11zon-cropped-36-11zon-23022405004966.jpeg";
-import AjeetImg from "../../../../assets/images/academics/departments/11zon-cropped-37-11zon-23022405033990.jpeg";
+import DefaultImg from "../../../../assets/images/academics/departments/default-img.webp";
+import PramodImg from "../../../../assets/images/academics/departments/11zon-cropped-34-11zon-23022404545998.webp";
+import ShubhamImg from "../../../../assets/images/academics/departments/11zon-cropped-33-11zon-23022404522539.webp";
+import AbhishekKumarImg from "../../../../assets/images/academics/departments/11zon-cropped-36-11zon-23022405004966.webp";
+import AjeetImg from "../../../../assets/images/academics/departments/11zon-cropped-37-11zon-23022405033990.webp";
 
 
-import depSlide1 from "../../../../assets/images/academics/departments/pharma-lab-07052412313791.jpg";
-import depSlide2 from "../../../../assets/images/academics/departments/bioinformatics-07022411264512.jpg";
-import depSlide3 from "../../../../assets/images/academics/departments/integration-07052412393563.jpg";
-import depSlide4 from "../../../../assets/images/academics/departments/corporate-manag-0605240138369.jpg";
-import depSlide5 from "../../../../assets/images/academics/departments/industrystalwart-06022401542865.jpg";
-import depSlide6 from "../../../../assets/images/academics/departments/skill-07052412400634.jpg";
-import depSlide7 from "../../../../assets/images/academics/institutes/holistic-.jpg";
+import depSlide1 from "../../../../assets/images/academics/departments/pharma-lab-07052412313791.webp";
+import depSlide2 from "../../../../assets/images/academics/departments/bioinformatics-07022411264512.webp";
+import depSlide3 from "../../../../assets/images/academics/departments/integration-07052412393563.webp";
+import depSlide4 from "../../../../assets/images/academics/departments/corporate-manag-0605240138369.webp";
+import depSlide5 from "../../../../assets/images/academics/departments/industrystalwart-06022401542865.webp";
+import depSlide6 from "../../../../assets/images/academics/departments/skill-07052412400634.webp";
+import depSlide7 from "../../../../assets/images/academics/institutes/holistic-.webp";
 import { Headers, Student } from "../../../../utils/custom/CustomPlacedStudentTable";
 import { EventItem } from "../../../../utils/custom/CustomEventListCard";
 
@@ -473,19 +473,19 @@ export const InstituteofPharmacyplacedStudents: Student[] = [
   },
 ];
 
-import img1 from "../../../../assets/images/academics/departments/visit2-09052412543960.jpg";
-import img2 from "../../../../assets/images/academics/departments/workshop4-09052412545855.jpg";
-import img3 from "../../../../assets/images/academics/departments/visit-1002241204236.jpg";
-import img4 from "../../../../assets/images/academics/departments/guest7-09052412552546.jpg";
-import img5 from "../../../../assets/images/academics/departments/webinar5-09052412530621.jpg";
-import img6 from "../../../../assets/images/academics/departments/national2-10022412140314.jpg";
-import img7 from "../../../../assets/images/academics/departments/internation1-09052412542038.jpg";
-import img8 from "../../../../assets/images/academics/departments/guest6-09052412553463.jpg";
-import img9 from "../../../../assets/images/academics/departments/phar2-09052412532387.jpg";
-import img10 from "../../../../assets/images/academics/departments/guest1-09052412554546.jpg";
-import img11 from "../../../../assets/images/academics/departments/guest5-09052412555893.jpg";
-import img12 from "../../../../assets/images/academics/departments/phar3-09052412533683.jpg";
-import img13 from "../../../../assets/images/academics/departments/phar4-09052412534457.jpg";
+import img1 from "../../../../assets/images/academics/departments/visit2-09052412543960.webp";
+import img2 from "../../../../assets/images/academics/departments/workshop4-09052412545855.webp";
+import img3 from "../../../../assets/images/academics/departments/visit-1002241204236.webp";
+import img4 from "../../../../assets/images/academics/departments/guest7-09052412552546.webp";
+import img5 from "../../../../assets/images/academics/departments/webinar5-09052412530621.webp";
+import img6 from "../../../../assets/images/academics/departments/national2-10022412140314.webp";
+import img7 from "../../../../assets/images/academics/departments/internation1-09052412542038.webp";
+import img8 from "../../../../assets/images/academics/departments/guest6-09052412553463.webp";
+import img9 from "../../../../assets/images/academics/departments/phar2-09052412532387.webp";
+import img10 from "../../../../assets/images/academics/departments/guest1-09052412554546.webp";
+import img11 from "../../../../assets/images/academics/departments/guest5-09052412555893.webp";
+import img12 from "../../../../assets/images/academics/departments/phar3-09052412533683.webp";
+import img13 from "../../../../assets/images/academics/departments/phar4-09052412534457.webp";
 import { counterDataType } from "../../../home/counterData";
 
 

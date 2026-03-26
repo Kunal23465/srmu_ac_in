@@ -1,8 +1,8 @@
 import { customeOverViewType } from "../../types/home-data-type";
 import { counterDataType } from "./leadership-and-governance/leadership-and-governance-data";
 
-import visionImg from "../../assets/images/about/aboutUs/vision.png";
-import missionImg from "../../assets/images/about/aboutUs/mission-img.jpg";
+import visionImg from "../../assets/images/about/aboutUs/vision.webp";
+import missionImg from "../../assets/images/about/aboutUs/mission-img.webp";
 
 
 export interface MissionVisionType {

@@ -1,8 +1,8 @@
 import { customeOverViewType } from "../../../types/home-data-type";
-import smiling from "../../../assets/images/admissions/overview/944x1494-11-08022405361127.jpg"
-import second from "../../../assets/images/admissions/overview/944x1494--08022405362618.jpg"
-import third from "../../../assets/images/admissions/overview/944x1494--08022405363847.jpg"
-import fourth from "../../../assets/images/admissions/overview/944x1494-1-08022405364815.jpg"
+import smiling from "../../../assets/images/admissions/overview/944x1494-11-08022405361127.webp"
+import second from "../../../assets/images/admissions/overview/944x1494--08022405362618.webp"
+import third from "../../../assets/images/admissions/overview/944x1494--08022405363847.webp"
+import fourth from "../../../assets/images/admissions/overview/944x1494-1-08022405364815.webp"
 
 
 export const AdmissionsOverviewData: customeOverViewType = {

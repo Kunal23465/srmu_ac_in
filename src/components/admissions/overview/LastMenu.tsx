@@ -1,8 +1,8 @@
 import React from 'react';
-import circle1 from "../../../assets/images/admissions/overview/circle1.png"
-import circle2 from "../../../assets/images/admissions/overview/circle2.png"
-import shape1 from "../../../assets/images/admissions/overview/shape1.png"
-import shape2 from "../../../assets/images/admissions/overview/shape2.png"
+import circle1 from "../../../assets/images/admissions/overview/circle1.webp"
+import circle2 from "../../../assets/images/admissions/overview/circle2.webp"
+import shape1 from "../../../assets/images/admissions/overview/shape1.webp"
+import shape2 from "../../../assets/images/admissions/overview/shape2.webp"
 
 
 

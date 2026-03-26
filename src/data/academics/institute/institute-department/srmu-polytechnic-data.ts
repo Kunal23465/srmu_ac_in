@@ -1,32 +1,32 @@
 import { customeOverViewType } from "../../../../types/home-data-type";
-import vision from "../../../../assets/images/academics/departments/dept-mission-icon2.png";
-import mission from "../../../../assets/images/academics/departments/dept-mission-icon1.png";
+import vision from "../../../../assets/images/academics/departments/dept-mission-icon2.webp";
+import mission from "../../../../assets/images/academics/departments/dept-mission-icon1.webp";
 import { InstituteProfile} from "../../../../types/profile-data-type";
 import { departmentHighlightscardType, FeeTableData } from "../../faculty-of-civil-engineering/faculty-of-civil-engineering-data";
 import { FacultyItem } from "../../../../utils/custom/CustomFacultyListCard";
 
-import SKSingImg from "../../../../assets/images/academics/departments/mr-s.k-singh-11zon-2602240555005.jpg"
+import SKSingImg from "../../../../assets/images/academics/departments/mr-s.k-singh-11zon-2602240555005.webp"
 
-import DefaultImg from "../../../../assets/images/academics/departments/default-img.png";
-import DayaShankarImg from "../../../../assets/images/academics/departments/11zon-cropped-42-11zon-23022405522962.jpeg";
-import RamaNandImg from "../../../../assets/images/academics/departments/mr.-rama-nand-mishra-0703240256127.jpg";
-import ArvindRawatImg from "../../../../assets/images/academics/departments/mr.-arvind-kumar-rawat-1--07032410404213.jpg";
-import KamleshSinghImg from "../../../../assets/images/academics/departments/mr.-kamlesh-kumar-singh-07032402534666.jpg";
-import MithleshKumarImg from "../../../../assets/images/academics/departments/11zon-cropped-41-11zon-23022405475146.jpeg";
-import GauravMauryaImg from "../../../../assets/images/academics/departments/mr.-gaurav-kumar-maurya-0703240252522.jpg";
-import ReshavRoushanImg from "../../../../assets/images/academics/departments/11zon-cropped-40-11zon-23022405415049.jpeg";
-import AnkurRaiImg from "../../../../assets/images/academics/departments/mr.-ankur-rai-1--0703241014092.jpg";
-import SurendraSinghImg from "../../../../assets/images/academics/departments/11zon-cropped-39-11zon-23022405371679.jpeg";
-import JaiRajSinghImg from "../../../../assets/images/academics/departments/11zon-cropped-38-11zon-23022405301535.jpeg";
+import DefaultImg from "../../../../assets/images/academics/departments/default-img.webp";
+import DayaShankarImg from "../../../../assets/images/academics/departments/11zon-cropped-42-11zon-23022405522962.webp";
+import RamaNandImg from "../../../../assets/images/academics/departments/mr.-rama-nand-mishra-0703240256127.webp";
+import ArvindRawatImg from "../../../../assets/images/academics/departments/mr.-arvind-kumar-rawat-1--07032410404213.webp";
+import KamleshSinghImg from "../../../../assets/images/academics/departments/mr.-kamlesh-kumar-singh-07032402534666.webp";
+import MithleshKumarImg from "../../../../assets/images/academics/departments/11zon-cropped-41-11zon-23022405475146.webp";
+import GauravMauryaImg from "../../../../assets/images/academics/departments/mr.-gaurav-kumar-maurya-0703240252522.webp";
+import ReshavRoushanImg from "../../../../assets/images/academics/departments/11zon-cropped-40-11zon-23022405415049.webp";
+import AnkurRaiImg from "../../../../assets/images/academics/departments/mr.-ankur-rai-1--0703241014092.webp";
+import SurendraSinghImg from "../../../../assets/images/academics/departments/11zon-cropped-39-11zon-23022405371679.webp";
+import JaiRajSinghImg from "../../../../assets/images/academics/departments/11zon-cropped-38-11zon-23022405301535.webp";
 
 
 
-import depSlide1 from "../../../../assets/images/academics/departments/with-ibm-07052412210228.jpg";
-import depSlide2 from "../../../../assets/images/academics/institutes/diverseprogram.jpg";
-import depSlide3 from "../../../../assets/images/academics/departments/industrystalwart-06022401542865.jpg";
-import depSlide4 from "../../../../assets/images/academics/departments/curriculum-07052412202574.jpg";
-import depSlide5 from "../../../../assets/images/academics/departments/corporate-manag-0605240138369.jpg";
-import depSlide6 from "../../../../assets/images/academics/departments/entrepreneurialecosystem-0602240302151.jpg";
+import depSlide1 from "../../../../assets/images/academics/departments/with-ibm-07052412210228.webp";
+import depSlide2 from "../../../../assets/images/academics/institutes/diverseprogram.webp";
+import depSlide3 from "../../../../assets/images/academics/departments/industrystalwart-06022401542865.webp";
+import depSlide4 from "../../../../assets/images/academics/departments/curriculum-07052412202574.webp";
+import depSlide5 from "../../../../assets/images/academics/departments/corporate-manag-0605240138369.webp";
+import depSlide6 from "../../../../assets/images/academics/departments/entrepreneurialecosystem-0602240302151.webp";
 import { Headers, Student } from "../../../../utils/custom/CustomPlacedStudentTable";
 
 export const SRMUPolytechnicOverviewData: customeOverViewType = {
@@ -573,16 +573,16 @@ export const SRMUPolytechnicplacedStudents: Student[] = [
 ];
 
 
-import img1 from "../../../../assets/images/academics/departments/visit4-09052401060928.jpg";
-import img2 from "../../../../assets/images/academics/departments/visit2-09052401062027.jpg";
-import img3 from "../../../../assets/images/academics/departments/visit-1002240138332.jpg";
-import img4 from "../../../../assets/images/academics/departments/guest6-09052401064571.jpg";
-import img5 from "../../../../assets/images/academics/departments/guest7-09052401065435.jpg";
-import img6 from "../../../../assets/images/academics/departments/workshop4-0905240105378.jpg";
-import img7 from "../../../../assets/images/academics/departments/webinar5-09052401052852.jpg";
-import img8 from "../../../../assets/images/academics/departments/workship2-09052401051860.jpg";
-import img9 from "../../../../assets/images/academics/departments/internation1-09052401044878.jpg";
-import img10 from "../../../../assets/images/academics/departments/national2-09052401045858.jpg";
+import img1 from "../../../../assets/images/academics/departments/visit4-09052401060928.webp";
+import img2 from "../../../../assets/images/academics/departments/visit2-09052401062027.webp";
+import img3 from "../../../../assets/images/academics/departments/visit-1002240138332.webp";
+import img4 from "../../../../assets/images/academics/departments/guest6-09052401064571.webp";
+import img5 from "../../../../assets/images/academics/departments/guest7-09052401065435.webp";
+import img6 from "../../../../assets/images/academics/departments/workshop4-0905240105378.webp";
+import img7 from "../../../../assets/images/academics/departments/webinar5-09052401052852.webp";
+import img8 from "../../../../assets/images/academics/departments/workship2-09052401051860.webp";
+import img9 from "../../../../assets/images/academics/departments/internation1-09052401044878.webp";
+import img10 from "../../../../assets/images/academics/departments/national2-09052401045858.webp";
 import { EventItem } from "../../../../utils/custom/CustomEventListCard";
 import { counterDataType } from "../../../home/counterData";
 

@@ -1,11 +1,11 @@
 import { customeOverViewType } from "../../../../types/home-data-type";
 
-import missionImg from "../../../../assets/images/academics/departments/dept-mission-icon1.png";
-import vissionImg from "../../../../assets/images/academics/departments/dept-mission-icon2.png";
+import missionImg from "../../../../assets/images/academics/departments/dept-mission-icon1.webp";
+import vissionImg from "../../../../assets/images/academics/departments/dept-mission-icon2.webp";
 import { counterDataType } from "../../../home/counterData";
 import { InstituteProfile } from "../../../../types/profile-data-type";
 
-import professor from "../../../../assets/images/academics/departments/csis/dr.-bineet-gupta.jpg";
+import professor from "../../../../assets/images/academics/departments/csis/dr.-bineet-gupta.webp";
 import { departmentHighlightscardType, FeeTableData } from "../faculty-of-civil-engineering/faculty-of-civil-engineering-data";
 import { FacultyItem } from "../../../../utils/custom/CustomFacultyListCard";
 import { EventItem } from "../../../../utils/custom/CustomEventListCard";

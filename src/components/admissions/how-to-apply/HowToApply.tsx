@@ -3,7 +3,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import Classes from "../../../utils/styles/Global.module.css";
 import { HowToApplyTopFooterData, SRMUoffersData } from "../../../data/admissions/how-to-apply/how-to-apply-data";
 import CustomTopFooter from "../../../utils/custom/CustomTopFooter";
-import img from "../../../assets/images/admissions/how-to-apply/howtoapply-08022410430874.jpg";
+import img from "../../../assets/images/admissions/how-to-apply/howtoapply-08022410430874.webp";
 import OnlineAdmissionProcess from "./OnlineAdmissionProcess";
 
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";

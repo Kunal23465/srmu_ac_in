@@ -1,28 +1,28 @@
 import { customeOverViewType } from "../../../../types/home-data-type";
-import vision from "../../../../assets/images/academics/departments/dept-mission-icon2.png";
-import mission from "../../../../assets/images/academics/departments/dept-mission-icon1.png";
+import vision from "../../../../assets/images/academics/departments/dept-mission-icon2.webp";
+import mission from "../../../../assets/images/academics/departments/dept-mission-icon1.webp";
 import { InstituteProfile } from "../../../../types/profile-data-type";
 import { departmentHighlightscardType, FeeTableData } from "../../faculty-of-civil-engineering/faculty-of-civil-engineering-data";
 import { FacultyItem } from "../../../../utils/custom/CustomFacultyListCard";
 
-import MahendraImg from "../../../../assets/images/academics/departments/1600x1066--14082511001785.png";
+import MahendraImg from "../../../../assets/images/academics/departments/1600x1066--14082511001785.webp";
 
-import VijayImg from "../../../../assets/images/academics/departments/11zon-cropped-25-11zon-23022403574197.jpeg";
-import BalvirImg from "../../../../assets/images/academics/departments/11zon-cropped-26-11zon-23022404011657.jpeg";
-import RiyazImg from "../../../../assets/images/academics/departments/11zon-cropped-27-11zon-23022404042362.jpeg";
-import PranavImg from "../../../../assets/images/academics/departments/11zon-cropped-28-11zon-23022404083922.jpeg";
-import SandeepImg from "../../../../assets/images/academics/departments/11zon-cropped-29-11zon-23022404143165.jpeg";
-import PankajImg from "../../../../assets/images/academics/departments/11zon-cropped-30-11zon-23022404255451.jpeg";
-import AnamImg from "../../../../assets/images/academics/departments/11zon-cropped-31-11zon-23022404294847.jpeg";
-import PrachiImg from "../../../../assets/images/academics/departments/dr-prachi-bhargav-11zon-26022405531290.jpg";
+import VijayImg from "../../../../assets/images/academics/departments/11zon-cropped-25-11zon-23022403574197.webp";
+import BalvirImg from "../../../../assets/images/academics/departments/11zon-cropped-26-11zon-23022404011657.webp";
+import RiyazImg from "../../../../assets/images/academics/departments/11zon-cropped-27-11zon-23022404042362.webp";
+import PranavImg from "../../../../assets/images/academics/departments/11zon-cropped-28-11zon-23022404083922.webp";
+import SandeepImg from "../../../../assets/images/academics/departments/11zon-cropped-29-11zon-23022404143165.webp";
+import PankajImg from "../../../../assets/images/academics/departments/11zon-cropped-30-11zon-23022404255451.webp";
+import AnamImg from "../../../../assets/images/academics/departments/11zon-cropped-31-11zon-23022404294847.webp";
+import PrachiImg from "../../../../assets/images/academics/departments/dr-prachi-bhargav-11zon-26022405531290.webp";
 
-import depSlide1 from "../../../../assets/images/academics/departments/biotech1-07052412253675.jpg";
-import depSlide2 from "../../../../assets/images/academics/departments/curriculum-07052412202574.jpg";
-import depSlide3 from "../../../../assets/images/academics/departments/foodtech-0705241225555.jpg";
-import depSlide4 from "../../../../assets/images/academics/departments/with-ibm-07052412210228.jpg";
-import depSlide5 from "../../../../assets/images/academics/departments/industrystalwart-06022401542865.jpg";
-import depSlide6 from "../../../../assets/images/academics/departments/biotech-lab-07052412272588.jpg";
-import depSlide7 from "../../../../assets/images/academics/departments/manage--06052401373517.jpg";
+import depSlide1 from "../../../../assets/images/academics/departments/biotech1-07052412253675.webp";
+import depSlide2 from "../../../../assets/images/academics/departments/curriculum-07052412202574.webp";
+import depSlide3 from "../../../../assets/images/academics/departments/foodtech-0705241225555.webp";
+import depSlide4 from "../../../../assets/images/academics/departments/with-ibm-07052412210228.webp";
+import depSlide5 from "../../../../assets/images/academics/departments/industrystalwart-06022401542865.webp";
+import depSlide6 from "../../../../assets/images/academics/departments/biotech-lab-07052412272588.webp";
+import depSlide7 from "../../../../assets/images/academics/departments/manage--06052401373517.webp";
 
 import { Headers, Student } from "../../../../utils/custom/CustomPlacedStudentTable";
 import { EventItem } from "../../../../utils/custom/CustomEventListCard";
@@ -382,22 +382,22 @@ export const InstituteofAgriculturalSciencesandTechnologyplacedStudents: Student
 ];
 
 
-import img1 from "../../../../assets/images/academics/departments/agri1-09052412363771.jpg";
-import img2 from "../../../../assets/images/academics/departments/agri3-09052412364666.jpg";
-import img3 from "../../../../assets/images/academics/departments/agri2-09052412365475.jpg";
-import img4 from "../../../../assets/images/academics/departments/agri4-09052412370363.jpg";
-import img5 from "../../../../assets/images/academics/departments/agri5-09052412371288.jpg";
-import img6 from "../../../../assets/images/academics/departments/guest1-10022412515173.jpg";
-import img7 from "../../../../assets/images/academics/departments/internationalseminar-10022412520735.jpg";
-import img8 from "../../../../assets/images/academics/departments/guest1-10022412515173.jpg";
-import img9 from "../../../../assets/images/academics/departments/seminar1-10022412522592.jpg";
-import img10 from "../../../../assets/images/academics/departments/international2-10022412523788.jpg";
-import img11 from "../../../../assets/images/academics/departments/experttalk2-10022412524646.jpg";
-import img12 from "../../../../assets/images/academics/departments/guest3-10022412530337.jpg";
-import img13 from "../../../../assets/images/academics/departments/experttalk-10022412531278.jpg";
-import img14 from "../../../../assets/images/academics/departments/internation1-09052412375633.jpg";
-import img15 from "../../../../assets/images/academics/departments/webinar5-09052412382659.jpg";
-import img16 from "../../../../assets/images/academics/departments/webinar1-09052412380675.jpg";
+import img1 from "../../../../assets/images/academics/departments/agri1-09052412363771.webp";
+import img2 from "../../../../assets/images/academics/departments/agri3-09052412364666.webp";
+import img3 from "../../../../assets/images/academics/departments/agri2-09052412365475.webp";
+import img4 from "../../../../assets/images/academics/departments/agri4-09052412370363.webp";
+import img5 from "../../../../assets/images/academics/departments/agri5-09052412371288.webp";
+import img6 from "../../../../assets/images/academics/departments/guest1-10022412515173.webp";
+import img7 from "../../../../assets/images/academics/departments/internationalseminar-10022412520735.webp";
+import img8 from "../../../../assets/images/academics/departments/guest1-10022412515173.webp";
+import img9 from "../../../../assets/images/academics/departments/seminar1-10022412522592.webp";
+import img10 from "../../../../assets/images/academics/departments/international2-10022412523788.webp";
+import img11 from "../../../../assets/images/academics/departments/experttalk2-10022412524646.webp";
+import img12 from "../../../../assets/images/academics/departments/guest3-10022412530337.webp";
+import img13 from "../../../../assets/images/academics/departments/experttalk-10022412531278.webp";
+import img14 from "../../../../assets/images/academics/departments/internation1-09052412375633.webp";
+import img15 from "../../../../assets/images/academics/departments/webinar5-09052412382659.webp";
+import img16 from "../../../../assets/images/academics/departments/webinar1-09052412380675.webp";
 
 export const InstituteofAgriculturalSciencesandTechnologyDepartmentEventsData: EventItem[] = [
   {

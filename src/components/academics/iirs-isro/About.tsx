@@ -1,5 +1,5 @@
 import { FC } from "react"
-import isro from "../../../assets/images/academics/isro/iirs-130925105210.jpg"
+import isro from "../../../assets/images/academics/isro/iirs-130925105210.webp"
 
 const About: FC = () => {
     return (

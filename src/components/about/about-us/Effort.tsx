@@ -1,5 +1,5 @@
 import React from "react";
-import ramswaroop from "../../../assets/images/about/aboutUs/ramswaroop-agrawal.jpg";
+import ramswaroop from "../../../assets/images/about/aboutUs/ramswaroop-agrawal.webp";
 import { effortData } from "../../../data/about/aboutusData";
 
 const Effort: React.FC = () => {
