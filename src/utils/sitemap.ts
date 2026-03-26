@@ -4,7 +4,12 @@ import { getPreferredProgramRouteSlug, LEGACY_PROGRAM_SITEMAP_ONLY_SLUGS } from 
 import { STATIC_PROGRAM_CATEGORY_PATHS, STATIC_TOP_LEVEL_PROGRAM_PATHS } from "./programCategoryRoute";
 import { slugify } from "./slugify";
 
-const API_BASE_URL = process.env.VITE_API_BASE_URL || "https://srmuwebservice.srmu.ac.in:7005";
+const runtimeEnv =
+  (globalThis as typeof globalThis & {
+    process?: { env?: Record<string, string | undefined> };
+  }).process?.env ?? import.meta.env;
+
+const API_BASE_URL = runtimeEnv.VITE_API_BASE_URL || "https://webservices.srmu.ac.in:7005";
 const SITEMAP_TTL_MS = 15 * 60 * 1000;
 
 const LEGACY_STATIC_PATHS = [

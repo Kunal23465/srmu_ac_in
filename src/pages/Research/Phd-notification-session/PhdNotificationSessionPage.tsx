@@ -1,9 +1,10 @@
 import React from 'react'
 import PhdNotificationSession from '../../../components/research/ph-d-notification-session/PhdNotificationSession';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 
 const PhdNotificationSessionPage:React.FC = () => {
+  const location = useLocation();
   return (
     <>
       {location.pathname === "/ph-d-notification-session-2025-26" ? (
