@@ -71,6 +71,13 @@ const getHomePageCache = () => {
   return null;
 };
 
+const escapeHtmlAttribute = (value: string) =>
+  value
+    .replace(/&/g, "&amp;")
+    .replace(/"/g, "&quot;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+
 const pickHomePageState = (state: RootState): Partial<RootState> => ({
   getbanner: structuredClone(state.getbanner),
   getProgramByFlag: structuredClone(state.getProgramByFlag),
@@ -375,6 +382,22 @@ async function preloadPlacementOverviewPageData(store: ReturnType<typeof createS
   await store.dispatch(fetchPlacementRecordTabData());
 }
 
+function buildHomePagePreloadLinks(state: RootState, normalizedPathname: string) {
+  if (normalizedPathname !== "/") {
+    return "";
+  }
+
+  const bannerItems = state.getbanner?.data || [];
+  const firstVisibleBanner = bannerItems.length > 0 ? bannerItems[bannerItems.length - 1] : null;
+  const heroImageUrl = firstVisibleBanner?.imagePath;
+
+  if (!heroImageUrl) {
+    return "";
+  }
+
+  return `<link rel="preload" as="image" href="${escapeHtmlAttribute(heroImageUrl)}" fetchpriority="high" />`;
+}
+
 
 export async function render(url: string) {
   const helmetContext: any = {};
@@ -423,10 +446,13 @@ export async function render(url: string) {
       </Provider>
     </HelmetProvider>,
   );
+
+  const headPreloadLinks = buildHomePagePreloadLinks(store.getState(), normalizedPathname);
   return {
     appHtml,
     preloadedState: store.getState(),
     helmet: helmetContext.helmet,
+    headPreloadLinks,
     statusCode: getStatusCode(normalizedPathname, store.getState(), programMenuData),
   };
 }

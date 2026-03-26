@@ -39,7 +39,7 @@ const ProgramsSectionStatic: FC = () => {
   }, [activePrograms]);
 
   return (
-    <section className="bg-cover bg-center bg-fixed py-8 md:py-10 lg:py-12" style={{ backgroundImage: "url('programs-bg.png')" }}>
+    <section className="bg-cover bg-center bg-fixed py-8 md:py-10 lg:py-12" style={{ backgroundImage: "url('/programs-bg.webp')" }}>
       <div className="container mx-auto max-w-7xl px-4">
         <div className="text-white mb-8">
           <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] fw500">Our Programs</h2>

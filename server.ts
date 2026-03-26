@@ -182,12 +182,14 @@ async function createServer() {
       let appHtml = "";
       let preloadedState = {};
       let helmet: Record<string, any> = {};
+      let headPreloadLinks = "";
       let statusCode = 200;
       try {
         const result = await render(url);
         appHtml = result.appHtml;
         preloadedState = result.preloadedState;
         helmet = (result as any).helmet || {};
+        headPreloadLinks = (result as any).headPreloadLinks || "";
         statusCode = (result as any).statusCode || 200;
       } catch (err) {
         process.stderr.write(`SSR ERROR: ${String(err)}\n`);
@@ -208,6 +210,7 @@ async function createServer() {
         .join("");
 
       const html = template
+        .replace(`<!--home-preload-links-->`, headPreloadLinks)
         .replace(`<!--helmet-head-->`, helmetHead)
         .replace(`<!--app-html-->`, appHtml)
         .replace(`<!--preloaded-state-->`, `<script>window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, "\\u003c")}</script>`);

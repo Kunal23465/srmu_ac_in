@@ -43,68 +43,68 @@ export const tabs: ProgramTab[] = [
     programs: [
       {
         name: "Microbiology",
-        img: mediaAsset("/srmuwebdocs/program-discipline/1767085447081_microbiology-0605240159363.jpg"),
+        img: mediaAsset("/srmuwebdocs/program-discipline/1767085447081_microbiology-0605240159363.webp"),
         link: "/microbiology/undergraduate",
       },
       {
         name: "Nutrition & Dietetics",
-        img: mediaAsset("/srmuwebdocs/program-discipline/1767087734143_nutrition-07052411002636.jpg"),
+        img: mediaAsset("/srmuwebdocs/program-discipline/1767087734143_nutrition-07052411002636.webp"),
         link: "/nutrition-dietetics/undergraduate",
       },
       {
         name: "Artificial Intelligence",
-        img: mediaAsset("/srmuwebdocs/program-discipline/1767087983152_technology-human-touch-background-modern-remake-cr-13082512135910.jpg"),
+        img: mediaAsset("/srmuwebdocs/program-discipline/1767087983152_technology-human-touch-background-modern-remake-cr-13082512135910.webp"),
         link: "/artificial-intelligence/undergraduate",
       },
       {
         name: "Computer Science Engineering",
-        img: mediaAsset("/srmuwebdocs/program-discipline/1767767408725_computer-science-05022408363442.jpg"),
+        img: mediaAsset("/srmuwebdocs/program-discipline/1767767408725_computer-science-05022408363442.webp"),
         link: "/computer-science-engineering/undergraduate",
       },
       {
         name: "Computer Application",
-        img: mediaAsset("/srmuwebdocs/program-discipline/1767095361811_comapplication-06052402172651.jpg"),
+        img: mediaAsset("/srmuwebdocs/program-discipline/1767095361811_comapplication-06052402172651.webp"),
         link: "/computer-application/undergraduate",
       },
       {
         name: "Agriculture",
-        img: mediaAsset("/srmuwebdocs/program-discipline/1767766401677_agriculture-06102303181750.jpg"),
+        img: mediaAsset("/srmuwebdocs/program-discipline/1767766401677_agriculture-06102303181750.webp"),
         link: "/agriculture/undergraduate",
       },
       
       {
         name: "Biotechnology",
-        img: mediaAsset("/srmuwebdocs/program-discipline/1767095575747_biotech-06052402151045.jpg"),
+        img: mediaAsset("/srmuwebdocs/program-discipline/1767095575747_biotech-06052402151045.webp"),
         link: "/bio-technology/undergraduate",
       },
       {
         name: "Engineering",
-        img: mediaAsset("/srmuwebdocs/program-discipline/1767095876473_engineering-06052402032951.jpg"),
+        img: mediaAsset("/srmuwebdocs/program-discipline/1767095876473_engineering-06052402032951.webp"),
         link: "/engineering/undergraduate",
       },
       {
         name: "Management",
-        img: mediaAsset("/srmuwebdocs/program-discipline/1767096152998_management-06052402013513.jpg"),
+        img: mediaAsset("/srmuwebdocs/program-discipline/1767096152998_management-06052402013513.webp"),
         link: "/management/undergraduate",
       },
       {
         name: "Commerce and Economics",
-        img: mediaAsset("/srmuwebdocs/program-discipline/1767096326930_economics-06052402124859.jpg"),
+        img: mediaAsset("/srmuwebdocs/program-discipline/1767096326930_economics-06052402124859.webp"),
         link: "/commerce-and-economics/undergraduate",
       },
       {
         name: "Media Studies (Journalism)",
-        img: mediaAsset("/srmuwebdocs/program-discipline/1767096539429_media-06052402111080.jpg"),
+        img: mediaAsset("/srmuwebdocs/program-discipline/1767096539429_media-06052402111080.webp"),
         link: "/media-studies/undergraduate",
       },
       {
         name: "Legal Studies (Law)",
-        img: mediaAsset("/srmuwebdocs/program-discipline/1767765443787_law-06052402080759%20(1).jpg"),
+        img: mediaAsset("/srmuwebdocs/program-discipline/1767765443787_law-06052402080759%20(1).webp"),
         link: "/legal-studies-law/undergraduate",
       },
       {
         name: "Pharmacy",
-        img: mediaAsset("/srmuwebdocs/program-discipline/1767765647071_pharmacy-06052402060294.jpg"),
+        img: mediaAsset("/srmuwebdocs/program-discipline/1767765647071_pharmacy-06052402060294.webp"),
         link: "/pharmacy/undergraduate",
       },
       {
@@ -114,12 +114,12 @@ export const tabs: ProgramTab[] = [
       },
       {
         name: "Natural Sciences",
-        img: mediaAsset("/srmuwebdocs/program-discipline/1767765987771_science-22022410265426.jpg"),
+        img: mediaAsset("/srmuwebdocs/program-discipline/1767765987771_science-22022410265426.webp"),
         link: "/natural-sciences/undergraduate",
       },
       {
         name: "Humanities",
-        img: mediaAsset("/srmuwebdocs/program-discipline/1767766128111_humanities-22022410271022.jpg"),
+        img: mediaAsset("/srmuwebdocs/program-discipline/1767766128111_humanities-22022410271022.webp"),
         link: "/humanities/undergraduate",
       },
      
@@ -131,68 +131,68 @@ export const tabs: ProgramTab[] = [
     programs: [
       {
         name: "Artificial Intelligence",
-        img: mediaAsset("/srmuwebdocs/program-discipline/1767087983152_technology-human-touch-background-modern-remake-cr-13082512135910.jpg"),
+        img: mediaAsset("/srmuwebdocs/program-discipline/1767087983152_technology-human-touch-background-modern-remake-cr-13082512135910.webp"),
         link: "/artificial-intelligence/postgraduate",
       },
       {
         name: "Computer Science Engineering",
-        img: mediaAsset("/srmuwebdocs/program-discipline/1767767408725_computer-science-05022408363442.jpg"),
+        img: mediaAsset("/srmuwebdocs/program-discipline/1767767408725_computer-science-05022408363442.webp"),
         link: "/computer-science-engineering/postgraduate",
       },
       {
         name: "Computer Application",
-        img: mediaAsset("/srmuwebdocs/program-discipline/1767095361811_comapplication-06052402172651.jpg"),
+        img: mediaAsset("/srmuwebdocs/program-discipline/1767095361811_comapplication-06052402172651.webp"),
         link: "/computer-application/postgraduate",
       },
       
       {
         name: "Agriculture",
-        img: mediaAsset("/srmuwebdocs/program-discipline/1767766401677_agriculture-06102303181750.jpg"),
+        img: mediaAsset("/srmuwebdocs/program-discipline/1767766401677_agriculture-06102303181750.webp"),
         link: "/agriculture/postgraduate",
       },
       {
         name: "Biotechnology",
-        img: mediaAsset("/srmuwebdocs/program-discipline/1767095575747_biotech-06052402151045.jpg"),
+        img: mediaAsset("/srmuwebdocs/program-discipline/1767095575747_biotech-06052402151045.webp"),
         link: "/bio-technology/postgraduate",
       },
       {
         name: "Engineering",
-        img: mediaAsset("/srmuwebdocs/program-discipline/1767095876473_engineering-06052402032951.jpg"),
+        img: mediaAsset("/srmuwebdocs/program-discipline/1767095876473_engineering-06052402032951.webp"),
         link: "/engineering/postgraduate",
       },
       {
         name: "Management",
-        img: mediaAsset("/srmuwebdocs/program-discipline/1767096152998_management-06052402013513.jpg"),
+        img: mediaAsset("/srmuwebdocs/program-discipline/1767096152998_management-06052402013513.webp"),
         link: "/management/postgraduate",
       },
       {
         name: "Commerce and Economics",
-        img: mediaAsset("/srmuwebdocs/program-discipline/1767096326930_economics-06052402124859.jpg"),
+        img: mediaAsset("/srmuwebdocs/program-discipline/1767096326930_economics-06052402124859.webp"),
         link: "/commerce-and-economics/postgraduate",
       },
       {
         name: "Media Studies (Journalism)",
-        img: mediaAsset("/srmuwebdocs/program-discipline/1767096539429_media-06052402111080.jpg"),
+        img: mediaAsset("/srmuwebdocs/program-discipline/1767096539429_media-06052402111080.webp"),
         link: "/media-studies/postgraduate",
       },
        {
         name: "Legal  Studies (Law)",
-        img: mediaAsset("/srmuwebdocs/program-discipline/1767765443787_law-06052402080759%20(1).jpg"),
+        img: mediaAsset("/srmuwebdocs/program-discipline/1767765443787_law-06052402080759%20(1).webp"),
         link: "/legal-studies-law/postgraduate",
       },
       {
         name: "Natural Sciences",
-        img: mediaAsset("/srmuwebdocs/program-discipline/1767765987771_science-22022410265426.jpg"),
+        img: mediaAsset("/srmuwebdocs/program-discipline/1767765987771_science-22022410265426.webp"),
         link: "/natural-sciences/postgraduate",
       },
       {
         name: "Social Work",
-        img: mediaAsset("/srmuwebdocs/program-discipline/1767766576548_socialwork-22022410252366.jpg"),
+        img: mediaAsset("/srmuwebdocs/program-discipline/1767766576548_socialwork-22022410252366.webp"),
         link: "/social-work/postgraduate",
       },
        {
         name: "Humanities",
-        img: mediaAsset("/srmuwebdocs/program-discipline/1767766128111_humanities-22022410271022.jpg"),
+        img: mediaAsset("/srmuwebdocs/program-discipline/1767766128111_humanities-22022410271022.webp"),
         link: "/humanities/postgraduate",
       },
     ],
@@ -203,22 +203,22 @@ export const tabs: ProgramTab[] = [
     programs: [
       {
         name: "Computer Science Engineering",
-        img: mediaAsset("/srmuwebdocs/program-discipline/1767767408725_computer-science-05022408363442.jpg"),
+        img: mediaAsset("/srmuwebdocs/program-discipline/1767767408725_computer-science-05022408363442.webp"),
         link: "/computer-science-engineering/integrated",
       },
       {
         name: "Biotechnology",
-        img: mediaAsset("/srmuwebdocs/program-discipline/1767095575747_biotech-06052402151045.jpg"),
+        img: mediaAsset("/srmuwebdocs/program-discipline/1767095575747_biotech-06052402151045.webp"),
         link: "/bio-technology/integrated",
       },
       {
         name: "Engineering",
-        img: mediaAsset("/srmuwebdocs/program-discipline/1767095876473_engineering-06052402032951.jpg"),
+        img: mediaAsset("/srmuwebdocs/program-discipline/1767095876473_engineering-06052402032951.webp"),
         link: "/engineering/integrated",
       },
       {
         name: "Legal Studies (Law)",
-        img: mediaAsset("/srmuwebdocs/program-discipline/1767765443787_law-06052402080759%20(1).jpg"),
+        img: mediaAsset("/srmuwebdocs/program-discipline/1767765443787_law-06052402080759%20(1).webp"),
         link: "/legal-studies-law/integrated",
       },
     ],
@@ -229,12 +229,12 @@ export const tabs: ProgramTab[] = [
     programs: [
       {
         name: "Polytechnic (Lateral)",
-        img: mediaAsset("/srmuwebdocs/program-discipline/1767766783118_h71-06022412164235.jpg"),
+        img: mediaAsset("/srmuwebdocs/program-discipline/1767766783118_h71-06022412164235.webp"),
         link: "/polytechnic-lateral/polytechnic-diploma",
       },
       {
         name: "Polytechnic (Diploma)",
-        img: mediaAsset("/srmuwebdocs/program-discipline/1767689601101_polytechnic-05022408521642%20(1).jpg"),
+        img: mediaAsset("/srmuwebdocs/program-discipline/1767689601101_polytechnic-05022408521642%20(1).webp"),
         link: "/polytechnic/polytechnic-diploma",
       },
      
@@ -246,27 +246,27 @@ export const tabs: ProgramTab[] = [
     programs: [
       {
         name: "Artificial Intelligence",
-        img: mediaAsset("/srmuwebdocs/program-discipline/1767087983152_technology-human-touch-background-modern-remake-cr-13082512135910.jpg"),
+        img: mediaAsset("/srmuwebdocs/program-discipline/1767087983152_technology-human-touch-background-modern-remake-cr-13082512135910.webp"),
         link: "/artificial-intelligence/industry-honors1",
       },
       {
         name: "Computer Science Engineering",
-        img: mediaAsset("/srmuwebdocs/program-discipline/1767767408725_computer-science-05022408363442.jpg"),
+        img: mediaAsset("/srmuwebdocs/program-discipline/1767767408725_computer-science-05022408363442.webp"),
         link: "/computer-science-engineering/industry-honors1",
       },
       {
         name: "Computer Application",
-        img: mediaAsset("/srmuwebdocs/program-discipline/1767095361811_comapplication-06052402172651.jpg"),
+        img: mediaAsset("/srmuwebdocs/program-discipline/1767095361811_comapplication-06052402172651.webp"),
         link: "/computer-application/industry-honors1",
       },
       {
         name: "Engineering",
-        img: mediaAsset("/srmuwebdocs/program-discipline/1767095876473_engineering-06052402032951.jpg"),
+        img: mediaAsset("/srmuwebdocs/program-discipline/1767095876473_engineering-06052402032951.webp"),
         link: "/engineering/industry-honors1",
       },
       {
         name: "Management",
-        img: mediaAsset("/srmuwebdocs/program-discipline/1767096152998_management-06052402013513.jpg"),
+        img: mediaAsset("/srmuwebdocs/program-discipline/1767096152998_management-06052402013513.webp"),
         link: "/management/industry-honors1",
       },
      
