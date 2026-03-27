@@ -61,6 +61,11 @@ function setStaticAssetCacheHeaders(res: express.Response, filePath: string) {
   res.setHeader("Expires", expiresAt.toUTCString());
 }
 
+function replaceTemplateMarker(template: string, marker: string, value: string) {
+  const markerPattern = new RegExp(`<!--\\s*${marker}\\s*-->`, "g");
+  return template.replace(markerPattern, value);
+}
+
 // In local dev, some corporate/self-signed TLS chains can block SSR API calls.
 // Allow opt-in relaxed TLS via env (default true in non-production).
 if (!isProduction && process.env.SSR_ALLOW_INSECURE_TLS !== "false") {
@@ -209,11 +214,23 @@ async function createServer() {
         .filter(Boolean)
         .join("");
 
-      const html = template
-        .replace(`<!--home-preload-links-->`, headPreloadLinks)
-        .replace(`<!--helmet-head-->`, helmetHead)
-        .replace(`<!--app-html-->`, appHtml)
-        .replace(`<!--preloaded-state-->`, `<script>window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, "\\u003c")}</script>`);
+      const html = replaceTemplateMarker(
+        replaceTemplateMarker(
+          replaceTemplateMarker(
+            replaceTemplateMarker(
+              template,
+              "home-preload-links",
+              headPreloadLinks,
+            ),
+            "helmet-head",
+            helmetHead,
+          ),
+          "app-html",
+          appHtml,
+        ),
+        "preloaded-state",
+        `<script>window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, "\\u003c")}</script>`,
+      );
 
       res.status(statusCode).set({ "Content-Type": "text/html; charset=utf-8" }).end(html);
     } catch (e) {
