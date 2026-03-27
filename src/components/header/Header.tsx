@@ -68,7 +68,6 @@ const Header = () => {
       document.body.style.overflow = "auto";
     }
   }, [sideMenu]);
-
   return (
     <div>
       <header className="fixed top-0 left-0 w-full z-999 transition-all duration-500">
@@ -137,7 +136,7 @@ const Header = () => {
                                   {programMenu
                                     .filter((type) => group.includes(type.programFlagName))
                                     .map((type) => {
-                                      
+
                                       return (
                                         <div key={type.programFlagId}>
                                           {/* BLUE HEADING */}
@@ -149,40 +148,45 @@ const Header = () => {
                                           <ul className="mt-2 list-none!">
                                             {type.programFlagId === 7
                                               ? // CASE 1: programs
-                                                type.programs.map((prog) => (
-                                                  <li key={prog.programId}>
-                                                    <Link
-                                                      // onClick={() => setShowMegaMenu(false)}
-                                                      onMouseDown={() => {
-                                                        dispatch(setProgramId(prog.programId.toString()));
-                                                      }}
-                                                      onClick={() => {
-                                                        dispatch(setProgramId(prog.programId.toString()));
-                                                        setShowMegaMenu(false);
-                                                      }}
-                                                      to={getProgramRoutePath(prog)}
-                                                      className="text-[15px] px-3 py-2 rounded-md text-[#212529] hover:text-[#ffb703] border border-white hover:border-[#ffb703] block"
-                                                    >
-                                                      {prog.programName}
-                                                    </Link>
-                                                  </li>
-                                                ))
+                                              type.programs.map((prog) => (
+                                                <li key={prog.programId}>
+                                                  <Link
+                                                    // onClick={() => setShowMegaMenu(false)}
+                                                    onMouseDown={() => {
+                                                      dispatch(setProgramId(prog.programId.toString()));
+                                                    }}
+                                                    onClick={() => {
+                                                      dispatch(setProgramId(prog.programId.toString()));
+                                                      setShowMegaMenu(false);
+                                                    }}
+                                                    to={getProgramRoutePath(prog)}
+                                                    className="text-[15px] px-3 py-2 rounded-md text-[#212529] hover:text-[#ffb703] border border-white hover:border-[#ffb703] block"
+                                                  >
+                                                    {prog.programName}
+                                                  </Link>
+                                                </li>
+                                              ))
                                               : // CASE 2: disciplines (for all other ids)
-                                                type.disciplines.map((disc) => (
-                                                  <li key={disc.disciplineId}>
-                                                    <Link
-                                                      onClick={() => setShowMegaMenu(false)}
-                                                      to={getDisciplineRoutePath(type, disc)}
-                                                      state={{
-                                                        programTypeId: type.programFlagId,
-                                                        disciplineId: disc.disciplineId,
-                                                      }}
-                                                      className="text-[15px] px-3 py-2 rounded-md text-[#212529] hover:text-[#ffb703] border border-white hover:border-[#ffb703] block"
-                                                    >
-                                                      {disc.disciplineName}
-                                                    </Link>
-                                                  </li>
-                                                ))}
+
+                                              type.disciplines.map((disc) => (
+                                                <li key={disc.disciplineId}>
+                                                  <Link
+                                                    onClick={() => setShowMegaMenu(false)}
+                                                    to={
+                                                      disc.disciplineName === "Ph.D."
+                                                        ? "/program/phd"
+                                                        : getDisciplineRoutePath(type, disc)
+                                                    }
+                                                    state={{
+                                                      programTypeId: type.programFlagId,
+                                                      disciplineId: disc.disciplineId,
+                                                    }}
+                                                    className="text-[15px] px-3 py-2 rounded-md text-[#212529] hover:text-[#ffb703] border border-white hover:border-[#ffb703] block"
+                                                  >
+                                                    {disc.disciplineName}
+                                                  </Link>
+                                                </li>
+                                              ))}
                                           </ul>
                                         </div>
                                       );
@@ -288,39 +292,43 @@ const Header = () => {
                                       <ul className="ml-2 mt-1 space-y-1 list-none!">
                                         {type.programFlagId === 7
                                           ? // CASE 1: programs (only for id 7)
-                                            type.programs.map((prog) => (
-                                              <li key={prog.programId}>
-                                                <Link
-                                                  to={getProgramRoutePath(prog)}
-                                                  onMouseDown={() => {
-                                                    dispatch(setProgramId(prog.programId.toString()));
-                                                  }}
-                                                  onClick={() => {
-                                                    dispatch(setProgramId(prog.programId.toString()));
-                                                    setSideMenu(false);
-                                                  }}
-                                                  className="text-sm px-3 py-2 text-[#212529] hover:text-[#ffb703] block hover:bg-gray-50 rounded"
-                                                >
-                                                  {prog.programName}
-                                                </Link>
-                                              </li>
-                                            ))
+                                          type.programs.map((prog) => (
+                                            <li key={prog.programId}>
+                                              <Link
+                                                to={getProgramRoutePath(prog)}
+                                                onMouseDown={() => {
+                                                  dispatch(setProgramId(prog.programId.toString()));
+                                                }}
+                                                onClick={() => {
+                                                  dispatch(setProgramId(prog.programId.toString()));
+                                                  setSideMenu(false);
+                                                }}
+                                                className="text-sm px-3 py-2 text-[#212529] hover:text-[#ffb703] block hover:bg-gray-50 rounded"
+                                              >
+                                                {prog.programName}
+                                              </Link>
+                                            </li>
+                                          ))
                                           : // CASE 2: disciplines (for all other ids)
-                                            type.disciplines.map((disc) => (
-                                              <li key={disc.disciplineId}>
-                                                <Link
-                                                  to={getDisciplineRoutePath(type, disc)}
-                                                  state={{
-                                                    programTypeId: type.programFlagId,
-                                                    disciplineId: disc.disciplineId,
-                                                  }}
-                                                  className="text-sm px-3 py-2 text-[#212529] hover:text-[#ffb703] block hover:bg-gray-50 rounded"
-                                                  onClick={() => setSideMenu(false)}
-                                                >
-                                                  {disc.disciplineName}
-                                                </Link>
-                                              </li>
-                                            ))}
+                                          type.disciplines.map((disc) => (
+                                            <li key={disc.disciplineId}>
+                                              <Link
+                                                to={
+                                                  disc.disciplineName === "Ph.D."
+                                                    ? "/program/phd"
+                                                    : getDisciplineRoutePath(type, disc)
+                                                }
+                                                state={{
+                                                  programTypeId: type.programFlagId,
+                                                  disciplineId: disc.disciplineId,
+                                                }}
+                                                className="text-sm px-3 py-2 text-[#212529] hover:text-[#ffb703] block hover:bg-gray-50 rounded"
+                                                onClick={() => setSideMenu(false)}
+                                              >
+                                                {disc.disciplineName}
+                                              </Link>
+                                            </li>
+                                          ))}
                                       </ul>
                                     </div>
                                   );

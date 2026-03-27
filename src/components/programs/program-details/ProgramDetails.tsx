@@ -90,13 +90,13 @@ const ProgramDetails: React.FC = () => {
     timeRequired: courseDuration,
     ...(firstYearTuitionFee
       ? {
-          offers: {
-            "@type": "Offer",
-            category: "Tuition Fee",
-            priceCurrency: "INR",
-            price: firstYearTuitionFee,
-          },
-        }
+        offers: {
+          "@type": "Offer",
+          category: "Tuition Fee",
+          priceCurrency: "INR",
+          price: firstYearTuitionFee,
+        },
+      }
       : {}),
   };
 
@@ -371,7 +371,9 @@ const ProgramDetails: React.FC = () => {
           </div>
         )}
 
-        <EnquiryForm />
+        <div className={` ${isPhd && "mt-10"} `}>
+          <EnquiryForm />
+        </div>
 
         <CustomTopFooter data={CustomTopFooterData1} />
       </div >

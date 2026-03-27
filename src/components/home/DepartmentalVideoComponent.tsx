@@ -84,11 +84,11 @@ export default function DepartmentalVideo() {
 
                 <div
                   key={video.id}
-                  className="shrink-0 px-3 flex items-center"
+                  className="shrink-0 px-3 flex items-center lg:h-[450px]"
                   style={{ flex: `0 0 ${slideWidth}%` }}
                 >
 
-                  <div className="relative group rounded-xl overflow-hidden shadow-lg cursor-pointer">
+                  <div className="relative group rounded-xl overflow-hidden shadow-lg cursor-pointer ">
 
                     <img
                       src={video.thumbnail}

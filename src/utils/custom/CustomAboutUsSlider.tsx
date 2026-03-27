@@ -119,7 +119,7 @@ const CustomAboutUsSlider: React.FC<Props> = ({ data }) => {
   };
 
   return (
-    <div className="w-full flex justify-center py-16 px-4 font-inter">
+    <div className="w-full flex justify-center py-16 sm:px-4 font-inter">
       <div className="w-full max-w-7xl flex flex-col lg:flex-row gap-12">
         {/* LEFT SECTION */}
         <div className="flex flex-col w-[300px] lg:sticky lg:top-8">
@@ -158,7 +158,7 @@ const CustomAboutUsSlider: React.FC<Props> = ({ data }) => {
               {data.items.map((item, index) => (
                 <div
                   key={index}
-                  className="flex-shrink-0 flex-grow-0 px-3 py-4"
+                  className="flex-shrink-0 flex-grow-0 sm:px-3 py-4"
                   style={{ flexBasis: getSlideWidth() }}
                 >
                   <WhyCard

@@ -57,7 +57,7 @@ const Home: React.FC = () => {
           </Suspense>
         </div>
       </DeferredSection>
-      <DeferredSection minHeight={420} rootMargin="320px 0px" fallback={renderSectionFallback(420)}>
+      {/* <DeferredSection minHeight={420} rootMargin="320px 0px" fallback={renderSectionFallback(420)}>
         <Suspense fallback={renderSectionFallback(420)}>
           <AlumniSlider />
         </Suspense>
@@ -78,7 +78,7 @@ const Home: React.FC = () => {
         <Suspense fallback={renderSectionFallback(220)}>
           <CustomTopFooter data={CustomTopFooterAbout} />
         </Suspense>
-      </DeferredSection>
+      </DeferredSection> */}
     </div>
   );
 };

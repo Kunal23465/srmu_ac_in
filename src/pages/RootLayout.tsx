@@ -63,13 +63,13 @@ const RootLayout: React.FC = () => {
         href="https://wa.me/9120007948"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-14 left-6  z-9999! rounded-full shadow-lg hover:scale-110 transition-all duration-300"
+        className="fixed bottom-12 sm:bottom-10 left-6  z-9999! rounded-full shadow-lg hover:scale-110 transition-all duration-300"
       >
         <img src={whatsapp} alt="WhatsApp contact button" className="w-14 h-14" />
       </a>
 
       {/* ================= CHAT POPUP ================= */}
-      {openChat && (
+      {/* {openChat && (
         <div className="fixed bottom-24 right-6 z-9999 w-[350px] rounded-xl shadow-2xl overflow-hidden">
           <div className="bg-[#dfa000] text-white flex justify-between items-center px-4 py-3">
             <h3 className="font-semibold">Chat Assistant</h3>
@@ -104,7 +104,7 @@ const RootLayout: React.FC = () => {
             <button className="w-full bg-[#ffb703] hover:bg-[#dfa000] text-white py-2 rounded-md">Start Chat</button>
           </div>
         </div>
-      )}
+      )} */}
 
       {/* ================= BOT BUTTON ================= */}
       {/* <button onClick={toggleChat} className="fixed bottom-12 sm:bottom-6 right-6 z-200 flex items-center gap-2">
@@ -124,7 +124,7 @@ const RootLayout: React.FC = () => {
           {openChat ? <FaTimes className="text-white" size={22} /> : <img src={chatbot} alt="Open chat assistant" className="w-8" />}
         </div>
       </button> */}
-      <Chatbot />
+      {/* <Chatbot /> */}
       {/* ============= RIGHT SIDE SLIDERS (SHOW ON SCROLL) ============= */}
       <div
         className={`

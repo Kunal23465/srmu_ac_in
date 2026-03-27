@@ -337,7 +337,7 @@ export const HeaderData = [
 
               { item: "Ph.D. Notification (Session: 2025-26)", path: "/ph-d-notification-session-2025-26" },
               { item: "Publication", path: "/publication" },
-              { item: "Innovation", path: "/innovation" },
+              { item: "Innovation", path: "/innovations" },
               { item: "Consultancy", path: "/consultancy" },
             ],
           },
