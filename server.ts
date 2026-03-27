@@ -67,8 +67,8 @@ function replaceTemplateMarker(template: string, marker: string, value: string) 
 }
 
 // In local dev, some corporate/self-signed TLS chains can block SSR API calls.
-// Allow opt-in relaxed TLS via env (default true in non-production).
-if (!isProduction && process.env.SSR_ALLOW_INSECURE_TLS !== "false") {
+// Allow relaxed TLS only when it is explicitly opted in via env.
+if (!isProduction && process.env.SSR_ALLOW_INSECURE_TLS === "true") {
   process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 }
 

@@ -124,7 +124,7 @@ const MemorialCollege: React.FC = () => {
                           src={item.imagePath}
                           alt="slider"
                           loading={index === 0 ? "eager" : "lazy"}
-                          fetchPriority={index === 0 ? "high" : "auto"}
+                          fetchpriority={index === 0 ? "high" : "auto"}
                           decoding="async"
                           className="w-full rounded-xl"
                         />
@@ -135,7 +135,7 @@ const MemorialCollege: React.FC = () => {
                           src={item.imagePath}
                           alt="slider"
                           loading={index === 0 ? "eager" : "lazy"}
-                          fetchPriority={index === 0 ? "high" : "auto"}
+                          fetchpriority={index === 0 ? "high" : "auto"}
                           decoding="async"
                           className="w-full rounded-xl"
                         />
