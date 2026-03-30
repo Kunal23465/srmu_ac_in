@@ -63,7 +63,7 @@ const TopHeader: React.FC = () => {
               className="flex text-[13px] items-center text-white gap-x-5 px-[0.7rem]"
             >
               Staff Login
-              <img src={search} alt="user" />
+              {/* <img src={search} alt="user" /> */}
             </Link>
 
             <button className="bg-white flex items-center px-4 py-0 gap-2 border-l border-[#ccc]">
@@ -79,9 +79,16 @@ const TopHeader: React.FC = () => {
             <Link
               target="_blank"
               to="https://studentportal.srmu.ac.in/login"
-              className="bg-[#FFB703] px-4 text-[13px] font-medium uppercase border border-[#ffb703] py-[0.875rem] flex items-center text-black"
+              className="bg-[#FFB703] hover:bg-white px-4 text-[13px] font-medium uppercase border border-[#ffb703] py-[0.875rem] flex items-center text-black"
             >
               Apply Now
+            </Link>
+            <Link
+              target="_blank"
+              to="https://convocation.srmu.ac.in"
+              className="bg-white hover:bg-[#FFB703] hover:border-[#fff] px-4 text-[13px] font-medium uppercase border border-[#ccc] py-[0.875rem] flex items-center text-black"
+            >
+              Convocation 2026
             </Link>
           </div>
         </div>
@@ -120,9 +127,9 @@ const TopHeader: React.FC = () => {
 
           <div className="right-part flex items-center">
             <div className="flex gap-1">
-              <div className="py-3 border-l border-[#ccc] px-2">
+              {/* <div className="py-3 border-l border-[#ccc] px-2">
                 <GrSearch size={24} className="text-[#666]" />
-              </div>
+              </div> */}
 
               <a
                 href="tel:18001035298"
@@ -137,6 +144,13 @@ const TopHeader: React.FC = () => {
                 className="bg-[#FFB703] px-2 font-medium uppercase border-2 border-[#ffb703] py-3.5 flex items-center"
               >
                 Apply Now
+              </Link>
+              <Link
+                target="_blank"
+                to="https://convocation.srmu.ac.in"
+                className="bg-white hover:bg-[#FFB703] hover:border-[#fff] px-2 text-[13px] font-medium uppercase border border-[#ccc] py-[0.875rem] flex items-center text-black"
+              >
+                Convocation 2026
               </Link>
             </div>
           </div>

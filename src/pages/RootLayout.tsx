@@ -175,7 +175,7 @@ const RootLayout: React.FC = () => {
         <a
           onMouseEnter={() => setHovered(3)}
           onMouseLeave={() => setHovered(null)}
-          href="/admission/scholarship-scheme"
+          href="/scholarship-scheme"
           className={`
     w-full sm:rotate-270 writing-mode-horizontal sm:writing-mode-vertical relative z-400
     text-xs tracking-wider items-center justify-center
