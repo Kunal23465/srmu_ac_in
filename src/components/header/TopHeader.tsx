@@ -86,7 +86,7 @@ const TopHeader: React.FC = () => {
             <Link
               target="_blank"
               to="https://convocation.srmu.ac.in"
-              className="bg-white hover:bg-[#FFB703] hover:border-[#fff] px-4 text-[13px] font-medium uppercase border border-[#ccc] py-[0.875rem] flex items-center text-black"
+              className={`${Classes["convocation_blink"]} bg-white hover:bg-[#FFB703] hover:border-[#fff] px-4 text-[13px] font-medium uppercase border border-[#ccc] py-[0.875rem] flex items-center text-black`}
             >
               Convocation 2026
             </Link>
@@ -148,7 +148,7 @@ const TopHeader: React.FC = () => {
               <Link
                 target="_blank"
                 to="https://convocation.srmu.ac.in"
-                className="bg-white hover:bg-[#FFB703] hover:border-[#fff] px-2 text-[13px] font-medium uppercase border border-[#ccc] py-[0.875rem] flex items-center text-black"
+                className={`${Classes["convocation_blink"]} bg-white hover:bg-[#FFB703] hover:border-[#fff] px-2 text-[13px] font-medium uppercase border border-[#ccc] py-[0.875rem] flex items-center text-black`}
               >
                 Convocation 2026
               </Link>
