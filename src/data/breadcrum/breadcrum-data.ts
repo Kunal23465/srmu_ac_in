@@ -8,7 +8,7 @@ import campuslifebreadcrumbbg from "../../assets/images/breadcrumb/campus.webp";
 import blogsbreadcrumbbg from "../../assets/images/breadcrumb/blogs-breadcrumb-bg.webp";
 import placementbreadcrumbbg from "../../assets/images/breadcrumb/placement-breadcrum-bg.webp";
 import agriBreadcrumbbg from "../../assets/images/breadcrumb/agri-banner-inner.webp";
-import onlineApplicationBanner from "../../assets/images/online-application-banner.jpeg";
+import onlineApplicationBanner from "../../assets/images/online-application-banner.webp";
 import programFinderBanner from "../../assets/images/breadcrumb/Program Finder.webp";
 import noticeBanner from "../../assets/images/breadcrumb/Notice.webp";
 import shiftSchedule from "../../assets/images/breadcrumb/Shedule.webp";

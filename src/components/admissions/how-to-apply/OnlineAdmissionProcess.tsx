@@ -2,10 +2,10 @@ import React from "react";
 import Classes from "../../../utils/styles/Global.module.css";
 import admission_bg from "../../../assets/images/admission-bg.png";
 import computer from "../../../assets/images/computer.png";
-import mobile from "../../../assets/images/mobile.png";
+import mobile from "../../../assets/images/mobile.webp";
 import bgImage from "../../../assets/images/research/overview/facilities-bg-lg.jpeg";
-import offlineAddmission from "../../../assets/images/offline-admission.png";
-import offlineAddmissionMobile from "../../../assets/images/offline-admission-mobile.png";
+import offlineAddmission from "../../../assets/images/offline-admission.webp";
+import offlineAddmissionMobile from "../../../assets/images/offline-admission-mobile.webp";
 const OnlineAdmissionProcess: React.FC = () => {
   return (
     <>

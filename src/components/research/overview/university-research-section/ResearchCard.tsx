@@ -1,6 +1,6 @@
 import React from "react";
 import { ResearchMember } from "../../../../data/research/overview/research-overview-data";
-import avtar from "../../../../assets/images/user.png"
+import avtar from "../../../../assets/images/user.webp"
 interface Props {
   member: ResearchMember;
 }

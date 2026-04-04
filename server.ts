@@ -57,8 +57,11 @@ function setStaticAssetCacheHeaders(res: express.Response, filePath: string) {
   }
 
   const expiresAt = new Date(Date.now() + STATIC_ASSET_CACHE_SECONDS * 1000);
-  res.setHeader("Cache-Control", `public, max-age=${STATIC_ASSET_CACHE_SECONDS}, immutable`);
+  const cachePolicy = `public, max-age=${STATIC_ASSET_CACHE_SECONDS}, immutable`;
+  res.setHeader("Cache-Control", cachePolicy);
+  res.setHeader("CDN-Cache-Control", cachePolicy);
   res.setHeader("Expires", expiresAt.toUTCString());
+  res.setHeader("Vary", "Accept-Encoding");
 }
 
 function replaceTemplateMarker(template: string, marker: string, value: string) {

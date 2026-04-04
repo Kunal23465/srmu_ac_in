@@ -97,7 +97,7 @@ const BlogDetailsPage: React.FC = () => {
             {/* Image */}
             {data.imagePath ? (
               <div className="mb-8">
-                <img src={data.imagePath} alt={data.title} className="w-full h-full max-h-[60vh] object-cover  shadow-lg" />
+                <img src={data.imagePath} alt={data.title} loading="eager" decoding="async" className="w-full h-full max-h-[60vh] object-cover  shadow-lg" />
               </div>
             ) : null}
 

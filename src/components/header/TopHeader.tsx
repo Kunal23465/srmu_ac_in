@@ -53,7 +53,7 @@ const TopHeader: React.FC = () => {
               to="https://eyojan.srmu.ac.in/"
               className="relative flex items-center text-[13px] text-white gap-x-2 px-[0.7rem] after:absolute after:right-0 after:top-1/2 after:h-[55%] after:w-px after:-translate-y-1/2 after:bg-white"
             >
-              <img src={user} alt="user" />
+              <img src={user} alt="user" loading="eager" decoding="async" />
               Student Login
             </Link>
 

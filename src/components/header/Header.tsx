@@ -78,7 +78,7 @@ const Header = () => {
             <div className="flex flex-row justify-between">
               {/* LOGO */}
               <Link to="/" className="logo_div flex items-center lg:gap-1 xl:gap-3 cursor-pointer">
-                <img src={logo} alt="logo" className="max-w-[205px] xl:max-w-[245px]" />
+                <img src={logo} alt="logo" loading="eager" decoding="async" className="max-w-[205px] xl:max-w-[245px]" />
               </Link>
 
               {/* DESKTOP MENU */}
@@ -207,6 +207,8 @@ const Header = () => {
                 <img
                   src={hamburger}
                   alt="Menu"
+                  loading="eager"
+                  decoding="async"
                   className="cursor-pointer w-[30px] h-[21px]"
                   onClick={() => setSideMenu((pre) => !pre)}
                 />

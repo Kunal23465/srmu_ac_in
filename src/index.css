@@ -64,7 +64,7 @@ body.app-ready #root {
 }
 
 .banner-section {
-  background-image: url("/Shedule.png");
+  background-image: url("/Shedule.webp");
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 430px;
@@ -72,12 +72,12 @@ body.app-ready #root {
 }
 
 .banner-section.abhivyakt {
-  background-image: url("/abhivyakt.png");
+  background-image: url("/abhivyakt.webp");
 }
 
 /* for banner section */
 /* .banner-section {
-  background-image: url("/srmu-banner-img.jpg");
+  background-image: url("/srmu-banner-img.webp");
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 400px;
@@ -1015,7 +1015,7 @@ input::-webkit-inner-spin-button {
 }
 
 .name-banner {
-  background-image: url("/litile-banner.png");
+  background-image: url("/litile-banner.webp");
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 330px;
@@ -1023,7 +1023,7 @@ input::-webkit-inner-spin-button {
 }
 
 .back {
-  background-image: url("/litile-banner.png");
+  background-image: url("/litile-banner.webp");
 }
 
 .program-part {
@@ -1634,7 +1634,7 @@ section .card-color img {
   transform: translateY(-50%);
   width: 21px;
   height: 21px;
-  background-image: url("/list-arrow.png");
+  background-image: url("/list-arrow.webp");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -1665,7 +1665,7 @@ section .card-color img {
   width: 14px;
   height: 14px;
   transform: translateY(-50%);
-  background-image: url("/tab-arrow.png");
+  background-image: url("/tab-arrow.webp");
   background-size: cover;
   background-repeat: no-repeat;
   opacity: 0.7;
