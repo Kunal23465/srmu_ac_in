@@ -169,7 +169,7 @@ export const footerData = {
     {
       id: 0,
       title: "Green Initiative",
-      path: "/campus-life/green-initiative",
+      path: "/green-initiative",
     },
     {
       id: 1,
