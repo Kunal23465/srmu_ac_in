@@ -247,7 +247,7 @@ const Footer: React.FC = () => {
                         <MdLocationPin size={24} />
                       </Link>
                     </span>
-                    <h3 className="font-semibold text-[14px] sm:text-base text-[#ffb703] uppercase">Address</h3>
+                    <h2 className="font-semibold text-[14px] sm:text-base text-[#ffb703] uppercase">Address</h2>
                   </div>
                   <p className="lg:!text-[14px] !text-[13.132px]">{footerData.contact.address}</p>
                 </div>
@@ -258,7 +258,7 @@ const Footer: React.FC = () => {
                         <FaPhone />
                       </Link>
                     </span>
-                    <h3 className="font-semibold text-[14px] sm:text-base text-[#ffb703] uppercase">Phone</h3>
+                    <h2 className="font-semibold text-[14px] sm:text-base text-[#ffb703] uppercase">Phone</h2>
                   </div>
                   <p className="lg:!text-[14px] !text-[13.132px]">{footerData.contact.phone1}</p>
                 </div>
@@ -269,7 +269,7 @@ const Footer: React.FC = () => {
                         <MdEmail />
                       </Link>
                     </span>
-                    <h3 className="font-semibold text-[14px] sm:text-base text-[#ffb703] uppercase">Email</h3>
+                    <h2 className="font-semibold text-[14px] sm:text-base text-[#ffb703] uppercase">Email</h2>
                   </div>
                   <p>
                     <Link to={`mailto:${footerData.contact.email}`} className=" lg:!text-[14px] !text-[13.132px]">
@@ -323,7 +323,7 @@ const Footer: React.FC = () => {
               </div>
             </div>
             <div className=" w-full grid-second">
-              <h3 className="font-semibold text-[14px] sm:text-base mb-3 text-[#ffb703]  Get Responsible uppercase">Get Enrolled</h3>
+              <h2 className="font-semibold text-[14px] sm:text-base mb-3 text-[#ffb703]  Get Responsible uppercase">Get Enrolled</h2>
               <ul className="space-y-4 pb-8 list-none! sm:border-b-2 border-dashed border-[#e1f1fd94] ">
                 {footerData.getEnrolled.map((link, index) => (
                   <li key={index}>
@@ -342,7 +342,7 @@ const Footer: React.FC = () => {
                   </li>
                 ))}
               </ul>
-              <h3 className="font-semibold text-[14px] sm:text-base mt-8 mb-4 text-[#ffb703] uppercase">Get Evolved</h3>
+              <h2 className="font-semibold text-[14px] sm:text-base mt-8 mb-4 text-[#ffb703] uppercase">Get Evolved</h2>
               <ul className="space-y-4  pb-8 list-none! sm:border-b-2 border-dashed border-[#e1f1fd94]">
                 {footerData.getEvolved.map((link, index) => (
                   <li key={index}>
@@ -354,7 +354,7 @@ const Footer: React.FC = () => {
                   </li>
                 ))}
               </ul>
-              <h3 className="font-semibold text-[14px] sm:text-base mb-4 text-[#ffb703] mt-8 Get Responsible uppercase">Get Delighted</h3>
+              <h2 className="font-semibold text-[14px] sm:text-base mb-4 text-[#ffb703] mt-8 Get Responsible uppercase">Get Delighted</h2>
               <ul className="space-y-4 pb-8 list-none! ">
                 {footerData.getDelighted.map((link, index) => (
                   <li key={index}>
@@ -374,7 +374,7 @@ const Footer: React.FC = () => {
               </ul>
             </div>
             <div className="w-full grid-third">
-              <h3 className="font-semibold text-[14px] sm:text-base mb-3 text-[#ffb703] uppercase ">Get Responsible</h3>
+              <h2 className="font-semibold text-[14px] sm:text-base mb-3 text-[#ffb703] uppercase ">Get Responsible</h2>
               <ul className="space-y-4  pb-8 list-none! sm:border-b-2 border-dashed border-[#e1f1fd94]">
                 {footerData.getResponsible.map((link, index) => (
                   <li key={index}>
@@ -393,7 +393,7 @@ const Footer: React.FC = () => {
                 ))}
               </ul>
 
-              <h3 className="font-semibold text-[14px] sm:text-base mt-8 mb-4 text-[#ffb703] uppercase">Get Helped</h3>
+              <h2 className="font-semibold text-[14px] sm:text-base mt-8 mb-4 text-[#ffb703] uppercase">Get Helped</h2>
               <ul className="space-y-4  pb-8 list-none! sm:border-b-2 border-dashed border-[#e1f1fd94]">
                 {footerData.getHelped.map((link, index) => (
                   <li key={index}>
@@ -405,7 +405,7 @@ const Footer: React.FC = () => {
                   </li>
                 ))}
               </ul>
-              <h3 className="font-semibold text-[14px] sm:text-base mb-4 text-[#ffb703] mt-8 Get Responsible uppercase">Get Connected</h3>
+              <h2 className="font-semibold text-[14px] sm:text-base mb-4 text-[#ffb703] mt-8 Get Responsible uppercase">Get Connected</h2>
               <ul className="space-y-4 pb-8 list-none! ">
                 {footerData.getConected.map((link, index) => (
                   <li key={index}>
@@ -427,7 +427,7 @@ const Footer: React.FC = () => {
               {/* usefulLinks */}
             </div>
             <div className="w-full grid-fourth">
-              <h3 className="font-semibold text-[14px] sm:text-base mb-4 text-[#ffb703] Get Responsible uppercase">Explore / Engage</h3>
+              <h2 className="font-semibold text-[14px] sm:text-base mb-4 text-[#ffb703] Get Responsible uppercase">Explore / Engage</h2>
               <Link
                 target="_blank"
                 to="https://www.youtube.com/watch?v=vs_TEm1_XS8"
@@ -439,12 +439,12 @@ const Footer: React.FC = () => {
                 </span>{" "}
                 Virtual Tour
               </Link>
-              <h3 className="font-semibold text-[14px] sm:text-base pt-10 mb-4 text-[#ffb703]  Get Responsible uppercase">Awards</h3>
+              <h2 className="font-semibold text-[14px] sm:text-base pt-10 mb-4 text-[#ffb703]  Get Responsible uppercase">Awards</h2>
               <div className="flex gap-x-4 mb-4">
                 <img src={awards1} alt="awards1" />
                 <img src={awards2} alt="awards1" />
               </div>
-              <h3 className="font-semibold text-[14px] sm:text-base pt-8 mb-4 text-[#ffb703]  Get Responsible uppercase">MERCH SHOP</h3>
+              <h2 className="font-semibold text-[14px] sm:text-base pt-8 mb-4 text-[#ffb703]  Get Responsible uppercase">MERCH SHOP</h2>
               <h4 className="font-semibold lg:!text-[14px] !text-[13.132px] text-white">To Shop SRMU Merchandise Scan the Code</h4>
               <img src={scanner} alt="scanner" className="max-w-[170px] mt-4" />
             </div>

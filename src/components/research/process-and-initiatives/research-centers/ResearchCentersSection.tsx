@@ -23,7 +23,7 @@ const ResearchCentersSection: React.FC = () => {
             <img src={item.image} alt={item.title} className="w-full h-64 object-cover" />
 
             <div className="p-10">
-              <h3 className="lg:text-[22px] md:text-[20.625px] sm:text-[19.25px] text-[19.25px] fw500 text-[#0f4a85] mb-2">{item.title}</h3>
+              <h2 className="lg:text-[22px] md:text-[20.625px] sm:text-[19.25px] text-[19.25px] fw500 text-[#0f4a85] mb-2">{item.title}</h2>
               <p className="text-gray-600 lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px] leading-6 mb-5">{item.description}</p>
 
               <a

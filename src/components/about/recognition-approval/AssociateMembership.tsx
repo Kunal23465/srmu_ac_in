@@ -34,7 +34,7 @@ const AssociationsMemberships: React.FC = () => {
           {associationsData.map((item) => (
             <div key={item.id} className="bg-white shadow-xl hover:-translate-y-2  rounded-sm p-6 flex flex-col items-center justify-between transition-all duration-500">
               <img src={item.logo} alt={item.name} className="h-20 object-contain mb-4" />
-              <h3 className="text-lg font-semibold text-gray-800 text-center mb-4">{item.name}</h3>
+              <h2 className="text-lg font-semibold text-gray-800 text-center mb-4">{item.name}</h2>
               <a
                 href={item.pdfLink}
                 target="_blank"

@@ -89,7 +89,7 @@ const KnowOurCampus: React.FC = () => {
                   className="flex-shrink-0 flex-grow-0 basis-full"
                 >
                   <div className="flex flex-col p-2 items-center justify-center gap-y-2">
-                    <h3 className="text-lg font-bold text-center uppercase mb-2">{item.title}</h3>
+                    <h2 className="text-lg font-bold text-center uppercase mb-2">{item.title}</h2>
                     <p className="mb-4 text-center">{item.description}</p>
                   </div>
                 </div>

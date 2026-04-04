@@ -134,9 +134,9 @@ const NewsCard1 = ({ image, description, date, title, onReadMore }: any) => {
           {date}
         </div>
 
-        <h3 className="text-sm sm:text-[20px] fw600 min-h-16 sm:min-h-auto">
+        <h2 className="text-sm sm:text-[20px] fw600 min-h-16 sm:min-h-auto">
           {title}
-        </h3>
+        </h2>
 
         <div
           className="mt-2 text-[#000000cc] text-justify"

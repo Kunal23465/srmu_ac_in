@@ -97,7 +97,7 @@ export default function TedxSharing() {
                   {item.date}
                 </p>
 
-                <h3
+                <h2
                   className={`
                                         absolute left-1/2 -translate-x-1/2 text-white 
                                         text-base sm:text-[22px] font-medium drop-shadow-xl text-center
@@ -106,7 +106,7 @@ export default function TedxSharing() {
                                     `}
                 >
                   {item.title}
-                </h3>
+                </h2>
 
                 <div
                   className={`

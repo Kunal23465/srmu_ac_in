@@ -17,7 +17,7 @@ const Goals: React.FC<OurGoals & { highlight?: boolean }> = ({ title, subtitle, 
       hover:bg-[#fffefa] border border-[#f7b822] sm:border-white hover:border-[#f7b822]
     "
   >
-    <h3 className="lg:text-[28px] sm:text-[14.882px] text-[14.882px] md:text-[15.945px] font-bold mb-4 color_light_blue">{title}</h3>
+    <h2 className="lg:text-[28px] sm:text-[14.882px] text-[14.882px] md:text-[15.945px] font-bold mb-4 color_light_blue">{title}</h2>
     <p className="text-[#212529] font-bold lg:text-[17px] md:text-[15.945px] sm:text-[14.882px] text-[14.882px] mb-2">{subtitle}</p>
     <p className="text-[#212529] lg:text-[17px] md:text-[15.945px] sm:text-[14.882px] text-[14.882px]">{description}</p>
   </div>

@@ -131,7 +131,7 @@ const PhdOfflineApplication: React.FC = () => {
     <div className={`${Classes["container"]} mb-8`}>
       <CustomOverviewSection data={PhdOfflineModeData} />
       <div className="phd-process">
-        <h3 className="text-[22px] font-semibold mb-4">{phdOfflineProcess.title}</h3>
+        <h2 className="text-[22px] font-semibold mb-4">{phdOfflineProcess.title}</h2>
 
         {phdOfflineProcess.steps.map((step) => (
           <div key={step.step} className="step-block">

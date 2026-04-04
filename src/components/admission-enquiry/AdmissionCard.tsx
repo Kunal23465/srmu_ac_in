@@ -30,9 +30,9 @@ const AdmissionCard: React.FC<cardtype> = ({ admissionEnquiryData }) => {
                             </span>
                         </div>
 
-                        <h3 className="text-[20px] font-semibold mt-4">
+                        <h2 className="text-[20px] font-semibold mt-4">
                             {item.title}
-                        </h3>
+                        </h2>
 
                         <p className="text-[15px] mt-2 leading-snug whitespace-pre-line">
                             {item.description}

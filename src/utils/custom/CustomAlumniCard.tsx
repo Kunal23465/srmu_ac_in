@@ -40,7 +40,7 @@ const CustomAlumniCard: React.FC<CustomCardProps> = ({
                         clip-slanted
                     "
                 >
-                    <h3 className="text-xl font-semibold">{name}</h3>
+                    <h2 className="text-xl font-semibold">{name}</h2>
 
                     <p
                         className="
@@ -87,7 +87,7 @@ const CustomAlumniCard: React.FC<CustomCardProps> = ({
             pointer-events-auto
         "
                     >
-                        <h3 className="text-xl font-semibold text-gray-900">{name}</h3>
+                        <h2 className="text-xl font-semibold text-gray-900">{name}</h2>
                         <p className="text-gray-700 text-[14px] mt-1">{title}</p>
 
                         <p className="text-gray-700 mt-4 text-[15px]">

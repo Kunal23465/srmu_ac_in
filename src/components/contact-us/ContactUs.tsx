@@ -33,7 +33,7 @@ const ContactUs: React.FC = () => {
                       <div className="bg-[#ffb703] rounded-full w-14 h-14 flex justify-center items-center text-white text-xl">{iconMap[item.icon]}</div>
                     </div>
 
-                    <h3 className="text-[20px] font-semibold mb-2">{item.title}</h3>
+                    <h2 className="text-[20px] font-semibold mb-2">{item.title}</h2>
 
                     {Array.isArray(item.value) ? item.value.map((val, i) => <p key={i}>{val}</p>) : <p>{item.value}</p>}
                   </div>

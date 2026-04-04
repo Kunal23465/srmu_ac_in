@@ -38,9 +38,9 @@ const OutreachStats: React.FC = () => {
                             <img src={stat.img} alt={stat.label} className="w-16 h-16 md:w-24 md:h-24" />
 
                             <div>
-                                <h3 className="lg:text-[60px] md:text-[56.25px] text-[35px] sm:text-[35px] font-normal text-[#FFB701]">
+                                <h2 className="lg:text-[60px] md:text-[56.25px] text-[35px] sm:text-[35px] font-normal text-[#FFB701]">
                                     {startCount ? animatedValue : 0}+
-                                </h3>
+                                </h2>
                                 <p className="text-[16px] md:text-[22px] -mt-3 text-white text-center">
                                     {stat.label}
                                 </p>

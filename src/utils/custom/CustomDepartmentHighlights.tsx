@@ -125,9 +125,9 @@ const CustomDepartmentHighlights: React.FC<
         <div className="space-y-10">
           {steps.map((step, index) => (
             <div key={`${step.id}-${index}-${step.title}`}>
-              <h3 className="text-xl font-semibold mb-3 text-[#0b2c3d]">
+              <h2 className="text-xl font-semibold mb-3 text-[#0b2c3d]">
                 {step.title}
-              </h3>
+              </h2>
 
               <div
                 className="text-gray-700 text-[13px] leading-relaxed"
@@ -206,9 +206,9 @@ const CustomDepartmentHighlights: React.FC<
                         key={`${step.id}-${isCurrent ? "current" : "previous"}`}
                         className={`absolute inset-0 ${animationClass}`}
                       >
-                        <h3 className="text-2xl font-bold mb-6">
+                        <h2 className="text-2xl font-bold mb-6">
                           {step.title}
-                        </h3>
+                        </h2>
 
                         <div
                           dangerouslySetInnerHTML={{

@@ -39,7 +39,7 @@ const OnlineAdmissionProcess: React.FC = () => {
                   <div className="box-content">
                     <div className="circle"></div>
                     <div className="content">
-                      <h3 className="text-[30px] font-semibold text-center mb-4 text-[#0f4a85] ">1.</h3>
+                      <h2 className="text-[30px] font-semibold text-center mb-4 text-[#0f4a85] ">1.</h2>
                       <p className="font-medium mt-3 text-[#0f4a85] text-lg text-center">
                         To apply online, visit{" "}
                         <a data-end="116" data-start="76" href="https://www.srmu.ac.in" rel="noopener" target="_new">
@@ -61,7 +61,7 @@ const OnlineAdmissionProcess: React.FC = () => {
                   <div className="box-content">
                     <div className="circle"></div>
                     <div className="content">
-                      <h3 className="text-[30px] font-semibold text-center mb-4 text-[#0f4a85] ">2.</h3>
+                      <h2 className="text-[30px] font-semibold text-center mb-4 text-[#0f4a85] ">2.</h2>
                       <p className="font-medium mt-3 text-[#0f4a85] text-lg text-center">
                         Fill in all mandatory fields and click the "Register" button to proceed. This will take you to the login screen, where you'll be prompted to enter your
                         registered mobile number.
@@ -77,7 +77,7 @@ const OnlineAdmissionProcess: React.FC = () => {
                   <div className="box-content">
                     <div className="circle"></div>
                     <div className="content">
-                      <h3 className="text-[30px] font-semibold text-center mb-4 text-[#0f4a85] ">4.</h3>
+                      <h2 className="text-[30px] font-semibold text-center mb-4 text-[#0f4a85] ">4.</h2>
                       {/* className="font-medium mt-3 text-[#0f4a85] text-lg text-center" */}
                       <p className="font-medium mt-3 text-[#0f4a85] text-lg text-center">
                         Select "General Information," fill required fields, press"Submit". Enter basic details, then press "Save" to proceed.
@@ -93,7 +93,7 @@ const OnlineAdmissionProcess: React.FC = () => {
                   <div className="box-content">
                     <div className="circle"></div>
                     <div className="content">
-                      <h3 className="text-[30px] font-semibold text-center mb-4 text-[#0f4a85] ">3.</h3>
+                      <h2 className="text-[30px] font-semibold text-center mb-4 text-[#0f4a85] ">3.</h2>
                       <p className="font-medium mt-3 text-[#0f4a85] text-lg text-center">
                         Enter your registered mobile number, click "Send OTP", then enter the OTP and click "Verify OTP" to access the student dashboard.
                       </p>
@@ -108,7 +108,7 @@ const OnlineAdmissionProcess: React.FC = () => {
                   <div className="box-content">
                     <div className="circle"></div>
                     <div className="content">
-                      <h3 className="text-[30px] font-semibold text-center mb-4 text-[#0f4a85] ">5.</h3>
+                      <h2 className="text-[30px] font-semibold text-center mb-4 text-[#0f4a85] ">5.</h2>
                       {/* className="font-medium mt-3 text-[#0f4a85] text-lg text-center" */}
                       <p className="font-medium mt-3 text-[#0f4a85] text-lg text-center">
                         Go to "Application Fee," review the info, press "Pay Application Fee," and complete the payment using one of the payment options.
@@ -124,7 +124,7 @@ const OnlineAdmissionProcess: React.FC = () => {
                   <div className="box-content">
                     <div className="circle"></div>
                     <div className="content">
-                      <h3 className="text-[30px] font-semibold text-center mb-4 text-[#0f4a85] ">6.</h3>
+                      <h2 className="text-[30px] font-semibold text-center mb-4 text-[#0f4a85] ">6.</h2>
                       <p className="font-medium mt-3 text-[#0f4a85] text-lg text-center">
                         Go to "Registration Fee," review the info, select amount of 10,000 or more, and complete the payment using any of the given payment options.
                       </p>

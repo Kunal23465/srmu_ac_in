@@ -28,9 +28,9 @@ const IqacCardsSection: React.FC = () => {
 
                             {/* Card Content */}
                             <div className="p-10 flex flex-col justify-between flex-grow">
-                                <h3 className="mb-4 lg:text-[26px] md:text-[24.375px] text-[22.75px] sm:text-[22.75px] fw500 text-blue-900">
+                                <h2 className="mb-4 lg:text-[26px] md:text-[24.375px] text-[22.75px] sm:text-[22.75px] fw500 text-blue-900">
                                     {card.title}
-                                </h3>
+                                </h2>
                                 <p className="text-[#252629] lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px] mb-6">
                                     {card.description}
                                 </p>

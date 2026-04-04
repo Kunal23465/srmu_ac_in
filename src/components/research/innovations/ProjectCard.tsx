@@ -55,9 +55,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 
       {/* Text */}
       <div className="w-full md:w-2/3">
-        <h3 className="text-[18px] sm:text-[24px]   fw500 text-gray-800 mb-2">
+        <h2 className="text-[18px] sm:text-[24px]   fw500 text-gray-800 mb-2">
           {title}
-        </h3>
+        </h2>
 
         <p className="text-gray-600 leading-relaxed mb-4">
           {showMore ? fullDescription : limitedText}

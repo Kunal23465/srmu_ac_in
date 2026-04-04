@@ -72,7 +72,7 @@ const RootLayout: React.FC = () => {
       {/* {openChat && (
         <div className="fixed bottom-24 right-6 z-9999 w-[350px] rounded-xl shadow-2xl overflow-hidden">
           <div className="bg-[#dfa000] text-white flex justify-between items-center px-4 py-3">
-            <h3 className="font-semibold">Chat Assistant</h3>
+            <h2 className="font-semibold">Chat Assistant</h2>
             <button className="cursor-pointer" onClick={toggleChat}>
               <FaTimes size={18} />
             </button>

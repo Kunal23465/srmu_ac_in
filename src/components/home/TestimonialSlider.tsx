@@ -129,9 +129,9 @@ const TestimonialSlider = () => {
           <img src={quote} className="w-10 md:w-auto" alt="quote" />
         </div>
 
-        <h3 className="font21 fw600 mt-4">
+        <h2 className="font21 fw600 mt-4">
           {hometestimonial[displayIndex].name}
-        </h3>
+        </h2>
 
         <p className="text-[#00000099] text-sm">
           {hometestimonial[displayIndex].batch}

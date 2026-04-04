@@ -17,7 +17,7 @@ const ProgramFinderIntro: React.FC<ProgramFinderIntroProps> = ({ description }) 
           <div className="space-y-6">
             {programFinderIntroData.sections.map((section, index) => (
               <div key={index}>
-                <h3 className="text-[16px] font-semibold text-[#212529] mb-2">{section.heading}</h3>
+                <h2 className="text-[16px] font-semibold text-[#212529] mb-2">{section.heading}</h2>
                 <p className="text-[#212529] text-[13px] sm:text-[16px] leading-relaxed">{section.text}</p>
               </div>
             ))}

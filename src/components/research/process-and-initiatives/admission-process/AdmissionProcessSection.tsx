@@ -19,7 +19,7 @@ const AdmissionProcessSection: React.FC = () => {
         <div className="text-gray-800 space-y-4 mb-6">
           {admissionProcessData.shortDescription.map((item, index) => (
             <div key={index}>
-              <h3 className="lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px] fw500">{item.subHeading}</h3>
+              <h2 className="lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px] fw500">{item.subHeading}</h2>
               <p className="lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px]">{item.text}</p>
             </div>
           ))}
@@ -34,7 +34,7 @@ const AdmissionProcessSection: React.FC = () => {
           <div className="text-gray-800 space-y-4 pt-2">
             {admissionProcessData.fullDetails?.map((item, index) => (
               <div key={index}>
-                <h3 className="font-semibold">{item.subHeading}</h3>
+                <h2 className="font-semibold">{item.subHeading}</h2>
                 <p className="whitespace-pre-line text-sm!">{item.text}</p>
               </div>
             ))}

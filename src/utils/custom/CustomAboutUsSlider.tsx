@@ -37,7 +37,7 @@ const WhyCard: React.FC<
         ${active ? "bg-yellow-500 text-gray-800" : "bg-white text-gray-700"}
       `}
     >
-      <h3 className={`text-2xl mb-4 font-semibold text-[#0f4a85]`}>{title}</h3>
+      <h2 className={`text-2xl mb-4 font-semibold text-[#0f4a85]`}>{title}</h2>
       <p className="text-[15.945px]">{description}</p>
     </div>
   );

@@ -21,9 +21,9 @@ const EcoCards: React.FC<propstype> = ({ data }) => {
                     />
 
                     {/* Title */}
-                    <h3 className="text-[#01334d] font-bold text-[22px] mb-3 transition-all duration-300 group-hover:text-[#ffb703]">
+                    <h2 className="text-[#01334d] font-bold text-[22px] mb-3 transition-all duration-300 group-hover:text-[#ffb703]">
                         {item.title}
-                    </h3>
+                    </h2>
 
                     {/* Description */}
                     <p className="text-[#01334d] leading-relaxed text-[15px] transition-all duration-300 group-hover:text-white">

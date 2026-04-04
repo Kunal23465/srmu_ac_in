@@ -50,7 +50,7 @@ const MeetingFrequency: React.FC = () => {
                 <div className="md:col-span-2">
                     <h2 className=" text-[22px] sm:text-[28px] lg:text-[3.125rem] fw500 mb-3">Year {activeYear.year}</h2>
 
-                    <h3 className="text-base font-medium sm:font28 mb-4">Important Issues</h3>
+                    <h2 className="text-base font-medium sm:font28 mb-4">Important Issues</h2>
 
                     {activeYear.sections ? (
                         <div className="space-y-10">

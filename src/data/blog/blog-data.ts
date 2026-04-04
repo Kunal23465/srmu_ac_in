@@ -47,21 +47,21 @@ export const blogCards: BlogCardType[] = [
 <br/>
 
 
-<h3><strong>For M.Sc. Biotechnology:</strong></h3>
+<h2><strong>For M.Sc. Biotechnology:</strong></h2>
 <ul class="list-none">
   <p class="font16">A bachelor’s degree in Biotechnology, Microbiology, Biochemistry, Life Sciences, or a related field.</p>
   <p class="font16">Minimum aggregate marks as specified by the institution (usually 50% or above).</p>
 </ul>
 <br/>
 
-<h3><strong>For M.Tech Biotechnology:</strong></h3>
+<h2><strong>For M.Tech Biotechnology:</strong></h2>
 <ul>
   <p class="font16">A B.Tech/BE degree in Biotechnology, Chemical Engineering, Biomedical Engineering, or equivalent.</p>
   <p class="font16">Many universities also accept candidates with M.Sc. in relevant fields through entrance tests.</p>
 </ul>
 <br/>
 
-<h3><strong>Admission Process:</strong></h3>
+<h2><strong>Admission Process:</strong></h2>
 <ul>
   <p class="font16">Universities may conduct their own entrance tests or accept scores from national exams such as GATE/NET/CSIR UGC.</p>
   <p class="font16">Some institutions also allow direct admission based on academic merit.</p>

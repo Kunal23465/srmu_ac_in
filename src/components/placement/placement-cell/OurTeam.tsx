@@ -142,11 +142,11 @@ const OurTeam: React.FC = () => {
                   <div className="text-black flex-none rounded-xl transition-all duration-300 transform hover:-translate-y-2">
                     <div className="relative w-full h-85 rounded-xl overflow-hidden">
                       <img src={item.img} alt={item.name} className="w-full h-full object-cover rounded-xl" />
-                      <h3 className="absolute bottom-5 left-5 text-xl sm:text-2xl text-white font-medium">
+                      <h2 className="absolute bottom-5 left-5 text-xl sm:text-2xl text-white font-medium">
                         {item.name}
                         <br />
                         <span className="text-amber-400 text-sm sm:text-[16px]">{item.position}</span>
-                      </h3>
+                      </h2>
                     </div>
                   </div>
                 </div>
@@ -219,11 +219,11 @@ const OurTeam: React.FC = () => {
                         alt={item.name}
                         className="w-full h-full object-cover rounded-xl transition-transform duration-500 hover:scale-105"
                       />
-                      <h3 className="absolute bottom-5 left-5 text-xl sm:text-2xl text-white font-medium">
+                      <h2 className="absolute bottom-5 left-5 text-xl sm:text-2xl text-white font-medium">
                         {item.name}
                         <br />
                         <span className="text-amber-400 text-sm sm:text-[16px]">{item.position}</span>
-                      </h3>
+                      </h2>
                     </div>
                   </div>
                 </div>

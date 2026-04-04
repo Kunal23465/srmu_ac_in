@@ -125,9 +125,9 @@ const KeyHighlightsSection: React.FC<CustomFacilitiesTypes> = ({ facilities, lay
                   <div className="bg-white rounded-2xl overflow-hidden h-full flex flex-col">
                     <img src={facility.imageUrl} alt={facility.title} className="w-full aspect-2/1.5 object-cover" />
                     <div className="p-6 flex flex-col flex-grow">
-                      <h3 className="lg:text-[26px] md:text-[24.375px] sm:text-[22.75px] text-[22.75px] font-semibold text-[#0f4a85] mb-3">
+                      <h2 className="lg:text-[26px] md:text-[24.375px] sm:text-[22.75px] text-[22.75px] font-semibold text-[#0f4a85] mb-3">
                         {facility.title}
-                      </h3>
+                      </h2>
                       <div
                         className="text-gray-700 text-justify lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px] flex-grow mb-6"
                         dangerouslySetInnerHTML={{ __html: facility.description }}
@@ -209,9 +209,9 @@ const KeyHighlightsSection: React.FC<CustomFacilitiesTypes> = ({ facilities, lay
                         className="w-full aspect-2/1.5 object-cover"
                       />
                       <div className="p-6 flex flex-col flex-grow">
-                        <h3 className="lg:text-[26px] md:text-[24.375px] sm:text-[22.75px] text-[22.75px] font-semibold text-[#0f4a85] mb-3">
+                        <h2 className="lg:text-[26px] md:text-[24.375px] sm:text-[22.75px] text-[22.75px] font-semibold text-[#0f4a85] mb-3">
                           {facility.title}
-                        </h3>
+                        </h2>
                         <div
                           className="text-gray-700 text-justify lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px] flex-grow mb-6"
                           dangerouslySetInnerHTML={{ __html: facility.description }}

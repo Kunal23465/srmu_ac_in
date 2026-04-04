@@ -62,9 +62,9 @@ const MemorialCollege: React.FC = () => {
       <div className={`${Classes["container"]}`}>
         <div className="rounded-[10px] mt-5 lg:mt-8">
           <div className="content py-3 md:py-6 lg:py-8 z-50 relative">
-            <h3 className="text-[22px] sm:text-[28px] lg:text-[3rem] lg:leading-[48px] text-[#023047] font-bold text-center mt-10 lg:mt-8">
+            <h2 className="text-[22px] sm:text-[28px] lg:text-[3rem] lg:leading-[48px] text-[#023047] font-bold text-center mt-10 lg:mt-8">
               Shri Ramswaroop Memorial University
-            </h3>
+            </h2>
 
             <p className="leading-7 text-[15px] text-[#0009] font-bold text-center mt-4">
               Experience a world of countless opportunities at SRMU - where we

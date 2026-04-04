@@ -15,7 +15,7 @@ const Notice: React.FC = () => {
     dispatch(fetchNotice());
   }, []);
   if (loading) {
-    return <h3 className="text-center text-2xl font-semibold">Loading ...</h3>;
+    return <h2 className="text-center text-2xl font-semibold">Loading ...</h2>;
   }
   function formatDate(dateStr: any) {
     const date = new Date(dateStr);

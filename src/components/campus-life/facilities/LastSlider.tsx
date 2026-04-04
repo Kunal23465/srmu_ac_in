@@ -106,9 +106,9 @@ const LastSliderSlick: React.FC = () => {
 
                 {/* CONTENT */}
                 <div className="px-1 py-4 sm:p-6 flex flex-col flex-grow">
-                  <h3 className="text-[15px] sm:text-lg font-semibold mb-1 sm:mb-3 text-gray-900">
+                  <h2 className="text-[15px] sm:text-lg font-semibold mb-1 sm:mb-3 text-gray-900">
                     {data.title}
-                  </h3>
+                  </h2>
 
                   <p className="leading-relaxed text-black text-sm lg:text-[16px] flex-grow">
                     {data.description}
@@ -153,10 +153,10 @@ const LastSliderSlick: React.FC = () => {
 
                       {/* CONTENT */}
                       <div className="px-1 py-4 sm:p-6 flex flex-col flex-grow">
-                        <h3 className={`text-[15px] sm:text-lg font-semibold mb-1 sm:mb-3 group-hover:text-white ${isActive ? "text-white" : "text-gray-900"
+                        <h2 className={`text-[15px] sm:text-lg font-semibold mb-1 sm:mb-3 group-hover:text-white ${isActive ? "text-white" : "text-gray-900"
                           }`}>
                           {data.title}
-                        </h3>
+                        </h2>
 
                         <p className="leading-relaxed text-black text-sm lg:text-[16px] group-hover:text-white flex-grow">
                           {data.description}

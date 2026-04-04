@@ -138,7 +138,7 @@ const ApprovalsSlider = () => {
                       <div key={item.id} className="relative px-3 pb-[135px]">
                         <div className="bg-white shadow-lg shadow-gray-400/40 rounded-2xl p-10 flex flex-col items-center text-center min-h-[400px] sm:min-h-[450px] md:min-h-[520px] xl:min-h-[450px] transition-all duration-300">
                           <img src={item.logo} alt={item.title} className="h-20 object-contain mb-4" />
-                          <h3 className="text-lg font-bold text-center text-gray-800 mb-1">{item.title}</h3>
+                          <h2 className="text-lg font-bold text-center text-gray-800 mb-1">{item.title}</h2>
                           <p className="text-gray-800 text-lg mb-3">{item.subtitle}</p>
                           <p className="text-gray-700 text-md pb-10 mb-6">{item.description}</p>
                           <div className="absolute bottom-45">
@@ -219,7 +219,7 @@ const ApprovalsSlider = () => {
                       <div className="relative pb-[135px]">
                         <div className="bg-white shadow-lg shadow-gray-400/40 rounded-2xl p-10 flex flex-col items-center text-center min-h-[400px] sm:min-h-[450px] md:min-h-[520px] xl:min-h-[450px] transition-all duration-300">
                           <img src={item.logo} alt={item.title} className="h-20 object-contain mb-4" />
-                          <h3 className="text-lg font-bold text-center text-gray-800 mb-1">{item.title}</h3>
+                          <h2 className="text-lg font-bold text-center text-gray-800 mb-1">{item.title}</h2>
                           <p className="text-gray-800 text-lg mb-3">{item.subtitle}</p>
                           <p className="text-gray-700 text-md pb-10 mb-6">{item.description}</p>
                           <div className="absolute bottom-45">

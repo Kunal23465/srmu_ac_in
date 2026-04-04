@@ -25,11 +25,11 @@ const BlogCard: React.FC<BlogCardProps> = ({ card }) => {
             </svg>
             {card.postedOn}
           </p>
-          <h3 className="text-sm sm:text-[20px] fw600 text-black mb-3  cursor-pointer flex-grow">
+          <h2 className="text-sm sm:text-[20px] fw600 text-black mb-3  cursor-pointer flex-grow">
             <Link state={{ data: card }} to={blogPath}>
               {card.title}
             </Link>
-          </h3>
+          </h2>
 
           <div className="mt-auto">
             <Link

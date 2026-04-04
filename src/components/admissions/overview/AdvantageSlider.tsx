@@ -68,10 +68,10 @@
 //             >
 //               <div className="flex gap-3 items-start">
 //                 <img src={item.icon} alt={item.title} className="h-10 md:h-12" />
-//                 <h3 className="text-xl md:text-2xl font-normal leading-snug">
+//                 <h2 className="text-xl md:text-2xl font-normal leading-snug">
 //                   {item.title} <br />
 //                   <span className="font-semibold text-xl md:text-2xl">{item.subtitle}</span>
-//                 </h3>
+//                 </h2>
 //               </div>
 
 //               <div className="mt-4 text-sm md:text-base leading-relaxed">
@@ -173,10 +173,10 @@
 //                 <div className="bg-white text-black p-6 md:p-8 shadow-xl rounded-xl h-full">
 //                   <div className="flex gap-3 items-start">
 //                     <img src={item.icon} alt={item.title} className="h-10 md:h-12" />
-//                     <h3 className="text-xl md:text-2xl font-normal leading-snug">
+//                     <h2 className="text-xl md:text-2xl font-normal leading-snug">
 //                       {item.title} <br />
 //                       <span className="font-semibold text-xl md:text-2xl">{item.subtitle}</span>
-//                     </h3>
+//                     </h2>
 //                   </div>
 
 //                   <div className="mt-4 text-sm md:text-base leading-relaxed">
@@ -268,7 +268,7 @@ const AdvantageSlider: React.FC = () => {
           ${index >= maxIndex ? "opacity-50 cursor-not-allowed" : "hover:bg-[#ffb703]"}`}
         disabled={index >= maxIndex}
       >
-        › 
+        ›
       </button>
     </div>
   );
@@ -278,7 +278,7 @@ const AdvantageSlider: React.FC = () => {
 
   return (
     <div className="w-full color_background_blue text-white py-12 md:py-16 px-4 md:px-6">
-        <div className={`${Classes["container"]}`}>
+      <div className={`${Classes["container"]}`}>
         {/* Heading + Buttons */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 md:mb-12 gap-4">
           <div className="">
@@ -304,10 +304,10 @@ const AdvantageSlider: React.FC = () => {
                 <div className="bg-white text-black p-6 md:p-8 shadow-xl rounded-xl h-full">
                   <div className="flex gap-3 items-start">
                     <img src={item.icon} alt={item.title} className="h-10 md:h-12" />
-                    <h3 className="lg:text-[22px] md:text-[20.625px] text-[19.25px] sm:text-[19.25px] leading-snug">
+                    <h2 className="lg:text-[22px] md:text-[20.625px] text-[19.25px] sm:text-[19.25px] leading-snug">
                       {item.title} <br />
                       <span className="lg:text-[22px] md:text-[20.625px] text-[19.25px] sm:text-[19.25px] fw500">{item.subtitle}</span>
-                    </h3>
+                    </h2>
                   </div>
 
                   <div className="mt-4 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] leading-relaxed">
@@ -320,7 +320,7 @@ const AdvantageSlider: React.FC = () => {
                 </div>
               </div>
             ))}
-          </div> 
+          </div>
         </div>
       </div>
     </div>

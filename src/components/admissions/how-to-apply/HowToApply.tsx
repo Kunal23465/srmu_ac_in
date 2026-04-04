@@ -150,7 +150,7 @@ const HowToApply: React.FC = () => {
                     <div key={item.id} className="px-3">
                       <div className="p-7 pb-5 h-100 lg:h-120 xl:h-100 w-full hover:text-white transition-all duration-300 hover:bg-[#0f4a85] border border-gray-200 rounded-xl">
                         <img src={item.img} alt={item.title} className="rounded-xl object-cover h-[85%] w-full mb-4" />
-                        <h3 className="text-2xl font-medium mb-1">{item.title}</h3>
+                        <h2 className="text-2xl font-medium mb-1">{item.title}</h2>
                       </div>
                     </div>
                   ))}
@@ -169,7 +169,7 @@ const HowToApply: React.FC = () => {
                       >
                         <div className="p-7 pb-5 h-100 lg:h-120 xl:h-100 w-full hover:text-white transition-all duration-300 hover:bg-[#0f4a85] border border-gray-200 rounded-xl">
                           <img src={item.img} alt={item.title} className="rounded-xl object-cover h-[85%] w-full mb-4" />
-                          <h3 className="text-2xl font-medium mb-1">{item.title}</h3>
+                          <h2 className="text-2xl font-medium mb-1">{item.title}</h2>
                         </div>
                       </div>
                     ))}

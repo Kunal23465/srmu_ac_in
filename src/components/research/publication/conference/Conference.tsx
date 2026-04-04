@@ -149,7 +149,7 @@ const Conference: React.FC = () => {
                     <img src={facility.img} alt={facility.title} className="w-full h-[200px] object-cover rounded-t-xl mb-4" />
 
                     <div className="h-[500px] overflow-y-auto faculty-card-scrollbar p-8">
-                      <h3 className="text-[#0f4a85] lg:text-[24px] md:text-[21.585px] sm:text-[18.975px] text-[18.975px] fw500 mb-2">{facility.title}</h3>
+                      <h2 className="text-[#0f4a85] lg:text-[24px] md:text-[21.585px] sm:text-[18.975px] text-[18.975px] fw500 mb-2">{facility.title}</h2>
 
                       <p className="bg-amber-400 text-[#0f4a85] lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px] w-fit rounded-2xl px-3 py-1 mb-4">{facility.date}</p>
 
@@ -236,7 +236,7 @@ const Conference: React.FC = () => {
                     <img src={facility.img} alt={facility.title} className="w-full h-[200px] object-cover rounded-t-xl mb-4" />
 
                     <div className="h-[500px] overflow-y-auto faculty-card-scrollbar p-8">
-                      <h3 className="text-[#0f4a85] lg:text-[24px] md:text-[21.585px] sm:text-[18.975px] text-[18.975px] fw500 mb-2">{facility.title}</h3>
+                      <h2 className="text-[#0f4a85] lg:text-[24px] md:text-[21.585px] sm:text-[18.975px] text-[18.975px] fw500 mb-2">{facility.title}</h2>
 
                       <p className="bg-amber-400 text-[#0f4a85] lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px] w-fit rounded-2xl px-3 py-1 mb-4">{facility.date}</p>
 

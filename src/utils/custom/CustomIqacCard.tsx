@@ -94,7 +94,7 @@ const CustomIqacCard: React.FC<IqacCardProps> = ({ title, icon, description, col
                 {/* Icon and Title Section */}
                 <div className="flex flex-col items-center justify-center w-full">
                     {icon && <img src={icon} alt={title} className="w-auto h-auto mb-2 object-cover" />}
-                    <h3 className=" text-white text-2xl text-center w-full max-w-40 mx-auto mt-5">{title}</h3>
+                    <h2 className=" text-white text-2xl text-center w-full max-w-40 mx-auto mt-5">{title}</h2>
                 </div>
 
                 {/* Hover Content */}
@@ -109,7 +109,7 @@ const CustomIqacCard: React.FC<IqacCardProps> = ({ title, icon, description, col
                after:content-[''] after:absolute after:-bottom-5 after:left-0 after:right-0"
                 >
 
-                    <h3 className="font-semibold text-[#ffb703] text-xl text-center">{title}</h3>
+                    <h2 className="font-semibold text-[#ffb703] text-xl text-center">{title}</h2>
 
                     {/* Description Section */}
                     <div className="p-4 text-center text-gray-700 max-h-72 overflow-hidden">

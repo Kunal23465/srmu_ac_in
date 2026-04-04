@@ -14,7 +14,7 @@ const TypesOfGrievance: React.FC<TypesOfGrievanceProps> = ({ data }) => {
 
          
 
-            <h3 className="text-[#ffb703] font-medium text-lg mb-2">{data.objectivesTitle}</h3>
+            <h2 className="text-[#ffb703] font-medium text-lg mb-2">{data.objectivesTitle}</h2>
 {/* @ts-ignore */}
             <ul className="space-y-3 list-none pl-0 !list-none !pl-0">
                 {data.objectivesList.map((obj, idx) => (

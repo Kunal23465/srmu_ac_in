@@ -115,7 +115,7 @@ const ConferencesSection: React.FC = () => {
             >
               <img src={card.image} alt={card.title} className="w-full h-56 object-cover" />
               <div className="p-5 text-left">
-                <h3 className=" lg:text-[1.125rem] sm:text-[16.875px] text-[16.875px] fw500 color_light_blue mb-1 mt-4">{card.title}</h3>
+                <h2 className=" lg:text-[1.125rem] sm:text-[16.875px] text-[16.875px] fw500 color_light_blue mb-1 mt-4">{card.title}</h2>
                 <span className="lg:text-[.875rem] sm:text-[12.25px] text-[12.25px] text-[#ffb703]">{card.date}</span>
                 <span className="text-gray-600 text-[14px] lg:text-[15px] md:text-[14px] sm:text-[13.132px] text-[13.132px]line-clamp-3 mt-2 mb-4">
                   {" "}

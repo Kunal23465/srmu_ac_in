@@ -146,9 +146,9 @@ const TabContent: React.FC<TabContentProps> = ({ data }) => {
                       />
                       <div className="p-4">
                         {/* Title */}
-                        <h3 className="text-[#0f4a85] lg:text-[22px] md:text-[20.625px] text-[19.25px] sm:text-[19.25px] font-semibold pb-1">
+                        <h2 className="text-[#0f4a85] lg:text-[22px] md:text-[20.625px] text-[19.25px] sm:text-[19.25px] font-semibold pb-1">
                           {item.title}
-                        </h3>
+                        </h2>
 
                         {/* PDF Button */}
                         <a
@@ -219,9 +219,9 @@ const TabContent: React.FC<TabContentProps> = ({ data }) => {
                     />
                     <div className="p-4">
                       {/* Title */}
-                      <h3 className="text-[#0f4a85] lg:text-[22px] md:text-[20.625px] text-[19.25px] sm:text-[19.25px] font-semibold pb-1">
+                      <h2 className="text-[#0f4a85] lg:text-[22px] md:text-[20.625px] text-[19.25px] sm:text-[19.25px] font-semibold pb-1">
                         {item.title}
-                      </h3>
+                      </h2>
 
                       {/* PDF Button */}
                       <a

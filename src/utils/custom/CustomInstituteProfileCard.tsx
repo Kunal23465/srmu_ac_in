@@ -44,7 +44,7 @@ const CustomInstituteProfileCard: React.FC<CustomInstituteProfileCardProps> = ({
               {profile.summary && <p className="mb-6 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] max-w-full md:max-w-3xl">{formatBold(profile.summary)}</p>}
 
               {/* CARD DETAILS SECTION */}
-              {profile.detailsHeading && <h3 className="font-bold text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] text-[18px] mb-2">{profile.detailsHeading}</h3>}
+              {profile.detailsHeading && <h2 className="font-bold text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] text-[18px] mb-2">{profile.detailsHeading}</h2>}
 
               {profile.useBullets ? (
                 <ul className="list-disc text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] pl-5 space-y-1 mb-6">

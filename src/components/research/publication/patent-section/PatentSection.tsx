@@ -107,9 +107,9 @@ const PatentSection: React.FC = () => {
                       <img src={item.image} alt={item.title} className="w-full h-70 object-cover" />
 
                       <div className="p-6">
-                        <h3 className="lg:text-[26px] md:text-[24.375px] sm:text-[22.75px] text-[22.75px] font-bold text-[#0f4a85] mb-4">
+                        <h2 className="lg:text-[26px] md:text-[24.375px] sm:text-[22.75px] text-[22.75px] font-bold text-[#0f4a85] mb-4">
                           {item.title}
-                        </h3>
+                        </h2>
 
                         <a
                           href={item.pdfUrl}
@@ -172,9 +172,9 @@ const PatentSection: React.FC = () => {
                       <img src={item.image} alt={item.title} className="w-full h-70 object-cover" />
 
                       <div className="p-6">
-                        <h3 className="lg:text-[26px] md:text-[24.375px] sm:text-[22.75px] text-[22.75px] font-bold text-[#0f4a85] mb-4">
+                        <h2 className="lg:text-[26px] md:text-[24.375px] sm:text-[22.75px] text-[22.75px] font-bold text-[#0f4a85] mb-4">
                           {item.title}
-                        </h3>
+                        </h2>
 
                         <a
                           href={item.pdfUrl}

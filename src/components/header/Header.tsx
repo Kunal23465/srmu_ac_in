@@ -140,11 +140,11 @@ const Header = () => {
                                       return (
                                         <div key={type.programFlagId}>
                                           {/* BLUE HEADING */}
-                                          <h3 className="font-medium text-[17px] p-3 rounded-lg inline-block hover:bg-[#ffb703] text-[#0f4a85] hover:text-black">
+                                          <h2 className="font-medium text-[17px] p-3 rounded-lg inline-block hover:bg-[#ffb703] text-[#0f4a85] hover:text-black">
                                             <Link onClick={() => setShowMegaMenu(false)} to={getProgramFlagRoutePath(type)} state={{ programTypeId: type.programFlagId }}>
                                               {type.programFlagName}
                                             </Link>
-                                          </h3>
+                                          </h2>
                                           <ul className="mt-2 list-none!">
                                             {type.programFlagId === 7
                                               ? // CASE 1: programs
@@ -279,7 +279,7 @@ const Header = () => {
                                 .map((type) => {
                                   return (
                                     <div key={type.programFlagId}>
-                                      <h3 className="font-medium text-sm p-2 rounded-lg bg-gray-100 text-[#0f4a85] border-b border-gray-300">
+                                      <h2 className="font-medium text-sm p-2 rounded-lg bg-gray-100 text-[#0f4a85] border-b border-gray-300">
                                         <Link
                                           to={getProgramFlagRoutePath(type)}
                                           state={{ programTypeId: type.programFlagId }}
@@ -288,7 +288,7 @@ const Header = () => {
                                         >
                                           {type.programFlagName}
                                         </Link>
-                                      </h3>
+                                      </h2>
                                       <ul className="ml-2 mt-1 space-y-1 list-none!">
                                         {type.programFlagId === 7
                                           ? // CASE 1: programs (only for id 7)

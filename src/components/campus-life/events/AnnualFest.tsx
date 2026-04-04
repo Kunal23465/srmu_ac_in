@@ -95,9 +95,9 @@ const AnnualFest: React.FC = () => {
                     {/* LEFT COLUMN */}
                     <div className="max-w-[400px] xl:max-w-[430px] md:mx-0 mx-auto text-center md:text-left">
 
-                        <h3 className="lg:text-[2.5rem]  text-left text-[28px] sm:text-[28px]  fw500 mb-4">
+                        <h2 className="lg:text-[2.5rem]  text-left text-[28px] sm:text-[28px]  fw500 mb-4">
                             {data.title}
-                        </h3>
+                        </h2>
 
                         <p className="text-white lg:text-[15px] md:text-[14px] sm:text-[13.132px] text-[13.132px] leading-relaxed mb-6 block text-justify md:text-left">
                             {data.description}

@@ -21,7 +21,7 @@ const CardSlider: React.FC<CardSliderProps> = ({ imageUrl, title, description, c
                 />
             </div>
             <div className="p-6">
-                <h3 className="lg:text-[22px] sm:text-[19.5px] text-[19.5px] md:text-[20.625px]  fw500 text-[#0f4a85] mb-3">{title}</h3>
+                <h2 className="lg:text-[22px] sm:text-[19.5px] text-[19.5px] md:text-[20.625px]  fw500 text-[#0f4a85] mb-3">{title}</h2>
                 <span className=" leading-relaxed font-thin text-[15px] lg:text-[16px] md:text-[15px] sm:text-[15px] text-black" dangerouslySetInnerHTML={{ __html: description }}></span>
             </div>
         </div>

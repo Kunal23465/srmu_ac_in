@@ -16,7 +16,7 @@ const MandatoryDisclouserPage: React.FC = () => {
       <div className={`${Classes["container"]}`}>
         <CustomOverviewSection data={mandatoryDisclousertOverviewData} />
         <div className="py-7 md:py-10 lg:py-14">
-          <h3 className="font-semibold text-[24px] xl:text-[28px]">Standard Inspection Form – Institute of Pharmacy</h3>
+          <h2 className="font-semibold text-[24px] xl:text-[28px]">Standard Inspection Form – Institute of Pharmacy</h2>
           <p className="text-lg  mb-2">
             The Standard Inspection Form of the Institute of Pharmacy, as prescribed by the concerned regulatory authority, is available for public reference.
           </p>

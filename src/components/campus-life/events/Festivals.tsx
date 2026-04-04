@@ -80,7 +80,7 @@ const Festivals: React.FC = () => {
       <div className="max-w-7xl mx-auto py-12 px-4 md:px-0">
         <div className="flex flex-col md:flex-row md:justify-between gap-4">
           <div>
-            <h3 className="lg:text-[1.75rem] text-[24.5px] sm:text-[24.5px] md:text-2xl pb-3 sm:pb-5 font-bold text-[#002D62]">{activeFestival.name}</h3>
+            <h2 className="lg:text-[1.75rem] text-[24.5px] sm:text-[24.5px] md:text-2xl pb-3 sm:pb-5 font-bold text-[#002D62]">{activeFestival.name}</h2>
             <p className="leading-relaxed w-full md:w-3/4 xl:w-[65%] whitespace-pre-line text-justify lg:text-[15px] md:text-[14px] sm:text-[13.132px] text-[13.132px]">
               {activeFestival.description}
             </p>

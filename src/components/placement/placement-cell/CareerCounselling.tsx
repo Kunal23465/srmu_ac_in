@@ -118,9 +118,9 @@ const CareerCounselling: React.FC = () => {
                         className="w-full h-full object-cover"
                       />
 
-                      <h3 className="absolute bottom-5 polygon_bg w-full text-xl text-white bg-black/60 p-4 font-medium">
+                      <h2 className="absolute bottom-5 polygon_bg w-full text-xl text-white bg-black/60 p-4 font-medium">
                         {item.name}
-                      </h3>
+                      </h2>
                     </div>
                   </div>
                 </div>
@@ -174,13 +174,13 @@ const CareerCounselling: React.FC = () => {
                         transition-transform duration-500 group-hover:scale-105"
                       />
 
-                      <h3
+                      <h2
                         className="absolute bottom-5 polygon_bg w-full 
                         text-xl text-white bg-black/60 p-4 font-medium 
                         transition-opacity duration-300 group-hover:opacity-0"
                       >
                         {item.name}
-                      </h3>
+                      </h2>
 
                       <div
                         className="absolute inset-0 m-2 p-5 flex justify-center 
@@ -189,7 +189,7 @@ const CareerCounselling: React.FC = () => {
                         opacity-0 group-hover:opacity-100 
                         transition-all duration-700 rounded-xl"
                       >
-                        <h3 className="text-xl font-bold text-center">{item.name}</h3>
+                        <h2 className="text-xl font-bold text-center">{item.name}</h2>
                       </div>
                     </div>
                   </div>
