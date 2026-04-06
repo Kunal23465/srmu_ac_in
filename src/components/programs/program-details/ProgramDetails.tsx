@@ -30,6 +30,7 @@ import PageNotFound from "../../../pages/PageNotFound";
 import { resolveProgramRouteSlug } from "../../../utils/legacyProgramRoutes";
 import SeoHead from "../../seo/SeoHead";
 import { DEFAULT_SOCIAL_IMAGE, SITE_NAME, buildCanonicalUrl, stripHtml } from "../../../utils/seo";
+import CustomEligibilitySection from "../../../utils/custom/CustomEligibilitySection";
 
 const ProgramDetailsLoader = () => (
   <div className="mt-20 min-h-[60vh]">
@@ -274,7 +275,7 @@ const ProgramDetails: React.FC = () => {
           </div>
           <Counter counterData={convertedCounterData} />
           {/* @ts-ignore */}
-          {/* <CustomEligibilitySection data={dataByID?.eligibility} /> */}
+          <CustomEligibilitySection data={dataByID?.eligibility} />
         </div>
         <div className="bg-[#ecf0f9] pb-10">
           <CustomDepartmentSlider
