@@ -8,7 +8,6 @@ import AryenduImg from "../../../../assets/images/academics/departments/prof-ary
 import PCMishraImg from "../../../../assets/images/academics/departments/dr.-p.c.-mishra-11zon-27022411543322.webp";
 import DefaultImg from "../../../../assets/images/academics/departments/default-img.webp";
 
-
 import img1 from "../../../../assets/images/academics/departments/whatsapp-image-2022-05-23-at-11.30.28-am-1--23022412570798.webp";
 import img2 from "../../../../assets/images/academics/departments/workshop4-09052412404740.webp";
 import img3 from "../../../../assets/images/academics/departments/guest5-09052412400851.webp";
@@ -18,7 +17,6 @@ import img6 from "../../../../assets/images/academics/departments/workship2-0905
 import img7 from "../../../../assets/images/academics/departments/mootcourt-06022404053661.webp";
 import img8 from "../../../../assets/images/academics/departments/514x520-23022412510691.webp";
 import img9 from "../../../../assets/images/academics/departments/seminarhall-23022412514392.webp";
-
 
 import { Headers, Student } from "../../../../utils/custom/CustomPlacedStudentTable";
 
@@ -41,8 +39,6 @@ export const InstituteofLegalStudiesCounterData1: counterDataType[] = [
   { id: 2, value: "39", suffix: "", label: "Faculty & Staff" },
   { id: 3, value: "1100", suffix: "", label: "Students" },
 ];
-
-
 
 export const InstituteofLegalStudiesCounterData2 = {
   counterData: [
@@ -92,21 +88,22 @@ export const InstituteofLegalStudiesVMData = [
     bgColor: "#FFF2D2",
     img: vision,
     heading: "Vision",
-    points: ["To provide excellent law data base, teaching and learning of law to develop in the students, research scholars a sense of responsibility to serve the society by developing skills in advocacy, judicial services and other legal services."],
+    points: [
+      "To provide excellent law data base, teaching and learning of law to develop in the students, research scholars a sense of responsibility to serve the society by developing skills in advocacy, judicial services and other legal services.",
+    ],
   },
 ];
-
 
 export const InstituteofLegalStudiesData1: FeeTableData = {
   columns: ["COURSES", "DURATION", "ELIGIBILITY CRITERIA", "COURSE FEES (PA)"],
   rows: [
     {
-      course: "MB.A. + LL.B. (Hons.)",
+      course: "B.A. + LL.B. (Hons.)",
       duration: "5 Years",
       eligibility: "Click",
       fee: "Rs. 90,000/-",
       eligibilityContent: `
-            <h2 class='font-bold text-lg mb-3  flex justify-center '>MB.A. + LL.B. (Hons.)</h2>
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>B.A. + LL.B. (Hons.)</h2>
             <p>Candidates must have passed Graduation in any stream from any recognised University or AICTE recognised Institute/ College with minimum aggregate marks of 45% or CGPA of 5.0 for Gen/ OBC category and 40% marks or CGPA of 4.5 for SC/ ST Category.</p>
         `,
     },
@@ -204,11 +201,8 @@ export const InstituteofLegalStudiesData3: FeeTableData = {
             <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/State Board in any stream with minimum aggregate marks of 45% or equivalent grade for GEN/OBC and 40% marks or equivalent grade for SC/ST Category.</p>
         `,
     },
-  ]
+  ],
 };
-
-
-
 
 export const InstituteofLegalStudiesfacultyData: FacultyItem[] = [
   {
@@ -479,10 +473,10 @@ export const InstituteofLegalStudiesdepartmentHighlights: departmentHighlightsca
   {
     image: depSlide7,
     title: "Virtual national moot court competition",
-    description: "Graced by the presence of eminent judges and practitioners, this competition provided students with opportunities to learn about different areas of law, court procedure, and legal argumentation.",
+    description:
+      "Graced by the presence of eminent judges and practitioners, this competition provided students with opportunities to learn about different areas of law, court procedure, and legal argumentation.",
   },
 ];
-
 
 export const tableHeaders: Headers = {
   name: "NAME OF STUDENT",
@@ -494,8 +488,6 @@ export const InstituteofLegalStudiesplacedStudents: Student[] = [
   { name: "Surabhi Pandey", program: "B.A. + LL.B. (Hons.)", company: "Legal brains" },
   { name: "Anshika Mani Tripathi", program: "B.A. + LL.B. (Hons.)", company: "Legal brains" },
 ];
-
-
 
 export const InstituteofLegalStudiesDepartmentEventsData: EventItem[] = [
   {
