@@ -81,7 +81,7 @@ const NotableAlumniSection = () => {
 
         <div className="flex justify-center mt-8">
           <Link
-            to="/placements/notable-alumni"
+            to="/notable-alumni"
             className="
               bg-[#ffb703]
               hover:bg-[#0f4a85]

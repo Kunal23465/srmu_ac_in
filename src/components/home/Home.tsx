@@ -24,17 +24,20 @@ const Home: React.FC = () => {
     <div>
       <Banner />
       <MemorialCollege />
-      <Apply />
       <DeferredSection minHeight={720} eagerOnIdle rootMargin="180px 0px" fallback={renderSectionFallback(720)}>
         <Suspense fallback={renderSectionFallback(720)}>
           <ProgramsSectionStatic />
         </Suspense>
       </DeferredSection>
+      <Apply />
+
       <DeferredSection minHeight={460} rootMargin="220px 0px" fallback={renderSectionFallback(460)}>
         <Suspense fallback={renderSectionFallback(460)}>
           <InnovationCulture />
         </Suspense>
       </DeferredSection>
+
+
       <DeferredSection minHeight={560} rootMargin="260px 0px" fallback={renderSectionFallback(560)}>
         <Suspense fallback={renderSectionFallback(560)}>
           <Events />
