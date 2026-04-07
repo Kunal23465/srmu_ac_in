@@ -101,7 +101,6 @@ export const CustomInstituteCards: React.FC<CardProps> = ({ institute }) => {
           cursor-pointer transition active:scale-95 whitespace-nowrap shrink-0
           hover:bg-yellow-400 hover:border-yellow-400 flex items-center gap-1 sm:gap-2 justify-center"
           to={institute.path}
-          state={institute.departmentsData}
         >
           <span className="lg:text-[13px] md:text-[12.195px] sm:text-[11.382px] text-[11.382px]">
             MORE INFO

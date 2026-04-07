@@ -87,10 +87,7 @@ const OnlineAdmissionPage = lazyPage(() => import("../pages/Home/OnlineAdmission
 const PrivacyPolicyPage = lazyPage(() => import("../pages/privacy-policy/PrivacyPolicyPage"));
 const DisclaimerPage = lazyPage(() => import("../pages/disclaimer/DisclaimerPage"));
 const TermsAndConditionPage = lazyPage(() => import("../pages/terms-condition/TermsAndConditionPage"));
-const InstituteofBiosciencesandTechnologyPage = lazyPage(() => import("../pages/academics/institutes/institute-department/InstituteofBiosciencesandTechnologyPage"));
-const InstituteofManagementCommerceandEconomicsPage = lazyPage(() => import("../pages/academics/institutes/institute-department/InstituteofManagementCommerceandEconomicsPage"));
 const InstituteofMediaStudiesPage = lazyPage(() => import("../pages/academics/institutes/institute-department/InstituteofMediaStudiesPage"));
-const InstituteofNaturalSciencesandHumanitiesPage = lazyPage(() => import("../pages/academics/institutes/institute-department/InstituteofNaturalSciencesandHumanitiesPage"));
 const InstituteofPharmaceuticalSciencesPage = lazyPage(() => import("../pages/academics/institutes/institute-department/InstituteofPharmaceuticalSciencesPage"));
 const InstituteofAgriculturalSciencesandTechnologyPage = lazyPage(() => import("../pages/academics/institutes/institute-department/InstituteofAgriculturalSciencesandTechnologyPage"));
 const InstituteofLegalStudiesPage = lazyPage(() => import("../pages/academics/institutes/institute-department/InstituteofLegalStudiesPage"));
@@ -718,12 +715,12 @@ export const routes = [
 
       {
         path: "/institute-of-biosciences-and-technology",
-        element: <InstituteofBiosciencesandTechnologyPage />,
+        element: <InstituteDepartmentPage />,
       },
 
       {
         path: "/institute-of-management-commerce-and-economics",
-        element: <InstituteofManagementCommerceandEconomicsPage />,
+        element: <InstituteDepartmentPage />,
 
       },
 
@@ -736,7 +733,7 @@ export const routes = [
 
       {
         path: "/institute-of-natural-sciences-and-humanities",
-        element: <InstituteofNaturalSciencesandHumanitiesPage />,
+        element: <InstituteDepartmentPage />,
 
       },
 

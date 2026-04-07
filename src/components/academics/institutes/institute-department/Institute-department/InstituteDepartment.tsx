@@ -1,26 +1,17 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Classes from "../../../../../utils/styles/Global.module.css";
 import CustomOverviewSection from "../../../../../utils/custom/CustomOverviewSection";
 import CustomInstituteCoursesCard from "../../../../../utils/custom/CustomInstituteCoursesCard";
 import CustomTopFooter from "../../../../../utils/custom/CustomTopFooter";
 import CustomInstitueVissionMissionCard from "../../../../../utils/custom/CustomInstitueVissionMissionCard";
 import CustomInstituteProfileCard from "../../../../../utils/custom/CustomInstituteProfileCard";
-import { useLocation } from "react-router-dom";
-const InstituteDepartment: React.FC = () => {
-  const location = useLocation();
-  const data = location.state;
 
-  // 1️ Save data to sessionStorage whenever it exists
-  useEffect(() => {
-    if (data) {
-      sessionStorage.setItem("institute_prev_data", JSON.stringify(data));
-    }
-  }, [data]);
+interface InstituteDepartmentProps {
+  data?: any;
+}
 
-  // 2️ If state is null, restore previous data
-  const finalData = data || JSON.parse(sessionStorage.getItem("institute_prev_data") || "null");
-
-  if (!finalData) {
+const InstituteDepartment: React.FC<InstituteDepartmentProps> = ({ data }) => {
+  if (!data) {
     return (
       <div className={`${Classes["container"]} py-20`}>
         <h2 className="text-center text-2xl font-semibold">
@@ -33,12 +24,12 @@ const InstituteDepartment: React.FC = () => {
   return (
     <div>
       <div className={`${Classes["container"]}`}>
-        <CustomOverviewSection data={finalData.overviewData} />
-        <CustomInstitueVissionMissionCard data={finalData.visionMissionData} />
+        <CustomOverviewSection data={data.overviewData} />
+        <CustomInstitueVissionMissionCard data={data.visionMissionData} />
       </div>
 
-      {finalData.profileCardData && (
-        <CustomInstituteProfileCard data={finalData.profileCardData} />
+      {data.profileCardData && (
+        <CustomInstituteProfileCard data={data.profileCardData} />
       )}
 
       <div className={`${Classes["container"]}`}>
@@ -47,12 +38,12 @@ const InstituteDepartment: React.FC = () => {
             Our Departments
           </div>
           <div className="w-full md:w-[70%]">
-            <CustomInstituteCoursesCard data={finalData.instituteCourseCardData} />
+            <CustomInstituteCoursesCard data={data.instituteCourseCardData} />
           </div>
         </div>
       </div>
 
-      <CustomTopFooter data={finalData.footerData} />
+      <CustomTopFooter data={data.footerData} />
     </div>
   );
 };
