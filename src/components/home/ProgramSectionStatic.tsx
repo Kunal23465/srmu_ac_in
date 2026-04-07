@@ -94,11 +94,11 @@ const ProgramsSectionStatic: FC = () => {
                   {mobileSlides.map((group, index) => (
                     <div key={index} className="flex-[0_0_100%] grid grid-cols-2 gap-4">
                       {group.map((item, idx) => (
-                        <a key={`${item.name}-${idx}`} href={item.link} target="_blank" rel="noopener noreferrer" className="block">
+                        <Link key={`${item.name}-${idx}`} to={item.link} target="_blank" rel="noopener noreferrer" className="block">
                           <img src={item.img} alt={item.name} loading="lazy" decoding="async" className="w-full h-36 object-cover border-white border-2 rounded-xl" />
 
                           <div className="text-left text-white mt-2 text-xs">{item.name}</div>
-                        </a>
+                        </Link>
                       ))}
                     </div>
                   ))}
@@ -108,11 +108,11 @@ const ProgramsSectionStatic: FC = () => {
               <ul className="grid gap-5 grid-cols-2 md:[grid-template-columns:repeat(auto-fit,minmax(170px,170px))] list-none">
                 {activePrograms.map((item, idx) => (
                   <li key={`${item.name}-${idx}`} className="list-none">
-                    <a href={item.link} rel="noopener noreferrer" className="block overflow-hidden bg-transparent transition-all hover:-translate-y-2 duration-300">
+                    <Link to={item.link} rel="noopener noreferrer" className="block overflow-hidden bg-transparent transition-all hover:-translate-y-2 duration-300">
                       <img src={item.img} alt={item.name} loading="lazy" decoding="async" className="w-full h-40 object-cover border-white border-2 rounded-xl" />
 
                       <div className="text-left text-white mt-4 text-sm sm:text-base">{item.name}</div>
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>

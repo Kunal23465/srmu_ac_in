@@ -131,11 +131,18 @@ export const governingBodyData: Member[] = [
     position: "Pro Chancellor, SRMU, Lucknow–Deva Road",
     image: pooja,
   },
+  
   {
     name: "Prof. (Dr.) Vijay Tiwari",
     title: "(Member)",
     position: "Vice Chancellor, SRMU, Lucknow–Deva Road",
     image: vijaytiwari,
+  },
+   {
+    name: "Prof. (Dr.) Hemendra Sharma",
+    title: "(Registrar)",
+    position: "Registrar, SRMU, Lucknow–Deva Road",
+    image: hemendra,
   },
   {
     name: "Mr. Sachin Agarwal",
@@ -181,6 +188,12 @@ export const executiveCouncilData: Member[] = [
     title: "(Chairman)",
     position: "Vice Chancellor, SRMU, Lucknow–Deva Road",
     image: vijaytiwari,
+  },
+   {
+    name: "Prof. (Dr.) Hemendra Sharma",
+    title: "(Registrar)",
+    position: "Registrar, SRMU, Lucknow–Deva Road",
+    image: hemendra,
   },
   {
     name: "Prof. (Dr.) D. S. Chauhan",

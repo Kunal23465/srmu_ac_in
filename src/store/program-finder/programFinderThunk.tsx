@@ -9,9 +9,16 @@ export interface ProgramFinderParams {
 }
 
 export const fetchAllProgramFinder = createAsyncThunk("data/fetchProgramData", async (params?: ProgramFinderParams) => {
-  const response = await API.get("/academicProgram/programs", {
-    params, // Axios automatically builds query string
-  });
+  const sanitizedParams = Object.fromEntries(
+    Object.entries(params ?? {}).filter(([, value]) => value !== undefined && value !== ""),
+  );
+
+  const response = Object.keys(sanitizedParams).length > 0
+    ? await API.get("/academicProgram/programs", {
+        params: sanitizedParams,
+      })
+    : await API.get("/academicProgram/programs");
+
   return response.data;
 });
 // fetchProgramFinderByID or fetchProgramDetailsById

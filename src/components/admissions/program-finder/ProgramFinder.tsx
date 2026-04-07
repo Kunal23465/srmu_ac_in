@@ -17,18 +17,19 @@ const ProgramFinder: React.FC = () => {
   const { data } = useSelector((state: RootState) => state.getProgramFinder);
   const { programType } = useSelector((state: RootState) => state.getProgramType);
   const { discipline } = useSelector((state: RootState) => state.getDiscipline);
-  const [selectedProgramType, setSelectedProgramType] = useState<string>("");
-  const [selectedDiscipline, setSelectedDiscipline] = useState<string>("");
   const location = useLocation();
-  const pathParts = location.pathname.split("/");
-  const disciplineIdFromState = pathParts[1];
-  const programTypeIdFromState = pathParts[2];
+  const pathParts = location.pathname.split("/").filter(Boolean);
+  const isDynamicProgramFinderRoute = pathParts.length === 2 && pathParts[0] !== "program-finder";
+  const disciplineSlugFromRoute = isDynamicProgramFinderRoute ? pathParts[0] : "";
+  const programTypeSlugFromRoute = isDynamicProgramFinderRoute ? pathParts[1] : "";
+  const [selectedProgramType, setSelectedProgramType] = useState<string>(programTypeSlugFromRoute);
+  const [selectedDiscipline, setSelectedDiscipline] = useState<string>(disciplineSlugFromRoute);
   const [searchTerm, setSearchTerm] = useState("");
   const [debouncedSearch, setDebouncedSearch] = useState("");
 
-  const selectedProgramTypeObj = programType?.find((pt) => pt.programTypeId == selectedProgramType);
+  const selectedProgramTypeObj = programType?.find((pt) => pt.slug === selectedProgramType);
 
-  const selectedDisciplineObj = discipline?.find((d) => d.programDisciplineId == selectedDiscipline);
+  const selectedDisciplineObj = discipline?.find((d) => d.slug === selectedDiscipline);
 
   const introDescription = selectedDisciplineObj?.description || selectedProgramTypeObj?.description || "";
 
@@ -49,18 +50,15 @@ const ProgramFinder: React.FC = () => {
       Fetch Program List
      =========================== */
   useEffect(() => {
-    if (!selectedProgramType && !selectedDiscipline && !debouncedSearch && data.length > 0) {
-      return;
-    }
+    const trimmedSearch = debouncedSearch.trim();
+    const params = {
+      ...(selectedProgramType ? { programTypeSlug: selectedProgramType } : {}),
+      ...(selectedDiscipline ? { programDisciplineSlug: selectedDiscipline } : {}),
+      ...(trimmedSearch ? { name: trimmedSearch } : {}),
+    };
 
-    dispatch(
-      fetchAllProgramFinder({
-        programTypeSlug: selectedProgramType || undefined,
-        programDisciplineSlug: selectedDiscipline || undefined,
-        name: debouncedSearch || undefined,
-      }),
-    );
-  }, [dispatch, selectedProgramType, selectedDiscipline, debouncedSearch]);
+    dispatch(fetchAllProgramFinder(Object.keys(params).length > 0 ? params : undefined));
+  }, [debouncedSearch, dispatch, selectedDiscipline, selectedProgramType]);
 
   /* ===========================
       Initial Load
@@ -88,11 +86,9 @@ const ProgramFinder: React.FC = () => {
       From Route State
      =========================== */
   useEffect(() => {
-    if (programTypeIdFromState || disciplineIdFromState) {
-      if (programTypeIdFromState) setSelectedProgramType(programTypeIdFromState);
-      if (disciplineIdFromState) setSelectedDiscipline(disciplineIdFromState);
-    }
-  }, [programTypeIdFromState, disciplineIdFromState]);
+    setSelectedProgramType(programTypeSlugFromRoute);
+    setSelectedDiscipline(disciplineSlugFromRoute);
+  }, [disciplineSlugFromRoute, programTypeSlugFromRoute]);
   return (
     <>
       <div className={`${Classes.container} mt-16`}>
