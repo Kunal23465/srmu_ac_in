@@ -35,7 +35,7 @@ export default function InnovationCulture() {
           </div>
 
           <Link
-            to="/research"
+            to="/research-overview"
             className="inline-flex items-center cursor-pointer mt-4 sm:mt-8 gap-2 bg-[#ffb703] text-[#023047] fw500 uppercase py-3 px-8 rounded-xl transition border border-[#ffb703] hover:bg-transparent hover:text-[#ffb703]"
           >
             Know More <LiaLongArrowAltRightSolid size={24} />

@@ -6,7 +6,7 @@ const InstituteDepartmentPage: React.FC = () => {
     <div>
       {/* {pathname === "/institute-of-technology" ? (
         <> */}
-
+          
           <InstituteDepartment />
         {/* </>
       ) : (
