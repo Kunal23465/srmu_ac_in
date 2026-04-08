@@ -289,6 +289,12 @@ export const academicCouncilData: Member[] = [
     image: vijaytiwari,
   },
   {
+    name: "Prof. (Dr.) Hemendra Sharma",
+    title: "(Registrar)",
+    position: "Registrar, SRMU, Lucknow–Deva Road",
+    image: hemendra,
+  },
+  {
     name: "Prof. (Dr.) Pragati Kumar",
     title: "(Nominated Member)",
     position: "Vice Chancellor, SMVDU, J&K",
@@ -444,10 +450,5 @@ export const academicCouncilData: Member[] = [
     position: "Asst. Prof., MCE & Coordinator, Acad., SRMU, Lucknow–Deva Road",
     image: amittrivedi,
   },
-  {
-    name: "Prof. (Dr.) Neerja Jindal",
-    title: "(Member Secretary)",
-    position: "Registrar, SRMU, Lucknow–Deva Road",
-    image: neerja,
-  },
+  
 ];
