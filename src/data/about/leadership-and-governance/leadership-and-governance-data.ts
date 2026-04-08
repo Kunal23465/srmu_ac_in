@@ -2,7 +2,7 @@ import pankaj from "../../../assets/images/about/leadershipGovernance/pankaj.web
 import pooja from "../../../assets/images/about/leadershipGovernance/pooja.webp";
 import vijaytiwari from "../../../assets/images/about/leadershipGovernance/vijaytiwari.webp";
 import dixit from "../../../assets/images/about/leadershipGovernance/dixit.webp";
-import neerja from "../../../assets/images/about/leadershipGovernance/neerja.webp";
+// import neerja from "../../../assets/images/about/leadershipGovernance/neerja.webp";
 import hemendra from "../../../assets/images/about/leadershipGovernance/Hemendra.webp";
 import ritu from "../../../assets/images/about/leadershipGovernance/ritu.webp";
 import jaiswal from "../../../assets/images/about/leadershipGovernance/jaiswal.webp";
@@ -174,12 +174,12 @@ export const governingBodyData: Member[] = [
     position: "Finance Officer, SRMU, Lucknow–Deva Road",
     image: jaiswal,
   },
-  {
-    name: "Prof. (Dr.) Neerja Jindal",
-    title: "(Member Secretary)",
-    position: "Registrar, SRMU, Lucknow–Deva Road",
-    image: neerja,
-  },
+  // {
+  //   name: "Prof. (Dr.) Neerja Jindal",
+  //   title: "(Member Secretary)",
+  //   position: "Registrar, SRMU, Lucknow–Deva Road",
+  //   image: neerja,
+  // },
 ];
 
 export const executiveCouncilData: Member[] = [
