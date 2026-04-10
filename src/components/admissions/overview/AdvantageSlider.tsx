@@ -49,7 +49,7 @@
 //         {/* Heading + Buttons */}
 //         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 md:mb-12 gap-4">
 //           <div className="max-w-4xl">
-//             <h1 className="text-3xl md:text-5xl font-bold leading-tight">SRMU Advantage</h1>
+//             <h2 className="text-3xl md:text-5xl font-bold leading-tight">SRMU Advantage</h2>
 //             <p className="mt-3 text-sm md:text-lg opacity-100 font-light">
 //               SRMU builds the visionary leaders of tomorrow, promising holistic development,
 //               and the stepping stones to global success.
@@ -147,7 +147,7 @@
 //         {/* Heading */}
 //         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 md:mb-12 gap-4">
 //           <div className="max-w-4xl">
-//             <h1 className="text-3xl md:text-5xl font-bold leading-tight">SRMU Advantage</h1>
+//             <h2 className="text-3xl md:text-5xl font-bold leading-tight">SRMU Advantage</h2>
 //             <p className="mt-3 text-sm md:text-lg opacity-100 font-light">
 //               SRMU builds the visionary leaders of tomorrow, promising holistic development,
 //               and the stepping stones to global success.
@@ -282,7 +282,7 @@ const AdvantageSlider: React.FC = () => {
         {/* Heading + Buttons */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 md:mb-12 gap-4">
           <div className="">
-            <h1 className="lg:text-[50px] text-[28px] sm:text-[28px] md:text-[46.875px] fw600 leading-tight">SRMU Advantage</h1>
+            <h2 className="lg:text-[50px] text-[28px] sm:text-[28px] md:text-[46.875px] fw600 leading-tight">SRMU Advantage</h2>
             <p className="mt-3 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px]">
               SRMU builds the visionary leaders of tomorrow, promising holistic development,
               and the stepping stones to global success.

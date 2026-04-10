@@ -5,7 +5,7 @@ import { ScholarshipTableData, ScholarshipTableHeadData } from "../../data/admis
 const CommonUniversityEntranceTest: React.FC = () => {
   return (
     <div className="py-15 px-2 sm:px-0">
-      <h1 className="text-2xl sm:text-5xl pb-2 sm:pb-15 font-medium">Common University Entrance Test</h1>
+      <h2 className="text-2xl sm:text-5xl pb-2 sm:pb-15 font-medium">Common University Entrance Test</h2>
       <div className="flex flex-col sm:flex-row justify-between gap-6">
         <div className="w-full sm:w-xl">
           <p className="text-xl sm:text-2xl font-medium uppercase pb-5 sm:pb-10 ">APPLY FOR 2026</p>

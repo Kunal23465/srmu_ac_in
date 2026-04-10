@@ -17,7 +17,7 @@ const DirectorMessage: React.FC<DirectorMessageProps> = ({ data }) => {
   const [openModal, setOpenModal] = useState(false);
   return (
     <div>
-      <h1 className="lg:text-[30px] mb:text-[27.255px] sm:text-[21.952px] text-[21.952px] mb-3"><strong>{data.title}<br/>{data.titleSibling}</strong></h1>
+      <h2 className="lg:text-[30px] mb:text-[27.255px] sm:text-[21.952px] text-[21.952px] mb-3"><strong>{data.title}<br/>{data.titleSibling}</strong></h2>
       <p className="text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px]  mb-6">{data.content}</p>
       <button
         onClick={() => setOpenModal(true)}

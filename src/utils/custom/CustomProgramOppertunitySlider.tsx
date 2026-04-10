@@ -1,12 +1,16 @@
 import React, { useEffect, useState, useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 export interface OpportunityCard {
   id: number;
   img: string;
   course: string;
   path: string;
+  programName:string;
+  programSlug:string;
+  image:string;
 }
 
 interface CustomProgramOppertunitySliderProps {
@@ -188,17 +192,18 @@ const CustomProgramOppertunitySlider: React.FC<
               >
                 <div className="text-center">
                   <img
-                    src={item.img}
-                    alt={item.course}
+                    src={item.image}
+                    alt={item.programName}
                     className="m-auto border-4 border-amber-400 hover:border-black rounded-full object-cover w-full aspect-square max-w-58 sm:max-w-64 transition-colors duration-300"
                   />
 
-                  <a
-                    href={item.path}
+                  <Link 
+
+                   to={`/program/${item.programSlug}`}
                     className="text-lg block md:text-2xl font-medium text-[#0f4a85] mt-5 hover:underline"
                   >
-                    {item.course}
-                  </a>
+                    {item.programName}
+                  </Link>
                 </div>
               </div>
             ))}

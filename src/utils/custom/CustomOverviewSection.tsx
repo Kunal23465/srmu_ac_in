@@ -17,7 +17,7 @@ const CustomOverviewSection: React.FC<CustomOverviewSectionProps> = ({ data }) =
           className={`w-auto  ${otherData && otherData?.length > 0 ? "md:border-r-4" : " border-l-4 pl-2 md:pl-0 md:border-l-0  md:border-r-5"
             }  border-[#ffb703] flex flex-col justify-start`}
         >
-          <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] text-[#023047] fw500 whitespace-pre-line font-semibold lg:leading-15 pr-4 sm:min-w-[350px] mt-5">{heading}</h2>
+          <h1 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] text-[#023047] fw500 whitespace-pre-line font-semibold lg:leading-15 pr-4 sm:min-w-[350px] mt-5">{heading}</h1>
         </div>
         <div className={`  ${otherData && otherData?.length > 0 ? "" : "md:pl-8 md:py-4"}`}>
           <div className="text-justify lg:pr-30 md:pr-0 sm:pr-0 text-sm lg:text-[16px] md:text-[15px] sm:text-[15px]">

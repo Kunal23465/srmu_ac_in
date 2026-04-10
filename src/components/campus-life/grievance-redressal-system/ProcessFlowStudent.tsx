@@ -24,7 +24,7 @@ const ProcessFlowStudent: React.FC = () => {
         <div className=' bg-[#fff]'>
             <div className={`${Classes["container"]} py-20`}>
 
-                <h1 className='text-black/80 font-semibold text-xl mb-6 xl:text-2xl'>Process Flow For Students</h1>
+                <h2 className='text-black/80 font-semibold text-xl mb-6 xl:text-2xl'>Process Flow For Students</h2>
                 <CustomTabs
                     items={items}
                     activeTextColor="#003049"

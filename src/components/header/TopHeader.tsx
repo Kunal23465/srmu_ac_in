@@ -1,10 +1,8 @@
 import Classes from "../../utils/styles/Global.module.css";
-import { GrSearch } from "react-icons/gr";
 import { IoCallSharp } from "react-icons/io5";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import user from "../../assets/images/home/user-icon.png";
-import search from "../../assets/images/home/searching-icon.png";
 import { FaCaretDown, FaCaretUp } from "react-icons/fa";
 
 const TopHeader: React.FC = () => {
@@ -50,6 +48,7 @@ const TopHeader: React.FC = () => {
           <div className="right-part flex gap-0 items-stretch">
             <Link
               target="_blank"
+             
               to="https://eyojan.srmu.ac.in/"
               className="relative flex items-center text-[13px] text-white gap-x-2 px-[0.7rem] after:absolute after:right-0 after:top-1/2 after:h-[55%] after:w-px after:-translate-y-1/2 after:bg-white"
             >
@@ -60,6 +59,7 @@ const TopHeader: React.FC = () => {
             <Link
               target="_blank"
               to="https://eyojan.srmu.ac.in/"
+           
               className="flex text-[13px] items-center text-white gap-x-5 px-[0.7rem]"
             >
               Staff Login
@@ -78,6 +78,7 @@ const TopHeader: React.FC = () => {
 
             <Link
               target="_blank"
+          
               to="https://studentportal.srmu.ac.in/login"
               className="bg-[#FFB703] hover:bg-white px-4 text-[13px] font-medium uppercase border border-[#ffb703] py-[0.875rem] flex items-center text-black"
             >
@@ -86,6 +87,7 @@ const TopHeader: React.FC = () => {
             <Link
               target="_blank"
               to="https://convocation.srmu.ac.in"
+              rel="nofollow noreferrer"
               className={`${Classes["convocation_blink"]} bg-white hover:bg-[#FFB703] hover:border-[#fff] px-4 text-[13px] font-medium uppercase border border-[#ccc] py-[0.875rem] flex items-center text-black`}
             >
               Convocation 2026
@@ -147,6 +149,7 @@ const TopHeader: React.FC = () => {
               </Link>
               <Link
                 target="_blank"
+                rel="nofollow noreferrer"
                 to="https://convocation.srmu.ac.in"
                 className={`${Classes["convocation_blink"]} bg-white hover:bg-[#FFB703] hover:border-[#fff] px-2 text-[13px] font-medium uppercase border border-[#ccc] py-[0.875rem] flex items-center text-black`}
               >

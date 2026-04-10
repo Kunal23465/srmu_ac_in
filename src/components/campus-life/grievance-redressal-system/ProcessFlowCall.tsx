@@ -24,7 +24,7 @@ const ProcessFlowCall: React.FC = () => {
         <div className='mt-20 bg-[#f1f1f1]'>
             <div className={`${Classes["container"]} py-20`}>
 
-                <h1 className='text-black/80 font-semibold text-xl mb-6 xl:text-2xl'>Process Flow For Call Center Executive</h1>
+                <h2 className='text-black/80 font-semibold text-xl mb-6 xl:text-2xl'>Process Flow For Call Center Executive</h2>
                 <CustomTabs
                     items={items}
                     activeTextColor="#003049"

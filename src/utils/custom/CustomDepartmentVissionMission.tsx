@@ -12,7 +12,7 @@ const CustomDepartmentVissionMission: React.FC<Props> = ({ data }) => {
       <img src={data.img} alt="logo" className="w-[80px] h-[80px] sm:w-[120px] sm:h-[120px] object-contain mb-4" />
 
       {/* Heading */}
-      <h1 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] fw500 mb-0 md:mb-4 text-[#023047]">{data.heading}</h1>
+      <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] fw500 mb-0 md:mb-4 text-[#023047]">{data.heading}</h2>
       {data.description && <h2 className="text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px]">{data.description}</h2>}
       {/* List Items */}
       <ul className="list-disc pl-5 pt-1 sm:pt-2.5 space-y-1 md:space-y-2 text-[#212529] text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] marker:text-[1.8rem]">

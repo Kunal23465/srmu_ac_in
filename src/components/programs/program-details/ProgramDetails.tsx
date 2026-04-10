@@ -228,6 +228,9 @@ const ProgramDetails: React.FC = () => {
     return <ProgramDetailsLoader />;
   }
 
+
+
+  console.log("feesData",feesData)
   return (
     <>
       <SeoHead
@@ -251,7 +254,7 @@ const ProgramDetails: React.FC = () => {
             </Link>
           }
           {/* @ts-ignore */}
-          <h2 className="lg:text-[50px] leading-[1.2] md:text-[46.875px] text-[28px] fw500 text-[#023047]">{dataByID?.name}</h2>
+          <h1 className="lg:text-[50px] leading-[1.2] md:text-[46.875px] text-[28px] fw500 text-[#023047]">{dataByID?.name}</h1>
           {/* @ts-ignore */}
           <p className="text-[#023047] mt-3 leading-[1.2] text-[18px] sm:text-[24px] lg:text-[2rem] fw500">{dataByID?.title}</p>
 
@@ -368,7 +371,8 @@ const ProgramDetails: React.FC = () => {
 
         {!isPhd && (
           <div className={`${Classes["container"]}`}>
-            <CustomProgramOppertunitySlider data={opportunityCardDataAIML} />
+            {/* @ts-ignore */}
+            <CustomProgramOppertunitySlider data={dataByID?.higherPrograms} />
           </div>
         )}
 

@@ -20,9 +20,9 @@ const DirectorSectionforSenate: React.FC = () => {
           <div className="flex-1">
             <h2 className="text-[18px] md:text-[16.875px] sm:text-[15.75px] fw600 text-gray-700">Director's Brief Profile</h2>
 
-            <h1 className="fw500 lg:text-[60px] md:text-[56.25px] text-[35px] sm:text-[35px]">
+            <h2 className="fw500 lg:text-[60px] md:text-[56.25px] text-[35px] sm:text-[35px]">
               {directorData.name}
-            </h1>
+            </h2>
 
             <p className="text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px]">{directorData.designation}</p>
 

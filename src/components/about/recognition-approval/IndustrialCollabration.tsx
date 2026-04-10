@@ -38,7 +38,7 @@ const IndustrialCollabration: React.FC = () => {
           <div className={`${Classes["container"]}`}>
             <div className="flex justify-between items-center">
               <div className="max-w-[70%]">
-                <h1 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] text-[#172F64] font-bold pb-2">Industrial Collaborations</h1>
+                <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] text-[#172F64] font-bold pb-2">Industrial Collaborations</h2>
                 <p className="">SRMU's industry-aligned curriculum and course design is its speciality, and hence, it works in tandem with multiple industry bodies.</p>
               </div>
               <div className="flex justify-center space-x-4">
@@ -86,7 +86,7 @@ const IndustrialCollabration: React.FC = () => {
         <div className={`${Classes["container"]}`}>
           <div className="flex justify-between items-center">
             <div className="max-w-[70%]">
-              <h1 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] text-[#172F64] font-bold pb-2">Industrial Collaborations</h1>
+              <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] text-[#172F64] font-bold pb-2">Industrial Collaborations</h2>
               <p className="">SRMU's industry-aligned curriculum and course design is its speciality, and hence, it works in tandem with multiple industry bodies.</p>
             </div>
             <div className="flex justify-center space-x-4">

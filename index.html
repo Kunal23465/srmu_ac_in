@@ -182,11 +182,13 @@
 
     <!--preloaded-state-->
 
-    <script defer src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-    <script defer src="https://js.pusher.com/7.0/pusher.min.js"></script>
-    <script defer src="https://arsinfotech.in/chatbot/admin/public/chatbot/chatbot.js"></script>
-    <script defer src="https://arsinfotech.in/chatbot/admin/public/livechat/user.js"></script>
-    <script defer src="https://www.google.com/recaptcha/api.js?render=6Leef4opAAAAAIHXI82ZE6l8ezbNjJe2_1nwDlUH"></script>
+    <!-- Third-party scripts: referrerpolicy="no-referrer" added to prevent
+         Google from crawling these external URLs via referrer signals -->
+    <script defer src="https://code.jquery.com/jquery-3.6.1.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src="https://js.pusher.com/7.0/pusher.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src="https://arsinfotech.in/chatbot/admin/public/chatbot/chatbot.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src="https://arsinfotech.in/chatbot/admin/public/livechat/user.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src="https://www.google.com/recaptcha/api.js?render=6Leef4opAAAAAIHXI82ZE6l8ezbNjJe2_1nwDlUH" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- React Client Entry -->
     <script type="module" defer src="/src/entry-client.tsx"></script>

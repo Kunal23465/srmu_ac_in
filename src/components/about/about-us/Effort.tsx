@@ -16,7 +16,7 @@ const Effort: React.FC = () => {
 
             {/* Right side - Text */}
             <div className="w-full md:w-1/2 flex flex-col justify-center">
-                <h1 className="text-2xl sm:text-[2rem] leading-[1.2] mb-4 text=[#023047]">{effortData.heading}</h1>
+                <h2 className="text-2xl sm:text-[2rem] leading-[1.2] mb-4 text=[#023047]">{effortData.heading}</h2>
                 <div className="space-y-3 text-gray-700 text-sm  leading-relaxed">
                     <p>{effortData.desc.p1}</p>
                     <p>{effortData.desc.p2}</p>

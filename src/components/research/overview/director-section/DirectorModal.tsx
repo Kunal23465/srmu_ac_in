@@ -19,7 +19,7 @@ const DirectorModal: React.FC<Props> = ({ open, onClose, content }) => {
   return (
     <Modal open={open} onCancel={onClose} footer={null} centered width={"80%"} className="director-modal">
       <div className="p-6 max-h-[70vh] overflow-y-auto">
-        <h1 className="text-xl font-extrabold mb-2">{content.name}</h1>
+        <h2 className="text-xl font-extrabold mb-2">{content.name}</h2>
         <h2 className="text-lg text-[#ffb703] mb-4">{content.designation}</h2>
         <h2 className="text-2xl font-bold mb-4">{content.title}<br/>{content.titleSibling}</h2>
 

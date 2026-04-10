@@ -38,9 +38,9 @@ const CustomOverviewSection: React.FC<CustomOverviewSectionProps> = ({ data }) =
                         : "border-l-4 pl-2 md:pl-0 md:border-l-0 md:border-r-4"
                         } border-[#ffb703] flex flex-col justify-center`}
                 >
-                    <h2 className="text-[28px] lg:text-[46.875px] md:text-[46.875px] sm:text-[28px] text-[#023047] fw500 leading-15  pr-4 sm:min-w-[350px]">
+                    <h1 className="text-[28px] lg:text-[46.875px] md:text-[46.875px] sm:text-[28px] text-[#023047] fw500 leading-15  pr-4 sm:min-w-[350px]">
                         {heading}
-                    </h2>
+                    </h1>
                 </div>
 
                 {/* Right Content Section */}

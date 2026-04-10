@@ -10,9 +10,9 @@ const MissionCentralLibrary: React.FC = () => {
         <>
             <div className="relative ">
                 <div className="flex flex-col items-center text-center gap-y-1 bg-[#0f4a85] min-h-[400px] px-4">
-                    <h1 className="leading-[1.2] text-white font-medium text-[22.4px] sm:text-[22.4px] lg:text-[3.125rem] mt-[100px]">
+                    <h2 className="leading-[1.2] text-white font-medium text-[22.4px] sm:text-[22.4px] lg:text-[3.125rem] mt-[100px]">
                         Vision & Mission
-                    </h1>
+                    </h2>
                     <p className="text-white  mb-[100px] ">
                         The Central Library is dedicated to creating a transformative learning environment for all. Explore our vision and mission to know more
                     </p>

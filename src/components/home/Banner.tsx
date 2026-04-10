@@ -73,6 +73,7 @@ const Banner: React.FC = () => {
                         className="w-full h-[44vh] sm:h-auto sm:min-h-[470px] md:min-h-[520px] lg:min-h-[640px] max-h-[calc(100vh-140px)] object-cover rounded-b-[28px] sm:rounded-none"
                         src={banner4}
                         alt={slides[selectedIndex].imageAlt}
+                        // @ts-ignore
                         fetchpriority="high"
                         loading="eager"
                         decoding="async"
@@ -108,9 +109,10 @@ const Banner: React.FC = () => {
 
                                             <div className="text-[12px] sm:text-[17px]">{slide.description}</div>
 
-                                            <div className="mt-6">
+                                            {/* ✅ FIX APPLIED HERE */}
+                                            <div className="mt-6 pointer-events-auto">
                                                 <a href={slide.href} target="_blank">
-                                                    <button className="bg-[#ffb703] uppercase py-3 px-4.5 text-[#023047] flex gap-x-2 items-center rounded-lg">
+                                                    <button className="bg-[#ffb703] cursor-pointer relative z-[9999] uppercase py-3 px-4.5 text-[#023047] flex gap-x-2 items-center rounded-lg">
                                                         {slide.cta}
                                                         <LiaLongArrowAltRightSolid size={22} />
                                                     </button>

@@ -10,7 +10,7 @@ import {
 const SpecialScholarship: React.FC = () => {
   return (
     <div className="py-15 px-2 sm:px-10 lg:px-0">
-      <h1 className="text-2xl lg:text-5xl pb-2 lg:pb-15 font-medium">Special Scholarship</h1>
+      <h2 className="text-2xl lg:text-5xl pb-2 lg:pb-15 font-medium">Special Scholarship</h2>
       <div className="flex flex-col lg:flex-row justify-between gap-10">
         <div className="w-full lg:max-w-[310px]">
           <p className="pb-2 sm:pb-5 ">"You can’t build a society purely on interests you need a sense of belonging"</p>

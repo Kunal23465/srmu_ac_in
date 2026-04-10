@@ -30,7 +30,7 @@ const ProgramsAndFees: FC = () => {
 
   return (
     <div className="flex   flex-col items-center justify-center gap-3">
-      <h1 className="text-4xl font-bold mb-4 mt-7 ">Programs and Fees</h1>
+      <h2 className="text-4xl font-bold mb-4 mt-7 ">Programs and Fees</h2>
       <p className="text-sm mb-2">
         At SRMU we have always believed that a student SHOULD BE TRAINED FOR
         INDUSTRY, BY THE INDUSTRY. Keeping the culture of rich academia-industry

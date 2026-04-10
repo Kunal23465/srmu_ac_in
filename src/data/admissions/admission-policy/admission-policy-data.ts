@@ -4,7 +4,7 @@ import sanctionedIntake2024_25 from "../../../assets/pdf/admissons/admission-pol
 import eligibilityCriterion2026_27 from "../../../assets/pdf/admissons/admission-policy/Eligibility Criteria for Admissions 2026-27.pdf";
 import feeRefundPolicy from "../../../assets/pdf/admissons/admission-policy/Fee Refund Policy Session 2026-27.pdf";
 import admissionEnrollmentRules from "../../../assets/pdf/admissons/admission-policy/admissioncumenrollmentrules2019-20-191223122553-260224123143.pdf";
-import adb from "../../../assets/pdf/admissons/admission-policy/booklet-2024-ok-compressed-1--290224051456.pdf";
+import adb from "../../../assets/pdf/admissons/admission-policy/SRMU Brochure.pdf";
 
 export const admissionPoliciesOverviewData: customeOverViewType = {
   heading: "Admission Policies",

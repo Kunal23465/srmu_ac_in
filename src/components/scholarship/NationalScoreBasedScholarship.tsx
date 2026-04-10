@@ -14,7 +14,7 @@ import {
 const NationalScoreBasedScholarship: React.FC = () => {
   return (
     <div className="py-15 px-2 sm:px-10 lg:px-0">
-      <h1 className="text-2xl lg:text-5xl pb-2 lg:pb-15 font-medium">National Score Based Scholarship</h1>
+      <h2 className="text-2xl lg:text-5xl pb-2 lg:pb-15 font-medium">National Score Based Scholarship</h2>
       <div className="flex flex-col lg:flex-row justify-between gap-10">
         <div className="w-full lg:max-w-[310px]">
           <p className="text-xl lg:text-2xl font-bold pb-2 ">"It’s hard to beat a person who never gives up"</p>

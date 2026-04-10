@@ -23,7 +23,7 @@ const CustomProgramPLOAccordian: React.FC<CustomProgramPLOAccordianProps> = ({ P
     <div className="bg-slate-100">
       <div className={`${Classes["container"]}`}>
         <div className="py-20">
-          <h1 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] text-[rgb(2_48_71)] font-medium mb-15 text-center">PO, PLO & PSO</h1>
+          <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] text-[rgb(2_48_71)] font-medium mb-15 text-center">PO, PLO & PSO</h2>
           <hr className="text-gray-300" />
 
           {sections.map((section, index) => (

@@ -85,9 +85,9 @@ const HowToApply: React.FC = () => {
         <div className={`${Classes["container"]}`}>
           <div className="flex flex-col md:flex-row gap-4 items-stretch justify-between">
             <div className="w-auto border-l-4 pl-2 md:pl-0 md:border-l-0 md:border-r-5 border-[#ffb703] flex flex-col justify-center">
-              <h2 className="text-[#023047] text-[22px] sm:text-[28px] lg:text-[3.125rem] fw500 whitespace-pre-line leading-15 pr-4 sm:min-w-[350px]">
+              <h1 className="text-[#023047] text-[22px] sm:text-[28px] lg:text-[3.125rem] fw500 whitespace-pre-line leading-15 pr-4 sm:min-w-[350px]">
                 How To Apply
-              </h2>
+              </h1>
             </div>
             <div className="md:pl-8 md:py-4">
               <div className="text-justify text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px]">
@@ -119,7 +119,7 @@ const HowToApply: React.FC = () => {
           <div className="">
             <div className="flex">
               <div>
-                <h1 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] font-bold">SRMU Offers</h1>
+                <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] font-bold">SRMU Offers</h2>
               </div>
               <div className="ml-auto flex gap-5">
                 <button
@@ -188,9 +188,9 @@ const HowToApply: React.FC = () => {
               </div>
 
               <div className="py-2 sm:py-0 w-full">
-                <h1 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] leading-tight text-[#023047] font-medium mr-0 sm:mr-0 lg:mr-35">
+                <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] leading-tight text-[#023047] font-medium mr-0 sm:mr-0 lg:mr-35">
                   Get Advantage of studying in a NAAC Accredited University
-                </h1>
+                </h2>
                 <ul className="list-disc marker:text-amber-400 marker:text-3xl mr-0 sm:mr-0 lg:mr-35">
                   <li className="ml-6 text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] leading-2 lg:leading-6">
                     26+ Years of Academic Excellence

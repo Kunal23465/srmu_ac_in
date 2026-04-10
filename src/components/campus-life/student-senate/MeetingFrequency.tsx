@@ -15,7 +15,7 @@ const MeetingFrequency: React.FC = () => {
                 <div className="relative z-10 px-4">
                     {" "}
                     {/* Added horizontal padding for smaller screens */}
-                    <h1 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] fw500 mb-3">Meeting Frequency</h1>
+                    <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] fw500 mb-3">Meeting Frequency</h2>
                     <p className=" max-w-4xl mx-auto text-base sm:mb-10">
                         Class Representatives (CRs) and Institute Representatives (IRs) meet twice a semester to gather agenda points and communicate decisions to all students. IRs also meet
                         with university authorities once a semester to discuss agenda points and, within a specified timeframe, resolve academic or administrative issues.

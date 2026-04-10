@@ -11,7 +11,7 @@ const NewsLetter: React.FC = () => {
         <>
             <div className={Classes["container"]}>
                 <CustomOverviewSection data={NewsletterOverviewData} />
-                <h1 className='text-[47px] font-semibold text-[#023047] pt-16 pb-4'>SRMU Compass</h1>
+                <h2 className='text-[47px] font-semibold text-[#023047] pt-16 pb-4'>SRMU Compass</h2>
                 <div className='pb-20'>
                     <CustomTable
                         columnOneHeader="Edition"

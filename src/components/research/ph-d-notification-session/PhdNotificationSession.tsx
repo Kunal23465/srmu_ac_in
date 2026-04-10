@@ -60,7 +60,7 @@ const PhdNotificationSession: React.FC = () => {
         <CustomOverviewSection data={PhdNotificationOverviewData} />
         <SeatsAvailableSection />
         <div className="mt-0">
-          <h1 className="lg:text-[32px] md:text-[27.255px] sm:text-[21.925px] text-[21.925px] fw500 text-black mb-2">Mode of Application</h1>
+          <h2 className="lg:text-[32px] md:text-[27.255px] sm:text-[21.925px] text-[21.925px] fw500 text-black mb-2">Mode of Application</h2>
           <div className="flex flex-col md:flex-row items-center justify-start gap-5 md:gap-10">
             <Link
               target="_blank"
@@ -78,7 +78,7 @@ const PhdNotificationSession: React.FC = () => {
           </div>
         </div>
         <div className="mt-10">
-          <h1 className="lg:text-[32px] md:text-[27.255px] sm:text-[21.925px] text-[21.925px] font-bold text-black mb-2">Important Dates</h1>
+          <h2 className="lg:text-[32px] md:text-[27.255px] sm:text-[21.925px] text-[21.925px] font-bold text-black mb-2">Important Dates</h2>
           {importantDates.map((item) => (
             <div key={item.id} className="mb-4 text-[17px]">
               <b>{item.left}</b> {item.right}{" "}

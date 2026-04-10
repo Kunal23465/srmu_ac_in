@@ -11,7 +11,7 @@ const MissionAndVission: React.FC = () => {
       <div className="relative ">
         {/* Blue Section */}
         <div className="flex flex-col items-center text-center gap-y-1 bg-[#0f4a85] min-h-[400px] px-4">
-          <h1 className="leading-[1.2] text-white text-[28px]  lg:text-[3.125rem] fw600 mt-[80px] md:mt-[100px]">Vision & Mission</h1>
+          <h2 className="leading-[1.2] text-white text-[28px]  lg:text-[3.125rem] fw600 mt-[80px] md:mt-[100px]">Vision & Mission</h2>
           <p className="text-white text-sm sm:text-[16px] mb-[100px] ">
             SRMU is committed to building a transformative learning experience for all.Explore our mission and vision statements:
           </p>
