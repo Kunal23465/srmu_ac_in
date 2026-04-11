@@ -191,11 +191,13 @@ const CustomProgramOppertunitySlider: React.FC<
                 style={{ flexBasis: getSlideWidth() }}
               >
                 <div className="text-center">
+                  <Link  to={`/program/${item.programSlug}`} className="cursor-pointer">
                   <img
                     src={item.image}
                     alt={item.programName}
                     className="m-auto border-4 border-amber-400 hover:border-black rounded-full object-cover w-full aspect-square max-w-58 sm:max-w-64 transition-colors duration-300"
                   />
+                  </Link>
 
                   <Link 
 

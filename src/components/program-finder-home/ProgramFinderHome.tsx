@@ -116,6 +116,8 @@ const ProgramFinderHome: React.FC = () => {
 
   const introDescription = selectedDisciplineObj?.description || selectedProgramFlagObj?.description || "";
 
+
+  console.log("discipline",discipline)
   return (
     <>
       <div className={`${Classes.container} mt-16`}>

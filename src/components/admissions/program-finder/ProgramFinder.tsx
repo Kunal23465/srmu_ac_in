@@ -89,6 +89,10 @@ const ProgramFinder: React.FC = () => {
     setSelectedProgramType(programTypeSlugFromRoute);
     setSelectedDiscipline(disciplineSlugFromRoute);
   }, [disciplineSlugFromRoute, programTypeSlugFromRoute]);
+
+
+
+  
   return (
     <>
       <div className={`${Classes.container} mt-16`}>
