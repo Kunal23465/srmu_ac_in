@@ -23,15 +23,33 @@ const Apply: React.FC = () => {
     return words.length > wordLimit ? words.slice(0, wordLimit).join(" ") + "..." : plainText;
   };
 
-  const dynamicAccordionData = data?.map((item: any, index: number) => ({
+  const order = [
+  "after-class-10th",
+  "after-class-12th",
+  "industry-honors",
+  "after-graduation",
+  "after-polytechnic",
+  "after-post-graduation",
+];
+
+const dynamicAccordionData = order
+  .map((slug) => data.find((item: any) => item.slug === slug))
+  .filter(Boolean)
+  .map((item: any, index: number) => ({
     id: index,
     title: item.displayTitle,
-    imgSrc: item.imagePath || img1, // fallback image
+    imgSrc: item.imagePath || img1,
     programTypeId: item.programFlagId,
     content: (
       <>
-        <p className="text-[#333] font-normal">{getShortText(item.brief, 22)}</p>
-        <Link to={`/${item.slug}`} state={{ programTypeId: item.programFlagId }} className="text-[#ffb703] font-medium">
+        <p className="text-[#333] font-normal">
+          {getShortText(item.brief, 22)}
+        </p>
+        <Link
+          to={`/${item.slug}`}
+          state={{ programTypeId: item.programFlagId }}
+          className="text-[#ffb703] font-medium"
+        >
           Read More
         </Link>
       </>
@@ -46,6 +64,7 @@ const Apply: React.FC = () => {
       dispatch(fetchProgramByFlag());
     }
   }, [data.length, dispatch]);
+
   return (
     <div className={`${Classes.container} py-8 md:py-10 lg:py-12`}>
       <div className="flex flex-col-reverse sm:flex-row gap-x-8 gap-y-5">

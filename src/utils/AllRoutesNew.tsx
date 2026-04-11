@@ -5,6 +5,7 @@ import { lazyPage } from "./lazyRoute";
 import { committeeCards } from "../data/about/committee-and-cells/committee-and-cells-data";
 import { convocationData } from "../data/campus-life/convocation/convocation-data";
 import tedxData, { conferenceData, festData, festivalsData } from "../data/campus-life/events/events-data";
+import CommittePage from "../pages/about/committee/CommittePage";
 
 const PageNotFound = lazyPage(() => import("../pages/PageNotFound"));
 const LegacyEventDetailsPage = lazyPage(() => import("./legacyRouteResolvers").then((mod) => ({ default: mod.LegacyEventDetailsPage })));
@@ -180,6 +181,15 @@ export const routes = [
       {
         path: "/committees-and-cells",
         element: <CommitteeAndCellsPage />,
+
+        // children: committeeCards.map((card) => ({
+        //   path: card.routeKey,
+        //   element: <CustomCommitteeDetailsPage committee={card} />,
+        // })),
+      },
+       {
+        path: "/committe",
+        element: <CommittePage />,
 
         children: committeeCards.map((card) => ({
           path: card.routeKey,

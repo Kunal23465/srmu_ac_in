@@ -210,7 +210,7 @@ const CustomDepartmentHighlights: React.FC<
                           {step.title}
                         </h2>
 
-                        <div
+                        <div className="scope_list [&_ul]:block! [&_ul]:pl-4"
                           dangerouslySetInnerHTML={{
                             __html: step.brief,
                           }}

@@ -56,7 +56,11 @@ const ProgramFilter: React.FC<PropsTypes> = ({
   const dispatch = useDispatch<AppDispatch>();
   const [visibleCount, setVisibleCount] = useState(5);
 
-  const visibleCourses = data.slice(0, visibleCount);
+  const filteredData = data.filter((course) =>
+  course.name?.toLowerCase().includes(searchTerm.toLowerCase())
+);
+
+const visibleCourses = filteredData.slice(0, visibleCount);
   const { loading } = useSelector((state: RootState) => state.getProgramFinder);
 
   const handleProgramSelect = (programId: number) => {
@@ -179,7 +183,7 @@ const ProgramFilter: React.FC<PropsTypes> = ({
               })}
 
               {/* Load More */}
-              {visibleCount < data.length && (
+              {visibleCount < filteredData.length && (
                 <div className="flex justify-center mt-6">
                   <button
                     onClick={() => setVisibleCount((prev) => prev + 5)}

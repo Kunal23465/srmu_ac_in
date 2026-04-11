@@ -104,9 +104,9 @@ export default function DepartmentalVideo() {
                           e.stopPropagation();
                           setSelectedVideo(video.id);
                         }}
-                        className="bg-[#ffb703] transition p-5 rounded-full shadow-xl pointer-events-auto"
+                        className="bg-[#ffb703] hover:scale-110 cursor-pointer transition p-5 rounded-full shadow-xl pointer-events-auto"
                       >
-                        <FaCaretRight />
+                        <FaCaretRight size={28} />
                       </button>
 
                     </div>
@@ -163,12 +163,13 @@ export default function DepartmentalVideo() {
           <div className="w-[90%] md:w-[70%] lg:w-[60%] h-[70%]">
 
             <iframe
-              width="100%"
-              height="100%"
-              src={`https://www.youtube.com/embed/${selectedVideo}?autoplay=1`}
-              allowFullScreen
-              className="rounded-xl shadow-xl"
-            />
+  width="100%"
+  height="100%"
+  src={`https://www.youtube.com/embed/${selectedVideo}?autoplay=1&mute=1`}
+  allow="autoplay"
+  allowFullScreen
+  className="rounded-xl shadow-xl"
+/>
 
           </div>
 

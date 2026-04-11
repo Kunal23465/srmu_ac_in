@@ -230,7 +230,7 @@ const ProgramDetails: React.FC = () => {
 
 
 
-  console.log("feesData",feesData)
+  console.log("whySrmuData",whySrmuData)
   return (
     <>
       <SeoHead
@@ -285,7 +285,7 @@ const ProgramDetails: React.FC = () => {
             heading={`${!isPhd ? "Why SRMU?" : "Ph.D. Process"} `}
             description=""
             data={whySrmuData}
-            renderCard={({ item, index }) => <WhyCardComp item={item} imageIndex={index % 4} />}
+            renderCard={({ item, index }) => <WhyCardComp item={item} index={index} />}
             bgColor="transparent"
             headingColor="black"
             descriptionColor="#e5e5e5"

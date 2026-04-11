@@ -1,4 +1,15 @@
 import { customeOverViewType } from "../../../types/home-data-type";
+import thumb1 from "../../../assets/images/youtube/yvt1.jpg"
+import thumb2 from "../../../assets/images/youtube/yvt2.jpg"
+import thumb3 from "../../../assets/images/youtube/yvt3.jpg"
+import thumb4 from "../../../assets/images/youtube/yvt4.jpg"
+import thumb5 from "../../../assets/images/youtube/yvt5.jpg"
+import thumb6 from "../../../assets/images/youtube/yvt6.jpg"
+import thumb7 from "../../../assets/images/youtube/yvt7.jpg"
+import thumb8 from "../../../assets/images/youtube/yvt8.jpg"
+import thumb9 from "../../../assets/images/youtube/yvt9.jpg"
+import thumb10 from "../../../assets/images/youtube/yvt10.jpg"
+import thumb11 from "../../../assets/images/youtube/yvt11.jpg"
 
 export const AcademicBankCreditOverviewData: customeOverViewType = {
   heading: "NAD & ABC",
@@ -8,24 +19,59 @@ export const AcademicBankCreditOverviewData: customeOverViewType = {
 
 export const videos = [
   {
-    id: "5GLUuX-SqmU",
-    thumbnail: "https://img.youtube.com/vi/5GLUuX-SqmU/maxresdefault.jpg",
-    title: "Video 1",
+    id: "DhRBUiFwzH8",
+    thumbnail: thumb1,
+    title: "From Algorithms to AI – The Future Starts Here!",
   },
   {
-    id: "kK4tA-pMBcM",
-    thumbnail: "https://img.youtube.com/vi/kK4tA-pMBcM/maxresdefault.jpg",
-    title: "Video 2",
+    id: "LMt5X0_iuGw",
+    thumbnail: thumb2,
+    title: "From Genes to Genius – The Power of Biotech!",
   },
   {
-    id: "WW07HV_Rj4E",
-    thumbnail: "https://img.youtube.com/vi/WW07HV_Rj4E/maxresdefault.jpg",
-    title: "Video 3",
+    id: "sLJc5bDlAsg",
+    thumbnail: thumb3,
+    title: "Your Pathway to Legal Excellence!",
   },
   {
-    id: "ndbBOe3ylfc",
-    thumbnail: "https://img.youtube.com/vi/ndbBOe3ylfc/maxresdefault.jpg",
-    title: "Video 4",
+    id: "YMCptyli9C0",
+    thumbnail: thumb4,
+    title: "Pharmacy: The Heart of Healthcare Innovation!",
+  },
+  {
+    id: "m7n97pW1FaU",
+    thumbnail: thumb5,
+    title: "From Classrooms to Newsrooms – The Media Journey!",
+  },
+  {
+    id: "Eo-yCQugDpE",
+    thumbnail: thumb6,
+    title: "Building Business Minds for a Global Tomorrow!",
+  },
+  {
+    id: "PZUaocjH1Hw",
+    thumbnail: thumb7,
+    title: "From Blueprints to Landmarks – The Power of Civil Engineering!",
+  },
+  {
+    id: "kds7jlLDefQ",
+    thumbnail: thumb8,
+    title: "Mechanical Engineering: The Force Behind Technology!",
+  },
+  {
+    id: "zBfTj2jDbHc",
+    thumbnail: thumb9,
+    title: "Think, Explore, Transform – The World of Humanities!",
+  },
+  {
+    id: "JaoVvAr4PP0",
+    thumbnail: thumb10,
+    title: "Building Smart Solutions for a Connected World!",
+  },
+  {
+    id: "FQt5z2-XIfg",
+    thumbnail: thumb11,
+    title: "Innovate, Cultivate, Transform – The Future of Agriculture!",
   },
 ];
 

@@ -456,7 +456,7 @@ const Footer: React.FC = () => {
       <div className="w-full bg-[#0f4a85] py-4">
         <div className={`${Classes["container"]}`}>
           <div className=" pb-10 sm:pb-0 flex justify-between gap-5 flex-wrap items-center">
-            <div className="text-[13px]  text-white">Copyright © 2025 Shri Ramswaroop Memorial University</div>
+            <div className="text-[13px]  text-white">Copyright © 2026 Shri Ramswaroop Memorial University</div>
             <div>
               <ul className="flex flex-wrap gap-x-7 items-center text-white text-[13px] list-none!">
                 <li className="relative inline-block after:content-[''] after:h-5 after:w-0.5! after:bg-white after:absolute after:top-0 after:-right-4">

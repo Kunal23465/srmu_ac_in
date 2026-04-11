@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Classes from "../../../utils/styles/Global.module.css";
 
 export const ABC = () => {
@@ -28,11 +29,11 @@ export const ABC = () => {
             </div>
 
             <div className="mb-4">
-                <a href="#" className="color_light_blue lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px] font-semibold">GO TO ABC PORTAL</a>
+                <Link target="_blannk" to="https://www.abc.gov.in/assets/resources/Academic-Bank-of-Credits_User_Manual_V3.pdf" className="color_light_blue lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px] font-semibold">GO TO ABC PORTAL</Link>
             </div>
 
             <div className="mb-4">
-                <a href="#" className="color_light_blue lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px] font-semibold">USER MANUAL:STUDENT REGISTRATION AND CREDIT TRANSFER UNDER ABC</a>
+                <Link target="_blannk" to="https://www.abc.gov.in/assets/resources/Academic-Bank-of-Credits_User_Manual_V3.pdf" className="color_light_blue lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px] font-semibold">USER MANUAL:STUDENT REGISTRATION AND CREDIT TRANSFER UNDER ABC</Link>
             </div>
             </div>
         </div>

@@ -98,13 +98,7 @@ export const CustomCompaniesScope: React.FC<CompaniesScopeProps> = ({
           </div>
 
           <div>
-            <div className="flex flex-col gap-4 mb-10">
-              <p className="text-black leading-relaxed">
-                By pursuing this program, students gain deep knowledge of
-                emerging technologies. They also get exposure to endless
-                career possibilities.
-              </p>
-            </div>
+            
 
             <div
               className="scope_list"
