@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API_BASE_URL =
-  import.meta.env.VITE_API_BASE_URL || "https://webservices.srmu.ac.in:7005";
+  import.meta.env.VITE_API_BASE_URL || "https://srmuwebservice.srmu.ac.in:7005";
 const CRM_BASE_URL =
   import.meta.env.VITE_CRM_BASE_URL || "https://crmservices.srmu.ac.in:7074/";
 const ENQUIRY_BASE_URL =
