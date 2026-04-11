@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { customeOverViewType } from "../../../types/home-data-type";
 import { SITE_URL } from "../../../utils/seo";
 
@@ -16,7 +17,7 @@ export interface AccordionItem {
     id: number;
     question: string;
     layoutType: "text" | "list" | "table" | "custom";
-    content?: string;
+    content?: string | React.ReactNode;
     listItems?: string[];
     tableData?: {
         topHeader?: any;
@@ -41,13 +42,19 @@ export const faqData: AccordionItem[] = [
         content:
             "Candidates aspiring to take admission in any course (except LL.M. and B.Ed.) can apply and take admission on the basis of marks scored in entrance examinations. In case of LL.M., selection is done on the basis of entrance examination and interview. For B.Ed., the candidate needs to appear in an interview process before getting admission. However, due to COVID-19, all entrance examinations/interviews have been cancelled and direct admission is provided on the basis of marks scored in qualifying examinations.",
     },
-    {
-        id: 3,
-        question: "How can I apply for a particular course?",
-        layoutType: "text",
-        content:
-            `After getting the information regarding the courses and knowing eligibility criteria, students can apply for any course by paying the required amount for reserving the seat either offline or online at <strong>${onlineAdmissionUrl}</strong>.`,
-    },
+ {
+  id: 3,
+  question: "How can I apply for a particular course?",
+  layoutType: "text",
+  content: (
+    <>
+      After getting the information regarding the courses and knowing eligibility criteria, students can apply for any course by paying the required amount for reserving the seat either offline or online at{" "}
+      <Link className="cusror-pointer" to={onlineAdmissionUrl}>
+        <strong>{onlineAdmissionUrl}</strong>
+      </Link>.
+    </>
+  ),
+},
     {
         id: 4,
         question: "Am I eligible to take admission in SRMU programs?",
@@ -130,21 +137,21 @@ export const faqData: AccordionItem[] = [
         layoutType: "table",
         content:
             "SRMUSET is a scholarship-cum-entrance test which provides aspirants of undergraduate (except B.Ed. & LL.B.) and integrated programs a chance to score well and get rewarded.",
-        tableData: {
-            headers: [
-                "Score",
-                "Scholarship (Phase 1- 05th Dec 2025 – 30th Apr 2026)",
-                "Scholarship (Phase 2- 01st May 2026 – 31st Jul 2026)",
-                "Scholarship (Phase 3- 01st Aug 2026 Till Closure)",
-            ],
-            rows: [
-                [">=90.1", "100% Tuition Fee", "50% Tuition Fee", "30% Tuition Fee"],
-                ["80.1-90", "50%", "30%", "20%"],
-                ["70.1-80", "30%", "20%", "10%"],
-                ["60.1-70", "20%", "10%", "NA"],
-                ["<=60", "10%", "NA", "NA"],
-            ],
-        },
+       tableData: {
+  headers: [
+    "Score",
+    "Scholarship (Phase 1- 05th Dec 2025 – 30th Apr 2026)",
+    "Scholarship (Phase 2- 01st May 2026 – 31st Jul 2026)",
+    "Scholarship (Phase 3- 01st Aug 2026 Till Closure)",
+  ],
+  rows: [
+    [">=90.1", "100% of semester tuition fee", "50% of semester tuition fee", "30% of semester tuition fee"],
+    ["80.1-90", "50% of semester tuition fee", "30% of semester tuition fee", "20% of semester tuition fee"],
+    ["70.1-80", "30% of semester tuition fee", "20% of semester tuition fee", "10% of semester tuition fee"],
+    ["60.1-70", "20% of semester tuition fee", "10% of semester tuition fee", "NA"],
+    ["<=60", "10% of semester tuition fee", "NA", "NA"],
+  ],
+}
     },
     {
         id: 14,

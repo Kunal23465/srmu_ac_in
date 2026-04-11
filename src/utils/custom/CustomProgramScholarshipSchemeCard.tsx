@@ -1,6 +1,8 @@
 import React from "react";
 import Classes from "../../utils/styles/Global.module.css";
 import BGimg from "../../assets/images/research/overview/facilities-bg-lg.jpeg";
+import { FaArrowRightLong } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const CustomProgramScholarshipSchemeCard: React.FC = () => {
   return (
@@ -19,9 +21,9 @@ const CustomProgramScholarshipSchemeCard: React.FC = () => {
               to sail through at all levels in the job market.
             </p>
 
-            <button className="px-6 py-3 sm:px-9 sm:py-4 text-black transition-colors duration-300 ease-in-out hover:text-amber-400  border border-amber-400 hover:bg-transparent bg-amber-400 font-medium rounded-lg text-sm sm:text-base">
-              VIEW DETAILS &nbsp;&nbsp;→
-            </button>
+            <Link to="/scholarship-scheme" className="px-6 py-3 sm:px-9 inline-flex items-center gap-x-2 sm:py-4 text-black transition-colors duration-300 ease-in-out hover:text-amber-400  border border-amber-400 hover:bg-transparent bg-amber-400 font-medium rounded-lg text-sm sm:text-base">
+              VIEW DETAILS <FaArrowRightLong />
+            </Link>
           </div>
 
           {/* RIGHT SECTION */}

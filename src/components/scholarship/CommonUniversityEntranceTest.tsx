@@ -1,6 +1,7 @@
 import React from "react";
 import CustomScholarshiptable from "../../utils/custom/CustomScholarshiptable";
 import { ScholarshipTableData, ScholarshipTableHeadData } from "../../data/admissions/scholarship/common-university-entrance-test-data";
+import { Link } from "react-router-dom";
 
 const CommonUniversityEntranceTest: React.FC = () => {
   return (
@@ -9,12 +10,12 @@ const CommonUniversityEntranceTest: React.FC = () => {
       <div className="flex flex-col sm:flex-row justify-between gap-6">
         <div className="w-full sm:w-xl">
           <p className="text-xl sm:text-2xl font-medium uppercase pb-5 sm:pb-10 ">APPLY FOR 2026</p>
-          <a
-            href="\online-admission"
+          <Link
+            to="/online-admission"
             className="cursor-pointer text-white font-medium bg-[#0f4a85] border border-transparent transition-colors duration-500 hover:border-black hover:text-black hover:bg-white px-6 lg:px-8 py-3 lg:py-4 rounded-xl"
           >
             APPLY NOW
-          </a>
+          </Link>
         </div>
         <div className="">
           <h2 className="text-lg sm:text-xl font-bold uppercase">Counselling Schedule & Process</h2>

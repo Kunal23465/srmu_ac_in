@@ -8,17 +8,28 @@ interface Props {
     data: AccordionItem[];
 }
 
-const HtmlContent: React.FC<{ html?: string; className?: string }> = ({
-    html,
+const ContentRenderer: React.FC<{
+    content?: string | React.ReactNode;
+    className?: string;
+    as?: keyof React.JSX.IntrinsicElements;
+}> = ({
+    content,
     className,
+    as: Tag = "div",
 }) => {
-    if (!html) return null;
+    if (content === undefined || content === null || content === false) return null;
+
+    if (typeof content === "string") {
+        return (
+            <Tag
+                className={className}
+                dangerouslySetInnerHTML={{ __html: content }}
+            />
+        );
+    }
 
     return (
-        <div
-            className={className}
-            dangerouslySetInnerHTML={{ __html: html }}
-        />
+        <Tag className={className}>{content}</Tag>
     );
 };
 
@@ -34,8 +45,8 @@ const CustomFaqAccordion: React.FC<Props> = ({ data }) => {
         switch (item.layoutType) {
             case "text":
                 return (
-                    <HtmlContent
-                        html={item.content}
+                    <ContentRenderer
+                        content={item.content}
                         className="text-gray-700 !text-[16px] leading-relaxed"
                     />
                 );
@@ -43,9 +54,11 @@ const CustomFaqAccordion: React.FC<Props> = ({ data }) => {
             case "list":
                 return (
                     <>
-                        {item.content && (
-                            <span className="text-gray-700 mb-3 leading-relaxed !text-[16px]">{item.content}</span>
-                        )}
+                        <ContentRenderer
+                            as="div"
+                            content={item.content}
+                            className="text-gray-700 mb-3 leading-relaxed !text-[16px]"
+                        />
                         <ul className="list-decimal pl-6 text-gray-700 space-y-1">
                             {item.listItems?.map((li, idx) => (
                                 <li key={idx}>
@@ -59,9 +72,11 @@ const CustomFaqAccordion: React.FC<Props> = ({ data }) => {
                 return (
                     <div className="mt-3">
                         {/* Optional content/description above the table */}
-                        {item.content && (
-                            <p className="text-gray-700 mb-3 leading-relaxed !text-[15px] ">{item.content}</p>
-                        )}
+                        <ContentRenderer
+                            as="p"
+                            content={item.content}
+                            className="text-gray-700 mb-3 leading-relaxed !text-[15px] "
+                        />
 
                         {/* Table */}
                         {item.tableData?.topHeader && <div className="flex items-center justify-around">

@@ -6,6 +6,7 @@ import {
   // SpecialScholarship_SRMUtoSRMU_TableData,
   // SpecialScholarship_SRMUtoSRMU_TableHeadData,
 } from "../../data/admissions/scholarship/special-scholarship-data";
+import { Link } from "react-router-dom";
 
 const SpecialScholarship: React.FC = () => {
   return (
@@ -14,9 +15,9 @@ const SpecialScholarship: React.FC = () => {
       <div className="flex flex-col lg:flex-row justify-between gap-10">
         <div className="w-full lg:max-w-[310px]">
           <p className="pb-2 sm:pb-5 ">"You can’t build a society purely on interests you need a sense of belonging"</p>
-          <a href="\online-admission" className="cursor-pointer text-white font-medium bg-[#0f4a85] border border-transparent transition-colors duration-500 hover:border-black hover:text-black hover:bg-white px-6 lg:px-8 py-3 lg:py-4 rounded-xl">
+          <Link to="/online-admission" className="cursor-pointer text-white font-medium bg-[#0f4a85] border border-transparent transition-colors duration-500 hover:border-black hover:text-black hover:bg-white px-6 lg:px-8 py-3 lg:py-4 rounded-xl">
             APPLY NOW
-          </a>
+          </Link>
         </div>
         {/* <div className="w-full lg:max-w-[870px]">
           <strong>

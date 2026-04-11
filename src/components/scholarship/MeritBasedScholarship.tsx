@@ -12,6 +12,7 @@ import {
   MeritBasedScholarshipUnderGraduateIntegratedTableData,
   MeritBasedScholarshipUnderGraduateIntegratedTableHeadData,
 } from "../../data/admissions/scholarship/merit-based-scholarship-data";
+import { Link } from "react-router-dom";
 
 const MeritBasedScholarship: React.FC = () => {
   return (
@@ -23,9 +24,9 @@ const MeritBasedScholarship: React.FC = () => {
           <p className="pb-3 lg:pb-5">
             These scholarships have been designed to reward the outstanding efforts of meritorious students and make them believe that hard work never goes unrewarded.
           </p>
-          <a href="\online-admission" className=" cursor-pointer text-white font-medium bg-[#0f4a85] border border-transparent transition-colors duration-500 hover:border-black hover:text-black hover:bg-white px-6 lg:px-8 py-3 lg:py-4 rounded-xl">
+          <Link  to="/online-admission" className=" cursor-pointer text-white font-medium bg-[#0f4a85] border border-transparent transition-colors duration-500 hover:border-black hover:text-black hover:bg-white px-6 lg:px-8 py-3 lg:py-4 rounded-xl">
             APPLY NOW
-          </a>
+          </Link>
         </div>
         <div className="grid grid-cols-1 xl:grid-cols-2 w-full xl:max-w-[860px] gap-5">
           <div className="py-8 px-4 border border-amber-400 rounded-3xl overflow-auto">

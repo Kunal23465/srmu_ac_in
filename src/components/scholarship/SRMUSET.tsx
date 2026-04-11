@@ -1,6 +1,7 @@
 import React from "react";
 import CustomScholarshipTable from "../../utils/custom/CustomScholarshiptable";
 import { secondTableData, secondTableHeadData, srmusetScholarshipEngineeringTableData, srmusetScholarshipEngineeringTableHeadData, thirdTableData, thirdTableHeadData } from "../../data/admissions/scholarship/srmuset-data";
+import { Link } from "react-router-dom";
 
 const SRMUSET: React.FC = () => {
   return (
@@ -23,9 +24,9 @@ const SRMUSET: React.FC = () => {
           <p className="pb-2 sm:pb-5 ">
             Scholarships worth <strong>Rs 10 Crores</strong> to be given out."
           </p>
-          <a href="\online-admission" className="cursor-pointer text-white font-medium bg-[#0f4a85] border border-transparent transition-colors duration-500 hover:border-black hover:text-black hover:bg-white px-6 lg:px-8 py-3 lg:py-4 rounded-xl">
+          <Link to="/online-admission" className="cursor-pointer text-white font-medium bg-[#0f4a85] border border-transparent transition-colors duration-500 hover:border-black hover:text-black hover:bg-white px-6 lg:px-8 py-3 lg:py-4 rounded-xl">
             APPLY NOW
-          </a>
+          </Link>
         </div>
         <div>
           <div className="w-full grid grid-cols-1 xl:grid-cols-2 lg:max-w-[860px] gap-5">
