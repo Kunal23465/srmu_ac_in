@@ -4,8 +4,8 @@ import { useParams } from "react-router-dom";
 import { AppDispatch, RootState } from "../../store";
 
 import { fetchAllProgramFinder } from "../../store/program-finder/programFinderThunk";
-import { fetchProgramDiscipline } from "../../store/program-finder/discipline/disciplineThunk";
-import { fetchProgramByFlag } from "../../store/program-finder/program-flag/programFlagThunk";
+import { fetchProgramDiscipline, fetchProgramDisciplines } from "../../store/program-finder/discipline/disciplineThunk";
+import { fetchProgramFlags } from "../../store/program-finder/program-flag/programFlagThunk";
 
 import CustomTopFooter from "../../utils/custom/CustomTopFooter";
 import { feeStructureCustomTopFooter } from "../../data/admissions/fee-structure/fee-structue-data";
@@ -35,9 +35,16 @@ const ProgramFinderHome: React.FC = () => {
         Initial Static APIs
      =========================== */
   useEffect(() => {
-    dispatch(fetchProgramByFlag());
-    dispatch(fetchProgramDiscipline());
-  }, [dispatch]);
+    dispatch(fetchProgramFlags());
+
+    if (!item) {
+      const topLevelRoute = resolveTopLevelProgramRoute(programType || "");
+
+      if (topLevelRoute?.kind !== "programFlag") {
+        dispatch(fetchProgramDisciplines());
+      }
+    }
+  }, [dispatch, item, programType]);
 
   /* ===========================
         Apply Route Params (Slug)

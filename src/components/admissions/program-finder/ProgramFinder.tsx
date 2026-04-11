@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../../store";
 import { fetchAllProgramFinder } from "../../../store/program-finder/programFinderThunk";
 import { fetchProgramType } from "../../../store/program-finder/program-type/programTypeThunk";
-import { fetchProgramDiscipline } from "../../../store/program-finder/discipline/disciplineThunk";
+import { fetchProgramDiscipline, fetchProgramDisciplines } from "../../../store/program-finder/discipline/disciplineThunk";
 import ProgramFilter from "./ProgramFilter";
 import ProgramFinderIntro from "./ProgramFinderIntro";
 import CustomTopFooter from "../../../utils/custom/CustomTopFooter";
@@ -68,10 +68,10 @@ const ProgramFinder: React.FC = () => {
       dispatch(fetchProgramType());
     }
 
-    if (discipline.length === 0) {
-      dispatch(fetchProgramDiscipline());
+    if (discipline.length === 0 && !selectedProgramType) {
+      dispatch(fetchProgramDisciplines());
     }
-  }, [discipline.length, dispatch, programType.length]);
+  }, [discipline.length, dispatch, programType.length, selectedProgramType]);
 
   /* ===========================
       Refetch discipline

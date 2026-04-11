@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchProgramDiscipline } from "./disciplineThunk";
+import { fetchProgramDiscipline, fetchProgramDisciplines } from "./disciplineThunk";
 
 interface initialStateTypes {
   error: null | string;
@@ -17,14 +17,29 @@ const disciplineSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
+      .addCase(fetchProgramDisciplines.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(fetchProgramDisciplines.fulfilled, (state, action) => {
+        state.loading = false;
+        state.error = null;
+        state.discipline = action.payload;
+      })
+      .addCase(fetchProgramDisciplines.rejected, (state) => {
+        state.loading = false;
+        state.error = "Fecth Api Failed";
+      })
       .addCase(fetchProgramDiscipline.pending, (state) => {
         state.loading = true;
       })
       .addCase(fetchProgramDiscipline.fulfilled, (state, action) => {
-        (state.loading = false), (state.discipline = action.payload);
+        state.loading = false;
+        state.error = null;
+        state.discipline = action.payload;
       })
       .addCase(fetchProgramDiscipline.rejected, (state) => {
-        (state.loading = false), (state.error = "Fecth Api Failed");
+        state.loading = false;
+        state.error = "Fecth Api Failed";
       });
   },
 });

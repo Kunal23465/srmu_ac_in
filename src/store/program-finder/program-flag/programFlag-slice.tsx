@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchProgramByFlag } from "./programFlagThunk";
+import { fetchProgramByFlag, fetchProgramFlags } from "./programFlagThunk";
 
 
 interface initialStateTypes {
@@ -18,14 +18,29 @@ const programFlagSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
+      .addCase(fetchProgramFlags.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(fetchProgramFlags.fulfilled, (state, action) => {
+        state.loading = false;
+        state.error = null;
+        state.data = action.payload;
+      })
+      .addCase(fetchProgramFlags.rejected, (state) => {
+        state.loading = false;
+        state.error = "Fecth Api Failed";
+      })
       .addCase(fetchProgramByFlag.pending, (state) => {
         state.loading = true;
       })
       .addCase(fetchProgramByFlag.fulfilled, (state, action) => {
-        state.loading = false, (state.data = action.payload);
+        state.loading = false;
+        state.error = null;
+        state.data = action.payload;
       })
       .addCase(fetchProgramByFlag.rejected, (state) => {
-        (state.loading = false), (state.error = "Fecth Api Failed");
+        state.loading = false;
+        state.error = "Fecth Api Failed";
       });
   },
 });

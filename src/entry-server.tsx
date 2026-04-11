@@ -6,9 +6,9 @@ import { Provider } from "react-redux";
 import { createStore, type RootState } from "./store";
 import { fetchNotice } from "./store/notice/noticeThunk";
 import { fetchBanner } from "./store/home-banner/bannerThunk";
-import { fetchProgramByFlag } from "./store/program-finder/program-flag/programFlagThunk";
+import { fetchProgramFlags } from "./store/program-finder/program-flag/programFlagThunk";
 import { fetchProgramType } from "./store/program-finder/program-type/programTypeThunk";
-import { fetchProgramDiscipline } from "./store/program-finder/discipline/disciplineThunk";
+import { fetchProgramDiscipline, fetchProgramDisciplines } from "./store/program-finder/discipline/disciplineThunk";
 import { fetchAllProgramFinder, fetchProgramFinderByID } from "./store/program-finder/programFinderThunk";
 import { fetchProgramFeesByProgramId } from "./store/program-finder/program-fees/programFeesThunk";
 import { fetchWhySrmuSectionById } from "./store/program-finder/why-srmu/whySrmuSectionThunk";
@@ -92,7 +92,7 @@ async function preloadHomePageData(store: ReturnType<typeof createStore>) {
   }
 
   if (state.getProgramByFlag.data.length === 0 && !state.getProgramByFlag.loading) {
-    pendingPromises.push(store.dispatch(fetchProgramByFlag()));
+    pendingPromises.push(store.dispatch(fetchProgramFlags()));
   }
 
   if (pendingPromises.length > 0) {
@@ -233,7 +233,7 @@ async function buildGlobalLayoutCacheEntry(): Promise<GlobalLayoutCacheEntry> {
 
 async function buildHomePageCacheEntry(): Promise<HomePageCacheEntry> {
   const store = createStore();
-  await Promise.allSettled([store.dispatch(fetchBanner()), store.dispatch(fetchProgramByFlag())]);
+  await Promise.allSettled([store.dispatch(fetchBanner()), store.dispatch(fetchProgramFlags())]);
 
   const cacheEntry: HomePageCacheEntry = {
     expiresAt: Date.now() + HOME_PAGE_CACHE_TTL_MS,
@@ -309,7 +309,7 @@ async function preloadProgramDetailsPageData(store: ReturnType<typeof createStor
 }
 
 async function preloadAdmissionProgramFinderPageData(store: ReturnType<typeof createStore>) {
-  await Promise.allSettled([store.dispatch(fetchProgramType()), store.dispatch(fetchProgramDiscipline()), store.dispatch(fetchAllProgramFinder())]);
+  await Promise.allSettled([store.dispatch(fetchProgramType()), store.dispatch(fetchProgramDisciplines()), store.dispatch(fetchAllProgramFinder())]);
 }
 
 async function preloadDynamicProgramFinderPageData(store: ReturnType<typeof createStore>, normalizedPathname: string, programMenuData: any[]) {
@@ -327,7 +327,7 @@ async function preloadDynamicProgramFinderPageData(store: ReturnType<typeof crea
 
     if (topLevelRoute.kind === "programFlag") {
       await Promise.allSettled([
-        store.dispatch(fetchProgramByFlag()),
+        store.dispatch(fetchProgramFlags()),
         store.dispatch(fetchProgramDiscipline({ programFlagSlug: topLevelRoute.slug })),
         store.dispatch(fetchAllProgramFinder({ programFlagSlug: topLevelRoute.slug })),
       ]);
@@ -335,8 +335,8 @@ async function preloadDynamicProgramFinderPageData(store: ReturnType<typeof crea
     }
 
     await Promise.allSettled([
-      store.dispatch(fetchProgramByFlag()),
-      store.dispatch(fetchProgramDiscipline()),
+      store.dispatch(fetchProgramFlags()),
+      store.dispatch(fetchProgramDisciplines()),
       store.dispatch(fetchAllProgramFinder({ programDisciplineSlug: topLevelRoute.slug })),
     ]);
     return;
@@ -366,7 +366,7 @@ async function preloadDynamicProgramFinderPageData(store: ReturnType<typeof crea
   }
 
   await Promise.allSettled([
-    store.dispatch(fetchProgramByFlag()),
+    store.dispatch(fetchProgramFlags()),
     store.dispatch(fetchProgramDiscipline({ programFlagSlug })),
     store.dispatch(fetchAllProgramFinder(filters)),
   ]);

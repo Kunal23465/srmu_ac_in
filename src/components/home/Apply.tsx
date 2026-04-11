@@ -5,7 +5,7 @@ import img1 from "../../assets/images/home/apply-srmu1.webp";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../store";
-import { fetchProgramByFlag } from "../../store/program-finder/program-flag/programFlagThunk";
+import { fetchProgramFlags } from "../../store/program-finder/program-flag/programFlagThunk";
 
 const Apply: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -61,7 +61,7 @@ const dynamicAccordionData = order
      =========================== */
   useEffect(() => {
     if (data.length === 0) {
-      dispatch(fetchProgramByFlag());
+      dispatch(fetchProgramFlags());
     }
   }, [data.length, dispatch]);
 
