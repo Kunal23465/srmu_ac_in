@@ -91,7 +91,7 @@ const ProgramFinder: React.FC = () => {
   }, [disciplineSlugFromRoute, programTypeSlugFromRoute]);
 
 
-
+console.log("Program Finder",data)
   
   return (
     <>

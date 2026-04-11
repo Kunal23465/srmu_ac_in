@@ -230,7 +230,7 @@ const ProgramDetails: React.FC = () => {
 
 
 
-  console.log("whySrmuData",whySrmuData)
+  // console.log("dataByID",dataByID)
   return (
     <>
       <SeoHead
