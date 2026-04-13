@@ -1,4 +1,4 @@
-import allied from "../../assets/images/home/program-section/undergraduate/allied-health-sciences.jpg"
+// import allied from "../../assets/images/home/program-section/undergraduate/allied-health-sciences.jpg"
 // import microbiology from "../../assets/images/home/program-section/undergraduate/microbiology-0605240159363.jpg"
 // import agriculture from "../../assets/images/home/program-section/undergraduate/agriculture-06102303181750.jpg"
 // import ai from "../../assets/images/home/program-section/undergraduate/ai.jpg"
@@ -107,11 +107,11 @@ export const tabs: ProgramTab[] = [
         img: mediaAsset("/srmuwebdocs/program-discipline/1767765647071_pharmacy-06052402060294.webp"),
         link: "/pharmacy/undergraduate",
       },
-      {
-        name: "Allied Health Sciences",
-        img: allied,
-        link: "/allied-health-sciences/undergraduate",
-      },
+      // {
+      //   name: "Allied Health Sciences",
+      //   img: allied,
+      //   link: "/allied-health-sciences/undergraduate",
+      // },
       {
         name: "Natural Sciences",
         img: mediaAsset("/srmuwebdocs/program-discipline/1767765987771_science-22022410265426.webp"),

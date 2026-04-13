@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { AppDispatch, RootState } from "../../store";
@@ -21,6 +21,8 @@ const ProgramFinderHome: React.FC = () => {
   const { programType, item } = useParams();
   const navigate = useNavigate();
   const location = useLocation();
+  const pathSegments = useMemo(() => location.pathname.split("/").filter(Boolean), [location.pathname]);
+  const isCategoryRouteFromPath = pathSegments.length === 2 && pathSegments[0] !== "program-finder";
 
   const { data: programByIntroData } = useSelector((state: RootState) => state.getProgramByIntro);
   const { data } = useSelector((state: RootState) => state.getProgramFinder);
@@ -55,35 +57,38 @@ const ProgramFinderHome: React.FC = () => {
   useEffect(() => {
     dispatch(fetchProgramFlags());
 
-    if (!item) {
+    if (!item && !isCategoryRouteFromPath) {
       const topLevelRoute = resolveTopLevelProgramRoute(programType || "");
 
       if (topLevelRoute?.kind !== "programFlag") {
         dispatch(fetchProgramDisciplines());
       }
     }
-  }, [dispatch, item, programType]);
+  }, [dispatch, isCategoryRouteFromPath, item, programType]);
 
   /* ===========================
         Apply Route Params (Slug)
      =========================== */
   useEffect(() => {
+    const routeProgramType = programType || pathSegments[0] || "";
+    const routeItem = item || pathSegments[1] || "";
+
     if (
-      lastAppliedParamsRef.current.programType === programType &&
-      lastAppliedParamsRef.current.item === item
+      lastAppliedParamsRef.current.programType === routeProgramType &&
+      lastAppliedParamsRef.current.item === routeItem
     ) {
       return;
     }
-    lastAppliedParamsRef.current = { programType, item };
+    lastAppliedParamsRef.current = { programType: routeProgramType, item: routeItem };
 
-    if (programType || item) {
-      if (item) {
+    if (routeProgramType || routeItem) {
+      if (routeItem) {
         changeSourceRef.current = "url";
         updatePendingProgramFlagChange(null);
-        setSelectedProgramFlag(programType || "");
-        setSelectedDiscipline(item || "");
+        setSelectedProgramFlag(routeProgramType || "");
+        setSelectedDiscipline(routeItem || "");
       } else {
-        const topLevelRoute = resolveTopLevelProgramRoute(programType || "");
+        const topLevelRoute = resolveTopLevelProgramRoute(routeProgramType || "");
         if (topLevelRoute?.kind === "programFlag") {
           if (changeSourceRef.current !== "user") {
             changeSourceRef.current = "url";
@@ -97,13 +102,13 @@ const ProgramFinderHome: React.FC = () => {
           setSelectedDiscipline(topLevelRoute.slug);
         } else {
           updatePendingProgramFlagChange(null);
-          setSelectedProgramFlag(programType || "");
+          setSelectedProgramFlag(routeProgramType || "");
           setSelectedDiscipline("");
         }
       }
     }
     isInitialized.current = true;
-  }, [programType, item]);
+  }, [item, pathSegments, programType]);
 
   /* ===========================
         Debounce Search
@@ -120,8 +125,15 @@ const ProgramFinderHome: React.FC = () => {
         Fetch Discipline by Flag (Slug)
      =========================== */
   useEffect(() => {
+    // Wait until route params are applied to local selection state.
+    // This prevents an initial "all disciplines" fetch from overriding
+    // the filtered discipline list on hard refresh.
+    if (!isInitialized.current) {
+      return;
+    }
+
     if (!selectedProgramFlag) {
-      if (!pendingProgramFlagChangeRef.current) {
+      if (!pendingProgramFlagChangeRef.current && !isCategoryRouteFromPath) {
         dispatch(fetchProgramDisciplines());
       }
       return;
@@ -176,7 +188,7 @@ const ProgramFinderHome: React.FC = () => {
           updatePendingProgramFlagChange(null);
         }
       });
-  }, [dispatch, selectedProgramFlag]);
+  }, [dispatch, isCategoryRouteFromPath, selectedDiscipline, selectedProgramFlag]);
 
   /* ===========================
         Fetch Program List (Slug based)
@@ -243,8 +255,6 @@ const ProgramFinderHome: React.FC = () => {
     lastAppliedParamsRef.current = {};
   };
 
-
-  console.log("data===",data)
   return (
     <>
       <div className={`${Classes.container} mt-16`}>

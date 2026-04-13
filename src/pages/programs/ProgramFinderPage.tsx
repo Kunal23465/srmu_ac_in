@@ -28,7 +28,7 @@ useEffect(() => {
 }, [location, dispatch]);
 
 
-  console.log("programByIntroData",programByIntroData)
+  
   return (
     <>
       <SeoHead

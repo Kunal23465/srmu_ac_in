@@ -227,10 +227,7 @@ const ProgramDetails: React.FC = () => {
   if (recruiterLoading) {
     return <ProgramDetailsLoader />;
   }
-
-
-
-  // console.log("dataByID",dataByID)
+ 
   return (
     <>
       <SeoHead
@@ -312,7 +309,7 @@ const ProgramDetails: React.FC = () => {
                       </div>
                     ))
                   }</>) : (<> {
-                    partnerDataforAIandML.map((item, index) => (
+                  partnerDataforAIandML.length>0 &&  partnerDataforAIandML.map((item, index) => (
                       <div key={index} className="flex border w-full md:border-none border-[#ccc] py-2 px-3 sm:p-0 flex-col items-center gap-5">
                         <img
                           src={item.img}
@@ -347,7 +344,7 @@ const ProgramDetails: React.FC = () => {
           <p>Loading.....</p>
         ) : (
           <>
-            {!isPhd && (
+            {!isPhd &&  departmentHeghlightData.length>0 &&(
               <div className="my-10 ">
                 <div className={`${Classes["container"]}`}>
                   <CustomDepartmentHighlights heading="Department Highlights" steps={departmentHeghlightData} />
@@ -359,7 +356,7 @@ const ProgramDetails: React.FC = () => {
 
         {
           //  @ts-ignore
-          !isPhd && <CustomProgramPLOAccordian POdata={dataByID?.programObjective} PLOdata={dataByID?.programLearningOutcomes} PSOdata={dataByID?.specificOutcomes} />
+          !isPhd && dataByID?.programObjective && <CustomProgramPLOAccordian POdata={dataByID?.programObjective} PLOdata={dataByID?.programLearningOutcomes} PSOdata={dataByID?.specificOutcomes} />
         }
 
         <div className="bg-[#dee4f2]">

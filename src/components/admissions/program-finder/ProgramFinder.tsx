@@ -105,7 +105,7 @@ const ProgramFinder: React.FC = () => {
       dispatch(fetchProgramTypeIntroByUrl(finalUrl));
     }, [selectedProgramType, selectedDiscipline, dispatch]);
 
-    console.log("programByIntroData",programByIntroData)
+  
 
   return (
     <>
