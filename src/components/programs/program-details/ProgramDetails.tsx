@@ -202,15 +202,16 @@ const ProgramDetails: React.FC = () => {
 
     return {
       sectors: [
-        {
-          label: "PRIVATE SECTOR",
-          // @ts-ignore
-          companies: privateSector,
-        },
+       
         {
           label: "GOVERNMENT SECTOR",
           // @ts-ignore
           companies: government,
+        },
+         {
+          label: "PRIVATE SECTOR",
+          // @ts-ignore
+          companies: privateSector,
         },
       ],
     };
