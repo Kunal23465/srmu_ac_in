@@ -95,13 +95,13 @@ const BlogDetailsPage: React.FC = () => {
             <div className="inline-block mb-10 bg-[#ffb703] px-4 rounded-2xl text-[#0f4a85] mt-2 py-1">{data.postedOn}</div>
 
             {/* Image */}
-            {data.imagePath ? (
+            {/* {data.imagePath ? (
               <div className="mb-8">
                 <img src={data.imagePath} alt={data.title} loading="eager" decoding="async" className="w-full h-full max-h-[60vh] object-cover  shadow-lg" />
               </div>
-            ) : null}
+            ) : null} */}
 
-            <div className="mt-8 text-[15px] prose prose-lg text-justify [&_li]:mb-2 [&_p]:mb-3 [&_h4]:text-[#212529] [&_h4]:font-normal!  [&_h4]:text-[22.5px]  [&_h4]:mb-3 [&_ul]:mb-8 [&_li]:ml-6 [&_a]:text-[#ffb703]">
+            <div className=" text-[15px] prose prose-lg text-justify [&_li]:mb-2 [&_p]:mb-3 [&_h4]:text-[#212529] [&_h4]:font-normal!  [&_h4]:text-[22.5px]  [&_h4]:mb-3 [&_ul]:mb-8 [&_li]:ml-6 [&_a]:text-[#ffb703]">
               <div dangerouslySetInnerHTML={{ __html: data.description }} />
             </div>
 

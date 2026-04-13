@@ -15,7 +15,7 @@ import { Helmet } from "react-helmet-async";
 
 const ProgramFinder: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
-    const { data: programByIntroData } = useSelector((state: RootState) => state.getProgramByIntro);
+  const { data: programByIntroData } = useSelector((state: RootState) => state.getProgramByIntro);
   const { data } = useSelector((state: RootState) => state.getProgramFinder);
   const { programType } = useSelector((state: RootState) => state.getProgramType);
   const { discipline } = useSelector((state: RootState) => state.getDiscipline);
@@ -24,10 +24,12 @@ const ProgramFinder: React.FC = () => {
   const isDynamicProgramFinderRoute = pathParts.length === 2 && pathParts[0] !== "program-finder";
   const disciplineSlugFromRoute = isDynamicProgramFinderRoute ? pathParts[0] : "";
   const programTypeSlugFromRoute = isDynamicProgramFinderRoute ? pathParts[1] : "";
+  
   const [selectedProgramType, setSelectedProgramType] = useState<string>(programTypeSlugFromRoute);
   const [selectedDiscipline, setSelectedDiscipline] = useState<string>(disciplineSlugFromRoute);
   const [searchTerm, setSearchTerm] = useState("");
   const [debouncedSearch, setDebouncedSearch] = useState("");
+  const [isUserInitiated, setIsUserInitiated] = useState(false);
 
   const selectedProgramTypeObj = programType?.find((pt) => pt.slug === selectedProgramType);
   const selectedDisciplineObj = discipline?.find((d) => d.slug === selectedDiscipline);
@@ -59,60 +61,83 @@ const ProgramFinder: React.FC = () => {
   }, [debouncedSearch, dispatch, selectedDiscipline, selectedProgramType]);
 
   /* ===========================
-      Initial Load - Program Types
+      Initial Load - Program Types & Disciplines
      =========================== */
   useEffect(() => {
     if (programType.length === 0) {
       dispatch(fetchProgramType());
     }
 
+    // Only fetch all disciplines if NO programType selected
     if (discipline.length === 0 && !selectedProgramType) {
       dispatch(fetchProgramDisciplines());
     }
-  }, [dispatch, programType.length]);
+  }, [dispatch, programType.length, selectedProgramType, discipline.length]);
 
   /* ===========================
-      Refetch discipline & auto-select first
+      Fetch filtered disciplines based on programType
+      IMPORTANT: This runs AFTER selectedProgramType is set from route
      =========================== */
   useEffect(() => {
+    // Only fetch if selectedProgramType exists
     if (selectedProgramType) {
       dispatch(fetchProgramDiscipline({ programTypeSlug: selectedProgramType }))
         .unwrap()
         .then((disciplines) => {
+          // Auto-select first discipline only if user changed programType
           if (disciplines && disciplines.length > 0) {
-            setSelectedDiscipline(disciplines[0].slug);
+            if (isUserInitiated) {
+              setSelectedDiscipline(disciplines[0].slug);
+            }
+            // Otherwise keep route discipline or user's manual selection
           } else {
             setSelectedDiscipline("");
           }
+        })
+        .catch((error) => {
+          console.error("Error fetching disciplines:", error);
+          setSelectedDiscipline("");
         });
     } else {
+      // If no programType, fetch all disciplines
       dispatch(fetchProgramDisciplines());
       setSelectedDiscipline("");
     }
-  }, [dispatch, selectedProgramType]);
+  }, [selectedProgramType, isUserInitiated, dispatch]);
 
   /* ===========================
-      From Route State
+      Handle ProgramType Change
+      Set flag when user changes programType
+     =========================== */
+  const handleProgramTypeChange = (newProgramType: string) => {
+    setSelectedProgramType(newProgramType);
+    setIsUserInitiated(true); // ✅ Mark as user-initiated
+  };
+
+  /* ===========================
+      Handle Discipline Change
+      Clear the flag when user manually selects discipline
+     =========================== */
+  const handleDisciplineChange = (newDiscipline: string) => {
+    setSelectedDiscipline(newDiscipline);
+    setIsUserInitiated(false); // Clear flag
+  };
+
+  /* ===========================
+      Fetch Program Type Intro
      =========================== */
   useEffect(() => {
-    setSelectedProgramType(programTypeSlugFromRoute);
-    setSelectedDiscipline(disciplineSlugFromRoute);
-  }, [disciplineSlugFromRoute, programTypeSlugFromRoute]);
-
-   useEffect(() => {
-      if (!selectedProgramType || !selectedDiscipline) return;
-      const finalUrl = `${selectedDiscipline}/${selectedProgramType}`;
-      dispatch(fetchProgramTypeIntroByUrl(finalUrl));
-    }, [selectedProgramType, selectedDiscipline, dispatch]);
-
-  
+    if (!selectedProgramType || !selectedDiscipline) return;
+    const finalUrl = `${selectedDiscipline}/${selectedProgramType}`;
+    dispatch(fetchProgramTypeIntroByUrl(finalUrl));
+  }, [selectedProgramType, selectedDiscipline, dispatch]);
 
   return (
     <>
-     <Helmet>
-          <title>{programByIntroData?.metaTitle || ""}</title>
-          <meta name="description" content={programByIntroData?.metaDescription || ""} />
-        </Helmet>
+      <Helmet>
+        <title>{programByIntroData?.metaTitle || ""}</title>
+        <meta name="description" content={programByIntroData?.metaDescription || ""} />
+      </Helmet>
       <div className={`${Classes.container} mt-16`}>
         <div className="w-full flex items-center justify-center flex-col">
           <h1 className="text-[#023047] text-[22px] sm:text-[28px] lg:text-[3.125rem] fw500">Program Finder</h1>
@@ -126,8 +151,8 @@ const ProgramFinder: React.FC = () => {
           selectedDiscipline={selectedDiscipline}
           searchTerm={searchTerm}
           onSearchChange={setSearchTerm}
-          onProgramTypeChange={setSelectedProgramType}
-          onDisciplineChange={setSelectedDiscipline}
+          onProgramTypeChange={handleProgramTypeChange}
+          onDisciplineChange={handleDisciplineChange}
         />
 
         <ProgramFinderIntro description={programByIntroData?.description || ""} />
