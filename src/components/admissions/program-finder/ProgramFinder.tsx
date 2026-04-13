@@ -10,10 +10,12 @@ import CustomTopFooter from "../../../utils/custom/CustomTopFooter";
 import { feeStructureCustomTopFooter } from "../../../data/admissions/fee-structure/fee-structue-data";
 import Classes from "../../../utils/styles/Global.module.css";
 import { useLocation } from "react-router-dom";
+import { fetchProgramTypeIntroByUrl } from "../../../store/program-type-intro/ProgramTypeIntroThunk";
+import { Helmet } from "react-helmet-async";
 
 const ProgramFinder: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
-  // const { programType:programTypeSlug, item } = useParams();
+    const { data: programByIntroData } = useSelector((state: RootState) => state.getProgramByIntro);
   const { data } = useSelector((state: RootState) => state.getProgramFinder);
   const { programType } = useSelector((state: RootState) => state.getProgramType);
   const { discipline } = useSelector((state: RootState) => state.getDiscipline);
@@ -28,12 +30,8 @@ const ProgramFinder: React.FC = () => {
   const [debouncedSearch, setDebouncedSearch] = useState("");
 
   const selectedProgramTypeObj = programType?.find((pt) => pt.slug === selectedProgramType);
-
   const selectedDisciplineObj = discipline?.find((d) => d.slug === selectedDiscipline);
-
   const introDescription = selectedDisciplineObj?.description || selectedProgramTypeObj?.description || "";
-
-  // const { programTypeId: programTypeIdFromState, disciplineId: disciplineIdFromState } = location.state || {};
 
   /* ===========================
            Debounce Search
@@ -41,7 +39,7 @@ const ProgramFinder: React.FC = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setDebouncedSearch(searchTerm);
-    }, 500); // 500ms debounce
+    }, 500);
 
     return () => clearTimeout(timer);
   }, [searchTerm]);
@@ -61,7 +59,7 @@ const ProgramFinder: React.FC = () => {
   }, [debouncedSearch, dispatch, selectedDiscipline, selectedProgramType]);
 
   /* ===========================
-      Initial Load
+      Initial Load - Program Types
      =========================== */
   useEffect(() => {
     if (programType.length === 0) {
@@ -71,14 +69,25 @@ const ProgramFinder: React.FC = () => {
     if (discipline.length === 0 && !selectedProgramType) {
       dispatch(fetchProgramDisciplines());
     }
-  }, [discipline.length, dispatch, programType.length, selectedProgramType]);
+  }, [dispatch, programType.length]);
 
   /* ===========================
-      Refetch discipline
+      Refetch discipline & auto-select first
      =========================== */
   useEffect(() => {
     if (selectedProgramType) {
-      dispatch(fetchProgramDiscipline({ programTypeSlug: selectedProgramType }));
+      dispatch(fetchProgramDiscipline({ programTypeSlug: selectedProgramType }))
+        .unwrap()
+        .then((disciplines) => {
+          if (disciplines && disciplines.length > 0) {
+            setSelectedDiscipline(disciplines[0].slug);
+          } else {
+            setSelectedDiscipline("");
+          }
+        });
+    } else {
+      dispatch(fetchProgramDisciplines());
+      setSelectedDiscipline("");
     }
   }, [dispatch, selectedProgramType]);
 
@@ -90,11 +99,20 @@ const ProgramFinder: React.FC = () => {
     setSelectedDiscipline(disciplineSlugFromRoute);
   }, [disciplineSlugFromRoute, programTypeSlugFromRoute]);
 
+   useEffect(() => {
+      if (!selectedProgramType || !selectedDiscipline) return;
+      const finalUrl = `${selectedDiscipline}/${selectedProgramType}`;
+      dispatch(fetchProgramTypeIntroByUrl(finalUrl));
+    }, [selectedProgramType, selectedDiscipline, dispatch]);
 
-console.log("Program Finder",data)
-  
+    console.log("programByIntroData",programByIntroData)
+
   return (
     <>
+     <Helmet>
+          <title>{programByIntroData?.metaTitle || ""}</title>
+          <meta name="description" content={programByIntroData?.metaDescription || ""} />
+        </Helmet>
       <div className={`${Classes.container} mt-16`}>
         <div className="w-full flex items-center justify-center flex-col">
           <h1 className="text-[#023047] text-[22px] sm:text-[28px] lg:text-[3.125rem] fw500">Program Finder</h1>
@@ -112,7 +130,7 @@ console.log("Program Finder",data)
           onDisciplineChange={setSelectedDiscipline}
         />
 
-        <ProgramFinderIntro description={introDescription} />
+        <ProgramFinderIntro description={programByIntroData?.description || ""} />
       </div>
 
       <CustomTopFooter data={feeStructureCustomTopFooter} />

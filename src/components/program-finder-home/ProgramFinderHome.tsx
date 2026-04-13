@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { AppDispatch, RootState } from "../../store";
 
 import { fetchAllProgramFinder } from "../../store/program-finder/programFinderThunk";
@@ -13,12 +13,16 @@ import Classes from "../../utils/styles/Global.module.css";
 
 import ProgramFinderIntro from "../admissions/program-finder/ProgramFinderIntro";
 import ProgramFilter from "../admissions/program-finder/ProgramFilter";
-import { resolveTopLevelProgramRoute } from "../../utils/programCategoryRoute";
+import { buildProgramCategoryPath, resolveTopLevelProgramRoute } from "../../utils/programCategoryRoute";
+import { fetchProgramTypeIntroByUrl } from "../../store/program-type-intro/ProgramTypeIntroThunk";
 
 const ProgramFinderHome: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
   const { programType, item } = useParams();
+  const navigate = useNavigate();
+  const location = useLocation();
 
+  const { data: programByIntroData } = useSelector((state: RootState) => state.getProgramByIntro);
   const { data } = useSelector((state: RootState) => state.getProgramFinder);
   const { discipline } = useSelector((state: RootState) => state.getDiscipline);
   const { data: programFlag } = useSelector((state: RootState) => state.getProgramByFlag);
@@ -28,8 +32,22 @@ const ProgramFinderHome: React.FC = () => {
 
   const [searchTerm, setSearchTerm] = useState("");
   const [debouncedSearch, setDebouncedSearch] = useState("");
+  const [pendingProgramFlagChange, setPendingProgramFlagChange] = useState<string | null>(null);
 
   const isInitialized = useRef(false);
+  const pendingProgramFlagChangeRef = useRef<string | null>(null);
+  const changeSourceRef = useRef<"url" | "user" | null>(null);
+  const lastAppliedParamsRef = useRef<{ programType?: string; item?: string }>({});
+
+  const isWaitingForAutoDiscipline =
+    Boolean(selectedProgramFlag) &&
+    pendingProgramFlagChange === selectedProgramFlag &&
+    !selectedDiscipline;
+
+  const updatePendingProgramFlagChange = (value: string | null) => {
+    pendingProgramFlagChangeRef.current = value;
+    setPendingProgramFlagChange(value);
+  };
 
   /* ===========================
         Initial Static APIs
@@ -50,19 +68,35 @@ const ProgramFinderHome: React.FC = () => {
         Apply Route Params (Slug)
      =========================== */
   useEffect(() => {
+    if (
+      lastAppliedParamsRef.current.programType === programType &&
+      lastAppliedParamsRef.current.item === item
+    ) {
+      return;
+    }
+    lastAppliedParamsRef.current = { programType, item };
+
     if (programType || item) {
       if (item) {
+        changeSourceRef.current = "url";
+        updatePendingProgramFlagChange(null);
         setSelectedProgramFlag(programType || "");
         setSelectedDiscipline(item || "");
       } else {
         const topLevelRoute = resolveTopLevelProgramRoute(programType || "");
         if (topLevelRoute?.kind === "programFlag") {
+          if (changeSourceRef.current !== "user") {
+            changeSourceRef.current = "url";
+          }
+          updatePendingProgramFlagChange(topLevelRoute.slug);
           setSelectedProgramFlag(topLevelRoute.slug);
           setSelectedDiscipline("");
         } else if (topLevelRoute?.kind === "discipline") {
+          updatePendingProgramFlagChange(null);
           setSelectedProgramFlag("");
           setSelectedDiscipline(topLevelRoute.slug);
         } else {
+          updatePendingProgramFlagChange(null);
           setSelectedProgramFlag(programType || "");
           setSelectedDiscipline("");
         }
@@ -86,13 +120,62 @@ const ProgramFinderHome: React.FC = () => {
         Fetch Discipline by Flag (Slug)
      =========================== */
   useEffect(() => {
-    if (selectedProgramFlag) {
+    if (!selectedProgramFlag) {
+      if (!pendingProgramFlagChangeRef.current) {
+        dispatch(fetchProgramDisciplines());
+      }
+      return;
+    }
+
+    const currentProgramFlag = selectedProgramFlag;
+    const source = changeSourceRef.current;
+
+    // URL with discipline already set — just populate dropdown
+    if (source === "url" && selectedDiscipline) {
+      changeSourceRef.current = null;
       dispatch(
         fetchProgramDiscipline({
-          programFlagSlug: selectedProgramFlag,
+          programFlagSlug: currentProgramFlag,
         }),
       );
+      return;
     }
+
+    // URL with only programType (no discipline) — populate dropdown but DON'T auto-select
+    if (source === "url" && !selectedDiscipline) {
+      changeSourceRef.current = null;
+      dispatch(
+        fetchProgramDiscipline({
+          programFlagSlug: currentProgramFlag,
+        }),
+      );
+      updatePendingProgramFlagChange(null);
+      return;
+    }
+
+    // User dropdown change — fetch and auto-select first discipline
+    changeSourceRef.current = null;
+
+    void dispatch(
+      fetchProgramDiscipline({
+        programFlagSlug: currentProgramFlag,
+      }),
+    )
+      .unwrap()
+      .then((disciplines) => {
+        if (pendingProgramFlagChangeRef.current !== currentProgramFlag) {
+          return;
+        }
+
+        const firstDisciplineSlug = disciplines?.[0]?.slug || "";
+        setSelectedDiscipline(firstDisciplineSlug);
+        updatePendingProgramFlagChange(null);
+      })
+      .catch(() => {
+        if (pendingProgramFlagChangeRef.current === currentProgramFlag) {
+          updatePendingProgramFlagChange(null);
+        }
+      });
   }, [dispatch, selectedProgramFlag]);
 
   /* ===========================
@@ -100,6 +183,7 @@ const ProgramFinderHome: React.FC = () => {
      =========================== */
   useEffect(() => {
     if (!isInitialized.current) return;
+    if (isWaitingForAutoDiscipline) return;
 
     if (!selectedProgramFlag && !selectedDiscipline && !debouncedSearch) {
       return;
@@ -112,18 +196,55 @@ const ProgramFinderHome: React.FC = () => {
         name: debouncedSearch || undefined,
       }),
     );
-  }, [dispatch, selectedProgramFlag, selectedDiscipline, debouncedSearch]);
+  }, [debouncedSearch, dispatch, isWaitingForAutoDiscipline, selectedDiscipline, selectedProgramFlag]);
+
+  /* ===========================
+        Sync Route after Auto Selection
+     =========================== */
+  useEffect(() => {
+    if (!isInitialized.current) return;
+    if (isWaitingForAutoDiscipline) return;
+    if (!selectedProgramFlag || !selectedDiscipline) return;
+
+    const nextPath = buildProgramCategoryPath(selectedProgramFlag, selectedDiscipline);
+
+    if (location.pathname !== nextPath) {
+      lastAppliedParamsRef.current = {
+        programType: selectedProgramFlag,
+        item: selectedDiscipline,
+      };
+
+      navigate(nextPath, { replace: true });
+    }
+  }, [isWaitingForAutoDiscipline, location.pathname, navigate, selectedDiscipline, selectedProgramFlag]);
+
+  /* ===========================
+        Fetch Intro by URL
+     =========================== */
+  useEffect(() => {
+    if (!selectedProgramFlag || !selectedDiscipline) return;
+
+    const finalUrl = `${selectedProgramFlag}/${selectedDiscipline}`;
+    dispatch(fetchProgramTypeIntroByUrl(finalUrl));
+  }, [selectedProgramFlag, selectedDiscipline, dispatch]);
 
   /* ===========================
         Intro Description (Slug match)
      =========================== */
   const selectedProgramFlagObj = programFlag?.find((pt) => pt.slug === selectedProgramFlag);
-
   const selectedDisciplineObj = discipline?.find((d) => d.slug === selectedDiscipline);
-
   const introDescription = selectedDisciplineObj?.description || selectedProgramFlagObj?.description || "";
 
+  const handleProgramFlagChange = (value: string) => {
+    changeSourceRef.current = "user";
+    updatePendingProgramFlagChange(value || null);
+    setSelectedProgramFlag(value);
+    setSelectedDiscipline("");
+    lastAppliedParamsRef.current = {};
+  };
 
+
+  console.log("data===",data)
   return (
     <>
       <div className={`${Classes.container} mt-16`}>
@@ -140,12 +261,12 @@ const ProgramFinderHome: React.FC = () => {
           selectedDiscipline={selectedDiscipline}
           searchTerm={searchTerm}
           onSearchChange={setSearchTerm}
-          onProgramTypeChange={setSelectedProgramFlag}
+          onProgramTypeChange={handleProgramFlagChange}
           onDisciplineChange={setSelectedDiscipline}
           isTypeFlag={true}
         />
 
-        <ProgramFinderIntro description={introDescription} />
+        <ProgramFinderIntro description={programByIntroData?.description || ""} />
       </div>
 
       <CustomTopFooter data={feeStructureCustomTopFooter} />

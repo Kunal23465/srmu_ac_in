@@ -26,6 +26,7 @@ import { whySrmuLogoSliceReducer } from "../why-srmu/whySrmuLogoSlice";
 import { getHomeEventsDataSliceReducer } from "../home-events/getHomeEventsSlice";
 import { getPlacementRecordTabDataSliceReducer } from "../placement/placement-record/placementRecordTabDataSlice";
 import { getPlacementDriveTabDataSliceReducer } from "../placement/placement-drive/placementDriveTabDataSlice";
+import { programTypeIntroByUrlSliceReducer } from "../program-type-intro/ProgramTypeIntroSlice";
 
 const allReducer = {
   ui: uiReducer,
@@ -55,6 +56,7 @@ const allReducer = {
   whySrmuLogoById: whySrmuLogoSliceReducer,
   getHomeEventsData: getHomeEventsDataSliceReducer,
   getPlacementRecordTabData: getPlacementRecordTabDataSliceReducer,
-  getPlacementDriveTabData: getPlacementDriveTabDataSliceReducer
+  getPlacementDriveTabData: getPlacementDriveTabDataSliceReducer,
+  getProgramByIntro:programTypeIntroByUrlSliceReducer
 };
 export default allReducer;

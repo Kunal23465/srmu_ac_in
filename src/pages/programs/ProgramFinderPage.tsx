@@ -1,39 +1,40 @@
-import React, { useMemo } from "react";
+import React, { useEffect } from "react";
 import ProgramFinderHome from "../../components/program-finder-home/ProgramFinderHome";
 import { useLocation } from "react-router-dom";
-import { RootState } from "../../store";
-import { useSelector } from "react-redux";
-import { getProgramCategoryPathMatch } from "../../utils/programCategoryRoute";
+import { AppDispatch, RootState } from "../../store";
+import { useDispatch, useSelector } from "react-redux";
+
 import SeoHead from "../../components/seo/SeoHead";
-import { SITE_NAME, stripHtml } from "../../utils/seo";
+
+import { fetchProgramTypeIntroByUrl } from "../../store/program-type-intro/ProgramTypeIntroThunk";
 
 /* ------------------ component ------------------ */
 
 const ProgramFinderPage: React.FC = () => {
   const location = useLocation();
-  const { data } = useSelector((state: RootState) => state.programMenu);
-
-  const finalFilterMatch = useMemo(() => {
-    const [firstSegment = "", secondSegment = ""] = location.pathname.replace(/^\/+/, "").split("/");
-    return getProgramCategoryPathMatch(data, firstSegment, secondSegment);
-  }, [data, location.pathname]);
-
-  const finalFilterData = finalFilterMatch?.matchedDiscipline;
-  const fallbackTitle = `Programs at ${SITE_NAME} | BTech, MBA, BBA, BCA Courses in Lucknow`;
-  const fallbackDescription =
-    `Explore UG, PG, diploma, and PhD programs at ${SITE_NAME}, Lucknow. Compare courses, eligibility, fees, admissions, and career opportunities.`;
+  const dispatch = useDispatch<AppDispatch>();
 
 
+  const { data: programByIntroData } = useSelector((state: RootState) => state.getProgramByIntro);
+  
 
+ 
+  /* ===========================
+        Fetch Intro by URL
+     =========================== */
+useEffect(() => {
+  const finalUrl = location.pathname.slice(1); // removes leading "/"
+  dispatch(fetchProgramTypeIntroByUrl(finalUrl));
+}, [location, dispatch]);
+
+
+  console.log("programByIntroData",programByIntroData)
   return (
     <>
       <SeoHead
-        title={finalFilterData?.metaTitle || (finalFilterData?.disciplineName ? `${finalFilterData.disciplineName} Programs | ${SITE_NAME}, Lucknow` : fallbackTitle)}
+        title={programByIntroData?.metaTitle || ""}
         description={
-          finalFilterData?.metaDescription ||
-          (finalFilterData?.disciplineName
-            ? `Explore ${stripHtml(finalFilterData.disciplineName)} programs at ${SITE_NAME}, Lucknow. Browse courses, admissions information, eligibility, and fee details.`
-            : fallbackDescription)
+          programByIntroData?.metaDescription || ""
         }
         pathname={location.pathname}
       />
