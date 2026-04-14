@@ -18,7 +18,7 @@ const CareerFormInputs: React.FC = () => {
       <section className="bg-[#ECF0F9] p-8 rounded-3xl mb-20">
         <div className={Classes.container}>
           <div className={Classes.career_inner_page}>
-            <div className="name color_light_blue fw500 font22 font-medium mb-[1.5rem] text-[1.375rem] text-customBlue">Career Form</div>
+            <div className="name color_light_blue fw500 font22 font-medium mb-[1.5rem] text-[1.375rem] text-customBlue">Apply Now</div>
 
             <Formik
               initialValues={initialCareerFormValues}

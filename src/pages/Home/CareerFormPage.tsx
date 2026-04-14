@@ -8,7 +8,7 @@ const CareerFormPage: React.FC = () => {
     <SeoHead
         title="Career Form | Shri Ramswaroop Memorial University, Lucknow"
         description="Employment opportunities at Shri Ramswaroop Memorial University (SRMU) encompass a diverse range of roles spanning academic, administrative, and support functions."
-        pathname="/career-form"
+        pathname="/career/career-form"
     />
       <CareerForm />
     </>

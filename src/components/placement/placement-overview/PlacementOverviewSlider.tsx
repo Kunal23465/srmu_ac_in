@@ -13,13 +13,15 @@ type Props = {
 const Goals: React.FC<OurGoals & { highlight?: boolean }> = ({ title, subtitle, description }) => (
   <div
     className="
-      h-full p-4 sm:p-8 rounded-2xl bg-white
+      h-full p-4 sm:p-8 rounded-2xl overflow-hidden  bg-white
       hover:bg-[#fffefa] border border-[#f7b822] sm:border-white hover:border-[#f7b822]
     "
   >
+    <div className="h-full overflow-y-auto">
     <h2 className="lg:text-[28px] sm:text-[14.882px] text-[14.882px] md:text-[15.945px] font-bold mb-4 color_light_blue">{title}</h2>
     <p className="text-[#212529] font-bold lg:text-[17px] md:text-[15.945px] sm:text-[14.882px] text-[14.882px] mb-2">{subtitle}</p>
     <p className="text-[#212529] lg:text-[17px] md:text-[15.945px] sm:text-[14.882px] text-[14.882px]">{description}</p>
+  </div>
   </div>
 );
 
@@ -136,10 +138,10 @@ const OurGoal: React.FC<Props> = ({ items }) => {
           </div>
 
           {/* STATIC GRID SECTION */}
-          <div className="flex-1 w-full md:w-3/5 h-full xl:h-[320px]">
+          <div className="flex-1 w-full md:w-3/5 h-full xl:min-h-[320px]">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {items.slice(0, 2).map((item, i) => (
-                <div key={i} className="px-0 sm:px-3 mx-1 w-auto h-full xl:h-[320px]">
+                <div key={i} className="px-0 sm:px-3 mx-1 w-auto h-full xl:min-h-[320px]">
                   <Goals {...item} />
                 </div>
               ))}

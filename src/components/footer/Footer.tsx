@@ -119,7 +119,7 @@ export const footerData = {
     {
       id: 0,
       title: "Careers",
-      path: "career-form",
+      path: "/career/career-form",
     },
     {
       id: 1,

@@ -125,7 +125,7 @@ export const routes = [
         element: <HomePage />,
       },
       {
-        path: "career-form",
+        path: "career/career-form",
         element: <CareerFormPage />,
       },
       {

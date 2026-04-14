@@ -58,7 +58,7 @@ const PhdNotificationSession: React.FC = () => {
     <div>
       <div className={`${Classes["container"]} mb-8`}>
         <CustomOverviewSection data={PhdNotificationOverviewData} />
-        <SeatsAvailableSection />
+        {/* <SeatsAvailableSection /> */}
         <div className="mt-0">
           <h2 className="lg:text-[32px] md:text-[27.255px] sm:text-[21.925px] text-[21.925px] fw500 text-black mb-2">Mode of Application</h2>
           <div className="flex flex-col md:flex-row items-center justify-start gap-5 md:gap-10">
