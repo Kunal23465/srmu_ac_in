@@ -215,7 +215,7 @@ export const researchInstitutes: Institute[] = [
             { department: "Physical Sciences", faculty: "Dr. Mukesh Mishra", email: "mukesh.phy@srmuc.ac.in" },
             { department: "Chemical Sciences", faculty: "Dr. Dolly Kumari", email: "dolly.kumari.focs@srmuc.ac.in" },
             { department: "Mathematical Sciences", faculty: "Dr. Kulbhushan Singh", email: "kulbhush.maths@srmuc.ac.in" },
-            { department: "Humanities", faculty: "Dr. Amarap Lal Singh", email: "amarpal.hum@srmuc.ac.in" },
+            { department: "Humanities", faculty: "Dr. Amar PAl Singh", email: "amarpal.hum@srmuc.ac.in" },
         ],
     },
     {

@@ -197,8 +197,6 @@ export const CustomCompaniesScope: React.FC<CompaniesScopeProps> = ({
         {!hasMounted && showControls && (
           <div className="mt-12 h-13" />
         )}
-
-        <div className="h-16"></div>
       </div>
     </div>
   );

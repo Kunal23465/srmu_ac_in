@@ -278,7 +278,8 @@ const ProgramDetails: React.FC = () => {
           {/* @ts-ignore */}
           <CustomEligibilitySection data={dataByID?.eligibility} />
         </div>
-        <div className="bg-[#ecf0f9] pb-10">
+        {
+          whySrmuLogo.length > 0 &&  <div className="bg-[#ecf0f9] pb-10">
           <CustomDepartmentSlider
             heading={`${!isPhd ? "Why SRMU?" : "Ph.D. Process"} `}
             description=""
@@ -290,7 +291,7 @@ const ProgramDetails: React.FC = () => {
             breakpoints={{ desktop: 4, tablet: 3, mobile: 1 }}
           />
 
-          {!isPhd && (
+          {!isPhd  &&  (
             <div className={`${Classes["container"]}`}>
 
               <div className={`grid w-full grid-cols-2  ${whySrmuLogo.length > 4 ? "sm:grid-cols-3 lg:grid-cols-6 lg:gap-10" : "sm:grid-cols-2 md:grid-cols-4 sm:gap:15 lg:gap-20"}  gap-5   place-items-start`}>
@@ -310,7 +311,7 @@ const ProgramDetails: React.FC = () => {
                       </div>
                     ))
                   }</>) : (<> {
-                  partnerDataforAIandML.length>0 &&  partnerDataforAIandML.map((item, index) => (
+                 partnerDataforAIandML.length>0 &&  partnerDataforAIandML.map((item, index) => (
                       <div key={index} className="flex border w-full md:border-none border-[#ccc] py-2 px-3 sm:p-0 flex-col items-center gap-5">
                         <img
                           src={item.img}
@@ -329,6 +330,8 @@ const ProgramDetails: React.FC = () => {
             </div>
           )}
         </div>
+        }
+       
         <div className={`${Classes["container"]}`}>
           <h2 className="mt-20 mb-10 text-center text-[22px] sm:text-[28px] lg:text-[3.125rem] fw500 text-[#023047]">Program Fee</h2>
 

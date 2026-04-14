@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../../store";
 import { fetchAllProgramFinder } from "../../../store/program-finder/programFinderThunk";
@@ -9,7 +9,7 @@ import ProgramFinderIntro from "./ProgramFinderIntro";
 import CustomTopFooter from "../../../utils/custom/CustomTopFooter";
 import { feeStructureCustomTopFooter } from "../../../data/admissions/fee-structure/fee-structue-data";
 import Classes from "../../../utils/styles/Global.module.css";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { fetchProgramTypeIntroByUrl } from "../../../store/program-type-intro/ProgramTypeIntroThunk";
 import { Helmet } from "react-helmet-async";
 
@@ -19,30 +19,41 @@ const ProgramFinder: React.FC = () => {
   const { data } = useSelector((state: RootState) => state.getProgramFinder);
   const { programType } = useSelector((state: RootState) => state.getProgramType);
   const { discipline } = useSelector((state: RootState) => state.getDiscipline);
+
   const location = useLocation();
+  const navigate = useNavigate();
+
   const pathParts = location.pathname.split("/").filter(Boolean);
   const isDynamicProgramFinderRoute = pathParts.length === 2 && pathParts[0] !== "program-finder";
   const disciplineSlugFromRoute = isDynamicProgramFinderRoute ? pathParts[0] : "";
   const programTypeSlugFromRoute = isDynamicProgramFinderRoute ? pathParts[1] : "";
-  
+
   const [selectedProgramType, setSelectedProgramType] = useState<string>(programTypeSlugFromRoute);
   const [selectedDiscipline, setSelectedDiscipline] = useState<string>(disciplineSlugFromRoute);
   const [searchTerm, setSearchTerm] = useState("");
   const [debouncedSearch, setDebouncedSearch] = useState("");
-  const [isUserInitiated, setIsUserInitiated] = useState(false);
+
+  // ✅ Controls whether URL sync is allowed
+  // False during programType change until discipline is resolved
+  const [isDisciplineReady, setIsDisciplineReady] = useState(
+    // On initial load with route slugs, discipline is already known — allow URL sync immediately
+    !!disciplineSlugFromRoute
+  );
+
+  // Tracks if programType change was user-initiated (not initial route load)
+  const isUserInitiatedRef = useRef(false);
 
   const selectedProgramTypeObj = programType?.find((pt) => pt.slug === selectedProgramType);
   const selectedDisciplineObj = discipline?.find((d) => d.slug === selectedDiscipline);
   const introDescription = selectedDisciplineObj?.description || selectedProgramTypeObj?.description || "";
 
   /* ===========================
-           Debounce Search
+       Debounce Search
      =========================== */
   useEffect(() => {
     const timer = setTimeout(() => {
       setDebouncedSearch(searchTerm);
     }, 500);
-
     return () => clearTimeout(timer);
   }, [searchTerm]);
 
@@ -61,66 +72,93 @@ const ProgramFinder: React.FC = () => {
   }, [debouncedSearch, dispatch, selectedDiscipline, selectedProgramType]);
 
   /* ===========================
-      Initial Load - Program Types & Disciplines
+      Initial Load - Program Types
      =========================== */
   useEffect(() => {
     if (programType.length === 0) {
       dispatch(fetchProgramType());
     }
-
-    // Only fetch all disciplines if NO programType selected
-    if (discipline.length === 0 && !selectedProgramType) {
-      dispatch(fetchProgramDisciplines());
-    }
-  }, [dispatch, programType.length, selectedProgramType, discipline.length]);
+  }, [dispatch, programType.length]);
 
   /* ===========================
-      Fetch filtered disciplines based on programType
-      IMPORTANT: This runs AFTER selectedProgramType is set from route
+      Fetch disciplines based on selectedProgramType
+
+      Scenarios:
+      1. Initial page load with URL slugs  → restore discipline from URL
+      2. User changes programType          → auto-select first discipline
+                                           → isDisciplineReady = false until resolved
      =========================== */
   useEffect(() => {
-    // Only fetch if selectedProgramType exists
     if (selectedProgramType) {
       dispatch(fetchProgramDiscipline({ programTypeSlug: selectedProgramType }))
         .unwrap()
         .then((disciplines) => {
-          // Auto-select first discipline only if user changed programType
           if (disciplines && disciplines.length > 0) {
-            if (isUserInitiated) {
+            if (isUserInitiatedRef.current) {
+              // ✅ User changed programType → auto-select first discipline
               setSelectedDiscipline(disciplines[0].slug);
+              isUserInitiatedRef.current = false;
+            } else {
+              // ✅ Initial route load → restore discipline from URL if valid
+              const routeDisciplineExists = disciplines.some(
+                (d) => d.slug === disciplineSlugFromRoute
+              );
+              setSelectedDiscipline(
+                routeDisciplineExists ? disciplineSlugFromRoute : disciplines[0].slug
+              );
             }
-            // Otherwise keep route discipline or user's manual selection
           } else {
             setSelectedDiscipline("");
           }
+
+          // ✅ Discipline is now resolved — allow URL sync to proceed
+          setIsDisciplineReady(true);
         })
         .catch((error) => {
           console.error("Error fetching disciplines:", error);
           setSelectedDiscipline("");
+          setIsDisciplineReady(true); // Unblock even on error
         });
     } else {
-      // If no programType, fetch all disciplines
       dispatch(fetchProgramDisciplines());
       setSelectedDiscipline("");
+      setIsDisciplineReady(false);
     }
-  }, [selectedProgramType, isUserInitiated, dispatch]);
+  }, [selectedProgramType, dispatch]);
+  // ⚠️ disciplineSlugFromRoute intentionally excluded from deps
 
   /* ===========================
-      Handle ProgramType Change
-      Set flag when user changes programType
+      Sync URL — only AFTER discipline is resolved
+      Prevents 404 flash during async discipline fetch
+     =========================== */
+  useEffect(() => {
+    if (!isDisciplineReady || !selectedProgramType) return;
+
+    const path = selectedDiscipline
+      ? `/${selectedDiscipline}/${selectedProgramType}`
+      : `/program-finder/${selectedProgramType}`;
+
+    navigate(path, { replace: true });
+  }, [selectedDiscipline, selectedProgramType, isDisciplineReady, navigate]);
+
+  /* ===========================
+      Handle ProgramType Change (user action)
      =========================== */
   const handleProgramTypeChange = (newProgramType: string) => {
+    // ✅ Block URL sync immediately — wait for discipline fetch to complete
+    setIsDisciplineReady(false);
+    isUserInitiatedRef.current = true;
     setSelectedProgramType(newProgramType);
-    setIsUserInitiated(true); // ✅ Mark as user-initiated
   };
 
   /* ===========================
-      Handle Discipline Change
-      Clear the flag when user manually selects discipline
+      Handle Discipline Change (user action)
      =========================== */
   const handleDisciplineChange = (newDiscipline: string) => {
+    isUserInitiatedRef.current = false;
     setSelectedDiscipline(newDiscipline);
-    setIsUserInitiated(false); // Clear flag
+    // Discipline is explicitly selected — ready immediately
+    setIsDisciplineReady(true);
   };
 
   /* ===========================

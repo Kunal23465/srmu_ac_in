@@ -149,6 +149,7 @@ export const STATIC_PROGRAM_CATEGORY_PATHS = [
   "engineering/integrated",
   "legal-studies-law/integrated",
   "polytechnic-lateral/polytechnic-diploma",
+  "ph-d1/ph-d",
   "polytechnic/polytechnic-diploma",
   "industry-honors/artificial-intelligence",
   "industry-honors/computer-application",
@@ -165,6 +166,7 @@ export const STATIC_PROGRAM_CATEGORY_PATHS = [
   "computer-application/industry-honors1",
   "engineering/industry-honors1",
   "management/industry-honors1",
+  "program-finder/undergraduate"
 ];
 
 const STATIC_PROGRAM_CATEGORY_PATH_SET = new Set(STATIC_PROGRAM_CATEGORY_PATHS);

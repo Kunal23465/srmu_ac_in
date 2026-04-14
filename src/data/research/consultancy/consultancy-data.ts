@@ -117,12 +117,12 @@ export const consultancyData = [
         status: "Completed"
     },
     {
-        id: 13,
-        consultant: "Prof. (Dr.) Abhishek Saxena",
-        assignment: "Health Promotion Focusing Mental Health & Life Skills Among Youth Of 35 Degree Colleges Of Uttar Pradesh",
-        fundingAgency: "SIFPSA",
-        cost: "Rs. 0.73",
-        year: "2023-24",
-        status: "Completed"
-    },
+  id: 13,
+  consultant: "Dr. Anil Kumar",
+  assignment: "Health Promotion Focusing Mental Health & Life Skills Among Youth Of 35 Degree Colleges Of Uttar Pradesh",
+  fundingAgency: "SIFPSA",
+  cost: "Rs. 0.73",
+  year: "2023-24",
+  status: "Completed"
+}
 ];

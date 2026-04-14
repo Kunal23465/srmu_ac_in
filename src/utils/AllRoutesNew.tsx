@@ -165,11 +165,16 @@ export const routes = [
         path: "/:programType",
         element: <ProgramTypePage />,
       },
+      // {
+      //   path: "/:programDecipline/:programFlag",
+      //   element: <AddmissionProgramFinderPage />,
+      // },
 
       {
         path: "/:programType/:item",
         element: <ProgramTypeItemPage />,
       },
+       
       {
         path: "/program/:programName",
         element: <ProgramDetailsPage />,
@@ -295,6 +300,7 @@ export const routes = [
         path: "program-finder",
         element: <AddmissionProgramFinderPage />,
       },
+       
       {
         path: "fee-structure",
         element: <FeeStructurePage />,

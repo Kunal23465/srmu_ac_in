@@ -1,6 +1,7 @@
 import { CustomTopFooterData1 } from "../../data/about/leadership-and-governance/leadership-and-governance-data";
 import CustomTopFooter from "./CustomTopFooter";
 import Classes from "../../utils/styles/Global.module.css";
+import { Link } from "react-router-dom";
 
 export default function CustomCommitteeDetailsPage({ committee }: { committee: any }) {
 
@@ -75,18 +76,39 @@ export default function CustomCommitteeDetailsPage({ committee }: { committee: a
                 </h2>
                 <ul className="space-y-2 text-gray-700 text-[16px]">
                   {committee.contact.map((line: string, index: number) => (
-                    <li
-                      key={index}
-                      className="break-words border-b border-gray-300 pb-1"
-                    >
-                      {line.includes("http") ? (
-                        <a href={line} className="text-black hover:text-black">
-                          {line}
-                        </a>
-                      ) : (
-                        formatBold(line)
-                      )}
-                    </li>
+     <li
+  key={index}
+  className="break-words border-b border-gray-300 pb-1"
+>
+  {line.includes("http") ? (
+    (() => {
+      const match = line.match(/(.*?at\s)(https?:\/\/\S+)(.*)/);
+
+      if (!match) return formatBold(line);
+
+      const before = match[1]; // "Register at "
+      const url = match[2];    // actual URL
+      const after = match[3];  // " for Online Grievance Redressal"
+
+      return (
+        <>
+          {formatBold(before)}
+          <Link
+            to={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 underline hover:text-blue-800"
+          >
+            {url}
+          </Link>
+          {formatBold(after)}
+        </>
+      );
+    })()
+  ) : (
+    formatBold(line)
+  )}
+</li>
                   ))}
                 </ul>
               </div>
