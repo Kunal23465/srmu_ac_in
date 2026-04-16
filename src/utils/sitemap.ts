@@ -411,7 +411,7 @@ const renderSitemapXml = (siteUrl: string, entries: Map<string, string | undefin
   return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`;
 };
 
-export const buildRobotsTxt = (siteUrl: string) => `User-agent: *\nAllow: /\n\nSitemap: ${siteUrl.replace(/\/+$/, "")}/sitemap.xml\n`;
+export const buildRobotsTxt = (siteUrl: string) => `User-agent: *\nAllow: /\nDisallow: /chatbot/\n\nSitemap: ${siteUrl.replace(/\/+$/, "")}/sitemap.xml\n`;
 
 export const buildSitemapXml = async (siteUrl: string) => {
   const cacheKey = siteUrl.replace(/\/+$/, "");

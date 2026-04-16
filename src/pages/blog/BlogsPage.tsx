@@ -30,7 +30,6 @@ const BlogsPage: React.FC = () => {
     }
   }, [blogCards.length, dispatch]);
 
-  console.log("Current Blogs:", blogCards);
 
   return (
     <>

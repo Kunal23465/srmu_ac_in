@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Disallow: /chatbot/
+
+Sitemap: https://srmu.ac.in/sitemap.xml

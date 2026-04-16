@@ -60,7 +60,7 @@ const BlogDetailsPage: React.FC = () => {
       }
     } catch (error) {
       console.error('Error parsing seoConfig:', error);
-      console.log('Raw seoConfig:', data.seoConfig);
+     
     }
   }
 
@@ -128,7 +128,9 @@ const BlogDetailsPage: React.FC = () => {
             <div
               className="
                 text-[15px] text-justify
-
+                [&_a]:font-normal!
+                [&_a]:inline-block!
+                [&_a]:px-1!
                 [&_table]:w-full 
                 [&_table]:border 
                 [&_table]:border-[#d9d9d9] 

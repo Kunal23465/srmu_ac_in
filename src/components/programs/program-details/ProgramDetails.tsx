@@ -229,6 +229,8 @@ const ProgramDetails: React.FC = () => {
     return <ProgramDetailsLoader />;
   }
  
+
+  console.log("whySrmuData", whySrmuData)
   return (
     <>
       <SeoHead
@@ -279,7 +281,7 @@ const ProgramDetails: React.FC = () => {
           <CustomEligibilitySection data={dataByID?.eligibility} />
         </div>
         {
-          whySrmuLogo.length > 0 &&  <div className="bg-[#ecf0f9] pb-10">
+          whySrmuData.length > 0 &&  <div className="bg-[#ecf0f9] pb-10">
           <CustomDepartmentSlider
             heading={`${!isPhd ? "Why SRMU?" : "Ph.D. Process"} `}
             description=""
