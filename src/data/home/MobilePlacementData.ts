@@ -10,7 +10,7 @@ const MobilePlacementData = [
     {
         heading: "Placement",
         description:
-            "SRMCEM transforms aspirations into careers. Our placement cell empowers students with the skills, opportunities, knowledge, and confidence needed to thrive in today's competitive job market.",
+            "SRMU transforms aspirations into careers. Our placement cell empowers students with the skills, opportunities, knowledge, and confidence needed to thrive in today's competitive job market.",
         leftDivstoBeFlex: [
             {
                 id: 1,

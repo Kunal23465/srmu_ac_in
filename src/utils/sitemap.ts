@@ -67,7 +67,7 @@ const LEGACY_STATIC_PATHS = [
   "/privacy-policy",
   "/disclaimer",
   "/terms-conditions",
-  "/mandatory-disclouser",
+  // "/mandatory-disclouser",
   "/leadership-and-governance",
   "/committees-and-cells",
   "/recognition-approvals",

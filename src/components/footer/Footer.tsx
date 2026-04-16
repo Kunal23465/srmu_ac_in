@@ -131,11 +131,11 @@ export const footerData = {
       title: "RTI",
       path: "/rti",
     },
-    {
-      id: 2,
-      title: "Mandatory Disclosure",
-      path: "mandatory-disclouser",
-    },
+    // {
+    //   id: 2,
+    //   title: "Mandatory Disclosure",
+    //   path: "mandatory-disclouser",
+    // },
   ],
 
   getDelighted: [

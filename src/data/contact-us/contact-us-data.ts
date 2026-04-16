@@ -49,7 +49,7 @@ export const contactCardData: ContactCardType[] = [
     {
         id: 6,
         title: "For any result related query",
-        value: "examination.cell@srmcue.edu.in",
+        value: "examination.cell@srmu.ac.in",
         icon: "mailOpen",
     },
     {
