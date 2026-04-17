@@ -43,7 +43,7 @@ export const contactCardData: ContactCardType[] = [
         id: 5,
         title:
             "For post employment verification, student support related to examination",
-        value: "coe@srmcue.edu.in",
+        value: "coe@srmu.ac.in",
         icon: "phone",
     },
     {
@@ -55,7 +55,7 @@ export const contactCardData: ContactCardType[] = [
     {
         id: 7,
         title: "Email Us",
-        value: ["admissions@srmcue.edu.in", "careers@srmcue.edu.in"],
+        value: ["admissions@srmu.ac.in", "careers@srmu.ac.in"],
         icon: "envelope",
     },
 ];

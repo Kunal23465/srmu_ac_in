@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Modal } from "antd";
 
 interface Props {
@@ -16,6 +16,16 @@ interface Props {
 }
 
 const DirectorModal: React.FC<Props> = ({ open, onClose, content }) => {
+  const [hasMounted, setHasMounted] = useState(false);
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
+  if (!hasMounted) {
+    return null;
+  }
+
   return (
     <Modal open={open} onCancel={onClose} footer={null} centered width={"80%"} className="director-modal">
       <div className="p-6 max-h-[70vh] overflow-y-auto">
