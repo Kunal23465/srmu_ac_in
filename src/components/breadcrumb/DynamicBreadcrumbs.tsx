@@ -86,23 +86,27 @@ export default function DynamicBreadcrumbs() {
     return false;
   });
 
-  // 🔹 Breadcrumbs
-  const crumbs = [
+  // 🔹 Breadcrumbs — ONLY Home + Active (last) page
+  const crumbs: JSX.Element[] = [
     <Link key="home" to="/">
       Home
     </Link>,
-    ...pathParts.map((segment, index) => {
-      const url = "/" + pathParts.slice(0, index + 1).join("/");
-
-      return (
-        <Link key={url} to={url}>
-          {isBlogDetail && index === pathParts.length - 1
-            ? currentBlog?.title || formatSegment(segment)
-            : formatSegment(segment)}
-        </Link>
-      );
-    }),
   ];
+
+  if (pathParts.length > 0) {
+    const lastSegment = pathParts[pathParts.length - 1];
+    const lastUrl = "/" + pathParts.join("/");
+
+    const lastLabel = isBlogDetail
+      ? currentBlog?.title || formatSegment(lastSegment)
+      : formatSegment(lastSegment);
+
+    crumbs.push(
+      <Link key={lastUrl} to={lastUrl}>
+        {lastLabel}
+      </Link>
+    );
+  }
 
   // 🔹 Resolve Background Image
   let backgroundImg = "";

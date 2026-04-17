@@ -167,6 +167,7 @@ export interface Department {
     department: string;
     faculty: string;
     email: string;
+    phone?: string;
 }
 
 export interface Institute {
@@ -199,59 +200,206 @@ export const contactInfo: ContactInfo[] = [
 
 export const researchInstitutes: Institute[] = [
     {
-        name: "Institute of Technology",
-        departments: [
-            { department: "Civil Engineering", faculty: "Dr. Pragya Singh", email: "pragyasingh.foce@srmuc.ac.in" },
-            { department: "Mechanical Engineering", faculty: "Dr. R.K. Porwal", email: "dean.mec@srmuc.ac.in" },
-            { department: "Electrical Engineering", faculty: "Dr. Sunil Kumar", email: "sksingh.rs.eee13@jithu.ac.in" },
-            { department: "Electronics Engineering", faculty: "Dr. Jay Pandey", email: "jay.pandey@srmuc.ac.in" },
-            { department: "Computer Science & Engineering", faculty: "Dr. Satya Bhushan Verma", email: "satyabhushan.cse@srmuc.ac.in" },
-            { department: "Computer Science & Information Systems", faculty: "Dr. Nitya Nand Dwivedi", email: "nityananddwivedi.csis@srmuc.ac.in" },
-        ],
+  name: "Institute of Technology",
+  departments: [
+    {
+      department: "Civil Engineering",
+      faculty: "Dr. Mohd Zain",
+      phone: "8707788072",
+      email: "mohdzain.ce@srmu.ac.in"
     },
     {
-        name: "Institute of Natural Sciences & Humanities",
-        departments: [
-            { department: "Physical Sciences", faculty: "Dr. Mukesh Mishra", email: "mukesh.phy@srmuc.ac.in" },
-            { department: "Chemical Sciences", faculty: "Dr. Dolly Kumari", email: "dolly.kumari.focs@srmuc.ac.in" },
-            { department: "Mathematical Sciences", faculty: "Dr. Kulbhushan Singh", email: "kulbhush.maths@srmuc.ac.in" },
-            { department: "Humanities", faculty: "Dr. Amar PAl Singh", email: "amarpal.hum@srmuc.ac.in" },
-        ],
+      department: "Mechanical Engineering",
+      faculty: "Dr. R.K. Porwal",
+      phone: "9873013273",
+      email: "porwal.me@srmu.ac.in"
     },
     {
-        name: "Institute of Management, Commerce & Economics",
-        departments: [
-            { department: "Management Commerce & Economics", faculty: "Dr. Manoj Kumar", email: "manoj.mgmt@srmuc.ac.in" },
-            { department: "Management Commerce & Economics", faculty: "Dr. Priyanka Srivastav", email: "priyankasr.lmcc@srmuc.ac.in" },
-        ],
+      department: "Electrical Engineering",
+      faculty: "Dr. Sandeep Ojha",
+      phone: "7054577852",
+      email: "sandeepojha.eee@srmu.ac.in"
     },
     {
-        name: "Institute of Bioscience & Technology",
-        departments: [
-            { department: "Bioscience", faculty: "Dr. Neeraj Gupta", email: "neeraj.bio@srmuc.ac.in" },
-            { department: "Biotechnology", faculty: "Dr. Tabish Qidwai", email: "tabish.ibst@srmuc.ac.in" },
-        ],
+      department: "Electronics Engineering",
+      faculty: "Dr. Alkesh Agrawal",
+      phone: "9935363326",
+      email: "alkesh.ec@srmu.ac.in"
     },
     {
-        name: "Institute of Legal Studies",
-        departments: [
-            { department: "Legal Studies", faculty: "Dr. Upendra Nath Tiwari", email: "upendranath.ils@srmuc.ac.in" },
-        ],
+      department: "Computer Science & Engineering",
+      faculty: "Dr. Mohd Nadeem",
+      phone: "8318099719",
+      email: "mohdnadeem.dcse@srmu.ac.in"
     },
     {
-        name: "Institute of Media Studies",
-        departments: [
-            { department: "Media Studies", faculty: "Dr. Dhwani Singh", email: "dhwanisingh.ims@srmuc.ac.in" },
-        ],
+      department: "Computer Science & Information Systems",
+      faculty: "Dr. Nitya Nand Dwivedi",
+      phone: "9795991805",
+      email: "nityananddwivedi.csis@srmu.ac.in"
+    }
+  ]
+},
+    {
+  name: "Institute of Natural Sciences & Humanities",
+  departments: [
+    {
+      department: "Physical Sciences",
+      faculty: "Dr. Gulab Singh Maurya",
+      phone: "8601776289",
+      email: "gulabmaurya.fops@srmu.ac.in"
     },
     {
-        name: "Multi-disciplinary Centre for Advanced Research and Studies",
-        departments: [
-            { department: "Agricultural Sciences", faculty: "Dr. Balbeer Singh", email: "deputydirector.ias@srmuc.ac.in" },
-            { department: "Advance Educational Studies", faculty: "Dr. Rashmi Chaturvedi", email: "rashmi.ies@srmuc.ac.in" },
-            { department: "Pharmaceutical Sciences", faculty: "Dr. Manju Pandey", email: "manjupandey.pharmacy@srmuc.ac.in" },
-        ],
+      department: "Chemical Sciences",
+      faculty: "Dr. Dolly Kumari",
+      phone: "8859090915",
+      email: "dollykumari.focs@srmu.ac.in"
     },
+    {
+      department: "Mathematical Sciences",
+      faculty: "Prof. Dilip Kumar Jaiswal",
+      phone: "8299232899",
+      email: "dilipkr.maths@srmu.ac.in"
+    },
+    {
+      department: "Humanities & Social Sciences (Sociology, Psychology & Social Work)",
+      faculty: "Dr. Reshmi Saxena",
+      phone: "9005671555",
+      email: "rashmisaxena.hum@srmu.ac.in"
+    },
+    {
+      department: "Humanities & Social Sciences (Public Health and Political Science)",
+      faculty: "Dr. Anil Kumar- I",
+      phone: "9451087122",
+      email: "anilkumar.hum@srmu.ac.in"
+    },
+    {
+      department: "Humanities & Social Sciences (English)",
+      faculty: "Dr. Shilpa Shukla",
+      phone: "8354051255",
+      email: "shilpashukla.hum@srmu.ac.in"
+    }
+  ]
+},
+   {
+  name: "Institute of Management, Commerce & Economics",
+  departments: [
+    {
+      department: "Management",
+      faculty: "Dr. Aamir Aijaz Syed",
+      phone: "9889120456",
+      email: "amiraija.imce@srmu.ac.in"
+    },
+    {
+      department: "Management",
+      faculty: "Dr. Syed Asif Mehdi",
+      phone: "6394768986",
+      email: "syedasifmehdi.management@srmu.ac.in"
+    },
+    {
+      department: "Commerce & Economics",
+      faculty: "Dr. Vaibhav Sharma",
+      phone: "8960001559",
+      email: "vaibhavsharma.ecocommerce@srmu.ac.in"
+    }
+  ]
+},
+    {
+  name: "Institute of Bioscience & Technology",
+  departments: [
+    {
+      department: "Biosciences",
+      faculty: "Dr. Sankalp Misra",
+      phone: "9453315356",
+      email: "sankalpmisra.ibst@srmu.ac.in"
+    },
+    {
+      department: "Biotechnology",
+      faculty: "Dr. Devendra Singh",
+      phone: "9458662132",
+      email: "devendrasingh.ibst@srmu.ac.in"
+    }
+  ]
+},
+   {
+  name: "Institute of Legal Studies",
+  departments: [
+    {
+      department: "Legal Studies",
+      faculty: "Dr. Shashank Shekhar",
+      phone: "9453137474",
+      email: "shashankshekher.ils@srmu.ac.in"
+    },
+    {
+      department: "Legal Studies",
+      faculty: "Dr. Vivek Kumar Mishra",
+      phone: "9450960062",
+      email: "vivekkumarmishra.ils@srmu.ac.in"
+    }
+  ]
+},
+    {
+  name: "Institute of Media Studies",
+  departments: [
+    {
+      department: "Media Studies",
+      faculty: "Dr. Pradeep Kumar",
+      phone: "9450537991",
+      email: "pradeepkumar.ims@srmu.ac.in"
+    }
+  ]
+},
+   {
+  name: "Agricultural Sciences and Technology",
+  departments: [
+    {
+      department: "Agricultural Sciences",
+      faculty: "Dr. Pranav Kumar Mishra",
+      phone: "9760818194",
+      email: "pranavkrmishra.iast@srmu.ac.in"
+    }
+  ]
+},
+{
+  name: "Institute of Education and Research",
+  departments: [
+    {
+      department: "Education",
+      faculty: "Dr. Ashish Kumar Awasthi",
+      phone: "8574393914",
+      email: "ashishkr.ier@srmu.ac.in"
+    }
+  ]
+},
+{
+  name: "Centre for Multidisciplinary Research and Advance Studies",
+  departments: [
+    {
+      department: "Pharmaceutical Sciences",
+      faculty: "Dr. Yasmin Khatoon",
+      phone: "9335510489",
+      email: "yasminkhatoon.pharma@srmu.ac.in"
+    },
+    {
+      department: "Biomedical Sciences & Alternative Medicine",
+      faculty: "Dr. Garima Gupta",
+      phone: "6394783594",
+      email: "garimagupta.ibst@srmu.ac.in"
+    },
+    {
+      department: "AI & ML",
+      faculty: "Dr. Mohd Nadeem",
+      phone: "8318099719",
+      email: "mohdnadeem.dcse@srmu.ac.in"
+    },
+    {
+      department: "Cyber Security Systems",
+      faculty: "Dr. Nitya Nand Dwivedi",
+      phone: "9795991805",
+      email: "nityananddwivedi.csis@srmu.ac.in"
+    }
+  ]
+}
 ];
 export const otherfacilitiesCardData: FacilityTypes[] = [
 

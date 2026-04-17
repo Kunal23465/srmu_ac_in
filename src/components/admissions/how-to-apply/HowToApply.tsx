@@ -184,7 +184,7 @@ const HowToApply: React.FC = () => {
           <div className={`${Classes["container"]} py-10 lg:py-20`}>
             <div className="flex flex-col lg:flex-row gap-6 lg:gap-25 px-0 lg:px-0">
               <div className="pt-6 lg:pt-0 w-full">
-                <img src={img} alt="" className="w-full h-auto block" />
+                <img src={img} alt="Benefits of studying at NAAC accredited SRMU university" className="w-full h-auto block" />
               </div>
 
               <div className="py-2 sm:py-0 w-full">

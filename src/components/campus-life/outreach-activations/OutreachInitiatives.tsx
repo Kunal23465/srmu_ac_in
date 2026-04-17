@@ -64,7 +64,7 @@ const OutreachInitiatives: React.FC = () => {
                                 backface-hidden
                             "
                 >
-                  <img src={initiative.front.img} alt="Image" className="w-full h-full object-cover" />
+                  <img src={initiative.front.img} alt={`${initiative.front.title} - Outreach Initiative`} className="w-full h-full object-cover" />
                   <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent" />
 
                   <div className="absolute bottom-4 left-4 text-white lg:text-[26px] md:text-[24.375px] text-[22.75px] sm:text-[22.75px] font-semibold drop-shadow-md">

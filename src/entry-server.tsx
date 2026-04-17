@@ -28,6 +28,7 @@ import { routes } from "./utils/AllRoutesNew";
 import { eventsData } from "./data/home/EventsData";
 import { legacyNewsArticles } from "./data/legacy/legacyContent";
 import { resolveProgramRouteSlug } from "./utils/legacyProgramRoutes";
+import { fetchProgramTypeIntroByUrl } from "./store/program-type-intro/ProgramTypeIntroThunk";
 import { findBlogBySlug, findCommitteeCardBySlug, findConferenceBySlug, findEventCardBySlug, findNewsBySlug } from "./utils/routeMatching";
 import { getProgramCategoryPathMatch, hasValidTopLevelProgramRoute, resolveTopLevelProgramRoute } from "./utils/programCategoryRoute";
 
@@ -318,6 +319,8 @@ async function preloadDynamicProgramFinderPageData(store: ReturnType<typeof crea
     return;
   }
 
+  const introUrl = segments.join("/");
+
   if (segments.length === 1) {
     const topLevelRoute = resolveTopLevelProgramRoute(segments[0]);
 
@@ -330,6 +333,7 @@ async function preloadDynamicProgramFinderPageData(store: ReturnType<typeof crea
         store.dispatch(fetchProgramFlags()),
         store.dispatch(fetchProgramDiscipline({ programFlagSlug: topLevelRoute.slug })),
         store.dispatch(fetchAllProgramFinder({ programFlagSlug: topLevelRoute.slug })),
+        store.dispatch(fetchProgramTypeIntroByUrl(introUrl)),
       ]);
       return;
     }
@@ -338,6 +342,7 @@ async function preloadDynamicProgramFinderPageData(store: ReturnType<typeof crea
       store.dispatch(fetchProgramFlags()),
       store.dispatch(fetchProgramDisciplines()),
       store.dispatch(fetchAllProgramFinder({ programDisciplineSlug: topLevelRoute.slug })),
+      store.dispatch(fetchProgramTypeIntroByUrl(introUrl)),
     ]);
     return;
   }
@@ -369,6 +374,7 @@ async function preloadDynamicProgramFinderPageData(store: ReturnType<typeof crea
     store.dispatch(fetchProgramFlags()),
     store.dispatch(fetchProgramDiscipline({ programFlagSlug })),
     store.dispatch(fetchAllProgramFinder(filters)),
+    store.dispatch(fetchProgramTypeIntroByUrl(introUrl)),
   ]);
 }
 
@@ -440,7 +446,13 @@ export async function render(url: string) {
   const appHtml = ReactDOMServer.renderToString(
     <HelmetProvider context={helmetContext}>
       <Provider store={store}>
-        <StaticRouter location={url}>
+        <StaticRouter
+          location={url}
+          future={{
+            v7_startTransition: true,
+            v7_relativeSplatPath: true,
+          }}
+        >
           <App />
         </StaticRouter>
       </Provider>

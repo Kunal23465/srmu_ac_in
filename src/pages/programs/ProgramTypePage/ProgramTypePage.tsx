@@ -1,48 +1,37 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import ProgramFinderPage from '../ProgramFinderPage'
-// import { useLocation } from 'react-router-dom'
-// import { useSelector } from 'react-redux'
-// import { RootState } from '../../../store'
-// import PageNotFound from '../../PageNotFound'
-// import { normalizeProgramRouteSlug, resolveTopLevelProgramRoute } from '../../../utils/programCategoryRoute'
-// import SeoHead from '../../../components/seo/SeoHead'
-// import { SITE_NAME, humanizeSlug } from '../../../utils/seo'
+import { useLocation } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { AppDispatch, RootState } from '../../../store';
+import { fetchProgramTypeIntroByUrl } from '../../../store/program-type-intro/ProgramTypeIntroThunk';
+import SeoHead from '../../../components/seo/SeoHead';
+
 
 const ProgramTypePage: React.FC = () => {
-    // const { data } = useSelector((state: RootState) => state.programMenu)
-    // const location = useLocation();
-    // const routeSlug = useMemo(() => normalizeProgramRouteSlug(location.pathname), [location.pathname]);
-    // const routeMatch = useMemo(() => resolveTopLevelProgramRoute(routeSlug), [routeSlug]);
-    // const routeLabel = useMemo(() => humanizeSlug(routeSlug || "programs"), [routeSlug]);
+    const location = useLocation();
+    const dispatch = useDispatch<AppDispatch>();
 
-    // const dataForMeta = useMemo(() => {
-    //     if (!routeMatch) {
-    //         return null;
-    //     }
+    const { data: programByIntroData, loading } = useSelector((state: RootState) => state.getProgramByIntro);
 
-    //     if (routeMatch.kind === "programFlag") {
-    //         return data.find((item) => normalizeProgramRouteSlug(item.programFlagSlug || item.programFlagName || "") === routeMatch.slug) || null;
-    //     }
+    useEffect(() => {
+        const finalUrl = location.pathname.slice(1);
+        dispatch(fetchProgramTypeIntroByUrl(finalUrl));
+    }, [location.pathname, dispatch]);
 
-    //     return data
-    //         .flatMap((item) => item.disciplines || [])
-    //         .find((discipline) => normalizeProgramRouteSlug(discipline.disciplineSlug || discipline.disciplineName || "") === routeMatch.slug) || null;
-    // }, [data, routeMatch])
+    const isSeoReady = Boolean(programByIntroData?.metaTitle && programByIntroData?.metaDescription);
 
-    // if (!routeMatch) {
-    //     return <PageNotFound />
-    // }
+    if (loading || !isSeoReady) {
+        return null;
+    }
 
+    console.log("programByIntroData",programByIntroData)
     return (
         <div>
-            {/* <SeoHead
-                title={dataForMeta?.metaTitle || `${dataForMeta?.programFlagName || dataForMeta?.disciplineName || routeLabel} Programs | ${SITE_NAME}, Lucknow`}
-                description={
-                    dataForMeta?.metaDescription ||
-                    `Explore ${dataForMeta?.programFlagName || dataForMeta?.disciplineName || routeLabel} programs at ${SITE_NAME}, Lucknow. Check courses, eligibility, fees, and admissions details.`
-                }
+            <SeoHead
+                title={programByIntroData.metaTitle}
+                description={programByIntroData.metaDescription}
                 pathname={location.pathname}
-            /> */}
+            />
 
             <ProgramFinderPage />
         </div>

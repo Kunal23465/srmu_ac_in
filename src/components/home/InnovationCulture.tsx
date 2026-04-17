@@ -14,22 +14,22 @@ export default function InnovationCulture() {
           <div className="humming">
             <ul className="text-sm sm:text-base lg:text-lg uppercase font20">
               <li className="border border-[#0e2f46] hover:border-white  rounded-xl transition-all duration-500 py-1 pl-2">
-                <a className="text-sm sm:text-base" href="#">22 Research & Consultancy Projects Completed</a>
+                <Link to="/research-overview" className="text-sm sm:text-base">22 Research & Consultancy Projects Completed</Link>
               </li>
               <li className="border border-[#0e2f46] hover:border-white  rounded-xl transition-all duration-500 py-1 pl-2">
-                <a className="text-sm sm:text-base" href="#">3 Cr.+ Funding Received For R & C Projects</a>
+                <Link to="/research-overview" className="text-sm sm:text-base">3 Cr.+ Funding Received For R & C Projects</Link>
               </li>
               <li className="border border-[#0e2f46] hover:border-white  rounded-xl transition-all duration-500 py-1 pl-2">
-                <a className="text-sm sm:text-base" href="#">90+ Patents Granted / Published</a>
+                <Link to="/research-overview" className="text-sm sm:text-base">90+ Patents Granted / Published</Link>
               </li>
               <li className="border border-[#0e2f46] hover:border-white  rounded-xl transition-all duration-500 py-1 pl-2">
-                <a className="text-sm sm:text-base" href="#">825+ Research Papers Published</a>
+                <Link to="/research-overview" className="text-sm sm:text-base">825+ Research Papers Published</Link>
               </li>
               <li className="border border-[#0e2f46] hover:border-white  rounded-xl transition-all duration-500 py-1 pl-2">
-                <a className="text-sm sm:text-base" href="#">270+ Books & Book Chapters Published</a>
+                <Link to="/research-overview" className="text-sm sm:text-base">270+ Books & Book Chapters Published</Link>
               </li>
               <li className="border border-[#0e2f46] hover:border-white  rounded-xl transition-all duration-500 py-1 pl-2">
-                <a className="text-sm sm:text-base" href="#">125+ Ph.D. Awarded</a>
+                <Link to="/research-overview" className="text-sm sm:text-base">125+ Ph.D. Awarded</Link>
               </li>
             </ul>
           </div>

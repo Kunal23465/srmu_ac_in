@@ -22,7 +22,7 @@ const SportsAndGames = () => {
         </div>
 
         <div className="children relative  overflow-hidden">
-          <img className="hover:scale-120 transition-all duration-500 rounded-xl" src={outreachImages[3].src} alt="" />
+          <img className="hover:scale-120 transition-all duration-500 rounded-xl" src={outreachImages[3].src} alt="Kabaddi court and players" />
           <div className="bg-opacity-50 font-medium text-white flex items-center min-h-[70px] absolute bottom-0 left-0 w-full px-3 rounded-b-lg lg:text-[22px] md:text-[20.625px] text-[19.25px] sm:text-[19.25px]">
             Kabaddi
           </div>
@@ -72,7 +72,7 @@ const SportsAndGames = () => {
         </div>
 
         <div className="children relative overflow-hidden">
-          <img className="hover:scale-120 transition-all duration-500 rounded-xl" src={outreachImages[8].src} alt="" />
+          <img className="hover:scale-120 transition-all duration-500 rounded-xl" src={outreachImages[8].src} alt="Football field and players" />
 
           <div className="bg-opacity-50 font-medium text-white flex items-center min-h-[70px] absolute bottom-0 left-0 w-full px-3 rounded-b-lg lg:text-[22px] md:text-[20.625px] text-[19.25px] sm:text-[19.25px]">
             Football

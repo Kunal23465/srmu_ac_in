@@ -32,7 +32,7 @@ const SeoHead = ({
   const canonicalUrl = buildCanonicalUrl(normalizedPath);
   const socialImage = toAbsoluteUrl(image) || DEFAULT_SOCIAL_IMAGE;
   const robots = noindex ? "noindex, nofollow" : "index, follow";
-
+// console.log("title",title)
   return (
     <Helmet prioritizeSeoTags>
       <title>{title}</title>

@@ -125,7 +125,7 @@ const KeyHighlightsSection: React.FC<CustomFacilitiesTypes> = ({ facilities, lay
                   <div className="bg-white rounded-2xl overflow-hidden h-full flex flex-col">
                     <img src={facility.imageUrl} alt={facility.title} className="w-full aspect-2/1.5 object-cover" />
                     <div className="p-6 flex flex-col flex-grow">
-                      <h2 className="lg:text-[26px] md:text-[24.375px] sm:text-[22.75px] text-[22.75px] font-semibold text-[#0f4a85] mb-3">
+                      <h2 className="lg:text-[22px] md:text-[20px] text-[18px] font-semibold text-[#0f4a85] mb-3">
                         {facility.title}
                       </h2>
                       <div
@@ -198,7 +198,7 @@ const KeyHighlightsSection: React.FC<CustomFacilitiesTypes> = ({ facilities, lay
               {facilities.map((facility, index) => (
                 <div
                   key={index}
-                  className="flex-shrink-0 flex-grow-0 px-3"
+                  className="flex-shrink-0 flex-grow-0 px-2"
                   style={{ flexBasis: getSlideWidth() }}
                 >
                   <div className="h-full sm:h-[600px] md:h-[650px] lg:h-[600px]">
@@ -208,8 +208,8 @@ const KeyHighlightsSection: React.FC<CustomFacilitiesTypes> = ({ facilities, lay
                         alt={facility.title}
                         className="w-full aspect-2/1.5 object-cover"
                       />
-                      <div className="p-6 flex flex-col flex-grow">
-                        <h2 className="lg:text-[26px] md:text-[24.375px] sm:text-[22.75px] text-[22.75px] font-semibold text-[#0f4a85] mb-3">
+                      <div className="py-4 px-3 flex flex-col flex-grow">
+                        <h2 className="lg:text-[22px] md:text-[20px] text-[18px] font-semibold text-[#0f4a85] mb-2">
                           {facility.title}
                         </h2>
                         <div

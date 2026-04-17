@@ -85,7 +85,7 @@ const MeetingFrequency: React.FC = () => {
                 </div>
 
                 <div className="hidden md:flex justify-center">
-                    <img src={activeYear.image} className="rounded-xl shadow-lg object-cover w-full h-[350px]" />
+                    <img src={activeYear.image} alt="Student Senate Meeting - Year Frequency" loading="lazy" className="rounded-xl shadow-lg object-cover w-full h-[350px]" />
                 </div>
             </div>
         </section>

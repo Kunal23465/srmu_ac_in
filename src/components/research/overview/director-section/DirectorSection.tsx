@@ -37,7 +37,7 @@ const DirectorSection: React.FC = () => {
 
 
           <div className="w-full lg:w-[80%] ml-auto">
-            <img src={DirectorSectionData.imageUrl} alt="" className="rounded-xl" />
+            <img src={DirectorSectionData.imageUrl} alt="University Director Profile" loading="lazy" className="rounded-xl" />
           </div>
         </div>
       </div>

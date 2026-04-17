@@ -58,36 +58,38 @@ const GrievanceRedressalSystem: React.FC = () => {
          <div className="flex flex-col md:flex-row items-center justify-center gap-6">
           {/* LEFT CARD */}
           <div>
-                   <a
-              href="#"
+                   <button
+              type="button"
+              aria-label="Grievance Redressal Mechanism for Students"
               className="
         block rounded-[10px] bg-white shadow-[0_4px_16px_rgba(0,0,0,0.16)]
         px-8 py-16 w-[300px] sm:w-[340px] xl:w-[385px] h-[186px] text-center text-[20px] font-semibold leading-snug
         border-t-[5px] border-b-[5px] 
         border-t-[#0f4a85] 
         border-b-[#ffb703]
-        transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-xl
+        transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-xl cursor-pointer
       "
             >
               Grievance Redressal Mechanism for Students
-            </a>
+            </button>
           </div>
 
           {/* RIGHT CARD */}
           <div>
-            <a
-              href="#"
+            <button
+              type="button"
+              aria-label="Student Portal Login"
               className="
         block rounded-[10px] bg-white shadow-[0_4px_16px_rgba(0,0,0,0.16)]
         px-8 py-16 w-[300px] sm:w-[340px] xl:w-[385px] h-[186px] text-center text-[20px] font-semibold leading-snug
         border-t-[5px] border-b-[5px]
         border-t-[#0f4a85]
         border-b-[#ffb703]
-        transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-xl
+        transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-xl cursor-pointer
       "
             >
               Click Here To <br /> Login
-            </a>
+            </button>
           </div></div>
         </div>
       </div>

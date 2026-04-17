@@ -34,7 +34,7 @@ const ResearchOfficeSection: React.FC = () => {
           </div>
 
           <div className="w-full px-4 sm:px-8 md:px-10 bg-[#ecf0f9] rounded-bl-4xl py-8 sm:py-12">
-            <h2 className="lg:text-[25px] md:text-[23.445px] sm:text-[21.882px] text-[21.882px] font-bold mb-6">Research Coordinators of Different Departments</h2>
+            <h2 className="lg:text-[25px] md:text-[23.445px] sm:text-[21.882px] text-[21.882px] font-bold mb-2 px-2">Research Coordinators of Different Departments</h2>
 
             {/* SCROLL CONTAINER */}
             <div className="overflow-x-auto">
@@ -43,13 +43,13 @@ const ResearchOfficeSection: React.FC = () => {
                 <thead>
                   <tr className="bg-[#214a8a] text-white">
                     {/* Institute – Hidden on mobile */}
-                    <th className="hidden lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px] md:table-cell text-center py-4 px-6 font-semibold rounded-sm">INSTITUTES</th>
+                    <th className="hidden  text-[14px] md:table-cell text-center py-2 px-3 font-semibold rounded-sm min-w-[200px]">INSTITUTES</th>
 
-                    <th className="text-center lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px] py-4 px-6 font-semibold rounded-sm text-nowrap">DEPARTMENT</th>
+                    <th className="text-center  text-[14px] py-2 px-3 font-semibold rounded-sm text-nowrap min-w-[200px]">DEPARTMENT</th>
 
-                    <th className="text-center lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px]  py-4 px-6 font-semibold rounded-sm text-nowrap">NAME OF FACULTY</th>
-
-                    <th className="text-center lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px] py-4 px-6 font-semibold rounded-sm text-nowrap">EMAIL ID</th>
+                    <th className="text-center  text-[14px]  py-2 px-3 font-semibold rounded-sm text-nowrap min-w-[200px]">NAME OF FACULTY</th>
+<th className="text-center  text-[14px] py-2 px-3 font-semibold rounded-sm text-nowrap min-w-[150px]">PHONE</th>
+                    <th className="text-center  text-[14px] py-2 px-3 font-semibold rounded-sm text-nowrap min-w-[200px]  ">EMAIL ID</th>
                   </tr>
                 </thead>
 
@@ -66,22 +66,25 @@ const ResearchOfficeSection: React.FC = () => {
                               <td
                                 rowSpan={item.departments.length}
                                 className={`hidden md:table-cell ${instituteColor} text-white 
-                  text-center py-6 px-4 lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px] font-semibold align-middle rounded-md`}
+                  text-center py-6 px-3  fon2-semibold align-middle rounded-md`}
                               >
                                 {item.name}
                               </td>
                             )}
 
                             {/* Department */}
-                            <td className="bg-white px-4 lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px] py-4 text-sm text-gray-800 text-center md:text-left">
+                            <td className="bg-white px-3  py-2 text-sm text-gray-800 text-center md:text-left">
                               {dept.department}
                             </td>
 
                             {/* Faculty */}
-                            <td className="bg-white px-4 lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px] py-4 text-sm text-gray-800 text-center">{dept.faculty}</td>
+                            <td className="bg-white px-3  py-2 text-sm text-gray-800 text-center">{dept.faculty}</td>
+                            {/* Phone */}
+                                                        <td className="bg-white px-3  py-2 text-sm text-gray-800 text-center">{dept.phone}</td>
+
 
                             {/* Email */}
-                            <td className="bg-white px-4 lg:text-[16px] md:text-[15px] sm:text-[14px] text-[14px] py-4 text-sm text-center break-all">
+                            <td className="bg-white px-3  py-2 text-sm text-center break-all">
                               <a href={`mailto:${dept.email}`} className="text-[#0f4a85] hover:underline">
                                 {dept.email}
                               </a>

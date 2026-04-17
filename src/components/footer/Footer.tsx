@@ -441,12 +441,12 @@ const Footer: React.FC = () => {
               </Link>
               <h2 className="font-semibold text-[14px] sm:text-base pt-10 mb-4 text-[#ffb703]  Get Responsible uppercase">Awards</h2>
               <div className="flex gap-x-4 mb-4">
-                <img src={awards1} alt="awards1" />
-                <img src={awards2} alt="awards1" />
+                <img src={awards1} alt="SRMU Awards and Recognition" loading="lazy" />
+                <img src={awards2} alt="SRMU Accreditation and Awards" loading="lazy" />
               </div>
               <h2 className="font-semibold text-[14px] sm:text-base pt-8 mb-4 text-[#ffb703]  Get Responsible uppercase">MERCH SHOP</h2>
               <h4 className="font-semibold lg:!text-[14px] !text-[13.132px] text-white">To Shop SRMU Merchandise Scan the Code</h4>
-              <img src={scanner} alt="scanner" className="max-w-[170px] mt-4" />
+              <img src={scanner} alt="SRMU Merchandise QR code for scanning" loading="lazy" className="max-w-[170px] mt-4" />
             </div>
           </div>
         </div>

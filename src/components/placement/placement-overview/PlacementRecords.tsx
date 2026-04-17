@@ -144,6 +144,10 @@ const PlacementRecords: React.FC = () => {
     return `${100 / slidesToShow}%`;
   };
 
+  const getPlacementCardKey = (stu: PlacementRecord, index: number) => {
+    return `${stu.instituteStudentPlacedId}-${stu.programId}-${stu.studentName}-${index}`;
+  };
+
   /* ---------------- LOADING ---------------- */
   if (loading) {
     return <p className="text-center my-5">Loading...</p>;
@@ -198,8 +202,8 @@ const PlacementRecords: React.FC = () => {
 
           {/* STATIC GRID */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-            {students.slice(0, 5).map((stu: PlacementRecord) => (
-              <div key={stu.instituteStudentPlacedId} className="px-2">
+            {students.slice(0, 5).map((stu: PlacementRecord, index: number) => (
+              <div key={getPlacementCardKey(stu, index)} className="px-2">
                 <div className="w-full rounded-xl border border-white py-3 px-2 text-center">
                   <div className="min-h-[200px]">
                     <img
@@ -309,9 +313,9 @@ const PlacementRecords: React.FC = () => {
         {/* EMBLA CAROUSEL */}
         <div className="overflow-hidden" ref={emblaRef}>
           <div className="flex">
-            {students.map((stu: PlacementRecord) => (
+            {students.map((stu: PlacementRecord, index: number) => (
               <div
-                key={stu.instituteStudentPlacedId}
+                key={getPlacementCardKey(stu, index)}
                 className="flex-shrink-0 flex-grow-0 px-2"
                 style={{ flexBasis: getSlideWidth() }}
               >

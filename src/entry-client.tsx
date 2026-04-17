@@ -1,10 +1,11 @@
 import { hydrateRoot } from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, matchRoutes } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { Provider } from "react-redux";
 import { useEffect } from "react";
 import { createStore } from "./store";
 import App from "./App";
+import { routes } from "./utils/AllRoutesNew";
 import "./index.css";
 
 const rootElement = document.getElementById("root");
@@ -18,6 +19,25 @@ const preloadedState = (window as any).__PRELOADED_STATE__ || {};
 delete (window as any).__PRELOADED_STATE__;
 
 const store = createStore(preloadedState);
+
+const getRouteElementPreload = (route: { element?: { type?: { preload?: () => Promise<unknown> } } }) => {
+    const preload = route.element?.type?.preload;
+    return typeof preload === "function" ? preload : null;
+};
+
+const preloadMatchedRouteComponents = async () => {
+    const normalizedPathname = window.location.pathname.replace(/\/+$/, "") || "/";
+    const matches = matchRoutes(routes, normalizedPathname) || [];
+    const preloaders = matches
+        .map((match) => getRouteElementPreload(match.route as { element?: { type?: { preload?: () => Promise<unknown> } } }))
+        .filter((preload): preload is () => Promise<unknown> => Boolean(preload));
+
+    if (preloaders.length === 0) {
+        return;
+    }
+
+    await Promise.allSettled(preloaders.map((preload) => preload()));
+};
 
 const revealApp = () => {
     if (typeof document === "undefined") {
@@ -55,7 +75,12 @@ const AppReady = () => {
     return (
         <HelmetProvider>
             <Provider store={store}>
-                <BrowserRouter>
+                <BrowserRouter
+                    future={{
+                        v7_startTransition: true,
+                        v7_relativeSplatPath: true,
+                    }}
+                >
                     <App />
                 </BrowserRouter>
             </Provider>
@@ -63,12 +88,18 @@ const AppReady = () => {
     );
 };
 
-try {
-    hydrateRoot(rootElement, <AppReady />);
-} catch (error) {
-    // Fallback to createRoot if hydration fails
-    import("react-dom/client").then(({ createRoot }) => {
-        const root = createRoot(rootElement);
-        root.render(<AppReady />);
-    });
-}
+const bootstrap = async () => {
+    await preloadMatchedRouteComponents();
+
+    try {
+        hydrateRoot(rootElement, <AppReady />);
+    } catch (error) {
+        // Fallback to createRoot if hydration fails
+        import("react-dom/client").then(({ createRoot }) => {
+            const root = createRoot(rootElement);
+            root.render(<AppReady />);
+        });
+    }
+};
+
+bootstrap();

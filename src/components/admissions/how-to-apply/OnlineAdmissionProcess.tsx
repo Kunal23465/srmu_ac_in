@@ -33,7 +33,7 @@ const OnlineAdmissionProcess: React.FC = () => {
                 <div className="circle_box three"></div>
                 <div className="box1">
                   <div className="flex justify-center">
-                    <img src={computer} className="w-full max-w-[100px]" alt="" />
+                    <img src={computer} className="w-full max-w-[100px]" alt="Computer desktop icon for visiting application website" />
                   </div>
 
                   <div className="box-content">
@@ -55,7 +55,7 @@ const OnlineAdmissionProcess: React.FC = () => {
                 </div>
                 <div className="box2">
                   <div className="flex justify-center">
-                    <img src={mobile} className="w-full max-w-20" alt="" />
+                    <img src={mobile} className="w-full max-w-20" alt="Mobile phone icon for registration form" />
                   </div>
 
                   <div className="box-content">
@@ -71,7 +71,7 @@ const OnlineAdmissionProcess: React.FC = () => {
                 </div>
                 <div className="box3">
                   <div className="flex justify-center">
-                    <img src={mobile} className="w-full max-w-20" alt="" />
+                    <img src={mobile} className="w-full max-w-20" alt="Mobile phone icon for OTP verification" />
                   </div>
 
                   <div className="box-content">
@@ -87,7 +87,7 @@ const OnlineAdmissionProcess: React.FC = () => {
                 </div>
                 <div className="box4">
                   <div className="flex justify-center">
-                    <img src={mobile} className="w-full max-w-20" alt="" />
+                    <img src={mobile} className="w-full max-w-20" alt="Mobile phone icon for entering OTP" />
                   </div>
 
                   <div className="box-content">
@@ -102,7 +102,7 @@ const OnlineAdmissionProcess: React.FC = () => {
                 </div>
                 <div className="box5">
                   <div className="flex justify-center">
-                    <img src={mobile} className="w-full max-w-20" alt="" />
+                    <img src={mobile} className="w-full max-w-20" alt="Mobile phone icon for application fee payment" />
                   </div>
 
                   <div className="box-content">
@@ -118,7 +118,7 @@ const OnlineAdmissionProcess: React.FC = () => {
                 </div>
                 <div className="box6">
                   <div className="flex justify-center">
-                    <img src={mobile} className="w-full max-w-20" alt="" />
+                    <img src={mobile} className="w-full max-w-20" alt="Mobile phone icon for registration fee payment" />
                   </div>
 
                   <div className="box-content">

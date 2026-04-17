@@ -26,19 +26,25 @@
 
     <!-- Google Tag Manager -->
     <script>
-      (function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({
+      (function () {
+        var allowedHosts = ["srmu.ac.in", "www.srmu.ac.in"];
+
+        if (allowedHosts.indexOf(window.location.hostname) === -1) {
+          return;
+        }
+
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
           "gtm.start": new Date().getTime(),
           event: "gtm.js",
         });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != "dataLayer" ? "&l=" + l : "";
-        j.async = true;
-        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, "script", "dataLayer", "GTM-5MHCHMHC");
+
+        var firstScript = document.getElementsByTagName("script")[0];
+        var gtmScript = document.createElement("script");
+        gtmScript.async = true;
+        gtmScript.src = "https://www.googletagmanager.com/gtm.js?id=GTM-5MHCHMHC";
+        firstScript.parentNode.insertBefore(gtmScript, firstScript);
+      })();
     </script>
 
     <!-- Meta Pixel Code -->
@@ -185,7 +191,15 @@
     <script defer src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script defer src="https://js.pusher.com/7.0/pusher.min.js"></script>
     <script defer src="https://arsinfotech.in/chatbot/admin/public/chatbot/chatbot.js"></script>
-    <script defer src="https://arsinfotech.in/chatbot/admin/public/livechat/user.js"></script>
+    <script>
+      // Load legacy live-chat script only when its DOM container exists.
+      if (document.getElementById("liveChatContainer")) {
+        const liveChatScript = document.createElement("script");
+        liveChatScript.defer = true;
+        liveChatScript.src = "https://arsinfotech.in/chatbot/admin/public/livechat/user.js";
+        document.head.appendChild(liveChatScript);
+      }
+    </script>
     <script defer src="https://www.google.com/recaptcha/api.js?render=6Leef4opAAAAAIHXI82ZE6l8ezbNjJe2_1nwDlUH"></script>
 
     <!-- React Client Entry -->

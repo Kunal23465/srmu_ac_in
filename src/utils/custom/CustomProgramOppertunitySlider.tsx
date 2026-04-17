@@ -148,8 +148,8 @@ const CustomProgramOppertunitySlider: React.FC<
 
           {/* Static grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-            {data.slice(0, 4).map((item) => (
-              <div key={item.id} className="p-2 sm:p-6 text-center">
+            {data.slice(0, 4).map((item, index) => (
+              <div key={`${item.id}-${item.programSlug}-static-${index}`} className="p-2 sm:p-6 text-center">
                 <img
                   src={item.img}
                   alt={item.course}
@@ -184,9 +184,9 @@ const CustomProgramOppertunitySlider: React.FC<
         {/* Embla Carousel */}
         <div className="overflow-hidden" ref={emblaRef}>
           <div className="flex">
-            {data.map((item) => (
+            {data.map((item, index) => (
               <div
-                key={item.id}
+                key={`${item.id}-${item.programSlug}-${index}`}
                 className="flex-shrink-0 flex-grow-0 p-2 sm:p-6"
                 style={{ flexBasis: getSlideWidth() }}
               >
