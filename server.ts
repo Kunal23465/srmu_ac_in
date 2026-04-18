@@ -5,6 +5,9 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { buildRobotsTxt, buildSitemapXml } from "./src/utils/sitemap";
+import { getPreferredProgramRouteSlug } from "./src/utils/legacyProgramRoutes";
+import { hasValidTopLevelProgramRoute } from "./src/utils/programCategoryRoute";
+import { slugify } from "./src/utils/slugify";
 
 const host = "0.0.0.0";
 const port = 3031;
@@ -15,11 +18,21 @@ const canonicalProtocol = canonicalSiteUrl.protocol.replace(":", "");
 const canonicalHost = canonicalSiteUrl.host.toLowerCase();
 const STATIC_ASSET_CACHE_SECONDS = 365 * 24 * 60 * 60;
 const STATIC_ASSET_PATTERN = /\.(?:avif|bmp|css|gif|ico|jpe?g|js|mjs|pdf|png|svg|webp|woff2?|ttf|otf)$/i;
+const PROGRAM_SLUG_CACHE_TTL_MS = 15 * 60 * 1000;
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const isProduction = process.env.NODE_ENV === "production";
+const API_BASE_URL = process.env.VITE_API_BASE_URL || "https://webservices.srmu.ac.in:7005";
+
+type ProgramSlugCacheEntry = {
+  expiresAt: number;
+  redirects: Map<string, string>;
+};
+
+let programSlugCache: ProgramSlugCacheEntry | null = null;
+let programSlugCachePromise: Promise<ProgramSlugCacheEntry> | null = null;
 
 function getRequestSiteUrl(req: express.Request) {
   const forwardedProto = (req.headers["x-forwarded-proto"] as string | undefined)?.split(",")[0]?.trim();
@@ -67,6 +80,54 @@ function setStaticAssetCacheHeaders(res: express.Response, filePath: string) {
 function replaceTemplateMarker(template: string, marker: string, value: string) {
   const markerPattern = new RegExp(`<!--\\s*${marker}\\s*-->`, "g");
   return template.replace(markerPattern, value);
+}
+
+async function fetchProgramRedirectMap() {
+  const response = await fetch(`${API_BASE_URL}/academicProgram/programs`);
+
+  if (!response.ok) {
+    throw new Error(`Failed to fetch programs for redirect map: ${response.status}`);
+  }
+
+  const payload = await response.json();
+  const redirects = new Map<string, string>();
+  const programs = Array.isArray(payload) ? payload : [];
+
+  for (const program of programs) {
+    const rawSlug = String(program?.slug || "").trim() || slugify(String(program?.name || ""));
+    const preferredSlug = getPreferredProgramRouteSlug({
+      slug: rawSlug,
+      name: String(program?.name || ""),
+    });
+
+    if (!preferredSlug) {
+      continue;
+    }
+
+    redirects.set(rawSlug.toLowerCase(), preferredSlug);
+    redirects.set(preferredSlug.toLowerCase(), preferredSlug);
+  }
+
+  return {
+    expiresAt: Date.now() + PROGRAM_SLUG_CACHE_TTL_MS,
+    redirects,
+  };
+}
+
+async function getProgramRedirectMap() {
+  if (programSlugCache && programSlugCache.expiresAt > Date.now()) {
+    return programSlugCache.redirects;
+  }
+
+  if (!programSlugCachePromise) {
+    programSlugCachePromise = fetchProgramRedirectMap().finally(() => {
+      programSlugCachePromise = null;
+    });
+  }
+
+  const cacheEntry = await programSlugCachePromise;
+  programSlugCache = cacheEntry;
+  return cacheEntry.redirects;
 }
 
 // In local dev, some corporate/self-signed TLS chains can block SSR API calls.
@@ -138,6 +199,35 @@ async function createServer() {
 
   app.get("/placement-overview", (req, res) => {
     res.redirect(301, `${canonicalOrigin}/placements`);
+  });
+
+  app.get("/:rootSlug", async (req, res, next) => {
+    if (!isDocumentRequest(req)) {
+      next();
+      return;
+    }
+
+    const rootSlug = String(req.params.rootSlug || "").trim().toLowerCase();
+
+    if (!rootSlug || hasValidTopLevelProgramRoute(rootSlug)) {
+      next();
+      return;
+    }
+
+    try {
+      const redirectMap = await getProgramRedirectMap();
+      const canonicalProgramSlug = redirectMap.get(rootSlug);
+
+      if (!canonicalProgramSlug) {
+        next();
+        return;
+      }
+
+      res.redirect(301, `${canonicalOrigin}/program/${canonicalProgramSlug}`);
+    } catch (error) {
+      process.stderr.write(`PROGRAM REDIRECT MAP ERROR: ${String(error)}\n`);
+      next();
+    }
   });
 
   if (!isProduction) {

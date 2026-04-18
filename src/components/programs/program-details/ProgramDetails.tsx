@@ -87,6 +87,20 @@ const ProgramDetails: React.FC = () => {
         price: firstYearTuitionFee,
       }
       : undefined;
+  const courseInstance = courseDuration
+    ? {
+      "@type": "CourseInstance",
+      courseMode: "Full-time",
+      courseWorkload: courseDuration,
+      url: buildCanonicalUrl(location.pathname),
+      location: {
+        "@type": "Place",
+        name: SITE_NAME,
+        url: SITE_URL,
+      },
+      ...(tuitionOffer ? { offers: tuitionOffer } : {}),
+    }
+    : undefined;
   const courseSchema = {
     "@context": "https://schema.org",
     "@type": "Course",
@@ -98,18 +112,7 @@ const ProgramDetails: React.FC = () => {
     },
     url: buildCanonicalUrl(location.pathname),
     timeRequired: courseDuration,
-    hasCourseInstance: {
-      "@type": "CourseInstance",
-      courseMode: "Full-time",
-      courseWorkload: courseDuration,
-      url: buildCanonicalUrl(location.pathname),
-      location: {
-        "@type": "Place",
-        name: SITE_NAME,
-        url: SITE_URL,
-      },
-      ...(tuitionOffer ? { offers: tuitionOffer } : {}),
-    },
+    ...(courseInstance ? { hasCourseInstance: courseInstance } : {}),
     ...(tuitionOffer ? { offers: tuitionOffer } : {}),
   };
 
