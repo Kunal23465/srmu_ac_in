@@ -41,6 +41,57 @@ const ProgramDetailsLoader = () => (
   </div>
 );
 
+const toIso8601CourseDuration = (value?: string | number | null) => {
+  const rawValue = String(value ?? "").trim().toLowerCase();
+
+  if (!rawValue) {
+    return undefined;
+  }
+
+  const normalizedValue = rawValue.replace(/\s+/g, " ");
+
+  const directNumber = Number(normalizedValue);
+  if (Number.isFinite(directNumber) && directNumber > 0) {
+    return `P${directNumber}Y`;
+  }
+
+  const durationMatch = normalizedValue.match(/(\d+(?:\.\d+)?)\s*(year|years|yr|yrs|month|months|mo|mos|week|weeks|day|days|semester|semesters|sem)\b/);
+
+  if (!durationMatch) {
+    return undefined;
+  }
+
+  const quantity = Number(durationMatch[1]);
+  const unit = durationMatch[2];
+
+  if (!Number.isFinite(quantity) || quantity <= 0) {
+    return undefined;
+  }
+
+  if (["year", "years", "yr", "yrs"].includes(unit)) {
+    return `P${quantity}Y`;
+  }
+
+  if (["month", "months", "mo", "mos"].includes(unit)) {
+    return `P${quantity}M`;
+  }
+
+  if (["week", "weeks"].includes(unit)) {
+    return `P${quantity}W`;
+  }
+
+  if (["day", "days"].includes(unit)) {
+    return `P${quantity}D`;
+  }
+
+  if (["semester", "semesters", "sem"].includes(unit)) {
+    const derivedMonths = quantity * 6;
+    return `P${derivedMonths}M`;
+  }
+
+  return undefined;
+};
+
 const ProgramDetails: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
   const location = useLocation();
@@ -71,9 +122,7 @@ const ProgramDetails: React.FC = () => {
     dataByID?.metaDescription?.trim() ||
     stripHtml(dataByID?.overview || dataByID?.description || programTitle || programLabel).slice(0, 160) ||
     `Explore ${programLabel} at ${SITE_NAME}, Lucknow. Check eligibility, fees, curriculum, and career opportunities.`;
-  const durationValue = Number(dataByID?.totalDurationYear);
-  const courseDuration =
-    Number.isFinite(durationValue) && durationValue > 0 ? `P${durationValue}Y` : undefined;
+  const courseDuration = toIso8601CourseDuration(dataByID?.totalDurationYear);
   const firstYearTuitionFee = normalizedFeesData?.fees?.reduce((sum: number, fee: any) => {
     const yearOneAmount = Number(fee?.yearWiseAmount?.["1"] || 0);
     return sum + yearOneAmount;
