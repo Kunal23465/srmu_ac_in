@@ -19,7 +19,8 @@ const PAGE_LABELS: Record<string, string> = {
   "/disclaimer": "Disclaimer",
   "/terms-conditions": "Terms and Conditions",
   "/mandatory-disclouser": "Mandatory Disclosure",
-  "/placement-overview": "Placement Overview",
+  "/placements": "Placements",
+  "/placement-cell": "Placement Cell",
   "/phd-offline-application": "PhD Offline Application",
   "/rti": "RTI",
 };

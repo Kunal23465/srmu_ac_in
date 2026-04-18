@@ -72,7 +72,7 @@ const InnovationPage = lazyPage(() => import("../pages/Research/Innovation/Innov
 const ConsultancyPage = lazyPage(() => import("../pages/Research/Consultancy/ConsultancyPage"));
 const PublicationPage = lazyPage(() => import("../pages/Research/Publication/PublicationPage"));
 const ConferenceDetailPage = lazyPage(() => import("../components/research/publication/conference/ConferenceDetailPage"));
-const PlacementPage = lazyPage(() => import("../pages/placement/PlacementPage"));
+const PlacementOverviewPage = lazyPage(() => import("../pages/placement/placement-overview/PlacementOverviewPage"));
 const PlacementCellPage = lazyPage(() => import("../pages/placement/placement-cell/PlacementCellPage"));
 const StudentTestimonialPage = lazyPage(() => import("../pages/placement/student-testimonial/StudentTestimonialPage"));
 const AlumniRegistrationPage = lazyPage(() => import("../pages/placement/AlumniRegistrationPage"));
@@ -432,12 +432,14 @@ export const routes = [
       },
       {
         path: "/placement-overview",
-        element: <PlacementPage />,
-
-        children: [],
+        element: <Navigate to="/placements" replace />,
       },
       {
         path: "placements",
+        element: <PlacementOverviewPage />,
+      },
+      {
+        path: "placement-cell",
         element: <PlacementCellPage />,
       },
       {

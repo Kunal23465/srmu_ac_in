@@ -29,7 +29,7 @@ import { setProgramId as setProgramIdInStore } from "../../../store/program-find
 import PageNotFound from "../../../pages/PageNotFound";
 import { resolveProgramRouteSlug } from "../../../utils/legacyProgramRoutes";
 import SeoHead from "../../seo/SeoHead";
-import { DEFAULT_SOCIAL_IMAGE, SITE_NAME, buildCanonicalUrl, stripHtml } from "../../../utils/seo";
+import { DEFAULT_SOCIAL_IMAGE, SITE_NAME, SITE_URL, buildCanonicalUrl, stripHtml } from "../../../utils/seo";
 import CustomEligibilitySection from "../../../utils/custom/CustomEligibilitySection";
 
 const ProgramDetailsLoader = () => (
@@ -78,6 +78,15 @@ const ProgramDetails: React.FC = () => {
     const yearOneAmount = Number(fee?.yearWiseAmount?.["1"] || 0);
     return sum + yearOneAmount;
   }, 0);
+  const tuitionOffer =
+    firstYearTuitionFee && firstYearTuitionFee > 0
+      ? {
+        "@type": "Offer",
+        category: "Tuition Fee",
+        priceCurrency: "INR",
+        price: firstYearTuitionFee,
+      }
+      : undefined;
   const courseSchema = {
     "@context": "https://schema.org",
     "@type": "Course",
@@ -89,16 +98,19 @@ const ProgramDetails: React.FC = () => {
     },
     url: buildCanonicalUrl(location.pathname),
     timeRequired: courseDuration,
-    ...(firstYearTuitionFee
-      ? {
-        offers: {
-          "@type": "Offer",
-          category: "Tuition Fee",
-          priceCurrency: "INR",
-          price: firstYearTuitionFee,
-        },
-      }
-      : {}),
+    hasCourseInstance: {
+      "@type": "CourseInstance",
+      courseMode: "Full-time",
+      courseWorkload: courseDuration,
+      url: buildCanonicalUrl(location.pathname),
+      location: {
+        "@type": "Place",
+        name: SITE_NAME,
+        url: SITE_URL,
+      },
+      ...(tuitionOffer ? { offers: tuitionOffer } : {}),
+    },
+    ...(tuitionOffer ? { offers: tuitionOffer } : {}),
   };
 
   useEffect(() => {

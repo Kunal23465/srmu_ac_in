@@ -293,15 +293,15 @@ export const HeaderData = [
           {
             id: 5,
             item: "Placements",
-            path: "/placement-overview",
+            path: "/placements",
             subItem: [
               {
                 item: "Placement Overview",
-                path: "/placement-overview",
+                path: "/placements",
               },
               {
                 item: "Placement Cell",
-                path: "/placements",
+                path: "/placement-cell",
               },
               {
                 item: "Placement Policies",

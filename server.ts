@@ -136,6 +136,10 @@ async function createServer() {
     }
   });
 
+  app.get("/placement-overview", (req, res) => {
+    res.redirect(301, `${canonicalOrigin}/placements`);
+  });
+
   if (!isProduction) {
     // DEV MODE
     vite = await createViteServer({
