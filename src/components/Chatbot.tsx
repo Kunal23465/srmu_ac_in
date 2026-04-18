@@ -24,9 +24,8 @@ const loadScript = (id: string, src: string) =>
     const script = document.createElement("script");
     script.id = id;
     script.src = src;
-    script.async = true;
-    script.defer = true;
-    script.crossOrigin = "anonymous";
+    // Preserve script execution order for this legacy widget chain.
+    script.async = false;
     script.addEventListener(
       "load",
       () => {
@@ -58,6 +57,10 @@ const Chatbot: React.FC = () => {
         await loadScript(JQUERY_SCRIPT_ID, "https://code.jquery.com/jquery-3.6.1.min.js");
         await loadScript(PUSHER_SCRIPT_ID, "https://js.pusher.com/7.0/pusher.min.js");
         await loadScript(CHATBOT_SCRIPT_ID, "https://arsinfotech.in/chatbot/admin/public/chatbot/chatbot.js");
+
+        // Some third-party widgets only boot after legacy page-load events.
+        window.dispatchEvent(new Event("load"));
+        document.dispatchEvent(new Event("DOMContentLoaded"));
       } catch (error) {
         hasStartedLoading.current = false;
         console.error("Chatbot failed to load", error);
