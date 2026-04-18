@@ -1,4 +1,5 @@
 import siteLogo from "../assets/images/srmu-lo1-050324113149.svg";
+import { resolveProgramCategoryParams, resolveTopLevelProgramRoute } from "./programCategoryRoute";
 
 const rawSiteUrl = import.meta.env.VITE_SITE_URL || "https://srmu.ac.in";
 
@@ -84,6 +85,69 @@ export const getDefaultSeo = (pathname = "/") => {
     title: `${label} | ${SITE_NAME}, Lucknow`,
     description: `Explore ${label} at ${SITE_NAME}, Lucknow. Find official information, programs, admissions updates, campus details, and student resources.`,
   };
+};
+
+const PROGRAM_FINDER_LEVEL_LABELS: Record<string, string> = {
+  "after-class-10th": "diploma",
+  "after-class-12th": "undergraduate",
+  "after-graduation": "postgraduate",
+  "after-post-graduation": "doctoral",
+  "after-polytechnic": "lateral entry",
+  "industry-honors": "industry honors",
+  undergraduate: "undergraduate",
+  postgraduate: "postgraduate",
+  integrated: "integrated",
+  "polytechnic-diploma": "diploma",
+  "industry-honors1": "industry honors",
+  "ph-d": "doctoral",
+  "ph-d1": "doctoral",
+};
+
+const getProgramFinderLevelLabel = (slug = "") => PROGRAM_FINDER_LEVEL_LABELS[slug] || humanizeSlug(slug);
+
+export const getProgramFinderSeo = (pathname = "/") => {
+  const normalizedPath = normalizePath(pathname);
+  const segments = normalizedPath.split("/").filter(Boolean);
+
+  if (segments.length === 1) {
+    const topLevelRoute = resolveTopLevelProgramRoute(segments[0]);
+
+    if (!topLevelRoute) {
+      return getDefaultSeo(normalizedPath);
+    }
+
+    if (topLevelRoute.kind === "programFlag") {
+      const levelLabel = getProgramFinderLevelLabel(topLevelRoute.slug);
+      return {
+        title: `${humanizeSlug(segments[0])} Programs | ${SITE_NAME}, Lucknow`,
+        description: `Explore ${levelLabel} programs at ${SITE_NAME}, Lucknow. Compare courses, eligibility, fees, admissions, and career opportunities across disciplines.`,
+      };
+    }
+
+    const disciplineLabel = humanizeSlug(topLevelRoute.slug);
+    return {
+      title: `${disciplineLabel} Programs | ${SITE_NAME}, Lucknow`,
+      description: `Explore ${disciplineLabel} programs at ${SITE_NAME}, Lucknow. Compare course options, eligibility, fees, admissions, and career pathways.`,
+    };
+  }
+
+  if (segments.length === 2) {
+    const { programFlagSlug, disciplineSlug } = resolveProgramCategoryParams(segments[0], segments[1]);
+
+    if (!programFlagSlug || !disciplineSlug) {
+      return getDefaultSeo(normalizedPath);
+    }
+
+    const levelLabel = getProgramFinderLevelLabel(programFlagSlug);
+    const disciplineLabel = humanizeSlug(disciplineSlug);
+
+    return {
+      title: `${disciplineLabel} ${humanizeSlug(levelLabel)} Programs | ${SITE_NAME}, Lucknow`,
+      description: `Explore ${levelLabel} ${disciplineLabel} programs at ${SITE_NAME}, Lucknow. Check eligibility, fees, curriculum, admissions, and career opportunities.`,
+    };
+  }
+
+  return getDefaultSeo(normalizedPath);
 };
 
 export const buildSiteSchema = (pathname = "/") => {

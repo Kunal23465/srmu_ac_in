@@ -15,6 +15,7 @@ import Classes from "../../../utils/styles/Global.module.css";
 import { useLocation } from "react-router-dom";
 import { fetchProgramTypeIntroByUrl } from "../../../store/program-type-intro/ProgramTypeIntroThunk";
 import SeoHead from "../../seo/SeoHead";
+import { getProgramFinderSeo } from "../../../utils/seo";
 
 const ProgramFinder: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -46,13 +47,10 @@ const ProgramFinder: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [debouncedSearch, setDebouncedSearch] = useState("");
   const [isUserInitiated, setIsUserInitiated] = useState(false);
-  const fallbackTitle =
-    "Explore Diverse Academic Programs with SRMU&#039;s Program Finder | Shri Ramswaroop Memorial University";
-  const fallbackDescription =
-    "Discover a range of undergraduate, postgraduate, and diploma programs at Shri Ramswaroop Memorial University. Use SRMU&#039;s Program Finder to explore courses, specializations, and career paths tailored to your goals.";
-  const seoTitle = programByIntroData?.metaTitle || fallbackTitle;
-  const seoDescription = programByIntroData?.metaDescription || fallbackDescription;
   const seoPath = location.pathname || "/program-finder";
+  const fallbackSeo = getProgramFinderSeo(seoPath);
+  const seoTitle = programByIntroData?.metaTitle?.trim() || fallbackSeo.title;
+  const seoDescription = programByIntroData?.metaDescription?.trim() || fallbackSeo.description;
 
   useEffect(() => {
     if (isDynamicProgramFinderRoute) {

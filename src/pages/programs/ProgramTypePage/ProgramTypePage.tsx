@@ -6,6 +6,7 @@ import { AppDispatch, RootState } from '../../../store';
 import { fetchProgramTypeIntroByUrl } from '../../../store/program-type-intro/ProgramTypeIntroThunk';
 import SeoHead from '../../../components/seo/SeoHead';
 import PageNotFound from '../../PageNotFound';
+import { getProgramFinderSeo } from '../../../utils/seo';
 
 
 const ProgramTypePage: React.FC = () => {
@@ -21,13 +22,9 @@ const ProgramTypePage: React.FC = () => {
 
 
     const { data: programByIntroData } = useSelector((state: RootState) => state.getProgramByIntro);
-
-    const fallbackTitle =
-        "Explore Diverse Academic Programs with SRMU&#039;s Program Finder | Shri Ramswaroop Memorial University";
-    const fallbackDescription =
-        "Discover a range of undergraduate, postgraduate, and diploma programs at Shri Ramswaroop Memorial University. Use SRMU&#039;s Program Finder to explore courses, specializations, and career paths tailored to your goals.";
-    const seoTitle = programByIntroData?.metaTitle || fallbackTitle;
-    const seoDescription = programByIntroData?.metaDescription || fallbackDescription;
+    const fallbackSeo = getProgramFinderSeo(location.pathname);
+    const seoTitle = programByIntroData?.metaTitle?.trim() || fallbackSeo.title;
+    const seoDescription = programByIntroData?.metaDescription?.trim() || fallbackSeo.description;
 
     useEffect(() => {
         const finalUrl = location.pathname.slice(1);
