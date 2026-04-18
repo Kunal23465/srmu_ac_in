@@ -150,6 +150,52 @@ export const getProgramFinderSeo = (pathname = "/") => {
   return getDefaultSeo(normalizedPath);
 };
 
+const PROGRAM_FINDER_LEVEL_KEYWORDS: Record<string, string[]> = {
+  "after-class-10th": ["diploma", "after class 10th", "class 10th", "polytechnic"],
+  "after-class-12th": ["undergraduate", "ug", "after class 12th", "class 12th"],
+  "after-graduation": ["postgraduate", "pg", "after graduation", "graduate"],
+  "after-post-graduation": ["doctoral", "phd", "ph.d", "after post graduation"],
+  "after-polytechnic": ["lateral entry", "polytechnic", "after polytechnic"],
+  "industry-honors": ["industry honors", "industry honours", "honors", "honours"],
+  undergraduate: ["undergraduate", "ug"],
+  postgraduate: ["postgraduate", "pg"],
+  integrated: ["integrated"],
+  "polytechnic-diploma": ["diploma", "polytechnic"],
+  "industry-honors1": ["industry honors", "industry honours", "honors", "honours"],
+  "ph-d": ["doctoral", "phd", "ph.d"],
+  "ph-d1": ["doctoral", "phd", "ph.d"],
+};
+
+export const shouldUseProgramFinderMetaTitle = (pathname = "/", metaTitle?: string | null) => {
+  const title = String(metaTitle || "").trim();
+
+  if (!title) {
+    return false;
+  }
+
+  const normalizedPath = normalizePath(pathname);
+  const segments = normalizedPath.split("/").filter(Boolean);
+
+  if (segments.length !== 2) {
+    return true;
+  }
+
+  const { programFlagSlug, disciplineSlug } = resolveProgramCategoryParams(segments[0], segments[1]);
+
+  if (!programFlagSlug || !disciplineSlug) {
+    return true;
+  }
+
+  const normalizedTitle = title.toLowerCase();
+  const disciplineLabel = humanizeSlug(disciplineSlug).toLowerCase();
+  const requiredKeywords = PROGRAM_FINDER_LEVEL_KEYWORDS[programFlagSlug] || [getProgramFinderLevelLabel(programFlagSlug).toLowerCase()];
+
+  const hasDiscipline = normalizedTitle.includes(disciplineLabel);
+  const hasLevelContext = requiredKeywords.some((keyword) => normalizedTitle.includes(keyword));
+
+  return hasDiscipline && hasLevelContext;
+};
+
 export const buildSiteSchema = (pathname = "/") => {
   const normalizedPath = normalizePath(pathname);
   const graph: Array<Record<string, unknown>> = [

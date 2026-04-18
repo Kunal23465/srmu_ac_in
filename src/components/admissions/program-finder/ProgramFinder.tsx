@@ -15,7 +15,7 @@ import Classes from "../../../utils/styles/Global.module.css";
 import { useLocation } from "react-router-dom";
 import { fetchProgramTypeIntroByUrl } from "../../../store/program-type-intro/ProgramTypeIntroThunk";
 import SeoHead from "../../seo/SeoHead";
-import { getProgramFinderSeo } from "../../../utils/seo";
+import { getProgramFinderSeo, shouldUseProgramFinderMetaTitle } from "../../../utils/seo";
 
 const ProgramFinder: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -49,7 +49,9 @@ const ProgramFinder: React.FC = () => {
   const [isUserInitiated, setIsUserInitiated] = useState(false);
   const seoPath = location.pathname || "/program-finder";
   const fallbackSeo = getProgramFinderSeo(seoPath);
-  const seoTitle = programByIntroData?.metaTitle?.trim() || fallbackSeo.title;
+  const seoTitle = shouldUseProgramFinderMetaTitle(seoPath, programByIntroData?.metaTitle)
+    ? programByIntroData?.metaTitle!.trim()
+    : fallbackSeo.title;
   const seoDescription = programByIntroData?.metaDescription?.trim() || fallbackSeo.description;
 
   useEffect(() => {

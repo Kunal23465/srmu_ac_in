@@ -6,7 +6,7 @@ import { AppDispatch, RootState } from '../../../store';
 import { fetchProgramTypeIntroByUrl } from '../../../store/program-type-intro/ProgramTypeIntroThunk';
 import SeoHead from '../../../components/seo/SeoHead';
 import PageNotFound from '../../PageNotFound';
-import { getProgramFinderSeo } from '../../../utils/seo';
+import { getProgramFinderSeo, shouldUseProgramFinderMetaTitle } from '../../../utils/seo';
 
 
 const ProgramTypePage: React.FC = () => {
@@ -23,7 +23,9 @@ const ProgramTypePage: React.FC = () => {
 
     const { data: programByIntroData } = useSelector((state: RootState) => state.getProgramByIntro);
     const fallbackSeo = getProgramFinderSeo(location.pathname);
-    const seoTitle = programByIntroData?.metaTitle?.trim() || fallbackSeo.title;
+    const seoTitle = shouldUseProgramFinderMetaTitle(location.pathname, programByIntroData?.metaTitle)
+        ? programByIntroData?.metaTitle!.trim()
+        : fallbackSeo.title;
     const seoDescription = programByIntroData?.metaDescription?.trim() || fallbackSeo.description;
 
     useEffect(() => {

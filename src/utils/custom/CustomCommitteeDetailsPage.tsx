@@ -1,9 +1,12 @@
 import { CustomTopFooterData1 } from "../../data/about/leadership-and-governance/leadership-and-governance-data";
 import CustomTopFooter from "./CustomTopFooter";
 import Classes from "../../utils/styles/Global.module.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import SeoHead from "../../components/seo/SeoHead";
+import { SITE_NAME, stripHtml } from "../../utils/seo";
 
 export default function CustomCommitteeDetailsPage({ committee }: { committee: any }) {
+  const location = useLocation();
 
  const formatBold = (text: string) => {
     const parts = text.split(/(\*\*.*?\*\*)/g);
@@ -30,9 +33,16 @@ export default function CustomCommitteeDetailsPage({ committee }: { committee: a
     );
   }
 
+  const seoTitle = `${committee.title} | ${SITE_NAME}, Lucknow`;
+  const seoDescription =
+    stripHtml(committee.description || committee.longDescription || `Learn more about the ${committee.title} at ${SITE_NAME}, Lucknow.`).slice(0, 160) ||
+    `Learn more about the ${committee.title} at ${SITE_NAME}, Lucknow.`;
+
   return (
-    <section className="pt-12 bg-white">
-      <div className={`${Classes["container"]}`}>
+    <>
+      <SeoHead title={seoTitle} description={seoDescription} pathname={location.pathname} />
+      <section className="pt-12 bg-white">
+        <div className={`${Classes["container"]}`}>
         <h1 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] font-medium text-[#1a3c6b] mb-8 pb-2 inline-block">
           {committee.title}
         </h1>
@@ -117,9 +127,10 @@ export default function CustomCommitteeDetailsPage({ committee }: { committee: a
         </div>
       </div>
 
-      <div className="mt-16">
-        <CustomTopFooter data={CustomTopFooterData1} />
-      </div>
-    </section>
+        <div className="mt-16">
+          <CustomTopFooter data={CustomTopFooterData1} />
+        </div>
+      </section>
+    </>
   );
 }
