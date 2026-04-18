@@ -1,11 +1,12 @@
 import RootLayout from "../pages/RootLayout";
-import { useRoutes } from "react-router-dom";
+import { Navigate, useRoutes } from "react-router-dom";
 import HomePage from "../pages/Home/HomePage";
 import { lazyPage } from "./lazyRoute";
 import { committeeCards } from "../data/about/committee-and-cells/committee-and-cells-data";
 import { convocationData } from "../data/campus-life/convocation/convocation-data";
 import tedxData, { conferenceData, festData, festivalsData } from "../data/campus-life/events/events-data";
 import CommittePage from "../pages/about/committee/CommittePage";
+import BlogPage from "../pages/blog/BlogPage";
 
 const PageNotFound = lazyPage(() => import("../pages/PageNotFound"));
 const LegacyEventDetailsPage = lazyPage(() => import("./legacyRouteResolvers").then((mod) => ({ default: mod.LegacyEventDetailsPage })));
@@ -460,6 +461,18 @@ export const routes = [
         element: <AlumniFeedbackPage />,
       },
       {
+        path: "alumini-feedback",
+        element: <Navigate to="/alumni-feedback" replace />,
+      },
+      {
+        path: "alumini-feeback",
+        element: <Navigate to="/alumni-feedback" replace />,
+      },
+      {
+        path: "alumni-feeback",
+        element: <Navigate to="/alumni-feedback" replace />,
+      },
+      {
         path: "/research-overview",
         element: <ResearchOverviewPage />,
 
@@ -517,6 +530,10 @@ export const routes = [
       {
         path: "mandatory-disclouser",
         element: <MandatoryDisclouserPage />,
+      },
+       {
+        path: "blog",
+        element: <BlogPage/>,
       },
       {
         path: "/blogs",

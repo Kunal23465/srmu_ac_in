@@ -3,7 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../../store";
 import { fetchAllProgramFinder } from "../../../store/program-finder/programFinderThunk";
 import { fetchProgramType } from "../../../store/program-finder/program-type/programTypeThunk";
-import { fetchProgramDiscipline, fetchProgramDisciplines } from "../../../store/program-finder/discipline/disciplineThunk";
+import {
+  fetchProgramDiscipline,
+  fetchProgramDisciplines,
+} from "../../../store/program-finder/discipline/disciplineThunk";
 import ProgramFilter from "./ProgramFilter";
 import ProgramFinderIntro from "./ProgramFinderIntro";
 import CustomTopFooter from "../../../utils/custom/CustomTopFooter";
@@ -11,30 +14,65 @@ import { feeStructureCustomTopFooter } from "../../../data/admissions/fee-struct
 import Classes from "../../../utils/styles/Global.module.css";
 import { useLocation } from "react-router-dom";
 import { fetchProgramTypeIntroByUrl } from "../../../store/program-type-intro/ProgramTypeIntroThunk";
-import { Helmet } from "react-helmet-async";
+import SeoHead from "../../seo/SeoHead";
 
 const ProgramFinder: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
-  const { data: programByIntroData } = useSelector((state: RootState) => state.getProgramByIntro);
+  const { data: programByIntroData, error } = useSelector(
+    (state: RootState) => state.getProgramByIntro,
+  );
   const { data } = useSelector((state: RootState) => state.getProgramFinder);
-  const { programType } = useSelector((state: RootState) => state.getProgramType);
+  const { programType } = useSelector(
+    (state: RootState) => state.getProgramType,
+  );
   const { discipline } = useSelector((state: RootState) => state.getDiscipline);
   const location = useLocation();
   const pathParts = location.pathname.split("/").filter(Boolean);
-  const isDynamicProgramFinderRoute = pathParts.length === 2 && pathParts[0] !== "program-finder";
-  const disciplineSlugFromRoute = isDynamicProgramFinderRoute ? pathParts[0] : "";
-  const programTypeSlugFromRoute = isDynamicProgramFinderRoute ? pathParts[1] : "";
-  
-  const [selectedProgramType, setSelectedProgramType] = useState<string>(programTypeSlugFromRoute);
-  const [selectedDiscipline, setSelectedDiscipline] = useState<string>(disciplineSlugFromRoute);
+  const isDynamicProgramFinderRoute =
+    pathParts.length === 2 && pathParts[0] !== "program-finder";
+  const disciplineSlugFromRoute = isDynamicProgramFinderRoute
+    ? pathParts[0]
+    : "";
+  const programTypeSlugFromRoute = isDynamicProgramFinderRoute
+    ? pathParts[1]
+    : "";
+
+  const [selectedProgramType, setSelectedProgramType] = useState<string>(
+    programTypeSlugFromRoute,
+  );
+  const [selectedDiscipline, setSelectedDiscipline] = useState<string>(
+    disciplineSlugFromRoute,
+  );
   const [searchTerm, setSearchTerm] = useState("");
   const [debouncedSearch, setDebouncedSearch] = useState("");
   const [isUserInitiated, setIsUserInitiated] = useState(false);
+  const fallbackTitle =
+    "Explore Diverse Academic Programs with SRMU&#039;s Program Finder | Shri Ramswaroop Memorial University";
+  const fallbackDescription =
+    "Discover a range of undergraduate, postgraduate, and diploma programs at Shri Ramswaroop Memorial University. Use SRMU&#039;s Program Finder to explore courses, specializations, and career paths tailored to your goals.";
+  const seoTitle = programByIntroData?.metaTitle || fallbackTitle;
+  const seoDescription = programByIntroData?.metaDescription || fallbackDescription;
+  const seoPath = location.pathname || "/program-finder";
 
-  const selectedProgramTypeObj = programType?.find((pt) => pt.slug === selectedProgramType);
-  const selectedDisciplineObj = discipline?.find((d) => d.slug === selectedDiscipline);
-  const introDescription = selectedDisciplineObj?.description || selectedProgramTypeObj?.description || "";
+  useEffect(() => {
+    if (isDynamicProgramFinderRoute) {
+      setSelectedDiscipline(disciplineSlugFromRoute);
+      setSelectedProgramType(programTypeSlugFromRoute);
+      setIsUserInitiated(false);
+      return;
+    }
 
+    if (location.pathname === "/program-finder") {
+      setSelectedDiscipline("");
+      setSelectedProgramType("");
+      setIsUserInitiated(false);
+    }
+  }, [
+    disciplineSlugFromRoute,
+    isDynamicProgramFinderRoute,
+    location.pathname,
+    programTypeSlugFromRoute,
+  ]);
   /* ===========================
            Debounce Search
      =========================== */
@@ -53,11 +91,17 @@ const ProgramFinder: React.FC = () => {
     const trimmedSearch = debouncedSearch.trim();
     const params = {
       ...(selectedProgramType ? { programTypeSlug: selectedProgramType } : {}),
-      ...(selectedDiscipline ? { programDisciplineSlug: selectedDiscipline } : {}),
+      ...(selectedDiscipline
+        ? { programDisciplineSlug: selectedDiscipline }
+        : {}),
       ...(trimmedSearch ? { name: trimmedSearch } : {}),
     };
 
-    dispatch(fetchAllProgramFinder(Object.keys(params).length > 0 ? params : undefined));
+    dispatch(
+      fetchAllProgramFinder(
+        Object.keys(params).length > 0 ? params : undefined,
+      ),
+    );
   }, [debouncedSearch, dispatch, selectedDiscipline, selectedProgramType]);
 
   /* ===========================
@@ -132,15 +176,23 @@ const ProgramFinder: React.FC = () => {
     dispatch(fetchProgramTypeIntroByUrl(finalUrl));
   }, [selectedProgramType, selectedDiscipline, dispatch]);
 
+  if (error) {
+    return <div>Error loading data</div>;
+  }
+
+  console.log("seoTitle",seoTitle)
   return (
     <>
-      <Helmet>
-        <title>{programByIntroData?.metaTitle || ""}</title>
-        <meta name="description" content={programByIntroData?.metaDescription || ""} />
-      </Helmet>
+      <SeoHead
+        title={seoTitle}
+        description={seoDescription}
+        pathname={seoPath}
+      />
       <div className={`${Classes.container} mt-16`}>
         <div className="w-full flex items-center justify-center flex-col">
-          <h1 className="text-[#023047] text-[22px] sm:text-[28px] lg:text-[3.125rem] fw500">Program Finder</h1>
+          <h1 className="text-[#023047] text-[22px] sm:text-[28px] lg:text-[3.125rem] fw500">
+            Program Finder
+          </h1>
           <div className="w-[140px] h-[3px] bg-amber-400 mt-4 mb-4" />
         </div>
         <ProgramFilter
@@ -155,7 +207,9 @@ const ProgramFinder: React.FC = () => {
           onDisciplineChange={handleDisciplineChange}
         />
 
-        <ProgramFinderIntro description={programByIntroData?.description || ""} />
+        <ProgramFinderIntro
+          description={programByIntroData?.description || ""}
+        />
       </div>
 
       <CustomTopFooter data={feeStructureCustomTopFooter} />
@@ -164,5 +218,3 @@ const ProgramFinder: React.FC = () => {
 };
 
 export default ProgramFinder;
-
-

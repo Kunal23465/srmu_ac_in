@@ -11,25 +11,25 @@ const ProgramTypePage: React.FC = () => {
     const location = useLocation();
     const dispatch = useDispatch<AppDispatch>();
 
-    const { data: programByIntroData, loading } = useSelector((state: RootState) => state.getProgramByIntro);
+    const { data: programByIntroData } = useSelector((state: RootState) => state.getProgramByIntro);
+
+    const fallbackTitle =
+        "Explore Diverse Academic Programs with SRMU&#039;s Program Finder | Shri Ramswaroop Memorial University";
+    const fallbackDescription =
+        "Discover a range of undergraduate, postgraduate, and diploma programs at Shri Ramswaroop Memorial University. Use SRMU&#039;s Program Finder to explore courses, specializations, and career paths tailored to your goals.";
+    const seoTitle = programByIntroData?.metaTitle || fallbackTitle;
+    const seoDescription = programByIntroData?.metaDescription || fallbackDescription;
 
     useEffect(() => {
         const finalUrl = location.pathname.slice(1);
         dispatch(fetchProgramTypeIntroByUrl(finalUrl));
     }, [location.pathname, dispatch]);
 
-    const isSeoReady = Boolean(programByIntroData?.metaTitle && programByIntroData?.metaDescription);
-
-    if (loading || !isSeoReady) {
-        return null;
-    }
-
-    console.log("programByIntroData",programByIntroData)
     return (
         <div>
             <SeoHead
-                title={programByIntroData.metaTitle}
-                description={programByIntroData.metaDescription}
+                title={seoTitle}
+                description={seoDescription}
                 pathname={location.pathname}
             />
 
