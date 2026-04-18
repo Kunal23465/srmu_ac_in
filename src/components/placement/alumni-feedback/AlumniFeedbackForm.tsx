@@ -10,7 +10,6 @@ import Classes from "../../../utils/styles/Global.module.css";
 import {
   EnquiryField,
 } from "../../../data/admission-enquiry/admission-enquiry-data";
-import TextArea from "antd/es/input/TextArea";
 
 const AlumniFeedbackForm: FC = () => {
   const essentialFields = aluminiFeedbackFormData.slice(0, 10);
@@ -105,7 +104,8 @@ const AlumniFeedbackForm: FC = () => {
       <label className="mb-2!" htmlFor={field.name}>
         {field.labelname}
       </label>
-      <TextArea
+      <Field
+        as="textarea"
         name={field.name}
         id={field.name}
         placeholder={field.placeholder}
@@ -385,7 +385,8 @@ const AlumniFeedbackForm: FC = () => {
                           {q16Fields[0].placeholder}
                         </span>
                       </label>
-                      <TextArea
+                      <Field
+                        as="textarea"
                         name={q16Fields[0].name}
                         rows={2}
                         className="px-3 py-1.5 bg-white border border-[#ced4da] rounded-md w-full focus:outline-none resize-none"
@@ -403,7 +404,8 @@ const AlumniFeedbackForm: FC = () => {
                           {q16Fields[1].placeholder}
                         </span>
                       </label>
-                      <TextArea
+                      <Field
+                        as="textarea"
                         name={q16Fields[1].name}
                         rows={2}
                         className="px-3 py-1.5 bg-white border border-[#ced4da] rounded-md w-full focus:outline-none resize-none"
@@ -421,7 +423,8 @@ const AlumniFeedbackForm: FC = () => {
                           {q16Fields[2].placeholder}
                         </span>
                       </label>
-                      <TextArea
+                      <Field
+                        as="textarea"
                         name={q16Fields[2].name}
                         rows={2}
                         className="px-3 py-1.5 bg-white border border-[#ced4da] rounded-md w-full focus:outline-none resize-none"
@@ -447,7 +450,8 @@ const AlumniFeedbackForm: FC = () => {
                           {q17Fields[0].placeholder}
                         </span>
                       </label>
-                      <TextArea
+                      <Field
+                        as="textarea"
                         name={q17Fields[0].name}
                         rows={2}
                         className="px-3 py-1.5 bg-white border border-[#ced4da] rounded-md w-full focus:outline-none resize-none"
@@ -465,7 +469,8 @@ const AlumniFeedbackForm: FC = () => {
                           {q17Fields[1].placeholder}
                         </span>
                       </label>
-                      <TextArea
+                      <Field
+                        as="textarea"
                         name={q17Fields[1].name}
                         rows={2}
                         className="px-3 py-1.5 bg-white border border-[#ced4da] rounded-md w-full focus:outline-none resize-none"
