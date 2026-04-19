@@ -40,6 +40,7 @@ const CustomModal = ({ selected, setSelected }) => {
             {/* IMAGE */}
             <img
               src={selected.img}
+              alt={selected.title}
               className="rounded-lg shadow-md w-full h-64 object-cover"
             />
 
@@ -98,6 +99,7 @@ const ClubCards: React.FC = () => {
             >
               <img
                 src={card.img}
+                alt={card.title}
                 className="w-full h-full object-cover transition-transform duration-500"
               />
 

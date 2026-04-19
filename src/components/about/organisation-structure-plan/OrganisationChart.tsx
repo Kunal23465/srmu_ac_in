@@ -4,7 +4,7 @@ import structure from "../../../assets/images/about/organisationStructure/struct
 const OrganisationChart: FC = () => {
     return (
         <div>
-            <img src={structure} />
+            <img src={structure} alt="SRMU organization structure chart" />
         </div>
     )
 }

@@ -7,6 +7,7 @@ const DigiLocker: FC = () => {
             <div className="w-full text-justify">
                 <img
                     src={digilocker}
+                    alt="DigiLocker academic depository interface"
                     className="float-right ml-4 mb-2 max-w-[250px] h-auto"
                 />
 

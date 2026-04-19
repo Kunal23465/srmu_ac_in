@@ -43,7 +43,7 @@ const BlogsPage: React.FC = () => {
           <div className="py-12 bg-gray-50">
             <div className="container mx-auto px-4">
               <div className={`${Classes["container"]}`}>
-                <h2 className="text-xl sm:text-2xl md:text-[50px] font50 fw500 text-[#023047] text-center mb-15">Blogs</h2>
+                <h1 className="text-xl sm:text-2xl md:text-[50px] font50 fw500 text-[#023047] text-center mb-15">Blogs</h1>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                   {currentBlogs.map((card) => (

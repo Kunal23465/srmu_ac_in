@@ -15,6 +15,7 @@ export default function ConvocationSection() {
                     <div className="w-full">
                         <img
                             src={card.image}
+                            alt={card.title}
                             className="rounded-lg w-full h-auto object-cover"
                         />
                     </div>

@@ -126,9 +126,17 @@ const ProgramDetails: React.FC = () => {
   const isPhd = currentProgramId === 81;
   const programLabel = dataByID?.name || programName?.replace(/-/g, " ") || "Program";
   const programTitle = dataByID?.title?.trim() || "";
+  const metaTitle = dataByID?.metaTitle?.trim() || "";
+  const normalizedProgramLabel = programLabel.trim().toLowerCase();
+  const normalizedMetaTitle = metaTitle.toLowerCase();
+  const isProgramMetaTitleDistinct =
+    Boolean(metaTitle) &&
+    normalizedMetaTitle !== normalizedProgramLabel &&
+    normalizedMetaTitle !== `${normalizedProgramLabel} | ${SITE_NAME}, lucknow`.toLowerCase() &&
+    normalizedMetaTitle !== `${normalizedProgramLabel} | srmu lucknow`;
   const seoTitle =
-    dataByID?.metaTitle?.trim() ||
-    `${programLabel}${programTitle ? ` - ${programTitle}` : ""} | ${SITE_NAME}, Lucknow`;
+    (isProgramMetaTitleDistinct ? metaTitle : "") ||
+    `${programLabel} Admissions, Fees & Eligibility | ${SITE_NAME}, Lucknow`;
   const seoDescription =
     dataByID?.metaDescription?.trim() ||
     stripHtml(dataByID?.overview || dataByID?.description || programTitle || programLabel).slice(0, 160) ||
