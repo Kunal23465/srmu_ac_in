@@ -268,7 +268,7 @@ export const physicalScienceEventsData: EventItem[] = [
     topic: "India’s Mission to Moon: Chandrayaan-3",
     speaker: "Prof. Kaushlendra Chaturvedi",
     date: "01st September, 2023",
-    image: "chandrayaan3Lecture",
+    image: "https://testweb.srmu.ac.in/storage/events/guest1-09052401110279.jpg",
     cardBgColor: "#ffffff",
   },
   {
@@ -277,7 +277,7 @@ export const physicalScienceEventsData: EventItem[] = [
     topic: "Fabrication of Glass and Glass Ceramics for Bio-medical Applications",
     speaker: "Dr. C.R. Gautam",
     date: "10th December, 2022",
-    image: "biomedicalCeramics", 
+    image: "https://testweb.srmu.ac.in/storage/events/guest5-09052401111327.jpg",
     cardBgColor: "#ffffff",
   },
   {
@@ -286,7 +286,7 @@ export const physicalScienceEventsData: EventItem[] = [
     topic: "Revealing Secrets of High-energy Sky",
     speaker: "Dr. Sunil Chandra",
     date: "06th August, 2022",
-    image: "highenergySky", 
+    image: "https://testweb.srmu.ac.in/storage/events/guest8-09052401112355.jpg",
     cardBgColor: "#ffffff",
   },
   {
@@ -295,7 +295,7 @@ export const physicalScienceEventsData: EventItem[] = [
     topic: "New Era of Atomistic TNL TCAD Tools",
     speaker: "Dr. Praveen Saxena",
     date: "20th May, 2022",
-    image: "tcadTools",
+    image: "https://testweb.srmu.ac.in/storage/events/guest6-09052401113123.jpg",
     cardBgColor: "#ffffff",
   },
   {
@@ -304,7 +304,7 @@ export const physicalScienceEventsData: EventItem[] = [
     topic: "Biomaterials in Therapy and Tissue Engineering",
     speaker: "Dr. Kapil Dev Patel",
     date: "25th April, 2022",
-    image: "biomaterialsLecture", 
+    image: "https://testweb.srmu.ac.in/storage/events/guest7-09052401114086.jpg",
     cardBgColor: "#ffffff",
   },
   {
@@ -312,7 +312,7 @@ export const physicalScienceEventsData: EventItem[] = [
     title: "Industrial Visit",
     venue: "Uttar Pradesh New and Renewable Energy Development Agency (UPNEDA) Training Centre",
     date: "18th May, 2023",
-    image: "upnedaVisit", 
+    image: "https://testweb.srmu.ac.in/storage/events/visit-10022401501579.jpg",
     cardBgColor: "#ffffff",
   },
   {
@@ -320,7 +320,7 @@ export const physicalScienceEventsData: EventItem[] = [
     title: "National Conference",
     topic: "SOLARIS 2020",
     date: "07th-09th February, 2020",
-    image: "solaris2020",
+    image: "https://testweb.srmu.ac.in/storage/events/national2-10022401495857.jpg",
     cardBgColor: "#ffffff",
   },
   {
@@ -329,23 +329,23 @@ export const physicalScienceEventsData: EventItem[] = [
     topic: "RAMAN SPECTROSCOPY: Fundamentals, Instrumentations and Applications",
     speaker: "Prof. (Dr.) Sunil Kumar Srivastava",
     date: "20th November, 2023",
-    image: "ramanSpectroscopy", 
+    image: "https://testweb.srmu.ac.in/storage/events/international-09052401121949.jpg",
     cardBgColor: "#ffffff",
   },
   {
     id: 9,
-    topic: "International Conference",
-    title: "International Conference on Advancement in Natural Sciences: Vedic to Modern Era (ICANSVME-24)",
+    title: "International Conference",
+    topic: "International Conference on Advancement in Natural Sciences: Vedic to Modern Era (ICANSVME-24)",
     date: "22-24 February, 2024",
-    image: "icansvme24", 
+    image: "https://testweb.srmu.ac.in/storage/events/international-conf-19062403515737.jpg",
     cardBgColor: "#ffffff",
   },
   {
     id: 10,
-    title: "National Science day",
+    title: "National Science Day",
     event: "National Science Day was celebrated vibrantly with INSH and IBST collaboration",
     date: "28th Feb, 2024",
-    image: "nationalScienceDay", 
+    image: "https://testweb.srmu.ac.in/storage/events/guest2-1906240356142.jpg",
     cardBgColor: "#ffffff",
   },
   {
@@ -353,7 +353,7 @@ export const physicalScienceEventsData: EventItem[] = [
     title: "Synopsis Presentation of Research Scholar",
     event: "Synopsis Presentation of Research Scholar of the Department",
     date: "02nd March, 2024",
-    image: "synopsisPresentation", 
+    image: "https://testweb.srmu.ac.in/storage/events/guest2-19062403581993.jpg",
     cardBgColor: "#ffffff",
   },
 ];
