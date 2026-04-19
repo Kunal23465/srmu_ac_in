@@ -5,6 +5,7 @@ const rawSiteUrl = import.meta.env.VITE_SITE_URL || "https://srmu.ac.in";
 
 export const SITE_URL = rawSiteUrl.replace(/\/+$/, "");
 export const SITE_NAME = "Shri Ramswaroop Memorial University";
+export const SITE_NAME_SHORT = "SRMU Lucknow";
 export const DEFAULT_TITLE = "Best University in Lucknow | Shri Ramswaroop Memorial University (SRMU)";
 export const DEFAULT_DESCRIPTION =
   "Study at Shri Ramswaroop Memorial University (SRMU), a leading private university in Lucknow offering BTech, MBA, BBA, BCA and more.";
@@ -40,6 +41,52 @@ export const humanizeSlug = (value = "") =>
 export const buildCanonicalUrl = (pathname = "/") => `${SITE_URL}${normalizePath(pathname)}`;
 
 export const stripHtml = (value = "") => value.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim();
+
+const trimTitleAtWordBoundary = (value: string, maxLength: number) => {
+  if (value.length <= maxLength) {
+    return value;
+  }
+
+  const truncated = value.slice(0, Math.max(0, maxLength - 1));
+  const safeCutoff = truncated.lastIndexOf(" ");
+
+  return `${(safeCutoff > 20 ? truncated.slice(0, safeCutoff) : truncated).trim()}...`;
+};
+
+export const normalizeSeoTitle = (value = "") => {
+  const rawTitle = String(value || "").replace(/\s+/g, " ").trim();
+
+  if (!rawTitle) {
+    return rawTitle;
+  }
+
+  let normalizedTitle = rawTitle
+    .replace(/\|\s*Shri Ramswaroop Memorial University,\s*Lucknow$/i, `| ${SITE_NAME_SHORT}`)
+    .replace(/\|\s*Shri Ramswaroop Memorial University\s*\(SRMU\)$/i, `| ${SITE_NAME_SHORT}`)
+    .replace(/\|\s*Shri Ramswaroop Memorial University$/i, `| ${SITE_NAME_SHORT}`)
+    .replace(/\bat Shri Ramswaroop Memorial University,\s*Lucknow\b/gi, `at ${SITE_NAME_SHORT}`);
+
+  normalizedTitle = normalizedTitle.replace(
+    /\b(Undergraduate|Postgraduate|Lateral Entry|Industry Honors|Doctoral|Diploma) Programs\b/i,
+    "$1",
+  );
+
+  const suffixMatch = normalizedTitle.match(/\s\|\s[^|]+$/);
+  const suffix = suffixMatch?.[0] || "";
+  const maxTitleLength = 65;
+
+  if (normalizedTitle.length <= maxTitleLength) {
+    return normalizedTitle;
+  }
+
+  if (suffix) {
+    const baseTitle = normalizedTitle.slice(0, -suffix.length).trim();
+    const maxBaseLength = Math.max(20, maxTitleLength - suffix.length - 1);
+    return `${trimTitleAtWordBoundary(baseTitle, maxBaseLength)}${suffix}`;
+  }
+
+  return trimTitleAtWordBoundary(normalizedTitle, maxTitleLength);
+};
 
 export const toAbsoluteUrl = (value?: string | null) => {
   if (!value) {

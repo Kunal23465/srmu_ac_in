@@ -6,7 +6,7 @@ import CustomTopFooter from "../../utils/custom/CustomTopFooter";
 import { CustomTopFooterAbout } from "../../data/about/aboutusData";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store";
-import { SITE_NAME, stripHtml, toAbsoluteUrl } from "../../utils/seo";
+import { SITE_NAME, normalizeSeoTitle, stripHtml, toAbsoluteUrl } from "../../utils/seo";
 import { findBlogBySlug } from "../../utils/routeMatching";
 
 const BlogDetailsPage: React.FC = () => {
@@ -39,6 +39,7 @@ const BlogDetailsPage: React.FC = () => {
   const blogDescription =
     stripHtml(data.metaDescription || data.description || data.title).slice(0, 160) ||
     `Read the latest SRMU blog: ${data.title}.`;
+  const seoTitle = normalizeSeoTitle(`${data.title} | ${SITE_NAME}, Lucknow`);
 
   // Parse seoConfig with proper cleaning
   let parsedSeoConfig = null;
@@ -88,7 +89,7 @@ const BlogDetailsPage: React.FC = () => {
     <>
       <Helmet>
         {/* Title */}
-        <title>{`${data.title} | ${SITE_NAME}, Lucknow`}</title>
+        <title>{seoTitle}</title>
         
         {/* Meta Description */}
         <meta name="description" content={blogDescription} />
@@ -98,7 +99,7 @@ const BlogDetailsPage: React.FC = () => {
         
         {/* Open Graph Tags */}
         <meta property="og:type" content="article" />
-        <meta property="og:title" content={data.title} />
+        <meta property="og:title" content={seoTitle} />
         <meta property="og:description" content={blogDescription} />
         <meta property="og:url" content={absoluteUrl} />
         {imageUrl && <meta property="og:image" content={imageUrl} />}
@@ -106,7 +107,7 @@ const BlogDetailsPage: React.FC = () => {
         
         {/* Twitter Card Tags */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={data.title} />
+        <meta name="twitter:title" content={seoTitle} />
         <meta name="twitter:description" content={blogDescription} />
         {imageUrl && <meta name="twitter:image" content={imageUrl} />}
         
