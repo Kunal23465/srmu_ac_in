@@ -4,6 +4,7 @@ import banner4 from "../../assets/images/home/banner-bg.webp";
 import viewmorepdf from "../../assets/pdf/home/aa-career-360-270125114337.pdf";
 import srmuRatedPdf from "../../assets/pdf/home/Best B School certificate.pdf";
 import { LiaLongArrowAltLeftSolid, LiaLongArrowAltRightSolid } from "react-icons/lia";
+import "./Banner.css";
 
 const Banner: React.FC = () => {
     const [selectedIndex, setSelectedIndex] = useState(0);

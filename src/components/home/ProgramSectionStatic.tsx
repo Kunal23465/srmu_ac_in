@@ -5,6 +5,7 @@ import { GoArrowUpRight } from "react-icons/go";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { tabs } from "../../data/home/program-section-data";
+import "./ProgramSectionStatic.css";
 
 
 const ProgramsSectionStatic: FC = () => {

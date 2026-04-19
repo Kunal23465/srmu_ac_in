@@ -12,6 +12,7 @@ import PlacementRecords from "./PlacementRecords";
 import PlacementTestimonials from "./testimonials/PlacementTestimonials";
 import PlacementDrives from "./PlacementDrives";
 import { Helmet } from "react-helmet-async";
+import "./PlacementOverview.css";
 const PlacementOverview: React.FC = () => {
   return (
     <>

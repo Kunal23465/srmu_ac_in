@@ -3,12 +3,7 @@ import dev1 from "../../assets/images/programs/btechincseaiandml/opportunities/h
 import dev2 from "../../assets/images/programs/btechincseaiandml/opportunities/highlights/2.jpg";
 import dev3 from "../../assets/images/programs/btechincseaiandml/opportunities/highlights/3.jpg";
 import dev4 from "../../assets/images/programs/btechincseaiandml/opportunities/highlights/4.jpg";
-
-
-
-
-
-
+import "./CustomDepartmentHighlights.css";
 
 
 import { useEffect, useRef, useState } from "react";

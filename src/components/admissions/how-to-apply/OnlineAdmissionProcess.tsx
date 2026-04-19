@@ -6,6 +6,7 @@ import mobile from "../../../assets/images/mobile.webp";
 import bgImage from "../../../assets/images/research/overview/facilities-bg-lg.jpeg";
 import offlineAddmission from "../../../assets/images/offline-admission.webp";
 import offlineAddmissionMobile from "../../../assets/images/offline-admission-mobile.webp";
+import "./OnlineAdmissionProcess.css";
 const OnlineAdmissionProcess: React.FC = () => {
   return (
     <>

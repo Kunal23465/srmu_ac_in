@@ -1,4 +1,5 @@
 import { FC } from "react";
+import "./CustomEligibilitySection.css";
 
 interface EligibilityProps {
     data: string;
