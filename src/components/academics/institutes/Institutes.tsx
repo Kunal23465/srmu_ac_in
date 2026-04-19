@@ -8,12 +8,7 @@ import EnquiryForm from './EnquiryForm';
 import CustomTopFooter from '../../../utils/custom/CustomTopFooter';
 import { CustomTopFooterData1 } from '../../../data/about/leadership-and-governance/leadership-and-governance-data';
 
-
 // import CustomDepartmentFeeDetailsTable from '../../../utils/custom/CustomDepartmentFeeDetailsTable';
-
-
-
-
 
 const Institutes: React.FC = () => {
 
@@ -23,8 +18,6 @@ const Institutes: React.FC = () => {
         <CustomOverviewSection data={AcademicsOverviewData} />
         <OurInstitutes />
         <InstituteCardList />
-
-
       </div>
 
       {/* <CustomInstituteProfileCard data={instituteProfiles} /> */}
