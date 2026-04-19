@@ -1,8 +1,7 @@
-import { useRef, useEffect, PropsWithChildren } from 'react';
-// @ts-ignore
-import { OptionsType } from "@fancyapps/ui/dist/fancybox/index"
-import { Fancybox as NativeFancybox } from "@fancyapps/ui/dist/fancybox/"; 
-import '@fancyapps/ui/dist/fancybox/fancybox.css';
+import { useRef, useEffect, PropsWithChildren } from "react";
+import type { OptionsType } from "@fancyapps/ui/dist/fancybox/index";
+
+const FANCYBOX_STYLE_ID = "fancybox-inline-styles";
 
 
 
@@ -17,17 +16,46 @@ function Fancybox(props: PropsWithChildren<Props>) {
 
     useEffect(() => {
         const container = containerRef.current;
+        let cleanup: (() => void) | undefined;
+        let isMounted = true;
 
         const delegate = props.delegate || '[data-fancybox]';
         const options = props.options || {};
-        // @ts-ignore
-        NativeFancybox.bind(container, delegate, options);
+
+        const loadFancybox = async () => {
+            const [{ Fancybox: NativeFancybox }, fancyboxStylesModule] = await Promise.all([
+                import("@fancyapps/ui/dist/fancybox/"),
+                import("@fancyapps/ui/dist/fancybox/fancybox.css?inline"),
+            ]);
+
+            if (!isMounted || !container) {
+                return;
+            }
+
+            const existingStyle = document.getElementById(FANCYBOX_STYLE_ID);
+
+            if (!existingStyle) {
+                const styleElement = document.createElement("style");
+                styleElement.id = FANCYBOX_STYLE_ID;
+                styleElement.textContent = fancyboxStylesModule.default;
+                document.head.appendChild(styleElement);
+            }
+
+            NativeFancybox.bind(container, delegate, options);
+
+            cleanup = () => {
+                NativeFancybox.unbind(container);
+                NativeFancybox.close();
+            };
+        };
+
+        void loadFancybox();
 
         return () => {
-            NativeFancybox.unbind(container);
-            NativeFancybox.close();
+            isMounted = false;
+            cleanup?.();
         };
-    });
+    }, [props.delegate, props.options]);
 
     return <div ref={containerRef}>{props.children}</div>;
 }
