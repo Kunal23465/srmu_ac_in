@@ -4,6 +4,7 @@ import Classes from "../../../../utils/styles/Global.module.css";
 import { PublicationConferenceData } from "../../../../data/research/publication/publication-data";
 import { useNavigate } from "react-router-dom";
 import { normalizeRouteSlug } from "../../../../utils/routeMatching";
+import "../PublicationCarousel.css";
 
 const Conference: React.FC = () => {
   const [windowWidth, setWindowWidth] = useState(0);

@@ -4,6 +4,7 @@ import Classes from "../../../../utils/styles/Global.module.css";
 import { FaRegFilePdf } from "react-icons/fa";
 import { patentData } from "../../../../data/research/publication/publication-data";
 import { PdfSvgIcon } from "../../../about/recognition-approval/ApprovalSlider";
+import "../PublicationCarousel.css";
 
 const PatentSection: React.FC = () => {
   const [windowWidth, setWindowWidth] = useState(0);

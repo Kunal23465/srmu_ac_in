@@ -5,6 +5,7 @@ import { useInView } from "react-intersection-observer";
 
 import PlacementData from "../../data/home/PlacementData";
 import MobilePlacementData from "../../data/home/MobilePlacementData";
+import "./PlacementSliderDots.css";
 
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";

@@ -174,41 +174,6 @@ body.app-ready #root {
   row-gap: 60px;
 }
 
-.photo_gallery_grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 30px;
-}
-
-.photo_gallery .slick-arrow {
-  display: none !important;
-}
-
-.photo_gallery>.slick-dots li button:before {
-  font-family: "slick";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 10px !important;
-  height: 10px !important;
-  content: "" !important;
-  text-align: center;
-  opacity: 0.7 !important;
-  border-radius: 50%;
-  border: 1px solid #ffb703;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.photo_gallery>.slick-dots li.slick-active button:before {
-  opacity: 0.9;
-  background: #ffb703;
-}
-
-.photo_gallery>.slick-dots {
-  bottom: -40px !important;
-}
-
 .accordian-disc li::marker {
   color: #ffb703;
 }
@@ -242,12 +207,6 @@ body.app-ready #root {
   /* background: linear-gradient(180deg, #224984 0%, #152E45 100%); */
   background: rgb(34, 73, 132);
   background: radial-gradient(circle, rgba(34, 73, 132, 1) 0%, rgba(21, 46, 69, 1) 100%);
-}
-
-.abhivyakti_grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
 }
 
 .abhivyakti_grid_all {
@@ -703,37 +662,6 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-.slider_placement_dots_law .slick-dots {
-  bottom: 12px !important;
-}
-
-.slider_placement_dots_law .slick-dots li {
-  width: 15px !important;
-  height: 15px !important;
-}
-
-.slider_placement_dots_law .slick-dots li button {
-  width: 15px !important;
-  height: 15px !important;
-  padding: 2px !important;
-}
-
-.slider_placement_dots_law .slick-dots li button:before {
-  width: 14px !important;
-  height: 14px !important;
-  content: "" !important;
-  opacity: 0.75 !important;
-  border: 2px solid white !important;
-  border-radius: 100% !important;
-}
-
-.slider_placement_dots_law .slick-dots li.slick-active button:before {
-  opacity: 1 !important;
-  color: black;
-  border: 2px solid white !important;
-  background: white !important;
-}
-
 .only-top {
   border-left: 0px !important;
   border-right: 0px !important;
@@ -752,10 +680,6 @@ input::-webkit-inner-spin-button {
 .mobile-scroll::-webkit-scrollbar {
   display: none !important;
   width: 0px !important;
-}
-
-.manage-academis .slick-arrow {
-  display: none !important;
 }
 
 .header {
@@ -865,10 +789,6 @@ input::-webkit-inner-spin-button {
 }
 
 @media screen and (max-width: 1024px) {
-  .slider_placement_dots_law .slick-dots {
-    bottom: -28px !important;
-  }
-
   .banner-section.big-banner {
     min-height: 400px;
   }
@@ -1735,10 +1655,6 @@ section .card-color img {
 
 .slick-dots li.slick-active button:before {
   background-color: #fff;
-}
-
-.notable .slick-dots {
-  bottom: 0 !important;
 }
 
 .hidden-dot {

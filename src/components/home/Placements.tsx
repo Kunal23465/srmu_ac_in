@@ -3,6 +3,7 @@ import Classes from "../../utils/styles/Global.module.css";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 import PlacementData from "../../data/home/PlacementData";
+import "./PlacementSliderDots.css";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 

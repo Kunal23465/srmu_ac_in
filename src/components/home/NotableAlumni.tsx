@@ -6,6 +6,7 @@ import Autoplay from "embla-carousel-autoplay";
 
 import { alumniData } from "../../data/placement/alumni-testimonials-data";
 import AlumniCard from "./AlumniCard";
+import "./PlacementSliderDots.css";
 
 import { Link } from "react-router-dom";
 import { LiaLongArrowAltRightSolid } from "react-icons/lia";

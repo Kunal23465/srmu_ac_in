@@ -166,10 +166,10 @@ const PROGRAM_FINDER_LEVEL_KEYWORDS: Record<string, string[]> = {
   "ph-d1": ["doctoral", "phd", "ph.d"],
 };
 
-export const shouldUseProgramFinderMetaTitle = (pathname = "/", metaTitle?: string | null) => {
-  const title = String(metaTitle || "").trim();
+const shouldUseProgramFinderScopedMeta = (pathname = "/", metaValue?: string | null) => {
+  const value = stripHtml(String(metaValue || "")).trim();
 
-  if (!title) {
+  if (!value) {
     return false;
   }
 
@@ -186,15 +186,21 @@ export const shouldUseProgramFinderMetaTitle = (pathname = "/", metaTitle?: stri
     return true;
   }
 
-  const normalizedTitle = title.toLowerCase();
+  const normalizedValue = value.toLowerCase();
   const disciplineLabel = humanizeSlug(disciplineSlug).toLowerCase();
   const requiredKeywords = PROGRAM_FINDER_LEVEL_KEYWORDS[programFlagSlug] || [getProgramFinderLevelLabel(programFlagSlug).toLowerCase()];
 
-  const hasDiscipline = normalizedTitle.includes(disciplineLabel);
-  const hasLevelContext = requiredKeywords.some((keyword) => normalizedTitle.includes(keyword));
+  const hasDiscipline = normalizedValue.includes(disciplineLabel);
+  const hasLevelContext = requiredKeywords.some((keyword) => normalizedValue.includes(keyword));
 
   return hasDiscipline && hasLevelContext;
 };
+
+export const shouldUseProgramFinderMetaTitle = (pathname = "/", metaTitle?: string | null) =>
+  shouldUseProgramFinderScopedMeta(pathname, metaTitle);
+
+export const shouldUseProgramFinderMetaDescription = (pathname = "/", metaDescription?: string | null) =>
+  shouldUseProgramFinderScopedMeta(pathname, metaDescription);
 
 export const buildSiteSchema = (pathname = "/") => {
   const normalizedPath = normalizePath(pathname);

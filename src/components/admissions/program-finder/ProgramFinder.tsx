@@ -15,7 +15,7 @@ import Classes from "../../../utils/styles/Global.module.css";
 import { useLocation } from "react-router-dom";
 import { fetchProgramTypeIntroByUrl } from "../../../store/program-type-intro/ProgramTypeIntroThunk";
 import SeoHead from "../../seo/SeoHead";
-import { getProgramFinderSeo, shouldUseProgramFinderMetaTitle } from "../../../utils/seo";
+import { getProgramFinderSeo, shouldUseProgramFinderMetaDescription, shouldUseProgramFinderMetaTitle } from "../../../utils/seo";
 
 const ProgramFinder: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -52,7 +52,9 @@ const ProgramFinder: React.FC = () => {
   const seoTitle = shouldUseProgramFinderMetaTitle(seoPath, programByIntroData?.metaTitle)
     ? programByIntroData?.metaTitle!.trim()
     : fallbackSeo.title;
-  const seoDescription = programByIntroData?.metaDescription?.trim() || fallbackSeo.description;
+  const seoDescription = shouldUseProgramFinderMetaDescription(seoPath, programByIntroData?.metaDescription)
+    ? programByIntroData?.metaDescription!.trim()
+    : fallbackSeo.description;
 
   useEffect(() => {
     if (isDynamicProgramFinderRoute) {
@@ -180,7 +182,6 @@ const ProgramFinder: React.FC = () => {
     return <div>Error loading data</div>;
   }
 
-  console.log("seoTitle",seoTitle)
   return (
     <>
       <SeoHead

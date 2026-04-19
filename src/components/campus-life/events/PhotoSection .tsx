@@ -1,5 +1,6 @@
 import Fancybox from "./Fancybox";
 import { MdOpenInFull } from "react-icons/md";
+import "./PhotoSection.css";
 
 interface PhotoSectionProps {
     photos?: string[];
