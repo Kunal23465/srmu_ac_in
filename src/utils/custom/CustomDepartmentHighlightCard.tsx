@@ -9,7 +9,7 @@ interface propstype {
 const CustomDepartmentHighlightCard: React.FC<propstype> = ({ item }) => (
     <>
         <div className=" overflow-hidden mb-4">
-            <img src={item.image} className="w-full h-full object-cover" alt={item.title} />
+            <img src={item.image} className="w-full h-[200px] sm:h-[300px] object-cover" alt={item.title} />
         </div>
         <h2 className="text-[24px] font-semibold">{item.title}</h2>
         <p className="text-[#212529] text-[16px] mt-1">{item.description}</p>
