@@ -1,29 +1,30 @@
 import React from 'react'
 import AdmissionFaq from '../../../components/admissions/admission-faq/AdmissionFaq'
 import SeoHead from '../../../components/seo/SeoHead'
-import { faqData } from '../../../data/admissions/admission-faq/admission-faq-data'
 import { SITE_NAME, stripHtml } from '../../../utils/seo'
 
 const AdmissionFaqPage: React.FC = () => {
-  const faqSchema = {
+ const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: faqData.map((item) => {
-      const tableText = item.tableData
-        ? item.tableData.rows.map((row) => row.filter(Boolean).join(" - ")).join(" ")
-        : "";
-      const listText = item.listItems?.join(" ") || "";
-      const answerText = stripHtml([item.content || "", listText, tableText].filter(Boolean).join(" "));
-
-      return {
+    "mainEntity": [
+      {
         "@type": "Question",
-        name: item.question,
-        acceptedAnswer: {
+        "name": "Which course is best after Class 12 for a high-salary career in Uttar Pradesh?",
+        "acceptedAnswer": {
           "@type": "Answer",
-          text: answerText,
-        },
-      };
-    }),
+          "text": "The best course depends on your stream. B.Tech in Computer Science, BBA in Business Analytics, and specialized professional courses offer high salary potential in the current market."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is B.Tech and who should pursue it?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "B.Tech is a four-year undergraduate degree focusing on engineering, technology, and problem-solving. Students interested in innovation, mathematics, and software development should pursue it."
+        }
+      }
+    ]
   };
 
   return (
