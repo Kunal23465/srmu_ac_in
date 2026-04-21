@@ -44,6 +44,11 @@ const RootLayout: React.FC = () => {
   }, []);
 
   const toggleChat = () => setOpenChat((prev) => !prev);
+  const openWhatsApp = () => {
+    if (typeof window === "undefined") return;
+
+    window.open("https://wa.me/919120007948", "_blank", "noopener,noreferrer");
+  };
 
   return (
     <>
@@ -59,14 +64,14 @@ const RootLayout: React.FC = () => {
       <Footer />
 
       {/* ================= WHATSAPP ICON ================= */}
-      <a
-        href="https://wa.me/9120007948"
-        target="_blank"
-        rel="noopener noreferrer"
+      <button
+        type="button"
+        onClick={openWhatsApp}
+        aria-label="Contact SRMU on WhatsApp"
         className="fixed bottom-12 sm:bottom-10 left-6  z-9999! rounded-full shadow-lg hover:scale-110 transition-all duration-300"
       >
         <img src={whatsapp} alt="WhatsApp contact button" loading="eager" decoding="async" className="w-14 h-14" />
-      </a>
+      </button>
 
       {/* ================= CHAT POPUP ================= */}
       {/* {openChat && (
