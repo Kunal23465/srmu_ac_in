@@ -3,7 +3,7 @@ import { createServer as createHttpServer } from "http";
 import { createServer as createViteServer } from "vite";
 import fs from "fs";
 import path from "path";
-import { fileURLToPath } from "url";
+import { fileURLToPath, pathToFileURL } from "url";
 import { buildRobotsTxt, buildSitemapXml } from "./src/utils/sitemap";
 import { getPreferredProgramRouteSlug } from "./src/utils/legacyProgramRoutes";
 import { hasValidTopLevelProgramRoute } from "./src/utils/programCategoryRoute";
@@ -22,6 +22,10 @@ const PROGRAM_SLUG_CACHE_TTL_MS = 15 * 60 * 1000;
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+const legacyDocumentRedirectsPath = path.resolve(
+  __dirname,
+  "src/data/redirects/legacy-document-redirects.json",
+);
 
 const isProduction = process.env.NODE_ENV === "production";
 const API_BASE_URL = process.env.VITE_API_BASE_URL || "https://webservices.srmu.ac.in:7005";
@@ -33,6 +37,30 @@ type ProgramSlugCacheEntry = {
 
 let programSlugCache: ProgramSlugCacheEntry | null = null;
 let programSlugCachePromise: Promise<ProgramSlugCacheEntry> | null = null;
+
+function loadLegacyDocumentRedirectMap() {
+  const redirects = new Map<string, string>();
+
+  if (!fs.existsSync(legacyDocumentRedirectsPath)) {
+    return redirects;
+  }
+
+  const redirectEntries = JSON.parse(fs.readFileSync(legacyDocumentRedirectsPath, "utf-8")) as Record<string, unknown>;
+
+  for (const [sourcePath, targetUrl] of Object.entries(redirectEntries)) {
+    const normalizedSourcePath = sourcePath.trim().toLowerCase();
+
+    if (!normalizedSourcePath || typeof targetUrl !== "string" || !targetUrl.trim()) {
+      continue;
+    }
+
+    redirects.set(normalizedSourcePath, targetUrl.trim());
+  }
+
+  return redirects;
+}
+
+const legacyDocumentRedirectMap = loadLegacyDocumentRedirectMap();
 
 function getRequestSiteUrl(req: express.Request) {
   const forwardedProto = (req.headers["x-forwarded-proto"] as string | undefined)?.split(",")[0]?.trim();
@@ -146,6 +174,22 @@ async function createServer() {
   app.set("trust proxy", true);
 
   app.use((req, res, next) => {
+    if (req.method !== "GET" && req.method !== "HEAD") {
+      next();
+      return;
+    }
+
+    const redirectTo = legacyDocumentRedirectMap.get(req.path.toLowerCase());
+
+    if (!redirectTo) {
+      next();
+      return;
+    }
+
+    res.redirect(301, redirectTo);
+  });
+
+  app.use((req, res, next) => {
     if (!isProduction) {
       next();
       return;
@@ -197,7 +241,7 @@ async function createServer() {
     }
   });
 
-  app.get("/placement-overview", (req, res) => {
+  app.get("/placement-overview", (_req, res) => {
     res.redirect(301, `${canonicalOrigin}/placements`);
   });
 
@@ -279,7 +323,8 @@ async function createServer() {
         // PRODUCTION
         template = fs.readFileSync(path.resolve(__dirname, "dist/client/index.html"), "utf-8");
 
-        render = (await import("./dist/server/entry-server.js")).render;
+        const serverEntryUrl = pathToFileURL(path.resolve(__dirname, "dist/server/entry-server.js")).href;
+        render = (await import(serverEntryUrl)).render;
       }
       let appHtml = "";
       let preloadedState = {};
