@@ -1,14 +1,14 @@
 
-import img40 from "../../assets/images/placements/student-testimonials/segfds-01032410494254.jpg";
-import img42 from "../../assets/images/placements/student-testimonials/abhay-singh-bsc-physics-2nd-year-min-01032404570698.jpg";
-import img43 from "../../assets/images/placements/student-testimonials/abhi-srivastav-ba-ps-st-year-min-01032404561486.jpg";
-import img46 from "../../assets/images/placements/student-testimonials/adarsh-patel-bsc-ag-2nd-year-min-01032405134787.jpg";
-import img47 from "../../assets/images/placements/student-testimonials/ajay-singh-ba-llb-3rd-year-min-01032405132148.jpg";
-import img49 from "../../assets/images/placements/student-testimonials/anish-kumar-bsc-bt-1st-year-min-01032405125558.jpg";
-import img50 from "../../assets/images/placements/student-testimonials/arpita-pathak-ba-llb-2nd-year-min-01032405122779.jpg";
-import img51 from "../../assets/images/placements/student-testimonials/athrav-raj-chauhan-ba-llb-3rd-year-min-01032405120452.jpg";
-import img54 from "../../assets/images/placements/student-testimonials/garima-mishra-mba-1st-year-min-01032405111416.jpg";
-import img55 from "../../assets/images/placements/student-testimonials/jayshree-srivastav-bba-1st-year-min-01032405104330.jpg";
+import img1 from "../../assets/images/placements/student-testimonials/01_Anil_Kumar_Tiwari.jpeg";
+import img2 from "../../assets/images/placements/student-testimonials/02_Yashi_Srivastava.jpeg";
+import img3 from "../../assets/images/placements/student-testimonials/03_Vyom_Mishra.png";
+import img4 from "../../assets/images/placements/student-testimonials/04_Abhay_Pratap_Singh.jpeg";
+import img5 from "../../assets/images/placements/student-testimonials/05_Rajnish_Singh.jpeg";
+import img6 from "../../assets/images/placements/student-testimonials/06_Sunil_Kumar_Chaudhary.jpeg";
+import img7 from "../../assets/images/placements/student-testimonials/07_Agam_Srivastava.jpeg";
+import img8 from "../../assets/images/placements/student-testimonials/08_Neha_Singh.jpeg";
+import img9 from "../../assets/images/placements/student-testimonials/09_Shubham_Nigam.jpeg";
+import img10 from "../../assets/images/placements/student-testimonials/10_Mahendra_Mohan_Srivastava.jpeg";
 
 
 export interface testimonialCard {
@@ -20,76 +20,74 @@ export interface testimonialCard {
 }
 
 export const hometestimonial: testimonialCard[] = [
-
   {
     id: 1,
-    img: img42,
-    text: "The college has an overall mixture of studies and personality grooming. The faculty members at Ramswaroop are highly educated and professionally experienced as every faculty member here is from top ranked colleges like IITs and IIITs. There are workshops and hostels for boys and girls. Wi-Fi facility is available and the classrooms are big like auditoriums.",
-    name: "Abhay Singh",
-    batch: "B.Sc.(Hons.) in Physics (2nd Year)",
+    img: img1,
+    text: "A master's in public health qualified professional with more than 17 years of project management experience in the areas of Public Health, child nutrition, water, sanitation & hygiene, Climate Change, capacity building and community engagement through technical assistance and system strengthening. In my current role as Senior Officer Program at Child Fund India, based in Lucknow, I oversee the implementation of large-scale development projects aimed at improving child well-being and community resilience.",
+    name: "Anil Kumar Tiwari",
+    batch: "MPH (Batch: 2023), Placed in Child Fund India as Project Officer (12 LPA)",
   },
   {
     id: 2,
-    img: img43,
-    text: "My university is a good place which provide with excellent knowledge about the course and also overall development of the student. It works on the skill development program and organized various program to do so. There are various cultural event and various club like photographic club, drama club, etc. to provide extra development of the student.",
-    name: "Abhi Srivastava",
-    batch: "B.A.(Hons.) in Political Science (1st Year)",
+    img: img2,
+    text: "I completed my B.Tech in Biotechnology from Shri Ramswaroop Memorial University, Lucknow in 2021. My time at the university was truly valuable, as it provided me with a strong academic foundation along with practical exposure and skill development. The supportive faculty and engaging learning environment helped me grow both personally and professionally. Today, as I work at SVAM, I can see how the knowledge and confidence I gained during my college years continue to support my career.",
+    name: "Yashi Srivastava",
+    batch: "B.Tech-BT (Batch: 2021), Placed in SVAM International as Lead Business Analyst (13 LPA)",
   },
   {
     id: 3,
-    img: img46,
-    text: "The college is good for the academics, placements and the infrastructure. Hostel is also in campus and the meal is also quite good. All over it is a good place.",
-    name: "Adarsh Patel",
-    batch: "B.Sc.(Hons.) in Agriculture (2nd Year)",
+    img:img3,
+    text: "My experience at the university has been highly enriching. The faculty members were knowledgeable, supportive, and committed to fostering deep understanding. Access to standard, well-authored books and quality academic resources helped build a strong conceptual foundation. The curriculum emphasizes hard work and consistency, encouraging students to go beyond basic learning. Additionally, extensive exposure to laboratory work provided valuable hands-on experience, bridging the gap between theory and practical application.",
+    name: "Vyom Mishra",
+    batch: "B.Tech-EC (Batch: 2016), Placed in HL Klemove R&D Center India as Specialist Engineer (40 LPA)",
   },
   {
     id: 4,
-    img: img47,
-    text: "The SRMU is mainly known for its faculty. All faculty member are IITians, NITians. Faculties are highly knowledgeable and experienced. There is proper communication between faculty and students. The teaching pedagogy is quite impressive. All faculties have their own style to teach the students. As the faculties are also hard-working so the student also performs hard work. The faculty provides problem set, surprise test on each unit completion. The University also provides University Test after every Unit completion and finally Semester Exams are conducted.",
-    name: "Ajay Singh",
-    batch: "B.A. + LL.B. (Hons.) (3rd Year)",
+    img: img4,
+    text: "As an SRMU alumnus, I can confidently say that the institution prepared me well for the professional world. The practical exposure, industry-oriented curriculum, and continuous guidance from mentors gave me a solid foundation for my career.",
+    name: "Abhay Pratap Singh",
+    batch: "BBA (Batch: 2022), Placed in BFIL (Subsidiary of IndusInd Bank) as State Head (11 LPA)",
   },
   {
     id: 5,
-    img: img49,
-    text: "I am very thankful to be a part of Shri Ramswaroop Memorial University which is a top ranking university amongst various private universities in India. It has a good record for placement of students It is a well-known university in the state and going upward still. A dedicated hard working team of faculty members at regular intervals is keeping a track of such newer techniques of teaching which can improve the understanding of students and better their learning. To permanently establish newer, effective and valid teaching modes, such as smart education etc.",
-    name: "Anish Kumar",
-    batch: "B.Sc.(Hons.) in Biotechnology (1st Year)",
+    img: img5,
+    text: "My M.Tech journey in Biotechnology at SRMU played a crucial role in shaping my career. The university's strong academic framework, practical lab exposure, and constant mentorship helped me build a solid technical foundation. The placement cell's support and guidance further boosted my confidence, enabling me to transition smoothly into the professional world.",
+    name: "Rajnish Singh",
+    batch: "M.Tech BT (Batch: 2023), Placed in Samray as Business Development Executive (10 LPA)",
   },
   {
     id: 6,
-    img: img50,
-    text: "The faculties of this University are very appropriate as there they have some magic in their teaching style that mostly students easily understand that what's the actual meaning of knowledge. The University has different trades and their respect faculties for each and every subject. Bus is available in entire Lucknow which is most good thing I felt but they should give some instalment plan for bus fee and it should be air conditioned.",
-    name: "Arpita Pathak",
-    batch: "B.A. + LL.B. (Hons.) (2nd Year)",
+    img: img6,
+    text: "Being an alumnus of SRMU fills me with pride. The knowledge, values, and experiences I gained here continue to guide me in my journey.",
+    name: "Sunil Kumar Chaudhary",
+    batch: "MPH (Batch: 2023), Placed in UNICEF as Divisional Health Coordinator (10 LPA)",
   },
   {
     id: 7,
-    img: img51,
-    text: "Well qualified teachers, lab assistants and lab instructors provide proper lecture and lab. Friendly behavior for the proper development of personality. Proper guidance is provided to the student by faculty.",
-    name: "Athrav Raj Chauhan",
-    batch: "B.A. + LL.B. (Hons.) (3rd Year)",
+    img: img7,
+    text: "I'm grateful to SRMU for providing the right guidance, skills, and opportunities that helped me secure my job. The strong academic foundation at SRMU truly prepared me for real-world challenges and career success.",
+    name: "Agam Srivastava",
+    batch: "B.Tech-CS (Batch: 2022), Placed in Sopra Steria as Senior Software Engineer (14 LPA)",
   },
   {
     id: 8,
-    img: img40,
-    text: "It has been 3 years in this university and I feel very much fortunate to be a part of this university. Shri Ramswaroop Memorial University is a vibrant campus availing lots of opportunities regarding career as well as for the respective courses that are going on.",
-    name: "Aayushi Singh",
-    batch: "B.C.A. (Batch: 2019), Placed in US Tech Solutions",
+    img: img8,
+    text: "I am grateful to Shri Ramswaroop Memorial University for providing an excellent education and support and special thanks to the placement cell for their dedicated efforts in organizing mock interviews, workshops, and placement drives. The faculty is dedicated and always ready to help students succeed.",
+    name: "Neha Singh",
+    batch: "MBA-HR (Batch: 2025), Placed in Jaro Education as Management Trainee (12 LPA)",
   },
   {
     id: 9,
-    img: img54,
-    text: "The teaching pedagogy is quite impressive. All faculties have their own style to teach the students. As the faculties are also hard working so the student also performs hard work. The faculty provides problem set, surprise test on each unit completion and finally semester exam are conducted.",
-    name: "Garima Mishra",
-    batch: "M.B.A. (1st Year)",
+    img: img9,
+    text: "I was never particularly strong in academics, but I discovered that I learn best through practical experience. Instead of focusing on what I wasn't good at, I focused on improving my skills through hands-on learning, and SRMU helped me and that made all the difference. Always believe in yourself. The only person you should compare yourself with is the person you were yesterday. Focus on becoming a better version of yourself every day.",
+    name: "Shubham Nigam",
+    batch: "MCA (Batch: 2016), Placed in EXP Realty as HubSpot Architect (46 LPA)",
   },
-
   {
     id: 10,
-    img: img55,
-    text: "Our college infrastructure is very good its cafe ,academic block ,library and always try us providing best faculty and best education .about placements then are college always in providing us calls from core companies and at last it’s all up to you and your knowledge",
-    name: "Jayshree Srivastava",
-    batch: "B.B.A. (1st Year)",
+    img: img10,
+    text: "My journey at SRMU has been a remarkable and life-changing experience. During my time as a student, I received not only quality education but also constant guidance and motivation from my department faculty members. The environment at SRMU encouraged learning, innovation, and personal growth. With the combined support of my faculty members and the placement team, I successfully secured a position at Adani Cement. This achievement is a result of the strong foundation and encouragement I received at SRMU.",
+    name: "Mahendra Mohan Srivastava",
+    batch: "M.Tech-CE (Batch: 2022), Placed in Adani Cement as Regional Technical Service Manager (60 LPA)",
   },
 ];
