@@ -4,10 +4,10 @@ import MemorialCollege from "./MemorialCollege";
 import Apply from "./Apply";
 import DeferredSection from "./DeferredSection";
 import DeferredSectionFallback from "./DeferredSectionFallback";
+import ProgramsSectionStatic from "./ProgramSectionStatic";
 import { CustomTopFooterAbout } from "../../data/about/aboutusData";
 import CustomTopFooter from "../../utils/custom/CustomTopFooter";
 
-const ProgramsSectionStatic = React.lazy(() => import("./ProgramSectionStatic"));
 const InnovationCulture = React.lazy(() => import("./InnovationCulture"));
 const Events = React.lazy(() => import("./Events"));
 const AlumniSlider = React.lazy(() => import("./NotableAlumni"));
@@ -24,11 +24,7 @@ const Home: React.FC = () => {
     <div>
       <Banner />
       <MemorialCollege />
-      <DeferredSection minHeight={720} eagerOnIdle rootMargin="180px 0px" fallback={renderSectionFallback(720)}>
-        <Suspense fallback={renderSectionFallback(720)}>
-          <ProgramsSectionStatic />
-        </Suspense>
-      </DeferredSection>
+      <ProgramsSectionStatic />
       <Apply />
 
       <DeferredSection minHeight={460} rootMargin="220px 0px" fallback={renderSectionFallback(460)}>

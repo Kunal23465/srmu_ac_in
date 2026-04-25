@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Modal } from "antd";
 import useEmblaCarousel from "embla-carousel-react";
 import { hometestimonial } from "../../data/home/student-testimonialhome-data";
 import quote from "../../assets/images/home/quote.png";
@@ -10,6 +11,16 @@ import { LiaLongArrowAltRightSolid } from "react-icons/lia";
 interface ArrowProps {
   onClick?: () => void;
 }
+
+const getTruncatedText = (text: string, maxWords: number) => {
+  const words = text.trim().split(/\s+/);
+
+  if (words.length <= maxWords) {
+    return text;
+  }
+
+  return `${words.slice(0, maxWords).join(" ")}...`;
+};
 
 const NextArrow = ({ onClick }: ArrowProps) => (
   <button
@@ -31,11 +42,17 @@ const PrevArrow = ({ onClick }: ArrowProps) => (
 
 const TestimonialSlider = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [hasMounted, setHasMounted] = useState(false);
 
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
     align: "center",
   });
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
 
   useEffect(() => {
     if (!emblaApi) return;
@@ -54,6 +71,10 @@ const TestimonialSlider = () => {
   const goPrev = () => emblaApi?.scrollPrev();
 
   const displayIndex = activeIndex % hometestimonial.length;
+  const activeTestimonial = hometestimonial[displayIndex];
+  const previewText = getTruncatedText(activeTestimonial.text, 20);
+  const shouldShowReadMore =
+    activeTestimonial.text.trim().split(/\s+/).length > 20;
 
   return (
     <div className="py-8 md:py-10 lg:py-12 bg-[#f7f9ff] flex flex-col items-center">
@@ -130,16 +151,26 @@ const TestimonialSlider = () => {
         </div>
 
         <h2 className="font21 fw600 mt-4">
-          {hometestimonial[displayIndex].name}
+          {activeTestimonial.name}
         </h2>
 
         <p className="text-[#00000099] text-sm">
-          {hometestimonial[displayIndex].batch}
+          {activeTestimonial.batch}
         </p>
 
         <p className="mt-4 text-[#00000099] leading-relaxed font19">
-          {hometestimonial[displayIndex].text}
+          {previewText}
         </p>
+
+        {shouldShowReadMore && (
+          <button
+            type="button"
+            onClick={() => setIsModalOpen(true)}
+            className="mt-4 inline-flex cursor-pointer items-center font-semibold text-[#023047] underline underline-offset-4 hover:text-[#ffb703]"
+          >
+            Read More
+          </button>
+        )}
 
         <div className="mt-8">
           <Link
@@ -151,6 +182,29 @@ const TestimonialSlider = () => {
           </Link>
         </div>
       </div>
+
+      {hasMounted && (
+        <Modal
+          open={isModalOpen}
+          onCancel={() => setIsModalOpen(false)}
+          footer={null}
+          centered
+          width={800}
+        >
+          <div className="p-2 md:p-4">
+            <div className="flex justify-center">
+              <img src={quote} className="w-10 md:w-auto" alt="quote" />
+            </div>
+
+            <h2 className="mt-4 text-center font21 fw600">{activeTestimonial.name}</h2>
+            <p className="text-center text-[#00000099] text-sm">{activeTestimonial.batch}</p>
+
+            <p className="mt-6 text-[#00000099] leading-relaxed font19 whitespace-pre-line">
+              {activeTestimonial.text}
+            </p>
+          </div>
+        </Modal>
+      )}
     </div>
   );
 };
