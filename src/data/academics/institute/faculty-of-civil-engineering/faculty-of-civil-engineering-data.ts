@@ -7,7 +7,19 @@ import depSlide3 from "../../../../assets/images/academics/departments/depSlide3
 import depSlide4 from "../../../../assets/images/academics/departments/depSlide4.webp";
 import depSlide5 from "../../../../assets/images/academics/departments/depSlide5.webp";
 import abhishek from "../../../../assets/images/academics/departments/abhishek-saxena-1.webp"
-
+import cef1 from "../../../../assets/images/academics/institutes/civil-enginner/faculty/cef1.png"
+import cef2 from "../../../../assets/images/academics/institutes/civil-enginner/faculty/cef2.jpg"
+import cef3 from "../../../../assets/images/academics/institutes/civil-enginner/faculty/cef3.jpg"
+import cef4 from "../../../../assets/images/academics/institutes/civil-enginner/faculty/cef4.jpg"
+import cef5 from "../../../../assets/images/academics/institutes/civil-enginner/faculty/cef5.jpg"
+import cef6 from "../../../../assets/images/academics/institutes/civil-enginner/faculty/cef6.jpg"
+import cef7 from "../../../../assets/images/academics/institutes/civil-enginner/faculty/cef7.jpg"
+import cef8 from "../../../../assets/images/academics/institutes/civil-enginner/faculty/cef8.jpg"
+import cef9 from "../../../../assets/images/academics/institutes/civil-enginner/faculty/cef9.jpg"
+import cef10 from "../../../../assets/images/academics/institutes/civil-enginner/faculty/cef10.jpg"
+import cef11 from "../../../../assets/images/academics/institutes/civil-enginner/faculty/cef11.jpg"
+import cef12 from "../../../../assets/images/academics/institutes/civil-enginner/faculty/cef12.jpg"
+import cef13 from "../../../../assets/images/academics/institutes/civil-enginner/faculty/cef13.jpg"
 // import professor from "../../../../assets/images/academics/departments/abhishek-saxena-1.webp";
 import { customeOverViewType } from "../../../../types/home-data-type";
 import { counterDataType } from "../../../about/leadership-and-governance/leadership-and-governance-data";
@@ -136,79 +148,79 @@ export const civilfacultyData: FacultyItem[] = [
     id: 1,
     name: "Mr. Amol Gupta",
     designation: "Assistant Professor",
-    image: "https://testweb.srmu.ac.in/storage/teams/edwqf-27052510302495.png",
+    image: cef1,
   },
   {
     id: 2,
     name: "Prof. (Dr.) Abhishek Saxena",
     designation: "Professor",
-    image: "https://testweb.srmu.ac.in/storage/teams/abhishek-saxena-18072412353035-1--05052510422195.jpg",
+    image: cef2,
   },
   {
     id: 3,
     name: "Mr. Kamal Kumar",
     designation: "Assistant Professor",
-    image: "https://testweb.srmu.ac.in/storage/teams/kamal-kumar-18072412483380.jpg",
+    image: cef3,
   },
   {
     id: 4,
     name: "Dr. R. K. Srivastava",
     designation: "Professor",
-    image: "https://testweb.srmu.ac.in/storage/teams/rajendra-kumar-srivastava-18072412505076.jpg",
+    image: cef4,
   },
   {
     id: 5,
     name: "Ms. Anjali Singh",
     designation: "Assistant Professor",
-    image: "https://testweb.srmu.ac.in/storage/teams/anjali-singh-18072412521068.jpg",
+    image: cef5,
   },
   {
     id: 6,
     name: "Ms. Anju Patel",
     designation: "Assistant Professor",
-    image: "https://testweb.srmu.ac.in/storage/teams/anju-patel-1807241253248.jpg",
+    image: cef6,
   },
   {
     id: 7,
     name: "Dr. Pragya Singh",
     designation: "Associate Professor",
-    image: "https://testweb.srmu.ac.in/storage/teams/pragya-singh-18072412551894.jpg",
+    image: cef7,
   },
   {
     id: 8,
     name: "Dr. Sandhya Maurya",
     designation: "Assistant Professor",
-    image: "https://testweb.srmu.ac.in/storage/teams/sandhya-maurya-18072412563182.jpg",
+    image: cef8,
   },
   {
     id: 9,
     name: "Ms. Saman Khan",
     designation: "Assistant Professor",
-    image: "https://testweb.srmu.ac.in/storage/teams/saman-khan-18072412573613.jpg",
+    image: cef9,
   },
   {
     id: 10,
     name: "Mr. Rishabh Joshi",
     designation: "Assistant Professor",
-    image: "https://testweb.srmu.ac.in/storage/teams/rishabh-joshi-18072401013095.jpg",
+    image: cef10,
   },
   {
     id: 11,
     name: "Dr. Mohd Zain",
     designation: "Assistant Professor",
-    image: "https://testweb.srmu.ac.in/storage/teams/mohd-zain-18072401025667.jpg",
+    image: cef11,
   },
   {
     id: 12,
     name: "Prof. Jashwant Kumar Varshney",
     designation: "Professor",
-    image: "https://testweb.srmu.ac.in/storage/teams/j.-k.-varshney-18072401041015.jpg",
+    image: cef12,
   },
   {
     id: 13,
     name: "Prof. (Dr.) Rakesh Varma",
     designation: "Professor",
-    image: "https://testweb.srmu.ac.in/storage/teams/rakesh-varma-18072401051073.jpg",
+    image: cef13,
   },
 ];
 

@@ -10,8 +10,22 @@ import { FeeTableData } from "../faculty-of-civil-engineering/faculty-of-civil-e
 import { FacultyItem } from "../../../../utils/custom/CustomFacultyListCard";
 
 // import fimg1 from ""
-
-
+import cse1 from "../../../../assets/images/academics/institutes/cse/cse1.jpeg"
+import cse2 from "../../../../assets/images/academics/institutes/cse/cse2.jpeg"
+import cse3 from "../../../../assets/images/academics/institutes/cse/cse3.jpeg"
+import cse4 from "../../../../assets/images/academics/institutes/cse/cse4.jpeg"
+import cse5 from "../../../../assets/images/academics/institutes/cse/cse5.jpeg"
+import cse6 from "../../../../assets/images/academics/institutes/cse/cse6.jpeg"
+import cse7 from "../../../../assets/images/academics/institutes/cse/cse7.jpeg"
+import cse8 from "../../../../assets/images/academics/institutes/cse/cse8.jpeg"
+import cse9 from "../../../../assets/images/academics/institutes/cse/cse9.jpeg"
+import cse10 from "../../../../assets/images/academics/institutes/cse/cse10.jpeg"
+import cse11 from "../../../../assets/images/academics/institutes/cse/cse11.jpeg"
+import cse12 from "../../../../assets/images/academics/institutes/cse/cse12.jpeg"
+import cse13 from "../../../../assets/images/academics/institutes/cse/cse13.jpeg"
+import cse14 from "../../../../assets/images/academics/institutes/cse/cse14.jpeg"
+import cse15 from "../../../../assets/images/academics/institutes/cse/cse15.jpeg"
+import cse16 from "../../../../assets/images/academics/institutes/cse/cse16.jpeg"
 export interface Headers {
   name: string;
   program: string;
@@ -505,97 +519,97 @@ export const CsefacultyData: FacultyItem[] = [
     id: 1,
     name: "Dr. Rajeev Kumar",
     designation: "Associate Professor",
-    image: "https://testweb.srmu.ac.in/storage/teams/whatsapp-image-2025-02-05-at-16.01.33-05022504034844.jpeg",
+    image: cse1,
   },
   {
     id: 2,
     name: "Mr. Kamlesh Chandra Maurya",
     designation: "Assistant Professor",
-    image: "https://testweb.srmu.ac.in/storage/teams/11zon-cropped-9-11zon-23022411405419.jpeg",
+    image: cse2,
   },
   {
     id: 3,
     name: "Ms. Sakshi Singh",
     designation: "Assistant Professor",
-    image: "https://testweb.srmu.ac.in/storage/teams/11zon-cropped-10-11zon-23022411440432.jpeg",
+    image: cse3,
   },
   {
     id: 4,
     name: "Ms. Reeta",
     designation: "Assistant Professor",
-    image: "https://testweb.srmu.ac.in/storage/teams/11zon-cropped-11-11zon-23022411471519.jpeg",
+    image: cse4,
   },
   {
     id: 5,
     name: "Dr. Anil Kumar Pandey",
     designation: "Associate Professor",
-    image: "https://testweb.srmu.ac.in/storage/teams/11zon-cropped-12-11zon-23022411531799.jpeg",
+    image: cse5,
   },
   {
     id: 6,
     name: "Ms. Abhilasha Mandal",
     designation: "Assistant Professor",
-    image: "https://testweb.srmu.ac.in/storage/teams/11zon-cropped-13-11zon-23022411563382.jpeg",
+    image: cse6,
   },
   {
     id: 7,
     name: "Mr. Anil Kumar",
     designation: "Assistant Professor",
-    image: "https://testweb.srmu.ac.in/storage/teams/11zon-cropped-14-11zon-23022412014648.jpeg",
+    image: cse7,
   },
   {
     id: 8,
     name: "Ms. Anjali Awasthi",
     designation: "Assistant Professor",
-    image: "https://testweb.srmu.ac.in/storage/teams/11zon-cropped-15-11zon-2302241206042.jpeg",
+    image: cse8,
   },
   {
     id: 9,
     name: "Mr. Ijtaba Saleem Khan",
     designation: "Assistant Professor",
-    image: "https://testweb.srmu.ac.in/storage/teams/11zon-cropped-16-11zon-2302241210115.jpeg",
+    image: cse9,
   },
   {
     id: 10,
     name: "Dr. Satya Bhushan Verma",
     designation: "Associate Professor",
-    image: "https://testweb.srmu.ac.in/storage/teams/satya-bhushan-verma-15062411340833.JPG",
+    image: cse10,
   },
   {
     id: 11,
     name: "Mr. Aditya Pratap Singh",
     designation: "Assistant Professor",
-    image: "https://testweb.srmu.ac.in/storage/teams/aditya-15062411290719.jpeg",
+    image: cse11,
   },
   {
     id: 12,
     name: "Ms. Arpita Vishwakarma",
     designation: "Assistant Professor",
-    image: "https://testweb.srmu.ac.in/storage/teams/11zon-cropped-8-11zon-23022411340354.jpeg",
+    image: cse12,
   },
   {
     id: 13,
     name: "Mr. Neelesh Mishra",
     designation: "Assistant Professor",
-    image: "https://testweb.srmu.ac.in/storage/teams/11zon-cropped-4-11zon-23022411142521.jpeg",
+    image: cse13,
   },
   {
     id: 14,
     name: "Ms. Prabha Singh",
     designation: "Assistant Professor",
-    image: "https://testweb.srmu.ac.in/storage/teams/11zon-cropped-6-11zon-23022411234294.jpeg",
+    image: cse14,
   },
   {
     id: 15,
     name: "Ms. Atifa Parveen",
     designation: "Assistant Professor",
-    image: "https://testweb.srmu.ac.in/storage/teams/11zon-cropped-7-11zon-23022411264913.jpeg",
+    image: cse15,
   },
   {
     id: 16,
     name: "Dr. Shobhit Sinha",
     designation: "Assistant Professor",
-    image: "https://testweb.srmu.ac.in/storage/teams/shobhit-sinha-1-1--05052510362381.jpeg",
+    image: cse16,
   },
 ];
 
