@@ -1,10 +1,11 @@
 import React from "react";
 import { useLocation, useParams } from "react-router-dom";
+import ConvocationDetailsComponent from "../components/campus-life/convocation/ConvocationDetailsComponent";
 import EventDetails from "../pages/campus-life/events/EventDetails";
 import CustomCommitteeDetailsPage from "./custom/CustomCommitteeDetailsPage";
 import SeoHead from "../components/seo/SeoHead";
 import { SITE_NAME } from "./seo";
-import { findCommitteeCardBySlug, findEventCardBySlug } from "./routeMatching";
+import { findCommitteeCardBySlug, findConvocationCardBySlug, findEventCardBySlug } from "./routeMatching";
 
 type LegacyNotFoundProps = {
   entityLabel: string;
@@ -39,6 +40,17 @@ export const LegacyEventDetailsPage: React.FC = () => {
   return <EventDetails card={card} />;
 };
 
+export const RoutedEventDetailsPage: React.FC = () => {
+  const { slug = "" } = useParams();
+  const card = findEventCardBySlug(slug);
+
+  if (!card) {
+    return <LegacyNotFound entityLabel="Event" />;
+  }
+
+  return <EventDetails card={card} />;
+};
+
 export const LegacyCommitteeDetailsPage: React.FC = () => {
   const { slug = "" } = useParams();
   const committee = findCommitteeCardBySlug(slug);
@@ -48,4 +60,15 @@ export const LegacyCommitteeDetailsPage: React.FC = () => {
   }
 
   return <CustomCommitteeDetailsPage committee={committee} />;
+};
+
+export const RoutedConvocationDetailsPage: React.FC = () => {
+  const { slug = "" } = useParams();
+  const card = findConvocationCardBySlug(slug);
+
+  if (!card) {
+    return <LegacyNotFound entityLabel="Convocation" />;
+  }
+
+  return <ConvocationDetailsComponent card={card} />;
 };

@@ -52,6 +52,10 @@ const AlumniCard: React.FC<CustomCardProps> = ({ image, name, title, desc, fullD
       <img
         src={image}
         alt={name}
+        width={320}
+        height={440}
+        loading="lazy"
+        decoding="async"
         className="
                     w-full h-full object-top object-cover
                     transition-all duration-300

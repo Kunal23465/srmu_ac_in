@@ -123,6 +123,8 @@ const MemorialCollege: React.FC = () => {
                         <img
                           src={item.imagePath}
                           alt="slider"
+                          width={400}
+                          height={300}
                           loading={index === 0 ? "eager" : "lazy"}
                           fetchpriority={index === 0 ? "high" : "auto"}
                           decoding="async"
@@ -134,6 +136,8 @@ const MemorialCollege: React.FC = () => {
                         <img
                           src={item.imagePath}
                           alt="slider"
+                          width={400}
+                          height={300}
                           loading={index === 0 ? "eager" : "lazy"}
                           fetchpriority={index === 0 ? "high" : "auto"}
                           decoding="async"

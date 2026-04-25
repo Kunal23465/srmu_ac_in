@@ -43,7 +43,15 @@ export default function InnovationCulture() {
         </div>
 
         <div className="w-full max-w-[400px] hidden  mt-10 lg:mt-0 lg:flex justify-center">
-          <img src={girlsimage} alt="Students" className=" block object-contain absolute bottom-0" />
+          <img 
+            src={girlsimage} 
+            alt="Students" 
+            width={400}
+            height={400}
+            loading="lazy"
+            decoding="async"
+            className="block object-contain absolute bottom-0" 
+          />
         </div>
       </div>
     </section>

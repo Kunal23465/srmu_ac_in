@@ -60,6 +60,8 @@ const NewsCard = ({ image, description, date, title, onReadMore }: any) => {
       <img
         src={image}
         alt="Event"
+        width={300}
+        height={225}
         loading="lazy"
         decoding="async"
         className="transition-all aspect-4/3 duration-200 rounded-md w-full max-w-[200px] xl:max-w-[300px] max-h-[400px] object-cover"

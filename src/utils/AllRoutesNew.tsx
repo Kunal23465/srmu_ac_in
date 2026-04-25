@@ -1,16 +1,13 @@
 import RootLayout from "../pages/RootLayout";
 import { Navigate, useRoutes } from "react-router-dom";
-import HomePage from "../pages/Home/HomePage";
 import { lazyPage } from "./lazyRoute";
-import { committeeCards } from "../data/about/committee-and-cells/committee-and-cells-data";
-import { convocationData } from "../data/campus-life/convocation/convocation-data";
-import tedxData, { conferenceData, festData, festivalsData } from "../data/campus-life/events/events-data";
-import CommittePage from "../pages/about/committee/CommittePage";
-import BlogPage from "../pages/blog/BlogPage";
 
+const HomePage = lazyPage(() => import("../pages/Home/HomePage"));
 const PageNotFound = lazyPage(() => import("../pages/PageNotFound"));
 const LegacyEventDetailsPage = lazyPage(() => import("./legacyRouteResolvers").then((mod) => ({ default: mod.LegacyEventDetailsPage })));
 const LegacyCommitteeDetailsPage = lazyPage(() => import("./legacyRouteResolvers").then((mod) => ({ default: mod.LegacyCommitteeDetailsPage })));
+const RoutedEventDetailsPage = lazyPage(() => import("./legacyRouteResolvers").then((mod) => ({ default: mod.RoutedEventDetailsPage })));
+const RoutedConvocationDetailsPage = lazyPage(() => import("./legacyRouteResolvers").then((mod) => ({ default: mod.RoutedConvocationDetailsPage })));
 const CareerFormPage = lazyPage(() => import("../pages/Home/CareerFormPage"));
 const TermsConditionPage = lazyPage(() => import("../pages/Home/TermsConditionPage"));
 const NewsLetterPage = lazyPage(() => import("../pages/Home/NewsLetterPage"));
@@ -23,7 +20,6 @@ const ProgramTypePage = lazyPage(() => import("../pages/programs/ProgramTypePage
 const ProgramTypeItemPage = lazyPage(() => import("../pages/ProgramTypeItemPage"));
 const LeadershipAndGovernancePage = lazyPage(() => import("../pages/about/Leadership-and-Governance/LeadershipAndGovernancePage"));
 const CommitteeAndCellsPage = lazyPage(() => import("../pages/about/Committee-and-Cells/CommitteeAndCellsPage"));
-const CustomCommitteeDetailsPage = lazyPage(() => import("./custom/CustomCommitteeDetailsPage"));
 const RecognitionApprovalsPage = lazyPage(() => import("../pages/about/recognition-approval/RecognitionApprovalsPage"));
 const AwardOverviewPage = lazyPage(() => import("../pages/about/award-overview/AwardOverviewPage"));
 const IqacPage = lazyPage(() => import("../pages/about/iqac-overview/IqacPage"));
@@ -53,7 +49,6 @@ const CampusLifePage = lazyPage(() => import("../pages/campus-life/CampusLifePag
 const TransportationPage = lazyPage(() => import("../pages/campus-life/facilities/transportation/TransportationPage"));
 const HostelPage = lazyPage(() => import("../pages/campus-life/facilities/HostelPage"));
 const ConvocationPage = lazyPage(() => import("../pages/campus-life/convocation/ConvocationPage"));
-const ConvocationDetailPage = lazyPage(() => import("../pages/campus-life/convocation/ConvocationDetailPage"));
 const CentralLibraryPage = lazyPage(() => import("../pages/campus-life/central-library/CentralLibraryPage"));
 const GreenInitiativePage = lazyPage(() => import("../pages/campus-life/green-initiative/GreenInitiativePage"));
 const WomenEmpowermentPage = lazyPage(() => import("../pages/campus-life/women-empowerment/WomenEmpowermentPage"));
@@ -63,7 +58,6 @@ const OutreachActivationsPage = lazyPage(() => import("../pages/campus-life/outr
 const ClubsPage = lazyPage(() => import("../pages/campus-life/clubs/ClubsPage"));
 const GrievanceRedressalSystemPage = lazyPage(() => import("../pages/campus-life/grievance-redressal-system/GrievanceRedressalSystemPage"));
 const EventPage = lazyPage(() => import("../pages/campus-life/events/EventPage"));
-const EventDetails = lazyPage(() => import("../pages/campus-life/events/EventDetails"));
 const ResearchOverviewPage = lazyPage(() => import("../pages/Research/Overview/ResearchOverviewPage"));
 const ProcessAndInitiativePage = lazyPage(() => import("../pages/Research/Process-and-Initiative/ProcessAndInitiativePage"));
 const PhdNotificationSessionPage = lazyPage(() => import("../pages/Research/Phd-notification-session/PhdNotificationSessionPage"));
@@ -82,6 +76,8 @@ const PlacementPoliciesPage = lazyPage(() => import("../pages/placement/placemen
 const AdmissionEnquiryPage = lazyPage(() => import("../pages/admission-enquiry/AdmissionEnquiryPage"));
 const ContactUsPage = lazyPage(() => import("../pages/contact-us/ContactUsPage"));
 const MandatoryDisclouserPage = lazyPage(() => import("../pages/mandatory-disclouser/MandatoryDisclouserPage"));
+const CommittePage = lazyPage(() => import("../pages/about/committee/CommittePage"));
+const BlogPage = lazyPage(() => import("../pages/blog/BlogPage"));
 const BlogsPage = lazyPage(() => import("../pages/blog/BlogsPage"));
 const BlogDetailsPage = lazyPage(() => import("../pages/blog/BlogDetailsPage"));
 const RtiPage = lazyPage(() => import("../pages/rti/RtiPage"));
@@ -193,14 +189,9 @@ export const routes = [
         //   element: <CustomCommitteeDetailsPage committee={card} />,
         // })),
       },
-       {
+      {
         path: "/committe",
         element: <CommittePage />,
-
-        children: committeeCards.map((card) => ({
-          path: card.routeKey,
-          element: <CustomCommitteeDetailsPage committee={card} />,
-        })),
       },
       {
         path: "/committe/:slug",
@@ -340,35 +331,10 @@ export const routes = [
         element: <EventPage />,
 
         children: [
-          // Fest data
-          ...Object.values(festData).flatMap((fest) =>
-            fest.cards.map((card) => ({
-              path: card.routeKey,
-              element: <EventDetails card={card} />,
-            })),
-          ),
-
-          ...conferenceData.conferences.map((card) => ({
-            path: card.routeKey,
-            element: <EventDetails card={card} />,
-          })),
-
-          ...conferenceData.seminars.map((card) => ({
-            path: card.routeKey,
-            element: <EventDetails card={card} />,
-          })),
-
-          ...Object.values(festivalsData).flatMap((festival) =>
-            festival.cards.map((card) => ({
-              path: card.routeKey,
-              element: <EventDetails card={card} />,
-            })),
-          ),
-
-          ...tedxData.map((card) => ({
-            path: card.routeKey,
-            element: <EventDetails card={card} />,
-          })),
+          {
+            path: ":slug",
+            element: <RoutedEventDetailsPage />,
+          },
         ],
       },
       {
@@ -384,12 +350,10 @@ export const routes = [
         element: <ConvocationPage />,
 
         children: [
-          ...Object.values(convocationData).flatMap((item) =>
-            item.cards.map((card) => ({
-              path: card.routeKey,
-              element: <ConvocationDetailPage card={card} />,
-            })),
-          ),
+          {
+            path: ":slug",
+            element: <RoutedConvocationDetailsPage />,
+          },
         ],
       },
       {

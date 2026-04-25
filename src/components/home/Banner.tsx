@@ -74,6 +74,8 @@ const Banner: React.FC = () => {
                         className="w-full h-[44vh] sm:h-auto sm:min-h-[470px] md:min-h-[520px] lg:min-h-[640px] max-h-[calc(100vh-140px)] object-cover rounded-b-[28px] sm:rounded-none"
                         src={banner4}
                         alt={slides[selectedIndex].imageAlt}
+                        width={1920}
+                        height={640}
                         // @ts-ignore
                         fetchpriority="high"
                         loading="eager"

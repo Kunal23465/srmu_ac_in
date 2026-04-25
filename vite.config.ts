@@ -87,12 +87,37 @@ export default defineConfig(({ isSsrBuild }) => ({
         : {
             manualChunks(id) {
               if (id.includes("node_modules")) {
+                if (
+                  id.includes("react-dom") ||
+                  id.includes("react-router") ||
+                  id.includes("scheduler") ||
+                  id.includes("react-helmet-async")
+                ) {
+                  return "react-runtime";
+                }
+
                 if (id.includes("antd") || id.includes("@ant-design") || id.includes("rc-")) {
                   return "antd-vendor";
                 }
 
                 if (id.includes("@reduxjs/toolkit") || id.includes("react-redux") || id.includes("redux")) {
                   return "redux-vendor";
+                }
+
+                if (id.includes("react-icons")) {
+                  return "icons-vendor";
+                }
+
+                if (id.includes("formik") || id.includes("yup") || id.includes("react-select")) {
+                  return "forms-vendor";
+                }
+
+                if (id.includes("axios")) {
+                  return "network-vendor";
+                }
+
+                if (id.includes("@fancyapps")) {
+                  return "media-vendor";
                 }
 
                 if (id.includes("embla-carousel") || id.includes("framer-motion") || id.includes("react-countup")) {

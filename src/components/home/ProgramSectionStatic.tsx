@@ -40,7 +40,7 @@ const ProgramsSectionStatic: FC = () => {
   }, [activePrograms]);
 
   return (
-    <section className="bg-cover bg-center bg-fixed py-8 md:py-10 lg:py-12" style={{ backgroundImage: "url('/programs-bg.webp')" }}>
+    <section className="bg-cover bg-center bg-scroll py-8 md:py-10 lg:py-12" style={{ backgroundImage: "url('/programs-bg.webp')" }}>
       <div className="container mx-auto max-w-7xl px-4">
         <div className="text-white mb-8">
           <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] fw500">Our Programs</h2>
@@ -96,7 +96,7 @@ const ProgramsSectionStatic: FC = () => {
                     <div key={index} className="flex-[0_0_100%] grid grid-cols-2 gap-4">
                       {group.map((item, idx) => (
                         <Link key={`${item.name}-${idx}`} to={item.link} target="_blank" rel="noopener noreferrer" className="block">
-                          <img src={item.img} alt={item.name} loading="lazy" decoding="async" className="w-full h-36 object-cover border-white border-2 rounded-xl" />
+                          <img src={item.img} alt={item.name} width={200} height={144} loading="lazy" decoding="async" className="w-full h-36 object-cover border-white border-2 rounded-xl" />
 
                           <div className="text-left text-white mt-2 text-xs">{item.name}</div>
                         </Link>
@@ -110,7 +110,7 @@ const ProgramsSectionStatic: FC = () => {
                 {activePrograms.map((item, idx) => (
                   <li key={`${item.name}-${idx}`} className="list-none">
                     <Link to={item.link} rel="noopener noreferrer" className="block overflow-hidden bg-transparent transition-all hover:-translate-y-2 duration-300">
-                      <img src={item.img} alt={item.name} loading="lazy" decoding="async" className="w-full h-40 object-cover border-white border-2 rounded-xl" />
+                      <img src={item.img} alt={item.name} width={200} height={160} loading="lazy" decoding="async" className="w-full h-40 object-cover border-white border-2 rounded-xl" />
 
                       <div className="text-left text-white mt-4 text-sm sm:text-base">{item.name}</div>
                     </Link>

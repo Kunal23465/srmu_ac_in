@@ -1,15 +1,13 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { Suspense, lazy, startTransition, useEffect, useMemo, useState } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import Header from "../components/header/Header";
 import Footer from "../components/footer/Footer";
 import whatsapp from "../assets/images/whatsapp-icon.png";
-// import chatbot from "../assets/images/output-onlinepngtools.png";
-import bgImg from "../assets/images/chat-bg.jpg";
-import { FaTimes } from "react-icons/fa";
 import DynamicBreadcrumbs from "../components/breadcrumb/DynamicBreadcrumbs";
-import Chatbot from "../components/Chatbot";
 import SeoHead from "../components/seo/SeoHead";
 import { buildSiteSchema, getDefaultSeo, normalizePath } from "../utils/seo";
+
+const Chatbot = lazy(() => import("../components/Chatbot"));
 
 const RootLayout: React.FC = () => {
   const location = useLocation();
@@ -17,8 +15,8 @@ const RootLayout: React.FC = () => {
   const fallbackSeo = useMemo(() => getDefaultSeo(normalizedPath), [normalizedPath]);
   const siteSchema = useMemo(() => buildSiteSchema(normalizedPath), [normalizedPath]);
 
-  const [openChat, setOpenChat] = useState(false);
   const [showRightBar, setShowRightBar] = useState(false);
+  const [shouldRenderChatbot, setShouldRenderChatbot] = useState(false);
   const [hovered, setHovered] = useState<number | null>(null);
   // Scroll to top on page change
   useEffect(() => {
@@ -43,12 +41,45 @@ const RootLayout: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const toggleChat = () => setOpenChat((prev) => !prev);
   const openWhatsApp = () => {
     if (typeof window === "undefined") return;
 
     window.open("https://wa.me/919120007948", "_blank", "noopener,noreferrer");
   };
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const idleWindow = window as Window & {
+      requestIdleCallback?: (callback: IdleRequestCallback, options?: IdleRequestOptions) => number;
+      cancelIdleCallback?: (handle: number) => void;
+    };
+
+    const scheduleChatbot = () => {
+      startTransition(() => {
+        setShouldRenderChatbot(true);
+      });
+    };
+
+    let idleHandle: number | null = null;
+    let timeoutHandle: number | null = null;
+
+    if (typeof idleWindow.requestIdleCallback === "function") {
+      idleHandle = idleWindow.requestIdleCallback(scheduleChatbot, { timeout: 5000 });
+    } else {
+      timeoutHandle = window.setTimeout(scheduleChatbot, 2500);
+    }
+
+    return () => {
+      if (idleHandle !== null && typeof idleWindow.cancelIdleCallback === "function") {
+        idleWindow.cancelIdleCallback(idleHandle);
+      }
+
+      if (timeoutHandle !== null) {
+        window.clearTimeout(timeoutHandle);
+      }
+    };
+  }, []);
 
   return (
     <>
@@ -129,7 +160,11 @@ const RootLayout: React.FC = () => {
           {openChat ? <FaTimes className="text-white" size={22} /> : <img src={chatbot} alt="Open chat assistant" className="w-8" />}
         </div>
       </button> */}
-      <Chatbot />
+      {shouldRenderChatbot ? (
+        <Suspense fallback={null}>
+          <Chatbot />
+        </Suspense>
+      ) : null}
       {/* ============= RIGHT SIDE SLIDERS (SHOW ON SCROLL) ============= */}
       <div
         className={`

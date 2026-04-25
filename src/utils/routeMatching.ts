@@ -1,4 +1,5 @@
 import { committeeCards } from "../data/about/committee-and-cells/committee-and-cells-data";
+import { convocationData } from "../data/campus-life/convocation/convocation-data";
 import tedxData, { conferenceData, festData, festivalsData, type FestCard } from "../data/campus-life/events/events-data";
 import { legacyBlogArticles, legacyNewsArticles } from "../data/legacy/legacyContent";
 import { PublicationConferenceData } from "../data/research/publication/publication-data";
@@ -22,6 +23,8 @@ const allEventCards: FestCard[] = [
   ...tedxData,
 ];
 
+const allConvocationCards = Object.values(convocationData).flatMap((item) => item.cards);
+
 export const findEventCardBySlug = (slug: string) => {
   const normalizedSlug = normalizeRouteSlug(slug);
 
@@ -37,6 +40,17 @@ export const findCommitteeCardBySlug = (slug: string) => {
   const normalizedSlug = normalizeRouteSlug(slug);
 
   return committeeCards.find((card) => {
+    const routeKeyMatch = normalizeRouteSlug(card.routeKey || "") === normalizedSlug;
+    const titleMatch = normalizeRouteSlug(card.title || "") === normalizedSlug;
+
+    return routeKeyMatch || titleMatch;
+  });
+};
+
+export const findConvocationCardBySlug = (slug: string) => {
+  const normalizedSlug = normalizeRouteSlug(slug);
+
+  return allConvocationCards.find((card) => {
     const routeKeyMatch = normalizeRouteSlug(card.routeKey || "") === normalizedSlug;
     const titleMatch = normalizeRouteSlug(card.title || "") === normalizedSlug;
 
