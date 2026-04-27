@@ -1,5 +1,6 @@
 import React from "react";
 import { LinkType, otherDataTypes } from "../../types/home-data-type";
+import { Navigate, useNavigate } from "react-router-dom";
 
 
 
@@ -14,6 +15,7 @@ interface CustomOverviewSectionProps {
 }
 const CustomOverviewSectionForCentralLibrary: React.FC<CustomOverviewSectionProps> = ({ data }) => {
     const { heading, content, otherData, links } = data;
+    const navigate=useNavigate()
 
     return (
         <div className="py-7 md:py-10 lg:py-14">
@@ -39,14 +41,13 @@ const CustomOverviewSectionForCentralLibrary: React.FC<CustomOverviewSectionProp
                             {links.map((link, index) => (
                                 <p key={index}>
                                     <span className="font-semibold">{link.title}: </span>
-                                    <a
-                                        href={link.url}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="text-black hover:black underline"
-                                    >
-                                        {link.url}
-                                    </a>
+                                    <button
+  onClick={() => window.open(link.url, "_blank")}
+  rel="noopener noreferrer"
+  className="text-black hover:text-black underline cursor-pointer"
+>
+  {link.url}
+</button>
                                 </p>
                             ))}
                         </div>

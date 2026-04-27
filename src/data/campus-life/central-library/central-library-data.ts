@@ -173,7 +173,7 @@ export const libraryServices: LibraryService[] = [
   },
   {
     title: "Web OPAC",
-    description: "Library Web OPAC[](http://elibrary.srmu.ac.in:8999) provides 24x7 access to resources and account management."
+    description: "Library Web OPAC provides 24x7 access to resources and account management."
   },
   {
     title: "Online Information Search",

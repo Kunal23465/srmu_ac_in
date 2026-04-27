@@ -104,11 +104,11 @@ export const footerData = {
       title: "Student Corner",
       path: "/student-corner",
     },
-    {
-      id: 1,
-      title: "Result Portal",
-      path: "https://results.srmu.ac.in/",
-    },
+    // {
+    //   id: 1,
+    //   title: "Result Portal",
+    //   path: "https://results.srmu.ac.in/",
+    // },
     {
       id: 2,
       title: "Grievance Redressal System",
