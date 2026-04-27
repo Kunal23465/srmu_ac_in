@@ -1,25 +1,14 @@
-import img1 from "../../assets/images/placement/alumni-testimonials/a10-05102312565292.jpg";
-import img2 from "../../assets/images/placement/alumni-testimonials/shreya-02022404063971.png";
-import img3 from "../../assets/images/placement/alumni-testimonials/deepti-02022404153593.png"; 
-import img4 from "../../assets/images/placement/alumni-testimonials/harsh-02022404220456.png";
-import img5 from "../../assets/images/placement/alumni-testimonials/muralidhar.png";
-import img6 from "../../assets/images/placement/alumni-testimonials/adarsh.png";
-import img7 from "../../assets/images/placement/alumni-testimonials/hitwik.png";
-import img8 from "../../assets/images/placement/alumni-testimonials/ayush.png";
-import img9 from "../../assets/images/placement/alumni-testimonials/ruchiks.png";
-import img10 from "../../assets/images/placement/alumni-testimonials/muskan.jpg";
-import img11 from "../../assets/images/placement/alumni-testimonials/akash.png";
-import img12 from "../../assets/images/placement/alumni-testimonials/nisha.jpg";
-import img13 from "../../assets/images/placement/alumni-testimonials/ayushi.jpg";
-import img14 from "../../assets/images/placement/alumni-testimonials/vishal.jpg";
-import img15 from "../../assets/images/placement/alumni-testimonials/alok.jpg";
-import img16 from "../../assets/images/placement/alumni-testimonials/arsh.jpg";
-import img17 from "../../assets/images/placement/alumni-testimonials/kaushlkendra.jpg";
-import img18 from "../../assets/images/placement/alumni-testimonials/akash.jpg";
-import img19 from "../../assets/images/placement/alumni-testimonials/vaibhav.jpg";
-import img20 from "../../assets/images/placement/alumni-testimonials/nishchal.jpg";
-import img21 from "../../assets/images/placement/alumni-testimonials/sidharth.png";
-import img22 from "../../assets/images/placement/alumni-testimonials/kartika.png";
+
+import img1 from "../../assets/images/placements/student-testimonials/01_Anil_Kumar_Tiwari.png";
+import img2 from "../../assets/images/placements/student-testimonials/02_Yashi_Srivastava.png";
+import img3 from "../../assets/images/placements/student-testimonials/03_Vyom_Mishra.png";
+import img4 from "../../assets/images/placements/student-testimonials/04_Abhay_Pratap_Singh.png";
+import img5 from "../../assets/images/placements/student-testimonials/05_Rajnish_Singh.png";
+import img6 from "../../assets/images/placements/student-testimonials/06_Sunil_Kumar_Chaudhary.png";
+import img7 from "../../assets/images/placements/student-testimonials/07_Agam_Srivastava.png";
+import img8 from "../../assets/images/placements/student-testimonials/08_Neha_Singh.png";
+import img9 from "../../assets/images/placements/student-testimonials/09_Shubham_Nigam.png";
+import img10 from "../../assets/images/placements/student-testimonials/10_Mahendra_Mohan_Srivastava.png";
 import { customeOverViewType } from "../../types/home-data-type";
 
 
@@ -32,183 +21,86 @@ export interface AlumniCardType {
   fullDesc: string;
 }
 
-
 export const alumniData: AlumniCardType[] = [
   {
-    id: 1,
-    name: "Rahul Sharma",
-    title: "M.B.A. (Batch: 2019), Placed in Amazon",
-    image:  img1,
-    desc: "It's a place of knowledge & bliss. I feel special studying at SRMU. I cherish the memories, the favorite past times I had in my life! I look forward to keep in touch always while I am away",
-    fullDesc: "It's a place of knowledge & bliss. I feel special studying at SRMU. I cherish the memories, the favorite past times I had in my life! I look forward to keep in touch always while I am away."
-  },
-  {
-    id: 2,
-    name: "Shreya Bhardwaj",
-    title: "B.Tech in CSE (Batch: 2020), Placed in Nucleus Software",
-    image: img2,
-    desc: "SRMU has given me the opportunity to gain knowledge and experience so that I can make my first step towards success. SRMU provides skills which help in the overall development of your personality. ",
-    fullDesc: "SRMU has given me the opportunity to gain knowledge and experience so that I can make my first step towards success. SRMU provides skills which help in the overall development of your personality. "
-  },
-  {
-    id: 3,
-    name: "Deepti Srivastava",
-    title: "B.C.A. (Batch: 2020), Placed in TCS",
-    image: img3,
-    desc: "It’s been a wonderful journey here in SRMU. I have earned plenty of of qualities along with education. Teachers are very supportive in all Ups and down. Thanks to all faculties and entire SRMU f ",
-    fullDesc: "It’s been a wonderful journey here in SRMU. I have earned plenty of of qualities along with education. Teachers are very supportive in all Ups and down. Thanks to all faculties and entire SRMU family who have helped me a lot in getting into this life as a fresher and out with tremendous amount of improvement in personality, knowledge and skills"
-  },
-  {
-    id: 4,
-    name: "Harsh Kumar",
-    title: "B.Tech in CSE (Batch: 2020), Placed in Global Logic",
-    image: img4,
-    desc: "My four years at SRMU were amazing and a memory to cherish for a lifetime. It equipped us with skills and cognizance as well as gave us an opportunity to meet different kinds of people and learn a ple ",
-    fullDesc: "My four years at SRMU were amazing and a memory to cherish for a lifetime. It equipped us with skills and cognizance as well as gave us an opportunity to meet different kinds of people and learn a plethora of things. I would like to extend my sincere appreciation and gratitude to the faculty and the placement cell of SRMU for their constant support and guidance."
-  },
-  {
-    id: 5,
-    name: "Muralidhar Dubey",
-    title: "B.Sc. IT (Batch: 2019), Placed in BPK Technologies Pvt. Ltd.",
-    image: img5,
-    desc: "Shri Ramswaroop Memorial University is not just a university which provides students with banal knowledge, but an institution of self development and advancement of the thoughts and wisdom of the stud",
-    fullDesc: "Shri Ramswaroop Memorial University is not just a university which provides students with banal knowledge, but an institution of self development and advancement of the thoughts and wisdom of the students. We, as students, experience an upper hand over other students because of the exceptional teaching techniques and other aforementioned reasons."
-  },
-  {
-    id: 6,
-    name: "Adarsh Kumar Singh",
-    title: "B.Sc. IT (Batch: 2019), Placed in British Telecom",
-    image: img6,
-    desc: "The faculty members are the pillars of our university. They all are highly educated well organized and know the way of teaching beautifully. Theoretical as well as practical both classes are organized",
-    fullDesc: "The faculty members are the pillars of our university. They all are highly educated well organized and know the way of teaching beautifully. Theoretical as well as practical both classes are organized. All the faculties of my department are verysupportive, they satisfies our all curiosity about topics."
-  },
-  {
-    id: 7,
-    name: "Hritwik Singh",
-    title: "M.C.A. (Batch: 2019), Placed in Becton Dickinson",
-    image: img7,
-    desc: "The faculty members of the college are supportive as far as I know (my sources include my friends and my experience). They will help you if you show some concern towards the studies. This University i",
-    fullDesc: "The faculty members of the college are supportive as far as I know (my sources include my friends and my experience). They will help you if you show some concern towards the studies. This University is in its budding state. There is no bad crowd here so no ragging and all, the University is against it. If you want to study at a place which is somewhat calm as well as enthusiastic, then it's the right place to go for."
-  },
-  {
-    id: 8,
-    name: "Ayush Jain",
-    title: "M.C.A. (Batch: 2015), Placed in EDIFOCS Pvt. Ltd.",
-    image: img8,
-    desc: "That days are best phase of my life when I am at Shri Ramswaroop Memorial University. This college provides the best opportunity for campus selections. Many companies like TCS, Bajaj, J.K&nb",
-    fullDesc: "That days are best phase of my life when I am at Shri Ramswaroop Memorial University. This college provides the best opportunity for campus selections. Many companies like TCS, Bajaj, J.K Tyres and many more companies come here to choose prospective candidates. The other reason for selecting the students of this college is because the practical study provided here."
+    id: 10,
+    name: "Mahendra Mohan Srivastava",
+    title: "M.Tech-CE (Batch: 2022), Placed in Adani Cement as Regional Technical Service Manager (60 LPA)",
+    image: img10,
+    desc: "My journey at SRMU has been a remarkable and life-changing experience.",
+    fullDesc: "My journey at SRMU has been a remarkable and life-changing experience. During my time as a student, I received not only quality education but also constant guidance and motivation from my department faculty members. The environment at SRMU encouraged learning, innovation, and personal growth. With the combined support of my faculty members and the placement team, I successfully secured a position at Adani Cement. This achievement is a result of the strong foundation and encouragement I received at SRMU."
   },
   {
     id: 9,
-    name: "Ruchika Kumari",
-    title: "B.C.A (Batch: 2019), Placed in M/S People Possible",
+    name: "Shubham Nigam",
+    title: "MCA (Batch: 2016), Placed in EXP Realty as HubSpot Architect (46 LPA)",
     image: img9,
-    desc: "Campus is usually lively and classes are nice, but there is a really good variety so you can always take classes you like. The infrastructure is also very excellent on the campus with the best labs. T",
-    fullDesc: "Campus is usually lively and classes are nice, but there is a really good variety so you can always take classes you like. The infrastructure is also very excellent on the campus with the best labs. The library is also very vast with a wide range of books in it. The sports and the quality of the games are also very excellent. Even we have different types of clubs to enhance student talents.Not only we focus on education part but also provide extra time for extra co-circular activities.There is also a medical facility available on the campus for all the students."
+    desc: "I was never particularly strong in academics, but I discovered that I learn best through practical experience.",
+    fullDesc: "I was never particularly strong in academics, but I discovered that I learn best through practical experience. Instead of focusing on what I wasn't good at, I focused on improving my skills through hands-on learning, and SRMU helped me and that made all the difference. Always believe in yourself. The only person you should compare yourself with is the person you were yesterday. Focus on becoming a better version of yourself every day."
   },
   {
-    id: 10,
-    name: "Muskan Budhraja",
-    title: "B.Tech in CSE (Batch: 2022), Placed in Informatica",
-    image: img10,
-    desc: "This University is developing at a commendable speed. Different buildings for different courses are already present. Since ours is the mechanical branch and library is of utmost importance whose locat",
-    fullDesc: "This University is developing at a commendable speed. Different buildings for different courses are already present. Since ours is the mechanical branch and library is of utmost importance whose location is not much appropriate according to the time available for students to access it. This could be improved."
+    id: 3,
+    name: "Vyom Mishra",
+    title: "B.Tech-EC (Batch: 2016), Placed in HL Klemove R&D Center India as Specialist Engineer (40 LPA)",
+    image: img3,
+    desc: "My experience at the university has been highly enriching.",
+    fullDesc: "My experience at the university has been highly enriching. The faculty members were knowledgeable, supportive, and committed to fostering deep understanding. Access to standard, well-authored books and quality academic resources helped build a strong conceptual foundation. The curriculum emphasizes hard work and consistency, encouraging students to go beyond basic learning. Additionally, extensive exposure to laboratory work provided valuable hands-on experience, bridging the gap between theory and practical application."
   },
   {
-    id: 11,
-    name: "Akash Srivastava",
-    title: "B.Tech in CSE (Batch: 2023), Placed in TCS",
-    image: img11,
-    desc: "A confluence of academic, cultural and intellectual resource. Excellent environment for study with 100 acres of sprawling lush green and pollution free campus. Research and industry oriented study. Ex",
-    fullDesc: "A confluence of academic, cultural and intellectual resource. Excellent environment for study with 100 acres of sprawling lush green and pollution free campus. Research and industry oriented study. Excellent seminar halls and lecture theaters with audio-visual projection system."
+    id: 7,
+    name: "Agam Srivastava",
+    title: "B.Tech-CS (Batch: 2022), Placed in Sopra Steria as Senior Software Engineer (14 LPA)",
+    image: img7,
+    desc: "I'm grateful to SRMU for providing the right guidance, skills, and opportunities that helped me secure my job.",
+    fullDesc: "I'm grateful to SRMU for providing the right guidance, skills, and opportunities that helped me secure my job. The strong academic foundation at SRMU truly prepared me for real-world challenges and career success."
   },
   {
-    id: 12,
-    name: "Nisha Bisht",
-    title: "B.C.A. (Batch: 2019), Placed in SAP Labs India Pvt. Ltd.",
-    image: img12,
-    desc: "The placement certainly depends on your performance and knowledge.The main point is that how good you are with your subject and accuracy. The thing make this university different is it has industrial ",
-    fullDesc: "The placement certainly depends on your performance and knowledge.The main point is that how good you are with your subject and accuracy. The thing make this university different is it has industrial collaboration, workshops etc. it give chance to students to visit the industries where they will have to work which make students more comfortable."
+    id: 2,
+    name: "Yashi Srivastava",
+    title: "B.Tech-BT (Batch: 2021), Placed in SVAM International as Lead Business Analyst (13 LPA)",
+    image: img2,
+    desc: "I completed my B.Tech in Biotechnology from Shri Ramswaroop Memorial University, Lucknow in 2021.",
+    fullDesc: "I completed my B.Tech in Biotechnology from Shri Ramswaroop Memorial University, Lucknow in 2021. My time at the university was truly valuable, as it provided me with a strong academic foundation along with practical exposure and skill development. The supportive faculty and engaging learning environment helped me grow both personally and professionally. Today, as I work at SVAM, I can see how the knowledge and confidence I gained during my college years continue to support my career."
   },
   {
-    id: 13,
-    name: "Aayushi Singh",
-    title: "B.C.A. (Batch: 2019), Placed in US Tech Solutions",
-    image: img13,
-    desc: "It has been 3 years in this university and I feel very much fortunate to be a part of this university. Shri Ramswaroop Memorial University is a vibrant campus availing lots of opportunities regarding ",
-    fullDesc: "It has been 3 years in this university and I feel very much fortunate to be a part of this university. Shri Ramswaroop Memorial University is a vibrant campus availing lots of opportunities regarding career as well as for the respective courses that are going on."
+    id: 1,
+    name: "Anil Kumar Tiwari",
+    title: "MPH (Batch: 2023), Placed in Child Fund India as Project Officer (12 LPA)",
+    image: img1,
+    desc: "A master's in public health qualified professional with more than 17 years of project management experience.",
+    fullDesc: "A master's in public health qualified professional with more than 17 years of project management experience in the areas of Public Health, child nutrition, water, sanitation & hygiene, Climate Change, capacity building and community engagement through technical assistance and system strengthening. In my current role as Senior Officer Program at Child Fund India, based in Lucknow, I oversee the implementation of large-scale development projects aimed at improving child well-being and community resilience."
   },
   {
-    id: 14,
-    name: "Vishal Paul",
-    title: "M.C.A. (Batch: 2019), Placed in Talentbuilt.com",
-    image: img14,
-    desc: "University is having good infrastructure and facilities.60% to 70% students are placed every year.It has a modern infrastructure with all the essential facilities within the college premises.There are",
-    fullDesc: "University is having good infrastructure and facilities.60% to 70% students are placed every year.It has a modern infrastructure with all the essential facilities within the college premises.There are separate boy's and girl's hostel.The faculty are well-qualified and help each student with their problems. Modern teaching methods are preferred. The labs are equipped with the modern technology computers."
+    id: 8,
+    name: "Neha Singh",
+    title: "MBA-HR (Batch: 2025), Placed in Jaro Education as Management Trainee (12 LPA)",
+    image: img8,
+    desc: "I am grateful to Shri Ramswaroop Memorial University for providing an excellent education and support.",
+    fullDesc: "I am grateful to Shri Ramswaroop Memorial University for providing an excellent education and support and special thanks to the placement cell for their dedicated efforts in organizing mock interviews, workshops, and placement drives. The faculty is dedicated and always ready to help students succeed."
   },
   {
-    id: 15,
-    name: "Alok Ranjan Singh",
-    title: "M.C.A. (Batch: 2019), Placed in Wipro",
-    image: img15,
-    desc: "I am satisfied because of facilities and placements. There is a placement cell and many students along with me from my batch have been placed in good companies.I have been placed as a trainee at MSME",
-    fullDesc: "I am satisfied because of facilities and placements. There is a placement cell and many students along with me from my batch have been placed in good companies.I have been placed as a trainee at MSME development forum and got job.The infrastructure is good. All the facilities like Wi-Fi, labs,classrooms,library,medical facilities,sports,games etc."
+    id: 4,
+    name: "Abhay Pratap Singh",
+    title: "BBA (Batch: 2022), Placed in BFIL (Subsidiary of IndusInd Bank) as State Head (11 LPA)",
+    image: img4,
+    desc: "As an SRMU alumnus, I can confidently say that the institution prepared me well for the professional world.",
+    fullDesc: "As an SRMU alumnus, I can confidently say that the institution prepared me well for the professional world. The practical exposure, industry-oriented curriculum, and continuous guidance from mentors gave me a solid foundation for my career."
   },
   {
-    id: 16,
-    name: "Arsh Awasthi",
-    title: "B.Sc. IT (Batch: 2019), Placed in BNP Paribas",
-    image: img16,
-    desc: "I am having awesome experience at SRMU.It is one of the leading colleges in Lucknow in terms of placement.Faculty members are also well educated and trained from IIT’s. They help the students in",
-    fullDesc: "I am having awesome experience at SRMU.It is one of the leading colleges in Lucknow in terms of placement.Faculty members are also well educated and trained from IIT’s. They help the students in solving their problems and in many projects as well. They conducts tests on regular basis to know the level of the students. Presentations are also given by them on various useful topics."
+    id: 5,
+    name: "Rajnish Singh",
+    title: "M.Tech BT (Batch: 2023), Placed in Samray as Business Development Executive (10 LPA)",
+    image: img5,
+    desc: "My M.Tech journey in Biotechnology at SRMU played a crucial role in shaping my career.",
+    fullDesc: "My M.Tech journey in Biotechnology at SRMU played a crucial role in shaping my career. The university's strong academic framework, practical lab exposure, and constant mentorship helped me build a solid technical foundation. The placement cell's support and guidance further boosted my confidence, enabling me to transition smoothly into the professional world."
   },
   {
-    id: 17,
-    name: "Kaushlendra Pratap Singh",
-    title: "B.C.A. (Batch: 2019), Placed in SunTech Global",
-    image: img17,
-    desc: "SRMU is the best for the students. SRMU has dedicated placement department which provide enough training to students and helps students to develop creative skills. Internship companies also came to ge ",
-    fullDesc: "SRMU is the best for the students. SRMU has dedicated placement department which provide enough training to students and helps students to develop creative skills. Internship companies also came to get students placed.SRMU top recruiters are Bajaj,Jaro Education,Accenture,HCL and Just Dial."
-  },
-  {
-    id: 18,
-    name: "Akash Upadhyay",
-    title: "B.C.A. (Batch: 2019), Placed in US Tech Solutions",
-    image: img18,
-    desc: "Placements here are like any other private university. You are assured by the college that you will be placed surely. Since the number of students here is huge, don't expect a good job unless you ",
-    fullDesc: "Placements here are like any other private university. You are assured by the college that you will be placed surely. Since the number of students here is huge, don't expect a good job unless you have exceptional skills among the hundreds of students that are in your competition. Getting a job is more of a student's job rather than the university’s. The only thing that the college can do is bring up more and more companies for you and this it does well."
-  },
-  {
-    id: 19,
-    name: "Vaibhav Tripathi",
-    title: "M.C.A. (Batch: 2015), Placed in Fluper Limited",
-    image: img19,
-    desc: "Shri Ramswaroop Memorial university offers undergraduate, postgraduate, research and PH.D programs in fields of engineering, Management, Humanities etc that are equipped with the guidance of faculties",
-    fullDesc: "Shri Ramswaroop Memorial university offers undergraduate, postgraduate, research and PH.D programs in fields of engineering, Management, Humanities etc that are equipped with the guidance of faculties from IITs, NITs, IIMs etc. Shri Ramswaroop Memorial University provides a World Class infrastructure with latest techniques and facilities. Beautiful surrounding of the university is conducive for quality education."
-  },
-  {
-    id: 20,
-    name: "Nishchal Srivastava",
-    title: "M.B.A. (Batch: 2019), Placed in M/s Yash Pakka",
-    image: img20,
-    desc: "Teaching pedagogy is based on the full academic development of particular student which is based on conducting university test on a regular basis and university tests are conducted in a particular sem",
-    fullDesc: "Teaching pedagogy is based on the full academic development of particular student which is based on conducting university test on a regular basis and university tests are conducted in a particular semester so that after give 4UTs the students are prepared for the semester exam which will now only require revision."
-  },
-  {
-    id: 21,
-    name: "Siddhart",
-    title: "B.Tech in CSE (Batch: 2014), Placed in M/s City Group, USA",
-    image: img21,
-    desc: "Our college infrastructure is very good its cafe ,academic block ,library and always try us providing best faculty and best education .about placements then are college always in providing us calls fr",
-    fullDesc: "Our college infrastructure is very good its cafe ,academic block ,library and always try us providing best faculty and best education .about placements then are college always in providing us calls from core companies and at last it’s all up to you and your knowledge."
-  },
-  {
-    id: 22,
-    name: "Kartika Mishra",
-    title: "B.Tech in CSE (Batch: 2016), Placed in M/s Subex",
-    image: img22,
-    desc: "Faculty members are well educated and trained from IIT's. They help the students in solving their problems and in many projects as well. They conduct tests on a regular basis to know the level of",
-    fullDesc: "Faculty members are well educated and trained from IIT's. They help the students in solving their problems and in many projects as well. They conduct tests on a regular basis to know the level of the students. Presentations are also given by them on various useful topics."
+    id: 6,
+    name: "Sunil Kumar Chaudhary",
+    title: "MPH (Batch: 2023), Placed in UNICEF as Divisional Health Coordinator (10 LPA)",
+    image: img6,
+    desc: "Being an alumnus of SRMU fills me with pride.",
+    fullDesc: "Being an alumnus of SRMU fills me with pride. The knowledge, values, and experiences I gained here continue to guide me in my journey."
   }
 ];
 

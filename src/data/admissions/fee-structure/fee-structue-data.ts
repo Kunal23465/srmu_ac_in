@@ -1,10 +1,11 @@
 import { customeOverViewType } from "../../../types/home-data-type";
 
-import undergraduateFee from "../../../assets/pdf/admissons/fee-structure/fee-structure-undergraduate-programs-2025-26--060625104715.pdf";
-import postgraduateFee from "../../../assets/pdf/admissons/fee-structure/fee-structure-postgraduate-programs-2025-26--060625104732.pdf";
-import integratedFee from "../../../assets/pdf/admissons/fee-structure/fee-structure-integrated-programs-2025-26--060625045751.pdf";
-import diplomaFee from "../../../assets/pdf/admissons/fee-structure/fee-structure-diploma-programs-2025-26--240325034611.pdf";
-
+import undergraduateFee from "../../../assets/pdf/admissons/fee-structure/UG Fee Structure_2026-27.pdf";
+import postgraduateFee from "../../../assets/pdf/admissons/fee-structure/PG Fee Structure_2026-27.pdf";
+import integratedFee from "../../../assets/pdf/admissons/fee-structure/IG Fee Structure_2026-27.pdf";
+import diplomaFee from "../../../assets/pdf/admissons/fee-structure/Diploma Fee Structure_2026-27.pdf";
+import hostelFee from "../../../assets/pdf/admissons/fee-structure/Hostel Fee Structure_2026-27.pdf";
+import phdFee from "../../../assets/pdf/admissons/fee-structure/Ph.D. Fee Structure_2026-27.pdf";
 
 
 
@@ -38,6 +39,16 @@ export const ProgramFeeData: TableRowData[] = [
     id: 4,
     title: "Diploma Programs",
     download: { type: "pdf", url: diplomaFee },
+  },
+  {
+    id: 5,
+    title: "Ph.D Programs",
+    download: { type: "pdf", url: phdFee },
+  },
+  {
+    id: 6,
+    title: "Hostel Fee",
+    download: { type: "pdf", url: hostelFee },
   },
 ];
 
