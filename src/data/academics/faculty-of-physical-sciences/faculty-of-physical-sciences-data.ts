@@ -17,7 +17,17 @@ import modernLabs from "../../../assets/images/academics/institutes/modernLabs.w
 import nepCurricula from "../../../assets/images/academics/institutes/nepCurricula.webp";
 import nationalCollaboration from "../../../assets/images/academics/institutes/nationalCollaboration.webp";
 import { EventItem } from "../../../utils/custom/CustomEventListCard";
-
+import phev1 from "../../../assets/images/academics/institutes/physical/phev1.jpg";
+import phev2 from "../../../assets/images/academics/institutes/physical/phev2.jpg";
+import phev3 from "../../../assets/images/academics/institutes/physical/phev3.jpg";
+import phev4 from "../../../assets/images/academics/institutes/physical/phev4.jpg";
+import phev5 from "../../../assets/images/academics/institutes/physical/phev5.jpg";
+import phev6 from "../../../assets/images/academics/institutes/physical/phev6.jpg";
+import phev7 from "../../../assets/images/academics/institutes/physical/phev7.jpg";
+import phev8 from "../../../assets/images/academics/institutes/physical/phev8.jpg";
+import phev9 from "../../../assets/images/academics/institutes/physical/phev9.jpg";
+import phev10 from "../../../assets/images/academics/institutes/physical/phev10.jpg";
+import phev11 from "../../../assets/images/academics/institutes/physical/phev11.jpg";
 
 export const facultyofPhysicalScienceOverviewData: customeOverViewType = {
   heading: "Faculty of Physical Sciences",
@@ -268,7 +278,7 @@ export const physicalScienceEventsData: EventItem[] = [
     topic: "India’s Mission to Moon: Chandrayaan-3",
     speaker: "Prof. Kaushlendra Chaturvedi",
     date: "01st September, 2023",
-    image: "https://testweb.srmu.ac.in/storage/events/guest1-09052401110279.jpg",
+    image: phev1,
     cardBgColor: "#ffffff",
   },
   {
@@ -277,7 +287,7 @@ export const physicalScienceEventsData: EventItem[] = [
     topic: "Fabrication of Glass and Glass Ceramics for Bio-medical Applications",
     speaker: "Dr. C.R. Gautam",
     date: "10th December, 2022",
-    image: "https://testweb.srmu.ac.in/storage/events/guest5-09052401111327.jpg",
+    image: phev2,
     cardBgColor: "#ffffff",
   },
   {
@@ -286,7 +296,7 @@ export const physicalScienceEventsData: EventItem[] = [
     topic: "Revealing Secrets of High-energy Sky",
     speaker: "Dr. Sunil Chandra",
     date: "06th August, 2022",
-    image: "https://testweb.srmu.ac.in/storage/events/guest8-09052401112355.jpg",
+    image: phev3,
     cardBgColor: "#ffffff",
   },
   {
@@ -295,7 +305,7 @@ export const physicalScienceEventsData: EventItem[] = [
     topic: "New Era of Atomistic TNL TCAD Tools",
     speaker: "Dr. Praveen Saxena",
     date: "20th May, 2022",
-    image: "https://testweb.srmu.ac.in/storage/events/guest6-09052401113123.jpg",
+    image: phev4,
     cardBgColor: "#ffffff",
   },
   {
@@ -304,7 +314,7 @@ export const physicalScienceEventsData: EventItem[] = [
     topic: "Biomaterials in Therapy and Tissue Engineering",
     speaker: "Dr. Kapil Dev Patel",
     date: "25th April, 2022",
-    image: "https://testweb.srmu.ac.in/storage/events/guest7-09052401114086.jpg",
+    image: phev5,
     cardBgColor: "#ffffff",
   },
   {
@@ -312,7 +322,7 @@ export const physicalScienceEventsData: EventItem[] = [
     title: "Industrial Visit",
     venue: "Uttar Pradesh New and Renewable Energy Development Agency (UPNEDA) Training Centre",
     date: "18th May, 2023",
-    image: "https://testweb.srmu.ac.in/storage/events/visit-10022401501579.jpg",
+    image: phev6,
     cardBgColor: "#ffffff",
   },
   {
@@ -320,7 +330,7 @@ export const physicalScienceEventsData: EventItem[] = [
     title: "National Conference",
     topic: "SOLARIS 2020",
     date: "07th-09th February, 2020",
-    image: "https://testweb.srmu.ac.in/storage/events/national2-10022401495857.jpg",
+    image: phev7,
     cardBgColor: "#ffffff",
   },
   {
@@ -329,7 +339,7 @@ export const physicalScienceEventsData: EventItem[] = [
     topic: "RAMAN SPECTROSCOPY: Fundamentals, Instrumentations and Applications",
     speaker: "Prof. (Dr.) Sunil Kumar Srivastava",
     date: "20th November, 2023",
-    image: "https://testweb.srmu.ac.in/storage/events/international-09052401121949.jpg",
+    image: phev8,
     cardBgColor: "#ffffff",
   },
   {
@@ -337,7 +347,7 @@ export const physicalScienceEventsData: EventItem[] = [
     title: "International Conference",
     topic: "International Conference on Advancement in Natural Sciences: Vedic to Modern Era (ICANSVME-24)",
     date: "22-24 February, 2024",
-    image: "https://testweb.srmu.ac.in/storage/events/international-conf-19062403515737.jpg",
+    image: phev9,
     cardBgColor: "#ffffff",
   },
   {
@@ -345,7 +355,7 @@ export const physicalScienceEventsData: EventItem[] = [
     title: "National Science Day",
     event: "National Science Day was celebrated vibrantly with INSH and IBST collaboration",
     date: "28th Feb, 2024",
-    image: "https://testweb.srmu.ac.in/storage/events/guest2-1906240356142.jpg",
+    image: phev10,
     cardBgColor: "#ffffff",
   },
   {
@@ -353,7 +363,7 @@ export const physicalScienceEventsData: EventItem[] = [
     title: "Synopsis Presentation of Research Scholar",
     event: "Synopsis Presentation of Research Scholar of the Department",
     date: "02nd March, 2024",
-    image: "https://testweb.srmu.ac.in/storage/events/guest2-19062403581993.jpg",
+    image: phev11,
     cardBgColor: "#ffffff",
   },
 ];

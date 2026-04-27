@@ -26,6 +26,17 @@ import entrepreneurialmindsets from "../../../assets/images/academics/institutes
 import interdisciplinaryresearch from "../../../assets/images/academics/institutes/interdisciplinaryresearch.webp";
 import industrialVisit from "../../../assets/images/academics/institutes/industrial-visit.webp";
 import { EventItem } from "../../../utils/custom/CustomEventListCard";
+import mv1 from "../../../assets/images/academics/institutes/mechanical/mv1.png";
+import mv2 from "../../../assets/images/academics/institutes/mechanical/mv2.png";
+import mv3 from "../../../assets/images/academics/institutes/mechanical/mv3.png";
+import mv4 from "../../../assets/images/academics/institutes/mechanical/mv4.png";
+import mv5 from "../../../assets/images/academics/institutes/mechanical/mv5.jpg";
+import mv6 from "../../../assets/images/academics/institutes/mechanical/mv6.jpg";
+import mv7 from "../../../assets/images/academics/institutes/mechanical/mv7.jpg";
+import mv8 from "../../../assets/images/academics/institutes/mechanical/mv8.jpg";
+import mv9 from "../../../assets/images/academics/institutes/mechanical/mv9.jpg";
+import mv10 from "../../../assets/images/academics/institutes/mechanical/mv10.jpg";
+import mv11 from "../../../assets/images/academics/institutes/mechanical/mv11.jpg";
 
 export const facultyDetailsOfMeDepartment: FacultyItem[] = [
   {
@@ -390,7 +401,7 @@ export const mechanicalDepartmentEventsData: EventItem[] = [
     topic: "Agro Farm Machinery",
     venue: "Gobind Industries, Barabanki",
     date: "05th April, 2025",
-    image: "https://testweb.srmu.ac.in/storage/events/wqfqf-10062510274523.png",
+    image: mv1,
     cardBgColor: "#ffffff",
   },
   {
@@ -399,7 +410,7 @@ export const mechanicalDepartmentEventsData: EventItem[] = [
     topic: "Hybrid Vehicles",
     speaker: "Er. Nikhil Chaudhary",
     date: "24th March, 2025",
-    image: "https://testweb.srmu.ac.in/storage/events/wsfwf-10062510290948.png",
+    image: mv2,
     cardBgColor: "#ffffff",
   },
   {
@@ -407,7 +418,7 @@ export const mechanicalDepartmentEventsData: EventItem[] = [
     title: "Workshop",
     topic: "Heating, Ventilation and Air Conditioning",
     date: "05th February, 2025",
-    image: "https://testweb.srmu.ac.in/storage/events/wfwf-10062510305058.png",
+    image: mv3,
     cardBgColor: "#ffffff",
   },
   {
@@ -415,7 +426,7 @@ export const mechanicalDepartmentEventsData: EventItem[] = [
     title: "Workshop",
     topic: "3D Modelling in Mechanical Engineering",
     date: "24th September, 2024",
-    image: "https://testweb.srmu.ac.in/storage/events/wfwf-10062510314220.png",
+    image: mv4,
     cardBgColor: "#ffffff",
   },
   {
@@ -424,7 +435,7 @@ export const mechanicalDepartmentEventsData: EventItem[] = [
     topic: "Central AC Plant",
     venue: "Lulu Mall, Lucknow",
     date: "23rd May, 2023",
-    image: "https://testweb.srmu.ac.in/storage/events/visit2-09052411353246.jpg",
+    image:mv5,
     cardBgColor: "#ffffff",
   },
   {
@@ -433,7 +444,7 @@ export const mechanicalDepartmentEventsData: EventItem[] = [
     topic: "Indian Space Programme: Past Present and Future",
     speaker: "Er. Amit Pandey",
     date: "24th March, 2023",
-    image: "https://testweb.srmu.ac.in/storage/events/guest6-09052411371380.jpg",
+    image: mv6,
     cardBgColor: "#ffffff",
   },
   {
@@ -442,7 +453,7 @@ export const mechanicalDepartmentEventsData: EventItem[] = [
     topic: "An introduction to CFD: What, Why and How?",
     speaker: "Er. Rangesh Pandey",
     date: "06th September, 2022",
-    image: "https://testweb.srmu.ac.in/storage/events/guest-10022412021576.jpg",
+    image: mv7,
     cardBgColor: "#ffffff",
   },
   {
@@ -451,7 +462,7 @@ export const mechanicalDepartmentEventsData: EventItem[] = [
     topic: "Additive Manufacturing",
     speaker: "Dr. Sanjay Mishra",
     date: "29th September, 2023",
-    image: "https://testweb.srmu.ac.in/storage/events/guest1-09052411370190.jpg",
+    image: mv8,
     cardBgColor: "#ffffff",
   },
   {
@@ -459,7 +470,7 @@ export const mechanicalDepartmentEventsData: EventItem[] = [
     title: "Workshop",
     topic: "Ansys: Static Structural and Thermal Analysis on Mechanical Components",
     date: "21st November, 2022",
-    image: "https://testweb.srmu.ac.in/storage/events/workship2-09052411355956.jpg",
+    image: mv9,
     cardBgColor: "#ffffff",
   },
   {
@@ -467,7 +478,7 @@ export const mechanicalDepartmentEventsData: EventItem[] = [
     title: "Workshop",
     topic: "3D Modeling of Mechanical Component using CATIA Software",
     date: "19th October, 2023",
-    image: "https://testweb.srmu.ac.in/storage/events/workshop4-09052411361051.jpg",
+    image:mv10,
     cardBgColor: "#ffffff",
   },
   {
@@ -476,7 +487,7 @@ export const mechanicalDepartmentEventsData: EventItem[] = [
     topic: "Opportunity to Study Abroad",
     speaker: "Ms. Akriti Chauhan",
     date: "26th September, 2022",
-    image: "https://testweb.srmu.ac.in/storage/events/guest8-09052411364584.jpg",
+    image: mv11,
     cardBgColor: "#ffffff",
   },
 ];

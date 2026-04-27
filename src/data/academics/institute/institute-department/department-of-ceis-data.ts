@@ -41,6 +41,46 @@ import cse_is26 from "../../../../assets/images/academics/institutes/cse-is/cse-
 import cse_is27 from "../../../../assets/images/academics/institutes/cse-is/cse-is27.jpeg"
 import cse_is28 from "../../../../assets/images/academics/institutes/cse-is/cse-is28.jpeg"
 import cse_is29 from "../../../../assets/images/academics/institutes/cse-is/cse-is29.jpeg"
+//Heighlights
+import csehi1 from "../../../../assets/images/academics/institutes/cse-is/heighlights/csehi1.jpg"
+import csehi2 from "../../../../assets/images/academics/institutes/cse-is/heighlights/csehi2.jpg"
+import csehi3 from "../../../../assets/images/academics/institutes/cse-is/heighlights/csehi3.jpg"
+import csehi4 from "../../../../assets/images/academics/institutes/cse-is/heighlights/csehi4.jpg"
+import csehi5 from "../../../../assets/images/academics/institutes/cse-is/heighlights/csehi5.jpg"
+import csehi6 from "../../../../assets/images/academics/institutes/cse-is/heighlights/csehi6.jpg"
+import csehi7 from "../../../../assets/images/academics/institutes/cse-is/heighlights/csehi7.jpg"
+// events
+import cseev1 from "../../../../assets/images/academics/institutes/cse-is/events/cseev1.jpg"
+import cseev2 from "../../../../assets/images/academics/institutes/cse-is/events/cseev2.jpg"
+import cseev3 from "../../../../assets/images/academics/institutes/cse-is/events/cseev3.jpg"
+import cseev4 from "../../../../assets/images/academics/institutes/cse-is/events/cseev4.jpg"
+import cseev5 from "../../../../assets/images/academics/institutes/cse-is/events/cseev5.jpg"
+import cseev6 from "../../../../assets/images/academics/institutes/cse-is/events/cseev6.jpg"
+import cseev7 from "../../../../assets/images/academics/institutes/cse-is/events/cseev7.jpg"
+import cseev8 from "../../../../assets/images/academics/institutes/cse-is/events/cseev8.jpg"
+import cseev9 from "../../../../assets/images/academics/institutes/cse-is/events/cseev9.jpg"
+import cseev10 from "../../../../assets/images/academics/institutes/cse-is/events/cseev10.jpg"
+import cseev11 from "../../../../assets/images/academics/institutes/cse-is/events/cseev11.png"
+import cseev12 from "../../../../assets/images/academics/institutes/cse-is/events/cseev12.jpg"
+import cseev13 from "../../../../assets/images/academics/institutes/cse-is/events/cseev13.jpg"
+import cseev14 from "../../../../assets/images/academics/institutes/cse-is/events/cseev14.jpg"
+import cseev15 from "../../../../assets/images/academics/institutes/cse-is/events/cseev15.jpg"
+import cseev16 from "../../../../assets/images/academics/institutes/cse-is/events/cseev16.jpg"
+import cseev17 from "../../../../assets/images/academics/institutes/cse-is/events/cseev17.jpg"
+import cseev18 from "../../../../assets/images/academics/institutes/cse-is/events/cseev18.jpg"
+import cseev19 from "../../../../assets/images/academics/institutes/cse-is/events/cseev19.jpg"
+import cseev20 from "../../../../assets/images/academics/institutes/cse-is/events/cseev20.jpg"
+import cseev21 from "../../../../assets/images/academics/institutes/cse-is/events/cseev21.jpg"
+import cseev22 from "../../../../assets/images/academics/institutes/cse-is/events/cseev22.jpg"
+import cseev23 from "../../../../assets/images/academics/institutes/cse-is/events/cseev23.jpg"
+import cseev24 from "../../../../assets/images/academics/institutes/cse-is/events/cseev24.jpg"
+import cseev25 from "../../../../assets/images/academics/institutes/cse-is/events/cseev25.jpg"
+import cseev26 from "../../../../assets/images/academics/institutes/cse-is/events/cseev26.jpg"
+import cseev27 from "../../../../assets/images/academics/institutes/cse-is/events/cseev27.jpg"
+import cseev28 from "../../../../assets/images/academics/institutes/cse-is/events/cseev28.jpg"
+import cseev29 from "../../../../assets/images/academics/institutes/cse-is/events/cseev29.jpg"
+import cseev30 from "../../../../assets/images/academics/institutes/cse-is/events/cseev30.jpg"
+
 export interface Headers {
   name: string;
   program: string;
@@ -546,43 +586,43 @@ export const CsisplacedStudents: Student[] = [
 
 export const departmentHighlightsCsis: departmentHighlightscardType[] = [
   {
-    image: "https://testweb.srmu.ac.in/storage/common-section/researchpapers-05022405242651.jpg",
+    image: csehi1,
     title: "Specialized curriculum designed by the industry experts",
     description:
       "In order to stay up with the most recent advancements in the field of computer applications, the department provides a cutting-edge curriculum that was created with the assistance of industry professionals and is updated on a regular basis.",
   },
   {
-    image: "https://testweb.srmu.ac.in/storage/common-section/liveproject-0502240532494.jpg",
+    image: csehi2,
     title: "Project based experiential learning",
     description:
       "Numerous chances for practical learning are given to students, such as industrial partnerships, internships, and live projects of industry partners like IBM.",
   },
   {
-    image: "https://testweb.srmu.ac.in/storage/common-section/computerlab31-05022405380613.jpg",
+    image: csehi3,
     title: "State-of-the-art Infrastructure",
     description:
       "Modern facilities, including cutting-edge labs and specialized software, are available to the department to ensure that students get the best educational experience possible.",
   },
   {
-    image: "https://testweb.srmu.ac.in/storage/common-section/manage--06052401302479.jpg",
+    image: csehi4,
     title: "Strong industry linkages for best exposure",
     description:
       "Students are provided with access to the latest developments and technological advances in the sector with the help of the department's strong connections with top IT companies and industry professionals.",
   },
   {
-    image: "https://testweb.srmu.ac.in/storage/common-section/industrystalwart-05022405332258.jpg",
+    image:csehi5,
     title: "Distinguished faculty from best institutes",
     description:
       "The University takes pride in recruiting distinguished faculty from best institutes who provide an intimate, interactive, personalized approach to learning.",
   },
   {
-    image: "https://testweb.srmu.ac.in/storage/common-section/integration-07052411442613.jpg",
+    image: csehi6,
     title: "Integration of revolutionary technologies in curricula",
     description:
       "The department has established partnerships with top research institutes and enterprises worldwide, giving students access to a global education and exposure to cutting-edge technologies.",
   },
   {
-    image: "https://testweb.srmu.ac.in/storage/common-section/holistic-05022405592539.jpg",
+    image:csehi7,
     title: "Open electives to enhance employability quotient",
     description:
       "Value-added courses are included in the curriculum and are intended to provide students the skills they need to succeed in life and enhance their employability quotient.",
@@ -599,7 +639,7 @@ export const csisDepartmentEventsData: EventItem[] = [
     topic: "Data Science Fundamentals and its Application",
     speaker: "Mr. Shivam Tiwari, Data Engineer, IBM Hyderabad",
     date: "16th April, 2025",
-    image: "https://testweb.srmu.ac.in/storage/events/international-09052411453621-27052501204641.jpg",
+    image: cseev1,
     cardBgColor: "#ffffff",
   },
   {
@@ -608,7 +648,7 @@ export const csisDepartmentEventsData: EventItem[] = [
     topic: "International Women's Day",
     speaker: "Prof. Dr. Bineet Kumar Gupta, Head of DCSIS, SRMU Barabanki",
     date: "08th March, 2025",
-    image: "https://testweb.srmu.ac.in/storage/events/guest7-09052411400897-27052502171469.jpg",
+    image: cseev2,
     cardBgColor: "#ffffff",
   },
   {
@@ -617,7 +657,7 @@ export const csisDepartmentEventsData: EventItem[] = [
     topic: "National Science Day",
     speaker: "Dr. Anil Gaikwadji, Sr. Principal Scientist CSIS, CDRI Lucknow",
     date: "28th February, 2025",
-    image: "https://testweb.srmu.ac.in/storage/events/guest5-09052411462660-27052502194613.jpg",
+    image: cseev3,
     cardBgColor: "#ffffff",
   },
   {
@@ -626,7 +666,7 @@ export const csisDepartmentEventsData: EventItem[] = [
     topic: "Use of Business Analytics in Computing",
     speaker: "Shri Sandeep Shivhare, Registrar, BSIP Lucknow",
     date: "12th November, 2024",
-    image: "https://testweb.srmu.ac.in/storage/events/guest8-09052411464928-27052502205419.jpg",
+    image:cseev4,
     cardBgColor: "#ffffff",
   },
   {
@@ -635,7 +675,7 @@ export const csisDepartmentEventsData: EventItem[] = [
     topic: "Overthrow Challenges in Life",
     speaker: "Lt. Col. (Dr.) Praveen Kumar Singh, ADG – UIDAI",
     date: "21st September, 2024",
-    image: "https://testweb.srmu.ac.in/storage/events/international-09052411453621-27052502225285.jpg",
+    image: cseev5,
     cardBgColor: "#ffffff",
   },
   {
@@ -644,7 +684,7 @@ export const csisDepartmentEventsData: EventItem[] = [
     topic: "Higher Education in Ireland",
     speaker: "Ms. Ishita Singh, Regional Advisor (South Asia), Technological University of Shannon",
     date: "20th September, 2024",
-    image: "https://testweb.srmu.ac.in/storage/events/webinar1-0905241126383-27052502262114.jpg",
+    image: cseev6,
     cardBgColor: "#ffffff",
   },
   {
@@ -653,7 +693,7 @@ export const csisDepartmentEventsData: EventItem[] = [
     topic: "Let us Learn Research",
     speaker: "Prof. Dr. Amar Pal Singh, VC Dr. RML National Law University Lucknow; Prof. Dr. Sanjay Singh, Director of Giri Institute of Development Studies Lucknow; Prof. Dr. Ajith Abraham, VC Bennett University-Greater Noida",
     date: "04th October, 2024",
-    image: "https://testweb.srmu.ac.in/storage/events/webinar2-09052411264713-27052502294078.jpg",
+    image: cseev7,
     cardBgColor: "#ffffff",
   },
   {
@@ -662,7 +702,7 @@ export const csisDepartmentEventsData: EventItem[] = [
     topic: "Technological Advancement and Social Imposition",
     speaker: "Prof. Ambrish S. Vidyarthi, Vice Chancellor, Bikaner Technical University Rajasthan",
     date: "22nd February, 2024",
-    image: "https://testweb.srmu.ac.in/storage/events/international-09052411453621-27052504031819.jpg",
+    image: cseev8,
     cardBgColor: "#ffffff",
   },
   {
@@ -671,7 +711,7 @@ export const csisDepartmentEventsData: EventItem[] = [
     topic: "Technological Advancement and Social Imposition",
     speaker: "Prof. Ambrish S. Vidyarthi, Vice Chancellor, Bikaner Technical University Rajasthan",
     date: "22nd February, 2024",
-    image: "https://testweb.srmu.ac.in/storage/events/international-09052411453621-27052504042021.jpg",
+    image: cseev9,
     cardBgColor: "#ffffff",
   },
   {
@@ -680,7 +720,7 @@ export const csisDepartmentEventsData: EventItem[] = [
     topic: "World Nature Conservation Day",
     speaker: "Dr. Mridul Shukla, STO, NBRI Lucknow",
     date: "27th July, 2024",
-    image: "https://testweb.srmu.ac.in/storage/events/national3-09052411470965-27052504052555.jpg",
+    image: cseev10,
     cardBgColor: "#ffffff",
   },
   {
@@ -689,7 +729,7 @@ export const csisDepartmentEventsData: EventItem[] = [
     topic: "Inspiring Innovation and Learning",
     speaker: "Prof. Harish Chandra Verma, Indian Physicist",
     date: "06th–08th February, 2025",
-    image: "https://testweb.srmu.ac.in/storage/events/wew-27052504082364.png",
+    image: cseev11,
     cardBgColor: "#ffffff",
   },
   {
@@ -698,7 +738,7 @@ export const csisDepartmentEventsData: EventItem[] = [
     topic: "Internal Smart India Hackathon",
     speaker: "Prof. Diwaker Yadav, IET, AKTU",
     date: "06th–09th September, 2024",
-    image: "https://testweb.srmu.ac.in/themes/images/apply-img3.jpg",
+    image: cseev12,
     cardBgColor: "#ffffff",
   },
   {
@@ -706,7 +746,7 @@ export const csisDepartmentEventsData: EventItem[] = [
     title: "Awareness Program",
     topic: "Voting Awareness Program \u201CMy Vote My Pride\u201D",
     date: "13th May, 2024",
-    image: "https://testweb.srmu.ac.in/storage/events/workshop4-09052411402287-27052504112582.jpg",
+    image: cseev13,
     cardBgColor: "#ffffff",
   },
   {
@@ -714,7 +754,7 @@ export const csisDepartmentEventsData: EventItem[] = [
     title: "Tech-Fest",
     topic: "Awsar and Techfest",
     date: "13th–14th April, 2024",
-    image: "https://testweb.srmu.ac.in/storage/events/webinar1-0905241126383-2705250413038.jpg",
+    image: cseev14,
     cardBgColor: "#ffffff",
   },
   {
@@ -723,7 +763,7 @@ export const csisDepartmentEventsData: EventItem[] = [
     topic: "Engineer's Day",
     speaker: "Dr. G.P. Singh (Keynote Speaker)",
     date: "15th September, 2023",
-    image: "https://testweb.srmu.ac.in/storage/events/webinar2-09052411264713-27052504141455.jpg",
+    image: cseev15,
     cardBgColor: "#ffffff",
   },
   {
@@ -732,7 +772,7 @@ export const csisDepartmentEventsData: EventItem[] = [
     topic: "Core Java and IBM Hack Challenge",
     speaker: "Mr. Aman Bakshi",
     date: "10th September, 2022",
-    image: "https://testweb.srmu.ac.in/storage/events/guest1-09052411461239.jpg",
+    image: cseev16,
     cardBgColor: "#ffffff",
   },
   {
@@ -741,7 +781,7 @@ export const csisDepartmentEventsData: EventItem[] = [
     topic: "Use of Business Analytics in Computing",
     speaker: "Mr. Manish Kumar Srivastava",
     date: "02nd January, 2023",
-    image: "https://testweb.srmu.ac.in/storage/events/guest5-09052411462660.jpg",
+    image:cseev17,
     cardBgColor: "#ffffff",
   },
   {
@@ -750,7 +790,7 @@ export const csisDepartmentEventsData: EventItem[] = [
     topic: "Progression to Higher Education",
     speaker: "Mr. Asad Siddiqui",
     date: "08th April, 2023",
-    image: "https://testweb.srmu.ac.in/storage/events/webinar5-09052411464258.jpg",
+    image:cseev18,
     cardBgColor: "#ffffff",
   },
   {
@@ -759,7 +799,7 @@ export const csisDepartmentEventsData: EventItem[] = [
     topic: "Excelling the Capabilities for Placement",
     speaker: "Dr. Om Prakash",
     date: "27th October, 2023",
-    image: "https://testweb.srmu.ac.in/storage/events/guest8-09052411464928.jpg",
+    image:cseev19,
     cardBgColor: "#ffffff",
   },
   {
@@ -768,7 +808,7 @@ export const csisDepartmentEventsData: EventItem[] = [
     topic: "Use of Blockchain in Internet of Medical Things: A Systematic Review",
     speaker: "Dr. Bineet Kumar Gupta",
     date: "20th December, 2023",
-    image: "https://testweb.srmu.ac.in/storage/events/nationalseminar-09052411465664.jpg",
+    image: cseev20,
     cardBgColor: "#ffffff",
   },
   {
@@ -777,7 +817,7 @@ export const csisDepartmentEventsData: EventItem[] = [
     topic: "Transforming Research: Navigating the Digital Frontier - A deep dive into Digital Innovation in Banking",
     speaker: "Dr. Rajeev Kumar",
     date: "28th December, 2023",
-    image: "https://testweb.srmu.ac.in/storage/events/national3-09052411470965.jpg",
+    image: cseev21,
     cardBgColor: "#ffffff",
   },
   {
@@ -785,7 +825,7 @@ export const csisDepartmentEventsData: EventItem[] = [
     title: "Workshop",
     topic: "Interaction Programme by TCS iON",
     date: "20th–21st September, 2022",
-    image: "https://testweb.srmu.ac.in/storage/events/workshop1-09052411440630.jpg",
+    image:cseev22,
     cardBgColor: "#ffffff",
   },
   {
@@ -793,7 +833,7 @@ export const csisDepartmentEventsData: EventItem[] = [
     title: "Workshop",
     topic: "Enhancing Research Capabilities",
     date: "24th September, 2022",
-    image: "https://testweb.srmu.ac.in/storage/events/workship2-09052411441476.jpg",
+    image:cseev23,
     cardBgColor: "#ffffff",
   },
   {
@@ -801,7 +841,7 @@ export const csisDepartmentEventsData: EventItem[] = [
     title: "Workshop",
     topic: "Technical Writing & Research Ethics",
     date: "12th January, 2023",
-    image: "https://testweb.srmu.ac.in/storage/events/workshop3-09052411442174.jpg",
+    image: cseev24,
     cardBgColor: "#ffffff",
   },
   {
@@ -809,7 +849,7 @@ export const csisDepartmentEventsData: EventItem[] = [
     title: "Workshop",
     topic: "Contribution of AI in Digital World",
     date: "04th February, 2023",
-    image: "https://testweb.srmu.ac.in/storage/events/workshop4-09052411442724.jpg",
+    image: cseev25,
     cardBgColor: "#ffffff",
   },
   {
@@ -817,7 +857,7 @@ export const csisDepartmentEventsData: EventItem[] = [
     title: "Workshop",
     topic: "Cyber Bullying: A Case of Digital Threat",
     date: "17th February, 2023",
-    image: "https://testweb.srmu.ac.in/storage/events/workshop5-09052411443482.jpg",
+    image:cseev26,
     cardBgColor: "#ffffff",
   },
   {
@@ -825,7 +865,7 @@ export const csisDepartmentEventsData: EventItem[] = [
     title: "Workshop",
     topic: "Use of Computing in Satellite Techniques",
     date: "27th March, 2023",
-    image: "https://testweb.srmu.ac.in/storage/events/visit3-09052411444684.jpg",
+    image: cseev27,
     cardBgColor: "#ffffff",
   },
   {
@@ -834,7 +874,7 @@ export const csisDepartmentEventsData: EventItem[] = [
     topic: "Higher Education Opportunities in Ireland",
     speaker: "Mr. Vikas Bansal",
     date: "01st October, 2022",
-    image: "https://testweb.srmu.ac.in/storage/events/guest4-09052411451350.jpg",
+    image: cseev28,
     cardBgColor: "#ffffff",
   },
   {
@@ -843,7 +883,7 @@ export const csisDepartmentEventsData: EventItem[] = [
     topic: "Interaction Programme by Sitare University",
     speaker: "Mr. Vikas Sikka",
     date: "11th October, 2022",
-    image: "https://testweb.srmu.ac.in/storage/events/guest6-09052411452137.jpg",
+    image: cseev29,
     cardBgColor: "#ffffff",
   },
   {
@@ -852,7 +892,7 @@ export const csisDepartmentEventsData: EventItem[] = [
     topic: "Emerging India: Emerging Society",
     speaker: "Mr. Anil Kumar Pal",
     date: "15th February, 2023",
-    image: "https://testweb.srmu.ac.in/storage/events/internation1-09052411452858.jpg",
+    image:cseev30,
     cardBgColor: "#ffffff",
   },
 ];
