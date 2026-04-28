@@ -9,6 +9,7 @@ import { CustomTopFooterAbout } from "../../data/about/aboutusData";
 import CustomTopFooter from "../../utils/custom/CustomTopFooter";
 
 const InnovationCulture = React.lazy(() => import("./InnovationCulture"));
+// const WhyChoose = React.lazy(() => import("./WhyChoose"));
 const Events = React.lazy(() => import("./Events"));
 const AlumniSlider = React.lazy(() => import("./NotableAlumni"));
 const FlickeringSection = React.lazy(() => import("./FlickeringSection"));
@@ -30,6 +31,12 @@ const Home: React.FC = () => {
       <DeferredSection minHeight={460} rootMargin="220px 0px" fallback={renderSectionFallback(460)}>
         <Suspense fallback={renderSectionFallback(460)}>
           <InnovationCulture />
+        </Suspense>
+      </DeferredSection>
+
+      <DeferredSection minHeight={560} rootMargin="240px 0px" fallback={renderSectionFallback(560)}>
+        <Suspense fallback={renderSectionFallback(560)}>
+          {/* <WhyChoose /> */}
         </Suspense>
       </DeferredSection>
 
