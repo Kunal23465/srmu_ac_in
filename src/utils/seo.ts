@@ -152,8 +152,67 @@ const PROGRAM_FINDER_LEVEL_LABELS: Record<string, string> = {
 
 const getProgramFinderLevelLabel = (slug = "") => PROGRAM_FINDER_LEVEL_LABELS[slug] || humanizeSlug(slug);
 
+const PROGRAM_FINDER_SEO_OVERRIDES: Record<string, { title?: string; description: string }> = {
+  "/after-class-12th/bio-technology": {
+    title: `Bio Technology Undergraduate Programs After Class 12 | ${SITE_NAME}, Lucknow`,
+    description:
+      "Explore biotechnology programs after Class 12 at SRMU Lucknow. Compare UG course options, eligibility, fees, admissions steps, and career opportunities in biosciences.",
+  },
+  "/bio-technology/undergraduate": {
+    title: `Undergraduate Bio Technology Programs | ${SITE_NAME}, Lucknow`,
+    description:
+      "View undergraduate biotechnology courses at SRMU Lucknow with details on curriculum focus, eligibility, fee structure, admission process, and future study or career paths.",
+  },
+  "/after-class-12th/legal-studies-law": {
+    title: `Legal Studies and Law Programs After Class 12 | ${SITE_NAME}, Lucknow`,
+    description:
+      "Discover law programs after Class 12 at SRMU Lucknow. Review integrated legal studies options, eligibility, admissions guidance, fees, and career scope in law.",
+  },
+  "/legal-studies-law/undergraduate": {
+    title: `Undergraduate Legal Studies and Law Programs | ${SITE_NAME}, Lucknow`,
+    description:
+      "Explore SRMU Lucknow undergraduate law courses, including legal studies pathways, admission requirements, course duration, fees, and professional opportunities.",
+  },
+  "/after-class-12th/nutrition-dietetics": {
+    title: `Nutrition and Dietetics Programs After Class 12 | ${SITE_NAME}, Lucknow`,
+    description:
+      "Find nutrition and dietetics programs after Class 12 at SRMU Lucknow. Check UG course choices, eligibility, admissions, fees, and healthcare career pathways.",
+  },
+  "/nutrition-dietetics/undergraduate": {
+    title: `Undergraduate Nutrition and Dietetics Programs | ${SITE_NAME}, Lucknow`,
+    description:
+      "Review undergraduate nutrition and dietetics courses at SRMU Lucknow with information on curriculum, eligibility, fee details, admissions, and career outcomes.",
+  },
+  "/after-class-12th/arts-science": {
+    title: `Arts and Science Programs After Class 12 | ${SITE_NAME}, Lucknow`,
+    description:
+      "Browse arts and science programs after Class 12 at SRMU Lucknow. Compare undergraduate options across humanities, natural sciences, eligibility, fees, and admissions.",
+  },
+  "/natural-sciences/undergraduate": {
+    title: `Undergraduate Natural Sciences Programs | ${SITE_NAME}, Lucknow`,
+    description:
+      "Explore undergraduate natural sciences programs at SRMU Lucknow. Learn about science course options, eligibility, fee structure, admissions, labs, and career scope.",
+  },
+  "/humanities/undergraduate": {
+    title: `Undergraduate Humanities Programs | ${SITE_NAME}, Lucknow`,
+    description:
+      "Discover undergraduate humanities programs at SRMU Lucknow. Review course options, eligibility, admissions process, fees, academic exposure, and career pathways.",
+  },
+};
+
+const getProgramFinderSeoOverride = (pathname = "/") => PROGRAM_FINDER_SEO_OVERRIDES[normalizePath(pathname)];
+
 export const getProgramFinderSeo = (pathname = "/") => {
   const normalizedPath = normalizePath(pathname);
+  const seoOverride = getProgramFinderSeoOverride(normalizedPath);
+
+  if (seoOverride) {
+    return {
+      title: seoOverride.title || getDefaultSeo(normalizedPath).title,
+      description: seoOverride.description,
+    };
+  }
+
   const segments = normalizedPath.split("/").filter(Boolean);
 
   if (segments.length === 1) {
@@ -247,7 +306,7 @@ export const shouldUseProgramFinderMetaTitle = (pathname = "/", metaTitle?: stri
   shouldUseProgramFinderScopedMeta(pathname, metaTitle);
 
 export const shouldUseProgramFinderMetaDescription = (pathname = "/", metaDescription?: string | null) =>
-  shouldUseProgramFinderScopedMeta(pathname, metaDescription);
+  getProgramFinderSeoOverride(pathname) ? false : shouldUseProgramFinderScopedMeta(pathname, metaDescription);
 
 export const buildSiteSchema = (pathname = "/") => {
   const normalizedPath = normalizePath(pathname);

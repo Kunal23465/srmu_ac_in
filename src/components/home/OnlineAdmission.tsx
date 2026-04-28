@@ -25,7 +25,7 @@ const OnlineAdmission: FC = () => {
               UPI and other digital payments methods.
             </p>
 
-            <Link to="https://studentportal.srmu.ac.in/login"
+            <Link to="/student-portal-redirect" rel="nofollow noreferrer"
               className="inline-flex border hover:border-gray-800 items-center justify-center mb-10 bg-gray-800 hover:text-gray-800 hover:bg-white text-white font-medium  transition duration-300 gap-3 px-8 py-4 rounded-xl  "
             >
               <span>CLICK TO APPLY</span>

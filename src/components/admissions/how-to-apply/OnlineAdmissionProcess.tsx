@@ -47,8 +47,8 @@ const OnlineAdmissionProcess: React.FC = () => {
                           www.srmu.ac.in
                         </a>{" "}
                         and click on the "Online Admission Form" block, or go directly to the form at{" "}
-                        <a data-end="263" data-start="195" href="https://studentportal.srmu.ac.in" rel="noopener" target="_new">
-                          https://studentportal.srmu.ac.in
+                        <a data-end="263" data-start="195" href="/student-portal-redirect" rel="nofollow noreferrer" target="_new">
+                          the online admission form
                         </a>
                       </p>
                     </div>

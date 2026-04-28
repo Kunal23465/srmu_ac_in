@@ -24,8 +24,8 @@ const CommonUniversityEntranceTest: React.FC = () => {
               "Schedule – Yet to be declared",
               <>
                 Fill online application by clicking –{" "}
-                <a href="https://studentportal.srmu.ac.in/" target="_blank">
-                  https://studentportal.srmu.ac.in/
+                <a href="/student-portal-redirect" target="_blank" rel="nofollow noreferrer">
+                  online admission form
                 </a>
               </>,
               "Visit the admission office with documents and fees for seat-locking",
