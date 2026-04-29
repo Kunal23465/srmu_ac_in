@@ -95,7 +95,8 @@ const HowToApply: React.FC = () => {
                   To begin your journey at Shri Ramswaroop Memorial University (SRMU), visit the official website and head to the “
                   <a
                     className="font-medium italic underline"
-                    href="https://studentportal.srmu.ac.in/?_gl=1*16w4y3g*_gcl_au*NzM0NDM3NTE2LjE3NjMxMTgyMjg.*_ga*MTM1NTE3MDg2Ny4xNzYzMTE4MjI4*_ga_QZEQ59Q6ZL*czE3NjQ5MjYxMTckbzk4JGcxJHQxNzY0OTI3OTMxJGo2MCRsMCRoMzQ0NzE0NDMw"
+                    href="/student-portal-redirect"
+                    rel="nofollow noreferrer"
                   >
                     Apply Now
                   </a>

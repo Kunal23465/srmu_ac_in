@@ -172,7 +172,8 @@ const visibleCourses = filteredData.slice(0, visibleCount);
 
                       <Link
                         target="_blank"
-                        to="https://studentportal.srmu.ac.in/login"
+                        rel="nofollow noreferrer"
+                        to="/student-portal-redirect"
                         className="bg-[#ffb703] border text-nowrap border-[#ffb703] hover:bg-white text-white hover:text-[#ffb703] transition-all duration-500 px-6 py-3 text-sm font-medium rounded-lg inline-flex items-center gap-2"
                       >
                         Apply Now <FaArrowRightLong />

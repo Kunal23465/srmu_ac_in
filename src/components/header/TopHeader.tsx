@@ -37,7 +37,8 @@ const TopHeader: React.FC = () => {
               </Link>
               <Link
                 className="px-[0.7rem] border-r border-white"
-                to="https://admissionenquiry.srmu.ac.in/"
+                to="/admission-enquiry-redirect"
+                rel="nofollow noreferrer"
               >
                 ADMISSION ENQUIRY
               </Link>
@@ -49,7 +50,7 @@ const TopHeader: React.FC = () => {
             <Link
               target="_blank"
              
-              to="https://eyojan.srmu.ac.in/"
+              to="/eyojan-login-redirect"
               className="relative flex items-center text-[13px] text-white gap-x-2 px-[0.7rem] after:absolute after:right-0 after:top-1/2 after:h-[55%] after:w-px after:-translate-y-1/2 after:bg-white"
             >
               <img src={user} alt="user" loading="eager" decoding="async" />
@@ -58,7 +59,7 @@ const TopHeader: React.FC = () => {
 
             <Link
               target="_blank"
-              to="https://eyojan.srmu.ac.in/"
+              to="/eyojan-login-redirect"
            
               className="flex text-[13px] items-center text-white gap-x-5 px-[0.7rem]"
             >
@@ -78,8 +79,9 @@ const TopHeader: React.FC = () => {
 
             <Link
               target="_blank"
+              rel="nofollow noreferrer"
           
-              to="https://studentportal.srmu.ac.in/login"
+              to="/student-portal-redirect"
               className="bg-[#FFB703] hover:bg-white px-4 text-[13px] font-medium uppercase border border-[#ffb703] py-[0.875rem] flex items-center text-black"
             >
               Apply Now
@@ -110,14 +112,14 @@ const TopHeader: React.FC = () => {
                 <div className="bg-white absolute -bottom-[70px] border border-gray-100 z-9999 p-3 w-[200px]">
                   <Link
                     target="_blank"
-                    to="https://eyojan.srmu.ac.in/"
+                    to="/eyojan-login-redirect"
                     className="text-black block"
                   >
                     Student Login
                   </Link>
                   <Link
                     target="_blank"
-                    to="https://eyojan.srmu.ac.in/"
+                    to="/eyojan-login-redirect"
                     className="text-black block mt-2"
                   >
                     Staff Login
@@ -142,7 +144,8 @@ const TopHeader: React.FC = () => {
 
               <Link
                 target="_blank"
-                to="https://studentportal.srmu.ac.in/login"
+                rel="nofollow noreferrer"
+                to="/student-portal-redirect"
                 className="bg-[#FFB703] px-2 font-medium uppercase border-2 border-[#ffb703] py-3.5 flex items-center"
               >
                 Apply Now
