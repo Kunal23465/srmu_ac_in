@@ -251,6 +251,7 @@ export const HeaderData = [
               { item: "Facilities", path: "/facilities" },
 
               { item: "Central Library", path: "/central-library" },
+                { item: "Hostel", path: "/hostel" },
               {
                 item: "Events",
                 path: "/events",
