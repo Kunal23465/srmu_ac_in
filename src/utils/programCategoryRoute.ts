@@ -70,10 +70,13 @@ export const STATIC_TOP_LEVEL_PROGRAM_PATHS = [
 export const STATIC_PROGRAM_CATEGORY_PATHS = [
   "after-class-10th/polytechnic",
   "after-post-graduation/ph-d1",
+  "after-class-12th/commerce",
   "after-class-12th/agriculture",
+  "after-class-12th/business-analytics",
   "after-class-12th/allied-health-sciences",
   "after-class-12th/arts-science",
   "after-class-12th/bio-technology",
+  "after-class-12th/ev-engineering",
   "after-class-12th/commerce-and-economics",
   "after-class-12th/computer-application",
   "after-class-12th/computer-science-engineering",

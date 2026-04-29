@@ -15,17 +15,17 @@ import { toAbsoluteUrl } from "../../../../utils/seo";
 import cse_is1 from "../../../../assets/images/academics/institutes/cse-is/cse-is1.png"
 import cse_is2 from "../../../../assets/images/academics/institutes/cse-is/cse-is2.png"
 import cse_is3 from "../../../../assets/images/academics/institutes/cse-is/cse-is3.png"
-import cse_is4 from "../../../../assets/images/academics/institutes/cse-is/cse-is4.png"
+import cse_is4 from "../../../../assets/images/academics/institutes/cse-is/Anuradha Yadav.png"
 import cse_is5 from "../../../../assets/images/academics/institutes/cse-is/cse-is5.png"
 import cse_is6 from "../../../../assets/images/academics/institutes/cse-is/cse-is6.png"
-import cse_is7 from "../../../../assets/images/academics/institutes/cse-is/cse-is7.png"
+import cse_is7 from "../../../../assets/images/academics/institutes/cse-is/Sana Rabbani.png"
 import cse_is8 from "../../../../assets/images/academics/institutes/cse-is/cse-is8.png"
 import cse_is9 from "../../../../assets/images/academics/institutes/cse-is/cse-is9.png"
 import cse_is10 from "../../../../assets/images/academics/institutes/cse-is/cse-is10.png"
 import cse_is11 from "../../../../assets/images/academics/institutes/cse-is/cse-is11.png"
 import cse_is12 from "../../../../assets/images/academics/institutes/cse-is/cse-is12.png"
 import cse_is13 from "../../../../assets/images/academics/institutes/cse-is/cse-is13.png"
-import cse_is14 from "../../../../assets/images/academics/institutes/cse-is/cse-is14.jpg"
+import cse_is14 from "../../../../assets/images/academics/institutes/cse-is/Bineet Kumar Gupta.png"
 import cse_is15 from "../../../../assets/images/academics/institutes/cse-is/cse-is15.jpeg"
 import cse_is16 from "../../../../assets/images/academics/institutes/cse-is/cse-is16.jpg"
 import cse_is17 from "../../../../assets/images/academics/institutes/cse-is/cse-is17.jpeg"
@@ -38,9 +38,22 @@ import cse_is23 from "../../../../assets/images/academics/institutes/cse-is/cse-
 import cse_is24 from "../../../../assets/images/academics/institutes/cse-is/cse-is24.jpeg"
 import cse_is25 from "../../../../assets/images/academics/institutes/cse-is/cse-is25.jpg"
 import cse_is26 from "../../../../assets/images/academics/institutes/cse-is/cse-is26.jpeg"
-import cse_is27 from "../../../../assets/images/academics/institutes/cse-is/cse-is27.jpeg"
+import cse_is27 from "../../../../assets/images/academics/institutes/cse-is/Nirbhay Tiwari.png"
 import cse_is28 from "../../../../assets/images/academics/institutes/cse-is/cse-is28.jpeg"
 import cse_is29 from "../../../../assets/images/academics/institutes/cse-is/cse-is29.jpeg"
+import cse_is30 from "../../../../assets/images/academics/institutes/cse-is/Roopam Srivastava.png"
+import cse_is31 from "../../../../assets/images/academics/institutes/cse-is/Prem Kumar Yadav.png"
+import cse_is32 from "../../../../assets/images/academics/institutes/cse-is/Abhishek Saxena.png"
+import cse_is33 from "../../../../assets/images/academics/institutes/cse-is/Anjali Jaiswal.png"
+import cse_is34 from "../../../../assets/images/academics/institutes/cse-is/Ved Prakash.png"
+import cse_is35 from "../../../../assets/images/academics/institutes/cse-is/Kishan Pandey.png"
+import cse_is36 from "../../../../assets/images/academics/institutes/cse-is/Divyanka Srivastava.png"
+import cse_is37 from "../../../../assets/images/academics/institutes/cse-is/Amit Yadav.png"
+import cse_is38 from "../../../../assets/images/academics/institutes/cse-is/Akash Chaudhary.png"
+
+
+
+
 //Heighlights
 import csehi1 from "../../../../assets/images/academics/institutes/cse-is/heighlights/csehi1.jpg"
 import csehi2 from "../../../../assets/images/academics/institutes/cse-is/heighlights/csehi2.jpg"
@@ -105,8 +118,8 @@ export const csISFacultyOverviewData: customeOverViewType = {
 
 export const counterDataForFacultyCSIS: counterDataType[] = [
   { id: 1, value: "2017", suffix: "", label: "Established" },
-  { id: 2, value: "43", suffix: "", label: "Faculty & Staff" },
-  { id: 3, value: "1800", suffix: "", label: "Students" },
+  { id: 2, value: "50", suffix: "", label: "Faculty & Staff" },
+  { id: 3, value: "2000", suffix: "", label: "Students" },
 ];
 
 export const CSISDepartmentVMData = [
@@ -145,8 +158,8 @@ export const instituteProfilesCSIS: InstituteProfile[] = [
     useBullets: false,
 
     details: [
-      "**Qualification:** M.Tech. (Data Science), Ph.D. (Computer Science), M.Phil., Post Doc.",
-      "**Experience:** 15+ Years",
+      "**Qualification:**M.Tech. (Data Science), Ph.D. (AI/ML/Data Science/ICT/Cyber Security/Computational Neuro Science/IKS-Computing)",
+      "**Experience:** 16+ Years",
       "**Specialization/ Area of Research:** Artificial Intelligence & Machine Learning, Data Science, ICT, Cyber Security, Computational Neuro Science, IKS-Computing",
       "**Email ID:** hod.csis@srmu.ac.in",
       "**ORCID ID:** https://orcid.org/0000-0003-1786-6348",
@@ -156,19 +169,11 @@ export const instituteProfilesCSIS: InstituteProfile[] = [
     modalContent: `
       
       <p class='mt-3'>
-        Prof. (Dr.) Bineet Kumar Gupta is a Post Doctorate in Deep Learning and holds a Ph.D. in Computer Science. 
-        He is an eminent academician with more than 15 years of teaching and research experience. He is currently 
-        serving as a Professor in the Department of Computer Science & Information Systems at Shri Ramswaroop Memorial 
-        University, Lucknow-Deva Road. Dr. Gupta has actively contributed to several international bodies as a member 
-        of issue panel review committees and workshop review committees.
+       Dr.  Bineet Gupta is Post Doc. in Deep Learning and has obtained his Ph.D. in Computer Science. He is known academician having more than 16 years of teaching and research experience.
       </p>
 
       <p class='mt-3'>
-        He has supervised five Ph.D. scholars, while twelve scholars have already been awarded doctoral degrees under 
-        his guidance. With more than 90 research publications in reputed international journals and conferences, 
-        along with 7 books and 2 patents, Dr. Gupta has made significant contributions to the fields of Artificial Intelligence, 
-        Data Science, Cyber Security, and Computational Neuro Science. He has also received five prestigious International 
-        Travel Grants in recognition of his academic and research achievements.
+      Currently he is working as Professor in the Department of Computer Science & Information Systems, Institute of Technology, Shri Ramswaroop Memorial University Lucknow Deva Road UP, India. He has been member of Issue Panel Review Committee, workshop review committee of various international societies. Prof. (Dr.) Bineet Kumar Gupta is currently supervising five Ph.D. students and 15 Ph.D. students have already been awarded degrees. He has published more than 100 research articles in various International Journals and Conferences of repute, 7 Books and 2 Patent. Prof. (Dr.) Bineet Kumar Gupta is receiver of 7 International Travel Grants through various International bodies.
       </p>
     `,
   },
@@ -182,7 +187,7 @@ export const counterDataFor2Csis: counterDataType[] =
     {
       id: 1,
       icon: "",
-      value: "250",
+      value: "150",
       suffix: "",
       label: "Guest lectures",
     },
@@ -193,12 +198,19 @@ export const counterDataFor2Csis: counterDataType[] =
       suffix: "",
       label: "Field Visits",
     },
-    {
+     {
       id: 3,
       icon: "",
-      value: "20",
+      value: "06",
       suffix: "",
-      label: "Conference & Seminars",
+      label: "Conference",
+    },
+    {
+      id: 4,
+      icon: "",
+      value: "50",
+      suffix: "",
+      label: "Seminars",
     },
   ];
 
@@ -556,6 +568,61 @@ export const CsisfacultyData: FacultyItem[] = [
     name: "Ms. Shilpi Shukla",
     designation: "Assistant Professor",
     image: cse_is29,
+  },
+  // new
+    {
+    id: 30,
+    name: "Dr. Roopam Srivastava",
+    designation: "Assistant Professor",
+    image: cse_is30,
+  },
+    {
+    id: 31,
+    name: "Mr. Prem Kumar Yadav",
+    designation: "Lecturer",
+    image: cse_is31,
+  },
+    {
+    id: 32,
+    name: "Mr. Abhishek Saxena",
+    designation: "Lecturer",
+    image: cse_is32,
+  },
+   {
+    id: 33,
+    name: "Ms. Anjali Jaiswal",
+    designation: "Lecturer",
+    image: cse_is33,
+  },
+   {
+    id: 32,
+    name: "Mr. Ved Prakash",
+    designation: "Lecturer",
+    image: cse_is34,
+  },
+   {
+    id: 34,
+    name: "Mr. Kishan Pandey",
+    designation: "Lecturer",
+    image: cse_is35,
+  },
+   {
+    id: 35,
+    name: "Ms. Divyanka Srivastava",
+    designation: "Lecturer",
+    image: cse_is36,
+  },
+   {
+    id: 36,
+    name: "Mr. Amit Yadav",
+    designation: "Lecturer",
+    image: cse_is37,
+  },
+   {
+    id: 37,
+    name: "Mr. Akash Chaudhary",
+    designation: "Lecturer",
+    image: cse_is38,
   },
 ];
 
