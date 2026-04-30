@@ -50,7 +50,7 @@ const TopHeader: React.FC = () => {
             <Link
               target="_blank"
              
-              to="/eyojan-login-redirect"
+              to="https://eyojan.srmu.ac.in/psc/ps/?cmd=login&languageCd-ENG"
               className="relative flex items-center text-[13px] text-white gap-x-2 px-[0.7rem] after:absolute after:right-0 after:top-1/2 after:h-[55%] after:w-px after:-translate-y-1/2 after:bg-white"
             >
               <img src={user} alt="user" loading="eager" decoding="async" />
@@ -59,7 +59,7 @@ const TopHeader: React.FC = () => {
 
             <Link
               target="_blank"
-              to="/eyojan-login-redirect"
+              to="https://eyojan.srmu.ac.in/psc/ps/?cmd=login&languageCd-ENG"
            
               className="flex text-[13px] items-center text-white gap-x-5 px-[0.7rem]"
             >
