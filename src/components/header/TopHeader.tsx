@@ -37,7 +37,8 @@ const TopHeader: React.FC = () => {
               </Link>
               <Link
                 className="px-[0.7rem] border-r border-white"
-                to="/admission-enquiry-redirect"
+                target="_blank"
+                to="https://admissionenquiry.srmu.ac.in/"
                 rel="nofollow noreferrer"
               >
                 ADMISSION ENQUIRY
