@@ -38,7 +38,7 @@ const TopHeader: React.FC = () => {
               <Link
                 className="px-[0.7rem] border-r border-white"
                 target="_blank"
-                to="https://admissionenquiry.srmu.ac.in/"
+                to="/admission-enquiry-redirect"
                 rel="nofollow noreferrer"
               >
                 ADMISSION ENQUIRY
@@ -51,7 +51,7 @@ const TopHeader: React.FC = () => {
             <Link
               target="_blank"
              
-              to="https://eyojan.srmu.ac.in/psc/ps/?cmd=login&languageCd-ENG"
+              to="/eyojan-login-redirect"
               className="relative flex items-center text-[13px] text-white gap-x-2 px-[0.7rem] after:absolute after:right-0 after:top-1/2 after:h-[55%] after:w-px after:-translate-y-1/2 after:bg-white"
             >
               <img src={user} alt="user" loading="eager" decoding="async" />
@@ -60,7 +60,7 @@ const TopHeader: React.FC = () => {
 
             <Link
               target="_blank"
-              to="https://eyojan.srmu.ac.in/psc/ps/?cmd=login&languageCd-ENG"
+              to="/eyojan-login-redirect"
            
               className="flex text-[13px] items-center text-white gap-x-5 px-[0.7rem]"
             >
