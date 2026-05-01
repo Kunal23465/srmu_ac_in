@@ -154,7 +154,25 @@
   margin-bottom: 2.188rem;
   font-weight: 400;
 }
-
+.career_inner_page {
+  box-shadow: 0 0 90px 0 rgb(0 0 0 / 6%);
+  padding: 2rem;
+  border-radius: 1rem;
+  background-color: #ecf0f9;
+}
+.btn_yellow {
+  display: inline-block;
+  transition: 0.5s;
+  background-color: #ffb703;
+  color: rgb(2, 48, 71) !important;
+  border-radius: 0;
+  padding: 1rem 2.1rem;
+  border-radius: 10px;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 1rem;
+  border: solid 1px #ffb703;
+}
 @media (max-width: 767px) {
   .sec_head {
     font-size: 2rem;

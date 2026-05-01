@@ -9,8 +9,8 @@ const OverviewPage: React.FC = () => {
   return (
     <>
       <SeoHead
-        title="Admission Overview | Shri Ramswaroop Memorial University, Lucknow"
-        description="Unlock your academic potential with SRMU's streamlined admission process. Explore entry requirements, application procedures, and our various academic pathways."
+        title="Admission Overview 2026: Apply to SRMU Lucknow | Programs"
+        description="Begin your journey at SRMU. Explore admission requirements, diverse academic programs, and our simple application process here."
         pathname={location.pathname}
       />
       {location.pathname == "/admission-overview" ? <OverviewComp /> :

@@ -27,6 +27,11 @@ import { getHomeEventsDataSliceReducer } from "../home-events/getHomeEventsSlice
 import { getPlacementRecordTabDataSliceReducer } from "../placement/placement-record/placementRecordTabDataSlice";
 import { getPlacementDriveTabDataSliceReducer } from "../placement/placement-drive/placementDriveTabDataSlice";
 import { programTypeIntroByUrlSliceReducer } from "../program-type-intro/ProgramTypeIntroSlice";
+import { submissionForEnquiryReducer } from "../submission/enquiry-submission-slice";
+import { getAllCityByStateIdReducer } from "../api/get-allCity-byStateId-slice";
+import { getAllStateReducer } from "../api/get-allState-slice";
+import { getAllCareerReducer } from "../api/get-allCareer-slice";
+import { getAllProgramByCareerIdReducer } from "../api/get-allprogram-byCareerId-slice";
 
 const allReducer = {
   ui: uiReducer,
@@ -57,6 +62,11 @@ const allReducer = {
   getHomeEventsData: getHomeEventsDataSliceReducer,
   getPlacementRecordTabData: getPlacementRecordTabDataSliceReducer,
   getPlacementDriveTabData: getPlacementDriveTabDataSliceReducer,
-  getProgramByIntro:programTypeIntroByUrlSliceReducer
+  getProgramByIntro:programTypeIntroByUrlSliceReducer,
+   createEnquiryForEnquiry: submissionForEnquiryReducer,
+     getAllCityByStateId: getAllCityByStateIdReducer,
+  getAllStateData: getAllStateReducer,
+  getAllCareerData: getAllCareerReducer,
+  getAllProgramByCareerIdData: getAllProgramByCareerIdReducer,
 };
 export default allReducer;

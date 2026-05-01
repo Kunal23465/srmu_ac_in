@@ -30,8 +30,8 @@ const AdmissionFaqPage: React.FC = () => {
   return (
     <>
       <SeoHead
-        title={`Admission FAQs | ${SITE_NAME}, Lucknow`}
-        description="Find answers to common SRMU admission questions, including eligibility, application process, scholarships, fee policies, and course-related guidance."
+        title={`Admission FAQs 2026: Get Answers to Your Queries | SRMU`}
+        description="Have questions about SRMU admissions? Explore our FAQs for details on eligibility, application processes, and course options."
         pathname="/admission-faqs"
         jsonLd={faqSchema}
       />

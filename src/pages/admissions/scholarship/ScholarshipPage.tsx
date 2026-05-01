@@ -6,8 +6,8 @@ const ScholarshipPage: React.FC = () => {
         <>
 
             <SeoHead
-                title="Scholarships | Scholarship Schemes 2025"
-                description="SRMU provides a range of merit-based and need-driven scholarships designed to support and recognize exceptional talent."
+                title="Scholarship Schemes 2026: Merit-Based Awards at SRMU"
+                description=" Explore SRMU’s scholarship schemes for 2026. Get merit-based fee waivers designed to support and recognize exceptional talent."
                 pathname="/scholarship-scheme"
             />
             <Scholarship />

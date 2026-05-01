@@ -169,10 +169,10 @@ export const routes = [
         path: "/student-portal-redirect",
         element: <StudentPortalRedirectPage />,
       },
-      {
-        path: "/admission-enquiry-redirect",
-        element: <AdmissionEnquiryRedirectPage />,
-      },
+      // {
+      //   path: "/admission-enquiry-redirect",
+      //   element: <AdmissionEnquiryRedirectPage />,
+      // },
       {
         path: "/:programType",
         element: <ProgramTypePage />,
@@ -501,7 +501,7 @@ export const routes = [
         element: <PublicationPage />,
       },
       {
-        path: "admission-enquiry",
+        path: "admission-enquiry-redirect",
         element: <AdmissionEnquiryPage />,
       },
       {

@@ -37,7 +37,7 @@ const TopHeader: React.FC = () => {
               </Link>
               <Link
                 className="px-[0.7rem] border-r border-white"
-                target="_blank"
+
                 to="/admission-enquiry-redirect"
                 rel="nofollow noreferrer"
               >
