@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 
-const STUDENT_PORTAL_URL = "https://studentportal.srmu.ac.in/login";
+const STUDENT_PORTAL_URL = "https://studentportal.srmu.ac.in";
 
 const StudentPortalRedirectPage = () => {
   useEffect(() => {
@@ -12,7 +12,7 @@ const StudentPortalRedirectPage = () => {
     <>
       <Helmet>
         <title>Redirecting...</title>
-        <meta name="robots" content="noindex, nofollow" />
+        {/* <meta name="robots" content="noindex, nofollow" /> */}
       </Helmet>
       <main className="min-h-screen" aria-label="Redirecting to student portal" />
     </>
