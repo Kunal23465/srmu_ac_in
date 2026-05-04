@@ -37,9 +37,7 @@ const TopHeader: React.FC = () => {
               </Link>
               <Link
                 className="px-[0.7rem] border-r border-white"
-
                 to="/admission-enquiry-redirect"
-                rel="nofollow noreferrer"
               >
                 ADMISSION ENQUIRY
               </Link>
@@ -80,7 +78,8 @@ const TopHeader: React.FC = () => {
 
             <Link
               target="_blank"
-              rel="nofollow noreferrer"
+
+              rel="noopener noreferrer"
           
               to="/student-portal-redirect"
               className="bg-[#FFB703] hover:bg-white px-4 text-[13px] font-medium uppercase border border-[#ffb703] py-[0.875rem] flex items-center text-black"
@@ -145,7 +144,7 @@ const TopHeader: React.FC = () => {
 
               <Link
                 target="_blank"
-                rel="nofollow noreferrer"
+                rel="noopener noreferrer"
                 to="/student-portal-redirect"
                 className="bg-[#FFB703] px-2 font-medium uppercase border-2 border-[#ffb703] py-3.5 flex items-center"
               >

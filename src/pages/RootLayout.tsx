@@ -198,7 +198,7 @@ const RootLayout: React.FC = () => {
           onMouseLeave={() => setHovered(null)}
           target="_blank"
            href="/student-portal-redirect"
-          rel="nofollow noreferrer"
+          rel="noopener noreferrer"
           className={`
     w-full sm:w-auto sm:rotate-270 writing-mode-horizontal sm:writing-mode-vertical relative z-400
     text-xs tracking-wider group flex items-center justify-center

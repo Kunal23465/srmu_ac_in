@@ -96,7 +96,6 @@ const HowToApply: React.FC = () => {
                   <a
                     className="font-medium italic underline"
                     href="/student-portal-redirect"
-                    rel="nofollow noreferrer"
                   >
                     Apply Now
                   </a>

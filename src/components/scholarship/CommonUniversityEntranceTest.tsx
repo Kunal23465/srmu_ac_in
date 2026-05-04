@@ -24,7 +24,7 @@ const CommonUniversityEntranceTest: React.FC = () => {
               "Schedule – Yet to be declared",
               <>
                 Fill online application by clicking –{" "}
-                <a href="/student-portal-redirect" target="_blank" rel="nofollow noreferrer">
+                <a href="/student-portal-redirect" target="_blank" rel="noopener noreferrer">
                   online admission form
                 </a>
               </>,
