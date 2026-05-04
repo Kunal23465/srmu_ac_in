@@ -53,7 +53,7 @@ const FacultyOfAlliedHealthSciences: FC = () => {
             </div>
             <CustomInstituteProfileCard data={facultyOfAhsProfileData} />
 
-            <div className={`${Classes["container"]}`}>
+            {/* <div className={`${Classes["container"]}`}>
                 <div className="my-20">
                     <div className="flex w-full justify-center flex-col items-center">
                         <h2 className="leading-[1.2] font-medium text-[3.125rem] mb-3">
@@ -77,7 +77,7 @@ const FacultyOfAlliedHealthSciences: FC = () => {
                         alignTabs="center"
                     />
                 </div>
-            </div>
+            </div> */}
 
             <CustomDepartmentSlider
                 heading="Faculty List"
@@ -101,7 +101,7 @@ const FacultyOfAlliedHealthSciences: FC = () => {
                     </section>
                 </div>
             </section> */}
-            <CustomDepartmentSlider
+            {/* <CustomDepartmentSlider
                 heading="Key Highlights of Our Department"
                 description=""
                 data={alliedHealthScienceHighlightsData}
@@ -118,7 +118,7 @@ const FacultyOfAlliedHealthSciences: FC = () => {
                 bgColor="#ffffff"
                 arrowColor="#96a9c4"
                 arrowBorderColor="#0f4a85"
-            />
+            /> */}
             <CustomTopFooter data={instituteFooterData} />
         </div>
     );

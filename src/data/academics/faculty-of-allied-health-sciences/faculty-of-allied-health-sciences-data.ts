@@ -37,7 +37,7 @@ The department comprises highly experienced faculty members and enthusiastic res
 
 export const counterDataFoFacultyOfAlliedHealthSciences: counterDataType[] = [
   { id: 1, value: "2023", suffix: "", label: "Established" },
-  { id: 2, value: "20", suffix: "", label: "Faculty & Staff" },
+  { id: 2, value: "10", suffix: "", label: "Faculty & Staff" },
   { id: 3, value: "300", suffix: "", label: "Students" },
 ];
 
@@ -99,37 +99,44 @@ export const facultyOfAhsProfileData = [
     summary: "",
     useBullets: false,
     details: [
-      "**Experience:** 16+ years",
-      "**Specialization/ Area of Research:** Nanobiotechnology, Flexible Electronics with Nanosensors, Bioprocess Engineering",
-      "**Publications:** 50+ research papers in reputed national and international journals",
-      "**Patents:** 20+ patents in Nanobiotechnology",
-      "**Fellowships:** TARE Fellowship (SERB, DST, Govt. of India)",
-      "**Professional Memberships:** FRSC (Royal Society of Chemistry), FRSB (Royal Society of Biology), FLS (Linnean Society, London)",
-      "**Editorial Roles:** Editorial Board Member - Scientific Reports; Guest Editor - Plant Nano Biology Journal & Environmental Science and Pollution Research",
+      // "**Experience:** 16+ years",
+      // "**Specialization/ Area of Research:** Nanobiotechnology, Flexible Electronics with Nanosensors, Bioprocess Engineering",
+      // "**Publications:** 50+ research papers in reputed national and international journals",
+      // "**Patents:** 20+ patents in Nanobiotechnology",
+      // "**Fellowships:** TARE Fellowship (SERB, DST, Govt. of India)",
+      // "**Professional Memberships:** FRSC (Royal Society of Chemistry), FRSB (Royal Society of Biology), FLS (Linnean Society, London)",
+      // "**Editorial Roles:** Editorial Board Member - Scientific Reports; Guest Editor - Plant Nano Biology Journal & Environmental Science and Pollution Research",
     ],
-    modalContent: `
-Dr. Nabeel Ahmad is a distinguished academician, researcher, and administrator with over 16+ years of experience in teaching, research, and academic leadership. He is currently serving as the Officiating Director, Institute of Allied & Health Sciences at SRM University, Barabanki.
+modalContent: `
+<strong>Experience:</strong> 16+ years<br/>
+<strong>Specialization / Area of Research:</strong> Nanobiotechnology, Flexible Electronics with Nanosensors, Bioprocess Engineering<br/>
+<strong>Publications:</strong> 50+ research papers in reputed national and international journals<br/>
+<strong>Patents:</strong> 20+ patents in Nanobiotechnology<br/>
+<strong>Fellowships:</strong> TARE Fellowship (SERB, DST, Govt. of India)<br/>
+<strong>Professional Memberships:</strong> FRSC (Royal Society of Chemistry), FRSB (Royal Society of Biology), FLS (Linnean Society, London)<br/>
+<strong>Editorial Roles:</strong> Editorial Board Member - Scientific Reports; Guest Editor - Plant Nano Biology Journal & Environmental Science and Pollution Research<br/><br/>
 
-His research areas are mainly focused on nanobiotechnology, flexible electronics with nanosensors, and bioprocess engineering, contributing significantly to interdisciplinary scientific advancements. Dr. Ahmad has published more than 50 research papers in reputed national and international peer-reviewed journals.
+Dr. Nabeel Ahmad is a distinguished academician, researcher, and administrator with over 16+ years of experience in teaching, research, and academic leadership. He is currently serving as the Officiating Director, Institute of Allied & Health Sciences at SRM University, Barabanki.<br/><br/>
 
-He has also served as an Editor for internationally acclaimed books published by Elsevier, including:
+His research areas are mainly focused on nanobiotechnology, flexible electronics with nanosensors, and bioprocess engineering, contributing significantly to interdisciplinary scientific advancements. Dr. Ahmad has published more than 50 research papers in reputed national and international peer-reviewed journals.<br/><br/>
 
-- 3D Printing Technology in Nanomedicine  
-- Intelligent Nanomaterials for Drug Delivery Applications  
-- Emerging Nanotechnologies for Medical Applications  
+He has also served as an Editor for internationally acclaimed books published by Elsevier, including:<br/>
+- 3D Printing Technology in Nanomedicine<br/>
+- Intelligent Nanomaterials for Drug Delivery Applications<br/>
+- Emerging Nanotechnologies for Medical Applications<br/><br/>
 
-In addition to his research contributions, Dr. Ahmad holds over 20 patents in the domain of nanobiotechnology, reflecting his strong focus on innovation and translational research.
+In addition to his research contributions, Dr. Ahmad holds over 20 patents in the domain of nanobiotechnology, reflecting his strong focus on innovation and translational research.<br/><br/>
 
-Dr. Ahmad is an Editorial Board Member of Scientific Reports and has served as Executive Guest Editor for Plant Nano Biology Journal and Guest Editor for Environmental Science and Pollution Research Journal, demonstrating his significant role in international scholarly publishing and editorial leadership.
+Dr. Ahmad is an Editorial Board Member of Scientific Reports and has served as Executive Guest Editor for Plant Nano Biology Journal and Guest Editor for Environmental Science and Pollution Research Journal.<br/><br/>
 
-He has been invited as an expert speaker at various national and international platforms, including universities abroad such as the University of Malaysia, and conferences organized by professional bodies including the Association of Microbiologists of India (AMI) and other scientific organizations.
+He has been invited as an expert speaker at various national and international platforms, including universities abroad such as the University of Malaysia and conferences organized by the Association of Microbiologists of India (AMI).<br/><br/>
 
-Dr. Ahmad is a recipient of the prestigious Teachers Associateship for Research Excellence (TARE) Fellowship under the Science and Engineering Research Board (SERB), Department of Science & Technology (DST), Government of India.
+Dr. Ahmad is a recipient of the prestigious Teachers Associateship for Research Excellence (TARE) Fellowship under SERB, DST, Government of India.<br/><br/>
 
-He is also a Fellow of the Royal Society of Chemistry (FRSC), Fellow of the Royal Society of Biology (FRSB), and a Fellow of the Linnean Society (FLS), London.
+He is also a Fellow of the Royal Society of Chemistry (FRSC), Royal Society of Biology (FRSB), and Linnean Society (FLS), London.<br/><br/>
 
-Furthermore, Dr. Ahmad has successfully attracted research funding from agencies such as USERC Uttarakhand, UCOST Uttarakhand, DST-SERB New Delhi, DBT New Delhi, ANRF, DRDO, and CSIR. He has also spearheaded multiple hands-on workshops in bioinformatics and scientific writing, thereby strengthening research capacity and advancing skill development.
-`,
+He has received research funding from USERC Uttarakhand, UCOST Uttarakhand, DST-SERB, DBT, ANRF, DRDO, and CSIR, and has conducted multiple workshops in bioinformatics and scientific writing.
+`
   },
 ];
 
