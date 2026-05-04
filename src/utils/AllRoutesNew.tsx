@@ -786,6 +786,16 @@ export const routes = [
         element: <SRMUPolytechnicPage />,
 
       },
+      // {
+      //   path: "/institute-of-allied-and-health-sciences",
+      //   element: <InstituteofAlliedAndHealthSciencesPage />,
+
+      // },
+        {
+        path: "/institute-of-allied-health-sciences",
+        element: <FacultyOfAlliedHealthSciencesPage />,
+
+      },
 
       {
         path: "/faculty-of-civil-engineering",
@@ -805,11 +815,7 @@ export const routes = [
 
       },
 
-      {
-        path: "/faculty-of-allied-health-sciences",
-        element: <FacultyOfAlliedHealthSciencesPage />,
-
-      },
+    
 
       {
         path: "/faculty-of-biosciences",

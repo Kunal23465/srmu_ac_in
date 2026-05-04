@@ -2,17 +2,12 @@ import { customeOverViewType } from "../../../types/home-data-type";
 
 import visionImg from "../../../assets/images/academics/institutes/dept-vision.webp";
 import misionImg from "../../../assets/images/academics/institutes/dept-mission.webp";
-import drTabishQidwai from "../../../assets/images/academics/institutes/dr.-tabish-kidwai-.webp";
+import drNabeel from "../../../assets/images/academics/institutes/Dr.-Nabeel-Ahmad.webp";
 import {
   departmentHighlightscardType,
   FeeTableData,
 } from "../faculty-of-civil-engineering/faculty-of-civil-engineering-data";
 import { FacultyItem } from "../../../utils/custom/CustomFacultyListCard";
-import aparna from "../../../assets/images/academics/institutes/aparna.webp";
-import sapna from "../../../assets/images/academics/institutes/sapna.webp";
-import neeraj from "../../../assets/images/academics/institutes/neeraj.webp";
-import imran from "../../../assets/images/academics/institutes/imran.webp";
-import sukanya from "../../../assets/images/academics/institutes/sukanya.webp";
 import diverseprogram from "../../../assets/images/academics/institutes/diverseprogram.webp";
 import statelab from "../../../assets/images/academics/institutes/statelab.webp";
 import experiencedfaculty from "../../../assets/images/academics/institutes/experiencedfaculty.webp";
@@ -22,12 +17,20 @@ import studentsupport from "../../../assets/images/academics/institutes/students
 import { EventItem } from "../../../utils/custom/CustomEventListCard";
 import biomedical from "../../../assets/images/academics/institutes/biomedical.webp";
 import csir from "../../../assets/images/academics/institutes/csir.webp";
+import himanshu from "../../../assets/images/academics/institutes/Dr-Himanshu-Gautam.webp";
+import sawanKumar from "../../../assets/images/academics/institutes/Dr-Sawan-Kumar.webp";
+import amarSharma from "../../../assets/images/academics/institutes/Mr-Amar-Sharma.webp";
+import indadev from "../../../assets/images/academics/institutes/Mr-Indradev-Kumar.webp";
+import syedAlim from "../../../assets/images/academics/institutes/Mr-Syed-Alim-Raza.webp";
+import deepika from "../../../assets/images/academics/institutes/Ms-Deepika.webp";
+import preeti from "../../../assets/images/academics/institutes/Ms-Preeti-.webp";
+import rifwana from "../../../assets/images/academics/institutes/Ms-Rifwana-Gulzar.webp";
 import { counterDataType } from "../../about/leadership-and-governance/leadership-and-governance-data";
 
 
 export const facultyofAHSOverviewData: customeOverViewType = {
-  heading: "Faculty of Allied Health Sciences",
-  content: `The Faculty of Allied Health Sciences (FoAHS) at Shri Ramswaroop Memorial University (SRMU) was established in 2023, offering undergraduate programs in various paramedical & allied health sciences disciplines. In a short span, FoAHS has achieved significant milestones, including internship opportunities and placing students in reputed healthcare organizations. The faculty has organized value-added courses, conferences, seminars, workshops, and guest lectures by eminent scientists and academicians. The laboratories are equipped with state-of-the-art instruments, comparable to global research labs.
+  heading: "Institute of Allied Health Sciences",
+  content: `The Institute of Allied Health Sciences (IoAHS) at Shri Ramswaroop Memorial University (SRMU) was established in 2023, offering undergraduate programs in various paramedical & allied health sciences disciplines. In a short span, IoAHS has achieved significant milestones, including internship opportunities and placing students in reputed healthcare organizations. The institute has organized value-added courses, conferences, seminars, workshops, and guest lectures by eminent scientists and academicians. The laboratories are equipped with state-of-the-art instruments, comparable to global research labs.
 
 The department comprises highly experienced faculty members and enthusiastic research fellows. Research expertise spans various paramedical fields, including clinical research, medical imaging, physiotherapy, and public health. The department emphasizes both basic and translational research. Students, staff, and faculty form a cohesive and interactive group, regularly inviting renowned scientists for seminars and scientific discussions. Industrial collaborations bridge the gap between conventional degree programs and industry needs, leading to opportunities in academia, industry, and healthcare. These academic and research activities foster a cooperative research and training experience.`,
 };
@@ -90,25 +93,42 @@ export const facultyOfAhsProfileData = [
   {
     id: 1,
     title: "Department Head",
-    name: "Dr. Tabish Qidwai",
-    position: "Offg. Director, IBST, SRMU, Lucknow–Deva Road",
-    image: drTabishQidwai,
+    name: "Dr. Nabeel Ahmad",
+    position: "Offg. Director, Institute of Allied & Health Sciences, SRM University, Barabanki",
+    image: drNabeel,
     summary: "",
     useBullets: false,
     details: [
-      "**Qualification:** M.Tech. (Biotechnology), Ph.D. (Biotechnology)",
-      "**Experience:** 13 years",
-      "**Specialization/ Area of Research:** Functional Genomics, Immunology and Infectious Disease Research including Malaria and COVID-19.",
-      "**Email ID:** director.bio@srmu.ac.in",
-      "**ORCID ID:** https://orcid.org/0000-0001-8247-7248",
-      "**Contact No.:** +91-9140631326",
+      "**Experience:** 16+ years",
+      "**Specialization/ Area of Research:** Nanobiotechnology, Flexible Electronics with Nanosensors, Bioprocess Engineering",
+      "**Publications:** 50+ research papers in reputed national and international journals",
+      "**Patents:** 20+ patents in Nanobiotechnology",
+      "**Fellowships:** TARE Fellowship (SERB, DST, Govt. of India)",
+      "**Professional Memberships:** FRSC (Royal Society of Chemistry), FRSB (Royal Society of Biology), FLS (Linnean Society, London)",
+      "**Editorial Roles:** Editorial Board Member - Scientific Reports; Guest Editor - Plant Nano Biology Journal & Environmental Science and Pollution Research",
     ],
     modalContent: `
-Tabish Qidwai has done M.Tech and Ph.D. in Biotechnology Engineering. He has worked as a faculty member at B.B. Ambedkar Central University, Lucknow and Raja Balwant Singh College, Agra. He received various prestigious awards including the Rashtriya Gaurav Award for remarkable contributions to Science and Technology, Certificate of Excellence in Science and Technology, University Gold Medal, Research Excellence Award, Teaching and Learning Innovation Award and several certificate of appreciation for significant contribution to academics.
+Dr. Nabeel Ahmad is a distinguished academician, researcher, and administrator with over 16+ years of experience in teaching, research, and academic leadership. He is currently serving as the Officiating Director, Institute of Allied & Health Sciences at SRM University, Barabanki.
 
-He has 13 years of teaching and research experience in genomics and immunology and infectious diseases. He has published nearly 52 book chapters, research articles, review articles in peer-reviewed international journals and authored/edited 5 books as a single author/editor. He has I 10 index 25 and h index 20 and more than 1000 citations. Currently, He is supervising 6 Ph.D. students and 1 Ph.D. is awarded under his supervision.
+His research areas are mainly focused on nanobiotechnology, flexible electronics with nanosensors, and bioprocess engineering, contributing significantly to interdisciplinary scientific advancements. Dr. Ahmad has published more than 50 research papers in reputed national and international peer-reviewed journals.
 
-He is a member of many national and international scientific societies and organizations. His research interests are focused on the functional genomics, immunology, and infectious disease research including malaria and COVID-19. Currently, he is working and writing articles/book chapters in collaboration with University of South Florida, USA, Biological Research Centre, Szeged, Hungary, The Arctic University of Norway, AIIMS Hyderabad, AIIMS Bhopal, IIT-BHU, IET Lucknow and University of Delhi.
+He has also served as an Editor for internationally acclaimed books published by Elsevier, including:
+
+- 3D Printing Technology in Nanomedicine  
+- Intelligent Nanomaterials for Drug Delivery Applications  
+- Emerging Nanotechnologies for Medical Applications  
+
+In addition to his research contributions, Dr. Ahmad holds over 20 patents in the domain of nanobiotechnology, reflecting his strong focus on innovation and translational research.
+
+Dr. Ahmad is an Editorial Board Member of Scientific Reports and has served as Executive Guest Editor for Plant Nano Biology Journal and Guest Editor for Environmental Science and Pollution Research Journal, demonstrating his significant role in international scholarly publishing and editorial leadership.
+
+He has been invited as an expert speaker at various national and international platforms, including universities abroad such as the University of Malaysia, and conferences organized by professional bodies including the Association of Microbiologists of India (AMI) and other scientific organizations.
+
+Dr. Ahmad is a recipient of the prestigious Teachers Associateship for Research Excellence (TARE) Fellowship under the Science and Engineering Research Board (SERB), Department of Science & Technology (DST), Government of India.
+
+He is also a Fellow of the Royal Society of Chemistry (FRSC), Fellow of the Royal Society of Biology (FRSB), and a Fellow of the Linnean Society (FLS), London.
+
+Furthermore, Dr. Ahmad has successfully attracted research funding from agencies such as USERC Uttarakhand, UCOST Uttarakhand, DST-SERB New Delhi, DBT New Delhi, ANRF, DRDO, and CSIR. He has also spearheaded multiple hands-on workshops in bioinformatics and scientific writing, thereby strengthening research capacity and advancing skill development.
 `,
   },
 ];
@@ -163,37 +183,58 @@ export const underGraduateFeeDataOfAHS: FeeTableData = {
 export const facultyDetailsOfAhsDepartment: FacultyItem[] = [
   {
     id: 1,
-    name: "Ms. Aparna",
+    name: "Ms Preeti",
     designation: "Assistant Professor",
-    image: aparna,
+    image: preeti,
     cardBgColor: "transparent",
   },
   {
     id: 2,
-    name: "Dr. Sapna Sharma",
+    name: "Dr Sawan Kumar",
     designation: "Assistant Professor",
-    image: sapna,
+    image: sawanKumar,
     cardBgColor: "transparent",
   },
   {
     id: 3,
-    name: "Dr. Neeraj Tiwari",
+    name: "Mr Amar Sharma",
     designation: "Assistant Professor",
-    image: neeraj,
+    image: amarSharma,
     cardBgColor: "transparent",
   },
   {
     id: 4,
-    name: "Dr. Mohd Imran",
+    name: "Ms Deepika",
     designation: "Assistant Professor",
-    image: imran,
+    image: deepika,
     cardBgColor: "transparent",
   },
   {
     id: 5,
-    name: "Dr. Sukanya Tripathy",
+    name: "Mr Indradev Kumar",
     designation: "Assistant Professor",
-    image: sukanya,
+    image: indadev,
+    cardBgColor: "transparent",
+  },
+  {
+    id: 6,
+    name: "Dr Himanshu Gautam",
+    designation: "Assistant Professor",
+    image: himanshu,
+    cardBgColor: "transparent",
+  },
+  {
+    id: 7,
+    name: "Mr Syed Alim Raza",
+    designation: "Assistant Professor",
+    image: syedAlim,
+    cardBgColor: "transparent",
+  },
+  {
+    id: 8,
+    name: "Ms Rifwana Gulzar",
+    designation: "Assistant Professor",
+    image: rifwana,
     cardBgColor: "transparent",
   },
 ];

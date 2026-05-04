@@ -106,25 +106,25 @@ He is a member of many national and international scientific societies and organ
 ];
 
 export const InstituteofBiosciencesandTechnologyinstituteCourseCardData: CustomInstituteCourseCardProps[] = [
-  {
-    imageUrl: courseImg1,
-    departmentName: "Faculty of Allied Health Sciences",
-    path: "faculty-of-allied-health-sciences",
-    departmentDetails: {
-      overviewData: facultyofAHSOverviewData,
-      counterData: counterDataFoFacultyOfAlliedHealthSciences,
-      mvData: facultyOfAlliedHealthSciencesVMData,
-      departmentHeadData: facultyOfAhsProfileData,
-      feeTableData: {
-        tab1: { label: "Undergraduate", data: underGraduateFeeDataOfAHS },
-      },
-      facultyData: facultyDetailsOfAhsDepartment,
-      departmentHighlightsData: alliedHealthScienceHighlightsData,
-      counterData2: counterDataForPlacedStudentsOFAlliedHealthSciences,
-      placedStudentsData: null,
-      eventsData: alliedHealthScienceDepartmentEventsData,
-    },
-  },
+  // {
+  //   imageUrl: courseImg1,
+  //   departmentName: "Faculty of Allied Health Sciences",
+  //   path: "faculty-of-allied-health-sciences",
+  //   departmentDetails: {
+  //     overviewData: facultyofAHSOverviewData,
+  //     counterData: counterDataFoFacultyOfAlliedHealthSciences,
+  //     mvData: facultyOfAlliedHealthSciencesVMData,
+  //     departmentHeadData: facultyOfAhsProfileData,
+  //     feeTableData: {
+  //       tab1: { label: "Undergraduate", data: underGraduateFeeDataOfAHS },
+  //     },
+  //     facultyData: facultyDetailsOfAhsDepartment,
+  //     departmentHighlightsData: alliedHealthScienceHighlightsData,
+  //     counterData2: counterDataForPlacedStudentsOFAlliedHealthSciences,
+  //     placedStudentsData: null,
+  //     eventsData: alliedHealthScienceDepartmentEventsData,
+  //   },
+  // },
   
   {
     imageUrl: courseImg2,

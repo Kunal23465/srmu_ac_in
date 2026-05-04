@@ -10,6 +10,7 @@ import instituteofnatural from "../../../assets/images/academics/institutes/natu
 import instituteofpharmaceutical from "../../../assets/images/academics/institutes/pharmaceutical-12022411152655.webp";
 import instituteofedu from "../../../assets/images/academics/institutes/economics--08022401082492.webp";
 import instituteofpolytech from "../../../assets/images/academics/institutes/polytechnic11-08022412560314.webp";
+import health from "../../../assets/images/academics/institutes/health.webp";
 import * as Yup from "yup";
 import {
   instituteCourseCardData,
@@ -355,6 +356,29 @@ export const institutes: Institute[] = [
     departments: 1,
     image: instituteofpolytech,
     path: "/srmu-polytechnic1",
+    departmentsData: {
+      overviewData: SRMUPolytechnicOverviewData,
+      counterData: SRMUPolytechnicCounterData1,
+      mvData: SRMUPolytechnicVMData,
+      departmentHeadData: SRMUPolytechnicinstituteProfiles,
+      feeTableData: {
+        tab1: { label: "Polytechnic (Diploma)", data: SRMUPolytechnicData1 },
+      },
+      facultyData: SRMUPolytechnicfacultyData,
+      departmentHighlightsData: SRMUPolytechnicdepartmentHighlights,
+      counterData2: SRMUPolytechnicCounterData2,
+      placedStudentsData: SRMUPolytechnicplacedStudents,
+      eventsData: SRMUPolytechnicDepartmentEventsData,
+    },
+  },
+   {
+    id: 12,
+    title: "Institute of Allied & Health Sciences",
+    description:
+      "FoAHS at SRMU Lucknow offers industry-aligned paramedical programs with advanced labs, expert faculty, strong placement support, and hands-on clinical training.",
+    departments: 1,
+    image: health,
+    path: "/institute-of-allied-health-sciences",
     departmentsData: {
       overviewData: SRMUPolytechnicOverviewData,
       counterData: SRMUPolytechnicCounterData1,
