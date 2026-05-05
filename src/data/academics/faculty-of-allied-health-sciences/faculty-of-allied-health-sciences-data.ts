@@ -32,7 +32,7 @@ export const facultyofAHSOverviewData: customeOverViewType = {
   heading: "Institute of Allied Health Sciences",
   content: `The Institute of Allied Health Sciences (IoAHS) at Shri Ramswaroop Memorial University (SRMU) was established in 2023, offering undergraduate programs in various paramedical & allied health sciences disciplines. In a short span, IoAHS has achieved significant milestones, including internship opportunities and placing students in reputed healthcare organizations. The institute has organized value-added courses, conferences, seminars, workshops, and guest lectures by eminent scientists and academicians. The laboratories are equipped with state-of-the-art instruments, comparable to global research labs.
 
-The department comprises highly experienced faculty members and enthusiastic research fellows. Research expertise spans various paramedical fields, including clinical research, medical imaging, physiotherapy, and public health. The department emphasizes both basic and translational research. Students, staff, and faculty form a cohesive and interactive group, regularly inviting renowned scientists for seminars and scientific discussions. Industrial collaborations bridge the gap between conventional degree programs and industry needs, leading to opportunities in academia, industry, and healthcare. These academic and research activities foster a cooperative research and training experience.`,
+The Institute comprises highly experienced faculty members and enthusiastic research fellows. Research expertise spans various paramedical fields, including clinical research, medical imaging, physiotherapy, and public health. The Institute emphasizes both basic and translational research. Students, staff, and faculty form a cohesive and interactive group, regularly inviting renowned scientists for seminars and scientific discussions. Industrial collaborations bridge the gap between conventional degree programs and industry needs, leading to opportunities in academia, industry, and healthcare. These academic and research activities foster a cooperative research and training experience.`,
 };
 
 export const counterDataFoFacultyOfAlliedHealthSciences: counterDataType[] = [
@@ -94,27 +94,20 @@ export const facultyOfAhsProfileData = [
     id: 1,
     title: "Department Head",
     name: "Dr. Nabeel Ahmad",
-    position: "Offg. Director, Institute of Allied & Health Sciences, SRM University, Barabanki",
+    position: "Offg. Director, Institute of Allied & Health Sciences.",
     image: drNabeel,
     summary: "",
     useBullets: false,
     details: [
-      // "**Experience:** 16+ years",
-      // "**Specialization/ Area of Research:** Nanobiotechnology, Flexible Electronics with Nanosensors, Bioprocess Engineering",
-      // "**Publications:** 50+ research papers in reputed national and international journals",
-      // "**Patents:** 20+ patents in Nanobiotechnology",
-      // "**Fellowships:** TARE Fellowship (SERB, DST, Govt. of India)",
-      // "**Professional Memberships:** FRSC (Royal Society of Chemistry), FRSB (Royal Society of Biology), FLS (Linnean Society, London)",
-      // "**Editorial Roles:** Editorial Board Member - Scientific Reports; Guest Editor - Plant Nano Biology Journal & Environmental Science and Pollution Research",
+      "**Experience:** 16+ years",
+      "**Specialization/ Area of Research:** Nanobiotechnology, Flexible Electronics with Nanosensors, Bioprocess Engineering",
+      "**Publications:** 50+ research papers in reputed national and international journals",
+      "**Patents:** 20+ patents in Nanobiotechnology",
+      "**Fellowships:** TARE Fellowship (SERB, DST, Govt. of India)",
+      "**Professional Memberships:** FRSC (Royal Society of Chemistry), FRSB (Royal Society of Biology), FLS (Linnean Society, London)",
+      "**Editorial Roles:** Editorial Board Member - Scientific Reports; Guest Editor - Plant Nano Biology Journal & Environmental Science and Pollution Research",
     ],
 modalContent: `
-<strong>Experience:</strong> 16+ years<br/>
-<strong>Specialization / Area of Research:</strong> Nanobiotechnology, Flexible Electronics with Nanosensors, Bioprocess Engineering<br/>
-<strong>Publications:</strong> 50+ research papers in reputed national and international journals<br/>
-<strong>Patents:</strong> 20+ patents in Nanobiotechnology<br/>
-<strong>Fellowships:</strong> TARE Fellowship (SERB, DST, Govt. of India)<br/>
-<strong>Professional Memberships:</strong> FRSC (Royal Society of Chemistry), FRSB (Royal Society of Biology), FLS (Linnean Society, London)<br/>
-<strong>Editorial Roles:</strong> Editorial Board Member - Scientific Reports; Guest Editor - Plant Nano Biology Journal & Environmental Science and Pollution Research<br/><br/>
 
 Dr. Nabeel Ahmad is a distinguished academician, researcher, and administrator with over 16+ years of experience in teaching, research, and academic leadership. He is currently serving as the Officiating Director, Institute of Allied & Health Sciences at SRM University, Barabanki.<br/><br/>
 
