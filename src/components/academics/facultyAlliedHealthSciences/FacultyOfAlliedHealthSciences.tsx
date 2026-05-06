@@ -53,7 +53,7 @@ const FacultyOfAlliedHealthSciences: FC = () => {
             </div>
             <CustomInstituteProfileCard data={facultyOfAhsProfileData} />
 
-            {/* <div className={`${Classes["container"]}`}>
+            <div className={`${Classes["container"]}`}>
                 <div className="my-20">
                     <div className="flex w-full justify-center flex-col items-center">
                         <h2 className="leading-[1.2] font-medium text-[3.125rem] mb-3">
@@ -77,7 +77,7 @@ const FacultyOfAlliedHealthSciences: FC = () => {
                         alignTabs="center"
                     />
                 </div>
-            </div> */}
+            </div>
 
             <CustomDepartmentSlider
                 heading="Faculty List"
@@ -101,7 +101,7 @@ const FacultyOfAlliedHealthSciences: FC = () => {
                     </section>
                 </div>
             </section> */}
-            {/* <CustomDepartmentSlider
+            <CustomDepartmentSlider
                 heading="Key Highlights of Our Department"
                 description=""
                 data={alliedHealthScienceHighlightsData}
@@ -110,7 +110,7 @@ const FacultyOfAlliedHealthSciences: FC = () => {
                 // arrowColor="#000"
                 breakpoints={{ desktop: 3, tablet: 2, mobile: 1 }}
             />
-            <CustomDepartmentEventSlider
+            {/* <CustomDepartmentEventSlider
                 heading="Events of Department"
                 description="SRMU is committed to leveraging its facilities and the system to world-class standards, with a goal to provide the best academic professional resources, to prepare its students for global opportunities. This makes SRMU a repository of academic and extra-curricular excellence."
                 data={alliedHealthScienceDepartmentEventsData}

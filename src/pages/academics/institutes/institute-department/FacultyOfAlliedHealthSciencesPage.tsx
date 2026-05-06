@@ -3,7 +3,7 @@ import FacultyOfAlliedHealthSciences from "../../../../components/academics/facu
 const FacultyOfAlliedHealthSciencesPage = () => {
   return (
     <div>
-        <FacultyOfAlliedHealthSciences/>
+      <FacultyOfAlliedHealthSciences />
     </div>
   )
 }

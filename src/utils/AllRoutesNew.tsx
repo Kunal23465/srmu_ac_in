@@ -161,7 +161,7 @@ export const routes = [
         path: "/news/:programName",
         element: <NewsEventDetails />,
       },
-       {
+      {
         path: "/eyojan-login-redirect",
         element: <EyojsnLoginRedirectPage />,
       },
@@ -186,7 +186,7 @@ export const routes = [
         path: "/:programType/:item",
         element: <ProgramTypeItemPage />,
       },
-       
+
       {
         path: "/program/:programName",
         element: <ProgramDetailsPage />,
@@ -307,7 +307,7 @@ export const routes = [
         path: "program-finder",
         element: <AddmissionProgramFinderPage />,
       },
-       
+
       {
         path: "fee-structure",
         element: <FeeStructurePage />,
@@ -512,9 +512,9 @@ export const routes = [
         path: "mandatory-disclouser",
         element: <MandatoryDisclouserPage />,
       },
-       {
+      {
         path: "blog",
-        element: <BlogPage/>,
+        element: <BlogPage />,
       },
       {
         path: "/blogs",
@@ -791,7 +791,7 @@ export const routes = [
       //   element: <InstituteofAlliedAndHealthSciencesPage />,
 
       // },
-        {
+      {
         path: "/institute-of-allied-health-sciences",
         element: <FacultyOfAlliedHealthSciencesPage />,
 
@@ -815,7 +815,7 @@ export const routes = [
 
       },
 
-    
+
 
       {
         path: "/faculty-of-biosciences",

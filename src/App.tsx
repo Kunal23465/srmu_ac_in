@@ -3,11 +3,11 @@ import { AllRoutesNew } from "./utils/AllRoutesNew";
 
 
 function App() {
-  return<>
-   <Toaster position="top-center" />
+  return <>
+    <Toaster position="top-center" />
     <AllRoutesNew />
   </>
- 
+
 }
 
 export default App;
