@@ -371,11 +371,10 @@ export const institutes: Institute[] = [
       eventsData: SRMUPolytechnicDepartmentEventsData,
     },
   },
-   {
+  {
     id: 12,
     title: "Institute of Allied & Health Sciences",
-    description:
-      "FoAHS at SRMU Lucknow offers industry-aligned paramedical programs with advanced labs, expert faculty, strong placement support, and hands-on clinical training.",
+    description: "IoAHS has achieved significant milestones, including internship opportunities and placing students in reputed healthcare organizations.",
     departments: 1,
     image: health,
     path: "/institute-of-allied-health-sciences",

@@ -7,7 +7,7 @@ import DeferredSectionFallback from "./DeferredSectionFallback";
 import ProgramsSectionStatic from "./ProgramSectionStatic";
 import { CustomTopFooterAbout } from "../../data/about/aboutusData";
 import CustomTopFooter from "../../utils/custom/CustomTopFooter";
-
+import naPdf from "../../assets/pdf/NA.pdf";
 const InnovationCulture = React.lazy(() => import("./InnovationCulture"));
 // const WhyChoose = React.lazy(() => import("./WhyChoose"));
 const Events = React.lazy(() => import("./Events"));
@@ -21,6 +21,7 @@ const MobilePlacements = React.lazy(() => import("./MobilePlacements"));
 const renderSectionFallback = (minHeight: number) => <DeferredSectionFallback minHeight={minHeight} />;
 
 const Home: React.FC = () => {
+  console.log("napdf name", naPdf);
   return (
     <div>
       <Banner />

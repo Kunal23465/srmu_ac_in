@@ -35,7 +35,7 @@ These programs focus on developing foundational scientific understanding along w
 };
 
 export const counterDataFoFacultyOfAlliedHealthSciences: counterDataType[] = [
-  { id: 1, value: "2023", suffix: "", label: "Established" },
+  { id: 1, value: "2026", suffix: "", label: "Established" },
   { id: 2, value: "10", suffix: "", label: "Faculty & Staff" },
   { id: 3, value: "300", suffix: "", label: "Students" },
 ];
