@@ -1,18 +1,36 @@
 import { customeOverViewType } from "../../../../types/home-data-type";
 import vision from "../../../../assets/images/academics/departments/dept-mission-icon2.webp";
 import mission from "../../../../assets/images/academics/departments/dept-mission-icon1.webp";
-import { InstituteProfile} from "../../../../types/profile-data-type";
+import { InstituteProfile } from "../../../../types/profile-data-type";
 import { departmentHighlightscardType, FeeTableData } from "../../faculty-of-civil-engineering/faculty-of-civil-engineering-data";
 import { FacultyItem } from "../../../../utils/custom/CustomFacultyListCard";
 
-import ManjuImg from "../../../../assets/images/academics/departments/dr.-manju-singh-11zon-2602240551361.webp"
+import ManjuImg from "../../../../assets/images/academics/departments/dr.-manju-singh-11zon-2602240551361.webp";
 
-import DefaultImg from "../../../../assets/images/academics/departments/default-img.webp";
-import PramodImg from "../../../../assets/images/academics/departments/11zon-cropped-34-11zon-23022404545998.webp";
-import ShubhamImg from "../../../../assets/images/academics/departments/11zon-cropped-33-11zon-23022404522539.webp";
-import AbhishekKumarImg from "../../../../assets/images/academics/departments/11zon-cropped-36-11zon-23022405004966.webp";
-import AjeetImg from "../../../../assets/images/academics/departments/11zon-cropped-37-11zon-23022405033990.webp";
+import ajeet from "../../../../assets/images/academics/departments/faculty-of-pharmacy/Ajeet Singh.jpg";
+import anupam from "../../../../assets/images/academics/departments/faculty-of-pharmacy/Anupam Kumar Pal.jpg";
+import apurwa from "../../../../assets/images/academics/departments/faculty-of-pharmacy/Apurwa Singh.jpg";
+import geetika from "../../../../assets/images/academics/departments/faculty-of-pharmacy/Geetika Mishra.jpg";
+import lavkush from "../../../../assets/images/academics/departments/faculty-of-pharmacy/Lavkush Kumar Pal.jpg";
+import manju from "../../../../assets/images/academics/departments/faculty-of-pharmacy/Manju Pandey.jpg";
+import neeraj from "../../../../assets/images/academics/departments/faculty-of-pharmacy/Neeraj Kumar.jpg";
+import nimisha from "../../../../assets/images/academics/departments/faculty-of-pharmacy/Nimisha Singh.jpg";
+import plak from "../../../../assets/images/academics/departments/faculty-of-pharmacy/Palak Agarwal.jpg";
+import pragti from "../../../../assets/images/academics/departments/faculty-of-pharmacy/Pragti Singh.jpg";
+import pramod from "../../../../assets/images/academics/departments/faculty-of-pharmacy/Pramod Chauhan.jpg";
+import pratibha from "../../../../assets/images/academics/departments/faculty-of-pharmacy/Pratibha Gautam.jpg";
+import ruchi from "../../../../assets/images/academics/departments/faculty-of-pharmacy/Ruchi Singh.png";
+import sarita from "../../../../assets/images/academics/departments/faculty-of-pharmacy/Sarita Singh.jpg";
+import saumya from "../../../../assets/images/academics/departments/faculty-of-pharmacy/Saumya Awasthi.jpg";
+import shikha from "../../../../assets/images/academics/departments/faculty-of-pharmacy/Shikha Shrivastava.jpg";
 
+import shivangi from "../../../../assets/images/academics/departments/faculty-of-pharmacy/Shivangi Sharma.jpg";
+import sharddha from "../../../../assets/images/academics/departments/faculty-of-pharmacy/Shraddha Pandey.jpg";
+import shubham from "../../../../assets/images/academics/departments/faculty-of-pharmacy/Shubham Goutam.jpg";
+import sunil from "../../../../assets/images/academics/departments/faculty-of-pharmacy/Sunil.jpg";
+import sushma from "../../../../assets/images/academics/departments/faculty-of-pharmacy/Sushma Singh.jpg";
+import yasmin from "../../../../assets/images/academics/departments/faculty-of-pharmacy/Yasmin Khatoon.jpg";
+import zahid from "../../../../assets/images/academics/departments/faculty-of-pharmacy/Zahid Husain.jpg";
 
 import depSlide1 from "../../../../assets/images/academics/departments/pharma-lab-07052412313791.webp";
 import depSlide2 from "../../../../assets/images/academics/departments/bioinformatics-07022411264512.webp";
@@ -39,14 +57,11 @@ export const InstituteofPharmacyTopFooterData = [
   },
 ];
 
-
 export const InstituteofPharmacyCounterData1: counterDataType[] = [
   { id: 1, value: "2020", suffix: "", label: "Established" },
   { id: 2, value: "53", suffix: "", label: "Faculty & Staff" },
   { id: 3, value: "600", suffix: "", label: "Students" },
 ];
-
-
 
 export const InstituteofPharmacyCounterData2 = {
   counterData: [
@@ -55,30 +70,28 @@ export const InstituteofPharmacyCounterData2 = {
       icon: "",
       value: "100",
       suffix: "",
-      label: "Guest lectures"
+      label: "Guest lectures",
     },
     {
       id: 2,
       icon: "",
       value: "40",
       suffix: "",
-      label: "Field Visits"
+      label: "Field Visits",
     },
     {
       id: 3,
       icon: "",
       value: "10",
       suffix: "",
-      label: "Conference & Seminars"
+      label: "Conference & Seminars",
     },
-
   ],
 
   // Optional classes (can be null or ignored if unused)
   classes: "",
-  aboutusClass: ""
+  aboutusClass: "",
 };
-
 
 export const InstituteofPharmacyVMData = [
   {
@@ -90,7 +103,7 @@ export const InstituteofPharmacyVMData = [
       "To develop grooming arena for better individuals and pharmacists.",
       "To enhance the creativity, motivation, drive and inculcate professionalism to suit to the need of pharmaceutical industry.",
       "To bring synergy between academic, R&D, technology and industry through training and exposure for such environment.",
-      "To promote the value of learning, self-growth, quality performance, and transition for students to productive and responsible participation in society."
+      "To promote the value of learning, self-growth, quality performance, and transition for students to productive and responsible participation in society.",
     ],
   },
   {
@@ -99,12 +112,10 @@ export const InstituteofPharmacyVMData = [
     img: vision,
     heading: "Vision",
     points: [
-      "To provide value added educational environment for creating quality professionals in the field of pharmacy education, research, industry, hospital and other health related areas for the society well-being."
+      "To provide value added educational environment for creating quality professionals in the field of pharmacy education, research, industry, hospital and other health related areas for the society well-being.",
     ],
   },
 ];
-
-
 
 export const InstituteofPharmacyinstituteProfiles: InstituteProfile[] = [
   {
@@ -114,8 +125,7 @@ export const InstituteofPharmacyinstituteProfiles: InstituteProfile[] = [
     position: "Director IOP, SRMU, Lucknow-Deva Road",
     image: ManjuImg,
 
-    summary:
-      "",
+    summary: "",
 
     detailsHeading: "",
     useBullets: false,
@@ -132,17 +142,9 @@ export const InstituteofPharmacyinstituteProfiles: InstituteProfile[] = [
     modalContent: `Prof.(Dr.) Manju Pandey, is Professor and Director of Institute of Pharmacy. She has 16 years of experience in teaching, research and academic administration. Dr. Pandey has distinguished herself as an eminent educationist, pharmacist and a leader. She is the lifetime member of Association of Pharmaceutical Teachers of India. Before joining Shri Ramswaroop Memorial University, Dr. Manju Pandey worked as Professor and Deputy Director in Azad Institute of Pharmacy and Research, Lucknow. She has published a number of research papers in the area of Pharmaceutical Sciences in various National and International Journals. She has also published a book (Lambert Academic Publishing) and got a patent of the same and also have paper patents. She has collaborated with team of faculty to develop tutorial programs and conferences/seminars. With her highly developed research qualitative and analytical skills added with a strong capacity to conduct independent research, she has guided about 40 students of M. Pharm.
 
 Her constant vision and proven success in Pharma lead her towards several awards such as: Appreciation Award in the “National Level Pharma Power Point Competition” by Organization for Women Empowerment & Research (2013), Appreciation Award in the National Seminar on “Digital Health Management” at Azad Institute of Pharmacy & Research, Lucknow, March, 2013, Certificate of Best Teacher award in Antarastriya Samrasta Manch In Jaipur (2017), Felicitated with e-poster evaluator in APTICON 2019 at DIT, Dehradun, got Eminent Teacher Award in national conference in Shobhit University Gangoh, Saharanpur (2020). Working more than a decade in Pharma world Dr. Pandey has a solid reputation as a competitive, responsive and honest expert in her field. With her remarkable contribution she has become a recognized name in the academic world of Pharma.
-`
+`,
   },
-
-
-]; 
-
-
-
-
-
-
+];
 
 export const InstituteofPharmacyData1: FeeTableData = {
   columns: ["COURSES", "DURATION", "ELIGIBILITY CRITERIA", "COURSE FEES (PA)"],
@@ -170,203 +172,146 @@ export const InstituteofPharmacyData1: FeeTableData = {
   ],
 };
 
-
-
 export const InstituteofPharmacyfacultyData: FacultyItem[] = [
   {
     id: 1,
-    name: "Ms. Nimisha Singh",
-    designation: "Assistant Professor",
-    image: DefaultImg,
+    name: "Prof. (Dr.) Manju Pandey",
+    designation: "Director",
+    image: manju,
   },
   {
     id: 2,
-    name: "Mr. Ajeet Singh",
-    designation: "Assistant Professor",
-    image: AjeetImg,
+    name: "Prof. (Dr.) Sunil",
+    designation: "Professor",
+    image: sunil,
   },
   {
     id: 3,
-    name: "Ms. Saumya Awasthi",
-    designation: "Assistant Professor",
-    image: DefaultImg,
+    name: "Prof. (Dr.) Yasmin Khatoon",
+    designation: "Professor",
+    image: yasmin,
   },
   {
     id: 4,
-    name: "Ms. Zeba Siddiqui",
-    designation: "Associate Professor",
-    image: DefaultImg,
+    name: "Prof. (Dr.) Ruchi Singh",
+    designation: "Professor",
+    image: ruchi,
   },
   {
     id: 5,
-    name: "Mr. Azeem Ahmad",
-    designation: "Assistant Professor",
-    image: DefaultImg,
+    name: "Dr. Shikha Shrivastava",
+    designation: "Associate Professor",
+    image: shikha,
   },
   {
     id: 6,
-    name: "Mr. Nand Gopal Jaiswal",
+    name: "Mr. Zahid Husain",
     designation: "Assistant Professor",
-    image: DefaultImg,
+    image: zahid,
   },
   {
     id: 7,
-    name: "Mr. Shailendra Kumar Yadav",
+    name: "Mr. Pramod Chauhan",
     designation: "Assistant Professor",
-    image: DefaultImg,
+    image: pramod,
   },
   {
     id: 8,
-    name: "Ms. Rida Arif Kidwai",
+    name: "Ms. Sushma Singh",
     designation: "Assistant Professor",
-    image: DefaultImg,
+    image: sushma,
   },
   {
     id: 9,
-    name: "Mr. Yogendra Kumar",
-    designation: "Associate Professor",
-    image: DefaultImg,
+    name: "Ms. Shraddha Pandey",
+    designation: "Assistant Professor",
+    image: sharddha,
   },
   {
     id: 10,
-    name: "Ms. Sunita",
-    designation: "Associate Professor",
-    image: DefaultImg,
+    name: "Mr. Lavkush Kumar Pal",
+    designation: "Assistant Professor",
+    image: lavkush,
   },
   {
     id: 11,
-    name: "Mohd. Nazish Ansari",
+    name: "Ms. Nimisha Singh",
     designation: "Assistant Professor",
-    image: DefaultImg,
+    image: nimisha,
   },
   {
     id: 12,
-    name: "Mr. Vijay Verma",
+    name: "Ms. Shivangi Sharma",
     designation: "Assistant Professor",
-    image: DefaultImg,
+    image: shivangi,
   },
   {
     id: 13,
-    name: "Mr. Saurabh Kumar Tiwari",
-    designation: "Lecturer",
-    image: DefaultImg,
+    name: "Ms. Saumya Awasthi",
+    designation: "Assistant Professor",
+    image: saumya,
   },
   {
     id: 14,
-    name: "Mr. Ranjeet Kumar Maurya",
-    designation: "Lecturer",
-    image: DefaultImg,
+    name: "Mr. Shubham Goutam",
+    designation: "Assistant Professor",
+    image: shubham,
   },
   {
     id: 15,
-    name: "Mr. Abhishek Kumar",
-    designation: "Assistant Professor",
-    image: AbhishekKumarImg,
+    name: "Ms. Sarita Singh",
+    designation: "Associate Professor",
+    image: sarita,
   },
   {
     id: 16,
-    name: "Ms. Palak Agrawal",
+    name: "Ms. Pragti Singh",
     designation: "Assistant Professor",
-    image: DefaultImg,
+    image: pragti,
   },
   {
     id: 17,
-    name: "Ms. Sushma Singh",
+    name: "Dr. Neeraj Kumar Verma",
     designation: "Assistant Professor",
-    image: DefaultImg,
+    image: neeraj,
   },
   {
     id: 18,
-    name: "Mr. Neeraj Kumar Verma",
+    name: "Ms. Geetika Mishra",
     designation: "Assistant Professor",
-    image: DefaultImg,
+    image: geetika,
   },
   {
     id: 19,
-    name: "Mr. Sunil Kumar Singh",
-    designation: "Associate Professor",
-    image: DefaultImg,
+    name: "Mr. Anupam Kumar Pal",
+    designation: "Assistant Professor",
+    image: anupam,
   },
   {
     id: 20,
-    name: "Ms. Pragti Singh",
+    name: "Mr. Ajeet Singh",
     designation: "Assistant Professor",
-    image: DefaultImg,
+    image: ajeet,
   },
   {
     id: 21,
-    name: "Ms. Sarita Singh",
-    designation: "Associate Professor",
-    image: DefaultImg,
+    name: "Ms. Apurwa Singh",
+    designation: "Assistant Professor",
+    image: apurwa,
   },
   {
     id: 22,
-    name: "Dr. Shikha Srivastava",
-    designation: "Associate Professor",
-    image: DefaultImg,
+    name: "Ms. Palak Agarwal",
+    designation: "Assistant Professor",
+    image: plak,
   },
   {
     id: 23,
-    name: "Mr. Shubham Gautam",
+    name: "Ms. Pratibha Gautam",
     designation: "Assistant Professor",
-    image: ShubhamImg,
-  },
-  {
-    id: 24,
-    name: "Ms. Apurwa Singh",
-    designation: "Assistant Professor",
-    image: DefaultImg,
-  },
-  {
-    id: 25,
-    name: "Dr. Yasmin Khatoon",
-    designation: "Professor",
-    image: DefaultImg,
-  },
-  {
-    id: 26,
-    name: "Mr. Anupam Kumar Pal",
-    designation: "Assistant Professor",
-    image: DefaultImg,
-  },
-  {
-    id: 27,
-    name: "Mr. Pramod Chauhan",
-    designation: "Assistant Professor",
-    image: PramodImg,
-  },
-  {
-    id: 28,
-    name: "Mr. Zahid Hussain",
-    designation: "Assistant Professor",
-    image: DefaultImg,
-  },
-  {
-    id: 29,
-    name: "Ms. Shivangi Sharma",
-    designation: "Assistant Professor",
-    image: DefaultImg,
-  },
-  {
-    id: 30,
-    name: "Ms. Shraddha Pandey",
-    designation: "Assistant Professor",
-    image: DefaultImg,
-  },
-  {
-    id: 31,
-    name: "Ms. Geetika Mishra",
-    designation: "Assistant Professor",
-    image: DefaultImg,
-  },
-  {
-    id: 32,
-    name: "Prof. (Dr.) Manju Pandey",
-    designation: "Professor",
-    image: ManjuImg,
+    image: pratibha,
   },
 ];
-
 
 export const InstituteofPharmacydepartmentHighlights: departmentHighlightscardType[] = [
   {
@@ -382,12 +327,14 @@ export const InstituteofPharmacydepartmentHighlights: departmentHighlightscardTy
   {
     image: depSlide3,
     title: "Modules as per NEP 2020 for deploying industry required skills",
-    description: "The department focuses on cutting-edge teaching methodologies drawn inline with NEP 2020 to help students develop their critical thinking abilities and improve their aptitude for learning.",
+    description:
+      "The department focuses on cutting-edge teaching methodologies drawn inline with NEP 2020 to help students develop their critical thinking abilities and improve their aptitude for learning.",
   },
   {
     image: depSlide4,
     title: "Outreach & collaboration for vibrant learning atmosphere",
-    description: "We want to establish significant collaborations that stimulate creativity and provide significant results in order to address intricate problems in the pharmaceutical domains.",
+    description:
+      "We want to establish significant collaborations that stimulate creativity and provide significant results in order to address intricate problems in the pharmaceutical domains.",
   },
   {
     image: depSlide5,
@@ -397,7 +344,8 @@ export const InstituteofPharmacydepartmentHighlights: departmentHighlightscardTy
   {
     image: depSlide6,
     title: "Constant improvement of faculty skills through FDPs",
-    description: "Through regular FDPs, the department also prioritizes the ongoing professional development of its academic members and their exposure to cutting-edge techniques and technology.",
+    description:
+      "Through regular FDPs, the department also prioritizes the ongoing professional development of its academic members and their exposure to cutting-edge techniques and technology.",
   },
   {
     image: depSlide7,
@@ -406,14 +354,11 @@ export const InstituteofPharmacydepartmentHighlights: departmentHighlightscardTy
   },
 ];
 
-
-
-
 export const tableHeaders: Headers = {
-    name: "NAME OF STUDENT",
-    program: "PROGRAM",
-    company: "COMPANY",
-  };
+  name: "NAME OF STUDENT",
+  program: "PROGRAM",
+  company: "COMPANY",
+};
 
 export const InstituteofPharmacyplacedStudents: Student[] = [
   {
@@ -473,103 +418,120 @@ export const InstituteofPharmacyplacedStudents: Student[] = [
   },
 ];
 
-import img1 from "../../../../assets/images/academics/departments/visit2-09052412543960.webp";
-import img2 from "../../../../assets/images/academics/departments/workshop4-09052412545855.webp";
-import img3 from "../../../../assets/images/academics/departments/visit-1002241204236.webp";
-import img4 from "../../../../assets/images/academics/departments/guest7-09052412552546.webp";
-import img5 from "../../../../assets/images/academics/departments/webinar5-09052412530621.webp";
-import img6 from "../../../../assets/images/academics/departments/national2-10022412140314.webp";
-import img7 from "../../../../assets/images/academics/departments/internation1-09052412542038.webp";
-import img8 from "../../../../assets/images/academics/departments/guest6-09052412553463.webp";
-import img9 from "../../../../assets/images/academics/departments/phar2-09052412532387.webp";
-import img10 from "../../../../assets/images/academics/departments/guest1-09052412554546.webp";
-import img11 from "../../../../assets/images/academics/departments/guest5-09052412555893.webp";
-import img12 from "../../../../assets/images/academics/departments/phar3-09052412533683.webp";
-import img13 from "../../../../assets/images/academics/departments/phar4-09052412534457.webp";
-import { counterDataType } from "../../../home/counterData";
+import img1 from "../../../../assets/images/academics/departments/faoc-events/ev1.jpg";
+import img2 from "../../../../assets/images/academics/departments/faoc-events/ev2.png";
+import img3 from "../../../../assets/images/academics/departments/faoc-events/ev3.jpg";
+import img4 from "../../../../assets/images/academics/departments/faoc-events/ev4.jpg";
+import img5 from "../../../../assets/images/academics/departments/faoc-events/ev5.jpg";
+import img6 from "../../../../assets/images/academics/departments/faoc-events/ev6.jpg";
+import img7 from "../../../../assets/images/academics/departments/faoc-events/ev7.jpg";
+import img8 from "../../../../assets/images/academics/departments/faoc-events/ev8.jpg";
+import img9 from "../../../../assets/images/academics/departments/faoc-events/ev9.jpg";
+import img10 from "../../../../assets/images/academics/departments/faoc-events/ev10.png";
+import img11 from "../../../../assets/images/academics/departments/faoc-events/ev11.jpg";
+import img12 from "../../../../assets/images/academics/departments/faoc-events/ev12.jpg";
+import img13 from "../../../../assets/images/academics/departments/faoc-events/ev13.jpg";
+import img14 from "../../../../assets/images/academics/departments/faoc-events/ev14.jpg";
+import img15 from "../../../../assets/images/academics/departments/faoc-events/ev15.jpg";
+import img16 from "../../../../assets/images/academics/departments/faoc-events/ev16.jpg";
+import img17 from "../../../../assets/images/academics/departments/faoc-events/ev17.png";
+import img18 from "../../../../assets/images/academics/departments/faoc-events/ev18.png";
+import img19 from "../../../../assets/images/academics/departments/faoc-events/ev19.jpg";
+import img20 from "../../../../assets/images/academics/departments/faoc-events/ev20.jpg";
+import img21 from "../../../../assets/images/academics/departments/faoc-events/ev21.jpg";
+import img22 from "../../../../assets/images/academics/departments/faoc-events/ev22.jpg";
+import img23 from "../../../../assets/images/academics/departments/faoc-events/ev23.jpg";
+import img24 from "../../../../assets/images/academics/departments/faoc-events/ev24.jpg";
+import img25 from "../../../../assets/images/academics/departments/faoc-events/ev25.jpg";
+import img26 from "../../../../assets/images/academics/departments/faoc-events/ev26.jpg";
+import img27 from "../../../../assets/images/academics/departments/faoc-events/ev27.jpg";
+import img28 from "../../../../assets/images/academics/departments/faoc-events/ev28.jpg";
+import img29 from "../../../../assets/images/academics/departments/faoc-events/ev29.jpg";
+import img30 from "../../../../assets/images/academics/departments/faoc-events/ev30.jpg";
+import img31 from "../../../../assets/images/academics/departments/faoc-events/ev31.jpg";
 
+import { counterDataType } from "../../../home/counterData";
 
 export const InstituteofPharmacyDepartmentEventsData: EventItem[] = [
   {
     id: 1,
-    title: "Industrial Visit",
-    venue: "Cytogene Research and Development Lucknow",
-    date: "19th August, 2023",
+    title: "Conference",
+    topic: "Assessing And Implementing Pharmacy Best Practices",
+    date: "27th April, 2022",
     image: img1,
     cardBgColor: "#ffffff",
   },
   {
     id: 2,
-    title: "Industrial Visit",
-    venue: "Jedux Parenteral Pvt. Ltd",
-    date: "04th September, 2023",
+    title: "Seminar",
+    topic: "Opportunity To Study Abroad",
+    date: "22nd September, 2022",
     image: img2,
     cardBgColor: "#ffffff",
   },
   {
     id: 3,
-    title: "Industrial Visit",
-    venue: "CDRI, Jankipuram, U.P",
-    date: "26th September, 2023",
+    title: "Workshop",
+    topic: "Free Heart Disease Reversal Workshop",
+    date: "12th November, 2022",
     image: img3,
     cardBgColor: "#ffffff",
   },
   {
     id: 4,
-    title: "Guest Lecture",
-    speaker: "Mohd. Yaqub Khan",
-    topic: "Recent Progress of Microneedle Formulation in Covid Patients",
-    date: "08th August, 2023",
+    title: "Workshop",
+    topic: "Get Success In GPAT and Other Pharma Competitive Exams",
+    date: "6th December, 2022",
     image: img4,
     cardBgColor: "#ffffff",
   },
   {
     id: 5,
     title: "Workshop",
-    topic: "Stress to Strength & Find a Leader in You",
-    date: "13th December, 2022",
+    topic: "DNA Fingerprinting: A Boon To Forensic Sciences",
+    date: "7th December, 2022",
     image: img5,
     cardBgColor: "#ffffff",
   },
   {
     id: 6,
-    title: "Conference",
-    topic: "Assessing and Implementing Pharmacy Best Practices",
-    date: "27th April, 2022",
+    title: "Workshop",
+    topic: "Stress To Strength & Find A Leader In You",
+    date: "13th December, 2022",
     image: img6,
     cardBgColor: "#ffffff",
   },
   {
     id: 7,
-    title: "Seminar",
-    topic: "Opportunity To Study Abroad",
-    date: "22nd September, 2022",
+    title: "Industrial Visit",
+    venue: "Experiome Biotech Pvt. Ltd., Lucknow",
+    date: "10th April, 2023",
     image: img7,
     cardBgColor: "#ffffff",
   },
   {
     id: 8,
-    title: "Guest Lecture",
-    speaker: "Ms. Shaily Chaudhary",
-    topic: "Entrepreneurship: Strategy For Leaders",
-    date: "14th September, 2023",
+    title: "Industrial Visit",
+    venue: "Jedux Parenteral Pvt. Ltd.",
+    date: "4th September, 2023",
     image: img8,
     cardBgColor: "#ffffff",
   },
   {
     id: 9,
-    title: "Workshop",
-    topic: "Free Heart Disease Reversal Workshop",
-    date: "12th November, 2022",
+    title: "Guest Lecture",
+    speaker: "Dr. Shimpy Srivastava",
+    topic: "World Pharmacist Day",
+    date: "23rd September, 2023",
     image: img9,
     cardBgColor: "#ffffff",
   },
   {
     id: 10,
     title: "Guest Lecture",
-    speaker: "Dr. Shimpy Srivastava",
-    topic: "World Pharmacist Day",
-    date: "23rd September, 2023",
+    speaker: "Ms. Shaily Chaudhary",
+    topic: "Entrepreneurship: Strategy For Leaders",
+    date: "14th September, 2023",
     image: img10,
     cardBgColor: "#ffffff",
   },
@@ -584,18 +546,164 @@ export const InstituteofPharmacyDepartmentEventsData: EventItem[] = [
   },
   {
     id: 12,
-    title: "Workshop",
-    topic: "Get Success in GPAT and other Pharma Competitive Exams",
-    date: "06th December, 2022",
+    title: "Old Age Home Visit",
+    venue: "Matri Pitri Sadan Vriddha Ashram, Barabanki",
+    date: "23rd September, 2023",
     image: img12,
     cardBgColor: "#ffffff",
   },
   {
     id: 13,
-    title: "Workshop",
-    topic: "DNA Fingerprinting: A boon to Forensic Science",
-    date: "07th December, 2022",
+    title: "Guest Lecture",
+    speaker: "Dr. Nitin Sharma",
+    topic: "Radiopharmaceuticals Devices In Product Development",
+    date: "23rd February, 2024",
     image: img13,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 14,
+    title: "Guest Lecture",
+    speaker: "APTI Members",
+    topic: "International Women’s Day",
+    date: "9th March, 2024",
+    image: img14,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 15,
+    title: "Industrial Visit",
+    venue: "Kunal Remedies Pvt. Ltd.",
+    date: "6th April, 2024",
+    image: img15,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 16,
+    title: "Industrial Visit",
+    venue: "Centre of BioMedical Research (CBMR), Lucknow",
+    date: "11th April, 2024",
+    image: img16,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 17,
+    title: "Guest Lecture",
+    venue: "B1-007, SRMU",
+    date: "10th February, 2025",
+    image: img17,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 18,
+    title: "Guest Lecture",
+    venue: "B3-407, IOP, SRMU",
+    date: "01st March, 2025",
+    image: img18,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 19,
+    title: "Field Visit",
+    venue: "Visit to Sewage Treatment Plant, Lucknow",
+    date: "28/02/25",
+    image: img19,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 20,
+    title: "International Seminar",
+    venue: "Mini auditorium, SRMU",
+    date: "11/11/2024",
+    image: img20,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 21,
+    title: "Research Lab Visit",
+    venue: "CSIR-CIMAP, Lucknow",
+    date: "28/02/25",
+    image: img21,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 22,
+    title: "MoU with Jedux Parentrals Pvt. Ltd.",
+    venue: "Jedux Parentrals Pvt. Ltd., Lucknow",
+    date: "31/08/24",
+    image: img22,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 23,
+    title: "International Conference",
+    venue: "Mini auditorium, SRMU",
+    date: "24-25 February, 2025",
+    image: img23,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 24,
+    title: "Industrial Visit",
+    venue: "Akums, Haridwar, Uttarakhand",
+    date: "01/03/25",
+    image: img24,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 25,
+    title: "MoU with SND Regenic PVT LTD Okinawa Japan",
+    venue: "SRMU",
+    date: "23/01/2025",
+    image: img25,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 26,
+    title: "Guest Lecture on CPCSEA Guidelines",
+    venue: "SRMU",
+    date: "23/07/2025",
+    image: img26,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 27,
+    title: "Health Camp on Pharma Anveshan",
+    venue: "SRMU",
+    date: "13/03/2026",
+    image: img27,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 28,
+    title: "Research Lab Visit to CDRI",
+    venue: "CDRI",
+    date: "19/03/2026",
+    image: img28,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 29,
+    title: "Industrial Visit to Baddi",
+    venue: "SRMU",
+    date: "15/03/2026",
+    image: img29,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 30,
+    title: "GPAT Result",
+    venue: "SRMU",
+    date: "07/04/2026",
+    image: img30,
+    cardBgColor: "#ffffff",
+  },
+  {
+    id: 31,
+    title: "International Conference on Sustainable Development",
+    venue: "SRMU",
+    date: "09/04/2026 - 11/04/2026",
+    image: img31,
     cardBgColor: "#ffffff",
   },
 ];

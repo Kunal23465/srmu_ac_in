@@ -83,8 +83,9 @@ function CustomDepartmentEventSlider<T>({
   const isAtStart = currentPage === 0;
   const isAtEnd = currentPage >= totalPages - 1;
 
+  const pageWidthPercent = 100 / totalPages;
   const trackWidth = `${totalPages * 100}%`;
-  const transformValue = `translateX(-${(currentIndex / ITEMS_PER_PAGE) * 100}%)`;
+  const transformValue = `translateX(-${currentPage * pageWidthPercent}%)`;
 
 
   const pages = Array.from({ length: totalPages }, (_, pageIndex) =>
@@ -116,7 +117,7 @@ function CustomDepartmentEventSlider<T>({
           <button
             onClick={handlePrev}
             disabled={isAtStart}
-            className={`border-2 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center text-lg transition font-semibold ${isAtStart ? "opacity-40 cursor-not-allowed" : "hover:opacity-70"
+            className={`border-2 w-10 cursor-pointer h-10 md:w-12 md:h-12 flex items-center justify-center text-lg transition font-semibold ${isAtStart ? "opacity-40 cursor-not-allowed" : "hover:opacity-70"
               }`}
             style={{
               borderColor: arrowBorderColor,
@@ -130,7 +131,7 @@ function CustomDepartmentEventSlider<T>({
           <button
             onClick={handleNext}
             disabled={isAtEnd}
-            className={`border-2 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center text-lg transition font-semibold ${isAtEnd ? "opacity-40 cursor-not-allowed" : "hover:opacity-70"
+            className={`border-2 w-10 cursor-pointer h-10 md:w-12 md:h-12 flex items-center justify-center text-lg transition font-semibold ${isAtEnd ? "opacity-40 cursor-not-allowed" : "hover:opacity-70"
               }`}
             style={{
               borderColor: arrowBorderColor,
