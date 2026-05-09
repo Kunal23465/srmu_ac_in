@@ -157,7 +157,7 @@ const FacultyOfPhysicalSciences: FC = () => {
         </div>
       </section> */}
 
-         <section className="bg-[#edf0f9] py-14">
+            <section className="bg-[#edf0f9] py-14">
                 <div className={`${Classes["container"]} bg-[#edf0f9]`}>
                     <PlacedStudents placedStudents={placedStudents} counterData={counterDataForPlacedStudentsOFPhysicalScience} />
                 </div>
@@ -173,7 +173,7 @@ const FacultyOfPhysicalSciences: FC = () => {
                 breakpoints={{ desktop: 3, tablet: 2, mobile: 1 }}
             />
 
-         
+
 
             <CustomDepartmentEventSlider
                 heading="Events of Department"

@@ -6,6 +6,11 @@ import { departmentHighlightscardType, FeeTableData } from "../faculty-of-civil-
 import { FacultyItem } from "../../../utils/custom/CustomFacultyListCard";
 import ramGopalSingh from "../../../assets/images/academics/institutes/ram-gopal-singh.webp";
 import mukeshMishra from "../../../assets/images/academics/institutes/mukesh-mishra.webp";
+import gulab from "../../../assets/images/academics/institutes/Dr.-Gulab-Singh-Maurya.webp";
+import pooja from "../../../assets/images/academics/institutes/Dr.-Pooja-Sharma.webp";
+import sachin from "../../../assets/images/academics/institutes/Dr.-Sachin-Singh.webp";
+import lalit from "../../../assets/images/academics/institutes/Lalit-Kumar-Shukla.webp";
+
 import nitishKumarSingh from "../../../assets/images/academics/institutes/nitish-kumar-singh.webp";
 import nirmalKumar from "../../../assets/images/academics/institutes/nirmal-kumar-verma.webp";
 import bmDixit from "../../../assets/images/academics/institutes/prof.-b-m-dixit.webp";
@@ -191,6 +196,34 @@ export const facultyDetailsOfPhysicalScienceDepartment: FacultyItem[] = [
     name: "Dr. Ram Gopal Singh",
     designation: "Assistant Professor",
     image: ramGopalSingh, 
+    cardBgColor: "transparent",
+  },
+  {
+    id: 6,
+    name: "Dr. Gulab Singh Maurya",
+    designation: "Assistant Professor",
+    image: gulab, 
+    cardBgColor: "transparent",
+  },
+  {
+    id: 7,
+    name: "Dr. Pooja Sharma",
+    designation: "Assistant Professor",
+    image: pooja, 
+    cardBgColor: "transparent",
+  },
+   {
+    id: 8,
+    name: "Dr. Sachin Singh",
+    designation: "Assistant Professor",
+    image: sachin, 
+    cardBgColor: "transparent",
+  },
+   {
+    id: 9,
+    name: "Dr. Lalit Kumar Shukla",
+    designation: "Assistant Professor",
+    image: lalit, 
     cardBgColor: "transparent",
   },
 ];
