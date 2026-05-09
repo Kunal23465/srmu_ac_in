@@ -8,10 +8,11 @@ import { departmentHighlightscardType, FeeTableData } from "../faculty-of-civil-
 import { FacultyItem } from "../../../../utils/custom/CustomFacultyListCard";
 import dolly from "../../../../assets/images/academics/departments/faculty-of-chemical-science/Dolly Kumari.webp";
 import krishna from "../../../../assets/images/academics/departments/faculty-of-chemical-science/Krishna Srivastava.webp";
-import rahul from "../../../../assets/images/academics/departments/faculty-of-chemical-science/Rahul Kumar Vishwakarma.webp";
+import rahul from "../../../../assets/images/academics/departments/faculty-of-chemical-science/Dr.-Rahul-Kumar-Vishwakarma.webp";
 import sadhna from "../../../../assets/images/academics/departments/faculty-of-chemical-science/Sadhana Singh.webp";
-import sudeep from "../../../../assets/images/academics/departments/faculty-of-chemical-science/Sudeep Mishra.webp";
-import sumit from "../../../../assets/images/academics/departments/faculty-of-chemical-science/Sumit Chaudhary.webp";
+import sumit from "../../../../assets/images/academics/departments/faculty-of-chemical-science/Dr.-Sumit-Chaudhari.webp";
+import shailendra from "../../../../assets/images/academics/departments/faculty-of-chemical-science/Dr.-Shailendra-K-Bharti.webp";
+import vijay from "../../../../assets/images/academics/departments/faculty-of-chemical-science/Dr.-Vijay-Kumar-Singh.webp";
 import { EventItem } from "../../../../utils/custom/CustomEventListCard";
 import eveimg1 from "../../../../assets/images/academics/departments/faculty-of-chemical-science/events/img1.webp";
 import eveimg2 from "../../../../assets/images/academics/departments/faculty-of-chemical-science/events/img2.webp";
@@ -159,27 +160,33 @@ export const PlacedStudentsDataOfFacultyChemicalScienceData: FacultyItem[] = [
   },
   {
     id: 3,
-    name: "Mr. Sudeep Mishra",
-    designation: "Assistant Professor",
-    image: sudeep,
-  },
-  {
-    id: 4,
     name: "Dr. Dolly Kumari",
     designation: "Assistant Professor",
     image: dolly,
   },
   {
-    id: 5,
+    id: 4,
     name: "Dr. Sadhana Singh",
     designation: "Assistant Professor",
     image: sadhna,
   },
   {
-    id: 6,
+    id: 5,
     name: "Prof. (Dr.) Krishna Srivastava",
     designation: "Professor",
     image: krishna,
+  },
+   {
+    id: 6,
+    name: "Prof. (Dr.) Shailendra K Bharti",
+    designation: "Professor",
+    image: shailendra,
+  },
+   {
+    id: 7,
+    name: "Prof. (Dr.) Vijay Kumar Singh",
+    designation: "Professor",
+    image: vijay,
   },
 ];
 

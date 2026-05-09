@@ -29,9 +29,9 @@ import { FacultyOfMathematicalAndStatisticalSciencesdepartmentHighlights, Mathem
 
 const FacultyOfChemicalSciences: FC = () => {
     const items = [
-        
-       
-         {
+
+
+        {
             key: "2",
             label: "Postgraduate",
             content: (
@@ -107,7 +107,7 @@ const FacultyOfChemicalSciences: FC = () => {
                 heading="Faculty List"
                 description="The University takes pride in recruiting distinguished faculty from reputed central universities and best institutes like- IIT, IIM, MNNIT and IIT-BHU. They bring to the classroom, passion and enthusiasm for teaching, providing an intimate, interactive, personalized approach to learning."
                 data={PlacedStudentsDataOfFacultyChemicalScienceData}
-              
+
                 renderCard={({ item }) => <CustomFacultyListCard item={item} />}
                 bgImage={facultybg}
                 // arrowColor="#ffffff"
@@ -137,7 +137,7 @@ const FacultyOfChemicalSciences: FC = () => {
         </div>
       </section> */}
 
-         <section className="bg-[#edf0f9] py-14">
+            <section className="bg-[#edf0f9] py-14">
                 <div className={`${Classes["container"]} bg-[#edf0f9]`}>
                     <PlacedStudents placedStudents={MathematicalAndStatisticalSciencesplacedStudents} counterData={FacultyofChemicalSciencesCounterData2} />
                 </div>
@@ -153,7 +153,7 @@ const FacultyOfChemicalSciences: FC = () => {
                 breakpoints={{ desktop: 3, tablet: 2, mobile: 1 }}
             />
 
-         
+
 
             {/* <CustomDepartmentEventSlider
                 heading="Events of Department"

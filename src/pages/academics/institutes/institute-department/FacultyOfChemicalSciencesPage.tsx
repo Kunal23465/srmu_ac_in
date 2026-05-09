@@ -1,10 +1,10 @@
 import { FC } from "react"
 import FacultyOfChemicalSciences from "../../../../components/academics/facultyOfChemicalSciences/FacultyOfChemicalSciences"
 
-const FacultyOfChemicalSciencesPage:FC = () => {
+const FacultyOfChemicalSciencesPage: FC = () => {
   return (
     <div>
-        <FacultyOfChemicalSciences/>
+      <FacultyOfChemicalSciences />
     </div>
   )
 }
