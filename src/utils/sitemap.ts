@@ -5,9 +5,11 @@ import { STATIC_PROGRAM_CATEGORY_PATHS, STATIC_TOP_LEVEL_PROGRAM_PATHS } from ".
 import { slugify } from "./slugify";
 
 const runtimeEnv =
-  (globalThis as typeof globalThis & {
-    process?: { env?: Record<string, string | undefined> };
-  }).process?.env ?? import.meta.env;
+  (
+    globalThis as typeof globalThis & {
+      process?: { env?: Record<string, string | undefined> };
+    }
+  ).process?.env ?? import.meta.env;
 
 const API_BASE_URL = runtimeEnv.VITE_API_BASE_URL || "https://webservices.srmu.ac.in:7005";
 const SITEMAP_TTL_MS = 15 * 60 * 1000;
@@ -91,7 +93,7 @@ const LEGACY_STATIC_PATHS = [
   "/faculty-of-civil-engineering",
   "/department-of-electrical-and-electronics-engineering",
   "/faculty-of-mechanical-engineering",
-  "/faculty-of-allied-health-sciences",
+  "/institute-of-allied-health-sciences",
   "/faculty-of-biosciences",
   "/faculty-of-biotechnology",
   "/faculty-of-humanities-and-social-sciences",
@@ -233,13 +235,7 @@ const normalizePath = (path: string) => {
   return normalized.replace(/\/+$/, "") || "/";
 };
 
-const escapeXml = (value: string) =>
-  value
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&apos;");
+const escapeXml = (value: string) => value.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&apos;");
 
 const buildLegacyProgramCategoryPaths = (programMenuData: any[]) => {
   const paths = new Set<string>();
@@ -319,12 +315,7 @@ const fetchNews = async () => {
 };
 
 const collectDynamicEntries = async () => {
-  const [programsResult, blogsResult, menuResult, newsResult] = await Promise.allSettled([
-    fetchPrograms(),
-    fetchBlogs(),
-    fetchProgramMenu(),
-    fetchNews(),
-  ]);
+  const [programsResult, blogsResult, menuResult, newsResult] = await Promise.allSettled([fetchPrograms(), fetchBlogs(), fetchProgramMenu(), fetchNews()]);
 
   const paths = new Map<string, string | undefined>();
 

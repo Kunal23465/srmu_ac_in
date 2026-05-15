@@ -239,7 +239,7 @@ const Footer: React.FC = () => {
                   <div className="flex items-center gap-x-1">
                     <span>
                       <Link
-                        to="https://www.google.com/maps/place/Shri+Ramswaroop+College+Of+Engineering+and+Management/@26.8915336,81.0725835,20z/data=!3m1!5s0x399958aaf65fe185:0x5e503a417e29a304!4m14!1m7!3m6!1s0x399958aa7cde631d:0xa40f85bf5cea3cc2!2sShri+Ramswaroop+Memorial+Group+of+Professional+Colleges+MBA+Block!8m2!3d26.891466!4d81.0725151!16s%2Fg%2F11cm04667p!3m5!1s0x399958aa9da50cb7:0x8f5a1f4d75d0d691!8m2!3d26.891913!4d81.0728825!16s%2Fm%2F0280y20?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D"
+                        to="https://maps.app.goo.gl/uxeq6Shi7D5aAJ5RA"
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="Facebook"
