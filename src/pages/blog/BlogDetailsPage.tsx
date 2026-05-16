@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation, useParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async"; // or "react-helmet"
 import Classes from "../../utils/styles/Global.module.css";
@@ -6,14 +6,22 @@ import CustomTopFooter from "../../utils/custom/CustomTopFooter";
 import { CustomTopFooterAbout } from "../../data/about/aboutusData";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store";
-import { SITE_NAME, normalizeSeoTitle, stripHtml, toAbsoluteUrl } from "../../utils/seo";
+import {
+  SITE_NAME,
+  normalizeSeoTitle,
+  stripHtml,
+  toAbsoluteUrl,
+} from "../../utils/seo";
 import { findBlogBySlug } from "../../utils/routeMatching";
+import CustomFormModal from "../../utils/custom/CustomFormModal";
+
 
 const BlogDetailsPage: React.FC = () => {
   const location = useLocation();
   const { title, slug } = useParams();
   const { data: blogs } = useSelector((state: RootState) => state.getAllBlogs);
-
+  const [open, setOpen] = useState<boolean>(false);
+  const [sourceId, setSourceId] = useState<number | null>(null);
   const dataFromState = (location.state as any)?.data;
   const slugOrTitle = slug || title || "";
 
@@ -26,19 +34,26 @@ const BlogDetailsPage: React.FC = () => {
       <>
         <Helmet>
           <title>{`Blog Not Found | ${SITE_NAME}, Lucknow`}</title>
-          <meta name="description" content="The requested SRMU blog article could not be found." />
+          <meta
+            name="description"
+            content="The requested SRMU blog article could not be found."
+          />
           <meta name="robots" content="noindex" />
         </Helmet>
         <div className={`${Classes["container"]} py-16`}>
-          <h1 className="text-2xl font-medium text-[#023047]">Blog not found</h1>
+          <h1 className="text-2xl font-medium text-[#023047]">
+            Blog not found
+          </h1>
         </div>
       </>
     );
   }
 
   const blogDescription =
-    stripHtml(data.metaDescription || data.description || data.title).slice(0, 160) ||
-    `Read the latest SRMU blog: ${data.title}.`;
+    stripHtml(data.metaDescription || data.description || data.title).slice(
+      0,
+      160,
+    ) || `Read the latest SRMU blog: ${data.title}.`;
   const seoTitle = normalizeSeoTitle(`${data.title} | ${SITE_NAME}, Lucknow`);
 
   // Parse seoConfig with proper cleaning
@@ -46,22 +61,21 @@ const BlogDetailsPage: React.FC = () => {
   if (data.seoConfig) {
     try {
       let cleanedConfig = data.seoConfig;
-      
+
       // If it's a string, clean it
-      if (typeof cleanedConfig === 'string') {
+      if (typeof cleanedConfig === "string") {
         // Remove control characters and clean the string
         cleanedConfig = cleanedConfig
-          .replace(/[\u0000-\u001F\u007F-\u009F]/g, '') // Remove control characters
+          .replace(/[\u0000-\u001F\u007F-\u009F]/g, "") // Remove control characters
           .trim();
-        
+
         parsedSeoConfig = JSON.parse(cleanedConfig);
       } else {
         // Already an object
         parsedSeoConfig = cleanedConfig;
       }
     } catch (error) {
-      console.error('Error parsing seoConfig:', error);
-     
+      console.error("Error parsing seoConfig:", error);
     }
   }
 
@@ -83,20 +97,29 @@ const BlogDetailsPage: React.FC = () => {
   const jsonLdSchema = parsedSeoConfig || defaultArticleSchema;
 
   const absoluteUrl = `https://srmu.ac.in${location.pathname}`;
-  const imageUrl = data.imagePath ? toAbsoluteUrl(data.imagePath) : '';
-  console.log("blogs",blogs)
+  const imageUrl = data.imagePath ? toAbsoluteUrl(data.imagePath) : "";
+  console.log("data", data);
+
+  useEffect(() => {
+    if (data && data.blogId == 46) {
+      setSourceId(436);
+      setTimeout(() => {
+        setOpen(true);
+      }, 15000);
+    }
+  }, []);
   return (
     <>
       <Helmet>
         {/* Title */}
         <title>{seoTitle}</title>
-        
+
         {/* Meta Description */}
         <meta name="description" content={blogDescription} />
-        
+
         {/* Canonical URL */}
         <link rel="canonical" href={absoluteUrl} />
-        
+
         {/* Open Graph Tags */}
         <meta property="og:type" content="article" />
         <meta property="og:title" content={seoTitle} />
@@ -104,16 +127,18 @@ const BlogDetailsPage: React.FC = () => {
         <meta property="og:url" content={absoluteUrl} />
         {imageUrl && <meta property="og:image" content={imageUrl} />}
         <meta property="og:site_name" content={SITE_NAME} />
-        
+
         {/* Twitter Card Tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={seoTitle} />
         <meta name="twitter:description" content={blogDescription} />
         {imageUrl && <meta name="twitter:image" content={imageUrl} />}
-        
+
         {/* Article Tags */}
-        {data.postedOn && <meta property="article:published_time" content={data.postedOn} />}
-        
+        {data.postedOn && (
+          <meta property="article:published_time" content={data.postedOn} />
+        )}
+
         {/* JSON-LD Structured Data from seoConfig */}
         <script type="application/ld+json">
           {JSON.stringify(jsonLdSchema)}
@@ -124,7 +149,9 @@ const BlogDetailsPage: React.FC = () => {
         <div className="py-12 bg-white">
           <div className="container mx-auto px-4">
             {/* Title */}
-            <h1 className="font32 fw500 text-[#023047] leading-9">{data.title}</h1>
+            <h1 className="font32 fw500 text-[#023047] leading-9">
+              {data.title}
+            </h1>
 
             <div
               className="
@@ -156,10 +183,13 @@ const BlogDetailsPage: React.FC = () => {
               "
               dangerouslySetInnerHTML={{ __html: data.description }}
             />
-
           </div>
         </div>
       </div>
+      <CustomFormModal isOpen={open} sourceId={sourceId} onClose={() => setOpen(false)} />
+       
+    
+
       <CustomTopFooter data={CustomTopFooterAbout} />
     </>
   );
