@@ -210,6 +210,16 @@ const SITEMAP_EXCLUDED_PATHS = new Set([
   "/social-work",
   "/swayam-nptel-local-chapter",
   "/terms-conditions",
+  "/program/bachelor-of-physiotherapy",
+  "/program/b-tech-electrical-engineering-lateral-entry",
+  "/program/b-tech-mechanical-engineering-lateral-entry",
+  "/program/b-tech-electronics-communication-engineering-lateral-entry",
+  "/program/b-tech-mechanical-engineering",
+  "/program/b-tech-electronics-communication-engineering",
+  "/program/b-tech-electrical-engineering",
+  "/after-class-12th/business-analytics",
+  "/ph-d1/ph-d",
+  "/program-finder/undergraduate"
 ]);
 
 type CachedSitemap = {
