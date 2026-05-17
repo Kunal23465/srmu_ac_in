@@ -224,23 +224,6 @@ async function createServer() {
     res.status(404).type("text/plain").end("Not found");
   });
 
-  app.get("/robots.txt", (req, res) => {
-    res
-      .status(200)
-      .type("text/plain; charset=utf-8")
-      .send(buildRobotsTxt(getRequestSiteUrl(req)));
-  });
-
-  app.get("/sitemap.xml", async (req, res) => {
-    try {
-      const sitemapXml = await buildSitemapXml(getRequestSiteUrl(req));
-      res.status(200).type("application/xml; charset=utf-8").send(sitemapXml);
-    } catch (error) {
-      process.stderr.write(`SITEMAP ERROR: ${String(error)}\n`);
-      res.status(500).type("text/plain; charset=utf-8").send("Failed to generate sitemap");
-    }
-  });
-
   app.get("/placement-overview", (_req, res) => {
     res.redirect(301, `${canonicalOrigin}/placements`);
   });
