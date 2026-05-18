@@ -105,7 +105,7 @@ const BlogDetailsPage: React.FC = () => {
       setSourceId(436);
       setTimeout(() => {
         setOpen(true);
-      }, 15000);
+      }, 8000);
     }
   }, []);
   return (
