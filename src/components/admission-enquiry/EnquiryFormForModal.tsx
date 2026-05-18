@@ -126,10 +126,10 @@ const EnquiryFormForModal: React.FC<EnquiryFormProps> = ({
   return (
     <section className="">
       <div className={`${Classes["container"]}`}>
-        <div className="relative mx-auto w-full max-w-[560px] rounded-[10px] bg-[#ece7df] p-3 md:p-4">
+        <div className="relative mx-auto w-full max-w-[560px] rounded-[10px] bg-[#f5f2ee] p-3 md:p-4">
 
           {/* Heading */}
-          <div className="mb-3 rounded-[15px] bg-gradient-to-r from-[#3f1a00] to-[#6a3200] px-3 py-2 text-white">
+          <div className="mb-3 mt-5 rounded-[15px] bg-[#14284e] px-3 py-2 text-white">
             <h2 className="text-[20px] font-light leading-[28px]">
               Admissions Open For
             </h2>
@@ -360,9 +360,7 @@ const EnquiryFormForModal: React.FC<EnquiryFormProps> = ({
                 />
 
                 <label className="text-[14px] text-[#333]">
-                  I authorize SRM Group representatives to
-                  Call, SMS, Email or Whatsapp me about the
-                  programs offered.
+                 I authorise SRMU and its representatives to Call, SMS, Email or WhatsApp me about its programmes and offers. This consent overrides any registration for DNC / NDNC
                 </label>
               </div>
 

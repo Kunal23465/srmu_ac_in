@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { RootState, store } from "../../store";
 import { useNavigate } from "react-router-dom";
 import { resetResponseofEnquiry, submissionForEnquiry } from "../../store/submission/enquiry-submission-slice";
-import toast from "react-hot-toast";
+import { RxCross2 } from "react-icons/rx";
 
 interface CustomFormModalProps {
   isOpen: boolean;
@@ -86,9 +86,9 @@ const CustomFormModal: React.FC<CustomFormModalProps> = ({
           {/* Close Button */}
           <button
             onClick={onClose}
-            className="flex absolute z-9999 top-0 right-3 h-8 w-8 items-center justify-center rounded-full  text-xl transition bg-red-500 cursor-pointer text-white"
+            className="flex absolute z-9999 top-1 right-5 cursor-pointer   transitioncursor-pointer text-gray-800"
           >
-            ×
+           <RxCross2 size={26} />
           </button>
        
 
