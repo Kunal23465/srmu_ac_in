@@ -6,20 +6,20 @@ import depSlide2 from "../../../../assets/images/academics/departments/depSlide2
 import depSlide3 from "../../../../assets/images/academics/departments/depSlide3.webp";
 import depSlide4 from "../../../../assets/images/academics/departments/depSlide4.webp";
 import depSlide5 from "../../../../assets/images/academics/departments/depSlide5.webp";
-import abhishek from "../../../../assets/images/academics/departments/abhishek-saxena-1.webp"
-import cef1 from "../../../../assets/images/academics/institutes/civil-enginner/faculty/cef1.png"
-import cef2 from "../../../../assets/images/academics/institutes/civil-enginner/faculty/cef2.jpg"
-import cef3 from "../../../../assets/images/academics/institutes/civil-enginner/faculty/cef3.jpg"
-import cef4 from "../../../../assets/images/academics/institutes/civil-enginner/faculty/cef4.jpg"
-import cef5 from "../../../../assets/images/academics/institutes/civil-enginner/faculty/cef5.jpg"
-import cef6 from "../../../../assets/images/academics/institutes/civil-enginner/faculty/cef6.jpg"
-import cef7 from "../../../../assets/images/academics/institutes/civil-enginner/faculty/cef7.jpg"
-import cef8 from "../../../../assets/images/academics/institutes/civil-enginner/faculty/cef8.jpg"
-import cef9 from "../../../../assets/images/academics/institutes/civil-enginner/faculty/cef9.jpg"
-import cef10 from "../../../../assets/images/academics/institutes/civil-enginner/faculty/cef10.jpg"
-import cef11 from "../../../../assets/images/academics/institutes/civil-enginner/faculty/cef11.jpg"
-import cef12 from "../../../../assets/images/academics/institutes/civil-enginner/faculty/cef12.jpg"
-import cef13 from "../../../../assets/images/academics/institutes/civil-enginner/faculty/cef13.jpg"
+import abhishek from "../../../../assets/images/academics/departments/abhishek-saxena-1.webp";
+import cef1 from "../../../../assets/images/academics/institutes/civil-enginner/faculty/cef1.png";
+import cef2 from "../../../../assets/images/academics/institutes/civil-enginner/faculty/cef2.jpg";
+import cef3 from "../../../../assets/images/academics/institutes/civil-enginner/faculty/cef3.jpg";
+import cef4 from "../../../../assets/images/academics/institutes/civil-enginner/faculty/cef4.jpg";
+import cef5 from "../../../../assets/images/academics/institutes/civil-enginner/faculty/cef5.jpg";
+import cef6 from "../../../../assets/images/academics/institutes/civil-enginner/faculty/cef6.jpg";
+import cef7 from "../../../../assets/images/academics/institutes/civil-enginner/faculty/cef7.jpg";
+import cef8 from "../../../../assets/images/academics/institutes/civil-enginner/faculty/cef8.jpg";
+import cef9 from "../../../../assets/images/academics/institutes/civil-enginner/faculty/cef9.jpg";
+import cef10 from "../../../../assets/images/academics/institutes/civil-enginner/faculty/cef10.jpg";
+import cef11 from "../../../../assets/images/academics/institutes/civil-enginner/faculty/cef11.jpg";
+import cef12 from "../../../../assets/images/academics/institutes/civil-enginner/faculty/cef12.jpg";
+import cef13 from "../../../../assets/images/academics/institutes/civil-enginner/faculty/cef13.jpg";
 // import professor from "../../../../assets/images/academics/departments/abhishek-saxena-1.webp";
 import { customeOverViewType } from "../../../../types/home-data-type";
 import { counterDataType } from "../../../about/leadership-and-governance/leadership-and-governance-data";
@@ -62,30 +62,29 @@ export const counterDataForFacultyCivil: counterDataType[] = [
   { id: 2, value: "19", suffix: "", label: "Faculty & Staff" },
   { id: 3, value: "353", suffix: "", label: "Students" },
 ];
-export const civilcounterData2: counterDataType[] = 
-  [
-    {
-      id: 1,
-      icon: "",
-      value: "200",
-      suffix: "",
-      label: "Guest lectures",
-    },
-    {
-      id: 2,
-      icon: "",
-      value: "150",
-      suffix: "",
-      label: "Field Visits",
-    },
-    {
-      id: 3,
-      icon: "",
-      value: "25",
-      suffix: "",
-      label: "Conference & Seminars",
-    },
-  ];
+export const civilcounterData2: counterDataType[] = [
+  {
+    id: 1,
+    icon: "",
+    value: "200",
+    suffix: "",
+    label: "Guest lectures",
+  },
+  {
+    id: 2,
+    icon: "",
+    value: "150",
+    suffix: "",
+    label: "Field Visits",
+  },
+  {
+    id: 3,
+    icon: "",
+    value: "25",
+    suffix: "",
+    label: "Conference & Seminars",
+  },
+];
 export const CivildepartmentVMData = [
   {
     id: 1,
@@ -230,12 +229,13 @@ export const civilIndustryHonoursFeeTable: FeeTableData = {
 
   rows: [
     {
-      course: "B.Tech. in CE (Advanced Practices in Construction) with L&T",
+      course: "B.Tech. in Civil Engineering with L&T",
       duration: "4 Years",
       eligibility: "Click",
       fee: "Rs. 1,46,375/-",
+      link:"program/b-tech-civil-engineering",
       eligibilityContent: `
-        <h2 class='font-bold text-lg mb-3'>B.Tech. in CE (Advanced Practices in Construction) with L&T</h2>
+        <h2 class='font-bold text-lg mb-3'>B.Tech. in Civil Engineering with L&T</h2>
        <p> Candidate must have passed 10+2 or equivalent system from any recognized Central/ State Board with Physics and Mathematics as compulsory subjects along with one of the Chemistry/Computer Science/Technical Vocational Subject with minimum aggregate marks of 45%.</p>
       `,
     },
@@ -510,7 +510,6 @@ export const instituteProfilesCivil: InstituteProfile[] = [
       `,
   },
 ];
-
 
 export const civilPlacedStudents: Student[] = [
   { name: "Pankaj Gupta", program: "B.Tech. in Civil Engineering", company: "Shapoorji Pallonji" },

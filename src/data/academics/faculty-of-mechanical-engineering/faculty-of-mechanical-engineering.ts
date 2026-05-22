@@ -217,22 +217,24 @@ export const industryHonorsFeeDataOfME: FeeTableData = {
 
   rows: [
     {
-      course: "B.Tech. in ME (EV Engineering) with L&T",
+      course: "B.Tech. in Mechanical Engineering with L&T",
       duration: "4 Years",
       eligibility: "Click",
       fee: "Rs. 1,46,375/-",
+      link: "program/b-tech-me-ev-engineering",
       eligibilityContent: `
-            <h2 class='font-bold text-lg  flex justify-center  mb-3'>B.Tech. in ME (EV Engineering) with L&T</h2>
+            <h2 class='font-bold text-lg  flex justify-center  mb-3'>B.Tech. in Mechanical Engineering with L&T</h2>
             <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/ State Board with Physics and Mathematics as compulsory subjects along with one of the Chemistry/Computer Science/Technical Vocational Subject with minimum aggregate marks of 45%.</p>
         `,
     },
     {
-      course: "B.Tech. in ME (EV Engineering) (Lateral Entry) with L&T",
+      course: "B.Tech. in Mechanical Engineering (Lateral Entry) with L&T",
       duration: "3 Years",
       eligibility: "Click",
       fee: "Rs. 1,51,375/-",
+      link: "program/b-tech-me-ev-engineering-lateral-entry",
       eligibilityContent: `
-            <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Tech. in ME (EV Engineering) (Lateral Entry) with L&T</h2>
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Tech. in Mechanical Engineering (Lateral Entry) with L&T</h2>
             <p>Candidate must have passed 3 or 4 year Diploma in technical stream from institutions recognized by AICTE or a State Board of Technical Education or B.Sc. degree in Biology/ Microbiology/ Botony/ Zoology/ Chemistry/ Physics/ Maths/ Physiology/ Biotechnology/ Biochemistry/ Agriculture with minimum aggregate marks of 45% or 5.0 CGPA for GEN/OBC and 40% marks or 4.5 CGPA for SC/ST Category.</p>
         `,
     },
