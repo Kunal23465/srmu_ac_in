@@ -181,7 +181,6 @@ const ProgramFinder: React.FC = () => {
   if (error) {
     return <div>Error loading data</div>;
   }
-
   return (
     <>
       <SeoHead

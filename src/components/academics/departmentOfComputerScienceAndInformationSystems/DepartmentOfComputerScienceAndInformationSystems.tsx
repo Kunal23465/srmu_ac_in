@@ -41,8 +41,8 @@ const DepartmentOfComputerScienceAndInformationSystems: FC = () => {
                 />
             ),
         },
-         {
-            key: "2",
+        {
+            key: "3",
             label: "Undergraduate",
             content: (
                 <CustomDepartmentFeeDetailsTable
@@ -137,7 +137,7 @@ const DepartmentOfComputerScienceAndInformationSystems: FC = () => {
         </div>
       </section> */}
 
-         <section className="bg-[#edf0f9] py-14">
+            <section className="bg-[#edf0f9] py-14">
                 <div className={`${Classes["container"]} bg-[#edf0f9]`}>
                     <PlacedStudents placedStudents={CsisplacedStudents} counterData={counterDataFor2Csis} />
                 </div>
@@ -153,7 +153,7 @@ const DepartmentOfComputerScienceAndInformationSystems: FC = () => {
                 breakpoints={{ desktop: 3, tablet: 2, mobile: 1 }}
             />
 
-         
+
 
             <CustomDepartmentEventSlider
                 heading="Events of Department"

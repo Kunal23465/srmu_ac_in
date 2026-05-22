@@ -98,7 +98,7 @@ const BlogDetailsPage: React.FC = () => {
 
   const absoluteUrl = `https://srmu.ac.in${location.pathname}`;
   const imageUrl = data.imagePath ? toAbsoluteUrl(data.imagePath) : "";
-  console.log("data", data);
+
 
   useEffect(() => {
     if (data && data.blogId == 46) {

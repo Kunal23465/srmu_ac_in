@@ -131,31 +131,29 @@ export const counterDataFoFacultyOfMechanicalEngineering: counterDataType[] = [
   { id: 3, value: "287", suffix: "", label: "Students" },
 ];
 
-
-export const counterDataForPlacedStudentsOFMechanicalEngineering: counterDataType[] =  [
-    {
-      id: 1,
-      icon: "",
-      value: "200",
-      suffix: "",
-      label: "Guest lectures",
-    },
-    {
-      id: 2,
-      icon: "",
-      value: "100",
-      suffix: "",
-      label: "Field Visits",
-    },
-    {
-      id: 3,
-      icon: "",
-      value: "10",
-      suffix: "",
-      label: "Conference & Seminars",
-    },
-  ];
-
+export const counterDataForPlacedStudentsOFMechanicalEngineering: counterDataType[] = [
+  {
+    id: 1,
+    icon: "",
+    value: "200",
+    suffix: "",
+    label: "Guest lectures",
+  },
+  {
+    id: 2,
+    icon: "",
+    value: "100",
+    suffix: "",
+    label: "Field Visits",
+  },
+  {
+    id: 3,
+    icon: "",
+    value: "10",
+    suffix: "",
+    label: "Conference & Seminars",
+  },
+];
 
 export const facultyOfMechanicalEngineeringVMData = [
   {
@@ -249,7 +247,8 @@ export const integratedFeeDataOfME: FeeTableData = {
       course: "B.Tech. in ME + M.B.A.",
       duration: "5 Years",
       eligibility: "Click",
-      fee: "Rs. 1,32,000/-",
+      fee: "Rs. 1,52,000/-",
+      link: "program/b-tech-me-mba",
       eligibilityContent: `
             <h2 class='font-bold flex justify-center  text-lg mb-3'>B.Tech. in ME + M.B.A.</h2>
             <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/ State Board with Physics and Mathematics as compulsory subjectsalongwith one of the Chemistry/Computer Science/Technical Vocational Subject. Candidate must obtained minimum 45% marks or equivalent grade for GEN/OBC and 40% marks or equivalent grade for SC/ST Category in the above subjects taken together.</p>
@@ -259,7 +258,8 @@ export const integratedFeeDataOfME: FeeTableData = {
       course: "B.Tech. + M.Tech. in Mechanical Engineering",
       duration: "5 Years",
       eligibility: "Click",
-      fee: "Rs. 1,32,000/-",
+      fee: "Rs. 1,52,000/-",
+      link: "program/b-tech-m-tech-me",
       eligibilityContent: `
             <h2 class='font-bold  flex justify-center  text-lg mb-3'>B.Tech. + M.Tech. in Mechanical Engineering</h2>
             <p>Candidate must have passed 3 or 4 year Diploma in technical stream from institutions recognized by AICTE or a State Board of Technical Education or B.Sc. degree in Biology/ Microbiology/ Botony/ Zoology/ Chemistry/ Physics/ Maths/ Physiology/ Biotechnology/ Biochemistry/ Agriculture with minimum aggregate marks of 45% or 5.0 CGPA for GEN/OBC and 40% marks or 4.5 CGPA for SC/ST Category.</p>
@@ -277,6 +277,7 @@ export const postGraduateFeeDataOfME: FeeTableData = {
       duration: "2 Years",
       eligibility: "Click",
       fee: "Rs. 1,07,000/-",
+      link: "program/m-tech-production-industrial-engineering",
       eligibilityContent: `
             <h2 class='font-bold text-lg mb-3  flex justify-center '>M.Tech. in Production & Industrial Engineering</h2>
             <p>Candidate must have passed B. Tech from any recognised University or AICTE recognised Institute/College with minimum aggregate marks of 50% or 5.5 CGPA for GEN/OBC and 45% marks or 5.0 CGPA for SC/ST Category. Candidate will be offered admission in M. Tech. only in that stream of Engineering in which he has obtained B. Tech.</p>
@@ -287,6 +288,7 @@ export const postGraduateFeeDataOfME: FeeTableData = {
       duration: "3 Years",
       eligibility: "Click",
       fee: "Rs. 69,000/-",
+      link: "program/m-tech-production-industrial-engineering-part-time",
       eligibilityContent: `
             <h2 class='font-bold text-lg mb-3  flex justify-center '>M.Tech. in Production & Industrial Engineering (Part Time)</h2>
             <p>Candidate must have passed B. Tech from any recognised University or AICTE recognised Institute/College with minimum aggregate marks of 50% or 5.5 CGPA for GEN/OBC and 45% marks or 5.0 CGPA for SC/ST Category. Candidate will be offered admission in M. Tech. only in that stream of Engineering in which he has obtained B. Tech.</p>
@@ -300,27 +302,28 @@ export const underGraduateFeeDataOfME: FeeTableData = {
   columns: ["COURSES", "Duration", "Eligibility Criteria", "Course Fees (PA)"],
 
   rows: [
-    {
-      course: "B.Tech. in Mechanical Engineering",
-      duration: "4 Years",
-      eligibility: "Click",
-      fee: "Rs. 1,32,000/-",
-      eligibilityContent:
-        "\n            <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Tech. in Mechanical Engineering</h2>\n            <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/ State Board with Physics and Mathematics as compulsory subjects along with one of the Chemistry/Computer Science/Technical Vocational Subject with minimum aggregate marks of 45%.</p>\n            <section>&nbsp;</section>\n        ",
-    },
-    {
-      course: "B.Tech. in Mechanical Engineering (Lateral Entry)",
-      duration: "3 Years",
-      eligibility: "Click",
-      fee: "Rs. 1,37,000/-",
-      eligibilityContent:
-        "\n            <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Tech. in Mechanical Engineering (Lateral Entry)</h2>\n            <p>Candidate must have passed 3 or 4 year Diploma in technical stream from institutions recognized by AICTE or a State Board of Technical Education or B.Sc. degree in Biology/ Microbiology/ Botony/ Zoology/ Chemistry/ Physics/ Maths/ Physiology/ Biotechnology/ Biochemistry/ Agriculture with minimum aggregate marks of 45% or 5.0 CGPA for GEN/OBC and 40% marks or 4.5 CGPA for SC/ST Category.</p>\n            <section>&nbsp;</section>\n        ",
-    },
+    // {
+    //   course: "B.Tech. in Mechanical Engineering",
+    //   duration: "4 Years",
+    //   eligibility: "Click",
+    //   fee: "Rs. 1,32,000/-",
+    //   eligibilityContent:
+    //     "\n            <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Tech. in Mechanical Engineering</h2>\n            <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/ State Board with Physics and Mathematics as compulsory subjects along with one of the Chemistry/Computer Science/Technical Vocational Subject with minimum aggregate marks of 45%.</p>\n            <section>&nbsp;</section>\n        ",
+    // },
+    // {
+    //   course: "B.Tech. in Mechanical Engineering (Lateral Entry)",
+    //   duration: "3 Years",
+    //   eligibility: "Click",
+    //   fee: "Rs. 1,37,000/-",
+    //   eligibilityContent:
+    //     "\n            <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Tech. in Mechanical Engineering (Lateral Entry)</h2>\n            <p>Candidate must have passed 3 or 4 year Diploma in technical stream from institutions recognized by AICTE or a State Board of Technical Education or B.Sc. degree in Biology/ Microbiology/ Botony/ Zoology/ Chemistry/ Physics/ Maths/ Physiology/ Biotechnology/ Biochemistry/ Agriculture with minimum aggregate marks of 45% or 5.0 CGPA for GEN/OBC and 40% marks or 4.5 CGPA for SC/ST Category.</p>\n            <section>&nbsp;</section>\n        ",
+    // },
     {
       course: "B.Tech. in ME + M.B.A.",
       duration: "5 Years",
       eligibility: "Click",
-      fee: "Rs. 1,32,000/-",
+      fee: "Rs. 1,52,000/-",
+      link: "program/b-tech-me-mba",
       eligibilityContent:
         "\n            <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Tech. in ME + M.B.A.</h2>\n            <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/ State Board with Physics and Mathematics as compulsory subjectsalongwith one of the Chemistry/Computer Science/Technical Vocational Subject. Candidate must obtained minimum 45% marks or equivalent grade for GEN/OBC and 40% marks or equivalent grade for SC/ST Category in the above subjects taken together.</p>\n        ",
     },
@@ -328,30 +331,31 @@ export const underGraduateFeeDataOfME: FeeTableData = {
       course: "B.Tech. + M.Tech. in Mechanical Engineering",
       duration: "5 Years",
       eligibility: "Click",
-      fee: "Rs. 1,32,000/-",
+      fee: "Rs. 1,52,000/-",
+      link: "program/b-tech-m-tech-me",
       eligibilityContent:
         "\n            <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Tech. + M.Tech. in Mechanical Engineering</h2>\n            <p>Candidate must have passed 3 or 4 year Diploma in technical stream from institutions recognized by AICTE or a State Board of Technical Education or B.Sc. degree in Biology/ Microbiology/ Botony/ Zoology/ Chemistry/ Physics/ Maths/ Physiology/ Biotechnology/ Biochemistry/ Agriculture with minimum aggregate marks of 45% or 5.0 CGPA for GEN/OBC and 40% marks or 4.5 CGPA for SC/ST Category.</p>\n            <section>&nbsp;</section>\n        ",
     },
     {
-      course: "B.Tech. in ME (EV Engineering) with L&T",
+      course: "B.Tech. in Mechanical Engineering with L&T",
       duration: "4 Years",
       eligibility: "Click",
-      fee: "Rs. 1,46,375/-",
+      fee: "Rs. 1,52,000/-",
+      link: "program/b-tech-me-ev-engineering",
       eligibilityContent:
         "\n            <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Tech. in ME (EV Engineering) with L&T</h2>\n            <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/ State Board with Physics and Mathematics as compulsory subjects along with one of the Chemistry/Computer Science/Technical Vocational Subject with minimum aggregate marks of 45%.</p>\n            <section>&nbsp;</section>\n        ",
     },
     {
-      course: "B.Tech. in ME (EV Engineering) (Lateral Entry) with L&T",
+      course: "B.Tech. in Mechanical Engineering (Lateral Entry) with L&T",
       duration: "3 Years",
       eligibility: "Click",
-      fee: "Rs. 1,51,375/-",
+      fee: "Rs. 1,52,000/-",
+      link:"program/b-tech-me-ev-engineering-lateral-entry",
       eligibilityContent:
         "\n            <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Tech. in ME (EV Engineering) (Lateral Entry) with L&T</h2>\n            <p>Candidate must have passed 3 or 4 year Diploma in technical stream from institutions recognized by AICTE or a State Board of Technical Education or B.Sc. degree in Biology/ Microbiology/ Botony/ Zoology/ Chemistry/ Physics/ Maths/ Physiology/ Biotechnology/ Biochemistry/ Agriculture with minimum aggregate marks of 45% or 5.0 CGPA for GEN/OBC and 40% marks or 4.5 CGPA for SC/ST Category.</p>\n            <section>&nbsp;</section>\n        ",
     },
   ],
 };
-
-
 
 export const mechanicalDepartmentHighlightsData: departmentHighlightscardType[] = [
   {
@@ -437,7 +441,7 @@ export const mechanicalDepartmentEventsData: EventItem[] = [
     topic: "Central AC Plant",
     venue: "Lulu Mall, Lucknow",
     date: "23rd May, 2023",
-    image:mv5,
+    image: mv5,
     cardBgColor: "#ffffff",
   },
   {
@@ -480,7 +484,7 @@ export const mechanicalDepartmentEventsData: EventItem[] = [
     title: "Workshop",
     topic: "3D Modeling of Mechanical Component using CATIA Software",
     date: "19th October, 2023",
-    image:mv10,
+    image: mv10,
     cardBgColor: "#ffffff",
   },
   {

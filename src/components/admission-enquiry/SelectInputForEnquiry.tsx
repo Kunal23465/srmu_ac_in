@@ -11,7 +11,6 @@ interface type {
 const SelectInputForEnquiry: React.FC<type> = ({ data, options, keyForName, keyForId, onChange }) => {
   const [field] = useField(data.name);
   let optContent: any = "";
- console.log(optContent, "optContent");
   if (!options) {
     optContent = <option>Loading--</option>;
   } else if (options.length === 0) {

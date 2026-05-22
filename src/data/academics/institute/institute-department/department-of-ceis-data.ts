@@ -12,87 +12,84 @@ import { EventItem } from "../../../../utils/custom/CustomEventListCard";
 import { toAbsoluteUrl } from "../../../../utils/seo";
 
 // import fimg1 from ""
-import cse_is1 from "../../../../assets/images/academics/institutes/cse-is/cse-is1.png"
-import cse_is2 from "../../../../assets/images/academics/institutes/cse-is/cse-is2.png"
-import cse_is3 from "../../../../assets/images/academics/institutes/cse-is/cse-is3.png"
-import cse_is4 from "../../../../assets/images/academics/institutes/cse-is/Anuradha Yadav.png"
-import cse_is5 from "../../../../assets/images/academics/institutes/cse-is/cse-is5.png"
-import cse_is6 from "../../../../assets/images/academics/institutes/cse-is/cse-is6.png"
-import cse_is7 from "../../../../assets/images/academics/institutes/cse-is/Sana Rabbani.png"
-import cse_is8 from "../../../../assets/images/academics/institutes/cse-is/cse-is8.png"
-import cse_is9 from "../../../../assets/images/academics/institutes/cse-is/cse-is9.png"
-import cse_is10 from "../../../../assets/images/academics/institutes/cse-is/cse-is10.png"
-import cse_is11 from "../../../../assets/images/academics/institutes/cse-is/cse-is11.png"
-import cse_is12 from "../../../../assets/images/academics/institutes/cse-is/cse-is12.png"
-import cse_is13 from "../../../../assets/images/academics/institutes/cse-is/cse-is13.png"
-import cse_is14 from "../../../../assets/images/academics/institutes/cse-is/Bineet Kumar Gupta.png"
-import cse_is15 from "../../../../assets/images/academics/institutes/cse-is/cse-is15.jpeg"
-import cse_is16 from "../../../../assets/images/academics/institutes/cse-is/cse-is16.jpg"
-import cse_is17 from "../../../../assets/images/academics/institutes/cse-is/cse-is17.jpeg"
-import cse_is18 from "../../../../assets/images/academics/institutes/cse-is/cse-is18.jpeg"
-import cse_is19 from "../../../../assets/images/academics/institutes/cse-is/cse-is19.jpeg"
-import cse_is20 from "../../../../assets/images/academics/institutes/cse-is/cse-is20.jpg"
-import cse_is21 from "../../../../assets/images/academics/institutes/cse-is/cse-is21.jpeg"
-import cse_is22 from "../../../../assets/images/academics/institutes/cse-is/cse-is22.jpg"
-import cse_is23 from "../../../../assets/images/academics/institutes/cse-is/cse-is23.jpg"
-import cse_is24 from "../../../../assets/images/academics/institutes/cse-is/cse-is24.jpeg"
-import cse_is25 from "../../../../assets/images/academics/institutes/cse-is/cse-is25.jpg"
-import cse_is26 from "../../../../assets/images/academics/institutes/cse-is/cse-is26.jpeg"
-import cse_is27 from "../../../../assets/images/academics/institutes/cse-is/Nirbhay Tiwari.png"
-import cse_is28 from "../../../../assets/images/academics/institutes/cse-is/cse-is28.jpeg"
-import cse_is29 from "../../../../assets/images/academics/institutes/cse-is/cse-is29.jpeg"
-import cse_is30 from "../../../../assets/images/academics/institutes/cse-is/Roopam Srivastava.png"
-import cse_is31 from "../../../../assets/images/academics/institutes/cse-is/Prem Kumar Yadav.png"
-import cse_is32 from "../../../../assets/images/academics/institutes/cse-is/Abhishek Saxena.png"
-import cse_is33 from "../../../../assets/images/academics/institutes/cse-is/Anjali Jaiswal.png"
-import cse_is34 from "../../../../assets/images/academics/institutes/cse-is/Ved Prakash.png"
-import cse_is35 from "../../../../assets/images/academics/institutes/cse-is/Kishan Pandey.png"
-import cse_is36 from "../../../../assets/images/academics/institutes/cse-is/Divyanka Srivastava.png"
-import cse_is37 from "../../../../assets/images/academics/institutes/cse-is/Amit Yadav.png"
-import cse_is38 from "../../../../assets/images/academics/institutes/cse-is/Akash Chaudhary.png"
-
-
-
+import cse_is1 from "../../../../assets/images/academics/institutes/cse-is/cse-is1.png";
+import cse_is2 from "../../../../assets/images/academics/institutes/cse-is/cse-is2.png";
+import cse_is3 from "../../../../assets/images/academics/institutes/cse-is/cse-is3.png";
+import cse_is4 from "../../../../assets/images/academics/institutes/cse-is/Anuradha Yadav.png";
+import cse_is5 from "../../../../assets/images/academics/institutes/cse-is/cse-is5.png";
+import cse_is6 from "../../../../assets/images/academics/institutes/cse-is/cse-is6.png";
+import cse_is7 from "../../../../assets/images/academics/institutes/cse-is/Sana Rabbani.png";
+import cse_is8 from "../../../../assets/images/academics/institutes/cse-is/cse-is8.png";
+import cse_is9 from "../../../../assets/images/academics/institutes/cse-is/cse-is9.png";
+import cse_is10 from "../../../../assets/images/academics/institutes/cse-is/cse-is10.png";
+import cse_is11 from "../../../../assets/images/academics/institutes/cse-is/cse-is11.png";
+import cse_is12 from "../../../../assets/images/academics/institutes/cse-is/cse-is12.png";
+import cse_is13 from "../../../../assets/images/academics/institutes/cse-is/cse-is13.png";
+import cse_is14 from "../../../../assets/images/academics/institutes/cse-is/Bineet Kumar Gupta.png";
+import cse_is15 from "../../../../assets/images/academics/institutes/cse-is/cse-is15.jpeg";
+import cse_is16 from "../../../../assets/images/academics/institutes/cse-is/cse-is16.jpg";
+import cse_is17 from "../../../../assets/images/academics/institutes/cse-is/cse-is17.jpeg";
+import cse_is18 from "../../../../assets/images/academics/institutes/cse-is/cse-is18.jpeg";
+import cse_is19 from "../../../../assets/images/academics/institutes/cse-is/cse-is19.jpeg";
+import cse_is20 from "../../../../assets/images/academics/institutes/cse-is/cse-is20.jpg";
+import cse_is21 from "../../../../assets/images/academics/institutes/cse-is/cse-is21.jpeg";
+import cse_is22 from "../../../../assets/images/academics/institutes/cse-is/cse-is22.jpg";
+import cse_is23 from "../../../../assets/images/academics/institutes/cse-is/cse-is23.jpg";
+import cse_is24 from "../../../../assets/images/academics/institutes/cse-is/cse-is24.jpeg";
+import cse_is25 from "../../../../assets/images/academics/institutes/cse-is/cse-is25.jpg";
+import cse_is26 from "../../../../assets/images/academics/institutes/cse-is/cse-is26.jpeg";
+import cse_is27 from "../../../../assets/images/academics/institutes/cse-is/Nirbhay Tiwari.png";
+import cse_is28 from "../../../../assets/images/academics/institutes/cse-is/cse-is28.jpeg";
+import cse_is29 from "../../../../assets/images/academics/institutes/cse-is/cse-is29.jpeg";
+import cse_is30 from "../../../../assets/images/academics/institutes/cse-is/Roopam Srivastava.png";
+import cse_is31 from "../../../../assets/images/academics/institutes/cse-is/Prem Kumar Yadav.png";
+import cse_is32 from "../../../../assets/images/academics/institutes/cse-is/Abhishek Saxena.png";
+import cse_is33 from "../../../../assets/images/academics/institutes/cse-is/Anjali Jaiswal.png";
+import cse_is34 from "../../../../assets/images/academics/institutes/cse-is/Ved Prakash.png";
+import cse_is35 from "../../../../assets/images/academics/institutes/cse-is/Kishan Pandey.png";
+import cse_is36 from "../../../../assets/images/academics/institutes/cse-is/Divyanka Srivastava.png";
+import cse_is37 from "../../../../assets/images/academics/institutes/cse-is/Amit Yadav.png";
+import cse_is38 from "../../../../assets/images/academics/institutes/cse-is/Akash Chaudhary.png";
 
 //Heighlights
-import csehi1 from "../../../../assets/images/academics/institutes/cse-is/heighlights/csehi1.jpg"
-import csehi2 from "../../../../assets/images/academics/institutes/cse-is/heighlights/csehi2.jpg"
-import csehi3 from "../../../../assets/images/academics/institutes/cse-is/heighlights/csehi3.jpg"
-import csehi4 from "../../../../assets/images/academics/institutes/cse-is/heighlights/csehi4.jpg"
-import csehi5 from "../../../../assets/images/academics/institutes/cse-is/heighlights/csehi5.jpg"
-import csehi6 from "../../../../assets/images/academics/institutes/cse-is/heighlights/csehi6.jpg"
-import csehi7 from "../../../../assets/images/academics/institutes/cse-is/heighlights/csehi7.jpg"
+import csehi1 from "../../../../assets/images/academics/institutes/cse-is/heighlights/csehi1.jpg";
+import csehi2 from "../../../../assets/images/academics/institutes/cse-is/heighlights/csehi2.jpg";
+import csehi3 from "../../../../assets/images/academics/institutes/cse-is/heighlights/csehi3.jpg";
+import csehi4 from "../../../../assets/images/academics/institutes/cse-is/heighlights/csehi4.jpg";
+import csehi5 from "../../../../assets/images/academics/institutes/cse-is/heighlights/csehi5.jpg";
+import csehi6 from "../../../../assets/images/academics/institutes/cse-is/heighlights/csehi6.jpg";
+import csehi7 from "../../../../assets/images/academics/institutes/cse-is/heighlights/csehi7.jpg";
 // events
-import cseev1 from "../../../../assets/images/academics/institutes/cse-is/events/cseev1.jpg"
-import cseev2 from "../../../../assets/images/academics/institutes/cse-is/events/cseev2.jpg"
-import cseev3 from "../../../../assets/images/academics/institutes/cse-is/events/cseev3.jpg"
-import cseev4 from "../../../../assets/images/academics/institutes/cse-is/events/cseev4.jpg"
-import cseev5 from "../../../../assets/images/academics/institutes/cse-is/events/cseev5.jpg"
-import cseev6 from "../../../../assets/images/academics/institutes/cse-is/events/cseev6.jpg"
-import cseev7 from "../../../../assets/images/academics/institutes/cse-is/events/cseev7.jpg"
-import cseev8 from "../../../../assets/images/academics/institutes/cse-is/events/cseev8.jpg"
-import cseev9 from "../../../../assets/images/academics/institutes/cse-is/events/cseev9.jpg"
-import cseev10 from "../../../../assets/images/academics/institutes/cse-is/events/cseev10.jpg"
-import cseev11 from "../../../../assets/images/academics/institutes/cse-is/events/cseev11.png"
-import cseev12 from "../../../../assets/images/academics/institutes/cse-is/events/cseev12.jpg"
-import cseev13 from "../../../../assets/images/academics/institutes/cse-is/events/cseev13.jpg"
-import cseev14 from "../../../../assets/images/academics/institutes/cse-is/events/cseev14.jpg"
-import cseev15 from "../../../../assets/images/academics/institutes/cse-is/events/cseev15.jpg"
-import cseev16 from "../../../../assets/images/academics/institutes/cse-is/events/cseev16.jpg"
-import cseev17 from "../../../../assets/images/academics/institutes/cse-is/events/cseev17.jpg"
-import cseev18 from "../../../../assets/images/academics/institutes/cse-is/events/cseev18.jpg"
-import cseev19 from "../../../../assets/images/academics/institutes/cse-is/events/cseev19.jpg"
-import cseev20 from "../../../../assets/images/academics/institutes/cse-is/events/cseev20.jpg"
-import cseev21 from "../../../../assets/images/academics/institutes/cse-is/events/cseev21.jpg"
-import cseev22 from "../../../../assets/images/academics/institutes/cse-is/events/cseev22.jpg"
-import cseev23 from "../../../../assets/images/academics/institutes/cse-is/events/cseev23.jpg"
-import cseev24 from "../../../../assets/images/academics/institutes/cse-is/events/cseev24.jpg"
-import cseev25 from "../../../../assets/images/academics/institutes/cse-is/events/cseev25.jpg"
-import cseev26 from "../../../../assets/images/academics/institutes/cse-is/events/cseev26.jpg"
-import cseev27 from "../../../../assets/images/academics/institutes/cse-is/events/cseev27.jpg"
-import cseev28 from "../../../../assets/images/academics/institutes/cse-is/events/cseev28.jpg"
-import cseev29 from "../../../../assets/images/academics/institutes/cse-is/events/cseev29.jpg"
-import cseev30 from "../../../../assets/images/academics/institutes/cse-is/events/cseev30.jpg"
+import cseev1 from "../../../../assets/images/academics/institutes/cse-is/events/cseev1.jpg";
+import cseev2 from "../../../../assets/images/academics/institutes/cse-is/events/cseev2.jpg";
+import cseev3 from "../../../../assets/images/academics/institutes/cse-is/events/cseev3.jpg";
+import cseev4 from "../../../../assets/images/academics/institutes/cse-is/events/cseev4.jpg";
+import cseev5 from "../../../../assets/images/academics/institutes/cse-is/events/cseev5.jpg";
+import cseev6 from "../../../../assets/images/academics/institutes/cse-is/events/cseev6.jpg";
+import cseev7 from "../../../../assets/images/academics/institutes/cse-is/events/cseev7.jpg";
+import cseev8 from "../../../../assets/images/academics/institutes/cse-is/events/cseev8.jpg";
+import cseev9 from "../../../../assets/images/academics/institutes/cse-is/events/cseev9.jpg";
+import cseev10 from "../../../../assets/images/academics/institutes/cse-is/events/cseev10.jpg";
+import cseev11 from "../../../../assets/images/academics/institutes/cse-is/events/cseev11.png";
+import cseev12 from "../../../../assets/images/academics/institutes/cse-is/events/cseev12.jpg";
+import cseev13 from "../../../../assets/images/academics/institutes/cse-is/events/cseev13.jpg";
+import cseev14 from "../../../../assets/images/academics/institutes/cse-is/events/cseev14.jpg";
+import cseev15 from "../../../../assets/images/academics/institutes/cse-is/events/cseev15.jpg";
+import cseev16 from "../../../../assets/images/academics/institutes/cse-is/events/cseev16.jpg";
+import cseev17 from "../../../../assets/images/academics/institutes/cse-is/events/cseev17.jpg";
+import cseev18 from "../../../../assets/images/academics/institutes/cse-is/events/cseev18.jpg";
+import cseev19 from "../../../../assets/images/academics/institutes/cse-is/events/cseev19.jpg";
+import cseev20 from "../../../../assets/images/academics/institutes/cse-is/events/cseev20.jpg";
+import cseev21 from "../../../../assets/images/academics/institutes/cse-is/events/cseev21.jpg";
+import cseev22 from "../../../../assets/images/academics/institutes/cse-is/events/cseev22.jpg";
+import cseev23 from "../../../../assets/images/academics/institutes/cse-is/events/cseev23.jpg";
+import cseev24 from "../../../../assets/images/academics/institutes/cse-is/events/cseev24.jpg";
+import cseev25 from "../../../../assets/images/academics/institutes/cse-is/events/cseev25.jpg";
+import cseev26 from "../../../../assets/images/academics/institutes/cse-is/events/cseev26.jpg";
+import cseev27 from "../../../../assets/images/academics/institutes/cse-is/events/cseev27.jpg";
+import cseev28 from "../../../../assets/images/academics/institutes/cse-is/events/cseev28.jpg";
+import cseev29 from "../../../../assets/images/academics/institutes/cse-is/events/cseev29.jpg";
+import cseev30 from "../../../../assets/images/academics/institutes/cse-is/events/cseev30.jpg";
 
 export interface Headers {
   name: string;
@@ -145,8 +142,6 @@ export const CSISDepartmentVMData = [
   },
 ];
 
-
-
 export const instituteProfilesCSIS: InstituteProfile[] = [
   {
     id: 1,
@@ -179,41 +174,36 @@ export const instituteProfilesCSIS: InstituteProfile[] = [
   },
 ];
 
-
-
-
-export const counterDataFor2Csis: counterDataType[] = 
-  [
-    {
-      id: 1,
-      icon: "",
-      value: "150",
-      suffix: "",
-      label: "Guest lectures",
-    },
-    {
-      id: 2,
-      icon: "",
-      value: "50",
-      suffix: "",
-      label: "Field Visits",
-    },
-     {
-      id: 3,
-      icon: "",
-      value: "06",
-      suffix: "",
-      label: "Conference",
-    },
-    {
-      id: 4,
-      icon: "",
-      value: "50",
-      suffix: "",
-      label: "Seminars",
-    },
-  ];
-
+export const counterDataFor2Csis: counterDataType[] = [
+  {
+    id: 1,
+    icon: "",
+    value: "150",
+    suffix: "",
+    label: "Guest lectures",
+  },
+  {
+    id: 2,
+    icon: "",
+    value: "50",
+    suffix: "",
+    label: "Field Visits",
+  },
+  {
+    id: 3,
+    icon: "",
+    value: "06",
+    suffix: "",
+    label: "Conference",
+  },
+  {
+    id: 4,
+    icon: "",
+    value: "50",
+    suffix: "",
+    label: "Seminars",
+  },
+];
 
 export const csisIndustryIntegratedFeeTable: FeeTableData = {
   columns: ["Courses", "Duration", "Eligibility Criteria", "Course Fees (PA)"],
@@ -224,7 +214,8 @@ export const csisIndustryIntegratedFeeTable: FeeTableData = {
       course: "B.C.A. (Data Science & Artificial Intelligence) with L&T",
       duration: "3 Years",
       eligibility: "Click",
-      fee: "Rs. 1,00,000/-",
+      fee: "Rs. 1,10,500/-",
+      link: "program/bca-data-science-artificial-intelligence",
       eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>B.C.A. (Data Science & Artificial Intelligence) with L&T</h2>
         <p>
@@ -240,7 +231,8 @@ export const csisIndustryIntegratedFeeTable: FeeTableData = {
       course: "B.C.A. (Cyber Security) with L&T",
       duration: "3 Years",
       eligibility: "Click",
-      fee: "Rs. 1,00,000/-",
+      fee: "Rs. 1,10,500/-",
+      link: "program/bca-cyber-security",
       eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>B.C.A. (Cyber Security) with L&T</h2>
         <p>
@@ -252,27 +244,23 @@ export const csisIndustryIntegratedFeeTable: FeeTableData = {
     },
 
     // 3) BCA (Artificial Intelligence & Machine Learning)
-    {
-      course: "BCA (Artificial Intelligence & Machine Learning)",
-      duration: "3 Years",
-      eligibility: "Click",
-      fee: "Rs. 1,00,000/-",
-      eligibilityContent: `
-        <h2 class='font-bold text-lg mb-3'>BCA (Artificial Intelligence & Machine Learning)</h2>
-        <p>
-          Candidate must have passed 10+2 or equivalent system from any recognized Board 
-          with minimum aggregate marks of <strong>45% for GEN/OBC</strong> and 
-          <strong>40% for SC/ST Category</strong>.
-        </p>
-      `,
-    },
+    // {
+    //   course: "BCA (Artificial Intelligence & Machine Learning)",
+    //   duration: "3 Years",
+    //   eligibility: "Click",
+    //   fee: "Rs. 1,10,500/-",
+    //   link:"program/bca-artificial-intelligence-machine-learning",
+    //   eligibilityContent: `
+    //     <h2 class='font-bold text-lg mb-3'>BCA (Artificial Intelligence & Machine Learning)</h2>
+    //     <p>
+    //       Candidate must have passed 10+2 or equivalent system from any recognized Board
+    //       with minimum aggregate marks of <strong>45% for GEN/OBC</strong> and
+    //       <strong>40% for SC/ST Category</strong>.
+    //     </p>
+    //   `,
+    // },
   ],
 };
-
-
-
-
-
 
 export const csispostgraduateFeeTable: FeeTableData = {
   columns: ["Courses", "Duration", "Eligibility Criteria", "Course Fees (PA)"],
@@ -283,6 +271,7 @@ export const csispostgraduateFeeTable: FeeTableData = {
       duration: "2 Years",
       eligibility: "Click",
       fee: "Rs. 1,09,000/-",
+      link: "program/mca",
       eligibilityContent: `
     <h2 class='font-bold text-lg mb-3'>M.C.A. (Master of Computer Application)</h2>
     <p>
@@ -307,6 +296,7 @@ export const csisugFeeTable: FeeTableData = {
       duration: "3 Years",
       eligibility: "Click",
       fee: "Rs. 68,000/-",
+      link: "program/b-sc-information-technology",
       eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>B.Sc. in Information Technology</h2>
         <p>
@@ -323,7 +313,8 @@ export const csisugFeeTable: FeeTableData = {
       course: "B.C.A. (Bachelor of Computer Applications)",
       duration: "3 Years",
       eligibility: "Click",
-      fee: "Rs. 82,000/-",
+      fee: "Rs. 85,000/-",
+      link: "program/bca-bachelor-of-computer-applications",
       eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>B.C.A. (Bachelor of Computer Applications)</h2>
         <p>
@@ -340,7 +331,8 @@ export const csisugFeeTable: FeeTableData = {
       course: "B.C.A. (Data Science & Artificial Intelligence) with L&T",
       duration: "3 Years",
       eligibility: "Click",
-      fee: "Rs. 1,00,000/-",
+      fee: "Rs. 1,10,500/-",
+      link: "program/bca-data-science-artificial-intelligence",
       eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>B.C.A. (Data Science & Artificial Intelligence) with L&T</h2>
         <p>
@@ -357,7 +349,8 @@ export const csisugFeeTable: FeeTableData = {
       course: "B.C.A. (Cyber Security) with L&T",
       duration: "3 Years",
       eligibility: "Click",
-      fee: "Rs. 1,00,000/-",
+      fee: "Rs. 1,10,500/-",
+      link: "program/bca-cyber-security",
       eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>B.C.A. (Cyber Security) with L&T</h2>
         <p>
@@ -374,7 +367,8 @@ export const csisugFeeTable: FeeTableData = {
       course: "B.C.A. (Artificial Intelligence & Machine Learning)",
       duration: "3 Years",
       eligibility: "Click",
-      fee: "Rs. 1,00,000/-",
+      fee: "Rs. 1,10,500/-",
+      link: "program/bca-artificial-intelligence-machine-learning",
       eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>B.C.A. (Artificial Intelligence & Machine Learning)</h2>
         <p>
@@ -389,13 +383,8 @@ export const csisugFeeTable: FeeTableData = {
   ],
 };
 
-
-
-
-
-
 export const CsisfacultyData: FacultyItem[] = [
- {
+  {
     id: 1,
     name: "Mr. Rohit Anand",
     designation: "Lecturer",
@@ -570,55 +559,55 @@ export const CsisfacultyData: FacultyItem[] = [
     image: cse_is29,
   },
   // new
-    {
+  {
     id: 30,
     name: "Dr. Roopam Srivastava",
     designation: "Assistant Professor",
     image: cse_is30,
   },
-    {
+  {
     id: 31,
     name: "Mr. Prem Kumar Yadav",
     designation: "Lecturer",
     image: cse_is31,
   },
-    {
+  {
     id: 32,
     name: "Mr. Abhishek Saxena",
     designation: "Lecturer",
     image: cse_is32,
   },
-   {
+  {
     id: 33,
     name: "Ms. Anjali Jaiswal",
     designation: "Lecturer",
     image: cse_is33,
   },
-   {
+  {
     id: 32,
     name: "Mr. Ved Prakash",
     designation: "Lecturer",
     image: cse_is34,
   },
-   {
+  {
     id: 34,
     name: "Mr. Kishan Pandey",
     designation: "Lecturer",
     image: cse_is35,
   },
-   {
+  {
     id: 35,
     name: "Ms. Divyanka Srivastava",
     designation: "Lecturer",
     image: cse_is36,
   },
-   {
+  {
     id: 36,
     name: "Mr. Amit Yadav",
     designation: "Lecturer",
     image: cse_is37,
   },
-   {
+  {
     id: 37,
     name: "Mr. Akash Chaudhary",
     designation: "Lecturer",
@@ -626,13 +615,11 @@ export const CsisfacultyData: FacultyItem[] = [
   },
 ];
 
-
-
- export const csistableHeaders: Headers = {
-   name: "NAME OF STUDENT",
-   program: "PROGRAM",
-   company: "COMPANY",
- };
+export const csistableHeaders: Headers = {
+  name: "NAME OF STUDENT",
+  program: "PROGRAM",
+  company: "COMPANY",
+};
 
 export const CsisplacedStudents: Student[] = [
   { name: "Jishnu Ukil", program: "B.A.(Hons.) in English", company: "Planet Spark" },
@@ -647,10 +634,6 @@ export const CsisplacedStudents: Student[] = [
   { name: "Shalini Pandey", program: "B.A.(Hons.) in English", company: "Gajraj Entertainment Pvt" },
 ];
 
-
-
-
-
 export const departmentHighlightsCsis: departmentHighlightscardType[] = [
   {
     image: csehi1,
@@ -661,8 +644,7 @@ export const departmentHighlightsCsis: departmentHighlightscardType[] = [
   {
     image: csehi2,
     title: "Project based experiential learning",
-    description:
-      "Numerous chances for practical learning are given to students, such as industrial partnerships, internships, and live projects of industry partners like IBM.",
+    description: "Numerous chances for practical learning are given to students, such as industrial partnerships, internships, and live projects of industry partners like IBM.",
   },
   {
     image: csehi3,
@@ -677,10 +659,9 @@ export const departmentHighlightsCsis: departmentHighlightscardType[] = [
       "Students are provided with access to the latest developments and technological advances in the sector with the help of the department's strong connections with top IT companies and industry professionals.",
   },
   {
-    image:csehi5,
+    image: csehi5,
     title: "Distinguished faculty from best institutes",
-    description:
-      "The University takes pride in recruiting distinguished faculty from best institutes who provide an intimate, interactive, personalized approach to learning.",
+    description: "The University takes pride in recruiting distinguished faculty from best institutes who provide an intimate, interactive, personalized approach to learning.",
   },
   {
     image: csehi6,
@@ -689,15 +670,12 @@ export const departmentHighlightsCsis: departmentHighlightscardType[] = [
       "The department has established partnerships with top research institutes and enterprises worldwide, giving students access to a global education and exposure to cutting-edge technologies.",
   },
   {
-    image:csehi7,
+    image: csehi7,
     title: "Open electives to enhance employability quotient",
     description:
       "Value-added courses are included in the curriculum and are intended to provide students the skills they need to succeed in life and enhance their employability quotient.",
   },
 ];
-
-
-
 
 export const csisDepartmentEventsData: EventItem[] = [
   {
@@ -733,7 +711,7 @@ export const csisDepartmentEventsData: EventItem[] = [
     topic: "Use of Business Analytics in Computing",
     speaker: "Shri Sandeep Shivhare, Registrar, BSIP Lucknow",
     date: "12th November, 2024",
-    image:cseev4,
+    image: cseev4,
     cardBgColor: "#ffffff",
   },
   {
@@ -758,7 +736,8 @@ export const csisDepartmentEventsData: EventItem[] = [
     id: 7,
     title: "Webinar",
     topic: "Let us Learn Research",
-    speaker: "Prof. Dr. Amar Pal Singh, VC Dr. RML National Law University Lucknow; Prof. Dr. Sanjay Singh, Director of Giri Institute of Development Studies Lucknow; Prof. Dr. Ajith Abraham, VC Bennett University-Greater Noida",
+    speaker:
+      "Prof. Dr. Amar Pal Singh, VC Dr. RML National Law University Lucknow; Prof. Dr. Sanjay Singh, Director of Giri Institute of Development Studies Lucknow; Prof. Dr. Ajith Abraham, VC Bennett University-Greater Noida",
     date: "04th October, 2024",
     image: cseev7,
     cardBgColor: "#ffffff",
@@ -848,7 +827,7 @@ export const csisDepartmentEventsData: EventItem[] = [
     topic: "Use of Business Analytics in Computing",
     speaker: "Mr. Manish Kumar Srivastava",
     date: "02nd January, 2023",
-    image:cseev17,
+    image: cseev17,
     cardBgColor: "#ffffff",
   },
   {
@@ -857,7 +836,7 @@ export const csisDepartmentEventsData: EventItem[] = [
     topic: "Progression to Higher Education",
     speaker: "Mr. Asad Siddiqui",
     date: "08th April, 2023",
-    image:cseev18,
+    image: cseev18,
     cardBgColor: "#ffffff",
   },
   {
@@ -866,7 +845,7 @@ export const csisDepartmentEventsData: EventItem[] = [
     topic: "Excelling the Capabilities for Placement",
     speaker: "Dr. Om Prakash",
     date: "27th October, 2023",
-    image:cseev19,
+    image: cseev19,
     cardBgColor: "#ffffff",
   },
   {
@@ -892,7 +871,7 @@ export const csisDepartmentEventsData: EventItem[] = [
     title: "Workshop",
     topic: "Interaction Programme by TCS iON",
     date: "20th–21st September, 2022",
-    image:cseev22,
+    image: cseev22,
     cardBgColor: "#ffffff",
   },
   {
@@ -900,7 +879,7 @@ export const csisDepartmentEventsData: EventItem[] = [
     title: "Workshop",
     topic: "Enhancing Research Capabilities",
     date: "24th September, 2022",
-    image:cseev23,
+    image: cseev23,
     cardBgColor: "#ffffff",
   },
   {
@@ -924,7 +903,7 @@ export const csisDepartmentEventsData: EventItem[] = [
     title: "Workshop",
     topic: "Cyber Bullying: A Case of Digital Threat",
     date: "17th February, 2023",
-    image:cseev26,
+    image: cseev26,
     cardBgColor: "#ffffff",
   },
   {
@@ -959,7 +938,7 @@ export const csisDepartmentEventsData: EventItem[] = [
     topic: "Emerging India: Emerging Society",
     speaker: "Mr. Anil Kumar Pal",
     date: "15th February, 2023",
-    image:cseev30,
+    image: cseev30,
     cardBgColor: "#ffffff",
   },
 ];

@@ -10,22 +10,22 @@ import { FeeTableData } from "../faculty-of-civil-engineering/faculty-of-civil-e
 import { FacultyItem } from "../../../../utils/custom/CustomFacultyListCard";
 
 // import fimg1 from ""
-import cse1 from "../../../../assets/images/academics/institutes/cse/cse1.jpeg"
-import cse2 from "../../../../assets/images/academics/institutes/cse/cse2.jpeg"
-import cse3 from "../../../../assets/images/academics/institutes/cse/cse3.jpeg"
-import cse4 from "../../../../assets/images/academics/institutes/cse/cse4.jpeg"
-import cse5 from "../../../../assets/images/academics/institutes/cse/cse5.jpeg"
-import cse6 from "../../../../assets/images/academics/institutes/cse/cse6.jpeg"
-import cse7 from "../../../../assets/images/academics/institutes/cse/cse7.jpeg"
-import cse8 from "../../../../assets/images/academics/institutes/cse/cse8.jpeg"
-import cse9 from "../../../../assets/images/academics/institutes/cse/cse9.jpeg"
-import cse10 from "../../../../assets/images/academics/institutes/cse/cse10.jpeg"
-import cse11 from "../../../../assets/images/academics/institutes/cse/cse11.jpeg"
-import cse12 from "../../../../assets/images/academics/institutes/cse/cse12.jpeg"
-import cse13 from "../../../../assets/images/academics/institutes/cse/cse13.jpeg"
-import cse14 from "../../../../assets/images/academics/institutes/cse/cse14.jpeg"
-import cse15 from "../../../../assets/images/academics/institutes/cse/cse15.jpeg"
-import cse16 from "../../../../assets/images/academics/institutes/cse/cse16.jpeg"
+import cse1 from "../../../../assets/images/academics/institutes/cse/cse1.jpeg";
+import cse2 from "../../../../assets/images/academics/institutes/cse/cse2.jpeg";
+import cse3 from "../../../../assets/images/academics/institutes/cse/cse3.jpeg";
+import cse4 from "../../../../assets/images/academics/institutes/cse/cse4.jpeg";
+import cse5 from "../../../../assets/images/academics/institutes/cse/cse5.jpeg";
+import cse6 from "../../../../assets/images/academics/institutes/cse/cse6.jpeg";
+import cse7 from "../../../../assets/images/academics/institutes/cse/cse7.jpeg";
+import cse8 from "../../../../assets/images/academics/institutes/cse/cse8.jpeg";
+import cse9 from "../../../../assets/images/academics/institutes/cse/cse9.jpeg";
+import cse10 from "../../../../assets/images/academics/institutes/cse/cse10.jpeg";
+import cse11 from "../../../../assets/images/academics/institutes/cse/cse11.jpeg";
+import cse12 from "../../../../assets/images/academics/institutes/cse/cse12.jpeg";
+import cse13 from "../../../../assets/images/academics/institutes/cse/cse13.jpeg";
+import cse14 from "../../../../assets/images/academics/institutes/cse/cse14.jpeg";
+import cse15 from "../../../../assets/images/academics/institutes/cse/cse15.jpeg";
+import cse16 from "../../../../assets/images/academics/institutes/cse/cse16.jpeg";
 export interface Headers {
   name: string;
   program: string;
@@ -37,8 +37,6 @@ export interface Student {
   program: string;
   company: string;
 }
-
-
 
 export const cseFacultyOverviewData: customeOverViewType = {
   heading: "Department Of Computer Science And Engineering",
@@ -120,7 +118,8 @@ export const cseIndustryIntegratedFeeTable: FeeTableData = {
       course: "B.Tech. in CSE (Cyber Security) with L&T",
       duration: "4 Years",
       eligibility: "Click",
-      fee: "Rs. 1,55,000/-",
+      fee: "Rs. 1,70,000/-",
+      link: "program/b-tech-cse-cyber-security",
       eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>B.Tech. in CSE (Cyber Security) with L&T</h2>
         <p>
@@ -138,7 +137,8 @@ export const cseIndustryIntegratedFeeTable: FeeTableData = {
       course: "B.Tech. in CSE (Data Science & Artificial Intelligence) with L&T",
       duration: "4 Years",
       eligibility: "Click",
-      fee: "Rs. 1,55,000/-",
+      fee: "Rs. 1,70,000/-",
+      link: "program/b-tech-cse-data-science-artificial-intelligence",
       eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>B.Tech. in CSE (Data Science & Artificial Intelligence) with L&T</h2>
         <p>
@@ -157,6 +157,7 @@ export const cseIndustryIntegratedFeeTable: FeeTableData = {
       duration: "2 Years",
       eligibility: "Click",
       fee: "Rs. 1,07,000/-",
+      link: "program/m-tech-data-science",
       eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>M.Tech. in Data Science</h2>
         <p>
@@ -180,7 +181,8 @@ export const cseIndustryIntegratedFeeTable: FeeTableData = {
       course: "B.Tech. in CSE (Artificial Intelligence & Machine Learning)",
       duration: "4 Years",
       eligibility: "Click",
-      fee: "Rs. 1,50,000/-",
+      fee: "Rs. 1,70,000/-",
+      link: "program/b-tech-cse-artificial-intelligence-machine-learning",
       eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>B.Tech. in CSE (Artificial Intelligence & Machine Learning)</h2>
         <p>
@@ -204,7 +206,8 @@ export const cseIntegratedFeeTable: FeeTableData = {
       course: "B.Tech. in CSE + M.B.A.",
       duration: "5 Years",
       eligibility: "Click",
-      fee: "Rs. 1,47,000/-",
+      fee: "Rs. 1,52,000/-",
+      link: "program/b-tech-cse-mba",
       eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>B.Tech. in CSE + M.B.A.</h2>
         <p>
@@ -222,7 +225,8 @@ export const cseIntegratedFeeTable: FeeTableData = {
       course: "B.Tech. + M.Tech. in Computer Science Engineering",
       duration: "5 Years",
       eligibility: "Click",
-      fee: "Rs. 1,47,000/-",
+      fee: "Rs. 1,52,000/-",
+      link: "program/b-tech-m-tech-cse",
       eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>B.Tech. + M.Tech. in Computer Science Engineering</h2>
         <p>
@@ -247,6 +251,7 @@ export const csePostUndergraduateFeeTable: FeeTableData = {
       duration: "2 Years",
       eligibility: "Click",
       fee: "Rs. 1,07,000/-",
+      link: "program/m-tech-data-science",
       eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>M.Tech. in Data Science</h2>
         <p>
@@ -271,6 +276,7 @@ export const csePostUndergraduateFeeTable: FeeTableData = {
       duration: "2 Years",
       eligibility: "Click",
       fee: "Rs. 1,07,000/-",
+      link: "program/m-tech-artificial-intelligence-machine-learning",
       eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>M.Tech. in Artificial Intelligence & Machine Learning</h2>
         <p>
@@ -295,6 +301,7 @@ export const csePostUndergraduateFeeTable: FeeTableData = {
       duration: "2 Years",
       eligibility: "Click",
       fee: "Rs. 1,07,000/-",
+      link: "program/m-tech-computer-science-engineering",
       eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>M.Tech. in Computer Science Engineering</h2>
         <p>
@@ -318,6 +325,7 @@ export const csePostUndergraduateFeeTable: FeeTableData = {
       duration: "3 Years",
       eligibility: "Click",
       fee: "Rs. 69,000/-",
+      link: "program/m-tech-computer-science-engineering-part-time",
       eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>M.Tech. in Computer Science Engineering (Part Time)</h2>
         <p>
@@ -346,7 +354,8 @@ export const cseundergraduateFeeTable: FeeTableData = {
       course: "B.Tech. in CSE + M.B.A.",
       duration: "5 Years",
       eligibility: "Click",
-      fee: "Rs. 1,47,000/-",
+      fee: "Rs. 1,52,000/-",
+      link: "program/b-tech-cse-mba",
       eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>B.Tech. in CSE + M.B.A.</h2>
         <p>
@@ -366,7 +375,8 @@ export const cseundergraduateFeeTable: FeeTableData = {
       course: "B.Tech. in CSE (Cyber Security) with L&T",
       duration: "4 Years",
       eligibility: "Click",
-      fee: "Rs. 1,55,000/-",
+      fee: "Rs. 1,70,000/-",
+      link: "program/b-tech-cse-cyber-security",
       eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>B.Tech. in CSE (Cyber Security) with L&T</h2>
         <p>
@@ -386,7 +396,8 @@ export const cseundergraduateFeeTable: FeeTableData = {
       course: "B.Tech. in CSE (Data Science & Artificial Intelligence) with L&T",
       duration: "4 Years",
       eligibility: "Click",
-      fee: "Rs. 1,55,000/-",
+      fee: "Rs. 1,70,000/-",
+      link: "program/b-tech-cse-data-science-artificial-intelligence",
       eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>B.Tech. in CSE (Data Science & Artificial Intelligence) with L&T</h2>
         <p>
@@ -402,31 +413,33 @@ export const cseundergraduateFeeTable: FeeTableData = {
     },
 
     // 4) B.Tech. + M.Tech. in Computer Science Engineering
-    {
-      course: "B.Tech. + M.Tech. in Computer Science Engineering",
-      duration: "5 Years",
-      eligibility: "Click",
-      fee: "Rs. 1,47,000/-",
-      eligibilityContent: `
-        <h2 class='font-bold text-lg mb-3'>B.Tech. + M.Tech. in Computer Science Engineering</h2>
-        <p>
-          Candidate must have passed 10+2 or equivalent system from any recognized Central/State Board 
-          with Physics and Mathematics as compulsory subjects along with one of the Chemistry/
-          Computer Science/Technical Vocational Subject.
-        </p>
-        <p>
-          Candidate must have obtained minimum <strong>45% marks</strong> for GEN/OBC and 
-          <strong>40% marks</strong> for SC/ST Category in the above subjects taken together.
-        </p>
-      `,
-    },
+    // {
+    //   course: "B.Tech. + M.Tech. in Computer Science Engineering",
+    //   duration: "5 Years",
+    //   eligibility: "Click",
+    //   fee: "Rs. 1,47,000/-",
+    //   link: "program/b-tech-m-tech-computer-science-engineering",
+    //   eligibilityContent: `
+    //     <h2 class='font-bold text-lg mb-3'>B.Tech. + M.Tech. in Computer Science Engineering</h2>
+    //     <p>
+    //       Candidate must have passed 10+2 or equivalent system from any recognized Central/State Board
+    //       with Physics and Mathematics as compulsory subjects along with one of the Chemistry/
+    //       Computer Science/Technical Vocational Subject.
+    //     </p>
+    //     <p>
+    //       Candidate must have obtained minimum <strong>45% marks</strong> for GEN/OBC and
+    //       <strong>40% marks</strong> for SC/ST Category in the above subjects taken together.
+    //     </p>
+    //   `,
+    // },
 
     // 5) B.Tech. in CSE (AI & ML)
     {
       course: "B.Tech. in CSE (Artificial Intelligence & Machine Learning)",
       duration: "4 Years",
       eligibility: "Click",
-      fee: "Rs. 1,50,000/-",
+      fee: "Rs. 1,70,000/-",
+      link: "program/b-tech-cse-artificial-intelligence-machine-learning",
       eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>B.Tech. in CSE (Artificial Intelligence & Machine Learning)</h2>
         <p>
@@ -441,32 +454,34 @@ export const cseundergraduateFeeTable: FeeTableData = {
       `,
     },
 
-    // 6) B.Tech. in Computer Science Engineering
-    {
-      course: "B.Tech. in Computer Science Engineering",
-      duration: "4 Years",
-      eligibility: "Click",
-      fee: "Rs. 1,47,000/-",
-      eligibilityContent: `
-        <h2 class='font-bold text-lg mb-3'>B.Tech. in Computer Science Engineering</h2>
-        <p>
-          Candidate must have passed 10+2 or equivalent from recognized Central/State Board 
-          with Physics and Mathematics as compulsory subjects along with one of the Chemistry/
-          Computer Science/Technical Vocational Subject.
-        </p>
-        <p>
-          Candidate must have obtained minimum <strong>45% marks</strong> for GEN/OBC and 
-          <strong>40% marks</strong> for SC/ST Category in the above subjects taken together.
-        </p>
-      `,
-    },
+    // // 6) B.Tech. in Computer Science Engineering
+    // {
+    //   course: "B.Tech. in Computer Science Engineering",
+    //   duration: "4 Years",
+    //   eligibility: "Click",
+    //   fee: "Rs. 1,55,000/-",
+    //   link: "pprogram/b-tech-computer-science-engineering-lateral-entry",
+    //   eligibilityContent: `
+    //     <h2 class='font-bold text-lg mb-3'>B.Tech. in Computer Science Engineering</h2>
+    //     <p>
+    //       Candidate must have passed 10+2 or equivalent from recognized Central/State Board
+    //       with Physics and Mathematics as compulsory subjects along with one of the Chemistry/
+    //       Computer Science/Technical Vocational Subject.
+    //     </p>
+    //     <p>
+    //       Candidate must have obtained minimum <strong>45% marks</strong> for GEN/OBC and
+    //       <strong>40% marks</strong> for SC/ST Category in the above subjects taken together.
+    //     </p>
+    //   `,
+    // },
 
     // 7) B.Tech. in Computer Science Engineering (Lateral Entry)
     {
       course: "B.Tech. in Computer Science Engineering (Lateral Entry)",
       duration: "3 Years",
       eligibility: "Click",
-      fee: "Rs. 1,52,000/-",
+      fee: "Rs. 1,55,000/-",
+      link: "pprogram/b-tech-computer-science-engineering-lateral-entry",
       eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>B.Tech. in Computer Science Engineering (Lateral Entry)</h2>
         <p>
@@ -484,35 +499,31 @@ export const cseundergraduateFeeTable: FeeTableData = {
   ],
 };
 
-
-export const counterDataForPlacedStudentsOFComputerScience: counterDataType[] =  [
-    {
-      id: 1,
-      icon: "",
-      value: "250",
-      suffix: "",
-      label: "Guest lectures",
-    },
-    {
-      id: 2,
-      icon: "",
-      value: "50",
-      suffix: "",
-      label: "Field Visits",
-    },
-    {
-      id: 3,
-      icon: "",
-      value: "20",
-      suffix: "",
-      label: "Conference & Seminars",
-    },
-  ];
-
-
+export const counterDataForPlacedStudentsOFComputerScience: counterDataType[] = [
+  {
+    id: 1,
+    icon: "",
+    value: "250",
+    suffix: "",
+    label: "Guest lectures",
+  },
+  {
+    id: 2,
+    icon: "",
+    value: "50",
+    suffix: "",
+    label: "Field Visits",
+  },
+  {
+    id: 3,
+    icon: "",
+    value: "20",
+    suffix: "",
+    label: "Conference & Seminars",
+  },
+];
 
 // faculty -cse
-
 
 export const CsefacultyData: FacultyItem[] = [
   {
@@ -613,12 +624,11 @@ export const CsefacultyData: FacultyItem[] = [
   },
 ];
 
-
- export const csetableHeaders: Headers = {
-   name: "NAME OF STUDENT",
-   program: "PROGRAM",
-   company: "COMPANY",
- };
+export const csetableHeaders: Headers = {
+  name: "NAME OF STUDENT",
+  program: "PROGRAM",
+  company: "COMPANY",
+};
 
 export const CseplacedStudents: Student[] = [
   { name: "Aman Mishra", program: "B.Tech. in Computer Science Engineering", company: "WIPRO" },
@@ -1025,7 +1035,7 @@ export const CseplacedStudents: Student[] = [
   { name: "Rohit Mishra", program: "B.Tech. in Computer Science Engineering", company: "SRDT" },
   { name: "Shashank Srivastava", program: "B.Tech. in Computer Science Engineering", company: "SRDT" },
 
-   { name: "Nikhil Sahu", program: "B.Tech. in Computer Science Engineering", company: "Orbit" },
+  { name: "Nikhil Sahu", program: "B.Tech. in Computer Science Engineering", company: "Orbit" },
   { name: "Rajmani Pandey", program: "B.Tech. in Computer Science Engineering", company: "Kaushal Enterprises" },
   { name: "Satyam Singh", program: "B.Tech. in Computer Science Engineering", company: "Kaushal Enterprises" },
   { name: "Divyam Verma", program: "B.Tech. in Computer Science Engineering", company: "Techqrt Pvt limited" },
@@ -1104,6 +1114,5 @@ export const CseplacedStudents: Student[] = [
   { name: "Aman Singh", program: "B.Tech. in Computer Science Engineering", company: "QSS Technosoft" },
 
   { name: "Alviya Zaheer", program: "B.Tech. in Computer Science Engineering", company: "Planet Spark" },
-  { name: "Shubhangi Gupta", program: "B.Tech. in Computer Science Engineering", company: "Hike Education" }
-
+  { name: "Shubhangi Gupta", program: "B.Tech. in Computer Science Engineering", company: "Hike Education" },
 ];

@@ -404,7 +404,7 @@ export const civilIndustryUndergraduateFeeTable: FeeTableData = {
     },
 
     {
-      course: "B.Tech. in Civil Engineering (Lateral Entry)",
+      course: "B.Tech. in Civil Engineering (Lateral Entry) with L&T",
       duration: "3 Years",
       eligibility: "Click",
       fee: "Rs. 1,52,000/-",
@@ -429,7 +429,7 @@ export const civilIndustryUndergraduateFeeTable: FeeTableData = {
       duration: "5 Years",
       eligibility: "Click",
       fee: "Rs. 1,52,000/-",
-      link:"program/b-tech-ce-mba",
+      link: "program/b-tech-ce-mba",
       eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>B.Tech. in CE + M.B.A.</h2>
         <p>
@@ -449,7 +449,7 @@ export const civilIndustryUndergraduateFeeTable: FeeTableData = {
       duration: "5 Years",
       eligibility: "Click",
       fee: "Rs. 1,52,000/-",
-      link:"program/b-tech-m-tech-ce",
+      link: "program/b-tech-m-tech-ce",
       eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>B.Tech. + M.Tech. in Civil Engineering</h2>
         <p>
@@ -469,7 +469,7 @@ export const civilIndustryUndergraduateFeeTable: FeeTableData = {
       duration: "4 Years",
       eligibility: "Click",
       fee: "Rs. 1,52,000/-",
-      link:"program/b-tech-civil-engineering",
+      link: "program/b-tech-civil-engineering",
       eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>B.Tech. in Civil Engineering with L&T</h2>
         <p>
