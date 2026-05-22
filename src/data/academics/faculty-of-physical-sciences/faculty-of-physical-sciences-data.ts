@@ -132,6 +132,7 @@ export const physicalSciencePostgraduateFeeTable: FeeTableData = {
       duration: "2 Years",
       eligibility: "Click",
       fee: "Rs. 47,000/-",
+      link:"program/m-sc-physics",
       eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>M.Sc. in Physics</h2>
         <p>
@@ -151,6 +152,7 @@ export const physicalScienceUndergraduateFeeTable: FeeTableData = {
       duration: "3 Years",
       eligibility: "Click",
       fee: "Rs. 42,000/-",
+      link:"program/b-sc-hons-physics",
       eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>B.Sc.(Hons.) in Physics</h2>
         <p>

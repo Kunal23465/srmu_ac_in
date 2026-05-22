@@ -153,6 +153,7 @@ export const InstituteofEducationandResearchData1: FeeTableData = {
       duration: "2 Years",
       eligibility: "Click",
       fee: "Rs. 37,000/-",
+      link: "program/m-a-education",
       eligibilityContent: `
             <h2 class='font-bold text-lg mb-3  flex justify-center '>M.A. in Education</h2>
             <p>Candidates must have passed Graduation in any stream from any recognised University or AICTE recognised Institute/ College with minimum aggregate marks of 45% or CGPA of 5.0 for Gen/ OBC category and 40% marks or CGPA of 4.5 for SC/ ST Category.</p>
@@ -168,6 +169,7 @@ export const InstituteofEducationandResearchData2: FeeTableData = {
       duration: "2 Years",
       eligibility: "Click",
      fee: "Rs. 62,000/-",
+     link:"program/bed-bachelor-of-education",
       eligibilityContent: `
             <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Ed. (Bachelor of Education)</h2>
             <p>Candidates must have passed Graduation in any stream from any recognised University or AICTE recognised Institute/ College with minimum aggregate marks of 45% or CGPA of 5.0 for Gen/ OBC category and 40% marks or CGPA of 4.5 for SC/ ST Category.</p>

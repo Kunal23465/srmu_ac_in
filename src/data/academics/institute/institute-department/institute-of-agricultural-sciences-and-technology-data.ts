@@ -162,6 +162,7 @@ export const InstituteofAgriculturalSciencesandTechnologyData1: FeeTableData = {
       duration: "2 Years",
       eligibility: "Click",
       fee: "Rs. 50,000/-",
+      link:"program/msc-horticulture-veg-sc",
       eligibilityContent: `
             <h2 class='font-bold text-lg mb-3  flex justify-center '>M.Sc. (Horticulture) in Vegetable Science</h2>
             <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/State Board in B.Sc.(Agriculture)/B.Sc.(Agriculture) (Hons.) or B.Sc.(Horticulture) with minimum aggregate marks of 50% or equivalent grade for GEN/OBC and 45% marks or equivalent grade for SC/ST Category.</p>
@@ -172,6 +173,7 @@ export const InstituteofAgriculturalSciencesandTechnologyData1: FeeTableData = {
       duration: "2 Years",
       eligibility: "Click",
       fee: "Rs. 50,000/-",
+      link:"program/msc-horticulture-fruit-science",
       eligibilityContent: `
             <h2 class='font-bold text-lg mb-3  flex justify-center '>M.Sc. (Horticulture) in Fruit Science</h2>
             <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/State Board in B.Sc.(Agriculture)/B.Sc.(Agriculture) (Hons.) or B.Sc.(Horticulture) with minimum aggregate marks of 50% or equivalent grade for GEN/OBC and 45% marks or equivalent grade for SC/ST Category.</p>
@@ -182,6 +184,7 @@ export const InstituteofAgriculturalSciencesandTechnologyData1: FeeTableData = {
       duration: "2 Years",
       eligibility: "Click",
       fee: "Rs. 50,000/-",
+      link: "program/mba-agribusiness-management",
       eligibilityContent: `
             <h2 class='font-bold text-lg mb-3  flex justify-center '>M.B.A. in Agribusiness Management</h2>
             <p>Candidate must have passed B.Tech.(Agri. Engg./Biotechnology/Food Tech)/B.Sc.Forestry/B.Sc.(Ag.)/B.Sc.(Horti.)Food Tech or Dairy Tech./B.Sc. Vet. Sci.&Animal Husbandry /B. Sc.Home Sci. from any recognized University or AICTE recognized Institute/College with minimum aggregate marks of 50% or 5.5 CGPA for GEN/OBC and 45% marks or 5.0 CGPA for SC/ST Category.</p>
@@ -192,6 +195,7 @@ export const InstituteofAgriculturalSciencesandTechnologyData1: FeeTableData = {
       duration: "2 Years",
       eligibility: "Click",
       fee: "Rs. 50,000/-",
+      link: "program/msc-agronomy",
       eligibilityContent: `
             <h2 class='font-bold text-lg mb-3  flex justify-center '>M.Sc. in Agronomy</h2>
             <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/State Board in B.Sc.(Agriculture)/B.Sc.(Agriculture) (Hons.) or B.Sc.(Horticulture) with minimum aggregate marks of 50% or equivalent grade for GEN/OBC and 45% marks or equivalent grade for SC/ST Category.</p>
@@ -202,6 +206,7 @@ export const InstituteofAgriculturalSciencesandTechnologyData1: FeeTableData = {
       duration: "2 Years",
       eligibility: "Click",
       fee: "Rs. 50,000/-",
+      link: "program/msc-soil-science-agricultural-chemistry",
       eligibilityContent: `
             <h2 class='font-bold text-lg mb-3  flex justify-center '>M.Sc. in Soil Science & Agricultural Chemistry</h2>
             <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/State Board in B.Sc.(Agriculture)/B.Sc.(Agriculture) (Hons.) or B.Sc.(Horticulture) with minimum aggregate marks of 50% or equivalent grade for GEN/OBC and 45% marks or equivalent grade for SC/ST Category.</p>
@@ -218,6 +223,7 @@ export const InstituteofAgriculturalSciencesandTechnologyData2: FeeTableData = {
       duration: "4 Years",
       eligibility: "Click",
       fee: "Rs. 62,000/-",
+      link:"program/b-sc-hons-agriculture",
       eligibilityContent: `
             <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Sc.(Hons.) in Agriculture</h2>
             <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/State Board in B.Sc.(Agriculture)/B.Sc.(Agriculture) (Hons.) or B.Sc.(Horticulture) with minimum aggregate marks of 50% or equivalent grade for GEN/OBC and 45% marks or equivalent grade for SC/ST Category.</p>

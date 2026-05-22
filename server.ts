@@ -10,7 +10,7 @@ import { hasValidTopLevelProgramRoute } from "./src/utils/programCategoryRoute";
 import { slugify } from "./src/utils/slugify";
 
 const host = "0.0.0.0";
-const port = 3031;
+const port = 3032;
 const siteUrl = process.env.VITE_SITE_URL || "https://srmu.ac.in";
 const canonicalSiteUrl = new URL(siteUrl);
 const canonicalOrigin = canonicalSiteUrl.origin.replace(/\/+$/, "");

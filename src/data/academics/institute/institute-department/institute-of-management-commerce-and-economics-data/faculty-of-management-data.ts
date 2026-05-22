@@ -127,7 +127,8 @@ export const managementFeeData: FeeTableData = {
             course: "B.B.A. (Business Analytics) with L&T",
             duration: "3 Years",
             eligibility: "Click",
-            fee: "Rs. 1,00,000/-",
+            fee: "Rs. 1,10,500/-",
+            link:"program/bba-business-analytics",
             eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>B.B.A. (Business Analytics) with L&T</h2>
        <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/State Board in any stream with minimum aggregate marks of 45% or CGPA of 5.0 for Gen/OBC and 40% marks or CGPA of 4.5 for SC/ST Category.</p>
@@ -137,7 +138,8 @@ export const managementFeeData: FeeTableData = {
             course: "M.B.A. (Business Analytics) with L&T",
             duration: "2 Years",
             eligibility: "Click",
-            fee: "Rs. 1,60,000/-",
+            fee: "Rs. 1,65,000/-",
+            link:"program/mba-business-analytics",
             eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>M.B.A. (Business Analytics) with L&T</h2>
        <p>Candidate must have passed Graduation or equivalent system in any discipline from any recognised University or AICTE recognised Institute/College with minimum aggregate marks of 50% or CGPA of 5.5 for Gen/OBC category and 45% marks or CGPA of 5.0 for SC/ST Category.</p>
@@ -153,7 +155,8 @@ export const managementFeeData1: FeeTableData = {
             course: "M.B.A. (Master of Business Administration)",
             duration: "2 Years",
             eligibility: "Click",
-            fee: "Rs. 1,40,000/-",
+            fee: "Rs. 1,45,000/-",
+            link:"program/mba-master-of-business-administration",
             eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>M.B.A. (Master of Business Administration)</h2>
        <p>Candidate must have passed Graduation or equivalent system in any discipline from any recognised University or AICTE recognised Institute/College with minimum aggregate marks of 50% or CGPA of 5.5 for Gen/OBC category and 45% marks or CGPA of 5.0 for SC/ST Category.</p>
@@ -163,7 +166,8 @@ export const managementFeeData1: FeeTableData = {
             course: "M.B.A. (Business Analytics) with L&T",
             duration: "2 Years",
             eligibility: "Click",
-            fee: "Rs. 1,60,000/-",
+            fee: "Rs. 1,65,000/-",
+            link:"program/mba-business-analytics",
             eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>M.B.A. (Business Analytics) with L&T</h2>
        <p>Candidate must have passed Graduation or equivalent system in any discipline from any recognised University or AICTE recognised Institute/College with minimum aggregate marks of 50% or CGPA of 5.5 for Gen/OBC category and 45% marks or CGPA of 5.0 for SC/ST Category.</p>
@@ -174,6 +178,7 @@ export const managementFeeData1: FeeTableData = {
             duration: "2 Years",
             eligibility: "Click",
             fee: "Rs. 1,50,000/-",
+            link:"program/m-b-a-healthcare-hospital-management",
             eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>M.B.A. in Healthcare & Hospital Management</h2>
        <p>Candidate must have passed Graduation or equivalent system in any discipline from any recognised University or AICTE recognised Institute/College with minimum aggregate marks of 50% or CGPA of 5.5 for Gen/OBC category and 45% marks or CGPA of 5.0 for SC/ST Category.</p>
@@ -184,6 +189,7 @@ export const managementFeeData1: FeeTableData = {
             duration: "2 Years",
             eligibility: "Click",
             fee: "Rs. 1,40,000/-",
+            link:"program/m-b-a-leadership-governance",
             eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>M.B.A. in Leadership & Governance</h2>
        <p>Candidate must have passed Graduation or equivalent system in any discipline from any recognised University or AICTE recognised Institute/College with minimum aggregate marks of 50% or CGPA of 5.5 for Gen/OBC category and 45% marks or CGPA of 5.0 for SC/ST Category.</p>
@@ -198,7 +204,8 @@ export const managementFeeData2: FeeTableData = {
             course: "B.B.A. (Bachelor of Business Administration)",
             duration: "3 Years",
             eligibility: "Click",
-            fee: "Rs. 87,000/-",
+            fee: "Rs. 90,000/-",
+            link:"program/bba-bachelor-of-business-administration",
             eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>B.B.A. (Bachelor of Business Administration)</h2>
        <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/State Board in any stream with minimum aggregate marks of 45% or CGPA of 5.0 for Gen/OBC and 40% marks or CGPA of 4.5 for SC/ST Category.</p>
@@ -208,7 +215,8 @@ export const managementFeeData2: FeeTableData = {
             course: "B.B.A. (Business Analytics) with L&T",
             duration: "3 Years",
             eligibility: "Click",
-            fee: "Rs. 1,00,000/-",
+            fee: "Rs. 1,10,500/-",
+            link:"program/bba-business-analytics",
             eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>B.B.A. (Business Analytics) with L&T</h2>
        <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/State Board in any stream with minimum aggregate marks of 45% or CGPA of 5.0 for Gen/OBC and 40% marks or CGPA of 4.5 for SC/ST Category.</p>
