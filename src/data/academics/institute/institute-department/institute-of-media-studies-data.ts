@@ -143,6 +143,7 @@ export const InstituteofMediaStudiesData1: FeeTableData = {
       duration: "2 Years",
       eligibility: "Click",
       fee: "Rs. 62,000/-",
+      link:"program/m-a-journalism-mass-communication",
       eligibilityContent: `
             <h2 class='font-bold text-lg mb-3  flex justify-center '>M.A. in Journalism & Mass Communication</h2>
             <p>Candidates must have passed Graduation in any stream from any recognised University or AICTE recognised Institute/ College with minimum aggregate marks of 45% or CGPA of 5.0 for Gen/ OBC category and 40% marks or CGPA of 4.5 for SC/ ST Category.</p>
@@ -160,6 +161,7 @@ export const InstituteofMediaStudiesData2: FeeTableData = {
       duration: "3 Years",
       eligibility: "Click",
       fee: "Rs. 94,000/-",
+      link:"program/b-a-journalism-mass-communication",
       eligibilityContent: `
             <h2 class='font-bold text-lg mb-3  flex justify-center '>B.A. in Journalism & Mass Communication</h2>
             <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/State Board in any stream with minimum aggregate marks of 45% or equivalent grade for GEN/OBC and 40% marks or equivalent grade for SC/ST Category.</p>

@@ -148,36 +148,42 @@ export const FacultyofHumanitiesandSocialSciencesData1: FeeTableData = {
       duration: "2 Years",
       eligibility: "Click to View",
       fee: "Rs. 42,000/-",
+      link:"program/m-a-psychology",
     },
     {
       course: "M.A. in Political Science",
       duration: "2 Years",
       eligibility: "Click to View",
       fee: "Rs. 37,000/-",
+      link:"program/m-a-political-science",
     },
     {
       course: "M.A. in Sociology",
       duration: "2 Years",
       eligibility: "Click to View",
       fee: "Rs. 37,000/-",
+      link:"program/m-a-sociology",
     },
     {
       course: "M.P.H. (Master in Public Health)",
       duration: "2 Years",
       eligibility: "Click to View",
       fee: "Rs. 37,000/-",
+      link:"program/mph-master-in-public-health",
     },
     {
       course: "M.A. in English",
       duration: "2 Years",
       eligibility: "Click to View",
       fee: "Rs. 37,000/-",
+      link:"program/m-a-english",
     },
     {
       course: "M.S.W. (Master of Social Work)",
       duration: "2 Years",
       eligibility: "Click to View",
       fee: "Rs. 42,000/-",
+      link:"program/msw",
     },
   ],
 };
@@ -190,24 +196,28 @@ export const FacultyofHumanitiesandSocialSciencesData2: FeeTableData = {
       duration: "3 Years",
       eligibility: "Click to View",
       fee: "Rs. 32,000/-",
+      link:"program/b-a-hons-english"
     },
     {
       course: "B.A.(Hons.) in Political Science",
       duration: "3 Years",
       eligibility: "Click to View",
       fee: "Rs. 32,000/-",
+      link:"program/b-a-hons-political-science"
     },
     {
       course: "B.A.(Hons.) in Sociology",
       duration: "3 Years",
       eligibility: "Click to View",
       fee: "Rs. 32,000/-",
+      link:"program/b-a-hons-sociology"
     },
     {
       course: "B.A.(Hons.) in Applied Psychology",
       duration: "3 Years",
       eligibility: "Click to View",
       fee: "Rs. 32,000/-",
+      link:"program/b-a-hons-applied-psychology"
     },
   ],
 };

@@ -193,7 +193,7 @@ export const commerceAndEconomicsFeeData: FeeTableData = {
       duration: "2 Years",
       eligibility: "Click",
       fee: "Rs. 50,000/-",
-      link: "program/m-com1",
+      link:"program/m-com1",
       eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>M.Com.</h2>
        <p>Candidate must have passed B.Com. with minimum aggregate marks of 50% or equivalent grade for GEN/OBC and 45% marks or equivalent grade for SC/ST Category.</p>
@@ -204,7 +204,7 @@ export const commerceAndEconomicsFeeData: FeeTableData = {
       duration: "2 Years",
       eligibility: "Click",
       fee: "Rs. 50,000/-",
-      link: "program/m-sc-economics",
+      link:"program/m-sc-economics",
       eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>M.Sc. in Economics</h2>
        <p>Candidates must have completed a Bachelor’s degree in Economics or any related discipline (like Commerce, Mathematics, or Statistics) from a recognized university with a minimum of 50% marks (45% for SC/ST candidates).</p>
@@ -221,7 +221,7 @@ export const commerceAndEconomicsFeeData1: FeeTableData = {
       duration: "3 Years",
       eligibility: "Click",
       fee: "Rs. 87,000/-",
-      link: "program/b-com-hons-with-l-t",
+      link:"program/b-com-hons-with-l-t",
       eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>B.Com.(Hons.) with L&T</h2>
        <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/State Board with Commerce or related subjects/Maths with minimum aggregate marks of 45% or equivalent grade for GEN/OBC and 40% marks or equivalent grade for SC/ST Category.</p>
@@ -232,7 +232,7 @@ export const commerceAndEconomicsFeeData1: FeeTableData = {
       duration: "3 Years",
       eligibility: "Click",
       fee: "Rs. 42,000/-",
-      link: "program/b-a-hons-economics",
+      link:"program/b-a-hons-economics",
       eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>B.A.(Hons.) in Economics</h2>
        <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/State Board with Commerce or related subjects/Maths with minimum aggregate marks of 45% or equivalent grade for GEN/OBC and 40% marks or equivalent grade for SC/ST Category.</p>
@@ -243,7 +243,7 @@ export const commerceAndEconomicsFeeData1: FeeTableData = {
       duration: "4 Years",
       eligibility: "Click",
       fee: "Rs. 30,000/-",
-      link: "program/b-com",
+      link:"program/b-com",
       eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>B.Com. (Bachelor of Commerce)</h2>
        <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/State Board with Commerce or related subjects/Maths with minimum aggregate marks of 45% or equivalent grade for GEN/OBC and 40% marks or equivalent grade for SC/ST Category.</p>

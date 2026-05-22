@@ -136,41 +136,46 @@ export const underGraduateFeeDataOfAHS: FeeTableData = {
   rows: [
     {
       course: "Bachelor of Medical Laboratory Sciences (BMLS)",
-      duration: "3 Years + 1 Year Internship",
+      duration: "4 Years",
       eligibility: "Click",
       fee: "Rs. 1,00,000/-",
+      link: "program/bachelor-of-medical-laboratory-sciences-bmls",
       eligibilityContent:
         "\n<h2 class='font-bold text-lg mb-3 flex justify-center '>Bachelor of Medical Laboratory Sciences (BMLS)</h2>\n <p>Candidate must have passed 10+2 with Physics, Chemistry, and Biology. Admission shall be based on merit, subject to applicable regulatory guidelines.</p>",
     },
     {
-      course: "Bachelor of Physiotherapy (BPT)",
-      duration: "4 Years + 1 Year Internship",
+      course: "Bachelor of Physiotherapy",
+      duration: "5 Years",
       eligibility: "Click",
       fee: "Rs. 1,00,000/-",
+      link: "program/bachelor-of-physiotherapy",
       eligibilityContent:
-        "\n<h2 class='font-bold text-lg mb-3 flex justify-center '>Bachelor of Physiotherapy (BPT)</h2>\n <p>Candidate must have passed 10+2 (or equivalent) with Physics, Chemistry, and Biology along with English as a compulsory subject. Minimum qualifying marks shall be as per applicable regulatory norms.</p>",
+        "\n<h2 class='font-bold text-lg mb-3 flex justify-center '>Bachelor of Physiotherapy</h2>\n <p>Candidate must have passed 10+2 (or equivalent) with Physics, Chemistry, and Biology along with English as a compulsory subject. Minimum qualifying marks shall be as per applicable regulatory norms.</p>",
     },
     {
       course: "Bachelor of Medical Radiology and Imaging Technology (BMRIT)",
-      duration: "3 Years + 1 Year Internship",
+      duration: "4 Years",
       eligibility: "Click",
       fee: "Rs. 1,00,000/-",
+      link:"program/bachelor-of-medical-radiology-imaging-technology-bmrit",
       eligibilityContent:
         "\n<h2 class='font-bold text-lg mb-3 flex justify-center '>Bachelor of Medical Radiology and Imaging Technology (BMRIT)</h2>\n <p>Candidate must have passed 10+2 with Physics, Chemistry, and Biology. Admission shall be based on merit as per applicable guidelines.</p>",
     },
     {
-      course: "Bachelor of Optometry (B. Optom)",
-      duration: "4 Years + 1 Year Internship",
+      course: "Bachelor of Optometry",
+      duration: "5 Years",
       eligibility: "Click",
       fee: "Rs. 1,00,000/-",
+      link: "program/bachelor-of-optometry",
       eligibilityContent:
-        "\n<h2 class='font-bold text-lg mb-3 flex justify-center '>Bachelor of Optometry (B. Optom)</h2>\n <p>Candidate must have passed 10+2 with Physics, Chemistry, and Biology/Mathematics from a recognized board. Admission shall be based on merit, subject to fulfilment of regulatory requirements. </p>",
+        "\n<h2 class='font-bold text-lg mb-3 flex justify-center '>Bachelor of Optometry </h2>\n <p>Candidate must have passed 10+2 with Physics, Chemistry, and Biology/Mathematics from a recognized board. Admission shall be based on merit, subject to fulfilment of regulatory requirements. </p>",
     },
     {
       course: "Bachelor of Anaesthesia and Operation Theatre Technology (B.AOTT)",
-      duration: "3 Years + 1 Year Internship",
+      duration: "4 Years",
       eligibility: "Click",
       fee: "Rs. 1,00,000/-",
+      link: "program/bachelor-of-anaesthesia-and-operation-theatre-technology-b-aott",
       eligibilityContent:
         "\n<h2 class='font-bold text-lg mb-3 flex justify-center '>Bachelor of Anaesthesia and Operation Theatre Technology (B.AOTT)</h2>\n <p>Candidate must have passed 10+2 with Physics, Chemistry, and Biology/Mathematics. Admission shall be based on merit, subject to regulatory norms.</p>",
     },

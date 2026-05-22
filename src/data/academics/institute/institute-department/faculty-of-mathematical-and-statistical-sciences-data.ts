@@ -136,12 +136,14 @@ export const FacultyOfMathematicalAndStatisticalSciencesData1: FeeTableData = {
       duration: "2 Years",
       eligibility: "Click to View",
       fee: "Rs. 47,000/-",
+      link:"program/m-sc-mathematics"
     },
     {
       course: "M.Sc. in Statistics",
       duration: "2 Years",
       eligibility: "Click to View",
       fee: "Rs. 47,000/-",
+      link:"program/m-sc-statistics",
     },
   ],
 };
@@ -155,6 +157,7 @@ export const FacultyOfMathematicalAndStatisticalSciencesData2: FeeTableData = {
       duration: "3 Years",
       eligibility: "Click to View",
       fee: "Rs. 42,000/-",
+      link:"program/b-sc-hons-mathematics",
     },
   ],
 };

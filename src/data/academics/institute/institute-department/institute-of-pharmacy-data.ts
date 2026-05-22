@@ -153,7 +153,8 @@ export const InstituteofPharmacyData1: FeeTableData = {
       course: "B.Pharm. (Bachelor of Pharmacy)",
       duration: "4 Years",
       eligibility: "Click",
-      fee: "Rs. 1,32,000/-",
+      fee: "Rs. 1,45,000/-",
+      link: "program/bpharm-bachelor-of-pharmacy",
       eligibilityContent: `
             <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Pharm. (Bachelor of Pharmacy)</h2>
             <p>Candidates must have passed Graduation in any stream from any recognised University or AICTE recognised Institute/ College with minimum aggregate marks of 45% or CGPA of 5.0 for Gen/ OBC category and 40% marks or CGPA of 4.5 for SC/ ST Category.</p>
@@ -164,6 +165,7 @@ export const InstituteofPharmacyData1: FeeTableData = {
       duration: "2 Years",
       eligibility: "Click",
       fee: "Rs. 92,000/-",
+      link: "program/d-pharm-diploma-in-pharmacy",
       eligibilityContent: `
             <h2 class='font-bold text-lg mb-3  flex justify-center '>D. Pharm. (Diploma in Pharmacy)</h2>
             <p>Candidates must have passed Graduation in any stream from any recognised University or AICTE recognised Institute/ College with minimum aggregate marks of 45% or CGPA of 5.0 for Gen/ OBC category and 40% marks or CGPA of 4.5 for SC/ ST Category.</p>

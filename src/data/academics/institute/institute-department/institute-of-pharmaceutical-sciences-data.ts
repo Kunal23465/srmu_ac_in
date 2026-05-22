@@ -141,7 +141,8 @@ export const InstituteofPharmaceuticalSciencesData1: FeeTableData = {
       course: "B.Pharma. (Bachelor of Pharmacy)",
       duration: "4 Years",
       eligibility: "Click",
-      fee: "Rs. 1,32,000/-",
+      fee: "Rs. 1,45,000/-",
+      link:"program/b-pharma-bachelor-of-pharmacy",
       eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>B.Pharma. (Bachelor of Pharmacy)</h2>
        <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/ State Board with Physics, Chemistry and Mathematics/Biology with minimum aggregate marks of 45% or equivalent grade for GEN/ OBC and 40% marks or equivalent grade for SC/ ST Category.</p>
@@ -152,6 +153,7 @@ export const InstituteofPharmaceuticalSciencesData1: FeeTableData = {
       duration: "2 Years",
       eligibility: "Click",
       fee: "Rs. 92,000/-",
+      link: "program/d-pharma-diploma-in-pharmacy",
       eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>D. Pharma. (Diploma in Pharmacy)</h2>
        <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/ State Board with Physics, Chemistry and Mathematics/Biology with minimum aggregate marks of 45% or equivalent grade for GEN/ OBC and 40% marks or equivalent grade for SC/ ST Category.</p>

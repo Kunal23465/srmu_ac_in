@@ -41,7 +41,7 @@ export default defineConfig(({ isSsrBuild }) => ({
 
   server: {
     host: "0.0.0.0",
-    port: 3031,
+    port: 3032,
     allowedHosts: ["test.srmu.ac.in", ".srmu.ac.in"],
   },
 
