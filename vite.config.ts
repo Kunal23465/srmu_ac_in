@@ -13,8 +13,7 @@ const autoOptimizeImageTags = ({ types: t }: any) => ({
       }
 
       const attrs = path.node.attributes;
-      const hasAttribute = (name: string) =>
-        attrs.some((attr: any) => attr.type === "JSXAttribute" && attr.name?.name === name);
+      const hasAttribute = (name: string) => attrs.some((attr: any) => attr.type === "JSXAttribute" && attr.name?.name === name);
 
       const shouldSkipLazyLoading = hasAttribute("loading") || hasAttribute("data-no-lazy") || hasAttribute("fetchpriority") || hasAttribute("fetchPriority");
 
@@ -41,7 +40,7 @@ export default defineConfig(({ isSsrBuild }) => ({
 
   server: {
     host: "0.0.0.0",
-    port: 3032,
+    port: 3031,
     allowedHosts: ["test.srmu.ac.in", ".srmu.ac.in"],
   },
 
@@ -87,12 +86,7 @@ export default defineConfig(({ isSsrBuild }) => ({
         : {
             manualChunks(id) {
               if (id.includes("node_modules")) {
-                if (
-                  id.includes("react-dom") ||
-                  id.includes("react-router") ||
-                  id.includes("scheduler") ||
-                  id.includes("react-helmet-async")
-                ) {
+                if (id.includes("react-dom") || id.includes("react-router") || id.includes("scheduler") || id.includes("react-helmet-async")) {
                   return "react-runtime";
                 }
 
