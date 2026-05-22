@@ -7,11 +7,74 @@ import courseImg2 from "../../../../assets/images/academics/departments/electron
 import courseImg3 from "../../../../assets/images/academics/departments/mech-06022402242113.webp";
 import courseImg4 from "../../../../assets/images/academics/departments/comp-06022402295417.webp";
 import courseImg5 from "../../../../assets/images/academics/departments/html-06022402320038.webp";
-import { civilcounterData2, civildepartmentHighlights, CivildepartmentVMData, civilfacultyData, civilFacultyOverviewData, civilIndustryHonoursFeeTable, civilIndustryIntegratedFeeTable, civilIndustryPostgraduateFeeTable, civilIndustryUndergraduateFeeTable, civilPlacedStudents, counterDataForFacultyCivil, instituteProfilesCivil } from "../faculty-of-civil-engineering/faculty-of-civil-engineering-data";
-import { counterDataForDepartmentOfElectricalAndElectronicsEngineering, counterDataForPlacedStudentsOFDepartmentOfElectricalAndElectronicsEngineering, DepartmentOfElectricalAndElectronicsEngineeringVMData, DepartmentOfElectricalAndElectronicsPlacedStudents, ElectricalAndElectronicsdepartmentHeadProfileData, ElectricalAndElectronicsfacultyDetails, electricalDepartmentHighlightsData, electricalDepartmentinstituteOverviewData, industryHonorsFeeData, integratedFeeData, postGraduateFeeData, underGraduateFeeData } from "../department-of-electrical-and-electronics-engineering-data";
-import { counterDataForFacultyCSE, CSDepartmentVMData, CsefacultyData, cseFacultyOverviewData, cseIndustryIntegratedFeeTable, cseIntegratedFeeTable, CseplacedStudents, csePostUndergraduateFeeTable, cseundergraduateFeeTable, instituteProfilesCSE } from "./department-of-cse-data";
-import { counterDataFor2Csis, counterDataForFacultyCSIS, csisDepartmentEventsData, CSISDepartmentVMData, CsisfacultyData, csISFacultyOverviewData, csisIndustryIntegratedFeeTable, CsisplacedStudents, csispostgraduateFeeTable, csisugFeeTable, departmentHighlightsCsis, instituteProfilesCSIS } from "./department-of-ceis-data";
-import { counterDataFoFacultyOfMechanicalEngineering, counterDataForPlacedStudentsOFMechanicalEngineering, facultyDetailsOfMeDepartment, facultyOfMechanicalEngineeringVMData, facultyofMEOverviewData, facultyOfMeProfileData, industryHonorsFeeDataOfME, integratedFeeDataOfME, mechanicalDepartmentEventsData, mechanicalDepartmentHighlightsData, postGraduateFeeDataOfME, underGraduateFeeDataOfME } from "../../faculty-of-mechanical-engineering/faculty-of-mechanical-engineering";
+import {
+  civilcounterData2,
+  civildepartmentHighlights,
+  CivildepartmentVMData,
+  civilfacultyData,
+  civilFacultyOverviewData,
+  civilIndustryHonoursFeeTable,
+  civilIndustryIntegratedFeeTable,
+  civilIndustryPostgraduateFeeTable,
+  civilIndustryUndergraduateFeeTable,
+  civilPlacedStudents,
+  counterDataForFacultyCivil,
+  instituteProfilesCivil,
+} from "../faculty-of-civil-engineering/faculty-of-civil-engineering-data";
+import {
+  counterDataForDepartmentOfElectricalAndElectronicsEngineering,
+  counterDataForPlacedStudentsOFDepartmentOfElectricalAndElectronicsEngineering,
+  DepartmentOfElectricalAndElectronicsEngineeringVMData,
+  DepartmentOfElectricalAndElectronicsPlacedStudents,
+  ElectricalAndElectronicsdepartmentHeadProfileData,
+  ElectricalAndElectronicsfacultyDetails,
+  electricalDepartmentHighlightsData,
+  electricalDepartmentinstituteOverviewData,
+  industryHonorsFeeData,
+  integratedFeeData,
+  postGraduateFeeData,
+  underGraduateFeeData,
+} from "../department-of-electrical-and-electronics-engineering-data";
+import {
+  counterDataForFacultyCSE,
+  CSDepartmentVMData,
+  CsefacultyData,
+  cseFacultyOverviewData,
+  cseIndustryIntegratedFeeTable,
+  cseIntegratedFeeTable,
+  CseplacedStudents,
+  csePostUndergraduateFeeTable,
+  cseundergraduateFeeTable,
+  instituteProfilesCSE,
+} from "./department-of-cse-data";
+import {
+  counterDataFor2Csis,
+  counterDataForFacultyCSIS,
+  csisDepartmentEventsData,
+  CSISDepartmentVMData,
+  CsisfacultyData,
+  csISFacultyOverviewData,
+  csisIndustryIntegratedFeeTable,
+  CsisplacedStudents,
+  csispostgraduateFeeTable,
+  csisugFeeTable,
+  departmentHighlightsCsis,
+  instituteProfilesCSIS,
+} from "./department-of-ceis-data";
+import {
+  counterDataFoFacultyOfMechanicalEngineering,
+  counterDataForPlacedStudentsOFMechanicalEngineering,
+  facultyDetailsOfMeDepartment,
+  facultyOfMechanicalEngineeringVMData,
+  facultyofMEOverviewData,
+  facultyOfMeProfileData,
+  industryHonorsFeeDataOfME,
+  integratedFeeDataOfME,
+  mechanicalDepartmentEventsData,
+  mechanicalDepartmentHighlightsData,
+  postGraduateFeeDataOfME,
+  underGraduateFeeDataOfME,
+} from "../../faculty-of-mechanical-engineering/faculty-of-mechanical-engineering";
 
 export const InstituteofTechnologyOverviewData: customeOverViewType = {
   heading: "Institute of Technology",

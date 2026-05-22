@@ -185,7 +185,7 @@ export const industryHonorsFeeData: FeeTableData = {
       course: "B.Tech. in Electrical Engineering with L&T",
       duration: "4 Years",
       eligibility: "Click",
-      fee: "Rs. 1,46,375/-",
+      fee: "Rs. 1,52,000/-",
       link: "program/b-tech-ee-ev-engineering",
       eligibilityContent: `
             <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Tech. in EE (EV Engineering) with L&T</h2>
@@ -196,7 +196,7 @@ export const industryHonorsFeeData: FeeTableData = {
       course: "B.Tech. in Electrical Engineering (Lateral Entry) with L&T",
       duration: "3 Years",
       eligibility: "Click",
-      fee: "Rs. 1,51,375/-",
+      fee: "Rs. 1,52,000/-",
       link: "program/b-tech-ee-ev-engineering-lateral-entry",
       eligibilityContent: `
             <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Tech. in Electrical Engineering (Lateral Entry) with L&T</h2>
@@ -207,7 +207,7 @@ export const industryHonorsFeeData: FeeTableData = {
       course: "B.Tech. in Electronics & Communication Engineering with L&T",
       duration: "4 Years",
       eligibility: "Click",
-      fee: "Rs. 1,46,375/-",
+      fee: "Rs. 1,52,000/-",
       link: "program/b-tech-ece-ev-engineering",
       eligibilityContent: `
             <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Tech. in Electronics & Communication Engineering with L&T</h2>
@@ -218,7 +218,7 @@ export const industryHonorsFeeData: FeeTableData = {
       course: "B.Tech. in Electronics & Communication Engineering (Lateral Entry) with L&T",
       duration: "3 Years",
       eligibility: "Click",
-      fee: "Rs. 1,51,375/-",
+      fee: "Rs. 1,52,000/-",
       link: "program/b-tech-ece-ev-engineering-lateral-entry",
       eligibilityContent: `
             <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Tech. in Electronics & Communication Engineering (Lateral Entry) with L&T</h2>
@@ -236,7 +236,8 @@ export const integratedFeeData: FeeTableData = {
       course: "B.Tech. + M.Tech. in Electrical Engineering",
       duration: "5 Years",
       eligibility: "Click",
-      fee: "Rs. 1,32,000/-",
+      fee: "Rs. 1,52,000/-",
+      link: "program/b-tech-m-tech-ee",
       eligibilityContent: `
             <h2 class='font-bold flex justify-center  text-lg mb-3'>B.Tech. + M.Tech. in Electrical Engineering</h2>
             <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/ State Board with Physics and Mathematics/Biology as compulsory subject alongwith Chemistry/ Biotechnology/ Computer Science/Technical Vocational Subject. Candidate must obtained minimum marks of 45% or equivalent grade for GEN/OBC and 40% marks or equivalent grade for SC/ST Category in the above subjects taken together.</p>
@@ -246,7 +247,8 @@ export const integratedFeeData: FeeTableData = {
       course: "B.Tech in EE + M.B.A.",
       duration: "5 Years",
       eligibility: "Click",
-      fee: "Rs. 1,32,000/-",
+      fee: "Rs. 1,52,000/-",
+      link: "program/b-tech-ee-mba",
       eligibilityContent: `
             <h2 class='font-bold  flex justify-center  text-lg mb-3'> B.Tech in EE + M.B.A.</h2>
             <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/ State Board with Physics and Mathematics as compulsory subjects alongwith one of the Chemistry/Computer Science/Technical Vocational Subject. Candidate must obtained minimum 45% marks or equivalent grade for GEN/OBC and 40% marks or equivalent grade for SC/ST Category in the above subjects taken together.<br>
@@ -257,7 +259,8 @@ export const integratedFeeData: FeeTableData = {
       course: "B.Tech. in ECE + M.B.A.",
       duration: "5 Years",
       eligibility: "Click",
-      fee: "Rs. 1,32,000/-",
+      fee: "Rs. 1,52,000/-",
+      link: "program/b-tech-ece-mba",
       eligibilityContent: `
             <h2 class='font-bold  flex justify-center  text-lg mb-3'>B.Tech. in ECE + M.B.A.</h2>
             <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/ State Board with Physics and Mathematics as compulsory subjects alongwith one of the Chemistry/Computer Science/Technical Vocational Subject. Candidate must obtained minimum 45% marks or equivalent grade for GEN/OBC and 40% marks or equivalent grade for SC/ST Category in the above subjects taken together.</p>
@@ -267,7 +270,8 @@ export const integratedFeeData: FeeTableData = {
       course: "B.Tech. + M.Tech. in Electronics & Communication Engineering",
       duration: "5 Years",
       eligibility: "Click",
-      fee: "Rs. 1,32,000/-",
+      fee: "Rs. 1,52,000/-",
+      link: "program/b-tech-m-tech-ece",
       eligibilityContent: `
             <h2 class='font-bold  flex justify-center  text-lg mb-3'>B.Tech. + M.Tech. in Electronics & Communication Engineering</h2>
             <p>Candidate must have passed 3 or 4 year Diploma in technical stream from institutions recognized by AICTE or a State Board of Technical Education or B.Sc. degree in Biology/ Microbiology/ Botony/ Zoology/ Chemistry/ Physics/ Maths/ Physiology/ Biotechnology/ Biochemistry/ Agriculture with minimum aggregate marks of 45% or 5.0 CGPA for GEN/OBC and 40% marks or 4.5 CGPA for SC/ST Category.<br>
@@ -286,6 +290,7 @@ export const postGraduateFeeData: FeeTableData = {
       duration: "2 Years",
       eligibility: "Click",
       fee: "Rs. 1,07,000/-",
+      link: "program/m-tech-renewable-energy-energy-audit",
       eligibilityContent: `
             <h2 class='font-bold text-lg mb-3  flex justify-center '>M.Tech. in Renewable Energy & Energy Audit</h2>
             <p>Candidate must have passed B. Tech from any recognised University or AICTE recognised Institute/College with minimum aggregate marks of 50% or 5.5 CGPA for GEN/OBC and 45% marks or 5.0 CGPA for SC/ST Category. Candidate will be offered admission in M. Tech. only in that stream of Engineering in which he has obtained B. Tech.</p>
@@ -296,6 +301,7 @@ export const postGraduateFeeData: FeeTableData = {
       duration: "3 Years",
       eligibility: "Click",
       fee: "Rs. 69,000/-",
+      link: "program/m-tech-renewable-energy-energy-audit-part-time",
       eligibilityContent: `
             <h2 class='font-bold text-lg mb-3  flex justify-center '>M.Tech. in Renewable Energy & Energy Audit (Part Time)</h2>
             <p>Candidate must have passed B. Tech from any recognised University or AICTE recognised Institute/College with minimum aggregate marks of 50% or 5.5 CGPA for GEN/OBC and 45% marks or 5.0 CGPA for SC/ST Category. Candidate will be offered admission in M. Tech. only in that stream of Engineering in which he has obtained B. Tech.</p>
@@ -307,6 +313,7 @@ export const postGraduateFeeData: FeeTableData = {
       duration: "2 Years",
       eligibility: "Click",
       fee: "Rs. 1,07,000/-",
+      link: "program/m-tech-digital-communication",
       eligibilityContent: `
             <h2 class='font-bold text-lg mb-3  flex justify-center '>M.Tech. in Digital Communication</h2>
             <p>Candidate must have passed B. Tech from any recognised University or AICTE recognised Institute/College with minimum aggregate marks of 50% or 5.5 CGPA for GEN/OBC and 45% marks or 5.0 CGPA for SC/ST Category. Candidate will be offered admission in M. Tech. only in that stream of Engineering in which he has obtained B. Tech.</p>
@@ -317,6 +324,7 @@ export const postGraduateFeeData: FeeTableData = {
       duration: "3 Years",
       eligibility: "Click",
       fee: "Rs. 69,000/-",
+      link: "program/m-tech-digital-communication-part-time",
       eligibilityContent: `
             <h2 class='font-bold text-lg mb-3  flex justify-center '>M.Tech. in Digital Communication (Part Time)</h2>
             <p>Candidate must have passed B. Tech from any recognised University or AICTE recognised Institute/College with minimum aggregate marks of 50% or 5.5 CGPA for GEN/OBC and 45% marks or 5.0 CGPA for SC/ST Category. Candidate will be offered admission in M. Tech. only in that stream of Engineering in which he has obtained B. Tech.</p>
@@ -328,6 +336,7 @@ export const postGraduateFeeData: FeeTableData = {
       duration: "2 Years",
       eligibility: "Click",
       fee: "Rs. 1,07,000/-",
+      link: "program/m-tech-power-electronics-electric-drives1",
       eligibilityContent: `
             <h2 class='font-bold text-lg mb-3  flex justify-center '>M.Tech. in Power Electronics & Electric Drives</h2>
             <p>Candidate must have passed B. Tech from any recognised University or AICTE recognised Institute/College with minimum aggregate marks of 50% or 5.5 CGPA for GEN/OBC and 45% marks or 5.0 CGPA for SC/ST Category. Candidate will be offered admission in M. Tech. only in that stream of Engineering in which he has obtained B. Tech.</p>
@@ -338,6 +347,7 @@ export const postGraduateFeeData: FeeTableData = {
       duration: "3 Years",
       eligibility: "Click",
       fee: "Rs. 69,000/-",
+      link: "program/m-tech-power-electronics-electric-drives-part-time",
       eligibilityContent: `
             <h2 class='font-bold text-lg mb-3  flex justify-center '>M.Tech. in Power Electronics & Electric Drives (Part Time)</h2>
             <p>Candidate must have passed B.Tech. (CSE) from any recognized University or AICTE recognized Institute/College with minimum aggregate marks of 50% or 5.5 CGPA for GEN/OBC and 45% marks or 5.0 CGPA for SC/ST Category.</p>
@@ -351,6 +361,7 @@ export const postGraduateFeeData: FeeTableData = {
       duration: "2 Years",
       eligibility: "Click",
       fee: "Rs. 1,07,000/-",
+      link: "program/m-tech-electric-vehicle-technology",
       eligibilityContent: `
             <h2 class='font-bold text-lg mb-3  flex justify-center '>M.Tech. in Electric Vehicle Technology</h2>
             <p>Candidate must have passed B. Tech from any recognised University or AICTE recognised Institute/College with minimum aggregate marks of 50% or 5.5 CGPA for GEN/OBC and 45% marks or 5.0 CGPA for SC/ST Category. Candidate will be offered admission in M. Tech. only in that stream of Engineering in which he has obtained B. Tech.</p>
@@ -361,6 +372,7 @@ export const postGraduateFeeData: FeeTableData = {
       duration: "3 Years",
       eligibility: "Click",
       fee: "Rs. 69,000/-",
+      link: "program/m-tech-electric-vehicle-technology-part-time",
       eligibilityContent: `
             <h2 class='font-bold text-lg mb-3  flex justify-center '>M.Tech. in Electric Vehicle Technology (Part Time)</h2>
             <p>Candidate must have passed B. Tech from any recognised University or AICTE recognised Institute/College with minimum aggregate marks of 50% or 5.5 CGPA for GEN/OBC and 45% marks or 5.0 CGPA for SC/ST Category. Candidate will be offered admission in M. Tech. only in that stream of Engineering in which he has obtained B. Tech.</p>
@@ -378,7 +390,8 @@ export const underGraduateFeeData: FeeTableData = {
       course: "B.Tech. + M.Tech. in Electrical Engineering",
       duration: "5 Years",
       eligibility: "Click",
-      fee: "Rs. 1,32,000/-",
+      fee: "Rs. 1,52,000/-",
+      link: "program/b-tech-m-tech-ee",
       eligibilityContent: `
             <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Tech. + M.Tech. in Electrical Engineering</h2>
             <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/ State Board with Physics and Mathematics/Biology as compulsory subject alongwith Chemistry/ Biotechnology/ Computer Science/Technical Vocational Subject. Candidate must obtained minimum marks of 45% or equivalent grade for GEN/OBC and 40% marks or equivalent grade for SC/ST Category in the above subjects taken together.</p>
@@ -388,7 +401,8 @@ export const underGraduateFeeData: FeeTableData = {
       course: "B.Tech in EE + M.B.A.",
       duration: "5 Years",
       eligibility: "Click",
-      fee: "Rs. 1,32,000/-",
+      fee: "Rs. 1,52,000/-",
+      link: "program/b-tech-ee-mba",
       eligibilityContent: `
             <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Tech in EE + M.B.A.</h2>
             <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/ State Board with Physics and Mathematics as compulsory subjects alongwith one of the Chemistry/Computer Science/Technical Vocational Subject. Candidate must obtained minimum 45% marks or equivalent grade for GEN/OBC and 40% marks or equivalent grade for SC/ST Category in the above subjects taken together.<br>
@@ -399,7 +413,8 @@ export const underGraduateFeeData: FeeTableData = {
       course: "B.Tech. in ECE + M.B.A.",
       duration: "5 Years",
       eligibility: "Click",
-      fee: "Rs. 1,32,000/-",
+      fee: "Rs. 1,52,000/-",
+      link: "program/b-tech-ece-mba",
       eligibilityContent: `
             <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Tech. in ECE + M.B.A.</h2>
             <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/ State Board with Physics and Mathematics as compulsory subjects alongwith one of the Chemistry/Computer Science/Technical Vocational Subject. Candidate must obtained minimum 45% marks or equivalent grade for GEN/OBC and 40% marks or equivalent grade for SC/ST Category in the above subjects taken together.</p>
@@ -416,33 +431,35 @@ export const underGraduateFeeData: FeeTableData = {
             <section>&nbsp;</section>
         `,
     },
-    {
-      course: "B.Tech. in Electrical Engineering",
-      duration: "4 Years",
-      eligibility: "Click",
-      fee: "Rs. 1,32,000/-",
-      eligibilityContent: `
-            <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Tech. in Electrical Engineering</h2>
-            <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/ State Board with Physics and Mathematics as compulsory subjects along with one of the Chemistry/Computer Science/Technical Vocational Subject with minimum aggregate marks of 45%.</p>
-            <section>&nbsp;</section>
-        `,
-    },
-    {
-      course: "B.Tech. in Electronics & Communication Engineering",
-      duration: "4 Years",
-      eligibility: "Click",
-      fee: "Rs. 1,32,000/-",
-      eligibilityContent: `
-            <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Tech. in Electronics & Communication Engineering</h2>
-            <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/ State Board with Physics and Mathematics as compulsory subjects along with one of the Chemistry/Computer Science/Technical Vocational Subject with minimum aggregate marks of 45%.</p>
-            <section>&nbsp;</section>
-        `,
-    },
+    // {
+    //   course: "B.Tech. in Electrical Engineering",
+    //   duration: "4 Years",
+    //   eligibility: "Click",
+    //   fee: "Rs. 1,52,000/-",
+    //   eligibilityContent: `
+    //         <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Tech. in Electrical Engineering</h2>
+    //         <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/ State Board with Physics and Mathematics as compulsory subjects along with one of the Chemistry/Computer Science/Technical Vocational Subject with minimum aggregate marks of 45%.</p>
+    //         <section>&nbsp;</section>
+    //     `,
+    // },
+    // {
+    //   course: "B.Tech. in Electronics & Communication Engineering",
+    //   duration: "4 Years",
+    //   eligibility: "Click",
+    //   fee: "Rs. 1,52,000/-",
+    //   link:"program/b-tech-ece-ev-engineering",
+    //   eligibilityContent: `
+    //         <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Tech. in Electronics & Communication Engineering</h2>
+    //         <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/ State Board with Physics and Mathematics as compulsory subjects along with one of the Chemistry/Computer Science/Technical Vocational Subject with minimum aggregate marks of 45%.</p>
+    //         <section>&nbsp;</section>
+    //     `,
+    // },
     {
       course: "B.Tech. in Electronics & Communication Engineering (Lateral Entry)",
       duration: "3 Years",
       eligibility: "Click",
-      fee: "Rs. 1,37,000/-",
+      fee: "Rs. 1,52,000/-",
+      link: "program/b-tech-ece-ev-engineering-lateral-entry",
       eligibilityContent: `
             <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Tech. in Electronics & Communication Engineering (Lateral Entry)</h2>
             <p>Candidate must have passed 3 or 4 year Diploma in technical stream from institutions recognized by AICTE or a State Board of Technical Education or B.Sc. degree in Biology/ Microbiology/ Botony/ Zoology/ Chemistry/ Physics/ Maths/ Physiology/ Biotechnology/ Biochemistry/ Agriculture with minimum aggregate marks of 45% or 5.0 CGPA for GEN/OBC and 40% marks or 4.5 CGPA for SC/ST Category.</p>
@@ -453,7 +470,8 @@ export const underGraduateFeeData: FeeTableData = {
       course: "B.Tech. + M.Tech. in Electronics & Communication Engineering",
       duration: "5 Years",
       eligibility: "Click",
-      fee: "Rs. 1,32,000/-",
+      fee: "Rs. 1,52,000/-",
+      link: "program/b-tech-m-tech-ece",
       eligibilityContent: `
             <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Tech. + M.Tech. in Electronics & Communication Engineering</h2>
             <p>Candidate must have passed 3 or 4 year Diploma in technical stream from institutions recognized by AICTE or a State Board of Technical Education or B.Sc. degree in Biology/ Microbiology/ Botony/ Zoology/ Chemistry/ Physics/ Maths/ Physiology/ Biotechnology/ Biochemistry/ Agriculture with minimum aggregate marks of 45% or 5.0 CGPA for GEN/OBC and 40% marks or 4.5 CGPA for SC/ST Category.<br>
@@ -461,45 +479,49 @@ export const underGraduateFeeData: FeeTableData = {
         `,
     },
     {
-      course: "B.Tech. in EE (EV Engineering) with L&T",
+      course: "B.Tech. in Electrical Engineering with L&T",
       duration: "4 Years",
       eligibility: "Click",
-      fee: "Rs. 1,46,375/-",
+      fee: "Rs. 1,52,000/-",
+      link: "program/b-tech-ee-ev-engineering",
       eligibilityContent: `
-            <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Tech. in EE (EV Engineering) with L&T</h2>
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Tech. in Electrical Engineering with L&T</h2>
             <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/ State Board with Physics and Mathematics as compulsory subjects along with one of the Chemistry/Computer Science/Technical Vocational Subject with minimum aggregate marks of 45%.</p>
             <section>&nbsp;</section>
         `,
     },
     {
-      course: "B.Tech. in EE (EV Engineering) (Lateral Entry) with L&T",
+      course: "B.Tech. in Electrical Engineering (Lateral Entry) with L&T",
       duration: "3 Years",
       eligibility: "Click",
-      fee: "Rs. 1,51,375/-",
+      fee: "Rs. 1,52,000/-",
+      link: "program/b-tech-ee-ev-engineering-lateral-entry",
       eligibilityContent: `
-            <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Tech. in EE (EV Engineering) (Lateral Entry) with L&T</h2>
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Tech. in Electrical Engineering (Lateral Entry) with L&T</h2>
             <p>Candidate must have passed 3 or 4 year Diploma in technical stream from institutions recognized by AICTE or a State Board of Technical Education or B.Sc. degree in Biology/ Microbiology/ Botony/ Zoology/ Chemistry/ Physics/ Maths/ Physiology/ Biotechnology/ Biochemistry/ Agriculture with minimum aggregate marks of 45% or 5.0 CGPA for GEN/OBC and 40% marks or 4.5 CGPA for SC/ST Category.</p>
             <section>&nbsp;</section>
         `,
     },
     {
-      course: "B.Tech. in ECE (EV Engineering) with L&T",
+      course: "B.Tech. in Electronics & Communication Engineering with L&T",
       duration: "4 Years",
       eligibility: "Click",
-      fee: "Rs. 1,46,375/-",
+      fee: "Rs. 1,52,000/-",
+      link: "program/b-tech-ece-ev-engineering",
       eligibilityContent: `
-            <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Tech. in ECE (EV Engineering) with L&T</h2>
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Tech. in Electronics & Communication Engineering with L&T</h2>
             <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/ State Board with Physics and Mathematics as compulsory subjects along with one of the Chemistry/Computer Science/Technical Vocational Subject with minimum aggregate marks of 45%.</p>
             <section>&nbsp;</section>
         `,
     },
     {
-      course: "B.Tech. in ECE (EV Engineering) (Lateral Entry) with L&T",
+      course: "B.Tech. in Electronics & Communication Engineering (Lateral Entry) with L&T",
       duration: "3 Years",
       eligibility: "Click",
-      fee: "Rs. 1,51,375/-",
+      fee: "Rs. 1,52,000/-",
+      link: "program/b-tech-ece-ev-engineering-lateral-entry",
       eligibilityContent: `
-            <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Tech. in ECE (EV Engineering) (Lateral Entry) with L&T</h2>
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Tech. in Electronics & Communication Engineering (Lateral Entry) with L&T</h2>
             <p>Candidate must have passed 3 or 4 year Diploma in technical stream from institutions recognized by AICTE or a State Board of Technical Education or B.Sc. degree in Biology/ Microbiology/ Botony/ Zoology/ Chemistry/ Physics/ Maths/ Physiology/ Biotechnology/ Biochemistry/ Agriculture with minimum aggregate marks of 45% or 5.0 CGPA for GEN/OBC and 40% marks or 4.5 CGPA for SC/ST Category.</p>
             <section>&nbsp;</section>
         `,

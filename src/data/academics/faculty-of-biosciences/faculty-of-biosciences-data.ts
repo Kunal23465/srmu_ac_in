@@ -3,10 +3,7 @@ import { customeOverViewType } from "../../../types/home-data-type";
 import visionImg from "../../../assets/images/academics/institutes/dept-vision.webp";
 import misionImg from "../../../assets/images/academics/institutes/dept-mission.webp";
 import drTabishQidwai from "../../../assets/images/academics/institutes/dr.-tabish-kidwai-.webp";
-import {
-  departmentHighlightscardType,
-  FeeTableData,
-} from "../faculty-of-civil-engineering/faculty-of-civil-engineering-data";
+import { departmentHighlightscardType, FeeTableData } from "../faculty-of-civil-engineering/faculty-of-civil-engineering-data";
 import { FacultyItem } from "../../../utils/custom/CustomFacultyListCard";
 import defaultSrmu from "../../../assets/images/academics/institutes/default-img.webp";
 import aparna from "../../../assets/images/academics/institutes/aparna.webp";
@@ -47,31 +44,29 @@ export const counterDataFoFacultyOfBiosciencess: counterDataType[] = [
   { id: 3, value: "820", suffix: "", label: "Students" },
 ];
 
-
-export const counterDataForPlacedStudentsOFBioscience: counterDataType[] = 
-   [
-    {
-      id: 1,
-      icon: "",
-      value: "125",
-      suffix: "",
-      label: "Guest lectures",
-    },
-    {
-      id: 2,
-      icon: "",
-      value: "50",
-      suffix: "",
-      label: "Field Visits",
-    },
-    {
-      id: 3,
-      icon: "",
-      value: "15",
-      suffix: "",
-      label: "Conference & Seminars",
-    },
-  ];
+export const counterDataForPlacedStudentsOFBioscience: counterDataType[] = [
+  {
+    id: 1,
+    icon: "",
+    value: "125",
+    suffix: "",
+    label: "Guest lectures",
+  },
+  {
+    id: 2,
+    icon: "",
+    value: "50",
+    suffix: "",
+    label: "Field Visits",
+  },
+  {
+    id: 3,
+    icon: "",
+    value: "15",
+    suffix: "",
+    label: "Conference & Seminars",
+  },
+];
 
 export const facultyOfBiosciencesVMData = [
   {
@@ -132,6 +127,7 @@ export const postGraduateFeeDataOfBioscience: FeeTableData = {
       duration: "2 Years",
       eligibility: "Click",
       fee: "Rs. 84,000/-",
+      link: "program/m-sc-biotechnology",
       eligibilityContent: `
             <h2 class='font-bold text-lg mb-3  flex justify-center '>M.Sc. in Biotechnology</h2>
             <p>Candidate must have passed Graduation in Life Science (Zoology, Botany, Environmental Science, Biochemistry) or equivalent from any recognised University or AICTE recognised Institute/College with minimum aggregate marks of 45% or CGPA of 5.0 for GEN/OBC and 40% marks or CGPA of 4.5 for SC/ST Category.</p>
@@ -144,21 +140,22 @@ export const underGraduateFeeDataOfBioscience: FeeTableData = {
   columns: ["COURSES", "Duration", "Eligibility Criteria", "Course Fees (PA)"],
 
   rows: [
-    {
-      course: "B.Sc.(Hons.) in Biotechnology",
-      duration: "3 Years",
-      eligibility: "Click",
-      fee: "Rs. 62,000/-",
-      eligibilityContent: `
-            <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Sc.(Hons.) in Biotechnology</h2>
-            <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/ State Board with Physics and Mathematics/ Biology as compulsory subject alongwith Chemistry/Biotechnology/Computer Science with minimum aggregate marks of 45% or equivalent grade for GEN/OBC and 40% marks or equivalent grade for SC/ST Category.</p>
-        `,
-    },
+    // {
+    //   course: "B.Sc.(Hons.) in Biotechnology",
+    //   duration: "3 Years",
+    //   eligibility: "Click",
+    //   fee: "Rs. 62,000/-",
+    //   eligibilityContent: `
+    //         <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Sc.(Hons.) in Biotechnology</h2>
+    //         <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/ State Board with Physics and Mathematics/ Biology as compulsory subject alongwith Chemistry/Biotechnology/Computer Science with minimum aggregate marks of 45% or equivalent grade for GEN/OBC and 40% marks or equivalent grade for SC/ST Category.</p>
+    //     `,
+    // },
     {
       course: "B.Sc.(Hons.) in Food Technology",
       duration: "3 Years",
       eligibility: "Click",
       fee: "Rs. 62,000/-",
+      link: "program/b-sc-hons-food-technology",
       eligibilityContent: `
             <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Sc.(Hons.) in Food Technology</h2>
             <p>Candidate must have passed 10+2 or equivalent system from any recognized Board with Physics and Mathematics/Biology as compulsory subject along with Chemistry/Biotechnology/Computer Science with minimum aggregate marks of 45% or equivalent grade for GEN /OBC and 40% marks or equivalent grade for SC/ ST Category.</p>
@@ -169,21 +166,22 @@ export const underGraduateFeeDataOfBioscience: FeeTableData = {
       duration: "3 Years",
       eligibility: "Click",
       fee: "Rs. 57,000/-",
+      link: "program/b-sc-hons-microbiology",
       eligibilityContent: `
             <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Sc.(Hons.) in Microbiology</h2>
             <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/ State Board with Physics and Mathematics/ Biology as compulsory subject alongwith Chemistry/Biotechnology/Computer Science with minimum aggregate marks of 45% or equivalent grade for GEN/OBC and 40% marks or equivalent grade for SC/ST Category.</p>
         `,
     },
-    {
-      course: "B.Sc.(Hons.) Nutrition & Dietetics",
-      duration: "3 Years",
-      eligibility: "Click",
-      fee: "Rs. 60,000/-",
-      eligibilityContent: `
-            <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Sc. (Hons.) Nutrition & Dietetics</h2>
-            <p>Candidate must have passed 10+2 examination/ equivalent with Biology or Life Sciences as one of the subjects with minimum aggregate marks of 50% or equivalent grade for GEN/OBC and 45% marks or equivalent grade for SC/ST Category.</p>
-        `,
-    },
+    // {
+    //   course: "B.Sc.(Hons.) Nutrition & Dietetics",
+    //   duration: "3 Years",
+    //   eligibility: "Click",
+    //   fee: "Rs. 60,000/-",
+    //   eligibilityContent: `
+    //         <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Sc. (Hons.) Nutrition & Dietetics</h2>
+    //         <p>Candidate must have passed 10+2 examination/ equivalent with Biology or Life Sciences as one of the subjects with minimum aggregate marks of 50% or equivalent grade for GEN/OBC and 45% marks or equivalent grade for SC/ST Category.</p>
+    //     `,
+    // },
   ],
 };
 
@@ -288,25 +286,21 @@ export const facultyDetailsOfBioScienceDepartment: FacultyItem[] = [
   },
 ];
 
-
 export const bioscienceHighlightsData: departmentHighlightscardType[] = [
   {
     image: studentsupport,
     title: "100% Faculty hold a Ph.D. degree",
-    description:
-      "The department has young, motivated and highly qualified faculty members committed towards student development.",
+    description: "The department has young, motivated and highly qualified faculty members committed towards student development.",
   },
   {
     image: integrationNep,
     title: "Modules designed as per NEP-2020",
-    description:
-      "NEP2020 was implemented in all undergraduate programs, with a multiple exit and entry system and outcome-based education that develops students' skills.",
+    description: "NEP2020 was implemented in all undergraduate programs, with a multiple exit and entry system and outcome-based education that develops students' skills.",
   },
   {
     image: statelab,
     title: "Research laboratories furnished with modern equipment",
-    description:
-      "Students are motivated and assisted in developing practical skills related to managing, carrying out, evaluating, and debugging research protocols.",
+    description: "Students are motivated and assisted in developing practical skills related to managing, carrying out, evaluating, and debugging research protocols.",
   },
   {
     image: researchdevelopment,
@@ -317,8 +311,7 @@ export const bioscienceHighlightsData: departmentHighlightscardType[] = [
   {
     image: industrycollaboration,
     title: "Creating synergies with industry-academia interface",
-    description:
-      "The department has joined hands with institutes of repute like CSIR-IITR, CISH & many more to promote teaching and research in the area of biosciences.",
+    description: "The department has joined hands with institutes of repute like CSIR-IITR, CISH & many more to promote teaching and research in the area of biosciences.",
   },
   {
     image: diverseprogram,
@@ -329,8 +322,7 @@ export const bioscienceHighlightsData: departmentHighlightscardType[] = [
   {
     image: experiencedfaculty,
     title: "Mentoring of students for GATE/CSIR-UGC-NET-JRF",
-    description:
-      "The department has a well developed system of mentor-mentee through which remedial classes are offered for students preparing for government competitive exams.",
+    description: "The department has a well developed system of mentor-mentee through which remedial classes are offered for students preparing for government competitive exams.",
   },
 ];
 
@@ -338,8 +330,7 @@ export const bioscienceDepartmentEventsData: EventItem[] = [
   {
     id: 1,
     title: "International HPV Awareness Day",
-    topic:
-      "Laboratory Diagnosis of Cancer Casuing Microorganism and Their Prevention",
+    topic: "Laboratory Diagnosis of Cancer Casuing Microorganism and Their Prevention",
     speaker: "Dr. Suruchi Shukla, Associate Professor, KGMU",
     date: "04th March, 2025",
     image: hpv,
@@ -364,8 +355,7 @@ export const bioscienceDepartmentEventsData: EventItem[] = [
   {
     id: 4,
     title: "Guest Lecture",
-    speaker:
-      "Dr. Ghyasuddin Khan, Additional Director, State Medicolegal Cell, Lucknow",
+    speaker: "Dr. Ghyasuddin Khan, Additional Director, State Medicolegal Cell, Lucknow",
     date: "16th April, 2025",
     image: medicoLegal,
     cardBgColor: "#ffffff",
@@ -373,8 +363,7 @@ export const bioscienceDepartmentEventsData: EventItem[] = [
   {
     id: 5,
     title: "National Science day",
-    topic:
-      "National Science Day was celebrated vibrantly with IBST and INSH collaboration",
+    topic: "National Science Day was celebrated vibrantly with IBST and INSH collaboration",
     date: "28th Feb, 2024",
     image: ibst,
     cardBgColor: "#ffffff",
@@ -390,8 +379,7 @@ export const bioscienceDepartmentEventsData: EventItem[] = [
   {
     id: 7,
     title: "Nukkad Natak",
-    event:
-      "Participation of IBST students at Nukkad Natak, Barabanki (U.P. Govt.)",
+    event: "Participation of IBST students at Nukkad Natak, Barabanki (U.P. Govt.)",
     image: nukaad,
     cardBgColor: "#ffffff",
   },

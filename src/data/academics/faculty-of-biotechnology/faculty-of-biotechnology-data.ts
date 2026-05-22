@@ -1,4 +1,3 @@
-
 import { customeOverViewType } from "../../../types/home-data-type";
 import { EventItem } from "../../../utils/custom/CustomEventListCard";
 import hpv from "../../../assets/images/academics/institutes/hpv.webp";
@@ -27,10 +26,7 @@ import researchdevelopment from "../../../assets/images/academics/institutes/res
 import integrationNep from "../../../assets/images/academics/departments/integration-07052412393563.webp";
 import industrycollaboration from "../../../assets/images/academics/institutes/industrycollaboration.webp";
 
-import {
-  departmentHighlightscardType,
-  FeeTableData,
-} from "../faculty-of-civil-engineering/faculty-of-civil-engineering-data";
+import { departmentHighlightscardType, FeeTableData } from "../faculty-of-civil-engineering/faculty-of-civil-engineering-data";
 import { counterDataType } from "../../about/leadership-and-governance/leadership-and-governance-data";
 
 export const facultyofBiotechnologyeOverviewData: customeOverViewType = {
@@ -46,31 +42,29 @@ export const counterDataFoFacultyOfBiotechnology: counterDataType[] = [
   { id: 3, value: "700", suffix: "", label: "Students" },
 ];
 
-
-export const counterDataForPlacedStudentsOFBiotechnology: counterDataType[] = 
- [
-    {
-      id: 1,
-      icon: "",
-      value: "125",
-      suffix: "",
-      label: "Guest lectures",
-    },
-    {
-      id: 2,
-      icon: "",
-      value: "50",
-      suffix: "",
-      label: "Field Visits",
-    },
-    {
-      id: 3,
-      icon: "",
-      value: "15",
-      suffix: "",
-      label: "Conference & Seminars",
-    },
-  ];
+export const counterDataForPlacedStudentsOFBiotechnology: counterDataType[] = [
+  {
+    id: 1,
+    icon: "",
+    value: "125",
+    suffix: "",
+    label: "Guest lectures",
+  },
+  {
+    id: 2,
+    icon: "",
+    value: "50",
+    suffix: "",
+    label: "Field Visits",
+  },
+  {
+    id: 3,
+    icon: "",
+    value: "15",
+    suffix: "",
+    label: "Conference & Seminars",
+  },
+];
 
 export const facultyOfBiostechnologyVMData = [
   {
@@ -130,6 +124,7 @@ export const biotechnologyIndustryIntegratedFeeTable: FeeTableData = {
       duration: "5 Years",
       eligibility: "Click",
       fee: "Rs. 1,32,000/-",
+      link: "program/b-tech-biotechnology-mba",
       eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>B.Tech. in Biotechnology + M.B.A.</h2>
         <p>
@@ -138,18 +133,18 @@ export const biotechnologyIndustryIntegratedFeeTable: FeeTableData = {
       `,
     },
 
-    {
-      course: "B.Tech. + M.Tech. in Biotechnology",
-      duration: "5 Years",
-      eligibility: "Click",
-      fee: "Rs. 1,32,000/-",
-      eligibilityContent: `
-        <h2 class='font-bold text-lg mb-3'>B.Tech. + M.Tech. in Biotechnology</h2>
-        <p>
-      Candidate must have passed 10+2 or equivalent system from any recognized Central/ State Board with Physics and Mathematics/Biology as compulsory subject alongwith Chemistry/ Biotechnology/ Computer Science/Technical Vocational Subject. Candidate must obtained minimum marks of 45% or equivalent grade for GEN/OBC and 40% marks or equivalent grade for SC/ST Category in the above subjects taken together.
-        </p>
-      `,
-    },
+    // {
+    //   course: "B.Tech. + M.Tech. in Biotechnology",
+    //   duration: "5 Years",
+    //   eligibility: "Click",
+    //   fee: "Rs. 1,32,000/-",
+    //   eligibilityContent: `
+    //     <h2 class='font-bold text-lg mb-3'>B.Tech. + M.Tech. in Biotechnology</h2>
+    //     <p>
+    //   Candidate must have passed 10+2 or equivalent system from any recognized Central/ State Board with Physics and Mathematics/Biology as compulsory subject alongwith Chemistry/ Biotechnology/ Computer Science/Technical Vocational Subject. Candidate must obtained minimum marks of 45% or equivalent grade for GEN/OBC and 40% marks or equivalent grade for SC/ST Category in the above subjects taken together.
+    //     </p>
+    //   `,
+    // },
   ],
 };
 
@@ -162,6 +157,7 @@ export const biotechnologyIndustryPostgraduateFeeTable: FeeTableData = {
       duration: "2 Years",
       eligibility: "Click",
       fee: "Rs. 1,07,000/-",
+      link: "program/m-tech-biotechnology",
       eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>M.Tech. in Biotechnology</h2>
         <p>
@@ -187,7 +183,8 @@ export const biotechnologyIndustryUndergraduateFeeTable: FeeTableData = {
       course: "B.Tech. in Biotechnology",
       duration: "4 Years",
       eligibility: "Click",
-      fee: "Rs. 1,32,000/-",
+      fee: "Rs. 1,37,000/-",
+      link: "program/b-tech-biotechnology",
       eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>B.Tech. in Biotechnology</h2>
         <p>
@@ -201,6 +198,7 @@ export const biotechnologyIndustryUndergraduateFeeTable: FeeTableData = {
       duration: "3 Years",
       eligibility: "Click",
       fee: "Rs. 1,37,000/-",
+      link: "program/b-tech-biotechnology-lateral-entry",
       eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>B.Tech. in Biotechnology (Lateral Entry)</h2>
         <p>
@@ -213,7 +211,8 @@ export const biotechnologyIndustryUndergraduateFeeTable: FeeTableData = {
       course: "B.Tech. in Biotechnology + M.B.A.",
       duration: "5 Years",
       eligibility: "Click",
-      fee: "Rs. 1,32,000/-",
+      fee: "Rs. 1,37,000/-",
+      link: "program/b-tech-biotechnology-mba",
       eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>B.Tech. in Biotechnology + M.B.A.</h2>
         <p>
@@ -222,18 +221,18 @@ export const biotechnologyIndustryUndergraduateFeeTable: FeeTableData = {
       `,
     },
 
-    {
-      course: "B.Tech. + M.Tech. in Biotechnology",
-      duration: "5 Years",
-      eligibility: "Click",
-      fee: "Rs. 1,32,000/-",
-      eligibilityContent: `
-        <h2 class='font-bold text-lg mb-3'>B.Tech. + M.Tech. in Biotechnology</h2>
-        <p>
-          Candidate must have passed 10+2 or equivalent system from any recognized Central/ State Board with Physics and Mathematics/Biology as compulsory subject alongwith Chemistry/ Biotechnology/ Computer Science/Technical Vocational Subject. Candidate must obtained minimum marks of 45% or equivalent grade for GEN/OBC and 40% marks or equivalent grade for SC/ST Category in the above subjects taken together.
-        </p>
-      `,
-    },
+    // {
+    //   course: "B.Tech. + M.Tech. in Biotechnology",
+    //   duration: "5 Years",
+    //   eligibility: "Click",
+    //   fee: "Rs. 1,32,000/-",
+    //   eligibilityContent: `
+    //     <h2 class='font-bold text-lg mb-3'>B.Tech. + M.Tech. in Biotechnology</h2>
+    //     <p>
+    //       Candidate must have passed 10+2 or equivalent system from any recognized Central/ State Board with Physics and Mathematics/Biology as compulsory subject alongwith Chemistry/ Biotechnology/ Computer Science/Technical Vocational Subject. Candidate must obtained minimum marks of 45% or equivalent grade for GEN/OBC and 40% marks or equivalent grade for SC/ST Category in the above subjects taken together.
+    //     </p>
+    //   `,
+    // },
   ],
 };
 
@@ -317,13 +316,11 @@ export const facultyDetailsOfBiotechnologyDepartment: FacultyItem[] = [
   },
 ];
 
-
 export const biotechnologyHighlightsData: departmentHighlightscardType[] = [
   {
     image: studentsupport,
     title: "All faculty members have a doctrate",
-    description:
-      "The department employs highly skilled, driven, and youthful faculty members who are dedicated to the growth of their students.",
+    description: "The department employs highly skilled, driven, and youthful faculty members who are dedicated to the growth of their students.",
   },
   {
     image: statelab,
@@ -340,21 +337,18 @@ export const biotechnologyHighlightsData: departmentHighlightscardType[] = [
   {
     image: integrationNep,
     title: "Implementing NEP2020 for increasing employability skillset",
-    description:
-      "With an outcome-based education that builds students' capabilities and a multiple exit and entrance system, NEP2020 was adopted in all undergraduate programs.",
+    description: "With an outcome-based education that builds students' capabilities and a multiple exit and entrance system, NEP2020 was adopted in all undergraduate programs.",
   },
 
   {
     image: experiencedfaculty,
     title: "Student mentoring for the GATE/CSIR-UGC-NET-JRF",
-    description:
-      "Students preparing for government competitive examinations can take remedial sessions through the department's well-established mentor-mentee system.",
+    description: "Students preparing for government competitive examinations can take remedial sessions through the department's well-established mentor-mentee system.",
   },
   {
     image: technoCup,
     title: "Experiential acquaintance to enhance learning",
-    description:
-      "Actively planning and taking part in a wide range of academic, co-curricular, and extracurricular events, the faculty and students make up a vibrant community.",
+    description: "Actively planning and taking part in a wide range of academic, co-curricular, and extracurricular events, the faculty and students make up a vibrant community.",
   },
   {
     image: industrycollaboration,
@@ -368,8 +362,7 @@ export const biotechnologyDepartmentEventsData: EventItem[] = [
   {
     id: 1,
     title: "International HPV Awareness Day",
-    topic:
-      "Laboratory Diagnosis of Cancer Casuing Microorganism and Their Prevention",
+    topic: "Laboratory Diagnosis of Cancer Casuing Microorganism and Their Prevention",
     speaker: "Dr. Suruchi Shukla, Associate Professor, KGMU",
     date: "04th March, 2025",
     image: hpv,
@@ -394,8 +387,7 @@ export const biotechnologyDepartmentEventsData: EventItem[] = [
   {
     id: 4,
     title: "Guest Lecture",
-    speaker:
-      "Dr. Ghyasuddin Khan, Additional Director, State Medicolegal Cell, Lucknow",
+    speaker: "Dr. Ghyasuddin Khan, Additional Director, State Medicolegal Cell, Lucknow",
     date: "16th April, 2025",
     image: medicoLegal,
     cardBgColor: "#ffffff",
@@ -403,8 +395,7 @@ export const biotechnologyDepartmentEventsData: EventItem[] = [
   {
     id: 5,
     title: "National Science day",
-    topic:
-      "National Science Day was celebrated vibrantly with IBST and INSH collaboration",
+    topic: "National Science Day was celebrated vibrantly with IBST and INSH collaboration",
     date: "28th Feb, 2024",
     image: ibst,
     cardBgColor: "#ffffff",
@@ -420,8 +411,7 @@ export const biotechnologyDepartmentEventsData: EventItem[] = [
   {
     id: 7,
     title: "Nukkad Natak",
-    event:
-      "Participation of IBST students at Nukkad Natak, Barabanki (U.P. Govt.)",
+    event: "Participation of IBST students at Nukkad Natak, Barabanki (U.P. Govt.)",
     image: nukaad,
     cardBgColor: "#ffffff",
   },

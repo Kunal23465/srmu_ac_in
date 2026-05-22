@@ -232,8 +232,8 @@ export const civilIndustryHonoursFeeTable: FeeTableData = {
       course: "B.Tech. in Civil Engineering with L&T",
       duration: "4 Years",
       eligibility: "Click",
-      fee: "Rs. 1,46,375/-",
-      link:"program/b-tech-civil-engineering",
+      fee: "Rs. 1,52,000/-",
+      link: "program/b-tech-civil-engineering",
       eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>B.Tech. in Civil Engineering with L&T</h2>
        <p> Candidate must have passed 10+2 or equivalent system from any recognized Central/ State Board with Physics and Mathematics as compulsory subjects along with one of the Chemistry/Computer Science/Technical Vocational Subject with minimum aggregate marks of 45%.</p>
@@ -250,7 +250,8 @@ export const civilIndustryIntegratedFeeTable: FeeTableData = {
       course: "B.Tech. in CE + M.B.A.",
       duration: "5 Years",
       eligibility: "Click",
-      fee: "Rs. 1,32,000/-",
+      fee: "Rs. 1,52,000/-",
+      link: "program/b-tech-ce-mba",
       eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>B.Tech. in CE + M.B.A.</h2>
         <p>
@@ -266,7 +267,8 @@ export const civilIndustryIntegratedFeeTable: FeeTableData = {
       course: "B.Tech. + M.Tech. in Civil Engineering",
       duration: "5 Years",
       eligibility: "Click",
-      fee: "Rs. 1,32,000/-",
+      fee: "Rs. 1,52,000/-",
+      link: "program/b-tech-m-tech-ce",
       eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>B.Tech. + M.Tech. in Civil Engineering</h2>
         <p>
@@ -284,27 +286,28 @@ export const civilIndustryPostgraduateFeeTable: FeeTableData = {
   columns: ["Courses", "Duration", "Eligibility Criteria", "Course Fees (PA)"],
 
   rows: [
-    {
-      course: "M.Tech. in Environmental Engineering",
-      duration: "2 Years",
-      eligibility: "Click",
-      fee: "Rs. 1,07,000/-",
-      eligibilityContent: `
-        <h2 class='font-bold text-lg mb-3'>M.Tech. in Environmental Engineering</h2>
-        <p>
-          Candidates must have passed B.Tech. (any stream) from any recognised University or AICTE recognised 
-          Institute/College with minimum aggregate marks of 50% or 5.5 CGPA for GEN/OBC and 45% marks or 5.0 CGPA 
-          for SC/ST Category OR M.Sc. (any stream) with 45% marks or 5.0 CGPA for GEN/OBC and 40% marks or 
-          4.5 CGPA for SC/ST Category.
-        </p>
-      `,
-    },
+    // {
+    //   course: "M.Tech. in Environmental Engineering",
+    //   duration: "2 Years",
+    //   eligibility: "Click",
+    //   fee: "Rs. 1,07,000/-",
+    //   eligibilityContent: `
+    //     <h2 class='font-bold text-lg mb-3'>M.Tech. in Environmental Engineering</h2>
+    //     <p>
+    //       Candidates must have passed B.Tech. (any stream) from any recognised University or AICTE recognised
+    //       Institute/College with minimum aggregate marks of 50% or 5.5 CGPA for GEN/OBC and 45% marks or 5.0 CGPA
+    //       for SC/ST Category OR M.Sc. (any stream) with 45% marks or 5.0 CGPA for GEN/OBC and 40% marks or
+    //       4.5 CGPA for SC/ST Category.
+    //     </p>
+    //   `,
+    // },
 
     {
       course: "M.Tech. in Structural Engineering",
       duration: "2 Years",
       eligibility: "Click",
       fee: "Rs. 1,07,000/-",
+      link: "program/m-tech-structural-engineering",
       eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>M.Tech. in Structural Engineering</h2>
         <p>
@@ -320,6 +323,7 @@ export const civilIndustryPostgraduateFeeTable: FeeTableData = {
       duration: "3 Years",
       eligibility: "Click",
       fee: "Rs. 69,000/-",
+      link: "program/m-tech-environmental-engineering-part-time",
       eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>M.Tech. in Environmental Engineering (Part Time)</h2>
         <p>
@@ -340,6 +344,7 @@ export const civilIndustryPostgraduateFeeTable: FeeTableData = {
       duration: "3 Years",
       eligibility: "Click",
       fee: "Rs. 69,000/-",
+      link: "program/m-tech-structural-engineering-part-time",
       eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>M.Tech. in Structural Engineering (Part Time)</h2>
         <p>
@@ -359,6 +364,7 @@ export const civilIndustryPostgraduateFeeTable: FeeTableData = {
       duration: "2 Years",
       eligibility: "Click",
       fee: "Rs. 64,000/-",
+      link: "program/m-sc-environmental-science",
       eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>M.Sc. (Environmental Science)</h2>
         <p>
@@ -382,6 +388,7 @@ export const civilIndustryUndergraduateFeeTable: FeeTableData = {
       duration: "4 Years",
       eligibility: "Click",
       fee: "Rs. 1,32,000/-",
+      link: "program/b-tech-civil-engineering",
       eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>B.Tech. in Civil Engineering</h2>
         <p>
@@ -400,7 +407,8 @@ export const civilIndustryUndergraduateFeeTable: FeeTableData = {
       course: "B.Tech. in Civil Engineering (Lateral Entry)",
       duration: "3 Years",
       eligibility: "Click",
-      fee: "Rs. 1,37,000/-",
+      fee: "Rs. 1,52,000/-",
+      link: "program/b-tech-civil-engineering-lateral-entry",
       eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>B.Tech. in Civil Engineering (Lateral Entry)</h2>
         <p>
@@ -420,7 +428,8 @@ export const civilIndustryUndergraduateFeeTable: FeeTableData = {
       course: "B.Tech. in CE + M.B.A.",
       duration: "5 Years",
       eligibility: "Click",
-      fee: "Rs. 1,32,000/-",
+      fee: "Rs. 1,52,000/-",
+      link:"program/b-tech-ce-mba",
       eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>B.Tech. in CE + M.B.A.</h2>
         <p>
@@ -439,7 +448,8 @@ export const civilIndustryUndergraduateFeeTable: FeeTableData = {
       course: "B.Tech. + M.Tech. in Civil Engineering",
       duration: "5 Years",
       eligibility: "Click",
-      fee: "Rs. 1,32,000/-",
+      fee: "Rs. 1,52,000/-",
+      link:"program/b-tech-m-tech-ce",
       eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>B.Tech. + M.Tech. in Civil Engineering</h2>
         <p>
@@ -455,12 +465,13 @@ export const civilIndustryUndergraduateFeeTable: FeeTableData = {
     },
 
     {
-      course: "B.Tech. in CE (Advanced Practices in Construction) with L&T",
+      course: "B.Tech. in Civil Engineering with L&T",
       duration: "4 Years",
       eligibility: "Click",
-      fee: "Rs. 1,46,375/-",
+      fee: "Rs. 1,52,000/-",
+      link:"program/b-tech-civil-engineering",
       eligibilityContent: `
-        <h2 class='font-bold text-lg mb-3'>B.Tech. in CE (Advanced Practices in Construction) with L&T</h2>
+        <h2 class='font-bold text-lg mb-3'>B.Tech. in Civil Engineering with L&T</h2>
         <p>
           Candidate must have passed 10+2 or equivalent system from any recognized Central/State Board 
           with Physics and Mathematics as compulsory subjects along with one of the following: 

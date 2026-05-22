@@ -5,7 +5,7 @@ import { CustomInstituteCourseCardProps } from "../../../../../utils/custom/Cust
 import courseImg1 from "../../../../../assets/images/academics/departments/commerce-07052412092026.webp";
 import courseImg2 from "../../../../../assets/images/academics/departments/management1-07052412144882.webp";
 import { InstituteProfile } from "../../../../../types/profile-data-type";
-import AswaniImg from "../../../../../assets/images/academics/departments/aswani-26042512341893.webp"
+import AswaniImg from "../../../../../assets/images/academics/departments/aswani-26042512341893.webp";
 import missionImg from "../../../../../assets/images/academics/departments/dept-mission-icon1.webp";
 import vissionImg from "../../../../../assets/images/academics/departments/dept-mission-icon2.webp";
 import { counterDataType } from "../../../../about/leadership-and-governance/leadership-and-governance-data";
@@ -38,7 +38,19 @@ import depSlide5 from "../../../../../assets/images/academics/institutes/key-hig
 import depSlide6 from "../../../../../assets/images/academics/institutes/key-highlight/bsc-it-07022411165864.webp";
 import depSlide7 from "../../../../../assets/images/academics/institutes/key-highlight/entrepreneurialecosystem-0702241115095.webp";
 import { Student } from "../../../../../utils/custom/CustomPlacedStudentTable";
-import { counterDataForFacultyManagement, managementCounterData2, managementDepartmentHeadData, managementDepartmentHighlights, managementDepartmentVMData, managementfacultyData, managementFeeData, managementFeeData1, managementFeeData2, managementOverviewData, managementPlacedStudents } from "./faculty-of-management-data";
+import {
+  counterDataForFacultyManagement,
+  managementCounterData2,
+  managementDepartmentHeadData,
+  managementDepartmentHighlights,
+  managementDepartmentVMData,
+  managementfacultyData,
+  managementFeeData,
+  managementFeeData1,
+  managementFeeData2,
+  managementOverviewData,
+  managementPlacedStudents,
+} from "./faculty-of-management-data";
 export const InstituteofManagementCommerceandEconomicsOverviewData: customeOverViewType = {
   heading: "Institute of Management, Commerce and Economics",
   content:
@@ -79,7 +91,6 @@ export const InstituteofManagementCommerceandEconomicsvisionMissionData = {
   },
 };
 
-
 export const InstituteofManagementCommerceandEconomicsinstituteProfiles: InstituteProfile[] = [
   {
     id: 1,
@@ -88,8 +99,7 @@ export const InstituteofManagementCommerceandEconomicsinstituteProfiles: Institu
     position: "Director IMCE, SRMU, Lucknow-Deva Road",
     image: AswaniImg,
 
-    summary:
-      "",
+    summary: "",
 
     detailsHeading: "",
     useBullets: false,
@@ -102,10 +112,8 @@ export const InstituteofManagementCommerceandEconomicsinstituteProfiles: Institu
       "**Contact No.: **+91-9935832234",
     ],
 
-    modalContent: `Dr. Aswani Kumar has an experience of more than 25 years in the field of academics, research and administration in several national and international institutes and Universities.  His experience lies in editing, reviewing research, academia and administration. He has a proven track record of strategic planning, academic excellence, and faculty development to enhance the institution’s reputation and student success. He has 18 research publications in international journals of repute & over 25 presentations at National and International Conferences. He was also involved in administrative responsibilities at International Universities. His experience also includes design of research and consultancy projects for government and corporate houses.`
+    modalContent: `Dr. Aswani Kumar has an experience of more than 25 years in the field of academics, research and administration in several national and international institutes and Universities.  His experience lies in editing, reviewing research, academia and administration. He has a proven track record of strategic planning, academic excellence, and faculty development to enhance the institution’s reputation and student success. He has 18 research publications in international journals of repute & over 25 presentations at National and International Conferences. He was also involved in administrative responsibilities at International Universities. His experience also includes design of research and consultancy projects for government and corporate houses.`,
   },
-
-
 ];
 export const commerceAndEconomicsOverviewData: customeOverViewType = {
   heading: "Faculty of Commerce and Economics",
@@ -185,6 +193,7 @@ export const commerceAndEconomicsFeeData: FeeTableData = {
       duration: "2 Years",
       eligibility: "Click",
       fee: "Rs. 50,000/-",
+      link: "program/m-com1",
       eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>M.Com.</h2>
        <p>Candidate must have passed B.Com. with minimum aggregate marks of 50% or equivalent grade for GEN/OBC and 45% marks or equivalent grade for SC/ST Category.</p>
@@ -195,6 +204,7 @@ export const commerceAndEconomicsFeeData: FeeTableData = {
       duration: "2 Years",
       eligibility: "Click",
       fee: "Rs. 50,000/-",
+      link: "program/m-sc-economics",
       eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>M.Sc. in Economics</h2>
        <p>Candidates must have completed a Bachelor’s degree in Economics or any related discipline (like Commerce, Mathematics, or Statistics) from a recognized university with a minimum of 50% marks (45% for SC/ST candidates).</p>
@@ -211,6 +221,7 @@ export const commerceAndEconomicsFeeData1: FeeTableData = {
       duration: "3 Years",
       eligibility: "Click",
       fee: "Rs. 87,000/-",
+      link: "program/b-com-hons-with-l-t",
       eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>B.Com.(Hons.) with L&T</h2>
        <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/State Board with Commerce or related subjects/Maths with minimum aggregate marks of 45% or equivalent grade for GEN/OBC and 40% marks or equivalent grade for SC/ST Category.</p>
@@ -221,6 +232,7 @@ export const commerceAndEconomicsFeeData1: FeeTableData = {
       duration: "3 Years",
       eligibility: "Click",
       fee: "Rs. 42,000/-",
+      link: "program/b-a-hons-economics",
       eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>B.A.(Hons.) in Economics</h2>
        <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/State Board with Commerce or related subjects/Maths with minimum aggregate marks of 45% or equivalent grade for GEN/OBC and 40% marks or equivalent grade for SC/ST Category.</p>
@@ -231,6 +243,7 @@ export const commerceAndEconomicsFeeData1: FeeTableData = {
       duration: "4 Years",
       eligibility: "Click",
       fee: "Rs. 30,000/-",
+      link: "program/b-com",
       eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>B.Com. (Bachelor of Commerce)</h2>
        <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/State Board with Commerce or related subjects/Maths with minimum aggregate marks of 45% or equivalent grade for GEN/OBC and 40% marks or equivalent grade for SC/ST Category.</p>
@@ -238,7 +251,6 @@ export const commerceAndEconomicsFeeData1: FeeTableData = {
     },
   ],
 };
-
 
 export const facultyDataCommerceAndEconomics: FacultyItem[] = [
   {
@@ -369,7 +381,6 @@ export const facultyDataCommerceAndEconomics: FacultyItem[] = [
   },
 ];
 
-
 export const departmentHighlights: departmentHighlightscardType[] = [
   {
     image: depSlide1,
@@ -380,8 +391,7 @@ export const departmentHighlights: departmentHighlightscardType[] = [
   {
     image: depSlide2,
     title: "Regular mentoring for ICWA / ICAI",
-    description:
-      "Special modules have been incorporated in curricula and regular mentoring is done to provide assistance to the students preparing for ICWA, ICAI etc.",
+    description: "Special modules have been incorporated in curricula and regular mentoring is done to provide assistance to the students preparing for ICWA, ICAI etc.",
   },
   {
     image: depSlide3,
@@ -398,14 +408,12 @@ export const departmentHighlights: departmentHighlightscardType[] = [
   {
     image: depSlide5,
     title: "Interactive sessions with industry stalwarts",
-    description:
-      "The department organizes interactive seminars, guest lectures and workshops with prominent corporate leaders that benefit students' overall growth.",
+    description: "The department organizes interactive seminars, guest lectures and workshops with prominent corporate leaders that benefit students' overall growth.",
   },
   {
     image: depSlide6,
     title: "Ultra modern infrastructure & ICT techniques",
-    description:
-      "Top-notch learning is made possible by the cutting-edge infrastructure and the proficiency of many ICT techniques practiced by the faculty members.",
+    description: "Top-notch learning is made possible by the cutting-edge infrastructure and the proficiency of many ICT techniques practiced by the faculty members.",
   },
   {
     image: depSlide7,
@@ -414,29 +422,29 @@ export const departmentHighlights: departmentHighlightscardType[] = [
       "Department has strong corporate linkages with firms operating in the field of finance and accounting resulting in lucrative internship and placement opportunities.",
   },
 ];
-export const counterData2: counterDataType[] =  [
-    {
-      id: 1,
-      icon: "",
-      value: "100",
-      suffix: "",
-      label: "Guest lectures",
-    },
-    {
-      id: 2,
-      icon: "",
-      value: "40",
-      suffix: "",
-      label: "Field Visits",
-    },
-    {
-      id: 3,
-      icon: "",
-      value: "10",
-      suffix: "",
-      label: "Conference & Seminars",
-    },
-  ];
+export const counterData2: counterDataType[] = [
+  {
+    id: 1,
+    icon: "",
+    value: "100",
+    suffix: "",
+    label: "Guest lectures",
+  },
+  {
+    id: 2,
+    icon: "",
+    value: "40",
+    suffix: "",
+    label: "Field Visits",
+  },
+  {
+    id: 3,
+    icon: "",
+    value: "10",
+    suffix: "",
+    label: "Conference & Seminars",
+  },
+];
 export interface Headers {
   name: string;
   program: string;
