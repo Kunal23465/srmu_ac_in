@@ -225,6 +225,17 @@ export const industryHonorsFeeData: FeeTableData = {
             <p>Candidate must have passed 3 or 4 year Diploma in technical stream from institutions recognized by AICTE or a State Board of Technical Education or B.Sc. degree in Biology/ Microbiology/ Botony/ Zoology/ Chemistry/ Physics/ Maths/ Physiology/ Biotechnology/ Biochemistry/ Agriculture with minimum aggregate marks of 45% or 5.0 CGPA for GEN/OBC and 40% marks or 4.5 CGPA for SC/ST Category.</p>
         `,
     },
+    {
+      course: "B.Tech. in ECE (Semiconductor Design) with L&T",
+      duration: "4 Years",
+      eligibility: "Click",
+      fee: "Rs. 1,52,000/-",
+      link: "program/btech-ece-semiconductor-design",
+      eligibilityContent: `
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Tech. in ECE (Semiconductor Design) with L&T</h2>
+            <p>The B.Tech in Electronics & Communication Engineering (Semiconductor Design) at Shri Ramswaroop Memorial University (SRMU), Lucknow is a future-focused engineering program designed to prepare students for careers in the rapidly expanding semiconductor and electronics industry.</p>
+        `,
+    },
   ],
 };
 
@@ -524,6 +535,17 @@ export const underGraduateFeeData: FeeTableData = {
             <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Tech. in Electronics & Communication Engineering (Lateral Entry) with L&T</h2>
             <p>Candidate must have passed 3 or 4 year Diploma in technical stream from institutions recognized by AICTE or a State Board of Technical Education or B.Sc. degree in Biology/ Microbiology/ Botony/ Zoology/ Chemistry/ Physics/ Maths/ Physiology/ Biotechnology/ Biochemistry/ Agriculture with minimum aggregate marks of 45% or 5.0 CGPA for GEN/OBC and 40% marks or 4.5 CGPA for SC/ST Category.</p>
             <section>&nbsp;</section>
+        `,
+    },
+    {
+      course: "B.Tech. in ECE (Semiconductor Design) with L&T",
+      duration: "4 Years",
+      eligibility: "Click",
+      fee: "Rs. 1,52,000/-",
+      link: "program/btech-ece-semiconductor-design",
+      eligibilityContent: `
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Tech. in ECE (Semiconductor Design) with L&T</h2>
+            <p>The B.Tech in Electronics & Communication Engineering (Semiconductor Design) at Shri Ramswaroop Memorial University (SRMU), Lucknow is a future-focused engineering program designed to prepare students for careers in the rapidly expanding semiconductor and electronics industry.</p>
         `,
     },
   ],

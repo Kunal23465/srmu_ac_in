@@ -218,7 +218,7 @@ export const industryHonorsFeeDataOfME: FeeTableData = {
       course: "B.Tech. in Mechanical Engineering with L&T",
       duration: "4 Years",
       eligibility: "Click",
-      fee: "Rs. 1,46,375/-",
+      fee: "Rs. 1,52,000/-",
       link: "program/b-tech-me-ev-engineering",
       eligibilityContent: `
             <h2 class='font-bold text-lg  flex justify-center  mb-3'>B.Tech. in Mechanical Engineering with L&T</h2>
@@ -229,7 +229,7 @@ export const industryHonorsFeeDataOfME: FeeTableData = {
       course: "B.Tech. in Mechanical Engineering (Lateral Entry) with L&T",
       duration: "3 Years",
       eligibility: "Click",
-      fee: "Rs. 1,51,375/-",
+      fee: "Rs. 1,52,000/-",
       link: "program/b-tech-me-ev-engineering-lateral-entry",
       eligibilityContent: `
             <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Tech. in Mechanical Engineering (Lateral Entry) with L&T</h2>
@@ -287,7 +287,7 @@ export const postGraduateFeeDataOfME: FeeTableData = {
       course: "M.Tech. in Production & Industrial Engineering (Part Time)",
       duration: "3 Years",
       eligibility: "Click",
-      fee: "Rs. 69,000/-",
+      fee: "Rs. 69,100/-",
       link: "program/m-tech-production-industrial-engineering-part-time",
       eligibilityContent: `
             <h2 class='font-bold text-lg mb-3  flex justify-center '>M.Tech. in Production & Industrial Engineering (Part Time)</h2>
@@ -350,7 +350,7 @@ export const underGraduateFeeDataOfME: FeeTableData = {
       duration: "3 Years",
       eligibility: "Click",
       fee: "Rs. 1,52,000/-",
-      link:"program/b-tech-me-ev-engineering-lateral-entry",
+      link: "program/b-tech-me-ev-engineering-lateral-entry",
       eligibilityContent:
         "\n            <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Tech. in ME (EV Engineering) (Lateral Entry) with L&T</h2>\n            <p>Candidate must have passed 3 or 4 year Diploma in technical stream from institutions recognized by AICTE or a State Board of Technical Education or B.Sc. degree in Biology/ Microbiology/ Botony/ Zoology/ Chemistry/ Physics/ Maths/ Physiology/ Biotechnology/ Biochemistry/ Agriculture with minimum aggregate marks of 45% or 5.0 CGPA for GEN/OBC and 40% marks or 4.5 CGPA for SC/ST Category.</p>\n            <section>&nbsp;</section>\n        ",
     },
