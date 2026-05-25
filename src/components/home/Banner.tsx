@@ -71,7 +71,7 @@ const Banner: React.FC = () => {
             <div className="overflow-hidden rounded-b-[28px] sm:rounded-none">
                 <div className="relative">
                     <img
-                        className="w-full h-[44vh] sm:h-auto sm:min-h-[470px] md:min-h-[520px] lg:min-h-[640px] max-h-[calc(100vh-140px)] object-cover rounded-b-[28px] sm:rounded-none"
+                        className="w-full h-[38vh] sm:h-auto sm:min-h-[470px] md:min-h-[520px] lg:min-h-[640px] max-h-[calc(100vh-140px)] object-cover rounded-b-[28px] sm:rounded-none"
                         src={banner4}
                         alt={slides[selectedIndex].imageAlt}
                         width={1920}
@@ -104,18 +104,18 @@ const Banner: React.FC = () => {
                                             key={slide.eyebrow}
                                             className={`absolute inset-0 z-10 text-white sm:px-4 sm:py-4 md:py-8 rounded-tl-[50px] rounded-br-[50px] pointer-events-none ${animationClass} ${isActive ? "z-20" : ""}`}
                                         >
-                                            <div className="text-[16px] sm:text-[18px] mb-2.5">{slide.eyebrow}</div>
+                                            <div className="text-[14px] sm:text-[18px] mb-2 sm:mb-2.5">{slide.eyebrow}</div>
 
-                                            <HeadingTag className="text-[26px] sm:text-[34px] lg:text-[48px] xl:text-[56px] font-medium leading-[1.12] mb-2.5">
+                                            <HeadingTag className="text-[22px] sm:text-[34px] lg:text-[48px] xl:text-[56px] font-medium leading-[1.12] mb-2.5">
                                                 {slide.title}
                                             </HeadingTag>
 
                                             <div className="text-[12px] sm:text-[17px]">{slide.description}</div>
 
                                             {/* ✅ FIX APPLIED HERE */}
-                                            <div className="mt-6 pointer-events-auto">
+                                            <div className="mt-4 sm:mt-6 pointer-events-auto">
                                                 <a href={slide.href} target="_blank">
-                                                    <button className="bg-[#ffb703] cursor-pointer relative z-[9999] uppercase py-3 px-4.5 text-[#023047] flex gap-x-2 items-center rounded-lg">
+                                                    <button className="bg-[#ffb703] text-sm sm:text-base cursor-pointer relative z-[9999] uppercase py-2 px-2 sm:py-3 sm:px-4.5 text-[#023047] flex gap-x-2 items-center rounded-lg">
                                                         {slide.cta}
                                                         <LiaLongArrowAltRightSolid size={22} />
                                                     </button>

@@ -60,30 +60,30 @@ const EnquiryForm: React.FC<EnquiryFormProps> = ({
   };
 
   return (
-    <section className="py-[5rem] md:mt-[-11rem]">
+    <section className="py-[5rem]">
       <div className={`${Classes["container"]}`}>
         <div className={`${Classes["career_inner_page"]}`}>
           <div className="name color_light_blue fw500 font22 font-medium mb-[1.5rem] text-[1.375rem] text-customBlue">
             Enquiry Form
           </div>
 
-         <Formik
-  initialValues={initialValuesForEnquiry}
-  validationSchema={validationSchemaForEnquiry}
-  onSubmit={async (values, actions) => {
-    try {
-      const valuesForEnquiry = { values, actions };
+          <Formik
+            initialValues={initialValuesForEnquiry}
+            validationSchema={validationSchemaForEnquiry}
+            onSubmit={async (values, actions) => {
+              try {
+                const valuesForEnquiry = { values, actions };
 
-      await sleep(300);
+                await sleep(300);
 
-      onSubmitHandlerForAdmission(valuesForEnquiry);
-    } catch (err) {
-      console.error(err);
-    } finally {
-      actions.setSubmitting(false); // ✅ important
-    }
-  }}
->
+                onSubmitHandlerForAdmission(valuesForEnquiry);
+              } catch (err) {
+                console.error(err);
+              } finally {
+                actions.setSubmitting(false); // ✅ important
+              }
+            }}
+          >
             {() => (
               <Form className="mx-[-0.75rem]">
                 <div className={`flex flex-wrap w-[100%]`}>
@@ -93,9 +93,8 @@ const EnquiryForm: React.FC<EnquiryFormProps> = ({
                     return (
                       <div
                         key={data.id}
-                        className={`mb-2 flex flex-col gap-1 px-[0.75rem] ${
-                          isCheckbox ? "w-full" : "w-full md:w-1/3"
-                        }`}
+                        className={`mb-2 flex flex-col gap-1 px-[0.75rem] ${isCheckbox ? "w-full" : "w-full md:w-1/3"
+                          }`}
                       >
                         <label className="!mb-[0.2rem]">
                           {data.labelname}
@@ -108,14 +107,14 @@ const EnquiryForm: React.FC<EnquiryFormProps> = ({
                               data.name === "coreStateId"
                                 ? "coreStateId"
                                 : data.name === "coreCityId"
-                                ? "coreCityId"
-                                : data.name === "academicCareerId"
-                                ? "academicCareerId"
-                                : "academicProgramId"
+                                  ? "coreCityId"
+                                  : data.name === "academicCareerId"
+                                    ? "academicCareerId"
+                                    : "academicProgramId"
                             }
                             keyForName={
                               data.name === "coreStateId" ||
-                              data.name === "coreCityId"
+                                data.name === "coreCityId"
                                 ? "name"
                                 : "description"
                             }
@@ -123,17 +122,17 @@ const EnquiryForm: React.FC<EnquiryFormProps> = ({
                               data.name === "coreStateId"
                                 ? stateData
                                 : data.name === "coreCityId"
-                                ? cityData
-                                : data.name === "academicCareerId"
-                                ? careerData
-                                : programData
+                                  ? cityData
+                                  : data.name === "academicCareerId"
+                                    ? careerData
+                                    : programData
                             }
                             onChange={
                               data.name === "coreStateId"
                                 ? handleStateChange
                                 : data.name === "academicCareerId"
-                                ? handleProgramChange
-                                : undefined
+                                  ? handleProgramChange
+                                  : undefined
                             }
                           />
                         ) : data.type === "checkbox" ? (
@@ -145,8 +144,8 @@ const EnquiryForm: React.FC<EnquiryFormProps> = ({
                                 className="form-checkbox h-5 w-5 mt-1"
                               />
                               <label className="text-[16px] mt-1.5">
-                               
-I authorise SRMU and its representatives to Call, SMS, Email or WhatsApp me about its programmes and offers. This consent overrides any registration for DNC / NDNC.
+
+                                I authorise SRMU and its representatives to Call, SMS, Email or WhatsApp me about its programmes and offers. This consent overrides any registration for DNC / NDNC.
                               </label>
                             </div>
                             <ErrorMessage

@@ -197,7 +197,7 @@ const RootLayout: React.FC = () => {
           onMouseEnter={() => setHovered(2)}
           onMouseLeave={() => setHovered(null)}
           target="_blank"
-           href="/student-portal-redirect"
+          href="/student-portal-redirect"
           rel="noopener noreferrer"
           className={`
     w-full sm:w-auto sm:rotate-270 writing-mode-horizontal sm:writing-mode-vertical relative z-400
@@ -217,7 +217,7 @@ const RootLayout: React.FC = () => {
         <a
           onMouseEnter={() => setHovered(3)}
           onMouseLeave={() => setHovered(null)}
-          href="/scholarship-scheme"
+          href="/admission-enquiry-redirect"
           className={`
     w-full sm:rotate-270 writing-mode-horizontal sm:writing-mode-vertical relative z-400
     text-xs tracking-wider items-center justify-center
@@ -229,7 +229,7 @@ const RootLayout: React.FC = () => {
     ${hovered === 2 ? "sm:translate-y-2" : ""}
   `}
         >
-          <span>Scholarship Details</span>
+          <span>Admission Enquiry</span>
         </a>
       </div>
     </>

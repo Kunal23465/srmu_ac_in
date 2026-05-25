@@ -24,37 +24,37 @@ const AdmissionEnquiry: React.FC = () => {
 
   const navigate = useNavigate();
 
-const submitHandlerForAdmission = async (value: any) => {
-  const { values, actions } = value;
+  const submitHandlerForAdmission = async (value: any) => {
+    const { values, actions } = value;
 
-  const payload = {
-    name: values.firstName + " " + values.lastName,
-    email: values.email,
-    phone: values.phone,
-    coreStateId: values.coreStateId,
-    coreCityId: values.coreCityId,
-    academicCareerId: values.academicCareerId,
-    academicProgramId: values.academicProgramId,
-    leadSourceId: 19,
+    const payload = {
+      name: values.firstName + " " + values.lastName,
+      email: values.email,
+      phone: values.phone,
+      coreStateId: values.coreStateId,
+      coreCityId: values.coreCityId,
+      academicCareerId: values.academicCareerId,
+      academicProgramId: values.academicProgramId,
+      leadSourceId: 19,
+    };
+
+    try {
+      // call API and wait for result
+      await store.dispatch(submissionForEnquiry(payload)).unwrap();
+
+      // ✅ CLEAR FORM (guaranteed)
+      actions.resetForm();
+
+      // optional: navigate
+      setTimeout(() => {
+        navigate("/admission-enquiry-redirect");
+      }, 500);
+
+    } catch (e) {
+      // error toast already handled in slice (toast.promise)
+      console.error(e);
+    }
   };
-
-  try {
-    // call API and wait for result
-    await store.dispatch(submissionForEnquiry(payload)).unwrap();
-
-    // ✅ CLEAR FORM (guaranteed)
-    actions.resetForm();
-
-    // optional: navigate
-    setTimeout(() => {
-      navigate("/admission-enquiry-redirect");
-    }, 500);
-
-  } catch (e) {
-    // error toast already handled in slice (toast.promise)
-    console.error(e);
-  }
-};
 
   useEffect(() => {
     // ✅ SUCCESS CASE
@@ -80,12 +80,12 @@ const submitHandlerForAdmission = async (value: any) => {
         <CustomOverviewSection data={admissionEnquiryOverviewData} />
       </div>
 
-      <AdmissionCard admissionEnquiryData={admissionEnquiryData} />
-
-      <div className={`${Classes["container"]}`}>
-        <EnquiryForm onSubmitHandlerForAdmission={submitHandlerForAdmission} />
+      {/* <AdmissionCard admissionEnquiryData={admissionEnquiryData} /> */}
+      <div className="w-full bg-[#0f4a85]">
+        <div className={`${Classes["container"]} `}>
+          <EnquiryForm onSubmitHandlerForAdmission={submitHandlerForAdmission} />
+        </div>
       </div>
-
       <CustomTopFooter data={alumniRegistrationTopFooterData} />
     </>
   );
