@@ -2,7 +2,7 @@ import FacultyOfBiosciences from "../../../../components/academics/facultyOfBios
 
 const FacultyOfBiosciencesPage = () => {
   return <div>
-    <FacultyOfBiosciences/>
+    <FacultyOfBiosciences />
   </div>;
 };
 

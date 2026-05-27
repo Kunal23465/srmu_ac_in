@@ -7,10 +7,10 @@ import { departmentHighlightscardType, FeeTableData } from "../faculty-of-civil-
 import { FacultyItem } from "../../../utils/custom/CustomFacultyListCard";
 import defaultSrmu from "../../../assets/images/academics/institutes/default-img.webp";
 import aparna from "../../../assets/images/academics/institutes/aparna.webp";
-import sapna from "../../../assets/images/academics/institutes/sapna.webp";
-import neeraj from "../../../assets/images/academics/institutes/neeraj.webp";
+// import sapna from "../../../assets/images/academics/institutes/sapna.webp";
+// import neeraj from "../../../assets/images/academics/institutes/neeraj.webp";
 import imran from "../../../assets/images/academics/institutes/imran.webp";
-import sukanya from "../../../assets/images/academics/institutes/sukanya.webp";
+// import sukanya from "../../../assets/images/academics/institutes/sukanya.webp";
 import raviKumarDeshwal from "../../../assets/images/academics/institutes/raviKumarDeshwal.webp";
 import diverseprogram from "../../../assets/images/academics/institutes/diverseprogram.webp";
 import statelab from "../../../assets/images/academics/institutes/statelab.webp";
@@ -30,7 +30,22 @@ import nukaad from "../../../assets/images/academics/institutes/nukaadNatak.pnng
 import amulDairy from "../../../assets/images/academics/institutes/amulDiary.webp";
 import industrialCsir from "../../../assets/images/academics/institutes/industrial-csir.webp";
 import { counterDataType } from "../../about/leadership-and-governance/leadership-and-governance-data";
-
+import Neeraj1 from "../../../assets/images/academics/institutes/bioscience/Neeraj-Gupta.webp";
+import Neeraj2 from "../../../assets/images/academics/institutes/bioscience/Neeraj-Tiwari.webp";
+import Shalini1 from "../../../assets/images/academics/institutes/bioscience/Shalini-Singh.webp";
+import Garima from "../../../assets/images/academics/institutes/bioscience/Garima-Gupta.webp";
+import Sonal from "../../../assets/images/academics/institutes/bioscience/Sonal-Prasad.webp";
+import Renu from "../../../assets/images/academics/institutes/bioscience/Renu-Khare.webp";
+import Naushad from "../../../assets/images/academics/institutes/bioscience/Naushad-Ahmad.webp";
+import Sankalp from "../../../assets/images/academics/institutes/bioscience/Sankalp-Misra.webp";
+import Shalini2 from "../../../assets/images/academics/institutes/bioscience/Shalini-Singh-2.webp";
+import Deepti from "../../../assets/images/academics/institutes/bioscience/Deepti-Singh.webp";
+import Shruti from "../../../assets/images/academics/institutes/bioscience/Shruti-Shukla.webp";
+import Anjali from "../../../assets/images/academics/institutes/bioscience/Anjali.webp";
+import Nootan from "../../../assets/images/academics/institutes/bioscience/Nootan-Singh.webp";
+import Manyata from "../../../assets/images/academics/institutes/bioscience/Manyata-Sharma.webp";
+import Pratibha from "../../../assets/images/academics/institutes/bioscience/Pratibha-Gupta.webp";
+import bhawna from "../../../assets/images/academics/institutes/bioscience/Bhawna-Srivastava.webp";
 export const facultyofBioscienceOverviewData: customeOverViewType = {
   heading: "Faculty of Biosciences",
   content: `The Faculty of Biosciences (FoBS) at Shri Ramswaroop Memorial University (SRMU) was established in 2015 with B.Sc. (Hons), M.Sc. and M.Phil. programmes in Biotechnology. In a very short span of time FoBS achieved many prestigious milestones. It received extramural research grant, published, and continues to do so, in peer-reviewed publications in high-impact journals, placement of students in reputed organizations, organized value-added courses, conferences, seminars, workshops and guest lectures by eminent scientists and academicians, etc. The labs are equipped with state of the art instruments, and can be compared with any research lab globally.
@@ -186,13 +201,7 @@ export const underGraduateFeeDataOfBioscience: FeeTableData = {
 };
 
 export const facultyDetailsOfBioScienceDepartment: FacultyItem[] = [
-  {
-    id: 1,
-    name: "Dr. Neeraj Gupta",
-    designation: "Associate Professor",
-    image: defaultSrmu,
-    cardBgColor: "transparent",
-  },
+ 
   {
     id: 2,
     name: "Dr. Ankita Srivastava",
@@ -207,20 +216,8 @@ export const facultyDetailsOfBioScienceDepartment: FacultyItem[] = [
     image: raviKumarDeshwal,
     cardBgColor: "transparent",
   },
-  {
-    id: 4,
-    name: "Mr. Naushad Ahmad",
-    designation: "Assistant Professor",
-    image: defaultSrmu,
-    cardBgColor: "transparent",
-  },
-  {
-    id: 5,
-    name: "Dr. Bhawna Srivastava",
-    designation: "Assistant Professor",
-    image: defaultSrmu,
-    cardBgColor: "transparent",
-  },
+ 
+
   {
     id: 6,
     name: "Ms. Aparna",
@@ -235,20 +232,7 @@ export const facultyDetailsOfBioScienceDepartment: FacultyItem[] = [
     image: defaultSrmu,
     cardBgColor: "transparent",
   },
-  {
-    id: 8,
-    name: "Dr. Sapna Sharma",
-    designation: "Assistant Professor",
-    image: sapna,
-    cardBgColor: "transparent",
-  },
-  {
-    id: 9,
-    name: "Dr. Neeraj Tiwari",
-    designation: "Assistant Professor",
-    image: neeraj,
-    cardBgColor: "transparent",
-  },
+
   {
     id: 10,
     name: "Dr. Mohd Imran",
@@ -263,25 +247,119 @@ export const facultyDetailsOfBioScienceDepartment: FacultyItem[] = [
     image: defaultSrmu,
     cardBgColor: "transparent",
   },
-  {
-    id: 12,
-    name: "Dr. Sonal Prasad",
-    designation: "Assistant Professor",
-    image: defaultSrmu,
-    cardBgColor: "transparent",
-  },
-  {
-    id: 13,
-    name: "Dr. Garima Gupta",
-    designation: "Assistant Professor",
-    image: defaultSrmu,
-    cardBgColor: "transparent",
-  },
+  
+
+
   {
     id: 14,
-    name: "Dr. Sukanya Tripathy",
+    name: "Dr. Neeraj Gupta",
+    designation: "Professor",
+    image: Neeraj1,
+    cardBgColor: "transparent",
+  },
+  {
+    id: 15,
+    name: "Dr. Neeraj Tiwari",
     designation: "Assistant Professor",
-    image: sukanya,
+    image: Neeraj2,
+    cardBgColor: "transparent",
+  },
+  {
+    id: 16,
+    name: "Dr. Shalini Singh",
+    designation: "Associate Professor",
+    image: Shalini1,
+    cardBgColor: "transparent",
+  },
+  {
+    id: 17,
+    name: "Dr. Garima Gupta",
+    designation: "Assistant Professor",
+    image: Garima,
+    cardBgColor: "transparent",
+  },
+  {
+    id: 18,
+    name: "Dr. Sonal Prasad",
+    designation: "Assistant Professor",
+    image: Sonal,
+    cardBgColor: "transparent",
+  },
+  {
+    id: 19,
+    name: "Dr. Renu Khare",
+    designation: "Assistant Professor",
+    image: Renu,
+    cardBgColor: "transparent",
+  },
+  {
+    id: 20,
+    name: "Mr. Naushad Ahmad",
+    designation: "Assistant Professor",
+    image: Naushad,
+    cardBgColor: "transparent",
+  },
+  {
+    id: 21,
+    name: "Dr. Sankalp Misra",
+    designation: "Assistant Professor",
+    image: Sankalp,
+    cardBgColor: "transparent",
+  },
+  {
+    id: 22,
+    name: "Dr. Pratibha Gupta",
+    designation: "Assistant Professor",
+    image: Pratibha,
+    cardBgColor: "transparent",
+  },
+  {
+    id: 23,
+    name: "Dr. Bhawna Srivastava",
+    designation: "Assistant Professor",
+    image: bhawna,
+    cardBgColor: "transparent",
+  },
+  {
+    id: 24,
+    name: "Dr. Shalini Singh",
+    designation: "Assistant Professor",
+    image: Shalini2,
+    cardBgColor: "transparent",
+  },
+  {
+    id: 25,
+    name: "Dr. Deepti Singh",
+    designation: "Assistant Professor",
+    image: Deepti,
+    cardBgColor: "transparent",
+  },
+  {
+    id: 26,
+    name: "Dr. Shruti Shukla",
+    designation: "Assistant Professor",
+    image: Shruti,
+    cardBgColor: "transparent",
+  },
+  {
+    id: 27,
+    name: "Dr. Anjali",
+    designation: "Assistant Professor",
+    image: Anjali,
+    cardBgColor: "transparent",
+  },
+  {
+    id: 28,
+    name: "Dr. Nootan Singh",
+    designation: "Assistant Professor",
+    image: Nootan,
+    cardBgColor: "transparent",
+  },
+  {
+    id: 29,
+    name: "Dr. Manyata Sharma",
+    designation: "Assistant Professor",
+    image: Manyata,
     cardBgColor: "transparent",
   },
 ];

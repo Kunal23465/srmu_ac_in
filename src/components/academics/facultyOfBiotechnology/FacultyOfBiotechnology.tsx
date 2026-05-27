@@ -651,11 +651,11 @@ const FacultyOfBiotechnology = () => {
                 </div>
             </section> */}
 
-               <section className="bg-[#edf0f9] py-14">
-                        <div className={`${Classes["container"]} bg-[#edf0f9]`}>
-                            <PlacedStudents placedStudents={placedStudents} counterData={counterDataForPlacedStudentsOFBiotechnology} />
-                        </div>
-                    </section>
+            <section className="bg-[#edf0f9] py-14">
+                <div className={`${Classes["container"]} bg-[#edf0f9]`}>
+                    <PlacedStudents placedStudents={placedStudents} counterData={counterDataForPlacedStudentsOFBiotechnology} />
+                </div>
+            </section>
 
             <CustomDepartmentSlider
                 heading="Key Highlights of Our Department"

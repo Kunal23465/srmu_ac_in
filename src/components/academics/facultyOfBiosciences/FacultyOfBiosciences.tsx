@@ -422,11 +422,11 @@ const FacultyOfBiosciences = () => {
                 descriptionColor="#ffffff"
                 breakpoints={{ desktop: 4, tablet: 2, mobile: 1 }}
             />
-   <section className="bg-[#edf0f9] py-14">
-                        <div className={`${Classes["container"]} bg-[#edf0f9]`}>
-                            <PlacedStudents placedStudents={placedStudents} counterData={counterDataForPlacedStudentsOFBioscience} />
-                        </div>
-                    </section>
+            <section className="bg-[#edf0f9] py-14">
+                <div className={`${Classes["container"]} bg-[#edf0f9]`}>
+                    <PlacedStudents placedStudents={placedStudents} counterData={counterDataForPlacedStudentsOFBioscience} />
+                </div>
+            </section>
             {/* <section className="bg-[#edf0f9] py-14">
                 <div className={`${Classes["container"]} bg-[#edf0f9]`}>
                     <h2 className="text-3xl font-semibold mb-3">Placed Students</h2>

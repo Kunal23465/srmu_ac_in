@@ -19,12 +19,24 @@ import studentsupport from "../../../assets/images/academics/institutes/students
 import anchilicVigyan from "../../../assets/images/academics/institutes/anchilicVigyan.webp";
 import antiinfectives from "../../../assets/images/academics/institutes/antiinfectives.webp";
 import nanotechnology from "../../../assets/images/academics/institutes/nanotechnology.webp";
-import drTabishQidwai from "../../../assets/images/academics/institutes/dr.-tabish-kidwai-.webp";
+import drTabishQidwai from "../../../assets/images/academics/institutes/biotechnolgy/Tabish-Qidwai.webp";
 import experiencedfaculty from "../../../assets/images/academics/institutes/experiencedfaculty.webp";
 import drugDiscovery from "../../../assets/images/academics/institutes/workshop-drug-discovery.webp";
 import researchdevelopment from "../../../assets/images/academics/institutes/researchdevelopment.webp";
 import integrationNep from "../../../assets/images/academics/departments/integration-07052412393563.webp";
 import industrycollaboration from "../../../assets/images/academics/institutes/industrycollaboration.webp";
+import Ayushi from "../../../assets/images/academics/institutes/biotechnolgy/Ayushi-Verma.webp";
+import Devendra from "../../../assets/images/academics/institutes/biotechnolgy/Devendra-Singh.webp";
+import Diksha from "../../../assets/images/academics/institutes/biotechnolgy/Diksha-Singh.webp";
+import Divya from "../../../assets/images/academics/institutes/biotechnolgy/Divya-Srivastava.webp";
+import Himanshu from "../../../assets/images/academics/institutes/biotechnolgy/Himanshu-Yadav.webp";
+import Kunal from "../../../assets/images/academics/institutes/biotechnolgy/Kunal-Singh.webp";
+import Nabeel from "../../../assets/images/academics/institutes/biotechnolgy/Nabeel-Ahmad.webp";
+import Rahul from "../../../assets/images/academics/institutes/biotechnolgy/Rahul-Yadav.webp";
+import Ritika from "../../../assets/images/academics/institutes/biotechnolgy/Ritika-Saxena.webp";
+import Shalini from "../../../assets/images/academics/institutes/biotechnolgy/Shalini-Maurya.webp";
+import Sunil from "../../../assets/images/academics/institutes/biotechnolgy/Sunil-Kumar-Verma.webp";
+import Tabish from "../../../assets/images/academics/institutes/biotechnolgy/Tabish-Qidwai.webp";
 
 import { departmentHighlightscardType, FeeTableData } from "../faculty-of-civil-engineering/faculty-of-civil-engineering-data";
 import { counterDataType } from "../../about/leadership-and-governance/leadership-and-governance-data";
@@ -238,40 +250,13 @@ export const biotechnologyIndustryUndergraduateFeeTable: FeeTableData = {
 
 export const facultyDetailsOfBiotechnologyDepartment: FacultyItem[] = [
   {
-    id: 1,
-    name: "Dr. Tanvi Jain",
-    designation: "Associate Professor",
-    image: defaultSrmu,
-    cardBgColor: "transparent",
-  },
-  {
-    id: 2,
-    name: "Dr. Kunal Singh",
-    designation: "Assistant Professor",
-    image: defaultSrmu,
-    cardBgColor: "transparent",
-  },
-  {
     id: 3,
     name: "Dr. Pratibha Gupta",
     designation: "Assistant Professor",
     image: defaultSrmu,
     cardBgColor: "transparent",
   },
-  {
-    id: 4,
-    name: "Ms. Soumya Singh",
-    designation: "Assistant Professor",
-    image: defaultSrmu,
-    cardBgColor: "transparent",
-  },
-  {
-    id: 5,
-    name: "Dr. Deepankar Sharma",
-    designation: "Assistant Professor",
-    image: defaultSrmu,
-    cardBgColor: "transparent",
-  },
+
   {
     id: 6,
     name: "Dr. Renu Khare",
@@ -279,39 +264,89 @@ export const facultyDetailsOfBiotechnologyDepartment: FacultyItem[] = [
     image: defaultSrmu,
     cardBgColor: "transparent",
   },
+
   {
-    id: 7,
-    name: "Ms. Ayushi Verma",
-    designation: "Assistant Professor",
-    image: defaultSrmu,
+    id: 30,
+    name: "Dr. Tabish Qidwai",
+    designation: "Professor & Officiating Director (IBST)",
+    image: drTabishQidwai,
     cardBgColor: "transparent",
   },
   {
-    id: 8,
-    name: "Mr. Sunil Kumar Verma",
-    designation: "Assistant Professor",
-    image: defaultSrmu,
-    cardBgColor: "transparent",
-  },
-  {
-    id: 9,
+    id: 31,
     name: "Dr. Devendra Singh",
     designation: "Assistant Professor",
-    image: defaultSrmu,
+    image: Devendra,
     cardBgColor: "transparent",
   },
   {
-    id: 10,
-    name: "Dr. Nikita Basant",
+    id: 32,
+    name: "Er. Sunil Kumar Verma",
     designation: "Assistant Professor",
-    image: defaultSrmu,
+    image: Sunil,
     cardBgColor: "transparent",
   },
   {
-    id: 11,
-    name: "Dr. Tabish Qidwai",
-    designation: "Associate Professor",
-    image: drTabishQidwai,
+    id: 33,
+    name: "Er. Ayushi Verma",
+    designation: "Assistant Professor",
+    image: Ayushi,
+    cardBgColor: "transparent",
+  },
+  {
+    id: 34,
+    name: "Dr. Kunal Singh",
+    designation: "Assistant Professor",
+    image: Kunal,
+    cardBgColor: "transparent",
+  },
+  {
+    id: 35,
+    name: "Er. Diksha Singh",
+    designation: "Assistant Professor",
+    image: Diksha,
+    cardBgColor: "transparent",
+  },
+  {
+    id: 36,
+    name: "Dr. Divya Srivastava",
+    designation: "Assistant Professor",
+    image: Divya,
+    cardBgColor: "transparent",
+  },
+  {
+    id: 37,
+    name: "Dr. Ritika Saxena",
+    designation: "Assistant Professor",
+    image: Ritika,
+    cardBgColor: "transparent",
+  },
+  {
+    id: 38,
+    name: "Dr. Shalini Maurya",
+    designation: "Assistant Professor",
+    image: Shalini,
+    cardBgColor: "transparent",
+  },
+  {
+    id: 39,
+    name: "Er. Himanshu Yadav",
+    designation: "Assistant Professor",
+    image: Himanshu,
+    cardBgColor: "transparent",
+  },
+  {
+    id: 40,
+    name: "Dr Rahul Yadav",
+    designation: "Assistant Professor",
+    image: Rahul,
+    cardBgColor: "transparent",
+  },
+  {
+    id: 41,
+    name: "Prof. (Dr.) Nabeel Ahmad",
+    designation: "Professor",
+    image: Nabeel,
     cardBgColor: "transparent",
   },
 ];
