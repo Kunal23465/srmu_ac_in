@@ -39,8 +39,8 @@ import coapdf from "../../../assets/pdf/about/approvals/COA-2021-22-151123043019
 import nctepdf from "../../../assets/pdf/about/approvals/NCTE_Approval-311023125708.pdf"
 import aictepdf from "../../../assets/pdf/about/approvals/Relavant_judgement_AICTE-151123043129.pdf"
 import universitypdf from "../../../assets/pdf/about/approvals/University-Act-And-Notification-151123042818.pdf"
-import pic1 from "../../../assets/pdf/about/approvals/approval letter 25-26 IOPS.pdf"
-import pci2 from "../../../assets/pdf/about/approvals/Approval Letter IOP 25-26.pdf"
+// import pic1 from "../../../assets/pdf/about/approvals/approval letter 25-26 IOPS.pdf"
+// import pci2 from "../../../assets/pdf/about/approvals/Approval Letter IOP 25-26.pdf"
 import bicpdf from "../../../assets/pdf/about/approvals/bcid32742025-shri-ramswaroop-memorial-university-b-110925034058.pdf"
 import larsen from "../../../assets/images/about/recognition-approval/larsen-toubro-limited-vector-logo-11574258722ko6xi-2105251033262.webp"
 import tata from "../../../assets/images/about/recognition-approval/collaborations-23.webp"
@@ -70,6 +70,10 @@ import lmapdf from "../../../assets/pdf/about/approvals/5-lma-130224014525.pdf"
 import ecelliitpdf from "../../../assets/pdf/about/approvals/14-e-cell-iit-mumbai-130224014553.pdf"
 import csirpdf from "../../../assets/pdf/about/approvals/19-csir-130224014616.pdf"
 import tntopdf from "../../../assets/pdf/about/approvals/24-tnto-legal-world-130224014643.pdf"
+
+
+import iops from "../../../assets/pdf/about/approvals/IOPS 26-27 .pdf"
+import pic2 from "../../../assets/pdf/about/approvals/PCI approval Letter 3817 (2026-27).pdf"
 
 
 
@@ -286,7 +290,7 @@ export const approvalData: ApprovalDataType[] = [
     description:
       "Pharmacy programs offered by Institute of Pharmacy of SRMU have an apporval from the Pharmacy Council of India.",
     logo: pci,
-    pdfLink: pic1,
+    pdfLink: iops,
   },
   {
     id: 6,
@@ -295,7 +299,7 @@ export const approvalData: ApprovalDataType[] = [
     description:
       "Pharmacy programs offered by Institute of Pharmaceutical Sciences of SRMU have an apporval from the Pharmacy Council of India.",
     logo: pci,
-    pdfLink: pci2,
+    pdfLink: pic2,
   },
 
   {

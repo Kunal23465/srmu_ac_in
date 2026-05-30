@@ -5,7 +5,9 @@ html {
   font-family: "Rubik", sans-serif;
   color: #212529;
 }
-
+ .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 bg-[#FFC107] hover:bg-[#E0A800] text-[#0A4A8F] font-bold px-6 py-3 rounded-md transition-colors duration-200 shadow-md;
+  }
 /* .writing-mode-vertical {
   writing-mode: vertical-rl;
   text-orientation: mixed;
@@ -19,6 +21,37 @@ html {
   .writing-mode-horizontal {
     writing-mode: horizontal-tb;
     text-orientation: mixed;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+
+  .animate-marquee {
+    animation: marquee 28s linear infinite;
+    will-change: transform;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
   }
 }
 
@@ -1766,6 +1799,50 @@ section .card-color img {
   100% {
     transform: scale(1);
   }
+}
+/* Animations (kept here instead of tailwind config) */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 400ms ease-out both;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Hide scrollbars */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 /* SHOP SHUTTER ANIMATION */
