@@ -7,6 +7,7 @@ import DeferredSectionFallback from "./DeferredSectionFallback";
 import ProgramsSectionStatic from "./ProgramSectionStatic";
 import { CustomTopFooterAbout } from "../../data/about/aboutusData";
 import CustomTopFooter from "../../utils/custom/CustomTopFooter";
+import PciApprovalPopup from "./PciApprovalPopup";
 const InnovationCulture = React.lazy(() => import("./InnovationCulture"));
 // const WhyChoose = React.lazy(() => import("./WhyChoose"));
 const Events = React.lazy(() => import("./Events"));
@@ -20,6 +21,7 @@ const renderSectionFallback = (minHeight: number) => <DeferredSectionFallback mi
 const Home: React.FC = () => {
   return (
     <div>
+      <PciApprovalPopup />
       <Banner />
       <MemorialCollege />
       <ProgramsSectionStatic />

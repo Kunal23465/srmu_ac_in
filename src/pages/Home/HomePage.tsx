@@ -4,6 +4,8 @@ import { Outlet, useLocation } from "react-router-dom";
 import SeoHead from "../../components/seo/SeoHead";
 // import NewHome from "../../components/new-home/NewHome";
 import Home from "../../components/home/Home";
+// import NewHome from "../../components/new-home/NewHome";
+// import Home from "../../components/home/Home";
 
 const HomePage: React.FC = () => {
   const pathname = useLocation().pathname

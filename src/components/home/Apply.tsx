@@ -24,37 +24,39 @@ const Apply: React.FC = () => {
   };
 
   const order = [
-  "after-class-10th",
-  "after-class-12th",
-  "industry-honors",
-  "after-graduation",
-  "after-polytechnic",
-  "after-post-graduation",
-];
+    "after-class-10th",
+    "after-class-12th",
+    "industry-honors",
+    "after-graduation",
+    "after-polytechnic",
+    "after-post-graduation",
+  ];
 
-const dynamicAccordionData = order
-  .map((slug) => data.find((item: any) => item.slug === slug))
-  .filter(Boolean)
-  .map((item: any, index: number) => ({
-    id: index,
-    title: item.displayTitle,
-    imgSrc: item.imagePath || img1,
-    programTypeId: item.programFlagId,
-    content: (
-      <>
-        <p className="text-[#333] font-normal">
-          {getShortText(item.brief, 22)}
-        </p>
-        <Link
-          to={`/${item.slug}`}
-          state={{ programTypeId: item.programFlagId }}
-          className="text-[#ffb703] font-medium"
-        >
-          Read More
-        </Link>
-      </>
-    ),
-  }));
+  const dynamicAccordionData = order
+    .map((slug) => data.find((item: any) => item.slug === slug))
+    .filter(Boolean)
+    .map((item: any, index: number) => ({
+      id: index,
+      title: item.displayTitle,
+      imgSrc: item.imagePath || img1,
+      programTypeId: item.programFlagId,
+
+      content: (
+        <>
+          <p className="text-[#333] font-normal">
+            {getShortText(item.brief, 22)}
+          </p>
+          <Link
+            to={`/${item.slug}`}
+            state={{ programTypeId: item.programFlagId }}
+            className="text-[#ffb703] font-medium"
+          >
+            Read More
+          </Link>
+        </>
+      ),
+    }));
+
 
   /* ===========================
           Initial Load
@@ -64,6 +66,8 @@ const dynamicAccordionData = order
       dispatch(fetchProgramFlags());
     }
   }, [data.length, dispatch]);
+
+  console.log("dynamicAccordionData= ", dynamicAccordionData)
 
   return (
     <div className={`${Classes.container} py-8 md:py-10 lg:py-12`}>
