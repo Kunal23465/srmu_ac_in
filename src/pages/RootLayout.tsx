@@ -87,7 +87,7 @@ const RootLayout: React.FC = () => {
       <Header />
 
       <main className="mt-[41px] lg:mt-[45px]">
-        {location.pathname !== "/" && <DynamicBreadcrumbs />}
+        {location.pathname !== "/" && location.pathname !== "/new-home" && <DynamicBreadcrumbs />}
 
         <Outlet />
       </main>

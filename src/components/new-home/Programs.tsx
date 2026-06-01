@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 
 import agricultureImg from '../../assets/new-home/programs/AGRICULTURE.webp';
-import Classes from "../../utils/styles/Global.module.css";
+import Classes from '../../utils/styles/Global.module.css';
 import aiImg from '../../assets/new-home/programs/AI.webp';
 import biotechnologyImg from '../../assets/new-home/programs/BIOTECHNOLOGY.webp';
 import computerApplicationImg from '../../assets/new-home/programs/COMPUTER APPLICATION.webp';
@@ -19,108 +19,152 @@ import pharmacyImg from '../../assets/new-home/programs/PHARMACY.webp';
 import polytechnicDiplomaImg from '../../assets/new-home/programs/POLYTEHNIC (DIPLOMA).webp';
 import polytechnicLateralImg from '../../assets/new-home/programs/POLYTEHNIC (LATERAL).webp';
 import socialWorkImg from '../../assets/new-home/programs/SOCIAL WORK.webp';
+import { Link, useNavigate } from 'react-router-dom';
+import { AppDispatch, RootState } from '../../store';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchAllProgramFinder } from '../../store/program-finder/programFinderThunk';
 
 type Program = { title: string; tagline: string[]; img: string; slug: string };
 
-const normalizeSearchText = (value: string) =>
-  value
-    .toLowerCase()
-    .replace(/\bb[\s.]*te(?:ch|ck)\b/g, 'btech')
-    .replace(/\bm[\s.]*te(?:ch|ck)\b/g, 'mtech')
-    .replace(/\bb[\s.]*pharm\b/g, 'bpharm')
-    .replace(/\bd[\s.]*pharm\b/g, 'dpharm')
-    .replace(/\bm[\s.]*com\b/g, 'mcom')
-    .replace(/\bb[\s.]*com\b/g, 'bcom')
-    .replace(/\s+/g, ' ')
-    .replace(/[^a-z0-9]+/g, '');
-
-const tabs: { name: string; slug: string; programs: Program[] }[] = [
+const tabs = [
   {
     name: 'Undergraduate',
     slug: 'undergraduate',
     programs: [
-      { title: 'Artificial Intelligence', tagline: ['B.Tech. CSE', 'BCA', 'BBA'], img: aiImg, slug: 'ug-artificial-intelligence' },
-      { title: 'Computer Science', tagline: ['B.Tech. CSE', 'B.Sc. IT, BCA'], img: computerScienceImg, slug: 'ug-computer-science' },
-      { title: 'Engineering', tagline: ['B.Tech. CE', 'B.Tech. ME', 'B.Tech. EE', 'B.Tech. CSE', 'B.Tech.ECE'], img: engineeringImg, slug: 'ug-engineering' },
-      { title: 'Management', tagline: ['BBA'], img: managementImg, slug: 'ug-management' },
-      { title: 'Commerce & Economics', tagline: ['B.Com. (Hons.)', 'B.Com. as per NEP', 'B.A. Economics', 'B.A. (Hons.)'], img: commerceImg, slug: 'ug-commerce-economics' },
-      { title: 'Law', tagline: ['BA LL.B. (Hons.)', 'BBA LL.B. (Hons.)', 'LL.B.'], img: lawImg, slug: 'ug-law' },
-      { title: 'Biotechnology', tagline: ['B.Sc. (Hons.)', 'B.Tech.'], img: biotechnologyImg, slug: 'ug-biotechnology' },
-      { title: 'Microbiology', tagline: ['B.Sc. (Hons.)'], img: microbiologyImg, slug: 'ug-microbiology' },
-      { title: 'Media Studies', tagline: ['B.A. (J&MC)'], img: mediaStudiesImg, slug: 'ug-media-studies' },
-      { title: 'Agriculture', tagline: ['B.Sc. (Hons.) '], img: agricultureImg, slug: 'ug-agriculture' },
-      { title: 'Nutrition & Dietetics', tagline: ['B.Sc. (Hons.)'], img: nutritionImg, slug: 'ug-nutrition-dietetics' },
-      { title: 'Humanities', tagline: ['B.A. (Hons.)'], img: humanitiesImg, slug: 'ug-humanities' },
-      { title: 'Computer Application', tagline: ['BCA', 'B.Sc. IT'], img: computerApplicationImg, slug: 'ug-computer-application' },
-      { title: 'Natural Sciences', tagline: ['B.Sc.'], img: naturalSciencesImg, slug: 'ug-natural-sciences' },
-      { title: 'Pharmacy', tagline: ['B.Pharm.'], img: pharmacyImg, slug: 'ug-pharmacy' },
+      { title: 'Artificial Intelligence', tagline: ['B.Tech. CSE', 'BCA', 'BBA'], img: aiImg, slug: 'artificial-intelligence/undergraduate' },
+      { title: 'Computer Science', tagline: ['B.Tech. CSE', 'B.Sc. IT, BCA'], img: computerScienceImg, slug: 'computer-science-engineering/undergraduate' },
+      { title: 'Engineering', tagline: ['B.Tech. CE', 'B.Tech. ME', 'B.Tech. EE', 'B.Tech. CSE', 'B.Tech.ECE'], img: engineeringImg, slug: 'engineering/undergraduate' },
+      { title: 'Management', tagline: ['BBA'], img: managementImg, slug: 'management/undergraduate' },
+      { title: 'Commerce & Economics', tagline: ['B.Com. (Hons.)', 'B.Com. as per NEP', 'B.A. Economics', 'B.A. (Hons.)'], img: commerceImg, slug: 'commerce-and-economics/undergraduate' },
+      { title: 'Law', tagline: ['BA LL.B. (Hons.)', 'BBA LL.B. (Hons.)', 'LL.B.'], img: lawImg, slug: 'legal-studies-law/undergraduate' },
+      { title: 'Biotechnology', tagline: ['B.Sc. (Hons.)', 'B.Tech.'], img: biotechnologyImg, slug: 'bio-technology/undergraduate' },
+      { title: 'Microbiology', tagline: ['B.Sc. (Hons.)'], img: microbiologyImg, slug: 'microbiology/undergraduate' },
+      { title: 'Media Studies', tagline: ['B.A. (J&MC)'], img: mediaStudiesImg, slug: 'media-studies/undergraduate' },
+      { title: 'Agriculture', tagline: ['B.Sc. (Hons.)'], img: agricultureImg, slug: 'agriculture/undergraduate' },
+      { title: 'Nutrition & Dietetics', tagline: ['B.Sc. (Hons.)'], img: nutritionImg, slug: 'nutrition-dietetics/undergraduate' },
+      { title: 'Humanities', tagline: ['B.A. (Hons.)'], img: humanitiesImg, slug: 'humanities/undergraduate' },
+      { title: 'Computer Application', tagline: ['BCA', 'B.Sc. IT'], img: computerApplicationImg, slug: 'computer-application/undergraduate' },
+      { title: 'Natural Sciences', tagline: ['B.Sc.'], img: naturalSciencesImg, slug: 'natural-sciences/undergraduate' },
+      { title: 'Pharmacy', tagline: ['B.Pharm.'], img: pharmacyImg, slug: 'pharmacy/undergraduate' },
     ],
   },
+
   {
     name: 'Postgraduate',
     slug: 'postgraduate',
     programs: [
-      { title: 'Artificial Intelligence', tagline: ['M.Tech.', 'MBA'], img: aiImg, slug: 'pg-artificial-intelligence' },
-      { title: 'Computer Science', tagline: ['M.Tech. CSE', 'M.Sc. IT'], img: computerScienceImg, slug: 'pg-computer-science' },
-      { title: 'Engineering', tagline: ['M.Tech. CE', 'M.Tech. ME', 'M.Tech. EE', 'M.Tech. CSE', 'M.Tech.ECE'], img: engineeringImg, slug: 'pg-engineering' },
-      { title: 'Management', tagline: ['MBA'], img: managementImg, slug: 'pg-management' },
-      { title: 'Commerce & Economics', tagline: ['M.Com.', 'M.Sc.'], img: commerceImg, slug: 'pg-commerce-economics' },
-      { title: 'Law', tagline: ['LL.M.'], img: lawImg, slug: 'pg-law' },
-      { title: 'Biotechnology', tagline: ['M.Sc.', 'M.Tech.'], img: biotechnologyImg, slug: 'pg-biotechnology' },
-      { title: 'Media Studies', tagline: ['M.A. (J&MC)'], img: mediaStudiesImg, slug: 'pg-media-studies' },
-      { title: 'Agriculture', tagline: ['M.Sc.', 'MBA'], img: agricultureImg, slug: 'pg-agriculture' },
-      { title: 'Natural Sciences', tagline: ['M.Sc.'], img: naturalSciencesImg, slug: 'pg-natural-sciences' },
-      { title: 'Humanities', tagline: ['M.A.'], img: humanitiesImg, slug: 'pg-humanities' },
-      { title: 'Computer Application', tagline: ['MCA'], img: computerApplicationImg, slug: 'pg-computer-application' },
-      { title: 'Social Work', tagline: ['MSW'], img: socialWorkImg, slug: 'pg-social-work' },
+      { title: 'Artificial Intelligence', tagline: ['M.Tech.', 'MBA'], img: aiImg, slug: 'artificial-intelligence/postgraduate' },
+      { title: 'Computer Science', tagline: ['M.Tech. CSE', 'M.Sc. IT'], img: computerScienceImg, slug: 'computer-science-engineering/postgraduate' },
+      { title: 'Engineering', tagline: ['M.Tech. CE', 'M.Tech. ME', 'M.Tech. EE', 'M.Tech. CSE', 'M.Tech.ECE'], img: engineeringImg, slug: 'engineering/postgraduate' },
+      { title: 'Management', tagline: ['MBA'], img: managementImg, slug: 'management/postgraduate' },
+      { title: 'Commerce & Economics', tagline: ['M.Com.', 'M.Sc.'], img: commerceImg, slug: 'commerce-and-economics/postgraduate' },
+      { title: 'Law', tagline: ['LL.M.'], img: lawImg, slug: 'legal-studies-law/postgraduate' },
+      { title: 'Biotechnology', tagline: ['M.Sc.', 'M.Tech.'], img: biotechnologyImg, slug: 'bio-technology/postgraduate' },
+      { title: 'Media Studies', tagline: ['M.A. (J&MC)'], img: mediaStudiesImg, slug: 'media-studies/postgraduate' },
+      { title: 'Agriculture', tagline: ['M.Sc.', 'MBA'], img: agricultureImg, slug: 'agriculture/postgraduate' },
+      { title: 'Natural Sciences', tagline: ['M.Sc.'], img: naturalSciencesImg, slug: 'natural-sciences/postgraduate' },
+      { title: 'Humanities', tagline: ['M.A.'], img: humanitiesImg, slug: 'humanities/postgraduate' },
+      { title: 'Computer Application', tagline: ['MCA'], img: computerApplicationImg, slug: 'computer-application/postgraduate' },
+      { title: 'Social Work', tagline: ['MSW'], img: socialWorkImg, slug: 'social-work/postgraduate' },
     ],
   },
+
   {
     name: 'Industry Honours (L&T)',
-    slug: 'industry-honours',
+    slug: 'industry-honors',
     programs: [
-      { title: 'Artificial Intelligence', tagline: ['B.Tech. CSE', 'BCA', 'BBA', 'MBA'], img: aiImg, slug: 'ih-artificial-intelligence' },
-      { title: 'Computer Science', tagline: ['B.Tech. ', 'BCA', 'M.Tech.'], img: computerScienceImg, slug: 'ih-computer-science' },
-      { title: 'Engineering', tagline: ['B.Tech. CE', 'B.Tech. ME', 'B.Tech. EE', 'B.Tech. ECE'], img: engineeringImg, slug: 'ih-engineering' },
-      { title: 'Management', tagline: ['BBA', 'MBA'], img: managementImg, slug: 'ih-management' },
-      { title: 'Computer Application', tagline: ['BCA', 'MCA'], img: computerApplicationImg, slug: 'ih-computer-application' },
+      { title: 'Artificial Intelligence', tagline: ['B.Tech. CSE', 'BCA', 'BBA', 'MBA'], img: aiImg, slug: 'artificial-intelligence/industry-honors1' },
+      { title: 'Computer Science', tagline: ['B.Tech.', 'BCA', 'M.Tech.'], img: computerScienceImg, slug: 'computer-science-engineering/industry-honors1' },
+      { title: 'Engineering', tagline: ['B.Tech. CE', 'B.Tech. ME', 'B.Tech. EE', 'B.Tech. ECE'], img: engineeringImg, slug: 'engineering/industry-honors1' },
+      { title: 'Management', tagline: ['BBA', 'MBA'], img: managementImg, slug: 'management/industry-honors1' },
+      { title: 'Computer Application', tagline: ['BCA', 'MCA'], img: computerApplicationImg, slug: 'computer-application/industry-honors1' },
     ],
   },
+
   {
     name: 'Integrated',
     slug: 'integrated',
     programs: [
-      { title: 'Engineering', tagline: ['B.Tech. + M.Tech. (CE, ME, CSE, ECE, EE)', 'B.Tech. (CE, ME, CSE, ECE, EE) + MBA'], img: engineeringImg, slug: 'int-engineering' },
-
-      { title: 'Biotechnology', tagline: ['B.Tech. + M.Tech.', 'B.Tech. + MBA'], img: biotechnologyImg, slug: 'int-biotechnology' },
-      { title: 'Law', tagline: ['BA + LL.B. (Hons.)', 'BBA + LL.B. (Hons.)'], img: lawImg, slug: 'int-law' },
+      { title: 'Engineering', tagline: ['B.Tech. + M.Tech. (CE, ME, CSE, ECE, EE)', 'B.Tech. (CE, ME, CSE, ECE, EE) + MBA'], img: engineeringImg, slug: 'engineering/integrated' },
+      { title: 'Biotechnology', tagline: ['B.Tech. + M.Tech.', 'B.Tech. + MBA'], img: biotechnologyImg, slug: 'bio-technology/integrated' },
+      { title: 'Law', tagline: ['BA + LL.B. (Hons.)', 'BBA + LL.B. (Hons.)'], img: lawImg, slug: 'legal-studies-law/integrated' },
     ],
   },
+
   {
     name: 'Polytechnic',
     slug: 'polytechnic',
     programs: [
-      { title: 'Diploma', tagline: ['Civil', 'Automobile', 'Production', 'Mechanical', 'Electrical', 'Elec. & Comm.', 'Computer Science'], img: polytechnicDiplomaImg, slug: 'poly-diploma' },
-      { title: 'Diploma (Lateral)', tagline: ['Civil', 'Automobile', 'Production', 'Mechanical', 'Electrical', 'Elec. & Comm.', 'Computer Science'], img: polytechnicLateralImg, slug: 'poly-lateral' },
+      { title: 'Diploma', tagline: ['Civil', 'Automobile', 'Production', 'Mechanical', 'Electrical', 'Elec. & Comm.', 'Computer Science'], img: polytechnicDiplomaImg, slug: 'polytechnic/polytechnic-diploma' },
+      { title: 'Diploma (Lateral)', tagline: ['Civil', 'Automobile', 'Production', 'Mechanical', 'Electrical', 'Elec. & Comm.', 'Computer Science'], img: polytechnicLateralImg, slug: 'polytechnic-lateral/polytechnic-diploma' },
     ],
   },
 ];
 
-type Suggestion = Program & { tabName: string; tabIndex: number };
+// Shape of a program coming back from fetchAllProgramFinder (matches the real API payload).
+type ProgramTypeItem = { programTypeId: number; programTypeName: string; programTypeSlug: string };
+type DisciplineItem = { programDisciplineId: number; programDisciplineName: string; programDisciplineFlag: string };
 
-const allPrograms: Suggestion[] = tabs.flatMap((t, tabIndex) =>
-  t.programs.map((p) => ({ ...p, tabName: t.name, tabIndex }))
-);
+type ApiProgram = {
+  programId: number;
+  name?: string;
+  displayTitle?: string;
+  title?: string;
+  slug?: string;
+  imagePath?: string | null;
+  departmentSlug?: string | null;
+  totalDurationYear?: string;
+  totalFees?: number;
+  programType?: ProgramTypeItem[];
+  discipline?: DisciplineItem[];
+};
+
+// Strip dots, spaces, &, (), -, etc. so "bca" matches "B.C.A.", "bcom" matches "B.Com." etc.
+const normalize = (s: string) => (s || '').toLowerCase().replace(/[^a-z0-9]/g, '');
 
 export default function Programs() {
   const [active, setActive] = useState(0);
+  const dispatch = useDispatch<AppDispatch>();
+  const navigate = useNavigate();
   const [index, setIndex] = useState(0);
   const [visibleCount, setVisibleCount] = useState(4);
   const [query, setQuery] = useState('');
+  const [debouncedSearch, setDebouncedSearch] = useState('');
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [highlight, setHighlight] = useState(0);
   const searchRef = useRef<HTMLDivElement | null>(null);
+  const { data } = useSelector((state: RootState) => state.getProgramFinder);
 
+  const activeTab = tabs[active];
+
+  // activeTab drives the program type filter sent to the API
+  const selectedProgramType = activeTab.slug;
+  const selectedDiscipline: string | undefined = undefined;
+
+  // ---- accessor helpers (match the real API shape) ----
+  const pTitle = (p: ApiProgram) => p.displayTitle || p.name || p.title || '';
+  const pImg = (p: ApiProgram) => p.imagePath || '';
+  const pType = (p: ApiProgram) =>
+    p.programType?.find((t) => t.programTypeSlug === activeTab.slug)?.programTypeName ??
+    p.programType?.[0]?.programTypeName ??
+    activeTab.name;
+  const pDepartmentSlug = (p: ApiProgram) => p.slug ?? '';
+
+  // build one normalized blob per program from every searchable field
+  const searchableText = (p: ApiProgram) => {
+    const parts = [
+      p.displayTitle ?? '',
+      p.name ?? '',
+      p.title ?? '',
+      p.slug ?? '',
+      ...(p.discipline?.map((d) => d.programDisciplineName) ?? []),
+      ...(p.discipline?.map((d) => d.programDisciplineFlag) ?? []),
+      ...(p.programType?.map((t) => t.programTypeName) ?? []),
+    ];
+    return normalize(parts.join(' '));
+  };
+
+  // responsive visible card count
   useEffect(() => {
     const update = () => {
       const w = window.innerWidth;
@@ -133,6 +177,7 @@ export default function Programs() {
     return () => window.removeEventListener('resize', update);
   }, []);
 
+  // close dropdown on outside click
   useEffect(() => {
     const onClick = (e: MouseEvent) => {
       if (searchRef.current && !searchRef.current.contains(e.target as Node)) {
@@ -143,26 +188,44 @@ export default function Programs() {
     return () => document.removeEventListener('mousedown', onClick);
   }, []);
 
-  const suggestions = useMemo<Suggestion[]>(() => {
-    const q = normalizeSearchText(query.trim());
-    if (!q) return [];
-    return allPrograms
-      .filter((p) => {
-        const searchable = normalizeSearchText(
-          `${p.title} ${p.tagline.join(' ')} ${p.tabName}`
-        );
-
-        return searchable.includes(q);
-      })
-      .slice(0, 8);
+  // debounce the typed query
+  useEffect(() => {
+    const t = setTimeout(() => setDebouncedSearch(query), 300);
+    return () => clearTimeout(t);
   }, [query]);
 
-  const goToSlug = (s: Suggestion) => {
-    setActive(s.tabIndex);
+  // fetch from API whenever search / tab changes
+  useEffect(() => {
+    const trimmedSearch = debouncedSearch.trim();
+    const params = {
+      ...(selectedProgramType ? { programTypeSlug: selectedProgramType } : {}),
+      ...(selectedDiscipline ? { programDisciplineSlug: selectedDiscipline } : {}),
+      ...(trimmedSearch ? { name: trimmedSearch } : {}),
+    };
+
+    dispatch(
+      fetchAllProgramFinder(Object.keys(params).length > 0 ? params : undefined),
+    );
+  }, [debouncedSearch, dispatch, selectedDiscipline, selectedProgramType]);
+
+  // suggestions from the API result, normalized so dotted/abbreviated searches work
+  const suggestions = useMemo<ApiProgram[]>(() => {
+    const q = normalize(debouncedSearch);
+    if (!q) return [];
+    // if your payload is wrapped, change `data` to data?.data / data?.programs here
+    const list: ApiProgram[] = Array.isArray(data) ? data : [];
+    return list.filter((p) => searchableText(p).includes(q)).slice(0, 8);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [data, debouncedSearch]);
+
+  const goToProgram = (p: ApiProgram) => {
     setIndex(0);
     setQuery('');
     setShowSuggestions(false);
-    window.location.hash = `#program/${s.slug}`;
+
+    const dept = pDepartmentSlug(p);
+    // departmentSlug some programs me null hai -> fallback to program's own slug
+    navigate(`program/${dept || p.slug || ''}`);
   };
 
   const onKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -175,13 +238,12 @@ export default function Programs() {
       setHighlight((h) => (h - 1 + suggestions.length) % suggestions.length);
     } else if (e.key === 'Enter') {
       e.preventDefault();
-      goToSlug(suggestions[highlight] ?? suggestions[0]);
+      goToProgram(suggestions[highlight] ?? suggestions[0]);
     } else if (e.key === 'Escape') {
       setShowSuggestions(false);
     }
   };
 
-  const activeTab = tabs[active];
   const total = activeTab.programs.length;
   const maxIndex = Math.max(0, total - visibleCount);
   const safeIndex = Math.min(index, maxIndex);
@@ -195,28 +257,38 @@ export default function Programs() {
     setActive(i);
     setIndex(0);
   };
-
+console.log("data",data)
   return (
     <section className="bg-[#E0F1FF] ">
-      <div className={`${Classes["container"]} py-8 md:py-10 lg:py-12`}>
+      <div className={`${Classes['container']} py-8 md:py-10 lg:py-12`}>
         <div className="flex items-end justify-between flex-wrap gap-4">
           <div className="flex-1 min-w-[260px]">
             <h2 className="text-lg md:text-3xl lg:text-4xl font-bold text-[#0A4A8F] mt-1 leading-tight md:leading-tight">
               Explore <span className="text-[#FFC107]">Programs</span>
             </h2>
-
           </div>
 
           <div ref={searchRef} className="relative w-full md:w-96">
-            <label className="sr-only" htmlFor="program-search">Search programs</label>
+            <label className="sr-only" htmlFor="program-search">
+              Search programs
+            </label>
             <div
-              className={`group relative flex items-center gap-2 rounded-full bg-white p-1.5 pl-5 shadow-[0_8px_24px_-12px_rgba(10,74,143,0.35)] ring-1 transition-all ${showSuggestions ? 'ring-[#0A4A8F]/40 shadow-[0_12px_30px_-10px_rgba(10,74,143,0.45)]' : 'ring-gray-200 hover:ring-[#0A4A8F]/30'
-                }`}
+              className={`group relative flex items-center gap-2 rounded-full bg-white p-1.5 pl-5 shadow-[0_8px_24px_-12px_rgba(10,74,143,0.35)] ring-1 transition-all ${
+                showSuggestions
+                  ? 'ring-[#0A4A8F]/40 shadow-[0_12px_30px_-10px_rgba(10,74,143,0.45)]'
+                  : 'ring-gray-200 hover:ring-[#0A4A8F]/30'
+              }`}
             >
               <svg
                 className="text-[#0A4A8F]/70 flex-shrink-0"
-                width="18" height="18" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               >
                 <circle cx="11" cy="11" r="8" />
                 <line x1="21" y1="21" x2="16.65" y2="16.65" />
@@ -237,23 +309,11 @@ export default function Programs() {
                 aria-autocomplete="list"
                 aria-expanded={showSuggestions && suggestions.length > 0}
               />
-              {query && (
-                <button
-                  type="button"
-                  onClick={() => { setQuery(''); setShowSuggestions(false); }}
-                  aria-label="Clear search"
-                  className="flex-shrink-0 w-7 h-7 rounded-full text-gray-400 hover:text-gray-700 hover:bg-gray-100 flex items-center justify-center transition-colors"
-                >
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="18" y1="6" x2="6" y2="18" />
-                    <line x1="6" y1="6" x2="18" y2="18" />
-                  </svg>
-                </button>
-              )}
+
               <button
                 type="button"
                 onClick={() => {
-                  if (suggestions.length > 0) goToSlug(suggestions[highlight] ?? suggestions[0]);
+                  if (suggestions.length > 0) goToProgram(suggestions[highlight] ?? suggestions[0]);
                   else setShowSuggestions(true);
                 }}
                 aria-label="Search"
@@ -267,46 +327,46 @@ export default function Programs() {
               </button>
             </div>
 
-            {showSuggestions && query.trim() && (
-              <div
-                role="listbox"
-                className="absolute z-30 mt-2 w-full max-h-80 overflow-y-auto rounded-2xl border border-gray-100 bg-white shadow-[0_20px_50px_-12px_rgba(10,74,143,0.25)] py-1.5"
-              >
-                {suggestions.length === 0 ? (
-                  <div className="px-4 py-4 text-sm text-gray-500 flex items-center gap-2">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <circle cx="12" cy="12" r="10" />
-                      <line x1="12" y1="8" x2="12" y2="12" />
-                      <line x1="12" y1="16" x2="12.01" y2="16" />
-                    </svg>
-                    No programs match "<span className="font-semibold text-gray-700">{query}</span>"
-                  </div>
+            {/* ---- suggestions dropdown ---- */}
+            {showSuggestions && debouncedSearch.trim() && (
+              <div className="absolute z-20 mt-2 w-full overflow-hidden rounded-2xl bg-white shadow-[0_20px_50px_-15px_rgba(10,74,143,0.35)] ring-1 ring-gray-100">
+                {suggestions.length > 0 ? (
+                  <ul className="max-h-80 overflow-y-auto py-1.5">
+                    {suggestions.map((p, i) => (
+                      <li key={p.programId ?? i}>
+                        <button
+                          type="button"
+                          onMouseEnter={() => setHighlight(i)}
+                          onClick={() => goToProgram(p)}
+                          className={`flex cursor-pointer w-full items-center gap-3 px-3 py-2.5 text-left transition-colors ${
+                            i === highlight ? 'bg-[#E0F1FF]' : 'hover:bg-gray-50'
+                          }`}
+                        >
+                          <div className="h-10 w-10 flex-shrink-0 overflow-hidden rounded-lg bg-gray-100">
+                          
+                              <div className="flex h-full w-full items-center justify-center text-[#0A4A8F]/40">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                  <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                                  <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                                </svg>
+                              </div>
+                            
+                          </div>
+                          <div className="min-w-0 flex-1">
+                            <p className="truncate text-sm font-semibold text-gray-800">{pTitle(p)}</p>
+                            <p className="truncate text-xs text-gray-500">{pType(p)}</p>
+                          </div>
+                          <svg className="flex-shrink-0 text-gray-300" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <polyline points="9 18 15 12 9 6" />
+                          </svg>
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
                 ) : (
-                  suggestions.map((s, i) => (
-                    <button
-                      key={`${s.tabIndex}-${s.slug}`}
-                      type="button"
-                      role="option"
-                      aria-selected={i === highlight}
-                      onMouseEnter={() => setHighlight(i)}
-                      onClick={() => goToSlug(s)}
-                      className={`w-full flex items-center gap-3 px-3 py-2.5 mx-1 rounded-xl text-left transition-colors ${i === highlight ? 'bg-[#0A4A8F]/8 ring-1 ring-[#0A4A8F]/10' : 'hover:bg-gray-50'
-                        }`}
-                      style={{ width: 'calc(100% - 0.5rem)' }}
-                    >
-                      <img src={s.img} alt="" className="w-11 h-11 rounded-lg object-cover flex-shrink-0 ring-1 ring-gray-100" />
-                      <div className="min-w-0 flex-1">
-                        <div className="text-sm font-semibold text-[#0A4A8F] truncate">{s.title}</div>
-                        <div className="text-[11px] text-gray-500 truncate">
-                          <span className="inline-block px-1.5 py-0.5 rounded bg-[#FFC107]/15 text-[#8a6500] font-medium mr-1.5">{s.tabName}</span>
-                          /{s.slug}
-                        </div>
-                      </div>
-                      <svg className="text-gray-300 flex-shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                        <polyline points="9 18 15 12 9 6" />
-                      </svg>
-                    </button>
-                  ))
+                  <div className="px-4 py-6 text-center text-sm text-gray-500">
+                    No programs found for &ldquo;{debouncedSearch}&rdquo;
+                  </div>
                 )}
               </div>
             )}
@@ -318,10 +378,11 @@ export default function Programs() {
             <button
               key={t.name}
               onClick={() => selectTab(i)}
-              className={`pb-3 text-xs md:text-sm font-bold uppercase tracking-wider whitespace-nowrap transition-colors ${active === i
-                ? 'text-[#0A4A8F] border-b-2 border-[#FFC107]'
-                : 'text-gray-500 hover:text-[#0A4A8F]'
-                }`}
+              className={`pb-3 text-xs md:text-sm font-bold uppercase tracking-wider whitespace-nowrap transition-colors ${
+                active === i
+                  ? 'text-[#0A4A8F] border-b-2 border-[#FFC107]'
+                  : 'text-gray-500 hover:text-[#0A4A8F]'
+              }`}
             >
               {t.name}
             </button>
@@ -334,14 +395,14 @@ export default function Programs() {
               className="flex transition-transform duration-500 ease-out -mx-2.5"
               style={{ transform: `translateX(-${safeIndex * cardWidth}%)` }}
             >
-              {activeTab.programs.map((p) => (
+              {activeTab.programs.map((p: Program) => (
                 <div
                   key={p.slug}
                   className="flex-shrink-0 px-2.5"
                   style={{ width: `${cardWidth}%` }}
                 >
-                  <a
-                    href={`#program/${p.slug}`}
+                  <Link
+                    to={`${p.slug}`}
                     className="block relative rounded-xl overflow-hidden shadow-soft hover:shadow-card hover:-translate-y-1 transition-all group cursor-pointer"
                   >
                     <div className="relative aspect-[4/3] bg-gray-900">
@@ -356,7 +417,7 @@ export default function Programs() {
                         <p className="text-xs text-white/90 mt-1 leading-relaxed">{p.tagline.join(' • ')}</p>
                       </div>
                     </div>
-                  </a>
+                  </Link>
                 </div>
               ))}
             </div>
