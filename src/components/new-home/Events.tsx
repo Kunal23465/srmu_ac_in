@@ -135,7 +135,7 @@ export default function Events() {
                     <button
                         onClick={() => advance(-1)}
                         aria-label="previous"
-                        className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-9 h-9 md:w-10 md:h-10 rounded-full bg-white border border-[#E6EEF8] shadow-md text-[#0A4A8F] flex items-center justify-center hover:scale-105 transition-transform"
+                        className="absolute left-4 top-[25%]  z-10 w-9 h-9 md:w-10 md:h-10 rounded-full bg-white border border-[#E6EEF8] shadow-md text-[#0A4A8F] flex items-center justify-center hover:scale-105 transition-transform"
                     >
                         <FaChevronLeft className="text-sm md:text-base" />
                     </button>
@@ -219,7 +219,7 @@ export default function Events() {
                     <button
                         onClick={() => advance(1)}
                         aria-label="next"
-                        className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-9 h-9 md:w-10 md:h-10 rounded-full bg-white border border-[#E6EEF8] shadow-md text-[#0A4A8F] flex items-center justify-center hover:scale-105 transition-transform"
+                        className="absolute right-4 top-[25%] z-10 w-9 h-9 md:w-10 md:h-10 rounded-full bg-white border border-[#E6EEF8] shadow-md text-[#0A4A8F] flex items-center justify-center hover:scale-105 transition-transform"
                     >
                         <FaChevronRight className="text-sm md:text-base" />
                     </button>

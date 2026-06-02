@@ -13,14 +13,10 @@ import { setProgramId } from "../../store/program-finder/program/programSlice";
 import { getPreferredProgramRouteSlug } from "../../utils/legacyProgramRoutes";
 import { buildProgramCategoryPath } from "../../utils/programCategoryRoute";
 
-const getProgramFlagRoutePath = (type: any) =>
-  buildProgramCategoryPath(type?.programFlagSlug || type?.programTypeSlug || type?.programFlagName || "");
+const getProgramFlagRoutePath = (type: any) => buildProgramCategoryPath(type?.programFlagSlug || type?.programTypeSlug || type?.programFlagName || "");
 
 const getDisciplineRoutePath = (type: any, discipline: any) =>
-  buildProgramCategoryPath(
-    type?.programFlagSlug || type?.programTypeSlug || type?.programFlagName || "",
-    discipline?.disciplineSlug || discipline?.disciplineName || ""
-  );
+  buildProgramCategoryPath(type?.programFlagSlug || type?.programTypeSlug || type?.programFlagName || "", discipline?.disciplineSlug || discipline?.disciplineName || "");
 
 const getProgramRoutePath = (program: any) =>
   `/program/${getPreferredProgramRouteSlug({
@@ -51,10 +47,14 @@ const Header = () => {
     if (typeof window === "undefined") return;
 
     const handleScroll = () => {
-      setIsActive(window.scrollY > 35);
+      setIsActive(window.scrollY > 10);
     };
+
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   useEffect(() => {
@@ -69,11 +69,22 @@ const Header = () => {
     }
   }, [sideMenu]);
   return (
-    <div>
-      <header className="fixed top-0 left-0 w-full z-999 transition-all duration-500">
+    <div className="relative">
+      <div
+        className={`block sm:hidden overflow-hidden transition-all duration-500 ${isActive ? "max-h-0 opacity-0" : "max-h-[47px] opacity-100"
+          }`}
+      >
         <TopHeader />
+      </div>
+      <header
+        className={`fixed left-0 z-[999] w-full transition-all duration-500 ease-in-out ${isActive ? "top-0" : "top-[32px] sm:top-0"
+          }`}
+      >
+        <div className="hidden sm:block">
+          <TopHeader />
+        </div>
 
-        <div className={`py-2 items-stretch header ${isActive ? "bg-[#14284e] active" : ""}`}>
+        <div className={`py-2 items-stretch header  ${isActive ? "bg-[#14284e] active" : "bg-[#14284e] sm:bg-transparent"}`}>
           <div className={`${Classes["container"]} relative`}>
             <div className="flex flex-row justify-between">
               {/* LOGO */}
@@ -136,7 +147,6 @@ const Header = () => {
                                   {programMenu
                                     .filter((type) => group.includes(type.programFlagName))
                                     .map((type) => {
-
                                       return (
                                         <div key={type.programFlagId}>
                                           {/* BLUE HEADING */}
@@ -172,11 +182,7 @@ const Header = () => {
                                                 <li key={disc.disciplineId}>
                                                   <Link
                                                     onClick={() => setShowMegaMenu(false)}
-                                                    to={
-                                                      disc.disciplineName === "Ph.D."
-                                                        ? "/program/phd"
-                                                        : getDisciplineRoutePath(type, disc)
-                                                    }
+                                                    to={disc.disciplineName === "Ph.D." ? "/program/phd" : getDisciplineRoutePath(type, disc)}
                                                     state={{
                                                       programTypeId: type.programFlagId,
                                                       disciplineId: disc.disciplineId,
@@ -204,14 +210,7 @@ const Header = () => {
 
               {/* HAMBURGER */}
               <div className="lg:hidden my-auto">
-                <img
-                  src={hamburger}
-                  alt="Menu"
-                  loading="eager"
-                  decoding="async"
-                  className="cursor-pointer w-[30px] h-[21px]"
-                  onClick={() => setSideMenu((pre) => !pre)}
-                />
+                <img src={hamburger} alt="Menu" loading="eager" decoding="async" className="cursor-pointer w-[30px] h-[21px]" onClick={() => setSideMenu((pre) => !pre)} />
               </div>
             </div>
           </div>
@@ -234,22 +233,13 @@ const Header = () => {
                 <li key={index} className={`relative w-full text-sm uppercase cursor-pointer py-2 ${index !== 0 && "border-t border-gray-200"}`}>
                   {/* ROW */}
                   <div className="flex justify-between items-center px-2 ">
-                    <Link
-                      to={data.path}
-                      className="hover:text-[#ffb703]"
-                      onClick={() => setSideMenu(false)}
-                    >
+                    <Link to={data.path} className="hover:text-[#ffb703]" onClick={() => setSideMenu(false)}>
                       {data.item}
                     </Link>
 
                     {(data.subItem || isMega) && (
-                      <button
-                        onClick={() => setSubMenu(subMenu === data.id ? null : data.id)}
-                        className="border border-[#0000002e] px-0.5 py-[3px]">
-                        <MdOutlineKeyboardArrowDown
-                          size={25}
-                          className={`transition-all bg-[#00000008] text-[#616161] ${subMenu === data.id ? "rotate-180" : ""}`}
-                        />
+                      <button onClick={() => setSubMenu(subMenu === data.id ? null : data.id)} className="border border-[#0000002e] px-0.5 py-[3px]">
+                        <MdOutlineKeyboardArrowDown size={25} className={`transition-all bg-[#00000008] text-[#616161] ${subMenu === data.id ? "rotate-180" : ""}`} />
                       </button>
                     )}
                   </div>
@@ -260,16 +250,17 @@ const Header = () => {
                       <span className="w-full block h-0.5 mt-2 bg-[#ffb703]"></span>
 
                       {/* NORMAL DROPDOWN */}
-                      {!isMega && data.subItem?.map((value, i) => (
-                        <Link
-                          key={i}
-                          to={value.path}
-                          className={`block text-sm px-5 py-3 hover:text-[#ffb703] hover:bg-gray-50 ${i !== 0 && "border-t border-gray-200"}`}
-                          onClick={() => setSideMenu(false)}
-                        >
-                          {value.item}
-                        </Link>
-                      ))}
+                      {!isMega &&
+                        data.subItem?.map((value, i) => (
+                          <Link
+                            key={i}
+                            to={value.path}
+                            className={`block text-sm px-5 py-3 hover:text-[#ffb703] hover:bg-gray-50 ${i !== 0 && "border-t border-gray-200"}`}
+                            onClick={() => setSideMenu(false)}
+                          >
+                            {value.item}
+                          </Link>
+                        ))}
 
                       {/* MEGA MENU USING API DATA */}
                       {isMega && (
@@ -315,11 +306,7 @@ const Header = () => {
                                           type.disciplines.map((disc) => (
                                             <li key={disc.disciplineId}>
                                               <Link
-                                                to={
-                                                  disc.disciplineName === "Ph.D."
-                                                    ? "/program/phd"
-                                                    : getDisciplineRoutePath(type, disc)
-                                                }
+                                                to={disc.disciplineName === "Ph.D." ? "/program/phd" : getDisciplineRoutePath(type, disc)}
                                                 state={{
                                                   programTypeId: type.programFlagId,
                                                   disciplineId: disc.disciplineId,

@@ -1,17 +1,17 @@
 import { useEffect, useState } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import adhikariVid from '../../assets/new-home/legacy/Adhikari.mp4';
-import adhikariVidImg from '../../assets/new-home/legacy/virendra.png';
+import adhikariVidImg from '../../assets/new-home/legacy/virendra.webp';
 import chandraniVid from '../../assets/new-home/legacy/Chandrani.mp4';
-import chandraniVidImg from '../../assets/new-home/legacy/chandrani.png';
+import chandraniVidImg from '../../assets/new-home/legacy/chandrani.webp';
 import rakeshVid from '../../assets/new-home/legacy/Rakesh Upadhayay.mp4';
-import rakeshVidImg from '../../assets/new-home/legacy/rakesh.png';
+import rakeshVidImg from '../../assets/new-home/legacy/rakesh.webp';
 import durgeshVid from '../../assets/new-home/legacy/Durgesh Actor.mp4';
-import durgeshVidImg from '../../assets/new-home/legacy/durgesh.png';
+import durgeshVidImg from '../../assets/new-home/legacy/durgesh.webp';
 import vipulVid from '../../assets/new-home/legacy/Rj Vipul.mp4';
-import vipulVidImg from '../../assets/new-home/legacy/rj.png';
+import vipulVidImg from '../../assets/new-home/legacy/rj.webp';
 import vinayVid from '../../assets/new-home/legacy/Vinay Bihari.mp4';
-import vinayVidImg from '../../assets/new-home/legacy/brij.png';
+import vinayVidImg from '../../assets/new-home/legacy/brij.webp';
 import MobileReadMore from './MobileReadMore';
 import Classes from "../../utils/styles/Global.module.css";
 type LegacyItem = {
@@ -21,32 +21,32 @@ type LegacyItem = {
 
 const legacy: LegacyItem[] = [
   {
-   
+
     video: rakeshVid,
     img: rakeshVidImg,
   },
   {
-   
+
     video: vipulVid,
     img: vipulVidImg,
   },
   {
-   
+
     video: durgeshVid,
     img: durgeshVidImg,
   },
   {
-    
+
     video: vinayVid,
     img: vinayVidImg,
   },
   {
-    
+
     video: adhikariVid,
     img: adhikariVidImg,
   },
   {
-   
+
     video: chandraniVid,
     img: chandraniVidImg,
   },
@@ -76,7 +76,7 @@ function LegacyCard({ item, onPlay }: { item: LegacyItem; onPlay: (item: LegacyI
           </div>
         </div>
       </button>
-      
+
     </article>
   );
 }
@@ -163,7 +163,7 @@ export default function Legacy() {
       <div className={`${Classes["container"]} py-8 md:py-10 lg:py-12`}>
         <div className="mb-5 md:mb-10">
           <h2 className="text-lg md:text-3xl lg:text-4xl font-bold text-[#0A4A8F] flex flex-col leading-tight md:leading-tight">
-            Industry-Academia Interaction <span className="text-[#FFC107] lg:text-3xl block">For Students</span> 
+            Industry-Academia Interaction <span className="text-[#FFC107] lg:text-3xl block">For Students</span>
           </h2>
           <MobileReadMore className="text-[13px] md:text-base text-gray-700 leading-relaxed mt-2 md:mt-3">
             At Shri Ramswaroop Memorial University, education goes beyond classrooms and textbooks. From technical excellence to personality development, students experience holistic growth in a future-ready learning environment.

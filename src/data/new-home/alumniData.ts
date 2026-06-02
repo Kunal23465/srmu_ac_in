@@ -1,15 +1,15 @@
-import img1 from "../../assets/new-home/alumni/01_Anil_Kumar_Tiwari.png";
-import img2 from "../../assets/new-home/alumni/02_Yashi_Srivastava.png";
-import img3 from "../../assets/new-home/alumni/03_Vyom_Mishra.png";
-import img4 from "../../assets/new-home/alumni/04_Abhay_Pratap_Singh.png";
-import img5 from "../../assets/new-home/alumni/05_Rajnish_Singh.png";
-import img6 from "../../assets/new-home/alumni/06_Sunil_Kumar_Chaudhary.png";
-import img7 from "../../assets/new-home/alumni/07_Agam_Srivastava.png";
-import img8 from "../../assets/new-home/alumni/08_Neha_Singh.png";
-import img9 from "../../assets/new-home/alumni/09_Shubham_Nigam.png";
-import img10 from "../../assets/new-home/alumni/10_Mahendra_Mohan_Srivastava.png";
-import img11 from "../../assets/new-home/alumni/11.AARUSH.png";
-import img12 from "../../assets/new-home/alumni/12.Siddhant Solanki.png";
+import img1 from "../../assets/new-home/alumni/01_Anil_Kumar_Tiwari.webp";
+import img2 from "../../assets/new-home/alumni/02_Yashi_Srivastava.webp";
+import img3 from "../../assets/new-home/alumni/03_Vyom_Mishra.webp";
+import img4 from "../../assets/new-home/alumni/04_Abhay_Pratap_Singh.webp";
+import img5 from "../../assets/new-home/alumni/05_Rajnish_Singh.webp";
+import img6 from "../../assets/new-home/alumni/06_Sunil_Kumar_Chaudhary.webp";
+import img7 from "../../assets/new-home/alumni/07_Agam_Srivastava.webp";
+import img8 from "../../assets/new-home/alumni/08_Neha_Singh.webp";
+import img9 from "../../assets/new-home/alumni/09_Shubham_Nigam.webp";
+import img10 from "../../assets/new-home/alumni/10_Mahendra_Mohan_Srivastava.webp";
+import img11 from "../../assets/new-home/alumni/11.AARUSH.webp";
+import img12 from "../../assets/new-home/alumni/12.Siddhant Solanki.webp";
 export interface AlumniCardType {
   id: number;
   name: string;

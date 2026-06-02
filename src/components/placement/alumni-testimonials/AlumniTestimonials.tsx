@@ -1,9 +1,10 @@
 import React from "react";
-import { AlumniCardType, alumniData, alumniTestimonialOverviewData, alumniTestimonialTopFooterData } from "../../../data/placement/alumni-testimonials-data";
+import { AlumniCardType, alumniTestimonialOverviewData, alumniTestimonialTopFooterData } from "../../../data/placement/alumni-testimonials-data";
 import CustomAlumniCard from "../../../utils/custom/CustomAlumniCard";
 import Classes from "../../../utils/styles/Global.module.css";
 import CustomOverviewSection from "../../../utils/custom/CustomOverviewSection";
 import CustomTopFooter from "../../../utils/custom/CustomTopFooter";
+import { alumniData } from "../../../data/new-home/alumniData";
 
 
 const AlumniTestimonials: React.FC = () => {
@@ -21,7 +22,7 @@ const AlumniTestimonials: React.FC = () => {
                     </div>
                 </div>
             </div>
-             <CustomTopFooter data={alumniTestimonialTopFooterData} />
+            <CustomTopFooter data={alumniTestimonialTopFooterData} />
         </div>
 
     );

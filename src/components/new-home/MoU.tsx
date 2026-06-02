@@ -11,7 +11,7 @@ export default function MoU() {
         <div className=" mb-6 ">
           <h2 className="text-lg md:text-3xl lg:text-4xl font-bold text-white leading-tight md:leading-tight">
             Memorandum of Understanding
-            <span className="text-[#FFC107]">(MoU)</span>
+            <span className="text-[#FFC107]"> (MoU)</span>
           </h2>
           <MobileReadMore className="text-[13px] md:text-base text-white leading-relaxed mt-2 md:mt-3">
             SRMU collaborates with leading industries, government organizations

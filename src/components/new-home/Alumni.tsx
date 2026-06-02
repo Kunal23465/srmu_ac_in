@@ -4,6 +4,7 @@ import { IoClose } from "react-icons/io5";
 import { alumniData } from "../../data/new-home/alumniData";
 import MobileReadMore from "./MobileReadMore";
 import Classes from "../../utils/styles/Global.module.css";
+import { Link } from "react-router-dom";
 
 export default function Alumni() {
   const [selectedAlumni, setSelectedAlumni] = useState<(typeof alumniData)[number] | null>(null);
@@ -28,12 +29,12 @@ export default function Alumni() {
               From entrepreneurs and startup founders to professionals in government organizations and top multinational
               companies, SRMU alumni are building successful careers across diverse industries.
             </MobileReadMore>
-            <a
-              href="#"
+            <Link
+              to="/notable-alumni"
               className="mt-4 md:mt-5 inline-flex items-center justify-center gap-2 self-start rounded-md bg-[#0A4A8F] px-4 md:px-6 py-2.5 md:py-3 text-xs md:text-base font-bold text-white shadow-md transition-colors duration-200 hover:bg-[#083B73]"
             >
               All Notable Alumni <span aria-hidden>→</span>
-            </a>
+            </Link>
           </div>
 
           <div className="relative col-span-3 sm:hidden">

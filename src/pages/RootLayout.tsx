@@ -202,7 +202,7 @@ const RootLayout: React.FC = () => {
           className={`
     w-full sm:w-auto sm:rotate-270 writing-mode-horizontal sm:writing-mode-vertical relative z-400
     text-xs tracking-wider group flex items-center justify-center
-    bg-[#ffb703] text-black px-2 py-3 sm:rounded-t-md shadow-xl
+    bg-[#ffb703] text-black px-2 py-4 sm:py-3 sm:rounded-t-md shadow-xl
     transition-all duration-500
 
     ${hovered === 2 ? "sm:scale-110" : ""}
@@ -221,7 +221,7 @@ const RootLayout: React.FC = () => {
           className={`
     w-full sm:rotate-270 writing-mode-horizontal sm:writing-mode-vertical relative z-400
     text-xs tracking-wider items-center justify-center
-    bg-[#0c2f44] text-white px-2 py-3 sm:rounded-t-md shadow-xl
+    bg-[#0c2f44] text-white px-2 py-4 sm:py-3 sm:rounded-t-md shadow-xl
     transition-all duration-500
 
     ${hovered === 3 ? "sm:scale-110" : ""}

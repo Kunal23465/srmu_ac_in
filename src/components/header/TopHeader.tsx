@@ -137,7 +137,7 @@ const TopHeader: React.FC = () => {
 
               <a
                 href="tel:18001035298"
-                className="py-3 flex items-center border-l border-[#ccc] pl-2 pr-1"
+                className="py-1 flex items-center border-l border-[#ccc] pl-2 pr-1"
               >
                 <IoCallSharp size={24} className="text-[#FFB703]" />
               </a>
@@ -146,7 +146,7 @@ const TopHeader: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 to="/student-portal-redirect"
-                className="bg-[#FFB703] px-2 font-medium text-xs sm:text-base uppercase border-2 border-[#ffb703] py-3.5 flex items-center"
+                className="bg-[#FFB703] px-2 font-medium text-xs sm:text-base uppercase border-2 border-[#ffb703] py-1 flex items-center"
               >
                 Apply Now
               </Link>
@@ -154,7 +154,7 @@ const TopHeader: React.FC = () => {
                 target="_blank"
 
                 to="https://convocation.srmu.ac.in"
-                className={`${Classes["convocation_blink"]} bg-white hover:bg-[#FFB703] hover:border-[#fff] px-2 text-xs sm:text-base font-medium uppercase border border-[#ccc] py-[0.875rem] flex items-center text-black`}
+                className={`${Classes["convocation_blink"]} bg-white hover:bg-[#FFB703] hover:border-[#fff] px-2 text-xs sm:text-base font-medium uppercase border border-[#ccc] py-1 flex items-center text-black`}
               >
                 Convocation 2026
               </Link>

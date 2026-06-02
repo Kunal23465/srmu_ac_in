@@ -19,9 +19,9 @@ import {
 } from "../admission-enquiry/EnquiryFormData";
 import { submissionForEnquiry } from "../../store/submission/enquiry-submission-slice";
 import { useNavigate } from "react-router-dom";
+
 export default function Hero() {
   const [videoLoaded, setVideoLoaded] = useState(false);
-
 
   return (
     <>
@@ -58,7 +58,14 @@ export default function Hero() {
         <div className={`${Classes["container"]} `}>
           <div className="relative  grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             {/* LEFT CONTENT */}
-            <div className="lg:col-span-7 text-white mt-16 md:mt-0">
+            <div className=" lg:col-span-7
+    text-white
+    mt-10 md:mt-0
+    sm:bg-black/10
+    py-5 px-5
+    rounded-[2rem_0_2rem_0]
+    hover:rounded-[0_2rem_0_2rem]
+    transition-all duration-500 ease-in-out cursor-pointer">
               {/* Badge */}
               <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 backdrop-blur-sm px-3 py-1.5 mb-4">
                 <span className="h-1.5 w-1.5 rounded-full bg-[#FFC107]" />
@@ -68,7 +75,7 @@ export default function Hero() {
               </div>
 
               {/* Heading */}
-              <h1 className="text-[24px] leading-[1.2] font-extrabold md:text-[46px] md:leading-[1.3]">
+              <h1 className="text-[20px] sm:text-[24px] leading-[1.2] font-extrabold md:text-[40px] md:leading-[1.3]">
                 Best University in
                 <span className="text-[#FFC107] ml-2 relative inline-block">
                   Uttar Pradesh
@@ -76,8 +83,6 @@ export default function Hero() {
                 <br />
                 for Future-Ready Careers
               </h1>
-
-
 
               {/* Desktop Content */}
               <p className="hidden md:block mt-4 max-w-2xl text-base text-white/90">
@@ -97,7 +102,7 @@ export default function Hero() {
                 <h3 className="block md:hidden mt-24 text-lg md:text-3xl lg:text-4xl font-bold text-[#0A4A8F] flex flex-col leading-tight md:leading-tight mb-3">
                   Approved by
                 </h3>
-                <div className="grid grid-cols-5   sm:mt-0 gap-2 md:flex md:max-w-[320px]">
+                <div className="grid grid-cols-5 sm:mt-0 gap-2 md:flex md:max-w-[320px]">
                   {ApprovedData.map((data) => (
                     <div
                       key={data.id}
@@ -173,16 +178,24 @@ function ApplyForm() {
 
     try {
       await store.dispatch(submissionForEnquiry(payload)).unwrap();
-
       actions.resetForm();
-
-      navigate("/admission-enquiry-redirect");
+      navigate("/");
     } catch (error) {
       console.error(error);
     } finally {
       actions.setSubmitting(false);
     }
   };
+
+  // Modified initial values with checkbox checked by default
+  const modifiedInitialValues = {
+    ...initialValuesForEnquiry,
+    isAccepted: true // Checkbox checked by default
+  };
+
+  // Modified validation schema without isAccepted validation
+  // @ts-ignore
+  const modifiedValidationSchema = validationSchemaForEnquiry.omit(['isAccepted']);
 
   return (
     <div className="relative mt-10 sm:mt-0 md:max-w-md lg:ml-auto">
@@ -203,26 +216,38 @@ function ApplyForm() {
         </div>
 
         <Formik
-          initialValues={initialValuesForEnquiry}
-          validationSchema={validationSchemaForEnquiry}
-          onSubmit={(values, actions) =>
-            submitHandler(values, actions)
-          }
+          initialValues={modifiedInitialValues}
+          validationSchema={modifiedValidationSchema}
+          onSubmit={(values, actions) => submitHandler(values, actions)}
         >
-          {({ setFieldValue, isSubmitting }) => (
+          {({ setFieldValue, isSubmitting, values }) => (
             <Form className="px-5 pt-6 pb-5 space-y-3">
-              {/* Name */}
-              <div>
-                <Field
-                  name="firstName"
-                  placeholder="Full Name"
-                  className="w-full border border-gray-200 rounded-lg px-3.5 py-3 text-sm focus:outline-none"
-                />
-                <ErrorMessage
-                  name="firstName"
-                  component="div"
-                  className="text-red-500 text-xs mt-1"
-                />
+              {/* Name Fields - First Name & Last Name */}
+              <div className="grid grid-cols-2 gap-3">
+                <div>
+                  <Field
+                    name="firstName"
+                    placeholder="First Name"
+                    className="w-full border border-gray-200 rounded-lg px-3.5 py-3 text-sm focus:outline-none focus:border-[#0A4A8F] focus:ring-1 focus:ring-[#0A4A8F]"
+                  />
+                  <ErrorMessage
+                    name="firstName"
+                    component="div"
+                    className="text-red-500 text-xs mt-1"
+                  />
+                </div>
+                <div>
+                  <Field
+                    name="lastName"
+                    placeholder="Last Name"
+                    className="w-full border border-gray-200 rounded-lg px-3.5 py-3 text-sm focus:outline-none focus:border-[#0A4A8F] focus:ring-1 focus:ring-[#0A4A8F]"
+                  />
+                  <ErrorMessage
+                    name="lastName"
+                    component="div"
+                    className="text-red-500 text-xs mt-1"
+                  />
+                </div>
               </div>
 
               {/* Email */}
@@ -231,7 +256,7 @@ function ApplyForm() {
                   type="email"
                   name="email"
                   placeholder="Email Address"
-                  className="w-full border border-gray-200 rounded-lg px-3.5 py-3 text-sm focus:outline-none"
+                  className="w-full border border-gray-200 rounded-lg px-3.5 py-3 text-sm focus:outline-none focus:border-[#0A4A8F] focus:ring-1 focus:ring-[#0A4A8F]"
                 />
                 <ErrorMessage
                   name="email"
@@ -245,7 +270,7 @@ function ApplyForm() {
                 <Field
                   name="phone"
                   placeholder="Phone Number"
-                  className="w-full border border-gray-200 rounded-lg px-3.5 py-3 text-sm focus:outline-none"
+                  className="w-full border border-gray-200 rounded-lg px-3.5 py-3 text-sm focus:outline-none focus:border-[#0A4A8F] focus:ring-1 focus:ring-[#0A4A8F]"
                 />
                 <ErrorMessage
                   name="phone"
@@ -261,19 +286,12 @@ function ApplyForm() {
                     as="select"
                     name="academicCareerId"
                     onChange={(e: any) => {
-                      setFieldValue(
-                        "academicCareerId",
-                        e.target.value
-                      );
-
-                      dispatch(
-                        getAllProgramByCareerId(e.target.value)
-                      );
+                      setFieldValue("academicCareerId", e.target.value);
+                      dispatch(getAllProgramByCareerId(e.target.value));
                     }}
-                    className="w-full border border-gray-200 rounded-lg px-3 py-3 text-sm"
+                    className="w-full border border-gray-200 rounded-lg px-3 py-3 text-sm focus:outline-none focus:border-[#0A4A8F] focus:ring-1 focus:ring-[#0A4A8F]"
                   >
                     <option value="">Level</option>
-
                     {allCareerData?.map((item: any) => (
                       <option
                         key={item.academicCareerId}
@@ -283,7 +301,6 @@ function ApplyForm() {
                       </option>
                     ))}
                   </Field>
-
                   <ErrorMessage
                     name="academicCareerId"
                     component="div"
@@ -295,10 +312,9 @@ function ApplyForm() {
                   <Field
                     as="select"
                     name="academicProgramId"
-                    className="w-full border border-gray-200 rounded-lg px-3 py-3 text-sm"
+                    className="w-full border border-gray-200 rounded-lg px-3 py-3 text-sm focus:outline-none focus:border-[#0A4A8F] focus:ring-1 focus:ring-[#0A4A8F]"
                   >
                     <option value="">Programme</option>
-
                     {getProgramDataByCareerId?.map((item: any) => (
                       <option
                         key={item.academicProgramId}
@@ -308,7 +324,6 @@ function ApplyForm() {
                       </option>
                     ))}
                   </Field>
-
                   <ErrorMessage
                     name="academicProgramId"
                     component="div"
@@ -324,19 +339,12 @@ function ApplyForm() {
                     as="select"
                     name="coreStateId"
                     onChange={(e: any) => {
-                      setFieldValue(
-                        "coreStateId",
-                        e.target.value
-                      );
-
-                      dispatch(
-                        getAllCityByStateId(e.target.value)
-                      );
+                      setFieldValue("coreStateId", e.target.value);
+                      dispatch(getAllCityByStateId(e.target.value));
                     }}
-                    className="w-full border border-gray-200 rounded-lg px-3 py-3 text-sm"
+                    className="w-full border border-gray-200 rounded-lg px-3 py-3 text-sm focus:outline-none focus:border-[#0A4A8F] focus:ring-1 focus:ring-[#0A4A8F]"
                   >
                     <option value="">State</option>
-
                     {allStateData?.map((item: any) => (
                       <option
                         key={item.coreStateId}
@@ -346,7 +354,6 @@ function ApplyForm() {
                       </option>
                     ))}
                   </Field>
-
                   <ErrorMessage
                     name="coreStateId"
                     component="div"
@@ -358,10 +365,9 @@ function ApplyForm() {
                   <Field
                     as="select"
                     name="coreCityId"
-                    className="w-full border border-gray-200 rounded-lg px-3 py-3 text-sm"
+                    className="w-full border border-gray-200 rounded-lg px-3 py-3 text-sm focus:outline-none focus:border-[#0A4A8F] focus:ring-1 focus:ring-[#0A4A8F]"
                   >
                     <option value="">City</option>
-
                     {getCityDataByStateId?.map((item: any) => (
                       <option
                         key={item.coreCityId}
@@ -371,7 +377,6 @@ function ApplyForm() {
                       </option>
                     ))}
                   </Field>
-
                   <ErrorMessage
                     name="coreCityId"
                     component="div"
@@ -380,37 +385,31 @@ function ApplyForm() {
                 </div>
               </div>
 
-              {/* Consent */}
+              {/* Consent - Checkbox checked by default, no validation needed */}
               <div>
                 <label className="flex items-start gap-2 text-[10px] text-gray-500">
                   <Field
                     type="checkbox"
                     name="isAccepted"
                     className="mt-1"
+                    checked={values.isAccepted}
                   />
-
                   <span>
                     I authorise SRMU and its representatives to
                     Call, SMS, Email or WhatsApp me regarding
                     admissions and programmes.
                   </span>
                 </label>
-
-                <ErrorMessage
-                  name="isAccepted"
-                  component="div"
-                  className="text-red-500 text-xs mt-1"
-                />
+                {/* Removed ErrorMessage for isAccepted */}
               </div>
 
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="group btn-primary w-full py-3 text-sm tracking-wide flex items-center justify-center gap-2"
+                className="group btn-primary cursor-pointer w-full py-3 text-sm tracking-wide flex items-center justify-center gap-2 hover:from-[#0c5ca8] hover:to-[#083658] text-white rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                APPLY NOW
-
-                <FaArrowRight className="text-sm transition-transform duration-200 group-hover:translate-x-1" />
+                {isSubmitting ? 'SUBMITTING...' : 'APPLY NOW'}
+                {!isSubmitting && <FaArrowRight className="text-sm transition-transform duration-200 group-hover:translate-x-1" />}
               </button>
             </Form>
           )}
