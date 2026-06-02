@@ -3,6 +3,7 @@ import mou from "../../assets/new-home/mou/mou.png";
 import mou_mobile from "../../assets/new-home/mou/mobile-mou.webp";
 import MobileReadMore from "./MobileReadMore";
 import Classes from "../../utils/styles/Global.module.css";
+import { Link } from "react-router-dom";
 export default function MoU() {
   return (
     <section className="bg-[#0F4A85]  relative">
@@ -24,10 +25,10 @@ export default function MoU() {
         <img src={mou_mobile} alt="MoU" className="rounded-md w-full block sm:hidden" />
         <img src={mou} alt="MoU" className="rounded-md w-full hidden md:block" />
         <div className="mt-5 md:mt-6 flex justify-center">
-          <button className="btn-primary text-xs md:text-sm py-2.5 md:py-3">
+          <Link to="/recognition-approvals" className="btn-primary text-xs md:text-sm py-2.5 md:py-3">
             Know More
             <FaArrowRight aria-hidden="true" className="text-sm" />
-          </button>
+          </Link>
         </div>
       </div>
     </section>

@@ -2,6 +2,7 @@ import { useRef, useEffect, useState, useMemo } from 'react';
 import eventsData from '../../data/new-home/eventsData';
 import { FaArrowRight, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import Classes from "../../utils/styles/Global.module.css";
+import { RxCross2 } from 'react-icons/rx';
 const tokenBgMap: Record<string, string> = {
     accent: 'bg-white dark:bg-red-700',
     primary: 'bg-white dark:bg-slate-800',
@@ -225,13 +226,13 @@ export default function Events() {
                 </div>
             </div>
             {open && active !== null && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
-                    <div className="bg-white dark:bg-slate-900 max-w-3xl w-full rounded-lg shadow-xl overflow-auto max-h-[80vh]">
+                <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/50 p-4">
+                    <div className="bg-white dark:bg-slate-900 max-w-3xl w-full rounded-lg shadow-xl ">
                         <div className="p-4 border-b border-slate-200 dark:border-slate-700 flex justify-between items-start">
                             <h3 className="text-lg font-bold text-slate-900 dark:text-white">Details</h3>
-                            <button onClick={closeModal} className="text-slate-600 dark:text-slate-300">Close</button>
+                            <button onClick={closeModal} className="text-slate-600 dark:text-slate-300 cursor-pointer"><RxCross2 size={24} /></button>
                         </div>
-                        <div className="p-6 text-slate-800 dark:text-slate-200">
+                        <div className="p-6 text-slate-800 dark:text-slate-200 overflow-auto max-h-[60vh]">
                             {(() => {
                                 const item = eventsData.find((it) => it.id === active);
                                 return item ? (

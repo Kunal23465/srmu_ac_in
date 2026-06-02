@@ -3,8 +3,8 @@ import React from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import SeoHead from "../../components/seo/SeoHead";
 // import NewHome from "../../components/new-home/NewHome";
-import Home from "../../components/home/Home";
-// import NewHome from "../../components/new-home/NewHome";
+// import Home from "../../components/home/Home";
+import NewHome from "../../components/new-home/NewHome";
 // import Home from "../../components/home/Home";
 
 const HomePage: React.FC = () => {
@@ -17,8 +17,8 @@ const HomePage: React.FC = () => {
         pathname={pathname}
       />
 
-      {/* {pathname === "/" ? <NewHome /> : <Outlet />} */}
-      {pathname === "/" ? <Home /> : <Outlet />}
+      {pathname === "/" ? <NewHome /> : <Outlet />}
+      {/* {pathname === "/" ? <Home /> : <Outlet />} */}
 
     </>
   );

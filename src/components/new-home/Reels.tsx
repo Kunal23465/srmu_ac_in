@@ -181,7 +181,7 @@ export default function Reels() {
 
   return (
     <section className="bg-gradient-to-b from-white via-[#E6E6E7] to-white">
-      <div className={`${Classes["container"]} py-8 md:py-10 lg:py-12`}>
+      <div className={`${Classes["container"]} pb-8 md:pb-10 lg:pb-12`}>
         <div className="mb-5 md:mb-8">
           <h2 className="text-lg md:text-3xl lg:text-4xl font-bold text-[#0A4A8F] flex flex-col leading-tight md:leading-tight">
             Life Beyond Academics

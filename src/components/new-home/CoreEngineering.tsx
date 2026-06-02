@@ -112,7 +112,7 @@ export default function CoreEngineering() {
         </div>
 
         {/* Full-width video with side controls */}
-        <div className="relative mb-5 md:mb-10 group w-full">
+        <div className="relative lg:mb-5 group w-full">
           <div className="relative rounded-xl overflow-hidden shadow-card">
             <video
               src={campusVideo}

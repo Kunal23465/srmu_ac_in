@@ -1,7 +1,7 @@
 import RootLayout from "../pages/RootLayout";
 import { Navigate, useRoutes } from "react-router-dom";
 import { lazyPage } from "./lazyRoute";
-import NewHomePage from "../pages/NewHomePage";
+// import NewHomePage from "../pages/NewHomePage";
 
 const HomePage = lazyPage(() => import("../pages/Home/HomePage"));
 const PageNotFound = lazyPage(() => import("../pages/PageNotFound"));
@@ -133,10 +133,10 @@ export const routes = [
         path: "terms-condition",
         element: <TermsConditionPage />,
       },
-       {
-        path: "new-home",
-        element: <NewHomePage />,
-      },
+      //  {
+      //   path: "new-home",
+      //   element: <NewHomePage />,
+      // },
       {
         path: "news-letter",
         element: <NewsLetterPage />,

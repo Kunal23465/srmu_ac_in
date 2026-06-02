@@ -205,10 +205,10 @@ export default function AIPowered() {
               ))}
             </div>
             <div className="mt-auto pt-5 md:pt-10 text-center">
-              <button className="btn-primary text-xs md:text-sm py-2.5 md:py-3">
+              <a href="tel:+919838904666" className="btn-primary text-xs md:text-sm py-2.5 md:py-3">
                 Connect To Counselor
                 <FaArrowRight aria-hidden="true" className="text-sm" />
-              </button>
+              </a>
             </div>
           </div>
 
@@ -263,10 +263,10 @@ export default function AIPowered() {
               ))}
             </div>
             <div className="mt-auto pt-5 md:pt-10 text-center">
-              <button className="btn-primary text-xs md:text-sm py-2.5 md:py-3">
+              <Link to="/institutes-info" className="btn-primary text-xs md:text-sm py-2.5 md:py-3">
                 Know Your Faculty
                 <FaArrowRight aria-hidden="true" className="text-sm" />
-              </button>
+              </Link>
             </div>
           </div>
         </div>
