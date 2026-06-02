@@ -41,7 +41,7 @@ import aictepdf from "../../../assets/pdf/about/approvals/Relavant_judgement_AIC
 import universitypdf from "../../../assets/pdf/about/approvals/University-Act-And-Notification-151123042818.pdf"
 // import pic1 from "../../../assets/pdf/about/approvals/approval letter 25-26 IOPS.pdf"
 // import pci2 from "../../../assets/pdf/about/approvals/Approval Letter IOP 25-26.pdf"
-import bicpdf from "../../../assets/pdf/about/approvals/bcid32742025-shri-ramswaroop-memorial-university-b-110925034058.pdf"
+import bicpdf from "../../../assets/pdf/about/approvals/INSTITUTE OF LEGAL STUDIES, SHRI RAMSWAROOP MEMORIAL UNVERSITY BARABANKI, UTTAR PRADESH-UP-BCIApproval-2026-2027.pdf"
 import larsen from "../../../assets/images/about/recognition-approval/larsen-toubro-limited-vector-logo-11574258722ko6xi-2105251033262.webp"
 import tata from "../../../assets/images/about/recognition-approval/collaborations-23.webp"
 import jbm from "../../../assets/images/about/recognition-approval/JBM-01112303243471.webp"
