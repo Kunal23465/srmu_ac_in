@@ -142,14 +142,14 @@ const TopHeader: React.FC = () => {
                 <IoCallSharp size={24} className="text-[#FFB703]" />
               </a>
 
-              <Link
+              {/* <Link
                 target="_blank"
                 rel="noopener noreferrer"
                 to="/student-portal-redirect"
                 className="bg-[#FFB703] px-2 font-medium text-xs sm:text-base uppercase border-2 border-[#ffb703] py-1 flex items-center"
               >
                 Apply Now
-              </Link>
+              </Link> */}
               <Link
                 target="_blank"
 

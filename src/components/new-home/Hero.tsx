@@ -104,17 +104,35 @@ export default function Hero() {
                 </h3>
                 <div className="grid grid-cols-5 sm:mt-0 gap-2 md:flex md:max-w-[320px]">
                   {ApprovedData.map((data) => (
-                    <div
-                      key={data.id}
-                      className="rounded-lg shadow-md bg-white/95 p-1 flex items-center justify-center h-12 md:h-14"
-                    >
-                      <img
-                        src={data.img}
-                        alt={data.title}
-                        className="h-full w-full object-contain"
-                      />
+                    <div key={data.id}>
+                      <div
+
+                        className="rounded-lg shadow-md bg-white/95 p-1 flex items-center sm:min-w-[65px] justify-center h-12 md:h-14"
+                      >
+                        <img
+                          src={data.img}
+                          alt={data.title}
+                          className="h-full w-full object-contain"
+                        />
+
+                      </div>
+                      <div className="text-[10px] sm:text-xs text-center mt-2 font-medium text-[#0A4A8F] sm:text-white">{data.title}</div>
                     </div>
                   ))}
+                </div>
+
+                <div className="overflow-hidden bg-[#0A4A8F] text-white mt-5 rounded-md sm:hidden py-2 whitespace-nowrap">
+                  <div className="inline-flex animate-marquee">
+                    {[...Array(10)].map((_, i) => (
+                      <div key={i} className="flex items-center shrink-0">
+                        <span className="mx-4 text-[12px] font-bold uppercase">
+                          UGC RECOGNIZED, PCI APPROVED & BCI APPROVED
+                        </span>
+
+                        <span className="text-white/70 font-normal">|</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
@@ -128,7 +146,7 @@ export default function Hero() {
       </section>
 
       {/* MOBILE FORM */}
-      <div className="block sm:hidden px-4 -mt-10 relative z-20">
+      <div className="block sm:hidden px-4 -mt-16 relative z-20">
         <ApplyForm />
       </div>
     </>

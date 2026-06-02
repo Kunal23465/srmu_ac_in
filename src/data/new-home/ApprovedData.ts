@@ -8,27 +8,27 @@ const ApprovedData = [
   {
     id: 1,
     img: img1,
-    title: "UGC RECOGNIZED",
+    title: "UGC Recognized",
   },
   {
     id: 2,
     img: img2,
-    title: "AIU MEMBER",
+    title: "AIU Member",
   },
   {
     id: 3,
     img: img3,
-    title: "BCI APPROVED",
+    title: "BCI Approved",
   },
   {
     id: 4,
     img: img4,
-    title: "PCI APPROVED",
+    title: "PCI Approved",
   },
   {
     id: 5,
     img: img5,
-    title: "NCTE APPROVED",
+    title: "NCTE Approved",
   },
 ];
 
