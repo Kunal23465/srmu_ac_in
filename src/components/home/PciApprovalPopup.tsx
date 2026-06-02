@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { IoClose } from "react-icons/io5";
 import pciApprovedImage from "../../assets/images/home/pciapproved.jpeg";
+import { useNavigate } from "react-router-dom";
 
 const PciApprovalPopup = () => {
+  const navigate = useNavigate();
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
@@ -25,26 +27,28 @@ const PciApprovalPopup = () => {
 
   return (
     <div
-      className="fixed inset-0 z-[9999]  items-center justify-center bg-black/45 px-4 py-6  hidden sm:flex"
-      role="dialog"
-      aria-modal="true"
-      aria-label="PCI approval advertisement"
+      className="fixed inset-0 z-[9999] hidden sm:flex items-center justify-end bg-black/45 px-4 py-6"
       onClick={() => setIsVisible(false)}
     >
       <div
-        className="relative w-full max-w-[340px] sm:max-w-[380px]"
-        onClick={(event) => event.stopPropagation()}
+        className="relative z-10 w-full max-w-[380px]"
+        onClick={(e) => e.stopPropagation()}
       >
         <button
           type="button"
-          aria-label="Close PCI approval popup"
-          className="absolute -right-3 -top-3 z-10 inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#0f4a85] text-white shadow-lg transition-colors hover:bg-[#0a3764] focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#0f4a85]"
-          onClick={() => setIsVisible(false)}
+          className="absolute -right-3 -top-3 cursor-pointer !z-[9999] flex h-9 w-9 items-center justify-center rounded-full bg-[#0f4a85] text-white"
+          onClick={(e) => {
+            e.stopPropagation();
+            setIsVisible(false);
+          }}
         >
-          <IoClose className="h-5 w-5 cursor-pointer" aria-hidden="true" />
+          <IoClose className="h-5 w-5" />
         </button>
 
-        <div className="overflow-hidden rounded-2xl bg-white shadow-2xl">
+        <div
+          className="overflow-hidden rounded-2xl bg-white shadow-2xl cursor-pointer"
+          onClick={() => navigate("/recognition-approvals")}
+        >
           <img
             src={pciApprovedImage}
             alt="PCI approved"
