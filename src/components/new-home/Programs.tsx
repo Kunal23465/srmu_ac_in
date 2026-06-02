@@ -225,7 +225,7 @@ export default function Programs() {
 
     const dept = pDepartmentSlug(p);
     // departmentSlug some programs me null hai -> fallback to program's own slug
-    navigate(`program/${dept || p.slug || ''}`);
+    navigate(`/program/${dept || p.slug || ''}`);
   };
 
   const onKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -257,7 +257,7 @@ export default function Programs() {
     setActive(i);
     setIndex(0);
   };
-console.log("data",data)
+  console.log("data", data)
   return (
     <section className="bg-[#E0F1FF] ">
       <div className={`${Classes['container']} py-8 md:py-10 lg:py-12`}>
@@ -273,11 +273,10 @@ console.log("data",data)
               Search programs
             </label>
             <div
-              className={`group relative flex items-center gap-2 rounded-full bg-white p-1.5 pl-5 shadow-[0_8px_24px_-12px_rgba(10,74,143,0.35)] ring-1 transition-all ${
-                showSuggestions
-                  ? 'ring-[#0A4A8F]/40 shadow-[0_12px_30px_-10px_rgba(10,74,143,0.45)]'
-                  : 'ring-gray-200 hover:ring-[#0A4A8F]/30'
-              }`}
+              className={`group relative flex items-center gap-2 rounded-full bg-white p-1.5 pl-5 shadow-[0_8px_24px_-12px_rgba(10,74,143,0.35)] ring-1 transition-all ${showSuggestions
+                ? 'ring-[#0A4A8F]/40 shadow-[0_12px_30px_-10px_rgba(10,74,143,0.45)]'
+                : 'ring-gray-200 hover:ring-[#0A4A8F]/30'
+                }`}
             >
               <svg
                 className="text-[#0A4A8F]/70 flex-shrink-0"
@@ -338,19 +337,18 @@ console.log("data",data)
                           type="button"
                           onMouseEnter={() => setHighlight(i)}
                           onClick={() => goToProgram(p)}
-                          className={`flex cursor-pointer w-full items-center gap-3 px-3 py-2.5 text-left transition-colors ${
-                            i === highlight ? 'bg-[#E0F1FF]' : 'hover:bg-gray-50'
-                          }`}
+                          className={`flex cursor-pointer w-full items-center gap-3 px-3 py-2.5 text-left transition-colors ${i === highlight ? 'bg-[#E0F1FF]' : 'hover:bg-gray-50'
+                            }`}
                         >
                           <div className="h-10 w-10 flex-shrink-0 overflow-hidden rounded-lg bg-gray-100">
-                          
-                              <div className="flex h-full w-full items-center justify-center text-[#0A4A8F]/40">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                  <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
-                                  <path d="M6 12v5c3 3 9 3 12 0v-5" />
-                                </svg>
-                              </div>
-                            
+
+                            <div className="flex h-full w-full items-center justify-center text-[#0A4A8F]/40">
+                              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                                <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                              </svg>
+                            </div>
+
                           </div>
                           <div className="min-w-0 flex-1">
                             <p className="truncate text-sm font-semibold text-gray-800">{pTitle(p)}</p>
@@ -378,11 +376,10 @@ console.log("data",data)
             <button
               key={t.name}
               onClick={() => selectTab(i)}
-              className={`pb-3 text-xs md:text-sm font-bold uppercase tracking-wider whitespace-nowrap transition-colors ${
-                active === i
-                  ? 'text-[#0A4A8F] border-b-2 border-[#FFC107]'
-                  : 'text-gray-500 hover:text-[#0A4A8F]'
-              }`}
+              className={`pb-3 text-xs md:text-sm font-bold uppercase tracking-wider whitespace-nowrap transition-colors ${active === i
+                ? 'text-[#0A4A8F] border-b-2 border-[#FFC107]'
+                : 'text-gray-500 hover:text-[#0A4A8F]'
+                }`}
             >
               {t.name}
             </button>

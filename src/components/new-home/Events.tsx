@@ -196,7 +196,7 @@ export default function Events() {
                                         />
                                     </div>
                                     <div className="p-4 md:p-6 text-slate-800 dark:text-white ">
-                                        <h3 className="font-semibold text-lg mb-2 text-slate-900 dark:text-white">{e.title}</h3>
+                                        <h3 className="font-semibold text-lg mb-2 text-white">{e.title}</h3>
                                         <p className="text-sm mb-3 text-[#fff] dark:text-slate-200 line-clamp-2" style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
                                             {stripHtml(e.description)}
                                         </p>
@@ -204,7 +204,7 @@ export default function Events() {
                                         {e.description && (
                                             <button
                                                 onClick={() => openModal(e.id)}
-                                                className="inline-flex items-center gap-2 text-sm font-medium text-[#FFC107] dark:text-white"
+                                                className="inline-flex items-center gap-2 text-sm font-medium text-[#FFC107] cursor-pointer"
                                             >
                                                 Read more <FaArrowRight className="text-xs" />
                                             </button>

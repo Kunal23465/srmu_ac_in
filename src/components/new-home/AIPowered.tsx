@@ -7,6 +7,7 @@ import EmblaCarousel from './EmbelCrousel';
 import MobileReadMore from './MobileReadMore';
 import { BiChevronDown } from 'react-icons/bi';
 import Classes from "../../utils/styles/Global.module.css";
+import { Link } from 'react-router-dom';
 
 const ltReels = [
   {
@@ -36,13 +37,31 @@ const features = [
   { title: 'Innovation & Entrepreneurship Ecosystem', desc: 'Encouraging AI innovation, startup ideas and live projects.' },
 ];
 
-const ltIntegratedPrograms = [
-  'B.Tech. CSE - (Cyber Security)',
-  'B.Tech. CSE - (Data Science & Artificial Intelligence)',
-  'B.C.A. CSE - (Cyber Security)',
-  'B.C.A. CSE - (Data Science & Artificial Intelligence)',
-  'BBA (AI-Augmented FinTech) ',
-  "M.B.A. (Business Analytics) "
+const ltIntegratedPrograms: { title: string; path: string }[] = [
+  {
+    title: "B.Tech. CSE - (Cyber Security)",
+    path: "/program/b-tech-cse-cyber-security",
+  },
+  {
+    title: "B.Tech. CSE - (Data Science & Artificial Intelligence)",
+    path: "/program/b-tech-cse-data-science-artificial-intelligence",
+  },
+  {
+    title: "B.C.A. CSE - (Cyber Security)",
+    path: "/program/bca-cyber-security",
+  },
+  {
+    title: "B.C.A. CSE - (Data Science & Artificial Intelligence)",
+    path: "/program/bca-data-science-artificial-intelligence",
+  },
+  {
+    title: "BBA (AI-Augmented FinTech)",
+    path: "/program/bba-ai-augmented-fintech",
+  },
+  {
+    title: "M.B.A. (Business Analytics)",
+    path: "/program/mba-business-analytics",
+  },
 ];
 
 export default function AIPowered() {
@@ -76,16 +95,16 @@ export default function AIPowered() {
 
             <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
               {ltIntegratedPrograms.map((p, i) => (
-                <li
-                  key={p}
+                <Link to={p.path}
+                  key={i}
                   className="flex items-start gap-2 text-[13px] md:text-sm text-gray-700"
                 >
                   <span className="inline-flex items-center justify-center h-5 w-5 rounded-full bg-[#FFC107] text-[#0A4A8F] text-[10px] font-semibold flex-shrink-0">
                     {i + 1}
                   </span>
 
-                  <span>{p}</span>
-                </li>
+                  <span>{p.title}</span>
+                </Link>
               ))}
             </ul>
           </div>
@@ -112,16 +131,17 @@ export default function AIPowered() {
             >
               <ul className="space-y-3">
                 {ltIntegratedPrograms.map((p, i) => (
-                  <li
-                    key={p}
+                  <Link
+                    to={p.path}
+                    key={i}
                     className="flex items-start gap-2 text-[13px] text-gray-700"
                   >
                     <span className="inline-flex items-center justify-center h-5 w-5 rounded-full bg-[#FFC107] text-[#0A4A8F] text-[10px] font-semibold flex-shrink-0">
                       {i + 1}
                     </span>
 
-                    <span>{p}</span>
-                  </li>
+                    <span>{p.title}</span>
+                  </Link>
                 ))}
               </ul>
             </div>

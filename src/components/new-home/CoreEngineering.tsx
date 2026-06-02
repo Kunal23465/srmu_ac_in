@@ -5,12 +5,28 @@ import MobileReadMore from './MobileReadMore';
 import { useState } from 'react';
 import { BiChevronDown } from 'react-icons/bi';
 import Classes from "../../utils/styles/Global.module.css";
-const programs = [
-  'B.Tech CE (Adv. Construction Practices)',
-  'B.Tech ME (EV Engineering)',
-  'B.Tech EE (EV Engineering)',
-  'B.Tech ECE (EV Engineering)',
-  'B.Tech. in ECE (Semiconductor Design)',
+import { Link } from 'react-router-dom';
+const programs: { title: string; path: string }[] = [
+  {
+    title: "B.Tech CE (Adv. Construction Practices)",
+    path: "/program/b-tech-civil-engineering",
+  },
+  {
+    title: "B.Tech ME (EV Engineering)",
+    path: "/program/b-tech-me-ev-engineering",
+  },
+  {
+    title: "B.Tech EE (EV Engineering)",
+    path: "/program/b-tech-ee-ev-engineering",
+  },
+  {
+    title: "B.Tech ECE (EV Engineering)",
+    path: "/program/b-tech-ece-ev-engineering",
+  },
+  {
+    title: "B.Tech. in ECE (Semiconductor Design)",
+    path: "/program/btech-ece-semiconductor-design",
+  },
 ];
 export default function CoreEngineering() {
   const [open, setOpen] = useState(false);
@@ -31,27 +47,7 @@ export default function CoreEngineering() {
         </MobileReadMore>
 
 
-        {/* <div className="mb-5 md:mb-10 rounded-2xl border border-[#0A4A8F]/15 bg-white p-4 md:p-6 shadow-sm w-full ">
-          <p className="text-xs md:text-sm font-bold uppercase tracking-wider text-[#0A4A8F] mb-3">
-            Featured Programs
-          </p>
-          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  gap-2">
-            {[
-              'B.Tech CE (Adv. Construction Practices)',
-              'B.Tech ME (EV Engineering)',
-              'B.Tech EE (EV Engineering)',
-              'B.Tech ECE (EV Engineering)',
-              'B.Tech. in ECE (Semiconductor Design)',
-            ].map((p, i) => (
-              <li key={p} className="flex items-start gap-2 text-[13px] md:text-sm text-gray-700">
-                <span className="inline-flex items-center justify-center h-5 w-5 rounded-full bg-[#FFC107] text-[#0A4A8F] text-[10px] font-semibold flex-shrink-0">
-                  {i + 1}
-                </span>
-                <span>{p}</span>
-              </li>
-            ))}
-          </ul>
-        </div> */}
+
 
         <div className="mb-5 md:mb-10 rounded-2xl border border-[#0A4A8F]/15 bg-white p-4 md:p-6 shadow-sm w-full">
 
@@ -63,16 +59,16 @@ export default function CoreEngineering() {
 
             <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
               {programs.map((p, i) => (
-                <li
-                  key={p}
+                <Link to={p.path}
+                  key={i}
                   className="flex items-start gap-2 text-[13px] md:text-sm text-gray-700"
                 >
                   <span className="inline-flex items-center justify-center h-5 w-5 rounded-full bg-[#FFC107] text-[#0A4A8F] text-[10px] font-semibold flex-shrink-0">
                     {i + 1}
                   </span>
 
-                  <span>{p}</span>
-                </li>
+                  <span>{p.title}</span>
+                </Link>
               ))}
             </ul>
           </div>
@@ -99,16 +95,16 @@ export default function CoreEngineering() {
             >
               <ul className="space-y-3">
                 {programs.map((p, i) => (
-                  <li
-                    key={p}
+                  <Link to={p.path}
+                    key={i}
                     className="flex items-start gap-2 text-[13px] text-gray-700"
                   >
                     <span className="inline-flex items-center justify-center h-5 w-5 rounded-full bg-[#FFC107] text-[#0A4A8F] text-[10px] font-semibold flex-shrink-0">
                       {i + 1}
                     </span>
 
-                    <span>{p}</span>
-                  </li>
+                    <span>{p.title}</span>
+                  </Link>
                 ))}
               </ul>
             </div>
