@@ -12,6 +12,7 @@ import FAQ from "./FAQ";
 import Map from "./Map";
 import Events from "./Events";
 import Hero from "./Hero";
+import PciApprovalPopup from "../home/PciApprovalPopup";
 
 const AIPowered = lazy(() => import("./AIPowered"));
 const CoreEngineering = lazy(() => import("./CoreEngineering"));
@@ -23,6 +24,7 @@ function NewHome() {
     <div className="min-h-screen bg-white">
       {/* <Header /> */}
       <main>
+        <PciApprovalPopup />
         <Hero />
         {/* <Approvals /> */}
         {/* <Excellence /> */}
