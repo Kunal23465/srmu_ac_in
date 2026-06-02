@@ -263,7 +263,7 @@ export default function Reels() {
       </div>
 
       {modalOpen && (
-        <div className="fixed inset-0 bg-black/90 z-50 backdrop-blur-sm">
+        <div className="fixed inset-0 bg-black/90 z-[9999] backdrop-blur-sm">
           <button
             onClick={closeModal}
             aria-label="Close"
