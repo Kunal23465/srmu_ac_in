@@ -48,30 +48,29 @@ export const FacultyOfMathematicalAndStatisticalSciencesCounterData1: counterDat
   { id: 2, value: "19", suffix: "", label: "Faculty & Staff" },
   { id: 3, value: "455", suffix: "", label: "Students" },
 ];
-export const FacultyOfMathematicalAndStatisticalSciencesCounterData2: counterDataType[] = 
-[
-    {
-      id: 1,
-      icon: "",
-      value: "175",
-      suffix: "",
-      label: "Guest lectures",
-    },
-    {
-      id: 2,
-      icon: "",
-      value: "25",
-      suffix: "",
-      label: "Field Visits",
-    },
-    {
-      id: 3,
-      icon: "",
-      value: "10",
-      suffix: "",
-      label: "Conference & Seminars",
-    },
-  ];
+export const FacultyOfMathematicalAndStatisticalSciencesCounterData2: counterDataType[] = [
+  {
+    id: 1,
+    icon: "",
+    value: "175",
+    suffix: "",
+    label: "Guest lectures",
+  },
+  {
+    id: 2,
+    icon: "",
+    value: "25",
+    suffix: "",
+    label: "Field Visits",
+  },
+  {
+    id: 3,
+    icon: "",
+    value: "10",
+    suffix: "",
+    label: "Conference & Seminars",
+  },
+];
 
 export const FacultyOfMathematicalAndStatisticalSciencesVMData = [
   {
@@ -136,14 +135,14 @@ export const FacultyOfMathematicalAndStatisticalSciencesData1: FeeTableData = {
       duration: "2 Years",
       eligibility: "Click to View",
       fee: "Rs. 47,000/-",
-      link:"program/m-sc-mathematics"
+      link: "program/m-sc-mathematics",
     },
     {
       course: "M.Sc. in Statistics",
       duration: "2 Years",
       eligibility: "Click to View",
       fee: "Rs. 47,000/-",
-      link:"program/m-sc-statistics",
+      link: "program/m-sc-statistics",
     },
   ],
 };
@@ -157,7 +156,14 @@ export const FacultyOfMathematicalAndStatisticalSciencesData2: FeeTableData = {
       duration: "3 Years",
       eligibility: "Click to View",
       fee: "Rs. 42,000/-",
-      link:"program/b-sc-hons-mathematics",
+      link: "program/b-sc-hons-mathematics",
+    },
+    {
+      course: "B.Sc. Mathematics  with  Data Science",
+      duration: "3 Years",
+      eligibility: "Click to View",
+      fee: "Rs. 42,000/-",
+      link: "program/bsc-mathematics-with-data-science",
     },
   ],
 };

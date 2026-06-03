@@ -36,7 +36,7 @@ const FacultyOfMathematicalAndStatisticalSciences: React.FC = () => {
         <div>
             <div className={`${Classes["container"]}`}>
                 <CustomOverviewSection data={FacultyOfMathematicalAndStatisticalSciencesOverviewData} />
-                 <Counter
+                <Counter
                     counterData={FacultyOfMathematicalAndStatisticalSciencesCounterData1}
                     classes="counter"
                 />

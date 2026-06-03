@@ -12,7 +12,7 @@ import MobileReadMore from "./MobileReadMore";
 import Classes from "../../utils/styles/Global.module.css";
 
 const placementStats = [
-  { v: '₹17 LPA', l: 'Average Package' },
+  { v: '₹17 LPA', l: 'Highest Package' },
   { v: '1100+', l: 'Job Offers' },
   { v: '225', l: 'Students Above 5+ LPA' },
   { v: '33%', l: 'Students with Multiple Offers' },

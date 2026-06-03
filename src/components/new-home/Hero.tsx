@@ -29,7 +29,7 @@ export default function Hero() {
         {/* Background Image */}
         <img
           src={bannerImage}
-          alt=""
+          alt="Banner Image"
           aria-hidden="true"
           className={`absolute top-0 left-0 h-[320px] w-full object-cover md:h-full transition-opacity duration-700 ${videoLoaded ? 'opacity-0' : 'opacity-100'
             }`}
@@ -121,19 +121,7 @@ export default function Hero() {
                   ))}
                 </div>
 
-                <div className="overflow-hidden bg-[#0A4A8F] text-white mt-5 rounded-md sm:hidden py-2 whitespace-nowrap">
-                  <div className="inline-flex animate-marquee">
-                    {[...Array(10)].map((_, i) => (
-                      <div key={i} className="flex items-center shrink-0">
-                        <span className="mx-4 text-[12px] font-bold uppercase">
-                          UGC RECOGNIZED, PCI APPROVED & BCI APPROVED
-                        </span>
 
-                        <span className="text-white/70 font-normal">|</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
               </div>
             </div>
 
