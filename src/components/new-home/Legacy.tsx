@@ -9,7 +9,7 @@ import rakeshVidImg from '../../assets/new-home/legacy/rakesh-new.webp';
 import durgeshVid from '../../assets/new-home/legacy/Durgesh Actor.mp4';
 import durgeshVidImg from '../../assets/new-home/legacy/durgesh-new.webp';
 import vipulVid from '../../assets/new-home/legacy/Rj Vipul.mp4';
-import vipulVidImg from '../../assets/new-home/legacy/rj.webp';
+import vipulVidImg from '../../assets/new-home/legacy/rj-new.webp';
 import vinayVid from '../../assets/new-home/legacy/Vinay Bihari.mp4';
 import vinayVidImg from '../../assets/new-home/legacy/brij.webp';
 import MobileReadMore from './MobileReadMore';
