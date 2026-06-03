@@ -69,11 +69,7 @@ export default function AIPowered() {
   const [playingStates, setPlayingStates] = useState(ltReels.map(() => true));
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
-  useEffect(() => {
-    videoRefs.current.forEach((v) => {
-      if (v) v.play().catch(() => { });
-    });
-  }, []);
+  // Do not force-play videos on mount; let browser/load behavior decide or play when visible.
 
   return (
     <section className="bg-[#F0F6FB] ">
@@ -166,6 +162,7 @@ export default function AIPowered() {
                       muted
                       loop
                       playsInline
+                      preload="none"
                       onPlay={() => {
                         setPlayingStates((prev) => {
                           const next = [...prev];

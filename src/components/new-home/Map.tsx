@@ -15,7 +15,7 @@ const Map: React.FC = () => {
 
           <div className=" overflow-hidden rounded-2xl shadow-lg ring-1 ring-black/5">
             <a className='cursor-pointer ' href="https://maps.google.com/maps?q=Uttar+Pradesh,+India" target="_blank" rel="noopener noreferrer">
-              <img src={map} alt="Map" className="w-full h-full max-h-[300px] object-center object-cover hover:scale-105" />
+              <img src={map} alt="Map" loading="lazy" decoding="async" className="w-full h-full max-h-[300px] object-center object-cover hover:scale-105" />
             </a>
             {/* <iframe
               title="Uttar Pradesh, India"

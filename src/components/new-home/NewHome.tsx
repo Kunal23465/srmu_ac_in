@@ -1,4 +1,4 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import Classes from "../../utils/styles/Global.module.css";
 // import Header from "./components/Header";
 // import Hero from "./components/Hero";
@@ -20,6 +20,22 @@ const Reels = lazy(() => import("./Reels"));
 const Legacy = lazy(() => import("./Legacy"));
 
 function NewHome() {
+  const [showDeferred, setShowDeferred] = useState(false);
+
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      setShowDeferred(true);
+      return;
+    }
+    const enable = () => setShowDeferred(true);
+    if ("requestIdleCallback" in window) {
+      // @ts-ignore
+      (window as any).requestIdleCallback(enable, { timeout: 1000 });
+    } else {
+      const t = setTimeout(enable, 300);
+      return () => clearTimeout(t);
+    }
+  }, []);
   return (
     <div className="min-h-screen bg-white">
       {/* <Header /> */}
@@ -29,20 +45,24 @@ function NewHome() {
         {/* <Approvals /> */}
         {/* <Excellence /> */}
         <Placements />
-        <Suspense fallback={null}>
-          <AIPowered />
-          <CoreEngineering />
-          <Reels />
-        </Suspense>
+        {showDeferred && (
+          <Suspense fallback={null}>
+            <AIPowered />
+            <CoreEngineering />
+            <Reels />
+          </Suspense>
+        )}
         <Programs />
         <Events />
         <MoU />
 
         <Alumni />
 
-        <Suspense fallback={null}>
-          <Legacy />
-        </Suspense>
+        {showDeferred && (
+          <Suspense fallback={null}>
+            <Legacy />
+          </Suspense>
+        )}
         <Map />
         <FAQ />
 

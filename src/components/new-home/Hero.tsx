@@ -43,7 +43,7 @@ export default function Hero() {
           muted
           loop
           playsInline
-          preload="auto"
+          preload="metadata"
           poster={bannerImage}
           onCanPlay={() => setVideoLoaded(true)}
           src={bannerVideo}

@@ -125,7 +125,7 @@ function VideoModal({ item, onClose }: { item: LegacyItem; onClose: () => void }
           controls
           autoPlay
           playsInline
-          preload="auto"
+          preload="metadata"
         />
       </div>
     </div>
