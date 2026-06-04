@@ -481,7 +481,7 @@ export const cseundergraduateFeeTable: FeeTableData = {
       duration: "3 Years",
       eligibility: "Click",
       fee: "Rs. 1,55,000/-",
-      link: "pprogram/b-tech-computer-science-engineering-lateral-entry",
+      link: "program/b-tech-computer-science-engineering-lateral-entry",
       eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>B.Tech. in Computer Science Engineering (Lateral Entry)</h2>
         <p>
