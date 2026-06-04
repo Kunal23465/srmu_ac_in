@@ -131,6 +131,29 @@ export const cseIndustryIntegratedFeeTable: FeeTableData = {
         </p>
       `,
     },
+    {
+      course: "M.Tech. in Artificial Intelligence & Machine Learning",
+      duration: "2 Years",
+      eligibility: "Click",
+      fee: "Rs. 1,07,000/-",
+      link: "program/m-tech-artificial-intelligence-machine-learning",
+      eligibilityContent: `
+        <h2 class='font-bold text-lg mb-3'>M.Tech. in Artificial Intelligence & Machine Learning</h2>
+        <p>
+          Candidate must have passed 
+          <strong>B.Tech.(CSE) / B.Tech.(IT) / B.Tech.(ECE) / B.Tech.(EN) / B.Tech.(EI)</strong> 
+          from any recognized University or AICTE recognized Institute/College with minimum aggregate 
+          marks of <strong>50% or 5.5 CGPA for GEN/OBC</strong> and 
+          <strong>45% or 5.0 CGPA for SC/ST Category</strong>.
+        </p>
+        <p class='mt-3 font-semibold'>OR</p>
+        <p>
+          Candidate must have passed 
+          MCA / M.Sc.(CS) / MA(CA) / M.Sc.(IT) / M.Sc.(Electronics) / M.Sc.(Maths) 
+          with the same minimum percentage/CGPA requirements.
+        </p>
+      `,
+    },
 
     // 2) Data Science & AI with L&T
     {
@@ -366,6 +389,23 @@ export const cseundergraduateFeeTable: FeeTableData = {
         <p>
           Candidate must have obtained minimum <strong>45% marks</strong> or equivalent grade for GEN/OBC 
           and <strong>40% marks</strong> or equivalent grade for SC/ST Category in the above subjects taken together.
+        </p>
+      `,
+    },
+    {
+      course: "B.Tech. + M.Tech. in Computer Science Engineering",
+      duration: "5 Years",
+      eligibility: "Click",
+      fee: "Rs. 1,52,000/-",
+      link: "program/b-tech-m-tech-cse",
+      eligibilityContent: `
+        <h2 class='font-bold text-lg mb-3'>B.Tech. + M.Tech. in Computer Science Engineering</h2>
+        <p>
+          Candidate must have passed 10+2 or equivalent system from any recognized Central/State Board 
+          with Physics and Mathematics as compulsory subjects along with one of the Chemistry/
+          Computer Science/Technical Vocational Subject. Candidate must have obtained minimum 
+          45% marks or equivalent grade for GEN/OBC and 40% marks or equivalent grade for SC/ST 
+          Category in the above subjects taken together.
         </p>
       `,
     },

@@ -239,6 +239,26 @@ export const civilIndustryHonoursFeeTable: FeeTableData = {
        <p> Candidate must have passed 10+2 or equivalent system from any recognized Central/ State Board with Physics and Mathematics as compulsory subjects along with one of the Chemistry/Computer Science/Technical Vocational Subject with minimum aggregate marks of 45%.</p>
       `,
     },
+    {
+      course: "B.Tech. in Civil Engineering (Lateral Entry) with L&T",
+      duration: "3 Years",
+      eligibility: "Click",
+      fee: "Rs. 1,52,000/-",
+      link: "program/b-tech-civil-engineering-lateral-entry",
+      eligibilityContent: `
+        <h2 class='font-bold text-lg mb-3'>B.Tech. in Civil Engineering (Lateral Entry)</h2>
+        <p>
+          Candidate must have passed a 3 or 4-year Diploma in a technical stream from an institution 
+          recognized by AICTE or a State Board of Technical Education, OR must have passed 
+          B.Sc. degree in Biology, Microbiology, Botany, Zoology, Chemistry, Physics, Mathematics, 
+          Physiology, Biotechnology, Biochemistry, or Agriculture.
+        </p>
+        <p class='mt-3'>
+          Candidate must have obtained minimum aggregate marks of 45% or 5.0 CGPA for GEN/OBC and 
+          40% marks or 4.5 CGPA for SC/ST Category.
+        </p>
+      `,
+    },
   ],
 };
 
@@ -376,6 +396,19 @@ export const civilIndustryPostgraduateFeeTable: FeeTableData = {
         </p>
       `,
     },
+    {
+      course: "M. Tech. in Environmental Engineering",
+      duration: "2 Years",
+      eligibility: "Click",
+      fee: "Rs. 1,07,000/-",
+      link: "program/m-tech-environmental-engineering",
+      eligibilityContent: `
+        <h2 class='font-bold text-lg mb-3'>M. Tech. in Environmental Engineering</h2>
+        <p>
+         Candidates must have passed B.Tech. (any stream) from any recognised University or AICTE recognised Institute/College with minimum aggregate marks of 50% or 5.5 CGPA for GEN/OBC and 45% marks or 5.0 CGPA for SC/ST Category or M.Sc. (any stream) with 45% marks or 5.0 CGPA for GEN/OBC and 40% marks or 4.5 CGPA for SC/ST Category.
+        </p>
+      `,
+    },
   ],
 };
 
@@ -384,10 +417,10 @@ export const civilIndustryUndergraduateFeeTable: FeeTableData = {
 
   rows: [
     {
-      course: "B.Tech. in Civil Engineering",
+      course: "B.Tech. in Civil Engineering with L&T",
       duration: "4 Years",
       eligibility: "Click",
-      fee: "Rs. 1,32,000/-",
+      fee: "Rs. 1,52,000/-",
       link: "program/b-tech-civil-engineering",
       eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>B.Tech. in Civil Engineering</h2>

@@ -187,6 +187,28 @@ export const underGraduateFeeDataOfBioscience: FeeTableData = {
             <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/ State Board with Physics and Mathematics/ Biology as compulsory subject alongwith Chemistry/Biotechnology/Computer Science with minimum aggregate marks of 45% or equivalent grade for GEN/OBC and 40% marks or equivalent grade for SC/ST Category.</p>
         `,
     },
+    {
+      course: "B.Sc. (Hons.) Nutrition & Dietetics",
+      duration: "3 Years",
+      eligibility: "Click",
+      fee: "Rs. 60,000/-",
+      link: "program/b-sc-hons-nutrition-dietetics",
+      eligibilityContent: `
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Sc. (Hons.) Nutrition & Dietetics</h2>
+            <p>Candidate must have passed 10+2 examination/ equivalent with Biology or Life Sciences as one of the subjects with minimum aggregate marks of 50% or equivalent grade for GEN/OBC and 45% marks or equivalent grade for SC/ST Category.</p>
+        `,
+    },
+    {
+      course: "B.Sc.(Hons.) Biotechnology",
+      duration: "3 Years",
+      eligibility: "Click",
+      fee: "Rs. 75,000/-",
+      link: "program/b-sc-hons-biotechnology",
+      eligibilityContent: `
+            <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Sc.(Hons.) Biotechnology</h2>
+            <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/ State Board with Physics and Mathematics/ Biology as compulsory subject alongwith Chemistry/Biotechnology/Computer Science with minimum aggregate marks of 45% or equivalent grade for GEN/OBC and 40% marks or equivalent grade for SC/ST Category.</p>
+        `,
+    },
     // {
     //   course: "B.Sc.(Hons.) Nutrition & Dietetics",
     //   duration: "3 Years",
@@ -201,7 +223,6 @@ export const underGraduateFeeDataOfBioscience: FeeTableData = {
 };
 
 export const facultyDetailsOfBioScienceDepartment: FacultyItem[] = [
- 
   {
     id: 2,
     name: "Dr. Ankita Srivastava",
@@ -216,7 +237,6 @@ export const facultyDetailsOfBioScienceDepartment: FacultyItem[] = [
     image: raviKumarDeshwal,
     cardBgColor: "transparent",
   },
- 
 
   {
     id: 6,
@@ -247,8 +267,6 @@ export const facultyDetailsOfBioScienceDepartment: FacultyItem[] = [
     image: defaultSrmu,
     cardBgColor: "transparent",
   },
-  
-
 
   {
     id: 14,

@@ -135,12 +135,25 @@ export const biotechnologyIndustryIntegratedFeeTable: FeeTableData = {
       course: "B.Tech. in Biotechnology + M.B.A.",
       duration: "5 Years",
       eligibility: "Click",
-      fee: "Rs. 1,32,000/-",
+      fee: "Rs. 1,37,000/-",
       link: "program/b-tech-biotechnology-mba",
       eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>B.Tech. in Biotechnology + M.B.A.</h2>
         <p>
       Candidate must have passed 10+2 or equivalent system from any recognized Central/ State Board with Physics and Mathematics/Biology as compulsory subject alongwith Chemistry/ Biotechnology/ Computer Science/Technical Vocational Subject. Candidate must obtained minimum marks of 45% or equivalent grade for GEN/OBC and 40% marks or equivalent grade for SC/ST Category in the above subjects taken together.
+        </p>
+      `,
+    },
+    {
+      course: "B.Tech. + M.Tech. in Biotechnology",
+      duration: "5 Years",
+      eligibility: "Click",
+      fee: "Rs. 1,37,000/-",
+      link: "program/b-tech-m-tech-biotechnology",
+      eligibilityContent: `
+        <h2 class='font-bold text-lg mb-3'>B.Tech. + M.Tech. in Biotechnology</h2>
+        <p>
+Candidate must have passed 10+2 or equivalent system from any recognized Central/ State Board with Physics and Mathematics/Biology as compulsory subject alongwith Chemistry/ Biotechnology/ Computer Science/Technical Vocational Subject. Candidate must obtained minimum marks of 45% or equivalent grade for GEN/OBC and 40% marks or equivalent grade for SC/ST Category in the above subjects taken together.
         </p>
       `,
     },
@@ -229,6 +242,19 @@ export const biotechnologyIndustryUndergraduateFeeTable: FeeTableData = {
         <h2 class='font-bold text-lg mb-3'>B.Tech. in Biotechnology + M.B.A.</h2>
         <p>
          Candidate must have passed 10+2 or equivalent system from any recognized Central/ State Board with Physics and Mathematics/Biology as compulsory subject alongwith Chemistry/ Biotechnology/ Computer Science/Technical Vocational Subject. Candidate must obtained minimum marks of 45% or equivalent grade for GEN/OBC and 40% marks or equivalent grade for SC/ST Category in the above subjects taken together.
+        </p>
+      `,
+    },
+    {
+      course: "B.Tech. + M.Tech. in Biotechnology",
+      duration: "5 Years",
+      eligibility: "Click",
+      fee: "Rs. 1,37,000/-",
+      link: "program/b-tech-m-tech-biotechnology",
+      eligibilityContent: `
+        <h2 class='font-bold text-lg mb-3'>B.Tech. + M.Tech. in Biotechnology</h2>
+        <p>
+Candidate must have passed 10+2 or equivalent system from any recognized Central/ State Board with Physics and Mathematics/Biology as compulsory subject alongwith Chemistry/ Biotechnology/ Computer Science/Technical Vocational Subject. Candidate must obtained minimum marks of 45% or equivalent grade for GEN/OBC and 40% marks or equivalent grade for SC/ST Category in the above subjects taken together.
         </p>
       `,
     },

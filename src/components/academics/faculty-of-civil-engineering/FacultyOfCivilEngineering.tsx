@@ -110,7 +110,7 @@ const FacultyOfCivilEngineering: React.FC = () => {
         breakpoints={{ desktop: 3, tablet: 2, mobile: 1 }}
       />
 
-          
+
       <CustomTopFooter data={CustomTopFooterData1} />
 
     </div>

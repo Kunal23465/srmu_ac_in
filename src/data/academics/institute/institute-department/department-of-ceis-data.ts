@@ -242,6 +242,23 @@ export const csisIndustryIntegratedFeeTable: FeeTableData = {
         </p>
       `,
     },
+    {
+      course: "B.C.A. (Artificial Intelligence & Machine Learning)",
+      duration: "3 Years",
+      eligibility: "Click",
+      fee: "Rs. 1,10,500/-",
+      link: "program/bca-artificial-intelligence-machine-learning",
+      eligibilityContent: `
+        <h2 class='font-bold text-lg mb-3'>B.C.A. (Artificial Intelligence & Machine Learning)</h2>
+        <p>
+          Candidate must have passed 10+2 or an equivalent examination from any recognized Board with a minimum aggregate of 
+          <strong>45% for GEN/OBC</strong> and <strong>40% for SC/ST Category</strong>.
+        </p>
+        <p>
+          Students should meet the minimum academic standards required to pursue AI and ML specialization at undergraduate level.
+        </p>
+      `,
+    },
 
     // 3) BCA (Artificial Intelligence & Machine Learning)
     // {
