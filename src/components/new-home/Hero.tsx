@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { FaArrowRight } from 'react-icons/fa';
 import bannerVideo from '../../assets/new-home/banner_video_optimized.mp4';
 import bannerImage from '../../assets/new-home/video-banner.webp';
+import bannerImageAvif from '../../assets/new-home/video-banner.avif';
 import ApprovedData from '../../data/new-home/ApprovedData';
 import Classes from "../../utils/styles/Global.module.css";
-import { useEffect } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 
 import { useDispatch, useSelector } from "react-redux";
@@ -22,31 +22,71 @@ import { useNavigate } from "react-router-dom";
 
 export default function Hero() {
   const [videoLoaded, setVideoLoaded] = useState(false);
+  const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
+
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    const connection = (navigator as Navigator & {
+      connection?: { saveData?: boolean; effectiveType?: string };
+    }).connection;
+
+    if (connection?.saveData || connection?.effectiveType === "2g") {
+      return;
+    }
+
+    const enableVideo = () => setShouldLoadVideo(true);
+    const requestIdle = (window as Window & {
+      requestIdleCallback?: (callback: () => void, options?: { timeout: number }) => number;
+      cancelIdleCallback?: (id: number) => void;
+    }).requestIdleCallback;
+
+    if (requestIdle) {
+      const idleId = requestIdle(enableVideo, { timeout: 1800 });
+      return () => {
+        (window as Window & { cancelIdleCallback?: (id: number) => void }).cancelIdleCallback?.(idleId);
+      };
+    }
+
+    const timeout = window.setTimeout(enableVideo, 1400);
+    return () => window.clearTimeout(timeout);
+  }, []);
 
   return (
     <>
       <section className="relative overflow-hidden pt-[78px] pb-8 md:min-h-[720px] md:pt-36 md:pb-20">
         {/* Background Image */}
-        <img
-          src={bannerImage}
-          alt="Banner Image"
-          aria-hidden="true"
-          className={`absolute top-0 left-0 h-[320px] w-full object-cover md:h-full transition-opacity duration-700 ${videoLoaded ? 'opacity-0' : 'opacity-100'
-            }`}
-        />
+        <picture>
+          <source srcSet={bannerImageAvif} type="image/avif" />
+          <img
+            src={bannerImage}
+            alt=""
+            aria-hidden="true"
+            loading="eager"
+            decoding="async"
+            fetchPriority="high"
+            width={1348}
+            height={564}
+            sizes="100vw"
+            className={`absolute top-0 left-0 h-[320px] w-full object-cover md:h-full transition-opacity duration-700 ${videoLoaded ? 'opacity-0' : 'opacity-100'
+              }`}
+          />
+        </picture>
 
         {/* Background Video */}
         <video
           className={`absolute top-0 left-0 h-[320px] w-full object-cover md:h-full transition-opacity duration-700 ${videoLoaded ? 'opacity-100' : 'opacity-0'
             }`}
-          autoPlay
+          autoPlay={shouldLoadVideo}
           muted
           loop
           playsInline
-          preload="metadata"
+          preload={shouldLoadVideo ? "metadata" : "none"}
           poster={bannerImage}
           onCanPlay={() => setVideoLoaded(true)}
-          src={bannerVideo}
+          src={shouldLoadVideo ? bannerVideo : undefined}
           style={{ filter: 'contrast(1.05) saturate(1.05)' }}
         />
 
@@ -112,6 +152,9 @@ export default function Hero() {
                         <img
                           src={data.img}
                           alt={data.title}
+                          width={160}
+                          height={160}
+                          sizes="65px"
                           className="h-full w-full object-contain"
                         />
 
@@ -145,6 +188,7 @@ export default function Hero() {
 function ApplyForm() {
   const dispatch = useDispatch<AppDispatch>();
   const navigate = useNavigate();
+  const [hasRequestedOptions, setHasRequestedOptions] = useState(false);
 
   const { allCareerData } = useSelector(
     (state: RootState) => state.getAllCareerData
@@ -162,10 +206,36 @@ function ApplyForm() {
     (state: RootState) => state.getAllCityByStateId
   );
 
-  useEffect(() => {
+  const loadFormOptions = useCallback(() => {
+    if (hasRequestedOptions) {
+      return;
+    }
+
+    setHasRequestedOptions(true);
     dispatch(getAllCareer());
     dispatch(getAllState());
-  }, [dispatch]);
+  }, [dispatch, hasRequestedOptions]);
+
+  useEffect(() => {
+    if (typeof window === "undefined" || hasRequestedOptions) {
+      return;
+    }
+
+    const requestIdle = (window as Window & {
+      requestIdleCallback?: (callback: () => void, options?: { timeout: number }) => number;
+      cancelIdleCallback?: (id: number) => void;
+    }).requestIdleCallback;
+
+    if (requestIdle) {
+      const idleId = requestIdle(loadFormOptions, { timeout: 2500 });
+      return () => {
+        (window as Window & { cancelIdleCallback?: (id: number) => void }).cancelIdleCallback?.(idleId);
+      };
+    }
+
+    const timeout = window.setTimeout(loadFormOptions, 1800);
+    return () => window.clearTimeout(timeout);
+  }, [hasRequestedOptions, loadFormOptions]);
 
   const submitHandler = async (
     values: any,
@@ -227,7 +297,7 @@ function ApplyForm() {
           onSubmit={(values, actions) => submitHandler(values, actions)}
         >
           {({ setFieldValue, isSubmitting, values }) => (
-            <Form className="px-5 pt-6 pb-5 space-y-3">
+            <Form className="px-5 pt-6 pb-5 space-y-3" onFocusCapture={loadFormOptions}>
               {/* Name Fields - First Name & Last Name */}
               <div className="grid grid-cols-2 gap-3">
                 <div>

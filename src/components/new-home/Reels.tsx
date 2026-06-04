@@ -12,6 +12,7 @@ import SRMUVibes from "../../assets/new-home/reels/SRMU Vibes.mp4";
 import WomenEmpowerment from "../../assets/new-home/reels/Women Empowerment.mp4";
 import MobileReadMore from './MobileReadMore';
 import Classes from "../../utils/styles/Global.module.css";
+import LazyVideo from './LazyVideo';
 
 const reels = [
   {
@@ -90,7 +91,7 @@ const reels = [
 
 export default function Reels() {
   const duplicatedReels = [...reels, ...reels]; // Duplicate for seamless loop
-  const [playingStates, setPlayingStates] = useState(duplicatedReels.map(() => true));
+  const [playingStates, setPlayingStates] = useState(duplicatedReels.map(() => false));
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [marqueePaused, setMarqueePaused] = useState(false);
@@ -99,7 +100,6 @@ export default function Reels() {
     ? [...reels.slice(selectedIndex), ...reels.slice(0, selectedIndex)]
     : reels;
 
-  const modalVideoRefs = useRef<(HTMLVideoElement | null)[]>([]);
   const reelScrollerRef = useRef<HTMLDivElement | null>(null);
   const marqueeResumeTimeoutRef = useRef<number | null>(null);
 
@@ -121,30 +121,6 @@ export default function Reels() {
       }
     };
   }, []);
-
-  useEffect(() => {
-    if (!modalOpen) return;
-
-    const videos = modalVideoRefs.current.filter((v): v is HTMLVideoElement => v !== null);
-    if (videos.length === 0) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          const video = entry.target as HTMLVideoElement;
-          if (entry.isIntersecting && entry.intersectionRatio >= 0.6) {
-            video.play().catch(() => { });
-          } else {
-            video.pause();
-          }
-        });
-      },
-      { threshold: [0, 0.6, 1] }
-    );
-
-    videos.forEach((v) => observer.observe(v));
-    return () => observer.disconnect();
-  }, [modalOpen, selectedIndex]);
 
   const handleReelClick = (index: number) => {
     setSelectedIndex(index % reels.length); // Since duplicated, get original index
@@ -206,7 +182,7 @@ export default function Reels() {
                   className="group cursor-pointer flex-shrink-0 w-44 md:w-52 flex flex-col bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl ring-1 ring-black/5 transition-all duration-300 hover:-translate-y-1"
                 >
                   <div className="relative bg-black aspect-[9/16] w-full overflow-hidden">
-                    <video
+                    <LazyVideo
                       src={r.src}
                       className="absolute inset-0 w-full h-full object-cover opacity-95 group-hover:scale-105 transition-transform duration-700"
                       autoPlay
@@ -214,6 +190,7 @@ export default function Reels() {
                       loop
                       playsInline
                       preload="none"
+                      rootMargin="200px 0px"
                       onPlay={() => {
                         const newStates = [...playingStates];
                         newStates[i] = true;
@@ -280,15 +257,16 @@ export default function Reels() {
               >
                 <div className="group block">
                   <div className="relative rounded-xl overflow-hidden bg-black aspect-[9/16] shadow-card w-[min(85vw,360px)] max-h-[80vh]">
-                    <video
-                      ref={(el) => { modalVideoRefs.current[i] = el; }}
+                    <LazyVideo
                       src={r.src}
                       className="absolute inset-0 w-full h-full object-cover opacity-95"
                       controls
+                      autoPlay
                       muted
                       loop
                       playsInline
                       preload="metadata"
+                      rootMargin="360px 0px"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/30 pointer-events-none" />
                   </div>

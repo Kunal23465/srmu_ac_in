@@ -1,4 +1,5 @@
 import React from 'react'
+import mapSmall from "../../assets/new-home/Deoria-960.webp"
 import map from "../../assets/new-home/Deoria.webp"
 import Classes from "../../utils/styles/Global.module.css";
 const Map: React.FC = () => {
@@ -15,7 +16,17 @@ const Map: React.FC = () => {
 
           <div className=" overflow-hidden rounded-2xl shadow-lg ring-1 ring-black/5">
             <a className='cursor-pointer ' href="https://maps.google.com/maps?q=Uttar+Pradesh,+India" target="_blank" rel="noopener noreferrer">
-              <img src={map} alt="Map" loading="lazy" decoding="async" className="w-full h-full max-h-[300px] object-center object-cover hover:scale-105" />
+              <img
+                src={mapSmall}
+                srcSet={`${mapSmall} 960w, ${map} 1920w`}
+                sizes="(min-width: 1280px) 1200px, 100vw"
+                alt="Map"
+                loading="lazy"
+                decoding="async"
+                width={960}
+                height={465}
+                className="w-full h-full max-h-[300px] object-center object-cover hover:scale-105"
+              />
             </a>
             {/* <iframe
               title="Uttar Pradesh, India"

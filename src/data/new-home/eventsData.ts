@@ -1,10 +1,15 @@
-import event1 from "../../assets/new-home/events/1.webp";
-import event2 from "../../assets/new-home/events/2.webp";
-import event3 from "../../assets/new-home/events/3.webp";
-import event4 from "../../assets/new-home/events/4.webp";
+import event1Small from "../../assets/new-home/events/optimized/1-480.webp";
+import event1 from "../../assets/new-home/events/optimized/1-960.webp";
+import event2Small from "../../assets/new-home/events/optimized/2-480.webp";
+import event2 from "../../assets/new-home/events/optimized/2-960.webp";
+import event3Small from "../../assets/new-home/events/optimized/3-480.webp";
+import event3 from "../../assets/new-home/events/optimized/3-960.webp";
+import event4Small from "../../assets/new-home/events/optimized/4-480.webp";
+import event4 from "../../assets/new-home/events/optimized/4-960.webp";
 export type EventItem = {
   id: string | number;
-  image?: string;
+  image: string;
+  imageSmall: string;
   date: string;
   title: string;
   excerpt?: string;
@@ -17,6 +22,7 @@ const eventsData: EventItem[] = [
   {
     id: 3,
     image: event3,
+    imageSmall: event3Small,
     date: "April 22, 2026",
     title: "SRMU–L&T Collaborative Programs Celebrate Academic Excellence and Industry Readiness",
     description: `
@@ -39,6 +45,7 @@ const eventsData: EventItem[] = [
   {
     id: 1,
     image: event1,
+    imageSmall: event1Small,
     date: "April 09, 2026",
     title: "SRMU Hosts International Conference on “Sustainable Innovation 2.0” to Bridge Research and Industry",
     description: `
@@ -77,6 +84,7 @@ const eventsData: EventItem[] = [
   {
     id: 2,
     image: event2,
+    imageSmall: event2Small,
     date: "March 08, 2026",
     title: "Celebrating Visionary Leadership and Women Empowerment",
     description: `
@@ -102,8 +110,9 @@ const eventsData: EventItem[] = [
   	`,
   },
   {
-    id: 3,
+    id: 4,
     image: event4,
+    imageSmall: event4Small,
     date: "May 22, 2026",
     title: "SRMU Signs MoUs with Five Organizations to Strengthen Education and Skill Development",
     description: `

@@ -1,5 +1,5 @@
 import { FaArrowRight } from "react-icons/fa";
-import mou from "../../assets/new-home/mou/mou.png";
+import mou from "../../assets/new-home/mou/mou.webp";
 import mou_mobile from "../../assets/new-home/mou/mobile-mou.webp";
 import MobileReadMore from "./MobileReadMore";
 import Classes from "../../utils/styles/Global.module.css";
@@ -22,8 +22,17 @@ export default function MoU() {
           </MobileReadMore>
         </div>
 
-        <img src={mou_mobile} alt="MoU" className="rounded-md w-full block sm:hidden" />
-        <img src={mou} alt="MoU" className="rounded-md w-full hidden md:block" />
+        <picture>
+          <source media="(max-width: 639px)" srcSet={mou_mobile} />
+          <img
+            src={mou}
+            alt="MoU"
+            width={1600}
+            height={188}
+            sizes="(min-width: 1280px) 1200px, 100vw"
+            className="rounded-md w-full"
+          />
+        </picture>
         <div className="mt-5 md:mt-6 flex justify-center">
           <Link to="/recognition-approvals" className="btn-primary text-xs md:text-sm py-2.5 md:py-3">
             Know More

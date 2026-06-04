@@ -1,51 +1,71 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 
-import agricultureImg from '../../assets/new-home/programs/AGRICULTURE.webp';
+import agricultureImgSmall from '../../assets/new-home/programs/optimized/AGRICULTURE-480.webp';
+import agricultureImg from '../../assets/new-home/programs/optimized/AGRICULTURE-720.webp';
 import Classes from '../../utils/styles/Global.module.css';
-import aiImg from '../../assets/new-home/programs/AI.webp';
-import biotechnologyImg from '../../assets/new-home/programs/BIOTECHNOLOGY.webp';
-import computerApplicationImg from '../../assets/new-home/programs/COMPUTER APPLICATION.webp';
-import computerScienceImg from '../../assets/new-home/programs/COMPUTER SCIENCE ENG.webp';
-import commerceImg from '../../assets/new-home/programs/_Commerce & Eco  .webp';
-import engineeringImg from '../../assets/new-home/programs/ENGINEERING.webp';
-import humanitiesImg from '../../assets/new-home/programs/HUMANITIES.webp';
-import lawImg from '../../assets/new-home/programs/LAW.webp';
-import managementImg from '../../assets/new-home/programs/MANAGEMENT.webp';
-import mediaStudiesImg from '../../assets/new-home/programs/MEDIA STUDIES.webp';
-import microbiologyImg from '../../assets/new-home/programs/MICROBIOLOGY.webp';
-import naturalSciencesImg from '../../assets/new-home/programs/NATURAL SCIENCES.webp';
-import nutritionImg from '../../assets/new-home/programs/NUTRITION & DIETECTICS.webp';
-import pharmacyImg from '../../assets/new-home/programs/PHARMACY.webp';
-import polytechnicDiplomaImg from '../../assets/new-home/programs/POLYTEHNIC (DIPLOMA).webp';
-import polytechnicLateralImg from '../../assets/new-home/programs/POLYTEHNIC (LATERAL).webp';
-import socialWorkImg from '../../assets/new-home/programs/SOCIAL WORK.webp';
+import aiImgSmall from '../../assets/new-home/programs/optimized/AI-480.webp';
+import aiImg from '../../assets/new-home/programs/optimized/AI-720.webp';
+import biotechnologyImgSmall from '../../assets/new-home/programs/optimized/BIOTECHNOLOGY-480.webp';
+import biotechnologyImg from '../../assets/new-home/programs/optimized/BIOTECHNOLOGY-720.webp';
+import computerApplicationImgSmall from '../../assets/new-home/programs/optimized/COMPUTER APPLICATION-480.webp';
+import computerApplicationImg from '../../assets/new-home/programs/optimized/COMPUTER APPLICATION-720.webp';
+import computerScienceImgSmall from '../../assets/new-home/programs/optimized/COMPUTER SCIENCE ENG-480.webp';
+import computerScienceImg from '../../assets/new-home/programs/optimized/COMPUTER SCIENCE ENG-720.webp';
+import commerceImgSmall from '../../assets/new-home/programs/optimized/_Commerce & Eco  -480.webp';
+import commerceImg from '../../assets/new-home/programs/optimized/_Commerce & Eco  -720.webp';
+import engineeringImgSmall from '../../assets/new-home/programs/optimized/ENGINEERING-480.webp';
+import engineeringImg from '../../assets/new-home/programs/optimized/ENGINEERING-720.webp';
+import humanitiesImgSmall from '../../assets/new-home/programs/optimized/HUMANITIES-480.webp';
+import humanitiesImg from '../../assets/new-home/programs/optimized/HUMANITIES-720.webp';
+import lawImgSmall from '../../assets/new-home/programs/optimized/LAW-480.webp';
+import lawImg from '../../assets/new-home/programs/optimized/LAW-720.webp';
+import managementImgSmall from '../../assets/new-home/programs/optimized/MANAGEMENT-480.webp';
+import managementImg from '../../assets/new-home/programs/optimized/MANAGEMENT-720.webp';
+import mediaStudiesImgSmall from '../../assets/new-home/programs/optimized/MEDIA STUDIES-480.webp';
+import mediaStudiesImg from '../../assets/new-home/programs/optimized/MEDIA STUDIES-720.webp';
+import microbiologyImgSmall from '../../assets/new-home/programs/optimized/MICROBIOLOGY-480.webp';
+import microbiologyImg from '../../assets/new-home/programs/optimized/MICROBIOLOGY-720.webp';
+import naturalSciencesImgSmall from '../../assets/new-home/programs/optimized/NATURAL SCIENCES-480.webp';
+import naturalSciencesImg from '../../assets/new-home/programs/optimized/NATURAL SCIENCES-720.webp';
+import nutritionImgSmall from '../../assets/new-home/programs/optimized/NUTRITION & DIETECTICS-480.webp';
+import nutritionImg from '../../assets/new-home/programs/optimized/NUTRITION & DIETECTICS-720.webp';
+import pharmacyImgSmall from '../../assets/new-home/programs/optimized/PHARMACY-480.webp';
+import pharmacyImg from '../../assets/new-home/programs/optimized/PHARMACY-720.webp';
+import polytechnicDiplomaImgSmall from '../../assets/new-home/programs/optimized/POLYTEHNIC (DIPLOMA)-480.webp';
+import polytechnicDiplomaImg from '../../assets/new-home/programs/optimized/POLYTEHNIC (DIPLOMA)-720.webp';
+import polytechnicLateralImgSmall from '../../assets/new-home/programs/optimized/POLYTEHNIC (LATERAL)-480.webp';
+import polytechnicLateralImg from '../../assets/new-home/programs/optimized/POLYTEHNIC (LATERAL)-720.webp';
+import socialWorkImgSmall from '../../assets/new-home/programs/optimized/SOCIAL WORK-480.webp';
+import socialWorkImg from '../../assets/new-home/programs/optimized/SOCIAL WORK-720.webp';
 import { Link, useNavigate } from 'react-router-dom';
 import { AppDispatch, RootState } from '../../store';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchAllProgramFinder } from '../../store/program-finder/programFinderThunk';
 
-type Program = { title: string; tagline: string[]; img: string; slug: string };
+type Program = { title: string; tagline: string[]; img: string; imgSmall: string; slug: string };
+
+const programImage = (imgSmall: string, img: string) => ({ imgSmall, img });
 
 const tabs = [
   {
     name: 'Undergraduate',
     slug: 'undergraduate',
     programs: [
-      { title: 'Artificial Intelligence', tagline: ['B.Tech. CSE', 'BCA', 'BBA'], img: aiImg, slug: 'artificial-intelligence/undergraduate' },
-      { title: 'Computer Science', tagline: ['B.Tech. CSE', 'B.Sc. IT, BCA'], img: computerScienceImg, slug: 'computer-science-engineering/undergraduate' },
-      { title: 'Engineering', tagline: ['B.Tech. CE', 'B.Tech. ME', 'B.Tech. EE', 'B.Tech. CSE', 'B.Tech.ECE'], img: engineeringImg, slug: 'engineering/undergraduate' },
-      { title: 'Management', tagline: ['BBA'], img: managementImg, slug: 'management/undergraduate' },
-      { title: 'Commerce & Economics', tagline: ['B.Com. (Hons.)', 'B.Com. as per NEP', 'B.A. Economics', 'B.A. (Hons.)'], img: commerceImg, slug: 'commerce-and-economics/undergraduate' },
-      { title: 'Law', tagline: ['BA LL.B. (Hons.)', 'BBA LL.B. (Hons.)', 'LL.B.'], img: lawImg, slug: 'legal-studies-law/undergraduate' },
-      { title: 'Biotechnology', tagline: ['B.Sc. (Hons.)', 'B.Tech.'], img: biotechnologyImg, slug: 'bio-technology/undergraduate' },
-      { title: 'Microbiology', tagline: ['B.Sc. (Hons.)'], img: microbiologyImg, slug: 'microbiology/undergraduate' },
-      { title: 'Media Studies', tagline: ['B.A. (J&MC)'], img: mediaStudiesImg, slug: 'media-studies/undergraduate' },
-      { title: 'Agriculture', tagline: ['B.Sc. (Hons.)'], img: agricultureImg, slug: 'agriculture/undergraduate' },
-      { title: 'Nutrition & Dietetics', tagline: ['B.Sc. (Hons.)'], img: nutritionImg, slug: 'nutrition-dietetics/undergraduate' },
-      { title: 'Humanities', tagline: ['B.A. (Hons.)'], img: humanitiesImg, slug: 'humanities/undergraduate' },
-      { title: 'Computer Application', tagline: ['BCA', 'B.Sc. IT'], img: computerApplicationImg, slug: 'computer-application/undergraduate' },
-      { title: 'Natural Sciences', tagline: ['B.Sc.'], img: naturalSciencesImg, slug: 'natural-sciences/undergraduate' },
-      { title: 'Pharmacy', tagline: ['B.Pharm.'], img: pharmacyImg, slug: 'pharmacy/undergraduate' },
+      { title: 'Artificial Intelligence', tagline: ['B.Tech. CSE', 'BCA', 'BBA'], ...programImage(aiImgSmall, aiImg), slug: 'artificial-intelligence/undergraduate' },
+      { title: 'Computer Science', tagline: ['B.Tech. CSE', 'B.Sc. IT, BCA'], ...programImage(computerScienceImgSmall, computerScienceImg), slug: 'computer-science-engineering/undergraduate' },
+      { title: 'Engineering', tagline: ['B.Tech. CE', 'B.Tech. ME', 'B.Tech. EE', 'B.Tech. CSE', 'B.Tech.ECE'], ...programImage(engineeringImgSmall, engineeringImg), slug: 'engineering/undergraduate' },
+      { title: 'Management', tagline: ['BBA'], ...programImage(managementImgSmall, managementImg), slug: 'management/undergraduate' },
+      { title: 'Commerce & Economics', tagline: ['B.Com. (Hons.)', 'B.Com. as per NEP', 'B.A. Economics', 'B.A. (Hons.)'], ...programImage(commerceImgSmall, commerceImg), slug: 'commerce-and-economics/undergraduate' },
+      { title: 'Law', tagline: ['BA LL.B. (Hons.)', 'BBA LL.B. (Hons.)', 'LL.B.'], ...programImage(lawImgSmall, lawImg), slug: 'legal-studies-law/undergraduate' },
+      { title: 'Biotechnology', tagline: ['B.Sc. (Hons.)', 'B.Tech.'], ...programImage(biotechnologyImgSmall, biotechnologyImg), slug: 'bio-technology/undergraduate' },
+      { title: 'Microbiology', tagline: ['B.Sc. (Hons.)'], ...programImage(microbiologyImgSmall, microbiologyImg), slug: 'microbiology/undergraduate' },
+      { title: 'Media Studies', tagline: ['B.A. (J&MC)'], ...programImage(mediaStudiesImgSmall, mediaStudiesImg), slug: 'media-studies/undergraduate' },
+      { title: 'Agriculture', tagline: ['B.Sc. (Hons.)'], ...programImage(agricultureImgSmall, agricultureImg), slug: 'agriculture/undergraduate' },
+      { title: 'Nutrition & Dietetics', tagline: ['B.Sc. (Hons.)'], ...programImage(nutritionImgSmall, nutritionImg), slug: 'nutrition-dietetics/undergraduate' },
+      { title: 'Humanities', tagline: ['B.A. (Hons.)'], ...programImage(humanitiesImgSmall, humanitiesImg), slug: 'humanities/undergraduate' },
+      { title: 'Computer Application', tagline: ['BCA', 'B.Sc. IT'], ...programImage(computerApplicationImgSmall, computerApplicationImg), slug: 'computer-application/undergraduate' },
+      { title: 'Natural Sciences', tagline: ['B.Sc.'], ...programImage(naturalSciencesImgSmall, naturalSciencesImg), slug: 'natural-sciences/undergraduate' },
+      { title: 'Pharmacy', tagline: ['B.Pharm.'], ...programImage(pharmacyImgSmall, pharmacyImg), slug: 'pharmacy/undergraduate' },
     ],
   },
 
@@ -53,19 +73,19 @@ const tabs = [
     name: 'Postgraduate',
     slug: 'postgraduate',
     programs: [
-      { title: 'Artificial Intelligence', tagline: ['M.Tech.', 'MBA'], img: aiImg, slug: 'artificial-intelligence/postgraduate' },
-      { title: 'Computer Science', tagline: ['M.Tech. CSE', 'M.Sc. IT'], img: computerScienceImg, slug: 'computer-science-engineering/postgraduate' },
-      { title: 'Engineering', tagline: ['M.Tech. CE', 'M.Tech. ME', 'M.Tech. EE', 'M.Tech. CSE', 'M.Tech.ECE'], img: engineeringImg, slug: 'engineering/postgraduate' },
-      { title: 'Management', tagline: ['MBA'], img: managementImg, slug: 'management/postgraduate' },
-      { title: 'Commerce & Economics', tagline: ['M.Com.', 'M.Sc.'], img: commerceImg, slug: 'commerce-and-economics/postgraduate' },
-      { title: 'Law', tagline: ['LL.M.'], img: lawImg, slug: 'legal-studies-law/postgraduate' },
-      { title: 'Biotechnology', tagline: ['M.Sc.', 'M.Tech.'], img: biotechnologyImg, slug: 'bio-technology/postgraduate' },
-      { title: 'Media Studies', tagline: ['M.A. (J&MC)'], img: mediaStudiesImg, slug: 'media-studies/postgraduate' },
-      { title: 'Agriculture', tagline: ['M.Sc.', 'MBA'], img: agricultureImg, slug: 'agriculture/postgraduate' },
-      { title: 'Natural Sciences', tagline: ['M.Sc.'], img: naturalSciencesImg, slug: 'natural-sciences/postgraduate' },
-      { title: 'Humanities', tagline: ['M.A.'], img: humanitiesImg, slug: 'humanities/postgraduate' },
-      { title: 'Computer Application', tagline: ['MCA'], img: computerApplicationImg, slug: 'computer-application/postgraduate' },
-      { title: 'Social Work', tagline: ['MSW'], img: socialWorkImg, slug: 'social-work/postgraduate' },
+      { title: 'Artificial Intelligence', tagline: ['M.Tech.', 'MBA'], ...programImage(aiImgSmall, aiImg), slug: 'artificial-intelligence/postgraduate' },
+      { title: 'Computer Science', tagline: ['M.Tech. CSE', 'M.Sc. IT'], ...programImage(computerScienceImgSmall, computerScienceImg), slug: 'computer-science-engineering/postgraduate' },
+      { title: 'Engineering', tagline: ['M.Tech. CE', 'M.Tech. ME', 'M.Tech. EE', 'M.Tech. CSE', 'M.Tech.ECE'], ...programImage(engineeringImgSmall, engineeringImg), slug: 'engineering/postgraduate' },
+      { title: 'Management', tagline: ['MBA'], ...programImage(managementImgSmall, managementImg), slug: 'management/postgraduate' },
+      { title: 'Commerce & Economics', tagline: ['M.Com.', 'M.Sc.'], ...programImage(commerceImgSmall, commerceImg), slug: 'commerce-and-economics/postgraduate' },
+      { title: 'Law', tagline: ['LL.M.'], ...programImage(lawImgSmall, lawImg), slug: 'legal-studies-law/postgraduate' },
+      { title: 'Biotechnology', tagline: ['M.Sc.', 'M.Tech.'], ...programImage(biotechnologyImgSmall, biotechnologyImg), slug: 'bio-technology/postgraduate' },
+      { title: 'Media Studies', tagline: ['M.A. (J&MC)'], ...programImage(mediaStudiesImgSmall, mediaStudiesImg), slug: 'media-studies/postgraduate' },
+      { title: 'Agriculture', tagline: ['M.Sc.', 'MBA'], ...programImage(agricultureImgSmall, agricultureImg), slug: 'agriculture/postgraduate' },
+      { title: 'Natural Sciences', tagline: ['M.Sc.'], ...programImage(naturalSciencesImgSmall, naturalSciencesImg), slug: 'natural-sciences/postgraduate' },
+      { title: 'Humanities', tagline: ['M.A.'], ...programImage(humanitiesImgSmall, humanitiesImg), slug: 'humanities/postgraduate' },
+      { title: 'Computer Application', tagline: ['MCA'], ...programImage(computerApplicationImgSmall, computerApplicationImg), slug: 'computer-application/postgraduate' },
+      { title: 'Social Work', tagline: ['MSW'], ...programImage(socialWorkImgSmall, socialWorkImg), slug: 'social-work/postgraduate' },
     ],
   },
 
@@ -73,11 +93,11 @@ const tabs = [
     name: 'Industry Honours (L&T)',
     slug: 'industry-honors',
     programs: [
-      { title: 'Artificial Intelligence', tagline: ['B.Tech. CSE', 'BCA', 'BBA', 'MBA'], img: aiImg, slug: 'artificial-intelligence/industry-honors1' },
-      { title: 'Computer Science', tagline: ['B.Tech.', 'BCA', 'M.Tech.'], img: computerScienceImg, slug: 'computer-science-engineering/industry-honors1' },
-      { title: 'Engineering', tagline: ['B.Tech. CE', 'B.Tech. ME', 'B.Tech. EE', 'B.Tech. ECE'], img: engineeringImg, slug: 'engineering/industry-honors1' },
-      { title: 'Management', tagline: ['BBA', 'MBA'], img: managementImg, slug: 'management/industry-honors1' },
-      { title: 'Computer Application', tagline: ['BCA', 'MCA'], img: computerApplicationImg, slug: 'computer-application/industry-honors1' },
+      { title: 'Artificial Intelligence', tagline: ['B.Tech. CSE', 'BCA', 'BBA', 'MBA'], ...programImage(aiImgSmall, aiImg), slug: 'artificial-intelligence/industry-honors1' },
+      { title: 'Computer Science', tagline: ['B.Tech.', 'BCA', 'M.Tech.'], ...programImage(computerScienceImgSmall, computerScienceImg), slug: 'computer-science-engineering/industry-honors1' },
+      { title: 'Engineering', tagline: ['B.Tech. CE', 'B.Tech. ME', 'B.Tech. EE', 'B.Tech. ECE'], ...programImage(engineeringImgSmall, engineeringImg), slug: 'engineering/industry-honors1' },
+      { title: 'Management', tagline: ['BBA', 'MBA'], ...programImage(managementImgSmall, managementImg), slug: 'management/industry-honors1' },
+      { title: 'Computer Application', tagline: ['BCA', 'MCA'], ...programImage(computerApplicationImgSmall, computerApplicationImg), slug: 'computer-application/industry-honors1' },
     ],
   },
 
@@ -85,9 +105,9 @@ const tabs = [
     name: 'Integrated',
     slug: 'integrated',
     programs: [
-      { title: 'Engineering', tagline: ['B.Tech. + M.Tech. (CE, ME, CSE, ECE, EE)', 'B.Tech. (CE, ME, CSE, ECE, EE) + MBA'], img: engineeringImg, slug: 'engineering/integrated' },
-      { title: 'Biotechnology', tagline: ['B.Tech. + M.Tech.', 'B.Tech. + MBA'], img: biotechnologyImg, slug: 'bio-technology/integrated' },
-      { title: 'Law', tagline: ['BA + LL.B. (Hons.)', 'BBA + LL.B. (Hons.)'], img: lawImg, slug: 'legal-studies-law/integrated' },
+      { title: 'Engineering', tagline: ['B.Tech. + M.Tech. (CE, ME, CSE, ECE, EE)', 'B.Tech. (CE, ME, CSE, ECE, EE) + MBA'], ...programImage(engineeringImgSmall, engineeringImg), slug: 'engineering/integrated' },
+      { title: 'Biotechnology', tagline: ['B.Tech. + M.Tech.', 'B.Tech. + MBA'], ...programImage(biotechnologyImgSmall, biotechnologyImg), slug: 'bio-technology/integrated' },
+      { title: 'Law', tagline: ['BA + LL.B. (Hons.)', 'BBA + LL.B. (Hons.)'], ...programImage(lawImgSmall, lawImg), slug: 'legal-studies-law/integrated' },
     ],
   },
 
@@ -95,8 +115,8 @@ const tabs = [
     name: 'Polytechnic',
     slug: 'polytechnic',
     programs: [
-      { title: 'Diploma', tagline: ['Civil', 'Automobile', 'Production', 'Mechanical', 'Electrical', 'Elec. & Comm.', 'Computer Science'], img: polytechnicDiplomaImg, slug: 'polytechnic/polytechnic-diploma' },
-      { title: 'Diploma (Lateral)', tagline: ['Civil', 'Automobile', 'Production', 'Mechanical', 'Electrical', 'Elec. & Comm.', 'Computer Science'], img: polytechnicLateralImg, slug: 'polytechnic-lateral/polytechnic-diploma' },
+      { title: 'Diploma', tagline: ['Civil', 'Automobile', 'Production', 'Mechanical', 'Electrical', 'Elec. & Comm.', 'Computer Science'], ...programImage(polytechnicDiplomaImgSmall, polytechnicDiplomaImg), slug: 'polytechnic/polytechnic-diploma' },
+      { title: 'Diploma (Lateral)', tagline: ['Civil', 'Automobile', 'Production', 'Mechanical', 'Electrical', 'Elec. & Comm.', 'Computer Science'], ...programImage(polytechnicLateralImgSmall, polytechnicLateralImg), slug: 'polytechnic-lateral/polytechnic-diploma' },
     ],
   },
 ];
@@ -143,7 +163,6 @@ export default function Programs() {
 
   // ---- accessor helpers (match the real API shape) ----
   const pTitle = (p: ApiProgram) => p.displayTitle || p.name || p.title || '';
-  const pImg = (p: ApiProgram) => p.imagePath || '';
   const pType = (p: ApiProgram) =>
     p.programType?.find((t) => t.programTypeSlug === activeTab.slug)?.programTypeName ??
     p.programType?.[0]?.programTypeName ??
@@ -257,7 +276,6 @@ export default function Programs() {
     setActive(i);
     setIndex(0);
   };
-  console.log("data", data)
   return (
     <section className="bg-[#E0F1FF] ">
       <div className={`${Classes['container']} py-8 md:py-10 lg:py-12`}>
@@ -405,7 +423,11 @@ export default function Programs() {
                     <div className="relative aspect-[4/3] bg-gray-900">
                       <img
                         src={p.img}
+                        srcSet={`${p.imgSmall} 480w, ${p.img} 720w`}
+                        sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
                         alt={p.title}
+                        width={720}
+                        height={540}
                         className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />

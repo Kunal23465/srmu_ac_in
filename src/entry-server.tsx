@@ -5,7 +5,6 @@ import { HelmetProvider } from "react-helmet-async";
 import { Provider } from "react-redux";
 import { createStore, type RootState } from "./store";
 import { fetchNotice } from "./store/notice/noticeThunk";
-import { fetchBanner } from "./store/home-banner/bannerThunk";
 import { fetchProgramFlags } from "./store/program-finder/program-flag/programFlagThunk";
 import { fetchProgramType } from "./store/program-finder/program-type/programTypeThunk";
 import { fetchProgramDiscipline, fetchProgramDisciplines } from "./store/program-finder/discipline/disciplineThunk";
@@ -31,9 +30,9 @@ import { resolveProgramRouteSlug } from "./utils/legacyProgramRoutes";
 import { fetchProgramTypeIntroByUrl } from "./store/program-type-intro/ProgramTypeIntroThunk";
 import { findBlogBySlug, findCommitteeCardBySlug, findConferenceBySlug, findEventCardBySlug, findNewsBySlug } from "./utils/routeMatching";
 import { getProgramCategoryPathMatch, hasValidTopLevelProgramRoute, resolveTopLevelProgramRoute } from "./utils/programCategoryRoute";
+import newHomeHeroPoster from "./assets/new-home/video-banner.avif";
 
 const GLOBAL_LAYOUT_CACHE_TTL_MS = 5 * 60 * 1000;
-const HOME_PAGE_CACHE_TTL_MS = 5 * 60 * 1000;
 
 type GlobalLayoutCacheEntry = {
   expiresAt: number;
@@ -41,15 +40,8 @@ type GlobalLayoutCacheEntry = {
   programMenuData: any[];
 };
 
-type HomePageCacheEntry = {
-  expiresAt: number;
-  preloadedState: Partial<RootState>;
-};
-
 let globalLayoutCache: GlobalLayoutCacheEntry | null = null;
 let globalLayoutCachePromise: Promise<GlobalLayoutCacheEntry> | null = null;
-let homePageCache: HomePageCacheEntry | null = null;
-let homePageCachePromise: Promise<HomePageCacheEntry> | null = null;
 
 const getRouteElementPreload = (route: { element?: { type?: { preload?: () => Promise<unknown> } } }) => {
   const preload = route.element?.type?.preload;
@@ -64,42 +56,12 @@ const getGlobalLayoutCache = () => {
   return null;
 };
 
-const getHomePageCache = () => {
-  if (homePageCache && homePageCache.expiresAt > Date.now()) {
-    return homePageCache;
-  }
-
-  return null;
-};
-
 const escapeHtmlAttribute = (value: string) =>
   value
     .replace(/&/g, "&amp;")
     .replace(/"/g, "&quot;")
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;");
-
-const pickHomePageState = (state: RootState): Partial<RootState> => ({
-  getbanner: structuredClone(state.getbanner),
-  getProgramByFlag: structuredClone(state.getProgramByFlag),
-});
-
-async function preloadHomePageData(store: ReturnType<typeof createStore>) {
-  const state = store.getState();
-  const pendingPromises: Array<Promise<unknown>> = [];
-
-  if (state.getbanner.data.length === 0 && !state.getbanner.loading) {
-    pendingPromises.push(store.dispatch(fetchBanner()));
-  }
-
-  if (state.getProgramByFlag.data.length === 0 && !state.getProgramByFlag.loading) {
-    pendingPromises.push(store.dispatch(fetchProgramFlags()));
-  }
-
-  if (pendingPromises.length > 0) {
-    await Promise.allSettled(pendingPromises);
-  }
-}
 
 const hasValidDynamicProgramFinderRoute = (normalizedPathname: string, programMenuData: any[]) => {
   const segments = normalizedPathname.split("/").filter(Boolean);
@@ -232,19 +194,6 @@ async function buildGlobalLayoutCacheEntry(): Promise<GlobalLayoutCacheEntry> {
   return cacheEntry;
 }
 
-async function buildHomePageCacheEntry(): Promise<HomePageCacheEntry> {
-  const store = createStore();
-  await Promise.allSettled([store.dispatch(fetchBanner()), store.dispatch(fetchProgramFlags())]);
-
-  const cacheEntry: HomePageCacheEntry = {
-    expiresAt: Date.now() + HOME_PAGE_CACHE_TTL_MS,
-    preloadedState: pickHomePageState(store.getState()),
-  };
-
-  homePageCache = cacheEntry;
-  return cacheEntry;
-}
-
 async function getGlobalLayoutCacheEntry() {
   const cachedEntry = getGlobalLayoutCache();
 
@@ -259,22 +208,6 @@ async function getGlobalLayoutCacheEntry() {
   }
 
   return globalLayoutCachePromise;
-}
-
-async function getHomePageCacheEntry() {
-  const cachedEntry = getHomePageCache();
-
-  if (cachedEntry) {
-    return cachedEntry;
-  }
-
-  if (!homePageCachePromise) {
-    homePageCachePromise = buildHomePageCacheEntry().finally(() => {
-      homePageCachePromise = null;
-    });
-  }
-
-  return homePageCachePromise;
 }
 
 async function preloadMatchedRouteComponents(normalizedPathname: string) {
@@ -388,20 +321,12 @@ async function preloadPlacementOverviewPageData(store: ReturnType<typeof createS
   await store.dispatch(fetchPlacementRecordTabData());
 }
 
-function buildHomePagePreloadLinks(state: RootState, normalizedPathname: string) {
-  if (normalizedPathname !== "/") {
-    return "";
+function buildHomePagePreloadLinks(normalizedPathname: string) {
+  if (normalizedPathname === "/" || normalizedPathname === "/new-home") {
+    return `<link rel="preload" as="image" href="${escapeHtmlAttribute(newHomeHeroPoster)}" type="image/avif" fetchpriority="high" />`;
   }
 
-  const bannerItems = state.getbanner?.data || [];
-  const firstVisibleBanner = bannerItems.length > 0 ? bannerItems[bannerItems.length - 1] : null;
-  const heroImageUrl = firstVisibleBanner?.imagePath;
-
-  if (!heroImageUrl) {
-    return "";
-  }
-
-  return `<link rel="preload" as="image" href="${escapeHtmlAttribute(heroImageUrl)}" fetchpriority="high" />`;
+  return "";
 }
 
 
@@ -410,21 +335,15 @@ export async function render(url: string) {
 
   // Normalize URL to match routes (strip query string and trailing slash)
   const normalizedPathname = new URL(url, "http://localhost").pathname.replace(/\/+$/, "") || "/";
-  const [globalLayoutEntry, homePageEntry] = await Promise.all([
-    getGlobalLayoutCacheEntry(),
-    normalizedPathname === "/" ? getHomePageCacheEntry() : Promise.resolve(null),
-  ]);
+  const globalLayoutEntry = await getGlobalLayoutCacheEntry();
   const store = createStore({
     ...globalLayoutEntry.preloadedState,
-    ...(homePageEntry?.preloadedState || {}),
   });
   const programMenuData = globalLayoutEntry.programMenuData;
 
   // Preload route-specific data for SSR
   const routeComponentPreloadPromise = preloadMatchedRouteComponents(normalizedPathname);
-  if (normalizedPathname === "/") {
-    await preloadHomePageData(store);
-  } else if (normalizedPathname === "/notice") {
+  if (normalizedPathname === "/notice") {
     await store.dispatch(fetchNotice());
   } else if (normalizedPathname === "/program-finder") {
     await preloadAdmissionProgramFinderPageData(store);
@@ -459,7 +378,7 @@ export async function render(url: string) {
     </HelmetProvider>,
   );
 
-  const headPreloadLinks = buildHomePagePreloadLinks(store.getState(), normalizedPathname);
+  const headPreloadLinks = buildHomePagePreloadLinks(normalizedPathname);
   return {
     appHtml,
     preloadedState: store.getState(),

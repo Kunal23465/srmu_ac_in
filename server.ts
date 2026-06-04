@@ -10,14 +10,14 @@ import { hasValidTopLevelProgramRoute } from "./src/utils/programCategoryRoute";
 import { slugify } from "./src/utils/slugify";
 
 const host = "0.0.0.0";
-const port = 3031;
+const port = Number(process.env.PORT || 3031);
 const siteUrl = process.env.VITE_SITE_URL || "https://srmu.ac.in";
 const canonicalSiteUrl = new URL(siteUrl);
 const canonicalOrigin = canonicalSiteUrl.origin.replace(/\/+$/, "");
 const canonicalProtocol = canonicalSiteUrl.protocol.replace(":", "");
 const canonicalHost = canonicalSiteUrl.host.toLowerCase();
 const STATIC_ASSET_CACHE_SECONDS = 365 * 24 * 60 * 60;
-const STATIC_ASSET_PATTERN = /\.(?:avif|bmp|css|gif|ico|jpe?g|js|mjs|pdf|png|svg|webp|woff2?|ttf|otf)$/i;
+const STATIC_ASSET_PATTERN = /\.(?:avif|bmp|css|gif|ico|jpe?g|js|mjs|mp4|pdf|png|svg|webm|webp|woff2?|ttf|otf)$/i;
 const PROGRAM_SLUG_CACHE_TTL_MS = 15 * 60 * 1000;
 
 const __filename = fileURLToPath(import.meta.url);

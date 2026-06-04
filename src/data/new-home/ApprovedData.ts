@@ -1,8 +1,8 @@
-import img1 from "../../assets/new-home/approved/1.png";
-import img2 from "../../assets/new-home/approved/2.png";
-import img3 from "../../assets/new-home/approved/3.png";
-import img4 from "../../assets/new-home/approved/4.png";
-import img5 from "../../assets/new-home/approved/5.png";
+import img1 from "../../assets/new-home/approved/1.webp";
+import img2 from "../../assets/new-home/approved/2.webp";
+import img3 from "../../assets/new-home/approved/3.webp";
+import img4 from "../../assets/new-home/approved/4.webp";
+import img5 from "../../assets/new-home/approved/5.webp";
 
 const ApprovedData = [
   {

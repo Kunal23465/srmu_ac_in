@@ -1,41 +1,25 @@
-import { lazy, Suspense, useEffect, useState } from "react";
-import Classes from "../../utils/styles/Global.module.css";
+import { lazy } from "react";
 // import Header from "./components/Header";
 // import Hero from "./components/Hero";
 // import Approvals from "./components/Approvals";
 // import Excellence from './components/Excellence';
 import Placements from "./Placements";
-import Programs from "./Programs";
-import MoU from "./MoU";
-import Alumni from "./Alumni";
-import FAQ from "./FAQ";
-import Map from "./Map";
-import Events from "./Events";
 import Hero from "./Hero";
 import PciApprovalPopup from "../home/PciApprovalPopup";
+import LazyWhenVisible from "./LazyWhenVisible";
 
 const AIPowered = lazy(() => import("./AIPowered"));
 const CoreEngineering = lazy(() => import("./CoreEngineering"));
 const Reels = lazy(() => import("./Reels"));
 const Legacy = lazy(() => import("./Legacy"));
+const Programs = lazy(() => import("./Programs"));
+const Events = lazy(() => import("./Events"));
+const MoU = lazy(() => import("./MoU"));
+const Alumni = lazy(() => import("./Alumni"));
+const Map = lazy(() => import("./Map"));
+const FAQ = lazy(() => import("./FAQ"));
 
 function NewHome() {
-  const [showDeferred, setShowDeferred] = useState(false);
-
-  useEffect(() => {
-    if (typeof window === "undefined") {
-      setShowDeferred(true);
-      return;
-    }
-    const enable = () => setShowDeferred(true);
-    if ("requestIdleCallback" in window) {
-      // @ts-ignore
-      (window as any).requestIdleCallback(enable, { timeout: 1000 });
-    } else {
-      const t = setTimeout(enable, 300);
-      return () => clearTimeout(t);
-    }
-  }, []);
   return (
     <div className="min-h-screen bg-white">
       {/* <Header /> */}
@@ -45,26 +29,36 @@ function NewHome() {
         {/* <Approvals /> */}
         {/* <Excellence /> */}
         <Placements />
-        {showDeferred && (
-          <Suspense fallback={null}>
-            <AIPowered />
-            <CoreEngineering />
-            <Reels />
-          </Suspense>
-        )}
-        <Programs />
-        <Events />
-        <MoU />
-
-        <Alumni />
-
-        {showDeferred && (
-          <Suspense fallback={null}>
-            <Legacy />
-          </Suspense>
-        )}
-        <Map />
-        <FAQ />
+        <LazyWhenVisible minHeight={620}>
+          <AIPowered />
+        </LazyWhenVisible>
+        <LazyWhenVisible minHeight={620}>
+          <CoreEngineering />
+        </LazyWhenVisible>
+        <LazyWhenVisible minHeight={520}>
+          <Reels />
+        </LazyWhenVisible>
+        <LazyWhenVisible minHeight={520}>
+          <Programs />
+        </LazyWhenVisible>
+        <LazyWhenVisible minHeight={440}>
+          <Events />
+        </LazyWhenVisible>
+        <LazyWhenVisible minHeight={360}>
+          <MoU />
+        </LazyWhenVisible>
+        <LazyWhenVisible minHeight={620}>
+          <Alumni />
+        </LazyWhenVisible>
+        <LazyWhenVisible minHeight={520}>
+          <Legacy />
+        </LazyWhenVisible>
+        <LazyWhenVisible minHeight={360}>
+          <Map />
+        </LazyWhenVisible>
+        <LazyWhenVisible minHeight={260}>
+          <FAQ />
+        </LazyWhenVisible>
 
       </main>
       {/* <Footer /> */}

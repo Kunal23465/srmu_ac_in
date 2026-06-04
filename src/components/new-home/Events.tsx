@@ -3,17 +3,12 @@ import eventsData from '../../data/new-home/eventsData';
 import { FaArrowRight, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import Classes from "../../utils/styles/Global.module.css";
 import { RxCross2 } from 'react-icons/rx';
-const tokenBgMap: Record<string, string> = {
-    accent: 'bg-white dark:bg-red-700',
-    primary: 'bg-white dark:bg-slate-800',
-    neutral: 'bg-white dark:bg-slate-700',
-};
 
 export default function Events() {
     const sliderRef = useRef<HTMLDivElement | null>(null);
     const autoRef = useRef<number | null>(null);
 
-    const [currentIndex, setCurrentIndex] = useState(0); // real index 0..n-1
+    const [, setCurrentIndex] = useState(0); // real index 0..n-1
     const currentIndexRef = useRef(0);
     const nodesRef = useRef<HTMLElement[]>([]);
     const scrollTimeout = useRef<number | null>(null);
@@ -182,7 +177,6 @@ export default function Events() {
                         className="flex gap-6 overflow-x-auto snap-x snap-mandatory py-2 md:py-0 scrollbar-hide"
                     >
                         {displaySlides.map((e, di) => {
-                            const bg = "#0A4A8F"
                             const key = `display-${di}-${e.id}`;
                             return (
                                 <article
@@ -192,7 +186,11 @@ export default function Events() {
                                     <div className="overflow-hidden h-60 md:h-60">
                                         <img
                                             src={e.image}
+                                            srcSet={`${e.imageSmall} 480w, ${e.image} 960w`}
+                                            sizes="(min-width: 768px) 50vw, 100vw"
                                             alt={e.title}
+                                            width={960}
+                                            height={540}
                                             className="w-full h-full object-cover object-top"
                                         />
                                     </div>

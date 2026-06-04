@@ -48,7 +48,14 @@ export default function Alumni() {
                     <div className="group aspect-square [perspective:1000px]">
                       <div className="relative h-full w-full rounded-xl shadow-soft transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] group-focus-within:[transform:rotateY(180deg)]">
                         <div className="absolute inset-0 overflow-hidden rounded-xl [backface-visibility:hidden]">
-                          <img src={data.image} alt={data.name} className="h-full w-full object-cover object-top" />
+                          <img
+                            src={data.image}
+                            alt={data.name}
+                            width={640}
+                            height={640}
+                            sizes="50vw"
+                            className="h-full w-full object-cover object-top"
+                          />
                           <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-2">
                             <h3 className="text-[11px] font-bold leading-tight text-white">{data.name}</h3>
                           </div>
@@ -104,7 +111,14 @@ export default function Alumni() {
             <div key={data.id} className="group hidden aspect-square [perspective:1000px] sm:block">
               <div className="relative h-full w-full rounded-xl shadow-soft transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] group-focus-within:[transform:rotateY(180deg)]">
                 <div className="absolute inset-0 overflow-hidden rounded-xl [backface-visibility:hidden]">
-                  <img src={data.image} alt={data.name} className="h-full w-full object-cover object-top" />
+                  <img
+                    src={data.image}
+                    alt={data.name}
+                    width={640}
+                    height={640}
+                    sizes="(min-width: 768px) 20vw, (min-width: 640px) 25vw, 50vw"
+                    className="h-full w-full object-cover object-top"
+                  />
                   <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-3">
                     <h3 className="text-sm font-bold leading-tight text-white">{data.name}</h3>
                   </div>
@@ -157,6 +171,8 @@ export default function Alumni() {
               <img
                 src={selectedAlumni.image}
                 alt={selectedAlumni.name}
+                width={640}
+                height={640}
                 className="h-48 w-full rounded-lg object-cover object-top sm:h-56 sm:w-44"
               />
               <div className="pr-1 sm:pr-8">

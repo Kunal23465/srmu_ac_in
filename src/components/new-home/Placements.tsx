@@ -1,13 +1,13 @@
 import EmblaCarousel from "./EmbelCrousel";
-import amazon from "../../assets/new-home/recruiters/amazon.png";
-import capgemini from "../../assets/new-home/recruiters/capgemini.jpg";
-import gsk from "../../assets/new-home/recruiters/gsk.jpg";
-import lt from "../../assets/new-home/recruiters/l-t.jpg";
-import mankind from "../../assets/new-home/recruiters/mankind.jpg";
-import policy from "../../assets/new-home/recruiters/policy.jpg";
-import ranbaxy from "../../assets/new-home/recruiters/ranbaxy.jpg";
-import tataSteel from "../../assets/new-home/recruiters/tata-steek.jpg";
-import zydus from "../../assets/new-home/recruiters/zydus.jpg";
+import amazon from "../../assets/new-home/recruiters/amazon.webp";
+import capgemini from "../../assets/new-home/recruiters/capgemini.webp";
+import gsk from "../../assets/new-home/recruiters/gsk.webp";
+import lt from "../../assets/new-home/recruiters/l-t.webp";
+import mankind from "../../assets/new-home/recruiters/mankind.webp";
+import policy from "../../assets/new-home/recruiters/policy.webp";
+import ranbaxy from "../../assets/new-home/recruiters/ranbaxy.webp";
+import tataSteel from "../../assets/new-home/recruiters/tata-steek.webp";
+import zydus from "../../assets/new-home/recruiters/zydus.webp";
 import MobileReadMore from "./MobileReadMore";
 import Classes from "../../utils/styles/Global.module.css";
 
@@ -141,6 +141,9 @@ export default function Placements() {
                 <img
                   src={c.logo}
                   alt={c.name}
+                  width={220}
+                  height={106}
+                  sizes="(min-width: 1024px) 160px, (min-width: 640px) 33vw, 50vw"
                   className="max-h-full max-w-full object-contain "
                 />
               </div>

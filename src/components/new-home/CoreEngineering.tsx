@@ -1,11 +1,12 @@
 import campusVideo from '../../assets/new-home/lT-V.mp4';
-import engineeringIH from '../../assets/new-home/WEBSITE PICTURES WEBP/Industry Hoonous/ENGINEERING.webp';
-import lt from "../../assets/new-home/l-t.png"
+import engineeringIH from '../../assets/new-home/lT-V-poster.webp';
+import lt from "../../assets/new-home/l-t.webp"
 import MobileReadMore from './MobileReadMore';
 import { useState } from 'react';
 import { BiChevronDown } from 'react-icons/bi';
 import Classes from "../../utils/styles/Global.module.css";
 import { Link } from 'react-router-dom';
+import LazyVideo from './LazyVideo';
 const programs: { title: string; path: string }[] = [
   {
     title: "B.Tech CE (Adv. Construction Practices)",
@@ -35,7 +36,7 @@ export default function CoreEngineering() {
       <div className={`${Classes["container"]} py-8 md:py-10 lg:py-12`}>
         <div className="w-full  mb-4">
           <h2 className="text-lg md:text-3xl lg:text-4xl font-bold text-[#0A4A8F] felx flex-col leading-tight md:leading-tight">
-            Practical Core Engineering Learning <div className='flex gap-x-2'> <span className="text-[#FFC107] lg:text-3xl block">with</span> <img src={lt} className=' object-contain max-w-[100px]' alt="L&T" /> </div>
+            Practical Core Engineering Learning <div className='flex gap-x-2'> <span className="text-[#FFC107] lg:text-3xl block">with</span> <img src={lt} width={360} height={110} className=' object-contain max-w-[100px]' alt="L&T" /> </div>
           </h2>
 
 
@@ -114,16 +115,16 @@ export default function CoreEngineering() {
         {/* Full-width video with side controls */}
         <div className="relative lg:mb-5 group w-full">
           <div className="relative rounded-xl overflow-hidden shadow-card">
-            <video
+            <LazyVideo
               src={campusVideo}
               poster={engineeringIH}
               className="w-full aspect-video object-cover bg-gray-900 rounded-xl"
               controls
               muted
               loop
-              autoPlay
               playsInline
               preload="metadata"
+              rootMargin="700px 0px"
             />
 
             {/* Bottom gradient overlay with description */}

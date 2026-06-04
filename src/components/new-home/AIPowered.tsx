@@ -1,13 +1,14 @@
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import { FaArrowRight } from 'react-icons/fa';
 import ltVideo1 from '../../assets/new-home/reels/AI Learning.mp4';
 import ltVideo2 from '../../assets/new-home/reels/real-word.mp4';
-import lt from "../../assets/new-home/l-t.png"
+import lt from "../../assets/new-home/l-t.webp"
 import EmblaCarousel from './EmbelCrousel';
 import MobileReadMore from './MobileReadMore';
 import { BiChevronDown } from 'react-icons/bi';
 import Classes from "../../utils/styles/Global.module.css";
 import { Link } from 'react-router-dom';
+import LazyVideo from './LazyVideo';
 
 const ltReels = [
   {
@@ -67,15 +68,12 @@ const ltIntegratedPrograms: { title: string; path: string }[] = [
 export default function AIPowered() {
   const [open, setOpen] = useState(false);
   const [playingStates, setPlayingStates] = useState(ltReels.map(() => true));
-  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
-
-  // Do not force-play videos on mount; let browser/load behavior decide or play when visible.
 
   return (
     <section className="bg-[#F0F6FB] ">
       <div className={`${Classes["container"]} py-8 md:py-10 lg:py-12`}>
         <h2 className="text-lg md:text-3xl lg:text-4xl font-bold text-[#0A4A8F] mb-2 md:mb-3 flex flex-col leading-tight md:leading-tight">
-          Industry-Collaborated  AI Courses  <div className='flex gap-x-2'> <span className="text-[#FFC107] lg:text-3xl block">Backed by</span> <img src={lt} className='max-w-[100px] object-contain' alt="L&T" /> </div>
+          Industry-Collaborated  AI Courses  <div className='flex gap-x-2'> <span className="text-[#FFC107] lg:text-3xl block">Backed by</span> <img src={lt} width={360} height={110} className='max-w-[100px] object-contain' alt="L&T" /> </div>
         </h2>
         <MobileReadMore className="text-[13px] md:text-base text-gray-700 leading-relaxed mb-5 md:mb-8">
           SRMU empowers students with practical AI skills, live projects and innovation-driven learning through industry-collaborated AI programs supported by L&amp;T. From the second year itself, students work on real-world AI applications, emerging technology solutions and startup-oriented projects designed to build future-ready technical and entrepreneurial skills. Recognized among the preferred choices for students seeking the best college in Uttar Pradesh for AI and technology-focused education, SRMU combines academic learning with industry exposure, hands-on training and innovation-led experiences aligned with modern digital careers.
@@ -154,8 +152,7 @@ export default function AIPowered() {
                   className="group flex flex-col h-full bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl ring-1 ring-black/5 transition-all duration-300 hover:-translate-y-1"
                 >
                   <div className="relative bg-black flex-1 min-h-[240px] md:min-h-[320px] w-full overflow-hidden">
-                    <video
-                      ref={(el) => { videoRefs.current[i] = el; }}
+                    <LazyVideo
                       src={r.src}
                       className="absolute inset-0 w-full h-full object-cover opacity-95 group-hover:scale-105 transition-transform duration-700"
                       autoPlay
@@ -163,6 +160,7 @@ export default function AIPowered() {
                       loop
                       playsInline
                       preload="none"
+                      rootMargin="700px 0px"
                       onPlay={() => {
                         setPlayingStates((prev) => {
                           const next = [...prev];
