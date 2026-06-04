@@ -26,13 +26,19 @@ const updateChatMessage = () => {
   return true;
 };
 
-if (!updateChatMessage()) {
-  let attempts = 0;
-  const forceUpdate = setInterval(() => {
-    attempts += 1;
+window.addEventListener("load", function () {
+  if (updateChatMessage() || typeof MutationObserver === "undefined") {
+    return;
+  }
 
-    if (updateChatMessage() || attempts >= 40) {
-      clearInterval(forceUpdate);
+  var observer = new MutationObserver(function () {
+    if (updateChatMessage()) {
+      observer.disconnect();
     }
-  }, 250);
-}
+  });
+
+  observer.observe(document.body, { childList: true, subtree: true });
+  window.setTimeout(function () {
+    observer.disconnect();
+  }, 8000);
+});

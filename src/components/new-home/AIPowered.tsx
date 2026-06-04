@@ -160,7 +160,7 @@ export default function AIPowered() {
                       loop
                       playsInline
                       preload="none"
-                      rootMargin="700px 0px"
+                      rootMargin="120px 0px"
                       onPlay={() => {
                         setPlayingStates((prev) => {
                           const next = [...prev];

@@ -1,11 +1,10 @@
 import React from "react";
-// import Home from "../../components/home/Home";
+
 import { Outlet, useLocation } from "react-router-dom";
 import SeoHead from "../../components/seo/SeoHead";
-// import NewHome from "../../components/new-home/NewHome";
-// import Home from "../../components/home/Home";
+
 import NewHome from "../../components/new-home/NewHome";
-// import Home from "../../components/home/Home";
+
 
 export const homePageSchema = {
   "@context": "https://schema.org",
@@ -208,10 +207,8 @@ const HomePage: React.FC = () => {
       />
 
       {pathname === "/" ? <NewHome /> : <Outlet />}
-      {/* {pathname === "/" ? <Home /> : <Outlet />} */}
-
     </>
   );
 };
 
-export default HomePage;
+export default HomePage;    

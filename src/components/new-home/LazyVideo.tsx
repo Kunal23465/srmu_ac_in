@@ -22,7 +22,7 @@ const canAutoplayVideo = () => {
 export default function LazyVideo({
   src,
   eager = false,
-  rootMargin = "600px 0px",
+  rootMargin = "250px 0px",
   autoPlay,
   preload = "none",
   onCanPlay,

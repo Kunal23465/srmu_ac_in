@@ -18,8 +18,6 @@ import { fetchWhySrmuLogoById } from "./store/why-srmu/whySrmuLogoThunk";
 import { fetchProgramMenu } from "./store/header/programMenuThunk";
 import { fetchBlogs } from "./store/blogs/blogsThunk";
 import { fetchPlacementRecordTabData } from "./store/placement/placement-record/placementRecordTabDataThunk";
-import { fetchAllActiveCareer } from "./store/student-enquiry/career/careerThunk";
-import { fetchAllActiveState } from "./store/student-enquiry/state/stateThunk";
 import App from "./App";
 import "./index.css";
 import { fetchPlacementDriveTabData } from "./store/placement/placement-drive/placementDriveTabDataThunk";
@@ -30,6 +28,8 @@ import { resolveProgramRouteSlug } from "./utils/legacyProgramRoutes";
 import { fetchProgramTypeIntroByUrl } from "./store/program-type-intro/ProgramTypeIntroThunk";
 import { findBlogBySlug, findCommitteeCardBySlug, findConferenceBySlug, findEventCardBySlug, findNewsBySlug } from "./utils/routeMatching";
 import { getProgramCategoryPathMatch, hasValidTopLevelProgramRoute, resolveTopLevelProgramRoute } from "./utils/programCategoryRoute";
+import newHomeHeroPosterMobile from "./assets/new-home/video-banner-640.avif";
+import newHomeHeroPosterTablet from "./assets/new-home/video-banner-960.avif";
 import newHomeHeroPoster from "./assets/new-home/video-banner.avif";
 
 const GLOBAL_LAYOUT_CACHE_TTL_MS = 5 * 60 * 1000;
@@ -180,7 +180,7 @@ const getStatusCode = (normalizedPathname: string, state: RootState, programMenu
 
 async function buildGlobalLayoutCacheEntry(): Promise<GlobalLayoutCacheEntry> {
   const store = createStore();
-  const [menuAction] = await Promise.all([store.dispatch(fetchProgramMenu()), store.dispatch(fetchAllActiveCareer()), store.dispatch(fetchAllActiveState())]);
+  const menuAction = await store.dispatch(fetchProgramMenu());
 
   const programMenuData = fetchProgramMenu.fulfilled.match(menuAction) && Array.isArray(menuAction.payload) ? menuAction.payload : [];
 
@@ -323,7 +323,8 @@ async function preloadPlacementOverviewPageData(store: ReturnType<typeof createS
 
 function buildHomePagePreloadLinks(normalizedPathname: string) {
   if (normalizedPathname === "/" || normalizedPathname === "/new-home") {
-    return `<link rel="preload" as="image" href="${escapeHtmlAttribute(newHomeHeroPoster)}" type="image/avif" fetchpriority="high" />`;
+    const srcSet = `${newHomeHeroPosterMobile} 640w, ${newHomeHeroPosterTablet} 960w, ${newHomeHeroPoster} 1348w`;
+    return `<link rel="preload" as="image" href="${escapeHtmlAttribute(newHomeHeroPosterMobile)}" imagesrcset="${escapeHtmlAttribute(srcSet)}" imagesizes="100vw" type="image/avif" fetchpriority="high" />`;
   }
 
   return "";

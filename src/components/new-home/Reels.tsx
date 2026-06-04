@@ -190,7 +190,7 @@ export default function Reels() {
                       loop
                       playsInline
                       preload="none"
-                      rootMargin="200px 0px"
+                      rootMargin="0px 0px"
                       onPlay={() => {
                         const newStates = [...playingStates];
                         newStates[i] = true;
@@ -266,7 +266,7 @@ export default function Reels() {
                       loop
                       playsInline
                       preload="metadata"
-                      rootMargin="360px 0px"
+                      rootMargin="120px 0px"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/30 pointer-events-none" />
                   </div>

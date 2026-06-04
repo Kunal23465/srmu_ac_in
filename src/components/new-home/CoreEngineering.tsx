@@ -124,7 +124,7 @@ export default function CoreEngineering() {
               loop
               playsInline
               preload="metadata"
-              rootMargin="700px 0px"
+              rootMargin="180px 0px"
             />
 
             {/* Bottom gradient overlay with description */}

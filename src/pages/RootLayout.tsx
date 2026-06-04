@@ -1,22 +1,24 @@
 import React, { Suspense, lazy, startTransition, useEffect, useMemo, useState } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import Header from "../components/header/Header";
-import Footer from "../components/footer/Footer";
 import whatsapp from "../assets/images/whatsapp-icon.png";
 import DynamicBreadcrumbs from "../components/breadcrumb/DynamicBreadcrumbs";
 import SeoHead from "../components/seo/SeoHead";
 import { buildSiteSchema, getDefaultSeo, normalizePath } from "../utils/seo";
 
 const Chatbot = lazy(() => import("../components/Chatbot"));
+const Footer = lazy(() => import("../components/footer/Footer"));
 
 const RootLayout: React.FC = () => {
   const location = useLocation();
   const normalizedPath = normalizePath(location.pathname);
+  const isHomeRoute = normalizedPath === "/" || normalizedPath === "/new-home";
   const fallbackSeo = useMemo(() => getDefaultSeo(normalizedPath), [normalizedPath]);
   const siteSchema = useMemo(() => buildSiteSchema(normalizedPath), [normalizedPath]);
 
   const [showRightBar, setShowRightBar] = useState(false);
   const [shouldRenderChatbot, setShouldRenderChatbot] = useState(false);
+  const [shouldRenderFooter, setShouldRenderFooter] = useState(!isHomeRoute);
   const [hovered, setHovered] = useState<number | null>(null);
   // Scroll to top on page change
   useEffect(() => {
@@ -40,6 +42,53 @@ const RootLayout: React.FC = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (!isHomeRoute) {
+      setShouldRenderFooter(true);
+      return;
+    }
+
+    if (typeof window === "undefined") return;
+
+    setShouldRenderFooter(false);
+
+    const idleWindow = window as Window & {
+      requestIdleCallback?: (callback: IdleRequestCallback, options?: IdleRequestOptions) => number;
+      cancelIdleCallback?: (handle: number) => void;
+    };
+
+    const scheduleFooter = () => {
+      startTransition(() => {
+        setShouldRenderFooter(true);
+      });
+    };
+
+    let idleHandle: number | null = null;
+    let timeoutHandle: number | null = null;
+
+    if (typeof idleWindow.requestIdleCallback === "function") {
+      idleHandle = idleWindow.requestIdleCallback(scheduleFooter, { timeout: 4500 });
+    } else {
+      timeoutHandle = window.setTimeout(scheduleFooter, 2200);
+    }
+
+    window.addEventListener("scroll", scheduleFooter, { once: true, passive: true });
+    window.addEventListener("pointerdown", scheduleFooter, { once: true, passive: true });
+
+    return () => {
+      if (idleHandle !== null && typeof idleWindow.cancelIdleCallback === "function") {
+        idleWindow.cancelIdleCallback(idleHandle);
+      }
+
+      if (timeoutHandle !== null) {
+        window.clearTimeout(timeoutHandle);
+      }
+
+      window.removeEventListener("scroll", scheduleFooter);
+      window.removeEventListener("pointerdown", scheduleFooter);
+    };
+  }, [isHomeRoute]);
 
   const openWhatsApp = () => {
     if (typeof window === "undefined") return;
@@ -92,7 +141,11 @@ const RootLayout: React.FC = () => {
         <Outlet />
       </main>
 
-      <Footer />
+      {shouldRenderFooter ? (
+        <Suspense fallback={null}>
+          <Footer />
+        </Suspense>
+      ) : null}
 
       {/* ================= WHATSAPP ICON ================= */}
       <button

@@ -4,6 +4,7 @@ import { createServer as createViteServer } from "vite";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath, pathToFileURL } from "url";
+import { brotliCompressSync, constants as zlibConstants, gzipSync } from "zlib";
 import { buildRobotsTxt, buildSitemapXml } from "./src/utils/sitemap";
 import { getPreferredProgramRouteSlug } from "./src/utils/legacyProgramRoutes";
 import { hasValidTopLevelProgramRoute } from "./src/utils/programCategoryRoute";
@@ -108,6 +109,45 @@ function setStaticAssetCacheHeaders(res: express.Response, filePath: string) {
 function replaceTemplateMarker(template: string, marker: string, value: string) {
   const markerPattern = new RegExp(`<!--\\s*${marker}\\s*-->`, "g");
   return template.replace(markerPattern, value);
+}
+
+function sendHtml(req: express.Request, res: express.Response, statusCode: number, html: string) {
+  const acceptEncoding = String(req.headers["accept-encoding"] || "");
+  const htmlBuffer = Buffer.from(html);
+  const headers: Record<string, string | number> = {
+    "Content-Type": "text/html; charset=utf-8",
+    Vary: "Accept-Encoding",
+  };
+
+  if (acceptEncoding.includes("br")) {
+    const compressed = brotliCompressSync(htmlBuffer, {
+      params: {
+        [zlibConstants.BROTLI_PARAM_QUALITY]: 5,
+      },
+    });
+
+    res.status(statusCode).set({
+      ...headers,
+      "Content-Encoding": "br",
+      "Content-Length": compressed.length,
+    }).end(compressed);
+    return;
+  }
+
+  if (acceptEncoding.includes("gzip")) {
+    const compressed = gzipSync(htmlBuffer, { level: 6 });
+    res.status(statusCode).set({
+      ...headers,
+      "Content-Encoding": "gzip",
+      "Content-Length": compressed.length,
+    }).end(compressed);
+    return;
+  }
+
+  res.status(statusCode).set({
+    ...headers,
+    "Content-Length": htmlBuffer.length,
+  }).end(htmlBuffer);
 }
 
 async function fetchProgramRedirectMap() {
@@ -357,7 +397,7 @@ async function createServer() {
         `<script>window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, "\\u003c")}</script>`,
       );
 
-      res.status(statusCode).set({ "Content-Type": "text/html; charset=utf-8" }).end(html);
+      sendHtml(req, res, statusCode, html);
     } catch (e) {
       if (vite) vite.ssrFixStacktrace(e as Error);
       process.stderr.write(`${String(e)}\n`);

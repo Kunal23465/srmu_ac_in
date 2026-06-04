@@ -11,7 +11,7 @@ export default function LazyWhenVisible({
   children,
   fallback = null,
   minHeight = 320,
-  rootMargin = "900px 0px",
+  rootMargin = "250px 0px",
 }: LazyWhenVisibleProps) {
   const hostRef = useRef<HTMLDivElement | null>(null);
   const [shouldRender, setShouldRender] = useState(false);

@@ -38,10 +38,10 @@ const Header = () => {
   const { data: programMenu, loading } = useSelector((state: RootState) => state.programMenu);
 
   useEffect(() => {
-    if (!programMenu || programMenu.length === 0) {
+    if (!loading && (!programMenu || programMenu.length === 0)) {
       dispatch(fetchProgramMenu());
     }
-  }, [dispatch, programMenu]);
+  }, [dispatch, loading, programMenu]);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -50,7 +50,7 @@ const Header = () => {
       setIsActive(window.scrollY > 10);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
       window.removeEventListener("scroll", handleScroll);

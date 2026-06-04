@@ -29,34 +29,34 @@ function NewHome() {
         {/* <Approvals /> */}
         {/* <Excellence /> */}
         <Placements />
-        <LazyWhenVisible minHeight={620}>
+        <LazyWhenVisible minHeight={620} rootMargin="260px 0px">
           <AIPowered />
         </LazyWhenVisible>
-        <LazyWhenVisible minHeight={620}>
+        <LazyWhenVisible minHeight={620} rootMargin="220px 0px">
           <CoreEngineering />
         </LazyWhenVisible>
-        <LazyWhenVisible minHeight={520}>
+        <LazyWhenVisible minHeight={520} rootMargin="160px 0px">
           <Reels />
         </LazyWhenVisible>
-        <LazyWhenVisible minHeight={520}>
+        <LazyWhenVisible minHeight={520} rootMargin="180px 0px">
           <Programs />
         </LazyWhenVisible>
-        <LazyWhenVisible minHeight={440}>
+        <LazyWhenVisible minHeight={440} rootMargin="180px 0px">
           <Events />
         </LazyWhenVisible>
-        <LazyWhenVisible minHeight={360}>
+        <LazyWhenVisible minHeight={360} rootMargin="180px 0px">
           <MoU />
         </LazyWhenVisible>
-        <LazyWhenVisible minHeight={620}>
+        <LazyWhenVisible minHeight={620} rootMargin="180px 0px">
           <Alumni />
         </LazyWhenVisible>
-        <LazyWhenVisible minHeight={520}>
+        <LazyWhenVisible minHeight={520} rootMargin="160px 0px">
           <Legacy />
         </LazyWhenVisible>
-        <LazyWhenVisible minHeight={360}>
+        <LazyWhenVisible minHeight={360} rootMargin="160px 0px">
           <Map />
         </LazyWhenVisible>
-        <LazyWhenVisible minHeight={260}>
+        <LazyWhenVisible minHeight={260} rootMargin="120px 0px">
           <FAQ />
         </LazyWhenVisible>
 

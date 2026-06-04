@@ -206,7 +206,7 @@ export const associationsData: Association[] = [
     logo: iica,
     pdfLink: iicapdf,
   },
-    {
+  {
     id: 11,
     name: "LMA",
     logo: lma,
@@ -230,7 +230,7 @@ export const associationsData: Association[] = [
     logo: tnto,
     pdfLink: tntopdf,
   },
-  
+
 ];
 
 
@@ -288,7 +288,7 @@ export const approvalData: ApprovalDataType[] = [
     title: "PCI APROVAL",
     subtitle: "[PHARMACY COUNCIL OF INDIA]",
     description:
-      "Pharmacy programs offered by Institute of Pharmacy of SRMU have an apporval from the Pharmacy Council of India.",
+      "Pharmacy programs offered by Institute of Pharmaceutical Sciences of SRMU have an apporval from the Pharmacy Council of India.",
     logo: pci,
     pdfLink: iops,
   },
@@ -297,7 +297,7 @@ export const approvalData: ApprovalDataType[] = [
     title: "PCI APROVAL",
     subtitle: "[PHARMACY COUNCIL OF INDIA]",
     description:
-      "Pharmacy programs offered by Institute of Pharmaceutical Sciences of SRMU have an apporval from the Pharmacy Council of India.",
+      "Pharmacy programs offered by Institute of Pharmacy of SRMU have an apporval from the Pharmacy Council of India.",
     logo: pci,
     pdfLink: pic2,
   },
@@ -311,7 +311,7 @@ export const approvalData: ApprovalDataType[] = [
     logo: ncte,
     pdfLink: nctepdf,
   },
-    {
+  {
     id: 8,
     title: "AIU MEMBERSHIP",
     subtitle: "[MEMBER OF ASSOCIATION OF INDIA UNIVERSITIES]",
