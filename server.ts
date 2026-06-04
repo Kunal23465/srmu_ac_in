@@ -3,12 +3,32 @@ import { createServer as createHttpServer } from "http";
 import { createServer as createViteServer } from "vite";
 import fs from "fs";
 import path from "path";
+import dotenv from "dotenv";
 import { fileURLToPath, pathToFileURL } from "url";
 import { brotliCompressSync, constants as zlibConstants, gzipSync } from "zlib";
 import { buildRobotsTxt, buildSitemapXml } from "./src/utils/sitemap";
 import { getPreferredProgramRouteSlug } from "./src/utils/legacyProgramRoutes";
 import { hasValidTopLevelProgramRoute } from "./src/utils/programCategoryRoute";
 import { slugify } from "./src/utils/slugify";
+
+// Load environment files from the project root so runtime picks up VITE_* values
+// without requiring the process manager to explicitly source a .env file.
+// Priority: `.env.<NODE_ENV>` then `.env`.
+try {
+  const projectRoot = process.cwd();
+  const nodeEnv = process.env.NODE_ENV || "development";
+  const envCandidates = [path.resolve(projectRoot, `.env.${nodeEnv}`), path.resolve(projectRoot, ".env")];
+
+  for (const envPath of envCandidates) {
+    if (fs.existsSync(envPath)) {
+      dotenv.config({ path: envPath });
+      process.stdout.write(`Loaded environment from ${envPath}\n`);
+      break;
+    }
+  }
+} catch (err) {
+  // Non-fatal: continue with existing process.env
+}
 
 const host = "0.0.0.0";
 const port = Number(process.env.PORT || 3031);
@@ -23,12 +43,12 @@ const PROGRAM_SLUG_CACHE_TTL_MS = 15 * 60 * 1000;
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const legacyDocumentRedirectsPath = path.resolve(
-  __dirname,
-  "src/data/redirects/legacy-document-redirects.json",
-);
+const legacyDocumentRedirectsPath = path.resolve(__dirname, "src/data/redirects/legacy-document-redirects.json");
 
 const isProduction = process.env.NODE_ENV === "production";
+// Control canonical host redirect via env. Set to "true" in production where
+// you want the server to enforce canonical origin redirects.
+const ENABLE_CANONICAL_REDIRECT = process.env.ENABLE_CANONICAL_REDIRECT === "true";
 const API_BASE_URL = process.env.VITE_API_BASE_URL || "https://webservices.srmu.ac.in:7005";
 
 type ProgramSlugCacheEntry = {
@@ -126,28 +146,37 @@ function sendHtml(req: express.Request, res: express.Response, statusCode: numbe
       },
     });
 
-    res.status(statusCode).set({
-      ...headers,
-      "Content-Encoding": "br",
-      "Content-Length": compressed.length,
-    }).end(compressed);
+    res
+      .status(statusCode)
+      .set({
+        ...headers,
+        "Content-Encoding": "br",
+        "Content-Length": compressed.length,
+      })
+      .end(compressed);
     return;
   }
 
   if (acceptEncoding.includes("gzip")) {
     const compressed = gzipSync(htmlBuffer, { level: 6 });
-    res.status(statusCode).set({
-      ...headers,
-      "Content-Encoding": "gzip",
-      "Content-Length": compressed.length,
-    }).end(compressed);
+    res
+      .status(statusCode)
+      .set({
+        ...headers,
+        "Content-Encoding": "gzip",
+        "Content-Length": compressed.length,
+      })
+      .end(compressed);
     return;
   }
 
-  res.status(statusCode).set({
-    ...headers,
-    "Content-Length": htmlBuffer.length,
-  }).end(htmlBuffer);
+  res
+    .status(statusCode)
+    .set({
+      ...headers,
+      "Content-Length": htmlBuffer.length,
+    })
+    .end(htmlBuffer);
 }
 
 async function fetchProgramRedirectMap() {
@@ -230,7 +259,7 @@ async function createServer() {
   });
 
   app.use((req, res, next) => {
-    if (!isProduction) {
+    if (!isProduction || !ENABLE_CANONICAL_REDIRECT) {
       next();
       return;
     }
@@ -274,7 +303,9 @@ async function createServer() {
       return;
     }
 
-    const rootSlug = String(req.params.rootSlug || "").trim().toLowerCase();
+    const rootSlug = String(req.params.rootSlug || "")
+      .trim()
+      .toLowerCase();
 
     if (!rootSlug || hasValidTopLevelProgramRoute(rootSlug)) {
       next();
@@ -380,19 +411,7 @@ async function createServer() {
         .join("");
 
       const html = replaceTemplateMarker(
-        replaceTemplateMarker(
-          replaceTemplateMarker(
-            replaceTemplateMarker(
-              template,
-              "home-preload-links",
-              headPreloadLinks,
-            ),
-            "helmet-head",
-            helmetHead,
-          ),
-          "app-html",
-          appHtml,
-        ),
+        replaceTemplateMarker(replaceTemplateMarker(replaceTemplateMarker(template, "home-preload-links", headPreloadLinks), "helmet-head", helmetHead), "app-html", appHtml),
         "preloaded-state",
         `<script>window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, "\\u003c")}</script>`,
       );
