@@ -13,6 +13,7 @@ import programFinderBanner from "../../assets/images/breadcrumb/Program Finder.w
 import noticeBanner from "../../assets/images/breadcrumb/Notice.webp";
 import shiftSchedule from "../../assets/images/breadcrumb/Shedule.webp";
 import greenInitive from "../../assets/images/breadcrumb/Green Initiative.webp";
+import pharmaBreadCrumbs from "../../assets/images/breadcrumb/phrama-breadcrumbs.webp";
 // -----------------------
 // FIX 1: Allow string index
 // -----------------------
@@ -34,6 +35,15 @@ export const pageBackgrounds: Record<string, string> = {
   "innovation-meets-agriculture-at-the-srmu-kisan-mela-2025": agriBreadcrumbbg,
   "empowering-future-engineers:-l&t-edutech-ai-lab-opens-at-srmu": agriBreadcrumbbg,
   "expert-talk-session-on-smart-meter-implementation:-data-science-&-cybersecurity-in-ami": agriBreadcrumbbg,
+  "bpharm-bachelor-of-pharmacy": pharmaBreadCrumbs,
+  "d-pharm-diploma-in-pharmacy": pharmaBreadCrumbs,
+  "b-pharma-bachelor-of-pharmacy": pharmaBreadCrumbs,
+  "d-pharma-diploma-in-pharmacy": pharmaBreadCrumbs,
+  "m-pharm-in-pharmaceutical-chemistry": pharmaBreadCrumbs,
+  "m-pharm-in-pharmaceutics": pharmaBreadCrumbs,
+  "m-pharm-in-pharmacology": pharmaBreadCrumbs,
+  "m-pharm-in-pharmacognosy": pharmaBreadCrumbs,
+  
 };
 
 // -----------------------
