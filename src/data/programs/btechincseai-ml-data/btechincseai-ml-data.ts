@@ -99,7 +99,7 @@ export const BtechCSEAIandMLOverviewData: customeOverViewType = {
 
 export const counterDataForBtechinCSEAIandML: counterDataType[] = [
   { id: 1, value: "NAAC", suffix: "", label: "Accredited" },
-  { id: 2, value: "30", suffix: "LPA", label: "Highest Package" },
+  { id: 2, value: "17", suffix: "LPA", label: "Highest Package" },
   { id: 3, value: "100", suffix: "%*", label: "Placement" },
   { id: 4, value: "30", suffix: "%", label: "Students have multiple job offers" },
 ];

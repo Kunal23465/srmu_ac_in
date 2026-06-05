@@ -81,7 +81,7 @@ const TopHeader: React.FC = () => {
 
               rel="noopener noreferrer"
 
-              to="/student-portal-redirect"
+              to="https://studentportal.srmu.ac.in"
               className="bg-[#FFB703] hover:bg-white px-4 text-[13px] font-medium uppercase border border-[#ffb703] py-[0.875rem] flex items-center text-black"
             >
               Apply Now
@@ -145,7 +145,7 @@ const TopHeader: React.FC = () => {
               {/* <Link
                 target="_blank"
                 rel="noopener noreferrer"
-                to="/student-portal-redirect"
+                to="https://studentportal.srmu.ac.in"
                 className="bg-[#FFB703] px-2 font-medium text-xs sm:text-base uppercase border-2 border-[#ffb703] py-1 flex items-center"
               >
                 Apply Now

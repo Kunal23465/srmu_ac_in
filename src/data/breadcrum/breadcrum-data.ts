@@ -35,15 +35,14 @@ export const pageBackgrounds: Record<string, string> = {
   "innovation-meets-agriculture-at-the-srmu-kisan-mela-2025": agriBreadcrumbbg,
   "empowering-future-engineers:-l&t-edutech-ai-lab-opens-at-srmu": agriBreadcrumbbg,
   "expert-talk-session-on-smart-meter-implementation:-data-science-&-cybersecurity-in-ami": agriBreadcrumbbg,
-  "bpharm-bachelor-of-pharmacy": pharmaBreadCrumbs,
-  "d-pharm-diploma-in-pharmacy": pharmaBreadCrumbs,
-  "b-pharma-bachelor-of-pharmacy": pharmaBreadCrumbs,
-  "d-pharma-diploma-in-pharmacy": pharmaBreadCrumbs,
-  "m-pharm-in-pharmaceutical-chemistry": pharmaBreadCrumbs,
-  "m-pharm-in-pharmaceutics": pharmaBreadCrumbs,
-  "m-pharm-in-pharmacology": pharmaBreadCrumbs,
-  "m-pharm-in-pharmacognosy": pharmaBreadCrumbs,
-  
+  // "bpharm-bachelor-of-pharmacy": pharmaBreadCrumbs,
+  // "d-pharm-diploma-in-pharmacy": pharmaBreadCrumbs,
+  // "b-pharma-bachelor-of-pharmacy": pharmaBreadCrumbs,
+  // "d-pharma-diploma-in-pharmacy": pharmaBreadCrumbs,
+  // "m-pharm-in-pharmaceutical-chemistry": pharmaBreadCrumbs,
+  // "m-pharm-in-pharmaceutics": pharmaBreadCrumbs,
+  // "m-pharm-in-pharmacology": pharmaBreadCrumbs,
+  // "m-pharm-in-pharmacognosy": pharmaBreadCrumbs,
 };
 
 // -----------------------

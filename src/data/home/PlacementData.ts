@@ -46,7 +46,7 @@ const PlacementData = [
                 id: 3,
                 title: 30,
                 symbol: "LPA",
-                description: "Highest Package of 30LPA grabbed in Morgan Stanley",
+                description: "Highest Package of 17 LPA grabbed in Morgan Stanley",
                 img: leftslider4,
             },
             {

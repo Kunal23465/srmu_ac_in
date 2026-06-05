@@ -7,11 +7,8 @@ export const SITE_URL = rawSiteUrl.replace(/\/+$/, "");
 export const SITE_NAME = "Shri Ramswaroop Memorial University";
 export const SITE_NAME_SHORT = "SRMU Lucknow";
 export const DEFAULT_TITLE = "Best University in Lucknow | Shri Ramswaroop Memorial University (SRMU)";
-export const DEFAULT_DESCRIPTION =
-  "Study at Shri Ramswaroop Memorial University (SRMU), a leading private university in Lucknow offering BTech, MBA, BBA, BCA and more.";
-export const DEFAULT_SOCIAL_IMAGE = /^https?:\/\//i.test(siteLogo)
-  ? siteLogo
-  : `${SITE_URL}${siteLogo.startsWith("/") ? siteLogo : `/${siteLogo}`}`;
+export const DEFAULT_DESCRIPTION = "Study at Shri Ramswaroop Memorial University (SRMU), a leading private university in Lucknow offering BTech, MBA, BBA, BCA and more.";
+export const DEFAULT_SOCIAL_IMAGE = /^https?:\/\//i.test(siteLogo) ? siteLogo : `${SITE_URL}${siteLogo.startsWith("/") ? siteLogo : `/${siteLogo}`}`;
 
 const PAGE_LABELS: Record<string, string> = {
   "/": SITE_NAME,
@@ -40,7 +37,11 @@ export const humanizeSlug = (value = "") =>
 
 export const buildCanonicalUrl = (pathname = "/") => `${SITE_URL}${normalizePath(pathname)}`;
 
-export const stripHtml = (value = "") => value.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim();
+export const stripHtml = (value = "") =>
+  value
+    .replace(/<[^>]*>/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
 
 const trimTitleAtWordBoundary = (value: string, maxLength: number) => {
   if (value.length <= maxLength) {
@@ -54,7 +55,9 @@ const trimTitleAtWordBoundary = (value: string, maxLength: number) => {
 };
 
 export const normalizeSeoTitle = (value = "") => {
-  const rawTitle = String(value || "").replace(/\s+/g, " ").trim();
+  const rawTitle = String(value || "")
+    .replace(/\s+/g, " ")
+    .trim();
 
   if (!rawTitle) {
     return rawTitle;
@@ -66,10 +69,7 @@ export const normalizeSeoTitle = (value = "") => {
     .replace(/\|\s*Shri Ramswaroop Memorial University$/i, `| ${SITE_NAME_SHORT}`)
     .replace(/\bat Shri Ramswaroop Memorial University,\s*Lucknow\b/gi, `at ${SITE_NAME_SHORT}`);
 
-  normalizedTitle = normalizedTitle.replace(
-    /\b(Undergraduate|Postgraduate|Lateral Entry|Industry Honors|Doctoral|Diploma) Programs\b/i,
-    "$1",
-  );
+  normalizedTitle = normalizedTitle.replace(/\b(Undergraduate|Postgraduate|Lateral Entry|Industry Honors|Doctoral|Diploma) Programs\b/i, "$1");
 
   const suffixMatch = normalizedTitle.match(/\s\|\s[^|]+$/);
   const suffix = suffixMatch?.[0] || "";
@@ -165,23 +165,19 @@ const PROGRAM_FINDER_SEO_OVERRIDES: Record<string, { title?: string; description
   },
   "/after-class-12th/legal-studies-law": {
     title: `Legal Studies and Law Programs After Class 12 | ${SITE_NAME}, Lucknow`,
-    description:
-      "Discover law programs after Class 12 at SRMU Lucknow. Review integrated legal studies options, eligibility, admissions guidance, fees, and career scope in law.",
+    description: "Discover law programs after Class 12 at SRMU Lucknow. Review integrated legal studies options, eligibility, admissions guidance, fees, and career scope in law.",
   },
   "/legal-studies-law/undergraduate": {
     title: `Undergraduate Legal Studies and Law Programs | ${SITE_NAME}, Lucknow`,
-    description:
-      "Explore SRMU Lucknow undergraduate law courses, including legal studies pathways, admission requirements, course duration, fees, and professional opportunities.",
+    description: "Explore SRMU Lucknow undergraduate law courses, including legal studies pathways, admission requirements, course duration, fees, and professional opportunities.",
   },
   "/after-class-12th/nutrition-dietetics": {
     title: `Nutrition and Dietetics Programs After Class 12 | ${SITE_NAME}, Lucknow`,
-    description:
-      "Find nutrition and dietetics programs after Class 12 at SRMU Lucknow. Check UG course choices, eligibility, admissions, fees, and healthcare career pathways.",
+    description: "Find nutrition and dietetics programs after Class 12 at SRMU Lucknow. Check UG course choices, eligibility, admissions, fees, and healthcare career pathways.",
   },
   "/nutrition-dietetics/undergraduate": {
     title: `Undergraduate Nutrition and Dietetics Programs | ${SITE_NAME}, Lucknow`,
-    description:
-      "Review undergraduate nutrition and dietetics courses at SRMU Lucknow with information on curriculum, eligibility, fee details, admissions, and career outcomes.",
+    description: "Review undergraduate nutrition and dietetics courses at SRMU Lucknow with information on curriculum, eligibility, fee details, admissions, and career outcomes.",
   },
   "/after-class-12th/arts-science": {
     title: `Arts and Science Programs After Class 12 | ${SITE_NAME}, Lucknow`,
@@ -302,8 +298,7 @@ const shouldUseProgramFinderScopedMeta = (pathname = "/", metaValue?: string | n
   return hasDiscipline && hasLevelContext;
 };
 
-export const shouldUseProgramFinderMetaTitle = (pathname = "/", metaTitle?: string | null) =>
-  shouldUseProgramFinderScopedMeta(pathname, metaTitle);
+export const shouldUseProgramFinderMetaTitle = (pathname = "/", metaTitle?: string | null) => shouldUseProgramFinderScopedMeta(pathname, metaTitle);
 
 export const shouldUseProgramFinderMetaDescription = (pathname = "/", metaDescription?: string | null) =>
   getProgramFinderSeoOverride(pathname) ? false : shouldUseProgramFinderScopedMeta(pathname, metaDescription);

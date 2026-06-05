@@ -12,7 +12,7 @@ const StudentPortalRedirectPage = () => {
     <>
       <Helmet>
         <title>Redirecting...</title>
-         <meta name="robots" content="index, follow" />
+        <meta name="robots" content="index, follow" />
       </Helmet>
       <main className="min-h-screen" aria-label="Redirecting to student portal" />
     </>

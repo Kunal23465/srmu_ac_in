@@ -129,13 +129,16 @@ const ProgramDetails: React.FC = () => {
   const metaTitle = dataByID?.metaTitle?.trim() || "";
   const normalizedProgramLabel = programLabel.trim().toLowerCase();
   const normalizedMetaTitle = metaTitle.toLowerCase();
-  const isProgramMetaTitleDistinct =
-    Boolean(metaTitle) &&
-    normalizedMetaTitle !== normalizedProgramLabel &&
-    normalizedMetaTitle !== `${normalizedProgramLabel} | ${SITE_NAME}, lucknow`.toLowerCase() &&
-    normalizedMetaTitle !== `${normalizedProgramLabel} | srmu lucknow`;
+  // const isProgramMetaTitleDistinct =
+  //   Boolean(metaTitle) &&
+  //   normalizedMetaTitle !== normalizedProgramLabel &&
+  //   normalizedMetaTitle !== `${normalizedProgramLabel} | ${SITE_NAME}, lucknow`.toLowerCase() &&
+  //   normalizedMetaTitle !== `${normalizedProgramLabel} | srmu lucknow`;
+  // const seoTitle =
+  //   (isProgramMetaTitleDistinct ? metaTitle : "") ||
+  //   `${programLabel} Admissions, Fees & Eligibility | ${SITE_NAME}, Lucknow`;
   const seoTitle =
-    (isProgramMetaTitleDistinct ? metaTitle : "") ||
+    metaTitle ||
     `${programLabel} Admissions, Fees & Eligibility | ${SITE_NAME}, Lucknow`;
   const seoDescription =
     dataByID?.metaDescription?.trim() ||
@@ -308,7 +311,7 @@ const ProgramDetails: React.FC = () => {
   }
 
 
-  console.log("departmentHeghlightData Data:", departmentHeghlightData);
+  console.log("metaTitle:", metaTitle);
   return (
     <>
       <SeoHead

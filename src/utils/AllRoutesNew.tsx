@@ -87,7 +87,7 @@ const PrivacyPolicyPage = lazyPage(() => import("../pages/privacy-policy/Privacy
 const DisclaimerPage = lazyPage(() => import("../pages/disclaimer/DisclaimerPage"));
 const TermsAndConditionPage = lazyPage(() => import("../pages/terms-condition/TermsAndConditionPage"));
 const EyojsnLoginRedirectPage = lazyPage(() => import("../pages/EyojsnLoginRedirectPage"));
-const StudentPortalRedirectPage = lazyPage(() => import("../pages/StudentPortalRedirectPage"));
+// const StudentPortalRedirectPage = lazyPage(() => import("../pages/StudentPortalRedirectPage"));
 // const AdmissionEnquiryRedirectPage = lazyPage(() => import("../pages/AdmissionEnquiryRedirectPage"));
 const InstituteofMediaStudiesPage = lazyPage(() => import("../pages/academics/institutes/institute-department/InstituteofMediaStudiesPage"));
 const InstituteofPharmaceuticalSciencesPage = lazyPage(() => import("../pages/academics/institutes/institute-department/InstituteofPharmaceuticalSciencesPage"));
@@ -170,10 +170,10 @@ export const routes = [
         path: "/eyojan-login-redirect",
         element: <EyojsnLoginRedirectPage />,
       },
-      {
-        path: "/student-portal-redirect",
-        element: <StudentPortalRedirectPage />,
-      },
+      // {
+      //   path: "/student-portal-redirect",
+      //   element: <StudentPortalRedirectPage />,
+      // },
       // {
       //   path: "/admission-enquiry-redirect",
       //   element: <AdmissionEnquiryRedirectPage />,

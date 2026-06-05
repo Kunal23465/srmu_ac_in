@@ -2,6 +2,8 @@ import { Link, useLocation } from "react-router-dom";
 import { Fragment, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Classes from "../../utils/styles/Global.module.css";
+import img4 from "../../assets/new-home/approved/4.webp";
+import img3 from "../../assets/new-home/approved/3.webp";
 
 import {
   childBackgrounds,
@@ -136,11 +138,34 @@ export default function DynamicBreadcrumbs() {
     backgroundImg = pageBackgrounds["blogs"] || "";
   }
 
+
+  const allowedUrlsPharma = [
+    "/program/bpharm-bachelor-of-pharmacy",
+    "/program/d-pharm-diploma-in-pharmacy",
+    "/program/b-pharma-bachelor-of-pharmacy",
+    "/program/d-pharma-diploma-in-pharmacy",
+    "/program/m-pharm-in-pharmaceutical-chemistry",
+    "/program/m-pharm-in-pharmaceutics",
+    "/program/m-pharm-in-pharmacology",
+    "/program/m-pharm-in-pharmacognosy",
+    "/after-class-12th/pharmacy",
+    "/after-graduation/pharmacy"
+  ];
+  const allowedUrlsLaw = [
+    "/program/ba-llb-hons",
+    "/program/bba-llb-hons",
+    "/program/llb",
+    "/after-class-12th/legal-studies-law",
+    "/after-graduation/legal-studies-law"
+
+  ];
+
+  const isMatchedPharma = allowedUrlsPharma.includes(window.location.pathname);
+  const isMatchedLaw = allowedUrlsLaw.includes(window.location.pathname);
   return (
     <section
-      className={`banner-section ${
-        location.pathname === "/online-admission" && "big-banner"
-      } flex items-end pb-3 sm:pb-[45px] relative`}
+      className={`banner-section ${location.pathname === "/online-admission" && "big-banner"
+        } flex items-end pb-3 sm:pb-[45px] relative`}
       style={{
         backgroundImage: backgroundImg
           ? `url(${safeCssUrl(backgroundImg)})`
@@ -155,6 +180,49 @@ export default function DynamicBreadcrumbs() {
       {/* Content with relative positioning and z-index */}
       <div className={`${Classes["container"]} relative z-10`}>
         <div className={Classes["page-title-content"]}>
+          {/* Phramacy */}
+          {
+            isMatchedPharma && <div className="ml-4 mb-4 inline-flex flex-col items-center bg-white/95 backdrop-blur-sm px-2 pb-1 rounded-xl border border-white/30 shadow-lg hover:shadow-xl transition-all duration-300">
+              <img
+                src={img4}
+                alt="PCI Approved"
+                className="w-12 h-12 sm:w-20 sm:h-20 object-contain"
+              />
+
+              <div className="text-sm sm:text-lg font-bold text-[#0A4A8F] leading-none">
+                PCI
+              </div>
+
+              <div className="text-xs sm:text-sm font-semibold text-[#0A4A8F]">
+                Approved
+              </div>
+
+              <div className="mt-1 px-2 py-0.5 bg-[#0A4A8F] text-white text-[10px] sm:text-xs rounded-full font-medium">
+                Session 2026-27
+              </div>
+            </div>
+          }
+          {
+            isMatchedLaw && <div className="ml-4 mb-4 inline-flex flex-col items-center bg-white/95 backdrop-blur-sm px-2 pb-1 rounded-xl border border-white/30 shadow-lg hover:shadow-xl transition-all duration-300">
+              <img
+                src={img3}
+                alt="BCI Approved"
+                className="w-12 h-12 sm:w-20 sm:h-20 object-contain"
+              />
+
+              <div className="text-sm sm:text-lg font-bold text-[#0A4A8F] leading-none">
+                BCI
+              </div>
+
+              <div className="text-xs sm:text-sm font-semibold text-[#0A4A8F]">
+                Approved
+              </div>
+
+              <div className="mt-1 px-2 py-0.5 bg-[#0A4A8F] text-white text-[10px] sm:text-xs rounded-full font-medium">
+                Session 2026-27
+              </div>
+            </div>
+          }
           <nav aria-label="breadcrumb ml-4">
             <ol className="breadcrumb m-0 flex flex-wrap gap-2 px-4">
               {crumbs.map((crumb, index) => (
@@ -175,6 +243,8 @@ export default function DynamicBreadcrumbs() {
           </nav>
         </div>
       </div>
+
+
     </section>
   );
 }
