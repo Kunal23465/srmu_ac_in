@@ -182,43 +182,43 @@ export default function DynamicBreadcrumbs() {
         <div className={Classes["page-title-content"]}>
           {/* Phramacy */}
           {
-            isMatchedPharma && <div className="ml-4 mb-4 inline-flex flex-col items-center bg-white/95 backdrop-blur-sm px-2 pb-1 rounded-xl border border-white/30 shadow-lg hover:shadow-xl transition-all duration-300">
+            isMatchedPharma && <div className="ml-4 mb-4 inline-flex flex-col items-center bg-white/95 backdrop-blur-sm px-0.5 sm:px-1 pb-1 rounded-xl border border-white/30 shadow-lg hover:shadow-xl transition-all duration-300">
               <img
                 src={img4}
                 alt="PCI Approved"
-                className="w-12 h-12 sm:w-20 sm:h-20 object-contain"
+                className="w-10 h-10 sm:w-16 sm:h-16 object-contain"
               />
 
-              <div className="text-sm sm:text-lg font-bold text-[#0A4A8F] leading-none">
+              <div className="text-xs sm:text-lg font-bold text-[#0A4A8F] leading-none">
                 PCI
               </div>
 
-              <div className="text-xs sm:text-sm font-semibold text-[#0A4A8F]">
+              <div className="text-[10px] sm:text-sm font-semibold text-[#0A4A8F]">
                 Approved
               </div>
 
-              <div className="mt-1 px-2 py-0.5 bg-[#0A4A8F] text-white text-[10px] sm:text-xs rounded-full font-medium">
+              <div className="mt-1 px-2 py-0.5 bg-[#0A4A8F] text-white text-[8px] sm:text-xs rounded-full font-medium">
                 Session 2026-27
               </div>
             </div>
           }
           {
-            isMatchedLaw && <div className="ml-4 mb-4 inline-flex flex-col items-center bg-white/95 backdrop-blur-sm px-2 pb-1 rounded-xl border border-white/30 shadow-lg hover:shadow-xl transition-all duration-300">
+            isMatchedLaw && <div className="ml-4 mb-4 inline-flex flex-col items-center bg-white/95 backdrop-blur-sm px-0.5 sm:px-1 pb-1 rounded-xl border border-white/30 shadow-lg hover:shadow-xl transition-all duration-300">
               <img
                 src={img3}
                 alt="BCI Approved"
-                className="w-12 h-12 sm:w-20 sm:h-20 object-contain"
+                className="w-10 h-10 sm:w-16 sm:h-16 object-contain"
               />
 
-              <div className="text-sm sm:text-lg font-bold text-[#0A4A8F] leading-none">
+              <div className="text-xs sm:text-lg font-bold text-[#0A4A8F] leading-none">
                 BCI
               </div>
 
-              <div className="text-xs sm:text-sm font-semibold text-[#0A4A8F]">
+              <div className="text-[10px] sm:text-sm font-semibold text-[#0A4A8F]">
                 Approved
               </div>
 
-              <div className="mt-1 px-2 py-0.5 bg-[#0A4A8F] text-white text-[10px] sm:text-xs rounded-full font-medium">
+              <div className="mt-1 px-2 py-0.5 bg-[#0A4A8F] text-white text-[8px] sm:text-xs rounded-full font-medium">
                 Session 2026-27
               </div>
             </div>
