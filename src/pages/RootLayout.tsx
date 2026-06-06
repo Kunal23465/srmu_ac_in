@@ -213,11 +213,14 @@ const RootLayout: React.FC = () => {
           {openChat ? <FaTimes className="text-white" size={22} /> : <img src={chatbot} alt="Open chat assistant" className="w-8" />}
         </div>
       </button> */}
-      {shouldRenderChatbot ? (
+
+
+      
+      {/* {shouldRenderChatbot ? (
         <Suspense fallback={null}>
           <Chatbot />
         </Suspense>
-      ) : null}
+      ) : null} */}
       {/* ============= RIGHT SIDE SLIDERS (SHOW ON SCROLL) ============= */}
       <div
         className={`
