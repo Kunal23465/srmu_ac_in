@@ -71,7 +71,7 @@ const Header = () => {
   return (
     <div className="relative">
       <div
-        className={`block sm:hidden overflow-hidden transition-all duration-500 ${isActive ? "max-h-0 opacity-0" : "max-h-[47px] opacity-100"
+        className={`block sm:hidden transition-all duration-500 ${isActive ? "max-h-0 opacity-0" : "max-h-[47px] opacity-100"
           }`}
       >
         <TopHeader />

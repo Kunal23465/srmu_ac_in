@@ -132,7 +132,7 @@ const RootLayout: React.FC = () => {
 
       {/* Chatbot */}
 
-      {/* <Chatbot /> */}
+      <Chatbot />
 
       {/* Right Side Bar */}
       <div
