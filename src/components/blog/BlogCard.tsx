@@ -13,7 +13,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ card }) => {
   return (
     <>
       <div className="bg-white rounded-2xl cursor-pointer border-2 border-[#ffb703] overflow-hidden flex flex-col hover:shadow-2xl min-h-[28rem]">
-        <Link state={{ data: card }} to={blogPath}>
+        <Link  to={blogPath}>
           <div className="p-6">
             <img src={card.imagePath} alt={card.title} className="w-full h-60 object-cover rounded-lg" />
           </div>
@@ -26,14 +26,14 @@ const BlogCard: React.FC<BlogCardProps> = ({ card }) => {
             {card.postedOn}
           </p>
           <h2 className="text-sm sm:text-[20px] fw600 text-black mb-3  cursor-pointer flex-grow">
-            <Link state={{ data: card }} to={blogPath}>
+            <Link  to={blogPath}>
               {card.title}
             </Link>
           </h2>
 
           <div className="mt-auto">
             <Link
-              state={{ data: card }}
+             
               to={blogPath}
               className="inline-flex items-center small-font fw600 px-4 py-3  text-[#023047] uppercase bg-[#ffb703] rounded-md hover:bg-white hover:border-[#ffb703] hover:border hover:text-[#ffb703]"
             >

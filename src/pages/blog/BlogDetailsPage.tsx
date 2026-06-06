@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useParams } from "react-router-dom";
-import { Helmet } from "react-helmet-async"; // or "react-helmet"
+import { Helmet } from "react-helmet-async";
 import Classes from "../../utils/styles/Global.module.css";
 import CustomTopFooter from "../../utils/custom/CustomTopFooter";
 import { CustomTopFooterAbout } from "../../data/about/aboutusData";
@@ -15,20 +15,45 @@ import {
 import { findBlogBySlug } from "../../utils/routeMatching";
 import CustomFormModal from "../../utils/custom/CustomFormModal";
 
-
 const BlogDetailsPage: React.FC = () => {
   const location = useLocation();
-  const { title, slug } = useParams();
-  const { data: blogs } = useSelector((state: RootState) => state.getAllBlogs);
+  const { slug } = useParams();
+
+  const { data: blogs, loading } = useSelector(
+    (state: RootState) => state.getAllBlogs
+  );
+
   const [open, setOpen] = useState<boolean>(false);
   const [sourceId, setSourceId] = useState<number | null>(null);
-  const dataFromState = (location.state as any)?.data;
-  const slugOrTitle = slug || title || "";
 
-  const data =
-    dataFromState ||
-    findBlogBySlug(Array.isArray(blogs) ? blogs : [], slugOrTitle);
+  // Find blog only by slug from API response
+  const data = findBlogBySlug(
+    Array.isArray(blogs) ? blogs : [],
+    slug || ""
+  );
 
+  useEffect(() => {
+    if (data?.blogId === 46) {
+      setSourceId(436);
+
+      const timer = setTimeout(() => {
+        setOpen(true);
+      }, 8000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [data]);
+
+  // Loading state
+  if (loading || (!blogs && !data)) {
+    return (
+      <div className={`${Classes["container"]} py-16`}>
+        <h2>Loading...</h2>
+      </div>
+    );
+  }
+
+  // Not found state
   if (!data) {
     return (
       <>
@@ -40,6 +65,7 @@ const BlogDetailsPage: React.FC = () => {
           />
           <meta name="robots" content="noindex" />
         </Helmet>
+
         <div className={`${Classes["container"]} py-16`}>
           <h1 className="text-2xl font-medium text-[#023047]">
             Blog not found
@@ -52,26 +78,29 @@ const BlogDetailsPage: React.FC = () => {
   const blogDescription =
     stripHtml(data.metaDescription || data.description || data.title).slice(
       0,
-      160,
+      160
     ) || `Read the latest SRMU blog: ${data.title}.`;
-  const seoTitle = normalizeSeoTitle(`${data.title} | ${SITE_NAME}, Lucknow`);
 
-  // Parse seoConfig with proper cleaning
+  const seoTitle = normalizeSeoTitle(
+    `${data.metaTitle || data.title} | ${SITE_NAME}, Lucknow`
+  );
+
+  // Parse SEO Config
   let parsedSeoConfig = null;
+
   if (data.seoConfig) {
     try {
-      let cleanedConfig = data.seoConfig;
+      let cleanedConfig: any = data.seoConfig;
 
-      // If it's a string, clean it
       if (typeof cleanedConfig === "string") {
-        // Remove control characters and clean the string
         cleanedConfig = cleanedConfig
-          .replace(/[\u0000-\u001F\u007F-\u009F]/g, "") // Remove control characters
+          .replace(/^"+|"+$/g, "")
+          .replace(/\\"/g, '"')
+          .replace(/[\u0000-\u001F\u007F-\u009F]/g, "")
           .trim();
 
         parsedSeoConfig = JSON.parse(cleanedConfig);
       } else {
-        // Already an object
         parsedSeoConfig = cleanedConfig;
       }
     } catch (error) {
@@ -79,7 +108,6 @@ const BlogDetailsPage: React.FC = () => {
     }
   }
 
-  // Default Article schema (fallback)
   const defaultArticleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -93,63 +121,88 @@ const BlogDetailsPage: React.FC = () => {
     },
   };
 
-  // Use seoConfig schema if available, otherwise use default
   const jsonLdSchema = parsedSeoConfig || defaultArticleSchema;
 
   const absoluteUrl = `https://srmu.ac.in${location.pathname}`;
-  const imageUrl = data.imagePath ? toAbsoluteUrl(data.imagePath) : "";
+  const imageUrl = data.imagePath
+    ? toAbsoluteUrl(data.imagePath)
+    : "";
 
-
-  useEffect(() => {
-    if (data && data.blogId == 46) {
-      setSourceId(436);
-      setTimeout(() => {
-        setOpen(true);
-      }, 8000);
-    }
-  }, []);
   return (
     <>
       <Helmet>
-        {/* Title */}
+        {/* SEO */}
         <title>{seoTitle}</title>
 
-        {/* Meta Description */}
-        <meta name="description" content={blogDescription} />
+        <meta
+          name="description"
+          content={data.metaDescription || blogDescription}
+        />
 
-        {/* Canonical URL */}
+        {data.metaKeyword &&
+          data.metaKeyword !== "undefined" && (
+            <meta
+              name="keywords"
+              content={data.metaKeyword}
+            />
+          )}
+
         <link rel="canonical" href={absoluteUrl} />
 
-        {/* Open Graph Tags */}
+        {/* Open Graph */}
         <meta property="og:type" content="article" />
         <meta property="og:title" content={seoTitle} />
-        <meta property="og:description" content={blogDescription} />
+        <meta
+          property="og:description"
+          content={blogDescription}
+        />
         <meta property="og:url" content={absoluteUrl} />
-        {imageUrl && <meta property="og:image" content={imageUrl} />}
-        <meta property="og:site_name" content={SITE_NAME} />
 
-        {/* Twitter Card Tags */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={seoTitle} />
-        <meta name="twitter:description" content={blogDescription} />
-        {imageUrl && <meta name="twitter:image" content={imageUrl} />}
-
-        {/* Article Tags */}
-        {data.postedOn && (
-          <meta property="article:published_time" content={data.postedOn} />
+        {imageUrl && (
+          <meta property="og:image" content={imageUrl} />
         )}
 
-        {/* JSON-LD Structured Data from seoConfig */}
+        <meta
+          property="og:site_name"
+          content={SITE_NAME}
+        />
+
+        {/* Twitter */}
+        <meta
+          name="twitter:card"
+          content="summary_large_image"
+        />
+        <meta name="twitter:title" content={seoTitle} />
+        <meta
+          name="twitter:description"
+          content={blogDescription}
+        />
+
+        {imageUrl && (
+          <meta
+            name="twitter:image"
+            content={imageUrl}
+          />
+        )}
+
+        {/* Article */}
+        {data.postedOn && (
+          <meta
+            property="article:published_time"
+            content={data.postedOn}
+          />
+        )}
+
+        {/* JSON LD */}
         <script type="application/ld+json">
           {JSON.stringify(jsonLdSchema)}
         </script>
       </Helmet>
 
-      <div className={`${Classes["container"]}`}>
+      <div className={Classes["container"]}>
         <div className="py-12 bg-white">
           <div className="container mx-auto px-4">
-            {/* Title */}
-            <h1 className="font32 fw500 text-[#023047] leading-9">
+            <h1 className="font32 fw500 text-[#023047] leading-9 mb-6">
               {data.title}
             </h1>
 
@@ -159,36 +212,39 @@ const BlogDetailsPage: React.FC = () => {
                 [&_a]:font-normal!
                 [&_a]:inline-block!
                 [&_a]:px-1!
-                [&_table]:w-full 
-                [&_table]:border 
-                [&_table]:border-[#d9d9d9] 
-                [&_table]:border-collapse 
+                [&_table]:w-full
+                [&_table]:border
+                [&_table]:border-[#d9d9d9]
+                [&_table]:border-collapse
                 [&_table]:my-6
-
-                [&_th]:border 
-                [&_th]:border-[#d9d9d9] 
-                [&_th]:bg-[#f5f5f5] 
-                [&_th]:text-center 
-                [&_th]:px-3 
-                [&_th]:py-2 
-                [&_th]:text-[14px] 
+                [&_th]:border
+                [&_th]:border-[#d9d9d9]
+                [&_th]:bg-[#f5f5f5]
+                [&_th]:text-center
+                [&_th]:px-3
+                [&_th]:py-2
+                [&_th]:text-[14px]
                 [&_th]:font-semibold
-
-                [&_td]:border 
-                [&_td]:border-[#d9d9d9] 
-                [&_td]:px-3 
-                [&_td]:py-2 
-                [&_td]:text-[14px] 
+                [&_td]:border
+                [&_td]:border-[#d9d9d9]
+                [&_td]:px-3
+                [&_td]:py-2
+                [&_td]:text-[14px]
                 [&_td]:align-top
               "
-              dangerouslySetInnerHTML={{ __html: data.description }}
+              dangerouslySetInnerHTML={{
+                __html: data.description,
+              }}
             />
           </div>
         </div>
       </div>
-      <CustomFormModal isOpen={open} sourceId={sourceId} onClose={() => setOpen(false)} />
-       
-    
+
+      <CustomFormModal
+        isOpen={open}
+        sourceId={sourceId}
+        onClose={() => setOpen(false)}
+      />
 
       <CustomTopFooter data={CustomTopFooterAbout} />
     </>
