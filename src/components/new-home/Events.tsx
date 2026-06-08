@@ -3,6 +3,7 @@ import eventsData from '../../data/new-home/eventsData';
 import { FaArrowRight, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import Classes from "../../utils/styles/Global.module.css";
 import { RxCross2 } from 'react-icons/rx';
+import upcoming from "../../assets/new-home/events/up-coming.png"
 
 export default function Events() {
     const sliderRef = useRef<HTMLDivElement | null>(null);
@@ -183,7 +184,7 @@ export default function Events() {
                                     key={key}
                                     className={`snap-start min-w-full md:min-w-0 md:flex-none md:w-1/2 bg-[#0A4A8F] rounded overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-transform duration-300`}
                                 >
-                                    <div className="overflow-hidden h-60 md:h-60">
+                                    <div className=" relative h-80 md:h-80">
                                         <img
                                             src={e.image}
                                             srcSet={`${e.imageSmall} 480w, ${e.image} 960w`}
@@ -193,6 +194,18 @@ export default function Events() {
                                             height={540}
                                             className="w-full h-full object-cover object-top"
                                         />
+                                        {
+                                            e.isUpcoming && (
+                                                <div className="absolute  top-[42px] -left-[12px] rotate-[-45deg]  shadow-md z-50">
+                                                    <img
+                                                        src={upcoming}
+                                                        alt="Upcoming"
+                                                        className="w-full max-w-[140px]"
+                                                    />
+                                                </div>
+                                            )
+                                        }
+
                                     </div>
                                     <div className="p-4 md:p-6 text-slate-800 dark:text-white ">
                                         <h3 className="font-semibold text-lg mb-2 text-white">{e.title}</h3>

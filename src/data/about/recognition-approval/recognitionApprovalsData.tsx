@@ -57,10 +57,10 @@ import ecelliitm from "../../../assets/images/about/recognition-approval/E-CELL-
 import csir from "../../../assets/images/about/recognition-approval/CSIR-01112304082372.webp"
 import tnto from "../../../assets/images/about/recognition-approval/TNTO-LEGAL-WORLD-01112304420233.webp"
 import larsenpdf from "../../../assets/pdf/about/approvals/mou-larsen-toubro-ltd.-210525103112.pdf"
-import tatapdf from "../../../assets/pdf/about/approvals/mou-tata-motors-15-may-2025-210525014150.pdf"
+import tatapdf from "../../../assets/pdf/about/approvals/new/Tata Motors Limited, 15-05-2025.pdf"
 import jbmpdf from "../../../assets/pdf/about/approvals/jbm-130224013515.pdf"
 import ibmpdf from "../../../assets/pdf/about/approvals/ibm-130224014150.pdf"
-import ubtpdf from "../../../assets/pdf/about/approvals/mou-university-for-business-and-technology-ubt--210525101750.pdf"
+import ubtpdf from "../../../assets/pdf/about/approvals/new/University for Business and Technology (UBT), Kosovo.pdf"
 import coaspdf from "../../../assets/pdf/about/approvals/36-a-m-sa-srmu-india-060324052805.pdf"
 import ficcipdf from "../../../assets/pdf/about/approvals/38-FICCI-FLo-011123033153.pdf"
 import ciipdf from "../../../assets/pdf/about/approvals/37-cii-130224014325.pdf"
@@ -70,18 +70,18 @@ import lmapdf from "../../../assets/pdf/about/approvals/5-lma-130224014525.pdf"
 import ecelliitpdf from "../../../assets/pdf/about/approvals/14-e-cell-iit-mumbai-130224014553.pdf"
 import csirpdf from "../../../assets/pdf/about/approvals/19-csir-130224014616.pdf"
 import tntopdf from "../../../assets/pdf/about/approvals/24-tnto-legal-world-130224014643.pdf"
-
-
 import iops from "../../../assets/pdf/about/approvals/IOPS 26-27 .pdf"
 import pic2 from "../../../assets/pdf/about/approvals/PCI approval Letter 3817 (2026-27).pdf"
-
-
-
-
-
-
-
-
+import aaoImg from "../../../assets/pdf/about/approvals/mous/AOO SHEEKHE.jpg"
+import aaoPdf from "../../../assets/pdf/about/approvals/mous/Faumi Education & Training Pvt. Ltd Lucknow (Aao Seekhe).pdf"
+import ficcImg from "../../../assets/pdf/about/approvals/mous/FICCI FLO.jpg"
+import ficcPdf from "../../../assets/pdf/about/approvals/mous/FICCI Ladies Organization.pdf"
+import juteImg from "../../../assets/pdf/about/approvals/mous/Jute for life.jpg"
+import jutePdf from "../../../assets/pdf/about/approvals/mous/Jute for Life.pdf"
+import socioImg from "../../../assets/pdf/about/approvals/mous/SOCIO AID.jpg"
+import socioPdf from "../../../assets/pdf/about/approvals/mous/Socioaid Services And Development Foundation.pdf"
+import solarImg from "../../../assets/pdf/about/approvals/mous/SOLAR CORNER.jpg"
+import solarPdf from "../../../assets/pdf/about/approvals/mous/Solar Corner.pdf"
 
 
 
@@ -230,7 +230,37 @@ export const associationsData: Association[] = [
     logo: tnto,
     pdfLink: tntopdf,
   },
-
+  // ======New=====
+  {
+    id: 15,
+    name: "AAO SEEKHE",
+    logo: aaoImg,
+    pdfLink: aaoPdf,
+  },
+  {
+    id: 16,
+    name: "FICCI",
+    logo: ficcImg,
+    pdfLink: ficcPdf,
+  },
+  {
+    id: 17,
+    name: "JUTE FOR LIFE",
+    logo: juteImg,
+    pdfLink: jutePdf,
+  },
+  {
+    id: 18,
+    name: "SOCIOAID SERVICES AND DEVELOPMENT FOUNDATION",
+    logo: socioImg,
+    pdfLink: socioPdf,
+  },
+  {
+    id: 19,
+    name: "SOLAR CORNER",
+    logo: solarImg,
+    pdfLink: solarPdf,
+  },
 ];
 
 
