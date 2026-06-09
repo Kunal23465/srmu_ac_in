@@ -9,6 +9,9 @@ import NewHome from "../../components/new-home/NewHome";
 export const homePageSchema = {
   "@context": "https://schema.org",
   "@graph": [
+    // ==========================================
+    // Main University Schema + Local SEO / Map Schema
+    // ==========================================
     {
       "@type": "CollegeOrUniversity",
       "@id": "https://srmu.ac.in/#university",
@@ -17,15 +20,25 @@ export const homePageSchema = {
       "url": "https://srmu.ac.in/",
       "description":
         "Shri Ramswaroop Memorial University (SRMU) is a multidisciplinary university in Uttar Pradesh offering undergraduate, postgraduate, diploma and doctoral programs in Engineering, Management, Law, Agriculture, Pharmacy, Computer Applications, Journalism, Sciences and Humanities.",
+      "keywords":
+        "best university in lucknow, top university in lucknow, private university in uttar pradesh, srmu lucknow admissions",
+      "telephone": "+91-9838904666",
+      "email": "admissions@srmu.ac.in",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Deva Road",
+        "streetAddress": "Lucknow-Deva Road",
         "addressLocality": "Barabanki",
         "addressRegion": "Uttar Pradesh",
         "postalCode": "225003",
         "addressCountry": "IN"
       },
-      "telephone": "+91-9838904666",
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "26.9152",
+        "longitude": "81.1691"
+      },
+      "hasMap":
+        "https://maps.google.com/?q=Shri+Ramswaroop+Memorial+University",
       "sameAs": [
         "https://www.facebook.com/srmuofficial",
         "https://www.instagram.com/srmuofficial",
@@ -33,6 +46,10 @@ export const homePageSchema = {
         "https://www.youtube.com/@SRMUOfficial"
       ]
     },
+
+    // ==========================================
+    // Organization Schema
+    // ==========================================
     {
       "@type": "Organization",
       "@id": "https://srmu.ac.in/#organization",
@@ -43,6 +60,10 @@ export const homePageSchema = {
         "url": "https://srmu.ac.in/wp-content/uploads/logo.png"
       }
     },
+
+    // ==========================================
+    // Website Schema
+    // ==========================================
     {
       "@type": "WebSite",
       "@id": "https://srmu.ac.in/#website",
@@ -57,6 +78,10 @@ export const homePageSchema = {
         "query-input": "required name=search_term_string"
       }
     },
+
+    // ==========================================
+    // Breadcrumb Schema
+    // ==========================================
     {
       "@type": "BreadcrumbList",
       "@id": "https://srmu.ac.in/#breadcrumb",
@@ -69,6 +94,10 @@ export const homePageSchema = {
         }
       ]
     },
+
+    // ==========================================
+    // Programs Offered Schema
+    // ==========================================
     {
       "@type": "ItemList",
       "@id": "https://srmu.ac.in/#programs",
@@ -116,6 +145,10 @@ export const homePageSchema = {
         }
       ]
     },
+
+    // ==========================================
+    // Campus Tour Video Schema
+    // ==========================================
     {
       "@type": "VideoObject",
       "@id": "https://srmu.ac.in/#video",
@@ -132,6 +165,10 @@ export const homePageSchema = {
         "@id": "https://srmu.ac.in/#organization"
       }
     },
+
+    // ==========================================
+    // FAQ Schema
+    // ==========================================
     {
       "@type": "FAQPage",
       "@id": "https://srmu.ac.in/#faq",

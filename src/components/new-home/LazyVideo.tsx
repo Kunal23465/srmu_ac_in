@@ -23,7 +23,10 @@ export default function LazyVideo({
   src,
   eager = false,
   rootMargin = "250px 0px",
-  autoPlay,
+  autoPlay = true,
+  loop = true,
+  muted = true,
+  playsInline = true,
   preload = "none",
   onCanPlay,
   onPlay,
@@ -41,10 +44,13 @@ export default function LazyVideo({
 
   useEffect(() => {
     if (eager) {
+      setShouldLoad(true);
+      setIsVisible(true);
       return;
     }
 
     const video = videoRef.current;
+
     if (!video || typeof window === "undefined") {
       return;
     }
@@ -58,33 +64,41 @@ export default function LazyVideo({
     const observer = new IntersectionObserver(
       ([entry]) => {
         const visible = entry.isIntersecting;
+
         setIsVisible(visible);
 
-        if (visible && !shouldLoad) {
+        if (visible) {
           setShouldLoad(true);
         }
       },
-      { rootMargin, threshold: 0.15 },
+      {
+        rootMargin,
+        threshold: 0.15,
+      }
     );
 
     observer.observe(video);
-    return () => observer.disconnect();
-  }, [eager, rootMargin, shouldLoad]);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [eager, rootMargin]);
 
   useEffect(() => {
-    if (!shouldLoad || !autoPlay || !allowAutoplay) {
-      return;
-    }
-
     const video = videoRef.current;
-    if (!video) {
+
+    if (!video || !shouldLoad) {
       return;
     }
 
-    if (isVisible) {
-      video.play().catch(() => undefined);
-    } else {
-      video.pause();
+    if (autoPlay && allowAutoplay) {
+      if (isVisible) {
+        video.play().catch(() => {
+          // Ignore autoplay errors
+        });
+      } else {
+        video.pause();
+      }
     }
   }, [allowAutoplay, autoPlay, isVisible, shouldLoad]);
 
@@ -93,7 +107,10 @@ export default function LazyVideo({
       {...props}
       ref={videoRef}
       src={shouldLoad ? src : undefined}
-      autoPlay={Boolean(autoPlay && allowAutoplay)}
+      autoPlay={autoPlay && allowAutoplay}
+      loop={loop}
+      muted={muted}
+      playsInline={playsInline}
       preload={shouldLoad ? preload : "none"}
       onCanPlay={onCanPlay}
       onPlay={onPlay}
