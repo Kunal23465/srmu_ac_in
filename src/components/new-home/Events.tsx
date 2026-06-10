@@ -5,6 +5,14 @@ import Classes from "../../utils/styles/Global.module.css";
 import { RxCross2 } from 'react-icons/rx';
 import upcoming from "../../assets/new-home/events/up-coming.png"
 
+function getSlidesToShow() {
+    if (typeof window === 'undefined') {
+        return 1;
+    }
+
+    return window.matchMedia('(min-width:768px)').matches ? 2 : 1;
+}
+
 export default function Events() {
     const sliderRef = useRef<HTMLDivElement | null>(null);
     const autoRef = useRef<number | null>(null);
@@ -13,9 +21,7 @@ export default function Events() {
     const currentIndexRef = useRef(0);
     const nodesRef = useRef<HTMLElement[]>([]);
     const scrollTimeout = useRef<number | null>(null);
-    const [slidesToShow, setSlidesToShow] = useState<number>(
-        typeof window !== 'undefined' && window.matchMedia('(min-width:768px)').matches ? 2 : 1
-    );
+    const [slidesToShow, setSlidesToShow] = useState<number>(getSlidesToShow());
 
     const displaySlides = useMemo(() => {
         const n = slidesToShow;
@@ -69,8 +75,7 @@ export default function Events() {
 
     useEffect(() => {
         const handleResize = () => {
-            const s = window.matchMedia('(min-width:768px)').matches ? 2 : 1;
-            setSlidesToShow(s);
+            setSlidesToShow(getSlidesToShow());
             // update nodes next tick
             setTimeout(updateNodes, 50);
         };

@@ -82,7 +82,11 @@ export default defineConfig(({ isSsrBuild }) => ({
         },
     rollupOptions: {
       output: isSsrBuild
-        ? undefined
+        ? {
+            // SSR build outputs a single entry point to dist/server/entry-server.js
+            entryFileNames: "entry-server.js",
+            format: "es",
+          }
         : {
             manualChunks(id) {
               if (id.includes("node_modules")) {

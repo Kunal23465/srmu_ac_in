@@ -160,8 +160,8 @@ export default function DynamicBreadcrumbs() {
 
   ];
 
-  const isMatchedPharma = allowedUrlsPharma.includes(window.location.pathname);
-  const isMatchedLaw = allowedUrlsLaw.includes(window.location.pathname);
+  const isMatchedPharma = allowedUrlsPharma.includes(location.pathname);
+  const isMatchedLaw = allowedUrlsLaw.includes(location.pathname);
   return (
     <section
       className={`banner-section ${location.pathname === "/online-admission" && "big-banner"

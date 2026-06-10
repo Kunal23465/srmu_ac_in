@@ -394,8 +394,8 @@ async function createServer() {
         statusCode = (result as any).statusCode || 200;
       } catch (err) {
         process.stderr.write(`SSR ERROR: ${String(err)}\n`);
-        // Fallback to basic HTML if SSR fails
-        appHtml = '<div id="root"><div>Loading...</div></div>';
+        // Fallback to basic HTML if SSR fails (note: wrapped in root div by template)
+        appHtml = '<div>SSR Error - Check server logs</div>';
         statusCode = 500;
       }
       const helmetHead = [

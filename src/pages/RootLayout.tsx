@@ -33,14 +33,18 @@ const RootLayout: React.FC = () => {
 
   // Scroll to top on route change
   useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+    if (typeof window !== "undefined") {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
   }, [location]);
 
   // Right sidebar visibility
   useEffect(() => {
+    if (typeof window === "undefined") return;
+    
     const handleScroll = () => {
       setShowRightBar(window.scrollY > 10);
     };
@@ -54,6 +58,8 @@ const RootLayout: React.FC = () => {
 
   // Footer lazy render
   useEffect(() => {
+    if (typeof window === "undefined") return;
+    
     if (!isHomeRoute) {
       setShouldRenderFooter(true);
       return;
@@ -85,11 +91,13 @@ const RootLayout: React.FC = () => {
   }, [isHomeRoute]);
 
   const openWhatsApp = () => {
-    window.open(
-      "https://wa.me/919120007948",
-      "_blank",
-      "noopener,noreferrer"
-    );
+    if (typeof window !== "undefined") {
+      window.open(
+        "https://wa.me/919120007948",
+        "_blank",
+        "noopener,noreferrer"
+      );
+    }
   };
 
   return (

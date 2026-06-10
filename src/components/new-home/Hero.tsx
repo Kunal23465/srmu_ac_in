@@ -96,7 +96,7 @@ export default function Hero() {
             aria-hidden="true"
             loading="eager"
             decoding="async"
-            fetchPriority="high"
+            fetchpriority="high"
             width={1348}
             height={564}
             sizes="100vw"
