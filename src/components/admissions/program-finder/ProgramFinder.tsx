@@ -190,9 +190,9 @@ const ProgramFinder: React.FC = () => {
       />
       <div className={`${Classes.container} mt-16`}>
         <div className="w-full flex items-center justify-center flex-col">
-          <h1 className="text-[#023047] text-[22px] sm:text-[28px] lg:text-[3.125rem] fw500">
+          <h2 className="text-[#023047] text-[22px] sm:text-[28px] lg:text-[3.125rem] fw500">
             Program Finder
-          </h1>
+          </h2>
           <div className="w-[140px] h-[3px] bg-amber-400 mt-4 mb-4" />
         </div>
         <ProgramFilter
