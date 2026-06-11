@@ -7,6 +7,7 @@ import iqaccard5 from "../../../assets/images/about/iqac-overview/iqaccard-5.web
 import { TableRowData } from "../../../types/table-data-types";
 
 // iqac pdf
+import  annualReport2024_25 from "../../../assets/pdf/iqac-overview/Point No.1.pdf"
 import annualReport2022_23 from "../../../assets/pdf/iqac-overview/university-annual-report-2022-23.pdf";
 import annualReport2021_22 from "../../../assets/pdf/iqac-overview/annual-report-final-2021-2022.pdf";
 import annualReport2020_21 from "../../../assets/pdf/iqac-overview/Annual-Report-2020_21.pdf";
@@ -59,7 +60,7 @@ import iqacCard3 from "../../../assets/images/about/iqac-overview/iiqa-iqac.webp
 import iqaccardpdf1 from "../../../assets/pdf/iqac-overview/IQACORGANISATIONCHART-041223011729.pdf";
 import iqaccardpdf2 from "../../../assets/pdf/iqac-overview/Composition-of-Internal-Quality-Assurance-Cell-IQA-041223011746.pdf";
 import iqaccardpdf3 from "../../../assets/pdf/iqac-overview/iiqa-270224043528.pdf";
-
+import annualReport2023_24 from "../../../assets/pdf/iqac-overview/University_Annual_Report_2023-24.pdf";
 export const iqacOverviewData: customeOverViewType = {
   heading: "IQAC Overview",
   content:
@@ -216,6 +217,16 @@ Sharing of research findings and networking with other institutions in India and
 ];
 
 export const UniversityannualReportData: TableRowData[] = [
+  {
+    id: 9,
+    title: "Annual Report (Session: 2024-25)",
+    download: { type: "pdf", url: annualReport2024_25 },
+  },
+   {
+    id: 0,
+    title: "Annual Report (Session: 2023-24)",
+    download: { type: "pdf", url: annualReport2023_24 },
+  },
   {
     id: 1,
     title: "Annual Report (Session: 2022-23)",

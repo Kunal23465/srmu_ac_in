@@ -25,6 +25,7 @@ import CustomEligibilitySection from "../../../utils/custom/CustomEligibilitySec
 import DeferredSection from "../../home/DeferredSection";
 import DeferredSectionFallback from "../../home/DeferredSectionFallback";
 
+const Map = lazy(() => import("../../new-home/Map"));
 const ProgramFeeTable = lazy(() => import("./ProgramFeeTable"));
 const CustomDepartmentSlider = lazy(() => import("../../../utils/custom/CustomDepartmentSlider"));
 const CustomDepartmentHighlights = lazy(() => import("../../../utils/custom/CustomDepartmentHighlights"));
@@ -102,12 +103,80 @@ const toIso8601CourseDuration = (value?: string | number | null) => {
 
   return undefined;
 };
-
+const faqs = [
+  {
+    q: "Which college is better for BCA in Lucknow?",
+    a: "The best BCA college depends on factors such as curriculum, industry exposure, placements, infrastructure, and specialization options. Shri Ramswaroop Memorial University (SRMU) is among the leading choices for BCA in Lucknow due to its industry-aligned curriculum, specialized programs in Data Science & Artificial Intelligence and Artificial Intelligence & Machine Learning, modern computing labs, hackathons, certification opportunities, and placement support. Students should compare colleges based on their career goals and preferred specialization."
+  },
+  {
+    q: "What is the fee of a BCA college in Lucknow?",
+    a: "The fee for BCA colleges in Lucknow varies depending on the institution and specialization. Generally, BCA fees range from ₹25,000 to ₹1,50,000 per year. Specialized programs such as BCA Data Science & Artificial Intelligence and BCA Artificial Intelligence & Machine Learning may have different fee structures due to advanced labs, industry training, and certification components."
+  },
+  {
+    q: "Which BCA course is best?",
+    a: (
+      <>
+        <p className="mb-3">
+          The best BCA course is one that aligns with current industry demands and future career opportunities. Popular specializations include:
+        </p>
+        <ul className="list-disc pl-5 space-y-1">
+          <li>BCA Data Science & Artificial Intelligence</li>
+          <li>BCA Artificial Intelligence & Machine Learning</li>
+          <li>BCA Cyber Security</li>
+          <li>BCA Cloud Computing</li>
+          <li>BCA Full Stack Development</li>
+          <li>BCA Software Development</li>
+        </ul>
+        <p className="mt-3">
+          Among these, BCA Data Science & Artificial Intelligence and BCA Artificial Intelligence & Machine Learning are highly sought after due to the growing demand for professionals in AI, machine learning, automation, and data analytics.
+        </p>
+      </>
+    )
+  },
+  {
+    q: "Is BCA available in Ramswaroop?",
+    a: "Yes. Shri Ramswaroop Memorial University (SRMU), Lucknow offers BCA programs, including specialized courses such as BCA Data Science & Artificial Intelligence and BCA Artificial Intelligence & Machine Learning. The programs focus on practical learning, industry projects, certifications, internships, and career-oriented skill development."
+  },
+  {
+    q: "Which BCA colleges in Lucknow offer low fees?",
+    a: "Several government and private colleges in Lucknow offer affordable BCA programs. Government institutions generally have lower tuition fees, while private universities may provide additional benefits such as industry exposure, advanced labs, placement assistance, and specialized technology programs. Students should compare both fees and career opportunities before making a decision."
+  },
+  {
+    q: "Which BCA colleges in Lucknow offer direct admission?",
+    a: "Many private universities and colleges in Lucknow offer direct admission to BCA programs based on Class 12 marks and eligibility criteria. Admission policies vary by institution, so students should check the latest admission guidelines directly with the college or university."
+  },
+  {
+    q: "Which are the best BCA colleges in Lucknow with fees?",
+    a: (
+      <>
+        <p className="mb-3">
+          Some of the well-known institutions offering BCA programs in Lucknow include:
+        </p>
+        <ul className="list-disc pl-5 space-y-1">
+          <li>Shri Ramswaroop Memorial University (SRMU)</li>
+          <li>Shri Ramswaroop Memorial College of Management (SRMCM)</li>
+        </ul>
+        <p className="mt-3">
+          Fees vary across institutions depending on facilities, specialization, and academic offerings. Students should evaluate placements, curriculum, industry partnerships, infrastructure, and career support alongside the fee structure.
+        </p>
+      </>
+    )
+  },
+  {
+    q: "Which are the top colleges for BCA in Lucknow?",
+    a: "Top BCA colleges in Lucknow are generally recognized for academic excellence, placement support, industry collaborations, modern infrastructure, and industry-oriented curriculum. Institutions such as Shri Ramswaroop Memorial University (SRMU) and Shri Ramswaroop Memorial College of Management (SRMCM) are known for offering career-focused BCA programs with opportunities for practical learning, certifications, projects, and industry exposure."
+  },
+  {
+    q: "Is BCA a 2-year or 3-year course?",
+    a: "BCA (Bachelor of Computer Applications) is a 3-year undergraduate degree program divided into six semesters. The program provides foundational and advanced knowledge in computer applications, programming, databases, networking, and emerging technologies such as Artificial Intelligence, Machine Learning, and Data Science."
+  }
+];
 const ProgramDetails: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
   const location = useLocation();
   const { programName } = useParams();
   const [expanded, setExpanded] = useState(false);
+   const [open, setOpen] = useState<number | null>(0);
   const [isProgramRouteLoading, setIsProgramRouteLoading] = useState(false);
   const [hasProgramRouteLoaded, setHasProgramRouteLoaded] = useState(false);
 
@@ -335,9 +404,10 @@ const ProgramDetails: React.FC = () => {
             </Link>
           }
           {/* @ts-ignore */}
-          <h1 className="lg:text-[50px] leading-[1.2] md:text-[46.875px] text-[28px] fw500 text-[#023047]">{dataByID?.name}</h1>
+          <h2 className="lg:text-[42px] leading-[1.2] md:text-[36px] text-[28px] fw500 text-[#023047]">{dataByID?.name}</h2>
           {/* @ts-ignore */}
-          <p className="text-[#023047] mt-3 leading-[1.2] text-[18px] sm:text-[24px] lg:text-[2rem] fw500">{dataByID?.title}</p>
+          {location.pathname==="/program/bca-data-science-artificial-intelligence"?<h1 className="text-[#023047] mt-3 leading-[1.2] text-[18px] sm:text-[20px] lg:text-[22px] fw500">Best BCA College in Uttar Pradesh</h1>:          <p className="text-[#023047] mt-3 leading-[1.2] text-[18px] sm:text-[20px] lg:text-[22px] fw500">{dataByID?.title}</p>
+}
 
           <div className={` py-7 md:py-10 lg:py-14`}>
             <div className={`block  lg:flex   gap-4  md:items-stretch   justify-between md:flex-row items-start`}>
@@ -481,6 +551,98 @@ const ProgramDetails: React.FC = () => {
             </div>
           </DeferredSection>
         )}
+
+{
+  location.pathname==="/program/bca-data-science-artificial-intelligence" &&  <section className="py-12 md:py-16 bg-slate-100">
+      <div className={`${Classes["container"]}`}>
+        <div className="text-center mb-8 md:mb-10">
+          <h2 className="text-2xl md:text-4xl font-bold text-gray-900">
+            Frequently Asked Questions
+          </h2>
+          
+        </div>
+
+        <div
+          className={`grid transition-all duration-500 ease-in-out`}
+        >
+          <div className="overflow-hidden">
+            <div className="space-y-3">
+              {faqs.map((f, i) => {
+                const isOpen = open === i;
+
+                return (
+                  <div
+                    key={f.q}
+                    className="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden"
+                  >
+                    <button
+                      onClick={() => setOpen(isOpen ? null : i)}
+                      aria-expanded={isOpen}
+                      className="w-full flex items-center justify-between gap-3 md:gap-4 p-4 md:p-5 text-left hover:bg-gray-50 transition-colors"
+                    >
+                      <span className="text-[13px] md:text-base font-bold text-gray-900">
+                        {f.q}
+                      </span>
+
+                      <span
+                        className={`flex-shrink-0 h-8 w-8 rounded-full bg-[#0A4A8F]/10 text-[#0A4A8F] flex items-center justify-center transition-transform duration-300 ${
+                          isOpen ? "rotate-45" : ""
+                        }`}
+                      >
+                        <svg
+                          width="14"
+                          height="14"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <path
+                            d="M12 5v14M5 12h14"
+                            stroke="currentColor"
+                            strokeWidth="2.5"
+                            strokeLinecap="round"
+                          />
+                        </svg>
+                      </span>
+                    </button>
+
+                    <div
+                      className={`grid transition-all duration-300 ${
+                        isOpen
+                          ? "grid-rows-[1fr] opacity-100"
+                          : "grid-rows-[0fr] opacity-0"
+                      }`}
+                    >
+                      <div className="overflow-hidden">
+                        <div className="px-4 md:px-5 pb-4 md:pb-5 text-[13px] md:text-base text-gray-700 leading-relaxed">
+                          {f.a}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+}
+
+ <DeferredSection minHeight={360} rootMargin="320px 0px" fallback={renderDeferredFallback(360)}>
+            
+              <Suspense fallback={<SectionLoader minHeight={280} />}>
+              <div className={`pb-20`}>
+               <Map />
+               </div>
+              </Suspense>
+         
+          </DeferredSection>
+
+
+         
+
+
+
 
         <DeferredSection minHeight={420} rootMargin="340px 0px" fallback={renderDeferredFallback(420)}>
           <div className={`${isPhd ? "mt-10" : ""}`}>

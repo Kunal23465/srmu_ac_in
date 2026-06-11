@@ -6,8 +6,10 @@ import event3Small from "../../assets/new-home/events/optimized/3-480.webp";
 import event3 from "../../assets/new-home/events/optimized/3-960.webp";
 import event4Small from "../../assets/new-home/events/optimized/4-480.webp";
 import event4 from "../../assets/new-home/events/optimized/4-960.webp";
-import eventcard1 from "../../assets/new-home/events/card-2.jpeg";
-import eventcard2 from "../../assets/new-home/events/card-1.jpeg";
+import eventcard1 from "../../assets/new-home/events/hours.webp";
+import eventcard1Small from "../../assets/new-home/events/hours-small.webp";
+import eventcard2 from "../../assets/new-home/events/algo-big.webp";
+import eventcard2Small from "../../assets/new-home/events/algo-small.webp";
 export type EventItem = {
   id: string | number;
   image: string;
@@ -27,7 +29,7 @@ const eventsData: EventItem[] = [
     
 isUpcoming:true,
     image: eventcard1,
-    imageSmall: eventcard1,
+    imageSmall: eventcard1Small,
     date: "June 8, 2026",
     title: "40 Hours Online Mediation Training Program - Become a Certified Mediator",
     description: `
@@ -95,7 +97,7 @@ isUpcoming:true,
     id: 4,
     isUpcoming:true,
     image: eventcard2,
-    imageSmall: eventcard2,
+    imageSmall: eventcard2Small,
     date: "June 8, 2026",
     title: "Online National Conference on Algorithmic Justice: Re-imagining Due Process in the Age of AI",
     description: `

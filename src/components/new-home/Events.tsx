@@ -4,6 +4,7 @@ import { FaArrowRight, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import Classes from "../../utils/styles/Global.module.css";
 import { RxCross2 } from 'react-icons/rx';
 import upcoming from "../../assets/new-home/events/up-coming.png"
+import { Link } from 'react-router-dom';
 
 function getSlidesToShow() {
     if (typeof window === 'undefined') {
@@ -218,14 +219,21 @@ export default function Events() {
                                             {stripHtml(e.description)}
                                         </p>
 
-                                        {e.description && (
+                                        {/* {e.description && (
                                             <button
                                                 onClick={() => openModal(e.id)}
                                                 className="inline-flex items-center gap-2 text-sm font-medium text-[#FFC107] cursor-pointer"
                                             >
                                                 Read more <FaArrowRight className="text-xs" />
                                             </button>
-                                        )}
+                                        )} */}
+                                        {/* /event#conferences */}
+                                        <Link to="/events#conferences"
+                                               
+                                                className="inline-flex items-center gap-2 text-sm font-medium text-[#FFC107] cursor-pointer"
+                                            >
+                                                Read more <FaArrowRight className="text-xs" />
+                                            </Link>
                                     </div>
                                 </article>
                             );
