@@ -20,6 +20,7 @@
     "aos": "^2.3.4",
     "axios": "^1.13.2",
     "axios-retry": "^4.5.0",
+    "dotenv": "^16.1.4",
     "embla-carousel-autoplay": "^8.6.0",
     "embla-carousel-react": "^8.6.0",
     "express": "^4.22.1",
@@ -40,21 +41,20 @@
     "react-router-dom": "^6.30.3",
     "react-select": "^5.10.2",
     "tailwindcss": "^4.1.16",
-    "yup": "^1.7.1",
-    "dotenv": "^16.1.4"
+    "yup": "^1.7.1"
   },
   "devDependencies": {
-    "@types/dotenv": "^8.2.0",
     "@eslint/js": "^9.9.0",
     "@types/aos": "^3.0.8",
     "@types/compression": "^1.8.1",
+    "@types/dotenv": "^8.2.0",
     "@types/express": "^5.0.6",
     "@types/html-minifier-terser": "^7.0.2",
     "@types/node": "^25.4.0",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@types/sizzle": "^2.3.10",
-    "@vitejs/plugin-react": "^4.7.0",
+    "@vitejs/plugin-react": "^6.0.2",
     "eslint": "^9.9.0",
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",
     "eslint-plugin-react-refresh": "^0.4.9",
@@ -66,7 +66,7 @@
     "tsx": "^4.21.0",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.0.1",
-    "vite": "^6.4.2"
+    "vite": "^8.0.16"
   },
   "overrides": {
     "pm2": {
