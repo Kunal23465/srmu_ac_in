@@ -15,7 +15,7 @@ const Map: React.FC = () => {
 
 
           <div className=" overflow-hidden rounded-2xl shadow-lg ring-1 ring-black/5">
-            <a className='cursor-pointer ' href="https://maps.google.com/maps?q=Uttar+Pradesh,+India" target="_blank" rel="noopener noreferrer">
+            <a className='cursor-pointer ' href="https://maps.app.goo.gl/vSNyWkPssAdfDpkV8" target="_blank" rel="noopener noreferrer">
               <img
                 src={mapSmall}
                 srcSet={`${mapSmall} 960w, ${map} 1920w`}

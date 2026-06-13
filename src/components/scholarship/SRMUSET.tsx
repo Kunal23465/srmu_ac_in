@@ -14,6 +14,8 @@ const SRMUSET: React.FC = () => {
             <a
               className="font-bold underline"
               href="https://srmuset.srmu.ac.in/?_gl=1*109ctap*_gcl_au*NzM0NDM3NTE2LjE3NjMxMTgyMjg.*_ga*MTM1NTE3MDg2Ny4xNzYzMTE4MjI4*_ga_QZEQ59Q6ZL*czE3NjQ1NjE5MjIkbzc3JGcxJHQxNzY0NTY0MTI0JGo2MCRsMCRoNjA4MTA1OTI2"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Know More
             </a>

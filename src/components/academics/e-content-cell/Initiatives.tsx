@@ -7,10 +7,14 @@ const Initiatives = () => {
         <strong> Initiatives</strong>
       </h2>
       <div className="lg:text-[18px] text-[15.75px] md:text-[16.875px] sm:text-[15.75px] fw500 theme_color_yellow">
-        <Link to="/swayam-nptel-local-chapter">SRMU SWAYAM NPTEL Local Chapter</Link>
+        <Link aria-label={`SRMU SWAYAM NPTEL Local Chapter`} to="/swayam-nptel-local-chapter">
+          SRMU SWAYAM NPTEL Local Chapter
+        </Link>
       </div>
       <div className="lg:text-[18px] text-[15.75px] md:text-[16.875px] sm:text-[15.75px] fw500 theme_color_yellow">
-        <Link to="/iirs-isro">IIRS&nbsp;- ISRO&nbsp;Outreach Program</Link>
+        <Link aria-label={`IIRS - ISRO Outreach Program`} to="/iirs-isro">
+          IIRS&nbsp;- ISRO&nbsp;Outreach Program
+        </Link>
       </div>
     </div>
   );

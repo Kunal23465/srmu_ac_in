@@ -307,6 +307,7 @@ const Footer: React.FC = () => {
                 <a
                   href=" https://twitter.com/srmu_lucknow"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className=" flex items-center justify-center transition-all duration-300 hover:border-[#ffb703] hover:bg-transparent hover:text-[#ffb703] cursor-pointer"
                   aria-label="LinkedIn"
                 >

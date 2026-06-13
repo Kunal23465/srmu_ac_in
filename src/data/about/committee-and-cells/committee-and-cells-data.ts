@@ -275,38 +275,38 @@ Objectives of the Committee
     readMoreLink: "/committe/internal-complaints-committee",
   },
   {
-    id: 7,
-    title: "Digital Learning Monitoring Cell",
-    breadcrumb: "Digital Learning Monitoring Cell",
+  id: 7,
+  title: "Digital Learning Monitoring Cell",
+  breadcrumb: "Digital Learning Monitoring Cell",
 
-    routeKey: "digital-learning-monitoring-cell",
+  routeKey: "digital-learning-monitoring-cell",
 
-    description:
-      "The Digital Learning Monitoring Cell promotes digital culture on campus by implementing the Digital Action Plan and formulating short, medium, and long-term strategies for a Smart University campus.",
+  description:
+    "Under Digital Initiative by MHRD and Government of India, “Digital Learning Monitoring Cell” is established in Shri Ramswaroop Memorial University.",
 
-    longDescription: `
-Under the Digital Initiative by MHRD and the Government of India, the Digital Learning Monitoring Cell has been established at Shri Ramswaroop Memorial University. 
-It aims to foster digital culture by following and implementing the Digital Action Plan 17-by-17, including a 3-year immediate plan, 7-year intermediate plan, and 15-year vision for a 'University Smart Campus'.
-    `,
+  longDescription: `
+Under Digital Initiative by MHRD and Government of India, “Digital Learning Monitoring Cell” is established in Shri Ramswaroop Memorial University. In fast changing world of educational technology, the campuses across the world are using educational technology for the better functioning and academic standards. The objective of “Digital Learning Monitoring Cell” is to inculcate digital culture by following and implementing Digital Action Plan 17-by-17. As per Govt. guidelines, the Digital Learning Monitoring Cell would work out and formulate 3 years immediate plan, 7 years intermediate plan and 15 year vision for the ‘University Smart Campus’.
+  `,
 
-    members: [
-      "Dr. Shalini Agrawal, HOD, Department of Computer Science & Engineering (Chairperson)",
-      "Mr. Abhay Singh, Deputy Registrar (Academics) (Member)",
-      "Mr. Rakesh Kumar Vishwakarma, Assistant System Administrator (Member)",
-      "Mr. Rakesh Jaiswal, Finance Officer (Member)",
-      "Dr. P.C Mishra, Associate Professor, ILS (Member)",
-      "Dr. Tabish Qidwai, Associate Professor, IBST (Member)",
-    ],
+  members: [
+    "Dr. Sonal Prasad, Assistant Professor, IBST (Chairperson)",
+    "Mr. Neelesh Mishra, Assistant Professor, IOT (Member)",
+    "Dr. P.C. Mishra, Associate Professor, ILS (Member)",
+    "Dr. Sankalp Mishra, Assistant Professor, IBST (Member)",
+    "Mr. Rakesh Vishwakarma, Assistant System Administrator (Member)",
+    "Mr. Abhash Gupta, Assistant Registrar, Registrar Office (Member)",
+  ],
 
-    contact: [
+   contact: [
       "Chairman/ Chairperson, Committee members **OR**",
       "Mail at registrar.office@srmu.ac.in / registrar@srmu.ac.in / vc@srmu.ac.in **OR**",
       "Register at https://srmu.ac.in/grievance-redressal-system for Online Grievance Redressal",
     ],
 
-    imagePath: digital,
-    readMoreLink: "/committe/digital-learning-monitoring-cell",
-  },
+  imagePath: digital,
+
+  readMoreLink: "/committe/digital-learning-monitoring-cell",
+},
   {
     id: 8,
     title: "Gender Sensitization Cell",

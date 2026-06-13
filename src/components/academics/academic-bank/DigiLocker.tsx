@@ -28,7 +28,7 @@ const DigiLocker: FC = () => {
                 </p>
             </div>
             <div>
-                <a className='color_light_blue fw500 lg:text-[16px] md:text-[15px] sm:text-[14px]' href='https://www.digilocker.gov.in/'>
+                <a className='color_light_blue fw500 lg:text-[16px] md:text-[15px] sm:text-[14px]' href='https://www.digilocker.gov.in/' target='_blank' rel='noopener noreferrer'>
                     GO TO DIGILOCKER
                 </a>
             </div>

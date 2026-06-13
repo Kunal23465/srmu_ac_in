@@ -29,7 +29,7 @@ import riteshkhanna from "../../../assets/images/about/leadershipGovernance/rite
 import bobbylyall from "../../../assets/images/about/leadershipGovernance/bobbylyall.webp";
 import sksingh from "../../../assets/images/about/leadershipGovernance/sksingh.webp";
 import rsbajpai from "../../../assets/images/about/leadershipGovernance/rsbajpai.webp";
-import alokeshagarwal from "../../../assets/images/about/leadershipGovernance/alokeshagarwal.webp";
+import alokeshagarwal from "../../../assets/images/about/leadershipGovernance/alokesh.jpeg";
 import rajeshporwal from "../../../assets/images/about/leadershipGovernance/rajeshporwal.webp";
 import krishnasrivastava from "../../../assets/images/about/leadershipGovernance/krishnasrivastava.webp";
 import vnpathak from "../../../assets/images/about/leadershipGovernance/vnpathak.webp";

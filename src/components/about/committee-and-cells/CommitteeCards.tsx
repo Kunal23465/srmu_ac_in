@@ -34,6 +34,7 @@ const CommitteeCard: React.FC<CommitteeCardProps> = ({
       </div>
       <div className="sm:mt-4 pt-4  transition-colors duration-300 group-hover:border-gray-300">
         <Link
+           aria-label="Read More"
           to={readMoreLink}
           className="text-base sm:text-lg font-medium text-[rgb(15,74,133)] hover:text-blue-300 transition-colors duration-200 flex items-center group-hover:text-blue-200"
         >
