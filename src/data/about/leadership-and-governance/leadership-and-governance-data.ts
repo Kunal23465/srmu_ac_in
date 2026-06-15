@@ -385,9 +385,9 @@ export const academicCouncilData: Member[] = [
     image: rsbajpai,
   },
   {
-    name: "Dr. Alokesh Agarwal",
+    name: "Dr. Alkesh Agrawal",
     title: "(Ex-Officio Member)",
-    position: "Dean, DoECE & Convenor, CIIE, SRMU, Lucknow–Deva Road",
+    position: "Convenor, CIIE, SRMU, Lucknow–Deva Road",
     image: alokeshagarwal,
   },
   {
