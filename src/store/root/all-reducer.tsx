@@ -32,6 +32,7 @@ import { getAllCityByStateIdReducer } from "../api/get-allCity-byStateId-slice";
 import { getAllStateReducer } from "../api/get-allState-slice";
 import { getAllCareerReducer } from "../api/get-allCareer-slice";
 import { getAllProgramByCareerIdReducer } from "../api/get-allprogram-byCareerId-slice";
+import { programFaqReducer } from "../faq/programFaqSlice";
 
 const allReducer = {
   ui: uiReducer,
@@ -65,6 +66,7 @@ const allReducer = {
   getProgramByIntro:programTypeIntroByUrlSliceReducer,
    createEnquiryForEnquiry: submissionForEnquiryReducer,
      getAllCityByStateId: getAllCityByStateIdReducer,
+     programFaq: programFaqReducer,
   getAllStateData: getAllStateReducer,
   getAllCareerData: getAllCareerReducer,
   getAllProgramByCareerIdData: getAllProgramByCareerIdReducer,

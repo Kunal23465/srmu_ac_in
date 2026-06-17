@@ -8,7 +8,7 @@ export interface ProgramFinderParams {
 
 export const fetchWhySrmuLogoById = createAsyncThunk("data/whySrmuLogo", async (params?: ProgramFinderParams) => {
     const response = await API.get("/academicProgram/programRecruiters", {
-        params, // Axios automatically builds query string
+        params, 
     });
     return response.data.data;
 });

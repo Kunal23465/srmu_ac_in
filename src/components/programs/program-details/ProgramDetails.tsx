@@ -24,6 +24,7 @@ import { DEFAULT_SOCIAL_IMAGE, SITE_NAME, SITE_URL, buildCanonicalUrl, stripHtml
 import CustomEligibilitySection from "../../../utils/custom/CustomEligibilitySection";
 import DeferredSection from "../../home/DeferredSection";
 import DeferredSectionFallback from "../../home/DeferredSectionFallback";
+import { fetchProgramFaqByProgramId } from "../../../store/faq/programFaqThunk";
 
 const Map = lazy(() => import("../../new-home/Map"));
 const ProgramFeeTable = lazy(() => import("./ProgramFeeTable"));
@@ -187,6 +188,7 @@ const ProgramDetails: React.FC = () => {
   const { data: counterData, loading: counterLoading } = useSelector((state: RootState) => state.getCounterById);
   const { data: recruiterData, loading: recruiterLoading } = useSelector((state: RootState) => state.getRecruiter);
   const { data: whySrmuLogo, loading: whySrmuLogoLoading } = useSelector((state: RootState) => state.whySrmuLogoById);
+  const { data: programFaq,loading:faqLoading } = useSelector((state: RootState) => state.programFaq);
   const normalizedFeesData = Array.isArray(feesData) ? feesData[0] : feesData;
   const normalizedProgramSlug = resolveProgramRouteSlug(programName || "");
   const hasCurrentProgramData = Boolean(dataByID?.programId && currentDetailsSlug === normalizedProgramSlug);
@@ -256,6 +258,11 @@ const ProgramDetails: React.FC = () => {
     ...(tuitionOffer ? { offers: tuitionOffer } : {}),
   };
 
+  const parsedSchema = programFaq?.seoConfig
+  ? JSON.parse(programFaq.seoConfig)
+  : courseSchema;
+
+  console.log("parsedSchema",parsedSchema);
   useEffect(() => {
     if (!hasCurrentProgramData || !dataByID?.programId) {
       return;
@@ -297,6 +304,7 @@ const ProgramDetails: React.FC = () => {
         dispatch(fetchProgramHeighlightById(normalizedProgramSlug)),
         dispatch(fetchRecruiterById({ slug: normalizedProgramSlug })),
         dispatch(fetchWhySrmuLogoById({ slug: normalizedProgramSlug })),
+       
       ]);
     };
 
@@ -306,6 +314,11 @@ const ProgramDetails: React.FC = () => {
       cancelled = true;
     };
   }, [dispatch, normalizedProgramSlug, programName]);
+
+
+  useEffect(()=>{
+ dispatch(fetchProgramFaqByProgramId({ slug: normalizedProgramSlug }))
+  },[dispatch, normalizedProgramSlug, programName])
 
   // counter data key change
   const convertedCounterData = counterData.map((item) => {
@@ -380,7 +393,8 @@ const ProgramDetails: React.FC = () => {
   }
 
 
-  console.log("metaTitle:", metaTitle);
+  console.log("programFaq:", programFaq);
+  console.log("faqLoading",faqLoading)
   return (
     <>
       <SeoHead
@@ -388,7 +402,7 @@ const ProgramDetails: React.FC = () => {
         description={seoDescription}
         pathname={location.pathname}
         image={DEFAULT_SOCIAL_IMAGE}
-        jsonLd={courseSchema}
+        jsonLd={parsedSchema}
       />
       <div className="mt-20 ">
         <div className={`${Classes["container"]} relative`}>
@@ -406,8 +420,10 @@ const ProgramDetails: React.FC = () => {
           {/* @ts-ignore */}
           <h2 className="lg:text-[42px] leading-[1.2] md:text-[36px] text-[28px] fw500 text-[#023047]">{dataByID?.name}</h2>
           {/* @ts-ignore */}
-          {location.pathname==="/program/bca-data-science-artificial-intelligence"?<h1 className="text-[#023047] mt-3 leading-[1.2] text-[18px] sm:text-[20px] lg:text-[22px] fw500">Best BCA College in Uttar Pradesh</h1>:          <p className="text-[#023047] mt-3 leading-[1.2] text-[18px] sm:text-[20px] lg:text-[22px] fw500">{dataByID?.title}</p>
-}
+<h1 className="text-[#023047] mt-3 leading-[1.2] text-[18px] sm:text-[20px] lg:text-[22px] fw500">Best BCA College in Uttar Pradesh</h1>
+          
+       {/* <p className="text-[#023047] mt-3 leading-[1.2] text-[18px] sm:text-[20px] lg:text-[22px] fw500">{dataByID?.title}</p> */}
+
 
           <div className={` py-7 md:py-10 lg:py-14`}>
             <div className={`block  lg:flex   gap-4  md:items-stretch   justify-between md:flex-row items-start`}>
@@ -553,7 +569,7 @@ const ProgramDetails: React.FC = () => {
         )}
 
 {
-  location.pathname==="/program/bca-data-science-artificial-intelligence" &&  <section className="py-12 md:py-16 bg-slate-100">
+  programFaq?.faqs &&  <section className="py-12 md:py-16 bg-slate-100">
       <div className={`${Classes["container"]}`}>
         <div className="text-center mb-8 md:mb-10">
           <h2 className="text-2xl md:text-4xl font-bold text-gray-900">
@@ -567,7 +583,7 @@ const ProgramDetails: React.FC = () => {
         >
           <div className="overflow-hidden">
             <div className="space-y-3">
-              {faqs.map((f, i) => {
+              { programFaq?.faqs.map((f, i) => {
                 const isOpen = open === i;
 
                 return (
@@ -578,14 +594,14 @@ const ProgramDetails: React.FC = () => {
                     <button
                       onClick={() => setOpen(isOpen ? null : i)}
                       aria-expanded={isOpen}
-                      className="w-full flex items-center justify-between gap-3 md:gap-4 p-4 md:p-5 text-left hover:bg-gray-50 transition-colors"
+                      className="w-full flex cursor-pointer items-center justify-between gap-3 md:gap-4 p-4 md:p-5 text-left hover:bg-gray-50 transition-colors"
                     >
                       <span className="text-[13px] md:text-base font-bold text-gray-900">
-                        {f.q}
+                        {f.faqQues}
                       </span>
 
                       <span
-                        className={`flex-shrink-0 h-8 w-8 rounded-full bg-[#0A4A8F]/10 text-[#0A4A8F] flex items-center justify-center transition-transform duration-300 ${
+                        className={`flex-shrink-0 h-8 w-8  rounded-full bg-[#0A4A8F]/10 text-[#0A4A8F] flex items-center justify-center transition-transform duration-300 ${
                           isOpen ? "rotate-45" : ""
                         }`}
                       >
@@ -613,9 +629,10 @@ const ProgramDetails: React.FC = () => {
                       }`}
                     >
                       <div className="overflow-hidden">
-                        <div className="px-4 md:px-5 pb-4 md:pb-5 text-[13px] md:text-base text-gray-700 leading-relaxed">
-                          {f.a}
-                        </div>
+                         <div
+      className="mt-2 text-gray-600 px-4 pb-4"
+      dangerouslySetInnerHTML={{ __html: f.faqAns }}
+    />
                       </div>
                     </div>
                   </div>
