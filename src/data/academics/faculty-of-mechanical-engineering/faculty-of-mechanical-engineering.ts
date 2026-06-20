@@ -37,8 +37,25 @@ import mv8 from "../../../assets/images/academics/institutes/mechanical/mv8.jpg"
 import mv9 from "../../../assets/images/academics/institutes/mechanical/mv9.jpg";
 import mv10 from "../../../assets/images/academics/institutes/mechanical/mv10.jpg";
 import mv11 from "../../../assets/images/academics/institutes/mechanical/mv11.jpg";
-
+import saqib from "../../../assets/images/academics/institutes/mechanical/Saquib Bin Reyaz.png";
+import apurva from "../../../assets/images/academics/institutes/mechanical/APURVA ANAND.png";
 export const facultyDetailsOfMeDepartment: FacultyItem[] = [
+{
+    id: 12,
+    name: "Dr. Md Saquib Bin Reyaz",
+    designation: "Assistant Professor",
+    image: saqib,
+    cardBgColor: "transparent",
+  },
+  {
+    id: 13,
+    name: "Dr. Apurva Anand",
+    designation: "Assistant Professor and Director",
+    image: apurva,
+    cardBgColor: "transparent",
+  },
+
+
   {
     id: 1,
     name: "Mr. Neeraj Kumar Gupta",

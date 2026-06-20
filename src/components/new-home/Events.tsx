@@ -219,6 +219,24 @@ export default function Events() {
                                             {stripHtml(e.description)}
                                         </p>
 
+                                        {
+                                            e.isRedirect? <Link to="/events#conferences"
+                                               
+                                                className="inline-flex items-center gap-2 text-sm font-medium text-[#FFC107] cursor-pointer"
+                                            >
+                                                Read more <FaArrowRight className="text-xs" />
+                                            </Link> : <>
+                                            {e.description && (
+                                            <button
+                                                onClick={() => openModal(e.id)}
+                                                className="inline-flex items-center gap-2 text-sm font-medium text-[#FFC107] cursor-pointer"
+                                            >
+                                                Read more <FaArrowRight className="text-xs" />
+                                            </button>
+                                        )}
+                                            </>
+                                        }
+
                                         {/* {e.description && (
                                             <button
                                                 onClick={() => openModal(e.id)}
@@ -228,12 +246,7 @@ export default function Events() {
                                             </button>
                                         )} */}
                                         {/* /event#conferences */}
-                                        <Link to="/events#conferences"
-                                               
-                                                className="inline-flex items-center gap-2 text-sm font-medium text-[#FFC107] cursor-pointer"
-                                            >
-                                                Read more <FaArrowRight className="text-xs" />
-                                            </Link>
+                                       
                                     </div>
                                 </article>
                             );

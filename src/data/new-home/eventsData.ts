@@ -10,6 +10,12 @@ import eventcard1 from "../../assets/new-home/events/hours.webp";
 import eventcard1Small from "../../assets/new-home/events/hours-small.webp";
 import eventcard2 from "../../assets/new-home/events/algo-big.webp";
 import eventcard2Small from "../../assets/new-home/events/algo-small.webp";
+import alumini_connect_desktop from "../../assets/new-home/events/alumini-connect-desktop.webp";
+import alumini_connect_mobile from "../../assets/new-home/events/alumini-connect-mobile.webp";
+import alumini1_desktop from "../../assets/new-home/events/alumini1-desktop.webp";
+import alumini1_mobile from "../../assets/new-home/events/alumini1-mobile.webp";
+import alumini2_desktop from "../../assets/new-home/events/alumini2-desktop.webp";
+import alumini2_mobile from "../../assets/new-home/events/alumini2-mobile.webp";
 export type EventItem = {
   id: string | number;
   image: string;
@@ -19,14 +25,15 @@ export type EventItem = {
   excerpt?: string;
   description?: string;
   isUpcoming?: boolean;
+  isRedirect?: boolean;
   // theme token: used by UI to pick correct bg classes
   token?: "accent" | "primary" | "neutral";
 };
 
 const eventsData: EventItem[] = [
   {
-    id: 3,
-    
+    id: 1,
+   isRedirect:true, 
 isUpcoming:true,
     image: eventcard1,
     imageSmall: eventcard1Small,
@@ -94,8 +101,9 @@ isUpcoming:true,
   `,
   },
   {
-    id: 4,
+    id: 2,
     isUpcoming:true,
+    isRedirect:true, 
     image: eventcard2,
     imageSmall: eventcard2Small,
     date: "June 8, 2026",
@@ -173,9 +181,74 @@ isUpcoming:true,
     </div>
   `,
   },
+   {
+    id: 3,
+    isRedirect:false, 
+    image: alumini_connect_desktop,
+    imageSmall: alumini_connect_mobile,
+    date: "June 18th , 2026",
+    title: `Alumni Connect 2026 – "A Bridge Between Our Proud Past and a Promising Future"`,
+    description: `
+    <p>
+    The Institute of Management, Commerce & Economics (IMCE), Faculty of Commerce & Economics, SRMU, successfully organized "Alumni Connect 2026" on 18th June 2026, 10:00 AM–12:30 PM, via Google Meet, under the theme "Reconnect, Inspire, Empower." The event connected alumni with current students of B.Com, BA (Hons.) Economics, and M.Com programmes.
+    </p>
+
+    <p class="mt-2">
+The session featured keynote talks by distinguished alumni from corporate, financial, and entrepreneurial backgrounds, followed by a panel discussion on industry trends, career opportunities, and higher education prospects. An interactive Q&A allowed students to seek mentorship and career advice, while a networking session enabled deeper alumni-student-faculty connections.
+    </p>
+
+    <p class="mt-2">
+The event was graced by university leadership, including Chancellor Er. Pankaj Agarwal, Vice Chancellor Prof. (Dr.) Vijay Tiwari, and Registrar Prof. (Dr.) Hemendra Sharma, and coordinated by the IMCE organizing committee under Prof. (Dr.) Veena Singh, HOD. The session saw enthusiastic student participation, reaffirming the faculty's commitment to alumni engagement.
+    </p>
+  	`,
+  },
+  {
+    id: 4,
+    isRedirect:false, 
+    image: alumini1_desktop,
+    imageSmall: alumini1_mobile,
+    date: "June 18th , 2026",
+    title: `Alumni Connect 2026 – "Let's Build Tomorrow, Together"`,
+    description: `
+    <p>
+The Polytechnic, Faculty of Civil Engineering, Shri Ramswaroop Memorial University, successfully organized "Alumni Connect 2026" on 18th June 2026, 12:30 PM–2:30 PM, via Google Meet, with the goal of strengthening alumni-student bonds and empowering the next generation of civil engineers.
+    </p>
+
+    <p class="mt-2">
+The session covered key themes including Alumni Career Journeys, Industry Trends & Future Opportunities, Career Guidance & Placement Readiness, Higher Education & Entrepreneurship Opportunities, and Alumni Feedback on Curriculum & Skill Development. Alumni speakers shared their journeys "from classrooms to construction sites, from ideas to impact," giving students a real-world perspective on translating academic learning into professional practice.
+    </p>
+
+    <p class="mt-2">
+An interactive Q&A session enabled students to engage directly with alumni, sparking enthusiastic discussions on career planning, industry expectations, and skill-building.
+The event reflected the Polytechnic's commitment to fostering strong alumni-student relationships, reinforcing the vision of building a stronger foundation for future civil engineers. Encouraged by the positive response, the faculty plans to host similar sessions ahead.    </p>
+  	`,
+  },
+  {
+    id: 5,
+    isRedirect:false, 
+    image: alumini2_desktop,
+    imageSmall: alumini2_mobile,
+    date: "June 18th , 2026",
+    title: `Alumni Conclave 2026 – Connecting Alumni, Inspiring Students, Building Futures`,
+    description: `
+    <p>
+The Institute of Natural Sciences and Humanities (INSH), Shri Ramswaroop Memorial University, successfully organized "Alumni Conclave 2026" on 18th June 2026, 2:00 PM–3:30 PM, via Google Meet. Jointly hosted by the Faculty of Physical Sciences, Faculty of Chemical Sciences, and Faculty of Mathematical & Statistical Sciences, the event centered on the theme "Connecting Alumni, Inspiring Students, Building Futures."
+    </p>
+
+    <p class="mt-2">
+Distinguished alumni speakers — Mr. Akash Saxena (Ph.D. Scholar, IIT Bombay), Mr. Vivekanand Chaubey (Research Scholar, IIT Indore), and Ms. Ritika Jain (MBA Student, SRMCEM Lucknow) — shared their academic journeys and career insights, engaging students through discussions on higher education, research pathways, and career planning.
+    </p>
+
+    <p class="mt-2">
+The session saw enthusiastic participation from students and faculty across departments, who benefited from alumni success stories and direct interaction. The event reaffirmed INSH's commitment to strengthening alumni engagement, with plans for similar sessions ahead.
+</p>
+  	`,
+  },
+
 
   {
-    id: 3,
+    id: 6,
+    isRedirect:true, 
     image: event3,
     imageSmall: event3Small,
     date: "April 22, 2026",
@@ -198,7 +271,8 @@ isUpcoming:true,
   },
 
   {
-    id: 1,
+    id: 7,
+    isRedirect:true,
     image: event1,
     imageSmall: event1Small,
     date: "April 09, 2026",
@@ -237,7 +311,8 @@ isUpcoming:true,
   	`,
   },
   {
-    id: 2,
+    id: 8,
+    isRedirect:true,
     image: event2,
     imageSmall: event2Small,
     date: "March 08, 2026",
@@ -265,7 +340,8 @@ isUpcoming:true,
   	`,
   },
   {
-    id: 4,
+    id: 9,
+    isRedirect:true,
     image: event4,
     imageSmall: event4Small,
     date: "May 22, 2026",
