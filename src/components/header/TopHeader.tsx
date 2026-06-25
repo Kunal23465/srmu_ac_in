@@ -76,7 +76,7 @@ const TopHeader: React.FC = () => {
               </div>
             </button>
 
-            <Link
+            {/* <Link
               target="_blank"
 
               rel="noopener noreferrer"
@@ -85,7 +85,17 @@ const TopHeader: React.FC = () => {
               className="bg-[#FFB703] hover:bg-white px-4 text-[13px] font-medium uppercase border border-[#ffb703] py-[0.875rem] flex items-center text-black"
             >
               Apply Now
+            </Link> */}
+
+             <Link
+              target="_blank"
+             rel="nofollow noopener noreferrer"
+              to="https://phdadmission.srmu.ac.in/"
+              className="bg-[#FFB703] hover:bg-white px-4 text-[13px] font-medium uppercase border border-[#ffb703] py-[0.875rem] flex items-center text-black"
+            >
+             Ph.D Admission 2026
             </Link>
+
             <Link
               target="_blank"
               to="https://convocation.srmu.ac.in"
@@ -150,11 +160,19 @@ const TopHeader: React.FC = () => {
               >
                 Apply Now
               </Link> */}
+               <Link
+              target="_blank"
+             rel="nofollow noopener noreferrer"
+              to="https://phdadmission.srmu.ac.in/"
+              className="bg-[#FFB703] hover:bg-white px-2 text-[9px] font-medium uppercase border border-[#ffb703] py-1 flex items-center text-black"
+            >
+             Ph.D Admission 2026
+            </Link>
               <Link
                 target="_blank"
 
                 to="https://convocation.srmu.ac.in"
-                className={`${Classes["convocation_blink"]} bg-white hover:bg-[#FFB703] hover:border-[#fff] px-2 text-xs sm:text-base font-medium uppercase border border-[#ccc] py-1 flex items-center text-black`}
+                className={`${Classes["convocation_blink"]} bg-white hover:bg-[#FFB703] hover:border-[#fff] px-2 text-[9px] font-medium uppercase border border-[#ccc] py-1 flex items-center text-black`}
               >
                 Convocation 2026
               </Link>
