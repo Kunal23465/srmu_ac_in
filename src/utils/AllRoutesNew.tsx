@@ -474,7 +474,7 @@ export const routes = [
         element: <ProcessAndInitiativePage />,
       },
       {
-        path: "ph-d-notification-session-2025-26",
+        path: "ph-d-notification-session-2026-27",
         element: <PhdNotificationSessionPage />,
       },
       {

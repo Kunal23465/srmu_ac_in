@@ -34,7 +34,7 @@ const eventsData: EventItem[] = [
   {
     id: 1,
    isRedirect:true, 
-isUpcoming:true,
+// isUpcoming:true,
     image: eventcard1,
     imageSmall: eventcard1Small,
     date: "June 8, 2026",
@@ -102,7 +102,7 @@ isUpcoming:true,
   },
   {
     id: 2,
-    isUpcoming:true,
+    // isUpcoming:true,
     isRedirect:true, 
     image: eventcard2,
     imageSmall: eventcard2Small,

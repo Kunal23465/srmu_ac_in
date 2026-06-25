@@ -7,11 +7,11 @@ const PhdNotificationSessionPage:React.FC = () => {
   const location = useLocation();
   return (
     <>
-      {location.pathname === "/ph-d-notification-session-2025-26" ? (
+      {location.pathname === "/ph-d-notification-session-2026-27" ? (
         <>
           {" "}
           <Helmet>
-            <title>Ph.D. Notification (Session: 2025-26) | Shri Ramswaroop Memorial University, Lucknow</title>
+            <title>Ph.D. Notification (Session: 2026-27) | Shri Ramswaroop Memorial University, Lucknow</title>
             <meta
               name="description"
               content="Shri Ramswaroop Memorial University warmly welcomes aspiring scholars to apply for its esteemed Ph.D. program, marking the beginning of a transformative academic journey."

@@ -1,7 +1,7 @@
 import { customeOverViewType } from "../../../types/home-data-type";
 
 export const PhdNotificationOverviewData: customeOverViewType = {
-  heading: "Ph.D. Notification (Session: 2025-26)",
+  heading: "Ph.D. Notification (Session: 2026-27)",
   content:
     "Shri Ramswaroop Memorial University extends a warm invitation to aspiring scholars to apply for its esteemed Ph.D. program, signaling the commencement of a transformative academic endeavor. With a commitment to excellence in research and education, the university invites passionate individuals to embark on a journey of intellectual exploration and scholarly pursuit across a diverse range of disciplines. This invitation marks an opportunity for driven candidates to engage in rigorous inquiry, collaborate with esteemed faculty members, and contribute to cutting-edge research that addresses pressing societal challenges. Aspiring scholars are encouraged to seize this opportunity to advance their careers, broaden their horizons, and make significant contributions to their respective fields and beyond.",
 };

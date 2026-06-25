@@ -56,7 +56,7 @@ const LEGACY_STATIC_PATHS = [
   "/alumni-feedback",
   "/research-overview",
   "/process-and-initiatives",
-  "/ph-d-notification-session-2025-26",
+  "/ph-d-notification-session-2026-27",
   "/ph-d-application-offline-mode",
   "/innovations",
   "/consultancy",
