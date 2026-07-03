@@ -240,6 +240,7 @@ const PlacementRecords: React.FC = () => {
           <div className="flex justify-center mt-12">
             <a
               href={placementPdf}
+              // href="#"
               target="_blank"
               rel="noreferrer"
               className="px-8 py-3 border border-[#f8b922] text-[#f8b922] rounded-xl flex items-center gap-2 hover:bg-[#f8b922] hover:text-black transition"
@@ -358,8 +359,9 @@ const PlacementRecords: React.FC = () => {
         {/* VIEW ALL */}
         <div className="flex justify-center mt-12">
           <a
-            href={placementPdf}
-            target="_blank"
+            // href={placementPdf}
+            // target="_blank"
+            href="#"
             rel="noreferrer"
             className="px-8 py-3 border border-[#f8b922] text-[#f8b922] rounded-xl flex items-center gap-2 hover:bg-[#f8b922] hover:text-black transition"
           >

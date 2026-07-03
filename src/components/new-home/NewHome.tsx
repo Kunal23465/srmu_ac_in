@@ -24,7 +24,7 @@ function NewHome() {
     <div className="min-h-screen bg-white">
       {/* <Header /> */}
       <main>
-        <PciApprovalPopup />
+        {/* <PciApprovalPopup /> */}
         <Hero />
         {/* <Approvals /> */}
         {/* <Excellence /> */}
