@@ -25,7 +25,6 @@ These were removed from sitemap generation in [sitemap.ts](/home/jaishankar/SRMU
 - `/after-class-12th/nutrition-dietetics`
 - `/after-post-graduation/ph-d1`
 - `/news/holi-celebration`
-- `/program/bachelor-in-physiotherapy`
 - `/artificial-intelligence`
 - `/artificial-intelligence/industry-honors1`
 - `/artificial-intelligence/postgraduate`

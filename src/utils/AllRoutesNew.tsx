@@ -506,6 +506,10 @@ export const routes = [
         element: <PublicationPage />,
       },
       {
+        path: "admission-enquiry",
+        element: <AdmissionEnquiryPage />,
+      },
+      {
         path: "admission-enquiry-redirect",
         element: <AdmissionEnquiryPage />,
       },

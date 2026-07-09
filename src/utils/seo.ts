@@ -71,9 +71,13 @@ export const normalizeSeoTitle = (value = "") => {
 
   normalizedTitle = normalizedTitle.replace(/\b(Undergraduate|Postgraduate|Lateral Entry|Industry Honors|Doctoral|Diploma) Programs\b/i, "$1");
 
+  if (!/srmu/i.test(normalizedTitle)) {
+    normalizedTitle = `${normalizedTitle} | ${SITE_NAME_SHORT}`;
+  }
+
   const suffixMatch = normalizedTitle.match(/\s\|\s[^|]+$/);
   const suffix = suffixMatch?.[0] || "";
-  const maxTitleLength = 65;
+  const maxTitleLength = 60;
 
   if (normalizedTitle.length <= maxTitleLength) {
     return normalizedTitle;
@@ -86,6 +90,30 @@ export const normalizeSeoTitle = (value = "") => {
   }
 
   return trimTitleAtWordBoundary(normalizedTitle, maxTitleLength);
+};
+
+export const normalizeSeoDescription = (value = "", fallback = DEFAULT_DESCRIPTION) => {
+  const source = stripHtml(String(value || ""))
+    .replace(/\s+/g, " ")
+    .trim();
+  const candidate = (source || fallback || "").replace(/\s+/g, " ").trim();
+  const withSiteReference = /srmu/i.test(candidate) ? candidate : `${candidate} ${SITE_NAME_SHORT}.`;
+  const normalized = withSiteReference.replace(/\s+/g, " ").trim();
+
+  if (!normalized) {
+    return DEFAULT_DESCRIPTION;
+  }
+
+  if (normalized.length > 160) {
+    const safeCutoff = normalized.lastIndexOf(" ", 156);
+    return `${(safeCutoff > 40 ? normalized.slice(0, safeCutoff) : normalized.slice(0, 156)).trim()}...`;
+  }
+
+  if (normalized.length < 140) {
+    return `${normalized} ${SITE_NAME_SHORT} offers admissions, academics, and student life information for prospective students.`;
+  }
+
+  return normalized;
 };
 
 export const toAbsoluteUrl = (value?: string | null) => {

@@ -15,6 +15,7 @@ import ProgramFinderIntro from "../admissions/program-finder/ProgramFinderIntro"
 import ProgramFilter from "../admissions/program-finder/ProgramFilter";
 import { buildProgramCategoryPath, resolveTopLevelProgramRoute } from "../../utils/programCategoryRoute";
 import { fetchProgramTypeIntroByUrl } from "../../store/program-type-intro/ProgramTypeIntroThunk";
+import { humanizeSlug } from "../../utils/seo";
 
 const ProgramFinderHome: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -247,6 +248,40 @@ const ProgramFinderHome: React.FC = () => {
   const selectedDisciplineObj = discipline?.find((d) => d.slug === selectedDiscipline);
   const introDescription = selectedDisciplineObj?.description || selectedProgramFlagObj?.description || "";
 
+  const flagName = useMemo(() => {
+    if (!selectedProgramFlag) return "";
+    const matched = programFlag.find(f => f.slug === selectedProgramFlag);
+    if (matched?.name) return matched.name;
+    const map: Record<string, string> = {
+      "after-class-10th": "Diploma",
+      "after-class-12th": "Undergraduate",
+      "after-graduation": "Postgraduate",
+      "after-post-graduation": "Doctoral",
+      "after-polytechnic": "Lateral Entry",
+      "industry-honors": "Industry Honors",
+    };
+    return map[selectedProgramFlag] || humanizeSlug(selectedProgramFlag);
+  }, [selectedProgramFlag, programFlag]);
+
+  const disciplineName = useMemo(() => {
+    if (!selectedDiscipline) return "";
+    const matched = discipline.find(d => d.slug === selectedDiscipline);
+    return matched?.name || humanizeSlug(selectedDiscipline);
+  }, [selectedDiscipline, discipline]);
+
+  const pageTitle = useMemo(() => {
+    if (disciplineName && flagName) {
+      return `${disciplineName} (${flagName}) Programs`;
+    }
+    if (flagName) {
+      return `${flagName} Programs`;
+    }
+    if (disciplineName) {
+      return `${disciplineName} Programs`;
+    }
+    return "";
+  }, [disciplineName, flagName]);
+
   const handleProgramFlagChange = (value: string) => {
     changeSourceRef.current = "user";
     updatePendingProgramFlagChange(value || null);
@@ -276,7 +311,7 @@ const ProgramFinderHome: React.FC = () => {
           isTypeFlag={true}
         />
 
-        <ProgramFinderIntro description={programByIntroData?.description || ""} />
+        <ProgramFinderIntro description={programByIntroData?.description || ""} title={pageTitle} />
       </div>
 
       <CustomTopFooter data={feeStructureCustomTopFooter} />

@@ -82,7 +82,7 @@ const BlogDetailsPage: React.FC = () => {
     ) || `Read the latest SRMU blog: ${data.title}.`;
 
   const seoTitle = normalizeSeoTitle(
-    `${data.metaTitle || data.title} | ${SITE_NAME}, Lucknow`
+    `${data.metaTitle || data.title} | SRMU Lucknow`
   );
 
   // Parse SEO Config
@@ -233,7 +233,7 @@ const BlogDetailsPage: React.FC = () => {
                 [&_td]:align-top
               "
               dangerouslySetInnerHTML={{
-                __html: data.description,
+                __html: data.description ? data.description.replace(/<h1\b/gi, "<h2").replace(/<\/h1>/gi, "</h2>") : "",
               }}
             />
           </div>

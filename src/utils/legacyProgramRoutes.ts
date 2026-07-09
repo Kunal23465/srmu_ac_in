@@ -8,6 +8,7 @@ export const LEGACY_PROGRAM_ROUTE_ALIASES: Record<string, string> = {
   "b-sc-in-medical-laboratory-sciences": "bachelor-in-medical-laboratory-science",
   "b-sc-in-medical-radiology-and-imaging-technology": "bachelor-in-medical-radiologic-and-imaging-technology",
   "b-sc-in-operation-theatre-anaesthesia-technology": "bachelor-in-operation-theatre-technology",
+  "bachelor-in-physiotherapy": "bachelor-of-physiotherapy",
 };
 
 const PREFERRED_LEGACY_PROGRAM_SLUGS = Object.entries(LEGACY_PROGRAM_ROUTE_ALIASES).reduce<Record<string, string>>((acc, [legacySlug, canonicalSlug]) => {
@@ -16,9 +17,7 @@ const PREFERRED_LEGACY_PROGRAM_SLUGS = Object.entries(LEGACY_PROGRAM_ROUTE_ALIAS
 }, {});
 
 export const LEGACY_PROGRAM_SITEMAP_ONLY_SLUGS = [
-  "bachelor-of-physiotherapy",
-  "bsw",
-  "mpharm-master-of-pharmacy",
+  "bachelor-in-physiotherapy",
 ];
 
 export const resolveProgramRouteSlug = (slug = "") => {

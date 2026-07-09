@@ -418,11 +418,11 @@ const ProgramDetails: React.FC = () => {
             </Link>
           }
           {/* @ts-ignore */}
-          <h2 className="lg:text-[42px] leading-[1.2] md:text-[36px] text-[28px] fw500 text-[#023047]">{dataByID?.name}</h2>
+          <h1 className="lg:text-[42px] leading-[1.2] md:text-[36px] text-[28px] fw500 text-[#023047]">{dataByID?.name}</h1>
           {/* @ts-ignore */}
-{/* <h1 className="text-[#023047] mt-3 leading-[1.2] text-[18px] sm:text-[20px] lg:text-[22px] fw500">Best BCA College in Uttar Pradesh</h1> */}
+{/* <h2 className="text-[#023047] mt-3 leading-[1.2] text-[18px] sm:text-[20px] lg:text-[22px] fw500">Best BCA College in Uttar Pradesh</h2> */}
           
-       <h1 className="text-[#023047] mt-3 leading-[1.2] text-[18px] sm:text-[20px] lg:text-[22px] fw500">{dataByID?.title}</h1>
+       <h2 className="text-[#023047] mt-3 leading-[1.2] text-[18px] sm:text-[20px] lg:text-[22px] fw500">{dataByID?.title}</h2>
 
 
           <div className={` py-7 md:py-10 lg:py-14`}>

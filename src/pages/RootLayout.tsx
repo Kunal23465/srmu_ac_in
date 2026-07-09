@@ -44,7 +44,7 @@ const RootLayout: React.FC = () => {
   // Right sidebar visibility
   useEffect(() => {
     if (typeof window === "undefined") return;
-    
+
     const handleScroll = () => {
       setShowRightBar(window.scrollY > 10);
     };
@@ -59,7 +59,7 @@ const RootLayout: React.FC = () => {
   // Footer lazy render
   useEffect(() => {
     if (typeof window === "undefined") return;
-    
+
     if (!isHomeRoute) {
       setShouldRenderFooter(true);
       return;
@@ -160,7 +160,7 @@ const RootLayout: React.FC = () => {
         </a>
 
         <a
-          href="/admission-enquiry-redirect"
+          href="/admission-enquiry"
           onMouseEnter={() => setHovered(3)}
           onMouseLeave={() => setHovered(null)}
           className={`w-full sm:rotate-270 text-xs tracking-wider flex items-center justify-center bg-[#0c2f44] text-white px-2 py-4 sm:py-3 shadow-xl transition-all duration-500 ${hovered === 3 ? "sm:scale-110" : ""

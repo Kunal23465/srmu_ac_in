@@ -67,8 +67,8 @@ const NewsEventDetails: React.FC = () => {
     return (
       <>
         <SeoHead
-          title={`News Not Found | ${SITE_NAME}, Lucknow`}
-          description="The requested news or event detail page could not be found."
+          title={`News Not Found | SRMU Lucknow`}
+          description="The requested news or event detail page could not be found. Visit SRMU Lucknow for the latest campus updates, events, and announcements."
           pathname={location.pathname}
           noindex
         />
@@ -98,7 +98,7 @@ const NewsEventDetails: React.FC = () => {
   return (
     <>
       <SeoHead
-        title={`${news.title} | ${SITE_NAME}, Lucknow`}
+        title={`${news.title} | SRMU Lucknow`}
         description={newsDescription}
         pathname={location.pathname}
         type="article"
@@ -110,7 +110,7 @@ const NewsEventDetails: React.FC = () => {
         <div className="mt-6 font-normal bg-amber-400 text-blue-900 w-fit px-3 py-1 rounded-2xl">{news.date}</div>
         {news.image ? (
           <div className="w-full mt-10 mb-4">
-            <img src={news.image} alt={news.title} className="w-full"/>
+            <img src={news.image} alt={news.title} className="w-full" />
           </div>
         ) : null}
         <div dangerouslySetInnerHTML={{ __html: news.description }}></div>

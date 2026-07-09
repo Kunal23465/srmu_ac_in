@@ -506,6 +506,11 @@
   "/program": "https://srmu.ac.in/program-finder",
   "/program/": "https://srmu.ac.in/program-finder",
   "/programs": "https://srmu.ac.in/program-finder",
+
+  "/terms-condition": "https://srmu.ac.in/terms-conditions",
+  "/student-portal-redirect": "https://srmu.ac.in/online-admission",
+  "/eyojan-login-redirect": "https://srmu.ac.in/online-admission",
+
   "/programs/after-post-graduation": "https://srmu.ac.in/after-post-graduation",
   "/program/bachelor-in-medical-radiologic-and-imaging-technology": "https://srmu.ac.in/program-finder",
   "/program/bachelor-in-operation-theatre-technology": "https://srmu.ac.in/program-finder",
@@ -517,12 +522,11 @@
   "/Program/Certification-in-Aviation-Travel-and-Customer-Service": "https://srmu.ac.in/program-finder",
   "/program/mbabusiness-analytics": "https://srmu.ac.in/program-finder",
   "/program/bsw": "https://srmu.ac.in/program-finder",
-  "/program/bachelor-of-optometry": "https://srmu.ac.in/program-finder",
   "/program/bachelor-in-medical-laboratory-science": "https://srmu.ac.in/program-finder",
   "/program/b-sc-in-medical-radiology-and-imaging-technology": "https://srmu.ac.in/program-finder",
   "/program/b-sc-in-operation-theatre-anaesthesia-technology": "https://srmu.ac.in/program-finder",
   "/program/b-sc-in-medical-laboratory-sciences": "https://srmu.ac.in/program-finder",
-
+  
   "/program/m-tech-computer-science-engineeri": "https://srmu.ac.in/program/m-tech-computer-science-engineering",
   "/program/b-tech-civil-engineerin": "https://srmu.ac.in/program/b-tech-civil-engineering",
   "/program/m-tech-renewable-energy-energy-au": "https://srmu.ac.in/program/m-tech-renewable-energy-energy-audit",
@@ -531,6 +535,7 @@
   "/program/b-com-hons": "https://srmu.ac.in/program/b-com-hons-with-l-t",
   "/Program/btech-electronic-communication-engineering-electric-vehicle-engineering-lateral": "https://srmu.ac.in/program/b-tech-ece-ev-engineering-lateral-entry",
   "/Program/btech-electrical-engineering-electric-vehicle-engineering": "https://srmu.ac.in/program/b-tech-ece-ev-engineering",
+  "/program/b-sc-hons-aggregate": "https://srmu.ac.in/program/b-sc-hons-agriculture",
   "/program/b-sc-hons-agricultu": "https://srmu.ac.in/program/b-sc-hons-agriculture",
   "/program/b-tech-ce-advanced-practices-construction": "https://srmu.ac.in/program/b-tech-ce-advanced-practices-in-construction",
   "/program/b.c.a.-cyber-security-with-l&t": "https://srmu.ac.in/program/bca-cyber-security",
@@ -566,7 +571,6 @@
   "/news/international-conference-on-sustainable-innovation-organized-at-srmu": "https://srmu.ac.in/events",
   "/news/srmu-hosts-international-fdp-to-redefine-21st-century-teaching-practices": "https://srmu.ac.in/events",
   "/news/inauguration-of-new-icmai-lucknow-chapter-study-centre-at-srmu": "https://srmu.ac.in/events",
-  "/news/diwali-celebration": "https://srmu.ac.in/events",
   "/news/srmu-organizes-10th-seminar-on-impact-of-union-budget-2026-27-on-business-industry": "https://srmu.ac.in/events",
   "/news/srmu-signs-landmark-mou-with-ubt-kosovo-to-foster-global-academic-research-collaboration": "https://srmu.ac.in/events",
   "/news/srmu-s-annual-festival-anubhuti-2025-concludes-with-grand-celebrations-and-avsar-2025-impact": "https://srmu.ac.in/events/anubhuti-2025",
@@ -586,7 +590,6 @@
 
   "/blog/study-bba-in-business-analytics-at-srmu-l-t-backed-industry-focused-program": "https://srmu.ac.in/blog/study-bba-in-business-analytics-at-srmu-l-t-backed-industry-focused-program1",
   "/blog/build-a-successful-career-in-healthcare-with-a-physiotherapy-degree": "https://srmu.ac.in/program/bachelor-in-physiotherapy",
-  "/blog/future-scope-of-b-sc-biotechnology-in-research-and-industry": "https://srmu.ac.in/bio-technology/undergraduate",
   "/blogs/Why_SRMU_is_in_the_Top_5_Electric_Vehicle_Engineering_Colleges_in_Lucknow": "https://srmu.ac.in/industry-honors/ev-engineering",
   "/blogs/How_to_Get_into_Top_Postgraduate_Biotechnology_Programs": "https://srmu.ac.in/blog/how-to-get-into-top-postgraduate-biotechnology-programs",
   "/blogs/From_Classroom_to_Career_with_the_Best_B.Tech_Courses_After_12th": "https://srmu.ac.in/after-class-12th",

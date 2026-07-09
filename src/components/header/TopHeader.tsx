@@ -37,7 +37,7 @@ const TopHeader: React.FC = () => {
               </Link>
               <Link
                 className="px-[0.7rem] border-r border-white"
-                to="/admission-enquiry-redirect"
+                to="/admission-enquiry"
               >
                 ADMISSION ENQUIRY
               </Link>
@@ -48,8 +48,8 @@ const TopHeader: React.FC = () => {
           <div className="right-part flex gap-0 items-stretch">
             <Link
               target="_blank"
-
-              to="/eyojan-login-redirect"
+              rel="noopener noreferrer"
+              to="https://eyojan.srmu.ac.in/"
               className="relative flex items-center text-[13px] text-white gap-x-2 px-[0.7rem] after:absolute after:right-0 after:top-1/2 after:h-[55%] after:w-px after:-translate-y-1/2 after:bg-white"
             >
               <img src={user} alt="user" loading="eager" decoding="async" />
@@ -58,8 +58,8 @@ const TopHeader: React.FC = () => {
 
             <Link
               target="_blank"
-              to="/eyojan-login-redirect"
-
+              rel="noopener noreferrer"
+              to="https://eyojan.srmu.ac.in/"
               className="flex text-[13px] items-center text-white gap-x-5 px-[0.7rem]"
             >
               Staff Login
@@ -87,13 +87,13 @@ const TopHeader: React.FC = () => {
               Apply Now
             </Link> */}
 
-             <Link
+            <Link
               target="_blank"
-             rel="nofollow noopener noreferrer"
+              rel="nofollow noopener noreferrer"
               to="https://phdadmission.srmu.ac.in/"
               className="bg-[#FFB703] hover:bg-white px-4 text-[13px] font-medium uppercase border border-[#ffb703] py-[0.875rem] flex items-center text-black"
             >
-             Ph.D Admission 2026
+              Ph.D Admission 2026
             </Link>
 
             <Link
@@ -122,14 +122,16 @@ const TopHeader: React.FC = () => {
                 <div className="bg-white absolute -bottom-[70px] border border-gray-100 z-9999! p-3 w-[200px]">
                   <Link
                     target="_blank"
-                    to="/eyojan-login-redirect"
+                    rel="noopener noreferrer"
+                    to="https://eyojan.srmu.ac.in/"
                     className="text-black block"
                   >
                     Student Login
                   </Link>
                   <Link
                     target="_blank"
-                    to="/eyojan-login-redirect"
+                    rel="noopener noreferrer"
+                    to="https://eyojan.srmu.ac.in/"
                     className="text-black block mt-2"
                   >
                     Staff Login
@@ -160,14 +162,14 @@ const TopHeader: React.FC = () => {
               >
                 Apply Now
               </Link> */}
-               <Link
-              target="_blank"
-             rel="nofollow noopener noreferrer"
-              to="https://phdadmission.srmu.ac.in/"
-              className="bg-[#FFB703] hover:bg-white px-2 text-[9px] font-medium uppercase border border-[#ffb703] py-1 flex items-center text-black"
-            >
-             Ph.D Admission 2026
-            </Link>
+              <Link
+                target="_blank"
+                rel="nofollow noopener noreferrer"
+                to="https://phdadmission.srmu.ac.in/"
+                className="bg-[#FFB703] hover:bg-white px-2 text-[9px] font-medium uppercase border border-[#ffb703] py-1 flex items-center text-black"
+              >
+                Ph.D Admission 2026
+              </Link>
               <Link
                 target="_blank"
 
