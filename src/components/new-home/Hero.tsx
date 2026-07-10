@@ -1,5 +1,5 @@
 import { lazy, Suspense, useEffect, useState } from 'react';
-import bannerVideo from '../../assets/new-home/banner_video_optimized.mp4';
+import bannerVideo from '../../assets/new-home/banner-v-compressed.mp4';
 import bannerImage640 from '../../assets/new-home/video-banner-640.webp';
 import bannerImage960 from '../../assets/new-home/video-banner-960.webp';
 import bannerImage from '../../assets/new-home/video-banner.webp';
