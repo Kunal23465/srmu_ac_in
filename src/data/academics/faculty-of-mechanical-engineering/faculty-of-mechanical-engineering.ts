@@ -40,7 +40,7 @@ import mv11 from "../../../assets/images/academics/institutes/mechanical/mv11.jp
 import saqib from "../../../assets/images/academics/institutes/mechanical/Saquib Bin Reyaz.png";
 import apurva from "../../../assets/images/academics/institutes/mechanical/APURVA ANAND.png";
 export const facultyDetailsOfMeDepartment: FacultyItem[] = [
-{
+  {
     id: 12,
     name: "Dr. Md Saquib Bin Reyaz",
     designation: "Assistant Professor",
@@ -50,11 +50,10 @@ export const facultyDetailsOfMeDepartment: FacultyItem[] = [
   {
     id: 13,
     name: "Dr. Apurva Anand",
-    designation: "Assistant Professor and Director",
+    designation: "Professor and Director",
     image: apurva,
     cardBgColor: "transparent",
   },
-
 
   {
     id: 1,

@@ -31,11 +31,11 @@ const DirectorModal: React.FC<Props> = ({ open, onClose, content }) => {
       <div className="p-6 max-h-[70vh] overflow-y-auto">
         <h2 className="text-xl font-extrabold mb-2">{content.name}</h2>
         <h2 className="text-lg text-[#ffb703] mb-4">{content.designation}</h2>
-        <h2 className="text-2xl font-bold mb-4">{content.title}<br/>{content.titleSibling}</h2>
+        <h2 className="text-2xl font-bold mb-4">{content.titleSibling}</h2>
 
-        <div className="text-gray-700 whitespace-pre-line leading-7 pr-1">{content.longContent}</div>
-
-        <p className="mt-6 font-semibold">{content.footerDesignation}</p>
+        {/* <div className="text-gray-700 whitespace-pre-line leading-7 pr-1">{content.longContent}</div> */}
+        <div dangerouslySetInnerHTML={{ __html: content.longContent }} />
+        {/* <p className="mt-6 font-semibold">{content.footerDesignation}</p> */}
       </div>
     </Modal>
   );

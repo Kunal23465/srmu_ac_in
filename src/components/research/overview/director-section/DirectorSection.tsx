@@ -24,16 +24,16 @@ const DirectorSection: React.FC = () => {
     <div className="bg-[#ffb703] py-20">
       <div className={`${Classes["container"]} `}>
         <div className="grid lg:grid-cols-2 w-full gap-10 items-start">
-<div className="w-full lg:w-[109%]">
-          <CustomTabs
-            items={items}
-            activeTextColor="#000000"
-            inactiveTextColor="#555555"
-            hoverTextColor="#000000"
-            activeUnderlineColor="#000000"
-            fullWidthUnderlineColor="#555555"
-          />
-</div>
+          <div className="w-full lg:w-[109%]">
+            <CustomTabs
+              items={items}
+              activeTextColor="#000000"
+              inactiveTextColor="#555555"
+              hoverTextColor="#000000"
+              activeUnderlineColor="#000000"
+              fullWidthUnderlineColor="#555555"
+            />
+          </div>
 
 
           <div className="w-full lg:w-[80%] ml-auto">
