@@ -26,7 +26,7 @@ export default function MoU() {
           <source media="(max-width: 639px)" srcSet={mou_mobile} />
           <img
             src={mou}
-            alt="MoU"
+            alt="MoU Partners and Collaborations"
             width={1600}
             height={188}
             sizes="(min-width: 1280px) 1200px, 100vw"

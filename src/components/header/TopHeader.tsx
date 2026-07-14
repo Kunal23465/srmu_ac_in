@@ -67,7 +67,7 @@ const TopHeader: React.FC = () => {
             </Link>
 
             <button className="bg-white flex items-center px-4 py-0 gap-2 border-l border-[#ccc]">
-              <a href="tel:18001026004" className="text-[#FFB703]">
+              <a href="tel:18001026004" className="text-[#FFB703]" aria-label="Call Admission Helpline 18001026004">
                 <IoCallSharp className="text-[1.5rem]" />
               </a>
               <div className="flex flex-col text-start ">
@@ -150,6 +150,7 @@ const TopHeader: React.FC = () => {
               <a
                 href="tel:18001035298"
                 className="py-1 flex items-center border-l border-[#ccc] pl-2 pr-1"
+                aria-label="Call Admissions Helpline 18001035298"
               >
                 <IoCallSharp size={24} className="text-[#FFB703]" />
               </a>

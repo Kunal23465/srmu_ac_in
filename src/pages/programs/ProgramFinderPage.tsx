@@ -9,6 +9,10 @@ import {
   shouldUseProgramFinderMetaDescription,
   shouldUseProgramFinderMetaTitle,
 } from "../../utils/seo";
+import {
+  resolveProgramCategoryParams,
+  buildProgramCategoryPath,
+} from "../../utils/programCategoryRoute";
 
 const ProgramFinderPage: React.FC = () => {
   const location = useLocation();
@@ -30,12 +34,25 @@ const ProgramFinderPage: React.FC = () => {
     ? programByIntroData?.metaDescription!.trim()
     : fallbackSeo.description;
 
+  const segments = location.pathname.split("/").filter(Boolean);
+  let canonicalPath: string | undefined = undefined;
+  if (segments.length === 2) {
+    const { programFlagSlug, disciplineSlug } = resolveProgramCategoryParams(
+      segments[0],
+      segments[1]
+    );
+    if (programFlagSlug && disciplineSlug) {
+      canonicalPath = buildProgramCategoryPath(programFlagSlug, disciplineSlug);
+    }
+  }
+
   return (
     <>
       <SeoHead
         title={seoTitle}
         description={seoDescription}
         pathname={location.pathname}
+        canonicalPath={canonicalPath}
       />
       <ProgramFinderHome />
     </>

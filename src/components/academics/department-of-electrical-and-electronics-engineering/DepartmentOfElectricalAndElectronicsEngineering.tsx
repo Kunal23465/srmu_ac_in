@@ -37,7 +37,7 @@ import CustomTopFooter from "../../../utils/custom/CustomTopFooter";
 
 
 const DepartmentOfElectricalAndElectronicsEngineering: FC = () => {
-   
+
   return (
     <div>
       <div className={`${Classes["container"]}`}>
@@ -66,7 +66,7 @@ const DepartmentOfElectricalAndElectronicsEngineering: FC = () => {
 
       <section className="bg-[#edf0f9] py-14">
         <div className={`${Classes["container"]} bg-[#edf0f9]`}>
-          <PlacedStudents placedStudents={DepartmentOfElectricalAndElectronicsPlacedStudents} counterData={counterDataForPlacedStudentsOFDepartmentOfElectricalAndElectronicsEngineering}/>
+          <PlacedStudents placedStudents={DepartmentOfElectricalAndElectronicsPlacedStudents} counterData={counterDataForPlacedStudentsOFDepartmentOfElectricalAndElectronicsEngineering} />
         </div>
       </section>
       <CustomDepartmentSlider
@@ -75,7 +75,7 @@ const DepartmentOfElectricalAndElectronicsEngineering: FC = () => {
         data={electricalDepartmentHighlightsData}
         renderCard={({ item }) => <CustomDepartmentHighlightCard item={item} />}
         bgColor="#f8b922"
-       
+
         breakpoints={{ desktop: 3, tablet: 2, mobile: 1 }}
       />
       <CustomDepartmentSlider
@@ -84,7 +84,7 @@ const DepartmentOfElectricalAndElectronicsEngineering: FC = () => {
         data={electricalDepartmentHighlightsData}
         renderCard={({ item }) => <CustomDepartmentHighlightCard item={item} />}
         bgColor="#ffffff"
-      
+
         breakpoints={{ desktop: 3, tablet: 2, mobile: 1 }}
       />
       <CustomTopFooter data={instituteFooterData} />

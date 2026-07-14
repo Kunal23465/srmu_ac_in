@@ -686,7 +686,7 @@ export const ElectricalAndElectronicsfacultyDetails: FacultyItem[] = [
   {
     id: 16,
     name: "Dr. Alkesh Agarwal",
-    designation: "Associate Professor",
+    designation: "Professor",
     image: alkesh,
     cardBgColor: "transparent",
   },

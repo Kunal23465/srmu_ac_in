@@ -77,14 +77,18 @@ export const normalizeSeoTitle = (value = "") => {
 
   const suffixMatch = normalizedTitle.match(/\s\|\s[^|]+$/);
   const suffix = suffixMatch?.[0] || "";
-  const maxTitleLength = 60;
+  const maxTitleLength = 65;
 
   if (normalizedTitle.length <= maxTitleLength) {
     return normalizedTitle;
   }
 
   if (suffix) {
-    const baseTitle = normalizedTitle.slice(0, -suffix.length).trim();
+    let baseTitle = normalizedTitle.slice(0, -suffix.length).trim();
+    baseTitle = baseTitle.replace(/\s*Admissions,\s*Fees\s*&\s*Eligibility/gi, "").trim();
+    if (`${baseTitle}${suffix}`.length <= maxTitleLength) {
+      return `${baseTitle}${suffix}`;
+    }
     const maxBaseLength = Math.max(20, maxTitleLength - suffix.length - 1);
     return `${trimTitleAtWordBoundary(baseTitle, maxBaseLength)}${suffix}`;
   }
@@ -104,13 +108,16 @@ export const normalizeSeoDescription = (value = "", fallback = DEFAULT_DESCRIPTI
     return DEFAULT_DESCRIPTION;
   }
 
-  if (normalized.length > 160) {
-    const safeCutoff = normalized.lastIndexOf(" ", 156);
-    return `${(safeCutoff > 40 ? normalized.slice(0, safeCutoff) : normalized.slice(0, 156)).trim()}...`;
+  if (normalized.length > 150) {
+    const safeCutoff = normalized.lastIndexOf(" ", 146);
+    return `${(safeCutoff > 40 ? normalized.slice(0, safeCutoff) : normalized.slice(0, 146)).trim()}...`;
   }
 
-  if (normalized.length < 140) {
-    return `${normalized} ${SITE_NAME_SHORT} offers admissions, academics, and student life information for prospective students.`;
+  if (normalized.length < 130) {
+    const extra = ` Admissions & course info for prospective students.`;
+    if ((normalized + extra).length <= 150) {
+      return `${normalized}${extra}`;
+    }
   }
 
   return normalized;
@@ -158,7 +165,7 @@ export const getDefaultSeo = (pathname = "/") => {
 
   return {
     title: `${label} | ${SITE_NAME}, Lucknow`,
-    description: `Explore ${label} at ${SITE_NAME}, Lucknow. Find official information, programs, admissions updates, campus details, and student resources.`,
+    description: `Explore ${label} at Shri Ramswaroop Memorial University (SRMU), Lucknow. Find courses, admissions, campus updates, and student resources.`,
   };
 };
 

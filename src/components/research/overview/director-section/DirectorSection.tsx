@@ -10,12 +10,12 @@ const DirectorSection: React.FC = () => {
   const items = [
     {
       key: "1",
-      label: "Director Message",
+      label: "R&C Cell Message",
       content: <DirectorMessage data={DirectorSectionData.tab1} />,
     },
     {
       key: "2",
-      label: "Director Profile",
+      label: "Deputy Director Profile",
       content: <DirectorProfile data={DirectorSectionData.tab2} />,
     },
   ];

@@ -218,10 +218,10 @@ export const researchMembers: ResearchMember[] = [
   },
   {
     id: 5,
-    name: "Dr. Rajeev Kumar",
-    designation: "Offg. Deputy Director Research & Consultancy, SRMU",
-    position: "Convenor (Ex-officio)",
-    image: img6,
+    name: "Prof. (Dr.) Alkesh Agrawal",
+    designation: "Deputy Director, SRMU",
+    position: "Deputy Director",
+    image: img1,
   },
   {
     id: 6,
@@ -299,7 +299,7 @@ export const contactInfo: ContactInfo[] = [
   },
   {
     label: "CONTACT NO.",
-    value: "7784940188",
+    value: "9935363326",
     icon: icon2,
   },
   {

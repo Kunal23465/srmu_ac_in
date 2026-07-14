@@ -219,7 +219,13 @@ const SITEMAP_EXCLUDED_PATHS = new Set([
   "/program/b-tech-electrical-engineering",
   "/after-class-12th/business-analytics",
   "/ph-d1/ph-d",
-  "/program-finder/undergraduate"
+  "/program-finder/undergraduate",
+  "/after-class-12th/ev-engineering",
+  "/bio-technology",
+  "/pharmacy",
+  "/engineering",
+  "/allied-health-sciences",
+  "/news/diwali-celebration"
 ]);
 
 type CachedSitemap = {

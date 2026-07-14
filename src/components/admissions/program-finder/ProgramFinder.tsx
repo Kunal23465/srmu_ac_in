@@ -16,6 +16,10 @@ import { useLocation } from "react-router-dom";
 import { fetchProgramTypeIntroByUrl } from "../../../store/program-type-intro/ProgramTypeIntroThunk";
 import SeoHead from "../../seo/SeoHead";
 import { getProgramFinderSeo, shouldUseProgramFinderMetaDescription, shouldUseProgramFinderMetaTitle } from "../../../utils/seo";
+import {
+  resolveProgramCategoryParams,
+  buildProgramCategoryPath,
+} from "../../../utils/programCategoryRoute";
 
 const ProgramFinder: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -55,6 +59,18 @@ const ProgramFinder: React.FC = () => {
   const seoDescription = shouldUseProgramFinderMetaDescription(seoPath, programByIntroData?.metaDescription)
     ? programByIntroData?.metaDescription!.trim()
     : fallbackSeo.description;
+
+  const segments = seoPath.split("/").filter(Boolean);
+  let canonicalPath: string | undefined = undefined;
+  if (segments.length === 2) {
+    const { programFlagSlug, disciplineSlug } = resolveProgramCategoryParams(
+      segments[0],
+      segments[1]
+    );
+    if (programFlagSlug && disciplineSlug) {
+      canonicalPath = buildProgramCategoryPath(programFlagSlug, disciplineSlug);
+    }
+  }
 
   useEffect(() => {
     if (isDynamicProgramFinderRoute) {
@@ -187,6 +203,7 @@ const ProgramFinder: React.FC = () => {
         title={seoTitle}
         description={seoDescription}
         pathname={seoPath}
+        canonicalPath={canonicalPath}
       />
       <div className={`${Classes.container} mt-16`}>
         <div className="w-full flex items-center justify-center flex-col">

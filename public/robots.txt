@@ -3,6 +3,3 @@ Allow: /
 Disallow: /chatbot/
 
 Sitemap: https://srmu.ac.in/sitemap.xml
-Sitemap: https://srmu.ac.in/blog-sitemap.xml
-Sitemap: https://srmu.ac.in/all-sitemap.xml
-Sitemap: https://srmu.ac.in/new-sitemap.xml

@@ -17,38 +17,39 @@ import Classes from "../../utils/styles/Global.module.css";
 type LegacyItem = {
   video: string;
   img: string;
+  title: string;
 };
 
 const legacy: LegacyItem[] = [
   {
-
     video: rakeshVid,
     img: rakeshVidImg,
+    title: "Rakesh Upadhyay",
   },
   {
-
     video: vipulVid,
     img: vipulVidImg,
+    title: "RJ Vipul",
   },
   {
-
     video: durgeshVid,
     img: durgeshVidImg,
+    title: "Durgesh Actor",
   },
   {
-
     video: vinayVid,
     img: vinayVidImg,
+    title: "Vinay Bihari",
   },
   {
-
     video: adhikariVid,
     img: adhikariVidImg,
+    title: "Virendra Adhikari",
   },
   {
-
     video: chandraniVid,
     img: chandraniVidImg,
+    title: "Chandrani",
   },
 ];
 
@@ -58,12 +59,12 @@ function LegacyCard({ item, onPlay }: { item: LegacyItem; onPlay: (item: LegacyI
       <button
         type="button"
         onClick={() => onPlay(item)}
-        aria-label={`Play video of ${item.img}`}
+        aria-label={`Play video testimonial of ${item.title}`}
         className="relative flex-1 bg-gray-900 overflow-hidden group cursor-pointer text-left w-full"
       >
         <img
           src={item.img}
-          alt={item.img}
+          alt={`Video testimonial from ${item.title}`}
           loading="lazy"
           decoding="async"
           className="absolute inset-0 w-full h-full object-cover"

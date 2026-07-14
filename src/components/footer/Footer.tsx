@@ -221,11 +221,11 @@ const Footer: React.FC = () => {
     <>
       <footer className={` text-white py-20`}>
         <div className={`${Classes["container"]} relative z-100 py-10 sm:py-20`}>
-          <div className="w-full manage_footer_column ">
+            <div className="w-full manage_footer_column ">
             <div className="w-fullspace-y-4 flex flex-col grid-first">
               <div className="flex items-center gap-3">
                 <div>
-                  <img src={logosrmcem} alt="logo" className="max-w-[220px] xl:max-w-full" />
+                  <img src={logosrmcem} alt="Shri Ramswaroop Memorial University Logo" className="max-w-[220px] xl:max-w-full" />
                 </div>
                 {/* <div>
                   <h2 className="text-white font-bold text-[1.3rem] sm:text-[1.6rem]">
@@ -242,7 +242,7 @@ const Footer: React.FC = () => {
                         to="https://maps.app.goo.gl/uxeq6Shi7D5aAJ5RA"
                         target="_blank"
                         rel="noopener noreferrer"
-                        aria-label="Facebook"
+                        aria-label="Google Maps Location"
                       >
                         <MdLocationPin size={24} />
                       </Link>
@@ -254,7 +254,7 @@ const Footer: React.FC = () => {
                 <div className="flex flex-col gap-2 ">
                   <div className="flex items-center gap-x-2">
                     <span>
-                      <Link to="tel:7570003074" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                      <Link to="tel:7570003074" target="_blank" rel="noopener noreferrer" aria-label="Call Admissions Helpline">
                         <FaPhone />
                       </Link>
                     </span>
@@ -265,7 +265,7 @@ const Footer: React.FC = () => {
                 <div className="flex gap-2 flex-col">
                   <div className="flex items-center gap-x-2">
                     <span className="text-[1.2rem]">
-                      <Link to="https://mail.google.com/mail/u/0/?view=cm&fs=1&to=admissions@srmcem.ac.in" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                      <Link to="https://mail.google.com/mail/u/0/?view=cm&fs=1&to=admissions@srmcem.ac.in" target="_blank" rel="noopener noreferrer" aria-label="Email Admissions">
                         <MdEmail />
                       </Link>
                     </span>
@@ -292,7 +292,7 @@ const Footer: React.FC = () => {
                   to="https://www.instagram.com/srmulucknow_official/"
                   target="_blank"
                   className=" flex items-center justify-center transition-all duration-300 hover:border-[#ffb703] hover:bg-transparent hover:text-[#ffb703] cursor-pointer"
-                  aria-label="Twitter"
+                  aria-label="Instagram"
                 >
                   <img src={instagram} alt="instagram" />
                 </Link>
@@ -300,7 +300,7 @@ const Footer: React.FC = () => {
                   to="https://www.linkedin.com/school/shri-ramswaroop-memorial-university/"
                   target="_blank"
                   className=" flex items-center justify-center transition-all duration-300 hover:border-[#ffb703] hover:bg-transparent hover:text-[#ffb703] cursor-pointer"
-                  aria-label="Instagram"
+                  aria-label="LinkedIn"
                 >
                   <img src={linkdin} alt="linkdin" />
                 </Link>
@@ -309,7 +309,7 @@ const Footer: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className=" flex items-center justify-center transition-all duration-300 hover:border-[#ffb703] hover:bg-transparent hover:text-[#ffb703] cursor-pointer"
-                  aria-label="LinkedIn"
+                  aria-label="Twitter"
                 >
                   <img src={twitter} alt="twitter" />
                 </a>
@@ -317,7 +317,7 @@ const Footer: React.FC = () => {
                   to="https://www.youtube.com/channel/UCQBjHzkED5ESWvlQiwLNZ4Q"
                   target="_blank"
                   className=" flex items-center justify-center transition-all duration-300 hover:border-[#ffb703] hover:bg-transparent hover:text-[#ffb703] cursor-pointer"
-                  aria-label="LinkedIn"
+                  aria-label="YouTube"
                 >
                   <img src={youtube} alt="youtube" />
                 </Link>

@@ -89,7 +89,7 @@ const Header = () => {
             <div className="flex flex-row justify-between">
               {/* LOGO */}
               <Link to="/" className="logo_div flex items-center lg:gap-1 xl:gap-3 cursor-pointer">
-                <img src={logo} alt="logo" loading="eager" decoding="async" className="max-w-[205px] xl:max-w-[245px]" />
+                <img src={logo} alt="Shri Ramswaroop Memorial University Logo" loading="eager" decoding="async" className="max-w-[205px] xl:max-w-[245px]" />
               </Link>
 
               {/* DESKTOP MENU */}
