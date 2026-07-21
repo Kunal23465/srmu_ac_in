@@ -7,6 +7,7 @@ import img from "../../../assets/images/admissions/how-to-apply/howtoapply-08022
 import OnlineAdmissionProcess from "./OnlineAdmissionProcess";
 
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const HowToApply: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -95,7 +96,7 @@ const HowToApply: React.FC = () => {
                   To begin your journey at Shri Ramswaroop Memorial University (SRMU), visit the official website and head to the “
                   <a
                     className="font-medium italic underline"
-                    href="https://studentportal.srmu.ac.in"                    target="_blank"
+                    href="https://studentportal.srmu.ac.in" target="_blank"
                     rel="noopener noreferrer"                  >
                     Apply Now
                   </a>
@@ -162,16 +163,16 @@ const HowToApply: React.FC = () => {
                 <div className="overflow-hidden" ref={emblaRef}>
                   <div className="flex">
                     {SRMUoffersData.map((item) => (
-                      <div
+                      <Link to={`/${item.path}`}
                         key={item.id}
-                        className="flex-shrink-0 flex-grow-0 px-3"
+                        className="flex-shrink-0 flex-grow-0 px-3 cursor-pointer"
                         style={{ flexBasis: getSlideWidth() }}
                       >
                         <div className="p-7 pb-5 h-100 lg:h-120 xl:h-100 w-full hover:text-white transition-all duration-300 hover:bg-[#0f4a85] border border-gray-200 rounded-xl">
                           <img src={item.img} alt={item.title} className="rounded-xl object-cover h-[85%] w-full mb-4" />
                           <h2 className="text-2xl font-medium mb-1">{item.title}</h2>
                         </div>
-                      </div>
+                      </Link>
                     ))}
                   </div>
                 </div>

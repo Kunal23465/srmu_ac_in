@@ -27,26 +27,27 @@ export const HowToApplyTopFooterData = [
 ];
 
 interface SRMUoffersProps {
-    id: number;
-    img: string;
-    title: string;
+  id: number;
+  img: string;
+  title: string;
+  path: string;
 }
 export const SRMUoffersData: SRMUoffersProps[] = [
-  { id: 1,  img: img1,  title: "Computer Science" },
-  { id: 2,  img: img2,  title: "Biotechnology" },
-  { id: 3,  img: img3,  title: "Allied Health Sciences" },
-  { id: 4,  img: img4,  title: "Engineering" },
-  { id: 5,  img: img5,  title: "Management" },
-  { id: 6,  img: img6,  title: "Agriculture" },
-  { id: 7,  img: img7,  title: "Law" },
-  { id: 8,  img: img8,  title: "Computer Application" },
-  { id: 9,  img: img9,  title: "Pharmacy" },
-  { id: 10, img: img10, title: "Media Studies" },
-  { id: 11, img: img11, title: "Commerce & Economics" },
-  { id: 12, img: img12, title: "Food Technology" },
-  { id: 13, img: img13, title: "Art & Science" },
-  { id: 14, img: img14, title: "Nutrition & Dietetics" },
-  { id: 15, img: img15, title: "Education" },
-  { id: 16, img: img16, title: "Polytechnic" }
+  { id: 1, img: img1, title: "Computer Science", path: "after-class-12th/computer-science-engineering" },
+  { id: 2, img: img2, title: "Biotechnology", path: "after-class-12th/bio-technology" },
+  { id: 3, img: img3, title: "Allied Health Sciences", path: "after-class-12th/allied-health-sciences" },
+  { id: 4, img: img4, title: "Engineering", path: "after-class-12th/engineering" },
+  { id: 5, img: img5, title: "Management", path: "after-class-12th/management" },
+  { id: 6, img: img6, title: "Agriculture", path: "after-class-12th/agriculture" },
+  { id: 7, img: img7, title: "Law", path: "after-class-12th/law" },
+  { id: 8, img: img8, title: "Computer Application", path: "after-class-12th/computer-application" },
+  { id: 9, img: img9, title: "Pharmacy", path: "after-class-12th/pharmacy" },
+  { id: 10, img: img10, title: "Media Studies", path: "after-class-12th/media-studies" },
+  { id: 11, img: img11, title: "Commerce & Economics", path: "after-class-12th/commerce-economics" },
+  { id: 12, img: img12, title: "Food Technology", path: "after-class-12th/food-technology" },
+  { id: 13, img: img13, title: "Art & Science", path: "after-class-12th/art-science" },
+  { id: 14, img: img14, title: "Nutrition & Dietetics", path: "after-class-12th/nutrition-dietetics" },
+  { id: 15, img: img15, title: "Education", path: "after-class-12th/education" },
+  { id: 16, img: img16, title: "Polytechnic", path: "after-class-12th/polytechnic" }
 ];
 

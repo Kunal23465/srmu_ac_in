@@ -26,12 +26,12 @@ export const tabs: TabItem[] = [
   {
     id: "after_class_12th",
     title: "After Class 12th",
-    content:  <CustomFaqAccordion data={after12thFaqData} />,
+    content: <CustomFaqAccordion data={after12thFaqData} />,
   },
   {
     id: "BCA_IT",
     title: "BCA & IT ",
-    content:  <CustomFaqAccordion data={bcaFaqData} />,
+    content: <CustomFaqAccordion data={bcaFaqData} />,
   },
   {
     id: "Management",
@@ -41,30 +41,30 @@ export const tabs: TabItem[] = [
   {
     id: "Agriculture",
     title: "Agriculture",
-    content:  <CustomFaqAccordion data={agricultureFaqData} />,
+    content: <CustomFaqAccordion data={agricultureFaqData} />,
   },
-   {
-    id: "Biotechnology_Life",
-    title: "Biotechnology & Life",
-    content:  <CustomFaqAccordion data={biotechnologyFaqData} />,
+  {
+    id: "Biotechnology",
+    title: "Biotechnology",
+    content: <CustomFaqAccordion data={biotechnologyFaqData} />,
   },
-   {
+  {
     id: "Law",
     title: "Law",
-    content:  <CustomFaqAccordion data={lawFaqData} />,
+    content: <CustomFaqAccordion data={lawFaqData} />,
   },
   {
     id: "Pharmacy",
     title: "Pharmacy",
-    content:  <CustomFaqAccordion data={pharmacyFaqData} />,
+    content: <CustomFaqAccordion data={pharmacyFaqData} />,
   },
-   {
+  {
     id: "SRMU_Admissions_Campus_Facilities",
     title: "SRMU Admissions, Campus & Facilities",
-    content:  <CustomFaqAccordion data={srmuAdmissionsFaqData} />,
+    content: <CustomFaqAccordion data={srmuAdmissionsFaqData} />,
   },
-  
-//   srmuAdmissionsFaqData
+
+  //   srmuAdmissionsFaqData
 
 ];
 
@@ -92,11 +92,10 @@ const AdmissionFaq = () => {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`rounded-lg px-5 py-2.5 cursor-pointer text-sm md:text-base font-semibold transition-all duration-300 ${
-                  activeTab === tab.id
+                className={`rounded-lg px-5 py-2.5 cursor-pointer text-sm md:text-base font-semibold transition-all duration-300 ${activeTab === tab.id
                     ? "bg-[#0f4a85] text-white shadow-[0_8px_20px_rgba(15,74,133,0.35)] ring-2 ring-[#ffb703]"
                     : "bg-white text-[#1f3f68] hover:bg-[#e8f0fb] hover:text-[#0f4a85]"
-                }`}
+                  }`}
               >
                 {tab.title}
               </button>
