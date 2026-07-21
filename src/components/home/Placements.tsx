@@ -272,4 +272,4 @@ const Placements = () => {
   );
 };
 
-export default Placements;
+export default React.memo(Placements);

@@ -144,4 +144,4 @@ const Banner: React.FC = () => {
     );
 };
 
-export default Banner;
+export default React.memo(Banner);

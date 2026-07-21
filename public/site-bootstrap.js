@@ -13,16 +13,8 @@ window.addEventListener("load", function () {
 
 const updateChatMessage = () => {
   const element = document.querySelector(".message-content");
-
-  if (!element) {
-    return false;
-  }
-
-  element.innerHTML = `
-                            Clear All Doubts Instantly.<br>
-                            <small>Chat with Us Instantly!</small>
-                            `;
-
+  if (!element) return false;
+  element.innerHTML = `Clear All Doubts Instantly.<br><small>Chat with Us Instantly!</small>`;
   return true;
 };
 
@@ -31,14 +23,15 @@ window.addEventListener("load", function () {
     return;
   }
 
-  var observer = new MutationObserver(function () {
+  const target = document.getElementById("parrotBot") || document.body;
+  const observer = new MutationObserver(function () {
     if (updateChatMessage()) {
       observer.disconnect();
     }
   });
 
-  observer.observe(document.body, { childList: true, subtree: true });
+  observer.observe(target, { childList: true, subtree: target !== document.body });
   window.setTimeout(function () {
     observer.disconnect();
-  }, 8000);
+  }, 4000);
 });

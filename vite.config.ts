@@ -66,15 +66,18 @@ export default defineConfig(({ isSsrBuild }) => ({
   },
 
   build: {
-    target: "node20",
+    target: isSsrBuild ? "node20" : "es2020",
     ssrManifest: !isSsrBuild,
+    cssCodeSplit: true,
     minify: isSsrBuild ? false : "terser",
     cssMinify: isSsrBuild ? false : "lightningcss",
     terserOptions: isSsrBuild
       ? undefined
       : {
           compress: {
-            passes: 2,
+            passes: 3,
+            drop_console: true,
+            drop_debugger: true,
           },
           format: {
             comments: false,
@@ -102,7 +105,7 @@ export default defineConfig(({ isSsrBuild }) => ({
                   return "redux-vendor";
                 }
 
-                if (id.includes("react-icons")) {
+                if (id.includes("react-icons") || id.includes("lucide-react")) {
                   return "icons-vendor";
                 }
 

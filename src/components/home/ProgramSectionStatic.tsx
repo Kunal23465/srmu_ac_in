@@ -1,4 +1,4 @@
-import { FC, useEffect, useMemo, useRef, useState } from "react";
+import { FC, useEffect, useMemo, useRef, useState, memo } from "react";
 import { Link } from "react-router-dom";
 import { LiaLongArrowAltRightSolid } from "react-icons/lia";
 import { GoArrowUpRight } from "react-icons/go";
@@ -135,4 +135,4 @@ const ProgramsSectionStatic: FC = () => {
   );
 };
 
-export default ProgramsSectionStatic;
+export default memo(ProgramsSectionStatic);
