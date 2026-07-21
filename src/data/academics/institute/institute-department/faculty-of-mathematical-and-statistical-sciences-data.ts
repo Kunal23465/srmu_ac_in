@@ -7,7 +7,7 @@ import { FacultyItem } from "../../../../utils/custom/CustomFacultyListCard";
 
 import VNPathakImg from "../../../../assets/images/academics/departments/prof.-dr-v.n.-pathak-2702240134036.webp";
 
-import AnkitImg from "../../../../assets/images/academics/departments/wsfq-02062505091245.webp";
+// import AnkitImg from "../../../../assets/images/academics/departments/wsfq-02062505091245.webp";
 import ArunImg from "../../../../assets/images/academics/departments/wsfq-02062505080511.webp";
 import PunitImg from "../../../../assets/images/academics/departments/wsfq-02062505070943.webp";
 import PoojaImg from "../../../../assets/images/academics/departments/wsfq-02062505062189.webp";
@@ -21,7 +21,7 @@ import PrachiImg from "../../../../assets/images/academics/departments/dr.prachi
 import AnilImg from "../../../../assets/images/academics/departments/11zon-cropped-48-11zon-2402241142114.webp";
 import VimleshImg from "../../../../assets/images/academics/departments/vimlesh-10072412155832.webp";
 import OmendraImg from "../../../../assets/images/academics/departments/omendra-mishra-10072412112493.webp";
-import DhaneshImg from "../../../../assets/images/academics/departments/dhanesh-kumar-10072412142265.webp";
+// import DhaneshImg from "../../../../assets/images/academics/departments/dhanesh-kumar-10072412142265.webp";
 import AnujImg from "../../../../assets/images/academics/departments/anuj-kumar-agarwal-10072412092488.webp";
 import AwanishImg from "../../../../assets/images/academics/departments/awanish-kumar-10072412073674.webp";
 import PramodImg from "../../../../assets/images/academics/departments/11zon-cropped-45-11zon-24022411063791.webp";
@@ -169,7 +169,7 @@ export const FacultyOfMathematicalAndStatisticalSciencesData2: FeeTableData = {
 };
 
 export const FacultyOfMathematicalAndStatisticalSciencesfacultyData: FacultyItem[] = [
-  { id: 1, name: "Mr. Ankit Goyal", designation: "Assistant Professor", image: AnkitImg },
+  // { id: 1, name: "Mr. Ankit Goyal", designation: "Assistant Professor", image: AnkitImg },
   { id: 2, name: "Dr. Arun Kumar Bhardwaj", designation: "Assistant Professor", image: ArunImg },
   { id: 3, name: "Dr. Punit Kumar Gupt", designation: "Assistant Professor", image: PunitImg },
   { id: 4, name: "Dr. Pooja Gautam", designation: "Assistant Professor", image: PoojaImg },
@@ -184,7 +184,7 @@ export const FacultyOfMathematicalAndStatisticalSciencesfacultyData: FacultyItem
   { id: 13, name: "Mr. Anil Kumar", designation: "Assistant Professor", image: AnilImg },
   { id: 14, name: "Dr. Vimlesh", designation: "Assistant Professor", image: VimleshImg },
   { id: 15, name: "Dr. Omendra Mishra", designation: "Assistant Professor", image: OmendraImg },
-  { id: 16, name: "Dr. Dhanesh Kumar", designation: "Assistant Professor", image: DhaneshImg },
+  // { id: 16, name: "Dr. Dhanesh Kumar", designation: "Assistant Professor", image: DhaneshImg },
   { id: 17, name: "Dr. Anuj Kumar Agarwal", designation: "Assistant Professor", image: AnujImg },
   { id: 18, name: "Dr. Awanish Kumar", designation: "Assistant Professor", image: AwanishImg },
   { id: 19, name: "Dr. Pramod Kumar", designation: "Associate Professor", image: PramodImg },

@@ -146,12 +146,7 @@ export default function Hero() {
 
               {/* Heading */}
               <h1 className="text-[20px] sm:text-[24px] leading-[1.2] font-extrabold md:text-[40px] md:leading-[1.3]">
-                Best University in
-                <span className="text-[#FFC107] ml-2 relative inline-block">
-                  Uttar Pradesh
-                </span>
-                <br />
-                for Future-Ready Careers
+                Best University in <span className="text-[#FFC107] ml-2 relative inline-block">Uttar Pradesh</span>
               </h1>
 
               {/* Desktop Content */}
