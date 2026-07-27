@@ -50,6 +50,7 @@ const CampusLifePage = lazyPage(() => import("../pages/campus-life/CampusLifePag
 const TransportationPage = lazyPage(() => import("../pages/campus-life/facilities/transportation/TransportationPage"));
 const HostelPage = lazyPage(() => import("../pages/campus-life/facilities/HostelPage"));
 const ConvocationPage = lazyPage(() => import("../pages/campus-life/convocation/ConvocationPage"));
+const Convocation2026Page = lazyPage(() => import("../pages/campus-life/convocation/Convocation2026Page"));
 const CentralLibraryPage = lazyPage(() => import("../pages/campus-life/central-library/CentralLibraryPage"));
 const GreenInitiativePage = lazyPage(() => import("../pages/campus-life/green-initiative/GreenInitiativePage"));
 const WomenEmpowermentPage = lazyPage(() => import("../pages/campus-life/women-empowerment/WomenEmpowermentPage"));
@@ -375,6 +376,10 @@ export const routes = [
             element: <RoutedConvocationDetailsPage />,
           },
         ],
+      },
+      {
+        path: "convocation2026",
+        element: <Convocation2026Page />,
       },
       {
         path: "transportation",

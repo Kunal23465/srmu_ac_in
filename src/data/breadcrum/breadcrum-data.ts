@@ -14,6 +14,7 @@ import noticeBanner from "../../assets/images/breadcrumb/Notice.webp";
 import shiftSchedule from "../../assets/images/breadcrumb/Shedule.webp";
 import greenInitive from "../../assets/images/breadcrumb/Green Initiative.webp";
 import pharmaBreadCrumbs from "../../assets/images/breadcrumb/phrama-breadcrumbs.webp";
+import convocation2026Banner from "../../assets/images/home/events/for-desk.jpeg";
 // -----------------------
 // FIX 1: Allow string index
 // -----------------------
@@ -31,6 +32,7 @@ export const pageBackgrounds: Record<string, string> = {
   "admission/shift-schedule": shiftSchedule,
   placements: placementbreadcrumbbg,
   blogs: blogsbreadcrumbbg,
+  convocation2026: convocation2026Banner,
   "online-admission": onlineApplicationBanner,
   "innovation-meets-agriculture-at-the-srmu-kisan-mela-2025": agriBreadcrumbbg,
   "empowering-future-engineers:-l&t-edutech-ai-lab-opens-at-srmu": agriBreadcrumbbg,

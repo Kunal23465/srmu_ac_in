@@ -16,6 +16,10 @@ import alumini1_desktop from "../../assets/new-home/events/alumini1-desktop.webp
 import alumini1_mobile from "../../assets/new-home/events/alumini1-mobile.webp";
 import alumini2_desktop from "../../assets/new-home/events/alumini2-desktop.webp";
 import alumini2_mobile from "../../assets/new-home/events/alumini2-mobile.webp";
+
+import fordesk from "../../assets/images/home/events/for-desk.jpeg";
+import forMobile from "../../assets/images/home/events/for-mobile.png";
+
 export type EventItem = {
   id: string | number;
   image: string;
@@ -26,15 +30,215 @@ export type EventItem = {
   description?: string;
   isUpcoming?: boolean;
   isRedirect?: boolean;
+  redirectTo?: string;
   // theme token: used by UI to pick correct bg classes
   token?: "accent" | "primary" | "neutral";
 };
 
 const eventsData: EventItem[] = [
   {
+    id: 0,
+    // isUpcoming:true,
+    isRedirect: true,
+    redirectTo: "/convocation2026",
+    image: fordesk,
+    imageSmall: forMobile,
+    date: "July 22, 2026",
+    title: "Grand Convocation Ceremony of Shri Ramswaroop Memorial University Concludes: Degrees Awarded to 7,519 Students, Medals to 405",
+    description: `
+    <p>
+      <strong>Lucknow/Barabanki, July 22, 2026:</strong> The Convocation Ceremony of
+      <strong>Shri Ramswaroop Memorial University (SRMU)</strong> was held with great grandeur on
+      Wednesday at the Mass Auditorium of Indira Gandhi Pratishthan, Gomti Nagar. In this majestic
+      ceremony, a total of <strong>7,519 students</strong> were awarded degrees in various programs.
+      Additionally, <strong>405 students</strong> were honored with medals for academic excellence,
+      including <strong>232 Gold Medals</strong>, <strong>165 Silver Medals</strong>, and
+      <strong>8 Chancellor's and Pro-Chancellor's Medals</strong>. The ceremony was graced by the
+      presence of Chief Guest <strong>Prof. (Dr.) Bhushan Patwardhan</strong>, Chancellor, Deccan
+      College (Deemed to be University), Pune & National Research Professor, Ministry of AYUSH,
+      Government of India, and Distinguished Guest <strong>Shri Akhilesh Mishra</strong>, former
+      Director General of Indian Council for Cultural Relations and former Ambassador.
+    </p>
+
+    <p class="mt-2">
+      In the presence of University Chancellor <strong>Er. Pankaj Agarwal</strong>, Pro-Chancellor
+      <strong>Er. Pooja Agarwal</strong>, Vice Chancellor <strong>Prof. (Dr.) Vijay Tiwari</strong>,
+      Academic Advisor <strong>Arushi Agarwal</strong>, and other dignitaries, the Chancellor's and
+      Pro-Chancellor's Medals were conferred, which are the most prestigious institutional honors,
+      distinct from the Gold and Silver Medals. These are awarded on the basis of outstanding
+      academic achievement, exemplary personality, leadership qualities, and overall excellent
+      performance.
+    </p>
+
+    <p class="mt-2">
+      A special and inspiring highlight of this year was that all eight prestigious medals from the
+      sessions 2021-22 to 2024-25 were won by female students. The <strong>Chancellor's Medal</strong>
+      was awarded to Aadya Sharma (Session 2024-25, Integrated Bachelor of Business Administration–
+      Bachelor of Laws, Hons), Khushi Budhraja (Session 2023-24, Bachelor of Technology–Cloud
+      Computing and Artificial Intelligence), Krati Jain (Session 2022-23, Bachelor of Technology–
+      Bio-Technology), and Muskan Budhraja (Session 2021-22, Bachelor of Technology–Computer Science
+      & Engineering). The <strong>Pro-Chancellor's Medal</strong> was awarded to Praneta Yadav
+      (Session 2024-25, Master of Technology–Bio-Technology), Saumya Singh (Session 2023-24, Master
+      of Science–Chemistry), Shreya Srivastava (Session 2022-23, Master of Arts–Sociology), and Rahat
+      Parveen (Session 2021-22, Master of Technology–Bio-Technology). The achievements of these young
+      women have not only brought glory to the University but have also proved that daughters are
+      continuously setting new records in the field of talent, dedication, and excellence.
+    </p>
+
+    <p class="mt-2">
+      The University's tradition of encouraging academic excellence is also getting stronger. In the
+      session 2021-22, 52 students were awarded Gold Medals and 43 students received Silver Medals.
+      In the session 2022-23, this number increased to 55 Gold and 40 Silver Medals. In the session
+      2023-24, 61 students earned Gold Medals and 45 students earned Silver Medals. Meanwhile, in the
+      session 2024-25, 64 students were awarded Gold Medals and 37 students received Silver Medals.
+      This achievement is a testament to the University's excellent teaching system, quality academic
+      environment, and the continuous hard work and talent of the students.
+    </p>
+
+    <div class="mt-3">
+      <h5><strong>Medal Distribution by Session</strong></h5>
+      <ul>
+        <li>Session 2021-22: 52 Gold Medals, 43 Silver Medals</li>
+        <li>Session 2022-23: 55 Gold Medals, 40 Silver Medals</li>
+        <li>Session 2023-24: 61 Gold Medals, 45 Silver Medals</li>
+        <li>Session 2024-25: 64 Gold Medals, 37 Silver Medals</li>
+      </ul>
+    </div>
+
+    <p class="mt-2">
+      Chief Guest <strong>Prof. (Dr.) Bhushan Patwardhan</strong> in his address said that this
+      convocation ceremony is not just an occasion to award degrees, but a celebration of years of
+      hard work, discipline, and pursuit of knowledge. Highlighting the significance of the name
+      "Ramswaroop", he emphasized the need to adopt Indian knowledge traditions, free oneself from
+      mental slavery, and move forward with self-respect. He expressed confidence that SRMU graduates
+      will make every section of society's life better by making moral values, innovation, and social
+      responsibility their guiding principles.
+    </p>
+
+    <p class="mt-2">
+      Vice Chancellor <strong>Prof. (Dr.) Vijay Tiwari</strong>, while inaugurating the convocation
+      ceremony, welcomed everyone and presented the progress report of the University's four-year
+      development journey from 2021-22 to 2024-25. He informed that during this period, the
+      University has achieved remarkable accomplishments in academic expansion, quality, and
+      institutional development. He stated that in 2021-22, the number of students in the University
+      was 4,764, which has increased to 10,444 by 2024-25. Currently, approximately 12,000 students
+      are studying in various faculties and programs. He added that this continuously increasing
+      number of students is a symbol of growing societal trust in the University. The Vice Chancellor
+      said that along with the increase in student numbers, the University's responsibilities have
+      also grown equally. Our objective is not only to increase enrollment but to provide every
+      student with quality education, effective guidance, academic support, proper counseling,
+      excellent infrastructure, and value-based education.
+    </p>
+
+    <div class="mt-3">
+      <h5><strong>Student Enrollment Growth</strong></h5>
+      <ul>
+        <li>2021-22: 4,764 students</li>
+        <li>2024-25: 10,444 students</li>
+        <li>Currently (2026): Approximately 12,000 students across various faculties and programs</li>
+      </ul>
+    </div>
+
+    <p class="mt-2">
+      Chancellor <strong>Er. Pankaj Agarwal</strong> in his inspiring address extended heartfelt
+      congratulations and best wishes to all degree recipients, their parents, teachers, and the
+      entire University family. He said that the convocation ceremony is not merely an occasion to
+      award degrees but an important moment to begin a new journey of life with knowledge,
+      responsibility, and social commitment. He appealed to the students not to limit the use of
+      their acquired knowledge and skills to personal success only, but to dedicate them also to
+      nation-building, societal upliftment, and service to humanity.
+    </p>
+
+    <p class="mt-2">
+      Distinguished Guest <strong>Shri Akhilesh Mishra</strong>, in his address, reiterated the
+      message given by the Guru to his disciples in the Taittiriya Upanishad. He appealed to the
+      youth to speak the truth, follow dharma (duty and righteousness), engage in continuous
+      self-study, contribute to the progress of society, never deviate from truth and dharma, and
+      always strive for prosperity and public welfare. He said that democracy is not limited to
+      rights alone but is linked to the fulfillment of duties, and the responsibility of the nation's
+      future lies on the youth.
+    </p>
+
+    <div class="mt-3">
+      <h5><strong>Event Details</strong></h5>
+      <p>
+        <strong>Date:</strong> July 22, 2026<br/>
+        <strong>Venue:</strong> Mass Auditorium, Indira Gandhi Pratishthan, Gomti Nagar, Lucknow<br/>
+        <strong>Organized By:</strong> Shri Ramswaroop Memorial University (SRMU)<br/>
+        <strong>Compered By:</strong> Controller of Examinations Prof. (Dr.) Akanksha Nigam<br/>
+        <strong>Present:</strong> Deans of all faculties, Directors of institutes, Heads of departments, and teachers
+      </p>
+    </div>
+  `,
+  },
+  {
     id: 1,
-   isRedirect:true, 
-// isUpcoming:true,
+    isRedirect: true,
+    image: eventcard1,
+    imageSmall: "eventcard1Small",
+    date: "July 22, 2026",
+    title: "Grand Convocation Ceremony 2026 - Degrees Awarded to 7,519 Students",
+    description: `
+    <p>
+      <strong>Shri Ramswaroop Memorial University (SRMU)</strong> celebrated its Grand Convocation Ceremony with great grandeur on Wednesday at the Mass Auditorium of Indira Gandhi Pratishthan, Gomti Nagar, Lucknow. The majestic ceremony marked a significant milestone as a total of <strong>7,519 students</strong> were awarded degrees across various programs.
+    </p>
+
+    <p class="mt-2">
+      In recognition of academic excellence, <strong>405 students</strong> were honored with medals, including <strong>232 Gold Medals, 165 Silver Medals, and 8 Chancellor's and Pro-Chancellor's Medals</strong>. A special highlight of this year was that all eight prestigious medals from the sessions 2021-22 to 2024-25 were won by female students, showcasing their outstanding dedication and performance.
+    </p>
+
+    <p class="mt-2">
+      The ceremony was graced by the presence of <strong>Chief Guest Prof. (Dr.) Bhushan Patwardhan</strong>, Chancellor, Deccan College (Deemed to be University), Pune & National Research Professor, Ministry of AYUSH, Government of India, and <strong>Distinguished Guest Shri Akhilesh Mishra</strong>, former Director General of Indian Council for Cultural Relations and former Ambassador.
+    </p>
+
+    <div class="mt-3">
+      <h5><strong>Program Highlights</strong></h5>
+      <ul>
+        <li>Degrees awarded to 7,519 students across multiple programs</li>
+        <li>405 medals conferred for academic excellence</li>
+        <li>All 8 Chancellor's and Pro-Chancellor's Medals won by female students</li>
+        <li>Graced by eminent national dignitaries and academic leaders</li>
+        <li>Celebration of academic expansion, quality, and institutional development</li>
+        <li>Emphasis on moral values, innovation, and social responsibility</li>
+      </ul>
+    </div>
+
+    <div class="mt-3">
+      <h5><strong>Medal Distribution Details</strong></h5>
+      <ul>
+        <li><strong>Chancellor's Medal:</strong> Aadya Sharma (2024-25), Khushi Budhraja (2023-24), Krati Jain (2022-23), Muskan Budhraja (2021-22)</li>
+        <li><strong>Pro-Chancellor's Medal:</strong> Praneta Yadav (2024-25), Saumya Singh (2023-24), Shreya Srivastava (2022-23), Rahat Parveen (2021-22)</li>
+        <li><strong>Gold Medals:</strong> 232 awarded across all sessions</li>
+        <li><strong>Silver Medals:</strong> 165 awarded across all sessions</li>
+      </ul>
+    </div>
+
+    <div class="mt-3">
+      <h5><strong>University Progress & Vision</strong></h5>
+      <ul>
+        <li>Student enrollment grew from 4,764 (2021-22) to 10,444 (2024-25)</li>
+        <li>Currently approximately 12,000 students studying across faculties</li>
+        <li>Focus on quality education, guidance, academic support, and value-based learning</li>
+        <li>Commitment to nation-building, societal upliftment, and service to humanity</li>
+      </ul>
+    </div>
+
+    <div class="mt-3">
+      <h5><strong>Event Details</strong></h5>
+      <p>
+        <strong>Event:</strong> Grand Convocation Ceremony<br/>
+        <strong>Date:</strong> July 22, 2026<br/>
+        <strong>Venue:</strong> Mass Auditorium, Indira Gandhi Pratishthan, Gomti Nagar, Lucknow<br/>
+        <strong>Degrees Awarded:</strong> 7,519<br/>
+        <strong>Medals Awarded:</strong> 405 (232 Gold, 165 Silver, 8 Chancellor's/Pro-Chancellor's)
+      </p>
+    </div>
+  `,
+  },
+
+  {
+    id: 1,
+    isRedirect: true,
     image: eventcard1,
     imageSmall: eventcard1Small,
     date: "June 8, 2026",
@@ -103,7 +307,7 @@ const eventsData: EventItem[] = [
   {
     id: 2,
     // isUpcoming:true,
-    isRedirect:true, 
+    isRedirect: true,
     image: eventcard2,
     imageSmall: eventcard2Small,
     date: "June 8, 2026",
@@ -181,9 +385,9 @@ const eventsData: EventItem[] = [
     </div>
   `,
   },
-   {
+  {
     id: 3,
-    isRedirect:false, 
+    isRedirect: false,
     image: alumini_connect_desktop,
     imageSmall: alumini_connect_mobile,
     date: "June 18th , 2026",
@@ -204,7 +408,7 @@ The event was graced by university leadership, including Chancellor Er. Pankaj A
   },
   {
     id: 4,
-    isRedirect:false, 
+    isRedirect: false,
     image: alumini1_desktop,
     imageSmall: alumini1_mobile,
     date: "June 18th , 2026",
@@ -225,7 +429,7 @@ The event reflected the Polytechnic's commitment to fostering strong alumni-stud
   },
   {
     id: 5,
-    isRedirect:false, 
+    isRedirect: false,
     image: alumini2_desktop,
     imageSmall: alumini2_mobile,
     date: "June 18th , 2026",
@@ -245,10 +449,9 @@ The session saw enthusiastic participation from students and faculty across depa
   	`,
   },
 
-
   {
     id: 6,
-    isRedirect:true, 
+    isRedirect: true,
     image: event3,
     imageSmall: event3Small,
     date: "April 22, 2026",
@@ -272,7 +475,7 @@ The session saw enthusiastic participation from students and faculty across depa
 
   {
     id: 7,
-    isRedirect:true,
+    isRedirect: true,
     image: event1,
     imageSmall: event1Small,
     date: "April 09, 2026",
@@ -312,7 +515,7 @@ The session saw enthusiastic participation from students and faculty across depa
   },
   {
     id: 8,
-    isRedirect:true,
+    isRedirect: true,
     image: event2,
     imageSmall: event2Small,
     date: "March 08, 2026",
@@ -341,7 +544,7 @@ The session saw enthusiastic participation from students and faculty across depa
   },
   {
     id: 9,
-    isRedirect:true,
+    isRedirect: true,
     image: event4,
     imageSmall: event4Small,
     date: "May 22, 2026",
