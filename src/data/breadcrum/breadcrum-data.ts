@@ -57,5 +57,9 @@ export const childBackgrounds: Record<string, string> = {
 
 // -----------------------
 export const formatSegment = (segment: string) => {
-  return segment.replace(/[_-]/g, " ").replace(/^\w/, (c) => c.toUpperCase());
+  return segment
+    .replace(/[_-]/g, " ")
+    .replace(/([a-zA-Z])(\d)/g, "$1 $2")
+    .replace(/(\d)([a-zA-Z])/g, "$1 $2")
+    .replace(/^\w/, (c) => c.toUpperCase());
 };
