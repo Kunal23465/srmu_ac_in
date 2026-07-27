@@ -14,7 +14,7 @@ import noticeBanner from "../../assets/images/breadcrumb/Notice.webp";
 import shiftSchedule from "../../assets/images/breadcrumb/Shedule.webp";
 import greenInitive from "../../assets/images/breadcrumb/Green Initiative.webp";
 import pharmaBreadCrumbs from "../../assets/images/breadcrumb/phrama-breadcrumbs.webp";
-import convocation2026Banner from "../../assets/images/home/events/for-desk.jpeg";
+import convocation2026Banner from "../../assets/images/home/events/repo.jpeg";
 // -----------------------
 // FIX 1: Allow string index
 // -----------------------

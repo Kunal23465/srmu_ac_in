@@ -27,11 +27,14 @@ const Convocation2026 = () => {
             <p className="text-sm md:text-base font-semibold text-[#0A4A8F]">
               {convocation2026.date}
             </p>
-            <h1 className="mt-3 max-w-5xl text-[26px] sm:text-[34px] lg:text-[48px] leading-tight font-semibold text-[#023047]">
+            <h1
+              lang="en"
+              className="mt-3 mb-6 text-[26px] sm:text-[34px] lg:text-[48px] leading-[1.18] sm:leading-tight font-semibold text-[#023047] text-left hyphens-auto break-words [overflow-wrap:anywhere]"
+            >
               {convocation2026.title}
             </h1>
             <div
-              className="mt-6 max-w-5xl text-sm sm:text-[15px] lg:text-base leading-7 text-justify text-slate-800 [&_p]:mb-4 [&_h5]:mt-6 [&_h5]:mb-3 [&_h5]:text-lg [&_h5]:text-[#023047] [&_ul]:list-disc [&_ul]:pl-6 [&_li]:mb-2"
+              className="text-[15px] leading-7 text-justify text-slate-800 [&_p]:mb-4 [&_h5]:mt-6 [&_h5]:mb-3 [&_h5]:text-lg [&_h5]:text-[#023047] [&_ul]:list-disc [&_ul]:pl-6 [&_li]:mb-2"
               dangerouslySetInnerHTML={{ __html: convocation2026.description ?? "" }}
             />
           </article>
