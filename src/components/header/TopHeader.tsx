@@ -87,14 +87,14 @@ const TopHeader: React.FC = () => {
               Apply Now
             </Link> */}
 
-            {/* <Link
+            <Link
               target="_blank"
               rel="nofollow noopener noreferrer"
               to="https://phdadmission.srmu.ac.in/"
               className="bg-[#FFB703] hover:bg-white px-4 text-[13px] font-medium uppercase border border-[#ffb703] py-[0.875rem] flex items-center text-black"
             >
               Ph.D Admission 2026
-            </Link> */}
+            </Link>
 
             {/* <Link
               target="_blank"
@@ -163,14 +163,14 @@ const TopHeader: React.FC = () => {
               >
                 Apply Now
               </Link> */}
-              {/* <Link
+              <Link
                 target="_blank"
                 rel="nofollow noopener noreferrer"
                 to="https://phdadmission.srmu.ac.in/"
                 className="bg-[#FFB703] hover:bg-white px-2 text-[9px] font-medium uppercase border border-[#ffb703] py-1 flex items-center text-black"
               >
                 Ph.D Admission 2026
-              </Link> */}
+              </Link>
               {/* <Link
                 target="_blank"
 
