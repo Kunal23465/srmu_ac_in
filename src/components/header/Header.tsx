@@ -76,6 +76,7 @@ const Header = () => {
       >
         <TopHeader />
       </div>
+
       <header
         className={`fixed left-0 z-[999] w-full transition-all duration-500 ease-in-out ${isActive ? "top-0" : "top-[32px] sm:top-0"
           }`}
@@ -83,7 +84,26 @@ const Header = () => {
         <div className="hidden sm:block">
           <TopHeader />
         </div>
+        <div className="marquee">
 
+          <div className={`marquee-content`}>
+            <span>
+              📢 Due to the significant volume of requests received, we are reopening
+              the PhD application form. This will provide additional applicants the
+              opportunity to complete and submit their applications within the
+              extended timeline.
+            </span>
+
+            {/* Duplicate text for seamless scrolling */}
+            <span>
+              📢 Due to the significant volume of requests received, we are reopening
+              the PhD application form. This will provide additional applicants the
+              opportunity to complete and submit their applications within the
+              extended timeline.
+            </span>
+          </div>
+
+        </div>
         <div className={`py-2 items-stretch header  ${isActive ? "bg-[#14284e] active" : "bg-[#14284e] sm:bg-transparent"}`}>
           <div className={`${Classes["container"]} relative`}>
             <div className="flex flex-row justify-between">
@@ -130,11 +150,13 @@ const Header = () => {
                           </div>
                         )}
                         {isMega && showMegaMenu && !data?.subItem && <span className="hidden group-hover:block manage-top-arrow big"></span>}
+
+                        {/* top-[100px] xl:top-[112px] bg-white rounded-md */}
                         {isMega && showMegaMenu && (
                           <div
                             className="
                               fixed left-1/2 -translate-x-1/2
-                              top-[100px] xl:top-[112px] bg-white rounded-md
+                              top-[146px] xl:top-[148px] bg-white rounded-md
                               hidden group-hover:flex
                               border-t-4 border-t-yellow-500
                               border-b-4 border-b-blue-500
