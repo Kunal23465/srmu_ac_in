@@ -15,6 +15,7 @@ import { getCounterById } from "./store/program-finder/counter/getCounterThunk";
 import { fetchProgramHeighlightById } from "./store/program-finder/program-heighlight/programHeighlightThunk";
 import { fetchRecruiterById } from "./store/recruiter/recruiterThunk";
 import { fetchWhySrmuLogoById } from "./store/why-srmu/whySrmuLogoThunk";
+import { fetchProgramFaqByProgramId } from "./store/faq/programFaqThunk";
 import { fetchProgramMenu } from "./store/header/programMenuThunk";
 import { fetchBlogs } from "./store/blogs/blogsThunk";
 import { fetchPlacementRecordTabData } from "./store/placement/placement-record/placementRecordTabDataThunk";
@@ -239,6 +240,7 @@ async function preloadProgramDetailsPageData(store: ReturnType<typeof createStor
     store.dispatch(fetchProgramHeighlightById(programSlug)),
     store.dispatch(fetchRecruiterById({ slug: programSlug })),
     store.dispatch(fetchWhySrmuLogoById({ slug: programSlug })),
+    store.dispatch(fetchProgramFaqByProgramId({ slug: programSlug })),
   ]);
 }
 

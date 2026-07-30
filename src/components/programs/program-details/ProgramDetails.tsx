@@ -104,80 +104,12 @@ const toIso8601CourseDuration = (value?: string | number | null) => {
 
   return undefined;
 };
-const faqs = [
-  {
-    q: "Which college is better for BCA in Lucknow?",
-    a: "The best BCA college depends on factors such as curriculum, industry exposure, placements, infrastructure, and specialization options. Shri Ramswaroop Memorial University (SRMU) is among the leading choices for BCA in Lucknow due to its industry-aligned curriculum, specialized programs in Data Science & Artificial Intelligence and Artificial Intelligence & Machine Learning, modern computing labs, hackathons, certification opportunities, and placement support. Students should compare colleges based on their career goals and preferred specialization."
-  },
-  {
-    q: "What is the fee of a BCA college in Lucknow?",
-    a: "The fee for BCA colleges in Lucknow varies depending on the institution and specialization. Generally, BCA fees range from ₹25,000 to ₹1,50,000 per year. Specialized programs such as BCA Data Science & Artificial Intelligence and BCA Artificial Intelligence & Machine Learning may have different fee structures due to advanced labs, industry training, and certification components."
-  },
-  {
-    q: "Which BCA course is best?",
-    a: (
-      <>
-        <p className="mb-3">
-          The best BCA course is one that aligns with current industry demands and future career opportunities. Popular specializations include:
-        </p>
-        <ul className="list-disc pl-5 space-y-1">
-          <li>BCA Data Science & Artificial Intelligence</li>
-          <li>BCA Artificial Intelligence & Machine Learning</li>
-          <li>BCA Cyber Security</li>
-          <li>BCA Cloud Computing</li>
-          <li>BCA Full Stack Development</li>
-          <li>BCA Software Development</li>
-        </ul>
-        <p className="mt-3">
-          Among these, BCA Data Science & Artificial Intelligence and BCA Artificial Intelligence & Machine Learning are highly sought after due to the growing demand for professionals in AI, machine learning, automation, and data analytics.
-        </p>
-      </>
-    )
-  },
-  {
-    q: "Is BCA available in Ramswaroop?",
-    a: "Yes. Shri Ramswaroop Memorial University (SRMU), Lucknow offers BCA programs, including specialized courses such as BCA Data Science & Artificial Intelligence and BCA Artificial Intelligence & Machine Learning. The programs focus on practical learning, industry projects, certifications, internships, and career-oriented skill development."
-  },
-  {
-    q: "Which BCA colleges in Lucknow offer low fees?",
-    a: "Several government and private colleges in Lucknow offer affordable BCA programs. Government institutions generally have lower tuition fees, while private universities may provide additional benefits such as industry exposure, advanced labs, placement assistance, and specialized technology programs. Students should compare both fees and career opportunities before making a decision."
-  },
-  {
-    q: "Which BCA colleges in Lucknow offer direct admission?",
-    a: "Many private universities and colleges in Lucknow offer direct admission to BCA programs based on Class 12 marks and eligibility criteria. Admission policies vary by institution, so students should check the latest admission guidelines directly with the college or university."
-  },
-  {
-    q: "Which are the best BCA colleges in Lucknow with fees?",
-    a: (
-      <>
-        <p className="mb-3">
-          Some of the well-known institutions offering BCA programs in Lucknow include:
-        </p>
-        <ul className="list-disc pl-5 space-y-1">
-          <li>Shri Ramswaroop Memorial University (SRMU)</li>
-          <li>Shri Ramswaroop Memorial College of Management (SRMCM)</li>
-        </ul>
-        <p className="mt-3">
-          Fees vary across institutions depending on facilities, specialization, and academic offerings. Students should evaluate placements, curriculum, industry partnerships, infrastructure, and career support alongside the fee structure.
-        </p>
-      </>
-    )
-  },
-  {
-    q: "Which are the top colleges for BCA in Lucknow?",
-    a: "Top BCA colleges in Lucknow are generally recognized for academic excellence, placement support, industry collaborations, modern infrastructure, and industry-oriented curriculum. Institutions such as Shri Ramswaroop Memorial University (SRMU) and Shri Ramswaroop Memorial College of Management (SRMCM) are known for offering career-focused BCA programs with opportunities for practical learning, certifications, projects, and industry exposure."
-  },
-  {
-    q: "Is BCA a 2-year or 3-year course?",
-    a: "BCA (Bachelor of Computer Applications) is a 3-year undergraduate degree program divided into six semesters. The program provides foundational and advanced knowledge in computer applications, programming, databases, networking, and emerging technologies such as Artificial Intelligence, Machine Learning, and Data Science."
-  }
-];
 const ProgramDetails: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
   const location = useLocation();
   const { programName } = useParams();
   const [expanded, setExpanded] = useState(false);
-   const [open, setOpen] = useState<number | null>(0);
+  const [open, setOpen] = useState<number | null>(0);
   const [isProgramRouteLoading, setIsProgramRouteLoading] = useState(false);
   const [hasProgramRouteLoaded, setHasProgramRouteLoaded] = useState(false);
 
@@ -188,7 +120,7 @@ const ProgramDetails: React.FC = () => {
   const { data: counterData, loading: counterLoading } = useSelector((state: RootState) => state.getCounterById);
   const { data: recruiterData, loading: recruiterLoading } = useSelector((state: RootState) => state.getRecruiter);
   const { data: whySrmuLogo, loading: whySrmuLogoLoading } = useSelector((state: RootState) => state.whySrmuLogoById);
-  const { data: programFaq,loading:faqLoading } = useSelector((state: RootState) => state.programFaq);
+  const { data: programFaq, loading: faqLoading } = useSelector((state: RootState) => state.programFaq);
   const normalizedFeesData = Array.isArray(feesData) ? feesData[0] : feesData;
   const normalizedProgramSlug = resolveProgramRouteSlug(programName || "");
   const hasCurrentProgramData = Boolean(dataByID?.programId && currentDetailsSlug === normalizedProgramSlug);
@@ -258,11 +190,51 @@ const ProgramDetails: React.FC = () => {
     ...(tuitionOffer ? { offers: tuitionOffer } : {}),
   };
 
-  const parsedSchema = programFaq?.seoConfig
-  ? JSON.parse(programFaq.seoConfig)
-  : courseSchema;
+  const mergeSchemaWithBase = (baseSchema: Record<string, any>, incomingSchema: Record<string, any>) => {
+    if (!incomingSchema || typeof incomingSchema !== "object" || Array.isArray(incomingSchema)) {
+      return baseSchema;
+    }
 
-  console.log("parsedSchema",parsedSchema);
+    const mergedSchema = {
+      ...baseSchema,
+      ...incomingSchema,
+    } as Record<string, any>;
+
+    if (baseSchema.provider && incomingSchema.provider) {
+      mergedSchema.provider = {
+        ...baseSchema.provider,
+        ...incomingSchema.provider,
+      };
+    }
+
+    if (baseSchema.hasCourseInstance && incomingSchema.hasCourseInstance) {
+      mergedSchema.hasCourseInstance = {
+        ...baseSchema.hasCourseInstance,
+        ...incomingSchema.hasCourseInstance,
+      };
+    }
+
+    return mergedSchema;
+  };
+
+  let parsedSchema = courseSchema;
+  if (programFaq?.seoConfig) {
+    try {
+      let cleanedConfig: any = programFaq.seoConfig;
+      if (typeof cleanedConfig === "string") {
+        cleanedConfig = cleanedConfig
+          .replace(/^"+|"+$/g, "")
+          .replace(/\\"/g, '"')
+          .replace(/[\u0000-\u001F\u007F-\u009F]/g, "")
+          .trim();
+        parsedSchema = mergeSchemaWithBase(courseSchema, JSON.parse(cleanedConfig));
+      } else {
+        parsedSchema = mergeSchemaWithBase(courseSchema, cleanedConfig);
+      }
+    } catch (error) {
+      console.error("Error parsing program seoConfig:", error);
+    }
+  }
   useEffect(() => {
     if (!hasCurrentProgramData || !dataByID?.programId) {
       return;
@@ -304,7 +276,7 @@ const ProgramDetails: React.FC = () => {
         dispatch(fetchProgramHeighlightById(normalizedProgramSlug)),
         dispatch(fetchRecruiterById({ slug: normalizedProgramSlug })),
         dispatch(fetchWhySrmuLogoById({ slug: normalizedProgramSlug })),
-       
+
       ]);
     };
 
@@ -316,9 +288,9 @@ const ProgramDetails: React.FC = () => {
   }, [dispatch, normalizedProgramSlug, programName]);
 
 
-  useEffect(()=>{
- dispatch(fetchProgramFaqByProgramId({ slug: normalizedProgramSlug }))
-  },[dispatch, normalizedProgramSlug, programName])
+  useEffect(() => {
+    dispatch(fetchProgramFaqByProgramId({ slug: normalizedProgramSlug }))
+  }, [dispatch, normalizedProgramSlug, programName])
 
   // counter data key change
   const convertedCounterData = counterData.map((item) => {
@@ -394,7 +366,7 @@ const ProgramDetails: React.FC = () => {
 
 
   console.log("programFaq:", programFaq);
-  console.log("faqLoading",faqLoading)
+  console.log("faqLoading", faqLoading)
   return (
     <>
       <SeoHead
@@ -418,11 +390,11 @@ const ProgramDetails: React.FC = () => {
             </Link>
           }
           {/* @ts-ignore */}
-          <h1 className="lg:text-[42px] leading-[1.2] md:text-[36px] text-[28px] fw500 text-[#023047]">{dataByID?.name}</h1>
+          <h2 className="lg:text-[42px] leading-[1.2] md:text-[36px] text-[28px] fw500 text-[#023047]">{dataByID?.name}</h2>
           {/* @ts-ignore */}
-{/* <h2 className="text-[#023047] mt-3 leading-[1.2] text-[18px] sm:text-[20px] lg:text-[22px] fw500">Best BCA College in Uttar Pradesh</h2> */}
-          
-       <h2 className="text-[#023047] mt-3 leading-[1.2] text-[18px] sm:text-[20px] lg:text-[22px] fw500">{dataByID?.title}</h2>
+          {/* <h2 className="text-[#023047] mt-3 leading-[1.2] text-[18px] sm:text-[20px] lg:text-[22px] fw500">Best BCA College in Uttar Pradesh</h2> */}
+
+          <h1 className="text-[#023047] mt-3 leading-[1.2] text-[18px] sm:text-[20px] lg:text-[22px] fw500">{dataByID?.title}</h1>
 
 
           <div className={` py-7 md:py-10 lg:py-14`}>
@@ -568,95 +540,93 @@ const ProgramDetails: React.FC = () => {
           </DeferredSection>
         )}
 
-{
-  programFaq?.faqs &&  <section className="py-12 md:py-16 bg-slate-100">
-      <div className={`${Classes["container"]}`}>
-        <div className="text-center mb-8 md:mb-10">
-          <h2 className="text-2xl md:text-4xl font-bold text-gray-900">
-            Frequently Asked Questions
-          </h2>
-          
-        </div>
+        {
+          programFaq?.faqs && <section className="py-12 md:py-16 bg-slate-100">
+            <div className={`${Classes["container"]}`}>
+              <div className="text-center mb-8 md:mb-10">
+                <h2 className="text-2xl md:text-4xl font-bold text-gray-900">
+                  Frequently Asked Questions
+                </h2>
 
-        <div
-          className={`grid transition-all duration-500 ease-in-out`}
-        >
-          <div className="overflow-hidden">
-            <div className="space-y-3">
-              { programFaq?.faqs.map((f, i) => {
-                const isOpen = open === i;
+              </div>
 
-                return (
-                  <div
-                    key={f.q}
-                    className="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden"
-                  >
-                    <button
-                      onClick={() => setOpen(isOpen ? null : i)}
-                      aria-expanded={isOpen}
-                      className="w-full flex cursor-pointer items-center justify-between gap-3 md:gap-4 p-4 md:p-5 text-left hover:bg-gray-50 transition-colors"
-                    >
-                      <span className="text-[13px] md:text-base font-bold text-gray-900">
-                        {f.faqQues}
-                      </span>
+              <div
+                className={`grid transition-all duration-500 ease-in-out`}
+              >
+                <div className="overflow-hidden">
+                  <div className="space-y-3">
+                    {programFaq?.faqs.map((f, i) => {
+                      const isOpen = open === i;
 
-                      <span
-                        className={`flex-shrink-0 h-8 w-8  rounded-full bg-[#0A4A8F]/10 text-[#0A4A8F] flex items-center justify-center transition-transform duration-300 ${
-                          isOpen ? "rotate-45" : ""
-                        }`}
-                      >
-                        <svg
-                          width="14"
-                          height="14"
-                          viewBox="0 0 24 24"
-                          fill="none"
+                      return (
+                        <div
+                          key={f.q}
+                          className="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden"
                         >
-                          <path
-                            d="M12 5v14M5 12h14"
-                            stroke="currentColor"
-                            strokeWidth="2.5"
-                            strokeLinecap="round"
-                          />
-                        </svg>
-                      </span>
-                    </button>
+                          <button
+                            onClick={() => setOpen(isOpen ? null : i)}
+                            aria-expanded={isOpen}
+                            className="w-full flex cursor-pointer items-center justify-between gap-3 md:gap-4 p-4 md:p-5 text-left hover:bg-gray-50 transition-colors"
+                          >
+                            <span className="text-[13px] md:text-base font-bold text-gray-900">
+                              {f.faqQues}
+                            </span>
 
-                    <div
-                      className={`grid transition-all duration-300 ${
-                        isOpen
-                          ? "grid-rows-[1fr] opacity-100"
-                          : "grid-rows-[0fr] opacity-0"
-                      }`}
-                    >
-                      <div className="overflow-hidden">
-                         <div
-      className="mt-2 text-gray-600 px-4 pb-4"
-      dangerouslySetInnerHTML={{ __html: f.faqAns }}
-    />
-                      </div>
-                    </div>
+                            <span
+                              className={`flex-shrink-0 h-8 w-8  rounded-full bg-[#0A4A8F]/10 text-[#0A4A8F] flex items-center justify-center transition-transform duration-300 ${isOpen ? "rotate-45" : ""
+                                }`}
+                            >
+                              <svg
+                                width="14"
+                                height="14"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                              >
+                                <path
+                                  d="M12 5v14M5 12h14"
+                                  stroke="currentColor"
+                                  strokeWidth="2.5"
+                                  strokeLinecap="round"
+                                />
+                              </svg>
+                            </span>
+                          </button>
+
+                          <div
+                            className={`grid transition-all duration-300 ${isOpen
+                              ? "grid-rows-[1fr] opacity-100"
+                              : "grid-rows-[0fr] opacity-0"
+                              }`}
+                          >
+                            <div className="overflow-hidden">
+                              <div
+                                className="mt-2 text-gray-600 px-4 pb-4"
+                                dangerouslySetInnerHTML={{ __html: f.faqAns }}
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })}
                   </div>
-                );
-              })}
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-}
+          </section>
+        }
 
- <DeferredSection minHeight={360} rootMargin="320px 0px" fallback={renderDeferredFallback(360)}>
-            
-              <Suspense fallback={<SectionLoader minHeight={280} />}>
-              <div className={`pb-20`}>
-               <Map />
-               </div>
-              </Suspense>
-         
-          </DeferredSection>
+        <DeferredSection minHeight={360} rootMargin="320px 0px" fallback={renderDeferredFallback(360)}>
+
+          <Suspense fallback={<SectionLoader minHeight={280} />}>
+            <div className={`pb-20`}>
+              <Map />
+            </div>
+          </Suspense>
+
+        </DeferredSection>
 
 
-         
+
 
 
 
