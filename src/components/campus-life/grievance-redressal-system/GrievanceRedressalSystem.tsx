@@ -11,6 +11,7 @@ import Procedures from "./Procedures";
 import GeneralGuidelines from "./GeneralGuidelines";
 import ProcessFlowCall from "./ProcessFlowCall";
 import ProcessFlowStudent from "./ProcessFlowStudent";
+import { Link } from "react-router-dom";
 
 const GrievanceRedressalSystem: React.FC = () => {
   const items = [
@@ -55,9 +56,9 @@ const GrievanceRedressalSystem: React.FC = () => {
       <ProcessFlowStudent />
       <div className="bg-[#f1f1f1] py-20">
         <div className={`${Classes["container"]} `}>
-         <div className="flex flex-col md:flex-row items-center justify-center gap-6">
-          {/* LEFT CARD */}
-          <div>
+          <div className="flex flex-col md:flex-row items-center justify-center gap-6">
+            {/* LEFT CARD */}
+            {/* <div>
                    <button
               type="button"
               aria-label="Grievance Redressal Mechanism for Students"
@@ -72,14 +73,12 @@ const GrievanceRedressalSystem: React.FC = () => {
             >
               Grievance Redressal Mechanism for Students
             </button>
-          </div>
+          </div> */}
 
-          {/* RIGHT CARD */}
-          <div>
-            <button
-              type="button"
-              aria-label="Student Portal Login"
-              className="
+            {/* RIGHT CARD */}
+            <div>
+              <Link to="https://eyojan.unif.co.in/" target="_blank" rel="noopener noreferrer"
+                className="
         block rounded-[10px] bg-white shadow-[0_4px_16px_rgba(0,0,0,0.16)]
         px-8 py-16 w-[300px] sm:w-[340px] xl:w-[385px] h-[186px] text-center text-[20px] font-semibold leading-snug
         border-t-[5px] border-b-[5px]
@@ -87,10 +86,10 @@ const GrievanceRedressalSystem: React.FC = () => {
         border-b-[#ffb703]
         transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-xl cursor-pointer
       "
-            >
-              Click Here To <br /> Login
-            </button>
-          </div></div>
+              >
+                Click here to Login to Grievance Redressal Portal
+              </Link>
+            </div></div>
         </div>
       </div>
 
