@@ -31,17 +31,25 @@ const TopHeader: React.FC = () => {
         {/* DESKTOP HEADER */}
         <div className="hidden lg:flex justify-between ">
           <div className="left-part flex items-center">
-            <ul className="flex items-center text-[13px] flex-row">
-              <Link className="px-[0.7rem] border-r border-white" to="/notice">
+            <Link
+              target="_blank"
+              rel="nofollow noopener noreferrer"
+              to="https://students.srmu.ac.in/login"
+              className="bg-[#FFB703] hover:bg-white px-2 xl:px-4 text-xs xl:text-[13px] font-medium uppercase border border-[#ffb703] py-[1rem] flex items-center text-black"
+            >
+              SRMUSET EXAM PORTAL
+            </Link>
+            <ul className="flex items-center text-xs xl:text-[13px] flex-row">
+              {/* <Link className="px-2 xl:px-[0.7rem] border-r border-white" to="/notice">
                 NOTICE
-              </Link>
+              </Link> */}
               <Link
-                className="px-[0.7rem] border-r border-white"
+                className="px-2 xl:px-[0.7rem] border-r border-white"
                 to="/admission-enquiry"
               >
                 ADMISSION ENQUIRY
               </Link>
-              <Link className="px-[0.7rem]" to="/shift-schedule">SHIFT SCHEDULE</Link>
+              <Link className="px-2 xl:px-[0.7rem]" to="/shift-schedule">SHIFT SCHEDULE</Link>
             </ul>
           </div>
 
@@ -50,7 +58,7 @@ const TopHeader: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               to="https://eyojan.srmu.ac.in/"
-              className="relative flex items-center text-[13px] text-white gap-x-2 px-[0.7rem] after:absolute after:right-0 after:top-1/2 after:h-[55%] after:w-px after:-translate-y-1/2 after:bg-white"
+              className="relative flex items-center text-xs xl:text-[13px] text-white gap-x-2 px-2 xl:px-[0.7rem] after:absolute after:right-0 after:top-1/2 after:h-[55%] after:w-px after:-translate-y-1/2 after:bg-white"
             >
               <img src={user} alt="user" loading="eager" decoding="async" />
               Student Login
@@ -60,7 +68,7 @@ const TopHeader: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               to="https://eyojan.srmu.ac.in/"
-              className="flex text-[13px] items-center text-white gap-x-5 px-[0.7rem]"
+              className="flex text-xs xl:text-[13px] items-center text-white gap-x-5 px-2 xl:px-[0.7rem]"
             >
               Staff Login
               {/* <img src={search} alt="user" /> */}
@@ -91,7 +99,7 @@ const TopHeader: React.FC = () => {
               target="_blank"
               rel="nofollow noopener noreferrer"
               to="https://phdadmission.srmu.ac.in/"
-              className="bg-[#FFB703] hover:bg-white px-4 text-[13px] font-medium uppercase border border-[#ffb703] py-[0.875rem] flex items-center text-black"
+              className="bg-[#FFB703] hover:bg-white px-2 xl:px-4 text-xs xl:text-[13px] font-medium uppercase border border-[#ffb703] py-[0.875rem] flex items-center text-black"
             >
               Ph.D Admission 2026
             </Link>
@@ -163,6 +171,14 @@ const TopHeader: React.FC = () => {
               >
                 Apply Now
               </Link> */}
+              <Link
+                target="_blank"
+                rel="nofollow noopener noreferrer"
+                to="https://students.srmu.ac.in/login"
+                className="bg-[#FFB703] hover:bg-white px-2 text-[9px] font-medium uppercase border border-[#ffb703] py-1 flex items-center text-black"
+              >
+                SRMUSET EXAM PORTAL
+              </Link>
               <Link
                 target="_blank"
                 rel="nofollow noopener noreferrer"

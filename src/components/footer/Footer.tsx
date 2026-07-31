@@ -114,6 +114,11 @@ export const footerData = {
       title: "Grievance Redressal System",
       path: "/campus-life/grievance-redressal-system",
     },
+    {
+      id: 3,
+      title: "Notice",
+      path: "/notice"
+    }
   ],
   getConected: [
     {
@@ -221,7 +226,7 @@ const Footer: React.FC = () => {
     <>
       <footer className={` text-white py-20`}>
         <div className={`${Classes["container"]} relative z-100 py-10 sm:py-20`}>
-            <div className="w-full manage_footer_column ">
+          <div className="w-full manage_footer_column ">
             <div className="w-fullspace-y-4 flex flex-col grid-first">
               <div className="flex items-center gap-3">
                 <div>
