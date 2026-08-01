@@ -384,7 +384,7 @@ const ProgramDetails: React.FC = () => {
               target="_blank"
               // @ts-ignore
               to={dataByID?.documentPath}
-              className="bg-[#ffb703] absolute -top-18 lg:-top-44 right-0 border text-nowrap border-[#ffb703] hover:bg-white text-[#023047] hover:text-[#ffb703] transition-all duration-500 px-3 lg:px-6 py-2 lg:py-3 text-sm sm:text-base font-medium rounded-lg inline-flex items-center gap-2"
+              className="bg-[#ffb703] absolute z-[100] -top-18 lg:-top-44 right-0 border text-nowrap border-[#ffb703] hover:bg-white text-[#023047] hover:text-[#ffb703] transition-all duration-500 px-3 lg:px-6 py-2 lg:py-3 text-sm sm:text-base font-medium rounded-lg inline-flex items-center gap-2"
             >
               Download Syllabus <FaArrowRightLong />
             </Link>
