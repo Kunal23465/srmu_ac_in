@@ -1,6 +1,6 @@
 import ReactDOMServer from "react-dom/server";
 import { matchRoutes } from "react-router-dom";
-import { StaticRouter } from "react-router";
+import { StaticRouter } from "react-router-dom/server";
 import { HelmetProvider } from "react-helmet-async";
 import { Provider } from "react-redux";
 import { createStore, type RootState } from "./store";
