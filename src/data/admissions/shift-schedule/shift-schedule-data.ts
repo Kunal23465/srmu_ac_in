@@ -2,8 +2,8 @@ import { customeOverViewType } from "../../../types/home-data-type";
 import { TableRowData } from "../../../types/table-data-types";
 
 import shiftWisePlanningFirstYear from "../../../assets/pdf/admissons/shift-schedule/2025-26-shift-planning-for-1st-year-020825060756.pdf";
-import busRoutesFirstShift from "../../../assets/pdf/admissons/shift-schedule/srmu-bus-route-shift-1-1--010825113125.pdf";
-import busRoutesSecondShift from "../../../assets/pdf/admissons/shift-schedule/srmu-bus-route-shift-2-1--010825113150.pdf";
+import busRoutesFirstShift from "../../../assets/pdf/admissons/shift-schedule/Bus Route Ist shift session 2026-27.pdf";
+import busRoutesSecondShift from "../../../assets/pdf/admissons/shift-schedule/Bus Route IInd Shift session 2026-27.pdf";
 
 export const shiftScheduleOverviewData: customeOverViewType = {
   heading: "Shift Schedule",

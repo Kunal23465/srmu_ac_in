@@ -16,7 +16,7 @@ import alumini1_desktop from "../../assets/new-home/events/alumini1-desktop.webp
 import alumini1_mobile from "../../assets/new-home/events/alumini1-mobile.webp";
 import alumini2_desktop from "../../assets/new-home/events/alumini2-desktop.webp";
 import alumini2_mobile from "../../assets/new-home/events/alumini2-mobile.webp";
-
+import hostFinancial from "../../assets/new-home/events/host-financial.webp";
 import fordesk from "../../assets/images/home/events/for-desk.jpeg";
 import forMobile from "../../assets/images/home/events/for-mobile.png";
 
@@ -171,6 +171,23 @@ const eventsData: EventItem[] = [
     </div>
   `,
   },
+
+  {
+    id: 10,
+    isRedirect: false,
+    image: hostFinancial,
+    imageSmall: hostFinancial,
+    date: "June 18th , 2026",
+    title: `SRMU Hosts Financial Literacy Drive with FICCI FLO Lucknow Under "I Am My Own Laxmi"`,
+    description: `
+    <p>
+    Shri Ramswaroop Memorial University (SRMU), in collaboration with FICCI FLO Lucknow, successfully organized the <b> Financial Literacy Drive </b> under the initiative "<b> I Am My Own Laxmi. </b>" The session empowered students with essential financial knowledge, covering smart money management, budgeting, savings, investing, and financial planning. The initiative encouraged young learners to make informed financial decisions, build confidence in managing their finances, and work towards long-term financial independence and security.
+    </p>
+
+   
+  	`,
+  },
+
   {
     id: 1,
     isRedirect: true,
