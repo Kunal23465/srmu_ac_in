@@ -12,7 +12,7 @@ import {
   InstituteofLegalStudiesOverviewData,
   InstituteofLegalStudiesTopFooterData,
   InstituteofLegalStudiesVMData,
-  
+
   tableHeaders,
   InstituteofLegalStudiesData3,
 } from "../../../../../data/academics/institute/institute-department/institute-of-legal-studies-data";
@@ -86,11 +86,11 @@ const InstituteofLegalStudies: React.FC = () => {
           data={InstituteofLegalStudiesfacultyData}
           renderCard={({ item }) => <CustomFacultyListCard item={item} />}
           bgImage={facilitiesBg}
-     
+
           headingColor="#ffffff"
           descriptionColor="#e5e5e5"
-         
-          
+
+
           breakpoints={{ desktop: 4, tablet: 3, mobile: 1 }}
         />
       </div>
@@ -115,7 +115,7 @@ const InstituteofLegalStudies: React.FC = () => {
         data={InstituteofLegalStudiesdepartmentHighlights}
         renderCard={({ item }) => <CustomDepartmentHighlightCard item={item} />}
         bgColor="#E7A615"
-    
+
         breakpoints={{ desktop: 3, tablet: 2, mobile: 1 }}
       />
 

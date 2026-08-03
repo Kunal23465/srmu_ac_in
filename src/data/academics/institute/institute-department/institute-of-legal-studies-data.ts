@@ -102,7 +102,7 @@ export const InstituteofLegalStudiesData1: FeeTableData = {
       duration: "5 Years",
       eligibility: "Click",
       fee: "Rs. 100,000/-",
-      link:"program/ba-llb-hons",
+      link: "program/ba-llb-hons",
       eligibilityContent: `
             <h2 class='font-bold text-lg mb-3  flex justify-center '>B.A. + LL.B. (Hons.)</h2>
             <p>Candidates must have passed Graduation in any stream from any recognised University or AICTE recognised Institute/ College with minimum aggregate marks of 45% or CGPA of 5.0 for Gen/ OBC category and 40% marks or CGPA of 4.5 for SC/ ST Category.</p>
@@ -142,7 +142,7 @@ export const InstituteofLegalStudiesData2: FeeTableData = {
       duration: "1 Years",
       eligibility: "Click",
       fee: "Rs. 80,000/-",
-      link:"program/ll-m-corporate-commercial-law",
+      link: "program/ll-m-corporate-commercial-law",
       eligibilityContent: `
             <h2 class='font-bold text-lg mb-3  flex justify-center '>LL.M. in Corporate & Commercial Law</h2>
             <p>Candidate must have passed 3 Years LL.B./5 Year integrated LL.B./ equivalent degree from any recognised University or AICTE recognised Institute/College with minimum aggregate marks of 50% or CGPA of 5.5 for Gen/OBC and 45% marks or CGPA of 5.0 for SC/ST category. Qualifying written test is mandatory.</p>
@@ -164,7 +164,7 @@ export const InstituteofLegalStudiesData2: FeeTableData = {
       duration: "1 Years",
       eligibility: "Click",
       fee: "Rs. 80,000/-",
-      link:"program/ll-m-international-comparative-law",
+      link: "program/ll-m-international-comparative-law",
       eligibilityContent: `
             <h2 class='font-bold text-lg mb-3  flex justify-center '>LL.M. in International & Comparative Law</h2>
             <p>Candidate must have passed 3 Years LL.B./5 Year integrated LL.B./ equivalent degree from any recognised University or AICTE recognised Institute/College with minimum aggregate marks of 50% or CGPA of 5.5 for Gen/OBC and 45% marks or CGPA of 5.0 for SC/ST category. Qualifying written test is mandatory.</p>
@@ -182,7 +182,7 @@ export const InstituteofLegalStudiesData3: FeeTableData = {
       duration: "3 Years",
       eligibility: "Click",
       fee: "Rs. 57,000/-",
-      link:"program/llb",
+      link: "program/llb",
       eligibilityContent: `
             <h2 class='font-bold text-lg mb-3  flex justify-center '>LL.B. (Bachelor of Law)</h2>
             <p>Candidate must have passed Graduation from any recognised University or AICTE recognised Institute/College in any stream with minimum aggregate marks of 45% or equivalent grade for GEN, 42% for OBC and 40% marks or equivalent grade for SC/ST Category.</p>
@@ -193,7 +193,7 @@ export const InstituteofLegalStudiesData3: FeeTableData = {
       duration: "5 Years",
       eligibility: "Click",
       fee: "Rs. 100,000/-",
-      link:"program/ba-llb-hons",
+      link: "program/ba-llb-hons",
       eligibilityContent: `
             <h2 class='font-bold text-lg mb-3  flex justify-center '>B.A. + LL.B. (Hons.)</h2>
             <p>Candidate must have passed 10+2 or equivalent system from any recognized Central/State Board in any stream with minimum aggregate marks of 45% or equivalent grade for GEN/OBC and 40% marks or equivalent grade for SC/ST Category.</p>
@@ -214,6 +214,90 @@ export const InstituteofLegalStudiesData3: FeeTableData = {
 };
 
 export const InstituteofLegalStudiesfacultyData: FacultyItem[] = [
+  {
+    id: 1,
+    name: "Prof. (Dr.) Narendra Bahadur Singh",
+    designation: "Professor & Director, Institute of Legal Studies, SRMU",
+    image: DefaultImg,
+  },
+  {
+    id: 2,
+    name: "Mr. Dileep Kumar Singh",
+    designation: "Assistant Professor",
+    image: DefaultImg,
+  },
+  {
+    id: 3,
+    name: "Mr. Ram Krishna Mani Tripathi",
+    designation: "Assistant Professor",
+    image: DefaultImg,
+  },
+  {
+    id: 4,
+    name: "Mr. Anand",
+    designation: "Assistant Professor",
+    image: DefaultImg,
+  },
+  {
+    id: 5,
+    name: "Dr. Purnima Bhardwaj",
+    designation: "Assistant Professor",
+    image: DefaultImg,
+  },
+  {
+    id: 6,
+    name: "Ms. Charu Verma",
+    designation: "Assistant Professor",
+    image: DefaultImg,
+  },
+  {
+    id: 7,
+    name: "Ms. Divyangi Singh",
+    designation: "Assistant Professor",
+    image: DefaultImg,
+  },
+  {
+    id: 8,
+    name: "Ms. Ananya Singh Thakur",
+    designation: "Assistant Professor",
+    image: DefaultImg,
+  },
+  {
+    id: 9,
+    name: "Ms. Kamaljeet Kaur",
+    designation: "Assistant Professor",
+    image: DefaultImg,
+  },
+  {
+    id: 10,
+    name: "Ms. Shashi Shukla",
+    designation: "Assistant Professor",
+    image: DefaultImg,
+  },
+  {
+    id: 11,
+    name: "Ms. Smriti Singh",
+    designation: "Assistant Professor",
+    image: DefaultImg,
+  },
+  {
+    id: 12,
+    name: "Mr. Mayank Srivastava",
+    designation: "Assistant Professor",
+    image: DefaultImg,
+  },
+  {
+    id: 13,
+    name: "Mr. Tushar Pandey",
+    designation: "Assistant Professor",
+    image: DefaultImg,
+  },
+  {
+    id: 14,
+    name: "Dr. Vivek Kumar Mishra",
+    designation: "Assistant Professor",
+    image: DefaultImg,
+  },
   {
     id: 1,
     name: "Prof. (Dr.) Aryendu Dwivedi",

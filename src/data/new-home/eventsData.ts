@@ -19,7 +19,8 @@ import alumini2_mobile from "../../assets/new-home/events/alumini2-mobile.webp";
 import hostFinancial from "../../assets/new-home/events/host-financial-new.webp";
 import fordesk from "../../assets/images/home/events/for-desk.jpeg";
 import forMobile from "../../assets/images/home/events/for-mobile.png";
-
+import SRMUConductsDays from "../../assets/new-home/events/SRMU-Conducts-Days.webp";
+import SRMUWelcomes from "../../assets/new-home/events/SRMU-Welcomes.webp";
 export type EventItem = {
   id: string | number;
   image: string;
@@ -186,6 +187,41 @@ const eventsData: EventItem[] = [
 
    
   	`,
+  },
+
+  {
+    id: 11,
+    isRedirect: false,
+    image: SRMUConductsDays, // Replace with the new FDP image if available
+    imageSmall: SRMUConductsDays,
+    date: "July 28th, 2026",
+    title: `SRMU Conducts 3-Day Faculty Development Programme on Universal Human Values with AICTE`,
+    description: `
+    <p>
+      Shri Ramswaroop Memorial University (SRMU), in coordination with <b>AICTE</b>, successfully commenced a <b>3-Day Faculty Development Programme (FDP)</b> on <b>"Universal Human Values"</b> from <b>28th to 30th July 2026</b>. The inaugural session was graced by <b>Hon'ble Vice Chancellor Dr. Vijay Tiwari</b>, <b>Hon'ble Registrar Dr. Hemendra Sharma</b>, along with esteemed Deans, Directors, and faculty members.
+    </p>
+
+    <p>
+      The programme aims to strengthen <b>value-based education</b> by promoting ethical principles, holistic thinking, and their integration into teaching, learning, and the overall academic ecosystem.
+    </p>
+  `,
+  },
+  {
+    id: 12,
+    isRedirect: false,
+    image: SRMUWelcomes, // Replace with Student Induction Programme image
+    imageSmall: SRMUWelcomes,
+    date: "August 5th, 2026",
+    title: `SRMU Welcomes the 15th Batch with a Two-Day Student Induction Programme`,
+    description: `
+    <p>
+      <b>Shri Ramswaroop Memorial University (SRMU)</b> is set to warmly welcome its <b>15th Batch of students</b> through a <b>Two-Day Student Induction Programme</b> on <b>5th and 6th August 2026</b>. The programme is designed to help freshers transition smoothly into university life by introducing them to SRMU's academic environment, campus facilities, student support services, clubs, and opportunities for holistic development.
+    </p>
+
+    <p>
+      Through interactive sessions with university leadership, faculty members, and senior students, the induction aims to inspire, guide, and prepare students for a successful academic journey while fostering a strong sense of belonging from day one.
+    </p>
+  `,
   },
 
   // {
