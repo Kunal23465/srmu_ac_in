@@ -164,7 +164,7 @@ export default function Hero() {
                 </span>
 
                 {/* Icons */}
-                <h3 className="block md:hidden mt-24 text-lg md:text-3xl lg:text-4xl font-bold text-[#0A4A8F] flex flex-col leading-tight md:leading-tight mb-3">
+                <h3 className="block md:hidden mt-36 text-lg md:text-3xl lg:text-4xl font-bold text-[#0A4A8F] flex flex-col leading-tight md:leading-tight mb-3">
                   Recognitions & Accreditation
                 </h3>
                 <div className="grid grid-cols-5 sm:mt-0 gap-2 md:flex md:max-w-[320px]">

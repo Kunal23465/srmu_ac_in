@@ -16,7 +16,7 @@ import alumini1_desktop from "../../assets/new-home/events/alumini1-desktop.webp
 import alumini1_mobile from "../../assets/new-home/events/alumini1-mobile.webp";
 import alumini2_desktop from "../../assets/new-home/events/alumini2-desktop.webp";
 import alumini2_mobile from "../../assets/new-home/events/alumini2-mobile.webp";
-import hostFinancial from "../../assets/new-home/events/host-financial.webp";
+import hostFinancial from "../../assets/new-home/events/host-financial-new.webp";
 import fordesk from "../../assets/images/home/events/for-desk.jpeg";
 import forMobile from "../../assets/images/home/events/for-mobile.png";
 
@@ -188,70 +188,70 @@ const eventsData: EventItem[] = [
   	`,
   },
 
-  {
-    id: 1,
-    isRedirect: true,
-    image: eventcard1,
-    imageSmall: "eventcard1Small",
-    date: "July 22, 2026",
-    title: "Grand Convocation Ceremony 2026 - Degrees Awarded to 7,519 Students",
-    description: `
-    <p>
-      <strong>Shri Ramswaroop Memorial University (SRMU)</strong> celebrated its Grand Convocation Ceremony with great grandeur on Wednesday at the Mass Auditorium of Indira Gandhi Pratishthan, Gomti Nagar, Lucknow. The majestic ceremony marked a significant milestone as a total of <strong>7,519 students</strong> were awarded degrees across various programs.
-    </p>
+  // {
+  //   id: 1,
+  //   isRedirect: true,
+  //   image: eventcard1,
+  //   imageSmall: "eventcard1Small",
+  //   date: "July 22, 2026",
+  //   title: "Grand Convocation Ceremony 2026 - Degrees Awarded to 7,519 Students",
+  //   description: `
+  //   <p>
+  //     <strong>Shri Ramswaroop Memorial University (SRMU)</strong> celebrated its Grand Convocation Ceremony with great grandeur on Wednesday at the Mass Auditorium of Indira Gandhi Pratishthan, Gomti Nagar, Lucknow. The majestic ceremony marked a significant milestone as a total of <strong>7,519 students</strong> were awarded degrees across various programs.
+  //   </p>
 
-    <p class="mt-2">
-      In recognition of academic excellence, <strong>405 students</strong> were honored with medals, including <strong>232 Gold Medals, 165 Silver Medals, and 8 Chancellor's and Pro-Chancellor's Medals</strong>. A special highlight of this year was that all eight prestigious medals from the sessions 2021-22 to 2024-25 were won by female students, showcasing their outstanding dedication and performance.
-    </p>
+  //   <p class="mt-2">
+  //     In recognition of academic excellence, <strong>405 students</strong> were honored with medals, including <strong>232 Gold Medals, 165 Silver Medals, and 8 Chancellor's and Pro-Chancellor's Medals</strong>. A special highlight of this year was that all eight prestigious medals from the sessions 2021-22 to 2024-25 were won by female students, showcasing their outstanding dedication and performance.
+  //   </p>
 
-    <p class="mt-2">
-      The ceremony was graced by the presence of <strong>Chief Guest Prof. (Dr.) Bhushan Patwardhan</strong>, Chancellor, Deccan College (Deemed to be University), Pune & National Research Professor, Ministry of AYUSH, Government of India, and <strong>Distinguished Guest Shri Akhilesh Mishra</strong>, former Director General of Indian Council for Cultural Relations and former Ambassador.
-    </p>
+  //   <p class="mt-2">
+  //     The ceremony was graced by the presence of <strong>Chief Guest Prof. (Dr.) Bhushan Patwardhan</strong>, Chancellor, Deccan College (Deemed to be University), Pune & National Research Professor, Ministry of AYUSH, Government of India, and <strong>Distinguished Guest Shri Akhilesh Mishra</strong>, former Director General of Indian Council for Cultural Relations and former Ambassador.
+  //   </p>
 
-    <div class="mt-3">
-      <h5><strong>Program Highlights</strong></h5>
-      <ul>
-        <li>Degrees awarded to 7,519 students across multiple programs</li>
-        <li>405 medals conferred for academic excellence</li>
-        <li>All 8 Chancellor's and Pro-Chancellor's Medals won by female students</li>
-        <li>Graced by eminent national dignitaries and academic leaders</li>
-        <li>Celebration of academic expansion, quality, and institutional development</li>
-        <li>Emphasis on moral values, innovation, and social responsibility</li>
-      </ul>
-    </div>
+  //   <div class="mt-3">
+  //     <h5><strong>Program Highlights</strong></h5>
+  //     <ul>
+  //       <li>Degrees awarded to 7,519 students across multiple programs</li>
+  //       <li>405 medals conferred for academic excellence</li>
+  //       <li>All 8 Chancellor's and Pro-Chancellor's Medals won by female students</li>
+  //       <li>Graced by eminent national dignitaries and academic leaders</li>
+  //       <li>Celebration of academic expansion, quality, and institutional development</li>
+  //       <li>Emphasis on moral values, innovation, and social responsibility</li>
+  //     </ul>
+  //   </div>
 
-    <div class="mt-3">
-      <h5><strong>Medal Distribution Details</strong></h5>
-      <ul>
-        <li><strong>Chancellor's Medal:</strong> Aadya Sharma (2024-25), Khushi Budhraja (2023-24), Krati Jain (2022-23), Muskan Budhraja (2021-22)</li>
-        <li><strong>Pro-Chancellor's Medal:</strong> Praneta Yadav (2024-25), Saumya Singh (2023-24), Shreya Srivastava (2022-23), Rahat Parveen (2021-22)</li>
-        <li><strong>Gold Medals:</strong> 232 awarded across all sessions</li>
-        <li><strong>Silver Medals:</strong> 165 awarded across all sessions</li>
-      </ul>
-    </div>
+  //   <div class="mt-3">
+  //     <h5><strong>Medal Distribution Details</strong></h5>
+  //     <ul>
+  //       <li><strong>Chancellor's Medal:</strong> Aadya Sharma (2024-25), Khushi Budhraja (2023-24), Krati Jain (2022-23), Muskan Budhraja (2021-22)</li>
+  //       <li><strong>Pro-Chancellor's Medal:</strong> Praneta Yadav (2024-25), Saumya Singh (2023-24), Shreya Srivastava (2022-23), Rahat Parveen (2021-22)</li>
+  //       <li><strong>Gold Medals:</strong> 232 awarded across all sessions</li>
+  //       <li><strong>Silver Medals:</strong> 165 awarded across all sessions</li>
+  //     </ul>
+  //   </div>
 
-    <div class="mt-3">
-      <h5><strong>University Progress & Vision</strong></h5>
-      <ul>
-        <li>Student enrollment grew from 4,764 (2021-22) to 10,444 (2024-25)</li>
-        <li>Currently approximately 12,000 students studying across faculties</li>
-        <li>Focus on quality education, guidance, academic support, and value-based learning</li>
-        <li>Commitment to nation-building, societal upliftment, and service to humanity</li>
-      </ul>
-    </div>
+  //   <div class="mt-3">
+  //     <h5><strong>University Progress & Vision</strong></h5>
+  //     <ul>
+  //       <li>Student enrollment grew from 4,764 (2021-22) to 10,444 (2024-25)</li>
+  //       <li>Currently approximately 12,000 students studying across faculties</li>
+  //       <li>Focus on quality education, guidance, academic support, and value-based learning</li>
+  //       <li>Commitment to nation-building, societal upliftment, and service to humanity</li>
+  //     </ul>
+  //   </div>
 
-    <div class="mt-3">
-      <h5><strong>Event Details</strong></h5>
-      <p>
-        <strong>Event:</strong> Grand Convocation Ceremony<br/>
-        <strong>Date:</strong> July 22, 2026<br/>
-        <strong>Venue:</strong> Mass Auditorium, Indira Gandhi Pratishthan, Gomti Nagar, Lucknow<br/>
-        <strong>Degrees Awarded:</strong> 7,519<br/>
-        <strong>Medals Awarded:</strong> 405 (232 Gold, 165 Silver, 8 Chancellor's/Pro-Chancellor's)
-      </p>
-    </div>
-  `,
-  },
+  //   <div class="mt-3">
+  //     <h5><strong>Event Details</strong></h5>
+  //     <p>
+  //       <strong>Event:</strong> Grand Convocation Ceremony<br/>
+  //       <strong>Date:</strong> July 22, 2026<br/>
+  //       <strong>Venue:</strong> Mass Auditorium, Indira Gandhi Pratishthan, Gomti Nagar, Lucknow<br/>
+  //       <strong>Degrees Awarded:</strong> 7,519<br/>
+  //       <strong>Medals Awarded:</strong> 405 (232 Gold, 165 Silver, 8 Chancellor's/Pro-Chancellor's)
+  //     </p>
+  //   </div>
+  // `,
+  // },
 
   {
     id: 1,
