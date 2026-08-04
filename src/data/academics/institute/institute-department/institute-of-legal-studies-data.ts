@@ -324,7 +324,7 @@ export const InstituteofLegalStudiesfacultyData: FacultyItem[] = [
   // },
   {
     id: 5,
-    name: "Mr. Abhishek Vishwakarma",
+    name: "Ms. Preeti Bhargav",
     designation: "Assistant Professor",
     image: DefaultImg,
   },

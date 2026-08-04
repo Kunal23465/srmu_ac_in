@@ -1,14 +1,14 @@
 import { customeOverViewType } from "../../../types/home-data-type";
 import { TableRowData } from "../../../types/table-data-types";
 
-import shiftWisePlanningFirstYear from "../../../assets/pdf/admissons/shift-schedule/2025-26-shift-planning-for-1st-year-020825060756.pdf";
+import shiftWisePlanningFirstYear from "../../../assets/pdf/admissons/shift-schedule/Shift wise plan Session 2026 27.pdf";
 import busRoutesFirstShift from "../../../assets/pdf/admissons/shift-schedule/Bus Route Ist shift session 2026-27.pdf";
 import busRoutesSecondShift from "../../../assets/pdf/admissons/shift-schedule/Bus Route IInd Shift session 2026-27.pdf";
 
 export const shiftScheduleOverviewData: customeOverViewType = {
   heading: "Shift Schedule",
   content: `
-The Shift Schedule outlines the class timings for all first-year programs at SRMU for Session 2025-26. Students are allotted First or Second Shift based on their respective courses. It is important to check your shift timing to ensure timely attendance from Day 1.
+The Shift Schedule outlines the class timings for all first-year programs at SRMU for Session 2026-27. Students are allotted First or Second Shift based on their respective courses. It is important to check your shift timing to ensure timely attendance from Day 1.
 Please refer to the detailed program-wise shift allocation list below.`,
 };
 
