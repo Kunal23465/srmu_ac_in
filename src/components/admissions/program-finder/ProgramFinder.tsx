@@ -197,6 +197,16 @@ const ProgramFinder: React.FC = () => {
   if (error) {
     return <div>Error loading data</div>;
   }
+  const sortedData = [...data].sort((a, b) => {
+    // @ts-ignore
+    if (a.displayOrder === null) return 1;
+    // @ts-ignore
+    if (b.displayOrder === null) return -1;
+    // @ts-ignore
+    return a.displayOrder - b.displayOrder;
+  });
+
+  console.log("data============", sortedData);
   return (
     <>
       <SeoHead
@@ -213,7 +223,7 @@ const ProgramFinder: React.FC = () => {
           <div className="w-[140px] h-[3px] bg-amber-400 mt-4 mb-4" />
         </div>
         <ProgramFilter
-          data={data}
+          data={sortedData}
           programTypeOptions={programType}
           disciplineOptions={discipline}
           selectedProgramType={selectedProgramType}

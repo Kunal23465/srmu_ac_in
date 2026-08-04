@@ -11,7 +11,7 @@ export const API = axios.create({
   // For Local ........
   // baseURL: "http://10.8.20.38:7005",
   // For test
-  // https://srmuwebservice.srmu.ac.in:7005
+  // baseURL: "https://srmuwebservice.srmu.ac.in:7005",
   baseURL: API_BASE_URL,
   // for prod
   // baseURL: "https://webservices.srmu.ac.in:7005",

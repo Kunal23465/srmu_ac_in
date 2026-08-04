@@ -289,7 +289,16 @@ const ProgramFinderHome: React.FC = () => {
     setSelectedDiscipline("");
     lastAppliedParamsRef.current = {};
   };
+  const sortedData = [...data].sort((a, b) => {
+    // @ts-ignore
+    if (a.displayOrder === null) return 1;
+    // @ts-ignore
+    if (b.displayOrder === null) return -1;
+    // @ts-ignore
+    return a.displayOrder - b.displayOrder;
+  });
 
+  console.log("data============", sortedData);
   return (
     <>
       <div className={`${Classes.container} mt-16`}>
@@ -299,7 +308,7 @@ const ProgramFinderHome: React.FC = () => {
         </div>
 
         <ProgramFilter
-          data={data}
+          data={sortedData}
           programTypeOptions={programFlag}
           disciplineOptions={discipline}
           selectedProgramType={selectedProgramFlag}
