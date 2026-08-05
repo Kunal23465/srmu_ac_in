@@ -34,7 +34,6 @@ const CustomDepartmentSlider = <T,>({
   breakpoints,
 }: CustomDepartmentSliderProps<T>) => {
   const [hasMounted, setHasMounted] = useState(false);
-  const [isSliding, setIsSliding] = useState(false);
   const [currentSlidesToShow, setCurrentSlidesToShow] = useState(breakpoints.desktop);
   const [emblaRef, emblaApi] = useEmblaCarousel(
     {
@@ -93,30 +92,24 @@ const CustomDepartmentSlider = <T,>({
       // You can add any slide change logic here if needed
     };
 
-    const onSettle = () => {
-      setIsSliding(false);
-    };
-
     emblaApi.on("select", onSelect);
-    emblaApi.on("settle", onSettle);
 
     return () => {
       emblaApi.off("select", onSelect);
-      emblaApi.off("settle", onSettle);
     };
   }, [emblaApi, hasMounted]);
 
   const infinite = data.length > currentSlidesToShow;
 
   const prev = () => {
-    if (!infinite || isSliding || !emblaApi) return;
-    setIsSliding(true);
+    if (!infinite || !emblaApi) return;
+    if (!emblaApi.canScrollPrev()) return;
     emblaApi.scrollPrev();
   };
 
   const next = () => {
-    if (!infinite || isSliding || !emblaApi) return;
-    setIsSliding(true);
+    if (!infinite || !emblaApi) return;
+    if (!emblaApi.canScrollNext()) return;
     emblaApi.scrollNext();
   };
 
@@ -205,18 +198,18 @@ const CustomDepartmentSlider = <T,>({
           <div className="flex gap-4">
             <button
               onClick={prev}
-              disabled={!infinite || isSliding}
-              className={`w-12 h-12 flex items-center justify-center border-2 border-gray-300 text-gray-800 bg-white rounded-full transition
-                ${!infinite || isSliding ? "opacity-40 cursor-not-allowed" : "hover:bg-gray-100"}`}
+              disabled={!infinite || !emblaApi?.canScrollPrev()}
+              className={`w-12 h-12 cursor-pointer flex items-center justify-center border-2 border-gray-300 text-gray-800 bg-white rounded-full transition
+                ${!infinite || !emblaApi?.canScrollPrev() ? "opacity-40 cursor-not-allowed" : "hover:bg-gray-100"}`}
             >
               <MdKeyboardArrowLeft size={26} />
             </button>
 
             <button
               onClick={next}
-              disabled={!infinite || isSliding}
-              className={`w-12 h-12 flex items-center justify-center border-2 border-gray-300 text-gray-800 bg-white rounded-full transition
-                ${!infinite || isSliding ? "opacity-40 cursor-not-allowed" : "hover:bg-gray-100"}`}
+              disabled={!infinite || !emblaApi?.canScrollNext()}
+              className={`w-12 h-12 cursor-pointer flex items-center justify-center border-2 border-gray-300 text-gray-800 bg-white rounded-full transition
+                ${!infinite || !emblaApi?.canScrollNext() ? "opacity-40 cursor-not-allowed" : "hover:bg-gray-100"}`}
             >
               <MdKeyboardArrowRight size={26} />
             </button>

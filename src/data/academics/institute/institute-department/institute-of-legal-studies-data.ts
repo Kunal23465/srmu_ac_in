@@ -7,7 +7,29 @@ import { FacultyItem } from "../../../../utils/custom/CustomFacultyListCard";
 import AryenduImg from "../../../../assets/images/academics/departments/prof-aryendu-dwivedi-law-2009250517023.webp";
 import PCMishraImg from "../../../../assets/images/academics/departments/dr.-p.c.-mishra-11zon-27022411543322.webp";
 import DefaultImg from "../../../../assets/images/academics/departments/default-img.webp";
-
+import NarendraBahadurSingh from "../../../../assets/images/academics/departments/legal-of-studies/Prof.(Dr.) Narendra Bahadur Singh.jpg";
+import DileepKumarSingh from "../../../../assets/images/academics/departments/legal-of-studies/Mr.Dileep Singh_.jpg";
+import RamKrishnaManiTripathi from "../../../../assets/images/academics/departments/legal-of-studies/Mt.Ram Krishna Mani Tripathi.jpg";
+import AnandKumar from "../../../../assets/images/academics/departments/legal-of-studies/Mr.Anand Kumar.jpg";
+import PurnimaBhardwaj from "../../../../assets/images/academics/departments/legal-of-studies/Dr (1). Purnima Bhardwaj.jpg";
+import CharuVerma from "../../../../assets/images/academics/departments/legal-of-studies/Ms.Charu Verma.png";
+import DivyangiSingh from "../../../../assets/images/academics/departments/legal-of-studies/Ms.Divyangi Singh_.jpg";
+import AnanyaSinghThakur from "../../../../assets/images/academics/departments/legal-of-studies/Ms.Ananya Singh Thakur.png";
+import KamaljeetKaur from "../../../../assets/images/academics/departments/legal-of-studies/Ms.Kamaljeet Kaur.jpg";
+import ShashiShukla from "../../../../assets/images/academics/departments/legal-of-studies/Ms. Shashi Shukla.jpg";
+import SmritiSingh from "../../../../assets/images/academics/departments/legal-of-studies/Ms.Smriti Singh.jpg";
+import MayankSrivastava from "../../../../assets/images/academics/departments/legal-of-studies/Mr.Mayank Srivastava.jpg";
+import VivekKumarMishra from "../../../../assets/images/academics/departments/legal-of-studies/Dr.Vivek Kumar Mishra.jpg";
+import PreetiBhargav from "../../../../assets/images/academics/departments/legal-of-studies/Ms.Preeti Bhargav.jpg";
+import AyushiTiwari from "../../../../assets/images/academics/departments/legal-of-studies/Ms.Ayushi Tiwari.jpg";
+import MahendraKumar from "../../../../assets/images/academics/departments/legal-of-studies/Dr.Mahendra Kumar.jpg";
+import RajatSaxena from "../../../../assets/images/academics/departments/legal-of-studies/Mr.Rajat Saxena.jpg";
+import PrashantKumar from "../../../../assets/images/academics/departments/legal-of-studies/Dr.Prashant Kumar Srivastava.jpg";
+import ShashankShekhar from "../../../../assets/images/academics/departments/legal-of-studies/Dr. Shashank Shekhar.jpg";
+import AsthaMishra from "../../../../assets/images/academics/departments/legal-of-studies/Ms.Astha Mishra.png";
+import AkankshaTiwari from "../../../../assets/images/academics/departments/legal-of-studies/Ms.Akanksha Tiwari.jpg";
+import ShrutiSharma from "../../../../assets/images/academics/departments/legal-of-studies/Dr.Shruti Sharma.png";
+import DravyeshNarayanPathak from "../../../../assets/images/academics/departments/legal-of-studies/Mr.Dravyesh Narayan Pathak.jpg";
 import img1 from "../../../../assets/images/academics/departments/whatsapp-image-2022-05-23-at-11.30.28-am-1--23022412570798.webp";
 import img2 from "../../../../assets/images/academics/departments/workshop4-09052412404740.webp";
 import img3 from "../../../../assets/images/academics/departments/guest5-09052412400851.webp";
@@ -218,73 +240,73 @@ export const InstituteofLegalStudiesfacultyData: FacultyItem[] = [
     id: 1,
     name: "Prof. (Dr.) Narendra Bahadur Singh",
     designation: "Professor & Director, Institute of Legal Studies, SRMU",
-    image: DefaultImg,
+    image: NarendraBahadurSingh,
   },
   {
     id: 2,
     name: "Mr. Dileep Kumar Singh",
     designation: "Assistant Professor",
-    image: DefaultImg,
+    image: DileepKumarSingh,
   },
   {
     id: 3,
     name: "Mr. Ram Krishna Mani Tripathi",
     designation: "Assistant Professor",
-    image: DefaultImg,
+    image: RamKrishnaManiTripathi,
   },
   {
     id: 4,
-    name: "Mr. Anand",
+    name: "Mr. Anand Kumar",
     designation: "Assistant Professor",
-    image: DefaultImg,
+    image: AnandKumar,
   },
   {
     id: 5,
     name: "Dr. Purnima Bhardwaj",
     designation: "Assistant Professor",
-    image: DefaultImg,
+    image: PurnimaBhardwaj,
   },
   {
     id: 6,
     name: "Ms. Charu Verma",
     designation: "Assistant Professor",
-    image: DefaultImg,
+    image: CharuVerma,
   },
   {
     id: 7,
     name: "Ms. Divyangi Singh",
     designation: "Assistant Professor",
-    image: DefaultImg,
+    image: DivyangiSingh,
   },
   {
     id: 8,
     name: "Ms. Ananya Singh Thakur",
     designation: "Assistant Professor",
-    image: DefaultImg,
+    image: AnanyaSinghThakur,
   },
   {
     id: 9,
     name: "Ms. Kamaljeet Kaur",
     designation: "Assistant Professor",
-    image: DefaultImg,
+    image: KamaljeetKaur,
   },
   {
     id: 10,
     name: "Ms. Shashi Shukla",
     designation: "Assistant Professor",
-    image: DefaultImg,
+    image: ShashiShukla,
   },
   {
     id: 11,
     name: "Ms. Smriti Singh",
     designation: "Assistant Professor",
-    image: DefaultImg,
+    image: SmritiSingh,
   },
   {
     id: 12,
     name: "Mr. Mayank Srivastava",
     designation: "Assistant Professor",
-    image: DefaultImg,
+    image: MayankSrivastava,
   },
   {
     id: 13,
@@ -296,7 +318,7 @@ export const InstituteofLegalStudiesfacultyData: FacultyItem[] = [
     id: 14,
     name: "Dr. Vivek Kumar Mishra",
     designation: "Assistant Professor",
-    image: DefaultImg,
+    image: VivekKumarMishra,
   },
   {
     id: 1,
@@ -326,7 +348,7 @@ export const InstituteofLegalStudiesfacultyData: FacultyItem[] = [
     id: 5,
     name: "Ms. Preeti Bhargav",
     designation: "Assistant Professor",
-    image: DefaultImg,
+    image: PreetiBhargav,
   },
   // {
   //   id: 6,
@@ -344,7 +366,7 @@ export const InstituteofLegalStudiesfacultyData: FacultyItem[] = [
     id: 8,
     name: "Ms. Ayushi Tiwari",
     designation: "Assistant Professor",
-    image: DefaultImg,
+    image: AyushiTiwari,
   },
   // {
   //   id: 9,
@@ -434,13 +456,13 @@ export const InstituteofLegalStudiesfacultyData: FacultyItem[] = [
     id: 23,
     name: "Dr. Mahendra Kumar",
     designation: "Assistant Professor",
-    image: DefaultImg,
+    image: MahendraKumar,
   },
   {
     id: 24,
     name: "Mr. Rajat Saxena",
     designation: "Assistant Professor",
-    image: DefaultImg,
+    image: RajatSaxena,
   },
   // {
   //   id: 25,
@@ -452,7 +474,7 @@ export const InstituteofLegalStudiesfacultyData: FacultyItem[] = [
     id: 26,
     name: "Dr. Prashant Kumar",
     designation: "Assistant Professor",
-    image: DefaultImg,
+    image: PrashantKumar,
   },
   // {
   //   id: 27,
@@ -464,7 +486,7 @@ export const InstituteofLegalStudiesfacultyData: FacultyItem[] = [
     id: 28,
     name: "Dr. Shashank Shekhar",
     designation: "Associate Professor",
-    image: DefaultImg,
+    image: ShashankShekhar,
   },
   {
     id: 29,
@@ -482,19 +504,19 @@ export const InstituteofLegalStudiesfacultyData: FacultyItem[] = [
     id: 31,
     name: "Ms. Astha Mishra",
     designation: "Assistant Professor",
-    image: DefaultImg,
+    image: AsthaMishra,
   },
   {
     id: 32,
     name: "Ms. Akanksha Tiwari",
     designation: "Assistant Professor",
-    image: DefaultImg,
+    image: AkankshaTiwari,
   },
   {
     id: 33,
     name: "Dr. Shruti Sharma",
     designation: "Associate Professor",
-    image: DefaultImg,
+    image: ShrutiSharma,
   },
   // {
   //   id: 34,
@@ -512,7 +534,7 @@ export const InstituteofLegalStudiesfacultyData: FacultyItem[] = [
     id: 36,
     name: "Mr. Dravyesh Narayan Pathak",
     designation: "Assistant Professor",
-    image: DefaultImg,
+    image: DravyeshNarayanPathak,
   },
   {
     id: 37,
