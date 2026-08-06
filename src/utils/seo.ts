@@ -11,17 +11,19 @@ export const DEFAULT_DESCRIPTION = "Study at Shri Ramswaroop Memorial University
 export const DEFAULT_SOCIAL_IMAGE = /^https?:\/\//i.test(siteLogo) ? siteLogo : `${SITE_URL}${siteLogo.startsWith("/") ? siteLogo : `/${siteLogo}`}`;
 
 const PAGE_LABELS: Record<string, string> = {
-  "/": SITE_NAME,
-  "/blogs": "Blogs",
+  "/": SITE_NAME_SHORT,
+  "/blogs": "Blogs & Articles",
   "/contact-us": "Contact Us",
   "/privacy-policy": "Privacy Policy",
   "/disclaimer": "Disclaimer",
-  "/terms-conditions": "Terms and Conditions",
+  "/terms-conditions": "Terms & Conditions",
   "/mandatory-disclouser": "Mandatory Disclosure",
-  "/placements": "Placements",
+  "/placements": "Placements Overview",
   "/placement-cell": "Placement Cell",
   "/phd-offline-application": "PhD Offline Application",
-  "/rti": "RTI",
+  "/rti": "Right to Information (RTI)",
+  "/e-content-development-cell": "E-Content Development Cell",
+  "/campus-life/e-content-cell": "Campus Life E-Content Cell",
 };
 
 export const normalizePath = (pathname = "/") => {
@@ -77,7 +79,7 @@ export const normalizeSeoTitle = (value = "") => {
 
   const suffixMatch = normalizedTitle.match(/\s\|\s[^|]+$/);
   const suffix = suffixMatch?.[0] || "";
-  const maxTitleLength = 65;
+  const maxTitleLength = 58;
 
   if (normalizedTitle.length <= maxTitleLength) {
     return normalizedTitle;
@@ -108,14 +110,14 @@ export const normalizeSeoDescription = (value = "", fallback = DEFAULT_DESCRIPTI
     return DEFAULT_DESCRIPTION;
   }
 
-  if (normalized.length > 150) {
-    const safeCutoff = normalized.lastIndexOf(" ", 146);
-    return `${(safeCutoff > 40 ? normalized.slice(0, safeCutoff) : normalized.slice(0, 146)).trim()}...`;
+  if (normalized.length > 155) {
+    const safeCutoff = normalized.lastIndexOf(" ", 150);
+    return `${(safeCutoff > 40 ? normalized.slice(0, safeCutoff) : normalized.slice(0, 150)).trim()}...`;
   }
 
-  if (normalized.length < 130) {
-    const extra = ` Admissions & course info for prospective students.`;
-    if ((normalized + extra).length <= 150) {
+  if (normalized.length < 120) {
+    const extra = ` Course details & admissions at SRMU Lucknow.`;
+    if ((normalized + extra).length <= 155) {
       return `${normalized}${extra}`;
     }
   }
