@@ -20,9 +20,9 @@ import hostFinancial from "../../assets/new-home/events/host-financial-new.webp"
 import fordesk from "../../assets/images/home/events/for-desk.jpeg";
 import forMobile from "../../assets/images/home/events/for-mobile.png";
 import SRMUConductsDays from "../../assets/new-home/events/SRMU-Conducts-Days.webp";
-import SRMUWelcomes from "../../assets/new-home/events/SRMU-Welcomes.webp";
+import SRMUWelcomes from "../../assets/new-home/events/dikshant-1.jpeg";
 
-import Batwara from "../../assets/new-home/events/batwara.jpg";
+import Batwara from "../../assets/new-home/events/batwara1.webp";
 
 export type EventItem = {
   id: string | number;

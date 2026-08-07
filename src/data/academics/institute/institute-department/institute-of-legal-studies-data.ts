@@ -30,6 +30,9 @@ import AsthaMishra from "../../../../assets/images/academics/departments/legal-o
 import AkankshaTiwari from "../../../../assets/images/academics/departments/legal-of-studies/Ms.Akanksha Tiwari.jpg";
 import ShrutiSharma from "../../../../assets/images/academics/departments/legal-of-studies/Dr.Shruti Sharma.png";
 import DravyeshNarayanPathak from "../../../../assets/images/academics/departments/legal-of-studies/Mr.Dravyesh Narayan Pathak.jpg";
+import Kaushlendra from "../../../../assets/images/academics/departments/legal-of-studies/Mr.Kaushlendra.webp";
+import SamikshaPandey from "../../../../assets/images/academics/departments/legal-of-studies/Ms.Samiksha Pandey.webp";
+import VijayaJaiswal from "../../../../assets/images/academics/departments/legal-of-studies/Dr. Vijaya Jaiswal.webp";
 import img1 from "../../../../assets/images/academics/departments/whatsapp-image-2022-05-23-at-11.30.28-am-1--23022412570798.webp";
 import img2 from "../../../../assets/images/academics/departments/workshop4-09052412404740.webp";
 import img3 from "../../../../assets/images/academics/departments/guest5-09052412400851.webp";
@@ -492,7 +495,7 @@ export const InstituteofLegalStudiesfacultyData: FacultyItem[] = [
     id: 29,
     name: "Ms. Samiksha Pandey",
     designation: "Assistant Professor",
-    image: DefaultImg,
+    image: SamikshaPandey,
   },
   // {
   //   id: 30,
@@ -540,7 +543,13 @@ export const InstituteofLegalStudiesfacultyData: FacultyItem[] = [
     id: 37,
     name: "Mr. Kaushlendra",
     designation: "Assistant Professor",
-    image: DefaultImg,
+    image: Kaushlendra,
+  },
+  {
+    id: 38,
+    name: "Dr. Vijaya Jaiswal",
+    designation: "Assistant Professor",
+    image: VijayaJaiswal,
   },
 ];
 
