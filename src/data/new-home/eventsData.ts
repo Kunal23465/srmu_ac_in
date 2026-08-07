@@ -21,6 +21,9 @@ import fordesk from "../../assets/images/home/events/for-desk.jpeg";
 import forMobile from "../../assets/images/home/events/for-mobile.png";
 import SRMUConductsDays from "../../assets/new-home/events/SRMU-Conducts-Days.webp";
 import SRMUWelcomes from "../../assets/new-home/events/SRMU-Welcomes.webp";
+
+import Batwara from "../../assets/new-home/events/batwara.jpg";
+
 export type EventItem = {
   id: string | number;
   image: string;
@@ -39,6 +42,17 @@ export type EventItem = {
 const eventsData: EventItem[] = [
   {
     id: 0,
+    isRedirect: false,
+    image: Batwara,
+    imageSmall: Batwara,
+    date: "August 7th, 2026",
+    title: `SRMU to Host Exclusive ‘Batwara 1947’ Star Cast Interaction on 7th August`,
+    description: `
+    Shri Ramswaroop Memorial University (SRMU) is excited to host the star cast of <strong>Batwara 1947</strong> for an exclusive campus interaction on <strong>7th August 2026</strong>, starting at <strong>11:00 AM</strong> in the <strong>Double Height, Admin Block</strong>. Students will have the unique opportunity to meet the cast, hear behind-the-scenes stories, learn about the making of one of the year's most anticipated films, and participate in an engaging interactive session with the team. The event promises an unforgettable experience, bringing the excitement of cinema directly to the SRMU campus.
+  `,
+  },
+  {
+    id: 1,
     // isUpcoming:true,
     isRedirect: true,
     redirectTo: "/convocation2026",
