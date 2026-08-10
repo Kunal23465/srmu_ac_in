@@ -84,8 +84,7 @@ const Header = () => {
         <div className="hidden sm:block">
           <TopHeader />
         </div>
-        <div className="marquee">
-
+        {/* <div className="marquee">
           <div className={`marquee-content`}>
             <span>
               📢 Due to the significant volume of requests received, we are reopening
@@ -94,7 +93,7 @@ const Header = () => {
               extended timeline.
             </span>
 
-            {/* Duplicate text for seamless scrolling */}
+          
             <span>
               📢 Due to the significant volume of requests received, we are reopening
               the PhD application form. This will provide additional applicants the
@@ -102,8 +101,7 @@ const Header = () => {
               extended timeline.
             </span>
           </div>
-
-        </div>
+        </div> */}
         <div className={`py-2 items-stretch header  ${isActive ? "bg-[#14284e] active" : "bg-[#14284e] sm:bg-transparent"}`}>
           <div className={`${Classes["container"]} relative`}>
             <div className="flex flex-row justify-between">
@@ -156,7 +154,7 @@ const Header = () => {
                           <div
                             className="
                               fixed left-1/2 -translate-x-1/2
-                              top-[146px] xl:top-[148px] bg-white rounded-md
+                              top-[110px] xl:top-[113px] bg-white rounded-md
                               hidden group-hover:flex
                               border-t-4 border-t-yellow-500
                               border-b-4 border-b-blue-500
