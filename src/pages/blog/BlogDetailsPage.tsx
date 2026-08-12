@@ -33,7 +33,7 @@ const BlogDetailsPage: React.FC = () => {
   );
 
   useEffect(() => {
-    if (data?.blogId === 46) {
+    if (data?.blogId === 46 || data?.blogId === 37 || data?.blogId === 51) {
       setSourceId(436);
 
       const timer = setTimeout(() => {
