@@ -21,7 +21,7 @@ import fordesk from "../../assets/images/home/events/for-desk.jpeg";
 import forMobile from "../../assets/images/home/events/for-mobile.png";
 import SRMUConductsDays from "../../assets/new-home/events/SRMU-Conducts-Days.webp";
 import SRMUWelcomes from "../../assets/new-home/events/dikshant-1.jpeg";
-
+import CyberCrime from "../../assets/new-home/events/cyberCrime.jpeg";
 import Batwara from "../../assets/new-home/events/batwara1.webp";
 
 export type EventItem = {
@@ -40,6 +40,31 @@ export type EventItem = {
 };
 
 const eventsData: EventItem[] = [
+  {
+    id: 1,
+    isRedirect: false,
+    image: CyberCrime,
+    imageSmall: CyberCrime,
+    date: "August 12th, 2026",
+    title: `SRMU Organizes Guest Lecture on Cyber Crime, Prevention, Investigation & Legal Remedies`,
+    description: `
+    The Institute of Legal Studies, Shri Ramswaroop Memorial University (SRMU), Lucknow-Deva Road, Barabanki, organized a special guest lecture on <strong>“Cyber Crime in Everyday Life: Prevention, Investigation & Legal Remedies”</strong> on 12 August 2026 under the aegis of the <strong>Institution’s Innovation Council (IIC)</strong>, an initiative of the Ministry of Education.
+
+    The program aimed to sensitize students to the growing incidence of cybercrime in everyday life and provide them with practical insights into cybercrime prevention, investigative procedures, and the legal remedies available to victims.
+
+    The session was addressed by <strong>Ms. Titiksha Srivastava, Advocate and Cyber Law Expert</strong>, who provided valuable insights into various forms of cybercrimes, online fraud, cybersecurity, digital evidence, the investigation of cybercrimes, and the legal remedies available to victims. She also highlighted the importance of safe and responsible use of digital platforms and apprised students of the precautions and legal procedures to be followed in cases involving cyber crime.
+
+    The lecture featured an engaging interaction between the expert and the students, who actively participated in the question-and-answer session and raised questions on contemporary cybercrime and cyber law issues. The interaction enabled students to gain a better understanding of the practical dimensions of cyber law and the emerging challenges at the intersection of law and technology.
+
+    The programme was organised under the guidance of <strong>Hon’ble Chancellor Er. Pankaj Agrawal, Pro-Chancellor Er. Pooja Agrawal, Vice-Chancellor Prof. (Dr.) Vijay Tiwari, and Registrar Dr. Hemendra Sharma.</strong>
+
+    The event was conducted under the direction of <strong>Prof. (Dr.) Narendra Bahadur Singh, Director, Institute of Legal Studies</strong>, and coordinated by <strong>Assistant Professor Rajat Saxena, Coordinator, Guest Lecture Committee</strong>. Students and faculty members of the institute participated enthusiastically in the program.
+
+    The guest lecture strengthened students’ awareness of cyber crimes, digital responsibility and cyber security while providing practical exposure to the legal mechanisms available to address cyber-related offences. The initiative also contributed to integrating contemporary technological challenges with legal education and encouraging students to develop a more informed and responsible approach towards the digital world.
+
+    The program was covered by <strong>Assistant Professor Shashi Shukla, Head, Media Committee, Institute of Legal Studies</strong>.
+  `,
+  },
   {
     id: 0,
     isRedirect: false,
