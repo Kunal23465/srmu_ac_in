@@ -9,7 +9,7 @@ const CustomDepartmentVissionMission: React.FC<Props> = ({ data }) => {
   return (
     <div className="flex flex-col px-3 py-6 sm:p-[38px] min-h-[350px] sm:min-h-[530px] min-w-[250px] rounded-3xl shadow-md" style={{ backgroundColor: data.bgColor }}>
       {/* Image */}
-      <img src={data.img} alt="logo" className="w-[80px] h-[80px] sm:w-[120px] sm:h-[120px] object-contain mb-4" />
+      <img src={data.img} alt={`SRMU Department ${data.heading || 'Vision Mission'} icon`} className="w-[80px] h-[80px] sm:w-[120px] sm:h-[120px] object-contain mb-4" />
 
       {/* Heading */}
       <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] fw500 mb-0 md:mb-4 text-[#023047]">{data.heading}</h2>

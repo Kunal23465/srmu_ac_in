@@ -181,7 +181,7 @@ const TopHeader: React.FC = () => {
               </Link> */}
               <Link
                 target="_blank"
-                rel="nofollow noopener noreferrer"
+                rel="noopener noreferrer"
                 to="https://students.srmu.ac.in/login"
                 className="bg-[#FFB703] hover:bg-white px-2 text-[9px] font-medium uppercase border border-[#ffb703] py-1 flex items-center text-black"
               >

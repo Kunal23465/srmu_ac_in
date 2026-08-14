@@ -184,6 +184,7 @@ const SITEMAP_EXCLUDED_PATHS = new Set([
   "/blog/cultivating-the-future-explore-career-opportunities-with-a-degree-in-agriculture2",
   "/blog/study-bba-in-business-analytics-at-srmu-l-t-backed-industry-focused-program1",
   "/blog/top-colleges-for-btech-in-computer-science-in-lucknow-and-nearby-cities-best-picks-for-2026",
+  "/blog/entrepreneurship-opportunities-for-bba-students-2026",
   "/commerce-and-economics",
   "/computer-application",
   "/computer-science-engineering",

@@ -172,7 +172,7 @@ const Counter: React.FC<counterDataPropsType> = ({ counterData, classes }) => {
             >
               {item.icon && (
                 <span className="pt-2 pr-1">
-                  <img src={item.icon} alt="" />
+                  <img src={item.icon} alt={item.title || "SRMU statistic icon"} width={40} height={40} />
                 </span>
               )}
 

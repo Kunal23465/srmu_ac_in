@@ -75,11 +75,12 @@ const BlogDetailsPage: React.FC = () => {
     );
   }
 
-  const blogDescription =
-    stripHtml(data.metaDescription || data.description || data.title).slice(
-      0,
-      160
-    ) || `Read the latest SRMU blog: ${data.title}.`;
+  const rawBlogDescription = stripHtml(data.metaDescription || data.description || data.title).replace(/\s+/g, " ").trim();
+  const blogDescription = (
+    rawBlogDescription.length > 155
+      ? rawBlogDescription.slice(0, rawBlogDescription.lastIndexOf(" ", 150)).trim() + "..."
+      : rawBlogDescription
+  ) || `Read the latest SRMU blog: ${data.title}.`;
 
   const seoTitle = normalizeSeoTitle(
     `${data.metaTitle || data.title} | SRMU Lucknow`

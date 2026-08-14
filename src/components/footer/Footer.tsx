@@ -291,7 +291,7 @@ const Footer: React.FC = () => {
                   className="flex items-center justify-center transition-all duration-300  hover:border-[#ffb703] hover:bg-transparent hover:text-[#ffb703] cursor-pointer"
                   aria-label="Facebook"
                 >
-                  <img src={fb} alt="facebook" />
+                  <img src={fb} alt="SRMU Facebook Official Page" width={20} height={20} />
                 </Link>
                 <Link
                   to="https://www.instagram.com/srmulucknow_official/"
@@ -299,7 +299,7 @@ const Footer: React.FC = () => {
                   className=" flex items-center justify-center transition-all duration-300 hover:border-[#ffb703] hover:bg-transparent hover:text-[#ffb703] cursor-pointer"
                   aria-label="Instagram"
                 >
-                  <img src={instagram} alt="instagram" />
+                  <img src={instagram} alt="SRMU Instagram Official Handle" width={20} height={20} />
                 </Link>
                 <Link
                   to="https://www.linkedin.com/school/shri-ramswaroop-memorial-university/"
@@ -307,7 +307,7 @@ const Footer: React.FC = () => {
                   className=" flex items-center justify-center transition-all duration-300 hover:border-[#ffb703] hover:bg-transparent hover:text-[#ffb703] cursor-pointer"
                   aria-label="LinkedIn"
                 >
-                  <img src={linkdin} alt="linkdin" />
+                  <img src={linkdin} alt="SRMU LinkedIn University Page" width={20} height={20} />
                 </Link>
                 <a
                   href=" https://twitter.com/srmu_lucknow"
@@ -316,7 +316,7 @@ const Footer: React.FC = () => {
                   className=" flex items-center justify-center transition-all duration-300 hover:border-[#ffb703] hover:bg-transparent hover:text-[#ffb703] cursor-pointer"
                   aria-label="Twitter"
                 >
-                  <img src={twitter} alt="twitter" />
+                  <img src={twitter} alt="SRMU Twitter / X Official Account" width={20} height={20} />
                 </a>
                 <Link
                   to="https://www.youtube.com/channel/UCQBjHzkED5ESWvlQiwLNZ4Q"
@@ -324,7 +324,7 @@ const Footer: React.FC = () => {
                   className=" flex items-center justify-center transition-all duration-300 hover:border-[#ffb703] hover:bg-transparent hover:text-[#ffb703] cursor-pointer"
                   aria-label="YouTube"
                 >
-                  <img src={youtube} alt="youtube" />
+                  <img src={youtube} alt="SRMU Official YouTube Channel" width={20} height={20} />
                 </Link>
               </div>
             </div>

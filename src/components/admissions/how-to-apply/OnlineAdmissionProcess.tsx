@@ -26,7 +26,7 @@ const OnlineAdmissionProcess: React.FC = () => {
 
             <div className="admission_process relative my-10 lg:mt-70 lg:mb-60">
               <div className="container_bg">
-                <img src={admission_bg} className="w-full relative z-100 hidden lg:block" alt="admission" />
+                <img src={admission_bg} className="w-full relative z-100 hidden lg:block" alt="SRMU online admission process background" />
               </div>
               <div className="contain_part">
                 <div className="circle_box one"></div>
@@ -154,8 +154,8 @@ const OnlineAdmissionProcess: React.FC = () => {
               <p className="text-white">Career Counselling at SRMU helps students identify their strengths and guides them to navigate the job market with confidence.</p>
             </div>
           </div>
-          <img src={offlineAddmission} alt="offlineAddmission" className="hidden md:block" />
-          <img src={offlineAddmissionMobile} alt="offlineAddmissionMobile" className="block md:hidden" />
+          <img src={offlineAddmission} alt="SRMU offline admission steps flowchart" className="hidden md:block" />
+          <img src={offlineAddmissionMobile} alt="SRMU offline admission steps flowchart mobile view" className="block md:hidden" />
         </div>
       </div>
     </>

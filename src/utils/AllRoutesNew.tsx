@@ -885,6 +885,30 @@ export const routes = [
         element: <FacultyOfChemicalSciencesPage />,
 
       },
+      {
+        path: "/institute-of-pharmaceutical-sciences",
+        element: <Navigate to="/institute-of-pharmaceutical-sciences1" replace />,
+      },
+      {
+        path: "/institute-of-legal-studies",
+        element: <Navigate to="/institute-of-legal-studies1" replace />,
+      },
+      {
+        path: "/institutef-of-biotechnology",
+        element: <Navigate to="/faculty-of-biotechnology" replace />,
+      },
+      {
+        path: "/facultys-of-biotechnology",
+        element: <Navigate to="/faculty-of-biotechnology" replace />,
+      },
+      {
+        path: "/convocational/convocation-2021",
+        element: <Navigate to="/convocation/convocation-2021" replace />,
+      },
+      {
+        path: "/Department-of-computer-science-and-information-systems",
+        element: <Navigate to="/department-of-computer-science-and-information-systems" replace />,
+      },
     ],
   },
   {
@@ -892,3 +916,4 @@ export const routes = [
     element: <PageNotFound />,
   },
 ];
+

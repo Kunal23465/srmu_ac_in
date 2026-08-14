@@ -147,7 +147,7 @@ const TestimonialSlider = () => {
 
       <div className="max-w-3xl mx-auto text-center px-4 mt-8">
         <div className="flex justify-center">
-          <img src={quote} className="w-10 md:w-auto" alt="quote" />
+          <img src={quote} className="w-10 md:w-auto" alt="Student testimonial quotation mark" width={40} height={32} />
         </div>
 
         <h2 className="font21 fw600 mt-4">
@@ -193,7 +193,7 @@ const TestimonialSlider = () => {
         >
           <div className="p-2 md:p-4">
             <div className="flex justify-center">
-              <img src={quote} className="w-10 md:w-auto" alt="quote" />
+              <img src={quote} className="w-10 md:w-auto" alt="Student testimonial quotation mark" width={40} height={32} />
             </div>
 
             <h2 className="mt-4 text-center font21 fw600">{activeTestimonial.name}</h2>

@@ -77,9 +77,20 @@ export const normalizeSeoTitle = (value = "") => {
     normalizedTitle = `${normalizedTitle} | ${SITE_NAME_SHORT}`;
   }
 
+  if (normalizedTitle.length < 50 && !/Lucknow/i.test(normalizedTitle)) {
+    const padded = `${normalizedTitle}, Lucknow`;
+    if (padded.length <= 60) {
+      normalizedTitle = padded;
+    }
+  }
+
   const suffixMatch = normalizedTitle.match(/\s\|\s[^|]+$/);
   const suffix = suffixMatch?.[0] || "";
   const maxTitleLength = 58;
+
+  if (normalizedTitle.length >= 50 && normalizedTitle.length <= 60) {
+    return normalizedTitle;
+  }
 
   if (normalizedTitle.length <= maxTitleLength) {
     return normalizedTitle;
