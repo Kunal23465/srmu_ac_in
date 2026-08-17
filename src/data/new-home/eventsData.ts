@@ -124,7 +124,7 @@ const eventsData: EventItem[] = [
     isRedirect: false,
     image: CricketStars,
     imageSmall: CricketStars,
-    date: "August 12th, 2026", // no date was provided — update as needed
+    date: "", // no date was provided — update as needed
     title: `SRMU Campus Hosts UP T20 Cricket Stars Swastik Chikara & Kartik Tyagi`,
     description: `
     The excitement of UP T20 came to life at Shri Ramswaroop Memorial University (SRMU) as the <strong>SRMU Sports Club</strong> hosted a meet-and-greet with cricket stars <strong>Swastik Chikara</strong> and <strong>Kartik Tyagi</strong>.
