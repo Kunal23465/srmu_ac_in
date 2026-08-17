@@ -23,6 +23,9 @@ import SRMUConductsDays from "../../assets/new-home/events/SRMU-Conducts-Days.we
 import SRMUWelcomes from "../../assets/new-home/events/dikshant-1.jpeg";
 import CyberCrime from "../../assets/new-home/events/cyberCrime.jpeg";
 import Batwara from "../../assets/new-home/events/batwara1.webp";
+import SpaceEconomy from "../../assets/new-home/events/SpaceEconomy.jpg";
+import IBSCollaboration from "../../assets/new-home/events/IBSCollaboration.jpg";
+import CricketStars from "../../assets/new-home/events/CricketStars.jpg";
 
 export type EventItem = {
   id: string | number;
@@ -40,6 +43,103 @@ export type EventItem = {
 };
 
 const eventsData: EventItem[] = [
+  {
+    id: 4,
+    isRedirect: false,
+    image: SpaceEconomy,
+    imageSmall: SpaceEconomy,
+    date: "August 22nd, 2026",
+    title: `SRMU to Host University-Wide Open Lecture on India's New Space Economy`,
+    description: `
+    The <strong>Faculty of Physical Sciences (FoPS), Shri Ramswaroop Memorial University (SRMU)</strong>, is organizing a university-wide open lecture on the occasion of <strong>National Space Day 2026</strong>, aligned with this year's theme, <strong>"India's Space Journey Towards Viksit Bharat 2047."</strong>
+
+    The lecture, titled <strong>"India's Space Revolution: Preparing Students for the New Space Economy,"</strong> will explore the transformation of India's space sector and the growing opportunities emerging for students and young professionals in the new space economy.
+
+    The program will be delivered by <strong>Lalit Kumar Shukla, Assistant Professor, Faculty of Physical Sciences (FoPS)</strong>, who will discuss the evolving landscape of India's space sector and how today's students can prepare themselves to contribute to the country's future space ambitions.
+
+    <br/><strong>Program Details:</strong><br/>
+
+    <strong>Date:</strong> 22 August 2026 (Saturday)<br>
+    <strong>Time:</strong> 11:30 AM<br>
+    <strong>Venue:</strong> B1-007<br>
+    <strong>Keynote Speaker:</strong> Lalit Kumar Shukla, Assistant Professor, FoPS<br>
+    <strong>Topic:</strong> India's Space Revolution: Preparing Students for the New Space Economy
+
+    The lecture is open to students, research scholars, faculty members, and staff of the university, providing an opportunity for participants from different academic backgrounds to engage with the rapidly evolving field of space science and technology.
+
+    The program aims to create awareness about India's growing capabilities in the space sector while encouraging students to explore emerging academic, research, and career opportunities associated with the New Space Economy.
+
+    The initiative also reflects SRMU's commitment to promoting interdisciplinary learning and connecting students with emerging areas of science, technology, and national development.
+
+    Faculty members, students, research scholars, and staff are encouraged to participate in the lecture and gain insights into India's space journey and the role that the next generation can play in shaping its future.
+  `,
+  },
+  {
+    id: 3,
+    isRedirect: false,
+    image: IBSCollaboration,
+    imageSmall: IBSCollaboration,
+    date: "August 22nd, 2026",
+    title: `SRMU to Organize Student Development and Faculty Knowledge Sharing Programmes in Collaboration with IBS`,
+    description: `
+    The <strong>Faculty of Commerce & Economics, Institute of Management, Commerce & Economics (IMCE), Shri Ramswaroop Memorial University (SRMU)</strong>, is organizing a <strong>Student Development Programme (SDP)</strong> and a <strong>Faculty Knowledge Sharing Programme</strong> in collaboration with <strong>IBS</strong> on 22 August 2026 (Saturday).
+
+    The programs have been planned to provide students and faculty members with valuable exposure to emerging technologies, industry-oriented knowledge, and contemporary professional practices.
+
+    <strong>Student Development Programme</strong>
+
+    The Student Development Programme is expected to bring together around 200 final-year students from B.Tech, BBA, and B.Com (Hons.) programmes.
+
+    <strong>Date:</strong> 22 August 2026<br>
+    <strong>Time:</strong> 10:00 AM – 11:00 AM<br>
+    <strong>Venue:</strong> Mini Auditorium<br>
+    <strong>Programs:</strong> B.Tech, BBA & B.Com (Hons.) Final Year<br>
+    <strong>Topic:</strong> AI & Generative AI Tools
+
+    The session will focus on introducing students to the growing applications of artificial intelligence and generative AI tools and their relevance in academic, professional, and industry settings.
+
+    <strong>Faculty Knowledge Sharing Programme</strong>
+
+    Following the student session, a Faculty Knowledge Sharing Programme will be organised to facilitate knowledge exchange and strengthen faculty members' understanding of emerging technology applications.
+
+    <strong>Date:</strong> 22 August 2026<br>
+    <strong>Time:</strong> 11:00 AM – 12:30 PM<br>
+    <strong>Expected Participation:</strong> 50 faculty members<br>
+    <strong>Programs:</strong> Management – BBA, B.Com & IoT<br>
+    <strong>Topic:</strong> Generative AI & Data Analytics Using Python
+
+    The session will provide faculty members with an opportunity to explore the practical applications of generative AI and Python-based data analytics, enabling them to enhance their academic and professional capabilities.
+
+    The programs are being organized with the objective of promoting continuous learning, technology awareness, and industry-oriented development among both students and faculty members.
+
+    Faculty members have been requested to nominate suitable faculty coordinators and student groups/classes from their respective programs to ensure smooth coordination and active participation.
+
+    The initiative is expected to provide participants with meaningful academic and professional insights from experts associated with IBS while encouraging greater awareness of emerging technologies and their applications in education and industry.
+
+    Through such initiatives, SRMU continues to strengthen opportunities for student development, faculty upskilling, and industry-academia engagement.
+  `,
+  },
+  {
+    id: 2,
+    isRedirect: false,
+    image: CricketStars,
+    imageSmall: CricketStars,
+    date: "August 12th, 2026", // no date was provided — update as needed
+    title: `SRMU Campus Hosts UP T20 Cricket Stars Swastik Chikara & Kartik Tyagi`,
+    description: `
+    The excitement of UP T20 came to life at Shri Ramswaroop Memorial University (SRMU) as the <strong>SRMU Sports Club</strong> hosted a meet-and-greet with cricket stars <strong>Swastik Chikara</strong> and <strong>Kartik Tyagi</strong>.
+
+    The event allowed students to interact with the players, engage in conversations around cricket, and experience the energy and excitement of UP T20 up close. The presence of the cricket stars created an engaging sporting atmosphere on campus and brought students closer to the professional cricketing experience.
+
+    Adding to the excitement, students also participated in a <strong>Reel Competition</strong>, capturing their favorite moments from the event and sharing them across social media platforms.
+
+    The competition has added another layer of excitement, with the winning reel to be determined on the basis of the reach generated on social media. Students are therefore encouraged to keep watching, engaging, and supporting their favorite entries as the competition unfolds.
+
+    The event reflected SRMU's efforts to create an active and engaging campus environment where students can connect with sports, athletes, and contemporary sporting experiences beyond the classroom.
+
+    Stay tuned to find out which reel takes the top spot!
+  `,
+  },
   {
     id: 1,
     isRedirect: false,
