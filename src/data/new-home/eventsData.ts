@@ -25,7 +25,7 @@ import CyberCrime from "../../assets/new-home/events/cyberCrime.jpeg";
 import Batwara from "../../assets/new-home/events/batwara1.webp";
 import SpaceEconomy from "../../assets/new-home/events/SpaceEconomy.jpg";
 import IBSCollaboration from "../../assets/new-home/events/IBSCollaboration.jpg";
-import CricketStars from "../../assets/new-home/events/CricketStars.jpg";
+import CricketStars from "../../assets/new-home/events/CricketStars-1.jpg";
 
 export type EventItem = {
   id: string | number;
