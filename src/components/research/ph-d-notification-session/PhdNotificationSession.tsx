@@ -5,56 +5,56 @@ import { PhdNotificationOverviewData } from "../../../data/research/phd-Notifica
 import notification from "../../../assets/pdf/Notification.pdf";
 import CustomTopFooter from "../../../utils/custom/CustomTopFooter";
 import { CustomTopFooterAbout } from "../../../data/about/aboutusData";
-import { Link } from "react-router-dom";
-import CustomTable from "../../../utils/custom/CustomTable";
+// import { Link } from "react-router-dom";
+// import CustomTable from "../../../utils/custom/CustomTable";
 import { TableRowData } from "../../../types/table-data-types";
 import { FaFilePdf } from "react-icons/fa";
 const importantDates = [
-  {
-    id: 0,
-    left: "Online Release of Ph.D. Admission Notification:",
-    right: "20 June 2026",
-  },
-  {
-    id: 1,
-    left: "Advertisement in Print Media:",
-    right: "22 June 2026",
-  },
-  {
-    id: 2,
-    left: "Last Date for Submission of Online Applications:",
-    right: "10 July 2026 (extendable up to 20 July 2026, if required)",
-  },
-  {
-    id: 3,
-    left: "Research Aptitude Test (RAT) (Online Mode):",
-    right: "07 August 2026",
-  },
-  {
-    id: 4,
-    left: "Submission of Question Papers to the Exam Cell approved by FRDC of concern institute:",
-    right: "21–31 July 2026",
-  },
+  // {
+  //   id: 0,
+  //   left: "Online Release of Ph.D. Admission Notification:",
+  //   right: "20 June 2026",
+  // },
+  // {
+  //   id: 1,
+  //   left: "Advertisement in Print Media:",
+  //   right: "22 June 2026",
+  // },
+  // {
+  //   id: 2,
+  //   left: "Last Date for Submission of Online Applications:",
+  //   right: "10 July 2026 (extendable up to 20 July 2026, if required)",
+  // },
+  // {
+  //   id: 3,
+  //   left: "Research Aptitude Test (RAT) (Online Mode):",
+  //   right: "07 August 2026",
+  // },
+  // {
+  //   id: 4,
+  //   left: "Submission of Question Papers to the Exam Cell approved by FRDC of concern institute:",
+  //   right: "21–31 July 2026",
+  // },
   // {
   //   id: 5,
   //   left: "Moderation of Question Papers:",
   //   right: "1–3 August 2026",
   // },
-  {
-    id: 6,
-    left: "Declaration of RAT Result:",
-    right: "10 August 2026",
-  },
-  {
-    id: 7,
-    left: "Submission of Research Proposal:",
-    right: "13 August 2026",
-  },
-  {
-    id: 8,
-    left: "Online Interview of Qualified Candidates:",
-    right: "14–19 August 2026",
-  },
+  // {
+  //   id: 6,
+  //   left: "Declaration of RAT Result:",
+  //   right: "10 August 2026",
+  // },
+  // {
+  //   id: 7,
+  //   left: "Submission of Research Proposal:",
+  //   right: "13 August 2026",
+  // },
+  // {
+  //   id: 8,
+  //   left: "Online Interview of Qualified Candidates:",
+  //   right: "14–19 August 2026",
+  // },
   {
     id: 9,
     left: "Declaration of Final Result:",
@@ -120,12 +120,28 @@ const PhdNotificationSession: React.FC = () => {
             >
               Online Application
             </button>
-            <Link
+            {/* <Link
               to="/research/phd-offline-application"
               className=" bg-[#0f4a85] cursor-pointer text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] border-2 border-[#0f4a85]  text-white font-medium uppercase py-1 md:py-3 px-2 md:px-5 rounded-lg hover:bg-white hover:text-[#0f4a85] transition-colors duration-500 w-fit"
+            > */}
+            <button
+              disabled
+              className="bg-[#0f4a85] text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] 
+  border-2 border-[#0f4a85] text-white font-medium uppercase 
+  py-1 md:py-3 px-2 md:px-5 rounded-lg w-fit
+  transition-colors duration-500
+
+  disabled:bg-gray-400 
+  disabled:border-gray-400 
+  disabled:text-white 
+  disabled:cursor-not-allowed 
+  disabled:opacity-70
+
+  hover:bg-white hover:text-[#0f4a85]"
             >
               Offline Application
-            </Link>
+            </button>
+            {/* </Link> */}
           </div>
         </div>
 
@@ -197,8 +213,8 @@ const PhdNotificationSession: React.FC = () => {
                   <tr
                     key={item.id}
                     className={`hover:bg-gray-50 transition-colors ${index !== importantDates.length - 1
-                        ? "border-b border-gray-100"
-                        : ""
+                      ? "border-b border-gray-100"
+                      : ""
                       }`}
                   >
                     <td className="px-6 py-5  text-gray-900">
