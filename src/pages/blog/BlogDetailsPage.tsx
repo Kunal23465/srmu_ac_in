@@ -83,7 +83,7 @@ const BlogDetailsPage: React.FC = () => {
   ) || `Read the latest SRMU blog: ${data.title}.`;
 
   const seoTitle = normalizeSeoTitle(
-    `${data.metaTitle || data.title} | SRMU Lucknow`
+    `${data.metaTitle || data.title}`
   );
 
   // Parse SEO Config

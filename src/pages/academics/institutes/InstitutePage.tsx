@@ -14,7 +14,7 @@ const InstitutePage: React.FC = () => {
             <title>Institutes Program | Shri Ramswaroop Memorial University, Lucknow</title>
             <meta
               name="description"
-              content="SRMU is committed to leveraging its wide-ranging facilities to world-class standards with a goal to provide the best academia and professional resources and to prepare students for global opportunities."
+              content="Explore SRMU institutes, faculties, departments and programmes offering industry-focused learning and quality education."
             />
           </Helmet>
           <Institutes />

@@ -5,8 +5,8 @@ const AcademicBankOfCreditPage = () => {
   return (
     <div>
       <Helmet>
-        <title>Academic Depository NAD and ABC | Shri Ramswaroop Memorial University, Lucknow</title>
-        <meta name="description" content="Academic Bank of Credits&quot; (ABC) system for fulfilling their thirst for knowledge by providing academic flexibility to pick and modify their educational paths,link diverse disciplines, and assist them in acquiring the proper foundations and building blocks for their ambitions." />
+        <title>Academic Depository, NAD & ABC - Digital Records at SRMU</title>
+        <meta name="description" content="Learn about NAD and ABC at SRMU for secure academic records, digital credentials and convenient document access." />
       </Helmet>
       <AcademicBank />
 

@@ -30,7 +30,7 @@ const DepartmentOfComputerScienceAndEngineering: FC = () => {
                 />
             ),
         },
-         {
+        {
             key: "2",
             label: "Integrated",
             content: (
@@ -48,7 +48,7 @@ const DepartmentOfComputerScienceAndEngineering: FC = () => {
                 />
             ),
         },
-         {
+        {
             key: "4",
             label: "Undergraduate",
             content: (
@@ -66,10 +66,11 @@ const DepartmentOfComputerScienceAndEngineering: FC = () => {
     //     company: "COMPANY",
     // };
 
- 
+
     return (
         <div>
             <div className={`${Classes["container"]}`}>
+                
                 <CustomOverviewSection data={cseFacultyOverviewData} />
 
                 <Counter
@@ -144,7 +145,7 @@ const DepartmentOfComputerScienceAndEngineering: FC = () => {
         </div>
       </section> */}
 
-         <section className="bg-[#edf0f9] py-14">
+            <section className="bg-[#edf0f9] py-14">
                 <div className={`${Classes["container"]} bg-[#edf0f9]`}>
                     <PlacedStudents placedStudents={CseplacedStudents} counterData={counterDataForPlacedStudentsOFComputerScience} />
                 </div>
@@ -160,7 +161,7 @@ const DepartmentOfComputerScienceAndEngineering: FC = () => {
                 breakpoints={{ desktop: 3, tablet: 2, mobile: 1 }}
             />
 
-         
+
 
             {/* <CustomDepartmentEventSlider
                 heading="Events of Department"

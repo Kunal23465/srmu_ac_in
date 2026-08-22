@@ -140,6 +140,9 @@ const ProgramDetails: React.FC = () => {
   // const seoTitle =
   //   (isProgramMetaTitleDistinct ? metaTitle : "") ||
   //   `${programLabel} Admissions, Fees & Eligibility | ${SITE_NAME}, Lucknow`;
+
+
+
   const seoTitle =
     metaTitle ||
     `${programLabel} Admissions, Fees & Eligibility | ${SITE_NAME}, Lucknow`;
@@ -216,6 +219,10 @@ const ProgramDetails: React.FC = () => {
 
     return mergedSchema;
   };
+
+  console.log("metaTitle", metaTitle)
+  console.log("seoTitle", seoTitle)
+
 
   let parsedSchema = courseSchema;
   if (programFaq?.seoConfig) {

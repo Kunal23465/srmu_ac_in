@@ -5,14 +5,14 @@ const CentralLibraryPage = () => {
     return (
         <div>
             <SeoHead
-                title="Central Library | Shri Ramswaroop Memorial University (SRMU), Lucknow"
+                title="Central Library at SRMU - Resources, Services & Facilities"
                 description="Explore the Central Library at SRMU, Lucknow - a hub of academic excellence offering a vast collection of books, journals, e-resources, digital access, and research support."
                 pathname="/central-library"
             />
-            
+
             <CentralLibraryComp />
-            
-            </div>
+
+        </div>
     )
 }
 

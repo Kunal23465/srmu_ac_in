@@ -36,7 +36,7 @@ const BlogsPage: React.FC = () => {
       {location.pathname === parentPath ? (
         <>
           <SeoHead
-            title="Blog | Shri Ramswaroop Memorial University, Lucknow"
+            title="SRMU Blogs | Latest News, Updates, Events & Expert Insights"
             description="Stay updated with the latest news, campus events, academic insights, and student stories from Shri Ramswaroop Memorial University, Lucknow. Explore inspiring blogs from SRMU's vibrant community."
             pathname={parentPath}
           />

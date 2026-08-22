@@ -8,7 +8,7 @@ const PoliciesReportsPage:React.FC = () => {
     <div>
       <Helmet>
           <title>Our Policies | | Shri Ramswaroop Memorial University, Lucknow</title>
-          <meta name="description" content="The primary objective of Shri Ramswaroop Memorial University is to foster an atmosphere that values diversity and is open, transparent, and accepting of all individuals." />
+          <meta name="description" content="Access SRMU policies, institutional reports and academic documents supporting transparency, governance and quality education." />
       </Helmet>
       <PolicyReports/>
     </div>

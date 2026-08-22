@@ -5,11 +5,11 @@ const RtiPage = () => {
   return (
     <div>
       <SeoHead
-        title="RTI | Shri Ramswaroop Memorial University, Lucknow"
+        title="RTI at SRMU | Right to Information, Rules & Guidelines"
         description="Access Right to Information (RTI) details, university disclosures, and related contact information for Shri Ramswaroop Memorial University, Lucknow."
         pathname="/rti"
       />
-        <RtiComponent/>
+      <RtiComponent />
     </div>
   )
 }

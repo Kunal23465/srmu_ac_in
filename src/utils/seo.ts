@@ -56,57 +56,68 @@ const trimTitleAtWordBoundary = (value: string, maxLength: number) => {
   return `${(safeCutoff > 20 ? truncated.slice(0, safeCutoff) : truncated).trim()}...`;
 };
 
-export const normalizeSeoTitle = (value = "") => {
-  const rawTitle = String(value || "")
-    .replace(/\s+/g, " ")
-    .trim();
+// export const normalizeSeoTitle = (value = "") => {
+//   const rawTitle = String(value || "")
+//     .replace(/\s+/g, " ")
+//     .trim();
 
-  if (!rawTitle) {
+//   if (!rawTitle) {
+//     return rawTitle;
+//   }
+
+//   let normalizedTitle = rawTitle
+//     .replace(/\|\s*Shri Ramswaroop Memorial University,\s*Lucknow$/i, `| ${SITE_NAME_SHORT}`)
+//     .replace(/\|\s*Shri Ramswaroop Memorial University\s*\(SRMU\)$/i, `| ${SITE_NAME_SHORT}`)
+//     .replace(/\|\s*Shri Ramswaroop Memorial University$/i, `| ${SITE_NAME_SHORT}`)
+//     .replace(/\bat Shri Ramswaroop Memorial University,\s*Lucknow\b/gi, `at ${SITE_NAME_SHORT}`);
+
+//   normalizedTitle = normalizedTitle.replace(/\b(Undergraduate|Postgraduate|Lateral Entry|Industry Honors|Doctoral|Diploma) Programs\b/i, "$1");
+
+//   if (!/srmu/i.test(normalizedTitle)) {
+//     normalizedTitle = `${normalizedTitle} | ${SITE_NAME_SHORT}`;
+//   }
+
+//   if (normalizedTitle.length < 50 && !/Lucknow/i.test(normalizedTitle)) {
+//     const padded = `${normalizedTitle}, Lucknow`;
+//     if (padded.length <= 60) {
+//       normalizedTitle = padded;
+//     }
+//   }
+
+//   const suffixMatch = normalizedTitle.match(/\s\|\s[^|]+$/);
+//   const suffix = suffixMatch?.[0] || "";
+//   const maxTitleLength = 58;
+
+//   if (normalizedTitle.length >= 50 && normalizedTitle.length <= 60) {
+//     return normalizedTitle;
+//   }
+
+//   if (normalizedTitle.length <= maxTitleLength) {
+//     return normalizedTitle;
+//   }
+
+//   if (suffix) {
+//     let baseTitle = normalizedTitle.slice(0, -suffix.length).trim();
+//     baseTitle = baseTitle.replace(/\s*Admissions,\s*Fees\s*&\s*Eligibility/gi, "").trim();
+//     if (`${baseTitle}${suffix}`.length <= maxTitleLength) {
+//       return `${baseTitle}${suffix}`;
+//     }
+//     const maxBaseLength = Math.max(20, maxTitleLength - suffix.length - 1);
+//     return `${trimTitleAtWordBoundary(baseTitle, maxBaseLength)}${suffix}`;
+//   }
+
+//   return trimTitleAtWordBoundary(normalizedTitle, maxTitleLength);
+// };
+
+export const normalizeSeoTitle = (value = "") => {
+  const rawTitle = String(value || "");
+
+  // Backend title exists → return exactly as received
+  if (rawTitle) {
     return rawTitle;
   }
 
-  let normalizedTitle = rawTitle
-    .replace(/\|\s*Shri Ramswaroop Memorial University,\s*Lucknow$/i, `| ${SITE_NAME_SHORT}`)
-    .replace(/\|\s*Shri Ramswaroop Memorial University\s*\(SRMU\)$/i, `| ${SITE_NAME_SHORT}`)
-    .replace(/\|\s*Shri Ramswaroop Memorial University$/i, `| ${SITE_NAME_SHORT}`)
-    .replace(/\bat Shri Ramswaroop Memorial University,\s*Lucknow\b/gi, `at ${SITE_NAME_SHORT}`);
-
-  normalizedTitle = normalizedTitle.replace(/\b(Undergraduate|Postgraduate|Lateral Entry|Industry Honors|Doctoral|Diploma) Programs\b/i, "$1");
-
-  if (!/srmu/i.test(normalizedTitle)) {
-    normalizedTitle = `${normalizedTitle} | ${SITE_NAME_SHORT}`;
-  }
-
-  if (normalizedTitle.length < 50 && !/Lucknow/i.test(normalizedTitle)) {
-    const padded = `${normalizedTitle}, Lucknow`;
-    if (padded.length <= 60) {
-      normalizedTitle = padded;
-    }
-  }
-
-  const suffixMatch = normalizedTitle.match(/\s\|\s[^|]+$/);
-  const suffix = suffixMatch?.[0] || "";
-  const maxTitleLength = 58;
-
-  if (normalizedTitle.length >= 50 && normalizedTitle.length <= 60) {
-    return normalizedTitle;
-  }
-
-  if (normalizedTitle.length <= maxTitleLength) {
-    return normalizedTitle;
-  }
-
-  if (suffix) {
-    let baseTitle = normalizedTitle.slice(0, -suffix.length).trim();
-    baseTitle = baseTitle.replace(/\s*Admissions,\s*Fees\s*&\s*Eligibility/gi, "").trim();
-    if (`${baseTitle}${suffix}`.length <= maxTitleLength) {
-      return `${baseTitle}${suffix}`;
-    }
-    const maxBaseLength = Math.max(20, maxTitleLength - suffix.length - 1);
-    return `${trimTitleAtWordBoundary(baseTitle, maxBaseLength)}${suffix}`;
-  }
-
-  return trimTitleAtWordBoundary(normalizedTitle, maxTitleLength);
+  return rawTitle;
 };
 
 export const normalizeSeoDescription = (value = "", fallback = DEFAULT_DESCRIPTION) => {

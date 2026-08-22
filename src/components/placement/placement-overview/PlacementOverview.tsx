@@ -17,7 +17,7 @@ const PlacementOverview: React.FC = () => {
   return (
     <>
       <Helmet> <title>Placements | Shri Ramswaroop Memorial University, Lucknow</title>
-        <meta name="description" content="Over the years, our students have landed top-tier opportunities in leading companies. Our recruitment partners include a wide range of industry leaders, across disciplines, fields, and professional landscapes." />
+        <meta name="description" content="Discover SRMU placement opportunities, recruiters, career support, job offers and industry connections for students." />
       </Helmet>
       <div className={`${Classes["container"]}`}>
         <CustomOverviewSection data={PlacementOverviewData} />

@@ -905,10 +905,10 @@ export const routes = [
         path: "/convocational/convocation-2021",
         element: <Navigate to="/convocation/convocation-2021" replace />,
       },
-      {
-        path: "/Department-of-computer-science-and-information-systems",
-        element: <Navigate to="/department-of-computer-science-and-information-systems" replace />,
-      },
+      // {
+      //   path: "/Department-of-computer-science-and-information-systems",
+      //   element: <Navigate to="/department-of-computer-science-and-information-systems" replace />,
+      // },
     ],
   },
   {

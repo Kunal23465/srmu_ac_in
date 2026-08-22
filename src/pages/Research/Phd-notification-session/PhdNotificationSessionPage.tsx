@@ -3,7 +3,7 @@ import PhdNotificationSession from '../../../components/research/ph-d-notificati
 import { Outlet, useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 
-const PhdNotificationSessionPage:React.FC = () => {
+const PhdNotificationSessionPage: React.FC = () => {
   const location = useLocation();
   return (
     <>
@@ -11,10 +11,10 @@ const PhdNotificationSessionPage:React.FC = () => {
         <>
           {" "}
           <Helmet>
-            <title>Ph.D. Notification (Session: 2026-27) | Shri Ramswaroop Memorial University, Lucknow</title>
+            <title>Ph.D. Notification 2026-27 = Admission & Research at SRMU</title>
             <meta
               name="description"
-              content="Shri Ramswaroop Memorial University warmly welcomes aspiring scholars to apply for its esteemed Ph.D. program, marking the beginning of a transformative academic journey."
+              content="Check SRMU Ph.D. Notification 2026-27 for admission details, eligibility, dates and research programme information."
             />
           </Helmet>{" "}
           <PhdNotificationSession />{" "}

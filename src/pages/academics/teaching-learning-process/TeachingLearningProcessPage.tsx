@@ -2,15 +2,15 @@ import { FC } from 'react'
 import TeachingLearning from '../../../components/academics/teaching-learning-process/TeachingLearning'
 import { Helmet } from 'react-helmet-async'
 
-const TeachingLearningProcessPage : FC = () => {
+const TeachingLearningProcessPage: FC = () => {
     return (
         <div>
             <Helmet>
-                <title>Teaching Learning Process  | Shri Ramswaroop Memorial University, Lucknow</title>
-                <meta name="description" content="The Teaching–Learning process of SRMU is students centric. For holistic development various methods of problem solving/participative learning/ experiential learning are followed to ensure that students are active learners rather than passive listeners in teaching – learning process." />
+                <title>Teaching & Learning Process - Academic Excellence at SRMU</title>
+                <meta name="description" content="Discover SRMU's teaching and learning process focused on practical education, academic excellence and student development." />
             </Helmet>
             <TeachingLearning />
-            </div>
+        </div>
     )
 }
 

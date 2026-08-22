@@ -7,7 +7,7 @@ const EContentCellPage: FC = () => {
     <div>
       <Helmet>
         <title>Shri Ramswaroop Memorial University | SRMU</title>
-        <meta name="description" content="Shri Ramswaroop Memorial University is located in Lucknow-Deva Road, Barabanki, Uttar Pradesh, India. SRMU takes pride in its excellent faculty hailing from leading central universities and premier institutes like IIT(s) and NIT(s) etc." />
+        <meta name="description" content="Explore SRMU's E-Content Development Cell and initiatives for digital learning resources, teaching and academic support." />
       </Helmet>
       <EContentCell />
     </div>

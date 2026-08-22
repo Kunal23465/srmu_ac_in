@@ -10,7 +10,7 @@ const EventPage = () => {
   return (
     <div>
       {isRootEventsPage && <><Helmet>  <title>Events &amp; Awards | Annual Festivals | Conferences</title>
-        <meta name="description" content="SRMU’s accomplishments and accolades, celebrate student, faculty, institutional successes, and stay connected to the pulse of our thriving community through a glimpse into our year-round campus activities." /></Helmet><EventComponent /></>}
+        <meta name="description" content="Explore upcoming and past events at SRMU, including academic activities, workshops, seminars, celebrations and student events." /></Helmet><EventComponent /></>}
       <Outlet />
     </div>
   );

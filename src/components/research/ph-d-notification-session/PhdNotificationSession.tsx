@@ -26,7 +26,7 @@ const importantDates = [
   //   right: "10 July 2026 (extendable up to 20 July 2026, if required)",
   // },
   // {
-  //   id: 3,
+  //   id: 3,     
   //   left: "Research Aptitude Test (RAT) (Online Mode):",
   //   right: "07 August 2026",
   // },

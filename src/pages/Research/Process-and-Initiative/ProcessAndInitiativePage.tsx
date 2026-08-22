@@ -3,10 +3,10 @@ import ProcessAndInitiatives from '../../../components/research/process-and-init
 import { Outlet, useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 
-const ProcessAndInitiativePage:React.FC = () => {
+const ProcessAndInitiativePage: React.FC = () => {
   const location = useLocation();
-  return <>{location.pathname === "/process-and-initiatives" ? <> <Helmet><title>Process And Initiatives | Shri Ramswaroop Memorial University, Lucknow</title>
-    <meta name="description" content="SRMU&#039;s research process and initiatives take a dynamic approach, encouraging faculty and students to explore innovative ideas, collaborate across disciplines, and contribute to cutting-edge research, fostering a culture of real-world impact." /></Helmet> <ProcessAndInitiatives /></>   : <Outlet />}</>;
+  return <>{location.pathname === "/process-and-initiatives" ? <> <Helmet><title>SRMU Processes & Initiatives - Quality & Academic Excellence</title>
+    <meta name="description" content="Explore SRMU's academic processes and initiatives focused on quality improvement, innovation, learning and student development." /></Helmet> <ProcessAndInitiatives /></> : <Outlet />}</>;
 }
 
 export default ProcessAndInitiativePage

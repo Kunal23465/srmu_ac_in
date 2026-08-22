@@ -6,9 +6,9 @@ const IqacPage: React.FC = () => {
     return (
         <>
             <Helmet>
-                <title>IQAC Overview, IQAC Annual Reports, | Shri Ramswaroop Memorial University, Lucknow</title>
+                <title>IQAC Overview- Internal Quality Assurance Cell at SRMU</title>
                 {/* <meta name="robots" content="index,follow" /> */}
-                <meta name="description" content="The Internal Quality Assurance Cell (IQAC) assesses accreditation requirements, and is dedicated to enhancing overall institutional performance through conscious and catalytic improvements." />
+                <meta name="description" content="Learn about SRMU's IQAC, quality assurance initiatives, academic standards, continuous improvement and excellence." />
             </Helmet>
             <Iqac />
         </>
