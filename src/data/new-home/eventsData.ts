@@ -9,6 +9,7 @@ import event4 from "../../assets/new-home/events/optimized/4-960.webp";
 import eventcard1 from "../../assets/new-home/events/hours.webp";
 import eventcard1Small from "../../assets/new-home/events/hours-small.webp";
 import eventcard2 from "../../assets/new-home/events/algo-big.webp";
+import LegalStudies from "../../assets/new-home/events/legal_studies.jpeg";
 import eventcard2Small from "../../assets/new-home/events/algo-small.webp";
 import alumini_connect_desktop from "../../assets/new-home/events/alumini-connect-desktop.webp";
 import alumini_connect_mobile from "../../assets/new-home/events/alumini-connect-mobile.webp";
@@ -43,6 +44,32 @@ export type EventItem = {
 };
 
 const eventsData: EventItem[] = [
+  {
+    id: 5,
+    isRedirect: false,
+    image: LegalStudies,
+    imageSmall: LegalStudies,
+    date: "August 27th, 2026",
+    title: `Guest Lecture on Formation of Contracts Organized at the Institute of Legal Studies`,
+    description: `
+    The <strong>Institute of Legal Studies</strong> is organizing a special Guest Lecture on <strong>"From Online Shopping to Business Deals: Understanding the Formation of Contracts"</strong> under the aegis of the Institution's Innovation Council (IIC), Ministry of Education.
+
+    <br/><strong>Event Details</strong><br/>
+    <strong>📅 Date:</strong> 27 August 2026<br/>
+    <strong>⏰ Time:</strong> 10:30 AM onwards<br/>
+    <strong>📍 Venue:</strong> B1-007, SRMU<br/>
+    <strong>🎤 Guest Speaker:</strong> Prof. (Dr.) Mohd. Nizam Ashraf Khan<br/>
+    <strong>🏛️ Affiliation:</strong> IILM University, Greater Noida<br/>
+    <strong>🏫 Organized By:</strong> Institute of Legal Studies, SRMU
+
+    <br/><strong>About the Lecture</strong><br/>
+    The session will focus on the fundamental principles of contract formation and their practical application in today's digital and commercial environment. Students will explore how contracts are formed in online shopping, e-commerce, and business transactions, with discussions on offer and acceptance, consideration, contractual obligations, and online contracts.
+
+    The interactive lecture will also provide students with an opportunity to connect legal theory with real-world examples and interact with the resource person through a question-and-answer session.
+
+    The programme is being organized under the guidance of Hon'ble Chancellor Er. Pankaj Agrawal, Pro-Chancellor Er. Pooja Agrawal, and Vice-Chancellor Prof. (Dr.) Vijay Tiwari, and under the direction of Prof. (Dr.) Narendra Bahadur Singh, Director, Institute of Legal Studies.
+  `,
+  },
   {
     id: 4,
     isRedirect: false,
