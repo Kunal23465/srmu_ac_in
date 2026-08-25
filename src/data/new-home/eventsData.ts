@@ -27,6 +27,7 @@ import Batwara from "../../assets/new-home/events/batwara1.webp";
 import SpaceEconomy from "../../assets/new-home/events/SpaceEconomy.jpg";
 import IBSCollaboration from "../../assets/new-home/events/IBSCollaboration.jpg";
 import CricketStars from "../../assets/new-home/events/CricketStars-1.jpg";
+import aluminiTalks from "../../assets/new-home/events/alumni_talk_law.webp";
 
 export type EventItem = {
   id: string | number;
@@ -45,7 +46,28 @@ export type EventItem = {
 
 const eventsData: EventItem[] = [
   {
-    id: 5,
+    id: 19,
+    isRedirect: false,
+    image: aluminiTalks,
+    imageSmall: aluminiTalks,
+    date: "August 22nd, 2026",
+    title: `Alumni Talk on Building a Career in Litigation Organized by Institute of Legal Studies`,
+    description: `
+The <strong>Institute of Legal Studies, Shri Ramswaroop Memorial University (SRMU), Lucknow-Deva Road, Barabanki</strong>, organized an <strong>Alumni Talk</strong> on <strong>“Building a Career in Litigation: Lessons from Criminal, Service and SARFAESI Practice”</strong> on 22 August 2026 through Google Meet.
+
+<br/><strong>About the Session</strong><br/>
+
+The session featured <strong>Adv. Sumit Srivastava</strong>, <strong>LLM (CCL), Batch 2020 and LLM Gold Medalist</strong>, as the resource person. Drawing from his professional journey and practical experience, he shared valuable insights into the opportunities, challenges, and realities of building a successful career in litigation.
+
+<br/><strong>Key Highlights</strong><br/>
+
+The interaction focused particularly on <strong>Criminal, Service and SARFAESI matters</strong>, providing students with a practical understanding of courtroom proceedings, litigation practice, and professional development. The speaker also highlighted the importance of <strong>practical legal knowledge, professional skills, and continuous learning</strong> for aspiring lawyers.
+
+The session provided students with an opportunity to interact with an accomplished alumnus and gain first-hand perspectives on pursuing a career in litigation. The insightful discussion encouraged students to connect their academic learning with the practical requirements of the legal profession.
+`,
+  },
+  {
+    id: 18,
     isRedirect: false,
     image: LegalStudies,
     imageSmall: LegalStudies,
@@ -71,7 +93,7 @@ const eventsData: EventItem[] = [
   `,
   },
   {
-    id: 4,
+    id: 17,
     isRedirect: false,
     image: SpaceEconomy,
     imageSmall: SpaceEconomy,
@@ -102,7 +124,7 @@ const eventsData: EventItem[] = [
   `,
   },
   {
-    id: 3,
+    id: 16,
     isRedirect: false,
     image: IBSCollaboration,
     imageSmall: IBSCollaboration,
@@ -147,7 +169,7 @@ const eventsData: EventItem[] = [
   `,
   },
   {
-    id: 2,
+    id: 15,
     isRedirect: false,
     image: CricketStars,
     imageSmall: CricketStars,
@@ -168,7 +190,7 @@ const eventsData: EventItem[] = [
   `,
   },
   {
-    id: 1,
+    id: 14,
     isRedirect: false,
     image: CyberCrime,
     imageSmall: CyberCrime,
@@ -193,7 +215,7 @@ const eventsData: EventItem[] = [
   `,
   },
   {
-    id: 0,
+    id: 13,
     isRedirect: false,
     image: Batwara,
     imageSmall: Batwara,
@@ -204,7 +226,7 @@ const eventsData: EventItem[] = [
   `,
   },
   {
-    id: 1,
+    id: 12,
     // isUpcoming:true,
     isRedirect: true,
     redirectTo: "/convocation2026",
@@ -340,7 +362,7 @@ const eventsData: EventItem[] = [
   },
 
   {
-    id: 10,
+    id: 11,
     isRedirect: false,
     image: hostFinancial,
     imageSmall: hostFinancial,
@@ -356,7 +378,7 @@ const eventsData: EventItem[] = [
   },
 
   {
-    id: 11,
+    id: 10,
     isRedirect: false,
     image: SRMUConductsDays, // Replace with the new FDP image if available
     imageSmall: SRMUConductsDays,
@@ -373,7 +395,7 @@ const eventsData: EventItem[] = [
   `,
   },
   {
-    id: 12,
+    id: 9,
     isRedirect: false,
     image: SRMUWelcomes, // Replace with Student Induction Programme image
     imageSmall: SRMUWelcomes,
@@ -456,7 +478,7 @@ const eventsData: EventItem[] = [
   // },
 
   {
-    id: 1,
+    id: 8,
     isRedirect: true,
     image: eventcard1,
     imageSmall: eventcard1Small,
@@ -605,7 +627,7 @@ const eventsData: EventItem[] = [
   // `,
   // },
   {
-    id: 3,
+    id: 7,
     isRedirect: false,
     image: alumini_connect_desktop,
     imageSmall: alumini_connect_mobile,
@@ -626,7 +648,7 @@ The event was graced by university leadership, including Chancellor Er. Pankaj A
   	`,
   },
   {
-    id: 4,
+    id: 6,
     isRedirect: false,
     image: alumini1_desktop,
     imageSmall: alumini1_mobile,
@@ -669,7 +691,7 @@ The session saw enthusiastic participation from students and faculty across depa
   },
 
   {
-    id: 6,
+    id: 4,
     isRedirect: true,
     image: event3,
     imageSmall: event3Small,
@@ -693,7 +715,7 @@ The session saw enthusiastic participation from students and faculty across depa
   },
 
   {
-    id: 7,
+    id: 3,
     isRedirect: true,
     image: event1,
     imageSmall: event1Small,
@@ -733,7 +755,7 @@ The session saw enthusiastic participation from students and faculty across depa
   	`,
   },
   {
-    id: 8,
+    id: 2,
     isRedirect: true,
     image: event2,
     imageSmall: event2Small,
@@ -762,7 +784,7 @@ The session saw enthusiastic participation from students and faculty across depa
   	`,
   },
   {
-    id: 9,
+    id: 1,
     isRedirect: true,
     image: event4,
     imageSmall: event4Small,
