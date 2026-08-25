@@ -298,7 +298,7 @@ const ProgramFinderHome: React.FC = () => {
     return a.displayOrder - b.displayOrder;
   });
 
-  console.log("data============", sortedData);
+  // console.log("programByIntroData============", programByIntroData);
   return (
     <>
       <div className={`${Classes.container} mt-16`}>

@@ -206,7 +206,7 @@ const ProgramFinder: React.FC = () => {
     return a.displayOrder - b.displayOrder;
   });
 
-  console.log("data============", sortedData);
+  console.log("programByIntroData============", programByIntroData);
   return (
     <>
       <SeoHead

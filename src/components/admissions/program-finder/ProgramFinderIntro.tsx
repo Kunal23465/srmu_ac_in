@@ -6,6 +6,8 @@ interface ProgramFinderIntroProps {
   title?: string;
 }
 
+
+console.log("programFinderIntroData", programFinderIntroData)
 const ProgramFinderIntro: React.FC<ProgramFinderIntroProps> = ({ description, title }) => {
   return (
     <section className="sm:px-3  pb-12">

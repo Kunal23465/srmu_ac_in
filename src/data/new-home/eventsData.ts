@@ -8,9 +8,9 @@ import event4Small from "../../assets/new-home/events/optimized/4-480.webp";
 import event4 from "../../assets/new-home/events/optimized/4-960.webp";
 import eventcard1 from "../../assets/new-home/events/hours.webp";
 import eventcard1Small from "../../assets/new-home/events/hours-small.webp";
-import eventcard2 from "../../assets/new-home/events/algo-big.webp";
+// import eventcard2 from "../../assets/new-home/events/algo-big.webp";
 import LegalStudies from "../../assets/new-home/events/legal_studies.jpeg";
-import eventcard2Small from "../../assets/new-home/events/algo-small.webp";
+// import eventcard2Small from "../../assets/new-home/events/algo-small.webp";
 import alumini_connect_desktop from "../../assets/new-home/events/alumini-connect-desktop.webp";
 import alumini_connect_mobile from "../../assets/new-home/events/alumini-connect-mobile.webp";
 import alumini1_desktop from "../../assets/new-home/events/alumini1-desktop.webp";
@@ -523,87 +523,87 @@ const eventsData: EventItem[] = [
     </div>
   `,
   },
-  {
-    id: 2,
-    // isUpcoming:true,
-    isRedirect: true,
-    image: eventcard2,
-    imageSmall: eventcard2Small,
-    date: "June 8, 2026",
-    title: "Online National Conference on Algorithmic Justice: Re-imagining Due Process in the Age of AI",
-    description: `
-    <p>
-      The <strong>Institute of Legal Studies (ILS), Shri Ramswaroop Memorial University (SRMU)</strong>
-      is organizing an <strong>Online National Conference</strong> on
-      <strong>"Algorithmic Justice: Re-imagining Due Process in the Age of AI"</strong>.
-      This conference aims to bring together distinguished legal experts, academicians,
-      researchers, policymakers, and students to explore the growing intersection of
-      <strong>Artificial Intelligence, law, governance, and justice</strong>.
-    </p>
+  // {
+  //   id: 2,
+  //   // isUpcoming:true,
+  //   isRedirect: true,
+  //   image: eventcard2,
+  //   imageSmall: eventcard2Small,
+  //   date: "June 8, 2026",
+  //   title: "Online National Conference on Algorithmic Justice: Re-imagining Due Process in the Age of AI",
+  //   description: `
+  //   <p>
+  //     The <strong>Institute of Legal Studies (ILS), Shri Ramswaroop Memorial University (SRMU)</strong>
+  //     is organizing an <strong>Online National Conference</strong> on
+  //     <strong>"Algorithmic Justice: Re-imagining Due Process in the Age of AI"</strong>.
+  //     This conference aims to bring together distinguished legal experts, academicians,
+  //     researchers, policymakers, and students to explore the growing intersection of
+  //     <strong>Artificial Intelligence, law, governance, and justice</strong>.
+  //   </p>
 
-    <p class="mt-2">
-      As AI continues to influence governance structures, judicial systems, and
-      decision-making processes, the conference seeks to examine the opportunities,
-      challenges, and ethical implications of algorithmic systems. Participants will
-      engage in meaningful discussions on how legal frameworks can evolve to ensure
-      fairness, transparency, accountability, and due process in an increasingly
-      AI-driven world.
-    </p>
+  //   <p class="mt-2">
+  //     As AI continues to influence governance structures, judicial systems, and
+  //     decision-making processes, the conference seeks to examine the opportunities,
+  //     challenges, and ethical implications of algorithmic systems. Participants will
+  //     engage in meaningful discussions on how legal frameworks can evolve to ensure
+  //     fairness, transparency, accountability, and due process in an increasingly
+  //     AI-driven world.
+  //   </p>
 
-    <p class="mt-2">
-      The event will serve as a national platform for interdisciplinary dialogue,
-      enabling scholars, professionals, and researchers to exchange ideas and
-      contribute to shaping the future of AI governance and justice systems.
-    </p>
+  //   <p class="mt-2">
+  //     The event will serve as a national platform for interdisciplinary dialogue,
+  //     enabling scholars, professionals, and researchers to exchange ideas and
+  //     contribute to shaping the future of AI governance and justice systems.
+  //   </p>
 
-    <div class="mt-3">
-      <h5><strong>Conference Highlights</strong></h5>
-      <ul>
-        <li>Discussions on AI and judicial decision-making</li>
-        <li>Expert keynote and panel sessions</li>
-        <li>Research paper presentations</li>
-        <li>Emerging legal and ethical challenges of AI</li>
-        <li>Networking opportunities for scholars and professionals</li>
-        <li>National platform for interdisciplinary dialogue</li>
-      </ul>
-    </div>
+  //   <div class="mt-3">
+  //     <h5><strong>Conference Highlights</strong></h5>
+  //     <ul>
+  //       <li>Discussions on AI and judicial decision-making</li>
+  //       <li>Expert keynote and panel sessions</li>
+  //       <li>Research paper presentations</li>
+  //       <li>Emerging legal and ethical challenges of AI</li>
+  //       <li>Networking opportunities for scholars and professionals</li>
+  //       <li>National platform for interdisciplinary dialogue</li>
+  //     </ul>
+  //   </div>
 
-    <div class="mt-3">
-      <h5><strong>Key Themes</strong></h5>
-      <ul>
-        <li>AI in Judicial Decision-Making</li>
-        <li>Constitutional and Procedural Fairness</li>
-        <li>Criminal Justice and Emerging Technologies</li>
-        <li>Data Protection and Governance</li>
-        <li>AI, Human Rights & Access to Justice</li>
-        <li>Future of Due Process in the Digital Age</li>
-        <li>Legal Regulation of Artificial Intelligence</li>
-        <li>Ethical Challenges in Automated Systems</li>
-      </ul>
-    </div>
+  //   <div class="mt-3">
+  //     <h5><strong>Key Themes</strong></h5>
+  //     <ul>
+  //       <li>AI in Judicial Decision-Making</li>
+  //       <li>Constitutional and Procedural Fairness</li>
+  //       <li>Criminal Justice and Emerging Technologies</li>
+  //       <li>Data Protection and Governance</li>
+  //       <li>AI, Human Rights & Access to Justice</li>
+  //       <li>Future of Due Process in the Digital Age</li>
+  //       <li>Legal Regulation of Artificial Intelligence</li>
+  //       <li>Ethical Challenges in Automated Systems</li>
+  //     </ul>
+  //   </div>
 
-    <div class="mt-3">
-      <h5><strong>Why Participate?</strong></h5>
-      <ul>
-        <li>Learn from renowned legal scholars and experts</li>
-        <li>Present research and gain valuable feedback</li>
-        <li>Explore emerging legal-tech developments</li>
-        <li>Network with academicians and professionals</li>
-        <li>Contribute to discussions on the future of AI governance</li>
-      </ul>
-    </div>
+  //   <div class="mt-3">
+  //     <h5><strong>Why Participate?</strong></h5>
+  //     <ul>
+  //       <li>Learn from renowned legal scholars and experts</li>
+  //       <li>Present research and gain valuable feedback</li>
+  //       <li>Explore emerging legal-tech developments</li>
+  //       <li>Network with academicians and professionals</li>
+  //       <li>Contribute to discussions on the future of AI governance</li>
+  //     </ul>
+  //   </div>
 
-    <div class="mt-3">
-      <h5><strong>Event Details</strong></h5>
-      <p>
-        <strong>Date:</strong> 13 June 2026<br/>
-        <strong>Mode:</strong> Online<br/>
-        <strong>Organized By:</strong> Institute of Legal Studies (ILS), SRMU<br/>
-        <strong>Participants:</strong> Students, Researchers, Academicians, Legal Professionals & Policy Experts
-      </p>
-    </div>
-  `,
-  },
+  //   <div class="mt-3">
+  //     <h5><strong>Event Details</strong></h5>
+  //     <p>
+  //       <strong>Date:</strong> 13 June 2026<br/>
+  //       <strong>Mode:</strong> Online<br/>
+  //       <strong>Organized By:</strong> Institute of Legal Studies (ILS), SRMU<br/>
+  //       <strong>Participants:</strong> Students, Researchers, Academicians, Legal Professionals & Policy Experts
+  //     </p>
+  //   </div>
+  // `,
+  // },
   {
     id: 3,
     isRedirect: false,
