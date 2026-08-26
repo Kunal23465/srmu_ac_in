@@ -59,7 +59,7 @@ const NewsCard = ({ image, description, date, title, onReadMore }: any) => {
 
       <img
         src={image}
-        alt="Event"
+        alt={title ? `${title} - SRMU Event` : "SRMU campus event"}
         width={300}
         height={225}
         loading="lazy"
@@ -123,7 +123,7 @@ const NewsCard1 = ({ image, description, date, title, onReadMore }: any) => {
 
       <img
         src={image}
-        alt="Event"
+        alt={title ? `${title} - SRMU Event` : "SRMU campus event"}
         loading="lazy"
         decoding="async"
         className="transition-all duration-200 rounded-lg mb-4 w-full object-cover aspect-[5/3] object-bottom"

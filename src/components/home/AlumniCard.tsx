@@ -51,7 +51,7 @@ const AlumniCard: React.FC<CustomCardProps> = ({ image, name, title, desc, fullD
       {/* IMAGE */}
       <img
         src={image}
-        alt={name}
+        alt={name ? `${name} - SRMU Alumni` : "Notable SRMU Alumni"}
         width={320}
         height={440}
         loading="lazy"

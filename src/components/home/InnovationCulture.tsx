@@ -45,7 +45,7 @@ export default function InnovationCulture() {
         <div className="w-full max-w-[400px] hidden  mt-10 lg:mt-0 lg:flex justify-center">
           <img 
             src={girlsimage} 
-            alt="Students" 
+            alt="SRMU students collaborating on innovative research projects" 
             width={400}
             height={400}
             loading="lazy"

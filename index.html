@@ -21,47 +21,10 @@
     <noscript>
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" />
     </noscript>
-    <!-- explicitly load Tailwind CSS early to avoid flash -->
-    <link rel="stylesheet" href="/src/index.css" />
-
     <meta name="google-site-verification" content="_nb6X6f1snggKhVVVCB8IrIDgoQumS9jt7LhEw_Khig" />
 
     <!-- Google Tag Manager: delayed until after first paint/idle on production hosts -->
-    <script>
-      (function () {
-        var allowedHosts = ["srmu.ac.in", "www.srmu.ac.in"];
-
-        if (allowedHosts.indexOf(window.location.hostname) === -1) {
-          return;
-        }
-
-        var loaded = false;
-        var loadGtm = function () {
-          if (loaded) return;
-          loaded = true;
-
-          window.dataLayer = window.dataLayer || [];
-          window.dataLayer.push({
-            "gtm.start": new Date().getTime(),
-            event: "gtm.js",
-          });
-
-          var firstScript = document.getElementsByTagName("script")[0];
-          var gtmScript = document.createElement("script");
-          gtmScript.async = true;
-          gtmScript.src = "https://www.googletagmanager.com/gtm.js?id=GTM-5MHCHMHC";
-          firstScript.parentNode.insertBefore(gtmScript, firstScript);
-        };
-
-        window.addEventListener("load", function () {
-          if ("requestIdleCallback" in window) {
-            window.requestIdleCallback(loadGtm, { timeout: 4500 });
-          } else {
-            window.setTimeout(loadGtm, 3500);
-          }
-        });
-      })();
-    </script>
+    <script>!(function(){var e=["srmu.ac.in","www.srmu.ac.in"];if(-1!==e.indexOf(window.location.hostname)){var n=!1,t=function(){if(!n){n=!0,window.dataLayer=window.dataLayer||[],window.dataLayer.push({"gtm.start":(new Date).getTime(),event:"gtm.js"});var e=document.getElementsByTagName("script")[0],t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtm.js?id=GTM-5MHCHMHC",e.parentNode.insertBefore(t,e)}};window.addEventListener("load",(function(){"requestIdleCallback"in window?window.requestIdleCallback(t,{timeout:4500}):window.setTimeout(t,3500)}))}})();</script>
 
     <!-- Meta Pixel Code -->
     <!-- <script>
@@ -200,39 +163,7 @@
 
     <!--preloaded-state-->
 
-    <script>
-      // Load legacy live-chat script only when its DOM container exists.
-      if (document.getElementById("liveChatContainer")) {
-        const liveChatScript = document.createElement("script");
-        liveChatScript.defer = true;
-        liveChatScript.src = "https://arsinfotech.in/chatbot/admin/public/livechat/user.js";
-        document.head.appendChild(liveChatScript);
-      }
-    </script>
-    <script>
-      (function () {
-        var loaded = false;
-        var loadRecaptcha = function () {
-          if (loaded) return;
-          loaded = true;
-          var recaptchaScript = document.createElement("script");
-          recaptchaScript.async = true;
-          recaptchaScript.defer = true;
-          recaptchaScript.src = "https://www.google.com/recaptcha/api.js?render=6Leef4opAAAAAIHXI82ZE6l8ezbNjJe2_1nwDlUH";
-          document.head.appendChild(recaptchaScript);
-        };
-
-        window.addEventListener("pointerdown", loadRecaptcha, { once: true, passive: true });
-        window.addEventListener("keydown", loadRecaptcha, { once: true });
-        window.addEventListener("load", function () {
-          if ("requestIdleCallback" in window) {
-            window.requestIdleCallback(loadRecaptcha, { timeout: 9000 });
-          } else {
-            window.setTimeout(loadRecaptcha, 7000);
-          }
-        });
-      })();
-    </script>
+    <script>if(document.getElementById("liveChatContainer")){var s=document.createElement("script");s.defer=!0,s.src="https://arsinfotech.in/chatbot/admin/public/livechat/user.js",document.head.appendChild(s)}!(function(){var e=!1,t=function(){if(!e){e=!0;var t=document.createElement("script");t.async=!0,t.defer=!0,t.src="https://www.google.com/recaptcha/api.js?render=6Leef4opAAAAAIHXI82ZE6l8ezbNjJe2_1nwDlUH",document.head.appendChild(t)}};window.addEventListener("pointerdown",t,{once:!0,passive:!0}),window.addEventListener("keydown",t,{once:!0}),window.addEventListener("load",(function(){"requestIdleCallback"in window?window.requestIdleCallback(t,{timeout:9e3}):window.setTimeout(t,7e3)}))})();</script>
 
     <!-- React Client Entry -->
     <script type="module" defer src="/src/entry-client.tsx"></script>

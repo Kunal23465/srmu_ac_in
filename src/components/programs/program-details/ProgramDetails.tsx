@@ -107,7 +107,10 @@ const toIso8601CourseDuration = (value?: string | number | null) => {
 const ProgramDetails: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
   const location = useLocation();
-  const { programName } = useParams();
+  const { programName: programNameParam } = useParams();
+  // For direct program URLs (e.g. /b-tech-cse-cyber-security) the route param
+  // is not named "programName", so we fall back to the last path segment.
+  const programName = programNameParam || location.pathname.replace(/^\/+/, "").replace(/\/+$/, "") || undefined;
   const [expanded, setExpanded] = useState(false);
   const [open, setOpen] = useState<number | null>(0);
   const [isProgramRouteLoading, setIsProgramRouteLoading] = useState(false);

@@ -92,7 +92,7 @@ const Apply: React.FC = () => {
                 <div className={`  overflow-hidden  ease-in-out  ${item.id === active ? "max-h-[1500px] mt-2" : "max-h-0"}`}>
                   {item.content}
 
-                  {item.id === active && <img src={item.imgSrc} alt="Program visual" className="mt-4 rounded-lg block lg:hidden w-full" />}
+                  {item.id === active && <img src={item.imgSrc} alt={item.title ? `${item.title} - SRMU Academic Program` : "SRMU Academic Program"} className="mt-4 rounded-lg block lg:hidden w-full" />}
                 </div>
               </div>
             ))}
@@ -103,7 +103,7 @@ const Apply: React.FC = () => {
           <img
             className="w-full h-auto rounded-lg max-w-[720px] max-h-[500px]"
             src={active !== null ? dynamicAccordionData?.[active]?.imgSrc : dynamicAccordionData?.[0]?.imgSrc}
-            alt="Accordion Visual"
+            alt={active !== null && dynamicAccordionData?.[active]?.title ? `${dynamicAccordionData[active].title} - SRMU Academic Program` : "SRMU Academic Program"}
           />
         </div>
       </div>

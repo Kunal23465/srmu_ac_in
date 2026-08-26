@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "tsx server.ts",
     "generate:sitemap": "tsx scripts/generate-sitemap-robots.ts",
-    "build": "npm run generate:sitemap && vite build --outDir dist/client && vite build --ssr src/entry-server.tsx --outDir dist/server",
+    "build": "npm run generate:sitemap && vite build --outDir dist/client && vite build --ssr src/entry-server.tsx --outDir dist/server && node scripts/compress-dist-assets.mjs",
     "images:webp": "node scripts/generate-webp.mjs",
     "images:new-home": "node scripts/optimize-new-home-media.mjs",
     "preview": "NODE_ENV=production tsx server.ts"

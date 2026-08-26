@@ -142,12 +142,22 @@ const Placements = () => {
                         {slide.description}
                       </p>
 
+                      {renderCounter(
+                        slide.title,
+                        slide.symbol,
+                        "text-[38px] lg:text-[42px] font-semibold mb-2 text-white"
+                      )}
+
+                      <p className="mt-1 text-white text-[17px] font-poppins font-normal">
+                        {slide.description}
+                      </p>
+
                     </div>
 
                     <div className="hidden lg:block absolute bottom-0 left-0 w-full">
                       <img
                         src={slide.img}
-                        alt={`slide ${slide.id}`}
+                        alt={slide.description ? `SRMU Placement Record - ${slide.description}` : `SRMU Placement Highlight ${slide.id}`}
                         className="w-full h-[360px] object-contain"
                       />
                     </div>
@@ -249,13 +259,11 @@ const Placements = () => {
                     <div className="hidden lg:block absolute bottom-0 left-0 w-full">
                       <img
                         src={slide.img}
-                        alt={`slide ${slide.id}`}
+                        alt={slide.description ? `SRMU Placement Record - ${slide.description}` : `SRMU Placement Highlight ${slide.id}`}
                         className="w-full h-[400px] object-contain"
                       />
                     </div>
-
                   </div>
-
                 ))}
 
               </div>

@@ -122,9 +122,9 @@ const MemorialCollege: React.FC = () => {
                       <Link target="_blank" to={item.pdfPath}>
                         <img
                           src={item.imagePath}
-                          alt="slider"
+                          alt={item.title || item.bannerName || "Shri Ramswaroop Memorial University Banner"}
                           loading={index === 0 ? "eager" : "lazy"}
-                          fetchpriority={index === 0 ? "high" : "auto"}
+                          fetchPriority={index === 0 ? "high" : "auto"}
                           decoding="async"
                           className="w-full rounded-xl"
                         />
@@ -133,9 +133,9 @@ const MemorialCollege: React.FC = () => {
                       <Link target="_blank" to={item.link}>
                         <img
                           src={item.imagePath}
-                          alt="slider"
+                          alt={item.title || item.bannerName || "Shri Ramswaroop Memorial University Banner"}
                           loading={index === 0 ? "eager" : "lazy"}
-                          fetchpriority={index === 0 ? "high" : "auto"}
+                          fetchPriority={index === 0 ? "high" : "auto"}
                           decoding="async"
                           className="w-full rounded-xl"
                         />

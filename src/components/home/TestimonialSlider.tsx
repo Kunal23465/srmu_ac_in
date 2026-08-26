@@ -126,7 +126,7 @@ const TestimonialSlider = () => {
                       >
                         <img
                           src={item.img}
-                          alt={item.name}
+                          alt={item.name ? `${item.name} - SRMU Student Testimonial` : "SRMU Student Testimonial"}
                           className={`block aspect-square h-full w-full object-cover object-top transition-all duration-300 ${
                             index === activeIndex
                               ? "scale-105 saturate-110 contrast-105"

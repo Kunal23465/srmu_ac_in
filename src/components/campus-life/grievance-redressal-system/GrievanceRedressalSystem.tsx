@@ -12,6 +12,8 @@ import GeneralGuidelines from "./GeneralGuidelines";
 import ProcessFlowCall from "./ProcessFlowCall";
 import ProcessFlowStudent from "./ProcessFlowStudent";
 import { Link } from "react-router-dom";
+import { MdArrowRightAlt } from "react-icons/md";
+import { LuSquareArrowOutUpRight } from "react-icons/lu";
 
 const GrievanceRedressalSystem: React.FC = () => {
   const items = [
@@ -41,6 +43,18 @@ const GrievanceRedressalSystem: React.FC = () => {
     <>
       <div className={`${Classes["container"]}`}>
         <CustomOverviewSection data={greenRedressalOverviewData} />
+        <div className="flex justify-left mb-8">
+          <Link
+            to="https://eyojan.unif.co.in/" target="_blank" rel="noopener noreferrer"
+            className="bg-[#ffb703] text-sm  border-2 uppercase   border-[#ffb703] hover:bg-transparent hover:text-[#ffb703] inline-flex gapx-x-1 items-center   font-semibold px-4 lg:px-5 py-2 rounded-md text-nowrap mt-5 sm:mt-0  group "
+          >
+            Click here to login to Grievance Redressal Portal
+            <span className="transition-all duration-200 group-hover:rotate-[90deg] ml-3">
+
+              <LuSquareArrowOutUpRight size={20} />
+            </span>
+          </Link>
+        </div>
         <CustomTabs
           items={items}
           variant="underline"

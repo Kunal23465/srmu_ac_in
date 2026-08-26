@@ -4,8 +4,9 @@ import { Helmet } from "react-helmet-async";
 import Classes from "../../utils/styles/Global.module.css";
 import CustomTopFooter from "../../utils/custom/CustomTopFooter";
 import { CustomTopFooterAbout } from "../../data/about/aboutusData";
-import { useSelector } from "react-redux";
-import { RootState } from "../../store";
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch, RootState } from "../../store";
+import { fetchBlogs } from "../../store/blogs/blogsThunk";
 import {
   SITE_NAME,
   normalizeSeoTitle,
@@ -15,9 +16,24 @@ import {
 import { findBlogBySlug } from "../../utils/routeMatching";
 import CustomFormModal from "../../utils/custom/CustomFormModal";
 
+const cleanMediaUrl = (url?: string | null) => {
+  if (!url) return "";
+  return url.replace(/https?:\/\/webservices\.srmu\.ac\.in:7003/gi, "");
+};
+
+const sanitizeHtmlDescription = (html?: string) => {
+  if (!html) return "";
+  return html
+    .replace(/https?:\/\/webservices\.srmu\.ac\.in:7003/gi, "")
+    .replace(/<h1\b/gi, "<h2")
+    .replace(/<\/h1>/gi, "</h2>")
+    .replace(/<img\b(?![^>]*\bloading=)/gi, '<img loading="lazy" decoding="async"');
+};
+
 const BlogDetailsPage: React.FC = () => {
   const location = useLocation();
   const { slug } = useParams();
+  const dispatch = useDispatch<AppDispatch>();
 
   const { data: blogs, loading } = useSelector(
     (state: RootState) => state.getAllBlogs
@@ -26,7 +42,13 @@ const BlogDetailsPage: React.FC = () => {
   const [open, setOpen] = useState<boolean>(false);
   const [sourceId, setSourceId] = useState<number | null>(null);
 
-  // Find blog only by slug from API response
+  useEffect(() => {
+    if ((!blogs || (Array.isArray(blogs) && blogs.length === 0)) && !loading) {
+      dispatch(fetchBlogs());
+    }
+  }, [blogs, loading, dispatch]);
+
+  // Find blog by slug from API response or legacy content
   const data = findBlogBySlug(
     Array.isArray(blogs) ? blogs : [],
     slug || ""
@@ -114,7 +136,7 @@ const BlogDetailsPage: React.FC = () => {
     "@type": "Article",
     headline: data.title,
     datePublished: data.postedOn,
-    image: toAbsoluteUrl(data.imagePath),
+    image: toAbsoluteUrl(cleanMediaUrl(data.imagePath)),
     description: blogDescription,
     publisher: {
       "@type": "CollegeOrUniversity",
@@ -126,7 +148,7 @@ const BlogDetailsPage: React.FC = () => {
 
   const absoluteUrl = `https://srmu.ac.in${location.pathname}`;
   const imageUrl = data.imagePath
-    ? toAbsoluteUrl(data.imagePath)
+    ? toAbsoluteUrl(cleanMediaUrl(data.imagePath))
     : "";
 
   return (
@@ -234,7 +256,7 @@ const BlogDetailsPage: React.FC = () => {
                 [&_td]:align-top
               "
               dangerouslySetInnerHTML={{
-                __html: data.description ? data.description.replace(/<h1\b/gi, "<h2").replace(/<\/h1>/gi, "</h2>") : "",
+                __html: sanitizeHtmlDescription(data.description),
               }}
             />
           </div>
