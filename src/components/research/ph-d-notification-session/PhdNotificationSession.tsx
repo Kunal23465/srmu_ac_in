@@ -97,14 +97,14 @@ const PhdNotificationSession: React.FC = () => {
           </h2>
           {/* <h2 className="lg:text-[32px] md:text-[27.255px] sm:text-[21.925px] text-[21.925px] fw500 text-black mb-2">Mode of Application</h2> */}
           <div className="flex flex-col md:flex-row items-center justify-start gap-5 md:gap-10">
-            <Link
+            {/* <Link
               target="_blank"
               to="https://phdadmission.srmu.ac.in/"
               className=" bg-[#0f4a85] cursor-pointer text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] border-2 border-[#0f4a85] text-white font-medium uppercase py-1 md:py-3 px-2 md:px-5 rounded-lg hover:bg-white hover:text-[#0f4a85] transition-colors duration-500 w-fit"
             >
               Online Application
-            </Link>
-            {/* <button
+            </Link> */}
+            <button
               disabled
               className="bg-[#0f4a85] text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] 
   border-2 border-[#0f4a85] text-white font-medium uppercase 
@@ -120,7 +120,7 @@ const PhdNotificationSession: React.FC = () => {
   hover:bg-white hover:text-[#0f4a85]"
             >
               Online Application
-            </button> */}
+            </button>
             {/* <Link
               to="/research/phd-offline-application"
               className=" bg-[#0f4a85] cursor-pointer text-[14px] lg:text-[16px] md:text-[15px] sm:text-[14px] border-2 border-[#0f4a85]  text-white font-medium uppercase py-1 md:py-3 px-2 md:px-5 rounded-lg hover:bg-white hover:text-[#0f4a85] transition-colors duration-500 w-fit"

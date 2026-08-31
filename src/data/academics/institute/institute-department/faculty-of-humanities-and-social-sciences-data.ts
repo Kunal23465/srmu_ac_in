@@ -47,6 +47,8 @@ import heighLightsImg4 from "../../../../assets/images/academics/departments/fac
 import heighLightsImg5 from "../../../../assets/images/academics/departments/faculty-of-humeneties/heighlights/img5.webp";
 import heighLightsImg6 from "../../../../assets/images/academics/departments/faculty-of-humeneties/heighlights/img6.webp";
 import heighLightsImg7 from "../../../../assets/images/academics/departments/faculty-of-humeneties/heighlights/img7.webp";
+
+import defaultSrmu from "../../../../assets/images/academics/institutes/default-img.webp";
 import { Student } from "./department-of-cse-data";
 import { EventItem } from "../../../../utils/custom/CustomEventListCard";
 export const FacultyofHumanitiesandSocialSciencesOverviewData: customeOverViewType = {
@@ -61,30 +63,29 @@ export const FacultyofHumanitiesandSocialSciencesCounterData1: counterDataType[]
   { id: 3, value: "625", suffix: "", label: "Students" },
 ];
 
-export const FacultyofHumanitiesandSocialSciencesCounterData2: counterDataType[] = 
- [
-    {
-      id: 1,
-      icon: "",
-      value: "250",
-      suffix: "",
-      label: "Guest lectures",
-    },
-    {
-      id: 2,
-      icon: "",
-      value: "50",
-      suffix: "",
-      label: "Field Visits",
-    },
-    {
-      id: 3,
-      icon: "",
-      value: "20",
-      suffix: "",
-      label: "Conference & Seminars",
-    },
-  ];
+export const FacultyofHumanitiesandSocialSciencesCounterData2: counterDataType[] = [
+  {
+    id: 1,
+    icon: "",
+    value: "250",
+    suffix: "",
+    label: "Guest lectures",
+  },
+  {
+    id: 2,
+    icon: "",
+    value: "50",
+    suffix: "",
+    label: "Field Visits",
+  },
+  {
+    id: 3,
+    icon: "",
+    value: "20",
+    suffix: "",
+    label: "Conference & Seminars",
+  },
+];
 
 export const FacultyofHumanitiesandSocialSciencesVMData = [
   {
@@ -148,42 +149,42 @@ export const FacultyofHumanitiesandSocialSciencesData1: FeeTableData = {
       duration: "2 Years",
       eligibility: "Click to View",
       fee: "Rs. 42,000/-",
-      link:"program/m-a-psychology",
+      link: "program/m-a-psychology",
     },
     {
       course: "M.A. in Political Science",
       duration: "2 Years",
       eligibility: "Click to View",
       fee: "Rs. 37,000/-",
-      link:"program/m-a-political-science",
+      link: "program/m-a-political-science",
     },
     {
       course: "M.A. in Sociology",
       duration: "2 Years",
       eligibility: "Click to View",
       fee: "Rs. 37,000/-",
-      link:"program/m-a-sociology",
+      link: "program/m-a-sociology",
     },
     {
       course: "M.P.H. (Master in Public Health)",
       duration: "2 Years",
       eligibility: "Click to View",
       fee: "Rs. 37,000/-",
-      link:"program/mph-master-in-public-health",
+      link: "program/mph-master-in-public-health",
     },
     {
       course: "M.A. in English",
       duration: "2 Years",
       eligibility: "Click to View",
       fee: "Rs. 37,000/-",
-      link:"program/m-a-english",
+      link: "program/m-a-english",
     },
     {
       course: "M.S.W. (Master of Social Work)",
       duration: "2 Years",
       eligibility: "Click to View",
       fee: "Rs. 42,000/-",
-      link:"program/msw",
+      link: "program/msw",
     },
   ],
 };
@@ -196,33 +197,31 @@ export const FacultyofHumanitiesandSocialSciencesData2: FeeTableData = {
       duration: "3 Years",
       eligibility: "Click to View",
       fee: "Rs. 32,000/-",
-      link:"program/b-a-hons-english"
+      link: "program/b-a-hons-english",
     },
     {
       course: "B.A.(Hons.) in Political Science",
       duration: "3 Years",
       eligibility: "Click to View",
       fee: "Rs. 32,000/-",
-      link:"program/b-a-hons-political-science"
+      link: "program/b-a-hons-political-science",
     },
     {
       course: "B.A.(Hons.) in Sociology",
       duration: "3 Years",
       eligibility: "Click to View",
       fee: "Rs. 32,000/-",
-      link:"program/b-a-hons-sociology"
+      link: "program/b-a-hons-sociology",
     },
     {
       course: "B.A.(Hons.) in Applied Psychology",
       duration: "3 Years",
       eligibility: "Click to View",
       fee: "Rs. 32,000/-",
-      link:"program/b-a-hons-applied-psychology"
+      link: "program/b-a-hons-applied-psychology",
     },
   ],
 };
-
-
 
 export const FacultyOfHumanitiesAndSocialSciencesfacultyData: FacultyItem[] = [
   {
@@ -231,12 +230,12 @@ export const FacultyOfHumanitiesAndSocialSciencesfacultyData: FacultyItem[] = [
     designation: "Associate Professor",
     image: jitendra,
   },
-  {
-    id: 2,
-    name: "Dr. Arun Kumar Singh",
-    designation: "Assistant Professor",
-    image: arun,
-  },
+  // {
+  //   id: 2,
+  //   name: "Dr. Arun Kumar Singh",
+  //   designation: "Assistant Professor",
+  //   image: arun,
+  // },
   {
     id: 3,
     name: "Dr. Shipra Shukla",
@@ -258,7 +257,7 @@ export const FacultyOfHumanitiesAndSocialSciencesfacultyData: FacultyItem[] = [
   {
     id: 6,
     name: "Dr. Anil Kumar",
-    designation: "Assistant Professor",
+    designation: "Associate Professor",
     image: anil,
   },
   {
@@ -267,12 +266,12 @@ export const FacultyOfHumanitiesAndSocialSciencesfacultyData: FacultyItem[] = [
     designation: "Assistant Professor",
     image: pradeep,
   },
-  {
-    id: 8,
-    name: "Dr. Shefalica Singh",
-    designation: "Assistant Professor",
-    image: shefalica,
-  },
+  // {
+  //   id: 8,
+  //   name: "Dr. Shefalica Singh",
+  //   designation: "Assistant Professor",
+  //   image: shefalica,
+  // },
   {
     id: 9,
     name: "Ms. Aisha Haleem",
@@ -291,12 +290,12 @@ export const FacultyOfHumanitiesAndSocialSciencesfacultyData: FacultyItem[] = [
     designation: "Assistant Professor",
     image: andleeb,
   },
-  {
-    id: 12,
-    name: "Dr. Ritika Srivastava",
-    designation: "Assistant Professor",
-    image: ritika,
-  },
+  // {
+  //   id: 12,
+  //   name: "Dr. Ritika Srivastava",
+  //   designation: "Assistant Professor",
+  //   image: ritika,
+  // },
   {
     id: 13,
     name: "Dr. Rashmi Saxena",
@@ -350,6 +349,97 @@ export const FacultyOfHumanitiesAndSocialSciencesfacultyData: FacultyItem[] = [
     name: "Dr. Shilpa Shukla",
     designation: "Professor",
     image: shilpa,
+  },
+
+  {
+    id: 22,
+    name: "Dr. Mamta Chaudhary",
+    designation: "Assistant Professor",
+    image: defaultSrmu,
+  },
+  {
+    id: 23,
+    name: "Dr. Mamta",
+    designation: "Assistant Professor",
+    image: defaultSrmu,
+  },
+  {
+    id: 24,
+    name: "Prof. Amar Pal Singh",
+    designation: "Professor",
+    image: defaultSrmu,
+  },
+  {
+    id: 25,
+    name: "Ms. Mahima Gupta",
+    designation: "Assistant Professor",
+    image: defaultSrmu,
+  },
+  {
+    id: 26,
+    name: "Dr. Akhilesh Kumar Sharma",
+    designation: "Assistant Professor",
+    image: defaultSrmu,
+  },
+  {
+    id: 27,
+    name: "Ms. Akanksha Pandey",
+    designation: "Assistant Professor",
+    image: defaultSrmu,
+  },
+  {
+    id: 28,
+    name: "Ms. Pankhuri Arora",
+    designation: "Assistant Professor",
+    image: defaultSrmu,
+  },
+  {
+    id: 29,
+    name: "Ms. Ayushi Tirpathi",
+    designation: "Assistant Professor",
+    image: defaultSrmu,
+  },
+  {
+    id: 30,
+    name: "Dr. Uzma Khanam",
+    designation: "Assistant Professor",
+    image: defaultSrmu,
+  },
+  {
+    id: 31,
+    name: "Dr. Suneel Deepak",
+    designation: "Assistant Professor",
+    image: defaultSrmu,
+  },
+  {
+    id: 32,
+    name: "Dr. Prachi Sharma",
+    designation: "Assistant Professor",
+    image: defaultSrmu,
+  },
+  {
+    id: 33,
+    name: "Ms. Bidushee Singh",
+    designation: "Assistant Professor",
+    image: defaultSrmu,
+  },
+  {
+    id: 34,
+    name: "Dr. Raghvendra Singh",
+    designation: "Assistant Professor",
+    image: defaultSrmu,
+  },
+  {
+    id: 35,
+    name: "Dr. Khushboo",
+    designation: "Assistant Professor",
+    image: defaultSrmu,
+  },
+  {
+    id: 36,
+    name: "Mr. Rishabh Shukla",
+    designation: "Assistant Professor",
+    image: defaultSrmu,
   },
 ];
 export const FacultyOfHumanitiesAndSocialSciencesHighlights: departmentHighlightscardType[] = [
