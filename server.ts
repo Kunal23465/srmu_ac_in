@@ -255,7 +255,11 @@ async function createServer() {
       return;
     }
 
-    res.redirect(301, redirectTo);
+    const targetUrl = isProduction
+      ? redirectTo
+      : redirectTo.replace(/^https?:\/\/(?:www\.)?srmu\.ac\.in/i, getRequestSiteUrl(req));
+
+    res.redirect(301, targetUrl);
   });
 
   app.use((req, res, next) => {
@@ -307,7 +311,7 @@ async function createServer() {
       .trim()
       .toLowerCase();
 
-    if (!rootSlug || hasValidTopLevelProgramRoute(rootSlug)) {
+    if (!rootSlug || rootSlug === "program" || hasValidTopLevelProgramRoute(rootSlug)) {
       next();
       return;
     }
@@ -321,7 +325,7 @@ async function createServer() {
         return;
       }
 
-      res.redirect(301, `${canonicalOrigin}/program/${canonicalProgramSlug}`);
+      res.redirect(301, `${getRequestSiteUrl(req)}/program/${canonicalProgramSlug}`);
     } catch (error) {
       process.stderr.write(`PROGRAM REDIRECT MAP ERROR: ${String(error)}\n`);
       next();

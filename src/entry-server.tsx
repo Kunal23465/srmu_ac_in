@@ -22,7 +22,7 @@ import { fetchPlacementRecordTabData } from "./store/placement/placement-record/
 import App from "./App";
 import "./index.css";
 import { fetchPlacementDriveTabData } from "./store/placement/placement-drive/placementDriveTabDataThunk";
-import { routes } from "./utils/AllRoutesNew";
+import { routes, getProgramDetailsSlugFromPath } from "./utils/AllRoutesNew";
 import { eventsData } from "./data/home/EventsData";
 import { legacyNewsArticles } from "./data/legacy/legacyContent";
 import { resolveProgramRouteSlug } from "./utils/legacyProgramRoutes";
@@ -169,11 +169,10 @@ const getStatusCode = (normalizedPathname: string, state: RootState, programMenu
     return hasMatchingConference(normalizedPathname) ? 200 : 404;
   }
 
-  if (normalizedPathname.startsWith("/program/")) {
-    const routeMatch = normalizedPathname.match(/^\/program\/([^/]+)$/);
-    const requestedProgramSlug = resolveProgramRouteSlug(routeMatch?.[1] || "");
+  const programSlug = getProgramDetailsSlugFromPath(normalizedPathname);
 
-    return Boolean(state.getProgramFinder?.dataByID?.programId && state.getProgramFinder?.currentDetailsSlug === requestedProgramSlug) ? 200 : 404;
+  if (programSlug) {
+    return Boolean(state.getProgramFinder?.dataByID?.programId && state.getProgramFinder?.currentDetailsSlug === programSlug) ? 200 : 404;
   }
 
   return 200;
@@ -224,10 +223,7 @@ async function preloadMatchedRouteComponents(normalizedPathname: string) {
   await Promise.allSettled(preloaders.map((preload) => preload()));
 }
 
-async function preloadProgramDetailsPageData(store: ReturnType<typeof createStore>, normalizedPathname: string) {
-  const routeMatch = normalizedPathname.match(/^\/program\/([^/]+)$/);
-  const programSlug = resolveProgramRouteSlug(routeMatch?.[1] || "");
-
+async function preloadProgramDetailsPageData(store: ReturnType<typeof createStore>, programSlug: string) {
   if (!programSlug) {
     return;
   }
@@ -346,7 +342,11 @@ export async function render(url: string) {
 
   // Preload route-specific data for SSR
   const routeComponentPreloadPromise = preloadMatchedRouteComponents(normalizedPathname);
-  if (normalizedPathname === "/notice") {
+  const programSlug = getProgramDetailsSlugFromPath(normalizedPathname);
+
+  if (programSlug) {
+    await preloadProgramDetailsPageData(store, programSlug);
+  } else if (normalizedPathname === "/notice") {
     await store.dispatch(fetchNotice());
   } else if (normalizedPathname === "/program-finder") {
     await preloadAdmissionProgramFinderPageData(store);
@@ -358,8 +358,6 @@ export async function render(url: string) {
     normalizedPathname.startsWith("/blog/")
   ) {
     await preloadBlogsPageData(store);
-  } else if (normalizedPathname.startsWith("/program/")) {
-    await preloadProgramDetailsPageData(store, normalizedPathname);
   } else {
     await preloadDynamicProgramFinderPageData(store, normalizedPathname, programMenuData);
   }

@@ -40,13 +40,13 @@ const TopHeader: React.FC = () => {
             >
               SRMUSET EXAM PORTAL
             </Link>
-            <Link to={inductionSchedule} target="_blank" rel="noopener noreferrer" className="bg-white flex items-center px-4 py-[7px] xl:py-[8px] gap-2 border-l border-[#ccc]">
+            {/* <Link to={inductionSchedule} target="_blank" rel="noopener noreferrer" className="bg-white flex items-center px-4 py-[7px] xl:py-[8px] gap-2 border-l border-[#ccc]">
 
               <div className="flex flex-col text-start ">
                 <p className="text-[13px] font-normal text-black">Induction Schedule</p>
                 <p className="text-[11px] text-black">For New Students</p>
               </div>
-            </Link>
+            </Link> */}
             <ul className="flex items-center text-xs xl:text-[13px] flex-row">
               {/* <Link className="px-2 xl:px-[0.7rem] border-r border-white" to="/notice">
                 NOTICE

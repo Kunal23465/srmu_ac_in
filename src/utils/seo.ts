@@ -1,7 +1,22 @@
 import siteLogo from "../assets/images/srmu-lo1-050324113149.svg";
 import { resolveProgramCategoryParams, resolveTopLevelProgramRoute } from "./programCategoryRoute";
 
-const rawSiteUrl = import.meta.env.VITE_SITE_URL || "https://srmu.ac.in";
+const getEnvVar = (key: string, fallback: string) => {
+  const g = globalThis as Record<string, any>;
+  if (g.process && g.process.env && g.process.env[key]) {
+    return g.process.env[key];
+  }
+  try {
+    if (typeof import.meta !== "undefined" && (import.meta as any).env && (import.meta as any).env[key]) {
+      return (import.meta as any).env[key];
+    }
+  } catch {
+    // ignore
+  }
+  return fallback;
+};
+
+const rawSiteUrl = getEnvVar("VITE_SITE_URL", "https://srmu.ac.in");
 
 export const SITE_URL = rawSiteUrl.replace(/\/+$/, "");
 export const SITE_NAME = "Shri Ramswaroop Memorial University";

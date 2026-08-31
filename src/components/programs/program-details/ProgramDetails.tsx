@@ -1,4 +1,4 @@
-import { Suspense, lazy, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { partnerDataforAIandML } from "../../../data/programs/btechincseai-ml-data/btechincseai-ml-data";
 import Counter from "../../../utils/custom/Counter";
 import Classes from "../../../utils/styles/Global.module.css";
@@ -22,22 +22,17 @@ import { resolveProgramRouteSlug } from "../../../utils/legacyProgramRoutes";
 import SeoHead from "../../seo/SeoHead";
 import { DEFAULT_SOCIAL_IMAGE, SITE_NAME, SITE_URL, buildCanonicalUrl, stripHtml } from "../../../utils/seo";
 import CustomEligibilitySection from "../../../utils/custom/CustomEligibilitySection";
-import DeferredSection from "../../home/DeferredSection";
-import DeferredSectionFallback from "../../home/DeferredSectionFallback";
 import { fetchProgramFaqByProgramId } from "../../../store/faq/programFaqThunk";
-
-const Map = lazy(() => import("../../new-home/Map"));
-const ProgramFeeTable = lazy(() => import("./ProgramFeeTable"));
-const CustomDepartmentSlider = lazy(() => import("../../../utils/custom/CustomDepartmentSlider"));
-const CustomDepartmentHighlights = lazy(() => import("../../../utils/custom/CustomDepartmentHighlights"));
-const CustomProgramPLOAccordian = lazy(() => import("../../../utils/custom/CustomProgramPLOAccordian"));
-const CustomProgramOppertunitySlider = lazy(() => import("../../../utils/custom/CustomProgramOppertunitySlider"));
-const EnquiryForm = lazy(() => import("../../academics/institutes/EnquiryForm"));
-const CustomTopFooter = lazy(() => import("../../../utils/custom/CustomTopFooter"));
-const CustomProgramScholarshipSchemeCard = lazy(() => import("../../../utils/custom/CustomProgramScholarshipSchemeCard"));
-const CustomCompaniesScope = lazy(() =>
-  import("../../../utils/custom/CustomCompaniesScope").then((module) => ({ default: module.CustomCompaniesScope })),
-);
+import Map from "../../new-home/Map";
+import ProgramFeeTable from "./ProgramFeeTable";
+import CustomDepartmentSlider from "../../../utils/custom/CustomDepartmentSlider";
+import CustomDepartmentHighlights from "../../../utils/custom/CustomDepartmentHighlights";
+import CustomProgramPLOAccordian from "../../../utils/custom/CustomProgramPLOAccordian";
+import CustomProgramOppertunitySlider from "../../../utils/custom/CustomProgramOppertunitySlider";
+import EnquiryForm from "../../academics/institutes/EnquiryForm";
+import CustomTopFooter from "../../../utils/custom/CustomTopFooter";
+import CustomProgramScholarshipSchemeCard from "../../../utils/custom/CustomProgramScholarshipSchemeCard";
+import { CustomCompaniesScope } from "../../../utils/custom/CustomCompaniesScope";
 
 const ProgramDetailsLoader = () => (
   <div className="mt-20 min-h-[60vh]">
@@ -47,8 +42,6 @@ const ProgramDetailsLoader = () => (
     </div>
   </div>
 );
-
-const renderDeferredFallback = (minHeight: number) => <DeferredSectionFallback minHeight={minHeight} />;
 
 const SectionLoader = ({ minHeight = 240 }: { minHeight?: number }) => (
   <div className="w-full animate-pulse rounded-[24px] bg-slate-100/80" style={{ minHeight }} aria-hidden="true" />
@@ -429,125 +422,97 @@ const ProgramDetails: React.FC = () => {
           {/* @ts-ignore */}
           <CustomEligibilitySection data={dataByID?.eligibility} />
         </div>
-        <DeferredSection minHeight={440} eagerOnIdle rootMargin="180px 0px" fallback={renderDeferredFallback(440)}>
-          {whySrmuLoading && whySrmuData.length === 0 ? (
-            <div className="bg-[#ecf0f9] pb-10">
-              <div className={`${Classes["container"]} pt-10`}>
-                <SectionLoader minHeight={360} />
-              </div>
+        {whySrmuLoading && whySrmuData.length === 0 ? (
+          <div className="bg-[#ecf0f9] pb-10">
+            <div className={`${Classes["container"]} pt-10`}>
+              <SectionLoader minHeight={360} />
             </div>
-          ) : (
-            whySrmuData.length > 0 && (
-              <div className="bg-[#ecf0f9] pb-10">
-                <Suspense fallback={<div className={`${Classes["container"]} pt-10`}><SectionLoader minHeight={360} /></div>}>
-                  <CustomDepartmentSlider
-                    heading={`${!isPhd ? "Why SRMU?" : "Ph.D. Process"} `}
-                    description=""
-                    data={whySrmuData}
-                    renderCard={({ item, index }) => <WhyCardComp item={item} index={index} />}
-                    bgColor="transparent"
-                    headingColor="black"
-                    descriptionColor="#e5e5e5"
-                    breakpoints={{ desktop: 4, tablet: 3, mobile: 1 }}
-                  />
-                </Suspense>
-
-                {!isPhd && (
-                  <div className={`${Classes["container"]}`}>
-                    <div className={`grid w-full grid-cols-2 ${whySrmuLogo.length > 4 ? "sm:grid-cols-3 lg:grid-cols-6 lg:gap-10" : "sm:grid-cols-2 md:grid-cols-4 sm:gap:15 lg:gap-20"} gap-5 place-items-start`}>
-                      {(whySrmuLogoLoading && whySrmuLogo.length === 0 ? [] : whySrmuLogo).length > 0
-                        ? whySrmuLogo.map((item, index) => (
-                          <div key={index} className="flex border w-full md:border-none border-[#ccc] py-2 px-3 sm:p-0 flex-col items-center justify-start gap-5">
-                            <img src={item.image} alt={item.title} className="w-[105px] sm:w-[170px] md:w-[210px] object-contain" />
-                            <p className="text-base sm:text-lg fw600 text-center">{item.title}</p>
-                          </div>
-                        ))
-                        : partnerDataforAIandML.length > 0 &&
-                        partnerDataforAIandML.map((item, index) => (
-                          <div key={index} className="flex border w-full md:border-none border-[#ccc] py-2 px-3 sm:p-0 flex-col items-center gap-5">
-                            <img src={item.img} alt={item.title} className="w-[105px] sm:w-[170px] md:w-[210px] object-contain" />
-                            <p className="text-base sm:text-lg fw600 text-center">{item.title}</p>
-                          </div>
-                        ))}
-                    </div>
-                  </div>
-                )}
-              </div>
-            )
-          )}
-        </DeferredSection>
-
-        <DeferredSection minHeight={360} rootMargin="220px 0px" fallback={renderDeferredFallback(360)}>
-          <div className={`${Classes["container"]}`}>
-            <h2 className="mt-20 mb-10 text-center text-[22px] sm:text-[28px] lg:text-[3.125rem] fw500 text-[#023047]">Program Fee</h2>
-            {feesLoading && !hasCurrentFeesData ? (
-              <SectionLoader minHeight={220} />
-            ) : normalizedFeesData?.fees?.length > 0 ? (
-              <Suspense fallback={<SectionLoader minHeight={220} />}>
-                <ProgramFeeTable data={normalizedFeesData} />
-              </Suspense>
-            ) : null}
           </div>
-        </DeferredSection>
+        ) : (
+          whySrmuData.length > 0 && (
+            <div className="bg-[#ecf0f9] pb-10">
+              <CustomDepartmentSlider
+                heading={`${!isPhd ? "Why SRMU?" : "Ph.D. Process"} `}
+                description=""
+                data={whySrmuData}
+                renderCard={({ item, index }) => <WhyCardComp item={item} index={index} />}
+                bgColor="transparent"
+                headingColor="black"
+                descriptionColor="#e5e5e5"
+                breakpoints={{ desktop: 4, tablet: 3, mobile: 1 }}
+              />
+
+              {!isPhd && (
+                <div className={`${Classes["container"]}`}>
+                  <div className={`grid w-full grid-cols-2 ${whySrmuLogo.length > 4 ? "sm:grid-cols-3 lg:grid-cols-6 lg:gap-10" : "sm:grid-cols-2 md:grid-cols-4 sm:gap:15 lg:gap-20"} gap-5 place-items-start`}>
+                    {(whySrmuLogoLoading && whySrmuLogo.length === 0 ? [] : whySrmuLogo).length > 0
+                      ? whySrmuLogo.map((item, index) => (
+                        <div key={index} className="flex border w-full md:border-none border-[#ccc] py-2 px-3 sm:p-0 flex-col items-center justify-start gap-5">
+                          <img src={item.image} alt={item.title} className="w-[105px] sm:w-[170px] md:w-[210px] object-contain" />
+                          <p className="text-base sm:text-lg fw600 text-center">{item.title}</p>
+                        </div>
+                      ))
+                      : partnerDataforAIandML.length > 0 &&
+                      partnerDataforAIandML.map((item, index) => (
+                        <div key={index} className="flex border w-full md:border-none border-[#ccc] py-2 px-3 sm:p-0 flex-col items-center gap-5">
+                          <img src={item.img} alt={item.title} className="w-[105px] sm:w-[170px] md:w-[210px] object-contain" />
+                          <p className="text-base sm:text-lg fw600 text-center">{item.title}</p>
+                        </div>
+                      ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          )
+        )}
+
+        <div className={`${Classes["container"]}`}>
+          <h2 className="mt-20 mb-10 text-center text-[22px] sm:text-[28px] lg:text-[3.125rem] fw500 text-[#023047]">Program Fee</h2>
+          {feesLoading && !hasCurrentFeesData ? (
+            <SectionLoader minHeight={220} />
+          ) : normalizedFeesData?.fees?.length > 0 ? (
+            <ProgramFeeTable data={normalizedFeesData} />
+          ) : null}
+        </div>
 
         {!isPhd && (
-          <DeferredSection minHeight={280} rootMargin="240px 0px" fallback={renderDeferredFallback(280)}>
-            <div className="my-10">
-              <Suspense fallback={<div className={`${Classes["container"]}`}><SectionLoader minHeight={220} /></div>}>
-                <CustomProgramScholarshipSchemeCard />
-              </Suspense>
-            </div>
-          </DeferredSection>
+          <div className="my-10">
+            <CustomProgramScholarshipSchemeCard />
+          </div>
         )}
 
         {!isPhd && (
-          <DeferredSection minHeight={520} rootMargin="260px 0px" fallback={renderDeferredFallback(520)}>
-            {departmentHeghlightLoading && departmentHeghlightData.length === 0 ? (
-              <div className={`${Classes["container"]}`}><SectionLoader minHeight={420} /></div>
-            ) : (
-              departmentHeghlightData.length > 0 && (
-                <div className="my-10">
-                  <div className={`${Classes["container"]}`}>
-                    <Suspense fallback={<SectionLoader minHeight={420} />}>
-                      <CustomDepartmentHighlights heading="Department Highlights" steps={departmentHeghlightData} />
-                    </Suspense>
-                  </div>
+          departmentHeghlightLoading && departmentHeghlightData.length === 0 ? (
+            <div className={`${Classes["container"]}`}><SectionLoader minHeight={420} /></div>
+          ) : (
+            departmentHeghlightData.length > 0 && (
+              <div className="my-10">
+                <div className={`${Classes["container"]}`}>
+                  <CustomDepartmentHighlights heading="Department Highlights" steps={departmentHeghlightData} />
                 </div>
-              )
-            )}
-          </DeferredSection>
+              </div>
+            )
+          )
         )}
 
         {!isPhd && dataByID?.programObjective && (
-          <DeferredSection minHeight={420} rootMargin="280px 0px" fallback={renderDeferredFallback(420)}>
-            <Suspense fallback={<div className={`${Classes["container"]}`}><SectionLoader minHeight={360} /></div>}>
-              <CustomProgramPLOAccordian POdata={dataByID?.programObjective} PLOdata={dataByID?.programLearningOutcomes} PSOdata={dataByID?.specificOutcomes} />
-            </Suspense>
-          </DeferredSection>
+          <CustomProgramPLOAccordian POdata={dataByID?.programObjective} PLOdata={dataByID?.programLearningOutcomes} PSOdata={dataByID?.specificOutcomes} />
         )}
 
-        <DeferredSection minHeight={420} rootMargin="300px 0px" fallback={renderDeferredFallback(420)}>
-          <div className="bg-[#dee4f2]">
-            <div className={`${Classes["container"]}`}>
-              {recruiterLoading && recruiterData.length === 0 ? (
-                <SectionLoader minHeight={320} />
-              ) : (
-                <Suspense fallback={<SectionLoader minHeight={320} />}>
-                  <CustomCompaniesScope data={formatRecruiters(recruiterData)} list={dataByID?.scope} />
-                </Suspense>
-              )}
-            </div>
+        <div className="bg-[#dee4f2]">
+          <div className={`${Classes["container"]}`}>
+            {recruiterLoading && recruiterData.length === 0 ? (
+              <SectionLoader minHeight={320} />
+            ) : (
+              <CustomCompaniesScope data={formatRecruiters(recruiterData)} list={dataByID?.scope} />
+            )}
           </div>
-        </DeferredSection>
+        </div>
 
         {!isPhd && (
-          <DeferredSection minHeight={360} rootMargin="320px 0px" fallback={renderDeferredFallback(360)}>
-            <div className={`${Classes["container"]}`}>
-              <Suspense fallback={<SectionLoader minHeight={280} />}>
-                <CustomProgramOppertunitySlider data={dataByID?.higherPrograms} />
-              </Suspense>
-            </div>
-          </DeferredSection>
+          <div className={`${Classes["container"]}`}>
+            <CustomProgramOppertunitySlider data={dataByID?.higherPrograms} />
+          </div>
         )}
 
         {
@@ -625,35 +590,15 @@ const ProgramDetails: React.FC = () => {
           </section>
         }
 
-        <DeferredSection minHeight={360} rootMargin="320px 0px" fallback={renderDeferredFallback(360)}>
+        <div className={`pb-20`}>
+          <Map />
+        </div>
 
-          <Suspense fallback={<SectionLoader minHeight={280} />}>
-            <div className={`pb-20`}>
-              <Map />
-            </div>
-          </Suspense>
+        <div className={`${isPhd ? "mt-10" : ""}`}>
+          <EnquiryForm />
+        </div>
 
-        </DeferredSection>
-
-
-
-
-
-
-
-        <DeferredSection minHeight={420} rootMargin="340px 0px" fallback={renderDeferredFallback(420)}>
-          <div className={`${isPhd ? "mt-10" : ""}`}>
-            <Suspense fallback={<div className={`${Classes["container"]}`}><SectionLoader minHeight={320} /></div>}>
-              <EnquiryForm />
-            </Suspense>
-          </div>
-        </DeferredSection>
-
-        <DeferredSection minHeight={220} rootMargin="360px 0px" fallback={renderDeferredFallback(220)}>
-          <Suspense fallback={<div className={`${Classes["container"]}`}><SectionLoader minHeight={180} /></div>}>
-            <CustomTopFooter data={CustomTopFooterData1} />
-          </Suspense>
-        </DeferredSection>
+        <CustomTopFooter data={CustomTopFooterData1} />
       </div >
     </>
   );

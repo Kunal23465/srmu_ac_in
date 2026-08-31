@@ -1,7 +1,8 @@
 import RootLayout from "../pages/RootLayout";
-import { Navigate, useRoutes } from "react-router-dom";
+import { Navigate, matchRoutes, useRoutes } from "react-router-dom";
 import { lazyPage } from "./lazyRoute";
 import NewHomePage from "../pages/NewHomePage";
+import { resolveProgramRouteSlug } from "./legacyProgramRoutes";
 
 const HomePage = lazyPage(() => import("../pages/Home/HomePage"));
 const PageNotFound = lazyPage(() => import("../pages/PageNotFound"));
@@ -16,8 +17,31 @@ const NoticePage = lazyPage(() => import("../pages/notice/NoticePage"));
 const ShiftSchedulePage = lazyPage(() => import("../pages/admissions/shift-schedule/ShiftSchedulePage"));
 const AboutPage = lazyPage(() => import("../pages/about/AboutPage"));
 const NewsEventDetails = lazyPage(() => import("../components/home/NewsEventDetails"));
-const ProgramDetailsPage = lazyPage(() => import("../pages/programs/details-page/ProgramDetailsPage"));
-const DirectProgramDetailsPage = lazyPage(() => import("../pages/programs/details-page/DirectProgramDetailsPage"));
+export const ProgramDetailsPage = lazyPage(() => import("../pages/programs/details-page/ProgramDetailsPage"));
+export const DirectProgramDetailsPage = lazyPage(() => import("../pages/programs/details-page/DirectProgramDetailsPage"));
+
+export function getProgramDetailsSlugFromPath(normalizedPathname: string): string | null {
+  const routeMatch = normalizedPathname.match(/^\/program\/([^/]+)$/);
+  if (routeMatch?.[1]) {
+    return resolveProgramRouteSlug(routeMatch[1]);
+  }
+
+  const matches = matchRoutes(routes, normalizedPathname);
+  if (!matches || matches.length === 0) {
+    return null;
+  }
+
+  const leafMatch = matches[matches.length - 1];
+  if (
+    leafMatch.route.element?.type === DirectProgramDetailsPage ||
+    leafMatch.route.element?.type === ProgramDetailsPage
+  ) {
+    const rawSlug = normalizedPathname.replace(/^\/+/, "").replace(/\/+$/, "");
+    return resolveProgramRouteSlug(rawSlug);
+  }
+
+  return null;
+}
 const ProgramTypePage = lazyPage(() => import("../pages/programs/ProgramTypePage/ProgramTypePage"));
 const ProgramTypeItemPage = lazyPage(() => import("../pages/ProgramTypeItemPage"));
 const LeadershipAndGovernancePage = lazyPage(() => import("../pages/about/Leadership-and-Governance/LeadershipAndGovernancePage"));

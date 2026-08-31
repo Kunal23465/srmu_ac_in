@@ -10,6 +10,8 @@ const GrievanceRedressalSystemPage: React.FC = () => {
         description="Shri Ramswaroop Memorial University (SRMU) has implemented a strong system for addressing grievances, with the goal of fairly and transparently resolving issues raised by students, faculty, and staff."
         pathname="/campus-life/grievance-redressal-system"
       />
+
+
       <GrievanceRedressalSystem />
     </>
 
