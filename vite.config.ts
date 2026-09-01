@@ -38,6 +38,10 @@ export default defineConfig(({ isSsrBuild }) => ({
     tailwindcss(),
   ],
 
+  css: {
+    transformer: "lightningcss",
+  },
+
   server: {
     host: "0.0.0.0",
     port: 3031,

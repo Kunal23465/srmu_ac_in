@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { FeeTableData } from "../../data/academics/faculty-of-civil-engineering/faculty-of-civil-engineering-data";
 import { CustomModal } from "./CustomIqacCard";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 interface Props {
     data: FeeTableData;
@@ -10,7 +10,6 @@ interface Props {
 const CustomDepartmentFeeDetailsTable: React.FC<Props> = ({ data }) => {
     const [expandedId, setExpandedId] = React.useState<number | null>(null);
     const [gridTemplate, setGridTemplate] = useState("");
-    const navigate = useNavigate();
     useEffect(() => {
         const updateGrid = () => {
             if (window.innerWidth > 592) {
@@ -80,8 +79,14 @@ const CustomDepartmentFeeDetailsTable: React.FC<Props> = ({ data }) => {
                                                     >
                                                         Click to View
                                                     </span>
-                                                ) : val === "NA" ? "-" : colIndex === 0 ? <span className="color_light_blue lg:text-[19px] md:text-[17.82px] sm:text-[16.632px] text-[16.632px] fw500 cursor-pointer"
-                                                    onClick={() => navigate(`/${row.link}`)}> {val}</span> : val}
+                                                ) : val === "NA" ? "-" : colIndex === 0 ? (
+                                                    <Link
+                                                        to={row.link ? (String(row.link).startsWith("/") ? String(row.link) : `/${String(row.link)}`) : "#"}
+                                                        className="color_light_blue lg:text-[19px] md:text-[17.82px] sm:text-[16.632px] text-[16.632px] fw500"
+                                                    >
+                                                        {val}
+                                                    </Link>
+                                                ) : val}
 
                                                 {colIndex !== values.length - 1 && (
                                                     <span className="absolute right-0 h-10 w-px bg-gray-300"></span>

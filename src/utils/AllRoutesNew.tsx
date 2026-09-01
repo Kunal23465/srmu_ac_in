@@ -212,7 +212,7 @@ export const routes = [
       { path: "/b-tech-me-ev-engineering", element: <DirectProgramDetailsPage /> },
       { path: "/bca-cyber-security", element: <DirectProgramDetailsPage /> },
       { path: "/bca-data-science-artificial-intelligence", element: <DirectProgramDetailsPage /> },
-      // { path: "/bba-business-analytics", element: <DirectProgramDetailsPage /> },
+      { path: "/bba-business-analytics", element: <DirectProgramDetailsPage /> },
       { path: "/b-com-hons-with-l-t", element: <DirectProgramDetailsPage /> },
       { path: "/mba-business-analytics", element: <DirectProgramDetailsPage /> },
       { path: "/mba-ai-augmented-fintech", element: <DirectProgramDetailsPage /> },

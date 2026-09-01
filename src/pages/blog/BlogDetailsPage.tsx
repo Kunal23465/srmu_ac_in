@@ -15,6 +15,7 @@ import {
 } from "../../utils/seo";
 import { findBlogBySlug } from "../../utils/routeMatching";
 import CustomFormModal from "../../utils/custom/CustomFormModal";
+import RelatedArticlesAndPrograms from "../../components/blog/RelatedArticlesAndPrograms";
 
 const cleanMediaUrl = (url?: string | null) => {
   if (!url) return "";
@@ -259,6 +260,8 @@ const BlogDetailsPage: React.FC = () => {
                 __html: sanitizeHtmlDescription(data.description),
               }}
             />
+
+            <RelatedArticlesAndPrograms currentSlug={slug} />
           </div>
         </div>
       </div>
