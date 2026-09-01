@@ -28,7 +28,8 @@ import SpaceEconomy from "../../assets/new-home/events/SpaceEconomy.jpg";
 import IBSCollaboration from "../../assets/new-home/events/IBSCollaboration.jpg";
 import CricketStars from "../../assets/new-home/events/CricketStars-1.jpg";
 import aluminiTalks from "../../assets/new-home/events/alumni_talk_law.webp";
-
+import financialAwareness from "../../assets/new-home/events/Financial-Awareness.webp";
+import memoryManagement from "../../assets/new-home/events/Memory-Management.webp";
 export type EventItem = {
   id: string | number;
   image: string;
@@ -45,6 +46,68 @@ export type EventItem = {
 };
 
 const eventsData: EventItem[] = [
+  {
+    id: 21,
+    isRedirect: false,
+    image: memoryManagement,
+    imageSmall: memoryManagement,
+    date: "September 3rd, 2026",
+    title: `Guest Lecture on Memory Management & Mnemonics Organized at IMCE`,
+    description: `
+The <strong>Faculty of Commerce & Economics, Institute of Management, Commerce and Economics (IMCE), Shri Ramswaroop Memorial University</strong>, is organizing an insightful guest lecture on <strong>“Forget Forgetting: Memory Management Session - About Mnemonics.”</strong>
+
+<br/><strong>About the Session</strong><br/>
+
+The session is designed to introduce students to <strong>effective memory management and mnemonic techniques</strong> for improving retention, recall, and developing smarter learning strategies.
+
+<br/><strong>Guest Speaker</strong><br/>
+
+The session will feature <strong>Dr. Anil Lamba</strong> as the guest speaker, who will share valuable insights into memory management and the effective use of mnemonic techniques.
+
+<br/><strong>Session Details</strong><br/>
+
+<strong>Date:</strong> 03 September 2026<br/>
+<strong>Time:</strong> 10:30 AM onwards<br/>
+<strong>Venue:</strong> B1-007
+
+<br/><strong>Who Can Attend</strong><br/>
+
+The session is specially designed for students of <strong>B.Com (NEP & Hons.) and B.A. (H) 2nd & 3rd Year</strong>.
+
+The guest lecture aims to help students strengthen their memory, improve information retention and recall, and develop smarter and more effective learning strategies.
+`,
+  },
+  {
+    id: 20,
+    isRedirect: false,
+    image: financialAwareness,
+    imageSmall: financialAwareness,
+    date: "September 2nd, 2026",
+    title: `Guest Lecture on Financial Awareness and Smart Financial Planning Organized at IMCE`,
+    description: `
+The <strong>Faculty of Commerce & Economics, Institute of Management, Commerce and Economics (IMCE), Shri Ramswaroop Memorial University</strong>, is organizing an insightful guest lecture on <strong>“Building Financial Confidence Through Awareness, Planning, Saving, and Smart Choices.”</strong>
+
+<br/><strong>About the Session</strong><br/>
+
+The session will provide students with practical insights into <strong>financial planning, saving habits, financial awareness, and making informed financial decisions</strong>.
+
+<br/><strong>Guest Speaker</strong><br/>
+
+The session will feature <strong>CA Devesh Agarwal</strong> as the guest speaker, who will share valuable insights into financial awareness, planning, saving, and making smart financial choices.
+
+<br/><strong>Session Details</strong><br/>
+
+<strong>Date:</strong> 02 September 2026<br/>
+<strong>Time:</strong> 11:30 AM onwards<br/>
+<strong>Venue:</strong> Mini Auditorium
+
+<br/><strong>Who Can Attend</strong><br/>
+
+The session is open to students of <strong>B.Com (NEP & Hons.), B.A. (H), and M.Com – All Years</strong>.
+
+The guest lecture aims to enhance students' understanding of personal financial management and equip them with practical knowledge to make informed and responsible financial decisions.
+`,
+  },
   {
     id: 19,
     isRedirect: false,
