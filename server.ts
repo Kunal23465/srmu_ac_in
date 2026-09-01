@@ -301,6 +301,18 @@ async function createServer() {
     res.redirect(301, `${canonicalOrigin}/placements`);
   });
 
+  app.get("/grievance-redressal-system", (_req, res) => {
+    res.redirect(301, `${canonicalOrigin}/campus-life/grievance-redressal-system`);
+  });
+
+  app.get("/newsletter", (_req, res) => {
+    res.redirect(301, `${canonicalOrigin}/news-letter`);
+  });
+
+  app.get("/newsletters", (_req, res) => {
+    res.redirect(301, `${canonicalOrigin}/news-letter`);
+  });
+
   app.get("/:rootSlug", async (req, res, next) => {
     if (!isDocumentRequest(req)) {
       next();

@@ -8,7 +8,7 @@ const NewsLetterPage: React.FC = () => {
       <SeoHead
         title="SRMU Newsletter | Latest Updates, News, and Events"
         description="Stay informed with Shri Ramswaroop Memorial University's (SRMU) newsletter. Get the latest updates on campus events, academic achievements, research highlights, and more."
-        pathname="/newsletter"
+        pathname="/news-letter"
       />
       <NewsLetter />
     </>

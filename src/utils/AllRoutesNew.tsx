@@ -169,11 +169,11 @@ export const routes = [
       },
       {
         path: "newsletter",
-        element: <NewsLetterPage />,
+        element: <Navigate to="/news-letter" replace />,
       },
       {
         path: "newsletters",
-        element: <NewsLetterPage />,
+        element: <Navigate to="/news-letter" replace />,
       },
       {
         path: "notice",
@@ -212,7 +212,7 @@ export const routes = [
       { path: "/b-tech-me-ev-engineering", element: <DirectProgramDetailsPage /> },
       { path: "/bca-cyber-security", element: <DirectProgramDetailsPage /> },
       { path: "/bca-data-science-artificial-intelligence", element: <DirectProgramDetailsPage /> },
-      { path: "/bba-business-analytics", element: <DirectProgramDetailsPage /> },
+      // { path: "/bba-business-analytics", element: <DirectProgramDetailsPage /> },
       { path: "/b-com-hons-with-l-t", element: <DirectProgramDetailsPage /> },
       { path: "/mba-business-analytics", element: <DirectProgramDetailsPage /> },
       { path: "/mba-ai-augmented-fintech", element: <DirectProgramDetailsPage /> },
@@ -540,7 +540,7 @@ export const routes = [
 
       {
         path: "grievance-redressal-system",
-        element: <GrievanceRedressalSystemPage />,
+        element: <Navigate to="/campus-life/grievance-redressal-system" replace />,
       },
       {
         path: "campus-life/grievance-redressal-system",
