@@ -15,7 +15,15 @@ const MissionVissionCard: React.FC<MissionVisionCardProps> = ({ image, heading, 
   return (
     <div className="w-full border border-transparent hover:border-[#ffb703]  bg-white shadow-lg rounded-2xl overflow-hidden  transition-all duration-300">
       <div className="overflow-hidden">
-        <img src={image} alt={heading} className="w-full h-[280px] object-cover object-center transform transition-transform duration-500 hover:scale-110" />
+        <img
+          src={image}
+          alt={heading}
+          width={600}
+          height={280}
+          loading="lazy"
+          decoding="async"
+          className="w-full h-[280px] object-cover object-center transform transition-transform duration-500 hover:scale-110"
+        />
       </div>
 
       <div className="p-5 sm:p-15">

@@ -16,6 +16,10 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ member }) => {
         <img
           src={member.image}
           alt={member.name}
+          width={240}
+          height={300}
+          loading="lazy"
+          decoding="async"
           className="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-110"
         />
         <span className="block sm:hidden bg-black/40 w-full h-full absolute top-0 left-0"></span>

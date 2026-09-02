@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState, useCallback } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Classes from "../../../utils/styles/Global.module.css";
 import { HowToApplyTopFooterData, SRMUoffersData } from "../../../data/admissions/how-to-apply/how-to-apply-data";
@@ -150,7 +150,15 @@ const HowToApply: React.FC = () => {
                   {SRMUoffersData.slice(0, 3).map((item) => (
                     <div key={item.id} className="px-3">
                       <div className="p-7 pb-5 h-100 lg:h-120 xl:h-100 w-full hover:text-white transition-all duration-300 hover:bg-[#0f4a85] border border-gray-200 rounded-xl">
-                        <img src={item.img} alt={item.title} className="rounded-xl object-cover h-[85%] w-full mb-4" />
+                        <img
+                          src={item.img}
+                          alt={item.title}
+                          width={380}
+                          height={240}
+                          loading="lazy"
+                          decoding="async"
+                          className="rounded-xl object-cover h-[85%] w-full mb-4"
+                        />
                         <h2 className="text-2xl font-medium mb-1">{item.title}</h2>
                       </div>
                     </div>
@@ -169,7 +177,15 @@ const HowToApply: React.FC = () => {
                         style={{ flexBasis: getSlideWidth() }}
                       >
                         <div className="p-7 pb-5 h-100 lg:h-120 xl:h-100 w-full hover:text-white transition-all duration-300 hover:bg-[#0f4a85] border border-gray-200 rounded-xl">
-                          <img src={item.img} alt={item.title} className="rounded-xl object-cover h-[85%] w-full mb-4" />
+                          <img
+                            src={item.img}
+                            alt={item.title}
+                            width={380}
+                            height={240}
+                            loading="lazy"
+                            decoding="async"
+                            className="rounded-xl object-cover h-[85%] w-full mb-4"
+                          />
                           <h2 className="text-2xl font-medium mb-1">{item.title}</h2>
                         </div>
                       </Link>
@@ -185,7 +201,15 @@ const HowToApply: React.FC = () => {
           <div className={`${Classes["container"]} py-10 lg:py-20`}>
             <div className="flex flex-col lg:flex-row gap-6 lg:gap-25 px-0 lg:px-0">
               <div className="pt-6 lg:pt-0 w-full">
-                <img src={img} alt="Benefits of studying at NAAC accredited SRMU university" className="w-full h-auto block" />
+                <img
+                  src={img}
+                  alt="Benefits of studying at NAAC accredited SRMU university"
+                  width={600}
+                  height={400}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-auto block"
+                />
               </div>
 
               <div className="py-2 sm:py-0 w-full">

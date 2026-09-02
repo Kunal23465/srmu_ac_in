@@ -70,6 +70,7 @@ export const ALL_TARGET_BLOGS: ArticleLink[] = [
   { title: "Why Management is a Great Career Choice for 12th Pass Students", slug: "why-management-is-a-great-career-choice-for-12th-pass-students", category: "management" },
   { title: "Build a High-Impact Career with an MBA in Business Analytics", slug: "build-a-high-impact-career-with-an-mba-in-business-analytics", category: "management" },
   { title: "Best BBA Colleges in Lucknow for Business Management Studies", slug: "best-bba-colleges-in-lucknow-for-business-management-studies", category: "management" },
+  { title: "Entrepreneurship Opportunities for BBA Students in 2026", slug: "entrepreneurship-opportunities-for-bba-students-2026", category: "management" },
 
   // Law & Legal Studies
   { title: "Emerging Careers in Legal Technology in India 2026", slug: "emerging-careers-in-legal-technology-india-2026", category: "law" },

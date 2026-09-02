@@ -65,6 +65,8 @@ function LegacyCard({ item, onPlay }: { item: LegacyItem; onPlay: (item: LegacyI
         <img
           src={item.img}
           alt={`Video testimonial from ${item.title}`}
+          width={300}
+          height={400}
           loading="lazy"
           decoding="async"
           className="absolute inset-0 w-full h-full object-cover"

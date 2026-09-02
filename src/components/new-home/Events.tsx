@@ -205,7 +205,11 @@ export default function Events() {
                                                 <div className="absolute  top-[42px] -left-[12px] rotate-[-45deg]  shadow-md z-50">
                                                     <img
                                                         src={upcoming}
-                                                        alt="Upcoming"
+                                                        alt="Upcoming event badge"
+                                                        width={140}
+                                                        height={40}
+                                                        loading="lazy"
+                                                        decoding="async"
                                                         className="w-full max-w-[140px]"
                                                     />
                                                 </div>

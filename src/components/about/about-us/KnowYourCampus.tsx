@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 
 import { campusSlides } from "../../../data/about/aboutusData";
@@ -49,7 +49,15 @@ const KnowOurCampus: React.FC = () => {
 
       {/* Image Section */}
       <div className="relative w-full">
-        <img src={ourCampus} alt="Campus" className="w-full h-[100px] sm:h-[550px] object-cover" />
+        <img
+          src={ourCampus}
+          alt="SRMU Campus Overview"
+          width={1920}
+          height={550}
+          loading="lazy"
+          decoding="async"
+          className="w-full h-[100px] sm:h-[550px] object-cover"
+        />
 
         {/* Card */}
         <div className="absolute top-[47%] sm:top-1/2 right-2 sm:right-[18%] transform -translate-y-1/2 bg-[#ecf0f9] shadow-lg p-5 sm:p-8 w-[370px] h-[250px] sm:h-[370px]">

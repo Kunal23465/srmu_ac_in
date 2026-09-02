@@ -6,7 +6,12 @@ import path from "path";
 import dotenv from "dotenv";
 import { fileURLToPath, pathToFileURL } from "url";
 import { brotliCompressSync, constants as zlibConstants, gzipSync } from "zlib";
-import { buildRobotsTxt, buildSitemapXml } from "./src/utils/sitemap";
+import {
+  buildRobotsTxt,
+  buildSitemapIndexXml,
+  buildAllSitemapXml,
+  buildBlogSitemapXml,
+} from "./src/utils/sitemap";
 import { getPreferredProgramRouteSlug } from "./src/utils/legacyProgramRoutes";
 import { hasValidTopLevelProgramRoute } from "./src/utils/programCategoryRoute";
 import { slugify } from "./src/utils/slugify";
@@ -295,6 +300,53 @@ async function createServer() {
   );
   app.use("/.well-known", (_req, res) => {
     res.status(404).type("text/plain").end("Not found");
+  });
+
+  app.get("/robots.txt", (req, res) => {
+    const robotsTxt = buildRobotsTxt(getRequestSiteUrl(req));
+    res.type("text/plain").set({
+      "Cache-Control": "public, max-age=3600",
+      "Vary": "Accept-Encoding",
+    }).send(robotsTxt);
+  });
+
+  app.get("/sitemap.xml", async (req, res) => {
+    try {
+      const sitemapXml = await buildSitemapIndexXml(getRequestSiteUrl(req));
+      res.type("application/xml").set({
+        "Cache-Control": "public, max-age=3600",
+        "Vary": "Accept-Encoding",
+      }).send(sitemapXml);
+    } catch (error) {
+      process.stderr.write(`SITEMAP ERROR: ${String(error)}\n`);
+      res.status(500).type("text/plain").send("Error generating sitemap");
+    }
+  });
+
+  app.get("/all-sitemap.xml", async (req, res) => {
+    try {
+      const allSitemapXml = await buildAllSitemapXml(getRequestSiteUrl(req));
+      res.type("application/xml").set({
+        "Cache-Control": "public, max-age=3600",
+        "Vary": "Accept-Encoding",
+      }).send(allSitemapXml);
+    } catch (error) {
+      process.stderr.write(`ALL SITEMAP ERROR: ${String(error)}\n`);
+      res.status(500).type("text/plain").send("Error generating all-sitemap");
+    }
+  });
+
+  app.get("/blog-sitemap.xml", async (req, res) => {
+    try {
+      const blogSitemapXml = await buildBlogSitemapXml(getRequestSiteUrl(req));
+      res.type("application/xml").set({
+        "Cache-Control": "public, max-age=3600",
+        "Vary": "Accept-Encoding",
+      }).send(blogSitemapXml);
+    } catch (error) {
+      process.stderr.write(`BLOG SITEMAP ERROR: ${String(error)}\n`);
+      res.status(500).type("text/plain").send("Error generating blog-sitemap");
+    }
   });
 
   app.get("/placement-overview", (_req, res) => {

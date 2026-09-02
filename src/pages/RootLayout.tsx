@@ -5,7 +5,6 @@ import whatsapp from "../assets/images/whatsapp-icon.png";
 import DynamicBreadcrumbs from "../components/breadcrumb/DynamicBreadcrumbs";
 import SeoHead from "../components/seo/SeoHead";
 import { buildSiteSchema, getDefaultSeo, normalizePath } from "../utils/seo";
-import Chatbot from "../components/Chatbot";
 
 const Footer = lazy(() => import("../components/footer/Footer"));
 
@@ -132,7 +131,9 @@ const RootLayout: React.FC = () => {
         <img
           src={whatsapp}
           alt="WhatsApp contact button"
-          loading="eager"
+          width={48}
+          height={48}
+          loading="lazy"
           decoding="async"
           className="w-12 h-12"
         />

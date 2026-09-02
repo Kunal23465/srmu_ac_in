@@ -6,7 +6,7 @@ interface HelloProps {
   sliderRef?: any;
 }
 
-export const Hello: FC<HelloProps> = forwardRef((props, ref) => {
+export const Hello: FC<HelloProps> = forwardRef((_props, ref) => {
   const [windowWidth, setWindowWidth] = useState(0);
   const [hasMounted, setHasMounted] = useState(false);
 
@@ -66,7 +66,15 @@ export const Hello: FC<HelloProps> = forwardRef((props, ref) => {
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 -mx-3">
           {topRecruiters.slice(0, 5).map((data, index) => (
             <div key={index} className="flex mx-3 justify-center items-center bg-white px-3 py-4 rounded-lg shadow-sm hover:shadow-md transition">
-              <img src={data.img} alt={`Recruiter ${index + 1}`} className="h-[90px] w-auto object-contain" />
+              <img
+                src={data.img}
+                alt={`Recruiter ${index + 1}`}
+                width={180}
+                height={90}
+                loading="lazy"
+                decoding="async"
+                className="h-[90px] w-auto object-contain"
+              />
             </div>
           ))}
         </div>
@@ -89,6 +97,10 @@ export const Hello: FC<HelloProps> = forwardRef((props, ref) => {
                 <img
                   src={data.img}
                   alt={`Recruiter ${index + 1}`}
+                  width={180}
+                  height={90}
+                  loading="lazy"
+                  decoding="async"
                   className="h-[90px] w-auto object-contain"
                 />
               </div>

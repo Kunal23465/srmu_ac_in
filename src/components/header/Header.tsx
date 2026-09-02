@@ -105,9 +105,16 @@ const Header = () => {
         <div className={`py-2 items-stretch header  ${isActive ? "bg-[#14284e] active" : "bg-[#14284e] sm:bg-transparent"}`}>
           <div className={`${Classes["container"]} relative`}>
             <div className="flex flex-row justify-between">
-              {/* LOGO */}
               <Link to="/" className="logo_div flex items-center lg:gap-1 xl:gap-3 cursor-pointer">
-                <img src={logo} alt="Shri Ramswaroop Memorial University Logo" loading="eager" decoding="async" className="max-w-[205px] xl:max-w-[245px]" />
+                <img
+                  src={logo}
+                  alt="Shri Ramswaroop Memorial University Logo"
+                  width={245}
+                  height={60}
+                  loading="eager"
+                  decoding="async"
+                  className="max-w-[205px] xl:max-w-[245px] w-auto h-auto"
+                />
               </Link>
 
               {/* DESKTOP MENU */}
@@ -230,7 +237,16 @@ const Header = () => {
 
               {/* HAMBURGER */}
               <div className="lg:hidden my-auto">
-                <img src={hamburger} alt="Menu" loading="eager" decoding="async" className="cursor-pointer w-[30px] h-[21px]" onClick={() => setSideMenu((pre) => !pre)} />
+                <img
+                  src={hamburger}
+                  alt="Menu"
+                  width={30}
+                  height={21}
+                  loading="eager"
+                  decoding="async"
+                  className="cursor-pointer w-[30px] h-[21px]"
+                  onClick={() => setSideMenu((pre) => !pre)}
+                />
               </div>
             </div>
           </div>

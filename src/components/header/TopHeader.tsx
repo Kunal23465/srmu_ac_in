@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import user from "../../assets/images/home/user-icon.png";
 import { FaCaretDown, FaCaretUp } from "react-icons/fa";
-import inductionSchedule from "../../assets/pdf/induction-schedule.pdf";
 
 const TopHeader: React.FC = () => {
   const [isDropdown, setIsDropdown] = useState(false);
@@ -68,7 +67,7 @@ const TopHeader: React.FC = () => {
               to="https://eyojan.srmu.ac.in/"
               className="relative flex items-center text-xs xl:text-[13px] text-white gap-x-2 px-2 xl:px-[0.7rem] after:absolute after:right-0 after:top-1/2 after:h-[55%] after:w-px after:-translate-y-1/2 after:bg-white"
             >
-              <img src={user} alt="user" loading="eager" decoding="async" />
+              <img src={user} alt="user login icon" width={16} height={16} loading="eager" decoding="async" />
               Student Login
             </Link>
 

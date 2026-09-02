@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Classes from "../../../utils/styles/Global.module.css";
 
@@ -208,7 +208,11 @@ const PlacementRecords: React.FC = () => {
                   <div className="min-h-[200px]">
                     <img
                       src={stu.imagePath ?? "https://placehold.co/600x400"}
-                      alt={stu.studentName}
+                      alt={stu.studentName || "Placed student"}
+                      width={80}
+                      height={80}
+                      loading="lazy"
+                      decoding="async"
                       className="w-20 h-20 rounded-full mx-auto mb-3 object-cover"
                     />
                     <h4 className="text-white font-semibold">
@@ -220,7 +224,11 @@ const PlacementRecords: React.FC = () => {
                     <div className="mt-4 flex justify-center">
                       <img
                         src={stu.recruiterImage ?? "https://placehold.co/600x400"}
-                        alt="logo"
+                        alt={stu.recruiterName || "Recruiter logo"}
+                        width={100}
+                        height={56}
+                        loading="lazy"
+                        decoding="async"
                         className="w-full max-w-[100px] h-14 object-contain brightness-[100] sm:brightness-100"
                       />
                     </div>
@@ -324,7 +332,11 @@ const PlacementRecords: React.FC = () => {
                   <div className="min-h-[200px]">
                     <img
                       src={stu.imagePath ?? "https://placehold.co/600x400"}
-                      alt={stu.studentName}
+                      alt={stu.studentName || "Placed student"}
+                      width={80}
+                      height={80}
+                      loading="lazy"
+                      decoding="async"
                       className="w-20 h-20 rounded-full mx-auto mb-3 object-cover"
                     />
                     <h4 className="text-white group-hover:text-black font-semibold">
@@ -339,7 +351,11 @@ const PlacementRecords: React.FC = () => {
                     <div className="mt-4 flex justify-center">
                       <img
                         src={stu.recruiterImage ?? "https://placehold.co/600x400"}
-                        alt="logo"
+                        alt={stu.recruiterName || "Recruiter logo"}
+                        width={100}
+                        height={56}
+                        loading="lazy"
+                        decoding="async"
                         className="w-full max-w-[100px] h-14 object-contain brightness-[100] sm:brightness-100 group-hover:brightness-100"
                       />
                     </div>

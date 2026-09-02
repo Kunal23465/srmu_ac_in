@@ -21,7 +21,15 @@ const CoreValues: React.FC = () => {
 
         {/* Right Side — Overlapping Image */}
         <div className="hidden lg:block absolute lg:top-[-18%] lg:right-[-38%] w-[300px] sm:w-[340px] lg:w-[450px] xl:w-[480px]">
-          <img src={coreValuesImg} alt="Core Values" className="w-full h-auto object-cover rounded-xl" />
+          <img
+            src={coreValuesImg}
+            alt="Core Values"
+            width={480}
+            height={360}
+            loading="lazy"
+            decoding="async"
+            className="w-full h-auto object-cover rounded-xl"
+          />
         </div>
       </div>
     </div>

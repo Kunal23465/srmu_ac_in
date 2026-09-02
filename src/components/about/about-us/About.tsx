@@ -30,8 +30,8 @@ const About: React.FC = () => {
       </div>
 
       <div className="flex flex-col items-center justify-center pb-10 w-full ">
-        <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] text=[#023047] font-medium">Kulgeet</h2>
-        <img src={kulgeetimg} alt="kulgeet" />
+        <h2 className="text-[22px] sm:text-[28px] lg:text-[3.125rem] text-[#023047] font-medium">Kulgeet</h2>
+        <img src={kulgeetimg} alt="SRMU Kulgeet" width={800} height={600} loading="lazy" decoding="async" className="max-w-full h-auto" />
       </div>
 
 

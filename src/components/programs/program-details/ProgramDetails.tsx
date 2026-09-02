@@ -447,15 +447,31 @@ const ProgramDetails: React.FC = () => {
                   <div className={`grid w-full grid-cols-2 ${whySrmuLogo.length > 4 ? "sm:grid-cols-3 lg:grid-cols-6 lg:gap-10" : "sm:grid-cols-2 md:grid-cols-4 sm:gap:15 lg:gap-20"} gap-5 place-items-start`}>
                     {(whySrmuLogoLoading && whySrmuLogo.length === 0 ? [] : whySrmuLogo).length > 0
                       ? whySrmuLogo.map((item, index) => (
-                        <div key={index} className="flex border w-full md:border-none border-[#ccc] py-2 px-3 sm:p-0 flex-col items-center justify-start gap-5">
-                          <img src={item.image} alt={item.title} className="w-[105px] sm:w-[170px] md:w-[210px] object-contain" />
+                        <div key={item.id ?? index} className="flex border w-full md:border-none border-[#ccc] py-2 px-3 sm:p-0 flex-col items-center justify-start gap-5">
+                          <img
+                            src={item.image}
+                            alt={item.title}
+                            width={180}
+                            height={70}
+                            loading="lazy"
+                            decoding="async"
+                            className="w-[105px] sm:w-[170px] md:w-[210px] h-auto object-contain"
+                          />
                           <p className="text-base sm:text-lg fw600 text-center">{item.title}</p>
                         </div>
                       ))
                       : partnerDataforAIandML.length > 0 &&
                       partnerDataforAIandML.map((item, index) => (
-                        <div key={index} className="flex border w-full md:border-none border-[#ccc] py-2 px-3 sm:p-0 flex-col items-center gap-5">
-                          <img src={item.img} alt={item.title} className="w-[105px] sm:w-[170px] md:w-[210px] object-contain" />
+                        <div key={item.id ?? index} className="flex border w-full md:border-none border-[#ccc] py-2 px-3 sm:p-0 flex-col items-center gap-5">
+                          <img
+                            src={item.img}
+                            alt={item.title}
+                            width={180}
+                            height={70}
+                            loading="lazy"
+                            decoding="async"
+                            className="w-[105px] sm:w-[170px] md:w-[210px] h-auto object-contain"
+                          />
                           <p className="text-base sm:text-lg fw600 text-center">{item.title}</p>
                         </div>
                       ))}
@@ -535,7 +551,7 @@ const ProgramDetails: React.FC = () => {
 
                       return (
                         <div
-                          key={f.q}
+                          key={f.programFaqId ?? f.faqQues ?? i}
                           className="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden"
                         >
                           <button

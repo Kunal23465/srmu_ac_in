@@ -11,13 +11,20 @@ const BlogCard: React.FC<BlogCardProps> = ({ card }) => {
   const blogPath = `/blog/${resolvedSlug && resolvedSlug !== "null" ? resolvedSlug : normalizeRouteSlug(card.title || "")}`;
 
   return (
-    <>
-      <div className="bg-white rounded-2xl cursor-pointer border-2 border-[#ffb703] overflow-hidden flex flex-col hover:shadow-2xl min-h-[28rem]">
-        <Link  to={blogPath}>
-          <div className="p-6">
-            <img src={card.imagePath} alt={card.title} className="w-full h-60 object-cover rounded-lg" />
-          </div>
-        </Link>
+    <div className="bg-white rounded-2xl cursor-pointer border-2 border-[#ffb703] overflow-hidden flex flex-col hover:shadow-2xl min-h-[28rem]">
+      <Link to={blogPath}>
+        <div className="p-6">
+          <img
+            src={card.imagePath}
+            alt={card.title || "Blog cover"}
+            width={400}
+            height={240}
+            loading="lazy"
+            decoding="async"
+            className="w-full h-60 object-cover rounded-lg"
+          />
+        </div>
+      </Link>
         <div className="p-6 flex flex-col flex-grow">
           <p className=" text-gray-500 mb-2 flex items-center">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 inline-block mr-1 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -45,7 +52,6 @@ const BlogCard: React.FC<BlogCardProps> = ({ card }) => {
           </div>
         </div>
       </div>
-    </>
   );
 };
 

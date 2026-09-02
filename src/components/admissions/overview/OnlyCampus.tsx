@@ -35,8 +35,12 @@ const OnlyCampus: React.FC = () => {
                             md:absolute bottom-0 2xl:right-[180px] right-0 z-0  ">
                             <img
                                 src={girl}
-                                alt="Student"
-                                className="w-full  vb"
+                                alt="SRMU Student"
+                                width={420}
+                                height={520}
+                                loading="lazy"
+                                decoding="async"
+                                className="w-full vb"
                             />
                         </div>
 

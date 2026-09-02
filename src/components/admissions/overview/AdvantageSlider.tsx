@@ -149,66 +149,6 @@
 //           <div className="max-w-4xl">
 //             <h2 className="text-3xl md:text-5xl font-bold leading-tight">SRMU Advantage</h2>
 //             <p className="mt-3 text-sm md:text-lg opacity-100 font-light">
-//               SRMU builds the visionary leaders of tomorrow, promising holistic development,
-//               and the stepping stones to global success.
-//             </p>
-//           </div>
-
-//           <SliderControls />
-//         </div>
-
-//         {/* Slider Wrapper */}
-//         <div className="overflow-hidden w-full">
-
-//           {/* Long sliding track */}
-//           <div
-//             className="flex transition-transform duration-500 ease-out"
-//             style={{ transform: `translateX(-${index * 50}%)` }} // each slide = 50% width
-//           >
-//             {advantageData.map((item) => (
-//               <div
-//                 key={item.id}
-//                 className="w-full md:w-1/2 flex-shrink-0 p-2"
-//               >
-//                 <div className="bg-white text-black p-6 md:p-8 shadow-xl rounded-xl h-full">
-//                   <div className="flex gap-3 items-start">
-//                     <img src={item.icon} alt={item.title} className="h-10 md:h-12" />
-//                     <h2 className="text-xl md:text-2xl font-normal leading-snug">
-//                       {item.title} <br />
-//                       <span className="font-semibold text-xl md:text-2xl">{item.subtitle}</span>
-//                     </h2>
-//                   </div>
-
-//                   <div className="mt-4 text-sm md:text-base leading-relaxed">
-//                     <div
-//                       className="opacity-80"
-//                       dangerouslySetInnerHTML={{ __html: item.description }}
-//                     />
-
-//                     {item.extraText && (
-//                       <div
-//                         className="opacity-100 font-bold mt-3"
-//                         dangerouslySetInnerHTML={{ __html: item.extraText }}
-//                       />
-//                     )}
-//                   </div>
-//                 </div>
-//               </div>
-//             ))}
-//           </div>
-
-//         </div>
-
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default AdvantageSlider;
-
-
-
-
 import React, { useEffect, useState } from "react";
 import { advantageData } from "../../../data/admissions/overview/slider-data";
 import Classes from "../../../utils/styles/Global.module.css";
@@ -254,9 +194,10 @@ const AdvantageSlider: React.FC = () => {
       <button
         onClick={prev}
         className={`border-2 border-white text-white cursor-pointer text-2xl md:text-3xl 
-          w-10 h-10 md:w-14 md:h-14 flex items-center justify-center  transition-all duration-500
-          ${index === 0 ? "opacity-50 cursor-not-allowed" : "hover:bg-[#ffb703] "}`}
+          w-10 h-10 md:w-14 md:h-14 flex items-center justify-center transition-all duration-500
+          ${index === 0 ? "opacity-50 cursor-not-allowed" : "hover:bg-[#ffb703]"}`}
         disabled={index === 0}
+        aria-label="Previous slide"
       >
         ‹
       </button>
@@ -267,6 +208,7 @@ const AdvantageSlider: React.FC = () => {
           w-10 h-10 md:w-14 md:h-14 flex items-center justify-center transition-all duration-500
           ${index >= maxIndex ? "opacity-50 cursor-not-allowed" : "hover:bg-[#ffb703]"}`}
         disabled={index >= maxIndex}
+        aria-label="Next slide"
       >
         ›
       </button>
@@ -303,7 +245,15 @@ const AdvantageSlider: React.FC = () => {
               <div key={item.id} className="w-full md:w-1/2 flex-shrink-0 p-2">
                 <div className="bg-white text-black p-6 md:p-8 shadow-xl rounded-xl h-full">
                   <div className="flex gap-3 items-start">
-                    <img src={item.icon} alt={item.title} className="h-10 md:h-12" />
+                    <img
+                      src={item.icon}
+                      alt={item.title}
+                      width={48}
+                      height={48}
+                      loading="lazy"
+                      decoding="async"
+                      className="h-10 md:h-12 w-auto object-contain"
+                    />
                     <h2 className="lg:text-[22px] md:text-[20.625px] text-[19.25px] sm:text-[19.25px] leading-snug">
                       {item.title} <br />
                       <span className="lg:text-[22px] md:text-[20.625px] text-[19.25px] sm:text-[19.25px] fw500">{item.subtitle}</span>

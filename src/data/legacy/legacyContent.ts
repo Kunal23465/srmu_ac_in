@@ -143,4 +143,14 @@ export const legacyBlogArticles: LegacyArticle[] = [
       <p>It focuses on paramedical learning quality, professional preparation, and the broader value of structured healthcare education.</p>
     `,
   },
+  {
+    slug: "top-colleges-for-btech-in-computer-science-in-lucknow-and-nearby-cities-best-picks-for-2026",
+    title: "Top Colleges for B.Tech in Computer Science in Lucknow and Nearby Cities: Best Picks for 2026",
+    metaDescription:
+      "Compare computer science study options in Lucknow and nearby cities by looking at curriculum, industry exposure, and placement support.",
+    description: `
+      <p>This SRMU article compares B.Tech in Computer Science options in Lucknow and nearby cities for students planning their next admission cycle.</p>
+      <p>It discusses curriculum strength, technology exposure, and placement-oriented learning environments.</p>
+    `,
+  },
 ];

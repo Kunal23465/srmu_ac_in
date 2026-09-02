@@ -64,6 +64,7 @@ const LEGACY_STATIC_PATHS = [
   "/notice",
   "/blogs",
   "/news-letter",
+  "/newsletter",
   "/rti",
   "/online-admission",
   "/privacy-policy",
@@ -167,164 +168,12 @@ const LEGACY_COMMITTEE_SLUGS = [
 ];
 
 const SITEMAP_EXCLUDED_PATHS = new Set([
-  "/agriculture",
-  "/after-class-12th/allied-health-sciences",
-  "/after-class-12th/natural-sciences",
-  "/after-class-12th/nutrition-dietetics",
-  "/after-post-graduation/ph-d1",
-  "/after-graduation/natural-sciences",
-  "/artificial-intelligence",
-  "/artificial-intelligence/industry-honors1",
-  "/artificial-intelligence/postgraduate",
-  "/artificial-intelligence/undergraduate",
-  "/arts-science",
-  "/blog/a-student-s-guide-to-building-a-career-with-a-bca-degree1",
-  "/blog/best-biotechnology-colleges-and-universities-in-lucknow-top-options-for-2026-admissions",
-  "/blog/career-opportunities-for-mba-business-analytics-graduatescareer-opportunities-for-mba-business-analytics-graduates",
-  "/blog/cultivating-the-future-explore-career-opportunities-with-a-degree-in-agriculture2",
-  "/blog/study-bba-in-business-analytics-at-srmu-l-t-backed-industry-focused-program1",
-  "/blog/top-colleges-for-btech-in-computer-science-in-lucknow-and-nearby-cities-best-picks-for-2026",
-  "/blog/entrepreneurship-opportunities-for-bba-students-2026",
-  "/commerce-and-economics",
-  "/computer-application",
-  "/computer-science-engineering",
-  "/disclaimer",
-  "/education",
-  "/food-technology",
-  "/humanities",
-  "/iirs-isro",
-  "/industry-honors/artificial-intelligence",
-  "/industry-honors/computer-application",
-  "/industry-honors/computer-science-engineering",
-  "/industry-honors/engineering",
-  "/industry-honors/management",
-  "/legal-studies-law",
-  "/management",
   "/mandatory-disclouser",
-  "/media-studies",
-  "/microbiology",
-  "/natural-sciences",
-  "/news/holi-celebration",
-  "/nutrition-dietetics",
-  "/policies-reports",
-  "/privacy-policy",
-  "/program/bachelor-in-physiotherapy",
-  "/social-work",
-  "/swayam-nptel-local-chapter",
-  "/terms-conditions",
-  "/program/bachelor-of-physiotherapy",
-  "/program/b-tech-electrical-engineering-lateral-entry",
-  "/program/b-tech-mechanical-engineering-lateral-entry",
-  "/program/b-tech-electronics-communication-engineering-lateral-entry",
-  "/program/b-tech-mechanical-engineering",
-  "/program/b-tech-electronics-communication-engineering",
-  "/program/b-tech-electrical-engineering",
-  "/after-class-12th/business-analytics",
   "/ph-d1/ph-d",
-  "/program-finder/undergraduate",
-  "/after-class-12th/ev-engineering",
-  "/bio-technology",
-  "/pharmacy",
-  "/engineering",
-  "/allied-health-sciences",
-  "/news/diwali-celebration",
-  "/polytechnic/polytechnic-diploma",
-  "/microbiology/undergraduate",
-  "/nutrition-dietetics/undergraduate",
-  "/computer-science-engineering/undergraduate",
-  "/computer-application/undergraduate",
-  "/agriculture/undergraduate",
-  "/bio-technology/undergraduate",
-  "/engineering/undergraduate",
-  "/management/undergraduate",
-  "/commerce-and-economics/undergraduate",
-  "/media-studies/undergraduate",
-  "/legal-studies-law/undergraduate",
-  "/pharmacy/undergraduate",
-  "/allied-health-sciences/undergraduate",
-  "/natural-sciences/undergraduate",
-  "/humanities/undergraduate",
-  "/social-work/undergraduate",
-  "/computer-science-engineering/postgraduate",
-  "/computer-application/postgraduate",
-  "/agriculture/postgraduate",
-  "/bio-technology/postgraduate",
-  "/engineering/postgraduate",
-  "/management/postgraduate",
-  "/commerce-and-economics/postgraduate",
-  "/media-studies/postgraduate",
-  "/legal-studies-law/postgraduate",
-  "/natural-sciences/postgraduate",
-  "/social-work/postgraduate",
-  "/humanities/postgraduate",
-  "/polytechnic-lateral/polytechnic-diploma",
-  "/computer-science-engineering/industry-honors1",
-  "/computer-application/industry-honors1",
-  "/engineering/industry-honors1",
-  "/management/industry-honors1",
-  "/news-letter",
-  "/campus-life/e-content-cell",
-  "/ph-d-application-offline-mode",
-  "/convocation/convocation-2021",
   "/research/phd-offline-application",
-  "/faculty-of-civil-engineering",
-  "/department-of-electrical-and-electronics-engineering",
-  "/faculty-of-mechanical-engineering",
-  "/department-of-computer-science-and-engineering",
-  "/department-of-computer-science-and-information-systems",
-  "/faculty-of-biosciences",
-  "/faculty-of-biotechnology",
-  "/faculty-of-commerce-and-economics",
-  "/faculty-of-management",
-  "/faculty-of-physical-sciences",
-  "/faculty-of-chemical-sciences",
-  "/faculty-of-mathematical-and-statistical-sciences",
-  "/faculty-of-humanities-and-social-sciences",
-  "/institute-of-allied-health-sciences",
-  "/institute-of-technology",
-  "/institute-of-biosciences-and-technology",
-  "/institute-of-management-commerce-and-economics",
-  "/institute-of-media-studies",
-  "/institute-of-natural-sciences-and-humanities",
-  "/institute-of-pharmaceutical-sciences1",
-  "/institute-of-agricultural-sciences-and-technology",
-  "/institute-of-legal-studies1",
-  "/institute-of-pharmacy",
-  "/institute-of-education-and-research",
-  "/srmu-polytechnic1",
-  "/transportation",
-  "/legal-studies-law/integrated",
-  "/program/b-tech-biotechnology-mba",
-  "/program/b-tech-m-tech-biotechnology",
-  "/program/b-tech-ce-mba",
-  "/program/b-tech-m-tech-ce",
-  "/program/b-tech-m-tech-ee",
-  "/program/b-tech-ee-mba",
-  "/program/b-tech-me-mba",
-  "/program/b-a-hons-sociology",
-  "/program/b-a-hons-applied-psychology",
-  "/program/diploma-electronics-communication-engineering-lateral-entry",
-  "/program/m-a-psychology",
-  "/program/m-a-political-science",
-  "/program/m-a-sociology",
-  "/program/mph-master-in-public-health",
-  "/program/m-sc-statistics",
-  "/program/m-b-a-leadership-governance",
-  "/program/m-tech-production-industrial-engineering-part-time",
-  "/program/m-tech-production-industrial-engineering",
-  "/program/m-tech-digital-communication",
-  "/program/m-tech-digital-communication-part-time",
-  "/program/m-tech-power-electronics-electric-drives1",
-  "/program/m-tech-power-electronics-electric-drives-part-time",
-  "/program/m-tech-renewable-energy-energy-audit",
-  "/program/m-tech-renewable-energy-energy-audit-part-time",
-  "/program/m-sc-environmental-science",
   "/program/executive-program-in-management",
   "/program/bsc-mathematics-with-data-science",
-  "/program/master-of-laws",
-  ...LEGACY_EVENT_SLUGS.map((slug) => `/event/${slug}`),
-  ...LEGACY_CONFERENCE_SLUGS.map((slug) => `/conference/${slug}`),
-  ...LEGACY_COMMITTEE_SLUGS.map((slug) => `/committe/${slug}`),
+  "/news/holi-celebration",
 ]);
 
 type CachedSitemap = {
@@ -429,53 +278,6 @@ const fetchNews = async () => {
   return Array.isArray(response.data) ? response.data : [];
 };
 
-const collectDynamicEntries = async () => {
-  const [programsResult, blogsResult, menuResult, newsResult] = await Promise.allSettled([fetchPrograms(), fetchBlogs(), fetchProgramMenu(), fetchNews()]);
-
-  const paths = new Map<string, string | undefined>();
-
-  const programs = programsResult.status === "fulfilled" ? programsResult.value : [];
-  for (const program of programs) {
-    const rawProgramSlug = String(program?.slug || "").trim() || slugify(String(program?.name || ""));
-    const slug = getPreferredProgramRouteSlug(rawProgramSlug);
-
-    if (slug) {
-      paths.set(`/program/${slug}`, formatDate(program?.updatedAt || program?.lastModifiedDate));
-    }
-  }
-
-  const blogs = blogsResult.status === "fulfilled" ? blogsResult.value : [];
-  for (const blog of blogs) {
-    const blogSlug = String(blog?.slug || "").trim() || normalizeRouteSegment(blog?.title || "");
-
-    if (blogSlug) {
-      paths.set(`/blog/${blogSlug}`, formatDate(blog?.updatedAt || blog?.postedOn));
-    }
-  }
-  for (const blog of legacyBlogArticles) {
-    paths.set(`/blog/${blog.slug}`, formatDate(blog.postedOn));
-  }
-
-  const news = newsResult.status === "fulfilled" ? newsResult.value : [];
-  for (const item of news) {
-    const newsSlug = normalizeRouteSegment(item?.title || item?.name || "");
-
-    if (newsSlug) {
-      paths.set(`/news/${newsSlug}`, formatDate(item?.updatedAt || item?.date || item?.eventDate || item?.createdAt));
-    }
-  }
-  for (const item of legacyNewsArticles) {
-    paths.set(`/news/${item.slug}`, formatDate(item.postedOn));
-  }
-
-  const programMenu = menuResult.status === "fulfilled" ? menuResult.value : [];
-  for (const path of buildLegacyProgramCategoryPaths(programMenu)) {
-    paths.set(path, undefined);
-  }
-
-  return paths;
-};
-
 const buildStaticEntries = () => {
   const paths = new Map<string, string | undefined>();
 
@@ -504,7 +306,7 @@ const buildStaticEntries = () => {
   return paths;
 };
 
-const renderSitemapXml = (siteUrl: string, entries: Map<string, string | undefined>) => {
+const renderUrlsetXml = (siteUrl: string, entries: Map<string, string | undefined>) => {
   const normalizedSiteUrl = siteUrl.replace(/\/+$/, "");
   const urls = [...entries.entries()]
     .map(([path, lastmod]) => {
@@ -517,28 +319,56 @@ const renderSitemapXml = (siteUrl: string, entries: Map<string, string | undefin
   return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`;
 };
 
-export const buildRobotsTxt = (siteUrl: string) => `User-agent: *\nAllow: /\nDisallow: /chatbot/\n\nSitemap: ${siteUrl.replace(/\/+$/, "")}/sitemap.xml\n`;
+const renderSitemapIndexXml = (
+  siteUrl: string,
+  sitemaps: Array<{ path: string; lastmod: string }>
+) => {
+  const normalizedSiteUrl = siteUrl.replace(/\/+$/, "");
+  const sitemapElements = sitemaps
+    .map(({ path, lastmod }) => {
+      const loc = `${normalizedSiteUrl}${normalizePath(path)}`;
+      return `  <sitemap>\n    <loc>${escapeXml(loc)}</loc>\n    <lastmod>${escapeXml(lastmod)}</lastmod>\n  </sitemap>`;
+    })
+    .join("\n");
 
-export const buildSitemapXml = async (siteUrl: string) => {
-  const cacheKey = siteUrl.replace(/\/+$/, "");
+  return `<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${sitemapElements}\n</sitemapindex>\n`;
+};
+
+export const buildRobotsTxt = (siteUrl: string) =>
+  `User-agent: *\nAllow: /\nDisallow: /chatbot/\n\nSitemap: ${siteUrl.replace(/\/+$/, "")}/sitemap.xml\n`;
+
+export const buildBlogSitemapXml = async (siteUrl: string) => {
+  const cacheKey = `blog:${siteUrl.replace(/\/+$/, "")}`;
   const cached = sitemapCache.get(cacheKey);
 
   if (cached && cached.expiresAt > Date.now()) {
     return cached.xml;
   }
 
-  const entries = buildStaticEntries();
-  const dynamicEntries = await collectDynamicEntries().catch(() => new Map<string, string | undefined>());
+  const entries = new Map<string, string | undefined>();
+  entries.set("/blogs", undefined);
 
-  for (const [path, lastmod] of dynamicEntries.entries()) {
-    entries.set(normalizePath(path), lastmod);
+  try {
+    const blogs = await fetchBlogs();
+    for (const blog of blogs) {
+      const blogSlug = String(blog?.slug || "").trim() || normalizeRouteSegment(blog?.title || "");
+      if (blogSlug) {
+        entries.set(`/blog/${blogSlug}`, formatDate(blog?.updatedAt || blog?.postedOn));
+      }
+    }
+  } catch (error) {
+    console.error("Error fetching dynamic blogs for sitemap:", error);
+  }
+
+  for (const blog of legacyBlogArticles) {
+    entries.set(`/blog/${blog.slug}`, formatDate(blog.postedOn));
   }
 
   for (const path of SITEMAP_EXCLUDED_PATHS) {
     entries.delete(path);
   }
 
-  const xml = renderSitemapXml(cacheKey, entries);
+  const xml = renderUrlsetXml(siteUrl, entries);
 
   sitemapCache.set(cacheKey, {
     expiresAt: Date.now() + SITEMAP_TTL_MS,
@@ -546,4 +376,116 @@ export const buildSitemapXml = async (siteUrl: string) => {
   });
 
   return xml;
+};
+
+export const buildAllSitemapXml = async (siteUrl: string) => {
+  const cacheKey = `all:${siteUrl.replace(/\/+$/, "")}`;
+  const cached = sitemapCache.get(cacheKey);
+
+  if (cached && cached.expiresAt > Date.now()) {
+    return cached.xml;
+  }
+
+  const entries = buildStaticEntries();
+
+  try {
+    const [programsResult, menuResult, newsResult] = await Promise.allSettled([
+      fetchPrograms(),
+      fetchProgramMenu(),
+      fetchNews(),
+    ]);
+
+    const programs = programsResult.status === "fulfilled" ? programsResult.value : [];
+    for (const program of programs) {
+      const rawProgramSlug = String(program?.slug || "").trim() || slugify(String(program?.name || ""));
+      const slug = getPreferredProgramRouteSlug(rawProgramSlug);
+
+      if (slug) {
+        entries.set(`/program/${slug}`, formatDate(program?.updatedAt || program?.lastModifiedDate));
+      }
+    }
+
+    const news = newsResult.status === "fulfilled" ? newsResult.value : [];
+    for (const item of news) {
+      const newsSlug = normalizeRouteSegment(item?.title || item?.name || "");
+
+      if (newsSlug) {
+        entries.set(`/news/${newsSlug}`, formatDate(item?.updatedAt || item?.date || item?.eventDate || item?.createdAt));
+      }
+    }
+
+    const programMenu = menuResult.status === "fulfilled" ? menuResult.value : [];
+    for (const path of buildLegacyProgramCategoryPaths(programMenu)) {
+      entries.set(path, undefined);
+    }
+  } catch (error) {
+    console.error("Error collecting dynamic entries for all-sitemap:", error);
+  }
+
+  for (const item of legacyNewsArticles) {
+    entries.set(`/news/${item.slug}`, formatDate(item.postedOn));
+  }
+
+  // Remove any blog entries from all-sitemap.xml so it is cleanly partitioned
+  for (const path of entries.keys()) {
+    if (path.startsWith("/blog/")) {
+      entries.delete(path);
+    }
+  }
+
+  for (const path of SITEMAP_EXCLUDED_PATHS) {
+    entries.delete(path);
+  }
+
+  const xml = renderUrlsetXml(siteUrl, entries);
+
+  sitemapCache.set(cacheKey, {
+    expiresAt: Date.now() + SITEMAP_TTL_MS,
+    xml,
+  });
+
+  return xml;
+};
+
+export const buildSitemapIndexXml = async (siteUrl: string) => {
+  const cacheKey = `index:${siteUrl.replace(/\/+$/, "")}`;
+  const cached = sitemapCache.get(cacheKey);
+
+  if (cached && cached.expiresAt > Date.now()) {
+    return cached.xml;
+  }
+
+  const today = new Date().toISOString().slice(0, 10);
+
+  // Trigger building both sub-sitemaps to warm cache and extract lastmod
+  const [allXml, blogXml] = await Promise.all([
+    buildAllSitemapXml(siteUrl),
+    buildBlogSitemapXml(siteUrl),
+  ]);
+
+  const allLastmods = (allXml.match(/<lastmod>([^<]+)<\/lastmod>/g) || []).map((m) =>
+    m.replace(/<\/?lastmod>/g, "")
+  );
+  const blogLastmods = (blogXml.match(/<lastmod>([^<]+)<\/lastmod>/g) || []).map((m) =>
+    m.replace(/<\/?lastmod>/g, "")
+  );
+
+  const allLastmod = allLastmods.sort().pop() || today;
+  const blogLastmod = blogLastmods.sort().pop() || today;
+
+  const xml = renderSitemapIndexXml(siteUrl, [
+    { path: "/all-sitemap.xml", lastmod: allLastmod },
+    { path: "/blog-sitemap.xml", lastmod: blogLastmod },
+  ]);
+
+  sitemapCache.set(cacheKey, {
+    expiresAt: Date.now() + SITEMAP_TTL_MS,
+    xml,
+  });
+
+  return xml;
+};
+
+export const buildSitemapXml = async (siteUrl: string) => {
+  return buildSitemapIndexXml(siteUrl);
 };

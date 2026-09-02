@@ -48,10 +48,12 @@ export default function CoreEngineering() {
               <span className="text-[#FFC107] lg:text-3xl block">with</span>
               <img
                 src={lt}
-                width={360}
-                height={110}
+                width={100}
+                height={31}
+                loading="lazy"
+                decoding="async"
                 className="object-contain max-w-[100px]"
-                alt="L&T"
+                alt="Larsen and Toubro EduTech Logo"
               />
             </div>
           </h2>

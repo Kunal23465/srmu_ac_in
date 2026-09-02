@@ -187,7 +187,11 @@ const PlacementDrives: React.FC = () => {
                     <div className="w-full h-40 flex items-center justify-center">
                       <img
                         src={drive.recruiterImage || "/placeholder.png"}
-                        alt={drive.recruiterName}
+                        alt={drive.recruiterName || "Recruiter logo"}
+                        width={200}
+                        height={144}
+                        loading="lazy"
+                        decoding="async"
                         className="w-full max-h-36 object-contain"
                         onError={(e) => {
                           (e.currentTarget as HTMLImageElement).src =

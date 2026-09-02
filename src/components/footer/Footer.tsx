@@ -38,12 +38,12 @@ export const footerData = {
     {
       id: 2,
       title: "Newsletters",
-      path: "/newsletters",
+      path: "/news-letter",
     },
     {
       id: 3,
       title: "Careers",
-      path: "/career",
+      path: "/career/career-form",
     },
     {
       id: 4,
@@ -51,7 +51,7 @@ export const footerData = {
       path: "https://docs.google.com/forms/d/e/1FAIpQLSde8Ov2JDvB1vYeL-jrqNrlman0gLstQVEWEJ6DN34-EsYdCQ/viewform",
     },
     {
-      id: 4,
+      id: 5,
       title: "Women Helpline - 9415115062",
       path: "tel:9415115062",
     },
@@ -60,7 +60,7 @@ export const footerData = {
     {
       id: 0,
       title: "How to Apply",
-      path: "how-to-apply",
+      path: "/how-to-apply",
     },
     {
       id: 1,
@@ -129,7 +129,7 @@ export const footerData = {
     {
       id: 1,
       title: "Contact us",
-      path: "contact-us",
+      path: "/contact-us",
     },
     {
       id: 2,
@@ -230,7 +230,15 @@ const Footer: React.FC = () => {
             <div className="w-fullspace-y-4 flex flex-col grid-first">
               <div className="flex items-center gap-3">
                 <div>
-                  <img src={logosrmcem} alt="Shri Ramswaroop Memorial University Logo" className="max-w-[220px] xl:max-w-full" />
+                  <img
+                    src={logosrmcem}
+                    alt="Shri Ramswaroop Memorial University Logo"
+                    width={220}
+                    height={54}
+                    loading="lazy"
+                    decoding="async"
+                    className="max-w-[220px] xl:max-w-full w-auto h-auto"
+                  />
                 </div>
                 {/* <div>
                   <h2 className="text-white font-bold text-[1.3rem] sm:text-[1.6rem]">
@@ -447,12 +455,12 @@ const Footer: React.FC = () => {
               </Link>
               <h2 className="font-semibold text-[14px] sm:text-base pt-10 mb-4 text-[#ffb703]  Get Responsible uppercase">Awards</h2>
               <div className="flex gap-x-4 mb-4">
-                <img src={awards1} alt="SRMU Awards and Recognition" loading="lazy" />
-                <img src={awards2} alt="SRMU Accreditation and Awards" loading="lazy" />
+                <img src={awards1} alt="SRMU Awards and Recognition" width={90} height={70} loading="lazy" decoding="async" />
+                <img src={awards2} alt="SRMU Accreditation and Awards" width={90} height={70} loading="lazy" decoding="async" />
               </div>
               <h2 className="font-semibold text-[14px] sm:text-base pt-8 mb-4 text-[#ffb703]  Get Responsible uppercase">MERCH SHOP</h2>
               <h4 className="font-semibold lg:!text-[14px] !text-[13.132px] text-white">To Shop SRMU Merchandise Scan the Code</h4>
-              <img src={scanner} alt="SRMU Merchandise QR code for scanning" loading="lazy" className="max-w-[170px] mt-4" />
+              <img src={scanner} alt="SRMU Merchandise QR code for scanning" width={170} height={170} loading="lazy" decoding="async" className="max-w-[170px] mt-4" />
             </div>
           </div>
         </div>

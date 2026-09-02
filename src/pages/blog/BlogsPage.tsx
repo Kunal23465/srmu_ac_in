@@ -48,8 +48,8 @@ const BlogsPage: React.FC = () => {
                 <h1 className="text-xl sm:text-2xl md:text-[50px] font50 fw500 text-[#023047] text-center mb-15">Blogs</h1>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                  {currentBlogs.map((card) => (
-                    <BlogCard key={card.id} card={card} />
+                  {currentBlogs.map((card, idx) => (
+                    <BlogCard key={card.id || card.slug || `blog-${idx}`} card={card} />
                   ))}
                 </div>
                 {blogCards.length > 9 && <PaginationBlog currentPage={page} totalPages={totalPages} baseRoute="/blogs" />}

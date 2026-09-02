@@ -4,10 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="robots" content="index,follow" /> 
-    <meta name="theme-color" content="#14284e" /> 
-    <!-- <link rel="icon" href="https://srmu.ac.in/favicon.ico" sizes="any" rel="icon" type="image/x-icon" />
-    <link rel="icon" type="image/png" href="https://srmu.ac.in/favicon.png" type="image/x-icon" /> -->
+    <meta name="theme-color" content="#14284e" />
 
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="icon" href="https://srmu.ac.in/favicon.ico" type="image/x-icon" />
@@ -15,7 +12,6 @@
     <link rel="apple-touch-icon" href="https://srmu.ac.in/favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preload" as="image" href="/src/assets/images/home/banner-bg.webp" fetchpriority="high" type="image/webp" />
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" media="print" onload="this.media = 'all'" />
     <noscript>
@@ -25,43 +21,6 @@
 
     <!-- Google Tag Manager: delayed until after first paint/idle on production hosts -->
     <script>!(function(){var e=["srmu.ac.in","www.srmu.ac.in"];if(-1!==e.indexOf(window.location.hostname)){var n=!1,t=function(){if(!n){n=!0,window.dataLayer=window.dataLayer||[],window.dataLayer.push({"gtm.start":(new Date).getTime(),event:"gtm.js"});var e=document.getElementsByTagName("script")[0],t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtm.js?id=GTM-5MHCHMHC",e.parentNode.insertBefore(t,e)}};window.addEventListener("load",(function(){"requestIdleCallback"in window?window.requestIdleCallback(t,{timeout:4500}):window.setTimeout(t,3500)}))}})();</script>
-
-    <!-- Meta Pixel Code -->
-    <!-- <script>
-    !(function (f, b, e, v, n, t, s) {
-      if (f.fbq) return;
-      n = f.fbq = function () {
-        n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
-      };
-      if (!f._fbq) f._fbq = n;
-      n.push = n;
-      n.loaded = true;
-      n.version = "2.0";
-      n.queue = [];
-      t = b.createElement(e);
-      t.async = true;
-      t.src = v;
-      s = b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t, s);
-    })(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
-    fbq("init", "600748770079503");
-    fbq("track", "PageView");
-  </script>
-
-  <script type="text/javascript">
-    (function (c, l, a, r, i, t, y) {
-      c[a] =
-        c[a] ||
-        function () {
-          (c[a].q = c[a].q || []).push(arguments);
-        };
-      t = l.createElement(r);
-      t.async = 1;
-      t.src = "https://www.clarity.ms/tag/" + i;
-      y = l.getElementsByTagName(r)[0];
-      y.parentNode.insertBefore(t, y);
-    })(window, document, "clarity", "script", "o9lqqntpki");
-  </script> -->
 
     <script type="application/ld+json">
       {
@@ -95,8 +54,6 @@
       .grecaptcha-badge {
         visibility: hidden !important;
       }
-    </style>
-    <style>
       .chatbot-message-bubble {
         background: #ffb703 !important;
       }
@@ -123,47 +80,15 @@
       <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5MHCHMHC" height="0" width="0" style="display: none; visibility: hidden"></iframe>
     </noscript>
 
-    <!-- Meta Pixel noscript -->
-    <!-- <noscript>
-    <img height="1" width="1" style="display:none" alt="Facebook pixel"
-      src="https://www.facebook.com/tr?id=600748770079503&ev=PageView&noscript=1" />
-  </noscript> -->
-
     <!-- React App -->
     <div id="root"><!--app-html--></div>
-
-    <!-- <div class="live-chat-container" id="liveChatContainer">
-      <div class="live-chat-header">
-        <div class="user-info">
-          <div class="avatar"><i class="fas fa-user"></i></div>
-          <div class="user-details">
-            <h2>Admin Support</h2>
-            <p class="status">Online</p>
-          </div>
-        </div>
-        <div class="chat-actions">
-          <button onclick="window.liveChatOperation && window.liveChatOperation()" class="action-btn close-chat-btn">
-            <i class="fas fa-times"></i>
-          </button>
-        </div>
-      </div>
-      <div class="live-chat-messages" id="chatBox"></div>
-      <div class="message-input-container">
-        <div class="input-wrapper">
-          <input type="text" id="messageInput" placeholder="Type a message" />
-        </div>
-        <button class="send-btn" onclick="window.sendMessage && window.sendMessage()">
-          <i class="fas fa-paper-plane"></i>
-        </button>
-      </div>
-    </div> -->
 
     <!-- Loader shown until React hydrates -->
     <div id="loader" class="loader"></div>
 
     <!--preloaded-state-->
 
-    <script>if(document.getElementById("liveChatContainer")){var s=document.createElement("script");s.defer=!0,s.src="https://arsinfotech.in/chatbot/admin/public/livechat/user.js",document.head.appendChild(s)}!(function(){var e=!1,t=function(){if(!e){e=!0;var t=document.createElement("script");t.async=!0,t.defer=!0,t.src="https://www.google.com/recaptcha/api.js?render=6Leef4opAAAAAIHXI82ZE6l8ezbNjJe2_1nwDlUH",document.head.appendChild(t)}};window.addEventListener("pointerdown",t,{once:!0,passive:!0}),window.addEventListener("keydown",t,{once:!0}),window.addEventListener("load",(function(){"requestIdleCallback"in window?window.requestIdleCallback(t,{timeout:9e3}):window.setTimeout(t,7e3)}))})();</script>
+    <script>!(function(){var e=!1,t=function(){if(!e){e=!0;var t=document.createElement("script");t.async=!0,t.defer=!0,t.src="https://www.google.com/recaptcha/api.js?render=6Leef4opAAAAAIHXI82ZE6l8ezbNjJe2_1nwDlUH",document.head.appendChild(t)}};window.addEventListener("pointerdown",t,{once:!0,passive:!0}),window.addEventListener("keydown",t,{once:!0}),window.addEventListener("load",(function(){"requestIdleCallback"in window?window.requestIdleCallback(t,{timeout:9e3}):window.setTimeout(t,7e3)}))})();</script>
 
     <!-- React Client Entry -->
     <script type="module" defer src="/src/entry-client.tsx"></script>

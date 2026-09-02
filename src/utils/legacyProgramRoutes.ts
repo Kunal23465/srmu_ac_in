@@ -18,6 +18,11 @@ const PREFERRED_LEGACY_PROGRAM_SLUGS = Object.entries(LEGACY_PROGRAM_ROUTE_ALIAS
 
 export const LEGACY_PROGRAM_SITEMAP_ONLY_SLUGS = [
   "bachelor-in-physiotherapy",
+  "bsw",
+  "mpharm-master-of-pharmacy",
+  "b-sc-in-medical-laboratory-sciences",
+  "b-sc-in-operation-theatre-anaesthesia-technology",
+  "b-sc-in-medical-radiology-and-imaging-technology",
 ];
 
 export const resolveProgramRouteSlug = (slug = "") => {

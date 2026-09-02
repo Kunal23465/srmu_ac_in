@@ -24,6 +24,10 @@ const ApprovedSlider = () => {
               <img
                 src={data.img}
                 alt={data.title}
+                width={112}
+                height={112}
+                loading="lazy"
+                decoding="async"
                 className="sm:w-28 sm:h-28 w-24 h-24 object-contain"
               />
               <h2 className="font-bold text-[12px] sm:text-sm md:text-lg text-center mt-[1rem] sm:mt-[2rem] text-[#023047]">
