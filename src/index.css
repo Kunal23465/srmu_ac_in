@@ -56,7 +56,12 @@ html {
   }
 }
 
-.loader {
+#loader {
+  display: none;
+}
+
+#root:empty + #loader,
+#root:empty ~ #loader {
   position: fixed;
   top: 0;
   left: 0;
@@ -85,19 +90,9 @@ html {
   }
 }
 
-body:not(.app-ready) {
-  overflow: hidden;
-}
-
-body:not(.app-ready) #root {
-  visibility: hidden;
-  opacity: 0;
-}
-
-body.app-ready #root {
+#root {
   visibility: visible;
   opacity: 1;
-  transition: opacity 180ms ease;
 }
 
 .banner-section {

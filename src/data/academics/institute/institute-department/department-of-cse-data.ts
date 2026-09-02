@@ -458,7 +458,7 @@ export const cseundergraduateFeeTable: FeeTableData = {
     //   duration: "5 Years",
     //   eligibility: "Click",
     //   fee: "Rs. 1,47,000/-",
-    //   link: "program/b-tech-m-tech-computer-science-engineering",
+    //   link: "program/b-tech-m-tech-cse",
     //   eligibilityContent: `
     //     <h2 class='font-bold text-lg mb-3'>B.Tech. + M.Tech. in Computer Science Engineering</h2>
     //     <p>

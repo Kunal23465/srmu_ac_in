@@ -286,7 +286,7 @@ export const HeaderData = [
               },
               {
                 item: "Grievance Redressal System",
-                path: "/grievance-redressal-system",
+                path: "/campus-life/grievance-redressal-system",
               },
             ],
           },

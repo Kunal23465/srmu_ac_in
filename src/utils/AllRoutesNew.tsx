@@ -276,6 +276,7 @@ export const routes = [
       { path: "/m-b-a-healthcare-hospital-management", element: <DirectProgramDetailsPage /> },
       { path: "/mba-finance-accounting", element: <DirectProgramDetailsPage /> },
       { path: "/msc-horticulture-fruit-science", element: <DirectProgramDetailsPage /> },
+      { path: "/mba-agribusiness-management", element: <DirectProgramDetailsPage /> },
       { path: "/msc-horticulture-veg-sc", element: <DirectProgramDetailsPage /> },
       { path: "/mba-abm", element: <DirectProgramDetailsPage /> },
       { path: "/msc-agronomy", element: <DirectProgramDetailsPage /> },

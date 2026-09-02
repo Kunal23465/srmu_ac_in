@@ -37,7 +37,7 @@
     "react-icons": "^5.5.0",
     "react-intersection-observer": "^10.0.0",
     "react-redux": "^9.2.0",
-    "react-router-dom": "^6.30.3",
+    "react-router-dom": "^7.18.3",
     "react-select": "^5.10.2",
     "tailwindcss": "^4.1.16",
     "yup": "^1.7.1"
@@ -59,7 +59,7 @@
     "eslint-plugin-react-refresh": "^0.4.9",
     "globals": "^15.9.0",
     "lightningcss": "^1.32.0",
-    "sharp": "^0.34.5",
+    "sharp": "^0.35.4",
     "terser": "^5.46.1",
     "ts-node": "^10.9.2",
     "tsx": "^4.21.0",
@@ -70,6 +70,7 @@
   "overrides": {
     "pm2": {
       "ws": "8.20.1"
-    }
+    },
+    "sharp": "^0.35.4"
   }
 }

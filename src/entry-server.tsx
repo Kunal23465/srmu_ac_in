@@ -1,7 +1,8 @@
 import ReactDOMServer from "react-dom/server";
 import { matchRoutes } from "react-router-dom";
-import { StaticRouter } from "react-router-dom/server";
+import { StaticRouter } from "react-router";
 import { HelmetProvider } from "react-helmet-async";
+HelmetProvider.canUseDOM = false;
 import { Provider } from "react-redux";
 import { createStore, type RootState } from "./store";
 import { fetchNotice } from "./store/notice/noticeThunk";

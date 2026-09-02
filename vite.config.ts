@@ -28,6 +28,22 @@ const autoOptimizeImageTags = ({ types: t }: any) => ({
   },
 });
 
+const eliminateRenderBlockingCss = () => ({
+  name: "eliminate-render-blocking-css",
+  transformIndexHtml(html: string) {
+    return html.replace(
+      /<link\s+rel="stylesheet"\s+([^>]*?)href="([^"]+\.css)"([^>]*?)>/gi,
+      (match: string, before: string, href: string, after: string) => {
+        const allAttrs = `${before} ${after}`;
+        if (allAttrs.includes("media=") || allAttrs.includes("data-blocking")) {
+          return match;
+        }
+        return `<link rel="preload" as="style" href="${href}" ${before} ${after} />\n    <link rel="stylesheet" href="${href}" ${before} ${after} media="print" onload="this.media='all'" />\n    <noscript><link rel="stylesheet" href="${href}" ${before} ${after} /></noscript>`;
+      },
+    );
+  },
+});
+
 export default defineConfig(({ isSsrBuild }) => ({
   plugins: [
     react({
@@ -36,6 +52,7 @@ export default defineConfig(({ isSsrBuild }) => ({
       },
     }),
     tailwindcss(),
+    eliminateRenderBlockingCss(),
   ],
 
   css: {
@@ -65,7 +82,6 @@ export default defineConfig(({ isSsrBuild }) => ({
       "rc-select",
       "rc-tree",
       "rc-table",
-      "react-helmet-async",
     ],
   },
 

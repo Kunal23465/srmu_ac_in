@@ -184,7 +184,7 @@ export const InstituteofAgriculturalSciencesandTechnologyData1: FeeTableData = {
       duration: "2 Years",
       eligibility: "Click",
       fee: "Rs. 50,000/-",
-      link: "program/mba-agribusiness-management",
+      link: "program/mba-abm",
       eligibilityContent: `
             <h2 class='font-bold text-lg mb-3  flex justify-center '>M.B.A. in Agribusiness Management</h2>
             <p>Candidate must have passed B.Tech.(Agri. Engg./Biotechnology/Food Tech)/B.Sc.Forestry/B.Sc.(Ag.)/B.Sc.(Horti.)Food Tech or Dairy Tech./B.Sc. Vet. Sci.&Animal Husbandry /B. Sc.Home Sci. from any recognized University or AICTE recognized Institute/College with minimum aggregate marks of 50% or 5.5 CGPA for GEN/OBC and 45% marks or 5.0 CGPA for SC/ST Category.</p>

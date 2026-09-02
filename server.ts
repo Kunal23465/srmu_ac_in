@@ -136,6 +136,50 @@ function replaceTemplateMarker(template: string, marker: string, value: string) 
   return template.replace(markerPattern, value);
 }
 
+function optimizeRenderBlockingAssets(html: string): string {
+  return html.replace(
+    /<link\s+rel="stylesheet"\s+([^>]*?)href="([^"]+\.css)"([^>]*?)>/gi,
+    (match: string, before: string, href: string, after: string) => {
+      const allAttrs = `${before} ${after}`;
+      if (allAttrs.includes("media=") || allAttrs.includes("data-blocking")) {
+        return match;
+      }
+      return `<link rel="preload" as="style" href="${href}" ${before} ${after} />\n    <link rel="stylesheet" href="${href}" ${before} ${after} media="print" onload="this.media='all'" />\n    <noscript><link rel="stylesheet" href="${href}" ${before} ${after} /></noscript>`;
+    },
+  );
+}
+
+function sanitizeAndEnsureHeadTitle(html: string): string {
+  const headEndIndex = html.indexOf("</head>");
+  if (headEndIndex === -1) {
+    return html;
+  }
+
+  let headHtml = html.substring(0, headEndIndex);
+  let bodyHtml = html.substring(headEndIndex);
+
+  // Remove any misplaced <title> tags from body
+  bodyHtml = bodyHtml.replace(/<title[^>]*>[\s\S]*?<\/title>/gi, "");
+
+  // Ensure head has exactly one title tag
+  const titleMatches = headHtml.match(/<title[^>]*>[\s\S]*?<\/title>/gi) || [];
+  if (titleMatches.length === 0) {
+    headHtml = headHtml.replace(
+      /<meta\s+charset="UTF-8"\s*\/?>/i,
+      '<meta charset="UTF-8" />\n    <title>Shri Ramswaroop Memorial University (SRMU) | Top University in Lucknow</title>',
+    );
+  } else if (titleMatches.length > 1) {
+    const chosenTitle = titleMatches[titleMatches.length - 1];
+    headHtml = headHtml.replace(/<title[^>]*>[\s\S]*?<\/title>/gi, "");
+    headHtml = headHtml.replace(
+      /<meta\s+charset="UTF-8"\s*\/?>/i,
+      `<meta charset="UTF-8" />\n    ${chosenTitle}`,
+    );
+  }
+
+  return headHtml + bodyHtml;
+}
+
 function sendHtml(req: express.Request, res: express.Response, statusCode: number, html: string) {
   const acceptEncoding = String(req.headers["accept-encoding"] || "");
   const htmlBuffer = Buffer.from(html);
@@ -357,6 +401,22 @@ async function createServer() {
     res.redirect(301, `${canonicalOrigin}/campus-life/grievance-redressal-system`);
   });
 
+  app.get("/program/mba-agribusiness-management", (req, res) => {
+    res.redirect(301, `${getRequestSiteUrl(req)}/program/mba-abm`);
+  });
+
+  app.get("/mba-agribusiness-management", (req, res) => {
+    res.redirect(301, `${getRequestSiteUrl(req)}/program/mba-abm`);
+  });
+
+  app.get("/program/b-tech-m-tech-computer-science-engineering", (req, res) => {
+    res.redirect(301, `${getRequestSiteUrl(req)}/program/b-tech-m-tech-cse`);
+  });
+
+  app.get("/b-tech-m-tech-computer-science-engineering", (req, res) => {
+    res.redirect(301, `${getRequestSiteUrl(req)}/program/b-tech-m-tech-cse`);
+  });
+
   app.get("/newsletter", (_req, res) => {
     res.redirect(301, `${canonicalOrigin}/news-letter`);
   });
@@ -484,7 +544,8 @@ async function createServer() {
         `<script>window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, "\\u003c")}</script>`,
       );
 
-      sendHtml(req, res, statusCode, html);
+      const processedHtml = sanitizeAndEnsureHeadTitle(optimizeRenderBlockingAssets(html));
+      sendHtml(req, res, statusCode, processedHtml);
     } catch (e) {
       if (vite) vite.ssrFixStacktrace(e as Error);
       process.stderr.write(`${String(e)}\n`);
