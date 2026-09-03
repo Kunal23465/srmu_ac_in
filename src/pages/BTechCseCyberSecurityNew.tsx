@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Classes from "../utils/styles/Global.module.css";
-// ${Classes["container"]}
+
 const BTechCseCyberSecurityNew = () => {
     const [activeTab, setActiveTab] = useState("year1");
 
@@ -9,7 +9,6 @@ const BTechCseCyberSecurityNew = () => {
     };
 
     // Data for the Year Journey Tabs
-
     const yearData = {
         year1: {
             title: "Year 1: Foundations",
@@ -72,23 +71,44 @@ const BTechCseCyberSecurityNew = () => {
             outcome: "Outcome: An industry-ready professional with a portfolio of projects and certifications.",
         },
     };
+
     return (
-        <div className=" text-[#14284E] bg-white antialiased">
+        <div className="text-[#14284E] bg-white antialiased mt-12">
             <main>
-                {/* Hero Section */}
-                <section className="py-16 w-full bg-gradient-to-b from-white to-[#EAF2FB]">
-                    <div className={`${Classes["container"]} grid md:grid-cols-[1.2fr_0.8fr] gap-12.5 items-center`}>
+                {/* ============================================================
+            BANNER / HERO SECTION - All content from DOCX
+            ============================================================ */}
+                <section style={{
+                    backgroundImage: "url('https://ik.imagekit.io/ttalcskjf/Banner%20Image.webp')",
+                }} className="py-16 w-full bg-cover bg-center bg-no-repeat">
+                    <div className={`${Classes["container"]} mt-10 grid md:grid-cols-[1.2fr_0.8fr] gap-12.5 items-center`}>
                         <div>
-                            <span className=" text-[12px] tracking-[0.08em] uppercase text-[#ffc107] font-semibold inline-block mb-4">
+                            {/* Eyebrow / Kicker */}
+                            <span className="text-[12px] tracking-[0.08em] uppercase text-[#ffc107] font-semibold inline-block mb-4">
                                 B.Tech CSE (Cyber Security) — with Larsen &amp; Toubro
                             </span>
+
+                            {/* H1 - B.Tech CSE (Cyber Security) College in Lucknow */}
                             <h1 className="text-[clamp(30px,4vw,46px)] leading-[1.14] font-bold font-display text-[#14284E] mb-4.5">
-                                Learn B.Tech CSE Cyber Security with L&T at SRMU
+                                B.Tech CSE (Cyber Security) College in Lucknow
                             </h1>
-                            <p className="text-[18px] text-[#4B5A72] font-semibold mb-4.5">Build the Skills to Secure the Digital World</p>
+
+                            {/* H2 - Learn B.Tech CSE Cyber Security with L&T at SRMU */}
+                            <h2 className="text-[clamp(20px,2.5vw,28px)] leading-[1.2] font-bold font-display text-[#1B4F91] mb-3">
+                                Learn B.Tech CSE Cyber Security with L&T at SRMU
+                            </h2>
+
+                            {/* Tagline */}
+                            <p className="text-[18px] text-[#4B5A72] font-semibold mb-4.5">
+                                Build the Skills to Secure the Digital World
+                            </p>
+
+                            {/* Description paragraph - exact text from DOCX */}
                             <p className="text-[15.5px] text-[#4B5A72] mb-5.5 max-w-[56ch]">
                                 Pursue B.Tech CSE (Cyber Security) in Lucknow at Shri Ramswaroop Memorial University (SRMU) and develop the technical skills needed to understand, protect, and secure modern digital systems. SRMU is among the institutions students consider when looking for the best B.Tech college in Lucknow for industry-oriented engineering education.
                             </p>
+
+                            {/* Checklist - all 5 items from DOCX */}
                             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 gap-x-4.5 mb-7.5">
                                 <li className="flex gap-2 items-start text-[14.5px] text-[#1B355F] font-medium">
                                     <span className="text-white bg-[#1B4F91] w-[18px] h-[18px] rounded-full flex items-center justify-center text-[11px] mt-0.5 flex-none">✓</span>
@@ -111,6 +131,8 @@ const BTechCseCyberSecurityNew = () => {
                                     Internship and placement support
                                 </li>
                             </ul>
+
+                            {/* CTA Buttons */}
                             <div className="flex flex-wrap gap-3" id="apply">
                                 <a
                                     href="#"
@@ -130,15 +152,11 @@ const BTechCseCyberSecurityNew = () => {
                                 >
                                     Talk to Admission Expert
                                 </a>
-                                <a
-                                    href="#"
-                                    className="bg-white text-[#1B355F] font-bold text-[14px] px-5.5 py-3.25 rounded-md border border-[#DCE6F2] hover:border-[#1B4F91] hover:text-[#1B4F91] transition-all hover:-translate-y-0.5"
-                                >
-                                    WhatsApp Now
-                                </a>
+
                             </div>
                         </div>
 
+                        {/* Right Side - Stats Card */}
                         <div className="bg-[#14284E] rounded-2xl p-8.5 relative overflow-hidden shadow-[0_30px_70px_-25px_rgba(15,31,61,0.55)] text-center">
                             <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[length:16px_16px]"></div>
                             <svg className="w-full max-w-[220px] mx-auto mb-5.5 relative block" viewBox="0 0 200 220" fill="none">
@@ -169,7 +187,9 @@ const BTechCseCyberSecurityNew = () => {
                     </div>
                 </section>
 
-                {/* Trust Bar */}
+                {/* ============================================================
+            TRUST BAR
+            ============================================================ */}
                 <div className="bg-[#14284E] py-6.5">
                     <div className={`${Classes["container"]} mx-auto px-6 grid grid-cols-2 md:grid-cols-5 gap-5 text-center`}>
                         <div>
@@ -195,25 +215,37 @@ const BTechCseCyberSecurityNew = () => {
                     </div>
                 </div>
 
-                {/* Why Cyber Security */}
+                {/* ============================================================
+            WHY STUDY B.TECH CSE CYBER SECURITY IN 2027?
+            ============================================================ */}
                 <section id="why" className="py-[76px] px-6">
                     <div className={`${Classes["container"]}`}>
                         <div className="max-w-[700px] mb-11">
-                            <div className=" text-[12px] tracking-[0.08em] uppercase text-[#ffc107] flex items-center gap-2 mb-3.5">
+                            <div className="text-[12px] tracking-[0.08em] uppercase text-[#ffc107] flex items-center gap-2 mb-3.5">
                                 <span className="w-[22px] h-[2px] bg-[#ffc107] inline-block"></span>
                                 Why Cyber Security
                             </div>
-                            <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3.5">Why Study B.Tech CSE Cyber Security in 2027?</h2>
+                            <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3.5">
+                                Why Study B.Tech CSE Cyber Security in 2027?
+                            </h2>
                         </div>
+
+                        {/* Callout quote - exact text from DOCX */}
                         <div className="bg-white border-l-4 border-[#ffc107] rounded-sm p-6.5 shadow-[0_2px_16px_rgba(15,31,61,0.06)] text-[17px] text-[#14284E] font-semibold italic">
-                            "Will this course still be relevant after four years?" — For Cyber Security, the answer is yes, and the demand is only increasing.
+                            "Will this course still be relevant after four years?" — For cybersecurity, the answer is yes, and the demand continues to grow.
                         </div>
+
+                        {/* Paragraph 1 - exact text from DOCX */}
                         <p className="my-5.5 text-[#4B5A72] text-[15.5px] max-w-[76ch]">
                             Cybersecurity has become important across banks, hospitals, government organizations, e-commerce, manufacturing, technology companies, and cloud-based services. As organizations adopt cloud computing, artificial intelligence, IoT, and digital payments, they need professionals who can identify vulnerabilities, protect data, and respond to security threats.
                         </p>
+
+                        {/* Paragraph 2 - exact text from DOCX */}
                         <p className="my-5.5 text-[#4B5A72] text-[15.5px] max-w-[76ch]">
                             A B.Tech in Computer Science and Engineering with Cyber Security provides students with a foundation in both computer science and information security, making it a relevant choice for students exploring the best B.Tech college in Lucknow for future-focused engineering education.
                         </p>
+
+                        {/* 4 Benefit Cards */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
                             <div className="bg-white border border-[#DCE6F2] rounded-xl p-6 shadow-[0_2px_14px_rgba(15,31,61,0.04)]">
                                 <h3 className="text-[16.5px] font-bold font-display text-[#14284E] mb-2">High Demand</h3>
@@ -235,23 +267,33 @@ const BTechCseCyberSecurityNew = () => {
                     </div>
                 </section>
 
-                {/* B.Tech CSE Cyber Security at SRMU */}
+                {/* ============================================================
+            B.TECH CSE CYBER SECURITY AT SRMU, LUCKNOW
+            ============================================================ */}
                 <section className="py-[76px] px-6 bg-gradient-to-b from-[#F6FAFE] via-[#EAF2FB] to-[#F6FAFE]">
                     <div className={`${Classes["container"]}`}>
                         <div className="max-w-[700px] mb-11">
-                            <div className=" text-[12px] tracking-[0.08em] uppercase text-[#ffc107] flex items-center gap-2 mb-3.5">
+                            <div className="text-[12px] tracking-[0.08em] uppercase text-[#ffc107] flex items-center gap-2 mb-3.5">
                                 <span className="w-[22px] h-[2px] bg-[#ffc107] inline-block"></span>
                                 Program Overview
                             </div>
-                            <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3.5">B.Tech CSE Cyber Security at SRMU, Lucknow</h2>
+                            <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3.5">
+                                B.Tech CSE Cyber Security at SRMU, Lucknow
+                            </h2>
                         </div>
+
                         <div className="bg-white border border-[#DCE6F2] rounded-xl p-7.5">
+                            {/* Paragraph 1 - exact text from DOCX */}
                             <p className="text-[15.5px] text-[#4B5A72] mb-4">
                                 At SRMU, the B.Tech CSE Cyber Security program in Lucknow combines foundational computer science knowledge with cybersecurity concepts and practical exposure.
                             </p>
+
+                            {/* Learning methods - exact text from DOCX */}
                             <p className="text-[15.5px] text-[#4B5A72] mb-4">
                                 Students learn through a combination of:
                             </p>
+
+                            {/* Learning pills - exactly as DOCX: Classroom Learning → Cyber Labs → Projects → Industry Sessions → Internships → Capstone Work */}
                             <div className="flex flex-wrap gap-3 mb-4">
                                 <span className="bg-[#F6FAFE] border border-[#DCE6F2] text-[#1B355F] text-[14px] px-4 py-2 rounded-full font-medium">Classroom Learning</span>
                                 <span className="bg-[#F6FAFE] border border-[#DCE6F2] text-[#1B355F] text-[14px] px-4 py-2 rounded-full font-medium">Cyber Labs</span>
@@ -260,6 +302,8 @@ const BTechCseCyberSecurityNew = () => {
                                 <span className="bg-[#F6FAFE] border border-[#DCE6F2] text-[#1B355F] text-[14px] px-4 py-2 rounded-full font-medium">Internships</span>
                                 <span className="bg-[#F6FAFE] border border-[#DCE6F2] text-[#1B355F] text-[14px] px-4 py-2 rounded-full font-medium">Capstone Work</span>
                             </div>
+
+                            {/* Paragraph 2 - exact text from DOCX */}
                             <p className="text-[15.5px] text-[#4B5A72]">
                                 The program is designed to help students develop practical problem-solving skills alongside their technical knowledge. For students comparing options for the Best B.Tech College in Lucknow, the program's industry-integrated approach with L&T provides an additional focus on practical learning.
                             </p>
@@ -267,19 +311,25 @@ const BTechCseCyberSecurityNew = () => {
                     </div>
                 </section>
 
-                {/* Industry-Integrated Learning with L&T */}
+                {/* ============================================================
+            INDUSTRY-INTEGRATED LEARNING WITH L&T
+            ============================================================ */}
                 <section id="srmu" className="py-[76px] px-6">
                     <div className={`${Classes["container"]}`}>
                         <div className="max-w-[700px] mb-11">
-                            <div className=" text-[12px] tracking-[0.08em] uppercase text-[#ffc107] flex items-center gap-2 mb-3.5">
+                            <div className="text-[12px] tracking-[0.08em] uppercase text-[#ffc107] flex items-center gap-2 mb-3.5">
                                 <span className="w-[22px] h-[2px] bg-[#ffc107] inline-block"></span>
                                 Industry Partnership
                             </div>
-                            <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3.5">Industry-Integrated Learning with L&T</h2>
+                            <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3.5">
+                                Industry-Integrated Learning with L&T
+                            </h2>
+                            {/* Exact text from DOCX */}
                             <p className="text-[16px] text-[#4B5A72]">
                                 The program incorporates industry exposure through L&T, helping students understand how cybersecurity concepts are applied in professional and technology-driven environments.
                             </p>
                         </div>
+
                         <div className="grid md:grid-cols-2 gap-6 items-center">
                             <div>
                                 <h3 className="text-[19px] font-bold font-display text-[#14284E] mb-2.5">Industry Integrated Curriculum with L&T</h3>
@@ -298,27 +348,32 @@ const BTechCseCyberSecurityNew = () => {
                                 </p>
                             </div>
                             <div className="rounded-xl overflow-hidden border border-[#DCE6F2] flex justify-center items-center min-h-[260px] bg-[#f0f4fa]">
-                                <img src="https://ik.imagekit.io/ttalcskjf/Integrated-Curriculum.webp" alt="Industry-Integrated" />
+                                <img src="https://ik.imagekit.io/ttalcskjf/Integrated-Curriculum.webp" alt="Industry-Integrated" className="w-full h-auto" />
                             </div>
                         </div>
                     </div>
                 </section>
 
-                {/* Industry Exposure & Cyber Security Learning */}
+                {/* ============================================================
+            INDUSTRY EXPOSURE & CYBER SECURITY LEARNING AT SRMU, LUCKNOW
+            ============================================================ */}
                 <section className="py-[76px] px-6 bg-gradient-to-b from-[#F6FAFE] via-[#EAF2FB] to-[#F6FAFE]">
                     <div className={`${Classes["container"]}`}>
                         <div className="max-w-[700px] mb-11">
-                            <div className=" text-[12px] tracking-[0.08em] uppercase text-[#ffc107] flex items-center gap-2 mb-3.5">
+                            <div className="text-[12px] tracking-[0.08em] uppercase text-[#ffc107] flex items-center gap-2 mb-3.5">
                                 <span className="w-[22px] h-[2px] bg-[#ffc107] inline-block"></span>
                                 Industry Exposure
                             </div>
-                            <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3.5">Industry Exposure & Cyber Security Learning at SRMU, Lucknow</h2>
+                            <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3.5">
+                                Industry Exposure & Cyber Security Learning at SRMU, Lucknow
+                            </h2>
+                            {/* Exact text from DOCX */}
                             <p className="text-[16px] text-[#4B5A72]">
                                 Cyber security education goes beyond textbooks. At SRMU, students pursuing B.Tech CSE Cyber Security participate in industry sessions, workshops, hackathons, and expert interactions that connect academic concepts with practical security scenarios.
                             </p>
                         </div>
 
-                        {/* Industry & Expert Sessions */}
+                        {/* Industry & Expert Sessions - exact text from DOCX */}
                         <div className="mb-8">
                             <h3 className="text-[19px] font-bold font-display text-[#14284E] mb-4">Industry & Expert Sessions</h3>
                             <p className="text-[15.5px] text-[#4B5A72] mb-6">
@@ -326,7 +381,7 @@ const BTechCseCyberSecurityNew = () => {
                             </p>
                         </div>
 
-                        {/* Guest Lecture 1 */}
+                        {/* Guest Lecture 1: Generative AI - exact text from DOCX */}
                         <div className="bg-white border border-[#DCE6F2] rounded-xl p-7.5 mb-6">
                             <h4 className="text-[17px] font-bold font-display text-[#14284E] mb-2">Guest Lecture: From Code to Creativity - The Rise of Generative AI</h4>
                             <div className="text-[14px] text-[#4B5A72] mb-3">
@@ -350,7 +405,7 @@ const BTechCseCyberSecurityNew = () => {
                             </div>
                         </div>
 
-                        {/* Guest Lecture 2 */}
+                        {/* Guest Lecture 2: OT Security - exact text from DOCX */}
                         <div className="bg-white border border-[#DCE6F2] rounded-xl p-7.5 mb-6">
                             <h4 className="text-[17px] font-bold font-display text-[#14284E] mb-2">Guest Lecture: Securing Industrial Control Systems-OT Security</h4>
                             <div className="text-[14px] text-[#4B5A72] mb-3">
@@ -367,7 +422,7 @@ const BTechCseCyberSecurityNew = () => {
                             </p>
                         </div>
 
-                        {/* Industry Workshop */}
+                        {/* Industry Workshop - exact text from DOCX */}
                         <div className="bg-white border border-[#DCE6F2] rounded-xl p-7.5">
                             <h4 className="text-[17px] font-bold font-display text-[#14284E] mb-2">INDUSTRY WORKSHOP: Networking with Ethical Hacking & Android Development</h4>
                             <div className="text-[14px] text-[#4B5A72] mb-3">
@@ -395,16 +450,22 @@ const BTechCseCyberSecurityNew = () => {
                     </div>
                 </section>
 
-                {/* Lab List */}
+                {/* ============================================================
+            LABS & FACILITIES
+            ============================================================ */}
                 <section className="py-[76px] px-6">
                     <div className={`${Classes["container"]}`}>
                         <div className="max-w-[700px] mb-11">
-                            <div className=" text-[12px] tracking-[0.08em] uppercase text-[#ffc107] flex items-center gap-2 mb-3.5">
+                            <div className="text-[12px] tracking-[0.08em] uppercase text-[#ffc107] flex items-center gap-2 mb-3.5">
                                 <span className="w-[22px] h-[2px] bg-[#ffc107] inline-block"></span>
                                 Labs & Facilities
                             </div>
-                            <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3.5">Hands-on Cybersecurity Labs</h2>
+                            <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3.5">
+                                Hands-on Cybersecurity Labs
+                            </h2>
                         </div>
+
+                        {/* Lab 1 */}
                         <div className="bg-white border border-[#DCE6F2] rounded-xl p-6.5 mb-4.5">
                             <div className="flex justify-between items-start gap-4 flex-wrap mb-3.5">
                                 <h3 className="text-[19px] font-bold font-display text-[#14284E]">Cyber Security & Digital Forensics Lab</h3>
@@ -420,6 +481,8 @@ const BTechCseCyberSecurityNew = () => {
                                 <span className="bg-[#F6FAFE] border border-[#DCE6F2] text-[#1B355F] text-[13px] px-3.25 py-1.75 rounded-full font-medium">Autopsy</span>
                             </div>
                         </div>
+
+                        {/* Lab 2 */}
                         <div className="bg-white border border-[#DCE6F2] rounded-xl p-6.5">
                             <div className="flex justify-between items-start gap-4 flex-wrap mb-3.5">
                                 <h3 className="text-[19px] font-bold font-display text-[#14284E]">Network Security & Operations Lab</h3>
@@ -438,16 +501,22 @@ const BTechCseCyberSecurityNew = () => {
                     </div>
                 </section>
 
-                {/* 4-Year Journey (Tabs) */}
+                {/* ============================================================
+            4-YEAR JOURNEY (Tabs)
+            ============================================================ */}
                 <section id="journey" className="py-[76px] px-6 bg-gradient-to-b from-[#F6FAFE] via-[#EAF2FB] to-[#F6FAFE]">
                     <div className={`${Classes["container"]} mx-auto`}>
                         <div className="max-w-[700px] mb-11">
-                            <div className=" text-[12px] tracking-[0.08em] uppercase text-[#ffc107] flex items-center gap-2 mb-3.5">
+                            <div className="text-[12px] tracking-[0.08em] uppercase text-[#ffc107] flex items-center gap-2 mb-3.5">
                                 <span className="w-[22px] h-[2px] bg-[#ffc107] inline-block"></span>
                                 Your 4-Year Journey
                             </div>
-                            <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E]">From Foundations to Industry Expert</h2>
+                            <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E]">
+                                From Foundations to Industry Expert
+                            </h2>
                         </div>
+
+                        {/* Tab Buttons */}
                         <div className="flex flex-wrap gap-2.5 mb-6.5">
                             <button
                                 className={`font-display font-semibold text-[13.5px] px-5 py-2.75 rounded-lg border-[1.5px] transition-colors cursor-pointer ${activeTab === "year1" ? "bg-[#14284E] border-[#14284E] text-white" : "bg-white border-[#DCE6F2] text-[#4B5A72] hover:bg-[#EAF2FB]"}`}
@@ -475,13 +544,14 @@ const BTechCseCyberSecurityNew = () => {
                             </button>
                         </div>
 
+                        {/* Tab Panels */}
                         {Object.keys(yearData).map((key) => (
                             <div key={key} className={`${activeTab === key ? "block" : "hidden"} bg-white border border-[#DCE6F2] rounded-xl p-7.5`}>
                                 <div className="italic text-[#ffc107] font-semibold mb-5 text-[15px]">{yearData[key].quote}</div>
                                 <div className="grid md:grid-cols-2 gap-6.5">
                                     {yearData[key].cols.map((col, index) => (
                                         <div key={index}>
-                                            <h4 className=" text-[11.5px] uppercase tracking-[0.04em] text-[#1B4F91] mb-2.5">{col.heading}</h4>
+                                            <h4 className="text-[11.5px] uppercase tracking-[0.04em] text-[#1B4F91] mb-2.5">{col.heading}</h4>
                                             <ul>
                                                 {col.items.map((item, idx) => (
                                                     <li key={idx} className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E] last:border-b-0">
@@ -500,64 +570,71 @@ const BTechCseCyberSecurityNew = () => {
                     </div>
                 </section>
 
-                {/* Career Pathways (Flips) */}
+                {/* ============================================================
+            CAREER PATHWAYS
+            ============================================================ */}
                 <section className="py-[76px] px-6">
                     <div className={`${Classes["container"]} mx-auto`}>
                         <div className="max-w-[700px] mb-11">
-                            <div className=" text-[12px] tracking-[0.08em] uppercase text-[#ffc107] flex items-center gap-2 mb-3.5">
+                            <div className="text-[12px] tracking-[0.08em] uppercase text-[#ffc107] flex items-center gap-2 mb-3.5">
                                 <span className="w-[22px] h-[2px] bg-[#ffc107] inline-block"></span>
                                 Career Pathways
                             </div>
-                            <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E]">Your Future in Cyber Security</h2>
+                            <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E]">
+                                Your Future in Cyber Security
+                            </h2>
                         </div>
+
                         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 perspective-[1200px]">
-                            {/* Career Card 1 */}
+                            {/* Career Card 1: Security Analyst */}
                             <div className="relative h-[250px] group [perspective:1200px]">
                                 <div className="relative w-full h-full text-left transition-transform duration-550 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] group-focus-within:[transform:rotateY(180deg)]">
                                     <div className="absolute inset-0 [backface-visibility:hidden] rounded-xl p-6 flex flex-col bg-white border border-[#DCE6F2] shadow-[0_4px_18px_rgba(15,31,61,0.05)]">
                                         <div className="w-[46px] h-[46px] rounded-xl bg-[#F6FAFE] border border-[#DCE6F2] flex items-center justify-center text-[22px] mb-3.5">🛡️</div>
                                         <h3 className="text-[16.5px] font-bold font-display text-[#14284E] mb-2 leading-[1.25]">Security Analyst</h3>
                                         <div className="text-[13px] text-[#4B5A72] italic">Monitor and defend network infrastructure.</div>
-                                        <div className="mt-auto  text-[10.5px] text-[#7688A2] uppercase tracking-[0.04em] flex items-center gap-1.5">Hover to learn more →</div>
+                                        <div className="mt-auto text-[10.5px] text-[#7688A2] uppercase tracking-[0.04em] flex items-center gap-1.5">Hover to learn more →</div>
                                     </div>
                                     <div className="absolute inset-0 [backface-visibility:hidden] rounded-xl p-6 flex flex-col bg-[#14284E] text-white [transform:rotateY(180deg)] overflow-hidden">
-                                        <div className=" text-[10px] uppercase text-[#ffc107] tracking-[0.05em] mb-2 mt-2.5 first:mt-0">Key Skills</div>
+                                        <div className="text-[10px] uppercase text-[#ffc107] tracking-[0.05em] mb-2 mt-2.5 first:mt-0">Key Skills</div>
                                         <div className="text-[12.5px] text-[#DCE6F2] leading-6">Network Security, SIEM, Vulnerability Management, Incident Response</div>
-                                        <div className=" text-[10px] uppercase text-[#ffc107] tracking-[0.05em] mb-2 mt-2.5">Average Salary (INR)</div>
+                                        <div className="text-[10px] uppercase text-[#ffc107] tracking-[0.05em] mb-2 mt-2.5">Average Salary (INR)</div>
                                         <div className="text-[12.5px] text-[#DCE6F2] leading-6">6-12 LPA</div>
                                     </div>
                                 </div>
                             </div>
-                            {/* Career Card 2 */}
+
+                            {/* Career Card 2: Penetration Tester */}
                             <div className="relative h-[250px] group [perspective:1200px]">
                                 <div className="relative w-full h-full text-left transition-transform duration-550 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] group-focus-within:[transform:rotateY(180deg)]">
                                     <div className="absolute inset-0 [backface-visibility:hidden] rounded-xl p-6 flex flex-col bg-white border border-[#DCE6F2] shadow-[0_4px_18px_rgba(15,31,61,0.05)]">
                                         <div className="w-[46px] h-[46px] rounded-xl bg-[#F6FAFE] border border-[#DCE6F2] flex items-center justify-center text-[22px] mb-3.5">🔍</div>
                                         <h3 className="text-[16.5px] font-bold font-display text-[#14284E] mb-2 leading-[1.25]">Penetration Tester</h3>
                                         <div className="text-[13px] text-[#4B5A72] italic">Ethically hack systems to find vulnerabilities.</div>
-                                        <div className="mt-auto  text-[10.5px] text-[#7688A2] uppercase tracking-[0.04em] flex items-center gap-1.5">Hover to learn more →</div>
+                                        <div className="mt-auto text-[10.5px] text-[#7688A2] uppercase tracking-[0.04em] flex items-center gap-1.5">Hover to learn more →</div>
                                     </div>
                                     <div className="absolute inset-0 [backface-visibility:hidden] rounded-xl p-6 flex flex-col bg-[#14284E] text-white [transform:rotateY(180deg)] overflow-hidden">
-                                        <div className=" text-[10px] uppercase text-[#ffc107] tracking-[0.05em] mb-2 mt-2.5 first:mt-0">Key Skills</div>
+                                        <div className="text-[10px] uppercase text-[#ffc107] tracking-[0.05em] mb-2 mt-2.5 first:mt-0">Key Skills</div>
                                         <div className="text-[12.5px] text-[#DCE6F2] leading-6">Web App Security, Network Security, Ethical Hacking, Python, Kali Linux</div>
-                                        <div className=" text-[10px] uppercase text-[#ffc107] tracking-[0.05em] mb-2 mt-2.5">Average Salary (INR)</div>
+                                        <div className="text-[10px] uppercase text-[#ffc107] tracking-[0.05em] mb-2 mt-2.5">Average Salary (INR)</div>
                                         <div className="text-[12.5px] text-[#DCE6F2] leading-6">8-15 LPA</div>
                                     </div>
                                 </div>
                             </div>
-                            {/* Career Card 3 */}
+
+                            {/* Career Card 3: Security Architect */}
                             <div className="relative h-[250px] group [perspective:1200px]">
                                 <div className="relative w-full h-full text-left transition-transform duration-550 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] group-focus-within:[transform:rotateY(180deg)]">
                                     <div className="absolute inset-0 [backface-visibility:hidden] rounded-xl p-6 flex flex-col bg-white border border-[#DCE6F2] shadow-[0_4px_18px_rgba(15,31,61,0.05)]">
                                         <div className="w-[46px] h-[46px] rounded-xl bg-[#F6FAFE] border border-[#DCE6F2] flex items-center justify-center text-[22px] mb-3.5">⚖️</div>
                                         <h3 className="text-[16.5px] font-bold font-display text-[#14284E] mb-2 leading-[1.25]">Security Architect</h3>
                                         <div className="text-[13px] text-[#4B5A72] italic">Design and build secure systems from the ground up.</div>
-                                        <div className="mt-auto  text-[10.5px] text-[#7688A2] uppercase tracking-[0.04em] flex items-center gap-1.5">Hover to learn more →</div>
+                                        <div className="mt-auto text-[10.5px] text-[#7688A2] uppercase tracking-[0.04em] flex items-center gap-1.5">Hover to learn more →</div>
                                     </div>
                                     <div className="absolute inset-0 [backface-visibility:hidden] rounded-xl p-6 flex flex-col bg-[#14284E] text-white [transform:rotateY(180deg)] overflow-hidden">
-                                        <div className=" text-[10px] uppercase text-[#ffc107] tracking-[0.05em] mb-2 mt-2.5 first:mt-0">Key Skills</div>
+                                        <div className="text-[10px] uppercase text-[#ffc107] tracking-[0.05em] mb-2 mt-2.5 first:mt-0">Key Skills</div>
                                         <div className="text-[12.5px] text-[#DCE6F2] leading-6">Security Design, Cloud Security, Cryptography, Network Architecture, Risk Management</div>
-                                        <div className=" text-[10px] uppercase text-[#ffc107] tracking-[0.05em] mb-2 mt-2.5">Average Salary (INR)</div>
+                                        <div className="text-[10px] uppercase text-[#ffc107] tracking-[0.05em] mb-2 mt-2.5">Average Salary (INR)</div>
                                         <div className="text-[12.5px] text-[#DCE6F2] leading-6">15-25 LPA</div>
                                     </div>
                                 </div>
@@ -566,11 +643,13 @@ const BTechCseCyberSecurityNew = () => {
                     </div>
                 </section>
 
-                {/* Quick Facts */}
+                {/* ============================================================
+            QUICK FACTS
+            ============================================================ */}
                 <section className="py-[76px] px-6 bg-gradient-to-b from-[#F6FAFE] via-[#EAF2FB] to-[#F6FAFE]">
                     <div className={`${Classes["container"]}`}>
                         <div className="max-w-[700px] mb-6">
-                            <div className=" text-[12px] tracking-[0.08em] uppercase text-[#ffc107] flex items-center gap-2 mb-3.5">
+                            <div className="text-[12px] tracking-[0.08em] uppercase text-[#ffc107] flex items-center gap-2 mb-3.5">
                                 <span className="w-[22px] h-[2px] bg-[#ffc107] inline-block"></span>
                                 Quick Facts
                             </div>
@@ -635,17 +714,23 @@ const BTechCseCyberSecurityNew = () => {
                     </div>
                 </section>
 
-                {/* Fee & Admission Section */}
+                {/* ============================================================
+            FEE & ADMISSION SECTION
+            ============================================================ */}
                 <section id="fee" className="py-[76px] px-6 bg-gradient-to-b from-[#F6FAFE] via-[#EAF2FB] to-[#F6FAFE]">
                     <div className={`${Classes["container"]} mx-auto`}>
                         <div className="max-w-[700px] mb-11">
-                            <div className=" text-[12px] tracking-[0.08em] uppercase text-[#ffc107] flex items-center gap-2 mb-3.5">
+                            <div className="text-[12px] tracking-[0.08em] uppercase text-[#ffc107] flex items-center gap-2 mb-3.5">
                                 <span className="w-[22px] h-[2px] bg-[#ffc107] inline-block"></span>
                                 Admissions & Fee
                             </div>
-                            <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E]">Start Your Journey with SRMU</h2>
+                            <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E]">
+                                Start Your Journey with SRMU
+                            </h2>
                         </div>
+
                         <div className="grid md:grid-cols-2 gap-6 items-start">
+                            {/* Fee Table */}
                             <div>
                                 <h3 className="text-[19px] font-bold font-display text-[#14284E] mb-4">Program Fee</h3>
                                 <table className="w-full border-collapse bg-white border border-[#DCE6F2] rounded-xl overflow-hidden">
@@ -676,6 +761,8 @@ const BTechCseCyberSecurityNew = () => {
                                 </table>
                                 <div className="text-[13px] text-[#7688A2] mt-3">* Fees are subject to revision. Scholarships available for meritorious students.</div>
                             </div>
+
+                            {/* Admission Process */}
                             <div>
                                 <h3 className="text-[19px] font-bold font-display text-[#14284E] mb-4">Admission Process</h3>
                                 <div className="[counter-reset:step]">
@@ -713,15 +800,22 @@ const BTechCseCyberSecurityNew = () => {
                     </div>
                 </section>
 
-                {/* Final CTA */}
+                {/* ============================================================
+            FINAL CTA
+            ============================================================ */}
                 <div className={`${Classes["container"]} px-6 my-10`}>
                     <div className="text-center bg-[#14284E] rounded-[20px] py-16 px-7.5">
-                        <h2 className="text-[clamp(24px,3.2vw,34px)] font-bold font-display text-white mb-3">Ready to build a career in Cyber Security?</h2>
+                        <h2 className="text-[clamp(24px,3.2vw,34px)] font-bold font-display text-white mb-3">
+                            Ready to build a career in Cyber Security?
+                        </h2>
                         <p className="text-[#C7D3E6] max-w-[52ch] mx-auto mb-6.5">
                             Join SRMU's B.Tech CSE program with L&T and become an industry-ready expert. Apply now for the upcoming academic year.
                         </p>
                         <div className="flex flex-wrap gap-3 justify-center">
-                            <a href="#" className="bg-[#ffc107] text-white font-bold text-[14px] px-5.5 py-3.25 rounded-md hover:bg-[#8F5A16] transition-all hover:-translate-y-0.5">
+                            <a
+                                href="#"
+                                className="bg-[#ffc107] text-white font-bold text-[14px] px-5.5 py-3.25 rounded-md hover:bg-[#8F5A16] transition-all hover:-translate-y-0.5"
+                            >
                                 Apply Now
                             </a>
                             <a
@@ -730,12 +824,7 @@ const BTechCseCyberSecurityNew = () => {
                             >
                                 Download Brochure
                             </a>
-                            <a
-                                href="#"
-                                className="bg-transparent text-white font-bold text-[14px] px-5.5 py-3.25 rounded-md border border-white/50 hover:border-white transition-all hover:-translate-y-0.5"
-                            >
-                                WhatsApp Now
-                            </a>
+
                         </div>
                     </div>
                 </div>
