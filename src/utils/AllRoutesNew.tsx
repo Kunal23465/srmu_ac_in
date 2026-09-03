@@ -3,6 +3,7 @@ import { Navigate, matchRoutes, useRoutes } from "react-router-dom";
 import { lazyPage } from "./lazyRoute";
 import NewHomePage from "../pages/NewHomePage";
 import { resolveProgramRouteSlug } from "./legacyProgramRoutes";
+import BTechCseCyberSecurityNew from "../pages/BTechCseCyberSecurityNew";
 
 const HomePage = lazyPage(() => import("../pages/Home/HomePage"));
 const PageNotFound = lazyPage(() => import("../pages/PageNotFound"));
@@ -152,6 +153,12 @@ export const routes = [
         element: <HomePage />,
       },
       {
+        path: "b-tech-cse-cyber-security-new",
+        element: <BTechCseCyberSecurityNew />,
+      },
+
+      // BTechCseCyberSecurityNew
+      {
         path: "career/career-form",
         element: <CareerFormPage />,
       },
@@ -276,7 +283,7 @@ export const routes = [
       { path: "/m-b-a-healthcare-hospital-management", element: <DirectProgramDetailsPage /> },
       { path: "/mba-finance-accounting", element: <DirectProgramDetailsPage /> },
       { path: "/msc-horticulture-fruit-science", element: <DirectProgramDetailsPage /> },
-      { path: "/mba-agribusiness-management", element: <DirectProgramDetailsPage /> },
+
       { path: "/msc-horticulture-veg-sc", element: <DirectProgramDetailsPage /> },
       { path: "/mba-abm", element: <DirectProgramDetailsPage /> },
       { path: "/msc-agronomy", element: <DirectProgramDetailsPage /> },
