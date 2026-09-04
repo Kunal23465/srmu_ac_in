@@ -132,8 +132,8 @@ export const ALL_TARGET_BLOGS: ArticleLink[] = [
 ];
 
 export const TARGET_PROGRAM_LINKS: ProgramLink[] = [
-  { title: "B.Tech CSE in Cyber Security", path: "/b-tech-cse-cyber-security" },
-  { title: "BBA in Business Analytics", path: "/bba-business-analytics" },
+  { title: "B.Tech CSE in Cyber Security", path: "/program/b-tech-cse-cyber-security" },
+  { title: "BBA in Business Analytics", path: "/program/bba-business-analytics" },
   { title: "Diploma in Electronics & Communication", path: "/program/diploma-electronics-communication-engineering" },
   { title: "SRMU Newsletter", path: "/news-letter" }
 ];

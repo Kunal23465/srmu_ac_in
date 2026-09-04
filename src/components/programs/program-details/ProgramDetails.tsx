@@ -376,6 +376,7 @@ const ProgramDetails: React.FC = () => {
         title={seoTitle}
         description={seoDescription}
         pathname={location.pathname}
+        canonicalPath={`/program/${normalizedProgramSlug}`}
         image={DEFAULT_SOCIAL_IMAGE}
         jsonLd={parsedSchema}
       />

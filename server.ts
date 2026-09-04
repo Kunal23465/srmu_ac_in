@@ -449,7 +449,8 @@ async function createServer() {
         return;
       }
 
-      res.redirect(301, `${getRequestSiteUrl(req)}/program/${canonicalProgramSlug}`);
+      const queryStr = req.url.includes("?") ? req.url.slice(req.url.indexOf("?")) : "";
+      res.redirect(301, `${getRequestSiteUrl(req)}/program/${canonicalProgramSlug}${queryStr}`);
     } catch (error) {
       process.stderr.write(`PROGRAM REDIRECT MAP ERROR: ${String(error)}\n`);
       next();

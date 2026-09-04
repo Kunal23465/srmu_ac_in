@@ -1,14 +1,22 @@
-import ProgramDetails from "../../../components/programs/program-details/ProgramDetails";
+import { Navigate, useLocation } from "react-router-dom";
+import { resolveProgramRouteSlug } from "../../../utils/legacyProgramRoutes";
 
 /**
- * Renders the program details page for "direct" program URLs such as
- * /b-tech-cse-cyber-security (as opposed to the canonical /program/:programName).
- *
- * ProgramDetails falls back to extracting the slug from location.pathname when
- * the "programName" route param is absent (which it will be for these routes).
+ * Redirects legacy direct program URLs (such as /b-tech-cse-cyber-security)
+ * to their single canonical primary URL (/program/b-tech-cse-cyber-security).
  */
 const DirectProgramDetailsPage = () => {
-  return <ProgramDetails />;
+  const location = useLocation();
+  const rawSlug = location.pathname.replace(/^\/+/, "").replace(/\/+$/, "");
+  const canonicalSlug = resolveProgramRouteSlug(rawSlug) || rawSlug;
+
+  return (
+    <Navigate
+      to={`/program/${canonicalSlug}${location.search}${location.hash}`}
+      replace
+    />
+  );
 };
 
 export default DirectProgramDetailsPage;
+
