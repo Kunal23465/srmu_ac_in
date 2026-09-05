@@ -1,9 +1,54 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Classes from "../utils/styles/Global.module.css";
-import { ArrowRight, Download, PhoneCall, Sparkles, BookOpen, Shield, Award, Trophy, CheckCircle2, Code2, Lock, Cpu, Compass } from "lucide-react";
+import useEmblaCarousel from "embla-carousel-react";
+import { ArrowLeft, ArrowRight, Download, PhoneCall, Sparkles, BookOpen, Shield, Award, Trophy, CheckCircle2, Code2, Lock, Cpu, Compass } from "lucide-react";
+import { Link } from "react-router-dom";
+
+const recruiterLogos = [
+    ["https://ik.imagekit.io/ttalcskjf/tcs.webp", "TCS"],
+    ["https://ik.imagekit.io/ttalcskjf/infosys.webp", "Infosys"],
+    ["https://ik.imagekit.io/ttalcskjf/Wipro.webp", "Wipro"],
+    ["https://ik.imagekit.io/ttalcskjf/l-t.webp?updatedAt=1788591605708", "L&T"],
+    ["https://ik.imagekit.io/ttalcskjf/images.png", "HCL Technologies"],
+    ["https://ik.imagekit.io/ttalcskjf/Accenture.webp", "Accenture"],
+    ["https://ik.imagekit.io/ttalcskjf/capgemini.webp", "Capgemini"],
+    ["https://ik.imagekit.io/ttalcskjf/TM.webp", "Tech Mahindra"],
+    ["https://ik.imagekit.io/ttalcskjf/IBM.webp", "IBM"],
+    ["https://ik.imagekit.io/ttalcskjf/Cognizant_logo_2022.svg.webp", "Cognizant"],
+    ["https://ik.imagekit.io/ttalcskjf/Deloitte.webp", "Deloitte"],
+    ["https://ik.imagekit.io/ttalcskjf/EY.webp", "EY"],
+] as const;
 
 const BTechCseCyberSecurityNew = () => {
     const [activeTab, setActiveTab] = useState("year1");
+    const [openSection, setOpenSection] = useState<string | null>("objectives");
+    const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "start" });
+    const [canScrollPrev, setCanScrollPrev] = useState(false);
+    const [canScrollNext, setCanScrollNext] = useState(true);
+
+    const toggleSection = (section: string) => {
+        setOpenSection((currentSection) => currentSection === section ? null : section);
+    };
+
+    useEffect(() => {
+        if (!emblaApi) return;
+
+        const updateScrollState = () => {
+            setCanScrollPrev(emblaApi.canScrollPrev());
+            setCanScrollNext(emblaApi.canScrollNext());
+        };
+
+        updateScrollState();
+        emblaApi.on("select", updateScrollState);
+        emblaApi.on("reInit", updateScrollState);
+
+        const autoplay = window.setInterval(() => emblaApi.scrollNext(), 3500);
+        return () => {
+            window.clearInterval(autoplay);
+            emblaApi.off("select", updateScrollState);
+            emblaApi.off("reInit", updateScrollState);
+        };
+    }, [emblaApi]);
 
     const handleTabClick = (tab) => {
         setActiveTab(tab);
@@ -1036,21 +1081,25 @@ const BTechCseCyberSecurityNew = () => {
                                 </h3>
 
                                 <p className="text-[14px] leading-7 text-[#4B5A72] mb-5">
-                                    Career Counselling at Shri Ramswaroop Memorial University offers
-                                    counselling to students, guiding the young minds by helping them
-                                    to understand their strength and also to sail through at all
-                                    levels in the job market.
+                                    SRMU offers limited scholarships to support meritorious and deserving students at the time of admission. Scholarships are awarded strictly as per approved eligibility criteria and are applicable only in the first year of admission.
                                 </p>
 
-                                <a
-                                    href="#"
+                                <Link to="https://srmu.ac.in/scholarship-scheme"
+                                    target="_blank"
                                     className="inline-flex items-center bg-[#ffc107] hover:bg-[#D78610] text-[#14284E] font-semibold text-[14.5px] px-5 py-3 rounded-md transition-colors"
                                 >
                                     View Details →
-                                </a>
+                                </Link>
                             </div>
 
                             {/* Right */}
+
+
+
+
+
+
+
                             <div className="grid md:grid-cols-2 gap-x-10 gap-y-5">
 
                                 <div className="flex items-start gap-2.5">
@@ -1058,7 +1107,7 @@ const BTechCseCyberSecurityNew = () => {
                                         ✓
                                     </span>
                                     <span className="text-[14px] leading-5 text-[#1B355F]">
-                                        SRMUEST (Shri Ramswaroop Memorial University Scholarship Entrance Test)
+                                        Merit and SET-Based scholarships applicable only for First Year.
                                     </span>
                                 </div>
 
@@ -1076,7 +1125,7 @@ const BTechCseCyberSecurityNew = () => {
                                         ✓
                                     </span>
                                     <span className="text-[14px] leading-5 text-[#1B355F]">
-                                        Students Opting For Career Progression
+                                        Scholarships are available under limited seats in all categories.
                                     </span>
                                 </div>
 
@@ -1085,7 +1134,7 @@ const BTechCseCyberSecurityNew = () => {
                                         ✓
                                     </span>
                                     <span className="text-[14px] leading-5 text-[#1B355F]">
-                                        Ward of Defense Persons/ Central Government/ State Government Employees
+                                        Only one scholarship scheme can be availed by a student.
                                     </span>
                                 </div>
 
@@ -1094,7 +1143,8 @@ const BTechCseCyberSecurityNew = () => {
                                         ✓
                                     </span>
                                     <span className="text-[14px] leading-5 text-[#1B355F]">
-                                        Ward of Martyrs
+                                        Special scholarships are granted subject to submission of satisfactory documents and approval.
+
                                     </span>
                                 </div>
 
@@ -1103,11 +1153,11 @@ const BTechCseCyberSecurityNew = () => {
                                         ✓
                                     </span>
                                     <span className="text-[14px] leading-5 text-[#1B355F]">
-                                        For National/ State Level Sportsperson
+                                        Scholarship may be withdrawn in case of delayed or non-payment of fees.
                                     </span>
                                 </div>
 
-                                <div className="flex items-start gap-2.5">
+                                {/* <div className="flex items-start gap-2.5">
                                     <span className="w-5 h-5 shrink-0 rounded-full bg-[#1B5A9D] text-white flex items-center justify-center text-[11px]">
                                         ✓
                                     </span>
@@ -1132,7 +1182,7 @@ const BTechCseCyberSecurityNew = () => {
                                     <span className="text-[14px] leading-5 text-[#1B355F]">
                                         EWS (Economically Weaker Section)
                                     </span>
-                                </div>
+                                </div> */}
 
                             </div>
                         </div>
@@ -1342,6 +1392,214 @@ const BTechCseCyberSecurityNew = () => {
 
                     </div>
                 </section> */}
+
+                <section className="py-[70px] px-6 ">
+                    <div className={`${Classes["container"]} mx-auto`}>
+
+                        {/* Heading */}
+                        <h2 className="text-center text-[clamp(32px,4vw,48px)] leading-[1.1] font-bold font-display text-[#07324A] mb-16">
+                            PO, PLO & PSO
+                        </h2>
+
+                        {/* PROGRAM OBJECTIVES */}
+                        <div className="border-t border-[#CBD5DF]">
+
+                            <button
+                                type="button"
+                                onClick={() => toggleSection("objectives")}
+                                className="w-full flex items-stretch text-left cursor-pointer"
+                            >
+                                <div className="flex-1 py-8 pr-6">
+                                    <h3 className="text-[22px] font-bold text-[#102D43]">
+                                        Program Objectives
+                                    </h3>
+
+                                    {openSection === "objectives" && (
+                                        <ul className="mt-8 pl-5 space-y-2 text-[15.5px] leading-6 text-[#14284E] list-disc">
+                                            <li>
+                                                To impart deep technical knowledge about the field of
+                                                computer science and engineering.
+                                            </li>
+
+                                            <li>
+                                                To develop an understanding of computer science and
+                                                engineering at different levels of abstraction including
+                                                computer architecture and design, operating systems,
+                                                database management, algorithms and applications.
+                                            </li>
+
+                                            <li>
+                                                To aware students with a strong foundation in the field
+                                                of Mathematical and basics of engineering fundamentals
+                                                necessary to analyze and evaluate real world engineering
+                                                problems and to further prepare them for higher studies,
+                                                R&amp;D.
+                                            </li>
+
+                                            <li>
+                                                To develop life-long learning attitude among students and
+                                                to make them aware about professional and social
+                                                responsibility.
+                                            </li>
+
+                                            <li>
+                                                To inculcate an understanding among the students for
+                                                utilizing their knowledge of computer engineering and
+                                                mathematical theory to solve current and future computing
+                                                problems.
+                                            </li>
+
+                                            <li>
+                                                To inspire leadership and professional values in the
+                                                students.
+                                            </li>
+                                        </ul>
+                                    )}
+                                </div>
+
+                                <div className="w-[90px] shrink-0 border-l border-[#CBD5DF] flex items-start justify-center pt-7">
+                                    <span className="text-[34px] leading-none font-light text-[#202B32]">
+                                        {openSection === "objectives" ? "↓" : "→"}
+                                    </span>
+                                </div>
+                            </button>
+
+                        </div>
+
+                        {/* PROGRAM LEARNING OUTCOMES */}
+                        <div className="border-t border-[#CBD5DF]">
+                            <button
+                                type="button"
+                                onClick={() => toggleSection("outcomes")}
+                                className="w-full flex items-stretch text-left cursor-pointer"
+                            >
+                                <div className="flex-1 py-8 pr-6">
+                                    <h3 className="text-[22px] font-bold text-[#102D43]">
+                                        Program Learning Outcomes
+                                    </h3>
+
+                                    {openSection === "outcomes" && (
+                                        <div className="mt-7">
+                                            <ul className="pl-5 space-y-2 text-[15.5px] leading-6 text-[#14284E] list-disc">
+                                                <li>
+                                                    Apply possessed knowledge of core subjects of production and industrial engineering to solve different problems.
+                                                </li>
+
+                                                <li>
+                                                    Problem analysis: Identify, formulate, research literature, and analyze complex engineering problems reaching substantiated conclusions using first principles of mathematics, natural sciences, and engineering sciences.
+                                                </li>
+
+                                                <li>
+                                                    Design/development of solutions: Design solutions for complex engineering problems and design system components or processes that meet the specified needs with appropriate consideration for the public health and safety, and the cultural, societal, and environmental considerations.
+                                                </li>
+
+                                                <li>
+                                                    Conduct investigations of complex problems: Use research-based knowledge and research methods including design of experiments, analysis and interpretation of data, and synthesis of the information to provide valid conclusions.
+                                                </li>
+
+                                                <li>
+                                                    Modern tool usage: Create, select, and apply appropriate techniques, resources, and modern engineering and IT tools including prediction and modeling to complex engineering activities with an understanding of the limitations.
+                                                </li>
+
+                                                <li>
+                                                    The engineer and society: Apply reasoning informed by the contextual knowledge to assess societal, health, safety, legal and cultural issues and the consequent responsibilities relevant to the professional engineering practice.
+                                                </li>
+
+                                                <li>
+                                                    Environment and sustainability: Understand the impact of the professional engineering solutions in societal and environmental contexts, and demonstrate the knowledge of, and need for sustainable development.
+                                                </li>
+
+                                                <li>
+                                                    Ethics: Apply ethical principles and commit to professional ethics and responsibilities and norms of the engineering practice.
+                                                </li>
+
+                                                <li>
+                                                    Individual and team work: Function effectively as an individual, and as a member or leader in diverse teams, and in multidisciplinary settings.
+                                                </li>
+
+                                                <li>
+                                                    Communication: Communicate effectively on complex engineering activities with the engineering community and with society at large, such as, being able to comprehend and write effective reports and design documentation, make effective presentations, and give and receive clear instructions.
+                                                </li>
+
+                                                <li>
+                                                    Project management and finance: Demonstrate knowledge and understanding of the engineering and management principles and apply these to one’s own work, as a member and leader in a team, to manage projects and in multidisciplinary environments.
+                                                </li>
+
+                                                <li>
+                                                    Life-long learning: Recognize the need for, and have the preparation and ability to engage in independent and life-long learning in the broadest context of technological change.
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    )}
+                                </div>
+
+                                <div className="w-[90px] shrink-0 border-l border-[#CBD5DF] flex items-start justify-center pt-7">
+                                    <span className="text-[34px] leading-none font-light text-[#202B32]">
+                                        {openSection === "outcomes" ? "↓" : "→"}
+                                    </span>
+                                </div>
+                            </button>
+                        </div>
+
+                        {/* PROGRAM SPECIFIC OUTCOMES */}
+                        <div className="border-t border-b border-[#CBD5DF]">
+                            <button
+                                type="button"
+                                onClick={() => toggleSection("specific")}
+                                className="w-full flex items-stretch text-left cursor-pointer"
+                            >
+                                <div className="flex-1 py-8 pr-6">
+                                    <h3 className="text-[22px] font-bold text-[#102D43]">
+                                        Program Specific Outcomes
+                                    </h3>
+
+                                    {openSection === "specific" && (
+                                        <div className="mt-7">
+                                            <ul className="pl-5 space-y-2 text-[15.5px] leading-6 text-[#14284E] list-disc">
+                                                <li>
+                                                    Understand and develop computer programs in the areas
+                                                    related to algorithms, system software, multimedia, web
+                                                    design, big data analytics and networking by identifying,
+                                                    demonstrating and analyzing the knowledge of engineering
+                                                    in efficient design of computer-based systems of varying
+                                                    complexity.
+                                                </li>
+
+                                                <li>
+                                                    Applying algorithmic principles, innovative Computer
+                                                    science and engineering design and implementation skills
+                                                    to propose optimal solutions to complex problems by
+                                                    choosing a better platform for research in emerging areas.
+                                                </li>
+
+                                                <li>
+                                                    Identify standard Software Engineering practices and
+                                                    strategies by applying software project development
+                                                    methods using open-source programming environment to
+                                                    design and evaluate a quality product for business success.
+                                                </li>
+
+                                                <li>
+                                                    Demonstrate and examine basic understanding of engineering
+                                                    fundamentals, professional/social ethics and apply
+                                                    mathematical foundations to design and solve computational
+                                                    problems.
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    )}
+                                </div>
+
+                                <div className="w-[90px] shrink-0 border-l border-[#CBD5DF] flex items-start justify-center pt-7">
+                                    <span className="text-[34px] leading-none font-light text-[#202B32]">
+                                        {openSection === "specific" ? "↓" : "→"}
+                                    </span>
+                                </div>
+                            </button>
+                        </div>
+
+                    </div>
+                </section>
 
                 <section className="py-[76px] px-6 bg-gradient-to-b from-[#F6FAFE] via-[#EAF2FB] to-[#F6FAFE]">
                     <div className={`${Classes["container"]}`}>
@@ -1590,7 +1848,7 @@ const BTechCseCyberSecurityNew = () => {
 
                     </div>
                 </section>
-                <section className="py-[76px] px-6">
+                <section className="py-[76px] px-6  bg-gradient-to-b from-[#F6FAFE] via-[#EAF2FB] to-[#F6FAFE]">
                     <div className={`${Classes["container"]} mx-auto`}>
 
                         {/* Heading */}
@@ -1672,64 +1930,50 @@ const BTechCseCyberSecurityNew = () => {
 
                         {/* Top Recruiters */}
                         <div className="mt-7">
-                            <h3 className="text-[17px] font-bold font-display text-[#14284E] mb-3.5">
-                                Top Recruiters
-                            </h3>
+                            <div className="flex items-center justify-between gap-4 mb-3.5">
+                                <h3 className="text-[17px] font-bold font-display text-[#14284E]">
+                                    Top Recruiters
+                                </h3>
+                                <div className="flex gap-2">
+                                    <button
+                                        type="button"
+                                        onClick={() => emblaApi?.scrollPrev()}
+                                        disabled={!canScrollPrev}
+                                        title="Previous recruiters"
+                                        aria-label="Previous recruiters"
+                                        className="w-9 h-9 rounded-md border border-[#DCE6F2] bg-white text-[#14284E] flex items-center justify-center transition-colors hover:border-[#1B4F91] hover:text-[#1B4F91] disabled:opacity-40 disabled:cursor-not-allowed"
+                                    >
+                                        <ArrowLeft className="w-4 h-4" />
+                                    </button>
+                                    <button
+                                        type="button"
+                                        onClick={() => emblaApi?.scrollNext()}
+                                        disabled={!canScrollNext}
+                                        title="Next recruiters"
+                                        aria-label="Next recruiters"
+                                        className="w-9 h-9 rounded-md border border-[#DCE6F2] bg-white text-[#14284E] flex items-center justify-center transition-colors hover:border-[#1B4F91] hover:text-[#1B4F91] disabled:opacity-40 disabled:cursor-not-allowed"
+                                    >
+                                        <ArrowRight className="w-4 h-4" />
+                                    </button>
+                                </div>
+                            </div>
 
-                            <div className="flex flex-wrap gap-3">
-                                <span className="bg-white border border-[#DCE6F2] rounded-md px-4 py-3 flex items-center justify-center">
-                                    <img src="https://ik.imagekit.io/ttalcskjf/tcs.webp" alt="TCS" className="h-7 w-auto object-contain" />
-                                </span>
-
-                                <span className="bg-white border border-[#DCE6F2] rounded-md px-4 py-3 flex items-center justify-center">
-                                    <img src="https://ik.imagekit.io/ttalcskjf/infosys.webp" alt="Infosys" className="h-7 w-auto object-contain" />
-                                </span>
-
-                                <span className="bg-white border border-[#DCE6F2] rounded-md px-4 py-3 flex items-center justify-center">
-                                    <img src="https://ik.imagekit.io/ttalcskjf/Wipro.webp" alt="Wipro" className="h-7 w-auto object-contain" />
-                                </span>
-
-                                <span className="bg-white border border-[#DCE6F2] rounded-md px-4 py-3 flex items-center justify-center">
-                                    <img src="https://ik.imagekit.io/ttalcskjf/l-t.webp?updatedAt=1788591605708" alt="L&T" className="h-7 w-auto object-contain" />
-                                </span>
-
-                                <span className="bg-white border border-[#DCE6F2] rounded-md px-4 py-3 flex items-center justify-center">
-                                    <img src="https://ik.imagekit.io/ttalcskjf/images.png" alt="HCL Technologies" className="h-7 w-auto object-contain" />
-                                </span>
-
-                                <span className="bg-white border border-[#DCE6F2] rounded-md px-4 py-3 flex items-center justify-center">
-                                    <img src="https://ik.imagekit.io/ttalcskjf/Accenture.webp" alt="Accenture" className="h-7 w-auto object-contain" />
-                                </span>
-
-                                <span className="bg-white border border-[#DCE6F2] rounded-md px-4 py-3 flex items-center justify-center">
-                                    <img src="https://ik.imagekit.io/ttalcskjf/capgemini.webp" alt="Capgemini" className="h-7 w-auto object-contain" />
-                                </span>
-
-                                <span className="bg-white border border-[#DCE6F2] rounded-md px-4 py-3 flex items-center justify-center">
-                                    <img src="https://ik.imagekit.io/ttalcskjf/TM.webp" alt="Tech Mahindra" className="h-7 w-auto object-contain" />
-                                </span>
-
-                                <span className="bg-white border border-[#DCE6F2] rounded-md px-4 py-3 flex items-center justify-center">
-                                    <img src="https://ik.imagekit.io/ttalcskjf/IBM.webp" alt="IBM" className="h-7 w-auto object-contain" />
-                                </span>
-
-                                <span className="bg-white border border-[#DCE6F2] rounded-md px-4 py-3 flex items-center justify-center">
-                                    <img src="https://ik.imagekit.io/ttalcskjf/Cognizant_logo_2022.svg.webp" alt="Cognizant" className="h-7 w-auto object-contain" />
-                                </span>
-
-                                <span className="bg-white border border-[#DCE6F2] rounded-md px-4 py-3 flex items-center justify-center">
-                                    <img src="https://ik.imagekit.io/ttalcskjf/Deloitte.webp" alt="Deloitte" className="h-7 w-auto object-contain" />
-                                </span>
-
-                                <span className="bg-white border border-[#DCE6F2] rounded-md px-4 py-3 flex items-center justify-center">
-                                    <img src="https://ik.imagekit.io/ttalcskjf/EY.webp" alt="EY" className="h-7 w-auto object-contain" />
-                                </span>
+                            <div className="overflow-hidden" ref={emblaRef}>
+                                <div className="flex -ml-3">
+                                    {recruiterLogos.map(([src, name]) => (
+                                        <div key={name} className="flex-[0_0_50%] sm:flex-[0_0_33.333%] md:flex-[0_0_25%] lg:flex-[0_0_16.666%] pl-3">
+                                            <div className="h-[76px] bg-white border border-[#DCE6F2] rounded-md px-4 py-3 flex items-center justify-center">
+                                                <img src={src} alt={name} className="max-h-7 w-auto object-contain" />
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
                         </div>
 
                     </div>
                 </section>
-                <section className="py-[76px] px-6 bg-[#F6FAFE]">
+                <section className="py-[76px] px-6 ">
                     <div className={`${Classes["container"]} mx-auto`}>
 
                         {/* Heading */}
@@ -2067,7 +2311,7 @@ const BTechCseCyberSecurityNew = () => {
                 {/* ============================================================
                 FINAL CTA
                 ============================================================ */}
-                <section className="py-[76px]">
+                <section className="py-[76px]  bg-gradient-to-b from-[#F6FAFE] via-[#EAF2FB] to-[#F6FAFE]">
                     <div className={`${Classes["container"]} px-6`}>
                         <div className="text-center bg-gradient-to-br from-[#071329] via-[#0e2144] to-[#14284E] rounded-3xl py-16 sm:py-20 px-8 sm:px-12 shadow-[0_20px_60px_-15px_rgba(20,40,78,0.45)] border border-white/10 relative overflow-hidden">
                             <div className="absolute -top-24 -left-24 w-96 h-96 bg-[#1b4f91]/40 rounded-full blur-[100px] pointer-events-none"></div>
