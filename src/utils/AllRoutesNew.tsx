@@ -4,6 +4,7 @@ import { lazyPage } from "./lazyRoute";
 import NewHomePage from "../pages/NewHomePage";
 import { resolveProgramRouteSlug } from "./legacyProgramRoutes";
 import BTechCseCyberSecurityNew from "../pages/BTechCseCyberSecurityNew";
+import InsiderPage from "../pages/InsiderPage";
 
 const HomePage = lazyPage(() => import("../pages/Home/HomePage"));
 const PageNotFound = lazyPage(() => import("../pages/PageNotFound"));
@@ -155,6 +156,10 @@ export const routes = [
       {
         path: "b-tech-cse-cyber-security-new",
         element: <BTechCseCyberSecurityNew />,
+      },
+      {
+        path: "insider",
+        element: <InsiderPage />,
       },
 
       // BTechCseCyberSecurityNew

@@ -104,6 +104,7 @@ const LEGACY_STATIC_PATHS = [
   "/faculty-of-management",
   "/faculty-of-chemical-sciences",
   "/admission-enquiry",
+  "/insider"
 ];
 
 const LEGACY_EVENT_SLUGS = [

@@ -13,7 +13,7 @@ const RootLayout: React.FC = () => {
   const normalizedPath = normalizePath(location.pathname);
 
   const isHomeRoute =
-    normalizedPath === "/" || normalizedPath === "/new-home" || normalizedPath === "/b-tech-cse-cyber-security-new";
+    normalizedPath === "/" || normalizedPath === "/new-home" || normalizedPath === "/b-tech-cse-cyber-security-new" || normalizedPath === "/insider";
 
   const fallbackSeo = useMemo(
     () => getDefaultSeo(normalizedPath),
@@ -108,21 +108,21 @@ const RootLayout: React.FC = () => {
         jsonLd={siteSchema}
       />
 
-      <Header />
+      {normalizedPath !== "/insider" && <Header />}
 
-      <main className="mt-[41px] lg:mt-[45px]">
+      <main className={`$ {normalizedPath == "/insider" ? "" : "mt-[41px] lg:mt-[45px]"}`}>
         {!isHomeRoute && <DynamicBreadcrumbs />}
         <Outlet />
       </main>
 
       {shouldRenderFooter && (
         <Suspense fallback={null}>
-          <Footer />
+          {normalizedPath !== "/insider" && <Footer />}
         </Suspense>
       )}
 
       {/* WhatsApp */}
-      <button
+      {normalizedPath !== "/insider" && <button
         type="button"
         onClick={openWhatsApp}
         aria-label="Contact SRMU on WhatsApp"
@@ -138,13 +138,14 @@ const RootLayout: React.FC = () => {
           className="w-12 h-12"
         />
       </button>
+      }
 
       {/* Chatbot */}
 
       {/* <Chatbot /> */}
 
       {/* Right Side Bar */}
-      <div
+      {normalizedPath !== "/insider" && <div
         className={`w-full sm:w-auto fixed bottom-0 z-[200] sm:top-[60%] sm:-right-[58px] flex sm:flex-col sm:gap-y-[124px] sm:-translate-y-1/2 transition-all duration-500 ease-in-out ${showRightBar ? "sm:translate-x-0" : "sm:translate-x-full"
           }`}
       >
@@ -170,6 +171,7 @@ const RootLayout: React.FC = () => {
           Admission Enquiry
         </a>
       </div>
+      }
     </>
   );
 };

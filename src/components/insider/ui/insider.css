@@ -1,0 +1,50 @@
+/* Global styles */
+html {
+    font-family: "Plus Jakarta Sans", sans-serif, system-ui;
+}
+
+/* Theme colors */
+:root {
+    --bg: #f9ebcf;
+    --primary: #fa5b84;
+    --secondary: #266efb;
+    --accent: #f9da1e;
+    --dark: #17181d;
+}
+
+/* Lenis Smooth Scroll Styles */
+html.lenis,
+html.lenis body {
+    height: auto;
+}
+
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+    pointer-events: none;
+}
+
+/* Custom Brutalist Utilities */
+@keyframes spin-slow {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-spin-slow {
+    animation: spin-slow 12s linear infinite;
+}
