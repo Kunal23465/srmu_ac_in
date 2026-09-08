@@ -71,6 +71,7 @@ export default defineConfig(({ isSsrBuild }) => ({
 
   ssr: {
     noExternal: [
+      "gsap",
       "antd",
       "@ant-design/icons",
       "@ant-design/icons-svg",

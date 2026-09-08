@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowUpRight, Flame, Instagram, Sparkles } from "lucide-react";
@@ -11,7 +11,7 @@ export function Footer() {
 
     const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSerM8WGKBQovbrjtOu8q7pRSfvyzfGe3D283iAlhRsgKNVPrw/viewform?usp=dialog";
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         if (!textRef.current || !triggerRef.current) return;
         gsap.fromTo(textRef.current,
             { yPercent: 30 },

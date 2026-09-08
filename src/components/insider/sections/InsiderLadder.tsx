@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowDown, CheckCircle2, Flame, Hexagon, ShieldCheck, Smile, Sparkles, Star, Trophy, Unlock, Zap } from "lucide-react";
@@ -14,7 +14,7 @@ export function InsiderLadder() {
     const hexRef = useRef<HTMLDivElement>(null);
     const smileRef = useRef<HTMLDivElement>(null);
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         const ctx = gsap.context(() => {
             // Spinning Star Shape
             if (starRef.current) {

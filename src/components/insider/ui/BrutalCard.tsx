@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { cn } from "@/src/lib/utils";
@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 export function BrutalCard({ title, img, color, i }: { title: string; img: string; color: string; i: number }) {
     const cardRef = useRef<HTMLDivElement>(null);
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         if (!cardRef.current) return;
         gsap.fromTo(cardRef.current,
             { rotation: Math.random() * 10 - 5, y: 100 },

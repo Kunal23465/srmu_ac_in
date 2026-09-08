@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Award, Zap } from "lucide-react";
@@ -21,7 +21,7 @@ export function Perks() {
         { title: "INSIDER-ONLY EVENTS", desc: "Exclusive creator events. No outsiders." }
     ];
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         const mm = gsap.matchMedia();
 
         mm.add("(min-width: 768px)", () => {

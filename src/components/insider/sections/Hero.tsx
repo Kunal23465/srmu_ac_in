@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowUpRight, Flame, Hexagon, Smile, Sparkles, Star, Zap } from "lucide-react";
@@ -17,7 +17,7 @@ export function Hero() {
 
     const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSerM8WGKBQovbrjtOu8q7pRSfvyzfGe3D283iAlhRsgKNVPrw/viewform?usp=dialog";
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         const ctx = gsap.context(() => {
             // Text Stagger
             gsap.from(".hero-text", {

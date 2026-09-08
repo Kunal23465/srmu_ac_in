@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { cn } from "../lib/utils";
@@ -11,7 +11,7 @@ export function Marquee({ text, direction = 1, className }: { text: string; dire
     const slider = useRef<HTMLDivElement>(null);
     let xPercent = 0;
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         let animationFrameId: number;
 
         const animate = () => {
