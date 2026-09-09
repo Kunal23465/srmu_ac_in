@@ -4,7 +4,7 @@ export function WhatIsInsiders() {
     const tags = ["Reels.", "Campaigns.", "Events.", "Trends.", "Campus chaos."];
 
     return (
-        <section className="bg-white text-black py-28 border-y-8 border-black relative overflow-hidden">
+        <section className="bg-white text-black py-8 sm:py-28 border-y-8 border-black relative overflow-hidden">
             {/* Dot Pattern Background */}
             <div className="absolute inset-0 bg-[radial-gradient(#000_2px,transparent_2px)] bg-[size:24px_24px] opacity-10 pointer-events-none" />
 
@@ -33,8 +33,8 @@ export function WhatIsInsiders() {
                 {/* Tag Pills Grid */}
                 <div className="flex flex-wrap gap-4 my-10">
                     {tags.map((tag, i) => (
-                        <div 
-                            key={i} 
+                        <div
+                            key={i}
                             className="border-4 border-black bg-[#266efb] text-white px-6 py-3 font-black uppercase text-xl md:text-2xl shadow-[6px_6px_0px_0px_#000] hover:bg-[#f9da1e] hover:text-black hover:-translate-y-1 transition-all"
                         >
                             {tag}

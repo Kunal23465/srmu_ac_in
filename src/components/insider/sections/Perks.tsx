@@ -43,9 +43,9 @@ export function Perks() {
         <section ref={container} id="perks" className="bg-[#f9ebcf] border-b-8 border-black">
             <div className="flex flex-col md:flex-row">
                 {/* Left Side: Header Panel */}
-                <div 
-                    ref={leftSide} 
-                    className="w-full md:w-5/12 min-h-[50vh] md:h-screen flex flex-col items-center justify-center bg-[#fa5b84] p-8 md:p-12 border-b-8 md:border-b-0 md:border-r-8 border-black z-10 text-center"
+                <div
+                    ref={leftSide}
+                    className="w-full md:w-5/12 sm:min-h-[50vh] md:h-screen flex flex-col items-center justify-center bg-[#fa5b84] p-8 md:p-12 border-b-8 md:border-b-0 md:border-r-8 border-black z-10 text-center"
                 >
                     <div className="inline-flex items-center gap-2 border-4 border-black bg-[#f9da1e] px-6 py-2 font-black uppercase text-sm md:text-base shadow-[4px_4px_0px_0px_#000] mb-6 text-black">
                         <Award size={20} className="fill-black text-black" />
@@ -54,7 +54,7 @@ export function Perks() {
 
                     <h2 className="text-5xl md:text-7xl lg:text-8xl font-black uppercase leading-none text-black">
                         THE PERKS? <br />
-                        <span className="text-white drop-shadow-[4px_4px_0px_#000]" style={{ WebkitTextStroke: "3px black" }}>
+                        <span className="text-white drop-shadow-[2px_2px_0px_#000] sm:drop-shadow-[4px_4px_0px_#000]" style={{ WebkitTextStroke: "3px black" }}>
                             KINDA LOUD.
                         </span>
                     </h2>
@@ -65,10 +65,10 @@ export function Perks() {
                 </div>
 
                 {/* Right Side: Perks List */}
-                <div className="w-full md:w-7/12 px-4 md:px-12 py-16 md:py-24 space-y-8 md:space-y-12">
+                <div className="w-full md:w-7/12 px-4 md:px-12 py-8 sm:py-16 md:py-24 space-y-8 md:space-y-12">
                     {perks.map((item, i) => (
-                        <div 
-                            key={i} 
+                        <div
+                            key={i}
                             className="border-4 border-black bg-white p-6 md:p-10 shadow-[8px_8px_0px_0px_#000] hover:-translate-y-1 hover:shadow-[12px_12px_0px_0px_#000] transition-all group"
                         >
                             <div className="flex items-center justify-between">

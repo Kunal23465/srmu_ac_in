@@ -58,7 +58,7 @@ export function PowerPlay() {
     ];
 
     return (
-        <section id="roles" className="bg-[#17181d] py-32 border-b-8 border-black text-white relative overflow-hidden">
+        <section id="roles" className="bg-[#17181d] py-8 sm:py-32 border-b-8 border-black text-white relative overflow-hidden">
             {/* Background Grid Pattern */}
             <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none" />
 
@@ -79,7 +79,7 @@ export function PowerPlay() {
                 </div>
 
                 {/* 3 Role Cards Grid */}
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-10 sm:mb-20">
                     {roles.map((role, i) => (
                         <div
                             key={i}

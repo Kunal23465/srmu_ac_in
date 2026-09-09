@@ -47,7 +47,7 @@ export function Navbar() {
                 href={FORM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="pointer-events-auto rounded-full border-4 border-black bg-[#f9da1e] px-8 py-3 font-black uppercase text-base md:text-lg text-black shadow-[6px_6px_0px_0px_#000] hover:bg-[#fa5b84] hover:text-white hover:translate-y-[2px] hover:shadow-[4px_4px_0px_0px_#000] active:translate-y-[4px] active:shadow-none transition-all inline-block"
+                className="pointer-events-auto rounded-full border-4 border-black bg-[#f9da1e] px-4 sm:px-8 py-2 sm:py-3 font-black uppercase text-base md:text-lg text-black shadow-[6px_6px_0px_0px_#000] hover:bg-[#fa5b84] hover:text-white hover:translate-y-[2px] hover:shadow-[4px_4px_0px_0px_#000] active:translate-y-[4px] active:shadow-none transition-all inline-block"
             >
                 Join Now
             </a>

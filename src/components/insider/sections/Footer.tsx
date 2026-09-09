@@ -28,7 +28,7 @@ export function Footer() {
     }, []);
 
     return (
-        <div ref={triggerRef} className="relative bg-[#fa5b84] px-6 pt-24 pb-12 flex flex-col justify-between overflow-hidden border-t-8 border-black text-black">
+        <div ref={triggerRef} className="relative bg-[#fa5b84] px-6 pt-12 sm:pt-24 pb-8 sm:pb-12 flex flex-col justify-between overflow-hidden border-t-8 border-black text-black">
             {/* Background Grid Pattern */}
             <div className="absolute inset-0 bg-[radial-gradient(#000_2px,transparent_2px)] bg-[size:24px_24px] opacity-10 pointer-events-none" />
 
@@ -48,7 +48,7 @@ export function Footer() {
                 <div ref={textRef} className="my-12">
                     <h2 className="text-[11vw] font-black leading-[0.85] tracking-tighter uppercase text-black">
                         STILL OUTSIDE? <br />
-                        <span className="text-white drop-shadow-[4px_4px_0px_#000]" style={{ WebkitTextStroke: "4px black" }}>
+                        <span className="text-white drop-shadow-[2px_2px_0px_#000] sm:drop-shadow-[4px_4px_0px_#000]" style={{ WebkitTextStroke: "4px black" }}>
                             THAT'S CRAZY.
                         </span>
                     </h2>

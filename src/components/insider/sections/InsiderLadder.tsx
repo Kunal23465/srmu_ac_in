@@ -142,7 +142,7 @@ export function InsiderLadder() {
     ];
 
     return (
-        <section ref={sectionRef} id="ladder" className="bg-[#f9ebcf] py-20 md:py-32 border-b-8 border-black relative overflow-hidden">
+        <section ref={sectionRef} id="ladder" className="bg-[#f9ebcf] py-8 sm:py-20 md:py-32 border-b-8 border-black relative overflow-hidden">
             {/* Background Grid Pattern */}
             <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
 
@@ -194,7 +194,7 @@ export function InsiderLadder() {
                 </div>
 
                 {/* Step Ladder Timeline Container */}
-                <div className="max-w-5xl mx-auto space-y-10 md:space-y-14">
+                <div className="max-w-5xl mx-auto space-y-5 sm:space-y-10 md:space-y-14">
                     {steps.map((step, index) => (
                         <div key={index} className="flex flex-col items-center">
                             {/* Card Box */}

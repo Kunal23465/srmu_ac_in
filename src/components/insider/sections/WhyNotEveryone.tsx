@@ -10,7 +10,7 @@ export function WhyNotEveryone() {
     ];
 
     return (
-        <section className="bg-[#17181d] text-white py-32 border-y-8 border-black relative overflow-hidden">
+        <section className="bg-[#17181d] text-white py-8 sm:py-32 border-y-8 border-black relative overflow-hidden">
             {/* Background Accent Grid */}
             <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none" />
 
@@ -27,12 +27,12 @@ export function WhyNotEveryone() {
                     <span className="text-white underline decoration-[#fa5b84] decoration-8">JUST VIBE HERE.</span>
                 </h2>
 
-                <p className="text-2xl md:text-3xl font-bold uppercase tracking-wider text-gray-300 mb-16">
+                <p className="text-2xl md:text-3xl font-bold uppercase tracking-wider text-gray-300 mb-8 sm:mb-16">
                     Being an Insider means showing up.
                 </p>
 
                 {/* Rules Cards Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 mb-16">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 mb-8 sm:mb-16">
                     {rules.map((rule, i) => (
                         <div key={i} className="border-4 border-white bg-white text-black p-6 flex flex-col justify-between shadow-[8px_8px_0px_0px_#fa5b84] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all">
                             <div className="flex items-center justify-between mb-4">
