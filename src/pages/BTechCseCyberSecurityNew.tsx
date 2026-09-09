@@ -27,11 +27,11 @@ const BTechCseCyberSecurityNew = () => {
     const [canScrollNext, setCanScrollNext] = useState(true);
     const [openIndustry, setOpenIndustry] = useState(null);
 
-    const toggleIndustry = (industry) => {
-        setOpenIndustry((prev) =>
-            prev === industry ? null : industry
-        );
-    };
+    // const toggleIndustry = (industry) => {
+    //     setOpenIndustry((prev) =>
+    //         prev === industry ? null : industry
+    //     );
+    // };
     const toggleSection = (section: string) => {
         setOpenSection((currentSection) => currentSection === section ? null : section);
     };
@@ -56,9 +56,9 @@ const BTechCseCyberSecurityNew = () => {
         };
     }, [emblaApi]);
 
-    const handleTabClick = (tab) => {
-        setActiveTab(tab);
-    };
+    // const handleTabClick = (tab) => {
+    //     setActiveTab(tab);
+    // };
 
     // Data for the Year Journey Tabs
     const yearData = {
