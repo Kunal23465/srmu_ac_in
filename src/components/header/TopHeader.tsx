@@ -3,6 +3,7 @@ import { IoCallSharp } from "react-icons/io5";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import user from "../../assets/images/home/user-icon.png";
+import whatsapp from "../../assets/images/whatsapp-icon.png";
 import { FaCaretDown, FaCaretUp } from "react-icons/fa";
 
 const TopHeader: React.FC = () => {
@@ -37,6 +38,7 @@ const TopHeader: React.FC = () => {
               to="https://students.srmu.ac.in/login"
               className="bg-[#FFB703] hover:bg-white px-2 xl:px-4 text-xs xl:text-[13px] font-medium uppercase border border-[#ffb703] py-[1rem] flex items-center text-black"
             >
+              <img src="/shared-image.png" alt="SRMUSET Logo" className="h-[22px] w-auto mr-2" />
               SRMUSET EXAM PORTAL
             </Link>
             {/* <Link to={inductionSchedule} target="_blank" rel="noopener noreferrer" className="bg-white flex items-center px-4 py-[7px] xl:py-[8px] gap-2 border-l border-[#ccc]">
@@ -163,6 +165,24 @@ const TopHeader: React.FC = () => {
               </div> */}
 
               <a
+                href="https://wa.me/919120007948"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="py-1 flex items-center border-l border-[#ccc] pl-2 pr-1"
+                aria-label="Contact SRMU on WhatsApp"
+              >
+                <img
+                  src={whatsapp}
+                  alt="WhatsApp"
+                  width={24}
+                  height={24}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-6 h-6"
+                />
+              </a>
+
+              <a
                 href="tel:18001035298"
                 className="py-1 flex items-center border-l border-[#ccc] pl-2 pr-1"
                 aria-label="Call Admissions Helpline 18001035298"
@@ -184,6 +204,7 @@ const TopHeader: React.FC = () => {
                 to="https://students.srmu.ac.in/login"
                 className="bg-[#FFB703] hover:bg-white px-2 text-[9px] font-medium uppercase border border-[#ffb703] py-1 flex items-center text-black"
               >
+                <img src="/shared-image.png" alt="SRMUSET Logo" className="h-4 w-auto mr-1.5" />
                 SRMUSET EXAM PORTAL
               </Link>
               {/* <Link

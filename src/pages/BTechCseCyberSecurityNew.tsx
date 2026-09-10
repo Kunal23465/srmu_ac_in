@@ -26,6 +26,8 @@ const BTechCseCyberSecurityNew = () => {
     const [canScrollPrev, setCanScrollPrev] = useState(false);
     const [canScrollNext, setCanScrollNext] = useState(true);
     const [openIndustry, setOpenIndustry] = useState(null);
+    const [rm, setRm] = useState<Record<string, boolean>>({});
+    const toggleRm = (k: string) => setRm(p => ({ ...p, [k]: !p[k] }));
 
     // const toggleIndustry = (industry) => {
     //     setOpenIndustry((prev) =>
@@ -130,7 +132,7 @@ const BTechCseCyberSecurityNew = () => {
 
                 <section
                     style={{
-                        backgroundImage: "url('https://ik.imagekit.io/ttalcskjf/Banner%20Image.webp')",
+                        backgroundImage: "url('/shared-image1.png')",
                     }}
                     className="relative py-4 sm:py-20 lg:py-24 w-full bg-cover bg-center bg-no-repeat overflow-hidden"
                 >
@@ -359,15 +361,21 @@ const BTechCseCyberSecurityNew = () => {
                         {/* 2-Column Paragraphs & Image Integration */}
                         <div className="grid md:grid-cols-[1.2fr_0.8fr] gap-8 items-center my-8">
                             <div className="space-y-4">
-                                <p className="text-[#4B5A72] text-[15.5px] leading-relaxed">
-                                    Cybersecurity has become important across banks, hospitals, government organizations, e-commerce, manufacturing, technology companies, and cloud-based services.
-                                    As organizations adopt cloud computing, artificial intelligence, IoT, and digital payments, they need professionals who can identify vulnerabilities, protect
-                                    data, and respond to security threats.
-                                </p>
-                                <p className="text-[#4B5A72] text-[15.5px] leading-relaxed">
-                                    A B.Tech in Computer Science and Engineering with Cyber Security provides students with a foundation in both computer science and information security, making it
-                                    a relevant choice for students exploring the best B.Tech college in Lucknow for future-focused engineering education.
-                                </p>
+                                <div>
+                                    <p className={`text-[#4B5A72] text-[15.5px] leading-relaxed ${!rm['cyber1'] ? 'rm-clamp' : ''}`}>
+                                        Cybersecurity has become important across banks, hospitals, government organizations, e-commerce, manufacturing, technology companies, and cloud-based services.
+                                        As organizations adopt cloud computing, artificial intelligence, IoT, and digital payments, they need professionals who can identify vulnerabilities, protect
+                                        data, and respond to security threats.
+                                    </p>
+                                    <button className="rm-btn" onClick={() => toggleRm('cyber1')}>{rm['cyber1'] ? 'Read Less' : 'Read More'}</button>
+                                </div>
+                                <div>
+                                    <p className={`text-[#4B5A72] text-[15.5px] leading-relaxed ${!rm['cyber2'] ? 'rm-clamp' : ''}`}>
+                                        A B.Tech in Computer Science and Engineering with Cyber Security provides students with a foundation in both computer science and information security, making it
+                                        a relevant choice for students exploring the best B.Tech college in Lucknow for future-focused engineering education.
+                                    </p>
+                                    <button className="rm-btn" onClick={() => toggleRm('cyber2')}>{rm['cyber2'] ? 'Read Less' : 'Read More'}</button>
+                                </div>
                             </div>
                             <div className="hidden sm:flex rounded-2xl overflow-hidden border border-[#DCE6F2] shadow-[0_4px_16px_rgba(15,31,61,0.05)] bg-[#f0f4fa] h-[200px] sm:h-[220px] items-center justify-center">
                                 <img src="https://ik.imagekit.io/ttalcskjf/IMAGE%201.webp" alt="Data Protection - Cyber Security Growth" className="w-full h-full object-cover" />
@@ -410,9 +418,12 @@ const BTechCseCyberSecurityNew = () => {
                         </div>
 
                         <div className="w-full">
-                            <p className="text-[15.5px] text-[#4B5A72] leading-relaxed mb-5">
-                                At SRMU, the B.Tech CSE Cyber Security program in Lucknow combines foundational computer science knowledge with cybersecurity concepts and practical exposure.
-                            </p>
+                            <div className="mb-5">
+                                <p className={`text-[15.5px] text-[#4B5A72] leading-relaxed ${!rm['ovw1'] ? 'rm-clamp' : ''}`}>
+                                    At SRMU, the B.Tech CSE Cyber Security program in Lucknow combines foundational computer science knowledge with cybersecurity concepts and practical exposure.
+                                </p>
+                                <button className="rm-btn" onClick={() => toggleRm('ovw1')}>{rm['ovw1'] ? 'Read Less' : 'Read More'}</button>
+                            </div>
 
                             <p className="text-[15.5px] text-[#14284E] font-semibold mb-4">Students learn through a combination of:</p>
 
@@ -459,10 +470,13 @@ const BTechCseCyberSecurityNew = () => {
                                 </span>
                             </div>
 
-                            <p className="text-[15.5px] text-[#4B5A72] leading-relaxed">
-                                The program is designed to help students develop practical problem-solving skills alongside their technical knowledge. For students comparing options for the Best
-                                B.Tech College in Lucknow, the program's industry-integrated approach with L&T provides an additional focus on practical learning.
-                            </p>
+                            <div>
+                                <p className={`text-[15.5px] text-[#4B5A72] leading-relaxed ${!rm['ovw2'] ? 'rm-clamp' : ''}`}>
+                                    The program is designed to help students develop practical problem-solving skills alongside their technical knowledge. For students comparing options for the Best
+                                    B.Tech College in Lucknow, the program's industry-integrated approach with L&T provides an additional focus on practical learning.
+                                </p>
+                                <button className="rm-btn" onClick={() => toggleRm('ovw2')}>{rm['ovw2'] ? 'Read Less' : 'Read More'}</button>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -474,7 +488,10 @@ const BTechCseCyberSecurityNew = () => {
                                 Quick Facts
                             </div> */}
                             <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3.5">Industry-Integrated Learning with <span className="text-[#ffc107]">L&amp;T</span></h2>
-                            <p className="text-[16px] text-[#4B5A72] leading-relaxed">The program incorporates industry exposure through L&amp;T, helping students understand how cybersecurity concepts are applied in professional and technology-driven environments.</p>
+                            <div>
+                                <p className={`text-[16px] text-[#4B5A72] leading-relaxed ${!rm['lt1'] ? 'rm-clamp' : ''}`}>The program incorporates industry exposure through L&amp;T, helping students understand how cybersecurity concepts are applied in professional and technology-driven environments.</p>
+                                <button className="rm-btn" onClick={() => toggleRm('lt1')}>{rm['lt1'] ? 'Read Less' : 'Read More'}</button>
+                            </div>
                         </div>
                         <div className="bg-white border border-[#DCE6F2] rounded-xl sm:rounded-3xl overflow-hidden shadow-[0_6px_25px_rgba(15,31,61,0.05)]">
                             <table className="w-full border-collapse">
@@ -534,12 +551,15 @@ const BTechCseCyberSecurityNew = () => {
                                     Industry Integrated Curriculum with L&T
                                 </h3>
 
-                                <p className="text-[14.5px] leading-5 text-[#4B5A72] mb-4">
-                                    Strengthened through academic collaboration with L&T, the
-                                    curriculum bridges university education and industry expectations
-                                    through application-oriented learning, case studies and
-                                    problem-solving methodologies.
-                                </p>
+                                <div className="mb-4">
+                                    <p className={`text-[14.5px] leading-5 text-[#4B5A72] ${!rm['curr1'] ? 'rm-clamp' : ''}`}>
+                                        Strengthened through academic collaboration with L&T, the
+                                        curriculum bridges university education and industry expectations
+                                        through application-oriented learning, case studies and
+                                        problem-solving methodologies.
+                                    </p>
+                                    <button className="rm-btn" onClick={() => toggleRm('curr1')}>{rm['curr1'] ? 'Read Less' : 'Read More'}</button>
+                                </div>
 
                                 <ul className="flex flex-wrap gap-2 mb-4 sm:block sm:space-y-2 sm:list-disc sm:list-inside">
                                     <li className="inline-flex rounded-full border border-[#B8E8E1] bg-[#ECFBF8] px-3 py-1.5 text-[12.5px] text-[#168C82] sm:block sm:rounded-none sm:border-0 sm:bg-transparent sm:px-0 sm:py-0 sm:text-[14.5px] sm:text-[#1B4F91]">Secure Software Development</li>
@@ -1789,10 +1809,13 @@ const BTechCseCyberSecurityNew = () => {
                                 Transparent Fee <span className="text-[#ffc107]">Structure</span>
                             </h2>
 
-                            <p className="mt-4 text-[15px] leading-7 text-[#4B5A72]">
-                                A quality engineering education is an investment in your future — with
-                                industry-oriented learning, advanced laboratories, and placement support.
-                            </p>
+                            <div className="mt-4">
+                                <p className={`text-[15px] leading-7 text-[#4B5A72] ${!rm['fee1'] ? 'rm-clamp' : ''}`}>
+                                    A quality engineering education is an investment in your future — with
+                                    industry-oriented learning, advanced laboratories, and placement support.
+                                </p>
+                                <button className="rm-btn" onClick={() => toggleRm('fee1')}>{rm['fee1'] ? 'Read Less' : 'Read More'}</button>
+                            </div>
                         </div>
 
                         {/* Mobile Fee Cards (sm:hidden) */}
@@ -1929,21 +1952,27 @@ const BTechCseCyberSecurityNew = () => {
                         </div>
 
                         {/* Fee Note */}
-                        <p className="mt-4 text-[14.5px] leading-5 text-[#718096]">
-                            Additional charges: Alumni Fee ₹500 and Degree Fee ₹1,000
-                            (payable in the final year). *One-time refundable caution money as per
-                            university policy. **Hostel and transportation are optional and subject
-                            to university guidelines.
-                        </p>
+                        <div className="mt-4">
+                            <p className={`text-[14.5px] leading-5 text-[#718096] ${!rm['feeNote'] ? 'rm-clamp' : ''}`}>
+                                Additional charges: Alumni Fee ₹500 and Degree Fee ₹1,000
+                                (payable in the final year). *One-time refundable caution money as per
+                                university policy. **Hostel and transportation are optional and subject
+                                to university guidelines.
+                            </p>
+                            <button className="rm-btn" onClick={() => toggleRm('feeNote')}>{rm['feeNote'] ? 'Read Less' : 'Read More'}</button>
+                        </div>
 
                         {/* Scholarship Section — Mobile */}
                         <div className="lg:hidden mt-10 space-y-4">
                             <h3 className="text-[20px] font-bold font-display text-[#14284E]">
                                 Scholarship Schemes
                             </h3>
-                            <p className="text-[13.5px] leading-6 text-[#4B5A72]">
-                                SRMU offers limited scholarships to support meritorious and deserving students at the time of admission. Scholarships are awarded strictly as per approved eligibility criteria and are applicable only in the first year of admission.
-                            </p>
+                            <div>
+                                <p className={`text-[13.5px] leading-6 text-[#4B5A72] ${!rm['schMob'] ? 'rm-clamp' : ''}`}>
+                                    SRMU offers limited scholarships to support meritorious and deserving students at the time of admission. Scholarships are awarded strictly as per approved eligibility criteria and are applicable only in the first year of admission.
+                                </p>
+                                <button className="rm-btn" onClick={() => toggleRm('schMob')}>{rm['schMob'] ? 'Read Less' : 'Read More'}</button>
+                            </div>
                             <div className="space-y-3 pt-1">
                                 {[
                                     "Merit and SET-Based scholarships applicable only for First Year.",
@@ -1977,9 +2006,12 @@ const BTechCseCyberSecurityNew = () => {
                                     Scholarship Schemes
                                 </h3>
 
-                                <p className="text-[14px] leading-7 text-[#4B5A72] mb-5">
-                                    SRMU offers limited scholarships to support meritorious and deserving students at the time of admission. Scholarships are awarded strictly as per approved eligibility criteria and are applicable only in the first year of admission.
-                                </p>
+                                <div className="mb-5">
+                                    <p className={`text-[14px] leading-7 text-[#4B5A72] ${!rm['schDesk'] ? 'rm-clamp' : ''}`}>
+                                        SRMU offers limited scholarships to support meritorious and deserving students at the time of admission. Scholarships are awarded strictly as per approved eligibility criteria and are applicable only in the first year of admission.
+                                    </p>
+                                    <button className="rm-btn" onClick={() => toggleRm('schDesk')}>{rm['schDesk'] ? 'Read Less' : 'Read More'}</button>
+                                </div>
 
                                 <Link to="https://srmu.ac.in/scholarship-scheme"
                                     target="_blank"
@@ -2145,12 +2177,19 @@ const BTechCseCyberSecurityNew = () => {
                             <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E]">
                                 Industry Exposure & Cyber Security Learning at SRMU, Lucknow
                             </h2>
-                            <p className="text-[14.5px] leading-5 text-[#4B5A72]">
-                                Cyber security education goes beyond textbooks. At SRMU, students pursuing B.Tech CSE Cyber Security participate in industry sessions, workshops, hackathons, and expert interactions that connect academic concepts with practical security scenarios.                            </p>
-                            <h3 className="text-[19px] font-bold font-display text-[#14284E]"> Industry & Expert Sessions</h3>
-                            <p className="text-[14.5px] leading-5 text-[#4B5A72]">
-                                Students have been exposed to topics including operational technology security, cloud security, application security, ethical hacking, networking, Android security, and generative AI.
-                            </p>
+                            <div>
+                                <p className={`text-[14.5px] leading-5 text-[#4B5A72] ${!rm['indExp1'] ? 'rm-clamp' : ''}`}>
+                                    Cyber security education goes beyond textbooks. At SRMU, students pursuing B.Tech CSE Cyber Security participate in industry sessions, workshops, hackathons, and expert interactions that connect academic concepts with practical security scenarios.
+                                </p>
+                                <button className="rm-btn" onClick={() => toggleRm('indExp1')}>{rm['indExp1'] ? 'Read Less' : 'Read More'}</button>
+                            </div>
+                            <h3 className="text-[19px] font-bold font-display text-[#14284E]"> Industry &amp; Expert Sessions</h3>
+                            <div>
+                                <p className={`text-[14.5px] leading-5 text-[#4B5A72] ${!rm['indExp2'] ? 'rm-clamp' : ''}`}>
+                                    Students have been exposed to topics including operational technology security, cloud security, application security, ethical hacking, networking, Android security, and generative AI.
+                                </p>
+                                <button className="rm-btn" onClick={() => toggleRm('indExp2')}>{rm['indExp2'] ? 'Read Less' : 'Read More'}</button>
+                            </div>
                         </div>
 
                        
@@ -2282,31 +2321,43 @@ const BTechCseCyberSecurityNew = () => {
                                         </li>
 
                                         <li>
-                                            To develop an understanding of computer science and
-                                            engineering at different levels of abstraction including
-                                            computer architecture and design, operating systems,
-                                            database management, algorithms and applications.
+                                            <span className={!rm['obj2m'] ? 'rm-clamp' : ''}>
+                                                To develop an understanding of computer science and
+                                                engineering at different levels of abstraction including
+                                                computer architecture and design, operating systems,
+                                                database management, algorithms and applications.
+                                            </span>
+                                            <button className="rm-btn block" onClick={() => toggleRm('obj2m')}>{rm['obj2m'] ? 'Read Less' : 'Read More'}</button>
                                         </li>
 
                                         <li>
-                                            To aware students with a strong foundation in the field
-                                            of Mathematical and basics of engineering fundamentals
-                                            necessary to analyze and evaluate real world engineering
-                                            problems and to further prepare them for higher studies,
-                                            R&amp;D.
+                                            <span className={!rm['obj3m'] ? 'rm-clamp' : ''}>
+                                                To aware students with a strong foundation in the field
+                                                of Mathematical and basics of engineering fundamentals
+                                                necessary to analyze and evaluate real world engineering
+                                                problems and to further prepare them for higher studies,
+                                                R&amp;D.
+                                            </span>
+                                            <button className="rm-btn block" onClick={() => toggleRm('obj3m')}>{rm['obj3m'] ? 'Read Less' : 'Read More'}</button>
                                         </li>
 
                                         <li>
-                                            To develop life-long learning attitude among students and
-                                            to make them aware about professional and social
-                                            responsibility.
+                                            <span className={!rm['obj4m'] ? 'rm-clamp' : ''}>
+                                                To develop life-long learning attitude among students and
+                                                to make them aware about professional and social
+                                                responsibility.
+                                            </span>
+                                            <button className="rm-btn block" onClick={() => toggleRm('obj4m')}>{rm['obj4m'] ? 'Read Less' : 'Read More'}</button>
                                         </li>
 
                                         <li>
-                                            To inculcate an understanding among the students for
-                                            utilizing their knowledge of computer engineering and
-                                            mathematical theory to solve current and future computing
-                                            problems.
+                                            <span className={!rm['obj5m'] ? 'rm-clamp' : ''}>
+                                                To inculcate an understanding among the students for
+                                                utilizing their knowledge of computer engineering and
+                                                mathematical theory to solve current and future computing
+                                                problems.
+                                            </span>
+                                            <button className="rm-btn block" onClick={() => toggleRm('obj5m')}>{rm['obj5m'] ? 'Read Less' : 'Read More'}</button>
                                         </li>
 
                                         <li>
@@ -2324,31 +2375,43 @@ const BTechCseCyberSecurityNew = () => {
                                             </li>
 
                                             <li>
-                                                To develop an understanding of computer science and
-                                                engineering at different levels of abstraction including
-                                                computer architecture and design, operating systems,
-                                                database management, algorithms and applications.
+                                                <span className={!rm['obj2d'] ? 'rm-clamp' : ''}>
+                                                    To develop an understanding of computer science and
+                                                    engineering at different levels of abstraction including
+                                                    computer architecture and design, operating systems,
+                                                    database management, algorithms and applications.
+                                                </span>
+                                                <button className="rm-btn block" onClick={() => toggleRm('obj2d')}>{rm['obj2d'] ? 'Read Less' : 'Read More'}</button>
                                             </li>
 
                                             <li>
-                                                To aware students with a strong foundation in the field
-                                                of Mathematical and basics of engineering fundamentals
-                                                necessary to analyze and evaluate real world engineering
-                                                problems and to further prepare them for higher studies,
-                                                R&amp;D.
+                                                <span className={!rm['obj3d'] ? 'rm-clamp' : ''}>
+                                                    To aware students with a strong foundation in the field
+                                                    of Mathematical and basics of engineering fundamentals
+                                                    necessary to analyze and evaluate real world engineering
+                                                    problems and to further prepare them for higher studies,
+                                                    R&amp;D.
+                                                </span>
+                                                <button className="rm-btn block" onClick={() => toggleRm('obj3d')}>{rm['obj3d'] ? 'Read Less' : 'Read More'}</button>
                                             </li>
 
                                             <li>
-                                                To develop life-long learning attitude among students and
-                                                to make them aware about professional and social
-                                                responsibility.
+                                                <span className={!rm['obj4d'] ? 'rm-clamp' : ''}>
+                                                    To develop life-long learning attitude among students and
+                                                    to make them aware about professional and social
+                                                    responsibility.
+                                                </span>
+                                                <button className="rm-btn block" onClick={() => toggleRm('obj4d')}>{rm['obj4d'] ? 'Read Less' : 'Read More'}</button>
                                             </li>
 
                                             <li>
-                                                To inculcate an understanding among the students for
-                                                utilizing their knowledge of computer engineering and
-                                                mathematical theory to solve current and future computing
-                                                problems.
+                                                <span className={!rm['obj5d'] ? 'rm-clamp' : ''}>
+                                                    To inculcate an understanding among the students for
+                                                    utilizing their knowledge of computer engineering and
+                                                    mathematical theory to solve current and future computing
+                                                    problems.
+                                                </span>
+                                                <button className="rm-btn block" onClick={() => toggleRm('obj5d')}>{rm['obj5d'] ? 'Read Less' : 'Read More'}</button>
                                             </li>
 
                                             <li>
@@ -2518,15 +2581,17 @@ const BTechCseCyberSecurityNew = () => {
                             <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3.5">
                                 Industry Exposure & Cyber Security Learning at <span className="text-[#ffc107]">SRMU, Lucknow</span>
                             </h2>
-                            <p className="text-[16px] text-[#4B5A72] leading-relaxed">
+                            <p className={`text-[16px] text-[#4B5A72] leading-relaxed ${!rm['indExp3'] ? 'rm-clamp' : ''}`}>
                                 Cyber security education goes beyond textbooks. At SRMU, students pursuing B.Tech CSE Cyber Security participate in industry sessions, workshops, hackathons, and
                                 expert interactions that connect academic concepts with practical security scenarios.
                             </p>
+                            <button className="rm-btn" onClick={() => toggleRm('indExp3')}>{rm['indExp3'] ? 'Read Less' : 'Read More'}</button>
                             <h3 className="text-[19px] font-bold font-display text-[#14284E] my-3">Industry & Expert Sessions</h3>
-                            <p className="text-[15.5px] text-[#4B5A72] leading-relaxed max-w-[78ch]">
+                            <p className={`text-[15.5px] text-[#4B5A72] leading-relaxed max-w-[78ch] ${!rm['indExp4'] ? 'rm-clamp' : ''}`}>
                                 Students have been exposed to topics including operational technology security, cloud security, application security, ethical hacking, networking, Android security,
                                 and generative AI.
                             </p>
+                            <button className="rm-btn" onClick={() => toggleRm('indExp4')}>{rm['indExp4'] ? 'Read Less' : 'Read More'}</button>
                         </div>
 
                         {/* </div> */}
@@ -2550,13 +2615,16 @@ const BTechCseCyberSecurityNew = () => {
                                             <span className="font-semibold bg-[#F6FAFE] border border-[#DCE6F2] px-3.5 py-1.5 rounded-full inline-block">15 June 2026</span>
                                         </div>
                                     </div>
-                                    <p className="text-[14.5px] text-[#4B5A72] leading-relaxed mb-3.5">
-                                        A guest lecture on <strong>"From Code to Creativity: The Rise of Generative AI"</strong> was conducted for B.Tech CSE Cyber Security students by{" "}
-                                        <strong>Er. Subham Mishra, Automation Test Engineer, TCS, Kolkata</strong>.
-                                    </p>
-                                    <p className="text-[14.5px] text-[#4B5A72] leading-relaxed mb-4">
-                                        The session introduced participants to key concepts in generative AI and provided practical exposure to AI tools and prompt engineering techniques.
-                                    </p>
+                                    <div className={!rm['glDesc'] ? 'rm-clamp' : ''}>
+                                        <p className="text-[14.5px] text-[#4B5A72] leading-relaxed mb-3.5">
+                                            A guest lecture on <strong>"From Code to Creativity: The Rise of Generative AI"</strong> was conducted for B.Tech CSE Cyber Security students by{" "}
+                                            <strong>Er. Subham Mishra, Automation Test Engineer, TCS, Kolkata</strong>.
+                                        </p>
+                                        <p className="text-[14.5px] text-[#4B5A72] leading-relaxed mb-4">
+                                            The session introduced participants to key concepts in generative AI and provided practical exposure to AI tools and prompt engineering techniques.
+                                        </p>
+                                    </div>
+                                    <button className="rm-btn" onClick={() => toggleRm('glDesc')}>{rm['glDesc'] ? 'Read Less' : 'Read More'}</button>
                                     <div className="bg-[#F6FAFE] border border-[#DCE6F2] rounded-2xl p-5 mt-2">
                                         <h5 className="text-[14px] font-bold text-[#14284E] mb-2.5">Key Learning Outcomes</h5>
                                         <p className="text-[14px] text-[#4B5A72] mb-2.5">Students gained:</p>
@@ -2593,14 +2661,17 @@ const BTechCseCyberSecurityNew = () => {
                                             </span>
                                         </div>
                                     </div>
-                                    <p className="text-[14.5px] text-[#4B5A72] leading-relaxed mb-3.5">Topic: Securing Industrial Control Systems (OT Security)</p>
-                                    <p className="text-[14.5px] text-[#4B5A72] leading-relaxed mb-3.5">
-                                        The session explored how Operational Technology (OT) networks used in manufacturing environments can be targeted by cyber attackers.
-                                    </p>
-                                    <p className="text-[14.5px] text-[#4B5A72] leading-relaxed">
-                                        Students were introduced to real-world detection and response workflows used in industrial security environments, followed by a discussion on career
-                                        opportunities in OT security.
-                                    </p>
+                                    <div className={!rm['otSec'] ? 'rm-clamp' : ''}>
+                                        <p className="text-[14.5px] text-[#4B5A72] leading-relaxed mb-3.5">Topic: Securing Industrial Control Systems (OT Security)</p>
+                                        <p className="text-[14.5px] text-[#4B5A72] leading-relaxed mb-3.5">
+                                            The session explored how Operational Technology (OT) networks used in manufacturing environments can be targeted by cyber attackers.
+                                        </p>
+                                        <p className="text-[14.5px] text-[#4B5A72] leading-relaxed">
+                                            Students were introduced to real-world detection and response workflows used in industrial security environments, followed by a discussion on career
+                                            opportunities in OT security.
+                                        </p>
+                                    </div>
+                                    <button className="rm-btn" onClick={() => toggleRm('otSec')}>{rm['otSec'] ? 'Read Less' : 'Read More'}</button>
                                 </div>
                                 {/* <div className="rounded-2xl overflow-hidden border border-[#DCE6F2] shadow-sm bg-[#f0f4fa] h-[200px] sm:h-[220px] flex items-center justify-center">
                                     <img src="https://ik.imagekit.io/ttalcskjf/IMAGE%203.webp" alt="Cyber Security Digitization - OT Security Guest Lecture" className="w-full h-full object-cover" />
@@ -2623,23 +2694,26 @@ const BTechCseCyberSecurityNew = () => {
                                             <span className="font-semibold bg-[#F6FAFE] border border-[#DCE6F2] px-3.5 py-1.5 rounded-full inline-block">26 March 2025</span>
                                         </div>
                                     </div>
-                                    <p className="text-[14.5px] text-[#4B5A72] leading-relaxed mb-3.5">
-                                        A workshop on <strong>"Networking with Ethical Hacking &amp; Android Development"</strong> was conducted by{" "}
-                                        <strong>Mr. Santu Purkait, Director, Netcamp Solutions Pvt. Ltd.</strong>
-                                    </p>
-                                    <p className="text-[14.5px] text-[#4B5A72] leading-relaxed mb-3.5">The workshop introduced students to practical concepts related to:</p>
-                                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pl-5 text-[14px] text-[#4B5A72] mb-4">
-                                        <li className="list-disc">Network security</li>
-                                        <li className="list-disc">Penetration testing</li>
-                                        <li className="list-disc">Ethical hacking</li>
-                                        <li className="list-disc">Cyber security best practices</li>
-                                        <li className="list-disc">Secure Android application development</li>
-                                        <li className="list-disc">Mobile application security</li>
-                                        <li className="list-disc sm:col-span-2">Real-world cyber threats and defense mechanisms</li>
-                                    </ul>
-                                    <p className="text-[14.5px] text-[#4B5A72] leading-relaxed">
-                                        The session helped students connect networking fundamentals with practical ethical hacking and application security concepts.
-                                    </p>
+                                    <div className={!rm['workshop'] ? 'rm-clamp' : ''}>
+                                        <p className="text-[14.5px] text-[#4B5A72] leading-relaxed mb-3.5">
+                                            A workshop on <strong>"Networking with Ethical Hacking &amp; Android Development"</strong> was conducted by{" "}
+                                            <strong>Mr. Santu Purkait, Director, Netcamp Solutions Pvt. Ltd.</strong>
+                                        </p>
+                                        <p className="text-[14.5px] text-[#4B5A72] leading-relaxed mb-3.5">The workshop introduced students to practical concepts related to:</p>
+                                        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pl-5 text-[14px] text-[#4B5A72] mb-4">
+                                            <li className="list-disc">Network security</li>
+                                            <li className="list-disc">Penetration testing</li>
+                                            <li className="list-disc">Ethical hacking</li>
+                                            <li className="list-disc">Cyber security best practices</li>
+                                            <li className="list-disc">Secure Android application development</li>
+                                            <li className="list-disc">Mobile application security</li>
+                                            <li className="list-disc sm:col-span-2">Real-world cyber threats and defense mechanisms</li>
+                                        </ul>
+                                        <p className="text-[14.5px] text-[#4B5A72] leading-relaxed">
+                                            The session helped students connect networking fundamentals with practical ethical hacking and application security concepts.
+                                        </p>
+                                    </div>
+                                    <button className="rm-btn" onClick={() => toggleRm('workshop')}>{rm['workshop'] ? 'Read Less' : 'Read More'}</button>
                                 </div>
                             </div>
                             <div className="hidden sm:block bg-white border border-[#DCE6F2] hover:border-[#1B4F91]/35 rounded-3xl p-4 sm:p-6 shadow-[0_4px_20px_rgba(15,31,61,0.04)] transition-all">
@@ -2684,11 +2758,12 @@ const BTechCseCyberSecurityNew = () => {
                             </div>
 
                             <div className="w-full md:w-[48%]">
-                                <p className="text-[14.5px] leading-5 text-[#4B5A72]">
+                                <p className={`text-[14.5px] leading-5 text-[#4B5A72] ${!rm['digSys'] ? 'rm-clamp' : ''}`}>
                                     From banking dashboards to hospital records, every industry now
                                     runs on data and digital systems — and every one of them needs
                                     professionals who can keep that data safe.
                                 </p>
+                                <button className="rm-btn" onClick={() => toggleRm('digSys')}>{rm['digSys'] ? 'Read Less' : 'Read More'}</button>
                             </div>
 
                         </div>
@@ -2702,7 +2777,7 @@ const BTechCseCyberSecurityNew = () => {
                                 { title: "IT & Software", desc: "Application, cloud & network security, privacy" },
                                 { title: "E-Commerce", desc: "Customer info, payment gateways, transactions" },
                                 { title: "Telecom & Networking", desc: "Network & infrastructure security, monitoring" },
-                            ].map((item, i) => (
+                            ].slice(0, 2).map((item, i) => (
                                 <div key={i} className="bg-white border border-[#DCE6F2] rounded-xl p-4">
                                     <h3 className="text-[13px] font-bold font-display text-[#14284E] mb-2 leading-snug">{item.title}</h3>
                                     <div className="text-[10px] uppercase tracking-[0.08em] text-[#38B2AC] font-semibold mb-1.5">Protects</div>
@@ -2712,9 +2787,7 @@ const BTechCseCyberSecurityNew = () => {
                         </div>
 
                         {/* Industry Cards — Desktop */}
-                        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
 
                                 {/* Banking */}
                                 <div className="bg-white border border-[#DCE6F2] rounded-xl overflow-hidden">
@@ -2835,8 +2908,6 @@ const BTechCseCyberSecurityNew = () => {
                                     </div>
                                 </div>
 
-                            </div>
-
                         </div>
 
                     </div>
@@ -2858,10 +2929,13 @@ const BTechCseCyberSecurityNew = () => {
                                     Where Our Students <span className="text-[#ffc107]">Get Placed</span>
                                 </h2>
 
-                                <p className="mt-4 text-[15px] leading-6 text-[#4B5A72] max-w-[650px]">
-                                    Dedicated placement training — resume building, coding practice,
-                                    mock interviews and group discussions — starts from the final year.
-                                </p>
+                                <div className="mt-4">
+                                    <p className={`text-[15px] leading-6 text-[#4B5A72] max-w-[650px] ${!rm['placement1'] ? 'rm-clamp' : ''}`}>
+                                        Dedicated placement training — resume building, coding practice,
+                                        mock interviews and group discussions — starts from the final year.
+                                    </p>
+                                    <button className="rm-btn" onClick={() => toggleRm('placement1')}>{rm['placement1'] ? 'Read Less' : 'Read More'}</button>
+                                </div>
 
                                 {/* Mobile stats — dark card */}
                                 <div className="sm:hidden mt-6 bg-[#14284E] rounded-2xl p-5 grid grid-cols-2 gap-x-6 gap-y-5">

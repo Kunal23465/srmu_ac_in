@@ -1,6 +1,30 @@
-@import "tailwindcss" source(none);
+@import "tailwindcss";
 @source "../src";
 @source "../index.html";
+
+/* Mobile Read More: clamp to 2 lines on mobile only */
+@media (max-width: 639px) {
+  .rm-clamp {
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden !important;
+  }
+}
+.rm-btn {
+  display: none;
+  color: #FFC107;
+  font-size: 12px;
+  font-weight: 700;
+  margin-top: 4px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+@media (max-width: 639px) {
+  .rm-btn { display: inline-flex; }
+}
 
 html {
   scroll-behavior: smooth;

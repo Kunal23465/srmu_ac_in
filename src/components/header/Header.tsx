@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import Classes from "../../utils/styles/Global.module.css";
 import TopHeader from "./TopHeader";
-import hamburger from "../../assets/images/home/menu-icon.png";
 import { MdClose, MdOutlineKeyboardArrowDown } from "react-icons/md";
+import { RxHamburgerMenu } from "react-icons/rx";
 import { Link, useLocation } from "react-router-dom";
 import { HeaderData } from "./HeaderData";
 import { AppDispatch, RootState } from "../../store";
@@ -237,14 +237,9 @@ const Header = () => {
 
               {/* HAMBURGER */}
               <div className="lg:hidden my-auto">
-                <img
-                  src={hamburger}
-                  alt="Menu"
-                  width={30}
-                  height={21}
-                  loading="eager"
-                  decoding="async"
-                  className="cursor-pointer w-[30px] h-[21px]"
+                <RxHamburgerMenu
+                  size={32}
+                  className="cursor-pointer text-white"
                   onClick={() => setSideMenu((pre) => !pre)}
                 />
               </div>

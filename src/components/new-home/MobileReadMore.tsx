@@ -1,25 +1,55 @@
-import { useState } from 'react';
-import Classes from "../../utils/styles/Global.module.css";
+import React, { useState, useEffect } from 'react';
+
 type MobileReadMoreProps = {
-  children: string;
+  children: React.ReactNode;
   className?: string;
 };
 
 export default function MobileReadMore({ children, className = '' }: MobileReadMoreProps) {
   const [expanded, setExpanded] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 767px)');
+    setIsMobile(mq.matches);
+    const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches);
+    mq.addEventListener('change', handler);
+    return () => mq.removeEventListener('change', handler);
+  }, []);
+
+  const clampStyle: React.CSSProperties =
+    isMobile && !expanded
+      ? {
+          display: '-webkit-box',
+          WebkitLineClamp: 2,
+          WebkitBoxOrient: 'vertical',
+          overflow: 'hidden',
+        }
+      : {};
 
   return (
     <div className={className}>
-      <p className={`md:hidden ${expanded ? '' : 'line-clamp-2'}`}>{children}</p>
-      <p className="hidden md:block">{children}</p>
-      <button
-        type="button"
-        onClick={() => setExpanded((current) => !current)}
-        className="mt-1 inline-flex text-xs font-bold text-[#FFC107] md:hidden"
-        aria-expanded={expanded}
-      >
-        {expanded ? 'Read Less' : 'Read More'}
-      </button>
+      <div style={clampStyle}>{children}</div>
+      {isMobile && (
+        <button
+          type="button"
+          onClick={() => setExpanded((prev) => !prev)}
+          style={{
+            color: '#FFC107',
+            fontWeight: 700,
+            fontSize: '12px',
+            marginTop: '4px',
+            display: 'inline-flex',
+            background: 'none',
+            border: 'none',
+            padding: 0,
+            cursor: 'pointer',
+          }}
+          aria-expanded={expanded}
+        >
+          {expanded ? 'Read Less' : 'Read More'}
+        </button>
+      )}
     </div>
   );
 }

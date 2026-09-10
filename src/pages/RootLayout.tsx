@@ -126,7 +126,7 @@ const RootLayout: React.FC = () => {
         type="button"
         onClick={openWhatsApp}
         aria-label="Contact SRMU on WhatsApp"
-        className="fixed bottom-20 sm:bottom-10 left-4 z-[9999] rounded-full shadow-lg hover:scale-110 transition-all duration-300"
+        className="hidden sm:block fixed bottom-20 sm:bottom-10 left-4 z-[9999] rounded-full shadow-lg hover:scale-110 transition-all duration-300"
       >
         <img
           src={whatsapp}
