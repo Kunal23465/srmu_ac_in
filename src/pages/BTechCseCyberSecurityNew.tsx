@@ -1074,26 +1074,26 @@ const BTechCseCyberSecurityNew = () => {
                                         responds to live threats.
                                     </p>
 
-                                    <div className="flex flex-wrap gap-2">
-                                        <span className="bg-[#ECFBF8] border border-[#B8E8E1] text-[#168C82] sm:bg-[#F6FAFE] sm:border-[#DCE6F2] sm:text-[#1B4F91] rounded-full px-3 py-2 text-[14.5px]">
+                                    <ul className="list-disc pl-5 space-y-1.5 mt-2 text-[#4B5A72] text-[13px] sm:text-[14.5px]">
+                                        <li className="">
                                             SIEM Monitoring
-                                        </span>
-                                        <span className="bg-[#ECFBF8] border border-[#B8E8E1] text-[#168C82] sm:bg-[#F6FAFE] sm:border-[#DCE6F2] sm:text-[#1B4F91] rounded-full px-3 py-2 text-[14.5px]">
+                                        </li>
+                                        <li className="">
                                             Security Alerts
-                                        </span>
-                                        <span className="bg-[#ECFBF8] border border-[#B8E8E1] text-[#168C82] sm:bg-[#F6FAFE] sm:border-[#DCE6F2] sm:text-[#1B4F91] rounded-full px-3 py-2 text-[14.5px]">
+                                        </li>
+                                        <li className="">
                                             Threat Intelligence
-                                        </span>
-                                        <span className="bg-[#ECFBF8] border border-[#B8E8E1] text-[#168C82] sm:bg-[#F6FAFE] sm:border-[#DCE6F2] sm:text-[#1B4F91] rounded-full px-3 py-2 text-[14.5px]">
+                                        </li>
+                                        <li className="">
                                             Incident Response
-                                        </span>
-                                        <span className="bg-[#ECFBF8] border border-[#B8E8E1] text-[#168C82] sm:bg-[#F6FAFE] sm:border-[#DCE6F2] sm:text-[#1B4F91] rounded-full px-3 py-2 text-[14.5px]">
+                                        </li>
+                                        <li className="">
                                             Log Correlation
-                                        </span>
-                                        <span className="bg-[#ECFBF8] border border-[#B8E8E1] text-[#168C82] sm:bg-[#F6FAFE] sm:border-[#DCE6F2] sm:text-[#1B4F91] rounded-full px-3 py-2 text-[14.5px]">
+                                        </li>
+                                        <li className="">
                                             Threat Hunting
-                                        </span>
-                                    </div>
+                                        </li>
+                                    </ul>
                                 </div>
 
                                 {/* Mobile Content */}
@@ -1108,26 +1108,26 @@ const BTechCseCyberSecurityNew = () => {
                                             responds to live threats.
                                         </p>
 
-                                        <div className="flex flex-wrap gap-2">
-                                            <span className="bg-[#ECFBF8] border border-[#B8E8E1] text-[#168C82] sm:bg-[#F6FAFE] sm:border-[#DCE6F2] sm:text-[#1B4F91] rounded-full px-3 py-2 text-[14.5px]">
+                                        <ul className="list-disc pl-5 space-y-1.5 mt-2 text-[#4B5A72] text-[13px] sm:text-[14.5px]">
+                                            <li className="">
                                                 SIEM Monitoring
-                                            </span>
-                                            <span className="bg-[#ECFBF8] border border-[#B8E8E1] text-[#168C82] sm:bg-[#F6FAFE] sm:border-[#DCE6F2] sm:text-[#1B4F91] rounded-full px-3 py-2 text-[14.5px]">
+                                            </li>
+                                            <li className="">
                                                 Security Alerts
-                                            </span>
-                                            <span className="bg-[#ECFBF8] border border-[#B8E8E1] text-[#168C82] sm:bg-[#F6FAFE] sm:border-[#DCE6F2] sm:text-[#1B4F91] rounded-full px-3 py-2 text-[14.5px]">
+                                            </li>
+                                            <li className="">
                                                 Threat Intelligence
-                                            </span>
-                                            <span className="bg-[#ECFBF8] border border-[#B8E8E1] text-[#168C82] sm:bg-[#F6FAFE] sm:border-[#DCE6F2] sm:text-[#1B4F91] rounded-full px-3 py-2 text-[14.5px]">
+                                            </li>
+                                            <li className="">
                                                 Incident Response
-                                            </span>
-                                            <span className="bg-[#ECFBF8] border border-[#B8E8E1] text-[#168C82] sm:bg-[#F6FAFE] sm:border-[#DCE6F2] sm:text-[#1B4F91] rounded-full px-3 py-2 text-[14.5px]">
+                                            </li>
+                                            <li className="">
                                                 Log Correlation
-                                            </span>
-                                            <span className="bg-[#ECFBF8] border border-[#B8E8E1] text-[#168C82] sm:bg-[#F6FAFE] sm:border-[#DCE6F2] sm:text-[#1B4F91] rounded-full px-3 py-2 text-[14.5px]">
+                                            </li>
+                                            <li className="">
                                                 Threat Hunting
-                                            </span>
-                                        </div>
+                                            </li>
+                                        </ul>
                                     </div>
                                 )}
                             </div>
@@ -3239,12 +3239,12 @@ const BTechCseCyberSecurityNew = () => {
 
                         {/* Comparison Table 1 — Desktop */}
                         <div className="hidden sm:block overflow-x-auto mb-8 bg-white border border-[#DCE6F2] rounded-xl shadow-[0_4px_20px_rgba(15,31,61,0.03)]">
-                            <table className="w-full min-w-[700px] text-left border-collapse">
+                            <table className="w-full min-w-[700px] table-fixed text-left border-collapse">
                                 <thead>
                                     <tr className="bg-[#F4F7FB] border-b border-[#DCE6F2] text-[#14284E]">
-                                        <th className="px-6 py-4 text-[14px] font-bold">Feature</th>
-                                        <th className="px-6 py-4 text-[14px] font-bold">Cyber Security</th>
-                                        <th className="px-6 py-4 text-[14px] font-bold">CSE</th>
+                                        <th className="px-6 py-4 text-[14px] font-bold w-[30%]">Feature</th>
+                                        <th className="px-6 py-4 text-[14px] font-bold w-[35%]">Cyber Security</th>
+                                        <th className="px-6 py-4 text-[14px] font-bold w-[35%]">CSE</th>
                                     </tr>
                                 </thead>
                                 <tbody className="text-[#4B5A72]">
@@ -3322,12 +3322,12 @@ const BTechCseCyberSecurityNew = () => {
 
                         {/* Comparison Table 2 — Desktop */}
                         <div className="hidden sm:block overflow-x-auto mb-10 bg-white border border-[#DCE6F2] rounded-xl shadow-[0_4px_20px_rgba(15,31,61,0.03)]">
-                            <table className="w-full min-w-[700px] text-left border-collapse">
+                            <table className="w-full min-w-[700px] table-fixed text-left border-collapse">
                                 <thead>
                                     <tr className="bg-[#F4F7FB] border-b border-[#DCE6F2] text-[#14284E]">
-                                        <th className="px-6 py-4 text-[14px] font-bold">Feature</th>
-                                        <th className="px-6 py-4 text-[14px] font-bold">Cyber Security</th>
-                                        <th className="px-6 py-4 text-[14px] font-bold">AI / Data Sci</th>
+                                        <th className="px-6 py-4 text-[14px] font-bold w-[30%]">Feature</th>
+                                        <th className="px-6 py-4 text-[14px] font-bold w-[35%]">Cyber Security</th>
+                                        <th className="px-6 py-4 text-[14px] font-bold w-[35%]">AI / Data Sci</th>
                                     </tr>
                                 </thead>
                                 <tbody className="text-[#4B5A72]">
