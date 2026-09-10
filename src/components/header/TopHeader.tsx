@@ -36,10 +36,9 @@ const TopHeader: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               to="https://students.srmu.ac.in/login"
-              className="bg-[#FFB703] hover:bg-white px-2 xl:px-4 text-xs xl:text-[13px] font-medium uppercase border border-[#ffb703] py-[1rem] flex items-center text-black"
+              className="bg-white hover:bg-gray-50 px-3 xl:px-4 border border-white py-[1rem] flex items-center justify-center"
             >
-              <img src="/shared-image.png" alt="SRMUSET Logo" className="h-[22px] w-auto mr-2" />
-              SRMUSET EXAM PORTAL
+              <img src="/shared-image.png" alt="SRMUSET Logo" className="h-[22px] w-auto" />
             </Link>
             {/* <Link to={inductionSchedule} target="_blank" rel="noopener noreferrer" className="bg-white flex items-center px-4 py-[7px] xl:py-[8px] gap-2 border-l border-[#ccc]">
 
@@ -184,7 +183,7 @@ const TopHeader: React.FC = () => {
 
               <a
                 href="tel:18001035298"
-                className="py-1 flex items-center border-l border-[#ccc] pl-2 pr-1"
+                className="py-1 flex items-center border-l border-r border-[#ccc] px-2"
                 aria-label="Call Admissions Helpline 18001035298"
               >
                 <IoCallSharp size={24} className="text-[#FFB703]" />
@@ -202,10 +201,9 @@ const TopHeader: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 to="https://students.srmu.ac.in/login"
-                className="bg-[#FFB703] hover:bg-white px-2 text-[9px] font-medium uppercase border border-[#ffb703] py-1 flex items-center text-black"
+                className="bg-white hover:bg-gray-50 px-3 border border-white py-1 flex items-center justify-center"
               >
-                <img src="/shared-image.png" alt="SRMUSET Logo" className="h-4 w-auto mr-1.5" />
-                SRMUSET EXAM PORTAL
+                <img src="/shared-image.png" alt="SRMUSET Logo" className="h-4 w-auto" />
               </Link>
               {/* <Link
                 target="_blank"
