@@ -38,7 +38,7 @@ const TopHeader: React.FC = () => {
               to="https://students.srmu.ac.in/login"
               className="bg-white hover:bg-gray-50 px-3 xl:px-4 border border-white py-[1rem] flex items-center justify-center"
             >
-              <img src="/shared-image.png" alt="SRMUSET Logo" className="h-[22px] w-auto" />
+              <img src="/shared-image.png" alt="SRMUSET Logo" className="h-[30px] w-auto" />
             </Link>
             {/* <Link to={inductionSchedule} target="_blank" rel="noopener noreferrer" className="bg-white flex items-center px-4 py-[7px] xl:py-[8px] gap-2 border-l border-[#ccc]">
 
