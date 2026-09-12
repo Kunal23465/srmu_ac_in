@@ -148,7 +148,7 @@ const BTechCseCyberSecurityNew = () => {
             <main>
 
                 <section className="relative pt-4 sm:pt-20 lg:pt-24 pb-8 lg:pb-12 w-full overflow-hidden">
-                    {/* Background Video */}
+                    {/* Background Video changes not reflected*/}
                     <video
                         autoPlay
                         loop
