@@ -31,6 +31,7 @@ import aluminiTalks from "../../assets/new-home/events/alumni_talk_law.webp";
 import financialAwareness from "../../assets/new-home/events/Financial-Awareness.webp";
 import memoryManagement from "../../assets/new-home/events/Memory-Management.webp";
 import villageVisit from "../../assets/new-home/events/Legal-Aid-Cell-Institute-of-Legal-Studies-organised-drive-at-srmu.webp";
+import guestVisit from "../../assets/new-home/events/new-img.jpeg";
 
 export type EventItem = {
   id: string | number;
@@ -48,6 +49,42 @@ export type EventItem = {
 };
 
 const eventsData: EventItem[] = [
+
+  {
+    id: 23,
+    isRedirect: false,
+    image: guestVisit,
+    imageSmall: guestVisit,
+    date: "September 15th, 2026",
+    title: `Guest Lecture on Case-Based Group Discussion Organized at IMCE`,
+    description: `
+The <strong>Faculty of Management, Institute of Management, Commerce & Economics (IMCE), Shri Ramswaroop Memorial University</strong>, is organizing an insightful guest lecture on <strong>“Case-Based Group Discussion”</strong> for the <strong>UG & PG students of IMCE</strong>.
+
+<br/><strong>About the Session</strong><br/>
+
+The session will provide students with practical exposure to <strong>case-based discussions, analytical thinking, problem-solving, communication, and effective participation in group discussions</strong>.
+
+<br/><strong>Guest Speaker</strong><br/>
+
+The session will feature <strong>Mr. Satish Anand</strong> as the guest speaker, who will share valuable insights and practical guidance on case-based group discussions.
+
+<br/><strong>Session Details</strong><br/>
+
+<strong>Date:</strong> 15 September 2026<br/>
+<strong>Time:</strong> 10:00 AM onwards<br/>
+<strong>Venue:</strong> Mini Auditorium
+
+<br/><strong>Organized By</strong><br/>
+
+<strong>FGWIC Committee & Respective Class Coordinators</strong>
+
+<br/><strong>Who Can Attend</strong><br/>
+
+All <strong>faculty members and students interested in the session</strong> are invited to attend and benefit from this engaging academic interaction.
+
+The guest lecture aims to enhance students’ <strong>analytical abilities, communication skills, problem-solving approach, and confidence in participating effectively in group discussions</strong>.
+`,
+  },
   {
     id: 22,
     isRedirect: false,
@@ -80,7 +117,7 @@ The Nukkad Natak and village outreach activity encouraged <strong>meaningful int
 The event reflects the university’s commitment to <strong>community engagement, legal awareness, and social responsibility</strong>.
 `,
   },
-  
+
   {
     id: 21,
     isRedirect: false,
