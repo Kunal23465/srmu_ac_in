@@ -9,7 +9,7 @@ const recruiterLogos = [
     ["https://ik.imagekit.io/ttalcskjf/tcs.webp", "TCS"],
     ["https://ik.imagekit.io/ttalcskjf/infosys.webp", "Infosys"],
     ["https://ik.imagekit.io/ttalcskjf/Wipro.webp", "Wipro"],
-    ["https://ik.imagekit.io/ttalcskjf/l-t.webp?updatedAt=1788591605708", "L&T"],
+    ["https://upload.wikimedia.org/wikipedia/commons/e/e5/L%26T.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original", "L&T"],
     ["https://ik.imagekit.io/ttalcskjf/images.png", "HCL Technologies"],
     ["https://ik.imagekit.io/ttalcskjf/Accenture.webp", "Accenture"],
     ["https://ik.imagekit.io/ttalcskjf/capgemini.webp", "Capgemini"],
@@ -187,16 +187,16 @@ const BTechCseCyberSecurityNew = () => {
 
                                 {/* H1 */}
                                 <h1 className="text-[clamp(30px,4vw,46px)] leading-[1.14] font-bold font-display text-white tracking-tight mb-4.5 flex flex-wrap items-center gap-2">
-    <span className="drop-shadow-md">Learn B.Tech CSE Cyber Security in Lucknow with</span> 
-    <span className="bg-white/95 px-2.5 py-1 rounded-lg shadow-sm flex items-center shrink-0">
-        <img 
-            src="https://ik.imagekit.io/ttalcskjf/l-t.webp?updatedAt=1788591605708" 
-            alt="L&T EduTech" 
-            className="inline-block h-[0.85em] w-auto align-middle"
-        />
-    </span>
-    <span className="drop-shadow-md">at SRMU</span>
-</h1>
+                                    <span className="drop-shadow-md">Learn B.Tech CSE Cyber Security in Lucknow with</span>
+                                    <span className="bg-white/95 px-2.5 py-1 rounded-lg shadow-sm flex items-center shrink-0">
+                                        <img
+                                            src="https://ik.imagekit.io/ttalcskjf/l-t.webp?updatedAt=1788591605708"
+                                            alt="L&T EduTech"
+                                            className="inline-block h-[0.85em] w-auto align-middle"
+                                        />
+                                    </span>
+                                    <span className="drop-shadow-md">at SRMU</span>
+                                </h1>
 
                                 {/* H2 */}
                                 {/* <h2 className="text-[clamp(20px,2.5vw,28px)] leading-[1.2] font-bold font-display text-sky-200 mb-3 drop-shadow-sm">
@@ -612,7 +612,7 @@ const BTechCseCyberSecurityNew = () => {
                         </div>
                     </div>
                 </section>
-                <section 
+                <section
                     className="relative py-8 md:py-10 px-4 sm:px-6 bg-cover bg-center bg-no-repeat"
                     style={{ backgroundImage: "url('/back2.png')" }}
                 >
@@ -741,7 +741,7 @@ const BTechCseCyberSecurityNew = () => {
                         <div ref={labsScrollRef} className="flex flex-nowrap gap-3 overflow-x-auto pb-2 scrollbar-hide sm:grid sm:grid-cols-2 sm:gap-5 sm:space-y-0 sm:overflow-visible sm:pb-0 scroll-smooth">
 
                             {/* Cyber Security Simulation Lab */}
-                            <div 
+                            <div
                                 style={{ backgroundImage: "url('/backgroundIm.png')" }}
                                 className="relative bg-cover bg-right bg-no-repeat shrink-0 w-[235px] bg-white border border-[#DCE6F2] rounded-2xl overflow-hidden sm:w-auto sm:shrink shadow-[0_2px_12px_rgba(15,31,61,0.05)] hover:shadow-[0_8px_28px_rgba(15,31,61,0.1)] hover:-translate-y-1 transition-all duration-300 group"
                             >
@@ -756,92 +756,92 @@ const BTechCseCyberSecurityNew = () => {
                                         className="relative md:hidden w-full flex items-center justify-between px-4 pt-8 pb-3 text-left"
                                         aria-expanded={openSection === "cyber"}
                                     >
-                                    <span className="absolute top-3 left-4 text-[10px] font-mono font-semibold uppercase tracking-[0.12em] text-[#168C82]">LAB / 01</span>
-                                    <h3 className="text-[17px] font-bold font-display text-[#14284E]">
-                                        Cyber Security Simulation Lab
-                                    </h3>
+                                        <span className="absolute top-3 left-4 text-[10px] font-mono font-semibold uppercase tracking-[0.12em] text-[#168C82]">LAB / 01</span>
+                                        <h3 className="text-[17px] font-bold font-display text-[#14284E]">
+                                            Cyber Security Simulation Lab
+                                        </h3>
 
-                                    <span className="hidden text-[24px] font-medium text-[#1B4F91] leading-none">
-                                        {openSection === "cyber" ? "−" : "+"}
-                                    </span>
-                                </button>
+                                        <span className="hidden text-[24px] font-medium text-[#1B4F91] leading-none">
+                                            {openSection === "cyber" ? "−" : "+"}
+                                        </span>
+                                    </button>
 
-                                {/* Desktop / Tablet Content */}
-                                <div className="hidden md:block">
-                                    {/* Accent bar */}
-                                    <div className="h-1 w-full bg-gradient-to-r from-[#1B4F91] to-[#38bdf8]"></div>
-                                    <div className="p-5 pt-4">
-                                        <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#EBF5FF] text-[#1B4F91] text-[10px] font-bold uppercase tracking-widest mb-3">LAB / 01</span>
-                                        <h3 className="text-[17px] font-bold font-display text-[#14284E] mb-2 group-hover:text-[#1B4F91] transition-colors">
-                                        Cyber Security Simulation Lab
-                                    </h3>
+                                    {/* Desktop / Tablet Content */}
+                                    <div className="hidden md:block">
+                                        {/* Accent bar */}
+                                        <div className="h-1 w-full bg-gradient-to-r from-[#1B4F91] to-[#38bdf8]"></div>
+                                        <div className="p-5 pt-4">
+                                            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#EBF5FF] text-[#1B4F91] text-[10px] font-bold uppercase tracking-widest mb-3">LAB / 01</span>
+                                            <h3 className="text-[17px] font-bold font-display text-[#14284E] mb-2 group-hover:text-[#1B4F91] transition-colors">
+                                                Cyber Security Simulation Lab
+                                            </h3>
 
-                                    <p className="text-[14.5px] font-semibold italic text-[#ffc107] mb-1">
-                                        Experience real-world attack scenarios safely.
-                                    </p>
+                                            <p className="text-[14.5px] font-semibold italic text-[#ffc107] mb-1">
+                                                Experience real-world attack scenarios safely.
+                                            </p>
 
-                                    <p className="text-[14.5px] leading-5 text-[#4B5A72] mb-4">
-                                        Students analyse vulnerabilities, secure systems, and understand
-                                        how organisations defend against modern cyber threats.
-                                    </p>
+                                            <p className="text-[14.5px] leading-5 text-[#4B5A72] mb-4">
+                                                Students analyse vulnerabilities, secure systems, and understand
+                                                how organisations defend against modern cyber threats.
+                                            </p>
 
-                                    <ul className="list-disc pl-5 space-y-1.5 mt-2 text-[#4B5A72] text-[13px] sm:text-[14.5px]">
-                                        <li className="">
-                                            Network Monitoring
-                                        </li>
-                                        <li className="">
-                                            Vulnerability Assessment
-                                        </li>
-                                        <li className="">
-                                            Penetration Testing
-                                        </li>
-                                        <li className="">
-                                            Malware Behaviour Analysis
-                                        </li>
-                                        <li className="">
-                                            Threat Detection
-                                        </li>
-                                        <li className="">
-                                            Security Monitoring
-                                        </li>
-                                    </ul>
+                                            <ul className="list-disc pl-5 space-y-1.5 mt-2 text-[#4B5A72] text-[13px] sm:text-[14.5px]">
+                                                <li className="">
+                                                    Network Monitoring
+                                                </li>
+                                                <li className="">
+                                                    Vulnerability Assessment
+                                                </li>
+                                                <li className="">
+                                                    Penetration Testing
+                                                </li>
+                                                <li className="">
+                                                    Malware Behaviour Analysis
+                                                </li>
+                                                <li className="">
+                                                    Threat Detection
+                                                </li>
+                                                <li className="">
+                                                    Security Monitoring
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
-                                </div>
 
-                                {/* Mobile Content */}
-                                {true && (
-                                    <div className="md:hidden px-3 pb-3 text-[12.5px] [&_p]:text-[12.5px] [&_p]:leading-4 [&_span]:px-2.5 [&_span]:py-1 [&_span]:text-[11px]">
-                                        <p className="text-[14.5px] font-semibold italic text-[#ffc107] mb-1">
-                                            Experience real-world attack scenarios safely.
-                                        </p>
+                                    {/* Mobile Content */}
+                                    {true && (
+                                        <div className="md:hidden px-3 pb-3 text-[12.5px] [&_p]:text-[12.5px] [&_p]:leading-4 [&_span]:px-2.5 [&_span]:py-1 [&_span]:text-[11px]">
+                                            <p className="text-[14.5px] font-semibold italic text-[#ffc107] mb-1">
+                                                Experience real-world attack scenarios safely.
+                                            </p>
 
-                                        <p className="text-[14.5px] leading-5 text-[#4B5A72] mb-4">
-                                            Students analyse vulnerabilities, secure systems, and understand
-                                            how organisations defend against modern cyber threats.
-                                        </p>
+                                            <p className="text-[14.5px] leading-5 text-[#4B5A72] mb-4">
+                                                Students analyse vulnerabilities, secure systems, and understand
+                                                how organisations defend against modern cyber threats.
+                                            </p>
 
-                                        <ul className="list-disc pl-5 space-y-1.5 mt-2 text-[#4B5A72] text-[13px] sm:text-[14.5px]">
-                                            <li className="">
-                                                Network Monitoring
-                                            </li>
-                                            <li className="">
-                                                Vulnerability Assessment
-                                            </li>
-                                            <li className="">
-                                                Penetration Testing
-                                            </li>
-                                            <li className="">
-                                                Malware Behaviour Analysis
-                                            </li>
-                                            <li className="">
-                                                Threat Detection
-                                            </li>
-                                            <li className="">
-                                                Security Monitoring
-                                            </li>
-                                        </ul>
-                                    </div>
-                                )}
+                                            <ul className="list-disc pl-5 space-y-1.5 mt-2 text-[#4B5A72] text-[13px] sm:text-[14.5px]">
+                                                <li className="">
+                                                    Network Monitoring
+                                                </li>
+                                                <li className="">
+                                                    Vulnerability Assessment
+                                                </li>
+                                                <li className="">
+                                                    Penetration Testing
+                                                </li>
+                                                <li className="">
+                                                    Malware Behaviour Analysis
+                                                </li>
+                                                <li className="">
+                                                    Threat Detection
+                                                </li>
+                                                <li className="">
+                                                    Security Monitoring
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    )}
                                 </div>
                             </div>
 
@@ -892,38 +892,38 @@ const BTechCseCyberSecurityNew = () => {
                                     <div className="p-5 pt-4">
                                         <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#EBF5FF] text-[#1B4F91] text-[10px] font-bold uppercase tracking-widest mb-3">LAB / 02</span>
                                         <h3 className="text-[17px] font-bold font-display text-[#14284E] mb-2 group-hover:text-[#1B4F91] transition-colors">
-                                        Ethical Hacking Lab
-                                    </h3>
+                                            Ethical Hacking Lab
+                                        </h3>
 
-                                    <p className="text-[14.5px] font-semibold italic text-[#ffc107] mb-1">
-                                        Think like an attacker to build stronger security.
-                                    </p>
+                                        <p className="text-[14.5px] font-semibold italic text-[#ffc107] mb-1">
+                                            Think like an attacker to build stronger security.
+                                        </p>
 
-                                    <p className="text-[14.5px] leading-5 text-[#4B5A72] mb-4">
-                                        Students learn ethical hacking techniques under expert supervision
-                                        in legal, controlled lab environments.
-                                    </p>
+                                        <p className="text-[14.5px] leading-5 text-[#4B5A72] mb-4">
+                                            Students learn ethical hacking techniques under expert supervision
+                                            in legal, controlled lab environments.
+                                        </p>
 
-                                    <ul className="list-disc pl-5 space-y-1.5 mt-2 text-[#4B5A72] text-[13px] sm:text-[14.5px]">
-                                        <li className="">
-                                            Password Security
-                                        </li>
-                                        <li className="">
-                                            Web Application Testing
-                                        </li>
-                                        <li className="">
-                                            Network Exploitation
-                                        </li>
-                                        <li className="">
-                                            Wireless Security
-                                        </li>
-                                        <li className="">
-                                            Reconnaissance
-                                        </li>
-                                        <li className="">
-                                            Vulnerability Scanning
-                                        </li>
-                                    </ul>
+                                        <ul className="list-disc pl-5 space-y-1.5 mt-2 text-[#4B5A72] text-[13px] sm:text-[14.5px]">
+                                            <li className="">
+                                                Password Security
+                                            </li>
+                                            <li className="">
+                                                Web Application Testing
+                                            </li>
+                                            <li className="">
+                                                Network Exploitation
+                                            </li>
+                                            <li className="">
+                                                Wireless Security
+                                            </li>
+                                            <li className="">
+                                                Reconnaissance
+                                            </li>
+                                            <li className="">
+                                                Vulnerability Scanning
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
 
@@ -1245,16 +1245,16 @@ const BTechCseCyberSecurityNew = () => {
 
                     </div>
 
-                        {/* Helpline Button */}
-                        <div className="mt-8 flex justify-center w-full">
-                            <a 
-                                href="tel:18001026004" 
-                                className="relative group overflow-hidden bg-gradient-to-r from-[#ffc107] via-[#ffcd38] to-[#e0a800] text-[#071329] font-extrabold text-[14px] sm:text-[15px] px-8 py-3.5 rounded-lg shadow-[0_8px_20px_-8px_rgba(217,139,43,0.6)] hover:shadow-[0_12px_30px_rgba(255,193,7,0.65)] hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2 text-center"
-                            >
-                                <PhoneCall className="w-4 h-4 shrink-0 transition-transform duration-300 group-hover:scale-110" />
-                                <span>Have Query? Talk to Expert</span>
-                            </a>
-                        </div>
+                    {/* Helpline Button */}
+                    <div className="mt-8 flex justify-center w-full">
+                        <a
+                            href="tel:18001026004"
+                            className="relative group overflow-hidden bg-gradient-to-r from-[#ffc107] via-[#ffcd38] to-[#e0a800] text-[#071329] font-extrabold text-[14px] sm:text-[15px] px-8 py-3.5 rounded-lg shadow-[0_8px_20px_-8px_rgba(217,139,43,0.6)] hover:shadow-[0_12px_30px_rgba(255,193,7,0.65)] hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2 text-center"
+                        >
+                            <PhoneCall className="w-4 h-4 shrink-0 transition-transform duration-300 group-hover:scale-110" />
+                            <span>Have Query? Talk to Expert</span>
+                        </a>
+                    </div>
                 </section>
 
 
@@ -1400,11 +1400,10 @@ const BTechCseCyberSecurityNew = () => {
                                 <button
                                     key={tab.id}
                                     onClick={() => setActiveTab(tab.id)}
-                                    className={`font-display font-semibold text-[14.5px] px-5 py-2.75 rounded-lg border-[1.5px] ${
-                                        activeTab === tab.id
+                                    className={`font-display font-semibold text-[14.5px] px-5 py-2.75 rounded-lg border-[1.5px] ${activeTab === tab.id
                                             ? "bg-[#14284E] border-[#14284E] text-white"
                                             : "bg-white border-[#DCE6F2] text-[#4B5A72]"
-                                    }`}
+                                        }`}
                                 >
                                     {tab.label}
                                 </button>
@@ -1450,41 +1449,41 @@ const BTechCseCyberSecurityNew = () => {
                                                 )}
 
                                                 <div className={`space-y-4 ${rm[`${yearKey}_more`] ? 'block' : 'hidden'}`}>
-                                                <div>
-                                                    <h4 className="font-bold text-[#20283A] mb-3">Practical Learning</h4>
-                                                    <ul className="list-disc pl-5 space-y-2">
-                                                        <li>Install and configure Linux</li>
-                                                        <li>Write your first secure programs</li>
-                                                        <li>Learn Git & GitHub</li>
-                                                        <li>Build command-line applications</li>
-                                                        <li>Understand computer architecture</li>
-                                                    </ul>
-                                                </div>
-                                                <div>
-                                                    <h4 className="font-bold text-[#20283A] mb-3">Projects</h4>
-                                                    <ul className="list-disc pl-5 space-y-2">
-                                                        <li>Password Generator</li>
-                                                        <li>File Encryption Tool</li>
-                                                        <li>Student Management System</li>
-                                                        <li>Basic Calculator using C</li>
-                                                        <li>Command Line Notes App</li>
-                                                    </ul>
-                                                </div>
-                                                <div>
-                                                    <h4 className="font-bold text-[#20283A] mb-3">Software / Tools</h4>
-                                                    <ul className="list-disc pl-5 space-y-2">
-                                                        <li>Visual Studio Code</li>
-                                                        <li>Ubuntu Linux</li>
-                                                        <li>GitHub</li>
-                                                        <li>CodeBlocks</li>
-                                                        <li>VirtualBox</li>
-                                                    </ul>
-                                                </div>
-                                                {rm[`${yearKey}_more`] && (
-                                                    <button type="button" onClick={() => toggleRm(`${yearKey}_more`)} className="w-full flex justify-center items-center gap-1 text-[13px] font-bold text-[#1B4F91] hover:text-[#14284E] transition-colors py-1.5 mt-2">
-                                                        Show Less <ChevronUp className="w-4 h-4" />
-                                                    </button>
-                                                )}
+                                                    <div>
+                                                        <h4 className="font-bold text-[#20283A] mb-3">Practical Learning</h4>
+                                                        <ul className="list-disc pl-5 space-y-2">
+                                                            <li>Install and configure Linux</li>
+                                                            <li>Write your first secure programs</li>
+                                                            <li>Learn Git & GitHub</li>
+                                                            <li>Build command-line applications</li>
+                                                            <li>Understand computer architecture</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div>
+                                                        <h4 className="font-bold text-[#20283A] mb-3">Projects</h4>
+                                                        <ul className="list-disc pl-5 space-y-2">
+                                                            <li>Password Generator</li>
+                                                            <li>File Encryption Tool</li>
+                                                            <li>Student Management System</li>
+                                                            <li>Basic Calculator using C</li>
+                                                            <li>Command Line Notes App</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div>
+                                                        <h4 className="font-bold text-[#20283A] mb-3">Software / Tools</h4>
+                                                        <ul className="list-disc pl-5 space-y-2">
+                                                            <li>Visual Studio Code</li>
+                                                            <li>Ubuntu Linux</li>
+                                                            <li>GitHub</li>
+                                                            <li>CodeBlocks</li>
+                                                            <li>VirtualBox</li>
+                                                        </ul>
+                                                    </div>
+                                                    {rm[`${yearKey}_more`] && (
+                                                        <button type="button" onClick={() => toggleRm(`${yearKey}_more`)} className="w-full flex justify-center items-center gap-1 text-[13px] font-bold text-[#1B4F91] hover:text-[#14284E] transition-colors py-1.5 mt-2">
+                                                            Show Less <ChevronUp className="w-4 h-4" />
+                                                        </button>
+                                                    )}
                                                 </div>
                                             </div>
                                         )}
@@ -1512,44 +1511,44 @@ const BTechCseCyberSecurityNew = () => {
                                                 )}
 
                                                 <div className={`space-y-4 ${rm[`${yearKey}_more`] ? 'block' : 'hidden'}`}>
-                                                <div>
-                                                    <h4 className="font-bold text-[#20283A] mb-3">Practical Learning</h4>
-                                                    <ul className="list-disc pl-5 space-y-2">
-                                                        <li>Configure secure networks</li>
-                                                        <li>Implement encryption algorithms</li>
-                                                        <li>Build secure databases</li>
-                                                        <li>Perform packet analysis</li>
-                                                        <li>Learn secure coding practices</li>
-                                                    </ul>
-                                                </div>
-                                                <div>
-                                                    <h4 className="font-bold text-[#20283A] mb-3">Projects</h4>
-                                                    <ul className="list-disc pl-5 space-y-2">
-                                                        <li>Secure Login System</li>
-                                                        <li>File Encryption Software</li>
-                                                        <li>Network Packet Analyzer</li>
-                                                        <li>Database Access Control System</li>
-                                                        <li>Password Vault</li>
-                                                    </ul>
-                                                </div>
-                                                <div>
-                                                    <h4 className="font-bold text-[#20283A] mb-3">Software / Tools</h4>
-                                                    <ul className="list-disc pl-5 space-y-2">
-                                                        <li>MySQL</li>
-                                                        <li>Cisco Packet Tracer</li>
-                                                        <li>Wireshark</li>
-                                                        <li>Ubuntu</li>
-                                                        <li>GitHub</li>
-                                                    </ul>
-                                                </div>
-                                                <div className="pt-2">
-                                                    <strong className="text-[#20283A]">Outcome:</strong> You'll develop skills in network configuration, SQL security, encryption, secure authentication, and Python automation.
-                                                </div>
-                                                {rm[`${yearKey}_more`] && (
-                                                    <button type="button" onClick={() => toggleRm(`${yearKey}_more`)} className="w-full flex justify-center items-center gap-1 text-[13px] font-bold text-[#1B4F91] hover:text-[#14284E] transition-colors py-1.5 mt-2">
-                                                        Show Less <ChevronUp className="w-4 h-4" />
-                                                    </button>
-                                                )}
+                                                    <div>
+                                                        <h4 className="font-bold text-[#20283A] mb-3">Practical Learning</h4>
+                                                        <ul className="list-disc pl-5 space-y-2">
+                                                            <li>Configure secure networks</li>
+                                                            <li>Implement encryption algorithms</li>
+                                                            <li>Build secure databases</li>
+                                                            <li>Perform packet analysis</li>
+                                                            <li>Learn secure coding practices</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div>
+                                                        <h4 className="font-bold text-[#20283A] mb-3">Projects</h4>
+                                                        <ul className="list-disc pl-5 space-y-2">
+                                                            <li>Secure Login System</li>
+                                                            <li>File Encryption Software</li>
+                                                            <li>Network Packet Analyzer</li>
+                                                            <li>Database Access Control System</li>
+                                                            <li>Password Vault</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div>
+                                                        <h4 className="font-bold text-[#20283A] mb-3">Software / Tools</h4>
+                                                        <ul className="list-disc pl-5 space-y-2">
+                                                            <li>MySQL</li>
+                                                            <li>Cisco Packet Tracer</li>
+                                                            <li>Wireshark</li>
+                                                            <li>Ubuntu</li>
+                                                            <li>GitHub</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div className="pt-2">
+                                                        <strong className="text-[#20283A]">Outcome:</strong> You'll develop skills in network configuration, SQL security, encryption, secure authentication, and Python automation.
+                                                    </div>
+                                                    {rm[`${yearKey}_more`] && (
+                                                        <button type="button" onClick={() => toggleRm(`${yearKey}_more`)} className="w-full flex justify-center items-center gap-1 text-[13px] font-bold text-[#1B4F91] hover:text-[#14284E] transition-colors py-1.5 mt-2">
+                                                            Show Less <ChevronUp className="w-4 h-4" />
+                                                        </button>
+                                                    )}
                                                 </div>
                                             </div>
                                         )}
@@ -1578,53 +1577,53 @@ const BTechCseCyberSecurityNew = () => {
                                                 )}
 
                                                 <div className={`space-y-4 ${rm[`${yearKey}_more`] ? 'block' : 'hidden'}`}>
-                                                <div>
-                                                    <h4 className="font-bold text-[#20283A] mb-3">Practical Learning</h4>
-                                                    <ul className="list-disc pl-5 space-y-2">
-                                                        <li>Vulnerability Assessment</li>
-                                                        <li>Security Audits</li>
-                                                        <li>Malware Behaviour Analysis</li>
-                                                        <li>Penetration Testing</li>
-                                                        <li>Web Security Testing</li>
-                                                        <li>Mobile Application Security</li>
-                                                        <li>Digital Evidence Collection</li>
-                                                        <li>Threat Hunting</li>
-                                                    </ul>
-                                                </div>
-                                                <div>
-                                                    <h4 className="font-bold text-[#20283A] mb-3">Projects</h4>
-                                                    <ul className="list-disc pl-5 space-y-2">
-                                                        <li>AI-Based Phishing Detector</li>
-                                                        <li>Vulnerability Scanner</li>
-                                                        <li>Secure Banking Portal</li>
-                                                        <li>Cloud Access Manager</li>
-                                                        <li>Secure Online Voting System</li>
-                                                        <li>Malware Detection Dashboard</li>
-                                                        <li>IoT Security Framework</li>
-                                                    </ul>
-                                                </div>
-                                                <div>
-                                                    <h4 className="font-bold text-[#20283A] mb-3">Software / Tools</h4>
-                                                    <ul className="list-disc pl-5 space-y-2">
-                                                        <li>Kali Linux</li>
-                                                        <li>Burp Suite</li>
-                                                        <li>Metasploit</li>
-                                                        <li>OWASP ZAP</li>
-                                                        <li>Nmap</li>
-                                                        <li>Splunk</li>
-                                                        <li>Snort IDS</li>
-                                                        <li>Security Onion</li>
-                                                        <li>VMware</li>
-                                                    </ul>
-                                                </div>
-                                                <div className="pt-2">
-                                                    <strong className="text-[#20283A]">Outcome:</strong> Students spend more time in labs than classrooms — mastering ethical hacking, penetration testing, digital forensics, and cloud security.
-                                                </div>
-                                                {rm[`${yearKey}_more`] && (
-                                                    <button type="button" onClick={() => toggleRm(`${yearKey}_more`)} className="w-full flex justify-center items-center gap-1 text-[13px] font-bold text-[#1B4F91] hover:text-[#14284E] transition-colors py-1.5 mt-2">
-                                                        Show Less <ChevronUp className="w-4 h-4" />
-                                                    </button>
-                                                )}
+                                                    <div>
+                                                        <h4 className="font-bold text-[#20283A] mb-3">Practical Learning</h4>
+                                                        <ul className="list-disc pl-5 space-y-2">
+                                                            <li>Vulnerability Assessment</li>
+                                                            <li>Security Audits</li>
+                                                            <li>Malware Behaviour Analysis</li>
+                                                            <li>Penetration Testing</li>
+                                                            <li>Web Security Testing</li>
+                                                            <li>Mobile Application Security</li>
+                                                            <li>Digital Evidence Collection</li>
+                                                            <li>Threat Hunting</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div>
+                                                        <h4 className="font-bold text-[#20283A] mb-3">Projects</h4>
+                                                        <ul className="list-disc pl-5 space-y-2">
+                                                            <li>AI-Based Phishing Detector</li>
+                                                            <li>Vulnerability Scanner</li>
+                                                            <li>Secure Banking Portal</li>
+                                                            <li>Cloud Access Manager</li>
+                                                            <li>Secure Online Voting System</li>
+                                                            <li>Malware Detection Dashboard</li>
+                                                            <li>IoT Security Framework</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div>
+                                                        <h4 className="font-bold text-[#20283A] mb-3">Software / Tools</h4>
+                                                        <ul className="list-disc pl-5 space-y-2">
+                                                            <li>Kali Linux</li>
+                                                            <li>Burp Suite</li>
+                                                            <li>Metasploit</li>
+                                                            <li>OWASP ZAP</li>
+                                                            <li>Nmap</li>
+                                                            <li>Splunk</li>
+                                                            <li>Snort IDS</li>
+                                                            <li>Security Onion</li>
+                                                            <li>VMware</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div className="pt-2">
+                                                        <strong className="text-[#20283A]">Outcome:</strong> Students spend more time in labs than classrooms — mastering ethical hacking, penetration testing, digital forensics, and cloud security.
+                                                    </div>
+                                                    {rm[`${yearKey}_more`] && (
+                                                        <button type="button" onClick={() => toggleRm(`${yearKey}_more`)} className="w-full flex justify-center items-center gap-1 text-[13px] font-bold text-[#1B4F91] hover:text-[#14284E] transition-colors py-1.5 mt-2">
+                                                            Show Less <ChevronUp className="w-4 h-4" />
+                                                        </button>
+                                                    )}
                                                 </div>
                                             </div>
                                         )}
@@ -1651,45 +1650,45 @@ const BTechCseCyberSecurityNew = () => {
                                                 )}
 
                                                 <div className={`space-y-4 ${rm[`${yearKey}_more`] ? 'block' : 'hidden'}`}>
-                                                <div>
-                                                    <h4 className="font-bold text-[#20283A] mb-3">Practical Learning</h4>
-                                                    <ul className="list-disc pl-5 space-y-2">
-                                                        <li>Aptitude Training</li>
-                                                        <li>Coding Interviews</li>
-                                                        <li>HR Interviews</li>
-                                                        <li>Technical Interviews</li>
-                                                        <li>Resume Building</li>
-                                                        <li>LinkedIn Branding</li>
-                                                        <li>Mock Group Discussions</li>
-                                                    </ul>
-                                                </div>
-                                                <div>
-                                                    <h4 className="font-bold text-[#20283A] mb-3">Projects</h4>
-                                                    <ul className="list-disc pl-5 space-y-2">
-                                                        <li>Enterprise SOC Dashboard</li>
-                                                        <li>AI Intrusion Detection System</li>
-                                                        <li>Blockchain Identity Management</li>
-                                                        <li>Smart Healthcare Security Platform</li>
-                                                        <li>Cloud Security Monitoring Dashboard</li>
-                                                        <li>Ransomware Detection using Machine Learning</li>
-                                                        <li>Secure Smart City Infrastructure</li>
-                                                        <li>Autonomous Threat Intelligence Platform</li>
-                                                    </ul>
-                                                </div>
-                                                <div>
-                                                    <h4 className="font-bold text-[#20283A] mb-3">Software / Tools</h4>
-                                                    <ul className="list-none pl-1 space-y-2">
-                                                        <li>—</li>
-                                                    </ul>
-                                                </div>
-                                                <div className="pt-2">
-                                                    <strong className="text-[#20283A]">Outcome:</strong> The final year focuses on solving real business challenges through internships, research, industry projects, and placement preparation.
-                                                </div>
-                                                {rm[`${yearKey}_more`] && (
-                                                    <button type="button" onClick={() => toggleRm(`${yearKey}_more`)} className="w-full flex justify-center items-center gap-1 text-[13px] font-bold text-[#1B4F91] hover:text-[#14284E] transition-colors py-1.5 mt-2">
-                                                        Show Less <ChevronUp className="w-4 h-4" />
-                                                    </button>
-                                                )}
+                                                    <div>
+                                                        <h4 className="font-bold text-[#20283A] mb-3">Practical Learning</h4>
+                                                        <ul className="list-disc pl-5 space-y-2">
+                                                            <li>Aptitude Training</li>
+                                                            <li>Coding Interviews</li>
+                                                            <li>HR Interviews</li>
+                                                            <li>Technical Interviews</li>
+                                                            <li>Resume Building</li>
+                                                            <li>LinkedIn Branding</li>
+                                                            <li>Mock Group Discussions</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div>
+                                                        <h4 className="font-bold text-[#20283A] mb-3">Projects</h4>
+                                                        <ul className="list-disc pl-5 space-y-2">
+                                                            <li>Enterprise SOC Dashboard</li>
+                                                            <li>AI Intrusion Detection System</li>
+                                                            <li>Blockchain Identity Management</li>
+                                                            <li>Smart Healthcare Security Platform</li>
+                                                            <li>Cloud Security Monitoring Dashboard</li>
+                                                            <li>Ransomware Detection using Machine Learning</li>
+                                                            <li>Secure Smart City Infrastructure</li>
+                                                            <li>Autonomous Threat Intelligence Platform</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div>
+                                                        <h4 className="font-bold text-[#20283A] mb-3">Software / Tools</h4>
+                                                        <ul className="list-none pl-1 space-y-2">
+                                                            <li>—</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div className="pt-2">
+                                                        <strong className="text-[#20283A]">Outcome:</strong> The final year focuses on solving real business challenges through internships, research, industry projects, and placement preparation.
+                                                    </div>
+                                                    {rm[`${yearKey}_more`] && (
+                                                        <button type="button" onClick={() => toggleRm(`${yearKey}_more`)} className="w-full flex justify-center items-center gap-1 text-[13px] font-bold text-[#1B4F91] hover:text-[#14284E] transition-colors py-1.5 mt-2">
+                                                            Show Less <ChevronUp className="w-4 h-4" />
+                                                        </button>
+                                                    )}
                                                 </div>
                                             </div>
                                         )}
@@ -1706,142 +1705,142 @@ const BTechCseCyberSecurityNew = () => {
                                     "Every cyber security expert begins by understanding how computers actually work."
                                 </div>
 
-                            <div className="flex flex-col gap-6.5">
+                                <div className="flex flex-col gap-6.5">
 
-                                <div>
-                                    <h4 className="text-[14.5px] uppercase tracking-[0.04em] text-[#1B4F91] mb-2.5">
-                                        Subjects
-                                    </h4>
+                                    <div>
+                                        <h4 className="text-[14.5px] uppercase tracking-[0.04em] text-[#1B4F91] mb-2.5">
+                                            Subjects
+                                        </h4>
 
-                                    <ul>
-                                        <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">
-                                            Programming Fundamentals (C & Python)
-                                        </li>
-                                        <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">
-                                            Engineering Mathematics
-                                        </li>
-                                        <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">
-                                            Computer Organization
-                                        </li>
-                                        <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">
-                                            Digital Electronics
-                                        </li>
-                                        <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">
-                                            Linux Basics
-                                        </li>
-                                        <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">
-                                            Problem Solving Techniques
-                                        </li>
-                                        <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">
-                                            Communication Skills
-                                        </li>
-                                        <li className="text-[14.5px] py-1.5 text-[#14284E]">
-                                            Engineering Physics
-                                        </li>
-                                    </ul>
-                                </div>
+                                        <ul>
+                                            <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">
+                                                Programming Fundamentals (C & Python)
+                                            </li>
+                                            <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">
+                                                Engineering Mathematics
+                                            </li>
+                                            <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">
+                                                Computer Organization
+                                            </li>
+                                            <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">
+                                                Digital Electronics
+                                            </li>
+                                            <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">
+                                                Linux Basics
+                                            </li>
+                                            <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">
+                                                Problem Solving Techniques
+                                            </li>
+                                            <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">
+                                                Communication Skills
+                                            </li>
+                                            <li className="text-[14.5px] py-1.5 text-[#14284E]">
+                                                Engineering Physics
+                                            </li>
+                                        </ul>
+                                    </div>
 
-                                {rm['year1_more'] && (
-                                    <>
-                                        <div>
-                                            <h4 className="text-[14.5px] uppercase tracking-[0.04em] text-[#1B4F91] mb-2.5">
-                                                Practical Learning
-                                            </h4>
+                                    {rm['year1_more'] && (
+                                        <>
+                                            <div>
+                                                <h4 className="text-[14.5px] uppercase tracking-[0.04em] text-[#1B4F91] mb-2.5">
+                                                    Practical Learning
+                                                </h4>
 
-                                            <ul>
-                                                <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">
-                                                    Install and configure Linux
-                                                </li>
-                                                <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">
-                                                    Write your first secure programs
-                                                </li>
-                                                <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">
-                                                    Learn Git & GitHub
-                                                </li>
-                                                <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">
-                                                    Build command-line applications
-                                                </li>
-                                                <li className="text-[14.5px] py-1.5 text-[#14284E]">
-                                                    Understand computer architecture
-                                                </li>
-                                            </ul>
-                                        </div>
+                                                <ul>
+                                                    <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">
+                                                        Install and configure Linux
+                                                    </li>
+                                                    <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">
+                                                        Write your first secure programs
+                                                    </li>
+                                                    <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">
+                                                        Learn Git & GitHub
+                                                    </li>
+                                                    <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">
+                                                        Build command-line applications
+                                                    </li>
+                                                    <li className="text-[14.5px] py-1.5 text-[#14284E]">
+                                                        Understand computer architecture
+                                                    </li>
+                                                </ul>
+                                            </div>
 
-                                        <div>
-                                            <h4 className="text-[14.5px] uppercase tracking-[0.04em] text-[#1B4F91] mb-2.5">
-                                                Projects
-                                            </h4>
+                                            <div>
+                                                <h4 className="text-[14.5px] uppercase tracking-[0.04em] text-[#1B4F91] mb-2.5">
+                                                    Projects
+                                                </h4>
 
-                                            <ul>
-                                                <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">
-                                                    Password Generator
-                                                </li>
-                                                <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">
-                                                    File Encryption Tool
-                                                </li>
-                                                <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">
-                                                    Student Management System
-                                                </li>
-                                                <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">
-                                                    Basic Calculator using C
-                                                </li>
-                                                <li className="text-[14.5px] py-1.5 text-[#14284E]">
-                                                    Command Line Notes App
-                                                </li>
-                                            </ul>
-                                        </div>
+                                                <ul>
+                                                    <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">
+                                                        Password Generator
+                                                    </li>
+                                                    <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">
+                                                        File Encryption Tool
+                                                    </li>
+                                                    <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">
+                                                        Student Management System
+                                                    </li>
+                                                    <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">
+                                                        Basic Calculator using C
+                                                    </li>
+                                                    <li className="text-[14.5px] py-1.5 text-[#14284E]">
+                                                        Command Line Notes App
+                                                    </li>
+                                                </ul>
+                                            </div>
 
-                                        <div>
-                                            <h4 className="text-[14.5px] uppercase tracking-[0.04em] text-[#1B4F91] mb-2.5">
-                                                Software / Tools
-                                            </h4>
+                                            <div>
+                                                <h4 className="text-[14.5px] uppercase tracking-[0.04em] text-[#1B4F91] mb-2.5">
+                                                    Software / Tools
+                                                </h4>
 
-                                            <ul>
-                                                <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">
-                                                    Visual Studio Code
-                                                </li>
-                                                <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">
-                                                    Ubuntu Linux
-                                                </li>
-                                                <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">
-                                                    GitHub
-                                                </li>
-                                                <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">
-                                                    CodeBlocks
-                                                </li>
-                                                <li className="text-[14.5px] py-1.5 text-[#14284E]">
-                                                    VirtualBox
-                                                </li>
-                                            </ul>
-                                        </div>
+                                                <ul>
+                                                    <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">
+                                                        Visual Studio Code
+                                                    </li>
+                                                    <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">
+                                                        Ubuntu Linux
+                                                    </li>
+                                                    <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">
+                                                        GitHub
+                                                    </li>
+                                                    <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">
+                                                        CodeBlocks
+                                                    </li>
+                                                    <li className="text-[14.5px] py-1.5 text-[#14284E]">
+                                                        VirtualBox
+                                                    </li>
+                                                </ul>
+                                            </div>
 
-                                        {/* <div className="md:col-span-2 mt-2 pt-4.5 border-t border-[#DCE6F2] text-[14.5px] text-[#4B5A72]">
+                                            {/* <div className="md:col-span-2 mt-2 pt-4.5 border-t border-[#DCE6F2] text-[14.5px] text-[#4B5A72]">
                                             <b className="text-[#14284E]">
                                                 Outcome:
                                             </b>{" "}
                                             You'll understand how computers, operating systems, and programming
                                             languages work together — the foundation for cyber security.
                                         </div> */}
-                                    </>
+                                        </>
+                                    )}
+                                </div>
+
+                                {!rm['year1_more'] && (
+                                    <div className="mt-5 flex justify-center">
+                                        <button type="button" onClick={() => toggleRm('year1_more')} className="w-full flex justify-center items-center gap-1 text-[13px] font-bold text-[#1B4F91] hover:text-[#14284E] transition-colors py-1.5 border border-[#DCE6F2] rounded-lg bg-[#F6FAFE] hover:bg-[#EAF2FB]">
+                                            See Full Curriculum <ChevronDown className="w-4 h-4" />
+                                        </button>
+                                    </div>
+                                )}
+
+                                {rm['year1_more'] && (
+                                    <div className="mt-5 flex justify-center">
+                                        <button type="button" onClick={() => toggleRm('year1_more')} className="w-full flex justify-center items-center gap-1 text-[13px] font-bold text-[#1B4F91] hover:text-[#14284E] transition-colors py-1.5 px-6 border border-[#DCE6F2] rounded-lg bg-[#F6FAFE] hover:bg-[#EAF2FB]">
+                                            Show Less <ChevronUp className="w-4 h-4" />
+                                        </button>
+                                    </div>
                                 )}
                             </div>
-                            
-                            {!rm['year1_more'] && (
-                                <div className="mt-5 flex justify-center">
-                                    <button type="button" onClick={() => toggleRm('year1_more')} className="w-full flex justify-center items-center gap-1 text-[13px] font-bold text-[#1B4F91] hover:text-[#14284E] transition-colors py-1.5 border border-[#DCE6F2] rounded-lg bg-[#F6FAFE] hover:bg-[#EAF2FB]">
-                                        See Full Curriculum <ChevronDown className="w-4 h-4" />
-                                    </button>
-                                </div>
-                            )}
-
-                            {rm['year1_more'] && (
-                                <div className="mt-5 flex justify-center">
-                                    <button type="button" onClick={() => toggleRm('year1_more')} className="w-full flex justify-center items-center gap-1 text-[13px] font-bold text-[#1B4F91] hover:text-[#14284E] transition-colors py-1.5 px-6 border border-[#DCE6F2] rounded-lg bg-[#F6FAFE] hover:bg-[#EAF2FB]">
-                                        Show Less <ChevronUp className="w-4 h-4" />
-                                    </button>
-                                </div>
-                            )}
-                        </div>
                         )}
 
                         {/* Year 2 Content */}
@@ -1866,7 +1865,7 @@ const BTechCseCyberSecurityNew = () => {
                                             <li className="text-[14.5px] py-1.5 text-[#14284E]">Information Security</li>
                                         </ul>
                                     </div>
-                                    
+
                                     {rm['year2_more'] && (
                                         <>
                                             <div>
@@ -2019,7 +2018,7 @@ const BTechCseCyberSecurityNew = () => {
                                         </button>
                                     </div>
                                 )}
-                                </div>
+                            </div>
                         )}
 
                         {/* Year 4 Content */}
@@ -2043,7 +2042,7 @@ const BTechCseCyberSecurityNew = () => {
                                             <li className="text-[14.5px] py-1.5 text-[#14284E]">Emerging Cyber Technologies</li>
                                         </ul>
                                     </div>
-                                    
+
                                     {rm['year4_more'] && (
                                         <>
                                             <div>
@@ -2103,7 +2102,7 @@ const BTechCseCyberSecurityNew = () => {
                                         </button>
                                     </div>
                                 )}
-                                </div>
+                            </div>
                         )}
                     </div>
                 </section>
@@ -2286,7 +2285,7 @@ const BTechCseCyberSecurityNew = () => {
                             {/* scholar2mobile — dark gradient + text overlaid */}
                             <div className="relative w-full">
                                 <img src="/scholar2mobile.jpg" className="w-full h-auto block" alt="Girl with laptop" />
-                                
+
                                 <div className="absolute inset-0 flex flex-col justify-start px-5 pt-4 pb-5 z-10 pointer-events-none">
                                     <h2 className="text-[22px] font-black leading-[1.1] uppercase mb-2 tracking-tight">
                                         <span className="text-[#14284E]">SRMU'S</span> <br />
@@ -2308,22 +2307,22 @@ const BTechCseCyberSecurityNew = () => {
 
                         {/* Desktop scholarship banner */}
                         <div className="hidden sm:block relative w-full rounded-2xl overflow-hidden mb-6 shadow-sm bg-[#f0f4fa]">
-                             <img src="/sharedimageScholar.jpg" className="block w-full h-[300px] sm:h-auto object-cover object-right" alt="Scholarships" />
-                             
-                             {/* Text Overlay (No background gradient) */}
-                             <div className="absolute inset-0 z-10 p-5 sm:p-6 md:p-10 w-full sm:w-[85%] md:w-[75%] lg:w-[65%] flex flex-col justify-center pointer-events-none">
-                                 <h2 className="text-[18px] sm:text-[24px] md:text-[30px] font-black leading-[1.1] uppercase mb-2 tracking-tight">
-                                     <span className="text-[#14284E]">SRMU’S</span> <br />
-                                     <span className="text-red-600">EXCLUSIVE</span> <br />
-                                     <span className="text-black">SCHOLARSHIPS</span>
-                                 </h2>
-                                 <h3 className="text-[14px] sm:text-[17px] font-bold text-[#1B4F91] mb-2">
-                                     Rewarding Merit, Empowering Futures
-                                 </h3>
-                                 <p className="text-[12px] sm:text-[13.5px] md:text-[14px] text-[#4B5A72] max-w-[420px] leading-relaxed">
-                                     Meritorious and deserving students can avail limited scholarships at the time of admission, subject to approved eligibility criteria. Scholarships are applicable only in the first year of admission.
-                                 </p>
-                             </div>
+                            <img src="/sharedimageScholar.png" className="block w-full h-[300px] sm:h-auto object-cover object-right" alt="Scholarships" />
+
+                            {/* Text Overlay (No background gradient) */}
+                            <div className="absolute inset-0 z-10 p-5 sm:p-6 md:p-10 w-full sm:w-[85%] md:w-[75%] lg:w-[65%] flex flex-col justify-center pointer-events-none">
+                                <h2 className="text-[18px] sm:text-[24px] md:text-[30px] font-black leading-[1.1] uppercase mb-2 tracking-tight">
+                                    <span className="text-[#14284E]">SRMU’S</span> <br />
+                                    <span className="text-red-600">EXCLUSIVE</span> <br />
+                                    <span className="text-black">SCHOLARSHIPS</span>
+                                </h2>
+                                <h3 className="text-[14px] sm:text-[17px] font-bold text-[#1B4F91] mb-2">
+                                    Rewarding Merit, Empowering Futures
+                                </h3>
+                                <p className="text-[12px] sm:text-[13.5px] md:text-[14px] text-[#4B5A72] max-w-[420px] leading-relaxed">
+                                    Meritorious and deserving students can avail limited scholarships at the time of admission, subject to approved eligibility criteria. Scholarships are applicable only in the first year of admission.
+                                </p>
+                            </div>
                         </div>
 
                         <div className="flex justify-center w-full">
@@ -2961,7 +2960,7 @@ const BTechCseCyberSecurityNew = () => {
                                 </p>
                                 <div className="mt-4 flex flex-wrap items-center gap-4">
                                     <button className="rm-btn !mt-0" onClick={() => toggleRm('digSys')}>{rm['digSys'] ? 'Read Less' : 'Read More'}</button>
-                                    
+
                                     <a
                                         href="/Broucher_SRMU_25_April___.pdf"
                                         target="_blank"
@@ -2994,7 +2993,7 @@ const BTechCseCyberSecurityNew = () => {
                                     <ArrowRight className="w-4 h-4" />
                                 </button>
                             </div>
-                            
+
                             <div ref={industriesScrollRef} className="flex flex-nowrap gap-3 overflow-x-auto pb-2 scrollbar-hide scroll-smooth">
                                 {[
                                     { title: "Banking & Financial Services", desc: "Online transactions, customer data, digital banking" },
@@ -3297,7 +3296,7 @@ const BTechCseCyberSecurityNew = () => {
                                     ))}
                                 </tbody>
                             </table>
-                            <button 
+                            <button
                                 className="w-full py-2.5 flex items-center justify-center text-[#14284E] font-semibold text-[13px] border-t border-[#DCE6F2]"
                                 onClick={() => toggleRm('table1')}
                             >
@@ -3335,7 +3334,7 @@ const BTechCseCyberSecurityNew = () => {
                                     ))}
                                 </tbody>
                             </table>
-                            <button 
+                            <button
                                 className="w-full py-2.5 flex items-center justify-center text-[#14284E] font-semibold text-[13px] border-t border-[#DCE6F2]"
                                 onClick={() => toggleRm('table2')}
                             >
