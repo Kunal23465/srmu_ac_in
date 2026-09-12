@@ -29,8 +29,16 @@ const BTechCseCyberSecurityNew = () => {
         }
     };
 
+    const industriesScrollRef = useRef<HTMLDivElement>(null);
+    const scrollIndustries = (direction: 'left' | 'right') => {
+        if (industriesScrollRef.current) {
+            const amount = direction === 'left' ? -220 : 220;
+            industriesScrollRef.current.scrollBy({ left: amount, behavior: 'smooth' });
+        }
+    };
+
     const [activeTab, setActiveTab] = useState("year1");
-    const [openSection, setOpenSection] = useState<string | null>("objectives");
+    const [openSection, setOpenSection] = useState<string | null>(null);
     const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "start" });
     const [canScrollPrev, setCanScrollPrev] = useState(false);
     const [canScrollNext, setCanScrollNext] = useState(true);
@@ -146,7 +154,7 @@ const BTechCseCyberSecurityNew = () => {
                     className="relative py-4 sm:py-20 lg:py-24 w-full bg-cover bg-center bg-no-repeat overflow-hidden"
                 >
                     {/* Semi-Transparent Cinematic Scrim */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#071329]/82 via-[#091a38]/70 to-[#071329]/62 backdrop-brightness-[0.95]"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#071329]/55 via-[#091a38]/40 to-[#071329]/25"></div>
 
                     {/* Subtle Tech Cyber Grid & Ambient Lights */}
                     <div className="absolute inset-0 bg-[radial-gradient(#38bdf820_1px,transparent_1px)] [background-size:28px_28px] pointer-events-none opacity-50"></div>
@@ -155,10 +163,10 @@ const BTechCseCyberSecurityNew = () => {
 
                     <div className={`${Classes["container"]} mt-0 sm:mt-16 relative z-10 grid lg:grid-cols-[1.18fr_0.82fr] gap-10 lg:gap-14`}>
                         {/* Left Side */}
-                        <div className="flex flex-col items-start justify-between">
+                        <div className="flex flex-col items-start justify-center h-full pt-8 lg:pt-0">
                             {/* Eyebrow / Kicker */}
-                            <div className="mt-20">
-                                <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#ffc107]/15 border border-[#ffc107]/45 backdrop-blur-md shadow-[0_0_15px_rgba(255,193,7,0.2)] mb-5 group">
+                            <div className="w-full">
+                                {/* <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#ffc107]/15 border border-[#ffc107]/45 backdrop-blur-md shadow-[0_0_15px_rgba(255,193,7,0.2)] mb-5 group">
                                     <span className="relative flex h-2 w-2">
                                         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ffc107] opacity-85"></span>
                                         <span className="relative inline-flex rounded-full h-2 w-2 bg-[#ffc107]"></span>
@@ -167,26 +175,32 @@ const BTechCseCyberSecurityNew = () => {
                                         B.Tech CSE (Cyber Security) — with
                                         <span className="hidden sm:inline"> Larsen &amp; Toubro</span>
                                         <span className="sm:hidden inline-block ml-1.5 align-middle">
-                                            <img src="https://ik.imagekit.io/ttalcskjf/l-t.webp?updatedAt=1788591605708" alt="L&T" className="h-[22px] w-auto object-contain [filter:brightness(0)_saturate(100%)_invert(86%)_sepia(21%)_saturate(2175%)_hue-rotate(355deg)_brightness(101%)_contrast(106%)]" />
+                                            <img src="https://ik.imagekit.io/ttalcskjf/l-t.webp?updatedAt=1788591605708" alt="L&T" className="h-[22px] w-auto object-contain" />
                                         </span>
                                     </span>
-                                </div>
+                                </div> */}
 
                                 {/* H1 */}
-                                <h1 className="text-[clamp(30px,4vw,46px)] leading-[1.14] font-bold font-display text-white tracking-tight mb-4.5 drop-shadow-md">
-                                    Best B.Tech CSE (Cyber Security) College in Lucknow
-                                </h1>
+                                <h1 className="text-[clamp(30px,4vw,46px)] leading-[1.14] font-bold font-display text-white tracking-tight mb-4.5 drop-shadow-md flex flex-wrap items-center gap-2">
+    Learn B.Tech CSE Cyber Security in Lucknow with 
+    <img 
+        src="/lt-logo.png" 
+        alt="L&T" 
+        className="inline-block h-[0.9em] w-auto align-middle"
+    />
+    at SRMU
+</h1>
 
                                 {/* H2 */}
-                                <h2 className="text-[clamp(20px,2.5vw,28px)] leading-[1.2] font-bold font-display text-sky-200 mb-3 drop-shadow-sm">
+                                {/* <h2 className="text-[clamp(20px,2.5vw,28px)] leading-[1.2] font-bold font-display text-sky-200 mb-3 drop-shadow-sm">
                                     Learn B.Tech CSE Cyber Security with L&T at SRMU
-                                </h2>
+                                </h2> */}
 
                                 {/* Tagline */}
-                                <div className="inline-flex items-center gap-2 mb-4.5 px-3.5 py-1.5 rounded-xl bg-amber-400/10 border border-amber-400/30 backdrop-blur-sm shadow-sm">
+                                {/* <div className="inline-flex items-center gap-2 mb-4.5 px-3.5 py-1.5 rounded-xl bg-amber-400/10 border border-amber-400/30 backdrop-blur-sm shadow-sm">
                                     <Sparkles className="w-4 h-4 text-[#ffc107] animate-pulse" />
                                     <p className="text-[18px] text-[#ffc107] font-semibold tracking-wide">Build the Skills to Secure the Digital World</p>
-                                </div>
+                                </div> */}
 
                             </div>
 
@@ -232,28 +246,78 @@ const BTechCseCyberSecurityNew = () => {
                             </ul> */}
 
                             {/* CTA Buttons */}
-                            <div className="flex flex-nowrap overflow-hidden gap-1.5 w-full sm:w-auto sm:flex-wrap sm:gap-3 sm:overflow-visible mt-[40px]" id="apply">
+                            <div className="hidden sm:flex w-full sm:w-auto justify-between sm:justify-start items-center gap-1.5 sm:gap-3 mt-8 sm:mt-10 sm:flex-wrap" id="apply">
                                 <a
                                     href="#"
-                                    className="relative group shrink-0 overflow-hidden bg-gradient-to-r from-[#ffc107] via-[#ffcd38] to-[#e0a800] text-[#071329] font-extrabold text-[12px] sm:text-[14px] px-3 sm:px-5.5 py-3.25 rounded-md shadow-[0_8px_20px_-8px_rgba(217,139,43,0.6)] hover:shadow-[0_12px_30px_rgba(255,193,7,0.65)] hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2 whitespace-nowrap"
+                                    className="flex-1 sm:flex-none relative group overflow-hidden bg-gradient-to-r from-[#ffc107] via-[#ffcd38] to-[#e0a800] text-[#071329] font-extrabold text-[10px] sm:text-[14px] px-1 sm:px-5.5 py-2.5 sm:py-3.25 rounded-md shadow-[0_8px_20px_-8px_rgba(217,139,43,0.6)] hover:shadow-[0_12px_30px_rgba(255,193,7,0.65)] hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-1 sm:gap-2 text-center whitespace-nowrap"
                                 >
                                     <span>Apply Now</span>
-                                    <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+                                    <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 shrink-0 transition-transform duration-300 group-hover:translate-x-1" />
                                 </a>
                                 <a
                                     href="#"
-                                    className="hidden sm:flex shrink-0 bg-white/12 hover:bg-white/20 text-white font-bold text-[14px] px-5.5 py-3.25 rounded-md border border-white/25 hover:border-white/50 shadow-md backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 items-center justify-center gap-2"
+                                    className="flex-1 sm:flex-none bg-white/12 hover:bg-white/20 text-white font-bold text-[10px] sm:text-[14px] px-1 sm:px-5.5 py-2.5 sm:py-3.25 rounded-md border border-white/25 hover:border-white/50 shadow-md backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 flex items-center justify-center gap-1 sm:gap-2 text-center whitespace-nowrap"
                                 >
-                                    <Download className="w-4 h-4 text-sky-300" />
-                                    <span>Download Brochure</span>
+                                    <Download className="w-3 h-3 sm:w-4 sm:h-4 text-sky-300 shrink-0" />
+                                    <span className="sm:hidden">Brochure</span>
+                                    <span className="hidden sm:inline">Download Brochure</span>
                                 </a>
                                 <a
                                     href="#"
-                                    className="shrink-0 bg-[#1b4f91]/35 hover:bg-[#1b4f91]/60 text-sky-100 hover:text-white font-bold text-[12px] sm:text-[14px] px-3 sm:px-5.5 py-3.25 rounded-md border border-[#38bdf8]/40 hover:border-[#38bdf8]/70 shadow-md backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 flex items-center justify-center gap-2 whitespace-nowrap"
+                                    className="flex-1 sm:flex-none bg-[#1b4f91]/35 hover:bg-[#1b4f91]/60 text-sky-100 hover:text-white font-bold text-[10px] sm:text-[14px] px-1 sm:px-5.5 py-2.5 sm:py-3.25 rounded-md border border-[#38bdf8]/40 hover:border-[#38bdf8]/70 shadow-md backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 flex items-center justify-center gap-1 sm:gap-2 text-center whitespace-nowrap"
                                 >
-                                    <PhoneCall className="w-4 h-4 text-[#ffc107]" />
-                                    <span>Talk to Admission Expert</span>
+                                    <PhoneCall className="w-3 h-3 sm:w-4 sm:h-4 text-[#ffc107] shrink-0" />
+                                    <span className="sm:hidden">Talk to Expert</span>
+                                    <span className="hidden sm:inline">Talk to Admission Expert</span>
                                 </a>
+                            </div>
+
+                            {/* Mobile-only Apply Now Form */}
+                            <div className="sm:hidden mt-5 rounded-2xl overflow-hidden shadow-xl border border-white/10">
+                                <div className="bg-[#14284E] px-4 py-3 text-center">
+                                    <h3 className="text-white font-bold text-[15px]">Shri Ramswaroop Memorial University</h3>
+                                    <p className="text-sky-200 text-[11px] mt-0.5">Begin your journey in under 60 seconds</p>
+                                    <div className="w-8 h-0.5 bg-[#ffc107] mx-auto mt-2 rounded-full"></div>
+                                </div>
+                                <div className="bg-white px-4 py-4 space-y-2.5">
+                                    <div className="grid grid-cols-2 gap-2">
+                                        <input type="text" placeholder="First Name" className="w-full border border-gray-200 rounded-lg px-3 py-2 text-[13px] text-gray-700 outline-none focus:border-[#14284E]" />
+                                        <input type="text" placeholder="Last Name" className="w-full border border-gray-200 rounded-lg px-3 py-2 text-[13px] text-gray-700 outline-none focus:border-[#14284E]" />
+                                    </div>
+                                    <input type="email" placeholder="Email Address" className="w-full border border-gray-200 rounded-lg px-3 py-2 text-[13px] text-gray-700 outline-none focus:border-[#14284E]" />
+                                    <input type="tel" placeholder="Phone Number" className="w-full border border-gray-200 rounded-lg px-3 py-2 text-[13px] text-gray-700 outline-none focus:border-[#14284E]" />
+                                    <div className="grid grid-cols-2 gap-2">
+                                        <select className="w-full border border-gray-200 rounded-lg px-3 py-2 text-[13px] text-gray-500 outline-none focus:border-[#14284E] bg-white">
+                                            <option value="">Level</option>
+                                            <option>UG</option>
+                                            <option>PG</option>
+                                        </select>
+                                        <select className="w-full border border-gray-200 rounded-lg px-3 py-2 text-[13px] text-gray-500 outline-none focus:border-[#14284E] bg-white">
+                                            <option value="">Programme</option>
+                                            <option>B.Tech CSE Cyber Security</option>
+                                        </select>
+                                    </div>
+                                    <div className="grid grid-cols-2 gap-2">
+                                        <select className="w-full border border-gray-200 rounded-lg px-3 py-2 text-[13px] text-gray-500 outline-none focus:border-[#14284E] bg-white">
+                                            <option value="">State</option>
+                                            <option>Uttar Pradesh</option>
+                                            <option>Delhi</option>
+                                            <option>Other</option>
+                                        </select>
+                                        <select className="w-full border border-gray-200 rounded-lg px-3 py-2 text-[13px] text-gray-500 outline-none focus:border-[#14284E] bg-white">
+                                            <option value="">City</option>
+                                            <option>Lucknow</option>
+                                            <option>Other</option>
+                                        </select>
+                                    </div>
+                                    <p className="text-[10px] text-gray-500 flex items-start gap-1.5">
+                                        <input type="checkbox" defaultChecked className="mt-0.5 shrink-0" />
+                                        I authorise SRMU and its representatives to Call, SMS, Email or WhatsApp me regarding admissions and programmes.
+                                    </p>
+                                    <button className="w-full bg-[#ffc107] hover:bg-[#e0a800] text-[#14284E] font-bold text-[14px] py-3 rounded-xl transition-colors flex items-center justify-center gap-2">
+                                        APPLY NOW →
+                                    </button>
+                                </div>
                             </div>
                         </div>
 
@@ -271,10 +335,6 @@ const BTechCseCyberSecurityNew = () => {
                                         </div> */}
 
                                         <img className="max-w-[100px] bg-white p-2 rounded-md" src="https://ik.imagekit.io/ttalcskjf/l-t.webp" alt="l&t" />
-                                        <div>
-                                            <div className="text-[11px] font-mono uppercase tracking-wider text-sky-300 font-semibold">L&amp;T Academic Collaboration</div>
-                                            <div className="text-white font-display font-bold text-[15.5px]">B.Tech CSE (Cyber Security)</div>
-                                        </div>
                                     </div>
                                     <span className="hidden sm:inline-flex text-nowrap items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/35 text-emerald-300 text-[11px] font-medium">
                                         <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
@@ -287,8 +347,8 @@ const BTechCseCyberSecurityNew = () => {
                                     <p className="text-sky-200/80 text-[14.5px] font-medium">Cyber labs · Live projects · Certifications</p>
                                 </div>
 
-                                {/* Stats */}
-                                <div className="grid grid-cols-4 sm:grid-cols-2 gap-2 sm:gap-3 mb-5 relative z-10">
+                                {/* Stats — hidden on mobile */}
+                                <div className="hidden sm:grid grid-cols-2 gap-2 sm:gap-3 mb-5 relative z-10">
                                     <div className="bg-white/[0.05] hover:bg-white/[0.09] border border-white/10 hover:border-[#ffc107]/40 rounded-lg sm:rounded-2xl p-2 sm:p-3.5 text-center sm:text-left transition-all duration-300 group shadow-sm">
                                         <div className="font-display font-bold sm:font-black text-[20px] text-[#ffc107] group-hover:text-white transition-colors">10+</div>
                                         <div className="text-[9px] sm:text-[11px] text-sky-100/90 font-semibold mt-0.5">Career Roles</div>
@@ -328,7 +388,7 @@ const BTechCseCyberSecurityNew = () => {
                 </section>
 
 
-                <div className="bg-[#081427] border-y border-white/10 py-3 sm:py-6.5 relative overflow-hidden">
+                <div className="bg-[#0F4A85] border-y border-white/10 py-3 sm:py-6.5 relative overflow-hidden">
                     <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(56,189,248,0.06),transparent_70%)] pointer-events-none"></div>
                     {/* Desktop View */}
                     <div className={`hidden sm:grid sm:grid-cols-2 md:grid-cols-5 sm:items-stretch gap-5 text-center relative z-10 ${Classes["container"]} mx-auto px-6`}>
@@ -388,7 +448,7 @@ const BTechCseCyberSecurityNew = () => {
 
 
 
-                <section id="why" className="py-[36px] sm:py-[40px] md:py-[76px]  px-4 sm:px-6">
+                <section id="why" className="py-[36px] sm:py-[40px] md:py-[76px] px-4 sm:px-6 bg-[#F0F6FB]">
                     <div className={`${Classes["container"]}`}>
                         <div className="w-full mb-5 sm:mb-11">
                             {/* <div className="text-[14.5px] tracking-[0.08em] uppercase text-[#ffc107] font-bold flex items-center gap-2 mb-3.5">
@@ -401,7 +461,10 @@ const BTechCseCyberSecurityNew = () => {
                         {/* Callout quote */}
                         <div className="relative bg-[#FFFBEB] sm:bg-white border border-[#ffc107] sm:border-l-4 sm:border-l-[#ffc107] sm:border-t-[#ffc107] sm:border-b-[#ffc107] sm:border-r-[#ffc107] rounded-2xl p-7 sm:p-8  text-[14px] leading-5 sm:text-[17px] sm:leading-normal text-[#14284E] font-semibold italic mb-4 sm:mb-8">
                             <span className="absolute top-4 left-7 sm:hidden text-[#D78610] text-[30px] not-italic font-black leading-none">“</span>
-                            <span className="hidden sm:inline">"</span>Will this course still be relevant after four years?<span className="hidden sm:inline">"</span> — For cybersecurity, the answer is yes, and the demand continues to grow.
+                            <div className={`${!rm['quote'] ? 'line-clamp-2 sm:line-clamp-none' : ''}`}>
+                                <span className="hidden sm:inline">"</span>Will this course still be relevant after four years?<span className="hidden sm:inline">"</span> — For cybersecurity, the answer is yes, and the demand continues to grow.
+                            </div>
+                            <button className="rm-btn sm:hidden mt-1.5 !mb-0" onClick={() => toggleRm('quote')}>{rm['quote'] ? 'Read Less' : 'Read More'}</button>
                         </div>
 
                         {/* 2-Column Paragraphs & Image Integration */}
@@ -453,7 +516,7 @@ const BTechCseCyberSecurityNew = () => {
                         </div>
                     </div>
                 </section>
-                <section className="py-[36px] sm:py-[40px] md:py-[76px]  px-4 sm:px-6 bg-gradient-to-b from-[#F6FAFE] via-[#EAF2FB] to-[#F6FAFE]">
+                <section className="py-[36px] sm:py-[40px] md:py-[76px] px-4 sm:px-6 bg-[#F0F6FB]">
                     <div className={`${Classes["container"]}`}>
                         <div className="w-full mb-11">
                             {/* <div className="text-[14.5px] tracking-[0.08em] uppercase text-[#ffc107] font-bold flex items-center gap-2 mb-3.5">
@@ -526,7 +589,7 @@ const BTechCseCyberSecurityNew = () => {
                         </div>
                     </div>
                 </section>
-                <section className="py-[36px] sm:py-[40px] md:py-[76px]  px-4 sm:px-6">
+                <section className="py-[36px] sm:py-[40px] md:py-[76px] px-4 sm:px-6 bg-gradient-to-b from-white to-[#CEE0EF]">
                     <div className={`${Classes["container"]}`}>
                         <div className="w-full mb-8">
                             {/* <div className="text-[14.5px] tracking-[0.08em] uppercase text-[#ffc107] font-bold flex items-center gap-2 mb-3.5">
@@ -539,7 +602,7 @@ const BTechCseCyberSecurityNew = () => {
                                 <button className="rm-btn" onClick={() => toggleRm('lt1')}>{rm['lt1'] ? 'Read Less' : 'Read More'}</button>
                             </div>
                         </div>
-                        <div className="bg-white border border-[#DCE6F2] rounded-xl sm:rounded-3xl overflow-hidden shadow-[0_6px_25px_rgba(15,31,61,0.05)]">
+                        <div className="bg-white border border-[#DCE6F2] rounded-xl sm:rounded-3xl overflow-hidden shadow-[0_6px_25px_rgba(15,31,61,0.05)] max-w-4xl mx-auto">
                             <table className="w-full border-collapse">
                                 <tbody>
                                     {[
@@ -556,18 +619,24 @@ const BTechCseCyberSecurityNew = () => {
                                         ["Capstone Project", "Yes"],
                                         ["Industry Certifications", "Supported"],
                                         ["Career Support", "Resume Building, Coding, Mock Interviews & Placement Training"],
-                                    ].map((row, idx) => (
+                                    ].slice(0, rm['table_more'] ? undefined : 6).map((row, idx) => (
                                         <tr key={idx} className={`border-b border-[#DCE6F2] ${idx % 2 === 0 ? "bg-[#F6FAFE]" : "bg-white"} hover:bg-[#F6FAFE]/70 transition-colors`}>
                                             <td className="px-3.5 py-3 sm:px-6 sm:py-4 text-[13px] sm:text-[14.5px] font-normal sm:font-semibold text-[#5B667A] sm:text-[#1B355F] w-[40%] sm:w-[38%]">{row[0]}</td>
-                                            <td className="px-3.5 py-3 sm:px-6 sm:py-4 text-[13px] sm:text-[14.5px] text-right sm:text-left text-[#20283A] sm:text-[#4B5A72] font-semibold sm:font-medium">{row[1]}</td>
+                                            <td className="px-3.5 py-3 sm:px-6 sm:py-4 text-[13px] sm:text-[14.5px] text-right text-[#20283A] sm:text-[#4B5A72] font-semibold sm:font-medium">{row[1]}</td>
                                         </tr>
                                     ))}
                                 </tbody>
                             </table>
+                            <div className="bg-[#F6FAFE] py-3 flex justify-center">
+                                <button type="button" onClick={() => toggleRm('table_more')} className="flex justify-center items-center gap-1 text-[13px] font-bold text-[#1B4F91] hover:text-[#14284E] transition-colors">
+                                    {rm['table_more'] ? 'Show Less' : 'See Full Content'}
+                                    <ChevronDown className={`w-4 h-4 transition-transform ${rm['table_more'] ? 'rotate-180' : ''}`} />
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </section>
-                <section className="py-6 sm:py-[40px] md:py-[76px] px-4 sm:px-6 bg-gradient-to-b from-[#F6FAFE] via-[#EAF2FB] to-[#F6FAFE]">
+                <section className="py-6 sm:py-[40px] md:py-[76px] px-4 sm:px-6 bg-gradient-to-b from-white to-[#E6E6E7]">
                     <div className={`${Classes["container"]} mx-auto`}>
 
 
@@ -607,21 +676,8 @@ const BTechCseCyberSecurityNew = () => {
                                     <button className="rm-btn" onClick={() => toggleRm('curr1')}>{rm['curr1'] ? 'Read Less' : 'Read More'}</button>
                                 </div>
 
-                                {/* Desktop: Standard bullet list */}
-                                <ul className="hidden sm:block space-y-2 list-disc list-inside mb-4">
-                                    <li className="text-[14.5px] text-[#1B4F91]">Secure Software Development</li>
-                                    <li className="text-[14.5px] text-[#1B4F91]">Enterprise Network Security</li>
-                                    <li className="text-[14.5px] text-[#1B4F91]">Cloud Infrastructure Security</li>
-                                    <li className="text-[14.5px] text-[#1B4F91]">Cyber Risk Management</li>
-                                    <li className="text-[14.5px] text-[#1B4F91]">Ethical Hacking Methodologies</li>
-                                    <li className="text-[14.5px] text-[#1B4F91]">Security Auditing</li>
-                                    <li className="text-[14.5px] text-[#1B4F91]">Digital Forensics</li>
-                                    <li className="text-[14.5px] text-[#1B4F91]">Secure Coding Practices</li>
-                                    <li className="text-[14.5px] text-[#1B4F91]">AI & Cyber Security Applications</li>
-                                </ul>
-
-                                {/* Mobile: Image replacing the capsules */}
-                                <div className="sm:hidden mb-4 -mx-1">
+                                {/* Image replacing the bullet list */}
+                                <div className="mb-4 -mx-1">
                                     <img src="/shared-image2.png" alt="Curriculum Objectives" className="w-full h-auto object-contain" />
                                 </div>
 
@@ -667,7 +723,7 @@ const BTechCseCyberSecurityNew = () => {
                             </div>
                         </div>
 
-                        <div ref={labsScrollRef} className="flex flex-nowrap gap-3 overflow-x-auto pb-2 scrollbar-hide sm:block sm:space-y-4 sm:overflow-visible sm:pb-0 scroll-smooth">
+                        <div ref={labsScrollRef} className="flex flex-nowrap gap-3 overflow-x-auto pb-2 scrollbar-hide sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 sm:overflow-visible sm:pb-0 scroll-smooth">
 
                             {/* Cyber Security Simulation Lab */}
                             <div className="shrink-0 w-[235px] bg-white border border-[#DCE6F2] rounded-xl overflow-hidden sm:w-auto sm:shrink">
@@ -762,6 +818,20 @@ const BTechCseCyberSecurityNew = () => {
                                 )}
                             </div>
 
+                            {/* Reel */}
+                            <div className="order-first sm:order-none shrink-0 w-[235px] sm:w-[280px] lg:w-[320px] sm:justify-self-center bg-black border border-[#DCE6F2] rounded-xl overflow-hidden flex items-center justify-center shadow-lg">
+                                <video
+                                    src="/MicrosoftTeams-video.mp4"
+                                    width="720"
+                                    height="1280"
+                                    controls
+                                    autoPlay
+                                    loop
+                                    muted
+                                    playsInline
+                                    className="w-full h-auto aspect-[9/16] object-cover"
+                                ></video>
+                            </div>
 
                             {/* Ethical Hacking Lab */}
                             <div className="shrink-0 w-[235px] bg-white border border-[#DCE6F2] rounded-xl overflow-hidden sm:w-auto sm:shrink">
@@ -1134,13 +1204,7 @@ const BTechCseCyberSecurityNew = () => {
 
                         </div>
 
-                        <div className="hidden sm:block w-full mt-10">
-                            <video
-                                src="https://ik.imagekit.io/ttalcskjf/Hands_Cybersecurity.mp4"
-                                controls
-                                className="w-full h-full object-cover aspect-video rounded-lg" >
-                            </video>
-                        </div>
+
 
                     </div>
                 </section>
@@ -1258,7 +1322,7 @@ const BTechCseCyberSecurityNew = () => {
                 {/* ============================================================
                 4-YEAR JOURNEY (Tabs)
                 ============================================================ */}
-                <section id="journey" className="py-[36px] sm:py-[40px] md:py-[76px]  px-4 sm:px-6 ">
+                <section id="journey" className="py-[36px] sm:py-[40px] md:py-[76px] px-4 sm:px-6 bg-[#E0F1FF]">
                     <div className={`${Classes["container"]} mx-auto`}>
 
                         <div className="w-full mb-11">
@@ -1629,87 +1693,106 @@ const BTechCseCyberSecurityNew = () => {
                                     </ul>
                                 </div>
 
-                                <div>
-                                    <h4 className="text-[14.5px] uppercase tracking-[0.04em] text-[#1B4F91] mb-2.5">
-                                        Practical Learning
-                                    </h4>
+                                {rm['year1_more'] && (
+                                    <>
+                                        <div>
+                                            <h4 className="text-[14.5px] uppercase tracking-[0.04em] text-[#1B4F91] mb-2.5">
+                                                Practical Learning
+                                            </h4>
 
-                                    <ul>
-                                        <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">
-                                            Install and configure Linux
-                                        </li>
-                                        <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">
-                                            Write your first secure programs
-                                        </li>
-                                        <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">
-                                            Learn Git & GitHub
-                                        </li>
-                                        <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">
-                                            Build command-line applications
-                                        </li>
-                                        <li className="text-[14.5px] py-1.5 text-[#14284E]">
-                                            Understand computer architecture
-                                        </li>
-                                    </ul>
-                                </div>
+                                            <ul>
+                                                <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">
+                                                    Install and configure Linux
+                                                </li>
+                                                <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">
+                                                    Write your first secure programs
+                                                </li>
+                                                <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">
+                                                    Learn Git & GitHub
+                                                </li>
+                                                <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">
+                                                    Build command-line applications
+                                                </li>
+                                                <li className="text-[14.5px] py-1.5 text-[#14284E]">
+                                                    Understand computer architecture
+                                                </li>
+                                            </ul>
+                                        </div>
 
-                                <div>
-                                    <h4 className="text-[14.5px] uppercase tracking-[0.04em] text-[#1B4F91] mb-2.5">
-                                        Projects
-                                    </h4>
+                                        <div>
+                                            <h4 className="text-[14.5px] uppercase tracking-[0.04em] text-[#1B4F91] mb-2.5">
+                                                Projects
+                                            </h4>
 
-                                    <ul>
-                                        <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">
-                                            Password Generator
-                                        </li>
-                                        <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">
-                                            File Encryption Tool
-                                        </li>
-                                        <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">
-                                            Student Management System
-                                        </li>
-                                        <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">
-                                            Basic Calculator using C
-                                        </li>
-                                        <li className="text-[14.5px] py-1.5 text-[#14284E]">
-                                            Command Line Notes App
-                                        </li>
-                                    </ul>
-                                </div>
+                                            <ul>
+                                                <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">
+                                                    Password Generator
+                                                </li>
+                                                <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">
+                                                    File Encryption Tool
+                                                </li>
+                                                <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">
+                                                    Student Management System
+                                                </li>
+                                                <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">
+                                                    Basic Calculator using C
+                                                </li>
+                                                <li className="text-[14.5px] py-1.5 text-[#14284E]">
+                                                    Command Line Notes App
+                                                </li>
+                                            </ul>
+                                        </div>
 
-                                <div>
-                                    <h4 className="text-[14.5px] uppercase tracking-[0.04em] text-[#1B4F91] mb-2.5">
-                                        Software / Tools
-                                    </h4>
+                                        <div>
+                                            <h4 className="text-[14.5px] uppercase tracking-[0.04em] text-[#1B4F91] mb-2.5">
+                                                Software / Tools
+                                            </h4>
 
-                                    <ul>
-                                        <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">
-                                            Visual Studio Code
-                                        </li>
-                                        <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">
-                                            Ubuntu Linux
-                                        </li>
-                                        <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">
-                                            GitHub
-                                        </li>
-                                        <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">
-                                            CodeBlocks
-                                        </li>
-                                        <li className="text-[14.5px] py-1.5 text-[#14284E]">
-                                            VirtualBox
-                                        </li>
-                                    </ul>
-                                </div>
+                                            <ul>
+                                                <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">
+                                                    Visual Studio Code
+                                                </li>
+                                                <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">
+                                                    Ubuntu Linux
+                                                </li>
+                                                <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">
+                                                    GitHub
+                                                </li>
+                                                <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">
+                                                    CodeBlocks
+                                                </li>
+                                                <li className="text-[14.5px] py-1.5 text-[#14284E]">
+                                                    VirtualBox
+                                                </li>
+                                            </ul>
+                                        </div>
 
-                                {/* <div className="md:col-span-2 mt-2 pt-4.5 border-t border-[#DCE6F2] text-[14.5px] text-[#4B5A72]">
-                                    <b className="text-[#14284E]">
-                                        Outcome:
-                                    </b>{" "}
-                                    You'll understand how computers, operating systems, and programming
-                                    languages work together — the foundation for cyber security.
-                                </div> */}
-
+                                        {/* <div className="md:col-span-2 mt-2 pt-4.5 border-t border-[#DCE6F2] text-[14.5px] text-[#4B5A72]">
+                                            <b className="text-[#14284E]">
+                                                Outcome:
+                                            </b>{" "}
+                                            You'll understand how computers, operating systems, and programming
+                                            languages work together — the foundation for cyber security.
+                                        </div> */}
+                                    </>
+                                )}
                             </div>
+                            
+                            {!rm['year1_more'] && (
+                                <div className="mt-5 flex justify-center">
+                                    <button type="button" onClick={() => toggleRm('year1_more')} className="w-full flex justify-center items-center gap-1 text-[13px] font-bold text-[#1B4F91] hover:text-[#14284E] transition-colors py-1.5 border border-[#DCE6F2] rounded-lg bg-[#F6FAFE] hover:bg-[#EAF2FB]">
+                                        See Full Curriculum <ChevronDown className="w-4 h-4" />
+                                    </button>
+                                </div>
+                            )}
+
+                            {rm['year1_more'] && (
+                                <div className="mt-5 flex justify-center">
+                                    <button type="button" onClick={() => toggleRm('year1_more')} className="w-full flex justify-center items-center gap-1 text-[13px] font-bold text-[#1B4F91] hover:text-[#14284E] transition-colors py-1.5 px-6 border border-[#DCE6F2] rounded-lg bg-[#F6FAFE] hover:bg-[#EAF2FB]">
+                                        Show Less <ChevronUp className="w-4 h-4" />
+                                    </button>
+                                </div>
+                            )}
                         </div>
                         )}
 
@@ -1735,46 +1818,66 @@ const BTechCseCyberSecurityNew = () => {
                                             <li className="text-[14.5px] py-1.5 text-[#14284E]">Information Security</li>
                                         </ul>
                                     </div>
-                                    <div>
-                                        <h4 className="text-[14.5px] uppercase tracking-[0.04em] text-[#1B4F91] mb-2.5">
-                                            Practical Learning
-                                        </h4>
-                                        <ul>
-                                            <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Configure secure networks</li>
-                                            <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Implement encryption algorithms</li>
-                                            <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Build secure databases</li>
-                                            <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Perform packet analysis</li>
-                                            <li className="text-[14.5px] py-1.5 text-[#14284E]">Learn secure coding practices</li>
-                                        </ul>
-                                    </div>
-                                    <div>
-                                        <h4 className="text-[14.5px] uppercase tracking-[0.04em] text-[#1B4F91] mb-2.5">
-                                            Projects
-                                        </h4>
-                                        <ul>
-                                            <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Secure Login System</li>
-                                            <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">File Encryption Software</li>
-                                            <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Network Packet Analyzer</li>
-                                            <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Database Access Control System</li>
-                                            <li className="text-[14.5px] py-1.5 text-[#14284E]">Password Vault</li>
-                                        </ul>
-                                    </div>
-                                    <div>
-                                        <h4 className="text-[14.5px] uppercase tracking-[0.04em] text-[#1B4F91] mb-2.5">
-                                            Software / Tools
-                                        </h4>
-                                        <ul>
-                                            <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">MySQL</li>
-                                            <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Cisco Packet Tracer</li>
-                                            <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Wireshark</li>
-                                            <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Ubuntu</li>
-                                            <li className="text-[14.5px] py-1.5 text-[#14284E]">GitHub</li>
-                                        </ul>
-                                    </div>
-                                    <div className="md:col-span-2 mt-2 pt-4.5 border-t border-[#DCE6F2] text-[14.5px] text-[#4B5A72]">
-                                        <b className="text-[#14284E]">Outcome:</b> You'll develop skills in network configuration, SQL security, encryption, secure authentication, and Python automation.
-                                    </div>
+                                    
+                                    {rm['year2_more'] && (
+                                        <>
+                                            <div>
+                                                <h4 className="text-[14.5px] uppercase tracking-[0.04em] text-[#1B4F91] mb-2.5">
+                                                    Practical Learning
+                                                </h4>
+                                                <ul>
+                                                    <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Configure secure networks</li>
+                                                    <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Implement encryption algorithms</li>
+                                                    <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Build secure databases</li>
+                                                    <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Perform packet analysis</li>
+                                                    <li className="text-[14.5px] py-1.5 text-[#14284E]">Learn secure coding practices</li>
+                                                </ul>
+                                            </div>
+                                            <div>
+                                                <h4 className="text-[14.5px] uppercase tracking-[0.04em] text-[#1B4F91] mb-2.5">
+                                                    Projects
+                                                </h4>
+                                                <ul>
+                                                    <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Secure Login System</li>
+                                                    <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">File Encryption Software</li>
+                                                    <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Network Packet Analyzer</li>
+                                                    <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Database Access Control System</li>
+                                                    <li className="text-[14.5px] py-1.5 text-[#14284E]">Password Vault</li>
+                                                </ul>
+                                            </div>
+                                            <div>
+                                                <h4 className="text-[14.5px] uppercase tracking-[0.04em] text-[#1B4F91] mb-2.5">
+                                                    Software / Tools
+                                                </h4>
+                                                <ul>
+                                                    <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">MySQL</li>
+                                                    <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Cisco Packet Tracer</li>
+                                                    <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Wireshark</li>
+                                                    <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Ubuntu</li>
+                                                    <li className="text-[14.5px] py-1.5 text-[#14284E]">GitHub</li>
+                                                </ul>
+                                            </div>
+                                            <div className="md:col-span-2 mt-2 pt-4.5 border-t border-[#DCE6F2] text-[14.5px] text-[#4B5A72]">
+                                                <b className="text-[#14284E]">Outcome:</b> You'll develop skills in network configuration, SQL security, encryption, secure authentication, and Python automation.
+                                            </div>
+                                        </>
+                                    )}
                                 </div>
+
+                                {!rm['year2_more'] && (
+                                    <div className="mt-5 flex justify-center">
+                                        <button type="button" onClick={() => toggleRm('year2_more')} className="w-full flex justify-center items-center gap-1 text-[13px] font-bold text-[#1B4F91] hover:text-[#14284E] transition-colors py-1.5 border border-[#DCE6F2] rounded-lg bg-[#F6FAFE] hover:bg-[#EAF2FB]">
+                                            See Full Curriculum <ChevronDown className="w-4 h-4" />
+                                        </button>
+                                    </div>
+                                )}
+                                {rm['year2_more'] && (
+                                    <div className="mt-5 flex justify-center">
+                                        <button type="button" onClick={() => toggleRm('year2_more')} className="w-full flex justify-center items-center gap-1 text-[13px] font-bold text-[#1B4F91] hover:text-[#14284E] transition-colors py-1.5 px-6 border border-[#DCE6F2] rounded-lg bg-[#F6FAFE] hover:bg-[#EAF2FB]">
+                                            Show Less <ChevronUp className="w-4 h-4" />
+                                        </button>
+                                    </div>
+                                )}
                             </div>
                         )}
 
@@ -1801,56 +1904,74 @@ const BTechCseCyberSecurityNew = () => {
                                             <li className="text-[14.5px] py-1.5 text-[#14284E]">SIEM Fundamentals</li>
                                         </ul>
                                     </div>
-                                    <div>
-                                        <h4 className="text-[14.5px] uppercase tracking-[0.04em] text-[#1B4F91] mb-2.5">
-                                            Practical Learning
-                                        </h4>
-                                        <ul>
-                                            <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Vulnerability Assessment</li>
-                                            <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Security Audits</li>
-                                            <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Malware Behaviour Analysis</li>
-                                            <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Penetration Testing</li>
-                                            <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Web Security Testing</li>
-                                            <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Mobile Application Security</li>
-                                            <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Digital Evidence Collection</li>
-                                            <li className="text-[14.5px] py-1.5 text-[#14284E]">Threat Hunting</li>
-                                        </ul>
-                                    </div>
-                                    <div>
-                                        <h4 className="text-[14.5px] uppercase tracking-[0.04em] text-[#1B4F91] mb-2.5">
-                                            Projects
-                                        </h4>
-                                        <ul>
-                                            <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">AI-Based Phishing Detector</li>
-                                            <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Vulnerability Scanner</li>
-                                            <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Secure Banking Portal</li>
-                                            <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Cloud Access Manager</li>
-                                            <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Secure Online Voting System</li>
-                                            <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Malware Detection Dashboard</li>
-                                            <li className="text-[14.5px] py-1.5 text-[#14284E]">IoT Security Framework</li>
-                                        </ul>
-                                    </div>
-                                    <div>
-                                        <h4 className="text-[14.5px] uppercase tracking-[0.04em] text-[#1B4F91] mb-2.5">
-                                            Software / Tools
-                                        </h4>
-                                        <ul>
-                                            <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Kali Linux</li>
-                                            <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Burp Suite</li>
-                                            <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Metasploit</li>
-                                            <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">OWASP ZAP</li>
-                                            <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Nmap</li>
-                                            <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Splunk</li>
-                                            <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Snort IDS</li>
-                                            <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Security Onion</li>
-                                            <li className="text-[14.5px] py-1.5 text-[#14284E]">VMware</li>
-                                        </ul>
-                                    </div>
-                                    <div className="md:col-span-2 mt-2 pt-4.5 border-t border-[#DCE6F2] text-[14.5px] text-[#4B5A72]">
-                                        <b className="text-[#14284E]">Outcome:</b> Students spend more time in labs than classrooms — mastering ethical hacking, penetration testing, digital forensics, and cloud security.
-                                    </div>
+                                    {rm['year3_more'] && (
+                                        <>
+                                            <div>
+                                                <h4 className="text-[14.5px] uppercase tracking-[0.04em] text-[#1B4F91] mb-2.5">
+                                                    Practical Learning
+                                                </h4>
+                                                <ul>
+                                                    <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Vulnerability Assessment</li>
+                                                    <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Security Audits</li>
+                                                    <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Malware Behaviour Analysis</li>
+                                                    <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Penetration Testing</li>
+                                                    <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Web Security Testing</li>
+                                                    <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Mobile Application Security</li>
+                                                    <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Digital Evidence Collection</li>
+                                                    <li className="text-[14.5px] py-1.5 text-[#14284E]">Threat Hunting</li>
+                                                </ul>
+                                            </div>
+                                            <div>
+                                                <h4 className="text-[14.5px] uppercase tracking-[0.04em] text-[#1B4F91] mb-2.5">
+                                                    Projects
+                                                </h4>
+                                                <ul>
+                                                    <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">AI-Based Phishing Detector</li>
+                                                    <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Vulnerability Scanner</li>
+                                                    <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Secure Banking Portal</li>
+                                                    <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Cloud Access Manager</li>
+                                                    <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Secure Online Voting System</li>
+                                                    <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Malware Detection Dashboard</li>
+                                                    <li className="text-[14.5px] py-1.5 text-[#14284E]">IoT Security Framework</li>
+                                                </ul>
+                                            </div>
+                                            <div>
+                                                <h4 className="text-[14.5px] uppercase tracking-[0.04em] text-[#1B4F91] mb-2.5">
+                                                    Software / Tools
+                                                </h4>
+                                                <ul>
+                                                    <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Kali Linux</li>
+                                                    <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Burp Suite</li>
+                                                    <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Metasploit</li>
+                                                    <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">OWASP ZAP</li>
+                                                    <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Nmap</li>
+                                                    <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Splunk</li>
+                                                    <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Snort IDS</li>
+                                                    <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Security Onion</li>
+                                                    <li className="text-[14.5px] py-1.5 text-[#14284E]">VMware</li>
+                                                </ul>
+                                            </div>
+                                            <div className="md:col-span-2 mt-2 pt-4.5 border-t border-[#DCE6F2] text-[14.5px] text-[#4B5A72]">
+                                                <b className="text-[#14284E]">Outcome:</b> Students spend more time in labs than classrooms — mastering ethical hacking, penetration testing, digital forensics, and cloud security.
+                                            </div>
+                                        </>
+                                    )}
                                 </div>
-                            </div>
+                                {!rm['year3_more'] && (
+                                    <div className="mt-5 flex justify-center">
+                                        <button type="button" onClick={() => toggleRm('year3_more')} className="w-full flex justify-center items-center gap-1 text-[13px] font-bold text-[#1B4F91] hover:text-[#14284E] transition-colors py-1.5 border border-[#DCE6F2] rounded-lg bg-[#F6FAFE] hover:bg-[#EAF2FB]">
+                                            See Full Curriculum <ChevronDown className="w-4 h-4" />
+                                        </button>
+                                    </div>
+                                )}
+                                {rm['year3_more'] && (
+                                    <div className="mt-5 flex justify-center">
+                                        <button type="button" onClick={() => toggleRm('year3_more')} className="w-full flex justify-center items-center gap-1 text-[13px] font-bold text-[#1B4F91] hover:text-[#14284E] transition-colors py-1.5 px-6 border border-[#DCE6F2] rounded-lg bg-[#F6FAFE] hover:bg-[#EAF2FB]">
+                                            Show Less <ChevronUp className="w-4 h-4" />
+                                        </button>
+                                    </div>
+                                )}
+                                </div>
                         )}
 
                         {/* Year 4 Content */}
@@ -1874,51 +1995,72 @@ const BTechCseCyberSecurityNew = () => {
                                             <li className="text-[14.5px] py-1.5 text-[#14284E]">Emerging Cyber Technologies</li>
                                         </ul>
                                     </div>
-                                    <div>
-                                        <h4 className="text-[14.5px] uppercase tracking-[0.04em] text-[#1B4F91] mb-2.5">
-                                            Practical Learning
-                                        </h4>
-                                        <ul>
-                                            <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Aptitude Training</li>
-                                            <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Coding Interviews</li>
-                                            <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">HR Interviews</li>
-                                            <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Technical Interviews</li>
-                                            <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Resume Building</li>
-                                            <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">LinkedIn Branding</li>
-                                            <li className="text-[14.5px] py-1.5 text-[#14284E]">Mock Group Discussions</li>
-                                        </ul>
-                                    </div>
-                                    <div>
-                                        <h4 className="text-[14.5px] uppercase tracking-[0.04em] text-[#1B4F91] mb-2.5">
-                                            Projects
-                                        </h4>
-                                        <ul>
-                                            <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Enterprise SOC Dashboard</li>
-                                            <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">AI Intrusion Detection System</li>
-                                            <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Blockchain Identity Management</li>
-                                            <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Smart Healthcare Security Platform</li>
-                                            <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Cloud Security Monitoring Dashboard</li>
-                                            <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Ransomware Detection using Machine Learning</li>
-                                            <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Secure Smart City Infrastructure</li>
-                                            <li className="text-[14.5px] py-1.5 text-[#14284E]">Autonomous Threat Intelligence Platform</li>
-                                        </ul>
-                                    </div>
-                                    <div>
-                                        <h4 className="text-[14.5px] uppercase tracking-[0.04em] text-[#1B4F91] mb-2.5">
-                                            Software / Tools
-                                        </h4>
-                                        <ul>
-                                            <li className="text-[14.5px] py-1.5 text-[#14284E]">—</li>
-                                        </ul>
-                                    </div>
-                                    <div className="md:col-span-2 mt-2 pt-4.5 border-t border-[#DCE6F2] text-[14.5px] text-[#4B5A72]">
-                                        <b className="text-[#14284E]">Outcome:</b> The final year focuses on solving real business challenges through internships, research, industry projects, and placement preparation.
-                                    </div>
+                                    
+                                    {rm['year4_more'] && (
+                                        <>
+                                            <div>
+                                                <h4 className="text-[14.5px] uppercase tracking-[0.04em] text-[#1B4F91] mb-2.5">
+                                                    Practical Learning
+                                                </h4>
+                                                <ul>
+                                                    <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Aptitude Training</li>
+                                                    <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Coding Interviews</li>
+                                                    <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">HR Interviews</li>
+                                                    <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Technical Interviews</li>
+                                                    <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Resume Building</li>
+                                                    <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">LinkedIn Branding</li>
+                                                    <li className="text-[14.5px] py-1.5 text-[#14284E]">Mock Group Discussions</li>
+                                                </ul>
+                                            </div>
+                                            <div>
+                                                <h4 className="text-[14.5px] uppercase tracking-[0.04em] text-[#1B4F91] mb-2.5">
+                                                    Projects
+                                                </h4>
+                                                <ul>
+                                                    <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Enterprise SOC Dashboard</li>
+                                                    <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">AI Intrusion Detection System</li>
+                                                    <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Blockchain Identity Management</li>
+                                                    <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Smart Healthcare Security Platform</li>
+                                                    <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Cloud Security Monitoring Dashboard</li>
+                                                    <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Ransomware Detection using Machine Learning</li>
+                                                    <li className="text-[14.5px] py-1.5 border-b border-dashed border-[#DCE6F2] text-[#14284E]">Secure Smart City Infrastructure</li>
+                                                    <li className="text-[14.5px] py-1.5 text-[#14284E]">Autonomous Threat Intelligence Platform</li>
+                                                </ul>
+                                            </div>
+                                            <div>
+                                                <h4 className="text-[14.5px] uppercase tracking-[0.04em] text-[#1B4F91] mb-2.5">
+                                                    Software / Tools
+                                                </h4>
+                                                <ul>
+                                                    <li className="text-[14.5px] py-1.5 text-[#14284E]">—</li>
+                                                </ul>
+                                            </div>
+                                            <div className="md:col-span-2 mt-2 pt-4.5 border-t border-[#DCE6F2] text-[14.5px] text-[#4B5A72]">
+                                                <b className="text-[#14284E]">Outcome:</b> The final year focuses on solving real business challenges through internships, research, industry projects, and placement preparation.
+                                            </div>
+                                        </>
+                                    )}
                                 </div>
-                            </div>
+                                {!rm['year4_more'] && (
+                                    <div className="mt-5 flex justify-center">
+                                        <button type="button" onClick={() => toggleRm('year4_more')} className="w-full flex justify-center items-center gap-1 text-[13px] font-bold text-[#1B4F91] hover:text-[#14284E] transition-colors py-1.5 border border-[#DCE6F2] rounded-lg bg-[#F6FAFE] hover:bg-[#EAF2FB]">
+                                            See Full Curriculum <ChevronDown className="w-4 h-4" />
+                                        </button>
+                                    </div>
+                                )}
+                                {rm['year4_more'] && (
+                                    <div className="mt-5 flex justify-center">
+                                        <button type="button" onClick={() => toggleRm('year4_more')} className="w-full flex justify-center items-center gap-1 text-[13px] font-bold text-[#1B4F91] hover:text-[#14284E] transition-colors py-1.5 px-6 border border-[#DCE6F2] rounded-lg bg-[#F6FAFE] hover:bg-[#EAF2FB]">
+                                            Show Less <ChevronUp className="w-4 h-4" />
+                                        </button>
+                                    </div>
+                                )}
+                                </div>
                         )}
                     </div>
-                    <div className={`${Classes["container"]} mx-auto mt-10 sm:mt-20`}>
+                </section>
+                <section className="py-[36px] sm:py-[40px] md:py-[76px] px-4 sm:px-6 bg-[#FFFFFF]">
+                    <div className={`${Classes["container"]} mx-auto`}>
 
                         {/* Heading */}
                         <div className="w-full mb-10">
@@ -2084,124 +2226,36 @@ const BTechCseCyberSecurityNew = () => {
                             <button className="rm-btn" onClick={() => toggleRm('feeNote')}>{rm['feeNote'] ? 'Read Less' : 'Read More'}</button>
                         </div>
 
-                        {/* Scholarship Section — Mobile */}
-                        <div className="lg:hidden mt-10 space-y-4">
-                            <h3 className="text-[20px] font-bold font-display text-[#14284E]">
-                                Scholarship Schemes
-                            </h3>
-                            <div>
-                                <p className={`text-[13.5px] leading-6 text-[#4B5A72] ${!rm['schMob'] ? 'rm-clamp' : ''}`}>
-                                    SRMU offers limited scholarships to support meritorious and deserving students at the time of admission. Scholarships are awarded strictly as per approved eligibility criteria and are applicable only in the first year of admission.
-                                </p>
-                                <button className="rm-btn" onClick={() => toggleRm('schMob')}>{rm['schMob'] ? 'Read Less' : 'Read More'}</button>
-                            </div>
-                            <div className="space-y-3 pt-1">
-                                {[
-                                    "Merit and SET-Based scholarships applicable only for First Year.",
-                                    "Merit Based Scholarship",
-                                    "Scholarships are available under limited seats in all categories.",
-                                    "Only one scholarship scheme can be availed by a student.",
-                                    "Special scholarships are granted subject to submission of satisfactory documents and approval.",
-                                    "Scholarship may be withdrawn in case of delayed or non-payment of fees.",
-                                ].map((item, i) => (
-                                    <div key={i} className="flex items-start gap-3">
-                                        <span className="shrink-0 text-[#D78610] font-bold text-[15px] mt-0.5">✓</span>
-                                        <span className="text-[14px] leading-5 text-[#1B355F]">{item}</span>
-                                    </div>
-                                ))}
-                            </div>
-                            <Link
-                                to="https://srmu.ac.in/scholarship-scheme"
-                                target="_blank"
-                                className="mt-2 flex items-center justify-center w-full bg-[#ffc107] hover:bg-[#D78610] text-[#14284E] font-bold text-[14.5px] py-3.5 rounded-xl transition-colors"
-                            >
-                                View Scholarship Details →
+                        {/* Scholarship Section Shared Header & Banner */}
+                        <h3 className="text-[20px] lg:text-[24px] font-bold font-display text-[#14284E] mt-10 mb-4">
+                            Scholarship Schemes
+                        </h3>
+                        <div className="relative w-full rounded-xl sm:rounded-2xl overflow-hidden mb-6 bg-[#14284E]">
+                             <img src="/sharedimageScholar.jpg" className="block w-full h-[300px] sm:h-auto object-cover object-right" alt="Scholarships" />
+                             <div className="absolute inset-0 z-10 bg-gradient-to-r from-[#14284E] via-[#14284E]/90 to-transparent p-5 sm:p-6 md:p-10 w-full sm:w-[85%] md:w-[75%] lg:w-[65%] flex flex-col justify-center">
+                                 <h2 className="text-[18px] sm:text-[24px] md:text-[30px] font-black text-white leading-[1.1] uppercase mb-2 tracking-tight">
+                                     SRMU’S <br />
+                                     <span className="text-[#ffc107]">EXCLUSIVE</span> <br />
+                                     SCHOLARSHIPS
+                                 </h2>
+                                 <h3 className="text-[14px] sm:text-[17px] font-bold text-sky-200 mb-2">
+                                     Rewarding Merit, Empowering Futures
+                                 </h3>
+                                 <p className="text-[12px] sm:text-[13.5px] md:text-[14px] text-gray-200 max-w-[420px] leading-relaxed">
+                                     Meritorious and deserving students can avail limited scholarships at the time of admission, subject to approved eligibility criteria. Scholarships are applicable only in the first year of admission.
+                                 </p>
+                             </div>
+                        </div>
+
+                        <div>
+                            <Link to="https://srmu.ac.in/scholarship-scheme" target="_blank" className="inline-flex items-center bg-[#ffc107] hover:bg-[#D78610] text-[#14284E] font-semibold text-[14.5px] px-6 py-3 rounded-md transition-colors shadow-sm hover:-translate-y-0.5">
+                                View Details →
                             </Link>
                         </div>
 
-                        {/* Scholarship Section — Desktop */}
-                        <div className="hidden lg:grid lg:grid-cols-[1fr_1.4fr] gap-12 mt-10">
 
-                            {/* Left */}
-                            <div>
-                                <h3 className="text-[24px] font-bold font-display text-[#14284E] mb-4">
-                                    Scholarship Schemes
-                                </h3>
 
-                                <div className="mb-5">
-                                    <p className={`text-[14px] leading-7 text-[#4B5A72] ${!rm['schDesk'] ? 'rm-clamp' : ''}`}>
-                                        SRMU offers limited scholarships to support meritorious and deserving students at the time of admission. Scholarships are awarded strictly as per approved eligibility criteria and are applicable only in the first year of admission.
-                                    </p>
-                                    <button className="rm-btn" onClick={() => toggleRm('schDesk')}>{rm['schDesk'] ? 'Read Less' : 'Read More'}</button>
-                                </div>
 
-                                <Link to="https://srmu.ac.in/scholarship-scheme"
-                                    target="_blank"
-                                    className="inline-flex items-center bg-[#ffc107] hover:bg-[#D78610] text-[#14284E] font-semibold text-[14.5px] px-5 py-3 rounded-md transition-colors"
-                                >
-                                    View Details →
-                                </Link>
-                            </div>
-
-                            {/* Right */}
-                            <div className="grid md:grid-cols-2 gap-x-10 gap-y-5">
-
-                                <div className="flex items-start gap-2.5">
-                                    <span className="w-5 h-5 shrink-0 rounded-full bg-[#1B5A9D] text-white flex items-center justify-center text-[11px]">
-                                        ✓
-                                    </span>
-                                    <span className="text-[14px] leading-5 text-[#1B355F]">
-                                        Merit and SET-Based scholarships applicable only for First Year.
-                                    </span>
-                                </div>
-
-                                <div className="flex items-start gap-2.5">
-                                    <span className="w-5 h-5 shrink-0 rounded-full bg-[#1B5A9D] text-white flex items-center justify-center text-[11px]">
-                                        ✓
-                                    </span>
-                                    <span className="text-[14px] leading-5 text-[#1B355F]">
-                                        Merit Based Scholarship
-                                    </span>
-                                </div>
-
-                                <div className="flex items-start gap-2.5">
-                                    <span className="w-5 h-5 shrink-0 rounded-full bg-[#1B5A9D] text-white flex items-center justify-center text-[11px]">
-                                        ✓
-                                    </span>
-                                    <span className="text-[14px] leading-5 text-[#1B355F]">
-                                        Scholarships are available under limited seats in all categories.
-                                    </span>
-                                </div>
-
-                                <div className="flex items-start gap-2.5">
-                                    <span className="w-5 h-5 shrink-0 rounded-full bg-[#1B5A9D] text-white flex items-center justify-center text-[11px]">
-                                        ✓
-                                    </span>
-                                    <span className="text-[14px] leading-5 text-[#1B355F]">
-                                        Only one scholarship scheme can be availed by a student.
-                                    </span>
-                                </div>
-
-                                <div className="flex items-start gap-2.5">
-                                    <span className="w-5 h-5 shrink-0 rounded-full bg-[#1B5A9D] text-white flex items-center justify-center text-[11px]">
-                                        ✓
-                                    </span>
-                                    <span className="text-[14px] leading-5 text-[#1B355F]">
-                                        Special scholarships are granted subject to submission of satisfactory documents and approval.
-                                    </span>
-                                </div>
-
-                                <div className="flex items-start gap-2.5">
-                                    <span className="w-5 h-5 shrink-0 rounded-full bg-[#1B5A9D] text-white flex items-center justify-center text-[11px]">
-                                        ✓
-                                    </span>
-                                    <span className="text-[14px] leading-5 text-[#1B355F]">
-                                        Scholarship may be withdrawn in case of delayed or non-payment of fees.
-                                    </span>
-                                </div>
-
-                            </div>
-                        </div>
 
                     </div>
                 </section>
@@ -2413,7 +2467,7 @@ const BTechCseCyberSecurityNew = () => {
                     </div>
                 </section> */}
 
-                <section className="py-[70px] px-6 bg-gradient-to-b from-[#F6FAFE] via-[#EAF2FB] to-[#F6FAFE] ">
+                <section className="py-[70px] px-6 bg-[#F0F6FB]">
                     <div className={`${Classes["container"]} mx-auto`}>
 
                         {/* Heading */}
@@ -2435,62 +2489,9 @@ const BTechCseCyberSecurityNew = () => {
                                         Program Objectives
                                     </h3>
 
-                                    {/* Always open on mobile */}
-                                    <ul className="sm:hidden mt-8 pl-5 space-y-2 text-[15.5px] leading-6 text-[#14284E] list-disc">
-                                        <li>
-                                            To impart deep technical knowledge about the field of
-                                            computer science and engineering.
-                                        </li>
-
-                                        <li>
-                                            <span className={!rm['obj2m'] ? 'rm-clamp' : ''}>
-                                                To develop an understanding of computer science and
-                                                engineering at different levels of abstraction including
-                                                computer architecture and design, operating systems,
-                                                database management, algorithms and applications.
-                                            </span>
-                                            <button className="rm-btn block" onClick={() => toggleRm('obj2m')}>{rm['obj2m'] ? 'Read Less' : 'Read More'}</button>
-                                        </li>
-
-                                        <li>
-                                            <span className={!rm['obj3m'] ? 'rm-clamp' : ''}>
-                                                To aware students with a strong foundation in the field
-                                                of Mathematical and basics of engineering fundamentals
-                                                necessary to analyze and evaluate real world engineering
-                                                problems and to further prepare them for higher studies,
-                                                R&amp;D.
-                                            </span>
-                                            <button className="rm-btn block" onClick={() => toggleRm('obj3m')}>{rm['obj3m'] ? 'Read Less' : 'Read More'}</button>
-                                        </li>
-
-                                        <li>
-                                            <span className={!rm['obj4m'] ? 'rm-clamp' : ''}>
-                                                To develop life-long learning attitude among students and
-                                                to make them aware about professional and social
-                                                responsibility.
-                                            </span>
-                                            <button className="rm-btn block" onClick={() => toggleRm('obj4m')}>{rm['obj4m'] ? 'Read Less' : 'Read More'}</button>
-                                        </li>
-
-                                        <li>
-                                            <span className={!rm['obj5m'] ? 'rm-clamp' : ''}>
-                                                To inculcate an understanding among the students for
-                                                utilizing their knowledge of computer engineering and
-                                                mathematical theory to solve current and future computing
-                                                problems.
-                                            </span>
-                                            <button className="rm-btn block" onClick={() => toggleRm('obj5m')}>{rm['obj5m'] ? 'Read Less' : 'Read More'}</button>
-                                        </li>
-
-                                        <li>
-                                            To inspire leadership and professional values in the
-                                            students.
-                                        </li>
-                                    </ul>
-
-                                    {/* Toggle on desktop */}
+                                    {/* Toggle on both mobile and desktop */}
                                     {openSection === "objectives" && (
-                                        <ul className="hidden sm:block mt-8 pl-5 space-y-2 text-[15.5px] leading-6 text-[#14284E] list-disc">
+                                        <ul className="mt-8 pl-5 space-y-2 text-[15.5px] leading-6 text-[#14284E] list-disc">
                                             <li>
                                                 To impart deep technical knowledge about the field of
                                                 computer science and engineering.
@@ -2544,7 +2545,7 @@ const BTechCseCyberSecurityNew = () => {
                                     )}
                                 </div>
 
-                                <div className="hidden sm:flex w-[90px] shrink-0 border-l border-[#CBD5DF] items-start justify-center pt-7">
+                                <div className="flex w-[60px] sm:w-[90px] shrink-0 border-l border-[#CBD5DF] items-start justify-center pt-7">
                                     <span className="text-[34px] leading-none font-light text-[#202B32]">
                                         {openSection === "objectives" ? "↓" : "→"}
                                     </span>
@@ -2553,8 +2554,8 @@ const BTechCseCyberSecurityNew = () => {
 
                         </div>
 
-                        {/* PROGRAM LEARNING OUTCOMES — Desktop only */}
-                        <div className="hidden sm:block border-t border-[#CBD5DF]">
+                        {/* PROGRAM LEARNING OUTCOMES */}
+                        <div className="border-t border-[#CBD5DF]">
                             <button
                                 type="button"
                                 onClick={() => toggleSection("outcomes")}
@@ -2620,7 +2621,7 @@ const BTechCseCyberSecurityNew = () => {
                                     )}
                                 </div>
 
-                                <div className="hidden sm:flex w-[90px] shrink-0 border-l border-[#CBD5DF] items-start justify-center pt-7">
+                                <div className="flex w-[60px] sm:w-[90px] shrink-0 border-l border-[#CBD5DF] items-start justify-center pt-7">
                                     <span className="text-[34px] leading-none font-light text-[#202B32]">
                                         {openSection === "outcomes" ? "↓" : "→"}
                                     </span>
@@ -2628,8 +2629,8 @@ const BTechCseCyberSecurityNew = () => {
                             </button>
                         </div>
 
-                        {/* PROGRAM SPECIFIC OUTCOMES — Desktop only */}
-                        <div className="hidden sm:block border-t border-b border-[#CBD5DF]">
+                        {/* PROGRAM SPECIFIC OUTCOMES */}
+                        <div className="border-t border-b border-[#CBD5DF]">
                             <button
                                 type="button"
                                 onClick={() => toggleSection("specific")}
@@ -2677,7 +2678,7 @@ const BTechCseCyberSecurityNew = () => {
                                     )}
                                 </div>
 
-                                <div className="hidden sm:flex w-[90px] shrink-0 border-l border-[#CBD5DF] items-start justify-center pt-7">
+                                <div className="flex w-[60px] sm:w-[90px] shrink-0 border-l border-[#CBD5DF] items-start justify-center pt-7">
                                     <span className="text-[34px] leading-none font-light text-[#202B32]">
                                         {openSection === "specific" ? "↓" : "→"}
                                     </span>
@@ -2688,7 +2689,7 @@ const BTechCseCyberSecurityNew = () => {
                     </div>
                 </section>
 
-                <section className="py-[36px] sm:py-[40px] md:py-[76px]  px-4 sm:px-6 ">
+                <section className="py-[36px] sm:py-[40px] md:py-[76px] px-4 sm:px-6 bg-gradient-to-b from-white to-[#E0F1FF]">
                     <div className={`${Classes["container"]}`}>
                         {/* <div className="w-full mb-6">
 
@@ -2747,16 +2748,7 @@ const BTechCseCyberSecurityNew = () => {
                                         </p>
                                     </div>
                                     <button className="rm-btn" onClick={() => toggleRm('glDesc')}>{rm['glDesc'] ? 'Read Less' : 'Read More'}</button>
-                                    <div className="bg-[#F6FAFE] border border-[#DCE6F2] rounded-2xl p-5 mt-2">
-                                        <h5 className="text-[14px] font-bold text-[#14284E] mb-2.5">Key Learning Outcomes</h5>
-                                        <p className="text-[14px] text-[#4B5A72] mb-2.5">Students gained:</p>
-                                        <ul className="list-disc pl-5 text-[14px] text-[#4B5A72] space-y-1.5">
-                                            <li>A foundation in generative AI concepts</li>
-                                            <li>Practical experience with AI tools</li>
-                                            <li>Understanding of prompt engineering</li>
-                                            <li>Awareness of applications of AI in technology and software development</li>
-                                        </ul>
-                                    </div>
+
                                 </div>
                                 {/* <div className="rounded-2xl overflow-hidden border border-[#DCE6F2] shadow-sm bg-[#f0f4fa] h-[220px] sm:h-[260px] md:h-full md:min-h-[280px] flex items-center justify-center">
                                     <img src="https://ik.imagekit.io/ttalcskjf/IMAGE%202.webp" alt="Cybersecurity System - Generative AI Guest Lecture" className="w-full h-full object-cover" />
@@ -2841,7 +2833,7 @@ const BTechCseCyberSecurityNew = () => {
                             <div className="hidden sm:block bg-white border border-[#DCE6F2] hover:border-[#1B4F91]/35 rounded-3xl p-4 sm:p-6 shadow-[0_4px_20px_rgba(15,31,61,0.04)] transition-all">
 
                                 <img
-                                    src="https://ik.imagekit.io/ttalcskjf/IMAGE%204.webp?updatedAt=1788439003271"
+                                    src="/Cyber-awareness-workshop.webp"
                                     alt="Cyber security professionals protecting digital systems"
                                     className="w-full  object-cover rounded-xl border border-[#DCE6F2]"
                                     loading="lazy"
@@ -2852,7 +2844,7 @@ const BTechCseCyberSecurityNew = () => {
 
                     </div>
                 </section>
-                <section className="py-[36px] sm:py-[40px] md:py-[76px]  px-4 sm:px-6 bg-gradient-to-b from-[#F6FAFE] via-[#EAF2FB] to-[#F6FAFE]">
+                <section className="py-[36px] sm:py-[40px] md:py-[76px] px-4 sm:px-6 bg-[#E6E6E7]">
                     <div className={`${Classes["container"]} mx-auto`}>
 
                         {/* Heading */}
@@ -2890,22 +2882,42 @@ const BTechCseCyberSecurityNew = () => {
 
                         </div>
 
-                        {/* Industry Cards — Mobile 2-col grid */}
-                        <div className="md:hidden grid grid-cols-2 gap-3 mt-4">
-                            {[
-                                { title: "Banking & Financial Services", desc: "Online transactions, customer data, digital banking" },
-                                { title: "Healthcare", desc: "Patient records, medical devices, digital platforms" },
-                                { title: "Defence & Government", desc: "National security, critical infrastructure" },
-                                { title: "IT & Software", desc: "Application, cloud & network security, privacy" },
-                                { title: "E-Commerce", desc: "Customer info, payment gateways, transactions" },
-                                { title: "Telecom & Networking", desc: "Network & infrastructure security, monitoring" },
-                            ].slice(0, 2).map((item, i) => (
-                                <div key={i} className="bg-white border border-[#DCE6F2] rounded-xl p-4">
-                                    <h3 className="text-[13px] font-bold font-display text-[#14284E] mb-2 leading-snug">{item.title}</h3>
-                                    <div className="text-[10px] uppercase tracking-[0.08em] text-[#38B2AC] font-semibold mb-1.5">Protects</div>
-                                    <p className="text-[11.5px] leading-[1.5] text-[#4B5A72]">{item.desc}</p>
-                                </div>
-                            ))}
+                        {/* Industry Cards — Mobile Scrollable */}
+                        <div className="md:hidden mt-4 relative">
+                            {/* Scroll Buttons */}
+                            <div className="flex gap-2 justify-end mb-3 shrink-0">
+                                <button
+                                    type="button"
+                                    onClick={() => scrollIndustries('left')}
+                                    className="w-8 h-8 rounded-md border border-[#DCE6F2] bg-white text-[#14284E] flex items-center justify-center transition-colors hover:border-[#1B4F91] hover:text-[#1B4F91]"
+                                >
+                                    <ArrowLeft className="w-4 h-4" />
+                                </button>
+                                <button
+                                    type="button"
+                                    onClick={() => scrollIndustries('right')}
+                                    className="w-8 h-8 rounded-md border border-[#DCE6F2] bg-white text-[#14284E] flex items-center justify-center transition-colors hover:border-[#1B4F91] hover:text-[#1B4F91]"
+                                >
+                                    <ArrowRight className="w-4 h-4" />
+                                </button>
+                            </div>
+                            
+                            <div ref={industriesScrollRef} className="flex flex-nowrap gap-3 overflow-x-auto pb-2 scrollbar-hide scroll-smooth">
+                                {[
+                                    { title: "Banking & Financial Services", desc: "Online transactions, customer data, digital banking" },
+                                    { title: "Healthcare", desc: "Patient records, medical devices, digital platforms" },
+                                    { title: "Defence & Government", desc: "National security, critical infrastructure" },
+                                    { title: "IT & Software", desc: "Application, cloud & network security, privacy" },
+                                    { title: "E-Commerce", desc: "Customer info, payment gateways, transactions" },
+                                    { title: "Telecom & Networking", desc: "Network & infrastructure security, monitoring" },
+                                ].map((item, i) => (
+                                    <div key={i} className="shrink-0 w-[calc(50%-6px)] bg-white border border-[#DCE6F2] rounded-xl p-4 whitespace-normal">
+                                        <h3 className="text-[13px] font-bold font-display text-[#14284E] mb-2 leading-snug">{item.title}</h3>
+                                        <div className="text-[10px] uppercase tracking-[0.08em] text-[#38B2AC] font-semibold mb-1.5">Protects</div>
+                                        <p className="text-[11.5px] leading-[1.5] text-[#4B5A72]">{item.desc}</p>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
 
                         {/* Industry Cards — Desktop */}
@@ -3034,7 +3046,7 @@ const BTechCseCyberSecurityNew = () => {
 
                     </div>
                 </section>
-                <section className="py-[36px] sm:py-[40px] md:py-[76px]  px-4 sm:px-6 ">
+                <section className="py-[36px] sm:py-[40px] md:py-[76px] px-4 sm:px-6 bg-gradient-to-b from-white to-[#E0F1FF]">
                     <div className={`${Classes["container"]} mx-auto`}>
 
 
@@ -3191,7 +3203,7 @@ const BTechCseCyberSecurityNew = () => {
 
                     </div>
                 </section>
-                <section className="py-[36px] sm:py-[40px] md:py-[76px]  px-4 sm:px-6  bg-gradient-to-b from-[#F6FAFE] via-[#EAF2FB] to-[#F6FAFE] ">
+                <section className="py-[36px] sm:py-[40px] md:py-[76px] px-4 sm:px-6 bg-[#E0F1FF]">
                     <div className={`${Classes["container"]} mx-auto`}>
 
                         {/* Heading */}
@@ -3207,7 +3219,7 @@ const BTechCseCyberSecurityNew = () => {
                         </div>
 
                         {/* Comparison Table 1 — Mobile */}
-                        <div className="sm:hidden mb-4 rounded-xl overflow-hidden border border-[#DCE6F2]">
+                        <div className="sm:hidden mb-4 rounded-xl overflow-hidden border border-[#DCE6F2] bg-white">
                             <table className="w-full text-left border-collapse">
                                 <thead>
                                     <tr className="bg-[#14284E] text-white">
@@ -3226,7 +3238,7 @@ const BTechCseCyberSecurityNew = () => {
                                         ["Software Development", "Medium", "High"],
                                         ["Security Careers", "Excellent", "Good"],
                                         ["AI Integration", "Growing", "High"],
-                                    ].map(([f, cs, cse], i) => (
+                                    ].slice(0, rm['table1'] ? undefined : 3).map(([f, cs, cse], i) => (
                                         <tr key={i} className="border-b border-[#DCE6F2] last:border-0">
                                             <td className="px-3 py-2.5 text-[12px]">{f}</td>
                                             <td className="px-3 py-2.5 text-[12px]">{cs}</td>
@@ -3235,65 +3247,20 @@ const BTechCseCyberSecurityNew = () => {
                                     ))}
                                 </tbody>
                             </table>
-                        </div>
-
-                        {/* Comparison Table 1 — Desktop */}
-                        <div className="hidden sm:block overflow-x-auto mb-8 bg-white border border-[#DCE6F2] rounded-xl shadow-[0_4px_20px_rgba(15,31,61,0.03)]">
-                            <table className="w-full min-w-[700px] table-fixed text-left border-collapse">
-                                <thead>
-                                    <tr className="bg-[#F4F7FB] border-b border-[#DCE6F2] text-[#14284E]">
-                                        <th className="px-6 py-4 text-[14px] font-bold w-[30%]">Feature</th>
-                                        <th className="px-6 py-4 text-[14px] font-bold w-[35%]">Cyber Security</th>
-                                        <th className="px-6 py-4 text-[14px] font-bold w-[35%]">CSE</th>
-                                    </tr>
-                                </thead>
-                                <tbody className="text-[#4B5A72]">
-                                    <tr className="border-b border-[#F0F4F8]">
-                                        <td className="px-6 py-4 text-[13.5px]">Main Focus</td>
-                                        <td className="px-6 py-4 text-[13.5px]">Digital Security</td>
-                                        <td className="px-6 py-4 text-[13.5px]">Computing & Software Development</td>
-                                    </tr>
-                                    <tr className="border-b border-[#F0F4F8]">
-                                        <td className="px-6 py-4 text-[13.5px]">Programming</td>
-                                        <td className="px-6 py-4 text-[13.5px]">High</td>
-                                        <td className="px-6 py-4 text-[13.5px]">Very High</td>
-                                    </tr>
-                                    <tr className="border-b border-[#F0F4F8]">
-                                        <td className="px-6 py-4 text-[13.5px]">Networking</td>
-                                        <td className="px-6 py-4 text-[13.5px]">High</td>
-                                        <td className="px-6 py-4 text-[13.5px]">Medium</td>
-                                    </tr>
-                                    <tr className="border-b border-[#F0F4F8]">
-                                        <td className="px-6 py-4 text-[13.5px]">Ethical Hacking</td>
-                                        <td className="px-6 py-4 text-[13.5px]">High</td>
-                                        <td className="px-6 py-4 text-[13.5px]">Low</td>
-                                    </tr>
-                                    <tr className="border-b border-[#F0F4F8]">
-                                        <td className="px-6 py-4 text-[13.5px]">Cloud Security</td>
-                                        <td className="px-6 py-4 text-[13.5px]">High</td>
-                                        <td className="px-6 py-4 text-[13.5px]">Medium</td>
-                                    </tr>
-                                    <tr className="border-b border-[#F0F4F8]">
-                                        <td className="px-6 py-4 text-[13.5px]">Software Development</td>
-                                        <td className="px-6 py-4 text-[13.5px]">Medium</td>
-                                        <td className="px-6 py-4 text-[13.5px]">High</td>
-                                    </tr>
-                                    <tr className="border-b border-[#F0F4F8]">
-                                        <td className="px-6 py-4 text-[13.5px]">Security Careers</td>
-                                        <td className="px-6 py-4 text-[13.5px]">Excellent</td>
-                                        <td className="px-6 py-4 text-[13.5px]">Good</td>
-                                    </tr>
-                                    <tr>
-                                        <td className="px-6 py-4 text-[13.5px]">AI Integration</td>
-                                        <td className="px-6 py-4 text-[13.5px]">Growing</td>
-                                        <td className="px-6 py-4 text-[13.5px]">High</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <button 
+                                className="w-full py-2.5 flex items-center justify-center text-[#14284E] font-semibold text-[13px] border-t border-[#DCE6F2]"
+                                onClick={() => toggleRm('table1')}
+                            >
+                                {rm['table1'] ? (
+                                    <>View Less <ChevronUp className="w-4 h-4 ml-1" /></>
+                                ) : (
+                                    <>View More <ChevronDown className="w-4 h-4 ml-1" /></>
+                                )}
+                            </button>
                         </div>
 
                         {/* Comparison Table 2 — Mobile */}
-                        <div className="sm:hidden mb-4 rounded-xl overflow-hidden border border-[#DCE6F2]">
+                        <div className="sm:hidden mb-4 rounded-xl overflow-hidden border border-[#DCE6F2] bg-white">
                             <table className="w-full text-left border-collapse">
                                 <thead>
                                     <tr className="bg-[#14284E] text-white">
@@ -3309,7 +3276,7 @@ const BTechCseCyberSecurityNew = () => {
                                         ["Careers", "SOC Analyst", "ML Engineer"],
                                         ["Industry Demand", "Very High", "Very High"],
                                         ["Future Scope", "AI Security", "Generative AI"],
-                                    ].map(([f, cs, ai], i) => (
+                                    ].slice(0, rm['table2'] ? undefined : 3).map(([f, cs, ai], i) => (
                                         <tr key={i} className="border-b border-[#DCE6F2] last:border-0">
                                             <td className="px-3 py-2.5 text-[12px]">{f}</td>
                                             <td className="px-3 py-2.5 text-[12px]">{cs}</td>
@@ -3318,46 +3285,114 @@ const BTechCseCyberSecurityNew = () => {
                                     ))}
                                 </tbody>
                             </table>
+                            <button 
+                                className="w-full py-2.5 flex items-center justify-center text-[#14284E] font-semibold text-[13px] border-t border-[#DCE6F2]"
+                                onClick={() => toggleRm('table2')}
+                            >
+                                {rm['table2'] ? (
+                                    <>View Less <ChevronUp className="w-4 h-4 ml-1" /></>
+                                ) : (
+                                    <>View More <ChevronDown className="w-4 h-4 ml-1" /></>
+                                )}
+                            </button>
                         </div>
 
-                        {/* Comparison Table 2 — Desktop */}
-                        <div className="hidden sm:block overflow-x-auto mb-10 bg-white border border-[#DCE6F2] rounded-xl shadow-[0_4px_20px_rgba(15,31,61,0.03)]">
-                            <table className="w-full min-w-[700px] table-fixed text-left border-collapse">
-                                <thead>
-                                    <tr className="bg-[#F4F7FB] border-b border-[#DCE6F2] text-[#14284E]">
-                                        <th className="px-6 py-4 text-[14px] font-bold w-[30%]">Feature</th>
-                                        <th className="px-6 py-4 text-[14px] font-bold w-[35%]">Cyber Security</th>
-                                        <th className="px-6 py-4 text-[14px] font-bold w-[35%]">AI / Data Sci</th>
-                                    </tr>
-                                </thead>
-                                <tbody className="text-[#4B5A72]">
-                                    <tr className="border-b border-[#F0F4F8]">
-                                        <td className="px-6 py-4 text-[13.5px]">Core Area</td>
-                                        <td className="px-6 py-4 text-[13.5px]">Protection of systems</td>
-                                        <td className="px-6 py-4 text-[13.5px]">Data intelligence</td>
-                                    </tr>
-                                    <tr className="border-b border-[#F0F4F8]">
-                                        <td className="px-6 py-4 text-[13.5px]">Main Skills</td>
-                                        <td className="px-6 py-4 text-[13.5px]">Security, Networks, Defence</td>
-                                        <td className="px-6 py-4 text-[13.5px]">ML, Statistics, Data</td>
-                                    </tr>
-                                    <tr className="border-b border-[#F0F4F8]">
-                                        <td className="px-6 py-4 text-[13.5px]">Careers</td>
-                                        <td className="px-6 py-4 text-[13.5px]">Security Engineer, SOC Analyst</td>
-                                        <td className="px-6 py-4 text-[13.5px]">Data Scientist, ML Engineer</td>
-                                    </tr>
-                                    <tr className="border-b border-[#F0F4F8]">
-                                        <td className="px-6 py-4 text-[13.5px]">Industry Demand</td>
-                                        <td className="px-6 py-4 text-[13.5px]">Very High</td>
-                                        <td className="px-6 py-4 text-[13.5px]">Very High</td>
-                                    </tr>
-                                    <tr>
-                                        <td className="px-6 py-4 text-[13.5px]">Future Scope</td>
-                                        <td className="px-6 py-4 text-[13.5px]">AI Security, Cloud Security</td>
-                                        <td className="px-6 py-4 text-[13.5px]">Generative AI, Automation</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        {/* Comparison Tables — Desktop */}
+                        <div className="hidden sm:flex flex-col lg:flex-row gap-6 mb-10">
+                            {/* Comparison Table 1 */}
+                            <div className="flex-1 overflow-x-auto bg-white border border-[#DCE6F2] rounded-xl shadow-[0_4px_20px_rgba(15,31,61,0.03)]">
+                                <table className="w-full min-w-[400px] table-fixed text-left border-collapse h-full">
+                                    <thead>
+                                        <tr className="bg-[#F4F7FB] border-b border-[#DCE6F2] text-[#14284E]">
+                                            <th className="px-4 lg:px-6 py-4 text-[14px] font-bold w-[30%]">Feature</th>
+                                            <th className="px-4 lg:px-6 py-4 text-[14px] font-bold w-[35%]">Cyber Security</th>
+                                            <th className="px-4 lg:px-6 py-4 text-[14px] font-bold w-[35%]">CSE</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody className="text-[#4B5A72]">
+                                        <tr className="border-b border-[#F0F4F8]">
+                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">Main Focus</td>
+                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">Digital Security</td>
+                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">Computing & Software Development</td>
+                                        </tr>
+                                        <tr className="border-b border-[#F0F4F8]">
+                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">Programming</td>
+                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">High</td>
+                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">Very High</td>
+                                        </tr>
+                                        <tr className="border-b border-[#F0F4F8]">
+                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">Networking</td>
+                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">High</td>
+                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">Medium</td>
+                                        </tr>
+                                        <tr className="border-b border-[#F0F4F8]">
+                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">Ethical Hacking</td>
+                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">High</td>
+                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">Low</td>
+                                        </tr>
+                                        <tr className="border-b border-[#F0F4F8]">
+                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">Cloud Security</td>
+                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">High</td>
+                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">Medium</td>
+                                        </tr>
+                                        <tr className="border-b border-[#F0F4F8]">
+                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">Software Development</td>
+                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">Medium</td>
+                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">High</td>
+                                        </tr>
+                                        <tr className="border-b border-[#F0F4F8]">
+                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">Security Careers</td>
+                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">Excellent</td>
+                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">Good</td>
+                                        </tr>
+                                        <tr>
+                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">AI Integration</td>
+                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">Growing</td>
+                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">High</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            {/* Comparison Table 2 */}
+                            <div className="flex-1 overflow-x-auto bg-white border border-[#DCE6F2] rounded-xl shadow-[0_4px_20px_rgba(15,31,61,0.03)]">
+                                <table className="w-full min-w-[400px] table-fixed text-left border-collapse h-full">
+                                    <thead>
+                                        <tr className="bg-[#F4F7FB] border-b border-[#DCE6F2] text-[#14284E]">
+                                            <th className="px-4 lg:px-6 py-4 text-[14px] font-bold w-[30%]">Feature</th>
+                                            <th className="px-4 lg:px-6 py-4 text-[14px] font-bold w-[35%]">Cyber Security</th>
+                                            <th className="px-4 lg:px-6 py-4 text-[14px] font-bold w-[35%]">AI / Data Sci</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody className="text-[#4B5A72]">
+                                        <tr className="border-b border-[#F0F4F8]">
+                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">Core Area</td>
+                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">Protection of systems</td>
+                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">Data intelligence</td>
+                                        </tr>
+                                        <tr className="border-b border-[#F0F4F8]">
+                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">Main Skills</td>
+                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">Security, Networks, Defence</td>
+                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">ML, Statistics, Data</td>
+                                        </tr>
+                                        <tr className="border-b border-[#F0F4F8]">
+                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">Careers</td>
+                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">Security Engineer, SOC Analyst</td>
+                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">Data Scientist, ML Engineer</td>
+                                        </tr>
+                                        <tr className="border-b border-[#F0F4F8]">
+                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">Industry Demand</td>
+                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">Very High</td>
+                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">Very High</td>
+                                        </tr>
+                                        <tr>
+                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">Future Scope</td>
+                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">AI Security, Cloud Security</td>
+                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">Generative AI, Automation</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
 
                         {/* Choose Your Path */}
@@ -3396,203 +3431,6 @@ const BTechCseCyberSecurityNew = () => {
                     </div>
                 </section>
 
-                {/* ============================================================
-                CAREER PATHWAYS
-                ============================================================ */}
-                {/* <section className="py-[36px] sm:py-[40px] md:py-[76px]  px-4 sm:px-6">
-                    <div className={`${Classes["container"]} mx-auto`}>
-                        <div className="max-w-[700px] mb-11">
-                           
-                            <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E]">Your Future in Cyber Security</h2>
-                        </div>
-
-                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6.5 perspective-[1200px]">
-                          
-                            <div className="relative h-[260px] group [perspective:1200px]">
-                                <div className="relative w-full h-full text-left transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] group-focus-within:[transform:rotateY(180deg)]">
-                                    <div className="absolute inset-0 [backface-visibility:hidden] rounded-2xl p-7 flex flex-col bg-white border border-[#DCE6F2] hover:border-[#1B4F91]/40 shadow-[0_4px_20px_rgba(15,31,61,0.04)] transition-all">
-                                        <div className="w-12 h-12 rounded-xl bg-[#F6FAFE] border border-[#DCE6F2] flex items-center justify-center text-[22px] mb-4 shadow-sm">🛡️</div>
-                                        <h3 className="text-[16.5px] font-bold font-display text-[#14284E] mb-2 leading-[1.25]">Security Analyst</h3>
-                                        <div className="text-[14.5px] text-[#4B5A72] italic leading-relaxed">Monitor and defend network infrastructure.</div>
-                                        <div className="mt-auto text-[10.5px] text-[#1B4F91] font-bold uppercase tracking-[0.06em] flex items-center gap-1.5">Hover to learn more →</div>
-                                    </div>
-                                    <div className="absolute inset-0 [backface-visibility:hidden] rounded-2xl p-7 flex flex-col bg-gradient-to-br from-[#14284E] to-[#0A1E3F] text-white [transform:rotateY(180deg)] overflow-hidden shadow-xl border border-white/10">
-                                        <div className="text-[10px] uppercase text-[#ffc107] font-bold tracking-[0.08em] mb-2 mt-1 first:mt-0">Key Skills</div>
-                                        <div className="text-[12.5px] text-[#DCE6F2] leading-relaxed">Network Security, SIEM, Vulnerability Management, Incident Response</div>
-                                        <div className="text-[10px] uppercase text-[#ffc107] font-bold tracking-[0.08em] mb-2 mt-3.5">Average Salary (INR)</div>
-                                        <div className="text-[12.5px] text-[#DCE6F2] font-semibold">6-12 LPA</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        
-                            <div className="relative h-[260px] group [perspective:1200px]">
-                                <div className="relative w-full h-full text-left transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] group-focus-within:[transform:rotateY(180deg)]">
-                                    <div className="absolute inset-0 [backface-visibility:hidden] rounded-2xl p-7 flex flex-col bg-white border border-[#DCE6F2] hover:border-[#1B4F91]/40 shadow-[0_4px_20px_rgba(15,31,61,0.04)] transition-all">
-                                        <div className="w-12 h-12 rounded-xl bg-[#F6FAFE] border border-[#DCE6F2] flex items-center justify-center text-[22px] mb-4 shadow-sm">🔍</div>
-                                        <h3 className="text-[16.5px] font-bold font-display text-[#14284E] mb-2 leading-[1.25]">Penetration Tester</h3>
-                                        <div className="text-[14.5px] text-[#4B5A72] italic leading-relaxed">Ethically hack systems to find vulnerabilities.</div>
-                                        <div className="mt-auto text-[10.5px] text-[#1B4F91] font-bold uppercase tracking-[0.06em] flex items-center gap-1.5">Hover to learn more →</div>
-                                    </div>
-                                    <div className="absolute inset-0 [backface-visibility:hidden] rounded-2xl p-7 flex flex-col bg-gradient-to-br from-[#14284E] to-[#0A1E3F] text-white [transform:rotateY(180deg)] overflow-hidden shadow-xl border border-white/10">
-                                        <div className="text-[10px] uppercase text-[#ffc107] font-bold tracking-[0.08em] mb-2 mt-1 first:mt-0">Key Skills</div>
-                                        <div className="text-[12.5px] text-[#DCE6F2] leading-relaxed">Web App Security, Network Security, Ethical Hacking, Python, Kali Linux</div>
-                                        <div className="text-[10px] uppercase text-[#ffc107] font-bold tracking-[0.08em] mb-2 mt-3.5">Average Salary (INR)</div>
-                                        <div className="text-[12.5px] text-[#DCE6F2] font-semibold">8-15 LPA</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        
-                            <div className="relative h-[260px] group [perspective:1200px]">
-                                <div className="relative w-full h-full text-left transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] group-focus-within:[transform:rotateY(180deg)]">
-                                    <div className="absolute inset-0 [backface-visibility:hidden] rounded-2xl p-7 flex flex-col bg-white border border-[#DCE6F2] hover:border-[#1B4F91]/40 shadow-[0_4px_20px_rgba(15,31,61,0.04)] transition-all">
-                                        <div className="w-12 h-12 rounded-xl bg-[#F6FAFE] border border-[#DCE6F2] flex items-center justify-center text-[22px] mb-4 shadow-sm">⚖️</div>
-                                        <h3 className="text-[16.5px] font-bold font-display text-[#14284E] mb-2 leading-[1.25]">Security Architect</h3>
-                                        <div className="text-[14.5px] text-[#4B5A72] italic leading-relaxed">Design and build secure systems from the ground up.</div>
-                                        <div className="mt-auto text-[10.5px] text-[#1B4F91] font-bold uppercase tracking-[0.06em] flex items-center gap-1.5">Hover to learn more →</div>
-                                    </div>
-                                    <div className="absolute inset-0 [backface-visibility:hidden] rounded-2xl p-7 flex flex-col bg-gradient-to-br from-[#14284E] to-[#0A1E3F] text-white [transform:rotateY(180deg)] overflow-hidden shadow-xl border border-white/10">
-                                        <div className="text-[10px] uppercase text-[#ffc107] font-bold tracking-[0.08em] mb-2 mt-1 first:mt-0">Key Skills</div>
-                                        <div className="text-[12.5px] text-[#DCE6F2] leading-relaxed">Security Design, Cloud Security, Cryptography, Network Architecture, Risk Management</div>
-                                        <div className="text-[10px] uppercase text-[#ffc107] font-bold tracking-[0.08em] mb-2 mt-3.5">Average Salary (INR)</div>
-                                        <div className="text-[12.5px] text-[#DCE6F2] font-semibold">15-25 LPA</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section> */}
-
-                {/* ============================================================
-                QUICK FACTS
-                ============================================================ */}
-
-
-                {/* ============================================================
-                FEE & ADMISSION
-                ============================================================ */}
-                {/* <section id="fee" className="py-[36px] sm:py-[40px] md:py-[76px]  px-4 sm:px-6 ">
-                    <div className={`${Classes["container"]} mx-auto`}>
-                        <div className="max-w-[700px] mb-11">
-
-                            <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E]">Start Your Journey with SRMU</h2>
-                        </div>
-
-                        <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-start">
-
-                            <div className="bg-white border border-[#DCE6F2] rounded-3xl p-7 sm:p-8 shadow-[0_6px_25px_rgba(15,31,61,0.05)]">
-                                <h3 className="text-[19px] font-bold font-display text-[#14284E] mb-5">Program Fee</h3>
-                                <div className="rounded-2xl border border-[#DCE6F2] overflow-hidden">
-                                    <table className="w-full border-collapse">
-                                        <thead>
-                                            <tr>
-                                                <th className="px-5 py-4 text-left text-[12.5px] font-semibold uppercase tracking-[0.04em] bg-[#14284E] text-white">Particulars</th>
-                                                <th className="px-5 py-4 text-left text-[12.5px] font-semibold uppercase tracking-[0.04em] bg-[#14284E] text-white">Amount (INR)</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr className="border-b border-[#DCE6F2] hover:bg-[#F6FAFE]/60 transition-colors">
-                                                <td className="px-5 py-3.5 text-[14px] text-[#14284E]">Tuition Fee (per year)</td>
-                                                <td className="px-5 py-3.5 text-[14px] text-[#14284E] font-bold">₹1,50,000</td>
-                                            </tr>
-                                            <tr className="border-b border-[#DCE6F2] bg-[#F6FAFE]/60 hover:bg-[#F6FAFE] transition-colors">
-                                                <td className="px-5 py-3.5 text-[14px] text-[#14284E]">Academic Services Fee (per year)</td>
-                                                <td className="px-5 py-3.5 text-[14px] text-[#14284E]">₹25,000</td>
-                                            </tr>
-                                            <tr className="border-b border-[#DCE6F2] hover:bg-[#F6FAFE]/60 transition-colors">
-                                                <td className="px-5 py-3.5 text-[14px] text-[#14284E]">Security Deposit (Refundable)</td>
-                                                <td className="px-5 py-3.5 text-[14px] text-[#14284E]">₹10,000</td>
-                                            </tr>
-                                            <tr className="bg-[#14284E]/5 font-bold">
-                                                <td className="px-5 py-4 text-[14px] text-[#14284E] font-bold">Total (per year)</td>
-                                                <td className="px-5 py-4 text-[14px] text-[#14284E] font-bold text-[#1B4F91]">₹1,85,000</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div className="text-[14.5px] text-[#7688A2] mt-4 leading-relaxed">* Fees are subject to revision. Scholarships available for meritorious students.</div>
-                            </div>
-
-
-                            <div className="bg-white border border-[#DCE6F2] rounded-3xl p-7 sm:p-8 shadow-[0_6px_25px_rgba(15,31,61,0.05)]">
-                                <h3 className="text-[19px] font-bold font-display text-[#14284E] mb-6">Admission Process</h3>
-                                <div className="space-y-6 relative before:absolute before:left-5 before:top-4 before:bottom-4 before:w-[2px] before:bg-[#DCE6F2]">
-                                    <div className="flex gap-4 items-start relative z-10">
-                                        <div className="w-10 h-10 rounded-xl bg-[#14284E] text-[#ffc107] flex items-center justify-center font-display font-bold flex-none shadow-sm text-[15px]">
-                                            1
-                                        </div>
-                                        <div className="pt-0.5">
-                                            <h4 className="text-[16px] font-bold font-display text-[#14284E] mb-1">Fill Application</h4>
-                                            <p className="text-[14px] text-[#4B5A72] leading-relaxed">Complete the online application form on the SRMU website.</p>
-                                        </div>
-                                    </div>
-                                    <div className="flex gap-4 items-start relative z-10">
-                                        <div className="w-10 h-10 rounded-xl bg-[#14284E] text-[#ffc107] flex items-center justify-center font-display font-bold flex-none shadow-sm text-[15px]">
-                                            2
-                                        </div>
-                                        <div className="pt-0.5">
-                                            <h4 className="text-[16px] font-bold font-display text-[#14284E] mb-1">Entrance & Counselling</h4>
-                                            <p className="text-[14px] text-[#4B5A72] leading-relaxed">Appear for the university entrance exam or qualifying exam and attend the counselling process.</p>
-                                        </div>
-                                    </div>
-                                    <div className="flex gap-4 items-start relative z-10">
-                                        <div className="w-10 h-10 rounded-xl bg-[#14284E] text-[#ffc107] flex items-center justify-center font-display font-bold flex-none shadow-sm text-[15px]">
-                                            3
-                                        </div>
-                                        <div className="pt-0.5">
-                                            <h4 className="text-[16px] font-bold font-display text-[#14284E] mb-1">Document Verification</h4>
-                                            <p className="text-[14px] text-[#4B5A72] leading-relaxed">Verify your academic documents and eligibility.</p>
-                                        </div>
-                                    </div>
-                                    <div className="flex gap-4 items-start relative z-10">
-                                        <div className="w-10 h-10 rounded-xl bg-[#14284E] text-[#ffc107] flex items-center justify-center font-display font-bold flex-none shadow-sm text-[15px]">
-                                            4
-                                        </div>
-                                        <div className="pt-0.5">
-                                            <h4 className="text-[16px] font-bold font-display text-[#14284E] mb-1">Fee Payment & Enrollment</h4>
-                                            <p className="text-[14px] text-[#4B5A72] leading-relaxed">Pay the admission fee to secure your seat and complete enrollment.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section> */}
-
-                {/* ============================================================
-                FINAL CTA
-                ============================================================ */}
-                {/* <section className="py-[76px]  ">
-                    <div className={`${Classes["container"]} px-6`}>
-                        <div className="text-center bg-gradient-to-br from-[#071329] via-[#0e2144] to-[#14284E] rounded-3xl py-16 sm:py-20 px-8 sm:px-12 shadow-[0_20px_60px_-15px_rgba(20,40,78,0.45)] border border-white/10 relative overflow-hidden">
-                            <div className="absolute -top-24 -left-24 w-96 h-96 bg-[#1b4f91]/40 rounded-full blur-[100px] pointer-events-none"></div>
-                            <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-[#ffc107]/20 rounded-full blur-[100px] pointer-events-none"></div>
-
-                            <div className="relative z-10">
-                                <h2 className="text-[clamp(24px,3.2vw,34px)] font-bold font-display text-white mb-3.5 tracking-tight">Admissions Open</h2>
-                                <p className="text-[#C7D3E6] text-[15.5px] max-w-[52ch] mx-auto mb-8 leading-relaxed font-normal">
-                                    Talk to an admission expert, download the brochure, or check your scholarship eligibility today.
-                                </p>
-                                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full">
-                                    <a
-                                        href="#"
-                                        className="w-full sm:w-auto bg-gradient-to-r from-[#ffc107] via-[#ffcd38] to-[#e0a800] text-[#071329] font-extrabold text-[14px] px-8 py-3.5 rounded-xl shadow-[0_8px_25px_rgba(255,193,7,0.4)] hover:shadow-[0_12px_30px_rgba(255,193,7,0.6)] transition-all hover:-translate-y-0.5 inline-flex items-center justify-center gap-2 cursor-pointer"
-                                    >
-                                        <span>Apply Now</span>
-                                        <ArrowRight className="w-4 h-4" />
-                                    </a>
-                                    <a
-                                        href="#"
-                                        className="w-full sm:w-auto bg-white/12 hover:bg-white/20 text-white font-bold text-[14px] px-7 py-3.5 rounded-xl border border-white/25 hover:border-white/50 backdrop-blur-md shadow-md transition-all hover:-translate-y-0.5 inline-flex items-center justify-center gap-2 cursor-pointer"
-                                    >
-                                        <span>Calculate Scholarship</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section> */}
             </main>
         </div>
     );

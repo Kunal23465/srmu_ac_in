@@ -30,6 +30,8 @@ import CricketStars from "../../assets/new-home/events/CricketStars-1.jpg";
 import aluminiTalks from "../../assets/new-home/events/alumni_talk_law.webp";
 import financialAwareness from "../../assets/new-home/events/Financial-Awareness.webp";
 import memoryManagement from "../../assets/new-home/events/Memory-Management.webp";
+import villageVisit from "../../assets/new-home/events/Legal-Aid-Cell-Institute-of-Legal-Studies-organised-drive-at-srmu.webp";
+
 export type EventItem = {
   id: string | number;
   image: string;
@@ -46,6 +48,39 @@ export type EventItem = {
 };
 
 const eventsData: EventItem[] = [
+  {
+    id: 22,
+    isRedirect: false,
+    image: villageVisit,
+    imageSmall: villageVisit,
+    date: "September 10th, 2026",
+    title: `Village Visit in Mati Organized by Legal Aid Cell, ILS, SRMU`,
+    description: `
+The <strong>Legal Aid Cell, Institute of Legal Studies (ILS), Shri Ramswaroop Memorial University (SRMU)</strong>, organized a village visit to <strong>Mati</strong> as part of its community outreach and legal awareness initiatives.
+
+<br/><strong>Community Outreach Activity</strong><br/>
+
+As part of the visit, students conducted a <strong>Nukkad Natak on “Children’s Right to Education”</strong>, highlighting the importance of education as a fundamental right and creating awareness among the local community.
+
+<br/><strong>Student Engagement</strong><br/>
+
+The activity provided students with an opportunity to <strong>engage directly with the community</strong> and promote awareness about important social and legal issues.
+
+<br/><strong>Village Visit Details</strong><br/>
+
+<strong>Event:</strong> Village Visit in Mati<br/>
+<strong>Organized by:</strong> Legal Aid Cell, Institute of Legal Studies (ILS), SRMU<br/>
+<strong>Date:</strong> 10 September 2026<br/>
+<strong>Activity:</strong> Nukkad Natak on “Children’s Right to Education”
+
+<br/><strong>Impact of the Initiative</strong><br/>
+
+The Nukkad Natak and village outreach activity encouraged <strong>meaningful interaction with residents</strong> and helped students understand the role of legal education in creating social awareness.
+
+The event reflects the university’s commitment to <strong>community engagement, legal awareness, and social responsibility</strong>.
+`,
+  },
+  
   {
     id: 21,
     isRedirect: false,
