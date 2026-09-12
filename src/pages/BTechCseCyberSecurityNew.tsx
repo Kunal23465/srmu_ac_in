@@ -147,12 +147,17 @@ const BTechCseCyberSecurityNew = () => {
         <div className="text-[#14284E] bg-white antialiased mt-12">
             <main>
 
-                <section
-                    style={{
-                        backgroundImage: "url('/shared-image1.png')",
-                    }}
-                    className="relative py-4 sm:py-20 lg:py-24 w-full bg-cover bg-center bg-no-repeat overflow-hidden"
-                >
+                <section className="relative pt-4 sm:pt-20 lg:pt-24 pb-8 lg:pb-12 w-full overflow-hidden">
+                    {/* Background Video */}
+                    <video
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="absolute inset-0 w-full h-full object-cover z-0"
+                    >
+                        <source src="/bannerVideo.mp4" type="video/mp4" />
+                    </video>
                     {/* Semi-Transparent Cinematic Scrim */}
                     <div className="absolute inset-0 bg-gradient-to-r from-[#071329]/55 via-[#091a38]/40 to-[#071329]/25"></div>
 
@@ -181,14 +186,16 @@ const BTechCseCyberSecurityNew = () => {
                                 </div> */}
 
                                 {/* H1 */}
-                                <h1 className="text-[clamp(30px,4vw,46px)] leading-[1.14] font-bold font-display text-white tracking-tight mb-4.5 drop-shadow-md flex flex-wrap items-center gap-2">
-    Learn B.Tech CSE Cyber Security in Lucknow with 
-    <img 
-        src="/lt-logo.png" 
-        alt="L&T" 
-        className="inline-block h-[0.9em] w-auto align-middle"
-    />
-    at SRMU
+                                <h1 className="text-[clamp(30px,4vw,46px)] leading-[1.14] font-bold font-display text-white tracking-tight mb-4.5 flex flex-wrap items-center gap-2">
+    <span className="drop-shadow-md">Learn B.Tech CSE Cyber Security in Lucknow with</span> 
+    <span className="bg-white/95 px-2.5 py-1 rounded-lg shadow-sm flex items-center shrink-0">
+        <img 
+            src="https://ik.imagekit.io/ttalcskjf/l-t.webp?updatedAt=1788591605708" 
+            alt="L&T EduTech" 
+            className="inline-block h-[0.85em] w-auto align-middle"
+        />
+    </span>
+    <span className="drop-shadow-md">at SRMU</span>
 </h1>
 
                                 {/* H2 */}
@@ -248,14 +255,17 @@ const BTechCseCyberSecurityNew = () => {
                             {/* CTA Buttons */}
                             <div className="hidden sm:flex w-full sm:w-auto justify-between sm:justify-start items-center gap-1.5 sm:gap-3 mt-8 sm:mt-10 sm:flex-wrap" id="apply">
                                 <a
-                                    href="#"
+                                    href="https://students.srmu.ac.in/login?_gl=1*1hjhqxh*_gcl_au*ODkzODU3MDY4LjE3ODkxODk4NTc.*_ga*Mjc4NTk1MjY4LjE3ODkxODk4NTc.*_ga_QZEQ59Q6ZL*czE3ODkxOTIxMTIkbzIkZzEkdDE3ODkxOTM2NDIkajYwJGwwJGg1NzMzMjQwNzM."
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="flex-1 sm:flex-none relative group overflow-hidden bg-gradient-to-r from-[#ffc107] via-[#ffcd38] to-[#e0a800] text-[#071329] font-extrabold text-[10px] sm:text-[14px] px-1 sm:px-5.5 py-2.5 sm:py-3.25 rounded-md shadow-[0_8px_20px_-8px_rgba(217,139,43,0.6)] hover:shadow-[0_12px_30px_rgba(255,193,7,0.65)] hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-1 sm:gap-2 text-center whitespace-nowrap"
                                 >
                                     <span>Apply Now</span>
                                     <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 shrink-0 transition-transform duration-300 group-hover:translate-x-1" />
                                 </a>
                                 <a
-                                    href="#"
+                                    href="/Broucher_SRMU_25_April___.pdf"
+                                    target="_blank"
                                     className="flex-1 sm:flex-none bg-white/12 hover:bg-white/20 text-white font-bold text-[10px] sm:text-[14px] px-1 sm:px-5.5 py-2.5 sm:py-3.25 rounded-md border border-white/25 hover:border-white/50 shadow-md backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 flex items-center justify-center gap-1 sm:gap-2 text-center whitespace-nowrap"
                                 >
                                     <Download className="w-3 h-3 sm:w-4 sm:h-4 text-sky-300 shrink-0" />
@@ -448,7 +458,7 @@ const BTechCseCyberSecurityNew = () => {
 
 
 
-                <section id="why" className="py-[36px] sm:py-[40px] md:py-[76px] px-4 sm:px-6 bg-[#F0F6FB]">
+                <section id="why" className="pt-8 md:pt-10 pb-4 sm:pb-6 px-4 sm:px-6 bg-[#F0F6FB]">
                     <div className={`${Classes["container"]}`}>
                         <div className="w-full mb-5 sm:mb-11">
                             {/* <div className="text-[14.5px] tracking-[0.08em] uppercase text-[#ffc107] font-bold flex items-center gap-2 mb-3.5">
@@ -486,7 +496,7 @@ const BTechCseCyberSecurityNew = () => {
                                     <button className="rm-btn" onClick={() => toggleRm('cyber2')}>{rm['cyber2'] ? 'Read Less' : 'Read More'}</button>
                                 </div>
                             </div>
-                            <div className="hidden sm:flex rounded-2xl overflow-hidden border border-[#DCE6F2] shadow-[0_4px_16px_rgba(15,31,61,0.05)] bg-[#f0f4fa] h-[200px] sm:h-[220px] items-center justify-center">
+                            <div className="flex rounded-2xl overflow-hidden border border-[#DCE6F2] shadow-[0_4px_16px_rgba(15,31,61,0.05)] bg-[#f0f4fa] h-[200px] sm:h-[220px] items-center justify-center">
                                 <img src="https://ik.imagekit.io/ttalcskjf/IMAGE%201.webp" alt="Data Protection - Cyber Security Growth" className="w-full h-full object-cover" />
                             </div>
                         </div>
@@ -514,9 +524,22 @@ const BTechCseCyberSecurityNew = () => {
                                 <p className="text-[12.5px] sm:text-[14px] text-[#4B5A72] leading-5 sm:leading-relaxed">Cyber threats are a global issue, making your skills transferable anywhere.</p>
                             </div>
                         </div>
+
+                        {/* Centered Apply Now Button */}
+                        <div className="flex justify-center mt-6 sm:mt-10">
+                            <a
+                                href="https://students.srmu.ac.in/login?_gl=1*1hjhqxh*_gcl_au*ODkzODU3MDY4LjE3ODkxODk4NTc.*_ga*Mjc4NTk1MjY4LjE3ODkxODk4NTc.*_ga_QZEQ59Q6ZL*czE3ODkxOTIxMTIkbzIkZzEkdDE3ODkxOTM2NDIkajYwJGwwJGg1NzMzMjQwNzM."
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="relative group overflow-hidden bg-gradient-to-r from-[#ffc107] via-[#ffcd38] to-[#e0a800] text-[#071329] font-extrabold text-[14px] sm:text-[15px] px-8 py-3.5 rounded-lg shadow-[0_8px_20px_-8px_rgba(217,139,43,0.6)] hover:shadow-[0_12px_30px_rgba(255,193,7,0.65)] hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2 text-center"
+                            >
+                                <span>Apply Now</span>
+                                <ArrowRight className="w-4 h-4 shrink-0 transition-transform duration-300 group-hover:translate-x-1" />
+                            </a>
+                        </div>
                     </div>
                 </section>
-                <section className="py-[36px] sm:py-[40px] md:py-[76px] px-4 sm:px-6 bg-[#F0F6FB]">
+                <section className="pt-2 sm:pt-4 pb-8 md:pb-10 px-4 sm:px-6 bg-[#F0F6FB]">
                     <div className={`${Classes["container"]}`}>
                         <div className="w-full mb-11">
                             {/* <div className="text-[14.5px] tracking-[0.08em] uppercase text-[#ffc107] font-bold flex items-center gap-2 mb-3.5">
@@ -538,42 +561,42 @@ const BTechCseCyberSecurityNew = () => {
 
                             {/* Learning pills */}
                             <div className="flex flex-nowrap items-center gap-2 overflow-x-auto sm:flex-wrap sm:overflow-visible mb-6 pb-1" style={{ scrollbarWidth: 'none' }}>
-                                <span className="shrink-0 inline-flex flex-col items-center justify-center min-w-[104px] sm:min-w-[142px] h-[64px] rounded-xl bg-[#14284E] text-white text-[10px] sm:text-[12px] font-bold sm:h-auto sm:rounded-none sm:bg-transparent sm:text-[#1B355F] sm:text-[14px] sm:font-medium">
+                                <span className="shrink-0 inline-flex flex-col items-center justify-center min-w-[88px] sm:min-w-[142px] h-[64px] rounded-xl bg-[#14284E] text-white text-[10px] sm:text-[12px] font-bold sm:h-auto sm:rounded-none sm:bg-transparent sm:text-[#1B355F] sm:text-[14px] sm:font-medium">
                                     <span className="text-[#ffc107] text-[10px] sm:text-[11px] mb-1 sm:hidden">01</span>
                                     Classroom
                                 </span>
 
                                 <span className="text-[#1B4F91] text-[12px] sm:text-base">→</span>
 
-                                <span className="shrink-0 inline-flex flex-col items-center justify-center min-w-[104px] sm:min-w-[142px] h-[64px] rounded-xl bg-[#14284E] text-white text-[10px] sm:text-[12px] font-bold sm:h-auto sm:rounded-none sm:bg-transparent sm:text-[#1B355F] sm:text-[14px] sm:font-medium">
+                                <span className="shrink-0 inline-flex flex-col items-center justify-center min-w-[88px] sm:min-w-[142px] h-[64px] rounded-xl bg-[#14284E] text-white text-[10px] sm:text-[12px] font-bold sm:h-auto sm:rounded-none sm:bg-transparent sm:text-[#1B355F] sm:text-[14px] sm:font-medium">
                                     <span className="text-[#ffc107] text-[10px] sm:text-[11px] mb-1 sm:hidden">02</span>
                                     Cyber Labs
                                 </span>
 
                                 <span className="text-[#1B4F91] text-[12px] sm:text-base">→</span>
 
-                                <span className="shrink-0 inline-flex flex-col items-center justify-center min-w-[104px] sm:min-w-[142px] h-[64px] rounded-xl bg-[#14284E] text-white text-[10px] sm:text-[12px] font-bold sm:h-auto sm:rounded-none sm:bg-transparent sm:text-[#1B355F] sm:text-[14px] sm:font-medium">
+                                <span className="shrink-0 inline-flex flex-col items-center justify-center min-w-[88px] sm:min-w-[142px] h-[64px] rounded-xl bg-[#14284E] text-white text-[10px] sm:text-[12px] font-bold sm:h-auto sm:rounded-none sm:bg-transparent sm:text-[#1B355F] sm:text-[14px] sm:font-medium">
                                     <span className="text-[#ffc107] text-[10px] sm:text-[11px] mb-1 sm:hidden">03</span>
                                     Projects
                                 </span>
 
                                 <span className="text-[#1B4F91] text-[12px] sm:text-base">→</span>
 
-                                <span className="shrink-0 inline-flex flex-col items-center justify-center min-w-[104px] sm:min-w-[142px] h-[64px] rounded-xl bg-[#14284E] text-white text-[10px] sm:text-[12px] font-bold sm:h-auto sm:rounded-none sm:bg-transparent sm:text-[#1B355F] sm:text-[14px] sm:font-medium">
+                                <span className="shrink-0 inline-flex flex-col items-center justify-center min-w-[88px] sm:min-w-[142px] h-[64px] rounded-xl bg-[#14284E] text-white text-[10px] sm:text-[12px] font-bold sm:h-auto sm:rounded-none sm:bg-transparent sm:text-[#1B355F] sm:text-[14px] sm:font-medium">
                                     <span className="text-[#ffc107] text-[10px] sm:text-[11px] mb-1 sm:hidden">04</span>
                                     Industry Sessions
                                 </span>
 
                                 <span className="text-[#1B4F91] text-[12px] sm:text-base">→</span>
 
-                                <span className="shrink-0 inline-flex flex-col items-center justify-center min-w-[104px] sm:min-w-[142px] h-[64px] rounded-xl bg-[#14284E] text-white text-[10px] sm:text-[12px] font-bold sm:h-auto sm:rounded-none sm:bg-transparent sm:text-[#1B355F] sm:text-[14px] sm:font-medium">
+                                <span className="shrink-0 inline-flex flex-col items-center justify-center min-w-[88px] sm:min-w-[142px] h-[64px] rounded-xl bg-[#14284E] text-white text-[10px] sm:text-[12px] font-bold sm:h-auto sm:rounded-none sm:bg-transparent sm:text-[#1B355F] sm:text-[14px] sm:font-medium">
                                     <span className="text-[#ffc107] text-[10px] sm:text-[11px] mb-1 sm:hidden">05</span>
                                     Internships
                                 </span>
 
                                 <span className="text-[#1B4F91] text-[12px] sm:text-base">→</span>
 
-                                <span className="shrink-0 inline-flex flex-col items-center justify-center min-w-[104px] sm:min-w-[142px] h-[64px] rounded-xl bg-[#14284E] text-white text-[10px] sm:text-[12px] font-bold sm:h-auto sm:rounded-none sm:bg-transparent sm:text-[#1B355F] sm:text-[14px] sm:font-medium">
+                                <span className="shrink-0 inline-flex flex-col items-center justify-center min-w-[88px] sm:min-w-[142px] h-[64px] rounded-xl bg-[#14284E] text-white text-[10px] sm:text-[12px] font-bold sm:h-auto sm:rounded-none sm:bg-transparent sm:text-[#1B355F] sm:text-[14px] sm:font-medium">
                                     <span className="text-[#ffc107] text-[10px] sm:text-[11px] mb-1 sm:hidden">06</span>
                                     Capstone Work
                                 </span>
@@ -589,17 +612,20 @@ const BTechCseCyberSecurityNew = () => {
                         </div>
                     </div>
                 </section>
-                <section className="py-[36px] sm:py-[40px] md:py-[76px] px-4 sm:px-6 bg-gradient-to-b from-white to-[#CEE0EF]">
-                    <div className={`${Classes["container"]}`}>
-                        <div className="w-full mb-8">
-                            {/* <div className="text-[14.5px] tracking-[0.08em] uppercase text-[#ffc107] font-bold flex items-center gap-2 mb-3.5">
-                                <span className="w-[22px] h-[2px] bg-[#ffc107] inline-block"></span>
-                                Quick Facts
-                            </div> */}
-                            <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3.5">Industry-Integrated Learning with <span className="text-[#ffc107]">L&amp;T</span></h2>
+                <section 
+                    className="relative py-8 md:py-10 px-4 sm:px-6 bg-cover bg-center bg-no-repeat"
+                    style={{ backgroundImage: "url('/back2.png')" }}
+                >
+                    <div className={`relative z-10 ${Classes["container"]}`}>
+                        <div className="w-full mb-8 text-center max-w-4xl mx-auto">
+                            <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3.5">
+                                Industry-Integrated Learning with <span className="text-[#ffc107]">L&amp;T</span>
+                            </h2>
                             <div>
-                                <p className={`text-[16px] text-[#4B5A72] leading-relaxed ${!rm['lt1'] ? 'rm-clamp' : ''}`}>The program incorporates industry exposure through L&amp;T, helping students understand how cybersecurity concepts are applied in professional and technology-driven environments.</p>
-                                <button className="rm-btn" onClick={() => toggleRm('lt1')}>{rm['lt1'] ? 'Read Less' : 'Read More'}</button>
+                                <p className={`text-[16px] text-[#4B5A72] leading-relaxed ${!rm['lt1'] ? 'rm-clamp' : ''}`}>
+                                    The program incorporates industry exposure through L&amp;T, helping students understand how cybersecurity concepts are applied in professional and technology-driven environments.
+                                </p>
+                                <button className="rm-btn mx-auto mt-2" onClick={() => toggleRm('lt1')}>{rm['lt1'] ? 'Read Less' : 'Read More'}</button>
                             </div>
                         </div>
                         <div className="bg-white border border-[#DCE6F2] rounded-xl sm:rounded-3xl overflow-hidden shadow-[0_6px_25px_rgba(15,31,61,0.05)] max-w-4xl mx-auto">
@@ -636,7 +662,7 @@ const BTechCseCyberSecurityNew = () => {
                         </div>
                     </div>
                 </section>
-                <section className="py-6 sm:py-[40px] md:py-[76px] px-4 sm:px-6 bg-gradient-to-b from-white to-[#E6E6E7]">
+                <section className="py-8 md:py-10 px-4 sm:px-6 bg-gradient-to-b from-white to-[#E6E6E7]">
                     <div className={`${Classes["container"]} mx-auto`}>
 
 
@@ -659,14 +685,25 @@ const BTechCseCyberSecurityNew = () => {
                         </div>
 
                         {/* Industry Integrated Curriculum */}
-                        <div className="grid lg:grid-cols-2 gap-8 items-center mb-7">
+                        <div className="flex flex-col gap-6 sm:gap-8 mb-7">
 
-                            <div>
-                                <h3 className="text-[17px] font-bold font-display text-[#14284E] mb-3">
+                            {/* Image - Moved above the text for desktop */}
+                            <div className="hidden sm:block w-full">
+                                <img
+                                    src="/shared-image2.png"
+                                    alt="Industry Integrated Curriculum with L&T"
+                                    className="w-full h-auto object-contain rounded-xl"
+                                    loading="lazy"
+                                />
+                            </div>
+
+                            {/* Text Content */}
+                            <div className="w-full">
+                                <h3 className="text-[17px] sm:text-[19px] font-bold font-display text-[#14284E] mb-3">
                                     Industry Integrated Curriculum with L&T
                                 </h3>
 
-                                <div className="mb-4">
+                                <div>
                                     <p className={`text-[14.5px] leading-5 text-[#4B5A72] ${!rm['curr1'] ? 'rm-clamp' : ''}`}>
                                         Strengthened through academic collaboration with L&T, the
                                         curriculum bridges university education and industry expectations
@@ -675,28 +712,6 @@ const BTechCseCyberSecurityNew = () => {
                                     </p>
                                     <button className="rm-btn" onClick={() => toggleRm('curr1')}>{rm['curr1'] ? 'Read Less' : 'Read More'}</button>
                                 </div>
-
-                                {/* Image replacing the bullet list */}
-                                <div className="mb-4 -mx-1">
-                                    <img src="/shared-image2.png" alt="Curriculum Objectives" className="w-full h-auto object-contain" />
-                                </div>
-
-                                {/* <p className="text-[14.5px] leading-5 text-[#4B5A72]">
-                                    <strong className="text-[#14284E]">Outcome:</strong>{" "}
-                                    Graduate with both academic knowledge and industry-relevant
-                                    skills — able to combine development, networking, and defence
-                                    into one skill set employers are actively hiring for.
-                                </p> */}
-                            </div>
-
-                            {/* Image */}
-                            <div className="hidden sm:block">
-                                <img
-                                    src="https://ik.imagekit.io/ttalcskjf/IMAGE%203.webp?updatedAt=1788439003298"
-                                    alt="Students learning cyber security through practical industry-oriented training"
-                                    className="w-full aspect-[16/9] object-cover rounded-xl border border-[#DCE6F2]"
-                                    loading="lazy"
-                                />
                             </div>
 
                         </div>
@@ -723,18 +738,24 @@ const BTechCseCyberSecurityNew = () => {
                             </div>
                         </div>
 
-                        <div ref={labsScrollRef} className="flex flex-nowrap gap-3 overflow-x-auto pb-2 scrollbar-hide sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 sm:overflow-visible sm:pb-0 scroll-smooth">
+                        <div ref={labsScrollRef} className="flex flex-nowrap gap-3 overflow-x-auto pb-2 scrollbar-hide sm:grid sm:grid-cols-2 sm:gap-5 sm:space-y-0 sm:overflow-visible sm:pb-0 scroll-smooth">
 
                             {/* Cyber Security Simulation Lab */}
-                            <div className="shrink-0 w-[235px] bg-white border border-[#DCE6F2] rounded-xl overflow-hidden sm:w-auto sm:shrink">
+                            <div 
+                                style={{ backgroundImage: "url('/backgroundIm.png')" }}
+                                className="relative bg-cover bg-right bg-no-repeat shrink-0 w-[235px] bg-white border border-[#DCE6F2] rounded-2xl overflow-hidden sm:w-auto sm:shrink shadow-[0_2px_12px_rgba(15,31,61,0.05)] hover:shadow-[0_8px_28px_rgba(15,31,61,0.1)] hover:-translate-y-1 transition-all duration-300 group"
+                            >
+                                {/* Gradient to blend the image seamlessly into the white background */}
+                                <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent sm:from-white sm:via-white/70 sm:to-transparent pointer-events-none z-0"></div>
 
-                                {/* Mobile Header */}
-                                <button
-                                    type="button"
-                                    onClick={() => toggleSection("cyber")}
-                                    className="relative md:hidden w-full flex items-center justify-between px-4 pt-8 pb-3 text-left"
-                                    aria-expanded={openSection === "cyber"}
-                                >
+                                <div className="relative z-10">
+                                    {/* Mobile Header */}
+                                    <button
+                                        type="button"
+                                        onClick={() => toggleSection("cyber")}
+                                        className="relative md:hidden w-full flex items-center justify-between px-4 pt-8 pb-3 text-left"
+                                        aria-expanded={openSection === "cyber"}
+                                    >
                                     <span className="absolute top-3 left-4 text-[10px] font-mono font-semibold uppercase tracking-[0.12em] text-[#168C82]">LAB / 01</span>
                                     <h3 className="text-[17px] font-bold font-display text-[#14284E]">
                                         Cyber Security Simulation Lab
@@ -746,8 +767,12 @@ const BTechCseCyberSecurityNew = () => {
                                 </button>
 
                                 {/* Desktop / Tablet Content */}
-                                <div className="hidden md:block p-5">
-                                    <h3 className="text-[17px] font-bold font-display text-[#14284E] mb-3">
+                                <div className="hidden md:block">
+                                    {/* Accent bar */}
+                                    <div className="h-1 w-full bg-gradient-to-r from-[#1B4F91] to-[#38bdf8]"></div>
+                                    <div className="p-5 pt-4">
+                                        <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#EBF5FF] text-[#1B4F91] text-[10px] font-bold uppercase tracking-widest mb-3">LAB / 01</span>
+                                        <h3 className="text-[17px] font-bold font-display text-[#14284E] mb-2 group-hover:text-[#1B4F91] transition-colors">
                                         Cyber Security Simulation Lab
                                     </h3>
 
@@ -780,6 +805,7 @@ const BTechCseCyberSecurityNew = () => {
                                             Security Monitoring
                                         </li>
                                     </ul>
+                                    </div>
                                 </div>
 
                                 {/* Mobile Content */}
@@ -816,25 +842,32 @@ const BTechCseCyberSecurityNew = () => {
                                         </ul>
                                     </div>
                                 )}
+                                </div>
                             </div>
 
                             {/* Reel */}
-                            <div className="order-first sm:order-none shrink-0 w-[235px] sm:w-[280px] lg:w-[320px] sm:justify-self-center bg-black border border-[#DCE6F2] rounded-xl overflow-hidden flex items-center justify-center shadow-lg">
-                                <video
-                                    src="/MicrosoftTeams-video.mp4"
-                                    width="720"
-                                    height="1280"
-                                    controls
-                                    autoPlay
-                                    loop
-                                    muted
-                                    playsInline
-                                    className="w-full h-auto aspect-[9/16] object-cover"
-                                ></video>
+                            <div className="order-first sm:order-none shrink-0 w-[235px] sm:w-[280px] lg:w-[320px] sm:justify-self-center flex flex-col">
+
+                                {/* Video wrapper with gradient border */}
+                                <div className="relative p-[2px] rounded-2xl bg-gradient-to-b from-[#1B4F91] via-[#38bdf8] to-[#ffc107] shadow-[0_8px_32px_rgba(27,79,145,0.25)]">
+                                    <div className="rounded-[14px] overflow-hidden bg-black flex items-center justify-center">
+                                        <video
+                                            src="/MicrosoftTeams-video.mp4"
+                                            width="720"
+                                            height="1280"
+                                            controls
+                                            autoPlay
+                                            loop
+                                            muted
+                                            playsInline
+                                            className="w-full h-auto aspect-[9/16] object-cover"
+                                        ></video>
+                                    </div>
+                                </div>
                             </div>
 
                             {/* Ethical Hacking Lab */}
-                            <div className="shrink-0 w-[235px] bg-white border border-[#DCE6F2] rounded-xl overflow-hidden sm:w-auto sm:shrink">
+                            <div className="shrink-0 w-[235px] bg-white border border-[#DCE6F2] rounded-2xl overflow-hidden sm:w-auto sm:shrink shadow-[0_2px_12px_rgba(15,31,61,0.05)] hover:shadow-[0_8px_28px_rgba(15,31,61,0.1)] hover:-translate-y-1 transition-all duration-300 group">
 
                                 {/* Mobile Header */}
                                 <button
@@ -854,8 +887,11 @@ const BTechCseCyberSecurityNew = () => {
                                 </button>
 
                                 {/* Desktop / Tablet Content */}
-                                <div className="hidden md:block p-5">
-                                    <h3 className="text-[17px] font-bold font-display text-[#14284E] mb-3">
+                                <div className="hidden md:block">
+                                    <div className="h-1 w-full bg-gradient-to-r from-[#1B4F91] to-[#38bdf8]"></div>
+                                    <div className="p-5 pt-4">
+                                        <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#EBF5FF] text-[#1B4F91] text-[10px] font-bold uppercase tracking-widest mb-3">LAB / 02</span>
+                                        <h3 className="text-[17px] font-bold font-display text-[#14284E] mb-2 group-hover:text-[#1B4F91] transition-colors">
                                         Ethical Hacking Lab
                                     </h3>
 
@@ -888,6 +924,7 @@ const BTechCseCyberSecurityNew = () => {
                                             Vulnerability Scanning
                                         </li>
                                     </ul>
+                                    </div>
                                 </div>
 
                                 {/* Mobile Content */}
@@ -1207,11 +1244,22 @@ const BTechCseCyberSecurityNew = () => {
 
 
                     </div>
+
+                        {/* Helpline Button */}
+                        <div className="mt-8 flex justify-center w-full">
+                            <a 
+                                href="tel:18001026004" 
+                                className="relative group overflow-hidden bg-gradient-to-r from-[#ffc107] via-[#ffcd38] to-[#e0a800] text-[#071329] font-extrabold text-[14px] sm:text-[15px] px-8 py-3.5 rounded-lg shadow-[0_8px_20px_-8px_rgba(217,139,43,0.6)] hover:shadow-[0_12px_30px_rgba(255,193,7,0.65)] hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2 text-center"
+                            >
+                                <PhoneCall className="w-4 h-4 shrink-0 transition-transform duration-300 group-hover:scale-110" />
+                                <span>Have Query? Talk to Expert</span>
+                            </a>
+                        </div>
                 </section>
 
 
 
-                {/* <section id="srmu" className="py-[36px] sm:py-[40px] md:py-[76px]  px-4 sm:px-6 bg-gradient-to-b from-[#F6FAFE] via-[#EAF2FB] to-[#F6FAFE]">
+                {/* <section id="srmu" className="py-8 md:py-10  px-4 sm:px-6 bg-gradient-to-b from-[#F6FAFE] via-[#EAF2FB] to-[#F6FAFE]">
                     <div className={`${Classes["container"]}`}>
                         <div className="max-w-[700px] mb-11">
                            
@@ -1256,7 +1304,7 @@ const BTechCseCyberSecurityNew = () => {
                 {/* ============================================================
                 LABS & FACILITIES
                 ============================================================ */}
-                {/* <section className="py-[36px] sm:py-[40px] md:py-[76px]  px-4 sm:px-6">
+                {/* <section className="py-8 md:py-10  px-4 sm:px-6">
                     <div className={`${Classes["container"]}`}>
                         <div className="max-w-[700px] mb-11">
 
@@ -1322,7 +1370,7 @@ const BTechCseCyberSecurityNew = () => {
                 {/* ============================================================
                 4-YEAR JOURNEY (Tabs)
                 ============================================================ */}
-                <section id="journey" className="py-[36px] sm:py-[40px] md:py-[76px] px-4 sm:px-6 bg-[#E0F1FF]">
+                <section id="journey" className="py-8 md:py-10 px-4 sm:px-6 bg-[#E0F1FF]">
                     <div className={`${Classes["container"]} mx-auto`}>
 
                         <div className="w-full mb-11">
@@ -1342,7 +1390,7 @@ const BTechCseCyberSecurityNew = () => {
                         </div>
 
                         {/* Tab Buttons */}
-                        <div className="hidden md:flex flex-wrap gap-2.5 mb-6.5">
+                        <div className="hidden md:flex justify-center flex-wrap gap-2.5 mb-6.5">
                             {[
                                 { id: "year1", label: "Year 1" },
                                 { id: "year2", label: "Year 2" },
@@ -1652,13 +1700,13 @@ const BTechCseCyberSecurityNew = () => {
 
                         {/* Year 1 Content */}
                         {activeTab === "year1" && (
-                            <div className="hidden md:block bg-white border border-[#DCE6F2] rounded-xl p-7.5">
+                            <div className="hidden md:block bg-white border border-[#DCE6F2] rounded-xl p-7.5 max-w-4xl mx-auto">
 
                                 <div className="italic text-[#ffc107] font-semibold mb-5 text-[15px]">
                                     "Every cyber security expert begins by understanding how computers actually work."
                                 </div>
 
-                            <div className="grid md:grid-cols-2 gap-6.5">
+                            <div className="flex flex-col gap-6.5">
 
                                 <div>
                                     <h4 className="text-[14.5px] uppercase tracking-[0.04em] text-[#1B4F91] mb-2.5">
@@ -1798,11 +1846,11 @@ const BTechCseCyberSecurityNew = () => {
 
                         {/* Year 2 Content */}
                         {activeTab === "year2" && (
-                            <div className="hidden md:block bg-white border border-[#DCE6F2] rounded-xl p-7.5">
+                            <div className="hidden md:block bg-white border border-[#DCE6F2] rounded-xl p-7.5 max-w-4xl mx-auto">
                                 <div className="italic text-[#D78610] font-semibold mb-5 text-[15px]">
                                     "Now you begin thinking like both a developer and a defender."
                                 </div>
-                                <div className="grid md:grid-cols-2 gap-6.5">
+                                <div className="flex flex-col gap-6.5">
                                     <div>
                                         <h4 className="text-[14.5px] uppercase tracking-[0.04em] text-[#1B4F91] mb-2.5">
                                             Subjects
@@ -1883,11 +1931,11 @@ const BTechCseCyberSecurityNew = () => {
 
                         {/* Year 3 Content */}
                         {activeTab === "year3" && (
-                            <div className="hidden md:block bg-white border border-[#DCE6F2] rounded-xl p-7.5">
+                            <div className="hidden md:block bg-white border border-[#DCE6F2] rounded-xl p-7.5 max-w-4xl mx-auto">
                                 <div className="italic text-[#D78610] font-semibold mb-5 text-[15px]">
                                     "This is where you start solving real cyber security challenges."
                                 </div>
-                                <div className="grid md:grid-cols-2 gap-6.5">
+                                <div className="flex flex-col gap-6.5">
                                     <div>
                                         <h4 className="text-[14.5px] uppercase tracking-[0.04em] text-[#1B4F91] mb-2.5">
                                             Subjects
@@ -1976,11 +2024,11 @@ const BTechCseCyberSecurityNew = () => {
 
                         {/* Year 4 Content */}
                         {activeTab === "year4" && (
-                            <div className="hidden md:block bg-white border border-[#DCE6F2] rounded-xl p-7.5">
+                            <div className="hidden md:block bg-white border border-[#DCE6F2] rounded-xl p-7.5 max-w-4xl mx-auto">
                                 <div className="italic text-[#D78610] font-semibold mb-5 text-[15px]">
                                     "Your classroom becomes the workplace."
                                 </div>
-                                <div className="grid md:grid-cols-2 gap-6.5">
+                                <div className="flex flex-col gap-6.5">
                                     <div>
                                         <h4 className="text-[14.5px] uppercase tracking-[0.04em] text-[#1B4F91] mb-2.5">
                                             Subjects
@@ -2059,7 +2107,7 @@ const BTechCseCyberSecurityNew = () => {
                         )}
                     </div>
                 </section>
-                <section className="py-[36px] sm:py-[40px] md:py-[76px] px-4 sm:px-6 bg-[#FFFFFF]">
+                <section className="py-8 md:py-10 px-4 sm:px-6 bg-gray-200">
                     <div className={`${Classes["container"]} mx-auto`}>
 
                         {/* Heading */}
@@ -2230,24 +2278,55 @@ const BTechCseCyberSecurityNew = () => {
                         <h3 className="text-[20px] lg:text-[24px] font-bold font-display text-[#14284E] mt-10 mb-4">
                             Scholarship Schemes
                         </h3>
-                        <div className="relative w-full rounded-xl sm:rounded-2xl overflow-hidden mb-6 bg-[#14284E]">
+
+                        {/* Mobile scholarship layout */}
+                        <div className="block sm:hidden w-full rounded-xl overflow-hidden mb-6 bg-transparent shadow-sm">
+                            {/* scholar1mobile — plain, no overlay */}
+                            <img src="/scholar1mobile.jpg" className="w-full h-auto block" alt="SRMU Scholarships" />
+                            {/* scholar2mobile — dark gradient + text overlaid */}
+                            <div className="relative w-full">
+                                <img src="/scholar2mobile.jpg" className="w-full h-auto block" alt="Girl with laptop" />
+                                
+                                <div className="absolute inset-0 flex flex-col justify-start px-5 pt-4 pb-5 z-10 pointer-events-none">
+                                    <h2 className="text-[22px] font-black leading-[1.1] uppercase mb-2 tracking-tight">
+                                        <span className="text-[#14284E]">SRMU'S</span> <br />
+                                        <span className="text-red-600">EXCLUSIVE</span><br />
+                                        <span className="text-black">SCHOLARSHIPS</span>
+                                    </h2>
+                                    <h3 className="text-[13px] font-bold text-[#1B4F91] mb-2">
+                                        Rewarding Merit, Empowering Futures
+                                    </h3>
+                                    <p className={`text-[11.5px] text-[#4B5A72] leading-[1.5] ${!rm['scholarMob'] ? 'line-clamp-2' : ''}`}>
+                                        Meritorious and deserving students can avail limited scholarships at the time of admission, subject to approved eligibility criteria. Scholarships are applicable only in the first year of admission.
+                                    </p>
+                                    <button className="rm-btn !text-[#1B4F91] !mb-0 mt-1 pointer-events-auto" onClick={() => toggleRm('scholarMob')}>
+                                        {rm['scholarMob'] ? 'Read Less' : 'Read More'}
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Desktop scholarship banner */}
+                        <div className="hidden sm:block relative w-full rounded-2xl overflow-hidden mb-6 shadow-sm bg-[#f0f4fa]">
                              <img src="/sharedimageScholar.jpg" className="block w-full h-[300px] sm:h-auto object-cover object-right" alt="Scholarships" />
-                             <div className="absolute inset-0 z-10 bg-gradient-to-r from-[#14284E] via-[#14284E]/90 to-transparent p-5 sm:p-6 md:p-10 w-full sm:w-[85%] md:w-[75%] lg:w-[65%] flex flex-col justify-center">
-                                 <h2 className="text-[18px] sm:text-[24px] md:text-[30px] font-black text-white leading-[1.1] uppercase mb-2 tracking-tight">
-                                     SRMU’S <br />
-                                     <span className="text-[#ffc107]">EXCLUSIVE</span> <br />
-                                     SCHOLARSHIPS
+                             
+                             {/* Text Overlay (No background gradient) */}
+                             <div className="absolute inset-0 z-10 p-5 sm:p-6 md:p-10 w-full sm:w-[85%] md:w-[75%] lg:w-[65%] flex flex-col justify-center pointer-events-none">
+                                 <h2 className="text-[18px] sm:text-[24px] md:text-[30px] font-black leading-[1.1] uppercase mb-2 tracking-tight">
+                                     <span className="text-[#14284E]">SRMU’S</span> <br />
+                                     <span className="text-red-600">EXCLUSIVE</span> <br />
+                                     <span className="text-black">SCHOLARSHIPS</span>
                                  </h2>
-                                 <h3 className="text-[14px] sm:text-[17px] font-bold text-sky-200 mb-2">
+                                 <h3 className="text-[14px] sm:text-[17px] font-bold text-[#1B4F91] mb-2">
                                      Rewarding Merit, Empowering Futures
                                  </h3>
-                                 <p className="text-[12px] sm:text-[13.5px] md:text-[14px] text-gray-200 max-w-[420px] leading-relaxed">
+                                 <p className="text-[12px] sm:text-[13.5px] md:text-[14px] text-[#4B5A72] max-w-[420px] leading-relaxed">
                                      Meritorious and deserving students can avail limited scholarships at the time of admission, subject to approved eligibility criteria. Scholarships are applicable only in the first year of admission.
                                  </p>
                              </div>
                         </div>
 
-                        <div>
+                        <div className="flex justify-center w-full">
                             <Link to="https://srmu.ac.in/scholarship-scheme" target="_blank" className="inline-flex items-center bg-[#ffc107] hover:bg-[#D78610] text-[#14284E] font-semibold text-[14.5px] px-6 py-3 rounded-md transition-colors shadow-sm hover:-translate-y-0.5">
                                 View Details →
                             </Link>
@@ -2261,7 +2340,7 @@ const BTechCseCyberSecurityNew = () => {
                 </section>
 
 
-                {/* <section className="py-[36px] sm:py-[40px] md:py-[76px]  px-4 sm:px-6 bg-white">
+                {/* <section className="py-8 md:py-10  px-4 sm:px-6 bg-white">
                     <div className={`${Classes["container"]} mx-auto`}>
 
                   
@@ -2344,7 +2423,7 @@ const BTechCseCyberSecurityNew = () => {
 
                     </div>
                 </section> */}
-                {/* <section className="py-[36px] sm:py-[40px] md:py-[76px]  px-4 sm:px-6 bg-[#F6FAFE]">
+                {/* <section className="py-8 md:py-10  px-4 sm:px-6 bg-[#F6FAFE]">
                     <div className={`${Classes["container"]} mx-auto`}>
 
                         <div className="w-full mb-10">
@@ -2467,7 +2546,7 @@ const BTechCseCyberSecurityNew = () => {
                     </div>
                 </section> */}
 
-                <section className="py-[70px] px-6 bg-[#F0F6FB]">
+                <section className="py-8 md:py-10 px-6 bg-[#F0F6FB]">
                     <div className={`${Classes["container"]} mx-auto`}>
 
                         {/* Heading */}
@@ -2484,8 +2563,8 @@ const BTechCseCyberSecurityNew = () => {
                                 onClick={() => toggleSection("objectives")}
                                 className="w-full flex items-stretch text-left cursor-pointer"
                             >
-                                <div className="flex-1 py-8 pr-6">
-                                    <h3 className="text-[22px] font-bold text-[#102D43]">
+                                <div className="flex-1 py-8 md:py-5 pr-6">
+                                    <h3 className="text-[17px] sm:text-[18px] md:text-[22px] font-bold text-[#102D43]">
                                         Program Objectives
                                     </h3>
 
@@ -2545,7 +2624,7 @@ const BTechCseCyberSecurityNew = () => {
                                     )}
                                 </div>
 
-                                <div className="flex w-[60px] sm:w-[90px] shrink-0 border-l border-[#CBD5DF] items-start justify-center pt-7">
+                                <div className="flex w-[60px] sm:w-[90px] shrink-0 border-l border-[#CBD5DF] items-start justify-center pt-7 md:pt-5">
                                     <span className="text-[34px] leading-none font-light text-[#202B32]">
                                         {openSection === "objectives" ? "↓" : "→"}
                                     </span>
@@ -2561,8 +2640,8 @@ const BTechCseCyberSecurityNew = () => {
                                 onClick={() => toggleSection("outcomes")}
                                 className="w-full flex items-stretch text-left cursor-pointer"
                             >
-                                <div className="flex-1 py-8 pr-6">
-                                    <h3 className="text-[22px] font-bold text-[#102D43]">
+                                <div className="flex-1 py-8 md:py-5 pr-6">
+                                    <h3 className="text-[17px] sm:text-[18px] md:text-[22px] font-bold text-[#102D43]">
                                         Program Learning Outcomes
                                     </h3>
 
@@ -2621,7 +2700,7 @@ const BTechCseCyberSecurityNew = () => {
                                     )}
                                 </div>
 
-                                <div className="flex w-[60px] sm:w-[90px] shrink-0 border-l border-[#CBD5DF] items-start justify-center pt-7">
+                                <div className="flex w-[60px] sm:w-[90px] shrink-0 border-l border-[#CBD5DF] items-start justify-center pt-7 md:pt-5">
                                     <span className="text-[34px] leading-none font-light text-[#202B32]">
                                         {openSection === "outcomes" ? "↓" : "→"}
                                     </span>
@@ -2636,8 +2715,8 @@ const BTechCseCyberSecurityNew = () => {
                                 onClick={() => toggleSection("specific")}
                                 className="w-full flex items-stretch text-left cursor-pointer"
                             >
-                                <div className="flex-1 py-8 pr-6">
-                                    <h3 className="text-[22px] font-bold text-[#102D43]">
+                                <div className="flex-1 py-8 md:py-5 pr-6">
+                                    <h3 className="text-[17px] sm:text-[18px] md:text-[22px] font-bold text-[#102D43]">
                                         Program Specific Outcomes
                                     </h3>
 
@@ -2678,7 +2757,7 @@ const BTechCseCyberSecurityNew = () => {
                                     )}
                                 </div>
 
-                                <div className="flex w-[60px] sm:w-[90px] shrink-0 border-l border-[#CBD5DF] items-start justify-center pt-7">
+                                <div className="flex w-[60px] sm:w-[90px] shrink-0 border-l border-[#CBD5DF] items-start justify-center pt-7 md:pt-5">
                                     <span className="text-[34px] leading-none font-light text-[#202B32]">
                                         {openSection === "specific" ? "↓" : "→"}
                                     </span>
@@ -2689,7 +2768,7 @@ const BTechCseCyberSecurityNew = () => {
                     </div>
                 </section>
 
-                <section className="py-[36px] sm:py-[40px] md:py-[76px] px-4 sm:px-6 bg-gradient-to-b from-white to-[#E0F1FF]">
+                <section className="py-8 md:py-10 px-4 sm:px-6 bg-gradient-to-b from-white to-[#E0F1FF]">
                     <div className={`${Classes["container"]}`}>
                         {/* <div className="w-full mb-6">
 
@@ -2830,7 +2909,7 @@ const BTechCseCyberSecurityNew = () => {
                                     <button className="rm-btn" onClick={() => toggleRm('workshop')}>{rm['workshop'] ? 'Read Less' : 'Read More'}</button>
                                 </div>
                             </div>
-                            <div className="hidden sm:block bg-white border border-[#DCE6F2] hover:border-[#1B4F91]/35 rounded-3xl p-4 sm:p-6 shadow-[0_4px_20px_rgba(15,31,61,0.04)] transition-all">
+                            <div className="block bg-white border border-[#DCE6F2] hover:border-[#1B4F91]/35 rounded-3xl p-4 sm:p-6 shadow-[0_4px_20px_rgba(15,31,61,0.04)] transition-all">
 
                                 <img
                                     src="/Cyber-awareness-workshop.webp"
@@ -2841,10 +2920,15 @@ const BTechCseCyberSecurityNew = () => {
                             </div>
                         </div>
 
-
+                        {/* Know Your Department Button */}
+                        <div className="flex justify-center w-full mt-8 sm:mt-12">
+                            <Link to="https://srmu.ac.in/department-of-computer-science-and-engineering" target="_blank" className="inline-flex items-center bg-[#ffc107] hover:bg-[#D78610] text-[#14284E] font-semibold text-[14.5px] px-6 py-3 rounded-md transition-colors shadow-sm hover:-translate-y-0.5">
+                                Know Your Department →
+                            </Link>
+                        </div>
                     </div>
                 </section>
-                <section className="py-[36px] sm:py-[40px] md:py-[76px] px-4 sm:px-6 bg-[#E6E6E7]">
+                <section className="py-8 md:py-10 px-4 sm:px-6 bg-[#E6E6E7]">
                     <div className={`${Classes["container"]} mx-auto`}>
 
                         {/* Heading */}
@@ -2859,10 +2943,9 @@ const BTechCseCyberSecurityNew = () => {
                             </h2>
                         </div>
 
-                        {/* Image + Description */}
-                        <div className="flex flex-col md:flex-row items-center gap-5 mb-6">
-
-                            <div className="hidden sm:block w-full md:w-[52%]">
+                        {/* ===================== MOBILE LAYOUT ===================== */}
+                        <div className="md:hidden flex flex-col gap-5 mb-6">
+                            <div className="hidden sm:block w-full">
                                 <img
                                     src="https://ik.imagekit.io/ttalcskjf/IMAGE%203.webp?updatedAt=1788439003298"
                                     alt="Cyber security professionals protecting digital systems"
@@ -2870,16 +2953,26 @@ const BTechCseCyberSecurityNew = () => {
                                     loading="lazy"
                                 />
                             </div>
-
-                            <div className="w-full md:w-[48%]">
+                            <div className="w-full">
                                 <p className={`text-[14.5px] leading-5 text-[#4B5A72] ${!rm['digSys'] ? 'rm-clamp' : ''}`}>
                                     From banking dashboards to hospital records, every industry now
                                     runs on data and digital systems — and every one of them needs
                                     professionals who can keep that data safe.
                                 </p>
-                                <button className="rm-btn" onClick={() => toggleRm('digSys')}>{rm['digSys'] ? 'Read Less' : 'Read More'}</button>
+                                <div className="mt-4 flex flex-wrap items-center gap-4">
+                                    <button className="rm-btn !mt-0" onClick={() => toggleRm('digSys')}>{rm['digSys'] ? 'Read Less' : 'Read More'}</button>
+                                    
+                                    <a
+                                        href="/Broucher_SRMU_25_April___.pdf"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#14284E] hover:bg-[#1B4F91] text-white text-[13px] font-semibold rounded-lg shadow-sm transition-colors"
+                                    >
+                                        <Download className="w-3.5 h-3.5" />
+                                        Download Brochure
+                                    </a>
+                                </div>
                             </div>
-
                         </div>
 
                         {/* Industry Cards — Mobile Scrollable */}
@@ -2920,133 +3013,85 @@ const BTechCseCyberSecurityNew = () => {
                             </div>
                         </div>
 
-                        {/* Industry Cards — Desktop */}
-                        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
+                        {/* ===================== DESKTOP LAYOUT ===================== */}
+                        <div className="hidden md:grid md:grid-cols-[1.3fr_1fr] lg:grid-cols-[1.5fr_1fr] gap-6 mt-6 items-start">
+                            {/* Left Column */}
+                            <div className="flex flex-col gap-5">
+                                <div className="w-full">
+                                    <img
+                                        src="https://ik.imagekit.io/ttalcskjf/IMAGE%203.webp?updatedAt=1788439003298"
+                                        alt="Cyber security professionals protecting digital systems"
+                                        className="w-full aspect-[4/3] sm:aspect-[16/10] object-cover rounded-xl border border-[#DCE6F2]"
+                                        loading="lazy"
+                                    />
+                                </div>
+                                <div className="pr-4">
+                                    <p className="text-[15px] leading-relaxed text-[#4B5A72]">
+                                        From banking dashboards to hospital records, every industry now
+                                        runs on data and digital systems — and every one of them needs
+                                        professionals who can keep that data safe.
+                                    </p>
+                                    <a
+                                        href="/Broucher_SRMU_25_April___.pdf"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center gap-2 mt-5 px-5 py-2.5 bg-[#14284E] text-white text-[14px] font-semibold rounded-lg hover:bg-[#1B4F91] hover:-translate-y-0.5 transition-all shadow-md hover:shadow-lg"
+                                    >
+                                        <Download className="w-4 h-4" />
+                                        Download Brochure
+                                    </a>
+                                </div>
+                            </div>
 
+                            {/* Right Column (Single Column of Boxes) */}
+                            <div className="flex flex-col gap-3">
                                 {/* Banking */}
-                                <div className="bg-white border border-[#DCE6F2] rounded-xl overflow-hidden">
-
-                                    {/* Desktop */}
-                                    <div className="p-5">
-                                        <h3 className="text-[14.5px] font-bold font-display text-[#14284E] mb-3">
-                                            Banking &amp; Financial Services
-                                        </h3>
-
-                                        <div className="text-[14.5px] uppercase tracking-[0.06em] text-[#718096] mb-2">
-                                            Protects
-                                        </div>
-
-                                        <p className="text-[12.5px] leading-5 text-[#4B5A72]">
-                                            Online transactions, customer data, payment systems, digital banking
-                                        </p>
-                                    </div>
+                                <div className="bg-white border border-[#DCE6F2] rounded-xl overflow-hidden px-4 py-3">
+                                    <h3 className="text-[13.5px] font-bold font-display text-[#14284E] mb-1">Banking &amp; Financial Services</h3>
+                                    <div className="text-[11px] uppercase tracking-[0.06em] text-[#718096] font-medium mb-1">Protects</div>
+                                    <p className="text-[12px] leading-5 text-[#4B5A72] truncate" title="Online transactions, customer data, payment systems, digital banking">Online transactions, customer data, payment systems, digital banking</p>
                                 </div>
-
-
-                                {/* Healthcare */}
-                                <div className="bg-white border border-[#DCE6F2] rounded-xl overflow-hidden">
-
-                                    {/* Desktop */}
-                                    <div className="p-5">
-                                        <h3 className="text-[14.5px] font-bold font-display text-[#14284E] mb-3">
-                                            Healthcare
-                                        </h3>
-
-                                        <div className="text-[14.5px] uppercase tracking-[0.06em] text-[#718096] mb-2">
-                                            Protects
-                                        </div>
-
-                                        <p className="text-[12.5px] leading-5 text-[#4B5A72]">
-                                            Patient records, medical devices, healthcare applications, digital platforms
-                                        </p>
-                                    </div>
-                                </div>
-
-
-                                {/* Defence */}
-                                <div className="bg-white border border-[#DCE6F2] rounded-xl overflow-hidden">
-
-                                    {/* Desktop */}
-                                    <div className="p-5">
-                                        <h3 className="text-[14.5px] font-bold font-display text-[#14284E] mb-3">
-                                            Defence &amp; Government
-                                        </h3>
-
-                                        <div className="text-[14.5px] uppercase tracking-[0.06em] text-[#718096] mb-2">
-                                            Protects
-                                        </div>
-
-                                        <p className="text-[12.5px] leading-5 text-[#4B5A72]">
-                                            National security, critical infrastructure, government digital systems
-                                        </p>
-                                    </div>
-                                </div>
-
 
                                 {/* IT */}
-                                <div className="bg-white border border-[#DCE6F2] rounded-xl overflow-hidden">
-
-                                    {/* Desktop */}
-                                    <div className="p-5">
-                                        <h3 className="text-[14.5px] font-bold font-display text-[#14284E] mb-3">
-                                            IT &amp; Software Companies
-                                        </h3>
-
-                                        <div className="text-[14.5px] uppercase tracking-[0.06em] text-[#718096] mb-2">
-                                            Protects
-                                        </div>
-
-                                        <p className="text-[12.5px] leading-5 text-[#4B5A72]">
-                                            Application security, cloud protection, network security, data privacy
-                                        </p>
-                                    </div>
+                                <div className="bg-white border border-[#DCE6F2] rounded-xl overflow-hidden px-4 py-3">
+                                    <h3 className="text-[13.5px] font-bold font-display text-[#14284E] mb-1">IT &amp; Software Companies</h3>
+                                    <div className="text-[11px] uppercase tracking-[0.06em] text-[#718096] font-medium mb-1">Protects</div>
+                                    <p className="text-[12px] leading-5 text-[#4B5A72] truncate" title="Application security, cloud protection, network security, data privacy">Application security, cloud protection, network security, data privacy</p>
                                 </div>
 
+                                {/* Healthcare */}
+                                <div className="bg-white border border-[#DCE6F2] rounded-xl overflow-hidden px-4 py-3">
+                                    <h3 className="text-[13.5px] font-bold font-display text-[#14284E] mb-1">Healthcare</h3>
+                                    <div className="text-[11px] uppercase tracking-[0.06em] text-[#718096] font-medium mb-1">Protects</div>
+                                    <p className="text-[12px] leading-5 text-[#4B5A72] truncate" title="Patient records, medical devices, healthcare applications, digital platforms">Patient records, medical devices, healthcare applications, digital platforms</p>
+                                </div>
+
+                                {/* Defence */}
+                                <div className="bg-white border border-[#DCE6F2] rounded-xl overflow-hidden px-4 py-3">
+                                    <h3 className="text-[13.5px] font-bold font-display text-[#14284E] mb-1">Defence &amp; Government</h3>
+                                    <div className="text-[11px] uppercase tracking-[0.06em] text-[#718096] font-medium mb-1">Protects</div>
+                                    <p className="text-[12px] leading-5 text-[#4B5A72] truncate" title="National security, critical infrastructure, government digital systems">National security, critical infrastructure, government digital systems</p>
+                                </div>
 
                                 {/* E-Commerce */}
-                                <div className="bg-white border border-[#DCE6F2] rounded-xl overflow-hidden">
-
-                                    {/* Desktop */}
-                                    <div className="p-5">
-                                        <h3 className="text-[14.5px] font-bold font-display text-[#14284E] mb-3">
-                                            E-Commerce
-                                        </h3>
-
-                                        <div className="text-[14.5px] uppercase tracking-[0.06em] text-[#718096] mb-2">
-                                            Protects
-                                        </div>
-
-                                        <p className="text-[12.5px] leading-5 text-[#4B5A72]">
-                                            Customer information, payment gateways, applications, digital transactions
-                                        </p>
-                                    </div>
+                                <div className="bg-white border border-[#DCE6F2] rounded-xl overflow-hidden px-4 py-3">
+                                    <h3 className="text-[13.5px] font-bold font-display text-[#14284E] mb-1">E-Commerce</h3>
+                                    <div className="text-[11px] uppercase tracking-[0.06em] text-[#718096] font-medium mb-1">Protects</div>
+                                    <p className="text-[12px] leading-5 text-[#4B5A72] truncate" title="Customer information, payment gateways, applications, digital transactions">Customer information, payment gateways, applications, digital transactions</p>
                                 </div>
-
 
                                 {/* Telecom */}
-                                <div className="bg-white border border-[#DCE6F2] rounded-xl overflow-hidden">
-
-                                    {/* Desktop */}
-                                    <div className="p-5">
-                                        <h3 className="text-[14.5px] font-bold font-display text-[#14284E] mb-3">
-                                            Telecom &amp; Networking
-                                        </h3>
-
-                                        <div className="text-[14.5px] uppercase tracking-[0.06em] text-[#718096] mb-2">
-                                            Protects
-                                        </div>
-
-                                        <p className="text-[12.5px] leading-5 text-[#4B5A72]">
-                                            Network protection, infrastructure security, threat monitoring
-                                        </p>
-                                    </div>
+                                <div className="bg-white border border-[#DCE6F2] rounded-xl overflow-hidden px-4 py-3">
+                                    <h3 className="text-[13.5px] font-bold font-display text-[#14284E] mb-1">Telecom &amp; Networking</h3>
+                                    <div className="text-[11px] uppercase tracking-[0.06em] text-[#718096] font-medium mb-1">Protects</div>
+                                    <p className="text-[12px] leading-5 text-[#4B5A72] truncate" title="Network protection, infrastructure security, threat monitoring">Network protection, infrastructure security, threat monitoring</p>
                                 </div>
-
+                            </div>
                         </div>
 
                     </div>
                 </section>
-                <section className="py-[36px] sm:py-[40px] md:py-[76px] px-4 sm:px-6 bg-gradient-to-b from-white to-[#E0F1FF]">
+                <section className="pt-8 md:pt-10 pb-4 px-4 sm:px-6 bg-gradient-to-b from-white to-[#E0F1FF]">
                     <div className={`${Classes["container"]} mx-auto`}>
 
 
@@ -3134,7 +3179,7 @@ const BTechCseCyberSecurityNew = () => {
                             </div>
 
                             {/* Placement Image */}
-                            <div className="w-full hidden md:block">
+                            <div className="w-full mt-6 lg:mt-0">
                                 <img
                                     src="https://ik.imagekit.io/ttalcskjf/IMAGE%202.webp?updatedAt=1788439003256"
                                     alt="Student preparing for career and placement"
@@ -3200,10 +3245,15 @@ const BTechCseCyberSecurityNew = () => {
                                 </div>
                             </div>
                         </div>
-
+                        {/* View Placement Details Button */}
+                        <div className="flex justify-center w-full mt-10">
+                            <Link to="https://srmu.ac.in/placements" target="_blank" className="inline-flex items-center bg-[#ffc107] hover:bg-[#D78610] text-[#14284E] font-semibold text-[14.5px] px-6 py-3 rounded-md transition-colors shadow-sm hover:-translate-y-0.5">
+                                View Placement Details →
+                            </Link>
+                        </div>
                     </div>
                 </section>
-                <section className="py-[36px] sm:py-[40px] md:py-[76px] px-4 sm:px-6 bg-[#E0F1FF]">
+                <section className="pt-2 md:pt-4 pb-8 md:pb-10 px-4 sm:px-6 bg-[#E0F1FF]">
                     <div className={`${Classes["container"]} mx-auto`}>
 
                         {/* Heading */}
