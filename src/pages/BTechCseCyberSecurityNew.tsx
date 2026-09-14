@@ -541,73 +541,64 @@ const BTechCseCyberSecurityNew = () => {
                 </section>
                 <section className="pt-2 sm:pt-4 pb-8 md:pb-10 px-4 sm:px-6 bg-[#F0F6FB]">
                     <div className={`${Classes["container"]}`}>
-                        <div className="w-full mb-11">
+                        <div className="w-full mb-8">
                             {/* <div className="text-[14.5px] tracking-[0.08em] uppercase text-[#ffc107] font-bold flex items-center gap-2 mb-3.5">
                                 <span className="w-[22px] h-[2px] bg-[#ffc107] inline-block"></span>
                                 Program Overview
                             </div> */}
-                            <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3.5">B.Tech CSE Cyber Security at SRMU, <span className="text-[#ffc107]">Lucknow</span></h2>
+                            <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3.5">
+                                How Does L&T Benefit B.Tech CSE Cyber Security <span className="text-[#ffc107]">SRMU Students?</span>
+                            </h2>
                         </div>
 
                         <div className="w-full">
                             <div className="mb-5">
                                 <p className={`text-[15.5px] text-[#4B5A72] leading-relaxed ${!rm['ovw1'] ? 'rm-clamp' : ''}`}>
-                                    At SRMU, the B.Tech CSE Cyber Security program in Lucknow combines foundational computer science knowledge with cybersecurity concepts and practical exposure.
+                                    By combining SRMU's academic foundation with L&T's industry-oriented learning, students can graduate with more than theoretical knowledge. At this leading CSE Cyber Security university in Lucknow, through L&T-integrated learning, students build practical cybersecurity skills, project experience, and an industry-ready portfolio in futuristic domains such as:
                                 </p>
-                                <button className="rm-btn" onClick={() => toggleRm('ovw1')}>{rm['ovw1'] ? 'Read Less' : 'Read More'}</button>
-                            </div>
-
-                            <p className="text-[15.5px] text-[#14284E] font-semibold mb-4">Students learn through a combination of:</p>
-
-                            {/* Learning pills */}
-                            <div className="flex flex-nowrap items-center gap-2 overflow-x-auto sm:flex-wrap sm:overflow-visible mb-6 pb-1" style={{ scrollbarWidth: 'none' }}>
-                                <span className="shrink-0 inline-flex flex-col items-center justify-center min-w-[88px] sm:min-w-[142px] h-[64px] rounded-xl bg-[#14284E] text-white text-[10px] sm:text-[12px] font-bold sm:h-auto sm:rounded-none sm:bg-transparent sm:text-[#1B355F] sm:text-[14px] sm:font-medium">
-                                    <span className="text-[#ffc107] text-[10px] sm:text-[11px] mb-1 sm:hidden">01</span>
-                                    Classroom
-                                </span>
-
-                                <span className="text-[#1B4F91] text-[12px] sm:text-base">→</span>
-
-                                <span className="shrink-0 inline-flex flex-col items-center justify-center min-w-[88px] sm:min-w-[142px] h-[64px] rounded-xl bg-[#14284E] text-white text-[10px] sm:text-[12px] font-bold sm:h-auto sm:rounded-none sm:bg-transparent sm:text-[#1B355F] sm:text-[14px] sm:font-medium">
-                                    <span className="text-[#ffc107] text-[10px] sm:text-[11px] mb-1 sm:hidden">02</span>
-                                    Cyber Labs
-                                </span>
-
-                                <span className="text-[#1B4F91] text-[12px] sm:text-base">→</span>
-
-                                <span className="shrink-0 inline-flex flex-col items-center justify-center min-w-[88px] sm:min-w-[142px] h-[64px] rounded-xl bg-[#14284E] text-white text-[10px] sm:text-[12px] font-bold sm:h-auto sm:rounded-none sm:bg-transparent sm:text-[#1B355F] sm:text-[14px] sm:font-medium">
-                                    <span className="text-[#ffc107] text-[10px] sm:text-[11px] mb-1 sm:hidden">03</span>
-                                    Projects
-                                </span>
-
-                                <span className="text-[#1B4F91] text-[12px] sm:text-base">→</span>
-
-                                <span className="shrink-0 inline-flex flex-col items-center justify-center min-w-[88px] sm:min-w-[142px] h-[64px] rounded-xl bg-[#14284E] text-white text-[10px] sm:text-[12px] font-bold sm:h-auto sm:rounded-none sm:bg-transparent sm:text-[#1B355F] sm:text-[14px] sm:font-medium">
-                                    <span className="text-[#ffc107] text-[10px] sm:text-[11px] mb-1 sm:hidden">04</span>
-                                    Industry Sessions
-                                </span>
-
-                                <span className="text-[#1B4F91] text-[12px] sm:text-base">→</span>
-
-                                <span className="shrink-0 inline-flex flex-col items-center justify-center min-w-[88px] sm:min-w-[142px] h-[64px] rounded-xl bg-[#14284E] text-white text-[10px] sm:text-[12px] font-bold sm:h-auto sm:rounded-none sm:bg-transparent sm:text-[#1B355F] sm:text-[14px] sm:font-medium">
-                                    <span className="text-[#ffc107] text-[10px] sm:text-[11px] mb-1 sm:hidden">05</span>
-                                    Internships
-                                </span>
-
-                                <span className="text-[#1B4F91] text-[12px] sm:text-base">→</span>
-
-                                <span className="shrink-0 inline-flex flex-col items-center justify-center min-w-[88px] sm:min-w-[142px] h-[64px] rounded-xl bg-[#14284E] text-white text-[10px] sm:text-[12px] font-bold sm:h-auto sm:rounded-none sm:bg-transparent sm:text-[#1B355F] sm:text-[14px] sm:font-medium">
-                                    <span className="text-[#ffc107] text-[10px] sm:text-[11px] mb-1 sm:hidden">06</span>
-                                    Capstone Work
-                                </span>
-                            </div>
-
-                            <div>
-                                <p className={`text-[15.5px] text-[#4B5A72] leading-relaxed ${!rm['ovw2'] ? 'rm-clamp' : ''}`}>
-                                    The program is designed to help students develop practical problem-solving skills alongside their technical knowledge. For students comparing options for the Best
-                                    B.Tech College in Lucknow, the program's industry-integrated approach with L&T provides an additional focus on practical learning.
-                                </p>
-                                <button className="rm-btn" onClick={() => toggleRm('ovw2')}>{rm['ovw2'] ? 'Read Less' : 'Read More'}</button>
+                                
+                                <div className={rm['ovw1'] ? 'block mt-4' : 'hidden sm:block mt-4'}>
+                                    <div className="flex flex-wrap items-center gap-y-3 gap-x-2 sm:gap-x-3 mb-6">
+                                        {[
+                                            "Secure Networking", 
+                                            "Application Security", 
+                                            "Ethical Hacking & Penetration Testing", 
+                                            "Cyber Forensics", 
+                                            "Malware Awareness & Analysis", 
+                                            "Governance, Risk & Compliance (GRC)", 
+                                            "Bioinformatics & Cybersecurity"
+                                        ].map((domain, idx, arr) => (
+                                            <div key={idx} className="flex items-center gap-2 sm:gap-3">
+                                                <span className="bg-[#E6F0FA] text-[#1B4F91] text-[13px] sm:text-[14px] font-medium px-4 py-2 rounded-full whitespace-nowrap">
+                                                    {domain}
+                                                </span>
+                                                {idx < arr.length - 1 && (
+                                                    <span className="text-[#1B4F91]/40 text-[16px] sm:text-[20px] leading-none">•</span>
+                                                )}
+                                            </div>
+                                        ))}
+                                    </div>
+                                    
+                                    <p className="text-[15.5px] text-[#4B5A72] leading-relaxed mb-5">
+                                        The L&T-integrated learning experience enables students to move beyond theoretical concepts and apply their knowledge through practical exercises, cybersecurity labs, case studies, summer training, and major projects.
+                                    </p>
+                                    
+                                    <p className="text-[15.5px] text-[#14284E] font-semibold mb-3">
+                                        Students have worked on projects such as:
+                                    </p>
+                                    
+                                    <ul className="list-disc pl-5 space-y-2 text-[15.5px] text-[#4B5A72] marker:text-[#ffc107]">
+                                        <li>Network Intrusion Detection & Monitoring System</li>
+                                        <li>Web Application Vulnerability Assessment Tool</li>
+                                        <li>Phishing Detection & Awareness Platform</li>
+                                        <li>Malware Behavior Analysis System</li>
+                                        <li>Digital Forensics Investigation Framework</li>
+                                        <li>Security Information & Event Monitoring Dashboard</li>
+                                        <li>Secure Authentication & Access Control System</li>
+                                        <li>Cyber Risk & Compliance Assessment Framework</li>
+                                    </ul>
+                                </div>
+                                <button className="rm-btn mt-2" onClick={() => toggleRm('ovw1')}>{rm['ovw1'] ? 'Read Less' : 'Read More'}</button>
                             </div>
                         </div>
                     </div>
