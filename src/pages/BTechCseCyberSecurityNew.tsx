@@ -573,7 +573,7 @@ const BTechCseCyberSecurityNew = () => {
                                                     {domain}
                                                 </span>
                                                 {idx < arr.length - 1 && (
-                                                    <span className="text-[#1B4F91]/40 text-[16px] sm:text-[20px] leading-none">•</span>
+                                                    <span className="hidden sm:block text-[#1B4F91]/40 text-[16px] sm:text-[20px] leading-none">•</span>
                                                 )}
                                             </div>
                                         ))}
