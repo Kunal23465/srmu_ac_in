@@ -546,6 +546,8 @@ const BTechCseCyberSecurityNew = () => {
                                 <span className="w-[22px] h-[2px] bg-[#ffc107] inline-block"></span>
                                 Program Overview
                             </div> */}
+
+                            {/*fixing the not changes shown issue  */}
                             <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3.5">
                                 How Does L&T Benefit B.Tech CSE Cyber Security <span className="text-[#ffc107]">SRMU Students?</span>
                             </h2>
