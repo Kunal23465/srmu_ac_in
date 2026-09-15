@@ -1,13 +1,11 @@
 import Classes from "../../utils/styles/Global.module.css";
 import { IoCallSharp } from "react-icons/io5";
+import { MdEmail } from "react-icons/md";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import user from "../../assets/images/home/user-icon.png";
 import whatsapp from "../../assets/images/whatsapp-icon.png";
-import { FaCaretDown, FaCaretUp } from "react-icons/fa";
 
 const TopHeader: React.FC = () => {
-  const [isDropdown, setIsDropdown] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
@@ -36,9 +34,9 @@ const TopHeader: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               to="https://students.srmu.ac.in/login"
-              className="bg-white hover:bg-gray-50 px-3 xl:px-4 border border-white py-[1rem] flex items-center justify-center"
+              className="px-3 xl:px-4 py-[1rem] flex items-center justify-center"
             >
-              <img src="/shared-image.png" alt="SRMUSET Logo" className="h-[30px] w-auto" />
+              <img src="/settt-img.png" alt="SRMUSET Logo" className="h-[30px] w-auto" />
             </Link>
             {/* <Link to={inductionSchedule} target="_blank" rel="noopener noreferrer" className="bg-white flex items-center px-4 py-[7px] xl:py-[8px] gap-2 border-l border-[#ccc]">
 
@@ -51,44 +49,47 @@ const TopHeader: React.FC = () => {
               {/* <Link className="px-2 xl:px-[0.7rem] border-r border-white" to="/notice">
                 NOTICE
               </Link> */}
-              <Link
+              {/* <Link
                 className="px-2 xl:px-[0.7rem] border-r border-white"
                 to="/admission-enquiry"
               >
                 ADMISSION ENQUIRY
-              </Link>
-              <Link className="px-2 xl:px-[0.7rem]" to="/shift-schedule">SHIFT SCHEDULE</Link>
+              </Link> */}
             </ul>
           </div>
 
+
           <div className="right-part flex gap-0 items-stretch">
-            <Link
+            {/* Email */}
+            <a
+              href="mailto:admissions@srmu.ac.in"
+              className="relative flex items-center gap-x-2 px-3 xl:px-4 text-white text-xs xl:text-[13px] after:absolute after:right-0 after:top-1/2 after:h-[55%] after:w-px after:-translate-y-1/2 after:bg-white/50"
+              aria-label="Email Admissions at admissions@srmu.ac.in"
+            >
+              <MdEmail className="text-[1.2rem] text-[#FFB703]" />
+              <span>admissions@srmu.ac.in</span>
+            </a>
+
+            {/* WhatsApp */}
+            <a
+              href="https://wa.me/919120007948"
               target="_blank"
               rel="noopener noreferrer"
-              to="https://eyojan.srmu.ac.in/"
-              className="relative flex items-center text-xs xl:text-[13px] text-white gap-x-2 px-2 xl:px-[0.7rem] after:absolute after:right-0 after:top-1/2 after:h-[55%] after:w-px after:-translate-y-1/2 after:bg-white"
+              className="relative flex items-center gap-x-2 px-3 xl:px-4 text-white text-xs xl:text-[13px] after:absolute after:right-0 after:top-1/2 after:h-[55%] after:w-px after:-translate-y-1/2 after:bg-white/50"
+              aria-label="Contact SRMU on WhatsApp"
             >
-              <img src={user} alt="user login icon" width={16} height={16} loading="eager" decoding="async" />
-              Student Login
-            </Link>
+              <img src={whatsapp} alt="WhatsApp" width={16} height={16} loading="eager" decoding="async" className="w-4 h-4" />
+              <span>WhatsApp</span>
+            </a>
 
-            <Link
-              target="_blank"
-              rel="noopener noreferrer"
-              to="https://eyojan.srmu.ac.in/"
-              className="flex text-xs xl:text-[13px] items-center text-white gap-x-5 px-2 xl:px-[0.7rem]"
-            >
-              Staff Login
-              {/* <img src={search} alt="user" /> */}
-            </Link>
-
-            <button className="bg-white flex items-center px-4 py-[5px] gap-2 border-l border-[#ccc]">
+            {/* Phone Helpline */}
+            <button className="flex items-center px-4 py-[5px] gap-2">
               <a href="tel:18001026004" className="text-[#FFB703]" aria-label="Call Admission Helpline 18001026004">
                 <IoCallSharp className="text-[1.5rem]" />
               </a>
               <div className="flex flex-col text-start ">
-                <p className="text-[11px] font-normal text-black">Admission Helpline</p>
-                <p className="text-[13px] text-black">18001026004</p>
+                <p className="text-[11px] font-normal text-white">Admission Helpline</p>
+                <p className="text-[13px] text-white">18001026004</p>
               </div>
             </button>
 
@@ -126,35 +127,6 @@ const TopHeader: React.FC = () => {
         {/* MOBILE HEADER */}
         <div className="flex lg:hidden justify-between">
           <div className="left-part flex items-center ml-2">
-            <div className="relative">
-              <button
-                onClick={() => setIsDropdown((prev) => !prev)}
-                className="text-black text-sm sm:text-lg font-semibold flex items-center gap-x-1"
-              >
-                Login {isDropdown ? <FaCaretUp /> : <FaCaretDown />}
-              </button>
-
-              {isDropdown && (
-                <div className="bg-white absolute -bottom-[70px] border border-gray-100 z-9999! p-3 w-[200px]">
-                  <Link
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    to="https://eyojan.srmu.ac.in/"
-                    className="text-black block"
-                  >
-                    Student Login
-                  </Link>
-                  <Link
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    to="https://eyojan.srmu.ac.in/"
-                    className="text-black block mt-2"
-                  >
-                    Staff Login
-                  </Link>
-                </div>
-              )}
-            </div>
           </div>
 
           <div className="right-part flex items-center">
@@ -201,7 +173,7 @@ const TopHeader: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 to="https://students.srmu.ac.in/login"
-                className="bg-white hover:bg-gray-50 px-3 border border-white py-1 flex items-center justify-center"
+                className=" px-3 py-1 flex items-center justify-center"
               >
                 <img src="/shared-image.png" alt="SRMUSET Logo" className="h-4 w-auto" />
               </Link>

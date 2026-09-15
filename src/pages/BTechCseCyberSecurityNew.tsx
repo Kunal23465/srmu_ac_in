@@ -286,7 +286,7 @@ const BTechCseCyberSecurityNew = () => {
                             <div className="sm:hidden mt-5 rounded-2xl overflow-hidden shadow-xl border border-white/10">
                                 <div className="bg-[#14284E] px-4 py-3 text-center">
                                     <h3 className="text-white font-bold text-[15px]">Shri Ramswaroop Memorial University</h3>
-                                    <p className="text-sky-200 text-[11px] mt-0.5">Begin your journey in under 60 seconds</p>
+                                    {/* <p className="text-sky-200 text-[11px] mt-0.5">Begin your journey in under 60 seconds</p> */}
                                     <div className="w-8 h-0.5 bg-[#ffc107] mx-auto mt-2 rounded-full"></div>
                                 </div>
                                 <div className="bg-white px-4 py-4 space-y-2.5">
@@ -558,16 +558,16 @@ const BTechCseCyberSecurityNew = () => {
                                 <p className={`text-[15.5px] text-[#4B5A72] leading-relaxed ${!rm['ovw1'] ? 'rm-clamp' : ''}`}>
                                     By combining SRMU's academic foundation with L&T's industry-oriented learning, students can graduate with more than theoretical knowledge. At this leading CSE Cyber Security university in Lucknow, through L&T-integrated learning, students build practical cybersecurity skills, project experience, and an industry-ready portfolio in futuristic domains such as:
                                 </p>
-                                
+
                                 <div className={rm['ovw1'] ? 'block mt-4' : 'hidden sm:block mt-4'}>
                                     <div className="flex flex-wrap items-center gap-y-3 gap-x-2 sm:gap-x-3 mb-6">
                                         {[
-                                            "Secure Networking", 
-                                            "Application Security", 
-                                            "Ethical Hacking & Penetration Testing", 
-                                            "Cyber Forensics", 
-                                            "Malware Awareness & Analysis", 
-                                            "Governance, Risk & Compliance (GRC)", 
+                                            "Secure Networking",
+                                            "Application Security",
+                                            "Ethical Hacking & Penetration Testing",
+                                            "Cyber Forensics",
+                                            "Malware Awareness & Analysis",
+                                            "Governance, Risk & Compliance (GRC)",
                                             "Bioinformatics & Cybersecurity"
                                         ].map((domain, idx, arr) => (
                                             <div key={idx} className="flex items-center gap-2 sm:gap-3">
@@ -580,15 +580,15 @@ const BTechCseCyberSecurityNew = () => {
                                             </div>
                                         ))}
                                     </div>
-                                    
+
                                     <p className="text-[15.5px] text-[#4B5A72] leading-relaxed mb-5">
                                         The L&T-integrated learning experience enables students to move beyond theoretical concepts and apply their knowledge through practical exercises, cybersecurity labs, case studies, summer training, and major projects.
                                     </p>
-                                    
+
                                     <p className="text-[15.5px] text-[#14284E] font-semibold mb-3">
                                         Students have worked on projects such as:
                                     </p>
-                                    
+
                                     <ul className="list-disc pl-5 space-y-2 text-[15.5px] text-[#4B5A72] marker:text-[#ffc107]">
                                         <li>Network Intrusion Detection & Monitoring System</li>
                                         <li>Web Application Vulnerability Assessment Tool</li>
@@ -1394,8 +1394,8 @@ const BTechCseCyberSecurityNew = () => {
                                     key={tab.id}
                                     onClick={() => setActiveTab(tab.id)}
                                     className={`font-display font-semibold text-[14.5px] px-5 py-2.75 rounded-lg border-[1.5px] ${activeTab === tab.id
-                                            ? "bg-[#14284E] border-[#14284E] text-white"
-                                            : "bg-white border-[#DCE6F2] text-[#4B5A72]"
+                                        ? "bg-[#14284E] border-[#14284E] text-white"
+                                        : "bg-white border-[#DCE6F2] text-[#4B5A72]"
                                         }`}
                                 >
                                     {tab.label}

@@ -50,41 +50,41 @@ export type EventItem = {
 
 const eventsData: EventItem[] = [
 
-  {
-    id: 23,
-    isRedirect: false,
-    image: guestVisit,
-    imageSmall: guestVisit,
-    date: "September 15th, 2026",
-    title: `Guest Lecture on Case-Based Group Discussion Organized at IMCE`,
-    description: `
-The <strong>Faculty of Management, Institute of Management, Commerce & Economics (IMCE), Shri Ramswaroop Memorial University</strong>, is organizing an insightful guest lecture on <strong>“Case-Based Group Discussion”</strong> for the <strong>UG & PG students of IMCE</strong>.
+//   {
+//     id: 23,
+//     isRedirect: false,
+//     image: guestVisit,
+//     imageSmall: guestVisit,
+//     date: "September 15th, 2026",
+//     title: `Guest Lecture on Case-Based Group Discussion Organized at IMCE`,
+//     description: `
+// The <strong>Faculty of Management, Institute of Management, Commerce & Economics (IMCE), Shri Ramswaroop Memorial University</strong>, is organizing an insightful guest lecture on <strong>“Case-Based Group Discussion”</strong> for the <strong>UG & PG students of IMCE</strong>.
 
-<br/><strong>About the Session</strong><br/>
+// <br/><strong>About the Session</strong><br/>
 
-The session will provide students with practical exposure to <strong>case-based discussions, analytical thinking, problem-solving, communication, and effective participation in group discussions</strong>.
+// The session will provide students with practical exposure to <strong>case-based discussions, analytical thinking, problem-solving, communication, and effective participation in group discussions</strong>.
 
-<br/><strong>Guest Speaker</strong><br/>
+// <br/><strong>Guest Speaker</strong><br/>
 
-The session will feature <strong>Mr. Satish Anand</strong> as the guest speaker, who will share valuable insights and practical guidance on case-based group discussions.
+// The session will feature <strong>Mr. Satish Anand</strong> as the guest speaker, who will share valuable insights and practical guidance on case-based group discussions.
 
-<br/><strong>Session Details</strong><br/>
+// <br/><strong>Session Details</strong><br/>
 
-<strong>Date:</strong> 15 September 2026<br/>
-<strong>Time:</strong> 10:00 AM onwards<br/>
-<strong>Venue:</strong> Mini Auditorium
+// <strong>Date:</strong> 15 September 2026<br/>
+// <strong>Time:</strong> 10:00 AM onwards<br/>
+// <strong>Venue:</strong> Mini Auditorium
 
-<br/><strong>Organized By</strong><br/>
+// <br/><strong>Organized By</strong><br/>
 
-<strong>FGWIC Committee & Respective Class Coordinators</strong>
+// <strong>FGWIC Committee & Respective Class Coordinators</strong>
 
-<br/><strong>Who Can Attend</strong><br/>
+// <br/><strong>Who Can Attend</strong><br/>
 
-All <strong>faculty members and students interested in the session</strong> are invited to attend and benefit from this engaging academic interaction.
+// All <strong>faculty members and students interested in the session</strong> are invited to attend and benefit from this engaging academic interaction.
 
-The guest lecture aims to enhance students’ <strong>analytical abilities, communication skills, problem-solving approach, and confidence in participating effectively in group discussions</strong>.
-`,
-  },
+// The guest lecture aims to enhance students’ <strong>analytical abilities, communication skills, problem-solving approach, and confidence in participating effectively in group discussions</strong>.
+// `,
+//   },
   {
     id: 22,
     isRedirect: false,
@@ -118,115 +118,115 @@ The event reflects the university’s commitment to <strong>community engagement
 `,
   },
 
-  {
-    id: 21,
-    isRedirect: false,
-    image: memoryManagement,
-    imageSmall: memoryManagement,
-    date: "September 3rd, 2026",
-    title: `Guest Lecture on Memory Management & Mnemonics Organized at IMCE`,
-    description: `
-The <strong>Faculty of Commerce & Economics, Institute of Management, Commerce and Economics (IMCE), Shri Ramswaroop Memorial University</strong>, is organizing an insightful guest lecture on <strong>“Forget Forgetting: Memory Management Session - About Mnemonics.”</strong>
+//   {
+//     id: 21,
+//     isRedirect: false,
+//     image: memoryManagement,
+//     imageSmall: memoryManagement,
+//     date: "September 3rd, 2026",
+//     title: `Guest Lecture on Memory Management & Mnemonics Organized at IMCE`,
+//     description: `
+// The <strong>Faculty of Commerce & Economics, Institute of Management, Commerce and Economics (IMCE), Shri Ramswaroop Memorial University</strong>, is organizing an insightful guest lecture on <strong>“Forget Forgetting: Memory Management Session - About Mnemonics.”</strong>
 
-<br/><strong>About the Session</strong><br/>
+// <br/><strong>About the Session</strong><br/>
 
-The session is designed to introduce students to <strong>effective memory management and mnemonic techniques</strong> for improving retention, recall, and developing smarter learning strategies.
+// The session is designed to introduce students to <strong>effective memory management and mnemonic techniques</strong> for improving retention, recall, and developing smarter learning strategies.
 
-<br/><strong>Guest Speaker</strong><br/>
+// <br/><strong>Guest Speaker</strong><br/>
 
-The session will feature <strong>Dr. Anil Lamba</strong> as the guest speaker, who will share valuable insights into memory management and the effective use of mnemonic techniques.
+// The session will feature <strong>Dr. Anil Lamba</strong> as the guest speaker, who will share valuable insights into memory management and the effective use of mnemonic techniques.
 
-<br/><strong>Session Details</strong><br/>
+// <br/><strong>Session Details</strong><br/>
 
-<strong>Date:</strong> 03 September 2026<br/>
-<strong>Time:</strong> 10:30 AM onwards<br/>
-<strong>Venue:</strong> B1-007
+// <strong>Date:</strong> 03 September 2026<br/>
+// <strong>Time:</strong> 10:30 AM onwards<br/>
+// <strong>Venue:</strong> B1-007
 
-<br/><strong>Who Can Attend</strong><br/>
+// <br/><strong>Who Can Attend</strong><br/>
 
-The session is specially designed for students of <strong>B.Com (NEP & Hons.) and B.A. (H) 2nd & 3rd Year</strong>.
+// The session is specially designed for students of <strong>B.Com (NEP & Hons.) and B.A. (H) 2nd & 3rd Year</strong>.
 
-The guest lecture aims to help students strengthen their memory, improve information retention and recall, and develop smarter and more effective learning strategies.
-`,
-  },
-  {
-    id: 20,
-    isRedirect: false,
-    image: financialAwareness,
-    imageSmall: financialAwareness,
-    date: "September 2nd, 2026",
-    title: `Guest Lecture on Financial Awareness and Smart Financial Planning Organized at IMCE`,
-    description: `
-The <strong>Faculty of Commerce & Economics, Institute of Management, Commerce and Economics (IMCE), Shri Ramswaroop Memorial University</strong>, is organizing an insightful guest lecture on <strong>“Building Financial Confidence Through Awareness, Planning, Saving, and Smart Choices.”</strong>
+// The guest lecture aims to help students strengthen their memory, improve information retention and recall, and develop smarter and more effective learning strategies.
+// `,
+//   },
+//   {
+//     id: 20,
+//     isRedirect: false,
+//     image: financialAwareness,
+//     imageSmall: financialAwareness,
+//     date: "September 2nd, 2026",
+//     title: `Guest Lecture on Financial Awareness and Smart Financial Planning Organized at IMCE`,
+//     description: `
+// The <strong>Faculty of Commerce & Economics, Institute of Management, Commerce and Economics (IMCE), Shri Ramswaroop Memorial University</strong>, is organizing an insightful guest lecture on <strong>“Building Financial Confidence Through Awareness, Planning, Saving, and Smart Choices.”</strong>
 
-<br/><strong>About the Session</strong><br/>
+// <br/><strong>About the Session</strong><br/>
 
-The session will provide students with practical insights into <strong>financial planning, saving habits, financial awareness, and making informed financial decisions</strong>.
+// The session will provide students with practical insights into <strong>financial planning, saving habits, financial awareness, and making informed financial decisions</strong>.
 
-<br/><strong>Guest Speaker</strong><br/>
+// <br/><strong>Guest Speaker</strong><br/>
 
-The session will feature <strong>CA Devesh Agarwal</strong> as the guest speaker, who will share valuable insights into financial awareness, planning, saving, and making smart financial choices.
+// The session will feature <strong>CA Devesh Agarwal</strong> as the guest speaker, who will share valuable insights into financial awareness, planning, saving, and making smart financial choices.
 
-<br/><strong>Session Details</strong><br/>
+// <br/><strong>Session Details</strong><br/>
 
-<strong>Date:</strong> 02 September 2026<br/>
-<strong>Time:</strong> 11:30 AM onwards<br/>
-<strong>Venue:</strong> Mini Auditorium
+// <strong>Date:</strong> 02 September 2026<br/>
+// <strong>Time:</strong> 11:30 AM onwards<br/>
+// <strong>Venue:</strong> Mini Auditorium
 
-<br/><strong>Who Can Attend</strong><br/>
+// <br/><strong>Who Can Attend</strong><br/>
 
-The session is open to students of <strong>B.Com (NEP & Hons.), B.A. (H), and M.Com – All Years</strong>.
+// The session is open to students of <strong>B.Com (NEP & Hons.), B.A. (H), and M.Com – All Years</strong>.
 
-The guest lecture aims to enhance students' understanding of personal financial management and equip them with practical knowledge to make informed and responsible financial decisions.
-`,
-  },
-  {
-    id: 19,
-    isRedirect: false,
-    image: aluminiTalks,
-    imageSmall: aluminiTalks,
-    date: "August 22nd, 2026",
-    title: `Alumni Talk on Building a Career in Litigation Organized by Institute of Legal Studies`,
-    description: `
-The <strong>Institute of Legal Studies, Shri Ramswaroop Memorial University (SRMU), Lucknow-Deva Road, Barabanki</strong>, organized an <strong>Alumni Talk</strong> on <strong>“Building a Career in Litigation: Lessons from Criminal, Service and SARFAESI Practice”</strong> on 22 August 2026 through Google Meet.
+// The guest lecture aims to enhance students' understanding of personal financial management and equip them with practical knowledge to make informed and responsible financial decisions.
+// `,
+//   },
+//   {
+//     id: 19,
+//     isRedirect: false,
+//     image: aluminiTalks,
+//     imageSmall: aluminiTalks,
+//     date: "August 22nd, 2026",
+//     title: `Alumni Talk on Building a Career in Litigation Organized by Institute of Legal Studies`,
+//     description: `
+// The <strong>Institute of Legal Studies, Shri Ramswaroop Memorial University (SRMU), Lucknow-Deva Road, Barabanki</strong>, organized an <strong>Alumni Talk</strong> on <strong>“Building a Career in Litigation: Lessons from Criminal, Service and SARFAESI Practice”</strong> on 22 August 2026 through Google Meet.
 
-<br/><strong>About the Session</strong><br/>
+// <br/><strong>About the Session</strong><br/>
 
-The session featured <strong>Adv. Sumit Srivastava</strong>, <strong>LLM (CCL), Batch 2020 and LLM Gold Medalist</strong>, as the resource person. Drawing from his professional journey and practical experience, he shared valuable insights into the opportunities, challenges, and realities of building a successful career in litigation.
+// The session featured <strong>Adv. Sumit Srivastava</strong>, <strong>LLM (CCL), Batch 2020 and LLM Gold Medalist</strong>, as the resource person. Drawing from his professional journey and practical experience, he shared valuable insights into the opportunities, challenges, and realities of building a successful career in litigation.
 
-<br/><strong>Key Highlights</strong><br/>
+// <br/><strong>Key Highlights</strong><br/>
 
-The interaction focused particularly on <strong>Criminal, Service and SARFAESI matters</strong>, providing students with a practical understanding of courtroom proceedings, litigation practice, and professional development. The speaker also highlighted the importance of <strong>practical legal knowledge, professional skills, and continuous learning</strong> for aspiring lawyers.
+// The interaction focused particularly on <strong>Criminal, Service and SARFAESI matters</strong>, providing students with a practical understanding of courtroom proceedings, litigation practice, and professional development. The speaker also highlighted the importance of <strong>practical legal knowledge, professional skills, and continuous learning</strong> for aspiring lawyers.
 
-The session provided students with an opportunity to interact with an accomplished alumnus and gain first-hand perspectives on pursuing a career in litigation. The insightful discussion encouraged students to connect their academic learning with the practical requirements of the legal profession.
-`,
-  },
-  {
-    id: 18,
-    isRedirect: false,
-    image: LegalStudies,
-    imageSmall: LegalStudies,
-    date: "August 27th, 2026",
-    title: `Guest Lecture on Formation of Contracts Organized at the Institute of Legal Studies`,
-    description: `
-    The <strong>Institute of Legal Studies</strong> is organizing a special Guest Lecture on <strong>"From Online Shopping to Business Deals: Understanding the Formation of Contracts"</strong> under the aegis of the Institution's Innovation Council (IIC), Ministry of Education.
+// The session provided students with an opportunity to interact with an accomplished alumnus and gain first-hand perspectives on pursuing a career in litigation. The insightful discussion encouraged students to connect their academic learning with the practical requirements of the legal profession.
+// `,
+//   },
+  // {
+  //   id: 18,
+  //   isRedirect: false,
+  //   image: LegalStudies,
+  //   imageSmall: LegalStudies,
+  //   date: "August 27th, 2026",
+  //   title: `Guest Lecture on Formation of Contracts Organized at the Institute of Legal Studies`,
+  //   description: `
+  //   The <strong>Institute of Legal Studies</strong> is organizing a special Guest Lecture on <strong>"From Online Shopping to Business Deals: Understanding the Formation of Contracts"</strong> under the aegis of the Institution's Innovation Council (IIC), Ministry of Education.
 
-    <br/><strong>Event Details</strong><br/>
-    <strong>📅 Date:</strong> 27 August 2026<br/>
-    <strong>⏰ Time:</strong> 10:30 AM onwards<br/>
-    <strong>📍 Venue:</strong> B1-007, SRMU<br/>
-    <strong>🎤 Guest Speaker:</strong> Prof. (Dr.) Mohd. Nizam Ashraf Khan<br/>
-    <strong>🏛️ Affiliation:</strong> IILM University, Greater Noida<br/>
-    <strong>🏫 Organized By:</strong> Institute of Legal Studies, SRMU
+  //   <br/><strong>Event Details</strong><br/>
+  //   <strong>📅 Date:</strong> 27 August 2026<br/>
+  //   <strong>⏰ Time:</strong> 10:30 AM onwards<br/>
+  //   <strong>📍 Venue:</strong> B1-007, SRMU<br/>
+  //   <strong>🎤 Guest Speaker:</strong> Prof. (Dr.) Mohd. Nizam Ashraf Khan<br/>
+  //   <strong>🏛️ Affiliation:</strong> IILM University, Greater Noida<br/>
+  //   <strong>🏫 Organized By:</strong> Institute of Legal Studies, SRMU
 
-    <br/><strong>About the Lecture</strong><br/>
-    The session will focus on the fundamental principles of contract formation and their practical application in today's digital and commercial environment. Students will explore how contracts are formed in online shopping, e-commerce, and business transactions, with discussions on offer and acceptance, consideration, contractual obligations, and online contracts.
+  //   <br/><strong>About the Lecture</strong><br/>
+  //   The session will focus on the fundamental principles of contract formation and their practical application in today's digital and commercial environment. Students will explore how contracts are formed in online shopping, e-commerce, and business transactions, with discussions on offer and acceptance, consideration, contractual obligations, and online contracts.
 
-    The interactive lecture will also provide students with an opportunity to connect legal theory with real-world examples and interact with the resource person through a question-and-answer session.
+  //   The interactive lecture will also provide students with an opportunity to connect legal theory with real-world examples and interact with the resource person through a question-and-answer session.
 
-    The programme is being organized under the guidance of Hon'ble Chancellor Er. Pankaj Agrawal, Pro-Chancellor Er. Pooja Agrawal, and Vice-Chancellor Prof. (Dr.) Vijay Tiwari, and under the direction of Prof. (Dr.) Narendra Bahadur Singh, Director, Institute of Legal Studies.
-  `,
-  },
+  //   The programme is being organized under the guidance of Hon'ble Chancellor Er. Pankaj Agrawal, Pro-Chancellor Er. Pooja Agrawal, and Vice-Chancellor Prof. (Dr.) Vijay Tiwari, and under the direction of Prof. (Dr.) Narendra Bahadur Singh, Director, Institute of Legal Studies.
+  // `,
+  // },
   {
     id: 17,
     isRedirect: false,
@@ -761,69 +761,69 @@ The session provided students with an opportunity to interact with an accomplish
   //   </div>
   // `,
   // },
-  {
-    id: 7,
-    isRedirect: false,
-    image: alumini_connect_desktop,
-    imageSmall: alumini_connect_mobile,
-    date: "June 18th , 2026",
-    title: `Alumni Connect 2026 – "A Bridge Between Our Proud Past and a Promising Future"`,
-    description: `
-    <p>
-    The Institute of Management, Commerce & Economics (IMCE), Faculty of Commerce & Economics, SRMU, successfully organized "Alumni Connect 2026" on 18th June 2026, 10:00 AM–12:30 PM, via Google Meet, under the theme "Reconnect, Inspire, Empower." The event connected alumni with current students of B.Com, BA (Hons.) Economics, and M.Com programmes.
-    </p>
+//   {
+//     id: 7,
+//     isRedirect: false,
+//     image: alumini_connect_desktop,
+//     imageSmall: alumini_connect_mobile,
+//     date: "June 18th , 2026",
+//     title: `Alumni Connect 2026 – "A Bridge Between Our Proud Past and a Promising Future"`,
+//     description: `
+//     <p>
+//     The Institute of Management, Commerce & Economics (IMCE), Faculty of Commerce & Economics, SRMU, successfully organized "Alumni Connect 2026" on 18th June 2026, 10:00 AM–12:30 PM, via Google Meet, under the theme "Reconnect, Inspire, Empower." The event connected alumni with current students of B.Com, BA (Hons.) Economics, and M.Com programmes.
+//     </p>
 
-    <p class="mt-2">
-The session featured keynote talks by distinguished alumni from corporate, financial, and entrepreneurial backgrounds, followed by a panel discussion on industry trends, career opportunities, and higher education prospects. An interactive Q&A allowed students to seek mentorship and career advice, while a networking session enabled deeper alumni-student-faculty connections.
-    </p>
+//     <p class="mt-2">
+// The session featured keynote talks by distinguished alumni from corporate, financial, and entrepreneurial backgrounds, followed by a panel discussion on industry trends, career opportunities, and higher education prospects. An interactive Q&A allowed students to seek mentorship and career advice, while a networking session enabled deeper alumni-student-faculty connections.
+//     </p>
 
-    <p class="mt-2">
-The event was graced by university leadership, including Chancellor Er. Pankaj Agarwal, Vice Chancellor Prof. (Dr.) Vijay Tiwari, and Registrar Prof. (Dr.) Hemendra Sharma, and coordinated by the IMCE organizing committee under Prof. (Dr.) Veena Singh, HOD. The session saw enthusiastic student participation, reaffirming the faculty's commitment to alumni engagement.
-    </p>
-  	`,
-  },
-  {
-    id: 6,
-    isRedirect: false,
-    image: alumini1_desktop,
-    imageSmall: alumini1_mobile,
-    date: "June 18th , 2026",
-    title: `Alumni Connect 2026 – "Let's Build Tomorrow, Together"`,
-    description: `
-    <p>
-The Polytechnic, Faculty of Civil Engineering, Shri Ramswaroop Memorial University, successfully organized "Alumni Connect 2026" on 18th June 2026, 12:30 PM–2:30 PM, via Google Meet, with the goal of strengthening alumni-student bonds and empowering the next generation of civil engineers.
-    </p>
+//     <p class="mt-2">
+// The event was graced by university leadership, including Chancellor Er. Pankaj Agarwal, Vice Chancellor Prof. (Dr.) Vijay Tiwari, and Registrar Prof. (Dr.) Hemendra Sharma, and coordinated by the IMCE organizing committee under Prof. (Dr.) Veena Singh, HOD. The session saw enthusiastic student participation, reaffirming the faculty's commitment to alumni engagement.
+//     </p>
+//   	`,
+//   },
+//   {
+//     id: 6,
+//     isRedirect: false,
+//     image: alumini1_desktop,
+//     imageSmall: alumini1_mobile,
+//     date: "June 18th , 2026",
+//     title: `Alumni Connect 2026 – "Let's Build Tomorrow, Together"`,
+//     description: `
+//     <p>
+// The Polytechnic, Faculty of Civil Engineering, Shri Ramswaroop Memorial University, successfully organized "Alumni Connect 2026" on 18th June 2026, 12:30 PM–2:30 PM, via Google Meet, with the goal of strengthening alumni-student bonds and empowering the next generation of civil engineers.
+//     </p>
 
-    <p class="mt-2">
-The session covered key themes including Alumni Career Journeys, Industry Trends & Future Opportunities, Career Guidance & Placement Readiness, Higher Education & Entrepreneurship Opportunities, and Alumni Feedback on Curriculum & Skill Development. Alumni speakers shared their journeys "from classrooms to construction sites, from ideas to impact," giving students a real-world perspective on translating academic learning into professional practice.
-    </p>
+//     <p class="mt-2">
+// The session covered key themes including Alumni Career Journeys, Industry Trends & Future Opportunities, Career Guidance & Placement Readiness, Higher Education & Entrepreneurship Opportunities, and Alumni Feedback on Curriculum & Skill Development. Alumni speakers shared their journeys "from classrooms to construction sites, from ideas to impact," giving students a real-world perspective on translating academic learning into professional practice.
+//     </p>
 
-    <p class="mt-2">
-An interactive Q&A session enabled students to engage directly with alumni, sparking enthusiastic discussions on career planning, industry expectations, and skill-building.
-The event reflected the Polytechnic's commitment to fostering strong alumni-student relationships, reinforcing the vision of building a stronger foundation for future civil engineers. Encouraged by the positive response, the faculty plans to host similar sessions ahead.    </p>
-  	`,
-  },
-  {
-    id: 5,
-    isRedirect: false,
-    image: alumini2_desktop,
-    imageSmall: alumini2_mobile,
-    date: "June 18th , 2026",
-    title: `Alumni Conclave 2026 – Connecting Alumni, Inspiring Students, Building Futures`,
-    description: `
-    <p>
-The Institute of Natural Sciences and Humanities (INSH), Shri Ramswaroop Memorial University, successfully organized "Alumni Conclave 2026" on 18th June 2026, 2:00 PM–3:30 PM, via Google Meet. Jointly hosted by the Faculty of Physical Sciences, Faculty of Chemical Sciences, and Faculty of Mathematical & Statistical Sciences, the event centered on the theme "Connecting Alumni, Inspiring Students, Building Futures."
-    </p>
+//     <p class="mt-2">
+// An interactive Q&A session enabled students to engage directly with alumni, sparking enthusiastic discussions on career planning, industry expectations, and skill-building.
+// The event reflected the Polytechnic's commitment to fostering strong alumni-student relationships, reinforcing the vision of building a stronger foundation for future civil engineers. Encouraged by the positive response, the faculty plans to host similar sessions ahead.    </p>
+//   	`,
+//   },
+//   {
+//     id: 5,
+//     isRedirect: false,
+//     image: alumini2_desktop,
+//     imageSmall: alumini2_mobile,
+//     date: "June 18th , 2026",
+//     title: `Alumni Conclave 2026 – Connecting Alumni, Inspiring Students, Building Futures`,
+//     description: `
+//     <p>
+// The Institute of Natural Sciences and Humanities (INSH), Shri Ramswaroop Memorial University, successfully organized "Alumni Conclave 2026" on 18th June 2026, 2:00 PM–3:30 PM, via Google Meet. Jointly hosted by the Faculty of Physical Sciences, Faculty of Chemical Sciences, and Faculty of Mathematical & Statistical Sciences, the event centered on the theme "Connecting Alumni, Inspiring Students, Building Futures."
+//     </p>
 
-    <p class="mt-2">
-Distinguished alumni speakers — Mr. Akash Saxena (Ph.D. Scholar, IIT Bombay), Mr. Vivekanand Chaubey (Research Scholar, IIT Indore), and Ms. Ritika Jain (MBA Student, SRMCEM Lucknow) — shared their academic journeys and career insights, engaging students through discussions on higher education, research pathways, and career planning.
-    </p>
+//     <p class="mt-2">
+// Distinguished alumni speakers — Mr. Akash Saxena (Ph.D. Scholar, IIT Bombay), Mr. Vivekanand Chaubey (Research Scholar, IIT Indore), and Ms. Ritika Jain (MBA Student, SRMCEM Lucknow) — shared their academic journeys and career insights, engaging students through discussions on higher education, research pathways, and career planning.
+//     </p>
 
-    <p class="mt-2">
-The session saw enthusiastic participation from students and faculty across departments, who benefited from alumni success stories and direct interaction. The event reaffirmed INSH's commitment to strengthening alumni engagement, with plans for similar sessions ahead.
-</p>
-  	`,
-  },
+//     <p class="mt-2">
+// The session saw enthusiastic participation from students and faculty across departments, who benefited from alumni success stories and direct interaction. The event reaffirmed INSH's commitment to strengthening alumni engagement, with plans for similar sessions ahead.
+// </p>
+//   	`,
+//   },
 
   {
     id: 4,

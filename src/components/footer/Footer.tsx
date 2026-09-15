@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import logosrmcem from "../../assets/images/logo.svg";
+import logosrmcem from "../../assets/images/logo1.png";
 import Classes from "../../utils/styles/Global.module.css";
 import { Link } from "react-router-dom";
 import { FaPhone } from "react-icons/fa";
@@ -20,7 +20,9 @@ export const footerData = {
     "Shri Ramswaroop Memorial College of Engineering & Management, Lucknow is one of the leading institutes of professional education in UP. SRMCEM is affiliated to Dr. A.P.J. Abdul Kalam Technical University and recognized by AICTE.",
   contact: {
     address: "Shri Ramswaroop Memorial University Lucknow Deva Road, Barabanki",
+    address2: "C-2/42, Vishesh Khand, Opposite Chote Lal Nursery, Gomtinagar, Lucknow",
     phone1: "+91-9838904666",
+    tollfree: "18001026004",
     // phone2: "983-901-0407",
     email: "admissions@srmu.ac.in",
   },
@@ -136,6 +138,18 @@ export const footerData = {
       title: "RTI",
       path: "/rti",
     },
+    {
+      id: 3,
+      title: "Student Login",
+      path: "https://eyojan.srmu.ac.in/",
+      external: true,
+    },
+    {
+      id: 4,
+      title: "Staff Login",
+      path: "https://eyojan.srmu.ac.in/",
+      external: true,
+    },
     // {
     //   id: 2,
     //   title: "Mandatory Disclosure",
@@ -161,13 +175,13 @@ export const footerData = {
     },
     {
       id: 3,
-      title: "Events",
-      path: "/events",
+      title: "Blogs",
+      path: "/blogs",
     },
     {
       id: 4,
-      title: "Blogs",
-      path: "/blogs",
+      title: "Shift Schedule",
+      path: "/shift-schedule",
     },
   ],
   getResponsible: [
@@ -227,7 +241,7 @@ const Footer: React.FC = () => {
       <footer className={` text-white py-20`}>
         <div className={`${Classes["container"]} relative z-100 py-10 sm:py-20`}>
           <div className="w-full manage_footer_column ">
-            <div className="w-fullspace-y-4 flex flex-col grid-first">
+            <div className="w-full space-y-4 flex flex-col grid-first">
               <div className="flex items-center gap-3">
                 <div>
                   <img
@@ -264,6 +278,23 @@ const Footer: React.FC = () => {
                   </div>
                   <p className="lg:!text-[14px] !text-[13.132px]">{footerData.contact.address}</p>
                 </div>
+                {/* Gomtinagar Office Address */}
+                <div className="flex flex-col gap-2">
+                  <div className="flex items-center gap-x-1">
+                    <span>
+                      <Link
+                        to="https://maps.app.goo.gl/uxeq6Shi7D5aAJ5RA"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Google Maps Gomtinagar Location"
+                      >
+                        <MdLocationPin size={24} />
+                      </Link>
+                    </span>
+                    <h2 className="font-semibold text-[14px] sm:text-base text-[#ffb703] uppercase">Lucknow Office</h2>
+                  </div>
+                  <p className="lg:!text-[14px] !text-[13.132px]">{footerData.contact.address2}</p>
+                </div>
                 <div className="flex flex-col gap-2 ">
                   <div className="flex items-center gap-x-2">
                     <span>
@@ -274,6 +305,22 @@ const Footer: React.FC = () => {
                     <h2 className="font-semibold text-[14px] sm:text-base text-[#ffb703] uppercase">Phone</h2>
                   </div>
                   <p className="lg:!text-[14px] !text-[13.132px]">{footerData.contact.phone1}</p>
+                </div>
+                {/* Toll-Free */}
+                <div className="flex flex-col gap-2 ">
+                  <div className="flex items-center gap-x-2">
+                    <span>
+                      <Link to="tel:18001026004" target="_blank" rel="noopener noreferrer" aria-label="Admission Toll-Free Number">
+                        <FaPhone />
+                      </Link>
+                    </span>
+                    <h2 className="font-semibold text-[14px] sm:text-base text-[#ffb703] uppercase">Admission Tollfree</h2>
+                  </div>
+                  <p className="lg:!text-[14px] !text-[13.132px]">
+                    <Link to="tel:18001026004" className="hover:text-[#ffb703] transition-colors">
+                      {footerData.contact.tollfree}
+                    </Link>
+                  </p>
                 </div>
                 <div className="flex gap-2 flex-col">
                   <div className="flex items-center gap-x-2">
@@ -424,8 +471,8 @@ const Footer: React.FC = () => {
                 {footerData.getConected.map((link, index) => (
                   <li key={index}>
                     <div className="flex items-center group hover:text-[#ffb703]">
-                      {link.title === "Grievance Redressal" ? (
-                        <a href={link.path} target="_blank" className=" lg:!text-[14px] !text-[13.132px] text-white group-hover:text-[#ffb703]">
+                      {link.title === "Grievance Redressal" || (link as any).external ? (
+                        <a href={link.path} target="_blank" rel="noopener noreferrer" className=" lg:!text-[14px] !text-[13.132px] text-white group-hover:text-[#ffb703]">
                           {link.title}
                         </a>
                       ) : (

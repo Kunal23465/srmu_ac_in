@@ -106,9 +106,9 @@ export default function HeroApplyForm() {
             Shri Ramswaroop Memorial University
           </h3>
 
-          <p className="text-[10px] md:text-[11px] text-white/70 mt-1">
+          {/* <p className="text-[10px] md:text-[11px] text-white/70 mt-1">
             Begin your journey in under 60 seconds
-          </p>
+          </p> */}
 
           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 h-1.5 w-16 rounded-full bg-[#FFC107]" />
         </div>
