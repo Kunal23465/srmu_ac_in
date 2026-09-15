@@ -1,6 +1,5 @@
 import Classes from "../../utils/styles/Global.module.css";
 import { IoCallSharp } from "react-icons/io5";
-import { MdEmail } from "react-icons/md";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import whatsapp from "../../assets/images/whatsapp-icon.png";
@@ -30,46 +29,12 @@ const TopHeader: React.FC = () => {
         {/* DESKTOP HEADER */}
         <div className="hidden lg:flex justify-between ">
           <div className="left-part flex items-center">
-            <Link
-              target="_blank"
-              rel="noopener noreferrer"
-              to="https://students.srmu.ac.in/login"
-              className="px-3 xl:px-4 py-[1rem] flex items-center justify-center"
-            >
-              <img src="/settt-img.png" alt="SRMUSET Logo" className="h-[30px] w-auto" />
-            </Link>
-            {/* <Link to={inductionSchedule} target="_blank" rel="noopener noreferrer" className="bg-white flex items-center px-4 py-[7px] xl:py-[8px] gap-2 border-l border-[#ccc]">
-
-              <div className="flex flex-col text-start ">
-                <p className="text-[13px] font-normal text-black">Induction Schedule</p>
-                <p className="text-[11px] text-black">For New Students</p>
-              </div>
-            </Link> */}
             <ul className="flex items-center text-xs xl:text-[13px] flex-row">
-              {/* <Link className="px-2 xl:px-[0.7rem] border-r border-white" to="/notice">
-                NOTICE
-              </Link> */}
-              {/* <Link
-                className="px-2 xl:px-[0.7rem] border-r border-white"
-                to="/admission-enquiry"
-              >
-                ADMISSION ENQUIRY
-              </Link> */}
             </ul>
           </div>
 
 
           <div className="right-part flex gap-0 items-stretch">
-            {/* Email */}
-            <a
-              href="mailto:admissions@srmu.ac.in"
-              className="relative flex items-center gap-x-2 px-3 xl:px-4 text-white text-xs xl:text-[13px] after:absolute after:right-0 after:top-1/2 after:h-[55%] after:w-px after:-translate-y-1/2 after:bg-white/50"
-              aria-label="Email Admissions at admissions@srmu.ac.in"
-            >
-              <MdEmail className="text-[1.2rem] text-[#FFB703]" />
-              <span>admissions@srmu.ac.in</span>
-            </a>
-
             {/* WhatsApp */}
             <a
               href="https://wa.me/919120007948"
@@ -79,19 +44,32 @@ const TopHeader: React.FC = () => {
               aria-label="Contact SRMU on WhatsApp"
             >
               <img src={whatsapp} alt="WhatsApp" width={16} height={16} loading="eager" decoding="async" className="w-4 h-4" />
-              <span>WhatsApp</span>
+              <div className="flex flex-col text-start">
+                <span>WhatsApp</span>
+                <span className="text-[11px] font-normal">919120007948</span>
+              </div>
             </a>
 
             {/* Phone Helpline */}
-            <button className="flex items-center px-4 py-[5px] gap-2">
+            <button className="relative flex items-center px-4 py-[5px] gap-2 after:absolute after:right-0 after:top-1/2 after:h-[55%] after:w-px after:-translate-y-1/2 after:bg-white/50">
               <a href="tel:18001026004" className="text-[#FFB703]" aria-label="Call Admission Helpline 18001026004">
                 <IoCallSharp className="text-[1.5rem]" />
               </a>
-              <div className="flex flex-col text-start ">
-                <p className="text-[11px] font-normal text-white">Admission Helpline</p>
+              <div className="flex flex-col text-start leading-none gap-0">
+                <p className="text-[11px] font-normal text-white">Admission Toll Free</p>
                 <p className="text-[13px] text-white">18001026004</p>
               </div>
             </button>
+
+            {/* SRMUSET Logo */}
+            <Link
+              target="_blank"
+              rel="noopener noreferrer"
+              to="https://students.srmu.ac.in/login"
+              className="flex items-center justify-center px-3 xl:px-4"
+            >
+              <img src="/settt-img.png" alt="SRMUSET Logo" className="h-[22px] w-auto" />
+            </Link>
 
             {/* <Link
               target="_blank"

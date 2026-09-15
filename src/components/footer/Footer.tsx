@@ -302,7 +302,7 @@ const Footer: React.FC = () => {
                         <FaPhone />
                       </Link>
                     </span>
-                    <h2 className="font-semibold text-[14px] sm:text-base text-[#ffb703] uppercase">Phone</h2>
+                    <h2 className="font-semibold text-[14px] sm:text-base text-[#ffb703] uppercase">Admission Helpline</h2>
                   </div>
                   <p className="lg:!text-[14px] !text-[13.132px]">{footerData.contact.phone1}</p>
                 </div>
@@ -314,7 +314,7 @@ const Footer: React.FC = () => {
                         <FaPhone />
                       </Link>
                     </span>
-                    <h2 className="font-semibold text-[14px] sm:text-base text-[#ffb703] uppercase">Admission Tollfree</h2>
+                    <h2 className="font-semibold text-[14px] sm:text-base text-[#ffb703] uppercase">Admission Toll Free</h2>
                   </div>
                   <p className="lg:!text-[14px] !text-[13.132px]">
                     <Link to="tel:18001026004" className="hover:text-[#ffb703] transition-colors">
