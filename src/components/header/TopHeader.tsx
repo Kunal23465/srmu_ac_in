@@ -23,7 +23,7 @@ const TopHeader: React.FC = () => {
 
   return (
     <div
-      className={`${Classes["top_header"]} text-white bg-white lg:bg-[#0f4a85] text-[0.84rem]`}
+      className={`${Classes["top_header"]} text-white bg-[#E5E4E2] lg:bg-[#0f4a85] text-[0.84rem]`}
     >
       <div className={`${isDesktop ? Classes["container"] : ""}`}>
         {/* DESKTOP HEADER */}

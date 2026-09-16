@@ -4,6 +4,7 @@ import Classes from "../utils/styles/Global.module.css";
 import useEmblaCarousel from "embla-carousel-react";
 import { ArrowLeft, ArrowRight, Download, PhoneCall, Sparkles, BookOpen, Shield, Award, Trophy, CheckCircle2, Code2, Lock, Cpu, Compass, ChevronDown, ChevronUp } from "lucide-react";
 import { Link } from "react-router-dom";
+import ltLogo from "../assets/new-home/l-t.webp";
 
 const recruiterLogos = [
     ["https://ik.imagekit.io/ttalcskjf/tcs.webp", "TCS"],
@@ -144,316 +145,89 @@ const BTechCseCyberSecurityNew = () => {
     };
 
     return (
-        <div className="text-[#14284E] bg-white antialiased mt-12">
+        <div className="text-[#14284E] bg-white antialiased">
             <main>
 
-                <section className="relative pt-4 sm:pt-20 lg:pt-24 pb-8 lg:pb-12 w-full overflow-hidden">
-                    {/* Background Video changes not reflected*/}
-                    <video
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
+                <section className="relative pt-[78px] pb-8 md:min-h-[720px] md:pt-36 md:pb-20 w-full overflow-hidden flex items-center">
+                    <img
+                        src="/shared-image-banner.jpg"
+                        alt="Cyber Security Banner"
                         className="absolute inset-0 w-full h-full object-cover z-0"
-                    >
-                        <source src="/bannerVideo.mp4" type="video/mp4" />
-                    </video>
+                    />
                     {/* Semi-Transparent Cinematic Scrim */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#071329]/55 via-[#091a38]/40 to-[#071329]/25"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#071329]/15 via-[#091a38]/5 to-transparent"></div>
 
                     {/* Subtle Tech Cyber Grid & Ambient Lights */}
                     <div className="absolute inset-0 bg-[radial-gradient(#38bdf820_1px,transparent_1px)] [background-size:28px_28px] pointer-events-none opacity-50"></div>
                     <div className="absolute -top-20 -left-20 w-96 h-96 bg-[#1b4f91]/25 rounded-full blur-[130px] pointer-events-none"></div>
                     <div className="absolute top-1/2 right-4 w-80 h-80 bg-[#ffc107]/15 rounded-full blur-[120px] pointer-events-none"></div>
 
-                    <div className={`${Classes["container"]} mt-0 sm:mt-16 relative z-10 grid lg:grid-cols-[1.18fr_0.82fr] gap-10 lg:gap-14`}>
-                        {/* Left Side */}
-                        <div className="flex flex-col items-start justify-center h-full pt-8 lg:pt-0">
-                            {/* Eyebrow / Kicker */}
-                            <div className="w-full">
-                                {/* <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#ffc107]/15 border border-[#ffc107]/45 backdrop-blur-md shadow-[0_0_15px_rgba(255,193,7,0.2)] mb-5 group">
-                                    <span className="relative flex h-2 w-2">
-                                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ffc107] opacity-85"></span>
-                                        <span className="relative inline-flex rounded-full h-2 w-2 bg-[#ffc107]"></span>
-                                    </span>
-                                    <span className="text-[14.5px] tracking-[0.08em] uppercase text-[#ffc107] font-bold align-middle">
-                                        B.Tech CSE (Cyber Security) — with
-                                        <span className="hidden sm:inline"> Larsen &amp; Toubro</span>
-                                        <span className="sm:hidden inline-block ml-1.5 align-middle">
-                                            <img src="https://ik.imagekit.io/ttalcskjf/l-t.webp?updatedAt=1788591605708" alt="L&T" className="h-[22px] w-auto object-contain" />
-                                        </span>
-                                    </span>
-                                </div> */}
-
-                                {/* H1 */}
-                                <h1 className="text-[clamp(30px,4vw,46px)] leading-[1.14] font-bold font-display text-white tracking-tight mb-4.5 flex flex-wrap items-center gap-2">
-                                    <span className="drop-shadow-md">Learn B.Tech CSE Cyber Security in Lucknow with</span>
-                                    <span className="bg-white/95 px-2.5 py-1 rounded-lg shadow-sm flex items-center shrink-0">
-                                        <img
-                                            src="https://ik.imagekit.io/ttalcskjf/l-t.webp?updatedAt=1788591605708"
-                                            alt="L&T EduTech"
-                                            className="inline-block h-[0.85em] w-auto align-middle"
-                                        />
-                                    </span>
-                                    <span className="drop-shadow-md">at SRMU</span>
-                                </h1>
-
-                                {/* H2 */}
-                                {/* <h2 className="text-[clamp(20px,2.5vw,28px)] leading-[1.2] font-bold font-display text-sky-200 mb-3 drop-shadow-sm">
-                                    Learn B.Tech CSE Cyber Security with L&T at SRMU
-                                </h2> */}
-
-                                {/* Tagline */}
-                                {/* <div className="inline-flex items-center gap-2 mb-4.5 px-3.5 py-1.5 rounded-xl bg-amber-400/10 border border-amber-400/30 backdrop-blur-sm shadow-sm">
-                                    <Sparkles className="w-4 h-4 text-[#ffc107] animate-pulse" />
-                                    <p className="text-[18px] text-[#ffc107] font-semibold tracking-wide">Build the Skills to Secure the Digital World</p>
-                                </div> */}
-
-                            </div>
-
-                            {/* Description */}
-                            {/* <p className="text-[15.5px] text-[#D4E2F4] leading-relaxed mb-5.5 max-w-[56ch]">
-                                Pursue B.Tech CSE (Cyber Security) in Lucknow at Shri Ramswaroop Memorial University (SRMU) and develop the technical skills needed to understand, protect, and
-                                secure modern digital systems. SRMU is among the institutions students consider when looking for the best B.Tech college in Lucknow for industry-oriented
-                                engineering education.
-                            </p> */}
-
-                            {/* Checklist */}
-                            {/* <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 gap-x-4.5 w-full mb-7.5">
-                                <li className="flex gap-2 items-start text-[14.5px] text-white font-medium">
-                                    <span className="text-[#071329] bg-gradient-to-tr from-[#ffc107] to-[#ffe082] w-[18px] h-[18px] rounded-full flex items-center justify-center text-[11px] mt-0.5 flex-none shadow-[0_0_10px_rgba(255,193,7,0.5)]">
-                                        ✓
-                                    </span>
-                                    Industry-integrated learning with L&T
-                                </li>
-                                <li className="flex gap-2 items-start text-[14.5px] text-white font-medium">
-                                    <span className="text-[#071329] bg-gradient-to-tr from-[#ffc107] to-[#ffe082] w-[18px] h-[18px] rounded-full flex items-center justify-center text-[11px] mt-0.5 flex-none shadow-[0_0_10px_rgba(255,193,7,0.5)]">
-                                        ✓
-                                    </span>
-                                    Hands-on cybersecurity laboratory exposure
-                                </li>
-                                <li className="flex gap-2 items-start text-[14.5px] text-white font-medium">
-                                    <span className="text-[#071329] bg-gradient-to-tr from-[#ffc107] to-[#ffe082] w-[18px] h-[18px] rounded-full flex items-center justify-center text-[11px] mt-0.5 flex-none shadow-[0_0_10px_rgba(255,193,7,0.5)]">
-                                        ✓
-                                    </span>
-                                    Live projects and capstone development
-                                </li>
-                                <li className="flex gap-2 items-start text-[14.5px] text-white font-medium">
-                                    <span className="text-[#071329] bg-gradient-to-tr from-[#ffc107] to-[#ffe082] w-[18px] h-[18px] rounded-full flex items-center justify-center text-[11px] mt-0.5 flex-none shadow-[0_0_10px_rgba(255,193,7,0.5)]">
-                                        ✓
-                                    </span>
-                                    Industry sessions and workshops
-                                </li>
-                                <li className="flex gap-2 items-start text-[14.5px] text-white font-medium sm:col-span-2">
-                                    <span className="text-[#071329] bg-gradient-to-tr from-[#ffc107] to-[#ffe082] w-[18px] h-[18px] rounded-full flex items-center justify-center text-[11px] mt-0.5 flex-none shadow-[0_0_10px_rgba(255,193,7,0.5)]">
-                                        ✓
-                                    </span>
-                                    Internship and placement support
-                                </li>
-                            </ul> */}
-
-                            {/* CTA Buttons */}
-                            <div className="hidden sm:flex w-full sm:w-auto justify-between sm:justify-start items-center gap-1.5 sm:gap-3 mt-8 sm:mt-10 sm:flex-wrap" id="apply">
-                                <a
-                                    href="https://students.srmu.ac.in/login?_gl=1*1hjhqxh*_gcl_au*ODkzODU3MDY4LjE3ODkxODk4NTc.*_ga*Mjc4NTk1MjY4LjE3ODkxODk4NTc.*_ga_QZEQ59Q6ZL*czE3ODkxOTIxMTIkbzIkZzEkdDE3ODkxOTM2NDIkajYwJGwwJGg1NzMzMjQwNzM."
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex-1 sm:flex-none relative group overflow-hidden bg-gradient-to-r from-[#ffc107] via-[#ffcd38] to-[#e0a800] text-[#071329] font-extrabold text-[10px] sm:text-[14px] px-1 sm:px-5.5 py-2.5 sm:py-3.25 rounded-md shadow-[0_8px_20px_-8px_rgba(217,139,43,0.6)] hover:shadow-[0_12px_30px_rgba(255,193,7,0.65)] hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-1 sm:gap-2 text-center whitespace-nowrap"
-                                >
-                                    <span>Apply Now</span>
-                                    <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 shrink-0 transition-transform duration-300 group-hover:translate-x-1" />
-                                </a>
-                                <a
-                                    href="/Broucher_SRMU_25_April___.pdf"
-                                    target="_blank"
-                                    className="flex-1 sm:flex-none bg-white/12 hover:bg-white/20 text-white font-bold text-[10px] sm:text-[14px] px-1 sm:px-5.5 py-2.5 sm:py-3.25 rounded-md border border-white/25 hover:border-white/50 shadow-md backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 flex items-center justify-center gap-1 sm:gap-2 text-center whitespace-nowrap"
-                                >
-                                    <Download className="w-3 h-3 sm:w-4 sm:h-4 text-sky-300 shrink-0" />
-                                    <span className="sm:hidden">Brochure</span>
-                                    <span className="hidden sm:inline">Download Brochure</span>
-                                </a>
-                                <a
-                                    href="#"
-                                    className="flex-1 sm:flex-none bg-[#1b4f91]/35 hover:bg-[#1b4f91]/60 text-sky-100 hover:text-white font-bold text-[10px] sm:text-[14px] px-1 sm:px-5.5 py-2.5 sm:py-3.25 rounded-md border border-[#38bdf8]/40 hover:border-[#38bdf8]/70 shadow-md backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 flex items-center justify-center gap-1 sm:gap-2 text-center whitespace-nowrap"
-                                >
-                                    <PhoneCall className="w-3 h-3 sm:w-4 sm:h-4 text-[#ffc107] shrink-0" />
-                                    <span className="sm:hidden">Talk to Expert</span>
-                                    <span className="hidden sm:inline">Talk to Admission Expert</span>
-                                </a>
-                            </div>
-
-                            {/* Mobile-only Apply Now Form */}
-                            <div className="sm:hidden mt-5 rounded-2xl overflow-hidden shadow-xl border border-white/10">
-                                <div className="bg-[#14284E] px-4 py-3 text-center">
-                                    <h3 className="text-white font-bold text-[15px]">Shri Ramswaroop Memorial University</h3>
-                                    {/* <p className="text-sky-200 text-[11px] mt-0.5">Begin your journey in under 60 seconds</p> */}
-                                    <div className="w-8 h-0.5 bg-[#ffc107] mx-auto mt-2 rounded-full"></div>
-                                </div>
-                                <div className="bg-white px-4 py-4 space-y-2.5">
-                                    <div className="grid grid-cols-2 gap-2">
-                                        <input type="text" placeholder="First Name" className="w-full border border-gray-200 rounded-lg px-3 py-2 text-[13px] text-gray-700 outline-none focus:border-[#14284E]" />
-                                        <input type="text" placeholder="Last Name" className="w-full border border-gray-200 rounded-lg px-3 py-2 text-[13px] text-gray-700 outline-none focus:border-[#14284E]" />
-                                    </div>
-                                    <input type="email" placeholder="Email Address" className="w-full border border-gray-200 rounded-lg px-3 py-2 text-[13px] text-gray-700 outline-none focus:border-[#14284E]" />
-                                    <input type="tel" placeholder="Phone Number" className="w-full border border-gray-200 rounded-lg px-3 py-2 text-[13px] text-gray-700 outline-none focus:border-[#14284E]" />
-                                    <div className="grid grid-cols-2 gap-2">
-                                        <select className="w-full border border-gray-200 rounded-lg px-3 py-2 text-[13px] text-gray-500 outline-none focus:border-[#14284E] bg-white">
-                                            <option value="">Level</option>
-                                            <option>UG</option>
-                                            <option>PG</option>
-                                        </select>
-                                        <select className="w-full border border-gray-200 rounded-lg px-3 py-2 text-[13px] text-gray-500 outline-none focus:border-[#14284E] bg-white">
-                                            <option value="">Programme</option>
-                                            <option>B.Tech CSE Cyber Security</option>
-                                        </select>
-                                    </div>
-                                    <div className="grid grid-cols-2 gap-2">
-                                        <select className="w-full border border-gray-200 rounded-lg px-3 py-2 text-[13px] text-gray-500 outline-none focus:border-[#14284E] bg-white">
-                                            <option value="">State</option>
-                                            <option>Uttar Pradesh</option>
-                                            <option>Delhi</option>
-                                            <option>Other</option>
-                                        </select>
-                                        <select className="w-full border border-gray-200 rounded-lg px-3 py-2 text-[13px] text-gray-500 outline-none focus:border-[#14284E] bg-white">
-                                            <option value="">City</option>
-                                            <option>Lucknow</option>
-                                            <option>Other</option>
-                                        </select>
-                                    </div>
-                                    <p className="text-[10px] text-gray-500 flex items-start gap-1.5">
-                                        <input type="checkbox" defaultChecked className="mt-0.5 shrink-0" />
-                                        I authorise SRMU and its representatives to Call, SMS, Email or WhatsApp me regarding admissions and programmes.
-                                    </p>
-                                    <button className="w-full bg-[#ffc107] hover:bg-[#e0a800] text-[#14284E] font-bold text-[14px] py-3 rounded-xl transition-colors flex items-center justify-center gap-2">
-                                        APPLY NOW →
-                                    </button>
-                                </div>
-                            </div>
+                    <div className={`${Classes["container"]} relative z-10 w-full`}>
+                        {/* Banner Text */}
+                        <div className="w-full max-w-[650px] text-white text-left mb-8 sm:mb-0">
+                            <h2 className="text-[clamp(24px,3vw,36px)] font-semibold mb-1 leading-[1.2] drop-shadow-md">
+                                B.Tech. Computer Science<br className="hidden sm:block" /> and Engineering
+                            </h2>
+                            <h1 className="text-[clamp(40px,5vw,64px)] leading-[1.1] font-bold text-[#38bdf8] drop-shadow-md">
+                                Cyber Security
+                            </h1>
+                            <div className="h-[3px] bg-[#38bdf8] w-[140px] sm:w-[200px] mt-1 mb-2 sm:mb-4 rounded-full"></div>
+                            <p className="text-[clamp(16px,2vw,22px)] font-light mt-2 sm:mt-4 drop-shadow-md">
+                                In collaboration with <span className="font-bold">L&T</span>
+                            </p>
                         </div>
 
-                        {/* Right Side - Executive Program Highlights Hub */}
-                        <div className="relative w-full max-w-[450px] mx-auto lg:ml-auto">
-                            <div className="relative rounded-none p-0 bg-transparent shadow-none sm:rounded-3xl sm:p-8 sm:bg-gradient-to-b sm:from-[#0e2247]/90 sm:via-[#0a1b38]/90 sm:to-[#07142b]/95 sm:backdrop-blur-2xl sm:border sm:border-white/15 sm:shadow-[0_25px_60px_-15px_rgba(0,0,0,0.7)] overflow-hidden">
-                                <div className="absolute top-0 right-0 w-44 h-44 bg-[#38bdf8]/10 rounded-full blur-3xl pointer-events-none"></div>
-                                <div className="absolute bottom-0 left-0 w-44 h-44 bg-[#ffc107]/10 rounded-full blur-3xl pointer-events-none"></div>
-
-                                {/* Top Header Badge */}
-                                <div className="hidden sm:flex items-center justify-between gap-2 pb-5 mb-5 border-b border-white/10 relative z-10">
-                                    <div className="flex items-center gap-2.5">
-                                        {/* <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#1B4F91] to-[#2563eb] text-[#ffc107] flex items-center justify-center flex-none shadow-md border border-white/10">
-                                            <Shield className="w-5 h-5" />
-                                        </div> */}
-
-                                        <img className="max-w-[100px] bg-white p-2 rounded-md" src="https://ik.imagekit.io/ttalcskjf/l-t.webp" alt="l&t" />
-                                    </div>
-                                    <span className="hidden sm:inline-flex text-nowrap items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/35 text-emerald-300 text-[11px] font-medium">
-                                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                                        2026-27
-                                    </span>
+                        {/* Mobile-only Apply Now Form */}
+                        <div className="sm:hidden mt-5 mb-8 rounded-2xl overflow-hidden shadow-xl border border-white/10">
+                            <div className="bg-[#14284E] px-4 py-3 text-center">
+                                <h3 className="text-white font-bold text-[15px]">Shri Ramswaroop Memorial University</h3>
+                                <div className="w-8 h-0.5 bg-[#ffc107] mx-auto mt-2 rounded-full"></div>
+                            </div>
+                            <div className="bg-white px-4 py-4 space-y-2.5">
+                                <div className="grid grid-cols-2 gap-2">
+                                    <input type="text" placeholder="First Name" className="w-full border border-gray-200 rounded-lg px-3 py-2 text-[13px] text-gray-700 outline-none focus:border-[#14284E]" />
+                                    <input type="text" placeholder="Last Name" className="w-full border border-gray-200 rounded-lg px-3 py-2 text-[13px] text-gray-700 outline-none focus:border-[#14284E]" />
                                 </div>
-
-                                <div className="hidden sm:block mb-5 relative z-10">
-                                    <h3 className="text-white font-display font-bold text-[19px] sm:text-[21px] tracking-tight mb-1">Industry-Ready by Design</h3>
-                                    <p className="text-sky-200/80 text-[14.5px] font-medium">Cyber labs · Live projects · Certifications</p>
+                                <input type="email" placeholder="Email Address" className="w-full border border-gray-200 rounded-lg px-3 py-2 text-[13px] text-gray-700 outline-none focus:border-[#14284E]" />
+                                <input type="tel" placeholder="Phone Number" className="w-full border border-gray-200 rounded-lg px-3 py-2 text-[13px] text-gray-700 outline-none focus:border-[#14284E]" />
+                                <div className="grid grid-cols-2 gap-2">
+                                    <select className="w-full border border-gray-200 rounded-lg px-3 py-2 text-[13px] text-gray-500 outline-none focus:border-[#14284E] bg-white">
+                                        <option value="">Level</option>
+                                        <option>UG</option>
+                                        <option>PG</option>
+                                    </select>
+                                    <select className="w-full border border-gray-200 rounded-lg px-3 py-2 text-[13px] text-gray-500 outline-none focus:border-[#14284E] bg-white">
+                                        <option value="">Programme</option>
+                                        <option>B.Tech CSE Cyber Security</option>
+                                    </select>
                                 </div>
-
-                                {/* Stats — hidden on mobile */}
-                                <div className="hidden sm:grid grid-cols-2 gap-2 sm:gap-3 mb-5 relative z-10">
-                                    <div className="bg-white/[0.05] hover:bg-white/[0.09] border border-white/10 hover:border-[#ffc107]/40 rounded-lg sm:rounded-2xl p-2 sm:p-3.5 text-center sm:text-left transition-all duration-300 group shadow-sm">
-                                        <div className="font-display font-bold sm:font-black text-[20px] text-[#ffc107] group-hover:text-white transition-colors">10+</div>
-                                        <div className="text-[9px] sm:text-[11px] text-sky-100/90 font-semibold mt-0.5">Career Roles</div>
-                                    </div>
-                                    <div className="bg-white/[0.05] hover:bg-white/[0.09] border border-white/10 hover:border-[#ffc107]/40 rounded-lg sm:rounded-2xl p-2 sm:p-3.5 text-center sm:text-left transition-all duration-300 group shadow-sm">
-                                        <div className="font-display font-bold sm:font-black text-[20px] text-[#ffc107] group-hover:text-white transition-colors">7+</div>
-                                        <div className="text-[9px] sm:text-[11px] text-sky-100/90 font-semibold mt-0.5">Certifications</div>
-                                    </div>
-                                    <div className="bg-white/[0.05] hover:bg-white/[0.09] border border-white/10 hover:border-[#ffc107]/40 rounded-lg sm:rounded-2xl p-2 sm:p-3.5 text-center sm:text-left transition-all duration-300 group shadow-sm">
-                                        <div className="font-display font-bold sm:font-black text-[20px] text-[#ffc107] group-hover:text-white transition-colors">18+</div>
-                                        <div className="text-[9px] sm:text-[11px] text-sky-100/90 font-semibold mt-0.5">Enterprise Tools</div>
-                                    </div>
-                                    <div className="bg-white/[0.05] hover:bg-white/[0.09] border border-white/10 hover:border-[#ffc107]/40 rounded-lg sm:rounded-2xl p-2 sm:p-3.5 text-center sm:text-left transition-all duration-300 group shadow-sm">
-                                        <div className="font-display font-bold sm:font-black text-[20px] text-[#ffc107] group-hover:text-white transition-colors">4 Yrs</div>
-                                        <div className="text-[9px] sm:text-[11px] text-sky-100/90 font-semibold mt-0.5">Guided Journey</div>
-                                    </div>
+                                <div className="grid grid-cols-2 gap-2">
+                                    <select className="w-full border border-gray-200 rounded-lg px-3 py-2 text-[13px] text-gray-500 outline-none focus:border-[#14284E] bg-white">
+                                        <option value="">State</option>
+                                        <option>Uttar Pradesh</option>
+                                        <option>Delhi</option>
+                                        <option>Other</option>
+                                    </select>
+                                    <select className="w-full border border-gray-200 rounded-lg px-3 py-2 text-[13px] text-gray-500 outline-none focus:border-[#14284E] bg-white">
+                                        <option value="">City</option>
+                                        <option>Lucknow</option>
+                                        <option>Other</option>
+                                    </select>
                                 </div>
-
-                                {/* Key Highlights */}
-                                <div className="hidden sm:block space-y-2.5 pt-4 border-t border-white/10 relative z-10">
-                                    <div className="flex items-center gap-2.5 text-[12.5px] text-[#DCE6F2] font-medium bg-white/[0.03] px-3 py-2 rounded-xl border border-white/5">
-                                        <Lock className="w-4 h-4 text-[#ffc107] flex-none" />
-                                        <span>Dedicated Security Operations &amp; Forensics Lab</span>
-                                    </div>
-                                    <div className="flex items-center gap-2.5 text-[12.5px] text-[#DCE6F2] font-medium bg-white/[0.03] px-3 py-2 rounded-xl border border-white/5">
-                                        <Cpu className="w-4 h-4 text-sky-400 flex-none" />
-                                        <span>Industry Mentorship with L&amp;T Cyber Division</span>
-                                    </div>
-                                    <div className="flex items-center gap-2.5 text-[12.5px] text-[#DCE6F2] font-medium bg-white/[0.03] px-3 py-2 rounded-xl border border-white/5">
-                                        <Award className="w-4 h-4 text-[#ffc107] flex-none" />
-                                        <span>Placement Training &amp; Global Industry Certifications</span>
-                                    </div>
-                                </div>
+                                <p className="text-[10px] text-gray-500 flex items-start gap-1.5">
+                                    <input type="checkbox" defaultChecked className="mt-0.5 shrink-0" />
+                                    I authorise SRMU and its representatives to Call, SMS, Email or WhatsApp me regarding admissions and programmes.
+                                </p>
+                                <button className="w-full bg-[#ffc107] hover:bg-[#e0a800] text-[#14284E] font-bold text-[14px] py-3 rounded-xl transition-colors flex items-center justify-center gap-2">
+                                    APPLY NOW →
+                                </button>
                             </div>
                         </div>
                     </div>
                 </section>
 
 
-                <div className="bg-[#0F4A85] border-y border-white/10 py-3 sm:py-6.5 relative overflow-hidden">
-                    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(56,189,248,0.06),transparent_70%)] pointer-events-none"></div>
-                    {/* Desktop View */}
-                    <div className={`hidden sm:grid sm:grid-cols-2 md:grid-cols-5 sm:items-stretch gap-5 text-center relative z-10 ${Classes["container"]} mx-auto px-6`}>
-                        <div className="shrink-0 flex flex-col items-center justify-center gap-1 min-h-[30px] p-3 block rounded-xl border-transparent hover:bg-white/[0.03] transition-colors hover:border-white/5">
-                            <div className="font-display font-black text-[21px] text-[#ffc107] tracking-tight">27+ Yrs</div>
-                            <div className="text-[14.5px] text-[#C7D7EC] mt-1 font-medium whitespace-nowrap">Academic Excellence</div>
-                        </div>
-                        <div className="shrink-0 flex flex-col items-center justify-center gap-1 min-h-[30px] p-3 block rounded-xl border-transparent hover:bg-white/[0.03] transition-colors hover:border-white/5">
-                            <div className="font-display font-black text-[21px] text-[#ffc107] tracking-tight">30,000+</div>
-                            <div className="text-[14.5px] text-[#C7D7EC] mt-1 font-medium whitespace-nowrap">Alumni Network</div>
-                        </div>
-                        <div className="shrink-0 flex flex-col items-center justify-center gap-1 min-h-[30px] p-3 block rounded-xl border-transparent hover:bg-white/[0.03] transition-colors hover:border-white/5">
-                            <div className="font-display font-black text-[21px] text-[#ffc107] tracking-tight">300+</div>
-                            <div className="text-[14.5px] text-[#C7D7EC] mt-1 font-medium whitespace-nowrap">Recruiting Companies</div>
-                        </div>
-                        <div className="shrink-0 flex flex-col items-center justify-center gap-1 min-h-[30px] p-3 block rounded-xl border-transparent hover:bg-white/[0.03] transition-colors hover:border-white/5">
-                            <div className="font-display font-black text-[21px] text-[#ffc107] tracking-tight">L&amp;T</div>
-                            <div className="text-[14.5px] text-[#C7D7EC] mt-1 font-medium whitespace-nowrap">Industry-Integrated Learning</div>
-                        </div>
-                        <div className="shrink-0 flex flex-col items-center justify-center gap-1 min-h-[30px] p-3 block rounded-xl border-transparent hover:bg-white/[0.03] transition-colors hover:border-white/5 col-span-2 md:col-span-1">
-                            <div className="font-display font-black text-[21px] text-[#ffc107] tracking-tight">Modern</div>
-                            <div className="text-[14.5px] text-[#C7D7EC] mt-1 font-medium whitespace-nowrap">Research Infrastructure</div>
-                        </div>
-                    </div>
 
-                    {/* Mobile View (Marquee) */}
-                    <div className="sm:hidden relative z-10 w-full overflow-hidden flex items-center">
-                        <div className="flex w-max animate-marquee gap-2 pl-2 hover:pause">
-                            {[...Array(2)].map((_, i) => (
-                                <div key={i} className="flex gap-2">
-                                    <div className="shrink-0 flex items-center justify-center gap-1 min-h-[30px] px-3 py-1.5 rounded-full border border-dashed border-white/25">
-                                        <div className="font-display font-black text-[13px] text-white tracking-tight">27+ Yrs</div>
-                                        <div className="text-[11px] text-[#C7D7EC] font-medium whitespace-nowrap">Academic Excellence</div>
-                                    </div>
-                                    <div className="shrink-0 flex items-center justify-center gap-1 min-h-[30px] px-3 py-1.5 rounded-full border border-dashed border-white/25">
-                                        <div className="font-display font-black text-[13px] text-white tracking-tight">30,000+</div>
-                                        <div className="text-[11px] text-[#C7D7EC] font-medium whitespace-nowrap">Alumni Network</div>
-                                    </div>
-                                    <div className="shrink-0 flex items-center justify-center gap-1 min-h-[30px] px-3 py-1.5 rounded-full border border-dashed border-white/25">
-                                        <div className="font-display font-black text-[13px] text-white tracking-tight">300+</div>
-                                        <div className="text-[11px] text-[#C7D7EC] font-medium whitespace-nowrap">Recruiting Companies</div>
-                                    </div>
-                                    <div className="shrink-0 flex items-center justify-center gap-1 min-h-[30px] px-3 py-1.5 rounded-full border border-dashed border-white/25">
-                                        <div className="font-display font-black text-[13px] text-white tracking-tight">L&amp;T</div>
-                                        <div className="text-[11px] text-[#C7D7EC] font-medium whitespace-nowrap">Industry-Integrated Learning</div>
-                                    </div>
-                                    <div className="shrink-0 flex items-center justify-center gap-1 min-h-[30px] px-3 py-1.5 rounded-full border border-dashed border-white/25">
-                                        <div className="font-display font-black text-[13px] text-white tracking-tight">Modern</div>
-                                        <div className="text-[11px] text-[#C7D7EC] font-medium whitespace-nowrap">Research Infrastructure</div>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
 
 
 
@@ -539,7 +313,7 @@ const BTechCseCyberSecurityNew = () => {
                         </div>
                     </div>
                 </section>
-                <section className="pt-2 sm:pt-4 pb-8 md:pb-10 px-4 sm:px-6 bg-[#F0F6FB]">
+                <section className="pt-8 sm:pt-10 pb-8 md:pb-10 px-4 sm:px-6 bg-white">
                     <div className={`${Classes["container"]}`}>
                         <div className="w-full mb-8">
                             {/* <div className="text-[14.5px] tracking-[0.08em] uppercase text-[#ffc107] font-bold flex items-center gap-2 mb-3.5">
@@ -549,7 +323,7 @@ const BTechCseCyberSecurityNew = () => {
 
                             {/*fixing the not changes shown issue  */}
                             <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3.5">
-                                How Does L&T Benefit B.Tech CSE Cyber Security <span className="text-[#ffc107]">SRMU Students?</span>
+                                How Does <img src={ltLogo} alt="L&T EduTech" className="h-[28px] sm:h-[36px] inline-block align-middle mx-1 sm:mx-2 -mt-1" /> Benefit B.Tech CSE Cyber Security <span className="text-[#ffc107]">SRMU Students?</span>
                             </h2>
                         </div>
 
@@ -560,25 +334,40 @@ const BTechCseCyberSecurityNew = () => {
                                 </p>
 
                                 <div className={rm['ovw1'] ? 'block mt-4' : 'hidden sm:block mt-4'}>
-                                    <div className="flex flex-wrap items-center gap-y-3 gap-x-2 sm:gap-x-3 mb-6">
-                                        {[
-                                            "Secure Networking",
-                                            "Application Security",
-                                            "Ethical Hacking & Penetration Testing",
-                                            "Cyber Forensics",
-                                            "Malware Awareness & Analysis",
-                                            "Governance, Risk & Compliance (GRC)",
-                                            "Bioinformatics & Cybersecurity"
-                                        ].map((domain, idx, arr) => (
-                                            <div key={idx} className="flex items-center gap-2 sm:gap-3">
-                                                <span className="bg-[#E6F0FA] text-[#1B4F91] text-[13px] sm:text-[14px] font-medium px-4 py-2 rounded-full whitespace-nowrap">
-                                                    {domain}
-                                                </span>
-                                                {idx < arr.length - 1 && (
-                                                    <span className="hidden sm:block text-[#1B4F91]/40 text-[16px] sm:text-[20px] leading-none">•</span>
-                                                )}
-                                            </div>
-                                        ))}
+                                    <div className="flex flex-col gap-3 mb-6">
+                                        <div className="flex flex-wrap items-center gap-y-3 gap-x-2 sm:gap-x-3">
+                                            {[
+                                                "Secure Networking",
+                                                "Application Security",
+                                                "Ethical Hacking & Penetration Testing",
+                                                "Cyber Forensics"
+                                            ].map((domain, idx, arr) => (
+                                                <div key={idx} className="flex items-center gap-2 sm:gap-3">
+                                                    <span className="bg-[#E6F0FA] text-[#1B4F91] text-[13px] sm:text-[14px] font-medium px-4 py-2 rounded-full whitespace-nowrap">
+                                                        {domain}
+                                                    </span>
+                                                    {idx < arr.length - 1 && (
+                                                        <span className="hidden sm:block w-1.5 h-1.5 rounded-full bg-[#1B4F91]/30"></span>
+                                                    )}
+                                                </div>
+                                            ))}
+                                        </div>
+                                        <div className="flex flex-wrap items-center gap-y-3 gap-x-2 sm:gap-x-3">
+                                            {[
+                                                "Governance, Risk & Compliance (GRC)",
+                                                "Bioinformatics & Cybersecurity",
+                                                "Malware Awareness & Analysis"
+                                            ].map((domain, idx, arr) => (
+                                                <div key={idx} className="flex items-center gap-2 sm:gap-3">
+                                                    <span className="bg-[#E6F0FA] text-[#1B4F91] text-[13px] sm:text-[14px] font-medium px-4 py-2 rounded-full whitespace-nowrap">
+                                                        {domain}
+                                                    </span>
+                                                    {idx < arr.length - 1 && (
+                                                        <span className="hidden sm:block w-1.5 h-1.5 rounded-full bg-[#1B4F91]/30"></span>
+                                                    )}
+                                                </div>
+                                            ))}
+                                        </div>
                                     </div>
 
                                     <p className="text-[15.5px] text-[#4B5A72] leading-relaxed mb-5">
@@ -589,16 +378,20 @@ const BTechCseCyberSecurityNew = () => {
                                         Students have worked on projects such as:
                                     </p>
 
-                                    <ul className="list-disc pl-5 space-y-2 text-[15.5px] text-[#4B5A72] marker:text-[#ffc107]">
-                                        <li>Network Intrusion Detection & Monitoring System</li>
-                                        <li>Web Application Vulnerability Assessment Tool</li>
-                                        <li>Phishing Detection & Awareness Platform</li>
-                                        <li>Malware Behavior Analysis System</li>
-                                        <li>Digital Forensics Investigation Framework</li>
-                                        <li>Security Information & Event Monitoring Dashboard</li>
-                                        <li>Secure Authentication & Access Control System</li>
-                                        <li>Cyber Risk & Compliance Assessment Framework</li>
-                                    </ul>
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2">
+                                        <ul className="list-disc pl-5 space-y-2 text-[15.5px] text-[#4B5A72] marker:text-[#ffc107]">
+                                            <li>Network Intrusion Detection & Monitoring System</li>
+                                            <li>Web Application Vulnerability Assessment Tool</li>
+                                            <li>Phishing Detection & Awareness Platform</li>
+                                            <li>Malware Behavior Analysis System</li>
+                                        </ul>
+                                        <ul className="list-disc pl-5 space-y-2 text-[15.5px] text-[#4B5A72] marker:text-[#ffc107]">
+                                            <li>Digital Forensics Investigation Framework</li>
+                                            <li>Security Information & Event Monitoring Dashboard</li>
+                                            <li>Secure Authentication & Access Control System</li>
+                                            <li>Cyber Risk & Compliance Assessment Framework</li>
+                                        </ul>
+                                    </div>
                                 </div>
                                 <button className="rm-btn mt-2" onClick={() => toggleRm('ovw1')}>{rm['ovw1'] ? 'Read Less' : 'Read More'}</button>
                             </div>
@@ -681,16 +474,35 @@ const BTechCseCyberSecurityNew = () => {
                         <div className="flex flex-col gap-6 sm:gap-8 mb-7">
 
                             {/* Image - Moved above the text for desktop */}
-                            <div className="hidden sm:block w-full">
-                                <img
-                                    src="/shared-image2.png"
-                                    alt="Industry Integrated Curriculum with L&T"
-                                    className="w-full h-auto object-contain rounded-xl"
-                                    loading="lazy"
-                                />
+                            <div className="w-full overflow-x-auto pb-2">
+                                <div className="relative">
+                                    <img
+                                        src="/shared-image2.png"
+                                        alt="Industry Integrated Curriculum with L&T"
+                                        className="hidden sm:block w-full h-auto object-contain rounded-xl"
+                                        loading="lazy"
+                                    />
+                                    <img
+                                        src="/shared-image5.png"
+                                        alt="Industry Integrated Curriculum with L&T"
+                                        className="sm:hidden w-full h-auto object-contain rounded-xl"
+                                        loading="lazy"
+                                    />
+                                {/* Overlay Text Grid */}
+                                <div className="hidden sm:grid absolute top-[68%] left-[3%] right-[3%] grid-cols-8 gap-1 items-start px-2">
+                                    <div className="text-center text-[clamp(9px,1.05vw,13px)] font-medium text-[#14284E] leading-[1.15]">Secure<br/>Software<br/>Development</div>
+                                    <div className="text-center text-[clamp(9px,1.05vw,13px)] font-medium text-[#14284E] leading-[1.15]">Enterprise<br/>Network<br/>Security</div>
+                                    <div className="text-center text-[clamp(9px,1.05vw,13px)] font-medium text-[#14284E] leading-[1.15]">Cloud<br/>Infrastructure<br/>Security</div>
+                                    <div className="text-center text-[clamp(9px,1.05vw,13px)] font-medium text-[#14284E] leading-[1.15]">Cyber<br/>Risk<br/>Management</div>
+                                    <div className="text-center text-[clamp(9px,1.05vw,13px)] font-medium text-[#14284E] leading-[1.15] mt-1.5">Security<br/>Auditing</div>
+                                    <div className="text-center text-[clamp(9px,1.05vw,13px)] font-medium text-[#14284E] leading-[1.15]">Ethical<br/>Hacking<br/>Methodologies</div>
+                                    <div className="text-center text-[clamp(9px,1.05vw,13px)] font-medium text-[#14284E] leading-[1.15]">Secure<br/>Coding<br/>Practices</div>
+                                    <div className="text-center text-[clamp(9px,1.05vw,13px)] font-medium text-[#14284E] leading-[1.15]">AI &amp; Cyber<br/>Security<br/>Applications</div>
+                                </div>
                             </div>
+                        </div>
 
-                            {/* Text Content */}
+                        {/* Text Content */}
                             <div className="w-full">
                                 <h3 className="text-[17px] sm:text-[19px] font-bold font-display text-[#14284E] mb-3">
                                     Industry Integrated Curriculum with L&T
@@ -778,7 +590,7 @@ const BTechCseCyberSecurityNew = () => {
                                                 how organisations defend against modern cyber threats.
                                             </p>
 
-                                            <ul className="list-disc pl-5 space-y-1.5 mt-2 text-[#4B5A72] text-[13px] sm:text-[14.5px]">
+                                            <ul className="list-disc pl-5 mt-2 text-[#4B5A72] text-[13px] sm:text-[14.5px] columns-1 sm:columns-2 gap-x-4 sm:gap-x-6 [&>li]:mb-1.5 [&>li]:break-inside-avoid">
                                                 <li className="">
                                                     Network Monitoring
                                                 </li>
@@ -813,7 +625,7 @@ const BTechCseCyberSecurityNew = () => {
                                                 how organisations defend against modern cyber threats.
                                             </p>
 
-                                            <ul className="list-disc pl-5 space-y-1.5 mt-2 text-[#4B5A72] text-[13px] sm:text-[14.5px]">
+                                            <ul className="list-disc pl-5 mt-2 text-[#4B5A72] text-[13px] sm:text-[14.5px] columns-1 sm:columns-2 gap-x-4 sm:gap-x-6 [&>li]:mb-1.5 [&>li]:break-inside-avoid">
                                                 <li className="">
                                                     Network Monitoring
                                                 </li>
@@ -897,7 +709,7 @@ const BTechCseCyberSecurityNew = () => {
                                             in legal, controlled lab environments.
                                         </p>
 
-                                        <ul className="list-disc pl-5 space-y-1.5 mt-2 text-[#4B5A72] text-[13px] sm:text-[14.5px]">
+                                        <ul className="list-disc pl-5 mt-2 text-[#4B5A72] text-[13px] sm:text-[14.5px] columns-1 sm:columns-2 gap-x-4 sm:gap-x-6 [&>li]:mb-1.5 [&>li]:break-inside-avoid">
                                             <li className="">
                                                 Password Security
                                             </li>
@@ -932,7 +744,7 @@ const BTechCseCyberSecurityNew = () => {
                                             in legal, controlled lab environments.
                                         </p>
 
-                                        <ul className="list-disc pl-5 space-y-1.5 mt-2 text-[#4B5A72] text-[13px] sm:text-[14.5px]">
+                                        <ul className="list-disc pl-5 mt-2 text-[#4B5A72] text-[13px] sm:text-[14.5px] columns-1 sm:columns-2 gap-x-4 sm:gap-x-6 [&>li]:mb-1.5 [&>li]:break-inside-avoid">
                                             <li className="">
                                                 Password Security
                                             </li>
@@ -992,7 +804,7 @@ const BTechCseCyberSecurityNew = () => {
                                         digital evidence using professional forensic methodologies.
                                     </p>
 
-                                    <ul className="list-disc pl-5 space-y-1.5 mt-2 text-[#4B5A72] text-[13px] sm:text-[14.5px]">
+                                    <ul className="list-disc pl-5 mt-2 text-[#4B5A72] text-[13px] sm:text-[14.5px] columns-1 sm:columns-2 gap-x-4 sm:gap-x-6 [&>li]:mb-1.5 [&>li]:break-inside-avoid">
                                         <li className="">
                                             Log Analysis
                                         </li>
@@ -1000,13 +812,13 @@ const BTechCseCyberSecurityNew = () => {
                                             Hard Disk Investigation
                                         </li>
                                         <li className="">
+                                            Incident Documentation
+                                        </li>
+                                        <li className="">
                                             Memory Forensics
                                         </li>
                                         <li className="">
                                             Email Investigation
-                                        </li>
-                                        <li className="">
-                                            Incident Documentation
                                         </li>
                                     </ul>
                                 </div>
@@ -1023,7 +835,7 @@ const BTechCseCyberSecurityNew = () => {
                                             digital evidence using professional forensic methodologies.
                                         </p>
 
-                                        <ul className="list-disc pl-5 space-y-1.5 mt-2 text-[#4B5A72] text-[13px] sm:text-[14.5px]">
+                                        <ul className="list-disc pl-5 mt-2 text-[#4B5A72] text-[13px] sm:text-[14.5px] columns-1 sm:columns-2 gap-x-4 sm:gap-x-6 [&>li]:mb-1.5 [&>li]:break-inside-avoid">
                                             <li className="">
                                                 Log Analysis
                                             </li>
@@ -1031,13 +843,13 @@ const BTechCseCyberSecurityNew = () => {
                                                 Hard Disk Investigation
                                             </li>
                                             <li className="">
+                                                Incident Documentation
+                                            </li>
+                                            <li className="">
                                                 Memory Forensics
                                             </li>
                                             <li className="">
                                                 Email Investigation
-                                            </li>
-                                            <li className="">
-                                                Incident Documentation
                                             </li>
                                         </ul>
                                     </div>
@@ -1080,7 +892,7 @@ const BTechCseCyberSecurityNew = () => {
                                         across identity, storage, and deployment.
                                     </p>
 
-                                    <ul className="list-disc pl-5 space-y-1.5 mt-2 text-[#4B5A72] text-[13px] sm:text-[14.5px]">
+                                    <ul className="list-disc pl-5 mt-2 text-[#4B5A72] text-[13px] sm:text-[14.5px] columns-1 sm:columns-2 gap-x-4 sm:gap-x-6 [&>li]:mb-1.5 [&>li]:break-inside-avoid">
                                         <li className="">
                                             Identity & Access Management
                                         </li>
@@ -1114,7 +926,7 @@ const BTechCseCyberSecurityNew = () => {
                                             across identity, storage, and deployment.
                                         </p>
 
-                                        <ul className="list-disc pl-5 space-y-1.5 mt-2 text-[#4B5A72] text-[13px] sm:text-[14.5px]">
+                                        <ul className="list-disc pl-5 mt-2 text-[#4B5A72] text-[13px] sm:text-[14.5px] columns-1 sm:columns-2 gap-x-4 sm:gap-x-6 [&>li]:mb-1.5 [&>li]:break-inside-avoid">
                                             <li className="mb-1.5">
                                                 Identity & Access Management
                                             </li>
@@ -1174,7 +986,7 @@ const BTechCseCyberSecurityNew = () => {
                                         responds to live threats.
                                     </p>
 
-                                    <ul className="list-disc pl-5 space-y-1.5 mt-2 text-[#4B5A72] text-[13px] sm:text-[14.5px]">
+                                    <ul className="list-disc pl-5 mt-2 text-[#4B5A72] text-[13px] sm:text-[14.5px] columns-1 sm:columns-2 gap-x-4 sm:gap-x-6 [&>li]:mb-1.5 [&>li]:break-inside-avoid">
                                         <li className="">
                                             SIEM Monitoring
                                         </li>
@@ -1208,7 +1020,7 @@ const BTechCseCyberSecurityNew = () => {
                                             responds to live threats.
                                         </p>
 
-                                        <ul className="list-disc pl-5 space-y-1.5 mt-2 text-[#4B5A72] text-[13px] sm:text-[14.5px]">
+                                        <ul className="list-disc pl-5 mt-2 text-[#4B5A72] text-[13px] sm:text-[14.5px] columns-1 sm:columns-2 gap-x-4 sm:gap-x-6 [&>li]:mb-1.5 [&>li]:break-inside-avoid">
                                             <li className="">
                                                 SIEM Monitoring
                                             </li>
@@ -2273,25 +2085,41 @@ const BTechCseCyberSecurityNew = () => {
 
                         {/* Mobile scholarship layout */}
                         <div className="block sm:hidden w-full rounded-xl overflow-hidden mb-6 bg-transparent shadow-sm">
-                            {/* scholar1mobile — plain, no overlay */}
-                            <img src="/scholar1mobile.jpg" className="w-full h-auto block" alt="SRMU Scholarships" />
+
                             {/* scholar2mobile — dark gradient + text overlaid */}
                             <div className="relative w-full">
                                 <img src="/scholar2mobile.jpg" className="w-full h-auto block" alt="Girl with laptop" />
 
                                 <div className="absolute inset-0 flex flex-col justify-start px-5 pt-4 pb-5 z-10 pointer-events-none">
-                                    <h2 className="text-[22px] font-black leading-[1.1] uppercase mb-2 tracking-tight">
-                                        <span className="text-[#14284E]">SRMU'S</span> <br />
-                                        <span className="text-red-600">EXCLUSIVE</span><br />
-                                        <span className="text-black">SCHOLARSHIPS</span>
-                                    </h2>
-                                    <h3 className="text-[13px] font-bold text-[#1B4F91] mb-2">
-                                        Rewarding Merit, Empowering Futures
-                                    </h3>
-                                    <p className={`text-[11.5px] text-[#4B5A72] leading-[1.5] ${!rm['scholarMob'] ? 'line-clamp-2' : ''}`}>
-                                        Meritorious and deserving students can avail limited scholarships at the time of admission, subject to approved eligibility criteria. Scholarships are applicable only in the first year of admission.
-                                    </p>
-                                    <button className="rm-btn !text-[#1B4F91] !mb-0 mt-1 pointer-events-auto" onClick={() => toggleRm('scholarMob')}>
+                                    <div className="mb-3">
+                                        <p className="text-[#1B4F91] font-bold text-[13px] mb-1">Avail Up to</p>
+                                        <h2 className="text-[45px] font-black text-[#E31E24] leading-[0.85] tracking-tighter flex items-start">
+                                            100%<span className="text-[20px] text-[#E31E24] font-bold ml-0.5 leading-none mt-1">*</span>
+                                        </h2>
+                                        <p className="text-[#1B4F91] font-black text-[22px] leading-none mt-2">Scholarships</p>
+                                    </div>
+                                    <div className={`overflow-hidden ${!rm['scholarMob'] ? 'h-[110px]' : 'h-auto'}`}>
+                                        <ul className="space-y-1.5 max-w-[480px]">
+                                            {[
+                                                "SRMUSET Based Scholarship",
+                                                "MERIT Based Scholarship",
+                                                "Defence, Paramilitary & Police",
+                                                "Sibling/Ward of SRM Group Staff, Student & Alumni",
+                                                "Divyang",
+                                                "National/State Level",
+                                                "Sportsperson",
+                                                "Career Progression",
+                                                "Student of another state and country",
+                                                "Ward of a Single Parent"
+                                            ].map((item, idx) => (
+                                                <li key={idx} className="flex items-start gap-1.5 text-[#14284E] text-[11.5px] font-medium leading-[1.3]">
+                                                    <span className="text-[#1B4F91] shrink-0 font-bold text-[12px] mt-[1px]">➢</span>
+                                                    <span>{item}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                    <button className="rm-btn !text-[#1B4F91] !mb-0 mt-2 pointer-events-auto" onClick={() => toggleRm('scholarMob')}>
                                         {rm['scholarMob'] ? 'Read Less' : 'Read More'}
                                     </button>
                                 </div>
@@ -2304,17 +2132,32 @@ const BTechCseCyberSecurityNew = () => {
 
                             {/* Text Overlay (No background gradient) */}
                             <div className="absolute inset-0 z-10 p-5 sm:p-6 md:p-10 w-full sm:w-[85%] md:w-[75%] lg:w-[65%] flex flex-col justify-center pointer-events-none">
-                                <h2 className="text-[18px] sm:text-[24px] md:text-[30px] font-black leading-[1.1] uppercase mb-2 tracking-tight">
-                                    <span className="text-[#14284E]">SRMU’S</span> <br />
-                                    <span className="text-red-600">EXCLUSIVE</span> <br />
-                                    <span className="text-black">SCHOLARSHIPS</span>
-                                </h2>
-                                <h3 className="text-[14px] sm:text-[17px] font-bold text-[#1B4F91] mb-2">
-                                    Rewarding Merit, Empowering Futures
-                                </h3>
-                                <p className="text-[12px] sm:text-[13.5px] md:text-[14px] text-[#4B5A72] max-w-[420px] leading-relaxed">
-                                    Meritorious and deserving students can avail limited scholarships at the time of admission, subject to approved eligibility criteria. Scholarships are applicable only in the first year of admission.
-                                </p>
+                                <div className="mb-4 sm:mb-6">
+                                    <p className="text-[#1B4F91] font-bold text-[14px] sm:text-[18px] md:text-[22px] mb-1">Avail Up to</p>
+                                    <h2 className="text-[55px] sm:text-[75px] md:text-[95px] font-black text-[#E31E24] leading-[0.8] tracking-tighter flex items-start">
+                                        100%<span className="text-[24px] sm:text-[32px] md:text-[40px] leading-none ml-1 mt-1">*</span>
+                                    </h2>
+                                    <p className="text-[#1B4F91] font-black text-[26px] sm:text-[36px] md:text-[44px] leading-none mt-2 sm:mt-3">Scholarships</p>
+                                </div>
+                                <ul className="space-y-1.5 sm:space-y-2 max-w-[480px]">
+                                    {[
+                                        "SRMUSET Based Scholarship",
+                                        "MERIT Based Scholarship",
+                                        "Defence, Paramilitary & Police",
+                                        "Sibling/Ward of SRM Group Staff, Student & Alumni",
+                                        "Divyang",
+                                        "National/State Level",
+                                        "Sportsperson",
+                                        "Career Progression",
+                                        "Student of another state and country",
+                                        "Ward of a Single Parent"
+                                    ].map((item, idx) => (
+                                        <li key={idx} className="flex items-start gap-2 text-[#14284E] text-[13px] sm:text-[14.5px] md:text-[15.5px] font-medium leading-[1.3]">
+                                            <span className="text-[#1B4F91] shrink-0 font-bold mt-[2px] text-[14px]">➢</span>
+                                            <span>{item}</span>
+                                        </li>
+                                    ))}
+                                </ul>
                             </div>
                         </div>
 
@@ -2759,18 +2602,11 @@ const BTechCseCyberSecurityNew = () => {
 
                     </div>
                 </section>
-
-                <section className="py-8 md:py-10 px-4 sm:px-6 bg-gradient-to-b from-white to-[#E0F1FF]">
-                    <div className={`${Classes["container"]}`}>
-                        {/* <div className="w-full mb-6">
-
-                            <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3.5">
-                                Industry Exposure & Cyber Security Learning at <span className="text-[#ffc107]">SRMU, Lucknow</span>
-                            </h2>
-
-                        </div> */}
-
-                        {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-10"> */}
+                <section 
+                    className="py-8 md:py-10 px-4 sm:px-6 bg-cover bg-center bg-no-repeat relative"
+                    style={{ backgroundImage: 'url(/new-banner-1.jpg)' }}
+                >
+                    <div className={`${Classes["container"]} relative z-10`}>
                         <div className="w-full">
                             <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3.5">
                                 Industry Exposure & Cyber Security Learning at <span className="text-[#ffc107]">SRMU, Lucknow</span>
@@ -2788,131 +2624,116 @@ const BTechCseCyberSecurityNew = () => {
                             <button className="rm-btn" onClick={() => toggleRm('indExp4')}>{rm['indExp4'] ? 'Read Less' : 'Read More'}</button>
                         </div>
 
-                        {/* </div> */}
-                        <div className="grid md:grid-cols-[repeat(auto-fit,minmax(500px,1fr))] gap-5 mt-6">
-
-                            <div className="bg-white border border-[#DCE6F2] hover:border-[#1B4F91]/35 rounded-3xl p-4 sm:p-6 shadow-[0_4px_20px_rgba(15,31,61,0.04)] transition-all">
-                                {/* <div className="grid md:grid-cols-[1.3fr_0.7fr] gap-7 items-start"> */}
-
-
-                                <div className="w-full">
-                                    {/* Mobile header */}
-                                    <div className="sm:hidden">
-                                        <div className="text-[11px] font-bold uppercase tracking-widest text-[#D78610] mb-2">15 June 2026</div>
-                                        <h4 className="text-[15px] font-bold font-display text-[#14284E] mb-1">Guest Lecture: From Code to Creativity - The Rise of Generative AI</h4>
-                                        <p className="text-[12.5px] text-[#8A96A8] mb-3">Er. Subham Mishra · Automation Test Engineer, TCS Kolkata</p>
-                                    </div>
-                                    {/* Desktop header */}
-                                    <div className="hidden sm:block">
-                                        <h4 className="text-[17px] font-bold font-display text-[#14284E] mb-2">Guest Lecture: From Code to Creativity - The Rise of Generative AI</h4>
-                                        <div className="text-[14px] text-[#1B4F91] mb-4">
-                                            <span className="font-semibold bg-[#F6FAFE] border border-[#DCE6F2] px-3.5 py-1.5 rounded-full inline-block">15 June 2026</span>
-                                        </div>
-                                    </div>
-                                    <div className={!rm['glDesc'] ? 'rm-clamp' : ''}>
-                                        <p className="text-[14.5px] text-[#4B5A72] leading-relaxed mb-3.5">
-                                            A guest lecture on <strong>"From Code to Creativity: The Rise of Generative AI"</strong> was conducted for B.Tech CSE Cyber Security students by{" "}
-                                            <strong>Er. Subham Mishra, Automation Test Engineer, TCS, Kolkata</strong>.
-                                        </p>
-                                        <p className="text-[14.5px] text-[#4B5A72] leading-relaxed mb-4">
-                                            The session introduced participants to key concepts in generative AI and provided practical exposure to AI tools and prompt engineering techniques.
-                                        </p>
-                                    </div>
-                                    <button className="rm-btn" onClick={() => toggleRm('glDesc')}>{rm['glDesc'] ? 'Read Less' : 'Read More'}</button>
-
+                        <div className="flex flex-col gap-5 mt-6">
+                            {/* Featured Card (OT Security) */}
+                            <div className="bg-white border border-[#DCE6F2] hover:border-[#1B4F91]/35 rounded-3xl overflow-hidden shadow-[0_4px_20px_rgba(15,31,61,0.04)] transition-all flex flex-col md:flex-row">
+                                <div className="w-full md:w-5/12">
+                                    <img src="/Cyber-awareness-workshop.webp" alt="Cyber security professionals protecting digital systems" className="w-full h-full object-cover min-h-[250px]" loading="lazy" />
                                 </div>
-                                {/* <div className="rounded-2xl overflow-hidden border border-[#DCE6F2] shadow-sm bg-[#f0f4fa] h-[220px] sm:h-[260px] md:h-full md:min-h-[280px] flex items-center justify-center">
-                                    <img src="https://ik.imagekit.io/ttalcskjf/IMAGE%202.webp" alt="Cybersecurity System - Generative AI Guest Lecture" className="w-full h-full object-cover" />
-                                </div> */}
-                                {/* </div> */}
-                            </div>
-
-
-                            <div className="bg-white border border-[#DCE6F2] hover:border-[#1B4F91]/35 rounded-3xl p-4 sm:p-6 shadow-[0_4px_20px_rgba(15,31,61,0.04)] transition-all">
-                                {/* <div className="grid md:grid-cols-[1.3fr_0.7fr] gap-7 items-center"> */}
-                                <div className="w-full">
-                                    {/* Mobile header */}
-                                    <div className="sm:hidden">
-                                        <div className="text-[11px] font-bold uppercase tracking-widest text-[#D78610] mb-2">Guest Lecture</div>
-                                        <h4 className="text-[15px] font-bold font-display text-[#14284E] mb-1">Securing Industrial Control Systems-OT Security</h4>
-                                        <p className="text-[12.5px] text-[#8A96A8] mb-3">Mr. Rajeev Malhotra · L&amp;T Cyber Security Division</p>
-                                    </div>
-                                    {/* Desktop header */}
-                                    <div className="hidden sm:block">
-                                        <h4 className="text-[17px] font-bold font-display text-[#14284E] mb-2">Guest Lecture: Securing Industrial Control Systems-OT Security</h4>
-                                        <div className="text-[14px] text-[#1B4F91] mb-4">
-                                            <span className="font-semibold bg-[#F6FAFE] border border-[#DCE6F2] px-3.5 py-1.5 rounded-full inline-block">
-                                                Mr. Rajeev Malhotra, L&amp;T Cyber Security Division
-                                            </span>
+                                <div className="w-full md:w-7/12 p-5 sm:p-7 flex flex-col">
+                                    <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
+                                        <div className="flex gap-2">
+                                            <span className="text-[11px] font-bold uppercase tracking-widest text-[#D78610] bg-[#fff8eb] px-2.5 py-1 rounded">Guest Lecture</span>
+                                            <span className="text-[11px] font-bold tracking-wider text-[#4B5A72] bg-[#f1f5f9] px-2.5 py-1 rounded hidden sm:inline-block">OT SECURITY</span>
                                         </div>
                                     </div>
+                                    
+                                    <h4 className="text-[17px] sm:text-[20px] font-bold font-display text-[#14284E] mb-2 leading-snug">
+                                        Securing Industrial Control Systems-OT Security
+                                    </h4>
+                                    
+                                    <div className="flex items-center gap-2 mb-4">
+                                        <span className="text-[14px] text-[#1B4F91] font-semibold bg-[#F6FAFE] border border-[#DCE6F2] px-3.5 py-1.5 rounded-full inline-block">
+                                            Mr. Rajeev Malhotra, L&amp;T Cyber Security Division
+                                        </span>
+                                    </div>
+
                                     <div className={!rm['otSec'] ? 'rm-clamp' : ''}>
                                         <p className="text-[14.5px] text-[#4B5A72] leading-relaxed mb-3.5">Topic: Securing Industrial Control Systems (OT Security)</p>
                                         <p className="text-[14.5px] text-[#4B5A72] leading-relaxed mb-3.5">
                                             The session explored how Operational Technology (OT) networks used in manufacturing environments can be targeted by cyber attackers.
                                         </p>
                                         <p className="text-[14.5px] text-[#4B5A72] leading-relaxed">
-                                            Students were introduced to real-world detection and response workflows used in industrial security environments, followed by a discussion on career
-                                            opportunities in OT security.
+                                            Students were introduced to real-world detection and response workflows used in industrial security environments, followed by a discussion on career opportunities in OT security.
                                         </p>
                                     </div>
-                                    <button className="rm-btn" onClick={() => toggleRm('otSec')}>{rm['otSec'] ? 'Read Less' : 'Read More'}</button>
+                                    <button className="rm-btn !mt-2 self-start" onClick={() => toggleRm('otSec')}>{rm['otSec'] ? 'Read Less' : 'Read More'}</button>
                                 </div>
-                                {/* <div className="rounded-2xl overflow-hidden border border-[#DCE6F2] shadow-sm bg-[#f0f4fa] h-[200px] sm:h-[220px] flex items-center justify-center">
-                                    <img src="https://ik.imagekit.io/ttalcskjf/IMAGE%203.webp" alt="Cyber Security Digitization - OT Security Guest Lecture" className="w-full h-full object-cover" />
-                                </div> */}
                             </div>
 
-
-                            <div className="bg-white border border-[#DCE6F2] hover:border-[#1B4F91]/35 rounded-3xl p-4 sm:p-6 shadow-[0_4px_20px_rgba(15,31,61,0.04)] transition-all">
-                                <div>
-                                    {/* Mobile header */}
-                                    <div className="sm:hidden">
-                                        <div className="text-[11px] font-bold uppercase tracking-widest text-[#D78610] mb-2">26 March 2025</div>
-                                        <h4 className="text-[15px] font-bold font-display text-[#14284E] mb-1">Industry Workshop: Networking with Ethical Hacking &amp; Android Development</h4>
-                                        <p className="text-[12.5px] text-[#8A96A8] mb-3">Mr. Santu Purkait · Director, Netcamp Solutions Pvt. Ltd.</p>
-                                    </div>
-                                    {/* Desktop header */}
-                                    <div className="hidden sm:block">
-                                        <h4 className="text-[17px] font-bold font-display text-[#14284E] mb-2">INDUSTRY WORKSHOP: Networking with Ethical Hacking &amp; Android Development</h4>
-                                        <div className="text-[14px] text-[#1B4F91] mb-4">
-                                            <span className="font-semibold bg-[#F6FAFE] border border-[#DCE6F2] px-3.5 py-1.5 rounded-full inline-block">26 March 2025</span>
+                            {/* Secondary Cards Grid */}
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                {/* AI Guest Lecture */}
+                                <div className="bg-white border border-[#DCE6F2] hover:border-[#1B4F91]/35 rounded-3xl overflow-hidden shadow-[0_4px_20px_rgba(15,31,61,0.04)] transition-all flex flex-col sm:flex-row">
+                                    <div className="w-full sm:w-[140px] bg-[#071329] p-6 flex flex-col items-center justify-center shrink-0">
+                                        <div className="w-14 h-14 border-2 border-[#38bdf8] rounded-xl flex items-center justify-center mb-2 shadow-[0_0_15px_rgba(56,189,248,0.3)]">
+                                            <Cpu className="w-7 h-7 text-[#38bdf8]" />
                                         </div>
+                                        <div className="text-white font-bold tracking-widest text-[13px]">AI</div>
                                     </div>
-                                    <div className={!rm['workshop'] ? 'rm-clamp' : ''}>
-                                        <p className="text-[14.5px] text-[#4B5A72] leading-relaxed mb-3.5">
-                                            A workshop on <strong>"Networking with Ethical Hacking &amp; Android Development"</strong> was conducted by{" "}
-                                            <strong>Mr. Santu Purkait, Director, Netcamp Solutions Pvt. Ltd.</strong>
-                                        </p>
-                                        <p className="text-[14.5px] text-[#4B5A72] leading-relaxed mb-3.5">The workshop introduced students to practical concepts related to:</p>
-                                        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pl-5 text-[14px] text-[#4B5A72] mb-4">
-                                            <li className="list-disc">Network security</li>
-                                            <li className="list-disc">Penetration testing</li>
-                                            <li className="list-disc">Ethical hacking</li>
-                                            <li className="list-disc">Cyber security best practices</li>
-                                            <li className="list-disc">Secure Android application development</li>
-                                            <li className="list-disc">Mobile application security</li>
-                                            <li className="list-disc sm:col-span-2">Real-world cyber threats and defense mechanisms</li>
-                                        </ul>
-                                        <p className="text-[14.5px] text-[#4B5A72] leading-relaxed">
-                                            The session helped students connect networking fundamentals with practical ethical hacking and application security concepts.
-                                        </p>
+                                    <div className="p-5 flex flex-col flex-1">
+                                        <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
+                                            <span className="text-[10px] font-bold uppercase tracking-widest text-[#D78610] bg-[#fff8eb] px-2 py-1 rounded">Guest Lecture</span>
+                                            <span className="text-[12px] font-semibold text-[#1B4F91] bg-[#F6FAFE] border border-[#DCE6F2] px-2 py-1 rounded-full">
+                                                15 June 2026
+                                            </span>
+                                        </div>
+                                        <h4 className="text-[15px] sm:text-[17px] font-bold font-display text-[#14284E] mb-2 leading-snug">
+                                            From Code to Creativity - The Rise of Generative AI
+                                        </h4>
+                                        <div className="text-[13px] text-[#4B5A72] font-medium mb-3 border-b border-[#f1f5f9] pb-3">
+                                            <span className="text-[#14284E] font-bold">Er. Subham Mishra</span> · Automation Test Engineer, TCS Kolkata
+                                        </div>
+                                        <div className={!rm['glDesc'] ? 'rm-clamp text-[13.5px]' : 'text-[13.5px]'}>
+                                            <p className="text-[#4B5A72] leading-relaxed mb-2">
+                                                A guest lecture on <strong>"From Code to Creativity: The Rise of Generative AI"</strong> was conducted for B.Tech CSE Cyber Security students.
+                                            </p>
+                                            <p className="text-[#4B5A72] leading-relaxed">
+                                                The session introduced participants to key concepts in generative AI and provided practical exposure to AI tools and prompt engineering techniques.
+                                            </p>
+                                        </div>
+                                        <button className="rm-btn !mt-2 self-start" onClick={() => toggleRm('glDesc')}>{rm['glDesc'] ? 'Read Less' : 'Read More'}</button>
                                     </div>
-                                    <button className="rm-btn" onClick={() => toggleRm('workshop')}>{rm['workshop'] ? 'Read Less' : 'Read More'}</button>
                                 </div>
-                            </div>
-                            <div className="block bg-white border border-[#DCE6F2] hover:border-[#1B4F91]/35 rounded-3xl p-4 sm:p-6 shadow-[0_4px_20px_rgba(15,31,61,0.04)] transition-all">
 
-                                <img
-                                    src="/Cyber-awareness-workshop.webp"
-                                    alt="Cyber security professionals protecting digital systems"
-                                    className="w-full  object-cover rounded-xl border border-[#DCE6F2]"
-                                    loading="lazy"
-                                />
+                                {/* Workshop Card */}
+                                <div className="bg-white border border-[#DCE6F2] hover:border-[#1B4F91]/35 rounded-3xl overflow-hidden shadow-[0_4px_20px_rgba(15,31,61,0.04)] transition-all flex flex-col sm:flex-row">
+                                    <div className="w-full sm:w-[140px] bg-[#071329] p-6 relative overflow-hidden flex flex-col items-center justify-center shrink-0">
+                                        <div className="absolute inset-0 bg-[#38bdf8] opacity-20 bg-[radial-gradient(circle_at_center,rgba(56,189,248,0.4)_0%,transparent_70%)]"></div>
+                                        <div className="relative z-10 w-14 h-14 text-[#38bdf8] mb-2">
+                                            <Lock className="w-full h-full" strokeWidth={1} />
+                                        </div>
+                                        <div className="text-white font-bold tracking-widest text-[11px] text-center relative z-10">WORKSHOP</div>
+                                    </div>
+                                    <div className="p-5 flex flex-col flex-1">
+                                        <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
+                                            <span className="text-[10px] font-bold uppercase tracking-widest text-[#D78610] bg-[#fff8eb] px-2 py-1 rounded">Industry Workshop</span>
+                                            <span className="text-[12px] font-semibold text-[#1B4F91] bg-[#F6FAFE] border border-[#DCE6F2] px-2 py-1 rounded-full">
+                                                26 March 2025
+                                            </span>
+                                        </div>
+                                        <h4 className="text-[15px] sm:text-[17px] font-bold font-display text-[#14284E] mb-2 leading-snug">
+                                            Networking with Ethical Hacking &amp; Android Development
+                                        </h4>
+                                        <div className="text-[13px] text-[#4B5A72] font-medium mb-3 border-b border-[#f1f5f9] pb-3">
+                                            <span className="text-[#14284E] font-bold">Mr. Santu Purkait</span> · Director, Netcamp Solutions Pvt. Ltd.
+                                        </div>
+                                        <div className={!rm['workshop'] ? 'rm-clamp text-[13.5px]' : 'text-[13.5px]'}>
+                                            <p className="text-[#4B5A72] leading-relaxed mb-2">
+                                                The workshop introduced students to practical concepts related to network security, penetration testing, ethical hacking, cyber security best practices, secure Android application development, mobile application security, and real-world cyber threats and defense mechanisms.
+                                            </p>
+                                            <p className="text-[#4B5A72] leading-relaxed">
+                                                The session helped students connect networking fundamentals with practical ethical hacking and application security concepts.
+                                            </p>
+                                        </div>
+                                        <button className="rm-btn !mt-2 self-start" onClick={() => toggleRm('workshop')}>{rm['workshop'] ? 'Read Less' : 'Read More'}</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
                         {/* Know Your Department Button */}
+
                         <div className="flex justify-center w-full mt-8 sm:mt-12">
                             <Link to="https://srmu.ac.in/department-of-computer-science-and-engineering" target="_blank" className="inline-flex items-center bg-[#ffc107] hover:bg-[#D78610] text-[#14284E] font-semibold text-[14.5px] px-6 py-3 rounded-md transition-colors shadow-sm hover:-translate-y-0.5">
                                 Know Your Department →
@@ -3256,7 +3077,7 @@ const BTechCseCyberSecurityNew = () => {
                             </div> */}
 
                             <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.15] font-bold font-display text-[#14284E]">
-                                Cyber Security vs. Other <span className="text-[#ffc107]">Specializations</span>
+                                Cyber Security vs. CSE, AI & ML <span className="text-[#ffc107]">vs. Data Science</span>
                             </h2>
                         </div>
 
