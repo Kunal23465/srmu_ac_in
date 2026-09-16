@@ -239,7 +239,7 @@ const BTechCseCyberSecurityNew = () => {
                                 <span className="w-[22px] h-[2px] bg-[#ffc107] inline-block"></span>
                                 Why Cyber Security
                             </div> */}
-                            <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3.5">Why Study B.Tech CSE Cyber <span className="text-[#ffc107]">Security in 2027 ?</span></h2>
+                            <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3.5">Why Study B.Tech CSE Cyber Security<span className="text-[#ffc107]"> in 2027 ?</span></h2>
                         </div>
 
                         {/* Callout quote */}
@@ -405,7 +405,7 @@ const BTechCseCyberSecurityNew = () => {
                     <div className={`relative z-10 ${Classes["container"]}`}>
                         <div className="w-full mb-8 text-center max-w-4xl mx-auto">
                             <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3.5">
-                                Industry-Integrated Learning with <span className="text-[#ffc107]">L&amp;T</span>
+                                Industry-Integrated Learning  <span className="text-[#ffc107]">with L&amp;T</span>
                             </h2>
                             <div>
                                 <p className={`text-[16px] text-[#4B5A72] leading-relaxed ${!rm['lt1'] ? 'rm-clamp' : ''}`}>
@@ -461,7 +461,7 @@ const BTechCseCyberSecurityNew = () => {
                             </div> */}
 
                             <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.15] font-bold font-display text-[#14284E]">
-                                Learn Cyber Security the way <span className="text-[#ffc107]">Industry Works</span>
+                                Learn Cyber Security<span className="text-[#ffc107]"> the way Industry Works</span>
                             </h2>
 
                             <p className="mt-4 text-[15px] leading-6 text-[#4B5A72]">
@@ -505,7 +505,7 @@ const BTechCseCyberSecurityNew = () => {
                         {/* Text Content */}
                             <div className="w-full">
                                 <h3 className="text-[17px] sm:text-[19px] font-bold font-display text-[#14284E] mb-3">
-                                    Industry Integrated Curriculum with L&T
+                                    Industry Integrated Curriculum <span className="text-[#ffc107]">with L&T</span>
                                 </h3>
 
                                 <div>
@@ -1185,7 +1185,7 @@ const BTechCseCyberSecurityNew = () => {
                             </div> */}
 
                             <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E]">
-                                Your Journey from Student to Cyber <span className="text-[#ffc107]">Security Professional</span>
+                                Your Journey from Student to <span className="text-[#ffc107]">Cyber Security Professional</span>
                             </h2>
 
                             <p className="mt-4 text-[15px] leading-7 text-[#4B5A72]">
@@ -1922,7 +1922,7 @@ const BTechCseCyberSecurityNew = () => {
                             </div> */}
 
                             <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E]">
-                                Transparent Fee <span className="text-[#ffc107]">Structure</span>
+                                Transparent <span className="text-[#ffc107]">Fee Structure</span>
                             </h2>
 
                             <div className="mt-4">
@@ -2080,7 +2080,7 @@ const BTechCseCyberSecurityNew = () => {
 
                         {/* Scholarship Section Shared Header & Banner */}
                         <h3 className="text-[20px] lg:text-[24px] font-bold font-display text-[#14284E] mt-10 mb-4">
-                            Scholarship Schemes
+                            Scholarship <span className="text-[#ffc107]">Schemes</span>
                         </h3>
 
                         {/* Mobile scholarship layout */}
@@ -2609,7 +2609,7 @@ const BTechCseCyberSecurityNew = () => {
                     <div className={`${Classes["container"]} relative z-10`}>
                         <div className="w-full">
                             <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3.5">
-                                Industry Exposure & Cyber Security Learning at <span className="text-[#ffc107]">SRMU, Lucknow</span>
+                                Industry Exposure & Cyber Security Learning <span className="text-[#ffc107]">at SRMU, Lucknow</span>
                             </h2>
                             <p className={`text-[16px] text-[#4B5A72] leading-relaxed ${!rm['indExp3'] ? 'rm-clamp' : ''}`}>
                                 Cyber security education goes beyond textbooks. At SRMU, students pursuing B.Tech CSE Cyber Security participate in industry sessions, workshops, hackathons, and
@@ -2932,10 +2932,10 @@ const BTechCseCyberSecurityNew = () => {
                                 {/* Mobile stats — dark card */}
                                 <div className="sm:hidden mt-6 bg-[#14284E] rounded-2xl p-5 grid grid-cols-2 gap-x-6 gap-y-5">
                                     {[
-                                        { val: "₹42 LPA", label: "Highest Package" },
-                                        { val: "₹6.5 LPA", label: "Average Package" },
-                                        { val: "150+", label: "Recruiting Companies" },
-                                        { val: "90%+", label: "Students Placed" },
+                                        { val: "₹9.56 LPA", label: "Highest Package" },
+                                        { val: "₹3.31 LPA", label: "Average Package" },
+                                        { val: "230+", label: "Recruiting Companies" },
+                                        { val: "510+", label: "Students Placed" },
                                     ].map((s, i) => (
                                         <div key={i}>
                                             <div className="text-[15px] font-bold text-[#ffc107] mb-1">{s.val}</div>
@@ -2949,7 +2949,7 @@ const BTechCseCyberSecurityNew = () => {
 
                                     <div className="bg-white border border-[#DCE6F2] rounded-xl p-5 min-h-[90px] shadow-sm">
                                         <div className="text-[14.5px] font-semibold text-[#ffc107] mb-3">
-                                            ₹42 LPA
+                                            ₹9.56 LPA
                                         </div>
 
                                         <h3 className="text-[14px] font-bold font-display text-[#14284E]">
@@ -2959,7 +2959,7 @@ const BTechCseCyberSecurityNew = () => {
 
                                     <div className="bg-white border border-[#DCE6F2] rounded-xl p-5 min-h-[90px] shadow-sm">
                                         <div className="text-[14.5px] font-semibold text-[#ffc107] mb-3">
-                                            ₹6.5 LPA
+                                            ₹3.31 LPA
                                         </div>
 
                                         <h3 className="text-[14px] font-bold font-display text-[#14284E]">
@@ -2969,7 +2969,7 @@ const BTechCseCyberSecurityNew = () => {
 
                                     <div className="bg-white border border-[#DCE6F2] rounded-xl p-5 min-h-[90px] shadow-sm">
                                         <div className="text-[14.5px] font-semibold text-[#ffc107] mb-3">
-                                            150+
+                                            230+
                                         </div>
 
                                         <h3 className="text-[14px] font-bold font-display text-[#14284E]">
@@ -2979,7 +2979,7 @@ const BTechCseCyberSecurityNew = () => {
 
                                     <div className="bg-white border border-[#DCE6F2] rounded-xl p-5 min-h-[90px] shadow-sm">
                                         <div className="text-[14.5px] font-semibold text-[#ffc107] mb-3">
-                                            90%+
+                                            510+
                                         </div>
 
                                         <h3 className="text-[14px] font-bold font-display text-[#14284E]">
@@ -3077,7 +3077,7 @@ const BTechCseCyberSecurityNew = () => {
                             </div> */}
 
                             <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.15] font-bold font-display text-[#14284E]">
-                                Cyber Security vs. CSE, AI & ML <span className="text-[#ffc107]">vs. Data Science</span>
+                                Cyber Security vs. CSE,<span className="text-[#ffc107]"> AI & ML vs. Data Science</span>
                             </h2>
                         </div>
 
