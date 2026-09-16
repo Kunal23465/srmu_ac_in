@@ -504,7 +504,7 @@ const BTechCseCyberSecurityNew = () => {
 
                         {/* Text Content */}
                             <div className="w-full">
-                                <h3 className="text-[17px] sm:text-[19px] font-bold font-display text-[#14284E] mb-3">
+                                <h3 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3">
                                     Industry Integrated Curriculum <span className="text-[#ffc107]">with L&T</span>
                                 </h3>
 
@@ -2752,7 +2752,7 @@ const BTechCseCyberSecurityNew = () => {
                             </div> */}
 
                             <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.15] font-bold font-display text-[#14284E]">
-                                Where Digital Systems Need <span className="text-[#ffc107]">Protecting</span>
+                               Career Opportunities <span className="text-[#ffc107]">in Cybersecurity</span>
                             </h2>
                         </div>
 
