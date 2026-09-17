@@ -175,6 +175,16 @@ const BTechCseCyberSecurityNew = () => {
                             <p className="text-[clamp(16px,2vw,22px)] font-light mt-2 sm:mt-4 drop-shadow-md">
                                 In collaboration with <span className="font-bold">L&T</span>
                             </p>
+                            
+                            <div className="flex flex-row items-center gap-3 mt-6 sm:mt-8">
+                                <a href="https://students.srmu.ac.in/login?_gl=1*1hjhqxh*_gcl_au*ODkzODU3MDY4LjE3ODkxODk4NTc.*_ga*Mjc4NTk1MjY4LjE3ODkxODk4NTc.*_ga_QZEQ59Q6ZL*czE3ODkxOTIxMTIkbzIkZzEkdDE3ODkxOTM2NDIkajYwJGwwJGg1NzMzMjQwNzM." target="_blank" rel="noopener noreferrer" className="flex-1 sm:flex-none text-center bg-[#ffc107] hover:bg-[#e0a800] text-[#14284E] font-bold text-[13px] sm:text-[15px] px-3 sm:px-8 py-3 sm:py-3.5 rounded-lg transition-colors shadow-lg border border-[#ffc107]">
+                                    Apply Now
+                                </a>
+                                <a href="/Broucher_SRMU_25_April___.pdf" target="_blank" rel="noopener noreferrer" className="flex-1 sm:flex-none text-center flex items-center justify-center gap-1.5 sm:gap-2 bg-[#1B4F91] hover:bg-[#14284E] text-white font-bold text-[13px] sm:text-[15px] px-3 sm:px-8 py-3 sm:py-3.5 rounded-lg transition-colors shadow-lg border border-[#1B4F91]">
+                                    <Download className="w-4 h-4" />
+                                    <span className="hidden sm:inline">Download</span> Brochure
+                                </a>
+                            </div>
                         </div>
 
                         {/* Mobile-only Apply Now Form */}
@@ -329,7 +339,7 @@ const BTechCseCyberSecurityNew = () => {
 
                         <div className="w-full">
                             <div className="mb-5">
-                                <p className={`text-[15.5px] text-[#4B5A72] leading-relaxed ${!rm['ovw1'] ? 'rm-clamp' : ''}`}>
+                                <p className="text-[15.5px] text-[#4B5A72] leading-relaxed">
                                     By combining SRMU's academic foundation with L&T's industry-oriented learning, students can graduate with more than theoretical knowledge. At this leading CSE Cyber Security university in Lucknow, through L&T-integrated learning, students build practical cybersecurity skills, project experience, and an industry-ready portfolio in futuristic domains such as:
                                 </p>
 
@@ -445,6 +455,307 @@ const BTechCseCyberSecurityNew = () => {
                                     <ChevronDown className={`w-4 h-4 transition-transform ${rm['table_more'] ? 'rotate-180' : ''}`} />
                                 </button>
                             </div>
+                        </div>
+                    </div>
+                </section>
+                <section 
+                    className="py-8 md:py-10 px-4 sm:px-6 bg-cover bg-center bg-no-repeat relative"
+                    style={{ backgroundImage: 'url(/new-banner-1.jpg)' }}
+                >
+                    <div className={`${Classes["container"]} relative z-10`}>
+                        <div className="w-full">
+                            <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3.5">
+                                Industry Exposure & Cyber Security Learning <span className="text-[#ffc107]">at SRMU, Lucknow</span>
+                            </h2>
+                            <p className={`text-[16px] text-[#4B5A72] leading-relaxed ${!rm['indExp3'] ? 'rm-clamp' : ''}`}>
+                                Cyber security education goes beyond textbooks. At SRMU, students pursuing B.Tech CSE Cyber Security participate in industry sessions, workshops, hackathons, and
+                                expert interactions that connect academic concepts with practical security scenarios.
+                            </p>
+                            <button className="rm-btn" onClick={() => toggleRm('indExp3')}>{rm['indExp3'] ? 'Read Less' : 'Read More'}</button>
+                            <h3 className="text-[19px] font-bold font-display text-[#14284E] my-3">Industry & Expert Sessions</h3>
+                            <p className={`text-[15.5px] text-[#4B5A72] leading-relaxed max-w-[78ch] ${!rm['indExp4'] ? 'rm-clamp' : ''}`}>
+                                Students have been exposed to topics including operational technology security, cloud security, application security, ethical hacking, networking, Android security,
+                                and generative AI.
+                            </p>
+                            <button className="rm-btn" onClick={() => toggleRm('indExp4')}>{rm['indExp4'] ? 'Read Less' : 'Read More'}</button>
+                        </div>
+
+                        <div className="flex flex-col gap-5 mt-6">
+                            {/* Featured Card (OT Security) */}
+                            <div className="bg-white border border-[#DCE6F2] hover:border-[#1B4F91]/35 rounded-3xl overflow-hidden shadow-[0_4px_20px_rgba(15,31,61,0.04)] transition-all flex flex-col md:flex-row">
+                                <div className="w-full md:w-5/12">
+                                    <img src="/Cyber-awareness-workshop.webp" alt="Cyber security professionals protecting digital systems" className="w-full h-full object-cover min-h-[250px]" loading="lazy" />
+                                </div>
+                                <div className="w-full md:w-7/12 p-5 sm:p-7 flex flex-col">
+                                    <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
+                                        <div className="flex gap-2">
+                                            <span className="text-[11px] font-bold uppercase tracking-widest text-[#D78610] bg-[#fff8eb] px-2.5 py-1 rounded">Guest Lecture</span>
+                                            <span className="text-[11px] font-bold tracking-wider text-[#4B5A72] bg-[#f1f5f9] px-2.5 py-1 rounded hidden sm:inline-block">OT SECURITY</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <h4 className="text-[17px] sm:text-[20px] font-bold font-display text-[#14284E] mb-2 leading-snug">
+                                        Securing Industrial Control Systems-OT Security
+                                    </h4>
+                                    
+                                    <div className="flex items-center gap-2 mb-4">
+                                        <span className="text-[14px] text-[#1B4F91] font-semibold bg-[#F6FAFE] border border-[#DCE6F2] px-3.5 py-1.5 rounded-full inline-block">
+                                            Mr. Rajeev Malhotra, L&amp;T Cyber Security Division
+                                        </span>
+                                    </div>
+
+                                    <div className={!rm['otSec'] ? 'rm-clamp' : ''}>
+                                        <p className="text-[14.5px] text-[#4B5A72] leading-relaxed mb-3.5">Topic: Securing Industrial Control Systems (OT Security)</p>
+                                        <p className="text-[14.5px] text-[#4B5A72] leading-relaxed mb-3.5">
+                                            The session explored how Operational Technology (OT) networks used in manufacturing environments can be targeted by cyber attackers.
+                                        </p>
+                                        <p className="text-[14.5px] text-[#4B5A72] leading-relaxed">
+                                            Students were introduced to real-world detection and response workflows used in industrial security environments, followed by a discussion on career opportunities in OT security.
+                                        </p>
+                                    </div>
+                                    <button className="rm-btn !mt-2 self-start" onClick={() => toggleRm('otSec')}>{rm['otSec'] ? 'Read Less' : 'Read More'}</button>
+                                </div>
+                            </div>
+
+                            {/* Secondary Cards Grid */}
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                {/* AI Guest Lecture */}
+                                <div className="bg-white border border-[#DCE6F2] hover:border-[#1B4F91]/35 rounded-3xl overflow-hidden shadow-[0_4px_20px_rgba(15,31,61,0.04)] transition-all flex flex-col sm:flex-row">
+                                    <div className="w-full sm:w-[140px] bg-[#071329] p-6 flex flex-col items-center justify-center shrink-0">
+                                        <div className="w-14 h-14 border-2 border-[#38bdf8] rounded-xl flex items-center justify-center mb-2 shadow-[0_0_15px_rgba(56,189,248,0.3)]">
+                                            <Cpu className="w-7 h-7 text-[#38bdf8]" />
+                                        </div>
+                                        <div className="text-white font-bold tracking-widest text-[13px]">AI</div>
+                                    </div>
+                                    <div className="p-5 flex flex-col flex-1">
+                                        <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
+                                            <span className="text-[10px] font-bold uppercase tracking-widest text-[#D78610] bg-[#fff8eb] px-2 py-1 rounded">Guest Lecture</span>
+                                            <span className="text-[12px] font-semibold text-[#1B4F91] bg-[#F6FAFE] border border-[#DCE6F2] px-2 py-1 rounded-full">
+                                                15 June 2026
+                                            </span>
+                                        </div>
+                                        <h4 className="text-[15px] sm:text-[17px] font-bold font-display text-[#14284E] mb-2 leading-snug">
+                                            From Code to Creativity - The Rise of Generative AI
+                                        </h4>
+                                        <div className="text-[13px] text-[#4B5A72] font-medium mb-3 border-b border-[#f1f5f9] pb-3">
+                                            <span className="text-[#14284E] font-bold">Er. Subham Mishra</span> · Automation Test Engineer, TCS Kolkata
+                                        </div>
+                                        <div className={!rm['glDesc'] ? 'rm-clamp text-[13.5px]' : 'text-[13.5px]'}>
+                                            <p className="text-[#4B5A72] leading-relaxed mb-2">
+                                                A guest lecture on <strong>"From Code to Creativity: The Rise of Generative AI"</strong> was conducted for B.Tech CSE Cyber Security students.
+                                            </p>
+                                            <p className="text-[#4B5A72] leading-relaxed">
+                                                The session introduced participants to key concepts in generative AI and provided practical exposure to AI tools and prompt engineering techniques.
+                                            </p>
+                                        </div>
+                                        <button className="rm-btn !mt-2 self-start" onClick={() => toggleRm('glDesc')}>{rm['glDesc'] ? 'Read Less' : 'Read More'}</button>
+                                    </div>
+                                </div>
+
+                                {/* Workshop Card */}
+                                <div className="bg-white border border-[#DCE6F2] hover:border-[#1B4F91]/35 rounded-3xl overflow-hidden shadow-[0_4px_20px_rgba(15,31,61,0.04)] transition-all flex flex-col sm:flex-row">
+                                    <div className="w-full sm:w-[140px] bg-[#071329] p-6 relative overflow-hidden flex flex-col items-center justify-center shrink-0">
+                                        <div className="absolute inset-0 bg-[#38bdf8] opacity-20 bg-[radial-gradient(circle_at_center,rgba(56,189,248,0.4)_0%,transparent_70%)]"></div>
+                                        <div className="relative z-10 w-14 h-14 text-[#38bdf8] mb-2">
+                                            <Lock className="w-full h-full" strokeWidth={1} />
+                                        </div>
+                                        <div className="text-white font-bold tracking-widest text-[11px] text-center relative z-10">WORKSHOP</div>
+                                    </div>
+                                    <div className="p-5 flex flex-col flex-1">
+                                        <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
+                                            <span className="text-[10px] font-bold uppercase tracking-widest text-[#D78610] bg-[#fff8eb] px-2 py-1 rounded">Industry Workshop</span>
+                                            <span className="text-[12px] font-semibold text-[#1B4F91] bg-[#F6FAFE] border border-[#DCE6F2] px-2 py-1 rounded-full">
+                                                26 March 2025
+                                            </span>
+                                        </div>
+                                        <h4 className="text-[15px] sm:text-[17px] font-bold font-display text-[#14284E] mb-2 leading-snug">
+                                            Networking with Ethical Hacking &amp; Android Development
+                                        </h4>
+                                        <div className="text-[13px] text-[#4B5A72] font-medium mb-3 border-b border-[#f1f5f9] pb-3">
+                                            <span className="text-[#14284E] font-bold">Mr. Santu Purkait</span> · Director, Netcamp Solutions Pvt. Ltd.
+                                        </div>
+                                        <div className={!rm['workshop'] ? 'rm-clamp text-[13.5px]' : 'text-[13.5px]'}>
+                                            <p className="text-[#4B5A72] leading-relaxed mb-2">
+                                                The workshop introduced students to practical concepts related to network security, penetration testing, ethical hacking, cyber security best practices, secure Android application development, mobile application security, and real-world cyber threats and defense mechanisms.
+                                            </p>
+                                            <p className="text-[#4B5A72] leading-relaxed">
+                                                The session helped students connect networking fundamentals with practical ethical hacking and application security concepts.
+                                            </p>
+                                        </div>
+                                        <button className="rm-btn !mt-2 self-start" onClick={() => toggleRm('workshop')}>{rm['workshop'] ? 'Read Less' : 'Read More'}</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Know Your Department Button */}
+
+                        <div className="flex justify-center w-full mt-8 sm:mt-12">
+                            <Link to="https://srmu.ac.in/department-of-computer-science-and-engineering" target="_blank" className="inline-flex items-center bg-[#ffc107] hover:bg-[#D78610] text-[#14284E] font-semibold text-[14.5px] px-6 py-3 rounded-md transition-colors shadow-sm hover:-translate-y-0.5">
+                                Know Your Department →
+                            </Link>
+                        </div>
+                    </div>
+                </section>
+                <section className="pt-8 md:pt-10 pb-4 px-4 sm:px-6 bg-gradient-to-b from-white to-[#E0F1FF]">
+                    <div className={`${Classes["container"]} mx-auto`}>
+
+
+
+                        {/* Placement Stats + Image */}
+                        <div className="grid lg:grid-cols-2 gap-5 items-start">
+
+                            {/* Stats */}
+
+                            <div className="w-full">
+
+
+                                <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E]">
+                                    Where Our Students <span className="text-[#ffc107]">Get Placed</span>
+                                </h2>
+
+                                <div className="mt-4">
+                                    <p className={`text-[15px] leading-6 text-[#4B5A72] max-w-[650px] ${!rm['placement1'] ? 'rm-clamp' : ''}`}>
+                                        Dedicated placement training — resume building, coding practice,
+                                        mock interviews and group discussions — starts from the final year.
+                                    </p>
+                                    <button className="rm-btn" onClick={() => toggleRm('placement1')}>{rm['placement1'] ? 'Read Less' : 'Read More'}</button>
+                                </div>
+
+                                {/* Mobile stats — dark card */}
+                                <div className="sm:hidden mt-6 bg-[#14284E] rounded-2xl p-5 grid grid-cols-2 gap-x-6 gap-y-5">
+                                    {[
+                                        { val: "₹53 LPA", label: "Highest Package" },
+                                        { val: "₹4.5 LPA", label: "Average Package" },
+                                        { val: "1200+", label: "Job Offers Given" },
+                                        { val: "225+", label: "Students Placed" },
+                                    ].map((s, i) => (
+                                        <div key={i}>
+                                            <div className="text-[15px] font-bold text-[#ffc107] mb-1">{s.val}</div>
+                                            <div className="text-[12.5px] text-white/80 leading-snug">{s.label}</div>
+                                        </div>
+                                    ))}
+                                </div>
+
+                                {/* Desktop stats — individual white cards */}
+                                <div className="hidden sm:grid grid-cols-2 gap-4 mt-6">
+
+                                    <div className="bg-white border border-[#DCE6F2] rounded-xl p-5 min-h-[90px] shadow-sm">
+                                        <div className="text-[14.5px] font-semibold text-[#ffc107] mb-3">
+                                            ₹53 LPA
+                                        </div>
+
+                                        <h3 className="text-[14px] font-bold font-display text-[#14284E]">
+                                            Highest Package
+                                        </h3>
+                                    </div>
+
+                                    <div className="bg-white border border-[#DCE6F2] rounded-xl p-5 min-h-[90px] shadow-sm">
+                                        <div className="text-[14.5px] font-semibold text-[#ffc107] mb-3">
+                                            ₹4.5 LPA
+                                        </div>
+
+                                        <h3 className="text-[14px] font-bold font-display text-[#14284E]">
+                                            Average Package
+                                        </h3>
+                                    </div>
+
+                                    <div className="bg-white border border-[#DCE6F2] rounded-xl p-5 min-h-[90px] shadow-sm">
+                                        <div className="text-[14.5px] font-semibold text-[#ffc107] mb-3">
+                                            1200+
+                                        </div>
+
+                                        <h3 className="text-[14px] font-bold font-display text-[#14284E]">
+                                            Job Offers Given
+                                        </h3>
+                                    </div>
+
+                                    <div className="bg-white border border-[#DCE6F2] rounded-xl p-5 min-h-[90px] shadow-sm">
+                                        <div className="text-[14.5px] font-semibold text-[#ffc107] mb-3">
+                                            225+
+                                        </div>
+
+                                        <h3 className="text-[14px] font-bold font-display text-[#14284E]">
+                                            Students Placed
+                                        </h3>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            {/* Placement Image */}
+                            <div className="w-full mt-6 lg:mt-0">
+                                <img
+                                    src="https://ik.imagekit.io/ttalcskjf/IMAGE%202.webp?updatedAt=1788439003256"
+                                    alt="Student preparing for career and placement"
+                                    className="w-full aspect-[14/8] object-cover rounded-xl border border-[#DCE6F2]"
+                                    loading="lazy"
+                                />
+                            </div>
+
+                        </div>
+
+                        {/* Top Recruiters */}
+                        <div className="mt-7">
+                            <div className="flex items-center justify-between gap-4 mb-3.5">
+                                <h3 className="text-[17px] font-bold font-display text-[#14284E]">
+                                    Top Recruiters
+                                </h3>
+                                {/* Carousel arrows — desktop only */}
+                                <div className="hidden sm:flex gap-2">
+                                    <button
+                                        type="button"
+                                        onClick={() => emblaApi?.scrollPrev()}
+                                        disabled={!canScrollPrev}
+                                        title="Previous recruiters"
+                                        aria-label="Previous recruiters"
+                                        className="w-9 h-9 rounded-md border border-[#DCE6F2] bg-white text-[#14284E] flex items-center justify-center transition-colors hover:border-[#1B4F91] hover:text-[#1B4F91] disabled:opacity-40 disabled:cursor-not-allowed"
+                                    >
+                                        <ArrowLeft className="w-4 h-4" />
+                                    </button>
+                                    <button
+                                        type="button"
+                                        onClick={() => emblaApi?.scrollNext()}
+                                        disabled={!canScrollNext}
+                                        title="Next recruiters"
+                                        aria-label="Next recruiters"
+                                        className="w-9 h-9 rounded-md border border-[#DCE6F2] bg-white text-[#14284E] flex items-center justify-center transition-colors hover:border-[#1B4F91] hover:text-[#1B4F91] disabled:opacity-40 disabled:cursor-not-allowed"
+                                    >
+                                        <ArrowRight className="w-4 h-4" />
+                                    </button>
+                                </div>
+                            </div>
+
+                            {/* Mobile — auto-scroll marquee */}
+                            <div className="sm:hidden overflow-hidden relative">
+                                <div className="flex gap-3 w-max animate-marquee hover:[animation-play-state:paused]">
+                                    {[...recruiterLogos, ...recruiterLogos].map(([src, name], index) => (
+                                        <div key={`${name}-${index}`} className="h-[64px] w-[110px] shrink-0 bg-white border border-[#DCE6F2] rounded-md px-3 py-2 flex items-center justify-center">
+                                            <img src={src} alt={name} className="max-h-6 w-auto object-contain" />
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+
+                            {/* Desktop — Embla carousel */}
+                            <div className="hidden sm:block overflow-hidden" ref={emblaRef}>
+                                <div className="flex -ml-3">
+                                    {recruiterLogos.map(([src, name]) => (
+                                        <div key={name} className="flex-[0_0_50%] sm:flex-[0_0_33.333%] md:flex-[0_0_25%] lg:flex-[0_0_16.666%] pl-3">
+                                            <div className="h-[76px] bg-white border border-[#DCE6F2] rounded-md px-4 py-3 flex items-center justify-center">
+                                                <img src={src} alt={name} className="max-h-7 w-auto object-contain" />
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                        {/* View Placement Details Button */}
+                        <div className="flex justify-center w-full mt-10">
+                            <Link to="https://srmu.ac.in/placements" target="_blank" className="inline-flex items-center bg-[#ffc107] hover:bg-[#D78610] text-[#14284E] font-semibold text-[14.5px] px-6 py-3 rounded-md transition-colors shadow-sm hover:-translate-y-0.5">
+                                View Placement Details →
+                            </Link>
                         </div>
                     </div>
                 </section>
@@ -791,7 +1102,8 @@ const BTechCseCyberSecurityNew = () => {
 
                                 {/* Desktop / Tablet Content */}
                                 <div className="hidden md:block p-5">
-                                    <h3 className="text-[17px] font-bold font-display text-[#14284E] mb-3">
+                                    <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#EBF5FF] text-[#1B4F91] text-[10px] font-bold uppercase tracking-widest mb-3">LAB / 03</span>
+                                    <h3 className="text-[17px] font-bold font-display text-[#14284E] mb-2">
                                         Digital Forensics Lab
                                     </h3>
 
@@ -879,7 +1191,8 @@ const BTechCseCyberSecurityNew = () => {
 
                                 {/* Desktop / Tablet Content */}
                                 <div className="hidden md:block p-5">
-                                    <h3 className="text-[17px] font-bold font-display text-[#14284E] mb-3">
+                                    <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#EBF5FF] text-[#1B4F91] text-[10px] font-bold uppercase tracking-widest mb-3">LAB / 04</span>
+                                    <h3 className="text-[17px] font-bold font-display text-[#14284E] mb-2">
                                         Cloud Security Lab
                                     </h3>
 
@@ -973,7 +1286,8 @@ const BTechCseCyberSecurityNew = () => {
 
                                 {/* Desktop / Tablet Content */}
                                 <div className="hidden md:block p-5">
-                                    <h3 className="text-[17px] font-bold font-display text-[#14284E] mb-3">
+                                    <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#EBF5FF] text-[#1B4F91] text-[10px] font-bold uppercase tracking-widest mb-3">LAB / 05</span>
+                                    <h3 className="text-[17px] font-bold font-display text-[#14284E] mb-2">
                                         Security Operations Centre (SOC) Learning Environment
                                     </h3>
 
@@ -2602,145 +2916,6 @@ const BTechCseCyberSecurityNew = () => {
 
                     </div>
                 </section>
-                <section 
-                    className="py-8 md:py-10 px-4 sm:px-6 bg-cover bg-center bg-no-repeat relative"
-                    style={{ backgroundImage: 'url(/new-banner-1.jpg)' }}
-                >
-                    <div className={`${Classes["container"]} relative z-10`}>
-                        <div className="w-full">
-                            <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3.5">
-                                Industry Exposure & Cyber Security Learning <span className="text-[#ffc107]">at SRMU, Lucknow</span>
-                            </h2>
-                            <p className={`text-[16px] text-[#4B5A72] leading-relaxed ${!rm['indExp3'] ? 'rm-clamp' : ''}`}>
-                                Cyber security education goes beyond textbooks. At SRMU, students pursuing B.Tech CSE Cyber Security participate in industry sessions, workshops, hackathons, and
-                                expert interactions that connect academic concepts with practical security scenarios.
-                            </p>
-                            <button className="rm-btn" onClick={() => toggleRm('indExp3')}>{rm['indExp3'] ? 'Read Less' : 'Read More'}</button>
-                            <h3 className="text-[19px] font-bold font-display text-[#14284E] my-3">Industry & Expert Sessions</h3>
-                            <p className={`text-[15.5px] text-[#4B5A72] leading-relaxed max-w-[78ch] ${!rm['indExp4'] ? 'rm-clamp' : ''}`}>
-                                Students have been exposed to topics including operational technology security, cloud security, application security, ethical hacking, networking, Android security,
-                                and generative AI.
-                            </p>
-                            <button className="rm-btn" onClick={() => toggleRm('indExp4')}>{rm['indExp4'] ? 'Read Less' : 'Read More'}</button>
-                        </div>
-
-                        <div className="flex flex-col gap-5 mt-6">
-                            {/* Featured Card (OT Security) */}
-                            <div className="bg-white border border-[#DCE6F2] hover:border-[#1B4F91]/35 rounded-3xl overflow-hidden shadow-[0_4px_20px_rgba(15,31,61,0.04)] transition-all flex flex-col md:flex-row">
-                                <div className="w-full md:w-5/12">
-                                    <img src="/Cyber-awareness-workshop.webp" alt="Cyber security professionals protecting digital systems" className="w-full h-full object-cover min-h-[250px]" loading="lazy" />
-                                </div>
-                                <div className="w-full md:w-7/12 p-5 sm:p-7 flex flex-col">
-                                    <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
-                                        <div className="flex gap-2">
-                                            <span className="text-[11px] font-bold uppercase tracking-widest text-[#D78610] bg-[#fff8eb] px-2.5 py-1 rounded">Guest Lecture</span>
-                                            <span className="text-[11px] font-bold tracking-wider text-[#4B5A72] bg-[#f1f5f9] px-2.5 py-1 rounded hidden sm:inline-block">OT SECURITY</span>
-                                        </div>
-                                    </div>
-                                    
-                                    <h4 className="text-[17px] sm:text-[20px] font-bold font-display text-[#14284E] mb-2 leading-snug">
-                                        Securing Industrial Control Systems-OT Security
-                                    </h4>
-                                    
-                                    <div className="flex items-center gap-2 mb-4">
-                                        <span className="text-[14px] text-[#1B4F91] font-semibold bg-[#F6FAFE] border border-[#DCE6F2] px-3.5 py-1.5 rounded-full inline-block">
-                                            Mr. Rajeev Malhotra, L&amp;T Cyber Security Division
-                                        </span>
-                                    </div>
-
-                                    <div className={!rm['otSec'] ? 'rm-clamp' : ''}>
-                                        <p className="text-[14.5px] text-[#4B5A72] leading-relaxed mb-3.5">Topic: Securing Industrial Control Systems (OT Security)</p>
-                                        <p className="text-[14.5px] text-[#4B5A72] leading-relaxed mb-3.5">
-                                            The session explored how Operational Technology (OT) networks used in manufacturing environments can be targeted by cyber attackers.
-                                        </p>
-                                        <p className="text-[14.5px] text-[#4B5A72] leading-relaxed">
-                                            Students were introduced to real-world detection and response workflows used in industrial security environments, followed by a discussion on career opportunities in OT security.
-                                        </p>
-                                    </div>
-                                    <button className="rm-btn !mt-2 self-start" onClick={() => toggleRm('otSec')}>{rm['otSec'] ? 'Read Less' : 'Read More'}</button>
-                                </div>
-                            </div>
-
-                            {/* Secondary Cards Grid */}
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                                {/* AI Guest Lecture */}
-                                <div className="bg-white border border-[#DCE6F2] hover:border-[#1B4F91]/35 rounded-3xl overflow-hidden shadow-[0_4px_20px_rgba(15,31,61,0.04)] transition-all flex flex-col sm:flex-row">
-                                    <div className="w-full sm:w-[140px] bg-[#071329] p-6 flex flex-col items-center justify-center shrink-0">
-                                        <div className="w-14 h-14 border-2 border-[#38bdf8] rounded-xl flex items-center justify-center mb-2 shadow-[0_0_15px_rgba(56,189,248,0.3)]">
-                                            <Cpu className="w-7 h-7 text-[#38bdf8]" />
-                                        </div>
-                                        <div className="text-white font-bold tracking-widest text-[13px]">AI</div>
-                                    </div>
-                                    <div className="p-5 flex flex-col flex-1">
-                                        <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
-                                            <span className="text-[10px] font-bold uppercase tracking-widest text-[#D78610] bg-[#fff8eb] px-2 py-1 rounded">Guest Lecture</span>
-                                            <span className="text-[12px] font-semibold text-[#1B4F91] bg-[#F6FAFE] border border-[#DCE6F2] px-2 py-1 rounded-full">
-                                                15 June 2026
-                                            </span>
-                                        </div>
-                                        <h4 className="text-[15px] sm:text-[17px] font-bold font-display text-[#14284E] mb-2 leading-snug">
-                                            From Code to Creativity - The Rise of Generative AI
-                                        </h4>
-                                        <div className="text-[13px] text-[#4B5A72] font-medium mb-3 border-b border-[#f1f5f9] pb-3">
-                                            <span className="text-[#14284E] font-bold">Er. Subham Mishra</span> · Automation Test Engineer, TCS Kolkata
-                                        </div>
-                                        <div className={!rm['glDesc'] ? 'rm-clamp text-[13.5px]' : 'text-[13.5px]'}>
-                                            <p className="text-[#4B5A72] leading-relaxed mb-2">
-                                                A guest lecture on <strong>"From Code to Creativity: The Rise of Generative AI"</strong> was conducted for B.Tech CSE Cyber Security students.
-                                            </p>
-                                            <p className="text-[#4B5A72] leading-relaxed">
-                                                The session introduced participants to key concepts in generative AI and provided practical exposure to AI tools and prompt engineering techniques.
-                                            </p>
-                                        </div>
-                                        <button className="rm-btn !mt-2 self-start" onClick={() => toggleRm('glDesc')}>{rm['glDesc'] ? 'Read Less' : 'Read More'}</button>
-                                    </div>
-                                </div>
-
-                                {/* Workshop Card */}
-                                <div className="bg-white border border-[#DCE6F2] hover:border-[#1B4F91]/35 rounded-3xl overflow-hidden shadow-[0_4px_20px_rgba(15,31,61,0.04)] transition-all flex flex-col sm:flex-row">
-                                    <div className="w-full sm:w-[140px] bg-[#071329] p-6 relative overflow-hidden flex flex-col items-center justify-center shrink-0">
-                                        <div className="absolute inset-0 bg-[#38bdf8] opacity-20 bg-[radial-gradient(circle_at_center,rgba(56,189,248,0.4)_0%,transparent_70%)]"></div>
-                                        <div className="relative z-10 w-14 h-14 text-[#38bdf8] mb-2">
-                                            <Lock className="w-full h-full" strokeWidth={1} />
-                                        </div>
-                                        <div className="text-white font-bold tracking-widest text-[11px] text-center relative z-10">WORKSHOP</div>
-                                    </div>
-                                    <div className="p-5 flex flex-col flex-1">
-                                        <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
-                                            <span className="text-[10px] font-bold uppercase tracking-widest text-[#D78610] bg-[#fff8eb] px-2 py-1 rounded">Industry Workshop</span>
-                                            <span className="text-[12px] font-semibold text-[#1B4F91] bg-[#F6FAFE] border border-[#DCE6F2] px-2 py-1 rounded-full">
-                                                26 March 2025
-                                            </span>
-                                        </div>
-                                        <h4 className="text-[15px] sm:text-[17px] font-bold font-display text-[#14284E] mb-2 leading-snug">
-                                            Networking with Ethical Hacking &amp; Android Development
-                                        </h4>
-                                        <div className="text-[13px] text-[#4B5A72] font-medium mb-3 border-b border-[#f1f5f9] pb-3">
-                                            <span className="text-[#14284E] font-bold">Mr. Santu Purkait</span> · Director, Netcamp Solutions Pvt. Ltd.
-                                        </div>
-                                        <div className={!rm['workshop'] ? 'rm-clamp text-[13.5px]' : 'text-[13.5px]'}>
-                                            <p className="text-[#4B5A72] leading-relaxed mb-2">
-                                                The workshop introduced students to practical concepts related to network security, penetration testing, ethical hacking, cyber security best practices, secure Android application development, mobile application security, and real-world cyber threats and defense mechanisms.
-                                            </p>
-                                            <p className="text-[#4B5A72] leading-relaxed">
-                                                The session helped students connect networking fundamentals with practical ethical hacking and application security concepts.
-                                            </p>
-                                        </div>
-                                        <button className="rm-btn !mt-2 self-start" onClick={() => toggleRm('workshop')}>{rm['workshop'] ? 'Read Less' : 'Read More'}</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Know Your Department Button */}
-
-                        <div className="flex justify-center w-full mt-8 sm:mt-12">
-                            <Link to="https://srmu.ac.in/department-of-computer-science-and-engineering" target="_blank" className="inline-flex items-center bg-[#ffc107] hover:bg-[#D78610] text-[#14284E] font-semibold text-[14.5px] px-6 py-3 rounded-md transition-colors shadow-sm hover:-translate-y-0.5">
-                                Know Your Department →
-                            </Link>
-                        </div>
-                    </div>
-                </section>
                 <section className="py-8 md:py-10 px-4 sm:px-6 bg-[#E6E6E7]">
                     <div className={`${Classes["container"]} mx-auto`}>
 
@@ -2904,168 +3079,6 @@ const BTechCseCyberSecurityNew = () => {
 
                     </div>
                 </section>
-                <section className="pt-8 md:pt-10 pb-4 px-4 sm:px-6 bg-gradient-to-b from-white to-[#E0F1FF]">
-                    <div className={`${Classes["container"]} mx-auto`}>
-
-
-
-                        {/* Placement Stats + Image */}
-                        <div className="grid lg:grid-cols-2 gap-5 items-start">
-
-                            {/* Stats */}
-
-                            <div className="w-full">
-
-
-                                <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E]">
-                                    Where Our Students <span className="text-[#ffc107]">Get Placed</span>
-                                </h2>
-
-                                <div className="mt-4">
-                                    <p className={`text-[15px] leading-6 text-[#4B5A72] max-w-[650px] ${!rm['placement1'] ? 'rm-clamp' : ''}`}>
-                                        Dedicated placement training — resume building, coding practice,
-                                        mock interviews and group discussions — starts from the final year.
-                                    </p>
-                                    <button className="rm-btn" onClick={() => toggleRm('placement1')}>{rm['placement1'] ? 'Read Less' : 'Read More'}</button>
-                                </div>
-
-                                {/* Mobile stats — dark card */}
-                                <div className="sm:hidden mt-6 bg-[#14284E] rounded-2xl p-5 grid grid-cols-2 gap-x-6 gap-y-5">
-                                    {[
-                                        { val: "₹9.56 LPA", label: "Highest Package" },
-                                        { val: "₹3.31 LPA", label: "Average Package" },
-                                        { val: "230+", label: "Recruiting Companies" },
-                                        { val: "510+", label: "Students Placed" },
-                                    ].map((s, i) => (
-                                        <div key={i}>
-                                            <div className="text-[15px] font-bold text-[#ffc107] mb-1">{s.val}</div>
-                                            <div className="text-[12.5px] text-white/80 leading-snug">{s.label}</div>
-                                        </div>
-                                    ))}
-                                </div>
-
-                                {/* Desktop stats — individual white cards */}
-                                <div className="hidden sm:grid grid-cols-2 gap-4 mt-6">
-
-                                    <div className="bg-white border border-[#DCE6F2] rounded-xl p-5 min-h-[90px] shadow-sm">
-                                        <div className="text-[14.5px] font-semibold text-[#ffc107] mb-3">
-                                            ₹9.56 LPA
-                                        </div>
-
-                                        <h3 className="text-[14px] font-bold font-display text-[#14284E]">
-                                            Highest Package
-                                        </h3>
-                                    </div>
-
-                                    <div className="bg-white border border-[#DCE6F2] rounded-xl p-5 min-h-[90px] shadow-sm">
-                                        <div className="text-[14.5px] font-semibold text-[#ffc107] mb-3">
-                                            ₹3.31 LPA
-                                        </div>
-
-                                        <h3 className="text-[14px] font-bold font-display text-[#14284E]">
-                                            Average Package
-                                        </h3>
-                                    </div>
-
-                                    <div className="bg-white border border-[#DCE6F2] rounded-xl p-5 min-h-[90px] shadow-sm">
-                                        <div className="text-[14.5px] font-semibold text-[#ffc107] mb-3">
-                                            230+
-                                        </div>
-
-                                        <h3 className="text-[14px] font-bold font-display text-[#14284E]">
-                                            Recruiting Companies
-                                        </h3>
-                                    </div>
-
-                                    <div className="bg-white border border-[#DCE6F2] rounded-xl p-5 min-h-[90px] shadow-sm">
-                                        <div className="text-[14.5px] font-semibold text-[#ffc107] mb-3">
-                                            510+
-                                        </div>
-
-                                        <h3 className="text-[14px] font-bold font-display text-[#14284E]">
-                                            Students Placed
-                                        </h3>
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                            {/* Placement Image */}
-                            <div className="w-full mt-6 lg:mt-0">
-                                <img
-                                    src="https://ik.imagekit.io/ttalcskjf/IMAGE%202.webp?updatedAt=1788439003256"
-                                    alt="Student preparing for career and placement"
-                                    className="w-full aspect-[14/8] object-cover rounded-xl border border-[#DCE6F2]"
-                                    loading="lazy"
-                                />
-                            </div>
-
-                        </div>
-
-                        {/* Top Recruiters */}
-                        <div className="mt-7">
-                            <div className="flex items-center justify-between gap-4 mb-3.5">
-                                <h3 className="text-[17px] font-bold font-display text-[#14284E]">
-                                    Top Recruiters
-                                </h3>
-                                {/* Carousel arrows — desktop only */}
-                                <div className="hidden sm:flex gap-2">
-                                    <button
-                                        type="button"
-                                        onClick={() => emblaApi?.scrollPrev()}
-                                        disabled={!canScrollPrev}
-                                        title="Previous recruiters"
-                                        aria-label="Previous recruiters"
-                                        className="w-9 h-9 rounded-md border border-[#DCE6F2] bg-white text-[#14284E] flex items-center justify-center transition-colors hover:border-[#1B4F91] hover:text-[#1B4F91] disabled:opacity-40 disabled:cursor-not-allowed"
-                                    >
-                                        <ArrowLeft className="w-4 h-4" />
-                                    </button>
-                                    <button
-                                        type="button"
-                                        onClick={() => emblaApi?.scrollNext()}
-                                        disabled={!canScrollNext}
-                                        title="Next recruiters"
-                                        aria-label="Next recruiters"
-                                        className="w-9 h-9 rounded-md border border-[#DCE6F2] bg-white text-[#14284E] flex items-center justify-center transition-colors hover:border-[#1B4F91] hover:text-[#1B4F91] disabled:opacity-40 disabled:cursor-not-allowed"
-                                    >
-                                        <ArrowRight className="w-4 h-4" />
-                                    </button>
-                                </div>
-                            </div>
-
-                            {/* Mobile — auto-scroll marquee */}
-                            <div className="sm:hidden overflow-hidden relative">
-                                <div className="flex gap-3 w-max animate-marquee hover:[animation-play-state:paused]">
-                                    {[...recruiterLogos, ...recruiterLogos].map(([src, name], index) => (
-                                        <div key={`${name}-${index}`} className="h-[64px] w-[110px] shrink-0 bg-white border border-[#DCE6F2] rounded-md px-3 py-2 flex items-center justify-center">
-                                            <img src={src} alt={name} className="max-h-6 w-auto object-contain" />
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-
-                            {/* Desktop — Embla carousel */}
-                            <div className="hidden sm:block overflow-hidden" ref={emblaRef}>
-                                <div className="flex -ml-3">
-                                    {recruiterLogos.map(([src, name]) => (
-                                        <div key={name} className="flex-[0_0_50%] sm:flex-[0_0_33.333%] md:flex-[0_0_25%] lg:flex-[0_0_16.666%] pl-3">
-                                            <div className="h-[76px] bg-white border border-[#DCE6F2] rounded-md px-4 py-3 flex items-center justify-center">
-                                                <img src={src} alt={name} className="max-h-7 w-auto object-contain" />
-                                            </div>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
-                        {/* View Placement Details Button */}
-                        <div className="flex justify-center w-full mt-10">
-                            <Link to="https://srmu.ac.in/placements" target="_blank" className="inline-flex items-center bg-[#ffc107] hover:bg-[#D78610] text-[#14284E] font-semibold text-[14.5px] px-6 py-3 rounded-md transition-colors shadow-sm hover:-translate-y-0.5">
-                                View Placement Details →
-                            </Link>
-                        </div>
-                    </div>
-                </section>
                 <section className="pt-2 md:pt-4 pb-8 md:pb-10 px-4 sm:px-6 bg-[#E0F1FF]">
                     <div className={`${Classes["container"]} mx-auto`}>
 
@@ -3077,39 +3090,46 @@ const BTechCseCyberSecurityNew = () => {
                             </div> */}
 
                             <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.15] font-bold font-display text-[#14284E]">
-                                Cyber Security vs. CSE,<span className="text-[#ffc107]"> AI & ML vs. Data Science</span>
+                                Cyber Security vs. CSE,<span className="text-[#ffc107]"> AI & ML, Data Science</span>
                             </h2>
                         </div>
 
-                        {/* Comparison Table 1 — Mobile */}
-                        <div className="sm:hidden mb-4 rounded-xl overflow-hidden border border-[#DCE6F2] bg-white">
-                            <table className="w-full text-left border-collapse">
-                                <thead>
-                                    <tr className="bg-[#14284E] text-white">
-                                        <th className="px-3 py-2.5 text-[12px] font-semibold">Feature</th>
-                                        <th className="px-3 py-2.5 text-[12px] font-semibold">Cyber Security</th>
-                                        <th className="px-3 py-2.5 text-[12px] font-semibold">CSE</th>
-                                    </tr>
-                                </thead>
-                                <tbody className="text-[#1B355F]">
-                                    {[
-                                        ["Main Focus", "Digital Security", "Computing & Software Development"],
-                                        ["Programming", "High", "Very High"],
-                                        ["Networking", "High", "Medium"],
-                                        ["Ethical Hacking", "High", "Low"],
-                                        ["Cloud Security", "High", "Medium"],
-                                        ["Software Development", "Medium", "High"],
-                                        ["Security Careers", "Excellent", "Good"],
-                                        ["AI Integration", "Growing", "High"],
-                                    ].slice(0, rm['table1'] ? undefined : 3).map(([f, cs, cse], i) => (
-                                        <tr key={i} className="border-b border-[#DCE6F2] last:border-0">
-                                            <td className="px-3 py-2.5 text-[12px]">{f}</td>
-                                            <td className="px-3 py-2.5 text-[12px]">{cs}</td>
-                                            <td className="px-3 py-2.5 text-[12px]">{cse}</td>
+                        {/* Comparison Table — Mobile */}
+                        <div className="sm:hidden mb-10 rounded-xl border border-[#DCE6F2] bg-white flex flex-col">
+                            <div className="overflow-x-auto scrollbar-hide">
+                                <table className="w-full text-left border-collapse min-w-[600px]">
+                                    <thead>
+                                        <tr className="bg-[#14284E] text-white">
+                                            <th className="px-2 py-2 text-[11px] font-semibold">Feature</th>
+                                            <th className="px-2 py-2 text-[11px] font-semibold">Cyber Security</th>
+                                            <th className="px-2 py-2 text-[11px] font-semibold">CSE</th>
+                                            <th className="px-2 py-2 text-[11px] font-semibold whitespace-nowrap">AI & ML</th>
+                                            <th className="px-2 py-2 text-[11px] font-semibold whitespace-nowrap">Data Science</th>
                                         </tr>
-                                    ))}
-                                </tbody>
-                            </table>
+                                    </thead>
+                                    <tbody className="text-[#1B355F]">
+                                        {[
+                                            ["Focus", "Digital Security", "Software & Computing", "AI & Machine Learning", "Data & Analytics"],
+                                            ["Key Skills", "Security, Networks", "Programming, Systems", "ML, AI, Deep Learning", "Statistics, Data, Analytics"],
+                                            ["Programming", "High", "Very High", "Very High", "High"],
+                                            ["Networking", "High", "Medium", "Low", "Low"],
+                                            ["Ethical Hacking", "High", "Low", "Low", "Low"],
+                                            ["Software Development", "Medium", "High", "High", "Medium"],
+                                            ["AI Integration", "Growing", "High", "Core", "High"],
+                                            ["Career Roles", "Security Engineer, SOC Analyst", "Software Developer", "AI/ML Engineer", "Data Scientist"],
+                                            ["Future Scope", "AI & Cloud Security", "Cloud & Software", "GenAI & Automation", "Analytics & GenAI"],
+                                        ].slice(0, rm['table1'] ? undefined : 3).map(([f, cs, cse, ai, ds], i) => (
+                                            <tr key={i} className="border-b border-[#DCE6F2] last:border-0">
+                                                <td className="px-2 py-2.5 text-[11px] font-medium whitespace-nowrap">{f}</td>
+                                                <td className="px-2 py-2.5 text-[11px]">{cs}</td>
+                                                <td className="px-2 py-2.5 text-[11px]">{cse}</td>
+                                                <td className="px-2 py-2.5 text-[11px]">{ai}</td>
+                                                <td className="px-2 py-2.5 text-[11px]">{ds}</td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
+                            </div>
                             <button
                                 className="w-full py-2.5 flex items-center justify-center text-[#14284E] font-semibold text-[13px] border-t border-[#DCE6F2]"
                                 onClick={() => toggleRm('table1')}
@@ -3122,141 +3142,42 @@ const BTechCseCyberSecurityNew = () => {
                             </button>
                         </div>
 
-                        {/* Comparison Table 2 — Mobile */}
-                        <div className="sm:hidden mb-4 rounded-xl overflow-hidden border border-[#DCE6F2] bg-white">
-                            <table className="w-full text-left border-collapse">
+                        {/* Comparison Table — Desktop */}
+                        <div className="hidden sm:block mb-10 overflow-x-auto scrollbar-hide bg-white border border-[#DCE6F2] rounded-xl shadow-[0_4px_20px_rgba(15,31,61,0.03)]">
+                            <table className="w-full min-w-[800px] text-left border-collapse">
                                 <thead>
-                                    <tr className="bg-[#14284E] text-white">
-                                        <th className="px-3 py-2.5 text-[12px] font-semibold">Feature</th>
-                                        <th className="px-3 py-2.5 text-[12px] font-semibold">Cyber Security</th>
-                                        <th className="px-3 py-2.5 text-[12px] font-semibold">AI / Data Sci</th>
+                                    <tr className="bg-[#F4F7FB] border-b border-[#DCE6F2] text-[#14284E]">
+                                        <th className="px-4 lg:px-6 py-4 text-[14px] font-bold w-[20%]">Feature</th>
+                                        <th className="px-4 lg:px-6 py-4 text-[14px] font-bold w-[20%]">Cyber Security</th>
+                                        <th className="px-4 lg:px-6 py-4 text-[14px] font-bold w-[20%]">CSE</th>
+                                        <th className="px-4 lg:px-6 py-4 text-[14px] font-bold w-[20%]">AI & ML</th>
+                                        <th className="px-4 lg:px-6 py-4 text-[14px] font-bold w-[20%]">Data Science</th>
                                     </tr>
                                 </thead>
-                                <tbody className="text-[#1B355F]">
+                                <tbody className="text-[#4B5A72]">
                                     {[
-                                        ["Core Area", "Protection of systems", "Data intelligence"],
-                                        ["Main Skills", "Security, Networks", "ML, Statistics"],
-                                        ["Careers", "SOC Analyst", "ML Engineer"],
-                                        ["Industry Demand", "Very High", "Very High"],
-                                        ["Future Scope", "AI Security", "Generative AI"],
-                                    ].slice(0, rm['table2'] ? undefined : 3).map(([f, cs, ai], i) => (
-                                        <tr key={i} className="border-b border-[#DCE6F2] last:border-0">
-                                            <td className="px-3 py-2.5 text-[12px]">{f}</td>
-                                            <td className="px-3 py-2.5 text-[12px]">{cs}</td>
-                                            <td className="px-3 py-2.5 text-[12px]">{ai}</td>
+                                        ["Focus", "Digital Security", "Software & Computing", "AI & Machine Learning", "Data & Analytics"],
+                                        ["Key Skills", "Security, Networks", "Programming, Systems", "ML, AI, Deep Learning", "Statistics, Data, Analytics"],
+                                        ["Programming", "High", "Very High", "Very High", "High"],
+                                        ["Networking", "High", "Medium", "Low", "Low"],
+                                        ["Ethical Hacking", "High", "Low", "Low", "Low"],
+                                        ["Software Development", "Medium", "High", "High", "Medium"],
+                                        ["AI Integration", "Growing", "High", "Core", "High"],
+                                        ["Career Roles", "Security Engineer, SOC Analyst", "Software Developer", "AI/ML Engineer", "Data Scientist"],
+                                        ["Future Scope", "AI & Cloud Security", "Cloud & Software", "GenAI & Automation", "Analytics & GenAI"],
+                                    ].map(([f, cs, cse, ai, ds], i) => (
+                                        <tr key={i} className="border-b border-[#F0F4F8] last:border-0 hover:bg-[#F6FAFE]/50 transition-colors">
+                                            <td className="px-4 lg:px-6 py-4 text-[13.5px] font-medium text-[#14284E]">{f}</td>
+                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">{cs}</td>
+                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">{cse}</td>
+                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">{ai}</td>
+                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">{ds}</td>
                                         </tr>
                                     ))}
                                 </tbody>
                             </table>
-                            <button
-                                className="w-full py-2.5 flex items-center justify-center text-[#14284E] font-semibold text-[13px] border-t border-[#DCE6F2]"
-                                onClick={() => toggleRm('table2')}
-                            >
-                                {rm['table2'] ? (
-                                    <>View Less <ChevronUp className="w-4 h-4 ml-1" /></>
-                                ) : (
-                                    <>View More <ChevronDown className="w-4 h-4 ml-1" /></>
-                                )}
-                            </button>
                         </div>
 
-                        {/* Comparison Tables — Desktop */}
-                        <div className="hidden sm:flex flex-col lg:flex-row gap-6 mb-10">
-                            {/* Comparison Table 1 */}
-                            <div className="flex-1 overflow-x-auto bg-white border border-[#DCE6F2] rounded-xl shadow-[0_4px_20px_rgba(15,31,61,0.03)]">
-                                <table className="w-full min-w-[400px] table-fixed text-left border-collapse h-full">
-                                    <thead>
-                                        <tr className="bg-[#F4F7FB] border-b border-[#DCE6F2] text-[#14284E]">
-                                            <th className="px-4 lg:px-6 py-4 text-[14px] font-bold w-[30%]">Feature</th>
-                                            <th className="px-4 lg:px-6 py-4 text-[14px] font-bold w-[35%]">Cyber Security</th>
-                                            <th className="px-4 lg:px-6 py-4 text-[14px] font-bold w-[35%]">CSE</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody className="text-[#4B5A72]">
-                                        <tr className="border-b border-[#F0F4F8]">
-                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">Main Focus</td>
-                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">Digital Security</td>
-                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">Computing & Software Development</td>
-                                        </tr>
-                                        <tr className="border-b border-[#F0F4F8]">
-                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">Programming</td>
-                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">High</td>
-                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">Very High</td>
-                                        </tr>
-                                        <tr className="border-b border-[#F0F4F8]">
-                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">Networking</td>
-                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">High</td>
-                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">Medium</td>
-                                        </tr>
-                                        <tr className="border-b border-[#F0F4F8]">
-                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">Ethical Hacking</td>
-                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">High</td>
-                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">Low</td>
-                                        </tr>
-                                        <tr className="border-b border-[#F0F4F8]">
-                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">Cloud Security</td>
-                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">High</td>
-                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">Medium</td>
-                                        </tr>
-                                        <tr className="border-b border-[#F0F4F8]">
-                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">Software Development</td>
-                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">Medium</td>
-                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">High</td>
-                                        </tr>
-                                        <tr className="border-b border-[#F0F4F8]">
-                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">Security Careers</td>
-                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">Excellent</td>
-                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">Good</td>
-                                        </tr>
-                                        <tr>
-                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">AI Integration</td>
-                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">Growing</td>
-                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">High</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-
-                            {/* Comparison Table 2 */}
-                            <div className="flex-1 overflow-x-auto bg-white border border-[#DCE6F2] rounded-xl shadow-[0_4px_20px_rgba(15,31,61,0.03)]">
-                                <table className="w-full min-w-[400px] table-fixed text-left border-collapse h-full">
-                                    <thead>
-                                        <tr className="bg-[#F4F7FB] border-b border-[#DCE6F2] text-[#14284E]">
-                                            <th className="px-4 lg:px-6 py-4 text-[14px] font-bold w-[30%]">Feature</th>
-                                            <th className="px-4 lg:px-6 py-4 text-[14px] font-bold w-[35%]">Cyber Security</th>
-                                            <th className="px-4 lg:px-6 py-4 text-[14px] font-bold w-[35%]">AI / Data Sci</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody className="text-[#4B5A72]">
-                                        <tr className="border-b border-[#F0F4F8]">
-                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">Core Area</td>
-                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">Protection of systems</td>
-                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">Data intelligence</td>
-                                        </tr>
-                                        <tr className="border-b border-[#F0F4F8]">
-                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">Main Skills</td>
-                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">Security, Networks, Defence</td>
-                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">ML, Statistics, Data</td>
-                                        </tr>
-                                        <tr className="border-b border-[#F0F4F8]">
-                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">Careers</td>
-                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">Security Engineer, SOC Analyst</td>
-                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">Data Scientist, ML Engineer</td>
-                                        </tr>
-                                        <tr className="border-b border-[#F0F4F8]">
-                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">Industry Demand</td>
-                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">Very High</td>
-                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">Very High</td>
-                                        </tr>
-                                        <tr>
-                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">Future Scope</td>
-                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">AI Security, Cloud Security</td>
-                                            <td className="px-4 lg:px-6 py-4 text-[13.5px]">Generative AI, Automation</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
 
                         {/* Choose Your Path */}
                         <div className="grid md:grid-cols-2 gap-4">
