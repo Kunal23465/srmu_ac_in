@@ -169,10 +169,17 @@ const BTechCseCyberSecurityNew = () => {
             <main>
 
                 <section className="relative pt-[78px] pb-8 md:min-h-[720px] md:pt-36 md:pb-20 w-full overflow-hidden flex items-center">
+                    {/* Mobile Banner */}
+                    <img
+                        src="/new-imagine.jpg"
+                        alt="Cyber Security Banner"
+                        className="absolute inset-0 w-full h-full object-cover z-0 block sm:hidden"
+                    />
+                    {/* Desktop Banner */}
                     <img
                         src="/shared-image-banner.jpg"
                         alt="Cyber Security Banner"
-                        className="absolute inset-0 w-full h-full object-cover z-0"
+                        className="absolute inset-0 w-full h-full object-cover z-0 hidden sm:block"
                     />
                     {/* Semi-Transparent Cinematic Scrim */}
                     <div className="absolute inset-0 bg-gradient-to-r from-[#071329]/15 via-[#091a38]/5 to-transparent"></div>
@@ -451,7 +458,7 @@ const BTechCseCyberSecurityNew = () => {
                                         ["Program", "B.Tech CSE (Cyber Security)"],
                                         ["Duration", "4 Years"],
                                         ["Eligibility", "10+2 with Physics & Mathematics"],
-                                        ["Approved By", "UGC"],
+                                        ["Recognised By", "UGC"],
                                         ["University Accreditation", "NAAC Accredited"],
                                         ["Industry Partner", "Larsen & Toubro (L&T)"],
                                         ["Learning Model", "Classroom + Labs + Projects + Industry Learning"],

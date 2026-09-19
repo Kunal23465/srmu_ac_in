@@ -33,6 +33,9 @@ import memoryManagement from "../../assets/new-home/events/Memory-Management.web
 import villageVisit from "../../assets/new-home/events/Legal-Aid-Cell-Institute-of-Legal-Studies-organised-drive-at-srmu.webp";
 import expressionsOrganized from "../../assets/new-home/events/Expressions_Organized.webp";
 
+
+import constitutionalSafeguards from "../../assets/new-home/events/new-evenet.jpeg";
+
 export type EventItem = {
   id: string | number;
   image: string;
@@ -49,6 +52,38 @@ export type EventItem = {
 };
 
 const eventsData: EventItem[] = [
+  {
+    id: 24,
+    isRedirect: false,
+    image: constitutionalSafeguards,
+    imageSmall: constitutionalSafeguards,
+    date: "September 18th, 2026",
+    title: `Guest Lecture on “Constitutional Safeguards in the Criminal Justice System” Organized at Institute of Legal Studies, SRMU`,
+    description: `
+The <strong>Institute of Legal Studies, Shri Ramswaroop Memorial University (SRMU)</strong>, organized a guest lecture on <strong>“Constitutional Safeguards in the Criminal Justice System”</strong> on <strong>18 September 2026</strong> at <strong>11:00 AM</strong>. The lecture was organized by <strong>FGWIC, Institute of Legal Studies</strong>, and was conducted online through <strong>Google Meet</strong>.
+
+<br/><strong>Guest Speaker</strong><br/>
+
+The session was delivered by <strong>Mr. Ali Bin Saif, Advocate, Supreme Court of India</strong>, who provided valuable insights into the constitutional framework governing the criminal justice system in India.
+
+<br/><strong>Mode of Lecture</strong><br/>
+
+The lecture was conducted through the <strong>Google Meet online platform</strong>, providing students and faculty members with an opportunity to participate in the session and gain valuable knowledge from the guest speaker.
+
+<br/><strong>Key Areas Discussed</strong><br/>
+
+The lecture focused on the important role of the <strong>Constitution of India</strong> in protecting the rights and liberties of individuals involved in criminal proceedings. Key constitutional principles discussed during the session included <strong>equality before law, protection of life and personal liberty, safeguards against arbitrary arrest and detention, the right to a fair procedure, protection against self-incrimination, and access to justice</strong>.
+
+<br/><strong>Constitutional Safeguards in Criminal Justice</strong><br/>
+
+The session emphasized the importance of maintaining a balance between the powers of <strong>law-enforcement agencies and the judiciary</strong> while ensuring the fundamental rights of accused persons and other stakeholders in the criminal justice process. The discussion highlighted how constitutional provisions and judicial principles work together to promote <strong>fairness, due process, accountability, and protection of individual rights</strong>.
+
+<br/><strong>Impact of the Initiative</strong><br/>
+
+The guest lecture provided students with a deeper understanding of the <strong>constitutional safeguards governing the criminal justice system</strong> and enhanced their awareness of fundamental rights and legal procedures. The session served as a valuable academic platform for students to connect constitutional principles with their practical application in the criminal justice process.
+`,
+  },
+
   {
     id: 23,
     isRedirect: false,
