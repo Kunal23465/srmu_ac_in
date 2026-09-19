@@ -168,12 +168,12 @@ const BTechCseCyberSecurityNew = () => {
         <div className="text-[#14284E] bg-white antialiased">
             <main>
 
-                <section className="relative pt-[78px] pb-8 md:min-h-[720px] md:pt-36 md:pb-20 w-full overflow-hidden flex items-center">
+                <section className="relative w-full overflow-hidden flex items-center sm:pt-[78px] sm:pb-8 md:min-h-[720px] md:pt-36 md:pb-20 bg-[#071329]">
                     {/* Mobile Banner */}
                     <img
                         src="/new-imagine.jpg"
                         alt="Cyber Security Banner"
-                        className="absolute inset-0 w-full h-full object-cover z-0 block sm:hidden"
+                        className="w-full h-auto block sm:hidden relative z-0"
                     />
                     {/* Desktop Banner */}
                     <img
@@ -182,28 +182,30 @@ const BTechCseCyberSecurityNew = () => {
                         className="absolute inset-0 w-full h-full object-cover z-0 hidden sm:block"
                     />
                     {/* Semi-Transparent Cinematic Scrim */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#071329]/15 via-[#091a38]/5 to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#071329]/15 via-[#091a38]/5 to-transparent z-0"></div>
 
                     {/* Subtle Tech Cyber Grid & Ambient Lights */}
-                    <div className="absolute inset-0 bg-[radial-gradient(#38bdf820_1px,transparent_1px)] [background-size:28px_28px] pointer-events-none opacity-50"></div>
-                    <div className="absolute -top-20 -left-20 w-96 h-96 bg-[#1b4f91]/25 rounded-full blur-[130px] pointer-events-none"></div>
-                    <div className="absolute top-1/2 right-4 w-80 h-80 bg-[#ffc107]/15 rounded-full blur-[120px] pointer-events-none"></div>
+                    <div className="absolute inset-0 bg-[radial-gradient(#38bdf820_1px,transparent_1px)] [background-size:28px_28px] pointer-events-none opacity-50 z-0"></div>
+                    <div className="absolute -top-20 -left-20 w-96 h-96 bg-[#1b4f91]/25 rounded-full blur-[130px] pointer-events-none z-0"></div>
+                    <div className="absolute top-1/2 right-4 w-80 h-80 bg-[#ffc107]/15 rounded-full blur-[120px] pointer-events-none z-0"></div>
 
-                    <div className={`${Classes["container"]} relative z-10 w-full`}>
-                        {/* Banner Text */}
-                        <div className="w-full max-w-[650px] text-white text-left mb-8 sm:mb-0">
-                            <h2 className="text-[clamp(24px,3vw,36px)] font-semibold mb-1 leading-[1.2] drop-shadow-md">
-                                B.Tech. Computer Science<br className="hidden sm:block" /> and Engineering
-                            </h2>
-                            <h1 className="text-[clamp(40px,5vw,64px)] leading-[1.1] font-bold text-[#38bdf8] drop-shadow-md">
-                                Cyber Security
-                            </h1>
-                            <div className="h-[3px] bg-[#38bdf8] w-[140px] sm:w-[200px] mt-1 mb-2 sm:mb-4 rounded-full"></div>
-                            <p className="text-[clamp(16px,2vw,22px)] font-light mt-2 sm:mt-4 drop-shadow-md">
-                                In collaboration with <span className="font-bold">L&T</span>
-                            </p>
+                    <div className="absolute inset-0 flex flex-col justify-between pt-[78px] pb-5 z-10 w-full sm:relative sm:inset-auto sm:pt-0 sm:pb-0 sm:block">
+                        <div className={`${Classes["container"]} flex flex-col justify-between h-full sm:h-auto w-full`}>
+                            {/* Banner Text */}
+                            <div className="w-full max-w-[650px] text-white text-left mt-2 sm:mt-0">
+                                <h2 className="text-[clamp(24px,3vw,36px)] font-semibold mb-1 leading-[1.2] drop-shadow-md">
+                                    B.Tech. Computer Science<br className="hidden sm:block" /> and Engineering
+                                </h2>
+                                <h1 className="text-[clamp(40px,5vw,64px)] leading-[1.1] font-bold text-[#38bdf8] drop-shadow-md">
+                                    Cyber Security
+                                </h1>
+                                <div className="h-[3px] bg-[#38bdf8] w-[140px] sm:w-[200px] mt-1 mb-2 sm:mb-4 rounded-full"></div>
+                                <p className="hidden sm:block text-[clamp(16px,2vw,22px)] font-light mt-2 sm:mt-4 drop-shadow-md">
+                                    In collaboration with <span className="font-bold">L&T</span>
+                                </p>
+                            </div>
                             
-                            <div className="flex flex-row items-center gap-3 mt-6 sm:mt-8">
+                            <div className="flex flex-row items-center gap-3 mt-auto sm:mt-8 w-full max-w-[650px]">
                                 <a href="https://students.srmu.ac.in/login?_gl=1*1hjhqxh*_gcl_au*ODkzODU3MDY4LjE3ODkxODk4NTc.*_ga*Mjc4NTk1MjY4LjE3ODkxODk4NTc.*_ga_QZEQ59Q6ZL*czE3ODkxOTIxMTIkbzIkZzEkdDE3ODkxOTM2NDIkajYwJGwwJGg1NzMzMjQwNzM." target="_blank" rel="noopener noreferrer" className="flex-1 sm:flex-none text-center bg-[#ffc107] text-[#14284E] font-bold text-[13px] sm:text-[15px] px-3 sm:px-8 py-3 sm:py-3.5 rounded-lg transition-colors shadow-lg border border-[#ffc107]">
                                     Apply Now
                                 </a>
@@ -213,52 +215,54 @@ const BTechCseCyberSecurityNew = () => {
                                 </a>
                             </div>
                         </div>
+                    </div>
+                </section>
 
-                        {/* Mobile-only Apply Now Form */}
-                        <div className="sm:hidden mt-5 mb-8 rounded-2xl overflow-hidden shadow-xl border border-white/10">
-                            <div className="bg-[#14284E] px-4 py-3 text-center">
-                                <h3 className="text-white font-bold text-[15px]">Shri Ramswaroop Memorial University</h3>
-                                <div className="w-8 h-0.5 bg-[#ffc107] mx-auto mt-2 rounded-full"></div>
+                {/* Mobile-only Apply Now Form */}
+                <section className="sm:hidden bg-[#0f1b33] py-8 px-4 w-full">
+                    <div className="rounded-2xl overflow-hidden shadow-xl border border-white/10 max-w-[650px] mx-auto">
+                        <div className="bg-[#14284E] px-4 py-3 text-center">
+                            <h3 className="text-white font-bold text-[15px]">Shri Ramswaroop Memorial University</h3>
+                            <div className="w-8 h-0.5 bg-[#ffc107] mx-auto mt-2 rounded-full"></div>
+                        </div>
+                        <div className="bg-white px-4 py-4 space-y-2.5">
+                            <div className="grid grid-cols-2 gap-2">
+                                <input type="text" placeholder="First Name" className="w-full border border-gray-200 rounded-lg px-3 py-2 text-[13px] text-gray-700 outline-none focus:border-[#14284E]" />
+                                <input type="text" placeholder="Last Name" className="w-full border border-gray-200 rounded-lg px-3 py-2 text-[13px] text-gray-700 outline-none focus:border-[#14284E]" />
                             </div>
-                            <div className="bg-white px-4 py-4 space-y-2.5">
-                                <div className="grid grid-cols-2 gap-2">
-                                    <input type="text" placeholder="First Name" className="w-full border border-gray-200 rounded-lg px-3 py-2 text-[13px] text-gray-700 outline-none focus:border-[#14284E]" />
-                                    <input type="text" placeholder="Last Name" className="w-full border border-gray-200 rounded-lg px-3 py-2 text-[13px] text-gray-700 outline-none focus:border-[#14284E]" />
-                                </div>
-                                <input type="email" placeholder="Email Address" className="w-full border border-gray-200 rounded-lg px-3 py-2 text-[13px] text-gray-700 outline-none focus:border-[#14284E]" />
-                                <input type="tel" placeholder="Phone Number" className="w-full border border-gray-200 rounded-lg px-3 py-2 text-[13px] text-gray-700 outline-none focus:border-[#14284E]" />
-                                <div className="grid grid-cols-2 gap-2">
-                                    <select className="w-full border border-gray-200 rounded-lg px-3 py-2 text-[13px] text-gray-500 outline-none focus:border-[#14284E] bg-white">
-                                        <option value="">Level</option>
-                                        <option>UG</option>
-                                        <option>PG</option>
-                                    </select>
-                                    <select className="w-full border border-gray-200 rounded-lg px-3 py-2 text-[13px] text-gray-500 outline-none focus:border-[#14284E] bg-white">
-                                        <option value="">Programme</option>
-                                        <option>B.Tech CSE Cyber Security</option>
-                                    </select>
-                                </div>
-                                <div className="grid grid-cols-2 gap-2">
-                                    <select className="w-full border border-gray-200 rounded-lg px-3 py-2 text-[13px] text-gray-500 outline-none focus:border-[#14284E] bg-white">
-                                        <option value="">State</option>
-                                        <option>Uttar Pradesh</option>
-                                        <option>Delhi</option>
-                                        <option>Other</option>
-                                    </select>
-                                    <select className="w-full border border-gray-200 rounded-lg px-3 py-2 text-[13px] text-gray-500 outline-none focus:border-[#14284E] bg-white">
-                                        <option value="">City</option>
-                                        <option>Lucknow</option>
-                                        <option>Other</option>
-                                    </select>
-                                </div>
-                                <p className="text-[10px] text-gray-500 flex items-start gap-1.5">
-                                    <input type="checkbox" defaultChecked className="mt-0.5 shrink-0" />
-                                    I authorise SRMU and its representatives to Call, SMS, Email or WhatsApp me regarding admissions and programmes.
-                                </p>
-                                <button className="w-full bg-[#ffc107] hover:bg-[#e0a800] text-[#14284E] font-bold text-[14px] py-3 rounded-xl transition-colors flex items-center justify-center gap-2">
-                                    APPLY NOW →
-                                </button>
+                            <input type="email" placeholder="Email Address" className="w-full border border-gray-200 rounded-lg px-3 py-2 text-[13px] text-gray-700 outline-none focus:border-[#14284E]" />
+                            <input type="tel" placeholder="Phone Number" className="w-full border border-gray-200 rounded-lg px-3 py-2 text-[13px] text-gray-700 outline-none focus:border-[#14284E]" />
+                            <div className="grid grid-cols-2 gap-2">
+                                <select className="w-full border border-gray-200 rounded-lg px-3 py-2 text-[13px] text-gray-500 outline-none focus:border-[#14284E] bg-white">
+                                    <option value="">Level</option>
+                                    <option>UG</option>
+                                    <option>PG</option>
+                                </select>
+                                <select className="w-full border border-gray-200 rounded-lg px-3 py-2 text-[13px] text-gray-500 outline-none focus:border-[#14284E] bg-white">
+                                    <option value="">Programme</option>
+                                    <option>B.Tech CSE Cyber Security</option>
+                                </select>
                             </div>
+                            <div className="grid grid-cols-2 gap-2">
+                                <select className="w-full border border-gray-200 rounded-lg px-3 py-2 text-[13px] text-gray-500 outline-none focus:border-[#14284E] bg-white">
+                                    <option value="">State</option>
+                                    <option>Uttar Pradesh</option>
+                                    <option>Delhi</option>
+                                    <option>Other</option>
+                                </select>
+                                <select className="w-full border border-gray-200 rounded-lg px-3 py-2 text-[13px] text-gray-500 outline-none focus:border-[#14284E] bg-white">
+                                    <option value="">City</option>
+                                    <option>Lucknow</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            <p className="text-[10px] text-gray-500 flex items-start gap-1.5">
+                                <input type="checkbox" defaultChecked className="mt-0.5 shrink-0" />
+                                I authorise SRMU and its representatives to Call, SMS, Email or WhatsApp me regarding admissions and programmes.
+                            </p>
+                            <button className="w-full bg-[#ffc107] hover:bg-[#e0a800] text-[#14284E] font-bold text-[14px] py-3 rounded-xl transition-colors flex items-center justify-center gap-2">
+                                APPLY NOW →
+                            </button>
                         </div>
                     </div>
                 </section>
