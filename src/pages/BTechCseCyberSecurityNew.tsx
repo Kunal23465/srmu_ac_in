@@ -21,6 +21,26 @@ const recruiterLogos = [
     ["https://ik.imagekit.io/ttalcskjf/EY.webp", "EY"],
 ] as const;
 
+const CustomerSupportIcon = ({ className }: { className?: string }) => (
+    <svg viewBox="0 -0.5 17 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" className={className || "si-glyph si-glyph-customer-support"} fill="currentColor" stroke="currentColor">
+        <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+        <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
+        <g id="SVGRepo_iconCarrier">
+            <title>715</title>
+            <defs> </defs>
+            <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+                <g transform="translate(1.000000, 0.000000)" fill="currentColor">
+                    <g transform="translate(0.000000, 2.000000)">
+                        <path d="M8.005,10.094 C6.563,10.094 5.098,9.238 4.243,8.105 C0.141,8.105 0.017,13.965 0.017,13.965 L15.992,13.965 C15.992,13.965 16.314,8.079 11.701,8.079 C10.847,9.226 9.447,10.094 8.005,10.094 Z" className="si-glyph-fill"> </path>
+                        <path d="M11.441,3.069 C11.441,4.755 9.902,7.979 8.002,7.979 C6.105,7.979 4.565,4.754 4.565,3.069 C4.565,1.384 6.104,0.016 8.002,0.016 C9.902,0.017 11.441,1.385 11.441,3.069 L11.441,3.069 Z" className="si-glyph-fill"> </path>
+                    </g>
+                    <path d="M12.975,3.614 C12.975,3.298 12.535,3.043 11.989,3.041 L11.989,2.39 C11.989,2.293 12.026,0.022 8.014,0.022 C4.004,0.022 4.041,2.293 4.041,2.39 L4.041,3.064 C4.031,3.064 4.023,3.061 4.014,3.061 C3.471,3.061 3.034,3.312 3.034,3.623 L3.034,6.377 C3.034,6.686 3.472,6.938 4.014,6.938 C4.556,6.938 4.996,6.686 4.996,6.377 L4.996,3.623 C4.996,3.58 4.969,3.541 4.953,3.501 L4.953,2.75 C4.953,2.681 4.665,0.967 8.014,0.967 C11.364,0.967 11.016,2.681 11.016,2.75 L11.016,3.541 C11.01,3.566 10.991,3.588 10.991,3.614 L10.991,6.431 C10.991,6.748 11.434,7.005 11.983,7.005 C11.995,7.005 12.004,7.001 12.016,7.001 L12.016,8.03 L11.032,8.03 L11.032,9 L12.985,9 L12.975,3.614 L12.975,3.614 Z" className="si-glyph-fill"> </path>
+                </g>
+            </g>
+        </g>
+    </svg>
+);
+
 const BTechCseCyberSecurityNew = () => {
     const labsScrollRef = useRef<HTMLDivElement>(null);
     const scrollLabs = (direction: 'left' | 'right') => {
@@ -177,12 +197,12 @@ const BTechCseCyberSecurityNew = () => {
                             </p>
                             
                             <div className="flex flex-row items-center gap-3 mt-6 sm:mt-8">
-                                <a href="https://students.srmu.ac.in/login?_gl=1*1hjhqxh*_gcl_au*ODkzODU3MDY4LjE3ODkxODk4NTc.*_ga*Mjc4NTk1MjY4LjE3ODkxODk4NTc.*_ga_QZEQ59Q6ZL*czE3ODkxOTIxMTIkbzIkZzEkdDE3ODkxOTM2NDIkajYwJGwwJGg1NzMzMjQwNzM." target="_blank" rel="noopener noreferrer" className="flex-1 sm:flex-none text-center bg-[#ffc107] hover:bg-[#e0a800] text-[#14284E] font-bold text-[13px] sm:text-[15px] px-3 sm:px-8 py-3 sm:py-3.5 rounded-lg transition-colors shadow-lg border border-[#ffc107]">
+                                <a href="https://students.srmu.ac.in/login?_gl=1*1hjhqxh*_gcl_au*ODkzODU3MDY4LjE3ODkxODk4NTc.*_ga*Mjc4NTk1MjY4LjE3ODkxODk4NTc.*_ga_QZEQ59Q6ZL*czE3ODkxOTIxMTIkbzIkZzEkdDE3ODkxOTM2NDIkajYwJGwwJGg1NzMzMjQwNzM." target="_blank" rel="noopener noreferrer" className="flex-1 sm:flex-none text-center bg-[#ffc107] text-[#14284E] font-bold text-[13px] sm:text-[15px] px-3 sm:px-8 py-3 sm:py-3.5 rounded-lg transition-colors shadow-lg border border-[#ffc107]">
                                     Apply Now
                                 </a>
-                                <a href="/Broucher_SRMU_25_April___.pdf" target="_blank" rel="noopener noreferrer" className="flex-1 sm:flex-none text-center flex items-center justify-center gap-1.5 sm:gap-2 bg-[#1B4F91] hover:bg-[#14284E] text-white font-bold text-[13px] sm:text-[15px] px-3 sm:px-8 py-3 sm:py-3.5 rounded-lg transition-colors shadow-lg border border-[#1B4F91]">
+                                <a href="/Broucher_SRMU_25_April___.pdf" target="_blank" rel="noopener noreferrer" className="flex-1 sm:flex-none text-center flex items-center justify-center gap-1.5 sm:gap-2 bg-[#14284E] text-white font-bold text-[13px] sm:text-[15px] px-3 sm:px-8 py-3 sm:py-3.5 rounded-lg transition-colors shadow-lg border border-[#1B4F91]">
                                     <Download className="w-4 h-4" />
-                                    <span className="hidden sm:inline">Download</span> Brochure
+                                    <span className="hidden sm:inline">Download Department</span> Brochure
                                 </a>
                             </div>
                         </div>
@@ -311,7 +331,7 @@ const BTechCseCyberSecurityNew = () => {
 
                         {/* Centered Apply Now Button */}
                         <div className="flex justify-center mt-6 sm:mt-10">
-                            <a
+                            {/* <a
                                 href="https://students.srmu.ac.in/login?_gl=1*1hjhqxh*_gcl_au*ODkzODU3MDY4LjE3ODkxODk4NTc.*_ga*Mjc4NTk1MjY4LjE3ODkxODk4NTc.*_ga_QZEQ59Q6ZL*czE3ODkxOTIxMTIkbzIkZzEkdDE3ODkxOTM2NDIkajYwJGwwJGg1NzMzMjQwNzM."
                                 target="_blank"
                                 rel="noopener noreferrer"
@@ -319,7 +339,7 @@ const BTechCseCyberSecurityNew = () => {
                             >
                                 <span>Apply Now</span>
                                 <ArrowRight className="w-4 h-4 shrink-0 transition-transform duration-300 group-hover:translate-x-1" />
-                            </a>
+                            </a> */}
                         </div>
                     </div>
                 </section>
@@ -530,9 +550,9 @@ const BTechCseCyberSecurityNew = () => {
                                     <div className="p-5 flex flex-col flex-1">
                                         <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
                                             <span className="text-[10px] font-bold uppercase tracking-widest text-[#D78610] bg-[#fff8eb] px-2 py-1 rounded">Guest Lecture</span>
-                                            <span className="text-[12px] font-semibold text-[#1B4F91] bg-[#F6FAFE] border border-[#DCE6F2] px-2 py-1 rounded-full">
+                                            {/* <span className="text-[12px] font-semibold text-[#1B4F91] bg-[#F6FAFE] border border-[#DCE6F2] px-2 py-1 rounded-full">
                                                 15 June 2026
-                                            </span>
+                                            </span> */}
                                         </div>
                                         <h4 className="text-[15px] sm:text-[17px] font-bold font-display text-[#14284E] mb-2 leading-snug">
                                             From Code to Creativity - The Rise of Generative AI
@@ -564,9 +584,9 @@ const BTechCseCyberSecurityNew = () => {
                                     <div className="p-5 flex flex-col flex-1">
                                         <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
                                             <span className="text-[10px] font-bold uppercase tracking-widest text-[#D78610] bg-[#fff8eb] px-2 py-1 rounded">Industry Workshop</span>
-                                            <span className="text-[12px] font-semibold text-[#1B4F91] bg-[#F6FAFE] border border-[#DCE6F2] px-2 py-1 rounded-full">
+                                            {/* <span className="text-[12px] font-semibold text-[#1B4F91] bg-[#F6FAFE] border border-[#DCE6F2] px-2 py-1 rounded-full">
                                                 26 March 2025
-                                            </span>
+                                            </span> */}
                                         </div>
                                         <h4 className="text-[15px] sm:text-[17px] font-bold font-display text-[#14284E] mb-2 leading-snug">
                                             Networking with Ethical Hacking &amp; Android Development
@@ -2949,16 +2969,6 @@ const BTechCseCyberSecurityNew = () => {
                                 </p>
                                 <div className="mt-4 flex flex-wrap items-center gap-4">
                                     <button className="rm-btn !mt-0" onClick={() => toggleRm('digSys')}>{rm['digSys'] ? 'Read Less' : 'Read More'}</button>
-
-                                    <a
-                                        href="/Broucher_SRMU_25_April___.pdf"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#14284E] hover:bg-[#1B4F91] text-white text-[13px] font-semibold rounded-lg shadow-sm transition-colors"
-                                    >
-                                        <Download className="w-3.5 h-3.5" />
-                                        Download Brochure
-                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -2999,6 +3009,16 @@ const BTechCseCyberSecurityNew = () => {
                                     </div>
                                 ))}
                             </div>
+
+                            <div className="mt-5 flex justify-center w-full">
+                                <a
+                                    href="tel:9838904666"
+                                    className="inline-flex items-center gap-1.5 px-5 py-2.5 bg-[#14284E] hover:bg-[#1B4F91] text-white text-[14px] font-semibold rounded-lg shadow-sm transition-colors"
+                                >
+                                    <CustomerSupportIcon className="w-4 h-4" />
+                                    Talk to Counsellor
+                                </a>
+                            </div>
                         </div>
 
                         {/* ===================== DESKTOP LAYOUT ===================== */}
@@ -3020,13 +3040,11 @@ const BTechCseCyberSecurityNew = () => {
                                         professionals who can keep that data safe.
                                     </p>
                                     <a
-                                        href="/Broucher_SRMU_25_April___.pdf"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
+                                        href="tel:9838904666"
                                         className="inline-flex items-center gap-2 mt-5 px-5 py-2.5 bg-[#14284E] text-white text-[14px] font-semibold rounded-lg hover:bg-[#1B4F91] hover:-translate-y-0.5 transition-all shadow-md hover:shadow-lg"
                                     >
-                                        <Download className="w-4 h-4" />
-                                        Download Brochure
+                                        <CustomerSupportIcon className="w-4 h-4" />
+                                        Talk to Counsellor
                                     </a>
                                 </div>
                             </div>
