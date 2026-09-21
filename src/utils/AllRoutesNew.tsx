@@ -135,6 +135,7 @@ const FacultyOfMathematicalAndStatisticalSciencesPage = lazyPage(() => import(".
 const FacultyOfPhysicalSciencesPage = lazyPage(() => import("../pages/academics/institutes/institute-department/FacultyOfPhysicalSciencesPage"));
 const DepartmentOfComputerScienceAndEngineeringPage = lazyPage(() => import("../pages/academics/institutes/institute-department/DepartmentOfComputerScienceAndEngineeringPage"));
 const DepartmentOfComputerScienceAndInformationSystemsPage = lazyPage(() => import("../pages/academics/institutes/institute-department/DepartmentOfComputerScienceAndInformationSystemsPage"));
+const DepartmentOfComputerScienceAndInformationSystemsNewPage = lazyPage(() => import("../pages/academics/institutes/institute-department/department-of-computer-science-and-information-systems-new/DepartmentOfComputerScienceAndInformationSystemsNewPage"));
 const FacultyOfCommerceAndEconomicsPage = lazyPage(() => import("../pages/academics/institutes/institute-department/FacultyOfCommerceAndEconomicsPage"));
 const FacultyOfManagementPage = lazyPage(() => import("../pages/academics/institutes/institute-department/FacultyOfManagementPage"));
 const FacultyOfChemicalSciencesPage = lazyPage(() => import("../pages/academics/institutes/institute-department/FacultyOfChemicalSciencesPage"));
@@ -1007,6 +1008,12 @@ export const routes = [
       {
         path: "/department-of-computer-science-and-information-systems",
         element: <DepartmentOfComputerScienceAndInformationSystemsPage />,
+
+      },
+
+      {
+        path: "/department-of-computer-science-and-information-systems-new",
+        element: <DepartmentOfComputerScienceAndInformationSystemsNewPage />,
 
       },
 

@@ -39,6 +39,8 @@ interface PropsTypes {
   onProgramTypeChange: (val: string) => void;
   onDisciplineChange: (val: string) => void;
   isTypeFlag?: boolean;
+  variant?: "default" | "light";
+  hideCourseList?: boolean;
 }
 
 const ProgramFilter: React.FC<PropsTypes> = ({
@@ -51,7 +53,9 @@ const ProgramFilter: React.FC<PropsTypes> = ({
   onSearchChange,
   onProgramTypeChange,
   onDisciplineChange,
-  isTypeFlag,
+  isTypeFlag = false,
+  variant = "default",
+  hideCourseList = false,
 }) => {
   const dispatch = useDispatch<AppDispatch>();
   const [visibleCount, setVisibleCount] = useState(5);
@@ -70,7 +74,7 @@ const visibleCourses = filteredData.slice(0, visibleCount);
   return (
     <div className={`${Classes["container"]} pb-6 sm:py-10`}>
       {/* Filters */}
-      {!loading && (
+      {!loading && variant === "default" && (
         <div className="py-4 px-2 md:p-8 bg-[#0f4a85] rounded-lg">
           <div className="flex flex-col md:flex-row gap-4">
             {/* Program Type / Flag */}
@@ -132,15 +136,105 @@ const visibleCourses = filteredData.slice(0, visibleCount);
         </div>
       )}
 
+      {!loading && variant === "light" && (
+        <div className="bg-white border border-[#E5E7EB] shadow-[0_4px_20px_rgba(0,0,0,0.04)] rounded-xl p-4 sm:p-6 mb-8 relative z-10">
+          <div className="flex flex-col md:flex-row gap-5 items-end">
+            
+            <div className="flex-1 w-full">
+              <label className="block text-[11.5px] tracking-[0.08em] uppercase text-[#3E6B54] font-bold mb-2">
+                {isTypeFlag ? "Current Qualification" : "Program Type"}
+              </label>
+              <div className="relative">
+                <select
+                  className="w-full h-11 bg-[#FAF7F1] border border-[#DDE3E1] text-[#16222E] text-[14px] rounded-md px-3 appearance-none outline-none focus:border-[#3E6B54] transition-colors"
+                  value={selectedProgramType}
+                  onChange={(e) => {
+                    onProgramTypeChange(e.target.value);
+                    setVisibleCount(5);
+                  }}
+                >
+                  <option value="">{isTypeFlag ? "All Qualifications" : "All Types"}</option>
+                  {isTypeFlag
+                    ? (programTypeOptions as ProgramFlagOption[]).map((flag) => (
+                        <option key={flag.programFlagId} value={flag.slug}>
+                          {flag.name}
+                        </option>
+                      ))
+                    : (programTypeOptions as ProgramTypeOption[]).map((type) => (
+                        <option key={type.programTypeId} value={type.slug}>
+                          {type.name}
+                        </option>
+                      ))}
+                </select>
+                <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none">
+                  <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1L5 5L9 1" stroke="#16222E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex-1 w-full">
+              <label className="block text-[11.5px] tracking-[0.08em] uppercase text-[#3E6B54] font-bold mb-2">
+                Discipline
+              </label>
+              <div className="relative">
+                <select
+                  className="w-full h-11 bg-[#FAF7F1] border border-[#DDE3E1] text-[#16222E] text-[14px] rounded-md px-3 appearance-none outline-none focus:border-[#3E6B54] transition-colors"
+                  value={selectedDiscipline}
+                  onChange={(e) => {
+                    onDisciplineChange(e.target.value);
+                    setVisibleCount(5);
+                  }}
+                >
+                  <option value="">All Disciplines</option>
+                  {disciplineOptions.map((ele) => (
+                    <option key={ele.programDisciplineId} value={ele.slug}>
+                      {ele.name}
+                    </option>
+                  ))}
+                </select>
+                <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none">
+                  <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1L5 5L9 1" stroke="#16222E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex-1 w-full">
+              <label className="block text-[11.5px] tracking-[0.08em] uppercase text-[#3E6B54] font-bold mb-2">
+                Search
+              </label>
+              <div className="relative flex">
+                <div className="absolute left-3 top-1/2 -translate-y-1/2">
+                  <GoSearch color="#3E6B54" size={18} />
+                </div>
+                <input
+                  type="text"
+                  placeholder="Search Course..."
+                  className="w-full h-11 bg-[#FAF7F1] border border-[#DDE3E1] text-[#16222E] text-[14px] rounded-md pl-10 pr-3 outline-none focus:border-[#3E6B54] transition-colors placeholder:text-[#16222E]/60"
+                  value={searchTerm}
+                  onChange={(e) => {
+                    onSearchChange(e.target.value);
+                    setVisibleCount(5);
+                  }}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Course List */}
-      {loading ? (
+      {hideCourseList ? null : loading ? (
         <div className="space-y-4 mt-8">
           {[...Array(4)].map((_, i) => (
             <div key={i} className="skeleton_card w-full h-30"></div>
           ))}
         </div>
       ) : (
-        <div className="mt-8">
+          <div className="mt-8">
           {visibleCourses.length > 0 ? (
             <>
               {visibleCourses.map((course) => {

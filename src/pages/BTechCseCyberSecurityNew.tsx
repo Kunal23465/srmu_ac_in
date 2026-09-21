@@ -3213,7 +3213,7 @@ const BTechCseCyberSecurityNew = () => {
 
                             <div className="bg-[#E6FAF8] sm:bg-white border border-[#DCE6F2] rounded-xl p-5">
                                 <h3 className="text-[14.5px] font-bold font-display text-[#14284E] mb-3">
-                                    Choose Cyber Security if you like:
+                                    Choose B.Tech Cyber Security if you like:
                                 </h3>
 
                                 <ul className="space-y-2 list-none! ml-0 sm:ml-4 text-[14.5px] leading-5 text-[#4B5A72]">
@@ -3227,7 +3227,7 @@ const BTechCseCyberSecurityNew = () => {
 
                             <div className="bg-[#FFFBEB] sm:bg-white border border-[#DCE6F2] rounded-xl p-5">
                                 <h3 className="text-[14.5px] font-bold font-display text-[#14284E] mb-3">
-                                    Choose CSE if you like:
+                                    Choose B.Tech Computer Science if you like:
                                 </h3>
 
                                 <ul className="space-y-2 list-none! ml-0 sm:ml-4 text-[14.5px] leading-5 text-[#4B5A72]">
