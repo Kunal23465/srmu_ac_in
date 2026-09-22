@@ -529,7 +529,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                 </section>
 
                 {/* ── Programs ─────────────────────────────────────────────── */}
-                <section id="programs" className="py-8 md:py-10 px-4 sm:px-6 bg-white">
+                <section id="programs" className="py-8 md:py-10 px-4 sm:px-6 bg-white overflow-x-hidden relative">
                     <div className={`${Classes["container"]}`}>
                         <div className="w-full mb-8">
                             <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3">
@@ -541,11 +541,11 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                             <button className="rm-btn mt-1" onClick={() => toggleRm("pgIntro")}>{rm["pgIntro"] ? "Read Less" : "Read More"}</button>
                         </div>
 
-                        <h3 className="text-[17px] font-bold text-[#14284E] mb-5">Undergraduate — After Class 12th</h3>
+                        <h3 className="text-[17px] font-bold text-[#14284E] mb-5">Undergraduate – After Class 12th</h3>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
                             {programCards.filter(p => p.level === "Undergraduate").map((prog, i) => (
-                                <div key={i} className="bg-white border border-[#DCE6F2] hover:border-[#1B4F91]/40 rounded-2xl p-6 sm:p-7 pt-8 shadow-[0_4px_18px_rgba(15,31,61,0.04)] hover:shadow-[0_12px_30px_rgba(15,31,61,0.08)] hover:-translate-y-1 transition-all duration-300 relative group flex flex-col h-full mt-3">
-                                    <span className="absolute -top-3.5 right-6 bg-gradient-to-r from-[#ffc107] to-[#FFD54F] text-[#14284E] text-[10px] font-bold uppercase tracking-wider px-4 py-1.5 rounded-full shadow-md border border-white/50">{prog.level}</span>
+                                <div key={i} className="bg-white border border-[#E2E8F0] hover:border-[#1B4F91]/40 rounded-xl p-6 sm:p-7 pt-8 shadow-[0_4px_18px_rgba(15,31,61,0.03)] hover:shadow-[0_12px_30px_rgba(15,31,61,0.08)] hover:-translate-y-1 transition-all duration-300 relative group flex flex-col h-full mt-3">
+                                    <span className="absolute -top-3.5 right-6 bg-[#ffc107] text-[#14284E] text-[10px] font-bold uppercase tracking-wider px-4 py-1.5 rounded-full">{prog.level}</span>
                                     
                                     <h3 className="font-bold text-[18px] font-display text-[#14284E] mb-3 group-hover:text-[#1B4F91] transition-colors leading-snug pr-2">{prog.title}</h3>
                                     <p className="text-[13.5px] text-[#54626D] leading-relaxed mb-6 flex-grow">{prog.desc}</p>
@@ -562,10 +562,10 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                     </div>
                                     
                                     <div className="flex flex-col sm:flex-row gap-3 pt-2">
-                                        <a href="#" className="flex-1 flex items-center justify-center gap-1.5 px-4 py-2.5 text-[13px] font-bold bg-[#14284E] text-white rounded-xl hover:bg-[#1B4F91] hover:shadow-md transition-all">
+                                        <a href="#" className="flex-1 flex items-center justify-center gap-1.5 px-4 py-2.5 text-[13px] font-bold bg-[#14284E] text-white rounded-full hover:bg-[#1B4F91] hover:shadow-md transition-all">
                                             View Details <ArrowRight className="w-3.5 h-3.5" />
                                         </a>
-                                        <a href="https://students.srmu.ac.in/login" target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-1.5 px-4 py-2.5 text-[13px] font-bold bg-[#ffc107] text-[#14284E] rounded-xl hover:bg-[#FFD54F] hover:shadow-md transition-all">
+                                        <a href="https://students.srmu.ac.in/login" target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-1.5 px-4 py-2.5 text-[13px] font-bold bg-[#ffc107] text-[#14284E] rounded-full hover:bg-[#FFD54F] hover:shadow-md transition-all">
                                             Apply Now <ArrowRight className="w-3.5 h-3.5" />
                                         </a>
                                     </div>
@@ -573,11 +573,11 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                             ))}
                         </div>
 
-                        <h3 className="text-[17px] font-bold text-[#14284E] mb-5">Postgraduate — After Graduation</h3>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                        <h3 className="text-[17px] font-bold text-[#14284E] mb-5 relative z-20">Postgraduate – After Graduation</h3>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 relative">
                             {programCards.filter(p => p.level === "Postgraduate").map((prog, i) => (
-                                <div key={i} className="bg-white border border-[#DCE6F2] hover:border-[#1B4F91]/40 rounded-2xl p-6 sm:p-7 pt-8 shadow-[0_4px_18px_rgba(15,31,61,0.04)] hover:shadow-[0_12px_30px_rgba(15,31,61,0.08)] hover:-translate-y-1 transition-all duration-300 relative group flex flex-col h-full mt-3">
-                                    <span className="absolute -top-3.5 right-6 bg-[#14284E] text-white text-[10px] font-bold uppercase tracking-wider px-4 py-1.5 rounded-full shadow-md border border-white/50">{prog.level}</span>
+                                <div key={i} className="bg-white border border-[#E2E8F0] hover:border-[#1B4F91]/40 rounded-xl p-6 sm:p-7 pt-8 shadow-[0_4px_18px_rgba(15,31,61,0.03)] hover:shadow-[0_12px_30px_rgba(15,31,61,0.08)] hover:-translate-y-1 transition-all duration-300 relative z-20 group flex flex-col h-full mt-3">
+                                    <span className="absolute -top-3.5 right-6 bg-[#14284E] text-white text-[10px] font-bold uppercase tracking-wider px-4 py-1.5 rounded-full">{prog.level}</span>
                                     
                                     <h3 className="font-bold text-[18px] font-display text-[#14284E] mb-3 group-hover:text-[#1B4F91] transition-colors leading-snug pr-2">{prog.title}</h3>
                                     <p className="text-[13.5px] text-[#54626D] leading-relaxed mb-6 flex-grow">{prog.desc}</p>
@@ -594,21 +594,33 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                     </div>
                                     
                                     <div className="flex flex-col sm:flex-row gap-3 pt-2">
-                                        <a href="#" className="flex-1 flex items-center justify-center gap-1.5 px-4 py-2.5 text-[13px] font-bold bg-[#14284E] text-white rounded-xl hover:bg-[#1B4F91] hover:shadow-md transition-all">
+                                        <a href="#" className="flex-1 flex items-center justify-center gap-1.5 px-4 py-2.5 text-[13px] font-bold bg-[#14284E] text-white rounded-full hover:bg-[#1B4F91] hover:shadow-md transition-all">
                                             View Details <ArrowRight className="w-3.5 h-3.5" />
                                         </a>
-                                        <a href="https://students.srmu.ac.in/login" target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-1.5 px-4 py-2.5 text-[13px] font-bold bg-[#ffc107] text-[#14284E] rounded-xl hover:bg-[#FFD54F] hover:shadow-md transition-all">
+                                        <a href="https://students.srmu.ac.in/login" target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-1.5 px-4 py-2.5 text-[13px] font-bold bg-[#ffc107] text-[#14284E] rounded-full hover:bg-[#FFD54F] hover:shadow-md transition-all">
                                             Apply Now <ArrowRight className="w-3.5 h-3.5" />
                                         </a>
                                     </div>
                                 </div>
                             ))}
+                            
+                            {/* Decorative Background Image placed behind boxes, extending to screen edge */}
+                            <div 
+                                className="hidden lg:block absolute -bottom-16 z-0 pointer-events-none opacity-80"
+                                style={{ right: "calc(50% - 50vw)", width: "800px", maxWidth: "60vw" }}
+                            >
+                                <img 
+                                    src="/assets/images/new-information-system/to-merge.png" 
+                                    alt="Decorative Background" 
+                                    className="w-full h-auto object-contain object-right-bottom" 
+                                />
+                            </div>
                         </div>
 
                         <div className="mt-10 flex flex-col items-center justify-center text-center">
-                            <p className="text-[13px] sm:text-[14px] text-[#4B5A72] mb-5 max-w-[800px]">
+                            {/* <p className="text-[13px] sm:text-[14px] text-[#4B5A72] mb-5 max-w-[800px]">
                                 SRMU's current department page lists these programs and their respective durations and fee information.
-                            </p>
+                            </p> */}
                             <Link to="/programs" className="inline-flex items-center gap-2 bg-[#ffc107] hover:bg-[#FFD54F] text-[#14284E] font-bold text-[14px] px-8 py-3.5 rounded-lg shadow-sm transition-all hover:-translate-y-0.5">
                                 View All CSE Programs <ArrowRight className="w-4 h-4" />
                             </Link>
@@ -908,7 +920,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                 <span className="w-[22px] h-[2px] bg-[#ffc107] inline-block shrink-0" /> Department Highlights
                             </div> */}
                             <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-white">
-                                What Makes the CSE <span className="text-[#ffc107]">Department Different in SRMU?</span>
+                                What Makes the <span className="text-[#ffc107]">CSE Department Different in SRMU?</span>
                             </h2>
                         </div>
 
@@ -932,7 +944,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                 <span className="w-[22px] h-[2px] bg-[#ffc107] inline-block shrink-0" /> Career Pathways
                             </div> */}
                             <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E]">
-                                Where Can a CSE Degree <span className="text-[#ffc107]">Take You?</span>
+                                Where Can a <span className="text-[#ffc107]">CSE Degree Take You?</span>
                             </h2>
                         </div>
 
