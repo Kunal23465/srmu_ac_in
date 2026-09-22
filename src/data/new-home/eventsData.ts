@@ -34,7 +34,10 @@ import villageVisit from "../../assets/new-home/events/Legal-Aid-Cell-Institute-
 import expressionsOrganized from "../../assets/new-home/events/Expressions_Organized.webp";
 
 
-import constitutionalSafeguards from "../../assets/new-home/events/new-evenet.jpeg";
+
+
+import constitutionalSafeguards from "../../assets/new-home/events/News.webp";
+
 
 export type EventItem = {
   id: string | number;
