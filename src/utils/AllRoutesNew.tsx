@@ -5,6 +5,7 @@ import NewHomePage from "../pages/NewHomePage";
 import { resolveProgramRouteSlug } from "./legacyProgramRoutes";
 import BTechCseCyberSecurityNew from "../pages/BTechCseCyberSecurityNew";
 import InsiderPage from "../pages/InsiderPage";
+import DepartmentOfComputerScienceAndEngineeringNewPage from "../pages/academics/institutes/institute-department/department-of-computer-science-and-engineering-new/DepartmentOfComputerScienceAndEngineeringNewPage";
 
 const HomePage = lazyPage(() => import("../pages/Home/HomePage"));
 const PageNotFound = lazyPage(() => import("../pages/PageNotFound"));
@@ -135,7 +136,7 @@ const FacultyOfMathematicalAndStatisticalSciencesPage = lazyPage(() => import(".
 const FacultyOfPhysicalSciencesPage = lazyPage(() => import("../pages/academics/institutes/institute-department/FacultyOfPhysicalSciencesPage"));
 const DepartmentOfComputerScienceAndEngineeringPage = lazyPage(() => import("../pages/academics/institutes/institute-department/DepartmentOfComputerScienceAndEngineeringPage"));
 const DepartmentOfComputerScienceAndInformationSystemsPage = lazyPage(() => import("../pages/academics/institutes/institute-department/DepartmentOfComputerScienceAndInformationSystemsPage"));
-const DepartmentOfComputerScienceAndInformationSystemsNewPage = lazyPage(() => import("../pages/academics/institutes/institute-department/department-of-computer-science-and-information-systems-new/DepartmentOfComputerScienceAndInformationSystemsNewPage"));
+// const DepartmentOfComputerScienceAndInformationSystemsNewPage = lazyPage(() => import("../pages/academics/institutes/institute-department/department-of-computer-science-and-engineering-new/DepartmentOfComputerScienceAndEngineeringNewPage"));
 const FacultyOfCommerceAndEconomicsPage = lazyPage(() => import("../pages/academics/institutes/institute-department/FacultyOfCommerceAndEconomicsPage"));
 const FacultyOfManagementPage = lazyPage(() => import("../pages/academics/institutes/institute-department/FacultyOfManagementPage"));
 const FacultyOfChemicalSciencesPage = lazyPage(() => import("../pages/academics/institutes/institute-department/FacultyOfChemicalSciencesPage"));
@@ -1012,8 +1013,8 @@ export const routes = [
       },
 
       {
-        path: "/department-of-computer-science-and-information-systems-new",
-        element: <DepartmentOfComputerScienceAndInformationSystemsNewPage />,
+        path: "/department-of-computer-science-and-engineering-new",
+        element: <DepartmentOfComputerScienceAndEngineeringNewPage />,
 
       },
 

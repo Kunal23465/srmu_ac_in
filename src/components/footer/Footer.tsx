@@ -19,8 +19,8 @@ export const footerData = {
   description:
     "Shri Ramswaroop Memorial College of Engineering & Management, Lucknow is one of the leading institutes of professional education in UP. SRMCEM is affiliated to Dr. A.P.J. Abdul Kalam Technical University and recognized by AICTE.",
   contact: {
-    address: "Shri Ramswaroop Memorial University Lucknow Deva Road, Barabanki",
-    address2: "C-2/42, Vishesh Khand, Opposite Chote Lal Nursery, Gomtinagar, Lucknow",
+    address: "Shri Ramswaroop Memorial University (SRMU), Lucknow - Deva Road, Barabanki, Uttar Pradesh",
+    address2: "C-2/42, Vishesh Khand, Opposite Chote Lal Nursery, Gomtinagar, Lucknow, Uttar Pradesh",
     phone1: "+91-9838904666",
     tollfree: "18001026004",
     // phone2: "983-901-0407",

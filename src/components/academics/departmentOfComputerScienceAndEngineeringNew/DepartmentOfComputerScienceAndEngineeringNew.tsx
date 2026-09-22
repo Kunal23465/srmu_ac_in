@@ -6,7 +6,7 @@ import { fetchProgramDisciplines } from "../../../store/program-finder/disciplin
 import { fetchProgramFlags } from "../../../store/program-finder/program-flag/programFlagThunk";
 import ProgramFilter from "../../admissions/program-finder/ProgramFilter";
 import Classes from "../../../utils/styles/Global.module.css";
-import { Download, ChevronDown, ChevronUp, Search, Mail, Phone, ArrowLeft, ArrowRight, X } from "lucide-react";
+import { Download, ChevronDown, ChevronUp, Search, Mail, Phone, ArrowLeft, ArrowRight, X, Code2, Brain, BarChart3, ShieldCheck, Cloud, GraduationCap } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 import { Link } from "react-router-dom";
 
@@ -30,21 +30,33 @@ const recruiterLogos = [
 const programCards = [
     {
         level: "Undergraduate",
-        title: "B.C.A. — Data Science & Artificial Intelligence with L&T",
-        desc: "A three-year undergraduate program focused on data-driven technologies, artificial intelligence and practical computing skills, with industry exposure through the L&T collaboration.",
-        duration: "3 Years", fee: "₹1,10,500",
+        title: "B.Tech. in CSE (Cyber Security) with L&T",
+        desc: "Develop knowledge of computing fundamentals along with specialized learning in cybersecurity through an industry-linked program with L&T.",
+        duration: "4 Years", fee: "₹1,47,000",
     },
     {
         level: "Undergraduate",
-        title: "B.C.A. — Cyber Security with L&T",
-        desc: "A three-year program designed to build foundational knowledge in computer applications and cybersecurity, with industry-oriented learning through the L&T collaboration.",
-        duration: "3 Years", fee: "₹1,10,500",
+        title: "B.Tech. in CSE (Data Science & Artificial Intelligence) with L&T",
+        desc: "Build foundations in computer science while developing skills in data science, artificial intelligence and related technologies.",
+        duration: "4 Years", fee: "₹1,47,000",
     },
     {
         level: "Undergraduate",
-        title: "B.C.A. — Artificial Intelligence & Machine Learning",
-        desc: "A three-year undergraduate program focused on computer applications, artificial intelligence and machine learning concepts.",
-        duration: "3 Years", fee: "₹1,10,500",
+        title: "B.Tech. in CSE (Artificial Intelligence & Machine Learning)",
+        desc: "Explore computer science with a focus on Artificial Intelligence and Machine Learning and their applications across technology domains.",
+        duration: "4 Years", fee: "₹1,43,000",
+    },
+    {
+        level: "Postgraduate",
+        title: "M.Tech. in Artificial Intelligence & Machine Learning",
+        desc: "Pursue advanced study and research-oriented learning in Artificial Intelligence and Machine Learning.",
+        duration: "2 Years", fee: "₹1,05,000",
+    },
+    {
+        level: "Postgraduate",
+        title: "M.Tech. in Data Science",
+        desc: "Develop advanced knowledge in data science and analytical computing.",
+        duration: "2 Years", fee: "₹1,05,000",
     },
 ];
 
@@ -58,18 +70,60 @@ const aboutPillars = [
 ];
 
 const quickStats = [
-    { value: "1000+", label: "Computers" },
-    { value: "50", label: "Faculty & Staff" },
+    { value: "2012", label: "Department Established" },
+    { value: "27", label: "Faculty & Staff" },
     { value: "2000", label: "Students" },
 ];
 
 const events = [
-    { tag: "Guest Lecture", title: "Data Science Fundamentals and its Application", speaker: "Mr. Shivam Tiwari, Data Engineer, IBM Hyderabad", date: "16 April 2025", img: "/assets/images/new-information-system/Data Science Fundamentals and its Application.webp" },
-    { tag: "Guest Lecture", title: "National Science Day", speaker: "Dr. Anil Gaikwadji, Sr. Principal Scientist, CSIS, CDRI Lucknow", date: "28 February 2025", img: "/assets/images/new-information-system/National Science Day.webp" },
-    { tag: "Workshop", title: "Inspiring Innovation and Learning", speaker: "Prof. Harish Chandra Verma", date: "06–08 February 2025", img: "/assets/images/new-information-system/Inspiring Innovation and Learning.webp" },
-    { tag: "Workshop", title: "Internal Smart India Hackathon", speaker: "Prof. Diwaker Yadav, IET, AKTU", date: "06–09 September 2024", img: "/assets/images/new-information-system/Internal Smart India Hackathon.webp" },
-    { tag: "Tech-Fest", title: "Awsar and Techfest", speaker: "Department-wide technology festival", date: "13–14 April 2024", img: "/assets/images/new-information-system/Awsar and Techfest.webp" },
-    { tag: "Guest Lecture", title: "Use of Blockchain in Internet of Medical Things: A Systematic Review", speaker: "Dr. Bineet Kumar Gupta", date: "20 December 2023", img: "/assets/images/new-information-system/Use of Blockchain in Internet of Medical Things A Systematic Review.webp" },
+    { 
+        tag: "GUEST LECTURE", 
+        title: "Energy System and Smart Grid", 
+        speaker: "Er. Mithilesh Kumar Gupta, Chief Engineer – PMC, UPPCL",
+        shortDesc: "A knowledge-sharing session on renewable energy transition, power distribution and smart-grid technologies.",
+        readMore: "The session on “Energy System and Smart Grid”, held on May 9, 2026, provided students with practical insights into India's transition towards a renewable-dominant energy mix. Er. Mithilesh Kumar Gupta, Chief Engineer at PMC, UPPCL, discussed contemporary developments in power systems and the growing role of smart-grid technologies.\n\nThe session also highlighted renewable integration, load-curve management and the changing requirements of modern energy networks. It enabled students to connect their classroom concepts with real-world challenges and industry practices in the power sector.",
+        img: "/assets/images/new-information-system/1.webp" 
+    },
+    { 
+        tag: "INDUSTRY EXPOSURE", 
+        title: "Cutting-Edge Technologies in Engineering for Sustainable Development", 
+        speaker: "Seemanta Engineering College",
+        shortDesc: "An industry-oriented programme exploring emerging technologies, renewable energy, AI, smart systems and sustainable engineering.",
+        readMore: "The “Cutting-Edge Technologies in Engineering for Sustainable Development” programme, conducted from September 15–20, 2025, exposed students to emerging engineering technologies supporting sustainable and environmentally responsible development.\n\nThe programme covered areas including renewable energy, artificial intelligence, smart systems, advanced materials and automation. It helped students understand how modern engineering innovations can address current and future societal and environmental challenges while strengthening their industry-oriented knowledge.",
+        img: "/assets/images/new-information-system/2.webp" 
+    },
+    { 
+        tag: "WORKSHOP", 
+        title: "Hands-on Practice on LabVIEW", 
+        speaker: "Dr. Sandeep Ojha & Dr. Alkesh Agarwal | SRMU",
+        shortDesc: "Practical training in LabVIEW programming, virtual instrumentation, data acquisition and signal processing.",
+        readMore: "The Hands-on Practice on LabVIEW workshop was organised by the Department of Electrical & Electronics Engineering (DEEE), Shri Ramswaroop Memorial University. The workshop provided participants with practical training in LabVIEW programming for virtual instrumentation, data acquisition, instrument interfacing, signal processing and automation.\n\nThrough hands-on sessions and mini-projects, students gained exposure to practical engineering applications and developed technical skills relevant to academic research as well as industrial applications.",
+        img: "/assets/images/new-information-system/3.webp" 
+    },
+    { 
+        tag: "HACKATHON", 
+        title: "Smart India Hackathon", 
+        speaker: "Year-wise SIH participation at SRMU",
+        shortDesc: "Students participated in the Smart India Hackathon internal selection rounds, developing innovative solutions to real-world challenges.",
+        readMore: "SRMU has conducted internal rounds of the Smart India Hackathon (SIH), supported by the Innovation Cell, Ministry of Education, Government of India. The internal selection process involved student teams working on problem statements and presenting technology-driven solutions.\n\nThe data shows continued participation across 2022, 2023, 2024 and 2025, with teams progressing through internal selection rounds and some being selected for the final round. The initiative provides students with an opportunity to apply their technical knowledge, teamwork and problem-solving abilities to practical challenges.",
+        img: "/assets/images/new-information-system/4.webp" 
+    },
+    { 
+        tag: "RESEARCH & PUBLICATIONS", 
+        title: "Research & Publications", 
+        speaker: "Dr. Vijay Laxmi Mishra",
+        shortDesc: "16 publications in the last 1–2 years, including SCI/SCIE, Scopus-indexed conferences and Scopus-indexed book chapters.",
+        readMore: "SRMU faculty members have contributed to research through publications across international journals, conferences and academic book chapters. Dr. Vijay Laxmi Mishra recorded 16 publications in the last 1–2 years, including SCI/SCIE publications, Scopus-indexed international conferences and Scopus-indexed book chapters.\n\nThe publication record reflects active engagement in research and knowledge creation, giving students opportunities to learn from contemporary research work and strengthen their understanding of emerging developments in engineering and technology.",
+        img: "/assets/images/new-information-system/5.webp" 
+    },
+    { 
+        tag: "PROJECT MADE BY STUDENT", 
+        title: "ConstructAI – AI-Powered Construction Assistant", 
+        speaker: "B.Tech Data Science Student Project",
+        shortDesc: "An AI-powered platform combining architectural assistance, Vastu guidance and construction cost estimation.",
+        readMore: "ConstructAI is an AI-powered student project designed to simplify different aspects of construction and architectural planning. The platform combines an AI chatbot with architectural and Vastu-related guidance to assist users during the construction planning process.\n\nThe project also incorporates price estimation, making it more useful for users looking to understand potential construction costs. The project demonstrates how students are applying artificial intelligence and software development concepts to create solutions for practical, real-world requirements.",
+        img: "/assets/images/new-information-system/6.webp" 
+    },
 ];
 
 const placementStats = [
@@ -89,39 +143,46 @@ const activityCounters = [
 
 const facultyList = [
     { 
-        name: "Prof. (Dr.) Bineet Kumar Gupta", 
-        role: "HoD, DCSIS", 
-        img: "/assets/images/new-information-system/Bineet Kumar Gupta.webp",
+        name: "Dr. Shobhit Sinha", 
+        role: "HoD DCSE, SRMU, Lucknow-Deva Road", 
+        img: "/assets/images/new-information-system/Dr.-Shobhit-Sinha.webp",
         isHod: true,
-        experience: "16+",
-        email: "hod.csis@srmu.ac.in",
-        contact: "+91-9621340860",
-        specialization: ["Artificial Intelligence & Machine Learning", "Cyber Security", "Data Science", "Computational Neuro Science", "ICT", "IKS-Computing"]
+        qualification: "M.Tech., Ph.D.",
+        experience: "19 Years (9 years in IT sector, 10 years in Education Sector)",
+        specialization: ["Artificial Intelligence"]
     },
-    { name: "Abhishek", role: "Faculty", img: "/assets/images/new-information-system/Abhishek.webp" },
-    { name: "Ashok Masih", role: "Faculty", img: "/assets/images/new-information-system/Ashok Masih.webp" },
-    { name: "Nirbhay", role: "Faculty", img: "/assets/images/new-information-system/Nirbhay.webp" },
-    { name: "Priyanka", role: "Faculty", img: "/assets/images/new-information-system/Priyanka.webp" },
+    { name: "Dr. Rajeev Kumar",          role: "Associate Professor",  img: "/assets/images/new-information-system/Dr.-Rajeev-Kumar.webp" },
+    { name: "Ms. Reeta",                  role: "Assistant Professor",  img: "/assets/images/new-information-system/Ms.-Reeta.webp" },
+    { name: "Dr. Anil Kumar Pandey",      role: "Associate Professor",  img: "/assets/images/new-information-system/Dr.-Anil-Kumar-Pandey.webp" },
+    { name: "Ms. Abhilasha Mandal",       role: "Assistant Professor",  img: "/assets/images/new-information-system/Ms.-Abhilasha-Mandal.webp" },
+    { name: "Mr. Anil Kumar",             role: "Assistant Professor",  img: "/assets/images/new-information-system/Mr.-Anil-Kumar.webp" },
+    { name: "Ms. Anjali Awasthi",         role: "Assistant Professor",  img: "/assets/images/new-information-system/Ms.-Anjali-Awasthi.webp" },
+    { name: "Mr. Ijtaba Saleem Khan",     role: "Assistant Professor",  img: "/assets/images/new-information-system/Mr.-Ijtaba-Saleem-Khan.webp" },
+    { name: "Dr. Satya Bhushan Verma",    role: "Associate Professor",  img: "/assets/images/new-information-system/Dr.-Satya-Bhushan-Verma.webp" },
+    { name: "Mr. Aditya Pratap Singh",    role: "Assistant Professor",  img: "/assets/images/new-information-system/Mr.-Aditya-Pratap-Singh.webp" },
+    { name: "Ms. Arpita Vishwakarma",     role: "Assistant Professor",  img: "/assets/images/new-information-system/Ms.-Arpita-Vishwakarma.webp" },
+    { name: "Mr. Neelesh Mishra",         role: "Assistant Professor",  img: "/assets/images/new-information-system/Mr.-Neelesh-Mishra.webp" },
+    { name: "Ms. Prabha Singh",           role: "Assistant Professor",  img: "/assets/images/new-information-system/Ms.-Prabha-Singh.webp" },
+    { name: "Ms. Atifa Parveen",          role: "Assistant Professor",  img: "/assets/images/new-information-system/Ms.-Atifa-Parveen.webp" },
+    // No matching image file — shown at end
+    { name: "Mr. Kamlesh Chandra Maurya", role: "Assistant Professor",  img: "/assets/cse2-DlLRnAHu.jpeg" },
+    { name: "Ms. Sakshi Singh",           role: "Assistant Professor",  img: "/assets/cse3-B7ufIGSb.jpeg" },
 ];
 
 const whyItems = [
-    { num: "01", title: "Industry-Informed Curriculum", desc: "The department provides a curriculum designed to keep pace with developments in computer applications and emerging technologies, with regular updates supported by industry inputs." },
-    { num: "02", title: "Project-Based Experiential Learning", desc: "Students get opportunities for practical learning through industrial partnerships, internships and live projects involving industry partners such as IBM." },
-    { num: "03", title: "Advanced Computing Infrastructure", desc: "DCSIS provides modern computing facilities, specialized equipment, software and more than 1,000 computers to support teaching, projects and research." },
+    { num: "01", title: "Research-Oriented Academic Environment", desc: "The department encourages research activities and academic knowledge sharing through publications, conferences and expert interactions." },
+    { num: "02", title: "Value-Added Learning", desc: "Students receive opportunities to develop additional technical knowledge and skills beyond their regular curriculum." },
+    { num: "03", title: "Industry-Linked Programs", desc: "Specialized programs with industry collaboration provide exposure to industry-oriented learning in areas such as Cyber Security and Data Science & Artificial Intelligence." },
+    { num: "04", title: "Emerging Technology Focus", desc: "The curriculum includes contemporary areas such as AI, Machine Learning, Cyber Security, Python, Cloud Application Development and Digital Image Processing." },
 ];
 
-const careerPanes: Record<string, string[]> = {
-    capps: ["Software Development", "Application Development", "Web Development", "Systems Support", "IT Services"],
-    dai: ["Data Analyst", "Data Science", "Machine Learning", "Artificial Intelligence", "Business Analytics"],
-    cyber: ["Cyber Security", "Information Security", "Security Operations", "Network Security", "Security Analysis"],
-    tech: ["Research & Development", "Computer Systems", "Networking", "Mobile Computing", "Computer Vision", "Higher Studies & Research"],
-};
-
-const careerTabLabels = [
-    { key: "capps", label: "Computer Applications" },
-    { key: "dai", label: "Data & Artificial Intelligence" },
-    { key: "cyber", label: "Cyber Security" },
-    { key: "tech", label: "Technology & Research" },
+const careerItems = [
+    { title: "Software & Application Development", desc: "Build software applications, websites, and digital products across technology-driven industries.", icon: Code2 },
+    { title: "Artificial Intelligence & Machine Learning", desc: "Work with intelligent systems, predictive models, automation, and machine learning applications.", icon: Brain },
+    { title: "Data & Analytics", desc: "Explore careers in data analysis, data science, business analytics, and large-scale data processing.", icon: BarChart3 },
+    { title: "Cyber Security", desc: "Build expertise in information security, network security, security operations, and cyber defense.", icon: ShieldCheck },
+    { title: "Cloud & Computing", desc: "Work with cloud platforms, distributed systems, infrastructure, and modern computing environments.", icon: Cloud },
+    { title: "Research & Higher Studies", desc: "Pursue M.Tech., Ph.D., research careers, or advanced specialization in emerging computing domains.", icon: GraduationCap },
 ];
 
 const faqs = [
@@ -135,7 +196,7 @@ const faqs = [
 
 // ─── Component ────────────────────────────────────────────────────────────────
 
-const DepartmentOfComputerScienceAndInformationSystemsNew = () => {
+const DepartmentOfComputerScienceAndEngineeringNew = () => {
     const dispatch = useDispatch<AppDispatch>();
     const { data } = useSelector((state: RootState) => state.getProgramFinder);
     const { data: programFlag } = useSelector((state: RootState) => state.getProgramByFlag);
@@ -146,6 +207,25 @@ const DepartmentOfComputerScienceAndInformationSystemsNew = () => {
     const [searchTerm, setSearchTerm] = useState("");
     const [debouncedSearch, setDebouncedSearch] = useState("");
     const [selectedFaculty, setSelectedFaculty] = useState<any>(null);
+    const [selectedEvent, setSelectedEvent] = useState<any>(null);
+    const [videoPlaying, setVideoPlaying] = useState(false);
+
+    // Faculty Embla carousel
+    const [facultyEmblaRef, facultyEmblaApi] = useEmblaCarousel({ loop: false, align: "start", dragFree: true });
+    const [facultyCanPrev, setFacultyCanPrev] = useState(false);
+    const [facultyCanNext, setFacultyCanNext] = useState(true);
+
+    useEffect(() => {
+        if (!facultyEmblaApi) return;
+        const update = () => {
+            setFacultyCanPrev(facultyEmblaApi.canScrollPrev());
+            setFacultyCanNext(facultyEmblaApi.canScrollNext());
+        };
+        update();
+        facultyEmblaApi.on("select", update);
+        facultyEmblaApi.on("reInit", update);
+        return () => { facultyEmblaApi.off("select", update); facultyEmblaApi.off("reInit", update); };
+    }, [facultyEmblaApi]);
 
     // Setup initial data
     useEffect(() => {
@@ -182,7 +262,7 @@ const DepartmentOfComputerScienceAndInformationSystemsNew = () => {
     });
 
     const [openFaq, setOpenFaq] = useState<number | null>(0);
-    const [activeCareerTab, setActiveCareerTab] = useState("capps");
+
     const [rm, setRm] = useState<Record<string, boolean>>({});
     const toggleRm = (k: string) => setRm(p => ({ ...p, [k]: !p[k] }));
 
@@ -217,18 +297,15 @@ const DepartmentOfComputerScienceAndInformationSystemsNew = () => {
                 <section className="relative w-full overflow-hidden flex items-center sm:pt-[78px] sm:pb-8 md:min-h-[720px] md:pt-36 md:pb-20 bg-[#071329]">
                     {/* Background Banner */}
                     <img
-                        src="/assets/images/new-information-system/Banner.webp"
+                        src="/assets/images/new-information-system/again-banner.jpg"
                         alt="Department of Computer Science & Information Systems"
-                        className="absolute inset-0 w-full h-full object-cover z-0"
+                        className="absolute inset-0 w-full h-full object-cover object-top z-0"
                     />
                     
-                    {/* Scrim */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#071329]/90 via-[#091a38]/60 to-transparent sm:from-[#071329]/15 sm:via-[#091a38]/5 z-0" />
+                    {/* Scrim – light enough to keep banner visible */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#071329]/75 via-[#091a38]/40 to-transparent z-0" />
                     
-                    {/* Grid overlay */}
-                    <div className="absolute inset-0 bg-[radial-gradient(#38bdf820_1px,transparent_1px)] [background-size:28px_28px] pointer-events-none opacity-50 z-0" />
-                    <div className="absolute -top-20 -left-20 w-96 h-96 bg-[#1b4f91]/25 rounded-full blur-[130px] pointer-events-none z-0" />
-                    <div className="absolute top-1/2 right-4 w-80 h-80 bg-[#ffc107]/15 rounded-full blur-[120px] pointer-events-none z-0" />
+
 
                     <div className="relative z-10 w-full pt-[90px] pb-8 sm:pt-0 sm:pb-0">
                         <div className={`${Classes["container"]} flex flex-col h-full sm:h-auto w-full`}>
@@ -349,50 +426,64 @@ const DepartmentOfComputerScienceAndInformationSystemsNew = () => {
                 {/* ── About the Department ─────────────────────────────────── */}
                 <section className="pt-8 md:pt-10 pb-8 md:pb-10 px-4 sm:px-6 bg-white">
                     <div className={`${Classes["container"]}`}>
-                        <div className="grid md:grid-cols-[0.9fr_1.1fr] gap-12 items-center">
-                            {/* Image */}
-                            <div className="relative">
-                                <img
-                                    src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=900&auto=format&fit=crop"
-                                    alt="Advanced computing lab at DCSIS"
-                                    className="w-full rounded-2xl border border-[#DCE6F2] shadow-[0_8px_30px_rgba(15,31,61,0.08)] object-cover h-[320px] sm:h-[380px]"
-                                />
-                                <div className="absolute -bottom-4 -left-4 bg-[#ffc107] text-[#14284E] px-5 py-3 font-bold text-[13.5px] shadow-[0_8px_20px_rgba(0,0,0,0.2)] rounded-lg">
-                                    Advanced Computing Labs
-                                </div>
+                        <div className="flex flex-col gap-10">
+                            {/* Video – lite embed for crisp thumbnail */}
+                            <div className="relative w-full h-[320px] sm:h-[480px] lg:h-[600px] rounded-2xl overflow-hidden border border-[#DCE6F2] shadow-[0_8px_30px_rgba(15,31,61,0.08)] bg-black">
+                                {videoPlaying ? (
+                                    <iframe
+                                        className="absolute top-0 left-0 w-full h-full"
+                                        src="https://www.youtube.com/embed/JXkXd08VexI?autoplay=1"
+                                        title="Department Video"
+                                        frameBorder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowFullScreen
+                                    />
+                                ) : (
+                                    <button
+                                        onClick={() => setVideoPlaying(true)}
+                                        className="absolute inset-0 w-full h-full group"
+                                        aria-label="Play video"
+                                    >
+                                        {/* High-res YouTube thumbnail */}
+                                        <img
+                                            src="https://img.youtube.com/vi/JXkXd08VexI/maxresdefault.jpg"
+                                            alt="Department Video"
+                                            className="w-full h-full object-cover"
+                                        />
+                                        {/* Play button overlay */}
+                                        <span className="absolute inset-0 flex items-center justify-center">
+                                            <span className="w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center rounded-full bg-red-600 group-hover:bg-red-700 shadow-2xl transition-all duration-200 group-hover:scale-110">
+                                                <svg viewBox="0 0 24 24" className="w-7 h-7 sm:w-9 sm:h-9 text-white fill-current ml-1" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M8 5v14l11-7z" />
+                                                </svg>
+                                            </span>
+                                        </span>
+                                    </button>
+                                )}
                             </div>
 
                             {/* Copy */}
-                            <div>
-                                {/* <div className="text-[14.5px] tracking-[0.08em] uppercase text-[#ffc107] font-bold flex items-center gap-2 mb-3.5">
-                                    <span className="w-[22px] h-[2px] bg-[#ffc107] inline-block" />
-                                    About the Department
-                                </div> */}
-                                <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-4">
-                                    Computing education, grounded in <span className="text-[#ffc107]">knowledge and innovation.</span>
+                            <div className="w-full">
+                                <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-6 text-center">
+                                     About the Department of <span className="text-[#ffc107]">Computer Science and Engineering</span>
                                 </h2>
 
-                                <div className={`text-[#4B5A72] text-[15.5px] leading-relaxed space-y-3 ${!rm["about"] ? "line-clamp-4 sm:line-clamp-none" : ""}`}>
-                                    <p>The Department of Computer Science & Information Systems (DCSIS) at SRMU provides computing resources for teaching and research across areas such as distributed computing, mobile systems, networking, security, computer architecture and computer vision.</p>
-                                    <p>The department follows a well-developed curriculum with a flexible credit system, giving students the opportunity to select courses according to their academic interests while developing relevant knowledge and practical skills.</p>
+                                <div className={`text-[#4B5A72] text-[15.5px] sm:text-[16px] leading-relaxed space-y-4 ${!rm["about"] ? "line-clamp-4 sm:line-clamp-none" : ""}`}>
+                                    <p>The Department of Computer Science and Engineering at SRMU was established in 2012 with the objective of providing quality education and developing skilled professionals in the field of computing and information technology.</p>
+                                    <p>The department offers B.Tech., M.Tech. and Ph.D. programs and provides academic exposure to core areas including computer technologies, distributed computing, information security, programming languages, computer networks, database management systems, software engineering, operating systems, compiler construction, and computer organization & architecture.</p>
+                                    <p>The curriculum is periodically updated to incorporate emerging areas such as Python programming, Android application development, digital image processing, cyber security, design thinking, and cloud application development.</p>
+                                    <p>Through industrial summer training, seminars, workshops, industrial visits, and conferences, students get opportunities to connect academic concepts with professional practices.</p>
+                                    <p>For students searching for computer science engineering in Lucknow, the department provides a combination of foundational computing education, emerging technology exposure, industry interaction, and research-oriented learning.</p>
                                 </div>
 
-                                <div className={`grid grid-cols-1 sm:grid-cols-2 gap-3 mt-6 ${!rm["about"] ? "hidden sm:grid" : "grid"}`}>
-                                    {aboutPillars.map(p => (
-                                        <div key={p.title} className="border-l-[3px] border-[#ffc107] pl-3">
-                                            <b className="block text-[14px] text-[#14284E]">{p.title}</b>
-                                            <span className="text-[12.5px] text-[#5C6B76]">{p.desc}</span>
-                                        </div>
-                                    ))}
-                                </div>
-                                <button className="rm-btn sm:hidden mt-3" onClick={() => toggleRm("about")}>{rm["about"] ? "Read Less" : "Read More"}</button>
+                                <button className="rm-btn sm:hidden mt-3 mx-auto flex" onClick={() => toggleRm("about")}>{rm["about"] ? "Read Less" : "Read More"}</button>
 
                                 {/* Quick stats */}
-                                <div className="flex gap-px mt-6 border border-[#DCE6F2] rounded-xl overflow-hidden">
+                                <div className="flex gap-px mt-8 border border-[#DCE6F2] rounded-xl overflow-hidden shadow-sm">
                                     {quickStats.map((s, i) => (
-                                        <div key={s.label} className={`flex-1 text-center py-4 px-2 ${i % 2 === 0 ? "bg-[#F6FAFE]" : "bg-white"}`}>
-                                            <b className="block font-bold text-[22px] text-[#14284E] font-display">{s.value}</b>
-                                            <span className="text-[11px] text-[#7C8994] uppercase tracking-[0.05em]">{s.label}</span>
+                                        <div key={s.label} className={`flex-1 text-center py-5 px-3 ${i % 2 === 0 ? "bg-[#F6FAFE]" : "bg-white"}`}>
+                                            <b className="block font-bold text-[24px] sm:text-[28px] text-[#14284E] font-display">{s.value}</b>
+                                            <span className="text-[11.5px] sm:text-[12.5px] text-[#7C8994] uppercase tracking-[0.05em] font-semibold mt-1 block">{s.label}</span>
                                         </div>
                                     ))}
                                 </div>
@@ -412,9 +503,10 @@ const DepartmentOfComputerScienceAndInformationSystemsNew = () => {
                                 <h3 className="text-[22px] font-bold font-display text-[#14284E] mb-5">What we work toward every day</h3>
                                 <ul className="space-y-3">
                                     {[
-                                        "To educate and prepare ICT professionals and train them for further higher studies.",
-                                        "To contribute to society through developments in computer science and emerging technologies.",
-                                        "To seek innovations in teaching and learning through interactive instruction and global engagement.",
+                                        "To expose graduate and postgraduate students to fundamental principles and cutting-edge technologies in Computer Science and Engineering through an updated, industry-ready curriculum.",
+                                        "To develop multidisciplinary skills required to solve complex real-world problems and participate in collaborative projects through diverse teaching approaches.",
+                                        "To promote research, innovation and industry collaboration among students and faculty.",
+                                        "To encourage professional, ethical and social responsibility among graduates.",
                                     ].map(item => (
                                         <li key={item} className="flex gap-3 text-[14.5px] text-[#3F4C56]">
                                             <span className="text-[#ffc107] font-bold shrink-0 mt-0.5">+</span>
@@ -429,7 +521,7 @@ const DepartmentOfComputerScienceAndInformationSystemsNew = () => {
                                 </div>
                                 <h3 className="text-[22px] font-bold font-display text-white mb-5">Where we're headed</h3>
                                 <p className="text-[14.5px] text-[#AEBBC6] leading-relaxed">
-                                    To be recognized as a centre of Computer Science and Information Systems through teaching, learning and research activities, producing skilled and innovative professionals who are oriented towards serving society with moral values.
+                                    To build the nation by fostering industry- and research-oriented studies in Computer Science and Engineering and to become a centre of excellence in developing indigenous technologies for the advancement of society.
                                 </p>
                             </div>
                         </div>
@@ -440,21 +532,18 @@ const DepartmentOfComputerScienceAndInformationSystemsNew = () => {
                 <section id="programs" className="py-8 md:py-10 px-4 sm:px-6 bg-white">
                     <div className={`${Classes["container"]}`}>
                         <div className="w-full mb-8">
-                            {/* <div className="text-[14.5px] tracking-[0.08em] uppercase text-[#ffc107] font-bold flex items-center gap-2 mb-3.5">
-                                <span className="w-[22px] h-[2px] bg-[#ffc107] inline-block" /> Program Finder
-                            </div> */}
                             <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3">
-                                Pick a program based on where <span className="text-[#ffc107]">you want to begin.</span>
+                                Explore Computer Science & <span className="text-[#ffc107]">Engineering Programs</span>
                             </h2>
                             <p className={`text-[15.5px] text-[#4B5A72] leading-relaxed max-w-[70ch] ${!rm["pgIntro"] ? "rm-clamp" : ""}`}>
-                                Whether you are starting after Class 12 or looking to build specialized skills in emerging areas of computing, DCSIS offers programs designed around computer science, information systems, artificial intelligence, data science and cybersecurity.
+                                The Department of Computer Science and Engineering offers undergraduate and postgraduate programs across core computing and emerging technology domains.
                             </p>
                             <button className="rm-btn mt-1" onClick={() => toggleRm("pgIntro")}>{rm["pgIntro"] ? "Read Less" : "Read More"}</button>
                         </div>
 
                         <h3 className="text-[17px] font-bold text-[#14284E] mb-5">Undergraduate — After Class 12th</h3>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-                            {programCards.map((prog, i) => (
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
+                            {programCards.filter(p => p.level === "Undergraduate").map((prog, i) => (
                                 <div key={i} className="bg-white border border-[#DCE6F2] hover:border-[#1B4F91]/40 rounded-2xl p-6 sm:p-7 pt-8 shadow-[0_4px_18px_rgba(15,31,61,0.04)] hover:shadow-[0_12px_30px_rgba(15,31,61,0.08)] hover:-translate-y-1 transition-all duration-300 relative group flex flex-col h-full mt-3">
                                     <span className="absolute -top-3.5 right-6 bg-gradient-to-r from-[#ffc107] to-[#FFD54F] text-[#14284E] text-[10px] font-bold uppercase tracking-wider px-4 py-1.5 rounded-full shadow-md border border-white/50">{prog.level}</span>
                                     
@@ -483,6 +572,47 @@ const DepartmentOfComputerScienceAndInformationSystemsNew = () => {
                                 </div>
                             ))}
                         </div>
+
+                        <h3 className="text-[17px] font-bold text-[#14284E] mb-5">Postgraduate — After Graduation</h3>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                            {programCards.filter(p => p.level === "Postgraduate").map((prog, i) => (
+                                <div key={i} className="bg-white border border-[#DCE6F2] hover:border-[#1B4F91]/40 rounded-2xl p-6 sm:p-7 pt-8 shadow-[0_4px_18px_rgba(15,31,61,0.04)] hover:shadow-[0_12px_30px_rgba(15,31,61,0.08)] hover:-translate-y-1 transition-all duration-300 relative group flex flex-col h-full mt-3">
+                                    <span className="absolute -top-3.5 right-6 bg-[#14284E] text-white text-[10px] font-bold uppercase tracking-wider px-4 py-1.5 rounded-full shadow-md border border-white/50">{prog.level}</span>
+                                    
+                                    <h3 className="font-bold text-[18px] font-display text-[#14284E] mb-3 group-hover:text-[#1B4F91] transition-colors leading-snug pr-2">{prog.title}</h3>
+                                    <p className="text-[13.5px] text-[#54626D] leading-relaxed mb-6 flex-grow">{prog.desc}</p>
+                                    
+                                    <div className="flex items-center gap-6 mb-6 p-4 bg-[#F8FAFC] rounded-xl border border-[#F1F5F9]">
+                                        <div className="flex-1 border-r border-[#E2E8F0]">
+                                            <span className="block text-[10.5px] text-[#8A97A1] font-bold uppercase tracking-wider mb-0.5">Duration</span>
+                                            <b className="font-display text-[18px] text-[#14284E]">{prog.duration}</b>
+                                        </div>
+                                        <div className="flex-1">
+                                            <span className="block text-[10.5px] text-[#8A97A1] font-bold uppercase tracking-wider mb-0.5">Annual Fee</span>
+                                            <b className="font-display text-[18px] text-[#14284E]">{prog.fee}</b>
+                                        </div>
+                                    </div>
+                                    
+                                    <div className="flex flex-col sm:flex-row gap-3 pt-2">
+                                        <a href="#" className="flex-1 flex items-center justify-center gap-1.5 px-4 py-2.5 text-[13px] font-bold bg-[#14284E] text-white rounded-xl hover:bg-[#1B4F91] hover:shadow-md transition-all">
+                                            View Details <ArrowRight className="w-3.5 h-3.5" />
+                                        </a>
+                                        <a href="https://students.srmu.ac.in/login" target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-1.5 px-4 py-2.5 text-[13px] font-bold bg-[#ffc107] text-[#14284E] rounded-xl hover:bg-[#FFD54F] hover:shadow-md transition-all">
+                                            Apply Now <ArrowRight className="w-3.5 h-3.5" />
+                                        </a>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+
+                        <div className="mt-10 flex flex-col items-center justify-center text-center">
+                            <p className="text-[13px] sm:text-[14px] text-[#4B5A72] mb-5 max-w-[800px]">
+                                SRMU's current department page lists these programs and their respective durations and fee information.
+                            </p>
+                            <Link to="/programs" className="inline-flex items-center gap-2 bg-[#ffc107] hover:bg-[#FFD54F] text-[#14284E] font-bold text-[14px] px-8 py-3.5 rounded-lg shadow-sm transition-all hover:-translate-y-0.5">
+                                View All CSE Programs <ArrowRight className="w-4 h-4" />
+                            </Link>
+                        </div>
                     </div>
                 </section>
 
@@ -490,16 +620,12 @@ const DepartmentOfComputerScienceAndInformationSystemsNew = () => {
                 <section id="events" className="py-8 md:py-10 px-4 sm:px-6 bg-[#F0F6FB]">
                     <div className={`${Classes["container"]}`}>
                         <div className="w-full mb-8">
-                            {/* <div className="text-[14.5px] tracking-[0.08em] uppercase text-[#ffc107] font-bold flex items-center gap-2 mb-3.5">
-                                <span className="w-[22px] h-[2px] bg-[#ffc107] inline-block" /> Events of the Department
+                            {/* <div className="text-[13px] sm:text-[14.5px] tracking-[0.08em] uppercase text-[#ffc107] font-bold flex items-center gap-2 mb-3.5">
+                                <span className="w-[22px] h-[2px] bg-[#ffc107] inline-block shrink-0" /> Experiential Learning
                             </div> */}
                             <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3">
-                                Learning beyond <span className="text-[#ffc107]">the classroom.</span>
+                                From Classroom Concepts to <span className="text-[#ffc107]">Real-World Applications</span>
                             </h2>
-                            <p className={`text-[15.5px] text-[#4B5A72] max-w-[70ch] leading-relaxed ${!rm["evtIntro"] ? "rm-clamp" : ""}`}>
-                                Guest lectures, workshops, seminars, webinars and technology-focused activities give students opportunities to interact with academicians, researchers and industry professionals.
-                            </p>
-                            <button className="rm-btn mt-1" onClick={() => toggleRm("evtIntro")}>{rm["evtIntro"] ? "Read Less" : "Read More"}</button>
                         </div>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -511,9 +637,18 @@ const DepartmentOfComputerScienceAndInformationSystemsNew = () => {
                                     <div className="p-5 sm:p-6 flex flex-col flex-grow">
                                         <span className="text-[10.5px] font-bold uppercase tracking-[0.06em] text-[#ffc107] mb-2 block">{ev.tag}</span>
                                         <h5 className="font-bold text-[15px] text-[#14284E] font-display mb-3 leading-snug line-clamp-2">{ev.title}</h5>
-                                        <div className="text-[13px] text-[#54626D] mt-auto flex items-center gap-2">
+                                        <div className="text-[13px] text-[#54626D] mb-4 flex items-center gap-2">
                                             <div className="w-1.5 h-1.5 rounded-full bg-[#DCE6F2] shrink-0" />
                                             <span className="line-clamp-1">{ev.speaker}</span>
+                                        </div>
+                                        <p className="text-[13px] text-[#7C8994] line-clamp-3 flex-grow mb-4">{ev.shortDesc}</p>
+                                        <div className="mt-auto pt-4 border-t border-[#F1F5F9]">
+                                            <button 
+                                                onClick={() => setSelectedEvent(ev)}
+                                                className="text-[12px] font-bold text-[#1B4F91] hover:text-[#ffc107] uppercase tracking-wider flex items-center gap-1 transition-colors"
+                                            >
+                                                Read More <ArrowRight className="w-3.5 h-3.5" />
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -705,34 +840,62 @@ const DepartmentOfComputerScienceAndInformationSystemsNew = () => {
                             </p>
                         </div>
 
-                        {/* Faculty mini grid */}
-                        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 mb-10">
-                            {facultyList.map(f => (
-                                <div key={f.name} className="bg-white border border-[#DCE6F2] rounded-2xl overflow-hidden text-center pb-2 shadow-[0_4px_18px_rgba(15,31,61,0.04)] hover:shadow-[0_12px_30px_rgba(15,31,61,0.08)] hover:-translate-y-1 transition-all duration-300 flex flex-col h-full">
-                                    <div className="w-full aspect-[4/5] bg-[#EAEAEA] mb-4 relative">
-                                        {f.isHod && (
-                                            <div className="absolute top-3 left-3 bg-[#ffc107] text-[#14284E] text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded shadow-sm z-10">
-                                                HOD
+                        {/* Faculty Embla Carousel */}
+                        <div className="relative mb-10">
+                            {/* Prev button */}
+                            <button
+                                onClick={() => facultyEmblaApi?.scrollPrev()}
+                                disabled={!facultyCanPrev}
+                                className="absolute -left-4 top-1/2 -translate-y-1/2 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-white border border-[#DCE6F2] shadow-md text-[#14284E] hover:bg-[#14284E] hover:text-white transition-all disabled:opacity-30 disabled:cursor-not-allowed"
+                                aria-label="Previous"
+                            >
+                                <ArrowLeft className="w-4 h-4" />
+                            </button>
+
+                            {/* Embla viewport */}
+                            <div className="overflow-hidden" ref={facultyEmblaRef}>
+                                <div className="flex gap-4">
+                                    {facultyList.map(f => (
+                                        <div key={f.name} className="bg-white border border-[#DCE6F2] rounded-2xl overflow-hidden text-center pb-2 shadow-[0_4px_18px_rgba(15,31,61,0.04)] hover:shadow-[0_12px_30px_rgba(15,31,61,0.08)] hover:-translate-y-1 transition-all duration-300 flex flex-col flex-shrink-0" style={{ width: "220px" }}>
+                                            <div className="w-full bg-[#EAEAEA] mb-4 relative" style={{ aspectRatio: "4/5" }}>
+                                                {f.isHod && (
+                                                    <div className="absolute top-3 left-3 bg-[#ffc107] text-[#14284E] text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded shadow-sm z-10">
+                                                        HOD
+                                                    </div>
+                                                )}
+                                                <img
+                                                    src={f.img}
+                                                    alt={f.name}
+                                                    onError={(e) => { e.currentTarget.src = "https://ui-avatars.com/api/?name=" + encodeURIComponent(f.name) + "&background=EAEAEA&color=14284E&size=256"; }}
+                                                    className="w-full h-full object-cover object-top mix-blend-multiply relative z-0"
+                                                />
                                             </div>
-                                        )}
-                                        <img
-                                            src={f.img}
-                                            alt={f.name}
-                                            className="w-full h-full object-cover object-top mix-blend-multiply relative z-0"
-                                        />
-                                    </div>
-                                    <h5 className="font-bold text-[14px] text-[#14284E] px-3 mb-1 line-clamp-2">{f.name}</h5>
-                                    <span className="text-[12px] text-[#ffc107] font-bold uppercase tracking-[0.05em]">{f.role}</span>
-                                    <div className="mt-auto pt-4 pb-2">
-                                        <button 
-                                            onClick={() => setSelectedFaculty(f)}
-                                            className="text-[12px] font-bold text-[#1B4F91] hover:text-[#ffc107] uppercase tracking-wider flex items-center justify-center gap-1 w-full transition-colors"
-                                        >
-                                            Read More <ArrowRight className="w-3.5 h-3.5" />
-                                        </button>
-                                    </div>
+                                            <h5 className="font-bold text-[14px] text-[#14284E] px-3 mb-1 line-clamp-2">{f.name}</h5>
+                                            <span className="text-[12px] text-[#ffc107] font-bold uppercase tracking-[0.05em]">{f.role}</span>
+                                            <div className="mt-auto pt-4 pb-2">
+                                                {f.isHod && (
+                                                    <button
+                                                        onClick={() => setSelectedFaculty(f)}
+                                                        className="text-[12px] font-bold text-[#1B4F91] hover:text-[#ffc107] uppercase tracking-wider flex items-center justify-center gap-1 w-full transition-colors"
+                                                    >
+                                                        Read More <ArrowRight className="w-3.5 h-3.5" />
+                                                    </button>
+                                                )}
+                                            </div>
+                                        </div>
+                                    ))}
                                 </div>
-                            ))}
+                            </div>
+
+                            {/* Next button */}
+                            <button
+                                onClick={() => facultyEmblaApi?.scrollNext()}
+                                disabled={!facultyCanNext}
+                                className="absolute -right-4 top-1/2 -translate-y-1/2 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-white border border-[#DCE6F2] shadow-md text-[#14284E] hover:bg-[#14284E] hover:text-white transition-all disabled:opacity-30 disabled:cursor-not-allowed"
+                                aria-label="Next"
+                            >
+                                <ArrowRight className="w-4 h-4" />
+                            </button>
                         </div>
                     </div>
                 </section>
@@ -741,15 +904,15 @@ const DepartmentOfComputerScienceAndInformationSystemsNew = () => {
                 <section className="py-8 md:py-10 px-4 sm:px-6 bg-[#071329]">
                     <div className={`${Classes["container"]}`}>
                         <div className="w-full mb-8">
-                            {/* <div className="text-[13px] tracking-[0.08em] uppercase text-[#ffc107] font-bold flex items-center gap-2 mb-3">
-                                <span className="w-[22px] h-[2px] bg-[#ffc107] inline-block" /> Key Highlights
+                            {/* <div className="text-[13px] sm:text-[14.5px] tracking-[0.08em] uppercase text-[#ffc107] font-bold flex items-center gap-2 mb-3.5">
+                                <span className="w-[22px] h-[2px] bg-[#ffc107] inline-block shrink-0" /> Department Highlights
                             </div> */}
                             <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-white">
-                                A learning environment designed <span className="text-[#ffc107]">around technology.</span>
+                                What Makes the CSE <span className="text-[#ffc107]">Department Different in SRMU?</span>
                             </h2>
                         </div>
 
-                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-white/10 border border-white/10 rounded-2xl overflow-hidden">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 border border-white/10 rounded-2xl overflow-hidden">
                             {whyItems.map(w => (
                                 <div key={w.num} className="bg-[#071329] p-7 sm:p-8 hover:bg-[#0f1b33] transition-colors">
                                     <span className="block text-[13px] text-[#ffc107] font-bold tracking-[0.08em] mb-3">{w.num}</span>
@@ -762,49 +925,36 @@ const DepartmentOfComputerScienceAndInformationSystemsNew = () => {
                 </section>
 
                 {/* ── Career Pathways ──────────────────────────────────────── */}
-                <section id="careers" className="py-8 md:py-10 px-4 sm:px-6 bg-white">
+                <section id="careers" className="py-10 md:py-16 px-4 sm:px-6 bg-[#F8FAFC]">
                     <div className={`${Classes["container"]}`}>
-                        <div className="w-full mb-8">
-                            {/* <div className="text-[14.5px] tracking-[0.08em] uppercase text-[#ffc107] font-bold flex items-center gap-2 mb-3.5">
-                                <span className="w-[22px] h-[2px] bg-[#ffc107] inline-block" /> Career Pathways
+                        <div className="w-full mb-10 md:mb-12 text-center max-w-3xl mx-auto">
+                            {/* <div className="text-[13px] sm:text-[14.5px] tracking-[0.08em] uppercase text-[#ffc107] font-bold flex items-center justify-center gap-2 mb-3.5">
+                                <span className="w-[22px] h-[2px] bg-[#ffc107] inline-block shrink-0" /> Career Pathways
                             </div> */}
                             <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E]">
-                                Where computing skills <span className="text-[#ffc107]">can take you.</span>
+                                Where Can a CSE Degree <span className="text-[#ffc107]">Take You?</span>
                             </h2>
                         </div>
 
-                        {/* Tab buttons */}
-                        <div className="flex flex-wrap gap-2 mb-6">
-                            {careerTabLabels.map(t => (
-                                <button
-                                    key={t.key}
-                                    onClick={() => setActiveCareerTab(t.key)}
-                                    className={`px-4 py-2.5 text-[13.5px] font-bold rounded-lg border-[1.5px] transition-colors ${activeCareerTab === t.key ? "bg-[#14284E] text-white border-[#14284E]" : "bg-white text-[#4C5A65] border-[#DCE6F2] hover:border-[#14284E]"}`}
-                                >
-                                    {t.label}
-                                </button>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            {careerItems.map((item, index) => (
+                                <div key={index} className="bg-white p-6 md:p-8 rounded-2xl border border-[#DCE6F2] hover:border-[#ffc107]/50 shadow-[0_4px_18px_rgba(15,31,61,0.03)] hover:shadow-[0_12px_30px_rgba(15,31,61,0.08)] transition-all duration-300 group flex flex-col h-full">
+                                    <div className="w-12 h-12 rounded-xl bg-[#F0F6FB] text-[#1B4F91] flex items-center justify-center mb-5 group-hover:bg-[#1B4F91] group-hover:text-white transition-colors duration-300">
+                                        <item.icon className="w-6 h-6" strokeWidth={1.5} />
+                                    </div>
+                                    <h4 className="font-display font-bold text-[18px] text-[#14284E] mb-3 leading-snug">{item.title}</h4>
+                                    <p className="text-[#54626D] text-[14px] leading-relaxed flex-grow">{item.desc}</p>
+                                </div>
                             ))}
                         </div>
-
-                        {/* Chips */}
-                        <div className="flex flex-wrap gap-3">
-                            {careerPanes[activeCareerTab].map(chip => (
-                                <span key={chip} className="px-4 py-2.5 bg-[#F0F6FB] border border-[#DCE6F2] text-[13.5px] text-[#14284E] font-semibold rounded-lg">
-                                    <span className="text-[#ffc107] font-bold mr-1">+</span>{chip}
-                                </span>
-                            ))}
-                        </div>
-                        <p className="text-[12.5px] text-[#7C8994] mt-5">These are career pathways associated with each subject area, not guaranteed placement outcomes.</p>
                     </div>
                 </section>
 
                 {/* ── FAQ ──────────────────────────────────────────────────── */}
+                {/*
                 <section id="faq" className="py-8 md:py-10 px-4 sm:px-6 bg-[#F4F7FB]">
                     <div className={`${Classes["container"]} max-w-[900px]`}>
                         <div className="w-full mb-8">
-                            {/* <div className="text-[14.5px] tracking-[0.08em] uppercase text-[#ffc107] font-bold flex items-center gap-2 mb-3.5">
-                                <span className="w-[22px] h-[2px] bg-[#ffc107] inline-block" /> FAQs
-                            </div> */}
                             <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E]">
                                 Common questions, <span className="text-[#ffc107]">answered.</span>
                             </h2>
@@ -832,6 +982,7 @@ const DepartmentOfComputerScienceAndInformationSystemsNew = () => {
                         </div>
                     </div>
                 </section>
+                */}
 
                 {/* ── CTA Band ─────────────────────────────────────────────── */}
                 {/* <section id="apply" className="py-12 sm:py-16 px-4 sm:px-6 bg-gradient-to-br from-[#3E6B54] to-[#5C8A72]">
@@ -881,7 +1032,12 @@ const DepartmentOfComputerScienceAndInformationSystemsNew = () => {
                             
                             <div className="h-32 bg-[#14284E] relative">
                                 <div className="absolute -bottom-16 left-6 border-4 border-white rounded-full overflow-hidden bg-[#EAEAEA] w-32 h-32 shadow-lg">
-                                    <img src={selectedFaculty.img} alt={selectedFaculty.name} className="w-full h-full object-cover object-top mix-blend-multiply" />
+                                    <img 
+                                        src={selectedFaculty.img} 
+                                        alt={selectedFaculty.name} 
+                                        onError={(e) => { e.currentTarget.src = "https://ui-avatars.com/api/?name=" + encodeURIComponent(selectedFaculty.name) + "&background=EAEAEA&color=14284E&size=256"; }}
+                                        className="w-full h-full object-cover object-top mix-blend-multiply" 
+                                    />
                                 </div>
                             </div>
                             
@@ -890,16 +1046,25 @@ const DepartmentOfComputerScienceAndInformationSystemsNew = () => {
                                 <div className="text-[13px] text-[#ffc107] font-bold uppercase tracking-widest mb-6">{selectedFaculty.role}</div>
                                 
                                 <div className="space-y-4">
-                                    {selectedFaculty.isHod && (
-                                        <div className="inline-flex items-baseline gap-2 bg-[#F0F6FB] border border-[#DCE6F2] px-4 py-2 rounded-lg text-[13px] text-[#3F4C56] mb-2">
-                                            <b className="font-display text-[20px] text-[#14284E]">{selectedFaculty.experience}</b> years of experience
-                                        </div>
-                                    )}
+                                    <div className="flex flex-wrap gap-2">
+                                        {selectedFaculty.qualification && (
+                                            <div className="inline-flex items-baseline gap-2 bg-[#F0F6FB] border border-[#DCE6F2] px-4 py-2 rounded-lg text-[13px] text-[#3F4C56]">
+                                                <span className="font-medium text-[#14284E]">Qualification:</span>
+                                                <span className="font-display text-[14px] font-semibold text-[#14284E]">{selectedFaculty.qualification}</span>
+                                            </div>
+                                        )}
+                                        {selectedFaculty.experience && (
+                                            <div className="inline-flex items-baseline gap-2 bg-[#F0F6FB] border border-[#DCE6F2] px-4 py-2 rounded-lg text-[13px] text-[#3F4C56]">
+                                                <span className="font-medium text-[#14284E]">Experience:</span>
+                                                <span className="font-display text-[14px] font-semibold text-[#14284E]">{selectedFaculty.experience}</span>
+                                            </div>
+                                        )}
+                                    </div>
 
                                     <div>
                                         <h5 className="text-[11px] uppercase tracking-[0.08em] text-[#8A97A1] font-bold mb-2">About</h5>
                                         <p className="text-[14px] text-[#4C5A65] leading-relaxed">
-                                            {selectedFaculty.name} is a dedicated {selectedFaculty.role.toLowerCase()} at the Department of Computer Science & Information Systems, focusing on interactive, personalized teaching and fostering a research-oriented academic environment.
+                                            {selectedFaculty.name} is a dedicated {selectedFaculty.isHod ? "Head of Department" : "faculty member"} at the Department of Computer Science & Engineering, focusing on interactive, personalized teaching and fostering a research-oriented academic environment.
                                         </p>
                                     </div>
 
@@ -941,8 +1106,47 @@ const DepartmentOfComputerScienceAndInformationSystemsNew = () => {
                     </div>
                 )}
             </main>
+            {/* ── Event Modal ─────────────────────────────────────────────────── */}
+            {selectedEvent && (
+                <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-[#071329]/40 backdrop-blur-sm animate-in fade-in duration-200" onClick={() => setSelectedEvent(null)}>
+                    <div 
+                        className="bg-white rounded-2xl overflow-hidden w-full max-w-[600px] shadow-2xl animate-in zoom-in-95 duration-300 relative flex flex-col max-h-[90vh]" 
+                        onClick={e => e.stopPropagation()}
+                    >
+                        {/* Close button */}
+                        <button 
+                            onClick={() => setSelectedEvent(null)}
+                            className="absolute top-4 right-4 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-black/20 hover:bg-black/40 text-white transition-colors"
+                        >
+                            <X className="w-4 h-4" />
+                        </button>
+                        
+                        <div className="w-full aspect-[21/9] relative bg-[#F0F6FB]">
+                            <img src={selectedEvent.img} alt={selectedEvent.title} className="w-full h-full object-cover" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                            <div className="absolute bottom-4 left-6 right-6">
+                                <span className="inline-block bg-[#ffc107] text-[#14284E] text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-sm shadow-sm mb-2">{selectedEvent.tag}</span>
+                                <h3 className="text-[20px] font-bold text-white font-display leading-tight">{selectedEvent.title}</h3>
+                            </div>
+                        </div>
+
+                        <div className="p-6 overflow-y-auto custom-scrollbar">
+                            <div className="flex items-center gap-2 mb-4 pb-4 border-b border-[#E2E8F0]">
+                                <div className="w-2 h-2 rounded-full bg-[#1B4F91]" />
+                                <span className="text-[13.5px] font-semibold text-[#14284E]">{selectedEvent.speaker}</span>
+                            </div>
+                            <div className="text-[14.5px] text-[#4B5A72] leading-relaxed space-y-4">
+                                {selectedEvent.readMore.split('\n').map((paragraph: string, idx: number) => (
+                                    paragraph.trim() ? <p key={idx}>{paragraph}</p> : null
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
+
         </div>
     );
 };
 
-export default DepartmentOfComputerScienceAndInformationSystemsNew;
+export default DepartmentOfComputerScienceAndEngineeringNew;

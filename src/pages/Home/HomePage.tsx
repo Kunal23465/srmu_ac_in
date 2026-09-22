@@ -11,7 +11,7 @@ const HomePage: React.FC = () => {
   return (
     <>
       <SeoHead
-        title="Best Private University in Uttar Pradesh | Shri Ramswaroop Memorial University (SRMU)"
+        title="Best Private University in Uttar Pradesh | Shri Ramswaroop Memorial University (SRMU), Lucknow - Deva Road"
         description="Shri Ramswaroop Memorial University (SRMU), Lucknow-Dewa Road, Uttar Pradesh (U.P.) is best private university in Uttar Pradesh  that offers B.Tech, BCA, BBA, B.Com, Law, MBA, M.Tech, Pharmacy, Biotechnology, Polytechnic, Agriculture ,MCA and more various undergraduate and postgraduate courses ."
         pathname={pathname}
         jsonLd={pathname === "/" ? homePageSchema : undefined}
