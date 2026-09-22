@@ -444,9 +444,9 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                         className="absolute inset-0 w-full h-full group"
                                         aria-label="Play video"
                                     >
-                                        {/* High-res YouTube thumbnail */}
+                                        {/* Custom video banner image */}
                                         <img
-                                            src="https://img.youtube.com/vi/JXkXd08VexI/maxresdefault.jpg"
+                                            src="/assets/images/new-information-system/video-banner.png"
                                             alt="Department Video"
                                             className="w-full h-full object-cover"
                                         />
