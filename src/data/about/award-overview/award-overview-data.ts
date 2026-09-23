@@ -64,6 +64,6 @@ export const awardAndRankingData = [
     {
         id: 9,
         icon: img9,
-        title: "Recent Award and Recognition",
+        title: "Awarded as Future Ready University of the Year by Jagran",
     },
 ];
