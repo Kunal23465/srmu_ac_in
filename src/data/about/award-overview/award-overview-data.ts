@@ -7,6 +7,7 @@ import img5 from "../../../assets/images/about/awards/w5-27122302523038.webp";
 import img6 from "../../../assets/images/about/awards/w4-27122302524356.webp";
 import img7 from "../../../assets/images/about/awards/w3-27122302530885.webp";
 import img8 from "../../../assets/images/about/awards/certificate-2026.png";
+import img9 from "../../../assets/images/about/awards/new-awarding.png";
 
 export const AwardOverviewData: customeOverViewType = {
     heading: "Award Overview",
@@ -59,5 +60,10 @@ export const awardAndRankingData = [
         id: 8,
         icon: img8,
         title: "India's Best Young Universities 2026 AAA+ by Careers 360",
+    },
+    {
+        id: 9,
+        icon: img9,
+        title: "Recent Award and Recognition",
     },
 ];
