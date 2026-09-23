@@ -6,6 +6,8 @@ import img4 from "../../../assets/images/about/awards/w6-27122302521592.webp";
 import img5 from "../../../assets/images/about/awards/w5-27122302523038.webp";
 import img6 from "../../../assets/images/about/awards/w4-27122302524356.webp";
 import img7 from "../../../assets/images/about/awards/w3-27122302530885.webp";
+import img8 from "../../../assets/images/about/awards/certificate-2026.png";
+
 export const AwardOverviewData: customeOverViewType = {
     heading: "Award Overview",
     content:
@@ -14,7 +16,7 @@ export const AwardOverviewData: customeOverViewType = {
 
 export const awardAndRankingData = [
     {
-        id: 0,
+        id: 0, 
         icon: "",
         title: "",
     },    
@@ -52,5 +54,10 @@ export const awardAndRankingData = [
         id: 7,
         icon: img7,
         title: "Awarded as Top Private Engineering Institute in JagranJosh Ranking",
+    },
+    {
+        id: 8,
+        icon: img8,
+        title: "India's Best Young Universities 2026 AAA+ by Careers 360",
     },
 ];

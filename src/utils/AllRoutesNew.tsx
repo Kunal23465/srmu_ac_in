@@ -4,6 +4,8 @@ import { lazyPage } from "./lazyRoute";
 import NewHomePage from "../pages/NewHomePage";
 import { resolveProgramRouteSlug } from "./legacyProgramRoutes";
 import BTechCseCyberSecurityNew from "../pages/BTechCseCyberSecurityNew";
+import BTechCseDataScienceNew from "../pages/BTechCseDataScienceNew";
+
 import InsiderPage from "../pages/InsiderPage";
 import DepartmentOfComputerScienceAndEngineeringNewPage from "../pages/academics/institutes/institute-department/department-of-computer-science-and-engineering-new/DepartmentOfComputerScienceAndEngineeringNewPage";
 
@@ -159,6 +161,11 @@ export const routes = [
         path: "b-tech-cse-cyber-security-new",
         element: <BTechCseCyberSecurityNew />,
       },
+      {
+        path: "b-tech-cse-data-science-new",
+        element: <BTechCseDataScienceNew />,
+      },
+
       {
         path: "insider",
         element: <InsiderPage />,

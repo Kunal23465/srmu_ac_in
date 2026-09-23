@@ -6,6 +6,8 @@ import { fetchProgramDisciplines } from "../../../store/program-finder/disciplin
 import { fetchProgramFlags } from "../../../store/program-finder/program-flag/programFlagThunk";
 import ProgramFilter from "../../admissions/program-finder/ProgramFilter";
 import Classes from "../../../utils/styles/Global.module.css";
+import KamleshImg from "../../../assets/images/academics/institutes/cse/cse2.jpeg";
+import SakshiImg from "../../../assets/images/academics/institutes/cse/cse3.jpeg";
 import { Download, ChevronDown, ChevronUp, Search, Mail, Phone, ArrowLeft, ArrowRight, X, Code2, Brain, BarChart3, ShieldCheck, Cloud, GraduationCap } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 import { Link } from "react-router-dom";
@@ -165,8 +167,8 @@ const facultyList = [
     { name: "Ms. Prabha Singh",           role: "Assistant Professor",  img: "/assets/images/new-information-system/Ms.-Prabha-Singh.webp" },
     { name: "Ms. Atifa Parveen",          role: "Assistant Professor",  img: "/assets/images/new-information-system/Ms.-Atifa-Parveen.webp" },
     // No matching image file — shown at end
-    { name: "Mr. Kamlesh Chandra Maurya", role: "Assistant Professor",  img: "/assets/cse2-DlLRnAHu.jpeg" },
-    { name: "Ms. Sakshi Singh",           role: "Assistant Professor",  img: "/assets/cse3-B7ufIGSb.jpeg" },
+    { name: "Mr. Kamlesh Chandra Maurya", role: "Assistant Professor",  img: KamleshImg },
+    { name: "Ms. Sakshi Singh",           role: "Assistant Professor",  img: SakshiImg },
 ];
 
 const whyItems = [
@@ -299,7 +301,12 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                     <img
                         src="/assets/images/new-information-system/again-banner.jpg"
                         alt="Department of Computer Science & Information Systems"
-                        className="absolute inset-0 w-full h-full object-cover object-top z-0"
+                        className="hidden sm:block absolute inset-0 w-full h-full object-cover object-top z-0"
+                    />
+                    <img
+                        src="/assets/images/new-information-system/mobile-banner-cse.jpg"
+                        alt="Department of Computer Science & Information Systems"
+                        className="sm:hidden absolute inset-0 w-full h-full object-cover object-top z-0"
                     />
                     
                     {/* Scrim – light enough to keep banner visible */}
@@ -318,7 +325,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                     & Engineering
                                 </h1>
                                 <div className="h-[3px] bg-[#38bdf8] w-[140px] sm:w-[200px] mt-1 mb-2 sm:mb-4 rounded-full" />
-                                <p className="text-[clamp(16px,2vw,22px)] font-light mt-2 sm:mt-4 drop-shadow-md">
+                                <p className="text-[clamp(16px,2vw,22px)] font-light mt-2 sm:mt-4 drop-shadow-md text-justify">
                                     Shape Your Future with Computer Science & Engineering
                                 </p>
                                 {/* Hero stats row – desktop only */}
@@ -395,7 +402,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                     <option>Other</option>
                                 </select>
                             </div>
-                            <p className="text-[10px] text-gray-500 flex items-start gap-1.5">
+                            <p className="text-[10px] text-gray-500 flex items-start gap-1.5 text-justify">
                                 <input type="checkbox" defaultChecked className="mt-0.5 shrink-0" />
                                 I authorise SRMU and its representatives to Call, SMS, Email or WhatsApp me regarding admissions and programmes.
                             </p>
@@ -468,12 +475,12 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                      About the Department of <span className="text-[#ffc107]">Computer Science and Engineering</span>
                                 </h2>
 
-                                <div className={`text-[#4B5A72] text-[15.5px] sm:text-[16px] leading-relaxed space-y-4 ${!rm["about"] ? "line-clamp-4 sm:line-clamp-none" : ""}`}>
-                                    <p>The Department of Computer Science and Engineering at SRMU was established in 2012 with the objective of providing quality education and developing skilled professionals in the field of computing and information technology.</p>
-                                    <p>The department offers B.Tech., M.Tech. and Ph.D. programs and provides academic exposure to core areas including computer technologies, distributed computing, information security, programming languages, computer networks, database management systems, software engineering, operating systems, compiler construction, and computer organization & architecture.</p>
-                                    <p>The curriculum is periodically updated to incorporate emerging areas such as Python programming, Android application development, digital image processing, cyber security, design thinking, and cloud application development.</p>
-                                    <p>Through industrial summer training, seminars, workshops, industrial visits, and conferences, students get opportunities to connect academic concepts with professional practices.</p>
-                                    <p>For students searching for computer science engineering in Lucknow, the department provides a combination of foundational computing education, emerging technology exposure, industry interaction, and research-oriented learning.</p>
+                                <div className={`text-[#4B5A72] text-[15.5px] sm:text-[16px] leading-relaxed space-y-4 text-justify ${!rm["about"] ? "line-clamp-4 sm:line-clamp-none" : ""}`}>
+                                    <p className="text-justify">The Department of Computer Science and Engineering at SRMU was established in 2012 with the objective of providing quality education and developing skilled professionals in the field of computing and information technology.</p>
+                                    <p className="text-justify">The department offers B.Tech., M.Tech. and Ph.D. programs and provides academic exposure to core areas including computer technologies, distributed computing, information security, programming languages, computer networks, database management systems, software engineering, operating systems, compiler construction, and computer organization & architecture.</p>
+                                    <p className="text-justify">The curriculum is periodically updated to incorporate emerging areas such as Python programming, Android application development, digital image processing, cyber security, design thinking, and cloud application development.</p>
+                                    <p className="text-justify">Through industrial summer training, seminars, workshops, industrial visits, and conferences, students get opportunities to connect academic concepts with professional practices.</p>
+                                    <p className="text-justify">For students searching for computer science engineering in Lucknow, the department provides a combination of foundational computing education, emerging technology exposure, industry interaction, and research-oriented learning.</p>
                                 </div>
 
                                 <button className="rm-btn sm:hidden mt-3 mx-auto flex" onClick={() => toggleRm("about")}>{rm["about"] ? "Read Less" : "Read More"}</button>
@@ -508,7 +515,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                         "To promote research, innovation and industry collaboration among students and faculty.",
                                         "To encourage professional, ethical and social responsibility among graduates.",
                                     ].map(item => (
-                                        <li key={item} className="flex gap-3 text-[14.5px] text-[#3F4C56]">
+                                        <li key={item} className="flex gap-3 text-[14.5px] text-[#3F4C56] text-justify">
                                             <span className="text-[#ffc107] font-bold shrink-0 mt-0.5">+</span>
                                             {item}
                                         </li>
@@ -520,7 +527,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                     <span className="w-[22px] h-[2px] bg-[#ffc107] inline-block" /> Vision
                                 </div>
                                 <h3 className="text-[22px] font-bold font-display text-white mb-5">Where we're headed</h3>
-                                <p className="text-[14.5px] text-[#AEBBC6] leading-relaxed">
+                                <p className="text-[14.5px] text-[#AEBBC6] leading-relaxed text-justify">
                                     To build the nation by fostering industry- and research-oriented studies in Computer Science and Engineering and to become a centre of excellence in developing indigenous technologies for the advancement of society.
                                 </p>
                             </div>
@@ -533,9 +540,9 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                     <div className={`${Classes["container"]}`}>
                         <div className="w-full mb-8">
                             <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3">
-                                Explore Computer Science & <span className="text-[#ffc107]">Engineering Programs</span>
+                                Explore <span className="text-[#ffc107]">Computer Science & Engineering Programs</span>
                             </h2>
-                            <p className={`text-[15.5px] text-[#4B5A72] leading-relaxed max-w-[70ch] ${!rm["pgIntro"] ? "rm-clamp" : ""}`}>
+                            <p className={`text-[15.5px] text-[#4B5A72] leading-relaxed text-justify ${!rm["pgIntro"] ? "rm-clamp" : ""}`}>
                                 The Department of Computer Science and Engineering offers undergraduate and postgraduate programs across core computing and emerging technology domains.
                             </p>
                             <button className="rm-btn mt-1" onClick={() => toggleRm("pgIntro")}>{rm["pgIntro"] ? "Read Less" : "Read More"}</button>
@@ -548,7 +555,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                     <span className="absolute -top-3.5 right-6 bg-[#ffc107] text-[#14284E] text-[10px] font-bold uppercase tracking-wider px-4 py-1.5 rounded-full">{prog.level}</span>
                                     
                                     <h3 className="font-bold text-[18px] font-display text-[#14284E] mb-3 group-hover:text-[#1B4F91] transition-colors leading-snug pr-2">{prog.title}</h3>
-                                    <p className="text-[13.5px] text-[#54626D] leading-relaxed mb-6 flex-grow">{prog.desc}</p>
+                                    <p className="text-[13.5px] text-[#54626D] leading-relaxed mb-6 flex-grow text-justify">{prog.desc}</p>
                                     
                                     <div className="flex items-center gap-6 mb-6 p-4 bg-[#F8FAFC] rounded-xl border border-[#F1F5F9]">
                                         <div className="flex-1 border-r border-[#E2E8F0]">
@@ -580,7 +587,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                     <span className="absolute -top-3.5 right-6 bg-[#14284E] text-white text-[10px] font-bold uppercase tracking-wider px-4 py-1.5 rounded-full">{prog.level}</span>
                                     
                                     <h3 className="font-bold text-[18px] font-display text-[#14284E] mb-3 group-hover:text-[#1B4F91] transition-colors leading-snug pr-2">{prog.title}</h3>
-                                    <p className="text-[13.5px] text-[#54626D] leading-relaxed mb-6 flex-grow">{prog.desc}</p>
+                                    <p className="text-[13.5px] text-[#54626D] leading-relaxed mb-6 flex-grow text-justify">{prog.desc}</p>
                                     
                                     <div className="flex items-center gap-6 mb-6 p-4 bg-[#F8FAFC] rounded-xl border border-[#F1F5F9]">
                                         <div className="flex-1 border-r border-[#E2E8F0]">
@@ -653,7 +660,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                             <div className="w-1.5 h-1.5 rounded-full bg-[#DCE6F2] shrink-0" />
                                             <span className="line-clamp-1">{ev.speaker}</span>
                                         </div>
-                                        <p className="text-[13px] text-[#7C8994] line-clamp-3 flex-grow mb-4">{ev.shortDesc}</p>
+                                        <p className="text-[13px] text-[#7C8994] line-clamp-3 flex-grow mb-4 text-justify">{ev.shortDesc}</p>
                                         <div className="mt-auto pt-4 border-t border-[#F1F5F9]">
                                             <button 
                                                 onClick={() => setSelectedEvent(ev)}
@@ -692,7 +699,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                 </h2>
 
                                 <div className="mt-4">
-                                    <p className={`text-[15px] leading-6 text-[#4B5A72] max-w-[650px] ${!rm['placement1'] ? 'rm-clamp' : ''}`}>
+                                    <p className={`text-[15px] leading-6 text-[#4B5A72] text-justify ${!rm['placement1'] ? 'rm-clamp' : ''}`}>
                                         Dedicated placement training — resume building, coding practice,
                                         mock interviews and group discussions — starts from the final year.
                                     </p>
@@ -847,7 +854,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                             <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3">
                                 Learn from experienced <span className="text-[#ffc107]">academic & research professionals.</span>
                             </h2>
-                            <p className="text-[15.5px] text-[#4B5A72] max-w-[70ch]">
+                            <p className="text-[15.5px] text-[#4B5A72] text-justify">
                                 The university highlights faculty recruitment from reputed institutions including IIT, IIM, MNNIT and IIT-BHU, with an emphasis on interactive, personalized teaching.
                             </p>
                         </div>
@@ -929,7 +936,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                 <div key={w.num} className="bg-[#071329] p-7 sm:p-8 hover:bg-[#0f1b33] transition-colors">
                                     <span className="block text-[13px] text-[#ffc107] font-bold tracking-[0.08em] mb-3">{w.num}</span>
                                     <h4 className="text-white font-bold text-[17px] mb-3 font-display">{w.title}</h4>
-                                    <p className="text-[#AEBBC6] text-[13.5px] leading-relaxed">{w.desc}</p>
+                                    <p className="text-[#AEBBC6] text-[13.5px] leading-relaxed text-justify">{w.desc}</p>
                                 </div>
                             ))}
                         </div>
@@ -955,7 +962,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                         <item.icon className="w-6 h-6" strokeWidth={1.5} />
                                     </div>
                                     <h4 className="font-display font-bold text-[18px] text-[#14284E] mb-3 leading-snug">{item.title}</h4>
-                                    <p className="text-[#54626D] text-[14px] leading-relaxed flex-grow">{item.desc}</p>
+                                    <p className="text-[#54626D] text-[14px] leading-relaxed flex-grow text-justify">{item.desc}</p>
                                 </div>
                             ))}
                         </div>
@@ -985,7 +992,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                         </span>
                                     </button>
                                     <div className={`overflow-hidden transition-all duration-300 px-5 sm:px-6 ${openFaq === i ? "max-h-[500px] pb-5 opacity-100" : "max-h-0 pb-0 opacity-0"}`}>
-                                        <p className="text-[14px] sm:text-[14.5px] text-[#4C5A65] leading-[1.6]">
+                                        <p className="text-[14px] sm:text-[14.5px] text-[#4C5A65] leading-[1.6] text-justify">
                                             {faq.a}
                                         </p>
                                     </div>
@@ -1075,7 +1082,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
 
                                     <div>
                                         <h5 className="text-[11px] uppercase tracking-[0.08em] text-[#8A97A1] font-bold mb-2">About</h5>
-                                        <p className="text-[14px] text-[#4C5A65] leading-relaxed">
+                                        <p className="text-[14px] text-[#4C5A65] leading-relaxed text-justify">
                                             {selectedFaculty.name} is a dedicated {selectedFaculty.isHod ? "Head of Department" : "faculty member"} at the Department of Computer Science & Engineering, focusing on interactive, personalized teaching and fostering a research-oriented academic environment.
                                         </p>
                                     </div>
@@ -1149,7 +1156,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                             </div>
                             <div className="text-[14.5px] text-[#4B5A72] leading-relaxed space-y-4">
                                 {selectedEvent.readMore.split('\n').map((paragraph: string, idx: number) => (
-                                    paragraph.trim() ? <p key={idx}>{paragraph}</p> : null
+                                    paragraph.trim() ? <p key={idx} className="text-justify">{paragraph}</p> : null
                                 ))}
                             </div>
                         </div>
