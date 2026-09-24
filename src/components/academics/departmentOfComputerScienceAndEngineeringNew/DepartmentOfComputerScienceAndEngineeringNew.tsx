@@ -339,7 +339,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                     Department of 
                                 </h2>
                                 <h1 className="text-[clamp(40px,5vw,64px)] leading-[1.1] font-bold text-[#38bdf8] drop-shadow-md">
-                                  Computer Science & Engineering
+                                  Computer Science & Engineering (CSE)
                                 </h1>
                                 <div className="h-[3px] bg-[#38bdf8] w-[140px] sm:w-[200px] mt-1 mb-2 sm:mb-4 rounded-full" />
                                 <p className="text-[clamp(16px,2vw,22px)] font-light mt-2 sm:mt-4 drop-shadow-md text-justify">

@@ -32,6 +32,7 @@ import financialAwareness from "../../assets/new-home/events/Financial-Awareness
 import memoryManagement from "../../assets/new-home/events/Memory-Management.webp";
 import villageVisit from "../../assets/new-home/events/Legal-Aid-Cell-Institute-of-Legal-Studies-organised-drive-at-srmu.webp";
 import expressionsOrganized from "../../assets/new-home/events/Expressions_Organized.webp";
+import newsNewEvent from "../../assets/new-home/events/News_New_Event.webp";
 
 
 
@@ -55,6 +56,45 @@ export type EventItem = {
 };
 
 const eventsData: EventItem[] = [
+  {
+  id: 25,
+  isRedirect: false,
+  image: newsNewEvent,
+  imageSmall: newsNewEvent,
+  date: "September 24th, 2026",
+  title: `Awareness Program on “Questioned Documents & Fingerprint Examination: A Legal Forensic Study” Organized at Institute of Legal Studies, SRMU`,
+  description: `
+The <strong>Institute of Legal Studies (ILS), Shri Ramswaroop Memorial University (SRMU)</strong>, organized an <strong>Awareness Program on Forensic Science</strong> through the <strong>FGWIC, Institute of Legal Studies</strong>, on <strong>24 September 2026</strong> at <strong>11:00 AM onwards</strong>. The program was conducted at the <strong>Mini Audi, Admin Block, SRMU</strong>.
+
+<br/><strong>Guest Speaker</strong><br/>
+
+The session was delivered by <strong>Mr. Darshan Murali, Asst. Manager, Forensic Investigation & Training, CCIF, Delhi</strong>, who provided students with valuable insights into the practical application of forensic science in legal and criminal investigations.
+
+<br/><strong>Chairperson & Convener</strong><br/>
+
+The program was chaired by <strong>Prof. (Dr.) Narendra Bahadur Singh, Director, FGWIC, ILS</strong>, and convened by <strong>Mr. Rajat Saxena, FGWIC, ILS</strong>.
+
+<br/><strong>Key Areas Discussed</strong><br/>
+
+The session focused on the <strong>fundamental principles and practical applications of questioned document and fingerprint examination</strong>. Students gained an understanding of how forensic techniques can assist in establishing the authenticity, authorship, and evidentiary value of documents used in legal and criminal investigations.
+
+<br/><strong>Questioned Document Examination</strong><br/>
+
+The discussion covered the examination of <strong>signatures and handwriting, alterations, erasures, overwriting, forged documents, and other disputed features</strong> relevant to legal proceedings. The session highlighted the role of scientific examination in identifying potential forgery and assessing the genuineness of documentary evidence.
+
+<br/><strong>Fingerprint Examination</strong><br/>
+
+The fingerprint examination component introduced students to the importance of <strong>fingerprints in individual identification</strong>. The session covered the basic principles of fingerprint analysis, comparison and identification methods, and the role of fingerprint evidence in <strong>crime investigation and judicial proceedings</strong>.
+
+<br/><strong>Legal and Evidentiary Significance</strong><br/>
+
+The program emphasized the <strong>legal relevance and evidentiary significance of forensic findings</strong>, helping students understand how the scientific examination of physical evidence can support investigations and contribute to the administration of justice.
+
+<br/><strong>Impact of the Initiative</strong><br/>
+
+The informative session provided students with an opportunity to connect their <strong>theoretical knowledge of forensic science and law with practical investigative applications</strong>. It also enhanced their understanding of the interdisciplinary relationship between <strong>forensic science, criminal investigation, and legal studies</strong>, thereby enriching their academic and practical perspective on the role of forensic evidence in the justice system.
+`,
+},
   {
     id: 24,
     isRedirect: false,
