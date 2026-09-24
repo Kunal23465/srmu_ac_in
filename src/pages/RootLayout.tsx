@@ -13,7 +13,7 @@ const RootLayout: React.FC = () => {
   const normalizedPath = normalizePath(location.pathname);
 
   const isHomeRoute =
-    normalizedPath === "/" || normalizedPath === "/new-home" || normalizedPath === "/b-tech-cse-cyber-security-new" || normalizedPath === "/insider" || normalizedPath === "/b-tech-cse-data-science-new" || normalizedPath === "/department-of-computer-science-and-engineering-new";
+    normalizedPath === "/" || normalizedPath === "/new-home" || normalizedPath === "/b-tech-cse-cyber-security-new" || normalizedPath === "/insider" || normalizedPath === "/b-tech-cse-data-science-new" || normalizedPath === "/department-of-computer-science-and-engineering-new" || normalizedPath === "/b-tech-mechanical-engineering-new";
 
   const fallbackSeo = useMemo(
     () => getDefaultSeo(normalizedPath),

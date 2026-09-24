@@ -5,6 +5,7 @@ import NewHomePage from "../pages/NewHomePage";
 import { resolveProgramRouteSlug } from "./legacyProgramRoutes";
 import BTechCseCyberSecurityNew from "../pages/BTechCseCyberSecurityNew";
 import BTechCseDataScienceNew from "../pages/BTechCseDataScienceNew";
+import BTechMechanicalEngineeringNew from "../pages/BTechMechanicalEngineeringNew";
 
 import InsiderPage from "../pages/InsiderPage";
 import DepartmentOfComputerScienceAndEngineeringNewPage from "../pages/academics/institutes/institute-department/department-of-computer-science-and-engineering-new/DepartmentOfComputerScienceAndEngineeringNewPage";
@@ -164,6 +165,10 @@ export const routes = [
       {
         path: "b-tech-cse-data-science-new",
         element: <BTechCseDataScienceNew />,
+      },
+      {
+        path: "b-tech-mechanical-engineering-new",
+        element: <BTechMechanicalEngineeringNew />,
       },
 
       {

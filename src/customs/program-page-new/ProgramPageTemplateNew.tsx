@@ -132,7 +132,15 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
             <div className={`${Classes["container"]} flex flex-col justify-between h-full sm:h-auto w-full`}>
               <div className="w-full max-w-[650px] text-white text-left mt-2 sm:mt-0">
                 <h2 className="text-[clamp(24px,3vw,36px)] font-semibold mb-1 leading-[1.2] drop-shadow-md">{heroBanner.degreeTitle}</h2>
-                <h1 className="text-[clamp(40px,5vw,64px)] leading-[1.1] font-bold text-[#38bdf8] drop-shadow-md">{heroBanner.specialization}</h1>
+                <h1 className="text-[clamp(40px,5vw,64px)] leading-[1.1] font-bold text-[#38bdf8] drop-shadow-md">
+                  {heroBanner.specialization === "Data Science & Artificial Intelligence" ? (
+                    <>
+                      Data Science & <span className="sm:whitespace-nowrap">Artificial Intelligence</span>
+                    </>
+                  ) : (
+                    heroBanner.specialization
+                  )}
+                </h1>
                 <div className="h-[3px] bg-[#38bdf8] w-[140px] sm:w-[200px] mt-1 mb-2 sm:mb-4 rounded-full"></div>
                 {heroBanner.subtitle && (
                   <p className="hidden sm:block text-[clamp(16px,2vw,22px)] font-light mt-2 sm:mt-4 drop-shadow-md text-justify">
