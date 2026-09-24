@@ -8,8 +8,8 @@ const mechanicalEngineeringNewData: ProgramPageDataNew = {
     degreeTitle: "B.Tech. in Mechanical Engineering",
     specialization: "Mechanical Engineering",
     subtitle: "In collaboration with L&T",
-    desktopBannerUrl: "/assets/images/data-science-ai-ml-new-page/desktop-banner.webp",
-    mobileBannerUrl: "/assets/images/data-science-ai-ml-new-page/mobile-banner.webp",
+    desktopBannerUrl: "/assets/images/new-mechnical-program/desktop-banner.webp",
+    mobileBannerUrl: "/assets/images/new-mechnical-program/mobile-banner.webp",
     applyNowUrl: "https://students.srmu.ac.in/login",
     brochureUrl: "/Broucher_SRMU_25_April___.pdf",
   },
@@ -25,7 +25,7 @@ const mechanicalEngineeringNewData: ProgramPageDataNew = {
       "A B.Tech. in Mechanical Engineering provides students with a foundation in engineering mechanics, thermodynamics, fluid mechanics, machine design, manufacturing, materials, and industrial engineering.",
       "At SRMU, the B.Tech. in Mechanical Engineering is offered in collaboration with L&T, combining academic learning with industry-oriented exposure in areas such as design, manufacturing, and automation."
     ],
-    imageUrl: "/assets/images/data-science-ai-ml-new-page/s3xs3kxkhti5ezqvqlzc.webp",
+    imageUrl: "/assets/images/new-mechnical-program/vett6qrcicwki2tdldms.webp",
     imageAlt: "Mechanical Engineering with L&T",
     benefitCards: [
       { title: "Strong Industry Relevance", description: "Mechanical engineers are required across manufacturing, automotive, energy, infrastructure, aerospace, and industrial engineering." },
@@ -64,7 +64,7 @@ const mechanicalEngineeringNewData: ProgramPageDataNew = {
     tableRows: [
       { label: "Program", value: "B.Tech. in Mechanical Engineering" },
       { label: "Duration", value: "4 Years" },
-      { label: "Eligibility", value: "10+2 with Physics & Mathematics" },
+      { label: "Eligibility", value: "Passed 10+2 or equivalent with Physics and Mathematics as compulsory subjects along with one of Chemistry/Computer Science/Technical Vocational Subject with minimum 45% aggregate marks." },
       { label: "Recognised By", value: "UGC" },
       { label: "University Accreditation", value: "NAAC Accredited" },
       { label: "Industry Partner", value: "Larsen & Toubro (L&T)" },
@@ -76,7 +76,7 @@ const mechanicalEngineeringNewData: ProgramPageDataNew = {
       { label: "Industry Certifications", value: "Supported" },
       { label: "Career Support", value: "Resume Building, Coding, Mock Interviews & Placement Training" }
     ],
-    tableBackgroundImageUrl: "/assets/images/data-science-ai-ml-new-page/Industry-Integrated-Learning-with-L-T-Section-Image.webp",
+    tableBackgroundImageUrl: "/assets/images/new-mechnical-program/gzpezebn8pgp0oqnxpdq.webp",
   },
 
   // ----------------------------------------------------------
@@ -94,7 +94,7 @@ const mechanicalEngineeringNewData: ProgramPageDataNew = {
       title: "Students were introduced to modern manufacturing practices, production systems and technology-driven industrial processes",
       presenter: "",
       paragraphs: ["helping them understand how mechanical engineering concepts are applied in real manufacturing environments."],
-      imageUrl: "/assets/images/data-science-ai-ml-new-page/The-Role-of-AI-in-Enhancing-Production-and-Operational-Efficiency-January-2025-Section-Image.webp",
+      imageUrl: "/assets/images/new-mechnical-program/lhnggy89mzsivw8j6k7g.webp",
       icon: "compass"
     },
     secondaryCards: [
@@ -103,74 +103,74 @@ const mechanicalEngineeringNewData: ProgramPageDataNew = {
         title: "Automation, Smart Manufacturing & Digital Technologies",
         presenter: "",
         paragraphs: ["The session provided students with an understanding of Industry 4.0, automation and emerging digital technologies transforming modern manufacturing and engineering operations."],
-        icon: "cpu"
+        icon: "factory"
       },
       {
         badge: "Expert Interaction on Automotive Engineering",
         title: "Automotive Systems & Emerging Technologies",
         presenter: "",
         paragraphs: ["Students gained insights into contemporary automotive engineering, vehicle technologies, manufacturing processes and the evolving requirements of the automotive industry."],
-        icon: "cpu"
+        icon: "car"
       },
       {
         badge: "Workshop",
         title: "CAD/CAM & Design Engineering Workshop",
         presenter: "Computer-Aided Design & Manufacturing",
         paragraphs: ["The workshop provided practical exposure to CAD/CAM concepts, engineering design and computer-aided manufacturing processes used in modern mechanical engineering."],
-        icon: "code"
+        icon: "design"
       },
       {
         badge: "Workshop",
         title: "Automation & Industrial Systems Workshop",
         presenter: "Industrial Automation",
         paragraphs: ["Students explored automation technologies, industrial systems and their applications in manufacturing environments."],
-        icon: "cpu"
+        icon: "settings"
       },
       {
         badge: "Workshop",
         title: "Design Thinking & Critical Thinking Workshop",
         presenter: "Engineering Problem Solving",
         paragraphs: ["The workshop encouraged students to approach engineering challenges through structured problem-solving, creative thinking and innovative design methods."],
-        icon: "compass"
+        icon: "wrench"
       },
       {
         badge: "Workshop",
         title: "Lean Startup & Minimum Viable Product Workshop",
         presenter: "Innovation & Product Development",
         paragraphs: ["Students learned how ideas can be developed into practical products through problem identification, validation, prototyping and iterative improvement."],
-        icon: "compass"
+        icon: "settings"
       },
       {
         badge: "Hackathons / Innovation Activities",
         title: "Innovation & Engineering Challenges",
         presenter: "Product design and development, Smart manufacturing, Industrial automation",
         paragraphs: ["Students get opportunities to work on engineering challenges that encourage innovation, teamwork, and practical problem-solving. Such activities help learners transform engineering concepts into prototypes, products, and technology-driven solutions."],
-        icon: "cpu"
+        icon: "energy"
       },
       {
         badge: "Industrial Visit",
         title: "L&T Komatsu Machine Yard",
         presenter: "26 February 2026",
         paragraphs: ["Students received practical exposure to heavy construction machinery, equipment and industrial operations, helping them understand the application of mechanical engineering principles in large-scale industrial environments."],
-        icon: "compass"
+        icon: "factory"
       },
       {
         badge: "Industrial Visit",
         title: "L&T Construction and Mining Machinery",
         presenter: "18 September 2025",
         paragraphs: ["The visit provided students with first-hand exposure to construction and mining machinery, manufacturing-related processes and industrial equipment used in the infrastructure sector."],
-        icon: "compass"
+        icon: "factory"
       },
       {
         badge: "Industrial Visit",
         title: "NTPC, Tanda",
         presenter: "26 April 2025",
         paragraphs: ["Students gained practical exposure to power-generation systems, plant operations, and engineering processes used in a large industrial facility."],
-        icon: "compass"
+        icon: "energy"
       }
     ],
     departmentUrl: "/department-of-mechanical-engineering",
-    sectionBackgroundImageUrl: "/assets/images/data-science-ai-ml-new-page/Where-Our-Students-Get-Placed-Background-Image.webp",
+    sectionBackgroundImageUrl: "/assets/images/new-mechnical-program/tsb9lhfday8gnfbkkhjz.webp",
   },
 
   // ----------------------------------------------------------
@@ -183,7 +183,7 @@ const mechanicalEngineeringNewData: ProgramPageDataNew = {
       { val: "1200+", label: "Job Offers Given" },
       { val: "225+", label: "Students Placed" },
     ],
-    imageUrl: "/assets/images/data-science-ai-ml-new-page/Where-Our-Students-Get-Placed-Section-Image.webp",
+    imageUrl: "/assets/images/new-mechnical-program/uabl75dnikvruvxvs5ke.webp",
     imageAlt: "Mechanical Engineering Placement Highlights",
     placementDetailUrl: "/placement-records",
   },
@@ -195,7 +195,7 @@ const mechanicalEngineeringNewData: ProgramPageDataNew = {
     sectionTitle: "Industry Integrated Curriculum",
     sectionTitleHighlight: "with L&T",
     introParagraph: "Strengthened through academic collaboration with L&T, the curriculum connects university education with industry expectations through application-oriented learning, engineering case studies, practical training and problem-solving methodologies. Students develop a foundation in mechanical engineering while gaining exposure to modern design, manufacturing and automation practices.",
-    curriculumImageDesktop: "/assets/images/data-science-ai-ml-new-page/Learn-Data-Science-AI-the-Way-Industry-Works-Section-Image.webp",
+    curriculumImageDesktop: "/assets/images/new-mechnical-program/lzc1zhjq1rvlllinpi6b.webp",
     curriculumImageMobile: "/assets/images/data-science-ai-ml-new-page/for-mobile-view.png",
     curriculumOverlayItems: [
       { text: "Design Engineering" },
@@ -210,7 +210,7 @@ const mechanicalEngineeringNewData: ProgramPageDataNew = {
     curriculumSectionTitle: "Learn Mechanical Engineering the Way Industry Works",
     curriculumDescription: "From the first year, students learn to design, analyse, manufacture, test and improve mechanical systems through engineering fundamentals, practical work and industry-oriented learning.",
     reelVideoUrl: "/MicrosoftTeams-video.mp4",
-    cardBackgroundImageUrl: "/assets/images/data-science-ai-ml-new-page/Data-Science-Analytics-Lab-Card-Background-Image.webp",
+    cardBackgroundImageUrl: "/assets/images/new-mechnical-program/blrmnpd51nih1a4hunsd.webp",
     labs: [
       {
         label: "LAB / 01",
@@ -409,18 +409,36 @@ const mechanicalEngineeringNewData: ProgramPageDataNew = {
   // ----------------------------------------------------------
   poPsoPlo: {
     objectives: [
-      { text: "To impart technical knowledge in the field of mechanical engineering." },
-      { text: "To develop an understanding of mechanical systems, design, and manufacturing." },
-      { text: "To provide a strong foundation in thermodynamics, mechanics, and fluid dynamics." }
+      { text: "Candidate must have passed 10+2 or equivalent system from any recognized Central/ State Board with Physics and Mathematics as compulsory subjects along with one of the Chemistry/Computer Science/Technical Vocational Subject with minimum aggregate marks of 45%." },
+    
     ],
     learningOutcomes: [
-      { text: "Apply knowledge of mathematics, science, and engineering principles to solve mechanical engineering problems." },
-      { text: "Design mechanical systems and processes meeting specific needs with considerations for public health, safety, and environmental contexts." },
-      { text: "Utilize modern engineering and IT tools for modeling and simulation of complex mechanical activities." }
+       { text: "Engineering knowledge: Apply the knowledge of mathematics, science, engineering fundamentals, and an engineering specialization to the solution of complex engineering problems." },
+      { text: "Problem analysis: Identify, formulate, research literature, and analyze complex engineering problems reaching substantiated conclusions using first principles of mathematics, natural sciences, and engineering sciences." },
+      { text: "Design/development of solutions: Design solutions for complex engineering problems and design system components or processes that meet the specified needs with appropriate consideration for the public health and safety, and the cultural, societal, and environmental considerations." },
+      { text: "Conduct investigations of complex problems: Use research-based knowledge and research methods including design of experiments, analysis and interpretation of data, and synthesis of the information to provide valid conclusions." },
+      { text: "Modern tool usage: Create, select, and apply appropriate techniques, resources, and modern engineering and IT tools including prediction and modelling to complex engineering activities with an understanding of the limitations." },
+      { text: "The engineer and society: Apply reasoning informed by the contextual knowledge to assess societal, health, safety, legal and cultural issues and the consequent responsibilities relevant to the professional engineering practice." },
+      { text: "Environment and sustainability: Understand the impact of the professional engineering solutions in societal and environmental contexts, and demonstrate the knowledge of, and need for sustainable development." },
+      { text: "Ethics: Apply ethical principles and commit to professional ethics and responsibilities and norms of the engineering practice." },
+      { text: "Individual and team work: Function effectively as an individual, and as a member or leader in diverse teams, and in multidisciplinary settings." },
+      { text: "Communication: Communicate effectively on complex engineering activities with the engineering community and with society at large, such as, being able to comprehend and write effective reports and design documentation, make effective presentations, and give and receive clear instructions." },
+      { text: "Project management and finance: Demonstrate knowledge and understanding of the engineering and management principles and apply these to one’s own work, as a member and leader in a team, to manage projects and in multidisciplinary environments." },
+      { text: "Life-long learning: Recognize the need for, and have the preparation and ability to engage in independent and life-long learning in the broadest context of technological change." }
     ],
     specificOutcomes: [
-      { text: "Apply mechanical engineering concepts to design, develop, and implement advanced manufacturing and automation systems." },
-      { text: "Identify standard mechanical engineering practices to build and manage quality products and systems." }
+      {
+  text: "To develop the impact of engineering on society and utilize the skills to work on multi-disciplinary tasks for social and economic benefit of society.",
+},
+{
+  text: "Ability to identify, formulate and solve complex engineering problems by utilizing the knowledge gained from different subjects of Electrical Engineering.",
+},
+{
+  text: "Ability to develop new knowledge to use modern engineering tools, software and equipment to analyze problems necessary for engineering practice and the knowledge and skills gained also help to make society aware of non-conventional energy resources and help to overcome the problems of depletion of conventional energy resources.",
+},
+{
+  text: "Ability to improve the techniques and skills to appear and succeed in competitive examinations like GATE, GRE, TOEFL, GMAT etc and to develop the technical skills, communication skills and helps in implementing in small sector industries to develop the entrepreneur skills.",
+}
     ],
   },
 
@@ -430,7 +448,7 @@ const mechanicalEngineeringNewData: ProgramPageDataNew = {
   careerOpportunities: {
     headingHighlight: "in Mechanical Engineering",
     description: "Mechanical engineering is applied across industries that design, manufacture, operate and maintain machines, products, energy systems and industrial infrastructure. A B.Tech. in Mechanical Engineering can prepare students for career pathways across manufacturing, automotive, aerospace, energy, automation, infrastructure, design and industrial engineering.",
-    imageUrl: "/assets/images/data-science-ai-ml-new-page/Career-Opportunities-in-Data-Science-Artificial-Intelligence-Section-Image.webp",
+    imageUrl: "/assets/images/new-mechnical-program/jg3hq3h4vwrxfxh3ejkl.webp",
     imageAlt: "Mechanical Engineering Career Opportunities",
     industries: [
       { title: "Automotive & Mobility", descriptionLabel: "Works on", description: "Vehicle Design, Powertrain Systems, Manufacturing, Vehicle Components, Testing & Quality" },

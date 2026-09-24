@@ -3,7 +3,7 @@ import Classes from "../../utils/styles/Global.module.css";
 import useEmblaCarousel from "embla-carousel-react";
 import {
   ArrowLeft, ArrowRight, Download, PhoneCall, Cpu, Lock, Code2, Shield,
-  ChevronDown, ChevronUp,
+  ChevronDown, ChevronUp, Settings, Wrench, PenTool, Zap, Factory, Car
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import ltLogo from "../../assets/new-home/l-t.webp";
@@ -48,6 +48,12 @@ const CardIcon = ({ icon }: { icon?: string }) => {
   if (icon === "lock") return <Lock className="w-full h-full" strokeWidth={1} />;
   if (icon === "shield") return <Shield className={cls} />;
   if (icon === "code") return <Code2 className={cls} />;
+  if (icon === "settings") return <Settings className={cls} />;
+  if (icon === "wrench") return <Wrench className={cls} />;
+  if (icon === "design") return <PenTool className={cls} />;
+  if (icon === "energy") return <Zap className={cls} />;
+  if (icon === "factory") return <Factory className={cls} />;
+  if (icon === "car") return <Car className={cls} />;
   return <Cpu className={cls} />;
 };
 
@@ -347,9 +353,11 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                     </div>
                   </div>
                   <h4 className="text-[17px] sm:text-[20px] font-bold font-display text-[#14284E] mb-2 leading-snug">{industryExposure.featuredCard.title}</h4>
-                  <div className="flex items-center gap-2 mb-4">
-                    <span className="text-[14px] text-[#1B4F91] font-semibold bg-[#F6FAFE] border border-[#DCE6F2] px-3.5 py-1.5 rounded-full inline-block">{industryExposure.featuredCard.presenter}</span>
-                  </div>
+                  {industryExposure.featuredCard.presenter && (
+                    <div className="flex items-center gap-2 mb-4">
+                      <span className="text-[14px] text-[#1B4F91] font-semibold bg-[#F6FAFE] border border-[#DCE6F2] px-3.5 py-1.5 rounded-full inline-block">{industryExposure.featuredCard.presenter}</span>
+                    </div>
+                  )}
                   <div className={!rm["featCard"] ? "rm-clamp" : ""}>
                     {industryExposure.featuredCard.paragraphs.map((p, i) => <p key={i} className="text-[14.5px] text-[#4B5A72] leading-relaxed mb-3.5 text-justify">{p}</p>)}
                   </div>
@@ -915,7 +923,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
             {/* Career Role Cards */}
             {careerOpportunities.careerRoles && careerOpportunities.careerRoles.length > 0 && (
               <div className="mt-8">
-                <h3 className="text-[19px] font-bold font-display text-[#14284E] mb-5">Career <span className="text-[#ffc107]">Roles</span></h3>
+                <h3 className="text-[24px] sm:text-[28px] font-bold font-display text-[#14284E] mb-5">Career <span className="text-[#ffc107]">Roles</span></h3>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                   {careerOpportunities.careerRoles.map((role, i) => (
                     <div key={i} className="bg-white border border-[#DCE6F2] rounded-xl p-4 hover:border-[#1B4F91]/40 hover:-translate-y-1 hover:shadow-md transition-all duration-300">

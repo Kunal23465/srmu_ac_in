@@ -187,6 +187,19 @@ const careerItems = [
     { title: "Research & Higher Studies", desc: "Pursue M.Tech., Ph.D., research careers, or advanced specialization in emerging computing domains.", icon: GraduationCap },
 ];
 
+const scholarshipItems = [
+    "SRMUSET Based Scholarship",
+    "MERIT Based Scholarship",
+    "Defence, Paramilitary & Police",
+    "Sibling/Ward of SRM Group Staff, Student & Alumni",
+    "Divyang",
+    "National/State Level",
+    "Sportsperson",
+    "Career Progression",
+    "Student of another state and country",
+    "Ward of a Single Parent",
+];
+
 const faqs = [
     { q: "What programs are offered by the Department of Computer Science & Information Systems?", a: "DCSIS offers computer application programs at undergraduate, postgraduate and doctoral levels. Its current program listing includes B.C.A. in Data Science & Artificial Intelligence with L&T, B.C.A. in Cyber Security with L&T and B.C.A. in Artificial Intelligence & Machine Learning." },
     { q: "What is the duration of the B.C.A. programs?", a: "The B.C.A. programs currently listed by DCSIS have a duration of 3 years." },
@@ -211,6 +224,10 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
     const [selectedFaculty, setSelectedFaculty] = useState<any>(null);
     const [selectedEvent, setSelectedEvent] = useState<any>(null);
     const [videoPlaying, setVideoPlaying] = useState(false);
+    
+    // Accordion state for mobile view
+    const [activeUgProgram, setActiveUgProgram] = useState<number | null>(null);
+    const [activePgProgram, setActivePgProgram] = useState<number | null>(null);
 
     // Faculty Embla carousel
     const [facultyEmblaRef, facultyEmblaApi] = useEmblaCarousel({ loop: false, align: "start", dragFree: true });
@@ -319,10 +336,10 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                             {/* Banner Text */}
                             <div className="w-full max-w-[650px] text-white text-left mt-2 sm:mt-0">
                                 <h2 className="text-[clamp(24px,3vw,36px)] font-semibold mb-1 leading-[1.2] drop-shadow-md">
-                                    Department of Computer Science
+                                    Department of 
                                 </h2>
                                 <h1 className="text-[clamp(40px,5vw,64px)] leading-[1.1] font-bold text-[#38bdf8] drop-shadow-md">
-                                    & Engineering
+                                  Computer Science & Engineering
                                 </h1>
                                 <div className="h-[3px] bg-[#38bdf8] w-[140px] sm:w-[200px] mt-1 mb-2 sm:mb-4 rounded-full" />
                                 <p className="text-[clamp(16px,2vw,22px)] font-light mt-2 sm:mt-4 drop-shadow-md text-justify">
@@ -413,7 +430,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                     </div>
                 </section>
 
-                        <div className={`relative z-20 mt-4 sm:mt-0 sm:-mt-[55px] ${Classes["container"]}`}>
+                        <div className={`relative z-20 mt-4 -mb-10 sm:-mb-8 lg:-mb-12 sm:mt-0 sm:-mt-[55px] ${Classes["container"]}`}>
                             <ProgramFilter
                                 data={sortedData}
                                 programTypeOptions={programFlag}
@@ -431,11 +448,11 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                         </div>
 
                 {/* ── About the Department ─────────────────────────────────── */}
-                <section className="pt-8 md:pt-10 pb-8 md:pb-10 px-4 sm:px-6 bg-white">
+                <section className="pt-0 pb-8 md:pb-10 px-4 sm:px-6 bg-white">
                     <div className={`${Classes["container"]}`}>
-                        <div className="flex flex-col gap-10">
+                        <div className="flex flex-col gap-5 sm:gap-10">
                             {/* Video – lite embed for crisp thumbnail */}
-                            <div className="relative w-full h-[320px] sm:h-[480px] lg:h-[600px] rounded-2xl overflow-hidden border border-[#DCE6F2] shadow-[0_8px_30px_rgba(15,31,61,0.08)] bg-black">
+                            <div className="relative w-full aspect-video h-auto sm:h-[480px] lg:h-[600px] rounded-2xl overflow-hidden border border-[#DCE6F2] shadow-[0_8px_30px_rgba(15,31,61,0.08)] bg-black">
                                 {videoPlaying ? (
                                     <iframe
                                         className="absolute top-0 left-0 w-full h-full"
@@ -472,7 +489,8 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                             {/* Copy */}
                             <div className="w-full">
                                 <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-6 text-center">
-                                     About the Department of <span className="text-[#ffc107]">Computer Science and Engineering</span>
+                                     About the Department 
+                                     {/* <span className="text-[#ffc107]">Computer Science and Engineering</span> */}
                                 </h2>
 
                                 <div className={`text-[#4B5A72] text-[15.5px] sm:text-[16px] leading-relaxed space-y-4 text-justify ${!rm["about"] ? "line-clamp-4 sm:line-clamp-none" : ""}`}>
@@ -507,7 +525,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                 <div className="text-[14.5px] tracking-[0.08em] uppercase text-[#ffc107] font-bold flex items-center gap-2 mb-3.5">
                                     <span className="w-[22px] h-[2px] bg-[#ffc107] inline-block" /> Mission
                                 </div>
-                                <h3 className="text-[22px] font-bold font-display text-[#14284E] mb-5">What we work toward every day</h3>
+                                <h3 className="text-[22px] font-bold font-display text-[#14284E] mb-5">What we work towards every day</h3>
                                 <ul className="space-y-3">
                                     {[
                                         "To expose graduate and postgraduate students to fundamental principles and cutting-edge technologies in Computer Science and Engineering through an updated, industry-ready curriculum.",
@@ -536,11 +554,12 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                 </section>
 
                 {/* ── Programs ─────────────────────────────────────────────── */}
-                <section id="programs" className="py-8 md:py-10 px-4 sm:px-6 bg-white overflow-x-hidden relative">
+                <section id="programs" className="py-8 md:py-10 px-4 sm:px-6 bg-white overflow-hidden relative scroll-mt-24">
                     <div className={`${Classes["container"]}`}>
                         <div className="w-full mb-8">
                             <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3">
-                                Explore <span className="text-[#ffc107]">Computer Science & Engineering Programs</span>
+                                Explore Programs
+                                {/* <span className="text-[#ffc107]">Computer Science & Engineering </span> */}
                             </h2>
                             <p className={`text-[15.5px] text-[#4B5A72] leading-relaxed text-justify ${!rm["pgIntro"] ? "rm-clamp" : ""}`}>
                                 The Department of Computer Science and Engineering offers undergraduate and postgraduate programs across core computing and emerging technology domains.
@@ -549,7 +568,9 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                         </div>
 
                         <h3 className="text-[17px] font-bold text-[#14284E] mb-5">Undergraduate – After Class 12th</h3>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
+                        
+                        {/* Desktop Grid */}
+                        <div className="hidden sm:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
                             {programCards.filter(p => p.level === "Undergraduate").map((prog, i) => (
                                 <div key={i} className="bg-white border border-[#E2E8F0] hover:border-[#1B4F91]/40 rounded-xl p-6 sm:p-7 pt-8 shadow-[0_4px_18px_rgba(15,31,61,0.03)] hover:shadow-[0_12px_30px_rgba(15,31,61,0.08)] hover:-translate-y-1 transition-all duration-300 relative group flex flex-col h-full mt-3">
                                     <span className="absolute -top-3.5 right-6 bg-[#ffc107] text-[#14284E] text-[10px] font-bold uppercase tracking-wider px-4 py-1.5 rounded-full">{prog.level}</span>
@@ -580,8 +601,47 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                             ))}
                         </div>
 
+                        {/* Mobile Accordion */}
+                        <div className="sm:hidden space-y-3 mb-10">
+                            {programCards.filter(p => p.level === "Undergraduate").map((prog, i) => (
+                                <div key={i}>
+                                    <button type="button" onClick={() => setActiveUgProgram(activeUgProgram === i ? null : i)} className="w-full flex items-center justify-between rounded-xl border border-[#DCE6F2] bg-[#F6FAFE] px-4 py-4 text-left text-[14px] font-bold text-[#14284E]" aria-expanded={activeUgProgram === i}>
+                                        <span className="font-bold text-[#14284E] leading-snug pr-4">{prog.title}</span>
+                                        {activeUgProgram === i ? <ChevronUp className="w-5 h-5 shrink-0 text-[#1B4F91]" /> : <ChevronDown className="w-5 h-5 shrink-0 text-[#8A97A1]" />}
+                                    </button>
+                                    {activeUgProgram === i && (
+                                        <div className="p-4 border border-t-0 border-[#DCE6F2] bg-white rounded-b-xl -mt-2 pt-6 shadow-sm">
+                                            <p className="text-[13.5px] text-[#54626D] leading-relaxed mb-6 text-justify">{prog.desc}</p>
+                                            
+                                            <div className="flex items-center gap-6 mb-6 p-4 bg-[#F8FAFC] rounded-xl border border-[#F1F5F9]">
+                                                <div className="flex-1 border-r border-[#E2E8F0]">
+                                                    <span className="block text-[10.5px] text-[#8A97A1] font-bold uppercase tracking-wider mb-0.5">Duration</span>
+                                                    <b className="font-display text-[16px] text-[#14284E]">{prog.duration}</b>
+                                                </div>
+                                                <div className="flex-1">
+                                                    <span className="block text-[10.5px] text-[#8A97A1] font-bold uppercase tracking-wider mb-0.5">Annual Fee</span>
+                                                    <b className="font-display text-[16px] text-[#14284E]">{prog.fee}</b>
+                                                </div>
+                                            </div>
+                                            
+                                            <div className="flex flex-col gap-3">
+                                                <a href="#" className="w-full flex items-center justify-center gap-1.5 px-4 py-2.5 text-[13px] font-bold bg-[#14284E] text-white rounded-full hover:bg-[#1B4F91] transition-all">
+                                                    View Details <ArrowRight className="w-3.5 h-3.5" />
+                                                </a>
+                                                <a href="https://students.srmu.ac.in/login" target="_blank" rel="noopener noreferrer" className="w-full flex items-center justify-center gap-1.5 px-4 py-2.5 text-[13px] font-bold bg-[#ffc107] text-[#14284E] rounded-full hover:bg-[#FFD54F] transition-all">
+                                                    Apply Now <ArrowRight className="w-3.5 h-3.5" />
+                                                </a>
+                                            </div>
+                                        </div>
+                                    )}
+                                </div>
+                            ))}
+                        </div>
+
                         <h3 className="text-[17px] font-bold text-[#14284E] mb-5 relative z-20">Postgraduate – After Graduation</h3>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 relative">
+                        
+                        {/* Desktop Grid */}
+                        <div className="hidden sm:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 relative">
                             {programCards.filter(p => p.level === "Postgraduate").map((prog, i) => (
                                 <div key={i} className="bg-white border border-[#E2E8F0] hover:border-[#1B4F91]/40 rounded-xl p-6 sm:p-7 pt-8 shadow-[0_4px_18px_rgba(15,31,61,0.03)] hover:shadow-[0_12px_30px_rgba(15,31,61,0.08)] hover:-translate-y-1 transition-all duration-300 relative z-20 group flex flex-col h-full mt-3">
                                     <span className="absolute -top-3.5 right-6 bg-[#14284E] text-white text-[10px] font-bold uppercase tracking-wider px-4 py-1.5 rounded-full">{prog.level}</span>
@@ -611,7 +671,46 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                 </div>
                             ))}
                             
-                            {/* Decorative Background Image placed behind boxes, extending to screen edge */}
+                        </div>
+
+                        {/* Mobile Accordion */}
+                        <div className="sm:hidden space-y-3 relative z-20">
+                            {programCards.filter(p => p.level === "Postgraduate").map((prog, i) => (
+                                <div key={i}>
+                                    <button type="button" onClick={() => setActivePgProgram(activePgProgram === i ? null : i)} className="w-full flex items-center justify-between rounded-xl border border-[#DCE6F2] bg-[#F6FAFE] px-4 py-4 text-left text-[14px] font-bold text-[#14284E]" aria-expanded={activePgProgram === i}>
+                                        <span className="font-bold text-[#14284E] leading-snug pr-4">{prog.title}</span>
+                                        {activePgProgram === i ? <ChevronUp className="w-5 h-5 shrink-0 text-[#1B4F91]" /> : <ChevronDown className="w-5 h-5 shrink-0 text-[#8A97A1]" />}
+                                    </button>
+                                    {activePgProgram === i && (
+                                        <div className="p-4 border border-t-0 border-[#DCE6F2] bg-white rounded-b-xl -mt-2 pt-6 shadow-sm">
+                                            <p className="text-[13.5px] text-[#54626D] leading-relaxed mb-6 text-justify">{prog.desc}</p>
+                                            
+                                            <div className="flex items-center gap-6 mb-6 p-4 bg-[#F8FAFC] rounded-xl border border-[#F1F5F9]">
+                                                <div className="flex-1 border-r border-[#E2E8F0]">
+                                                    <span className="block text-[10.5px] text-[#8A97A1] font-bold uppercase tracking-wider mb-0.5">Duration</span>
+                                                    <b className="font-display text-[16px] text-[#14284E]">{prog.duration}</b>
+                                                </div>
+                                                <div className="flex-1">
+                                                    <span className="block text-[10.5px] text-[#8A97A1] font-bold uppercase tracking-wider mb-0.5">Annual Fee</span>
+                                                    <b className="font-display text-[16px] text-[#14284E]">{prog.fee}</b>
+                                                </div>
+                                            </div>
+                                            
+                                            <div className="flex flex-col gap-3">
+                                                <a href="#" className="w-full flex items-center justify-center gap-1.5 px-4 py-2.5 text-[13px] font-bold bg-[#14284E] text-white rounded-full hover:bg-[#1B4F91] transition-all">
+                                                    View Details <ArrowRight className="w-3.5 h-3.5" />
+                                                </a>
+                                                <a href="https://students.srmu.ac.in/login" target="_blank" rel="noopener noreferrer" className="w-full flex items-center justify-center gap-1.5 px-4 py-2.5 text-[13px] font-bold bg-[#ffc107] text-[#14284E] rounded-full hover:bg-[#FFD54F] transition-all">
+                                                    Apply Now <ArrowRight className="w-3.5 h-3.5" />
+                                                </a>
+                                            </div>
+                                        </div>
+                                    )}
+                                </div>
+                            ))}
+                        </div>
+
+                        {/* Decorative Background Image placed behind boxes, extending to screen edge */}
                             <div 
                                 className="hidden lg:block absolute -bottom-16 z-0 pointer-events-none opacity-80"
                                 style={{ right: "calc(50% - 50vw)", width: "800px", maxWidth: "60vw" }}
@@ -622,7 +721,6 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                     className="w-full h-auto object-contain object-right-bottom" 
                                 />
                             </div>
-                        </div>
 
                         <div className="mt-10 flex flex-col items-center justify-center text-center">
                             {/* <p className="text-[13px] sm:text-[14px] text-[#4B5A72] mb-5 max-w-[800px]">
@@ -636,7 +734,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                 </section>
 
                 {/* ── Events ───────────────────────────────────────────────── */}
-                <section id="events" className="py-8 md:py-10 px-4 sm:px-6 bg-[#F0F6FB]">
+                <section id="events" className="py-8 md:py-10 px-4 sm:px-6 bg-[#F0F6FB] scroll-mt-24">
                     <div className={`${Classes["container"]}`}>
                         <div className="w-full mb-8">
                             {/* <div className="text-[13px] sm:text-[14.5px] tracking-[0.08em] uppercase text-[#ffc107] font-bold flex items-center gap-2 mb-3.5">
@@ -683,7 +781,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                 </section>
 
                 {/* ── Placements ───────────────────────────────────────────── */}
-                <section className="pt-8 md:pt-10 pb-4 px-4 sm:px-6 bg-gradient-to-b from-white to-[#E0F1FF]" id="placements">
+                <section className="pt-8 md:pt-10 pb-4 px-4 sm:px-6 bg-gradient-to-b from-white to-[#E0F1FF] scroll-mt-24" id="placements">
                     <div className={`${Classes["container"]} mx-auto`}>
 
                         {/* Placement Stats + Image */}
@@ -769,7 +867,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                             </div>
 
                             {/* Placement Image */}
-                            <div className="w-full mt-6 lg:mt-0">
+                            <div className="w-full mt-6 lg:mt-0 hidden sm:block">
                                 <img
                                     src="https://ik.imagekit.io/ttalcskjf/IMAGE%202.webp?updatedAt=1788439003256"
                                     alt="Student preparing for career and placement"
@@ -844,8 +942,59 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                     </div>
                 </section>
 
+                {/* ── Scholarships ─────────────────────────────────────────── */}
+                <section className="pt-8 pb-4 sm:py-10 px-4 sm:px-6 bg-[#f8fafd] scroll-mt-24" id="scholarships">
+                    <div className={`${Classes["container"]} mx-auto`}>
+                        <h3 className="text-[20px] lg:text-[24px] font-bold font-display text-[#14284E] mb-4">Scholarship <span className="text-[#ffc107]">Schemes</span></h3>
+                        <div className="block sm:hidden w-full rounded-xl overflow-hidden mb-6 bg-transparent shadow-sm">
+                            <div className="relative w-full">
+                                <img src="/scholar2mobile.jpg" className="w-full h-auto block" alt="Scholarship schemes" />
+                                <div className="absolute inset-0 flex flex-col justify-start px-5 pt-4 pb-5 z-10 pointer-events-none">
+                                    <div className="mb-3">
+                                        <p className="text-[#1B4F91] font-bold text-[13px] mb-1">Avail Up to</p>
+                                        <h2 className="text-[45px] font-black text-[#E31E24] leading-[0.85] tracking-tighter flex items-start">100%<span className="text-[20px] text-[#E31E24] font-bold ml-0.5 leading-none mt-1">*</span></h2>
+                                        <p className="text-[#1B4F91] font-black text-[22px] leading-none mt-2">Scholarships</p>
+                                    </div>
+                                    <div className={`overflow-hidden ${!rm["scholarMob"] ? "h-[110px]" : "h-auto"}`}>
+                                        <ul className="space-y-1.5 max-w-[480px]">
+                                            {scholarshipItems.map((item, idx) => (
+                                                <li key={idx} className="flex items-start gap-1.5 text-[#14284E] text-[11.5px] font-medium leading-[1.3]">
+                                                    <span className="text-[#1B4F91] shrink-0 font-bold text-[12px] mt-[1px]">➢</span><span>{item}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                    <button className="rm-btn !text-[#1B4F91] !mb-0 mt-2 pointer-events-auto" onClick={() => toggleRm("scholarMob")}>{rm["scholarMob"] ? "Read Less" : "Read More"}</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="hidden sm:block relative w-full rounded-2xl overflow-hidden mb-6 shadow-sm bg-[#f0f4fa]">
+                            <img src="/sharedimageScholar.png" className="block w-full h-[300px] sm:h-auto object-cover object-right" alt="Scholarships" />
+                            <div className="absolute inset-0 z-10 p-5 sm:p-6 md:p-10 w-full sm:w-[85%] md:w-[75%] lg:w-[65%] flex flex-col justify-center pointer-events-none">
+                                <div className="mb-4 sm:mb-6">
+                                    <p className="text-[#1B4F91] font-bold text-[14px] sm:text-[18px] md:text-[22px] mb-1">Avail Up to</p>
+                                    <h2 className="text-[55px] sm:text-[75px] md:text-[95px] font-black text-[#E31E24] leading-[0.8] tracking-tighter flex items-start">100%<span className="text-[24px] sm:text-[32px] md:text-[40px] leading-none ml-1 mt-1">*</span></h2>
+                                    <p className="text-[#1B4F91] font-black text-[26px] sm:text-[36px] md:text-[44px] leading-none mt-2 sm:mt-3">Scholarships</p>
+                                </div>
+                                <ul className="space-y-1.5 sm:space-y-2 max-w-[480px]">
+                                    {scholarshipItems.map((item, idx) => (
+                                        <li key={idx} className="flex items-start gap-2 text-[#14284E] text-[13px] sm:text-[14.5px] md:text-[15.5px] font-medium leading-[1.3]">
+                                            <span className="text-[#1B4F91] shrink-0 font-bold mt-[2px] text-[14px]">➢</span><span>{item}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </div>
+                        <div className="flex justify-center w-full">
+                            <Link to="https://srmu.ac.in/scholarship-scheme" target="_blank" className="inline-flex items-center bg-[#ffc107] hover:bg-[#D78610] text-[#14284E] font-semibold text-[14.5px] px-6 py-3 rounded-md transition-colors shadow-sm hover:-translate-y-0.5">
+                                View Details →
+                            </Link>
+                        </div>
+                    </div>
+                </section>
+
                 {/* ── Faculty ──────────────────────────────────────────────── */}
-                <section id="faculty" className="py-8 md:py-10 px-4 sm:px-6 bg-white">
+                <section id="faculty" className="pt-4 pb-0 sm:py-10 px-4 sm:px-6 bg-white scroll-mt-24">
                     <div className={`${Classes["container"]}`}>
                         <div className="w-full mb-8">
                             {/* <div className="text-[14.5px] tracking-[0.08em] uppercase text-[#ffc107] font-bold flex items-center gap-2 mb-3.5">
@@ -860,7 +1009,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                         </div>
 
                         {/* Faculty Embla Carousel */}
-                        <div className="relative mb-10">
+                        <div className="relative mb-0 sm:mb-10">
                             {/* Prev button */}
                             <button
                                 onClick={() => facultyEmblaApi?.scrollPrev()}
@@ -920,7 +1069,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                 </section>
 
                 {/* ── Key Highlights ───────────────────────────────────────── */}
-                <section className="py-8 md:py-10 px-4 sm:px-6 bg-[#071329]">
+                <section className="pt-8 pb-6 md:pt-10 md:pb-6 px-4 sm:px-6 bg-[#071329]">
                     <div className={`${Classes["container"]}`}>
                         <div className="w-full mb-8">
                             {/* <div className="text-[13px] sm:text-[14.5px] tracking-[0.08em] uppercase text-[#ffc107] font-bold flex items-center gap-2 mb-3.5">
@@ -944,7 +1093,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                 </section>
 
                 {/* ── Career Pathways ──────────────────────────────────────── */}
-                <section id="careers" className="py-10 md:py-16 px-4 sm:px-6 bg-[#F8FAFC]">
+                <section id="careers" className="pt-6 pb-10 md:pt-8 md:pb-16 px-4 sm:px-6 bg-[#F8FAFC]">
                     <div className={`${Classes["container"]}`}>
                         <div className="w-full mb-10 md:mb-12 text-center max-w-3xl mx-auto">
                             {/* <div className="text-[13px] sm:text-[14.5px] tracking-[0.08em] uppercase text-[#ffc107] font-bold flex items-center justify-center gap-2 mb-3.5">
