@@ -184,7 +184,7 @@ const dataScienceNewData: ProgramPageDataNew = {
     introParagraph:
       "From analyzing large datasets to building intelligent applications, students learn how technology can be used to solve real-world problems.",
     curriculumImageDesktop: "/assets/images/data-science-ai-ml-new-page/Learn-Data-Science-AI-the-Way-Industry-Works-Section-Image.webp",
-    curriculumImageMobile: "/assets/images/data-science-ai-ml-new-page/for-mobile-view.png",
+    curriculumImageMobile: "/assets/images/data-science-ai-ml-new-page/Learn-Data-Science-AI-the-Way-Industry-Works-Section-Image.webp",
     curriculumOverlayItems: [
       { text: "Data\nAnalytics" },
       { text: "Machine\nLearning" },

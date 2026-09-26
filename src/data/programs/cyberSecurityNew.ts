@@ -157,7 +157,7 @@ const cyberSecurityNewData: ProgramPageDataNew = {
     introParagraph:
       "From the first year, you'll build, test, analyse and secure real systems — not just study theory.",
     curriculumImageDesktop: "/shared-image2.png",
-    curriculumImageMobile: "/shared-image5.png",
+    curriculumImageMobile: "/shared-image2.png",
     curriculumOverlayItems: [
       { text: "Secure\nSoftware\nDevelopment" },
       { text: "Enterprise\nNetwork\nSecurity" },

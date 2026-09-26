@@ -503,9 +503,9 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                 <div className="relative">
                   <img src={labs.curriculumImageDesktop} alt="Industry Integrated Curriculum" className="hidden sm:block w-full h-auto object-contain rounded-xl" loading="lazy" />
                   <img src={labs.curriculumImageMobile} alt="Industry Integrated Curriculum" className="sm:hidden w-full h-auto object-contain rounded-xl" loading="lazy" />
-                  <div className="hidden sm:grid absolute top-[68%] left-[3%] right-[3%] grid-cols-8 gap-1 items-start px-2">
+                  <div className="grid absolute top-[68%] left-[0.5%] sm:left-[3%] right-[0.5%] sm:right-[3%] grid-cols-8 gap-0.5 sm:gap-1 items-start px-0.5 sm:px-2">
                     {labs.curriculumOverlayItems.map((item, i) => (
-                      <div key={i} className="text-center text-[clamp(9px,1.05vw,13px)] font-medium text-[#14284E] leading-[1.15]">{item.text.split("\n").map((t, j) => <React.Fragment key={j}>{t}{j < item.text.split("\n").length - 1 && <br />}</React.Fragment>)}</div>
+                      <div key={i} className="text-center text-[5.5px] min-[375px]:text-[6.5px] sm:text-[clamp(9px,1.05vw,13px)] font-medium text-[#14284E] leading-[1.05] sm:leading-[1.15] break-words break-all sm:break-normal">{item.text.split("\n").map((t, j) => <React.Fragment key={j}>{t}{j < item.text.split("\n").length - 1 && <br />}</React.Fragment>)}</div>
                     ))}
                   </div>
                 </div>

@@ -132,9 +132,9 @@ const TopHeader: React.FC = () => {
               </a>
 
               <a
-                href="tel:18001035298"
+                href="tel:18001026004"
                 className="py-1 flex items-center border-l border-r border-[#ccc] px-2"
-                aria-label="Call Admissions Helpline 18001035298"
+                aria-label="Call Admissions Helpline 18001026004"
               >
                 <IoCallSharp size={24} className="text-[#FFB703]" />
               </a>

@@ -196,7 +196,7 @@ const mechanicalEngineeringNewData: ProgramPageDataNew = {
     sectionTitleHighlight: "with L&T",
     introParagraph: "Strengthened through academic collaboration with L&T, the curriculum connects university education with industry expectations through application-oriented learning, engineering case studies, practical training and problem-solving methodologies. Students develop a foundation in mechanical engineering while gaining exposure to modern design, manufacturing and automation practices.",
     curriculumImageDesktop: "/assets/images/new-mechnical-program/lzc1zhjq1rvlllinpi6b.webp",
-    curriculumImageMobile: "/assets/images/data-science-ai-ml-new-page/for-mobile-view.png",
+    curriculumImageMobile: "/assets/images/new-mechnical-program/lzc1zhjq1rvlllinpi6b.webp",
     curriculumOverlayItems: [
       { text: "Design Engineering" },
       { text: "Advanced Manufacturing" },
