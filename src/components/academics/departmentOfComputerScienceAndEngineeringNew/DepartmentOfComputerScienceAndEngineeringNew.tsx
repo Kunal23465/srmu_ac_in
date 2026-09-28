@@ -281,8 +281,15 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
         return () => { facultyEmblaApi.off("select", update); facultyEmblaApi.off("reInit", update); };
     }, [facultyEmblaApi]);
 
-    // Labs Embla carousel
-    const [labsEmblaRef, labsEmblaApi] = useEmblaCarousel({ loop: false, align: "start", dragFree: true });
+    // Labs Embla carousel (only active on mobile)
+    const [labsEmblaRef, labsEmblaApi] = useEmblaCarousel({ 
+        loop: false, 
+        align: "start", 
+        dragFree: true,
+        breakpoints: {
+            '(min-width: 640px)': { active: false }
+        }
+    });
     const [labsCanPrev, setLabsCanPrev] = useState(false);
     const [labsCanNext, setLabsCanNext] = useState(true);
 
@@ -571,10 +578,10 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                                 "To develop multidisciplinary skills required to solve complex real-world problems and participate in collaborative projects through diverse teaching approaches.",
                                                 "To promote research, innovation and industry collaboration among students and faculty.",
                                                 "To encourage professional, ethical and social responsibility among graduates.",
-                                            ].slice(0, !rm["mission"] ? 1 : undefined).map(item => (
-                                                <li key={item} className="flex items-start gap-3 text-[14.5px] text-[#3F4C56] text-justify">
+                                            ].map((item, index) => (
+                                                <li key={item} className={`${(!rm["mission"] && index > 0) ? "hidden sm:flex" : "flex"} items-start gap-3 text-[14.5px] text-[#3F4C56] text-justify`}>
                                                     <span className="text-[#D94B38] font-bold shrink-0 mt-0.5">+</span>
-                                                    <div className={`${!rm["mission"] ? "line-clamp-2 sm:line-clamp-none" : ""}`}>{item}</div>
+                                                    <div className={`${!rm["mission"] && index === 0 ? "line-clamp-2 sm:line-clamp-none" : ""}`}>{item}</div>
                                                 </li>
                                             ))}
                                         </ul>
@@ -800,8 +807,8 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                     <div className={`${Classes["container"]}`}>
 
                         {/* Header & Controls */}
-                        <div className="w-full mb-8 md:mb-10 flex flex-col sm:flex-row sm:items-end justify-between gap-6">
-                            <div className="max-w-[800px]">
+                        <div className="w-full mb-8 md:mb-10 flex flex-col gap-4">
+                            <div className="w-full">
                                 <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3">
                                     Labs &amp; <span className="text-[#ffc107]">Practical Learning</span>
                                 </h2>
@@ -814,7 +821,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                             </div>
                             
                             {/* Navigation Buttons */}
-                            <div className="flex items-center gap-3 shrink-0 self-start sm:self-end">
+                            <div className="flex items-center gap-3 shrink-0 self-start sm:hidden">
                                 <button
                                     onClick={() => labsEmblaApi?.scrollPrev()}
                                     disabled={!labsCanPrev}
@@ -835,8 +842,8 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                         </div>
 
                         {/* Lab Cards Carousel */}
-                        <div className="overflow-hidden -mx-4 px-4 sm:mx-0 sm:px-0" ref={labsEmblaRef}>
-                            <div className="flex gap-5 pb-4">
+                        <div className="overflow-hidden sm:overflow-visible -mx-4 px-4 sm:mx-0 sm:px-0" ref={labsEmblaRef}>
+                            <div className="flex sm:grid sm:grid-cols-12 gap-5 pb-4 sm:pb-0">
                                 {([
                                     {
                                         num: "01",
@@ -890,7 +897,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                 ] as { num: string; title: string; desc: string; accent: string; iconSrc: string }[]).map((lab) => (
                                     <div
                                         key={lab.num}
-                                        className="group relative flex flex-col rounded-2xl border border-[#DCE6F2] bg-white p-6 shadow-[0_2px_12px_rgba(15,31,61,0.04)] hover:shadow-[0_10px_28px_rgba(15,31,61,0.10)] hover:-translate-y-1 transition-all duration-300 overflow-hidden shrink-0 w-[85vw] sm:w-[340px] lg:w-[380px]"
+                                        className={`col-span-12 sm:col-span-6 lg:col-span-4 ${parseInt(lab.num) <= 4 ? "xl:col-span-3" : "xl:col-span-4"} group relative flex flex-col rounded-2xl border border-[#DCE6F2] bg-white p-6 shadow-[0_2px_12px_rgba(15,31,61,0.04)] hover:shadow-[0_10px_28px_rgba(15,31,61,0.10)] hover:-translate-y-1 transition-all duration-300 overflow-hidden shrink-0 w-[85vw] sm:w-auto sm:shrink`}
                                     >
                                         {/* Accent top bar */}
                                         <div className="absolute top-0 left-0 right-0 h-[4px] rounded-t-2xl" style={{ backgroundColor: lab.accent }} />
