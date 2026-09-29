@@ -3,9 +3,17 @@ import React, { useEffect, useState } from "react";
 import Classes from "../../../utils/styles/Global.module.css";
 import KamleshImg from "../../../assets/images/academics/institutes/cse/cse2.jpeg";
 import SakshiImg from "../../../assets/images/academics/institutes/cse/cse3.jpeg";
-import { Download, ChevronDown, ChevronUp, Search, Mail, Phone, ArrowLeft, ArrowRight, X, Code2, Brain, BarChart3, ShieldCheck, Cloud, GraduationCap, Settings, Database, Lightbulb, Share2 } from "lucide-react";
+import logosrmcem from "../../../assets/images/logo1.png";
+import { Download, ChevronDown, ChevronUp, Search, Mail, Phone, ArrowLeft, ArrowRight, X, Code2, Brain, BarChart3, ShieldCheck, Cloud, GraduationCap, Settings, Database, Lightbulb, Share2, MapPin, Facebook, Instagram, Linkedin, Youtube, Twitter } from "lucide-react";
+import { FaQuora, FaRedditAlien } from "react-icons/fa";
 import useEmblaCarousel from "embla-carousel-react";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch, RootState } from "../../../store";
+import { fetchBlogs } from "../../../store/blogs/blogsThunk";
+import { normalizeRouteSlug } from "../../../utils/routeMatching";
+import { ALL_TARGET_BLOGS } from "../../blog/RelatedArticlesAndPrograms";
+import Map from "../../new-home/Map";
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -67,7 +75,7 @@ const aboutPillars = [
 ];
 
 const quickStats = [
-    { value: "53 LPA", label: "Highest Package" },
+    { value: "₹53 LPA", label: "Highest Package" },
     { value: "200+", label: "Recruiters" },
     // { value: "∞", label: "Limitless Opportunities" },
     { value: "10", label: "Industry-Driven Capstone Projects" },
@@ -256,6 +264,9 @@ const faqs = [
 
 const DepartmentOfComputerScienceAndEngineeringNew = () => {
 
+    const dispatch = useDispatch<AppDispatch>();
+    const { data: blogCards } = useSelector((state: RootState) => state.getAllBlogs);
+
     const [selectedFaculty, setSelectedFaculty] = useState<any>(null);
     const [selectedEvent, setSelectedEvent] = useState<any>(null);
     
@@ -263,6 +274,13 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
     const [activeUgProgram, setActiveUgProgram] = useState<number | null>(null);
     const [activePgProgram, setActivePgProgram] = useState<number | null>(null);
     const [openFaq, setOpenFaq] = useState<number | null>(null);
+    const [showAllFaq, setShowAllFaq] = useState(false);
+
+    useEffect(() => {
+        if (blogCards.length === 0) {
+            dispatch(fetchBlogs());
+        }
+    }, [blogCards.length, dispatch]);
 
     // Faculty Embla carousel
     const [facultyEmblaRef, facultyEmblaApi] = useEmblaCarousel({ loop: false, align: "start", dragFree: true });
@@ -305,6 +323,102 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
         return () => { labsEmblaApi.off("select", update); labsEmblaApi.off("reInit", update); };
     }, [labsEmblaApi]);
 
+    // Events Embla carousel (only active on mobile)
+    const [eventsEmblaRef, eventsEmblaApi] = useEmblaCarousel({ 
+        loop: false, 
+        align: "start", 
+        dragFree: true,
+        breakpoints: {
+            '(min-width: 640px)': { active: false }
+        }
+    });
+    const [eventsCanPrev, setEventsCanPrev] = useState(false);
+    const [eventsCanNext, setEventsCanNext] = useState(true);
+
+    useEffect(() => {
+        if (!eventsEmblaApi) return;
+        const update = () => {
+            setEventsCanPrev(eventsEmblaApi.canScrollPrev());
+            setEventsCanNext(eventsEmblaApi.canScrollNext());
+        };
+        update();
+        eventsEmblaApi.on("select", update);
+        eventsEmblaApi.on("reInit", update);
+        return () => { eventsEmblaApi.off("select", update); eventsEmblaApi.off("reInit", update); };
+    }, [eventsEmblaApi]);
+
+    // Why SRMU Embla carousel (only active on mobile)
+    const [whyEmblaRef, whyEmblaApi] = useEmblaCarousel({ 
+        loop: false, 
+        align: "start", 
+        dragFree: true,
+        breakpoints: {
+            '(min-width: 640px)': { active: false }
+        }
+    });
+    const [whyCanPrev, setWhyCanPrev] = useState(false);
+    const [whyCanNext, setWhyCanNext] = useState(true);
+
+    useEffect(() => {
+        if (!whyEmblaApi) return;
+        const update = () => {
+            setWhyCanPrev(whyEmblaApi.canScrollPrev());
+            setWhyCanNext(whyEmblaApi.canScrollNext());
+        };
+        update();
+        whyEmblaApi.on("select", update);
+        whyEmblaApi.on("reInit", update);
+        return () => { whyEmblaApi.off("select", update); whyEmblaApi.off("reInit", update); };
+    }, [whyEmblaApi]);
+
+    // Blogs Embla carousel (only active on mobile)
+    const [blogsEmblaRef, blogsEmblaApi] = useEmblaCarousel({ 
+        loop: false, 
+        align: "start", 
+        dragFree: true,
+        breakpoints: {
+            '(min-width: 640px)': { active: false }
+        }
+    });
+    const [blogsCanPrev, setBlogsCanPrev] = useState(false);
+    const [blogsCanNext, setBlogsCanNext] = useState(true);
+
+    useEffect(() => {
+        if (!blogsEmblaApi) return;
+        const update = () => {
+            setBlogsCanPrev(blogsEmblaApi.canScrollPrev());
+            setBlogsCanNext(blogsEmblaApi.canScrollNext());
+        };
+        update();
+        blogsEmblaApi.on("select", update);
+        blogsEmblaApi.on("reInit", update);
+        return () => { blogsEmblaApi.off("select", update); blogsEmblaApi.off("reInit", update); };
+    }, [blogsEmblaApi]);
+
+    // Careers Embla carousel (only active on mobile)
+    const [careersEmblaRef, careersEmblaApi] = useEmblaCarousel({ 
+        loop: false, 
+        align: "start", 
+        dragFree: true,
+        breakpoints: {
+            '(min-width: 640px)': { active: false }
+        }
+    });
+    const [careersCanPrev, setCareersCanPrev] = useState(false);
+    const [careersCanNext, setCareersCanNext] = useState(true);
+
+    useEffect(() => {
+        if (!careersEmblaApi) return;
+        const update = () => {
+            setCareersCanPrev(careersEmblaApi.canScrollPrev());
+            setCareersCanNext(careersEmblaApi.canScrollNext());
+        };
+        update();
+        careersEmblaApi.on("select", update);
+        careersEmblaApi.on("reInit", update);
+        return () => { careersEmblaApi.off("select", update); careersEmblaApi.off("reInit", update); };
+    }, [careersEmblaApi]);
+
 
     const [rm, setRm] = useState<Record<string, boolean>>({});
     const toggleRm = (k: string) => setRm(p => ({ ...p, [k]: !p[k] }));
@@ -334,6 +448,79 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
 
     return (
         <div className="text-[#14284E] bg-white antialiased">
+            {/* ── Lab Icon Micro-animations ─────────────────────────────── */}
+            <style>{`
+                @media (prefers-reduced-motion: no-preference) {
+                    /* L&T / Engineering – mechanical cog-like rock */
+                    @keyframes lab-mechanical {
+                        0%   { transform: rotate(0deg) scale(1); }
+                        25%  { transform: rotate(8deg) scale(1.07); }
+                        50%  { transform: rotate(-5deg) scale(1.05); }
+                        75%  { transform: rotate(4deg) scale(1.08); }
+                        100% { transform: rotate(0deg) scale(1); }
+                    }
+                    /* AI & ML – smooth orbital spin + float */
+                    @keyframes lab-orbital {
+                        0%   { transform: translateY(0px) rotate(0deg) scale(1); }
+                        30%  { transform: translateY(-4px) rotate(12deg) scale(1.06); }
+                        60%  { transform: translateY(-2px) rotate(-6deg) scale(1.09); }
+                        100% { transform: translateY(0px) rotate(0deg) scale(1); }
+                    }
+                    /* Cyber Security – shield pulse */
+                    @keyframes lab-pulse {
+                        0%   { transform: scale(1);    filter: drop-shadow(0 0 0px rgba(20,40,78,0)); }
+                        30%  { transform: scale(1.1);  filter: drop-shadow(0 0 6px rgba(20,40,78,0.35)); }
+                        60%  { transform: scale(1.05); filter: drop-shadow(0 0 3px rgba(20,40,78,0.2)); }
+                        100% { transform: scale(1);    filter: drop-shadow(0 0 0px rgba(20,40,78,0)); }
+                    }
+                    /* Cloud Computing – gentle float up */
+                    @keyframes lab-float {
+                        0%   { transform: translateY(0px) scale(1); }
+                        40%  { transform: translateY(-7px) scale(1.06); }
+                        70%  { transform: translateY(-4px) scale(1.04); }
+                        100% { transform: translateY(0px) scale(1); }
+                    }
+                    /* Database – stack bounce down */
+                    @keyframes lab-stack {
+                        0%   { transform: translateY(0px) scaleY(1); }
+                        25%  { transform: translateY(3px) scaleY(0.94); }
+                        55%  { transform: translateY(-4px) scaleY(1.06); }
+                        80%  { transform: translateY(-1px) scaleY(1.02); }
+                        100% { transform: translateY(0px) scaleY(1); }
+                    }
+                    /* R&D – light glow/pulse */
+                    @keyframes lab-glow {
+                        0%   { transform: scale(1);    filter: drop-shadow(0 0 0px rgba(255,193,7,0)); }
+                        35%  { transform: scale(1.1);  filter: drop-shadow(0 0 8px rgba(255,193,7,0.55)); }
+                        65%  { transform: scale(1.06); filter: drop-shadow(0 0 4px rgba(255,193,7,0.3)); }
+                        100% { transform: scale(1);    filter: drop-shadow(0 0 0px rgba(255,193,7,0)); }
+                    }
+                    /* Network Security – orbital network wave */
+                    @keyframes lab-network {
+                        0%   { transform: rotate(0deg) translateX(0px) scale(1); }
+                        20%  { transform: rotate(-8deg) translateX(-2px) scale(1.05); }
+                        50%  { transform: rotate(10deg) translateX(2px) scale(1.09); }
+                        80%  { transform: rotate(-4deg) translateX(-1px) scale(1.06); }
+                        100% { transform: rotate(0deg) translateX(0px) scale(1); }
+                    }
+
+                    .lab-icon-mechanical  { transition: transform 0.3s ease, filter 0.3s ease; }
+                    .lab-icon-orbital     { transition: transform 0.3s ease, filter 0.3s ease; }
+                    .lab-icon-pulse       { transition: transform 0.3s ease, filter 0.3s ease; }
+                    .lab-icon-float       { transition: transform 0.3s ease, filter 0.3s ease; }
+                    .lab-icon-stack       { transition: transform 0.3s ease, filter 0.3s ease; }
+                    .lab-icon-glow        { transition: transform 0.3s ease, filter 0.3s ease; }
+                    .lab-icon-network     { transition: transform 0.3s ease, filter 0.3s ease; }
+
+                    .group:hover .lab-icon-mechanical { animation: lab-mechanical 650ms cubic-bezier(0.4,0,0.2,1) forwards; }
+                    .group:hover .lab-icon-orbital    { animation: lab-orbital    700ms cubic-bezier(0.4,0,0.2,1) forwards; }
+                    .group:hover .lab-icon-pulse      { animation: lab-pulse      600ms cubic-bezier(0.4,0,0.2,1) forwards; }
+                    .group:hover .lab-icon-float      { animation: lab-float      750ms cubic-bezier(0.4,0,0.2,1) forwards; }
+                    .group:hover .lab-icon-stack      { animation: lab-stack      600ms cubic-bezier(0.4,0,0.2,1) forwards; }
+                    .group:hover .lab-icon-glow       { animation: lab-glow       700ms cubic-bezier(0.4,0,0.2,1) forwards; }
+                    .group:hover .lab-icon-network    { animation: lab-network    680ms cubic-bezier(0.4,0,0.2,1) forwards; }
+                }
+            `}</style>
             <main>
 
                 {/* ── Hero Banner ─────────────────────────────────────────── */}
@@ -365,7 +552,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                         {/* Stats 2×2 grid */}
                         <div className="grid grid-cols-[auto_1fr_auto_1fr] gap-y-3 gap-x-3 mb-6 items-start">
                             {[
-                                { v: "53LPA", l: "Highest Package" },
+                                { v: "₹53LPA", l: "Highest Package" },
                                 { v: "10", l: "Industry-Driven Capstone Projects" },
                                 { v: "200+", l: "Recruiters" },
                                 { v: "150", l: "Student Research Projects/Year" },
@@ -378,7 +565,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                         </div>
 
                         {/* CTA buttons */}
-                        <div className="flex gap-3">
+                        <div className="hidden gap-3">
                             <a
                                 href="https://students.srmu.ac.in/login"
                                 target="_blank"
@@ -400,7 +587,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                 </section>
 
                 {/* ── DESKTOP banner ──────────────────────────────────────── */}
-                <section className="relative hidden sm:flex w-full overflow-hidden items-center sm:pt-[78px] sm:pb-8 md:min-h-[720px] md:pt-36 md:pb-20 bg-[#071329]">
+                <section className="relative hidden sm:flex w-full overflow-hidden items-center sm:pt-[78px] sm:pb-8 md:min-h-[504px] md:pt-24 md:pb-14 bg-[#071329]">
                     {/* Background Banner */}
                     <img
                         src="/assets/images/new-information-system/again-banner.jpg"
@@ -502,23 +689,19 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                 </section>
 
                 {/* ── Quick Stats Banner ───────────────────────────────────── */}
-                <section className="hidden sm:block w-full bg-[#14284E]">
-                    <div className="flex w-full">
-                        {quickStats.map((s, i) => (
-                            <div key={s.label} className={`flex-1 text-center py-5 px-3 border-white/10 ${i !== quickStats.length - 1 ? 'border-r' : ''}`}>
-                                <b className="block font-bold text-[24px] sm:text-[28px] text-[#ffc107] font-display flex items-center justify-center gap-1.5">
+                <section className="hidden sm:block w-full bg-[#E0F1FF]">
+                    <div className="grid grid-cols-4 w-full max-w-7xl mx-auto px-6 py-6 gap-4">
+                        {quickStats.map((s) => (
+                            <div key={s.label} className="flex flex-col items-center justify-center text-center">
+                                <span className="text-[#D94B38] font-bold text-[clamp(28px,3vw,36px)] leading-none whitespace-nowrap font-display mb-1.5">
                                     {s.value}
-                                    {s.value === '2000' && (
-                                        <span className="bg-[#D94B38] text-white w-5 h-5 flex items-center justify-center rounded-full text-[14px] font-bold leading-none shrink-0 mb-0.5">+</span>
-                                    )}
-                                </b>
-                                <span className="text-[11.5px] sm:text-[12.5px] text-white uppercase tracking-[0.05em] font-semibold mt-1 block">{s.label}</span>
+                                </span>
+                                <span className="text-[#111827] text-[12px] sm:text-[13px] leading-snug uppercase tracking-[0.05em] font-extrabold">
+                                    {s.label}
+                                </span>
                             </div>
                         ))}
                     </div>
-                    {/* Yellow + Red bottom strips */}
-                    <div className="h-[4px] w-full bg-[#ffc107]" />
-                    <div className="h-[4px] w-full bg-[#D94B38]" />
                 </section>
 
                 {/* ── About the Department ─────────────────────────────────── */}
@@ -566,6 +749,12 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                             <div className="flex flex-col gap-px bg-[#DCE6F2] border border-[#DCE6F2] rounded-2xl overflow-hidden flex-1">
                                 {/* Mission */}
                                 <div className="bg-white p-8 sm:p-10 border-t-[4px] border-[#D94B38] flex-1">
+                                    <div className="mb-4">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="34" viewBox="0 0 28 29" fill="none">
+                                            <path d="M17.6225 20.7205C18.5671 19.752 20.7541 18.4177 21.1551 15.0785C21.3152 14.056 21.2618 13.0115 20.9982 12.0107C20.7345 11.0098 20.2664 10.0745 19.6234 9.26356C18.9803 8.45264 18.1762 7.78372 17.2618 7.29897C16.3474 6.81423 15.3425 6.52417 14.3104 6.44708C13.2783 6.37 12.2415 6.50755 11.2652 6.85107C10.2889 7.1946 9.39439 7.73664 8.638 8.44304C7.8816 9.14944 7.27975 10.0049 6.87038 10.9554C6.461 11.906 6.25298 12.931 6.25942 13.966C6.25942 18.1325 8.78392 19.6475 9.85698 20.7205C10.6985 21.5875 10.5686 21.9122 10.5686 23.31C10.5588 23.4862 10.585 23.6625 10.6456 23.8282C10.7063 23.9939 10.8 24.1456 10.9212 24.2739C11.0423 24.4022 11.1883 24.5044 11.3503 24.5744C11.5123 24.6444 11.6868 24.6807 11.8633 24.681H15.6162C15.7927 24.6813 15.9675 24.6454 16.1297 24.5756C16.2919 24.5058 16.4381 24.4036 16.5593 24.2751C16.6804 24.1467 16.774 23.9948 16.8342 23.8288C16.8945 23.6628 16.9201 23.4862 16.9095 23.31C16.8459 21.8854 16.6765 21.6919 17.6225 20.7205Z" stroke="#D94B38" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+                                            <path d="M11.5656 24.6035V26.7383C11.5656 27.3214 11.8904 27.8 12.2899 27.8H15.1886C15.591 27.8 15.9143 27.32 15.9143 26.7383V24.6035M12.6387 9.72192C11.805 9.7223 11.0056 10.0537 10.4162 10.6434C9.82686 11.233 9.49577 12.0326 9.49577 12.8663M24.0921 14.2513H26.6816M21.4857 5.76292L23.3226 3.92602M22.8976 21.4464L24.7345 23.2819M13.74 0.800049V2.89391M4.19545 3.92461L6.01965 5.76292M2.78354 23.2819L4.60773 21.4464M3.38784 14.2513H0.799805" stroke="#D94B38" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+                                        </svg>
+                                    </div>
                                     <div className="text-[14.5px] tracking-[0.08em] uppercase text-[#D94B38] font-bold flex items-center gap-2 mb-3.5">
                                         <span className="w-[22px] h-[2px] bg-[#D94B38] inline-block" /> Mission
                                     </div>
@@ -592,6 +781,12 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                 </div>
                                 {/* Vision */}
                                 <div className="bg-[#14284E] p-8 sm:p-10 border-t-[4px] border-[#ffc107] flex-1">
+                                    <div className="mb-4">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 27 27" fill="none">
+                                            <path d="M13.8003 2.26177C12.0086 2.26099 10.2441 2.70031 8.6619 3.54114C7.07972 4.38196 5.7283 5.59855 4.7264 7.08396C3.7245 8.56938 3.1028 10.2782 2.91593 12.0601C2.72907 13.8421 2.98276 15.6426 3.65472 17.3036C3.71572 17.4422 3.74827 17.5917 3.75042 17.7432C3.75257 17.8947 3.72428 18.045 3.66724 18.1854C3.6102 18.3257 3.52556 18.4532 3.41835 18.5602C3.31113 18.6672 3.18351 18.7516 3.04307 18.8084C2.90263 18.8652 2.29983 18.8555 2.16128 18.7943C2.02273 18.733 1.89789 18.6446 1.79416 18.5342C1.69043 18.4238 1.60992 18.2936 1.55741 18.1515C0.41602 15.3287 0.285442 12.1981 1.18779 9.28997C2.09014 6.38186 3.96995 3.87504 6.50881 2.19412C9.04767 0.513196 12.0895 -0.238498 15.1191 0.0663603C18.1487 0.371218 20.9798 1.71389 23.1328 3.86694C25.2859 6.02 26.6285 8.85109 26.9334 11.8807C27.2383 14.9103 26.4866 17.9521 24.8056 20.4909C23.1247 23.0298 20.6179 24.9096 17.7098 25.812C14.8017 26.7143 11.6711 26.5837 8.84821 25.4424C8.57605 25.3256 8.36048 25.1068 8.24779 24.833C8.13509 24.5591 8.13424 24.252 8.24542 23.9775C8.35659 23.703 8.57094 23.4831 8.84245 23.3648C9.11396 23.2466 9.42101 23.2395 9.6977 23.345C11.1934 23.9488 12.8042 24.2143 14.4146 24.1225C16.0249 24.0307 17.5951 23.5839 19.0126 22.8142C20.43 22.0444 21.6597 20.9708 22.6136 19.67C23.5675 18.3693 24.2219 16.8737 24.53 15.2904C24.8381 13.7072 24.7922 12.0753 24.3957 10.5118C23.9992 8.94834 23.2618 7.49188 22.2364 6.24677C21.211 5.00166 19.923 3.99872 18.4645 3.30978C17.006 2.62085 15.4133 2.26297 13.8003 2.26177Z" fill="#FFC800"/>
+                                            <path d="M5.12459 13.201C5.12459 15.1881 5.79302 17.0199 6.91712 18.4835L6.20946 19.1911L6.16571 19.2364H4.40034C3.80028 19.2369 3.225 19.4757 2.80095 19.9003L0.330954 22.3703C0.172891 22.5286 0.0652728 22.7301 0.0216904 22.9495C-0.0218921 23.1689 0.00051653 23.3963 0.0860859 23.6029C0.171655 23.8096 0.316548 23.9862 0.502462 24.1106C0.688377 24.235 0.906975 24.3014 1.13065 24.3016H2.69986V25.8708C2.70006 26.0945 2.76653 26.3131 2.89089 26.499C3.01525 26.6849 3.19192 26.8298 3.39858 26.9154C3.60524 27.001 3.83262 27.0234 4.052 26.9798C4.27139 26.9362 4.47294 26.8286 4.6312 26.6705L7.1012 24.199C7.5254 23.7754 7.76417 23.2007 7.7651 22.6012V20.8358L7.81036 20.792L8.51801 20.0859C10.0716 21.2783 11.9829 21.9101 13.9411 21.8783C15.8993 21.8466 17.7892 21.1532 19.3033 19.9111C20.8174 18.6689 21.8667 16.951 22.2806 15.0368C22.6944 13.1225 22.4484 11.1246 21.5826 9.36794C20.7167 7.61127 19.282 6.19921 17.5118 5.36145C15.7416 4.52369 13.74 4.3095 11.8326 4.75373C9.92518 5.19797 8.22418 6.27448 7.00627 7.80817C5.78835 9.34187 5.12517 11.2425 5.12459 13.201ZM13.8005 6.78832C14.8069 6.78861 15.799 7.02573 16.6967 7.4805C17.5944 7.93528 18.3725 8.59495 18.968 9.40616C19.5635 10.2174 19.9598 11.1573 20.1247 12.1501C20.2896 13.1428 20.2185 14.1604 19.9173 15.1206C19.6161 16.0808 19.0931 16.9566 18.3906 17.6772C17.6882 18.3978 16.826 18.943 15.8738 19.2686C14.9216 19.5942 13.9062 19.6912 12.9095 19.5517C11.9129 19.4121 10.9632 19.04 10.137 18.4654L12.6206 15.9803C13.2654 16.2538 13.9852 16.2946 14.6567 16.0956C15.3282 15.8966 15.9096 15.4702 16.3012 14.8895C16.6928 14.3089 16.8702 13.61 16.803 12.9129C16.7359 12.2157 16.4283 11.5637 15.9331 11.0684C15.4378 10.5732 14.7858 10.2656 14.0886 10.1985C13.3914 10.1313 12.6926 10.3087 12.112 10.7003C11.5313 11.0919 11.1049 11.6733 10.9059 12.3448C10.7069 13.0163 10.7477 13.7361 11.0212 14.3809L8.53461 16.863C7.86556 15.9012 7.47278 14.7745 7.39892 13.6052C7.32506 12.4359 7.57295 11.2688 8.11567 10.2305C8.6584 9.19213 9.4752 8.32233 10.4774 7.7155C11.4796 7.10868 12.6289 6.78801 13.8005 6.78832ZM6.16571 20.7453L6.25624 20.8343V22.5996C6.2558 22.7996 6.17602 22.9911 6.03444 23.1323L4.20872 24.958V23.5472C4.20872 23.3471 4.12923 23.1552 3.98775 23.0137C3.84627 22.8723 3.65438 22.7928 3.45429 22.7928H2.042L3.86772 20.9671C3.93778 20.8968 4.02103 20.841 4.11269 20.8029C4.20434 20.7649 4.30261 20.7453 4.40185 20.7453H6.16571Z" fill="#FFC800"/>
+                                        </svg>
+                                    </div>
                                     <div className="text-[13px] tracking-[0.08em] uppercase text-[#ffc107] font-bold flex items-center gap-2 mb-4">
                                         <span className="w-[22px] h-[2px] bg-[#ffc107] inline-block" /> Vision
                                     </div>
@@ -624,7 +819,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                 </section>
 
                 {/* ── Programs ─────────────────────────────────────────────── */}
-                <section id="programs" className="py-8 md:py-10 px-4 sm:px-6 bg-white overflow-hidden relative scroll-mt-24">
+                <section id="programs" className="py-8 md:pt-10 md:pb-6 px-4 sm:px-6 bg-white overflow-hidden relative scroll-mt-24">
                     <div className={`${Classes["container"]}`}>
                         <div className="w-full mb-8">
                             <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3 flex items-center flex-wrap gap-4">
@@ -803,7 +998,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                 </section>
 
                 {/* ── Labs & Practical Learning ─────────────────────────────── */}
-                <section id="labs" className="py-8 md:py-12 px-4 sm:px-6 bg-white scroll-mt-24">
+                <section id="labs" className="py-8 md:pt-6 md:pb-12 px-4 sm:px-6 bg-white scroll-mt-24">
                     <div className={`${Classes["container"]}`}>
 
                         {/* Header & Controls */}
@@ -851,6 +1046,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                         desc: "An industry-oriented learning environment that supports practical exposure to technologies and skills aligned with contemporary engineering and professional requirements.",
                                         accent: "#D94B38",
                                         iconSrc: "/assets/images/new-information-system/icons/1.png",
+                                        animClass: "lab-icon-mechanical",
                                     },
                                     {
                                         num: "02",
@@ -858,6 +1054,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                         desc: "Students work with AI and machine learning concepts through practical exercises involving data, algorithms, model development, and intelligent applications.",
                                         accent: "#1B4F91",
                                         iconSrc: "/assets/images/new-information-system/icons/2.png",
+                                        animClass: "lab-icon-orbital",
                                     },
                                     {
                                         num: "03",
@@ -865,6 +1062,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                         desc: "The Cyber Security Lab provides students with a practical environment to understand cybersecurity concepts, identify vulnerabilities, and develop skills for protecting digital systems and networks.",
                                         accent: "#14284E",
                                         iconSrc: "/assets/images/new-information-system/icons/3.png",
+                                        animClass: "lab-icon-pulse",
                                     },
                                     {
                                         num: "04",
@@ -872,6 +1070,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                         desc: "Provides practical exposure to cloud-based computing concepts, distributed systems, virtualization, and deployment-oriented learning.",
                                         accent: "#D94B38",
                                         iconSrc: "/assets/images/new-information-system/icons/4.png",
+                                        animClass: "lab-icon-float",
                                     },
                                     {
                                         num: "05",
@@ -879,6 +1078,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                         desc: "Students develop practical skills in database design, SQL, data management, querying, and database-driven application development.",
                                         accent: "#1B4F91",
                                         iconSrc: "/assets/images/new-information-system/icons/5.png",
+                                        animClass: "lab-icon-stack",
                                     },
                                     {
                                         num: "06",
@@ -886,6 +1086,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                         desc: "Supports project-based learning, experimentation, and research activities in emerging areas of computer science and engineering.",
                                         accent: "#14284E",
                                         iconSrc: "/assets/images/new-information-system/icons/6.png",
+                                        animClass: "lab-icon-glow",
                                     },
                                     {
                                         num: "07",
@@ -893,8 +1094,9 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                         desc: "Provides hands-on learning in computer networks, network security, information security, and foundational cybersecurity practices.",
                                         accent: "#D94B38",
                                         iconSrc: "/assets/images/new-information-system/icons/7.png",
+                                        animClass: "lab-icon-network",
                                     },
-                                ] as { num: string; title: string; desc: string; accent: string; iconSrc: string }[]).map((lab) => (
+                                ] as { num: string; title: string; desc: string; accent: string; iconSrc: string; animClass: string }[]).map((lab) => (
                                     <div
                                         key={lab.num}
                                         className={`col-span-12 sm:col-span-6 lg:col-span-4 ${parseInt(lab.num) <= 4 ? "xl:col-span-3" : "xl:col-span-4"} group relative flex flex-col rounded-2xl border border-[#DCE6F2] bg-white p-6 shadow-[0_2px_12px_rgba(15,31,61,0.04)] hover:shadow-[0_10px_28px_rgba(15,31,61,0.10)] hover:-translate-y-1 transition-all duration-300 overflow-hidden shrink-0 w-[85vw] sm:w-auto sm:shrink`}
@@ -921,7 +1123,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                             <img
                                                 src={lab.iconSrc}
                                                 alt=""
-                                                className="w-10 h-10 object-contain shrink-0 opacity-90"
+                                                className={`w-10 h-10 object-contain shrink-0 opacity-90 ${lab.animClass}`}
                                             />
                                         </div>
 
@@ -942,25 +1144,54 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                             </div>
                         </div>
 
+                        <div className="mt-10 flex flex-col items-center justify-center text-center">
+                            <Link to="/campus-life" className="inline-flex items-center gap-2 bg-[#ffc107] hover:bg-[#FFD54F] text-[#14284E] font-bold text-[14px] px-8 py-3.5 rounded-lg shadow-sm transition-all hover:-translate-y-0.5">
+                                Take a Campus Tour <ArrowRight className="w-4 h-4" />
+                            </Link>
+                        </div>
+
                     </div>
                 </section>
 
                 {/* ── Events ───────────────────────────────────────────────── */}
                 <section id="events" className="py-8 md:py-10 px-4 sm:px-6 bg-[#F0F6FB] scroll-mt-24">
                     <div className={`${Classes["container"]}`}>
-                        <div className="w-full mb-8">
-                            {/* <div className="text-[12px] sm:text-[13px] tracking-[0.1em] uppercase text-[#D94B38] font-bold flex items-center gap-2 mb-3">
-                                <span className="w-4 h-[2px] bg-[#D94B38] inline-block shrink-0" /> BEYOND THE CLASSROOM <span className="w-4 h-[2px] bg-[#D94B38] inline-block shrink-0" />
-                            </div> */}
-                            <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3">
-                                From Classroom Concepts to <span className="text-[#ffc107]">Real-World Applications</span>
-                            </h2>
+                        <div className="w-full mb-8 flex flex-col gap-4">
+                            <div className="w-full">
+                                {/* <div className="text-[12px] sm:text-[13px] tracking-[0.1em] uppercase text-[#D94B38] font-bold flex items-center gap-2 mb-3">
+                                    <span className="w-4 h-[2px] bg-[#D94B38] inline-block shrink-0" /> BEYOND THE CLASSROOM <span className="w-4 h-[2px] bg-[#D94B38] inline-block shrink-0" />
+                                </div> */}
+                                <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3">
+                                    From Classroom Concepts to <span className="text-[#ffc107]">Real-World Applications</span>
+                                </h2>
+                            </div>
+
+                            {/* Navigation Buttons */}
+                            <div className="flex items-center gap-3 shrink-0 self-start sm:hidden">
+                                <button
+                                    onClick={() => eventsEmblaApi?.scrollPrev()}
+                                    disabled={!eventsCanPrev}
+                                    className="w-10 h-10 flex items-center justify-center rounded-full bg-white border border-[#DCE6F2] shadow-sm text-[#14284E] hover:bg-[#14284E] hover:text-white transition-all disabled:opacity-30 disabled:cursor-not-allowed"
+                                    aria-label="Previous Event"
+                                >
+                                    <ArrowLeft className="w-4 h-4" />
+                                </button>
+                                <button
+                                    onClick={() => eventsEmblaApi?.scrollNext()}
+                                    disabled={!eventsCanNext}
+                                    className="w-10 h-10 flex items-center justify-center rounded-full bg-white border border-[#DCE6F2] shadow-sm text-[#14284E] hover:bg-[#14284E] hover:text-white transition-all disabled:opacity-30 disabled:cursor-not-allowed"
+                                    aria-label="Next Event"
+                                >
+                                    <ArrowRight className="w-4 h-4" />
+                                </button>
+                            </div>
                         </div>
 
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-                            {events.map((ev, i) => (
-                                <div key={i} className="flex flex-col h-full bg-white border border-[#DCE6F2] border-b-[4px] border-b-[#D94B38] rounded-2xl overflow-hidden shadow-[0_4px_18px_rgba(15,31,61,0.04)] hover:shadow-[0_12px_30px_rgba(15,31,61,0.08)] hover:-translate-y-1 transition-all duration-300">
-                                    <div className="w-full aspect-[16/9] relative overflow-hidden bg-[#DCE6F2]">
+                        <div className="overflow-hidden sm:overflow-visible -mx-4 px-4 sm:mx-0 sm:px-0" ref={eventsEmblaRef}>
+                            <div className="flex sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-5 pb-4 sm:pb-0">
+                                {events.map((ev, i) => (
+                                    <div key={i} className="flex flex-col shrink-0 w-[85vw] sm:w-auto sm:shrink bg-white border border-[#DCE6F2] border-b-[4px] border-b-[#D94B38] rounded-2xl overflow-hidden shadow-[0_4px_18px_rgba(15,31,61,0.04)] hover:shadow-[0_12px_30px_rgba(15,31,61,0.08)] hover:-translate-y-1 transition-all duration-300">
+                                        <div className="w-full aspect-[16/9] relative overflow-hidden bg-[#DCE6F2]">
                                         <img src={ev.img} alt={ev.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy" />
                                     </div>
                                     <div className="p-5 sm:p-6 flex flex-col flex-grow">
@@ -978,8 +1209,9 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                             </button>
                                         </div>
                                     </div>
-                                </div>
-                            ))}
+                                    </div>
+                                ))}
+                            </div>
                         </div>
 
                         <div className="flex justify-center mt-10">
@@ -1231,23 +1463,47 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                 {/* ── Key Highlights ───────────────────────────────────────── */}
                 <section className="pt-8 pb-6 md:pt-10 md:pb-6 px-4 sm:px-6 bg-[#14284e]">
                     <div className={`${Classes["container"]}`}>
-                        <div className="w-full mb-8">
-                            <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-white">
-                                What Makes the <span className="text-[#ffc107]">CSE Department Different</span> in SRMU?
-                            </h2>
+                        <div className="w-full mb-8 flex flex-col gap-4">
+                            <div className="w-full">
+                                <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-white">
+                                    What Makes the <span className="text-[#ffc107]">CSE Department Different</span> in SRMU?
+                                </h2>
+                            </div>
+
+                            {/* Navigation Buttons */}
+                            <div className="flex items-center gap-3 shrink-0 self-start sm:hidden">
+                                <button
+                                    onClick={() => whyEmblaApi?.scrollPrev()}
+                                    disabled={!whyCanPrev}
+                                    className="w-10 h-10 flex items-center justify-center rounded-full bg-[#14284e] border border-white/20 shadow-sm text-white hover:bg-white hover:text-[#14284e] transition-all disabled:opacity-30 disabled:cursor-not-allowed"
+                                    aria-label="Previous"
+                                >
+                                    <ArrowLeft className="w-4 h-4" />
+                                </button>
+                                <button
+                                    onClick={() => whyEmblaApi?.scrollNext()}
+                                    disabled={!whyCanNext}
+                                    className="w-10 h-10 flex items-center justify-center rounded-full bg-[#14284e] border border-white/20 shadow-sm text-white hover:bg-white hover:text-[#14284e] transition-all disabled:opacity-30 disabled:cursor-not-allowed"
+                                    aria-label="Next"
+                                >
+                                    <ArrowRight className="w-4 h-4" />
+                                </button>
+                            </div>
                         </div>
 
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/20 border border-white/20 rounded-2xl overflow-hidden">
-                            {whyItems.map(w => (
-                                <div key={w.num} className=" bg-[#14284e] p-7 sm:p-8  transition-colors flex flex-col">
-                                    <div className="mb-5">
-                                        <span className="block text-[14px] text-[#ffc107] font-bold tracking-[0.05em]">{w.num}</span>
-                                        <div className="w-6 h-[2.5px] bg-[#D94B38] mt-2"></div>
+                        <div className="overflow-hidden sm:overflow-visible -mx-4 px-4 sm:mx-0 sm:px-0" ref={whyEmblaRef}>
+                            <div className="flex sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-px pb-4 sm:pb-0 sm:bg-white/20 sm:border sm:border-white/20 sm:rounded-2xl sm:overflow-hidden">
+                                {whyItems.map(w => (
+                                    <div key={w.num} className="bg-[#14284e] p-7 sm:p-8 transition-colors flex flex-col shrink-0 w-[85vw] sm:w-auto sm:shrink rounded-2xl sm:rounded-none border border-white/20 sm:border-0">
+                                        <div className="mb-5">
+                                            <span className="block text-[14px] text-[#ffc107] font-bold tracking-[0.05em]">{w.num}</span>
+                                            <div className="w-6 h-[2.5px] bg-[#D94B38] mt-2"></div>
+                                        </div>
+                                        <h4 className="text-white font-bold text-[17px] mb-3 font-display leading-snug">{w.title}</h4>
+                                        <p className="text-white/80 text-[13.5px] leading-relaxed text-justify">{w.desc}</p>
                                     </div>
-                                    <h4 className="text-white font-bold text-[17px] mb-3 font-display leading-snug">{w.title}</h4>
-                                    <p className="text-white/80 text-[13.5px] leading-relaxed text-justify">{w.desc}</p>
-                                </div>
-                            ))}
+                                ))}
+                            </div>
                         </div>
 
                         {/* Admission + Eligibility buttons */}
@@ -1273,30 +1529,51 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                 {/* ── Career Pathways ──────────────────────────────────────── */}
                 <section id="careers" className="pt-6 pb-10 md:pt-8 md:pb-16 px-4 sm:px-6 bg-[#EEF5FC] border-b-[8px] border-[#D69E2E]">
                     <div className={`${Classes["container"]}`}>
-                        <div className="w-full mb-10 md:mb-12 text-center max-w-3xl mx-auto">
-                            {/* <div className="text-[12px] sm:text-[13px] tracking-[0.1em] uppercase text-[#D94B38] font-bold flex items-center justify-center gap-2 mb-3">
-                                <span className="w-4 h-[1.5px] bg-[#D94B38] inline-block shrink-0" /> CAREER PATHS <span className="w-4 h-[1.5px] bg-[#D94B38] inline-block shrink-0" />
-                            </div> */}
-                            <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E]">
-                                Where Can a <span className="text-[#ffc107]">CSE Degree</span> Take You?
-                            </h2>
+                        <div className="w-full mb-10 md:mb-12 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+                            <div className="text-left max-w-3xl">
+                                <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E]">
+                                    Where Can a <span className="text-[#ffc107]">CSE Degree</span> Take You?
+                                </h2>
+                            </div>
+                            
+                            {/* Navigation Buttons */}
+                            <div className="flex items-center justify-start gap-3 shrink-0 sm:hidden">
+                                <button
+                                    onClick={() => careersEmblaApi?.scrollPrev()}
+                                    disabled={!careersCanPrev}
+                                    className="w-10 h-10 flex items-center justify-center rounded-full bg-white border border-[#DCE6F2] shadow-sm text-[#14284E] hover:bg-[#14284E] hover:text-white transition-all disabled:opacity-30 disabled:cursor-not-allowed"
+                                    aria-label="Previous Career"
+                                >
+                                    <ArrowLeft className="w-4 h-4" />
+                                </button>
+                                <button
+                                    onClick={() => careersEmblaApi?.scrollNext()}
+                                    disabled={!careersCanNext}
+                                    className="w-10 h-10 flex items-center justify-center rounded-full bg-white border border-[#DCE6F2] shadow-sm text-[#14284E] hover:bg-[#14284E] hover:text-white transition-all disabled:opacity-30 disabled:cursor-not-allowed"
+                                    aria-label="Next Career"
+                                >
+                                    <ArrowRight className="w-4 h-4" />
+                                </button>
+                            </div>
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                            {careerItems.map((item, index) => (
-                                <div key={index} className="bg-white p-6 md:p-8 rounded-2xl border border-[#DCE6F2] border-t-[4px] border-t-[#D69E2E] hover:border-t-[#14284E] shadow-[0_4px_18px_rgba(15,31,61,0.03)] hover:shadow-[0_12px_30px_rgba(15,31,61,0.08)] transition-all duration-300 group flex flex-col h-full">
-                                    <div className="w-12 h-12 rounded-xl bg-[#D69E2E] text-[#14284E] flex items-center justify-center mb-5 transition-colors duration-300 shadow-sm">
-                                        <item.icon className="w-6 h-6" strokeWidth={1.5} />
+                        <div className="overflow-hidden sm:overflow-visible -mx-4 px-4 sm:mx-0 sm:px-0" ref={careersEmblaRef}>
+                            <div className="flex sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-6 touch-pan-y">
+                                {careerItems.map((item, index) => (
+                                    <div key={index} className="shrink-0 w-[85vw] sm:w-auto sm:shrink bg-white p-6 md:p-8 rounded-2xl border border-[#DCE6F2] border-t-[4px] border-t-[#D69E2E] hover:border-t-[#14284E] shadow-[0_4px_18px_rgba(15,31,61,0.03)] hover:shadow-[0_12px_30px_rgba(15,31,61,0.08)] transition-all duration-300 group flex flex-col h-full">
+                                        <div className="w-12 h-12 rounded-xl bg-[#D69E2E] text-[#14284E] flex items-center justify-center mb-5 transition-colors duration-300 shadow-sm">
+                                            <item.icon className="w-6 h-6" strokeWidth={1.5} />
+                                        </div>
+                                        <h4 className="font-display font-bold text-[18px] text-[#14284E] mb-3 leading-snug">{item.title}</h4>
+                                        <p className="text-[#3F4C56] text-[13.5px] leading-relaxed flex-grow text-justify mb-4">{item.desc}</p>
+                                        <div className="mt-auto pt-2">
+                                            <button className="text-[11px] font-bold text-[#D94B38] hover:text-[#1B4F91] uppercase tracking-[0.08em] flex items-center gap-1.5 transition-colors">
+                                                EXPLORE →
+                                            </button>
+                                        </div>
                                     </div>
-                                    <h4 className="font-display font-bold text-[18px] text-[#14284E] mb-3 leading-snug">{item.title}</h4>
-                                    <p className="text-[#3F4C56] text-[13.5px] leading-relaxed flex-grow text-justify mb-4">{item.desc}</p>
-                                    <div className="mt-auto pt-2">
-                                        <button className="text-[11px] font-bold text-[#D94B38] hover:text-[#1B4F91] uppercase tracking-[0.08em] flex items-center gap-1.5 transition-colors">
-                                            EXPLORE →
-                                        </button>
-                                    </div>
-                                </div>
-                            ))}
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -1355,29 +1632,174 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                     </div>
                                 </div>
                                 {/* Bottom: Wide Banner */}
-                                <div className="w-full flex-grow flex rounded-xl overflow-hidden shadow-sm">
+                                <div className="w-full flex-grow relative rounded-xl overflow-hidden shadow-sm">
                                     <img src="/assets/images/new-information-system/new-scholarship.png" alt="Scholarships" className="w-full h-auto lg:h-full object-cover lg:min-h-[220px]" />
+                                    {/* Desktop overlay button (sm and above only) */}
+                                    <div className="hidden sm:block absolute bottom-[8%] left-[5%]">
+                                        <Link 
+                                            to="/scholarship" 
+                                            className="inline-flex items-center gap-1.5 bg-[#ffc107] hover:bg-[#FFD54F] text-[#14284E] font-bold text-[12px] lg:text-[14px] px-5 lg:px-6 py-2 lg:py-2.5 rounded-md shadow-md transition-transform hover:-translate-y-0.5"
+                                        >
+                                            Apply Now <ArrowRight className="w-3.5 h-3.5" />
+                                        </Link>
+                                    </div>
+                                </div>
+                                {/* Mobile button (below the image, sm and below only) */}
+                                <div className="sm:hidden flex justify-start mt-3 px-1">
+                                    <Link 
+                                        to="/scholarship" 
+                                        className="inline-flex items-center gap-1.5 bg-[#ffc107] hover:bg-[#FFD54F] text-[#14284E] font-bold text-[13px] px-5 py-2.5 rounded-md shadow-md transition-transform active:scale-95"
+                                    >
+                                        Apply Now <ArrowRight className="w-3.5 h-3.5" />
+                                    </Link>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
 
+                {/* ── Blog Section (CSE only) ──────────────────────────── */}
+                {(() => {
+                    const csSlugs = new Set(ALL_TARGET_BLOGS.filter(b => b.category === "cs").map(b => b.slug));
+                    const cseKeywords = [
+                        "cse", "computer science", "bca", "b.tech cse", "btech cse",
+                        "cyber security", "cybersecurity", "artificial intelligence",
+                        "machine learning", "data science", "programming", "cloud computing",
+                        "information technology", "software engineering", "network security",
+                        "computer engineering", "it careers", "ai ", " ai,", "ai &",
+                        "b.tech in cse", "b.tech in computer", "bca in", "cse vs",
+                        "specialization", "b.tech cse vs"
+                    ];
+                    const isCSERelated = (card: any) => {
+                        const slug = String(card.slug || "").trim();
+                        if (csSlugs.has(slug)) return true;
+                        const haystack = `${card.title || ""} ${slug}`.toLowerCase();
+                        return cseKeywords.some(kw => haystack.includes(kw));
+                    };
+                    const csBlogs = blogCards.filter(isCSERelated).slice(0, 3);
+                    if (csBlogs.length === 0) return null;
+                    return (
+                <section className="py-10 md:py-14 px-4 sm:px-6 bg-white border-b border-[#DCE6F2]">
+                    <div className={`${Classes["container"]}`}>
+                        {/* Header */}
+                        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
+                            <div>
+                                <div className="text-[12px] sm:text-[13px] tracking-[0.1em] uppercase text-[#D94B38] font-bold flex items-center gap-2 mb-2">
+                                    <span className="w-4 h-[2px] bg-[#D94B38] inline-block shrink-0" /> From the Blog
+                                </div>
+                                <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E]">
+                                    Latest <span className="text-[#ffc107]">Insights & Resources</span>
+                                </h2>
+                                <p className="text-[14px] text-[#4B5A72] mt-2 max-w-xl">
+                                    Guides, stories, and updates from the world of Computer Science & Engineering.
+                                </p>
+                            </div>
+                            <div className="flex flex-row items-center justify-between sm:justify-end gap-3 shrink-0 w-full sm:w-auto">
+                                <Link
+                                    to="/blogs"
+                                    className="shrink-0 inline-flex items-center gap-2 bg-[#14284E] hover:bg-[#1B4F91] text-white font-bold text-[13px] px-6 py-2.5 rounded-lg transition-all hover:-translate-y-0.5 shadow-sm"
+                                >
+                                    All Blogs <ArrowRight className="w-4 h-4" />
+                                </Link>
+
+                                {/* Navigation Buttons */}
+                                <div className="flex items-center gap-2 sm:hidden">
+                                    <button
+                                        onClick={() => blogsEmblaApi?.scrollPrev()}
+                                        disabled={!blogsCanPrev}
+                                        className="w-10 h-10 flex items-center justify-center rounded-full bg-white border border-[#DCE6F2] shadow-sm text-[#14284E] hover:bg-[#14284E] hover:text-white transition-all disabled:opacity-30 disabled:cursor-not-allowed"
+                                        aria-label="Previous Blog"
+                                    >
+                                        <ArrowLeft className="w-4 h-4" />
+                                    </button>
+                                    <button
+                                        onClick={() => blogsEmblaApi?.scrollNext()}
+                                        disabled={!blogsCanNext}
+                                        className="w-10 h-10 flex items-center justify-center rounded-full bg-white border border-[#DCE6F2] shadow-sm text-[#14284E] hover:bg-[#14284E] hover:text-white transition-all disabled:opacity-30 disabled:cursor-not-allowed"
+                                        aria-label="Next Blog"
+                                    >
+                                        <ArrowRight className="w-4 h-4" />
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Blog Cards — 3 cols on desktop */}
+                        <div className="overflow-hidden sm:overflow-visible -mx-4 px-4 sm:mx-0 sm:px-0" ref={blogsEmblaRef}>
+                            <div className="flex sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-6 touch-pan-y">
+                                {csBlogs.map((card: any, idx: number) => {
+                                    const resolvedSlug = String(card.slug || "").trim();
+                                    const blogPath = `/blog/${resolvedSlug && resolvedSlug !== "null" ? resolvedSlug : normalizeRouteSlug(card.title || "")}`;
+                                    return (
+                                        <div key={card.id || card.slug || `blog-${idx}`} className="shrink-0 w-[85vw] sm:w-auto sm:shrink group flex flex-col bg-white border border-[#DCE6F2] border-b-[4px] border-b-[#ffc107] rounded-2xl overflow-hidden shadow-[0_4px_18px_rgba(15,31,61,0.04)] hover:shadow-[0_12px_30px_rgba(15,31,61,0.10)] hover:-translate-y-1 transition-all duration-300">
+                                            {/* Image */}
+                                            <Link to={blogPath} className="block w-full aspect-[16/9] overflow-hidden bg-[#F0F6FB] shrink-0">
+                                                <img
+                                                    src={card.imagePath}
+                                                    alt={card.title || "Blog"}
+                                                    loading="lazy"
+                                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                                />
+                                            </Link>
+                                            {/* Content */}
+                                            <div className="p-5 flex flex-col flex-grow">
+                                                {card.postedOn && (
+                                                    <p className="text-[11.5px] text-[#4B5A72] mb-3 flex items-center gap-1.5">
+                                                        <span className="w-1.5 h-1.5 rounded-full bg-[#ffc107] shrink-0" />
+                                                        {card.postedOn}
+                                                    </p>
+                                                )}
+                                                <h3 className="font-bold text-[15.5px] text-[#14284E] font-display leading-snug mb-4 flex-grow line-clamp-3 group-hover:text-[#1B4F91] transition-colors">
+                                                    <Link to={blogPath}>{card.title}</Link>
+                                                </h3>
+                                                <div className="mt-auto pt-4 border-t border-[#F1F5F9]">
+                                                    <Link
+                                                        to={blogPath}
+                                                        className="text-[11.5px] font-bold text-[#D94B38] hover:text-[#1B4F91] uppercase tracking-[0.08em] flex items-center gap-1.5 transition-colors"
+                                                    >
+                                                        Read on the blog <ArrowRight className="w-3.5 h-3.5" />
+                                                    </Link>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                    );
+                })()}
+
+                {/* ── Map Section ──────────────────────────────────────────── */}
+                <Map />
+
                 {/* ── FAQ ──────────────────────────────────────────────────── */}
                 <section id="faq" className="py-10 md:py-14 px-4 sm:px-6 bg-[#F4F7FB]">
                     <div className={`${Classes["container"]} max-w-[900px]`}>
                         {/* Header */}
-                        <div className="w-full mb-8">
-                            <div className="text-[12px] sm:text-[13px] tracking-[0.1em] uppercase text-[#D94B38] font-bold flex items-center gap-2 mb-3">
-                                <span className="w-4 h-[2px] bg-[#D94B38] inline-block shrink-0" /> FAQ
+                        <div className="w-full mb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+                            <div className="min-w-0 flex-1">
+                                <div className="text-[12px] sm:text-[13px] tracking-[0.1em] uppercase text-[#D94B38] font-bold flex items-center gap-2 mb-3">
+                                    <span className="w-4 h-[2px] bg-[#D94B38] inline-block shrink-0" /> FAQ
+                                </div>
+                                <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] break-words">
+                                    Frequently Asked <span className="text-[#ffc107]">Questions</span>
+                                </h2>
+                                <p className="text-[14px] text-[#4B5A72] mt-2 break-words whitespace-normal">
+                                    Discover Opportunities, Ignite Your Potential - Be Part of SRMU Uttar Pradesh
+                                </p>
                             </div>
-                            <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E]">
-                                Frequently Asked <span className="text-[#ffc107]">Questions</span>
-                            </h2>
+                            <button
+                                onClick={() => setShowAllFaq(!showAllFaq)}
+                                className="shrink-0 flex items-center justify-center gap-2 bg-[#1B4F91] hover:bg-[#14284E] text-white font-bold text-[13px] px-5 py-2.5 rounded-lg transition-colors w-fit"
+                            >
+                                View FAQ <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${showAllFaq ? "rotate-180" : ""}`} />
+                            </button>
                         </div>
 
                         {/* Accordion */}
-                        <div className="flex flex-col gap-3">
+                        <div className={`flex flex-col gap-3 transition-all duration-500 overflow-hidden ${showAllFaq ? "max-h-[3000px] opacity-100 mt-6" : "max-h-0 opacity-0"}`}>
                             {faqItems.map((faq, i) => (
                                 <div
                                     key={i}
@@ -1581,6 +2003,172 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                 </div>
             )}
 
+            <DepartmentFooter />
+        </div>
+    );
+};
+
+const DepartmentFooter = () => {
+    return (
+        <div role="contentinfo" className="bg-[#14284E] text-white pt-16 pb-6 border-t-[4px] border-[#ffc107]">
+            <div className={`${Classes["container"]}`}>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 lg:gap-8 mb-12">
+                    
+                    {/* Col 1: Brand & Contact */}
+                    <div className="lg:col-span-2 space-y-6 lg:pr-6">
+                        <div>
+                            <img src={logosrmcem} alt="SRMU Logo" className="h-[60px] w-auto mb-5" />
+                            <p className="text-[13px] text-gray-300 leading-relaxed text-justify mb-5">
+                                Shri Ramswaroop Memorial University (SRMU), Lucknow- Deva Road, Barabanki, Uttar Pradesh is committed to providing quality education, fostering innovation and building a brighter future for our students.
+                            </p>
+                            
+                            <div className="flex gap-2.5">
+                                <a href="https://www.linkedin.com/school/shri-ramswaroop-memorial-university/" target="_blank" rel="noreferrer" className="w-8 h-8 rounded-full border border-gray-400 flex items-center justify-center hover:border-[#ffc107] hover:text-[#ffc107] transition-colors"><Linkedin className="w-4 h-4" /></a>
+                                <a href="https://www.facebook.com/SRMUOFFICIAL/" target="_blank" rel="noreferrer" className="w-8 h-8 rounded-full border border-gray-400 flex items-center justify-center hover:border-[#ffc107] hover:text-[#ffc107] transition-colors"><Facebook className="w-4 h-4" /></a>
+                                <a href="https://www.instagram.com/srmulucknow_official/" target="_blank" rel="noreferrer" className="w-8 h-8 rounded-full border border-gray-400 flex items-center justify-center hover:border-[#ffc107] hover:text-[#ffc107] transition-colors"><Instagram className="w-4 h-4" /></a>
+                                <a href="https://www.youtube.com/channel/UCQBjHzkED5ESWvlQiwLNZ4Q" target="_blank" rel="noreferrer" className="w-8 h-8 rounded-full border border-gray-400 flex items-center justify-center hover:border-[#ffc107] hover:text-[#ffc107] transition-colors"><Youtube className="w-4 h-4" /></a>
+                                <a href="https://twitter.com/srmu_lucknow" target="_blank" rel="noreferrer" className="w-8 h-8 rounded-full border border-gray-400 flex items-center justify-center hover:border-[#ffc107] hover:text-[#ffc107] transition-colors"><Twitter className="w-4 h-4" /></a>
+                            </div>
+                        </div>
+
+                        <div className="space-y-5 pt-5 border-t border-white/10">
+                            <div className="flex gap-3">
+                                <MapPin className="w-5 h-5 text-[#ffc107] shrink-0 mt-0.5" />
+                                <div>
+                                    <h4 className="text-[#ffc107] text-[13px] font-bold uppercase mb-1">Address</h4>
+                                    <p className="text-[13px] text-gray-300 leading-relaxed">Shri Ramswaroop Memorial University (SRMU), Lucknow- Deva Road, Barabanki, Uttar Pradesh</p>
+                                </div>
+                            </div>
+                            <div className="flex gap-3">
+                                <MapPin className="w-5 h-5 text-[#ffc107] shrink-0 mt-0.5" />
+                                <div>
+                                    <h4 className="text-[#ffc107] text-[13px] font-bold uppercase mb-1">Lucknow Office</h4>
+                                    <p className="text-[13px] text-gray-300 leading-relaxed">C-2/42, Vishesh Khand, Opposite Chote Lal Nursery, Gomtinagar, Lucknow, Uttar Pradesh</p>
+                                </div>
+                            </div>
+                            <div className="flex gap-3">
+                                <Phone className="w-5 h-5 text-[#ffc107] shrink-0 mt-0.5" />
+                                <div>
+                                    <h4 className="text-[#ffc107] text-[12px] font-bold uppercase mb-1">Admission Helpline</h4>
+                                    <p className="text-[13px] text-gray-300">+91-9838904666</p>
+                                </div>
+                            </div>
+                            <div className="flex gap-3">
+                                <Phone className="w-5 h-5 text-[#ffc107] shrink-0 mt-0.5" />
+                                <div>
+                                    <h4 className="text-[#ffc107] text-[12px] font-bold uppercase mb-1">Admission Toll Free</h4>
+                                    <p className="text-[13px] text-gray-300">18001026004</p>
+                                </div>
+                            </div>
+                            <div className="flex gap-3">
+                                <Mail className="w-5 h-5 text-[#ffc107] shrink-0 mt-0.5" />
+                                <div>
+                                    <h4 className="text-[#ffc107] text-[13px] font-bold uppercase mb-1">Email</h4>
+                                    <p className="text-[13px] text-gray-300">admissions@srmu.ac.in</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Middle Columns Wrapper (3-col on mobile) */}
+                    <div className="lg:col-span-3 grid grid-cols-3 gap-2 sm:gap-6">
+                        {/* Col 2: Quick Links */}
+                        <div>
+                            <h3 className="text-[#ffc107] font-bold text-[12px] sm:text-[14px] uppercase mb-4 sm:mb-6 tracking-wide">Quick Links</h3>
+                            <ul className="space-y-3 sm:space-y-4">
+                                {[
+                                    { name: "About SRMU", path: "/about-us" },
+                                    { name: "Programs", path: "/program-finder" },
+                                    { name: "Admissions", path: "/how-to-apply" },
+                                    { name: "Placements", path: "/placements" },
+                                    { name: "Life at SRMU", path: "/student-corner" },
+                                    { name: "News & Updates", path: "/notice" },
+                                    { name: "Contact Us", path: "/contact-us" }
+                                ].map((item) => (
+                                    <li key={item.name}><Link to={item.path} className="text-[12px] sm:text-[13.5px] text-gray-300 hover:text-[#ffc107] transition-colors">{item.name}</Link></li>
+                                ))}
+                            </ul>
+                        </div>
+
+                        {/* Col 3: Student Life */}
+                        <div>
+                            <h3 className="text-[#ffc107] font-bold text-[12px] sm:text-[14px] uppercase mb-4 sm:mb-6 tracking-wide">Student Life</h3>
+                            <ul className="space-y-3 sm:space-y-4">
+                                {[
+                                    { name: "Facilities", path: "/facilities" },
+                                    { name: "Library", path: "/central-library" },
+                                    { name: "Clubs", path: "/clubs" },
+                                    { name: "Blogs", path: "/blogs" },
+                                    { name: "Shift Schedule", path: "/shift-schedule" }
+                                ].map((item) => (
+                                    <li key={item.name}><Link to={item.path} className="text-[12px] sm:text-[13.5px] text-gray-300 hover:text-[#ffc107] transition-colors">{item.name}</Link></li>
+                                ))}
+                                <li><a href="https://eyojan.srmu.ac.in/" target="_blank" rel="noreferrer" className="text-[12px] sm:text-[13.5px] text-gray-300 hover:text-[#ffc107] transition-colors">Student Login</a></li>
+                                <li><a href="https://eyojan.srmu.ac.in/" target="_blank" rel="noreferrer" className="text-[12px] sm:text-[13.5px] text-gray-300 hover:text-[#ffc107] transition-colors">Staff Login</a></li>
+                            </ul>
+                        </div>
+
+                        {/* Col 4: Information */}
+                        <div>
+                            <h3 className="text-[#ffc107] font-bold text-[12px] sm:text-[14px] uppercase mb-4 sm:mb-6 tracking-wide">Information</h3>
+                            <ul className="space-y-3 sm:space-y-4">
+                                {[
+                                    { name: "UGC & Approvals", path: "/ugc-approvals" },
+                                    { name: "NAAC", path: "/naac" },
+                                    { name: "AIU", path: "/aiu" },
+                                    { name: "NIRF", path: "/nirf" },
+                                    { name: "IQAC", path: "/iqac-overview" },
+                                    { name: "Scholarships", path: "/scholarship-scheme" },
+                                    { name: "Anti Ragging", path: "/anti-ragging" }
+                                ].map((item) => (
+                                    <li key={item.name}><Link to={item.path} className="text-[12px] sm:text-[13.5px] text-gray-300 hover:text-[#ffc107] transition-colors">{item.name}</Link></li>
+                                ))}
+                                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSde8Ov2JDvB1vYeL-jrqNrlman0gLstQVEWEJ6DN34-EsYdCQ/viewform" target="_blank" rel="noreferrer" className="text-[12px] sm:text-[13.5px] text-gray-300 hover:text-[#ffc107] transition-colors break-words">Grievance Redressal</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    {/* Col 5: Subscribe & Follow */}
+                    <div className="lg:col-span-1 lg:min-w-[280px]">
+                        <h3 className="text-[#ffc107] font-bold text-[14px] uppercase mb-6 tracking-wide">Subscribe to our updates</h3>
+                        <p className="text-[13px] text-gray-300 mb-4 leading-relaxed">
+                            Stay informed about the latest news, events and opportunities at SRMU.
+                        </p>
+                        <form className="flex flex-col sm:flex-row mb-10" onSubmit={(e) => e.preventDefault()}>
+                            <input 
+                                type="email" 
+                                placeholder="Enter your email address" 
+                                className="flex-1 bg-transparent border border-gray-500 rounded-l-md px-3 py-2 text-[13px] text-white outline-none focus:border-[#ffc107]"
+                            />
+                            <button type="submit" className="bg-[#3b82f6] hover:bg-[#2563eb] text-white text-[13px] font-bold px-4 py-2 rounded-r-md transition-colors whitespace-nowrap">
+                                Subscribe
+                            </button>
+                        </form>
+
+                        <h3 className="text-[#ffc107] font-bold text-[14px] uppercase mb-6 tracking-wide">Follow Us</h3>
+                        <div className="flex gap-2.5">
+                            <a href="https://www.linkedin.com/school/shri-ramswaroop-memorial-university/" target="_blank" rel="noreferrer" className="w-9 h-9 rounded-full border border-gray-400 flex items-center justify-center hover:border-[#ffc107] hover:text-[#ffc107] transition-colors"><Linkedin className="w-4 h-4" /></a>
+                            <a href="https://www.facebook.com/SRMUOFFICIAL/" target="_blank" rel="noreferrer" className="w-9 h-9 rounded-full border border-gray-400 flex items-center justify-center hover:border-[#ffc107] hover:text-[#ffc107] transition-colors"><Facebook className="w-4 h-4" /></a>
+                            <a href="https://www.instagram.com/srmulucknow_official/" target="_blank" rel="noreferrer" className="w-9 h-9 rounded-full border border-gray-400 flex items-center justify-center hover:border-[#ffc107] hover:text-[#ffc107] transition-colors"><Instagram className="w-4 h-4" /></a>
+                            <a href="https://www.youtube.com/channel/UCQBjHzkED5ESWvlQiwLNZ4Q" target="_blank" rel="noreferrer" className="w-9 h-9 rounded-full border border-gray-400 flex items-center justify-center hover:border-[#ffc107] hover:text-[#ffc107] transition-colors"><Youtube className="w-4 h-4" /></a>
+                            <a href="https://twitter.com/srmu_lucknow" target="_blank" rel="noreferrer" className="w-9 h-9 rounded-full border border-gray-400 flex items-center justify-center hover:border-[#ffc107] hover:text-[#ffc107] transition-colors"><Twitter className="w-4 h-4" /></a>
+                            <a href="#" target="_blank" rel="noreferrer" className="w-9 h-9 rounded-full border border-gray-400 flex items-center justify-center hover:border-[#ffc107] hover:text-[#ffc107] transition-colors"><FaQuora className="w-4 h-4" /></a>
+                            <a href="#" target="_blank" rel="noreferrer" className="w-9 h-9 rounded-full border border-gray-400 flex items-center justify-center hover:border-[#ffc107] hover:text-[#ffc107] transition-colors"><FaRedditAlien className="w-[18px] h-[18px]" /></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+                    <p className="text-[12px] text-gray-400">© 2025 Shri Ramswaroop Memorial University. All Rights Reserved.</p>
+                    <div className="flex items-center gap-4 text-[12px] text-gray-400">
+                        <Link to="#" className="hover:text-white transition-colors">Privacy Policy</Link>
+                        <span className="text-gray-600">|</span>
+                        <Link to="#" className="hover:text-white transition-colors">Terms & Conditions</Link>
+                        <span className="text-gray-600">|</span>
+                        <Link to="#" className="hover:text-white transition-colors">Sitemap</Link>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };

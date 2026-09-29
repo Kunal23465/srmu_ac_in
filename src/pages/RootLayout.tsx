@@ -117,7 +117,7 @@ const RootLayout: React.FC = () => {
 
       {shouldRenderFooter && (
         <Suspense fallback={null}>
-          {normalizedPath !== "/insider" && <Footer />}
+          {normalizedPath !== "/insider" && normalizedPath !== "/department-of-computer-science-and-engineering-new" && <Footer />}
         </Suspense>
       )}
 
