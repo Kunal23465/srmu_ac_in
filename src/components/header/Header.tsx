@@ -8,7 +8,7 @@ import { HeaderData } from "./HeaderData";
 import { AppDispatch, RootState } from "../../store";
 import { fetchProgramMenu } from "../../store/header/programMenuThunk";
 import { useDispatch, useSelector } from "react-redux";
-import logo from "../../assets/images/logo1.png";
+import logo from "../../assets/images/University-Logo-White.png";
 import { setProgramId } from "../../store/program-finder/program/programSlice";
 import { getPreferredProgramRouteSlug } from "../../utils/legacyProgramRoutes";
 import { buildProgramCategoryPath } from "../../utils/programCategoryRoute";

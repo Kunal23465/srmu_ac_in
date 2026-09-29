@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Classes from "../../../utils/styles/Global.module.css";
 import KamleshImg from "../../../assets/images/academics/institutes/cse/cse2.jpeg";
 import SakshiImg from "../../../assets/images/academics/institutes/cse/cse3.jpeg";
-import logosrmcem from "../../../assets/images/logo1.png";
+import logosrmcem from "../../../assets/images/University-Logo-White.png";
 import { Download, ChevronDown, ChevronUp, Search, Mail, Phone, ArrowLeft, ArrowRight, X, Code2, Brain, BarChart3, ShieldCheck, Cloud, GraduationCap, Settings, Database, Lightbulb, Share2, MapPin, Facebook, Instagram, Linkedin, Youtube, Twitter } from "lucide-react";
 import { FaQuora, FaRedditAlien } from "react-icons/fa";
 import useEmblaCarousel from "embla-carousel-react";
@@ -539,10 +539,10 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                     {/* Text content — sits in the lower half over the gradient */}
                     <div className="absolute bottom-0 left-0 right-0 px-5 pt-6 pb-7 z-10">
                         {/* Title */}
-                        <p className="text-white/85 text-[15px] font-semibold mb-1 leading-snug">
+                        <p className="text-white/85 text-[18px] font-semibold mb-1.5 leading-snug">
                             Department of
                         </p>
-                        <h1 className="text-[#38bdf8] text-[28px] font-bold leading-[1.2] mb-3">
+                        <h1 className="text-[#38bdf8] text-[36px] font-bold leading-[1.15] mb-4">
                             Computer Science &amp; Engineering (CSE)
                         </h1>
 
@@ -602,14 +602,14 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                         <div className={`${Classes["container"]} flex flex-col h-full sm:h-auto w-full`}>
                             {/* Banner Text */}
                             <div className="w-full max-w-[650px] text-white text-left mt-2 sm:mt-0">
-                                <h2 className="text-[clamp(24px,3vw,36px)] font-semibold mb-1 leading-[1.2] drop-shadow-md">
+                                <h2 className="text-[clamp(20px,2.5vw,30px)] font-semibold mb-1 leading-[1.2] drop-shadow-md">
                                     Department of
                                 </h2>
-                                <h1 className="text-[clamp(40px,5vw,64px)] leading-[1.1] font-bold text-[#38bdf8] drop-shadow-md">
+                                <h1 className="text-[clamp(32px,4vw,52px)] leading-[1.1] font-bold text-[#38bdf8] drop-shadow-md">
                                     Computer Science &amp; Engineering (CSE)
                                 </h1>
                                 <div className="h-[3px] bg-[#38bdf8] w-[200px] mt-1 mb-4 rounded-full" />
-                                <p className="text-[clamp(16px,2vw,22px)] font-light mt-4 drop-shadow-md text-justify">
+                                <p className="text-[clamp(14px,1.5vw,18px)] font-light mt-4 drop-shadow-md text-justify">
                                     Shape Your Future with Computer Science &amp; Engineering
                                 </p>
                             </div>
@@ -712,7 +712,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
 
                             {/* ── Left: text ── */}
                             <div className="w-full lg:flex-1">
-                                <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-6 text-center lg:text-left">
+                                <h2 className="text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3 text-center lg:text-left">
                                     About the <span className="text-[#ffc107]">Department</span>
                                 </h2>
 
@@ -822,7 +822,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                 <section id="programs" className="py-8 md:pt-10 md:pb-6 px-4 sm:px-6 bg-white overflow-hidden relative scroll-mt-24">
                     <div className={`${Classes["container"]}`}>
                         <div className="w-full mb-8">
-                            <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3 flex items-center flex-wrap gap-4">
+                            <h2 className="text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3 flex items-center flex-wrap gap-4">
                                 <span>Explore <span className="text-[#ffc107]">Programs</span></span>
                                 <span className="text-[12px] font-bold bg-[#D94B38] text-white px-3 py-1.5 rounded-full flex items-center gap-1.5">
                                     <span className="w-1.5 h-1.5 bg-white rounded-full"></span> Admissions open 2026
@@ -1004,7 +1004,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                         {/* Header & Controls */}
                         <div className="w-full mb-8 md:mb-10 flex flex-col gap-4">
                             <div className="w-full">
-                                <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3">
+                                <h2 className="text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3">
                                     Labs &amp; <span className="text-[#ffc107]">Practical Learning</span>
                                 </h2>
                                 <p className={`text-[15.5px] text-[#4B5A72] leading-relaxed text-justify ${!rm["labs"] ? "line-clamp-3 sm:line-clamp-none" : ""}`}>
@@ -1161,7 +1161,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                 {/* <div className="text-[12px] sm:text-[13px] tracking-[0.1em] uppercase text-[#D94B38] font-bold flex items-center gap-2 mb-3">
                                     <span className="w-4 h-[2px] bg-[#D94B38] inline-block shrink-0" /> BEYOND THE CLASSROOM <span className="w-4 h-[2px] bg-[#D94B38] inline-block shrink-0" />
                                 </div> */}
-                                <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3">
+                                <h2 className="text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3">
                                     From Classroom Concepts to <span className="text-[#ffc107]">Real-World Applications</span>
                                 </h2>
                             </div>
@@ -1234,7 +1234,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                             <div className="w-full">
 
 
-                                <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E]">
+                                <h2 className="text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E]">
                                     Where Our Students <span className="text-[#ffc107]">Get Placed</span>
                                 </h2>
 
@@ -1392,7 +1392,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                             {/* <div className="text-[14.5px] tracking-[0.08em] uppercase text-[#ffc107] font-bold flex items-center gap-2 mb-3.5">
                                 <span className="w-[22px] h-[2px] bg-[#ffc107] inline-block" /> Faculty List
                             </div> */}
-                            <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3">
+                            <h2 className="text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3">
                                 Learn from experienced <span className="text-[#ffc107]">academic & research professionals.</span>
                             </h2>
                             <p className="text-[15.5px] text-[#4B5A72] text-justify mt-4 mb-6">
@@ -1465,7 +1465,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                     <div className={`${Classes["container"]}`}>
                         <div className="w-full mb-8 flex flex-col gap-4">
                             <div className="w-full">
-                                <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-white">
+                                <h2 className="text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display text-white">
                                     What Makes the <span className="text-[#ffc107]">CSE Department Different</span> in SRMU?
                                 </h2>
                             </div>
@@ -1531,7 +1531,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                     <div className={`${Classes["container"]}`}>
                         <div className="w-full mb-10 md:mb-12 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
                             <div className="text-left max-w-3xl">
-                                <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E]">
+                                <h2 className="text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E]">
                                     Where Can a <span className="text-[#ffc107]">CSE Degree</span> Take You?
                                 </h2>
                             </div>
@@ -1687,7 +1687,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                 <div className="text-[12px] sm:text-[13px] tracking-[0.1em] uppercase text-[#D94B38] font-bold flex items-center gap-2 mb-2">
                                     <span className="w-4 h-[2px] bg-[#D94B38] inline-block shrink-0" /> From the Blog
                                 </div>
-                                <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E]">
+                                <h2 className="text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E]">
                                     Latest <span className="text-[#ffc107]">Insights & Resources</span>
                                 </h2>
                                 <p className="text-[14px] text-[#4B5A72] mt-2 max-w-xl">
@@ -1783,7 +1783,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                 <div className="text-[12px] sm:text-[13px] tracking-[0.1em] uppercase text-[#D94B38] font-bold flex items-center gap-2 mb-3">
                                     <span className="w-4 h-[2px] bg-[#D94B38] inline-block shrink-0" /> FAQ
                                 </div>
-                                <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] break-words">
+                                <h2 className="text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] break-words">
                                     Frequently Asked <span className="text-[#ffc107]">Questions</span>
                                 </h2>
                                 <p className="text-[14px] text-[#4B5A72] mt-2 break-words whitespace-normal">
@@ -1846,7 +1846,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                 {/* <section id="apply" className="py-12 sm:py-16 px-4 sm:px-6 bg-gradient-to-br from-[#3E6B54] to-[#5C8A72]">
                     <div className={`${Classes["container"]}`}>
                         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
-                            <h2 className="text-white font-bold font-display text-[clamp(22px,3vw,32px)] max-w-[480px] leading-[1.2]">
+                            <h2 className="text-white font-bold font-display text-[clamp(26px,3vw,32px)] max-w-[480px] leading-[1.2]">
                                 Ready to build your future in computing?
                             </h2>
                             <div className="flex flex-wrap gap-3">
@@ -2017,18 +2017,18 @@ const DepartmentFooter = () => {
                     {/* Col 1: Brand & Contact */}
                     <div className="lg:col-span-2 space-y-6 lg:pr-6">
                         <div>
-                            <img src={logosrmcem} alt="SRMU Logo" className="h-[60px] w-auto mb-5" />
+                            <img src={logosrmcem} alt="SRMU Logo" className="max-h-[60px] max-w-full w-auto object-contain object-left mb-5" />
                             <p className="text-[13px] text-gray-300 leading-relaxed text-justify mb-5">
                                 Shri Ramswaroop Memorial University (SRMU), Lucknow- Deva Road, Barabanki, Uttar Pradesh is committed to providing quality education, fostering innovation and building a brighter future for our students.
                             </p>
                             
-                            <div className="flex gap-2.5">
+                            {/* <div className="flex gap-2.5">
                                 <a href="https://www.linkedin.com/school/shri-ramswaroop-memorial-university/" target="_blank" rel="noreferrer" className="w-8 h-8 rounded-full border border-gray-400 flex items-center justify-center hover:border-[#ffc107] hover:text-[#ffc107] transition-colors"><Linkedin className="w-4 h-4" /></a>
                                 <a href="https://www.facebook.com/SRMUOFFICIAL/" target="_blank" rel="noreferrer" className="w-8 h-8 rounded-full border border-gray-400 flex items-center justify-center hover:border-[#ffc107] hover:text-[#ffc107] transition-colors"><Facebook className="w-4 h-4" /></a>
                                 <a href="https://www.instagram.com/srmulucknow_official/" target="_blank" rel="noreferrer" className="w-8 h-8 rounded-full border border-gray-400 flex items-center justify-center hover:border-[#ffc107] hover:text-[#ffc107] transition-colors"><Instagram className="w-4 h-4" /></a>
                                 <a href="https://www.youtube.com/channel/UCQBjHzkED5ESWvlQiwLNZ4Q" target="_blank" rel="noreferrer" className="w-8 h-8 rounded-full border border-gray-400 flex items-center justify-center hover:border-[#ffc107] hover:text-[#ffc107] transition-colors"><Youtube className="w-4 h-4" /></a>
                                 <a href="https://twitter.com/srmu_lucknow" target="_blank" rel="noreferrer" className="w-8 h-8 rounded-full border border-gray-400 flex items-center justify-center hover:border-[#ffc107] hover:text-[#ffc107] transition-colors"><Twitter className="w-4 h-4" /></a>
-                            </div>
+                            </div> */}
                         </div>
 
                         <div className="space-y-5 pt-5 border-t border-white/10">
@@ -2071,11 +2071,11 @@ const DepartmentFooter = () => {
                     </div>
 
                     {/* Middle Columns Wrapper (3-col on mobile) */}
-                    <div className="lg:col-span-3 grid grid-cols-3 gap-2 sm:gap-6">
+                    <div className="lg:col-span-3 grid grid-cols-3 gap-2 sm:gap-6 lg:mt-[80px]">
                         {/* Col 2: Quick Links */}
                         <div>
                             <h3 className="text-[#ffc107] font-bold text-[12px] sm:text-[14px] uppercase mb-4 sm:mb-6 tracking-wide">Quick Links</h3>
-                            <ul className="space-y-3 sm:space-y-4">
+                            <ul className="space-y-3 sm:space-y-4 list-disc pl-4 marker:text-gray-300">
                                 {[
                                     { name: "About SRMU", path: "/about-us" },
                                     { name: "Programs", path: "/program-finder" },
@@ -2093,7 +2093,7 @@ const DepartmentFooter = () => {
                         {/* Col 3: Student Life */}
                         <div>
                             <h3 className="text-[#ffc107] font-bold text-[12px] sm:text-[14px] uppercase mb-4 sm:mb-6 tracking-wide">Student Life</h3>
-                            <ul className="space-y-3 sm:space-y-4">
+                            <ul className="space-y-3 sm:space-y-4 list-disc pl-4 marker:text-gray-300">
                                 {[
                                     { name: "Facilities", path: "/facilities" },
                                     { name: "Library", path: "/central-library" },
@@ -2111,7 +2111,7 @@ const DepartmentFooter = () => {
                         {/* Col 4: Information */}
                         <div>
                             <h3 className="text-[#ffc107] font-bold text-[12px] sm:text-[14px] uppercase mb-4 sm:mb-6 tracking-wide">Information</h3>
-                            <ul className="space-y-3 sm:space-y-4">
+                            <ul className="space-y-3 sm:space-y-4 list-disc pl-4 marker:text-gray-300">
                                 {[
                                     { name: "UGC & Approvals", path: "/ugc-approvals" },
                                     { name: "NAAC", path: "/naac" },
@@ -2129,7 +2129,7 @@ const DepartmentFooter = () => {
                     </div>
 
                     {/* Col 5: Subscribe & Follow */}
-                    <div className="lg:col-span-1 lg:min-w-[280px]">
+                    <div className="lg:col-span-1 lg:min-w-[280px] lg:mt-[80px]">
                         <h3 className="text-[#ffc107] font-bold text-[14px] uppercase mb-6 tracking-wide">Subscribe to our updates</h3>
                         <p className="text-[13px] text-gray-300 mb-4 leading-relaxed">
                             Stay informed about the latest news, events and opportunities at SRMU.
