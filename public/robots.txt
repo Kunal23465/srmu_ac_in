@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /chatbot/
 
-Sitemap: https://srmu.ac.in/sitemap.xml
+Sitemap: https://srmu.ac.in/new-sitemap.xml

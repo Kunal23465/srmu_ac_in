@@ -3,7 +3,7 @@ Site-URL: https://srmu.ac.in
 Description: Official website of Shri Ramswaroop Memorial University, Lucknow, with information about academic programs, admissions, campus life, research, placements, notices, and student services.
 
 Preferred-Base-URL: https://srmu.ac.in
-Sitemap: https://srmu.ac.in/sitemap.xml
+Sitemap: https://srmu.ac.in/new-sitemap.xml
 Robots: https://srmu.ac.in/robots.txt
 
 Primary-Sections:
