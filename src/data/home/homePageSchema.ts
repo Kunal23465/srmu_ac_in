@@ -128,12 +128,28 @@ export const homePageSchema = {
 
     {
       "@type": "VideoObject",
-      "@id": "https://srmu.ac.in/#video",
-      name: "Shri Ramswaroop Memorial University Campus Tour",
+      "@id": "https://srmu.ac.in/#video-banner",
+      name: "SRMU Campus Life Banner – Best University in Uttar Pradesh",
+      description:
+        "A cinematic overview of Shri Ramswaroop Memorial University's campus, academic environment, infrastructure, and student life in Lucknow, Uttar Pradesh.",
+      uploadDate: "2026-01-01T10:30:00+05:30",
+      duration: "PT1M30S",
+      thumbnailUrl: "https://srmu.ac.in/assets/video-banner-BcsDY_w5.webp",
+      embedUrl: "https://srmu.ac.in/assets/banner-v-compressed-CwFCsQrl.mp4",
+      contentUrl: "https://srmu.ac.in/assets/banner-v-compressed-CwFCsQrl.mp4",
+      publisher: {
+        "@id": "https://srmu.ac.in/#organization",
+      },
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://srmu.ac.in/#video-ai-learning",
+      name: "AI Learning at SRMU – Technology Education",
       description:
         "Explore the campus, academic programs, infrastructure, placements, student life and opportunities at Shri Ramswaroop Memorial University.",
       uploadDate: "2026-01-01T10:30:00+05:30",
       duration: "PT5M30S",
+      thumbnailUrl: "https://srmu.ac.in/assets/video-banner-BcsDY_w5.webp",
       embedUrl: "https://srmu.ac.in/assets/AI%20Learning-1e3hOqyf.mp4",
       contentUrl: "https://srmu.ac.in/assets/AI%20Learning-1e3hOqyf.mp4",
       publisher: {
@@ -142,12 +158,13 @@ export const homePageSchema = {
     },
     {
       "@type": "VideoObject",
-      "@id": "https://srmu.ac.in/#video",
-      name: "Shri Ramswaroop Memorial University Campus Tour",
+      "@id": "https://srmu.ac.in/#video-annual-fest",
+      name: "SRMU Annual Fest – Campus Events",
       description:
         "Explore the campus, academic programs, infrastructure, placements, student life and opportunities at Shri Ramswaroop Memorial University.",
       uploadDate: "2026-01-01T10:30:00+05:30",
       duration: "PT5M30S",
+      thumbnailUrl: "https://srmu.ac.in/assets/video-banner-BcsDY_w5.webp",
       embedUrl: "https://srmu.ac.in/assets/Annual%20Fest-DUKZV9V5.mp4",
       contentUrl: "https://srmu.ac.in/assets/Annual%20Fest-DUKZV9V5.mp4",
       publisher: {
@@ -156,12 +173,13 @@ export const homePageSchema = {
     },
     {
       "@type": "VideoObject",
-      "@id": "https://srmu.ac.in/#video",
-      name: "Shri Ramswaroop Memorial University Campus Tour",
+      "@id": "https://srmu.ac.in/#video-clubs",
+      name: "SRMU Student Clubs – Extracurricular Activities",
       description:
         "Explore the campus, academic programs, infrastructure, placements, student life and opportunities at Shri Ramswaroop Memorial University.",
       uploadDate: "2026-01-01T10:30:00+05:30",
       duration: "PT5M30S",
+      thumbnailUrl: "https://srmu.ac.in/assets/video-banner-BcsDY_w5.webp",
       embedUrl: "https://srmu.ac.in/assets/Clubs-BTOoaTOx.mp4",
       contentUrl: "https://srmu.ac.in/assets/Clubs-BTOoaTOx.mp4",
       publisher: {
@@ -170,12 +188,13 @@ export const homePageSchema = {
     },
     {
       "@type": "VideoObject",
-      "@id": "https://srmu.ac.in/#video",
-      name: "Shri Ramswaroop Memorial University Campus Tour",
+      "@id": "https://srmu.ac.in/#video-explore-learn",
+      name: "Explore & Learn at SRMU – Academic Experience",
       description:
         "Explore the campus, academic programs, infrastructure, placements, student life and opportunities at Shri Ramswaroop Memorial University.",
       uploadDate: "2026-01-01T10:30:00+05:30",
       duration: "PT5M30S",
+      thumbnailUrl: "https://srmu.ac.in/assets/video-banner-BcsDY_w5.webp",
       embedUrl: "https://srmu.ac.in/assets/Explore%20_%20Learn-DypI6Ctx.mp4",
       contentUrl: "https://srmu.ac.in/assets/Explore%20_%20Learn-DypI6Ctx.mp4",
       publisher: {
@@ -184,12 +203,13 @@ export const homePageSchema = {
     },
     {
       "@type": "VideoObject",
-      "@id": "https://srmu.ac.in/#video",
-      name: "Shri Ramswaroop Memorial University Campus Tour",
+      "@id": "https://srmu.ac.in/#video-sports",
+      name: "SRMU Sports – University Athletics",
       description:
         "Explore the campus, academic programs, infrastructure, placements, student life and opportunities at Shri Ramswaroop Memorial University.",
       uploadDate: "2026-01-01T10:30:00+05:30",
       duration: "PT5M30S",
+      thumbnailUrl: "https://srmu.ac.in/assets/video-banner-BcsDY_w5.webp",
       embedUrl: "https://srmu.ac.in/assets/sports-BVLYTRe0.mp4",
       contentUrl: "https://srmu.ac.in/assets/sports-BVLYTRe0.mp4",
       publisher: {
@@ -198,12 +218,13 @@ export const homePageSchema = {
     },
     {
       "@type": "VideoObject",
-      "@id": "https://srmu.ac.in/#video",
-      name: "Shri Ramswaroop Memorial University Campus Tour",
+      "@id": "https://srmu.ac.in/#video-srmu-vibes",
+      name: "SRMU Vibes – Campus Culture",
       description:
         "Explore the campus, academic programs, infrastructure, placements, student life and opportunities at Shri Ramswaroop Memorial University.",
       uploadDate: "2026-01-01T10:30:00+05:30",
       duration: "PT5M30S",
+      thumbnailUrl: "https://srmu.ac.in/assets/video-banner-BcsDY_w5.webp",
       embedUrl: "https://srmu.ac.in/assets/SRMU%20Vibes-Dyb_2CiV.mp4",
       contentUrl: "https://srmu.ac.in/assets/SRMU%20Vibes-Dyb_2CiV.mp4",
       publisher: {
@@ -212,12 +233,13 @@ export const homePageSchema = {
     },
     {
       "@type": "VideoObject",
-      "@id": "https://srmu.ac.in/#video",
-      name: "Shri Ramswaroop Memorial University Campus Tour",
+      "@id": "https://srmu.ac.in/#video-women-empowerment",
+      name: "SRMU Women Empowerment – Inclusive Education",
       description:
         "Explore the campus, academic programs, infrastructure, placements, student life and opportunities at Shri Ramswaroop Memorial University.",
       uploadDate: "2026-01-01T10:30:00+05:30",
       duration: "PT5M30S",
+      thumbnailUrl: "https://srmu.ac.in/assets/video-banner-BcsDY_w5.webp",
       embedUrl: "https://srmu.ac.in/assets/Women%20Empowerment-x8FITLhK.mp4",
       contentUrl: "https://srmu.ac.in/assets/Women%20Empowerment-x8FITLhK.mp4",
       publisher: {
@@ -226,12 +248,13 @@ export const homePageSchema = {
     },
     {
       "@type": "VideoObject",
-      "@id": "https://srmu.ac.in/#video",
-      name: "Shri Ramswaroop Memorial University Campus Tour",
+      "@id": "https://srmu.ac.in/#video-events",
+      name: "SRMU Events – University Activities",
       description:
         "Explore the campus, academic programs, infrastructure, placements, student life and opportunities at Shri Ramswaroop Memorial University.",
       uploadDate: "2026-01-01T10:30:00+05:30",
       duration: "PT5M30S",
+      thumbnailUrl: "https://srmu.ac.in/assets/video-banner-BcsDY_w5.webp",
       embedUrl: "https://srmu.ac.in/assets/Events-vGQCrdSb.mp4",
       contentUrl: "https://srmu.ac.in/assets/Events-vGQCrdSb.mp4",
       publisher: {

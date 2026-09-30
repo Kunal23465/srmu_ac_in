@@ -96,7 +96,7 @@ export default function Hero() {
             aria-hidden="true"
             loading="eager"
             decoding="async"
-            fetchpriority="high"
+            fetchPriority="high"
             width={1348}
             height={564}
             sizes="100vw"
@@ -116,9 +116,10 @@ export default function Hero() {
           preload={shouldLoadVideo ? "metadata" : "none"}
           poster={bannerImage}
           onCanPlay={() => setVideoLoaded(true)}
-          src={shouldLoadVideo ? bannerVideo : undefined}
+          src={bannerVideo}
           style={{ filter: 'contrast(1.05) saturate(1.05)' }}
         />
+
 
         {/* Overlay */}
         <div className="absolute inset-0 sm:bg-gradient-to-r from-[#03182B]/80 via-[#062744]/45 to-transparent" />
