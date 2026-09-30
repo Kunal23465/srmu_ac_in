@@ -1,4 +1,4 @@
-import React, { Suspense, lazy, useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import Header from "../components/header/Header";
 import whatsapp from "../assets/images/whatsapp-icon.png";
@@ -6,7 +6,7 @@ import DynamicBreadcrumbs from "../components/breadcrumb/DynamicBreadcrumbs";
 import SeoHead from "../components/seo/SeoHead";
 import { buildSiteSchema, getDefaultSeo, normalizePath } from "../utils/seo";
 
-const Footer = lazy(() => import("../components/footer/Footer"));
+import Footer from "../components/footer/Footer";
 
 const RootLayout: React.FC = () => {
   const location = useLocation();
@@ -115,11 +115,7 @@ const RootLayout: React.FC = () => {
         <Outlet />
       </main>
 
-      {shouldRenderFooter && (
-        <Suspense fallback={null}>
-          {normalizedPath !== "/insider" && normalizedPath !== "/department-of-computer-science-and-engineering-new" && <Footer />}
-        </Suspense>
-      )}
+      {shouldRenderFooter && normalizedPath !== "/insider" && normalizedPath !== "/department-of-computer-science-and-engineering-new" && <Footer />}
 
       {/* WhatsApp */}
       {normalizedPath !== "/insider" && <button

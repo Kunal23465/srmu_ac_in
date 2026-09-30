@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import logosrmcem from "../../assets/images/University-Logo-White.png";
+import logosrmcem from "../../assets/images/logo1.png";
 import Classes from "../../utils/styles/Global.module.css";
 import { Link } from "react-router-dom";
 import { FaPhone } from "react-icons/fa";
