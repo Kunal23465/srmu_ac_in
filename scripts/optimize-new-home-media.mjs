@@ -90,8 +90,8 @@ const main = async () => {
   });
 
   await writeImage({
-    src: "src/assets/new-home/Deoria.webp",
-    dest: "src/assets/new-home/Deoria-960.webp",
+    src: "src/assets/new-home/best-private-university-in-lucknow-uttar-pradesh.webp",
+    dest: "src/assets/new-home/best-private-university-in-lucknow-uttar-pradesh-960.webp",
     resize: { width: 960 },
   });
 

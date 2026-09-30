@@ -1,6 +1,6 @@
 import React from 'react'
-import mapSmall from "../../assets/new-home/Deoria-960.webp"
-import map from "../../assets/new-home/Deoria.webp"
+import mapSmall from "../../assets/new-home/best-private-university-in-lucknow-uttar-pradesh-960.webp"
+import map from "../../assets/new-home/best-private-university-in-lucknow-uttar-pradesh.webp"
 import Classes from "../../utils/styles/Global.module.css";
 const Map: React.FC = () => {
   return (

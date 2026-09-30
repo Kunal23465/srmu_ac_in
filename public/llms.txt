@@ -9,9 +9,12 @@ Robots: https://srmu.ac.in/robots.txt
 Primary-Sections:
 - Home: https://srmu.ac.in/
 - Programs: https://srmu.ac.in/programs
-- Admissions: https://srmu.ac.in/admission
+- Admissions: https://srmu.ac.in/admission-overview
+- Fee Structure: https://srmu.ac.in/fee-structure
 - Placements: https://srmu.ac.in/placements
-- Research: https://srmu.ac.in/research
+- Research: https://srmu.ac.in/research-overview
+- NAAC: https://srmu.ac.in/naac
+- NIRF: https://srmu.ac.in/nirf
 - Contact: https://srmu.ac.in/contact-us
 
 LLM-Guidance:
