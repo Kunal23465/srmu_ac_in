@@ -436,6 +436,40 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                     50% { transform: scale(1.12); text-shadow: 0 0 12px rgba(255,183,3,0.45); }
                 }
 
+                /* ── Stat card count-up animation ── */
+                @keyframes cse-stat-pop {
+                    0%   { opacity: 0; transform: translateY(14px) scale(0.88); }
+                    60%  { opacity: 1; transform: translateY(-3px) scale(1.06); }
+                    100% { opacity: 1; transform: translateY(0)    scale(1); }
+                }
+                @keyframes cse-stat-glow {
+                    0%,100% { text-shadow: 0 0 0px rgba(255,183,3,0); }
+                    50%     { text-shadow: 0 0 18px rgba(255,183,3,0.75), 0 0 30px rgba(255,183,3,0.35); }
+                }
+                @media (prefers-reduced-motion: no-preference) {
+                    .cse-stat-value {
+                        animation: cse-stat-pop 0.55s cubic-bezier(.22,.68,0,1.3) both,
+                                   cse-stat-glow 2.8s ease-in-out 0.6s infinite;
+                    }
+                    .cse-stat-card { transition: transform 0.25s ease, box-shadow 0.25s ease; }
+                    .cse-stat-card:hover { transform: translateY(-4px) scale(1.04);
+                        box-shadow: 0 12px 28px rgba(0,0,0,0.35), 0 0 0 1px rgba(255,183,3,0.25); }
+                    /* Mobile orbit ring — only the dashed ring rotates */
+                    .cse-m-orbit { transform-origin: 185px 195px; animation: cse-career-spin 60s linear infinite; }
+                    /* Mobile core — breathing + glow shadow */
+                    .cse-m-core  { transform-origin: 185px 195px; animation: cse-m-breathe 4s ease-in-out infinite; }
+                    @keyframes cse-m-breathe {
+                        0%, 100% {
+                            transform: scale(1);
+                            filter: drop-shadow(0 0 0px rgba(38,61,112,0)) drop-shadow(0 6px 8px rgba(20,40,78,0.30));
+                        }
+                        50% {
+                            transform: scale(1.07);
+                            filter: drop-shadow(0 0 18px rgba(55,130,220,0.65)) drop-shadow(0 0 30px rgba(215,152,48,0.35)) drop-shadow(0 8px 16px rgba(20,40,78,0.40));
+                        }
+                    }
+                }
+
                 .cse-recruiter-track { display: flex; width: max-content; animation: cse-recruiter-scroll 30s linear infinite; }
                 @keyframes cse-recruiter-scroll { to { transform: translateX(-50%); } }
                 @media (prefers-reduced-motion: reduce) {
@@ -536,7 +570,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                 {/* ── Hero Banner ─────────────────────────────────────────── */}
 
                 {/* ── MOBILE banner ── image bg + gradient overlay ─────── */}
-                <section className="sm:hidden relative w-full overflow-hidden" style={{ minHeight: "520px" }}>
+                <section className="sm:hidden relative w-full overflow-hidden" style={{ minHeight: "620px" }}>
                     {/* Full background image */}
                     <img
                         src="/assets/images/new-information-system/diff-banner.jpg"
@@ -559,18 +593,33 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                         {/* Gold separator */}
                         <div className="h-[3px] w-[80px] bg-[#ffb703] rounded-full mb-4" />
 
-                        {/* Stats 2×2 grid */}
-                        <div className="grid grid-cols-[auto_1fr_auto_1fr] gap-y-3 gap-x-3 mb-6 items-start">
+                        {/* Stats 2×2 card grid — Pic-1 style */}
+                        <div className="grid grid-cols-2 gap-2.5 mb-6">
                             {[
-                                { v: "₹53LPA", l: "Highest Package" },
-                                { v: "10", l: "Industry-Driven Capstone Projects" },
-                                { v: "200+", l: "Recruiters" },
-                                { v: "150", l: "Student Research Projects/Year" },
+                                { v: "₹53 LPA", l: "Highest Package",                delay: "0ms" },
+                                { v: "10",      l: "Industry-Driven\nCapstone Projects", delay: "90ms" },
+                                { v: "200+",    l: "Recruiters",                       delay: "180ms" },
+                                { v: "150",     l: "Student Research\nProjects/Year",  delay: "270ms" },
                             ].map((s) => (
-                                <React.Fragment key={s.l}>
-                                    <span className="text-[#d62c2b] font-bold text-[14px] sm:text-[15px] leading-none mt-0.5">{s.v}</span>
-                                    <span className="text-white/75 text-[11px] sm:text-[12px] leading-tight pr-1 sm:pr-2">{s.l}</span>
-                                </React.Fragment>
+                                <div
+                                    key={s.l}
+                                    className="cse-stat-card rounded-xl px-3 py-2.5"
+                                    style={{
+                                        background: "rgba(255,255,255,0.07)",
+                                        backdropFilter: "blur(6px)",
+                                        border: "1px solid rgba(255,255,255,0.13)",
+                                    }}
+                                >
+                                    <div
+                                        className="cse-stat-value text-[#ffb703] font-extrabold text-[20px] leading-none tracking-tight"
+                                        style={{ animationDelay: s.delay }}
+                                    >
+                                        {s.v}
+                                    </div>
+                                    <div className="text-white/70 text-[10px] leading-snug mt-1 whitespace-pre-line">
+                                        {s.l}
+                                    </div>
+                                </div>
                             ))}
                         </div>
 
@@ -1571,22 +1620,67 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                     })}
                                 </g>
                             </svg>
-                            <ul className="sm:hidden grid grid-cols-1 min-[380px]:grid-cols-2 gap-x-5 gap-y-4 pb-4 text-[13px] leading-relaxed font-semibold text-[#14284E]">
-                                {(showAllCareers ? careerItems : careerItems.slice(0, 4)).map(lines => (
-                                    <li key={lines[0]} className="flex items-start gap-2">
-                                        <span aria-hidden="true" className="mt-1.5 h-2 w-2 shrink-0 rounded-full border-2 border-[#d79830]" />
-                                        <span>{lines.join(" ")}</span>
-                                    </li>
-                                ))}
-                            </ul>
-                            {careerItems.length > 4 && (
-                                <button 
-                                    onClick={() => setShowAllCareers(!showAllCareers)}
-                                    className="cse-read-more cse-mobile-button text-[14px] font-bold text-[#ffb703] mt-1 pb-4 flex items-center justify-start sm:hidden transition-colors"
-                                >
-                                    {showAllCareers ? "Read Less" : "Read More"}
-                                </button>
-                            )}
+                            {/* Mobile-only compact circle diagram */}
+                            <svg
+                                className="sm:hidden block w-full"
+                                viewBox="-65 10 500 390"
+                                role="img"
+                                aria-label="Career Opportunities diagram"
+                            >
+                                <defs>
+                                    <linearGradient id="cse-m-grad" x1="0" y1="0" x2="1" y2="1">
+                                        <stop offset="0%" stopColor="#263d70" />
+                                        <stop offset="100%" stopColor="#192748" />
+                                    </linearGradient>
+                                    <filter id="cse-m-shadow" x="-40%" y="-40%" width="180%" height="200%">
+                                        <feDropShadow dx="0" dy="6" stdDeviation="7" floodColor="#14284e" floodOpacity="0.25" />
+                                    </filter>
+                                </defs>
+
+                                {/* Dashed orbit ring ONLY — this rotates */}
+                                <g className="cse-m-orbit" aria-hidden="true">
+                                    <circle cx="185" cy="195" r="145" fill="none" stroke="#ccd5e1" strokeWidth="1.5" strokeDasharray="5 4" />
+                                </g>
+
+                                {/* Fixed orbit dots — outside animated group */}
+                                <g aria-hidden="true">
+                                    {careerItems.map((_, i) => {
+                                        const a = (i * 30 - 90) * Math.PI / 180;
+                                        return <circle key={i} cx={185 + 145 * Math.cos(a)} cy={195 + 145 * Math.sin(a)} r="4" fill="#fff" stroke="#d79830" strokeWidth="2" />;
+                                    })}
+                                </g>
+
+                                {/* Core — breathing animation */}
+                                <g className="cse-m-core">
+                                    <circle cx="185" cy="195" r="68" fill="url(#cse-m-grad)" filter="url(#cse-m-shadow)" />
+                                    <text x="185" y="187" textAnchor="middle" fill="white" fontSize="13" fontWeight="700">
+                                        <tspan x="185">Career</tspan>
+                                        <tspan x="185" dy="17">Opportunities</tspan>
+                                    </text>
+                                    <path d="M170 218 H200" stroke="#d79830" strokeWidth="2" strokeLinecap="round" />
+                                </g>
+
+                                {/* Labels — fixed, outside animated group */}
+                                <g fill="#14284e" fontSize="9.5" fontWeight="600">
+                                    {careerItems.map((lines, i) => {
+                                        const a = (i * 30 - 90) * Math.PI / 180;
+                                        const centered = i === 0 || i === 6;
+                                        const ox = 185 + 145 * Math.cos(a);
+                                        const oy = 195 + 145 * Math.sin(a);
+                                        // Push labels further away from orbit dot so text has room
+                                        const gap = 14;
+                                        const lx = ox + (centered ? 0 : i < 6 ? gap : -gap);
+                                        const ly = oy + (i === 0 ? -26 : i === 6 ? 24 : 3) - (lines.length - 1) * 7;
+                                        return (
+                                            <text key={i} x={lx} y={ly} textAnchor={centered ? "middle" : i < 6 ? "start" : "end"}>
+                                                {lines.map((line, li) => (
+                                                    <tspan key={line} x={lx} dy={li === 0 ? 0 : 13}>{line}</tspan>
+                                                ))}
+                                            </text>
+                                        );
+                                    })}
+                                </g>
+                            </svg>
                         </div>
                     </div>
                 </section>
