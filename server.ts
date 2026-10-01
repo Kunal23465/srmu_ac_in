@@ -367,6 +367,21 @@ async function createServer() {
     }
   });
 
+  // Primary sitemap index (referenced by robots.txt)
+  app.get("/new-sitemap.xml", async (req, res) => {
+    try {
+      const sitemapXml = await buildSitemapIndexXml(getRequestSiteUrl(req));
+      res.type("application/xml").set({
+        "Cache-Control": "public, max-age=3600",
+        "Vary": "Accept-Encoding",
+      }).send(sitemapXml);
+    } catch (error) {
+      process.stderr.write(`NEW SITEMAP ERROR: ${String(error)}\n`);
+      res.status(500).type("text/plain").send("Error generating new-sitemap");
+    }
+  });
+
+
   app.get("/all-sitemap.xml", async (req, res) => {
     try {
       const allSitemapXml = await buildAllSitemapXml(getRequestSiteUrl(req));

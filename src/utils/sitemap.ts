@@ -335,7 +335,7 @@ const renderSitemapIndexXml = (
 };
 
 export const buildRobotsTxt = (siteUrl: string) =>
-  `User-agent: *\nAllow: /\nDisallow: /chatbot/\n\nSitemap: ${siteUrl.replace(/\/+$/, "")}/sitemap.xml\n`;
+  `User-agent: *\nAllow: /\nDisallow: /chatbot/\n\nSitemap: ${siteUrl.replace(/\/+$/, "")}/new-sitemap.xml\n`;
 
 export const buildBlogSitemapXml = async (siteUrl: string) => {
   const cacheKey = `blog:${siteUrl.replace(/\/+$/, "")}`;
