@@ -33,6 +33,7 @@ import memoryManagement from "../../assets/new-home/events/Memory-Management.web
 import villageVisit from "../../assets/new-home/events/Legal-Aid-Cell-Institute-of-Legal-Studies-organised-drive-at-srmu.webp";
 import expressionsOrganized from "../../assets/new-home/events/Expressions_Organized.webp";
 import newsNewEvent from "../../assets/new-home/events/News_New_Event.webp";
+import collageEvent from "../../assets/new-home/events/Collage.png";
 
 
 
@@ -56,6 +57,35 @@ export type EventItem = {
 };
 
 const eventsData: EventItem[] = [
+ {
+  id: 27,
+  isRedirect: false,
+  image: collageEvent,
+  imageSmall: collageEvent,
+  date: "October 1st, 2026",
+  title: `Guest Lecture at IMCE, SRMU: Learning Beyond the Classroom`,
+  description: `
+The <strong>Institute of Management, Commerce & Economics (IMCE), Shri Ramswaroop Memorial University (SRMU)</strong>, organized an engaging session focused on <strong>learning, conversations, and fresh perspectives</strong> for its students.
+
+<br/><strong>Guest Lecture</strong><br/>
+
+The session brought together <strong>expert insights and meaningful interactions with students</strong>, creating an engaging learning experience that connected classroom concepts with real-world perspectives.
+
+<br/><strong>Learning Beyond the Classroom</strong><br/>
+
+The lecture provided students with an opportunity to explore <strong>practical perspectives beyond their academic curriculum</strong>. The interactive session encouraged students to engage with new ideas and gain a broader understanding of concepts through real-world insights.
+
+<br/><strong>Student Engagement</strong><br/>
+
+The session created a platform for <strong>meaningful conversations and interaction between the speaker and students</strong>. Students actively participated in the learning experience, making the session informative, interactive, and enriching.
+
+<br/><strong>Impact of the Initiative</strong><br/>
+
+The guest lecture offered students an opportunity to <strong>learn, interact, and gain valuable insights beyond textbooks</strong>. Such initiatives help enhance students' academic exposure and encourage them to connect classroom learning with practical perspectives.
+`,
+},
+ 
+ 
   {
   id: 25,
   isRedirect: false,

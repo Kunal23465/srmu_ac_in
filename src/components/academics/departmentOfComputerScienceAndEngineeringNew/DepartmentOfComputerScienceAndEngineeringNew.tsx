@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from "react";
 
 import Classes from "../../../utils/styles/Global.module.css";
+import ProgramStyles from "./DepartmentPrograms.module.css";
+import DepartmentSectionNav from "./DepartmentSectionNav";
+import HighlightStyles from "./DepartmentHighlights.module.css";
 import KamleshImg from "../../../assets/images/academics/institutes/cse/cse2.jpeg";
 import SakshiImg from "../../../assets/images/academics/institutes/cse/cse3.jpeg";
 import logosrmcem from "../../../assets/images/University-Logo-White.png";
 import AdditionInScholarImg from "../../../assets/images/addition-in-scholar.png";
 import MerchandiseScanImg from "../../../assets/images/merchandise-scan.jpeg";
-import { Download, ChevronDown, ChevronUp, Search, Mail, Phone, ArrowLeft, ArrowRight, X, ShieldCheck, GraduationCap, Settings, Database, Lightbulb, Share2, MapPin, Facebook, Instagram, Linkedin, Youtube, Twitter, BadgeCheck, UsersRound, Accessibility, Medal, ChartNoAxesColumnIncreasing, Globe2, UserRound, Heart } from "lucide-react";
+import { Download, ChevronDown, ChevronUp, Search, Mail, Phone, ArrowLeft, ArrowRight, X, ShieldCheck, GraduationCap, Settings, Database, Lightbulb, Share2, MapPin, Facebook, Instagram, Linkedin, Youtube, Twitter, BadgeCheck, UsersRound, Accessibility, Medal, ChartNoAxesColumnIncreasing, Globe2, UserRound, Heart, Monitor, BrainCircuit, Code2, BookOpenCheck, Route, ChevronRight, Laptop, BriefcaseBusiness, Coins, Building2, FileSearch } from "lucide-react";
 import { FaQuora, FaRedditAlien } from "react-icons/fa";
 import useEmblaCarousel from "embla-carousel-react";
 import { motion, useReducedMotion } from "framer-motion";
@@ -35,37 +38,36 @@ const recruiterLogos = [
     ["https://ik.imagekit.io/ttalcskjf/EY.webp", "EY"],
 ] as const;
 
-const programCards = [
+const departmentPrograms = [
     {
-        level: "Undergraduate",
-        title: "B.Tech. in CSE (Cyber Security) with L&T",
-        desc: "Develop knowledge of computing fundamentals along with specialized learning in cybersecurity through an industry-linked program with L&T.",
-        duration: "4 Years", fee: "₹1,47,000",
+        category: "Under-Graduate Courses",
+        icon: GraduationCap,
+        programs: [
+            { title: "B.Tech. in Computer Science and Engineering", icon: Laptop, link: "/program/b-tech-computer-science-engineering" },
+            { title: "B.Tech. in CSE (Artificial Intelligence & Machine Learning)", icon: BrainCircuit, link: "/program/b-tech-cse-artificial-intelligence-machine-learning" },
+            { title: "B.Tech. in CSE (Cyber Security)", icon: ShieldCheck, link: "/program/b-tech-cse-cyber-security" },
+            { title: "B.Tech. in CSE (Data Science & Artificial Intelligence)", icon: Database, link: "/program/b-tech-cse-data-science-artificial-intelligence" },
+            { title: "Integrated B.Tech. in CSE + MBA", icon: BriefcaseBusiness, link: "/program/b-tech-cse-mba" },
+            { title: "Integrated B.Tech. + M.Tech. in Computer Science and Engineering", icon: Code2, link: "/program/b-tech-m-tech-computer-science-engineering" },
+        ]
     },
     {
-        level: "Undergraduate",
-        title: "B.Tech. in CSE (Data Science & Artificial Intelligence) with L&T",
-        desc: "Build foundations in computer science while developing skills in data science, artificial intelligence and related technologies.",
-        duration: "4 Years", fee: "₹1,47,000",
+        category: "Post-Graduate Courses",
+        icon: BookOpenCheck,
+        programs: [
+            { title: "M.Tech. in Computer Science and Engineering", icon: Monitor, link: "/program/m-tech-computer-science-engineering" },
+            { title: "M.Tech. in CSE (Artificial Intelligence & Machine Learning)", icon: BrainCircuit, link: "/program/m-tech-artificial-intelligence-machine-learning" },
+            { title: "M.Tech. in CSE (Data Science)", icon: Database, link: "/program/m-tech-data-science" },
+            { title: "M.Tech. in Computer Science and Engineering (Part-Time)", icon: Code2, link: "/program/m-tech-computer-science-engineering-part-time" },
+        ]
     },
     {
-        level: "Undergraduate",
-        title: "B.Tech. in CSE (Artificial Intelligence & Machine Learning)",
-        desc: "Explore computer science with a focus on Artificial Intelligence and Machine Learning and their applications across technology domains.",
-        duration: "4 Years", fee: "₹1,43,000",
-    },
-    {
-        level: "Postgraduate",
-        title: "M.Tech. in Artificial Intelligence & Machine Learning",
-        desc: "Pursue advanced study and research-oriented learning in Artificial Intelligence and Machine Learning.",
-        duration: "2 Years", fee: "₹1,05,000",
-    },
-    {
-        level: "Postgraduate",
-        title: "M.Tech. in Data Science",
-        desc: "Develop advanced knowledge in data science and analytical computing.",
-        duration: "2 Years", fee: "₹1,05,000",
-    },
+        category: "Lateral Entry Programs",
+        icon: Route,
+        programs: [
+            { title: "B.Tech. in Computer Science and Engineering (Lateral Entry)", icon: Monitor, link: "/program/b-tech-computer-science-engineering-lateral-entry" },
+        ]
+    }
 ];
 
 const aboutPillars = [
@@ -78,11 +80,11 @@ const aboutPillars = [
 ];
 
 const quickStats = [
-    { value: "₹53 LPA", label: "Highest Package" },
-    { value: "200+", label: "Recruiters" },
+    { value: "₹53 LPA", label: "Highest Package", icon: Coins, tone: "blue" },
+    { value: "200+", label: "Recruiters", icon: UsersRound, tone: "cyan" },
     // { value: "∞", label: "Limitless Opportunities" },
-    { value: "10", label: "Industry-Driven Projects" },
-    { value: "150", label: "Student Research Projects" },
+    { value: "10", label: "Industry-Driven Projects", icon: Building2, tone: "gold" },
+    { value: "150", label: "Student Research Projects", icon: FileSearch, tone: "red" },
 ];
 
 const faqItems = [
@@ -281,8 +283,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
     const [selectedEvent, setSelectedEvent] = useState<any>(null);
 
     // Accordion state for mobile view
-    const [activeUgProgram, setActiveUgProgram] = useState<number | null>(null);
-    const [activePgProgram, setActivePgProgram] = useState<number | null>(null);
+    const [activeProgramCategory, setActiveProgramCategory] = useState<number>(0);
     const [openFaq, setOpenFaq] = useState<number | null>(null);
     const [showAllFaq, setShowAllFaq] = useState(false);
     const [showAllCareers, setShowAllCareers] = useState(false);
@@ -596,10 +597,10 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                         {/* Stats 2×2 card grid — Pic-1 style */}
                         <div className="grid grid-cols-2 gap-2.5 mb-6">
                             {[
-                                { v: "₹53 LPA", l: "Highest Package",                delay: "0ms" },
-                                { v: "10",      l: "Industry-Driven\nCapstone Projects", delay: "90ms" },
-                                { v: "200+",    l: "Recruiters",                       delay: "180ms" },
-                                { v: "150",     l: "Student Research\nProjects/Year",  delay: "270ms" },
+                                { v: "₹53 LPA", l: "Highest Package", delay: "0ms" },
+                                { v: "10", l: "Industry-Driven\nCapstone Projects", delay: "90ms" },
+                                { v: "200+", l: "Recruiters", delay: "180ms" },
+                                { v: "150", l: "Student Research\nProjects/Year", delay: "270ms" },
                             ].map((s) => (
                                 <div
                                     key={s.l}
@@ -696,6 +697,8 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                 </section>
 
 
+                <DepartmentSectionNav />
+
                 {/* ── Mobile Apply Now Form ────────────────────────────────── */}
                 <section className="sm:hidden bg-[#0f1b33] py-8 px-4 w-full">
                     <div className="rounded-2xl overflow-hidden shadow-xl border border-white/10 max-w-[650px] mx-auto">
@@ -748,23 +751,28 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                 </section>
 
                 {/* ── Quick Stats Banner ───────────────────────────────────── */}
-                <section className="hidden sm:block w-full bg-[#E0F1FF]">
-                    <div className="grid grid-cols-4 w-full max-w-7xl mx-auto px-6 py-6 gap-4">
-                        {quickStats.map((s) => (
-                            <div key={s.label} className="flex flex-col items-center justify-center text-center">
-                                <span className="text-[#d62c2b] font-bold text-[clamp(28px,3vw,36px)] leading-none whitespace-nowrap font-display mb-1.5">
-                                    {s.value}
-                                </span>
-                                <span className="text-[#111827] text-[12px] sm:text-[13px] leading-snug uppercase tracking-[0.05em] font-extrabold">
-                                    {s.label}
-                                </span>
-                            </div>
-                        ))}
+                <section className={HighlightStyles.section} aria-label="Department highlights">
+                    <div className={Classes["container"]}>
+                        <div className={HighlightStyles.panel}>
+                            <dl className={HighlightStyles.grid}>
+                                {quickStats.map((stat) => (
+                                    <div key={stat.label} className={`${HighlightStyles.card} ${HighlightStyles[stat.tone]}`}>
+                                        <span className={HighlightStyles.icon}>
+                                            <stat.icon size={32} strokeWidth={1.8} aria-hidden="true" />
+                                        </span>
+                                        <div className={HighlightStyles.text}>
+                                            <dt className={HighlightStyles.label}>{stat.label}</dt>
+                                            <dd className={`${HighlightStyles.value} font-display`}>{stat.value}</dd>
+                                        </div>
+                                    </div>
+                                ))}
+                            </dl>
+                        </div>
                     </div>
                 </section>
 
                 {/* ── About the Department ─────────────────────────────────── */}
-                <section className="pt-6 sm:pt-8 pb-8 md:pb-10 px-4 sm:px-6 bg-white">
+                <section id="overview" className="pt-6 sm:pt-8 pb-8 md:pb-10 px-4 sm:px-6 bg-white scroll-mt-24">
                     <div className={`${Classes["container"]}`}>
                         {/* Two-column: text left, image right */}
                         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
@@ -878,210 +886,70 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                 </section>
 
                 {/* ── Programs ─────────────────────────────────────────────── */}
-                <section id="programs" className="py-8 md:pt-10 md:pb-6 px-4 sm:px-6 bg-white overflow-hidden relative scroll-mt-24">
-                    <div className={`${Classes["container"]}`}>
-                        <div className="w-full mb-8">
-                            <h2 className="text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3 flex items-center flex-wrap gap-4">
-                                <span>Explore <span className="text-[#ffb703]">Programs</span></span>
-                                <span className="relative inline-flex items-center gap-1.5 text-[12px] font-bold bg-[#d62c2b] text-white px-3.5 py-1.5 rounded-full shadow-[0_4px_14px_rgba(214,44,43,0.45)] animate-[admissionBounceIn_0.6s_cubic-bezier(0.34,1.56,0.64,1)_both]"
-                                    style={{ animationDelay: "0.3s" }}>
-                                    {/* Outer pulse ring */}
-                                    <span className="absolute inset-0 rounded-full bg-[#d62c2b] animate-[admissionPulseRing_2s_ease-out_infinite]" style={{ animationDelay: "1s" }} />
-                                    {/* Shimmer sweep */}
-                                    <span className="absolute inset-0 rounded-full overflow-hidden">
-                                        <span className="absolute inset-0 -translate-x-full animate-[admissionShimmer_3s_ease-in-out_infinite] bg-gradient-to-r from-transparent via-white/20 to-transparent" style={{ animationDelay: "1.5s" }} />
-                                    </span>
-                                    {/* Animated dot */}
-                                    <span className="relative w-1.5 h-1.5 bg-white rounded-full animate-[admissionDotPulse_1.4s_ease-in-out_infinite]" />
-                                    <span className="relative tracking-wide">Admissions open 2026</span>
-                                    <style>{`
-                                        @keyframes admissionPulseRing {
-                                            0%   { transform: scale(1);   opacity: 0.6; }
-                                            70%  { transform: scale(1.55); opacity: 0; }
-                                            100% { transform: scale(1.55); opacity: 0; }
-                                        }
-                                        @keyframes admissionBounceIn {
-                                            from { opacity: 0; transform: scale(0.6); }
-                                            to   { opacity: 1; transform: scale(1); }
-                                        }
-                                        @keyframes admissionShimmer {
-                                            0%   { transform: translateX(-100%); }
-                                            50%  { transform: translateX(100%); }
-                                            100% { transform: translateX(100%); }
-                                        }
-                                        @keyframes admissionDotPulse {
-                                            0%, 100% { opacity: 1; transform: scale(1); }
-                                            50%       { opacity: 0.5; transform: scale(0.7); }
-                                        }
-                                    `}</style>
-                                </span>
+                <section id="programs" aria-labelledby="programs-heading" className={`${ProgramStyles.section} px-4 sm:px-6 scroll-mt-24`}>
+                    <div className={Classes["container"]}>
+                        <div className={ProgramStyles.heading}>
+                            <h2 id="programs-heading" className="text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E]">
+                                School of <span className="text-[#ffb703]">Computer Science Engineering</span>
                             </h2>
-
-                            <p className="text-[15.5px] text-[#4B5A72] leading-relaxed text-justify">
-                                The Department of Computer Science and Engineering offers undergraduate and postgraduate programs across core computing and emerging technology domains.
-                            </p>
+                            {/* <p>Find your path in computing, innovation and technology.</p> */}
                         </div>
 
-                        <h3 className="text-[17px] font-bold text-[#d62c2b] mb-5">Undergraduate – After Class 12th</h3>
-
-                        {/* Desktop Grid */}
-                        <div className="hidden sm:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
-                            {programCards.filter(p => p.level === "Undergraduate").map((prog, i) => (
-                                <div key={i} className="bg-white border-[1.5px] border-[#d62c2b] rounded-xl p-6 sm:p-7 pt-8 shadow-[0_4px_18px_rgba(15,31,61,0.03)] hover:shadow-[0_12px_30px_rgba(15,31,61,0.08)] hover:-translate-y-1 transition-all duration-300 relative group flex flex-col h-full mt-4">
-                                    <span className="absolute -top-3.5 right-6 bg-[#d62c2b] text-white text-[10px] font-bold uppercase tracking-wider px-4 py-1.5 rounded-full">{prog.level}</span>
-
-                                    <h3 className="font-bold text-[18px] font-display text-[#14284E] mb-3 group-hover:text-[#1B4F91] transition-colors leading-snug pr-2">{prog.title}</h3>
-                                    <p className="text-[13.5px] text-[#54626D] leading-relaxed mb-6 flex-grow text-justify">{prog.desc}</p>
-
-                                    <div className="flex items-center gap-6 mb-6 p-4 bg-[#EEF5FC] rounded-xl">
-                                        <div className="flex-1">
-                                            <span className="block text-[10.5px] text-[#54626D] font-bold uppercase tracking-wider mb-0.5">DURATION</span>
-                                            <b className="font-display text-[16px] sm:text-[18px] text-[#14284E] block mt-1">{prog.duration}</b>
-                                        </div>
-                                        <div className="flex-1">
-                                            <span className="block text-[10.5px] text-[#54626D] font-bold uppercase tracking-wider mb-0.5">ANNUAL FEE</span>
-                                            <b className="font-display text-[16px] sm:text-[18px] text-[#d62c2b] block mt-1">{prog.fee}</b>
-                                        </div>
-                                    </div>
-
-                                    <div className="flex flex-col sm:flex-row gap-3 pt-2">
-                                        <a href="#" className="cse-mobile-button flex-1 flex items-center justify-center gap-1.5 px-4 py-2.5 text-[14px] font-bold uppercase tracking-wide bg-[#14284E] text-white rounded-full hover:bg-[#1B4F91] hover:shadow-md transition-all">
-                                            View Details →
-                                        </a>
-                                        <a href="https://students.srmu.ac.in/login" target="_blank" rel="noopener noreferrer" className="cse-mobile-button flex-1 flex items-center justify-center gap-1.5 px-4 py-2.5 text-[14px] font-bold uppercase tracking-wide bg-[#ffb703] text-[#14284E] rounded-full hover:bg-[#ffb703] hover:shadow-md transition-all">
-                                            Apply Now →
-                                        </a>
-                                    </div>
+                        <div className={ProgramStyles.layout}>
+                            <div className={ProgramStyles.sidebar}>
+                                <p className={ProgramStyles.navLabel}>Choose your study level</p>
+                                <div className={ProgramStyles.categories} role="group" aria-label="Program categories">
+                                    {departmentPrograms.map((cat, idx) => (
+                                        <button
+                                            key={cat.category}
+                                            type="button"
+                                            aria-pressed={activeProgramCategory === idx}
+                                            aria-controls="department-program-list"
+                                            onClick={() => setActiveProgramCategory(idx)}
+                                            className={`${ProgramStyles.category} ${activeProgramCategory === idx ? ProgramStyles.categoryActive : ""}`}
+                                        >
+                                            <span className={ProgramStyles.categoryIcon}>
+                                                <cat.icon size={24} strokeWidth={1.7} aria-hidden="true" />
+                                            </span>
+                                            <span className={ProgramStyles.categoryText}>
+                                                <span>{cat.category}</span>
+                                                <small>{cat.programs.length} {cat.programs.length === 1 ? "program" : "programs"}</small>
+                                            </span>
+                                            <ChevronRight size={18} className={ProgramStyles.categoryArrow} aria-hidden="true" />
+                                        </button>
+                                    ))}
                                 </div>
-                            ))}
-                        </div>
-
-                        {/* Mobile Accordion */}
-                        <div className="sm:hidden space-y-3 mb-10">
-                            {programCards.filter(p => p.level === "Undergraduate").map((prog, i) => (
-                                <div key={i}>
-                                    <button type="button" onClick={() => setActiveUgProgram(activeUgProgram === i ? null : i)} className="cse-mobile-button w-full flex items-center justify-between rounded-xl border border-[#DCE6F2] bg-[#F6FAFE] px-4 py-4 text-left text-[14px] font-bold uppercase tracking-wide text-[#14284E]" aria-expanded={activeUgProgram === i}>
-                                        <span className="font-bold text-[#14284E] leading-snug pr-4">{prog.title}</span>
-                                        {activeUgProgram === i ? <ChevronUp className="w-5 h-5 shrink-0 text-[#1B4F91]" /> : <ChevronDown className="w-5 h-5 shrink-0 text-[#8A97A1]" />}
-                                    </button>
-                                    {activeUgProgram === i && (
-                                        <div className="p-4 border border-t-0 border-[#DCE6F2] bg-white rounded-b-xl -mt-2 pt-6 shadow-sm">
-                                            <p className="text-[13.5px] text-[#54626D] leading-relaxed mb-6 text-justify">{prog.desc}</p>
-
-                                            <div className="flex items-center gap-6 mb-6 p-4 bg-[#F8FAFC] rounded-xl border border-[#F1F5F9]">
-                                                <div className="flex-1 border-r border-[#E2E8F0]">
-                                                    <span className="block text-[10.5px] text-[#8A97A1] font-bold uppercase tracking-wider mb-0.5">Duration</span>
-                                                    <b className="font-display text-[16px] text-[#14284E]">{prog.duration}</b>
-                                                </div>
-                                                <div className="flex-1">
-                                                    <span className="block text-[10.5px] text-[#8A97A1] font-bold uppercase tracking-wider mb-0.5">Annual Fee</span>
-                                                    <b className="font-display text-[16px] text-[#d62c2b]">{prog.fee}</b>
-                                                </div>
-                                            </div>
-
-                                            <div className="flex flex-row gap-3">
-                                                <a href="#" className="cse-mobile-button flex-1 flex items-center justify-center gap-1.5 px-2 sm:px-4 py-2.5 text-[14px]  font-bold uppercase tracking-wide bg-[#14284E] text-white rounded-full hover:bg-[#1B4F91] transition-all">
-                                                    View Details <ArrowRight className="w-3.5 h-3.5 shrink-0" />
-                                                </a>
-                                                <a href="https://students.srmu.ac.in/login" target="_blank" rel="noopener noreferrer" className="cse-mobile-button flex-1 flex items-center justify-center gap-1.5 px-2 sm:px-4 py-2.5 text-[14px]  font-bold uppercase tracking-wide bg-[#ffb703] text-[#14284E] rounded-full hover:bg-[#ffb703] transition-all">
-                                                    Apply Now <ArrowRight className="w-3.5 h-3.5 shrink-0" />
-                                                </a>
-                                            </div>
-                                        </div>
-                                    )}
-                                </div>
-                            ))}
-                        </div>
-
-                        <h3 className="text-[17px] font-bold text-[#14284E] mb-5 relative z-20">Postgraduate – After Graduation</h3>
-
-                        {/* Desktop Grid */}
-                        <div className="hidden sm:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 relative">
-                            {programCards.filter(p => p.level === "Postgraduate").map((prog, i) => (
-                                <div key={i} className="bg-white border-[1.5px] border-[#14284E] rounded-xl p-6 sm:p-7 pt-8 shadow-[0_4px_18px_rgba(15,31,61,0.03)] hover:shadow-[0_12px_30px_rgba(15,31,61,0.08)] hover:-translate-y-1 transition-all duration-300 relative z-20 group flex flex-col h-full mt-4">
-                                    <span className="absolute -top-3.5 right-6 bg-[#14284E] text-white text-[10px] font-bold uppercase tracking-wider px-4 py-1.5 rounded-full">{prog.level}</span>
-
-                                    <h3 className="font-bold text-[18px] font-display text-[#14284E] mb-3 group-hover:text-[#1B4F91] transition-colors leading-snug pr-2">{prog.title}</h3>
-                                    <p className="text-[13.5px] text-[#54626D] leading-relaxed mb-6 flex-grow text-justify">{prog.desc}</p>
-
-                                    <div className="flex items-center gap-6 mb-6 p-4 bg-[#EEF5FC] rounded-xl">
-                                        <div className="flex-1">
-                                            <span className="block text-[10.5px] text-[#54626D] font-bold uppercase tracking-wider mb-0.5">DURATION</span>
-                                            <b className="font-display text-[16px] sm:text-[18px] text-[#14284E] block mt-1">{prog.duration}</b>
-                                        </div>
-                                        <div className="flex-1">
-                                            <span className="block text-[10.5px] text-[#54626D] font-bold uppercase tracking-wider mb-0.5">ANNUAL FEE</span>
-                                            <b className="font-display text-[16px] sm:text-[18px] text-[#d62c2b] block mt-1">{prog.fee}</b>
-                                        </div>
-                                    </div>
-
-                                    <div className="flex flex-col sm:flex-row gap-3 pt-2">
-                                        <a href="#" className="cse-mobile-button flex-1 flex items-center justify-center gap-1.5 px-4 py-2.5 text-[14px] font-bold uppercase tracking-wide bg-[#14284E] text-white rounded-full hover:bg-[#1B4F91] hover:shadow-md transition-all">
-                                            View Details →
-                                        </a>
-                                        <a href="https://students.srmu.ac.in/login" target="_blank" rel="noopener noreferrer" className="cse-mobile-button flex-1 flex items-center justify-center gap-1.5 px-4 py-2.5 text-[14px] font-bold uppercase tracking-wide bg-[#ffb703] text-[#14284E] rounded-full hover:bg-[#ffb703] hover:shadow-md transition-all">
-                                            Apply Now →
-                                        </a>
-                                    </div>
-                                </div>
-                            ))}
-                            {/* Decorative Background Image placed behind boxes, extending to screen edge */}
-                            <div
-                                className="hidden lg:block absolute bottom-0 z-0 pointer-events-none opacity-80"
-                                style={{ right: "calc(50% - 50vw)", width: "800px", maxWidth: "60vw" }}
-                            >
-                                <img
-                                    src="/assets/images/new-information-system/to-merge.png"
-                                    alt="Decorative Background"
-                                    className="w-full h-auto object-contain object-right-bottom"
-                                />
                             </div>
-                        </div>
 
-                        {/* Mobile Accordion */}
-                        <div className="sm:hidden space-y-3 relative z-20">
-                            {programCards.filter(p => p.level === "Postgraduate").map((prog, i) => (
-                                <div key={i}>
-                                    <button type="button" onClick={() => setActivePgProgram(activePgProgram === i ? null : i)} className="cse-mobile-button w-full flex items-center justify-between rounded-xl border border-[#DCE6F2] bg-[#F6FAFE] px-4 py-4 text-left text-[14px] font-bold uppercase tracking-wide text-[#14284E]" aria-expanded={activePgProgram === i}>
-                                        <span className="font-bold text-[#14284E] leading-snug pr-4">{prog.title}</span>
-                                        {activePgProgram === i ? <ChevronUp className="w-5 h-5 shrink-0 text-[#1B4F91]" /> : <ChevronDown className="w-5 h-5 shrink-0 text-[#8A97A1]" />}
-                                    </button>
-                                    {activePgProgram === i && (
-                                        <div className="p-4 border border-t-0 border-[#DCE6F2] bg-white rounded-b-xl -mt-2 pt-6 shadow-sm">
-                                            <p className="text-[13.5px] text-[#54626D] leading-relaxed mb-6 text-justify">{prog.desc}</p>
-
-                                            <div className="flex items-center gap-6 mb-6 p-4 bg-[#F8FAFC] rounded-xl border border-[#F1F5F9]">
-                                                <div className="flex-1 border-r border-[#E2E8F0]">
-                                                    <span className="block text-[10.5px] text-[#8A97A1] font-bold uppercase tracking-wider mb-0.5">Duration</span>
-                                                    <b className="font-display text-[16px] text-[#14284E]">{prog.duration}</b>
-                                                </div>
-                                                <div className="flex-1">
-                                                    <span className="block text-[10.5px] text-[#8A97A1] font-bold uppercase tracking-wider mb-0.5">Annual Fee</span>
-                                                    <b className="font-display text-[16px] text-[#d62c2b]">{prog.fee}</b>
-                                                </div>
-                                            </div>
-
-                                            <div className="flex flex-row gap-3">
-                                                <a href="#" className="cse-mobile-button flex-1 flex items-center justify-center gap-1.5 px-2 sm:px-4 py-2.5 text-[14px]  font-bold uppercase tracking-wide bg-[#14284E] text-white rounded-full hover:bg-[#1B4F91] transition-all">
-                                                    View Details <ArrowRight className="w-3.5 h-3.5 shrink-0" />
-                                                </a>
-                                                <a href="https://students.srmu.ac.in/login" target="_blank" rel="noopener noreferrer" className="cse-mobile-button flex-1 flex items-center justify-center gap-1.5 px-2 sm:px-4 py-2.5 text-[14px]  font-bold uppercase tracking-wide bg-[#ffb703] text-[#14284E] rounded-full hover:bg-[#ffb703] transition-all">
-                                                    Apply Now <ArrowRight className="w-3.5 h-3.5 shrink-0" />
-                                                </a>
-                                            </div>
-                                        </div>
-                                    )}
+                            <div id="department-program-list" className={ProgramStyles.content}>
+                                <div className={ProgramStyles.listHeading}>
+                                    <h3>{departmentPrograms[activeProgramCategory].category}</h3>
+                                    <span role="status" aria-atomic="true">
+                                        {departmentPrograms[activeProgramCategory].programs.length} {departmentPrograms[activeProgramCategory].programs.length === 1 ? "program" : "programs"} available
+                                    </span>
                                 </div>
-                            ))}
-                        </div>
-
-                        <div className="mt-10 flex flex-col items-center justify-center text-center">
-                            {/* <p className="text-[13px] sm:text-[14px] text-[#4B5A72] mb-5 max-w-[800px]">
-                                SRMU's current department page lists these programs and their respective durations and fee information.
-                            </p> */}
-                            <Link to="/programs" className="cse-mobile-button inline-flex items-center gap-2 bg-[#ffb703] hover:bg-[#ffb703] text-[#14284E] font-bold uppercase tracking-wide text-[14px] px-8 py-3.5 rounded-lg shadow-sm transition-all hover:-translate-y-0.5">
-                                View All CSE Programs <ArrowRight className="w-4 h-4" />
-                            </Link>
+                                <div className={ProgramStyles.grid}>
+                                    {departmentPrograms[activeProgramCategory].programs.map((prog) => (
+                                        <article key={prog.link} className={ProgramStyles.card}>
+                                            <div className={ProgramStyles.cardTop}>
+                                                <span className={ProgramStyles.programIcon}>
+                                                    <prog.icon size={26} strokeWidth={1.7} aria-hidden="true" />
+                                                </span>
+                                                <span className={ProgramStyles.programType}>
+                                                    {prog.title.startsWith("Integrated") ? "Integrated" : activeProgramCategory === 0 ? "Undergraduate" : activeProgramCategory === 1 ? "Postgraduate" : "Lateral entry"}
+                                                </span>
+                                            </div>
+                                            <h4 className="font-display">{prog.title}</h4>
+                                            <div className={ProgramStyles.cardFooter}>
+                                                <Link to={prog.link} aria-label={`View more about ${prog.title}`} className={ProgramStyles.viewMore}>
+                                                    View more
+                                                    <span><ArrowRight size={17} aria-hidden="true" /></span>
+                                                </Link>
+                                            </div>
+                                        </article>
+                                    ))}
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -1733,7 +1601,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                     <div className="w-[45%] sm:w-[40%] flex justify-center mt-0">
                                         <img src={AdditionInScholarImg} alt="Scholarships" className="w-[90%] sm:w-[90%] max-w-[150px] sm:max-w-[250px] object-contain drop-shadow-md" />
                                     </div>
-                                    
+
                                     {/* Mobile Buttons */}
                                     <div className="flex sm:hidden flex-row flex-wrap items-center gap-2 w-full mt-5 justify-center pb-1">
                                         <Link
@@ -1779,7 +1647,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                         ))}
                                     </div>
                                     {scholarshipItems.length > 4 && (
-                                        <button 
+                                        <button
                                             onClick={() => setShowAllScholarships(!showAllScholarships)}
                                             className="cse-read-more cse-mobile-button text-[14px] font-bold text-[#ffb703] mt-3 pb-1 flex items-center justify-center sm:hidden transition-colors w-full z-20 relative"
                                         >
@@ -1967,8 +1835,8 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                         </span>
                                         <span
                                             className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center text-[18px] shrink-0 transition-all duration-300 font-sans ${openFaq === i
-                                                    ? "bg-[#14284E] text-white rotate-45"
-                                                    : "bg-[#F6FAFE] text-[#14284E]"
+                                                ? "bg-[#14284E] text-white rotate-45"
+                                                : "bg-[#F6FAFE] text-[#14284E]"
                                                 }`}
                                         >
                                             +
