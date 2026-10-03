@@ -153,7 +153,7 @@ const TopHeader: React.FC = () => {
                 to="https://students.srmu.ac.in/login"
                 className=" px-3 py-1 flex items-center justify-center"
               >
-                <img src="/shared-image.png" alt="SRMUSET Logo" className="h-4 w-auto" />
+                <img src="/settt-img.png" alt="SRMUSET Logo" className="h-[28px] w-auto" />
               </Link>
               {/* <Link
                 target="_blank"

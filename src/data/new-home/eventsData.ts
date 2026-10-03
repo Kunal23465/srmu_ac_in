@@ -34,6 +34,7 @@ import villageVisit from "../../assets/new-home/events/Legal-Aid-Cell-Institute-
 import expressionsOrganized from "../../assets/new-home/events/Expressions_Organized.webp";
 import newsNewEvent from "../../assets/new-home/events/News_New_Event.webp";
 import collageEvent from "../../assets/new-home/events/Collage.png";
+import legalEvent from "../../assets/new-home/events/Legal-Awareness-Programme-at-School.png";
 
 
 
@@ -58,6 +59,34 @@ export type EventItem = {
 
 const eventsData: EventItem[] = [
  {
+  id: 27,
+  isRedirect: false,
+  image: legalEvent,
+  imageSmall: legalEvent,
+  date: "October 1st, 2026",
+  title: `Workshop on POCSO Act, 2012 Organized by Legal Aid Cell, SRMU`,
+  description: `
+The <strong>Legal Aid Cell, Shri Ramswaroop Memorial University (SRMU)</strong>, in collaboration with the <strong>Pro Bono Club and District Legal Services Authority (DLSA), Barabanki</strong>, organized a workshop on the <strong>Protection of Children from Sexual Offences (POCSO) Act, 2012</strong>, on <strong>1 October 2026</strong> at <strong>Maharana Pratap Inter College, Deva Chinhat Road, Barethi, Barabanki</strong>.
+
+<br/><strong>Workshop on POCSO Act, 2012</strong><br/>
+
+The workshop aimed to promote <strong>legal awareness, child protection, community outreach, and access to justice</strong>, while sensitizing participants to the key provisions and objectives of the POCSO Act and the importance of creating a safe and supportive environment for children.
+
+<br/><strong>Key Legal Provisions</strong><br/>
+
+During the session, participants were apprised of important aspects of the Act, including <strong>different forms of sexual offenses against children, mandatory reporting, child-friendly procedures, protection of the child’s identity and privacy</strong>, and the role of parents, educational institutions, authorities, and the community in safeguarding children.
+
+<br/><strong>Child Protection and Legal Assistance</strong><br/>
+
+The session also highlighted the importance of <strong>timely reporting, appropriate legal assistance, support and rehabilitation of child victims</strong>, and ensuring that children are treated with dignity and sensitivity throughout the legal process.
+
+<br/><strong>Impact of the Initiative</strong><br/>
+
+The workshop provided participants with an opportunity to understand the <strong>legal safeguards and assistance mechanisms available under the POCSO framework</strong> while strengthening awareness about child protection and the role of law in ensuring access to justice.
+`,
+},
+ 
+  {
   id: 27,
   isRedirect: false,
   image: collageEvent,

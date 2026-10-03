@@ -1,17 +1,14 @@
 import { useEffect, useState } from "react";
 import type { MouseEvent } from "react";
 import { useReducedMotion } from "framer-motion";
-import { LayoutGrid, GraduationCap, Monitor, BriefcaseBusiness, UsersRound, Award } from "lucide-react";
-import Classes from "../../../utils/styles/Global.module.css";
-import styles from "./DepartmentSectionNav.module.css";
 
 const sections = [
-    { id: "overview", label: "Overview", icon: LayoutGrid },
-    { id: "programs", label: "Programs", icon: GraduationCap },
-    { id: "labs", label: "Labs & Facilities", icon: Monitor },
-    { id: "placements", label: "Placements", icon: BriefcaseBusiness },
-    { id: "faculty", label: "Faculty", icon: UsersRound },
-    { id: "scholarships", label: "Scholarships", icon: Award },
+    { id: "overview", label: "Overview" },
+    { id: "programs", label: "Programs" },
+    { id: "labs", label: "Labs & Facilities" },
+    { id: "placements", label: "Placements" },
+    { id: "faculty", label: "Faculty" },
+    { id: "scholarships", label: "Scholarships" },
 ];
 
 export default function DepartmentSectionNav() {
@@ -62,18 +59,17 @@ export default function DepartmentSectionNav() {
     };
 
     return (
-        <nav className={styles.nav} aria-label="Department sections">
-            <div className={Classes["container"]}>
-                <ul className={styles.links}>
-                    {sections.map(({ id, label, icon: Icon }) => (
-                        <li key={id}>
+        <nav className="relative hidden bg-[#FFB703] px-6 md:block" aria-label="Department sections">
+            <div className="mx-auto max-w-[1626px]">
+                <ul className="m-0 grid list-none grid-cols-6 gap-2 p-0">
+                    {sections.map(({ id, label }) => (
+                        <li key={id} className="list-none!">
                             <a
                                 href={`#${id}`}
-                                className={styles.link}
+                                className="flex min-h-[42px] items-center justify-center px-2 py-2 text-center text-[10px] leading-snug font-bold tracking-[0.02em] text-[#0F4A85] uppercase transition-colors hover:text-[#14284E] focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-[#14284E] aria-[current=location]:text-[#14284E] motion-reduce:transition-none lg:text-[12px]"
                                 aria-current={activeSection === id ? "location" : undefined}
                                 onClick={(event) => scrollToSection(event, id)}
                             >
-                                <Icon size={21} strokeWidth={1.7} aria-hidden="true" />
                                 <span>{label}</span>
                             </a>
                         </li>

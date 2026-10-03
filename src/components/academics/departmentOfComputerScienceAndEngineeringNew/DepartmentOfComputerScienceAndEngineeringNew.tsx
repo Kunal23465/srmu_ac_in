@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from "react";
 
 import Classes from "../../../utils/styles/Global.module.css";
-import ProgramStyles from "./DepartmentPrograms.module.css";
 import DepartmentSectionNav from "./DepartmentSectionNav";
-import HighlightStyles from "./DepartmentHighlights.module.css";
 import KamleshImg from "../../../assets/images/academics/institutes/cse/cse2.jpeg";
 import SakshiImg from "../../../assets/images/academics/institutes/cse/cse3.jpeg";
 import logosrmcem from "../../../assets/images/University-Logo-White.png";
 import AdditionInScholarImg from "../../../assets/images/addition-in-scholar.png";
 import MerchandiseScanImg from "../../../assets/images/merchandise-scan.jpeg";
-import { Download, ChevronDown, ChevronUp, Search, Mail, Phone, ArrowLeft, ArrowRight, X, ShieldCheck, GraduationCap, Settings, Database, Lightbulb, Share2, MapPin, Facebook, Instagram, Linkedin, Youtube, Twitter, BadgeCheck, UsersRound, Accessibility, Medal, ChartNoAxesColumnIncreasing, Globe2, UserRound, Heart, Monitor, BrainCircuit, Code2, BookOpenCheck, Route, ChevronRight, Laptop, BriefcaseBusiness, Coins, Building2, FileSearch } from "lucide-react";
+import TechCollabImg from "../../../assets/images/new-information-system/Tech-Collaboration_-L-T-EduTech-SRMU.png";
+import { Download, ChevronDown, ChevronUp, Search, Mail, Phone, ArrowLeft, ArrowRight, X, ShieldCheck, GraduationCap, Settings, Database, Lightbulb, Share2, MapPin, Facebook, Instagram, Linkedin, Youtube, Twitter, BadgeCheck, UsersRound, Accessibility, Medal, ChartNoAxesColumnIncreasing, Globe2, UserRound, Heart, Monitor, BrainCircuit, Code2, BookOpenCheck, Route, ChevronRight, Laptop, BriefcaseBusiness } from "lucide-react";
 import { FaQuora, FaRedditAlien } from "react-icons/fa";
 import useEmblaCarousel from "embla-carousel-react";
 import { motion, useReducedMotion } from "framer-motion";
@@ -41,31 +40,41 @@ const recruiterLogos = [
 const departmentPrograms = [
     {
         category: "Under-Graduate Courses",
+        badge: "Undergraduate",
         icon: GraduationCap,
         programs: [
-            { title: "B.Tech. in Computer Science and Engineering", icon: Laptop, link: "/program/b-tech-computer-science-engineering" },
+            { title: "B.Tech. Computer Science Engineering", icon: Laptop, link: "/program/b-tech-computer-science-engineering" },
             { title: "B.Tech. in CSE (Artificial Intelligence & Machine Learning)", icon: BrainCircuit, link: "/program/b-tech-cse-artificial-intelligence-machine-learning" },
-            { title: "B.Tech. in CSE (Cyber Security)", icon: ShieldCheck, link: "/program/b-tech-cse-cyber-security" },
-            { title: "B.Tech. in CSE (Data Science & Artificial Intelligence)", icon: Database, link: "/program/b-tech-cse-data-science-artificial-intelligence" },
-            { title: "Integrated B.Tech. in CSE + MBA", icon: BriefcaseBusiness, link: "/program/b-tech-cse-mba" },
-            { title: "Integrated B.Tech. + M.Tech. in Computer Science and Engineering", icon: Code2, link: "/program/b-tech-m-tech-computer-science-engineering" },
+            { title: "B.Tech. in CSE (Cyber Security) with L&T", icon: ShieldCheck, link: "/program/b-tech-cse-cyber-security" },
+            { title: "B.Tech. in CSE (Data Science & Artificial Intelligence) with L&T", icon: Database, link: "/program/b-tech-cse-data-science-artificial-intelligence" },
         ]
     },
     {
         category: "Post-Graduate Courses",
+        badge: "Postgraduate",
         icon: BookOpenCheck,
         programs: [
-            { title: "M.Tech. in Computer Science and Engineering", icon: Monitor, link: "/program/m-tech-computer-science-engineering" },
-            { title: "M.Tech. in CSE (Artificial Intelligence & Machine Learning)", icon: BrainCircuit, link: "/program/m-tech-artificial-intelligence-machine-learning" },
-            { title: "M.Tech. in CSE (Data Science)", icon: Database, link: "/program/m-tech-data-science" },
-            { title: "M.Tech. in Computer Science and Engineering (Part-Time)", icon: Code2, link: "/program/m-tech-computer-science-engineering-part-time" },
+            { title: "M.Tech. in Computer Science Engineering", icon: Monitor, link: "/program/m-tech-computer-science-engineering" },
+            { title: "M.Tech. in Artificial Intelligence & Machine Learning", icon: BrainCircuit, link: "/program/m-tech-artificial-intelligence-machine-learning" },
+            { title: "M.Tech. in Data Science", icon: Database, link: "/program/m-tech-data-science" },
+            { title: "M.Tech. in Computer Science Engineering (Part Time)", icon: Code2, link: "/program/m-tech-computer-science-engineering-part-time" },
+        ]
+    },
+    {
+        category: "Integrated Programs",
+        badge: "Integrated",
+        icon: Code2,
+        programs: [
+            { title: "B.Tech. in CSE + M.B.A.", icon: BriefcaseBusiness, link: "/program/b-tech-cse-mba" },
+            { title: "B.Tech. + M.Tech. in Computer Science Engineering", icon: Code2, link: "/program/b-tech-m-tech-cse" },
         ]
     },
     {
         category: "Lateral Entry Programs",
+        badge: "Lateral entry",
         icon: Route,
         programs: [
-            { title: "B.Tech. in Computer Science and Engineering (Lateral Entry)", icon: Monitor, link: "/program/b-tech-computer-science-engineering-lateral-entry" },
+            { title: "B.Tech. in Computer Science Engineering (Lateral Entry)", icon: Monitor, link: "/program/b-tech-computer-science-engineering-lateral-entry" },
         ]
     }
 ];
@@ -80,11 +89,11 @@ const aboutPillars = [
 ];
 
 const quickStats = [
-    { value: "₹53 LPA", label: "Highest Package", icon: Coins, tone: "blue" },
-    { value: "200+", label: "Recruiters", icon: UsersRound, tone: "cyan" },
+    { value: "₹53 LPA", label: "Highest Package" },
+    { value: "200+", label: "Recruiters" },
     // { value: "∞", label: "Limitless Opportunities" },
-    { value: "10", label: "Industry-Driven Projects", icon: Building2, tone: "gold" },
-    { value: "150", label: "Student Research Projects", icon: FileSearch, tone: "red" },
+    { value: "10", label: "Industry-Driven Projects" },
+    { value: "150", label: "Student Research Projects" },
 ];
 
 const faqItems = [
@@ -336,6 +345,30 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
         return () => { labsEmblaApi.off("select", update); labsEmblaApi.off("reInit", update); };
     }, [labsEmblaApi]);
 
+    // Programs Embla carousel (only active on mobile)
+    const [programsEmblaRef, programsEmblaApi] = useEmblaCarousel({
+        loop: false,
+        align: "start",
+        dragFree: true,
+        breakpoints: {
+            '(min-width: 640px)': { active: false }
+        }
+    });
+    const [programsCanPrev, setProgramsCanPrev] = useState(false);
+    const [programsCanNext, setProgramsCanNext] = useState(true);
+
+    useEffect(() => {
+        if (!programsEmblaApi) return;
+        const update = () => {
+            setProgramsCanPrev(programsEmblaApi.canScrollPrev());
+            setProgramsCanNext(programsEmblaApi.canScrollNext());
+        };
+        update();
+        programsEmblaApi.on("select", update);
+        programsEmblaApi.on("reInit", update);
+        return () => { programsEmblaApi.off("select", update); programsEmblaApi.off("reInit", update); };
+    }, [programsEmblaApi]);
+
     // Events Embla carousel (only active on mobile)
     const [eventsEmblaRef, eventsEmblaApi] = useEmblaCarousel({
         loop: false,
@@ -412,7 +445,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
     const toggleRm = (k: string) => setRm(p => ({ ...p, [k]: !p[k] }));
 
     return (
-        <div className="text-[#14284E] bg-white antialiased">
+        <div id="cse-page" className="text-[#14284E] bg-white antialiased">
             {/* ── Lab Icon Micro-animations ─────────────────────────────── */}
             <style>{`
                 @media (max-width: 639px) {
@@ -424,6 +457,11 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                         align-self: flex-start;
                         margin-left: 0;
                         margin-right: auto;
+                    }
+                    /* Widen content on mobile only for this page — override container gutter */
+                    .cse-content-container {
+                        padding-left: 0 !important;
+                        padding-right: 0 !important;
                     }
                 }
 
@@ -584,10 +622,10 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                     {/* Text content — sits in the lower half over the gradient */}
                     <div className="absolute bottom-0 left-0 right-0 px-5 pt-6 pb-7 z-10">
                         {/* Title */}
-                        <p className="text-white/85 text-[18px] font-semibold mb-1.5 leading-snug">
+                        <p className="text-[#38bdf8] !text-[16px] font-semibold mb-1.5 leading-snug">
                             Department of
                         </p>
-                        <h1 className="text-[#38bdf8] text-[36px] font-bold leading-[1.15] mb-4">
+                        <h1 className="text-white/85 text-[34px] font-bold leading-[1.15] mb-4">
                             Computer Science &amp; Engineering (CSE)
                         </h1>
 
@@ -659,13 +697,13 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                     <div className="absolute inset-0 bg-gradient-to-r from-[#071329]/75 via-[#091a38]/40 to-transparent z-0" />
 
                     <div className="relative z-10 w-full pt-0 pb-0">
-                        <div className={`${Classes["container"]} flex flex-col h-full sm:h-auto w-full`}>
+                        <div className={`${Classes["container"]} cse-content-container flex flex-col h-full sm:h-auto w-full`}>
                             {/* Banner Text */}
                             <div className="w-full max-w-[650px] text-white text-left mt-2 sm:mt-0">
-                                <h2 className="text-[clamp(20px,2.5vw,30px)] font-semibold mb-1 leading-[1.2] drop-shadow-md">
+                                <h2 className="text-[#38bdf8] text-[clamp(20px,2.5vw,30px)] font-semibold mb-1 leading-[1.2] drop-shadow-md">
                                     Department of
                                 </h2>
-                                <h1 className="text-[clamp(32px,4vw,52px)] leading-[1.1] font-bold text-[#38bdf8] drop-shadow-md">
+                                <h1 className="text-[clamp(32px,4vw,52px)] leading-[1.1] font-bold text-white/85 drop-shadow-md">
                                     Computer Science &amp; Engineering (CSE)
                                 </h1>
                                 <div className="h-[3px] bg-[#38bdf8] w-[200px] mt-1 mb-4 rounded-full" />
@@ -696,8 +734,6 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                     </div>
                 </section>
 
-
-                <DepartmentSectionNav />
 
                 {/* ── Mobile Apply Now Form ────────────────────────────────── */}
                 <section className="sm:hidden bg-[#0f1b33] py-8 px-4 w-full">
@@ -739,8 +775,8 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                     <option>Other</option>
                                 </select>
                             </div>
-                            <p className="text-[10px] text-gray-500 flex items-start gap-1.5 text-justify">
-                                <input type="checkbox" defaultChecked className="mt-0.5 shrink-0" />
+                            <p className="!text-[8px] leading-tight text-gray-500 flex items-start gap-1 text-justify">
+                                <input type="checkbox" defaultChecked className="mt-0.5 shrink-0 scale-75 origin-top-left" />
                                 I authorise SRMU and its representatives to Call, SMS, Email or WhatsApp me regarding admissions and programmes.
                             </p>
                             <button className="cse-mobile-button w-full bg-[#ffb703] hover:bg-[#ffb703] text-[#14284E] font-bold uppercase tracking-wide text-[14px] py-3 rounded-xl transition-colors flex items-center justify-center gap-2">
@@ -751,29 +787,24 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                 </section>
 
                 {/* ── Quick Stats Banner ───────────────────────────────────── */}
-                <section className={HighlightStyles.section} aria-label="Department highlights">
-                    <div className={Classes["container"]}>
-                        <div className={HighlightStyles.panel}>
-                            <dl className={HighlightStyles.grid}>
-                                {quickStats.map((stat) => (
-                                    <div key={stat.label} className={`${HighlightStyles.card} ${HighlightStyles[stat.tone]}`}>
-                                        <span className={HighlightStyles.icon}>
-                                            <stat.icon size={32} strokeWidth={1.8} aria-hidden="true" />
-                                        </span>
-                                        <div className={HighlightStyles.text}>
-                                            <dt className={HighlightStyles.label}>{stat.label}</dt>
-                                            <dd className={`${HighlightStyles.value} font-display`}>{stat.value}</dd>
-                                        </div>
-                                    </div>
-                                ))}
-                            </dl>
-                        </div>
+                <section className="hidden bg-[#E0F1FF] px-6 py-2 sm:block" aria-label="Department highlights">
+                    <div className="mx-auto max-w-[1100px]">
+                        <dl className="m-0 grid grid-cols-4 gap-x-4">
+                            {quickStats.map((stat) => (
+                                <div key={stat.label} className="flex min-w-0 flex-col items-center gap-0.5 text-center text-[#14284E]">
+                                    <dt className="text-[9px] leading-snug font-bold tracking-[0.04em] uppercase lg:text-[11px]">{stat.label}</dt>
+                                    <dd className="font-display order-first m-0 text-[26px] leading-none font-extrabold text-[#D62C2B] lg:text-[32px]">{stat.value}</dd>
+                                </div>
+                            ))}
+                        </dl>
                     </div>
                 </section>
 
+                <DepartmentSectionNav />
+
                 {/* ── About the Department ─────────────────────────────────── */}
                 <section id="overview" className="pt-6 sm:pt-8 pb-8 md:pb-10 px-4 sm:px-6 bg-white scroll-mt-24">
-                    <div className={`${Classes["container"]}`}>
+                    <div className={`${Classes["container"]} cse-content-container`}>
                         {/* Two-column: text left, image right */}
                         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
 
@@ -783,7 +814,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                     About the <span className="text-[#ffb703]">Department</span>
                                 </h2>
 
-                                <div className={`text-[#4B5A72] text-[15.5px] sm:text-[16px] leading-relaxed space-y-4 text-justify ${!rm["about"] ? "line-clamp-4 sm:line-clamp-none" : ""}`}>
+                                <div className={`text-[#4B5A72] text-[15.5px] sm:text-[16px] leading-relaxed space-y-4 text-justify ${!rm["about"] ? "line-clamp-2 sm:line-clamp-none" : ""}`}>
                                     <p className="text-justify">The Department of Computer Science and Engineering at SRMU was established in 2012 with the objective of providing quality education and developing skilled professionals in the field of computing and information technology.</p>
                                     <p className="text-justify">The department offers B.Tech., M.Tech. and Ph.D. programs and provides academic exposure to core areas including computer technologies, distributed computing, information security, programming languages, computer networks, database management systems, software engineering, operating systems, compiler construction, and computer organization & architecture.</p>
                                     <p className="text-justify">The curriculum is periodically updated to incorporate emerging areas such as Python programming, Android application development, digital image processing, cyber security, design thinking, and cloud application development.</p>
@@ -797,9 +828,9 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                             {/* ── Right: image ── */}
                             <div className="flex w-full lg:w-[420px] xl:w-[460px] shrink-0 lg:self-stretch">
                                 <img
-                                    src="/assets/images/tech-collab.png"
-                                    alt="Department Tech Collaboration"
-                                    className="w-full h-auto lg:h-full object-cover object-bottom rounded-2xl shadow-[0_2px_12px_rgba(15,31,61,0.08)]"
+                                    src={TechCollabImg}
+                                    alt="Department Tech Collaboration - L&T EduTech x SRMU"
+                                    className="w-full h-auto lg:h-full object-cover object-center rounded-2xl shadow-[0_2px_12px_rgba(15,31,61,0.08)]"
                                 />
                             </div>
 
@@ -809,7 +840,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
 
                 {/* ── Mission & Vision ─────────────────────────────────────── */}
                 <section className="py-8 md:py-10 px-4 sm:px-6 bg-[#F0F6FB]">
-                    <div className={`${Classes["container"]}`}>
+                    <div className={`${Classes["container"]} cse-content-container`}>
                         <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-stretch">
 
                             {/* ── Left: Mission + Vision stacked ── */}
@@ -886,19 +917,27 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                 </section>
 
                 {/* ── Programs ─────────────────────────────────────────────── */}
-                <section id="programs" aria-labelledby="programs-heading" className={`${ProgramStyles.section} px-4 sm:px-6 scroll-mt-24`}>
-                    <div className={Classes["container"]}>
-                        <div className={ProgramStyles.heading}>
-                            <h2 id="programs-heading" className="text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E]">
-                                School of <span className="text-[#ffb703]">Computer Science Engineering</span>
+                <section id="programs" aria-labelledby="programs-heading" className="relative isolate overflow-hidden bg-white px-4 pt-8 pb-12 text-[#14284E] scroll-mt-24 sm:px-6 lg:pt-5 lg:pb-14">
+                    <div aria-hidden="true" className="pointer-events-none absolute -top-32 -right-16 size-52 rounded-full bg-[#E0F1FF]" />
+                    <div aria-hidden="true" className="pointer-events-none absolute -bottom-40 -left-44 size-80 rounded-full border-[48px] border-[#E0F1FF] bg-[#E0F1FF]" />
+                    <div aria-hidden="true" className="pointer-events-none absolute -right-20 -bottom-7 grid size-34 place-items-center rounded-full border-4 border-[#E0F1FF]">
+                        <div className="size-23 rounded-full bg-[#FFB703]" />
+                    </div>
+                    <div className="relative mx-auto w-full max-w-[1504px] lg:w-[94%]">
+                        <div className="mb-6 text-center">
+                            <h2 id="programs-heading" className="font-display text-[clamp(28px,2.4vw,40px)] leading-[1.2] font-bold text-[#14284E]">
+                                School of <span className="text-[#FFB703]">Computer Science Engineering</span>
                             </h2>
-                            {/* <p>Find your path in computing, innovation and technology.</p> */}
+                            <div aria-hidden="true" className="mt-4 flex justify-center gap-2.5">
+                                <span className="h-[3px] w-11 bg-[#FFB703]" />
+                                <span className="h-[3px] w-5 bg-[#0F4A85]" />
+                            </div>
                         </div>
 
-                        <div className={ProgramStyles.layout}>
-                            <div className={ProgramStyles.sidebar}>
-                                <p className={ProgramStyles.navLabel}>Choose your study level</p>
-                                <div className={ProgramStyles.categories} role="group" aria-label="Program categories">
+                        <div className="grid items-start gap-7 lg:grid-cols-[minmax(260px,0.96fr)_minmax(0,3fr)] lg:gap-9">
+                            <div className="rounded-2xl border border-[#E0F1FF] bg-white/80 px-3 pt-3 pb-4 shadow-[0_4px_24px_#3479c908] lg:mt-4">
+                                <p className="mx-2.5 mb-5 text-[11px] leading-4 font-bold tracking-[0.2em] text-[#0F4A85]/70 uppercase">Choose your study level</p>
+                                <div className="flex flex-col gap-2.5" role="group" aria-label="Program categories">
                                     {departmentPrograms.map((cat, idx) => (
                                         <button
                                             key={cat.category}
@@ -906,48 +945,72 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                             aria-pressed={activeProgramCategory === idx}
                                             aria-controls="department-program-list"
                                             onClick={() => setActiveProgramCategory(idx)}
-                                            className={`${ProgramStyles.category} ${activeProgramCategory === idx ? ProgramStyles.categoryActive : ""}`}
+                                            className={`relative flex w-full flex-1 cursor-pointer items-center gap-4 rounded-[14px] px-5 py-4 text-left text-[#14284E] transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0F4A85] motion-reduce:transition-none lg:gap-6 ${activeProgramCategory === idx ? "bg-[#E0F1FF] before:absolute before:inset-y-4 before:left-0 before:w-[5px] before:rounded-r-full before:bg-[#FFB703]" : "bg-transparent hover:bg-[#E0F1FF]/50"}`}
                                         >
-                                            <span className={ProgramStyles.categoryIcon}>
-                                                <cat.icon size={24} strokeWidth={1.7} aria-hidden="true" />
+                                            <span className={`grid size-[54px] shrink-0 place-items-center rounded-[20px] ${activeProgramCategory === idx ? "bg-white" : "bg-[#E0F1FF]"}`}>
+                                                <cat.icon size={29} strokeWidth={1.9} aria-hidden="true" />
                                             </span>
-                                            <span className={ProgramStyles.categoryText}>
-                                                <span>{cat.category}</span>
-                                                <small>{cat.programs.length} {cat.programs.length === 1 ? "program" : "programs"}</small>
+                                            <span className="min-w-0 flex-1 text-[14px] leading-[1.5] font-semibold">
+                                                <span className="block max-w-[145px]">{cat.category}</span>
+                                                <small className="mt-1 block text-[12px] font-medium text-[#0F4A85]/70">{cat.programs.length} {cat.programs.length === 1 ? "program" : "programs"}</small>
                                             </span>
-                                            <ChevronRight size={18} className={ProgramStyles.categoryArrow} aria-hidden="true" />
+                                            <ChevronRight size={18} className="shrink-0 text-[#0F4A85]/70" aria-hidden="true" />
                                         </button>
                                     ))}
                                 </div>
                             </div>
 
-                            <div id="department-program-list" className={ProgramStyles.content}>
-                                <div className={ProgramStyles.listHeading}>
-                                    <h3>{departmentPrograms[activeProgramCategory].category}</h3>
-                                    <span role="status" aria-atomic="true">
-                                        {departmentPrograms[activeProgramCategory].programs.length} {departmentPrograms[activeProgramCategory].programs.length === 1 ? "program" : "programs"} available
-                                    </span>
+                            <div id="department-program-list" className="min-w-0">
+                                <div className="mb-[18px] flex items-start justify-between gap-3">
+                                    <h3 className="text-[16px] leading-6 font-semibold text-[#14284E] after:mt-1 after:block after:h-[3px] after:w-[38px] after:bg-[#FFB703] sm:text-[18px]">{departmentPrograms[activeProgramCategory].category}</h3>
+                                    <div className="flex items-center gap-2">
+                                        <span className="pt-1 text-right text-[12px] leading-5 font-medium text-[#0F4A85]/70 sm:block" role="status" aria-atomic="true">
+                                            {departmentPrograms[activeProgramCategory].programs.length} {departmentPrograms[activeProgramCategory].programs.length === 1 ? "program" : "programs"} available
+                                        </span>
+                                        {/* Mobile carousel nav buttons */}
+                                        <div className="flex items-center gap-2 sm:hidden">
+                                            <button
+                                                onClick={() => programsEmblaApi?.scrollPrev()}
+                                                disabled={!programsCanPrev}
+                                                className="cse-mobile-button w-8 h-8 flex items-center justify-center rounded-full bg-white border border-[#E0F1FF] shadow-sm text-[#14284E] hover:bg-[#14284E] hover:text-white transition-all disabled:opacity-30 disabled:cursor-not-allowed"
+                                                aria-label="Previous program"
+                                            >
+                                                <ArrowLeft className="w-3.5 h-3.5" />
+                                            </button>
+                                            <button
+                                                onClick={() => programsEmblaApi?.scrollNext()}
+                                                disabled={!programsCanNext}
+                                                className="cse-mobile-button w-8 h-8 flex items-center justify-center rounded-full bg-white border border-[#E0F1FF] shadow-sm text-[#14284E] hover:bg-[#14284E] hover:text-white transition-all disabled:opacity-30 disabled:cursor-not-allowed"
+                                                aria-label="Next program"
+                                            >
+                                                <ArrowRight className="w-3.5 h-3.5" />
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div className={ProgramStyles.grid}>
-                                    {departmentPrograms[activeProgramCategory].programs.map((prog) => (
-                                        <article key={prog.link} className={ProgramStyles.card}>
-                                            <div className={ProgramStyles.cardTop}>
-                                                <span className={ProgramStyles.programIcon}>
-                                                    <prog.icon size={26} strokeWidth={1.7} aria-hidden="true" />
-                                                </span>
-                                                <span className={ProgramStyles.programType}>
-                                                    {prog.title.startsWith("Integrated") ? "Integrated" : activeProgramCategory === 0 ? "Undergraduate" : activeProgramCategory === 1 ? "Postgraduate" : "Lateral entry"}
-                                                </span>
-                                            </div>
-                                            <h4 className="font-display">{prog.title}</h4>
-                                            <div className={ProgramStyles.cardFooter}>
-                                                <Link to={prog.link} aria-label={`View more about ${prog.title}`} className={ProgramStyles.viewMore}>
-                                                    View more
-                                                    <span><ArrowRight size={17} aria-hidden="true" /></span>
-                                                </Link>
-                                            </div>
-                                        </article>
-                                    ))}
+                                {/* Embla carousel wrapper — scroll on mobile, grid on sm+ */}
+                                <div className="overflow-hidden sm:overflow-visible -mx-4 px-4 sm:mx-0 sm:px-0" ref={programsEmblaRef}>
+                                    <div className="flex sm:grid sm:grid-cols-2 xl:grid-cols-3 gap-5 pb-4 sm:pb-0 xl:gap-x-6">
+                                        {departmentPrograms[activeProgramCategory].programs.map((prog) => (
+                                            <article key={prog.link} className="flex min-h-[208px] min-w-0 flex-col rounded-2xl border border-[#E0F1FF] bg-white/85 px-6 pt-3.5 pb-[18px] shadow-[0_4px_20px_#3479c906] transition-shadow hover:shadow-[0_8px_24px_#3479c912] focus-within:border-[#21A5DB] motion-reduce:transition-none shrink-0 w-[80vw] sm:w-auto sm:shrink">
+                                                <div className="mb-1 flex items-start justify-between gap-2">
+                                                    <span className="grid size-[52px] shrink-0 place-items-center rounded-full bg-[#E0F1FF] text-[#0F4A85]">
+                                                        <prog.icon size={28} strokeWidth={1.9} aria-hidden="true" />
+                                                    </span>
+                                                    <span className="mt-2 rounded-full bg-[#E0F1FF] px-3 py-1 text-center text-[10px] leading-[1.4] font-medium text-[#0F4A85]">
+                                                        {departmentPrograms[activeProgramCategory].badge}
+                                                    </span>
+                                                </div>
+                                                <h4 className="font-display mb-3 flex-1 text-[15.5px] leading-[1.4] font-semibold text-[#14284E]">{prog.title}</h4>
+                                                <div>
+                                                    <Link to={prog.link} aria-label={`View more about ${prog.title}`} className="group inline-flex min-h-10 items-center justify-between gap-5 rounded-full bg-[#FFB703] px-5 py-2.5 text-[10px] leading-5 font-bold text-[#14284E] uppercase transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0F4A85] motion-reduce:transition-none">
+                                                        View more
+                                                        <ArrowRight size={17} className="transition-transform group-hover:translate-x-0.5 motion-reduce:transform-none motion-reduce:transition-none" aria-hidden="true" />
+                                                    </Link>
+                                                </div>
+                                            </article>
+                                        ))}
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -956,7 +1019,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
 
                 {/* ── Labs & Practical Learning ─────────────────────────────── */}
                 <section id="labs" className="py-8 md:pt-6 md:pb-12 px-4 sm:px-6 bg-white scroll-mt-24">
-                    <div className={`${Classes["container"]}`}>
+                    <div className={`${Classes["container"]} cse-content-container`}>
 
                         {/* Header & Controls */}
                         <div className="w-full mb-8 md:mb-10 flex flex-col gap-4">
@@ -964,7 +1027,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                 <h2 className="text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3">
                                     Labs &amp; <span className="text-[#ffb703]">Practical Learning</span>
                                 </h2>
-                                <p className={`text-[15.5px] text-[#4B5A72] leading-relaxed text-justify ${!rm["labs"] ? "line-clamp-3 sm:line-clamp-none" : ""}`}>
+                                <p className={`text-[15.5px] text-[#4B5A72] leading-relaxed text-justify ${!rm["labs"] ? "line-clamp-2 sm:line-clamp-none" : ""}`}>
                                     The Department of Computer Science and Engineering at Shri Ramswaroop Memorial University provides students with practical learning environments designed to complement classroom teaching. Through programming, computing, networking, artificial intelligence, cloud technologies and industry-oriented laboratories, students get opportunities to apply concepts, develop projects and strengthen their technical skills.
                                 </p>
                                 <button className="cse-read-more cse-mobile-button text-[14px] font-bold text-[#ffb703] mt-3 flex items-center justify-start sm:hidden transition-colors hover:text-[#ffb703]" onClick={() => toggleRm("labs")}>
@@ -1104,7 +1167,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
 
                 {/* ── Events ───────────────────────────────────────────────── */}
                 <section id="events" className="py-8 md:py-10 px-4 sm:px-6 bg-[#F0F6FB] scroll-mt-24">
-                    <div className={`${Classes["container"]}`}>
+                    <div className={`${Classes["container"]} cse-content-container`}>
                         <div className="w-full mb-8 flex flex-col gap-4">
                             <div className="w-full">
                                 {/* <div className="text-[12px] sm:text-[13px] tracking-[0.1em] uppercase text-[#d62c2b] font-bold flex items-center gap-2 mb-3">
@@ -1164,7 +1227,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                         </div>
 
                         <div className="flex justify-center mt-10">
-                            <a href="#" className="cse-mobile-button group px-8 py-3.5 text-[14px] font-bold uppercase tracking-wider bg-[#14284E] text-white rounded-xl shadow-[0_4px_14px_rgba(20,40,78,0.2)] hover:bg-[#1B4F91] hover:shadow-[0_6px_20px_rgba(20,40,78,0.3)] hover:-translate-y-0.5 transition-all duration-300 flex items-center gap-2">
+                            <a href="#" className="cse-mobile-button group px-8 py-3.5 text-[14px] font-bold uppercase tracking-wider bg-[#ffb703] text-[#14284E] rounded-xl shadow-[0_4px_14px_rgba(20,40,78,0.2)]  hover:shadow-[0_6px_20px_rgba(20,40,78,0.3)] hover:-translate-y-0.5 transition-all duration-300 flex items-center gap-2">
                                 View All Events <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                             </a>
                         </div>
@@ -1173,10 +1236,10 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
 
                 {/* ── Placements ───────────────────────────────────────────── */}
                 <section className="pt-8 md:pt-10 pb-4 px-4 sm:px-6 bg-white scroll-mt-24" id="placements">
-                    <div className={`${Classes["container"]} mx-auto`}>
+                    <div className={`${Classes["container"]} cse-content-container mx-auto`}>
 
                         {/* Placement Stats + Image */}
-                        <div className="grid lg:grid-cols-2 gap-5 items-start">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 items-start">
 
                             {/* Stats */}
 
@@ -1300,7 +1363,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
 
                 {/* ── Faculty ──────────────────────────────────────────────── */}
                 <section id="faculty" className="pt-4 pb-0 sm:py-10 px-4 sm:px-6 bg-gradient-to-b from-white to-[#E0F1FF] scroll-mt-24">
-                    <div className={`${Classes["container"]}`}>
+                    <div className={`${Classes["container"]} cse-content-container`}>
                         <div className="w-full mb-8">
                             {/* <div className="text-[14.5px] tracking-[0.08em] uppercase text-[#ffb703] font-bold flex items-center gap-2 mb-3.5">
                                 <span className="w-[22px] h-[2px] bg-[#ffb703] inline-block" /> Faculty List
@@ -1375,7 +1438,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
 
                 {/* ── Key Highlights ───────────────────────────────────────── */}
                 <section className="pt-8 pb-6 md:pt-10 md:pb-6 px-4 sm:px-6 bg-[#14284e]">
-                    <div className={`${Classes["container"]}`}>
+                    <div className={`${Classes["container"]} cse-content-container`}>
                         <div className="w-full mb-8 flex flex-col gap-4">
                             <div className="w-full">
                                 <h2 className="text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display text-white">
@@ -1429,8 +1492,8 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                     </div>
                 </section>
                 {/* ── Career Pathways ──────────────────────────────────────── */}
-                <section id="careers" className="pt-6 pb-2 md:pt-8 md:pb-3 px-4 sm:px-6 bg-[#EEF5FC] border-b-[8px] border-[#ffb703]">
-                    <div className={`${Classes["container"]}`}>
+                <section id="careers" className="pt-6 pb-2 md:pt-8 md:pb-3 px-4 sm:px-6 bg-[#EEF5FC] border-b-[8px] border-[#ffb703] overflow-hidden">
+                    <div className={`${Classes["container"]} cse-content-container`}>
                         <div className="w-full mb-4 sm:mb-5 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
                             <div className="text-left max-w-3xl">
                                 <h2 className="text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E]">
@@ -1455,15 +1518,15 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                 </defs>
                                 <g className="cse-career-orbit" aria-hidden="true">
                                     <circle cx="520" cy="350" r="240" fill="none" stroke="#ccd5e1" strokeWidth="2" strokeDasharray="6 5" />
-                                    <circle cx="520" cy="128" r="5" fill="#d79830" />
+                                    <circle cx="520" cy="128" r="5" fill="#ffb703" />
                                 </g>
                                 <g aria-hidden="true">
                                     {careerItems.map((_, index) => {
                                         const angle = (index * 30 - 90) * Math.PI / 180;
-                                        return <circle key={index} cx={520 + 240 * Math.cos(angle)} cy={350 + 240 * Math.sin(angle)} r="6" fill="#fff" stroke="#d79830" strokeWidth="3" />;
+                                        return <circle key={index} cx={520 + 240 * Math.cos(angle)} cy={350 + 240 * Math.sin(angle)} r="6" fill="#fff" stroke="#ffb703" strokeWidth="3" />;
                                     })}
                                 </g>
-                                <circle cx="520" cy="350" r="163" fill="none" stroke="#d79830" strokeOpacity="0.35" strokeWidth="2" />
+                                <circle cx="520" cy="350" r="163" fill="none" stroke="#ffb703" strokeOpacity="0.35" strokeWidth="2" />
                                 <g className="cse-career-core">
                                     <circle cx="520" cy="350" r="131" fill="#14284e" fillOpacity="0.045" />
                                     <circle cx="520" cy="350" r="112" fill="url(#cse-career-gradient)" filter="url(#cse-career-shadow)" />
@@ -1471,7 +1534,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                         <tspan x="520">Career</tspan>
                                         <tspan x="520" dy="28">Opportunities</tspan>
                                     </text>
-                                    <path d="M500 383 H540" stroke="#d79830" strokeWidth="3" strokeLinecap="round" />
+                                    <path d="M500 383 H540" stroke="#ffb703" strokeWidth="3" strokeLinecap="round" />
                                 </g>
                                 <g className="cse-career-labels" fill="#14284e" fontSize="17" fontWeight="600" aria-hidden="true">
                                     {careerItems.map((lines, index) => {
@@ -1482,7 +1545,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                         return (
                                             <text key={index} x={x} y={y} textAnchor={centered ? "middle" : index < 6 ? "start" : "end"} fontSize={index === 0 ? 21 : undefined}>
                                                 {lines.map((line, lineIndex) => <tspan key={line} x={x} dy={lineIndex === 0 ? 0 : 23}>{line}</tspan>)}
-                                                {index === 0 && <tspan x={x} dy="24" fontSize="14" fontWeight="400" fill="#697586">(Software, Web, or Mobile App Developer)</tspan>}
+                                                {/* {index === 0 && <tspan x={x} dy="24" fontSize="14" fontWeight="400" fill="#697586">(Software, Web, or Mobile App Developer)</tspan>} */}
                                             </text>
                                         );
                                     })}
@@ -1491,7 +1554,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                             {/* Mobile-only compact circle diagram */}
                             <svg
                                 className="sm:hidden block w-full"
-                                viewBox="-65 10 500 390"
+                                viewBox="-80 10 530 390"
                                 role="img"
                                 aria-label="Career Opportunities diagram"
                             >
@@ -1514,7 +1577,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                 <g aria-hidden="true">
                                     {careerItems.map((_, i) => {
                                         const a = (i * 30 - 90) * Math.PI / 180;
-                                        return <circle key={i} cx={185 + 145 * Math.cos(a)} cy={195 + 145 * Math.sin(a)} r="4" fill="#fff" stroke="#d79830" strokeWidth="2" />;
+                                        return <circle key={i} cx={185 + 145 * Math.cos(a)} cy={195 + 145 * Math.sin(a)} r="4" fill="#fff" stroke="#ffb703" strokeWidth="2" />;
                                     })}
                                 </g>
 
@@ -1525,7 +1588,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                         <tspan x="185">Career</tspan>
                                         <tspan x="185" dy="17">Opportunities</tspan>
                                     </text>
-                                    <path d="M170 218 H200" stroke="#d79830" strokeWidth="2" strokeLinecap="round" />
+                                    <path d="M170 218 H200" stroke="#ffb703" strokeWidth="2" strokeLinecap="round" />
                                 </g>
 
                                 {/* Labels — fixed, outside animated group */}
@@ -1554,8 +1617,8 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                 </section>
 
                 {/* ── Scholarships ─────────────────────────────────────────── */}
-                <section className="pt-4 pb-4 sm:py-10 bg-white scroll-mt-24 border-b border-[#e0e0e0]" id="scholarships">
-                    <div className={`${Classes["container"]} mx-auto`}>
+                <section className="pt-4 pb-4 sm:py-10 px-4 sm:px-6 bg-white scroll-mt-24 border-b border-[#e0e0e0]" id="scholarships">
+                    <div className={`${Classes["container"]} cse-content-container mx-auto`}>
                         <div className="flex flex-col lg:flex-row gap-5">
 
                             {/* Left Side: Jagran Banner */}
@@ -1703,13 +1766,13 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                     if (csBlogs.length === 0) return null;
                     return (
                         <section className="py-10 md:py-14 px-4 sm:px-6 bg-white border-b border-[#DCE6F2]">
-                            <div className={`${Classes["container"]}`}>
+                            <div className={`${Classes["container"]} cse-content-container`}>
                                 {/* Header */}
                                 <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
                                     <div>
-                                        <div className="text-[12px] sm:text-[13px] tracking-[0.1em] uppercase text-[#d62c2b] font-bold flex items-center gap-2 mb-2">
+                                        {/* <div className="text-[12px] sm:text-[13px] tracking-[0.1em] uppercase text-[#d62c2b] font-bold flex items-center gap-2 mb-2">
                                             <span className="w-4 h-[2px] bg-[#d62c2b] inline-block shrink-0" /> From the Blog
-                                        </div>
+                                        </div> */}
                                         <h2 className="text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E]">
                                             Latest <span className="text-[#ffb703]">Insights & Resources</span>
                                         </h2>
@@ -1800,13 +1863,13 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
 
                 {/* ── FAQ ──────────────────────────────────────────────────── */}
                 <section id="faq" className="py-10 md:py-14 px-4 sm:px-6 bg-[#F4F7FB]">
-                    <div className={`${Classes["container"]} max-w-[900px]`}>
+                    <div className={`${Classes["container"]} cse-content-container max-w-[900px]`}>
                         {/* Header */}
                         <div className="w-full mb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
                             <div className="min-w-0 flex-1">
-                                <div className="text-[12px] sm:text-[13px] tracking-[0.1em] uppercase text-[#d62c2b] font-bold flex items-center gap-2 mb-3">
+                                {/* <div className="text-[12px] sm:text-[13px] tracking-[0.1em] uppercase text-[#d62c2b] font-bold flex items-center gap-2 mb-3">
                                     <span className="w-4 h-[2px] bg-[#d62c2b] inline-block shrink-0" /> FAQ
-                                </div>
+                                </div> */}
                                 <h2 className="text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] break-words">
                                     Frequently Asked <span className="text-[#ffb703]">Questions</span>
                                 </h2>
@@ -1859,7 +1922,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                             <div className="mt-8 flex justify-center">
                                 <button
                                     onClick={() => setShowAllFaq(!showAllFaq)}
-                                    className="cse-read-more cse-mobile-button uppercase tracking-wider flex items-center justify-center gap-2 bg-[#1B4F91] hover:bg-[#14284E] text-white font-bold text-[14px] px-8 py-3 rounded-lg transition-colors w-fit shadow-md"
+                                    className="cse-read-more cse-mobile-button !self-center !mx-auto uppercase tracking-wider flex items-center justify-center gap-2 bg-[#ffb703] text-[#14284E] font-bold text-[14px] px-8 py-3 rounded-lg transition-colors w-fit shadow-md"
                                 >
                                     {showAllFaq ? "View Less" : "Read More"} <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${showAllFaq ? "rotate-180" : ""}`} />
                                 </button>
@@ -1870,7 +1933,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
 
                 {/* ── CTA Band ─────────────────────────────────────────────── */}
                 {/* <section id="apply" className="py-12 sm:py-16 px-4 sm:px-6 bg-gradient-to-br from-[#3E6B54] to-[#5C8A72]">
-                    <div className={`${Classes["container"]}`}>
+                    <div className={`${Classes["container"]} cse-content-container`}>
                         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
                             <h2 className="text-white font-bold font-display text-[clamp(26px,3vw,32px)] max-w-[480px] leading-[1.2]">
                                 Ready to build your future in computing?
@@ -2037,11 +2100,11 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
 const DepartmentFooter = () => {
     return (
         <div role="contentinfo" className="bg-[#14284E] text-white pt-16 pb-6 border-t-[4px] border-[#ffb703]">
-            <div className={`${Classes["container"]}`}>
+            <div className={`${Classes["container"]} px-4 sm:px-6`}>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 lg:gap-8 mb-12">
 
                     {/* Col 1: Brand & Contact */}
-                    <div className="lg:col-span-2 space-y-6 lg:pr-6">
+                    <div className="min-w-0 space-y-6 [overflow-wrap:anywhere] lg:col-span-2 lg:pr-6">
                         <div>
                             <img src={logosrmcem} alt="SRMU Logo" className="max-h-[60px] max-w-full w-auto object-contain object-left mb-5" />
                             <p className="text-[13px] text-gray-300 leading-relaxed text-justify mb-5">
@@ -2097,11 +2160,11 @@ const DepartmentFooter = () => {
                     </div>
 
                     {/* Middle Columns Wrapper (3-col on mobile) */}
-                    <div className="lg:col-span-3 grid grid-cols-3 gap-2 sm:gap-6 lg:mt-[80px]">
+                    <div className="min-w-0 lg:col-span-3 grid grid-cols-3 gap-x-2 gap-y-6 [overflow-wrap:anywhere] sm:gap-6 lg:mt-[80px]">
                         {/* Col 2: Quick Links */}
-                        <div>
-                            <h3 className="text-[#ffb703] font-bold text-[12px] sm:text-[14px] uppercase mb-4 sm:mb-6 tracking-wide">Quick Links</h3>
-                            <ul className="space-y-3 sm:space-y-4 list-disc pl-4 marker:text-gray-300">
+                        <div className="min-w-0">
+                            <h3 className="text-[#ffb703] font-bold text-[10px] min-[375px]:text-[11px] sm:text-[14px] uppercase mb-4 sm:mb-6 tracking-normal sm:tracking-wide">Quick Links</h3>
+                            <ul className="space-y-3 sm:space-y-4 list-disc pl-3 sm:pl-4 marker:text-gray-300">
                                 {[
                                     { name: "About SRMU", path: "/about-us" },
                                     { name: "Programs", path: "/program-finder" },
@@ -2111,15 +2174,15 @@ const DepartmentFooter = () => {
                                     { name: "News & Updates", path: "/notice" },
                                     { name: "Contact Us", path: "/contact-us" }
                                 ].map((item) => (
-                                    <li key={item.name}><Link to={item.path} className="text-[12px] sm:text-[13.5px] text-gray-300 hover:text-[#ffb703] transition-colors">{item.name}</Link></li>
+                                    <li key={item.name}><Link to={item.path} className="text-[11px] leading-relaxed min-[375px]:text-[12px] sm:text-[13.5px] text-gray-300 hover:text-[#ffb703] transition-colors">{item.name}</Link></li>
                                 ))}
                             </ul>
                         </div>
 
                         {/* Col 3: Student Life */}
-                        <div>
-                            <h3 className="text-[#ffb703] font-bold text-[12px] sm:text-[14px] uppercase mb-4 sm:mb-6 tracking-wide">Student Life</h3>
-                            <ul className="space-y-3 sm:space-y-4 list-disc pl-4 marker:text-gray-300">
+                        <div className="min-w-0">
+                            <h3 className="text-[#ffb703] font-bold text-[10px] min-[375px]:text-[11px] sm:text-[14px] uppercase mb-4 sm:mb-6 tracking-normal sm:tracking-wide">Student Life</h3>
+                            <ul className="space-y-3 sm:space-y-4 list-disc pl-3 sm:pl-4 marker:text-gray-300">
                                 {[
                                     { name: "Facilities", path: "/facilities" },
                                     { name: "Library", path: "/central-library" },
@@ -2127,17 +2190,17 @@ const DepartmentFooter = () => {
                                     { name: "Blogs", path: "/blogs" },
                                     { name: "Shift Schedule", path: "/shift-schedule" }
                                 ].map((item) => (
-                                    <li key={item.name}><Link to={item.path} className="text-[12px] sm:text-[13.5px] text-gray-300 hover:text-[#ffb703] transition-colors">{item.name}</Link></li>
+                                    <li key={item.name}><Link to={item.path} className="text-[11px] leading-relaxed min-[375px]:text-[12px] sm:text-[13.5px] text-gray-300 hover:text-[#ffb703] transition-colors">{item.name}</Link></li>
                                 ))}
-                                <li><a href="https://eyojan.srmu.ac.in/" target="_blank" rel="noreferrer" className="text-[12px] sm:text-[13.5px] text-gray-300 hover:text-[#ffb703] transition-colors">Student Login</a></li>
-                                <li><a href="https://eyojan.srmu.ac.in/" target="_blank" rel="noreferrer" className="text-[12px] sm:text-[13.5px] text-gray-300 hover:text-[#ffb703] transition-colors">Staff Login</a></li>
+                                <li><a href="https://eyojan.srmu.ac.in/" target="_blank" rel="noreferrer" className="text-[11px] leading-relaxed min-[375px]:text-[12px] sm:text-[13.5px] text-gray-300 hover:text-[#ffb703] transition-colors">Student Login</a></li>
+                                <li><a href="https://eyojan.srmu.ac.in/" target="_blank" rel="noreferrer" className="text-[11px] leading-relaxed min-[375px]:text-[12px] sm:text-[13.5px] text-gray-300 hover:text-[#ffb703] transition-colors">Staff Login</a></li>
                             </ul>
                         </div>
 
                         {/* Col 4: Information */}
-                        <div>
-                            <h3 className="text-[#ffb703] font-bold text-[12px] sm:text-[14px] uppercase mb-4 sm:mb-6 tracking-wide">Information</h3>
-                            <ul className="space-y-3 sm:space-y-4 list-disc pl-4 marker:text-gray-300">
+                        <div className="min-w-0">
+                            <h3 className="text-[#ffb703] font-bold text-[10px] min-[375px]:text-[11px] sm:text-[14px] uppercase mb-4 sm:mb-6 tracking-normal sm:tracking-wide">Information</h3>
+                            <ul className="space-y-3 sm:space-y-4 list-disc pl-3 sm:pl-4 marker:text-gray-300">
                                 {[
                                     { name: "UGC & Approvals", path: "/ugc-approvals" },
                                     { name: "NAAC", path: "/naac" },
@@ -2147,24 +2210,24 @@ const DepartmentFooter = () => {
                                     { name: "Scholarships", path: "/scholarship-scheme" },
                                     { name: "Anti Ragging", path: "/anti-ragging" }
                                 ].map((item) => (
-                                    <li key={item.name}><Link to={item.path} className="text-[12px] sm:text-[13.5px] text-gray-300 hover:text-[#ffb703] transition-colors">{item.name}</Link></li>
+                                    <li key={item.name}><Link to={item.path} className="text-[11px] leading-relaxed min-[375px]:text-[12px] sm:text-[13.5px] text-gray-300 hover:text-[#ffb703] transition-colors">{item.name}</Link></li>
                                 ))}
-                                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSde8Ov2JDvB1vYeL-jrqNrlman0gLstQVEWEJ6DN34-EsYdCQ/viewform" target="_blank" rel="noreferrer" className="text-[12px] sm:text-[13.5px] text-gray-300 hover:text-[#ffb703] transition-colors break-words">Grievance Redressal</a></li>
+                                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSde8Ov2JDvB1vYeL-jrqNrlman0gLstQVEWEJ6DN34-EsYdCQ/viewform" target="_blank" rel="noreferrer" className="text-[11px] leading-relaxed min-[375px]:text-[12px] sm:text-[13.5px] text-gray-300 hover:text-[#ffb703] transition-colors break-words">Grievance Redressal</a></li>
                             </ul>
                         </div>
                     </div>
 
                     {/* Col 5: Subscribe & Follow */}
-                    <div className="lg:col-span-1 lg:min-w-[280px] lg:mt-[80px]">
+                    <div className="min-w-0 lg:col-span-1 lg:mt-[80px]">
                         <h3 className="text-[#ffb703] font-bold text-[14px] uppercase mb-6 tracking-wide">Subscribe to our updates</h3>
                         <p className="text-[13px] text-gray-300 mb-4 leading-relaxed">
                             Stay informed about the latest news, events and opportunities at SRMU.
                         </p>
-                        <form className="flex flex-col sm:flex-row mb-10" onSubmit={(e) => e.preventDefault()}>
+                        <form className="flex min-w-0 flex-col sm:flex-row lg:flex-col mb-10" onSubmit={(e) => e.preventDefault()}>
                             <input
                                 type="email"
                                 placeholder="Enter your email address"
-                                className="flex-1 bg-transparent border border-gray-500 rounded-l-md px-3 py-2 text-[13px] text-white outline-none focus:border-[#ffb703]"
+                                className="min-w-0 w-full flex-1 bg-transparent border border-gray-500 rounded-l-md px-3 py-2 text-[13px] text-white outline-none focus:border-[#ffb703]"
                             />
                             <button type="submit" className="cse-mobile-button bg-[#3b82f6] hover:bg-[#2563eb] text-white text-[14px] font-bold uppercase tracking-wide px-4 py-2 rounded-r-md transition-colors whitespace-nowrap">
                                 Subscribe
@@ -2172,7 +2235,7 @@ const DepartmentFooter = () => {
                         </form>
 
                         <h3 className="text-[#ffb703] font-bold text-[14px] uppercase mb-6 tracking-wide">Follow Us</h3>
-                        <div className="flex gap-2.5">
+                        <div className="flex flex-wrap gap-2.5">
                             <a href="https://www.linkedin.com/school/shri-ramswaroop-memorial-university/" target="_blank" rel="noreferrer" className="cse-mobile-button font-bold uppercase tracking-wide w-9 h-9 rounded-full border border-gray-400 flex items-center justify-center hover:border-[#ffb703] hover:text-[#ffb703] transition-colors"><Linkedin className="w-4 h-4" /></a>
                             <a href="https://www.facebook.com/SRMUOFFICIAL/" target="_blank" rel="noreferrer" className="cse-mobile-button font-bold uppercase tracking-wide w-9 h-9 rounded-full border border-gray-400 flex items-center justify-center hover:border-[#ffb703] hover:text-[#ffb703] transition-colors"><Facebook className="w-4 h-4" /></a>
                             <a href="https://www.instagram.com/srmulucknow_official/" target="_blank" rel="noreferrer" className="cse-mobile-button font-bold uppercase tracking-wide w-9 h-9 rounded-full border border-gray-400 flex items-center justify-center hover:border-[#ffb703] hover:text-[#ffb703] transition-colors"><Instagram className="w-4 h-4" /></a>
@@ -2184,14 +2247,14 @@ const DepartmentFooter = () => {
                         <div className="mt-8">
                             <h3 className="text-[#ffb703] font-bold text-[14px] uppercase mb-6 tracking-wide">Merch Shop</h3>
                             <p className="text-[13px] text-gray-300 mb-4 leading-relaxed">To Shop SRMU Merchandise Scan the Code</p>
-                            <img src={MerchandiseScanImg} alt="Merchandise Scan" className="w-full max-w-[200px] h-auto shadow-md" />
+                            <img src={MerchandiseScanImg} alt="Merchandise Scan" className="h-[60px] w-auto shadow-md" />
                         </div>
                     </div>
                 </div>
 
                 <div className="pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
                     <p className="text-[12px] text-gray-400">© 2025 Shri Ramswaroop Memorial University. All Rights Reserved.</p>
-                    <div className="flex items-center gap-4 text-[12px] text-gray-400">
+                    <div className="flex max-w-full flex-wrap items-center justify-center gap-x-4 gap-y-2 text-[12px] text-gray-400">
                         <Link to="#" className="hover:text-white transition-colors">Privacy Policy</Link>
                         <span className="text-gray-600">|</span>
                         <Link to="#" className="hover:text-white transition-colors">Terms & Conditions</Link>
