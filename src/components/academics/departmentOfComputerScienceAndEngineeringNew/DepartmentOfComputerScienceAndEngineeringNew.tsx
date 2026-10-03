@@ -7,6 +7,7 @@ import SakshiImg from "../../../assets/images/academics/institutes/cse/cse3.jpeg
 import logosrmcem from "../../../assets/images/University-Logo-White.png";
 import AdditionInScholarImg from "../../../assets/images/addition-in-scholar.png";
 import MerchandiseScanImg from "../../../assets/images/merchandise-scan.jpeg";
+import LtEdutechLogo from "../../../assets/new-home/l-t.webp";
 import TechCollabImg from "../../../assets/images/new-information-system/Tech-Collaboration_-L-T-EduTech-SRMU.png";
 import { Download, ChevronDown, ChevronUp, Search, Mail, Phone, ArrowLeft, ArrowRight, X, ShieldCheck, GraduationCap, Settings, Database, Lightbulb, Share2, MapPin, Facebook, Instagram, Linkedin, Youtube, Twitter, BadgeCheck, UsersRound, Accessibility, Medal, ChartNoAxesColumnIncreasing, Globe2, UserRound, Heart, Monitor, BrainCircuit, Code2, BookOpenCheck, Route, ChevronRight, Laptop, BriefcaseBusiness } from "lucide-react";
 import { FaQuora, FaRedditAlien } from "react-icons/fa";
@@ -40,17 +41,19 @@ const recruiterLogos = [
 const departmentPrograms = [
     {
         category: "Under-Graduate Courses",
+        mobileLabel: "UG",
         badge: "Undergraduate",
         icon: GraduationCap,
         programs: [
-            { title: "B.Tech. Computer Science Engineering", icon: Laptop, link: "/program/b-tech-computer-science-engineering" },
-            { title: "B.Tech. in CSE (Artificial Intelligence & Machine Learning)", icon: BrainCircuit, link: "/program/b-tech-cse-artificial-intelligence-machine-learning" },
             { title: "B.Tech. in CSE (Cyber Security) with L&T", icon: ShieldCheck, link: "/program/b-tech-cse-cyber-security" },
             { title: "B.Tech. in CSE (Data Science & Artificial Intelligence) with L&T", icon: Database, link: "/program/b-tech-cse-data-science-artificial-intelligence" },
+            { title: "B.Tech. Computer Science Engineering", icon: Laptop, link: "/program/b-tech-computer-science-engineering" },
+            { title: "B.Tech. in CSE (Artificial Intelligence & Machine Learning)", icon: BrainCircuit, link: "/program/b-tech-cse-artificial-intelligence-machine-learning" },
         ]
     },
     {
         category: "Post-Graduate Courses",
+        mobileLabel: "PG",
         badge: "Postgraduate",
         icon: BookOpenCheck,
         programs: [
@@ -62,6 +65,7 @@ const departmentPrograms = [
     },
     {
         category: "Integrated Programs",
+        mobileLabel: "Integrated",
         badge: "Integrated",
         icon: Code2,
         programs: [
@@ -71,10 +75,20 @@ const departmentPrograms = [
     },
     {
         category: "Lateral Entry Programs",
+        mobileLabel: "Lateral",
         badge: "Lateral entry",
         icon: Route,
         programs: [
             { title: "B.Tech. in Computer Science Engineering (Lateral Entry)", icon: Monitor, link: "/program/b-tech-computer-science-engineering-lateral-entry" },
+        ]
+    },
+    {
+        category: "Ph.D. / Doctorate",
+        mobileLabel: "Doctorate",
+        badge: "Doctoral",
+        icon: GraduationCap,
+        programs: [
+            { title: "Ph.D. (Doctor of Philosophy)", icon: GraduationCap, link: "/program/phd" },
         ]
     }
 ];
@@ -534,13 +548,24 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                 }
 
                 @media (prefers-reduced-motion: no-preference) {
-                    /* L&T / Engineering – mechanical cog-like rock */
-                    @keyframes lab-mechanical {
-                        0%   { transform: rotate(0deg) scale(1); }
-                        25%  { transform: rotate(15deg) scale(1.2); }
-                        50%  { transform: rotate(-10deg) scale(1.15); }
-                        75%  { transform: rotate(12deg) scale(1.25); }
-                        100% { transform: rotate(0deg) scale(1); }
+                    /* L&T – lift, tilt and pulse without distorting the wordmark. */
+                    @keyframes lab-lt-hover {
+                        0%, 100% {
+                            transform: translateY(0) rotate(0deg) scale(1);
+                            filter: drop-shadow(0 0 0 rgba(15,74,133,0));
+                        }
+                        30% {
+                            transform: translateY(-6px) rotate(-6deg) scale(1.1);
+                            filter: drop-shadow(0 5px 6px rgba(15,74,133,0.25));
+                        }
+                        60% {
+                            transform: translateY(-3px) rotate(5deg) scale(1.14);
+                            filter: drop-shadow(0 3px 5px rgba(33,165,219,0.3));
+                        }
+                        80% {
+                            transform: translateY(-5px) rotate(-2deg) scale(1.06);
+                            filter: drop-shadow(0 4px 5px rgba(15,74,133,0.2));
+                        }
                     }
                     /* AI & ML – smooth orbital spin + float */
                     @keyframes lab-orbital {
@@ -587,7 +612,8 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                         100% { transform: rotate(0deg) translateX(0px) scale(1); }
                     }
 
-                    .lab-icon-mechanical  { transition: transform 0.3s ease, filter 0.3s ease; }
+                    .lab-logo-lt { transform-origin: center; }
+                    .group:hover .lab-logo-lt { animation: lab-lt-hover 1.8s ease-in-out infinite; }
                     .lab-icon-orbital     { transition: transform 0.3s ease, filter 0.3s ease; }
                     .lab-icon-pulse       { transition: transform 0.3s ease, filter 0.3s ease; }
                     .lab-icon-float       { transition: transform 0.3s ease, filter 0.3s ease; }
@@ -595,7 +621,6 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                     .lab-icon-glow        { transition: transform 0.3s ease, filter 0.3s ease; }
                     .lab-icon-network     { transition: transform 0.3s ease, filter 0.3s ease; }
 
-                    .group:hover .lab-icon-mechanical { animation: lab-mechanical 1.5s ease-in-out infinite; }
                     .group:hover .lab-icon-orbital    { animation: lab-orbital    2s ease-in-out infinite; }
                     .group:hover .lab-icon-pulse      { animation: lab-pulse      1.5s ease-in-out infinite; }
                     .group:hover .lab-icon-float      { animation: lab-float      2s ease-in-out infinite; }
@@ -811,16 +836,16 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                             {/* ── Left: text ── */}
                             <div className="w-full lg:flex-1">
                                 <h2 className="text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3 text-left lg:text-left">
-                                    About the <span className="text-[#ffb703]">Department</span>
+                                    About the <span className="text-[#ffb703]">Department of CSE</span>
                                 </h2>
 
                                 <div className={`text-[#4B5A72] text-[15.5px] sm:text-[16px] leading-relaxed space-y-4 text-justify ${!rm["about"] ? "line-clamp-2 sm:line-clamp-none" : ""}`}>
-                                    <p className="text-justify">The Department of Computer Science and Engineering at SRMU was established in 2012 with the objective of providing quality education and developing skilled professionals in the field of computing and information technology.</p>
-                                    <p className="text-justify">The department offers B.Tech., M.Tech. and Ph.D. programs and provides academic exposure to core areas including computer technologies, distributed computing, information security, programming languages, computer networks, database management systems, software engineering, operating systems, compiler construction, and computer organization & architecture.</p>
-                                    <p className="text-justify">The curriculum is periodically updated to incorporate emerging areas such as Python programming, Android application development, digital image processing, cyber security, design thinking, and cloud application development.</p>
-                                    <p className="text-justify">Through industrial summer training, seminars, workshops, industrial visits, and conferences, students get opportunities to connect academic concepts with professional practices.</p>
-                                    <p className="text-justify">For students searching for computer science engineering in Lucknow, the department provides a combination of foundational computing education, emerging technology exposure, industry interaction, and research-oriented learning.</p>
+                                    <p className="text-justify">The Department of Computer Science and Engineering (CSE) at Shri Ramswaroop Memorial University (SRMU) was established in 2012 and offers B.Tech., M.Tech., Lateral, integrated, and Ph.D. programs in Computer Science and Engineering (CSE). The department focuses on programming, artificial intelligence, data science, cyber security, cloud computing, computer networks, database systems, and software engineering.</p>
+                                    <p className="text-justify">Through its industry collaboration with Larsen & Toubro (L&T) EduTech, SRMU provides students with industry-oriented learning, practical exposure, projects, training, and professional interaction. Students also gain hands-on experience through industrial visits, internships, workshops, seminars, guest lectures, conferences, and live projects.</p>
+                                    <p className="text-justify">For students looking for computer science engineering in Lucknow, SRMU's CSE department combines strong academic foundations, emerging technology exposure, industry collaboration, practical learning, and research opportunities to prepare students for careers in the technology sector.</p>
+
                                 </div>
+
 
                                 <button className="cse-read-more cse-mobile-button rm-btn sm:hidden mt-3 mx-auto flex" onClick={() => toggleRm("about")}>{rm["about"] ? "Read Less" : "Read More"}</button>
                             </div>
@@ -926,7 +951,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                     <div className="relative mx-auto w-full max-w-[1504px] lg:w-[94%]">
                         <div className="mb-6 text-center">
                             <h2 id="programs-heading" className="font-display text-[clamp(28px,2.4vw,40px)] leading-[1.2] font-bold text-[#14284E]">
-                                School of <span className="text-[#FFB703]">Computer Science Engineering</span>
+                                Department of <span className="text-[#FFB703]">Computer Science and Engineering</span>
                             </h2>
                             <div aria-hidden="true" className="mt-4 flex justify-center gap-2.5">
                                 <span className="h-[3px] w-11 bg-[#FFB703]" />
@@ -934,27 +959,29 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                             </div>
                         </div>
 
-                        <div className="grid items-start gap-7 lg:grid-cols-[minmax(260px,0.96fr)_minmax(0,3fr)] lg:gap-9">
-                            <div className="rounded-2xl border border-[#E0F1FF] bg-white/80 px-3 pt-3 pb-4 shadow-[0_4px_24px_#3479c908] lg:mt-4">
-                                <p className="mx-2.5 mb-5 text-[11px] leading-4 font-bold tracking-[0.2em] text-[#0F4A85]/70 uppercase">Choose your study level</p>
-                                <div className="flex flex-col gap-2.5" role="group" aria-label="Program categories">
+                        <div className="grid grid-cols-1 items-start gap-7 lg:grid-cols-[minmax(260px,0.96fr)_minmax(0,3fr)] lg:gap-9">
+                            <div className="min-w-0 sm:rounded-2xl sm:border sm:border-[#E0F1FF] sm:bg-white/80 sm:px-3 sm:pt-3 sm:pb-4 sm:shadow-[0_4px_24px_#3479c908] lg:mt-4">
+                                <p className="mx-2.5 mb-5 text-center sm:text-left text-[11px] leading-4 font-bold tracking-[0.2em] text-[#0F4A85]/70 uppercase">Choose your study level</p>
+                                <div className="flex w-full min-w-0 flex-row justify-between gap-1 sm:flex-col sm:gap-2.5" role="group" aria-label="Program categories">
                                     {departmentPrograms.map((cat, idx) => (
                                         <button
                                             key={cat.category}
                                             type="button"
                                             aria-pressed={activeProgramCategory === idx}
                                             aria-controls="department-program-list"
+                                            aria-label={cat.category}
                                             onClick={() => setActiveProgramCategory(idx)}
-                                            className={`relative flex w-full flex-1 cursor-pointer items-center gap-4 rounded-[14px] px-5 py-4 text-left text-[#14284E] transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0F4A85] motion-reduce:transition-none lg:gap-6 ${activeProgramCategory === idx ? "bg-[#E0F1FF] before:absolute before:inset-y-4 before:left-0 before:w-[5px] before:rounded-r-full before:bg-[#FFB703]" : "bg-transparent hover:bg-[#E0F1FF]/50"}`}
+                                            className={`relative flex min-w-0 min-h-11 cursor-pointer items-center px-1 py-2 text-center text-[#14284E] transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0F4A85] motion-reduce:transition-none sm:w-full sm:flex-1 sm:gap-4 sm:rounded-[14px] sm:px-5 sm:py-4 sm:text-left lg:gap-6 ${activeProgramCategory === idx ? "text-[#0F4A85] sm:bg-[#E0F1FF] before:absolute before:inset-x-1 before:bottom-0 before:h-[3px] before:bg-[#FFB703] sm:before:inset-x-auto sm:before:inset-y-4 sm:before:left-0 sm:before:h-auto sm:before:w-[5px] sm:before:rounded-r-full" : "bg-transparent hover:bg-[#E0F1FF]/50"}`}
                                         >
-                                            <span className={`grid size-[54px] shrink-0 place-items-center rounded-[20px] ${activeProgramCategory === idx ? "bg-white" : "bg-[#E0F1FF]"}`}>
+                                            <span className={`hidden size-[54px] shrink-0 place-items-center rounded-[20px] sm:grid ${activeProgramCategory === idx ? "bg-white" : "bg-[#E0F1FF]"}`}>
                                                 <cat.icon size={29} strokeWidth={1.9} aria-hidden="true" />
                                             </span>
-                                            <span className="min-w-0 flex-1 text-[14px] leading-[1.5] font-semibold">
-                                                <span className="block max-w-[145px]">{cat.category}</span>
-                                                <small className="mt-1 block text-[12px] font-medium text-[#0F4A85]/70">{cat.programs.length} {cat.programs.length === 1 ? "program" : "programs"}</small>
+                                            <span className="min-w-0 flex-1 text-[12px] leading-[1.5] font-semibold min-[375px]:text-[14px] sm:text-left">
+                                                <span className="whitespace-nowrap sm:hidden">{cat.mobileLabel}</span>
+                                                <span className="hidden sm:block sm:max-w-[145px]">{cat.category}</span>
+                                                <small className="mt-1 hidden text-[12px] font-medium text-[#0F4A85]/70 sm:block">{cat.programs.length} {cat.programs.length === 1 ? "program" : "programs"}</small>
                                             </span>
-                                            <ChevronRight size={18} className="shrink-0 text-[#0F4A85]/70" aria-hidden="true" />
+                                            <ChevronRight size={18} className="hidden shrink-0 text-[#0F4A85]/70 sm:block" aria-hidden="true" />
                                         </button>
                                     ))}
                                 </div>
@@ -1065,8 +1092,8 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                         title: "L&T Certified Lab",
                                         desc: "An industry-oriented learning environment that supports practical exposure to technologies and skills aligned with contemporary engineering and professional requirements.",
                                         accent: "#d62c2b",
-                                        iconSrc: "/assets/images/new-information-system/icons/1.png",
-                                        animClass: "lab-icon-mechanical",
+                                        iconSrc: LtEdutechLogo,
+                                        animClass: "lab-logo-lt",
                                     },
                                     {
                                         num: "02",
@@ -1125,7 +1152,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                         <div className="absolute top-0 left-0 right-0 h-[4px] rounded-t-2xl" style={{ backgroundColor: lab.accent }} />
 
                                         {/* Top row: number+label left, icon right */}
-                                        <div className="flex items-start justify-between mb-4">
+                                        <div className="flex items-start justify-between gap-3 mb-4">
                                             <div className="flex flex-col">
                                                 <span
                                                     className="block text-[22px] font-bold leading-none mb-3"
@@ -1137,8 +1164,8 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                             </div>
                                             <img
                                                 src={lab.iconSrc}
-                                                alt=""
-                                                className={`w-10 h-10 object-contain shrink-0 opacity-90 group-hover:opacity-100 ${lab.animClass}`}
+                                                alt={lab.num === "01" ? "L&T Edutech" : ""}
+                                                className={`${lab.num === "01" ? "w-28 max-w-[50%] h-10" : "w-10 h-10"} object-contain shrink-0 opacity-90 group-hover:opacity-100 ${lab.animClass}`}
                                             />
                                         </div>
 
@@ -2245,9 +2272,11 @@ const DepartmentFooter = () => {
                             <a href="#" target="_blank" rel="noreferrer" className="cse-mobile-button font-bold uppercase tracking-wide w-9 h-9 rounded-full border border-gray-400 flex items-center justify-center hover:border-[#ffb703] hover:text-[#ffb703] transition-colors"><FaRedditAlien className="w-[18px] h-[18px]" /></a>
                         </div>
                         <div className="mt-8">
-                            <h3 className="text-[#ffb703] font-bold text-[14px] uppercase mb-6 tracking-wide">Merch Shop</h3>
-                            <p className="text-[13px] text-gray-300 mb-4 leading-relaxed">To Shop SRMU Merchandise Scan the Code</p>
-                            <img src={MerchandiseScanImg} alt="Merchandise Scan" className="h-[60px] w-auto shadow-md" />
+                            <div className="flex items-center gap-4 mb-2">
+                                <h3 className="text-[#ffb703] font-bold text-[15px] uppercase tracking-wide">Merch Shop</h3>
+                                <img src={MerchandiseScanImg} alt="Merchandise Scan" className="h-[60px] sm:h-[64px] w-auto shadow-sm bg-white" />
+                            </div>
+                            <p className="text-[13px] text-gray-200 leading-snug">To Shop SRMU Merchandise<br />Scan the Code</p>
                         </div>
                     </div>
                 </div>
