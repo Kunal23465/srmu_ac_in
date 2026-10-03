@@ -662,7 +662,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                             ))}
                         </div>
 
-                        {/* CTA buttons */}
+                        {/* CTA buttons changes*/}
                         <div className="hidden gap-3">
                             <a
                                 href="https://students.srmu.ac.in/login"
