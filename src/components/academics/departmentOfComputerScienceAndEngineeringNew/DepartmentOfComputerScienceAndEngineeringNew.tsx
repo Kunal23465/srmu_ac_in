@@ -8,18 +8,18 @@ import logosrmcem from "../../../assets/images/University-Logo-White.png";
 import AdditionInScholarImg from "../../../assets/images/addition-in-scholar.png";
 import MerchandiseScanImg from "../../../assets/images/merchandise-scan.jpeg";
 import LtEdutechLogo from "../../../assets/new-home/l-t.webp";
-import PlacementLogoTCS from "../../../assets/new-home/new-placement-logos/tcs.png";
-import PlacementLogoInfosys from "../../../assets/new-home/new-placement-logos/infosys.png";
-import PlacementLogoWipro from "../../../assets/new-home/new-placement-logos/wipro.png";
-import PlacementLogoLT from "../../../assets/new-home/new-placement-logos/l&t.png";
-import PlacementLogoHCL from "../../../assets/new-home/new-placement-logos/hcl.png";
-import PlacementLogoAccenture from "../../../assets/new-home/new-placement-logos/accenture.png";
-import PlacementLogoCapgemini from "../../../assets/new-home/new-placement-logos/capgemini.png";
-import PlacementLogoTechMahindra from "../../../assets/new-home/new-placement-logos/techmahindra.png";
-import PlacementLogoIBM from "../../../assets/new-home/new-placement-logos/ibm.png";
-import PlacementLogoCognizant from "../../../assets/new-home/new-placement-logos/cognizant.png";
-import PlacementLogoDeloitte from "../../../assets/new-home/new-placement-logos/delloite.png";
-import PlacementLogoEY from "../../../assets/new-home/new-placement-logos/EY.png";
+import PlacementLogoLT from "../../../assets/new-home/new-placement-logos/1.png";
+import PlacementLogoHCL from "../../../assets/new-home/new-placement-logos/2.png";
+import PlacementLogoAccenture from "../../../assets/new-home/new-placement-logos/3.png";
+import PlacementLogoCapgemini from "../../../assets/new-home/new-placement-logos/4.png";
+import PlacementLogoCognizant from "../../../assets/new-home/new-placement-logos/5.png";
+import PlacementLogoIBM from "../../../assets/new-home/new-placement-logos/6.png";
+import PlacementLogoTechMahindra from "../../../assets/new-home/new-placement-logos/7.png";
+import PlacementLogoDeloitte from "../../../assets/new-home/new-placement-logos/8.png";
+import PlacementLogoTCS from "../../../assets/new-home/new-placement-logos/9.png";
+import PlacementLogoEY from "../../../assets/new-home/new-placement-logos/10.png";
+import PlacementLogoWipro from "../../../assets/new-home/new-placement-logos/11.png";
+import PlacementLogoInfosys from "../../../assets/new-home/new-placement-logos/12.png";
 import TechCollabImg from "../../../assets/images/new-information-system/Tech-Collaboration_-L-T-EduTech-SRMU.png";
 import { Download, ChevronDown, ChevronUp, Search, Mail, Phone, ArrowLeft, ArrowRight, X, ShieldCheck, GraduationCap, Settings, Database, Lightbulb, Share2, MapPin, Facebook, Instagram, Linkedin, Youtube, Twitter, BadgeCheck, UsersRound, Accessibility, Medal, ChartNoAxesColumnIncreasing, Globe2, UserRound, Heart, Monitor, BrainCircuit, Code2, BookOpenCheck, Route, ChevronRight, Laptop, BriefcaseBusiness } from "lucide-react";
 import { FaQuora, FaRedditAlien } from "react-icons/fa";
@@ -1383,8 +1383,8 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                     {[0, 1].map(copy => (
                                         <div key={copy} className={`flex shrink-0 items-center gap-3 pr-3 ${copy === 1 ? "cse-recruiter-copy" : ""}`} aria-hidden={copy === 1 ? true : undefined}>
                                             {recruiterLogos.map(([src, name]) => (
-                                                <div key={name} className="h-[60px] w-[110px] sm:h-[96px] sm:w-[220px] shrink-0 bg-white rounded-md px-3 sm:px-5 py-2 sm:py-4 flex items-center justify-center">
-                                                    <img src={src} alt={copy === 0 ? name : ""} className="h-8 sm:h-12 max-w-full w-auto object-contain" />
+                                                <div key={name} className="h-[60px] w-[110px] sm:h-[88px] sm:w-[200px] shrink-0 bg-white rounded-md px-2 sm:px-4 py-2 sm:py-3 flex items-center justify-center">
+                                                    <img src={src} alt={copy === 0 ? name : ""} className="h-7 sm:h-11 max-w-full w-auto object-contain" />
                                                 </div>
                                             ))}
                                         </div>
