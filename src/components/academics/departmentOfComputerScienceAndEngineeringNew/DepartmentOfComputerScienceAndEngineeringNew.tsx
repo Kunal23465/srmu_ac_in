@@ -949,14 +949,19 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                         <div className="size-23 rounded-full bg-[#FFB703]" />
                     </div>
                     <div className="relative mx-auto w-full max-w-[1504px] lg:w-[94%]">
-                        <div className="mb-6 text-center">
-                            <h2 id="programs-heading" className="font-display text-[clamp(28px,2.4vw,40px)] leading-[1.2] font-bold text-[#14284E]">
-                                Department of <span className="text-[#FFB703]">Computer Science and Engineering</span>
-                            </h2>
-                            <div aria-hidden="true" className="mt-4 flex justify-center gap-2.5">
+                        <div className="mb-6">
+                            <div className="flex items-center gap-3 flex-wrap">
+                                <h2 id="programs-heading" className="font-display text-[clamp(28px,2.4vw,40px)] leading-[1.2] font-bold text-[#14284E]">
+                                    Explore<span className="text-[#FFB703]"> Programs</span>
+                                </h2>
+                                <span className="inline-flex items-center px-3 py-1 rounded-full bg-[#d62c2b] text-white text-[11px] sm:text-[12px] font-bold tracking-wide whitespace-nowrap shadow-sm">
+                                    Admission Open 2026
+                                </span>
+                            </div>
+                            {/* <div aria-hidden="true" className="mt-4 flex justify-start gap-2.5">
                                 <span className="h-[3px] w-11 bg-[#FFB703]" />
                                 <span className="h-[3px] w-5 bg-[#0F4A85]" />
-                            </div>
+                            </div> */}
                         </div>
 
                         <div className="grid grid-cols-1 items-start gap-7 lg:grid-cols-[minmax(260px,0.96fr)_minmax(0,3fr)] lg:gap-9">
@@ -1054,12 +1059,9 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                 <h2 className="text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3">
                                     Labs &amp; <span className="text-[#ffb703]">Practical Learning</span>
                                 </h2>
-                                <p className={`text-[15.5px] text-[#4B5A72] leading-relaxed text-justify ${!rm["labs"] ? "line-clamp-2 sm:line-clamp-none" : ""}`}>
+                                <p className="hidden sm:block text-[15.5px] text-[#4B5A72] leading-relaxed text-justify">
                                     The Department of Computer Science and Engineering at Shri Ramswaroop Memorial University provides students with practical learning environments designed to complement classroom teaching. Through programming, computing, networking, artificial intelligence, cloud technologies and industry-oriented laboratories, students get opportunities to apply concepts, develop projects and strengthen their technical skills.
                                 </p>
-                                <button className="cse-read-more cse-mobile-button text-[14px] font-bold text-[#ffb703] mt-3 flex items-center justify-start sm:hidden transition-colors hover:text-[#ffb703]" onClick={() => toggleRm("labs")}>
-                                    {rm["labs"] ? "Read Less" : "Read More"}
-                                </button>
                             </div>
 
                             {/* Navigation Buttons */}
@@ -1725,7 +1727,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
 
                                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-2.5 gap-x-4 relative z-10 h-full content-start">
                                         {scholarshipItems.map((item, idx) => (
-                                            <div key={idx} className={`flex items-center gap-3 bg-white p-2 px-3 sm:px-4 rounded-full shadow-[0_1px_8px_rgba(20,40,78,0.03)] hover:shadow-[0_4px_12px_rgba(20,40,78,0.08)] hover:-translate-y-0.5 transition-all duration-300 group cursor-default border border-[#F0F4F8] ${!showAllScholarships && idx >= 4 ? "hidden sm:flex" : ""}`}>
+                                            <Link key={idx} to="/scholarship-scheme" className={`flex items-center gap-3 bg-white p-2 px-3 sm:px-4 rounded-full shadow-[0_1px_8px_rgba(20,40,78,0.03)] hover:shadow-[0_4px_12px_rgba(20,40,78,0.08)] hover:-translate-y-0.5 transition-all duration-300 group cursor-pointer border border-[#F0F4F8] ${!showAllScholarships && idx >= 4 ? "hidden sm:flex" : ""}`}>
                                                 <div className="w-7 h-7 rounded-full bg-[#FCE8E8] flex items-center justify-center shrink-0 group-hover:bg-[#d62c2b] group-hover:shadow-[0_4px_8px_rgba(214,44,43,0.3)] transition-all duration-300">
                                                     <item.icon className="w-3.5 h-3.5 text-[#d62c2b] group-hover:text-white transition-colors duration-300" strokeWidth={2.5} />
                                                 </div>
@@ -1733,7 +1735,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                                 <span className="text-[#14284E] text-[12px] sm:text-[13px] font-bold leading-snug sm:leading-[1.2] min-w-0 flex-1">
                                                     {item.text}
                                                 </span>
-                                            </div>
+                                            </Link>
                                         ))}
                                     </div>
                                     {scholarshipItems.length > 4 && (
