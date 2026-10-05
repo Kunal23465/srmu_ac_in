@@ -962,7 +962,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                         <div className="grid grid-cols-1 items-start gap-7 lg:grid-cols-[minmax(260px,0.96fr)_minmax(0,3fr)] lg:gap-9">
                             <div className="min-w-0 sm:rounded-2xl sm:border sm:border-[#E0F1FF] sm:bg-white/80 sm:px-3 sm:pt-3 sm:pb-4 sm:shadow-[0_4px_24px_#3479c908] lg:mt-4">
                                 <p className="mx-2.5 mb-5 text-center sm:text-left text-[11px] leading-4 font-bold tracking-[0.2em] text-[#0F4A85]/70 uppercase">Choose your study level</p>
-                                <div className="flex w-full min-w-0 flex-row justify-between gap-1 sm:flex-col sm:gap-2.5" role="group" aria-label="Program categories">
+                                <div className="grid w-full min-w-0 grid-cols-[0.6fr_0.6fr_1.4fr_1fr_1.4fr] gap-1 max-sm:-mx-4 max-sm:w-[calc(100%+2rem)] max-sm:bg-[#E0F1FF] max-sm:px-6 max-sm:py-2 sm:flex sm:flex-col sm:justify-between sm:gap-2.5" role="group" aria-label="Program categories">
                                     {departmentPrograms.map((cat, idx) => (
                                         <button
                                             key={cat.category}
@@ -971,13 +971,13 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                             aria-controls="department-program-list"
                                             aria-label={cat.category}
                                             onClick={() => setActiveProgramCategory(idx)}
-                                            className={`relative flex min-w-0 min-h-11 cursor-pointer items-center px-1 py-2 text-center text-[#14284E] transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0F4A85] motion-reduce:transition-none sm:w-full sm:flex-1 sm:gap-4 sm:rounded-[14px] sm:px-5 sm:py-4 sm:text-left lg:gap-6 ${activeProgramCategory === idx ? "text-[#0F4A85] sm:bg-[#E0F1FF] before:absolute before:inset-x-1 before:bottom-0 before:h-[3px] before:bg-[#FFB703] sm:before:inset-x-auto sm:before:inset-y-4 sm:before:left-0 sm:before:h-auto sm:before:w-[5px] sm:before:rounded-r-full" : "bg-transparent hover:bg-[#E0F1FF]/50"}`}
+                                            className={`relative flex min-w-0 min-h-11 cursor-pointer items-center px-1 py-2 text-center text-[#14284E] max-sm:text-[#14284E] transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0F4A85] motion-reduce:transition-none sm:w-full sm:flex-1 sm:gap-4 sm:rounded-[14px] sm:px-5 sm:py-4 sm:text-left lg:gap-6 ${activeProgramCategory === idx ? "text-[#0F4A85] sm:bg-[#E0F1FF] before:absolute before:inset-x-1 before:bottom-0 before:h-[3px] before:bg-[#FFB703] sm:before:inset-x-auto sm:before:inset-y-4 sm:before:left-0 sm:before:h-auto sm:before:w-[5px] sm:before:rounded-r-full" : "bg-transparent hover:bg-[#E0F1FF]/50"}`}
                                         >
                                             <span className={`hidden size-[54px] shrink-0 place-items-center rounded-[20px] sm:grid ${activeProgramCategory === idx ? "bg-white" : "bg-[#E0F1FF]"}`}>
                                                 <cat.icon size={29} strokeWidth={1.9} aria-hidden="true" />
                                             </span>
                                             <span className="min-w-0 flex-1 text-[12px] leading-[1.5] font-semibold min-[375px]:text-[14px] sm:text-left">
-                                                <span className="whitespace-nowrap sm:hidden">{cat.mobileLabel}</span>
+                                                <span className="whitespace-nowrap text-[11px] min-[375px]:text-[12px] min-[420px]:text-[13px] sm:hidden">{cat.mobileLabel}</span>
                                                 <span className="hidden sm:block sm:max-w-[145px]">{cat.category}</span>
                                                 <small className="mt-1 hidden text-[12px] font-medium text-[#0F4A85]/70 sm:block">{cat.programs.length} {cat.programs.length === 1 ? "program" : "programs"}</small>
                                             </span>
