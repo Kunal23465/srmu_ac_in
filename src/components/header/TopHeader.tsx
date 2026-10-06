@@ -3,6 +3,7 @@ import { IoCallSharp } from "react-icons/io5";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import whatsapp from "../../assets/images/whatsapp-icon.png";
+import srmuSetLogo from "../../assets/images/SRMU-SET-Logo.png";
 
 const TopHeader: React.FC = () => {
   const [isDesktop, setIsDesktop] = useState(false);
@@ -151,9 +152,9 @@ const TopHeader: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 to="https://students.srmu.ac.in/login"
-                className=" px-3 py-1 flex items-center justify-center"
+                className="px-3 py-1 flex items-center justify-center"
               >
-                <img src="/settt-img.png" alt="SRMUSET Logo" className="h-[28px] w-auto" />
+                <img src={srmuSetLogo} alt="SRMUSET Logo" className="h-[28px] w-auto object-contain" />
               </Link>
               {/* <Link
                 target="_blank"
