@@ -1062,16 +1062,16 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                 </section>
 
                 {/* ── Labs & Practical Learning ─────────────────────────────── */}
-                <section id="labs" className="py-8 md:pt-6 md:pb-12 px-4 sm:px-6 bg-white scroll-mt-24">
+                <section id="labs" className="py-8 md:pt-6 md:pb-12 px-4 sm:px-6 bg-[#14284E] scroll-mt-24">
                     <div className={`${Classes["container"]} cse-content-container`}>
 
                         {/* Header & Controls */}
                         <div className="w-full mb-8 md:mb-10 flex flex-col gap-4">
                             <div className="w-full">
-                                <h2 className="text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3">
+                                <h2 className="text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display text-white mb-3">
                                     Labs &amp; <span className="text-[#ffb703]">Practical Learning</span>
                                 </h2>
-                                <p className="hidden sm:block text-[15.5px] text-[#4B5A72] leading-relaxed text-justify">
+                                <p className="hidden sm:block text-[15.5px] text-white/90 leading-relaxed text-justify">
                                     The Department of Computer Science and Engineering at Shri Ramswaroop Memorial University provides students with practical learning environments designed to complement classroom teaching. Through programming, computing, networking, artificial intelligence, cloud technologies and industry-oriented laboratories, students get opportunities to apply concepts, develop projects and strengthen their technical skills.
                                 </p>
                             </div>
@@ -1081,7 +1081,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                 <button
                                     onClick={() => labsEmblaApi?.scrollPrev()}
                                     disabled={!labsCanPrev}
-                                    className="cse-mobile-button w-10 h-10 flex items-center justify-center rounded-full bg-white border border-[#DCE6F2] shadow-sm text-[#14284E] hover:bg-[#14284E] hover:text-white transition-all disabled:opacity-30 disabled:cursor-not-allowed"
+                                    className="cse-mobile-button w-10 h-10 flex items-center justify-center rounded-full bg-white border border-[#DCE6F2] shadow-sm text-[#14284E] hover:bg-[#ffb703] transition-all disabled:opacity-30 disabled:cursor-not-allowed"
                                     aria-label="Previous Lab"
                                 >
                                     <ArrowLeft className="w-4 h-4" />
@@ -1089,7 +1089,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                 <button
                                     onClick={() => labsEmblaApi?.scrollNext()}
                                     disabled={!labsCanNext}
-                                    className="cse-mobile-button w-10 h-10 flex items-center justify-center rounded-full bg-white border border-[#DCE6F2] shadow-sm text-[#14284E] hover:bg-[#14284E] hover:text-white transition-all disabled:opacity-30 disabled:cursor-not-allowed"
+                                    className="cse-mobile-button w-10 h-10 flex items-center justify-center rounded-full bg-white border border-[#DCE6F2] shadow-sm text-[#14284E] hover:bg-[#ffb703] transition-all disabled:opacity-30 disabled:cursor-not-allowed"
                                     aria-label="Next Lab"
                                 >
                                     <ArrowRight className="w-4 h-4" />

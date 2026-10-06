@@ -92,6 +92,7 @@ const OutreachActivationsPage = lazyPage(() => import("../pages/campus-life/outr
 const ClubsPage = lazyPage(() => import("../pages/campus-life/clubs/ClubsPage"));
 const GrievanceRedressalSystemPage = lazyPage(() => import("../pages/campus-life/grievance-redressal-system/GrievanceRedressalSystemPage"));
 const EventPage = lazyPage(() => import("../pages/campus-life/events/EventPage"));
+const NewEventPage = lazyPage(() => import("../pages/event-new/new"));
 const ResearchOverviewPage = lazyPage(() => import("../pages/Research/Overview/ResearchOverviewPage"));
 const ProcessAndInitiativePage = lazyPage(() => import("../pages/Research/Process-and-Initiative/ProcessAndInitiativePage"));
 const PhdNotificationSessionPage = lazyPage(() => import("../pages/Research/Phd-notification-session/PhdNotificationSessionPage"));
@@ -155,6 +156,10 @@ export const routes = [
     path: "/",
     element: <RootLayout />,
     children: [
+      {
+        path: "event-new",
+        element: <NewEventPage />,
+      },
       {
         index: true,
         element: <HomePage />,
