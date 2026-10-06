@@ -1061,7 +1061,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                     </div>
                 </section>
 
-                {/* ── Labs & Practical Learning ─────────────────────────────── */}
+                {/* ── Labs & Practical Learning fixing the not shown problem ─────────────────────────────── */}
                 <section id="labs" className="py-8 md:pt-6 md:pb-12 px-4 sm:px-6 bg-[#14284E] scroll-mt-24">
                     <div className={`${Classes["container"]} cse-content-container`}>
 
