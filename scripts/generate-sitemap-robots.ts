@@ -41,19 +41,18 @@ async function main() {
   // robots.txt now points to new-sitemap.xml
   await fs.writeFile(path.join(publicDir, "robots.txt"), robotsTxt, "utf8");
 
-  // new-sitemap.xml → the generated sitemap index (with today's date)
+  // new-sitemap.xml and sitemap.xml → the generated sitemap index (with today's date)
   await fs.writeFile(path.join(publicDir, "new-sitemap.xml"), sitemapIndexXml, "utf8");
+  await fs.writeFile(path.join(publicDir, "sitemap.xml"), sitemapIndexXml, "utf8");
   await updateLastmod("new-sitemap.xml");
+  await updateLastmod("sitemap.xml");
 
-  // all-sitemap.xml & blog-sitemap.xml as before
+  // all-sitemap.xml & blog-sitemap.xml as before (every <url> now has <lastmod>)
   await fs.writeFile(path.join(publicDir, "all-sitemap.xml"), allSitemapXml, "utf8");
   await fs.writeFile(path.join(publicDir, "blog-sitemap.xml"), blogSitemapXml, "utf8");
 
-  // Keep sitemap.xml's lastmod fresh (today's date) for any crawlers still hitting it
-  await updateLastmod("sitemap.xml");
-
   console.log(
-    "Generated: robots.txt (→ new-sitemap.xml), new-sitemap.xml, all-sitemap.xml, blog-sitemap.xml | Updated: new-sitemap.xml & sitemap.xml lastmod"
+    "Generated: robots.txt (→ new-sitemap.xml), new-sitemap.xml, sitemap.xml, all-sitemap.xml, blog-sitemap.xml (all URLs with lastmod)"
   );
 }
 

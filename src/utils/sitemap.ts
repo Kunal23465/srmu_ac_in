@@ -308,11 +308,12 @@ const buildStaticEntries = () => {
 
 const renderUrlsetXml = (siteUrl: string, entries: Map<string, string | undefined>) => {
   const normalizedSiteUrl = siteUrl.replace(/\/+$/, "");
+  const defaultLastmod = new Date().toISOString().slice(0, 10);
   const urls = [...entries.entries()]
     .map(([path, lastmod]) => {
       const loc = `${normalizedSiteUrl}${normalizePath(path)}`;
-      const lastmodTag = lastmod ? `<lastmod>${escapeXml(lastmod)}</lastmod>` : "";
-      return `  <url><loc>${escapeXml(loc)}</loc>${lastmodTag}</url>`;
+      const formattedLastmod = lastmod || defaultLastmod;
+      return `  <url><loc>${escapeXml(loc)}</loc><lastmod>${escapeXml(formattedLastmod)}</lastmod></url>`;
     })
     .join("\n");
 
