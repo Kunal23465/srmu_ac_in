@@ -97,6 +97,7 @@ const ClubsPage = lazyPage(() => import("../pages/campus-life/clubs/ClubsPage"))
 const GrievanceRedressalSystemPage = lazyPage(() => import("../pages/campus-life/grievance-redressal-system/GrievanceRedressalSystemPage"));
 const EventPage = lazyPage(() => import("../pages/campus-life/events/EventPage"));
 const NewEventPage = lazyPage(() => import("../pages/event-new/new"));
+const NewProgramFinderPage = lazyPage(() => import("../pages/program-finder-new/new"));
 const ResearchOverviewPage = lazyPage(() => import("../pages/Research/Overview/ResearchOverviewPage"));
 const ProcessAndInitiativePage = lazyPage(() => import("../pages/Research/Process-and-Initiative/ProcessAndInitiativePage"));
 const PhdNotificationSessionPage = lazyPage(() => import("../pages/Research/Phd-notification-session/PhdNotificationSessionPage"));
@@ -160,30 +161,12 @@ export const routes = [
     path: "/",
     element: <RootLayout />,
     children: [
-      {
-        path: "event-new",
-        element: <NewEventPage />,
-      },
+     
       {
         index: true,
         element: <HomePage />,
       },
-      {
-        path: "b-tech-cse-cyber-security-new",
-        element: <BTechCseCyberSecurityNew />,
-      },
-      {
-        path: "b-tech-cse-data-science-new",
-        element: <BTechCseDataScienceNew />,
-      },
-      {
-        path: "b-tech-mechanical-engineering-new",
-        element: <BTechMechanicalEngineeringNew />,
-      },
-      {
-        path: "b-tech-ece-semiconductor-design-new",
-        element: <BTechEceSemiconductorDesignNew />,
-      },
+   
 
       {
         path: "insider",
@@ -1059,11 +1042,40 @@ export const routes = [
 
       },
 
+      //new pages
+
       {
         path: "/department-of-computer-science-and-engineering-new",
         element: <DepartmentOfComputerScienceAndEngineeringNewPage />,
 
       },
+
+      {
+        path: "program-finder-new",
+        element: <NewProgramFinderPage />,
+      },
+      {
+        path: "event-new",
+        element: <NewEventPage />,
+      },
+      {
+        path: "b-tech-cse-cyber-security-new",
+        element: <BTechCseCyberSecurityNew />,
+      },
+      {
+        path: "b-tech-cse-data-science-new",
+        element: <BTechCseDataScienceNew />,
+      },
+      {
+        path: "b-tech-mechanical-engineering-new",
+        element: <BTechMechanicalEngineeringNew />,
+      },
+      {
+        path: "b-tech-ece-semiconductor-design-new",
+        element: <BTechEceSemiconductorDesignNew />,
+      },
+
+      //------------------------------------------------------
 
       {
         path: "/faculty-of-commerce-and-economics",
