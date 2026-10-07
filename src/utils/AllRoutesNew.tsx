@@ -1,5 +1,5 @@
 import RootLayout from "../pages/RootLayout";
-import { Navigate, matchRoutes, useRoutes } from "react-router-dom";
+import { Navigate, matchRoutes, useParams, useRoutes } from "react-router-dom";
 import { lazyPage } from "./lazyRoute";
 import NewHomePage from "../pages/NewHomePage";
 import { resolveProgramRouteSlug } from "./legacyProgramRoutes";
@@ -15,6 +15,10 @@ const HomePage = lazyPage(() => import("../pages/Home/HomePage"));
 const PageNotFound = lazyPage(() => import("../pages/PageNotFound"));
 const LegacyEventDetailsPage = lazyPage(() => import("./legacyRouteResolvers").then((mod) => ({ default: mod.LegacyEventDetailsPage })));
 const LegacyCommitteeDetailsPage = lazyPage(() => import("./legacyRouteResolvers").then((mod) => ({ default: mod.LegacyCommitteeDetailsPage })));
+const LegacyCommitteeRedirect = () => {
+  const { slug } = useParams();
+  return <Navigate to={`/committee/${slug || ""}`} replace />;
+};
 const RoutedEventDetailsPage = lazyPage(() => import("./legacyRouteResolvers").then((mod) => ({ default: mod.RoutedEventDetailsPage })));
 const RoutedConvocationDetailsPage = lazyPage(() => import("./legacyRouteResolvers").then((mod) => ({ default: mod.RoutedConvocationDetailsPage })));
 const CareerFormPage = lazyPage(() => import("../pages/Home/CareerFormPage"));
@@ -290,9 +294,9 @@ export const routes = [
       { path: "/ba-llb-hons", element: <DirectProgramDetailsPage /> },
       { path: "/bba-llb-hons", element: <DirectProgramDetailsPage /> },
       { path: "/bpharm-bachelor-of-pharmacy", element: <DirectProgramDetailsPage /> },
+      { path: "/b-pharma-bachelor-of-pharmacy", element: <Navigate to="/program/bpharm-bachelor-of-pharmacy" replace /> },
       { path: "/d-pharm-diploma-in-pharmacy", element: <DirectProgramDetailsPage /> },
-      { path: "/b-pharma-bachelor-of-pharmacy", element: <DirectProgramDetailsPage /> },
-      { path: "/d-pharma-diploma-in-pharmacy", element: <DirectProgramDetailsPage /> },
+      { path: "/d-pharma-diploma-in-pharmacy", element: <Navigate to="/program/d-pharm-diploma-in-pharmacy" replace /> },
       { path: "/bachelor-of-anaesthesia-and-operation-theatre-technology-b-aott", element: <DirectProgramDetailsPage /> },
       { path: "/bachelor-of-medical-laboratory-sciences-bmls", element: <DirectProgramDetailsPage /> },
       { path: "/bachelor-of-medical-radiology-imaging-technology-bmrit", element: <DirectProgramDetailsPage /> },
@@ -328,7 +332,8 @@ export const routes = [
       { path: "/m-tech-structural-engineering", element: <DirectProgramDetailsPage /> },
       { path: "/m-tech-environmental-engineering-part-time", element: <DirectProgramDetailsPage /> },
       { path: "/m-tech-structural-engineering-part-time", element: <DirectProgramDetailsPage /> },
-      { path: "/m-com1", element: <DirectProgramDetailsPage /> },
+      { path: "/m-com", element: <DirectProgramDetailsPage /> },
+      { path: "/m-com1", element: <Navigate to="/program/m-com" replace /> },
       { path: "/m-sc-economics", element: <DirectProgramDetailsPage /> },
       { path: "/m-a-journalism-mass-communication", element: <DirectProgramDetailsPage /> },
       { path: "/llb", element: <DirectProgramDetailsPage /> },
@@ -358,6 +363,18 @@ export const routes = [
       },
 
       {
+        path: "/program/b-pharma-bachelor-of-pharmacy",
+        element: <Navigate to="/program/bpharm-bachelor-of-pharmacy" replace />,
+      },
+      {
+        path: "/program/d-pharma-diploma-in-pharmacy",
+        element: <Navigate to="/program/d-pharm-diploma-in-pharmacy" replace />,
+      },
+      {
+        path: "/program/m-com1",
+        element: <Navigate to="/program/m-com" replace />,
+      },
+      {
         path: "/program/:programName",
         element: <ProgramDetailsPage />,
       },
@@ -375,12 +392,20 @@ export const routes = [
         // })),
       },
       {
-        path: "/committe",
+        path: "/committee",
         element: <CommittePage />,
       },
       {
-        path: "/committe/:slug",
+        path: "/committee/:slug",
         element: <LegacyCommitteeDetailsPage />,
+      },
+      {
+        path: "/committe",
+        element: <Navigate to="/committee" replace />,
+      },
+      {
+        path: "/committe/:slug",
+        element: <LegacyCommitteeRedirect />,
       },
       {
         path: "/recognition-approvals",
@@ -930,7 +955,7 @@ export const routes = [
       },
 
       {
-        path: "/institute-of-pharmaceutical-sciences1",
+        path: "/institute-of-pharmaceutical-sciences",
         element: <InstituteofPharmaceuticalSciencesPage />,
 
       },
@@ -942,7 +967,7 @@ export const routes = [
       },
 
       {
-        path: "/institute-of-legal-studies1",
+        path: "/institute-of-legal-studies",
         element: <InstituteofLegalStudiesPage />,
 
       },
@@ -960,7 +985,7 @@ export const routes = [
       },
 
       {
-        path: "/srmu-polytechnic1",
+        path: "/srmu-polytechnic",
         element: <SRMUPolytechnicPage />,
 
       },
@@ -1056,12 +1081,20 @@ export const routes = [
 
       },
       {
-        path: "/institute-of-pharmaceutical-sciences",
-        element: <Navigate to="/institute-of-pharmaceutical-sciences1" replace />,
+        path: "/institute-of-pharmaceutical-sciences1",
+        element: <Navigate to="/institute-of-pharmaceutical-sciences" replace />,
       },
       {
-        path: "/institute-of-legal-studies",
-        element: <Navigate to="/institute-of-legal-studies1" replace />,
+        path: "/institute-of-legal-studies1",
+        element: <Navigate to="/institute-of-legal-studies" replace />,
+      },
+      {
+        path: "/srmu-polytechnic1",
+        element: <Navigate to="/srmu-polytechnic" replace />,
+      },
+      {
+        path: "/conference/icmtce-20191",
+        element: <Navigate to="/conference/icmtce-2019" replace />,
       },
       {
         path: "/institutef-of-biotechnology",

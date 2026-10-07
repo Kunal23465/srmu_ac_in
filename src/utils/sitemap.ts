@@ -84,12 +84,12 @@ const LEGACY_STATIC_PATHS = [
   "/institute-of-management-commerce-and-economics",
   "/institute-of-media-studies",
   "/institute-of-natural-sciences-and-humanities",
-  "/institute-of-pharmaceutical-sciences1",
+  "/institute-of-pharmaceutical-sciences",
   "/institute-of-agricultural-sciences-and-technology",
-  "/institute-of-legal-studies1",
+  "/institute-of-legal-studies",
   "/institute-of-pharmacy",
   "/institute-of-education-and-research",
-  "/srmu-polytechnic1",
+  "/srmu-polytechnic",
   "/faculty-of-civil-engineering",
   "/department-of-electrical-and-electronics-engineering",
   "/faculty-of-mechanical-engineering",
@@ -104,7 +104,8 @@ const LEGACY_STATIC_PATHS = [
   "/faculty-of-management",
   "/faculty-of-chemical-sciences",
   "/admission-enquiry",
-  "/insider"
+  "/insider",
+  "/committee"
 ];
 
 const LEGACY_EVENT_SLUGS = [
@@ -140,7 +141,7 @@ const LEGACY_EVENT_SLUGS = [
 const LEGACY_CONFERENCE_SLUGS = [
   "first-international-literary-conference",
   "icansvme-24",
-  "icmtce-20191",
+  "icmtce-2019",
   "icon-cute-2019",
   "kitaab",
   "natconbio-2019",
@@ -174,6 +175,14 @@ const SITEMAP_EXCLUDED_PATHS = new Set([
   "/program/executive-program-in-management",
   "/program/bsc-mathematics-with-data-science",
   "/news/holi-celebration",
+  "/program/b-pharma-bachelor-of-pharmacy",
+  "/program/d-pharma-diploma-in-pharmacy",
+  "/program/m-com1",
+  "/committe",
+  "/institute-of-pharmaceutical-sciences1",
+  "/institute-of-legal-studies1",
+  "/srmu-polytechnic1",
+  "/conference/icmtce-20191",
 ]);
 
 type CachedSitemap = {
@@ -294,9 +303,10 @@ const buildStaticEntries = () => {
   }
 
   for (const slug of LEGACY_COMMITTEE_SLUGS) {
-    paths.set(`/committe/${slug}`, undefined);
+    paths.set(`/committee/${slug}`, undefined);
   }
 
+  paths.set("/committee", undefined);
   paths.set("/convocation/convocation-2021", undefined);
 
   for (const slug of LEGACY_PROGRAM_SITEMAP_ONLY_SLUGS) {

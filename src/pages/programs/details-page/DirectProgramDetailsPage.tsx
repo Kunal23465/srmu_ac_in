@@ -1,5 +1,5 @@
 import { Navigate, useLocation } from "react-router-dom";
-import { resolveProgramRouteSlug } from "../../../utils/legacyProgramRoutes";
+import { getPreferredProgramRouteSlug } from "../../../utils/legacyProgramRoutes";
 
 /**
  * Redirects legacy direct program URLs (such as /b-tech-cse-cyber-security)
@@ -8,7 +8,7 @@ import { resolveProgramRouteSlug } from "../../../utils/legacyProgramRoutes";
 const DirectProgramDetailsPage = () => {
   const location = useLocation();
   const rawSlug = location.pathname.replace(/^\/+/, "").replace(/\/+$/, "");
-  const canonicalSlug = resolveProgramRouteSlug(rawSlug) || rawSlug;
+  const canonicalSlug = getPreferredProgramRouteSlug(rawSlug) || rawSlug;
 
   return (
     <Navigate

@@ -38,21 +38,28 @@ async function main() {
 
   await fs.mkdir(publicDir, { recursive: true });
 
-  // robots.txt now points to new-sitemap.xml
+  // robots.txt points to new-sitemap.xml
   await fs.writeFile(path.join(publicDir, "robots.txt"), robotsTxt, "utf8");
 
-  // new-sitemap.xml and sitemap.xml → the generated sitemap index (with today's date)
+  // new-sitemap.xml → the generated sitemap index (with today's date)
   await fs.writeFile(path.join(publicDir, "new-sitemap.xml"), sitemapIndexXml, "utf8");
-  await fs.writeFile(path.join(publicDir, "sitemap.xml"), sitemapIndexXml, "utf8");
   await updateLastmod("new-sitemap.xml");
-  await updateLastmod("sitemap.xml");
 
-  // all-sitemap.xml & blog-sitemap.xml as before (every <url> now has <lastmod>)
+  // Remove public/sitemap.xml and its compressed variations if present so static file serving does not bypass redirect
+  for (const file of ["sitemap.xml", "sitemap.xml.gz", "sitemap.xml.br"]) {
+    try {
+      await fs.unlink(path.join(publicDir, file));
+    } catch {
+      // ignore if not present
+    }
+  }
+
+  // all-sitemap.xml & blog-sitemap.xml (every <url> has <lastmod>)
   await fs.writeFile(path.join(publicDir, "all-sitemap.xml"), allSitemapXml, "utf8");
   await fs.writeFile(path.join(publicDir, "blog-sitemap.xml"), blogSitemapXml, "utf8");
 
   console.log(
-    "Generated: robots.txt (→ new-sitemap.xml), new-sitemap.xml, sitemap.xml, all-sitemap.xml, blog-sitemap.xml (all URLs with lastmod)"
+    "Generated: robots.txt (→ new-sitemap.xml), new-sitemap.xml, all-sitemap.xml, blog-sitemap.xml (all URLs with lastmod)"
   );
 }
 

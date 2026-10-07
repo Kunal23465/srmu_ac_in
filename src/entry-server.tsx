@@ -26,7 +26,6 @@ import { fetchPlacementDriveTabData } from "./store/placement/placement-drive/pl
 import { routes, getProgramDetailsSlugFromPath } from "./utils/AllRoutesNew";
 import { eventsData } from "./data/home/EventsData";
 import { legacyNewsArticles } from "./data/legacy/legacyContent";
-import { resolveProgramRouteSlug } from "./utils/legacyProgramRoutes";
 import { fetchProgramTypeIntroByUrl } from "./store/program-type-intro/ProgramTypeIntroThunk";
 import { findBlogBySlug, findCommitteeCardBySlug, findConferenceBySlug, findEventCardBySlug, findNewsBySlug } from "./utils/routeMatching";
 import { getProgramCategoryPathMatch, hasValidTopLevelProgramRoute, resolveTopLevelProgramRoute } from "./utils/programCategoryRoute";
@@ -117,7 +116,7 @@ const hasMatchingLegacyEvent = (normalizedPathname: string) => {
 };
 
 const hasMatchingLegacyCommittee = (normalizedPathname: string) => {
-  const routeMatch = normalizedPathname.match(/^\/committe\/([^/]+)$/);
+  const routeMatch = normalizedPathname.match(/^\/(?:committee|committe)\/([^/]+)$/);
   const committeeSlug = routeMatch?.[1];
 
   return Boolean(committeeSlug && findCommitteeCardBySlug(committeeSlug));
@@ -158,7 +157,7 @@ const getStatusCode = (normalizedPathname: string, state: RootState, programMenu
     return hasMatchingLegacyEvent(normalizedPathname) ? 200 : 404;
   }
 
-  if (normalizedPathname.startsWith("/committe/")) {
+  if (normalizedPathname.startsWith("/committee/") || normalizedPathname.startsWith("/committe/")) {
     return hasMatchingLegacyCommittee(normalizedPathname) ? 200 : 404;
   }
 

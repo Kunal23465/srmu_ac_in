@@ -18,7 +18,7 @@ import { fetchRecruiterById } from "../../../store/recruiter/recruiterThunk";
 import { fetchWhySrmuLogoById } from "../../../store/why-srmu/whySrmuLogoThunk";
 import { setProgramId as setProgramIdInStore } from "../../../store/program-finder/program/programSlice";
 import PageNotFound from "../../../pages/PageNotFound";
-import { resolveProgramRouteSlug } from "../../../utils/legacyProgramRoutes";
+import { getPreferredProgramRouteSlug, resolveProgramRouteSlug } from "../../../utils/legacyProgramRoutes";
 import SeoHead from "../../seo/SeoHead";
 import { DEFAULT_SOCIAL_IMAGE, SITE_NAME, SITE_URL, buildCanonicalUrl, stripHtml } from "../../../utils/seo";
 import CustomEligibilitySection from "../../../utils/custom/CustomEligibilitySection";
@@ -119,6 +119,7 @@ const ProgramDetails: React.FC = () => {
   const { data: programFaq, loading: faqLoading } = useSelector((state: RootState) => state.programFaq);
   const normalizedFeesData = Array.isArray(feesData) ? feesData[0] : feesData;
   const normalizedProgramSlug = resolveProgramRouteSlug(programName || "");
+  const preferredProgramSlug = getPreferredProgramRouteSlug(programName || "");
   const hasCurrentProgramData = Boolean(dataByID?.programId && currentDetailsSlug === normalizedProgramSlug);
   const currentProgramId = Number(dataByID?.programId);
   const hasCurrentFeesData = Number((normalizedFeesData as any)?.programId) === currentProgramId;
@@ -376,7 +377,7 @@ const ProgramDetails: React.FC = () => {
         title={seoTitle}
         description={seoDescription}
         pathname={location.pathname}
-        canonicalPath={`/program/${normalizedProgramSlug}`}
+        canonicalPath={`/program/${preferredProgramSlug}`}
         image={DEFAULT_SOCIAL_IMAGE}
         jsonLd={parsedSchema}
       />

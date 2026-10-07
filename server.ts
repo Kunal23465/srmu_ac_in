@@ -354,20 +354,6 @@ async function createServer() {
     }).send(robotsTxt);
   });
 
-  app.get("/sitemap.xml", async (req, res) => {
-    try {
-      const sitemapXml = await buildSitemapIndexXml(getRequestSiteUrl(req));
-      res.type("application/xml").set({
-        "Cache-Control": "public, max-age=3600",
-        "Vary": "Accept-Encoding",
-      }).send(sitemapXml);
-    } catch (error) {
-      process.stderr.write(`SITEMAP ERROR: ${String(error)}\n`);
-      res.status(500).type("text/plain").send("Error generating sitemap");
-    }
-  });
-
-  // Primary sitemap index (referenced by robots.txt)
   app.get("/new-sitemap.xml", async (req, res) => {
     try {
       const sitemapXml = await buildSitemapIndexXml(getRequestSiteUrl(req));
@@ -381,6 +367,10 @@ async function createServer() {
     }
   });
 
+  // Redirect legacy /sitemap.xml to /new-sitemap.xml
+  app.get("/sitemap.xml", (req, res) => {
+    res.redirect(301, `${getRequestSiteUrl(req)}/new-sitemap.xml`);
+  });
 
   app.get("/all-sitemap.xml", async (req, res) => {
     try {
@@ -414,6 +404,69 @@ async function createServer() {
 
   app.get("/grievance-redressal-system", (_req, res) => {
     res.redirect(301, `${canonicalOrigin}/campus-life/grievance-redressal-system`);
+  });
+
+  // Pharmacy duplicate redirects
+  app.get("/program/b-pharma-bachelor-of-pharmacy", (req, res) => {
+    res.redirect(301, `${getRequestSiteUrl(req)}/program/bpharm-bachelor-of-pharmacy`);
+  });
+
+  app.get("/b-pharma-bachelor-of-pharmacy", (req, res) => {
+    res.redirect(301, `${getRequestSiteUrl(req)}/program/bpharm-bachelor-of-pharmacy`);
+  });
+
+  app.get("/bpharm-bachelor-of-pharmacy", (req, res) => {
+    res.redirect(301, `${getRequestSiteUrl(req)}/program/bpharm-bachelor-of-pharmacy`);
+  });
+
+  app.get("/program/d-pharma-diploma-in-pharmacy", (req, res) => {
+    res.redirect(301, `${getRequestSiteUrl(req)}/program/d-pharm-diploma-in-pharmacy`);
+  });
+
+  app.get("/d-pharma-diploma-in-pharmacy", (req, res) => {
+    res.redirect(301, `${getRequestSiteUrl(req)}/program/d-pharm-diploma-in-pharmacy`);
+  });
+
+  app.get("/d-pharm-diploma-in-pharmacy", (req, res) => {
+    res.redirect(301, `${getRequestSiteUrl(req)}/program/d-pharm-diploma-in-pharmacy`);
+  });
+
+  // Untidy "1" slugs redirects
+  app.get("/program/m-com1", (req, res) => {
+    res.redirect(301, `${getRequestSiteUrl(req)}/program/m-com`);
+  });
+
+  app.get("/m-com1", (req, res) => {
+    res.redirect(301, `${getRequestSiteUrl(req)}/program/m-com`);
+  });
+
+  app.get("/m-com", (req, res) => {
+    res.redirect(301, `${getRequestSiteUrl(req)}/program/m-com`);
+  });
+
+  app.get("/institute-of-legal-studies1", (_req, res) => {
+    res.redirect(301, `${canonicalOrigin}/institute-of-legal-studies`);
+  });
+
+  app.get("/institute-of-pharmaceutical-sciences1", (_req, res) => {
+    res.redirect(301, `${canonicalOrigin}/institute-of-pharmaceutical-sciences`);
+  });
+
+  app.get("/srmu-polytechnic1", (_req, res) => {
+    res.redirect(301, `${canonicalOrigin}/srmu-polytechnic`);
+  });
+
+  app.get("/conference/icmtce-20191", (_req, res) => {
+    res.redirect(301, `${canonicalOrigin}/conference/icmtce-2019`);
+  });
+
+  // Committee spelling redirects
+  app.get("/committe", (_req, res) => {
+    res.redirect(301, `${canonicalOrigin}/committee`);
+  });
+
+  app.get("/committe/:slug", (req, res) => {
+    res.redirect(301, `${canonicalOrigin}/committee/${req.params.slug}`);
   });
 
   app.get("/program/mba-agribusiness-management", (req, res) => {

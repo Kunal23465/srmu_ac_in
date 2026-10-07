@@ -235,7 +235,7 @@ export const institutes: Institute[] = [
     description: "Due to its integration of chemistry and health sciences, pharmaceutical science is both a unique field and extremely important to human survival.",
     departments: 1,
     image: instituteofpharmaceutical,
-    path: "/institute-of-pharmaceutical-sciences1",
+    path: "/institute-of-pharmaceutical-sciences",
     departmentsData: {
       overviewData: InstituteofPharmaceuticalSciencesOverviewData,
       counterData: InstituteofPharmaceuticalSciencesCounterData1,
@@ -282,7 +282,7 @@ export const institutes: Institute[] = [
       "The Institute of Legal Studies is a convergence of academic, cultural and intellectual resources. It aims at achieving the highest levels of distinction in the innovation and transmission of knowledge and understanding.",
     departments: 1,
     image: instituteoflegal,
-    path: "/institute-of-legal-studies1",
+    path: "/institute-of-legal-studies",
     departmentsData: {
       overviewData: InstituteofLegalStudiesOverviewData,
       counterData: InstituteofPharmaceuticalSciencesCounterData1,
@@ -355,7 +355,7 @@ export const institutes: Institute[] = [
       "The Institute was established during the academic session 2015-16 and commenced its curriculum for Diploma in Mechanical, Civil, Electrical, Electronics and Communication and Computer Science Engineering.",
     departments: 1,
     image: instituteofpolytech,
-    path: "/srmu-polytechnic1",
+    path: "/srmu-polytechnic",
     departmentsData: {
       overviewData: SRMUPolytechnicOverviewData,
       counterData: SRMUPolytechnicCounterData1,

@@ -193,7 +193,7 @@ export const commerceAndEconomicsFeeData: FeeTableData = {
       duration: "2 Years",
       eligibility: "Click",
       fee: "Rs. 50,000/-",
-      link:"program/m-com1",
+      link: "program/m-com",
       eligibilityContent: `
         <h2 class='font-bold text-lg mb-3'>M.Com.</h2>
        <p>Candidate must have passed B.Com. with minimum aggregate marks of 50% or equivalent grade for GEN/OBC and 45% marks or equivalent grade for SC/ST Category.</p>

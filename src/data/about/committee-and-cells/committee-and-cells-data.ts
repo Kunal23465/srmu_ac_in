@@ -11,7 +11,6 @@ import minority from "../../../assets/images/about/committeesAndCells/minority-c
 import unnat from "../../../assets/images/about/committeesAndCells/unnat.webp";
 import grievance from "../../../assets/images/about/committeesAndCells/Student-Grievance-and-Redressal-Committee.webp";
 import { customeOverViewType } from "../../../types/home-data-type";
-import { SITE_URL } from "../../../utils/seo";
 
 
 export const CommitteeOverviewData: customeOverViewType = {
@@ -85,7 +84,7 @@ export const committeeCards: Card[] = [
 
     imagePath: rag,
 
-    readMoreLink: "/committe/anti-ragging-committee",
+    readMoreLink: "/committee/anti-ragging-committee",
   },
  {
   id: 2,
@@ -126,7 +125,7 @@ To provide the serenity and ambience necessary for the pursuit of academic excel
 
   imagePath: board,
 
-  readMoreLink: "/committe/proctorial-board",
+  readMoreLink: "/committee/proctorial-board",
 },
   {
     id: 3,
@@ -157,7 +156,7 @@ To help financially weaker students through Student Welfare Fund and facilitates
 
     imagePath: scst,
 
-    readMoreLink: "/committe/sc-st-welfare-committee",
+    readMoreLink: "/committee/sc-st-welfare-committee",
   },
  {
   id: 4,
@@ -194,7 +193,7 @@ Following members are requested to be present at the Conference Room by 02:00 PM
 
   imagePath: saving,
 
-  readMoreLink: "/committe/students-welfare-fund-committee",
+  readMoreLink: "/committee/students-welfare-fund-committee",
 },
   {
     id: 5,
@@ -227,7 +226,7 @@ The University has constituted the Anti-Discrimination Cell in compliance to the
     ],
 
     imagePath: discri,
-    readMoreLink: "/committe/anti-discrimination-cell",
+    readMoreLink: "/committee/anti-discrimination-cell",
   },
   {
     id: 6,
@@ -272,7 +271,7 @@ Objectives of the Committee
 
     imagePath: comp,
 
-    readMoreLink: "/committe/internal-complaints-committee",
+    readMoreLink: "/committee/internal-complaints-committee",
   },
   {
   id: 7,
@@ -305,7 +304,7 @@ Under Digital Initiative by MHRD and Government of India, “Digital Learning Mo
 
   imagePath: digital,
 
-  readMoreLink: "/committe/digital-learning-monitoring-cell",
+  readMoreLink: "/committee/digital-learning-monitoring-cell",
 },
   {
     id: 8,
@@ -342,7 +341,7 @@ Based upon the recommendations in the ‘Saksham’ report on Safety of Women an
 
     imagePath: gender,
 
-    readMoreLink: "/committe/gender-sensitization-cell",
+    readMoreLink: "/committee/gender-sensitization-cell",
   },
   {
   id: 9,
@@ -379,7 +378,7 @@ d) Any other issues brought to the notice of cell.
 
   imagePath: obc,
 
-  readMoreLink: "/committe/obc-cell",
+  readMoreLink: "/committee/obc-cell",
 },
   {
     id: 10,
@@ -406,7 +405,7 @@ It provides support to help these students integrate into the mainstream while a
 
     imagePath: minority,
 
-    readMoreLink: "/committe/minority-cell",
+    readMoreLink: "/committee/minority-cell",
   },
   {
     id: 11,
@@ -438,7 +437,7 @@ The mission of the Unnat Bharat Cell is to enable universities to work with rura
     ],
 
     imagePath: unnat,
-    readMoreLink: "/committe/unnat-bharat-cell",
+    readMoreLink: "/committee/unnat-bharat-cell",
   },
   {
     id: 12,
@@ -472,6 +471,6 @@ The committee has the authority to investigate complaints of harassment and othe
 
     imagePath: grievance,
 
-    readMoreLink: "/committe/student-grievance-redressal-committee",
+    readMoreLink: "/committee/student-grievance-redressal-committee",
   },
 ];
