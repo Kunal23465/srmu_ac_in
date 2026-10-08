@@ -1,4 +1,4 @@
-import { PROGRAMS, type FinderProgram } from "./programsNew";
+import type { FinderProgram } from "./programsNew";
 import { CATEGORY_OPTS, C12_RULES, C12ITI_PATHS, DIP_BRANCHES, GRAD_DEGREES, GRAD_THRESH, UNIVERSAL_GRAD_DOMAINS, PROGRAM_EXTRA_REQUIREMENT, canonicalDomain, catCol, c12Threshold, sortByAttractiveness, type Subjects } from "./rulesNew";
 
 export interface FinderProfile {
@@ -78,8 +78,8 @@ export function isProgramEligible(program: FinderProgram, p: FinderProfile) {
   }
   return false;
 }
-export function findEligiblePrograms(p: FinderProfile) {
-  const bucket = PROGRAMS.filter(program => program.lastq === p.bucket);
+export function findEligiblePrograms(allPrograms: FinderProgram[], p: FinderProfile) {
+  const bucket = allPrograms.filter(program => program.lastq === p.bucket);
   const programs = validateProfile(p) ? [] : bucket.filter(program => isProgramEligible(program, p));
   const domains = sortByAttractiveness([...new Set(programs.flatMap(program => program.domains.map(canonicalDomain)))]);
   const ineligible = sortByAttractiveness([...new Set(bucket.flatMap(program => program.domains.map(canonicalDomain)))].filter(d => !domains.includes(d)));

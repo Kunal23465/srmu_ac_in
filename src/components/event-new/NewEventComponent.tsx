@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import { ArrowRight, CalendarDays, ChevronLeft, ChevronRight, Cpu, GraduationCap, Image, MapPin, Mic, Music, Sparkles, Trophy, X } from "lucide-react";
+import { ArrowRight, CalendarDays, ChevronDown, ChevronLeft, ChevronRight, Cpu, GraduationCap, Image, MapPin, Mic, Music, Palmtree, Sparkles, Trophy, X } from "lucide-react";
 import { archiveEvents, calendarEvents, type CalendarEvent } from "./eventNewData";
 import Global from "../../utils/styles/Global.module.css";
 
@@ -9,6 +9,7 @@ const categories = [
   { name: "Cultural", title: "Cultural Events", id: "cultural-events", Icon: Music, description: "Cultural festivals, music, dance, drama, literary activities and celebrations." },
   { name: "Sports", title: "Sports", id: "sports-events", Icon: Trophy, description: "Annual sports meets, inter-college competitions, athletics and indoor and outdoor activities." },
   { name: "Special", title: "Celebrity & Special", id: "special-events", Icon: Mic, description: "Celebrity interactions, industry leader talks, motivational sessions and distinguished speakers." },
+  { name: "Holiday", title: "Holidays", id: "holiday-events", Icon: Palmtree, description: "University holidays, mandatory celebration days and restricted holidays." },
 ];
 const academic = [
   ["Faculty Training & Development", "Structured programmes building teaching and research capability."],
@@ -64,7 +65,12 @@ export default function NewEventComponent() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [detail, setDetail] = useState<Detail | null>(null);
   const [newsletterMessage, setNewsletterMessage] = useState("");
+  const [showAllMonthEvents, setShowAllMonthEvents] = useState(false);
   const dialog = useRef<HTMLDialogElement>(null);
+
+  useEffect(() => {
+    setShowAllMonthEvents(false);
+  }, [month, filter]);
 
   useEffect(() => {
     if (!detail) return;
@@ -139,11 +145,20 @@ export default function NewEventComponent() {
         <div className="grid grid-cols-1 gap-5 min-[561px]:grid-cols-2 min-[1101px]:grid-cols-4 [&>*]:min-w-0">{special.map(title => <article className="[&>[role=img]]:aspect-[4/3] min-[561px]:[&>[role=img]]:aspect-[9/14] [&:last-child>[role=img]]:border-2 [&:last-child>[role=img]]:border-[#FFB703] [&>[role=img]>span]:absolute [&>[role=img]>span]:inset-x-0 [&>[role=img]>span]:bottom-0 [&>[role=img]>span]:bg-white [&>[role=img]>span]:px-3 [&>[role=img]>span]:py-[18px] [&>[role=img]>span]:font-semibold" key={title}><Placeholder label={title}><Mic aria-hidden="true" /></Placeholder></article>)}</div>
       </Section>
 
-      <Section id="calendar" title="SRMU Events Calendar" description="Stay updated with upcoming academic, technical, cultural, sports and special events at SRMU." alternate>
+      <Section id="holiday-events" title="Holidays & Closures" description="University holidays, mandatory celebration days and restricted holidays (aligned with government holidays)." alternate>
+        <div className="mx-auto max-w-3xl rounded-2xl border border-[#21A5DB] bg-white p-5 text-center text-[#14284E] min-[561px]:p-6">
+            <Palmtree size={48} className="mx-auto mb-4 text-[#0F4A85]" aria-hidden="true" />
+            <h3 className="mb-2 text-xl">2026 Holiday Calendar Available</h3>
+            <p className="mb-6">The complete list of regular and restricted holidays for 2026 has been updated. You can view them in the university calendar below.</p>
+            <a href="#calendar" className="inline-flex min-h-12 items-center justify-center gap-2.5 rounded-full border border-[#0F4A85] bg-transparent px-[22px] py-[13px] text-center text-[.88rem] font-semibold text-[#0F4A85] transition-transform hover:-translate-y-0.5" onClick={() => chooseCategory("Holiday")}>View Holidays on Calendar</a>
+        </div>
+      </Section>
+
+      <Section id="calendar" title="SRMU Events Calendar" description="Stay updated with upcoming academic, technical, cultural, sports and special events at SRMU.">
         <p className="mb-[18px] text-[.8rem] text-[#0F4A85]">Design preview: event dates, archive entries and statistics are sample content.</p>
         <div className="mb-[22px] flex flex-wrap gap-2" aria-label="Filter calendar events">{["All", ...categories.map(category => category.name)].map(category => <button key={category} className="rounded-full border border-[#0F4A85] bg-transparent px-[17px] py-[9px] text-[.82rem] text-[#0F4A85] aria-pressed:border-[#FFB703] aria-pressed:bg-[#FFB703] aria-pressed:font-semibold aria-pressed:text-[#14284E]" aria-pressed={filter === category} onClick={() => setFilter(category)}>{category === "All" ? "All Events" : category}</button>)}</div>
-        <div className="grid grid-cols-1 items-center gap-7 min-[861px]:grid-cols-[1.1fr_1fr] min-[1101px]:gap-12 [&>*]:min-w-0 [&>div>button]:mt-6 [&>div>span]:mb-4">
-          <div className="self-stretch rounded-2xl border border-[#21A5DB] bg-white p-5 min-[561px]:p-6">
+        <div className="grid grid-cols-1 items-start gap-7 min-[861px]:grid-cols-[1.1fr_1fr] min-[1101px]:gap-12 [&>*]:min-w-0 [&>div>button]:mt-6 [&>div>span]:mb-4">
+          <div className="rounded-2xl border border-[#21A5DB] bg-white p-5 min-[561px]:p-6">
             <div className="mb-[22px] flex items-center justify-between gap-2 [&>button]:grid [&>button]:size-10 [&>button]:place-items-center [&>button]:rounded-[10px] [&>button]:border [&>button]:border-[#21A5DB] [&>button]:bg-[#E0F1FF] [&>button]:text-[#0F4A85] max-[560px]:[&>h3]:text-[.95rem]"><button aria-label="Previous month" onClick={() => setMonth(new Date(month.getFullYear(), month.getMonth() - 1, 1))}><ChevronLeft /></button><h3 aria-live="polite">{months[month.getMonth()]} {month.getFullYear()}</h3><button aria-label="Next month" onClick={() => setMonth(new Date(month.getFullYear(), month.getMonth() + 1, 1))}><ChevronRight /></button></div>
             <div className="grid grid-cols-7 gap-[3px] text-center text-[.86rem] min-[561px]:gap-[7px]">
               {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map(day => <span className="pb-2 text-[.72rem] font-semibold" key={day}>{day}</span>)}
@@ -155,16 +170,33 @@ export default function NewEventComponent() {
               })}
             </div>
           </div>
-          <div className="self-stretch rounded-2xl border border-[#21A5DB] bg-white p-5 min-[561px]:p-6"><h3>Selected Month&apos;s Events</h3><div aria-live="polite">{monthEvents.length ? monthEvents.map(event => <button className="flex w-full items-center gap-3.5 border-0 border-b border-[#21A5DB] bg-transparent py-4 text-left text-[#14284E] last:border-b-0 [&>span:nth-child(2)]:flex-1 [&>svg]:shrink-0 [&>svg]:text-[#0F4A85] [&_strong]:my-1 [&_strong]:block [&_strong]:text-[.85rem] [&_strong]:leading-[1.4]" key={event.title} onClick={() => openEvent(event)}><span className="min-w-[58px] rounded-[10px] bg-[#E0F1FF] px-3 py-2 text-center text-[#0F4A85] [&>b]:block [&>b]:text-[1.35rem] [&>span]:block [&>span]:text-[.72rem]"><b>{event.day}</b><span>{months[month.getMonth()].slice(0, 3)}</span></span><span><span className="inline-flex w-fit rounded-full bg-[#FFB703] px-3 py-1 text-[.72rem] leading-normal font-semibold text-[#14284E]">{event.cat}</span><strong>{event.title}</strong><span className="block text-[.72rem]">{event.venue}</span></span><ArrowRight size={18} aria-hidden="true" /></button>) : <p className="py-6 text-[.9rem]">No events for this filter this month.</p>}</div></div>
+          <div className="rounded-2xl border border-[#21A5DB] bg-white p-5 min-[561px]:p-6">
+            <h3>Selected Month&apos;s Events</h3>
+            <div id="selected-month-events" aria-live="polite">
+              {monthEvents.length ? (showAllMonthEvents ? monthEvents : monthEvents.slice(0, 3)).map(event => <button className="flex w-full items-center gap-3.5 border-0 border-b border-[#21A5DB] bg-transparent py-4 text-left text-[#14284E] last:border-b-0 [&>span:nth-child(2)]:flex-1 [&>svg]:shrink-0 [&>svg]:text-[#0F4A85] [&_strong]:my-1 [&_strong]:block [&_strong]:text-[.85rem] [&_strong]:leading-[1.4]" key={event.title} onClick={() => openEvent(event)}><span className="min-w-[58px] rounded-[10px] bg-[#E0F1FF] px-3 py-2 text-center text-[#0F4A85] [&>b]:block [&>b]:text-[1.35rem] [&>span]:block [&>span]:text-[.72rem]"><b>{event.day}</b><span>{months[month.getMonth()].slice(0, 3)}</span></span><span><span className="inline-flex w-fit rounded-full bg-[#FFB703] px-3 py-1 text-[.72rem] leading-normal font-semibold text-[#14284E]">{event.cat}</span><strong>{event.title}</strong><span className="block text-[.72rem]">{event.venue}</span></span><ArrowRight size={18} aria-hidden="true" /></button>) : <p className="py-6 text-[.9rem]">No events for this filter this month.</p>}
+            </div>
+            {monthEvents.length > 3 && (
+              <button
+                type="button"
+                className="mt-3 flex min-h-12 w-full items-center justify-between gap-3 rounded-xl border border-[#0F4A85]/10 bg-[#E0F1FF] px-4 py-3 text-[.85rem] font-semibold text-[#0F4A85] transition-colors duration-200 hover:border-[#0F4A85]/25 hover:bg-[#D0E8FC] active:bg-[#C2E0F8]"
+                aria-expanded={showAllMonthEvents}
+                aria-controls="selected-month-events"
+                onClick={() => setShowAllMonthEvents(previous => !previous)}
+              >
+                <span>{showAllMonthEvents ? "Show fewer events" : `View all ${monthEvents.length} events`}</span>
+                <ChevronDown size={18} aria-hidden="true" className={`shrink-0 transition-transform duration-200 ${showAllMonthEvents ? "rotate-180" : ""}`} />
+              </button>
+            )}
+          </div>
         </div>
       </Section>
 
-      <Section id="upcoming-events" title="Upcoming Events" description="A look ahead at learning, collaboration and campus life.">
+      <Section id="upcoming-events" title="Upcoming Events" description="A look ahead at learning, collaboration and campus life." alternate>
         <div className="grid grid-cols-1 gap-5 min-[561px]:grid-cols-2 min-[1101px]:grid-cols-4 [&>*]:min-w-0">{upcoming.map(event => <article className="flex flex-col items-start gap-3 rounded-2xl border border-[#21A5DB] bg-white p-5 min-[561px]:p-6 [&>svg]:text-[#0F4A85] [&>p]:text-[.86rem] [&>a]:mt-auto [&>button]:mt-auto [&>[role=img]]:mb-1.5 [&>[role=img]]:aspect-auto [&>[role=img]]:h-[140px] [&>[role=img]]:w-full [&>[role=img]>svg]:size-9 [&>[role=img]>span]:text-[.7rem]" key={event.title}><Placeholder label={event.cat + " event"} /><span className="inline-flex w-fit rounded-full bg-[#FFB703] px-3 py-1 text-[.72rem] leading-normal font-semibold text-[#14284E]">{event.cat}</span><h3>{event.title}</h3><p>{event.venue} · {event.day} Oct 2026</p><button className="inline-flex items-center gap-2 border-0 bg-transparent py-[5px] text-left text-[.85rem] font-semibold text-[#0F4A85] hover:underline hover:underline-offset-4 [&>svg]:shrink-0" onClick={() => openEvent(event, new Date(2026, 9, 1))}>View Details <ArrowRight size={16} /></button></article>)}</div>
         <div className="mt-8 flex justify-center"><a className="inline-flex min-h-12 items-center justify-center gap-2.5 rounded-full border border-[#0F4A85] bg-transparent px-[22px] py-[13px] text-center text-[.88rem] font-semibold text-[#0F4A85] transition-transform hover:-translate-y-0.5" href="#calendar" onClick={() => chooseCategory("All")}>View All Upcoming Events</a></div>
       </Section>
 
-      <Section id="archive" title="Event Archives" description="Explore events, activities and memorable moments from previous academic years at SRMU." alternate>
+      <Section id="archive" title="Event Archives" description="Explore events, activities and memorable moments from previous academic years at SRMU.">
         <div className="mb-[22px] flex flex-wrap gap-2" aria-label="Filter archive by year">{["All", "2026", "2025", "2024", "2023"].map(value => <button key={value} className="rounded-full border border-[#0F4A85] bg-transparent px-[17px] py-[9px] text-[.82rem] text-[#0F4A85] aria-pressed:border-[#FFB703] aria-pressed:bg-[#FFB703] aria-pressed:font-semibold aria-pressed:text-[#14284E]" onClick={() => setYear(value)} aria-pressed={year === value}>{value}</button>)}</div>
         <div className="flex flex-col flex-wrap gap-3.5 min-[561px]:flex-row [&>label]:flex [&>label]:flex-1 [&>label]:flex-col [&>label]:gap-1.5 [&>label]:text-[.8rem] [&>label]:font-semibold min-[561px]:[&>label]:max-w-[400px] [&_input]:min-w-0 [&_input]:w-full [&_input]:rounded-[10px] [&_input]:border [&_input]:border-[#0F4A85] [&_input]:bg-white [&_input]:px-4 [&_input]:py-3 [&_select]:min-w-0 [&_select]:w-full [&_select]:rounded-[10px] [&_select]:border [&_select]:border-[#0F4A85] [&_select]:bg-white [&_select]:px-4 [&_select]:py-3"><label>Search events<input type="search" placeholder="Search events..." value={search} onChange={event => setSearch(event.target.value)} /></label><label>Category<select value={archiveCategory} onChange={event => setArchiveCategory(event.target.value)}><option value="All">All Categories</option>{categories.map(category => <option key={category.name}>{category.name}</option>)}</select></label></div>
         <p className="my-[18px] text-[.8rem]" role="status">{filteredArchive.length} {filteredArchive.length === 1 ? "event" : "events"} found</p>

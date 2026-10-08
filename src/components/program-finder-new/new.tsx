@@ -4,6 +4,7 @@ import { QUALS, CATEGORY_OPTS, C12_SUBJECTS, C10_SUBJECTS, C12ITI_SUBJECTS, C12I
 import { emptyProfile, findEligiblePrograms, needsQualifyingMarks, percentage, programsInDomain, validateProfile, type FinderProfile } from "./eligibilityNew";
 import type { FinderProgram } from "./programsNew";
 import { useProgramFees, formatRupees } from "./feesNew";
+import { useProgramsData } from "./useProgramsData";
 import ScholarshipsNew from "./ScholarshipsNew";
 import FinderIntroNew, { FinderSupportNew } from "./FinderIntroNew";
 
@@ -46,7 +47,9 @@ export default function NewProgramFinder() {
     setComputed(false); setError(""); setActiveDomain(""); setShowOthers(false); setSearch(""); setSelectedProgram(""); setScholarshipOpen(false);
   };
   const reset = () => { update(emptyProfile); scrollToSection("finder-qualification"); };
-  const results = computed ? findEligiblePrograms(profile) : null;
+  const programsData = useProgramsData();
+  const allPrograms: FinderProgram[] = programsData.programs;
+  const results = computed ? findEligiblePrograms(allPrograms, profile) : null;
   const subjectOptions = profile.bucket === "Class 12" ? C12_SUBJECTS : profile.bucket === "Class 10" ? C10_SUBJECTS : profile.bucket === "Class 12 OR ITI" && profile.itiPath === "12th" ? C12ITI_SUBJECTS : [];
   const programs = results && activeDomain ? programsInDomain(results.programs, activeDomain) : [];
   const visiblePrograms = programs.filter(p => p.name.toLowerCase().includes(search.trim().toLowerCase()));
@@ -113,7 +116,7 @@ export default function NewProgramFinder() {
         </Panel>}
         {!scholarshipOpen && <button className={buttonClass} onClick={() => estimate()}>Explore scholarships <ArrowRight size={16} aria-hidden="true" /></button>}
       </div>}
-      {scholarshipOpen && <ScholarshipsNew selected={selectedProgram} onSelect={setSelectedProgram} profile={profile} />}
+      {scholarshipOpen && <ScholarshipsNew selected={selectedProgram} onSelect={setSelectedProgram} profile={profile} programs={allPrograms} />}
       <div className="mx-auto max-w-3xl px-4 pt-2 text-center text-xs leading-6 text-slate-500">Eligibility and scholarship estimates are indicative and subject to University verification. Need help choosing a programme? Call the Admission Helpline at <a className="whitespace-nowrap font-semibold text-[#0F4A85] underline" href="tel:18001026004">1800-102-6004</a>.</div>
     </div>
   </div>;

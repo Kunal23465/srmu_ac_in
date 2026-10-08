@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ArrowRight, ExternalLink } from "lucide-react";
-import { PROGRAMS, type FinderProgram } from "./programsNew";
+import type { FinderProgram } from "./programsNew";
 import { QUALS } from "./rulesNew";
 import { type FinderProfile, percentage } from "./eligibilityNew";
 import { isLLMProgram, srmusetCategory, meritCategory, schPctFor, meritPctFor, SCH_TABLES, MERIT_TABLES, SPECIAL_CATEGORIES } from "./scholarshipsNew";
@@ -62,12 +62,12 @@ function Estimate({ program, profile, scheme }: { program: FinderProgram; profil
     {scheme === "special" && <p className="mt-3 text-sm text-slate-500">Special scholarships apply for all years, subject to supporting documents and University approval.</p>}
   </div>;
 }
-export default function ScholarshipsNew({ selected, onSelect, profile }: { selected: string; onSelect: (name: string) => void; profile: FinderProfile }) {
+export default function ScholarshipsNew({ selected, onSelect, profile, programs }: { selected: string; onSelect: (name: string) => void; profile: FinderProfile; programs: FinderProgram[] }) {
   const [scheme, setScheme] = useState<Scheme>("srmuset");
-  const program = PROGRAMS.find(p => p.name === selected);
+  const program = programs.find(p => p.name === selected);
   return <Panel id="finder-scholarships" title="4. Explore your scholarship" hint="Choose a programme and compare the three admission scholarship schemes. Estimates are shown separately; scholarships are not combined.">
     <fieldset><legend className="sr-only">Scholarship scheme</legend><div className="flex flex-wrap gap-2">{schemes.map(s => <label key={s.key} className={chipClass}><input className="accent-[#0F4A85]" type="radio" name="finder-scholarship" value={s.key} checked={scheme === s.key} onChange={() => setScheme(s.key)} />{s.label}</label>)}</div></fieldset>
-    <div className="mt-5"><Field label="Programme"><select className={inputClass} value={selected} onChange={e => onSelect(e.target.value)}><option value="">Select a programme…</option>{QUALS.map(q => <optgroup key={q.key} label={q.title}>{PROGRAMS.filter(p => p.lastq === q.key).map(p => <option key={p.name} value={p.name}>{p.name}</option>)}</optgroup>)}</select></Field></div>
+    <div className="mt-5"><Field label="Programme"><select className={inputClass} value={selected} onChange={e => onSelect(e.target.value)}><option value="">Select a programme…</option>{QUALS.map(q => <optgroup key={q.key} label={q.title}>{programs.filter(p => p.lastq === q.key).map(p => <option key={p.name} value={p.name}>{p.name}</option>)}</optgroup>)}</select></Field></div>
     {program && <Estimate key={`${program.name}-${scheme}`} program={program} profile={profile} scheme={scheme} />}
     <a className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-[#0F4A85] underline underline-offset-4" href="/scholarship-scheme" target="_blank" rel="noopener noreferrer">View official scholarship schemes <ExternalLink size={14} aria-hidden="true" /></a>
   </Panel>;

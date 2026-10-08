@@ -16,7 +16,9 @@ export function parseProgramFees(payload: unknown, slug: string): FinderFees | n
   const amount = (name: string) => {
     const matches = rows.filter(r => r.feeTypeName?.trim().toLowerCase() === name);
     if (matches.length !== 1) return null;
-    const value = matches[0].yearWiseAmount?.["1"];
+    // Year "1" for regular intake; lateral-entry programs start from Year 2 so fall back to "2"
+    const raw = matches[0].yearWiseAmount;
+    const value = raw?.["1"] ?? raw?.["2"];
     if (typeof value !== "number" || !Number.isFinite(value) || value < 0) return null;
     return value;
   };
