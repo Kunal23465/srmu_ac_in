@@ -45,12 +45,12 @@ function Estimate({ program, profile, scheme }: { program: FinderProgram; profil
         {scheme === "merit" && autoPct !== null && <p className="mt-2 text-xs text-slate-500">Academic performance is taken from your qualification marks.</p>}
         {error && <p role="alert" className="mt-3 text-sm text-red-700">{error}</p>}
       </form>}
-      {submitted && <div aria-live="polite" className="mt-6 rounded-xl bg-[#023047] p-5 text-white sm:p-6">
-        <p className="!text-3xl !font-bold !text-[#FFC107]">{rate}% scholarship</p>
+      {submitted && <div aria-live="polite" className="mt-6 rounded-xl bg-[#14284E] p-5 text-white sm:p-6">
+        <p className="!text-3xl !font-bold !text-[#FFB703]">{rate}% scholarship</p>
         {rate === 0 && <p className="mt-2 !text-sm !text-white">No scholarship applies at this performance.</p>}
         <dl className="mt-4 space-y-3 text-sm">
           {[["Programme", program.name], ["Programme fee (first admission year)", formatRupees(fees.fee)], ["Amount eligible for discount", formatRupees(fees.base)], ["Non-discountable charges", formatRupees(fees.fee - fees.base)], ["Scholarship value", `− ${formatRupees(discount)}`], ["Refundable caution money", `+ ${formatRupees(fees.caution)}`]].map(([label, value]) => <div key={label} className="flex flex-wrap justify-between gap-x-6 gap-y-1 border-t border-white/15 pt-3"><dt className="text-white/75">{label}</dt><dd className="max-w-full font-semibold sm:max-w-[65%] sm:text-right">{value}</dd></div>)}
-          <div className="flex flex-wrap justify-between gap-3 border-t border-white/25 pt-4"><dt>Estimated net payable</dt><dd className="text-xl font-bold text-[#FFC107]">{formatRupees(fees.fee - discount + fees.caution)}</dd></div>
+          <div className="flex flex-wrap justify-between gap-3 border-t border-white/25 pt-4"><dt>Estimated net payable</dt><dd className="text-xl font-bold text-[#FFB703]">{formatRupees(fees.fee - discount + fees.caution)}</dd></div>
         </dl>
       </div>}
       {slabs && <details className="mt-5 rounded-xl border border-slate-200 p-4" open={awaitingResult || undefined}>

@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import { ArrowRight, CalendarDays, ChevronDown, ChevronLeft, ChevronRight, Cpu, GraduationCap, Image, MapPin, Mic, Music, Palmtree, Pause, Play, Sparkles, Trophy, X } from "lucide-react";
+import { ArrowRight, CalendarDays, ChevronDown, ChevronLeft, ChevronRight, Cpu, GraduationCap, Image, MapPin, Mic, Music, Palmtree, Pause, Play, Trophy, X } from "lucide-react";
+import desktopEventsBanner from "../../assets/images/event-new/banners/desktop-view.jpeg";
+import mobileEventsBanner from "../../assets/images/event-new/banners/mobile-view.jpeg";
 import technicalVideo from "../../assets/video/events-new/Technical event.mp4";
 import culturalVideo from "../../assets/video/events-new/Cultural Event.mp4";
 import sportsVideo from "../../assets/video/events-new/Sports.mp4";
@@ -28,7 +30,13 @@ import khoKhoImage from "../../assets/images/event-new/sports-event/Kho kho.webp
 import tableTennisImage from "../../assets/images/event-new/sports-event/Table tennis.webp";
 import volleyballImage from "../../assets/images/event-new/sports-event/Volley ball.webp";
 import athleteImage from "../../assets/images/event-new/sports-event/athlete..webp";
-import { archiveEvents, calendarEvents, type CalendarEvent } from "./eventNewData";
+import pawandeepArunitaVideo from "../../assets/video/events-new/celebrity/Pawandeep & Arunita.mp4";
+import srmuDarshanVideo from "../../assets/video/events-new/celebrity/SRMU Darshan Reel.mp4";
+import shaanVideo from "../../assets/video/events-new/celebrity/Shaan.mp4";
+import shilpaRaoVideo from "../../assets/video/events-new/celebrity/Shilpa Rao.mp4";
+import sunnyDeolVideo from "../../assets/video/events-new/celebrity/sunny deol.mp4";
+import { calendarEvents, type CalendarEvent } from "./eventNewData";
+// import { archiveEvents } from "./eventNewData"; // Restore with Event Archives.
 import Global from "../../utils/styles/Global.module.css";
 import styles from "./NewEventComponent.module.css";
 
@@ -72,7 +80,13 @@ const sports = [
   { title: "Volley Ball", image: volleyballImage, imagePosition: "center", alt: "A volleyball player jumping to hit the ball over the net" },
   { title: "Athlete", image: athleteImage, imagePosition: "center 45%", alt: "An athlete performing a barbell squat with spotters nearby" },
 ];
-const special = ["Celebrity Talks", "Industry Leader Sessions", "Motivational Talks", "Ideas & Inspiration Talks"];
+const special = [
+  { title: "Pawandeep & Arunita", video: pawandeepArunitaVideo },
+  { title: "SRMU Darshan Reel", video: srmuDarshanVideo },
+  { title: "Shaan", video: shaanVideo },
+  { title: "Shilpa Rao", video: shilpaRaoVideo },
+  { title: "Sunny Deol", video: sunnyDeolVideo },
+];
 const faqs = [
   ["What types of events are organised at SRMU?", "SRMU organises academic, technical, cultural, sports and special events across departments throughout the year."],
   ["How can students participate in SRMU events?", "Contact your department coordinator for participation and registration details."],
@@ -80,7 +94,7 @@ const faqs = [
   ["Does SRMU organise technical events and hackathons?", "Technical events include hackathons, coding contests and project exhibitions."],
   ["Does SRMU organise cultural and sports events?", "Cultural festivals and inter-college sports competitions are part of campus life at SRMU."],
   ["How can I find upcoming events at SRMU?", "Explore the Events Calendar and Upcoming Events sections. This preview currently shows sample events; confirm schedules with the department coordinator."],
-  ["Where can I find previous SRMU events?", "Browse the Event Archives by year and category, or search for an event by name."],
+  // ["Where can I find previous SRMU events?", "Browse the Event Archives by year and category, or search for an event by name."],
   ["Does SRMU organise guest lectures and alumni talks?", "Guest lectures and alumni interaction sessions form part of SRMU's academic events programme."],
 ];
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -113,15 +127,15 @@ function EventCardGrid({ events, category, onChooseCategory }: { events: EventCa
   return (
     <div className="grid grid-cols-1 gap-5 min-[561px]:grid-cols-2 min-[1101px]:grid-cols-3 [&>*]:min-w-0">
       {events.map(({ title, label, description, image, imagePosition, alt }) => (
-        <article key={title} className="group flex h-full flex-col overflow-hidden rounded-2xl border border-[#DCE6EF] border-b-4 border-b-[#ED332D] bg-white shadow-[0_8px_24px_rgba(20,40,78,0.06)] transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-[0_14px_32px_rgba(20,40,78,0.12)] motion-reduce:hover:translate-y-0">
+        <article key={title} className="group flex h-full flex-col overflow-hidden rounded-2xl border border-[#E6E6E7] border-b-4 border-b-[#D62C2B] bg-white shadow-[0_8px_24px_rgba(20,40,78,0.06)] transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-[0_14px_32px_rgba(20,40,78,0.12)] motion-reduce:hover:translate-y-0">
           <div className="aspect-video overflow-hidden bg-[#E0F1FF]">
             <img src={image} alt={alt} loading="lazy" decoding="async" width={640} height={360} style={{ objectPosition: imagePosition }} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105 motion-reduce:transform-none" />
           </div>
           <div className="flex flex-1 flex-col p-5 min-[561px]:p-6">
-            <p className="mb-2 text-[.68rem] font-bold tracking-[.08em] text-[#C92A25] uppercase">{label}</p>
+            <p className="mb-2 text-[.68rem] font-bold tracking-[.08em] text-[#D62C2B] uppercase">{label}</p>
             <h3>{title}</h3>
-            <p className="mt-2 mb-5 text-[.86rem] leading-relaxed text-[#536174]">{description}</p>
-            <a className="mt-auto flex min-h-11 items-center gap-2 border-t border-[#EDF1F5] pt-4 text-[.72rem] font-bold tracking-[.08em] text-[#C92A25] uppercase hover:underline hover:underline-offset-4" href="#calendar" aria-label={`View ${title} events`} onClick={() => onChooseCategory(category)}>
+            <p className="mt-2 mb-5 text-[.86rem] leading-relaxed text-[#0F4A85]">{description}</p>
+            <a className="mt-auto flex min-h-11 items-center gap-2 border-t border-[#E6E6E7] pt-4 text-[.72rem] font-bold tracking-[.08em] text-[#D62C2B] uppercase hover:underline hover:underline-offset-4" href="#calendar" aria-label={`View ${title} events`} onClick={() => onChooseCategory(category)}>
               View Events <ArrowRight size={16} aria-hidden="true" />
             </a>
           </div>
@@ -136,9 +150,10 @@ type Detail = { title: string; category?: string; date?: string; venue?: string;
 export default function NewEventComponent() {
   const [month, setMonth] = useState(new Date(2026, 9, 1));
   const [filter, setFilter] = useState("All");
-  const [year, setYear] = useState("All");
-  const [archiveCategory, setArchiveCategory] = useState("All");
-  const [search, setSearch] = useState("");
+  // Event Archives filters — restore with the section below.
+  // const [year, setYear] = useState("All");
+  // const [archiveCategory, setArchiveCategory] = useState("All");
+  // const [search, setSearch] = useState("");
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [detail, setDetail] = useState<Detail | null>(null);
   const [newsletterMessage, setNewsletterMessage] = useState("");
@@ -164,7 +179,7 @@ export default function NewEventComponent() {
 
   const monthKey = `${month.getFullYear()}-${String(month.getMonth() + 1).padStart(2, "0")}`;
   const monthEvents = (calendarEvents[monthKey] || []).filter(event => filter === "All" || event.cat === filter);
-  const filteredArchive = archiveEvents.filter(event => (year === "All" || event.year === year) && (archiveCategory === "All" || event.cat === archiveCategory) && event.title.toLowerCase().includes(search.trim().toLowerCase()));
+  // const filteredArchive = archiveEvents.filter(event => (year === "All" || event.year === year) && (archiveCategory === "All" || event.cat === archiveCategory) && event.title.toLowerCase().includes(search.trim().toLowerCase()));
   const upcoming = calendarEvents["2026-10"];
   const openEvent = (event: CalendarEvent, date = month) => setDetail({ title: event.title, category: event.cat, date: `${event.day} ${months[date.getMonth()]} ${date.getFullYear()} · ${event.time}`, venue: event.venue, description: event.desc });
   const chooseCategory = (category: string) => {
@@ -174,16 +189,20 @@ export default function NewEventComponent() {
 
   return (
     <main className="bg-white text-[#14284E] leading-[1.65] scheme-light [&_h1]:font-bold [&_h1]:leading-[1.22] [&_h1]:text-[clamp(2rem,3.5vw,3.4rem)] [&_h1]:tracking-[-.035em] [&_h1_em]:text-[#0F4A85] [&_h1_em]:not-italic [&_h2]:font-bold [&_h2]:leading-[1.22] [&_h2]:text-[clamp(1.65rem,2.6vw,2.4rem)] [&_h2]:tracking-[-.025em] [&_h3]:text-[1.05rem] [&_h3]:font-bold [&_h3]:leading-[1.22] [&_button]:cursor-pointer [&_:focus-visible]:outline-3 [&_:focus-visible]:outline-[#0F4A85] [&_:focus-visible]:outline-offset-4 [&_section[id]]:scroll-mt-40 [&_input]:placeholder:text-[#0F4A85] motion-reduce:[&_*]:transition-none" id="event-new-top">
-      <section className="border-b-4 border-[#21A5DB] bg-[#E0F1FF] pt-[124px] pb-11 min-[561px]:pt-[150px] min-[561px]:pb-[72px]">
-        <div className={Global.container}>
-          <div className="grid grid-cols-1 items-center gap-7 min-[861px]:grid-cols-[1.1fr_1fr] min-[1101px]:gap-12 [&>*]:min-w-0 [&>div>button]:mt-6 [&>div>span]:mb-4">
-            <div>
-              <p className="mb-4 flex items-center gap-[9px] text-[.78rem] font-bold tracking-[.1em] text-[#0F4A85] uppercase [&>span]:size-2 [&>span]:rounded-full [&>span]:bg-[#D62C2B]"><span /> Events & Activities</p>
-              <h1>Events at Shri Ramswaroop Memorial University <em>(SRMU)</em></h1>
-              <p className="mt-6 mb-7 max-w-[570px]">Discover academic, technical, cultural, sports and special events that bring together students, faculty, industry experts, alumni and distinguished guests at SRMU.</p>
-              <div className="flex flex-wrap items-center gap-3"><a href="#categories" className="inline-flex min-h-12 items-center justify-center gap-2.5 rounded-full border border-[#FFB703] bg-[#FFB703] px-[22px] py-[13px] text-center text-[.88rem] font-semibold text-[#14284E] transition-transform hover:-translate-y-0.5">Explore Events <ArrowRight size={18} /></a><a href="#calendar" className="inline-flex min-h-12 items-center justify-center gap-2.5 rounded-full border border-[#0F4A85] bg-transparent px-[22px] py-[13px] text-center text-[.88rem] font-semibold text-[#0F4A85] transition-transform hover:-translate-y-0.5"><CalendarDays size={18} /> View Event Calendar</a></div>
+      <section className={styles.hero} aria-labelledby="events-hero-title">
+        <picture className={styles.heroBanner}>
+          <source media="(max-width: 860px)" srcSet={mobileEventsBanner} width={1080} height={1080} />
+          <img src={desktopEventsBanner} width={1358} height={576} alt="" loading="eager" fetchPriority="high" decoding="async" />
+        </picture>
+        <div className={`${Global.container} relative z-10`}>
+          <div className={styles.heroContent}>
+            {/* <p className="mb-4 flex items-center gap-[9px] text-[.78rem] font-bold tracking-[.1em] text-white uppercase"><span className="size-2 rounded-full bg-[#FFB703]" /> Events & Activities</p> */}
+            <h1 id="events-hero-title" className="text-white">Events at Shri Ramswaroop Memorial University <span className="text-[#FFB703]">(SRMU)</span></h1>
+            <p className="mt-6 mb-7 hidden max-w-[570px] text-white/90 min-[861px]:block">Discover academic, technical, cultural, sports and special events that bring together students, faculty, industry experts, alumni and distinguished guests at SRMU.</p>
+            <div className="hidden flex-wrap items-center gap-3 min-[861px]:flex">
+              <a href="#categories" className="inline-flex min-h-12 items-center justify-center gap-2.5 rounded-full border border-[#FFB703] bg-[#FFB703] px-[22px] py-[13px] text-center text-[.88rem] font-semibold text-[#14284E] transition-transform hover:-translate-y-0.5 focus-visible:outline-white!">Explore Events <ArrowRight size={18} aria-hidden="true" /></a>
+              <a href="#calendar" className="inline-flex min-h-12 items-center justify-center gap-2.5 rounded-full border border-white/70 bg-[#14284E]/25 px-[22px] py-[13px] text-center text-[.88rem] font-semibold text-white transition-colors hover:bg-white/15 focus-visible:outline-white!"><CalendarDays size={18} aria-hidden="true" /> View Event Calendar</a>
             </div>
-            <div className="relative mx-auto w-full max-w-[600px] pb-5 [&>[role=img]]:aspect-[4/3] [&>[role=img]]:rounded-[26px] [&>[role=img]]:bg-white"><Placeholder label="Campus event photograph"><GraduationCap aria-hidden="true" /></Placeholder><div className="absolute right-3 bottom-0 left-3 flex items-center justify-center gap-3 rounded-[14px] bg-[#FFB703] p-3.5 text-[.8rem] font-semibold min-[561px]:right-[22px] min-[561px]:left-[22px] min-[561px]:p-[18px] min-[561px]:text-[.92rem]"><Sparkles size={20} /><span>A campus full of possibilities</span></div></div>
           </div>
         </div>
       </section>
@@ -235,12 +254,12 @@ export default function NewEventComponent() {
         </div>
       </Section>
 
-      <Section id="academic-events" title="Academic Events" description="Opportunities for students and faculty to learn from experts, exchange ideas, develop professional skills and engage with emerging areas of knowledge." className="bg-[#F0F7FC]">
+      <Section id="academic-events" title="Academic Events" description="Opportunities for students and faculty to learn from experts, exchange ideas, develop professional skills and engage with emerging areas of knowledge." className="bg-[#E0F1FF]">
         <EventCardGrid events={academic} category="Academic" onChooseCategory={chooseCategory} />
         <div className="mt-8 flex justify-center"><a href="#calendar" className="inline-flex min-h-12 items-center justify-center gap-2.5 rounded-full border border-[#0F4A85] bg-transparent px-[22px] py-[13px] text-center text-[.88rem] font-semibold text-[#0F4A85] transition-transform hover:-translate-y-0.5" onClick={() => chooseCategory("Academic")}>View All Academic Events</a></div>
       </Section>
 
-      <Section id="technical-events" title="Technical Events" description="Activities designed to encourage innovation, problem-solving, practical learning and industry exposure." className="bg-[#F0F7FC]">
+      <Section id="technical-events" title="Technical Events" description="Activities designed to encourage innovation, problem-solving, practical learning and industry exposure." className="bg-[#E0F1FF]">
         <EventCardGrid events={technical} category="Technical" onChooseCategory={chooseCategory} />
         <div className="mt-8 flex justify-center"><a href="#calendar" className="inline-flex min-h-12 items-center justify-center gap-2.5 rounded-full border border-[#0F4A85] bg-transparent px-[22px] py-[13px] text-center text-[.88rem] font-semibold text-[#0F4A85] transition-transform hover:-translate-y-0.5" onClick={() => chooseCategory("Technical")}>View All Technical Events</a></div>
       </Section>
@@ -274,15 +293,15 @@ export default function NewEventComponent() {
         <div className="mt-8 flex justify-center"><a href="#calendar" className="inline-flex items-center gap-2 border-0 bg-transparent py-[5px] text-left text-[.85rem] font-semibold text-[#0F4A85] hover:underline hover:underline-offset-4 [&>svg]:shrink-0" onClick={() => chooseCategory("Cultural")}>Explore Cultural Events <ArrowRight size={16} /></a></div>
       </Section>
 
-      <Section id="sports-events" title="Sports & Fitness" description="Sports at SRMU encourage teamwork, discipline, leadership and a healthy campus lifestyle." className="bg-[#F0F7FC]">
+      <Section id="sports-events" title="Sports & Fitness" description="Sports at SRMU encourage teamwork, discipline, leadership and a healthy campus lifestyle." className="bg-[#E0F1FF]">
         <div className="grid grid-cols-1 gap-5 min-[561px]:grid-cols-2 min-[1101px]:grid-cols-3 [&>*]:min-w-0">
           {sports.map(({ title, image, imagePosition, alt }) => (
-            <article key={title} className="group overflow-hidden rounded-2xl border border-[#DCE6EF] border-b-4 border-b-[#ED332D] bg-white shadow-[0_8px_24px_rgba(20,40,78,0.06)] transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-[0_14px_32px_rgba(20,40,78,0.12)] motion-reduce:hover:translate-y-0">
+            <article key={title} className="group overflow-hidden rounded-2xl border border-[#E6E6E7] border-b-4 border-b-[#D62C2B] bg-white shadow-[0_8px_24px_rgba(20,40,78,0.06)] transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-[0_14px_32px_rgba(20,40,78,0.12)] motion-reduce:hover:translate-y-0">
               <div className="aspect-[3/2] overflow-hidden bg-[#E0F1FF]">
                 <img src={image} alt={alt} loading="lazy" decoding="async" width={600} height={400} style={{ objectPosition: imagePosition }} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105 motion-reduce:transform-none" />
               </div>
               <div className="flex items-center gap-3 p-5 min-[561px]:p-6">
-                <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-[#F0F7FC] text-[#0F4A85]"><Trophy size={20} aria-hidden="true" /></span>
+                <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-[#E0F1FF] text-[#0F4A85]"><Trophy size={20} aria-hidden="true" /></span>
                 <h3>{title}</h3>
               </div>
             </article>
@@ -292,17 +311,30 @@ export default function NewEventComponent() {
       </Section>
 
       <Section id="special-events" title="Celebrity & Special Events" description="Engage with distinguished personalities, industry leaders, experts and inspiring speakers through special sessions at SRMU.">
-        <div className="grid grid-cols-1 gap-5 min-[561px]:grid-cols-2 min-[1101px]:grid-cols-4 [&>*]:min-w-0">{special.map(title => <article className="[&>[role=img]]:aspect-[4/3] min-[561px]:[&>[role=img]]:aspect-[9/14] [&:last-child>[role=img]]:border-2 [&:last-child>[role=img]]:border-[#FFB703] [&>[role=img]>span]:absolute [&>[role=img]>span]:inset-x-0 [&>[role=img]>span]:bottom-0 [&>[role=img]>span]:bg-white [&>[role=img]>span]:px-3 [&>[role=img]>span]:py-[18px] [&>[role=img]>span]:font-semibold" key={title}><Placeholder label={title}><Mic aria-hidden="true" /></Placeholder></article>)}</div>
-      </Section>
-
-      <Section id="holiday-events" title="Holidays & Closures" description="University holidays, mandatory celebration days and restricted holidays (aligned with government holidays)." alternate>
-        <div className="mx-auto max-w-3xl rounded-2xl border border-[#21A5DB] bg-white p-5 text-center text-[#14284E] min-[561px]:p-6">
-            <Palmtree size={48} className="mx-auto mb-4 text-[#0F4A85]" aria-hidden="true" />
-            <h3 className="mb-2 text-xl">2026 Holiday Calendar Available</h3>
-            <p className="mb-6">The complete list of regular and restricted holidays for 2026 has been updated. You can view them in the university calendar below.</p>
-            <a href="#calendar" className="inline-flex min-h-12 items-center justify-center gap-2.5 rounded-full border border-[#0F4A85] bg-transparent px-[22px] py-[13px] text-center text-[.88rem] font-semibold text-[#0F4A85] transition-transform hover:-translate-y-0.5" onClick={() => chooseCategory("Holiday")}>View Holidays on Calendar</a>
+        <div className="grid grid-cols-1 gap-5 min-[561px]:grid-cols-2 min-[861px]:grid-cols-3 min-[1101px]:grid-cols-5 [&>*]:min-w-0">
+          {special.map(({ title, video }) => (
+            <article key={title} className="mx-auto flex w-full max-w-[360px] flex-col overflow-hidden rounded-2xl border border-[#E6E6E7] border-b-4 border-b-[#FFB703] bg-white shadow-[0_8px_24px_rgba(20,40,78,0.08)] transition-shadow duration-300 hover:shadow-[0_14px_32px_rgba(20,40,78,0.14)]">
+              <video src={video} autoPlay muted loop playsInline controls preload="metadata" aria-label={`${title} event video`} className="aspect-[9/16] w-full bg-[#14284E] object-cover" />
+              <div className="flex flex-1 items-center gap-2.5 px-4 py-5">
+                <Mic size={20} className="shrink-0 text-[#0F4A85]" aria-hidden="true" />
+                <h3>{title}</h3>
+              </div>
+            </article>
+          ))}
         </div>
       </Section>
+
+      {/* Holidays & Closures hidden for now.
+      <Section id="holiday-events" title="Holidays & Closures" description="University holidays, mandatory celebration days and restricted holidays (aligned with government holidays)." alternate>
+        <div className="mx-auto max-w-3xl rounded-2xl border border-[#21A5DB] bg-white p-5 text-center text-[#14284E] min-[561px]:p-6">
+          <Palmtree size={48} className="mx-auto mb-4 text-[#0F4A85]" aria-hidden="true" />
+          <h3 className="mb-2 text-xl">2026 Holiday Calendar Available</h3>
+          <p className="mb-6">The complete list of regular and restricted holidays for 2026 has been updated. You can view them in the university calendar below.</p>
+          <a href="#calendar" className="inline-flex min-h-12 items-center justify-center gap-2.5 rounded-full border border-[#0F4A85] bg-transparent px-[22px] py-[13px] text-center text-[.88rem] font-semibold text-[#0F4A85] transition-transform hover:-translate-y-0.5" onClick={() => chooseCategory("Holiday")}>View Holidays on Calendar</a>
+        </div>
+      </Section>
+
+      */}
 
       <Section id="calendar" title="SRMU Events Calendar" description="Stay updated with upcoming academic, technical, cultural, sports and special events at SRMU.">
         <p className="mb-[18px] text-[.8rem] text-[#0F4A85]">Design preview: event dates, archive entries and statistics are sample content.</p>
@@ -346,6 +378,7 @@ export default function NewEventComponent() {
         <div className="mt-8 flex justify-center"><a className="inline-flex min-h-12 items-center justify-center gap-2.5 rounded-full border border-[#0F4A85] bg-transparent px-[22px] py-[13px] text-center text-[.88rem] font-semibold text-[#0F4A85] transition-transform hover:-translate-y-0.5" href="#calendar" onClick={() => chooseCategory("All")}>View All Upcoming Events</a></div>
       </Section>
 
+      {/* Event Archives hidden for now.
       <Section id="archive" title="Event Archives" description="Explore events, activities and memorable moments from previous academic years at SRMU.">
         <div className="mb-[22px] flex flex-wrap gap-2" aria-label="Filter archive by year">{["All", "2026", "2025", "2024", "2023"].map(value => <button key={value} className="rounded-full border border-[#0F4A85] bg-transparent px-[17px] py-[9px] text-[.82rem] text-[#0F4A85] aria-pressed:border-[#FFB703] aria-pressed:bg-[#FFB703] aria-pressed:font-semibold aria-pressed:text-[#14284E]" onClick={() => setYear(value)} aria-pressed={year === value}>{value}</button>)}</div>
         <div className="flex flex-col flex-wrap gap-3.5 min-[561px]:flex-row [&>label]:flex [&>label]:flex-1 [&>label]:flex-col [&>label]:gap-1.5 [&>label]:text-[.8rem] [&>label]:font-semibold min-[561px]:[&>label]:max-w-[400px] [&_input]:min-w-0 [&_input]:w-full [&_input]:rounded-[10px] [&_input]:border [&_input]:border-[#0F4A85] [&_input]:bg-white [&_input]:px-4 [&_input]:py-3 [&_select]:min-w-0 [&_select]:w-full [&_select]:rounded-[10px] [&_select]:border [&_select]:border-[#0F4A85] [&_select]:bg-white [&_select]:px-4 [&_select]:py-3"><label>Search events<input type="search" placeholder="Search events..." value={search} onChange={event => setSearch(event.target.value)} /></label><label>Category<select value={archiveCategory} onChange={event => setArchiveCategory(event.target.value)}><option value="All">All Categories</option>{categories.map(category => <option key={category.name}>{category.name}</option>)}</select></label></div>
@@ -353,6 +386,7 @@ export default function NewEventComponent() {
         <div className="grid grid-cols-1 gap-5 min-[561px]:grid-cols-2 min-[861px]:grid-cols-3 [&>*]:min-w-0">{filteredArchive.map(event => <article className="flex flex-col items-start gap-3 rounded-2xl border border-[#21A5DB] bg-white p-5 min-[561px]:p-6 [&>svg]:text-[#0F4A85] [&>p]:text-[.86rem] [&>a]:mt-auto [&>button]:mt-auto [&>[role=img]]:mb-1.5 [&>[role=img]]:aspect-auto [&>[role=img]]:h-[140px] [&>[role=img]]:w-full [&>[role=img]>svg]:size-9 [&>[role=img]>span]:text-[.7rem]" key={event.title}><Placeholder label={event.title} /><span className="inline-flex w-fit rounded-full bg-[#FFB703] px-3 py-1 text-[.72rem] leading-normal font-semibold text-[#14284E]">{event.cat}</span><h3>{event.title}</h3><p>{event.date}</p><p>{event.desc}</p><button className="inline-flex items-center gap-2 border-0 bg-transparent py-[5px] text-left text-[.85rem] font-semibold text-[#0F4A85] hover:underline hover:underline-offset-4 [&>svg]:shrink-0" onClick={() => setDetail({ title: event.title, category: event.cat, date: event.date, description: event.desc })}>View Event <ArrowRight size={16} /></button></article>)}</div>
         {!filteredArchive.length && <p className="py-6 text-[.9rem]">No matching events found. Try another year, category or search term.</p>}
       </Section>
+      */}
 
       <section className="py-[52px] min-[861px]:py-[76px]"><div className={`${Global.container} grid grid-cols-1 items-center gap-7 min-[861px]:grid-cols-[1.1fr_1fr] min-[1101px]:gap-12 [&>*]:min-w-0 [&>div>button]:mt-6 [&>div>span]:mb-4`}><Placeholder label="Event highlight photograph"><Cpu aria-hidden="true" /></Placeholder><div><p className="mb-4 flex items-center gap-[9px] text-[.78rem] font-bold tracking-[.1em] text-[#0F4A85] uppercase [&>span]:size-2 [&>span]:rounded-full [&>span]:bg-[#D62C2B]">Event Highlight</p><h2>From Code to Creativity: The Rise of Generative AI</h2><ul className="my-[22px] list-none p-0 text-[.9rem] [&>li]:mb-2"><li><b>Guest Speaker:</b> Leading AI researcher</li><li><b>Date:</b> September 2026</li><li><b>Department:</b> Computer Science & Engineering</li><li><b>Highlight:</b> Live demonstrations and student Q&amp;A</li></ul><button className="inline-flex min-h-12 items-center justify-center gap-2.5 rounded-full border border-[#FFB703] bg-[#FFB703] px-[22px] py-[13px] text-center text-[.88rem] font-semibold text-[#14284E] transition-transform hover:-translate-y-0.5" onClick={() => setDetail({ title: "From Code to Creativity: The Rise of Generative AI", category: "Academic", date: "September 2026", description: "A sample event highlight featuring live demonstrations and student Q&A with a leading AI researcher from the Computer Science & Engineering programme." })}>Read Event Story <ArrowRight size={18} /></button></div></div></section>
 

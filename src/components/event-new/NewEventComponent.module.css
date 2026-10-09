@@ -1,3 +1,51 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  border-bottom: 4px solid #21a5db;
+  background: linear-gradient(120deg, #0F4A85, #14284E);
+}
+
+.heroBanner {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.heroBanner img {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  mask-image: linear-gradient(to bottom, transparent, #000 20%);
+}
+
+.heroContent {
+  max-width: 640px;
+  padding-top: 124px;
+  padding-bottom: 65vw;
+}
+
+@media (min-width: 861px) {
+  .hero {
+    display: flex;
+    align-items: center;
+    min-height: clamp(640px, 42.4vw, 820px);
+  }
+
+  .heroBanner img {
+    height: 100%;
+    object-fit: cover;
+    object-position: left center;
+    mask-image: none;
+  }
+
+  .heroContent {
+    max-width: 48%;
+    padding-top: 150px;
+    padding-bottom: 72px;
+  }
+}
+
 .culturalReels {
   overflow: hidden;
 }

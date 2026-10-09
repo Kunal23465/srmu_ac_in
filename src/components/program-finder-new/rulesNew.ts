@@ -28,6 +28,8 @@ export const C12_SUBJECTS = [
   {key:'chemistry', label:'Chemistry'},
   {key:'maths', label:'Mathematics'},
   {key:'biology', label:'Biology'},
+  {key:'biotechnology', label:'Biotechnology'},
+  {key:'lifesciences', label:'Life Sciences'},
   {key:'english', label:'English'},
   {key:'cs', label:'Computer Science / IT'},
   {key:'commerce', label:'Commerce / related subjects'},
@@ -47,14 +49,15 @@ export const C12ITI_SUBJECTS = [
 ];
 export const PCM = (s: Subjects) => s.physics && s.maths && (s.chemistry || s.cs || s.techvoc);
 export const PCB_PCM = (s: Subjects) => s.physics && s.chemistry && (s.maths || s.biology);
-export const PCM_PCB_FLEX = (s: Subjects) => s.physics && (s.maths || s.biology) && (s.chemistry || s.cs || s.techvoc);
+export const PCM_PCB_FLEX = (s: Subjects) => s.physics && (s.maths || s.biology) && (s.chemistry || s.biotechnology || s.cs || s.techvoc);
+export const BIOSCIENCE = (s: Subjects) => s.physics && (s.maths || s.biology) && (s.chemistry || s.biotechnology || s.cs);
 export const PCB = (s: Subjects) => s.physics && s.chemistry && s.biology;
 export const ANY = () => true;
 
 export const C12_RULES: Record<string, (s: Subjects) => boolean> = {
   'Agriculture': s => (s.physics && s.chemistry && (s.maths||s.biology)) || s.agriculture,
   'Pharmacy': s => s.english && s.physics && s.chemistry && (s.maths||s.biology),
-  'Bioscience': PCB_PCM,
+  'Bioscience': BIOSCIENCE,
   'Biotechnology': PCM_PCB_FLEX,
   'Information Technology': ANY,
   'Computer Application': ANY,
@@ -81,9 +84,9 @@ export const C12_RULES: Record<string, (s: Subjects) => boolean> = {
   'Physics': s => s.physics,
   'Chemistry': s => s.chemistry,
   'Mathematics': s => s.maths,
-  'Food Technology': PCB_PCM,
-  'Microbiology': PCB_PCM,
-  'Nutrition & Dietetics': s => s.biology,
+  'Food Technology': BIOSCIENCE,
+  'Microbiology': BIOSCIENCE,
+  'Nutrition & Dietetics': s => s.biology || s.lifesciences,
   'Humanities': ANY,
   'English': s => s.english,
   'Political Science': ANY,
@@ -97,7 +100,12 @@ export const C12_RULES: Record<string, (s: Subjects) => boolean> = {
 };
 export const C12_THRESH = { gen:45, obc:45, scst:40 };
 export const C12_THRESH_LAW = { gen:45, obc:42, scst:40 };
-export function c12Threshold(domain: string){ return domain==='Law' ? C12_THRESH_LAW : C12_THRESH; }
+export const C12_THRESH_NUTRITION = { gen:50, obc:50, scst:45 };
+export function c12Threshold(domain: string){
+  if (domain === 'Law') return C12_THRESH_LAW;
+  if (domain === 'Nutrition & Dietetics') return C12_THRESH_NUTRITION;
+  return C12_THRESH;
+}
 
 /* ---------------------------------------------------------------
    CLASS 10  (Polytechnic Diploma, 1st year)
@@ -268,4 +276,3 @@ export const GRAD_THRESH: Record<string, Threshold> = {
   'Fintech':{gen:50,obc:50,scst:45},
   'Journalism & Mass Comm.':{gen:45,obc:45,scst:40},
 };
-
