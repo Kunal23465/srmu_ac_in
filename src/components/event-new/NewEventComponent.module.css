@@ -1,0 +1,41 @@
+.culturalReels {
+  overflow: hidden;
+}
+
+.culturalTrack {
+  display: flex;
+  width: max-content;
+  animation: culturalMarquee 28s linear infinite;
+}
+
+.culturalGroup {
+  display: flex;
+  flex-shrink: 0;
+  gap: 12px;
+  padding-right: 12px;
+}
+
+.culturalReels:hover .culturalTrack,
+.culturalReels:focus-within .culturalTrack {
+  animation-play-state: paused;
+}
+
+@keyframes culturalMarquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .culturalReels {
+    overflow-x: auto;
+  }
+
+  .culturalTrack {
+    animation: none;
+  }
+
+  .culturalGroup[aria-hidden="true"],
+  .scrollControl {
+    display: none;
+  }
+}

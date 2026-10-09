@@ -1,31 +1,77 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import { ArrowRight, CalendarDays, ChevronDown, ChevronLeft, ChevronRight, Cpu, GraduationCap, Image, MapPin, Mic, Music, Palmtree, Sparkles, Trophy, X } from "lucide-react";
+import { ArrowRight, CalendarDays, ChevronDown, ChevronLeft, ChevronRight, Cpu, GraduationCap, Image, MapPin, Mic, Music, Palmtree, Pause, Play, Sparkles, Trophy, X } from "lucide-react";
+import technicalVideo from "../../assets/video/events-new/Technical event.mp4";
+import culturalVideo from "../../assets/video/events-new/Cultural Event.mp4";
+import sportsVideo from "../../assets/video/events-new/Sports.mp4";
+import celebrityVideo from "../../assets/video/events-new/Celebrity.mp4";
+import facultyTrainingImage from "../../assets/images/event-new/academic-event/Faculty  training & Development.webp";
+import conferenceImage from "../../assets/images/event-new/academic-event/Conference.webp";
+import workshopImage from "../../assets/images/event-new/academic-event/Academic Workshop Group Portrait.webp";
+import seminarImage from "../../assets/images/event-new/academic-event/Seminar.webp";
+import alumniTalkImage from "../../assets/images/event-new/academic-event/Alumni Talk.webp";
+import visitsImage from "../../assets/images/event-new/academic-event/Visits.webp";
+import hackathonImage from "../../assets/images/event-new/technical-event/Hackathon.webp";
+import technicalWorkshopImage from "../../assets/images/event-new/technical-event/sxnhgivgepzqz9bvrjoq.webp";
+import codingImage from "../../assets/images/event-new/technical-event/Coading.webp";
+import projectImage from "../../assets/images/event-new/technical-event/Project.webp";
+import industrialVisitImage from "../../assets/images/event-new/technical-event/Industrial visit.webp";
+import innovationImage from "../../assets/images/event-new/technical-event/Innovation.webp";
+import anubhutiVideo from "../../assets/video/events-new/cultural-event/Anubhuti.mp4";
+import dandiyaNightVideo from "../../assets/video/events-new/cultural-event/Dandiya Night.mp4";
+import funDayVideo from "../../assets/video/events-new/cultural-event/Fun day.mp4";
+import harmonyVideo from "../../assets/video/events-new/cultural-event/Harmony.mp4";
+import independenceDayVideo from "../../assets/video/events-new/cultural-event/Independence Day.mp4";
+import rangBarsheVideo from "../../assets/video/events-new/cultural-event/Rang Barshe.mp4";
+import basketballImage from "../../assets/images/event-new/sports-event/Basket ball.webp";
+import kabaddiImage from "../../assets/images/event-new/sports-event/Kabaddi.webp";
+import khoKhoImage from "../../assets/images/event-new/sports-event/Kho kho.webp";
+import tableTennisImage from "../../assets/images/event-new/sports-event/Table tennis.webp";
+import volleyballImage from "../../assets/images/event-new/sports-event/Volley ball.webp";
+import athleteImage from "../../assets/images/event-new/sports-event/athlete..webp";
 import { archiveEvents, calendarEvents, type CalendarEvent } from "./eventNewData";
 import Global from "../../utils/styles/Global.module.css";
+import styles from "./NewEventComponent.module.css";
 
 const categories = [
-  { name: "Academic", title: "Academic Events", id: "academic-events", Icon: GraduationCap, description: "Conferences, faculty development programmes, workshops, guest lectures and alumni interactions." },
-  { name: "Technical", title: "Technical Events", id: "technical-events", Icon: Cpu, description: "Hackathons, coding competitions, technical workshops, project exhibitions and innovation events." },
-  { name: "Cultural", title: "Cultural Events", id: "cultural-events", Icon: Music, description: "Cultural festivals, music, dance, drama, literary activities and celebrations." },
-  { name: "Sports", title: "Sports", id: "sports-events", Icon: Trophy, description: "Annual sports meets, inter-college competitions, athletics and indoor and outdoor activities." },
-  { name: "Special", title: "Celebrity & Special", id: "special-events", Icon: Mic, description: "Celebrity interactions, industry leader talks, motivational sessions and distinguished speakers." },
-  { name: "Holiday", title: "Holidays", id: "holiday-events", Icon: Palmtree, description: "University holidays, mandatory celebration days and restricted holidays." },
+  { name: "Academic", title: "Academic Events", id: "academic-events", Icon: GraduationCap, description: "Conferences, faculty development programmes, workshops, guest lectures and alumni interactions.", reelVideo: undefined as string | undefined },
+  { name: "Technical", title: "Technical Events", id: "technical-events", Icon: Cpu, description: "Hackathons, coding competitions, technical workshops, project exhibitions and innovation events.", reelVideo: technicalVideo as string },
+  { name: "Cultural", title: "Cultural Events", id: "cultural-events", Icon: Music, description: "Cultural festivals, music, dance, drama, literary activities and celebrations.", reelVideo: culturalVideo as string },
+  { name: "Sports", title: "Sports", id: "sports-events", Icon: Trophy, description: "Annual sports meets, inter-college competitions, athletics and indoor and outdoor activities.", reelVideo: sportsVideo as string },
+  { name: "Special", title: "Celebrity & Special", id: "special-events", Icon: Mic, description: "Celebrity interactions, industry leader talks, motivational sessions and distinguished speakers.", reelVideo: celebrityVideo as string },
+  { name: "Holiday", title: "Holidays", id: "holiday-events", Icon: Palmtree, description: "University holidays, mandatory celebration days and restricted holidays.", reelVideo: undefined as string | undefined },
 ];
 const academic = [
-  ["Faculty Training & Development", "Structured programmes building teaching and research capability."],
-  ["Conferences & Seminars", "Research presentations and expert-led discussions across disciplines."],
-  ["Workshops & Industrial Training", "Hands-on sessions connecting classroom learning to industry practice."],
-  ["Alumni Talks & Interaction", "Graduates share career journeys and mentor current students."],
+  { title: "Faculty Training & Development", label: "Faculty Development", description: "Structured programmes building teaching and research capability.", image: facultyTrainingImage, imagePosition: "center 45%", alt: "Faculty development programme participants gathered in an auditorium" },
+  { title: "Conferences", label: "Research & Knowledge", description: "Research presentations and expert-led discussions across disciplines.", image: conferenceImage, imagePosition: "center", alt: "Conference delegates presenting publications on stage at SRMU" },
+  { title: "Workshops & Industrial Training", label: "Practical Learning", description: "Hands-on sessions connecting classroom learning to industry practice.", image: workshopImage, imagePosition: "center 60%", alt: "Academic workshop participants gathered for a group photograph" },
+  { title: "Seminars & Guest Lectures", label: "Expert Insights", description: "Engaging sessions with experts exploring emerging ideas and perspectives.", image: seminarImage, imagePosition: "center", alt: "Students attending a guest lecture in the university auditorium" },
+  { title: "Alumni Talks & Interaction", label: "Alumni Connect", description: "Graduates share career journeys and mentor current students.", image: alumniTalkImage, imagePosition: "center", alt: "Speaker addressing an alumni interaction session at SRMU" },
+  { title: "Industrial & Educational Visits", label: "Industry Exposure", description: "Learning beyond the classroom through visits to industry and research centres.", image: visitsImage, imagePosition: "center 65%", alt: "Students and faculty gathered outside an institute during an educational visit" },
 ];
 const technical = [
-  ["Hackathons", "48-hour builds tackling real-world problem statements."],
-  ["Technical Workshops", "Skill-building sessions on current tools and platforms."],
-  ["Coding Competitions", "Timed contests testing algorithmic problem-solving."],
-  ["Project Exhibitions", "Students showcase semester and capstone projects."],
-  ["Industrial Visits", "On-site exposure to manufacturing and R&D facilities."],
-  ["Innovation Challenges", "Cross-disciplinary competitions for original ideas."],
+  { title: "Hackathons", label: "Build & Collaborate", description: "48-hour builds tackling real-world problem statements.", image: hackathonImage, imagePosition: "center", alt: "Students demonstrating their work to evaluators during a hackathon" },
+  { title: "Technical Workshops", label: "Hands-on Learning", description: "Skill-building sessions on current tools and platforms.", image: technicalWorkshopImage, imagePosition: "center 60%", alt: "Technical workshop participants gathered in an auditorium" },
+  { title: "Coding Competitions", label: "Code & Compete", description: "Timed contests testing algorithmic problem-solving.", image: codingImage, imagePosition: "center 60%", alt: "Coding event participants posing together in a classroom" },
+  { title: "Project Exhibitions", label: "Student Projects", description: "Students showcase semester and capstone projects.", image: projectImage, imagePosition: "center 65%", alt: "Students presenting an outdoor engineering project demonstration" },
+  { title: "Industrial Visits", label: "Industry Exposure", description: "On-site exposure to manufacturing and R&D facilities.", image: industrialVisitImage, imagePosition: "center", alt: "Students listening to a briefing from industry professionals during a factory visit" },
+  { title: "Innovation Challenges", label: "Ideas & Innovation", description: "Cross-disciplinary competitions for original ideas.", image: innovationImage, imagePosition: "center 60%", alt: "Students testing robotic vehicles on an indoor competition course" },
 ];
-const cultural = ["Cultural Fest", "Music & Dance", "Drama & Theatre", "Literary Events", "Art & Photography", "National Celebrations"];
+const cultural = [
+  { title: "Anubhuti", video: anubhutiVideo },
+  { title: "Dandiya Night", video: dandiyaNightVideo },
+  { title: "Fun day", video: funDayVideo },
+  { title: "Harmony", video: harmonyVideo },
+  { title: "Independence Day", video: independenceDayVideo },
+  { title: "Rang Barshe", video: rangBarsheVideo },
+];
+const sports = [
+  { title: "Basket Ball", image: basketballImage, imagePosition: "center", alt: "Students competing for the ball near the basketball hoop" },
+  { title: "Kabaddi", image: kabaddiImage, imagePosition: "center", alt: "Students playing kabaddi on the university sports ground" },
+  { title: "Kho Kho", image: khoKhoImage, imagePosition: "center", alt: "Students chasing and dodging during a kho kho match" },
+  { title: "Table Tennis", image: tableTennisImage, imagePosition: "center", alt: "Students playing a doubles table tennis match indoors" },
+  { title: "Volley Ball", image: volleyballImage, imagePosition: "center", alt: "A volleyball player jumping to hit the ball over the net" },
+  { title: "Athlete", image: athleteImage, imagePosition: "center 45%", alt: "An athlete performing a barbell squat with spotters nearby" },
+];
 const special = ["Celebrity Talks", "Industry Leader Sessions", "Motivational Talks", "Ideas & Inspiration Talks"];
 const faqs = [
   ["What types of events are organised at SRMU?", "SRMU organises academic, technical, cultural, sports and special events across departments throughout the year."],
@@ -45,13 +91,44 @@ function Placeholder({ label, children }: { label: string; children?: ReactNode 
   </div>;
 }
 
-function Section({ id, title, description, alternate, children }: { id?: string; title: string; description?: string; alternate?: boolean; children: ReactNode }) {
-  return <section id={id} className={`py-[52px] min-[861px]:py-[76px] ${alternate ? "bg-[#E0F1FF]" : ""}`}>
+function Section({ id, title, description, alternate, className = "", children }: { id?: string; title: string; description?: string; alternate?: boolean; className?: string; children: ReactNode }) {
+  return <section id={id} className={`py-[52px] min-[861px]:py-[76px] ${alternate ? "bg-[#E0F1FF]" : ""} ${className}`}>
     <div className={Global.container}>
       <div className="mb-[34px] max-w-[740px] [&>p]:mt-3.5"><h2>{title}</h2>{description && <p>{description}</p>}</div>
       {children}
     </div>
   </section>;
+}
+
+type EventCardData = {
+  title: string;
+  label: string;
+  description: string;
+  image: string;
+  imagePosition: string;
+  alt: string;
+};
+
+function EventCardGrid({ events, category, onChooseCategory }: { events: EventCardData[]; category: string; onChooseCategory: (category: string) => void }) {
+  return (
+    <div className="grid grid-cols-1 gap-5 min-[561px]:grid-cols-2 min-[1101px]:grid-cols-3 [&>*]:min-w-0">
+      {events.map(({ title, label, description, image, imagePosition, alt }) => (
+        <article key={title} className="group flex h-full flex-col overflow-hidden rounded-2xl border border-[#DCE6EF] border-b-4 border-b-[#ED332D] bg-white shadow-[0_8px_24px_rgba(20,40,78,0.06)] transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-[0_14px_32px_rgba(20,40,78,0.12)] motion-reduce:hover:translate-y-0">
+          <div className="aspect-video overflow-hidden bg-[#E0F1FF]">
+            <img src={image} alt={alt} loading="lazy" decoding="async" width={640} height={360} style={{ objectPosition: imagePosition }} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105 motion-reduce:transform-none" />
+          </div>
+          <div className="flex flex-1 flex-col p-5 min-[561px]:p-6">
+            <p className="mb-2 text-[.68rem] font-bold tracking-[.08em] text-[#C92A25] uppercase">{label}</p>
+            <h3>{title}</h3>
+            <p className="mt-2 mb-5 text-[.86rem] leading-relaxed text-[#536174]">{description}</p>
+            <a className="mt-auto flex min-h-11 items-center gap-2 border-t border-[#EDF1F5] pt-4 text-[.72rem] font-bold tracking-[.08em] text-[#C92A25] uppercase hover:underline hover:underline-offset-4" href="#calendar" aria-label={`View ${title} events`} onClick={() => onChooseCategory(category)}>
+              View Events <ArrowRight size={16} aria-hidden="true" />
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+  );
 }
 
 type Detail = { title: string; category?: string; date?: string; venue?: string; description: string; gallery?: boolean };
@@ -66,6 +143,7 @@ export default function NewEventComponent() {
   const [detail, setDetail] = useState<Detail | null>(null);
   const [newsletterMessage, setNewsletterMessage] = useState("");
   const [showAllMonthEvents, setShowAllMonthEvents] = useState(false);
+  const [culturalScrollingPaused, setCulturalScrollingPaused] = useState(false);
   const dialog = useRef<HTMLDialogElement>(null);
 
   useEffect(() => {
@@ -118,27 +196,99 @@ export default function NewEventComponent() {
       </section>
 
       <Section id="categories" title="Explore Events at SRMU" description="From academic conferences and technical competitions to cultural celebrations and sporting events, explore the diverse events conducted across the university." alternate>
-        <div className="grid grid-cols-1 gap-4 min-[561px]:grid-cols-2 min-[861px]:grid-cols-3 min-[1101px]:grid-cols-5">{categories.map(({ name, title, id, Icon, description }) => <article className="flex flex-col items-start gap-4 rounded-2xl border border-t-4 border-[#21A5DB] bg-white p-5 min-[561px]:p-6 [&>svg]:text-[#0F4A85] [&>p]:text-[.86rem] [&>a]:mt-auto [&:nth-child(2)]:border-t-[#0F4A85] [&:nth-child(3)]:border-t-[#FFB703] [&:nth-child(4)]:border-t-[#D62C2B] [&:nth-child(5)]:border-t-[#14284E]" key={name}><Icon size={32} aria-hidden="true" /><h3>{title}</h3><p>{description}</p><a href={`#${id}`} className="inline-flex items-center gap-2 border-0 bg-transparent py-[5px] text-left text-[.85rem] font-semibold text-[#0F4A85] hover:underline hover:underline-offset-4 [&>svg]:shrink-0">Explore {name} Events <ArrowRight size={16} /></a></article>)}</div>
+        <style>{`
+          @keyframes reel-marquee {
+            from { transform: translateX(0); }
+            to   { transform: translateX(-50%); }
+          }
+          .reel-track {
+            animation: reel-marquee 18s linear infinite;
+          }
+          .reel-track:hover {
+            animation-play-state: paused;
+          }
+        `}</style>
+        {/* overflow wrapper — clips the scrolling track */}
+        <div className="-mx-4 overflow-hidden min-[561px]:-mx-6">
+          {/* track — doubled cards for seamless loop */}
+          <div className="reel-track flex gap-3 w-max px-4 min-[561px]:px-6">
+            {[...categories.filter(({ reelVideo }) => !!reelVideo), ...categories.filter(({ reelVideo }) => !!reelVideo)].map(({ name, title, id, Icon, description, reelVideo }, index) => (
+              <article
+                key={`${name}-${index}`}
+                className="group relative flex-shrink-0 w-[200px] min-[561px]:w-[220px] min-[861px]:w-[240px] aspect-[9/16] rounded-2xl overflow-hidden cursor-pointer"
+              >
+                <video src={reelVideo} autoPlay muted loop playsInline className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" aria-hidden="true" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                <div className="absolute top-3 left-3 grid size-9 place-items-center rounded-xl bg-white/20 backdrop-blur-sm text-white">
+                  <Icon size={18} aria-hidden="true" />
+                </div>
+                <div className="absolute inset-x-0 bottom-0 p-4 text-white">
+                  <h3 className="mb-1 text-[.95rem] font-bold leading-[1.2] text-white">{title}</h3>
+                  <p className="mb-3 text-[.72rem] leading-[1.45] text-white/80 line-clamp-3">{description}</p>
+                  <a href={`#${id}`} className="inline-flex items-center gap-1.5 text-[.75rem] font-semibold text-[#FFB703] hover:underline hover:underline-offset-2 [&>svg]:shrink-0" aria-label={`Explore ${name} Events`}>
+                    Explore <ArrowRight size={13} />
+                  </a>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
       </Section>
 
-      <Section id="academic-events" title="Academic Events" description="Opportunities for students and faculty to learn from experts, exchange ideas, develop professional skills and engage with emerging areas of knowledge.">
-        <div className="grid grid-cols-1 gap-5 min-[561px]:grid-cols-2 min-[1101px]:grid-cols-4 [&>*]:min-w-0">{academic.map(([title, description]) => <article className="flex flex-col items-start gap-3 rounded-2xl border border-[#21A5DB] bg-white p-5 min-[561px]:p-6 [&>svg]:text-[#0F4A85] [&>p]:text-[.86rem] [&>a]:mt-auto [&>button]:mt-auto [&>[role=img]]:mb-1.5 [&>[role=img]]:aspect-auto [&>[role=img]]:h-[140px] [&>[role=img]]:w-full [&>[role=img]>svg]:size-9 [&>[role=img]>span]:text-[.7rem]" key={title}><Placeholder label={title}><GraduationCap aria-hidden="true" /></Placeholder><h3>{title}</h3><p>{description}</p><a className="inline-flex items-center gap-2 border-0 bg-transparent py-[5px] text-left text-[.85rem] font-semibold text-[#0F4A85] hover:underline hover:underline-offset-4 [&>svg]:shrink-0" href="#calendar" onClick={() => chooseCategory("Academic")}>View Events <ArrowRight size={16} /></a></article>)}</div>
+      <Section id="academic-events" title="Academic Events" description="Opportunities for students and faculty to learn from experts, exchange ideas, develop professional skills and engage with emerging areas of knowledge." className="bg-[#F0F7FC]">
+        <EventCardGrid events={academic} category="Academic" onChooseCategory={chooseCategory} />
         <div className="mt-8 flex justify-center"><a href="#calendar" className="inline-flex min-h-12 items-center justify-center gap-2.5 rounded-full border border-[#0F4A85] bg-transparent px-[22px] py-[13px] text-center text-[.88rem] font-semibold text-[#0F4A85] transition-transform hover:-translate-y-0.5" onClick={() => chooseCategory("Academic")}>View All Academic Events</a></div>
       </Section>
 
-      <Section id="technical-events" title="Technical Events" description="Activities designed to encourage innovation, problem-solving, practical learning and industry exposure." alternate>
-        <div className="grid grid-cols-1 gap-5 min-[561px]:grid-cols-2 min-[861px]:grid-cols-3 [&>*]:min-w-0">{technical.map(([title, description]) => <article className="flex flex-col items-start gap-3 rounded-2xl border border-[#21A5DB] bg-white p-5 min-[561px]:p-6 [&>svg]:text-[#0F4A85] [&>p]:text-[.86rem] [&>a]:mt-auto [&>button]:mt-auto [&>[role=img]]:mb-1.5 [&>[role=img]]:aspect-auto [&>[role=img]]:h-[140px] [&>[role=img]]:w-full [&>[role=img]>svg]:size-9 [&>[role=img]>span]:text-[.7rem]" key={title}><Cpu size={28} aria-hidden="true" /><h3>{title}</h3><p>{description}</p></article>)}</div>
+      <Section id="technical-events" title="Technical Events" description="Activities designed to encourage innovation, problem-solving, practical learning and industry exposure." className="bg-[#F0F7FC]">
+        <EventCardGrid events={technical} category="Technical" onChooseCategory={chooseCategory} />
         <div className="mt-8 flex justify-center"><a href="#calendar" className="inline-flex min-h-12 items-center justify-center gap-2.5 rounded-full border border-[#0F4A85] bg-transparent px-[22px] py-[13px] text-center text-[.88rem] font-semibold text-[#0F4A85] transition-transform hover:-translate-y-0.5" onClick={() => chooseCategory("Technical")}>View All Technical Events</a></div>
       </Section>
 
       <Section id="cultural-events" title="Cultural Events" description="Celebrations of music, art, drama and literature that bring the SRMU community together.">
-        <div className="grid grid-cols-1 gap-5 min-[561px]:grid-cols-2 min-[861px]:grid-cols-3 [&>*]:min-w-0">{cultural.map(title => <button className="rounded-2xl border-0 bg-transparent p-0 [&>[role=img]]:aspect-[4/3] hover:[&>[role=img]]:border-[#0F4A85]" key={title} onClick={() => setDetail({ title, gallery: true, description: "A glimpse of creativity and celebration at SRMU. Event photography will be added here." })} aria-label={`Preview ${title}`}><Placeholder label={title}><Music aria-hidden="true" /></Placeholder></button>)}</div>
+        <div className="mb-4 flex justify-end">
+          <button type="button" className={`inline-flex min-h-11 items-center gap-2 rounded-full border border-[#0F4A85] px-4 py-2 text-[.8rem] font-semibold text-[#0F4A85] ${styles.scrollControl}`} aria-controls="cultural-reels" onClick={() => setCulturalScrollingPaused(paused => !paused)}>
+            {culturalScrollingPaused ? <Play size={16} aria-hidden="true" /> : <Pause size={16} aria-hidden="true" />}
+            {culturalScrollingPaused ? "Resume scrolling" : "Pause scrolling"}
+          </button>
+        </div>
+        <div id="cultural-reels" className={styles.culturalReels} role="region" aria-label="Cultural event videos" tabIndex={0}>
+          <div className={styles.culturalTrack} style={{ animationPlayState: culturalScrollingPaused ? "paused" : undefined }}>
+            {[0, 1].map(copy => (
+              <div key={copy} className={styles.culturalGroup} aria-hidden={copy === 1 ? true : undefined}>
+                {cultural.map(({ title, video }) => (
+                  <article key={title} className="group relative aspect-[9/16] w-[200px] shrink-0 overflow-hidden rounded-2xl bg-[#14284E] min-[561px]:w-[220px] min-[861px]:w-[240px]">
+                    <video src={video} autoPlay muted loop playsInline preload="metadata" className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105 motion-reduce:transform-none" aria-hidden="true" />
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent" />
+                    <div className="absolute top-3 left-3 grid size-9 place-items-center rounded-xl bg-white/20 text-white backdrop-blur-sm"><Music size={18} aria-hidden="true" /></div>
+                    <div className="absolute inset-x-0 bottom-0 p-5 text-white">
+                      <p className="mb-2 text-[.65rem] font-semibold tracking-[.12em] text-[#FFB703] uppercase">Cultural Events</p>
+                      <h3 className="text-white">{title}</h3>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
         <div className="mt-8 flex justify-center"><a href="#calendar" className="inline-flex items-center gap-2 border-0 bg-transparent py-[5px] text-left text-[.85rem] font-semibold text-[#0F4A85] hover:underline hover:underline-offset-4 [&>svg]:shrink-0" onClick={() => chooseCategory("Cultural")}>Explore Cultural Events <ArrowRight size={16} /></a></div>
       </Section>
 
-      <Section id="sports-events" title="Sports & Fitness" description="Sports at SRMU encourage teamwork, discipline, leadership and a healthy campus lifestyle." alternate>
-        <div className="grid grid-cols-1 gap-5 min-[561px]:grid-cols-2 min-[861px]:grid-cols-3 [&>*]:min-w-0">{["Cricket", "Football", "Basketball", "Volleyball", "Badminton", "Athletics"].map(title => <article className={`flex flex-col items-start gap-3 rounded-2xl border border-[#21A5DB] bg-white p-5 min-[561px]:p-6 [&>svg]:text-[#0F4A85] [&>p]:text-[.86rem] [&>a]:mt-auto [&>button]:mt-auto [&>[role=img]]:mb-1.5 [&>[role=img]]:aspect-auto [&>[role=img]]:h-[140px] [&>[role=img]]:w-full [&>[role=img]>svg]:size-9 [&>[role=img]>span]:text-[.7rem] flex-row! items-center! gap-4!`} key={title}><Trophy size={24} aria-hidden="true" /><h3>{title}</h3></article>)}</div>
-        <div className="mt-8 flex justify-center"><a href="#calendar" className="inline-flex items-center gap-2 border-0 bg-transparent py-[5px] text-left text-[.85rem] font-semibold text-[#0F4A85] hover:underline hover:underline-offset-4 [&>svg]:shrink-0" onClick={() => chooseCategory("Sports")}>View Sports Events <ArrowRight size={16} /></a></div>
+      <Section id="sports-events" title="Sports & Fitness" description="Sports at SRMU encourage teamwork, discipline, leadership and a healthy campus lifestyle." className="bg-[#F0F7FC]">
+        <div className="grid grid-cols-1 gap-5 min-[561px]:grid-cols-2 min-[1101px]:grid-cols-3 [&>*]:min-w-0">
+          {sports.map(({ title, image, imagePosition, alt }) => (
+            <article key={title} className="group overflow-hidden rounded-2xl border border-[#DCE6EF] border-b-4 border-b-[#ED332D] bg-white shadow-[0_8px_24px_rgba(20,40,78,0.06)] transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-[0_14px_32px_rgba(20,40,78,0.12)] motion-reduce:hover:translate-y-0">
+              <div className="aspect-[3/2] overflow-hidden bg-[#E0F1FF]">
+                <img src={image} alt={alt} loading="lazy" decoding="async" width={600} height={400} style={{ objectPosition: imagePosition }} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105 motion-reduce:transform-none" />
+              </div>
+              <div className="flex items-center gap-3 p-5 min-[561px]:p-6">
+                <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-[#F0F7FC] text-[#0F4A85]"><Trophy size={20} aria-hidden="true" /></span>
+                <h3>{title}</h3>
+              </div>
+            </article>
+          ))}
+        </div>
+        <div className="mt-8 flex justify-center"><a href="#calendar" className="inline-flex min-h-12 items-center justify-center gap-2.5 rounded-full border border-[#0F4A85] px-[22px] py-[13px] text-center text-[.88rem] font-semibold text-[#0F4A85] transition-colors hover:bg-[#0F4A85] hover:text-white" onClick={() => chooseCategory("Sports")}>View Sports Events <ArrowRight size={16} aria-hidden="true" /></a></div>
       </Section>
 
       <Section id="special-events" title="Celebrity & Special Events" description="Engage with distinguished personalities, industry leaders, experts and inspiring speakers through special sessions at SRMU.">
