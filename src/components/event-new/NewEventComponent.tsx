@@ -190,7 +190,7 @@ export default function NewEventComponent() {
       <section className={styles.hero} aria-labelledby="events-hero-title">
         <picture className={styles.heroBanner}>
           <source media="(max-width: 860px)" srcSet={mobileEventsBanner} width={1080} height={1080} />
-          <img src={desktopEventsBanner} width={1358} height={576} alt="" loading="eager" fetchPriority="high" decoding="async" />
+          <img src={desktopEventsBanner} width={1358} height={576} alt="" loading="eager" {...({ fetchpriority: "high" } as {})} decoding="async" />
         </picture>
         <div className={`${Global.container} relative z-10`}>
           <div className={styles.heroContent}>
