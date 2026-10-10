@@ -37,6 +37,8 @@ export const footerData = {
     //   title: "Downloads",
     //   path: "/download",
     // },
+
+    //commented
     {
       id: 2,
       title: "Newsletters",
