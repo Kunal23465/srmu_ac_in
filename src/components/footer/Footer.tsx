@@ -298,7 +298,7 @@ const Footer: React.FC = () => {
                 <div className="flex flex-col gap-2 ">
                   <div className="flex items-center gap-x-2">
                     <span>
-                      <Link to="tel:7570003074" target="_blank" rel="noopener noreferrer" aria-label="Call Admissions Helpline">
+                      <Link to="tel:9838904666" target="_blank" rel="noopener noreferrer" aria-label="Call Admissions Helpline">
                         <FaPhone />
                       </Link>
                     </span>
@@ -325,7 +325,7 @@ const Footer: React.FC = () => {
                 <div className="flex gap-2 flex-col">
                   <div className="flex items-center gap-x-2">
                     <span className="text-[1.2rem]">
-                      <Link to="https://mail.google.com/mail/u/0/?view=cm&fs=1&to=admissions@srmcem.ac.in" target="_blank" rel="noopener noreferrer" aria-label="Email Admissions">
+                      <Link to="https://mail.google.com/mail/u/0/?view=cm&fs=1&to=admissions@srmu.ac.in" target="_blank" rel="noopener noreferrer" aria-label="Email Admissions">
                         <MdEmail />
                       </Link>
                     </span>
