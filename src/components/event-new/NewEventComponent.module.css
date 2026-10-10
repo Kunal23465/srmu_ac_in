@@ -1,7 +1,7 @@
 .hero {
   position: relative;
   overflow: hidden;
-  border-bottom: 4px solid #21a5db;
+  border-bottom: 4px solid #21A5DB;
   background: linear-gradient(120deg, #0F4A85, #14284E);
 }
 
@@ -16,7 +16,7 @@
   bottom: 0;
   width: 100%;
   height: auto;
-  mask-image: linear-gradient(to bottom, transparent, #000 20%);
+  mask-image: linear-gradient(to bottom, transparent, #FFFFFF 20%);
 }
 
 .heroContent {

@@ -24,10 +24,12 @@ import tableTennisImage from "../../assets/images/event-new/sports-event/Table t
 import volleyballImage from "../../assets/images/event-new/sports-event/Volley ball.webp";
 import athleteImage from "../../assets/images/event-new/sports-event/athlete..webp";
 import { calendarEvents, type CalendarEvent } from "./eventNewData";
-import { eventsData } from "../../data/home/EventsData";
+import eventsData from "../../data/new-home/eventsData";
 // import { archiveEvents } from "./eventNewData"; // Restore with Event Archives.
 import Global from "../../utils/styles/Global.module.css";
 import styles from "./NewEventComponent.module.css";
+
+const eventButtonClassName = "inline-flex max-w-full w-fit items-center justify-center gap-2 rounded-lg bg-[#FFB703] px-8 py-3 text-center text-[14px] font-bold tracking-wider text-[#14284E] uppercase shadow-md shadow-[#14284E]/10 cursor-pointer transition-shadow hover:shadow-lg [&>svg]:shrink-0";
 
 const categories = [
   { name: "Academic", title: "Academic Events", id: "academic-events", Icon: GraduationCap, description: "Conferences, faculty development programmes, workshops, guest lectures and alumni interactions.", reelVideo: undefined as EventVideoAsset | undefined },
@@ -112,7 +114,7 @@ type EventCardData = {
   alt: string;
 };
 
-function EventCardGrid({ events, category, onChooseCategory }: { events: EventCardData[]; category: string; onChooseCategory: (category: string) => void }) {
+function EventCardGrid({ events }: { events: EventCardData[] }) {
   return (
     <div className="grid grid-cols-1 gap-5 min-[561px]:grid-cols-2 min-[1101px]:grid-cols-3 [&>*]:min-w-0">
       {events.map(({ title, label, description, image, imagePosition, alt }) => (
@@ -123,10 +125,7 @@ function EventCardGrid({ events, category, onChooseCategory }: { events: EventCa
           <div className="flex flex-1 flex-col p-5 min-[561px]:p-6">
             <p className="mb-2 text-[.68rem] font-bold tracking-[.08em] text-[#D62C2B] uppercase">{label}</p>
             <h3>{title}</h3>
-            <p className="mt-2 mb-5 text-[.86rem] leading-relaxed text-[#0F4A85]">{description}</p>
-            <a className="mt-auto flex min-h-11 items-center gap-2 border-t border-[#E6E6E7] pt-4 text-[.72rem] font-bold tracking-[.08em] text-[#D62C2B] uppercase hover:underline hover:underline-offset-4" href="#calendar" aria-label={`View ${title} events`} onClick={() => onChooseCategory(category)}>
-              View Events <ArrowRight size={16} aria-hidden="true" />
-            </a>
+            <p className="mt-2 text-[.86rem] leading-relaxed text-[#0F4A85]">{description}</p>
           </div>
         </article>
       ))}
@@ -187,7 +186,7 @@ export default function NewEventComponent() {
   };
 
   return (
-    <main className="bg-white text-[#14284E] leading-[1.65] scheme-light [&_h1]:font-bold [&_h1]:leading-[1.22] [&_h1]:text-[clamp(2rem,3.5vw,3.4rem)] [&_h1]:tracking-[-.035em] [&_h1_em]:text-[#0F4A85] [&_h1_em]:not-italic [&_h2]:font-bold [&_h2]:leading-[1.22] [&_h2]:text-[clamp(1.65rem,2.6vw,2.4rem)] [&_h2]:tracking-[-.025em] [&_h3]:text-[1.05rem] [&_h3]:font-bold [&_h3]:leading-[1.22] [&_button]:cursor-pointer [&_:focus-visible]:outline-3 [&_:focus-visible]:outline-[#0F4A85] [&_:focus-visible]:outline-offset-4 [&_section[id]]:scroll-mt-40 [&_input]:placeholder:text-[#0F4A85] motion-reduce:[&_*]:transition-none" id="event-new-top">
+    <main className="bg-white text-[#14284E] leading-[1.65] scheme-light [&_h1]:font-bold [&_h1]:leading-[1.22] [&_h1]:text-[clamp(2rem,3.5vw,3.4rem)] [&_h1]:tracking-[-.035em] [&_h1_em]:text-[#0F4A85] [&_h1_em]:not-italic [&_h2]:font-bold [&_h2]:leading-[1.22] [&_h2]:text-[clamp(1.65rem,2.6vw,2.4rem)] [&_h2]:tracking-[-.025em] [&_h3]:text-[1.05rem] [&_h3]:font-bold [&_h3]:leading-[1.22] [&_button]:cursor-pointer [&_button]:uppercase [&_a]:uppercase [&_:focus-visible]:outline-3 [&_:focus-visible]:outline-[#0F4A85] [&_:focus-visible]:outline-offset-4 [&_section[id]]:scroll-mt-40 [&_input]:placeholder:text-[#0F4A85] motion-reduce:[&_*]:transition-none" id="event-new-top">
       <section className={styles.hero} aria-labelledby="events-hero-title">
         <picture className={styles.heroBanner}>
           <source media="(max-width: 860px)" srcSet={mobileEventsBanner} width={1080} height={1080} />
@@ -199,8 +198,8 @@ export default function NewEventComponent() {
             <h1 id="events-hero-title" className="text-white">Events at Shri Ramswaroop Memorial University <span className="text-[#FFB703]">(SRMU)</span></h1>
             <p className="mt-6 mb-7 hidden max-w-[570px] text-white/90 min-[861px]:block">Discover academic, technical, cultural, sports and special events that bring together students, faculty, industry experts, alumni and distinguished guests at SRMU.</p>
             <div className="hidden flex-wrap items-center gap-3 min-[861px]:flex">
-              <a href="#categories" className="inline-flex min-h-12 items-center justify-center gap-2.5 rounded-full border border-[#FFB703] bg-[#FFB703] px-[22px] py-[13px] text-center text-[.88rem] font-semibold text-[#14284E] transition-transform hover:-translate-y-0.5 focus-visible:outline-white!">Explore Events <ArrowRight size={18} aria-hidden="true" /></a>
-              <a href="#calendar" className="inline-flex min-h-12 items-center justify-center gap-2.5 rounded-full border border-white/70 bg-[#14284E]/25 px-[22px] py-[13px] text-center text-[.88rem] font-semibold text-white transition-colors hover:bg-white/15 focus-visible:outline-white!"><CalendarDays size={18} aria-hidden="true" /> View Event Calendar</a>
+              <a href="#categories" className={`${eventButtonClassName} focus-visible:outline-white!`}>Explore Events <ArrowRight size={18} aria-hidden="true" /></a>
+              <a href="#calendar" className="inline-flex max-w-full w-fit items-center justify-center gap-2 rounded-lg border border-white/70 bg-[#14284E]/25 px-8 py-3 text-center text-[14px] font-bold tracking-wider text-white uppercase shadow-md shadow-[#14284E]/10 cursor-pointer transition-colors hover:bg-white/15 focus-visible:outline-white! [&>svg]:shrink-0"><CalendarDays size={18} aria-hidden="true" /> View Event Calendar</a>
             </div>
           </div>
         </div>
@@ -230,12 +229,12 @@ export default function NewEventComponent() {
 
       <section id="news" className="py-[52px] min-[861px]:py-[76px]">
         <div className={`${Global.container} overflow-hidden`}>
-          <div 
-            className="flex transition-transform duration-1000 ease-in-out gap-12" 
+          <div
+            className="flex transition-transform duration-1000 ease-in-out gap-12"
             style={{ transform: `translateX(calc(-${activeNewsIndex * 100}% - ${activeNewsIndex * 3}rem))` }}
           >
             {eventsData.map((news) => (
-              <div key={news.id} className="w-full shrink-0 grid grid-cols-1 items-center gap-7 min-[861px]:grid-cols-[1.1fr_1fr] min-[1101px]:gap-12 [&>*]:min-w-0 [&>div>button]:mt-6 [&>div>span]:mb-4">
+              <div key={`${news.id}-${news.title}`} className="w-full shrink-0 grid grid-cols-1 items-center gap-7 min-[861px]:grid-cols-[1.1fr_1fr] min-[1101px]:gap-12 [&>*]:min-w-0 [&>div>button]:mt-6 [&>div>span]:mb-4">
                 <div className="overflow-hidden rounded-[26px] bg-[#E0F1FF] aspect-[4/3] shadow-[0_8px_24px_rgba(20,40,78,0.06)]">
                   <img src={news.image} alt={news.title} loading="lazy" decoding="async" className="h-full w-full object-cover transition-transform duration-500 hover:scale-105" />
                 </div>
@@ -245,8 +244,8 @@ export default function NewEventComponent() {
                   <div className="my-5 flex flex-wrap gap-x-[22px] gap-y-3 text-[.86rem] text-[#0F4A85] [&>span]:flex [&>span]:items-center [&>span]:gap-2">
                     <span><CalendarDays size={17} aria-hidden="true" />{news.date}</span>
                   </div>
-                  <div className="text-[.9rem] leading-relaxed text-[#14284E] line-clamp-3 [&_p]:mb-2" dangerouslySetInnerHTML={{ __html: news.description }} />
-                  <button className="inline-flex min-h-12 items-center justify-center gap-2.5 rounded-full border border-[#FFB703] bg-[#FFB703] px-[22px] py-[13px] text-center text-[.88rem] font-semibold text-[#14284E] transition-transform hover:-translate-y-0.5 mt-2" onClick={() => setDetail({ title: news.title, date: news.date, description: news.description })}>
+                  <div className="text-[.9rem] leading-relaxed text-[#14284E] line-clamp-3 [&_p]:mb-2" dangerouslySetInnerHTML={{ __html: news.description ?? news.excerpt ?? "" }} />
+                  <button className={`${eventButtonClassName} mt-2`} onClick={() => setDetail({ title: news.title, date: news.date, description: news.description ?? news.excerpt ?? "" })}>
                     Read More <ArrowRight size={18} aria-hidden="true" />
                   </button>
                 </div>
@@ -273,22 +272,19 @@ export default function NewEventComponent() {
         <div className="-mx-4 overflow-hidden min-[561px]:-mx-6">
           {/* track — doubled cards for seamless loop */}
           <div className="reel-track flex gap-3 w-max px-4 min-[561px]:px-6">
-            {[...categories.filter(({ reelVideo }) => !!reelVideo), ...categories.filter(({ reelVideo }) => !!reelVideo)].map(({ name, title, id, Icon, description, reelVideo }, index) => (
+            {[...categories.filter(({ reelVideo }) => !!reelVideo), ...categories.filter(({ reelVideo }) => !!reelVideo)].map(({ name, title, Icon, description, reelVideo }, index) => (
               <article
                 key={`${name}-${index}`}
-                className="group relative flex-shrink-0 w-[200px] min-[561px]:w-[220px] min-[861px]:w-[240px] aspect-[9/16] rounded-2xl overflow-hidden cursor-pointer"
+                className="group relative flex-shrink-0 w-[200px] min-[561px]:w-[220px] min-[861px]:w-[240px] aspect-[9/16] rounded-2xl overflow-hidden"
               >
                 {reelVideo && <EventVideo {...reelVideo} className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#14284E]/80 via-[#14284E]/20 to-transparent" />
                 <div className="absolute top-3 left-3 grid size-9 place-items-center rounded-xl bg-white/20 backdrop-blur-sm text-white">
                   <Icon size={18} aria-hidden="true" />
                 </div>
                 <div className="absolute inset-x-0 bottom-0 p-4 text-white">
                   <h3 className="mb-1 text-[.95rem] font-bold leading-[1.2] text-white">{title}</h3>
-                  <p className="mb-3 text-[.72rem] leading-[1.45] text-white/80 line-clamp-3">{description}</p>
-                  <a href={`#${id}`} className="inline-flex items-center gap-1.5 text-[.75rem] font-semibold text-[#FFB703] hover:underline hover:underline-offset-2 [&>svg]:shrink-0" aria-label={`Explore ${name} Events`}>
-                    Explore <ArrowRight size={13} />
-                  </a>
+                  <p className="text-[.72rem] leading-[1.45] text-white/80 line-clamp-3">{description}</p>
                 </div>
               </article>
             ))}
@@ -297,13 +293,13 @@ export default function NewEventComponent() {
       </Section>
 
       <Section id="academic-events" title="Academic Events" description="Opportunities for students and faculty to learn from experts, exchange ideas, develop professional skills and engage with emerging areas of knowledge." className="bg-[#E0F1FF]">
-        <EventCardGrid events={academic} category="Academic" onChooseCategory={chooseCategory} />
-        <div className="mt-8 flex justify-center"><a href="#calendar" className="inline-flex min-h-12 items-center justify-center gap-2.5 rounded-full border border-[#0F4A85] bg-transparent px-[22px] py-[13px] text-center text-[.88rem] font-semibold text-[#0F4A85] transition-transform hover:-translate-y-0.5" onClick={() => chooseCategory("Academic")}>View All Academic Events</a></div>
+        <EventCardGrid events={academic} />
+        <div className="mt-8 flex justify-center"><a href="#calendar" className={eventButtonClassName} onClick={() => chooseCategory("Academic")}>View All Academic Events<ArrowRight size={16} /></a></div>
       </Section>
 
       <Section id="technical-events" title="Technical Events" description="Activities designed to encourage innovation, problem-solving, practical learning and industry exposure." className="bg-[#E0F1FF]">
-        <EventCardGrid events={technical} category="Technical" onChooseCategory={chooseCategory} />
-        <div className="mt-8 flex justify-center"><a href="#calendar" className="inline-flex min-h-12 items-center justify-center gap-2.5 rounded-full border border-[#0F4A85] bg-transparent px-[22px] py-[13px] text-center text-[.88rem] font-semibold text-[#0F4A85] transition-transform hover:-translate-y-0.5" onClick={() => chooseCategory("Technical")}>View All Technical Events</a></div>
+        <EventCardGrid events={technical} />
+        <div className="mt-8 flex justify-center"><a href="#calendar" className={eventButtonClassName} onClick={() => chooseCategory("Technical")}>View All Technical Events<ArrowRight size={16} /></a></div>
       </Section>
 
       <Section id="cultural-events" title="Cultural Events" description="Celebrations of music, art, drama and literature that bring the SRMU community together.">
@@ -314,7 +310,7 @@ export default function NewEventComponent() {
                 {cultural.map(({ title, video }) => (
                   <article key={title} className="group relative aspect-[9/16] w-[200px] shrink-0 overflow-hidden rounded-2xl bg-[#14284E] min-[561px]:w-[220px] min-[861px]:w-[240px]">
                     <EventVideo {...video} className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105 motion-reduce:transform-none" />
-                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent" />
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#14284E]/85 via-[#14284E]/10 to-transparent" />
                     <div className="absolute top-3 left-3 grid size-9 place-items-center rounded-xl bg-white/20 text-white backdrop-blur-sm"><Music size={18} aria-hidden="true" /></div>
                     <div className="absolute inset-x-0 bottom-0 p-5 text-white">
                       <p className="mb-2 text-[.65rem] font-semibold tracking-[.12em] text-[#FFB703] uppercase">Cultural Events</p>
@@ -326,7 +322,7 @@ export default function NewEventComponent() {
             ))}
           </div>
         </div>
-        <div className="mt-8 flex justify-center"><a href="#calendar" className="inline-flex items-center gap-2 border-0 bg-transparent py-[5px] text-left text-[.85rem] font-semibold text-[#0F4A85] hover:underline hover:underline-offset-4 [&>svg]:shrink-0" onClick={() => chooseCategory("Cultural")}>Explore Cultural Events <ArrowRight size={16} /></a></div>
+        <div className="mt-8 flex justify-center"><a href="#calendar" className={eventButtonClassName} onClick={() => chooseCategory("Cultural")}>Explore Cultural Events <ArrowRight size={16} /></a></div>
       </Section>
 
       <Section id="sports-events" title="Sports & Fitness" description="Sports at SRMU encourage teamwork, discipline, leadership and a healthy campus lifestyle." className="bg-[#E0F1FF]">
@@ -343,7 +339,7 @@ export default function NewEventComponent() {
             </article>
           ))}
         </div>
-        <div className="mt-8 flex justify-center"><a href="#calendar" className="inline-flex min-h-12 items-center justify-center gap-2.5 rounded-full border border-[#0F4A85] px-[22px] py-[13px] text-center text-[.88rem] font-semibold text-[#0F4A85] transition-colors hover:bg-[#0F4A85] hover:text-white" onClick={() => chooseCategory("Sports")}>View Sports Events <ArrowRight size={16} aria-hidden="true" /></a></div>
+        <div className="mt-8 flex justify-center"><a href="#calendar" className={eventButtonClassName} onClick={() => chooseCategory("Sports")}>View Sports Events <ArrowRight size={16} aria-hidden="true" /></a></div>
       </Section>
 
       <Section id="special-events" title="Celebrity & Special Events" description="Engage with distinguished personalities, industry leaders, experts and inspiring speakers through special sessions at SRMU.">
@@ -354,7 +350,7 @@ export default function NewEventComponent() {
                 {special.map(({ title, video }) => (
                   <article key={title} className="group relative aspect-[9/16] w-[200px] shrink-0 overflow-hidden rounded-2xl bg-[#14284E] min-[561px]:w-[220px] min-[861px]:w-[240px]">
                     <EventVideo {...video} className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105 motion-reduce:transform-none" />
-                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent" />
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#14284E]/85 via-[#14284E]/10 to-transparent" />
                     <div className="absolute top-3 left-3 grid size-9 place-items-center rounded-xl bg-white/20 text-white backdrop-blur-sm"><Mic size={18} aria-hidden="true" /></div>
                     <div className="absolute inset-x-0 bottom-0 p-5 text-white">
                       <p className="mb-2 text-[.65rem] font-semibold tracking-[.12em] text-[#FFB703] uppercase">Special Events</p>
@@ -366,7 +362,7 @@ export default function NewEventComponent() {
             ))}
           </div>
         </div>
-        <div className="mt-8 flex justify-center"><a href="#calendar" className="inline-flex items-center gap-2 border-0 bg-transparent py-[5px] text-left text-[.85rem] font-semibold text-[#0F4A85] hover:underline hover:underline-offset-4 [&>svg]:shrink-0" onClick={() => chooseCategory("Special")}>Explore Special Events <ArrowRight size={16} /></a></div>
+        <div className="mt-8 flex justify-center"><a href="#calendar" className={eventButtonClassName} onClick={() => chooseCategory("Special")}>Explore Special Events <ArrowRight size={16} /></a></div>
       </Section>
 
       {/* Holidays & Closures hidden for now.
@@ -405,7 +401,7 @@ export default function NewEventComponent() {
             {monthEvents.length > 3 && (
               <button
                 type="button"
-                className="mt-3 flex min-h-12 w-full items-center justify-between gap-3 rounded-xl border border-[#0F4A85]/10 bg-[#E0F1FF] px-4 py-3 text-[.85rem] font-semibold text-[#0F4A85] transition-colors duration-200 hover:border-[#0F4A85]/25 hover:bg-[#D0E8FC] active:bg-[#C2E0F8]"
+                className={`${eventButtonClassName} mt-3 w-full! justify-between!`}
                 aria-expanded={showAllMonthEvents}
                 aria-controls="selected-month-events"
                 onClick={() => setShowAllMonthEvents(previous => !previous)}
@@ -442,14 +438,14 @@ export default function NewEventComponent() {
 
       <section className="py-10 min-[861px]:py-[56px]">
         <div className={Global.container}>
-          <div className="relative mx-auto max-w-[1200px] overflow-hidden rounded-[28px] border border-[#B3D6F6] bg-[#F4FAFF] shadow-sm">
-            
+          <div className="relative mx-auto max-w-[1200px] overflow-hidden rounded-[28px] border border-[#21A5DB] bg-[#E0F1FF] shadow-sm shadow-[#14284E]/10">
+
             {/* --- DECORATIVE BACKGROUND ELEMENTS --- */}
             {/* Top Left Circles */}
             <div className="absolute top-[-50px] left-[-40px] md:top-[-80px] md:left-[-60px] size-[150px] md:size-[220px] rounded-full bg-[#14284E] opacity-95" />
             <div className="absolute top-[60px] left-[40px] md:top-[60px] md:left-[60px] size-[60px] md:size-[90px] rounded-full bg-[#21A5DB] opacity-95" />
             <div className="absolute top-[100px] left-[20px] md:top-[110px] md:left-[35px] size-[35px] md:size-[45px] rounded-full bg-[#FFB703] opacity-95" />
-            
+
             {/* Top Right Circles */}
             <div className="absolute top-[-20px] right-[-20px] md:top-[-30px] md:right-[-30px] size-[100px] md:size-[140px] rounded-full bg-[#FFB703] opacity-95" />
             <div className="absolute top-[40px] right-[20px] md:top-[50px] md:right-[30px] size-[40px] md:size-[60px] rounded-full bg-[#D62C2B] opacity-95" />
@@ -458,8 +454,8 @@ export default function NewEventComponent() {
             <div className="absolute right-[-20px] bottom-[-20px] size-[100px] md:size-[180px] rounded-tl-[100%] bg-[#E0F1FF]" />
 
             {/* Dotted Grids */}
-            <div className="absolute hidden md:block top-[140px] left-[50px] w-[80px] h-[80px] bg-[radial-gradient(#B3D6F6_2px,transparent_2px)] [background-size:14px_14px]" />
-            <div className="absolute hidden md:block top-[90px] right-[30px] w-[60px] h-[100px] bg-[radial-gradient(#B3D6F6_2px,transparent_2px)] [background-size:14px_14px]" />
+            <div className="absolute hidden md:block top-[140px] left-[50px] w-[80px] h-[80px] bg-[radial-gradient(#21A5DB_2px,transparent_2px)] [background-size:14px_14px]" />
+            <div className="absolute hidden md:block top-[90px] right-[30px] w-[60px] h-[100px] bg-[radial-gradient(#21A5DB_2px,transparent_2px)] [background-size:14px_14px]" />
 
             {/* --- CONTENT --- */}
             <div className="relative z-10 px-5 pt-[100px] pb-6 sm:px-11 min-[861px]:pt-[45px] min-[861px]:pb-8 flex flex-col items-center text-center">
@@ -472,46 +468,46 @@ export default function NewEventComponent() {
               <h2 className="text-[clamp(1.6rem,3vw,2.4rem)] font-extrabold leading-[1.15] text-[#14284E] max-w-[650px] font-display">
                 Stay Updated with <br className="hidden sm:block" /> <span className="text-[#21A5DB]">SRMU Events</span>
               </h2>
-              <p className="mt-2 mb-6 max-w-[580px] text-[.9rem] sm:text-[1rem] text-[#4C5A65] leading-relaxed">
+              <p className="mt-2 mb-6 max-w-[580px] text-[.9rem] sm:text-[1rem] text-[#0F4A85] leading-relaxed">
                 Get updates about upcoming events, workshops, conferences, competitions and campus activities.
               </p>
 
               {/* CTA Button */}
-              <a 
-                href="/insider" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#FFB703] to-[#F59E0B] px-9 py-3 text-[.95rem] font-bold text-[#14284E] shadow-[0_4px_14px_rgba(245,158,11,0.4)] transition-transform hover:-translate-y-1 hover:shadow-[0_6px_20px_rgba(245,158,11,0.5)]"
+              <a
+                href="/insider"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={eventButtonClassName}
               >
                 Apply Now <ArrowRight size={20} strokeWidth={2.5} />
               </a>
             </div>
 
             {/* --- FOOTER TAGS --- */}
-            <div className="relative z-10 mx-6 sm:mx-12 border-t border-[#B3D6F6]/70 py-4">
+            <div className="relative z-10 mx-6 sm:mx-12 border-t border-[#21A5DB]/70 py-4">
               <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
                 <div className="flex items-center gap-2.5 text-[.85rem] font-bold text-[#14284E]">
                   <div className="flex size-[30px] items-center justify-center rounded-full bg-[#14284E] text-white"><CalendarDays size={14} /></div>
                   Events
                 </div>
-                <div className="hidden md:block h-[20px] w-[2px] bg-[#B3D6F6]/60"></div>
+                <div className="hidden md:block h-[20px] w-[2px] bg-[#21A5DB]/60"></div>
                 <div className="flex items-center gap-2.5 text-[.85rem] font-bold text-[#14284E]">
                   <div className="flex size-[30px] items-center justify-center rounded-full bg-[#21A5DB] text-white"><Cpu size={14} /></div>
                   Workshops
                 </div>
-                <div className="hidden md:block h-[20px] w-[2px] bg-[#B3D6F6]/60"></div>
+                <div className="hidden md:block h-[20px] w-[2px] bg-[#21A5DB]/60"></div>
                 <div className="flex items-center gap-2.5 text-[.85rem] font-bold text-[#14284E]">
                   <div className="flex size-[30px] items-center justify-center rounded-full bg-[#FFB703] text-white"><Mic size={14} /></div>
                   Conferences
                 </div>
-                <div className="hidden md:block h-[20px] w-[2px] bg-[#B3D6F6]/60"></div>
+                <div className="hidden md:block h-[20px] w-[2px] bg-[#21A5DB]/60"></div>
                 <div className="flex items-center gap-2.5 text-[.85rem] font-bold text-[#14284E]">
                   <div className="flex size-[30px] items-center justify-center rounded-full bg-[#D62C2B] text-white"><Trophy size={14} /></div>
                   Competitions
                 </div>
-                <div className="hidden min-[1100px]:block h-[20px] w-[2px] bg-[#B3D6F6]/60"></div>
+                <div className="hidden min-[1100px]:block h-[20px] w-[2px] bg-[#21A5DB]/60"></div>
                 <div className="flex items-center gap-2.5 text-[.85rem] font-bold text-[#14284E]">
-                  <div className="flex size-[30px] items-center justify-center rounded-full bg-[#E5E7EB] text-[#14284E]"><GraduationCap size={14} /></div>
+                  <div className="flex size-[30px] items-center justify-center rounded-full bg-[#E6E6E7] text-[#14284E]"><GraduationCap size={14} /></div>
                   Campus Activities
                 </div>
               </div>
@@ -522,69 +518,69 @@ export default function NewEventComponent() {
 
       {/* ── FAQ ──────────────────────────────────────────────────── */}
       <section id="faqs" className="py-10 md:py-14 px-4 sm:px-6 bg-[#E0F1FF]">
-          <div className={`${Global.container} max-w-[900px]`}>
-              {/* Header */}
-              <div className="w-full mb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-                  <div className="min-w-0 flex-1">
-                      <h2 className="text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] break-words">
-                          Frequently Asked <span className="text-[#ffb703]">Questions</span> About SRMU Events
-                      </h2>
-                      {/* <p className="text-[14px] text-[#4B5A72] mt-2 break-words whitespace-normal">
+        <div className={`${Global.container} max-w-[900px]`}>
+          {/* Header */}
+          <div className="w-full mb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+            <div className="min-w-0 flex-1">
+              <h2 className="text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] break-words">
+                Frequently Asked <span className="text-[#FFB703]">Questions</span> About SRMU Events
+              </h2>
+              {/* <p className="text-[14px] text-[#0F4A85] mt-2 break-words whitespace-normal">
                           Everything you need to know about campus life and activities.
                       </p> */}
-                  </div>
-              </div>
-
-              {/* Accordion */}
-              <div className="flex flex-col gap-3 mt-6">
-                  {(showAllFaq ? faqs : faqs.slice(0, 3)).map(([q, a], i) => (
-                      <div
-                          key={i}
-                          className={`bg-white border rounded-xl overflow-hidden shadow-sm transition-all duration-200 ${openFaq === i ? "border-[#14284E]" : "border-[#E5E7EB]"
-                              }`}
-                      >
-                          <button
-                              onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                              className="w-full text-left flex items-center justify-between gap-4 px-5 py-4 sm:px-6 sm:py-[18px] cursor-pointer"
-                              aria-expanded={openFaq === i}
-                          >
-                              <span className="font-bold text-[14.5px] sm:text-[15px] text-[#14284E] pr-2 leading-snug">
-                                  <span className="text-[#d62c2b] mr-2">{String(i + 1).padStart(2, "0")}.</span>
-                                  {q}
-                              </span>
-                              <span
-                                  className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center text-[18px] shrink-0 transition-all duration-300 font-sans ${openFaq === i
-                                      ? "bg-[#14284E] text-white rotate-45"
-                                      : "bg-[#F6FAFE] text-[#14284E]"
-                                      }`}
-                              >
-                                  +
-                              </span>
-                          </button>
-                          <div
-                              className={`overflow-hidden transition-all duration-300 px-5 sm:px-6 ${openFaq === i ? "max-h-[500px] pb-5 opacity-100" : "max-h-0 pb-0 opacity-0"
-                                  }`}
-                          >
-                              <div className="w-full h-px bg-[#E5E7EB] mb-4" />
-                              <p className="text-[14px] sm:text-[14.5px] text-[#4C5A65] leading-[1.7] text-justify">
-                                  {a}
-                              </p>
-                          </div>
-                      </div>
-                  ))}
-              </div>
-
-              {faqs.length > 3 && (
-                  <div className="mt-8 flex justify-center">
-                      <button
-                          onClick={() => setShowAllFaq(!showAllFaq)}
-                          className="uppercase tracking-wider flex items-center justify-center gap-2 bg-[#ffb703] text-[#14284E] font-bold text-[14px] px-8 py-3 rounded-lg transition-colors w-fit shadow-md cursor-pointer hover:bg-[#e5a400]"
-                      >
-                          {showAllFaq ? "View Less" : "Read More"} <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${showAllFaq ? "rotate-180" : ""}`} />
-                      </button>
-                  </div>
-              )}
+            </div>
           </div>
+
+          {/* Accordion */}
+          <div className="flex flex-col gap-3 mt-6">
+            {(showAllFaq ? faqs : faqs.slice(0, 3)).map(([q, a], i) => (
+              <div
+                key={i}
+                className={`bg-white border rounded-xl overflow-hidden shadow-sm shadow-[#14284E]/10 transition-all duration-200 ${openFaq === i ? "border-[#14284E]" : "border-[#E6E6E7]"
+                  }`}
+              >
+                <button
+                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                  className="w-full text-left flex items-center justify-between gap-4 px-5 py-4 sm:px-6 sm:py-[18px] cursor-pointer"
+                  aria-expanded={openFaq === i}
+                >
+                  <span className="font-bold text-[14.5px] sm:text-[15px] text-[#14284E] pr-2 leading-snug">
+                    <span className="text-[#D62C2B] mr-2">{String(i + 1).padStart(2, "0")}.</span>
+                    {q}
+                  </span>
+                  <span
+                    className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center text-[18px] shrink-0 transition-all duration-300 font-sans ${openFaq === i
+                      ? "bg-[#14284E] text-white rotate-45"
+                      : "bg-[#E0F1FF] text-[#14284E]"
+                      }`}
+                  >
+                    +
+                  </span>
+                </button>
+                <div
+                  className={`overflow-hidden transition-all duration-300 px-5 sm:px-6 ${openFaq === i ? "max-h-[500px] pb-5 opacity-100" : "max-h-0 pb-0 opacity-0"
+                    }`}
+                >
+                  <div className="w-full h-px bg-[#E6E6E7] mb-4" />
+                  <p className="text-[14px] sm:text-[14.5px] text-[#0F4A85] leading-[1.7] text-justify">
+                    {a}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {faqs.length > 3 && (
+            <div className="mt-8 flex justify-center">
+              <button
+                onClick={() => setShowAllFaq(!showAllFaq)}
+                className={eventButtonClassName}
+              >
+                {showAllFaq ? "View Less" : "Read More"} <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${showAllFaq ? "rotate-180" : ""}`} />
+              </button>
+            </div>
+          )}
+        </div>
       </section>
 
       {/* Final call to action hidden for now.
@@ -592,7 +588,7 @@ export default function NewEventComponent() {
       */}
 
       {detail && <dialog ref={dialog} className="fixed inset-0 m-auto max-h-[85dvh] w-[min(560px,calc(100%-32px))] max-w-none overflow-y-auto rounded-[20px] border border-[#21A5DB] bg-[#E0F1FF] p-0 text-[#14284E] backdrop:bg-[#14284E]/45 [&_h2]:mt-3.5 [&_h2]:mb-5 [&_h2]:pr-5 [&_h2]:text-[1.65rem]! [&_p]:my-3" aria-labelledby="event-new-detail-title" onCancel={() => setDetail(null)} onClose={() => setDetail(null)} onClick={event => { if (event.target === event.currentTarget) setDetail(null); }}><div className="relative px-7 pt-11 pb-7"><button className="absolute top-2.5 right-2.5 grid size-10 place-items-center rounded-full border-0 bg-white text-[#0F4A85]" aria-label="Close event preview" onClick={() => setDetail(null)} autoFocus><X /></button>{detail.category && <span className="inline-flex w-fit rounded-full bg-[#FFB703] px-3 py-1 text-[.72rem] leading-normal font-semibold text-[#14284E]">{detail.category}</span>}<h2 id="event-new-detail-title">{detail.title}</h2>{detail.gallery && <Placeholder label={detail.title} />}{detail.date && <p>{detail.date}</p>}{detail.venue && <p>{detail.venue}</p>}<div className="text-[.95rem] leading-relaxed [&_p]:mb-3 [&_strong]:font-bold [&_em]:italic" dangerouslySetInnerHTML={{ __html: detail.description }} />
-      {/* <p className="mb-[18px] text-[.8rem] text-[#0F4A85]">Sample content for the new events page preview.</p> */}
+        {/* <p className="mb-[18px] text-[.8rem] text-[#0F4A85]">Sample content for the new events page preview.</p> */}
       </div></dialog>}
     </main>
   );
