@@ -150,23 +150,21 @@ const DepartmentOfComputerScienceAndInformationSystemsPage = lazyPage(() => impo
 const FacultyOfCommerceAndEconomicsPage = lazyPage(() => import("../pages/academics/institutes/institute-department/FacultyOfCommerceAndEconomicsPage"));
 const FacultyOfManagementPage = lazyPage(() => import("../pages/academics/institutes/institute-department/FacultyOfManagementPage"));
 const FacultyOfChemicalSciencesPage = lazyPage(() => import("../pages/academics/institutes/institute-department/FacultyOfChemicalSciencesPage"));
-
 export function AllRoutesNew() {
   const element = useRoutes(routes);
   return element;
 }
-
 export const routes = [
   {
     path: "/",
     element: <RootLayout />,
     children: [
-     
+
       {
         index: true,
         element: <HomePage />,
       },
-   
+
 
       {
         path: "insider",
