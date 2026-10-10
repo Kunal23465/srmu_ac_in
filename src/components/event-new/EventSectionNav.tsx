@@ -7,7 +7,6 @@ const sections = [
     { id: "categories", label: "Categories" },
     { id: "special-events", label: "Celebrity & Special Events" },
     { id: "calendar", label: "Calendar" },
-    { id: "archive", label: "Archives" },
     { id: "faqs", label: "FAQs" },
 ];
 
@@ -61,7 +60,7 @@ export default function EventSectionNav() {
     return (
         <nav className="relative hidden bg-[#FFB703] px-6 md:block" aria-label="Event sections">
             <div className="mx-auto max-w-[1626px]">
-                <ul className="m-0 grid list-none grid-cols-6 gap-2 p-0">
+                <ul className="m-0 grid list-none grid-cols-5 gap-2 p-0">
                     {sections.map(({ id, label }) => (
                         <li key={id} className="list-none!">
                             <a
