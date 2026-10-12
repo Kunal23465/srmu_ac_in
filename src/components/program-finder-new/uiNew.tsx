@@ -14,6 +14,8 @@ export function Field({ label, children }: { label: string; children: ReactEleme
   const id = useId();
   return <div className="min-w-0"><label htmlFor={id} className="mb-2 block text-sm font-medium text-slate-600">{label}</label>{cloneElement(children, { id })}</div>;
 }
+
+//fixed
 export function scrollToSection(id: string) {
   requestAnimationFrame(() => document.getElementById(id)?.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" }));
 }
