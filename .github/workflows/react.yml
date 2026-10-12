@@ -11,24 +11,42 @@ jobs:
   deploy:
     runs-on: pre
 
-    defaults:
-      run:
-        working-directory: /home/ubuntu/srmu_live/SRMU_AC_IN_UI
-
     steps:
+      - name: Verify Ubuntu user
+        run: |
+          sudo -u ubuntu -H bash -lc '
+            whoami
+            cd /home/ubuntu/srmu_live/SRMU_AC_IN_UI
+            pwd
+          '
+
       - name: Configure Git safe directory
         run: |
-          git config --global --add safe.directory /home/ubuntu/srmu_live/SRMU_AC_IN_UI
+          sudo -u ubuntu -H git config --global --add safe.directory /home/ubuntu/srmu_live/SRMU_AC_IN_UI
 
       - name: Pull latest code
         run: |
-          git pull origin srmupre
+          sudo -u ubuntu -H bash -lc '
+            cd /home/ubuntu/srmu_live/SRMU_AC_IN_UI
+            git pull origin srmupre
+          '
 
       - name: Install dependencies
-        run: npm install
+        run: |
+          sudo -u ubuntu -H bash -lc '
+            cd /home/ubuntu/srmu_live/SRMU_AC_IN_UI
+            npm install
+          '
 
       - name: Build application
-        run: npm run Build
+        run: |
+          sudo -u ubuntu -H bash -lc '
+            cd /home/ubuntu/srmu_live/SRMU_AC_IN_UI
+            npm run Build
+          '
 
       - name: Restart PM2 application
-        run: pm2 restart srmu-live
+        run: |
+          sudo -u ubuntu -H bash -lc '
+            pm2 restart srmu-live
+          '
