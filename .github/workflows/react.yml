@@ -1,9 +1,11 @@
-name: Deploy SRMO-LIVE-PRE Next SSR App
+
+name: Deploy SRMU-LIVE-PRE Next SSR App
 
 on:
   push:
     branches:
       - srmupre
+  workflow_dispatch:
 
 jobs:
   deploy:
@@ -14,6 +16,10 @@ jobs:
         working-directory: /home/ubuntu/srmu_live/SRMU_AC_IN_UI
 
     steps:
+      - name: Configure Git safe directory
+        run: |
+          git config --global --add safe.directory /home/ubuntu/srmu_live/SRMU_AC_IN_UI
+
       - name: Pull latest code
         run: |
           git pull origin srmupre
