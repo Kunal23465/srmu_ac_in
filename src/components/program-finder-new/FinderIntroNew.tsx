@@ -1,4 +1,5 @@
 import { ArrowDown, ArrowRight, CircleCheck, Headphones, MessageCircle, Phone } from "lucide-react";
+import { buttonClass } from "./uiNew";
 
 export default function FinderIntroNew() {
   return <section className="relative isolate overflow-hidden bg-[#14284E] px-5 pb-12 pt-36 text-white sm:pb-16 sm:pt-44">
@@ -7,8 +8,8 @@ export default function FinderIntroNew() {
     <div className="relative mx-auto max-w-6xl">
       <div className="max-w-2xl">
         <h1 className="!text-[36px] !font-semibold !leading-[1.12] !tracking-tight !text-white sm:!text-[52px] lg:!text-[60px]">Find a programme.<br /><span className="text-[#FFB703]">Shape your future.</span></h1>
-        <p className="mt-6 max-w-lg !text-base !leading-7 !text-blue-100/85">Your interests. Your qualifications. Your next chapter. Discover where you belong at SRMU with our Program Finder &amp; Eligibility tool.</p>
-        <a href="#finder-qualification" className="mt-8 inline-flex items-center gap-4 rounded-xl bg-[#FFB703] px-6 py-4 text-sm font-semibold text-[#14284E] shadow-lg shadow-black/10 transition hover:bg-[#FFB703] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">Find my programme <ArrowDown size={18} aria-hidden="true" /></a>
+        <p className="mt-6 max-w-lg !text-base !leading-7 !text-blue-100/85">Find your course. Check your eligibility. Take the next step towards your future at SRMU.</p>
+        <a href="#finder-qualification" className={`${buttonClass} mt-8 focus-visible:outline-white!`}>Find my programme <ArrowDown size={18} aria-hidden="true" /></a>
         <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-xs text-blue-100/80">
           <span className="inline-flex items-center gap-2"><CircleCheck size={15} className="text-[#FFB703]" aria-hidden="true" />Eligibility personalised to you</span>
           <span className="inline-flex items-center gap-2"><CircleCheck size={15} className="text-[#FFB703]" aria-hidden="true" />Fees &amp; scholarships together</span>
