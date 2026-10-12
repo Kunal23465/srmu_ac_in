@@ -12,13 +12,19 @@ jobs:
     runs-on: pre
 
     steps:
-      - name: Verify Ubuntu user and application directory
+      - name: Verify Ubuntu environment
         run: |
-          runuser -u ubuntu -- bash -c '
+          runuser -u ubuntu -- bash -lc '
             set -e
-            whoami
+            echo "User: $(whoami)"
+            echo "Home: $HOME"
             cd /home/ubuntu/srmu_live/SRMU_AC_IN_UI
-            pwd
+            echo "Application directory: $(pwd)"
+            echo "Node: $(command -v node)"
+            echo "npm: $(command -v npm)"
+            echo "PM2: $(command -v pm2)"
+            node -v
+            npm -v
           '
 
       - name: Configure Git safe directory
@@ -56,4 +62,5 @@ jobs:
             export HOME=/home/ubuntu
             export PM2_HOME=/home/ubuntu/.pm2
             pm2 restart srmu-live
+            pm2 status
           '
