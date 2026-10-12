@@ -100,7 +100,7 @@ export default function NewProgramFinder() {
           {profile.bucket === "Class 12" && <div>
             <p className="mb-3 !text-sm !font-semibold">Quickly add a subject combination</p>
             <div className="flex flex-wrap gap-2">
-              {commonCombinations.map(combination => <button key={combination.label} type="button" className="rounded-xl border border-[#0F4A85]/30 bg-[#E0F1FF] px-4 py-2 text-sm font-semibold text-[#0F4A85] hover:border-[#0F4A85]" onClick={() => update({ subjects: { ...profile.subjects, ...Object.fromEntries(combination.subjects.map(subject => [subject, true])) } })}>Add {combination.label}</button>)}
+              {commonCombinations.map(combination => <button key={combination.label} type="button" className="rounded-xl border border-[#0F4A85]/30 bg-[#E0F1FF] px-4 py-2 text-sm font-semibold text-[#0F4A85] hover:border-[#0F4A85]" onClick={() => update({ subjects: { ...profile.subjects, maths: false, biology: false, ...Object.fromEntries(combination.subjects.map(subject => [subject, true])) } })}>Add {combination.label}</button>)}
             </div>
             <p className="mt-2 !text-xs !text-slate-500">PCM: Physics, Chemistry, Mathematics. PCB: Physics, Chemistry, Biology. Check all other subjects studied below.</p>
           </div>}

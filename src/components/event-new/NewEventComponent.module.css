@@ -50,6 +50,316 @@
   overflow: hidden;
 }
 
+@font-face {
+  font-family: "Insiders Script";
+  src: url("../../assets/fonts/kaushan-script-latin.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+.insiders {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 28px 24px 32px;
+  background: #fcf9f1 url("../../assets/images/event-new/new/insiders-background.svg") center / 100% 100% no-repeat;
+}
+
+.insidersLayout {
+  display: grid;
+  grid-template-columns: 390px 330px 310px;
+  align-items: center;
+  column-gap: 36px;
+  row-gap: 26px;
+  max-width: 1260px;
+  margin: 0 auto;
+}
+
+.insidersContent {
+  grid-column: 1 / -1;
+  position: relative;
+  text-align: left;
+}
+
+.insidersContent::before {
+  content: "";
+  display: block;
+  width: 76px;
+  height: 7px;
+  margin-bottom: 6px;
+  border-radius: 10px;
+  background: #ffc332;
+}
+
+.insidersHeading {
+  margin: 0 0 8px;
+  color: #15246b;
+}
+
+.insidersHeading > span {
+  position: relative;
+  display: inline-block;
+  color: #ffbf43;
+}
+
+.insidersHeading > span::after {
+  content: "";
+  position: absolute;
+  width: 48px;
+  height: 52px;
+  top: -14px;
+  right: -57px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 52'%3E%3Cpath d='M5 23L17 5M16 33L39 25M19 46L38 50' fill='none' stroke='%23ffca55' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+.insidersDescription {
+  margin: 0;
+  color: #203b66;
+}
+
+.insidersPosterFrame {
+  position: relative;
+  width: 100%;
+  padding: 6px;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #ffdf78, #ffbd28);
+  box-shadow: 0 12px 26px rgb(0 0 0 / 24%);
+  transform: rotate(-1deg);
+}
+
+.insidersPosterFrame::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0 20px;
+  border-radius: 44px;
+  background: #ffce4a;
+  opacity: .65;
+  transform: rotate(-11deg);
+}
+
+.insidersPoster {
+  display: block;
+  width: 100%;
+  height: 398px;
+  border-radius: 8px;
+  /* Inset the original pink edge inside the new gold frame. */
+  clip-path: inset(3px round 5px);
+  object-fit: fill;
+}
+
+.insidersMessage {
+  position: relative;
+  align-self: center;
+  padding: 0 58px 30px 0;
+  transform: rotate(-10deg);
+  text-align: center;
+}
+
+.insidersMessage p {
+  margin: 0;
+  color: #fff;
+  font-family: "Insiders Script", cursive;
+  font-size: 36px;
+  line-height: 1.2;
+}
+
+.insidersMessage span {
+  display: block;
+  margin-top: 8px;
+  color: #ffce3f;
+  font-size: 52px;
+  line-height: 1.2;
+}
+
+.insidersMessage span::after {
+  content: "";
+  display: block;
+  width: 165px;
+  height: 13px;
+  margin: 10px auto 0;
+  border-top: 4px solid #ffce3f;
+  border-radius: 50%;
+  transform: rotate(-7deg);
+}
+
+.insidersMessage svg {
+  position: absolute;
+  right: -12px;
+  bottom: 60px;
+  width: 95px;
+  fill: none;
+  stroke: #ffce3f;
+  stroke-width: 3.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transform: rotate(10deg);
+}
+
+.insidersQr {
+  justify-self: center;
+  width: 100%;
+  padding: 28px 26px;
+  border: 3px solid #ffce54;
+  border-top-color: #fff;
+  border-left-color: #fff;
+  border-radius: 28px;
+  background: linear-gradient(145deg, #fff, #fdfdfc);
+  box-shadow: 0 15px 30px rgb(0 0 0 / 20%);
+  text-align: center;
+}
+
+.insidersQrCard {
+  position: relative;
+  width: 170px;
+  margin: 0 auto;
+  padding: 10px;
+  border-bottom: 3px solid #ffc132;
+  border-left: 1px solid #ffc132;
+  border-radius: 19px;
+  background: #fff;
+  box-shadow: 0 5px 14px rgb(20 40 78 / 18%);
+}
+
+.insidersQrCard::before,
+.insidersQrCard::after {
+  content: "";
+  position: absolute;
+  top: 40px;
+  width: 30px;
+  height: 58px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 58'%3E%3Cpath d='M12 7L25 14M3 29H22M12 51L25 44' fill='none' stroke='%23ffc535' stroke-width='6' stroke-linecap='round'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+.insidersQrCard::before { left: -45px; }
+.insidersQrCard::after { right: -45px; transform: scaleX(-1); }
+
+.insidersQrCard img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.insidersQr > p {
+  margin: 18px 0 0;
+  color: #15246b;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.insidersButton {
+  width: 100%;
+  margin-top: 20px;
+  border-radius: 999px;
+  background: linear-gradient(165deg, #ffe48b, #ffc735 55%, #ffbd2b);
+}
+
+@media (max-width: 1399px) {
+  .insidersLayout {
+    grid-template-columns: minmax(0, 390px) minmax(220px, 330px) 290px;
+    gap: 26px;
+    max-width: 1140px;
+  }
+
+  .insidersQr { padding: 26px 18px; }
+}
+
+@media (max-width: 999px) {
+  .insiders {
+    padding: 32px 24px;
+    background: #fcf9f1;
+  }
+
+  .insiders::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 46% -30% -100px;
+    border-radius: 50% 50% 0 0 / 100px 100px 0 0;
+    background: linear-gradient(145deg, #203b66, #14284e);
+    pointer-events: none;
+  }
+
+  .insiders::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    right: -110px;
+    bottom: -140px;
+    width: 260px;
+    height: 260px;
+    border: 8px solid #ffce54;
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .insidersLayout {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    max-width: 760px;
+    gap: 30px;
+  }
+
+  .insidersPosterFrame { max-width: 350px; }
+  .insidersPoster { height: auto; }
+  .insidersMessage { display: none; }
+  .insidersQr { max-width: 290px; }
+  .insidersHeading > span::after { display: none; }
+}
+
+@media (max-width: 599px) {
+  .insiders {
+    padding: 32px 20px 44px;
+  }
+
+  .insidersLayout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+    max-width: 360px;
+  }
+
+  .insidersContent { text-align: left; }
+
+  .insidersContent::before {
+    width: 52px;
+    height: 5px;
+    margin: 0 0 12px;
+  }
+
+  .insidersHeading { margin-bottom: 12px; text-align: left; }
+  .insidersHeading > span { display: block; }
+  .insidersDescription { font-size: 15px; line-height: 1.65; text-align: left; }
+
+  .insidersPosterFrame {
+    width: min(100%, 280px);
+    justify-self: center;
+    padding: 5px;
+    transform: none;
+    box-shadow: 0 8px 22px rgb(20 40 78 / 18%);
+  }
+
+  .insidersPosterFrame::before { display: none; }
+  .insidersPoster { object-fit: contain; }
+
+  .insidersQr {
+    width: min(100%, 280px);
+    padding: 20px;
+    border-radius: 22px;
+    box-shadow: 0 8px 22px rgb(0 0 0 / 15%);
+  }
+
+  .insidersQrCard { width: 150px; padding: 8px; }
+  .insidersQrCard::before,
+  .insidersQrCard::after { top: 34px; width: 24px; height: 46px; }
+  .insidersQrCard::before { left: -34px; }
+  .insidersQrCard::after { right: -34px; }
+  .insidersQr > p { margin-top: 16px; font-size: 14px; }
+  .insidersButton { width: auto; margin-top: 16px; }
+}
+
 .culturalTrack {
   display: flex;
   width: max-content;

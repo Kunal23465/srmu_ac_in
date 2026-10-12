@@ -40,7 +40,6 @@ export const C12_SUBJECTS = [
 export const C10_SUBJECTS = [
   {key:'science', label:'Science'},
   {key:'maths', label:'Mathematics'},
-  {key:'english', label:'English'},
 ];
 export const C12ITI_SUBJECTS = [
   {key:'physics', label:'Physics'},

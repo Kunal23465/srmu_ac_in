@@ -16,6 +16,10 @@ import funDayVideoSrc from "../../assets/video/events-new/optimized/cultural-eve
 import funDayVideoPoster from "../../assets/video/events-new/optimized/cultural-event/Fun day.webp";
 import harmonyVideoSrc from "../../assets/video/events-new/optimized/cultural-event/Harmony.mp4";
 import harmonyVideoPoster from "../../assets/video/events-new/optimized/cultural-event/Harmony.webp";
+import daroharVideoSrc from "../../assets/video/events-new/optimized/cultural-event/darohar.mp4";
+import daroharVideoPoster from "../../assets/video/events-new/optimized/cultural-event/darohar.webp";
+import harmony2026VideoSrc from "../../assets/video/events-new/optimized/cultural-event/harmony-2026.mp4";
+import harmony2026VideoPoster from "../../assets/video/events-new/optimized/cultural-event/harmony-2026.webp";
 import independenceDayVideoSrc from "../../assets/video/events-new/cultural-event/Independence Day.mp4";
 import independenceDayVideoPoster from "../../assets/video/events-new/optimized/cultural-event/Independence Day.webp";
 import rangBarsheVideoSrc from "../../assets/video/events-new/cultural-event/Rang Barshe.mp4";
@@ -41,6 +45,8 @@ export const anubhutiVideo: EventVideoAsset = { src: anubhutiVideoSrc, poster: a
 export const dandiyaNightVideo: EventVideoAsset = { src: dandiyaNightVideoSrc, poster: dandiyaNightVideoPoster };
 export const funDayVideo: EventVideoAsset = { src: funDayVideoSrc, poster: funDayVideoPoster };
 export const harmonyVideo: EventVideoAsset = { src: harmonyVideoSrc, poster: harmonyVideoPoster };
+export const daroharVideo: EventVideoAsset = { src: daroharVideoSrc, poster: daroharVideoPoster };
+export const harmony2026Video: EventVideoAsset = { src: harmony2026VideoSrc, poster: harmony2026VideoPoster };
 export const independenceDayVideo: EventVideoAsset = { src: independenceDayVideoSrc, poster: independenceDayVideoPoster };
 export const rangBarsheVideo: EventVideoAsset = { src: rangBarsheVideoSrc, poster: rangBarsheVideoPoster };
 export const pawandeepArunitaVideo: EventVideoAsset = { src: pawandeepArunitaVideoSrc, poster: pawandeepArunitaVideoPoster };

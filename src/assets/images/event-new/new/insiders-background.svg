@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1774 586" preserveAspectRatio="none" fill="none">
+  <defs>
+    <linearGradient id="cream" x2="1774" y2="586" gradientUnits="userSpaceOnUse"><stop stop-color="#fffcf5"/><stop offset=".55" stop-color="#faf7ef"/><stop offset="1" stop-color="#fff8df"/></linearGradient>
+    <linearGradient id="navy" x1="680" y1="180" x2="1080" y2="650" gradientUnits="userSpaceOnUse"><stop stop-color="#183566"/><stop offset="1" stop-color="#102449"/></linearGradient>
+    <linearGradient id="gold" x2="170" y2="110" gradientUnits="userSpaceOnUse"><stop stop-color="#ffd568"/><stop offset="1" stop-color="#ffbb32"/></linearGradient>
+    <pattern id="dots" width="25" height="25" patternUnits="userSpaceOnUse"><circle cx="8" cy="8" r="3.3" fill="#ffce50"/></pattern>
+  </defs>
+  <path fill="url(#cream)" d="M0 0h1774v586H0z"/>
+  <g stroke="#ffdf81" stroke-width="26" opacity=".08">
+    <path d="M-80 340L510 0M250 350L920 0M890 320L1580 0M1310 190L1810 0M1370 380L1830 150"/>
+  </g>
+  <path fill="url(#gold)" d="M0 0h155C126 33 122 60 77 76C45 87 22 78 0 92Z"/>
+  <g stroke="#f3c746" stroke-width="2" opacity=".18" stroke-linejoin="round">
+    <path d="M1500 397V246L1590 224V70L1605 61V47L1649 27L1682 49V69L1694 77V203L1774 180M1490 246L1588 219M1694 212L1774 189M1507 394V255L1589 236M1601 395V77L1647 57L1681 77V395M1610 395V83L1647 67L1671 82V395M1647 27V395M1597 48L1647 37L1677 54M1604 62L1647 48L1683 69M1587 396H1774M1688 395V219L1774 198"/>
+    <ellipse cx="1625" cy="150" rx="18" ry="27"/><ellipse cx="1625" cy="150" rx="13" ry="22"/>
+    <path d="M1625 133V151L1634 156M1617 395V277Q1625 255 1635 274V395M1660 103V196M1660 224V389M1517 278V296L1530 292V274ZM1547 269V287L1560 283V265ZM1517 325V344L1530 340V321ZM1547 317V336L1560 332V313ZM1710 233V252L1722 249V230ZM1741 226V245L1753 242V223ZM1710 276V295L1722 292V273ZM1741 269V288L1753 285V266ZM1710 319V338L1722 335V316ZM1741 312V331L1753 328V309Z"/>
+  </g>
+  <g stroke="#17366a" stroke-width="1.8" stroke-linecap="round">
+    <path d="M-5 244C24 202 94 181 81 159C67 138 43 178 77 174C127 166 147 119 125 118C107 116 111 143 125 137" stroke-dasharray="6 7"/>
+    <path d="M128 93L168 83L151 115L141 104L137 115L136 100Z" fill="#17366a"/>
+    <path d="M136 100L167 84L141 104" stroke="#fffaf0"/>
+  </g>
+  <path fill="url(#navy)" d="M0 391C164 338 203 484 277 496C390 512 430 263 641 204C859 143 961 150 1118 155L1294 158C1400 151 1421 219 1438 309C1457 414 1501 445 1599 475C1687 443 1694 389 1774 391V586H0Z"/>
+  <path fill="#47617f" opacity=".24" d="M0 485C255 576 361 626 616 580L1305 454C1519 418 1584 454 1774 494V586H0Z"/>
+  <path fill="#ffc748" d="M1378 586C1501 533 1549 513 1610 461C1675 403 1705 375 1774 375V405C1706 394 1668 432 1619 478C1558 535 1487 557 1395 586Z"/>
+  <path fill="url(#dots)" d="M14 436h70v74H14zM1690 481h70v74h-70z"/>
+</svg>

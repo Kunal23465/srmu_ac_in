@@ -1,9 +1,11 @@
 import EventVideo from "./EventVideo";
 import EventSectionNav from "./EventSectionNav";
-import { technicalVideo, culturalVideo, sportsVideo, celebrityVideo, anubhutiVideo, dandiyaNightVideo, funDayVideo, harmonyVideo, independenceDayVideo, rangBarsheVideo, pawandeepArunitaVideo, srmuDarshanVideo, shaanVideo, shilpaRaoVideo, sunnyDeolVideo, type EventVideoAsset } from "./eventVideoAssets";
+import { technicalVideo, culturalVideo, sportsVideo, celebrityVideo, anubhutiVideo, dandiyaNightVideo, funDayVideo, harmonyVideo, daroharVideo, harmony2026Video, independenceDayVideo, rangBarsheVideo, pawandeepArunitaVideo, srmuDarshanVideo, shaanVideo, shilpaRaoVideo, sunnyDeolVideo, type EventVideoAsset } from "./eventVideoAssets";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { ArrowRight, CalendarDays, ChevronDown, ChevronLeft, ChevronRight, Cpu, GraduationCap, Image, MapPin, Mic, Music, Palmtree, Pause, Play, Trophy, X } from "lucide-react";
 import desktopEventsBanner from "../../assets/images/event-new/banners/desktop-view.webp";
+import insidersBannerImage from "../../assets/images/event-new/new/insiders-banner.webp";
+import scannerImage from "../../assets/images/event-new/new/scanner.webp";
 import mobileEventsBanner from "../../assets/images/event-new/banners/mobile-view.webp";
 import facultyTrainingImage from "../../assets/images/event-new/academic-event/Faculty  training & Development.webp";
 import conferenceImage from "../../assets/images/event-new/academic-event/Conference.webp";
@@ -23,6 +25,9 @@ import khoKhoImage from "../../assets/images/event-new/sports-event/Kho kho.webp
 import tableTennisImage from "../../assets/images/event-new/sports-event/Table tennis.webp";
 import volleyballImage from "../../assets/images/event-new/sports-event/Volley ball.webp";
 import athleteImage from "../../assets/images/event-new/sports-event/athlete..webp";
+import carromImage from "../../assets/images/event-new/sports-event/carrom.webp";
+import chessImage from "../../assets/images/event-new/sports-event/chess.webp";
+import tugOfWarImage from "../../assets/images/event-new/sports-event/tug-of-war.webp";
 import { calendarEvents, type CalendarEvent } from "./eventNewData";
 import eventsData from "../../data/new-home/eventsData";
 // import { archiveEvents } from "./eventNewData"; // Restore with Event Archives.
@@ -38,6 +43,11 @@ const categories = [
   { name: "Sports", title: "Sports", id: "sports-events", Icon: Trophy, description: "Annual sports meets, inter-college competitions, athletics and indoor and outdoor activities.", reelVideo: sportsVideo },
   { name: "Special", title: "Celebrity & Special", id: "special-events", Icon: Mic, description: "Celebrity interactions, industry leader talks, motivational sessions and distinguished speakers.", reelVideo: celebrityVideo },
   { name: "Holiday", title: "Holidays", id: "holiday-events", Icon: Palmtree, description: "University holidays, mandatory celebration days and restricted holidays.", reelVideo: undefined as EventVideoAsset | undefined },
+];
+const exploreReels = [
+  ...categories.filter(({ reelVideo }) => !!reelVideo),
+  { name: "Darohar", title: "Darohar", Icon: Music, description: "Highlights from Darohar at SRMU.", reelVideo: daroharVideo },
+  { name: "Harmony 2026", title: "Harmony 2026", Icon: Music, description: "Highlights from Harmony 2026 at SRMU.", reelVideo: harmony2026Video },
 ];
 const academic = [
   { title: "Faculty Training & Development", label: "Faculty Development", description: "Structured programmes building teaching and research capability.", image: facultyTrainingImage, imagePosition: "center 45%", alt: "Faculty development programme participants gathered in an auditorium" },
@@ -60,6 +70,8 @@ const cultural = [
   { title: "Dandiya Night", video: dandiyaNightVideo },
   { title: "Fun day", video: funDayVideo },
   { title: "Harmony", video: harmonyVideo },
+  { title: "Darohar", video: daroharVideo },
+  { title: "Harmony 2026", video: harmony2026Video },
   { title: "Independence Day", video: independenceDayVideo },
   { title: "Rang Barshe", video: rangBarsheVideo },
 ];
@@ -70,10 +82,13 @@ const sports = [
   { title: "Table Tennis", image: tableTennisImage, imagePosition: "center", alt: "Students playing a doubles table tennis match indoors" },
   { title: "Volley Ball", image: volleyballImage, imagePosition: "center", alt: "A volleyball player jumping to hit the ball over the net" },
   { title: "Athlete", image: athleteImage, imagePosition: "center 45%", alt: "An athlete performing a barbell squat with spotters nearby" },
+  { title: "Carrom", image: carromImage, imagePosition: "center", alt: "Students playing carrom at a university sports event" },
+  { title: "Chess", image: chessImage, imagePosition: "center", alt: "Students engaged in a chess match during a university tournament" },
+  { title: "Tug of War", image: tugOfWarImage, imagePosition: "center", alt: "Students competing in a tug of war event on the university grounds" },
 ];
 const special = [
   { title: "Pawandeep & Arunita", video: pawandeepArunitaVideo },
-  { title: "SRMU Darshan Reel", video: srmuDarshanVideo },
+  { title: "Darshan Raval", video: srmuDarshanVideo },
   { title: "Shaan", video: shaanVideo },
   { title: "Shilpa Rao", video: shilpaRaoVideo },
   { title: "Sunny Deol", video: sunnyDeolVideo },
@@ -272,7 +287,7 @@ export default function NewEventComponent() {
         <div className="-mx-4 overflow-hidden min-[561px]:-mx-6">
           {/* track — doubled cards for seamless loop */}
           <div className="reel-track flex gap-3 w-max px-4 min-[561px]:px-6">
-            {[...categories.filter(({ reelVideo }) => !!reelVideo), ...categories.filter(({ reelVideo }) => !!reelVideo)].map(({ name, title, Icon, description, reelVideo }, index) => (
+            {[...exploreReels, ...exploreReels].map(({ name, title, Icon, description, reelVideo }, index) => (
               <article
                 key={`${name}-${index}`}
                 className="group relative flex-shrink-0 w-[200px] min-[561px]:w-[220px] min-[861px]:w-[240px] aspect-[9/16] rounded-2xl overflow-hidden"
@@ -353,7 +368,6 @@ export default function NewEventComponent() {
                     <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#14284E]/85 via-[#14284E]/10 to-transparent" />
                     <div className="absolute top-3 left-3 grid size-9 place-items-center rounded-xl bg-white/20 text-white backdrop-blur-sm"><Mic size={18} aria-hidden="true" /></div>
                     <div className="absolute inset-x-0 bottom-0 p-5 text-white">
-                      <p className="mb-2 text-[.65rem] font-semibold tracking-[.12em] text-[#FFB703] uppercase">Special Events</p>
                       <h3 className="text-white">{title}</h3>
                     </div>
                   </article>
@@ -380,10 +394,10 @@ export default function NewEventComponent() {
       <Section id="calendar" title="SRMU Events Calendar" description="Stay updated with upcoming academic, technical, cultural, sports and special events at SRMU.">
         {/* <p className="mb-[18px] text-[.8rem] text-[#0F4A85]">Design preview: event dates, archive entries and statistics are sample content.</p> */}
         <div className="mb-[22px] flex flex-wrap gap-2" aria-label="Filter calendar events">{["All", ...categories.map(category => category.name)].map(category => <button key={category} className="rounded-full border border-[#0F4A85] bg-transparent px-[17px] py-[9px] text-[.82rem] text-[#0F4A85] aria-pressed:border-[#FFB703] aria-pressed:bg-[#FFB703] aria-pressed:font-semibold aria-pressed:text-[#14284E]" aria-pressed={filter === category} onClick={() => setFilter(category)}>{category === "All" ? "All Events" : category}</button>)}</div>
-        <div className="grid grid-cols-1 items-start gap-7 min-[861px]:grid-cols-[1.1fr_1fr] min-[1101px]:gap-12 [&>*]:min-w-0 [&>div>button]:mt-6 [&>div>span]:mb-4">
-          <div className="rounded-2xl border border-[#21A5DB] bg-white p-5 min-[561px]:p-6">
+        <div className="grid grid-cols-1 items-stretch gap-7 min-[861px]:grid-cols-2 min-[1101px]:gap-12 [&>*]:min-w-0">
+          <div className="flex flex-col rounded-2xl border border-[#21A5DB] bg-white p-5 min-[561px]:p-6">
             <div className="mb-[22px] flex items-center justify-between gap-2 [&>button]:grid [&>button]:size-10 [&>button]:place-items-center [&>button]:rounded-[10px] [&>button]:border [&>button]:border-[#21A5DB] [&>button]:bg-[#E0F1FF] [&>button]:text-[#0F4A85] max-[560px]:[&>h3]:text-[.95rem]"><button aria-label="Previous month" onClick={() => setMonth(new Date(month.getFullYear(), month.getMonth() - 1, 1))}><ChevronLeft /></button><h3 aria-live="polite">{months[month.getMonth()]} {month.getFullYear()}</h3><button aria-label="Next month" onClick={() => setMonth(new Date(month.getFullYear(), month.getMonth() + 1, 1))}><ChevronRight /></button></div>
-            <div className="grid grid-cols-7 gap-[3px] text-center text-[.86rem] min-[561px]:gap-[7px]">
+            <div className="grid flex-1 grid-cols-7 gap-[3px] text-center text-[.86rem] min-[561px]:gap-[7px]">
               {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map(day => <span className="pb-2 text-[.72rem] font-semibold" key={day}>{day}</span>)}
               {Array.from({ length: month.getDay() }, (_, index) => <span key={`empty-${index}`} />)}
               {Array.from({ length: new Date(month.getFullYear(), month.getMonth() + 1, 0).getDate() }, (_, index) => {
@@ -393,15 +407,15 @@ export default function NewEventComponent() {
               })}
             </div>
           </div>
-          <div className="rounded-2xl border border-[#21A5DB] bg-white p-5 min-[561px]:p-6">
+          <div className="flex flex-col rounded-2xl border border-[#21A5DB] bg-white p-5 min-[561px]:p-6">
             <h3>Selected Month&apos;s Events</h3>
-            <div id="selected-month-events" aria-live="polite">
+            <div id="selected-month-events" className="flex-1" aria-live="polite">
               {monthEvents.length ? (showAllMonthEvents ? monthEvents : monthEvents.slice(0, 3)).map(event => <button className="flex w-full items-center gap-3.5 border-0 border-b border-[#21A5DB] bg-transparent py-4 text-left text-[#14284E] last:border-b-0 [&>span:nth-child(2)]:flex-1 [&>svg]:shrink-0 [&>svg]:text-[#0F4A85] [&_strong]:my-1 [&_strong]:block [&_strong]:text-[.85rem] [&_strong]:leading-[1.4]" key={event.title} onClick={() => openEvent(event)}><span className="min-w-[58px] rounded-[10px] bg-[#E0F1FF] px-3 py-2 text-center text-[#0F4A85] [&>b]:block [&>b]:text-[1.35rem] [&>span]:block [&>span]:text-[.72rem]"><b>{event.day}</b><span>{months[month.getMonth()].slice(0, 3)}</span></span><span><span className="inline-flex w-fit rounded-full bg-[#FFB703] px-3 py-1 text-[.72rem] leading-normal font-semibold text-[#14284E]">{event.cat}</span><strong>{event.title}</strong><span className="block text-[.72rem]">{event.venue}</span></span><ArrowRight size={18} aria-hidden="true" /></button>) : <p className="py-6 text-[.9rem]">No events for this filter this month.</p>}
             </div>
             {monthEvents.length > 3 && (
               <button
                 type="button"
-                className={`${eventButtonClassName} mt-3 w-full! justify-between!`}
+                className={`${eventButtonClassName} mt-6 self-center`}
                 aria-expanded={showAllMonthEvents}
                 aria-controls="selected-month-events"
                 onClick={() => setShowAllMonthEvents(previous => !previous)}
@@ -436,82 +450,57 @@ export default function NewEventComponent() {
         <p>Illustrative figures for this preview</p>
       </section> */}
 
-      <section className="py-10 min-[861px]:py-[56px]">
-        <div className={Global.container}>
-          <div className="relative mx-auto max-w-[1200px] overflow-hidden rounded-[28px] border border-[#21A5DB] bg-[#E0F1FF] shadow-sm shadow-[#14284E]/10">
+      <section className={styles.insiders} aria-labelledby="insiders-heading">
+        <div className={styles.insidersLayout}>
+          <header className={styles.insidersContent}>
+            <h2 id="insiders-heading" className={styles.insidersHeading}>
+              Stay Updated with{" "}
+              <span>SRMU Events</span>
+            </h2>
+            <p className={styles.insidersDescription}>
+              Get updates about upcoming events, workshops, conferences, competitions and campus activities.
+            </p>
+          </header>
 
-            {/* --- DECORATIVE BACKGROUND ELEMENTS --- */}
-            {/* Top Left Circles */}
-            <div className="absolute top-[-50px] left-[-40px] md:top-[-80px] md:left-[-60px] size-[150px] md:size-[220px] rounded-full bg-[#14284E] opacity-95" />
-            <div className="absolute top-[60px] left-[40px] md:top-[60px] md:left-[60px] size-[60px] md:size-[90px] rounded-full bg-[#21A5DB] opacity-95" />
-            <div className="absolute top-[100px] left-[20px] md:top-[110px] md:left-[35px] size-[35px] md:size-[45px] rounded-full bg-[#FFB703] opacity-95" />
+          <div className={styles.insidersPosterFrame}>
+            <img
+              src={insidersBannerImage}
+              alt="SRMU Insiders — Who's got the tea? We do."
+              className={styles.insidersPoster}
+              width={1440}
+              height={1800}
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
 
-            {/* Top Right Circles */}
-            <div className="absolute top-[-20px] right-[-20px] md:top-[-30px] md:right-[-30px] size-[100px] md:size-[140px] rounded-full bg-[#FFB703] opacity-95" />
-            <div className="absolute top-[40px] right-[20px] md:top-[50px] md:right-[30px] size-[40px] md:size-[60px] rounded-full bg-[#D62C2B] opacity-95" />
+          <div className={styles.insidersMessage}>
+            <p>Be a part of <span>Something<br />Bigger!</span></p>
+            <svg viewBox="0 0 110 70" aria-hidden="true" focusable="false">
+              <path d="M8 12C5 44 43 38 36 15C29 -7 7 41 61 49C74 51 89 48 99 43M86 39L101 43L92 55" />
+            </svg>
+          </div>
 
-            {/* Bottom Right Shape */}
-            <div className="absolute right-[-20px] bottom-[-20px] size-[100px] md:size-[180px] rounded-tl-[100%] bg-[#E0F1FF]" />
-
-            {/* Dotted Grids */}
-            <div className="absolute hidden md:block top-[140px] left-[50px] w-[80px] h-[80px] bg-[radial-gradient(#21A5DB_2px,transparent_2px)] [background-size:14px_14px]" />
-            <div className="absolute hidden md:block top-[90px] right-[30px] w-[60px] h-[100px] bg-[radial-gradient(#21A5DB_2px,transparent_2px)] [background-size:14px_14px]" />
-
-            {/* --- CONTENT --- */}
-            <div className="relative z-10 px-5 pt-[100px] pb-6 sm:px-11 min-[861px]:pt-[45px] min-[861px]:pb-8 flex flex-col items-center text-center">
-              {/* Calendar Icon Pill */}
-              <div className="mb-3 flex size-12 items-center justify-center rounded-2xl bg-[#E0F1FF] text-[#14284E]">
-                <CalendarDays size={24} strokeWidth={2.5} />
-              </div>
-
-              {/* Text */}
-              <h2 className="text-[clamp(1.6rem,3vw,2.4rem)] font-extrabold leading-[1.15] text-[#14284E] max-w-[650px] font-display">
-                Stay Updated with <br className="hidden sm:block" /> <span className="text-[#21A5DB]">SRMU Events</span>
-              </h2>
-              <p className="mt-2 mb-6 max-w-[580px] text-[.9rem] sm:text-[1rem] text-[#0F4A85] leading-relaxed">
-                Get updates about upcoming events, workshops, conferences, competitions and campus activities.
-              </p>
-
-              {/* CTA Button */}
-              <a
-                href="/insider"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={eventButtonClassName}
-              >
-                Apply Now <ArrowRight size={20} strokeWidth={2.5} />
-              </a>
+          <div className={styles.insidersQr}>
+            <div className={styles.insidersQrCard}>
+              <img
+                src={scannerImage}
+                alt="Scan to know more about SRMU Insider"
+                width={548}
+                height={494}
+                loading="lazy"
+                decoding="async"
+              />
             </div>
-
-            {/* --- FOOTER TAGS --- */}
-            <div className="relative z-10 mx-6 sm:mx-12 border-t border-[#21A5DB]/70 py-4">
-              <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
-                <div className="flex items-center gap-2.5 text-[.85rem] font-bold text-[#14284E]">
-                  <div className="flex size-[30px] items-center justify-center rounded-full bg-[#14284E] text-white"><CalendarDays size={14} /></div>
-                  Events
-                </div>
-                <div className="hidden md:block h-[20px] w-[2px] bg-[#21A5DB]/60"></div>
-                <div className="flex items-center gap-2.5 text-[.85rem] font-bold text-[#14284E]">
-                  <div className="flex size-[30px] items-center justify-center rounded-full bg-[#21A5DB] text-white"><Cpu size={14} /></div>
-                  Workshops
-                </div>
-                <div className="hidden md:block h-[20px] w-[2px] bg-[#21A5DB]/60"></div>
-                <div className="flex items-center gap-2.5 text-[.85rem] font-bold text-[#14284E]">
-                  <div className="flex size-[30px] items-center justify-center rounded-full bg-[#FFB703] text-white"><Mic size={14} /></div>
-                  Conferences
-                </div>
-                <div className="hidden md:block h-[20px] w-[2px] bg-[#21A5DB]/60"></div>
-                <div className="flex items-center gap-2.5 text-[.85rem] font-bold text-[#14284E]">
-                  <div className="flex size-[30px] items-center justify-center rounded-full bg-[#D62C2B] text-white"><Trophy size={14} /></div>
-                  Competitions
-                </div>
-                <div className="hidden min-[1100px]:block h-[20px] w-[2px] bg-[#21A5DB]/60"></div>
-                <div className="flex items-center gap-2.5 text-[.85rem] font-bold text-[#14284E]">
-                  <div className="flex size-[30px] items-center justify-center rounded-full bg-[#E6E6E7] text-[#14284E]"><GraduationCap size={14} /></div>
-                  Campus Activities
-                </div>
-              </div>
-            </div>
+            <p>Scan to know more</p>
+            <a
+              href="/insider"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${eventButtonClassName} ${styles.insidersButton}`}
+            >
+              Apply Now <ArrowRight size={18} aria-hidden="true" />
+            </a>
           </div>
         </div>
       </section>
