@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import Classes from "../../../utils/styles/Global.module.css";
 import DepartmentSectionNav from "./DepartmentSectionNav";
+import DepartmentPlacements from "./DepartmentPlacements";
 import KamleshImg from "../../../assets/images/academics/institutes/cse/cse2.jpeg";
 import SakshiImg from "../../../assets/images/academics/institutes/cse/cse3.jpeg";
 import logosrmcem from "../../../assets/images/University-Logo-White.png";
@@ -36,6 +37,9 @@ import Map from "../../new-home/Map";
 // ─── Data ────────────────────────────────────────────────────────────────────
 
 const recruiterLogos: [string, string][] = [
+    [PlacementLogoCognizant, "Cognizant"],
+    [PlacementLogoDeloitte, "Deloitte"],
+    [PlacementLogoEY, "EY"],
     [PlacementLogoTCS, "TCS"],
     [PlacementLogoInfosys, "Infosys"],
     [PlacementLogoWipro, "Wipro"],
@@ -45,9 +49,6 @@ const recruiterLogos: [string, string][] = [
     [PlacementLogoCapgemini, "Capgemini"],
     [PlacementLogoTechMahindra, "Tech Mahindra"],
     [PlacementLogoIBM, "IBM"],
-    [PlacementLogoCognizant, "Cognizant"],
-    [PlacementLogoDeloitte, "Deloitte"],
-    [PlacementLogoEY, "EY"],
 ];
 
 const departmentPrograms = [
@@ -533,13 +534,6 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                             filter: drop-shadow(0 0 18px rgba(55,130,220,0.65)) drop-shadow(0 0 30px rgba(215,152,48,0.35)) drop-shadow(0 8px 16px rgba(20,40,78,0.40));
                         }
                     }
-                }
-
-                .cse-recruiter-track { display: flex; width: max-content; animation: cse-recruiter-scroll 30s linear infinite; }
-                @keyframes cse-recruiter-scroll { to { transform: translateX(-50%); } }
-                @media (prefers-reduced-motion: reduce) {
-                    .cse-recruiter-track { animation: none; }
-                    .cse-recruiter-copy { display: none; }
                 }
 
                 .cse-career-orbit, .cse-career-core {
@@ -1276,131 +1270,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                 </section>
 
                 {/* ── Placements ───────────────────────────────────────────── */}
-                <section className="pt-8 md:pt-10 pb-4 px-4 sm:px-6 bg-white scroll-mt-24" id="placements">
-                    <div className={`${Classes["container"]} cse-content-container mx-auto`}>
-
-                        {/* Placement Stats + Image */}
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 items-start">
-
-                            {/* Stats */}
-
-                            <div className="w-full">
-
-
-                                <h2 className="text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E]">
-                                    Where our Students <span className="text-[#ffb703]">Get Placed</span>
-                                </h2>
-
-                                <div className="mt-4">
-                                    <p className={`text-[15px] leading-6 text-[#4B5A72] text-justify ${!rm['placement1'] ? 'rm-clamp' : ''}`}>
-                                        Dedicated placement training — resume building, coding practice,
-                                        mock interviews and group discussions — starts from the final year.
-                                    </p>
-                                    <button className="cse-read-more cse-mobile-button rm-btn" onClick={() => toggleRm('placement1')}>{rm['placement1'] ? 'Read Less' : 'Read More'}</button>
-                                </div>
-
-                                {/* Mobile stats — dark card */}
-                                <div className="sm:hidden mt-6 bg-[#14284E] rounded-2xl p-5 grid grid-cols-2 gap-x-6 gap-y-5">
-                                    {[
-                                        { val: "₹53 LPA", label: "Highest Package" },
-                                        { val: "₹4.5 LPA", label: "Average Package" },
-                                        { val: "1200+", label: "Job Offers Given" },
-                                        { val: "225+", label: "Students Placed" },
-                                    ].map((s, i) => (
-                                        <div key={i}>
-                                            <div className="text-[15px] font-bold text-[#ffb703] mb-1">{s.val}</div>
-                                            <div className="text-[12.5px] text-white/80 leading-snug">{s.label}</div>
-                                        </div>
-                                    ))}
-                                </div>
-
-                                {/* Desktop stats — individual white cards */}
-                                <div className="hidden sm:grid grid-cols-2 gap-4 mt-6">
-
-                                    <div className="bg-white border border-[#DCE6F2] rounded-xl p-5 min-h-[90px] shadow-sm">
-                                        <div className="text-[14.5px] font-semibold text-[#ffb703] mb-3">
-                                            ₹53 LPA
-                                        </div>
-
-                                        <h3 className="text-[14px] font-bold font-display text-[#14284E]">
-                                            Highest Package
-                                        </h3>
-                                    </div>
-
-                                    <div className="bg-white border border-[#DCE6F2] rounded-xl p-5 min-h-[90px] shadow-sm">
-                                        <div className="text-[14.5px] font-semibold text-[#ffb703] mb-3">
-                                            ₹4.5 LPA
-                                        </div>
-
-                                        <h3 className="text-[14px] font-bold font-display text-[#14284E]">
-                                            Average Package
-                                        </h3>
-                                    </div>
-
-                                    <div className="bg-white border border-[#DCE6F2] rounded-xl p-5 min-h-[90px] shadow-sm">
-                                        <div className="text-[14.5px] font-semibold text-[#ffb703] mb-3">
-                                            1200+
-                                        </div>
-
-                                        <h3 className="text-[14px] font-bold font-display text-[#14284E]">
-                                            Job Offers Given
-                                        </h3>
-                                    </div>
-
-                                    <div className="bg-white border border-[#DCE6F2] rounded-xl p-5 min-h-[90px] shadow-sm">
-                                        <div className="text-[14.5px] font-semibold text-[#ffb703] mb-3">
-                                            225+
-                                        </div>
-
-                                        <h3 className="text-[14px] font-bold font-display text-[#14284E]">
-                                            Students Placed
-                                        </h3>
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                            {/* Placement Image */}
-                            <div className="w-full mt-6 lg:mt-0 hidden sm:block">
-                                <img
-                                    src="https://ik.imagekit.io/ttalcskjf/IMAGE%202.webp?updatedAt=1788439003256"
-                                    alt="Student preparing for career and placement"
-                                    className="w-full aspect-[14/8] object-cover rounded-xl border border-[#DCE6F2]"
-                                    loading="lazy"
-                                />
-                            </div>
-
-                        </div>
-
-                        {/* Top Recruiters — seamless continuous scroll */}
-                        <div className="mt-7">
-                            <h3 className="text-[17px] font-bold font-display text-[#14284E] mb-3.5">
-                                Top Recruiters
-                            </h3>
-                            <div className="overflow-hidden motion-reduce:overflow-x-auto">
-                                <div className="cse-recruiter-track">
-                                    {[0, 1].map(copy => (
-                                        <div key={copy} className={`flex shrink-0 items-center gap-3 pr-3 ${copy === 1 ? "cse-recruiter-copy" : ""}`} aria-hidden={copy === 1 ? true : undefined}>
-                                            {recruiterLogos.map(([src, name]) => (
-                                                <div key={name} className="h-[60px] w-[110px] sm:h-[88px] sm:w-[200px] shrink-0 bg-white rounded-md px-2 sm:px-4 py-2 sm:py-3 flex items-center justify-center">
-                                                    <img src={src} alt={copy === 0 ? name : ""} className="h-7 sm:h-11 max-w-full w-auto object-contain" />
-                                                </div>
-                                            ))}
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
-                        {/* View Placement Details Button */}
-                        <div className="flex justify-center w-full mt-10">
-                            <Link to="https://srmu.ac.in/placements" target="_blank" className="cse-mobile-button inline-flex items-center bg-[#ffb703] hover:bg-[#ffb703] text-[#14284E] font-bold uppercase tracking-wide text-[14px] px-6 py-3 rounded-md transition-colors shadow-sm hover:-translate-y-0.5">
-                                View Placement Details →
-                            </Link>
-                        </div>
-                    </div>
-                </section>
-
+                <DepartmentPlacements recruiters={recruiterLogos} />
 
                 {/* ── Faculty ──────────────────────────────────────────────── */}
                 <section id="faculty" className="pt-4 pb-0 sm:py-10 px-4 sm:px-6 bg-gradient-to-b from-white to-[#E0F1FF] scroll-mt-24">

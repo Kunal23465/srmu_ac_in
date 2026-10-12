@@ -40,7 +40,7 @@ export default function Placements() {
         <div className={`${Classes["container"]} `}>
           <div className="mb-5 md:mb-10">
             <h2 className="text-lg md:text-3xl lg:text-4xl font-bold text-[#0A4A8F] flex flex-col leading-tight md:leading-tight">
-              Trusted Education with <span className="text-[#FFC107]  lg:text-3xl  block!">Outstanding Placements</span>
+              Trusted Education with <span className="text-[#FFC107] md:text-3xl lg:text-4xl block!">Outstanding Placements</span>
             </h2>
             <MobileReadMore className="mt-2 md:mt-3 text-[13px] md:text-base text-gray-600 leading-relaxed">
               SRMU combines academic learning with industry exposure, internships, technical training and placement preparation to help students build future-ready careers. Recognized among the preferred choices for students seeking the best university in Uttar Pradesh for professional and technology-focused education, SRMU emphasizes practical learning through live projects, coding culture, recruiter engagement and skill-focused training across engineering, AI, management, healthcare and emerging technologies.
@@ -120,7 +120,7 @@ export default function Placements() {
         <div className={`${Classes["container"]} `}>
           <h2 className="text-lg md:text-3xl lg:text-4xl font-bold text-white flex flex-col leading-tight md:leading-tight">
             Leading Companies
-            <span className="text-[#FFC107] lg:text-3xl block">Recruiting from SRMU</span>
+            <span className="text-[#FFC107] md:text-3xl lg:text-4xl block">Recruiting from SRMU</span>
           </h2>
 
 

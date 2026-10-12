@@ -45,7 +45,7 @@ export default function CoreEngineering() {
           <h2 className="text-lg md:text-3xl lg:text-4xl font-bold text-[#0A4A8F] flex flex-col leading-tight md:leading-tight">
             Practical Core Engineering Learning
             <div className="flex gap-x-2 items-center">
-              <span className="text-[#FFC107] lg:text-3xl block">with</span>
+              <span className="text-[#FFC107] md:text-3xl lg:text-4xl block">with</span>
               <img
                 src={lt}
                 width={100}

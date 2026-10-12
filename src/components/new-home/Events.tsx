@@ -124,7 +124,7 @@ export default function Events() {
                     <div>
                         <h2 className="text-lg md:text-3xl lg:text-4xl font-bold text-[#0A4A8F] leading-tight md:leading-tight">
                             Latest
-                            <span className="text-[#FFC107] text-sm md:text-2xl lg:text-3xl "> News & Updates</span>
+                            <span className="text-[#FFC107] md:text-3xl lg:text-4xl "> News & Updates</span>
                         </h2>
 
 

@@ -73,7 +73,7 @@ export default function AIPowered() {
     <section className="bg-[#F0F6FB] ">
       <div className={`${Classes["container"]} py-8 md:py-10 lg:py-12`}>
         <h2 className="text-lg md:text-3xl lg:text-4xl font-bold text-[#0A4A8F] mb-2 md:mb-3 flex flex-col leading-tight md:leading-tight">
-          Industry-Collaborated  AI Courses  <div className='flex gap-x-2 items-center'> <span className="text-[#FFC107] lg:text-3xl block">Backed by</span> <img src={lt} width={100} height={31} className='max-w-[100px] object-contain' alt="Larsen and Toubro EduTech Logo" loading="lazy" decoding="async" /> </div>
+          Industry-Collaborated  AI Courses  <div className='flex gap-x-2 items-center'> <span className="text-[#FFC107] md:text-3xl lg:text-4xl block">Backed by</span> <img src={lt} width={100} height={31} className='max-w-[100px] object-contain' alt="Larsen and Toubro EduTech Logo" loading="lazy" decoding="async" /> </div>
         </h2>
         <MobileReadMore className="text-[13px] md:text-base text-gray-700 leading-relaxed mb-5 md:mb-8">
           SRMU empowers students with practical AI skills, live projects and innovation-driven learning through industry-collaborated AI programs supported by L&amp;T. From the second year itself, students work on real-world AI applications, emerging technology solutions and startup-oriented projects designed to build future-ready technical and entrepreneurial skills. Recognized among the preferred choices for students seeking the best college in Uttar Pradesh for AI and technology-focused education, SRMU combines academic learning with industry exposure, hands-on training and innovation-led experiences aligned with modern digital careers.
