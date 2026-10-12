@@ -14,15 +14,16 @@ jobs:
     steps:
       - name: Verify Ubuntu environment
         run: |
-          runuser -u ubuntu -- bash -lc '
+          runuser -u ubuntu -- bash -ic '
             set -e
-            echo "User: $(whoami)"
-            echo "Home: $HOME"
             cd /home/ubuntu/srmu_live/SRMU_AC_IN_UI
-            echo "Application directory: $(pwd)"
+
+            echo "User: $(whoami)"
+            echo "Directory: $(pwd)"
             echo "Node: $(command -v node)"
             echo "npm: $(command -v npm)"
             echo "PM2: $(command -v pm2)"
+
             node -v
             npm -v
           '
@@ -33,7 +34,7 @@ jobs:
 
       - name: Pull latest code
         run: |
-          runuser -u ubuntu -- bash -lc '
+          runuser -u ubuntu -- bash -ic '
             set -e
             cd /home/ubuntu/srmu_live/SRMU_AC_IN_UI
             git pull origin srmupre
@@ -41,7 +42,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          runuser -u ubuntu -- bash -lc '
+          runuser -u ubuntu -- bash -ic '
             set -e
             cd /home/ubuntu/srmu_live/SRMU_AC_IN_UI
             npm install
@@ -49,7 +50,7 @@ jobs:
 
       - name: Build application
         run: |
-          runuser -u ubuntu -- bash -lc '
+          runuser -u ubuntu -- bash -ic '
             set -e
             cd /home/ubuntu/srmu_live/SRMU_AC_IN_UI
             npm run Build
@@ -57,7 +58,7 @@ jobs:
 
       - name: Restart PM2 application
         run: |
-          runuser -u ubuntu -- bash -lc '
+          runuser -u ubuntu -- bash -ic '
             set -e
             export HOME=/home/ubuntu
             export PM2_HOME=/home/ubuntu/.pm2
