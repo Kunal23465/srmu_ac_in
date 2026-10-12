@@ -1,1 +1,28 @@
-dev
+name: Deploy SRMO-LIVE-PRE Next SSR App
+
+on:
+  push:
+    branches:
+      - srmupre
+
+jobs:
+  deploy:
+    runs-on: pre
+
+    defaults:
+      run:
+        working-directory: /home/ubuntu/srmu_live/SRMU_AC_IN_UI
+
+    steps:
+      - name: Pull latest code
+        run: |
+          git pull origin srmupre
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build application
+        run: npm run Build
+
+      - name: Restart PM2 application
+        run: pm2 restart srmu-live
