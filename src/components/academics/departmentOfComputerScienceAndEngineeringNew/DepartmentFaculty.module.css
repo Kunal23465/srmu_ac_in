@@ -1,0 +1,1402 @@
+@font-face {
+    font-family: "Kaushan Script";
+    src: url("../../../assets/fonts/kaushan-script-latin.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ==========================================================================
+   Animations
+   ========================================================================== */
+@keyframes floatSlow {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes floatGentle {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-6px) rotate(1deg);
+    }
+}
+
+@keyframes floatIllustration {
+    0%, 100% {
+        transform: translateY(0px) scale(1);
+    }
+    50% {
+        transform: translateY(-7px) scale(1.02);
+    }
+}
+
+@keyframes goldGlow {
+    0%, 100% {
+        box-shadow: 0 4px 18px rgba(255, 183, 3, 0.22), 0 0 0 1px rgba(255, 183, 3, 0.4);
+    }
+    50% {
+        box-shadow: 0 8px 28px rgba(255, 183, 3, 0.42), 0 0 0 2px rgba(255, 183, 3, 0.6);
+    }
+}
+
+@keyframes beamPulse {
+    0%, 100% {
+        opacity: 0.55;
+    }
+    50% {
+        opacity: 0.95;
+    }
+}
+
+@keyframes sparkleSpin {
+    0%, 100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 0.9;
+    }
+    50% {
+        transform: scale(1.3) rotate(90deg);
+        opacity: 1;
+    }
+}
+
+@keyframes pulseActiveDot {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.08);
+    }
+}
+
+@keyframes pulseGlow {
+    0%, 100% {
+        opacity: 0.35;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.65;
+        transform: scale(1.08);
+    }
+}
+
+@keyframes buttonShimmer {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* ==========================================================================
+   Main Section & Background Accents
+   ========================================================================== */
+.section {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: 48px 16px 56px;
+    scroll-margin-top: 96px;
+    background: #FFFFFF;
+    color: #14284E;
+}
+
+@media (min-width: 640px) {
+    .section {
+        padding: 52px 24px 64px;
+    }
+}
+
+/* Top-Left Dark Blue Swoop */
+.topSwoopNavy {
+    position: absolute;
+    top: -100px;
+    left: -110px;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: #14284E;
+    pointer-events: none;
+    z-index: -2;
+}
+
+/* Top-Left Golden Arc */
+.topSwoopGold {
+    position: absolute;
+    top: -60px;
+    left: 20px;
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    border: 38px solid rgba(255, 183, 3, 0.22);
+    pointer-events: none;
+    z-index: -1;
+    animation: floatSlow 8s ease-in-out infinite;
+}
+
+/* Bottom-Right Golden Arc */
+.bottomSwoopGold {
+    position: absolute;
+    bottom: -110px;
+    right: -80px;
+    width: 340px;
+    height: 340px;
+    border-radius: 50%;
+    border: 44px solid rgba(255, 183, 3, 0.25);
+    pointer-events: none;
+    z-index: -1;
+    animation: floatSlow 9s ease-in-out infinite reverse;
+}
+
+/* Bottom-Right Dark Navy Arc */
+.bottomSwoopNavy {
+    position: absolute;
+    bottom: -160px;
+    right: -130px;
+    width: 360px;
+    height: 360px;
+    border-radius: 50%;
+    background: #14284E;
+    pointer-events: none;
+    z-index: -2;
+}
+
+/* Decorative Dot Grids */
+.dotGridLeft {
+    position: absolute;
+    left: 14px;
+    top: 360px;
+    width: 40px;
+    height: 84px;
+    background: radial-gradient(circle, #FFB703 2.5px, transparent 3px) 0 0 / 14px 14px;
+    opacity: 0.85;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.dotGridRight {
+    position: absolute;
+    right: 24px;
+    top: 32px;
+    width: 84px;
+    height: 42px;
+    background: radial-gradient(circle, #FFB703 2.5px, transparent 3px) 0 0 / 14px 14px;
+    opacity: 0.85;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.dotGridFacultyRight {
+    position: absolute;
+    right: 14px;
+    top: 480px;
+    width: 40px;
+    height: 70px;
+    background: radial-gradient(circle, #FFB703 2.5px, transparent 3px) 0 0 / 14px 14px;
+    opacity: 0.75;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Architectural Dome Watermark on Far Right */
+.campusDrawing {
+    position: absolute;
+    right: 8px;
+    top: 4px;
+    width: 250px;
+    height: auto;
+    color: #D6ECFA;
+    opacity: 0.9;
+    pointer-events: none;
+    z-index: -1;
+    animation: floatGentle 10s ease-in-out infinite;
+}
+
+/* Container */
+.container {
+    position: relative;
+    max-width: 1360px;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   Header Area
+   ========================================================================== */
+.header {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 28px;
+}
+
+@media (min-width: 1024px) {
+    .header {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 32px;
+    }
+}
+
+.headerCopy {
+    flex: 1;
+    min-width: 0;
+    max-width: 660px;
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #1B4F91;
+    margin-bottom: 6px;
+}
+
+.eyebrowBar {
+    display: inline-block;
+    width: 34px;
+    height: 3px;
+    border-radius: 999px;
+    background: #FFB703;
+}
+
+.heading {
+    margin: 0;
+    font-size: clamp(28px, 3vw, 36px);
+    line-height: 1.2;
+    font-weight: 700;
+    color: #14284E;
+    letter-spacing: -0.015em;
+}
+
+.headingHighlight {
+    color: #FFB703;
+}
+
+.subheading {
+    margin: 10px 0 0;
+    font-size: 14.5px;
+    line-height: 1.65;
+    color: #4B5A72;
+    max-width: 620px;
+}
+
+/* Features on the right */
+.headerFeatures {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-self: flex-start;
+}
+
+@media (min-width: 768px) {
+    .headerFeatures {
+        gap: 22px;
+        flex-wrap: nowrap;
+    }
+}
+
+.featureList {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+@media (min-width: 640px) {
+    .featureList {
+        gap: 16px;
+    }
+}
+
+.featureItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 68px;
+    cursor: default;
+}
+
+.featureIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 16px;
+    background: #FFF9EB;
+    border: 1px solid #FFE9B8;
+    color: #E59819;
+    box-shadow: 0 3px 10px rgba(255, 183, 3, 0.14);
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease;
+}
+
+.featureItem:hover .featureIcon {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 8px 18px rgba(255, 183, 3, 0.28);
+    background: #FFF4D9;
+}
+
+.featureLabel {
+    margin-top: 8px;
+    font-size: 11.5px;
+    font-weight: 700;
+    line-height: 1.25;
+    color: #14284E;
+}
+
+/* Handwritten Note: Guiding Tomorrow's Leaders */
+.calloutNote {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-left: 6px;
+    transform: rotate(-7deg);
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.calloutNote:hover {
+    transform: rotate(-3deg) scale(1.04);
+}
+
+.calloutText {
+    font-family: "Kaushan Script", cursive;
+    font-size: 21px;
+    line-height: 1.15;
+    color: #14284E;
+    font-weight: 600;
+}
+
+.calloutSwoosh {
+    width: 82px;
+    height: 7px;
+    margin-top: 3px;
+    color: #FFB703;
+}
+
+/* ==========================================================================
+   Main Faculty Card Container
+   ========================================================================== */
+.facultyPanel {
+    position: relative;
+    background: #FFFFFF;
+    border: 1px solid #E6EFF8;
+    border-radius: 26px;
+    box-shadow: 0 12px 36px rgba(20, 40, 78, 0.06);
+    padding: 22px 18px;
+    margin-bottom: 24px;
+    transition: box-shadow 0.3s ease;
+}
+
+@media (min-width: 768px) {
+    .facultyPanel {
+        padding: 28px 26px;
+        border-radius: 28px;
+    }
+}
+
+.facultyPanel:hover {
+    box-shadow: 0 16px 44px rgba(20, 40, 78, 0.08);
+}
+
+.panelTopRow {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 16px;
+}
+
+.viewAllButton {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 22px;
+    border-radius: 8px;
+    background: #FFFFFF;
+    border: 1.5px solid #FFB703;
+    color: #14284E;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(20, 40, 78, 0.04);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.viewAllButton:hover {
+    background: #FFF9EB;
+    border-color: #E59819;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 183, 3, 0.2);
+}
+
+.viewAllButton svg {
+    transition: transform 0.25s ease;
+}
+
+.viewAllButton:hover svg {
+    transform: translateX(3px);
+}
+
+/* Two-column layout: HOD on Left, Carousel on Right */
+.panelLayout {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+@media (min-width: 1024px) {
+    .panelLayout {
+        display: grid;
+        grid-template-columns: 370px 1fr;
+        gap: 26px;
+        align-items: center;
+    }
+}
+
+@media (min-width: 1280px) {
+    .panelLayout {
+        grid-template-columns: 390px 1fr;
+        gap: 32px;
+    }
+}
+
+/* ==========================================================================
+   Featured HOD Card
+   ========================================================================== */
+.hodCard {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    padding: 6px;
+    background: transparent;
+}
+
+@media (max-width: 480px) {
+    .hodCard {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+.hodPortraitWrapper {
+    position: relative;
+    width: 155px;
+    height: 180px;
+    border-radius: 20px;
+    border: 2.5px solid #FFB703;
+    overflow: hidden;
+    background: linear-gradient(135deg, #FFFDF8, #FEF5D9);
+    animation: goldGlow 4s ease-in-out infinite;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.hodPortraitWrapper:hover {
+    transform: scale(1.02);
+}
+
+@media (min-width: 768px) {
+    .hodPortraitWrapper {
+        width: 170px;
+        height: 195px;
+    }
+}
+
+.hodBadge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 2;
+    padding: 3px 11px;
+    border-radius: 999px;
+    background: #FFB703;
+    color: #14284E;
+    font-size: 10.5px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+.hodPortraitImg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    transition: transform 0.5s ease;
+}
+
+.hodPortraitWrapper:hover .hodPortraitImg {
+    transform: scale(1.04);
+}
+
+.hodContent {
+    flex: 1;
+    min-width: 0;
+}
+
+.hodName {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 800;
+    color: #14284E;
+    line-height: 1.25;
+}
+
+.hodRole {
+    margin: 4px 0 0;
+    font-size: 10.5px;
+    font-weight: 700;
+    color: #64748B;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    line-height: 1.35;
+}
+
+.hodDescription {
+    margin: 10px 0 0;
+    font-size: 12.5px;
+    line-height: 1.55;
+    color: #475569;
+}
+
+.viewProfileButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 14px;
+    padding: 12px 24px;
+    border-radius: 8px;
+    background: #ffb703;
+    border: none;
+    color: #14284E;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(20, 40, 78, 0.12);
+    transition: all 0.25s ease;
+}
+
+.viewProfileButton:hover {
+    background: #ffb703;
+    color: #14284E;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(20, 40, 78, 0.18);
+}
+
+.viewProfileButton svg {
+    transition: transform 0.25s ease;
+}
+
+.viewProfileButton:hover svg {
+    transform: translateX(3px);
+}
+
+/* ==========================================================================
+   Faculty Carousel
+   ========================================================================== */
+.carouselWrapper {
+    position: relative;
+    width: 100%;
+    min-width: 0;
+}
+
+.arrowButton {
+    position: absolute;
+    top: 48%;
+    transform: translateY(-50%);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    color: #14284E;
+    box-shadow: 0 4px 12px rgba(20, 40, 78, 0.1);
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.arrowButton:hover:not(:disabled) {
+    background: #14284E;
+    color: #FFFFFF;
+    border-color: #14284E;
+    transform: translateY(-50%) scale(1.08);
+}
+
+.arrowButton:disabled {
+    opacity: 0.25;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.arrowPrev {
+    left: -16px;
+}
+
+.arrowNext {
+    right: -16px;
+}
+
+@media (min-width: 1024px) {
+    .arrowPrev {
+        left: -14px;
+    }
+    .arrowNext {
+        right: -14px;
+    }
+}
+
+.viewport {
+    overflow: hidden;
+    padding: 6px 2px 14px;
+    margin: 0 6px;
+}
+
+.track {
+    display: flex;
+    gap: 14px;
+    align-items: stretch;
+}
+
+/* Individual Faculty Card */
+.facultyCard {
+    flex: 0 0 calc((100% - 42px) / 4);
+    min-width: 135px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 10px 14px;
+    background: #FFFFFF;
+    border: 1px solid #E8EEF5;
+    border-radius: 16px;
+    box-shadow: 0 3px 10px rgba(20, 40, 78, 0.04);
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+    cursor: pointer;
+}
+
+@media (max-width: 1199px) {
+    .facultyCard {
+        flex: 0 0 calc((100% - 28px) / 3);
+    }
+}
+
+@media (max-width: 767px) {
+    .facultyCard {
+        flex: 0 0 100%;
+    }
+}
+
+.facultyCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 26px rgba(20, 40, 78, 0.1);
+    border-color: #D0E4F7;
+}
+
+.cardPortraitWrapper {
+    width: 100%;
+    aspect-ratio: 4 / 3.9;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #F1F5F9;
+    position: relative;
+}
+
+.cardPortraitImg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    mix-blend-mode: multiply;
+    transition: transform 0.5s ease;
+}
+
+.facultyCard:hover .cardPortraitImg {
+    transform: scale(1.05);
+}
+
+.cardBody {
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    flex: 1;
+}
+
+.cardName {
+    margin: 0;
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #14284E;
+    line-height: 1.3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    transition: color 0.2s ease;
+}
+
+.facultyCard:hover .cardName {
+    color: #0F4A85;
+}
+
+.cardRole {
+    margin: 4px 0 0;
+    font-size: 10px;
+    font-weight: 600;
+    color: #64748B;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.cardAccentBar {
+    width: 24px;
+    height: 3px;
+    border-radius: 999px;
+    background: #FFB703;
+    margin-top: 8px;
+    transition: width 0.3s ease;
+}
+
+.facultyCard:hover .cardAccentBar {
+    width: 36px;
+    background: #E59819;
+}
+
+/* Pagination Dots */
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    margin-top: 8px;
+}
+
+.dotButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.dotPill {
+    display: block;
+    width: 7px;
+    height: 7px;
+    border-radius: 999px;
+    background: #CBD5E1;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dotButton[aria-current="true"] .dotPill {
+    width: 20px;
+    background: #FFB703;
+    animation: pulseActiveDot 3s ease-in-out infinite;
+}
+
+.dotButton:hover:not([aria-current="true"]) .dotPill {
+    background: #94A3B8;
+}
+
+/* ==========================================================================
+   Expanded / Show All Faculty View
+   ========================================================================== */
+.allFacultyGrid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    padding-top: 8px;
+}
+
+@media (min-width: 640px) {
+    .allFacultyGrid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1024px) {
+    .allFacultyGrid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1280px) {
+    .allFacultyGrid {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+}
+
+/* ==========================================================================
+   Bottom Research & Publications Card (REVAMPED: VIBRANT & ATTRACTIVE)
+   ========================================================================== */
+.researchPanel {
+    position: relative;
+    background: radial-gradient(120% 120% at 0% 10%, #F5FAFF 0%, #E6F3FE 45%, #EEF8FF 80%, #FDFEFE 100%);
+    border: 1.5px solid #C4E2FA;
+    border-radius: 26px;
+    padding: 24px 20px;
+    overflow: hidden;
+    box-shadow: 0 16px 40px -10px rgba(15, 74, 133, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+    transition: all 0.35s ease;
+}
+
+@media (min-width: 768px) {
+    .researchPanel {
+        padding: 30px 28px;
+        border-radius: 28px;
+    }
+}
+
+.researchPanel:hover {
+    box-shadow: 0 22px 50px -10px rgba(15, 74, 133, 0.18), 0 0 0 1px rgba(255, 255, 255, 0.9) inset;
+    border-color: #A9D5F7;
+}
+
+/* Ambient Floating Glow Orbs in Research Card */
+.researchGlowCyan {
+    position: absolute;
+    top: -40px;
+    left: -40px;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(33, 165, 219, 0.22) 0%, transparent 70%);
+    pointer-events: none;
+    animation: pulseGlow 6s ease-in-out infinite;
+}
+
+.researchGlowGold {
+    position: absolute;
+    bottom: -50px;
+    left: 240px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 183, 3, 0.24) 0%, transparent 70%);
+    pointer-events: none;
+    animation: pulseGlow 7s ease-in-out infinite reverse;
+}
+
+.researchDotGrid {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    width: 74px;
+    height: 40px;
+    background: radial-gradient(circle, #FFB703 2.5px, transparent 3px) 0 0 / 12px 12px;
+    opacity: 0.8;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.researchPanel:hover .researchDotGrid {
+    opacity: 1;
+}
+
+.researchLayout {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+@media (min-width: 1024px) {
+    .researchLayout {
+        flex-direction: row;
+        align-items: center;
+        gap: 28px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .researchLayout {
+        gap: 34px;
+    }
+}
+
+/* Left side intro */
+.researchIntro {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    width: 100%;
+    max-width: 440px;
+    flex-shrink: 0;
+}
+
+.researchIllustrationWrapper {
+    display: none;
+}
+
+.researchIllustrationAura {
+    position: absolute;
+    inset: -10px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 183, 3, 0.35) 0%, rgba(33, 165, 219, 0.25) 50%, transparent 70%);
+    filter: blur(8px);
+    animation: pulseGlow 5s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.researchIllustration {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    flex-shrink: 0;
+    animation: floatIllustration 6s ease-in-out infinite;
+    filter: drop-shadow(0 10px 18px rgba(20, 40, 78, 0.15));
+}
+
+@media (min-width: 768px) {
+    .researchIllustration {
+        width: 118px;
+        height: 118px;
+    }
+}
+
+.researchIntroCopy {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Pill Eyebrow with Pulsing Dot */
+.researchEyebrowBadge {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 3.5px 11px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid #BEE0F8;
+    box-shadow: 0 2px 6px rgba(15, 74, 133, 0.06);
+    margin-bottom: 7px;
+}
+
+.researchPulsingDot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #FFB703;
+    box-shadow: 0 0 8px #FFB703;
+}
+
+.researchEyebrowText {
+    font-size: 10.5px;
+    font-weight: 800;
+    color: #103A6F;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.researchHeading {
+    margin: 0;
+    font-size: 21px;
+    line-height: 1.2;
+    font-weight: 800;
+    color: #102244;
+    letter-spacing: -0.01em;
+}
+
+@media (min-width: 768px) {
+    .researchHeading {
+        font-size: 23px;
+    }
+}
+
+.researchHeadingSpan {
+    display: block;
+    background: linear-gradient(120deg, #E69500 0%, #FFB703 50%, #FFC938 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 1px 2px rgba(255, 183, 3, 0.2));
+}
+
+.researchParagraph {
+    margin: 6px 0 0;
+    font-size: 12.5px;
+    line-height: 1.6;
+    color: #3C506D;
+}
+
+/* Page-Standard Amber CTA Button */
+.researchButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 14px;
+    padding: 12px 24px;
+    border-radius: 8px;
+    background: #ffb703;
+    border: none;
+    color: #14284E;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    box-shadow: 0 4px 14px rgba(20, 40, 78, 0.12);
+    transition: all 0.25s ease;
+    cursor: pointer;
+}
+
+.researchButton:hover {
+    background: #ffb703;
+    color: #14284E;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(20, 40, 78, 0.18);
+}
+
+.researchButton svg:last-child {
+    transition: transform 0.25s ease;
+}
+
+.researchButton:hover svg:last-child {
+    transform: translateX(3px);
+}
+
+/* ==========================================================================
+   Research Statistics Carousel
+   ========================================================================== */
+.statsCarouselWrapper {
+    position: relative;
+    flex: 1;
+    min-width: 0;
+}
+
+.statsViewport {
+    overflow: hidden;
+    padding: 6px 4px 14px;
+    margin: 0 8px;
+}
+
+.researchStatsGrid {
+    display: flex;
+    align-items: stretch;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+}
+
+.statSlide {
+    flex: 0 0 calc((100% - 36px) / 4);
+    min-width: 0;
+}
+
+@media (max-width: 1023px) {
+    .statSlide {
+        flex-basis: calc((100% - 24px) / 3);
+    }
+}
+
+@media (max-width: 639px) {
+    .statSlide {
+        flex-basis: calc((100% - 12px) / 2);
+    }
+}
+
+.statCard {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    min-height: 184px;
+    padding: 14px 10px 12px;
+    background: linear-gradient(170deg, #FFFFFF 0%, #F8FBFE 100%);
+    border: 1.5px solid #DCEDFB;
+    border-radius: 18px;
+    box-shadow: 0 4px 14px rgba(20, 40, 78, 0.04), 0 1px 0 rgba(255, 255, 255, 0.8) inset;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    overflow: hidden;
+    cursor: default;
+}
+
+.statCard:hover {
+    transform: translateY(-6px) scale(1.02);
+    background: #FFFFFF;
+    border-color: #21A5DB;
+    box-shadow: 0 16px 32px -6px rgba(15, 74, 133, 0.16), 0 0 0 1px rgba(33, 165, 219, 0.35);
+}
+
+/* Top Icon Container */
+.statIconWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    border-radius: 11px;
+    background: linear-gradient(135deg, #EEF7FF 0%, #E0F1FF 100%);
+    border: 1px solid #CCE4F8;
+    color: #103A6F;
+    box-shadow: 0 2px 6px rgba(20, 40, 78, 0.05);
+    transition: all 0.25s ease;
+}
+
+.statCard:hover .statIconWrapper {
+    background: linear-gradient(135deg, #FFF7DC 0%, #FFE9A8 100%);
+    border-color: #FFD875;
+    color: #D98200;
+    transform: scale(1.12) rotate(4deg);
+    box-shadow: 0 4px 10px rgba(255, 183, 3, 0.3);
+}
+
+/* Large Value with Fixed Vertical Alignment */
+.statValue {
+    font-size: 26px;
+    font-weight: 800;
+    line-height: 1;
+    color: #102244;
+    height: 28px;
+    display: flex;
+    align-items: flex-end;
+    margin: 10px 0 0;
+    letter-spacing: -0.02em;
+    transition: color 0.2s ease;
+}
+
+.statCard:hover .statValue {
+    color: #0B4482;
+}
+
+/* Stat Label with Fixed Height: exactly aligned across all 6 cards */
+.statLabel {
+    margin: 6px 0 0;
+    font-size: 11px;
+    font-weight: 700;
+    color: #14284E;
+    line-height: 1.25;
+    height: 32px;
+    display: flex;
+    align-items: flex-start;
+}
+
+/* Stat Capsule Badge: strictly 1 line, fixed height, perfectly level */
+.statDetailBadge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 6px;
+    height: 22px;
+    padding: 0 6px;
+    border-radius: 6px;
+    background: #EEF6FC;
+    color: #0F4A85;
+    font-size: clamp(8.5px, 0.72vw, 9.5px);
+    font-weight: 600;
+    line-height: 1;
+    white-space: nowrap !important;
+    border: 1px solid #DBECF8;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.statCard:hover .statDetailBadge {
+    background: #E1F0FC;
+    border-color: #B9DCF7;
+    color: #0A3764;
+}
+
+/* Expanding Dual-Tone Accent Bar anchored to the exact bottom */
+.statAccentBar {
+    width: 26px;
+    height: 3px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #FFB703, #21A5DB);
+    margin-top: auto;
+    transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.statCard:hover .statAccentBar {
+    width: 100%;
+}
+
+@media (max-width: 480px) {
+    .section {
+        padding: 40px 12px 44px;
+    }
+
+    .topSwoopNavy {
+        top: -145px;
+        left: -105px;
+        width: 190px;
+        height: 190px;
+    }
+
+    .topSwoopGold {
+        top: -92px;
+        left: -8px;
+        width: 165px;
+        height: 165px;
+        border-width: 26px;
+    }
+
+    .campusDrawing {
+        right: -48px;
+        width: 190px;
+        opacity: 0.55;
+    }
+
+    .header {
+        gap: 18px;
+        margin-bottom: 22px;
+    }
+
+    .headerFeatures {
+        display: none;
+    }
+
+    .featureList {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        width: 100%;
+        gap: 6px;
+    }
+
+    .featureItem {
+        width: auto;
+    }
+
+    .featureIcon {
+        width: 44px;
+        height: 44px;
+        border-radius: 14px;
+    }
+
+    .featureLabel {
+        max-width: 72px;
+        font-size: 10.5px;
+    }
+
+    .calloutNote {
+        align-self: flex-start;
+        margin-left: 8px;
+    }
+
+    .facultyPanel {
+        padding: 18px 14px;
+        border-radius: 22px;
+    }
+
+    .panelTopRow {
+        margin-bottom: 14px;
+    }
+
+    .viewAllButton {
+        padding: 10px 14px;
+        font-size: 11.5px;
+    }
+
+    .panelLayout {
+        gap: 18px;
+    }
+
+    .hodCard {
+        gap: 14px;
+        padding: 4px;
+    }
+
+    .hodPortraitWrapper {
+        width: min(155px, 100%);
+        height: auto;
+        aspect-ratio: 155 / 180;
+    }
+
+    .hodName {
+        font-size: 19px;
+    }
+
+    .carouselWrapper {
+        margin: 0 -2px;
+        width: calc(100% + 4px);
+    }
+
+    .facultyCard {
+        min-width: 0;
+    }
+
+    .researchPanel {
+        padding: 20px 14px;
+        border-radius: 22px;
+    }
+
+    .researchIntro {
+        gap: 12px;
+    }
+
+    .researchEyebrowBadge {
+        gap: 5px;
+        padding: 4px 8px;
+    }
+
+    .researchEyebrowText {
+        font-size: 9.5px;
+    }
+
+    .statCard {
+        min-height: 172px;
+        padding: 12px 9px 10px;
+    }
+}
+
+@media (max-width: 360px) {
+    .section {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .facultyPanel {
+        padding-right: 12px;
+        padding-left: 12px;
+    }
+
+    .featureLabel {
+        font-size: 9.5px;
+    }
+
+    .researchPanel {
+        padding-right: 12px;
+        padding-left: 12px;
+    }
+
+    .researchIntro {
+        gap: 8px;
+    }
+}
