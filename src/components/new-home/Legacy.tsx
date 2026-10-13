@@ -166,7 +166,7 @@ export default function Legacy() {
       <div className={`${Classes["container"]} py-8 md:py-10 lg:py-12`}>
         <div className="mb-5 md:mb-10">
           <h2 className="text-lg md:text-3xl lg:text-4xl font-bold text-[#0A4A8F] flex flex-col leading-tight md:leading-tight">
-            Industry-Academia Interaction <span className="text-[#FFC107] lg:text-3xl block">For Students</span>
+            Industry-Academia Interaction <span className="text-[#FFC107] md:text-3xl lg:text-4xl block">For Students</span>
           </h2>
           <MobileReadMore className="text-[13px] md:text-base text-gray-700 leading-relaxed mt-2 md:mt-3">
             At Shri Ramswaroop Memorial University, education goes beyond classrooms and textbooks. From technical excellence to personality development, students experience holistic growth in a future-ready learning environment.

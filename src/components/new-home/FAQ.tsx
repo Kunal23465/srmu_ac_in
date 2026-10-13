@@ -79,7 +79,7 @@ export default function FAQ() {
           <div>
             <h2 className="text-lg md:text-3xl lg:text-4xl font-bold text-[#0A4A8F] flex flex-col leading-tight md:leading-tight">
               Frequently Asked{' '}
-              <span className="text-[#FFC107] lg:text-3xl block">Questions</span>
+              <span className="text-[#FFC107] md:text-3xl lg:text-4xl block">Questions</span>
             </h2>
             <MobileReadMore className="text-[13px] md:text-base text-gray-700 leading-relaxed mt-2">
               Discover Opportunities, Ignite Your Potential - Be Part of SRMU Uttar Pradesh

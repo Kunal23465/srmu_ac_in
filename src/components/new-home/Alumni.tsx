@@ -23,7 +23,7 @@ export default function Alumni() {
           {/* Intro - row 1, cols 1-3 on md+ */}
           <div className="col-span-3 flex flex-col justify-center pr-4 sm:col-span-4 md:col-span-3">
             <h2 className="flex flex-col text-lg font-bold text-[#0A4A8F] md:text-3xl lg:text-4xl leading-tight md:leading-tight">
-              From SRMU Classrooms to <span className="block text-[#FFC107] lg:text-3xl">Global Careers</span>
+              From SRMU Classrooms to <span className="block text-[#FFC107] md:text-3xl lg:text-4xl">Global Careers</span>
             </h2>
             <MobileReadMore className="mt-2 md:mt-3 text-[13px] md:text-base leading-relaxed text-gray-700">
               From entrepreneurs and startup founders to professionals in government organizations and top multinational

@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 
 import Classes from "../../../utils/styles/Global.module.css";
 import DepartmentSectionNav from "./DepartmentSectionNav";
+import DepartmentPlacements from "./DepartmentPlacements";
+import DepartmentFaculty from "./DepartmentFaculty";
 import KamleshImg from "../../../assets/images/academics/institutes/cse/cse2.jpeg";
 import SakshiImg from "../../../assets/images/academics/institutes/cse/cse3.jpeg";
 import logosrmcem from "../../../assets/images/University-Logo-White.png";
@@ -36,6 +38,9 @@ import Map from "../../new-home/Map";
 // ─── Data ────────────────────────────────────────────────────────────────────
 
 const recruiterLogos: [string, string][] = [
+    [PlacementLogoCognizant, "Cognizant"],
+    [PlacementLogoDeloitte, "Deloitte"],
+    [PlacementLogoEY, "EY"],
     [PlacementLogoTCS, "TCS"],
     [PlacementLogoInfosys, "Infosys"],
     [PlacementLogoWipro, "Wipro"],
@@ -45,9 +50,6 @@ const recruiterLogos: [string, string][] = [
     [PlacementLogoCapgemini, "Capgemini"],
     [PlacementLogoTechMahindra, "Tech Mahindra"],
     [PlacementLogoIBM, "IBM"],
-    [PlacementLogoCognizant, "Cognizant"],
-    [PlacementLogoDeloitte, "Deloitte"],
-    [PlacementLogoEY, "EY"],
 ];
 
 const departmentPrograms = [
@@ -330,23 +332,6 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
         }
     }, [blogCards.length, dispatch]);
 
-    // Faculty Embla carousel
-    const [facultyEmblaRef, facultyEmblaApi] = useEmblaCarousel({ loop: false, align: "start", dragFree: true });
-    const [facultyCanPrev, setFacultyCanPrev] = useState(false);
-    const [facultyCanNext, setFacultyCanNext] = useState(true);
-
-    useEffect(() => {
-        if (!facultyEmblaApi) return;
-        const update = () => {
-            setFacultyCanPrev(facultyEmblaApi.canScrollPrev());
-            setFacultyCanNext(facultyEmblaApi.canScrollNext());
-        };
-        update();
-        facultyEmblaApi.on("select", update);
-        facultyEmblaApi.on("reInit", update);
-        return () => { facultyEmblaApi.off("select", update); facultyEmblaApi.off("reInit", update); };
-    }, [facultyEmblaApi]);
-
     // Labs Embla carousel (only active on mobile)
     const [labsEmblaRef, labsEmblaApi] = useEmblaCarousel({
         loop: false,
@@ -533,13 +518,6 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                             filter: drop-shadow(0 0 18px rgba(55,130,220,0.65)) drop-shadow(0 0 30px rgba(215,152,48,0.35)) drop-shadow(0 8px 16px rgba(20,40,78,0.40));
                         }
                     }
-                }
-
-                .cse-recruiter-track { display: flex; width: max-content; animation: cse-recruiter-scroll 30s linear infinite; }
-                @keyframes cse-recruiter-scroll { to { transform: translateX(-50%); } }
-                @media (prefers-reduced-motion: reduce) {
-                    .cse-recruiter-track { animation: none; }
-                    .cse-recruiter-copy { display: none; }
                 }
 
                 .cse-career-orbit, .cse-career-core {
@@ -954,12 +932,131 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                 </section>
 
                 {/* ── Programs ─────────────────────────────────────────────── */}
-                <section id="programs" aria-labelledby="programs-heading" className="relative isolate overflow-hidden bg-white px-4 pt-8 pb-12 text-[#14284E] scroll-mt-24 sm:px-6 lg:pt-5 lg:pb-14">
-                    <div aria-hidden="true" className="pointer-events-none absolute -top-32 -right-16 size-52 rounded-full bg-[#E0F1FF]" />
-                    <div aria-hidden="true" className="pointer-events-none absolute -bottom-40 -left-44 size-80 rounded-full border-[48px] border-[#E0F1FF] bg-[#E0F1FF]" />
-                    <div aria-hidden="true" className="pointer-events-none absolute -right-20 -bottom-7 grid size-34 place-items-center rounded-full border-4 border-[#E0F1FF]">
-                        <div className="size-23 rounded-full bg-[#FFB703]" />
+                <section id="programs" aria-labelledby="programs-heading" className="relative isolate overflow-hidden px-4 pt-8 pb-12 text-[#14284E] scroll-mt-24 sm:px-6 lg:pt-5 lg:pb-14" style={{background:'linear-gradient(135deg,#eaf4fb 0%,#daeaf7 50%,#cfe2f2 100%)'}}>
+
+                    {/* ── Animated SVG Background ─────────────────────────── */}
+                    <style>{`
+                        @keyframes pgFloat1 { 0%,100%{transform:translate(0,0) rotate(0deg);}33%{transform:translate(14px,-18px) rotate(6deg);}66%{transform:translate(-10px,12px) rotate(-4deg);} }
+                        @keyframes pgFloat2 { 0%,100%{transform:translate(0,0) rotate(0deg);}33%{transform:translate(-16px,14px) rotate(-8deg);}66%{transform:translate(12px,-8px) rotate(5deg);} }
+                        @keyframes pgFloat3 { 0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(8px,-14px) scale(1.06);} }
+                        @keyframes pgFloat4 { 0%,100%{transform:translate(0,0) rotate(0deg);}25%{transform:translate(-12px,16px) rotate(10deg);}75%{transform:translate(16px,-8px) rotate(-6deg);} }
+                        @keyframes pgPulse  { 0%,100%{opacity:0.28;}50%{opacity:0.46;} }
+                        @keyframes pgPulse2 { 0%,100%{opacity:0.20;}50%{opacity:0.36;} }
+                        @keyframes pgDash   { to { stroke-dashoffset: -400; } }
+                        @keyframes pgDash2  { to { stroke-dashoffset: -300; } }
+                        @keyframes pgSpin   { from{transform:rotate(0deg);}to{transform:rotate(360deg);} }
+                        @keyframes pgSpinR  { from{transform:rotate(0deg);}to{transform:rotate(-360deg);} }
+                        @keyframes pgOrbit  { from{transform:rotate(0deg) translateX(60px);}to{transform:rotate(360deg) translateX(60px);} }
+                        @keyframes pgOrbit2 { from{transform:rotate(180deg) translateX(40px);}to{transform:rotate(540deg) translateX(40px);} }
+                        @keyframes pgDriftX { 0%,100%{transform:translateX(0);}50%{transform:translateX(30px);} }
+                        .pg-float1 { animation: pgFloat1 11s ease-in-out infinite; }
+                        .pg-float2 { animation: pgFloat2 13s ease-in-out infinite; }
+                        .pg-float3 { animation: pgFloat3 9s ease-in-out infinite; }
+                        .pg-float4 { animation: pgFloat4 15s ease-in-out infinite; }
+                        .pg-pulse  { animation: pgPulse  7s ease-in-out infinite; }
+                        .pg-pulse2 { animation: pgPulse2 9s ease-in-out infinite; }
+                        .pg-dash   { animation: pgDash  10s linear infinite; }
+                        .pg-dash2  { animation: pgDash2 14s linear infinite reverse; }
+                        .pg-spin   { animation: pgSpin  22s linear infinite; }
+                        .pg-spinr  { animation: pgSpinR 28s linear infinite; }
+                        .pg-orbit  { animation: pgOrbit 14s linear infinite; transform-origin: 0 0; }
+                        .pg-orbit2 { animation: pgOrbit2 10s linear infinite; transform-origin: 0 0; }
+                        .pg-driftx { animation: pgDriftX 16s ease-in-out infinite; }
+                    `}</style>
+
+                    <div aria-hidden="true" className="pointer-events-none select-none absolute inset-0 overflow-hidden z-[-1]">
+                        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1400 520" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+
+                            {/* ── Pulsing corner blobs ── */}
+                            <ellipse className="pg-pulse"  cx="1260" cy="60"  rx="200" ry="180" fill="#93c5e8" fillOpacity="0.28" />
+                            <ellipse className="pg-pulse2" cx="80"   cy="440" rx="240" ry="210" fill="#7bb8e0" fillOpacity="0.24" />
+                            <ellipse className="pg-pulse"  cx="700"  cy="500" rx="180" ry="140" fill="#a8d3ee" fillOpacity="0.20" style={{animationDelay:'2s'}} />
+
+                            {/* ── Animated dashed circuit lines ── */}
+                            <path className="pg-dash"
+                                d="M 0 140 Q 200 80 400 160 Q 600 240 800 140 Q 1000 40 1200 120 Q 1350 180 1400 100"
+                                fill="none" stroke="#0F4A85" strokeWidth="1.4" strokeDasharray="10 18" strokeOpacity="0.18" />
+                            <path className="pg-dash2"
+                                d="M 0 380 Q 250 320 500 400 Q 750 480 1000 360 Q 1200 280 1400 350"
+                                fill="none" stroke="#FFB703" strokeWidth="1.6" strokeDasharray="6 22" strokeOpacity="0.22" />
+                            <path className="pg-dash"
+                                d="M 1400 220 Q 1100 160 900 260 Q 700 360 400 240 Q 200 160 0 260"
+                                fill="none" stroke="#0F4A85" strokeWidth="1.2" strokeDasharray="4 16" strokeOpacity="0.13" style={{animationDelay:'3s'}} />
+
+                            {/* ── Top-right floating hexagon ── */}
+                            <g className="pg-float1" style={{transformOrigin:'1300px 80px'}}>
+                                <polygon points="1300,30 1340,53 1340,99 1300,122 1260,99 1260,53" fill="none" stroke="#0F4A85" strokeWidth="1.8" strokeOpacity="0.22" />
+                                <polygon points="1310,50 1338,65 1338,95 1310,110 1282,95 1282,65" fill="#b8d9f0" fillOpacity="0.28" stroke="#0F4A85" strokeWidth="1" strokeOpacity="0.14" />
+                            </g>
+
+                            {/* ── Top-left floating triangle ── */}
+                            <g className="pg-float2" style={{transformOrigin:'100px 100px'}}>
+                                <polygon points="100,40 145,120 55,120" fill="none" stroke="#FFB703" strokeWidth="2.2" strokeOpacity="0.30" />
+                                <polygon points="100,60 128,110 72,110" fill="#FFB703" fillOpacity="0.12" />
+                            </g>
+
+                            {/* ── Center-top spinning ring ── */}
+                            <g style={{transformOrigin:'700px 30px'}} className="pg-spin">
+                                <circle cx="700" cy="30" r="44" fill="none" stroke="#9dc9e8" strokeWidth="11" strokeOpacity="0.30" />
+                                <circle cx="700" cy="30" r="44" fill="none" stroke="#0F4A85" strokeWidth="1.8" strokeDasharray="14 8" strokeOpacity="0.18" />
+                            </g>
+
+                            {/* ── Mid-left floating diamond ── */}
+                            <g className="pg-float3" style={{transformOrigin:'60px 270px'}}>
+                                <rect x="28" y="238" width="64" height="64" rx="4" fill="none" stroke="#0F4A85" strokeWidth="1.8" strokeOpacity="0.20" transform="rotate(45 60 270)" />
+                                <rect x="38" y="248" width="44" height="44" rx="2" fill="#7ab8df" fillOpacity="0.22" transform="rotate(45 60 270)" />
+                            </g>
+
+                            {/* ── Bottom-right nested squares ── */}
+                            <g className="pg-float4" style={{transformOrigin:'1340px 430px'}}>
+                                <rect x="1300" y="390" width="80" height="80" rx="8" fill="none" stroke="#FFB703" strokeWidth="2.2" strokeOpacity="0.28" />
+                                <rect x="1315" y="405" width="50" height="50" rx="4" fill="#FFB703" fillOpacity="0.12" />
+                                <rect x="1320" y="410" width="40" height="40" rx="2" fill="none" stroke="#FFB703" strokeWidth="1.2" strokeOpacity="0.16" />
+                            </g>
+
+                            {/* ── Mid-right orbiting ring ── */}
+                            <g style={{transformOrigin:'1100px 260px'}}>
+                                <circle cx="1100" cy="260" r="52" fill="none" stroke="#9dc9e8" strokeWidth="9" strokeOpacity="0.28" />
+                                <circle cx="1100" cy="260" r="52" fill="none" stroke="#0F4A85" strokeWidth="1.4" strokeDasharray="8 14" strokeOpacity="0.16" />
+                                <circle className="pg-orbit" cx="1100" cy="260" r="6" fill="#FFB703" fillOpacity="0.55" />
+                                <circle className="pg-orbit2" cx="1100" cy="260" r="4" fill="#0F4A85" fillOpacity="0.35" />
+                            </g>
+
+                            {/* ── Drifting dot grids ── */}
+                            <g className="pg-driftx" style={{transformOrigin:'300px 350px'}}>
+                                {[0,1,2,3,4].map(r => [0,1,2,3,4,5].map(c => (
+                                    <circle key={`${r}-${c}`} cx={260 + c * 22} cy={310 + r * 22} r="2" fill="#0F4A85" fillOpacity="0.15" />
+                                )))}
+                            </g>
+                            <g className="pg-driftx" style={{transformOrigin:'1050px 160px', animationDelay:'4s'}}>
+                                {[0,1,2,3].map(r => [0,1,2,3,4].map(c => (
+                                    <circle key={`d-${r}-${c}`} cx={1010 + c * 22} cy={130 + r * 22} r="2" fill="#FFB703" fillOpacity="0.18" />
+                                )))}
+                            </g>
+
+                            {/* ── Slow-spinning star / cross ── */}
+                            <g className="pg-spinr" style={{transformOrigin:'200px 160px'}}>
+                                <line x1="200" y1="130" x2="200" y2="190" stroke="#0F4A85" strokeWidth="1.8" strokeOpacity="0.20" strokeLinecap="round" />
+                                <line x1="170" y1="160" x2="230" y2="160" stroke="#0F4A85" strokeWidth="1.8" strokeOpacity="0.20" strokeLinecap="round" />
+                                <line x1="179" y1="139" x2="221" y2="181" stroke="#0F4A85" strokeWidth="1.2" strokeOpacity="0.14" strokeLinecap="round" />
+                                <line x1="221" y1="139" x2="179" y2="181" stroke="#0F4A85" strokeWidth="1.2" strokeOpacity="0.14" strokeLinecap="round" />
+                                <circle cx="200" cy="160" r="7" fill="none" stroke="#FFB703" strokeWidth="1.8" strokeOpacity="0.28" />
+                            </g>
+
+                            {/* ── Wavy bottom accent path ── */}
+                            <path className="pg-dash2"
+                                d="M -50 490 C 150 450 250 520 450 480 S 700 420 900 470 S 1150 520 1450 470"
+                                fill="none" stroke="#0F4A85" strokeWidth="1.4" strokeDasharray="5 15" strokeOpacity="0.12" style={{animationDelay:'1s'}} />
+
+                            {/* ── Small scattered floating circles ── */}
+                            <circle className="pg-float2" cx="580" cy="90"  r="12" fill="#FFB703" fillOpacity="0.22" style={{animationDelay:'2s'}} />
+                            <circle className="pg-float1" cx="820" cy="420" r="9"  fill="#0F4A85" fillOpacity="0.16" style={{animationDelay:'1s'}} />
+                            <circle className="pg-float3" cx="450" cy="30"  r="7"  fill="#0F4A85" fillOpacity="0.14" style={{animationDelay:'3s'}} />
+                            <circle className="pg-float4" cx="960" cy="490" r="13" fill="#FFB703" fillOpacity="0.18" style={{animationDelay:'0.5s'}} />
+                        </svg>
                     </div>
+                    {/* ── End Animated SVG Background ──────────────────────── */}
+
                     <div className="relative mx-auto w-full max-w-[1504px] lg:w-[94%]">
                         <div className="mb-6">
                             <div className="flex items-center gap-3 flex-wrap">
@@ -1276,206 +1373,10 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                 </section>
 
                 {/* ── Placements ───────────────────────────────────────────── */}
-                <section className="pt-8 md:pt-10 pb-4 px-4 sm:px-6 bg-white scroll-mt-24" id="placements">
-                    <div className={`${Classes["container"]} cse-content-container mx-auto`}>
-
-                        {/* Placement Stats + Image */}
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 items-start">
-
-                            {/* Stats */}
-
-                            <div className="w-full">
-
-
-                                <h2 className="text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E]">
-                                    Where our Students <span className="text-[#ffb703]">Get Placed</span>
-                                </h2>
-
-                                <div className="mt-4">
-                                    <p className={`text-[15px] leading-6 text-[#4B5A72] text-justify ${!rm['placement1'] ? 'rm-clamp' : ''}`}>
-                                        Dedicated placement training — resume building, coding practice,
-                                        mock interviews and group discussions — starts from the final year.
-                                    </p>
-                                    <button className="cse-read-more cse-mobile-button rm-btn" onClick={() => toggleRm('placement1')}>{rm['placement1'] ? 'Read Less' : 'Read More'}</button>
-                                </div>
-
-                                {/* Mobile stats — dark card */}
-                                <div className="sm:hidden mt-6 bg-[#14284E] rounded-2xl p-5 grid grid-cols-2 gap-x-6 gap-y-5">
-                                    {[
-                                        { val: "₹53 LPA", label: "Highest Package" },
-                                        { val: "₹4.5 LPA", label: "Average Package" },
-                                        { val: "1200+", label: "Job Offers Given" },
-                                        { val: "225+", label: "Students Placed" },
-                                    ].map((s, i) => (
-                                        <div key={i}>
-                                            <div className="text-[15px] font-bold text-[#ffb703] mb-1">{s.val}</div>
-                                            <div className="text-[12.5px] text-white/80 leading-snug">{s.label}</div>
-                                        </div>
-                                    ))}
-                                </div>
-
-                                {/* Desktop stats — individual white cards */}
-                                <div className="hidden sm:grid grid-cols-2 gap-4 mt-6">
-
-                                    <div className="bg-white border border-[#DCE6F2] rounded-xl p-5 min-h-[90px] shadow-sm">
-                                        <div className="text-[14.5px] font-semibold text-[#ffb703] mb-3">
-                                            ₹53 LPA
-                                        </div>
-
-                                        <h3 className="text-[14px] font-bold font-display text-[#14284E]">
-                                            Highest Package
-                                        </h3>
-                                    </div>
-
-                                    <div className="bg-white border border-[#DCE6F2] rounded-xl p-5 min-h-[90px] shadow-sm">
-                                        <div className="text-[14.5px] font-semibold text-[#ffb703] mb-3">
-                                            ₹4.5 LPA
-                                        </div>
-
-                                        <h3 className="text-[14px] font-bold font-display text-[#14284E]">
-                                            Average Package
-                                        </h3>
-                                    </div>
-
-                                    <div className="bg-white border border-[#DCE6F2] rounded-xl p-5 min-h-[90px] shadow-sm">
-                                        <div className="text-[14.5px] font-semibold text-[#ffb703] mb-3">
-                                            1200+
-                                        </div>
-
-                                        <h3 className="text-[14px] font-bold font-display text-[#14284E]">
-                                            Job Offers Given
-                                        </h3>
-                                    </div>
-
-                                    <div className="bg-white border border-[#DCE6F2] rounded-xl p-5 min-h-[90px] shadow-sm">
-                                        <div className="text-[14.5px] font-semibold text-[#ffb703] mb-3">
-                                            225+
-                                        </div>
-
-                                        <h3 className="text-[14px] font-bold font-display text-[#14284E]">
-                                            Students Placed
-                                        </h3>
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                            {/* Placement Image */}
-                            <div className="w-full mt-6 lg:mt-0 hidden sm:block">
-                                <img
-                                    src="https://ik.imagekit.io/ttalcskjf/IMAGE%202.webp?updatedAt=1788439003256"
-                                    alt="Student preparing for career and placement"
-                                    className="w-full aspect-[14/8] object-cover rounded-xl border border-[#DCE6F2]"
-                                    loading="lazy"
-                                />
-                            </div>
-
-                        </div>
-
-                        {/* Top Recruiters — seamless continuous scroll */}
-                        <div className="mt-7">
-                            <h3 className="text-[17px] font-bold font-display text-[#14284E] mb-3.5">
-                                Top Recruiters
-                            </h3>
-                            <div className="overflow-hidden motion-reduce:overflow-x-auto">
-                                <div className="cse-recruiter-track">
-                                    {[0, 1].map(copy => (
-                                        <div key={copy} className={`flex shrink-0 items-center gap-3 pr-3 ${copy === 1 ? "cse-recruiter-copy" : ""}`} aria-hidden={copy === 1 ? true : undefined}>
-                                            {recruiterLogos.map(([src, name]) => (
-                                                <div key={name} className="h-[60px] w-[110px] sm:h-[88px] sm:w-[200px] shrink-0 bg-white rounded-md px-2 sm:px-4 py-2 sm:py-3 flex items-center justify-center">
-                                                    <img src={src} alt={copy === 0 ? name : ""} className="h-7 sm:h-11 max-w-full w-auto object-contain" />
-                                                </div>
-                                            ))}
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
-                        {/* View Placement Details Button */}
-                        <div className="flex justify-center w-full mt-10">
-                            <Link to="https://srmu.ac.in/placements" target="_blank" className="cse-mobile-button inline-flex items-center bg-[#ffb703] hover:bg-[#ffb703] text-[#14284E] font-bold uppercase tracking-wide text-[14px] px-6 py-3 rounded-md transition-colors shadow-sm hover:-translate-y-0.5">
-                                View Placement Details →
-                            </Link>
-                        </div>
-                    </div>
-                </section>
-
+                <DepartmentPlacements recruiters={recruiterLogos} />
 
                 {/* ── Faculty ──────────────────────────────────────────────── */}
-                <section id="faculty" className="pt-4 pb-0 sm:py-10 px-4 sm:px-6 bg-gradient-to-b from-white to-[#E0F1FF] scroll-mt-24">
-                    <div className={`${Classes["container"]} cse-content-container`}>
-                        <div className="w-full mb-8">
-                            {/* <div className="text-[14.5px] tracking-[0.08em] uppercase text-[#ffb703] font-bold flex items-center gap-2 mb-3.5">
-                                <span className="w-[22px] h-[2px] bg-[#ffb703] inline-block" /> Faculty List
-                            </div> */}
-                            <h2 className="text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3">
-                                Learn from Experienced <span className="text-[#ffb703]">Academic & Research Professionals.</span>
-                            </h2>
-                            <p className="text-[15.5px] text-[#4B5A72] text-justify mt-4 mb-6">
-                                The university highlights faculty recruitment from reputed institutions including IIT, IIM, MNNIT and IIT-BHU, with an emphasis on interactive, personalized teaching.
-                            </p>
-                        </div>
-
-                        {/* Faculty Embla Carousel */}
-                        <div className="relative mb-0 sm:mb-10">
-                            {/* Prev button */}
-                            <button
-                                onClick={() => facultyEmblaApi?.scrollPrev()}
-                                disabled={!facultyCanPrev}
-                                className="cse-mobile-button absolute -left-4 top-1/2 -translate-y-1/2 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-white border border-[#DCE6F2] shadow-md text-[#14284E] hover:bg-[#14284E] hover:text-white transition-all disabled:opacity-30 disabled:cursor-not-allowed"
-                                aria-label="Previous"
-                            >
-                                <ArrowLeft className="w-4 h-4" />
-                            </button>
-
-                            {/* Embla viewport */}
-                            <div className="overflow-hidden" ref={facultyEmblaRef}>
-                                <div className="flex gap-4">
-                                    {facultyList.map(f => (
-                                        <div key={f.name} className="bg-[#EEF5FC] border border-[#DCE6F2] border-b-[4px] border-b-[#d62c2b] rounded-2xl overflow-hidden text-center pb-4 shadow-[0_4px_18px_rgba(15,31,61,0.04)] hover:shadow-[0_12px_30px_rgba(15,31,61,0.08)] hover:-translate-y-1 transition-all duration-300 flex flex-col flex-shrink-0" style={{ width: "220px" }}>
-                                            <div className="w-full bg-[#EAEAEA] mb-4 relative" style={{ aspectRatio: "4/5" }}>
-                                                {f.isHod && (
-                                                    <div className="absolute top-3 left-3 bg-[#d62c2b] text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded shadow-sm z-10">
-                                                        HOD
-                                                    </div>
-                                                )}
-                                                <img
-                                                    src={f.img}
-                                                    alt={f.name}
-                                                    onError={(e) => { e.currentTarget.src = "https://ui-avatars.com/api/?name=" + encodeURIComponent(f.name) + "&background=EAEAEA&color=14284E&size=256"; }}
-                                                    className="w-full h-full object-cover object-top mix-blend-multiply relative z-0"
-                                                />
-                                            </div>
-                                            <h5 className="font-bold text-[14px] text-[#14284E] px-3 mb-1 line-clamp-2">{f.name}</h5>
-                                            <span className="text-[11px] text-[#1B4F91] font-bold uppercase tracking-[0.05em] px-2">{f.role}</span>
-                                            <div className="mt-auto pt-3">
-                                                {f.isHod && (
-                                                    <button
-                                                        onClick={() => setSelectedFaculty(f)}
-                                                        className="cse-mobile-button text-[11px] font-bold text-[#d62c2b] hover:text-[#14284E] uppercase tracking-wider flex items-center justify-center gap-1 w-full transition-colors"
-                                                    >
-                                                        Read More →
-                                                    </button>
-                                                )}
-                                            </div>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-
-                            {/* Next button */}
-                            <button
-                                onClick={() => facultyEmblaApi?.scrollNext()}
-                                disabled={!facultyCanNext}
-                                className="cse-mobile-button absolute -right-4 top-1/2 -translate-y-1/2 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-white border border-[#DCE6F2] shadow-md text-[#14284E] hover:bg-[#14284E] hover:text-white transition-all disabled:opacity-30 disabled:cursor-not-allowed"
-                                aria-label="Next"
-                            >
-                                <ArrowRight className="w-4 h-4" />
-                            </button>
-                        </div>
-                    </div>
-                </section>
+                <DepartmentFaculty faculty={facultyList} onSelect={setSelectedFaculty} />
 
                 {/* ── Key Highlights ───────────────────────────────────────── */}
                 <section className="pt-8 pb-6 md:pt-10 md:pb-6 px-4 sm:px-6 bg-[#14284e]">

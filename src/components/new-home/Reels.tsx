@@ -161,7 +161,7 @@ export default function Reels() {
         <div className="mb-5 md:mb-8">
           <h2 className="text-lg md:text-3xl lg:text-4xl font-bold text-[#0A4A8F] flex flex-col leading-tight md:leading-tight">
             Life Beyond Academics
-            <span className='text-[#FFC107] lg:text-3xl block'>  At SRMU </span>
+            <span className='text-[#FFC107] md:text-3xl lg:text-4xl block'>  At SRMU </span>
           </h2>
           <MobileReadMore className="text-[13px] md:text-base text-gray-700 leading-relaxed mt-2">
             Experience a dynamic campus environment where learning extends beyond classrooms through innovation, technical events, industry exposure, sports and student-led activities. Known for its career-focused learning culture, SRMU is gaining recognition among students looking for the best university in Uttar Pradesh for academic growth and practical exposure.

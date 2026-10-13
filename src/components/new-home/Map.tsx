@@ -8,7 +8,7 @@ const Map: React.FC = () => {
       <div className={`${Classes["container"]} py-8 md:py-10 lg:py-12`}>
         <h2 className="text-lg md:text-3xl lg:text-4xl font-bold text-white flex flex-col leading-tight md:leading-tight break-words min-w-0">
           Discover Opportunities, Ignite Your Potential, Be a Part of
-          <span className="text-[#FFC107] text-sm md:text-2xl lg:text-3xl block">Shri Ramswaroop Memorial University , Uttar Pradesh</span>
+          <span className="text-[#FFC107] md:text-3xl lg:text-4xl block">Shri Ramswaroop Memorial University (SRMU), Uttar Pradesh</span>
         </h2>
 
         <div className="mt-5 md:mt-8 w-full">

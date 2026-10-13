@@ -2,17 +2,17 @@ import EventVideo from "./EventVideo";
 import EventSectionNav from "./EventSectionNav";
 import { technicalVideo, culturalVideo, sportsVideo, celebrityVideo, anubhutiVideo, dandiyaNightVideo, funDayVideo, harmonyVideo, daroharVideo, harmony2026Video, independenceDayVideo, rangBarsheVideo, pawandeepArunitaVideo, srmuDarshanVideo, shaanVideo, shilpaRaoVideo, sunnyDeolVideo, type EventVideoAsset } from "./eventVideoAssets";
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import { ArrowRight, CalendarDays, ChevronDown, ChevronLeft, ChevronRight, Cpu, GraduationCap, Image, MapPin, Mic, Music, Palmtree, Pause, Play, Trophy, X } from "lucide-react";
+import { ArrowRight, CalendarDays, ChevronLeft, ChevronRight, Cpu, GraduationCap, Image, MapPin, Mic, Music, Palmtree, Pause, Play, Trophy, X } from "lucide-react";
 import desktopEventsBanner from "../../assets/images/event-new/banners/desktop-view.webp";
 import insidersBannerImage from "../../assets/images/event-new/new/insiders-banner.webp";
 import scannerImage from "../../assets/images/event-new/new/scanner.webp";
 import mobileEventsBanner from "../../assets/images/event-new/banners/mobile-view.webp";
-import facultyTrainingImage from "../../assets/images/event-new/academic-event/Faculty  training & Development.webp";
-import conferenceImage from "../../assets/images/event-new/academic-event/Conference.webp";
-import workshopImage from "../../assets/images/event-new/academic-event/Academic Workshop Group Portrait.webp";
-import seminarImage from "../../assets/images/event-new/academic-event/Seminar.webp";
-import alumniTalkImage from "../../assets/images/event-new/academic-event/Alumni Talk.webp";
-import visitsImage from "../../assets/images/event-new/academic-event/Visits.webp";
+import facultyTrainingImage from "../../assets/images/event-new/academic-event/Faculty-training-Development.jpg";
+import conferenceImage from "../../assets/images/event-new/academic-event/conference.webp";
+import workshopImage from "../../assets/images/event-new/academic-event/academic-workshop-group-portrait.webp";
+import seminarImage from "../../assets/images/event-new/academic-event/seminar.webp";
+import alumniTalkImage from "../../assets/images/event-new/academic-event/alumni-talk.webp";
+import visitsImage from "../../assets/images/event-new/academic-event/visits.webp";
 import hackathonImage from "../../assets/images/event-new/technical-event/Hackathon.webp";
 import technicalWorkshopImage from "../../assets/images/event-new/technical-event/sxnhgivgepzqz9bvrjoq.webp";
 import codingImage from "../../assets/images/event-new/technical-event/Coading.webp";
@@ -129,23 +129,187 @@ type EventCardData = {
   alt: string;
 };
 
-function EventCardGrid({ events }: { events: EventCardData[] }) {
+function EventCardGrid({ events, variant }: { events: EventCardData[]; variant: "academic" | "technical" }) {
+  const academicViewportRef = useRef<HTMLDivElement>(null);
+  const [canScrollAcademicPrev, setCanScrollAcademicPrev] = useState(false);
+  const [canScrollAcademicNext, setCanScrollAcademicNext] = useState(false);
+
+  useEffect(() => {
+    if (variant !== "academic") return;
+    const viewport = academicViewportRef.current;
+    if (!viewport) return;
+
+    const updateScrollButtons = () => {
+      setCanScrollAcademicPrev(viewport.scrollLeft > 0);
+      setCanScrollAcademicNext(
+        viewport.scrollLeft + viewport.clientWidth < viewport.scrollWidth - 1,
+      );
+    };
+
+    updateScrollButtons();
+    viewport.addEventListener("scroll", updateScrollButtons, { passive: true });
+    window.addEventListener("resize", updateScrollButtons);
+    return () => {
+      viewport.removeEventListener("scroll", updateScrollButtons);
+      window.removeEventListener("resize", updateScrollButtons);
+    };
+  }, [events, variant]);
+
+  const scrollAcademic = (direction: -1 | 1) => {
+    const viewport = academicViewportRef.current;
+    if (!viewport) return;
+    const card = viewport.querySelector<HTMLElement>("article");
+    const gap = Number.parseFloat(getComputedStyle(viewport).columnGap) || 0;
+    viewport.scrollBy({
+      left: direction * ((card?.getBoundingClientRect().width ?? viewport.clientWidth) + gap),
+      behavior: "smooth",
+    });
+  };
+
+  if (variant === "academic") {
+    return (
+      <div className={styles.academicCarousel}>
+        <div
+          ref={academicViewportRef}
+          className={styles.academicGrid}
+          role="region"
+          aria-label="Academic event categories"
+          aria-description="Scroll horizontally or use the buttons to browse all academic event categories."
+          tabIndex={0}
+        >
+          {events.map(({ title, label, description, image, imagePosition, alt }) => (
+            <article key={title} className={styles.academicCard}>
+              <div className={styles.cardImage}>
+                <img src={image} alt={alt} loading="lazy" decoding="async" width={640} height={480} style={{ objectPosition: imagePosition }} />
+              </div>
+              <span className={styles.academicIcon}><GraduationCap size={24} aria-hidden="true" /></span>
+              <div className={styles.cardCopy}>
+                <span className={styles.cardLabel}>{label}</span>
+                <h3>{title}</h3>
+                <p>{description}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+        <div className={styles.academicCarouselControls} aria-label="Academic events navigation">
+          <button
+            type="button"
+            onClick={() => scrollAcademic(-1)}
+            disabled={!canScrollAcademicPrev}
+            aria-label="Previous academic events"
+          >
+            <ChevronLeft size={20} aria-hidden="true" />
+          </button>
+          <button
+            type="button"
+            onClick={() => scrollAcademic(1)}
+            disabled={!canScrollAcademicNext}
+            aria-label="Next academic events"
+          >
+            <ChevronRight size={20} aria-hidden="true" />
+          </button>
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div className="grid grid-cols-1 gap-5 min-[561px]:grid-cols-2 min-[1101px]:grid-cols-3 [&>*]:min-w-0">
+    <div className={styles.technicalGrid}>
       {events.map(({ title, label, description, image, imagePosition, alt }) => (
-        <article key={title} className="group flex h-full flex-col overflow-hidden rounded-2xl border border-[#E6E6E7] border-b-4 border-b-[#D62C2B] bg-white shadow-[0_8px_24px_rgba(20,40,78,0.06)] transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-[0_14px_32px_rgba(20,40,78,0.12)] motion-reduce:hover:translate-y-0">
-          <div className="aspect-video overflow-hidden bg-[#E0F1FF]">
-            <img src={image} alt={alt} loading="lazy" decoding="async" width={640} height={360} style={{ objectPosition: imagePosition }} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105 motion-reduce:transform-none" />
+        <article key={title} className={styles.technicalCard}>
+          <div className={styles.cardImage}>
+            <img src={image} alt={alt} loading="lazy" decoding="async" width={640} height={480} style={{ objectPosition: imagePosition }} />
           </div>
-          <div className="flex flex-1 flex-col p-5 min-[561px]:p-6">
-            <p className="mb-2 text-[.68rem] font-bold tracking-[.08em] text-[#D62C2B] uppercase">{label}</p>
+          <div className={styles.cardCopy}>
+            <span className={styles.cardLabel}>{label}</span>
             <h3>{title}</h3>
-            <p className="mt-2 text-[.86rem] leading-relaxed text-[#0F4A85]">{description}</p>
+            <p>{description}</p>
           </div>
         </article>
       ))}
     </div>
   );
+}
+
+function VideoGallery({ items, label, celebrity = false, autoAdvance = false }: { items: { title: string; video: EventVideoAsset }[]; label: string; celebrity?: boolean; autoAdvance?: boolean }) {
+  const galleryRef = useRef<HTMLDivElement>(null);
+  const [isHovered, setIsHovered] = useState(false);
+  const [isFocused, setIsFocused] = useState(false);
+
+  useEffect(() => {
+    const gallery = galleryRef.current;
+    if (!autoAdvance || isHovered || isFocused || !gallery || items.length < 2) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    const advance = () => {
+      const card = gallery.querySelector<HTMLElement>("figure");
+      if (!card) return;
+      const gap = Number.parseFloat(getComputedStyle(gallery).columnGap) || 0;
+      const lastPosition = gallery.scrollWidth - gallery.clientWidth;
+      if (gallery.scrollLeft >= lastPosition - 2) {
+        gallery.scrollTo({ left: 0, behavior: "smooth" });
+      } else {
+        gallery.scrollBy({
+          left: card.getBoundingClientRect().width + gap,
+          behavior: "smooth",
+        });
+      }
+    };
+
+    const interval = window.setInterval(advance, 4500);
+    return () => window.clearInterval(interval);
+  }, [autoAdvance, isHovered, isFocused, items.length]);
+
+  const moveGallery = (direction: -1 | 1) => {
+    const gallery = galleryRef.current;
+    const card = gallery?.querySelector<HTMLElement>("figure");
+    if (!gallery || !card) return;
+    const gap = Number.parseFloat(getComputedStyle(gallery).columnGap) || 0;
+    const lastPosition = gallery.scrollWidth - gallery.clientWidth;
+    if (direction < 0 && gallery.scrollLeft <= 2) {
+      gallery.scrollTo({ left: lastPosition, behavior: "smooth" });
+    } else if (direction > 0 && gallery.scrollLeft >= lastPosition - 2) {
+      gallery.scrollTo({ left: 0, behavior: "smooth" });
+    } else {
+      gallery.scrollBy({
+        left: direction * (card.getBoundingClientRect().width + gap),
+        behavior: "smooth",
+      });
+    }
+  };
+
+  return <div className={styles.videoGalleryCarousel}>
+    <div
+      ref={galleryRef}
+      className={`${styles.videoGallery} ${celebrity ? styles.celebrityGallery : ""} ${autoAdvance ? styles.autoAdvanceGallery : ""}`}
+      role="region"
+      aria-label={label}
+      tabIndex={0}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      onFocusCapture={() => setIsFocused(true)}
+      onBlurCapture={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
+          setIsFocused(false);
+        }
+      }}
+    >
+      {items.map(({ title, video }) => <figure key={title} className={styles.videoCard}>
+        <EventVideo {...video} className={styles.panelMedia} />
+        <figcaption><h3>{title}</h3></figcaption>
+      </figure>)}
+    </div>
+    {autoAdvance && (
+      <div className={styles.videoGalleryControls} aria-label={`${label} navigation`}>
+        <button type="button" onClick={() => moveGallery(-1)} aria-label={`Previous ${label}`}>
+          <ChevronLeft size={20} aria-hidden="true" />
+        </button>
+        <button type="button" onClick={() => moveGallery(1)} aria-label={`Next ${label}`}>
+          <ChevronRight size={20} aria-hidden="true" />
+        </button>
+      </div>
+    )}
+  </div>;
 }
 
 type Detail = { title: string; category?: string; date?: string; venue?: string; description: string; gallery?: boolean };
@@ -160,19 +324,21 @@ export default function NewEventComponent() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [showAllFaq, setShowAllFaq] = useState(false);
   const [detail, setDetail] = useState<Detail | null>(null);
-  const [newsletterMessage, setNewsletterMessage] = useState("");
   const [showAllMonthEvents, setShowAllMonthEvents] = useState(false);
-  const [culturalScrollingPaused, setCulturalScrollingPaused] = useState(false);
-  const [specialScrollingPaused, setSpecialScrollingPaused] = useState(false);
+  const [activePanel, setActivePanel] = useState("Special");
+  const [activeSport, setActiveSport] = useState(0);
+  const [sportsMeet, setSportsMeet] = useState("Utsaah");
+  const [newsPaused, setNewsPaused] = useState(false);
   const [activeNewsIndex, setActiveNewsIndex] = useState(0);
   const dialog = useRef<HTMLDialogElement>(null);
 
   useEffect(() => {
+    if (newsPaused) return;
     const interval = setInterval(() => {
       setActiveNewsIndex((current) => (current + 1) % eventsData.length);
     }, 5000);
     return () => clearInterval(interval);
-  }, []);
+  }, [newsPaused]);
 
   useEffect(() => {
     setShowAllMonthEvents(false);
@@ -193,7 +359,7 @@ export default function NewEventComponent() {
   const monthKey = `${month.getFullYear()}-${String(month.getMonth() + 1).padStart(2, "0")}`;
   const monthEvents = (calendarEvents[monthKey] || []).filter(event => filter === "All" || event.cat === filter);
   // const filteredArchive = archiveEvents.filter(event => (year === "All" || event.year === year) && (archiveCategory === "All" || event.cat === archiveCategory) && event.title.toLowerCase().includes(search.trim().toLowerCase()));
-  const upcoming = calendarEvents["2026-10"];
+  // const upcoming = calendarEvents["2026-10"]; // Restore with Upcoming Events.
   const openEvent = (event: CalendarEvent, date = month) => setDetail({ title: event.title, category: event.cat, date: `${event.day} ${months[date.getMonth()]} ${date.getFullYear()} · ${event.time}`, venue: event.venue, description: event.desc });
   const chooseCategory = (category: string) => {
     setFilter(category);
@@ -242,141 +408,81 @@ export default function NewEventComponent() {
       {/* ── Section Nav ── */}
       <EventSectionNav />
 
-      <section id="news" className="py-[52px] min-[861px]:py-[76px]">
-        <div className={`${Global.container} overflow-hidden`}>
-          <div
-            className="flex transition-transform duration-1000 ease-in-out gap-12"
-            style={{ transform: `translateX(calc(-${activeNewsIndex * 100}% - ${activeNewsIndex * 3}rem))` }}
-          >
-            {eventsData.map((news) => (
-              <div key={`${news.id}-${news.title}`} className="w-full shrink-0 grid grid-cols-1 items-center gap-7 min-[861px]:grid-cols-[1.1fr_1fr] min-[1101px]:gap-12 [&>*]:min-w-0 [&>div>button]:mt-6 [&>div>span]:mb-4">
-                <div className="overflow-hidden rounded-[26px] bg-[#E0F1FF] aspect-[4/3] shadow-[0_8px_24px_rgba(20,40,78,0.06)]">
-                  <img src={news.image} alt={news.title} loading="lazy" decoding="async" className="h-full w-full object-cover transition-transform duration-500 hover:scale-105" />
-                </div>
-                <div className="pr-2">
-                  <span className="inline-flex w-fit rounded-full bg-[#FFB703] px-3 py-1 text-[.72rem] leading-normal font-semibold text-[#14284E]">News & Updates</span>
-                  <h2>{news.title}</h2>
-                  <div className="my-5 flex flex-wrap gap-x-[22px] gap-y-3 text-[.86rem] text-[#0F4A85] [&>span]:flex [&>span]:items-center [&>span]:gap-2">
-                    <span><CalendarDays size={17} aria-hidden="true" />{news.date}</span>
-                  </div>
-                  <div className="text-[.9rem] leading-relaxed text-[#14284E] line-clamp-3 [&_p]:mb-2" dangerouslySetInnerHTML={{ __html: news.description ?? news.excerpt ?? "" }} />
-                  <button className={`${eventButtonClassName} mt-2`} onClick={() => setDetail({ title: news.title, date: news.date, description: news.description ?? news.excerpt ?? "" })}>
-                    Read More <ArrowRight size={18} aria-hidden="true" />
-                  </button>
-                </div>
-              </div>
-            ))}
+      <Section id="news" title="News & Updates">
+        <div className={styles.newsFeature}>
+          <div className={styles.newsImage}>
+            <img src={eventsData[activeNewsIndex].image} alt={eventsData[activeNewsIndex].title} loading="lazy" decoding="async" />
+          </div>
+          <div className={styles.newsCopy}>
+            <span className={styles.newsDate}><CalendarDays size={16} aria-hidden="true" />{eventsData[activeNewsIndex].date}</span>
+            <h3>{eventsData[activeNewsIndex].title}</h3>
+            <div className={styles.newsExcerpt} dangerouslySetInnerHTML={{ __html: eventsData[activeNewsIndex].description ?? eventsData[activeNewsIndex].excerpt ?? "" }} />
+            <button className={eventButtonClassName} onClick={() => {
+              const news = eventsData[activeNewsIndex];
+              setDetail({ title: news.title, date: news.date, description: news.description ?? news.excerpt ?? "" });
+            }}>Read More <ArrowRight size={16} aria-hidden="true" /></button>
+            <div className={styles.newsControls}>
+              <button type="button" aria-label="Previous news" onClick={() => { setNewsPaused(true); setActiveNewsIndex((activeNewsIndex + eventsData.length - 1) % eventsData.length); }}><ChevronLeft size={18} /></button>
+              <span>{activeNewsIndex + 1} / {eventsData.length}</span>
+              <button type="button" aria-label="Next news" onClick={() => { setNewsPaused(true); setActiveNewsIndex((activeNewsIndex + 1) % eventsData.length); }}><ChevronRight size={18} /></button>
+              <button type="button" aria-label={newsPaused ? "Play news slideshow" : "Pause news slideshow"} onClick={() => setNewsPaused(!newsPaused)}>{newsPaused ? <Play size={16} /> : <Pause size={16} />}</button>
+            </div>
           </div>
         </div>
-      </section>
+      </Section>
 
       <Section id="categories" title="Explore Events at SRMU" description="From academic conferences and technical competitions to cultural celebrations and sporting events, explore the diverse events conducted across the university." alternate>
-        <style>{`
-          @keyframes reel-marquee {
-            from { transform: translateX(0); }
-            to   { transform: translateX(-50%); }
-          }
-          .reel-track {
-            animation: reel-marquee 18s linear infinite;
-          }
-          .reel-track:hover {
-            animation-play-state: paused;
-          }
-        `}</style>
-        {/* overflow wrapper — clips the scrolling track */}
-        <div className="-mx-4 overflow-hidden min-[561px]:-mx-6">
-          {/* track — doubled cards for seamless loop */}
-          <div className="reel-track flex gap-3 w-max px-4 min-[561px]:px-6">
-            {[...exploreReels, ...exploreReels].map(({ name, title, Icon, description, reelVideo }, index) => (
-              <article
-                key={`${name}-${index}`}
-                className="group relative flex-shrink-0 w-[200px] min-[561px]:w-[220px] min-[861px]:w-[240px] aspect-[9/16] rounded-2xl overflow-hidden"
-              >
-                {reelVideo && <EventVideo {...reelVideo} className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#14284E]/80 via-[#14284E]/20 to-transparent" />
-                <div className="absolute top-3 left-3 grid size-9 place-items-center rounded-xl bg-white/20 backdrop-blur-sm text-white">
-                  <Icon size={18} aria-hidden="true" />
-                </div>
-                <div className="absolute inset-x-0 bottom-0 p-4 text-white">
-                  <h3 className="mb-1 text-[.95rem] font-bold leading-[1.2] text-white">{title}</h3>
-                  <p className="text-[.72rem] leading-[1.45] text-white/80 line-clamp-3">{description}</p>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </Section>
-
-      <Section id="academic-events" title="Academic Events" description="Opportunities for students and faculty to learn from experts, exchange ideas, develop professional skills and engage with emerging areas of knowledge." className="bg-[#E0F1FF]">
-        <EventCardGrid events={academic} />
-        <div className="mt-8 flex justify-center"><a href="#calendar" className={eventButtonClassName} onClick={() => chooseCategory("Academic")}>View All Academic Events<ArrowRight size={16} /></a></div>
-      </Section>
-
-      <Section id="technical-events" title="Technical Events" description="Activities designed to encourage innovation, problem-solving, practical learning and industry exposure." className="bg-[#E0F1FF]">
-        <EventCardGrid events={technical} />
-        <div className="mt-8 flex justify-center"><a href="#calendar" className={eventButtonClassName} onClick={() => chooseCategory("Technical")}>View All Technical Events<ArrowRight size={16} /></a></div>
-      </Section>
-
-      <Section id="cultural-events" title="Cultural Events" description="Celebrations of music, art, drama and literature that bring the SRMU community together.">
-        <div id="cultural-reels" className={styles.culturalReels} role="region" aria-label="Cultural event videos" tabIndex={0}>
-          <div className={styles.culturalTrack} style={{ animationPlayState: culturalScrollingPaused ? "paused" : undefined }}>
-            {[0, 1].map(copy => (
-              <div key={copy} className={styles.culturalGroup} aria-hidden={copy === 1 ? true : undefined}>
-                {cultural.map(({ title, video }) => (
-                  <article key={title} className="group relative aspect-[9/16] w-[200px] shrink-0 overflow-hidden rounded-2xl bg-[#14284E] min-[561px]:w-[220px] min-[861px]:w-[240px]">
-                    <EventVideo {...video} className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105 motion-reduce:transform-none" />
-                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#14284E]/85 via-[#14284E]/10 to-transparent" />
-                    <div className="absolute top-3 left-3 grid size-9 place-items-center rounded-xl bg-white/20 text-white backdrop-blur-sm"><Music size={18} aria-hidden="true" /></div>
-                    <div className="absolute inset-x-0 bottom-0 p-5 text-white">
-                      <p className="mb-2 text-[.65rem] font-semibold tracking-[.12em] text-[#FFB703] uppercase">Cultural Events</p>
-                      <h3 className="text-white">{title}</h3>
-                    </div>
-                  </article>
-                ))}
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className="mt-8 flex justify-center"><a href="#calendar" className={eventButtonClassName} onClick={() => chooseCategory("Cultural")}>Explore Cultural Events <ArrowRight size={16} /></a></div>
-      </Section>
-
-      <Section id="sports-events" title="Sports & Fitness" description="Sports at SRMU encourage teamwork, discipline, leadership and a healthy campus lifestyle." className="bg-[#E0F1FF]">
-        <div className="grid grid-cols-1 gap-5 min-[561px]:grid-cols-2 min-[1101px]:grid-cols-3 [&>*]:min-w-0">
-          {sports.map(({ title, image, imagePosition, alt }) => (
-            <article key={title} className="group overflow-hidden rounded-2xl border border-[#E6E6E7] border-b-4 border-b-[#D62C2B] bg-white shadow-[0_8px_24px_rgba(20,40,78,0.06)] transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-[0_14px_32px_rgba(20,40,78,0.12)] motion-reduce:hover:translate-y-0">
-              <div className="aspect-[3/2] overflow-hidden bg-[#E0F1FF]">
-                <img src={image} alt={alt} loading="lazy" decoding="async" width={600} height={400} style={{ objectPosition: imagePosition }} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105 motion-reduce:transform-none" />
-              </div>
-              <div className="flex items-center gap-3 p-5 min-[561px]:p-6">
-                <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-[#E0F1FF] text-[#0F4A85]"><Trophy size={20} aria-hidden="true" /></span>
-                <h3>{title}</h3>
-              </div>
-            </article>
+        <div className={styles.explorePanels}>
+          {exploreReels.map(({ name, title, Icon, description, reelVideo }) => (
+            <a key={name} href={`#${categories.find(category => category.name === name)?.id ?? "cultural-events"}`}
+              className={styles.explorePanel} data-active={activePanel === name}
+              onMouseEnter={() => setActivePanel(name)} onFocus={() => setActivePanel(name)}>
+              {reelVideo && <EventVideo {...reelVideo} className={styles.panelMedia} />}
+              <span className={styles.panelIcon}><Icon size={20} aria-hidden="true" /></span>
+              <div className={styles.panelCopy}><h3>{title}</h3><p>{description}</p></div>
+            </a>
           ))}
         </div>
-        <div className="mt-8 flex justify-center"><a href="#calendar" className={eventButtonClassName} onClick={() => chooseCategory("Sports")}>View Sports Events <ArrowRight size={16} aria-hidden="true" /></a></div>
       </Section>
 
-      <Section id="special-events" title="Celebrity & Special Events" description="Engage with distinguished personalities, industry leaders, experts and inspiring speakers through special sessions at SRMU.">
-        <div id="special-reels" className={styles.culturalReels} role="region" aria-label="Special event videos" tabIndex={0}>
-          <div className={styles.culturalTrack} style={{ animationPlayState: specialScrollingPaused ? "paused" : undefined }}>
-            {[0, 1].map(copy => (
-              <div key={copy} className={styles.culturalGroup} aria-hidden={copy === 1 ? true : undefined}>
-                {special.map(({ title, video }) => (
-                  <article key={title} className="group relative aspect-[9/16] w-[200px] shrink-0 overflow-hidden rounded-2xl bg-[#14284E] min-[561px]:w-[220px] min-[861px]:w-[240px]">
-                    <EventVideo {...video} className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105 motion-reduce:transform-none" />
-                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#14284E]/85 via-[#14284E]/10 to-transparent" />
-                    <div className="absolute top-3 left-3 grid size-9 place-items-center rounded-xl bg-white/20 text-white backdrop-blur-sm"><Mic size={18} aria-hidden="true" /></div>
-                    <div className="absolute inset-x-0 bottom-0 p-5 text-white">
-                      <h3 className="text-white">{title}</h3>
-                    </div>
-                  </article>
-                ))}
-              </div>
-            ))}
-          </div>
+      <Section id="academic-events" title="Academic Events" description="Opportunities for students and faculty to learn from experts, exchange ideas, develop professional skills and engage with emerging areas of knowledge." className={styles.academicSection}>
+        <EventCardGrid events={academic} variant="academic" />
+        <div className="mt-8"><a href="#calendar" className={`${eventButtonClassName} !bg-[#14284E] !text-white`} onClick={() => chooseCategory("Academic")}>View All Academic Events<ArrowRight size={16} /></a></div>
+      </Section>
+
+      <Section id="technical-events" title="Technical Events" description="Activities designed to encourage innovation, problem-solving, practical learning and industry exposure.">
+        <EventCardGrid events={[...technical.filter(event => event.title !== "Industrial Visits"), technical[4]]} variant="technical" />
+        <div className="mt-8"><a href="#calendar" className={eventButtonClassName} onClick={() => chooseCategory("Technical")}>View All Technical Events<ArrowRight size={16} /></a></div>
+      </Section>
+
+      <Section id="cultural-events" title="Cultural Events" description="Celebrations of music, art, drama and literature that bring the SRMU community together." className={styles.darkSection}>
+        <VideoGallery items={cultural} label="Cultural event videos" autoAdvance />
+        <div className="mt-8"><a href="#calendar" className={eventButtonClassName} onClick={() => chooseCategory("Cultural")}>Explore Cultural Events <ArrowRight size={16} /></a></div>
+      </Section>
+
+      <Section id="sports-events" title="Sports & Fitness" description="Sports at SRMU encourage teamwork, discipline, leadership and a healthy campus lifestyle." alternate>
+        <div className={styles.sportsMeets} role="group" aria-label="Sports meets">
+          {["Utsaah", "Ullas"].map(meet => <button type="button" key={meet} aria-pressed={sportsMeet === meet} onClick={() => setSportsMeet(meet)}>
+            <span className={styles.meetIcon}><Trophy aria-hidden="true" /></span>
+            <span><strong>{meet}</strong><small>Includes all {sports.length} games</small></span>
+          </button>)}
         </div>
-        <div className="mt-8 flex justify-center"><a href="#calendar" className={eventButtonClassName} onClick={() => chooseCategory("Special")}>Explore Special Events <ArrowRight size={16} /></a></div>
+        <div className={styles.sportsLayout}>
+          <div className={styles.sportsList} role="group" aria-label="Choose a sport">
+            {sports.map(({ title }, index) => <button key={title} type="button" aria-pressed={activeSport === index} aria-controls="sports-preview" onClick={() => setActiveSport(index)}>{title}<ChevronRight size={16} aria-hidden="true" /></button>)}
+          </div>
+          <figure id="sports-preview" className={styles.sportsPreview} aria-live="polite">
+            <img src={sports[activeSport].image} alt={sports[activeSport].alt} loading="lazy" decoding="async" style={{ objectPosition: sports[activeSport].imagePosition }} />
+            <span className={styles.sportsTag}>{sportsMeet}</span>
+            <figcaption><h3>{sports[activeSport].title}</h3></figcaption>
+          </figure>
+        </div>
+        <div className="mt-8"><a href="#calendar" className={eventButtonClassName} onClick={() => chooseCategory("Sports")}>View Sports Events <ArrowRight size={16} aria-hidden="true" /></a></div>
+      </Section>
+
+      <Section id="special-events" title="Celebrity & Special Events" description="Engage with distinguished personalities, industry leaders, experts and inspiring speakers through special sessions at SRMU." className={`${styles.darkSection} ${styles.specialSection}`}>
+        <VideoGallery items={special} label="Special event videos" celebrity />
+        <div className="mt-8"><a href="#calendar" className={eventButtonClassName} onClick={() => chooseCategory("Special")}>Explore Special Events <ArrowRight size={16} /></a></div>
       </Section>
 
       {/* Holidays & Closures hidden for now.
@@ -392,38 +498,45 @@ export default function NewEventComponent() {
       */}
 
       <Section id="calendar" title="SRMU Events Calendar" description="Stay updated with upcoming academic, technical, cultural, sports and special events at SRMU.">
-        {/* <p className="mb-[18px] text-[.8rem] text-[#0F4A85]">Design preview: event dates, archive entries and statistics are sample content.</p> */}
-        <div className="mb-[22px] flex flex-wrap gap-2" aria-label="Filter calendar events">{["All", ...categories.map(category => category.name)].map(category => <button key={category} className="rounded-full border border-[#0F4A85] bg-transparent px-[17px] py-[9px] text-[.82rem] text-[#0F4A85] aria-pressed:border-[#FFB703] aria-pressed:bg-[#FFB703] aria-pressed:font-semibold aria-pressed:text-[#14284E]" aria-pressed={filter === category} onClick={() => setFilter(category)}>{category === "All" ? "All Events" : category}</button>)}</div>
-        <div className="grid grid-cols-1 items-stretch gap-7 min-[861px]:grid-cols-2 min-[1101px]:gap-12 [&>*]:min-w-0">
-          <div className="flex flex-col rounded-2xl border border-[#21A5DB] bg-white p-5 min-[561px]:p-6">
-            <div className="mb-[22px] flex items-center justify-between gap-2 [&>button]:grid [&>button]:size-10 [&>button]:place-items-center [&>button]:rounded-[10px] [&>button]:border [&>button]:border-[#21A5DB] [&>button]:bg-[#E0F1FF] [&>button]:text-[#0F4A85] max-[560px]:[&>h3]:text-[.95rem]"><button aria-label="Previous month" onClick={() => setMonth(new Date(month.getFullYear(), month.getMonth() - 1, 1))}><ChevronLeft /></button><h3 aria-live="polite">{months[month.getMonth()]} {month.getFullYear()}</h3><button aria-label="Next month" onClick={() => setMonth(new Date(month.getFullYear(), month.getMonth() + 1, 1))}><ChevronRight /></button></div>
-            <div className="grid flex-1 grid-cols-7 gap-[3px] text-center text-[.86rem] min-[561px]:gap-[7px]">
-              {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map(day => <span className="pb-2 text-[.72rem] font-semibold" key={day}>{day}</span>)}
+        <div className={styles.calendarFilters} role="group" aria-label="Filter calendar events">
+          {[{ name: "All", Icon: CalendarDays }, ...categories].map(({ name, Icon }) => <button type="button" key={name} aria-pressed={filter === name} onClick={() => setFilter(name)}><Icon size={17} aria-hidden="true" />{name === "All" ? "All Events" : name}</button>)}
+        </div>
+        <div className={styles.calendarLayout}>
+          <div className={styles.calendarWall}>
+            <div className={styles.calendarRings} aria-hidden="true">{Array.from({ length: 7 }, (_, index) => <i key={index} />)}</div>
+            <div className={styles.calendarHeader}>
+              <button type="button" aria-label="Previous month" onClick={() => setMonth(new Date(month.getFullYear(), month.getMonth() - 1, 1))}><ChevronLeft /></button>
+              <h3 aria-live="polite">{months[month.getMonth()]} {month.getFullYear()}</h3>
+              <button type="button" aria-label="Next month" onClick={() => setMonth(new Date(month.getFullYear(), month.getMonth() + 1, 1))}><ChevronRight /></button>
+            </div>
+            <div className={styles.calendarGrid}>
+              {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map(day => <span className={styles.weekday} key={day}>{day}</span>)}
               {Array.from({ length: month.getDay() }, (_, index) => <span key={`empty-${index}`} />)}
               {Array.from({ length: new Date(month.getFullYear(), month.getMonth() + 1, 0).getDate() }, (_, index) => {
                 const day = index + 1;
                 const event = monthEvents.find(item => item.day === day);
-                return event ? <button className="relative flex min-h-10 items-center justify-center rounded-lg border border-[#21A5DB] bg-[#E0F1FF] font-bold text-[#0F4A85] hover:bg-[#FFB703] min-[561px]:min-h-11 [&>span]:absolute [&>span]:bottom-[5px] [&>span]:size-1 [&>span]:rounded-full [&>span]:bg-[#D62C2B]" key={day} onClick={() => openEvent(event)} aria-label={`${day} ${months[month.getMonth()]}: ${event.title}`}>{day}<span /></button> : <span className="flex min-h-10 items-center justify-center rounded-lg min-[561px]:min-h-11" key={day}>{day}</span>;
+                const Icon = categories.find(category => category.name === event?.cat)?.Icon ?? CalendarDays;
+                return event ? <button type="button" className={styles.calendarDay} data-category={event.cat} key={day} onClick={() => openEvent(event)} aria-label={`${day} ${months[month.getMonth()]}: ${event.title}`}>{day}<Icon size={15} aria-hidden="true" /></button> : <span className={styles.calendarDay} key={day}>{day}</span>;
               })}
             </div>
+            <div className={styles.calendarLegend}>{categories.map(({ name, Icon }) => <span key={name}><i data-category={name}><Icon size={13} aria-hidden="true" /></i>{name}</span>)}</div>
           </div>
-          <div className="flex flex-col rounded-2xl border border-[#21A5DB] bg-white p-5 min-[561px]:p-6">
+          <div className={styles.monthEvents}>
             <h3>Selected Month&apos;s Events</h3>
-            <div id="selected-month-events" className="flex-1" aria-live="polite">
-              {monthEvents.length ? (showAllMonthEvents ? monthEvents : monthEvents.slice(0, 3)).map(event => <button className="flex w-full items-center gap-3.5 border-0 border-b border-[#21A5DB] bg-transparent py-4 text-left text-[#14284E] last:border-b-0 [&>span:nth-child(2)]:flex-1 [&>svg]:shrink-0 [&>svg]:text-[#0F4A85] [&_strong]:my-1 [&_strong]:block [&_strong]:text-[.85rem] [&_strong]:leading-[1.4]" key={event.title} onClick={() => openEvent(event)}><span className="min-w-[58px] rounded-[10px] bg-[#E0F1FF] px-3 py-2 text-center text-[#0F4A85] [&>b]:block [&>b]:text-[1.35rem] [&>span]:block [&>span]:text-[.72rem]"><b>{event.day}</b><span>{months[month.getMonth()].slice(0, 3)}</span></span><span><span className="inline-flex w-fit rounded-full bg-[#FFB703] px-3 py-1 text-[.72rem] leading-normal font-semibold text-[#14284E]">{event.cat}</span><strong>{event.title}</strong><span className="block text-[.72rem]">{event.venue}</span></span><ArrowRight size={18} aria-hidden="true" /></button>) : <p className="py-6 text-[.9rem]">No events for this filter this month.</p>}
+            <div id="selected-month-events" className={styles.eventTickets} aria-live="polite">
+              {monthEvents.length ? (showAllMonthEvents ? monthEvents : monthEvents.slice(0, 3)).map(event => {
+                const category = categories.find(item => item.name === event.cat);
+                const Icon = category?.Icon ?? CalendarDays;
+                const image = event.cat === "Academic" ? conferenceImage : category?.reelVideo?.poster;
+                return <button type="button" className={styles.eventTicket} key={`${event.day}-${event.title}`} onClick={() => openEvent(event)}>
+                  <span className={styles.ticketImage}>{image && <img src={image} alt="" loading="lazy" decoding="async" />}<i data-category={event.cat}><Icon size={20} aria-hidden="true" /></i></span>
+                  <span className={styles.ticketBody}><span className={styles.ticketDate}><b>{event.day}</b><span>{months[month.getMonth()].slice(0, 3)}</span></span><span className={styles.ticketCopy}><em>{event.cat}</em><strong>{event.title}</strong><small><MapPin size={14} aria-hidden="true" />{event.venue}</small></span></span>
+                </button>;
+              }) : <p className={styles.calendarEmpty}><CalendarDays size={28} aria-hidden="true" />No events for this filter this month.</p>}
             </div>
-            {monthEvents.length > 3 && (
-              <button
-                type="button"
-                className={`${eventButtonClassName} mt-6 self-center`}
-                aria-expanded={showAllMonthEvents}
-                aria-controls="selected-month-events"
-                onClick={() => setShowAllMonthEvents(previous => !previous)}
-              >
-                <span>{showAllMonthEvents ? "Show fewer events" : `View all ${monthEvents.length} events`}</span>
-                <ChevronDown size={18} aria-hidden="true" className={`shrink-0 transition-transform duration-200 ${showAllMonthEvents ? "rotate-180" : ""}`} />
-              </button>
-            )}
+            {monthEvents.length > 3 && <button type="button" className={`${eventButtonClassName} mt-6`} aria-expanded={showAllMonthEvents} aria-controls="selected-month-events" onClick={() => setShowAllMonthEvents(previous => !previous)}>
+              {showAllMonthEvents ? "Show fewer events" : `View all ${monthEvents.length} events`}<ArrowRight size={16} aria-hidden="true" />
+            </button>}
           </div>
         </div>
       </Section>
@@ -506,8 +619,8 @@ export default function NewEventComponent() {
       </section>
 
       {/* ── FAQ ──────────────────────────────────────────────────── */}
-      <section id="faqs" className="py-10 md:py-14 px-4 sm:px-6 bg-[#E0F1FF]">
-        <div className={`${Global.container} max-w-[900px]`}>
+      <section id="faqs" className={`py-10 md:py-14 ${styles.faqSection}`}>
+        <div className={Global.container}>
           {/* Header */}
           <div className="w-full mb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
             <div className="min-w-0 flex-1">
@@ -521,12 +634,11 @@ export default function NewEventComponent() {
           </div>
 
           {/* Accordion */}
-          <div className="flex flex-col gap-3 mt-6">
+          <div className="flex flex-col mt-6">
             {(showAllFaq ? faqs : faqs.slice(0, 3)).map(([q, a], i) => (
               <div
                 key={i}
-                className={`bg-white border rounded-xl overflow-hidden shadow-sm shadow-[#14284E]/10 transition-all duration-200 ${openFaq === i ? "border-[#14284E]" : "border-[#E6E6E7]"
-                  }`}
+                className={styles.faqItem}
               >
                 <button
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
@@ -565,7 +677,7 @@ export default function NewEventComponent() {
                 onClick={() => setShowAllFaq(!showAllFaq)}
                 className={eventButtonClassName}
               >
-                {showAllFaq ? "View Less" : "Read More"} <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${showAllFaq ? "rotate-180" : ""}`} />
+                {showAllFaq ? "View Less" : "Read More"} <ArrowRight size={16} aria-hidden="true" />
               </button>
             </div>
           )}
