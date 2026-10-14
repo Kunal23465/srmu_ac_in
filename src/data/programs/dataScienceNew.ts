@@ -212,6 +212,7 @@ const dataScienceNewData: ProgramPageDataNew = {
       {
         label: "LAB / 02",
         title: "Artificial Intelligence & Machine Learning Lab",
+        imageUrl: "/assets/images/data-science-ai-ml-new-page/The-Role-of-AI-in-Enhancing-Production-and-Operational-Efficiency-January-2025-Section-Image.webp",
         tagline: "Build systems that learn from data.",
         description:
           "Students explore machine learning algorithms and AI techniques through practical exercises and application-oriented projects.",
@@ -220,6 +221,7 @@ const dataScienceNewData: ProgramPageDataNew = {
       {
         label: "LAB / 03",
         title: "Deep Learning & NLP Lab",
+        imageUrl: "/assets/images/new-information-system/Data-Science-Fundamentals-and-its-Application.webp",
         tagline: "Explore intelligent systems that understand patterns and language.",
         description:
           "Students gain practical exposure to deep learning and natural language processing applications.",
@@ -228,6 +230,7 @@ const dataScienceNewData: ProgramPageDataNew = {
       {
         label: "LAB / 04",
         title: "Big Data & Cloud Computing Lab",
+        imageUrl: "/assets/images/data-science-ai-ml-new-page/Learn-Data-Science-AI-the-Way-Industry-Works-Section-Image.webp",
         tagline: "Learn how modern organizations manage large-scale data.",
         description:
           "Students explore technologies and concepts used for processing, storing, and analyzing large datasets.",
@@ -236,6 +239,7 @@ const dataScienceNewData: ProgramPageDataNew = {
       {
         label: "LAB / 05",
         title: "Generative AI & Intelligent Applications Lab",
+        imageUrl: "/assets/images/data-science-ai-ml-new-page/Career-Opportunities-in-Data-Science-Artificial-Intelligence-Section-Image.webp",
         tagline: "Explore the next generation of AI applications.",
         description:
           "Students learn how generative AI and intelligent systems can be used to develop innovative technology solutions.",

@@ -57,6 +57,10 @@ interface ProgramPageTemplateNewProps {
 
 const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data }) => {
   const { heroBanner, whyStudy, ltBenefits, industryExposure, placement, labs, yearJourney, fee, poPsoPlo, careerOpportunities, programComparison } = data;
+  const isCyberSecurityPage = heroBanner.specialization.toLowerCase().includes("cyber security");
+  const buttonClasses = (classes: string) => isCyberSecurityPage
+    ? classes.split(/\s+/).filter((name) => !name.startsWith("hover:") && !name.startsWith("group-hover:")).join(" ")
+    : classes;
 
   // ---- Refs ----
   const industriesScrollRef = useRef<HTMLDivElement>(null);
@@ -107,10 +111,10 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                 )}
               </div>
               <div className="flex flex-row items-center gap-3 mt-auto sm:mt-8 w-full max-w-[650px]">
-                <a href={heroBanner.applyNowUrl} target="_blank" rel="noopener noreferrer" className="flex-1 sm:flex-none text-center bg-[#ffb703] hover:bg-[#ffa000] text-[#14284E] font-bold text-[13px] sm:text-[15px] px-3 sm:px-8 py-3 sm:py-3.5 rounded-lg transition-colors shadow-lg border border-[#ffb703] uppercase">
+                <a href={heroBanner.applyNowUrl} target="_blank" rel="noopener noreferrer" className={buttonClasses("flex-1 sm:flex-none text-center bg-[#ffb703] hover:bg-[#ffa000] text-[#14284E] font-bold text-[13px] sm:text-[15px] px-3 sm:px-8 py-3 sm:py-3.5 rounded-lg transition-colors shadow-lg border border-[#ffb703] uppercase")}>
                   Apply Now
                 </a>
-                <a href={heroBanner.brochureUrl} target="_blank" rel="noopener noreferrer" className="flex-1 sm:flex-none text-center flex items-center justify-center gap-1.5 sm:gap-2 bg-[#14284E] hover:bg-[#1B4F91] text-white font-bold text-[13px] sm:text-[15px] px-3 sm:px-8 py-3 sm:py-3.5 rounded-lg transition-colors shadow-lg border border-[#1B4F91]">
+                <a href={heroBanner.brochureUrl} target="_blank" rel="noopener noreferrer" className={buttonClasses("flex-1 sm:flex-none text-center flex items-center justify-center gap-1.5 sm:gap-2 bg-[#14284E] hover:bg-[#1B4F91] text-white font-bold text-[13px] sm:text-[15px] px-3 sm:px-8 py-3 sm:py-3.5 rounded-lg transition-colors shadow-lg border border-[#1B4F91]")}>
                   <Download className="w-4 h-4" />
                   <span className="hidden sm:inline font-bold">DOWNLOAD DEPARTMENT</span> <span className="font-bold">BROCHURE</span>
                 </a>
@@ -154,7 +158,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                 <input type="checkbox" defaultChecked className="mt-0.5 shrink-0" />
                 I authorise SRMU and its representatives to Call, SMS, Email or WhatsApp me regarding admissions and programmes.
               </p>
-              <button className="w-full bg-[#ffb703] hover:bg-[#ffa000] text-[#14284E] font-bold text-[14px] py-3 rounded-xl transition-colors flex items-center justify-center gap-2">APPLY NOW →</button>
+              <button className={buttonClasses("w-full bg-[#ffb703] hover:bg-[#ffa000] text-[#14284E] font-bold text-[14px] py-3 rounded-xl transition-colors flex items-center justify-center gap-2")}>APPLY NOW →</button>
             </div>
           </div>
         </section>
@@ -266,7 +270,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                 </tbody>
               </table>
               <div className="bg-[#F6FAFE] py-3 flex justify-center">
-                <button type="button" onClick={() => toggleRm("table_more")} className="flex justify-center items-center gap-1 text-[13px] font-bold text-[#1B4F91] hover:text-[#14284E] transition-colors">
+                <button type="button" onClick={() => toggleRm("table_more")} className={buttonClasses("flex justify-center items-center gap-1 text-[13px] font-bold text-[#1B4F91] hover:text-[#14284E] transition-colors")}>
                   {rm["table_more"] ? "Show Less" : "See Full Content"}
                   <ChevronDown className={`w-4 h-4 transition-transform ${rm["table_more"] ? "rotate-180" : ""}`} />
                 </button>
@@ -346,7 +350,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                 {/* Desktop button in empty slot for odd card count (Data Science) */}
                 {industryExposure.secondaryCards.length % 2 !== 0 && (
                   <div className="hidden md:flex items-center justify-center h-full">
-                    <Link to={industryExposure.departmentUrl} target="_blank" className="inline-flex items-center bg-[#ffb703] hover:bg-[#ffa000] text-[#14284E] font-semibold text-[14.5px] px-6 py-3 rounded-md transition-colors shadow-sm hover:-translate-y-0.5 uppercase">
+                    <Link to={industryExposure.departmentUrl} target="_blank" className={buttonClasses("inline-flex items-center bg-[#ffb703] hover:bg-[#ffa000] text-[#14284E] font-semibold text-[14.5px] px-6 py-3 rounded-md transition-colors shadow-sm hover:-translate-y-0.5 uppercase")}>
                       Know Your Department →
                     </Link>
                   </div>
@@ -356,7 +360,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
 
             {/* Mobile/Default button (hidden on desktop if odd card count) */}
             <div className={`flex justify-center w-full mt-8 sm:mt-12 ${industryExposure.secondaryCards.length % 2 !== 0 ? 'md:hidden' : ''}`}>
-              <Link to={industryExposure.departmentUrl} target="_blank" className="inline-flex items-center bg-[#ffb703] hover:bg-[#ffa000] text-[#14284E] font-semibold text-[14.5px] px-6 py-3 rounded-md transition-colors shadow-sm hover:-translate-y-0.5 uppercase">
+              <Link to={industryExposure.departmentUrl} target="_blank" className={buttonClasses("inline-flex items-center bg-[#ffb703] hover:bg-[#ffa000] text-[#14284E] font-semibold text-[14.5px] px-6 py-3 rounded-md transition-colors shadow-sm hover:-translate-y-0.5 uppercase")}>
                 Know Your Department →
               </Link>
             </div>
@@ -469,35 +473,38 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-5">
-              {labs.labs.map((lab) => (
-                <article key={lab.label} className="group overflow-hidden rounded-2xl border border-[#DCE6F2] bg-white shadow-[0_4px_18px_rgba(15,31,61,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_36px_rgba(15,31,61,0.12)]">
-                  <div className="relative aspect-[16/10] overflow-hidden bg-gradient-to-br from-[#0B1D3A] via-[#123B69] to-[#1475A5]">
-                    {lab.imageUrl ? (
-                      <img src={lab.imageUrl} alt={lab.title} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
-                    ) : (
-                      <div className="flex h-full items-center justify-center"><Shield className="h-14 w-14 text-white/60" strokeWidth={1.2} /></div>
-                    )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#06142C]/75 via-transparent to-[#06142C]/10" />
-                    <span className="absolute left-4 top-4 rounded-full border border-white/25 bg-[#081A34]/70 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.14em] text-white backdrop-blur-sm">{lab.label}</span>
-                    <span className="absolute bottom-4 left-4 text-[10px] font-semibold uppercase tracking-[0.14em] text-white/85">Practical learning environment</span>
-                  </div>
-                  <div className="p-4 sm:p-5">
-                    <h4 className="text-[18px] font-bold font-display leading-snug text-[#14284E] group-hover:text-[#1B4F91] transition-colors">{lab.title}</h4>
-                    <p className="mt-2 border-l-[3px] border-[#ffb703] pl-3 text-[13px] font-semibold leading-relaxed text-[#B86B00]">{lab.tagline}</p>
-                    <p className="mt-3 text-[13px] leading-[1.65] text-[#526179]">{lab.description}</p>
-                    <div className="mt-4 flex flex-wrap gap-2">
-                      {lab.items.map((item) => (
-                        <span key={item} className="rounded-lg bg-[#F1F6FB] px-2.5 py-1.5 text-[11px] font-medium leading-tight text-[#34506F]">{item}</span>
-                      ))}
+              {labs.labs.map((lab, index) => {
+                const labImageUrl = lab.imageUrl ?? (index === 0 ? labs.cardBackgroundImageUrl : undefined);
+                return (
+                  <article key={lab.label} className="group overflow-hidden rounded-2xl border border-[#DCE6F2] bg-white shadow-[0_4px_18px_rgba(15,31,61,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_36px_rgba(15,31,61,0.12)]">
+                    <div className="relative aspect-[16/10] overflow-hidden bg-gradient-to-br from-[#0B1D3A] via-[#123B69] to-[#1475A5]">
+                      {labImageUrl ? (
+                        <img src={labImageUrl} alt={lab.title} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                      ) : (
+                        <div className="flex h-full items-center justify-center"><Shield className="h-14 w-14 text-white/60" strokeWidth={1.2} /></div>
+                      )}
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#06142C]/75 via-transparent to-[#06142C]/10" />
+                      <span className="absolute left-4 top-4 rounded-full border border-white/25 bg-[#081A34]/70 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.14em] text-white backdrop-blur-sm">{lab.label}</span>
+                      <span className="absolute bottom-4 left-4 text-[10px] font-semibold uppercase tracking-[0.14em] text-white/85">Practical learning environment</span>
                     </div>
-                  </div>
-                </article>
-              ))}
+                    <div className="p-4 sm:p-5">
+                      <h4 className="text-[18px] font-bold font-display leading-snug text-[#14284E] group-hover:text-[#1B4F91] transition-colors">{lab.title}</h4>
+                      <p className="mt-2 border-l-[3px] border-[#ffb703] pl-3 text-[13px] font-semibold leading-relaxed text-[#B86B00]">{lab.tagline}</p>
+                      <p className="mt-3 text-[13px] leading-[1.65] text-[#526179]">{lab.description}</p>
+                      <div className="mt-4 flex flex-wrap gap-2">
+                        {lab.items.map((item) => (
+                          <span key={item} className="rounded-lg bg-[#F1F6FB] px-2.5 py-1.5 text-[11px] font-medium leading-tight text-[#34506F]">{item}</span>
+                        ))}
+                      </div>
+                    </div>
+                  </article>
+                );
+              })}
             </div>
 
             <div className="mt-8 flex justify-center w-full">
-              <a href="tel:18001026004" className="relative group overflow-hidden bg-gradient-to-r from-[#ffb703] via-[#ffc72c] to-[#ffa000] text-[#14284E] font-extrabold text-[14px] sm:text-[15px] px-8 py-3.5 rounded-lg shadow-[0_8px_20px_-8px_rgba(217,139,43,0.6)] hover:shadow-[0_12px_30px_rgba(255,183,3,0.65)] hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2 text-center uppercase">
-                <PhoneCall className="w-4 h-4 shrink-0 transition-transform duration-300 group-hover:scale-110" />
+              <a href="tel:18001026004" className={buttonClasses("relative group overflow-hidden bg-gradient-to-r from-[#ffb703] via-[#ffc72c] to-[#ffa000] text-[#14284E] font-extrabold text-[14px] sm:text-[15px] px-8 py-3.5 rounded-lg shadow-[0_8px_20px_-8px_rgba(217,139,43,0.6)] hover:shadow-[0_12px_30px_rgba(255,183,3,0.65)] hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2 text-center uppercase")}>
+                <PhoneCall className={buttonClasses("w-4 h-4 shrink-0 transition-transform duration-300 group-hover:scale-110")} />
                 <span>Have Query? Talk to Expert</span>
               </a>
             </div>
@@ -540,7 +547,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                           <ul className="list-disc pl-5 space-y-2">{yd.subjects.map((s, i) => <li key={i}>{s}</li>)}</ul>
                         </div>
                         {!rm[`${key}_more`] && (
-                          <button type="button" onClick={() => toggleRm(`${key}_more`)} className="w-full flex justify-center items-center gap-1 text-[13px] font-bold text-[#1B4F91] hover:text-[#14284E] transition-colors py-1.5">
+                <button type="button" onClick={() => toggleRm(`${key}_more`)} className={buttonClasses("w-full flex justify-center items-center gap-1 text-[13px] font-bold text-[#1B4F91] hover:text-[#14284E] transition-colors py-1.5")}>
                             See Full Curriculum <ChevronDown className="w-4 h-4" />
                           </button>
                         )}
@@ -550,7 +557,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                           <div><h4 className="font-bold text-[#20283A] mb-3">Software / Tools</h4><ul className="list-disc pl-5 space-y-2">{yd.tools.map((s, i) => <li key={i}>{s}</li>)}</ul></div>
                           {yd.outcome && <div className="pt-2"><strong className="text-[#20283A]">Outcome:</strong> {yd.outcome}</div>}
                           {rm[`${key}_more`] && (
-                            <button type="button" onClick={() => toggleRm(`${key}_more`)} className="w-full flex justify-center items-center gap-1 text-[13px] font-bold text-[#1B4F91] hover:text-[#14284E] transition-colors py-1.5 mt-2">
+                            <button type="button" onClick={() => toggleRm(`${key}_more`)} className={buttonClasses("w-full flex justify-center items-center gap-1 text-[13px] font-bold text-[#1B4F91] hover:text-[#14284E] transition-colors py-1.5 mt-2")}>
                               Show Less <ChevronUp className="w-4 h-4" />
                             </button>
                           )}
@@ -593,14 +600,14 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                   </div>
                   {!rm[`${key}_more`] && (
                     <div className="mt-5 flex justify-center">
-                      <button type="button" onClick={() => toggleRm(`${key}_more`)} className="w-full flex justify-center items-center gap-1 text-[13px] font-bold text-[#1B4F91] hover:text-[#14284E] transition-colors py-1.5 border border-[#DCE6F2] rounded-lg bg-[#F6FAFE] hover:bg-[#EAF2FB]">
+                      <button type="button" onClick={() => toggleRm(`${key}_more`)} className={buttonClasses("w-full flex justify-center items-center gap-1 text-[13px] font-bold text-[#1B4F91] hover:text-[#14284E] transition-colors py-1.5 border border-[#DCE6F2] rounded-lg bg-[#F6FAFE] hover:bg-[#EAF2FB]")}>
                         See Full Curriculum <ChevronDown className="w-4 h-4" />
                       </button>
                     </div>
                   )}
                   {rm[`${key}_more`] && (
                     <div className="mt-5 flex justify-center">
-                      <button type="button" onClick={() => toggleRm(`${key}_more`)} className="w-full flex justify-center items-center gap-1 text-[13px] font-bold text-[#1B4F91] hover:text-[#14284E] transition-colors py-1.5 px-6 border border-[#DCE6F2] rounded-lg bg-[#F6FAFE] hover:bg-[#EAF2FB]">
+                      <button type="button" onClick={() => toggleRm(`${key}_more`)} className={buttonClasses("w-full flex justify-center items-center gap-1 text-[13px] font-bold text-[#1B4F91] hover:text-[#14284E] transition-colors py-1.5 px-6 border border-[#DCE6F2] rounded-lg bg-[#F6FAFE] hover:bg-[#EAF2FB]")}>
                         Show Less <ChevronUp className="w-4 h-4" />
                       </button>
                     </div>
@@ -743,8 +750,8 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
             {/* Mobile industry scroll */}
             <div className="md:hidden mt-4 relative">
               <div className="flex gap-2 justify-end mb-3 shrink-0">
-                <button type="button" onClick={() => scrollIndustries("left")} className="w-8 h-8 rounded-md border border-[#DCE6F2] bg-white text-[#14284E] flex items-center justify-center transition-colors hover:border-[#1B4F91] hover:text-[#1B4F91]"><ArrowLeft className="w-4 h-4" /></button>
-                <button type="button" onClick={() => scrollIndustries("right")} className="w-8 h-8 rounded-md border border-[#DCE6F2] bg-white text-[#14284E] flex items-center justify-center transition-colors hover:border-[#1B4F91] hover:text-[#1B4F91]"><ArrowRight className="w-4 h-4" /></button>
+                <button type="button" onClick={() => scrollIndustries("left")} className={buttonClasses("w-8 h-8 rounded-md border border-[#DCE6F2] bg-white text-[#14284E] flex items-center justify-center transition-colors hover:border-[#1B4F91] hover:text-[#1B4F91]")}><ArrowLeft className="w-4 h-4" /></button>
+                <button type="button" onClick={() => scrollIndustries("right")} className={buttonClasses("w-8 h-8 rounded-md border border-[#DCE6F2] bg-white text-[#14284E] flex items-center justify-center transition-colors hover:border-[#1B4F91] hover:text-[#1B4F91]")}><ArrowRight className="w-4 h-4" /></button>
               </div>
               <div ref={industriesScrollRef} className="flex flex-nowrap gap-3 overflow-x-auto pb-2 scrollbar-hide scroll-smooth">
                 {careerOpportunities.industries.map((item, i) => (
@@ -756,7 +763,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                 ))}
               </div>
               <div className="mt-5 flex justify-center w-full">
-                <a href="tel:9838904666" className="inline-flex items-center gap-1.5 px-5 py-2.5 bg-[#ffb703] hover:bg-[#ffa000] text-[#14284E] text-[14px] font-semibold rounded-lg shadow-sm transition-colors uppercase">
+                <a href="tel:9838904666" className={buttonClasses("inline-flex items-center gap-1.5 px-5 py-2.5 bg-[#ffb703] hover:bg-[#ffa000] text-[#14284E] text-[14px] font-semibold rounded-lg shadow-sm transition-colors uppercase")}>
                   <CustomerSupportIcon className="w-4 h-4" /> Talk to Counsellor
                 </a>
               </div>
@@ -768,7 +775,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                 <div className="w-full"><img src={careerOpportunities.imageUrl} alt={careerOpportunities.imageAlt} className="w-full aspect-[4/3] sm:aspect-[16/10] object-cover rounded-xl border border-[#DCE6F2]" loading="lazy" /></div>
                 <div className="pr-4">
                   <p className="text-[15px] leading-relaxed text-[#4B5A72] text-justify">{careerOpportunities.description}</p>
-                  <a href="tel:9838904666" className="inline-flex items-center gap-2 mt-5 px-5 py-2.5 bg-[#ffb703] text-[#14284E] text-[14px] font-semibold rounded-lg hover:bg-[#ffa000] hover:-translate-y-0.5 transition-all shadow-md hover:shadow-lg uppercase">
+                  <a href="tel:9838904666" className={buttonClasses("inline-flex items-center gap-2 mt-5 px-5 py-2.5 bg-[#ffb703] text-[#14284E] text-[14px] font-semibold rounded-lg hover:bg-[#ffa000] hover:-translate-y-0.5 transition-all shadow-md hover:shadow-lg uppercase")}>
                     <CustomerSupportIcon className="w-4 h-4" /> Talk to Counsellor
                   </a>
                 </div>
