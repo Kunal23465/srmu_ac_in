@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type EventVideoProps = {
   src: string;
@@ -6,14 +6,17 @@ type EventVideoProps = {
   className?: string;
   controls?: boolean;
   label?: string;
+  showPosterUntilPlaying?: boolean;
 };
 
-export default function EventVideo({ src, poster, className, controls = false, label }: EventVideoProps) {
+export default function EventVideo({ src, poster, className, controls = false, label, showPosterUntilPlaying = false }: EventVideoProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [hasStarted, setHasStarted] = useState(false);
 
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
+    setHasStarted(false);
 
     let loaded = false;
     let visible = false;
@@ -89,5 +92,10 @@ export default function EventVideo({ src, poster, className, controls = false, l
     };
   }, [src, controls]);
 
-  return <video ref={videoRef} poster={poster} muted loop playsInline controls={controls} preload="none" className={className} aria-label={controls ? label : undefined} aria-hidden={controls ? undefined : true} />;
+  return <>
+    <video ref={videoRef} poster={poster} muted loop playsInline controls={controls} preload="none" className={className} aria-label={controls ? label : undefined} aria-hidden={controls ? undefined : true} onPlaying={showPosterUntilPlaying ? () => setHasStarted(true) : undefined} />
+    {showPosterUntilPlaying && !hasStarted && (
+      <img src={poster} alt="" aria-hidden="true" className={className} style={{ pointerEvents: "none" }} />
+    )}
+  </>;
 }

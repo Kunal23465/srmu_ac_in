@@ -7,6 +7,11 @@ import desktopEventsBanner from "../../assets/images/event-new/banners/desktop-v
 import insidersBannerImage from "../../assets/images/event-new/new/insiders-banner.webp";
 import scannerImage from "../../assets/images/event-new/new/scanner.webp";
 import mobileEventsBanner from "../../assets/images/event-new/banners/mobile-view.webp";
+import vivekaThumbnail from "../../assets/images/event-new/thumbnails/Techno.webp";
+import anubhutiThumbnail from "../../assets/images/event-new/thumbnails/Cultural Event.webp";
+import ullasThumbnail from "../../assets/images/event-new/thumbnails/Ullas.webp";
+import dharoharThumbnail from "../../assets/images/event-new/thumbnails/Dharohar.webp";
+import harmonyThumbnail from "../../assets/images/event-new/thumbnails/HArmony.webp";
 import facultyTrainingImage from "../../assets/images/event-new/academic-event/Faculty-training-Development.jpg";
 import conferenceImage from "../../assets/images/event-new/academic-event/conference.webp";
 import workshopImage from "../../assets/images/event-new/academic-event/academic-workshop-group-portrait.webp";
@@ -38,17 +43,24 @@ const eventButtonClassName = "inline-flex max-w-full w-fit items-center justify-
 
 const categories = [
   { name: "Academic", title: "Academic Events", id: "academic-events", Icon: GraduationCap, description: "Conferences, faculty development programmes, workshops, guest lectures and alumni interactions.", reelVideo: undefined as EventVideoAsset | undefined },
-  { name: "Technical", title: "Technical Events", id: "technical-events", Icon: Cpu, description: "Hackathons, coding competitions, technical workshops, project exhibitions and innovation events.", reelVideo: technicalVideo },
-  { name: "Cultural", title: "Cultural Events", id: "cultural-events", Icon: Music, description: "Cultural festivals, music, dance, drama, literary activities and celebrations.", reelVideo: culturalVideo },
-  { name: "Sports", title: "Sports", id: "sports-events", Icon: Trophy, description: "Annual sports meets, inter-college competitions, athletics and indoor and outdoor activities.", reelVideo: sportsVideo },
-  { name: "Special", title: "Celebrity & Special", id: "special-events", Icon: Mic, description: "Celebrity interactions, industry leader talks, motivational sessions and distinguished speakers.", reelVideo: celebrityVideo },
+  { name: "Viveka", title: "Viveka", id: "technical-events", Icon: Cpu, description: "Showcasing innovation, technical expertise, and future-ready ideas through exciting technology-driven events.", reelVideo: technicalVideo },
+  { name: "Anubhuti", title: "Anubhuti", id: "cultural-events", Icon: Music, description: "Bringing technology, creativity, and innovation together through an exciting annual festival of ideas and talent.", reelVideo: culturalVideo },
+  { name: "Utsaah & Ullaas", title: "Utsaah & Ullaas", id: "sports-events", Icon: Trophy, description: "Inspiring sportsmanship, teamwork, and a winning spirit through energetic sporting competitions.", reelVideo: sportsVideo },
+  { name: "Special", title: "Celebrity & Special", id: "special-events", Icon: Mic, description: "Creating unforgettable campus experiences with celebrated artists, performers, and special guests.", reelVideo: celebrityVideo },
   { name: "Holiday", title: "Holidays", id: "holiday-events", Icon: Palmtree, description: "University holidays, mandatory celebration days and restricted holidays.", reelVideo: undefined as EventVideoAsset | undefined },
 ];
 const exploreReels = [
   ...categories.filter(({ reelVideo }) => !!reelVideo),
-  { name: "Darohar", title: "Darohar", Icon: Music, description: "Highlights from Darohar at SRMU.", reelVideo: daroharVideo },
-  { name: "Harmony 2026", title: "Harmony 2026", Icon: Music, description: "Highlights from Harmony 2026 at SRMU.", reelVideo: harmony2026Video },
+  { name: "Dharohar", title: "Dharohar", Icon: Music, description: "Celebrating India’s rich cultural heritage, traditions, and artistic expression through vibrant performances.", reelVideo: daroharVideo },
+  { name: "Harmony", title: "Harmony", Icon: Music, description: "Bringing the campus alive with music, dance, and performances that unite diverse talents.", reelVideo: harmony2026Video },
 ];
+const exploreThumbnails: Record<string, string> = {
+  Viveka: vivekaThumbnail,
+  Anubhuti: anubhutiThumbnail,
+  "Utsaah & Ullaas": ullasThumbnail,
+  Dharohar: dharoharThumbnail,
+  "Harmony 2026": harmonyThumbnail,
+};
 const academic = [
   { title: "Faculty Training & Development", label: "Faculty Development", description: "Structured programmes building teaching and research capability.", image: facultyTrainingImage, imagePosition: "center 45%", alt: "Faculty development programme participants gathered in an auditorium" },
   { title: "Conferences", label: "Research & Knowledge", description: "Research presentations and expert-led discussions across disciplines.", image: conferenceImage, imagePosition: "center", alt: "Conference delegates presenting publications on stage at SRMU" },
@@ -70,8 +82,8 @@ const cultural = [
   { title: "Dandiya Night", video: dandiyaNightVideo },
   { title: "Fun day", video: funDayVideo },
   { title: "Harmony", video: harmonyVideo },
-  { title: "Darohar", video: daroharVideo },
-  { title: "Harmony 2026", video: harmony2026Video },
+  { title: "Dharohar", video: daroharVideo },
+  { title: "Harmony", video: harmony2026Video },
   { title: "Independence Day", video: independenceDayVideo },
   { title: "Rang Barshe", video: rangBarsheVideo },
 ];
@@ -91,7 +103,7 @@ const special = [
   { title: "Darshan Raval", video: srmuDarshanVideo },
   { title: "Shaan", video: shaanVideo },
   { title: "Shilpa Rao", video: shilpaRaoVideo },
-  { title: "Sunny Deol", video: sunnyDeolVideo },
+  { title: "Sunny Deol & Preity Zinta", video: sunnyDeolVideo },
 ];
 const faqs = [
   ["What types of events are organised at SRMU?", "SRMU organises academic, technical, cultural, sports and special events across departments throughout the year."],
@@ -111,7 +123,7 @@ function Placeholder({ label, children }: { label: string; children?: ReactNode 
   </div>;
 }
 
-function Section({ id, title, description, alternate, className = "", children }: { id?: string; title: string; description?: string; alternate?: boolean; className?: string; children: ReactNode }) {
+function Section({ id, title, description, alternate, className = "", children }: { id?: string; title: ReactNode; description?: string; alternate?: boolean; className?: string; children: ReactNode }) {
   return <section id={id} className={`py-[52px] min-[861px]:py-[76px] ${alternate ? "bg-[#E0F1FF]" : ""} ${className}`}>
     <div className={Global.container}>
       <div className="mb-[34px] max-w-full [&>p]:mt-3.5"><h2>{title}</h2>{description && <p>{description}</p>}</div>
@@ -377,7 +389,7 @@ export default function NewEventComponent() {
           <div className={styles.heroContent}>
             {/* <p className="mb-4 flex items-center gap-[9px] text-[.78rem] font-bold tracking-[.1em] text-white uppercase"><span className="size-2 rounded-full bg-[#FFB703]" /> Events & Activities</p> */}
             <h1 id="events-hero-title" className="text-white">Events at Shri Ramswaroop Memorial University <span className="text-[#FFB703]">(SRMU)</span></h1>
-            <p className="mt-6 mb-7 hidden max-w-[570px] text-white/90 min-[861px]:block">Discover academic, technical, cultural, sports and special events that bring together students, faculty, industry experts, alumni and distinguished guests at SRMU.</p>
+            <p className="mt-6 mb-7 hidden max-w-[570px] text-white/90 min-[861px]:block">Unleash Your Inner Stage</p>
             <div className="hidden flex-wrap items-center gap-3 min-[861px]:flex">
               <a href="#categories" className={`${eventButtonClassName} focus-visible:outline-white!`}>Explore Events <ArrowRight size={18} aria-hidden="true" /></a>
               <a href="#calendar" className="inline-flex max-w-full w-fit items-center justify-center gap-2 rounded-lg border border-white/70 bg-[#14284E]/25 px-8 py-3 text-center text-[14px] font-bold tracking-wider text-white uppercase shadow-md shadow-[#14284E]/10 cursor-pointer transition-colors hover:bg-white/15 focus-visible:outline-white! [&>svg]:shrink-0"><CalendarDays size={18} aria-hidden="true" /> View Event Calendar</a>
@@ -437,7 +449,7 @@ export default function NewEventComponent() {
             <a key={name} href={`#${categories.find(category => category.name === name)?.id ?? "cultural-events"}`}
               className={styles.explorePanel} data-active={activePanel === name}
               onMouseEnter={() => setActivePanel(name)} onFocus={() => setActivePanel(name)}>
-              {reelVideo && <EventVideo {...reelVideo} className={styles.panelMedia} />}
+              {reelVideo && <EventVideo {...reelVideo} poster={exploreThumbnails[name] ?? reelVideo.poster} showPosterUntilPlaying className={styles.panelMedia} />}
               <span className={styles.panelIcon}><Icon size={20} aria-hidden="true" /></span>
               <div className={styles.panelCopy}><h3>{title}</h3><p>{description}</p></div>
             </a>
@@ -450,17 +462,17 @@ export default function NewEventComponent() {
         <div className="mt-8"><a href="#calendar" className={`${eventButtonClassName} !bg-[#14284E] !text-white`} onClick={() => chooseCategory("Academic")}>View All Academic Events<ArrowRight size={16} /></a></div>
       </Section>
 
-      <Section id="technical-events" title="Technical Events" description="Activities designed to encourage innovation, problem-solving, practical learning and industry exposure.">
+      <Section id="technical-events" title={<>Technical Events - <span className="text-[#FFB703]">Viveka</span></>} description="Activities designed to encourage innovation, problem-solving, practical learning and industry exposure.">
         <EventCardGrid events={[...technical.filter(event => event.title !== "Industrial Visits"), technical[4]]} variant="technical" />
         <div className="mt-8"><a href="#calendar" className={eventButtonClassName} onClick={() => chooseCategory("Technical")}>View All Technical Events<ArrowRight size={16} /></a></div>
       </Section>
 
-      <Section id="cultural-events" title="Cultural Events" description="Celebrations of music, art, drama and literature that bring the SRMU community together." className={styles.darkSection}>
+      <Section id="cultural-events" title={<>Cultural Events - <span className="text-[#FFB703]">Dharohar</span></>} description="Celebrations of music, art, drama and literature that bring the SRMU community together." className={styles.darkSection}>
         <VideoGallery items={cultural} label="Cultural event videos" autoAdvance />
         <div className="mt-8"><a href="#calendar" className={eventButtonClassName} onClick={() => chooseCategory("Cultural")}>Explore Cultural Events <ArrowRight size={16} /></a></div>
       </Section>
 
-      <Section id="sports-events" title="Sports & Fitness" description="Sports at SRMU encourage teamwork, discipline, leadership and a healthy campus lifestyle." alternate>
+      <Section id="sports-events" title={<>Sports &amp; Fitness - <span className="text-[#FFB703]">Utsaah &amp; Ullaas</span></>} description="Sports at SRMU encourage teamwork, discipline, leadership and a healthy campus lifestyle." alternate>
         <div className={styles.sportsMeets} role="group" aria-label="Sports meets">
           {["Utsaah", "Ullas"].map(meet => <button type="button" key={meet} aria-pressed={sportsMeet === meet} onClick={() => setSportsMeet(meet)}>
             <span className={styles.meetIcon}><Trophy aria-hidden="true" /></span>
@@ -480,7 +492,7 @@ export default function NewEventComponent() {
         <div className="mt-8"><a href="#calendar" className={eventButtonClassName} onClick={() => chooseCategory("Sports")}>View Sports Events <ArrowRight size={16} aria-hidden="true" /></a></div>
       </Section>
 
-      <Section id="special-events" title="Celebrity & Special Events" description="Engage with distinguished personalities, industry leaders, experts and inspiring speakers through special sessions at SRMU." className={`${styles.darkSection} ${styles.specialSection}`}>
+      <Section id="special-events" title={<span className="text-[#FFB703]">Celebrity &amp; Special Events</span>} description="Engage with distinguished personalities, industry leaders, experts and inspiring speakers through special sessions at SRMU." className={`${styles.darkSection} ${styles.specialSection}`}>
         <VideoGallery items={special} label="Special event videos" celebrity />
         <div className="mt-8"><a href="#calendar" className={eventButtonClassName} onClick={() => chooseCategory("Special")}>Explore Special Events <ArrowRight size={16} /></a></div>
       </Section>

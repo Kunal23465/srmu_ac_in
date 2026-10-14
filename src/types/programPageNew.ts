@@ -120,6 +120,8 @@ export interface LabCardNew {
   tagline: string;
   description: string;
   items: string[];
+  /** Optional lab photo shown above the lab card content */
+  imageUrl?: string;
 }
 
 export interface CurriculumOverlayItemNew {
@@ -140,6 +142,8 @@ export interface LabsDataNew {
   curriculumDescription: string;
   /** Video URL shown in the reel */
   reelVideoUrl: string;
+  /** Optional poster shown before the reel video loads or plays */
+  reelPosterUrl?: string;
   /** Optional background image for the first lab card */
   cardBackgroundImageUrl?: string;
   labs: LabCardNew[];

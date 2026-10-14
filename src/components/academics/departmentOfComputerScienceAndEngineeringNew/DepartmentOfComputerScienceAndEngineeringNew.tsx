@@ -4,6 +4,7 @@ import Classes from "../../../utils/styles/Global.module.css";
 import DepartmentSectionNav from "./DepartmentSectionNav";
 import DepartmentPlacements from "./DepartmentPlacements";
 import DepartmentFaculty from "./DepartmentFaculty";
+import CareerBackground, { MobileCareerBackground } from "./CareerBackground";
 import KamleshImg from "../../../assets/images/academics/institutes/cse/cse2.jpeg";
 import SakshiImg from "../../../assets/images/academics/institutes/cse/cse3.jpeg";
 import logosrmcem from "../../../assets/images/University-Logo-White.png";
@@ -511,11 +512,11 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                     @keyframes cse-m-breathe {
                         0%, 100% {
                             transform: scale(1);
-                            filter: drop-shadow(0 0 0px rgba(38,61,112,0)) drop-shadow(0 6px 8px rgba(20,40,78,0.30));
+                            filter: drop-shadow(0 0 0px rgba(214,44,43,0)) drop-shadow(0 6px 8px rgba(214,44,43,0.20));
                         }
                         50% {
                             transform: scale(1.07);
-                            filter: drop-shadow(0 0 18px rgba(55,130,220,0.65)) drop-shadow(0 0 30px rgba(215,152,48,0.35)) drop-shadow(0 8px 16px rgba(20,40,78,0.40));
+                            filter: drop-shadow(0 0 18px rgba(214,44,43,0.20)) drop-shadow(0 8px 16px rgba(214,44,43,0.25));
                         }
                     }
                 }
@@ -524,12 +525,27 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                     transform-origin: 520px 350px;
                 }
                 .cse-career-diagram { display: block; width: 100%; }
+                @media (min-width: 1200px) {
+                    .cse-career-diagram .cse-career-vectors { display: none; }
+                }
+                .cse-career-vector {
+                    opacity: 0.65;
+                    pointer-events: none;
+                    transform-box: fill-box;
+                    transform-origin: center;
+                }
                 @media (max-width: 639px) {
                     .cse-career-diagram { display: none; }
                 }
                 @media (prefers-reduced-motion: no-preference) {
                     .cse-career-orbit { animation: cse-career-spin 60s linear infinite; }
                     .cse-career-core { animation: cse-career-breathe 5s ease-in-out infinite; }
+                    .cse-career-vector { animation: cse-career-drift 8s ease-in-out infinite; }
+                    .cse-career-vectors > g:nth-child(even) .cse-career-vector { animation-delay: -4s; animation-duration: 10s; }
+                }
+                @keyframes cse-career-drift {
+                    0%, 100% { transform: translateY(0) rotate(-5deg); }
+                    50% { transform: translateY(10px) rotate(5deg); }
                 }
                 @keyframes cse-career-spin { to { transform: rotate(360deg); } }
                 @keyframes cse-career-breathe {
@@ -1434,8 +1450,9 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                     </div>
                 </section>
                 {/* ── Career Pathways ──────────────────────────────────────── */}
-                <section id="careers" className="pt-6 pb-2 md:pt-8 md:pb-3 px-4 sm:px-6 bg-[#EEF5FC] border-b-[8px] border-[#ffb703] overflow-hidden">
-                    <div className={`${Classes["container"]} cse-content-container`}>
+                <section id="careers" className="relative isolate pt-6 pb-2 md:pt-8 md:pb-3 px-4 sm:px-6 bg-[#EEF5FC] border-b-[8px] border-[#ffb703] overflow-hidden">
+                    <CareerBackground />
+                    <div className={`${Classes["container"]} cse-content-container relative z-10`}>
                         <div className="w-full mb-4 sm:mb-5 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
                             <div className="text-left max-w-3xl">
                                 <h2 className="text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E]">
@@ -1450,14 +1467,17 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                 <title id="cse-career-title">Career Opportunities</title>
                                 <desc id="cse-career-description">{careerItems.map(lines => lines.join(" ")).join(", ")}</desc>
                                 <defs>
-                                    <linearGradient id="cse-career-gradient" x1="0" y1="0" x2="1" y2="1">
-                                        <stop offset="0%" stopColor="#263d70" />
-                                        <stop offset="100%" stopColor="#192748" />
-                                    </linearGradient>
                                     <filter id="cse-career-shadow" x="-40%" y="-40%" width="180%" height="200%">
-                                        <feDropShadow dx="0" dy="16" stdDeviation="13" floodColor="#14284e" floodOpacity="0.22" />
+                                        <feDropShadow dx="0" dy="16" stdDeviation="13" floodColor="#D62C2B" floodOpacity="0.22" />
                                     </filter>
                                 </defs>
+                                {/* Fixed side pockets keep the moving vectors clear of the heading and career labels. */}
+                                <g className="cse-career-vectors" aria-hidden="true" focusable="false">
+                                    <g transform="translate(35 125)"><g className="cse-career-vector"><Code2 width={58} height={58} stroke="#B5D7F5" strokeWidth={1.2} /></g></g>
+                                    <g transform="translate(945 125)"><g className="cse-career-vector"><BrainCircuit width={58} height={58} stroke="#B5D7F5" strokeWidth={1.2} /></g></g>
+                                    <g transform="translate(35 475)"><g className="cse-career-vector"><Database width={54} height={54} stroke="#B5D7F5" strokeWidth={1.2} /></g></g>
+                                    <g transform="translate(945 475)"><g className="cse-career-vector"><Share2 width={54} height={54} stroke="#B5D7F5" strokeWidth={1.2} /></g></g>
+                                </g>
                                 <g className="cse-career-orbit" aria-hidden="true">
                                     <circle cx="520" cy="350" r="240" fill="none" stroke="#ccd5e1" strokeWidth="2" strokeDasharray="6 5" />
                                     <circle cx="520" cy="128" r="5" fill="#ffb703" />
@@ -1470,8 +1490,8 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                 </g>
                                 <circle cx="520" cy="350" r="163" fill="none" stroke="#ffb703" strokeOpacity="0.35" strokeWidth="2" />
                                 <g className="cse-career-core">
-                                    <circle cx="520" cy="350" r="131" fill="#14284e" fillOpacity="0.045" />
-                                    <circle cx="520" cy="350" r="112" fill="url(#cse-career-gradient)" filter="url(#cse-career-shadow)" />
+                                    <circle cx="520" cy="350" r="131" fill="#D62C2B" fillOpacity="0.045" />
+                                    <circle cx="520" cy="350" r="112" fill="#D62C2B" filter="url(#cse-career-shadow)" />
                                     <text x="520" y="338" textAnchor="middle" fill="white" fontSize="23" fontWeight="700">
                                         <tspan x="520">Career</tspan>
                                         <tspan x="520" dy="28">Opportunities</tspan>
@@ -1501,14 +1521,12 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                 aria-label="Career Opportunities diagram"
                             >
                                 <defs>
-                                    <linearGradient id="cse-m-grad" x1="0" y1="0" x2="1" y2="1">
-                                        <stop offset="0%" stopColor="#263d70" />
-                                        <stop offset="100%" stopColor="#192748" />
-                                    </linearGradient>
                                     <filter id="cse-m-shadow" x="-40%" y="-40%" width="180%" height="200%">
-                                        <feDropShadow dx="0" dy="6" stdDeviation="7" floodColor="#14284e" floodOpacity="0.25" />
+                                        <feDropShadow dx="0" dy="6" stdDeviation="7" floodColor="#D62C2B" floodOpacity="0.25" />
                                     </filter>
                                 </defs>
+
+                                <MobileCareerBackground />
 
                                 {/* Dashed orbit ring ONLY — this rotates */}
                                 <g className="cse-m-orbit" aria-hidden="true">
@@ -1525,7 +1543,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
 
                                 {/* Core — breathing animation */}
                                 <g className="cse-m-core">
-                                    <circle cx="185" cy="195" r="68" fill="url(#cse-m-grad)" filter="url(#cse-m-shadow)" />
+                                    <circle cx="185" cy="195" r="68" fill="#D62C2B" filter="url(#cse-m-shadow)" />
                                     <text x="185" y="187" textAnchor="middle" fill="white" fontSize="13" fontWeight="700">
                                         <tspan x="185">Career</tspan>
                                         <tspan x="185" dy="17">Opportunities</tspan>

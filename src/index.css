@@ -22,6 +22,10 @@
   padding: 0;
   cursor: pointer;
 }
+.program-page-new button,
+.program-page-new a {
+  font-weight: 700;
+}
 @media (max-width: 639px) {
   .rm-btn { display: inline-flex; }
 }

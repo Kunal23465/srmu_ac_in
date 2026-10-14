@@ -6,6 +6,15 @@
 // ============================================================
 
 import type { ProgramPageDataNew } from "../../types/programPageNew";
+import cloudSecurityLab from "../../assets/images/cyber-security-new/Cloud Security Lab.webp";
+import cyberSecuritySimulationLab from "../../assets/images/cyber-security-new/Cyber Security Simulation Lab.webp";
+import digitalForensicsLab from "../../assets/images/cyber-security-new/Digital Forensics Lab.webp";
+import ethicalHackingLab from "../../assets/images/cyber-security-new/Ethical Hacking Lab.webp";
+import reelThumbnail from "../../assets/images/cyber-security-new/Reel Thumnail.webp";
+import industrialControlSystems from "../../assets/images/cyber-security-new/Securing Industrial Control Systems-OT Security.webp";
+import socLearningEnvironment from "../../assets/images/cyber-security-new/Security Operations Centre (SOC) Learning Environment.webp";
+import studentsPlaced from "../../assets/images/cyber-security-new/Where Our Students Get Placed.webp";
+import whyStudyCyberSecurity from "../../assets/images/cyber-security-new/Why Study B.Tech CSE Cyber Security in 2027.webp";
 
 const cyberSecurityNewData: ProgramPageDataNew = {
   // ----------------------------------------------------------
@@ -33,7 +42,7 @@ const cyberSecurityNewData: ProgramPageDataNew = {
       "Cybersecurity has become important across banks, hospitals, government organizations, e-commerce, manufacturing, technology companies, and cloud-based services. As organizations adopt cloud computing, artificial intelligence, IoT, and digital payments, they need professionals who can identify vulnerabilities, protect data, and respond to security threats.",
       "A B.Tech in Computer Science and Engineering with Cyber Security provides students with a foundation in both computer science and information security, making it a relevant choice for students exploring the best B.Tech college in Lucknow for future-focused engineering education.",
     ],
-    imageUrl: "https://ik.imagekit.io/ttalcskjf/IMAGE%201.webp",
+    imageUrl: whyStudyCyberSecurity,
     imageAlt: "Data Protection - Cyber Security Growth",
     benefitCards: [
       { title: "High Demand", description: "Cybersecurity roles are growing exponentially worldwide." },
@@ -101,7 +110,7 @@ const cyberSecurityNewData: ProgramPageDataNew = {
       secondaryBadge: "OT SECURITY",
       title: "Securing Industrial Control Systems-OT Security",
       presenter: "Mr. Rajeev Malhotra, L&T Cyber Security Division",
-      imageUrl: "/Cyber-awareness-workshop.webp",
+      imageUrl: industrialControlSystems,
       paragraphs: [
         "Topic: Securing Industrial Control Systems (OT Security)",
         "The session explored how Operational Technology (OT) networks used in manufacturing environments can be targeted by cyber attackers.",
@@ -143,7 +152,7 @@ const cyberSecurityNewData: ProgramPageDataNew = {
       { val: "1200+", label: "Job Offers Given" },
       { val: "225+", label: "Students Placed" },
     ],
-    imageUrl: "https://ik.imagekit.io/ttalcskjf/IMAGE%202.webp?updatedAt=1788439003256",
+    imageUrl: studentsPlaced,
     imageAlt: "Student preparing for career and placement",
     placementDetailUrl: "https://srmu.ac.in/placements",
   },
@@ -172,11 +181,13 @@ const cyberSecurityNewData: ProgramPageDataNew = {
     curriculumDescription:
       "Strengthened through academic collaboration with L&T, the curriculum bridges university education and industry expectations through application-oriented learning, case studies and problem-solving methodologies.",
     reelVideoUrl: "/MicrosoftTeams-video.mp4",
+    reelPosterUrl: reelThumbnail,
     cardBackgroundImageUrl: "/backgroundIm.png",
     labs: [
       {
         label: "LAB / 01",
         title: "Cyber Security Simulation Lab",
+        imageUrl: cyberSecuritySimulationLab,
         tagline: "Experience real-world attack scenarios safely.",
         description:
           "Students analyse vulnerabilities, secure systems, and understand how organisations defend against modern cyber threats.",
@@ -185,6 +196,7 @@ const cyberSecurityNewData: ProgramPageDataNew = {
       {
         label: "LAB / 02",
         title: "Ethical Hacking Lab",
+        imageUrl: ethicalHackingLab,
         tagline: "Think like an attacker to build stronger security.",
         description: "Students learn ethical hacking techniques under expert supervision in legal, controlled lab environments.",
         items: ["Password Security", "Web Application Testing", "Network Exploitation", "Wireless Security", "Reconnaissance", "Vulnerability Scanning"],
@@ -192,6 +204,7 @@ const cyberSecurityNewData: ProgramPageDataNew = {
       {
         label: "LAB / 03",
         title: "Digital Forensics Lab",
+        imageUrl: digitalForensicsLab,
         tagline: "Every cyber attack leaves digital evidence.",
         description: "Students learn how investigators recover, preserve, and analyse digital evidence using professional forensic methodologies.",
         items: ["Log Analysis", "Hard Disk Investigation", "Incident Documentation", "Memory Forensics", "Email Investigation"],
@@ -199,6 +212,7 @@ const cyberSecurityNewData: ProgramPageDataNew = {
       {
         label: "LAB / 04",
         title: "Cloud Security Lab",
+        imageUrl: cloudSecurityLab,
         tagline: "Modern businesses run on cloud infrastructure.",
         description: "Students gain practical exposure to securing cloud environments across identity, storage, and deployment.",
         items: ["Identity & Access Management", "Cloud Storage Security", "Virtual Machine Security", "Secure Deployment", "Cloud Monitoring", "Multi-Cloud Architecture"],
@@ -206,6 +220,7 @@ const cyberSecurityNewData: ProgramPageDataNew = {
       {
         label: "LAB / 05",
         title: "Security Operations Centre (SOC) Learning Environment",
+        imageUrl: socLearningEnvironment,
         tagline: "Understand how organisations monitor threats 24×7.",
         description: "Students learn how a real SOC team detects, investigates and responds to live threats.",
         items: ["SIEM Monitoring", "Security Alerts", "Threat Intelligence", "Incident Response", "Log Correlation", "Threat Hunting"],

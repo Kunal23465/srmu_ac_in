@@ -1,14 +1,75 @@
+import React from "react";
 import { ArrowRight, BriefcaseBusiness, ChartNoAxesColumnIncreasing, Trophy, UsersRound } from "lucide-react";
 import styles from "./DepartmentPlacements.module.css";
 
-const statistics = [
+import PlacementLogoLT from "../../../assets/new-home/new-placement-logos/1.png";
+import PlacementLogoHCL from "../../../assets/new-home/new-placement-logos/2.png";
+import PlacementLogoAccenture from "../../../assets/new-home/new-placement-logos/3.png";
+import PlacementLogoCapgemini from "../../../assets/new-home/new-placement-logos/4.png";
+import PlacementLogoCognizant from "../../../assets/new-home/new-placement-logos/5.png";
+import PlacementLogoIBM from "../../../assets/new-home/new-placement-logos/6.png";
+import PlacementLogoTechMahindra from "../../../assets/new-home/new-placement-logos/7.png";
+import PlacementLogoDeloitte from "../../../assets/new-home/new-placement-logos/8.png";
+import PlacementLogoTCS from "../../../assets/new-home/new-placement-logos/9.png";
+import PlacementLogoEY from "../../../assets/new-home/new-placement-logos/10.png";
+import PlacementLogoWipro from "../../../assets/new-home/new-placement-logos/11.png";
+import PlacementLogoInfosys from "../../../assets/new-home/new-placement-logos/12.png";
+
+export const defaultRecruiterLogos: [string, string][] = [
+    [PlacementLogoCognizant, "Cognizant"],
+    [PlacementLogoDeloitte, "Deloitte"],
+    [PlacementLogoEY, "EY"],
+    [PlacementLogoTCS, "TCS"],
+    [PlacementLogoInfosys, "Infosys"],
+    [PlacementLogoWipro, "Wipro"],
+    [PlacementLogoLT, "L&T"],
+    [PlacementLogoHCL, "HCL Technologies"],
+    [PlacementLogoAccenture, "Accenture"],
+    [PlacementLogoCapgemini, "Capgemini"],
+    [PlacementLogoTechMahindra, "Tech Mahindra"],
+    [PlacementLogoIBM, "IBM"],
+];
+
+const defaultStatistics = [
     { value: "₹53 LPA", label: "Highest Package", Icon: Trophy },
     { value: "₹4.5 LPA", label: "Average Package", Icon: ChartNoAxesColumnIncreasing },
     { value: "1200+", label: "Job Offers Given", Icon: BriefcaseBusiness },
     { value: "225+", label: "Students Placed", Icon: UsersRound },
 ];
 
-export default function DepartmentPlacements({ recruiters }: { recruiters: [string, string][] }) {
+const defaultIcons = [Trophy, ChartNoAxesColumnIncreasing, BriefcaseBusiness, UsersRound];
+
+export interface DepartmentPlacementsProps {
+    recruiters?: [string, string][] | readonly (readonly [string, string])[];
+    stats?: { val?: string; value?: string; label: string }[];
+    imageUrl?: string;
+    imageAlt?: string;
+    placementDetailUrl?: string;
+    description?: string;
+}
+
+export default function DepartmentPlacements({
+    recruiters,
+    stats,
+    imageUrl,
+    imageAlt,
+    placementDetailUrl,
+    description,
+}: DepartmentPlacementsProps = {}) {
+    const activeRecruiters = (recruiters && recruiters.length > 0) ? recruiters : defaultRecruiterLogos;
+    const activeStats = (stats && stats.length > 0)
+        ? stats.map((s, idx) => ({
+            value: s.value || s.val || "",
+            label: s.label,
+            Icon: defaultIcons[idx % defaultIcons.length],
+        }))
+        : defaultStatistics;
+
+    const activeImage = imageUrl || "https://ik.imagekit.io/ttalcskjf/IMAGE%202.webp?updatedAt=1788439003256";
+    const activeImageAlt = imageAlt || "SRMU student preparing for a career in cybersecurity";
+    const activePlacementDetailUrl = placementDetailUrl || "https://srmu.ac.in/placements";
+    const activeDescription = description || "Dedicated placement training — resume building, coding practice, mock interviews and group discussions — starts from the final year.";
+
     return (
         <section id="placements" className={styles.section} aria-labelledby="cse-placements-title">
             <div className={styles.container}>
@@ -18,11 +79,10 @@ export default function DepartmentPlacements({ recruiters }: { recruiters: [stri
                             Where our Students <span>Get Placed</span>
                         </h2>
                         <p className={styles.description}>
-                            Dedicated placement training — resume building, coding practice, mock interviews
-                            and group discussions — starts from the final year.
+                            {activeDescription}
                         </p>
                         <dl className={styles.statistics}>
-                            {statistics.map(({ value, label, Icon }) => (
+                            {activeStats.map(({ value, label, Icon }) => (
                                 <div key={label} className={styles.statistic}>
                                     <dt>
                                         <span className={styles.icon} aria-hidden="true"><Icon size={32} strokeWidth={2.2} /></span>
@@ -41,8 +101,8 @@ export default function DepartmentPlacements({ recruiters }: { recruiters: [stri
                         </svg>
                         <div className={styles.imageFrame}>
                             <img
-                                src="https://ik.imagekit.io/ttalcskjf/IMAGE%202.webp?updatedAt=1788439003256"
-                                alt="SRMU student preparing for a career in cybersecurity"
+                                src={activeImage}
+                                alt={activeImageAlt}
                                 className={styles.image}
                                 width={700}
                                 height={470}
@@ -62,7 +122,7 @@ export default function DepartmentPlacements({ recruiters }: { recruiters: [stri
                         <div className={styles.recruitersTrack}>
                             {[0, 1].map(copy => (
                                 <div key={copy} className={styles.recruitersGroup} aria-hidden={copy === 1 ? true : undefined}>
-                                    {recruiters.map(([src, name]) => (
+                                    {activeRecruiters.map(([src, name]) => (
                                         <div key={name} className={styles.recruiter}>
                                             <img src={src} alt={copy === 0 ? name : ""} loading="lazy" decoding="async" />
                                         </div>
@@ -73,7 +133,7 @@ export default function DepartmentPlacements({ recruiters }: { recruiters: [stri
                     </div>
                 </div>
                 <div className={styles.details}>
-                    <a href="https://srmu.ac.in/placements" target="_blank" rel="noopener noreferrer">
+                    <a href={activePlacementDetailUrl} target="_blank" rel="noopener noreferrer">
                         View Placement Details <ArrowRight size={17} aria-hidden="true" />
                     </a>
                 </div>

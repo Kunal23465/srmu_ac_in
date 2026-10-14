@@ -1,6 +1,5 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useState, useRef } from "react";
 import Classes from "../../utils/styles/Global.module.css";
-import useEmblaCarousel from "embla-carousel-react";
 import {
   ArrowLeft, ArrowRight, Download, PhoneCall, Cpu, Lock, Code2, Shield,
   ChevronDown, ChevronUp, Settings, Wrench, PenTool, Zap, Factory, Car
@@ -8,37 +7,8 @@ import {
 import { Link } from "react-router-dom";
 import ltLogo from "../../assets/new-home/l-t.webp";
 import type { ProgramPageDataNew } from "../../types/programPageNew";
-
-// ----------------------------------------------------------------
-// Shared recruiter logos (same across all program pages)
-// ----------------------------------------------------------------
-const recruiterLogos = [
-  ["https://ik.imagekit.io/ttalcskjf/tcs.webp", "TCS"],
-  ["https://ik.imagekit.io/ttalcskjf/infosys.webp", "Infosys"],
-  ["https://ik.imagekit.io/ttalcskjf/Wipro.webp", "Wipro"],
-  ["https://upload.wikimedia.org/wikipedia/commons/e/e5/L%26T.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original", "L&T"],
-  ["https://ik.imagekit.io/ttalcskjf/images.png", "HCL Technologies"],
-  ["https://ik.imagekit.io/ttalcskjf/Accenture.webp", "Accenture"],
-  ["https://ik.imagekit.io/ttalcskjf/capgemini.webp", "Capgemini"],
-  ["https://ik.imagekit.io/ttalcskjf/TM.webp", "Tech Mahindra"],
-  ["https://ik.imagekit.io/ttalcskjf/IBM.webp", "IBM"],
-  ["https://ik.imagekit.io/ttalcskjf/Cognizant_logo_2022.svg.webp", "Cognizant"],
-  ["https://ik.imagekit.io/ttalcskjf/Deloitte.webp", "Deloitte"],
-  ["https://ik.imagekit.io/ttalcskjf/EY.webp", "EY"],
-] as const;
-
-const scholarshipItems = [
-  "SRMUSET Based Scholarship",
-  "MERIT Based Scholarship",
-  "Defence, Paramilitary & Police",
-  "Sibling/Ward of SRM Group Staff, Student & Alumni",
-  "Divyang",
-  "National/State Level",
-  "Sportsperson",
-  "Career Progression",
-  "Student of another state and country",
-  "Ward of a Single Parent",
-];
+import DepartmentPlacements, { defaultRecruiterLogos } from "../../components/academics/departmentOfComputerScienceAndEngineeringNew/DepartmentPlacements";
+import DepartmentScholarships from "../../components/academics/departmentOfComputerScienceAndEngineeringNew/DepartmentScholarships";
 
 // ----------------------------------------------------------------
 // Icon lookup helper
@@ -89,12 +59,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
   const { heroBanner, whyStudy, ltBenefits, industryExposure, placement, labs, yearJourney, fee, poPsoPlo, careerOpportunities, programComparison } = data;
 
   // ---- Refs ----
-  const labsScrollRef = useRef<HTMLDivElement>(null);
   const industriesScrollRef = useRef<HTMLDivElement>(null);
-
-  const scrollLabs = (direction: "left" | "right") => {
-    if (labsScrollRef.current) labsScrollRef.current.scrollBy({ left: direction === "left" ? -250 : 250, behavior: "smooth" });
-  };
   const scrollIndustries = (direction: "left" | "right") => {
     if (industriesScrollRef.current) industriesScrollRef.current.scrollBy({ left: direction === "left" ? -220 : 220, behavior: "smooth" });
   };
@@ -102,28 +67,15 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
   // ---- State ----
   const [activeTab, setActiveTab] = useState("year1");
   const [openSection, setOpenSection] = useState<string | null>(null);
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "start" });
-  const [canScrollPrev, setCanScrollPrev] = useState(false);
-  const [canScrollNext, setCanScrollNext] = useState(true);
   const [rm, setRm] = useState<Record<string, boolean>>({});
   const toggleRm = (k: string) => setRm((p) => ({ ...p, [k]: !p[k] }));
   const toggleSection = (section: string) => setOpenSection((cur) => (cur === section ? null : section));
-
-  useEffect(() => {
-    if (!emblaApi) return;
-    const update = () => { setCanScrollPrev(emblaApi.canScrollPrev()); setCanScrollNext(emblaApi.canScrollNext()); };
-    update();
-    emblaApi.on("select", update);
-    emblaApi.on("reInit", update);
-    const auto = window.setInterval(() => emblaApi.scrollNext(), 3500);
-    return () => { window.clearInterval(auto); emblaApi.off("select", update); emblaApi.off("reInit", update); };
-  }, [emblaApi]);
 
   const yearKeys = ["year1", "year2", "year3", "year4"] as const;
   const yearDataMap = { year1: yearJourney.year1, year2: yearJourney.year2, year3: yearJourney.year3, year4: yearJourney.year4 };
 
   return (
-    <div className="text-[#14284E] bg-white antialiased">
+    <div className="program-page-new text-[#14284E] bg-white antialiased">
       <main>
 
         {/* ===== HERO BANNER ===== */}
@@ -133,7 +85,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
           <div className="absolute inset-0 bg-gradient-to-r from-[#071329]/15 via-[#091a38]/5 to-transparent z-0"></div>
           <div className="absolute inset-0 bg-[radial-gradient(#38bdf820_1px,transparent_1px)] [background-size:28px_28px] pointer-events-none opacity-50 z-0"></div>
           <div className="absolute -top-20 -left-20 w-96 h-96 bg-[#1b4f91]/25 rounded-full blur-[130px] pointer-events-none z-0"></div>
-          <div className="absolute top-1/2 right-4 w-80 h-80 bg-[#ffc107]/15 rounded-full blur-[120px] pointer-events-none z-0"></div>
+          <div className="absolute top-1/2 right-4 w-80 h-80 bg-[#ffb703]/15 rounded-full blur-[120px] pointer-events-none z-0"></div>
           <div className="absolute inset-0 flex flex-col justify-between pt-[78px] pb-5 z-10 w-full sm:relative sm:inset-auto sm:pt-0 sm:pb-0 sm:block">
             <div className={`${Classes["container"]} flex flex-col justify-between h-full sm:h-auto w-full`}>
               <div className="w-full max-w-[650px] text-white text-left mt-2 sm:mt-0">
@@ -155,12 +107,12 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                 )}
               </div>
               <div className="flex flex-row items-center gap-3 mt-auto sm:mt-8 w-full max-w-[650px]">
-                <a href={heroBanner.applyNowUrl} target="_blank" rel="noopener noreferrer" className="flex-1 sm:flex-none text-center bg-[#ffc107] text-[#14284E] font-bold text-[13px] sm:text-[15px] px-3 sm:px-8 py-3 sm:py-3.5 rounded-lg transition-colors shadow-lg border border-[#ffc107]">
+                <a href={heroBanner.applyNowUrl} target="_blank" rel="noopener noreferrer" className="flex-1 sm:flex-none text-center bg-[#ffb703] hover:bg-[#ffa000] text-[#14284E] font-bold text-[13px] sm:text-[15px] px-3 sm:px-8 py-3 sm:py-3.5 rounded-lg transition-colors shadow-lg border border-[#ffb703] uppercase">
                   Apply Now
                 </a>
-                <a href={heroBanner.brochureUrl} target="_blank" rel="noopener noreferrer" className="flex-1 sm:flex-none text-center flex items-center justify-center gap-1.5 sm:gap-2 bg-[#14284E] text-white font-bold text-[13px] sm:text-[15px] px-3 sm:px-8 py-3 sm:py-3.5 rounded-lg transition-colors shadow-lg border border-[#1B4F91]">
+                <a href={heroBanner.brochureUrl} target="_blank" rel="noopener noreferrer" className="flex-1 sm:flex-none text-center flex items-center justify-center gap-1.5 sm:gap-2 bg-[#14284E] hover:bg-[#1B4F91] text-white font-bold text-[13px] sm:text-[15px] px-3 sm:px-8 py-3 sm:py-3.5 rounded-lg transition-colors shadow-lg border border-[#1B4F91]">
                   <Download className="w-4 h-4" />
-                  <span className="hidden sm:inline">Download Department</span> Brochure
+                  <span className="hidden sm:inline font-bold">DOWNLOAD DEPARTMENT</span> <span className="font-bold">BROCHURE</span>
                 </a>
               </div>
             </div>
@@ -172,7 +124,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
           <div className="rounded-2xl overflow-hidden shadow-xl border border-white/10 max-w-[650px] mx-auto">
             <div className="bg-[#14284E] px-4 py-3 text-center">
               <h3 className="text-white font-bold text-[15px]">Shri Ramswaroop Memorial University</h3>
-              <div className="w-8 h-0.5 bg-[#ffc107] mx-auto mt-2 rounded-full"></div>
+              <div className="w-8 h-0.5 bg-[#ffb703] mx-auto mt-2 rounded-full"></div>
             </div>
             <div className="bg-white px-4 py-4 space-y-2.5">
               <div className="grid grid-cols-2 gap-2">
@@ -202,7 +154,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                 <input type="checkbox" defaultChecked className="mt-0.5 shrink-0" />
                 I authorise SRMU and its representatives to Call, SMS, Email or WhatsApp me regarding admissions and programmes.
               </p>
-              <button className="w-full bg-[#ffc107] hover:bg-[#e0a800] text-[#14284E] font-bold text-[14px] py-3 rounded-xl transition-colors flex items-center justify-center gap-2">APPLY NOW →</button>
+              <button className="w-full bg-[#ffb703] hover:bg-[#ffa000] text-[#14284E] font-bold text-[14px] py-3 rounded-xl transition-colors flex items-center justify-center gap-2">APPLY NOW →</button>
             </div>
           </div>
         </section>
@@ -212,11 +164,11 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
           <div className={`${Classes["container"]}`}>
             <div className="w-full mb-5 sm:mb-11">
               <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3.5">
-                Why Study B.Tech CSE {heroBanner.specialization}<span className="text-[#ffc107]"> in {whyStudy.year} ?</span>
+                Why Study B.Tech CSE {heroBanner.specialization}<span className="text-[#ffb703]"> in {whyStudy.year} ?</span>
               </h2>
             </div>
-            <div className="relative bg-[#FFFBEB] sm:bg-white border border-[#ffc107] sm:border-l-4 sm:border-l-[#ffc107] sm:border-t-[#ffc107] sm:border-b-[#ffc107] sm:border-r-[#ffc107] rounded-2xl p-7 sm:p-8 text-[14px] leading-5 sm:text-[17px] sm:leading-normal text-[#14284E] font-semibold italic mb-4 sm:mb-8">
-              <span className="absolute top-4 left-7 sm:hidden text-[#D78610] text-[30px] not-italic font-black leading-none">"</span>
+            <div className="relative bg-[#FFFBEB] sm:bg-white border border-[#ffb703] sm:border-l-4 sm:border-l-[#ffb703] sm:border-t-[#ffb703] sm:border-b-[#ffb703] sm:border-r-[#ffb703] rounded-2xl p-7 sm:p-8 text-[14px] leading-5 sm:text-[17px] sm:leading-normal text-[#14284E] font-semibold italic mb-4 sm:mb-8">
+              <span className="absolute top-4 left-7 sm:hidden text-[#ffb703] text-[30px] not-italic font-black leading-none">"</span>
               <div className={`${!rm["quote"] ? "line-clamp-2 sm:line-clamp-none" : ""}`}>
                 <span className="hidden sm:inline">"</span>{whyStudy.quote.replace(/^[""]/, "").replace(/[""]$/, "")}
               </div>
@@ -238,7 +190,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
             <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mt-6 sm:mt-10">
               {whyStudy.benefitCards.map((card, i) => (
                 <div key={i} className="bg-white border border-[#DCE6F2] hover:border-[#1B4F91]/40 rounded-2xl p-3 sm:p-7 shadow-[0_4px_18px_rgba(15,31,61,0.04)] hover:shadow-[0_12px_30px_rgba(15,31,61,0.08)] hover:-translate-y-1.5 transition-all duration-300 group">
-                  <span className="block sm:hidden w-2 h-2 rounded-full bg-[#28B7A8] mb-2"></span>
+                  <span className="block sm:hidden w-2 h-2 rounded-full bg-[#ffb703] mb-2"></span>
                   <h3 className="text-[13px] sm:text-[16.5px] font-bold font-display text-[#14284E] group-hover:text-[#1B4F91] transition-colors mb-2.5">{card.title}</h3>
                   <p className="text-[12.5px] sm:text-[14px] text-[#4B5A72] leading-5 sm:leading-relaxed text-justify">{card.description}</p>
                 </div>
@@ -252,7 +204,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
           <div className={`${Classes["container"]}`}>
             <div className="w-full mb-8">
               <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3.5">
-                How Does <img src={ltLogo} alt="L&T EduTech" className="h-[28px] sm:h-[36px] inline-block align-middle mx-1 sm:mx-2 -mt-1" /> Benefit B.Tech CSE {heroBanner.specialization} <span className="text-[#ffc107]">SRMU Students?</span>
+                How Does <img src={ltLogo} alt="L&T EduTech" className="h-[28px] sm:h-[36px] inline-block align-middle mx-1 sm:mx-2 -mt-1" /> Benefit B.Tech CSE {heroBanner.specialization} <span className="text-[#ffb703]">SRMU Students?</span>
               </h2>
             </div>
             <div className="w-full">
@@ -274,10 +226,10 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                   <p className="text-[15.5px] text-[#4B5A72] leading-relaxed mb-5 text-justify">{ltBenefits.followUpText}</p>
                   <p className="text-[15.5px] text-[#14284E] font-semibold mb-3">{ltBenefits.projectsHeading}</p>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2">
-                    <ul className="list-disc pl-5 space-y-2 text-[15.5px] text-[#4B5A72] marker:text-[#ffc107]">
+                    <ul className="list-disc pl-5 space-y-2 text-[15.5px] text-[#4B5A72] marker:text-[#ffb703]">
                       {ltBenefits.projectsCol1.map((p, i) => <li key={i}>{p.text}</li>)}
                     </ul>
-                    <ul className="list-disc pl-5 space-y-2 text-[15.5px] text-[#4B5A72] marker:text-[#ffc107]">
+                    <ul className="list-disc pl-5 space-y-2 text-[15.5px] text-[#4B5A72] marker:text-[#ffb703]">
                       {ltBenefits.projectsCol2.map((p, i) => <li key={i}>{p.text}</li>)}
                     </ul>
                   </div>
@@ -289,11 +241,11 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
         </section>
 
         {/* ===== PROGRAMME OVERVIEW TABLE ===== */}
-        <section className="relative py-8 md:py-10 px-4 sm:px-6 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url('${ltBenefits.tableBackgroundImageUrl || '/back2.png'}')` }}>
+        <section id="overview" className="relative py-8 md:py-10 px-4 sm:px-6 bg-cover bg-center bg-no-repeat scroll-mt-24" style={{ backgroundImage: `url('${ltBenefits.tableBackgroundImageUrl || '/back2.png'}')` }}>
           <div className={`relative z-10 ${Classes["container"]}`}>
             <div className="w-full mb-8 text-center max-w-4xl mx-auto">
               <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3.5">
-                Industry-Integrated Learning <span className="text-[#ffc107]">with L&amp;T</span>
+                Industry-Integrated Learning <span className="text-[#ffb703]">with L&amp;T</span>
               </h2>
               <div>
                 <p className={`text-[16px] text-[#4B5A72] leading-relaxed text-justify ${!rm["lt1"] ? "rm-clamp" : ""}`}>
@@ -328,7 +280,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
           <div className={`${Classes["container"]} relative z-10`}>
             <div className="w-full">
               <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3.5">
-                {industryExposure.sectionTitle} <span className="text-[#ffc107]">{industryExposure.sectionTitleHighlight}</span>
+                {industryExposure.sectionTitle} <span className="text-[#ffb703]">{industryExposure.sectionTitleHighlight}</span>
               </h2>
               <p className={`text-[16px] text-[#4B5A72] leading-relaxed text-justify ${!rm["indExp3"] ? "rm-clamp" : ""}`}>{industryExposure.introParagraph}</p>
               <button className="rm-btn" onClick={() => toggleRm("indExp3")}>{rm["indExp3"] ? "Read Less" : "Read More"}</button>
@@ -346,7 +298,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                 <div className="w-full md:w-7/12 p-5 sm:p-7 flex flex-col">
                   <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
                     <div className="flex gap-2">
-                      <span className="text-[11px] font-bold uppercase tracking-widest text-[#D78610] bg-[#fff8eb] px-2.5 py-1 rounded">{industryExposure.featuredCard.badge}</span>
+                      <span className="text-[11px] font-bold uppercase tracking-widest text-[#14284E] bg-[#ffb703] px-2.5 py-1 rounded">{industryExposure.featuredCard.badge}</span>
                       {industryExposure.featuredCard.secondaryBadge && (
                         <span className="text-[11px] font-bold tracking-wider text-[#4B5A72] bg-[#f1f5f9] px-2.5 py-1 rounded hidden sm:inline-block">{industryExposure.featuredCard.secondaryBadge}</span>
                       )}
@@ -378,7 +330,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                     </div>
                     <div className="p-5 flex flex-col flex-1">
                       <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
-                        <span className="text-[10px] font-bold uppercase tracking-widest text-[#D78610] bg-[#fff8eb] px-2 py-1 rounded">{card.badge}</span>
+                        <span className="text-[10px] font-bold uppercase tracking-widest text-[#14284E] bg-[#ffb703] px-2 py-1 rounded">{card.badge}</span>
                       </div>
                       <h4 className="text-[15px] sm:text-[17px] font-bold font-display text-[#14284E] mb-2 leading-snug">{card.title}</h4>
                       <div className="text-[13px] text-[#4B5A72] font-medium mb-3 border-b border-[#f1f5f9] pb-3">
@@ -394,7 +346,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                 {/* Desktop button in empty slot for odd card count (Data Science) */}
                 {industryExposure.secondaryCards.length % 2 !== 0 && (
                   <div className="hidden md:flex items-center justify-center h-full">
-                    <Link to={industryExposure.departmentUrl} target="_blank" className="inline-flex items-center bg-[#ffc107] hover:bg-[#D78610] text-[#14284E] font-semibold text-[14.5px] px-6 py-3 rounded-md transition-colors shadow-sm hover:-translate-y-0.5">
+                    <Link to={industryExposure.departmentUrl} target="_blank" className="inline-flex items-center bg-[#ffb703] hover:bg-[#ffa000] text-[#14284E] font-semibold text-[14.5px] px-6 py-3 rounded-md transition-colors shadow-sm hover:-translate-y-0.5 uppercase">
                       Know Your Department →
                     </Link>
                   </div>
@@ -404,7 +356,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
 
             {/* Mobile/Default button (hidden on desktop if odd card count) */}
             <div className={`flex justify-center w-full mt-8 sm:mt-12 ${industryExposure.secondaryCards.length % 2 !== 0 ? 'md:hidden' : ''}`}>
-              <Link to={industryExposure.departmentUrl} target="_blank" className="inline-flex items-center bg-[#ffc107] hover:bg-[#D78610] text-[#14284E] font-semibold text-[14.5px] px-6 py-3 rounded-md transition-colors shadow-sm hover:-translate-y-0.5">
+              <Link to={industryExposure.departmentUrl} target="_blank" className="inline-flex items-center bg-[#ffb703] hover:bg-[#ffa000] text-[#14284E] font-semibold text-[14.5px] px-6 py-3 rounded-md transition-colors shadow-sm hover:-translate-y-0.5 uppercase">
                 Know Your Department →
               </Link>
             </div>
@@ -412,87 +364,20 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
         </section>
 
         {/* ===== PLACEMENT ===== */}
-        <section className="pt-8 md:pt-10 pb-4 px-4 sm:px-6 bg-gradient-to-b from-white to-[#E0F1FF]">
-          <div className={`${Classes["container"]} mx-auto`}>
-            <div className="grid lg:grid-cols-2 gap-5 items-start">
-              <div className="w-full">
-                <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E]">
-                  Where Our Students <span className="text-[#ffc107]">Get Placed</span>
-                </h2>
-                <div className="mt-4">
-                  <p className={`text-[15px] leading-6 text-[#4B5A72] text-justify ${!rm["placement1"] ? "rm-clamp" : ""}`}>
-                    Dedicated placement training — resume building, coding practice, mock interviews and group discussions — starts from the final year.
-                  </p>
-                  <button className="rm-btn" onClick={() => toggleRm("placement1")}>{rm["placement1"] ? "Read Less" : "Read More"}</button>
-                </div>
-                {/* Mobile stats */}
-                <div className="sm:hidden mt-6 bg-[#14284E] rounded-2xl p-5 grid grid-cols-2 gap-x-6 gap-y-5">
-                  {placement.stats.map((s, i) => (
-                    <div key={i}>
-                      <div className="text-[15px] font-bold text-[#ffc107] mb-1">{s.val}</div>
-                      <div className="text-[12.5px] text-white/80 leading-snug">{s.label}</div>
-                    </div>
-                  ))}
-                </div>
-                {/* Desktop stats */}
-                <div className="hidden sm:grid grid-cols-2 gap-4 mt-6">
-                  {placement.stats.map((s, i) => (
-                    <div key={i} className="bg-white border border-[#DCE6F2] rounded-xl p-5 min-h-[90px] shadow-sm">
-                      <div className="text-[14.5px] font-semibold text-[#ffc107] mb-3">{s.val}</div>
-                      <h3 className="text-[14px] font-bold font-display text-[#14284E]">{s.label}</h3>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div className="w-full mt-6 lg:mt-0">
-                <img src={placement.imageUrl} alt={placement.imageAlt} className="w-full aspect-[14/8] object-cover rounded-xl border border-[#DCE6F2]" loading="lazy" />
-              </div>
-            </div>
-
-            {/* Recruiter logos */}
-            <div className="mt-7">
-              <div className="flex items-center justify-between gap-4 mb-3.5">
-                <h3 className="text-[17px] font-bold font-display text-[#14284E]">Top Recruiters</h3>
-                <div className="hidden sm:flex gap-2">
-                  <button type="button" onClick={() => emblaApi?.scrollPrev()} disabled={!canScrollPrev} title="Previous recruiters" aria-label="Previous recruiters" className="w-9 h-9 rounded-md border border-[#DCE6F2] bg-white text-[#14284E] flex items-center justify-center transition-colors hover:border-[#1B4F91] hover:text-[#1B4F91] disabled:opacity-40 disabled:cursor-not-allowed"><ArrowLeft className="w-4 h-4" /></button>
-                  <button type="button" onClick={() => emblaApi?.scrollNext()} disabled={!canScrollNext} title="Next recruiters" aria-label="Next recruiters" className="w-9 h-9 rounded-md border border-[#DCE6F2] bg-white text-[#14284E] flex items-center justify-center transition-colors hover:border-[#1B4F91] hover:text-[#1B4F91] disabled:opacity-40 disabled:cursor-not-allowed"><ArrowRight className="w-4 h-4" /></button>
-                </div>
-              </div>
-              <div className="sm:hidden overflow-hidden relative">
-                <div className="flex gap-3 w-max animate-marquee hover:[animation-play-state:paused]">
-                  {[...recruiterLogos, ...recruiterLogos].map(([src, name], index) => (
-                    <div key={`${name}-${index}`} className="h-[64px] w-[110px] shrink-0 bg-white border border-[#DCE6F2] rounded-md px-3 py-2 flex items-center justify-center">
-                      <img src={src} alt={name} className="max-h-6 w-auto object-contain" />
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div className="hidden sm:block overflow-hidden" ref={emblaRef}>
-                <div className="flex -ml-3">
-                  {recruiterLogos.map(([src, name]) => (
-                    <div key={name} className="flex-[0_0_50%] sm:flex-[0_0_33.333%] md:flex-[0_0_25%] lg:flex-[0_0_16.666%] pl-3">
-                      <div className="h-[76px] bg-white border border-[#DCE6F2] rounded-md px-4 py-3 flex items-center justify-center">
-                        <img src={src} alt={name} className="max-h-7 w-auto object-contain" />
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-            <div className="flex justify-center w-full mt-10">
-              <Link to={placement.placementDetailUrl} target="_blank" className="inline-flex items-center bg-[#ffc107] hover:bg-[#D78610] text-[#14284E] font-semibold text-[14.5px] px-6 py-3 rounded-md transition-colors shadow-sm hover:-translate-y-0.5">
-                View Placement Details →
-              </Link>
-            </div>
-          </div>
-        </section>
+        <DepartmentPlacements
+          recruiters={defaultRecruiterLogos}
+          stats={placement.stats}
+          imageUrl={placement.imageUrl}
+          imageAlt={placement.imageAlt}
+          placementDetailUrl={placement.placementDetailUrl}
+        />
 
         {/* ===== LABS & CURRICULUM ===== */}
-        <section className="py-8 md:py-10 px-4 sm:px-6 bg-gradient-to-b from-white to-[#E6E6E7]">
+        <section className="py-8 md:py-10 px-4 sm:px-6 bg-[#F0F6FB]">
           <div className={`${Classes["container"]} mx-auto`}>
             <div className="w-full mb-5 sm:mb-10">
               <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.15] font-bold font-display text-[#14284E]">
-                {labs.sectionTitle}<span className="text-[#ffc107]"> {labs.sectionTitleHighlight}</span>
+                {labs.sectionTitle}<span className="text-[#ffb703]"> {labs.sectionTitleHighlight}</span>
               </h2>
               <p className="mt-4 text-[15px] leading-6 text-[#4B5A72] text-justify">{labs.introParagraph}</p>
             </div>
@@ -512,7 +397,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
               </div>
               <div className="w-full">
                 <h3 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3">
-                  {labs.curriculumSectionTitle} <span className="text-[#ffc107]">with L&T</span>
+                  {labs.curriculumSectionTitle} <span className="text-[#ffb703]">with L&T</span>
                 </h3>
                 <div>
                   <p className={`text-[14.5px] leading-5 text-[#4B5A72] text-justify ${!rm["curr1"] ? "rm-clamp" : ""}`}>{labs.curriculumDescription}</p>
@@ -521,74 +406,97 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
               </div>
             </div>
 
-            {/* Mobile lab scroll header */}
-            <div className="sm:hidden mb-5 flex items-end justify-between gap-4">
-              <div><h2 className="mt-2 text-[22px] leading-tight font-bold font-display text-[#14284E]">Where Theory Becomes Practice</h2></div>
-              <div className="flex gap-2 shrink-0">
-                <button type="button" onClick={() => scrollLabs("left")} className="w-8 h-8 rounded-md border border-[#DCE6F2] bg-white text-[#14284E] flex items-center justify-center transition-colors hover:border-[#1B4F91] hover:text-[#1B4F91]"><ArrowLeft className="w-4 h-4" /></button>
-                <button type="button" onClick={() => scrollLabs("right")} className="w-8 h-8 rounded-md border border-[#DCE6F2] bg-white text-[#14284E] flex items-center justify-center transition-colors hover:border-[#1B4F91] hover:text-[#1B4F91]"><ArrowRight className="w-4 h-4" /></button>
-              </div>
-            </div>
-
-            {/* Lab cards */}
-            <div ref={labsScrollRef} className="flex flex-nowrap gap-3 overflow-x-auto pb-2 scrollbar-hide sm:grid sm:grid-cols-2 sm:gap-5 sm:space-y-0 sm:overflow-visible sm:pb-0 scroll-smooth">
-              {/* First lab — with video reel between card 1 and 2 */}
-              {labs.labs.map((lab, li) => (
-                <React.Fragment key={li}>
-                  <div 
-                    style={li === 0 && labs.cardBackgroundImageUrl ? { backgroundImage: `url('${labs.cardBackgroundImageUrl}')` } : {}}
-                    className={`relative ${li === 0 && labs.cardBackgroundImageUrl ? "bg-cover bg-right bg-no-repeat" : ""} shrink-0 w-[235px] bg-white border border-[#DCE6F2] rounded-2xl overflow-hidden sm:w-auto sm:shrink shadow-[0_2px_12px_rgba(15,31,61,0.05)] hover:shadow-[0_8px_28px_rgba(15,31,61,0.1)] hover:-translate-y-1 transition-all duration-300 group`}
-                  >
-                    {/* Gradient to blend the image seamlessly into the white background */}
-                    {li === 0 && labs.cardBackgroundImageUrl && (
-                      <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent sm:from-white sm:via-white/70 sm:to-transparent pointer-events-none z-0"></div>
-                    )}
-
-                    <div className="relative z-10">
-                      {/* Mobile header */}
-                      <button type="button" onClick={() => toggleSection(lab.label)} className="relative md:hidden w-full flex items-center justify-between px-4 pt-8 pb-3 text-left" aria-expanded={openSection === lab.label}>
-                        <span className="absolute top-3 left-4 text-[10px] font-mono font-semibold uppercase tracking-[0.12em] text-[#168C82]">{lab.label}</span>
-                        <h3 className="text-[17px] font-bold font-display text-[#14284E]">{lab.title}</h3>
-                      </button>
-                      {/* Desktop content */}
-                      <div className="hidden md:block">
-                      <div className="h-1 w-full bg-gradient-to-r from-[#1B4F91] to-[#38bdf8]"></div>
-                      <div className="p-5 pt-4">
-                        <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#EBF5FF] text-[#1B4F91] text-[10px] font-bold uppercase tracking-widest mb-3">{lab.label}</span>
-                        <h3 className="text-[17px] font-bold font-display text-[#14284E] mb-2 group-hover:text-[#1B4F91] transition-colors">{lab.title}</h3>
-                        <p className="text-[14.5px] font-semibold italic text-[#ffc107] mb-1">{lab.tagline}</p>
-                        <p className="text-[14.5px] leading-5 text-[#4B5A72] mb-4 text-justify">{lab.description}</p>
-                        <ul className="list-disc pl-5 mt-2 text-[#4B5A72] text-[13px] sm:text-[14.5px] columns-1 sm:columns-2 gap-x-4 sm:gap-x-6 [&>li]:mb-1.5 [&>li]:break-inside-avoid">
-                          {lab.items.map((item, ii) => <li key={ii}>{item}</li>)}
-                        </ul>
-                      </div>
-                    </div>
-                    {/* Mobile content */}
-                    <div className="md:hidden px-3 pb-3">
-                      <p className="text-[14.5px] font-semibold italic text-[#ffc107] mb-1">{lab.tagline}</p>
-                      <p className="text-[14.5px] leading-5 text-[#4B5A72] mb-4 text-justify">{lab.description}</p>
-                      <ul className="list-disc pl-5 mt-2 text-[#4B5A72] text-[13px] columns-1 [&>li]:mb-1.5">
-                        {lab.items.map((item, ii) => <li key={ii}>{item}</li>)}
-                      </ul>
+            {labs.reelVideoUrl && (
+              <div className="relative isolate overflow-hidden rounded-[26px] border border-[#C7DDED] bg-gradient-to-br from-[#F4FAFE] via-[#E5F2FB] to-[#DCECF8] p-4 sm:p-6 lg:p-8 mb-8 sm:mb-10 shadow-[0_18px_50px_rgba(31,78,121,0.13)]">
+                <style>{`
+                  @keyframes reelCircuitFlow { to { stroke-dashoffset: -180; } }
+                  @keyframes reelNodeFloat { 0%,100% { transform: translateY(0); opacity: .45; } 50% { transform: translateY(-9px); opacity: .9; } }
+                  .reel-circuit-flow { animation: reelCircuitFlow 18s linear infinite; }
+                  .reel-node-float { animation: reelNodeFloat 5s ease-in-out infinite; }
+                  @media (prefers-reduced-motion: reduce) {
+                    .reel-circuit-flow, .reel-node-float { animation: none; }
+                  }
+                `}</style>
+                <svg aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 h-full w-full" viewBox="0 0 1200 430" preserveAspectRatio="none" fill="none">
+                  <defs>
+                    <linearGradient id="reelCircuitGradient" x1="0" y1="0" x2="1200" y2="430" gradientUnits="userSpaceOnUse">
+                      <stop stopColor="#1B4F91" stopOpacity=".03" />
+                      <stop offset=".52" stopColor="#168AC0" stopOpacity=".3" />
+                      <stop offset="1" stopColor="#1B4F91" stopOpacity=".08" />
+                    </linearGradient>
+                  </defs>
+                  <path className="reel-circuit-flow" d="M-40 82H185L238 135H435L482 88H695L752 145H930L978 97H1240M-30 350H165L222 293H410L456 339H660L716 283H900L950 333H1235M585-20V68L635 118V213L588 260V450M1070-20V75L1020 125V215L1065 260V450" stroke="url(#reelCircuitGradient)" strokeWidth="2" strokeDasharray="7 12" />
+                  <path d="M0 214H195L234 175H342M1200 214H1010L971 175H860" stroke="#1B4F91" strokeOpacity=".1" strokeWidth="1.5" />
+                  <g className="reel-node-float" fill="#168AC0" fillOpacity=".45">
+                    <circle cx="238" cy="135" r="4" /><circle cx="482" cy="88" r="4" /><circle cx="752" cy="145" r="4" /><circle cx="978" cy="97" r="4" />
+                  </g>
+                  <g fill="#1B4F91" fillOpacity=".22"><circle cx="222" cy="293" r="3" /><circle cx="456" cy="339" r="3" /><circle cx="716" cy="283" r="3" /><circle cx="950" cy="333" r="3" /></g>
+                </svg>
+                <div className="relative grid grid-cols-1 sm:grid-cols-[minmax(170px,0.7fr)_minmax(0,1.3fr)] lg:grid-cols-[250px_minmax(0,1fr)] items-center gap-5 sm:gap-7 lg:gap-10">
+                  <div className="mx-auto w-full max-w-[230px] overflow-hidden rounded-2xl ring-1 ring-white/20 bg-black shadow-[0_16px_36px_rgba(0,0,0,0.38)] sm:max-w-none">
+                    <video
+                      src={labs.reelVideoUrl}
+                      poster={labs.reelPosterUrl}
+                      width="720"
+                      height="1280"
+                      controls
+                      playsInline
+                      preload="metadata"
+                      aria-label="Cyber security labs video reel"
+                      className="block w-full aspect-[9/16] max-h-[390px] object-cover"
+                    />
+                  </div>
+                  <div className="py-1 text-center sm:py-4 sm:text-left lg:py-8">
+                    <span className="inline-flex items-center rounded-full border border-[#168AC0]/30 bg-white/70 px-3 py-1 text-[9px] sm:text-[11px] font-bold uppercase tracking-[0.16em] text-[#12658F] shadow-sm">Inside the labs</span>
+                    <h3 className="mt-3 text-[20px] sm:text-[26px] lg:text-[34px] leading-tight font-bold font-display text-[#14284E]">See cyber security learning in action</h3>
+                    <p className="mt-2 sm:mt-4 mx-auto sm:mx-0 max-w-2xl text-[13px] sm:text-[15px] leading-relaxed text-[#405570]">Step inside the spaces where students practise threat detection, ethical hacking, digital forensics and cloud security.</p>
+                    <div className="mt-4 sm:mt-6 flex flex-wrap justify-center sm:justify-start gap-2">
+                      {["Real-world scenarios", "Hands-on practice", "Industry-ready skills"].map((item) => (
+                        <span key={item} className="rounded-full border border-[#B9D1E5] bg-white/75 px-2.5 sm:px-3 py-1.5 text-[9px] sm:text-[11px] font-semibold text-[#29415F] shadow-sm">{item}</span>
+                      ))}
                     </div>
                   </div>
                 </div>
-                {/* Insert video reel after first lab */}
-                  {li === 0 && (
-                    <div className="order-first sm:order-none shrink-0 w-[235px] sm:w-[280px] lg:w-[320px] sm:justify-self-center flex flex-col">
-                      <div className="relative p-[2px] rounded-2xl bg-gradient-to-b from-[#1B4F91] via-[#38bdf8] to-[#ffc107] shadow-[0_8px_32px_rgba(27,79,145,0.25)]">
-                        <div className="rounded-[14px] overflow-hidden bg-black flex items-center justify-center">
-                          <video src={labs.reelVideoUrl} width="720" height="1280" controls autoPlay loop muted playsInline className="w-full h-auto aspect-[9/16] object-cover"></video>
-                        </div>
-                      </div>
+              </div>
+            )}
+
+            <div className="mb-5 sm:mb-7 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-2">
+              <div>
+                <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#1B4F91]">Explore the spaces</p>
+                <h3 className="mt-1 text-[22px] sm:text-[30px] leading-tight font-bold font-display text-[#14284E]">Hands-on Cyber Security Labs</h3>
+              </div>
+              <p className="max-w-xl text-[13px] sm:text-[14px] leading-relaxed text-[#64748B]">Build practical skills across the tools and environments used by modern security teams.</p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-5">
+              {labs.labs.map((lab) => (
+                <article key={lab.label} className="group overflow-hidden rounded-2xl border border-[#DCE6F2] bg-white shadow-[0_4px_18px_rgba(15,31,61,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_36px_rgba(15,31,61,0.12)]">
+                  <div className="relative aspect-[16/10] overflow-hidden bg-gradient-to-br from-[#0B1D3A] via-[#123B69] to-[#1475A5]">
+                    {lab.imageUrl ? (
+                      <img src={lab.imageUrl} alt={lab.title} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                    ) : (
+                      <div className="flex h-full items-center justify-center"><Shield className="h-14 w-14 text-white/60" strokeWidth={1.2} /></div>
+                    )}
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#06142C]/75 via-transparent to-[#06142C]/10" />
+                    <span className="absolute left-4 top-4 rounded-full border border-white/25 bg-[#081A34]/70 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.14em] text-white backdrop-blur-sm">{lab.label}</span>
+                    <span className="absolute bottom-4 left-4 text-[10px] font-semibold uppercase tracking-[0.14em] text-white/85">Practical learning environment</span>
+                  </div>
+                  <div className="p-4 sm:p-5">
+                    <h4 className="text-[18px] font-bold font-display leading-snug text-[#14284E] group-hover:text-[#1B4F91] transition-colors">{lab.title}</h4>
+                    <p className="mt-2 border-l-[3px] border-[#ffb703] pl-3 text-[13px] font-semibold leading-relaxed text-[#B86B00]">{lab.tagline}</p>
+                    <p className="mt-3 text-[13px] leading-[1.65] text-[#526179]">{lab.description}</p>
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      {lab.items.map((item) => (
+                        <span key={item} className="rounded-lg bg-[#F1F6FB] px-2.5 py-1.5 text-[11px] font-medium leading-tight text-[#34506F]">{item}</span>
+                      ))}
                     </div>
-                  )}
-                </React.Fragment>
+                  </div>
+                </article>
               ))}
             </div>
 
             <div className="mt-8 flex justify-center w-full">
-              <a href="tel:18001026004" className="relative group overflow-hidden bg-gradient-to-r from-[#ffc107] via-[#ffcd38] to-[#e0a800] text-[#071329] font-extrabold text-[14px] sm:text-[15px] px-8 py-3.5 rounded-lg shadow-[0_8px_20px_-8px_rgba(217,139,43,0.6)] hover:shadow-[0_12px_30px_rgba(255,193,7,0.65)] hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2 text-center">
+              <a href="tel:18001026004" className="relative group overflow-hidden bg-gradient-to-r from-[#ffb703] via-[#ffc72c] to-[#ffa000] text-[#14284E] font-extrabold text-[14px] sm:text-[15px] px-8 py-3.5 rounded-lg shadow-[0_8px_20px_-8px_rgba(217,139,43,0.6)] hover:shadow-[0_12px_30px_rgba(255,183,3,0.65)] hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2 text-center uppercase">
                 <PhoneCall className="w-4 h-4 shrink-0 transition-transform duration-300 group-hover:scale-110" />
                 <span>Have Query? Talk to Expert</span>
               </a>
@@ -601,7 +509,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
           <div className={`${Classes["container"]} mx-auto`}>
             <div className="w-full mb-11">
               <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E]">
-                Your Journey from Student to <span className="text-[#ffc107]">{heroBanner.specialization} Professional</span>
+                Your Journey from Student to <span className="text-[#ffb703]">{heroBanner.specialization} Professional</span>
               </h2>
               <p className="mt-4 text-[15px] leading-7 text-[#4B5A72] text-justify">{yearJourney.introParagraph}</p>
             </div>
@@ -659,7 +567,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
               const yd = yearDataMap[key];
               return activeTab === key ? (
                 <div key={key} className="hidden md:block bg-white border border-[#DCE6F2] rounded-xl p-7.5 max-w-4xl mx-auto">
-                  <div className="italic text-[#ffc107] font-semibold mb-5 text-[15px]">{yd.quote}</div>
+                  <div className="italic text-[#ffb703] font-semibold mb-5 text-[15px]">{yd.quote}</div>
                   <div className="flex flex-col gap-6.5">
                     <div>
                       <h4 className="text-[14.5px] uppercase tracking-[0.04em] text-[#1B4F91] mb-2.5">Subjects</h4>
@@ -704,11 +612,11 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
         </section>
 
         {/* ===== FEE STRUCTURE ===== */}
-        <section className="py-8 md:py-10 px-4 sm:px-6 bg-gray-200">
+        <section className="py-8 md:py-10 px-4 sm:px-6 bg-[#F0F6FB]">
           <div className={`${Classes["container"]} mx-auto`}>
             <div className="w-full mb-10">
               <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E]">
-                Transparent <span className="text-[#ffc107]">Fee Structure</span>
+                Transparent <span className="text-[#ffb703]">Fee Structure</span>
               </h2>
               <div className="mt-4">
                 <p className={`text-[15px] leading-7 text-[#4B5A72] text-justify ${!rm["fee1"] ? "rm-clamp" : ""}`}>
@@ -751,7 +659,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
             <div className="hidden sm:block overflow-x-auto rounded-xl border border-[#DCE6F2] bg-white">
               <table className="w-full min-w-[800px] text-left">
                 <thead>
-                  <tr className="bg-[#142E5C] text-white">
+                  <tr className="bg-[#14284E] text-white">
                     <th className="px-5 py-4 text-[14.5px] uppercase font-semibold">Fee Component</th>
                     <th className="px-5 py-4 text-[14.5px] uppercase font-semibold">1st Year</th>
                     <th className="px-5 py-4 text-[14.5px] uppercase font-semibold">2nd Year</th>
@@ -777,61 +685,17 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
               <p className={`text-[14.5px] leading-5 text-[#718096] text-justify ${!rm["feeNote"] ? "rm-clamp" : ""}`}>{fee.feeNote}</p>
               <button className="rm-btn" onClick={() => toggleRm("feeNote")}>{rm["feeNote"] ? "Read Less" : "Read More"}</button>
             </div>
-
-            {/* Scholarship section */}
-            <h3 className="text-[20px] lg:text-[24px] font-bold font-display text-[#14284E] mt-10 mb-4">Scholarship <span className="text-[#ffc107]">Schemes</span></h3>
-            <div className="block sm:hidden w-full rounded-xl overflow-hidden mb-6 bg-transparent shadow-sm">
-              <div className="relative w-full">
-                <img src="/scholar2mobile.jpg" className="w-full h-auto block" alt="Scholarship schemes" />
-                <div className="absolute inset-0 flex flex-col justify-start px-5 pt-4 pb-5 z-10 pointer-events-none">
-                  <div className="mb-3">
-                    <p className="text-[#1B4F91] font-bold text-[13px] mb-1">Avail Up to</p>
-                    <h2 className="text-[45px] font-black text-[#E31E24] leading-[0.85] tracking-tighter flex items-start">100%<span className="text-[20px] text-[#E31E24] font-bold ml-0.5 leading-none mt-1">*</span></h2>
-                    <p className="text-[#1B4F91] font-black text-[22px] leading-none mt-2">Scholarships</p>
-                  </div>
-                  <div className={`overflow-hidden ${!rm["scholarMob"] ? "h-[110px]" : "h-auto"}`}>
-                    <ul className="space-y-1.5 max-w-[480px]">
-                      {scholarshipItems.map((item, idx) => (
-                        <li key={idx} className="flex items-start gap-1.5 text-[#14284E] text-[11.5px] font-medium leading-[1.3]">
-                          <span className="text-[#1B4F91] shrink-0 font-bold text-[12px] mt-[1px]">➢</span><span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <button className="rm-btn !text-[#1B4F91] !mb-0 mt-2 pointer-events-auto" onClick={() => toggleRm("scholarMob")}>{rm["scholarMob"] ? "Read Less" : "Read More"}</button>
-                </div>
-              </div>
-            </div>
-            <div className="hidden sm:block relative w-full rounded-2xl overflow-hidden mb-6 shadow-sm bg-[#f0f4fa]">
-              <img src="/sharedimageScholar.png" className="block w-full h-[300px] sm:h-auto object-cover object-right" alt="Scholarships" />
-              <div className="absolute inset-0 z-10 p-5 sm:p-6 md:p-10 w-full sm:w-[85%] md:w-[75%] lg:w-[65%] flex flex-col justify-center pointer-events-none">
-                <div className="mb-4 sm:mb-6">
-                  <p className="text-[#1B4F91] font-bold text-[14px] sm:text-[18px] md:text-[22px] mb-1">Avail Up to</p>
-                  <h2 className="text-[55px] sm:text-[75px] md:text-[95px] font-black text-[#E31E24] leading-[0.8] tracking-tighter flex items-start">100%<span className="text-[24px] sm:text-[32px] md:text-[40px] leading-none ml-1 mt-1">*</span></h2>
-                  <p className="text-[#1B4F91] font-black text-[26px] sm:text-[36px] md:text-[44px] leading-none mt-2 sm:mt-3">Scholarships</p>
-                </div>
-                <ul className="space-y-1.5 sm:space-y-2 max-w-[480px]">
-                  {scholarshipItems.map((item, idx) => (
-                    <li key={idx} className="flex items-start gap-2 text-[#14284E] text-[13px] sm:text-[14.5px] md:text-[15.5px] font-medium leading-[1.3]">
-                      <span className="text-[#1B4F91] shrink-0 font-bold mt-[2px] text-[14px]">➢</span><span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-            <div className="flex justify-center w-full">
-              <Link to="https://srmu.ac.in/scholarship-scheme" target="_blank" className="inline-flex items-center bg-[#ffc107] hover:bg-[#D78610] text-[#14284E] font-semibold text-[14.5px] px-6 py-3 rounded-md transition-colors shadow-sm hover:-translate-y-0.5">
-                View Details →
-              </Link>
-            </div>
           </div>
         </section>
+
+        {/* ===== SCHOLARSHIPS ===== */}
+        <DepartmentScholarships eligibilityHref="#overview" />
 
         {/* ===== PO / PSO / PLO ===== */}
         <section className="py-8 md:py-10 px-6 bg-[#F0F6FB]">
           <div className={`${Classes["container"]} mx-auto`}>
             <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E]">
-              PO, PLO & <span className="text-[#ffc107]">PSO</span>
+              PO, PLO & <span className="text-[#ffb703]">PSO</span>
             </h2>
             {[
               { key: "objectives", label: "Program Objectives", items: poPsoPlo.objectives.map((o) => o.text) },
@@ -858,11 +722,11 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
         </section>
 
         {/* ===== CAREER OPPORTUNITIES ===== */}
-        <section className="py-8 md:py-10 px-4 sm:px-6 bg-[#E6E6E7]">
+        <section className="py-8 md:py-10 px-4 sm:px-6 bg-[#EEF5FC]">
           <div className={`${Classes["container"]} mx-auto`}>
             <div className="w-full mb-10">
               <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.15] font-bold font-display text-[#14284E]">
-                Career Opportunities <span className="text-[#ffc107]">{careerOpportunities.headingHighlight}</span>
+                Career Opportunities <span className="text-[#ffb703]">{careerOpportunities.headingHighlight}</span>
               </h2>
             </div>
 
@@ -886,13 +750,13 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                 {careerOpportunities.industries.map((item, i) => (
                   <div key={i} className="shrink-0 w-[calc(50%-6px)] bg-white border border-[#DCE6F2] rounded-xl p-4 whitespace-normal">
                     <h3 className="text-[13px] font-bold font-display text-[#14284E] mb-2 leading-snug">{item.title}</h3>
-                    <div className="text-[10px] uppercase tracking-[0.08em] text-[#38B2AC] font-semibold mb-1.5">{item.descriptionLabel ?? "Protects"}</div>
+                    <div className="text-[10px] uppercase tracking-[0.08em] text-[#0F4A85] font-semibold mb-1.5">{item.descriptionLabel ?? "Protects"}</div>
                     <p className="text-[11.5px] leading-[1.5] text-[#4B5A72] text-justify">{item.description}</p>
                   </div>
                 ))}
               </div>
               <div className="mt-5 flex justify-center w-full">
-                <a href="tel:9838904666" className="inline-flex items-center gap-1.5 px-5 py-2.5 bg-[#14284E] hover:bg-[#1B4F91] text-white text-[14px] font-semibold rounded-lg shadow-sm transition-colors">
+                <a href="tel:9838904666" className="inline-flex items-center gap-1.5 px-5 py-2.5 bg-[#ffb703] hover:bg-[#ffa000] text-[#14284E] text-[14px] font-semibold rounded-lg shadow-sm transition-colors uppercase">
                   <CustomerSupportIcon className="w-4 h-4" /> Talk to Counsellor
                 </a>
               </div>
@@ -904,7 +768,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                 <div className="w-full"><img src={careerOpportunities.imageUrl} alt={careerOpportunities.imageAlt} className="w-full aspect-[4/3] sm:aspect-[16/10] object-cover rounded-xl border border-[#DCE6F2]" loading="lazy" /></div>
                 <div className="pr-4">
                   <p className="text-[15px] leading-relaxed text-[#4B5A72] text-justify">{careerOpportunities.description}</p>
-                  <a href="tel:9838904666" className="inline-flex items-center gap-2 mt-5 px-5 py-2.5 bg-[#14284E] text-white text-[14px] font-semibold rounded-lg hover:bg-[#1B4F91] hover:-translate-y-0.5 transition-all shadow-md hover:shadow-lg">
+                  <a href="tel:9838904666" className="inline-flex items-center gap-2 mt-5 px-5 py-2.5 bg-[#ffb703] text-[#14284E] text-[14px] font-semibold rounded-lg hover:bg-[#ffa000] hover:-translate-y-0.5 transition-all shadow-md hover:shadow-lg uppercase">
                     <CustomerSupportIcon className="w-4 h-4" /> Talk to Counsellor
                   </a>
                 </div>
@@ -923,7 +787,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
             {/* Career Role Cards */}
             {careerOpportunities.careerRoles && careerOpportunities.careerRoles.length > 0 && (
               <div className="mt-8">
-                <h3 className="text-[24px] sm:text-[28px] font-bold font-display text-[#14284E] mb-5">Career <span className="text-[#ffc107]">Roles</span></h3>
+                <h3 className="text-[24px] sm:text-[28px] font-bold font-display text-[#14284E] mb-5">Career <span className="text-[#ffb703]">Roles</span></h3>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                   {careerOpportunities.careerRoles.map((role, i) => (
                     <div key={i} className="bg-white border border-[#DCE6F2] rounded-xl p-4 hover:border-[#1B4F91]/40 hover:-translate-y-1 hover:shadow-md transition-all duration-300">
@@ -943,7 +807,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
             <div className="w-full mb-9">
               <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.15] font-bold font-display text-[#14284E]">
                 {programComparison.headers.find((h) => h.highlight)?.label} vs.
-                <span className="text-[#ffc107]"> {programComparison.headers.filter((h) => !h.highlight && h.label !== "Feature").map((h) => h.label).join(", ")}</span>
+                <span className="text-[#ffb703]"> {programComparison.headers.filter((h) => !h.highlight && h.label !== "Feature").map((h) => h.label).join(", ")}</span>
               </h2>
             </div>
 
@@ -1002,7 +866,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                     <h3 className="text-[14.5px] font-bold font-display text-[#14284E] mb-3">{card.heading}</h3>
                     <ul className="space-y-2 list-none! ml-0 sm:ml-4 text-[14.5px] leading-5 text-[#4B5A72]">
                       {card.items.map((item, ii) => (
-                        <li key={ii}><span className="text-[#2BB5A0] sm:text-[#4B5A72]">✓</span> {item}</li>
+                        <li key={ii}><span className="text-[#ffb703] sm:text-[#4B5A72]">✓</span> {item}</li>
                       ))}
                     </ul>
                   </div>

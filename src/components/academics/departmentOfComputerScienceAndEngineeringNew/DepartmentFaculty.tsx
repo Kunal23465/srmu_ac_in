@@ -27,12 +27,12 @@ export type FacultyMember = {
 
 // Academic-strength figures supplied in the section design reference.
 const academicStrength = [
-    { label: "Total Ph.D.", value: "50", detail: "2016–2026 Archive", Icon: GraduationCap },
-    { label: "Theses (2025–26)", value: "15", detail: "Current Session", Icon: FileText },
-    { label: "Ph.D. Matrix Seats", value: "63", detail: "Available Seats", Icon: UserRound },
-    { label: "Supervisors", value: "22", detail: "Active Faculty", Icon: UsersRound },
-    { label: "Vacant Seats", value: "65", detail: "Available Seats", Icon: Star },
-    { label: "Publications", value: "62", detail: "Indexed Papers", Icon: BookOpenCheck },
+    { label: "Total Ph.D.", value: "50", Icon: GraduationCap },
+    { label: "Theses (2025–26)", value: "15", Icon: FileText },
+    { label: "Ph.D. Matrix Seats", value: "63", Icon: UsersRound },
+    { label: "Supervisors", value: "22", Icon: UserRound },
+    { label: "Vacant Seats", value: "65", Icon: Star },
+    { label: "Publications", value: "62", Icon: BookOpenCheck },
 ];
 
 const facultyHighlights = [
@@ -300,278 +300,263 @@ export default function DepartmentFaculty({
                     </div>
                 </header>
 
-                {/* Main Faculty Panel Container */}
-                <div className={styles.facultyPanel}>
-                    <div className={styles.panelTopRow}>
-                        <button
-                            type="button"
-                            className={styles.viewAllButton}
-                            aria-expanded={showAll}
-                            onClick={() => setShowAll((prev) => !prev)}
-                        >
-                            <span>{showAll ? "Show Featured Faculty" : "View All Faculty"}</span>
-                            <ArrowRight size={14} aria-hidden="true" />
-                        </button>
-                    </div>
+                <div className={styles.facultyResearchPanel}>
+                    {/* Main Faculty Panel Container */}
+                    <div className={styles.facultyPanel}>
+                        <div className={styles.panelTopRow}>
+                            <button
+                                type="button"
+                                className={styles.viewAllButton}
+                                aria-expanded={showAll}
+                                onClick={() => setShowAll((prev) => !prev)}
+                            >
+                                <span>{showAll ? "Show Featured Faculty" : "View All Faculty"}</span>
+                                <ArrowRight size={14} aria-hidden="true" />
+                            </button>
+                        </div>
 
-                    {showAll ? (
-                        /* Expanded Grid Showing All Faculty Members */
-                        <div className={styles.allFacultyGrid}>
-                            {faculty.map((member) => (
-                                <article
-                                    key={member.name}
-                                    className={styles.facultyCard}
-                                    onClick={() => onSelect(member)}
-                                >
-                                    <div className={styles.cardPortraitWrapper}>
-                                        {member.isHod && (
-                                            <span className={styles.hodBadge}>HOD</span>
-                                        )}
+                        {showAll ? (
+                            /* Expanded Grid Showing All Faculty Members */
+                            <div className={styles.allFacultyGrid}>
+                                {faculty.map((member) => (
+                                    <article
+                                        key={member.name}
+                                        className={styles.facultyCard}
+                                        onClick={() => onSelect(member)}
+                                    >
+                                        <div className={styles.cardPortraitWrapper}>
+                                            {member.isHod && (
+                                                <span className={styles.hodBadge}>HOD</span>
+                                            )}
+                                            <img
+                                                src={member.img}
+                                                alt={member.name}
+                                                loading="lazy"
+                                                decoding="async"
+                                                className={styles.cardPortraitImg}
+                                                onError={(e) => {
+                                                    e.currentTarget.src =
+                                                        "https://ui-avatars.com/api/?name=" +
+                                                        encodeURIComponent(member.name) +
+                                                        "&background=EAEAEA&color=14284E&size=256";
+                                                }}
+                                            />
+                                        </div>
+                                        <div className={styles.cardBody}>
+                                            <h3 className={styles.cardName}>{member.name}</h3>
+                                            <p className={styles.cardRole}>{member.role}</p>
+                                            <span className={styles.cardAccentBar} aria-hidden="true" />
+                                        </div>
+                                    </article>
+                                ))}
+                            </div>
+                        ) : (
+                            /* Default Split Layout: HOD Card on Left, Carousel on Right */
+                            <div className={styles.panelLayout}>
+                                {/* Featured HOD Card */}
+                                <article className={styles.hodCard}>
+                                    <div className={styles.hodPortraitWrapper}>
+                                        <span className={styles.hodBadge}>HOD</span>
                                         <img
-                                            src={member.img}
-                                            alt={member.name}
+                                            src={hod.img}
+                                            alt={hod.name}
                                             loading="lazy"
                                             decoding="async"
-                                            className={styles.cardPortraitImg}
+                                            className={styles.hodPortraitImg}
                                             onError={(e) => {
                                                 e.currentTarget.src =
                                                     "https://ui-avatars.com/api/?name=" +
-                                                    encodeURIComponent(member.name) +
+                                                    encodeURIComponent(hod.name) +
                                                     "&background=EAEAEA&color=14284E&size=256";
                                             }}
                                         />
                                     </div>
-                                    <div className={styles.cardBody}>
-                                        <h3 className={styles.cardName}>{member.name}</h3>
-                                        <p className={styles.cardRole}>{member.role}</p>
-                                        <span className={styles.cardAccentBar} aria-hidden="true" />
+                                    <div className={styles.hodContent}>
+                                        <h3 className={styles.hodName}>{hod.name}</h3>
+                                        <p className={styles.hodRole}>{hod.role}</p>
+                                        <p className={styles.hodDescription}>
+                                            Expert in computer science and engineering with a focus on
+                                            innovation and research.
+                                        </p>
+                                        <button
+                                            type="button"
+                                            className={styles.viewProfileButton}
+                                            onClick={() => onSelect(hod)}
+                                        >
+                                            <span>View Profile</span>
+                                            <ArrowRight size={14} aria-hidden="true" />
+                                        </button>
                                     </div>
                                 </article>
-                            ))}
-                        </div>
-                    ) : (
-                        /* Default Split Layout: HOD Card on Left, Carousel on Right */
-                        <div className={styles.panelLayout}>
-                            {/* Featured HOD Card */}
-                            <article className={styles.hodCard}>
-                                <div className={styles.hodPortraitWrapper}>
-                                    <span className={styles.hodBadge}>HOD</span>
-                                    <img
-                                        src={hod.img}
-                                        alt={hod.name}
-                                        loading="lazy"
-                                        decoding="async"
-                                        className={styles.hodPortraitImg}
-                                        onError={(e) => {
-                                            e.currentTarget.src =
-                                                "https://ui-avatars.com/api/?name=" +
-                                                encodeURIComponent(hod.name) +
-                                                "&background=EAEAEA&color=14284E&size=256";
-                                        }}
-                                    />
-                                </div>
-                                <div className={styles.hodContent}>
-                                    <h3 className={styles.hodName}>{hod.name}</h3>
-                                    <p className={styles.hodRole}>{hod.role}</p>
-                                    <p className={styles.hodDescription}>
-                                        Expert in computer science and engineering with a focus on
-                                        innovation and research.
-                                    </p>
+
+                                {/* Carousel of Other Faculty Members */}
+                                <div
+                                    className={styles.carouselWrapper}
+                                    role="region"
+                                    aria-roledescription="carousel"
+                                    aria-label="Department faculty"
+                                >
                                     <button
                                         type="button"
-                                        className={styles.viewProfileButton}
-                                        onClick={() => onSelect(hod)}
+                                        className={`${styles.arrowButton} ${styles.arrowPrev}`}
+                                        onClick={() => carousel?.scrollPrev()}
+                                        disabled={!canPrevious}
+                                        aria-label="Previous faculty slide"
                                     >
-                                        <span>View Profile</span>
-                                        <ArrowRight size={14} aria-hidden="true" />
+                                        <ArrowLeft size={16} aria-hidden="true" />
                                     </button>
-                                </div>
-                            </article>
 
-                            {/* Carousel of Other Faculty Members */}
+                                    <div className={styles.viewport} ref={viewportRef}>
+                                        <div className={styles.track}>
+                                            {otherFaculty.map((member) => (
+                                                <article
+                                                    key={member.name}
+                                                    className={styles.facultyCard}
+                                                    onClick={() => onSelect(member)}
+                                                >
+                                                    <div className={styles.cardPortraitWrapper}>
+                                                        <img
+                                                            src={member.img}
+                                                            alt={member.name}
+                                                            loading="lazy"
+                                                            decoding="async"
+                                                            className={styles.cardPortraitImg}
+                                                            onError={(e) => {
+                                                                e.currentTarget.src =
+                                                                    "https://ui-avatars.com/api/?name=" +
+                                                                    encodeURIComponent(member.name) +
+                                                                    "&background=EAEAEA&color=14284E&size=256";
+                                                            }}
+                                                        />
+                                                    </div>
+                                                    <div className={styles.cardBody}>
+                                                        <h3 className={styles.cardName}>
+                                                            {member.name}
+                                                        </h3>
+                                                        <p className={styles.cardRole}>
+                                                            {member.role}
+                                                        </p>
+                                                        <span
+                                                            className={styles.cardAccentBar}
+                                                            aria-hidden="true"
+                                                        />
+                                                    </div>
+                                                </article>
+                                            ))}
+                                        </div>
+                                    </div>
+
+                                    <button
+                                        type="button"
+                                        className={`${styles.arrowButton} ${styles.arrowNext}`}
+                                        onClick={() => carousel?.scrollNext()}
+                                        disabled={!canNext}
+                                        aria-label="Next faculty slide"
+                                    >
+                                        <ArrowRight size={16} aria-hidden="true" />
+                                    </button>
+
+                                    {/* Carousel Pagination Dots */}
+                                    {snaps.length > 1 && (
+                                        <div
+                                            className={styles.pagination}
+                                            aria-label="Faculty carousel pages"
+                                        >
+                                            {snaps.map((_, index) => (
+                                                <button
+                                                    type="button"
+                                                    key={index}
+                                                    className={styles.dotButton}
+                                                    aria-label={`Go to slide ${index + 1}`}
+                                                    aria-current={
+                                                        selected === index ? "true" : undefined
+                                                    }
+                                                    onClick={() => carousel?.scrollTo(index)}
+                                                >
+                                                    <span className={styles.dotPill} />
+                                                </button>
+                                            ))}
+                                        </div>
+                                    )}
+                                </div>
+                            </div>
+                        )}
+                    </div>
+
+                    {/* Research & Publications Row */}
+                    <div
+                        className={styles.researchPanel}
+                        aria-labelledby="academic-strength-heading"
+                    >
+                        <div className={styles.researchDotGrid} aria-hidden="true" />
+
+                        <div className={styles.researchLayout}>
+                            {/* Left Side: Animated Illustration + Copy + CTA */}
+                            <div className={styles.researchIntro}>
+                                <div className={styles.researchIllustrationWrapper}>
+                                    <div className={styles.researchIllustrationAura} aria-hidden="true" />
+                                    <ResearchIllustration />
+                                </div>
+                                <div className={styles.researchIntroCopy}>
+                                    <div className={styles.researchEyebrowBadge}>
+                                        <span className={styles.researchPulsingDot} aria-hidden="true" />
+                                        <span className={styles.researchEyebrowText}>
+                                            RESEARCH & PUBLICATIONS
+                                        </span>
+                                    </div>
+                                    <h3
+                                        id="academic-strength-heading"
+                                        className={`font-display ${styles.researchHeading}`}
+                                    >
+                                        Advancing Knowledge.
+                                        <span className={styles.researchHeadingSpan}>
+                                            Creating Impact.
+                                        </span>
+                                    </h3>
+                                    <p className={styles.researchParagraph}>
+                                        Our faculty actively contributes to cutting-edge research,
+                                        publications and innovation across various domains.
+                                    </p>
+                                    <a target="_blank" href="https://research-consultancy.srmu.ac.in/department/institute-of-technology" className={styles.researchButton}>
+                                        <FileText size={15} aria-hidden="true" />
+                                        <span>Research</span>
+                                        <ArrowRight size={14} aria-hidden="true" />
+                                    </a>
+                                </div>
+                            </div>
+
+                            {/* Research statistics carousel */}
                             <div
-                                className={styles.carouselWrapper}
+                                className={styles.statsCarouselWrapper}
                                 role="region"
                                 aria-roledescription="carousel"
-                                aria-label="Department faculty"
+                                aria-label="Academic strength statistics"
                             >
                                 <button
                                     type="button"
                                     className={`${styles.arrowButton} ${styles.arrowPrev}`}
-                                    onClick={() => carousel?.scrollPrev()}
-                                    disabled={!canPrevious}
-                                    aria-label="Previous faculty slide"
+                                    onClick={() => statsCarousel?.scrollPrev()}
+                                    disabled={!canPreviousStat}
+                                    aria-label="Previous statistics"
                                 >
                                     <ArrowLeft size={16} aria-hidden="true" />
                                 </button>
-
-                                <div className={styles.viewport} ref={viewportRef}>
-                                    <div className={styles.track}>
-                                        {otherFaculty.map((member) => (
-                                            <article
-                                                key={member.name}
-                                                className={styles.facultyCard}
-                                                onClick={() => onSelect(member)}
-                                            >
-                                                <div className={styles.cardPortraitWrapper}>
-                                                    <img
-                                                        src={member.img}
-                                                        alt={member.name}
-                                                        loading="lazy"
-                                                        decoding="async"
-                                                        className={styles.cardPortraitImg}
-                                                        onError={(e) => {
-                                                            e.currentTarget.src =
-                                                                "https://ui-avatars.com/api/?name=" +
-                                                                encodeURIComponent(member.name) +
-                                                                "&background=EAEAEA&color=14284E&size=256";
-                                                        }}
-                                                    />
-                                                </div>
-                                                <div className={styles.cardBody}>
-                                                    <h3 className={styles.cardName}>
-                                                        {member.name}
-                                                    </h3>
-                                                    <p className={styles.cardRole}>
-                                                        {member.role}
-                                                    </p>
-                                                    <span
-                                                        className={styles.cardAccentBar}
-                                                        aria-hidden="true"
-                                                    />
-                                                </div>
-                                            </article>
-                                        ))}
-                                    </div>
-                                </div>
-
-                                <button
-                                    type="button"
-                                    className={`${styles.arrowButton} ${styles.arrowNext}`}
-                                    onClick={() => carousel?.scrollNext()}
-                                    disabled={!canNext}
-                                    aria-label="Next faculty slide"
+                                <div
+                                    className={styles.statsViewport}
+                                    ref={statsViewportRef}
                                 >
-                                    <ArrowRight size={16} aria-hidden="true" />
-                                </button>
-
-                                {/* Carousel Pagination Dots */}
-                                {snaps.length > 1 && (
-                                    <div
-                                        className={styles.pagination}
-                                        aria-label="Faculty carousel pages"
-                                    >
-                                        {snaps.map((_, index) => (
-                                            <button
-                                                type="button"
-                                                key={index}
-                                                className={styles.dotButton}
-                                                aria-label={`Go to slide ${index + 1}`}
-                                                aria-current={
-                                                    selected === index ? "true" : undefined
-                                                }
-                                                onClick={() => carousel?.scrollTo(index)}
-                                            >
-                                                <span className={styles.dotPill} />
-                                            </button>
-                                        ))}
-                                    </div>
-                                )}
-                            </div>
-                        </div>
-                    )}
-                </div>
-
-                {/* Bottom Research & Publications Panel (REVAMPED: ULTRA-ATTRACTIVE) */}
-                <div
-                    className={styles.researchPanel}
-                    aria-labelledby="academic-strength-heading"
-                >
-                    {/* Ambient Luminous Glow Orbs */}
-                    <div className={styles.researchGlowCyan} aria-hidden="true" />
-                    <div className={styles.researchGlowGold} aria-hidden="true" />
-                    <div className={styles.researchDotGrid} aria-hidden="true" />
-
-                    <div className={styles.researchLayout}>
-                        {/* Left Side: Animated Illustration + Copy + CTA */}
-                        <div className={styles.researchIntro}>
-                            <div className={styles.researchIllustrationWrapper}>
-                                <div className={styles.researchIllustrationAura} aria-hidden="true" />
-                                <ResearchIllustration />
-                            </div>
-                            <div className={styles.researchIntroCopy}>
-                                <div className={styles.researchEyebrowBadge}>
-                                    <span className={styles.researchPulsingDot} aria-hidden="true" />
-                                    <span className={styles.researchEyebrowText}>
-                                        RESEARCH & PUBLICATIONS
-                                    </span>
-                                </div>
-                                <h3
-                                    id="academic-strength-heading"
-                                    className={`font-display ${styles.researchHeading}`}
-                                >
-                                    Advancing Knowledge.
-                                    <span className={styles.researchHeadingSpan}>
-                                        Creating Impact.
-                                    </span>
-                                </h3>
-                                <p className={styles.researchParagraph}>
-                                    Our faculty actively contributes to cutting-edge research,
-                                    publications and innovation across various domains.
-                                </p>
-                                <Link to="/publication" className={styles.researchButton}>
-                                    <FileText size={15} aria-hidden="true" />
-                                    <span>Research</span>
-                                    <ArrowRight size={14} aria-hidden="true" />
-                                </Link>
-                            </div>
-                        </div>
-
-                        {/* Research statistics carousel */}
-                        <div
-                            className={styles.statsCarouselWrapper}
-                            role="region"
-                            aria-roledescription="carousel"
-                            aria-label="Academic strength statistics"
-                        >
-                            <button
-                                type="button"
-                                className={`${styles.arrowButton} ${styles.arrowPrev}`}
-                                onClick={() => statsCarousel?.scrollPrev()}
-                                disabled={!canPreviousStat}
-                                aria-label="Previous statistics"
-                            >
-                                <ArrowLeft size={16} aria-hidden="true" />
-                            </button>
-                            <div
-                                className={styles.statsViewport}
-                                ref={statsViewportRef}
-                            >
-                                <dl className={styles.researchStatsGrid}>
-                                    {academicStrength.map(({ label, value, detail, Icon }) => (
-                                        <div className={styles.statSlide} key={label}>
-                                            <div className={styles.statCard}>
-                                                <div className={styles.statCardInner}>
-                                                    <div className={styles.statIconWrapper}>
-                                                        <Icon
-                                                            size={18}
-                                                            strokeWidth={2.4}
-                                                            aria-hidden="true"
-                                                        />
-                                                    </div>
-                                                    <p className={styles.statValue}>{value}</p>
-                                                    <dt className={styles.statLabel}>{label}</dt>
-                                                    <dd className={styles.statDetail}>
-                                                        <span className={styles.statDetailBadge}>
-                                                            {detail}
-                                                        </span>
-                                                    </dd>
+                                    <dl className={styles.researchStatsGrid}>
+                                        {academicStrength.map(({ label, value, Icon }) => (
+                                            <div className={`${styles.statSlide} ${styles.statItem}`} key={label}>
+                                                <div className={styles.statIconWrapper} aria-hidden="true">
+                                                    <Icon size={40} strokeWidth={1.7} />
+                                                    {label === "Supervisors" && (
+                                                        <Star className={styles.statIconAccent} size={17} strokeWidth={2.2} />
+                                                    )}
                                                 </div>
-                                                <span
-                                                    className={styles.statAccentBar}
-                                                    aria-hidden="true"
-                                                />
-                                                </div>
+                                                <dt className={styles.statLabel}>{label}</dt>
+                                                <dd className={styles.statValue}>{value}</dd>
+                                                <span className={styles.statAccentBar} aria-hidden="true" />
                                             </div>
                                         ))}
                                     </dl>
@@ -586,6 +571,7 @@ export default function DepartmentFaculty({
                                     <ArrowRight size={16} aria-hidden="true" />
                                 </button>
                             </div>
+                        </div>
                     </div>
                 </div>
             </div>
