@@ -16,7 +16,6 @@ function getSlidesToShow() {
 
 export default function Events() {
     const sliderRef = useRef<HTMLDivElement | null>(null);
-    const autoRef = useRef<number | null>(null);
 
     const [, setCurrentIndex] = useState(0); // real index 0..n-1
     const currentIndexRef = useRef(0);
@@ -62,17 +61,7 @@ export default function Events() {
         scrollToDisplayIndex(realToDisplayIndex(next));
     }
 
-    function stopAuto() {
-        if (autoRef.current) {
-            window.clearInterval(autoRef.current);
-            autoRef.current = null;
-        }
-    }
 
-    function startAuto() {
-        stopAuto();
-        autoRef.current = window.setInterval(() => advance(1), 4000);
-    }
 
     useEffect(() => {
         const handleResize = () => {
@@ -85,9 +74,7 @@ export default function Events() {
         window.addEventListener('resize', handleResize);
         // position to first real slide after mount
         setTimeout(() => scrollToDisplayIndex(slidesToShow, false), 40);
-        startAuto();
         return () => {
-            stopAuto();
             window.removeEventListener('resize', handleResize);
         };
     }, [slidesToShow]);
@@ -108,13 +95,11 @@ export default function Events() {
     function openModal(id: number | string) {
         setActive(id);
         setOpen(true);
-        stopAuto();
     }
 
     function closeModal() {
         setOpen(false);
         setActive(null);
-        startAuto();
     }
 
     return (
@@ -144,8 +129,6 @@ export default function Events() {
 
                     <div
                         ref={sliderRef}
-                        onMouseEnter={stopAuto}
-                        onMouseLeave={startAuto}
                         onScroll={() => {
                             if (scrollTimeout.current) window.clearTimeout(scrollTimeout.current);
                             scrollTimeout.current = window.setTimeout(() => {

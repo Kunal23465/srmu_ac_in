@@ -35,6 +35,7 @@ import expressionsOrganized from "../../assets/new-home/events/Expressions_Organ
 import newsNewEvent from "../../assets/new-home/events/News_New_Event.webp";
 import collageEvent from "../../assets/new-home/events/Collage.png";
 import legalEvent from "../../assets/new-home/events/Legal-Awareness-Programme-at-School.png";
+import bloodCamp from "../../assets/images/blood.jpg"
 
 
 
@@ -58,6 +59,46 @@ export type EventItem = {
 };
 
 const eventsData: EventItem[] = [
+{
+  id: 28,
+  isRedirect: false,
+  image: bloodCamp,
+  imageSmall: bloodCamp,
+  date: "October 1st, 2026",
+  title: `Blood Donation Camp Organized at SRMU, Nearly 100 Units of Blood Collected`,
+  description: `
+Shri Ramswaroop Memorial University (SRMU), Barabanki, organized a <strong>Blood Donation Camp on 1 October 2026</strong> in collaboration with the <strong>Health City Trauma Centre & Super Speciality Hospital</strong>. The camp was jointly organized by the <strong>National Service Scheme (NSS), National Cadet Corps (NCC), and the 1090 Club</strong>, with the objective of encouraging voluntary blood donation among students and members of the university community and supporting the availability of blood for patients in need.
+
+<br/><strong>Guidance and Leadership</strong><br/>
+
+The program was conducted under the guidance of <strong>Hon’ble Chancellor Engr. Pankaj Agrawal, Pro-Chancellor Engr. Pooja Agrawal, and Academic Advisor Arushi Agrawal</strong>, and under the leadership of <strong>Vice-Chancellor Prof. (Dr.) Vijay Tiwari and Registrar Dr. Hemendra Sharma</strong>. The camp was coordinated by <strong>Prof. (Dr.) Veena Singh, Club Coordinator</strong>.
+
+<br/><strong>Message on Blood Donation</strong><br/>
+
+On this occasion, Chancellor Engr. Pankaj Agrawal and Pro-Chancellor Engr. Pooja Agrawal conveyed their message, emphasizing that blood donation is not merely a social service but a vital contribution towards saving human lives. They encouraged students to participate actively in such initiatives and embrace a spirit of social responsibility.
+
+<br/><strong>Address by the Vice-Chancellor</strong><br/>
+
+Addressing the occasion, <strong>Vice-Chancellor Prof. (Dr.) Vijay Tiwari</strong> highlighted the university's commitment to nurturing humanitarian values and social responsibility alongside academic excellence. He noted that initiatives such as blood donation camps provide students with meaningful opportunities to understand and fulfill their responsibilities towards society. He also congratulated the blood donors, volunteers, and everyone involved in organizing the camp.
+
+<br/><strong>Coordination and Support</strong><br/>
+
+The camp was organized under the coordination of Dr. Veena Singh, with active support from <strong>NCC Coordinators Lieutenant Dr. Nancy Gupta and Lieutenant Nilesh Mishra; NSS Coordinators Dr. Afia Bano and Dr. Vaibhav Sharma; and 1090 Club Coordinators Dr. Vimlesh Singh and Dr. Pratibha Gupta</strong>.
+
+<br/><strong>Participation and Blood Collection</strong><br/>
+
+The event witnessed enthusiastic participation from students and members of the university community, with <strong>nearly 100 units of blood collected</strong>. The occasion was attended by <strong>Prof. B. M. Dixit, Dean of Student Welfare; Prof. Akanksha Nigam, Controller of Examinations; and Prof. Abhishek Saxena</strong>, along with deans, directors, heads of departments, faculty members, university officials, and students from various disciplines.
+
+<br/><strong>Vote of Thanks</strong><br/>
+
+At the conclusion of the program, <strong>Registrar Dr. Hemendra Sharma</strong> expressed gratitude to all blood donors, students, volunteers, faculty members, university officials, and the team from Health City Trauma Centre & Super Speciality Hospital for their valuable support in making the initiative successful.
+
+<br/><strong>Commitment to Community Service</strong><br/>
+
+The blood donation camp reflected SRMU's commitment to <strong>community service, humanitarian values, and social responsibility</strong>, inspiring students to contribute meaningfully towards the well-being of society.
+`,
+},
+
  {
   id: 27,
   isRedirect: false,
