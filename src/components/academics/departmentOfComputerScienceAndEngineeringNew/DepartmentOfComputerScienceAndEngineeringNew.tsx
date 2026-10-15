@@ -661,7 +661,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                         </h1>
 
                         {/* Gold separator */}
-                        <div className="h-[3px] w-[80px] bg-[#ffb703] rounded-full mb-4" />
+                        <div className="h-[3px] w-[80px] bg-[#FFB703] rounded-full mb-4" />
 
                         {/* Stats 2×2 card grid — Pic-1 style */}
                         <div className="grid grid-cols-2 gap-2.5 mb-6">
@@ -681,7 +681,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                     }}
                                 >
                                     <div
-                                        className="cse-stat-value text-[#ffb703] font-extrabold text-[20px] leading-none tracking-tight"
+                                        className="cse-stat-value text-[#FFB703] font-extrabold text-[20px] leading-none tracking-tight"
                                         style={{ animationDelay: s.delay }}
                                     >
                                         {s.v}
@@ -699,7 +699,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                 href="https://students.srmu.ac.in/login"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="cse-mobile-button uppercase tracking-wider flex-1 text-center bg-[#ffb703] text-[#14284E] font-bold text-[14px] px-3 py-3 rounded-lg shadow-lg"
+                                className="cse-mobile-button uppercase tracking-wider flex-1 text-center bg-[#FFB703] text-[#14284E] font-bold text-[14px] px-3 py-3 rounded-lg shadow-lg"
                             >
                                 Apply Now
                             </a>
@@ -748,7 +748,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                     href="https://students.srmu.ac.in/login"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="cse-mobile-button uppercase tracking-wider flex-none text-center bg-[#ffb703] text-[#14284E] font-bold text-[12px] sm:text-[14px] px-4 sm:px-8 py-3.5 rounded-lg transition-colors shadow-lg border border-[#ffb703]"
+                                    className="cse-mobile-button uppercase tracking-wider flex-none text-center bg-[#FFB703] text-[#14284E] font-bold text-[12px] sm:text-[14px] px-4 sm:px-8 py-3.5 rounded-lg transition-colors shadow-lg border border-[#FFB703]"
                                 >
                                     Apply Now
                                 </a>
@@ -771,7 +771,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                     <div className="rounded-2xl overflow-hidden shadow-xl border border-white/10 max-w-[650px] mx-auto">
                         <div className="bg-[#14284E] px-4 py-3 text-center">
                             <h3 className="text-white font-bold text-[15px]">Shri Ramswaroop Memorial University</h3>
-                            <div className="w-8 h-0.5 bg-[#ffb703] mx-auto mt-2 rounded-full" />
+                            <div className="w-8 h-0.5 bg-[#FFB703] mx-auto mt-2 rounded-full" />
                         </div>
                         <div className="bg-white px-4 py-4 space-y-2.5">
                             <div className="grid grid-cols-2 gap-2">
@@ -810,7 +810,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                 <input type="checkbox" defaultChecked className="mt-0.5 shrink-0 scale-75 origin-top-left" />
                                 I authorise SRMU and its representatives to Call, SMS, Email or WhatsApp me regarding admissions and programmes.
                             </p>
-                            <button className="cse-mobile-button w-full bg-[#ffb703] hover:bg-[#ffb703] text-[#14284E] font-bold uppercase tracking-wide text-[14px] py-3 rounded-xl transition-colors flex items-center justify-center gap-2">
+                            <button className="cse-mobile-button w-full bg-[#FFB703] hover:bg-[#FFB703] text-[#14284E] font-bold uppercase tracking-wide text-[14px] py-3 rounded-xl transition-colors flex items-center justify-center gap-2">
                                 APPLY NOW →
                             </button>
                         </div>
@@ -842,7 +842,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                             {/* ── Left: text ── */}
                             <div className="w-full lg:flex-1">
                                 <h2 className="text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3 text-left lg:text-left">
-                                    About the <span className="text-[#ffb703]">Department of CSE</span>
+                                    About the <span className="text-[#FFB703]">Department of CSE</span>
                                 </h2>
 
                                 <div className={`text-[#4B5A72] text-[15.5px] sm:text-[16px] leading-relaxed space-y-4 text-justify ${!rm["about"] ? "line-clamp-2 sm:line-clamp-none" : ""}`}>
@@ -909,21 +909,21 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                     </button>
                                 </div>
                                 {/* Vision */}
-                                <div className="bg-[#14284E] p-8 sm:p-10 border-t-[4px] border-[#ffb703] flex-1">
+                                <div className="bg-[#14284E] p-8 sm:p-10 border-t-[4px] border-[#FFB703] flex-1">
                                     <div className="mb-4">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 27 27" fill="none">
-                                            <path d="M13.8003 2.26177C12.0086 2.26099 10.2441 2.70031 8.6619 3.54114C7.07972 4.38196 5.7283 5.59855 4.7264 7.08396C3.7245 8.56938 3.1028 10.2782 2.91593 12.0601C2.72907 13.8421 2.98276 15.6426 3.65472 17.3036C3.71572 17.4422 3.74827 17.5917 3.75042 17.7432C3.75257 17.8947 3.72428 18.045 3.66724 18.1854C3.6102 18.3257 3.52556 18.4532 3.41835 18.5602C3.31113 18.6672 3.18351 18.7516 3.04307 18.8084C2.90263 18.8652 2.29983 18.8555 2.16128 18.7943C2.02273 18.733 1.89789 18.6446 1.79416 18.5342C1.69043 18.4238 1.60992 18.2936 1.55741 18.1515C0.41602 15.3287 0.285442 12.1981 1.18779 9.28997C2.09014 6.38186 3.96995 3.87504 6.50881 2.19412C9.04767 0.513196 12.0895 -0.238498 15.1191 0.0663603C18.1487 0.371218 20.9798 1.71389 23.1328 3.86694C25.2859 6.02 26.6285 8.85109 26.9334 11.8807C27.2383 14.9103 26.4866 17.9521 24.8056 20.4909C23.1247 23.0298 20.6179 24.9096 17.7098 25.812C14.8017 26.7143 11.6711 26.5837 8.84821 25.4424C8.57605 25.3256 8.36048 25.1068 8.24779 24.833C8.13509 24.5591 8.13424 24.252 8.24542 23.9775C8.35659 23.703 8.57094 23.4831 8.84245 23.3648C9.11396 23.2466 9.42101 23.2395 9.6977 23.345C11.1934 23.9488 12.8042 24.2143 14.4146 24.1225C16.0249 24.0307 17.5951 23.5839 19.0126 22.8142C20.43 22.0444 21.6597 20.9708 22.6136 19.67C23.5675 18.3693 24.2219 16.8737 24.53 15.2904C24.8381 13.7072 24.7922 12.0753 24.3957 10.5118C23.9992 8.94834 23.2618 7.49188 22.2364 6.24677C21.211 5.00166 19.923 3.99872 18.4645 3.30978C17.006 2.62085 15.4133 2.26297 13.8003 2.26177Z" fill="#FFC800" />
-                                            <path d="M5.12459 13.201C5.12459 15.1881 5.79302 17.0199 6.91712 18.4835L6.20946 19.1911L6.16571 19.2364H4.40034C3.80028 19.2369 3.225 19.4757 2.80095 19.9003L0.330954 22.3703C0.172891 22.5286 0.0652728 22.7301 0.0216904 22.9495C-0.0218921 23.1689 0.00051653 23.3963 0.0860859 23.6029C0.171655 23.8096 0.316548 23.9862 0.502462 24.1106C0.688377 24.235 0.906975 24.3014 1.13065 24.3016H2.69986V25.8708C2.70006 26.0945 2.76653 26.3131 2.89089 26.499C3.01525 26.6849 3.19192 26.8298 3.39858 26.9154C3.60524 27.001 3.83262 27.0234 4.052 26.9798C4.27139 26.9362 4.47294 26.8286 4.6312 26.6705L7.1012 24.199C7.5254 23.7754 7.76417 23.2007 7.7651 22.6012V20.8358L7.81036 20.792L8.51801 20.0859C10.0716 21.2783 11.9829 21.9101 13.9411 21.8783C15.8993 21.8466 17.7892 21.1532 19.3033 19.9111C20.8174 18.6689 21.8667 16.951 22.2806 15.0368C22.6944 13.1225 22.4484 11.1246 21.5826 9.36794C20.7167 7.61127 19.282 6.19921 17.5118 5.36145C15.7416 4.52369 13.74 4.3095 11.8326 4.75373C9.92518 5.19797 8.22418 6.27448 7.00627 7.80817C5.78835 9.34187 5.12517 11.2425 5.12459 13.201ZM13.8005 6.78832C14.8069 6.78861 15.799 7.02573 16.6967 7.4805C17.5944 7.93528 18.3725 8.59495 18.968 9.40616C19.5635 10.2174 19.9598 11.1573 20.1247 12.1501C20.2896 13.1428 20.2185 14.1604 19.9173 15.1206C19.6161 16.0808 19.0931 16.9566 18.3906 17.6772C17.6882 18.3978 16.826 18.943 15.8738 19.2686C14.9216 19.5942 13.9062 19.6912 12.9095 19.5517C11.9129 19.4121 10.9632 19.04 10.137 18.4654L12.6206 15.9803C13.2654 16.2538 13.9852 16.2946 14.6567 16.0956C15.3282 15.8966 15.9096 15.4702 16.3012 14.8895C16.6928 14.3089 16.8702 13.61 16.803 12.9129C16.7359 12.2157 16.4283 11.5637 15.9331 11.0684C15.4378 10.5732 14.7858 10.2656 14.0886 10.1985C13.3914 10.1313 12.6926 10.3087 12.112 10.7003C11.5313 11.0919 11.1049 11.6733 10.9059 12.3448C10.7069 13.0163 10.7477 13.7361 11.0212 14.3809L8.53461 16.863C7.86556 15.9012 7.47278 14.7745 7.39892 13.6052C7.32506 12.4359 7.57295 11.2688 8.11567 10.2305C8.6584 9.19213 9.4752 8.32233 10.4774 7.7155C11.4796 7.10868 12.6289 6.78801 13.8005 6.78832ZM6.16571 20.7453L6.25624 20.8343V22.5996C6.2558 22.7996 6.17602 22.9911 6.03444 23.1323L4.20872 24.958V23.5472C4.20872 23.3471 4.12923 23.1552 3.98775 23.0137C3.84627 22.8723 3.65438 22.7928 3.45429 22.7928H2.042L3.86772 20.9671C3.93778 20.8968 4.02103 20.841 4.11269 20.8029C4.20434 20.7649 4.30261 20.7453 4.40185 20.7453H6.16571Z" fill="#FFC800" />
+                                            <path d="M13.8003 2.26177C12.0086 2.26099 10.2441 2.70031 8.6619 3.54114C7.07972 4.38196 5.7283 5.59855 4.7264 7.08396C3.7245 8.56938 3.1028 10.2782 2.91593 12.0601C2.72907 13.8421 2.98276 15.6426 3.65472 17.3036C3.71572 17.4422 3.74827 17.5917 3.75042 17.7432C3.75257 17.8947 3.72428 18.045 3.66724 18.1854C3.6102 18.3257 3.52556 18.4532 3.41835 18.5602C3.31113 18.6672 3.18351 18.7516 3.04307 18.8084C2.90263 18.8652 2.29983 18.8555 2.16128 18.7943C2.02273 18.733 1.89789 18.6446 1.79416 18.5342C1.69043 18.4238 1.60992 18.2936 1.55741 18.1515C0.41602 15.3287 0.285442 12.1981 1.18779 9.28997C2.09014 6.38186 3.96995 3.87504 6.50881 2.19412C9.04767 0.513196 12.0895 -0.238498 15.1191 0.0663603C18.1487 0.371218 20.9798 1.71389 23.1328 3.86694C25.2859 6.02 26.6285 8.85109 26.9334 11.8807C27.2383 14.9103 26.4866 17.9521 24.8056 20.4909C23.1247 23.0298 20.6179 24.9096 17.7098 25.812C14.8017 26.7143 11.6711 26.5837 8.84821 25.4424C8.57605 25.3256 8.36048 25.1068 8.24779 24.833C8.13509 24.5591 8.13424 24.252 8.24542 23.9775C8.35659 23.703 8.57094 23.4831 8.84245 23.3648C9.11396 23.2466 9.42101 23.2395 9.6977 23.345C11.1934 23.9488 12.8042 24.2143 14.4146 24.1225C16.0249 24.0307 17.5951 23.5839 19.0126 22.8142C20.43 22.0444 21.6597 20.9708 22.6136 19.67C23.5675 18.3693 24.2219 16.8737 24.53 15.2904C24.8381 13.7072 24.7922 12.0753 24.3957 10.5118C23.9992 8.94834 23.2618 7.49188 22.2364 6.24677C21.211 5.00166 19.923 3.99872 18.4645 3.30978C17.006 2.62085 15.4133 2.26297 13.8003 2.26177Z" fill="#FFB703" />
+                                            <path d="M5.12459 13.201C5.12459 15.1881 5.79302 17.0199 6.91712 18.4835L6.20946 19.1911L6.16571 19.2364H4.40034C3.80028 19.2369 3.225 19.4757 2.80095 19.9003L0.330954 22.3703C0.172891 22.5286 0.0652728 22.7301 0.0216904 22.9495C-0.0218921 23.1689 0.00051653 23.3963 0.0860859 23.6029C0.171655 23.8096 0.316548 23.9862 0.502462 24.1106C0.688377 24.235 0.906975 24.3014 1.13065 24.3016H2.69986V25.8708C2.70006 26.0945 2.76653 26.3131 2.89089 26.499C3.01525 26.6849 3.19192 26.8298 3.39858 26.9154C3.60524 27.001 3.83262 27.0234 4.052 26.9798C4.27139 26.9362 4.47294 26.8286 4.6312 26.6705L7.1012 24.199C7.5254 23.7754 7.76417 23.2007 7.7651 22.6012V20.8358L7.81036 20.792L8.51801 20.0859C10.0716 21.2783 11.9829 21.9101 13.9411 21.8783C15.8993 21.8466 17.7892 21.1532 19.3033 19.9111C20.8174 18.6689 21.8667 16.951 22.2806 15.0368C22.6944 13.1225 22.4484 11.1246 21.5826 9.36794C20.7167 7.61127 19.282 6.19921 17.5118 5.36145C15.7416 4.52369 13.74 4.3095 11.8326 4.75373C9.92518 5.19797 8.22418 6.27448 7.00627 7.80817C5.78835 9.34187 5.12517 11.2425 5.12459 13.201ZM13.8005 6.78832C14.8069 6.78861 15.799 7.02573 16.6967 7.4805C17.5944 7.93528 18.3725 8.59495 18.968 9.40616C19.5635 10.2174 19.9598 11.1573 20.1247 12.1501C20.2896 13.1428 20.2185 14.1604 19.9173 15.1206C19.6161 16.0808 19.0931 16.9566 18.3906 17.6772C17.6882 18.3978 16.826 18.943 15.8738 19.2686C14.9216 19.5942 13.9062 19.6912 12.9095 19.5517C11.9129 19.4121 10.9632 19.04 10.137 18.4654L12.6206 15.9803C13.2654 16.2538 13.9852 16.2946 14.6567 16.0956C15.3282 15.8966 15.9096 15.4702 16.3012 14.8895C16.6928 14.3089 16.8702 13.61 16.803 12.9129C16.7359 12.2157 16.4283 11.5637 15.9331 11.0684C15.4378 10.5732 14.7858 10.2656 14.0886 10.1985C13.3914 10.1313 12.6926 10.3087 12.112 10.7003C11.5313 11.0919 11.1049 11.6733 10.9059 12.3448C10.7069 13.0163 10.7477 13.7361 11.0212 14.3809L8.53461 16.863C7.86556 15.9012 7.47278 14.7745 7.39892 13.6052C7.32506 12.4359 7.57295 11.2688 8.11567 10.2305C8.6584 9.19213 9.4752 8.32233 10.4774 7.7155C11.4796 7.10868 12.6289 6.78801 13.8005 6.78832ZM6.16571 20.7453L6.25624 20.8343V22.5996C6.2558 22.7996 6.17602 22.9911 6.03444 23.1323L4.20872 24.958V23.5472C4.20872 23.3471 4.12923 23.1552 3.98775 23.0137C3.84627 22.8723 3.65438 22.7928 3.45429 22.7928H2.042L3.86772 20.9671C3.93778 20.8968 4.02103 20.841 4.11269 20.8029C4.20434 20.7649 4.30261 20.7453 4.40185 20.7453H6.16571Z" fill="#FFB703" />
                                         </svg>
                                     </div>
-                                    <div className="text-[13px] tracking-[0.08em] uppercase text-[#ffb703] font-bold flex items-center gap-2 mb-4">
-                                        <span className="w-[22px] h-[2px] bg-[#ffb703] inline-block" /> Vision
+                                    <div className="text-[13px] tracking-[0.08em] uppercase text-[#FFB703] font-bold flex items-center gap-2 mb-4">
+                                        <span className="w-[22px] h-[2px] bg-[#FFB703] inline-block" /> Vision
                                     </div>
                                     <h3 className="text-[22px] font-bold font-display text-white mb-5">Where we're headed</h3>
                                     <p className={`text-[14.5px] text-white/90 leading-relaxed text-justify ${!rm["vision"] ? "line-clamp-2 sm:line-clamp-none" : ""}`}>
                                         To build the nation by fostering industry- and research-oriented studies in Computer Science and Engineering and to become a centre of excellence in developing indigenous technologies for the advancement of society.
                                     </p>
-                                    <button className="cse-read-more cse-mobile-button text-[14px] font-bold uppercase tracking-wider text-[#ffb703] hover:text-white mt-4 flex items-center justify-center gap-1 sm:hidden mx-auto transition-colors" onClick={() => toggleRm("vision")}>
+                                    <button className="cse-read-more cse-mobile-button text-[14px] font-bold uppercase tracking-wider text-[#FFB703] hover:text-white mt-4 flex items-center justify-center gap-1 sm:hidden mx-auto transition-colors" onClick={() => toggleRm("vision")}>
                                         {rm["vision"] ? "Read Less" : "Read More"}
                                     </button>
                                 </div>
@@ -1182,7 +1182,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                         <div className="w-full mb-8 md:mb-10 flex flex-col gap-4">
                             <div className="w-full">
                                 <h2 className="text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display text-white mb-3">
-                                    Labs &amp; <span className="text-[#ffb703]">Practical Learning</span>
+                                    Labs &amp; <span className="text-[#FFB703]">Practical Learning</span>
                                 </h2>
                                 <p className="hidden sm:block text-[15.5px] text-white/90 leading-relaxed text-justify">
                                     The Department of Computer Science and Engineering at Shri Ramswaroop Memorial University provides students with practical learning environments designed to complement classroom teaching. Through programming, computing, networking, artificial intelligence, cloud technologies and industry-oriented laboratories, students get opportunities to apply concepts, develop projects and strengthen their technical skills.
@@ -1194,7 +1194,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                 <button
                                     onClick={() => labsEmblaApi?.scrollPrev()}
                                     disabled={!labsCanPrev}
-                                    className="cse-mobile-button w-10 h-10 flex items-center justify-center rounded-full bg-white border border-[#DCE6F2] shadow-sm text-[#14284E] hover:bg-[#ffb703] transition-all disabled:opacity-30 disabled:cursor-not-allowed"
+                                    className="cse-mobile-button w-10 h-10 flex items-center justify-center rounded-full bg-white border border-[#DCE6F2] shadow-sm text-[#14284E] hover:bg-[#FFB703] transition-all disabled:opacity-30 disabled:cursor-not-allowed"
                                     aria-label="Previous Lab"
                                 >
                                     <ArrowLeft className="w-4 h-4" />
@@ -1202,7 +1202,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                 <button
                                     onClick={() => labsEmblaApi?.scrollNext()}
                                     disabled={!labsCanNext}
-                                    className="cse-mobile-button w-10 h-10 flex items-center justify-center rounded-full bg-white border border-[#DCE6F2] shadow-sm text-[#14284E] hover:bg-[#ffb703] transition-all disabled:opacity-30 disabled:cursor-not-allowed"
+                                    className="cse-mobile-button w-10 h-10 flex items-center justify-center rounded-full bg-white border border-[#DCE6F2] shadow-sm text-[#14284E] hover:bg-[#FFB703] transition-all disabled:opacity-30 disabled:cursor-not-allowed"
                                     aria-label="Next Lab"
                                 >
                                     <ArrowRight className="w-4 h-4" />
@@ -1311,7 +1311,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                         </div>
 
                         <div className="mt-10 flex flex-col items-center justify-center text-center">
-                            <Link to="/campus-life" className="cse-mobile-button inline-flex items-center gap-2 bg-[#ffb703] hover:bg-[#ffb703] text-[#14284E] font-bold uppercase tracking-wide text-[14px] px-8 py-3.5 rounded-lg shadow-sm transition-all hover:-translate-y-0.5">
+                            <Link to="/campus-life" className="cse-mobile-button inline-flex items-center gap-2 bg-[#FFB703] hover:bg-[#FFB703] text-[#14284E] font-bold uppercase tracking-wide text-[14px] px-8 py-3.5 rounded-lg shadow-sm transition-all hover:-translate-y-0.5">
                                 Take a Campus Tour <ArrowRight className="w-4 h-4" />
                             </Link>
                         </div>
@@ -1328,7 +1328,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                     <span className="w-4 h-[2px] bg-[#d62c2b] inline-block shrink-0" /> BEYOND THE CLASSROOM <span className="w-4 h-[2px] bg-[#d62c2b] inline-block shrink-0" />
                                 </div> */}
                                 <h2 className="text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3">
-                                    From Classroom Concepts to <span className="text-[#ffb703]">Real-World Applications</span>
+                                    From Classroom Concepts to <span className="text-[#FFB703]">Real-World Applications</span>
                                 </h2>
                             </div>
 
@@ -1381,7 +1381,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                         </div>
 
                         <div className="flex justify-center mt-10">
-                            <a href="#" className="cse-mobile-button group px-8 py-3.5 text-[14px] font-bold uppercase tracking-wider bg-[#ffb703] text-[#14284E] rounded-xl shadow-[0_4px_14px_rgba(20,40,78,0.2)]  hover:shadow-[0_6px_20px_rgba(20,40,78,0.3)] hover:-translate-y-0.5 transition-all duration-300 flex items-center gap-2">
+                            <a href="#" className="cse-mobile-button group px-8 py-3.5 text-[14px] font-bold uppercase tracking-wider bg-[#FFB703] text-[#14284E] rounded-xl shadow-[0_4px_14px_rgba(20,40,78,0.2)]  hover:shadow-[0_6px_20px_rgba(20,40,78,0.3)] hover:-translate-y-0.5 transition-all duration-300 flex items-center gap-2">
                                 View All Events <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                             </a>
                         </div>
@@ -1400,7 +1400,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                         <div className="w-full mb-8 flex flex-col gap-4">
                             <div className="w-full">
                                 <h2 className="text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display text-white">
-                                    What Makes the <span className="text-[#ffb703]">CSE Department Different</span> in SRMU?
+                                    What Makes the <span className="text-[#FFB703]">CSE Department Different</span> in SRMU?
                                 </h2>
                             </div>
 
@@ -1438,7 +1438,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                         className="cse-why-card bg-[#14284e] p-7 sm:p-8 flex flex-col shrink-0 w-[85vw] sm:w-auto sm:shrink rounded-2xl sm:rounded-none border border-white/20 sm:border-0"
                                     >
                                         <div className="mb-5">
-                                            <span className="cse-why-number block w-fit origin-left text-[14px] text-[#ffb703] font-bold tracking-[0.05em]" style={{ animationDelay: `${index * 0.25}s` }}>{w.num}</span>
+                                            <span className="cse-why-number block w-fit origin-left text-[14px] text-[#FFB703] font-bold tracking-[0.05em]" style={{ animationDelay: `${index * 0.25}s` }}>{w.num}</span>
                                             <div className="cse-why-underline w-6 h-[2.5px] bg-[#d62c2b] mt-2"></div>
                                         </div>
                                         <h4 className="text-white font-bold text-[17px] mb-3 font-display leading-snug">{w.title}</h4>
@@ -1450,13 +1450,13 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                     </div>
                 </section>
                 {/* ── Career Pathways ──────────────────────────────────────── */}
-                <section id="careers" className="relative isolate pt-6 pb-2 md:pt-8 md:pb-3 px-4 sm:px-6 bg-[#EEF5FC] border-b-[8px] border-[#ffb703] overflow-hidden">
+                <section id="careers" className="relative isolate pt-6 pb-2 md:pt-8 md:pb-3 px-4 sm:px-6 bg-[#EEF5FC] border-b-[8px] border-[#FFB703] overflow-hidden">
                     <CareerBackground />
                     <div className={`${Classes["container"]} cse-content-container relative z-10`}>
                         <div className="w-full mb-4 sm:mb-5 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
                             <div className="text-left max-w-3xl">
                                 <h2 className="text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E]">
-                                    Where can a <span className="text-[#ffb703]">CSE Degree</span> take you?
+                                    Where can a <span className="text-[#FFB703]">CSE Degree</span> take you?
                                 </h2>
                             </div>
 
@@ -1480,15 +1480,15 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                 </g>
                                 <g className="cse-career-orbit" aria-hidden="true">
                                     <circle cx="520" cy="350" r="240" fill="none" stroke="#ccd5e1" strokeWidth="2" strokeDasharray="6 5" />
-                                    <circle cx="520" cy="128" r="5" fill="#ffb703" />
+                                    <circle cx="520" cy="128" r="5" fill="#FFB703" />
                                 </g>
                                 <g aria-hidden="true">
                                     {careerItems.map((_, index) => {
                                         const angle = (index * 30 - 90) * Math.PI / 180;
-                                        return <circle key={index} cx={520 + 240 * Math.cos(angle)} cy={350 + 240 * Math.sin(angle)} r="6" fill="#fff" stroke="#ffb703" strokeWidth="3" />;
+                                        return <circle key={index} cx={520 + 240 * Math.cos(angle)} cy={350 + 240 * Math.sin(angle)} r="6" fill="#fff" stroke="#FFB703" strokeWidth="3" />;
                                     })}
                                 </g>
-                                <circle cx="520" cy="350" r="163" fill="none" stroke="#ffb703" strokeOpacity="0.35" strokeWidth="2" />
+                                <circle cx="520" cy="350" r="163" fill="none" stroke="#FFB703" strokeOpacity="0.35" strokeWidth="2" />
                                 <g className="cse-career-core">
                                     <circle cx="520" cy="350" r="131" fill="#D62C2B" fillOpacity="0.045" />
                                     <circle cx="520" cy="350" r="112" fill="#D62C2B" filter="url(#cse-career-shadow)" />
@@ -1496,7 +1496,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                         <tspan x="520">Career</tspan>
                                         <tspan x="520" dy="28">Opportunities</tspan>
                                     </text>
-                                    <path d="M500 383 H540" stroke="#ffb703" strokeWidth="3" strokeLinecap="round" />
+                                    <path d="M500 383 H540" stroke="#FFB703" strokeWidth="3" strokeLinecap="round" />
                                 </g>
                                 <g className="cse-career-labels" fill="#14284e" fontSize="17" fontWeight="600" aria-hidden="true">
                                     {careerItems.map((lines, index) => {
@@ -1537,7 +1537,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                 <g aria-hidden="true">
                                     {careerItems.map((_, i) => {
                                         const a = (i * 30 - 90) * Math.PI / 180;
-                                        return <circle key={i} cx={185 + 145 * Math.cos(a)} cy={195 + 145 * Math.sin(a)} r="4" fill="#fff" stroke="#ffb703" strokeWidth="2" />;
+                                        return <circle key={i} cx={185 + 145 * Math.cos(a)} cy={195 + 145 * Math.sin(a)} r="4" fill="#fff" stroke="#FFB703" strokeWidth="2" />;
                                     })}
                                 </g>
 
@@ -1548,7 +1548,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                         <tspan x="185">Career</tspan>
                                         <tspan x="185" dy="17">Opportunities</tspan>
                                     </text>
-                                    <path d="M170 218 H200" stroke="#ffb703" strokeWidth="2" strokeLinecap="round" />
+                                    <path d="M170 218 H200" stroke="#FFB703" strokeWidth="2" strokeLinecap="round" />
                                 </g>
 
                                 {/* Labels — fixed, outside animated group */}
@@ -1596,7 +1596,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                             Avail Up to
                                         </span>
                                         <div className="text-[#d62c2b] font-black text-[50px] sm:text-[75px] leading-[0.8] tracking-tighter flex items-start mb-2 drop-shadow-sm">
-                                            100% <span className="text-[28px] sm:text-[38px] leading-none mt-1 ml-1 text-[#ffb703] drop-shadow-sm">*</span>
+                                            100% <span className="text-[28px] sm:text-[38px] leading-none mt-1 ml-1 text-[#FFB703] drop-shadow-sm">*</span>
                                         </div>
                                         <h2 className="text-[#14284E] font-black text-[24px] sm:text-[32px] font-display leading-[1] tracking-tight mb-4">
                                             Scholarships
@@ -1605,7 +1605,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                         <div className="hidden sm:flex flex-row flex-nowrap items-center gap-2 sm:gap-3 w-full overflow-x-auto pb-1 sm:pb-0">
                                             <Link
                                                 to="/scholarship"
-                                                className="cse-mobile-button uppercase tracking-wider group relative overflow-hidden inline-flex flex-none items-center gap-1.5 sm:gap-2 bg-[#ffb703] text-[#14284E] font-bold text-[12px] sm:text-[14px] px-4 sm:px-6 py-2.5 rounded-full shadow-[0_4px_12px_rgba(255,183,3,0.3)] hover:shadow-[0_6px_16px_rgba(255,183,3,0.45)] transition-all hover:-translate-y-0.5"
+                                                className="cse-mobile-button uppercase tracking-wider group relative overflow-hidden inline-flex flex-none items-center gap-1.5 sm:gap-2 bg-[#FFB703] text-[#14284E] font-bold text-[12px] sm:text-[14px] px-4 sm:px-6 py-2.5 rounded-full shadow-[0_4px_12px_rgba(255,183,3,0.3)] hover:shadow-[0_6px_16px_rgba(255,183,3,0.45)] transition-all hover:-translate-y-0.5"
                                             >
                                                 <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out bg-gradient-to-r from-transparent via-white/50 to-transparent pointer-events-none" />
                                                 Apply Now
@@ -1629,7 +1629,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                     <div className="flex sm:hidden flex-row flex-wrap items-center gap-2 w-full mt-5 justify-center pb-1">
                                         <Link
                                             to="/scholarship"
-                                            className="cse-mobile-button uppercase tracking-wider group relative overflow-hidden inline-flex flex-none items-center gap-1.5 bg-[#ffb703] text-[#14284E] font-bold text-[12px] px-4 py-2.5 rounded-full shadow-[0_4px_12px_rgba(255,183,3,0.3)] hover:shadow-[0_6px_16px_rgba(255,183,3,0.45)] transition-all"
+                                            className="cse-mobile-button uppercase tracking-wider group relative overflow-hidden inline-flex flex-none items-center gap-1.5 bg-[#FFB703] text-[#14284E] font-bold text-[12px] px-4 py-2.5 rounded-full shadow-[0_4px_12px_rgba(255,183,3,0.3)] hover:shadow-[0_6px_16px_rgba(255,183,3,0.45)] transition-all"
                                         >
                                             <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out bg-gradient-to-r from-transparent via-white/50 to-transparent pointer-events-none" />
                                             Apply Now
@@ -1650,7 +1650,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                     <div className="absolute -bottom-6 -right-6 opacity-20 pointer-events-none">
                                         <svg width="80" height="80" viewBox="0 0 100 100" fill="none">
                                             <pattern id="dots2" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
-                                                <circle cx="2" cy="2" r="2" fill="#ffb703" />
+                                                <circle cx="2" cy="2" r="2" fill="#FFB703" />
                                             </pattern>
                                             <rect width="100" height="100" fill="url(#dots2)" />
                                         </svg>
@@ -1672,7 +1672,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                     {scholarshipItems.length > 4 && (
                                         <button
                                             onClick={() => setShowAllScholarships(!showAllScholarships)}
-                                            className="cse-read-more cse-mobile-button text-[14px] font-bold text-[#ffb703] mt-3 pb-1 flex items-center justify-center sm:hidden transition-colors w-full z-20 relative"
+                                            className="cse-read-more cse-mobile-button text-[14px] font-bold text-[#FFB703] mt-3 pb-1 flex items-center justify-center sm:hidden transition-colors w-full z-20 relative"
                                         >
                                             {showAllScholarships ? "Read Less" : "Read More"}
                                         </button>
@@ -1689,7 +1689,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                 href="https://students.srmu.ac.in/login"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="uppercase tracking-wider flex-1 sm:flex-none flex items-center gap-1.5 sm:gap-2 bg-[#ffb703] hover:bg-[#e0a100] text-[#14284E] font-bold text-[14px]  px-2 sm:px-8 py-3 sm:py-3.5 rounded-lg transition-all hover:-translate-y-0.5 shadow-md justify-center"
+                                className="uppercase tracking-wider flex-1 sm:flex-none flex items-center gap-1.5 sm:gap-2 bg-[#FFB703] hover:bg-[#FFB703] text-[#14284E] font-bold text-[14px]  px-2 sm:px-8 py-3 sm:py-3.5 rounded-lg transition-all hover:-translate-y-0.5 shadow-md justify-center"
                             >
                                 Admission <ArrowRight className="w-4 h-4 shrink-0" />
                             </a>
@@ -1734,7 +1734,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                             <span className="w-4 h-[2px] bg-[#d62c2b] inline-block shrink-0" /> From the Blog
                                         </div> */}
                                         <h2 className="text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E]">
-                                            Latest <span className="text-[#ffb703]">Insights & Resources</span>
+                                            Latest <span className="text-[#FFB703]">Insights & Resources</span>
                                         </h2>
                                         <p className="text-[14px] text-[#4B5A72] mt-2 max-w-xl">
                                             Guides, stories, and updates from the world of Computer Science & Engineering.
@@ -1770,7 +1770,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                             const resolvedSlug = String(card.slug || "").trim();
                                             const blogPath = `/blog/${resolvedSlug && resolvedSlug !== "null" ? resolvedSlug : normalizeRouteSlug(card.title || "")}`;
                                             return (
-                                                <div key={card.id || card.slug || `blog-${idx}`} className="shrink-0 w-[85vw] sm:w-auto sm:shrink group flex flex-col bg-white border border-[#DCE6F2] border-b-[4px] border-b-[#ffb703] rounded-2xl overflow-hidden shadow-[0_4px_18px_rgba(15,31,61,0.04)] hover:shadow-[0_12px_30px_rgba(15,31,61,0.10)] hover:-translate-y-1 transition-all duration-300">
+                                                <div key={card.id || card.slug || `blog-${idx}`} className="shrink-0 w-[85vw] sm:w-auto sm:shrink group flex flex-col bg-white border border-[#DCE6F2] border-b-[4px] border-b-[#FFB703] rounded-2xl overflow-hidden shadow-[0_4px_18px_rgba(15,31,61,0.04)] hover:shadow-[0_12px_30px_rgba(15,31,61,0.10)] hover:-translate-y-1 transition-all duration-300">
                                                     {/* Image */}
                                                     <Link to={blogPath} className="block w-full aspect-[16/9] overflow-hidden bg-[#F0F6FB] shrink-0">
                                                         <img
@@ -1784,7 +1784,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                                     <div className="p-5 flex flex-col flex-grow">
                                                         {card.postedOn && (
                                                             <p className="text-[11.5px] text-[#4B5A72] mb-3 flex items-center gap-1.5">
-                                                                <span className="w-1.5 h-1.5 rounded-full bg-[#ffb703] shrink-0" />
+                                                                <span className="w-1.5 h-1.5 rounded-full bg-[#FFB703] shrink-0" />
                                                                 {card.postedOn}
                                                             </p>
                                                         )}
@@ -1808,7 +1808,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                 <div className="flex justify-center mt-8">
                                     <Link
                                         to="/blogs"
-                                        className="cse-mobile-button uppercase tracking-wider inline-flex items-center gap-2 bg-[#ffb703] text-[#14284E] font-bold text-[14px] px-6 py-3 rounded-lg shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md"
+                                        className="cse-mobile-button uppercase tracking-wider inline-flex items-center gap-2 bg-[#FFB703] text-[#14284E] font-bold text-[14px] px-6 py-3 rounded-lg shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md"
                                     >
                                         Explore All Blogs <ArrowRight className="w-4 h-4" />
                                     </Link>
@@ -1831,7 +1831,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                     <span className="w-4 h-[2px] bg-[#d62c2b] inline-block shrink-0" /> FAQ
                                 </div> */}
                                 <h2 className="text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] break-words">
-                                    Frequently Asked <span className="text-[#ffb703]">Questions</span>
+                                    Frequently Asked <span className="text-[#FFB703]">Questions</span>
                                 </h2>
                                 <p className="text-[14px] text-[#4B5A72] mt-2 break-words whitespace-normal">
                                     Discover Opportunities, Ignite Your Potential - Be Part of SRMU Uttar Pradesh
@@ -1882,7 +1882,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                             <div className="mt-8 flex justify-center">
                                 <button
                                     onClick={() => setShowAllFaq(!showAllFaq)}
-                                    className="cse-read-more cse-mobile-button !self-center !mx-auto uppercase tracking-wider flex items-center justify-center gap-2 bg-[#ffb703] text-[#14284E] font-bold text-[14px] px-8 py-3 rounded-lg transition-colors w-fit shadow-md"
+                                    className="cse-read-more cse-mobile-button !self-center !mx-auto uppercase tracking-wider flex items-center justify-center gap-2 bg-[#FFB703] text-[#14284E] font-bold text-[14px] px-8 py-3 rounded-lg transition-colors w-fit shadow-md"
                                 >
                                     {showAllFaq ? "View Less" : "Read More"} <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${showAllFaq ? "rotate-180" : ""}`} />
                                 </button>
@@ -1950,7 +1950,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
 
                             <div className="pt-20 px-6 pb-8">
                                 <h3 className="text-2xl font-bold font-display text-[#14284E] mb-1">{selectedFaculty.name}</h3>
-                                <div className="text-[13px] text-[#ffb703] font-bold uppercase tracking-widest mb-6">{selectedFaculty.role}</div>
+                                <div className="text-[13px] text-[#FFB703] font-bold uppercase tracking-widest mb-6">{selectedFaculty.role}</div>
 
                                 <div className="space-y-4">
                                     <div className="flex flex-wrap gap-2">
@@ -1997,11 +1997,11 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
 
                                     {selectedFaculty.email && selectedFaculty.contact && (
                                         <div className="flex flex-wrap gap-6 pt-5 border-t border-[#DCE6F2] mt-4">
-                                            <a href={`mailto:${selectedFaculty.email}`} className="flex flex-col text-[13px] text-[#14284E] font-bold hover:text-[#ffb703]">
+                                            <a href={`mailto:${selectedFaculty.email}`} className="flex flex-col text-[13px] text-[#14284E] font-bold hover:text-[#FFB703]">
                                                 <span className="text-[10.5px] text-[#8A97A1] uppercase tracking-[0.06em] font-semibold mb-0.5">Email</span>
                                                 <span className="flex items-center gap-1.5"><Mail className="w-3.5 h-3.5" />{selectedFaculty.email}</span>
                                             </a>
-                                            <a href={`tel:${selectedFaculty.contact}`} className="flex flex-col text-[13px] text-[#14284E] font-bold hover:text-[#ffb703]">
+                                            <a href={`tel:${selectedFaculty.contact}`} className="flex flex-col text-[13px] text-[#14284E] font-bold hover:text-[#FFB703]">
                                                 <span className="text-[10.5px] text-[#8A97A1] uppercase tracking-[0.06em] font-semibold mb-0.5">Contact</span>
                                                 <span className="flex items-center gap-1.5"><Phone className="w-3.5 h-3.5" />{selectedFaculty.contact}</span>
                                             </a>
@@ -2032,7 +2032,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                             <img src={selectedEvent.img} alt={selectedEvent.title} className="w-full h-full object-cover" />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                             <div className="absolute bottom-4 left-6 right-6">
-                                <span className="inline-block bg-[#ffb703] text-[#14284E] text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-sm shadow-sm mb-2">{selectedEvent.tag}</span>
+                                <span className="inline-block bg-[#FFB703] text-[#14284E] text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-sm shadow-sm mb-2">{selectedEvent.tag}</span>
                                 <h3 className="text-[20px] font-bold text-white font-display leading-tight">{selectedEvent.title}</h3>
                             </div>
                         </div>
@@ -2059,7 +2059,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
 
 const DepartmentFooter = () => {
     return (
-        <div role="contentinfo" className="bg-[#14284E] text-white pt-16 pb-6 border-t-[4px] border-[#ffb703]">
+        <div role="contentinfo" className="bg-[#14284E] text-white pt-16 pb-6 border-t-[4px] border-[#FFB703]">
             <div className={`${Classes["container"]} px-4 sm:px-6`}>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 lg:gap-8 mb-12">
 
@@ -2072,47 +2072,47 @@ const DepartmentFooter = () => {
                             </p>
 
                             {/* <div className="flex gap-2.5">
-                                <a href="https://www.linkedin.com/school/shri-ramswaroop-memorial-university/" target="_blank" rel="noreferrer" className="font-bold uppercase tracking-wide w-8 h-8 rounded-full border border-gray-400 flex items-center justify-center hover:border-[#ffb703] hover:text-[#ffb703] transition-colors"><Linkedin className="w-4 h-4" /></a>
-                                <a href="https://www.facebook.com/SRMUOFFICIAL/" target="_blank" rel="noreferrer" className="font-bold uppercase tracking-wide w-8 h-8 rounded-full border border-gray-400 flex items-center justify-center hover:border-[#ffb703] hover:text-[#ffb703] transition-colors"><Facebook className="w-4 h-4" /></a>
-                                <a href="https://www.instagram.com/srmulucknow_official/" target="_blank" rel="noreferrer" className="font-bold uppercase tracking-wide w-8 h-8 rounded-full border border-gray-400 flex items-center justify-center hover:border-[#ffb703] hover:text-[#ffb703] transition-colors"><Instagram className="w-4 h-4" /></a>
-                                <a href="https://www.youtube.com/channel/UCQBjHzkED5ESWvlQiwLNZ4Q" target="_blank" rel="noreferrer" className="font-bold uppercase tracking-wide w-8 h-8 rounded-full border border-gray-400 flex items-center justify-center hover:border-[#ffb703] hover:text-[#ffb703] transition-colors"><Youtube className="w-4 h-4" /></a>
-                                <a href="https://twitter.com/srmu_lucknow" target="_blank" rel="noreferrer" className="font-bold uppercase tracking-wide w-8 h-8 rounded-full border border-gray-400 flex items-center justify-center hover:border-[#ffb703] hover:text-[#ffb703] transition-colors"><Twitter className="w-4 h-4" /></a>
+                                <a href="https://www.linkedin.com/school/shri-ramswaroop-memorial-university/" target="_blank" rel="noreferrer" className="font-bold uppercase tracking-wide w-8 h-8 rounded-full border border-gray-400 flex items-center justify-center hover:border-[#FFB703] hover:text-[#FFB703] transition-colors"><Linkedin className="w-4 h-4" /></a>
+                                <a href="https://www.facebook.com/SRMUOFFICIAL/" target="_blank" rel="noreferrer" className="font-bold uppercase tracking-wide w-8 h-8 rounded-full border border-gray-400 flex items-center justify-center hover:border-[#FFB703] hover:text-[#FFB703] transition-colors"><Facebook className="w-4 h-4" /></a>
+                                <a href="https://www.instagram.com/srmulucknow_official/" target="_blank" rel="noreferrer" className="font-bold uppercase tracking-wide w-8 h-8 rounded-full border border-gray-400 flex items-center justify-center hover:border-[#FFB703] hover:text-[#FFB703] transition-colors"><Instagram className="w-4 h-4" /></a>
+                                <a href="https://www.youtube.com/channel/UCQBjHzkED5ESWvlQiwLNZ4Q" target="_blank" rel="noreferrer" className="font-bold uppercase tracking-wide w-8 h-8 rounded-full border border-gray-400 flex items-center justify-center hover:border-[#FFB703] hover:text-[#FFB703] transition-colors"><Youtube className="w-4 h-4" /></a>
+                                <a href="https://twitter.com/srmu_lucknow" target="_blank" rel="noreferrer" className="font-bold uppercase tracking-wide w-8 h-8 rounded-full border border-gray-400 flex items-center justify-center hover:border-[#FFB703] hover:text-[#FFB703] transition-colors"><Twitter className="w-4 h-4" /></a>
                             </div> */}
                         </div>
 
                         <div className="space-y-5 pt-5 border-t border-white/10">
                             <div className="flex gap-3">
-                                <MapPin className="w-5 h-5 text-[#ffb703] shrink-0 mt-0.5" />
+                                <MapPin className="w-5 h-5 text-[#FFB703] shrink-0 mt-0.5" />
                                 <div>
-                                    <h4 className="text-[#ffb703] text-[13px] font-bold uppercase mb-1">Address</h4>
+                                    <h4 className="text-[#FFB703] text-[13px] font-bold uppercase mb-1">Address</h4>
                                     <p className="text-[13px] text-gray-300 leading-relaxed">Shri Ramswaroop Memorial University (SRMU), Lucknow- Deva Road, Barabanki, Uttar Pradesh</p>
                                 </div>
                             </div>
                             <div className="flex gap-3">
-                                <MapPin className="w-5 h-5 text-[#ffb703] shrink-0 mt-0.5" />
+                                <MapPin className="w-5 h-5 text-[#FFB703] shrink-0 mt-0.5" />
                                 <div>
-                                    <h4 className="text-[#ffb703] text-[13px] font-bold uppercase mb-1">Lucknow Office</h4>
+                                    <h4 className="text-[#FFB703] text-[13px] font-bold uppercase mb-1">Lucknow Office</h4>
                                     <p className="text-[13px] text-gray-300 leading-relaxed">C-2/42, Vishesh Khand, Opposite Chote Lal Nursery, Gomtinagar, Lucknow, Uttar Pradesh</p>
                                 </div>
                             </div>
                             <div className="flex gap-3">
-                                <Phone className="w-5 h-5 text-[#ffb703] shrink-0 mt-0.5" />
+                                <Phone className="w-5 h-5 text-[#FFB703] shrink-0 mt-0.5" />
                                 <div>
-                                    <h4 className="text-[#ffb703] text-[12px] font-bold uppercase mb-1">Admission Helpline</h4>
+                                    <h4 className="text-[#FFB703] text-[12px] font-bold uppercase mb-1">Admission Helpline</h4>
                                     <p className="text-[13px] text-gray-300">+91-9838904666</p>
                                 </div>
                             </div>
                             <div className="flex gap-3">
-                                <Phone className="w-5 h-5 text-[#ffb703] shrink-0 mt-0.5" />
+                                <Phone className="w-5 h-5 text-[#FFB703] shrink-0 mt-0.5" />
                                 <div>
-                                    <h4 className="text-[#ffb703] text-[12px] font-bold uppercase mb-1">Admission Toll Free</h4>
+                                    <h4 className="text-[#FFB703] text-[12px] font-bold uppercase mb-1">Admission Toll Free</h4>
                                     <p className="text-[13px] text-gray-300">18001026004</p>
                                 </div>
                             </div>
                             <div className="flex gap-3">
-                                <Mail className="w-5 h-5 text-[#ffb703] shrink-0 mt-0.5" />
+                                <Mail className="w-5 h-5 text-[#FFB703] shrink-0 mt-0.5" />
                                 <div>
-                                    <h4 className="text-[#ffb703] text-[13px] font-bold uppercase mb-1">Email</h4>
+                                    <h4 className="text-[#FFB703] text-[13px] font-bold uppercase mb-1">Email</h4>
                                     <p className="text-[13px] text-gray-300">admissions@srmu.ac.in</p>
                                 </div>
                             </div>
@@ -2123,7 +2123,7 @@ const DepartmentFooter = () => {
                     <div className="min-w-0 lg:col-span-3 grid grid-cols-3 gap-x-2 gap-y-6 [overflow-wrap:anywhere] sm:gap-6 lg:mt-[80px]">
                         {/* Col 2: Quick Links */}
                         <div className="min-w-0">
-                            <h3 className="text-[#ffb703] font-bold text-[10px] min-[375px]:text-[11px] sm:text-[14px] uppercase mb-4 sm:mb-6 tracking-normal sm:tracking-wide">Quick Links</h3>
+                            <h3 className="text-[#FFB703] font-bold text-[10px] min-[375px]:text-[11px] sm:text-[14px] uppercase mb-4 sm:mb-6 tracking-normal sm:tracking-wide">Quick Links</h3>
                             <ul className="space-y-3 sm:space-y-4 list-disc pl-3 sm:pl-4 marker:text-gray-300">
                                 {[
                                     { name: "About SRMU", path: "/about-us" },
@@ -2134,14 +2134,14 @@ const DepartmentFooter = () => {
                                     { name: "News & Updates", path: "/notice" },
                                     { name: "Contact Us", path: "/contact-us" }
                                 ].map((item) => (
-                                    <li key={item.name}><Link to={item.path} className="text-[11px] leading-relaxed min-[375px]:text-[12px] sm:text-[13.5px] text-gray-300 hover:text-[#ffb703] transition-colors">{item.name}</Link></li>
+                                    <li key={item.name}><Link to={item.path} className="text-[11px] leading-relaxed min-[375px]:text-[12px] sm:text-[13.5px] text-gray-300 hover:text-[#FFB703] transition-colors">{item.name}</Link></li>
                                 ))}
                             </ul>
                         </div>
 
                         {/* Col 3: Student Life */}
                         <div className="min-w-0">
-                            <h3 className="text-[#ffb703] font-bold text-[10px] min-[375px]:text-[11px] sm:text-[14px] uppercase mb-4 sm:mb-6 tracking-normal sm:tracking-wide">Student Life</h3>
+                            <h3 className="text-[#FFB703] font-bold text-[10px] min-[375px]:text-[11px] sm:text-[14px] uppercase mb-4 sm:mb-6 tracking-normal sm:tracking-wide">Student Life</h3>
                             <ul className="space-y-3 sm:space-y-4 list-disc pl-3 sm:pl-4 marker:text-gray-300">
                                 {[
                                     { name: "Facilities", path: "/facilities" },
@@ -2150,16 +2150,16 @@ const DepartmentFooter = () => {
                                     { name: "Blogs", path: "/blogs" },
                                     { name: "Shift Schedule", path: "/shift-schedule" }
                                 ].map((item) => (
-                                    <li key={item.name}><Link to={item.path} className="text-[11px] leading-relaxed min-[375px]:text-[12px] sm:text-[13.5px] text-gray-300 hover:text-[#ffb703] transition-colors">{item.name}</Link></li>
+                                    <li key={item.name}><Link to={item.path} className="text-[11px] leading-relaxed min-[375px]:text-[12px] sm:text-[13.5px] text-gray-300 hover:text-[#FFB703] transition-colors">{item.name}</Link></li>
                                 ))}
-                                <li><a href="https://eyojan.srmu.ac.in/" target="_blank" rel="noreferrer" className="text-[11px] leading-relaxed min-[375px]:text-[12px] sm:text-[13.5px] text-gray-300 hover:text-[#ffb703] transition-colors">Student Login</a></li>
-                                <li><a href="https://eyojan.srmu.ac.in/" target="_blank" rel="noreferrer" className="text-[11px] leading-relaxed min-[375px]:text-[12px] sm:text-[13.5px] text-gray-300 hover:text-[#ffb703] transition-colors">Staff Login</a></li>
+                                <li><a href="https://eyojan.srmu.ac.in/" target="_blank" rel="noreferrer" className="text-[11px] leading-relaxed min-[375px]:text-[12px] sm:text-[13.5px] text-gray-300 hover:text-[#FFB703] transition-colors">Student Login</a></li>
+                                <li><a href="https://eyojan.srmu.ac.in/" target="_blank" rel="noreferrer" className="text-[11px] leading-relaxed min-[375px]:text-[12px] sm:text-[13.5px] text-gray-300 hover:text-[#FFB703] transition-colors">Staff Login</a></li>
                             </ul>
                         </div>
 
                         {/* Col 4: Information */}
                         <div className="min-w-0">
-                            <h3 className="text-[#ffb703] font-bold text-[10px] min-[375px]:text-[11px] sm:text-[14px] uppercase mb-4 sm:mb-6 tracking-normal sm:tracking-wide">Information</h3>
+                            <h3 className="text-[#FFB703] font-bold text-[10px] min-[375px]:text-[11px] sm:text-[14px] uppercase mb-4 sm:mb-6 tracking-normal sm:tracking-wide">Information</h3>
                             <ul className="space-y-3 sm:space-y-4 list-disc pl-3 sm:pl-4 marker:text-gray-300">
                                 {[
                                     { name: "UGC & Approvals", path: "/ugc-approvals" },
@@ -2170,16 +2170,16 @@ const DepartmentFooter = () => {
                                     { name: "Scholarships", path: "/scholarship-scheme" },
                                     { name: "Anti Ragging", path: "/anti-ragging" }
                                 ].map((item) => (
-                                    <li key={item.name}><Link to={item.path} className="text-[11px] leading-relaxed min-[375px]:text-[12px] sm:text-[13.5px] text-gray-300 hover:text-[#ffb703] transition-colors">{item.name}</Link></li>
+                                    <li key={item.name}><Link to={item.path} className="text-[11px] leading-relaxed min-[375px]:text-[12px] sm:text-[13.5px] text-gray-300 hover:text-[#FFB703] transition-colors">{item.name}</Link></li>
                                 ))}
-                                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSde8Ov2JDvB1vYeL-jrqNrlman0gLstQVEWEJ6DN34-EsYdCQ/viewform" target="_blank" rel="noreferrer" className="text-[11px] leading-relaxed min-[375px]:text-[12px] sm:text-[13.5px] text-gray-300 hover:text-[#ffb703] transition-colors break-words">Grievance Redressal</a></li>
+                                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSde8Ov2JDvB1vYeL-jrqNrlman0gLstQVEWEJ6DN34-EsYdCQ/viewform" target="_blank" rel="noreferrer" className="text-[11px] leading-relaxed min-[375px]:text-[12px] sm:text-[13.5px] text-gray-300 hover:text-[#FFB703] transition-colors break-words">Grievance Redressal</a></li>
                             </ul>
                         </div>
                     </div>
 
                     {/* Col 5: Subscribe & Follow */}
                     <div className="min-w-0 lg:col-span-1 lg:mt-[80px]">
-                        <h3 className="text-[#ffb703] font-bold text-[14px] uppercase mb-6 tracking-wide">Subscribe to our updates</h3>
+                        <h3 className="text-[#FFB703] font-bold text-[14px] uppercase mb-6 tracking-wide">Subscribe to our updates</h3>
                         <p className="text-[13px] text-gray-300 mb-4 leading-relaxed">
                             Stay informed about the latest news, events and opportunities at SRMU.
                         </p>
@@ -2187,26 +2187,26 @@ const DepartmentFooter = () => {
                             <input
                                 type="email"
                                 placeholder="Enter your email address"
-                                className="min-w-0 w-full flex-1 bg-transparent border border-gray-500 rounded-l-md px-3 py-2 text-[13px] text-white outline-none focus:border-[#ffb703]"
+                                className="min-w-0 w-full flex-1 bg-transparent border border-gray-500 rounded-l-md px-3 py-2 text-[13px] text-white outline-none focus:border-[#FFB703]"
                             />
                             <button type="submit" className="cse-mobile-button bg-[#3b82f6] hover:bg-[#2563eb] text-white text-[14px] font-bold uppercase tracking-wide px-4 py-2 rounded-r-md transition-colors whitespace-nowrap">
                                 Subscribe
                             </button>
                         </form>
 
-                        <h3 className="text-[#ffb703] font-bold text-[14px] uppercase mb-6 tracking-wide">Follow Us</h3>
+                        <h3 className="text-[#FFB703] font-bold text-[14px] uppercase mb-6 tracking-wide">Follow Us</h3>
                         <div className="flex flex-wrap gap-2.5">
-                            <a href="https://www.linkedin.com/school/shri-ramswaroop-memorial-university/" target="_blank" rel="noreferrer" className="cse-mobile-button font-bold uppercase tracking-wide w-9 h-9 rounded-full border border-gray-400 flex items-center justify-center hover:border-[#ffb703] hover:text-[#ffb703] transition-colors"><Linkedin className="w-4 h-4" /></a>
-                            <a href="https://www.facebook.com/SRMUOFFICIAL/" target="_blank" rel="noreferrer" className="cse-mobile-button font-bold uppercase tracking-wide w-9 h-9 rounded-full border border-gray-400 flex items-center justify-center hover:border-[#ffb703] hover:text-[#ffb703] transition-colors"><Facebook className="w-4 h-4" /></a>
-                            <a href="https://www.instagram.com/srmulucknow_official/" target="_blank" rel="noreferrer" className="cse-mobile-button font-bold uppercase tracking-wide w-9 h-9 rounded-full border border-gray-400 flex items-center justify-center hover:border-[#ffb703] hover:text-[#ffb703] transition-colors"><Instagram className="w-4 h-4" /></a>
-                            <a href="https://www.youtube.com/channel/UCQBjHzkED5ESWvlQiwLNZ4Q" target="_blank" rel="noreferrer" className="cse-mobile-button font-bold uppercase tracking-wide w-9 h-9 rounded-full border border-gray-400 flex items-center justify-center hover:border-[#ffb703] hover:text-[#ffb703] transition-colors"><Youtube className="w-4 h-4" /></a>
-                            <a href="https://twitter.com/srmu_lucknow" target="_blank" rel="noreferrer" className="cse-mobile-button font-bold uppercase tracking-wide w-9 h-9 rounded-full border border-gray-400 flex items-center justify-center hover:border-[#ffb703] hover:text-[#ffb703] transition-colors"><Twitter className="w-4 h-4" /></a>
-                            <a href="#" target="_blank" rel="noreferrer" className="cse-mobile-button font-bold uppercase tracking-wide w-9 h-9 rounded-full border border-gray-400 flex items-center justify-center hover:border-[#ffb703] hover:text-[#ffb703] transition-colors"><FaQuora className="w-4 h-4" /></a>
-                            <a href="#" target="_blank" rel="noreferrer" className="cse-mobile-button font-bold uppercase tracking-wide w-9 h-9 rounded-full border border-gray-400 flex items-center justify-center hover:border-[#ffb703] hover:text-[#ffb703] transition-colors"><FaRedditAlien className="w-[18px] h-[18px]" /></a>
+                            <a href="https://www.linkedin.com/school/shri-ramswaroop-memorial-university/" target="_blank" rel="noreferrer" className="cse-mobile-button font-bold uppercase tracking-wide w-9 h-9 rounded-full border border-gray-400 flex items-center justify-center hover:border-[#FFB703] hover:text-[#FFB703] transition-colors"><Linkedin className="w-4 h-4" /></a>
+                            <a href="https://www.facebook.com/SRMUOFFICIAL/" target="_blank" rel="noreferrer" className="cse-mobile-button font-bold uppercase tracking-wide w-9 h-9 rounded-full border border-gray-400 flex items-center justify-center hover:border-[#FFB703] hover:text-[#FFB703] transition-colors"><Facebook className="w-4 h-4" /></a>
+                            <a href="https://www.instagram.com/srmulucknow_official/" target="_blank" rel="noreferrer" className="cse-mobile-button font-bold uppercase tracking-wide w-9 h-9 rounded-full border border-gray-400 flex items-center justify-center hover:border-[#FFB703] hover:text-[#FFB703] transition-colors"><Instagram className="w-4 h-4" /></a>
+                            <a href="https://www.youtube.com/channel/UCQBjHzkED5ESWvlQiwLNZ4Q" target="_blank" rel="noreferrer" className="cse-mobile-button font-bold uppercase tracking-wide w-9 h-9 rounded-full border border-gray-400 flex items-center justify-center hover:border-[#FFB703] hover:text-[#FFB703] transition-colors"><Youtube className="w-4 h-4" /></a>
+                            <a href="https://twitter.com/srmu_lucknow" target="_blank" rel="noreferrer" className="cse-mobile-button font-bold uppercase tracking-wide w-9 h-9 rounded-full border border-gray-400 flex items-center justify-center hover:border-[#FFB703] hover:text-[#FFB703] transition-colors"><Twitter className="w-4 h-4" /></a>
+                            <a href="#" target="_blank" rel="noreferrer" className="cse-mobile-button font-bold uppercase tracking-wide w-9 h-9 rounded-full border border-gray-400 flex items-center justify-center hover:border-[#FFB703] hover:text-[#FFB703] transition-colors"><FaQuora className="w-4 h-4" /></a>
+                            <a href="#" target="_blank" rel="noreferrer" className="cse-mobile-button font-bold uppercase tracking-wide w-9 h-9 rounded-full border border-gray-400 flex items-center justify-center hover:border-[#FFB703] hover:text-[#FFB703] transition-colors"><FaRedditAlien className="w-[18px] h-[18px]" /></a>
                         </div>
                         <div className="mt-8">
                             <div className="flex items-center gap-4 mb-2">
-                                <h3 className="text-[#ffb703] font-bold text-[15px] uppercase tracking-wide">Merch Shop</h3>
+                                <h3 className="text-[#FFB703] font-bold text-[15px] uppercase tracking-wide">Merch Shop</h3>
                                 <img src={MerchandiseScanImg} alt="Merchandise Scan" className="h-[60px] sm:h-[64px] w-auto shadow-sm bg-white" />
                             </div>
                             <p className="text-[13px] text-gray-200 leading-snug">To Shop SRMU Merchandise<br />Scan the Code</p>

@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
-import { Link } from "react-router-dom";
 import {
     ArrowLeft,
     ArrowRight,
@@ -97,90 +96,6 @@ function UniversityDomeWatermark() {
     );
 }
 
-function ResearchIllustration() {
-    return (
-        <svg
-            className={styles.researchIllustration}
-            viewBox="0 0 130 130"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-        >
-            <defs>
-                <linearGradient id="bookCoverGrad" x1="18" y1="86" x2="86" y2="104" gradientUnits="userSpaceOnUse">
-                    <stop offset="0%" stopColor="#102244" />
-                    <stop offset="100%" stopColor="#1B4F91" />
-                </linearGradient>
-                <linearGradient id="bookMidGrad" x1="18" y1="74" x2="84" y2="90" gradientUnits="userSpaceOnUse">
-                    <stop offset="0%" stopColor="#1B4F91" />
-                    <stop offset="100%" stopColor="#21A5DB" />
-                </linearGradient>
-                <linearGradient id="beamGrad" x1="84" y1="62" x2="48" y2="84" gradientUnits="userSpaceOnUse">
-                    <stop offset="0%" stopColor="#21A5DB" stopOpacity="0.75" />
-                    <stop offset="100%" stopColor="#FFB703" stopOpacity="0" />
-                </linearGradient>
-                <radialGradient id="auraDisc" cx="64" cy="66" r="44" gradientUnits="userSpaceOnUse">
-                    <stop offset="0%" stopColor="#E0F1FF" stopOpacity="0.9" />
-                    <stop offset="60%" stopColor="#FFB703" stopOpacity="0.22" />
-                    <stop offset="100%" stopColor="#E0F1FF" stopOpacity="0" />
-                </radialGradient>
-            </defs>
-
-            {/* Glowing Backdrop Disc */}
-            <circle cx="64" cy="66" r="46" fill="url(#auraDisc)" />
-
-            {/* Bottom Book 1 */}
-            <rect x="18" y="90" width="70" height="14" rx="4.5" fill="url(#bookCoverGrad)" />
-            <rect x="16" y="92" width="66" height="3" fill="#FFFFFF" fillOpacity="0.9" />
-            <rect x="18" y="100" width="12" height="3" rx="1.5" fill="#FFB703" />
-
-            {/* Middle Book 2 */}
-            <rect x="22" y="78" width="64" height="13" rx="4" fill="url(#bookMidGrad)" />
-            <rect x="20" y="80" width="60" height="2.5" fill="#EEF7FE" />
-            {/* Golden bookmark ribbon */}
-            <path d="M34 80V94L39 90L44 94V80" fill="#FFB703" />
-
-            {/* Top Open Book with curved pages */}
-            <path
-                d="M18 70C32 62 48 64 58 71C68 64 84 62 98 70L94 80C80 72 66 74 58 79C50 74 36 72 22 79L18 70Z"
-                fill="#FFFFFF"
-                stroke="#CCE5FA"
-                strokeWidth="1.8"
-            />
-            <path d="M58 71V79" stroke="#1B4F91" strokeWidth="2" />
-            {/* Subtle text lines on book pages */}
-            <path d="M26 73C34 69 44 70 52 74" stroke="#90C5F2" strokeWidth="1.5" strokeLinecap="round" />
-            <path d="M64 74C72 70 82 69 90 73" stroke="#90C5F2" strokeWidth="1.5" strokeLinecap="round" />
-
-            {/* Light beam from microscope lens */}
-            <path d="M84 56L44 76L68 80Z" fill="url(#beamGrad)" style={{ animation: "beamPulse 3s ease-in-out infinite" }} />
-
-            {/* Microscope Base & Stage */}
-            <path d="M78 100H106M92 100V80" stroke="#102244" strokeWidth="5.5" strokeLinecap="round" />
-            <path d="M92 82C108 80 110 52 94 44" stroke="#102244" strokeWidth="6.5" strokeLinecap="round" />
-            {/* Golden stage plate */}
-            <rect x="74" y="68" width="26" height="5" rx="2.5" fill="#FFB703" stroke="#E59819" strokeWidth="1" />
-            {/* Microscope barrel & optics */}
-            <g transform="rotate(24 82 36)">
-                <rect x="76" y="20" width="14" height="38" rx="3.5" fill="#1B4F91" />
-                <rect x="78" y="16" width="10" height="5" rx="2" fill="#102244" />
-                <rect x="78" y="58" width="10" height="7" rx="2.5" fill="#FFB703" />
-                {/* Cyan optical lens ring */}
-                <rect x="76" y="32" width="14" height="4" fill="#21A5DB" />
-                {/* Golden adjustment knob */}
-                <circle cx="73" cy="40" r="3.5" fill="#FFB703" stroke="#102244" strokeWidth="1.5" />
-            </g>
-
-            {/* Floating Golden Stars / Discovery Sparkles */}
-            <g style={{ transformOrigin: "108px 24px", animation: "sparkleSpin 4s ease-in-out infinite" }}>
-                <path d="M108 17L110 22L115 24L110 26L108 31L106 26L101 24L106 22L108 17Z" fill="#FFB703" />
-            </g>
-            <circle cx="118" cy="42" r="2.5" fill="#21A5DB" />
-            <circle cx="36" cy="52" r="2" fill="#FFB703" />
-        </svg>
-    );
-}
-
 export default function DepartmentFaculty({
     faculty,
     onSelect,
@@ -193,11 +108,6 @@ export default function DepartmentFaculty({
         slidesToScroll: 1,
         loop: false,
     });
-    const [statsViewportRef, statsCarousel] = useEmblaCarousel({
-        align: "start",
-        slidesToScroll: 1,
-        loop: false,
-    });
     const [showAll, setShowAll] = useState(false);
     const hod = faculty.find((member) => member.isHod) ?? faculty[0];
     const otherFaculty = faculty.filter((member) => member !== hod);
@@ -205,8 +115,6 @@ export default function DepartmentFaculty({
     const [snaps, setSnaps] = useState<number[]>([]);
     const [canPrevious, setCanPrevious] = useState(false);
     const [canNext, setCanNext] = useState(false);
-    const [canPreviousStat, setCanPreviousStat] = useState(false);
-    const [canNextStat, setCanNextStat] = useState(false);
 
     useEffect(() => {
         if (!carousel) return;
@@ -223,20 +131,8 @@ export default function DepartmentFaculty({
         };
     }, [carousel]);
 
-    useEffect(() => {
-        if (!statsCarousel) return;
-        const update = () => {
-            setCanPreviousStat(statsCarousel.canScrollPrev());
-            setCanNextStat(statsCarousel.canScrollNext());
-        };
-        update();
-        statsCarousel.on("select", update).on("reInit", update);
-        return () => {
-            statsCarousel.off("select", update).off("reInit", update);
-        };
-    }, [statsCarousel]);
-
     return (
+        <>
         <section id="faculty" className={styles.section} aria-labelledby="faculty-heading">
             {/* Background Decorative Accents */}
             <div className={styles.topSwoopNavy} aria-hidden="true" />
@@ -255,13 +151,13 @@ export default function DepartmentFaculty({
                 <header className={styles.header}>
                     <div className={styles.headerCopy}>
                         <div className={styles.eyebrow}>
-                            <span>OUR FACULTY & RESEARCH</span>
+                            <span>OUR FACULTY</span>
                             <span className={styles.eyebrowBar} aria-hidden="true" />
                         </div>
                         <h2 id="faculty-heading" className={`font-display ${styles.heading}`}>
                             Learn from Experienced{" "}
                             <span className={styles.headingHighlight}>
-                                Academic & Research Professionals.
+                                Academic Professionals.
                             </span>
                         </h2>
                         <p className={styles.subheading}>
@@ -483,96 +379,67 @@ export default function DepartmentFaculty({
                         )}
                     </div>
 
-                    {/* Research & Publications Row */}
-                    <div
-                        className={styles.researchPanel}
-                        aria-labelledby="academic-strength-heading"
-                    >
-                        <div className={styles.researchDotGrid} aria-hidden="true" />
+                </div>
+            </div>
+        </section>
+        <ResearchShowcase />
+        </>
+    );
+}
 
-                        <div className={styles.researchLayout}>
-                            {/* Left Side: Animated Illustration + Copy + CTA */}
-                            <div className={styles.researchIntro}>
-                                <div className={styles.researchIllustrationWrapper}>
-                                    <div className={styles.researchIllustrationAura} aria-hidden="true" />
-                                    <ResearchIllustration />
-                                </div>
-                                <div className={styles.researchIntroCopy}>
-                                    <div className={styles.researchEyebrowBadge}>
-                                        <span className={styles.researchPulsingDot} aria-hidden="true" />
-                                        <span className={styles.researchEyebrowText}>
-                                            RESEARCH & PUBLICATIONS
-                                        </span>
-                                    </div>
-                                    <h3
-                                        id="academic-strength-heading"
-                                        className={`font-display ${styles.researchHeading}`}
-                                    >
-                                        Advancing Knowledge.
-                                        <span className={styles.researchHeadingSpan}>
-                                            Creating Impact.
-                                        </span>
-                                    </h3>
-                                    <p className={styles.researchParagraph}>
-                                        Our faculty actively contributes to cutting-edge research,
-                                        publications and innovation across various domains.
-                                    </p>
-                                    <a target="_blank" href="https://research-consultancy.srmu.ac.in/department/institute-of-technology" className={styles.researchButton}>
-                                        <FileText size={15} aria-hidden="true" />
-                                        <span>Research</span>
-                                        <ArrowRight size={14} aria-hidden="true" />
-                                    </a>
-                                </div>
-                            </div>
+function ResearchShowcase() {
+    return (
+        <section
+            id="research-publications"
+            className={styles.researchShowcase}
+            aria-labelledby="academic-strength-heading"
+        >
+            <div className={styles.showcaseAccentLeft} aria-hidden="true" />
+            <div className={styles.showcaseAccentRight} aria-hidden="true" />
+            <div className={styles.showcaseDotsTop} aria-hidden="true" />
+            <div className={styles.showcaseDotsBottom} aria-hidden="true" />
+            <div className={styles.showcaseWave} aria-hidden="true" />
 
-                            {/* Research statistics carousel */}
-                            <div
-                                className={styles.statsCarouselWrapper}
-                                role="region"
-                                aria-roledescription="carousel"
-                                aria-label="Academic strength statistics"
-                            >
-                                <button
-                                    type="button"
-                                    className={`${styles.arrowButton} ${styles.arrowPrev}`}
-                                    onClick={() => statsCarousel?.scrollPrev()}
-                                    disabled={!canPreviousStat}
-                                    aria-label="Previous statistics"
-                                >
-                                    <ArrowLeft size={16} aria-hidden="true" />
-                                </button>
-                                <div
-                                    className={styles.statsViewport}
-                                    ref={statsViewportRef}
-                                >
-                                    <dl className={styles.researchStatsGrid}>
-                                        {academicStrength.map(({ label, value, Icon }) => (
-                                            <div className={`${styles.statSlide} ${styles.statItem}`} key={label}>
-                                                <div className={styles.statIconWrapper} aria-hidden="true">
-                                                    <Icon size={40} strokeWidth={1.7} />
-                                                    {label === "Supervisors" && (
-                                                        <Star className={styles.statIconAccent} size={17} strokeWidth={2.2} />
-                                                    )}
-                                                </div>
-                                                <dt className={styles.statLabel}>{label}</dt>
-                                                <dd className={styles.statValue}>{value}</dd>
-                                                <span className={styles.statAccentBar} aria-hidden="true" />
-                                            </div>
-                                        ))}
-                                    </dl>
-                                </div>
-                                <button
-                                    type="button"
-                                    className={`${styles.arrowButton} ${styles.arrowNext}`}
-                                    onClick={() => statsCarousel?.scrollNext()}
-                                    disabled={!canNextStat}
-                                    aria-label="Next statistics"
-                                >
-                                    <ArrowRight size={16} aria-hidden="true" />
-                                </button>
-                            </div>
-                        </div>
+            <div className={styles.researchShowcaseInner}>
+                <div className={styles.showcaseIntro}>
+                    <div className={styles.showcaseBadge}>
+                        <span className={styles.showcaseBadgeDot} aria-hidden="true" />
+                        <span>Research &amp; Publications</span>
                     </div>
+                    <h2 id="academic-strength-heading" className={`font-display ${styles.showcaseHeading}`}>
+                        Advancing Knowledge.
+                        <span>Creating Impact.</span>
+                    </h2>
+                    <p className={styles.showcaseParagraph}>
+                        Our faculty actively contributes to cutting-edge research, publications and
+                        innovation across various domains.
+                    </p>
+                    <a
+                        target="_blank"
+                        rel="noreferrer"
+                        href="https://research-consultancy.srmu.ac.in/department/institute-of-technology"
+                        className={styles.showcaseButton}
+                    >
+                        <FileText size={20} aria-hidden="true" />
+                        <span>Research</span>
+                        <ArrowRight size={20} aria-hidden="true" />
+                    </a>
+                </div>
+
+                <div className={styles.showcaseStats} role="list" aria-label="Academic strength statistics">
+                    {academicStrength.map(({ label, value, Icon }) => (
+                        <article className={styles.showcaseStat} key={label} role="listitem">
+                            <span className={styles.showcaseStatIcon} aria-hidden="true">
+                                <Icon size={46} strokeWidth={1.8} />
+                                {label === "Supervisors" && (
+                                    <Star className={styles.showcaseStatStar} size={20} strokeWidth={2.2} />
+                                )}
+                            </span>
+                            <p className={styles.showcaseStatValue}>{value}</p>
+                            <p className={styles.showcaseStatLabel}>{label}</p>
+                            <span className={styles.showcaseStatAccent} aria-hidden="true" />
+                        </article>
+                    ))}
                 </div>
             </div>
         </section>

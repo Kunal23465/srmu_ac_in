@@ -21,7 +21,7 @@
 .trails { position: absolute; width: 100%; height: 100%; inset: 0; }
 .dashedPath { fill: none; stroke: #C8E3FA; stroke-width: 2; stroke-dasharray: 7 8; }
 .traveler { fill: #AACFF0; offset-distance: 25%; }
-.sparks { fill: #FFD46C; }
+.sparks { fill: #FFB703; }
 .vector { position: absolute; width: clamp(32px, 5vw, 94px); height: clamp(32px, 5vw, 94px); opacity: 0.85; }
 .vector > svg { width: 100%; height: 100%; stroke-width: 1; }
 .code { left: 20%; top: 6%; width: 70px; height: 70px; }
