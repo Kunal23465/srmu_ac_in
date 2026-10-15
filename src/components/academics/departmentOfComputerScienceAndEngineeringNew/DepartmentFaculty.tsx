@@ -402,10 +402,6 @@ function ResearchShowcase() {
 
             <div className={styles.researchShowcaseInner}>
                 <div className={styles.showcaseIntro}>
-                    <div className={styles.showcaseBadge}>
-                        <span className={styles.showcaseBadgeDot} aria-hidden="true" />
-                        <span>Research &amp; Publications</span>
-                    </div>
                     <h2 id="academic-strength-heading" className={`font-display ${styles.showcaseHeading}`}>
                         Advancing Knowledge.
                         <span>Creating Impact.</span>

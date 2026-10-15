@@ -185,21 +185,20 @@ const cyberSecurityNewData: ProgramPageDataNew = {
     cardBackgroundImageUrl: "/backgroundIm.png",
     labs: [
       {
-        label: "LAB / 01",
-        title: "Cyber Security Simulation Lab",
-        imageUrl: cyberSecuritySimulationLab,
-        tagline: "Experience real-world attack scenarios safely.",
-        description:
-          "Students analyse vulnerabilities, secure systems, and understand how organisations defend against modern cyber threats.",
-        items: ["Network Monitoring", "Vulnerability Assessment", "Penetration Testing", "Malware Behaviour Analysis", "Threat Detection", "Security Monitoring"],
-      },
-      {
         label: "LAB / 02",
         title: "Ethical Hacking Lab",
         imageUrl: ethicalHackingLab,
         tagline: "Think like an attacker to build stronger security.",
         description: "Students learn ethical hacking techniques under expert supervision in legal, controlled lab environments.",
         items: ["Password Security", "Web Application Testing", "Network Exploitation", "Wireless Security", "Reconnaissance", "Vulnerability Scanning"],
+      },
+      {
+        label: "LAB / 05",
+        title: "Security Operations Centre (SOC) Learning Environment",
+        imageUrl: socLearningEnvironment,
+        tagline: "Understand how organisations monitor threats 24×7.",
+        description: "Students learn how a real SOC team detects, investigates and responds to live threats.",
+        items: ["SIEM Monitoring", "Security Alerts", "Threat Intelligence", "Incident Response", "Log Correlation", "Threat Hunting"],
       },
       {
         label: "LAB / 03",
@@ -218,12 +217,13 @@ const cyberSecurityNewData: ProgramPageDataNew = {
         items: ["Identity & Access Management", "Cloud Storage Security", "Virtual Machine Security", "Secure Deployment", "Cloud Monitoring", "Multi-Cloud Architecture"],
       },
       {
-        label: "LAB / 05",
-        title: "Security Operations Centre (SOC) Learning Environment",
-        imageUrl: socLearningEnvironment,
-        tagline: "Understand how organisations monitor threats 24×7.",
-        description: "Students learn how a real SOC team detects, investigates and responds to live threats.",
-        items: ["SIEM Monitoring", "Security Alerts", "Threat Intelligence", "Incident Response", "Log Correlation", "Threat Hunting"],
+        label: "LAB / 01",
+        title: "Cyber Security Simulation Lab",
+        imageUrl: cyberSecuritySimulationLab,
+        tagline: "Experience real-world attack scenarios safely.",
+        description:
+          "Students analyse vulnerabilities, secure systems, and understand how organisations defend against modern cyber threats.",
+        items: ["Network Monitoring", "Vulnerability Assessment", "Penetration Testing", "Malware Behaviour Analysis", "Threat Detection", "Security Monitoring"],
       },
     ],
   },

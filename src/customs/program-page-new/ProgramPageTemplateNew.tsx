@@ -204,14 +204,67 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
         </section>
 
         {/* ===== L&T BENEFITS ===== */}
-        <section className="pt-8 sm:pt-10 pb-8 md:pb-10 px-4 sm:px-6 bg-white">
-          <div className={`${Classes["container"]}`}>
+        <section className={`relative isolate overflow-hidden pt-8 sm:pt-10 pb-8 md:pb-10 px-4 sm:px-6 ${isCyberSecurityPage ? "bg-[#FFF0B5]" : "bg-white"}`}>
+          {isCyberSecurityPage && (
+            <>
+              <div aria-hidden="true" className="pointer-events-none absolute -right-28 -top-36 h-72 w-72 rounded-full bg-[#FFB703]/25 sm:h-96 sm:w-96" />
+              <div aria-hidden="true" className="pointer-events-none absolute -bottom-36 -left-24 h-72 w-72 rounded-full bg-[#FFB703]/20 sm:h-[26rem] sm:w-[26rem]" />
+              <div aria-hidden="true" className="pointer-events-none absolute bottom-0 left-0 h-28 w-44 rounded-tr-[100%] bg-[#FFB703]/15 sm:h-40 sm:w-72" />
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute left-3 top-10 hidden h-24 w-28 opacity-60 sm:block"
+                style={{ backgroundImage: "radial-gradient(circle, #FFB703 2px, transparent 2.5px)", backgroundSize: "22px 22px" }}
+              />
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute right-3 bottom-24 hidden h-24 w-32 opacity-60 sm:block"
+                style={{ backgroundImage: "radial-gradient(circle, #FFB703 2px, transparent 2.5px)", backgroundSize: "22px 22px" }}
+              />
+              <svg aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 h-20 w-full sm:h-28 md:h-36" viewBox="0 0 1440 180" preserveAspectRatio="none">
+                <path d="M0 92 C210 142 360 137 565 94 C790 47 1014 36 1218 73 C1310 90 1388 110 1440 122 L1440 180 L0 180Z" fill="#FFD34F" fillOpacity=".34" />
+                <path d="M0 124 C210 164 388 158 604 123 C850 84 1040 79 1228 108 C1320 122 1392 139 1440 146 L1440 180 L0 180Z" fill="#FFB703" fillOpacity=".16" />
+              </svg>
+            </>
+          )}
+          <div className={`${Classes["container"]} relative z-10`}>
+            {isCyberSecurityPage && (
+              <svg aria-hidden="true" className="pointer-events-none absolute right-0 top-28 hidden h-[260px] w-[220px] xl:block 2xl:h-[300px] 2xl:w-[255px]" viewBox="0 0 300 340" fill="none">
+                <defs>
+                  <linearGradient id="cyberShieldFill" x1="88" y1="46" x2="213" y2="223" gradientUnits="userSpaceOnUse">
+                    <stop stopColor="#477FD6" />
+                    <stop offset="1" stopColor="#173F91" />
+                  </linearGradient>
+                  <linearGradient id="cyberStandFill" x1="48" y1="264" x2="252" y2="318" gradientUnits="userSpaceOnUse">
+                    <stop stopColor="#FFE37A" />
+                    <stop offset="1" stopColor="#FFB703" />
+                  </linearGradient>
+                  <filter id="cyberShieldShadow" x="45" y="25" width="210" height="245" colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse">
+                    <feDropShadow dx="0" dy="10" stdDeviation="9" floodColor="#173F91" floodOpacity=".2" />
+                  </filter>
+                </defs>
+                <ellipse cx="150" cy="300" rx="112" ry="25" fill="#FFB703" fillOpacity=".18" />
+                <path d="M54 274c0-11 43-20 96-20s96 9 96 20v16c0 12-43 22-96 22s-96-10-96-22v-16Z" fill="url(#cyberStandFill)" />
+                <ellipse cx="150" cy="274" rx="96" ry="21" fill="#FFE98F" />
+                <ellipse cx="150" cy="292" rx="96" ry="21" stroke="#F4AE00" strokeOpacity=".48" strokeWidth="2" />
+                <g filter="url(#cyberShieldShadow)">
+                  <path d="M150 35 226 65v59c0 56-31 92-76 116-45-24-76-60-76-116V65l76-30Z" fill="url(#cyberShieldFill)" />
+                  <path d="M150 48 214 73v50c0 46-24 77-64 100-40-23-64-54-64-100V73l64-25Z" stroke="#9FC4FF" strokeOpacity=".6" strokeWidth="2" />
+                  <path d="M130 119v-9a20 20 0 0 1 40 0v9" stroke="white" strokeWidth="8" strokeLinecap="round" />
+                  <rect x="119" y="116" width="62" height="57" rx="11" fill="white" />
+                  <circle cx="150" cy="139" r="6" fill="#2856A5" />
+                  <path d="m147 143-3 13h12l-3-13" fill="#2856A5" />
+                </g>
+                <ellipse cx="150" cy="132" rx="139" ry="48" transform="rotate(-17 150 132)" stroke="#FFB703" strokeWidth="3" strokeOpacity=".8" />
+                <circle cx="30" cy="169" r="8" fill="#FFB703" />
+                <circle cx="274" cy="96" r="9" fill="#FFB703" />
+              </svg>
+            )}
             <div className="w-full mb-8">
               <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3.5">
                 How Does <img src={ltLogo} alt="L&T EduTech" className="h-[28px] sm:h-[36px] inline-block align-middle mx-1 sm:mx-2 -mt-1" /> Benefit B.Tech CSE {heroBanner.specialization} <span className="text-[#ffb703]">SRMU Students?</span>
               </h2>
             </div>
-            <div className="w-full">
+            <div className={`w-full ${isCyberSecurityPage ? "xl:pr-[250px]" : ""}`}>
               <div className="mb-5">
                 <p className="text-[15.5px] text-[#4B5A72] leading-relaxed text-justify">{ltBenefits.introText}</p>
                 <div className={rm["ovw1"] ? "block mt-4" : "hidden sm:block mt-4"}>
@@ -447,8 +500,13 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                   <div className="py-1 text-center sm:py-4 lg:py-8">
                     <div className="text-center">
                       {/* <span className="inline-flex items-center rounded-full border border-[#168AC0]/30 bg-white/70 px-3 py-1 text-[9px] sm:text-[11px] font-bold uppercase tracking-[0.16em] text-[#12658F] shadow-sm">Industry integrated curriculum</span> */}
-                      <h3 className="mt-3 text-[20px] sm:text-[26px] lg:text-[34px] leading-tight font-bold font-display text-[#14284E]">
-                        {labs.curriculumSectionTitle.replace(/\s+with L&T$/i, "")} <span className="text-[#ffb703]">with L&amp;T</span>
+                      <h3 className="mt-3 text-[20px] sm:text-[26px] lg:text-[34px] leading-tight font-bold font-display text-[#14284E] inline-flex flex-wrap items-center justify-center gap-x-2">
+                        {labs.curriculumSectionTitle.replace(/\\s+with L&T$/i, "")} <span className="text-[#ffb703]">with</span>
+                        <img
+                          src={ltLogo}
+                          alt="L&T"
+                          className="inline-block h-[28px] sm:h-[36px] w-auto object-contain align-middle"
+                        />
                       </h3>
                     </div>
                     <p className="mx-auto mt-2 max-w-2xl text-center text-[13px] leading-relaxed text-[#405570] sm:mt-4 sm:text-[15px]">{labs.curriculumDescription}</p>
@@ -496,7 +554,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
               <div className="flex items-center justify-center">
                 <a href="tel:18001026004" className={buttonClasses("relative group overflow-hidden bg-gradient-to-r from-[#ffb703] via-[#ffc72c] to-[#ffa000] text-[#14284E] font-extrabold text-[14px] sm:text-[15px] px-8 py-3.5 rounded-lg shadow-[0_8px_20px_-8px_rgba(217,139,43,0.6)] hover:shadow-[0_12px_30px_rgba(255,183,3,0.65)] hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2 text-center uppercase")}>
                   <PhoneCall className={buttonClasses("w-4 h-4 shrink-0 transition-transform duration-300 group-hover:scale-110")} />
-                  <span>Have Query? Talk to Expert</span>
+                  <span>Have a Query? Talk to Expert</span>
                 </a>
               </div>
             </div>
