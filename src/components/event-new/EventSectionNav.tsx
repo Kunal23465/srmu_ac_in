@@ -3,7 +3,7 @@ import type { MouseEvent } from "react";
 import { useReducedMotion } from "framer-motion";
 
 const sections = [
-    { id: "news", label: "News & Updates" },
+    { id: "news", label: "Upcoming Events" },
     { id: "categories", label: "Categories" },
     { id: "special-events", label: "Celebrity & Special Events" },
     { id: "calendar", label: "Calendar" },

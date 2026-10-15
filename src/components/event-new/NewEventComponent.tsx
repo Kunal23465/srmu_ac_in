@@ -420,7 +420,7 @@ export default function NewEventComponent() {
       {/* ── Section Nav ── */}
       <EventSectionNav />
 
-      <Section id="news" title="News & Updates">
+      <Section id="news" title="Upcoming Event" className="!pt-6 min-[861px]:!pt-10">
         <div className={styles.newsFeature}>
           <div className={styles.newsImage}>
             <img src={eventsData[activeNewsIndex].image} alt={eventsData[activeNewsIndex].title} loading="lazy" decoding="async" />
@@ -434,16 +434,16 @@ export default function NewEventComponent() {
               setDetail({ title: news.title, date: news.date, description: news.description ?? news.excerpt ?? "" });
             }}>Read More <ArrowRight size={16} aria-hidden="true" /></button>
             <div className={styles.newsControls}>
-              <button type="button" aria-label="Previous news" onClick={() => { setNewsPaused(true); setActiveNewsIndex((activeNewsIndex + eventsData.length - 1) % eventsData.length); }}><ChevronLeft size={18} /></button>
+              <button type="button" aria-label="Previous event" onClick={() => { setNewsPaused(true); setActiveNewsIndex((activeNewsIndex + eventsData.length - 1) % eventsData.length); }}><ChevronLeft size={18} /></button>
               <span>{activeNewsIndex + 1} / {eventsData.length}</span>
-              <button type="button" aria-label="Next news" onClick={() => { setNewsPaused(true); setActiveNewsIndex((activeNewsIndex + 1) % eventsData.length); }}><ChevronRight size={18} /></button>
-              <button type="button" aria-label={newsPaused ? "Play news slideshow" : "Pause news slideshow"} onClick={() => setNewsPaused(!newsPaused)}>{newsPaused ? <Play size={16} /> : <Pause size={16} />}</button>
+              <button type="button" aria-label="Next event" onClick={() => { setNewsPaused(true); setActiveNewsIndex((activeNewsIndex + 1) % eventsData.length); }}><ChevronRight size={18} /></button>
+              <button type="button" aria-label={newsPaused ? "Play event slideshow" : "Pause event slideshow"} onClick={() => setNewsPaused(!newsPaused)}>{newsPaused ? <Play size={16} /> : <Pause size={16} />}</button>
             </div>
           </div>
         </div>
       </Section>
 
-      <Section id="categories" title="Explore Events at SRMU" description="From academic conferences and technical competitions to cultural celebrations and sporting events, explore the diverse events conducted across the university." alternate>
+      <Section id="categories" title="Explore Events at SRMU" description="From academic conferences and technical competitions to cultural celebrations and sporting events, explore the diverse events conducted across the university." alternate className="!pt-6 min-[861px]:!pt-10">
         <div className={styles.explorePanels}>
           {exploreReels.map(({ name, title, Icon, description, reelVideo }) => (
             <a key={name} href={`#${categories.find(category => category.name === name)?.id ?? "cultural-events"}`}
@@ -457,22 +457,22 @@ export default function NewEventComponent() {
         </div>
       </Section>
 
-      <Section id="academic-events" title="Academic Events" description="Opportunities for students and faculty to learn from experts, exchange ideas, develop professional skills and engage with emerging areas of knowledge." className={styles.academicSection}>
+      <Section id="academic-events" title="Academic Events" description="Opportunities for students and faculty to learn from experts, exchange ideas, develop professional skills and engage with emerging areas of knowledge." className={`${styles.academicSection} !pt-6 min-[861px]:!pt-10`}>
         <EventCardGrid events={academic} variant="academic" />
         <div className="mt-8"><a href="#calendar" className={`${eventButtonClassName} !bg-[#14284E] !text-white`} onClick={() => chooseCategory("Academic")}>View All Academic Events<ArrowRight size={16} /></a></div>
       </Section>
 
-      <Section id="technical-events" title={<>Technical Events - <span className="text-[#FFB703]">Viveka</span></>} description="Activities designed to encourage innovation, problem-solving, practical learning and industry exposure.">
+      <Section id="technical-events" title={<>Technical Events - <span className="text-[#FFB703]">Viveka</span></>} description="Activities designed to encourage innovation, problem-solving, practical learning and industry exposure." className="!pt-6 min-[861px]:!pt-10">
         <EventCardGrid events={[...technical.filter(event => event.title !== "Industrial Visits"), technical[4]]} variant="technical" />
         <div className="mt-8"><a href="#calendar" className={eventButtonClassName} onClick={() => chooseCategory("Technical")}>View All Technical Events<ArrowRight size={16} /></a></div>
       </Section>
 
-      <Section id="cultural-events" title={<>Cultural Events - <span className="text-[#FFB703]">Dharohar</span></>} description="Celebrations of music, art, drama and literature that bring the SRMU community together." className={styles.darkSection}>
+      <Section id="cultural-events" title={<>Cultural Events - <span className="text-[#FFB703]">Dharohar</span></>} description="Celebrations of music, art, drama and literature that bring the SRMU community together." className={`${styles.darkSection} !pt-6 min-[861px]:!pt-10`}>
         <VideoGallery items={cultural} label="Cultural event videos" autoAdvance />
         <div className="mt-8"><a href="#calendar" className={eventButtonClassName} onClick={() => chooseCategory("Cultural")}>Explore Cultural Events <ArrowRight size={16} /></a></div>
       </Section>
 
-      <Section id="sports-events" title={<>Sports &amp; Fitness - <span className="text-[#FFB703]">Utsaah &amp; Ullaas</span></>} description="Sports at SRMU encourage teamwork, discipline, leadership and a healthy campus lifestyle." alternate>
+      <Section id="sports-events" title={<>Sports &amp; Fitness - <span className="text-[#FFB703]">Utsaah &amp; Ullaas</span></>} description="Sports at SRMU encourage teamwork, discipline, leadership and a healthy campus lifestyle." alternate className="!pt-6 min-[861px]:!pt-10">
         <div className={styles.sportsMeets} role="group" aria-label="Sports meets">
           {["Utsaah", "Ullas"].map(meet => <button type="button" key={meet} aria-pressed={sportsMeet === meet} onClick={() => setSportsMeet(meet)}>
             <span className={styles.meetIcon}><Trophy aria-hidden="true" /></span>
@@ -492,7 +492,7 @@ export default function NewEventComponent() {
         <div className="mt-8"><a href="#calendar" className={eventButtonClassName} onClick={() => chooseCategory("Sports")}>View Sports Events <ArrowRight size={16} aria-hidden="true" /></a></div>
       </Section>
 
-      <Section id="special-events" title={<span className="text-[#FFB703]">Celebrity &amp; Special Events</span>} description="Engage with distinguished personalities, industry leaders, experts and inspiring speakers through special sessions at SRMU." className={`${styles.darkSection} ${styles.specialSection}`}>
+      <Section id="special-events" title={<span className="text-[#FFB703]">Celebrity &amp; Special Events</span>} description="Engage with distinguished personalities, industry leaders, experts and inspiring speakers through special sessions at SRMU." className={`${styles.darkSection} ${styles.specialSection} !pt-6 min-[861px]:!pt-10`}>
         <VideoGallery items={special} label="Special event videos" celebrity />
         <div className="mt-8"><a href="#calendar" className={eventButtonClassName} onClick={() => chooseCategory("Special")}>Explore Special Events <ArrowRight size={16} /></a></div>
       </Section>
@@ -509,7 +509,7 @@ export default function NewEventComponent() {
 
       */}
 
-      <Section id="calendar" title="SRMU Events Calendar" description="Stay updated with upcoming academic, technical, cultural, sports and special events at SRMU.">
+      <Section id="calendar" title="SRMU Events Calendar" description="Stay updated with upcoming academic, technical, cultural, sports and special events at SRMU." className="!pt-6 min-[861px]:!pt-10">
         <div className={styles.calendarFilters} role="group" aria-label="Filter calendar events">
           {[{ name: "All", Icon: CalendarDays }, ...categories].map(({ name, Icon }) => <button type="button" key={name} aria-pressed={filter === name} onClick={() => setFilter(name)}><Icon size={17} aria-hidden="true" />{name === "All" ? "All Events" : name}</button>)}
         </div>

@@ -6,15 +6,15 @@
 // ============================================================
 
 import type { ProgramPageDataNew } from "../../types/programPageNew";
-import cloudSecurityLab from "../../assets/images/cyber-security-new/Cloud Security Lab.webp";
-import cyberSecuritySimulationLab from "../../assets/images/cyber-security-new/Cyber Security Simulation Lab.webp";
-import digitalForensicsLab from "../../assets/images/cyber-security-new/Digital Forensics Lab.webp";
-import ethicalHackingLab from "../../assets/images/cyber-security-new/Ethical Hacking Lab.webp";
-import reelThumbnail from "../../assets/images/cyber-security-new/Reel Thumnail.webp";
-import industrialControlSystems from "../../assets/images/cyber-security-new/Securing Industrial Control Systems-OT Security.webp";
-import socLearningEnvironment from "../../assets/images/cyber-security-new/Security Operations Centre (SOC) Learning Environment.webp";
-import studentsPlaced from "../../assets/images/cyber-security-new/Where Our Students Get Placed.webp";
-import whyStudyCyberSecurity from "../../assets/images/cyber-security-new/Why Study B.Tech CSE Cyber Security in 2027.webp";
+import cloudSecurityLab from "../../assets/images/cyber-security-new/cloud-security-lab.webp";
+import cyberSecuritySimulationLab from "../../assets/images/cyber-security-new/cyber-security-simulation-lab.webp";
+import digitalForensicsLab from "../../assets/images/cyber-security-new/digital-forensics-lab.webp";
+import ethicalHackingLab from "../../assets/images/cyber-security-new/ethical-hacking-lab.webp";
+import reelThumbnail from "../../assets/images/cyber-security-new/cyber-security-reel-thumbnail.webp";
+import industrialControlSystems from "../../assets/images/cyber-security-new/securing-industrial-control-systems-ot-security.webp";
+import socLearningEnvironment from "../../assets/images/cyber-security-new/security-operations-centre-soc-learning-environment.webp";
+import studentsPlaced from "../../assets/images/cyber-security-new/where-our-students-get-placed.webp";
+import whyStudyCyberSecurity from "../../assets/images/cyber-security-new/why-study-b-tech-cse-cyber-security-2027.webp";
 
 const cyberSecurityNewData: ProgramPageDataNew = {
   // ----------------------------------------------------------

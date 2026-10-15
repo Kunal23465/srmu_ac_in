@@ -399,15 +399,6 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                   </div>
                 </div>
               </div>
-              <div className="w-full">
-                <h3 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3">
-                  {labs.curriculumSectionTitle} <span className="text-[#ffb703]">with L&T</span>
-                </h3>
-                <div>
-                  <p className={`text-[14.5px] leading-5 text-[#4B5A72] text-justify ${!rm["curr1"] ? "rm-clamp" : ""}`}>{labs.curriculumDescription}</p>
-                  <button className="rm-btn" onClick={() => toggleRm("curr1")}>{rm["curr1"] ? "Read Less" : "Read More"}</button>
-                </div>
-              </div>
             </div>
 
             {labs.reelVideoUrl && (
@@ -443,6 +434,9 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                       poster={labs.reelPosterUrl}
                       width="720"
                       height="1280"
+                      autoPlay
+                      loop
+                      muted
                       controls
                       playsInline
                       preload="metadata"
@@ -450,15 +444,14 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                       className="block w-full aspect-[9/16] max-h-[390px] object-cover"
                     />
                   </div>
-                  <div className="py-1 text-center sm:py-4 sm:text-left lg:py-8">
-                    <span className="inline-flex items-center rounded-full border border-[#168AC0]/30 bg-white/70 px-3 py-1 text-[9px] sm:text-[11px] font-bold uppercase tracking-[0.16em] text-[#12658F] shadow-sm">Inside the labs</span>
-                    <h3 className="mt-3 text-[20px] sm:text-[26px] lg:text-[34px] leading-tight font-bold font-display text-[#14284E]">See cyber security learning in action</h3>
-                    <p className="mt-2 sm:mt-4 mx-auto sm:mx-0 max-w-2xl text-[13px] sm:text-[15px] leading-relaxed text-[#405570]">Step inside the spaces where students practise threat detection, ethical hacking, digital forensics and cloud security.</p>
-                    <div className="mt-4 sm:mt-6 flex flex-wrap justify-center sm:justify-start gap-2">
-                      {["Real-world scenarios", "Hands-on practice", "Industry-ready skills"].map((item) => (
-                        <span key={item} className="rounded-full border border-[#B9D1E5] bg-white/75 px-2.5 sm:px-3 py-1.5 text-[9px] sm:text-[11px] font-semibold text-[#29415F] shadow-sm">{item}</span>
-                      ))}
+                  <div className="py-1 text-center sm:py-4 lg:py-8">
+                    <div className="text-center">
+                      {/* <span className="inline-flex items-center rounded-full border border-[#168AC0]/30 bg-white/70 px-3 py-1 text-[9px] sm:text-[11px] font-bold uppercase tracking-[0.16em] text-[#12658F] shadow-sm">Industry integrated curriculum</span> */}
+                      <h3 className="mt-3 text-[20px] sm:text-[26px] lg:text-[34px] leading-tight font-bold font-display text-[#14284E]">
+                        {labs.curriculumSectionTitle.replace(/\s+with L&T$/i, "")} <span className="text-[#ffb703]">with L&amp;T</span>
+                      </h3>
                     </div>
+                    <p className="mx-auto mt-2 max-w-2xl text-center text-[13px] leading-relaxed text-[#405570] sm:mt-4 sm:text-[15px]">{labs.curriculumDescription}</p>
                   </div>
                 </div>
               </div>
@@ -485,7 +478,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                       )}
                       <div className="absolute inset-0 bg-gradient-to-t from-[#06142C]/75 via-transparent to-[#06142C]/10" />
                       <span className="absolute left-4 top-4 rounded-full border border-white/25 bg-[#081A34]/70 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.14em] text-white backdrop-blur-sm">{lab.label}</span>
-                      <span className="absolute bottom-4 left-4 text-[10px] font-semibold uppercase tracking-[0.14em] text-white/85">Practical learning environment</span>
+                      {/* <span className="absolute bottom-4 left-4 text-[10px] font-semibold uppercase tracking-[0.14em] text-white/85">Practical learning environment</span> */}
                     </div>
                     <div className="p-4 sm:p-5">
                       <h4 className="text-[18px] font-bold font-display leading-snug text-[#14284E] group-hover:text-[#1B4F91] transition-colors">{lab.title}</h4>
@@ -500,13 +493,12 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                   </article>
                 );
               })}
-            </div>
-
-            <div className="mt-8 flex justify-center w-full">
-              <a href="tel:18001026004" className={buttonClasses("relative group overflow-hidden bg-gradient-to-r from-[#ffb703] via-[#ffc72c] to-[#ffa000] text-[#14284E] font-extrabold text-[14px] sm:text-[15px] px-8 py-3.5 rounded-lg shadow-[0_8px_20px_-8px_rgba(217,139,43,0.6)] hover:shadow-[0_12px_30px_rgba(255,183,3,0.65)] hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2 text-center uppercase")}>
-                <PhoneCall className={buttonClasses("w-4 h-4 shrink-0 transition-transform duration-300 group-hover:scale-110")} />
-                <span>Have Query? Talk to Expert</span>
-              </a>
+              <div className="flex items-center justify-center">
+                <a href="tel:18001026004" className={buttonClasses("relative group overflow-hidden bg-gradient-to-r from-[#ffb703] via-[#ffc72c] to-[#ffa000] text-[#14284E] font-extrabold text-[14px] sm:text-[15px] px-8 py-3.5 rounded-lg shadow-[0_8px_20px_-8px_rgba(217,139,43,0.6)] hover:shadow-[0_12px_30px_rgba(255,183,3,0.65)] hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2 text-center uppercase")}>
+                  <PhoneCall className={buttonClasses("w-4 h-4 shrink-0 transition-transform duration-300 group-hover:scale-110")} />
+                  <span>Have Query? Talk to Expert</span>
+                </a>
+              </div>
             </div>
           </div>
         </section>

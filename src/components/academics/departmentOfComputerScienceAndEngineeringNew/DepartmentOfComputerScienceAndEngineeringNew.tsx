@@ -837,7 +837,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                 <section id="overview" className="pt-6 sm:pt-8 pb-8 md:pb-10 px-4 sm:px-6 bg-white scroll-mt-24">
                     <div className={`${Classes["container"]} cse-content-container`}>
                         {/* Two-column: text left, image right */}
-                        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
+                        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start lg:items-stretch">
 
                             {/* ── Left: text ── */}
                             <div className="w-full lg:flex-1">
@@ -857,11 +857,11 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                             </div>
 
                             {/* ── Right: image ── */}
-                            <div className="flex w-full lg:w-[420px] xl:w-[460px] shrink-0 lg:self-stretch">
+                            <div className="relative flex w-full lg:w-[420px] xl:w-[460px] shrink-0 lg:self-stretch">
                                 <img
                                     src={TechCollabImg}
                                     alt="Department Tech Collaboration - L&T EduTech x SRMU"
-                                    className="w-full h-auto lg:h-full object-cover object-center rounded-2xl shadow-[0_2px_12px_rgba(15,31,61,0.08)]"
+                                    className="w-full h-auto lg:absolute lg:inset-0 lg:h-full object-cover object-center rounded-2xl shadow-[0_2px_12px_rgba(15,31,61,0.08)]"
                                 />
                             </div>
 
