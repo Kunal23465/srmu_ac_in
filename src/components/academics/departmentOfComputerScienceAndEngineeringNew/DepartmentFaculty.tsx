@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import Global from "../../../utils/styles/Global.module.css";
 import styles from "./DepartmentFaculty.module.css";
+import researchBooksGif from "../../../assets/video/B.Tech-CSE-Cyber Security-College-in-Lucknow.gif";
 
 export type FacultyMember = {
     name: string;
@@ -27,7 +28,7 @@ export type FacultyMember = {
 // Academic-strength figures supplied in the section design reference.
 const academicStrength = [
     { label: "Total Ph.D.", value: "50", Icon: GraduationCap },
-    { label: "Theses (2025–26)", value: "15", Icon: FileText },
+    { label: "Thesis (2025–26)", value: "15", Icon: FileText },
     { label: "Ph.D. Matrix Seats", value: "63", Icon: UsersRound },
     { label: "Supervisors", value: "22", Icon: UserRound },
     { label: "Vacant Seats", value: "65", Icon: Star },
@@ -394,22 +395,37 @@ function ResearchShowcase() {
             className={styles.researchShowcase}
             aria-labelledby="academic-strength-heading"
         >
+            <div className={styles.showcaseAccentTop} aria-hidden="true" />
             <div className={styles.showcaseAccentLeft} aria-hidden="true" />
             <div className={styles.showcaseAccentRight} aria-hidden="true" />
             <div className={styles.showcaseDotsTop} aria-hidden="true" />
             <div className={styles.showcaseDotsBottom} aria-hidden="true" />
-            <div className={styles.showcaseWave} aria-hidden="true" />
+            <svg className={styles.showcaseWave} viewBox="0 0 1440 300" preserveAspectRatio="none" aria-hidden="true">
+                <path d="M0 74C176 22 325 34 506 82c198 53 346 17 524-27 161-40 277-19 410 26v219H0V74Z" fill="white" fillOpacity=".14" />
+                <path d="M0 153c181 63 361 74 565 26 214-51 374-82 577-28 119 32 208 79 298 83v66H0v-147Z" fill="white" fillOpacity=".11" />
+                <path d="M0 238c181 48 363 52 565 20 214-34 383-53 577-17 121 23 207 47 298 53" fill="none" stroke="white" strokeOpacity=".45" strokeWidth="2" />
+                <path d="M0 267c187 28 376 30 568 1 217-33 383-42 574-8 116 20 208 38 298 40" fill="none" stroke="white" strokeOpacity=".26" strokeWidth="1.5" />
+            </svg>
 
             <div className={styles.researchShowcaseInner}>
                 <div className={styles.showcaseIntro}>
+                    <div className={styles.showcaseBadge}>
+                        <span className={styles.showcaseBadgeDot} aria-hidden="true" />
+                        <span>Research &amp; Publications</span>
+                    </div>
                     <h2 id="academic-strength-heading" className={`font-display ${styles.showcaseHeading}`}>
-                        Advancing Knowledge.
-                        <span>Creating Impact.</span>
+                        Center for
+                        <span>Research Excellence &amp; Innovation</span>
                     </h2>
                     <p className={styles.showcaseParagraph}>
                         Our faculty actively contributes to cutting-edge research, publications and
                         innovation across various domains.
                     </p>
+                    <div className={styles.showcaseResearchFocus} aria-label="Research focus areas">
+                        <span>Publications</span>
+                        <span>Doctoral Research</span>
+                        <span>Innovation</span>
+                    </div>
                     <a
                         target="_blank"
                         rel="noreferrer"
@@ -417,9 +433,45 @@ function ResearchShowcase() {
                         className={styles.showcaseButton}
                     >
                         <FileText size={20} aria-hidden="true" />
-                        <span>Research</span>
+                        <span>Explore Research</span>
                         <ArrowRight size={20} aria-hidden="true" />
                     </a>
+                </div>
+
+                <div className={styles.showcaseVisual} aria-hidden="true">
+                    <svg className={styles.showcaseOrbit} viewBox="0 0 600 460" fill="none">
+                        <ellipse cx="300" cy="230" rx="278" ry="132" transform="rotate(-13 300 230)" stroke="white" strokeOpacity=".52" strokeWidth="2" />
+                        <ellipse cx="300" cy="230" rx="245" ry="174" transform="rotate(14 300 230)" stroke="#14284E" strokeOpacity=".48" strokeWidth="1.75" />
+                        <circle cx="48" cy="261" r="5" fill="#D62C2B" />
+                        <circle cx="536" cy="136" r="5" fill="#14284E" />
+                        <circle cx="174" cy="48" r="4" fill="#14284E" />
+                        <g className={styles.showcaseSparkles}>
+                            <path d="m290 38 3 8 8 3-8 3-3 8-3-8-8-3 8-3 3-8ZM530 315l3 8 8 3-8 3-3 8-3-8-8-3 8-3 3-8Z" fill="white" />
+                            <path d="m148 321 2.5 6.5 6.5 2.5-6.5 2.5-2.5 6.5-2.5-6.5-6.5-2.5 6.5-2.5 2.5-6.5ZM448 34l2 5 5 2-5 2-2 5-2-5-5-2 5-2 2-5Z" fill="white" />
+                            <circle cx="126" cy="118" r="2.5" fill="white" />
+                            <circle cx="474" cy="365" r="2" fill="white" />
+                        </g>
+                        <path d="m64 86 27-10 26 10-26 11-27-11Z" fill="#14284E" />
+                        <path d="M74 92v13c8 7 24 7 33 0V92M116 86v18" stroke="#14284E" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+                        <circle cx="514" cy="67" r="17" stroke="#14284E" strokeWidth="2" />
+                        <ellipse cx="514" cy="67" rx="7" ry="18" stroke="#14284E" strokeWidth="2" />
+                        <ellipse cx="514" cy="67" rx="7" ry="18" transform="rotate(60 514 67)" stroke="#14284E" strokeWidth="2" />
+                        <ellipse cx="514" cy="67" rx="7" ry="18" transform="rotate(120 514 67)" stroke="#14284E" strokeWidth="2" />
+                        <g transform="translate(235 100) scale(.55)">
+                            <path d="M520 200c-14-15-29-15-43-1v37c15-13 29-13 43 1 14-14 28-14 43-1v-37c-14-14-29-14-43 1ZM520 200v37" stroke="#14284E" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+                        </g>
+                        <g transform="translate(165 102) scale(.7)">
+                            <path d="M548 343v-22h9v22m7 0v-34h9v34m7 0v-45h9v45" stroke="#14284E" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+                        </g>
+                    </svg>
+                    <span className={styles.showcaseVisualGlow} />
+                    <img
+                        src={researchBooksGif}
+                        alt=""
+                        className={styles.showcaseIllustration}
+                        loading="lazy"
+                        decoding="async"
+                    />
                 </div>
 
                 <div className={styles.showcaseStats} role="list" aria-label="Academic strength statistics">

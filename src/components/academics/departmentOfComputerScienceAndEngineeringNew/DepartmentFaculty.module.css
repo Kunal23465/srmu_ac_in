@@ -85,6 +85,24 @@
     }
 }
 
+@keyframes showcaseArtworkFloat {
+    0%, 100% {
+        transform: translateY(0) scale(1.025);
+    }
+    50% {
+        transform: translateY(-6px) scale(1.045);
+    }
+}
+
+@keyframes showcaseSparkleTwinkle {
+    0%, 100% {
+        opacity: 0.78;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
 @keyframes buttonShimmer {
     0% {
         background-position: 0% 50%;
@@ -1402,25 +1420,99 @@
     position: relative;
     isolation: isolate;
     overflow: hidden;
-    padding: clamp(48px, 5vw, 76px) 0 clamp(72px, 6vw, 96px);
+    padding: clamp(38px, 3vw, 48px) 0 clamp(48px, 4vw, 64px);
     color: #14284E;
     background: #FFB703;
+}
+
+.researchShowcase::before {
+    position: absolute;
+    z-index: 0;
+    inset: 0;
+    background: radial-gradient(ellipse at 61% 22%, rgba(255, 255, 255, 0.16), transparent 48%);
+    content: "";
+    pointer-events: none;
 }
 
 .researchShowcaseInner {
     position: relative;
     z-index: 1;
     display: grid;
-    grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.42fr);
+    grid-template-columns: minmax(0, 0.84fr) minmax(0, 1.16fr);
     align-items: center;
-    gap: clamp(40px, 5vw, 100px);
+    column-gap: clamp(20px, 2.8vw, 48px);
+    row-gap: 0;
     width: min(calc(100% - 48px), 1760px);
     margin: 0 auto;
 }
 
 .showcaseIntro {
+    grid-column: 1;
+    grid-row: 1;
     min-width: 0;
     max-width: 620px;
+    transform: translateX(clamp(32px, 8.333vw, 146px));
+}
+
+.showcaseVisual {
+    position: relative;
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    height: clamp(340px, 21vw, 400px);
+    isolation: isolate;
+    transform: translateX(clamp(-84px, -4.5vw, -36px));
+}
+
+.showcaseOrbit {
+    position: absolute;
+    z-index: 0;
+    inset: -3%;
+    width: 106%;
+    height: 106%;
+    overflow: visible;
+    opacity: 0.58;
+}
+
+.showcaseSparkles {
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.9));
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: showcaseSparkleTwinkle 2.8s ease-in-out infinite;
+}
+
+.showcaseVisualGlow {
+    position: absolute;
+    z-index: -1;
+    width: min(84%, 500px);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(20, 40, 78, 0.14) 0%, rgba(15, 74, 133, 0.1) 38%, rgba(255, 255, 255, 0.12) 58%, transparent 74%);
+    filter: blur(2px);
+    animation: pulseGlow 7s ease-in-out infinite;
+}
+
+.showcaseVisualGlow::before {
+    position: absolute;
+    inset: 10%;
+    border: 1px solid rgba(20, 40, 78, 0.2);
+    border-radius: inherit;
+    box-shadow: inset 0 0 35px rgba(20, 40, 78, 0.07), 0 0 30px rgba(20, 40, 78, 0.08);
+    content: "";
+}
+
+.showcaseIllustration {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: min(136%, 760px);
+    height: 130%;
+    object-fit: contain;
+    filter: saturate(1.08) contrast(1.04) drop-shadow(0 18px 24px rgba(20, 40, 78, 0.22));
+    animation: showcaseArtworkFloat 6s ease-in-out infinite;
 }
 
 .showcaseBadge {
@@ -1449,10 +1541,42 @@
     box-shadow: 0 0 0 5px rgba(255, 183, 3, 0.14);
 }
 
+.showcaseResearchFocus {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+}
+
+.showcaseResearchFocus span {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    min-height: 30px;
+    padding: 5px 11px;
+    border: 1px solid rgba(20, 40, 78, 0.12);
+    border-radius: 999px;
+    color: #14284E;
+    background: rgba(255, 255, 255, 0.22);
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.showcaseResearchFocus span::before {
+    width: 6px;
+    height: 6px;
+    flex: 0 0 6px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    box-shadow: 0 0 0 2px rgba(20, 40, 78, 0.08);
+    content: "";
+}
+
 .showcaseHeading {
     margin: 20px 0 16px;
     color: #14284E;
-    font-size: clamp(28px, 3vw, 36px);
+    font-size: clamp(36px, 3.2vw, 48px);
     font-weight: 700;
     letter-spacing: -0.015em;
     line-height: 1.2;
@@ -1461,13 +1585,15 @@
 .showcaseHeading span {
     display: block;
     color: #FFFFFF;
+    font-size: clamp(22px, 2vw, 36px);
+    white-space: nowrap;
 }
 
 .showcaseParagraph {
     max-width: 590px;
     margin: 0;
     color: #14284E;
-    font-size: 14.5px;
+    font-size: 16px;
     font-weight: 500;
     line-height: 1.65;
 }
@@ -1477,19 +1603,24 @@
     align-items: center;
     justify-content: center;
     gap: 8px;
-    margin-top: 14px;
-    padding: 12px 24px;
+    margin-top: 18px;
+    padding: 11px 20px;
     border: 0;
     border-radius: 8px;
     color: #FFFFFF;
     background: linear-gradient(135deg, #1B4F91, #14284E);
     box-shadow: 0 8px 20px rgba(20, 40, 78, 0.16);
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 700;
     letter-spacing: 0.05em;
     text-decoration: none;
     text-transform: uppercase;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.showcaseButton svg {
+    width: 17px;
+    height: 17px;
 }
 
 .showcaseButton:hover {
@@ -1502,8 +1633,9 @@
     display: grid;
     grid-template-columns: repeat(6, minmax(0, 1fr));
     align-items: stretch;
+    grid-column: 1 / -1;
     min-width: 0;
-    margin: 0;
+    margin: clamp(52px, 4vw, 64px) 0 0;
 }
 
 .showcaseStat {
@@ -1534,7 +1666,7 @@
     bottom: 0;
     left: 0;
     width: 1px;
-    background: rgba(255, 255, 255, 0.78);
+    background: rgba(20, 40, 78, 0.18);
     content: "";
 }
 
@@ -1543,8 +1675,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: clamp(72px, 5vw, 98px);
-    height: clamp(72px, 5vw, 98px);
+    width: clamp(48px, 3vw, 58px);
+    height: clamp(48px, 3vw, 58px);
     flex: 0 0 auto;
     border-radius: 50%;
     color: #14284E;
@@ -1568,9 +1700,9 @@
 
 .showcaseStatValue {
     order: 1;
-    margin: 16px 0 0;
+    margin: 10px 0 0;
     color: #D62C2B;
-    font-size: clamp(42px, 4vw, 68px);
+    font-size: clamp(38px, 2.5vw, 48px);
     font-weight: 800;
     letter-spacing: -0.03em;
     line-height: 1;
@@ -1578,10 +1710,10 @@
 
 .showcaseStatLabel {
     order: 2;
-    min-height: 52px;
-    margin: 12px 0 0;
+    min-height: 30px;
+    margin: 8px 0 0;
     color: #14284E;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 800;
     line-height: 1.4;
 }
@@ -1590,7 +1722,7 @@
     order: 3;
     width: 58px;
     height: 5px;
-    margin-top: 20px;
+    margin-top: 12px;
     border-radius: 999px;
     background: #FFB703;
     transition: width 220ms ease, background-color 220ms ease;
@@ -1615,13 +1747,27 @@
 .showcaseWave {
     position: absolute;
     z-index: 0;
-    right: -10%;
-    bottom: -102px;
-    left: -10%;
-    height: 220px;
-    border-radius: 50% 50% 0 0 / 30% 30% 0 0;
-    background: rgba(255, 255, 255, 0.13);
-    transform: rotate(-2.5deg);
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: clamp(180px, 22vw, 280px);
+    overflow: visible;
+    pointer-events: none;
+}
+
+.showcaseAccentTop {
+    position: absolute;
+    z-index: 0;
+    top: -220px;
+    left: -120px;
+    width: 260px;
+    height: 260px;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    background: #14284E;
+    box-shadow: inset 0 0 0 18px rgba(255, 183, 3, 0.26), 0 0 0 8px rgba(255, 183, 3, 0.12);
+    pointer-events: none;
 }
 
 .showcaseAccentLeft {
@@ -1645,6 +1791,7 @@
     height: 320px;
     border: 48px solid rgba(255, 183, 3, 0.32);
     border-radius: 50%;
+    background: #14284E;
     box-shadow: inset 0 0 0 28px rgba(255, 183, 3, 0.18);
 }
 
@@ -1664,18 +1811,39 @@
 }
 
 .showcaseDotsBottom {
-    bottom: 13%;
-    left: 7%;
+    bottom: 15%;
+    left: 1%;
+    width: 96px;
+    height: 76px;
+}
+
+@media (min-width: 1200px) and (max-width: 1599px) {
+    .showcaseIntro {
+        transform: translateX(clamp(32px, 6vw, 72px));
+    }
+
+    .showcaseVisual {
+        transform: none;
+    }
 }
 
 @media (max-width: 1199px) {
     .researchShowcaseInner {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 48px;
+        column-gap: 28px;
+    }
+
+    .showcaseVisual {
+        transform: none;
+    }
+
+    .showcaseIllustration {
+        width: min(100%, 620px);
+        height: 112%;
     }
 
     .showcaseIntro {
         max-width: 680px;
+        transform: translateX(clamp(24px, 6vw, 72px));
     }
 
     .showcaseStats {
@@ -1696,8 +1864,48 @@
         right: 12px;
         left: 12px;
         height: 1px;
-        background: rgba(255, 255, 255, 0.75);
+        background: rgba(20, 40, 78, 0.14);
         content: "";
+    }
+}
+
+@media (max-width: 899px) {
+    .researchShowcaseInner {
+        grid-template-columns: minmax(0, 1fr);
+        row-gap: 30px;
+    }
+
+    .showcaseIntro,
+    .showcaseVisual,
+    .showcaseStats {
+        grid-column: 1;
+    }
+
+    .showcaseIntro {
+        grid-row: auto;
+        transform: none;
+    }
+
+    .showcaseVisual {
+        grid-row: auto;
+        width: min(100%, 520px);
+        height: clamp(300px, 48vw, 420px);
+        justify-self: center;
+        transform: none;
+    }
+
+    .showcaseIllustration {
+        width: min(130%, 620px);
+        height: 100%;
+    }
+
+    .showcaseStats {
+        grid-row: auto;
+        margin-top: 0;
+    }
+
+    .showcaseAccentTop {
+        display: none;
     }
 }
 
@@ -1726,22 +1934,37 @@
 
     .showcaseHeading {
         margin: 16px 0 12px;
+        font-size: clamp(34px, 8vw, 44px);
+    }
+
+    .showcaseHeading span {
+        font-size: clamp(16px, 4.8vw, 24px);
     }
 
     .showcaseParagraph {
-        font-size: 14.5px;
+        font-size: 15px;
         line-height: 1.6;
     }
 
     .showcaseButton {
         margin-top: 14px;
-        padding: 12px 24px;
-        font-size: 14px;
+        padding: 11px 20px;
+        font-size: 13px;
     }
 
     .showcaseStats {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         row-gap: 28px;
+    }
+
+    .showcaseVisual {
+        height: 320px;
+    }
+
+    .showcaseOrbit {
+        inset: -8%;
+        width: 116%;
+        height: 116%;
     }
 
     .showcaseStat {
@@ -1758,7 +1981,7 @@
         right: 12px;
         left: 12px;
         height: 1px;
-        background: rgba(255, 255, 255, 0.75);
+        background: rgba(20, 40, 78, 0.14);
         content: "";
     }
 
@@ -1804,7 +2027,10 @@
     .showcaseStat,
     .showcaseStatIcon,
     .showcaseStatAccent,
-    .showcaseButton {
+    .showcaseButton,
+    .showcaseIllustration,
+    .showcaseVisualGlow,
+    .showcaseSparkles {
         animation: none;
         transition: none;
     }
