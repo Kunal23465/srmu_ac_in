@@ -1353,9 +1353,9 @@
     }
 
     .hodPortraitWrapper {
-        width: min(155px, 100%);
+        width: 100%;
         height: auto;
-        aspect-ratio: 155 / 180;
+        aspect-ratio: 4 / 3.9;
     }
 
     .hodName {
@@ -1369,6 +1369,11 @@
 
     .facultyCard {
         min-width: 0;
+    }
+
+    .cardPortraitWrapper {
+        width: 90%;
+        margin-inline: auto;
     }
 
     .researchPanel {
@@ -1997,7 +2002,7 @@
 
     .showcaseStatValue {
         margin-top: 12px;
-        font-size: 42px;
+        font-size: 52px !important;
     }
 
     .showcaseStatLabel {

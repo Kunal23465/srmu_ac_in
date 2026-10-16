@@ -7,14 +7,17 @@
 
 import type { ProgramPageDataNew } from "../../types/programPageNew";
 import cloudSecurityLab from "../../assets/images/cyber-security-new/cloud-security-lab.webp";
-import cyberSecuritySimulationLab from "../../assets/images/cyber-security-new/cyber-security-simulation-lab.webp";
-import digitalForensicsLab from "../../assets/images/cyber-security-new/digital-forensics-lab.webp";
+import cyberSecuritySimulationLab from "../../assets/images/cyber-security-new/Cyber-Security-Simulation-Lab.webp";
+import digitalForensicsLab from "../../assets/images/cyber-security-new/Digital-Forensics-Lab.webp";
 import ethicalHackingLab from "../../assets/images/cyber-security-new/ethical-hacking-lab.webp";
 import reelThumbnail from "../../assets/images/cyber-security-new/cyber-security-reel-thumbnail.webp";
 import industrialControlSystems from "../../assets/images/cyber-security-new/securing-industrial-control-systems-ot-security.webp";
-import socLearningEnvironment from "../../assets/images/cyber-security-new/security-operations-centre-soc-learning-environment.webp";
+import socLearningEnvironment from "../../assets/images/cyber-security-new/Security-Operations-Centre-SOC-Learning-Environment.webp";
 import studentsPlaced from "../../assets/images/cyber-security-new/where-our-students-get-placed.webp";
 import whyStudyCyberSecurity from "../../assets/images/cyber-security-new/why-study-b-tech-cse-cyber-security-2027.webp";
+import ltSectionBg from "../../assets/images/cyber-security-new/B.Tech-CSE-College-in-Lucknow.webp";
+import curriculumDesktop from "../../assets/images/cyber-security-new/learn-section.jpg";
+import curriculumMobile from "../../assets/images/cyber-security-new/mobile-view.png";
 
 const cyberSecurityNewData: ProgramPageDataNew = {
   // ----------------------------------------------------------
@@ -92,6 +95,7 @@ const cyberSecurityNewData: ProgramPageDataNew = {
       { label: "Industry Certifications", value: "Supported" },
       { label: "Career Support", value: "Resume Building, Coding, Mock Interviews & Placement Training" },
     ],
+    tableBackgroundImageUrl: ltSectionBg,
   },
 
   // ----------------------------------------------------------
@@ -165,8 +169,8 @@ const cyberSecurityNewData: ProgramPageDataNew = {
     sectionTitleHighlight: "the way Industry Works",
     introParagraph:
       "From the first year, you'll build, test, analyse and secure real systems — not just study theory.",
-    curriculumImageDesktop: "/shared-image2.png",
-    curriculumImageMobile: "/shared-image2.png",
+    curriculumImageDesktop: curriculumDesktop,
+    curriculumImageMobile: curriculumMobile,
     curriculumOverlayItems: [
       { text: "Secure\nSoftware\nDevelopment" },
       { text: "Enterprise\nNetwork\nSecurity" },
@@ -185,7 +189,7 @@ const cyberSecurityNewData: ProgramPageDataNew = {
     cardBackgroundImageUrl: "/backgroundIm.png",
     labs: [
       {
-        label: "LAB / 02",
+        label: "LAB / 01",
         title: "Ethical Hacking Lab",
         imageUrl: ethicalHackingLab,
         tagline: "Think like an attacker to build stronger security.",
@@ -193,7 +197,7 @@ const cyberSecurityNewData: ProgramPageDataNew = {
         items: ["Password Security", "Web Application Testing", "Network Exploitation", "Wireless Security", "Reconnaissance", "Vulnerability Scanning"],
       },
       {
-        label: "LAB / 05",
+        label: "LAB / 02",
         title: "Security Operations Centre (SOC) Learning Environment",
         imageUrl: socLearningEnvironment,
         tagline: "Understand how organisations monitor threats 24×7.",
@@ -217,7 +221,7 @@ const cyberSecurityNewData: ProgramPageDataNew = {
         items: ["Identity & Access Management", "Cloud Storage Security", "Virtual Machine Security", "Secure Deployment", "Cloud Monitoring", "Multi-Cloud Architecture"],
       },
       {
-        label: "LAB / 01",
+        label: "LAB / 05",
         title: "Cyber Security Simulation Lab",
         imageUrl: cyberSecuritySimulationLab,
         tagline: "Experience real-world attack scenarios safely.",

@@ -24,6 +24,7 @@ import PlacementLogoEY from "../../../assets/new-home/new-placement-logos/10.png
 import PlacementLogoWipro from "../../../assets/new-home/new-placement-logos/11.png";
 import PlacementLogoInfosys from "../../../assets/new-home/new-placement-logos/12.png";
 import TechCollabImg from "../../../assets/images/new-information-system/Tech-Collaboration_-L-T-EduTech-SRMU.png";
+import studentsPlacedImg from "../../../assets/images/cyber-security-new/where-our-students-get-placed.webp";
 import { Download, ChevronDown, ChevronUp, Search, Mail, Phone, ArrowLeft, ArrowRight, X, ShieldCheck, GraduationCap, Settings, Database, Lightbulb, Share2, MapPin, Facebook, Instagram, Linkedin, Youtube, Twitter, BadgeCheck, UsersRound, Accessibility, Medal, ChartNoAxesColumnIncreasing, Globe2, UserRound, Heart, Monitor, BrainCircuit, Code2, BookOpenCheck, Route, ChevronRight, Laptop, BriefcaseBusiness } from "lucide-react";
 import { FaQuora, FaRedditAlien } from "react-icons/fa";
 import useEmblaCarousel from "embla-carousel-react";
@@ -1389,7 +1390,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                 </section>
 
                 {/* ── Placements ───────────────────────────────────────────── */}
-                <DepartmentPlacements recruiters={recruiterLogos} />
+                <DepartmentPlacements recruiters={recruiterLogos} imageUrl={studentsPlacedImg} imageAlt="SRMU students getting placed at top companies" />
 
                 {/* ── Faculty ──────────────────────────────────────────────── */}
                 <DepartmentFaculty faculty={facultyList} onSelect={setSelectedFaculty} />
@@ -1455,7 +1456,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                     <div className={`${Classes["container"]} cse-content-container relative z-10`}>
                         <div className="w-full mb-4 sm:mb-5 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
                             <div className="text-left max-w-3xl">
-                                <h2 className="text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E]">
+                                <h2 className="text-[clamp(30px,7vw,36px)] sm:text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E]">
                                     Where can a <span className="text-[#FFB703]">CSE Degree</span> take you?
                                 </h2>
                             </div>
@@ -1544,15 +1545,15 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                 {/* Core — breathing animation */}
                                 <g className="cse-m-core">
                                     <circle cx="185" cy="195" r="68" fill="#D62C2B" filter="url(#cse-m-shadow)" />
-                                    <text x="185" y="187" textAnchor="middle" fill="white" fontSize="13" fontWeight="700">
+                                    <text x="185" y="187" textAnchor="middle" fill="white" fontSize="16" fontWeight="700">
                                         <tspan x="185">Career</tspan>
-                                        <tspan x="185" dy="17">Opportunities</tspan>
+                                        <tspan x="185" dy="20">Opportunities</tspan>
                                     </text>
                                     <path d="M170 218 H200" stroke="#FFB703" strokeWidth="2" strokeLinecap="round" />
                                 </g>
 
                                 {/* Labels — fixed, outside animated group */}
-                                <g fill="#14284e" fontSize="9.5" fontWeight="600">
+                                <g fill="#14284e" fontSize="14" fontWeight="600">
                                     {careerItems.map((lines, i) => {
                                         const a = (i * 30 - 90) * Math.PI / 180;
                                         const centered = i === 0 || i === 6;
@@ -1565,7 +1566,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                         return (
                                             <text key={i} x={lx} y={ly} textAnchor={centered ? "middle" : i < 6 ? "start" : "end"}>
                                                 {lines.map((line, li) => (
-                                                    <tspan key={line} x={lx} dy={li === 0 ? 0 : 13}>{line}</tspan>
+                                                    <tspan key={line} x={lx} dy={li === 0 ? 0 : 17}>{line}</tspan>
                                                 ))}
                                             </text>
                                         );

@@ -1,11 +1,14 @@
 import React, { useState, useRef } from "react";
 import Classes from "../../utils/styles/Global.module.css";
+import benefitsStyles from "./CyberSecurityBenefits.module.css";
+import curriculumStyles from "./CyberSecurityCurriculum.module.css";
 import {
-  ArrowLeft, ArrowRight, Download, PhoneCall, Cpu, Lock, Code2, Shield,
+  ArrowLeft, ArrowRight, Download, PhoneCall, Cpu, Lock, Code2, Shield, Fingerprint, Landmark, Bug,
   ChevronDown, ChevronUp, Settings, Wrench, PenTool, Zap, Factory, Car
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import ltLogo from "../../assets/new-home/l-t.webp";
+import cyberSecurityLaptop from "../../assets/images/new-information-system/Gemini_Generated_Image_l8pzsel8pzsel8pz-Photoroom.png";
 import type { ProgramPageDataNew } from "../../types/programPageNew";
 import DepartmentPlacements, { defaultRecruiterLogos } from "../../components/academics/departmentOfComputerScienceAndEngineeringNew/DepartmentPlacements";
 import DepartmentScholarships from "../../components/academics/departmentOfComputerScienceAndEngineeringNew/DepartmentScholarships";
@@ -204,96 +207,141 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
         </section>
 
         {/* ===== L&T BENEFITS ===== */}
-        <section className={`relative isolate overflow-hidden pt-8 sm:pt-10 pb-8 md:pb-10 px-4 sm:px-6 ${isCyberSecurityPage ? "bg-[#FFF0B5]" : "bg-white"}`}>
+        <section
+          className={isCyberSecurityPage ? benefitsStyles.section : "relative isolate overflow-hidden py-8 sm:py-10 md:py-12 px-4 sm:px-6 bg-white"}
+          data-expanded={isCyberSecurityPage ? !!rm["benefits"] : undefined}
+        >
           {isCyberSecurityPage && (
             <>
-              <div aria-hidden="true" className="pointer-events-none absolute -right-28 -top-36 h-72 w-72 rounded-full bg-[#FFB703]/25 sm:h-96 sm:w-96" />
-              <div aria-hidden="true" className="pointer-events-none absolute -bottom-36 -left-24 h-72 w-72 rounded-full bg-[#FFB703]/20 sm:h-[26rem] sm:w-[26rem]" />
-              <div aria-hidden="true" className="pointer-events-none absolute bottom-0 left-0 h-28 w-44 rounded-tr-[100%] bg-[#FFB703]/15 sm:h-40 sm:w-72" />
-              <div
-                aria-hidden="true"
-                className="pointer-events-none absolute left-3 top-10 hidden h-24 w-28 opacity-60 sm:block"
-                style={{ backgroundImage: "radial-gradient(circle, #FFB703 2px, transparent 2.5px)", backgroundSize: "22px 22px" }}
-              />
-              <div
-                aria-hidden="true"
-                className="pointer-events-none absolute right-3 bottom-24 hidden h-24 w-32 opacity-60 sm:block"
-                style={{ backgroundImage: "radial-gradient(circle, #FFB703 2px, transparent 2.5px)", backgroundSize: "22px 22px" }}
-              />
-              <svg aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 h-20 w-full sm:h-28 md:h-36" viewBox="0 0 1440 180" preserveAspectRatio="none">
-                <path d="M0 92 C210 142 360 137 565 94 C790 47 1014 36 1218 73 C1310 90 1388 110 1440 122 L1440 180 L0 180Z" fill="#FFD34F" fillOpacity=".34" />
-                <path d="M0 124 C210 164 388 158 604 123 C850 84 1040 79 1228 108 C1320 122 1392 139 1440 146 L1440 180 L0 180Z" fill="#FFB703" fillOpacity=".16" />
+              <div aria-hidden="true" className={benefitsStyles.halo} />
+              <div aria-hidden="true" className={benefitsStyles.dots} />
+              <svg aria-hidden="true" className={benefitsStyles.waves} viewBox="0 0 1734 230" preserveAspectRatio="none">
+                <path d="M0 10 C75 39 90 105 111 164 C230 219 331 197 475 230 H0Z" fill="#193961" />
+                <path d="M0 83 C150 211 228 200 354 210 C407 210 441 220 475 230 H0Z" fill="#BEDDF9" />
+                <path d="M0 139 C111 174 126 205 161 230 H0Z" fill="#E0F1FF" />
+                <path d="M1734 0 C1582 32 1506 114 1369 151 C1201 196 1137 166 1010 230 H1734Z" fill="#DDEFFF" />
+                <path d="M1734 43 C1590 58 1553 164 1383 172 C1247 183 1188 170 1080 230 H1734Z" fill="#BEDDF9" />
+                <path d="M1734 125 C1570 15 1485 122 1327 149 C1199 123 1141 189 1006 230 H1734Z" fill="#193961" />
+                <path d="M1734 125 C1577 28 1535 135 1395 184 C1301 218 1223 224 1150 230 H1734Z" fill="#2E559F" />
+                <path d="M0 62 C100 124 100 194 174 230 M940 230 C1178 176 1300 245 1478 97 C1577 15 1658 5 1734 40" fill="none" stroke="#FFF4C0" strokeWidth="2" />
               </svg>
             </>
           )}
-          <div className={`${Classes["container"]} relative z-10`}>
-            {isCyberSecurityPage && (
-              <svg aria-hidden="true" className="pointer-events-none absolute right-0 top-28 hidden h-[260px] w-[220px] xl:block 2xl:h-[300px] 2xl:w-[255px]" viewBox="0 0 300 340" fill="none">
-                <defs>
-                  <linearGradient id="cyberShieldFill" x1="88" y1="46" x2="213" y2="223" gradientUnits="userSpaceOnUse">
-                    <stop stopColor="#477FD6" />
-                    <stop offset="1" stopColor="#173F91" />
-                  </linearGradient>
-                  <linearGradient id="cyberStandFill" x1="48" y1="264" x2="252" y2="318" gradientUnits="userSpaceOnUse">
-                    <stop stopColor="#FFE37A" />
-                    <stop offset="1" stopColor="#FFB703" />
-                  </linearGradient>
-                  <filter id="cyberShieldShadow" x="45" y="25" width="210" height="245" colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse">
-                    <feDropShadow dx="0" dy="10" stdDeviation="9" floodColor="#173F91" floodOpacity=".2" />
-                  </filter>
-                </defs>
-                <ellipse cx="150" cy="300" rx="112" ry="25" fill="#FFB703" fillOpacity=".18" />
-                <path d="M54 274c0-11 43-20 96-20s96 9 96 20v16c0 12-43 22-96 22s-96-10-96-22v-16Z" fill="url(#cyberStandFill)" />
-                <ellipse cx="150" cy="274" rx="96" ry="21" fill="#FFE98F" />
-                <ellipse cx="150" cy="292" rx="96" ry="21" stroke="#F4AE00" strokeOpacity=".48" strokeWidth="2" />
-                <g filter="url(#cyberShieldShadow)">
-                  <path d="M150 35 226 65v59c0 56-31 92-76 116-45-24-76-60-76-116V65l76-30Z" fill="url(#cyberShieldFill)" />
-                  <path d="M150 48 214 73v50c0 46-24 77-64 100-40-23-64-54-64-100V73l64-25Z" stroke="#9FC4FF" strokeOpacity=".6" strokeWidth="2" />
-                  <path d="M130 119v-9a20 20 0 0 1 40 0v9" stroke="white" strokeWidth="8" strokeLinecap="round" />
-                  <rect x="119" y="116" width="62" height="57" rx="11" fill="white" />
-                  <circle cx="150" cy="139" r="6" fill="#2856A5" />
-                  <path d="m147 143-3 13h12l-3-13" fill="#2856A5" />
-                </g>
-                <ellipse cx="150" cy="132" rx="139" ry="48" transform="rotate(-17 150 132)" stroke="#FFB703" strokeWidth="3" strokeOpacity=".8" />
-                <circle cx="30" cy="169" r="8" fill="#FFB703" />
-                <circle cx="274" cy="96" r="9" fill="#FFB703" />
-              </svg>
-            )}
-            <div className="w-full mb-8">
-              <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3.5">
-                How Does <img src={ltLogo} alt="L&T EduTech" className="h-[28px] sm:h-[36px] inline-block align-middle mx-1 sm:mx-2 -mt-1" /> Benefit B.Tech CSE {heroBanner.specialization} <span className="text-[#ffb703]">SRMU Students?</span>
-              </h2>
-            </div>
-            <div className={`w-full ${isCyberSecurityPage ? "xl:pr-[250px]" : ""}`}>
-              <div className="mb-5">
-                <p className="text-[15.5px] text-[#4B5A72] leading-relaxed text-justify">{ltBenefits.introText}</p>
-                <div className={rm["ovw1"] ? "block mt-4" : "hidden sm:block mt-4"}>
-                  <div className="flex flex-col gap-3 mb-6">
-                    {ltBenefits.domainRows.map((row, ri) => (
-                      <div key={ri} className="flex flex-wrap items-center gap-y-3 gap-x-2 sm:gap-x-3">
-                        {row.tags.map((tag, ti, arr) => (
-                          <div key={ti} className="flex items-center gap-2 sm:gap-3">
-                            <span className="bg-[#E6F0FA] text-[#1B4F91] text-[13px] sm:text-[14px] font-medium px-4 py-2 rounded-full whitespace-nowrap">{tag}</span>
-                            {ti < arr.length - 1 && <span className="hidden sm:block w-1.5 h-1.5 rounded-full bg-[#1B4F91]/30"></span>}
+          <div className={`${isCyberSecurityPage ? benefitsStyles.container : Classes["container"]}`}>
+            {isCyberSecurityPage ? (
+              <>
+                <div id="cyber-benefits-content" className={benefitsStyles.layout}>
+                  <div className="min-w-0">
+                    <header className={benefitsStyles.header}>
+                      <span className={benefitsStyles.accent} />
+                      <h2 className={benefitsStyles.title}>
+                        <span>How Does</span>
+                        <img src={ltLogo} alt="L&amp;T EduTech" className={benefitsStyles.logo} />
+                        <span className={benefitsStyles.titleLine}>Benefit B.Tech CSE Cyber Security</span>
+                        <span className={benefitsStyles.highlight}>SRMU Students?</span>
+                      </h2>
+                    </header>
+
+                    <p className={benefitsStyles.intro}>{ltBenefits.introText}</p>
+
+                    <div className={benefitsStyles.domains}>
+                      {ltBenefits.domainRows.map((row, ri) => (
+                        <div key={ri} className={benefitsStyles.domainRow}>
+                          {row.tags.map((tag, ti) => {
+                            const DomainIcon = [Shield, Lock, Code2, Fingerprint, Landmark, Cpu, Bug][(ri * 4 + ti) % 7];
+                            return (
+                              <React.Fragment key={tag}>
+                              <span className={benefitsStyles.domain}>
+                                <span className={benefitsStyles.domainIcon}><DomainIcon size={20} strokeWidth={2.2} /></span>
+                                <span>{tag}</span>
+                              </span>
+                              </React.Fragment>
+                            );
+                          })}
+                        </div>
+                      ))}
+                    </div>
+
+                    <p className={benefitsStyles.followUp}>{ltBenefits.followUpText}</p>
+
+                    <div className={benefitsStyles.projects}>
+                      <span aria-hidden="true" className={benefitsStyles.projectAccent} />
+                      <h3 className={benefitsStyles.projectsTitle}>
+                        {ltBenefits.projectsHeading}
+                      </h3>
+                      <div className={benefitsStyles.projectColumns}>
+                        {[ltBenefits.projectsCol1, ltBenefits.projectsCol2].map((column, ci) => (
+                          <ul key={ci} className={benefitsStyles.projectList}>
+                            {column.map((project) => (
+                              <li key={project.text} className={benefitsStyles.project}>
+                                <span className={benefitsStyles.check}>✓</span>
+                                <span>{project.text}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className={benefitsStyles.artwork}>
+                    <img
+                      src={cyberSecurityLaptop}
+                      alt="Laptop protected by a digital shield, with cyber security tools and cloud connections"
+                      className={benefitsStyles.image}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  className={benefitsStyles.readMore}
+                  aria-expanded={!!rm["benefits"]}
+                  aria-controls="cyber-benefits-content"
+                  onClick={() => toggleRm("benefits")}
+                >
+                  {rm["benefits"] ? "Read Less" : "Read More"}
+                </button>
+              </>
+            ) : (
+              <>
+                <div className="w-full mb-8">
+                  <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3.5">
+                    How Does <img src={ltLogo} alt="L&T EduTech" className="h-[28px] sm:h-[36px] inline-block align-middle mx-1 sm:mx-2 -mt-1" /> Benefit B.Tech CSE {heroBanner.specialization} <span className="text-[#ffb703]">SRMU Students?</span>
+                  </h2>
+                </div>
+                <div className="w-full">
+                  <div className="mb-5">
+                    <p className="text-[15.5px] text-[#4B5A72] leading-relaxed text-justify">{ltBenefits.introText}</p>
+                    <div className="mt-4">
+                      <div className="flex flex-col gap-3 mb-6">
+                        {ltBenefits.domainRows.map((row, ri) => (
+                          <div key={ri} className="flex flex-wrap items-center gap-y-3 gap-x-2 sm:gap-x-3">
+                            {row.tags.map((tag, ti, arr) => (
+                              <div key={ti} className="flex items-center gap-2 sm:gap-3">
+                                <span className="bg-[#E6F0FA] text-[#1B4F91] text-[13px] sm:text-[14px] font-medium px-4 py-2 rounded-full whitespace-nowrap">{tag}</span>
+                                {ti < arr.length - 1 && <span className="hidden sm:block w-1.5 h-1.5 rounded-full bg-[#1B4F91]/30"></span>}
+                              </div>
+                            ))}
                           </div>
                         ))}
                       </div>
-                    ))}
-                  </div>
-                  <p className="text-[15.5px] text-[#4B5A72] leading-relaxed mb-5 text-justify">{ltBenefits.followUpText}</p>
-                  <p className="text-[15.5px] text-[#14284E] font-semibold mb-3">{ltBenefits.projectsHeading}</p>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2">
-                    <ul className="list-disc pl-5 space-y-2 text-[15.5px] text-[#4B5A72] marker:text-[#ffb703]">
-                      {ltBenefits.projectsCol1.map((p, i) => <li key={i}>{p.text}</li>)}
-                    </ul>
-                    <ul className="list-disc pl-5 space-y-2 text-[15.5px] text-[#4B5A72] marker:text-[#ffb703]">
-                      {ltBenefits.projectsCol2.map((p, i) => <li key={i}>{p.text}</li>)}
-                    </ul>
+                      <p className="text-[15.5px] text-[#4B5A72] leading-relaxed mb-5 text-justify">{ltBenefits.followUpText}</p>
+                      <p className="text-[15.5px] text-[#14284E] font-semibold mb-3">{ltBenefits.projectsHeading}</p>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2">
+                        <ul className="list-disc pl-5 space-y-2 text-[15.5px] text-[#4B5A72] marker:text-[#ffb703]">
+                          {ltBenefits.projectsCol1.map((p, i) => <li key={i}>{p.text}</li>)}
+                        </ul>
+                        <ul className="list-disc pl-5 space-y-2 text-[15.5px] text-[#4B5A72] marker:text-[#ffb703]">
+                          {ltBenefits.projectsCol2.map((p, i) => <li key={i}>{p.text}</li>)}
+                        </ul>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <button className="rm-btn mt-2" onClick={() => toggleRm("ovw1")}>{rm["ovw1"] ? "Read Less" : "Read More"}</button>
-              </div>
-            </div>
+              </>
+            )}
           </div>
         </section>
 
@@ -432,14 +480,34 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
         {/* ===== LABS & CURRICULUM ===== */}
         <section className="py-8 md:py-10 px-4 sm:px-6 bg-[#F0F6FB]">
           <div className={`${Classes["container"]} mx-auto`}>
+            {!isCyberSecurityPage && (
             <div className="w-full mb-5 sm:mb-10">
               <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.15] font-bold font-display text-[#14284E]">
                 {labs.sectionTitle}<span className="text-[#ffb703]"> {labs.sectionTitleHighlight}</span>
               </h2>
               <p className="mt-4 text-[15px] leading-6 text-[#4B5A72] text-justify">{labs.introParagraph}</p>
             </div>
+            )}
 
             {/* Curriculum image */}
+            {isCyberSecurityPage ? (
+              <div className={curriculumStyles.panel}>
+                <picture className={curriculumStyles.background} aria-hidden="true">
+                  <source media="(max-width: 1023px)" srcSet={labs.curriculumImageMobile} />
+                  <img src={labs.curriculumImageDesktop} alt="" loading="lazy" decoding="async" />
+                </picture>
+                <h2 className={curriculumStyles.heading}>
+                  {labs.sectionTitle}<span> {labs.sectionTitleHighlight}</span>
+                </h2>
+                <ul className={curriculumStyles.points} aria-label="Industry integrated curriculum">
+                  {labs.curriculumOverlayItems.map((item) => (
+                    <li key={item.text} className={curriculumStyles.point}>
+                      <span>{item.text.replace(/\n/g, " ")}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : (
             <div className="flex flex-col gap-6 sm:gap-8 mb-7">
               <div className="w-full overflow-x-auto pb-2">
                 <div className="relative">
@@ -453,6 +521,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                 </div>
               </div>
             </div>
+            )}
 
             {labs.reelVideoUrl && (
               <div className="relative isolate overflow-hidden rounded-[26px] border border-[#C7DDED] bg-gradient-to-br from-[#F4FAFE] via-[#E5F2FB] to-[#DCECF8] p-4 sm:p-6 lg:p-8 mb-8 sm:mb-10 shadow-[0_18px_50px_rgba(31,78,121,0.13)]">

@@ -1,0 +1,130 @@
+.section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 36px 5% 62px;
+  color: #14284e;
+  background-color: #FFB703;
+  background-image: radial-gradient(ellipse at 86% 20%, #ffffff80 0%, transparent 43%),
+    radial-gradient(ellipse at 25% 35%, #ffffff30 0%, transparent 62%);
+}
+
+.container { position: relative; z-index: 1; max-width: 1440px; margin: 0 auto; }
+.layout { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); gap: 24px; align-items: center; }
+.header { margin-bottom: 14px; }
+.accent { display: block; width: 60px; height: 4px; margin-bottom: 15px; border-radius: 4px; background: #2699ca; }
+.title { display: flex; flex-wrap: wrap; align-items: center; column-gap: 10px; margin: 0; font-size: clamp(30px, 2.65vw, 42px); font-weight: 750; letter-spacing: -0.025em; line-height: 1.12; }
+.logo { width: auto; height: 38px; object-fit: contain; }
+.titleLine, .highlight { flex-basis: 100%; }
+.highlight { color: #ffffff; }
+.intro { margin: 0; font-size: 14px; line-height: 1.45; }
+.readMore { display: none; }
+.domains { display: grid; gap: 18px; margin-top: 20px; }
+.domainRow { display: grid; grid-template-columns: 1fr 1fr 1.22fr .9fr; }
+.domainRow + .domainRow { grid-template-columns: 1.1fr 1.15fr 1.35fr; max-width: 92%; }
+.domain { position: relative; display: flex; align-items: center; gap: 10px; min-width: 0; padding: 0 15px; font-size: 13px; font-weight: 500; line-height: 1.25; }
+.domain:first-child { padding-left: 0; }
+.domain:last-child { padding-right: 0; }
+.domain + .domain::before { content: ""; position: absolute; left: 0; top: 5px; bottom: 5px; width: 1px; background: #244c8133; }
+.domainIcon { display: grid; place-items: center; flex: 0 0 40px; height: 40px; border-radius: 50%; color: #244c91; background: linear-gradient(135deg, #fff, #d5ecff); }
+.domainRow:first-child .domain:first-child .domainIcon { color: white; background: linear-gradient(135deg, #3279bf, #243e80); }
+.followUp { margin: 16px 0 0; font-size: 13px; line-height: 1.45; }
+.projects { position: relative; margin-top: 18px; padding-top: 15px; border-top: 1px solid #ffffff99; }
+.projectAccent { position: absolute; top: -2px; left: 0; width: 56px; height: 4px; border-radius: 4px; background: #2699ca; }
+.projectsTitle { margin: 0 0 8px; font-size: 17px; font-weight: 700; line-height: 1.3; }
+.projectColumns { display: grid; grid-template-columns: 1fr 1.08fr; gap: 22px; }
+.projectList { list-style: none; padding: 0; margin: 0; }
+.projectList + .projectList { padding-left: 22px; border-left: 1px solid #244c8140; }
+.project { display: flex; align-items: flex-start; gap: 9px; padding: 6px 0; border-bottom: 1px solid #ffffff40; font-size: 12px; line-height: 1.4; }
+.project:last-child { border-bottom: 0; }
+.check { display: grid; place-items: center; flex: 0 0 18px; height: 18px; border-radius: 50%; background: #28579b; color: white; font-size: 12px; font-weight: 700; }
+.artwork { position: relative; width: 100%; max-width: 580px; margin: -24px auto 0; }
+.image { display: block; width: 100%; height: auto; object-fit: contain; filter: drop-shadow(0 16px 16px #81591f24); }
+.halo { position: absolute; z-index: 0; width: 760px; height: 660px; right: -130px; top: -105px; border-radius: 45% 0 50% 50%; transform: rotate(-24deg); background: linear-gradient(145deg, #fff8d48c, #fff0a31a); border-left: 1px solid #fff8d480; pointer-events: none; }
+.dots { position: absolute; top: 44px; left: 8px; width: 66px; height: 120px; opacity: .65; background: radial-gradient(circle, white 1.2px, transparent 1.8px) 0 0 / 14px 14px; pointer-events: none; }
+.waves { position: absolute; bottom: 0; left: 0; width: 100%; height: 180px; pointer-events: none; }
+
+@media (min-width: 1600px) {
+  .project { font-size: 13px; }
+  .domain { font-size: 14px; }
+  .intro { font-size: 15px; }
+}
+
+@media (max-width: 1199px) {
+  .section { padding: 32px 4% 56px; }
+  .layout { grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr); gap: 16px; }
+  .title { font-size: 30px; }
+  .logo { height: 30px; }
+  .domain { gap: 7px; padding: 0 8px; font-size: 12px; }
+  .domainIcon { flex-basis: 34px; height: 34px; }
+  .projectColumns { gap: 14px; }
+  .projectList + .projectList { padding-left: 14px; }
+}
+
+@media (max-width: 991px) {
+  .layout { grid-template-columns: 1fr; gap: 22px; }
+  .title { font-size: clamp(28px, 4.6vw, 38px); }
+  .artwork { max-width: 420px; margin: 0 auto; }
+  .domain { font-size: 13px; }
+  .waves { height: 130px; }
+}
+
+@media (max-width: 639px) {
+  .section {
+    background-color: #ffb703;
+    background-image: linear-gradient(to bottom, #ffb703 0%, #ffda7b 55%, #fff1c7 100%);
+  }
+  .halo { display: none; }
+  .section[data-expanded="false"] .intro {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+  .section[data-expanded="false"] .domains,
+  .section[data-expanded="false"] .followUp,
+  .section[data-expanded="false"] .projects,
+  .section[data-expanded="false"] .artwork,
+  .section[data-expanded="false"] .waves,
+  .section[data-expanded="false"] .dots {
+    display: none;
+  }
+  .readMore {
+    display: inline-flex;
+    align-items: center;
+    min-height: 40px;
+    margin-top: 8px;
+    padding: 4px 0;
+    border: 0;
+    background: transparent;
+    color: #0f4a85;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+  }
+  .readMore:focus-visible { outline: 2px solid #0f4a85; outline-offset: 3px; }
+}
+
+@media (max-width: 575px) {
+  .section { padding: 28px 20px 44px; }
+  .accent { margin-bottom: 12px; width: 48px; }
+  .title { font-size: clamp(25px, 6.5vw, 32px); line-height: 1.16; }
+  .logo { height: 29px; }
+  .intro { font-size: 13px; line-height: 1.5; }
+  .domains { gap: 14px; margin-top: 18px; }
+  .domainRow, .domainRow + .domainRow { grid-template-columns: 1fr 1fr; gap: 14px 12px; max-width: none; }
+  .domain { padding: 0; font-size: 12px; }
+  .domain + .domain::before { display: none; }
+  .domainIcon { flex-basis: 34px; height: 34px; }
+  .followUp { font-size: 12px; }
+  .projectsTitle { font-size: 16px; }
+  .projectColumns { grid-template-columns: 1fr; gap: 0; }
+  .projectList + .projectList { border-left: 0; padding-left: 0; }
+  .projectList:first-child .project:last-child { border-bottom: 1px solid #ffffff40; }
+  .project { font-size: 12px; }
+  .artwork { max-width: 320px; }
+  .dots { display: none; }
+  .waves { height: 85px; }
+}
