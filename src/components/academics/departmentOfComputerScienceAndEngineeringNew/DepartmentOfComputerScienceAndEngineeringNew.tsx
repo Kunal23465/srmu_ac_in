@@ -1401,7 +1401,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                         <div className="w-full mb-8 flex flex-col gap-4">
                             <div className="w-full">
                                 <h2 className="text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display text-white">
-                                    What Makes the <span className="text-[#FFB703]">CSE Department Different</span> in SRMU?
+                                    What makes the <span className="text-[#FFB703]">CSE Department Different</span> in SRMU?
                                 </h2>
                             </div>
 
