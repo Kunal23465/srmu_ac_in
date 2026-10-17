@@ -169,7 +169,7 @@ export const DepartmentScholarships: React.FC<DepartmentScholarshipsProps> = ({
                 <button
                   type="button"
                   onClick={() => setShowAllScholarships(!showAllScholarships)}
-                  className="uppercase tracking-wider text-[14px] font-bold text-[#ffb703] hover:text-[#ffa000] mt-3 pb-1 flex items-center justify-center sm:hidden transition-colors w-full z-20 relative cursor-pointer"
+                  className="normal-case text-[14px] font-bold text-[#ffb703] hover:text-[#ffa000] mt-3 pb-1 flex items-center justify-center sm:hidden transition-colors w-full z-20 relative cursor-pointer"
                 >
                   {showAllScholarships ? "Read Less" : "Read More"}
                 </button>

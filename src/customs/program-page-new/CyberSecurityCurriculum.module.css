@@ -75,7 +75,7 @@
 }
 
 @media (max-width: 575px) {
-  .panel { width: calc(100% + 24px); margin-inline: -12px; }
+  .panel { width: 100%; margin-inline: 0; }
   .heading { top: 8%; }
   .points { top: 27%; bottom: 4%; line-height: 1.2; }
   .point { padding-left: 0; }

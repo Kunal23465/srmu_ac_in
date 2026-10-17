@@ -1594,6 +1594,11 @@
     white-space: nowrap;
 }
 
+.showcaseHeading .researchWord {
+    display: inline;
+    color: #FFFFFF;
+}
+
 .showcaseParagraph {
     max-width: 590px;
     margin: 0;

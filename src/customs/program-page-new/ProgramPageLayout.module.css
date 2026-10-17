@@ -1,0 +1,46 @@
+@media (max-width: 639px) {
+  .cyberSecurity > section:not(:first-child) h2:not([data-preserve-mobile-title]),
+  .cyberSecurity .sectionTitle {
+    font-size: 24px;
+  }
+
+  .cyberSecurity .presenterCapsule {
+    align-self: flex-start;
+    max-width: 100%;
+    padding: 6px 14px;
+    border: 1px solid #dce6f2;
+    border-radius: 9999px;
+    background: #f6fafe;
+    color: #1b4f91;
+    font-weight: 600;
+  }
+
+  .cyberSecurity .presenterCapsule > span {
+    color: inherit;
+  }
+
+  .cyberSecurity > section:not(:first-child) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  /* Section padding supplies the gutter; avoid adding container padding twice. */
+  .cyberSecurity > section:not(:first-child) > div {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.desktopJustifiedParagraph {
+  text-align: left;
+}
+
+@media (min-width: 640px) {
+  .desktopJustifiedParagraph {
+    text-align: justify;
+  }
+
+  .cyberSecurity > section:not(:first-child) h2:not([data-preserve-mobile-title]) {
+    font-size: 36px;
+  }
+}

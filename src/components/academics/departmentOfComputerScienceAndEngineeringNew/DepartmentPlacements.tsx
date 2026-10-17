@@ -116,7 +116,7 @@ export default function DepartmentPlacements({
                 <div className={styles.recruiters}>
                     <div className={styles.recruitersHeader}>
                         <h3>Top Recruiters</h3>
-                        <span>Our students work at</span>
+                        {/* <span>Our students work at</span> */}
                     </div>
                     <div className={styles.recruitersViewport} role="region" aria-label="Top recruiters" tabIndex={0}>
                         <div className={styles.recruitersTrack}>

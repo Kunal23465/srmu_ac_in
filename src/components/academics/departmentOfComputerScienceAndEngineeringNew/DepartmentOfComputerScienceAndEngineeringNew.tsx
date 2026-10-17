@@ -456,12 +456,17 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
 
     const [rm, setRm] = useState<Record<string, boolean>>({});
     const toggleRm = (k: string) => setRm(p => ({ ...p, [k]: !p[k] }));
+    const aboutIntroParagraph = "The Department of Computer Science and Engineering (CSE) at Shri Ramswaroop Memorial University (SRMU) was established in 2012 and offers B.Tech., M.Tech., Lateral, integrated, and Ph.D. programs in Computer Science and Engineering (CSE). The department focuses on programming, artificial intelligence, data science, cyber security, cloud computing, computer networks, database systems, and software engineering.";
+    const aboutIntroPreviewEnd = aboutIntroParagraph.lastIndexOf("(CSE)") + "(CSE)".length;
+    const aboutIntroPreview = aboutIntroParagraph.slice(0, aboutIntroPreviewEnd);
 
     return (
         <div id="cse-page" className="text-[#14284E] bg-white antialiased">
             {/* ── Lab Icon Micro-animations ─────────────────────────────── */}
             <style>{`
+                #cse-page #academic-strength-heading span { font-size: inherit; }
                 @media (max-width: 639px) {
+                    #cse-page main section:not(.cse-page-hero) h2 { font-size: 24px; }
                     .cse-mobile-button, .cse-mobile-button span:not([aria-hidden]) { font-size: 14px; }
                     .cse-mobile-button.cse-read-more {
                         text-transform: uppercase;
@@ -635,13 +640,16 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                     .group:hover .lab-icon-glow       { animation: lab-glow       2s ease-in-out infinite; }
                     .group:hover .lab-icon-network    { animation: lab-network    2s ease-in-out infinite; }
                 }
+                @media (min-width: 640px) {
+                    #cse-page main section:not(.cse-page-hero) h2 { font-size: 36px; }
+                }
             `}</style>
             <main>
 
                 {/* ── Hero Banner ─────────────────────────────────────────── */}
 
                 {/* ── MOBILE banner ── image bg + gradient overlay ─────── */}
-                <section className="sm:hidden relative w-full overflow-hidden" style={{ minHeight: "620px" }}>
+                <section className="cse-page-hero sm:hidden relative w-full overflow-hidden" style={{ minHeight: "620px" }}>
                     {/* Full background image */}
                     <img
                         src="/assets/images/new-information-system/diff-banner.jpg"
@@ -657,7 +665,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                         <p className="text-[#38bdf8] !text-[16px] font-semibold mb-1.5 leading-snug">
                             Department of
                         </p>
-                        <h1 className="text-white/85 text-[34px] font-bold leading-[1.15] mb-4">
+                        <h1 className="text-white/85 text-[32px] font-bold leading-[1.15] mb-4">
                             Computer Science &amp; Engineering (CSE)
                         </h1>
 
@@ -717,7 +725,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                 </section>
 
                 {/* ── DESKTOP banner ──────────────────────────────────────── */}
-                <section className="relative hidden sm:flex w-full overflow-hidden items-center sm:pt-[78px] sm:pb-8 md:min-h-[504px] md:pt-24 md:pb-14 bg-[#071329]">
+                <section className="cse-page-hero relative hidden sm:flex w-full overflow-hidden items-center sm:pt-[78px] sm:pb-8 md:min-h-[504px] md:pt-24 md:pb-14 bg-[#071329]">
                     {/* Background Banner */}
                     <img
                         src="/assets/images/new-information-system/again-banner.jpg"
@@ -846,15 +854,18 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                     About the <span className="text-[#FFB703]">Department of CSE</span>
                                 </h2>
 
-                                <div className={`text-[#4B5A72] text-[15.5px] sm:text-[16px] leading-relaxed space-y-4 text-justify ${!rm["about"] ? "line-clamp-2 sm:line-clamp-none" : ""}`}>
-                                    <p className="text-justify">The Department of Computer Science and Engineering (CSE) at Shri Ramswaroop Memorial University (SRMU) was established in 2012 and offers B.Tech., M.Tech., Lateral, integrated, and Ph.D. programs in Computer Science and Engineering (CSE). The department focuses on programming, artificial intelligence, data science, cyber security, cloud computing, computer networks, database systems, and software engineering.</p>
-                                    <p className="text-justify">Through its industry collaboration with Larsen & Toubro (L&T) EduTech, SRMU provides students with industry-oriented learning, practical exposure, projects, training, and professional interaction. Students also gain hands-on experience through industrial visits, internships, workshops, seminars, guest lectures, conferences, and live projects.</p>
-                                    <p className="text-justify">For students looking for computer science engineering in Lucknow, SRMU's CSE department combines strong academic foundations, emerging technology exposure, industry collaboration, practical learning, and research opportunities to prepare students for careers in the technology sector.</p>
+                                <div className="text-[#4B5A72] text-[15.5px] sm:text-[16px] leading-relaxed space-y-4 text-justify">
+                                    <p className="text-justify">
+                                        <span className={rm["about"] ? "hidden" : "sm:hidden"}>{aboutIntroPreview}</span>
+                                        <span className={rm["about"] ? "" : "hidden sm:inline"}>{aboutIntroParagraph}</span>
+                                    </p>
+                                    <p className={!rm["about"] ? "hidden sm:block text-justify" : "text-justify"}>Through its industry collaboration with Larsen & Toubro (L&T) EduTech, SRMU provides students with industry-oriented learning, practical exposure, projects, training, and professional interaction. Students also gain hands-on experience through industrial visits, internships, workshops, seminars, guest lectures, conferences, and live projects.</p>
+                                    <p className={!rm["about"] ? "hidden sm:block text-justify" : "text-justify"}>For students looking for computer science engineering in Lucknow, SRMU's CSE department combines strong academic foundations, emerging technology exposure, industry collaboration, practical learning, and research opportunities to prepare students for careers in the technology sector.</p>
 
                                 </div>
 
 
-                                <button className="cse-read-more cse-mobile-button rm-btn sm:hidden mt-3 mx-auto flex" onClick={() => toggleRm("about")}>{rm["about"] ? "Read Less" : "Read More"}</button>
+                                <button className="cse-read-more cse-mobile-button rm-btn sm:hidden !mt-0 mx-auto flex" onClick={() => toggleRm("about")}>{rm["about"] ? "Read Less" : "Read More"}</button>
                             </div>
 
                             {/* ── Right: image ── */}
@@ -1303,7 +1314,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                         </h3>
 
                                         {/* Description */}
-                                        <p className="text-[13px] text-[#4B5A72] leading-relaxed text-justify flex-grow">
+                                        <p className="text-[13px] text-[#4B5A72] leading-relaxed text-left sm:text-justify flex-grow">
                                             {lab.desc}
                                         </p>
                                     </div>
@@ -1443,7 +1454,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                             <div className="cse-why-underline w-6 h-[2.5px] bg-[#d62c2b] mt-2"></div>
                                         </div>
                                         <h4 className="text-white font-bold text-[17px] mb-3 font-display leading-snug">{w.title}</h4>
-                                        <p className="text-white/80 text-[13.5px] leading-relaxed text-justify">{w.desc}</p>
+                                        <p className="text-white/80 text-[13.5px] leading-relaxed text-left sm:text-justify">{w.desc}</p>
                                     </motion.div>
                                 ))}
                             </div>

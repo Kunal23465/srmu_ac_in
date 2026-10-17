@@ -414,8 +414,8 @@ function ResearchShowcase() {
                         <span>Research &amp; Publications</span>
                     </div>
                     <h2 id="academic-strength-heading" className={`font-display ${styles.showcaseHeading}`}>
-                        Center for
-                        <span>Research Excellence &amp; Innovation</span>
+                        Center for <span className={styles.researchWord}>Research</span>
+                        <span>Excellence &amp; Innovation</span>
                     </h2>
                     <p className={styles.showcaseParagraph}>
                         Our faculty actively contributes to cutting-edge research, publications and
