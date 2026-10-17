@@ -70,8 +70,14 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
 
     // ---- Refs ----
     const industriesScrollRef = useRef<HTMLDivElement>(null);
+    const labsScrollRef = useRef<HTMLDivElement>(null);
     const scrollIndustries = (direction: "left" | "right") => {
         if (industriesScrollRef.current) industriesScrollRef.current.scrollBy({ left: direction === "left" ? -220 : 220, behavior: "smooth" });
+    };
+    const scrollLabs = (direction: "left" | "right") => {
+        if (labsScrollRef.current) {
+            labsScrollRef.current.scrollBy({ left: direction === "left" ? -labsScrollRef.current.clientWidth * 0.9 : labsScrollRef.current.clientWidth * 0.9, behavior: "smooth" });
+        }
     };
 
     // ---- State ----
@@ -642,11 +648,20 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                             <p className="max-w-xl text-[13px] sm:text-[14px] leading-relaxed text-[#64748B]">Build practical skills across the tools and environments used by modern security teams.</p>
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-5">
+                        <div className="mb-3 flex justify-end gap-2 sm:hidden">
+                            <button type="button" onClick={() => scrollLabs("left")} aria-label="Scroll labs left" className="flex h-9 w-9 items-center justify-center rounded-full border border-[#DCE6F2] bg-white text-[#14284E] shadow-sm">
+                                <ArrowLeft className="h-4 w-4" aria-hidden="true" />
+                            </button>
+                            <button type="button" onClick={() => scrollLabs("right")} aria-label="Scroll labs right" className="flex h-9 w-9 items-center justify-center rounded-full border border-[#DCE6F2] bg-white text-[#14284E] shadow-sm">
+                                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                            </button>
+                        </div>
+
+                        <div ref={labsScrollRef} className="-mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-3 scrollbar-hide sm:mx-0 sm:grid sm:grid-cols-1 sm:gap-5 sm:overflow-visible sm:px-0 sm:pb-0 md:grid-cols-2 xl:grid-cols-3">
                             {labs.labs.map((lab, index) => {
                                 const labImageUrl = lab.imageUrl ?? (index === 0 ? labs.cardBackgroundImageUrl : undefined);
                                 return (
-                                    <article key={lab.label} className="group overflow-hidden rounded-2xl border border-[#DCE6F2] bg-white shadow-[0_4px_18px_rgba(15,31,61,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_36px_rgba(15,31,61,0.12)]">
+                                    <article key={lab.label} className="group w-[85vw] max-w-[360px] shrink-0 snap-start overflow-hidden rounded-2xl border border-[#DCE6F2] bg-white shadow-[0_4px_18px_rgba(15,31,61,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_36px_rgba(15,31,61,0.12)] sm:w-auto sm:max-w-none sm:shrink">
                                         <div className="relative aspect-[16/10] overflow-hidden bg-gradient-to-br from-[#0B1D3A] via-[#123B69] to-[#1475A5]">
                                             {labImageUrl ? (
                                                 <img src={labImageUrl} alt={lab.title} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
@@ -670,12 +685,18 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                                     </article>
                                 );
                             })}
-                            <div className="flex items-center justify-center">
+                            <div className="hidden items-center justify-center sm:flex">
                                 <a href="tel:18001026004" className={buttonClasses("relative group overflow-hidden bg-gradient-to-r from-[#ffb703] via-[#ffc72c] to-[#ffa000] text-[#14284E] font-extrabold text-[14px] sm:text-[15px] px-8 py-3.5 rounded-lg shadow-[0_8px_20px_-8px_rgba(217,139,43,0.6)] hover:shadow-[0_12px_30px_rgba(255,183,3,0.65)] hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2 text-center uppercase")}>
                                     <PhoneCall className={buttonClasses("w-4 h-4 shrink-0 transition-transform duration-300 group-hover:scale-110")} />
                                     <span>Have a Query? Talk to Expert</span>
                                 </a>
                             </div>
+                        </div>
+                        <div className="mt-4 flex justify-center sm:hidden">
+                            <a href="tel:18001026004" className={buttonClasses("relative group overflow-hidden bg-gradient-to-r from-[#ffb703] via-[#ffc72c] to-[#ffa000] text-[#14284E] font-extrabold text-[14px] px-8 py-3.5 rounded-lg shadow-[0_8px_20px_-8px_rgba(217,139,43,0.6)] flex items-center justify-center gap-2 text-center uppercase")}>
+                                <PhoneCall className={buttonClasses("w-4 h-4 shrink-0")} />
+                                <span>Have a Query? Talk to Expert</span>
+                            </a>
                         </div>
                     </div>
                 </section>
@@ -879,17 +900,14 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                             { key: "specific", label: "Program Specific Outcomes", items: poPsoPlo.specificOutcomes.map((o) => o.text) },
                         ].map(({ key, label, items }) => (
                             <div key={key} className={`border-t ${key === "specific" ? "border-b" : ""} border-[#CBD5DF]`}>
-                                <button type="button" onClick={() => toggleSection(key)} className="w-full flex items-stretch text-left cursor-pointer">
-                                    <div className="flex-1 py-4 sm:py-8 md:py-5 pr-3 sm:pr-6">
+                                <button type="button" onClick={() => toggleSection(key)} aria-expanded={openSection === key} className="w-full text-left cursor-pointer">
+                                    <div className="w-full py-4 sm:py-8 md:py-5">
                                         <h3 className="text-[17px] sm:text-[18px] md:text-[22px] font-bold text-[#102D43]">{label}</h3>
                                         {openSection === key && (
-                                            <ul className="mt-4 sm:mt-8 pl-5 space-y-2 text-[15.5px] leading-6 text-[#14284E] list-disc">
+                                            <ul className="mt-4 sm:mt-8 pl-5 space-y-2 text-[14px] leading-6 text-[#14284E] text-left sm:text-justify list-disc" style={{ fontFamily: "Rubik, sans-serif", fontWeight: 400 }}>
                                                 {items.map((text, i) => <li key={i}>{text}</li>)}
                                             </ul>
                                         )}
-                                    </div>
-                                    <div className="flex w-[48px] sm:w-[90px] shrink-0 border-l border-[#CBD5DF] items-start justify-center pt-3 sm:pt-7 md:pt-5">
-                                        <span className="text-[34px] leading-none font-light text-[#202B32]">{openSection === key ? "↓" : "→"}</span>
                                     </div>
                                 </button>
                             </div>
