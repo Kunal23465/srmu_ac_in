@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import type { MouseEvent } from "react";
 import { useReducedMotion } from "framer-motion";
+import styles from "./NewEventComponent.module.css";
 
 const sections = [
     { id: "news", label: "Upcoming Events" },
@@ -58,14 +59,14 @@ export default function EventSectionNav() {
     };
 
     return (
-        <nav className="relative hidden bg-[#FFB703] px-6 md:block" aria-label="Event sections">
-            <div className="mx-auto max-w-[1626px]">
-                <ul className="m-0 grid list-none grid-cols-5 gap-2 p-0">
+        <nav className={`${styles.sectionNav} relative hidden border-b border-[#D6E2F0] bg-white md:block`} aria-label="Event sections">
+            <div className={styles.sectionNavContent}>
+                <ul className="m-0 flex list-none flex-wrap items-center gap-2 p-0">
                     {sections.map(({ id, label }) => (
                         <li key={id} className="list-none!">
                             <a
                                 href={`#${id}`}
-                                className="flex min-h-[42px] items-center justify-center px-2 py-2 text-center text-[10px] leading-snug font-bold tracking-[0.02em] text-[#0F4A85] uppercase transition-colors hover:text-[#14284E] focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-[#14284E] aria-[current=location]:text-[#14284E] motion-reduce:transition-none lg:text-[12px]"
+                                className="flex min-h-[38px] items-center justify-center rounded-full bg-[#E0F1FF] px-4 py-2 text-center text-[13px] leading-snug font-medium tracking-normal text-[#14284E] !normal-case transition-colors hover:bg-[#d1e9fc] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#14284E] aria-[current=location]:bg-[#FFB703] motion-reduce:transition-none"
                                 aria-current={activeSection === id ? "location" : undefined}
                                 onClick={(event) => scrollToSection(event, id)}
                             >

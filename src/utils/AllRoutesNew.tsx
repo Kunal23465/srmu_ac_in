@@ -89,6 +89,7 @@ const ConvocationPage = lazyPage(() => import("../pages/campus-life/convocation/
 const Convocation2026Page = lazyPage(() => import("../pages/campus-life/convocation/Convocation2026Page"));
 const CentralLibraryPage = lazyPage(() => import("../pages/campus-life/central-library/CentralLibraryPage"));
 const GreenInitiativePage = lazyPage(() => import("../pages/campus-life/green-initiative/GreenInitiativePage"));
+const GreenInitiativeNewPage = lazyPage(() => import("../pages/green-initative-new/GreenInitiativeNewPage"));
 const WomenEmpowermentPage = lazyPage(() => import("../pages/campus-life/women-empowerment/WomenEmpowermentPage"));
 const StudentSenatePage = lazyPage(() => import("../pages/campus-life/student-senate/StudentSenatePage"));
 const StudentCornerPage = lazyPage(() => import("../pages/campus-life/student-corner/StudentCornerPage"));
@@ -564,6 +565,7 @@ export const routes = [
         path: "green-initiative",
         element: <GreenInitiativePage />,
       },
+    
       {
         path: "women-empowerment",
         element: <WomenEmpowermentPage />,
@@ -1046,6 +1048,10 @@ export const routes = [
         path: "/department-of-computer-science-and-engineering-new",
         element: <DepartmentOfComputerScienceAndEngineeringNewPage />,
 
+      },
+      {
+        path: "green-initiative-new",
+        element: <GreenInitiativeNewPage />,
       },
 
       {

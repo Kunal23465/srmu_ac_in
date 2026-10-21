@@ -3,7 +3,7 @@ import EventSectionNav from "./EventSectionNav";
 import { technicalVideo, culturalVideo, sportsVideo, celebrityVideo, anubhutiVideo, dandiyaNightVideo, funDayVideo, harmonyVideo, daroharVideo, harmony2026Video, independenceDayVideo, rangBarsheVideo, pawandeepArunitaVideo, srmuDarshanVideo, shaanVideo, shilpaRaoVideo, sunnyDeolVideo, type EventVideoAsset } from "./eventVideoAssets";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { ArrowRight, CalendarDays, ChevronLeft, ChevronRight, Cpu, GraduationCap, Image, MapPin, Mic, Music, Palmtree, Pause, Play, Trophy, X } from "lucide-react";
-import desktopEventsBanner from "../../assets/images/event-new/banners/desktop-view.webp";
+import desktopEventsBanner from "../../assets/images/event-new/Events-Banner.webp";
 import insidersBannerImage from "../../assets/images/event-new/new/insiders-banner.webp";
 import scannerImage from "../../assets/images/event-new/new/scanner.webp";
 import mobileEventsBanner from "../../assets/images/event-new/banners/mobile-view.webp";
@@ -383,7 +383,7 @@ export default function NewEventComponent() {
       <section className={styles.hero} aria-labelledby="events-hero-title">
         <picture className={styles.heroBanner}>
           <source media="(max-width: 860px)" srcSet={mobileEventsBanner} width={1080} height={1080} />
-          <img src={desktopEventsBanner} width={1358} height={576} alt="" loading="eager" {...({ fetchpriority: "high" } as {})} decoding="async" />
+          <img src={desktopEventsBanner} width={1920} height={504} alt="" loading="eager" {...({ fetchpriority: "high" } as {})} decoding="async" />
         </picture>
         <div className={`${Global.container} relative z-10`}>
           <div className={styles.heroContent}>
@@ -399,18 +399,18 @@ export default function NewEventComponent() {
       </section>
 
       {/* ── Quick Stats Banner ── */}
-      <section className="hidden bg-[#E0F1FF] px-6 py-2 sm:block" aria-label="Event highlights">
-        <div className="mx-auto max-w-[1100px]">
-          <dl className="m-0 grid grid-cols-4 gap-x-4">
+      <section className={`${styles.statsSection} hidden md:block`} aria-label="Event highlights">
+        <div className={styles.statsCard}>
+          <dl className={styles.statsGrid}>
             {([
               { value: "500+", label: "Events Organised" },
               { value: "100+", label: "Workshops & Conferences" },
               { value: "50+", label: "Industry & Expert Sessions" },
               { value: "10000+", label: "Student Participants" },
             ] as const).map((stat) => (
-              <div key={stat.label} className="flex min-w-0 flex-col items-center gap-0.5 text-center text-[#14284E]">
-                <dt className="text-[9px] leading-snug font-bold tracking-[0.04em] uppercase lg:text-[11px]">{stat.label}</dt>
-                <dd className="font-display order-first m-0 text-[26px] leading-none font-extrabold text-[#D62C2B] lg:text-[32px]">{stat.value}</dd>
+              <div key={stat.label} className={styles.stat}>
+                <dt>{stat.label}</dt>
+                <dd>{stat.value}</dd>
               </div>
             ))}
           </dl>

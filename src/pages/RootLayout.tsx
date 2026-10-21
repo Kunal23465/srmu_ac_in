@@ -13,7 +13,7 @@ const RootLayout: React.FC = () => {
   const normalizedPath = normalizePath(location.pathname);
 
   const isHomeRoute =
-    normalizedPath === "/" || normalizedPath === "/new-home" || normalizedPath === "/b-tech-cse-cyber-security-new" || normalizedPath === "/insider" || normalizedPath === "/b-tech-cse-data-science-new" || normalizedPath === "/department-of-computer-science-and-engineering-new" || normalizedPath === "/b-tech-mechanical-engineering-new" || normalizedPath === "/b-tech-ece-semiconductor-design-new" || normalizedPath === "/event-new" || normalizedPath === "/program-finder-new";
+    normalizedPath === "/" || normalizedPath === "/new-home" || normalizedPath === "/b-tech-cse-cyber-security-new" || normalizedPath === "/insider" || normalizedPath === "/b-tech-cse-data-science-new" || normalizedPath === "/department-of-computer-science-and-engineering-new" || normalizedPath === "/b-tech-mechanical-engineering-new" || normalizedPath === "/b-tech-ece-semiconductor-design-new" || normalizedPath === "/event-new" || normalizedPath === "/program-finder-new" || normalizedPath === "/green-initiative-new";
 
   const fallbackSeo = useMemo(
     () => getDefaultSeo(normalizedPath),
@@ -100,7 +100,7 @@ const RootLayout: React.FC = () => {
   };
 
   return (
-    <>
+    <div className={normalizedPath === "/event-new" ? "overflow-x-clip" : undefined}>
       <SeoHead
         title={fallbackSeo.title}
         description={fallbackSeo.description}
@@ -111,7 +111,7 @@ const RootLayout: React.FC = () => {
       {normalizedPath !== "/insider" && <Header />}
 
       <main className={`$ {normalizedPath == "/insider" ? "" : "mt-[41px] lg:mt-[45px]"}`}>
-        {!isHomeRoute && <DynamicBreadcrumbs />}
+        {!isHomeRoute && normalizedPath !== "/green-initiative-new" && <DynamicBreadcrumbs />}
         <Outlet />
       </main>
 
@@ -168,7 +168,7 @@ const RootLayout: React.FC = () => {
         </a>
       </div>
       }
-    </>
+    </div>
   );
 };
 
