@@ -1,0 +1,52 @@
+.desktopRoot { position: relative; height: 100%; display: flex; align-items: center; padding: 16px 10px; }
+.trigger { display: flex; align-items: center; gap: 5px; color: white; font-size: 13px; text-transform: uppercase; cursor: pointer; background: none; border: 0; }
+.trigger:hover, .trigger[aria-expanded="true"] { color: #ffb703; }
+.trigger svg, .expand svg, .mobileRow svg { transition: transform 200ms ease; }
+.rotate { transform: rotate(180deg); }
+.dropdown { position: fixed; width: 290px; color: #212529; text-align: left; text-transform: none; border-top: 3px solid #ffb703; border-radius: 6px; background: white; box-shadow: 0 14px 40px #14284e26; z-index: 1000; animation: reveal 180ms ease-out; }
+.campusList, .highlights, .mobileList { list-style: none !important; margin: 0; padding: 0; }
+.campusList { max-height: calc(100dvh - 150px); overflow-y: auto; overscroll-behavior: contain; border-radius: 0 0 6px 6px; }
+.campusList > li { display: flex; align-items: stretch; border-bottom: 1px solid #e5e7eb; }
+.campusList > li:last-child { border-bottom: 0; }
+.campusLink { flex: 1; padding: 12px; font-size: 15px; line-height: 22px; transition: color 180ms, background 180ms; }
+.campusLink:hover { color: #a56f00; background: #fff9e9; }
+.selected { background: #fff8e5; color: #14284e; box-shadow: inset 3px 0 #ffb703; }
+.expand { width: 38px; display: grid; place-items: center; background: transparent; border: 0; color: #14284e; cursor: pointer; }
+.selected .expand svg { transform: translateX(3px); color: #a56f00; }
+.flyout { position: absolute; left: 100%; top: -3px; width: 340px; padding-left: 6px; }
+.flyoutContent { border-top: 3px solid #ffb703; border-radius: 6px; background: white; box-shadow: 0 14px 40px #14284e26; overflow-y: auto; max-height: calc(100dvh - 150px); animation: slideIn 220ms ease-out; }
+.panelHeading { display: flex; gap: 11px; padding: 19px 16px 17px; background: #f0f3f9; border-bottom: 1px solid #e5e7eb; }
+.headingIcon { color: #14284e; padding-top: 3px; }
+.panelHeading strong { display: block; color: #14284e; font-size: 15px; font-weight: 600; line-height: 1.4; }
+.panelHeading p { margin: 5px 0 0; color: #627087; font-size: 12px; line-height: 1.5; }
+.highlights { padding: 8px; }
+.highlightLink { display: flex; align-items: center; gap: 11px; padding: 11px 8px; border-radius: 5px; color: #14284e; transition: background 180ms ease; }
+.highlightLink:hover, .highlightLink:focus-visible { background: #fff8e5; }
+.icon { display: grid; place-items: center; flex: 0 0 39px; height: 39px; background: #ecf0f9; border-radius: 10px; transition: transform 220ms ease, background 220ms ease; }
+.highlightLink:hover .icon, .highlightLink:focus-visible .icon { transform: translateY(-3px) rotate(-7deg); background: #ffb703; }
+.linkCopy { flex: 1; min-width: 0; }
+.linkCopy strong { display: block; font-size: 14px; line-height: 1.4; font-weight: 600; }
+.linkCopy small { display: block; margin-top: 3px; color: #627087; font-size: 11px; line-height: 1.5; }
+.linkArrow { flex-shrink: 0; color: #718096; transition: transform 200ms ease; }
+.highlightLink:hover .linkArrow { transform: translate(2px, -2px); color: #14284e; }
+.viewAll { display: flex; justify-content: space-between; align-items: center; padding: 14px 18px; border-top: 1px solid #e5e7eb; font-size: 13px; font-weight: 600; color: #14284e; }
+.viewAll:hover { background: #ffb703; }
+.desktopRoot a:focus-visible, .desktopRoot button:focus-visible, .mobileRoot a:focus-visible, .mobileRoot button:focus-visible { outline: 2px solid #b98100; outline-offset: -3px; border-radius: 4px; }
+.mobileRoot { text-transform: none; }
+.mobileList > li + li { border-top: 1px solid #e5e7eb; }
+.mobileRow { display: flex; align-items: stretch; }
+.mobileRow > a { padding: 12px 20px; flex: 1; font-size: 14px; }
+.mobileRow > button { display: grid; place-items: center; width: 44px; min-height: 44px; color: #14284e; border: 0; background: none; cursor: pointer; }
+.mobilePanel { background: #f6f8fc; border-left: 3px solid #ffb703; margin: 0 8px 10px; border-radius: 5px; overflow: hidden; animation: reveal 180ms ease-out; }
+.mobilePanel .panelHeading { padding: 12px 9px; }
+.mobilePanel .headingIcon, .mobilePanel .linkArrow { display: none; }
+.mobilePanel .highlightLink { gap: 8px; padding: 10px 3px; }
+.mobilePanel .icon { flex-basis: 30px; height: 32px; }
+.mobilePanel .linkCopy strong { font-size: 12px; }
+.mobilePanel .viewAll { padding: 12px 9px; font-size: 12px; }
+@media (min-width: 1280px) { .desktopRoot { padding-inline: 15px; } .trigger { font-size: 15px; } }
+@keyframes reveal { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideIn { from { opacity: 0; transform: translateX(-7px); } to { opacity: 1; transform: translateX(0); } }
+@media (prefers-reduced-motion: reduce) {
+  .desktopRoot *, .mobileRoot * { animation: none !important; transition: none !important; transform: none !important; }
+}

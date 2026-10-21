@@ -1,0 +1,385 @@
+import { useEffect, useState } from "react";
+import Classes from "../../utils/styles/Global.module.css";
+import TopHeader from "../header/TopHeader";
+import { MdClose, MdOutlineKeyboardArrowDown } from "react-icons/md";
+import { RxHamburgerMenu } from "react-icons/rx";
+import { Link, useLocation } from "react-router-dom";
+import { HeaderData } from "../header/HeaderData";
+import { AppDispatch, RootState } from "../../store";
+import { fetchProgramMenu } from "../../store/header/programMenuThunk";
+import { useDispatch, useSelector } from "react-redux";
+import logo from "../../assets/images/logo1.png";
+import { setProgramId } from "../../store/program-finder/program/programSlice";
+import { getPreferredProgramRouteSlug } from "../../utils/legacyProgramRoutes";
+import { buildProgramCategoryPath } from "../../utils/programCategoryRoute";
+
+import type { NavbarProgram, NavbarProgramType, NavbarDiscipline } from "../../store/header/programMenuThunk";
+import { CampusLifeDesktop, CampusLifeMobile } from "./CampusLifeMenu";
+
+const getProgramFlagRoutePath = (type: NavbarProgramType) => buildProgramCategoryPath(type?.programFlagSlug || type?.programTypeSlug || type?.programFlagName || "");
+
+const getDisciplineRoutePath = (type: NavbarProgramType, discipline: NavbarDiscipline) =>
+  buildProgramCategoryPath(type?.programFlagSlug || type?.programTypeSlug || type?.programFlagName || "", discipline?.disciplineSlug || discipline?.disciplineName || "");
+
+const getProgramRoutePath = (program: NavbarProgram) =>
+  `/program/${getPreferredProgramRouteSlug({
+    slug: program?.programSlug || "",
+    name: program?.programName || "",
+  })}`;
+
+const NewHeader = () => {
+  const location = useLocation();
+  const { bottomHeaderData } = HeaderData[0];
+  const columnGroups = [["After Class 10th", "After Polytechnic"], ["After Class 12th"], ["Industry Honors Programs"], ["After Graduation", "After Post Graduation"]];
+  const [sideMenu, setSideMenu] = useState(false);
+  const [showMegaMenu, setShowMegaMenu] = useState(false);
+  const [subMenu, setSubMenu] = useState<number | null>(null);
+  const [isActive, setIsActive] = useState(false);
+
+  const dispatch = useDispatch<AppDispatch>();
+  const { data: programMenu, loading } = useSelector((state: RootState) => state.programMenu);
+
+  useEffect(() => {
+    if (!loading && (!programMenu || programMenu.length === 0)) {
+      dispatch(fetchProgramMenu());
+    }
+  }, [dispatch, loading, programMenu]);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const handleScroll = () => {
+      setIsActive(window.scrollY > 10);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (typeof document === "undefined") return;
+
+    if (!sideMenu) return;
+    const { height, overflow } = document.body.style;
+    document.body.style.height = "100vh";
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.height = height;
+      document.body.style.overflow = overflow;
+    };
+  }, [sideMenu]);
+  return (
+    <div className="relative">
+      <div
+        className={`block sm:hidden transition-all duration-500 ${isActive ? "max-h-0 opacity-0" : "max-h-[47px] opacity-100"
+          }`}
+      >
+        <TopHeader />
+      </div>
+
+      <header
+        className={`fixed left-0 z-[999] w-full transition-all duration-500 ease-in-out ${isActive ? "top-0" : "top-[32px] sm:top-0"
+          }`}
+      >
+        <div className="hidden sm:block">
+          <TopHeader />
+        </div>
+        {/* <div className="marquee">
+          <div className={`marquee-content`}>
+            <span>
+              📢 Due to the significant volume of requests received, we are reopening
+              the PhD application form. This will provide additional applicants the
+              opportunity to complete and submit their applications within the
+              extended timeline.
+            </span>
+
+          
+            <span>
+              📢 Due to the significant volume of requests received, we are reopening
+              the PhD application form. This will provide additional applicants the
+              opportunity to complete and submit their applications within the
+              extended timeline.
+            </span>
+          </div>
+        </div> */}
+        <div className={`py-2 items-stretch header  ${isActive ? "bg-[#14284e] active" : "bg-[#14284e] sm:bg-transparent"}`}>
+          <div className={`${Classes["container"]} relative`}>
+            <div className="flex flex-row justify-between">
+              <Link to="/" className="logo_div flex items-center lg:gap-1 xl:gap-3 cursor-pointer">
+                <img
+                  src={logo}
+                  alt="Shri Ramswaroop Memorial University Logo"
+                  width={245}
+                  height={60}
+                  loading="eager"
+                  decoding="async"
+                  className="max-w-[205px] xl:max-w-[245px] w-auto h-auto"
+                />
+              </Link>
+
+              {/* DESKTOP MENU */}
+              <div className="hidden lg:block">
+                <nav className="flex items-center h-full ">
+                  {bottomHeaderData[0].navitems.map((data, index) => {
+                    if (data.item === "Campus Life") {
+                      return <CampusLifeDesktop key={data.id} />;
+                    }
+                    const isMega = data?.isMegaMenu === true;
+
+                    return (
+                      <div
+                        onMouseEnter={() => setShowMegaMenu(true)}
+                        onMouseLeave={() => setShowMegaMenu(false)}
+                        key={index}
+                        className="relative px-[5px] lg:px-2.5 xl:px-[15px] py-4 group text-[15px] cursor-pointer"
+                      >
+                        <div
+                          className={`flex items-center text-[13px] xl:text-[15px] text-white group-hover:text-[#ffb703] uppercase ${location.pathname === data.path ? "active" : ""}`}
+                        >
+                          {data.item}
+                        </div>
+
+                        {/* NORMAL DROPDOWN */}
+                        {!isMega && showMegaMenu && data?.subItem && (
+                          <div className="absolute top-[50px] right-0 bg-white rounded-md shadow-md">
+                            <span className="hidden group-hover:block manage-top-arrow"></span>
+                            <ul className="transition-all w-full min-w-[290px] duration-300 max-h-0 group-hover:max-h-[565px] overflow-hidden rounded-md ">
+                              {data.subItem.map((value, i) => (
+                                <Link
+                                  key={i}
+                                  onClick={() => setShowMegaMenu(false)}
+                                  to={value.path}
+                                  className={`block text-[15px] px-3 py-3 hover-parline hover:text-[#ffb703] ${i !== 0 && "border-t border-gray-200"}`}
+                                >
+                                  {value.item}
+                                </Link>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
+                        {isMega && showMegaMenu && !data?.subItem && <span className="hidden group-hover:block manage-top-arrow big"></span>}
+
+                        {/* top-[100px] xl:top-[112px] bg-white rounded-md */}
+                        {isMega && showMegaMenu && (
+                          <div
+                            className="
+                              fixed left-1/2 -translate-x-1/2
+                              top-[93px] xl:top-[96px] bg-white rounded-md
+                              hidden group-hover:flex
+                              border-t-4 border-t-yellow-500
+                              border-b-4 border-b-blue-500
+                              w-[95vw] px-10 py-6 gap-9 z-9999 max-h-[75vh] overflow-y-auto"
+                          >
+                            {/* <span className="hidden group-hover:block manage-top-arrow big"></span> */}
+                            <div className="grid grid-cols-4 gap-6 w-full">
+                              {columnGroups.map((group, colIndex) => (
+                                <div key={colIndex} className="space-y-6">
+                                  {programMenu
+                                    .filter((type) => group.includes(type.programFlagName))
+                                    .map((type) => {
+                                      return (
+                                        <div key={type.programFlagId}>
+                                          {/* BLUE HEADING */}
+                                          <h2 className="font-medium text-[17px] p-3 rounded-lg inline-block hover:bg-[#ffb703] text-[#0f4a85] hover:text-black">
+                                            <Link onClick={() => setShowMegaMenu(false)} to={getProgramFlagRoutePath(type)} state={{ programTypeId: type.programFlagId }}>
+                                              {type.programFlagName}
+                                            </Link>
+                                          </h2>
+                                          <ul className="mt-2 list-none!">
+                                            {type.programFlagId === 7
+                                              ? // CASE 1: programs
+                                              type.programs.map((prog) => (
+                                                <li key={prog.programId}>
+                                                  <Link
+                                                    // onClick={() => setShowMegaMenu(false)}
+                                                    onMouseDown={() => {
+                                                      dispatch(setProgramId(prog.programId.toString()));
+                                                    }}
+                                                    onClick={() => {
+                                                      dispatch(setProgramId(prog.programId.toString()));
+                                                      setShowMegaMenu(false);
+                                                    }}
+                                                    to={getProgramRoutePath(prog)}
+                                                    className="text-[15px] px-3 py-2 rounded-md text-[#212529] hover:text-[#ffb703] border border-white hover:border-[#ffb703] block"
+                                                  >
+                                                    {prog.programName}
+                                                  </Link>
+                                                </li>
+                                              ))
+                                              : // CASE 2: disciplines (for all other ids)
+
+                                              type.disciplines.map((disc) => (
+                                                <li key={disc.disciplineId}>
+                                                  <Link
+                                                    onClick={() => setShowMegaMenu(false)}
+                                                    to={disc.disciplineName === "Ph.D." ? "/program/phd" : getDisciplineRoutePath(type, disc)}
+                                                    state={{
+                                                      programTypeId: type.programFlagId,
+                                                      disciplineId: disc.disciplineId,
+                                                    }}
+                                                    className="text-[15px] px-3 py-2 rounded-md text-[#212529] hover:text-[#ffb703] border border-white hover:border-[#ffb703] block"
+                                                  >
+                                                    {disc.disciplineName}
+                                                  </Link>
+                                                </li>
+                                              ))}
+                                          </ul>
+                                        </div>
+                                      );
+                                    })}
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
+                </nav>
+              </div>
+
+              {/* HAMBURGER */}
+              <div className="lg:hidden my-auto">
+                <RxHamburgerMenu
+                  size={32}
+                  className="cursor-pointer text-white"
+                  onClick={() => setSideMenu((pre) => !pre)}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* MOBILE BACKDROP */}
+        {sideMenu && <div className="lg:hidden w-full h-[calc(100vh-103px)] bg-opacity-50 fixed top-[100px] right-0"></div>}
+
+        {/* MOBILE MENU */}
+        <div
+          className={`fixed top-[100px] pt-4 h-[calc(100vh-92px)] sm:h-[calc(100vh-103px)]
+            bg-white border-t-2 border-blue-900 overflow-auto mobile-scroll
+            transition-all duration-300 right-0 lg:hidden ${sideMenu ? "max-w-[250px]" : "max-w-0"}`}
+        >
+          <ul className="w-full flex flex-col list-none mt-10 border-y">
+            {bottomHeaderData[0].navitems.map((data, index) => {
+              const isMega = data?.isMegaMenu === true;
+
+              return (
+                <li key={index} className={`relative w-full text-sm uppercase cursor-pointer py-2 ${index !== 0 && "border-t border-gray-200"}`}>
+                  {/* ROW */}
+                  <div className="flex justify-between items-center px-2 ">
+                    <Link to={data.path} className="hover:text-[#ffb703]" onClick={() => setSideMenu(false)}>
+                      {data.item}
+                    </Link>
+
+                    {(data.subItem || isMega) && (
+                      <button onClick={() => setSubMenu(subMenu === data.id ? null : data.id)} className="border border-[#0000002e] px-0.5 py-[3px]">
+                        <MdOutlineKeyboardArrowDown size={25} className={`transition-all bg-[#00000008] text-[#616161] ${subMenu === data.id ? "rotate-180" : ""}`} />
+                      </button>
+                    )}
+                  </div>
+
+                  {/* MOBILE DROPDOWN */}
+                  {(data.subItem || isMega) && (
+                    <ul className={`transition-all duration-700 overflow-hidden ${subMenu === data.id ? "max-h-full" : "max-h-0"}`}>
+                      <span className="w-full block h-0.5 mt-2 bg-[#ffb703]"></span>
+
+                      {/* NORMAL DROPDOWN */}
+                      {!isMega && data.item === "Campus Life" ? (
+                        <CampusLifeMobile onNavigate={() => setSideMenu(false)} />
+                      ) : !isMega &&
+                        data.subItem?.map((value, i) => (
+                          <Link
+                            key={i}
+                            to={value.path}
+                            className={`block text-sm px-5 py-3 hover:text-[#ffb703] hover:bg-gray-50 ${i !== 0 && "border-t border-gray-200"}`}
+                            onClick={() => setSideMenu(false)}
+                          >
+                            {value.item}
+                          </Link>
+                        ))}
+
+                      {/* MEGA MENU USING API DATA */}
+                      {isMega && (
+                        <div className="px-2 py-2 space-y-4">
+                          {columnGroups.map((group, colIndex) => (
+                            <div key={colIndex} className="space-y-3">
+                              {programMenu
+                                .filter((type) => group.includes(type.programFlagName))
+                                .map((type) => {
+                                  return (
+                                    <div key={type.programFlagId}>
+                                      <h2 className="font-medium text-sm p-2 rounded-lg bg-gray-100 text-[#0f4a85] border-b border-gray-300">
+                                        <Link
+                                          to={getProgramFlagRoutePath(type)}
+                                          state={{ programTypeId: type.programFlagId }}
+                                          onClick={() => setSideMenu(false)}
+                                          className="hover:text-[#ffb703] block"
+                                        >
+                                          {type.programFlagName}
+                                        </Link>
+                                      </h2>
+                                      <ul className="ml-2 mt-1 space-y-1 list-none!">
+                                        {type.programFlagId === 7
+                                          ? // CASE 1: programs (only for id 7)
+                                          type.programs.map((prog) => (
+                                            <li key={prog.programId}>
+                                              <Link
+                                                to={getProgramRoutePath(prog)}
+                                                onMouseDown={() => {
+                                                  dispatch(setProgramId(prog.programId.toString()));
+                                                }}
+                                                onClick={() => {
+                                                  dispatch(setProgramId(prog.programId.toString()));
+                                                  setSideMenu(false);
+                                                }}
+                                                className="text-sm px-3 py-2 text-[#212529] hover:text-[#ffb703] block hover:bg-gray-50 rounded"
+                                              >
+                                                {prog.programName}
+                                              </Link>
+                                            </li>
+                                          ))
+                                          : // CASE 2: disciplines (for all other ids)
+                                          type.disciplines.map((disc) => (
+                                            <li key={disc.disciplineId}>
+                                              <Link
+                                                to={disc.disciplineName === "Ph.D." ? "/program/phd" : getDisciplineRoutePath(type, disc)}
+                                                state={{
+                                                  programTypeId: type.programFlagId,
+                                                  disciplineId: disc.disciplineId,
+                                                }}
+                                                className="text-sm px-3 py-2 text-[#212529] hover:text-[#ffb703] block hover:bg-gray-50 rounded"
+                                                onClick={() => setSideMenu(false)}
+                                              >
+                                                {disc.disciplineName}
+                                              </Link>
+                                            </li>
+                                          ))}
+                                      </ul>
+                                    </div>
+                                  );
+                                })}
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </ul>
+                  )}
+                </li>
+              );
+            })}
+          </ul>
+
+          {/* CLOSE ICON */}
+          <span className="absolute left-2 top-2 bg-[#0e2f46] text-white px-2 py-2">
+            <MdClose onClick={() => setSideMenu(false)} size={24} className="cursor-pointer" />
+          </span>
+        </div>
+      </header>
+    </div>
+  );
+};
+
+export default NewHeader;

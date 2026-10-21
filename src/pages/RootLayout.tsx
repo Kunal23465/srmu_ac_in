@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { Outlet, useLocation } from "react-router-dom";
-import Header from "../components/header/Header";
+// import Header from "../components/header/Header";
+import Header from "../components/new-header/new";
 import whatsapp from "../assets/images/whatsapp-icon.png";
 import DynamicBreadcrumbs from "../components/breadcrumb/DynamicBreadcrumbs";
 import SeoHead from "../components/seo/SeoHead";
