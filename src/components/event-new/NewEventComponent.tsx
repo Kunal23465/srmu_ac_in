@@ -457,22 +457,25 @@ export default function NewEventComponent() {
         </div>
       </Section>
 
-      <Section id="academic-events" title="Academic Events" description="Opportunities for students and faculty to learn from experts, exchange ideas, develop professional skills and engage with emerging areas of knowledge." className={`${styles.academicSection} !pt-6 min-[861px]:!pt-10`}>
+      <Section id="academic-events" title="Academic Events" description="Opportunities for students and faculty to learn from industry experts, exchange knowledge, strengthen professional skills, advance research, and gain practical insights into emerging technologies and evolving fields through faculty development programs, research initiatives, expert interactions, and hands-on learning experiences." className={`${styles.academicSection} !pt-6 min-[861px]:!pt-10`}>
         <EventCardGrid events={academic} variant="academic" />
         <div className="mt-8"><a href="#calendar" className={`${eventButtonClassName} !bg-[#14284E] !text-white`} onClick={() => chooseCategory("Academic")}>View All Academic Events<ArrowRight size={16} /></a></div>
       </Section>
 
-      <Section id="technical-events" title={<>Technical Events - <span className="text-[#FFB703]">Viveka</span></>} description="Activities designed to encourage innovation, problem-solving, practical learning and industry exposure." className="!pt-6 min-[861px]:!pt-10">
+      <Section id="technical-events" title="Technical Events" description="" className="!pt-6 min-[861px]:!pt-10">
+        <p className="-mt-6 mb-8 text-[.97rem] leading-relaxed text-[#14284E]"><span className="font-bold text-[#FFB703]">Viveka:</span> A platform for innovation and problem-solving through hackathons, technical workshops, coding competitions, and hands-on activities that encourage students to apply their skills and explore emerging technologies.</p>
         <EventCardGrid events={[...technical.filter(event => event.title !== "Industrial Visits"), technical[4]]} variant="technical" />
         <div className="mt-8"><a href="#calendar" className={eventButtonClassName} onClick={() => chooseCategory("Technical")}>View All Technical Events<ArrowRight size={16} /></a></div>
       </Section>
 
-      <Section id="cultural-events" title={<>Cultural Events - <span className="text-[#FFB703]">Dharohar</span></>} description="Celebrations of music, art, drama and literature that bring the SRMU community together." className={`${styles.darkSection} !pt-6 min-[861px]:!pt-10`}>
+      <Section id="cultural-events" title="Cultural Events" description="" className={`${styles.darkSection} !pt-6 min-[861px]:!pt-10`}>
+        <p className="-mt-6 mb-8 text-[.97rem] leading-relaxed text-white/90"><span className="font-bold text-[#FFB703]">Dharohar:</span> Celebrating traditions, creativity, and togetherness through vibrant events such as Harmony, Dharohar, Fun Day, Dandiya Night, Janmashtami celebrations, and Ganesh Utsav, bringing the SRMU community together through music, dance, festivities, and cultural expression.</p>
         <VideoGallery items={cultural} label="Cultural event videos" autoAdvance />
         <div className="mt-8"><a href="#calendar" className={eventButtonClassName} onClick={() => chooseCategory("Cultural")}>Explore Cultural Events <ArrowRight size={16} /></a></div>
       </Section>
 
-      <Section id="sports-events" title={<>Sports &amp; Fitness - <span className="text-[#FFB703]">Utsaah &amp; Ullaas</span></>} description="Sports at SRMU encourage teamwork, discipline, leadership and a healthy campus lifestyle." alternate className="!pt-6 min-[861px]:!pt-10">
+      <Section id="sports-events" title="Sports & Fitness" description="" alternate className="!pt-6 min-[861px]:!pt-10">
+        <p className="-mt-6 mb-8 text-[.97rem] leading-relaxed text-[#14284E]"><span className="font-bold text-[#FFB703]">Utsaah &amp; Ullaas:</span> Sports at SRMU encourage teamwork, discipline, leadership and a healthy campus lifestyle through exciting inter-college competitions and sporting events.</p>
         <div className={styles.sportsMeets} role="group" aria-label="Sports meets">
           {["Utsaah", "Ullas"].map(meet => <button type="button" key={meet} aria-pressed={sportsMeet === meet} onClick={() => setSportsMeet(meet)}>
             <span className={styles.meetIcon}><Trophy aria-hidden="true" /></span>
