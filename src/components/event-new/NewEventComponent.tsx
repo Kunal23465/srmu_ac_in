@@ -388,11 +388,11 @@ export default function NewEventComponent() {
         <div className={`${Global.container} relative z-10`}>
           <div className={styles.heroContent}>
             {/* <p className="mb-4 flex items-center gap-[9px] text-[.78rem] font-bold tracking-[.1em] text-white uppercase"><span className="size-2 rounded-full bg-[#FFB703]" /> Events & Activities</p> */}
-            <h1 id="events-hero-title" className="text-white">Events at Shri Ramswaroop Memorial University <span className="text-[#FFB703]">(SRMU)</span></h1>
-            <p className="mt-6 mb-7 hidden max-w-[570px] text-white/90 min-[861px]:block">Unleash Your Inner Stage</p>
+            <h1 id="events-hero-title" className="text-white">Events</h1>
+            <p className="mt-0 mb-7 hidden max-w-[570px] text-white/90 min-[861px]:block">Unleash Your Inner Stage</p>
             <div className="hidden flex-wrap items-center gap-3 min-[861px]:flex">
               <a href="#categories" className={`${eventButtonClassName} focus-visible:outline-white!`}>Explore Events <ArrowRight size={18} aria-hidden="true" /></a>
-              <a href="#calendar" className="inline-flex max-w-full w-fit items-center justify-center gap-2 rounded-lg border border-white/70 bg-[#14284E]/25 px-8 py-3 text-center text-[14px] font-bold tracking-wider text-white uppercase shadow-md shadow-[#14284E]/10 cursor-pointer transition-colors hover:bg-white/15 focus-visible:outline-white! [&>svg]:shrink-0"><CalendarDays size={18} aria-hidden="true" /> View Event Calendar</a>
+              {/* <a href="#calendar" className="inline-flex max-w-full w-fit items-center justify-center gap-2 rounded-lg border border-white/70 bg-[#14284E]/25 px-8 py-3 text-center text-[14px] font-bold tracking-wider text-white uppercase shadow-md shadow-[#14284E]/10 cursor-pointer transition-colors hover:bg-white/15 focus-visible:outline-white! [&>svg]:shrink-0"><CalendarDays size={18} aria-hidden="true" /> View Event Calendar</a> */}
             </div>
           </div>
         </div>
