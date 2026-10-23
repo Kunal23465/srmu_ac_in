@@ -86,11 +86,14 @@ const CampusLifePage = lazyPage(() => import("../pages/campus-life/CampusLifePag
 const TransportationPage = lazyPage(() => import("../pages/campus-life/facilities/transportation/TransportationPage"));
 const HostelPage = lazyPage(() => import("../pages/campus-life/facilities/HostelPage"));
 const ConvocationPage = lazyPage(() => import("../pages/campus-life/convocation/ConvocationPage"));
+const ConvocationNewPage = lazyPage(() => import("../pages/campus-life/convocation/ConvocationNewPage"));
 const Convocation2026Page = lazyPage(() => import("../pages/campus-life/convocation/Convocation2026Page"));
 const CentralLibraryPage = lazyPage(() => import("../pages/campus-life/central-library/CentralLibraryPage"));
 const GreenInitiativePage = lazyPage(() => import("../pages/campus-life/green-initiative/GreenInitiativePage"));
 const GreenInitiativeNewPage = lazyPage(() => import("../pages/green-initative-new/GreenInitiativeNewPage"));
+const FacilitiesNewPage = lazyPage(() => import("../pages/facilities-new/FacilitiesNewPage"));
 const WomenEmpowermentPage = lazyPage(() => import("../pages/campus-life/women-empowerment/WomenEmpowermentPage"));
+const WomenEmpowermentNewPage = lazyPage(() => import("../pages/campus-life/women-empowerment/WomenEmpowermentNewPage"));
 const StudentSenatePage = lazyPage(() => import("../pages/campus-life/student-senate/StudentSenatePage"));
 const StudentCornerPage = lazyPage(() => import("../pages/campus-life/student-corner/StudentCornerPage"));
 const OutreachActivationsPage = lazyPage(() => import("../pages/campus-life/outreach-activations/OutreachActivationsPage"));
@@ -549,6 +552,10 @@ export const routes = [
         ],
       },
       {
+        path: "convocation-new",
+        element: <ConvocationNewPage />,
+      },
+      {
         path: "convocation2026",
         element: <Convocation2026Page />,
       },
@@ -569,6 +576,10 @@ export const routes = [
       {
         path: "women-empowerment",
         element: <WomenEmpowermentPage />,
+      },
+      {
+        path: "women-empowerment-new",
+        element: <WomenEmpowermentNewPage />,
       },
       {
         path: "student-senate",
@@ -1052,6 +1063,10 @@ export const routes = [
       {
         path: "green-initiative-new",
         element: <GreenInitiativeNewPage />,
+      },
+      {
+        path: "facilities-new",
+        element: <FacilitiesNewPage />,
       },
 
       {

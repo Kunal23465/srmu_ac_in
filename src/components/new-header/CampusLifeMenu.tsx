@@ -1,38 +1,82 @@
 import { useEffect, useId, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { ArrowUpRight, BookOpen, Building2, Bus, CalendarDays, ChevronDown, ChevronRight, GraduationCap, Mic, Music, Sparkles, Trophy } from "lucide-react";
+import { ArrowUpRight, BookOpen, Building2, Bus, CalendarDays, Camera, ChevronDown, ChevronRight, Cpu, Dumbbell, GraduationCap, Heart, Landmark, Leaf, Mic, Music, Palette, PenTool, Shield, Sparkles, WashingMachine } from "lucide-react";
 import { HeaderData } from "../header/HeaderData";
 import styles from "./new.module.css";
 
 const campusItems = HeaderData[0].bottomHeaderData[0].navitems.find(
   (item) => item.item === "Campus Life",
-)!.subItem!;
+)!.subItem!
+  .filter((item) => item.item !== "Central Library" && item.item !== "Hostel")
+  .map((item) => item.item === "Facilities"
+    ? { ...item, path: "/facilities-new" }
+    : item.item === "Events"
+      ? { ...item, path: "/event-new" }
+      : item.item === "Convocation"
+        ? { ...item, path: "/convocation-new" }
+        : item.item === "Green Initiative"
+          ? { ...item, path: "/green-initiative-new" }
+          : item.item === "Women Empowerment"
+            ? { ...item, path: "/women-empowerment-new" }
+            : item);
 
-// Existing destinations only: the original header data and pages stay untouched.
+// Campus Life highlights point to the current facilities page sections and existing detail pages.
 const highlights = {
-  "/facilities": {
+  "/facilities-new": {
     title: "Explore our facilities",
     description: "Spaces that support your everyday campus life.",
     icon: Building2,
     links: [
-      { label: "Central Library", description: "Discover resources & learning spaces", path: "/central-library", icon: BookOpen },
+      { label: "Central Library", description: "Discover resources & learning spaces", path: "/facilities-new#facilities-new-facility-11", icon: BookOpen },
       { label: "Hostel", description: "Your home on campus", path: "/hostel", icon: Building2 },
-      { label: "Transportation", description: "Stay connected to campus", path: "/transportation", icon: Bus },
+      { label: "Transportation", description: "Stay connected to campus", path: "/facilities-new#facilities-new-transport", icon: Bus },
+      { label: "Academic blocks", description: "Explore SRMU’s five academic blocks", path: "/facilities-new#facilities-new-blocks", icon: Building2 },
+      { label: "Labs & Seminar Hall", description: "Explore labs, classrooms and seminar spaces", path: "/facilities-new#facilities-new-academics", icon: GraduationCap },
+      { label: "Healthcare", description: "On-campus healthcare facilities", path: "/facilities-new#facilities-new-essentials-healthcare", icon: Building2 },
+      { label: "Transport, fee & route plan", description: "View transport services and route information", path: "/transportation", icon: Bus },
+      { label: "Hostel - AC class", description: "Explore hostel accommodation and amenities", path: "/facilities-new#facilities-new-essentials-hostel", icon: Building2 },
+      { label: "Banking", description: "Banking and ATM facilities on campus", path: "/facilities-new#facilities-new-essentials-banking", icon: Landmark },
+      { label: "Laundry Facilities", description: "Laundry support for campus residents", path: "/facilities-new#facilities-new-essentials-laundry", icon: WashingMachine },
+      { label: "Sports Stadium", description: "Explore sports and recreation facilities", path: "/facilities-new#facilities-new-sports", icon: Dumbbell },
     ],
     all: "Explore all facilities",
   },
-  "/events": {
+  "/event-new": {
     title: "Experience campus events",
     description: "Culture, ideas and moments to remember.",
     icon: CalendarDays,
     links: [
-      { label: "Anubhuti 2025", description: "Annual cultural festival", path: "/events/anubhuti-2025", icon: Music },
-      { label: "Harmony 2K23", description: "Welcoming our freshers", path: "/events/freshers-party-harmony-2k23", icon: Sparkles },
-      { label: "Ullas 2023", description: "Celebrating the spirit of sport", path: "/events/ullas-2023", icon: Trophy },
-      { label: "Conferences", description: "Discover ideas & conversations", path: "/events#conferences", icon: GraduationCap },
-      { label: "TEDx SRMUInnovatia", description: "Ideas and inspiring voices", path: "/events/tedx-srmuinnovatia", icon: Mic },
+      { label: "Upcoming Events", description: "See the latest campus event highlights", path: "/event-new#news", icon: CalendarDays },
+      { label: "Categories", description: "Browse academic, cultural, technical and sports events", path: "/event-new#categories", icon: GraduationCap },
+      { label: "Academic Events", description: "Explore conferences, workshops and guest lectures", path: "/event-new#academic-events", icon: GraduationCap },
+      { label: "Technical Events", description: "Explore technology-focused activities and competitions", path: "/event-new#technical-events", icon: Cpu },
+      { label: "Celebrity & Special Events", description: "Explore special guests and performances", path: "/event-new#special-events", icon: Mic },
+      { label: "Calendar", description: "Browse events by date and category", path: "/event-new#calendar", icon: CalendarDays },
+      { label: "FAQs", description: "Find answers to common event questions", path: "/event-new#faqs", icon: BookOpen },
+      { label: "All Events", description: "Explore the full events page", path: "/event-new", icon: CalendarDays },
     ],
     all: "Explore all events",
+  },
+  "/clubs": {
+    title: "Explore student clubs",
+    description: "Find your community and build your interests.",
+    icon: Sparkles,
+    links: [
+      { label: "Razzmataz", description: "Fashion, style and creative expression", path: "/clubs#club-razzmataz", icon: Sparkles },
+      { label: "Beat the Beats", description: "Dance, movement and performance", path: "/clubs#club-beat-the-beats", icon: Music },
+      { label: "Expressions", description: "Acting, production and stagecraft", path: "/clubs#club-expressions", icon: Mic },
+      { label: "The Manch Club", description: "Public speaking and confidence", path: "/clubs#club-the-manch-club", icon: Mic },
+      { label: "1090 Power Angels & The Power Super Heroes Club", description: "Social awareness and civic responsibility", path: "/clubs#club-1090-power-angels-the-power-super-heroes-club", icon: Shield },
+      { label: "Tech Fusion Club", description: "Technology, innovation and making", path: "/clubs#club-tech-fusion-club", icon: Cpu },
+      { label: "The Ozone Club", description: "Sustainability and environmental action", path: "/clubs#club-the-ozone-club", icon: Leaf },
+      { label: "Sur Jhankar", description: "Music and performance", path: "/clubs#club-sur-jhankar", icon: Music },
+      { label: "Positive Psychology", description: "Wellbeing, mindfulness and optimism", path: "/clubs#club-positive-psychology", icon: Heart },
+      { label: "Srijan Club", description: "Visual arts and creative projects", path: "/clubs#club-srijan-club", icon: Palette },
+      { label: "Snapshot", description: "Photography and campus stories", path: "/clubs#club-snapshot", icon: Camera },
+      { label: "Apni Pathshala Club", description: "Community learning and education", path: "/clubs#club-apni-pathshala-club", icon: BookOpen },
+      { label: "The Golden Pen Club", description: "Poetry, storytelling and writing", path: "/clubs#club-the-golden-pen-club", icon: PenTool },
+    ],
+    all: "Explore all clubs",
   },
 };
 
@@ -50,7 +94,7 @@ function HighlightLinks({ path, onNavigate }: { path: HighlightPath; onNavigate:
       </div>
       <ul className={styles.highlights}>
         {section.links.map(({ label, description, path: destination, icon: ItemIcon }) => (
-          <li key={destination}>
+        <li key={label}>
             <Link to={destination} onClick={onNavigate} className={styles.highlightLink}>
               <span className={styles.icon}><ItemIcon size={21} strokeWidth={1.7} aria-hidden="true" /></span>
               <span className={styles.linkCopy}><strong>{label}</strong><small>{description}</small></span>

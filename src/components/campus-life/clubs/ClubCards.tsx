@@ -1,15 +1,20 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { cardclubCardsData } from '../../../data/campus-life/clubs/clubs-data';
 
 import { MdArrowRightAlt, MdClose } from 'react-icons/md';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 
 
 // @ts-ignore
 const CustomModal = ({ selected, setSelected }) => {
-  if (!selected) return null;
   const navigate = useNavigate();
+  if (!selected) return null;
+
+  const closeModal = () => {
+    setSelected(null);
+    navigate('/clubs', { replace: true });
+  };
 
   return (
     <>
@@ -22,7 +27,7 @@ const CustomModal = ({ selected, setSelected }) => {
 
         {/* CLOSE BUTTON — outside modal but safe */}
         <span
-          onClick={() => setSelected(null)}
+          onClick={closeModal}
           className="absolute -top-3 -right-3
                     flex justify-center items-center w-[35px] h-[35px]
                     bg-[#0f4a85] text-white rounded-full cursor-pointer shadow-lg"
@@ -74,10 +79,20 @@ const CustomModal = ({ selected, setSelected }) => {
   );
 };
 
+const clubAnchor = (title: string) => `club-${title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")}`;
 
 const ClubCards: React.FC = () => {
   const [selected, setSelected] = useState<any>(null);
   const [openCardIndex, setOpenCardIndex] = useState<number | null>(null);
+  const location = useLocation();
+
+  useEffect(() => {
+    if (!location.hash) return;
+
+    const targetId = decodeURIComponent(location.hash.slice(1));
+    const club = cardclubCardsData.find((card) => clubAnchor(card.title) === targetId);
+    if (club) setSelected(club);
+  }, [location.hash]);
 
   const toggleCard = (index: number) => {
     setOpenCardIndex(openCardIndex === index ? null : index);
@@ -94,8 +109,9 @@ const ClubCards: React.FC = () => {
           return (
             <div
               key={i}
+              id={clubAnchor(card.title)}
               onClick={() => toggleCard(i)}
-              className="relative w-full h-50 sm:h-64 md:h-64 rounded-2xl overflow-hidden shadow-md group cursor-pointer border-2 border-transparent hover:border-yellow-400 transition-all duration-300"
+              className="relative scroll-mt-32 w-full h-50 sm:h-64 md:h-64 rounded-2xl overflow-hidden shadow-md group cursor-pointer border-2 border-transparent hover:border-yellow-400 transition-all duration-300"
             >
               <img
                 src={card.img}

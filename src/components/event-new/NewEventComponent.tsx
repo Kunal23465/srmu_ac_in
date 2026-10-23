@@ -1,5 +1,6 @@
 import EventVideo from "./EventVideo";
 import EventSectionNav from "./EventSectionNav";
+import { useLocation } from "react-router-dom";
 import { technicalVideo, culturalVideo, sportsVideo, celebrityVideo, anubhutiVideo, dandiyaNightVideo, funDayVideo, harmonyVideo, daroharVideo, harmony2026Video, independenceDayVideo, rangBarsheVideo, pawandeepArunitaVideo, srmuDarshanVideo, shaanVideo, shilpaRaoVideo, sunnyDeolVideo, type EventVideoAsset } from "./eventVideoAssets";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { ArrowRight, CalendarDays, ChevronLeft, ChevronRight, Cpu, GraduationCap, Image, MapPin, Mic, Music, Palmtree, Pause, Play, Trophy, X } from "lucide-react";
@@ -327,6 +328,7 @@ function VideoGallery({ items, label, celebrity = false, autoAdvance = false }: 
 type Detail = { title: string; category?: string; date?: string; venue?: string; description: string; gallery?: boolean };
 
 export default function NewEventComponent() {
+  const location = useLocation();
   const [month, setMonth] = useState(new Date(2026, 9, 1));
   const [filter, setFilter] = useState("All");
   // Event Archives filters — restore with the section below.
@@ -343,6 +345,18 @@ export default function NewEventComponent() {
   const [newsPaused, setNewsPaused] = useState(false);
   const [activeNewsIndex, setActiveNewsIndex] = useState(0);
   const dialog = useRef<HTMLDialogElement>(null);
+
+  useEffect(() => {
+    if (!location.hash) return;
+    const targetId = decodeURIComponent(location.hash.slice(1));
+    const timer = window.setTimeout(() => {
+      document.getElementById(targetId)?.scrollIntoView({
+        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth",
+        block: "start",
+      });
+    }, 100);
+    return () => window.clearTimeout(timer);
+  }, [location.hash, location.pathname]);
 
   useEffect(() => {
     if (newsPaused) return;
