@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { ArrowDown, ArrowRight, HeartHandshake, Leaf, Mic2, Palette, Search, Sparkles, X } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { cardclubCardsData, ClubsOverviewData } from "../../../data/campus-life/clubs/clubs-data";
 import clubsBanner from "../../../assets/images/banner/clubs-banner.webp";
 import styles from "./ClubsNew.module.css";
@@ -25,8 +25,10 @@ const categoryByClub: Record<string, Exclude<Category, "All clubs">> = {
 };
 
 const categoryIcons = [Palette, Mic2, Sparkles, HeartHandshake];
+const clubAnchor = (title: string) => `club-${title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")}`;
 
 export default function ClubsNew() {
+  const location = useLocation();
   const [activeCategory, setActiveCategory] = useState<Category>("All clubs");
   const [search, setSearch] = useState("");
   const [selectedClub, setSelectedClub] = useState<(typeof cardclubCardsData)[number] | null>(null);
@@ -36,6 +38,13 @@ export default function ClubsNew() {
     const matchesSearch = `${club.title} ${club.desc}`.toLowerCase().includes(search.trim().toLowerCase());
     return matchesCategory && matchesSearch;
   }), [activeCategory, search]);
+
+  useEffect(() => {
+    if (!location.hash) return;
+    const clubId = decodeURIComponent(location.hash.slice(1));
+    const club = cardclubCardsData.find((item) => clubAnchor(item.title) === clubId);
+    if (club) setSelectedClub(club);
+  }, [location.hash]);
 
   useEffect(() => {
     if (!selectedClub) return;
@@ -57,7 +66,7 @@ export default function ClubsNew() {
         <img className={styles.heroImage} src={clubsBanner} alt="Students taking part in campus club activities" fetchPriority="high" />
         <div className={styles.heroShade} aria-hidden="true" />
         <div className={styles.container}>
-          <p className={styles.heroEyebrow}>Discover · Create · Belong</p>
+          {/* <p className={styles.heroEyebrow}>Discover · Create · Belong</p> */}
           <h1 id="clubs-new-title">Find your people.<br /><span>Follow your passion.</span></h1>
           <div className={styles.heroRule} aria-hidden="true" />
           <p className={styles.heroCopy}>From music and theatre to technology and community service, there’s a place to explore what you love and meet people who love it too.</p>
@@ -100,7 +109,7 @@ export default function ClubsNew() {
           </div>
 
           {visibleClubs.length ? <div className={styles.clubGrid}>
-            {visibleClubs.map((club) => <article className={styles.clubCard} key={club.title}>
+            {visibleClubs.map((club) => <article className={styles.clubCard} id={clubAnchor(club.title)} key={club.title}>
               <div className={styles.cardImageWrap}><img src={club.img} alt="" loading="lazy" className={styles.cardImage} /><span className={styles.cardCategory}>{categoryByClub[club.title]}</span></div>
               <div className={styles.cardBody}>
                 <h3>{club.title}</h3>

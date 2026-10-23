@@ -26,6 +26,8 @@ const campusItems = HeaderData[0].bottomHeaderData[0].navitems.find(
                   ? { ...item, path: "/student-corner-new" }
                   : item.item === "Grievance Redressal System"
                     ? { ...item, path: "/grievance-redressal-system-new" }
+                      : item.item === "Clubs"
+                        ? { ...item, path: "/clubs-new" }
             : item);
 
 // Campus Life highlights point to the current facilities page sections and existing detail pages.
@@ -65,24 +67,24 @@ const highlights = {
     ],
     all: "Explore all events",
   },
-  "/clubs": {
+  "/clubs-new": {
     title: "Explore student clubs",
     description: "Find your community and build your interests.",
     icon: Sparkles,
     links: [
-      { label: "Razzmataz", description: "Fashion, style and creative expression", path: "/clubs#club-razzmataz", icon: Sparkles },
-      { label: "Beat the Beats", description: "Dance, movement and performance", path: "/clubs#club-beat-the-beats", icon: Music },
-      { label: "Expressions", description: "Acting, production and stagecraft", path: "/clubs#club-expressions", icon: Mic },
-      { label: "The Manch Club", description: "Public speaking and confidence", path: "/clubs#club-the-manch-club", icon: Mic },
-      { label: "1090 Power Angels & The Power Super Heroes Club", description: "Social awareness and civic responsibility", path: "/clubs#club-1090-power-angels-the-power-super-heroes-club", icon: Shield },
-      { label: "Tech Fusion Club", description: "Technology, innovation and making", path: "/clubs#club-tech-fusion-club", icon: Cpu },
-      { label: "The Ozone Club", description: "Sustainability and environmental action", path: "/clubs#club-the-ozone-club", icon: Leaf },
-      { label: "Sur Jhankar", description: "Music and performance", path: "/clubs#club-sur-jhankar", icon: Music },
-      { label: "Positive Psychology", description: "Wellbeing, mindfulness and optimism", path: "/clubs#club-positive-psychology", icon: Heart },
-      { label: "Srijan Club", description: "Visual arts and creative projects", path: "/clubs#club-srijan-club", icon: Palette },
-      { label: "Snapshot", description: "Photography and campus stories", path: "/clubs#club-snapshot", icon: Camera },
-      { label: "Apni Pathshala Club", description: "Community learning and education", path: "/clubs#club-apni-pathshala-club", icon: BookOpen },
-      { label: "The Golden Pen Club", description: "Poetry, storytelling and writing", path: "/clubs#club-the-golden-pen-club", icon: PenTool },
+      { label: "Razzmataz", description: "Fashion, style and creative expression", path: "/clubs-new#club-razzmataz", icon: Sparkles },
+      { label: "Beat the Beats", description: "Dance, movement and performance", path: "/clubs-new#club-beat-the-beats", icon: Music },
+      { label: "Expressions", description: "Acting, production and stagecraft", path: "/clubs-new#club-expressions", icon: Mic },
+      { label: "The Manch Club", description: "Public speaking and confidence", path: "/clubs-new#club-the-manch-club", icon: Mic },
+      { label: "1090 Power Angels & The Power Super Heroes Club", description: "Social awareness and civic responsibility", path: "/clubs-new#club-1090-power-angels-the-power-super-heroes-club", icon: Shield },
+      { label: "Tech Fusion Club", description: "Technology, innovation and making", path: "/clubs-new#club-tech-fusion-club", icon: Cpu },
+      { label: "The Ozone Club", description: "Sustainability and environmental action", path: "/clubs-new#club-the-ozone-club", icon: Leaf },
+      { label: "Sur Jhankar", description: "Music and performance", path: "/clubs-new#club-sur-jhankar", icon: Music },
+      { label: "Positive Psychology", description: "Wellbeing, mindfulness and optimism", path: "/clubs-new#club-positive-psychology", icon: Heart },
+      { label: "Srijan Club", description: "Visual arts and creative projects", path: "/clubs-new#club-srijan-club", icon: Palette },
+      { label: "Snapshot", description: "Photography and campus stories", path: "/clubs-new#club-snapshot", icon: Camera },
+      { label: "Apni Pathshala Club", description: "Community learning and education", path: "/clubs-new#club-apni-pathshala-club", icon: BookOpen },
+      { label: "The Golden Pen Club", description: "Poetry, storytelling and writing", path: "/clubs-new#club-the-golden-pen-club", icon: PenTool },
     ],
     all: "Explore all clubs",
   },
