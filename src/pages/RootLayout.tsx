@@ -14,7 +14,7 @@ const RootLayout: React.FC = () => {
   const normalizedPath = normalizePath(location.pathname);
 
   const isHomeRoute =
-    normalizedPath === "/" || normalizedPath === "/new-home" || normalizedPath === "/b-tech-cse-cyber-security-new" || normalizedPath === "/insider" || normalizedPath === "/b-tech-cse-data-science-new" || normalizedPath === "/department-of-computer-science-and-engineering-new" || normalizedPath === "/b-tech-mechanical-engineering-new" || normalizedPath === "/b-tech-ece-semiconductor-design-new" || normalizedPath === "/event-new" || normalizedPath === "/program-finder-new" || normalizedPath === "/green-initiative-new" || normalizedPath === "/facilities-new" || normalizedPath === "/convocation-new" || normalizedPath === "/women-empowerment-new";
+    normalizedPath === "/" || normalizedPath === "/new-home" || normalizedPath === "/b-tech-cse-cyber-security-new" || normalizedPath === "/insider" || normalizedPath === "/b-tech-cse-data-science-new" || normalizedPath === "/department-of-computer-science-and-engineering-new" || normalizedPath === "/b-tech-mechanical-engineering-new" || normalizedPath === "/b-tech-ece-semiconductor-design-new" || normalizedPath === "/event-new" || normalizedPath === "/program-finder-new" || normalizedPath === "/green-initiative-new" || normalizedPath === "/facilities-new" || normalizedPath === "/convocation-new" || normalizedPath === "/women-empowerment-new" || normalizedPath === "/outreach-activations-new" || normalizedPath === "/student-senate-new" || normalizedPath === "/student-corner-new" || normalizedPath === "/grievance-redressal-system-new" || normalizedPath === "/clubs-new";
 
   const fallbackSeo = useMemo(
     () => getDefaultSeo(normalizedPath),

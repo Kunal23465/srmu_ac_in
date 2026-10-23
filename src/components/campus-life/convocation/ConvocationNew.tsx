@@ -24,7 +24,7 @@ export default function ConvocationNew() {
         <div className="absolute inset-0 -z-10 bg-linear-to-r from-[#071329]/95 via-[#091a38]/75 to-[#071329]/20" aria-hidden="true" />
         <div className={`${containerClass} relative z-10`}>
           <p className="mb-3 text-sm font-bold tracking-[0.18em] text-[#FFCA42] uppercase">A milestone worth celebrating</p>
-          <h1 className="max-w-[720px] text-[38px] leading-[1.08] font-bold text-white sm:text-[56px]">Honouring every <span className="text-[#FFB703]">achievement.</span></h1>
+          <h1 className="max-w-[720px] text-[32px] leading-[1.1] font-bold text-white/85 drop-shadow-md sm:text-[51px]">Honouring every <span className="text-[#FFB703]">achievement.</span></h1>
           <div className="my-5 h-[3px] w-20 rounded-full bg-[#FFB703]" aria-hidden="true" />
           <p className="max-w-[570px] text-[15px] leading-relaxed text-[#E0F1FF] sm:text-base">A celebration of dedication, discovery and the next chapter. Relive the moments from Shri Ramswaroop Memorial University’s first convocation.</p>
           <a href="#convocation-new-story" className={`${buttonClass} mt-7 rounded-lg!`}>Explore the ceremony <ArrowDown size={17} aria-hidden="true" /></a>

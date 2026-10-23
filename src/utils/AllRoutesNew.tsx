@@ -95,10 +95,15 @@ const FacilitiesNewPage = lazyPage(() => import("../pages/facilities-new/Facilit
 const WomenEmpowermentPage = lazyPage(() => import("../pages/campus-life/women-empowerment/WomenEmpowermentPage"));
 const WomenEmpowermentNewPage = lazyPage(() => import("../pages/campus-life/women-empowerment/WomenEmpowermentNewPage"));
 const StudentSenatePage = lazyPage(() => import("../pages/campus-life/student-senate/StudentSenatePage"));
+const StudentSenateNewPage = lazyPage(() => import("../pages/campus-life/student-senate/StudentSenateNewPage"));
 const StudentCornerPage = lazyPage(() => import("../pages/campus-life/student-corner/StudentCornerPage"));
+const StudentCornerNewPage = lazyPage(() => import("../pages/campus-life/student-corner/StudentCornerNewPage"));
 const OutreachActivationsPage = lazyPage(() => import("../pages/campus-life/outreach-activations/OutreachActivationsPage"));
+const OutreachActivationsNewPage = lazyPage(() => import("../pages/campus-life/outreach-activations/OutreachActivationsNewPage"));
 const ClubsPage = lazyPage(() => import("../pages/campus-life/clubs/ClubsPage"));
+const ClubsNewPage = lazyPage(() => import("../pages/campus-life/clubs/ClubsNewPage"));
 const GrievanceRedressalSystemPage = lazyPage(() => import("../pages/campus-life/grievance-redressal-system/GrievanceRedressalSystemPage"));
+const GrievanceRedressalSystemNewPage = lazyPage(() => import("../pages/campus-life/grievance-redressal-system/GrievanceRedressalSystemNewPage"));
 const EventPage = lazyPage(() => import("../pages/campus-life/events/EventPage"));
 const NewEventPage = lazyPage(() => import("../pages/event-new/new"));
 const NewProgramFinderPage = lazyPage(() => import("../pages/program-finder-new/new"));
@@ -541,6 +546,10 @@ export const routes = [
         element: <ClubsPage />,
       },
       {
+        path: "clubs-new",
+        element: <ClubsNewPage />,
+      },
+      {
         path: "convocation",
         element: <ConvocationPage />,
 
@@ -586,12 +595,24 @@ export const routes = [
         element: <StudentSenatePage />,
       },
       {
+        path: "student-senate-new",
+        element: <StudentSenateNewPage />,
+      },
+      {
         path: "student-corner",
         element: <StudentCornerPage />,
       },
       {
+        path: "student-corner-new",
+        element: <StudentCornerNewPage />,
+      },
+      {
         path: "outreach-activations",
         element: <OutreachActivationsPage />,
+      },
+      {
+        path: "outreach-activations-new",
+        element: <OutreachActivationsNewPage />,
       },
 
       {
@@ -601,6 +622,10 @@ export const routes = [
       {
         path: "campus-life/grievance-redressal-system",
         element: <GrievanceRedressalSystemPage />,
+      },
+      {
+        path: "grievance-redressal-system-new",
+        element: <GrievanceRedressalSystemNewPage />,
       },
       {
         path: "/placement-overview",

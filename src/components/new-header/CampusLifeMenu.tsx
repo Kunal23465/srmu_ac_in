@@ -18,6 +18,14 @@ const campusItems = HeaderData[0].bottomHeaderData[0].navitems.find(
           ? { ...item, path: "/green-initiative-new" }
           : item.item === "Women Empowerment"
             ? { ...item, path: "/women-empowerment-new" }
+            : item.item === "Outreach Activations"
+              ? { ...item, path: "/outreach-activations-new" }
+              : item.item === "Student Senate"
+                ? { ...item, path: "/student-senate-new" }
+                : item.item === "Student Corner"
+                  ? { ...item, path: "/student-corner-new" }
+                  : item.item === "Grievance Redressal System"
+                    ? { ...item, path: "/grievance-redressal-system-new" }
             : item);
 
 // Campus Life highlights point to the current facilities page sections and existing detail pages.
