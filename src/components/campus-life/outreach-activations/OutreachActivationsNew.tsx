@@ -89,7 +89,7 @@ export default function OutreachActivationsNew() {
     <section className={styles.hero} aria-labelledby="outreach-new-title">
       <div className={`${styles.container} ${styles.heroContent}`}>
         <div className={styles.heroCopy}>
-          <p className={styles.heroEyebrow}>Outreach activations · Learn · Serve · Grow</p>
+          {/* <p className={styles.heroEyebrow}>Outreach activations · Learn · Serve · Grow</p> */}
           <h1 id="outreach-new-title">Reaching out.<br /><span>Making a difference.</span></h1>
           <span className={styles.heroRule} aria-hidden="true" />
           <p>At SRMU, learning reaches beyond the classroom. Our students and faculty work with neighbouring communities to support education, health, dignity and opportunity.</p>

@@ -58,7 +58,7 @@ export default function StudentCornerNew() {
       <div className={styles.heroOverlay} aria-hidden="true" />
       <div className={styles.container}>
         <div className={styles.heroCopy}>
-          <p className={styles.eyebrow}>Learn · Find support · Move forward</p>
+          {/* <p className={styles.eyebrow}>Learn · Find support · Move forward</p> */}
           <h1 id="student-corner-new-title" className={styles.heroTitle}>Your student guide.<br /><span>All in one place.</span></h1>
           <div className={styles.heroRule} aria-hidden="true" />
           <p className={styles.heroText}>{StudentCornerOverviewData.content.trim()}</p>

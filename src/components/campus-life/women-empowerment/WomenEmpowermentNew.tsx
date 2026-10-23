@@ -107,7 +107,7 @@ export default function WomenEmpowermentNew() {
         <img src={empowermentImage} alt="A student on campus with a laptop" fetchPriority="high" className="absolute inset-0 -z-20 h-full w-full object-cover object-[65%_center]" />
         <div className="absolute inset-0 -z-10 bg-linear-to-r from-[#071329]/95 via-[#091a38]/75 to-[#071329]/25" aria-hidden="true" />
         <div className={`${containerClass} relative z-10`}>
-          <p className="mb-3 text-sm font-bold tracking-[0.18em] text-[#FFB703] uppercase">Educate · Empower · Lead</p>
+          {/* <p className="mb-3 text-sm font-bold tracking-[0.18em] text-[#FFB703] uppercase">Educate · Empower · Lead</p> */}
           <h1 id="women-empowerment-new-title" className="max-w-[720px] text-left text-[32px] leading-[1.1] font-bold text-white/85 drop-shadow-md md:text-[51px]">Empowering women, <span className="text-[#FFB703]">shaping futures.</span></h1>
           <div className="my-5 h-[3px] w-20 rounded-full bg-[#FFB703]" aria-hidden="true" />
           <p className="max-w-[590px] text-[15px] leading-relaxed text-[#E0F1FF] md:text-base">At SRMU, equality and opportunity are part of campus life. Through awareness, support and leadership, we help every student build confidence and realise their potential.</p>

@@ -23,7 +23,7 @@ export default function ConvocationNew() {
         <img src={ceremony.image} alt="Graduates and university dignitaries at the SRMU convocation ceremony" fetchPriority="high" className="absolute inset-0 -z-20 h-full w-full object-cover object-center" />
         <div className="absolute inset-0 -z-10 bg-linear-to-r from-[#071329]/95 via-[#091a38]/75 to-[#071329]/20" aria-hidden="true" />
         <div className={`${containerClass} relative z-10`}>
-          <p className="mb-3 text-sm font-bold tracking-[0.18em] text-[#FFCA42] uppercase">A milestone worth celebrating</p>
+          {/* <p className="mb-3 text-sm font-bold tracking-[0.18em] text-[#FFCA42] uppercase">A milestone worth celebrating</p> */}
           <h1 className="max-w-[720px] text-[32px] leading-[1.1] font-bold text-white/85 drop-shadow-md sm:text-[51px]">Honouring every <span className="text-[#FFB703]">achievement.</span></h1>
           <div className="my-5 h-[3px] w-20 rounded-full bg-[#FFB703]" aria-hidden="true" />
           <p className="max-w-[570px] text-[15px] leading-relaxed text-[#E0F1FF] sm:text-base">A celebration of dedication, discovery and the next chapter. Relive the moments from Shri Ramswaroop Memorial University’s first convocation.</p>
@@ -31,7 +31,7 @@ export default function ConvocationNew() {
         </div>
       </section>
 
-      <section className="bg-[#E0F1FF] px-4 py-5 sm:px-6 sm:py-4" aria-label="Convocation highlights">
+      <section className="hidden bg-[#E0F1FF] px-4 py-5 sm:block sm:px-6 sm:py-4" aria-label="Convocation highlights">
         <dl className="mx-auto grid w-full max-w-[1100px] grid-cols-2 gap-x-4 gap-y-5 sm:grid-cols-4">
           {highlights.map(({ value, label }) => <div key={label} className="flex min-w-0 flex-col items-center gap-1 text-center">
             <dt className="text-[10px] leading-snug font-bold tracking-wide uppercase lg:text-[11px]">{label}</dt>

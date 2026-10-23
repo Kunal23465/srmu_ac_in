@@ -102,6 +102,7 @@
 }
 
 @media (max-width: 639px) {
+  .stats { display: none; }
   .page p { text-align: left; }
   .section { padding: 40px 16px; }
   .heading { font-size: 26px; margin-bottom: 16px; }

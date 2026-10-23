@@ -112,10 +112,7 @@
   .heroOverlay { background: linear-gradient(90deg, #071329e8, #071329ad 75%, #07132985); }
   .heroTitle { font-size: 32px; }
   .heroText { font-size: 15px; }
-  .stats { padding: 20px 0; }
-  .statsGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 12px; }
-  .statValue { font-size: 30px; }
-  .statLabel { font-size: 9px; }
+  .stats { display: none; }
   .section { padding: 44px 0; }
   .heading { font-size: 28px; }
   .lead { font-size: 15px; text-align: left; }

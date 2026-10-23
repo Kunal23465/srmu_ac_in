@@ -25,7 +25,7 @@ export default function GrievanceRedressalSystemNew() {
       <div className={styles.heroOverlay} aria-hidden="true" />
       <div className={styles.container}>
         <div className={styles.heroCopy}>
-          <p className={styles.eyebrow}>Listen · Review · Resolve</p>
+          {/* <p className={styles.eyebrow}>Listen · Review · Resolve</p> */}
           <h1 id="grievance-new-title" className={styles.heroTitle}>Your concerns.<br /><span>A clear path forward.</span></h1>
           <div className={styles.heroRule} aria-hidden="true" />
           <p className={styles.heroText}>SRMU’s Student Grievance Redressal System provides a structured way to raise concerns, follow their progress and share feedback on a resolution.</p>

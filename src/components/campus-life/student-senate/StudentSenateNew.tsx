@@ -26,7 +26,7 @@ export default function StudentSenateNew() {
       <div className={styles.heroOverlay} aria-hidden="true" />
       <div className={styles.container}>
         <div className={styles.heroCopy}>
-          <p className={styles.eyebrow}>Represent · Discuss · Make a difference</p>
+          {/* <p className={styles.eyebrow}>Represent · Discuss · Make a difference</p> */}
           <h1 id="student-senate-new-title" className={styles.heroTitle}>Student voices.<br /><span>Shared responsibility.</span></h1>
           <div className={styles.heroRule} aria-hidden="true" />
           <p className={styles.heroText}>The SRMU Student Senate brings student representatives and university authorities together to discuss academic and administrative concerns and strengthen campus life.</p>
