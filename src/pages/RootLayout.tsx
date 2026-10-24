@@ -31,15 +31,30 @@ const RootLayout: React.FC = () => {
     useState(!isHomeRoute);
   const [hovered, setHovered] = useState<number | null>(null);
 
-  // Scroll to top on route change
+  // Navigate to the requested section when a route includes a hash.
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
+    if (typeof window === "undefined") return;
+    if (!location.hash) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
     }
-  }, [location]);
+
+    const targetId = decodeURIComponent(location.hash.slice(1));
+    let frame = 0;
+    let attempts = 0;
+    const scrollToTarget = () => {
+      const target = document.getElementById(targetId);
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      } else if (attempts++ < 120) {
+        frame = window.requestAnimationFrame(scrollToTarget);
+      } else {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    };
+    frame = window.requestAnimationFrame(scrollToTarget);
+    return () => window.cancelAnimationFrame(frame);
+  }, [location.pathname, location.hash]);
 
   // Right sidebar visibility
   useEffect(() => {

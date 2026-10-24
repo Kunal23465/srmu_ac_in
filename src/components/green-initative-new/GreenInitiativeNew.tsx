@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { MouseEvent } from "react";
 import { ArrowDown, ArrowUpRight, ChevronDown, Droplets, Leaf, Recycle, Sun, Trees } from "lucide-react";
+import { useLocation } from "react-router-dom";
 import {
   ecoData,
   greenInitiativeOverviewData,
@@ -47,10 +48,33 @@ const pillars = [
 
 const container = "mx-auto w-full max-w-[1320px]";
 const heading = "text-[28px] leading-[1.2] font-bold sm:text-[36px]";
+const initiativeSlug = (title: string) => title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 
 export default function GreenInitiativeNew() {
   const [category, setCategory] = useState<Category>("All initiatives");
+  const location = useLocation();
   const initiatives = ecoData.filter((item) => category === "All initiatives" || initiativeDetails[item.title].category === category);
+
+  useEffect(() => {
+    if (location.hash.startsWith("#green-initiative-")) setCategory("All initiatives");
+  }, [location.hash]);
+
+  useEffect(() => {
+    if (!location.hash.startsWith("#green-initiative-")) return;
+    let frame = 0;
+    let attempts = 0;
+    const openInitiative = () => {
+      const target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+      const details = target?.querySelector("details");
+      if (details) {
+        details.open = true;
+        return;
+      }
+      if (attempts++ < 20) frame = window.requestAnimationFrame(openInitiative);
+    };
+    frame = window.requestAnimationFrame(openInitiative);
+    return () => window.cancelAnimationFrame(frame);
+  }, [location.hash, category]);
 
   const scrollToSection = (event: MouseEvent<HTMLAnchorElement>) => {
     if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
@@ -162,7 +186,7 @@ export default function GreenInitiativeNew() {
           <p role="status" className="mb-5 text-xs text-[#4B5A72]">Showing {initiatives.length} of {ecoData.length} initiatives</p>
           <div id="initiative-results" className="grid items-start gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {initiatives.map((item) => (
-              <article key={item.title} className="group overflow-hidden rounded-2xl border border-[#DCE6F2] bg-white shadow-[0_4px_20px_#3479c906]">
+              <article id={`green-initiative-${initiativeSlug(item.title)}`} key={item.title} className="group scroll-mt-36 overflow-hidden rounded-2xl border border-[#DCE6F2] bg-white shadow-[0_4px_20px_#3479c906]">
                 <div className="relative overflow-hidden">
                   <img src={item.image} alt={item.title} width={600} height={400} loading="lazy" decoding="async" className="aspect-[3/2] w-full object-cover transition-transform duration-500 group-hover:scale-105 motion-reduce:transform-none motion-reduce:transition-none" />
                   <span className="absolute bottom-3 left-4 rounded-full bg-[#E0F1FF] px-3 py-1.5 text-[10px] font-bold text-[#0F4A85]">{initiativeDetails[item.title].category}</span>
