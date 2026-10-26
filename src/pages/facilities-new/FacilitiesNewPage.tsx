@@ -6,7 +6,7 @@ export default function FacilitiesNewPage() {
     <>
       <SeoHead
         title="Campus Facilities | Shri Ramswaroop Memorial University, Lucknow"
-        description="Explore SRMU's classrooms, laboratories, library, sports facilities, cafeteria, transportation and academic blocks."
+        description="Explore SRMU's academic blocks, smart classrooms, laboratories, central library, hostels, sports, healthcare, dining and transportation facilities."
         pathname="/facilities-new"
       />
       <FacilitiesNew />

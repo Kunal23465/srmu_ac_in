@@ -3,7 +3,7 @@ import { ArrowLeft, ArrowRight, Coffee, ImageIcon, UsersRound, Utensils } from "
 
 type DiningImage = { src: string; caption: string };
 
-export default function FacilitiesNewDining({ images }: { images: DiningImage[] }) {
+export default function FacilitiesNewDining({ images, description }: { images: DiningImage[]; description: string }) {
   const [index, setIndex] = useState(0);
   const gallery = useRef<HTMLDivElement>(null);
   const current = images[index];
@@ -57,7 +57,7 @@ export default function FacilitiesNewDining({ images }: { images: DiningImage[] 
           <div className="space-y-5 text-[15px] leading-relaxed text-[#E0E9FA] sm:text-base">
             <div className="flex items-start gap-4 sm:gap-5">
               <Coffee size={36} strokeWidth={1.5} className="mt-1 shrink-0 text-[#FFB703]" aria-hidden="true" />
-              <p>Our cafeteria and eating joints bring variety to your day. Enjoy a meal, catch up with friends or take a well-earned break between classes.</p>
+              <p>{description}</p>
             </div>
             <div className="flex items-start gap-4 sm:gap-5">
               <UsersRound size={36} strokeWidth={1.5} className="mt-1 shrink-0 text-[#FFB703]" aria-hidden="true" />

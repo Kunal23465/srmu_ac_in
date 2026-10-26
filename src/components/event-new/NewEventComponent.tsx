@@ -1,7 +1,7 @@
 import EventVideo from "./EventVideo";
 import EventSectionNav from "./EventSectionNav";
 import { useLocation } from "react-router-dom";
-import { technicalVideo, culturalVideo, sportsVideo, celebrityVideo, anubhutiVideo, dandiyaNightVideo, funDayVideo, harmonyVideo, daroharVideo, harmony2026Video, independenceDayVideo, rangBarsheVideo, pawandeepArunitaVideo, srmuDarshanVideo, shaanVideo, shilpaRaoVideo, sunnyDeolVideo, type EventVideoAsset } from "./eventVideoAssets";
+import { technicalVideo, culturalVideo, sportsVideo, celebrityVideo, anubhutiVideo, dandiyaNightVideo, funDayVideo, harmonyVideo, daroharVideo, harmony2026Video, independenceDayVideo, rangBarsheVideo, pawandeepArunitaVideo, srmuDarshanVideo, shaanVideo, shilpaRaoVideo, sunnyDeolVideo, utsaahReel, ullasReel, type EventVideoAsset } from "./eventVideoAssets";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { ArrowRight, CalendarDays, ChevronLeft, ChevronRight, Cpu, GraduationCap, Image, MapPin, Mic, Music, Palmtree, Pause, Play, Trophy, X } from "lucide-react";
 import desktopEventsBanner from "../../assets/images/event-new/Events-Banner.webp";
@@ -52,6 +52,8 @@ const categories = [
 ];
 const exploreReels = [
   ...categories.filter(({ reelVideo }) => !!reelVideo),
+  { name: "Utsaah", title: "Utsaah", Icon: Trophy, description: "Energy, teamwork and competition at Utsaah.", reelVideo: utsaahReel },
+  { name: "Ullas", title: "Ullas", Icon: Trophy, description: "Highlights from the university's sporting event, Ullas.", reelVideo: ullasReel },
   { name: "Dharohar", title: "Dharohar", Icon: Music, description: "Celebrating India’s rich cultural heritage, traditions, and artistic expression through vibrant performances.", reelVideo: daroharVideo },
   { name: "Harmony", title: "Harmony", Icon: Music, description: "Bringing the campus alive with music, dance, and performances that unite diverse talents.", reelVideo: harmony2026Video },
 ];
@@ -340,11 +342,34 @@ export default function NewEventComponent() {
   const [detail, setDetail] = useState<Detail | null>(null);
   const [showAllMonthEvents, setShowAllMonthEvents] = useState(false);
   const [activePanel, setActivePanel] = useState("Special");
+  const explorePanelsRef = useRef<HTMLDivElement>(null);
+  const pauseExploreScroll = useRef(false);
   const [activeSport, setActiveSport] = useState(0);
   const [sportsMeet, setSportsMeet] = useState("Utsaah");
   const [newsPaused, setNewsPaused] = useState(false);
   const [activeNewsIndex, setActiveNewsIndex] = useState(0);
   const dialog = useRef<HTMLDialogElement>(null);
+
+  useEffect(() => {
+    const panels = explorePanelsRef.current;
+    if (!panels || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    let isVisible = false;
+    const visibilityObserver = new IntersectionObserver(([entry]) => { isVisible = entry.isIntersecting; }, { threshold: 0.1 });
+    visibilityObserver.observe(panels);
+    const timer = window.setInterval(() => {
+      if (!isVisible || pauseExploreScroll.current) return;
+      const viewportLeft = panels.getBoundingClientRect().left;
+      const firstPanel = Array.from(panels.children).map((item) => item as HTMLElement).find((item) => item.getBoundingClientRect().right > viewportLeft + 1);
+      const step = (firstPanel?.getBoundingClientRect().width ?? 0) + 10;
+      if (!step) return;
+      const atEnd = panels.scrollLeft + panels.clientWidth >= panels.scrollWidth - 8;
+      panels.scrollTo({ left: atEnd ? 0 : panels.scrollLeft + step, behavior: "smooth" });
+    }, 3200);
+    return () => {
+      window.clearInterval(timer);
+      visibilityObserver.disconnect();
+    };
+  }, []);
 
   useEffect(() => {
     if (!location.hash) return;
@@ -458,9 +483,13 @@ export default function NewEventComponent() {
       </Section>
 
       <Section id="categories" title="Explore Events at SRMU" description="From academic conferences and technical competitions to cultural celebrations and sporting events, explore the diverse events conducted across the university." alternate className="!pt-6 min-[861px]:!pt-10">
-        <div className={styles.explorePanels}>
+        <div ref={explorePanelsRef} className={styles.explorePanels} role="region" aria-label="Explore event categories" tabIndex={0}
+          onPointerEnter={() => { pauseExploreScroll.current = true; }}
+          onPointerLeave={() => { pauseExploreScroll.current = false; }}
+          onFocusCapture={() => { pauseExploreScroll.current = true; }}
+          onBlurCapture={(event) => { if (!event.currentTarget.contains(event.relatedTarget as Node | null)) pauseExploreScroll.current = false; }}>
           {exploreReels.map(({ name, title, Icon, description, reelVideo }) => (
-            <a key={name} href={`#${categories.find(category => category.name === name)?.id ?? "cultural-events"}`}
+            <a key={name} href={`#${name === "Utsaah Reel" || name === "Ullas Reel" ? "sports-events" : categories.find(category => category.name === name)?.id ?? "cultural-events"}`}
               className={styles.explorePanel} data-active={activePanel === name}
               onMouseEnter={() => setActivePanel(name)} onFocus={() => setActivePanel(name)}>
               {reelVideo && <EventVideo {...reelVideo} poster={exploreThumbnails[name] ?? reelVideo.poster} showPosterUntilPlaying className={styles.panelMedia} />}

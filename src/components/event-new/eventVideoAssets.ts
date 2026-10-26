@@ -34,6 +34,10 @@ import shilpaRaoVideoSrc from "../../assets/video/events-new/optimized/celebrity
 import shilpaRaoVideoPoster from "../../assets/video/events-new/optimized/celebrity/Shilpa Rao.webp";
 import sunnyDeolVideoSrc from "../../assets/video/events-new/optimized/celebrity/sunny deol.mp4";
 import sunnyDeolVideoPoster from "../../assets/video/events-new/optimized/celebrity/sunny deol.webp";
+import utsaahReelSrc from "../../assets/video/events-new/new-one/Utsaah_FF.mp4";
+import utsaahReelPoster from "../../assets/video/events-new/optimized/Sports.webp";
+import ullasReelSrc from "../../assets/video/events-new/new-one/Ullas-F.mp4";
+import ullasReelPoster from "../../assets/images/event-new/thumbnails/Ullas.webp";
 
 export type EventVideoAsset = { src: string; poster: string };
 
@@ -54,6 +58,8 @@ export const srmuDarshanVideo: EventVideoAsset = { src: srmuDarshanVideoSrc, pos
 export const shaanVideo: EventVideoAsset = { src: shaanVideoSrc, poster: shaanVideoPoster };
 export const shilpaRaoVideo: EventVideoAsset = { src: shilpaRaoVideoSrc, poster: shilpaRaoVideoPoster };
 export const sunnyDeolVideo: EventVideoAsset = { src: sunnyDeolVideoSrc, poster: sunnyDeolVideoPoster };
+export const utsaahReel: EventVideoAsset = { src: utsaahReelSrc, poster: utsaahReelPoster };
+export const ullasReel: EventVideoAsset = { src: ullasReelSrc, poster: ullasReelPoster };
 
 
 

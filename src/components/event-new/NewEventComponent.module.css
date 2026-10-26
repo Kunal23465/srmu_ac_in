@@ -483,15 +483,17 @@ color: #fff;
 .newsControls button { display: grid; place-items: center; width: 34px; height: 34px; border: 1px solid #E0F1FF; border-radius: 50%; color: #fff; }
 .newsControls button:hover { background: #0F4A85; }
 
-.explorePanels { display: flex; flex-direction: column; gap: 10px; height: 760px; }
-.explorePanel { position: relative; isolation: isolate; flex: 1; min-height: 0; overflow: hidden; border-radius: 18px; background: #14284E; color: #fff; transition: flex .55s ease; }
-.explorePanel[data-active="true"] { flex: 3.4; }
+.explorePanels { display: flex; flex-direction: row; gap: 10px; height: 340px; overflow-x: auto; overflow-y: hidden; overscroll-behavior-x: contain; scroll-behavior: smooth; scroll-snap-type: x mandatory; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+.explorePanels::-webkit-scrollbar { display: none; }
+.explorePanel { position: relative; isolation: isolate; flex: 0 0 140px; min-width: 0; min-height: 0; overflow: hidden; border-radius: 18px; background: #14284E; color: #fff; scroll-snap-align: start; transition: flex-basis .55s ease; }
+.explorePanel[data-active="true"] { flex-basis: 280px; }
 .panelMedia { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .explorePanel::after, .technicalCard::after, .videoCard::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(0deg, rgb(20 40 78 / 95%), rgb(20 40 78 / 12%) 70%, transparent); }
 .panelIcon { position: absolute; top: 16px; left: 16px; z-index: 1; display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: rgb(20 40 78 / 65%); }
 .panelCopy { position: absolute; z-index: 1; bottom: 18px; left: 18px; right: 18px; text-transform: none; }
 .panelCopy p { max-height: 0; overflow: hidden; opacity: 0; font-size: .86rem; color: #E0F1FF; transition: opacity .3s, max-height .3s; }
 .explorePanel[data-active="true"] .panelCopy p { max-height: 130px; opacity: 1; margin-top: 8px; }
+
 
 .academicSection { position: relative; isolation: isolate; overflow: hidden; background: #FFB703; }
 .academicSection::before { content: ""; position: absolute; z-index: -1; width: 280px; height: 280px; right: -90px; top: -90px; border: 28px solid #D62C2B; border-radius: 50%; }
@@ -609,8 +611,9 @@ button.calendarDay { box-shadow: 0 5px 12px rgb(20 40 78 / 12%); }
 @media (min-width: 861px) {
 .newsFeature { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); min-height: 472px; }
 .newsImage { min-height: 0; }
-.explorePanels { flex-direction: row; height: 500px; }
-.explorePanel { min-width: 0; }
+.explorePanels { height: 500px; }
+.explorePanel { flex-basis: 160px; }
+.explorePanel[data-active="true"] { flex-basis: 430px; }
 .academicGrid { gap: 26px; }
 .academicCard { flex-basis: calc((100% - 52px) / 3); }
 .academicCard .cardImage { aspect-ratio: 1; }
