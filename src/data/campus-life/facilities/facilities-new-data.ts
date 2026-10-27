@@ -24,8 +24,10 @@ import football from "../../../assets/images/campus-life/facilities/football-221
 import b1 from "../../../assets/images/campus-life/facilities/b-1.jpeg";
 import b2 from "../../../assets/images/campus-life/facilities/b-2.jpeg";
 import b3 from "../../../assets/images/campus-life/facilities/b-3.jpeg";
+import girlsHostel from "../../../assets/images/hostel/girls-hostel.webp";
+import boysHostel from "../../../assets/images/hostel/boys-hostel.webp";
 
-const healthcareAndMedicalFacilities = "The campus's healthcare arrangements help students access assistance when required and support a learning environment that considers physical well-being alongside academic development. Students should contact the university's designated medical facility or administration for information about available services, operating hours, and emergency procedures.";
+const healthcareAndMedicalFacilities = "SRMU’s healthcare facilities support students’ well-being by providing access to medical assistance when needed. Students can contact the university administration for service details and emergency procedures.";
 
 export const facilitiesNewPageCopy = {
   hero: "Explore the classrooms, laboratories, library, hostels, sports and everyday support facilities that make up campus life at SRMU on Lucknow–Deva Road.",
@@ -92,15 +94,14 @@ export const facilitiesNewPageCopy = {
   essentials: [
     { id: "healthcare", title: "Healthcare", text: healthcareAndMedicalFacilities },
     { id: "banking", title: "Banking", text: "Banking facilities help students manage routine financial requirements, including access to cash and other services offered by the relevant banking provider." },
-    { id: "laundry", title: "Laundry Facilities", text: "Laundry arrangements for students’ everyday clothing and personal needs are subject to the services currently provided." },
-    { id: "hostel", title: "Hostel accommodation", text: "Explore Gargi Girls Hostel and Tygore Boys Hostel, residential facilities for eligible students and research scholars." },
-    { id: "transport", title: "Transport, fees & routes", text: "Check published bus routes, pickup points and departure timings." },
+    { id: "hostel", title: "Hostel Accommodation", text: "Explore Gargi Girls Hostel and Tygore Boys Hostel, residential facilities for eligible students and research scholars." },
+    { id: "transport", title: "Transport, Fees & Routes", text: "Check published bus routes, pickup points and departure timings." },
   ],
   hostels: {
     introduction: "SRMU offers residential accommodation through Gargi Girls Hostel (GGH) and Tygore Boys Hostel (TBH). The university describes its hostels as residential facilities for full-time graduate and postgraduate students, as well as research scholars pursuing PhD programs.",
     residences: [
-      { title: "Gargi Girls Hostel", short: "GGH", text: "Residential accommodation for eligible female students of SRMU, supporting academic routines, everyday needs and participation in university life." },
-      { title: "Tygore Boys Hostel", short: "TBH", text: "Residential accommodation for eligible male students of SRMU who prefer to live on campus while pursuing their academic programs." },
+      { title: "Gargi Girls Hostel", image: girlsHostel, text: "Residential accommodation for eligible female students of SRMU, supporting academic routines, everyday needs and participation in university life." },
+      { title: "Tygore Boys Hostel", image: boysHostel, text: "Residential accommodation for eligible male students of SRMU who prefer to live on campus while pursuing their academic programs." },
     ],
     amenities: [
       "AC room options, subject to current room categories and availability",

@@ -1,7 +1,7 @@
 import { useEffect, useState, useSyncExternalStore } from "react";
 import type { MouseEventHandler } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { ArrowUpRight, BedDouble, Bus, HeartPulse, Landmark, WashingMachine } from "lucide-react";
+import { ArrowUpRight, BedDouble, Bus, HeartPulse, Landmark } from "lucide-react";
 import { facilitiesNewPageCopy } from "../../data/campus-life/facilities/facilities-new-data";
 import styles from "./FacilitiesNewLiving.module.css";
 
@@ -9,17 +9,16 @@ type SectionNavigation = MouseEventHandler<HTMLAnchorElement>;
 const essentials = [
   { id: "healthcare", title: "Healthcare", text: facilitiesNewPageCopy.healthcareAndMedicalFacilities, icon: HeartPulse, to: "/facilities-new#facilities-new-facility-10", link: "Explore healthcare" },
   { id: "banking", title: "Banking", text: "On-campus banking facilities help with routine financial needs, including access to cash and other provider services.", icon: Landmark, to: "#facilities-new-hostels", link: "View residential services" },
-  { id: "laundry", title: "Laundry facilities", text: "Laundry arrangements are listed among hostel amenities; confirm current service details with hostel administration.", icon: WashingMachine, to: "#facilities-new-hostels", link: "View hostel amenities" },
-  { id: "hostel", title: "Hostel accommodation", text: "Explore residential options, amenities and information for students and research scholars.", icon: BedDouble, to: "#facilities-new-hostels", link: "Explore the hostels" },
-  { id: "transport", title: "Transport, fees & routes", text: "Check published bus routes, pickup points and departure timings.", icon: Bus, to: facilitiesNewPageCopy.busRoutesAndTimings.url, link: "View transport routes" },
+  { id: "hostel", title: "Hostel Accommodation", text: "Explore residential options, amenities and information for students and research scholars.", icon: BedDouble, to: "#facilities-new-hostels", link: "Explore the hostels" },
+  { id: "transport", title: "Transport, Fees & Routes", text: "Check published bus routes, pickup points and departure timings.", icon: Bus, to: facilitiesNewPageCopy.busRoutesAndTimings.url, link: "View transport routes" },
 ];
 type Essential = (typeof essentials)[number];
 const amenityGroups = [
-  { id: "comfort", label: "Rooms and comfort" },
-  { id: "study", label: "Study and recreation" },
-  { id: "safety", label: "Safety and security" },
-  { id: "health", label: "Food and health" },
-  { id: "services", label: "Services and guests" },
+  { id: "comfort", label: "Rooms and Comfort" },
+  { id: "study", label: "Study and Recreation" },
+  { id: "safety", label: "Safety and Security" },
+  { id: "health", label: "Food and Health" },
+  { id: "services", label: "Services and Guests" },
 ] as const;
 type AmenityGroup = (typeof amenityGroups)[number]["id"];
 // These categories follow the existing amenities data, without shortening its conditions.
@@ -64,7 +63,7 @@ export default function FacilitiesNewLiving({ onSectionNavigate }: { onSectionNa
     <>
       <section id="facilities-new-essentials" tabIndex={-1} className={`${styles.section} ${styles.essentials}`} aria-labelledby="facilities-new-essentials-title">
         <div className={styles.container}>
-          <h2 id="facilities-new-essentials-title" className={styles.heading}>Everyday <span>essentials.</span></h2>
+          <h2 id="facilities-new-essentials-title" className={styles.heading}>Everyday <span>Essentials.</span></h2>
           <div className={styles.serviceLayout}>
             <ul className={styles.serviceList}>
               {essentials.map((item) => {
@@ -94,20 +93,20 @@ export default function FacilitiesNewLiving({ onSectionNavigate }: { onSectionNa
 
       <section id="facilities-new-hostels" tabIndex={-1} className={`${styles.section} ${styles.hostels}`} aria-labelledby="facilities-new-hostels-title">
         <div className={styles.container}>
-          <h2 id="facilities-new-hostels-title" className={styles.heading}>Residential life <span>at SRMU.</span></h2>
+          <h2 id="facilities-new-hostels-title" className={styles.heading}>Residential Life <span>at SRMU.</span></h2>
           <p className={styles.introduction}>{hostels.introduction}</p>
           <div className={styles.residences}>
-            {hostels.residences.map((hostel, index) => <article key={hostel.short} className={`${styles.residence} ${index === 0 ? styles.girls : styles.boys}`}>
-              <span className={styles.monogram} aria-hidden="true">{hostel.short}</span>
+            {hostels.residences.map((hostel, index) => <article key={hostel.title} className={`${styles.residence} ${index === 0 ? styles.girls : styles.boys}`}>
+              <img className={styles.residenceImage} src={hostel.image} alt={`${hostel.title} building`} width={1365} height={768} loading="lazy" decoding="async" />
               <h3>{hostel.title}</h3>
               <p>{hostel.text}</p>
             </article>)}
           </div>
 
           <div className={styles.amenities}>
-            <h3>Hostel amenities and support</h3>
+            <h3>Hostel Amenities and Support</h3>
             <div className={styles.legend} role="group" aria-label="Highlight hostel amenities by group">
-              <button type="button" className={styles.all} aria-pressed={highlightedGroup === null} aria-controls="hostel-amenities-list" onClick={() => setHighlightedGroup(null)}>All amenities</button>
+              <button type="button" className={styles.all} aria-pressed={highlightedGroup === null} aria-controls="hostel-amenities-list" onClick={() => setHighlightedGroup(null)}>All Amenities</button>
               {amenityGroups.map((group) => <button key={group.id} type="button" className={styles[group.id]} aria-pressed={highlightedGroup === group.id} aria-controls="hostel-amenities-list" onClick={() => setHighlightedGroup((current) => current === group.id ? null : group.id)}>{group.label}</button>)}
             </div>
             <ul id="hostel-amenities-list" className={styles.cloud}>
@@ -121,18 +120,18 @@ export default function FacilitiesNewLiving({ onSectionNavigate }: { onSectionNa
         <div className={styles.container}>
           <div className={styles.support}>
             <section aria-labelledby="facilities-new-committees-title">
-              <h3 id="facilities-new-committees-title" className={styles.supportHeading}>Residential committees</h3>
+              <h3 id="facilities-new-committees-title" className={styles.supportHeading}>Residential <span>Committees</span></h3>
               <p className={styles.supportLead}>{hostels.administration}</p>
               <div className={styles.tree} role="group" aria-label="Hostel administration structure">
                 <div className={styles.treeRoot}>
-                  <h4>Hostel administration</h4>
+                  <h4>Hostel Administration</h4>
                   <ul className={styles.roles} aria-label="Residential staff roles">
                     <li>Chief warden</li><li>Wardens</li><li>Supporting residential staff</li>
                   </ul>
                 </div>
                 <div className={styles.treeBranch}>
                   <div className={styles.committeeIntro}>
-                    <h4>Student committees</h4>
+                    <h4>Student Committees</h4>
                     <p>Support hostel administration and resident engagement.</p>
                   </div>
                   <ul className={styles.committeeList}>
@@ -142,7 +141,7 @@ export default function FacilitiesNewLiving({ onSectionNavigate }: { onSectionNa
               </div>
             </section>
             <section aria-labelledby="facilities-new-outings-title">
-              <h3 id="facilities-new-outings-title" className={styles.supportHeading}>Outings and accommodation information</h3>
+              <h3 id="facilities-new-outings-title" className={`${styles.supportHeading} ${styles.singleLineHeading}`}>Outings and <span>Accommodation Information</span></h3>
               <div className={styles.route} aria-hidden="true">
                 <span className={styles.routeStop}>Hostel</span>
                 <span className={styles.routeLine}><Bus size={30} strokeWidth={1.8} /></span>

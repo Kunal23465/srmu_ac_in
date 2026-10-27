@@ -48,7 +48,7 @@ const highlights: Record<string, HighlightSection> = {
         children: [
           { label: "AC class", description: "Explore air-conditioned hostel accommodation", path: "/hostel", icon: Building2 },
           { label: "Banking", description: "Banking and ATM facilities on campus", path: "/facilities-new#facilities-new-essentials-banking", icon: Landmark },
-          { label: "Laundry Facilities", description: "Laundry support for campus residents", path: "/facilities-new#facilities-new-essentials-laundry", icon: WashingMachine },
+          { label: "Laundry Facilities", description: "Laundry support for campus residents", path: "/facilities-new#facilities-new-hostels", icon: WashingMachine },
           { label: "Sports Stadium", description: "Explore sports and recreation facilities", path: "/facilities-new#facilities-new-sports", icon: Dumbbell },
         ],
       },

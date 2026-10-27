@@ -10,7 +10,7 @@
   isolation: isolate;
   overflow: hidden;
   scroll-margin-top: 9rem;
-  padding: 34px 24px 38px;
+  padding: 12px 24px 16px;
   background: radial-gradient(ellipse at 67% 42%, color-mix(in srgb, var(--library-ice) 65%, white) 0%, color-mix(in srgb, var(--library-ice) 35%, white) 48%, color-mix(in srgb, var(--library-ice) 15%, white) 100%);
   color: var(--library-navy);
   outline: none;
@@ -30,14 +30,14 @@
 .dots { width: 92px; height: 82px; background-image: radial-gradient(circle, color-mix(in srgb, var(--library-cyan) 25%, var(--library-ice)) 2.3px, transparent 2.8px); background-size: 24px 22px; opacity: .8; }
 .leftDots { top: 55%; left: 3.2%; }
 .bottomDots { bottom: 20px; right: 17%; opacity: .5; }
-.layout { position: relative; display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr); grid-template-areas: "content visual" "actions visual"; align-items: center; gap: 13px 70px; max-width: 1280px; margin: 0 auto; }
+.layout { position: relative; display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, .7fr); grid-template-areas: "heading heading" "content visual" "databases databases" "actions actions"; align-items: start; gap: 18px 70px; max-width: 1280px; margin: 0 auto; }
+.headingArea { grid-area: heading; min-width: 0; }
 .content { grid-area: content; min-width: 0; position: relative; z-index: 1; }
-.accent { display: flex; gap: 5px; margin-bottom: 12px; }
-.accent span { width: 38px; height: 6px; border-radius: 10px; background: var(--library-yellow); }
-.accent span + span { background: var(--library-cyan); }
+.databases { grid-area: databases; max-width: none; }
 .heading h2 { margin: 0 0 8px; font-size: 24px; line-height: 1.2; font-weight: 700; }
 .heading h2 > span { color: var(--library-yellow); }
 .introduction, .materials, .databases { color: var(--library-blue); font-size: 15px; line-height: 1.625; }
+.headingArea .introduction { max-width: none; margin-top: 0; }
 .collections { display: grid; grid-template-columns: 1.07fr 1fr 1fr; gap: 15px; margin: 13px 0 14px; }
 .navy { --icon-color: var(--library-blue); --card-color: var(--library-ice); }
 .blue { --icon-color: var(--library-cyan); --card-color: color-mix(in srgb, var(--library-ice) 50%, white); }
@@ -56,7 +56,7 @@
 .actions a { display: inline-flex; align-items: center; justify-content: center; gap: 16px; min-height: 47px; padding: 12px 24px; border: 1px solid transparent; border-radius: 999px; color: var(--library-blue); font-size: 12px; font-weight: 700; line-height: 1.4; text-transform: uppercase; text-decoration: none; transition: transform .25s ease, box-shadow .25s ease, background .25s ease; }
 .actions .primaryButton { background: var(--library-yellow); box-shadow: 0 5px 12px color-mix(in srgb, var(--library-yellow) 15%, transparent); }
 .actions .secondaryButton { border-color: var(--library-blue); background: #ffffffa6; }
-.visual { grid-area: visual; position: relative; isolation: isolate; min-width: 0; margin: 30px 0; }
+.visual { grid-area: visual; position: relative; isolation: isolate; justify-self: end; align-self: center; width: 100%; max-width: 460px; min-width: 0; margin: 0; }
 .navyShape { width: 170px; height: 140px; top: -24px; left: -24px; border-radius: 55px 35px 50px 28px; transform: rotate(5deg); background: linear-gradient(135deg, var(--library-navy), var(--library-blue)); }
 .yellowShape { width: 205px; height: 205px; top: -39px; right: -44px; border-radius: 50%; background: var(--library-yellow); }
 .photoDots { top: -48px; right: 98px; }
@@ -95,8 +95,8 @@
   .photo figcaption > span { padding-left: 12px; }
 }
 @media (max-width: 1023px) {
-  .section { padding: 36px 24px 48px; }
-  .layout { grid-template-columns: minmax(0, 1fr); grid-template-areas: "content" "visual" "actions"; gap: 32px; max-width: 680px; }
+  .section { padding: 18px 24px 22px; }
+  .layout { grid-template-columns: minmax(0, 1fr); grid-template-areas: "heading" "content" "visual" "databases" "actions"; gap: 32px; max-width: 680px; }
   .visual { width: calc(100% - 32px); max-width: 560px; margin: 20px auto 0; }
   .actions { width: 100%; max-width: 560px; justify-self: center; justify-content: center; }
   .actions .secondaryButton { background: white; }
@@ -104,7 +104,7 @@
   .collection { gap: 13px; padding: 14px; }
 }
 @media (max-width: 639px) {
-  .section { padding: 32px 16px; }
+  .section { padding: 16px 16px 20px; }
   .topCircle, .topRing, .bottomCircle, .bottomRing, .yellowRing, .leftDots, .bottomDots { display: none; }
   .layout { gap: 24px; }
   .heading h2 { margin-bottom: 12px; }

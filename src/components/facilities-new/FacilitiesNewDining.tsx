@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { ArrowLeft, ArrowRight, Coffee, ImageIcon, UsersRound, Utensils } from "lucide-react";
+import { ArrowLeft, ArrowRight, Coffee, ImageIcon, UsersRound } from "lucide-react";
 
 type DiningImage = { src: string; caption: string };
 
@@ -8,20 +8,12 @@ export default function FacilitiesNewDining({ images, description }: { images: D
   const gallery = useRef<HTMLDivElement>(null);
   const current = images[index];
 
-  const exploreGallery = () => {
-    gallery.current?.scrollIntoView({
-      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth",
-      block: "nearest",
-    });
-    gallery.current?.focus({ preventScroll: true });
-  };
-
   return (
     <section
       id="facilities-new-dining"
       tabIndex={-1}
       aria-labelledby="facilities-new-dining-title"
-      className="relative isolate scroll-mt-36 overflow-hidden bg-linear-to-br from-[#081B40] via-[#0B214B] to-[#081A3D] px-4 py-10 text-white outline-none sm:px-6 sm:py-14 lg:py-16"
+      className="relative isolate scroll-mt-36 overflow-hidden bg-linear-to-br from-[#081B40] via-[#0B214B] to-[#081A3D] px-4 py-8 text-white outline-none sm:px-6 sm:py-10 lg:py-10"
     >
       {/* Decorative shapes stay behind the content and never intercept controls. */}
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
@@ -44,14 +36,14 @@ export default function FacilitiesNewDining({ images, description }: { images: D
         </svg>
       </div>
 
-      <div className="mx-auto grid w-full max-w-[1536px] items-center gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-12 xl:gap-16">
-        <div className="min-w-0 lg:pb-12">
+      <div className="mx-auto grid w-full max-w-[1280px] items-start gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-10 xl:gap-12">
+        <div className="min-w-0">
           {/* <p className="mb-5 flex items-center gap-3 text-[11px] font-bold tracking-[0.12em] text-[#FFB703] uppercase sm:text-sm">
             <span className="h-0.5 w-10 shrink-0 bg-[#FFB703]" aria-hidden="true" />
             Good food. Great company.
           </p> */}
           <h2 id="facilities-new-dining-title" className="mb-7 text-[24px] leading-[1.2] font-bold tracking-tight text-white sm:text-[36px]">
-            A place to pause <span className="text-[#FFB703]">&amp; <span className="font-bold">connect.</span></span>
+            A Place to Pause <span className="text-[#FFB703]">&amp; <span className="font-bold">Connect.</span></span>
           </h2>
 
           <div className="space-y-5 text-[15px] leading-relaxed text-[#E0E9FA] sm:text-base">
@@ -65,19 +57,20 @@ export default function FacilitiesNewDining({ images, description }: { images: D
             </div>
           </div>
 
+          {/* Temporarily hidden cafeteria gallery CTA.
           <div className="mt-6 w-fit border-t border-[#7895D0]/30 pt-5">
             <button
               type="button"
-              onClick={exploreGallery}
               aria-controls="facilities-new-dining-gallery"
               aria-label="Explore cafeteria and eating joints photos"
               className="inline-flex min-h-14 items-center gap-3 rounded-full bg-[#1A3270] py-2.5 pr-6 pl-4 text-[13px] font-semibold text-white focus-visible:outline-[#FFB703]! sm:gap-4 sm:text-sm"
             >
               <span className="grid size-9 shrink-0 place-items-center rounded-full bg-[#FFB703] text-[#10244E]"><Utensils size={23} aria-hidden="true" /></span>
-              Cafeteria &amp; eating joints
+              Cafeteria &amp; Eating Joints
               <ArrowRight size={20} className="ml-1 shrink-0" aria-hidden="true" />
             </button>
           </div>
+          */}
         </div>
 
         <div
@@ -96,14 +89,14 @@ export default function FacilitiesNewDining({ images, description }: { images: D
             <figcaption className="absolute inset-x-0 bottom-0 flex min-h-18 items-center gap-3 rounded-t-2xl border-t border-[#7994CB]/25 bg-[#091C40]/90 px-4 py-3 backdrop-blur-sm sm:gap-5 sm:px-6 sm:py-4" aria-live="polite" aria-atomic="true">
               <ImageIcon size={30} strokeWidth={1.6} className="shrink-0 text-[#FFB703]" aria-hidden="true" />
               <div className="min-w-0 flex-1">
-                <p className="text-[13px] font-semibold text-white sm:text-base">Cafeteria &amp; eating joints</p>
+                <p className="text-[13px] font-semibold text-white sm:text-base">Cafeteria &amp; Eating Joints</p>
                 <p className="mt-1 text-xs text-[#B8C8E6] sm:text-sm">View {index + 1} of {images.length}</p>
               </div>
               <span className="shrink-0 rounded-full border border-[#607CB7]/45 px-3 py-1 text-xs font-semibold text-[#FFB703] sm:px-5 sm:text-sm">{index + 1} / {images.length}</span>
             </figcaption>
           </figure>
 
-          <div className="mt-5 flex items-center justify-between gap-3 px-1">
+          <div className="mt-3 flex items-center justify-between gap-3 px-1">
             <button type="button" aria-label="Previous cafeteria photo" onClick={() => setIndex((index + images.length - 1) % images.length)} className="grid size-12 shrink-0 place-items-center rounded-full bg-white text-[#10244E] focus-visible:outline-[#FFB703]! sm:size-13">
               <ArrowLeft size={24} aria-hidden="true" />
             </button>

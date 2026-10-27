@@ -43,13 +43,14 @@ export default function FacilitiesNewLibrary() {
       </div>
 
       <div className={styles.layout}>
-        <div className={styles.content}>
+        <div className={styles.headingArea}>
           <div className={`${styles.heading} ${styles.reveal}`}>
-            <div className={styles.accent} aria-hidden="true"><span /><span /></div>
             <h2 id="facilities-new-library-title">The Central <span>Library.</span></h2>
           </div>
           <p className={`${styles.introduction} ${styles.reveal}`} style={stagger(60)}>{library.introduction} Its physical and digital collections include:</p>
+        </div>
 
+        <div className={styles.content}>
           <dl className={styles.collections}>
             {library.collections.map(({ value, label }, index) => {
               const Icon = collectionIcons[index];
@@ -74,7 +75,6 @@ export default function FacilitiesNewLibrary() {
               );
             })}
           </ul>
-          <p className={styles.databases}>{library.databases}</p>
         </div>
 
         <div className={`${styles.visual} ${styles.reveal}`} style={stagger(220)}>
@@ -89,6 +89,7 @@ export default function FacilitiesNewLibrary() {
             <figcaption><BookOpen size={27} strokeWidth={1.8} aria-hidden="true" /><span>Physical collections and digital resources for every stage of learning.</span></figcaption>
           </figure>
         </div>
+        <p className={`${styles.databases} ${styles.reveal}`} style={stagger(430)}>{library.databases}</p>
         <div className={`${styles.actions} ${styles.reveal}`} style={stagger(500)}>
           <a className={styles.primaryButton} href={library.webOpacUrl} target="_blank" rel="noreferrer">Open Web OPAC <ArrowUpRight size={16} aria-hidden="true" /></a>
           <a className={styles.secondaryButton} href={library.remoteAccessUrl} target="_blank" rel="noreferrer">Remote library access <ArrowUpRight size={16} aria-hidden="true" /></a>

@@ -4,7 +4,7 @@
   --ice: #E0F1FF;
   --gold: #FFB703;
   overflow: hidden;
-  padding: 48px 0 56px;
+  padding: 32px 0 36px;
   scroll-margin-top: 9rem;
   background: var(--navy);
   color: white;
@@ -13,7 +13,6 @@
 
 .container { min-width: 0; }
 .intro {
-  max-width: 52ch;
   margin: 22px 0 0;
   color: var(--ice);
   font-size: 15px;
@@ -21,7 +20,7 @@
 }
 
 .caption {
-  margin: 36px 0 6px;
+  margin: 28px 0 6px;
   color: var(--gold);
   font-size: 14px;
   font-weight: 700;
@@ -33,7 +32,7 @@
   grid-template-columns: minmax(0, 1fr);
   gap: 32px;
   align-items: start;
-  margin-top: 28px;
+  margin-top: 20px;
 }
 
 .activities { min-width: 0; }
@@ -41,8 +40,6 @@
 
 .row {
   overflow: hidden;
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
 }
 
 .row:focus-visible {
@@ -115,14 +112,14 @@
 .more {
   display: grid;
   gap: 20px;
-  margin-top: 44px;
-  padding-top: 24px;
+  margin-top: 28px;
+  padding-top: 18px;
   border-top: 1px solid color-mix(in srgb, var(--ice) 28%, transparent);
 }
 
 .more p {
   margin: 0;
-  max-width: 70ch;
+  max-width: none;
   color: var(--ice);
   font-size: 14px;
   line-height: 1.65;
@@ -140,15 +137,7 @@
   border: 1px solid color-mix(in srgb, var(--ice) 24%, transparent);
   border-radius: 18px;
   background: var(--blue);
-}
-
-.slide::after {
-  position: absolute;
-  z-index: 0;
-  inset: 30% 0 0;
-  background: linear-gradient(180deg, transparent, color-mix(in srgb, var(--navy) 88%, transparent));
-  content: "";
-  pointer-events: none;
+  box-shadow: none;
 }
 
 .slide img {
@@ -156,6 +145,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  box-shadow: none;
   animation: sportsPhotoReveal .45s cubic-bezier(.2,.8,.2,1) both;
   transition: transform .7s cubic-bezier(.2,.8,.2,1), filter .5s ease;
 }
@@ -170,6 +160,9 @@
   align-items: end;
   justify-content: space-between;
   gap: 8px;
+  padding: 10px 14px;
+  border-radius: 10px 10px 0 0;
+  background: color-mix(in srgb, var(--navy) 86%, transparent);
   color: white;
   font-size: 14px;
   font-weight: 700;
@@ -203,7 +196,7 @@
 }
 
 @media (min-width: 640px) {
-  .section { padding-top: 56px; padding-bottom: 64px; }
+  .section { padding-top: 36px; padding-bottom: 40px; }
   .intro { font-size: 16px; }
 }
 
@@ -213,24 +206,19 @@
 }
 
 @media (max-width: 639px) {
-  .section { padding-top: 36px; padding-bottom: 44px; }
-  .caption { margin-top: 28px; }
+  .section { padding-top: 24px; padding-bottom: 28px; }
+  .caption { margin-top: 22px; }
   .group li { font-size: clamp(2.5rem, 12vw, 4rem); }
-  .more { margin-top: 32px; padding-top: 20px; }
+  .more { margin-top: 24px; padding-top: 16px; }
   .dots { gap: 0; }
   .dots button { width: 18px; }
-}
-
-@media (min-width: 1200px) {
-  .more { grid-template-columns: 1fr 1.15fr; gap: 32px; }
-  .more p:first-child { font-size: 15px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .track { width: auto; flex-wrap: wrap; animation: none; will-change: auto; }
   .slide img { animation: none; transition: none; }
   .controls > button, .dots button span { transition: none; }
-  .row { overflow: visible; -webkit-mask-image: none; mask-image: none; }
+  .row { overflow: visible; }
   .group[aria-hidden="true"] { display: none; }
   .group { flex-wrap: wrap; }
   .group li { font-size: clamp(2rem, 6vw, 3.4rem); white-space: normal; }

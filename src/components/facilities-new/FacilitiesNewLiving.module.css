@@ -17,19 +17,18 @@ font-family: inherit;
 .heading > span { color: var(--gold); }
 .section button, .section a, .section summary { -webkit-tap-highlight-color: transparent; }
 .section button:focus-visible, .section a:focus-visible, .section summary:focus-visible { outline: 3px solid var(--cyan); outline-offset: 4px; }
-.essentials { background: color-mix(in srgb, var(--ice) 22%, white); color: var(--navy); }
-.serviceLayout { display: grid; grid-template-columns: minmax(0, 1fr); gap: 32px; margin-top: 32px; }
+.essentials { padding-top: 24px; padding-bottom: 24px; background: color-mix(in srgb, var(--ice) 22%, white); color: var(--navy); }
+.serviceLayout { display: grid; grid-template-columns: minmax(0, 1fr); gap: 32px; margin-top: 24px; }
 .serviceList { margin: 0; padding: 0; list-style: none; min-width: 0; }
 .serviceList > li { border-top: 2px solid color-mix(in srgb, var(--navy) 75%, white); scroll-margin-top: 9rem; transition: border-color .3s ease; }
 .serviceList > li[data-active="true"] { border-color: var(--accent); }
 .serviceList > li:last-child { border-bottom: 2px solid color-mix(in srgb, var(--navy) 75%, white); }
 .healthcare { --accent: var(--red); --panel: color-mix(in srgb, var(--red) 9%, white); }
 .banking { --accent: var(--gold); --panel: color-mix(in srgb, var(--gold) 23%, white); }
-.laundry { --accent: var(--cyan); --panel: var(--ice); }
 .hostel { --accent: var(--blue); --panel: color-mix(in srgb, var(--ice) 70%, white); }
 .transport { --accent: var(--navy); --panel: var(--gray); }
 .serviceList button { display: grid; grid-template-columns: 14px minmax(0, 1fr) 32px; align-items: center; gap: 12px; width: 100%; min-height: 82px; padding: 17px 4px; border: 0; background: transparent; text-align: left; cursor: pointer; font-family: inherit; }
-.serviceName { color: transparent; -webkit-text-stroke: 1px var(--blue); font-size: clamp(26px, 2.8vw, 38px); font-weight: 700; line-height: 1.15; letter-spacing: -.02em; overflow-wrap: anywhere; transition: color .25s ease, -webkit-text-stroke-color .25s ease, transform .35s cubic-bezier(.2,.8,.2,1); }
+.serviceName { color: transparent; -webkit-text-stroke: 1px var(--blue); font-size: 32px; font-weight: 700; line-height: 1.15; letter-spacing: -.02em; overflow-wrap: anywhere; transition: color .25s ease, -webkit-text-stroke-color .25s ease, transform .35s cubic-bezier(.2,.8,.2,1); }
 .activeDot { width: 12px; height: 12px; border-radius: 50%; background: var(--accent); opacity: 0; transform: scale(.35); transition: opacity .25s ease, transform .35s cubic-bezier(.2,.8,.2,1); }
 .serviceArrow { display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: var(--navy); color: white; opacity: 0; transform: translateX(-5px) scale(.8); transition: opacity .25s ease, transform .35s cubic-bezier(.2,.8,.2,1); }
 .serviceList [data-active="true"] .serviceName { color: var(--navy); -webkit-text-stroke: 0; }
@@ -48,21 +47,18 @@ font-family: inherit;
 .serviceDescription { padding: 0 12px 22px 30px; }
 .serviceDescription[hidden] { display: none; }
 .serviceDescription .serviceIcon, .serviceDescription h3 { display: none; }
-.hostels { padding-top: 56px; padding-bottom: 56px; background: var(--ice); color: var(--navy); }
+.hostels { padding-top: 32px; padding-bottom: 32px; background: var(--ice); color: var(--navy); }
 .introduction { margin: 16px 0 0; color: var(--blue); text-align: justify; }
-.residences { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; margin-top: 32px; }
-.residence { position: relative; isolation: isolate; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; min-width: 0; min-height: 310px; padding: 150px 28px 32px; color: var(--residence-ink); }
-.girls { --residence-ink: var(--navy); background: var(--gold); }
-.boys { --residence-ink: white; background: var(--blue); }
-.monogram { --monogram-shift: clamp(24px, 4vw, 48px); position: absolute; z-index: -1; top: 14px; left: 20px; color: transparent; -webkit-text-stroke: 2px var(--residence-ink); font-size: clamp(100px, 12vw, 170px); font-weight: 800; line-height: 1; letter-spacing: -.04em; opacity: .24; pointer-events: none; user-select: none; animation: monogramDrift 5.5s ease-in-out infinite alternate; }
-@keyframes monogramDrift { from { transform: translateX(0) scale(1); opacity: .18; } to { transform: translateX(var(--monogram-shift)) scale(1.015); opacity: .3; } }
-.boys .monogram { animation-delay: -2.75s; }
+.residences { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; margin-top: 24px; }
+.residence { position: relative; isolation: isolate; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; min-width: 0; min-height: 310px; padding: 150px 28px 32px; color: var(--navy); background: white; }
+.residence::before { position: absolute; z-index: -1; inset: 38% 0 0; background: linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, .94) 26%, rgba(255, 255, 255, .98) 100%); content: ""; pointer-events: none; }
+.residenceImage { position: absolute; z-index: -2; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 42%; }
 .residence h3 { margin: 0; font-size: 24px; font-weight: 700; line-height: 1.2; transition: transform .4s cubic-bezier(.2,.8,.2,1), letter-spacing .4s ease; }
-.residence p { margin: 12px 0 0; max-width: 46ch; transition: transform .45s cubic-bezier(.2,.8,.2,1) .04s; }
-.amenities { margin-top: 44px; }
+.residence p { width: 100%; margin: 12px 0 0; transition: transform .45s cubic-bezier(.2,.8,.2,1) .04s; }
+.amenities { margin-top: 24px; padding-top: 16px; border-top: 1px solid color-mix(in srgb, var(--navy) 18%, transparent); }
 .amenities > h3 { margin: 0; font-size: 22px; line-height: 1.3; font-weight: 700; }
 .comfort { --group-color: var(--gold); --group-ink: var(--navy); }
-.study { --group-color: var(--ice); --group-ink: var(--navy); }
+.study { --group-color: white; --group-ink: var(--navy); }
 .safety { --group-color: var(--red); --group-ink: white; }
 .health { --group-color: var(--cyan); --group-ink: var(--navy); }
 .services { --group-color: var(--gray); --group-ink: var(--navy); }
@@ -77,10 +73,12 @@ font-family: inherit;
 .cloud li:nth-child(4n) { font-weight: 700; }
 .cloud li[data-muted="true"] { opacity: .4; transform: none; }
 .support { display: grid; grid-template-columns: minmax(0, 1fr); gap: 48px; align-items: start; margin-top: 56px; }
-.supportSection { background: var(--navy); color: white; padding-top: 56px; padding-bottom: 64px; }
+.supportSection { background: var(--navy); color: white; padding-top: 32px; padding-bottom: 32px; }
 .supportSection .support { margin-top: 0; }
 .support > section { min-width: 0; }
 .supportHeading { margin: 0; font-size: 24px; font-weight: 700; line-height: 1.2; color: white; }
+.supportHeading span { color: var(--gold); }
+.supportHeading.singleLineHeading { font-size: 32px; }
 .supportLead { max-width: 56ch; margin: 12px 0 0; color: var(--ice); }
 .tree { margin-top: 30px; }
 .treeRoot { display: inline-block; max-width: 100%; padding: 16px 20px; border-radius: 16px; background: var(--gold); color: var(--navy); }
@@ -123,11 +121,12 @@ font-family: inherit;
 .heading { font-size: 36px; }
 .section p { font-size: 16px; }
 .supportHeading { font-size: 32px; }
+.supportHeading.singleLineHeading { white-space: nowrap; }
 }
 @media (min-width: 560px) {
 .ledger ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
-@media (min-width: 920px) {
+@media (min-width: 1240px) {
 .support { grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: clamp(40px, 5vw, 72px); }
 }
 @media (min-width: 900px) {
@@ -137,27 +136,27 @@ font-family: inherit;
 .residence h3 { font-size: 28px; }
 .girls { padding-right: 70px; clip-path: polygon(0 0, 100% 0, 94% 100%, 0 100%); }
 .boys { margin-left: -3%; padding-left: calc(6% + 40px); clip-path: polygon(6% 0, 100% 0, 100% 100%, 0 100%); }
-.boys .monogram { left: auto; right: calc(24px + var(--monogram-shift)); }
 }
 @media (max-width: 639px) {
 .section { padding: 36px 16px; }
+.essentials { padding-top: 24px; padding-bottom: 24px; }
 .serviceLayout { margin-top: 24px; }
 .serviceList button { grid-template-columns: 10px minmax(0, 1fr) 28px; gap: 10px; min-height: 72px; padding-block: 16px; }
 .activeDot { width: 9px; height: 9px; }
-.serviceName { font-size: clamp(22px, 6vw, 28px); }
+  .serviceName { font-size: clamp(20px, 5.8vw, 24px); }
 .serviceArrow { width: 28px; height: 28px; }
 .serviceDescription { padding: 0 4px 20px 24px; }
 .serviceLink { font-size: 13px; }
 .residences { margin-top: 24px; gap: 14px; }
 .residence { min-height: 290px; padding: 132px 22px 26px; border-radius: 16px; }
-.monogram { font-size: 112px; }
 .residence h3 { font-size: 22px; }
-.amenities { margin-top: 32px; }
+  .amenities { margin-top: 20px; padding-top: 16px; }
 .amenities > h3 { font-size: 20px; }
-.legend { gap: 8px; }
-.legend button { padding: 9px 12px; font-size: 12px; }
-.cloud { gap: 10px; margin-top: 20px; padding: 0; }
-.cloud li { padding: 10px 14px; font-size: 13px; border-radius: 18px; }
+.legend { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.legend button { width: 100%; padding: 9px 10px; font-size: 12px; }
+.cloud { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-top: 18px; padding: 0; }
+.cloud li { display: flex; align-items: center; width: 100%; min-height: 54px; padding: 10px 12px; border-radius: 14px; font-size: 12px; line-height: 1.4; }
+.cloud li:nth-child(1), .cloud li:nth-child(2), .cloud li:nth-child(3), .cloud li:nth-child(8), .cloud li:nth-child(9), .cloud li:nth-child(12), .cloud li:nth-child(15), .cloud li:nth-child(16) { grid-column: 1 / -1; }
 .cloud li:nth-child(n) { transform: none; }
 .support { margin-top: 40px; gap: 40px; }
 .treeRoot { padding: 14px 16px; }
@@ -176,7 +175,6 @@ font-family: inherit;
 @media (prefers-reduced-motion: reduce) {
 .section *, .section *::before, .section *::after { transition: none !important; }
 .servicePanel > *, .serviceDescription:not([hidden]) > * { animation: none; }
-.monogram { animation: none; }
 .residence:hover h3, .residence:hover p { transform: none; letter-spacing: normal; }
 .serviceLink:hover svg { transform: none; }
 .cloud li:hover { transform: none; box-shadow: none; }

@@ -28,14 +28,14 @@ const headingClass = "mb-5 text-[24px] leading-[1.2] font-bold sm:text-[36px] [&
 
 const sections = [
   { id: "facilities-new-overview", label: "Overview", icon: GraduationCap },
-  { id: "facilities-new-academics", label: "Learning spaces", icon: BookOpen },
+  { id: "facilities-new-academics", label: "Learning Spaces", icon: BookOpen },
   { id: "facilities-new-dining", label: "Cafeteria", icon: Coffee },
-  { id: "facilities-new-sports", label: "Sports & fitness", icon: Dumbbell },
+  { id: "facilities-new-sports", label: "Sports & Fitness", icon: Dumbbell },
   { id: "facilities-new-transport", label: "Transportation", icon: Bus },
-  { id: "facilities-new-essentials", label: "Campus essentials", icon: Landmark },
-  { id: "facilities-new-blocks", label: "Academic blocks", icon: Building2 },
+  { id: "facilities-new-essentials", label: "Campus Essentials", icon: Landmark },
+  { id: "facilities-new-blocks", label: "Academic Blocks", icon: Building2 },
 ];
-const diningImages = [cafeteria1, cafeteria2, cafeteria3, cafeteria4, cafeteria5].map((src, index) => ({ src, caption: `Cafeteria & eating joints · View ${index + 1}` }));
+const diningImages = [cafeteria1, cafeteria2, cafeteria3, cafeteria4, cafeteria5].map((src, index) => ({ src, caption: `Cafeteria & Eating Joints · View ${index + 1}` }));
 
 // Keep section links from triggering RootLayout's route-change scroll-to-top.
 function scrollToSection(event: MouseEvent<HTMLAnchorElement>) {
@@ -127,17 +127,17 @@ export default function FacilitiesNew() {
   }, []);
 
   return (
-    <div className="bg-white text-[#14284E] antialiased lg:[&_p]:text-justify [&_button]:cursor-pointer [&_a:focus-visible]:outline-2 [&_a:focus-visible]:outline-offset-4 [&_a:focus-visible]:outline-[#0F4A85] [&_button:focus-visible]:outline-2 [&_button:focus-visible]:outline-offset-4 [&_button:focus-visible]:outline-[#0F4A85]">
+    <div className="w-full max-w-full overflow-x-clip bg-white text-[#14284E] antialiased lg:[&_p]:text-justify [&_button]:cursor-pointer [&_a:focus-visible]:outline-2 [&_a:focus-visible]:outline-offset-4 [&_a:focus-visible]:outline-[#0F4A85] [&_button:focus-visible]:outline-2 [&_button:focus-visible]:outline-offset-4 [&_button:focus-visible]:outline-[#0F4A85]">
       <section className="relative isolate flex min-h-[clamp(380px,94vw,420px)] w-full items-center overflow-hidden bg-[#071329] px-4 pt-[clamp(92px,14vw,104px)] pb-6 sm:px-6 md:min-h-[504px] md:pt-28 md:pb-14" aria-labelledby="facilities-new-title">
         <img className="absolute inset-0 -z-20 h-full w-full object-cover object-center" src={campus} alt="Shri Ramswaroop Memorial University campus" fetchPriority="high" />
         <div className="absolute inset-0 -z-10 bg-linear-to-r from-[#071329]/95 via-[#091a38]/75 to-[#071329]/25" aria-hidden="true" />
         <div className={`${containerClass} relative z-10`}>
-          <p className="mb-2 text-[18px] leading-snug font-semibold text-[#38bdf8] sm:text-[24px]">Life at Shri Ramswaroop Memorial University</p>
+          {/* <p className="mb-2 text-[18px] leading-snug font-semibold text-[#38bdf8] sm:text-[24px]">Life at Shri Ramswaroop Memorial University</p> */}
           <h1 id="facilities-new-title" className="max-w-[650px] text-[36px] leading-[1.1] font-bold text-white/90 sm:text-[clamp(32px,4vw,52px)]">Campus <span className="text-[#FFB703]">Facilities</span></h1>
           <div className="my-5 h-[3px] w-20 rounded-full bg-[#FFB703]" aria-hidden="true" />
-          <p className="max-w-[570px] text-[15px] leading-relaxed text-[#E0F1FF] sm:text-base">{facilitiesNewPageCopy.hero}</p>
+          {/* <p className="max-w-[570px] text-[15px] leading-relaxed text-[#E0F1FF] sm:text-base">{facilitiesNewPageCopy.hero}</p> */}
           <div className="mt-7 hidden flex-wrap items-center gap-3 md:flex">
-            <a className={`${buttonClass} rounded-lg!`} href="#facilities-new-academics" onClick={scrollToSection}>Explore facilities <ArrowDown size={17} aria-hidden="true" /></a>
+            {/* <a className={`${buttonClass} rounded-lg!`} href="#facilities-new-academics" onClick={scrollToSection}>Explore facilities <ArrowDown size={17} aria-hidden="true" /></a> */}
             <Link className="inline-flex min-h-11 items-center justify-center gap-3 rounded-lg border border-[#1B4F91] bg-[#E0F1FF] px-6 py-3 text-xs font-bold tracking-wide text-[#14284E] uppercase hover:bg-white" to="/admission-enquiry">Plan your next step <ArrowUpRight size={17} aria-hidden="true" /></Link>
           </div>
         </div>
@@ -171,11 +171,11 @@ export default function FacilitiesNew() {
         </div>
       </nav>
 
-      <section id="facilities-new-overview" tabIndex={-1} className="relative isolate scroll-mt-36 overflow-x-clip px-4 pt-9 outline-none sm:px-6 md:pt-12" aria-labelledby="facilities-new-overview-title">
+      <section id="facilities-new-overview" tabIndex={-1} className="relative isolate scroll-mt-36 overflow-x-clip px-4 pt-6 outline-none sm:px-6 md:pt-8" aria-labelledby="facilities-new-overview-title">
         <div className={`${containerClass} grid items-stretch gap-8 lg:grid-cols-[minmax(0,1fr)_420px] lg:gap-12 xl:grid-cols-[minmax(0,1fr)_460px]`}>
           <div>
             {/* <p className={eyebrowClass}>Built around your university life</p> */}
-            <h2 id="facilities-new-overview-title" className={headingClass}>About our <span>Campus Facilities</span></h2>
+            <h2 id="facilities-new-overview-title" className={headingClass}>About Our <span>Campus Facilities</span></h2>
             <p className={bodyClass}>{facilitiesNewPageCopy.overview[0]}</p>
             {!overviewExpanded && <div>
               <button type="button" aria-expanded={false} onClick={() => setOverviewExpanded(true)} className="rm-btn items-center gap-2 text-sm font-bold text-[#0F4A85] sm:!inline-flex md:!hidden">
@@ -197,16 +197,16 @@ export default function FacilitiesNew() {
             <figcaption className="absolute inset-x-0 bottom-0 border-t-4 border-[#FFB703] bg-[#14284E]/95 px-6 py-4 text-sm font-semibold text-white">Learning spaces that bring ideas to life.</figcaption>
           </figure>
         </div>
-        <div className="relative left-1/2 mt-8 w-screen -translate-x-1/2 overflow-hidden bg-[#FCFCFA] py-8 sm:py-10">
+        <div className="relative mt-4 -mx-4 w-auto overflow-hidden bg-[#FCFCFA] py-4 sm:left-1/2 sm:mx-0 sm:w-screen sm:-translate-x-1/2 sm:py-5">
           <div className="pointer-events-none absolute -bottom-20 -left-14 size-36 rounded-[45%_55%_0_0] bg-[#FFB703]/15 sm:-bottom-24 sm:-left-20 sm:size-64" aria-hidden="true" />
           <div className="pointer-events-none absolute -bottom-8 -left-10 size-24 rounded-[50%_50%_0_0] bg-[#FFB703]/75 sm:-bottom-10 sm:-left-16 sm:size-48" aria-hidden="true" />
           <div className="pointer-events-none absolute -right-10 top-1/2 size-28 -translate-y-1/2 rounded-full bg-[repeating-linear-gradient(135deg,#ffcf55_0px,#ffcf55_3px,transparent_3px,transparent_9px)] opacity-45 sm:size-36" aria-hidden="true" />
           <div className="relative mx-auto grid w-full max-w-[1280px] grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 [&>div]:min-w-0 [&>div]:px-3 [&>div]:py-4 sm:[&>div]:px-8 sm:[&>div]:py-5 lg:[&>div]:px-7 lg:[&>div+div]:border-l lg:[&>div+div]:border-[#FFB703]/55">
             {[
-              { icon: FlaskConical, title: "Learn by doing", text: "Specialised laboratories, studios and workshops that bring ideas to life." },
-              { icon: BookOpen, title: "Space to focus", text: "Smart classrooms and library resources for deeper learning." },
-              { icon: Dumbbell, title: "Life beyond lectures", text: "Sports, fitness and social spaces for a balanced university experience." },
-              { icon: Bus, title: "Everyday essentials", text: "Dining, healthcare and transport to support your day on campus." },
+              { icon: FlaskConical, title: "Learn by Doing", text: "Specialised laboratories, studios and workshops that bring ideas to life." },
+              { icon: BookOpen, title: "Space to Focus", text: "Smart classrooms and library resources for deeper learning." },
+              { icon: Dumbbell, title: "Life Beyond Lectures", text: "Sports, fitness and social spaces for a balanced university experience." },
+              { icon: Bus, title: "Everyday Essentials", text: "Dining, healthcare and transport to support your day on campus." },
             ].map(({ icon: Icon, title, text }, index) => <div key={title} className="relative text-center lg:!text-left">
               <span className={`relative mx-auto mb-3 grid size-14 place-items-center rounded-[42%_58%_63%_37%/45%_40%_60%_55%] lg:!mx-0 ${index % 2 === 0 ? "bg-[#FFF0C2]" : "bg-[#E5EEFF]"}`}>
                 <Icon size={29} strokeWidth={1.9} className={`${featureStyles.iconMotion} text-[#173866]`} style={{ animationDelay: `${index * 0.28}s` }} aria-hidden="true" />
@@ -222,6 +222,7 @@ export default function FacilitiesNew() {
 
       <FacilitiesNewExplorer />
 
+      {/* Temporarily hidden section: Seminar Halls & Auditoriums.
       <section id="facilities-new-seminars" tabIndex={-1} className={`${sectionClass} bg-white`} aria-labelledby="facilities-new-seminars-title">
         <div className={`${containerClass} ${splitClass}`}>
           <figure className="relative m-0 min-h-[280px] overflow-hidden rounded-2xl bg-[#E0F1FF]">
@@ -229,12 +230,12 @@ export default function FacilitiesNew() {
             <figcaption className="absolute inset-x-0 bottom-0 bg-[#14284E]/95 px-5 py-4 text-sm font-semibold text-white">Spaces for discussion, presentations and university events.</figcaption>
           </figure>
           <div>
-            {/* <p className={eyebrowClass}>Gather, exchange ideas, learn</p> */}
             <h2 id="facilities-new-seminars-title" className={headingClass}>Seminar Halls <span>&amp; Auditoriums.</span></h2>
             <p className={bodyClass}>{facilitiesNewPageCopy.seminarHallsAndAuditoriums}</p>
           </div>
         </div>
       </section>
+      */}
 
       <FacilitiesNewLibrary />
 
@@ -242,25 +243,25 @@ export default function FacilitiesNew() {
 
       <section id="facilities-new-sports" tabIndex={-1} className={sportsStyles.section} aria-labelledby="facilities-new-sports-title">
         <div className={`${containerClass} ${sportsStyles.container} px-4 sm:px-6`}>
-          <h2 id="facilities-new-sports-title" className={headingClass}>Stay active. <span>Play your way.</span></h2>
+          <h2 id="facilities-new-sports-title" className={headingClass}>Stay Active. <span>Play Your Way.</span></h2>
           <p className={sportsStyles.intro}>{facilitiesNewPageCopy.sportsAndFitnessFacilities.introduction}</p>
           <div className={sportsStyles.layout}>
             <div className={sportsStyles.activities}>
-              <h3 className={sportsStyles.caption}>Outdoor sports</h3>
+              <h3 className={sportsStyles.caption}>Outdoor Sports</h3>
               <SportsTicker items={facilitiesNewPageCopy.sportsAndFitnessFacilities.outdoorSports} label="Outdoor sports" copies={2} />
-              <h3 className={sportsStyles.caption}>Indoor games and fitness</h3>
+              <h3 className={sportsStyles.caption}>Indoor Games and Fitness</h3>
               <SportsTicker items={facilitiesNewPageCopy.sportsAndFitnessFacilities.indoorAndFitness} label="Indoor games and fitness" reverse copies={4} />
-              <div className={sportsStyles.more}>
-                <p>{facilitiesNewPageCopy.sportsAndFitnessFacilities.benefits}</p>
-                <p>{facilitiesNewPageCopy.sportsAndFitnessFacilities.availability}</p>
-              </div>
             </div>
             <SportsCarousel />
+          </div>
+          <div className={sportsStyles.more}>
+            <p>{facilitiesNewPageCopy.sportsAndFitnessFacilities.benefits}</p>
+            <p>{facilitiesNewPageCopy.sportsAndFitnessFacilities.availability}</p>
           </div>
         </div>
       </section>
 
-      <section id="facilities-new-transport" tabIndex={-1} className="relative isolate scroll-mt-36 overflow-hidden bg-[#FFFEFA] px-4 py-10 outline-none sm:px-6 sm:py-14 lg:py-16" aria-labelledby="facilities-new-transport-title">
+      <section id="facilities-new-transport" tabIndex={-1} className="relative isolate scroll-mt-36 overflow-hidden bg-[#FFFEFA] px-4 py-8 outline-none sm:px-6 sm:py-10 lg:py-10" aria-labelledby="facilities-new-transport-title">
         <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
           <div className="absolute -top-28 -left-28 size-64 rounded-[0_0_100%_0] bg-[#FFB703]/25 sm:size-80" />
           <div className="absolute -top-24 -left-32 size-64 rounded-[0_0_100%_0] border-b border-r border-[#FFB703]/55 sm:size-80" />
@@ -273,13 +274,13 @@ export default function FacilitiesNew() {
           <Bus className="absolute right-[9%] bottom-[15%] hidden size-14 text-[#F4D98F]/55 lg:block" strokeWidth={1.5} />
           <div className="absolute bottom-12 left-1 hidden grid-cols-5 gap-2 sm:grid">{Array.from({ length: 15 }, (_, dot) => <span key={dot} className="size-1 rounded-full bg-[#FFB703]/70" />)}</div>
         </div>
-        <div className="mx-auto grid w-full max-w-[1440px] items-center gap-8 lg:grid-cols-2 lg:gap-14 xl:gap-20">
-          <div className="relative flex min-h-[300px] items-center justify-center sm:min-h-[380px] lg:min-h-[460px]">
-            <img src={transport} alt="SRMU buses and campus transportation" width={700} height={600} loading="lazy" decoding="async" className="h-[300px] w-full object-contain sm:h-[380px] lg:h-[460px]" />
+        <div className="mx-auto grid w-full max-w-[1280px] items-center gap-6 lg:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)] lg:gap-10">
+          <div className="relative flex min-h-[240px] items-center justify-center sm:min-h-[300px] lg:min-h-[340px]">
+            <img src={transport} alt="SRMU buses and campus transportation" width={700} height={600} loading="lazy" decoding="async" className="h-[240px] w-full object-contain sm:h-[300px] lg:h-[340px]" />
           </div>
-          <div className="relative max-w-[560px] py-2 lg:py-8">
+          <div className="relative max-w-[720px]">
             {/* <p className="mb-3 text-[11px] font-bold tracking-[0.2em] text-[#24436A] uppercase sm:text-xs">Connected to campus</p> */}
-            <h2 id="facilities-new-transport-title" className="mb-5 text-[24px] leading-[1.2] font-bold text-[#14284E] sm:text-[36px]">Your journey, <span className="text-[#FFB703]">made easier.</span></h2>
+            <h2 id="facilities-new-transport-title" className="mb-5 text-[24px] leading-[1.2] font-bold text-[#14284E] sm:text-[36px]">Your Journey, <span className="text-[#FFB703]">Made Easier.</span></h2>
             <p className={bodyClass}>{facilitiesNewPageCopy.busRoutesAndTimings.description} {facilitiesNewPageCopy.busRoutesAndTimings.fees}</p>
             <div className="mt-5 flex items-center gap-4 text-sm leading-relaxed text-[#4B5A72] sm:text-[15px]">
               <span className="grid size-11 shrink-0 place-items-center rounded-full bg-[#FFB703]/75 text-[#14284E]"><Bus size={24} aria-hidden="true" /></span>
@@ -295,7 +296,7 @@ export default function FacilitiesNew() {
 
       <FacilitiesNewLiving onSectionNavigate={scrollToSection} />
 
-      <section id="facilities-new-blocks" tabIndex={-1} className="relative isolate scroll-mt-36 overflow-hidden bg-[#F7FAFE] px-4 py-10 outline-none sm:px-6 sm:py-14 lg:py-16" aria-labelledby="facilities-new-blocks-title">
+      <section id="facilities-new-blocks" tabIndex={-1} className="relative isolate scroll-mt-36 overflow-hidden bg-[#F7FAFE] px-4 py-6 outline-none sm:px-6 sm:py-7 lg:py-8" aria-labelledby="facilities-new-blocks-title">
         <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
           <div className="absolute -top-40 -right-32 size-[420px] rounded-full bg-[#EAF2FF]/70" />
           <Building2 className="absolute top-8 right-[5%] hidden size-52 text-[#EAF2FF] lg:block" strokeWidth={1} />
@@ -304,7 +305,7 @@ export default function FacilitiesNew() {
         <div className={containerClass}>
           <div className="mb-6">
             {/* <p className="mb-3 flex items-center gap-3 text-[11px] font-bold tracking-[0.16em] text-[#0F4A85] uppercase sm:text-xs"><span className="h-0.5 w-9 shrink-0 bg-[#FFB703]" aria-hidden="true" />Discover your surroundings</p> */}
-            <h2 id="facilities-new-blocks-title" className="mb-3 text-[28px] leading-[1.05] font-bold text-[#14284E] sm:text-[36px]">Explore the academic <span className="text-[#FFB703]">blocks at SRMU.</span></h2>
+            <h2 id="facilities-new-blocks-title" className="mb-3 text-[28px] leading-[1.05] font-bold text-[#14284E] sm:text-[36px]">Explore the Academic <span className="text-[#FFB703]">Blocks at SRMU.</span></h2>
             <p className="max-w-3xl text-[14px] leading-relaxed text-[#4B5A72] sm:text-[15px]">Get to know the academic spaces that bring our disciplines, departments and university community together.</p>
           </div>
           <div className="mb-4 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-3 [&>button]:flex [&>button]:min-h-11 [&>button]:items-center [&>button]:justify-center [&>button]:gap-2 [&>button]:rounded-xl [&>button]:border [&>button]:border-transparent [&>button]:bg-[#F0F6FB]/90 [&>button]:px-2 [&>button]:py-2.5 [&>button]:text-[11px] [&>button]:font-bold [&>button]:text-[#0F4A85] [&>button]:transition-colors sm:[&>button]:text-xs [&>button[aria-pressed=true]]:border-[#14284E] [&>button[aria-pressed=true]]:bg-[#203E91] [&>button[aria-pressed=true]]:text-white [&>button[aria-pressed=true]]:shadow-[inset_0_-3px_#FFB703] [&_svg]:size-4 [&_svg]:shrink-0" role="group" aria-label="Choose an academic block">{CARD_CONTENT.map((block, index) => <button key={block.id} type="button" aria-pressed={index === blockIndex} aria-controls="facilities-new-block-detail" onClick={() => setBlockIndex(index)}><Building2 size={18} aria-hidden="true" /><span className="whitespace-nowrap">{block.id} Academic Block</span></button>)}</div>
@@ -324,11 +325,11 @@ export default function FacilitiesNew() {
         </div>
       </section>
 
-      <section className="overflow-hidden bg-[#E0F1FF] px-4 py-14 sm:px-6 sm:py-16 lg:py-20" aria-labelledby="facilities-new-more-title">
+      <section className="overflow-hidden bg-[#E0F1FF] px-4 py-8 sm:px-6 sm:py-10 lg:py-12" aria-labelledby="facilities-new-more-title">
         <div className={`${containerClass} grid items-center gap-10 lg:grid-cols-2 lg:gap-[72px]`}>
           <div>
-            <p className="text-sm font-medium text-[#0F4A85]">Life across campus</p>
-            <h2 id="facilities-new-more-title" className={`${headingClass} mt-1 mb-0`}>More to <span>explore.</span></h2>
+            {/* <p className="text-sm font-medium text-[#0F4A85]">Life across campus</p> */}
+            <h2 id="facilities-new-more-title" className={`${headingClass} mt-1 mb-0`}>More to <span>Explore.</span></h2>
             <p className={`${bodyClass} mt-6 max-w-[56ch] border-l-[5px] border-[#FFB703] pl-5`}>{facilitiesNewPageCopy.closing}</p>
             <a className={`${buttonClass} mt-7`} href="#facilities-new-overview" onClick={scrollToSection}>Explore campus <ArrowUpRight size={18} aria-hidden="true" /></a>
           </div>
@@ -337,9 +338,9 @@ export default function FacilitiesNew() {
             <span className="pointer-events-none absolute top-0 bottom-3 left-1/2 -z-0 w-4 -translate-x-1/2 rounded-t-lg bg-[#14284E]" aria-hidden="true" />
             <span className="pointer-events-none absolute bottom-0 left-1/2 -z-0 h-[18px] w-[120px] -translate-x-1/2 rounded-[50%] bg-[#14284E]/20" aria-hidden="true" />
             {[
-              { to: "/hostel", title: "Your home on campus", text: "Explore hostel facilities and student accommodation.", color: "bg-[#FFB703] text-[#14284E]", side: "right", focusColor: "focus-visible:outline-[#14284E]" },
-              { to: "/green-initiative-new", title: "A greener campus", text: "Discover sustainability in everyday university life.", color: "bg-[#21A5DB] text-[#14284E]", side: "left", focusColor: "focus-visible:outline-[#14284E]" },
-              { to: "/admission-enquiry", title: "Start your SRMU journey", text: "Connect with our team for admission enquiries.", color: "bg-[#0F4A85] text-white", side: "right", focusColor: "focus-visible:outline-[#E0F1FF]" },
+              { to: "/hostel", title: "Your Home on Campus", text: "Explore hostel facilities and student accommodation.", color: "bg-[#FFB703] text-[#14284E]", side: "right", focusColor: "focus-visible:outline-[#14284E]" },
+              { to: "/green-initiative-new", title: "A Greener Campus", text: "Discover sustainability in everyday university life.", color: "bg-[#21A5DB] text-[#14284E]", side: "left", focusColor: "focus-visible:outline-[#14284E]" },
+              { to: "/admission-enquiry", title: "Start Your SRMU Journey", text: "Connect with our team for admission enquiries.", color: "bg-[#0F4A85] text-white", side: "right", focusColor: "focus-visible:outline-[#E0F1FF]" },
             ].map(({ to, title, text, color, side, focusColor }) => <Link key={to} to={to} className={`relative z-10 block min-h-24 px-7 py-5 no-underline transition-transform duration-200 motion-reduce:transition-none ${color} ${side === "right" ? "[clip-path:polygon(0_0,calc(100%_-_44px)_0,100%_50%,calc(100%_-_44px)_100%,0_100%)] pr-16 hover:rotate-[-1.6deg]" : "[clip-path:polygon(44px_0,100%_0,100%_100%,44px_100%,0_50%)] pl-16 hover:rotate-[1.6deg]"} focus-visible:outline-2 focus-visible:outline-offset-[-4px] ${focusColor} motion-reduce:hover:rotate-0`}>
               <b className="block text-lg leading-tight font-bold">{title}</b>
               <span className="mt-1 block text-[15px] leading-relaxed">{text}</span>

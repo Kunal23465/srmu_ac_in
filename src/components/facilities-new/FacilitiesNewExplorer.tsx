@@ -8,9 +8,9 @@ type Category = "all" | "labs" | "learning" | "health";
 type Facility = (typeof facilitiesNewCards)[number];
 const categories: { id: Category; label: string }[] = [
   { id: "all", label: "All" },
-  { id: "labs", label: "Labs & research" },
-  { id: "learning", label: "Learning spaces" },
-  { id: "health", label: "Health & wellbeing" },
+  { id: "labs", label: "Labs & Research" },
+  { id: "learning", label: "Learning Spaces" },
+  { id: "health", label: "Health & Wellbeing" },
 ];
 const categoryOf = (id: number): Category => id === 10 ? "health" : [4, 9, 11, 12, 13, 14].includes(id) ? "learning" : "labs";
 const facilityOrder = [1, 2, 3, 8, 5, 6, 7, 11, 9, 4, 13, 14, 12, 10];
@@ -56,6 +56,7 @@ export default function FacilitiesNewExplorer() {
     setExpanded(true);
   }, [hash]);
 
+  /* Temporarily hidden along with the category filter row.
   const filterFacilities = (nextCategory: Category) => {
     const first = facilities.find((facility) => nextCategory === "all" || categoryOf(facility.id) === nextCategory);
     if (!first) return;
@@ -63,11 +64,13 @@ export default function FacilitiesNewExplorer() {
     setSelectedId(first.id);
     setExpanded(true);
   };
+  */
 
   return (
     <section id="facilities-new-academics" tabIndex={-1} className={styles.section} aria-labelledby="facilities-new-academics-title">
       <div className={styles.container}>
-        <h2 id="facilities-new-academics-title" className={styles.heading}>Equipped for <span>what’s next.</span></h2>
+        <h2 id="facilities-new-academics-title" className={styles.heading}>Equipped for <span>What’s Next.</span></h2>
+        {/* Temporarily hidden category filter row.
         <div className={styles.filters} role="group" aria-label="Filter facilities by category">
           {categories.map(({ id, label }) => (
             <button key={id} type="button" className={styles.chip} aria-pressed={category === id} aria-controls="facilities-new-results" onClick={() => filterFacilities(id)}>
@@ -75,6 +78,7 @@ export default function FacilitiesNewExplorer() {
             </button>
           ))}
         </div>
+        */}
 
         <div className={styles.layout}>
           <ul id="facilities-new-results" className={styles.list} aria-label="Campus facilities">
