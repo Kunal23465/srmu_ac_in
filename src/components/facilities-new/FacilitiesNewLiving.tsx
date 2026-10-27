@@ -113,9 +113,12 @@ export default function FacilitiesNewLiving({ onSectionNavigate }: { onSectionNa
             <ul id="hostel-amenities-list" className={styles.cloud}>
               {amenityOrder.map((index) => <li key={hostels.amenities[index]} className={styles[amenityCategories[index]]} data-muted={highlightedGroup !== null && highlightedGroup !== amenityCategories[index]}>{hostels.amenities[index]}</li>)}
             </ul>
-            <p className={styles.note}>{hostels.caveat}</p>
           </div>
+        </div>
+      </section>
 
+      <section id="facilities-new-residential-support" tabIndex={-1} className={`${styles.section} ${styles.supportSection}`} aria-label="Residential support and outing information">
+        <div className={styles.container}>
           <div className={styles.support}>
             <section aria-labelledby="facilities-new-committees-title">
               <h3 id="facilities-new-committees-title" className={styles.supportHeading}>Residential committees</h3>

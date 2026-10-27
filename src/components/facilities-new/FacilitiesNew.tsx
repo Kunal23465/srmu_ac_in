@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import type { MouseEvent } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ArrowDown, ArrowLeft, ArrowRight, ArrowUpRight, BookOpen, Building2, Bus, ChevronDown, Coffee, Dumbbell, FlaskConical, GraduationCap, Landmark, MapPin } from "lucide-react";
-import { facilitiesNewBlocks as CARD_CONTENT, facilitiesNewCards as facilitiesData, facilitiesNewPageCopy, facilitiesNewSportsImages as outreachImages } from "../../data/campus-life/facilities/facilities-new-data";
+import { facilitiesNewBlocks as CARD_CONTENT, facilitiesNewCards as facilitiesData, facilitiesNewPageCopy, facilitiesNewSportsImages as sportsImages } from "../../data/campus-life/facilities/facilities-new-data";
 import campus from "../../assets/images/breadcrumb/campus.webp";
 import cafeteria1 from "../../assets/images/campus-life/facilities/cafeteria-1.jpg";
 import cafeteria2 from "../../assets/images/campus-life/facilities/cafeteria-2.jpg";
@@ -15,6 +15,7 @@ import FacilitiesNewLibrary from "./FacilitiesNewLibrary";
 import FacilitiesNewExplorer from "./FacilitiesNewExplorer";
 import FacilitiesNewLiving from "./FacilitiesNewLiving";
 import featureStyles from "./FacilitiesNewHighlights.module.css";
+import sportsStyles from "./FacilitiesNewSports.module.css";
 
 // One fluid container keeps every section aligned without competing breakpoint units.
 const containerClass = "mx-auto w-full min-w-0 max-w-[1280px]";
@@ -46,21 +47,35 @@ function scrollToSection(event: MouseEvent<HTMLAnchorElement>) {
   target.focus({ preventScroll: true });
 }
 
-function PhotoGallery({ images, label }: { images: { src: string; caption: string }[]; label: string }) {
-  const [index, setIndex] = useState(0);
-  const current = images[index];
+function SportsTicker({ items, label, reverse = false, copies }: { items: string[]; label: string; reverse?: boolean; copies: number }) {
   return (
-    <div className="min-w-0 [&>figure]:m-0 [&>figure]:overflow-hidden [&>figure]:rounded-2xl [&>figure]:bg-[#071329] [&_figure>img]:aspect-[3/2] [&_figure>img]:w-full [&_figure>img]:object-cover [&_figcaption]:flex [&_figcaption]:min-h-14 [&_figcaption]:items-center [&_figcaption]:justify-between [&_figcaption]:gap-3 [&_figcaption]:px-4 [&_figcaption]:py-3 [&_figcaption]:text-xs [&_figcaption]:text-white sm:[&_figcaption]:text-sm [&_figcaption>span:last-child]:shrink-0 [&_figcaption>span:last-child]:text-[#FFB703]" role="region" aria-label={label} aria-roledescription="carousel">
-      <figure>
-        <img src={current.src} alt={current.caption} width={720} height={480} loading="lazy" decoding="async" />
-        <figcaption aria-live="polite" aria-atomic="true"><span>{current.caption}</span><span>{index + 1} / {images.length}</span></figcaption>
+    <div className={`${sportsStyles.row} ${reverse ? sportsStyles.reverse : ""}`} tabIndex={0} aria-label={label}>
+      <div className={sportsStyles.track}>
+        {Array.from({ length: copies }, (_, copy) => <ul key={`${label}-${copy}`} className={sportsStyles.group} aria-hidden={copy > 0}>
+          {items.map((item) => <li key={item}>{item}</li>)}
+        </ul>)}
+      </div>
+    </div>
+  );
+}
+
+function SportsCarousel() {
+  const [index, setIndex] = useState(0);
+  const current = sportsImages[index];
+  const showImage = (nextIndex: number) => setIndex((nextIndex + sportsImages.length) % sportsImages.length);
+
+  return (
+    <div className={sportsStyles.carousel} role="region" aria-label="Sports and recreation photos" aria-roledescription="carousel">
+      <figure className={sportsStyles.slide}>
+        <img key={current.src} src={current.src} alt={`${current.caption} at SRMU`} width={720} height={450} loading="lazy" decoding="async" />
+        <figcaption aria-live="polite" aria-atomic="true"><span>{current.caption}</span><span>{index + 1} / {sportsImages.length}</span></figcaption>
       </figure>
-      <div className="mt-3 flex items-center justify-between gap-1 [&>button]:grid [&>button]:size-11 [&>button]:shrink-0 [&>button]:place-items-center [&>button]:rounded-full [&>button]:border [&>button]:border-[#DCE6F2] [&>button]:bg-white [&>button]:text-[#14284E] [&>button:hover]:border-[#FFB703] [&>button:hover]:bg-[#FFB703]">
-        <button type="button" onClick={() => setIndex((index + images.length - 1) % images.length)} aria-label={`Previous ${label} photo`}><ArrowLeft size={18} /></button>
-        <div className="flex flex-wrap justify-center [&>button]:grid [&>button]:h-11 [&>button]:w-5 [&>button]:place-items-center [&>button]:border-0 [&>button]:bg-transparent sm:[&>button]:w-6 [&_span]:size-1.5 [&_span]:rounded-full [&_span]:bg-[#8A9CB5] [&>button[aria-pressed=true]>span]:w-4 [&>button[aria-pressed=true]>span]:bg-[#FFB703]">
-          {images.map((item, i) => <button key={item.src} type="button" aria-label={`Show ${item.caption}`} aria-pressed={i === index} onClick={() => setIndex(i)}><span /></button>)}
+      <div className={sportsStyles.controls}>
+        <button type="button" onClick={() => showImage(index - 1)} aria-label="Previous sports photo"><ArrowLeft size={18} aria-hidden="true" /></button>
+        <div className={sportsStyles.dots} role="group" aria-label="Choose sports photo">
+          {sportsImages.map((image, imageIndex) => <button key={image.src} type="button" aria-label={`Show ${image.caption} photo`} aria-pressed={imageIndex === index} onClick={() => showImage(imageIndex)}><span /></button>)}
         </div>
-        <button type="button" onClick={() => setIndex((index + 1) % images.length)} aria-label={`Next ${label} photo`}><ArrowRight size={18} /></button>
+        <button type="button" onClick={() => showImage(index + 1)} aria-label="Next sports photo"><ArrowRight size={18} aria-hidden="true" /></button>
       </div>
     </div>
   );
@@ -225,12 +240,23 @@ export default function FacilitiesNew() {
 
       <FacilitiesNewDining images={diningImages} description={facilitiesNewPageCopy.dining} />
 
-      <section id="facilities-new-sports" tabIndex={-1} className={sectionClass} aria-labelledby="facilities-new-sports-title">
-        <div className={`${containerClass} ${splitClass}`}>
-          <PhotoGallery images={outreachImages} label="Sports" />
-          <div>
-            {/* <p className={eyebrowClass}>Make time for your game</p> */}
-          <h2 id="facilities-new-sports-title" className={headingClass}>Stay active. <span>Play your way.</span></h2><p className={bodyClass}>{facilitiesNewPageCopy.sportsAndFitnessFacilities.introduction}</p><h3 className="mt-5 text-sm font-bold">Outdoor sports</h3><div className="mt-2 flex flex-wrap gap-2 [&>span]:rounded-full [&>span]:bg-[#E0F1FF] [&>span]:px-3 [&>span]:py-2 [&>span]:text-xs [&>span]:font-semibold [&>span]:text-[#0F4A85]">{facilitiesNewPageCopy.sportsAndFitnessFacilities.outdoorSports.map((caption) => <span key={caption}>{caption}</span>)}</div><h3 className="mt-4 text-sm font-bold">Indoor games and fitness</h3><div className="mt-2 flex flex-wrap gap-2 [&>span]:rounded-full [&>span]:bg-[#E0F1FF] [&>span]:px-3 [&>span]:py-2 [&>span]:text-xs [&>span]:font-semibold [&>span]:text-[#0F4A85]">{facilitiesNewPageCopy.sportsAndFitnessFacilities.indoorAndFitness.map((caption) => <span key={caption}>{caption}</span>)}</div><p className="mt-4 text-[13px] text-[#4B5A72]">{facilitiesNewPageCopy.sportsAndFitnessFacilities.benefits} {facilitiesNewPageCopy.sportsAndFitnessFacilities.availability}</p></div>
+      <section id="facilities-new-sports" tabIndex={-1} className={sportsStyles.section} aria-labelledby="facilities-new-sports-title">
+        <div className={`${containerClass} ${sportsStyles.container} px-4 sm:px-6`}>
+          <h2 id="facilities-new-sports-title" className={headingClass}>Stay active. <span>Play your way.</span></h2>
+          <p className={sportsStyles.intro}>{facilitiesNewPageCopy.sportsAndFitnessFacilities.introduction}</p>
+          <div className={sportsStyles.layout}>
+            <div className={sportsStyles.activities}>
+              <h3 className={sportsStyles.caption}>Outdoor sports</h3>
+              <SportsTicker items={facilitiesNewPageCopy.sportsAndFitnessFacilities.outdoorSports} label="Outdoor sports" copies={2} />
+              <h3 className={sportsStyles.caption}>Indoor games and fitness</h3>
+              <SportsTicker items={facilitiesNewPageCopy.sportsAndFitnessFacilities.indoorAndFitness} label="Indoor games and fitness" reverse copies={4} />
+              <div className={sportsStyles.more}>
+                <p>{facilitiesNewPageCopy.sportsAndFitnessFacilities.benefits}</p>
+                <p>{facilitiesNewPageCopy.sportsAndFitnessFacilities.availability}</p>
+              </div>
+            </div>
+            <SportsCarousel />
+          </div>
         </div>
       </section>
 

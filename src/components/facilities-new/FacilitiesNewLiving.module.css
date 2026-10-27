@@ -1,15 +1,15 @@
 .section {
-  --blue: #0F4A85;
-  --navy: #14284E;
-  --cyan: #21A5DB;
-  --ice: #E0F1FF;
-  --gold: #FFB703;
-  --red: #D62C2B;
-  --gray: #E6E6E7;
-  padding: 48px 24px;
-  scroll-margin-top: 9rem;
-  outline: none;
-  font-family: inherit;
+--blue: #0F4A85;
+--navy: #14284E;
+--cyan: #21A5DB;
+--ice: #E0F1FF;
+--gold: #FFB703;
+--red: #D62C2B;
+--gray: #E6E6E7;
+padding: 48px 24px;
+scroll-margin-top: 9rem;
+outline: none;
+font-family: inherit;
 }
 .container { width: 100%; max-width: 1280px; min-width: 0; margin: 0 auto; }
 .section p { font-size: 15px; line-height: 1.625; text-align: left; }
@@ -48,8 +48,8 @@
 .serviceDescription { padding: 0 12px 22px 30px; }
 .serviceDescription[hidden] { display: none; }
 .serviceDescription .serviceIcon, .serviceDescription h3 { display: none; }
-.hostels { padding-top: 56px; padding-bottom: 56px; background: var(--navy); color: white; }
-.introduction { margin: 16px 0 0; color: var(--ice); text-align: justify; }
+.hostels { padding-top: 56px; padding-bottom: 56px; background: var(--ice); color: var(--navy); }
+.introduction { margin: 16px 0 0; color: var(--blue); text-align: justify; }
 .residences { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; margin-top: 32px; }
 .residence { position: relative; isolation: isolate; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; min-width: 0; min-height: 310px; padding: 150px 28px 32px; color: var(--residence-ink); }
 .girls { --residence-ink: var(--navy); background: var(--gold); }
@@ -66,18 +66,19 @@
 .safety { --group-color: var(--red); --group-ink: white; }
 .health { --group-color: var(--cyan); --group-ink: var(--navy); }
 .services { --group-color: var(--gray); --group-ink: var(--navy); }
-.all { --group-color: white; --group-ink: var(--navy); }
+.all { --group-color: var(--navy); --group-ink: white; }
 .legend { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
-.legend button { min-height: 44px; padding: 9px 16px; border: 1.5px solid var(--group-color); border-radius: 999px; background: transparent; color: white; font-family: inherit; font-size: 13px; font-weight: 600; line-height: 1.4; cursor: pointer; transition: background .2s ease, color .2s ease; }
-.legend button[aria-pressed="true"] { background: var(--group-color); color: var(--group-ink); }
+.legend button { min-height: 44px; padding: 9px 16px; border: 1.5px solid color-mix(in srgb, var(--group-color) 75%, var(--navy)); border-radius: 999px; background: transparent; color: var(--navy); font-family: inherit; font-size: 13px; font-weight: 600; line-height: 1.4; cursor: pointer; transition: background .2s ease, color .2s ease; }
+.legend button[aria-pressed="true"] { border-color: var(--navy); background: var(--group-color); color: var(--group-ink); }
 .cloud { display: flex; flex-wrap: wrap; gap: 14px 10px; margin: 26px 0 0; padding: 3px; list-style: none; }
 .cloud li { max-width: 100%; padding: 11px 18px; border-radius: 28px; background: var(--group-color); color: var(--group-ink); font-size: 14px; font-weight: 500; line-height: 1.55; overflow-wrap: anywhere; transition: opacity .2s ease, transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s ease; }
 .cloud li:nth-child(3n+1) { transform: rotate(-1.2deg); }
 .cloud li:nth-child(3n+2) { transform: rotate(.8deg); }
 .cloud li:nth-child(4n) { font-weight: 700; }
 .cloud li[data-muted="true"] { opacity: .4; transform: none; }
-.section .note { max-width: 900px; margin: 30px 0 0; padding: 2px 0 2px 18px; border-left: 4px solid var(--gold); color: var(--ice); font-size: 14px; }
 .support { display: grid; grid-template-columns: minmax(0, 1fr); gap: 48px; align-items: start; margin-top: 56px; }
+.supportSection { background: var(--navy); color: white; padding-top: 56px; padding-bottom: 64px; }
+.supportSection .support { margin-top: 0; }
 .support > section { min-width: 0; }
 .supportHeading { margin: 0; font-size: 24px; font-weight: 700; line-height: 1.2; color: white; }
 .supportLead { max-width: 56ch; margin: 12px 0 0; color: var(--ice); }
@@ -109,79 +110,79 @@
 .ledger li { position: relative; min-width: 0; padding-left: 20px; color: var(--ice); font-size: 15px; line-height: 1.6; overflow-wrap: anywhere; }
 .ledger li::before { content: ""; position: absolute; left: 2px; top: .6em; width: 7px; height: 7px; transform: rotate(45deg); background: var(--gold); }
 @media (hover: hover) {
-  .residence:hover h3 { transform: translateY(-5px); letter-spacing: .01em; }
-  .residence:hover p { transform: translateY(-3px); }
-  .serviceList button:hover .serviceName { color: var(--blue); transform: translateX(8px); }
-  .serviceList button:hover .activeDot { opacity: 1; transform: scale(1); }
-  .serviceList button:hover .serviceArrow { opacity: 1; transform: translateX(0) scale(1); }
-  .serviceLink:hover svg { transform: translate(2px, -2px); }
-  .legend button:hover { background: var(--group-color); color: var(--group-ink); }
-  .cloud li:hover { position: relative; z-index: 1; transform: rotate(0deg) translateY(-3px) scale(1.04); box-shadow: 0 10px 22px color-mix(in srgb, var(--navy) 24%, transparent); }
+.residence:hover h3 { transform: translateY(-5px); letter-spacing: .01em; }
+.residence:hover p { transform: translateY(-3px); }
+.serviceList button:hover .serviceName { color: var(--blue); transform: translateX(8px); }
+.serviceList button:hover .activeDot { opacity: 1; transform: scale(1); }
+.serviceList button:hover .serviceArrow { opacity: 1; transform: translateX(0) scale(1); }
+.serviceLink:hover svg { transform: translate(2px, -2px); }
+.legend button:hover { background: var(--group-color); color: var(--group-ink); }
+.cloud li:hover { position: relative; z-index: 1; transform: rotate(0deg) translateY(-3px) scale(1.04); box-shadow: 0 10px 22px color-mix(in srgb, var(--navy) 24%, transparent); }
 }
 @media (min-width: 640px) {
-  .heading { font-size: 36px; }
-  .section p { font-size: 16px; }
-  .supportHeading { font-size: 32px; }
+.heading { font-size: 36px; }
+.section p { font-size: 16px; }
+.supportHeading { font-size: 32px; }
 }
 @media (min-width: 560px) {
-  .ledger ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.ledger ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (min-width: 920px) {
-  .support { grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: clamp(40px, 5vw, 72px); }
+.support { grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: clamp(40px, 5vw, 72px); }
 }
 @media (min-width: 900px) {
-  .serviceLayout { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 56px; }
-  .residences { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; }
-  .residence { min-height: 360px; padding: 170px 40px 40px; }
-  .residence h3 { font-size: 28px; }
-  .girls { padding-right: 70px; clip-path: polygon(0 0, 100% 0, 94% 100%, 0 100%); }
-  .boys { margin-left: -3%; padding-left: calc(6% + 40px); clip-path: polygon(6% 0, 100% 0, 100% 100%, 0 100%); }
-  .boys .monogram { left: auto; right: calc(24px + var(--monogram-shift)); }
+.serviceLayout { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 56px; }
+.residences { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; }
+.residence { min-height: 360px; padding: 170px 40px 40px; }
+.residence h3 { font-size: 28px; }
+.girls { padding-right: 70px; clip-path: polygon(0 0, 100% 0, 94% 100%, 0 100%); }
+.boys { margin-left: -3%; padding-left: calc(6% + 40px); clip-path: polygon(6% 0, 100% 0, 100% 100%, 0 100%); }
+.boys .monogram { left: auto; right: calc(24px + var(--monogram-shift)); }
 }
 @media (max-width: 639px) {
-  .section { padding: 36px 16px; }
-  .serviceLayout { margin-top: 24px; }
-  .serviceList button { grid-template-columns: 10px minmax(0, 1fr) 28px; gap: 10px; min-height: 72px; padding-block: 16px; }
-  .activeDot { width: 9px; height: 9px; }
-  .serviceName { font-size: clamp(22px, 6vw, 28px); }
-  .serviceArrow { width: 28px; height: 28px; }
-  .serviceDescription { padding: 0 4px 20px 24px; }
-  .serviceLink { font-size: 13px; }
-  .residences { margin-top: 24px; gap: 14px; }
-  .residence { min-height: 290px; padding: 132px 22px 26px; border-radius: 16px; }
-  .monogram { font-size: 112px; }
-  .residence h3 { font-size: 22px; }
-  .amenities { margin-top: 32px; }
-  .amenities > h3 { font-size: 20px; }
-  .legend { gap: 8px; }
-  .legend button { padding: 9px 12px; font-size: 12px; }
-  .cloud { gap: 10px; margin-top: 20px; padding: 0; }
-  .cloud li { padding: 10px 14px; font-size: 13px; border-radius: 18px; }
-  .cloud li:nth-child(n) { transform: none; }
-  .support { margin-top: 40px; gap: 40px; }
-  .treeRoot { padding: 14px 16px; }
-  .roles li { padding-inline: 10px; font-size: 12px; }
-  .treeBranch { margin-left: 24px; }
-  .committeeIntro::before { left: -17px; width: 17px; }
-  .committeeList { margin-left: 20px; }
-  .committeeList li { gap: 9px; font-size: 14px; }
-  .committeeList li::before { left: -16px; width: 16px; }
-  .routeStop { padding: 9px 12px; font-size: 13px; }
-  .routeLine { min-width: 36px; }
-  .routeLine svg { width: 26px; height: 26px; top: -20px; padding-inline: 4px; }
-  .ledger dt { font-size: 15px; }
-  .ledger li { font-size: 14px; }
+.section { padding: 36px 16px; }
+.serviceLayout { margin-top: 24px; }
+.serviceList button { grid-template-columns: 10px minmax(0, 1fr) 28px; gap: 10px; min-height: 72px; padding-block: 16px; }
+.activeDot { width: 9px; height: 9px; }
+.serviceName { font-size: clamp(22px, 6vw, 28px); }
+.serviceArrow { width: 28px; height: 28px; }
+.serviceDescription { padding: 0 4px 20px 24px; }
+.serviceLink { font-size: 13px; }
+.residences { margin-top: 24px; gap: 14px; }
+.residence { min-height: 290px; padding: 132px 22px 26px; border-radius: 16px; }
+.monogram { font-size: 112px; }
+.residence h3 { font-size: 22px; }
+.amenities { margin-top: 32px; }
+.amenities > h3 { font-size: 20px; }
+.legend { gap: 8px; }
+.legend button { padding: 9px 12px; font-size: 12px; }
+.cloud { gap: 10px; margin-top: 20px; padding: 0; }
+.cloud li { padding: 10px 14px; font-size: 13px; border-radius: 18px; }
+.cloud li:nth-child(n) { transform: none; }
+.support { margin-top: 40px; gap: 40px; }
+.treeRoot { padding: 14px 16px; }
+.roles li { padding-inline: 10px; font-size: 12px; }
+.treeBranch { margin-left: 24px; }
+.committeeIntro::before { left: -17px; width: 17px; }
+.committeeList { margin-left: 20px; }
+.committeeList li { gap: 9px; font-size: 14px; }
+.committeeList li::before { left: -16px; width: 16px; }
+.routeStop { padding: 9px 12px; font-size: 13px; }
+.routeLine { min-width: 36px; }
+.routeLine svg { width: 26px; height: 26px; top: -20px; padding-inline: 4px; }
+.ledger dt { font-size: 15px; }
+.ledger li { font-size: 14px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .section *, .section *::before, .section *::after { transition: none !important; }
-  .servicePanel > *, .serviceDescription:not([hidden]) > * { animation: none; }
-  .monogram { animation: none; }
-  .residence:hover h3, .residence:hover p { transform: none; letter-spacing: normal; }
-  .serviceLink:hover svg { transform: none; }
-  .cloud li:hover { transform: none; box-shadow: none; }
-  .routeLine svg { left: 50%; animation: none; }
+.section *, .section *::before, .section *::after { transition: none !important; }
+.servicePanel > *, .serviceDescription:not([hidden]) > * { animation: none; }
+.monogram { animation: none; }
+.residence:hover h3, .residence:hover p { transform: none; letter-spacing: normal; }
+.serviceLink:hover svg { transform: none; }
+.cloud li:hover { transform: none; box-shadow: none; }
+.routeLine svg { left: 50%; animation: none; }
 }
 @media (forced-colors: active) {
-  .serviceName { color: ButtonText; -webkit-text-stroke: 0; }
-  .serviceList [data-active="true"] .serviceName { color: Highlight; }
+.serviceName { color: ButtonText; -webkit-text-stroke: 0; }
+.serviceList [data-active="true"] .serviceName { color: Highlight; }
 }
