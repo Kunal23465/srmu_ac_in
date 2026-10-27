@@ -1,0 +1,13 @@
+.iconMotion {
+  transform-origin: center;
+  animation: campusFeatureIconFloat 3.2s ease-in-out infinite;
+}
+
+@keyframes campusFeatureIconFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-4px) rotate(-4deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .iconMotion { animation: none; }
+}

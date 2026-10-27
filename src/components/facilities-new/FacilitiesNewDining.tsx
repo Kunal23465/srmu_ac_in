@@ -46,10 +46,10 @@ export default function FacilitiesNewDining({ images, description }: { images: D
 
       <div className="mx-auto grid w-full max-w-[1536px] items-center gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-12 xl:gap-16">
         <div className="min-w-0 lg:pb-12">
-          <p className="mb-5 flex items-center gap-3 text-[11px] font-bold tracking-[0.12em] text-[#FFB703] uppercase sm:text-sm">
+          {/* <p className="mb-5 flex items-center gap-3 text-[11px] font-bold tracking-[0.12em] text-[#FFB703] uppercase sm:text-sm">
             <span className="h-0.5 w-10 shrink-0 bg-[#FFB703]" aria-hidden="true" />
             Good food. Great company.
-          </p>
+          </p> */}
           <h2 id="facilities-new-dining-title" className="mb-7 text-[24px] leading-[1.2] font-bold tracking-tight text-white sm:text-[36px]">
             A place to pause <span className="text-[#FFB703]">&amp; <span className="font-bold">connect.</span></span>
           </h2>
