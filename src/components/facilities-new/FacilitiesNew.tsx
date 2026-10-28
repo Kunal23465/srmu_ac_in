@@ -24,7 +24,6 @@ import mootCourtsImage from "../../assets/images/new-labo/moot-courts.webp";
 import studioMediaLabImage from "../../assets/images/new-labo/studio-and-media-lab.webp";
 import smartClassImage from "../../assets/images/new-labo/smart-class.webp";
 import agricultureFarmsImage from "../../assets/images/new-labo/agriculture-farms.webp";
-import herbalGardenImage from "../../assets/images/new-labo/herbal-garden.webp";
 import languageLabImage from "../../assets/images/new-labo/language-lab.webp";
 
 const containerClass = "mx-auto w-full max-w-[1280px]";
@@ -91,64 +90,54 @@ const blockDescriptions = [
 
 const laboratoryCards = [
   {
+    title: "Specialized Laboratories",
+    image: specializedLaboratoryImage,
+    text: facilitiesNewPageCopy.laboratories.introduction,
+  },
+  {
     title: "Computer Centers",
     image: computerCentresImage,
-    text: "SRMU's computer centers provide access to high-end computer systems, licensed software, and internet connectivity to support programming, computational work, design, simulations, research, and digital learning.",
+    text: facilitiesNewPageCopy.laboratories.computerCenters,
   },
   {
     title: "Biotechnology Laboratories",
     image: biotechnologyLabImage,
-    text: "The biotechnology laboratories include specialized facilities for areas such as molecular biology, microbiology, biochemistry, and genetic engineering. Instruments such as PCR machines, spectrophotometers, laminar airflow systems, and centrifuges support laboratory-based learning and research.",
+    text: facilitiesNewPageCopy.laboratories.biotechnologyLaboratories,
   },
   {
     title: "Pharmacy Laboratories",
     image: pharmacyLabImage,
-    text: "Pharmacy laboratories support practical education in areas such as pharmacology, pharmaceutics, and pharmaceutical chemistry. These facilities help students understand pharmaceutical analysis, formulation, laboratory procedures, and research applications.",
+    text: facilitiesNewPageCopy.laboratories.pharmacyLaboratories,
   },
   {
     title: "Engineering Workshops",
     image: engineeringLabsImage,
-    text: "Engineering workshops provide practical exposure to tools, machinery, fabrication, and technical processes. They help students connect engineering concepts with hands-on activities and discipline-specific applications.",
+    text: facilitiesNewPageCopy.laboratories.engineeringWorkshops,
   },
   {
-    title: "Specialized Laboratories",
-    image: specializedLaboratoryImage,
-    text: "SRMU's specialized laboratories support applied learning and research, with discipline-specific facilities and equipment that help students turn theoretical concepts into practical skills.",
+    title: "Agricultural Farms and Herbal Gardens",
+    image: agricultureFarmsImage,
+    text: facilitiesNewPageCopy.laboratories.agriculturalFarmsAndHerbalGardens,
+  },
+  {
+    title: "Moot Court",
+    image: mootCourtsImage,
+    text: facilitiesNewPageCopy.laboratories.mootCourt,
+  },
+  {
+    title: "Studio and Media Laboratories",
+    image: studioMediaLabImage,
+    text: facilitiesNewPageCopy.laboratories.studioAndMediaLaboratories,
+  },
+  {
+    title: "Language Laboratory",
+    image: languageLabImage,
+    text: facilitiesNewPageCopy.laboratories.languageLaboratory,
   },
   {
     title: "Smart Classrooms",
     image: smartClassImage,
     text: "More than 100 smart classrooms are equipped with projectors and audiovisual teaching aids to support interactive learning.",
-  },
-  {
-    title: "Agricultural Farms",
-    image: agricultureFarmsImage,
-    text: facilitiesNewPageCopy.laboratories.agriculturalFarms,
-  },
-  {
-    title: "Herbal Garden",
-    image: herbalGardenImage,
-    text: facilitiesNewPageCopy.laboratories.herbalGardens,
-  },
-  {
-    title: "Moot Court",
-    image: mootCourtsImage,
-    text: "The Moot Court provides a simulated courtroom environment for law students to practice legal arguments, case presentations, drafting, and courtroom procedures.",
-  },
-  {
-    title: "Media Facilities",
-    image: studioMediaLabImage,
-    text: "The university's media facilities include news studios, an editing suite, a soundproof voiceover room, and a green-screen setup. These spaces support practical learning in news presentation, video editing, podcasting, and filmmaking.",
-  },
-  {
-    title: "Language Lab",
-    image: languageLabImage,
-    text: "The Language Lab supports communication skills, spoken English, pronunciation, and language development through interactive learning modules.",
-  },
-  {
-    title: "Seminar Halls and Auditoriums",
-    image: seminarHallsImage,
-    text: "SRMU's seminar halls and auditoriums provide dedicated spaces for academic discussions, guest lectures, conferences, workshops, presentations, expert interactions, and university events.",
   },
 ];
 
@@ -415,7 +404,6 @@ export default function FacilitiesNew() {
       </Section>
 
       <Section id="facilities-new-laboratories" title={<>Laboratories and <span className="text-[#FFB703]">Practical Learning Facilities</span></>} tone="navy">
-        <p className="mb-6 text-[15px] leading-relaxed text-white/90 sm:text-base">Practical learning is an integral part of education at SRMU. The university's specialized laboratories enable students to apply theoretical concepts, conduct experiments, develop technical skills, and gain experience with discipline-specific tools and equipment.</p>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {laboratoryCards.map((item) => (
             <ContentCard key={item.title} title={item.title} image={item.image} imageAlt={`${item.title} at SRMU`}>
@@ -423,6 +411,13 @@ export default function FacilitiesNew() {
             </ContentCard>
           ))}
         </div>
+      </Section>
+
+      <Section id="facilities-new-seminar-halls" title={<>Seminar Halls and <span className="text-[#FFB703]">Auditoriums</span></>} tone="pale">
+        <p className="mb-5 w-full text-[15px] leading-relaxed text-[#405575] sm:text-base">SRMU's seminar halls and auditoriums provide dedicated spaces for academic discussions, guest lectures, conferences, workshops, presentations, expert interactions, and university events.</p>
+        <figure className="m-0 overflow-hidden rounded-2xl border border-[#D5E5F4] bg-[#14284E] shadow-[0_12px_30px_rgba(20,40,78,0.16)]">
+          <img src={seminarHallsImage} alt="Seminar hall and auditorium facilities at SRMU" loading="lazy" decoding="async" className="aspect-[16/8] w-full object-cover sm:aspect-[16/6]" />
+        </figure>
       </Section>
 
       <Section id="facilities-new-healthcare" title={<>Healthcare and <span className="text-[#FFB703]">Medical Facilities</span></>} tone="pale">
@@ -576,7 +571,7 @@ export default function FacilitiesNew() {
         </div>
       </Section>
 
-      <section id="facilities-new-outings" className="scroll-mt-24 border-b border-[#DCE6F2] bg-[linear-gradient(110deg,#EAF6FF_0%,#DDEFFF_52%,#EAF6FF_100%)] px-4 py-20 sm:px-6 sm:py-24 lg:py-28" aria-label="Hostel transport, fees, and admission">
+      <section id="facilities-new-outings" className="scroll-mt-24 border-b border-[#DCE6F2] bg-[linear-gradient(110deg,#EAF6FF_0%,#DDEFFF_52%,#EAF6FF_100%)] px-4 py-10 sm:px-6 sm:py-12 lg:py-14" aria-label="Hostel transport, fees, and admission">
         <div className={`${containerClass} grid gap-y-14 lg:grid-cols-2 lg:gap-x-16`}>
           <article className="min-w-0">
             <div className="mb-4 grid size-[72px] place-items-center rounded-full bg-[#D9EDFF] text-[#14284E] sm:mb-5 sm:size-[82px]" aria-hidden="true">
