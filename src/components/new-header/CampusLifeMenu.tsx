@@ -1,6 +1,6 @@
 import { useEffect, useId, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { ArrowUpRight, BookOpen, Building2, Bus, CalendarDays, Camera, ChevronDown, ChevronRight, Cpu, Droplets, Dumbbell, GraduationCap, Heart, Landmark, Leaf, Mic, Music, Palette, PenTool, Recycle, Shield, Sparkles, Sun, Trees, UsersRound, WashingMachine, type LucideIcon } from "lucide-react";
+import { ArrowUpRight, BookOpen, Building2, Bus, CalendarDays, Camera, ChevronDown, ChevronRight, Coffee, Cpu, Droplets, Dumbbell, FlaskConical, GraduationCap, Heart, Landmark, Leaf, Mic, Music, Palette, PenTool, Recycle, Shield, Sparkles, Sun, Trees, UsersRound, type LucideIcon } from "lucide-react";
 import styles from "./new.module.css";
 
 const campusItems = [
@@ -36,22 +36,27 @@ const highlights: Record<string, HighlightSection> = {
     description: "Spaces that support your everyday campus life.",
     icon: Building2,
     links: [
-      { label: "Academic blocks", description: "Explore SRMU’s five academic blocks", path: "/facilities-new#facilities-new-blocks", icon: Building2 },
-      { label: "Labs & Seminar Hall", description: "Explore labs, classrooms and seminar spaces", path: "/facilities-new#facilities-new-academics", icon: GraduationCap },
-      { label: "Healthcare", description: "On-campus healthcare facilities", path: "/facilities-new#facilities-new-essentials-healthcare", icon: Building2 },
-      { label: "Transport, fee & route plan", description: "View transport services and route information", path: "/transportation", icon: Bus },
+      { label: "Academic Blocks", description: "Explore SRMU’s academic blocks", path: "/facilities-new#facilities-new-blocks", icon: Building2 },
+      { label: "Laboratories", description: "Labs and practical learning facilities", path: "/facilities-new#facilities-new-laboratories", icon: FlaskConical },
+      { label: "Seminar Halls & Auditoriums", description: "Spaces for lectures, conferences, and events", path: "/facilities-new#facilities-new-seminar-halls", icon: GraduationCap },
+      { label: "Healthcare & Medical Facilities", description: "Student healthcare and medical support", path: "/facilities-new#facilities-new-healthcare", icon: Heart },
+      { label: "Transport & Fees", description: "Routes, timings, and transportation fees", path: "/facilities-new#facilities-new-transport", icon: Bus },
+      { label: "Sports & Fitness", description: "Sports, recreation, and fitness facilities", path: "/facilities-new#facilities-new-sports", icon: Dumbbell },
+      { label: "Central Library", description: "Library collections and digital resources", path: "/facilities-new#facilities-new-library", icon: BookOpen },
+      { label: "Cafeteria & Eating Joints", description: "Dining spaces across campus", path: "/facilities-new#facilities-new-dining", icon: Coffee },
+      { label: "Banking & ATM", description: "On-campus banking and ATM facilities", path: "/facilities-new#facilities-new-banking", icon: Landmark },
       {
-        label: "Hostel",
-        description: "Explore hostel accommodation and amenities",
-        path: "/hostel",
+        label: "Hostel Facilities",
+        description: "Accommodation, amenities, and residential information",
+        path: "/facilities-new#facilities-new-hostels",
         icon: Building2,
         children: [
-          { label: "AC class", description: "Explore air-conditioned hostel accommodation", path: "/hostel", icon: Building2 },
-          { label: "Banking", description: "Banking and ATM facilities on campus", path: "/facilities-new#facilities-new-essentials-banking", icon: Landmark },
-          { label: "Laundry Facilities", description: "Laundry support for campus residents", path: "/facilities-new#facilities-new-hostels", icon: WashingMachine },
-          { label: "Sports Stadium", description: "Explore sports and recreation facilities", path: "/facilities-new#facilities-new-sports", icon: Dumbbell },
+          { label: "Hostel Amenities", description: "Room, dining, study, and residential amenities", path: "/facilities-new#facilities-new-hostel-amenities", icon: Building2 },
+          { label: "Hostel Management", description: "Residential administration and student committees", path: "/facilities-new#facilities-new-residential-committees", icon: UsersRound },
+          { label: "Hostel Transport & Fees", description: "Outings, accommodation, and fee information", path: "/facilities-new#facilities-new-outings", icon: Bus },
         ],
       },
+      { label: "Green Campus & Student Recreation", description: "Explore campus green spaces and student life", path: "/facilities-new#facilities-new-campus-life", icon: Leaf },
     ],
     all: "Explore all facilities",
   },
@@ -156,14 +161,9 @@ const hasHighlights = (path: string): path is HighlightPath => path in highlight
 
 function HighlightLinks({ path, onNavigate }: { path: HighlightPath; onNavigate: () => void }) {
   const section = highlights[path];
-  const Icon = section.icon;
   const [expandedGroup, setExpandedGroup] = useState<string | null>(null);
   return (
     <>
-      <div className={styles.panelHeading}>
-        <span className={styles.headingIcon}><Icon size={23} aria-hidden="true" /></span>
-        <div><strong>{section.title}</strong><p>{section.description}</p></div>
-      </div>
       <ul className={styles.highlights}>
         {section.links.map(({ label, description, path: destination, icon: ItemIcon, children }) => (
           <li key={label} className={styles.highlightItem}
@@ -194,7 +194,6 @@ function HighlightLinks({ path, onNavigate }: { path: HighlightPath; onNavigate:
           </li>
         ))}
       </ul>
-      <Link to={path} onClick={onNavigate} className={styles.viewAll}>{section.all}<ChevronRight size={17} aria-hidden="true" /></Link>
     </>
   );
 }

@@ -15,10 +15,6 @@
 .selected .expand svg { transform: translateX(3px); color: #a56f00; }
 .flyout { position: absolute; left: 100%; top: -3px; width: 340px; padding-left: 6px; }
 .flyoutContent { border-top: 3px solid #ffb703; border-radius: 6px; background: white; box-shadow: 0 14px 40px #14284e26; overflow-y: auto; max-height: calc(100dvh - 150px); animation: slideIn 220ms ease-out; }
-.panelHeading { display: flex; gap: 11px; padding: 19px 16px 17px; background: #f0f3f9; border-bottom: 1px solid #e5e7eb; }
-.headingIcon { color: #14284e; padding-top: 3px; }
-.panelHeading strong { display: block; color: #14284e; font-size: 15px; font-weight: 600; line-height: 1.4; }
-.panelHeading p { margin: 5px 0 0; color: #627087; font-size: 12px; line-height: 1.5; }
 .highlights { padding: 8px; }
 .highlightItem { position: relative; }
 .highlightRow { display: flex; align-items: center; }
@@ -43,8 +39,6 @@
 .linkCopy small { display: block; margin-top: 3px; color: #627087; font-size: 11px; line-height: 1.5; }
 .linkArrow { flex-shrink: 0; color: #718096; transition: transform 200ms ease; }
 .highlightLink:hover .linkArrow { transform: translate(2px, -2px); color: #14284e; }
-.viewAll { display: flex; justify-content: space-between; align-items: center; padding: 14px 18px; border-top: 1px solid #e5e7eb; font-size: 13px; font-weight: 600; color: #14284e; }
-.viewAll:hover { background: #ffb703; }
 .desktopRoot a:focus-visible, .desktopRoot button:focus-visible, .mobileRoot a:focus-visible, .mobileRoot button:focus-visible { outline: 2px solid #b98100; outline-offset: -3px; border-radius: 4px; }
 .mobileRoot { text-transform: none; }
 .mobileList > li + li { border-top: 1px solid #e5e7eb; }
@@ -52,8 +46,7 @@
 .mobileRow > a { padding: 12px 20px; flex: 1; font-size: 14px; }
 .mobileRow > button { display: grid; place-items: center; width: 44px; min-height: 44px; color: #14284e; border: 0; background: none; cursor: pointer; }
 .mobilePanel { background: #f6f8fc; border-left: 3px solid #ffb703; margin: 0 8px 10px; border-radius: 5px; overflow: hidden; animation: reveal 180ms ease-out; }
-.mobilePanel .panelHeading { padding: 12px 9px; }
-.mobilePanel .headingIcon, .mobilePanel .linkArrow { display: none; }
+.mobilePanel .linkArrow { display: none; }
 .mobilePanel .highlightLink { gap: 8px; padding: 10px 3px; }
 .mobilePanel .groupExpand { width: 32px; flex-basis: 32px; }
 .mobilePanel .childLinks { margin-left: 35px; }
@@ -63,7 +56,6 @@
 .mobilePanel .childLink small { font-size: 10px; }
 .mobilePanel .icon { flex-basis: 30px; height: 32px; }
 .mobilePanel .linkCopy strong { font-size: 12px; }
-.mobilePanel .viewAll { padding: 12px 9px; font-size: 12px; }
 @media (min-width: 1280px) { .desktopRoot { padding-inline: 15px; } .trigger { font-size: 15px; } }
 @keyframes reveal { from { opacity: 0; } to { opacity: 1; } }
 @keyframes slideIn { from { opacity: 0; transform: translateX(-7px); } to { opacity: 1; transform: translateX(0); } }

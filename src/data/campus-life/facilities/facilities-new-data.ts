@@ -12,15 +12,16 @@ import centrallibrary from "../../../assets/images/campus-life/facilities/centra
 import seminarhall from "../../../assets/images/campus-life/facilities/seminarhall.jpg";
 import languagelab from "../../../assets/images/campus-life/facilities/languagelab.jpg";
 import workshop from "../../../assets/images/campus-life/facilities/workshop.jpg";
-import tennis from "../../../assets/images/campus-life/facilities/tennis-22122306280275.jpg";
-import cricket from "../../../assets/images/campus-life/facilities/cricket-22122306142914.jpg";
-import volleyball from "../../../assets/images/campus-life/facilities/volleyball-22122306154913.jpg";
-import kabaddi from "../../../assets/images/campus-life/facilities/kabaddi-22122306282561.jpg";
-import badminton from "../../../assets/images/campus-life/facilities/badminton-22122306160875.jpg";
-import tableTennis from "../../../assets/images/campus-life/facilities/table-tennis-22122306285390.jpg";
-import basketball from "../../../assets/images/campus-life/facilities/basketball-22122306171125.jpg";
-import gymnasium from "../../../assets/images/campus-life/facilities/gymnasium-2212230619143.jpg";
-import football from "../../../assets/images/campus-life/facilities/football-22122306193148.jpg";
+import sportKabaddiOne from "../../../assets/images/new-sport/SR7D0007.webp";
+import sportKabaddiTwo from "../../../assets/images/new-sport/SR7D0068.webp";
+import sportYoga from "../../../assets/images/new-sport/SR7D4265.webp";
+import sportGym from "../../../assets/images/new-sport/SR7D4571.webp";
+import sportCarromOne from "../../../assets/images/new-sport/SR7D4581.webp";
+import sportBasketballOne from "../../../assets/images/new-sport/SR7D9032.webp";
+import sportVolleyball from "../../../assets/images/new-sport/SR7D9076.webp";
+import sportBasketballTwo from "../../../assets/images/new-sport/SR7D9116.webp";
+import sportCarromTwo from "../../../assets/images/new-sport/SR7D9333.webp";
+import sportTableTennis from "../../../assets/images/new-sport/SR7D9485.webp";
 import b1 from "../../../assets/images/campus-life/facilities/b-1.jpeg";
 import b2 from "../../../assets/images/campus-life/facilities/b-2.jpeg";
 import b3 from "../../../assets/images/campus-life/facilities/b-3.jpeg";
@@ -153,11 +154,16 @@ export const facilitiesNewCards = [
 ];
 
 export const facilitiesNewSportsImages = [
-  { src: tennis, caption: "Tennis" }, { src: cricket, caption: "Cricket" },
-  { src: volleyball, caption: "Volleyball" }, { src: kabaddi, caption: "Kabaddi" },
-  { src: badminton, caption: "Badminton" }, { src: tableTennis, caption: "Table Tennis" },
-  { src: basketball, caption: "Basketball" }, { src: gymnasium, caption: "Gymnasium" },
-  { src: football, caption: "Football" },
+  { src: sportKabaddiOne, caption: "Students playing kabaddi" },
+  { src: sportKabaddiTwo, caption: "Kabaddi match on campus" },
+  { src: sportYoga, caption: "Group yoga session" },
+  { src: sportGym, caption: "Student workout in the gym" },
+  { src: sportCarromOne, caption: "Students playing carrom" },
+  { src: sportBasketballOne, caption: "Basketball game" },
+  { src: sportVolleyball, caption: "Volleyball game" },
+  { src: sportBasketballTwo, caption: "Basketball practice" },
+  { src: sportCarromTwo, caption: "Carrom game" },
+  { src: sportTableTennis, caption: "Table tennis game" },
 ];
 
 export const facilitiesNewBlocks = [

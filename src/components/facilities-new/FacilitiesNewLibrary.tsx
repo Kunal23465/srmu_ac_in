@@ -30,17 +30,6 @@ export default function FacilitiesNewLibrary() {
 
   return (
     <section ref={sectionRef} id="facilities-new-library" tabIndex={-1} className={styles.section} data-visible={visible} aria-labelledby="facilities-new-library-title">
-      <div className={styles.decoration} aria-hidden="true">
-        <span className={styles.wash} />
-        <span className={styles.topCircle} />
-        <span className={styles.topRing} />
-        <span className={styles.bottomCircle} />
-        <span className={styles.bottomRing} />
-        <span className={styles.yellowRing} />
-        <span className={`${styles.dots} ${styles.leftDots}`} />
-        <span className={`${styles.dots} ${styles.bottomDots}`} />
-      </div>
-
       <div className={styles.layout}>
         <div className={styles.headingArea}>
           <div className={`${styles.heading} ${styles.reveal}`}>
@@ -83,12 +72,6 @@ export default function FacilitiesNewLibrary() {
         </div>
 
         <div className={`${styles.visual} ${styles.reveal}`} style={stagger(220)}>
-          <div className={styles.photoDecorations} aria-hidden="true">
-            <span className={styles.navyShape} />
-            <span className={styles.yellowShape} />
-            <span className={`${styles.dots} ${styles.photoDots}`} />
-            <span className={styles.backFrame} />
-          </div>
           <figure className={styles.photo}>
             <div className={styles.imageCrop}><img src={libraryImage} alt="SRMU student browsing academic books in the Central Library" width={6000} height={4000} loading="lazy" decoding="async" /></div>
             <figcaption><BookOpen size={27} strokeWidth={1.8} aria-hidden="true" /><span>The Central Library at SRMU</span></figcaption>

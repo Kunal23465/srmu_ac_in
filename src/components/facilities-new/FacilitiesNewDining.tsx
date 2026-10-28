@@ -1,11 +1,10 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { ArrowLeft, ArrowRight, Coffee, ImageIcon, UsersRound } from "lucide-react";
 
 type DiningImage = { src: string; caption: string };
 
 export default function FacilitiesNewDining({ images, description }: { images: DiningImage[]; description: string }) {
   const [index, setIndex] = useState(0);
-  const gallery = useRef<HTMLDivElement>(null);
   const current = images[index];
 
   return (
@@ -13,29 +12,8 @@ export default function FacilitiesNewDining({ images, description }: { images: D
       id="facilities-new-dining"
       tabIndex={-1}
       aria-labelledby="facilities-new-dining-title"
-      className="relative isolate scroll-mt-36 overflow-hidden bg-linear-to-br from-[#081B40] via-[#0B214B] to-[#081A3D] px-4 py-8 text-white outline-none sm:px-6 sm:py-10 lg:py-10"
+      className="relative isolate scroll-mt-36 overflow-hidden bg-linear-to-br from-[#081B40] via-[#0B214B] to-[#081A3D] px-4 py-5 text-white outline-none sm:px-6 sm:py-6"
     >
-      {/* Decorative shapes stay behind the content and never intercept controls. */}
-      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
-        <div className="absolute -top-36 -left-32 size-72 rounded-full bg-[#233D91]/55" />
-        <div className="absolute -top-24 -left-44 size-80 rounded-full bg-[#243F96]/35" />
-        <div className="absolute -right-28 -bottom-44 size-80 rounded-full bg-[#233D91]/60" />
-        <svg viewBox="0 0 260 240" className="absolute -bottom-3 -left-4 hidden w-56 sm:block" fill="none">
-          <path d="M0 70C45 34 83 67 91 111C100 159 152 142 176 184C185 199 188 223 189 240H0Z" fill="#FFB703" />
-          <path d="M0 18C80 2 111 63 113 111C117 168 205 161 227 240M0 5C56 25 51 120 107 159C149 190 229 172 250 240" stroke="#FFB703" strokeOpacity=".65" />
-        </svg>
-        <div className="absolute top-6 right-[6%] hidden grid grid-cols-5 gap-4 lg:grid">
-          {Array.from({ length: 15 }, (_, dot) => <span key={dot} className="size-[3px] rounded-full bg-[#FFB703]/85" />)}
-        </div>
-        <div className="absolute bottom-6 left-[11%] hidden grid grid-cols-5 gap-4 lg:grid">
-          {Array.from({ length: 15 }, (_, dot) => <span key={dot} className="size-[3px] rounded-full bg-[#5272C6]/65" />)}
-        </div>
-        <Coffee className="absolute bottom-14 left-[33%] hidden size-28 -rotate-12 text-[#3754B1]/40 lg:block" strokeWidth={1} />
-        <svg viewBox="0 0 320 130" className="absolute bottom-4 left-[29%] hidden w-72 text-[#3754B1]/35 lg:block" fill="none">
-          <path d="M2 98C56 17 110 137 57 118C16 103 100 43 161 80C234 124 210 24 273 29C322 31 273 73 294 2" stroke="currentColor" strokeWidth="1.5" strokeDasharray="5 7" />
-        </svg>
-      </div>
-
       <div className="mx-auto grid w-full max-w-[1280px] items-start gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-10 xl:gap-12">
         <div className="min-w-0">
           {/* <p className="mb-5 flex items-center gap-3 text-[11px] font-bold tracking-[0.12em] text-[#FFB703] uppercase sm:text-sm">
@@ -46,7 +24,7 @@ Good food. Great company.
             Cafeteria and <span className="text-[#FFB703]">Eating Joints</span>
           </h2>
 
-          <div className="space-y-5 text-[15px] leading-relaxed text-[#E0E9FA] sm:text-base">
+          <div className="space-y-5 text-[15px] leading-relaxed text-[#E0E9FA] sm:text-base lg:text-justify">
             <div className="flex items-start gap-4 sm:gap-5">
               <Coffee size={36} strokeWidth={1.5} className="mt-1 shrink-0 text-[#FFB703]" aria-hidden="true" />
               <p>{description}</p>
@@ -74,16 +52,13 @@ Cafeteria &amp; Eating Joints
         </div>
 
         <div
-          ref={gallery}
           id="facilities-new-dining-gallery"
           role="region"
           aria-label="Cafeteria photo gallery"
           aria-roledescription="carousel"
           tabIndex={-1}
-          className="relative min-w-0 scroll-mt-36 rounded-2xl focus-visible:outline-2 focus-visible:outline-offset-8 focus-visible:outline-[#FFB703]"
+          className="relative mx-auto w-[92%] max-w-[560px] scroll-mt-36 rounded-2xl focus-visible:outline-2 focus-visible:outline-offset-8 focus-visible:outline-[#FFB703] lg:mx-0 lg:w-full lg:justify-self-end"
         >
-          <div className="pointer-events-none absolute -top-3 -left-3 -z-10 h-24 w-24 -rotate-6 rounded-[32px] bg-[#FFB703] sm:-top-4 sm:-left-6 sm:h-36 sm:w-32 sm:rounded-[40px]" aria-hidden="true" />
-          <div className="pointer-events-none absolute top-[40%] -right-6 hidden h-40 w-0.5 bg-[#FFB703] xl:block" aria-hidden="true" />
           <figure className="relative m-0 overflow-hidden rounded-[20px] border border-[#7994CB]/40 bg-[#10244E] shadow-[0_18px_50px_#020D2630]">
             <img src={current.src} alt={current.caption} width={900} height={530} loading="lazy" decoding="async" className="aspect-[4/3] w-full object-cover sm:aspect-[17/10]" />
             <figcaption className="absolute inset-x-0 bottom-0 flex min-h-18 items-center gap-3 rounded-t-2xl border-t border-[#7994CB]/25 bg-[#091C40]/90 px-4 py-3 backdrop-blur-sm sm:gap-5 sm:px-6 sm:py-4" aria-live="polite" aria-atomic="true">
