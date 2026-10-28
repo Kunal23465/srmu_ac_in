@@ -39,11 +39,11 @@ export default function FacilitiesNewDining({ images, description }: { images: D
       <div className="mx-auto grid w-full max-w-[1280px] items-start gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-10 xl:gap-12">
         <div className="min-w-0">
           {/* <p className="mb-5 flex items-center gap-3 text-[11px] font-bold tracking-[0.12em] text-[#FFB703] uppercase sm:text-sm">
-            <span className="h-0.5 w-10 shrink-0 bg-[#FFB703]" aria-hidden="true" />
-            Good food. Great company.
-          </p> */}
+<span className="h-0.5 w-10 shrink-0 bg-[#FFB703]" aria-hidden="true" />
+Good food. Great company.
+</p> */}
           <h2 id="facilities-new-dining-title" className="mb-7 text-[24px] leading-[1.2] font-bold tracking-tight text-white sm:text-[36px]">
-            A Place to Pause <span className="text-[#FFB703]">&amp; <span className="font-bold">Connect.</span></span>
+            Cafeteria and <span className="text-[#FFB703]">Eating Joints</span>
           </h2>
 
           <div className="space-y-5 text-[15px] leading-relaxed text-[#E0E9FA] sm:text-base">
@@ -58,19 +58,19 @@ export default function FacilitiesNewDining({ images, description }: { images: D
           </div>
 
           {/* Temporarily hidden cafeteria gallery CTA.
-          <div className="mt-6 w-fit border-t border-[#7895D0]/30 pt-5">
-            <button
-              type="button"
-              aria-controls="facilities-new-dining-gallery"
-              aria-label="Explore cafeteria and eating joints photos"
-              className="inline-flex min-h-14 items-center gap-3 rounded-full bg-[#1A3270] py-2.5 pr-6 pl-4 text-[13px] font-semibold text-white focus-visible:outline-[#FFB703]! sm:gap-4 sm:text-sm"
-            >
-              <span className="grid size-9 shrink-0 place-items-center rounded-full bg-[#FFB703] text-[#10244E]"><Utensils size={23} aria-hidden="true" /></span>
-              Cafeteria &amp; Eating Joints
-              <ArrowRight size={20} className="ml-1 shrink-0" aria-hidden="true" />
-            </button>
-          </div>
-          */}
+<div className="mt-6 w-fit border-t border-[#7895D0]/30 pt-5">
+<button
+type="button"
+aria-controls="facilities-new-dining-gallery"
+aria-label="Explore cafeteria and eating joints photos"
+className="inline-flex min-h-14 items-center gap-3 rounded-full bg-[#1A3270] py-2.5 pr-6 pl-4 text-[13px] font-semibold text-white focus-visible:outline-[#FFB703]! sm:gap-4 sm:text-sm"
+>
+<span className="grid size-9 shrink-0 place-items-center rounded-full bg-[#FFB703] text-[#10244E]"><Utensils size={23} aria-hidden="true" /></span>
+Cafeteria &amp; Eating Joints
+<ArrowRight size={20} className="ml-1 shrink-0" aria-hidden="true" />
+</button>
+</div>
+*/}
         </div>
 
         <div

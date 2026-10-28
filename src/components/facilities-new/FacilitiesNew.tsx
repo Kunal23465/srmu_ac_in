@@ -1,351 +1,643 @@
 import { useEffect, useState } from "react";
-import type { MouseEvent } from "react";
-import { Link, useLocation } from "react-router-dom";
-import { ArrowDown, ArrowLeft, ArrowRight, ArrowUpRight, BookOpen, Building2, Bus, ChevronDown, Coffee, Dumbbell, FlaskConical, GraduationCap, Landmark, MapPin } from "lucide-react";
-import { facilitiesNewBlocks as CARD_CONTENT, facilitiesNewCards as facilitiesData, facilitiesNewPageCopy, facilitiesNewSportsImages as sportsImages } from "../../data/campus-life/facilities/facilities-new-data";
+import type { MouseEvent, ReactNode } from "react";
+import { ArrowLeft, ArrowRight, BedDouble, BookOpen, Bus, Camera, Dumbbell, Droplets, FileText, Fingerprint, FlaskConical, HeartPulse, Landmark, Leaf, Monitor, Shield, Trees, UsersRound, WashingMachine, Wifi, Zap } from "lucide-react";
+import { facilitiesNewBlocks, facilitiesNewPageCopy, facilitiesNewSportsImages } from "../../data/campus-life/facilities/facilities-new-data";
 import campus from "../../assets/images/breadcrumb/campus.webp";
-import cafeteria1 from "../../assets/images/campus-life/facilities/cafeteria-1.jpg";
-import cafeteria2 from "../../assets/images/campus-life/facilities/cafeteria-2.jpg";
-import cafeteria3 from "../../assets/images/campus-life/facilities/cafeteria-3.jpg";
-import cafeteria4 from "../../assets/images/campus-life/facilities/cafeteria-4.jpg";
-import cafeteria5 from "../../assets/images/campus-life/facilities/cafeteria-5.jpg";
-import transport from "../../assets/images/campus-life/facilities/1-1-18102301254317.png";
-import FacilitiesNewDining from "./FacilitiesNewDining";
+import campusBus from "../../assets/images/bus-images/Bus.webp";
+import campusBusFleet from "../../assets/images/bus-images/SR7D5284.webp";
 import FacilitiesNewLibrary from "./FacilitiesNewLibrary";
-import FacilitiesNewExplorer from "./FacilitiesNewExplorer";
-import FacilitiesNewLiving from "./FacilitiesNewLiving";
-import featureStyles from "./FacilitiesNewHighlights.module.css";
-import sportsStyles from "./FacilitiesNewSports.module.css";
+import FacilitiesNewDining from "./FacilitiesNewDining";
+import canteen1 from "../../assets/images/new-canteen/canteen-1.webp";
+import canteen2 from "../../assets/images/new-canteen/canteen-2.webp";
+import canteen3 from "../../assets/images/new-canteen/canteen-3.webp";
+import canteen4 from "../../assets/images/new-canteen/canteen-4.webp";
+import canteen5 from "../../assets/images/new-canteen/canteen-5.webp";
+import canteen6 from "../../assets/images/new-canteen/canteen-6.webp";
+import computerCentresImage from "../../assets/images/new-labo/computer-centres.webp";
+import engineeringLabsImage from "../../assets/images/new-labo/engineering-labs.webp";
+import specializedLaboratoryImage from "../../assets/images/new-labo/specialized-laboratory.webp";
+import biotechnologyLabImage from "../../assets/images/new-labo/biotechnology-lab.webp";
+import pharmacyLabImage from "../../assets/images/new-labo/pharmacy-lab.webp";
+import seminarHallsImage from "../../assets/images/new-labo/seminar-halls-and-auditorium.webp";
+import medicalFacilityImage from "../../assets/images/new-labo/medical-facility.webp";
+import mootCourtsImage from "../../assets/images/new-labo/moot-courts.webp";
+import studioMediaLabImage from "../../assets/images/new-labo/studio-and-media-lab.webp";
+import smartClassImage from "../../assets/images/new-labo/smart-class.webp";
+import agricultureFarmsImage from "../../assets/images/new-labo/agriculture-farms.webp";
+import herbalGardenImage from "../../assets/images/new-labo/herbal-garden.webp";
+import languageLabImage from "../../assets/images/new-labo/language-lab.webp";
 
-// One fluid container keeps every section aligned without competing breakpoint units.
-const containerClass = "mx-auto w-full min-w-0 max-w-[1280px]";
-const sectionClass = "scroll-mt-36 px-4 py-9 outline-none sm:px-6 md:py-12";
-const splitClass = "grid items-center gap-8 lg:grid-cols-2 lg:gap-12";
-const bodyClass = "text-[15px] leading-relaxed text-[#4B5A72] sm:text-base";
-const eyebrowClass = "mb-3 text-[11px] font-bold tracking-[0.16em] text-[#0F4A85] uppercase";
-const buttonClass = "inline-flex min-h-11 items-center justify-center gap-3 rounded-full bg-[#FFB703] px-6 py-3 text-xs font-bold tracking-wide text-[#14284E] uppercase transition-colors hover:bg-[#ffca42] motion-reduce:transition-none";
-const headingClass = "mb-5 text-[24px] leading-[1.2] font-bold sm:text-[36px] [&>span]:text-[#FFB703]";
-
-const sections = [
-  { id: "facilities-new-overview", label: "Overview", icon: GraduationCap },
-  { id: "facilities-new-academics", label: "Learning Spaces", icon: BookOpen },
-  { id: "facilities-new-dining", label: "Cafeteria", icon: Coffee },
-  { id: "facilities-new-sports", label: "Sports & Fitness", icon: Dumbbell },
-  { id: "facilities-new-transport", label: "Transportation", icon: Bus },
-  { id: "facilities-new-essentials", label: "Campus Essentials", icon: Landmark },
-  { id: "facilities-new-blocks", label: "Academic Blocks", icon: Building2 },
+const containerClass = "mx-auto w-full max-w-[1280px]";
+const sectionClass = "scroll-mt-24 border-b border-[#DCE6F2] px-4 py-8 sm:px-6 sm:py-10";
+const sectionHeadingClass = "mb-3 text-[24px] leading-[1.2] font-bold font-display text-[#14284E] sm:text-[36px]";
+const paragraphClass = "text-justify text-[15px] leading-relaxed text-[#405575] sm:text-base";
+const darkParagraphClass = "text-justify text-[15px] leading-relaxed text-[#E0F1FF] sm:text-base";
+const cardClass = "group relative min-w-0 overflow-hidden rounded-2xl border border-[#DCE6F2] border-t-4 border-t-[#D62C2B] bg-white p-5 shadow-[0_2px_12px_rgba(15,31,61,0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_28px_rgba(15,31,61,0.10)] motion-reduce:transition-none motion-reduce:hover:translate-y-0 sm:p-6";
+const diningImages = [
+  { src: canteen1, caption: "Students at the campus canteen counter" },
+  { src: canteen2, caption: "Students sharing a meal in the canteen" },
+  { src: canteen3, caption: "Students gathering in the cafeteria" },
+  { src: canteen4, caption: "Students being served in the dining hall" },
+  { src: canteen5, caption: "Campus café and eating joint" },
+  { src: canteen6, caption: "Students dining in the campus canteen" },
 ];
-const diningImages = [cafeteria1, cafeteria2, cafeteria3, cafeteria4, cafeteria5].map((src, index) => ({ src, caption: `Cafeteria & Eating Joints · View ${index + 1}` }));
+const campusLifeHighlights = [
+  { label: "Green Campus", icon: Leaf, color: "bg-[#14284E] text-white" },
+  { label: "Landscaped Spaces", icon: Trees, color: "bg-[#14284E] text-white" },
+  { label: "Sports & Recreation", icon: Dumbbell, color: "bg-[#35A6D7] text-white" },
+  { label: "Vibrant Student Life", icon: UsersRound, color: "bg-white/85 text-[#35A6D7]" },
+];
 
-// Keep section links from triggering RootLayout's route-change scroll-to-top.
-function scrollToSection(event: MouseEvent<HTMLAnchorElement>) {
-  if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-  const target = document.getElementById(event.currentTarget.hash.slice(1));
-  if (!target) return;
-  event.preventDefault();
-  target.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth", block: "start" });
-  target.focus({ preventScroll: true });
-}
+const sectionNav = [
+  { id: "facilities-new-overview", label: "Overview" },
+  { id: "facilities-new-blocks", label: "Academic Blocks" },
+  { id: "facilities-new-laboratories", label: "Laboratories" },
+  { id: "facilities-new-healthcare", label: "Healthcare" },
+  { id: "facilities-new-library", label: "Central Library" },
+  { id: "facilities-new-hostels", label: "Hostels" },
+];
 
-function SportsTicker({ items, label, reverse = false, copies }: { items: string[]; label: string; reverse?: boolean; copies: number }) {
+const overviewFacts = [
+  "100+ smart classrooms equipped with projectors and audiovisual teaching aids.",
+  "60+ specialized laboratories supporting practical learning across disciplines.",
+  "1,000+ high-end computer systems, as listed on the university's official Facilities page.",
+  "Dedicated academic blocks for different institutes and departments.",
+  "Seminar halls and auditoriums for lectures, workshops, conferences, and university events.",
+  "Specialized workshops, research facilities, and discipline-specific learning spaces.",
+];
+const overviewFactHeadings = [
+  "100+ smart classrooms",
+  "60+ specialized laboratories",
+  "1,000+ high-end computer systems,",
+  "Dedicated academic blocks",
+  "Seminar halls and auditoriums",
+  "Specialized workshops, research facilities,",
+];
+const overviewFactIcons = [UsersRound, FlaskConical, Monitor, Landmark, UsersRound, BookOpen];
+const overviewFactPositions = [
+  "py-3 sm:py-4",
+  "py-3 sm:border-l sm:pl-5 sm:py-4 lg:border-l lg:pl-6",
+  "py-3 sm:border-t sm:pt-5 sm:py-4 lg:border-l lg:border-t-0 lg:pl-6 lg:pt-4",
+  "py-3 sm:border-l sm:border-t sm:pl-5 sm:pt-5 sm:py-4 lg:border-l-0 lg:border-t lg:pl-0 lg:pt-5",
+  "py-3 sm:border-t sm:pt-5 sm:py-4 lg:border-l lg:border-t lg:pl-6 lg:pt-5",
+  "py-3 sm:border-l sm:border-t sm:pl-5 sm:pt-5 sm:py-4 lg:border-l lg:border-t lg:pl-6 lg:pt-5",
+];
+
+const blockDescriptions = [
+  "B1 Academic Block accommodates departments and institutes associated with civil engineering, mechanical engineering, electrical engineering, chemical sciences, natural sciences and humanities, biosciences, and technology. The block also features auditoriums and specialized facilities, including the Centre for Energy Conservation.",
+  "B2 Academic Block houses academic departments associated with computer science, computer applications, physical sciences, and mathematical sciences. It also supports research, consultancy, and other academic activities.",
+  "B3 Academic Block accommodates institutes associated with pharmacy, architecture and planning, and education and research, providing dedicated spaces for teaching and discipline-specific academic activities.",
+];
+
+const laboratoryCards = [
+  {
+    title: "Computer Centers",
+    image: computerCentresImage,
+    text: "SRMU's computer centers provide access to high-end computer systems, licensed software, and internet connectivity to support programming, computational work, design, simulations, research, and digital learning.",
+  },
+  {
+    title: "Biotechnology Laboratories",
+    image: biotechnologyLabImage,
+    text: "The biotechnology laboratories include specialized facilities for areas such as molecular biology, microbiology, biochemistry, and genetic engineering. Instruments such as PCR machines, spectrophotometers, laminar airflow systems, and centrifuges support laboratory-based learning and research.",
+  },
+  {
+    title: "Pharmacy Laboratories",
+    image: pharmacyLabImage,
+    text: "Pharmacy laboratories support practical education in areas such as pharmacology, pharmaceutics, and pharmaceutical chemistry. These facilities help students understand pharmaceutical analysis, formulation, laboratory procedures, and research applications.",
+  },
+  {
+    title: "Engineering Workshops",
+    image: engineeringLabsImage,
+    text: "Engineering workshops provide practical exposure to tools, machinery, fabrication, and technical processes. They help students connect engineering concepts with hands-on activities and discipline-specific applications.",
+  },
+  {
+    title: "Specialized Laboratories",
+    image: specializedLaboratoryImage,
+    text: "SRMU's specialized laboratories support applied learning and research, with discipline-specific facilities and equipment that help students turn theoretical concepts into practical skills.",
+  },
+  {
+    title: "Smart Classrooms",
+    image: smartClassImage,
+    text: "More than 100 smart classrooms are equipped with projectors and audiovisual teaching aids to support interactive learning.",
+  },
+  {
+    title: "Agricultural Farms",
+    image: agricultureFarmsImage,
+    text: facilitiesNewPageCopy.laboratories.agriculturalFarms,
+  },
+  {
+    title: "Herbal Garden",
+    image: herbalGardenImage,
+    text: facilitiesNewPageCopy.laboratories.herbalGardens,
+  },
+  {
+    title: "Moot Court",
+    image: mootCourtsImage,
+    text: "The Moot Court provides a simulated courtroom environment for law students to practice legal arguments, case presentations, drafting, and courtroom procedures.",
+  },
+  {
+    title: "Media Facilities",
+    image: studioMediaLabImage,
+    text: "The university's media facilities include news studios, an editing suite, a soundproof voiceover room, and a green-screen setup. These spaces support practical learning in news presentation, video editing, podcasting, and filmmaking.",
+  },
+  {
+    title: "Language Lab",
+    image: languageLabImage,
+    text: "The Language Lab supports communication skills, spoken English, pronunciation, and language development through interactive learning modules.",
+  },
+  {
+    title: "Seminar Halls and Auditoriums",
+    image: seminarHallsImage,
+    text: "SRMU's seminar halls and auditoriums provide dedicated spaces for academic discussions, guest lectures, conferences, workshops, presentations, expert interactions, and university events.",
+  },
+];
+
+const libraryCollections = [
+  "65,399 books and e-books.",
+  "121 print journals.",
+  "2,086 e-journals.",
+  "PhD theses, project reports, magazines, newspapers, and other academic materials.",
+];
+
+const libraryFeatures = [
+  "A fully air-conditioned reading and study environment.",
+  "Wi-Fi and CCTV facilities.",
+  "An open-shelf system for browsing and accessing library materials.",
+  "KOHA-based library management and catalogue services.",
+  "Circulation and reference sections.",
+  "Periodicals and digital resource sections.",
+  "Printing, photocopying, and scanning services.",
+  "Online access to academic resources through Web OPAC and the university's e-library.",
+];
+
+const hostelAmenityDescriptions = [
+  "AC Room Options: Air-conditioned accommodation options, subject to the hostel's current room categories and availability.",
+  "Laundry Facilities: Laundry arrangements for students' everyday clothing and personal needs, subject to the services currently provided.",
+  "24-Hour Power Backup: Power backup arrangements to support essential residential facilities.",
+  "Medical Aid: Medical assistance provisions for hostel residents.",
+  "Wi-Fi Facility: Internet connectivity to support online learning, research, and communication.",
+  "ATM and Banking Facilities: Access to banking amenities listed by the university.",
+  "CCTV Surveillance: CCTV cameras monitor designated areas and hostel peripheries as part of the university's security arrangements.",
+  "Police Outpost: A police outpost is listed among the university's campus security provisions.",
+  "Biometric Attendance: Biometric attendance arrangements support applicable hostel attendance and monitoring procedures.",
+  "Dining Hall: A designated dining area for residents' meals.",
+  "Water Purification: Water coolers fitted with water purifiers are provided in the hostel wings, according to the published hostel information.",
+  "Common Room: A shared recreational space with television and DTH facilities.",
+  "Reading Room: A reading space with library resources to support study and independent learning.",
+  "Indoor and Outdoor Sports: Recreational opportunities for hostel residents.",
+  "Gymnasium: A gymnasium for physical fitness and exercise.",
+  "Visitor Facilities: A designated visiting area and furnished guest rooms, as described on the official hostel page.",
+];
+
+const hostelAmenityGroups = [
+  hostelAmenityDescriptions.slice(0, 6).map((description, index) => ({ description, index })),
+  hostelAmenityDescriptions.slice(6, 11).map((description, index) => ({ description, index: index + 6 })),
+  hostelAmenityDescriptions.slice(11).map((description, index) => ({ description, index: index + 11 })),
+];
+const hostelAmenityIcons = [BedDouble, WashingMachine, Zap, HeartPulse, Wifi, Landmark, Camera, Shield, Fingerprint, UsersRound, Droplets, UsersRound, BookOpen, Dumbbell, Dumbbell, UsersRound];
+const hostelAmenityIconColors = ["bg-[#14284E]", "bg-[#35A6D7]", "bg-[#FFB703]", "bg-[#D62C2B]"];
+
+const hostelCommittees = [
+  "Anti-Ragging Committee",
+  "Discipline Committee",
+  "Mess Committee",
+  "Library Committee",
+  "Sports Committee",
+  "Cultural Committee",
+  "Maintenance Committee",
+  "Gymnasium Committee",
+  "Common Room Committee",
+];
+
+function Section({
+  id,
+  title,
+  children,
+  tone = "white",
+}: {
+  id: string;
+  title: ReactNode;
+  children: ReactNode;
+  tone?: "white" | "pale" | "navy" | "gold";
+}) {
+  const dark = tone === "navy";
+  const gold = tone === "gold";
+  const background = tone === "pale" ? "bg-[#F0F6FB]" : dark ? "bg-[#14284E]" : gold ? "bg-[#FFB703]" : "bg-white";
+  const titleColor = dark ? "text-white" : "text-[#14284E]";
+
   return (
-    <div className={`${sportsStyles.row} ${reverse ? sportsStyles.reverse : ""}`} tabIndex={0} aria-label={label}>
-      <div className={sportsStyles.track}>
-        {Array.from({ length: copies }, (_, copy) => <ul key={`${label}-${copy}`} className={sportsStyles.group} aria-hidden={copy > 0}>
-          {items.map((item) => <li key={item}>{item}</li>)}
-        </ul>)}
+    <section id={id} className={`${sectionClass} ${background}`} aria-labelledby={`${id}-title`}>
+      <div className={containerClass}>
+        <h2 id={`${id}-title`} className={`${sectionHeadingClass} ${titleColor}`}>{title}</h2>
+        <div className={dark ? "text-[#E0F1FF]" : gold ? "text-[#14284E]" : "text-[#405575]"}>{children}</div>
       </div>
-    </div>
+    </section>
   );
 }
 
-function SportsCarousel() {
+function ContentCard({
+  title,
+  image,
+  imageAlt,
+  children,
+}: {
+  title: string;
+  image?: string;
+  imageAlt?: string;
+  children: ReactNode;
+}) {
+  return (
+    <article className={cardClass}>
+      {image && <img className="mb-4 aspect-[16/9] w-full rounded-xl border border-[#DCE6F2] object-cover" src={image} alt={imageAlt ?? ""} loading="lazy" decoding="async" />}
+      <h3 className="mb-2 text-[17px] leading-snug font-bold font-display text-[#14284E]">{title}</h3>
+      <div className="text-sm leading-relaxed text-[#405575] sm:text-[15px]">{children}</div>
+    </article>
+  );
+}
+
+function SportsCarousel({ images }: { images: readonly { src: string; caption: string }[] }) {
   const [index, setIndex] = useState(0);
-  const current = sportsImages[index];
-  const showImage = (nextIndex: number) => setIndex((nextIndex + sportsImages.length) % sportsImages.length);
+  const showImage = (nextIndex: number) => setIndex((nextIndex + images.length) % images.length);
+  const current = images[index];
 
   return (
-    <div className={sportsStyles.carousel} role="region" aria-label="Sports and recreation photos" aria-roledescription="carousel">
-      <figure className={sportsStyles.slide}>
-        <img key={current.src} src={current.src} alt={`${current.caption} at SRMU`} width={720} height={450} loading="lazy" decoding="async" />
-        <figcaption aria-live="polite" aria-atomic="true"><span>{current.caption}</span><span>{index + 1} / {sportsImages.length}</span></figcaption>
+    <div className="min-w-0" role="region" aria-label="Sports and recreation photos" aria-roledescription="carousel">
+      <figure className="relative m-0 overflow-hidden rounded-2xl border border-white/20 bg-[#10244E] shadow-[0_8px_24px_rgba(0,0,0,0.16)]">
+        <img key={current.src} src={current.src} alt={`${current.caption} at SRMU`} width={900} height={560} loading="lazy" decoding="async" className="aspect-[4/3] w-full object-cover sm:aspect-[16/10]" />
+        <figcaption className="absolute inset-x-3 bottom-3 flex min-h-14 items-center justify-between gap-3 rounded-xl border border-white/15 bg-[#091C40]/90 px-4 py-3 text-white sm:inset-x-4 sm:bottom-4 sm:px-5">
+          <span className="text-sm font-bold sm:text-base">{current.caption}</span>
+          <span className="shrink-0 text-xs font-bold tracking-wider text-[#FFB703]">{index + 1} / {images.length}</span>
+        </figcaption>
       </figure>
-      <div className={sportsStyles.controls}>
-        <button type="button" onClick={() => showImage(index - 1)} aria-label="Previous sports photo"><ArrowLeft size={18} aria-hidden="true" /></button>
-        <div className={sportsStyles.dots} role="group" aria-label="Choose sports photo">
-          {sportsImages.map((image, imageIndex) => <button key={image.src} type="button" aria-label={`Show ${image.caption} photo`} aria-pressed={imageIndex === index} onClick={() => showImage(imageIndex)}><span /></button>)}
+      <div className="mt-3 flex items-center justify-between gap-2">
+        <button type="button" onClick={() => showImage(index - 1)} aria-label="Previous sports photo" className="grid size-10 shrink-0 place-items-center rounded-full border border-white/30 bg-white text-[#14284E] transition-colors hover:bg-[#FFB703] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FFB703] sm:size-11">
+          <ArrowLeft size={18} aria-hidden="true" />
+        </button>
+        <div className="flex min-w-0 items-center justify-center gap-0.5" role="group" aria-label="Choose sports photo">
+          {images.map((image, imageIndex) => (
+            <button key={image.src} type="button" aria-label={`Show ${image.caption} photo`} aria-pressed={imageIndex === index} onClick={() => showImage(imageIndex)} className="grid size-6 shrink-0 place-items-center rounded-full focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-[#FFB703]">
+              <span className={`h-2 rounded-full transition-all ${imageIndex === index ? "w-5 bg-[#FFB703]" : "w-2 bg-[#E0F1FF]/60"}`} />
+            </button>
+          ))}
         </div>
-        <button type="button" onClick={() => showImage(index + 1)} aria-label="Next sports photo"><ArrowRight size={18} aria-hidden="true" /></button>
+        <button type="button" onClick={() => showImage(index + 1)} aria-label="Next sports photo" className="grid size-10 shrink-0 place-items-center rounded-full border border-white/30 bg-white text-[#14284E] transition-colors hover:bg-[#FFB703] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FFB703] sm:size-11">
+          <ArrowRight size={18} aria-hidden="true" />
+        </button>
       </div>
     </div>
   );
 }
 
 export default function FacilitiesNew() {
-  const location = useLocation();
-  const [blockIndex, setBlockIndex] = useState(0);
-  const [overviewExpanded, setOverviewExpanded] = useState(false);
-  const [activeSection, setActiveSection] = useState(sections[0].id);
-  const activeBlock = CARD_CONTENT[blockIndex];
+  const [activeNav, setActiveNav] = useState(sectionNav[0].id);
+  const hostelImages = facilitiesNewPageCopy.hostels.residences;
 
   useEffect(() => {
-    if (!location.hash) return;
-    const targetId = decodeURIComponent(location.hash.slice(1));
-    const timer = window.setTimeout(() => {
-      document.getElementById(targetId)?.scrollIntoView({
-        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth",
-        block: "start",
-      });
-    }, 80);
-    return () => window.clearTimeout(timer);
-  }, [location.hash, location.pathname]);
-
-  useEffect(() => {
-    const desktop = window.matchMedia("(min-width: 768px)");
-    let frame: number | null = null;
     const updateActiveSection = () => {
-      frame = null;
-      if (!desktop.matches) return;
-      let current = sections[0].id;
-      for (const section of sections) {
-        const target = document.getElementById(section.id);
-        if (target && target.getBoundingClientRect().top <= 128) current = section.id;
+      let current = sectionNav[0].id;
+      for (const item of sectionNav) {
+        const section = document.getElementById(item.id);
+        if (section && section.getBoundingClientRect().top <= 128) current = item.id;
       }
-      setActiveSection(current);
-    };
-    const scheduleUpdate = () => {
-      if (desktop.matches && frame === null) frame = window.requestAnimationFrame(updateActiveSection);
+      setActiveNav(current);
     };
     updateActiveSection();
-    window.addEventListener("scroll", scheduleUpdate, { passive: true });
-    window.addEventListener("resize", scheduleUpdate);
+    window.addEventListener("scroll", updateActiveSection, { passive: true });
+    window.addEventListener("resize", updateActiveSection);
     return () => {
-      window.removeEventListener("scroll", scheduleUpdate);
-      window.removeEventListener("resize", scheduleUpdate);
-      if (frame !== null) window.cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", updateActiveSection);
+      window.removeEventListener("resize", updateActiveSection);
     };
   }, []);
 
+  const navigateToSection = (event: MouseEvent<HTMLAnchorElement>, id: string) => {
+    if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    const section = document.getElementById(id);
+    if (!section) return;
+    event.preventDefault();
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    section.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+  };
+
   return (
-    <div className="w-full max-w-full overflow-x-clip bg-white text-[#14284E] antialiased lg:[&_p]:text-justify [&_button]:cursor-pointer [&_a:focus-visible]:outline-2 [&_a:focus-visible]:outline-offset-4 [&_a:focus-visible]:outline-[#0F4A85] [&_button:focus-visible]:outline-2 [&_button:focus-visible]:outline-offset-4 [&_button:focus-visible]:outline-[#0F4A85]">
-      <section className="relative isolate flex min-h-[clamp(380px,94vw,420px)] w-full items-center overflow-hidden bg-[#071329] px-4 pt-[clamp(92px,14vw,104px)] pb-6 sm:px-6 md:min-h-[504px] md:pt-28 md:pb-14" aria-labelledby="facilities-new-title">
-        <img className="absolute inset-0 -z-20 h-full w-full object-cover object-center" src={campus} alt="Shri Ramswaroop Memorial University campus" fetchPriority="high" />
-        <div className="absolute inset-0 -z-10 bg-linear-to-r from-[#071329]/95 via-[#091a38]/75 to-[#071329]/25" aria-hidden="true" />
+    <div className="facilities-new-page w-full max-w-full overflow-x-clip bg-white text-[#14284E] antialiased [&_ul]:!list-none [&_ol]:!list-none">
+      <section className="relative isolate flex min-h-[460px] w-full items-end overflow-hidden bg-[#071329] px-4 py-10 sm:min-h-[504px] sm:items-center sm:px-6 sm:py-14" aria-labelledby="facilities-new-hero-title">
+        <img className="absolute inset-0 -z-20 h-full w-full object-cover object-center" src={campus} alt="SRMU campus buildings and grounds" fetchPriority="high" />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-t from-[#071329]/95 via-[#071329]/55 to-[#071329]/15 sm:bg-gradient-to-r sm:from-[#071329]/80 sm:via-[#091A38]/55 sm:to-[#071329]/15" aria-hidden="true" />
         <div className={`${containerClass} relative z-10`}>
-          {/* <p className="mb-2 text-[18px] leading-snug font-semibold text-[#38bdf8] sm:text-[24px]">Life at Shri Ramswaroop Memorial University</p> */}
-          <h1 id="facilities-new-title" className="max-w-[650px] text-[36px] leading-[1.1] font-bold text-white/90 sm:text-[clamp(32px,4vw,52px)]">Campus <span className="text-[#FFB703]">Facilities</span></h1>
-          <div className="my-5 h-[3px] w-20 rounded-full bg-[#FFB703]" aria-hidden="true" />
-          {/* <p className="max-w-[570px] text-[15px] leading-relaxed text-[#E0F1FF] sm:text-base">{facilitiesNewPageCopy.hero}</p> */}
-          <div className="mt-7 hidden flex-wrap items-center gap-3 md:flex">
-            {/* <a className={`${buttonClass} rounded-lg!`} href="#facilities-new-academics" onClick={scrollToSection}>Explore facilities <ArrowDown size={17} aria-hidden="true" /></a> */}
-            <Link className="inline-flex min-h-11 items-center justify-center gap-3 rounded-lg border border-[#1B4F91] bg-[#E0F1FF] px-6 py-3 text-xs font-bold tracking-wide text-[#14284E] uppercase hover:bg-white" to="/admission-enquiry">Plan your next step <ArrowUpRight size={17} aria-hidden="true" /></Link>
+          <div className="max-w-[760px] text-white">
+            {/* <p className="mb-1.5 text-[16px] leading-snug font-semibold text-[#38BDF8] sm:text-[24px]">Shri Ramswaroop Memorial University (SRMU)</p> */}
+            <h1 id="facilities-new-hero-title" className="text-[36px] leading-[1.1] font-bold text-white/90 sm:text-[clamp(40px,4vw,56px)]">
+              Campus <span className="text-[#FFB703]">
+                Facilities</span>
+            </h1>
+            <div className="my-4 h-[3px] w-20 rounded-full bg-[#38BDF8] sm:w-[200px]" aria-hidden="true" />
+            {/* <p className="max-w-[700px] text-[15px] leading-relaxed text-white/90 sm:text-base">{facilitiesNewPageCopy.hero}</p> */}
+            <div className="mt-6 flex flex-wrap gap-3">
+              <a href="/admission-enquiry" className="inline-flex min-h-11 items-center justify-center rounded-lg border border-[#DCE6F2]/70 bg-[#14284E]/80 px-5 py-3 text-xs font-bold tracking-wide text-white uppercase transition-colors hover:bg-[#14284E] sm:text-sm">Plan Your Next Step</a>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="relative z-20 -mt-7 hidden px-4 md:block" aria-label="Campus highlights">
-        <div className="mx-auto w-full max-w-[1180px] overflow-hidden rounded-[20px] border-t-[6px] border-[#FFB703] bg-white pt-1.5 shadow-[0_16px_38px_rgba(20,40,78,0.15)]">
-          <dl className="m-0 grid grid-cols-4">
-            {facilitiesNewPageCopy.highlights.map(({ value, label }) => (
-              <div key={label} className="flex min-w-0 flex-col gap-px px-4 py-3 text-[#14284E] [&+div]:border-l [&+div]:border-[#D6E2F0]">
-                <dt className="order-1 text-[13px] leading-[1.4] text-[#405575]">{label}</dt>
-                <dd className="order-0 m-0 text-[clamp(24px,2vw,32px)] leading-[1.1] font-extrabold text-[#D62C2B]">{value}</dd>
-              </div>
-            ))}
-          </dl>
+      <div className="relative z-10 -mt-7 hidden md:block">
+        <section className="px-4 sm:px-6" aria-label="Campus facilities highlights">
+          <div className="mx-auto w-full max-w-[1180px] overflow-hidden rounded-[22px] border border-[#E5EAF1] border-t-[5px] border-t-[#FFB703] bg-white shadow-[0_14px_35px_rgba(15,31,61,0.12)]">
+            <dl className="m-0 grid grid-cols-2 md:grid-cols-4">
+              {facilitiesNewPageCopy.highlights.map((stat, index) => (
+                <div key={stat.label} className={`flex min-w-0 flex-col items-start gap-px px-4 pt-3 pb-4 text-left text-[#14284E] ${index % 2 === 1 ? "border-l border-[#D5E5F4]" : ""} ${index >= 2 ? "border-t border-[#D5E5F4]" : ""} ${index > 0 ? "md:border-l" : "md:border-l-0"} md:border-t-0`}>
+                  <dt className="text-[13px] leading-[1.4] text-[#405575]">{stat.label}</dt>
+                  <dd className="order-first m-0 text-[clamp(24px,2vw,32px)] leading-[1.1] font-extrabold text-[#D62C2B]">{stat.value}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </section>
+
+        <nav className="mt-3 hidden border-b border-[#DCE6F2] bg-white px-4 py-2 sm:px-6 md:block" aria-label="Facilities sections">
+          <div className="mx-auto max-w-[1180px]">
+            <ul className="m-0 flex list-none flex-wrap items-center justify-start gap-2 p-0">
+              {sectionNav.map(({ id, label }) => (
+                <li key={id}>
+                  <a href={`#${id}`} aria-current={activeNav === id ? "location" : undefined} onClick={(event) => navigateToSection(event, id)} className={`flex min-h-[38px] items-center justify-center rounded-full px-4 py-2 text-center text-[13px] leading-snug font-medium tracking-normal normal-case transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#14284E] ${activeNav === id ? "bg-[#FFB703] text-[#14284E]" : "bg-[#E0F1FF] text-[#14284E] hover:bg-[#d1e9fc]"}`}>
+                    <span>{label}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <section id="facilities-new-overview" className={`${sectionClass} bg-white`} aria-labelledby="facilities-new-overview-title">
+        <div className={containerClass}>
+          <h2 id="facilities-new-overview-title" className={sectionHeadingClass}>About Our <span className="text-[#FFB703]">Campus Facilities</span></h2>
+          <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(300px,0.8fr)] lg:gap-10">
+            <div className="space-y-4 text-justify">
+              <p className={paragraphClass}>Shri Ramswaroop Memorial University (SRMU), located on Lucknow–Deva Road, Uttar Pradesh, offers modern classrooms, specialized laboratories, seminar halls, library resources, healthcare, transport, sports, and hostel facilities. The campus supports academic excellence, practical learning, research, recreation, and overall student development.</p>
+              <p className={paragraphClass}>SRMU's campus infrastructure comprises dedicated academic blocks, administrative facilities, classrooms, laboratories, workshops, seminar halls, libraries, and student amenities. These facilities support teaching, research, practical education, and extracurricular engagement across multiple disciplines.</p>
+              <p className={paragraphClass}>The campus is organized to provide students with access to the academic and support facilities required throughout their educational journey.</p>
+            </div>
+            <figure className="relative m-0 overflow-hidden rounded-2xl border border-[#DCE6F2] bg-white shadow-[0_2px_12px_rgba(15,31,61,0.08)]">
+              <img className="aspect-[16/10] w-full object-cover" src={computerCentresImage} alt="Students using computers in an SRMU computer centre" loading="lazy" decoding="async" />
+              <figcaption className="border-t-[4px] border-[#FFB703] bg-[#14284E] px-4 py-3 text-sm font-semibold text-white">The campus supports academic excellence, practical learning, research, recreation, and overall student development.</figcaption>
+            </figure>
+          </div>
+          <ul className="mt-6 grid list-none grid-cols-1 gap-x-6 p-0 sm:grid-cols-2 lg:grid-cols-3">
+            {overviewFacts.map((fact, index) => {
+              const heading = overviewFactHeadings[index] ?? "";
+              const FactIcon = overviewFactIcons[index] ?? FileText;
+              return (
+                <li key={fact} className={"flex min-w-0 items-start gap-4 border-[#DCE6F2] " + (overviewFactPositions[index] ?? "py-3 sm:py-4")}>
+                  <span className="grid size-14 shrink-0 place-items-center rounded-full bg-[#FFF0B3] text-[#14284E] sm:size-16" aria-hidden="true">
+                    <FactIcon size={31} strokeWidth={1.8} />
+                  </span>
+                  <div className="min-w-0 text-[#405575]">
+                    <strong className="block text-[15px] leading-snug font-bold text-[#14284E] sm:text-base">{heading}</strong>
+                    <span className="my-2 block h-[3px] w-8 rounded-full bg-[#FFB703]" aria-hidden="true" />
+                    <span className="block text-sm leading-relaxed">{fact.slice(heading.length)}</span>
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
         </div>
       </section>
-      <nav className="hidden border-b border-[#D6E2F0] bg-white px-4 py-3 sm:px-6 md:block" aria-label="Facilities sections">
-        <div className="mx-auto flex w-full max-w-[1180px] flex-wrap items-center gap-2">
-          {sections.map(({ id, label }) => (
-            <a
-              className="flex min-h-[38px] min-w-0 items-center justify-center rounded-full bg-[#E0F1FF] px-4 py-2 text-center text-[13px] leading-snug font-medium text-[#14284E] transition-colors hover:bg-[#D1E9FC] aria-[current=location]:bg-[#FFB703]"
-              key={id}
-              href={`#${id}`}
-              aria-current={activeSection === id ? "location" : undefined}
-              onClick={scrollToSection}
-            >
-              <span>{label}</span>
-            </a>
+
+      <Section id="facilities-new-blocks" title={<>Academic <span className="text-[#FFB703]">Blocks</span></>} tone="pale">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+          {facilitiesNewBlocks.map((block, index) => (
+            <ContentCard key={block.id} title={block.title} image={block.image} imageAlt={`${block.title} building`}>
+              <p>{blockDescriptions[index]}</p>
+            </ContentCard>
           ))}
         </div>
-      </nav>
+      </Section>
 
-      <section id="facilities-new-overview" tabIndex={-1} className="relative isolate scroll-mt-36 overflow-x-clip px-4 pt-6 outline-none sm:px-6 md:pt-8" aria-labelledby="facilities-new-overview-title">
-        <div className={`${containerClass} grid items-stretch gap-8 lg:grid-cols-[minmax(0,1fr)_420px] lg:gap-12 xl:grid-cols-[minmax(0,1fr)_460px]`}>
-          <div>
-            {/* <p className={eyebrowClass}>Built around your university life</p> */}
-            <h2 id="facilities-new-overview-title" className={headingClass}>About Our <span>Campus Facilities</span></h2>
-            <p className={bodyClass}>{facilitiesNewPageCopy.overview[0]}</p>
-            {!overviewExpanded && <div>
-              <button type="button" aria-expanded={false} onClick={() => setOverviewExpanded(true)} className="rm-btn items-center gap-2 text-sm font-bold text-[#0F4A85] sm:!inline-flex md:!hidden">
-                READ MORE<ChevronDown size={17} aria-hidden="true" />
-              </button>
-            </div>}
-            <div className={`mt-4 [&>p+p]:mt-4 ${overviewExpanded ? "" : "hidden md:block"}`}>
-              {facilitiesNewPageCopy.overview.slice(1).map((paragraph) => <p key={paragraph} className={bodyClass}>{paragraph}</p>)}
-            </div>
-            {overviewExpanded && <div className="mt-1">
-              <button type="button" aria-expanded={true} onClick={() => setOverviewExpanded(false)} className="rm-btn items-center gap-2 text-sm font-bold text-[#0F4A85] sm:!inline-flex md:!hidden">
-                READ LESS<ChevronDown size={17} className="rotate-180" aria-hidden="true" />
-              </button>
-            </div>}
-            <a className={`${buttonClass} mt-2`} href="#facilities-new-academics" onClick={scrollToSection}>Find your space <ArrowDown size={17} aria-hidden="true" /></a>
-          </div>
-          <figure className="relative m-0 min-h-[300px] overflow-hidden rounded-2xl bg-[#E0F1FF] shadow-[0_2px_12px_#0F1F3D14]">
-            <img src={facilitiesData[0].imageUrl} alt="Computer centre at SRMU" width={600} height={450} loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover" />
-            <figcaption className="absolute inset-x-0 bottom-0 border-t-4 border-[#FFB703] bg-[#14284E]/95 px-6 py-4 text-sm font-semibold text-white">Learning spaces that bring ideas to life.</figcaption>
-          </figure>
+      <Section id="facilities-new-laboratories" title={<>Laboratories and <span className="text-[#FFB703]">Practical Learning Facilities</span></>} tone="navy">
+        <p className="mb-6 text-[15px] leading-relaxed text-white/90 sm:text-base">Practical learning is an integral part of education at SRMU. The university's specialized laboratories enable students to apply theoretical concepts, conduct experiments, develop technical skills, and gain experience with discipline-specific tools and equipment.</p>
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {laboratoryCards.map((item) => (
+            <ContentCard key={item.title} title={item.title} image={item.image} imageAlt={`${item.title} at SRMU`}>
+              <p>{item.text}</p>
+            </ContentCard>
+          ))}
         </div>
-        <div className="relative mt-4 -mx-4 w-auto overflow-hidden bg-[#FCFCFA] py-4 sm:left-1/2 sm:mx-0 sm:w-screen sm:-translate-x-1/2 sm:py-5">
-          <div className="pointer-events-none absolute -bottom-20 -left-14 size-36 rounded-[45%_55%_0_0] bg-[#FFB703]/15 sm:-bottom-24 sm:-left-20 sm:size-64" aria-hidden="true" />
-          <div className="pointer-events-none absolute -bottom-8 -left-10 size-24 rounded-[50%_50%_0_0] bg-[#FFB703]/75 sm:-bottom-10 sm:-left-16 sm:size-48" aria-hidden="true" />
-          <div className="pointer-events-none absolute -right-10 top-1/2 size-28 -translate-y-1/2 rounded-full bg-[repeating-linear-gradient(135deg,#ffcf55_0px,#ffcf55_3px,transparent_3px,transparent_9px)] opacity-45 sm:size-36" aria-hidden="true" />
-          <div className="relative mx-auto grid w-full max-w-[1280px] grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 [&>div]:min-w-0 [&>div]:px-3 [&>div]:py-4 sm:[&>div]:px-8 sm:[&>div]:py-5 lg:[&>div]:px-7 lg:[&>div+div]:border-l lg:[&>div+div]:border-[#FFB703]/55">
-            {[
-              { icon: FlaskConical, title: "Learn by Doing", text: "Specialised laboratories, studios and workshops that bring ideas to life." },
-              { icon: BookOpen, title: "Space to Focus", text: "Smart classrooms and library resources for deeper learning." },
-              { icon: Dumbbell, title: "Life Beyond Lectures", text: "Sports, fitness and social spaces for a balanced university experience." },
-              { icon: Bus, title: "Everyday Essentials", text: "Dining, healthcare and transport to support your day on campus." },
-            ].map(({ icon: Icon, title, text }, index) => <div key={title} className="relative text-center lg:!text-left">
-              <span className={`relative mx-auto mb-3 grid size-14 place-items-center rounded-[42%_58%_63%_37%/45%_40%_60%_55%] lg:!mx-0 ${index % 2 === 0 ? "bg-[#FFF0C2]" : "bg-[#E5EEFF]"}`}>
-                <Icon size={29} strokeWidth={1.9} className={`${featureStyles.iconMotion} text-[#173866]`} style={{ animationDelay: `${index * 0.28}s` }} aria-hidden="true" />
-                <span className="absolute -top-1 right-0 size-2 rounded-full bg-[#FFB703]" aria-hidden="true" />
-              </span>
-              <h3 className="mb-1.5 text-[15px] font-bold text-[#14284E] sm:text-base lg:!text-left">{title}</h3>
-              <p className="mx-auto max-w-[250px] text-[13px] leading-relaxed text-[#596B85] lg:!mx-0 lg:!text-left">{text}</p>
-              <span className="mx-auto mt-3 block h-[3px] w-8 rounded-full bg-[#FFB703] lg:!mx-0" aria-hidden="true" />
-            </div>)}
+      </Section>
+
+      <Section id="facilities-new-healthcare" title={<>Healthcare and <span className="text-[#FFB703]">Medical Facilities</span></>} tone="pale">
+        <ContentCard title="Medical Facilities" image={medicalFacilityImage} imageAlt="Medical facility at SRMU">
+          <p>The campus's healthcare arrangements help students access assistance when required and support a learning environment that considers physical well-being alongside academic development. Students should contact the university's designated medical facility or administration for information about available services, operating hours, and emergency procedures.</p>
+        </ContentCard>
+      </Section>
+
+      <Section id="facilities-new-transport" title={<>Bus Routes and Timings, <span className="text-[#FFB703]">Transport Fees</span></>} tone="white">
+        <div className="grid w-full items-center gap-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-8">
+          <div className="space-y-4">
+            <p className={paragraphClass}>SRMU buses connect the campus with designated pickup points. Students can consult the official transportation page for published routes, pickup locations, and departure timings.</p>
+            <p className={paragraphClass}>Transportation fees may depend on the applicable route and university fee schedule. Students and parents should confirm current charges, route availability, pickup locations, and payment procedures with the university before opting for the service.</p>
+            <a className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-[#FFB703] px-5 py-3 text-sm font-bold text-[#14284E] transition-colors hover:bg-[#FFC642] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#14284E]" href="https://srmu.ac.in/transportation" target="_blank" rel="noreferrer">
+              View Transport Routes <ArrowRight size={18} aria-hidden="true" />
+            </a>
+          </div>
+          <div className="grid min-w-0 grid-cols-2 gap-3 sm:gap-4" role="group" aria-label="Photos of SRMU campus buses">
+            <figure className="relative m-0 min-w-0 overflow-hidden rounded-2xl border border-[#DCE6F2] bg-[#14284E] shadow-[0_8px_24px_rgba(20,40,78,0.12)]">
+              <img src={campusBus} alt="SRMU campus bus parked beside an academic building" width={5568} height={3712} loading="lazy" decoding="async" className="aspect-[4/3] w-full object-cover" />
+              <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#091C40]/90 to-transparent px-3 pb-3 pt-8 text-xs font-semibold text-white sm:px-4 sm:pb-4 sm:text-sm">Campus transport</figcaption>
+            </figure>
+            <figure className="relative m-0 min-w-0 overflow-hidden rounded-2xl border border-[#DCE6F2] bg-[#14284E] shadow-[0_8px_24px_rgba(20,40,78,0.12)]">
+              <img src={campusBusFleet} alt="A line of SRMU buses ready for campus transport" width={5472} height={3648} loading="lazy" decoding="async" className="aspect-[4/3] w-full object-cover" />
+              <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#091C40]/90 to-transparent px-3 pb-3 pt-8 text-xs font-semibold text-white sm:px-4 sm:pb-4 sm:text-sm">SRMU bus fleet</figcaption>
+            </figure>
           </div>
         </div>
-      </section>
+      </Section>
 
-      <FacilitiesNewExplorer />
-
-      {/* Temporarily hidden section: Seminar Halls & Auditoriums.
-      <section id="facilities-new-seminars" tabIndex={-1} className={`${sectionClass} bg-white`} aria-labelledby="facilities-new-seminars-title">
-        <div className={`${containerClass} ${splitClass}`}>
-          <figure className="relative m-0 min-h-[280px] overflow-hidden rounded-2xl bg-[#E0F1FF]">
-            <img src={facilitiesData.find((facility) => facility.id === 12)?.imageUrl} alt="Seminar hall at SRMU" width={720} height={480} loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover" />
-            <figcaption className="absolute inset-x-0 bottom-0 bg-[#14284E]/95 px-5 py-4 text-sm font-semibold text-white">Spaces for discussion, presentations and university events.</figcaption>
-          </figure>
-          <div>
-            <h2 id="facilities-new-seminars-title" className={headingClass}>Seminar Halls <span>&amp; Auditoriums.</span></h2>
-            <p className={bodyClass}>{facilitiesNewPageCopy.seminarHallsAndAuditoriums}</p>
+      <Section id="facilities-new-sports" title={<>Sports and <span className="text-[#FFB703]">Fitness Facilities</span></>} tone="navy">
+        <p className="mb-6 text-[15px] leading-relaxed text-[#E0F1FF] sm:text-base">SRMU provides sports and recreational facilities that encourage physical fitness, teamwork, discipline, and participation in campus activities.</p>
+        <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-8">
+          <div className="order-2 space-y-4 lg:order-1">
+            <article className="rounded-2xl border border-white/15 bg-white p-5 text-[#14284E] shadow-[0_8px_24px_rgba(0,0,0,0.12)] sm:p-6">
+              <div className="mb-4 flex items-center gap-3">
+                <span className="h-1 w-8 rounded-full bg-[#FFB703]" aria-hidden="true" />
+                <h3 className="text-lg font-bold font-display sm:text-xl">Published Sports Facilities Include:</h3>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {["Cricket", "Football", "Basketball", "Volleyball", "Tennis", "Badminton"].map((sport) => (
+                  <span key={sport} className="rounded-full border border-[#D5E5F4] bg-[#E0F1FF] px-3.5 py-2 text-sm font-semibold text-[#14284E]">{sport}</span>
+                ))}
+              </div>
+            </article>
+            <article className="rounded-2xl border border-white/15 bg-white p-5 text-[#14284E] shadow-[0_8px_24px_rgba(0,0,0,0.12)] sm:p-6">
+              <div className="mb-3 flex items-center gap-3">
+                <span className="h-1 w-8 rounded-full bg-[#35A6D7]" aria-hidden="true" />
+                <h3 className="text-lg font-bold font-display sm:text-xl">Indoor Recreational Activities</h3>
+              </div>
+              <p className="mb-4 text-sm leading-relaxed text-[#405575] sm:text-[15px]">Students can participate in indoor recreational activities, including chess and carrom. The university also lists a gymnasium among its sports and fitness facilities.</p>
+              <div className="flex flex-wrap gap-2">
+                {["Chess", "Carrom", "Gymnasium"].map((sport) => (
+                  <span key={sport} className="rounded-full border border-[#D5E5F4] bg-[#E0F1FF] px-3.5 py-2 text-sm font-semibold text-[#14284E]">{sport}</span>
+                ))}
+              </div>
+            </article>
+          </div>
+          <div className="order-1 min-w-0 lg:order-2">
+            <SportsCarousel images={facilitiesNewSportsImages} />
           </div>
         </div>
-      </section>
-      */}
+        <div className="mt-6 w-full space-y-4 border-t border-white/20 pt-5">
+          <p className="w-full text-[15px] leading-relaxed text-[#E0F1FF] sm:text-base">Sports and fitness activities provide opportunities for students to develop coordination, perseverance, teamwork, and a healthy balance between academic and recreational commitments. The availability of specific courts, equipment, and activities may depend on campus arrangements and schedules.</p>
+          {/* <p className="w-full text-[15px] leading-relaxed text-[#E0F1FF] sm:text-base"></p> */}
+        </div>
+      </Section>
 
       <FacilitiesNewLibrary />
 
+      <Section id="facilities-new-banking" title={<>Banking and ATM <span className="text-[#FFB703]">Facilities</span></>} tone="white">
+        <ContentCard title="">
+          <p>Banking facilities help students manage routine financial requirements during their time at the university. These facilities can support everyday banking needs, including access to cash and other services offered by the relevant banking provider.</p>
+        </ContentCard>
+      </Section>
+
+      <section id="facilities-new-hostels" className={sectionClass + " relative isolate overflow-hidden bg-[linear-gradient(115deg,#F3F9FE_0%,#EAF5FE_52%,#F6FAFE_100%)] lg:[&_p]:text-justify"} aria-labelledby="facilities-new-hostels-title">
+        <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden" aria-hidden="true">
+          <span className="absolute -top-16 -left-16 hidden size-44 rounded-full bg-[#FFB703]/30 sm:block" />
+          <span className="absolute -right-20 -bottom-24 size-64 rounded-full bg-[#35A6D7]/20" />
+        </div>
+
+        <div className={containerClass + " relative z-10"}>
+          <header className="mb-5 sm:mb-6">
+            <div className="w-full">
+              <h2 id="facilities-new-hostels-title" className={sectionHeadingClass}>Hostel Facilities <span className="text-[#FFB703]">at SRMU</span></h2>
+              <p className={paragraphClass}>{facilitiesNewPageCopy.hostels.introduction}</p>
+            </div>
+          </header>
+
+          <div className="grid gap-4 xl:grid-cols-2">
+            {hostelImages.map((hostel, index) => (
+              <article key={hostel.title} className="grid min-w-0 overflow-hidden rounded-xl border border-[#D9E9F7] bg-white/45 shadow-[0_8px_24px_rgba(20,40,78,0.04)] sm:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)]">
+                <figure className="relative m-0 min-w-0 overflow-hidden bg-[#D9EDFF]">
+                  <img src={hostel.image} alt={hostel.title + " building"} loading="lazy" decoding="async" className="aspect-[4/3] w-full object-cover sm:aspect-auto sm:h-full sm:min-h-[250px] sm:rounded-r-[42%]" />
+                  <span className={"pointer-events-none absolute inset-y-[-4%] right-[-8%] hidden w-20 rounded-[50%] border-r-[8px] sm:block " + (index === 0 ? "border-[#FFB703]" : "border-[#35A6D7]")} aria-hidden="true" />
+                </figure>
+                <div className="flex min-w-0 flex-col items-start justify-center px-5 py-5 sm:px-5 sm:py-6 lg:px-6">
+                  <p className="mb-1 text-[11px] font-bold tracking-[0.14em] text-[#35A6D7] uppercase">{index === 0 ? "Girls Hostel" : "Boys Hostel"}</p>
+                  <h3 className="mb-2 text-[20px] leading-tight font-bold font-display text-[#14284E] sm:text-[23px]">{hostel.title}</h3>
+                  <p className="text-[14px] leading-relaxed text-[#405575] sm:text-[15px]">{index === 0
+                    ? "Gargi Girls Hostel provides residential accommodation for eligible female students of SRMU. Its residential environment is intended to support students' academic routines, everyday needs, and participation in university life."
+                    : "Tygore Boys Hostel provides residential accommodation for eligible male students of SRMU. The hostel supports students who prefer to live on campus while pursuing their academic programs."}</p>
+                  <a href="#facilities-new-hostel-amenities" className="mt-3 inline-flex items-center gap-2 border-b-2 border-[#FFB703] pb-1 text-sm font-bold text-[#14284E] transition-colors hover:text-[#0F4A85] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#14284E]">
+                    Know More <ArrowRight size={16} aria-hidden="true" />
+                  </a>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div id="facilities-new-hostel-amenities" className="mt-7 border-t border-[#CFE2F2] pt-6 sm:mt-8 sm:pt-7">
+            <div className="grid gap-6 xl:grid-cols-[minmax(0,0.9fr)_minmax(0,3.1fr)] xl:gap-8">
+              <div>
+                <p className="mb-1 text-[11px] font-bold tracking-[0.14em] text-[#35A6D7] uppercase">Hostel Facilities</p>
+                <h3 className="text-[20px] leading-tight font-bold font-display text-[#14284E] sm:text-[26px]">Everything for a Comfortable Stay</h3>
+              </div>
+              <div className="grid gap-x-5 sm:grid-cols-2 xl:grid-cols-3">
+                {hostelAmenityGroups.map((group, groupIndex) => (
+                  <div key={groupIndex} className={groupIndex > 0 ? "border-[#CFE2F2] sm:border-l sm:pl-5" : ""}>
+                    {group.map(({ description, index: amenityIndex }) => {
+                      const separator = description.indexOf(":");
+                      const amenityName = separator >= 0 ? description.slice(0, separator) : description;
+                      const amenityText = separator >= 0 ? description.slice(separator + 1).trim() : "";
+                      const AmenityIcon = hostelAmenityIcons[amenityIndex] ?? FileText;
+                      return (
+                        <article key={description} className="flex min-w-0 items-start gap-3 border-b border-[#DCEAF6] py-3 last:border-b-0">
+                          <span className={"grid size-10 shrink-0 place-items-center rounded-full text-white " + hostelAmenityIconColors[amenityIndex % hostelAmenityIconColors.length]} aria-hidden="true">
+                            <AmenityIcon size={19} strokeWidth={1.8} />
+                          </span>
+                          <p className="min-w-0 text-[12px] leading-[1.4] text-[#405575] sm:text-[13px]">
+                            <strong className="mb-0.5 block font-bold text-[#14284E]">{amenityName}</strong>
+                            <span>{amenityText}</span>
+                          </p>
+                        </article>
+                      );
+                    })}
+                  </div>
+                ))}
+              </div>
+            </div>
+            <p className="mt-5 border-l-4 border-[#FFB703] pl-4 text-[13px] leading-relaxed text-[#405575]">Room categories, AC availability, laundry arrangements, charges, and other accommodation conditions should be confirmed with the hostel administration.</p>
+          </div>
+        </div>
+      </section>
+
+      <Section id="facilities-new-residential-committees" title={<>Hostel Management and <span className="text-[#FFB703]">Student Committees</span></>} tone="navy">
+        <p className={`${darkParagraphClass} mb-3`}>SRMU's hostel administration includes a chief warden, wardens, and supporting residential staff. The university also describes student participation through committees that support hostel administration and resident engagement.</p>
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {hostelCommittees.map((committee) => <div key={committee} className="rounded-xl border border-white/20 bg-[#1B355F] px-4 py-3 text-sm font-medium text-white shadow-sm sm:text-[15px]">{committee}</div>)}
+        </div>
+      </Section>
+
+      <section id="facilities-new-outings" className="scroll-mt-24 border-b border-[#DCE6F2] bg-[linear-gradient(110deg,#EAF6FF_0%,#DDEFFF_52%,#EAF6FF_100%)] px-4 py-20 sm:px-6 sm:py-24 lg:py-28" aria-label="Hostel transport, fees, and admission">
+        <div className={`${containerClass} grid gap-y-14 lg:grid-cols-2 lg:gap-x-16`}>
+          <article className="min-w-0">
+            <div className="mb-4 grid size-[72px] place-items-center rounded-full bg-[#D9EDFF] text-[#14284E] sm:mb-5 sm:size-[82px]" aria-hidden="true">
+              <Bus size={40} strokeWidth={1.8} />
+            </div>
+            <h2 id="facilities-new-hostel-transport-title" className={sectionHeadingClass}>
+              Hostel Transport <span className="text-[#FFB703]">for Residents</span>
+            </h2>
+            <div className="my-5 h-1 w-20 bg-[#FFB703] sm:my-6 sm:h-[6px]" aria-hidden="true" />
+            <p className="text-left text-[15px] leading-relaxed text-[#405575] sm:text-base">{facilitiesNewPageCopy.hostels.outings}</p>
+          </article>
+
+          <article id="facilities-new-hostel-fees" className="min-w-0">
+            <div className="mb-4 grid size-[72px] place-items-center rounded-full bg-[#FFF1C7] text-[#14284E] sm:mb-5 sm:size-[82px]" aria-hidden="true">
+              <FileText size={40} strokeWidth={1.8} />
+            </div>
+            <h2 id="facilities-new-hostel-fees-title" className={sectionHeadingClass}>
+              Hostel Fees <span className="text-[#FFB703]">and Admission</span>
+            </h2>
+            <div className="my-5 h-1 w-20 bg-[#35A6D7] sm:my-6 sm:h-[6px]" aria-hidden="true" />
+            <p className="text-left text-[15px] leading-relaxed text-[#405575] sm:text-base">{facilitiesNewPageCopy.hostels.fees}</p>
+          </article>
+        </div>
+      </section>
+
       <FacilitiesNewDining images={diningImages} description={facilitiesNewPageCopy.dining} />
 
-      <section id="facilities-new-sports" tabIndex={-1} className={sportsStyles.section} aria-labelledby="facilities-new-sports-title">
-        <div className={`${containerClass} ${sportsStyles.container} px-4 sm:px-6`}>
-          <h2 id="facilities-new-sports-title" className={headingClass}>Stay Active. <span>Play Your Way.</span></h2>
-          <p className={sportsStyles.intro}>{facilitiesNewPageCopy.sportsAndFitnessFacilities.introduction}</p>
-          <div className={sportsStyles.layout}>
-            <div className={sportsStyles.activities}>
-              <h3 className={sportsStyles.caption}>Outdoor Sports</h3>
-              <SportsTicker items={facilitiesNewPageCopy.sportsAndFitnessFacilities.outdoorSports} label="Outdoor sports" copies={2} />
-              <h3 className={sportsStyles.caption}>Indoor Games and Fitness</h3>
-              <SportsTicker items={facilitiesNewPageCopy.sportsAndFitnessFacilities.indoorAndFitness} label="Indoor games and fitness" reverse copies={4} />
-            </div>
-            <SportsCarousel />
-          </div>
-          <div className={sportsStyles.more}>
-            <p>{facilitiesNewPageCopy.sportsAndFitnessFacilities.benefits}</p>
-            <p>{facilitiesNewPageCopy.sportsAndFitnessFacilities.availability}</p>
-          </div>
+      <section id="facilities-new-campus-life" className={`${sectionClass} relative isolate overflow-hidden border-t-4 border-t-[#14284E] border-b-[8px] border-b-[#14284E] bg-[#FFB703]`} aria-labelledby="facilities-new-campus-life-title">
+        <div className="pointer-events-none absolute -left-28 bottom-[-7rem] -z-0 size-72 rounded-full border border-white/90 sm:size-96" aria-hidden="true" />
+        <div className="pointer-events-none absolute -left-20 bottom-[-5.5rem] -z-0 size-56 rounded-full bg-white/10 sm:size-72" aria-hidden="true" />
+        <div className="pointer-events-none absolute -right-32 bottom-[-9rem] -z-0 size-80 rounded-full border border-white/90 sm:size-[28rem]" aria-hidden="true" />
+        <div className="pointer-events-none absolute -right-24 bottom-[-7rem] -z-0 size-64 rounded-full bg-white/15 sm:size-96" aria-hidden="true" />
+        <div className="pointer-events-none absolute top-8 right-[8%] z-0 hidden grid-cols-4 gap-3 sm:grid" aria-hidden="true">
+          {Array.from({ length: 12 }, (_, dot) => <span key={dot} className="size-1.5 rounded-full bg-white/75" />)}
         </div>
-      </section>
-
-      <section id="facilities-new-transport" tabIndex={-1} className="relative isolate scroll-mt-36 overflow-hidden bg-[#FFFEFA] px-4 py-8 outline-none sm:px-6 sm:py-10 lg:py-10" aria-labelledby="facilities-new-transport-title">
-        <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
-          <div className="absolute -top-28 -left-28 size-64 rounded-[0_0_100%_0] bg-[#FFB703]/25 sm:size-80" />
-          <div className="absolute -top-24 -left-32 size-64 rounded-[0_0_100%_0] border-b border-r border-[#FFB703]/55 sm:size-80" />
-          <div className="absolute -right-24 -bottom-36 size-80 rounded-[100%_0_0_0] bg-[#FFB703]/20" />
-          <svg viewBox="0 0 520 180" className="absolute top-[18%] right-0 hidden w-[34%] text-[#FFB703]/45 lg:block">
-            <path d="M0 42C95 42 102 94 207 76S335 22 391 75s47 76 129 83" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="7 9" />
-          </svg>
-          <MapPin className="absolute top-[14%] right-[11%] hidden size-10 fill-[#FFB703]/85 text-[#FFB703]/85 lg:block" aria-hidden="true" />
-          <Building2 className="absolute right-[3%] bottom-[15%] hidden size-44 text-[#F5E9CC]/65 lg:block" strokeWidth={1} />
-          <Bus className="absolute right-[9%] bottom-[15%] hidden size-14 text-[#F4D98F]/55 lg:block" strokeWidth={1.5} />
-          <div className="absolute bottom-12 left-1 hidden grid-cols-5 gap-2 sm:grid">{Array.from({ length: 15 }, (_, dot) => <span key={dot} className="size-1 rounded-full bg-[#FFB703]/70" />)}</div>
+        <div className="pointer-events-none absolute bottom-6 left-[7%] z-0 hidden grid-cols-3 gap-3 sm:grid" aria-hidden="true">
+          {Array.from({ length: 6 }, (_, dot) => <span key={dot} className="size-1.5 rounded-full bg-white/65" />)}
         </div>
-        <div className="mx-auto grid w-full max-w-[1280px] items-center gap-6 lg:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)] lg:gap-10">
-          <div className="relative flex min-h-[240px] items-center justify-center sm:min-h-[300px] lg:min-h-[340px]">
-            <img src={transport} alt="SRMU buses and campus transportation" width={700} height={600} loading="lazy" decoding="async" className="h-[240px] w-full object-contain sm:h-[300px] lg:h-[340px]" />
-          </div>
-          <div className="relative max-w-[720px]">
-            {/* <p className="mb-3 text-[11px] font-bold tracking-[0.2em] text-[#24436A] uppercase sm:text-xs">Connected to campus</p> */}
-            <h2 id="facilities-new-transport-title" className="mb-5 text-[24px] leading-[1.2] font-bold text-[#14284E] sm:text-[36px]">Your Journey, <span className="text-[#FFB703]">Made Easier.</span></h2>
-            <p className={bodyClass}>{facilitiesNewPageCopy.busRoutesAndTimings.description} {facilitiesNewPageCopy.busRoutesAndTimings.fees}</p>
-            <div className="mt-5 flex items-center gap-4 text-sm leading-relaxed text-[#4B5A72] sm:text-[15px]">
-              <span className="grid size-11 shrink-0 place-items-center rounded-full bg-[#FFB703]/75 text-[#14284E]"><Bus size={24} aria-hidden="true" /></span>
-              <span className="h-10 w-px shrink-0 bg-[#FFB703]" aria-hidden="true" />
-              <p>Review current routes and timings <span className="font-semibold text-[#14284E]">before planning your commute.</span></p>
-            </div>
-            <a href={facilitiesNewPageCopy.busRoutesAndTimings.url} target="_blank" rel="noreferrer" className="mt-6 inline-flex min-h-12 items-center gap-4 rounded-full bg-[#FFB703] py-1.5 pr-2 pl-6 text-xs font-bold tracking-wide text-[#14284E] uppercase shadow-[0_8px_20px_#FFB70330] transition-transform hover:translate-y-[-1px] sm:text-sm">
-              {facilitiesNewPageCopy.busRoutesAndTimings.linkLabel} <span className="grid size-9 place-items-center rounded-full bg-white text-[#14284E]"><ArrowRight size={18} aria-hidden="true" /></span>
-            </a>
-          </div>
-        </div>
-      </section>
 
-      <FacilitiesNewLiving onSectionNavigate={scrollToSection} />
-
-      <section id="facilities-new-blocks" tabIndex={-1} className="relative isolate scroll-mt-36 overflow-hidden bg-[#F7FAFE] px-4 py-6 outline-none sm:px-6 sm:py-7 lg:py-8" aria-labelledby="facilities-new-blocks-title">
-        <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
-          <div className="absolute -top-40 -right-32 size-[420px] rounded-full bg-[#EAF2FF]/70" />
-          <Building2 className="absolute top-8 right-[5%] hidden size-52 text-[#EAF2FF] lg:block" strokeWidth={1} />
-          <div className="absolute top-12 right-[3%] hidden grid-cols-5 gap-3 lg:grid">{Array.from({ length: 15 }, (_, dot) => <span key={dot} className="size-1 rounded-full bg-[#FFB703]/80" />)}</div>
-        </div>
-        <div className={containerClass}>
-          <div className="mb-6">
-            {/* <p className="mb-3 flex items-center gap-3 text-[11px] font-bold tracking-[0.16em] text-[#0F4A85] uppercase sm:text-xs"><span className="h-0.5 w-9 shrink-0 bg-[#FFB703]" aria-hidden="true" />Discover your surroundings</p> */}
-            <h2 id="facilities-new-blocks-title" className="mb-3 text-[28px] leading-[1.05] font-bold text-[#14284E] sm:text-[36px]">Explore the Academic <span className="text-[#FFB703]">Blocks at SRMU.</span></h2>
-            <p className="max-w-3xl text-[14px] leading-relaxed text-[#4B5A72] sm:text-[15px]">Get to know the academic spaces that bring our disciplines, departments and university community together.</p>
+        <div className="relative z-10 mx-auto w-full max-w-[1400px] px-4 sm:px-6">
+          <h2 id="facilities-new-campus-life-title" className={`${sectionHeadingClass} max-w-none xl:whitespace-nowrap`}>
+            Green Campus and <span className="text-white [text-shadow:0_1px_3px_rgba(20,40,78,0.55)]">Student Recreation</span>
+          </h2>
+          <div className="mt-4 w-full space-y-2 text-[15px] leading-relaxed font-medium text-[#14284E] sm:text-base">
+            <p>SRMU's green campus, landscaped spaces, and recreational areas provide students with a refreshing environment to relax and connect with peers. Sports and student activity spaces further enrich campus life beyond academics.</p>
+            <p>At SRMU, every space is designed to inspire learning, encourage exploration, and make student life more rewarding. From hands-on learning and research to sports, recreation, and comfortable hostel living, students find the facilities and opportunities to learn, grow, and create lasting memories.</p>
           </div>
-          <div className="mb-4 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-3 [&>button]:flex [&>button]:min-h-11 [&>button]:items-center [&>button]:justify-center [&>button]:gap-2 [&>button]:rounded-xl [&>button]:border [&>button]:border-transparent [&>button]:bg-[#F0F6FB]/90 [&>button]:px-2 [&>button]:py-2.5 [&>button]:text-[11px] [&>button]:font-bold [&>button]:text-[#0F4A85] [&>button]:transition-colors sm:[&>button]:text-xs [&>button[aria-pressed=true]]:border-[#14284E] [&>button[aria-pressed=true]]:bg-[#203E91] [&>button[aria-pressed=true]]:text-white [&>button[aria-pressed=true]]:shadow-[inset_0_-3px_#FFB703] [&_svg]:size-4 [&_svg]:shrink-0" role="group" aria-label="Choose an academic block">{CARD_CONTENT.map((block, index) => <button key={block.id} type="button" aria-pressed={index === blockIndex} aria-controls="facilities-new-block-detail" onClick={() => setBlockIndex(index)}><Building2 size={18} aria-hidden="true" /><span className="whitespace-nowrap">{block.id} Academic Block</span></button>)}</div>
-          <div id="facilities-new-block-detail" className="grid overflow-hidden rounded-2xl bg-linear-to-br from-white via-[#F8FBFF] to-[#EAF2FF] shadow-[0_8px_28px_#14284E10] lg:min-h-[340px] lg:grid-cols-[1fr_1fr] [&_h3]:mb-2 [&_h3]:text-xl [&_h3]:font-bold [&_h3]:text-[#203E78] sm:[&_h3]:text-2xl [&_p]:text-sm [&_p]:leading-relaxed [&_p]:text-[#536782] sm:[&_p]:text-[15px]">
-            <div className="relative min-h-[220px] bg-[#FFB703] sm:min-h-[280px] lg:min-h-[340px] lg:[clip-path:polygon(0_0,100%_0,92%_100%,0_100%)]">
-              <img src={activeBlock.image} alt={activeBlock.title} width={900} height={600} loading="lazy" decoding="async" className="absolute inset-0 size-full object-cover lg:[clip-path:polygon(0_0,100%_0,92%_100%,0_100%)]" />
-              <div className="pointer-events-none absolute top-5 left-5 hidden grid-cols-5 gap-2 sm:grid">{Array.from({ length: 15 }, (_, dot) => <span key={dot} className="size-1 rounded-full bg-[#FFB703] shadow-sm" />)}</div>
-            </div>
-            <div className="relative flex flex-col justify-center px-5 py-6 sm:px-8 sm:py-8 lg:px-9 lg:py-9">
-              <span className="mb-3 w-fit rounded-r-xl bg-[#FFB703] px-3 py-1 text-3xl leading-none font-extrabold text-[#203E78] sm:text-4xl" aria-hidden="true">{activeBlock.id}</span>
-              <h3>{activeBlock.title}</h3>
-              <span className="mb-2 h-0.5 w-8 bg-[#FFB703]" aria-hidden="true" />
-              <p>{activeBlock.description}</p>
-              <p className="mt-4 self-end text-right font-serif text-sm italic text-[#5791E8] sm:text-base">Knowledge · Growth · Community</p>
-            </div>
-          </div>
-        </div>
-      </section>
+          <a className="mt-5 inline-flex min-h-12 items-center justify-center gap-3 rounded-full bg-[#14284E] px-7 py-3 text-sm font-bold tracking-wide text-white uppercase shadow-[0_8px_18px_rgba(20,40,78,0.2)] transition-all hover:-translate-y-0.5 hover:bg-[#203A68] hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-white" href="#facilities-new-overview">
+            Explore campus <ArrowRight size={18} aria-hidden="true" />
+          </a>
 
-      <section className="overflow-hidden bg-[#E0F1FF] px-4 py-8 sm:px-6 sm:py-10 lg:py-12" aria-labelledby="facilities-new-more-title">
-        <div className={`${containerClass} grid items-center gap-10 lg:grid-cols-2 lg:gap-[72px]`}>
-          <div>
-            {/* <p className="text-sm font-medium text-[#0F4A85]">Life across campus</p> */}
-            <h2 id="facilities-new-more-title" className={`${headingClass} mt-1 mb-0`}>More to <span>Explore.</span></h2>
-            <p className={`${bodyClass} mt-6 max-w-[56ch] border-l-[5px] border-[#FFB703] pl-5`}>{facilitiesNewPageCopy.closing}</p>
-            <a className={`${buttonClass} mt-7`} href="#facilities-new-overview" onClick={scrollToSection}>Explore campus <ArrowUpRight size={18} aria-hidden="true" /></a>
+          <div className="mt-7 grid max-w-[900px] grid-cols-2 gap-y-6 sm:grid-cols-4 sm:gap-y-0">
+            {campusLifeHighlights.map(({ label, icon: Icon, color }, index) => (
+              <div key={label} className={`flex flex-col items-center px-3 text-center ${index > 0 ? "sm:border-l sm:border-[#14284E]/40" : ""}`}>
+                <span className={`mb-2 grid size-16 place-items-center rounded-full shadow-[0_5px_14px_rgba(20,40,78,0.12)] sm:size-[72px] ${color}`} aria-hidden="true">
+                  <Icon size={31} strokeWidth={1.8} />
+                </span>
+                <span className="max-w-[120px] text-sm leading-tight font-bold text-[#14284E] sm:text-[15px]">{label}</span>
+              </div>
+            ))}
           </div>
-
-          <nav className="relative mx-auto grid w-full max-w-[540px] gap-3.5 py-6 pb-10" aria-label="More to explore">
-            <span className="pointer-events-none absolute top-0 bottom-3 left-1/2 -z-0 w-4 -translate-x-1/2 rounded-t-lg bg-[#14284E]" aria-hidden="true" />
-            <span className="pointer-events-none absolute bottom-0 left-1/2 -z-0 h-[18px] w-[120px] -translate-x-1/2 rounded-[50%] bg-[#14284E]/20" aria-hidden="true" />
-            {[
-              { to: "/hostel", title: "Your Home on Campus", text: "Explore hostel facilities and student accommodation.", color: "bg-[#FFB703] text-[#14284E]", side: "right", focusColor: "focus-visible:outline-[#14284E]" },
-              { to: "/green-initiative-new", title: "A Greener Campus", text: "Discover sustainability in everyday university life.", color: "bg-[#21A5DB] text-[#14284E]", side: "left", focusColor: "focus-visible:outline-[#14284E]" },
-              { to: "/admission-enquiry", title: "Start Your SRMU Journey", text: "Connect with our team for admission enquiries.", color: "bg-[#0F4A85] text-white", side: "right", focusColor: "focus-visible:outline-[#E0F1FF]" },
-            ].map(({ to, title, text, color, side, focusColor }) => <Link key={to} to={to} className={`relative z-10 block min-h-24 px-7 py-5 no-underline transition-transform duration-200 motion-reduce:transition-none ${color} ${side === "right" ? "[clip-path:polygon(0_0,calc(100%_-_44px)_0,100%_50%,calc(100%_-_44px)_100%,0_100%)] pr-16 hover:rotate-[-1.6deg]" : "[clip-path:polygon(44px_0,100%_0,100%_100%,44px_100%,0_50%)] pl-16 hover:rotate-[1.6deg]"} focus-visible:outline-2 focus-visible:outline-offset-[-4px] ${focusColor} motion-reduce:hover:rotate-0`}>
-              <b className="block text-lg leading-tight font-bold">{title}</b>
-              <span className="mt-1 block text-[15px] leading-relaxed">{text}</span>
-            </Link>)}
-          </nav>
         </div>
       </section>
     </div>
