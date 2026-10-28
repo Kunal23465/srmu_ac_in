@@ -8,6 +8,7 @@ import SeoHead from "../components/seo/SeoHead";
 import { buildSiteSchema, getDefaultSeo, normalizePath } from "../utils/seo";
 
 import Footer from "../components/footer/Footer";
+import DepartmentFooter from "../components/footer/DepartmentFooter";
 
 const RootLayout: React.FC = () => {
   const location = useLocation();
@@ -127,11 +128,12 @@ const RootLayout: React.FC = () => {
       {normalizedPath !== "/insider" && <Header />}
 
       <main className={`$ {normalizedPath == "/insider" ? "" : "mt-[41px] lg:mt-[45px]"}`}>
-        {!isHomeRoute && normalizedPath !== "/green-initiative-new" && <DynamicBreadcrumbs />}
+        {!isHomeRoute && normalizedPath !== "/green-initiative-new" && normalizedPath !== "/about-us-new" && <DynamicBreadcrumbs />}
         <Outlet />
       </main>
 
-      {shouldRenderFooter && normalizedPath !== "/insider" && normalizedPath !== "/department-of-computer-science-and-engineering-new" && <Footer />}
+      {shouldRenderFooter && normalizedPath !== "/insider" && normalizedPath !== "/department-of-computer-science-and-engineering-new" && normalizedPath !== "/facilities-new" && <Footer />}
+      {normalizedPath === "/facilities-new" && <DepartmentFooter />}
 
       {/* WhatsApp */}
       {normalizedPath !== "/insider" && <button

@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import type { MouseEvent, ReactNode } from "react";
 import { ArrowLeft, ArrowRight, BedDouble, BookOpen, Bus, Camera, Dumbbell, Droplets, FileText, Fingerprint, FlaskConical, HeartPulse, Landmark, Leaf, Monitor, Shield, Trees, UsersRound, WashingMachine, Wifi, Zap } from "lucide-react";
 import { facilitiesNewBlocks, facilitiesNewPageCopy, facilitiesNewSportsImages } from "../../data/campus-life/facilities/facilities-new-data";
-import campus from "../../assets/images/breadcrumb/campus.webp";
+import facilitiesBanner from "../../assets/images/banner.webp";
 import campusBus from "../../assets/images/bus-images/Bus.webp";
 import campusBusFleet from "../../assets/images/bus-images/SR7D5284.webp";
 import FacilitiesNewLibrary from "./FacilitiesNewLibrary";
@@ -320,9 +320,8 @@ export default function FacilitiesNew() {
 
   return (
     <div className="facilities-new-page w-full max-w-full overflow-x-clip bg-white text-[#14284E] antialiased [&_ul]:!list-none [&_ol]:!list-none">
-      <section className="relative isolate flex min-h-[460px] w-full items-end overflow-hidden bg-[#071329] px-4 py-10 sm:min-h-[504px] sm:items-center sm:px-6 sm:py-14" aria-labelledby="facilities-new-hero-title">
-        <img className="absolute inset-0 -z-20 h-full w-full object-cover object-center" src={campus} alt="SRMU campus buildings and grounds" fetchPriority="high" />
-        <div className="absolute inset-0 -z-10 bg-gradient-to-t from-[#071329]/95 via-[#071329]/55 to-[#071329]/15 sm:bg-gradient-to-r sm:from-[#071329]/80 sm:via-[#091A38]/55 sm:to-[#071329]/15" aria-hidden="true" />
+      <section className="relative isolate flex min-h-[460px] w-full items-end overflow-hidden px-4 py-10 sm:min-h-[504px] sm:items-center sm:px-6 sm:py-14" aria-labelledby="facilities-new-hero-title">
+        <img className="absolute inset-0 -z-20 h-full w-full object-cover object-left" src={facilitiesBanner} alt="SRMU campus facilities" fetchPriority="high" />
         <div className={`${containerClass} relative z-10`}>
           <div className="max-w-[760px] text-white">
             {/* <p className="mb-1.5 text-[16px] leading-snug font-semibold text-[#38BDF8] sm:text-[24px]">Shri Ramswaroop Memorial University (SRMU)</p> */}
@@ -518,11 +517,13 @@ export default function FacilitiesNew() {
                 <h3 className="text-lg font-bold font-display sm:text-xl">Indoor Recreational Activities</h3>
               </div>
               <p className="mb-4 text-sm leading-relaxed text-[#405575] sm:text-[15px] lg:text-justify">Students can participate in indoor recreational activities, including chess and carrom. The university also lists a gymnasium among its sports and fitness facilities.</p>
-              <div className="flex flex-wrap gap-2">
+              <ul className="grid list-none gap-1 p-0">
                 {["Chess", "Carrom", "Gymnasium"].map((sport) => (
-                  <span key={sport} className="rounded-full border border-[#D5E5F4] bg-[#E0F1FF] px-3.5 py-2 text-sm font-semibold text-[#14284E]">{sport}</span>
+                  <li key={sport} className="flex items-center gap-2 text-sm font-semibold text-[#14284E]">
+                    <span className="text-base leading-none text-[#FFB703]" aria-hidden="true">•</span>{sport}
+                  </li>
                 ))}
-              </div>
+              </ul>
             </article>
           </div>
           <div className="order-1 min-w-0 lg:order-2">
@@ -639,7 +640,7 @@ export default function FacilitiesNew() {
 
       <FacilitiesNewDining images={diningImages} description={facilitiesNewPageCopy.dining} />
 
-      <section id="facilities-new-campus-life" className={`${sectionClass} relative isolate overflow-hidden border-t-4 border-t-[#14284E] border-b-[8px] border-b-[#14284E] bg-[#FFB703]`} aria-labelledby="facilities-new-campus-life-title">
+      <section id="facilities-new-campus-life" className={`${sectionClass} relative isolate overflow-hidden bg-[#E0F1FF]`} aria-labelledby="facilities-new-campus-life-title">
         <div className="pointer-events-none absolute -left-28 bottom-[-7rem] -z-0 size-72 rounded-full border border-white/90 sm:size-96" aria-hidden="true" />
         <div className="pointer-events-none absolute -left-20 bottom-[-5.5rem] -z-0 size-56 rounded-full bg-white/10 sm:size-72" aria-hidden="true" />
         <div className="pointer-events-none absolute -right-32 bottom-[-9rem] -z-0 size-80 rounded-full border border-white/90 sm:size-[28rem]" aria-hidden="true" />
@@ -653,7 +654,7 @@ export default function FacilitiesNew() {
 
         <div className={`${containerClass} relative z-10`}>
           <h2 id="facilities-new-campus-life-title" className={`${sectionHeadingClass} max-w-none xl:whitespace-nowrap`}>
-            Green Campus and <span className="text-white [text-shadow:0_1px_3px_rgba(20,40,78,0.55)]">Student Recreation</span>
+            Green Campus and <span className="text-[#FFB703]">Student Recreation</span>
           </h2>
           <div className="mt-4 w-full space-y-2 text-[15px] leading-relaxed font-medium text-[#14284E] sm:text-base lg:text-justify">
             <p>SRMU's green campus, landscaped spaces, and recreational areas provide students with a refreshing environment to relax and connect with peers. Sports and student activity spaces further enrich campus life beyond academics.</p>

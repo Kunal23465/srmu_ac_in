@@ -27,6 +27,7 @@ const NewsLetterPage = lazyPage(() => import("../pages/Home/NewsLetterPage"));
 const NoticePage = lazyPage(() => import("../pages/notice/NoticePage"));
 const ShiftSchedulePage = lazyPage(() => import("../pages/admissions/shift-schedule/ShiftSchedulePage"));
 const AboutPage = lazyPage(() => import("../pages/about/AboutPage"));
+const AboutPageNew = lazyPage(() => import("../pages/about-page-new/AboutPageNew"));
 const NewsEventDetails = lazyPage(() => import("../components/home/NewsEventDetails"));
 export const ProgramDetailsPage = lazyPage(() => import("../pages/programs/details-page/ProgramDetailsPage"));
 export const DirectProgramDetailsPage = lazyPage(() => import("../pages/programs/details-page/DirectProgramDetailsPage"));
@@ -218,6 +219,7 @@ export const routes = [
         path: "/about-us",
         element: <AboutPage />,
       },
+     
       {
         path: "/news/:programName",
         element: <NewsEventDetails />,
@@ -1079,6 +1081,11 @@ export const routes = [
       },
 
       //new pages
+
+      {
+        path: "/about-us-new",
+        element: <AboutPageNew />,
+      },
 
       {
         path: "/department-of-computer-science-and-engineering-new",
