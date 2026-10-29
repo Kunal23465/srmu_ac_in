@@ -340,33 +340,33 @@ export default function FacilitiesNew() {
 
       {/* Temporarily hide the stats strip and section tabs, keeping the hero banner visible. */}
       {/* <div className="relative z-10 -mt-7 hidden md:block">
-        <section className="px-4 sm:px-6" aria-label="Campus facilities highlights">
-          <div className="mx-auto w-full max-w-[1180px] overflow-hidden rounded-[22px] border border-[#E5EAF1] border-t-[5px] border-t-[#FFB703] bg-white shadow-[0_14px_35px_rgba(15,31,61,0.12)]">
-            <dl className="m-0 grid grid-cols-2 md:grid-cols-4">
-              {facilitiesNewPageCopy.highlights.map((stat, index) => (
-                <div key={stat.label} className={`flex min-w-0 flex-col items-start gap-px px-4 pt-3 pb-4 text-left text-[#14284E] ${index % 2 === 1 ? "border-l border-[#D5E5F4]" : ""} ${index >= 2 ? "border-t border-[#D5E5F4]" : ""} ${index > 0 ? "md:border-l" : "md:border-l-0"} md:border-t-0`}>
-                  <dt className="text-[13px] leading-[1.4] text-[#405575]">{stat.label}</dt>
-                  <dd className="order-first m-0 text-[clamp(24px,2vw,32px)] leading-[1.1] font-extrabold text-[#D62C2B]">{stat.value}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
-        </section>
+<section className="px-4 sm:px-6" aria-label="Campus facilities highlights">
+<div className="mx-auto w-full max-w-[1180px] overflow-hidden rounded-[22px] border border-[#E5EAF1] border-t-[5px] border-t-[#FFB703] bg-white shadow-[0_14px_35px_rgba(15,31,61,0.12)]">
+<dl className="m-0 grid grid-cols-2 md:grid-cols-4">
+{facilitiesNewPageCopy.highlights.map((stat, index) => (
+<div key={stat.label} className={`flex min-w-0 flex-col items-start gap-px px-4 pt-3 pb-4 text-left text-[#14284E] ${index % 2 === 1 ? "border-l border-[#D5E5F4]" : ""} ${index >= 2 ? "border-t border-[#D5E5F4]" : ""} ${index > 0 ? "md:border-l" : "md:border-l-0"} md:border-t-0`}>
+<dt className="text-[13px] leading-[1.4] text-[#405575]">{stat.label}</dt>
+<dd className="order-first m-0 text-[clamp(24px,2vw,32px)] leading-[1.1] font-extrabold text-[#D62C2B]">{stat.value}</dd>
+</div>
+))}
+</dl>
+</div>
+</section>
 
-        <nav className="mt-3 hidden border-b border-[#DCE6F2] bg-white px-4 py-2 sm:px-6 md:block" aria-label="Facilities sections">
-          <div className="mx-auto max-w-[1180px]">
-            <ul className="m-0 flex list-none flex-wrap items-center justify-start gap-2 p-0">
-              {sectionNav.map(({ id, label }) => (
-                <li key={id}>
-                  <a href={`#${id}`} aria-current={activeNav === id ? "location" : undefined} onClick={(event) => navigateToSection(event, id)} className={`flex min-h-[38px] items-center justify-center rounded-full px-4 py-2 text-center text-[13px] leading-snug font-medium tracking-normal normal-case transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#14284E] ${activeNav === id ? "bg-[#FFB703] text-[#14284E]" : "bg-[#E0F1FF] text-[#14284E] hover:bg-[#d1e9fc]"}`}>
-                    <span>{label}</span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </nav>
-      </div> */}
+<nav className="mt-3 hidden border-b border-[#DCE6F2] bg-white px-4 py-2 sm:px-6 md:block" aria-label="Facilities sections">
+<div className="mx-auto max-w-[1180px]">
+<ul className="m-0 flex list-none flex-wrap items-center justify-start gap-2 p-0">
+{sectionNav.map(({ id, label }) => (
+<li key={id}>
+<a href={`#${id}`} aria-current={activeNav === id ? "location" : undefined} onClick={(event) => navigateToSection(event, id)} className={`flex min-h-[38px] items-center justify-center rounded-full px-4 py-2 text-center text-[13px] leading-snug font-medium tracking-normal normal-case transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#14284E] ${activeNav === id ? "bg-[#FFB703] text-[#14284E]" : "bg-[#E0F1FF] text-[#14284E] hover:bg-[#d1e9fc]"}`}>
+<span>{label}</span>
+</a>
+</li>
+))}
+</ul>
+</div>
+</nav>
+</div> */}
 
       <section id="facilities-new-overview" className={`${sectionClass} bg-white`} aria-labelledby="facilities-new-overview-title">
         <div className={containerClass}>
@@ -660,10 +660,6 @@ export default function FacilitiesNew() {
             <p>SRMU's green campus, landscaped spaces, and recreational areas provide students with a refreshing environment to relax and connect with peers. Sports and student activity spaces further enrich campus life beyond academics.</p>
             <p>At SRMU, every space is designed to inspire learning, encourage exploration, and make student life more rewarding. From hands-on learning and research to sports, recreation, and comfortable hostel living, students find the facilities and opportunities to learn, grow, and create lasting memories.</p>
           </div>
-          <a className="mt-5 inline-flex min-h-12 items-center justify-center gap-3 rounded-full bg-[#14284E] px-7 py-3 text-sm font-bold tracking-wide text-white uppercase shadow-[0_8px_18px_rgba(20,40,78,0.2)] transition-all hover:-translate-y-0.5 hover:bg-[#203A68] hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-white" href="#facilities-new-overview">
-            Explore campus <ArrowRight size={18} aria-hidden="true" />
-          </a>
-
           <div className="mt-7 grid max-w-[900px] grid-cols-2 gap-y-6 sm:grid-cols-4 sm:gap-y-0">
             {campusLifeHighlights.map(({ label, icon: Icon, color }, index) => (
               <div key={label} className={`flex flex-col items-center px-3 text-center ${index > 0 ? "sm:border-l sm:border-[#14284E]/40" : ""}`}>
@@ -674,6 +670,9 @@ export default function FacilitiesNew() {
               </div>
             ))}
           </div>
+          <a className="mt-5 inline-flex min-h-12 items-center justify-center gap-3 rounded-full bg-[#14284E] px-7 py-3 text-sm font-bold tracking-wide text-white uppercase shadow-[0_8px_18px_rgba(20,40,78,0.2)] transition-all hover:-translate-y-0.5 hover:bg-[#203A68] hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-white" href="#facilities-new-overview">
+            Explore campus <ArrowRight size={18} aria-hidden="true" />
+          </a>
         </div>
       </section>
     </div>

@@ -72,7 +72,6 @@ const highlights: Record<string, HighlightSection> = {
       { label: "Celebrity & Special Events", description: "Explore special guests and performances", path: "/event-new#special-events", icon: Mic },
       { label: "Calendar", description: "Browse events by date and category", path: "/event-new#calendar", icon: CalendarDays },
       // { label: "FAQs", description: "Find answers to common event questions", path: "/event-new#faqs", icon: BookOpen },
-      { label: "All Events", description: "Explore the full events page", path: "/event-new", icon: CalendarDays },
     ],
     all: "Explore all events",
   },
@@ -328,6 +327,8 @@ export function CampusLifeMobile({ onNavigate }: { onNavigate: () => void }) {
   return <li className={styles.mobileRoot}>
     <ul className={styles.mobileList}>
       {campusItems.map((item) => {
+
+
         const nested = hasHighlights(item.path);
         const selected = active === item.path;
         return <li key={item.path}>
