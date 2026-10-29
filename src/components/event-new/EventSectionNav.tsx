@@ -7,6 +7,7 @@ const sections = [
     { id: "news", label: "Upcoming Events" },
     { id: "categories", label: "Categories" },
     { id: "special-events", label: "Celebrity & Special Events" },
+    { id: "tedx", label: "TEDx Reels" },
     { id: "calendar", label: "Calendar" },
     { id: "faqs", label: "FAQs" },
 ];

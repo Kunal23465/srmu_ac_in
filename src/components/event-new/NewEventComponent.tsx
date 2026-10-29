@@ -36,6 +36,7 @@ import chessImage from "../../assets/images/event-new/sports-event/chess.webp";
 import tugOfWarImage from "../../assets/images/event-new/sports-event/tug-of-war.webp";
 import { calendarEvents, type CalendarEvent } from "./eventNewData";
 import eventsData from "../../data/new-home/eventsData";
+import TedxReelsSection from "./TedxReelsSection";
 // import { archiveEvents } from "./eventNewData"; // Restore with Event Archives.
 import Global from "../../utils/styles/Global.module.css";
 import styles from "./NewEventComponent.module.css";
@@ -542,6 +543,8 @@ export default function NewEventComponent() {
         <VideoGallery items={special} label="Special event videos" celebrity />
         <div className="mt-8"><a href="#calendar" className={eventButtonClassName} onClick={() => chooseCategory("Special")}>Explore Special Events <ArrowRight size={16} /></a></div>
       </Section>
+
+      <TedxReelsSection />
 
       {/* Holidays & Closures hidden for now.
       <Section id="holiday-events" title="Holidays & Closures" description="University holidays, mandatory celebration days and restricted holidays (aligned with government holidays)." alternate>

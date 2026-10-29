@@ -37,6 +37,8 @@ import collageEvent from "../../assets/new-home/events/Collage.png";
 import legalEvent from "../../assets/new-home/events/Legal-Awareness-Programme-at-School.png";
 import bloodCamp from "../../assets/images/blood.jpg"
 
+import llmCollege from "../../assets/new-home/events/LLM-college-Lucknow.png"
+
 
 
 
@@ -59,6 +61,30 @@ export type EventItem = {
 };
 
 const eventsData: EventItem[] = [
+
+
+  {
+    id: 15,
+    isRedirect: false,
+    image: llmCollege,
+    imageSmall: llmCollege,
+    date: "October 28th, 2026",
+    title: `Workshop on Contemporary Issues in Contract Law Organized at ILS, SRMU`,
+    description: `
+    The <strong>Institute of Legal Studies, Shri Ramswaroop Memorial University (SRMU)</strong>, organized a workshop on <strong>“Contemporary Issues in Contract Law: E-Contracts and Digital Agreements”</strong> on <strong>28 October 2026</strong>.<br />
+
+    The workshop featured <strong>Dr. Indra Kumar Singh, Associate Professor, Sikkim National Law University, Gangtok</strong>, as the resource person. The session focused on the evolving dimensions of contract law in the digital era, with particular emphasis on the legal framework governing electronic contracts and digital agreements.<br />
+
+    The workshop explored the <strong>recognition, validity, enforceability, and legal implications of electronically formed contracts</strong>, along with emerging challenges related to digital transactions, electronic consent, authentication, and the use of technology in contractual relationships.<br />
+
+    The session aimed to bridge the gap between theoretical legal principles and their practical application in an increasingly digital environment. It provided students with valuable insights into the changing nature of contractual obligations and the relevance of traditional contract law principles in contemporary electronic transactions.<br />
+    The workshop offered an academic platform for engaging with emerging issues at the intersection of <strong>law and technology</strong>, helping students develop a deeper understanding of the legal considerations surrounding digital agreements and electronic commerce.<br />
+
+    The initiative reflected the Institute of Legal Studies’ commitment to <strong>experiential learning, legal awareness, and academic engagement with contemporary developments in law</strong>, equipping students with perspectives relevant to the evolving legal landscape.<br />
+    `,
+  },
+
+
 {
   id: 28,
   isRedirect: false,
@@ -403,82 +429,82 @@ The event reflects the university’s commitment to <strong>community engagement
   //   The programme is being organized under the guidance of Hon'ble Chancellor Er. Pankaj Agrawal, Pro-Chancellor Er. Pooja Agrawal, and Vice-Chancellor Prof. (Dr.) Vijay Tiwari, and under the direction of Prof. (Dr.) Narendra Bahadur Singh, Director, Institute of Legal Studies.
   // `,
   // },
-  {
-    id: 17,
-    isRedirect: false,
-    image: SpaceEconomy,
-    imageSmall: SpaceEconomy,
-    date: "August 22nd, 2026",
-    title: `SRMU to Host University-Wide Open Lecture on India's New Space Economy`,
-    description: `
-    The <strong>Faculty of Physical Sciences (FoPS), Shri Ramswaroop Memorial University (SRMU)</strong>, is organizing a university-wide open lecture on the occasion of <strong>National Space Day 2026</strong>, aligned with this year's theme, <strong>"India's Space Journey Towards Viksit Bharat 2047."</strong>
+  // {
+  //   id: 17,
+  //   isRedirect: false,
+  //   image: SpaceEconomy,
+  //   imageSmall: SpaceEconomy,
+  //   date: "August 22nd, 2026",
+  //   title: `SRMU to Host University-Wide Open Lecture on India's New Space Economy`,
+  //   description: `
+  //   The <strong>Faculty of Physical Sciences (FoPS), Shri Ramswaroop Memorial University (SRMU)</strong>, is organizing a university-wide open lecture on the occasion of <strong>National Space Day 2026</strong>, aligned with this year's theme, <strong>"India's Space Journey Towards Viksit Bharat 2047."</strong>
 
-    The lecture, titled <strong>"India's Space Revolution: Preparing Students for the New Space Economy,"</strong> will explore the transformation of India's space sector and the growing opportunities emerging for students and young professionals in the new space economy.
+  //   The lecture, titled <strong>"India's Space Revolution: Preparing Students for the New Space Economy,"</strong> will explore the transformation of India's space sector and the growing opportunities emerging for students and young professionals in the new space economy.
 
-    The program will be delivered by <strong>Lalit Kumar Shukla, Assistant Professor, Faculty of Physical Sciences (FoPS)</strong>, who will discuss the evolving landscape of India's space sector and how today's students can prepare themselves to contribute to the country's future space ambitions.
+  //   The program will be delivered by <strong>Lalit Kumar Shukla, Assistant Professor, Faculty of Physical Sciences (FoPS)</strong>, who will discuss the evolving landscape of India's space sector and how today's students can prepare themselves to contribute to the country's future space ambitions.
 
-    <br/><strong>Program Details:</strong><br/>
+  //   <br/><strong>Program Details:</strong><br/>
 
-    <strong>Date:</strong> 22 August 2026 (Saturday)<br>
-    <strong>Time:</strong> 11:30 AM<br>
-    <strong>Venue:</strong> B1-007<br>
-    <strong>Keynote Speaker:</strong> Lalit Kumar Shukla, Assistant Professor, FoPS<br>
-    <strong>Topic:</strong> India's Space Revolution: Preparing Students for the New Space Economy
+  //   <strong>Date:</strong> 22 August 2026 (Saturday)<br>
+  //   <strong>Time:</strong> 11:30 AM<br>
+  //   <strong>Venue:</strong> B1-007<br>
+  //   <strong>Keynote Speaker:</strong> Lalit Kumar Shukla, Assistant Professor, FoPS<br>
+  //   <strong>Topic:</strong> India's Space Revolution: Preparing Students for the New Space Economy
 
-    The lecture is open to students, research scholars, faculty members, and staff of the university, providing an opportunity for participants from different academic backgrounds to engage with the rapidly evolving field of space science and technology.
+  //   The lecture is open to students, research scholars, faculty members, and staff of the university, providing an opportunity for participants from different academic backgrounds to engage with the rapidly evolving field of space science and technology.
 
-    The program aims to create awareness about India's growing capabilities in the space sector while encouraging students to explore emerging academic, research, and career opportunities associated with the New Space Economy.
+  //   The program aims to create awareness about India's growing capabilities in the space sector while encouraging students to explore emerging academic, research, and career opportunities associated with the New Space Economy.
 
-    The initiative also reflects SRMU's commitment to promoting interdisciplinary learning and connecting students with emerging areas of science, technology, and national development.
+  //   The initiative also reflects SRMU's commitment to promoting interdisciplinary learning and connecting students with emerging areas of science, technology, and national development.
 
-    Faculty members, students, research scholars, and staff are encouraged to participate in the lecture and gain insights into India's space journey and the role that the next generation can play in shaping its future.
-  `,
-  },
-  {
-    id: 16,
-    isRedirect: false,
-    image: IBSCollaboration,
-    imageSmall: IBSCollaboration,
-    date: "August 22nd, 2026",
-    title: `SRMU to Organize Student Development and Faculty Knowledge Sharing Programmes in Collaboration with IBS`,
-    description: `
-    The <strong>Faculty of Commerce & Economics, Institute of Management, Commerce & Economics (IMCE), Shri Ramswaroop Memorial University (SRMU)</strong>, is organizing a <strong>Student Development Programme (SDP)</strong> and a <strong>Faculty Knowledge Sharing Programme</strong> in collaboration with <strong>IBS</strong> on 22 August 2026 (Saturday).
+  //   Faculty members, students, research scholars, and staff are encouraged to participate in the lecture and gain insights into India's space journey and the role that the next generation can play in shaping its future.
+  // `,
+  // },
+  // {
+  //   id: 16,
+  //   isRedirect: false,
+  //   image: IBSCollaboration,
+  //   imageSmall: IBSCollaboration,
+  //   date: "August 22nd, 2026",
+  //   title: `SRMU to Organize Student Development and Faculty Knowledge Sharing Programmes in Collaboration with IBS`,
+  //   description: `
+  //   The <strong>Faculty of Commerce & Economics, Institute of Management, Commerce & Economics (IMCE), Shri Ramswaroop Memorial University (SRMU)</strong>, is organizing a <strong>Student Development Programme (SDP)</strong> and a <strong>Faculty Knowledge Sharing Programme</strong> in collaboration with <strong>IBS</strong> on 22 August 2026 (Saturday).
 
-    The programs have been planned to provide students and faculty members with valuable exposure to emerging technologies, industry-oriented knowledge, and contemporary professional practices.
+  //   The programs have been planned to provide students and faculty members with valuable exposure to emerging technologies, industry-oriented knowledge, and contemporary professional practices.
 
-    <strong>Student Development Programme</strong>
+  //   <strong>Student Development Programme</strong>
 
-    The Student Development Programme is expected to bring together around 200 final-year students from B.Tech, BBA, and B.Com (Hons.) programmes.
+  //   The Student Development Programme is expected to bring together around 200 final-year students from B.Tech, BBA, and B.Com (Hons.) programmes.
 
-    <strong>Date:</strong> 22 August 2026<br>
-    <strong>Time:</strong> 10:00 AM – 11:00 AM<br>
-    <strong>Venue:</strong> Mini Auditorium<br>
-    <strong>Programs:</strong> B.Tech, BBA & B.Com (Hons.) Final Year<br>
-    <strong>Topic:</strong> AI & Generative AI Tools
+  //   <strong>Date:</strong> 22 August 2026<br>
+  //   <strong>Time:</strong> 10:00 AM – 11:00 AM<br>
+  //   <strong>Venue:</strong> Mini Auditorium<br>
+  //   <strong>Programs:</strong> B.Tech, BBA & B.Com (Hons.) Final Year<br>
+  //   <strong>Topic:</strong> AI & Generative AI Tools
 
-    The session will focus on introducing students to the growing applications of artificial intelligence and generative AI tools and their relevance in academic, professional, and industry settings.
+  //   The session will focus on introducing students to the growing applications of artificial intelligence and generative AI tools and their relevance in academic, professional, and industry settings.
 
-    <strong>Faculty Knowledge Sharing Programme</strong>
+  //   <strong>Faculty Knowledge Sharing Programme</strong>
 
-    Following the student session, a Faculty Knowledge Sharing Programme will be organised to facilitate knowledge exchange and strengthen faculty members' understanding of emerging technology applications.
+  //   Following the student session, a Faculty Knowledge Sharing Programme will be organised to facilitate knowledge exchange and strengthen faculty members' understanding of emerging technology applications.
 
-    <strong>Date:</strong> 22 August 2026<br>
-    <strong>Time:</strong> 11:00 AM – 12:30 PM<br>
-    <strong>Expected Participation:</strong> 50 faculty members<br>
-    <strong>Programs:</strong> Management – BBA, B.Com & IoT<br>
-    <strong>Topic:</strong> Generative AI & Data Analytics Using Python
+  //   <strong>Date:</strong> 22 August 2026<br>
+  //   <strong>Time:</strong> 11:00 AM – 12:30 PM<br>
+  //   <strong>Expected Participation:</strong> 50 faculty members<br>
+  //   <strong>Programs:</strong> Management – BBA, B.Com & IoT<br>
+  //   <strong>Topic:</strong> Generative AI & Data Analytics Using Python
 
-    The session will provide faculty members with an opportunity to explore the practical applications of generative AI and Python-based data analytics, enabling them to enhance their academic and professional capabilities.
+  //   The session will provide faculty members with an opportunity to explore the practical applications of generative AI and Python-based data analytics, enabling them to enhance their academic and professional capabilities.
 
-    The programs are being organized with the objective of promoting continuous learning, technology awareness, and industry-oriented development among both students and faculty members.
+  //   The programs are being organized with the objective of promoting continuous learning, technology awareness, and industry-oriented development among both students and faculty members.
 
-    Faculty members have been requested to nominate suitable faculty coordinators and student groups/classes from their respective programs to ensure smooth coordination and active participation.
+  //   Faculty members have been requested to nominate suitable faculty coordinators and student groups/classes from their respective programs to ensure smooth coordination and active participation.
 
-    The initiative is expected to provide participants with meaningful academic and professional insights from experts associated with IBS while encouraging greater awareness of emerging technologies and their applications in education and industry.
+  //   The initiative is expected to provide participants with meaningful academic and professional insights from experts associated with IBS while encouraging greater awareness of emerging technologies and their applications in education and industry.
 
-    Through such initiatives, SRMU continues to strengthen opportunities for student development, faculty upskilling, and industry-academia engagement.
-  `,
-  },
+  //   Through such initiatives, SRMU continues to strengthen opportunities for student development, faculty upskilling, and industry-academia engagement.
+  // `,
+  // },
   {
     id: 15,
     isRedirect: false,
