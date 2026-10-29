@@ -1,13 +1,13 @@
-import tedxEventVideo from "../../assets/video/events-new/tedx-section/Tedx_.mp4";
-import jyotsnaVideo from "../../assets/video/events-new/tedx-section/Jyotsna Kaur Habibullah.mp4";
-import sudhirVideo from "../../assets/video/events-new/tedx-section/Dr. Sudhir Kumar Mishra.mp4";
-import kamalVideo from "../../assets/video/events-new/tedx-section/Mr. Kamal Khan _ final edit.mp4";
-import rudraVideo from "../../assets/video/events-new/tedx-section/Mr. Rudra Pratap Singh.mp4";
-import tedxEventPoster from "../../assets/video/events-new/tedx-section/posters/TEDx SRMU.webp";
-import jyotsnaPoster from "../../assets/video/events-new/tedx-section/posters/Jyotsna Kaur Habibullah.webp";
-import sudhirPoster from "../../assets/video/events-new/tedx-section/posters/Dr. Sudhir Kumar Mishra.webp";
-import kamalPoster from "../../assets/video/events-new/tedx-section/posters/Mr. Kamal Khan.webp";
-import rudraPoster from "../../assets/video/events-new/tedx-section/posters/Mr. Rudra Pratap Singh.webp";
+import tedxEventVideo from "../../assets/video/events-new/tedx-section/tedx-srmu-reel.mp4";
+import jyotsnaVideo from "../../assets/video/events-new/tedx-section/jyotsna-kaur-habibullah.mp4";
+import sudhirVideo from "../../assets/video/events-new/tedx-section/dr-sudhir-kumar-mishra.mp4";
+import kamalVideo from "../../assets/video/events-new/tedx-section/mr-kamal-khan-final-edit.mp4";
+import rudraVideo from "../../assets/video/events-new/tedx-section/mr-rudra-pratap-singh.mp4";
+import tedxEventPoster from "../../assets/video/events-new/tedx-section/posters/tedx-srmu.webp";
+import jyotsnaPoster from "../../assets/video/events-new/tedx-section/posters/jyotsna-kaur-habibullah.webp";
+import sudhirPoster from "../../assets/video/events-new/tedx-section/posters/dr-sudhir-kumar-mishra.webp";
+import kamalPoster from "../../assets/video/events-new/tedx-section/posters/mr-kamal-khan.webp";
+import rudraPoster from "../../assets/video/events-new/tedx-section/posters/mr-rudra-pratap-singh.webp";
 import styles from "./TedxReelsSection.module.css";
 
 const tedxReels = [
