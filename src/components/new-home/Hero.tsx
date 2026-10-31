@@ -141,7 +141,7 @@ export default function Hero() {
               <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 backdrop-blur-sm px-3 py-1.5 mb-4">
                 <span className="h-1.5 w-1.5 rounded-full bg-[#FFC107]" />
                 <span className="text-[10px] md:text-xs font-semibold uppercase tracking-[0.18em]">
-                  Admission Open · 2026
+                  Admission Open · 2027
                 </span>
               </div>
 

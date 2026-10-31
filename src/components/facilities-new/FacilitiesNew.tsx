@@ -377,7 +377,7 @@ export default function FacilitiesNew() {
       <section id="facilities-new-transport" className="relative z-10 scroll-mt-24 bg-[#FFB70F] px-6 py-6 sm:py-8 lg:py-10" aria-labelledby="facilities-new-transport-title">
         <div className={`${containerClass} grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14`}>
           <div>
-            <h2 id="facilities-new-transport-title" className={`${sectionHeadingClass} text-[#14284E]`}>Bus Routes and Timings, <span className="text-white">Transport Fees</span></h2>
+            <h2 id="facilities-new-transport-title" className={`${sectionHeadingClass} text-[#14284E]`}>Transport Routes <span className="text-white">& Fee Structure</span></h2>
             <div className="my-5 h-[5px] w-16 bg-[#14284E] sm:my-6" aria-hidden="true" />
             <p className="text-[15px] leading-[1.75] text-[#2B3A5C] sm:text-base">SRMU buses connect the campus with designated pickup points. Students can consult the official transportation page for published routes, pickup locations, and departure timings.</p>
             <p className="mt-3 text-[15px] leading-[1.75] text-[#2B3A5C] sm:text-base">Transportation fees may depend on the applicable route and university fee schedule. Students and parents should confirm current charges, route availability, pickup locations, and payment procedures with the university before opting for the service.</p>
@@ -386,11 +386,11 @@ export default function FacilitiesNew() {
           <div className="grid min-w-0 grid-cols-2 items-center gap-1 sm:gap-3 lg:perspective-[1200px]" role="group" aria-label="Photos of SRMU campus buses">
             <figure className="relative z-10 m-0 aspect-[4/5] min-w-0 overflow-hidden border-[7px] border-white bg-white shadow-[0_16px_28px_rgba(20,40,78,0.32)] transition-transform duration-500 lg:translate-x-3 lg:rotate-[-6deg]">
               <img src={campusBus} alt="SRMU campus bus parked beside an academic building" width={5568} height={3712} loading="lazy" decoding="async" className="absolute inset-0 size-full object-cover" />
-              <figcaption className="absolute inset-x-0 bottom-0 bg-[#14284E]/95 px-3 py-3 text-sm font-semibold text-white sm:px-4 sm:py-4 sm:text-base">Campus transport</figcaption>
+              {/* <figcaption className="absolute inset-x-0 bottom-0 bg-[#14284E]/95 px-3 py-3 text-sm font-semibold text-white sm:px-4 sm:py-4 sm:text-base">Campus transport</figcaption> */}
             </figure>
             <figure className="relative m-0 aspect-[4/5] min-w-0 overflow-hidden border-[7px] border-white bg-white shadow-[0_16px_28px_rgba(20,40,78,0.32)] transition-transform duration-500 lg:-translate-x-3 lg:translate-y-4 lg:rotate-[6deg]">
               <img src={campusBusFleet} alt="A line of SRMU buses ready for campus transport" width={5472} height={3648} loading="lazy" decoding="async" className="absolute inset-0 size-full object-cover" />
-              <figcaption className="absolute inset-x-0 bottom-0 bg-[#14284E]/95 px-3 py-3 text-sm font-semibold text-white sm:px-4 sm:py-4 sm:text-base lg:pl-12">SRMU bus fleet</figcaption>
+              {/* <figcaption className="absolute inset-x-0 bottom-0 bg-[#14284E]/95 px-3 py-3 text-sm font-semibold text-white sm:px-4 sm:py-4 sm:text-base lg:pl-12">SRMU bus fleet</figcaption> */}
             </figure>
           </div>
         </div>

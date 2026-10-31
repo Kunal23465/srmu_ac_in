@@ -135,7 +135,7 @@ const EnquiryFormForModal: React.FC<EnquiryFormProps> = ({
             </h2>
 
             <h3 className="text-[28px] font-bold">
-              Session 2026-27
+              Session 2027-28
             </h3>
           </div>
 
