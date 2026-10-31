@@ -2,6 +2,7 @@
   --placement-blue: #0a4a8f;
   --placement-navy: #14284e;
   --placement-gold: #ffb703;
+  --placement-red: #d62c2b;
   padding: 64px 0 76px;
   overflow: clip;
   color: var(--placement-navy);
@@ -45,7 +46,7 @@
 .stat:nth-child(even) { padding-left: 20px; padding-right: 0; }
 .stat:nth-child(-n + 2) { border-bottom: 1px solid #e5edf3; padding-top: 7px; padding-bottom: 25px; }
 .stat dt { max-width: 135px; color: #4b6076; font-size: 11px; font-weight: 600; line-height: 1.6; }
-.stat dd { margin: 0; color: var(--placement-gold); font-size: clamp(28px, 2.6vw, 38px); font-weight: 800; letter-spacing: -1.6px; line-height: 1.1; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.stat dd { margin: 0; color: var(--placement-red); font-size: clamp(28px, 2.6vw, 38px); font-weight: 800; letter-spacing: -1.6px; line-height: 1.1; white-space: nowrap; font-variant-numeric: tabular-nums; }
 .unit { font-size: .46em; letter-spacing: -.4px; }
 .alumniCard { display: flex; flex-direction: column; padding: 23px 15px 15px; }
 .alumniHeader { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 0 4px 20px; }

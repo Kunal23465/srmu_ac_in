@@ -1,5 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { MouseEvent } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowRight, Banknote, BedDouble, BookOpen, BusFront, Camera, Coffee, Cross, Droplets, Dumbbell, Fingerprint, FlaskConical, HeartPulse, Landmark, Leaf, Monitor, Presentation, Shield, Trees, UsersRound, Volleyball, WashingMachine, Wifi, Zap } from "lucide-react";
 import { facilitiesNewBlocks, facilitiesNewPageCopy, facilitiesNewSportsImages } from "../../data/campus-life/facilities/facilities-new-data";
 import campusBus from "../../assets/images/bus-images/Bus.webp";
@@ -181,11 +183,96 @@ function SportsPhoto({ image }: { image: { src: string; caption: string } }) {
 }
 
 export default function FacilitiesNew() {
+  const pageRef = useRef<HTMLDivElement>(null);
+  const heroRef = useRef<HTMLElement>(null);
   const [activeNav, setActiveNav] = useState("");
   const [selectedHostel, setSelectedHostel] = useState(0);
   const [heroBackgrounds, setHeroBackgrounds] = useState<[string, string]>([libraryImage, libraryImage]);
   const [activeHeroBackground, setActiveHeroBackground] = useState(0);
   const hostelImages = facilitiesNewPageCopy.hostels.residences;
+
+  useEffect(() => {
+    const page = pageRef.current;
+    const hero = heroRef.current;
+    if (!page || !hero) return;
+
+    gsap.registerPlugin(ScrollTrigger);
+    const media = gsap.matchMedia();
+
+    media.add({
+      desktop: "(min-width: 1024px)",
+      mobile: "(max-width: 1023px)",
+      reduceMotion: "(prefers-reduced-motion: reduce)",
+    }, (context) => {
+      if (context.conditions?.reduceMotion) return;
+
+      hero.querySelectorAll<HTMLElement>("[data-facilities-hero-reveal]").forEach((element, index) => {
+        gsap.fromTo(element, { y: context.conditions?.desktop ? 45 + index * 30 : 24 }, {
+          y: 0,
+          ease: "none",
+          scrollTrigger: {
+            trigger: element,
+            start: "top 98%",
+            end: "top 58%",
+            scrub: 0.6,
+            invalidateOnRefresh: true,
+          },
+        });
+      });
+
+      // The reference's cards rise into place with scroll progress.
+      page.querySelectorAll<HTMLElement>("h2, [data-facilities-reveal]").forEach((element) => {
+        gsap.fromTo(element, { y: context.conditions?.desktop ? 60 : 20 }, {
+          y: 0,
+          ease: "none",
+          scrollTrigger: {
+            trigger: element,
+            start: "top 98%",
+            end: "top 65%",
+            scrub: 0.6,
+            invalidateOnRefresh: true,
+          },
+        });
+      });
+
+      gsap.fromTo(hero.querySelectorAll(`.${heroStyles.navItem}`), { opacity: 0.35, y: 16 }, {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        stagger: 0.06,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: hero.querySelector(`.${heroStyles.navigation}`),
+          start: "top 95%",
+          once: true,
+        },
+      });
+
+      if (context.conditions?.desktop) {
+        gsap.to(hero.querySelector(`.${heroStyles.backgrounds}`), {
+          yPercent: 5,
+          scale: 1.12,
+          ease: "none",
+          scrollTrigger: { trigger: hero, start: "top top", end: "bottom top", scrub: 0.8 },
+        });
+
+        page.querySelectorAll<HTMLImageElement>("figure > img, #facilities-new-dining-gallery > img").forEach((image) => {
+          gsap.fromTo(image, { scale: 1.06 }, {
+            scale: 1,
+            ease: "none",
+            scrollTrigger: {
+              trigger: image.parentElement,
+              start: "top bottom",
+              end: "bottom top",
+              scrub: 0.8,
+            },
+          });
+        });
+      }
+    }, page);
+
+    return () => media.revert();
+  }, []);
 
   const showHeroBackground = (image: string) => {
     if (heroBackgrounds[activeHeroBackground] === image) return;
@@ -232,8 +319,8 @@ export default function FacilitiesNew() {
   };
 
   return (
-    <div className="facilities-new-page w-full max-w-full overflow-x-clip bg-white text-[#27324B] antialiased lg:[&_p]:text-justify [&_ul]:!list-none [&_ol]:!list-none">
-      <section className={heroStyles.hero} aria-labelledby="facilities-new-hero-title">
+    <div ref={pageRef} className="facilities-new-page w-full max-w-full overflow-x-clip bg-white text-[#27324B] antialiased lg:[&_p]:text-justify [&_ul]:!list-none [&_ol]:!list-none">
+      <section ref={heroRef} className={heroStyles.hero} aria-labelledby="facilities-new-hero-title">
         <div className={heroStyles.stage}>
           <div className={heroStyles.backgrounds} aria-hidden="true">
             {heroBackgrounds.map((image, index) => (
@@ -243,7 +330,7 @@ export default function FacilitiesNew() {
           <div className={heroStyles.shade} aria-hidden="true" />
           <span className={heroStyles.cornerArc} aria-hidden="true" />
           <span className={heroStyles.heroDots} aria-hidden="true" />
-          <div className={heroStyles.content}>
+          <div className={heroStyles.content} data-facilities-hero-reveal>
             <h1 id="facilities-new-hero-title" className={`${heroStyles.title} font-display`}>Campus <span>Facilities</span></h1>
             <a href="/admission-enquiry" className={heroStyles.cta}>
               Plan Your Next Step <ArrowRight size={21} aria-hidden="true" />
@@ -251,24 +338,24 @@ export default function FacilitiesNew() {
           </div>
         </div>
         <svg className={heroStyles.waves} viewBox="0 0 1440 220" preserveAspectRatio="none" aria-hidden="true" focusable="false">
-          <path d="M0 130C180 215 280 60 420 126S680 254 890 170S1240 12 1440 34V220H0Z" fill="#e8edff" />
-          <path d="M0 172C245 240 345 108 520 163S900 247 1130 154S1350 64 1440 94V220H0Z" fill="#f1f4ff" />
+          <path d="M0 130C180 215 280 60 420 126S680 254 890 170S1240 12 1440 34V220H0Z" fill="#21a5db" fillOpacity="0.12" />
+          <path d="M0 172C245 240 345 108 520 163S900 247 1130 154S1350 64 1440 94V220H0Z" fill="#e0f1ff" />
         </svg>
         <span className={heroStyles.footerDots} aria-hidden="true" />
         <nav
           className={heroStyles.navigation}
+          data-facilities-hero-reveal
           aria-label="Explore facilities sections"
           onMouseLeave={() => showHeroBackground(libraryImage)}
           onBlur={(event) => {
             if (!event.currentTarget.contains(event.relatedTarget as Node | null)) showHeroBackground(libraryImage);
           }}
         >
-          {sectionNav.map(({ id, label, image, icon: Icon }, index) => (
+          {sectionNav.map(({ id, label, image, icon: Icon }) => (
             <a
               key={id}
               href={`#${id}`}
               className={heroStyles.navItem}
-              data-active={activeNav === id || (!activeNav && index === 0)}
               aria-current={activeNav === id ? "location" : undefined}
               onClick={(event) => navigateToSection(event, id)}
               onMouseEnter={() => showHeroBackground(image)}
@@ -293,7 +380,7 @@ export default function FacilitiesNew() {
         <div className={containerClass}>
           <h2 id="facilities-new-overview-title" className={`${sectionHeadingClass} text-[#14284E]`}>About Our <span className="text-[#FFB70F]">Campus Facilities</span></h2>
           <div className="mt-5 grid items-center gap-8 lg:grid-cols-[1.25fr_0.95fr] lg:gap-10">
-            <div className="text-[15px] leading-[1.75] text-[#5B6885] sm:text-base">
+            <div data-facilities-reveal className="text-[15px] leading-[1.75] text-[#5B6885] sm:text-base">
               <p>Shri Ramswaroop Memorial University (SRMU), located on Lucknow–Deva Road, Uttar Pradesh, offers modern classrooms, specialized laboratories, seminar halls, library resources, healthcare, transport, sports, and hostel facilities. The campus supports academic excellence, practical learning, research, recreation, and overall student development.</p>
               <p className="mt-3">SRMU's campus infrastructure comprises dedicated academic blocks, administrative facilities, classrooms, laboratories, workshops, seminar halls, libraries, and student amenities. These facilities support teaching, research, practical education, and extracurricular engagement across multiple disciplines.</p>
               <p className="mt-3">The campus is organized to provide students with access to the academic and support facilities required throughout their educational journey.</p>
@@ -306,7 +393,7 @@ export default function FacilitiesNew() {
             {overviewFacts.map((fact, index) => {
               const heading = overviewFactHeadings[index] ?? "Campus facilities";
               const Icon = overviewFactIcons[index] ?? BookOpen;
-              return <div key={fact} className={`flex gap-4 border-t border-[#DCE6F2] py-5 ${index % 3 !== 0 ? "lg:border-l lg:pl-6" : "lg:pr-6"}`}>
+              return <div key={fact} data-facilities-reveal className={`flex gap-4 border-t border-[#DCE6F2] py-5 ${index % 3 !== 0 ? "lg:border-l lg:pl-6" : "lg:pr-6"}`}>
                 <span className="grid size-16 shrink-0 place-items-center rounded-full bg-[#FFF0B3] text-[#14284E]" aria-hidden="true"><Icon size={29} strokeWidth={1.8} /></span>
                 <div>
                   <dt className="font-display text-base font-semibold text-[#14284E]">{heading}</dt>
@@ -338,7 +425,7 @@ export default function FacilitiesNew() {
           />
           <div className="hidden gap-x-8 gap-y-12 sm:grid lg:grid-cols-3 lg:gap-x-12">
             {facilitiesNewBlocks.map((block, index) => (
-              <article key={block.id} className="min-w-0">
+              <article key={block.id} data-facilities-reveal className="min-w-0">
                 <p className="mb-3 font-display text-[clamp(64px,8vw,112px)] leading-[0.9] font-bold tracking-tight text-transparent [-webkit-text-stroke:2px_#14284E]">B{index + 1}</p>
                 <img src={block.image} alt={`${block.title} building`} loading="lazy" decoding="async" className="aspect-[4/3] w-full border-b-[8px] border-[#FFB70F] object-cover" />
                 <h3 className="mt-5 font-display text-xl font-semibold text-[#14284E]">{block.title}</h3>
@@ -518,7 +605,7 @@ export default function FacilitiesNew() {
             <h3 className="font-display text-xl font-semibold text-[#14284E]">Hostel amenities</h3>
             <div className="mt-5 grid gap-x-5 lg:grid-cols-3 lg:divide-x lg:divide-[#D5E5F4]">
               {hostelAmenityGroups.map((group, groupIndex) => (
-                <div key={groupIndex} className="lg:px-5 first:lg:pl-0 last:lg:pr-0">
+                <div key={groupIndex} data-facilities-reveal className="lg:px-5 first:lg:pl-0 last:lg:pr-0">
                   {group.map((description, rowIndex) => {
                     const amenityIndex = [0, 5, 10][groupIndex] + rowIndex;
                     const separator = description.indexOf(":");

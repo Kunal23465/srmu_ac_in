@@ -40,7 +40,7 @@ export default function FacilitiesNewLibrary() {
             <dl className="mt-5 grid grid-cols-1 border-t border-white/30 sm:grid-cols-3">
               {library.collections.map(({ value, label }, index) => {
                 return (
-                  <div key={label} className={`flex flex-col py-5 sm:pr-5 ${index > 0 ? "border-t border-white/30 sm:border-t-0 sm:border-l sm:pl-6" : ""}`}>
+                  <div key={label} data-facilities-reveal className={`flex flex-col py-5 sm:pr-5 ${index > 0 ? "border-t border-white/30 sm:border-t-0 sm:border-l sm:pl-6" : ""}`}>
                     <dt className="mt-2 text-sm text-[#CFDAF0]">{label}</dt>
                     <dd className="order-first font-display text-[clamp(36px,5vw,64px)] leading-none font-bold text-[#FFB70F]">{value}</dd>
                   </div>
@@ -74,7 +74,7 @@ export default function FacilitiesNewLibrary() {
                 </li>;
             })}
           </ul>
-          <div className="mt-7 border-t border-white/25 pt-6">
+          <div data-facilities-reveal className="mt-7 border-t border-white/25 pt-6">
             <h3 className="font-display text-xl font-semibold text-white">Digital research resources</h3>
             <p className="mt-2 max-w-[78ch] text-sm leading-relaxed text-[#AEBBD8]">Students and faculty can access subscribed academic databases and digital learning resources, as listed by the university.</p>
             <ul className="mt-4 flex list-none flex-wrap gap-x-7 gap-y-2 p-0 text-sm font-semibold text-white">

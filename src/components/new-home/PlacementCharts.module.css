@@ -14,7 +14,7 @@
 .band[data-muted="true"] { opacity: .32; }
 .bandLabel { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; color: #4b6076; font-size: 11px; line-height: 1.6; }
 .bandLabel strong { color: #14284e; font-weight: 750; }
-.bandLabel small { display: inline-block; width: 35px; color: #6c8195; font-size: 10px; text-align: right; }
+.bandLabel small { display: inline-block; width: 35px; color: var(--placement-red, #d62c2b); font-size: 10px; text-align: right; }
 .bandTrack { display: block; height: 9px; margin-top: 3px; border-radius: 8px; background: #e9eff5; overflow: hidden; }
 .bandFill { display: block; height: 100%; border-radius: inherit; background: repeating-linear-gradient(45deg, #0a4a8f 0 2px, #cad9e7 2px 5px); transition: width .5s cubic-bezier(.2,.8,.2,1), background .2s; }
 .band:first-child .bandFill, .band[data-active="true"] .bandFill { background: #ffb703; }

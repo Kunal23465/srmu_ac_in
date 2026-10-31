@@ -3,8 +3,8 @@ import { lazy } from "react";
 // import Hero from "./components/Hero";
 // import Approvals from "./components/Approvals";
 // import Excellence from './components/Excellence';
-// import Placements from "./Placements";
-import PlacementsNew from "./PlacementsNew";
+import Placements from "./Placements";
+// import PlacementsNew from "./PlacementsNew";
 import Hero from "./Hero";
 import PciApprovalPopup from "../home/PciApprovalPopup";
 import LazyWhenVisible from "./LazyWhenVisible";
@@ -14,7 +14,7 @@ const CoreEngineering = lazy(() => import("./CoreEngineering"));
 const Reels = lazy(() => import("./Reels"));
 const Legacy = lazy(() => import("./Legacy"));
 const Programs = lazy(() => import("./Programs"));
-const DepartmentScholarships = lazy(() => import("../academics/departmentOfComputerScienceAndEngineeringNew/DepartmentScholarships"));
+// const DepartmentScholarships = lazy(() => import("../academics/departmentOfComputerScienceAndEngineeringNew/DepartmentScholarships"));
 const Events = lazy(() => import("./Events"));
 const MoU = lazy(() => import("./MoU"));
 const Alumni = lazy(() => import("./Alumni"));
@@ -30,8 +30,8 @@ function NewHome() {
         <Hero />
         {/* <Approvals /> */}
         {/* <Excellence /> */}
-        {/* <Placements /> */}
-        <PlacementsNew />
+        <Placements />
+        {/* <PlacementsNew /> */}
         <LazyWhenVisible minHeight={620} rootMargin="260px 0px">
           <AIPowered />
         </LazyWhenVisible>
@@ -44,9 +44,9 @@ function NewHome() {
         <LazyWhenVisible minHeight={520} rootMargin="180px 0px">
           <Programs />
         </LazyWhenVisible>
-        <LazyWhenVisible minHeight={620} rootMargin="180px 0px">
+        {/* <LazyWhenVisible minHeight={620} rootMargin="180px 0px">
           <DepartmentScholarships id="home-scholarships" />
-        </LazyWhenVisible>
+        </LazyWhenVisible> */}
         <LazyWhenVisible minHeight={440} rootMargin="180px 0px">
           <Events />
         </LazyWhenVisible>
