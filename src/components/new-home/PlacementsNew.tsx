@@ -91,8 +91,8 @@ export default function PlacementsNew() {
           <article className={`${styles.card} ${styles.recruiters}`} data-placement-card>
             <SalaryRangeChart year={placementChartYears[activeYearIndex].year} />
             <div className={styles.recruiterHeading}>
-              <h3>Where SRMU Students Get Placed</h3>
-              <Link to={data.placementsHref}>View all <ArrowUpRight size={13} aria-hidden="true" /></Link>
+              <h3>Where SRMU Students <span className={styles.headingAccent}>Get Placed</span></h3>
+
             </div>
 
             <div className={styles.logoGrid} data-placement-recruiters aria-label="SRMU recruiters">
@@ -109,7 +109,7 @@ export default function PlacementsNew() {
 
           <div className={styles.results} data-placement-card>
             <article className={`${styles.card} ${styles.statsCard}`}>
-              <span className={styles.cardTitle}>2026 Placement Highlights</span>
+              <span className={styles.cardTitle}>2026 Placement <span className={styles.headingAccent}>Highlights</span></span>
               <dl className={styles.stats}>
                 {data.stats.map((stat) => (
                   <div key={stat.id} className={styles.stat}>
@@ -138,7 +138,7 @@ export default function PlacementsNew() {
               <div className={styles.alumniHeader}>
                 <div>
                   <span className={styles.eyebrow}>From Classrooms to Careers</span>
-                  <h3>Meet Our Proud Alumni</h3>
+                  <h3>Meet SRMU's <span className={styles.headingAccent}>Placed Student</span></h3>
                 </div>
                 <Link to={data.alumniHref} className={styles.iconLink} aria-label="View all notable SRMU alumni"><ArrowUpRight size={20} /></Link>
               </div>

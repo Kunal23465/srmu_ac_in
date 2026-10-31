@@ -1,5 +1,6 @@
 .distribution, .trend { min-width: 0; }
-.distribution h3.eyebrow, .trend h3.eyebrow { margin: 0; padding-left: 9px; border-left: 3px solid #ffb703; color: #0a4a8f; font-size: 14px; font-weight: 800; line-height: 1.4; letter-spacing: 0; text-transform: none; }
+.headingAccent { color: var(--placement-gold, #ffb703); }
+.distribution h3.eyebrow, .trend h3.eyebrow { margin: 0; padding-left: 9px; border-left: 3px solid #ffb703; color: #0a4a8f; font-size: 20px; font-weight: 800; line-height: 1.25; letter-spacing: -.4px; text-transform: none; }
 .noSalaryData { margin: 22px 0 0; color: #6c8195; font-size: 12px; line-height: 1.6; }
 .total { display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px; margin: 5px 0 0; color: #62758a; font-size: 12px; }
 .total strong { color: #14284e; font-size: 31px; font-weight: 750; letter-spacing: -1px; line-height: 1.2; font-variant-numeric: tabular-nums; }

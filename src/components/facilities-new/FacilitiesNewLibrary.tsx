@@ -33,7 +33,7 @@ export default function FacilitiesNewLibrary() {
         <div className="mx-auto w-full max-w-[1200px]">
           <h2 id="facilities-new-library-title" className="font-display text-[clamp(30px,3.8vw,48px)] leading-[1.12] font-semibold tracking-tight">Central Library and <span className="text-[#FFB70F]">Digital Learning Resources</span></h2>
           <div className="my-5 h-[5px] w-16 bg-[#FFB70F] sm:my-6" aria-hidden="true" />
-          <p className="max-w-[82ch] text-[15px] leading-[1.75] text-[#AEBBD8] sm:text-base">{library.introduction}</p>
+          <p className="w-full text-[15px] leading-[1.75] text-[#AEBBD8] sm:text-base">{library.introduction}</p>
           <div className="mt-8 max-w-[900px]">
             <h3 className="font-display text-lg font-semibold">Library Collection</h3>
             <p className="mt-2 text-sm text-[#AEBBD8]">{library.collectionIntroduction}</p>
@@ -74,19 +74,16 @@ export default function FacilitiesNewLibrary() {
                 </li>;
             })}
           </ul>
-        </div>
-      </div>
-
-      <div className="bg-[#14284E] px-6 py-6 text-white sm:py-8 lg:py-10">
-        <div className="mx-auto w-full max-w-[1200px]">
-          <h3 className="font-display text-xl font-semibold text-white">Digital research resources</h3>
-          <p className="mt-2 max-w-[78ch] text-sm leading-relaxed text-[#AEBBD8]">Students and faculty can access subscribed academic databases and digital learning resources, as listed by the university.</p>
-          <ul className="mt-5 flex list-none flex-wrap gap-x-7 gap-y-2 p-0 text-sm font-semibold text-white">
-            {library.databaseNames.map((name) => <li key={name} className="relative list-none pl-4 before:absolute before:top-[0.62em] before:left-0 before:size-[7px] before:rounded-full before:bg-[#FFB70F]">{name}</li>)}
-          </ul>
-          <div className="mt-7 flex flex-wrap gap-3">
-            <a className="inline-flex min-h-11 items-center gap-2 border-2 border-[#FFB70F] bg-[#FFB70F] px-7 py-3 text-sm font-semibold text-[#14284E] transition-colors hover:bg-[#FFC83D] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FFB70F]" href={library.webOpacUrl} target="_blank" rel="noreferrer">WebOPAC access link <ArrowUpRight size={16} aria-hidden="true" /></a>
-            <a className="inline-flex min-h-11 items-center gap-2 border-2 border-white px-7 py-3 text-sm font-semibold text-white transition-colors hover:bg-white hover:text-[#14284E] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FFB70F]" href={library.remoteAccessUrl} target="_blank" rel="noreferrer">Remote access link <ArrowUpRight size={16} aria-hidden="true" /></a>
+          <div className="mt-7 border-t border-white/25 pt-6">
+            <h3 className="font-display text-xl font-semibold text-white">Digital research resources</h3>
+            <p className="mt-2 max-w-[78ch] text-sm leading-relaxed text-[#AEBBD8]">Students and faculty can access subscribed academic databases and digital learning resources, as listed by the university.</p>
+            <ul className="mt-4 flex list-none flex-wrap gap-x-7 gap-y-2 p-0 text-sm font-semibold text-white">
+              {library.databaseNames.map((name) => <li key={name} className="relative list-none pl-4 before:absolute before:top-[0.62em] before:left-0 before:size-[7px] before:rounded-full before:bg-[#FFB70F]">{name}</li>)}
+            </ul>
+            <div className="mt-5 flex flex-wrap gap-3">
+              <a className="inline-flex min-h-11 items-center gap-2 border-2 border-[#FFB70F] bg-[#FFB70F] px-7 py-3 text-sm font-semibold text-[#14284E] transition-colors hover:bg-[#FFC83D] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FFB70F]" href={library.webOpacUrl} target="_blank" rel="noreferrer">WebOPAC access link <ArrowUpRight size={16} aria-hidden="true" /></a>
+              <a className="inline-flex min-h-11 items-center gap-2 border-2 border-white px-7 py-3 text-sm font-semibold text-white transition-colors hover:bg-white hover:text-[#14284E] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FFB70F]" href={library.remoteAccessUrl} target="_blank" rel="noreferrer">Remote access link <ArrowUpRight size={16} aria-hidden="true" /></a>
+            </div>
           </div>
         </div>
       </div>

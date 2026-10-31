@@ -8,8 +8,8 @@ export default function FacilitiesNewDining({ images, description }: { images: D
   const current = images[index];
 
   return (
-    <section id="facilities-new-dining" tabIndex={-1} aria-labelledby="facilities-new-dining-title" className="scroll-mt-24 grid min-h-[520px] bg-[#14284E] lg:grid-cols-2">
-      <div id="facilities-new-dining-gallery" role="region" aria-label="Cafeteria photo gallery" aria-roledescription="carousel" className="relative min-h-[300px] overflow-hidden bg-[#FFB70F] sm:min-h-[420px] lg:min-h-[600px] lg:[clip-path:polygon(0_0,100%_0,calc(100%_-_34px)_100%,0_100%)]">
+    <section id="facilities-new-dining" tabIndex={-1} aria-labelledby="facilities-new-dining-title" className="scroll-mt-24 grid min-h-[520px] bg-[#14284E] lg:min-h-0 lg:grid-cols-2">
+      <div id="facilities-new-dining-gallery" role="region" aria-label="Cafeteria photo gallery" aria-roledescription="carousel" className="relative min-h-[300px] overflow-hidden bg-[#FFB70F] sm:min-h-[420px] lg:min-h-0 lg:[clip-path:polygon(0_0,100%_0,calc(100%_-_34px)_100%,0_100%)]">
         <img src={current.src} alt={current.caption} width={900} height={530} loading="lazy" decoding="async" className="absolute inset-0 size-full object-cover lg:[clip-path:polygon(0_0,100%_0,calc(100%_-_62px)_100%,0_100%)]" />
         <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 bg-gradient-to-t from-[#14284E]/90 to-transparent px-5 pb-5 pt-16 text-white sm:px-8 sm:pb-8">
           <p className="text-sm font-medium sm:text-base">{current.caption}</p>

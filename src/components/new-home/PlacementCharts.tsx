@@ -1,30 +1,37 @@
 import { useEffect, useId, useState } from "react";
 import type { KeyboardEvent } from "react";
-import { placementChartYears, salaryRanges2025, salaryRanges2026, type PlacementChartYear } from "../../data/new-home/placementChartData";
+import { placementChartYears, salaryRanges2021, salaryRanges2022, salaryRanges2023, salaryRanges2025, salaryRanges2026, type PlacementChartYear } from "../../data/new-home/placementChartData";
 import styles from "./PlacementCharts.module.css";
 
 const number = (value: number) => value.toLocaleString("en-IN");
 
 export function SalaryRangeChart({ year }: { year: string }) {
   const [activeBand, setActiveBand] = useState<number | null>(null);
-  const isSalaryYear = year === "2025" || year === "2026";
-  const salaryRanges = year === "2025" ? salaryRanges2025 : salaryRanges2026;
-  const total = isSalaryYear ? salaryRanges.reduce((sum, band) => sum + band.count, 0) : 0;
+  const salaryRangeMap: Record<string, typeof salaryRanges2026> = {
+    "2021": salaryRanges2021,
+    "2022": salaryRanges2022,
+    "2023": salaryRanges2023,
+    "2025": salaryRanges2025,
+    "2026": salaryRanges2026,
+  };
+  const salaryRanges = salaryRangeMap[year];
+  const hasSalaryData = !!salaryRanges;
+  const total = hasSalaryData ? salaryRanges.reduce((sum, band) => sum + band.count, 0) : 0;
 
   useEffect(() => { setActiveBand(null); }, [year]);
 
-  if (!isSalaryYear) {
+  if (!hasSalaryData) {
     return (
       <div className={styles.distribution} data-package-chart>
-        <h3 className={styles.eyebrow}>Salary Package Ranges · {year}</h3>
-        <p className={styles.noSalaryData}>Salary range data is available for 2025 and 2026.</p>
+        <h3 className={styles.eyebrow}>Salary Package Ranges · <span className={styles.headingAccent}>{year}</span></h3>
+        <p className={styles.noSalaryData}>Salary range data is available for 2021–2023, 2025 and 2026.</p>
       </div>
     );
   }
 
   return (
     <div className={`${styles.distribution} ${styles.salaryDistribution}`} data-package-chart>
-      <h3 className={styles.eyebrow}>Salary Package Ranges · {year}</h3>
+      <h3 className={styles.eyebrow}>Salary Package Ranges · <span className={styles.headingAccent}>{year}</span></h3>
       <div className={styles.bands} onMouseLeave={() => setActiveBand(null)}>
         {salaryRanges.filter((band) => band.count > 0).map((band, index) => {
           const share = total ? band.count / total * 100 : 0;
@@ -96,7 +103,13 @@ export function PlacementTrendChart({ activeIndex, onYearChange }: PlacementTren
 
   return (
     <div className={styles.trend} data-trend-chart>
-      <h3 className={styles.eyebrow}>{metricLabel} · {selected.year}</h3>
+      <h3 className={styles.eyebrow}>{metricLabel} · <span className={styles.headingAccent}>{selected.year}</span></h3>
+      {!selected.hideValue && (
+        <div className={styles.total}>
+          <strong>{number(selected.records)}</strong>
+          <span>{metricLabel.toLowerCase()}</span>
+        </div>
+      )}
       <svg className={styles.chart} viewBox="0 0 440 270" role="group" aria-label="Placement bars by year. Hover, tap, or use arrow keys to select a year.">
         <defs><pattern id={patternId} width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(35)"><rect width="7" height="7" fill="#edf3f9" /><line x1="0" y1="0" x2="0" y2="7" stroke="#c4d4e5" strokeWidth="2" /></pattern></defs>
         <g aria-hidden="true">

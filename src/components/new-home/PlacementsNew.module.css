@@ -18,13 +18,13 @@
 .dashboard > * { min-width: 0; }
 .card { min-width: 0; border: 1px solid #c8d8e7; border-radius: 22px; background: #ffffffed; box-shadow: 0 10px 30px #14284e05; }
 .eyebrow { display: block; font-size: 10px; font-weight: 750; letter-spacing: 1.4px; line-height: 1.5; text-transform: uppercase; color: #5d738a; }
-.cardTitle { display: block; padding-left: 9px; border-left: 3px solid var(--placement-gold); color: var(--placement-blue); font-size: 14px; font-weight: 800; letter-spacing: 0; line-height: 1.4; text-transform: none; }
+.cardTitle { display: block; padding-left: 9px; border-left: 3px solid var(--placement-gold); color: var(--placement-blue); font-size: 20px; font-weight: 800; letter-spacing: -.4px; line-height: 1.25; text-transform: none; }
 .card h3 { margin: 8px 0 0; font-size: 23px; font-weight: 750; letter-spacing: -.6px; line-height: 1.25; }
 .recruiters { display: flex; flex-direction: column; padding: 25px 21px 22px; }
 .recruiters h3 { color: var(--placement-blue); }
-.recruiters h3 > span { display: block; font-size: 18px; margin-top: 4px; font-weight: 600; }
+.headingAccent { color: var(--placement-gold); }
 .recruiterHeading { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin: 34px 0 14px; padding-top: 24px; border-top: 1px solid #e5edf3; }
-.recruiterHeading h3 { margin: 0; padding-left: 9px; border-left: 3px solid var(--placement-gold); color: var(--placement-blue); font-size: 14px; font-weight: 800; letter-spacing: 0; line-height: 1.4; }
+.recruiterHeading h3 { margin: 0; padding-left: 9px; border-left: 3px solid var(--placement-gold); color: var(--placement-blue); font-size: 20px; font-weight: 800; letter-spacing: -.4px; line-height: 1.25; }
 .recruiterHeading a { display: inline-flex; align-items: center; gap: 3px; color: #0a4a8f; font-size: 10px; font-weight: 600; }
 .logoGrid { display: grid; flex: 1; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: repeat(3, minmax(78px, 1fr)); gap: 9px; }
 .logoTile { display: flex; align-items: center; justify-content: center; min-height: 78px; padding: 10px; border: 1px solid #e2eaf2; border-radius: 12px; background: #fff; transition: border-color .2s, box-shadow .2s; }

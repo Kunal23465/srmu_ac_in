@@ -25,8 +25,8 @@ import sportTableTennis from "../../../assets/images/new-sport/SR7D9485.webp";
 import b1 from "../../../assets/images/campus-life/facilities/b-1.jpeg";
 import b2 from "../../../assets/images/campus-life/facilities/b-2.jpeg";
 import b3 from "../../../assets/images/campus-life/facilities/b-3.jpeg";
-import girlsHostel from "../../../assets/images/hostel/girls-hostel.webp";
-import boysHostel from "../../../assets/images/hostel/boys-hostel.webp";
+import girlsHostel from "../../../assets/images/new-facilities/Gargi-Girls-Hostel-Entrance.webp";
+import boysHostel from "../../../assets/images/new-facilities/Tagore-Boys-Hostel-Facade.webp";
 
 const healthcareAndMedicalFacilities = "SRMU’s healthcare facilities support students’ well-being by providing access to medical assistance when needed. Students can contact the university administration for service details and emergency procedures.";
 
