@@ -5,31 +5,26 @@ export interface PlacementChartYear {
   hideValue?: boolean;
 }
 
-/** Annual students placed, based on the supplied 2021–2023 placement table. */
+/** Annual counts based on the available placement datasets. */
 export const placementChartYears: PlacementChartYear[] = [
   { year: "2021", records: 287 },
   { year: "2022", records: 440 },
   { year: "2023", records: 656 },
-  { year: "2026", records: 800, metric: "Students Placed", hideValue: true },
+  { year: "2025", records: 455 },
+  { year: "2026", records: 524, metric: "Students Placed" },
 ];
 
-/** Package values (LPA) transcribed from the 20 placement rows supplied for 2026. */
-const salaryPackages2026 = [
-  6, 5, 15, 15, 6.6, 6.6,
-  8, 8, 8, 8, 8, 8, 8, 8, 8, 8,
-  5, 5, 5, 5,
+/** Unique 2026 students at 5+ LPA, grouped by their highest listed offer. */
+export const salaryRanges2026 = [
+  { label: "5–<7 LPA", count: 79 },
+  { label: "7–<10 LPA", count: 32 },
+  { label: "15–<20 LPA", count: 2 },
 ];
 
-const salaryRangeBands = [
-  { label: "5–<7 LPA", includes: (packageLpa: number) => packageLpa >= 5 && packageLpa < 7 },
-  { label: "7–<10 LPA", includes: (packageLpa: number) => packageLpa >= 7 && packageLpa < 10 },
-  { label: "10–<15 LPA", includes: (packageLpa: number) => packageLpa >= 10 && packageLpa < 15 },
-  { label: "15–<20 LPA", includes: (packageLpa: number) => packageLpa >= 15 && packageLpa < 20 },
-  { label: "20+ LPA", includes: (packageLpa: number) => packageLpa >= 20 },
+/** Unique 2025 students with packages of at least 5 LPA, grouped by their highest listed offer. */
+export const salaryRanges2025 = [
+  { label: "5–<7 LPA", count: 60 },
+  { label: "7–<10 LPA", count: 4 },
+  { label: "10–<15 LPA", count: 4 },
 ];
-
-export const salaryRanges2026 = salaryRangeBands.map(({ label, includes }) => ({
-  label,
-  count: salaryPackages2026.filter(includes).length,
-}));
 

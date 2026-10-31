@@ -3,8 +3,8 @@ import { lazy } from "react";
 // import Hero from "./components/Hero";
 // import Approvals from "./components/Approvals";
 // import Excellence from './components/Excellence';
-import Placements from "./Placements";
-// import PlacementsNew from "./PlacementsNew";
+// import Placements from "./Placements";
+import PlacementsNew from "./PlacementsNew";
 import Hero from "./Hero";
 import PciApprovalPopup from "../home/PciApprovalPopup";
 import LazyWhenVisible from "./LazyWhenVisible";
@@ -30,8 +30,8 @@ function NewHome() {
         <Hero />
         {/* <Approvals /> */}
         {/* <Excellence /> */}
-        <Placements />
-        {/* <PlacementsNew /> */}
+        {/* <Placements /> */}
+        <PlacementsNew />
         <LazyWhenVisible minHeight={620} rootMargin="260px 0px">
           <AIPowered />
         </LazyWhenVisible>

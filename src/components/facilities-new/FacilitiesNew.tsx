@@ -390,7 +390,7 @@ export default function FacilitiesNew() {
             </figure>
             <figure className="relative m-0 aspect-[4/5] min-w-0 overflow-hidden border-[7px] border-white bg-white shadow-[0_16px_28px_rgba(20,40,78,0.32)] transition-transform duration-500 lg:-translate-x-3 lg:translate-y-4 lg:rotate-[6deg]">
               <img src={campusBusFleet} alt="A line of SRMU buses ready for campus transport" width={5472} height={3648} loading="lazy" decoding="async" className="absolute inset-0 size-full object-cover" />
-              <figcaption className="absolute inset-x-0 bottom-0 bg-[#14284E]/95 px-3 py-3 text-sm font-semibold text-white sm:px-4 sm:py-4 sm:text-base">SRMU bus fleet</figcaption>
+              <figcaption className="absolute inset-x-0 bottom-0 bg-[#14284E]/95 px-3 py-3 text-sm font-semibold text-white sm:px-4 sm:py-4 sm:text-base lg:pl-12">SRMU bus fleet</figcaption>
             </figure>
           </div>
         </div>

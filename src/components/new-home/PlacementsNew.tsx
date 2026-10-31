@@ -145,7 +145,6 @@ export default function PlacementsNew() {
               <div className={styles.portrait} aria-live="polite" aria-atomic="true">
                 <img key={alumnus.id} src={alumnus.image} alt={alumnus.name} width={640} height={640} loading="lazy" decoding="async" />
                 <div className={styles.portraitCaption}>
-                  <span className={styles.alumniTag}>SRMU Alumni</span>
                   <h4>{alumnus.name}</h4>
                   <p>{alumnus.title}</p>
                 </div>

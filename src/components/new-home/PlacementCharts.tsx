@@ -1,14 +1,15 @@
 import { useEffect, useId, useState } from "react";
 import type { KeyboardEvent } from "react";
-import { placementChartYears, salaryRanges2026, type PlacementChartYear } from "../../data/new-home/placementChartData";
+import { placementChartYears, salaryRanges2025, salaryRanges2026, type PlacementChartYear } from "../../data/new-home/placementChartData";
 import styles from "./PlacementCharts.module.css";
 
 const number = (value: number) => value.toLocaleString("en-IN");
 
 export function SalaryRangeChart({ year }: { year: string }) {
   const [activeBand, setActiveBand] = useState<number | null>(null);
-  const isSalaryYear = year === "2026";
-  const total = isSalaryYear ? salaryRanges2026.reduce((sum, band) => sum + band.count, 0) : 0;
+  const isSalaryYear = year === "2025" || year === "2026";
+  const salaryRanges = year === "2025" ? salaryRanges2025 : salaryRanges2026;
+  const total = isSalaryYear ? salaryRanges.reduce((sum, band) => sum + band.count, 0) : 0;
 
   useEffect(() => { setActiveBand(null); }, [year]);
 
@@ -16,7 +17,7 @@ export function SalaryRangeChart({ year }: { year: string }) {
     return (
       <div className={styles.distribution} data-package-chart>
         <h3 className={styles.eyebrow}>Salary Package Ranges · {year}</h3>
-        <p className={styles.noSalaryData}>Salary range data is available for 2026 only.</p>
+        <p className={styles.noSalaryData}>Salary range data is available for 2025 and 2026.</p>
       </div>
     );
   }
@@ -25,7 +26,7 @@ export function SalaryRangeChart({ year }: { year: string }) {
     <div className={`${styles.distribution} ${styles.salaryDistribution}`} data-package-chart>
       <h3 className={styles.eyebrow}>Salary Package Ranges · {year}</h3>
       <div className={styles.bands} onMouseLeave={() => setActiveBand(null)}>
-        {salaryRanges2026.filter((band) => band.count > 0).map((band, index) => {
+        {salaryRanges.filter((band) => band.count > 0).map((band, index) => {
           const share = total ? band.count / total * 100 : 0;
           return (
             <button
@@ -66,6 +67,7 @@ export function PlacementTrendChart({ activeIndex, onYearChange }: PlacementTren
   const maxValue = Math.max(1000, Math.ceil(Math.max(...placementChartYears.map(({ records }) => records)) / 10) * 10);
   const left = 38, right = 418, top = 72, bottom = 232;
   const slot = (right - left) / placementChartYears.length;
+  const barWidth = Math.min(36, slot * .38);
   const points = placementChartYears.map((year, index) => ({
     x: left + slot * (index + 0.5),
     y: bottom - year.records / maxValue * (bottom - top),
@@ -106,9 +108,9 @@ export function PlacementTrendChart({ activeIndex, onYearChange }: PlacementTren
               <text x={left - 9} y={y + 4} textAnchor="end" className={styles.axisLabel}>{number(value)}</text>
             </g>;
           })}
-          {points.map((point, index) => <rect key={placementChartYears[index].year} x={point.x - Math.min(22, slot * .25)} y={point.y} width={Math.min(44, slot * .5)} height={bottom - point.y} rx="3" fill={`url(#${patternId})`} stroke="#d8e3ee" />)}
+          {points.map((point, index) => <rect key={placementChartYears[index].year} x={point.x - barWidth / 2} y={point.y} width={barWidth} height={bottom - point.y} rx="3" fill={`url(#${patternId})`} stroke="#d8e3ee" />)}
           <path d={line} className={styles.trendLine} />
-          <rect className={styles.selectedBar} x={current.x - Math.min(22, slot * .25)} y={current.y} width={Math.min(44, slot * .5)} height={bottom - current.y} rx="3" />
+          <rect className={styles.selectedBar} x={current.x - barWidth / 2} y={current.y} width={barWidth} height={bottom - current.y} rx="3" />
           <g className={styles.marker} style={{ transform: `translate(${current.x}px, ${current.y}px)` }}>
             <circle r="17" fill="#fff" stroke="#ffb703" strokeWidth="3" />
             <circle r="11" fill="#0a4a8f" />
