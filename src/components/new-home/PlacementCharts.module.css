@@ -1,0 +1,52 @@
+.distribution, .trend { min-width: 0; }
+.distribution h3.eyebrow, .trend h3.eyebrow { margin: 0; padding-left: 9px; border-left: 3px solid #ffb703; color: #0a4a8f; font-size: 14px; font-weight: 800; line-height: 1.4; letter-spacing: 0; text-transform: none; }
+.noSalaryData { margin: 22px 0 0; color: #6c8195; font-size: 12px; line-height: 1.6; }
+.total { display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px; margin: 5px 0 0; color: #62758a; font-size: 12px; }
+.total strong { color: #14284e; font-size: 31px; font-weight: 750; letter-spacing: -1px; line-height: 1.2; font-variant-numeric: tabular-nums; }
+.total .growth { font-size: 11px; font-weight: 700; color: #187456; }
+.total .growth[data-negative="true"] { color: #6a778a; }
+.bands { display: grid; gap: 6px; margin-top: 23px; }
+.salaryDistribution .bands { gap: 8px; margin-top: 17px; }
+.salaryDistribution .band { min-height: 42px; }
+.salaryDistribution .bandTrack { height: 12px; }
+.band { display: block; width: 100%; min-height: 37px; padding: 3px 0; border: 0; background: transparent; text-align: left; cursor: pointer; transition: opacity .18s; }
+.band[data-muted="true"] { opacity: .32; }
+.bandLabel { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; color: #4b6076; font-size: 11px; line-height: 1.6; }
+.bandLabel strong { color: #14284e; font-weight: 750; }
+.bandLabel small { display: inline-block; width: 35px; color: #6c8195; font-size: 10px; text-align: right; }
+.bandTrack { display: block; height: 9px; margin-top: 3px; border-radius: 8px; background: #e9eff5; overflow: hidden; }
+.bandFill { display: block; height: 100%; border-radius: inherit; background: repeating-linear-gradient(45deg, #0a4a8f 0 2px, #cad9e7 2px 5px); transition: width .5s cubic-bezier(.2,.8,.2,1), background .2s; }
+.band:first-child .bandFill, .band[data-active="true"] .bandFill { background: #ffb703; }
+.band[data-active="true"] .bandLabel { color: #0a4a8f; font-weight: 700; }
+.band:focus-visible { outline: 2px solid #0a4a8f; outline-offset: 4px; border-radius: 3px; }
+.bandFooter { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 7px; min-height: 36px; margin-top: 13px; color: #6c8195; font-size: 9px; }
+.bandTooltip { display: inline-block; padding: 5px 8px; background: #eef4fa; color: #0a4a8f; border-radius: 99px; font-size: 9px; font-weight: 600; }
+.showAllButton { padding: 6px 10px; border: 0; border-radius: 99px; background: #eef4fa; color: #0a4a8f; font-size: 10px; font-weight: 700; cursor: pointer; }
+.showAllButton:hover { background: #dce9f5; }
+.showAllButton:focus-visible { outline: 2px solid #0a4a8f; outline-offset: 3px; }
+.chart { display: block; width: 100%; height: auto; overflow: visible; margin-top: 3px; }
+.gridLine { stroke: #d6e1ec; stroke-width: 1; }
+.axisLabel { font-size: 10px; fill: #6c8195; }
+.yearLabel { font-size: 11px; font-weight: 600; fill: #526a82; }
+.yearLabel[data-selected="true"] { fill: #fff; }
+.trendLine { fill: none; stroke: #0a4a8f; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+.selectedBar { fill: #ffb703; transition: x .28s ease, y .28s ease, height .28s ease; }
+.marker { pointer-events: none; transition: transform .28s ease; }
+.yearTarget { cursor: pointer; outline: none; }
+.yearTarget:focus-visible > rect { stroke: #0a4a8f; stroke-width: 2; stroke-dasharray: 3 4; rx: 8; }
+.tooltip { pointer-events: none; transition: transform .2s ease; }
+.tooltip > rect { fill: #fff; stroke: #c8d8e7; filter: drop-shadow(0 4px 7px #14284e12); }
+.tooltipYear { fill: #526a82; font-size: 11px; }
+.tooltipGrowth { fill: #0a4a8f; font-size: 11px; font-weight: 700; }
+.tooltipValue { fill: #14284e; font-size: 23px; font-weight: 750; }
+.tooltipUnit { fill: #62758a; font-size: 10px; font-weight: 400; }
+.chartNote { margin: 9px 0 0; color: #526a82; font-size: 10px; line-height: 1.6; }
+.sourceNote { margin: 4px 0 0; color: #6c8195; font-size: 9px; line-height: 1.6; }
+@media (max-width: 639px) {
+  .band { min-height: 44px; }
+  .bandLabel { font-size: 12px; }
+  .bandFooter { font-size: 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .distribution *, .trend * { transition: none !important; }
+}

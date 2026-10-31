@@ -2,6 +2,14 @@
 @source "../src";
 @source "../index.html";
 
+@theme {
+  --animate-facilities-marquee: facilities-marquee 38s linear infinite;
+
+  @keyframes facilities-marquee {
+    to { transform: translateX(-50%); }
+  }
+}
+
 /* Mobile Read More: clamp to 2 lines on mobile only */
 @media (max-width: 639px) {
   .rm-clamp {

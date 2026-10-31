@@ -8,6 +8,7 @@ import jyotsnaPoster from "../../assets/video/events-new/tedx-section/posters/jy
 import sudhirPoster from "../../assets/video/events-new/tedx-section/posters/dr-sudhir-kumar-mishra.webp";
 import kamalPoster from "../../assets/video/events-new/tedx-section/posters/mr-kamal-khan.webp";
 import rudraPoster from "../../assets/video/events-new/tedx-section/posters/mr-rudra-pratap-singh.webp";
+import EventVideo from "./EventVideo";
 import styles from "./TedxReelsSection.module.css";
 
 const tedxReels = [
@@ -24,33 +25,27 @@ export default function TedxReelsSection() {
       <div className={styles.container}>
         <header className={styles.header}>
           <div className={styles.intro}>
-            <span className={styles.eyebrow}><i aria-hidden="true" /> Ideas worth spreading</span>
             <h2 id="tedx-reels-title">TEDx <span>at SRMU</span></h2>
             <p>Meet the voices and perspectives that make TEDx at SRMU a place for ideas, curiosity and conversation.</p>
           </div>
-          <div className={styles.brandMark} role="img" aria-label="TEDx at SRMU">
-            <span>TED</span><b>x</b><small>SRMU</small>
-          </div>
         </header>
 
-        <div className={styles.reelRail} role="region" aria-label="TEDx speaker reels" tabIndex={0}>
+        <div className={styles.reelRail} role="list" aria-label="TEDx speaker reels">
           {tedxReels.map(({ title, video, poster }) => (
-            <article className={styles.reelCard} key={title}>
+            <article className={styles.reelCard} key={title} role="listitem" aria-label={`TEDx speaker reel featuring ${title}`}>
               <div className={styles.videoFrame}>
-                <video controls playsInline preload="none" poster={poster} aria-label={`Play TEDx reel featuring ${title}`}>
-                  <source src={video} type="video/mp4" />
-                  Your browser does not support HTML video.
-                </video>
-              </div>
-              <div className={styles.cardCopy}>
-                <span>TEDx reel</span>
-                <h3>{title}</h3>
+                <EventVideo
+                  src={video}
+                  poster={poster}
+                  className={styles.videoMedia}
+                  showPosterUntilPlaying
+                />
+                <span className={styles.videoName}>{title}</span>
               </div>
             </article>
           ))}
         </div>
 
-        <p className={styles.railHint}><span aria-hidden="true">▶</span> Select a reel to watch · swipe to explore the collection on smaller screens</p>
       </div>
     </section>
   );

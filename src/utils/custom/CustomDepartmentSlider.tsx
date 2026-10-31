@@ -20,6 +20,8 @@ type CustomDepartmentSliderProps<T> = {
   headingColor?: string;
   descriptionColor?: string;
   breakpoints: Breakpoints;
+  sectionClassName?: string;
+  containerClassName?: string;
 };
 
 const CustomDepartmentSlider = <T,>({
@@ -32,6 +34,8 @@ const CustomDepartmentSlider = <T,>({
   headingColor = "#000",
   descriptionColor = "#666",
   breakpoints,
+  sectionClassName = "py-16",
+  containerClassName = "px-4",
 }: CustomDepartmentSliderProps<T>) => {
   const [hasMounted, setHasMounted] = useState(false);
   const [currentSlidesToShow, setCurrentSlidesToShow] = useState(breakpoints.desktop);
@@ -122,7 +126,7 @@ const CustomDepartmentSlider = <T,>({
   if (!hasMounted) {
     return (
       <section
-        className="py-16"
+        className={sectionClassName}
         style={{
           backgroundColor: bgColor,
           backgroundImage: bgImage ? `url(${bgImage})` : undefined,
@@ -130,7 +134,7 @@ const CustomDepartmentSlider = <T,>({
           backgroundPosition: "center",
         }}
       >
-        <div className={`${Classes["container"]} px-4`}>
+        <div className={`${Classes["container"]} ${containerClassName}`}>
           {/* 🔥 Heading + Arrows (static) */}
           <div className="flex items-center justify-between mb-6">
             {heading && (
@@ -178,7 +182,7 @@ const CustomDepartmentSlider = <T,>({
 
   return (
     <section
-      className="py-16"
+      className={sectionClassName}
       style={{
         backgroundColor: bgColor,
         backgroundImage: bgImage ? `url(${bgImage})` : undefined,
@@ -186,7 +190,7 @@ const CustomDepartmentSlider = <T,>({
         backgroundPosition: "center",
       }}
     >
-      <div className={`${Classes["container"]} px-4`}>
+      <div className={`${Classes["container"]} ${containerClassName}`}>
         {/* 🔥 Heading + Arrows */}
         <div className="flex items-center justify-between mb-6">
           {heading && (

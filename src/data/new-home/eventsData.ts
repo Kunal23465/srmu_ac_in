@@ -43,6 +43,7 @@ import llmCollege from "../../assets/new-home/events/LLM-college-Lucknow.png"
 
 
 import constitutionalSafeguards from "../../assets/new-home/events/News.webp";
+import bestLlmCollege from "../../assets/new-home/events/Best-LLM-College-Lucknow.png";
 
 
 export type EventItem = {
@@ -62,27 +63,49 @@ export type EventItem = {
 
 const eventsData: EventItem[] = [
 
-
   {
-    id: 15,
+    id: 50,
     isRedirect: false,
-    image: llmCollege,
-    imageSmall: llmCollege,
+    image: bestLlmCollege,
+    imageSmall: bestLlmCollege,
     date: "October 28th, 2026",
-    title: `Workshop on Contemporary Issues in Contract Law Organized at ILS, SRMU`,
+    title: `5th Moot Court Competition Organized at the Institute of Legal Studies, SRMU`,
     description: `
-    The <strong>Institute of Legal Studies, Shri Ramswaroop Memorial University (SRMU)</strong>, organized a workshop on <strong>“Contemporary Issues in Contract Law: E-Contracts and Digital Agreements”</strong> on <strong>28 October 2026</strong>.<br />
+  The <strong>Institute of Legal Studies (ILS), Shri Ramswaroop Memorial University (SRMU)</strong>, organized its <strong>5th Moot Court Competition</strong> to provide law students with practical exposure to courtroom proceedings and strengthen their advocacy and legal skills.<br />
 
-    The workshop featured <strong>Dr. Indra Kumar Singh, Associate Professor, Sikkim National Law University, Gangtok</strong>, as the resource person. The session focused on the evolving dimensions of contract law in the digital era, with particular emphasis on the legal framework governing electronic contracts and digital agreements.<br />
+  The competition offered students an opportunity to demonstrate their <strong>legal knowledge, analytical abilities, research skills, and professional competence</strong> in a simulated judicial environment. Participants were required to prepare and present legal arguments based on a hypothetical case, involving comprehensive legal research, interpretation of statutory provisions, analysis of judicial precedents, and preparation of written memorials representing the respective parties.<br />
 
-    The workshop explored the <strong>recognition, validity, enforceability, and legal implications of electronically formed contracts</strong>, along with emerging challenges related to digital transactions, electronic consent, authentication, and the use of technology in contractual relationships.<br />
+  During the oral rounds, participants presented their arguments before a panel of judges, responded to questions, and demonstrated their ability to construct logical, persuasive, and legally sound submissions.<br />
 
-    The session aimed to bridge the gap between theoretical legal principles and their practical application in an increasingly digital environment. It provided students with valuable insights into the changing nature of contractual obligations and the relevance of traditional contract law principles in contemporary electronic transactions.<br />
-    The workshop offered an academic platform for engaging with emerging issues at the intersection of <strong>law and technology</strong>, helping students develop a deeper understanding of the legal considerations surrounding digital agreements and electronic commerce.<br />
+  The competition focused on bridging the gap between theoretical legal education and practical courtroom experience. It encouraged students to develop essential professional skills, including <strong>critical thinking, effective communication, legal drafting, teamwork, time management, and courtroom etiquette</strong>.<br />
 
-    The initiative reflected the Institute of Legal Studies’ commitment to <strong>experiential learning, legal awareness, and academic engagement with contemporary developments in law</strong>, equipping students with perspectives relevant to the evolving legal landscape.<br />
-    `,
+  The event also familiarized participants with the procedural and professional aspects of litigation while fostering confidence, discipline, and ethical advocacy.<br />
+
+  The 5th Moot Court Competition reflected the Institute of Legal Studies' commitment to <strong>experiential legal education and professional skill development</strong>, providing aspiring legal professionals with a valuable platform to enhance their advocacy, research, drafting, and oral argumentation skills and prepare for future careers in litigation and the legal profession.<br />
+  `,
   },
+
+
+    {
+      id: 15,
+      isRedirect: false,
+      image: llmCollege,
+      imageSmall: llmCollege,
+      date: "October 28th, 2026",
+      title: `Workshop on Contemporary Issues in Contract Law Organized at ILS, SRMU`,
+      description: `
+      The <strong>Institute of Legal Studies, Shri Ramswaroop Memorial University (SRMU)</strong>, organized a workshop on <strong>“Contemporary Issues in Contract Law: E-Contracts and Digital Agreements”</strong> on <strong>28 October 2026</strong>.<br />
+
+      The workshop featured <strong>Dr. Indra Kumar Singh, Associate Professor, Sikkim National Law University, Gangtok</strong>, as the resource person. The session focused on the evolving dimensions of contract law in the digital era, with particular emphasis on the legal framework governing electronic contracts and digital agreements.<br />
+
+      The workshop explored the <strong>recognition, validity, enforceability, and legal implications of electronically formed contracts</strong>, along with emerging challenges related to digital transactions, electronic consent, authentication, and the use of technology in contractual relationships.<br />
+
+      The session aimed to bridge the gap between theoretical legal principles and their practical application in an increasingly digital environment. It provided students with valuable insights into the changing nature of contractual obligations and the relevance of traditional contract law principles in contemporary electronic transactions.<br />
+      The workshop offered an academic platform for engaging with emerging issues at the intersection of <strong>law and technology</strong>, helping students develop a deeper understanding of the legal considerations surrounding digital agreements and electronic commerce.<br />
+
+      The initiative reflected the Institute of Legal Studies’ commitment to <strong>experiential learning, legal awareness, and academic engagement with contemporary developments in law</strong>, equipping students with perspectives relevant to the evolving legal landscape.<br />
+      `,
+    },
 
 
 {

@@ -2,7 +2,7 @@
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  padding: 62px 0 54px;
+  padding: 42px 0 32px;
   background: #D62C2B;
   color: #fff;
 }
@@ -44,39 +44,12 @@
 }
 
 .header {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 24px;
-  margin: 0 0 28px;
+  margin: 0 0 16px;
 }
 
 .intro {
-  max-width: 760px;
-}
-
-.eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
-  margin-bottom: 12px;
-  padding: 6px 12px;
-  border: 1px solid rgb(255 255 255 / 34%);
-  border-radius: 999px;
-  background: rgb(20 40 78 / 14%);
-  color: #fff;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-}
-
-.eyebrow i {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #FFB703;
-  box-shadow: 0 0 0 4px rgb(255 183 3 / 18%);
+  width: 100%;
+  max-width: none;
 }
 
 .intro h2 {
@@ -93,77 +66,32 @@
 }
 
 .intro p {
-  max-width: 680px;
-  margin: 13px 0 0;
+  max-width: none;
+  margin: 9px 0 0;
   color: rgb(255 255 255 / 88%);
-  font-size: 15px;
-  line-height: 1.65;
-}
-
-.brandMark {
-  display: flex;
-  flex: 0 0 auto;
-  align-items: center;
-  gap: 3px;
-  padding: 11px 15px;
-  border: 1px solid rgb(255 255 255 / 35%);
-  border-radius: 13px;
-  background: rgb(20 40 78 / 18%);
-  box-shadow: 0 8px 20px rgb(20 40 78 / 12%);
-  color: #fff;
-  font-size: 22px;
-  font-weight: 900;
-  letter-spacing: -.07em;
-  line-height: 1;
-}
-
-.brandMark b {
-  color: #FFB703;
-  font-size: 25px;
-}
-
-.brandMark small {
-  align-self: flex-end;
-  margin: 0 0 1px 5px;
-  color: rgb(255 255 255 / 88%);
-  font-size: 9px;
-  font-weight: 800;
-  letter-spacing: .1em;
+  font-size: 14px;
+  line-height: 1.5;
 }
 
 .reelRail {
-  display: flex;
-  gap: 16px;
-  overflow-x: auto;
-  padding: 8px 2px 18px;
-  overscroll-behavior-inline: contain;
-  scroll-padding-inline: 2px;
-  scroll-snap-type: x mandatory;
-  scrollbar-color: #FFB703 rgb(20 40 78 / 24%);
-  scrollbar-width: thin;
-  -webkit-overflow-scrolling: touch;
-}
-
-.reelRail:focus-visible {
-  outline: 2px solid #fff;
-  outline-offset: 4px;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+  padding: 4px 0 12px;
 }
 
 .reelCard {
-  flex: 0 0 clamp(200px, 17.3vw, 218px);
   min-width: 0;
   overflow: hidden;
-  border: 1px solid rgb(255 255 255 / 30%);
-  border-radius: 21px;
-  background: #14284E;
-  box-shadow: 0 14px 30px rgb(20 40 78 / 22%);
-  scroll-snap-align: start;
-  transition: transform 180ms ease, box-shadow 180ms ease;
+  border: 1px solid rgb(255 255 255 / 36%);
+  border-radius: 18px;
+  background: #0b1730;
+  box-shadow: 0 10px 22px rgb(20 40 78 / 18%);
+  transition: transform 180ms ease;
 }
 
 .reelCard:hover {
   transform: translateY(-4px);
-  box-shadow: 0 19px 36px rgb(20 40 78 / 28%);
 }
 
 .videoFrame {
@@ -173,75 +101,74 @@
   background: #0b1730;
 }
 
-.videoFrame video {
+.videoMedia,
+.videoFrame img {
+  position: absolute;
+  inset: 0;
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.cardCopy {
-  min-height: 83px;
-  padding: 12px 14px 14px;
-}
-
-.cardCopy > span {
-  display: block;
-  margin-bottom: 5px;
-  color: #FFB703;
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-}
-
-.cardCopy h3 {
-  margin: 0;
+.videoName {
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 36px 12px 14px;
+  background: linear-gradient(transparent, rgb(20 40 78 / 92%));
   color: #fff;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
   line-height: 1.35;
-}
-
-.railHint {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 8px;
-  margin: 1px 2px 0;
-  color: rgb(255 255 255 / 78%);
-  font-size: 12px;
-}
-
-.railHint span {
-  color: #FFB703;
-  font-size: 16px;
+  text-shadow: 0 1px 4px rgb(0 0 0 / 55%);
+  pointer-events: none;
 }
 
 @media (max-width: 700px) {
   .section {
-    padding: 46px 0 38px;
+    padding: 30px 0 24px;
   }
 
   .container {
     padding: 0 18px;
   }
 
-  .header {
-    align-items: flex-start;
-    margin-bottom: 20px;
-  }
-
   .intro p {
-    font-size: 14px;
+    font-size: 13px;
   }
 
-  .brandMark {
-    display: none;
+}
+
+@media (max-width: 1100px) {
+  .reelRail {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 800px) {
+  .reelRail {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .reelRail {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 2px;
+    scrollbar-color: #FFB703 rgb(20 40 78 / 24%);
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
   }
 
   .reelCard {
-    flex-basis: min(218px, 72vw);
+    flex: 0 0 min(236px, 78vw);
+    scroll-snap-align: start;
   }
 }
 
