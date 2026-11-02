@@ -5,7 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowRight, Banknote, BedDouble, BookOpen, BusFront, Camera, Coffee, Cross, Droplets, Dumbbell, Fingerprint, FlaskConical, HeartPulse, Landmark, Leaf, Monitor, Presentation, Shield, Trees, UsersRound, Volleyball, WashingMachine, Wifi, Zap } from "lucide-react";
 import { facilitiesNewBlocks, facilitiesNewPageCopy, facilitiesNewSportsImages } from "../../data/campus-life/facilities/facilities-new-data";
 import campusBus from "../../assets/images/bus-images/Bus.webp";
-import campusBusFleet from "../../assets/images/bus-images/SR7D5284.webp";
+import campusBusesImage from "../../assets/images/new-facilities/SRMU-Buses.webp";
 import libraryImage from "../../assets/images/bus-images/IMG_1667.webp";
 import atmBoothImage from "../../assets/images/new-facilities/ATM-Booth.webp";
 import hostelAmenitiesDesktopBackground from "../../assets/images/new-facilities/for-dekstop-view.png";
@@ -20,6 +20,8 @@ import canteen3 from "../../assets/images/new-canteen/canteen-3.webp";
 import canteen4 from "../../assets/images/new-canteen/canteen-4.webp";
 import canteen5 from "../../assets/images/new-canteen/canteen-5.webp";
 import canteen6 from "../../assets/images/new-canteen/canteen-6.webp";
+import campusTeaBreakImage from "../../assets/images/new-facilities/Campus-Tea-Break-at-SRMU.webp";
+import collegeCanteenImage from "../../assets/images/new-facilities/College-Canteen-Nescafe-Maggi-Stall.webp";
 import computerCentresImage from "../../assets/images/new-labo/computer-centres.webp";
 import engineeringLabsImage from "../../assets/images/new-labo/engineering-labs.webp";
 import specializedLaboratoryImage from "../../assets/images/new-labo/specialized-laboratory.webp";
@@ -43,6 +45,8 @@ const diningImages = [
   { src: canteen4, caption: "Students being served in the dining hall" },
   { src: canteen5, caption: "Campus café and eating joint" },
   { src: canteen6, caption: "Students dining in the campus canteen" },
+  { src: campusTeaBreakImage, caption: "Students taking a break on campus" },
+  { src: collegeCanteenImage, caption: "Nescafé and Maggi stall at the college canteen" },
 ];
 const campusLifeHighlights = [
   { label: "Green Campus", icon: Leaf },
@@ -487,16 +491,9 @@ export default function FacilitiesNew() {
             <p className="mt-3 text-[15px] leading-[1.75] text-[#2B3A5C] sm:text-base">Transportation fees may depend on the applicable route and university fee schedule. Students and parents should confirm current charges, route availability, pickup locations, and payment procedures with the university before opting for the service.</p>
             <a className="mt-6 inline-flex min-h-12 items-center justify-center border-2 border-[#14284E] bg-[#14284E] px-7 py-3 text-sm font-medium text-white transition-colors hover:bg-[#22407A] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#14284E]" href="https://srmu.ac.in/transportation" target="_blank" rel="noreferrer">View Transport Routes <ArrowRight size={18} className="ml-2" aria-hidden="true" /></a>
           </div>
-          <div className="grid min-w-0 grid-cols-2 items-center gap-1 sm:gap-3 lg:perspective-[1200px]" role="group" aria-label="Photos of SRMU campus buses">
-            <figure className="relative z-10 m-0 aspect-[4/5] min-w-0 overflow-hidden border-[7px] border-white bg-white shadow-[0_16px_28px_rgba(20,40,78,0.32)] transition-transform duration-500 lg:translate-x-3 lg:rotate-[-6deg]">
-              <img src={campusBus} alt="SRMU campus bus parked beside an academic building" width={5568} height={3712} loading="lazy" decoding="async" className="absolute inset-0 size-full object-cover" />
-              {/* <figcaption className="absolute inset-x-0 bottom-0 bg-[#14284E]/95 px-3 py-3 text-sm font-semibold text-white sm:px-4 sm:py-4 sm:text-base">Campus transport</figcaption> */}
-            </figure>
-            <figure className="relative m-0 aspect-[4/5] min-w-0 overflow-hidden border-[7px] border-white bg-white shadow-[0_16px_28px_rgba(20,40,78,0.32)] transition-transform duration-500 lg:-translate-x-3 lg:translate-y-4 lg:rotate-[6deg]">
-              <img src={campusBusFleet} alt="A line of SRMU buses ready for campus transport" width={5472} height={3648} loading="lazy" decoding="async" className="absolute inset-0 size-full object-cover" />
-              {/* <figcaption className="absolute inset-x-0 bottom-0 bg-[#14284E]/95 px-3 py-3 text-sm font-semibold text-white sm:px-4 sm:py-4 sm:text-base lg:pl-12">SRMU bus fleet</figcaption> */}
-            </figure>
-          </div>
+          <figure className="relative m-0 aspect-[3/2] min-w-0 overflow-hidden border-[7px] border-white bg-white shadow-[0_16px_28px_rgba(20,40,78,0.32)] transition-transform duration-500 lg:rotate-[-2deg]">
+            <img src={campusBusesImage} alt="SRMU campus buses" width={1536} height={1024} loading="lazy" decoding="async" className="absolute inset-0 size-full object-cover" />
+          </figure>
         </div>
       </section>
 

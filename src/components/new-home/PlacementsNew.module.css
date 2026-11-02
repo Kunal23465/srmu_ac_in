@@ -27,17 +27,16 @@
 .recruiterHeading { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin: 34px 0 14px; padding-top: 24px; border-top: 1px solid #e5edf3; }
 .recruiterHeading h3 { margin: 0; padding-left: 9px; border-left: 3px solid var(--placement-gold); color: var(--placement-blue); font-size: 20px; font-weight: 800; letter-spacing: -.4px; line-height: 1.25; }
 .recruiterHeading a { display: inline-flex; align-items: center; gap: 3px; color: #0a4a8f; font-size: 10px; font-weight: 600; }
-.logoGrid { display: grid; flex: 1; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: repeat(3, minmax(78px, 1fr)); gap: 9px; }
-.logoTile { display: flex; align-items: center; justify-content: center; min-height: 78px; padding: 10px; border: 1px solid #e2eaf2; border-radius: 12px; background: #fff; transition: border-color .2s, box-shadow .2s; }
-.logoTile:hover { border-color: #a9c4de; box-shadow: 0 5px 12px #14284e0a; }
+.logoGrid { display: grid; flex: 1; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: repeat(4, minmax(58px, 1fr)); gap: 6px 0; }
+.logoTile { display: flex; align-items: center; justify-content: center; min-height: 58px; overflow: hidden; padding: 0; }
 .logoTile img { display: block; width: 100%; height: auto; max-height: 58px; object-fit: contain; }
 .textLink { display: inline-flex; gap: 10px; align-items: center; align-self: flex-start; margin-top: 23px; color: var(--placement-blue); font-size: 12px; font-weight: 700; }
 .textLink:hover { text-decoration: underline; text-underline-offset: 4px; }
 .results { display: grid; grid-template-rows: auto 1fr; gap: 18px; }
 .trendCard { padding: 24px 20px 20px; }
-.coreSummary { display: flex; align-items: center; gap: 10px; margin-top: 5px; padding: 15px 12px; border-radius: 10px; background: #0f4a85; color: white; }
-.coreSummary > svg { flex-shrink: 0; color: #ffb703; }
-.coreSummary > strong { color: #ffb703; font-size: 22px; line-height: 1; font-weight: 800; }
+.coreSummary { display: flex; align-items: center; gap: 10px; margin-top: 5px; padding: 15px 12px; border-radius: 10px; background: #e0f1ff; color: var(--placement-navy); }
+.coreSummary > svg { flex-shrink: 0; color: var(--placement-red); }
+.coreSummary > strong { color: var(--placement-red); font-size: 22px; line-height: 1; font-weight: 800; }
 .coreSummary > span { font-size: 10px; line-height: 1.5; font-weight: 600; }
 .statsCard { padding: 25px 22px 18px; }
 .stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin: 17px 0 0; }
@@ -104,7 +103,6 @@
   .stat dd { font-size: 36px; }
   .stat dt { font-size: 11px; }
   .recruiters { min-height: auto; padding: 24px 21px; }
-  .logoTile { min-height: 76px; }
   .alumniCard { display: flex; padding: 22px 15px 15px; gap: 0; }
   .alumniHeader { align-self: auto; padding: 0 4px 20px; }
   .portrait { width: 100%; min-height: 410px; }

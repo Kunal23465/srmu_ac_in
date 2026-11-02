@@ -35,6 +35,10 @@ export interface DepartmentScholarshipsProps {
   className?: string;
   eligibilityHref?: string;
   applyNowHref?: string;
+  scholarshipIllustration?: string;
+  fullHeightScholarshipIllustration?: boolean;
+  backgroundImage?: string;
+  scholarshipCardBackgroundImage?: string;
 }
 
 export const DepartmentScholarships: React.FC<DepartmentScholarshipsProps> = ({
@@ -42,6 +46,10 @@ export const DepartmentScholarships: React.FC<DepartmentScholarshipsProps> = ({
   className = "",
   eligibilityHref = "#overview",
   applyNowHref = "/scholarship",
+  scholarshipIllustration = AdditionInScholarImg,
+  fullHeightScholarshipIllustration = false,
+  backgroundImage,
+  scholarshipCardBackgroundImage,
 }) => {
   const [showAllScholarships, setShowAllScholarships] = useState(false);
 
@@ -49,6 +57,16 @@ export const DepartmentScholarships: React.FC<DepartmentScholarshipsProps> = ({
     <section
       className={`pt-4 pb-4 sm:py-10 px-4 sm:px-6 bg-white scroll-mt-24 border-b border-[#e0e0e0] ${className}`}
       id={id}
+      style={
+        backgroundImage
+          ? {
+              backgroundImage: `url(${backgroundImage})`,
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+            }
+          : undefined
+      }
     >
       <div className={`${Classes["container"]} cse-content-container mx-auto`}>
         <div className="flex flex-col lg:flex-row gap-5">
@@ -64,7 +82,19 @@ export const DepartmentScholarships: React.FC<DepartmentScholarshipsProps> = ({
           {/* Right Side: Scholarship Details */}
           <div className="order-1 sm:order-none min-w-0 w-full lg:w-3/5 xl:w-[65%] flex flex-col gap-4">
             {/* Top: Typography & Books Image */}
-            <div className="flex flex-row flex-wrap items-center justify-between bg-white rounded-[20px] p-5 border border-[#e0e0e0] shadow-sm">
+            <div
+              className="flex flex-row flex-wrap items-center justify-between bg-white rounded-[20px] p-5 border border-[#e0e0e0] shadow-sm"
+              style={
+                scholarshipCardBackgroundImage
+                  ? {
+                      backgroundImage: `url(${scholarshipCardBackgroundImage})`,
+                      backgroundPosition: "center",
+                      backgroundRepeat: "no-repeat",
+                      backgroundSize: "cover",
+                    }
+                  : undefined
+              }
+            >
               <div className="w-[55%] sm:w-[60%] flex flex-col items-start px-2">
                 <span className="text-[#14284E] font-bold text-[18px] sm:text-[22px] mb-1 font-display">
                   Avail Up to
@@ -104,11 +134,21 @@ export const DepartmentScholarships: React.FC<DepartmentScholarshipsProps> = ({
                 </div>
               </div>
 
-              <div className="w-[45%] sm:w-[40%] flex justify-center mt-0">
+              <div
+                className={`w-[45%] sm:w-[40%] flex justify-center mt-0 ${
+                  fullHeightScholarshipIllustration
+                    ? "sm:self-stretch sm:items-end sm:-mb-5 sm:-mr-5"
+                    : ""
+                }`}
+              >
                 <img
-                  src={AdditionInScholarImg}
+                  src={scholarshipIllustration}
                   alt="Scholarships"
-                  className="w-[90%] sm:w-[90%] max-w-[150px] sm:max-w-[250px] object-contain drop-shadow-md"
+                  className={`object-contain drop-shadow-md ${
+                    fullHeightScholarshipIllustration
+                      ? "w-[90%] sm:w-[120%] sm:max-w-none sm:translate-y-[13%]"
+                      : "w-[90%] sm:w-[90%] max-w-[150px] sm:max-w-[250px]"
+                  }`}
                 />
               </div>
 
@@ -159,7 +199,7 @@ export const DepartmentScholarships: React.FC<DepartmentScholarshipsProps> = ({
                       />
                     </div>
                     <div className="w-[1px] h-4 bg-gray-200 shrink-0"></div>
-                    <span className="text-[#14284E] text-[12px] sm:text-[13px] font-bold leading-snug sm:leading-[1.2] min-w-0 flex-1">
+                    <span className="text-[#14284E] text-[14px] sm:text-[15px] font-bold font-display leading-snug sm:leading-[1.25] min-w-0 flex-1">
                       {item.text}
                     </span>
                   </Link>

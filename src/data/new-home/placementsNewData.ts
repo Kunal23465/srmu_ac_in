@@ -7,6 +7,9 @@ import policy from "../../assets/new-home/recruiters/policy.webp";
 import ranbaxy from "../../assets/new-home/recruiters/ranbaxy.webp";
 import tataSteel from "../../assets/new-home/recruiters/tata-steek.webp";
 import zydus from "../../assets/new-home/recruiters/zydus.webp";
+import hcl from "../../assets/new-home/new-placement-logos/2.png";
+import accenture from "../../assets/new-home/new-placement-logos/3.png";
+import cognizant from "../../assets/new-home/new-placement-logos/5.png";
 import rudraPrakashTiwari from "../../assets/images/new-placement-section/rudra-prakash-tiwari.png";
 import shauryaKumarDubey from "../../assets/images/new-placement-section/shaurya-kumar-dubey.png";
 import garimaRai from "../../assets/images/new-placement-section/garima-rai.png";
@@ -26,16 +29,20 @@ export const placementsNewData = {
     { id: "multiple-offers", value: 33, prefix: "", suffix: "%", label: "Students with Multiple Offers" },
   ],
   corePlacement: { value: 100, label: "Placement in Core Branches" },
+  // Per-logo scales balance the visible artwork despite the assets' different aspect ratios and padding.
   recruiters: [
-    { name: "Amazon", logo: amazon },
-    { name: "Capgemini", logo: capgemini },
-    { name: "GSK", logo: gsk },
-    { name: "L&T", logo: lt },
-    { name: "Mankind", logo: mankind },
-    { name: "Policy", logo: policy },
-    { name: "Ranbaxy", logo: ranbaxy },
-    { name: "Tata Steel", logo: tataSteel },
-    { name: "Zydus", logo: zydus },
+    { name: "Amazon", logo: amazon, scale: 0.612 },
+    { name: "Capgemini", logo: capgemini, scale: 0.746 },
+    { name: "GSK", logo: gsk, scale: 0.643 },
+    { name: "L&T", logo: lt, scale: 0.829 },
+    { name: "Mankind", logo: mankind, scale: 0.794 },
+    { name: "Policy", logo: policy, scale: 0.871 },
+    { name: "Ranbaxy", logo: ranbaxy, scale: 0.979 },
+    { name: "Tata Steel", logo: tataSteel, scale: 0.620 },
+    { name: "Zydus", logo: zydus, scale: 0.780 },
+    { name: "HCL", logo: hcl, scale: 0.641 },
+    { name: "Accenture", logo: accenture, scale: 0.549 },
+    { name: "Cognizant", logo: cognizant, scale: 0.663 },
   ],
   alumni: [
     {

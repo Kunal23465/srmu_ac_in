@@ -98,7 +98,15 @@ export default function PlacementsNew() {
             <div className={styles.logoGrid} data-placement-recruiters aria-label="SRMU recruiters">
               {data.recruiters.map((company) => (
                 <div key={company.name} className={styles.logoTile} data-placement-logo>
-                  <img src={company.logo} alt={company.name} width={220} height={106} loading="lazy" decoding="async" />
+                  <img
+                    src={company.logo}
+                    alt={company.name}
+                    width={220}
+                    height={106}
+                    loading="lazy"
+                    decoding="async"
+                    style={{ transform: `scale(${company.scale})` }}
+                  />
                 </div>
               ))}
             </div>

@@ -150,14 +150,14 @@
 }
 
 @media (max-width: 767px) {
-  .hero { padding-bottom: 56px; }
+  .hero { padding-bottom: 0; }
   .stage { min-height: 360px; }
   .content { width: calc(100% - 48px); padding-block: 58px 100px; }
   .title { max-width: 500px; font-size: clamp(40px, 7.8vw, 56px); }
   .backgroundImage { object-position: 62% center; }
   .shade { background: linear-gradient(0deg, #e0f1ff, #14284e00 25%), linear-gradient(90deg, #14284ee8, #14284e70); }
   .cta { min-height: 48px; margin-top: 24px; padding: 12px 22px; font-size: 14px; }
-  .navigation { grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: -42px; padding: 8px; border-radius: 20px; }
+  .navigation { display: none; }
   .navItem { padding: 12px 3px 16px; gap: 7px; }
   .navItem:nth-child(4n)::before { display: none; }
   .navItem:nth-child(-n + 4) { border-bottom: 1px solid #0f4a8526; border-radius: 0; }

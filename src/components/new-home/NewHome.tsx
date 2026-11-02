@@ -3,18 +3,21 @@ import { lazy } from "react";
 // import Hero from "./components/Hero";
 // import Approvals from "./components/Approvals";
 // import Excellence from './components/Excellence';
-import Placements from "./Placements";
-// import PlacementsNew from "./PlacementsNew";
+// import Placements from "./Placements";
+import PlacementsNew from "./PlacementsNew";
 import Hero from "./Hero";
 import PciApprovalPopup from "../home/PciApprovalPopup";
 import LazyWhenVisible from "./LazyWhenVisible";
+import scholarshipGirl from "../../assets/new-home/scholarship-section/scholarship-girl.png";
+import scholarshipSectionBackground from "../../assets/new-home/scholarship-section/Light-Blue-Corporate-Campus-Banner.png";
+import scholarshipCardBackground from "../../assets/new-home/scholarship-section/Pale-Blue-Arcs-with-Golden-Swoosh.png";
 
 const AIPowered = lazy(() => import("./AIPowered"));
 const CoreEngineering = lazy(() => import("./CoreEngineering"));
 const Reels = lazy(() => import("./Reels"));
 const Legacy = lazy(() => import("./Legacy"));
 const Programs = lazy(() => import("./Programs"));
-// const DepartmentScholarships = lazy(() => import("../academics/departmentOfComputerScienceAndEngineeringNew/DepartmentScholarships"));
+const DepartmentScholarships = lazy(() => import("../academics/departmentOfComputerScienceAndEngineeringNew/DepartmentScholarships"));
 const Events = lazy(() => import("./Events"));
 const MoU = lazy(() => import("./MoU"));
 const Alumni = lazy(() => import("./Alumni"));
@@ -30,8 +33,8 @@ function NewHome() {
         <Hero />
         {/* <Approvals /> */}
         {/* <Excellence /> */}
-        <Placements />
-        {/* <PlacementsNew /> */}
+        {/* <Placements /> */}
+        <PlacementsNew />
         <LazyWhenVisible minHeight={620} rootMargin="260px 0px">
           <AIPowered />
         </LazyWhenVisible>
@@ -44,9 +47,15 @@ function NewHome() {
         <LazyWhenVisible minHeight={520} rootMargin="180px 0px">
           <Programs />
         </LazyWhenVisible>
-        {/* <LazyWhenVisible minHeight={620} rootMargin="180px 0px">
-          <DepartmentScholarships id="home-scholarships" />
-        </LazyWhenVisible> */}
+        <LazyWhenVisible minHeight={620} rootMargin="180px 0px">
+          <DepartmentScholarships
+            id="home-scholarships"
+            scholarshipIllustration={scholarshipGirl}
+            fullHeightScholarshipIllustration
+            backgroundImage={scholarshipSectionBackground}
+            scholarshipCardBackgroundImage={scholarshipCardBackground}
+          />
+        </LazyWhenVisible>
         <LazyWhenVisible minHeight={440} rootMargin="180px 0px">
           <Events />
         </LazyWhenVisible>
