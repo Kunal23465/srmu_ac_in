@@ -6,7 +6,14 @@ import { ArrowRight, Banknote, BedDouble, BookOpen, BusFront, Camera, Coffee, Cr
 import { facilitiesNewBlocks, facilitiesNewPageCopy, facilitiesNewSportsImages } from "../../data/campus-life/facilities/facilities-new-data";
 import campusBus from "../../assets/images/bus-images/Bus.webp";
 import campusBusesImage from "../../assets/images/new-facilities/SRMU-Buses.webp";
-import libraryImage from "../../assets/images/bus-images/IMG_1667.webp";
+import libraryBannerImage from "../../assets/images/new-facilities/banner/3.webp";
+import laboratoriesBannerImage from "../../assets/images/new-facilities/banner/4.webp";
+import sportsBannerImage from "../../assets/images/new-facilities/banner/5.webp";
+import hostelsBannerImage from "../../assets/images/new-facilities/banner/6.webp";
+import transportBannerImage from "../../assets/images/new-facilities/banner/7.webp";
+import healthcareBannerImage from "../../assets/images/new-facilities/banner/8.webp";
+import seminarHallsBannerImage from "../../assets/images/new-facilities/banner/9.webp";
+import cafeteriaBannerImage from "../../assets/images/new-facilities/banner/10.webp";
 import atmBoothImage from "../../assets/images/new-facilities/ATM-Booth.webp";
 import hostelAmenitiesDesktopBackground from "../../assets/images/new-facilities/for-dekstop-view.png";
 import hostelAmenitiesMobileBackground from "../../assets/images/new-facilities/new-mobile-view.png";
@@ -22,6 +29,7 @@ import canteen5 from "../../assets/images/new-canteen/canteen-5.webp";
 import canteen6 from "../../assets/images/new-canteen/canteen-6.webp";
 import campusTeaBreakImage from "../../assets/images/new-facilities/Campus-Tea-Break-at-SRMU.webp";
 import collegeCanteenImage from "../../assets/images/new-facilities/College-Canteen-Nescafe-Maggi-Stall.webp";
+import classroomLectureImage from "../../assets/images/new-facilities/RAMSWAROOP-Classroom-Lecture.webp";
 import computerCentresImage from "../../assets/images/new-labo/computer-centres.webp";
 import engineeringLabsImage from "../../assets/images/new-labo/engineering-labs.webp";
 import specializedLaboratoryImage from "../../assets/images/new-labo/specialized-laboratory.webp";
@@ -32,21 +40,21 @@ import medicalFacilityImage from "../../assets/images/new-labo/medical-facility.
 import mootCourtsImage from "../../assets/images/new-labo/moot-courts.webp";
 import studioMediaLabImage from "../../assets/images/new-labo/studio-and-media-lab.webp";
 import smartClassImage from "../../assets/images/new-labo/smart-class.webp";
-import agricultureFarmsImage from "../../assets/images/new-labo/agriculture-farms.webp";
+import herbalGardenImage from "../../assets/images/new-facilities/Herbal-garden.png";
 import languageLabImage from "../../assets/images/new-labo/language-lab.webp";
 
 const containerClass = "mx-auto w-full max-w-[1200px]";
 const sectionHeadingClass = "text-[clamp(30px,3.8vw,48px)] leading-[1.12] font-semibold font-display tracking-tight";
 const laboratorySliderBreakpoints = { desktop: 3, tablet: 2, mobile: 1 };
 const diningImages = [
-  { src: canteen1, caption: "Students at the campus canteen counter" },
+  // { src: canteen1, caption: "Students at the campus canteen counter" },
   { src: canteen2, caption: "Students sharing a meal in the canteen" },
   { src: canteen3, caption: "Students gathering in the cafeteria" },
   { src: canteen4, caption: "Students being served in the dining hall" },
   { src: canteen5, caption: "Campus café and eating joint" },
   { src: canteen6, caption: "Students dining in the campus canteen" },
   { src: campusTeaBreakImage, caption: "Students taking a break on campus" },
-  { src: collegeCanteenImage, caption: "Nescafé and Maggi stall at the college canteen" },
+  { src: collegeCanteenImage, caption: "Nescafé and Maggi stall at the college canteen", objectPosition: "top center" },
 ];
 const campusLifeHighlights = [
   { label: "Green Campus", icon: Leaf },
@@ -56,19 +64,18 @@ const campusLifeHighlights = [
 ];
 
 const sectionNav = [
-  { id: "facilities-new-laboratories", label: "Laboratories", image: specializedLaboratoryImage, icon: FlaskConical },
-  { id: "facilities-new-library", label: "Library", image: libraryImage, icon: BookOpen },
-  { id: "facilities-new-hostels", label: "Hostels", image: facilitiesNewPageCopy.hostels.residences[0].image, icon: BedDouble },
-  { id: "facilities-new-sports", label: "Sports", image: facilitiesNewSportsImages[0].src, icon: Volleyball },
-  { id: "facilities-new-healthcare", label: "Healthcare", image: medicalFacilityImage, icon: Cross },
-  { id: "facilities-new-transport", label: "Transport", image: campusBus, icon: BusFront },
-  { id: "facilities-new-seminar-halls", label: "Seminar halls", image: seminarHallsImage, icon: Presentation },
-  { id: "facilities-new-dining", label: "Cafeteria", image: canteen1, icon: Coffee },
+  { id: "facilities-new-laboratories", label: "Laboratories", image: laboratoriesBannerImage, icon: FlaskConical },
+  { id: "facilities-new-library", label: "Library", image: libraryBannerImage, icon: BookOpen },
+  { id: "facilities-new-hostels", label: "Hostels", image: hostelsBannerImage, icon: BedDouble },
+  { id: "facilities-new-sports", label: "Sports", image: sportsBannerImage, icon: Volleyball },
+  { id: "facilities-new-healthcare", label: "Healthcare", image: healthcareBannerImage, icon: Cross },
+  { id: "facilities-new-transport", label: "Transport", image: transportBannerImage, icon: BusFront },
+  { id: "facilities-new-seminar-halls", label: "Seminar halls", image: seminarHallsBannerImage, icon: Presentation },
+  { id: "facilities-new-dining", label: "Cafeteria", image: cafeteriaBannerImage, icon: Coffee },
 ];
 // const facilitiesTickerItems = ["Smart classrooms", "Specialized laboratories", "Computer centers", "Central library", "Seminar halls", "Healthcare", "Transport", "Sports and fitness", "Hostels", "Cafeteria"];
 
 const overviewFacts = [
-  "100+ smart classrooms equipped with projectors and audiovisual teaching aids.",
   "60+ specialized laboratories supporting practical learning across disciplines.",
   "1,000+ high-end computer systems, as listed on the university's official Facilities page.",
   "Dedicated academic blocks for different institutes and departments.",
@@ -76,19 +83,18 @@ const overviewFacts = [
   "Specialized workshops, research facilities, and discipline-specific learning spaces.",
 ];
 const overviewFactHeadings = [
-  "100+ smart classrooms",
   "60+ specialized laboratories",
   "1,000+ high-end computer systems,",
   "Dedicated academic blocks",
   "Seminar halls and auditoriums",
   "Specialized workshops, research facilities,",
 ];
-const overviewFactIcons = [UsersRound, FlaskConical, Monitor, Landmark, UsersRound, BookOpen];
+const overviewFactIcons = [FlaskConical, Monitor, Landmark, UsersRound, BookOpen];
 
 const blockDescriptions = [
-  "B1 Academic Block accommodates departments and institutes associated with civil engineering, mechanical engineering, electrical engineering, chemical sciences, natural sciences and humanities, biosciences, and technology. The block also features auditoriums and specialized facilities, including the Centre for Energy Conservation.",
-  "B2 Academic Block houses academic departments associated with computer science, computer applications, physical sciences, and mathematical sciences. It also supports research, consultancy, and other academic activities.",
-  "B3 Academic Block accommodates institutes associated with pharmacy, architecture and planning, and education and research, providing dedicated spaces for teaching and discipline-specific academic activities.",
+  "Academic Block accommodates departments and institutes associated with civil engineering, mechanical engineering, electrical engineering, chemical sciences, natural sciences and humanities, biosciences, and technology. The block also features auditoriums and specialized facilities, including the Centre for Energy Conservation.",
+  "Academic Block houses academic departments associated with computer science, computer applications, physical sciences, and mathematical sciences. It also supports research, consultancy, and other academic activities.",
+  "Academic Block accommodates institutes associated with pharmacy, architecture and planning, and education and research, providing dedicated spaces for teaching and discipline-specific academic activities.",
 ];
 
 const laboratoryCards = [
@@ -119,7 +125,7 @@ const laboratoryCards = [
   },
   {
     title: "Agricultural Farms and Herbal Gardens",
-    image: agricultureFarmsImage,
+    image: herbalGardenImage,
     text: facilitiesNewPageCopy.laboratories.agriculturalFarmsAndHerbalGardens,
   },
   {
@@ -191,9 +197,10 @@ export default function FacilitiesNew() {
   const heroRef = useRef<HTMLElement>(null);
   const [activeNav, setActiveNav] = useState("");
   const [selectedHostel, setSelectedHostel] = useState(0);
-  const [heroBackgrounds, setHeroBackgrounds] = useState<[string, string]>([libraryImage, libraryImage]);
+  const [heroBackgrounds, setHeroBackgrounds] = useState<[string, string]>([libraryBannerImage, libraryBannerImage]);
   const [activeHeroBackground, setActiveHeroBackground] = useState(0);
   const hostelImages = facilitiesNewPageCopy.hostels.residences;
+  const selectedHostelData = hostelImages[selectedHostel] ?? hostelImages[0];
 
   useEffect(() => {
     const page = pageRef.current;
@@ -350,9 +357,9 @@ export default function FacilitiesNew() {
           className={heroStyles.navigation}
           data-facilities-hero-reveal
           aria-label="Explore facilities sections"
-          onMouseLeave={() => showHeroBackground(libraryImage)}
+          onMouseLeave={() => showHeroBackground(libraryBannerImage)}
           onBlur={(event) => {
-            if (!event.currentTarget.contains(event.relatedTarget as Node | null)) showHeroBackground(libraryImage);
+            if (!event.currentTarget.contains(event.relatedTarget as Node | null)) showHeroBackground(libraryBannerImage);
           }}
         >
           {sectionNav.map(({ id, label, image, icon: Icon }) => (
@@ -380,7 +387,7 @@ export default function FacilitiesNew() {
         </div>
       </div> */}
 
-      <section id="facilities-new-overview" className="scroll-mt-24 px-6 py-6 sm:py-8 lg:py-10" aria-labelledby="facilities-new-overview-title">
+      <section id="facilities-new-overview" className="scroll-mt-24 px-4 py-6 sm:px-6 sm:py-8 lg:py-10" aria-labelledby="facilities-new-overview-title">
         <div className={containerClass}>
           <h2 id="facilities-new-overview-title" className={`${sectionHeadingClass} text-[#14284E]`}>About Our <span className="text-[#FFB70F]">Campus Facilities</span></h2>
           <div className="mt-5 grid items-center gap-8 lg:grid-cols-[1.25fr_0.95fr] lg:gap-10">
@@ -390,7 +397,7 @@ export default function FacilitiesNew() {
               <p className="mt-3">The campus is organized to provide students with access to the academic and support facilities required throughout their educational journey.</p>
             </div>
             <figure className="relative m-0 overflow-hidden rounded-2xl border border-[#DCE6F2] bg-white shadow-[0_8px_24px_rgba(15,31,61,0.08)]">
-              <img src={computerCentresImage} alt="Students working at computers in an SRMU computer centre" loading="lazy" decoding="async" className="aspect-[16/9] w-full object-cover" />
+              <img src={classroomLectureImage} alt="Students attending a classroom lecture at SRMU" loading="lazy" decoding="async" className="aspect-[16/9] w-full object-cover" />
             </figure>
           </div>
           <dl className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
@@ -409,7 +416,7 @@ export default function FacilitiesNew() {
         </div>
       </section>
 
-      <section id="facilities-new-blocks" className="scroll-mt-24 bg-[#EFF4FC] px-6 py-6 sm:py-8 lg:py-10" aria-labelledby="facilities-new-blocks-title">
+      <section id="facilities-new-blocks" className="scroll-mt-24 bg-[#e0f1ff] px-4 py-6 sm:px-6 sm:py-8 lg:py-10" aria-labelledby="facilities-new-blocks-title">
         <div className={containerClass}>
           <h2 id="facilities-new-blocks-title" className={`${sectionHeadingClass} text-[#14284E]`}>Academic <span className="text-[#FFB70F]">Blocks</span></h2>
           <div className="my-5 h-[5px] w-16 bg-[#FFB70F] sm:my-6" aria-hidden="true" />
@@ -420,7 +427,6 @@ export default function FacilitiesNew() {
             containerClassName="px-0"
             renderCard={({ item, index }) => (
               <article className="min-w-0">
-                <p className="mb-3 font-display text-[clamp(64px,8vw,112px)] leading-[0.9] font-bold tracking-tight text-transparent [-webkit-text-stroke:2px_#14284E]">B{index + 1}</p>
                 <img src={item.image} alt={`${item.title} building`} loading="lazy" decoding="async" className="aspect-[4/3] w-full border-b-[8px] border-[#FFB70F] object-cover" />
                 <h3 className="mt-5 font-display text-xl font-semibold text-[#14284E]">{item.title}</h3>
                 <p className="mt-2 text-[15px] leading-relaxed text-[#5B6885]">{blockDescriptions[index]}</p>
@@ -430,7 +436,6 @@ export default function FacilitiesNew() {
           <div className="hidden gap-x-8 gap-y-12 sm:grid lg:grid-cols-3 lg:gap-x-12">
             {facilitiesNewBlocks.map((block, index) => (
               <article key={block.id} data-facilities-reveal className="min-w-0">
-                <p className="mb-3 font-display text-[clamp(64px,8vw,112px)] leading-[0.9] font-bold tracking-tight text-transparent [-webkit-text-stroke:2px_#14284E]">B{index + 1}</p>
                 <img src={block.image} alt={`${block.title} building`} loading="lazy" decoding="async" className="aspect-[4/3] w-full border-b-[8px] border-[#FFB70F] object-cover" />
                 <h3 className="mt-5 font-display text-xl font-semibold text-[#14284E]">{block.title}</h3>
                 <p className="mt-2 text-[15px] leading-relaxed text-[#5B6885]">{blockDescriptions[index]}</p>
@@ -440,9 +445,9 @@ export default function FacilitiesNew() {
         </div>
       </section>
 
-      <section id="facilities-new-laboratories" className="scroll-mt-24 px-6 py-6 sm:py-8 lg:py-10" aria-labelledby="facilities-new-laboratories-title">
+      <section id="facilities-new-laboratories" className="scroll-mt-24 px-4 py-6 sm:px-6 sm:py-8 lg:py-10" aria-labelledby="facilities-new-laboratories-title">
         <div className={containerClass}>
-          <h2 id="facilities-new-laboratories-title" className={`${sectionHeadingClass} text-[#14284E]`}>Laboratories and <span className="text-[#FFB70F]">Practical Learning Facilities</span></h2>
+          <h2 id="facilities-new-laboratories-title" className={`${sectionHeadingClass} text-[#14284E]`}>Laboratories & <span className="text-[#FFB70F]">Practical Learning Facilities</span></h2>
           <div className="my-5 h-[5px] w-16 bg-[#FFB70F] sm:my-6" aria-hidden="true" />
           <CustomDepartmentSlider
             data={laboratoryCards}
@@ -464,15 +469,15 @@ export default function FacilitiesNew() {
         <figure className="relative m-0 min-h-[280px] overflow-hidden bg-[#FFB70F] lg:min-h-[520px] lg:[clip-path:polygon(0_0,100%_0,calc(100%_-_34px)_100%,0_100%)]">
           <img src={seminarHallsImage} alt="Seminar hall and auditorium at SRMU" loading="lazy" decoding="async" className="absolute inset-0 size-full object-cover lg:[clip-path:polygon(0_0,100%_0,calc(100%_-_62px)_100%,0_100%)]" />
         </figure>
-        <div className="flex flex-col justify-center px-6 py-6 sm:px-10 sm:py-8 lg:py-10 lg:pr-[max(40px,calc((100vw_-_1200px)/2))] lg:pl-10">
+        <div className="flex flex-col justify-center px-4 py-6 sm:px-10 sm:py-8 lg:py-10 lg:pr-[max(40px,calc((100vw_-_1200px)/2))] lg:pl-10">
           <h2 id="facilities-new-seminar-halls-title" className={`${sectionHeadingClass} text-white`}>Seminar Halls <span className="text-[#FFB70F]">and Auditoriums</span></h2>
           <div className="my-5 h-[5px] w-16 bg-[#FFB70F] sm:my-6" aria-hidden="true" />
           <p className="max-w-[58ch] text-[15px] leading-[1.75] text-[#AEBBD8] sm:text-base">{facilitiesNewPageCopy.seminarHallsAndAuditoriums}</p>
         </div>
       </section>
 
-      <section id="facilities-new-healthcare" className="scroll-mt-24 grid bg-[#EFF4FC] lg:grid-cols-2" aria-labelledby="facilities-new-healthcare-title">
-        <div className="flex flex-col justify-center px-6 py-6 sm:px-10 sm:py-8 lg:py-10 lg:pl-[max(40px,calc((100vw_-_1200px)/2))] lg:pr-10">
+      <section id="facilities-new-healthcare" className="scroll-mt-24 grid bg-[#e0f1ff] lg:grid-cols-2" aria-labelledby="facilities-new-healthcare-title">
+        <div className="flex flex-col justify-center px-4 py-6 sm:px-10 sm:py-8 lg:py-10 lg:pl-[max(40px,calc((100vw_-_1200px)/2))] lg:pr-10">
           <h2 id="facilities-new-healthcare-title" className={`${sectionHeadingClass} text-[#14284E]`}>Healthcare and <span className="text-[#FFB70F]">Medical Facilities</span></h2>
           <div className="my-5 h-[5px] w-16 bg-[#FFB70F] sm:my-6" aria-hidden="true" />
           <p className="max-w-[58ch] text-[15px] leading-[1.75] text-[#5B6885] sm:text-base">The campus's healthcare arrangements help students access assistance when required and support a learning environment that considers physical well-being alongside academic development. Students should contact the university's designated medical facility or administration for information about available services, operating hours, and emergency procedures.</p>
@@ -482,14 +487,14 @@ export default function FacilitiesNew() {
         </figure>
       </section>
 
-      <section id="facilities-new-transport" className="relative z-10 scroll-mt-24 bg-[#FFB70F] px-6 py-6 sm:py-8 lg:py-10" aria-labelledby="facilities-new-transport-title">
+      <section id="facilities-new-transport" className="relative z-10 scroll-mt-24 bg-[#FFB70F] px-4 py-6 sm:px-6 sm:py-8 lg:py-10" aria-labelledby="facilities-new-transport-title">
         <div className={`${containerClass} grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14`}>
           <div>
             <h2 id="facilities-new-transport-title" className={`${sectionHeadingClass} text-[#14284E]`}>Transport Routes <span className="text-white">& Fee Structure</span></h2>
             <div className="my-5 h-[5px] w-16 bg-[#14284E] sm:my-6" aria-hidden="true" />
             <p className="text-[15px] leading-[1.75] text-[#2B3A5C] sm:text-base">SRMU buses connect the campus with designated pickup points. Students can consult the official transportation page for published routes, pickup locations, and departure timings.</p>
             <p className="mt-3 text-[15px] leading-[1.75] text-[#2B3A5C] sm:text-base">Transportation fees may depend on the applicable route and university fee schedule. Students and parents should confirm current charges, route availability, pickup locations, and payment procedures with the university before opting for the service.</p>
-            <a className="mt-6 inline-flex min-h-12 items-center justify-center border-2 border-[#14284E] bg-[#14284E] px-7 py-3 text-sm font-medium text-white transition-colors hover:bg-[#22407A] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#14284E]" href="https://srmu.ac.in/transportation" target="_blank" rel="noreferrer">View Transport Routes <ArrowRight size={18} className="ml-2" aria-hidden="true" /></a>
+            <a className="mt-6 inline-flex h-12 w-[260px] max-w-full items-center justify-center gap-2 rounded-full border-2 border-[#14284E] bg-[#14284E] px-4 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-[#22407A] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#14284E]" href="https://srmu.ac.in/transportation" target="_blank" rel="noreferrer">View Transport Routes <ArrowRight size={18} aria-hidden="true" /></a>
           </div>
           <figure className="relative m-0 aspect-[3/2] min-w-0 overflow-hidden border-[7px] border-white bg-white shadow-[0_16px_28px_rgba(20,40,78,0.32)] transition-transform duration-500 lg:rotate-[-2deg]">
             <img src={campusBusesImage} alt="SRMU campus buses" width={1536} height={1024} loading="lazy" decoding="async" className="absolute inset-0 size-full object-cover" />
@@ -498,7 +503,7 @@ export default function FacilitiesNew() {
       </section>
 
       <section id="facilities-new-sports" className="scroll-mt-24 grid bg-white text-[#14284E] lg:grid-cols-2" aria-labelledby="facilities-new-sports-title">
-        <div className="flex flex-col justify-center px-6 py-6 sm:px-10 sm:py-8 lg:py-10 lg:pl-[max(40px,calc((100vw_-_1200px)/2))] lg:pr-10">
+        <div className="flex flex-col justify-center px-4 py-6 sm:px-10 sm:py-8 lg:py-10 lg:pl-[max(40px,calc((100vw_-_1200px)/2))] lg:pr-10">
           <h2 id="facilities-new-sports-title" className={`${sectionHeadingClass} text-[#14284E]`}>Sports and <span className="text-[#FFB70F]">fitness facilities</span></h2>
           <div className="my-5 h-[5px] w-16 bg-[#FFB70F] sm:my-6" aria-hidden="true" />
           <p className="text-[15px] leading-[1.75] text-[#5B6885] sm:text-base">SRMU provides sports and recreational facilities that encourage physical fitness, teamwork, discipline, and participation in campus activities.</p>
@@ -525,15 +530,14 @@ export default function FacilitiesNew() {
 
       <FacilitiesNewLibrary />
 
-      <section id="facilities-new-banking" className="scroll-mt-24 bg-white px-6 py-6 sm:py-8 lg:py-10" aria-labelledby="facilities-new-banking-title">
-        <div className={`${containerClass} grid items-center gap-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:gap-12`}>
-          <div className="min-w-0">
-            {/* <div className="mb-5 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.16em] text-[#526A82]">
-              <span className="h-[3px] w-8 shrink-0 bg-[#FFB70F]" aria-hidden="true" />
-              Everyday campus essentials
-            </div> */}
-            <h2 id="facilities-new-banking-title" className={`${sectionHeadingClass} text-[#14284E]`}>Banking and <span className="text-[#FFB70F]">ATM facilities</span></h2>
-            <p className="mt-4 !text-left text-[15px] leading-[1.75] text-[#5B6885] sm:text-base">Banking facilities help students manage routine financial requirements during their time at the university. These facilities can support everyday banking needs, including access to cash and other services offered by the relevant banking provider.</p>
+      <section id="facilities-new-banking" className="scroll-mt-24 grid bg-white text-[#14284E] lg:min-h-[520px] lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)]" aria-labelledby="facilities-new-banking-title">
+        <figure className="relative order-2 m-0 min-h-[280px] overflow-hidden bg-[#14284E] lg:order-2 lg:min-h-[520px] lg:[clip-path:polygon(34px_0,100%_0,100%_100%,0_100%)]">
+          <img src={atmBoothImage} alt="SRMU student using an ATM booth" width={1086} height={1448} loading="lazy" decoding="async" className="absolute inset-0 size-full object-cover object-top lg:object-[center_20%] lg:[clip-path:polygon(62px_0,100%_0,100%_100%,0_100%)]" />
+        </figure>
+        <div className="order-1 flex min-w-0 flex-col justify-center px-4 py-6 sm:px-10 sm:py-8 lg:order-1 lg:py-10 lg:pl-[max(40px,calc((100vw_-_1200px)/2))] lg:pr-10 xl:pr-12">
+          <h2 id="facilities-new-banking-title" className={`${sectionHeadingClass} text-[#14284E]`}>Banking and <span className="text-[#FFB70F]">ATM facilities</span></h2>
+          <div className="my-5 h-[5px] w-16 bg-[#FFB70F] sm:my-6" aria-hidden="true" />
+          <p className="!text-left text-[15px] leading-[1.75] text-[#5B6885] sm:text-base">Banking facilities help students manage routine financial requirements during their time at the university. These facilities can support everyday banking needs, including access to cash and other services offered by the relevant banking provider.</p>
             {/* <div className="mt-5 grid gap-4 border-t border-[#E1E8F0] pt-4 sm:grid-cols-2 sm:gap-6"> */}
               {/* <div className="flex items-start gap-3">
                 <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-[#FFF5D9] text-[#14284E]" aria-hidden="true"><Banknote size={23} strokeWidth={1.7} /></span>
@@ -550,55 +554,47 @@ export default function FacilitiesNew() {
                 </div>
               </div> */}
             {/* </div> */}
-          </div>
-          <div className="relative min-w-0">
-            <span className="pointer-events-none absolute -right-3 -top-3 h-28 w-28 rounded-tr-[28px] border-r-4 border-t-4 border-[#FFB70F]" aria-hidden="true" />
-            <figure className="relative m-0 overflow-hidden rounded-2xl border border-[#E1E8F0] bg-white shadow-[0_16px_40px_rgba(20,40,78,0.1)]">
-              <div className="relative aspect-[4/3] overflow-hidden">
-                <img src={atmBoothImage} alt="SRMU student using an ATM booth" width={1086} height={1448} loading="lazy" decoding="async" className="absolute inset-0 size-full object-cover object-top" />
-              </div>
-              {/* <figcaption className="flex items-center gap-3 border-t-4 border-[#FFB70F] bg-white px-5 py-3 sm:px-6">
-                <span className="grid size-10 shrink-0 place-items-center rounded-full bg-[#14284E] text-white" aria-hidden="true"><Landmark size={20} strokeWidth={1.7} /></span>
-                <div>
-                  <span className="block text-[10px] font-semibold uppercase tracking-[0.14em] text-[#5B6885]">Life at SRMU</span>
-                  <span className="mt-0.5 block font-display text-sm font-semibold text-[#14284E]">Convenience for your campus routine</span>
-                </div>
-              </figcaption> */}
-            </figure>
-          </div>
         </div>
       </section>
 
       <section id="facilities-new-hostels" className="scroll-mt-24" aria-labelledby="facilities-new-hostels-title">
-        <div className="bg-[#EFF4FC] px-6 py-6 sm:py-8 lg:py-10">
-          <div className={containerClass}>
+        <div className="grid w-full bg-[#e0f1ff] text-[#14284E] lg:min-h-[520px] lg:grid-cols-5">
+        <div className="order-1 flex min-w-0 flex-col justify-center px-4 py-6 sm:px-10 sm:py-8 lg:col-start-3 lg:col-span-3 lg:order-2 lg:py-10 lg:pl-12 lg:pr-[max(40px,calc((100vw_-_1200px)/2))] xl:pl-16">
             <h2 id="facilities-new-hostels-title" className={`${sectionHeadingClass} text-[#14284E]`}>Hostel Facilities <span className="text-[#FFB70F]">at SRMU</span></h2>
             <div className="my-5 h-[5px] w-16 bg-[#FFB70F] sm:my-6" aria-hidden="true" />
             <p className="w-full text-[15px] leading-[1.75] text-[#5B6885] sm:text-base">{facilitiesNewPageCopy.hostels.introduction}</p>
-            <div className="mt-7 flex gap-7" role="tablist" aria-label="Hostel accommodation">
+            <div className="mt-5 flex gap-7" role="tablist" aria-label="Hostel accommodation">
               {hostelImages.map((hostel, index) => <button key={hostel.title} id={`facilities-new-hostel-tab-${index}`} type="button" role="tab" aria-selected={selectedHostel === index} aria-controls="facilities-new-hostel-panel" onClick={() => setSelectedHostel(index)} className={`border-b-4 px-1 pb-3 font-display text-base font-semibold transition-colors sm:text-lg ${selectedHostel === index ? "border-[#FFB70F] text-[#14284E]" : "border-transparent text-[#5B6885] hover:text-[#14284E]"}`}>{index === 0 ? "Girls hostel" : "Boys hostel"}</button>)}
             </div>
+            {selectedHostelData && (
+              <article id="facilities-new-hostel-panel" role="tabpanel" aria-labelledby={`facilities-new-hostel-tab-${selectedHostel}`} className="mt-5">
+                <h3 className="font-display text-[22px] font-semibold text-[#14284E]">{selectedHostelData.title}</h3>
+                <p className="mt-2 max-w-[58ch] text-[15px] leading-[1.75] text-[#5B6885]">{selectedHostel === 0 ? "Gargi Girls Hostel provides residential accommodation for eligible female students of SRMU. Its residential environment is intended to support students' academic routines, everyday needs, and participation in university life." : "Tygore Boys Hostel provides residential accommodation for eligible male students of SRMU. The hostel supports students who prefer to live on campus while pursuing their academic programs."}</p>
+                <a href="/contact-us" className="mt-5 inline-flex h-12 w-[260px] max-w-full items-center justify-center gap-2 rounded-full border-2 border-[#FFB70F] bg-[#FFB70F] px-4 py-3 text-center text-sm font-semibold text-[#14284E] transition-colors hover:border-[#FFC83D] hover:bg-[#FFC83D] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#14284E]">
+                  Contact Hostel Management <ArrowRight size={18} aria-hidden="true" />
+                </a>
+              </article>
+            )}
           </div>
+          {selectedHostelData && (
+            <figure className="relative order-2 m-0 min-h-[280px] overflow-hidden bg-[#14284E] lg:col-start-1 lg:col-span-2 lg:order-1 lg:min-h-[520px] lg:[clip-path:polygon(0_0,calc(100%_-_34px)_0,100%_100%,0_100%)]">
+              <img src={selectedHostelData.image} alt={`${selectedHostelData.title} building`} loading="lazy" decoding="async" style={{ objectPosition: selectedHostel === 0 ? "25% center" : "center" }} className="absolute inset-0 size-full object-cover lg:[clip-path:polygon(0_0,calc(100%_-_62px)_0,100%_100%,0_100%)]" />
+            </figure>
+          )}
         </div>
 
-        {hostelImages.map((hostel, index) => selectedHostel === index && (
-          <article key={hostel.title} id="facilities-new-hostel-panel" role="tabpanel" aria-labelledby={`facilities-new-hostel-tab-${index}`} className="grid w-full bg-[#EFF4FC] lg:min-h-[460px] lg:grid-cols-2">
-            <figure className="relative m-0 min-h-[280px] overflow-hidden bg-[#FFB70F] lg:min-h-[460px] lg:[clip-path:polygon(0_0,100%_0,calc(100%_-_34px)_100%,0_100%)]">
-              <img src={hostel.image} alt={`${hostel.title} building`} loading="lazy" decoding="async" style={{ objectPosition: index === 0 ? "25% center" : "center" }} className="absolute inset-0 size-full object-cover lg:[clip-path:polygon(0_0,100%_0,calc(100%_-_62px)_100%,0_100%)]" />
-            </figure>
-            <div className="flex flex-col justify-center bg-[#EFF4FC] px-6 py-6 sm:px-10 sm:py-8 lg:py-10 lg:pr-[max(40px,calc((100vw_-_1200px)/2))] lg:pl-16">
-              <h3 className="font-display text-[22px] font-semibold text-[#14284E]">{hostel.title}</h3>
-              <p className="mt-2 max-w-[58ch] text-[15px] leading-[1.75] text-[#5B6885]">{index === 0 ? "Gargi Girls Hostel provides residential accommodation for eligible female students of SRMU. Its residential environment is intended to support students' academic routines, everyday needs, and participation in university life." : "Tygore Boys Hostel provides residential accommodation for eligible male students of SRMU. The hostel supports students who prefer to live on campus while pursuing their academic programs."}</p>
-            </div>
-          </article>
-        ))}
-
-        <div id="facilities-new-hostel-amenities" className="relative isolate overflow-hidden bg-[#EFF4FC] px-6 py-6 sm:py-8 lg:py-10">
+        <div id="facilities-new-hostel-amenities" className="relative isolate overflow-hidden bg-[#EFF4FC] px-4 py-6 sm:px-6 sm:py-8 lg:py-10">
           <picture className="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
             <source media="(max-width: 639px)" srcSet={hostelAmenitiesMobileBackground} />
             <img src={hostelAmenitiesDesktopBackground} alt="" className="size-full object-cover object-center" />
           </picture>
-          <div className={`${containerClass} relative z-10 rounded-2xl bg-[#EFF4FC]/90 p-4 backdrop-blur-sm sm:p-6`}>
+          <div
+            className={`${containerClass} relative z-10 rounded-2xl bg-[#EFF4FC]/90 p-4 backdrop-blur-sm sm:p-6`}
+            style={{
+              background: "linear-gradient(180deg, #fff 0%, #cee0ef 100%)",
+              backgroundSize: "100% 100%",
+            }}
+          >
             <h3 className="font-display text-xl font-semibold text-[#14284E]">Hostel amenities</h3>
             <div className="mt-5 grid gap-x-5 lg:grid-cols-3 lg:divide-x lg:divide-[#D5E5F4]">
               {hostelAmenityGroups.map((group, groupIndex) => (
@@ -644,7 +640,7 @@ export default function FacilitiesNew() {
 
       <FacilitiesNewDining images={diningImages} description={facilitiesNewPageCopy.dining} />
 
-      <section id="facilities-new-campus-life" className="relative z-10 scroll-mt-24 bg-[#EFF4FC] px-6 py-6 text-left sm:py-8 lg:py-10" aria-labelledby="facilities-new-campus-life-title">
+      <section id="facilities-new-campus-life" className="relative z-10 scroll-mt-24 bg-[#e0f1ff] px-4 py-6 text-left sm:px-6 sm:py-8 lg:py-10" aria-labelledby="facilities-new-campus-life-title">
         <div className={`${containerClass} mx-auto`}>
           <h2 id="facilities-new-campus-life-title" className={`${sectionHeadingClass} max-w-[900px] text-[#14284E]`}>Green Campus <span className="text-[#FFB70F]">and Student Recreation</span></h2>
           <div className="my-5 h-[5px] w-16 bg-[#14284E] sm:my-6" aria-hidden="true" />
@@ -655,7 +651,7 @@ export default function FacilitiesNew() {
           <div className="mt-8 grid max-w-[900px] grid-cols-2 sm:grid-cols-4">
             {campusLifeHighlights.map(({ label, icon: Icon }) => <div key={label} className="flex flex-col items-start gap-3 px-3 py-4"><span className="grid size-14 place-items-center rounded-full bg-[#14284E] text-white sm:size-16"><Icon size={28} strokeWidth={1.8} aria-hidden="true" /></span><span className="max-w-[130px] text-sm font-semibold text-[#14284E]">{label}</span></div>)}
           </div>
-            <a className="mt-7 inline-flex min-h-12 items-center justify-center border-2 border-[#14284E] bg-[#14284E] px-7 py-3 text-sm font-medium text-white transition-colors hover:bg-[#22407A] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#14284E]" href="#facilities-new-overview">Explore campus <ArrowRight size={18} className="ml-2" aria-hidden="true" /></a>
+            <a className="mt-7 inline-flex h-12 w-[260px] max-w-full items-center justify-center gap-2 rounded-full border-2 border-[#14284E] bg-[#14284E] px-4 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-[#22407A] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#14284E]" href="#facilities-new-overview">Explore campus <ArrowRight size={18} aria-hidden="true" /></a>
         </div>
       </section>
     </div>

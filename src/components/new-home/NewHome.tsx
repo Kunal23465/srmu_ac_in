@@ -52,7 +52,6 @@ function NewHome() {
             id="home-scholarships"
             scholarshipIllustration={scholarshipGirl}
             fullHeightScholarshipIllustration
-            backgroundImage={scholarshipSectionBackground}
             scholarshipCardBackgroundImage={scholarshipCardBackground}
           />
         </LazyWhenVisible>

@@ -25,7 +25,7 @@ import PlacementLogoWipro from "../../../assets/new-home/new-placement-logos/11.
 import PlacementLogoInfosys from "../../../assets/new-home/new-placement-logos/12.png";
 import TechCollabImg from "../../../assets/images/new-information-system/Tech-Collaboration_-L-T-EduTech-SRMU.png";
 import studentsPlacedImg from "../../../assets/images/cyber-security-new/where-our-students-get-placed.webp";
-import { Download, ChevronDown, ChevronUp, Search, Mail, Phone, ArrowLeft, ArrowRight, X, ShieldCheck, GraduationCap, Settings, Database, Lightbulb, Share2, MapPin, Facebook, Instagram, Linkedin, Youtube, Twitter, BadgeCheck, UsersRound, Accessibility, Medal, ChartNoAxesColumnIncreasing, Globe2, UserRound, Heart, Monitor, BrainCircuit, Code2, BookOpenCheck, Route, ChevronRight, Laptop, BriefcaseBusiness } from "lucide-react";
+import { Download, ChevronDown, ChevronUp, Search, Mail, Phone, ArrowLeft, ArrowRight, X, ShieldCheck, GraduationCap, Settings, Database, Lightbulb, Share2, MapPin, Facebook, Instagram, Linkedin, Youtube, Twitter, BadgeCheck, UsersRound, Accessibility, Medal, ChartNoAxesColumnIncreasing, Globe2, UserRound, Heart, Monitor, BrainCircuit, Code2, BookOpenCheck, Route, ChevronRight, Laptop, BriefcaseBusiness, Star } from "lucide-react";
 import { FaQuora, FaRedditAlien } from "react-icons/fa";
 import useEmblaCarousel from "embla-carousel-react";
 import { motion, useReducedMotion } from "framer-motion";
@@ -1608,7 +1608,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                             Avail Up to
                                         </span>
                                         <div className="text-[#d62c2b] font-black text-[50px] sm:text-[75px] leading-[0.8] tracking-tighter flex items-start mb-2 drop-shadow-sm">
-                                            100% <span className="text-[28px] sm:text-[38px] leading-none mt-1 ml-1 text-[#FFB703] drop-shadow-sm">*</span>
+                                            100% <Star aria-hidden="true" className="h-5 w-5 sm:h-6 sm:w-6 leading-none mt-1 ml-1 shrink-0 text-[#FFB703] fill-current drop-shadow-sm" strokeWidth={2} />
                                         </div>
                                         <h2 className="text-[#14284E] font-black text-[24px] sm:text-[32px] font-display leading-[1] tracking-tight mb-4">
                                             Scholarships

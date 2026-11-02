@@ -12,6 +12,7 @@ import {
   ChartNoAxesColumnIncreasing,
   Globe2,
   UserRound,
+  Star,
 } from "lucide-react";
 import AdditionInScholarImg from "../../../assets/images/addition-in-scholar.png";
 import Classes from "../../../utils/styles/Global.module.css";
@@ -101,9 +102,11 @@ export const DepartmentScholarships: React.FC<DepartmentScholarshipsProps> = ({
                 </span>
                 <div className="text-[#d62c2b] font-black text-[50px] sm:text-[75px] leading-[0.8] tracking-tighter flex items-start mb-2 drop-shadow-sm">
                   100%{" "}
-                  <span className="text-[28px] sm:text-[38px] leading-none mt-1 ml-1 text-[#ffb703] drop-shadow-sm">
-                    *
-                  </span>
+                  <Star
+                    aria-hidden="true"
+                    className="h-5 w-5 sm:h-6 sm:w-6 leading-none mt-1 ml-1 shrink-0 text-[#ffb703] fill-current drop-shadow-sm"
+                    strokeWidth={2}
+                  />
                 </div>
                 <h2 className="text-[#14284E] font-black text-[24px] sm:text-[32px] font-display leading-[1] tracking-tight mb-4">
                   Scholarships
@@ -146,7 +149,7 @@ export const DepartmentScholarships: React.FC<DepartmentScholarshipsProps> = ({
                   alt="Scholarships"
                   className={`object-contain drop-shadow-md ${
                     fullHeightScholarshipIllustration
-                      ? "w-[90%] sm:w-[120%] sm:max-w-none sm:translate-y-[13%]"
+                      ? "w-[90%] sm:w-[120%] sm:max-w-none sm:translate-y-[13%] sm:scale-[1.2] sm:origin-bottom"
                       : "w-[90%] sm:w-[90%] max-w-[150px] sm:max-w-[250px]"
                   }`}
                 />
