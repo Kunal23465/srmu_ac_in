@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { Outlet, useLocation } from "react-router-dom";
-// import Header from "../components/header/Header";
-import Header from "../components/new-header/new";
+import Header from "../components/header/Header";
+// import Header from "../components/new-header/new";
 import whatsapp from "../assets/images/whatsapp-icon.png";
 import DynamicBreadcrumbs from "../components/breadcrumb/DynamicBreadcrumbs";
 import SeoHead from "../components/seo/SeoHead";
@@ -9,6 +9,7 @@ import { buildSiteSchema, getDefaultSeo, normalizePath } from "../utils/seo";
 
 import Footer from "../components/footer/Footer";
 import DepartmentFooter from "../components/footer/DepartmentFooter";
+import GooglePreferredSourceButton from "../components/seo/GooglePreferredSourceButton";
 
 const RootLayout: React.FC = () => {
   const location = useLocation();
@@ -134,6 +135,7 @@ const RootLayout: React.FC = () => {
 
       {shouldRenderFooter && normalizedPath !== "/insider" && normalizedPath !== "/department-of-computer-science-and-engineering-new" && normalizedPath !== "/institute-of-pharmacy-new" && normalizedPath !== "/facilities-new" && <Footer />}
       {normalizedPath === "/facilities-new" && <DepartmentFooter />}
+      {normalizedPath !== "/insider" && <GooglePreferredSourceButton />}
 
       {/* WhatsApp */}
       {normalizedPath !== "/insider" && <button

@@ -23,7 +23,7 @@ export function SalaryRangeChart({ year }: { year: string }) {
   if (!hasSalaryData) {
     return (
       <div className={styles.distribution} data-package-chart>
-        <h3 className={styles.eyebrow}>Salary Package Ranges · <span className={styles.headingAccent}>{year}</span></h3>
+        <h2 className={styles.eyebrow}>Salary Packages and Placement Statistics · <span className={styles.headingAccent}>{year}</span></h2>
         <p className={styles.noSalaryData}>Salary range data is available for 2021–2023, 2025 and 2026.</p>
       </div>
     );
@@ -31,7 +31,7 @@ export function SalaryRangeChart({ year }: { year: string }) {
 
   return (
     <div className={`${styles.distribution} ${styles.salaryDistribution}`} data-package-chart>
-      <h3 className={styles.eyebrow}>Salary Package Ranges · <span className={styles.headingAccent}>{year}</span></h3>
+      <h2 className={styles.eyebrow}>Salary Packages and Placement Statistics · <span className={styles.headingAccent}>{year}</span></h2>
       <div className={styles.bands} onMouseLeave={() => setActiveBand(null)}>
         {salaryRanges.filter((band) => band.count > 0).map((band, index) => {
           const share = total ? band.count / total * 100 : 0;
@@ -70,7 +70,7 @@ interface PlacementTrendChartProps {
 export function PlacementTrendChart({ activeIndex, onYearChange }: PlacementTrendChartProps) {
   const patternId = `placement-hatch-${useId().replace(/:/g, "")}`;
   const selected = placementChartYears[activeIndex];
-  const metricLabel = selected.metric ?? "Students Placed";
+  const metricLabel = "Students Placed at SRMU";
   const maxValue = Math.max(1000, Math.ceil(Math.max(...placementChartYears.map(({ records }) => records)) / 10) * 10);
   const left = 38, right = 418, top = 72, bottom = 232;
   const slot = (right - left) / placementChartYears.length;
@@ -103,11 +103,11 @@ export function PlacementTrendChart({ activeIndex, onYearChange }: PlacementTren
 
   return (
     <div className={styles.trend} data-trend-chart>
-      <h3 className={styles.eyebrow}>{metricLabel} · <span className={styles.headingAccent}>{selected.year}</span></h3>
+      <h3 className={styles.eyebrow}>{metricLabel}</h3>
       {!selected.hideValue && (
         <div className={styles.total}>
           <strong>{number(selected.records)}</strong>
-          <span>{metricLabel.toLowerCase()}</span>
+          <span>students placed</span>
         </div>
       )}
       <svg className={styles.chart} viewBox="0 0 440 270" role="group" aria-label="Placement bars by year. Hover, tap, or use arrow keys to select a year.">

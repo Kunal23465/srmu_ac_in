@@ -21,7 +21,7 @@ export const placementsNewData = {
   heading: "Trusted Education with",
   highlight: "Outstanding Placements",
   description:
-    "SRMU combines academic learning with industry exposure, internships, technical training and placement preparation to help students build future-ready careers. Recognized among the preferred choices for students seeking the best university in Uttar Pradesh for professional and technology-focused education, SRMU emphasizes practical learning through live projects, coding culture, recruiter engagement and skill-focused training across engineering, AI, management, healthcare and emerging technologies.",
+    "SRMU combines academic learning with industry exposure, internships, technical training and placement preparation to help students build future-ready careers. Recognized among the preferred choices for students seeking the best university in Uttar Pradesh for professional and technology-focused education, SRMU emphasizes practical learning through live projects, coding culture, recruiter engagement and skill-focused training across engineering, AI, management, healthcare and emerging technologies.The university's 2026 placement highlights include a highest salary package of ₹53 LPA, more than 1,200 job offers and 644 students placed.",
   stats: [
     { id: "highest-package", value: 53, prefix: "₹", suffix: " LPA", label: "Highest Package" },
     { id: "job-offers", value: 1200, prefix: "", suffix: "+", label: "Job Offers" },

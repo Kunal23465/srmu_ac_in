@@ -91,7 +91,7 @@ export default function PlacementsNew() {
           <article className={`${styles.card} ${styles.recruiters}`} data-placement-card>
             <SalaryRangeChart year={placementChartYears[activeYearIndex].year} />
             <div className={styles.recruiterHeading}>
-              <h3>Where SRMU Students <span className={styles.headingAccent}>Get Placed</span></h3>
+              <h3>Top Recruiters <span className={styles.headingAccent}> at SRMU</span></h3>
 
             </div>
 
@@ -117,7 +117,7 @@ export default function PlacementsNew() {
 
           <div className={styles.results} data-placement-card>
             <article className={`${styles.card} ${styles.statsCard}`}>
-              <span className={styles.cardTitle}>2026 Placement <span className={styles.headingAccent}>Highlights</span></span>
+              <span className={styles.cardTitle}>SRMU Placement <span className={styles.headingAccent}>Highlights 2026</span></span>
               <dl className={styles.stats}>
                 {data.stats.map((stat) => (
                   <div key={stat.id} className={styles.stat}>
@@ -146,7 +146,7 @@ export default function PlacementsNew() {
               <div className={styles.alumniHeader}>
                 <div>
                   <span className={styles.eyebrow}>From Classrooms to Careers</span>
-                  <h3>Meet SRMU's <span className={styles.headingAccent}>Placed Student</span></h3>
+                  <h3>Featured Placement <span className={styles.headingAccent}>Success Stories</span></h3>
                 </div>
                 <Link to={data.alumniHref} className={styles.iconLink} aria-label="View all notable SRMU alumni"><ArrowUpRight size={20} /></Link>
               </div>
