@@ -45,8 +45,8 @@ export interface DepartmentScholarshipsProps {
 export const DepartmentScholarships: React.FC<DepartmentScholarshipsProps> = ({
   id = "scholarships",
   className = "",
-  eligibilityHref = "#overview",
-  applyNowHref = "/scholarship",
+  eligibilityHref = "/program-finder-new",
+  applyNowHref = "/scholarship-scheme",
   scholarshipIllustration = AdditionInScholarImg,
   fullHeightScholarshipIllustration = false,
   backgroundImage,

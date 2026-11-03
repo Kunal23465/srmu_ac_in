@@ -886,7 +886,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                 </section>
 
                 {/* ===== SCHOLARSHIPS ===== */}
-                <DepartmentScholarships eligibilityHref="#overview" />
+                <DepartmentScholarships />
 
                 {/* ===== PO / PSO / PLO ===== */}
                 <section className="pt-8 pb-3 sm:pb-8 md:py-10 px-6 bg-[#F0F6FB]">

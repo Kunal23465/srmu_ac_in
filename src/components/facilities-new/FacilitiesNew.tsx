@@ -15,7 +15,8 @@ import healthcareBannerImage from "../../assets/images/new-facilities/banner/8.w
 import seminarHallsBannerImage from "../../assets/images/new-facilities/banner/9.webp";
 import cafeteriaBannerImage from "../../assets/images/new-facilities/banner/10.webp";
 import atmBoothImage from "../../assets/images/new-facilities/ATM-Booth.webp";
-import hostelAmenitiesDesktopBackground from "../../assets/images/new-facilities/for-dekstop-view.png";
+import hostelAmenitiesRoomImage from "../../assets/images/new-facilities/image1.webp";
+import hostelAmenitiesStudentsImage from "../../assets/images/new-facilities/Students-Studying-Together-on-Campus.webp";
 import hostelAmenitiesMobileBackground from "../../assets/images/new-facilities/new-mobile-view.png";
 import FacilitiesNewLibrary from "./FacilitiesNewLibrary";
 import FacilitiesNewDining from "./FacilitiesNewDining";
@@ -380,12 +381,12 @@ export default function FacilitiesNew() {
       </section>
 
       {/* <div className="group overflow-hidden border-b border-white/10 bg-[#14284E] py-4 text-white" aria-label="Campus facilities">
-        <div className="flex w-max animate-facilities-marquee motion-reduce:animate-none group-hover:[animation-play-state:paused]">
-          {[0, 1].map((copy) => <div key={copy} aria-hidden={copy === 1} className="flex shrink-0 items-center font-display text-sm font-semibold sm:text-base">
-            {facilitiesTickerItems.map((item) => <span key={item} className="inline-flex items-center gap-8 px-5 sm:px-8">{item}<i className="size-[11px] rotate-45 bg-[#FFB70F]" aria-hidden="true" /></span>)}
-          </div>)}
-        </div>
-      </div> */}
+<div className="flex w-max animate-facilities-marquee motion-reduce:animate-none group-hover:[animation-play-state:paused]">
+{[0, 1].map((copy) => <div key={copy} aria-hidden={copy === 1} className="flex shrink-0 items-center font-display text-sm font-semibold sm:text-base">
+{facilitiesTickerItems.map((item) => <span key={item} className="inline-flex items-center gap-8 px-5 sm:px-8">{item}<i className="size-[11px] rotate-45 bg-[#FFB70F]" aria-hidden="true" /></span>)}
+</div>)}
+</div>
+</div> */}
 
       <section id="facilities-new-overview" className="scroll-mt-24 px-4 py-6 sm:px-6 sm:py-8 lg:py-10" aria-labelledby="facilities-new-overview-title">
         <div className={containerClass}>
@@ -523,10 +524,10 @@ export default function FacilitiesNew() {
       </section>
 
       {/* <section className="px-6 py-16 sm:py-20 lg:py-24" aria-label="Sports facilities information">
-        <div className={containerClass}>
-          <p className="max-w-[80ch] text-[15px] leading-[1.75] text-[#5B6885] sm:text-base">Sports and fitness activities provide opportunities for students to develop coordination, perseverance, teamwork, and a healthy balance between academic and recreational commitments. The availability of specific courts, equipment, and activities may depend on campus arrangements and schedules.</p>
-        </div>
-      </section> */}
+<div className={containerClass}>
+<p className="max-w-[80ch] text-[15px] leading-[1.75] text-[#5B6885] sm:text-base">Sports and fitness activities provide opportunities for students to develop coordination, perseverance, teamwork, and a healthy balance between academic and recreational commitments. The availability of specific courts, equipment, and activities may depend on campus arrangements and schedules.</p>
+</div>
+</section> */}
 
       <FacilitiesNewLibrary />
 
@@ -538,28 +539,28 @@ export default function FacilitiesNew() {
           <h2 id="facilities-new-banking-title" className={`${sectionHeadingClass} text-[#14284E]`}>Banking and <span className="text-[#FFB70F]">ATM facilities</span></h2>
           <div className="my-5 h-[5px] w-16 bg-[#FFB70F] sm:my-6" aria-hidden="true" />
           <p className="!text-left text-[15px] leading-[1.75] text-[#5B6885] sm:text-base">Banking facilities help students manage routine financial requirements during their time at the university. These facilities can support everyday banking needs, including access to cash and other services offered by the relevant banking provider.</p>
-            {/* <div className="mt-5 grid gap-4 border-t border-[#E1E8F0] pt-4 sm:grid-cols-2 sm:gap-6"> */}
-              {/* <div className="flex items-start gap-3">
-                <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-[#FFF5D9] text-[#14284E]" aria-hidden="true"><Banknote size={23} strokeWidth={1.7} /></span>
-                <div>
-                  <h3 className="font-display text-sm font-semibold text-[#14284E]">Access to cash</h3>
-                  <p className="mt-1 !text-left text-sm leading-relaxed text-[#5B6885]">ATM facilities for everyday needs.</p>
-                </div>
-              </div> */}
-              {/* <div className="flex items-start gap-3">
-                <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-[#EFF4FC] text-[#14284E]" aria-hidden="true"><Landmark size={23} strokeWidth={1.7} /></span>
-                <div>
-                  <h3 className="font-display text-sm font-semibold text-[#14284E]">Banking support</h3>
-                  <p className="mt-1 !text-left text-sm leading-relaxed text-[#5B6885]">Services from the banking provider.</p>
-                </div>
-              </div> */}
-            {/* </div> */}
+          {/* <div className="mt-5 grid gap-4 border-t border-[#E1E8F0] pt-4 sm:grid-cols-2 sm:gap-6"> */}
+          {/* <div className="flex items-start gap-3">
+<span className="grid size-11 shrink-0 place-items-center rounded-xl bg-[#FFF5D9] text-[#14284E]" aria-hidden="true"><Banknote size={23} strokeWidth={1.7} /></span>
+<div>
+<h3 className="font-display text-sm font-semibold text-[#14284E]">Access to cash</h3>
+<p className="mt-1 !text-left text-sm leading-relaxed text-[#5B6885]">ATM facilities for everyday needs.</p>
+</div>
+</div> */}
+          {/* <div className="flex items-start gap-3">
+<span className="grid size-11 shrink-0 place-items-center rounded-xl bg-[#EFF4FC] text-[#14284E]" aria-hidden="true"><Landmark size={23} strokeWidth={1.7} /></span>
+<div>
+<h3 className="font-display text-sm font-semibold text-[#14284E]">Banking support</h3>
+<p className="mt-1 !text-left text-sm leading-relaxed text-[#5B6885]">Services from the banking provider.</p>
+</div>
+</div> */}
+          {/* </div> */}
         </div>
       </section>
 
       <section id="facilities-new-hostels" className="scroll-mt-24" aria-labelledby="facilities-new-hostels-title">
         <div className="grid w-full bg-[#e0f1ff] text-[#14284E] lg:min-h-[520px] lg:grid-cols-5">
-        <div className="order-1 flex min-w-0 flex-col justify-center px-4 py-6 sm:px-10 sm:py-8 lg:col-start-3 lg:col-span-3 lg:order-2 lg:py-10 lg:pl-12 lg:pr-[max(40px,calc((100vw_-_1200px)/2))] xl:pl-16">
+          <div className="order-1 flex min-w-0 flex-col justify-center px-4 py-6 sm:px-10 sm:py-8 lg:col-start-3 lg:col-span-3 lg:order-2 lg:py-10 lg:pl-12 lg:pr-[max(40px,calc((100vw_-_1200px)/2))] xl:pl-16">
             <h2 id="facilities-new-hostels-title" className={`${sectionHeadingClass} text-[#14284E]`}>Hostel Facilities <span className="text-[#FFB70F]">at SRMU</span></h2>
             <div className="my-5 h-[5px] w-16 bg-[#FFB70F] sm:my-6" aria-hidden="true" />
             <p className="w-full text-[15px] leading-[1.75] text-[#5B6885] sm:text-base">{facilitiesNewPageCopy.hostels.introduction}</p>
@@ -584,10 +585,9 @@ export default function FacilitiesNew() {
         </div>
 
         <div id="facilities-new-hostel-amenities" className="relative isolate overflow-hidden bg-[#EFF4FC] px-4 py-6 sm:px-6 sm:py-8 lg:py-10">
-          <picture className="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
-            <source media="(max-width: 639px)" srcSet={hostelAmenitiesMobileBackground} />
-            <img src={hostelAmenitiesDesktopBackground} alt="" className="size-full object-cover object-center" />
-          </picture>
+          <img src={hostelAmenitiesMobileBackground} alt="" aria-hidden="true" className="pointer-events-none absolute inset-0 z-0 size-full object-cover object-center" />
+          <img src={hostelAmenitiesStudentsImage} alt="" aria-hidden="true" className="pointer-events-none absolute left-8 top-1/2 z-[1] hidden aspect-[4/3] w-[clamp(140px,15vw,280px)] -translate-y-1/2 -rotate-3 border-[8px] border-white object-cover shadow-xl 2xl:block" />
+          <img src={hostelAmenitiesRoomImage} alt="" aria-hidden="true" className="pointer-events-none absolute right-8 top-1/2 z-[1] hidden aspect-[4/3] w-[clamp(140px,15vw,280px)] -translate-y-1/2 rotate-3 border-[8px] border-white object-cover shadow-xl 2xl:block" />
           <div
             className={`${containerClass} relative z-10 rounded-2xl bg-[#EFF4FC]/90 p-4 backdrop-blur-sm sm:p-6`}
             style={{
@@ -619,24 +619,24 @@ export default function FacilitiesNew() {
       </section>
 
       {/* <section id="facilities-new-residential-committees" className="scroll-mt-24 bg-[#14284E] px-6 py-14 text-white sm:py-16 lg:py-[68px]" aria-labelledby="facilities-new-committees-title">
-        <div className={containerClass}>
-          <h2 id="facilities-new-committees-title" className="font-display text-lg font-semibold capitalize text-white sm:text-xl">Hostel management and student committees</h2>
-          <p className="mt-1 max-w-[80ch] text-[15px] leading-[1.75] text-[#AEBBD8] sm:text-base">SRMU's hostel administration includes a chief warden, wardens, and supporting residential staff. The university also describes student participation through committees that support hostel administration and resident engagement.</p>
-          <ul className="mt-5 flex list-none flex-wrap gap-x-6 gap-y-2 p-0 text-[15px] font-semibold leading-6 text-white">
-            {hostelCommittees.map((committee) => <li key={committee} className="flex items-center gap-2 before:size-[7px] before:shrink-0 before:rounded-full before:bg-[#FFB70F] before:content-['']">{committee}</li>)}
-          </ul>
-          <div id="facilities-new-outings" className="mt-11 grid gap-8 lg:grid-cols-2 lg:gap-16">
-            <article className="border-t-[3px] border-[#FFB70F] pt-5">
-              <h3 className="font-display text-base font-semibold">Hostel transport for residents</h3>
-              <p className="mt-1 text-[15px] leading-[1.85] text-[#AEBBD8]">{facilitiesNewPageCopy.hostels.outings}</p>
-            </article>
-            <article id="facilities-new-hostel-fees" className="border-t-[3px] border-[#FFB70F] pt-5">
-              <h3 className="font-display text-base font-semibold">Hostel fees and admission</h3>
-              <p className="mt-1 text-[15px] leading-[1.85] text-[#AEBBD8]">{facilitiesNewPageCopy.hostels.fees}</p>
-            </article>
-          </div>
-        </div>
-      </section> */}
+<div className={containerClass}>
+<h2 id="facilities-new-committees-title" className="font-display text-lg font-semibold capitalize text-white sm:text-xl">Hostel management and student committees</h2>
+<p className="mt-1 max-w-[80ch] text-[15px] leading-[1.75] text-[#AEBBD8] sm:text-base">SRMU's hostel administration includes a chief warden, wardens, and supporting residential staff. The university also describes student participation through committees that support hostel administration and resident engagement.</p>
+<ul className="mt-5 flex list-none flex-wrap gap-x-6 gap-y-2 p-0 text-[15px] font-semibold leading-6 text-white">
+{hostelCommittees.map((committee) => <li key={committee} className="flex items-center gap-2 before:size-[7px] before:shrink-0 before:rounded-full before:bg-[#FFB70F] before:content-['']">{committee}</li>)}
+</ul>
+<div id="facilities-new-outings" className="mt-11 grid gap-8 lg:grid-cols-2 lg:gap-16">
+<article className="border-t-[3px] border-[#FFB70F] pt-5">
+<h3 className="font-display text-base font-semibold">Hostel transport for residents</h3>
+<p className="mt-1 text-[15px] leading-[1.85] text-[#AEBBD8]">{facilitiesNewPageCopy.hostels.outings}</p>
+</article>
+<article id="facilities-new-hostel-fees" className="border-t-[3px] border-[#FFB70F] pt-5">
+<h3 className="font-display text-base font-semibold">Hostel fees and admission</h3>
+<p className="mt-1 text-[15px] leading-[1.85] text-[#AEBBD8]">{facilitiesNewPageCopy.hostels.fees}</p>
+</article>
+</div>
+</div>
+</section> */}
 
       <FacilitiesNewDining images={diningImages} description={facilitiesNewPageCopy.dining} />
 
@@ -651,7 +651,7 @@ export default function FacilitiesNew() {
           <div className="mt-8 grid max-w-[900px] grid-cols-2 sm:grid-cols-4">
             {campusLifeHighlights.map(({ label, icon: Icon }) => <div key={label} className="flex flex-col items-start gap-3 px-3 py-4"><span className="grid size-14 place-items-center rounded-full bg-[#14284E] text-white sm:size-16"><Icon size={28} strokeWidth={1.8} aria-hidden="true" /></span><span className="max-w-[130px] text-sm font-semibold text-[#14284E]">{label}</span></div>)}
           </div>
-            <a className="mt-7 inline-flex h-12 w-[260px] max-w-full items-center justify-center gap-2 rounded-full border-2 border-[#14284E] bg-[#14284E] px-4 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-[#22407A] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#14284E]" href="#facilities-new-overview">Explore campus <ArrowRight size={18} aria-hidden="true" /></a>
+          <a className="mt-7 inline-flex h-12 w-[260px] max-w-full items-center justify-center gap-2 rounded-full border-2 border-[#14284E] bg-[#14284E] px-4 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-[#22407A] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#14284E]" href="#facilities-new-overview">Explore campus <ArrowRight size={18} aria-hidden="true" /></a>
         </div>
       </section>
     </div>
