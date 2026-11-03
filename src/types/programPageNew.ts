@@ -79,7 +79,9 @@ export interface IndustryCardNew {
   paragraphs: string[];
   /** Optional image URL (used by featured card) */
   imageUrl?: string;
-  icon?: "cpu" | "lock" | "shield" | "code" | "code2" | "compass" | "settings" | "wrench" | "design" | "energy" | "factory" | "car";
+  /** Short label displayed below the card icon */
+  iconLabel?: string;
+  icon?: "cpu" | "brain" | "lock" | "shield" | "code" | "code2" | "compass" | "settings" | "wrench" | "design" | "energy" | "factory" | "car";
 }
 
 export interface IndustryExposureDataNew {

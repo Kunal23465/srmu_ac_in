@@ -7,11 +7,15 @@ import curriculumStyles from "./CyberSecurityCurriculum.module.css";
 import layoutStyles from "./ProgramPageLayout.module.css";
 import {
     ArrowLeft, ArrowRight, Download, PhoneCall, Cpu, Lock, Code2, Shield, Fingerprint, Landmark, Bug,
+    BrainCircuit, ChartNoAxesColumnIncreasing, Cloud, Database, Sparkles,
     ChevronDown, ChevronUp, Settings, Wrench, PenTool, Zap, Factory, Car
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import ltLogo from "../../assets/new-home/l-t.webp";
 import cyberSecurityLaptop from "../../assets/images/new-information-system/Gemini_Generated_Image_l8pzsel8pzsel8pz-Photoroom.png";
+import dataScienceDashboard from "../../assets/images/data-science-ai-ml-new-page/neon-data-science-dashboard-ecosystem.png";
+import mechanicalCadArtwork from "../../assets/images/new-mechnical-program/industrial-cad-engineering-toolkit.png";
+import semiconductorDesignWorkbench from "../../assets/images/semiconductor-new/neon-semiconductor-design-workbench.png";
 import type { ProgramPageDataNew } from "../../types/programPageNew";
 import DepartmentPlacements, { defaultRecruiterLogos } from "../../components/academics/departmentOfComputerScienceAndEngineeringNew/DepartmentPlacements";
 import DepartmentScholarships from "../../components/academics/departmentOfComputerScienceAndEngineeringNew/DepartmentScholarships";
@@ -22,6 +26,7 @@ import DepartmentScholarships from "../../components/academics/departmentOfCompu
 const CardIcon = ({ icon }: { icon?: string }) => {
     const cls = "w-7 h-7 text-[#38bdf8]";
     if (icon === "lock") return <Lock className="w-full h-full" strokeWidth={1} />;
+    if (icon === "brain") return <BrainCircuit className={cls} />;
     if (icon === "shield") return <Shield className={cls} />;
     if (icon === "code") return <Code2 className={cls} />;
     if (icon === "settings") return <Settings className={cls} />;
@@ -53,6 +58,11 @@ const CustomerSupportIcon = ({ className }: { className?: string }) => (
     </svg>
 );
 
+const cyberBenefitsIcons = [Shield, Lock, Code2, Fingerprint, Landmark, Cpu, Bug];
+const dataScienceBenefitsIcons = [ChartNoAxesColumnIncreasing, BrainCircuit, Cpu, Database, Code2, Sparkles, Cloud];
+const mechanicalBenefitsIcons = [PenTool, Factory, PenTool, Factory, Settings, Cpu, Zap, Settings, Shield, Lock, Wrench, Settings];
+const semiconductorBenefitsIcons = [Cpu, Code2, Cpu, Code2, Cloud, Settings, Cpu, ChartNoAxesColumnIncreasing, Fingerprint, Database];
+
 // ================================================================
 // ProgramPageTemplateNew — main reusable template
 // All sections rendered from the `data` prop.
@@ -64,6 +74,42 @@ interface ProgramPageTemplateNewProps {
 const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data }) => {
     const { heroBanner, whyStudy, ltBenefits, industryExposure, placement, labs, yearJourney, fee, poPsoPlo, careerOpportunities, programComparison } = data;
     const isCyberSecurityPage = heroBanner.specialization.toLowerCase().includes("cyber security");
+    const isDataSciencePage = heroBanner.specialization.toLowerCase().includes("data science");
+    const isMechanicalPage = heroBanner.specialization.toLowerCase().includes("mechanical");
+    const isSemiconductorPage = heroBanner.specialization.toLowerCase().includes("semiconductor");
+    const hasLtBenefitsDesign = isCyberSecurityPage || isDataSciencePage || isMechanicalPage || isSemiconductorPage;
+    const usesMatchedSectionSizing = isCyberSecurityPage || isDataSciencePage || isMechanicalPage || isSemiconductorPage;
+    const usesGridDomains = isDataSciencePage || isMechanicalPage || isSemiconductorPage;
+    const usesCyberSecurityTextLayout = isCyberSecurityPage || isDataSciencePage;
+    const careerDescriptionCutoffPhrase = isMechanicalPage ? "infrastructure." : isSemiconductorPage ? "data centers." : "informed decisions.";
+    const careerDescriptionCutoff = careerOpportunities.description.indexOf(careerDescriptionCutoffPhrase);
+    const careerDescriptionPreview = careerDescriptionCutoff >= 0
+        ? careerOpportunities.description.slice(0, careerDescriptionCutoff + careerDescriptionCutoffPhrase.length)
+        : careerOpportunities.description;
+    const careerDescriptionRemainder = careerDescriptionCutoff >= 0
+        ? careerOpportunities.description.slice(careerDescriptionCutoff + careerDescriptionCutoffPhrase.length)
+        : "";
+    const curriculumDescriptionCutoffPhrase = isSemiconductorPage ? "learning." : "methodologies.";
+    const curriculumDescriptionCutoff = labs.curriculumDescription.indexOf(curriculumDescriptionCutoffPhrase);
+    const curriculumDescriptionPreview = curriculumDescriptionCutoff >= 0
+        ? labs.curriculumDescription.slice(0, curriculumDescriptionCutoff + curriculumDescriptionCutoffPhrase.length)
+        : labs.curriculumDescription;
+    const curriculumDescriptionRemainder = curriculumDescriptionCutoff >= 0
+        ? labs.curriculumDescription.slice(curriculumDescriptionCutoff + curriculumDescriptionCutoffPhrase.length)
+        : "";
+    const labsIntroCutoff = labs.introParagraph.indexOf(curriculumDescriptionCutoffPhrase);
+    const labsIntroPreview = labsIntroCutoff >= 0
+        ? labs.introParagraph.slice(0, labsIntroCutoff + curriculumDescriptionCutoffPhrase.length)
+        : labs.introParagraph;
+    const labsIntroRemainder = labsIntroCutoff >= 0
+        ? labs.introParagraph.slice(labsIntroCutoff + curriculumDescriptionCutoffPhrase.length)
+        : "";
+    const dataScienceFirstParagraph = whyStudy.paragraphs[0] ?? "";
+    const whyStudyPreviewPhrase = "generative AI,";
+    const whyStudyPreviewCutoff = dataScienceFirstParagraph.indexOf(whyStudyPreviewPhrase);
+    const whyStudyMobilePreview = whyStudyPreviewCutoff >= 0
+        ? dataScienceFirstParagraph.slice(0, whyStudyPreviewCutoff + whyStudyPreviewPhrase.length - 1)
+        : dataScienceFirstParagraph;
     const buttonClasses = (classes: string) => isCyberSecurityPage
         ? classes.split(/\s+/).filter((name) => !name.startsWith("hover:") && !name.startsWith("group-hover:")).join(" ")
         : classes;
@@ -84,19 +130,28 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
     const [activeTab, setActiveTab] = useState("year1");
     const [openSection, setOpenSection] = useState<string | null>(null);
     const [rm, setRm] = useState<Record<string, boolean>>({});
+    const [showAllIndustryCards, setShowAllIndustryCards] = useState(false);
     const toggleRm = (k: string) => setRm((p) => ({ ...p, [k]: !p[k] }));
     const toggleSection = (section: string) => setOpenSection((cur) => (cur === section ? null : section));
+    const collapsedIndustryCardCount = isMechanicalPage ? 4 : industryExposure.secondaryCards.length;
+    const visibleIndustryCards = showAllIndustryCards
+        ? industryExposure.secondaryCards
+        : industryExposure.secondaryCards.slice(0, collapsedIndustryCardCount);
 
     const yearKeys = ["year1", "year2", "year3", "year4"] as const;
     const yearDataMap = { year1: yearJourney.year1, year2: yearJourney.year2, year3: yearJourney.year3, year4: yearJourney.year4 };
 
     return (
         <div className="program-page-new text-[#14284E] bg-white antialiased">
-            <main className={isCyberSecurityPage ? layoutStyles.cyberSecurity : undefined}>
+            <main className={[usesMatchedSectionSizing && layoutStyles.matchedSectionSizing, (isMechanicalPage || isSemiconductorPage) && layoutStyles.responsiveTextAlignment].filter(Boolean).join(" ") || undefined}>
 
                 {/* ===== HERO BANNER ===== */}
-                <section className={`relative w-full overflow-hidden flex items-center sm:pt-[78px] sm:pb-8 bg-[#071329] ${isCyberSecurityPage ? "md:min-h-[504px] md:pt-24 md:pb-14" : "md:min-h-[720px] md:pt-36 md:pb-20"}`}>
-                    <img src={heroBanner.mobileBannerUrl} alt={`${heroBanner.specialization} Banner`} className={`w-full block sm:hidden relative z-0 ${heroBanner.specialization.includes('Data Science') ? 'h-[135vw] object-fill' : 'h-auto'}`} />
+                <section className="relative w-full overflow-hidden flex items-center sm:pt-[78px] sm:pb-8 md:min-h-[504px] md:pt-24 md:pb-14 bg-[#071329]">
+                    <img
+                        src={heroBanner.mobileBannerUrl}
+                        alt={`${heroBanner.specialization} Banner`}
+                        className={`w-full block sm:hidden relative z-0 ${isDataSciencePage ? "h-[125vw] object-fill" : "h-auto"}`}
+                    />
                     <img src={heroBanner.desktopBannerUrl} alt={`${heroBanner.specialization} Banner`} className="absolute inset-0 w-full h-full object-cover z-0 hidden sm:block" />
                     <div className="absolute inset-0 bg-gradient-to-r from-[#071329]/15 via-[#091a38]/5 to-transparent z-0"></div>
                     <div className="absolute inset-0 bg-[radial-gradient(#38bdf820_1px,transparent_1px)] [background-size:28px_28px] pointer-events-none opacity-50 z-0"></div>
@@ -166,7 +221,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                                     <option value="">City</option><option>Lucknow</option><option>Other</option>
                                 </select>
                             </div>
-                            <p className="text-[10px] text-gray-500 flex items-start gap-1.5 text-justify">
+                            <p className={`text-[10px] text-gray-500 flex items-start gap-1.5 ${usesCyberSecurityTextLayout ? "text-left sm:text-justify" : "text-justify"}`}>
                                 <input type="checkbox" defaultChecked className="mt-0.5 shrink-0" />
                                 I authorise SRMU and its representatives to Call, SMS, Email or WhatsApp me regarding admissions and programmes.
                             </p>
@@ -185,10 +240,10 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                         </div>
                         <div className="relative bg-[#FFFBEB] sm:bg-white border border-[#ffb703] sm:border-l-4 sm:border-l-[#ffb703] sm:border-t-[#ffb703] sm:border-b-[#ffb703] sm:border-r-[#ffb703] rounded-2xl p-7 sm:p-8 text-[14px] leading-5 sm:text-[17px] sm:leading-normal text-[#14284E] font-semibold italic mb-4 sm:mb-8">
                             <span className="absolute top-4 left-7 sm:hidden text-[#ffb703] text-[30px] not-italic font-black leading-none">"</span>
-                            <div className={`${!isCyberSecurityPage && !rm["quote"] ? "line-clamp-2 sm:line-clamp-none" : ""} ${isCyberSecurityPage ? "text-left sm:text-justify" : ""}`}>
+                            <div className={`${!isCyberSecurityPage && !isDataSciencePage && !isMechanicalPage && !isSemiconductorPage && !rm["quote"] ? "line-clamp-2 sm:line-clamp-none" : ""} ${usesCyberSecurityTextLayout ? "text-left sm:text-justify" : ""}`}>
                                 <span className="hidden sm:inline">"</span>{whyStudy.quote.replace(/^[""]/, "").replace(/[""]$/, "")}
                             </div>
-                            {!isCyberSecurityPage && <button className="rm-btn sm:hidden mt-1.5 !mb-0" onClick={() => toggleRm("quote")}>{rm["quote"] ? "Read Less" : "Read More"}</button>}
+                            {!isCyberSecurityPage && !isDataSciencePage && !isMechanicalPage && !isSemiconductorPage && <button className="rm-btn sm:hidden mt-1.5 !mb-0" onClick={() => toggleRm("quote")}>{rm["quote"] ? "Read Less" : "Read More"}</button>}
                         </div>
                         <div className="grid md:grid-cols-[1.2fr_0.8fr] gap-8 items-center my-8">
                             <div className="space-y-4">
@@ -207,6 +262,67 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                                             })}
                                         </div>
                                         <button type="button" className="rm-btn sm:hidden" aria-expanded={!!rm["whyStudyDetails"]} aria-controls="cyber-why-study-paragraphs" onClick={() => toggleRm("whyStudyDetails")}>
+                                            {rm["whyStudyDetails"] ? "Read Less" : "Read More"}
+                                        </button>
+                                    </div>
+                                ) : isDataSciencePage ? (
+                                    <div>
+                                        <div id="data-science-why-study-paragraphs" className="flex flex-col gap-4">
+                                            {whyStudy.paragraphs.map((p, i) => (
+                                                <p
+                                                    key={i}
+                                                    className={`text-[#4B5A72] text-[15.5px] leading-relaxed text-left sm:text-justify ${i > 0 && !rm["whyStudyDetails"] ? "hidden sm:block" : ""}`}
+                                                >
+                                                    {isDataSciencePage && i === 0 ? (
+                                                        <>
+                                                            <span className="sm:hidden">{rm["whyStudyDetails"] ? p.replace(whyStudyPreviewPhrase, whyStudyPreviewPhrase.slice(0, -1)) : whyStudyMobilePreview}</span>
+                                                            <span className="hidden sm:inline">{p}</span>
+                                                        </>
+                                                    ) : p}
+                                                </p>
+                                            ))}
+                                        </div>
+                                        <button
+                                            type="button"
+                                            className="rm-btn sm:hidden"
+                                            aria-expanded={!!rm["whyStudyDetails"]}
+                                            aria-controls="data-science-why-study-paragraphs"
+                                            onClick={() => toggleRm("whyStudyDetails")}
+                                        >
+                                            {rm["whyStudyDetails"] ? "Read Less" : "Read More"}
+                                        </button>
+                                    </div>
+                                ) : isSemiconductorPage ? (
+                                    <div>
+                                        <div id="semiconductor-why-study-paragraphs" className="flex flex-col gap-4">
+                                            {whyStudy.paragraphs.map((p, i) => (
+                                                <p key={i} className={`text-[#4B5A72] text-[15.5px] leading-relaxed text-justify ${i > 0 && !rm["whyStudyDetails"] ? "hidden sm:block" : ""}`}>{p}</p>
+                                            ))}
+                                        </div>
+                                        <button
+                                            type="button"
+                                            className="rm-btn sm:hidden"
+                                            aria-expanded={!!rm["whyStudyDetails"]}
+                                            aria-controls="semiconductor-why-study-paragraphs"
+                                            onClick={() => toggleRm("whyStudyDetails")}
+                                        >
+                                            {rm["whyStudyDetails"] ? "Read Less" : "Read More"}
+                                        </button>
+                                    </div>
+                                ) : isMechanicalPage ? (
+                                    <div>
+                                        <div id="mechanical-why-study-paragraphs" className="flex flex-col gap-4">
+                                            {whyStudy.paragraphs.map((p, i) => (
+                                                <p key={i} className={`text-[#4B5A72] text-[15.5px] leading-relaxed text-justify ${i > 0 && !rm["whyStudyDetails"] ? "hidden sm:block" : ""}`}>{p}</p>
+                                            ))}
+                                        </div>
+                                        <button
+                                            type="button"
+                                            className="rm-btn sm:hidden"
+                                            aria-expanded={!!rm["whyStudyDetails"]}
+                                            aria-controls="mechanical-why-study-paragraphs"
+                                            onClick={() => toggleRm("whyStudyDetails")}
+                                        >
                                             {rm["whyStudyDetails"] ? "Read Less" : "Read More"}
                                         </button>
                                     </div>
@@ -230,7 +346,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                                 <div key={i} className="bg-white border border-[#DCE6F2] hover:border-[#1B4F91]/40 rounded-2xl p-3 sm:p-7 shadow-[0_4px_18px_rgba(15,31,61,0.04)] hover:shadow-[0_12px_30px_rgba(15,31,61,0.08)] hover:-translate-y-1.5 transition-all duration-300 group">
                                     <span className="block sm:hidden w-2 h-2 rounded-full bg-[#ffb703] mb-2"></span>
                                     <h3 className="text-[13px] sm:text-[16.5px] font-bold font-display text-[#14284E] group-hover:text-[#1B4F91] transition-colors mb-2.5">{card.title}</h3>
-                                    <p className={`text-[12.5px] sm:text-[14px] text-[#4B5A72] leading-5 sm:leading-relaxed ${isCyberSecurityPage ? "text-left sm:text-justify" : "text-justify"}`}>{card.description}</p>
+                                    <p className={`text-[12.5px] sm:text-[14px] text-[#4B5A72] leading-5 sm:leading-relaxed ${usesCyberSecurityTextLayout ? "text-left sm:text-justify" : "text-justify"}`}>{card.description}</p>
                                 </div>
                             ))}
                         </div>
@@ -239,10 +355,10 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
 
                 {/* ===== L&T BENEFITS ===== */}
                 <section
-                    className={isCyberSecurityPage ? benefitsStyles.section : "relative isolate overflow-hidden py-8 sm:py-10 md:py-12 px-4 sm:px-6 bg-white"}
-                    data-expanded={isCyberSecurityPage ? !!rm["benefits"] : undefined}
+                    className={hasLtBenefitsDesign ? benefitsStyles.section : "relative isolate overflow-hidden py-8 sm:py-10 md:py-12 px-4 sm:px-6 bg-white"}
+                    data-expanded={hasLtBenefitsDesign ? !!rm["benefits"] : undefined}
                 >
-                    {isCyberSecurityPage && (
+                    {hasLtBenefitsDesign && (
                         <>
                             <div aria-hidden="true" className={benefitsStyles.halo} />
                             <div aria-hidden="true" className={benefitsStyles.dots} />
@@ -258,39 +374,68 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                             </svg>
                         </>
                     )}
-                    <div className={`${isCyberSecurityPage ? benefitsStyles.container : Classes["container"]}`}>
-                        {isCyberSecurityPage ? (
+                    <div className={`${hasLtBenefitsDesign ? benefitsStyles.container : Classes["container"]}`}>
+                        {hasLtBenefitsDesign ? (
                             <>
-                                <div id="cyber-benefits-content" className={benefitsStyles.layout}>
+                                <div id="lt-benefits-content" className={benefitsStyles.layout}>
                                     <div className="min-w-0">
                                         <header className={benefitsStyles.header}>
                                             <span className={benefitsStyles.accent} />
-                                            <h2 className={benefitsStyles.title}>
+                                            <h2 className={`${benefitsStyles.title} ${isMechanicalPage ? benefitsStyles.mechanicalTitle : ""}`}>
                                                 <span>How Does</span>
                                                 <img src={ltLogo} alt="L&amp;T EduTech" className={benefitsStyles.logo} />
-                                                <span className={benefitsStyles.titleLine}>Benefit B.Tech CSE Cyber Security</span>
-                                                <span className={benefitsStyles.highlight}>SRMU Students?</span>
+                                                {isDataSciencePage ? (
+                                                    <span className={benefitsStyles.titleLine}>
+                                                        Benefit B.Tech CSE {heroBanner.specialization} <span className={benefitsStyles.highlight}>SRMU Students?</span>
+                                                    </span>
+                                                ) : isMechanicalPage ? (
+                                                    <>
+                                                        <span className={benefitsStyles.titleLine}>Benefit {heroBanner.degreeTitle}</span>
+                                                        <span className={benefitsStyles.highlight}>SRMU Students?</span>
+                                                    </>
+                                                ) : isSemiconductorPage ? (
+                                                    <>
+                                                        <span className={benefitsStyles.titleLine}>Benefit B.Tech ECE ({heroBanner.specialization})</span>
+                                                        <span className={benefitsStyles.highlight}>SRMU Students?</span>
+                                                    </>
+                                                ) : (
+                                                    <>
+                                                        <span className={benefitsStyles.titleLine}>Benefit B.Tech CSE {heroBanner.specialization}</span>
+                                                        <span className={benefitsStyles.highlight}>SRMU Students?</span>
+                                                    </>
+                                                )}
                                             </h2>
                                         </header>
 
                                         <p className={benefitsStyles.intro}>{ltBenefits.introText}</p>
 
-                                        <div className={benefitsStyles.domains}>
-                                            {ltBenefits.domainRows.map((row, ri) => (
-                                                <div key={ri} className={benefitsStyles.domainRow}>
-                                                    {row.tags.map((tag, ti) => {
-                                                        const DomainIcon = [Shield, Lock, Code2, Fingerprint, Landmark, Cpu, Bug][(ri * 4 + ti) % 7];
-                                                        return (
-                                                            <React.Fragment key={tag}>
-                                                                <span className={benefitsStyles.domain}>
+                                        <div className={`${benefitsStyles.domains} ${usesGridDomains ? benefitsStyles.gridDomains : ""}`}>
+                                            {usesGridDomains ? (
+                                                ltBenefits.domainRows.flatMap((row) => row.tags).map((tag, index) => {
+                                                    const iconSet = isMechanicalPage ? mechanicalBenefitsIcons : isSemiconductorPage ? semiconductorBenefitsIcons : dataScienceBenefitsIcons;
+                                                    const DomainIcon = iconSet[index % iconSet.length];
+                                                    return (
+                                                        <span key={tag} className={benefitsStyles.domain}>
+                                                            <span className={benefitsStyles.domainIcon}><DomainIcon size={20} strokeWidth={2.2} /></span>
+                                                            <span>{tag}</span>
+                                                        </span>
+                                                    );
+                                                })
+                                            ) : (
+                                                ltBenefits.domainRows.map((row, ri) => (
+                                                    <div key={ri} className={benefitsStyles.domainRow}>
+                                                        {row.tags.map((tag, ti) => {
+                                                            const DomainIcon = cyberBenefitsIcons[(ri * 4 + ti) % cyberBenefitsIcons.length];
+                                                            return (
+                                                                <span key={tag} className={benefitsStyles.domain}>
                                                                     <span className={benefitsStyles.domainIcon}><DomainIcon size={20} strokeWidth={2.2} /></span>
                                                                     <span>{tag}</span>
                                                                 </span>
-                                                            </React.Fragment>
-                                                        );
-                                                    })}
-                                                </div>
-                                            ))}
+                                                            );
+                                                        })}
+                                                    </div>
+                                                ))
+                                            )}
                                         </div>
 
                                         <p className={benefitsStyles.followUp}>{ltBenefits.followUpText}</p>
@@ -315,10 +460,10 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                                         </div>
                                     </div>
 
-                                    <div className={benefitsStyles.artwork}>
+                                    <div className={`${benefitsStyles.artwork} ${isMechanicalPage ? benefitsStyles.mechanicalArtwork : ""}`}>
                                         <img
-                                            src={cyberSecurityLaptop}
-                                            alt="Laptop protected by a digital shield, with cyber security tools and cloud connections"
+                                            src={isDataSciencePage ? dataScienceDashboard : isMechanicalPage ? mechanicalCadArtwork : isSemiconductorPage ? semiconductorDesignWorkbench : cyberSecurityLaptop}
+                                            alt={isDataSciencePage ? "Data science dashboard illustration with analytics, AI, and a laptop" : isMechanicalPage ? "Mechanical engineering CAD tools, gears, and an industrial robotic arm" : isSemiconductorPage ? "Neon semiconductor design workbench with chip layout and circuit design" : "Laptop protected by a digital shield, with cyber security tools and cloud connections"}
                                             className={benefitsStyles.image}
                                             loading="lazy"
                                             decoding="async"
@@ -329,7 +474,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                                     type="button"
                                     className={benefitsStyles.readMore}
                                     aria-expanded={!!rm["benefits"]}
-                                    aria-controls="cyber-benefits-content"
+                                    aria-controls="lt-benefits-content"
                                     onClick={() => toggleRm("benefits")}
                                 >
                                     {rm["benefits"] ? "Read Less" : "Read More"}
@@ -379,15 +524,15 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                 {/* ===== PROGRAMME OVERVIEW TABLE ===== */}
                 <section id="overview" className="relative pt-8 md:pt-10 pb-0 px-4 sm:px-6 bg-cover bg-center bg-no-repeat scroll-mt-24" style={{ backgroundImage: `url('${ltBenefits.tableBackgroundImageUrl || '/back2.png'}')` }}>
                     <div className={`relative z-10 ${Classes["container"]}`}>
-                        <div className={`w-full mb-8 ${isCyberSecurityPage ? "text-left sm:text-center" : "text-center"} max-w-4xl mx-auto`}>
-                            <h2 className={`text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3.5 ${isCyberSecurityPage ? "max-sm:text-left" : ""}`}>
+                        <div className={`w-full mb-8 ${usesCyberSecurityTextLayout ? "text-left sm:text-center" : "text-center"} max-w-4xl mx-auto`}>
+                            <h2 className={`text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3.5 ${usesCyberSecurityTextLayout ? "max-sm:text-left" : ""}`}>
                                 Industry-Integrated Learning <span className="text-[#ffb703]">with L&amp;T</span>
                             </h2>
                             <div>
-                                <p className={`text-[16px] text-[#4B5A72] leading-relaxed ${isCyberSecurityPage ? "text-left sm:text-justify" : "text-justify"} ${!isCyberSecurityPage && !rm["lt1"] ? "rm-clamp" : ""}`}>
+                                <p className={`text-[16px] text-[#4B5A72] leading-relaxed ${usesCyberSecurityTextLayout ? "text-left sm:text-justify" : "text-justify"} ${!isCyberSecurityPage && !isDataSciencePage && !isMechanicalPage && !rm["lt1"] ? "rm-clamp" : ""}`}>
                                     The program incorporates industry exposure through L&amp;T, helping students understand how concepts are applied in professional and technology-driven environments.
                                 </p>
-                                {!isCyberSecurityPage && <button className="rm-btn mx-auto mt-2" onClick={() => toggleRm("lt1")}>{rm["lt1"] ? "Read Less" : "Read More"}</button>}
+                                {!isCyberSecurityPage && !isDataSciencePage && !isMechanicalPage && <button className="rm-btn mx-auto mt-2" onClick={() => toggleRm("lt1")}>{rm["lt1"] ? "Read Less" : "Read More"}</button>}
                             </div>
                         </div>
                         <div className="bg-white border border-[#DCE6F2] rounded-xl sm:rounded-3xl overflow-hidden shadow-[0_6px_25px_rgba(15,31,61,0.05)] max-w-4xl mx-auto">
@@ -418,11 +563,11 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                             <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3.5">
                                 {industryExposure.sectionTitle} <span className="text-[#ffb703]">{industryExposure.sectionTitleHighlight}</span>
                             </h2>
-                            <p className={`text-[16px] text-[#4B5A72] leading-relaxed ${isCyberSecurityPage ? "text-left sm:text-justify" : "text-justify"} ${!isCyberSecurityPage && !rm["indExp3"] ? "rm-clamp" : ""}`}>{industryExposure.introParagraph}</p>
-                            {!isCyberSecurityPage && <button className="rm-btn" onClick={() => toggleRm("indExp3")}>{rm["indExp3"] ? "Read Less" : "Read More"}</button>}
-                            <h3 className={`${layoutStyles.sectionTitle} text-[19px] font-bold font-display text-[#14284E] my-3`}>{industryExposure.expertSessionsHeading}</h3>
-                            <p className={`text-[15.5px] text-[#4B5A72] leading-relaxed ${isCyberSecurityPage ? "text-left sm:text-justify" : "text-justify"} ${!isCyberSecurityPage && !rm["indExp4"] ? "rm-clamp" : ""}`}>{industryExposure.expertSessionsParagraph}</p>
-                            {!isCyberSecurityPage && <button className="rm-btn" onClick={() => toggleRm("indExp4")}>{rm["indExp4"] ? "Read Less" : "Read More"}</button>}
+                            <p className={`text-[16px] text-[#4B5A72] leading-relaxed ${usesCyberSecurityTextLayout ? "text-left sm:text-justify" : "text-justify"} ${!isCyberSecurityPage && !isDataSciencePage && !isMechanicalPage && !isSemiconductorPage && !rm["indExp3"] ? "rm-clamp" : ""}`}>{industryExposure.introParagraph}</p>
+                            {!isCyberSecurityPage && !isDataSciencePage && !isMechanicalPage && !isSemiconductorPage && <button className="rm-btn" onClick={() => toggleRm("indExp3")}>{rm["indExp3"] ? "Read Less" : "Read More"}</button>}
+                            <h3 className={`${layoutStyles.sectionTitle} text-[19px] font-bold font-display text-[#14284E] my-3 ${isMechanicalPage ? "hidden sm:block" : ""}`}>{industryExposure.expertSessionsHeading}</h3>
+                            <p className={`text-[15.5px] text-[#4B5A72] leading-relaxed ${usesCyberSecurityTextLayout ? "text-left sm:text-justify" : "text-justify"} ${!isCyberSecurityPage && !isDataSciencePage && !isMechanicalPage && !isSemiconductorPage && !rm["indExp4"] ? "rm-clamp" : ""}`}>{industryExposure.expertSessionsParagraph}</p>
+                            {!isCyberSecurityPage && !isDataSciencePage && !isMechanicalPage && !isSemiconductorPage && <button className="rm-btn" onClick={() => toggleRm("indExp4")}>{rm["indExp4"] ? "Read Less" : "Read More"}</button>}
                         </div>
 
                         <div className="flex flex-col gap-5 mt-6">
@@ -447,22 +592,22 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                                         </div>
                                     )}
                                     <div className={!rm["featCard"] ? "rm-clamp" : ""}>
-                                        {industryExposure.featuredCard.paragraphs.map((p, i) => <p key={i} className={`text-[14.5px] text-[#4B5A72] leading-relaxed mb-3.5 ${isCyberSecurityPage ? "text-left sm:text-justify" : "text-justify"}`}>{p}</p>)}
+                                        {industryExposure.featuredCard.paragraphs.map((p, i) => <p key={i} className={`text-[14.5px] text-[#4B5A72] leading-relaxed mb-3.5 ${usesCyberSecurityTextLayout ? "text-left sm:text-justify" : "text-justify"}`}>{p}</p>)}
                                     </div>
                                     <button className="rm-btn !mt-2 self-start" onClick={() => toggleRm("featCard")}>{rm["featCard"] ? "Read Less" : "Read More"}</button>
                                 </div>
                             </div>
 
                             {/* Secondary cards */}
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                                {industryExposure.secondaryCards.map((card, ci) => (
+                            <div id="industry-exposure-cards" className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                {visibleIndustryCards.map((card, ci) => (
                                     <div key={ci} className="bg-white border border-[#DCE6F2] hover:border-[#1B4F91]/35 rounded-3xl overflow-hidden shadow-[0_4px_20px_rgba(15,31,61,0.04)] transition-all flex flex-col sm:flex-row">
                                         <div className="w-full sm:w-[140px] bg-[#071329] p-6 relative overflow-hidden flex flex-col items-center justify-center shrink-0">
                                             <div className="absolute inset-0 bg-[#38bdf8] opacity-20 bg-[radial-gradient(circle_at_center,rgba(56,189,248,0.4)_0%,transparent_70%)]"></div>
                                             <div className="relative z-10 w-14 h-14 flex items-center justify-center text-[#38bdf8] mb-2">
                                                 <CardIcon icon={card.icon} />
                                             </div>
-                                            <div className="text-white font-bold tracking-widest text-[11px] text-center relative z-10">{card.icon?.toUpperCase() || "AI"}</div>
+                                            <div className="text-white font-bold tracking-widest text-[11px] text-center relative z-10">{card.iconLabel || card.icon?.toUpperCase() || "AI"}</div>
                                         </div>
                                         <div className="p-5 flex flex-col flex-1">
                                             <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
@@ -473,14 +618,14 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                                                 <span className="text-[#14284E] font-bold">{card.presenter.split("·")[0]?.trim()}</span>{card.presenter.includes("·") ? ` · ${card.presenter.split("·").slice(1).join("·").trim()}` : ""}
                                             </div>
                                             <div className={!rm[`sec${ci}`] ? "rm-clamp text-[13.5px]" : "text-[13.5px]"}>
-                                                {card.paragraphs.map((p, i) => <p key={i} className={`text-[#4B5A72] leading-relaxed mb-2 ${isCyberSecurityPage ? "text-left sm:text-justify" : "text-justify"}`}>{p}</p>)}
+                                                {card.paragraphs.map((p, i) => <p key={i} className={`text-[#4B5A72] leading-relaxed mb-2 ${usesCyberSecurityTextLayout ? "text-left sm:text-justify" : "text-justify"}`}>{p}</p>)}
                                             </div>
                                             <button className="rm-btn !mt-2 self-start" onClick={() => toggleRm(`sec${ci}`)}>{rm[`sec${ci}`] ? "Read Less" : "Read More"}</button>
                                         </div>
                                     </div>
                                 ))}
                                 {/* Desktop button in empty slot for odd card count (Data Science) */}
-                                {industryExposure.secondaryCards.length % 2 !== 0 && (
+                                {visibleIndustryCards.length % 2 !== 0 && (
                                     <div className="hidden md:flex items-center justify-center h-full">
                                         <Link to={industryExposure.departmentUrl} target="_blank" className={buttonClasses("inline-flex items-center bg-[#ffb703] hover:bg-[#ffa000] text-[#14284E] font-semibold text-[14.5px] px-6 py-3 rounded-md transition-colors shadow-sm hover:-translate-y-0.5 uppercase")}>
                                             Know Your Department →
@@ -488,6 +633,23 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                                     </div>
                                 )}
                             </div>
+                            {isMechanicalPage && industryExposure.secondaryCards.length > collapsedIndustryCardCount && (
+                                <div className="flex flex-col items-center gap-2 pt-1">
+                                    <button
+                                        type="button"
+                                        aria-label={showAllIndustryCards ? "Show fewer industry experience cards" : "Show more industry experience cards"}
+                                        aria-expanded={showAllIndustryCards}
+                                        aria-controls="industry-exposure-cards"
+                                        onClick={() => setShowAllIndustryCards((isExpanded) => !isExpanded)}
+                                        className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-white bg-[#ffb703] text-[#14284E] shadow-[0_4px_14px_rgba(15,31,61,0.18)] transition-transform hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#14284E]"
+                                    >
+                                        <ChevronDown className={`h-6 w-6 transition-transform duration-300 ${showAllIndustryCards ? "rotate-180" : ""}`} />
+                                    </button>
+                                    <span className="text-xs font-semibold text-[#14284E]">
+                                        {showAllIndustryCards ? "Show fewer experiences" : "Show more experiences"}
+                                    </span>
+                                </div>
+                            )}
                         </div>
 
                         {/* Mobile/Default button (hidden on desktop if odd card count) */}
@@ -516,7 +678,9 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                                 <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.15] font-bold font-display text-[#14284E]">
                                     {labs.sectionTitle}<span className="text-[#ffb703]"> {labs.sectionTitleHighlight}</span>
                                 </h2>
-                                <p className="mt-4 text-[15px] leading-6 text-[#4B5A72] text-justify">{labs.introParagraph}</p>
+                                <p className={`mt-4 text-[15px] leading-6 text-[#4B5A72] ${usesCyberSecurityTextLayout ? "text-left sm:text-justify" : "text-justify"}`}>
+                                    {isMechanicalPage ? <>{labsIntroPreview}<span className="hidden sm:inline">{labsIntroRemainder}</span></> : labs.introParagraph}
+                                </p>
                             </div>
                         )}
 
@@ -606,7 +770,9 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                                             className="block w-full aspect-[9/16] max-h-[390px] object-cover"
                                         />
                                     </div>
-                                    <p className="text-[13px] leading-relaxed text-[#405570]">{labs.curriculumDescription}</p>
+                                    <p className="text-[13px] leading-relaxed text-[#405570]">
+                                        {isDataSciencePage || isSemiconductorPage ? <>{curriculumDescriptionPreview}<span className="hidden sm:inline">{curriculumDescriptionRemainder}</span></> : labs.curriculumDescription}
+                                    </p>
                                 </div>
                                 <div className="relative hidden sm:grid sm:grid-cols-[minmax(170px,0.7fr)_minmax(0,1.3fr)] lg:grid-cols-[250px_minmax(0,1fr)] items-center gap-5 sm:gap-7 lg:gap-10">
                                     <div className="w-full overflow-hidden rounded-2xl ring-1 ring-white/20 bg-black shadow-[0_16px_36px_rgba(0,0,0,0.38)]">
@@ -626,13 +792,18 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                                         />
                                     </div>
                                     <div className="py-1 sm:py-4 lg:py-8 text-left">
-                                        <h3 className="mt-3 text-[26px] lg:text-[34px] leading-tight font-bold font-display text-[#14284E] flex flex-wrap items-center gap-x-2">
-                                            {labs.curriculumSectionTitle.replace(/\\s+with L&T$/i, "")} <span className="text-[#ffb703]">with</span>
-                                            <img
-                                                src={ltLogo}
-                                                alt="L&T"
-                                                className="inline-block h-[36px] w-auto object-contain align-middle"
-                                            />
+                                        <h3 className={`mt-3 text-[26px] lg:text-[34px] leading-tight font-bold font-display text-[#14284E] ${isMechanicalPage ? "" : "flex flex-wrap items-center gap-x-2"}`}>
+                                            {isMechanicalPage ? (
+                                                <>
+                                                    <span className="block">{labs.curriculumSectionTitle.replace(/\s+Works$/i, "")}</span>
+                                                    <span className="flex items-center gap-x-2">Works <span className="text-[#ffb703]">with</span><img src={ltLogo} alt="L&T" className="inline-block h-[36px] w-auto object-contain align-middle" /></span>
+                                                </>
+                                            ) : (
+                                                <>
+                                                    {labs.curriculumSectionTitle.replace(/\\s+with L&T$/i, "")} <span className="text-[#ffb703]">with</span>
+                                                    <img src={ltLogo} alt="L&T" className="inline-block h-[36px] w-auto object-contain align-middle" />
+                                                </>
+                                            )}
                                         </h3>
                                         <p className="mt-2 sm:mt-4 text-[15px] leading-relaxed text-[#405570]">{labs.curriculumDescription}</p>
                                     </div>
@@ -708,7 +879,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                             <h2 className={`text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] ${isCyberSecurityPage ? "tracking-[-0.02em]" : ""}`}>
                                 Your Journey from Student to <span className={`text-[#ffb703] ${isCyberSecurityPage ? "whitespace-nowrap" : ""}`}>{heroBanner.specialization} Professional</span>
                             </h2>
-                            <p className={`mt-4 text-[15px] leading-6 text-[#4B5A72] ${isCyberSecurityPage ? "text-left sm:text-justify" : "text-justify"}`}>{yearJourney.introParagraph}</p>
+                            <p className={`mt-4 text-[15px] leading-6 text-[#4B5A72] ${usesCyberSecurityTextLayout ? "text-left sm:text-justify" : "text-justify"}`}>{yearJourney.introParagraph}</p>
                         </div>
 
                         {/* Desktop tab buttons */}
@@ -726,9 +897,9 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                                 const yd = yearDataMap[key];
                                 return (
                                     <div key={key}>
-                                        <button type="button" onClick={() => setActiveTab(activeTab === key ? "" : key)} className="w-full flex items-center justify-between rounded-xl border border-[#DCE6F2] bg-[#F6FAFE] px-3.5 py-3.5 text-left text-[13px] font-bold text-[#20283A]" aria-expanded={activeTab === key}>
-                                            <span className="font-normal text-[#5B667A]">Year {idx + 1}</span>
-                                            <span className="font-bold text-[#20283A]">{yd.title.replace(/^Year\s*\d+\s*:\s*/i, "")}</span>
+                                        <button type="button" onClick={() => setActiveTab(activeTab === key ? "" : key)} className="w-full flex items-center justify-between gap-3 rounded-xl border border-[#DCE6F2] bg-[#F6FAFE] px-3.5 py-3.5 text-left text-[13px] font-bold text-[#20283A]" aria-expanded={activeTab === key}>
+                                            <span className="shrink-0 whitespace-nowrap font-normal text-[#5B667A]">Year {idx + 1}</span>
+                                            <span className="min-w-0 flex-1 text-right font-bold leading-snug text-[#20283A]">{yd.title.replace(/^Year\s*\d+\s*[:—–-]\s*/i, "")}</span>
                                         </button>
                                         {activeTab === key && (
                                             <div className="pt-4 pb-4 space-y-4 text-[13px] text-[#5B667A]">
@@ -816,10 +987,10 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                                 Transparent <span className="text-[#ffb703]">Fee Structure</span>
                             </h2>
                             <div className="mt-4">
-                                <p className={`text-[15px] text-[#4B5A72] ${isCyberSecurityPage ? "leading-[1.5] sm:leading-7 text-left sm:text-justify" : "leading-7 text-justify"} ${!isCyberSecurityPage && !rm["fee1"] ? "rm-clamp" : ""}`}>
+                                <p className={`text-[15px] text-[#4B5A72] ${usesCyberSecurityTextLayout || isMechanicalPage || isSemiconductorPage ? "leading-[1.5] sm:leading-7 text-left sm:text-justify" : "leading-7 text-justify"} ${!isCyberSecurityPage && !isDataSciencePage && !isMechanicalPage && !isSemiconductorPage && !rm["fee1"] ? "rm-clamp" : ""}`}>
                                     A quality engineering education is an investment in your future — with industry-oriented learning, advanced laboratories, and placement support.
                                 </p>
-                                {!isCyberSecurityPage && <button className="rm-btn" onClick={() => toggleRm("fee1")}>{rm["fee1"] ? "Read Less" : "Read More"}</button>}
+                                {!isCyberSecurityPage && !isDataSciencePage && !isMechanicalPage && !isSemiconductorPage && <button className="rm-btn" onClick={() => toggleRm("fee1")}>{rm["fee1"] ? "Read Less" : "Read More"}</button>}
                             </div>
                         </div>
 
@@ -879,7 +1050,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                         </div>
 
                         <div className="mt-4">
-                            <p className={`text-[14.5px] leading-5 text-[#718096] ${isCyberSecurityPage ? "text-left sm:text-justify" : "text-justify"} ${!rm["feeNote"] ? "rm-clamp" : ""}`}>{fee.feeNote}</p>
+                            <p className={`text-[14.5px] leading-5 text-[#718096] ${usesCyberSecurityTextLayout ? "text-left sm:text-justify" : "text-justify"} ${!rm["feeNote"] ? "rm-clamp" : ""}`}>{fee.feeNote}</p>
                             <button className="rm-btn" onClick={() => toggleRm("feeNote")}>{rm["feeNote"] ? "Read Less" : "Read More"}</button>
                         </div>
                     </div>
@@ -927,8 +1098,10 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                         {/* Mobile layout */}
                         <div className="md:hidden flex flex-col gap-5 mb-2 sm:mb-6">
                             <div className="w-full">
-                                <p className={`text-[14.5px] leading-5 text-[#4B5A72] ${isCyberSecurityPage ? "text-left sm:text-justify" : "text-justify"} ${!isCyberSecurityPage && !rm["digSys"] ? "rm-clamp" : ""}`}>{careerOpportunities.description}</p>
-                                {!isCyberSecurityPage && (
+                                <p className={`text-[14.5px] leading-5 text-[#4B5A72] ${usesCyberSecurityTextLayout ? "text-left sm:text-justify" : "text-justify"} ${!isCyberSecurityPage && !isDataSciencePage && !isMechanicalPage && !isSemiconductorPage && !rm["digSys"] ? "rm-clamp" : ""}`}>
+                                    {isDataSciencePage || isSemiconductorPage ? <>{careerDescriptionPreview}<span className="hidden md:inline">{careerDescriptionRemainder}</span></> : isMechanicalPage && !rm["digSys"] ? careerDescriptionPreview : careerOpportunities.description}
+                                </p>
+                                {!isCyberSecurityPage && !isDataSciencePage && !isSemiconductorPage && (
                                 <div className="mt-4 flex flex-wrap items-center gap-4">
                                     <button className="rm-btn !mt-0" onClick={() => toggleRm("digSys")}>{rm["digSys"] ? "Read Less" : "Read More"}</button>
                                 </div>
@@ -947,7 +1120,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                                     <div key={i} className="shrink-0 w-[calc(50%-6px)] bg-white border border-[#DCE6F2] rounded-xl p-4 whitespace-normal">
                                         <h3 className="text-[13px] font-bold font-display text-[#14284E] mb-2 leading-snug">{item.title}</h3>
                                         <div className="text-[10px] uppercase tracking-[0.08em] text-[#0F4A85] font-semibold mb-1.5">{item.descriptionLabel ?? "Protects"}</div>
-                                        <p className={`text-[11.5px] leading-[1.5] text-[#4B5A72] ${isCyberSecurityPage ? "text-left sm:text-justify" : "text-justify"}`}>{item.description}</p>
+                                        <p className={`${isSemiconductorPage ? "text-[10.5px] leading-[1.4]" : "text-[11.5px] leading-[1.5]"} text-[#4B5A72] ${usesCyberSecurityTextLayout ? "text-left sm:text-justify" : "text-justify"}`}>{item.description}</p>
                                     </div>
                                 ))}
                             </div>
@@ -981,7 +1154,8 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                         </div>
 
                         {/* Career Role Cards */}
-                        {careerOpportunities.careerRoles && careerOpportunities.careerRoles.length > 0 && (
+                        {/* Temporarily hidden for Mechanical Engineering and Semiconductor Design. */}
+                        {!isDataSciencePage && !isMechanicalPage && !isSemiconductorPage && careerOpportunities.careerRoles && careerOpportunities.careerRoles.length > 0 && (
                             <div className="mt-8">
                                 <h3 className="text-[24px] sm:text-[28px] font-bold font-display text-[#14284E] mb-5">Career <span className="text-[#ffb703]">Roles</span></h3>
                                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
@@ -1014,7 +1188,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                                 <ArrowRight className="w-4 h-4 shrink-0" aria-hidden="true" />
                             </div>
                             <div className="overflow-x-auto scrollbar-hide">
-                                <table className="w-full text-justify border-collapse min-w-[600px]">
+                                <table className={`w-full ${isDataSciencePage || isMechanicalPage || isSemiconductorPage ? "text-left" : "text-justify"} border-collapse min-w-[600px]`}>
                                     <thead>
                                         <tr className="bg-[#14284E] text-white">
                                             {programComparison.headers.map((h, i) => (
@@ -1039,7 +1213,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
 
                         {/* Desktop comparison table */}
                         <div className="hidden sm:block mb-10 overflow-x-auto scrollbar-hide bg-white border border-[#DCE6F2] rounded-xl shadow-[0_4px_20px_rgba(15,31,61,0.03)]">
-                            <table className="w-full min-w-[800px] text-justify border-collapse">
+                            <table className={`w-full min-w-[800px] ${isDataSciencePage ? "text-left" : "text-justify"} border-collapse`}>
                                 <thead>
                                     <tr className="bg-[#F4F7FB] border-b border-[#DCE6F2] text-[#14284E]">
                                         {programComparison.headers.map((h, i) => (
@@ -1062,9 +1236,9 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                         {programComparison.chooseIfCards && programComparison.chooseIfCards.length > 0 && (
                             <div className="grid md:grid-cols-2 gap-4">
                                 {programComparison.chooseIfCards.map((card, ci) => (
-                                    <div key={ci} className={`${card.bgClass ?? "bg-white"} sm:bg-white border border-[#DCE6F2] rounded-xl p-5`}>
-                                        <h3 className="text-[14.5px] font-bold font-display text-[#14284E] mb-3 text-left sm:text-justify">{card.heading}</h3>
-                                        <ul className="space-y-2 list-none! ml-0 sm:ml-4 text-[14.5px] leading-5 text-[#4B5A72] text-justify">
+                                    <div key={ci} className={`${isMechanicalPage || isSemiconductorPage ? "bg-white" : card.bgClass ?? "bg-white"} sm:bg-white border border-[#DCE6F2] rounded-xl p-5`}>
+                                        <h3 className={`text-[14.5px] font-bold font-display text-[#14284E] mb-3 ${isDataSciencePage ? "text-left" : "text-left sm:text-justify"}`}>{card.heading}</h3>
+                                        <ul className={`space-y-2 list-none! ml-0 sm:ml-4 text-[14.5px] leading-5 text-[#4B5A72] ${usesCyberSecurityTextLayout || isMechanicalPage ? "text-left sm:text-justify" : "text-justify"}`}>
                                             {card.items.map((item, ii) => (
                                                 <li key={ii}><span className="text-[#ffb703] sm:text-[#4B5A72]">✓</span> {item}</li>
                                             ))}

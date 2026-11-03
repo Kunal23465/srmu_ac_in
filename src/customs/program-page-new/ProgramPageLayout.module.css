@@ -1,10 +1,10 @@
 @media (max-width: 639px) {
-  .cyberSecurity > section:not(:first-child) h2:not([data-preserve-mobile-title]),
-  .cyberSecurity .sectionTitle {
+  .matchedSectionSizing > section:not(:first-child) h2:not([data-preserve-mobile-title]),
+  .matchedSectionSizing .sectionTitle {
     font-size: 24px;
   }
 
-  .cyberSecurity .presenterCapsule {
+  .matchedSectionSizing .presenterCapsule {
     align-self: flex-start;
     max-width: 100%;
     padding: 6px 14px;
@@ -15,17 +15,21 @@
     font-weight: 600;
   }
 
-  .cyberSecurity .presenterCapsule > span {
+  .matchedSectionSizing .presenterCapsule > span {
     color: inherit;
   }
 
-  .cyberSecurity > section:not(:first-child) {
+  .matchedSectionSizing > section:not(:first-child) {
     padding-left: 20px;
     padding-right: 20px;
   }
 
+  .responsiveTextAlignment :is(p, h1, h2, h3, h4, h5, h6) {
+    text-align: left !important;
+  }
+
   /* Section padding supplies the gutter; avoid adding container padding twice. */
-  .cyberSecurity > section:not(:first-child) > div {
+  .matchedSectionSizing > section:not(:first-child) > div {
     padding-left: 0;
     padding-right: 0;
   }
@@ -40,7 +44,15 @@
     text-align: justify;
   }
 
-  .cyberSecurity > section:not(:first-child) h2:not([data-preserve-mobile-title]) {
+  .matchedSectionSizing > section:not(:first-child) h2:not([data-preserve-mobile-title]) {
     font-size: 36px;
+  }
+
+  .responsiveTextAlignment p {
+    text-align: justify !important;
+  }
+
+  .responsiveTextAlignment :is(h1, h2, h3, h4, h5, h6) {
+    text-align: left !important;
   }
 }

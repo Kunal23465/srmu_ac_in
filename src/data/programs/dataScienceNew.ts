@@ -128,7 +128,8 @@ const dataScienceNewData: ProgramPageDataNew = {
     secondaryCards: [
       {
         badge: "Workshop",
-        icon: "cpu",
+        icon: "brain",
+        iconLabel: "AI TOOLS",
         title: "Implementation of AI Tools for Improving MS Office Skills: Steps toward AI Literacy",
         presenter: "Dr. Mritunjay Rai, Er. Abhishek Kumar Saxena, Er. Shivani Singh & Er. Anand P. Pandey",
         paragraphs: [
@@ -138,7 +139,8 @@ const dataScienceNewData: ProgramPageDataNew = {
       },
       {
         badge: "Hackathon",
-        icon: "code2",
+        icon: "code",
+        iconLabel: "INNOVATION",
         title: "Smart India Hackathon (SIH)",
         presenter: "Internal Selection Rounds at SRMU",
         paragraphs: [
@@ -148,7 +150,8 @@ const dataScienceNewData: ProgramPageDataNew = {
       },
       {
         badge: "Industrial Visit",
-        icon: "compass",
+        icon: "factory",
+        iconLabel: "INDUSTRY VISIT",
         title: "L&T Komatsu Machine Yard",
         presenter: "Larsen & Toubro (L&T)",
         paragraphs: [
@@ -491,7 +494,7 @@ const dataScienceNewData: ProgramPageDataNew = {
     chooseIfCards: [
       {
         heading: "Choose Data Science & AI Engineering if you like:",
-        bgClass: "bg-[#E6FAF8]",
+        bgClass: "bg-white",
         items: [
           "Working with data",
           "Finding patterns and insights",
@@ -505,7 +508,7 @@ const dataScienceNewData: ProgramPageDataNew = {
       },
       {
         heading: "Choose Computer Science Engineering if you like:",
-        bgClass: "bg-[#FFFBEB]",
+        bgClass: "bg-white",
         items: [
           "Software development",
           "Application building",
