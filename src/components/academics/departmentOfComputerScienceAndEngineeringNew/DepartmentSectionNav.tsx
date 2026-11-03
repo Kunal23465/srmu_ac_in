@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import type { MouseEvent } from "react";
 import { useReducedMotion } from "framer-motion";
 
-const sections = [
+const defaultSections = [
     { id: "overview", label: "Overview" },
     { id: "programs", label: "Programs" },
     { id: "labs", label: "Labs & Facilities" },
@@ -11,8 +11,16 @@ const sections = [
     { id: "scholarships", label: "Scholarships" },
 ];
 
-export default function DepartmentSectionNav() {
-    const [activeSection, setActiveSection] = useState("overview");
+export type DepartmentSectionNavItem = { id: string; label: string };
+
+export default function DepartmentSectionNav({
+    sections = defaultSections,
+    ariaLabel = "Department sections",
+}: {
+    sections?: DepartmentSectionNavItem[];
+    ariaLabel?: string;
+}) {
+    const [activeSection, setActiveSection] = useState(sections[0]?.id ?? "overview");
     const reduceMotion = useReducedMotion();
 
     useEffect(() => {
@@ -47,7 +55,7 @@ export default function DepartmentSectionNav() {
             window.removeEventListener("resize", scheduleUpdate);
             if (frame !== null) window.cancelAnimationFrame(frame);
         };
-    }, []);
+    }, [sections]);
 
     const scrollToSection = (event: MouseEvent<HTMLAnchorElement>, id: string) => {
         if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
@@ -59,7 +67,7 @@ export default function DepartmentSectionNav() {
     };
 
     return (
-        <nav className="relative hidden bg-[#FFB703] px-6 md:block" aria-label="Department sections">
+        <nav className="relative hidden bg-[#FFB703] px-6 md:block" aria-label={ariaLabel}>
             <div className="mx-auto max-w-[1626px]">
                 <ul className="m-0 grid list-none grid-cols-6 gap-2 p-0">
                     {sections.map(({ id, label }) => (

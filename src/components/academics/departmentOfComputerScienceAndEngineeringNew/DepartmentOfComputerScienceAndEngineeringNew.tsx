@@ -36,6 +36,7 @@ import { fetchBlogs } from "../../../store/blogs/blogsThunk";
 import { normalizeRouteSlug } from "../../../utils/routeMatching";
 import { ALL_TARGET_BLOGS } from "../../blog/RelatedArticlesAndPrograms";
 import Map from "../../new-home/Map";
+import type { CustomDepartmentNewData } from "../../../customs/department-page-new/CustomDepartmentNew";
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -312,7 +313,7 @@ const faqs = [
 
 // ─── Component ────────────────────────────────────────────────────────────────
 
-const DepartmentOfComputerScienceAndEngineeringNew = () => {
+const DepartmentOfComputerScienceAndEngineeringNew = ({ customData }: { customData?: CustomDepartmentNewData } = {}) => {
 
     const reduceMotion = useReducedMotion();
     const dispatch = useDispatch<AppDispatch>();
@@ -456,9 +457,71 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
 
     const [rm, setRm] = useState<Record<string, boolean>>({});
     const toggleRm = (k: string) => setRm(p => ({ ...p, [k]: !p[k] }));
-    const aboutIntroParagraph = "The Department of Computer Science and Engineering (CSE) at Shri Ramswaroop Memorial University (SRMU) was established in 2012 and offers B.Tech., M.Tech., Lateral, integrated, and Ph.D. programs in Computer Science and Engineering (CSE). The department focuses on programming, artificial intelligence, data science, cyber security, cloud computing, computer networks, database systems, and software engineering.";
-    const aboutIntroPreviewEnd = aboutIntroParagraph.lastIndexOf("(CSE)") + "(CSE)".length;
-    const aboutIntroPreview = aboutIntroParagraph.slice(0, aboutIntroPreviewEnd);
+    const defaultAboutParagraphs = [
+        "The Department of Computer Science and Engineering (CSE) at Shri Ramswaroop Memorial University (SRMU) was established in 2012 and offers B.Tech., M.Tech., Lateral, integrated, and Ph.D. programs in Computer Science and Engineering (CSE). The department focuses on programming, artificial intelligence, data science, cyber security, cloud computing, computer networks, database systems, and software engineering.",
+        "Through its industry collaboration with Larsen & Toubro (L&T) EduTech, SRMU provides students with industry-oriented learning, practical exposure, projects, training, and professional interaction. Students also gain hands-on experience through industrial visits, internships, workshops, seminars, guest lectures, conferences, and live projects.",
+        "For students looking for computer science engineering in Lucknow, SRMU's CSE department combines strong academic foundations, emerging technology exposure, industry collaboration, practical learning, and research opportunities to prepare students for careers in the technology sector.",
+    ];
+    const aboutParagraphs = customData?.overview.paragraphs ?? defaultAboutParagraphs;
+    const aboutIntroParagraph = aboutParagraphs[0] ?? "";
+    const aboutIntroPreview = customData?.overview.preview ?? (aboutIntroParagraph.slice(0, aboutIntroParagraph.lastIndexOf("(CSE)") + "(CSE)".length) || aboutIntroParagraph);
+    const pagePrograms: CustomDepartmentNewData["programs"] = customData?.programs ?? departmentPrograms;
+    const pageQuickStats = customData?.hero.quickStats ?? quickStats;
+    const pageFaqItems = customData?.faq ?? faqItems;
+    const pageEvents = customData?.events.cards ?? events;
+    const pageWhyItems = customData?.highlights.items ?? whyItems;
+    const pageCareerItems = customData?.career.items ?? careerItems;
+    const careerDescriptions = customData?.career.descriptions ?? [];
+    const careerMidIndex = Math.floor(pageCareerItems.length / 2);
+    const careerAngleStep = 360 / Math.max(pageCareerItems.length, 1);
+    const heroPrefix = customData?.hero.prefix ?? "Department of";
+    const heroTitle = customData?.hero.title ?? "Computer Science & Engineering (CSE)";
+    const heroStats = customData?.hero.stats ?? [
+        { v: "₹53 LPA", l: "Highest Package", delay: "0ms" },
+        { v: "10", l: "Industry-Driven\nCapstone Projects", delay: "90ms" },
+        { v: "200+", l: "Recruiters", delay: "180ms" },
+        { v: "150", l: "Student Research\nProjects/Year", delay: "270ms" },
+    ];
+    const missionItems = customData?.missionVision.missionItems ?? [
+        "To expose graduate and postgraduate students to fundamental principles and cutting-edge technologies in Computer Science and Engineering through an updated, industry-ready curriculum.",
+        "To develop multidisciplinary skills required to solve complex real-world problems and participate in collaborative projects through diverse teaching approaches.",
+        "To promote research, innovation and industry collaboration among students and faculty.",
+        "To encourage professional, ethical and social responsibility among graduates.",
+    ];
+    const defaultLabItems = [
+        { num: "01", title: "L&T Certified Lab", desc: "An industry-oriented learning environment that supports practical exposure to technologies and skills aligned with contemporary engineering and professional requirements.", accent: "#d62c2b", iconSrc: LtEdutechLogo, animClass: "lab-logo-lt" },
+        { num: "02", title: "Artificial Intelligence & Machine Learning Lab", desc: "Students work with AI and machine learning concepts through practical exercises involving data, algorithms, model development, and intelligent applications.", accent: "#1B4F91", iconSrc: "/assets/images/new-information-system/icons/2.png", animClass: "lab-icon-orbital" },
+        { num: "03", title: "Cyber Security Lab", desc: "The Cyber Security Lab provides students with a practical environment to understand cybersecurity concepts, identify vulnerabilities, and develop skills for protecting digital systems and networks.", accent: "#14284E", iconSrc: "/assets/images/new-information-system/icons/3.png", animClass: "lab-icon-pulse" },
+        { num: "04", title: "Cloud Computing Lab", desc: "Provides practical exposure to cloud-based computing concepts, distributed systems, virtualization, and deployment-oriented learning.", accent: "#d62c2b", iconSrc: "/assets/images/new-information-system/icons/4.png", animClass: "lab-icon-float" },
+        { num: "05", title: "Database Lab", desc: "Students develop practical skills in database design, SQL, data management, querying, and database-driven application development.", accent: "#1B4F91", iconSrc: "/assets/images/new-information-system/icons/5.png", animClass: "lab-icon-stack" },
+        { num: "06", title: "Research & Development Lab", desc: "Supports project-based learning, experimentation, and research activities in emerging areas of computer science and engineering.", accent: "#14284E", iconSrc: "/assets/images/new-information-system/icons/6.png", animClass: "lab-icon-glow" },
+        { num: "07", title: "Network Security Lab", desc: "Provides hands-on learning in computer networks, network security, information security, and foundational cybersecurity practices.", accent: "#d62c2b", iconSrc: "/assets/images/new-information-system/icons/7.png", animClass: "lab-icon-network" },
+    ];
+    const pageLabItems = customData?.labs.items ?? defaultLabItems;
+    const pageActivitySections = customData ? [
+        ...(customData.activitySections ?? []),
+        ...(customData.studentProjects ? [{
+            id: "student-projects",
+            eyebrow: customData.studentProjects.eyebrow,
+            heading: customData.studentProjects.heading,
+            intro: customData.studentProjects.description,
+            cards: [{ tag: customData.studentProjects.eyebrow, title: customData.studentProjects.heading, shortDesc: customData.studentProjects.description, readMore: customData.studentProjects.description, img: customData.studentProjects.image, speaker: "" }],
+        }] : []),
+        ...(customData.research ? [{
+            id: "research-publications",
+            eyebrow: customData.research.eyebrow,
+            heading: customData.research.heading,
+            intro: customData.research.description,
+            cards: customData.research.cards,
+        }] : []),
+        ...(customData.workshops ? [{
+            id: "workshops",
+            eyebrow: customData.workshops.eyebrow,
+            heading: customData.workshops.heading,
+            intro: customData.workshops.description,
+            cards: customData.workshops.cards,
+        }] : []),
+    ] : [];
 
     return (
         <div id="cse-page" className="text-[#14284E] bg-white antialiased">
@@ -653,7 +716,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                     {/* Full background image */}
                     <img
                         src="/assets/images/new-information-system/diff-banner.jpg"
-                        alt="Department of Computer Science & Engineering"
+                        alt={`${heroPrefix} ${heroTitle}`}
                         className="absolute inset-0 w-full h-full object-cover object-top"
                     />
 
@@ -663,10 +726,10 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                     <div className="absolute bottom-0 left-0 right-0 px-5 pt-6 pb-7 z-10">
                         {/* Title */}
                         <p className="text-[#38bdf8] !text-[16px] font-semibold mb-1.5 leading-snug">
-                            Department of
+                            {heroPrefix}
                         </p>
                         <h1 className="text-white/85 text-[32px] font-bold leading-[1.15] mb-4">
-                            Computer Science &amp; Engineering (CSE)
+                            {heroTitle}
                         </h1>
 
                         {/* Gold separator */}
@@ -674,12 +737,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
 
                         {/* Stats 2×2 card grid — Pic-1 style */}
                         <div className="grid grid-cols-2 gap-2.5 mb-6">
-                            {[
-                                { v: "₹53 LPA", l: "Highest Package", delay: "0ms" },
-                                { v: "10", l: "Industry-Driven\nCapstone Projects", delay: "90ms" },
-                                { v: "200+", l: "Recruiters", delay: "180ms" },
-                                { v: "150", l: "Student Research\nProjects/Year", delay: "270ms" },
-                            ].map((s) => (
+                            {heroStats.map((s) => (
                                 <div
                                     key={s.l}
                                     className="cse-stat-card rounded-xl px-3 py-2.5"
@@ -729,7 +787,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                     {/* Background Banner */}
                     <img
                         src="/assets/images/new-information-system/again-banner.jpg"
-                        alt="Department of Computer Science & Information Systems"
+                        alt={`${heroPrefix} ${heroTitle}`}
                         className="absolute inset-0 w-full h-full object-cover object-top z-0"
                     />
 
@@ -741,10 +799,10 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                             {/* Banner Text */}
                             <div className="w-full max-w-[650px] text-white text-left mt-2 sm:mt-0">
                                 <h2 className="text-[#38bdf8] text-[clamp(20px,2.5vw,30px)] font-semibold mb-1 leading-[1.2] drop-shadow-md">
-                                    Department of
+                                    {heroPrefix}
                                 </h2>
                                 <h1 className="text-[clamp(32px,4vw,52px)] leading-[1.1] font-bold text-white/85 drop-shadow-md">
-                                    Computer Science &amp; Engineering (CSE)
+                                    {heroTitle}
                                 </h1>
                                 <div className="h-[3px] bg-[#38bdf8] w-[200px] mt-1 mb-4 rounded-full" />
                                 {/* <p className="text-[clamp(14px,1.5vw,18px)] font-light mt-4 drop-shadow-md text-justify">
@@ -797,9 +855,13 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                 </select>
                                 <select className="w-full border border-gray-200 rounded-lg px-3 py-2 text-[13px] text-gray-500 outline-none focus:border-[#14284E] bg-white">
                                     <option value="">Programme</option>
-                                    <option>B.C.A. — Data Science & AI with L&T</option>
-                                    <option>B.C.A. — Cyber Security with L&T</option>
-                                    <option>B.C.A. — AI & Machine Learning</option>
+                                    {customData
+                                        ? pagePrograms.flatMap((group) => group.programs).map((program) => <option key={program.link}>{program.title}</option>)
+                                        : <>
+                                            <option>B.C.A. — Data Science &amp; AI with L&amp;T</option>
+                                            <option>B.C.A. — Cyber Security with L&amp;T</option>
+                                            <option>B.C.A. — AI &amp; Machine Learning</option>
+                                        </>}
                                 </select>
                             </div>
                             <div className="grid grid-cols-2 gap-2">
@@ -830,7 +892,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                 <section className="hidden bg-[#E0F1FF] px-6 py-2 sm:block" aria-label="Department highlights">
                     <div className="mx-auto max-w-[1100px]">
                         <dl className="m-0 grid grid-cols-4 gap-x-4">
-                            {quickStats.map((stat) => (
+                            {pageQuickStats.map((stat) => (
                                 <div key={stat.label} className="flex min-w-0 flex-col items-center gap-0.5 text-center text-[#14284E]">
                                     <dt className="text-[9px] leading-snug font-bold tracking-[0.04em] uppercase lg:text-[11px]">{stat.label}</dt>
                                     <dd className="font-display order-first m-0 text-[26px] leading-none font-extrabold text-[#D62C2B] lg:text-[32px]">{stat.value}</dd>
@@ -840,7 +902,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                     </div>
                 </section>
 
-                <DepartmentSectionNav />
+                <DepartmentSectionNav sections={customData?.navSections} ariaLabel={customData ? `${heroTitle} sections` : "Department sections"} />
 
                 {/* ── About the Department ─────────────────────────────────── */}
                 <section id="overview" className="pt-6 sm:pt-8 pb-8 md:pb-10 px-4 sm:px-6 bg-white scroll-mt-24">
@@ -851,16 +913,16 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                             {/* ── Left: text ── */}
                             <div className="w-full lg:flex-1">
                                 <h2 className="text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3 text-left lg:text-left">
-                                    About the <span className="text-[#FFB703]">Department of CSE</span>
+                                    {customData?.overview.headingBefore ?? "About the"} <span className="text-[#FFB703]">{customData?.overview.headingHighlight ?? "Department of CSE"}</span>
                                 </h2>
+                                {customData?.overview.subtitle && <p className="mb-3 text-[15px] font-semibold text-[#0F4A85]">{customData.overview.subtitle}</p>}
 
                                 <div className="text-[#4B5A72] text-[15.5px] sm:text-[16px] leading-relaxed space-y-4 text-justify">
                                     <p className="text-justify">
                                         <span className={rm["about"] ? "hidden" : "sm:hidden"}>{aboutIntroPreview}</span>
                                         <span className={rm["about"] ? "" : "hidden sm:inline"}>{aboutIntroParagraph}</span>
                                     </p>
-                                    <p className={!rm["about"] ? "hidden sm:block text-justify" : "text-justify"}>Through its industry collaboration with Larsen & Toubro (L&T) EduTech, SRMU provides students with industry-oriented learning, practical exposure, projects, training, and professional interaction. Students also gain hands-on experience through industrial visits, internships, workshops, seminars, guest lectures, conferences, and live projects.</p>
-                                    <p className={!rm["about"] ? "hidden sm:block text-justify" : "text-justify"}>For students looking for computer science engineering in Lucknow, SRMU's CSE department combines strong academic foundations, emerging technology exposure, industry collaboration, practical learning, and research opportunities to prepare students for careers in the technology sector.</p>
+                                    {aboutParagraphs.slice(1).map((paragraph) => <p key={paragraph} className={!rm["about"] ? "hidden sm:block text-justify" : "text-justify"}>{paragraph}</p>)}
 
                                 </div>
 
@@ -871,8 +933,8 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                             {/* ── Right: image ── */}
                             <div className="relative flex w-full lg:w-[420px] xl:w-[460px] shrink-0 lg:self-stretch">
                                 <img
-                                    src={TechCollabImg}
-                                    alt="Department Tech Collaboration - L&T EduTech x SRMU"
+                                    src={customData?.overview.image ?? TechCollabImg}
+                                    alt={customData?.overview.imageAlt ?? "Department Tech Collaboration - L&T EduTech x SRMU"}
                                     className="w-full h-auto lg:absolute lg:inset-0 lg:h-full object-cover object-center rounded-2xl shadow-[0_2px_12px_rgba(15,31,61,0.08)]"
                                 />
                             </div>
@@ -899,16 +961,11 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                     <div className="text-[14.5px] tracking-[0.08em] uppercase text-[#d62c2b] font-bold flex items-center gap-2 mb-3.5">
                                         <span className="w-[22px] h-[2px] bg-[#d62c2b] inline-block" /> Mission
                                     </div>
-                                    <h3 className="text-[22px] font-bold font-display text-[#14284E] mb-5">What we work towards every day</h3>
+                                    {!customData && <h3 className="text-[22px] font-bold font-display text-[#14284E] mb-5">What we work towards every day</h3>}
 
                                     <div>
                                         <ul className="space-y-3">
-                                            {[
-                                                "To expose graduate and postgraduate students to fundamental principles and cutting-edge technologies in Computer Science and Engineering through an updated, industry-ready curriculum.",
-                                                "To develop multidisciplinary skills required to solve complex real-world problems and participate in collaborative projects through diverse teaching approaches.",
-                                                "To promote research, innovation and industry collaboration among students and faculty.",
-                                                "To encourage professional, ethical and social responsibility among graduates.",
-                                            ].map((item, index) => (
+                                            {missionItems.map((item, index) => (
                                                 <li key={item} className={`${(!rm["mission"] && index > 0) ? "hidden sm:flex" : "flex"} items-start gap-3 text-[14.5px] text-[#3F4C56] text-justify`}>
                                                     <span className="text-[#d62c2b] font-bold shrink-0 mt-0.5">+</span>
                                                     <div className={`${!rm["mission"] && index === 0 ? "line-clamp-2 sm:line-clamp-none" : ""}`}>{item}</div>
@@ -931,9 +988,9 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                     <div className="text-[13px] tracking-[0.08em] uppercase text-[#FFB703] font-bold flex items-center gap-2 mb-4">
                                         <span className="w-[22px] h-[2px] bg-[#FFB703] inline-block" /> Vision
                                     </div>
-                                    <h3 className="text-[22px] font-bold font-display text-white mb-5">Where we're headed</h3>
+                                    {!customData && <h3 className="text-[22px] font-bold font-display text-white mb-5">Where we're headed</h3>}
                                     <p className={`text-[14.5px] text-white/90 leading-relaxed text-justify ${!rm["vision"] ? "line-clamp-2 sm:line-clamp-none" : ""}`}>
-                                        To build the nation by fostering industry- and research-oriented studies in Computer Science and Engineering and to become a centre of excellence in developing indigenous technologies for the advancement of society.
+                                        {customData?.missionVision.visionText ?? "To build the nation by fostering industry- and research-oriented studies in Computer Science and Engineering and to become a centre of excellence in developing indigenous technologies for the advancement of society."}
                                     </p>
                                     <button className="cse-read-more cse-mobile-button text-[14px] font-bold uppercase tracking-wider text-[#FFB703] hover:text-white mt-4 flex items-center justify-center gap-1 sm:hidden mx-auto transition-colors" onClick={() => toggleRm("vision")}>
                                         {rm["vision"] ? "Read Less" : "Read More"}
@@ -1089,11 +1146,9 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                         <div className="mb-6">
                             <div className="flex items-center gap-3 flex-wrap">
                                 <h2 id="programs-heading" className="font-display text-[clamp(28px,2.4vw,40px)] leading-[1.2] font-bold text-[#14284E]">
-                                    Explore<span className="text-[#FFB703]"> Programs</span>
+                                    {customData?.programHeadingBefore ?? "Explore"}<span className="text-[#FFB703]"> {customData?.programHeadingHighlight ?? "Programs"}</span>
                                 </h2>
-                                <span className="inline-flex items-center px-3 py-1 rounded-full bg-[#d62c2b] text-white text-[11px] sm:text-[12px] font-bold tracking-wide whitespace-nowrap shadow-sm">
-                                    Admission Open 2026
-                                </span>
+                                {!customData && <span className="inline-flex items-center px-3 py-1 rounded-full bg-[#d62c2b] text-white text-[11px] sm:text-[12px] font-bold tracking-wide whitespace-nowrap shadow-sm">Admission Open 2026</span>}
                             </div>
                             {/* <div aria-hidden="true" className="mt-4 flex justify-start gap-2.5">
                                 <span className="h-[3px] w-11 bg-[#FFB703]" />
@@ -1105,7 +1160,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                             <div className="min-w-0 sm:rounded-2xl sm:border sm:border-[#E0F1FF] sm:bg-white/80 sm:px-3 sm:pt-3 sm:pb-4 sm:shadow-[0_4px_24px_#3479c908] lg:mt-4">
                                 <p className="mx-2.5 mb-5 text-center sm:text-left text-[11px] leading-4 font-bold tracking-[0.2em] text-[#0F4A85]/70 uppercase">Choose your study level</p>
                                 <div className="grid w-full min-w-0 grid-cols-[0.6fr_0.6fr_1.4fr_1fr_1.4fr] gap-1 max-sm:-mx-4 max-sm:w-[calc(100%+2rem)] max-sm:bg-[#E0F1FF] max-sm:px-6 max-sm:py-2 sm:flex sm:flex-col sm:justify-between sm:gap-2.5" role="group" aria-label="Program categories">
-                                    {departmentPrograms.map((cat, idx) => (
+                                    {pagePrograms.map((cat, idx) => (
                                         <button
                                             key={cat.category}
                                             type="button"
@@ -1131,10 +1186,10 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
 
                             <div id="department-program-list" className="min-w-0">
                                 <div className="mb-[18px] flex items-start justify-between gap-3">
-                                    <h3 className="text-[16px] leading-6 font-semibold text-[#14284E] after:mt-1 after:block after:h-[3px] after:w-[38px] after:bg-[#FFB703] sm:text-[18px]">{departmentPrograms[activeProgramCategory].category}</h3>
+                                    <h3 className="text-[16px] leading-6 font-semibold text-[#14284E] after:mt-1 after:block after:h-[3px] after:w-[38px] after:bg-[#FFB703] sm:text-[18px]">{pagePrograms[activeProgramCategory].category}</h3>
                                     <div className="flex items-center gap-2">
                                         <span className="pt-1 text-right text-[12px] leading-5 font-medium text-[#0F4A85]/70 sm:block" role="status" aria-atomic="true">
-                                            {departmentPrograms[activeProgramCategory].programs.length} {departmentPrograms[activeProgramCategory].programs.length === 1 ? "program" : "programs"} available
+                                            {pagePrograms[activeProgramCategory].programs.length} {pagePrograms[activeProgramCategory].programs.length === 1 ? "program" : "programs"} available
                                         </span>
                                         {/* Mobile carousel nav buttons */}
                                         <div className="flex items-center gap-2 sm:hidden">
@@ -1160,17 +1215,18 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                 {/* Embla carousel wrapper — scroll on mobile, grid on sm+ */}
                                 <div className="overflow-hidden sm:overflow-visible -mx-4 px-4 sm:mx-0 sm:px-0" ref={programsEmblaRef}>
                                     <div className="flex sm:grid sm:grid-cols-2 xl:grid-cols-3 gap-5 pb-4 sm:pb-0 xl:gap-x-6">
-                                        {departmentPrograms[activeProgramCategory].programs.map((prog) => (
+                                        {pagePrograms[activeProgramCategory].programs.map((prog) => (
                                             <article key={prog.link} className="flex min-h-[208px] min-w-0 flex-col rounded-2xl border border-[#E0F1FF] bg-white/85 px-6 pt-3.5 pb-[18px] shadow-[0_4px_20px_#3479c906] transition-shadow hover:shadow-[0_8px_24px_#3479c912] focus-within:border-[#21A5DB] motion-reduce:transition-none shrink-0 w-[80vw] sm:w-auto sm:shrink">
                                                 <div className="mb-1 flex items-start justify-between gap-2">
                                                     <span className="grid size-[52px] shrink-0 place-items-center rounded-full bg-[#E0F1FF] text-[#0F4A85]">
                                                         <prog.icon size={28} strokeWidth={1.9} aria-hidden="true" />
                                                     </span>
                                                     <span className="mt-2 rounded-full bg-[#E0F1FF] px-3 py-1 text-center text-[10px] leading-[1.4] font-medium text-[#0F4A85]">
-                                                        {departmentPrograms[activeProgramCategory].badge}
+                                                        {pagePrograms[activeProgramCategory].badge}
                                                     </span>
                                                 </div>
                                                 <h4 className="font-display mb-3 flex-1 text-[15.5px] leading-[1.4] font-semibold text-[#14284E]">{prog.title}</h4>
+                                                {prog.description && <p className="mb-3 text-[12px] leading-relaxed text-[#4B5A72]">{prog.description}</p>}
                                                 <div>
                                                     <Link to={prog.link} aria-label={`View more about ${prog.title}`} className="group inline-flex min-h-10 items-center justify-between gap-5 rounded-full bg-[#FFB703] px-5 py-2.5 text-[10px] leading-5 font-bold text-[#14284E] uppercase transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0F4A85] motion-reduce:transition-none">
                                                         View more
@@ -1197,7 +1253,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                     Labs &amp; <span className="text-[#FFB703]">Practical Learning</span>
                                 </h2>
                                 <p className="hidden sm:block text-[15.5px] text-white/90 leading-relaxed text-justify">
-                                    The Department of Computer Science and Engineering at Shri Ramswaroop Memorial University provides students with practical learning environments designed to complement classroom teaching. Through programming, computing, networking, artificial intelligence, cloud technologies and industry-oriented laboratories, students get opportunities to apply concepts, develop projects and strengthen their technical skills.
+                                    {customData?.labs.intro ?? "The Department of Computer Science and Engineering at Shri Ramswaroop Memorial University provides students with practical learning environments designed to complement classroom teaching. Through programming, computing, networking, artificial intelligence, cloud technologies and industry-oriented laboratories, students get opportunities to apply concepts, develop projects and strengthen their technical skills."}
                                 </p>
                             </div>
 
@@ -1225,64 +1281,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                         {/* Lab Cards Carousel */}
                         <div className="overflow-hidden sm:overflow-visible -mx-4 px-4 sm:mx-0 sm:px-0" ref={labsEmblaRef}>
                             <div className="flex sm:grid sm:grid-cols-12 gap-5 pb-4 sm:pb-0">
-                                {([
-                                    {
-                                        num: "01",
-                                        title: "L&T Certified Lab",
-                                        desc: "An industry-oriented learning environment that supports practical exposure to technologies and skills aligned with contemporary engineering and professional requirements.",
-                                        accent: "#d62c2b",
-                                        iconSrc: LtEdutechLogo,
-                                        animClass: "lab-logo-lt",
-                                    },
-                                    {
-                                        num: "02",
-                                        title: "Artificial Intelligence & Machine Learning Lab",
-                                        desc: "Students work with AI and machine learning concepts through practical exercises involving data, algorithms, model development, and intelligent applications.",
-                                        accent: "#1B4F91",
-                                        iconSrc: "/assets/images/new-information-system/icons/2.png",
-                                        animClass: "lab-icon-orbital",
-                                    },
-                                    {
-                                        num: "03",
-                                        title: "Cyber Security Lab",
-                                        desc: "The Cyber Security Lab provides students with a practical environment to understand cybersecurity concepts, identify vulnerabilities, and develop skills for protecting digital systems and networks.",
-                                        accent: "#14284E",
-                                        iconSrc: "/assets/images/new-information-system/icons/3.png",
-                                        animClass: "lab-icon-pulse",
-                                    },
-                                    {
-                                        num: "04",
-                                        title: "Cloud Computing Lab",
-                                        desc: "Provides practical exposure to cloud-based computing concepts, distributed systems, virtualization, and deployment-oriented learning.",
-                                        accent: "#d62c2b",
-                                        iconSrc: "/assets/images/new-information-system/icons/4.png",
-                                        animClass: "lab-icon-float",
-                                    },
-                                    {
-                                        num: "05",
-                                        title: "Database Lab",
-                                        desc: "Students develop practical skills in database design, SQL, data management, querying, and database-driven application development.",
-                                        accent: "#1B4F91",
-                                        iconSrc: "/assets/images/new-information-system/icons/5.png",
-                                        animClass: "lab-icon-stack",
-                                    },
-                                    {
-                                        num: "06",
-                                        title: "Research & Development Lab",
-                                        desc: "Supports project-based learning, experimentation, and research activities in emerging areas of computer science and engineering.",
-                                        accent: "#14284E",
-                                        iconSrc: "/assets/images/new-information-system/icons/6.png",
-                                        animClass: "lab-icon-glow",
-                                    },
-                                    {
-                                        num: "07",
-                                        title: "Network Security Lab",
-                                        desc: "Provides hands-on learning in computer networks, network security, information security, and foundational cybersecurity practices.",
-                                        accent: "#d62c2b",
-                                        iconSrc: "/assets/images/new-information-system/icons/7.png",
-                                        animClass: "lab-icon-network",
-                                    },
-                                ] as { num: string; title: string; desc: string; accent: string; iconSrc: string; animClass: string }[]).map((lab) => (
+                                {pageLabItems.map((lab) => (
                                     <div
                                         key={lab.num}
                                         className={`col-span-12 sm:col-span-6 lg:col-span-4 ${parseInt(lab.num) <= 4 ? "xl:col-span-3" : "xl:col-span-4"} group relative flex flex-col rounded-2xl border border-[#DCE6F2] bg-white p-6 shadow-[0_2px_12px_rgba(15,31,61,0.04)] hover:shadow-[0_10px_28px_rgba(15,31,61,0.10)] hover:-translate-y-1 transition-all duration-300 overflow-hidden shrink-0 w-[85vw] sm:w-auto sm:shrink`}
@@ -1322,11 +1321,11 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                             </div>
                         </div>
 
-                        <div className="mt-10 flex flex-col items-center justify-center text-center">
+                        {!customData && <div className="mt-10 flex flex-col items-center justify-center text-center">
                             <Link to="/campus-life" className="cse-mobile-button inline-flex items-center gap-2 bg-[#FFB703] hover:bg-[#FFB703] text-[#14284E] font-bold uppercase tracking-wide text-[14px] px-8 py-3.5 rounded-lg shadow-sm transition-all hover:-translate-y-0.5">
                                 Take a Campus Tour <ArrowRight className="w-4 h-4" />
                             </Link>
-                        </div>
+                        </div>}
 
                     </div>
                 </section>
@@ -1340,8 +1339,16 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                     <span className="w-4 h-[2px] bg-[#d62c2b] inline-block shrink-0" /> BEYOND THE CLASSROOM <span className="w-4 h-[2px] bg-[#d62c2b] inline-block shrink-0" />
                                 </div> */}
                                 <h2 className="text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3">
-                                    From Classroom Concepts to <span className="text-[#FFB703]">Real-World Applications</span>
+                                    {customData ? <>{customData.events.headingBefore} <span className="text-[#FFB703]">{customData.events.headingHighlight}</span></> : <>From Classroom Concepts to <span className="text-[#FFB703]">Real-World Applications</span></>}
                                 </h2>
+                                {customData?.events.sectionSubtitle && <p className="mb-2 font-display text-[18px] font-bold text-[#14284E]">{customData.events.sectionSubtitle}</p>}
+                                {customData?.events.intro && <p className="max-w-5xl text-[14px] leading-relaxed text-[#4B5A72] text-justify">{customData.events.intro}</p>}
+                                {customData?.events.cardsEyebrow && <p className="mt-4 mb-2 text-[11px] tracking-[0.1em] uppercase text-[#d62c2b] font-bold">{customData.events.cardsEyebrow}</p>}
+                                {customData?.events.cardsHeading && <>
+                                    <p className="mb-2 font-display text-[18px] font-bold text-[#14284E]">{customData.events.cardsHeading}</p>
+                                    {customData.events.cardsSubheading && <p className="mb-2 text-[14px] font-semibold text-[#14284E]">{customData.events.cardsSubheading}</p>}
+                                    {customData.events.cardsIntro && <p className="mb-3 max-w-5xl text-[14px] leading-relaxed text-[#4B5A72] text-justify">{customData.events.cardsIntro}</p>}
+                                </>}
                             </div>
 
                             {/* Navigation Buttons */}
@@ -1367,7 +1374,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
 
                         <div className="overflow-hidden sm:overflow-visible -mx-4 px-4 sm:mx-0 sm:px-0" ref={eventsEmblaRef}>
                             <div className="flex sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-5 pb-4 sm:pb-0">
-                                {events.map((ev, i) => (
+                                {pageEvents.map((ev, i) => (
                                     <div key={i} className="flex flex-col shrink-0 w-[85vw] sm:w-auto sm:shrink bg-white border border-[#DCE6F2] border-b-[4px] border-b-[#d62c2b] rounded-2xl overflow-hidden shadow-[0_4px_18px_rgba(15,31,61,0.04)] hover:shadow-[0_12px_30px_rgba(15,31,61,0.08)] hover:-translate-y-1 transition-all duration-300">
                                         <div className="w-full aspect-[16/9] relative overflow-hidden bg-[#DCE6F2]">
                                             <img src={ev.img} alt={ev.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy" />
@@ -1392,19 +1399,53 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                             </div>
                         </div>
 
-                        <div className="flex justify-center mt-10">
+                        {!customData && <div className="flex justify-center mt-10">
                             <a href="#" className="cse-mobile-button group px-8 py-3.5 text-[14px] font-bold uppercase tracking-wider bg-[#FFB703] text-[#14284E] rounded-xl shadow-[0_4px_14px_rgba(20,40,78,0.2)]  hover:shadow-[0_6px_20px_rgba(20,40,78,0.3)] hover:-translate-y-0.5 transition-all duration-300 flex items-center gap-2">
                                 View All Events <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                             </a>
-                        </div>
+                        </div>}
                     </div>
                 </section>
+
+                {pageActivitySections.map((section) => (
+                    <section key={section.id} id={section.id} className="py-8 md:py-10 px-4 sm:px-6 bg-[#F0F6FB] scroll-mt-24">
+                        <div className={`${Classes["container"]} cse-content-container`}>
+                            <div className="w-full mb-8 flex flex-col gap-4">
+                                <div className="w-full">
+                                    <div className="text-[11px] tracking-[0.1em] uppercase text-[#d62c2b] font-bold flex items-center gap-2 mb-3">
+                                        <span className="w-4 h-[2px] bg-[#d62c2b] inline-block shrink-0" />{section.eyebrow}
+                                    </div>
+                                    <h2 className="text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3">{section.heading}</h2>
+                                    {section.intro && <p className="max-w-5xl text-[15.5px] leading-relaxed text-[#4B5A72] text-justify">{section.intro}</p>}
+                                </div>
+                            </div>
+                            {section.cards && section.cards.length > 0 && <div className="overflow-hidden sm:overflow-visible -mx-4 px-4 sm:mx-0 sm:px-0">
+                                <div className="flex sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-5 pb-4 sm:pb-0">
+                                    {section.cards.map((event, index) => <article key={`${section.id}-${event.title}-${index}`} className="flex flex-col shrink-0 w-[85vw] sm:w-auto sm:shrink bg-white border border-[#DCE6F2] border-b-[4px] border-b-[#d62c2b] rounded-2xl overflow-hidden shadow-[0_4px_18px_rgba(15,31,61,0.04)] hover:shadow-[0_12px_30px_rgba(15,31,61,0.08)] hover:-translate-y-1 transition-all duration-300">
+                                        <div className="w-full aspect-[16/9] relative overflow-hidden bg-[#DCE6F2]"><img src={event.img} alt={event.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy" /></div>
+                                        <div className="p-5 sm:p-6 flex flex-col flex-grow">
+                                            <span className="text-[10.5px] font-bold uppercase tracking-[0.06em] text-[#d62c2b] mb-2 block">{event.tag}</span>
+                                            <h3 className="font-bold text-[16px] text-[#14284E] font-display mb-2 leading-snug line-clamp-2">{event.title}</h3>
+                                            {event.speaker && <div className="text-[13.5px] text-[#3F4C56] mb-4 flex-grow"><span className="line-clamp-2">{event.speaker}</span></div>}
+                                            {!event.speaker && <p className="mb-4 flex-grow text-[13px] leading-relaxed text-[#4B5A72] line-clamp-3">{event.shortDesc}</p>}
+                                            <div className="mt-auto pt-4 border-t border-[#F1F5F9]"><button onClick={() => setSelectedEvent(event)} className="cse-read-more cse-mobile-button text-[11.5px] font-bold text-[#d62c2b] hover:text-[#1B4F91] uppercase tracking-[0.08em] flex items-center gap-1.5 transition-colors">READ MORE →</button></div>
+                                        </div>
+                                    </article>)}
+                                </div>
+                            </div>}
+                            {section.listTitle && <div className="mt-7 rounded-2xl border border-[#DCE6F2] bg-white p-5 sm:p-6">
+                                <h3 className="font-display text-[16px] font-bold text-[#14284E]">{section.listTitle}</h3>
+                                <ul className="mt-4 grid gap-3 text-[13.5px] leading-relaxed text-[#4B5A72] sm:grid-cols-2 lg:grid-cols-3">{section.listItems?.map((item) => <li key={item} className="flex items-start gap-2"><span className="text-[#FFB703]">●</span>{item}</li>)}</ul>
+                            </div>}
+                        </div>
+                    </section>
+                ))}
 
                 {/* ── Placements ───────────────────────────────────────────── */}
                 <DepartmentPlacements recruiters={recruiterLogos} imageUrl={studentsPlacedImg} imageAlt="SRMU students getting placed at top companies" />
 
                 {/* ── Faculty ──────────────────────────────────────────────── */}
-                <DepartmentFaculty faculty={facultyList} onSelect={setSelectedFaculty} />
+                {(!customData || customData.showFaculty) && <DepartmentFaculty faculty={facultyList} onSelect={setSelectedFaculty} />}
 
                 {/* ── Key Highlights ───────────────────────────────────────── */}
                 <section className="pt-8 pb-6 md:pt-10 md:pb-6 px-4 sm:px-6 bg-[#14284e]">
@@ -1412,7 +1453,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                         <div className="w-full mb-8 flex flex-col gap-4">
                             <div className="w-full">
                                 <h2 className="text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display text-white">
-                                    What makes the <span className="text-[#FFB703]">CSE Department Different</span> in SRMU?
+                                    {customData ? <>{customData.highlights.headingBefore} <span className="text-[#FFB703]">{customData.highlights.headingHighlight}</span></> : <>What makes the <span className="text-[#FFB703]">CSE Department Different</span> in SRMU?</>}
                                 </h2>
                             </div>
 
@@ -1439,7 +1480,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
 
                         <div className="overflow-hidden sm:overflow-visible -mx-4 px-4 sm:mx-0 sm:px-0" ref={whyEmblaRef}>
                             <div className="flex sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-px pb-4 sm:pb-0 sm:bg-white/20 sm:border sm:border-white/20 sm:rounded-2xl sm:overflow-hidden">
-                                {whyItems.map((w, index) => (
+                                {pageWhyItems.map((w, index) => (
                                     <motion.div
                                         key={w.num}
                                         initial={reduceMotion ? false : { opacity: 0, y: 20 }}
@@ -1468,16 +1509,16 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                         <div className="w-full mb-4 sm:mb-5 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
                             <div className="text-left max-w-3xl">
                                 <h2 className="text-[clamp(30px,7vw,36px)] sm:text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E]">
-                                    Where can a <span className="text-[#FFB703]">CSE Degree</span> take you?
+                                    {customData ? customData.career.heading : <>Where can a <span className="text-[#FFB703]">CSE Degree</span> take you?</>}
                                 </h2>
                             </div>
 
                         </div>
 
-                        <div className="mx-auto max-w-[1100px] overflow-hidden">
+                    <div className="mx-auto max-w-[1100px] overflow-hidden">
                             <svg className="cse-career-diagram" viewBox="0 35 1040 615" role="img" aria-labelledby="cse-career-title cse-career-description">
                                 <title id="cse-career-title">Career Opportunities</title>
-                                <desc id="cse-career-description">{careerItems.map(lines => lines.join(" ")).join(", ")}</desc>
+                                <desc id="cse-career-description">{pageCareerItems.map(lines => lines.join(" ")).join(", ")}</desc>
                                 <defs>
                                     <filter id="cse-career-shadow" x="-40%" y="-40%" width="180%" height="200%">
                                         <feDropShadow dx="0" dy="16" stdDeviation="13" floodColor="#D62C2B" floodOpacity="0.22" />
@@ -1495,8 +1536,8 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                     <circle cx="520" cy="128" r="5" fill="#FFB703" />
                                 </g>
                                 <g aria-hidden="true">
-                                    {careerItems.map((_, index) => {
-                                        const angle = (index * 30 - 90) * Math.PI / 180;
+                                    {pageCareerItems.map((_, index) => {
+                                        const angle = (index * careerAngleStep - 90) * Math.PI / 180;
                                         return <circle key={index} cx={520 + 240 * Math.cos(angle)} cy={350 + 240 * Math.sin(angle)} r="6" fill="#fff" stroke="#FFB703" strokeWidth="3" />;
                                     })}
                                 </g>
@@ -1511,13 +1552,13 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                     <path d="M500 383 H540" stroke="#FFB703" strokeWidth="3" strokeLinecap="round" />
                                 </g>
                                 <g className="cse-career-labels" fill="#14284e" fontSize="17" fontWeight="600" aria-hidden="true">
-                                    {careerItems.map((lines, index) => {
-                                        const angle = (index * 30 - 90) * Math.PI / 180;
-                                        const centered = index === 0 || index === 6;
-                                        const x = 520 + 240 * Math.cos(angle) + (centered ? 0 : index < 6 ? 22 : -22);
-                                        const y = 350 + 240 * Math.sin(angle) + (index === 0 ? -46 : index === 6 ? 38 : 5) - (lines.length - 1) * 11;
+                                    {pageCareerItems.map((lines, index) => {
+                                        const angle = (index * careerAngleStep - 90) * Math.PI / 180;
+                                        const centered = index === 0 || index === careerMidIndex;
+                                        const x = 520 + 240 * Math.cos(angle) + (centered ? 0 : index < careerMidIndex ? 22 : -22);
+                                        const y = 350 + 240 * Math.sin(angle) + (index === 0 ? -46 : index === careerMidIndex ? 38 : 5) - (lines.length - 1) * 11;
                                         return (
-                                            <text key={index} x={x} y={y} textAnchor={centered ? "middle" : index < 6 ? "start" : "end"} fontSize={index === 0 ? 21 : undefined}>
+                                            <text key={index} x={x} y={y} textAnchor={centered ? "middle" : index < careerMidIndex ? "start" : "end"} fontSize={index === 0 ? 21 : undefined}>
                                                 {lines.map((line, lineIndex) => <tspan key={line} x={x} dy={lineIndex === 0 ? 0 : 23}>{line}</tspan>)}
                                                 {/* {index === 0 && <tspan x={x} dy="24" fontSize="14" fontWeight="400" fill="#697586">(Software, Web, or Mobile App Developer)</tspan>} */}
                                             </text>
@@ -1547,8 +1588,8 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
 
                                 {/* Fixed orbit dots — outside animated group */}
                                 <g aria-hidden="true">
-                                    {careerItems.map((_, i) => {
-                                        const a = (i * 30 - 90) * Math.PI / 180;
+                                    {pageCareerItems.map((_, i) => {
+                                        const a = (i * careerAngleStep - 90) * Math.PI / 180;
                                         return <circle key={i} cx={185 + 145 * Math.cos(a)} cy={195 + 145 * Math.sin(a)} r="4" fill="#fff" stroke="#FFB703" strokeWidth="2" />;
                                     })}
                                 </g>
@@ -1565,17 +1606,17 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
 
                                 {/* Labels — fixed, outside animated group */}
                                 <g fill="#14284e" fontSize="14" fontWeight="600">
-                                    {careerItems.map((lines, i) => {
-                                        const a = (i * 30 - 90) * Math.PI / 180;
-                                        const centered = i === 0 || i === 6;
+                                    {pageCareerItems.map((lines, i) => {
+                                        const a = (i * careerAngleStep - 90) * Math.PI / 180;
+                                        const centered = i === 0 || i === careerMidIndex;
                                         const ox = 185 + 145 * Math.cos(a);
                                         const oy = 195 + 145 * Math.sin(a);
                                         // Push labels further away from orbit dot so text has room
                                         const gap = 14;
-                                        const lx = ox + (centered ? 0 : i < 6 ? gap : -gap);
-                                        const ly = oy + (i === 0 ? -26 : i === 6 ? 24 : 3) - (lines.length - 1) * 7;
+                                        const lx = ox + (centered ? 0 : i < careerMidIndex ? gap : -gap);
+                                        const ly = oy + (i === 0 ? -26 : i === careerMidIndex ? 24 : 3) - (lines.length - 1) * 7;
                                         return (
-                                            <text key={i} x={lx} y={ly} textAnchor={centered ? "middle" : i < 6 ? "start" : "end"}>
+                                            <text key={i} x={lx} y={ly} textAnchor={centered ? "middle" : i < careerMidIndex ? "start" : "end"}>
                                                 {lines.map((line, li) => (
                                                     <tspan key={line} x={lx} dy={li === 0 ? 0 : 17}>{line}</tspan>
                                                 ))}
@@ -1585,11 +1626,35 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                 </g>
                             </svg>
                         </div>
+                        {careerDescriptions.length > 0 && <div className="mx-auto mt-8 grid max-w-[1100px] gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                            {careerDescriptions.map((role, index) => <article key={role.title} className="rounded-2xl border border-[#DCE6F2] border-b-[4px] border-b-[#d62c2b] bg-white p-5 shadow-[0_4px_18px_rgba(15,31,61,0.04)]">
+                                <span className="text-[10px] font-bold tracking-[0.08em] text-[#d62c2b]">{String(index + 1).padStart(2, "0")}</span>
+                                <h3 className="mt-2 font-display text-[14px] font-bold text-[#14284E]">{role.title}</h3>
+                                <p className="mt-2 text-[12.5px] leading-relaxed text-[#4B5A72]">{role.description}</p>
+                            </article>)}
+                        </div>}
                     </div>
                 </section>
 
+                {customData?.community && <section id="community" className="py-8 md:py-10 px-4 sm:px-6 bg-[#14284e] scroll-mt-24">
+                    <div className={`${Classes["container"]} cse-content-container`}>
+                        <div className="w-full mb-8 flex flex-col gap-4">
+                            <div className="text-[12px] tracking-[0.1em] uppercase text-[#FFB703] font-bold flex items-center gap-2 mb-2"><span className="w-4 h-[2px] bg-[#FFB703] inline-block shrink-0" />{customData.community.eyebrow}</div>
+                            <h2 className="text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display text-white">{customData.community.heading}</h2>
+                            {customData.community.paragraphs.map((paragraph) => <p key={paragraph} className="max-w-5xl text-[14px] leading-relaxed text-white/80 text-justify">{paragraph}</p>)}
+                        </div>
+                        <div className="mb-4 font-display text-[17px] font-bold text-white">{customData.community.focusTitle}</div>
+                        <div className="grid gap-px overflow-hidden rounded-2xl border border-white/20 bg-white/20 sm:grid-cols-2 lg:grid-cols-4">
+                            {customData.community.focusAreas.map((area, index) => <article key={area} className="bg-[#14284e] p-6 sm:p-7">
+                                <span className="block text-[14px] font-bold tracking-[0.05em] text-[#FFB703]">0{index + 1}</span>
+                                <h3 className="mt-4 font-display text-[15px] leading-snug font-bold text-white">{area}</h3>
+                            </article>)}
+                        </div>
+                    </div>
+                </section>}
+
                 {/* ── Scholarships ─────────────────────────────────────────── */}
-                <section className="pt-4 pb-4 sm:py-10 px-4 sm:px-6 bg-white scroll-mt-24 border-b border-[#e0e0e0]" id="scholarships">
+                <section className={`${customData && !customData.showScholarships ? "hidden" : ""} pt-4 pb-4 sm:py-10 px-4 sm:px-6 bg-white scroll-mt-24 border-b border-[#e0e0e0]`} id="scholarships">
                     <div className={`${Classes["container"]} cse-content-container mx-auto`}>
                         <div className="flex flex-col lg:flex-row gap-5">
 
@@ -1718,6 +1783,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
 
                 {/* ── Blog Section (CSE only) ──────────────────────────── */}
                 {(() => {
+                    if (customData && !customData.showBlogs) return null;
                     const csSlugs = new Set(ALL_TARGET_BLOGS.filter(b => b.category === "cs").map(b => b.slug));
                     const cseKeywords = [
                         "cse", "computer science", "bca", "b.tech cse", "btech cse",
@@ -1749,7 +1815,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                             Latest <span className="text-[#FFB703]">Insights & Resources</span>
                                         </h2>
                                         <p className="text-[14px] text-[#4B5A72] mt-2 max-w-xl">
-                                            Guides, stories, and updates from the world of Computer Science & Engineering.
+                                            {customData ? "" : "Guides, stories, and updates from the world of Computer Science & Engineering."}
                                         </p>
                                     </div>
                                     <div className="flex sm:hidden items-center gap-3 shrink-0 w-full">
@@ -1845,15 +1911,13 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                                 <h2 className="text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] break-words">
                                     Frequently Asked <span className="text-[#FFB703]">Questions</span>
                                 </h2>
-                                <p className="text-[14px] text-[#4B5A72] mt-2 break-words whitespace-normal">
-                                    Discover Opportunities, Ignite Your Potential - Be Part of SRMU Uttar Pradesh
-                                </p>
+                    {!customData && <p className="text-[14px] text-[#4B5A72] mt-2 break-words whitespace-normal">Discover Opportunities, Ignite Your Potential - Be Part of SRMU Uttar Pradesh</p>}
                             </div>
                         </div>
 
                         {/* Accordion */}
                         <div className="flex flex-col gap-3 mt-6">
-                            {(showAllFaq ? faqItems : faqItems.slice(0, 3)).map((faq, i) => (
+                                    {(showAllFaq ? pageFaqItems : pageFaqItems.slice(0, 3)).map((faq, i) => (
                                 <div
                                     key={i}
                                     className={`bg-white border rounded-xl overflow-hidden shadow-sm transition-all duration-200 ${openFaq === i ? "border-[#14284E]" : "border-[#E5E7EB]"
@@ -1890,7 +1954,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = () => {
                             ))}
                         </div>
 
-                        {faqItems.length > 3 && (
+                        {pageFaqItems.length > 3 && (
                             <div className="mt-8 flex justify-center">
                                 <button
                                     onClick={() => setShowAllFaq(!showAllFaq)}

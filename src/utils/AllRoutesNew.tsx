@@ -10,6 +10,7 @@ import BTechEceSemiconductorDesignNew from "../pages/BTechEceSemiconductorDesign
 
 import InsiderPage from "../pages/InsiderPage";
 import DepartmentOfComputerScienceAndEngineeringNewPage from "../pages/academics/institutes/institute-department/department-of-computer-science-and-engineering-new/DepartmentOfComputerScienceAndEngineeringNewPage";
+import InstituteOfPharmacyNewPage from "../pages/academics/institutes/institute-department/institute-of-pharmacy-new/InstituteOfPharmacyNewPage";
 
 const HomePage = lazyPage(() => import("../pages/Home/HomePage"));
 const PageNotFound = lazyPage(() => import("../pages/PageNotFound"));
@@ -1091,6 +1092,10 @@ export const routes = [
         path: "/department-of-computer-science-and-engineering-new",
         element: <DepartmentOfComputerScienceAndEngineeringNewPage />,
 
+      },
+      {
+        path: "/institute-of-pharmacy-new",
+        element: <InstituteOfPharmacyNewPage />,
       },
       {
         path: "green-initiative-new",
