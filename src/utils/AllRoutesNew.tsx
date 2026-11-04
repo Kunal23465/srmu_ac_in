@@ -11,6 +11,7 @@ import BTechEceSemiconductorDesignNew from "../pages/BTechEceSemiconductorDesign
 import InsiderPage from "../pages/InsiderPage";
 import DepartmentOfComputerScienceAndEngineeringNewPage from "../pages/academics/institutes/institute-department/department-of-computer-science-and-engineering-new/DepartmentOfComputerScienceAndEngineeringNewPage";
 import InstituteOfPharmacyNewPage from "../pages/academics/institutes/institute-department/institute-of-pharmacy-new/InstituteOfPharmacyNewPage";
+import InstituteOfBiosciencesAndTechnologyNewPage from "../pages/academics/institutes/institute-department/institute-of-biosciences-and-technology-new/InstituteOfBiosciencesAndTechnologyNewPage";
 
 const HomePage = lazyPage(() => import("../pages/Home/HomePage"));
 const PageNotFound = lazyPage(() => import("../pages/PageNotFound"));
@@ -1098,6 +1099,10 @@ export const routes = [
         element: <InstituteOfPharmacyNewPage />,
       },
       {
+        path: "/institute-of-biosciences-and-technology-new",
+        element: <InstituteOfBiosciencesAndTechnologyNewPage />,
+      },
+      {
         path: "green-initiative-new",
         element: <GreenInitiativeNewPage />,
       },
@@ -1107,7 +1112,7 @@ export const routes = [
       },
 
       {
-        path: "program-finder-new",
+        path: "eligibility",
         element: <NewProgramFinderPage />,
       },
       {

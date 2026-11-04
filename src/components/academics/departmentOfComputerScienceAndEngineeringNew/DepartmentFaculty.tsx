@@ -23,6 +23,7 @@ export type FacultyMember = {
     qualification?: string;
     experience?: string;
     specialization?: string[];
+    expertise?: string;
 };
 
 // Academic-strength figures supplied in the section design reference.
@@ -100,9 +101,17 @@ function UniversityDomeWatermark() {
 export default function DepartmentFaculty({
     faculty,
     onSelect,
+    subheading = "The university highlights faculty recruitment from reputed institutions including IIT, IIM, MNNIT and IIT-BHU, with an emphasis on interactive, personalized teaching.",
+    featuredDescription = "Expert in computer science and engineering with a focus on innovation and research.",
+    featuredLabel = "HOD",
+    showResearchShowcase = true,
 }: {
     faculty: FacultyMember[];
     onSelect: (member: FacultyMember) => void;
+    subheading?: string;
+    featuredDescription?: string;
+    featuredLabel?: string;
+    showResearchShowcase?: boolean;
 }) {
     const [viewportRef, carousel] = useEmblaCarousel({
         align: "start",
@@ -162,9 +171,7 @@ export default function DepartmentFaculty({
                             </span>
                         </h2>
                         <p className={styles.subheading}>
-                            The university highlights faculty recruitment from reputed institutions
-                            including IIT, IIM, MNNIT and IIT-BHU, with an emphasis on interactive,
-                            personalized teaching.
+                            {subheading}
                         </p>
                     </div>
 
@@ -223,7 +230,7 @@ export default function DepartmentFaculty({
                                     >
                                         <div className={styles.cardPortraitWrapper}>
                                             {member.isHod && (
-                                                <span className={styles.hodBadge}>HOD</span>
+                                                <span className={styles.hodBadge}>{featuredLabel}</span>
                                             )}
                                             <img
                                                 src={member.img}
@@ -253,7 +260,7 @@ export default function DepartmentFaculty({
                                 {/* Featured HOD Card */}
                                 <article className={styles.hodCard}>
                                     <div className={styles.hodPortraitWrapper}>
-                                        <span className={styles.hodBadge}>HOD</span>
+                                        <span className={styles.hodBadge}>{featuredLabel}</span>
                                         <img
                                             src={hod.img}
                                             alt={hod.name}
@@ -272,8 +279,7 @@ export default function DepartmentFaculty({
                                         <h3 className={styles.hodName}>{hod.name}</h3>
                                         <p className={styles.hodRole}>{hod.role}</p>
                                         <p className={styles.hodDescription}>
-                                            Expert in computer science and engineering with a focus on
-                                            innovation and research.
+                                            {featuredDescription}
                                         </p>
                                         <button
                                             type="button"
@@ -383,7 +389,7 @@ export default function DepartmentFaculty({
                 </div>
             </div>
         </section>
-        <ResearchShowcase />
+        {showResearchShowcase && <ResearchShowcase />}
         </>
     );
 }

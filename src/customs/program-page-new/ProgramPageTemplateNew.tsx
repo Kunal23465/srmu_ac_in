@@ -673,7 +673,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                 {/* ===== LABS & CURRICULUM ===== */}
                 <section className="py-8 md:py-10 px-4 sm:px-6 bg-[#F0F6FB]">
                     <div className={`${Classes["container"]} mx-auto`}>
-                        {!isCyberSecurityPage && (
+                        {!usesCyberSecurityTextLayout && (
                             <div className="w-full mb-5 sm:mb-10">
                                 <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.15] font-bold font-display text-[#14284E]">
                                     {labs.sectionTitle}<span className="text-[#ffb703]"> {labs.sectionTitleHighlight}</span>
@@ -685,8 +685,8 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                         )}
 
                         {/* Curriculum image */}
-                        {isCyberSecurityPage ? (
-                            <div className={curriculumStyles.panel}>
+                        {usesCyberSecurityTextLayout ? (
+                            <div className={`${curriculumStyles.panel} ${isDataSciencePage ? curriculumStyles.dataSciencePanel : ""}`}>
                                 <picture className={curriculumStyles.background} aria-hidden="true">
                                     <source media="(max-width: 1023px)" srcSet={labs.curriculumImageMobile} />
                                     <img src={labs.curriculumImageDesktop} alt="" loading="lazy" decoding="async" />

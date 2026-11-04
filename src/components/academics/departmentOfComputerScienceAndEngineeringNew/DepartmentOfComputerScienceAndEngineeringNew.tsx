@@ -4,11 +4,13 @@ import Classes from "../../../utils/styles/Global.module.css";
 import DepartmentSectionNav from "./DepartmentSectionNav";
 import DepartmentPlacements from "./DepartmentPlacements";
 import DepartmentFaculty from "./DepartmentFaculty";
+import ResearchShowcaseStyles from "./DepartmentFaculty.module.css";
+import DepartmentScholarships from "./DepartmentScholarships";
 import CareerBackground, { MobileCareerBackground } from "./CareerBackground";
 import KamleshImg from "../../../assets/images/academics/institutes/cse/cse2.jpeg";
 import SakshiImg from "../../../assets/images/academics/institutes/cse/cse3.jpeg";
 import logosrmcem from "../../../assets/images/University-Logo-White.png";
-import AdditionInScholarImg from "../../../assets/images/addition-in-scholar.png";
+import scholarshipCardBackground from "../../../assets/new-home/scholarship-section/Pale-Blue-Arcs-with-Golden-Swoosh.png";
 import MerchandiseScanImg from "../../../assets/images/merchandise-scan.jpeg";
 import LtEdutechLogo from "../../../assets/new-home/l-t.webp";
 import PlacementLogoLT from "../../../assets/new-home/new-placement-logos/1.png";
@@ -25,7 +27,7 @@ import PlacementLogoWipro from "../../../assets/new-home/new-placement-logos/11.
 import PlacementLogoInfosys from "../../../assets/new-home/new-placement-logos/12.png";
 import TechCollabImg from "../../../assets/images/new-information-system/Tech-Collaboration_-L-T-EduTech-SRMU.png";
 import studentsPlacedImg from "../../../assets/images/cyber-security-new/where-our-students-get-placed.webp";
-import { Download, ChevronDown, ChevronUp, Search, Mail, Phone, ArrowLeft, ArrowRight, X, ShieldCheck, GraduationCap, Settings, Database, Lightbulb, Share2, MapPin, Facebook, Instagram, Linkedin, Youtube, Twitter, BadgeCheck, UsersRound, Accessibility, Medal, ChartNoAxesColumnIncreasing, Globe2, UserRound, Heart, Monitor, BrainCircuit, Code2, BookOpenCheck, Route, ChevronRight, Laptop, BriefcaseBusiness, Star } from "lucide-react";
+import { Download, ChevronDown, ChevronUp, Search, Mail, Phone, ArrowLeft, ArrowRight, X, ShieldCheck, GraduationCap, Settings, Database, Lightbulb, Share2, MapPin, Facebook, Instagram, Linkedin, Youtube, Twitter, Heart, HeartPulse, Handshake, UsersRound, Monitor, BrainCircuit, Code2, BookOpenCheck, Route, ChevronRight, Laptop, BriefcaseBusiness } from "lucide-react";
 import { FaQuora, FaRedditAlien } from "react-icons/fa";
 import useEmblaCarousel from "embla-carousel-react";
 import { motion, useReducedMotion } from "framer-motion";
@@ -36,7 +38,7 @@ import { fetchBlogs } from "../../../store/blogs/blogsThunk";
 import { normalizeRouteSlug } from "../../../utils/routeMatching";
 import { ALL_TARGET_BLOGS } from "../../blog/RelatedArticlesAndPrograms";
 import Map from "../../new-home/Map";
-import type { CustomDepartmentNewData } from "../../../customs/department-page-new/CustomDepartmentNew";
+import type { CustomDepartmentNewData, DepartmentActivityCardNew } from "../../../customs/department-page-new/CustomDepartmentNew";
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -266,7 +268,7 @@ const facultyList = [
     { name: "Ms. Sakshi Singh", role: "Assistant Professor", img: SakshiImg },
 ];
 
-const whyItems = [
+const whyItems: CustomDepartmentNewData["highlights"]["items"] = [
     { num: "01", title: "Research-Oriented Academic Environment", desc: "The department encourages research activities and academic knowledge sharing through publications, conferences and expert interactions." },
     { num: "02", title: "Value-Added Learning", desc: "Students receive opportunities to develop additional technical knowledge and skills beyond their regular curriculum." },
     { num: "03", title: "Industry-Linked Programs", desc: "Specialized programs with industry collaboration provide exposure to industry-oriented learning in areas such as Cyber Security and Data Science & Artificial Intelligence." },
@@ -288,20 +290,6 @@ const careerItems = [
     ["Research & Development", "(R&D) Engineer"],
 ];
 
-const scholarshipItems = [
-    { text: "SRMUSET Based Scholarship", icon: GraduationCap },
-    { text: "MERIT Based Scholarship", icon: BadgeCheck },
-    { text: "Defence, Paramilitary & Police", icon: ShieldCheck },
-    { text: "Sibling/Ward of SRM Group Staff, Student & Alumni", icon: UsersRound },
-    { text: "Divyang", icon: Accessibility },
-    { text: "National/State Level", icon: MapPin },
-    { text: "Sportsperson", icon: Medal },
-    { text: "Career Progression", icon: ChartNoAxesColumnIncreasing },
-    { text: "Student of another state and country", icon: Globe2 },
-    { text: "Ward of a Single Parent", icon: UserRound },
-    { text: "Divyang · Sportsperson · Single Parent", icon: UserRound },
-];
-
 const faqs = [
     { q: "What programs are offered by the Department of Computer Science & Information Systems?", a: "DCSIS offers computer application programs at undergraduate, postgraduate and doctoral levels. Its current program listing includes B.C.A. in Data Science & Artificial Intelligence with L&T, B.C.A. in Cyber Security with L&T and B.C.A. in Artificial Intelligence & Machine Learning." },
     { q: "What is the duration of the B.C.A. programs?", a: "The B.C.A. programs currently listed by DCSIS have a duration of 3 years." },
@@ -310,6 +298,91 @@ const faqs = [
     { q: "Does the department support research?", a: "Yes. Research is an important part of DCSIS, with specialized equipment and computing resources supporting research activities across multiple areas of computer science and information systems." },
     { q: "What kind of industry exposure is available?", a: "The department highlights industrial partnerships, internships, live projects, guest lectures and interactions with professionals from industry and research organizations." },
 ];
+
+const ActivityCardsCarousel = ({
+    sectionId,
+    heading,
+    cards,
+    onSelect,
+    forceCarousel = false,
+}: {
+    sectionId: string;
+    heading: string;
+    cards: DepartmentActivityCardNew[];
+    onSelect: (event: DepartmentActivityCardNew) => void;
+    forceCarousel?: boolean;
+}) => {
+    const [carouselRef, carouselApi] = useEmblaCarousel({
+        loop: false,
+        align: "start",
+        dragFree: true,
+        breakpoints: forceCarousel ? {} : {
+            "(min-width: 640px)": { active: false },
+        },
+    });
+    const [canScrollPrev, setCanScrollPrev] = useState(false);
+    const [canScrollNext, setCanScrollNext] = useState(cards.length > 1);
+
+    useEffect(() => {
+        if (!carouselApi) return;
+        const updateButtons = () => {
+            setCanScrollPrev(carouselApi.canScrollPrev());
+            setCanScrollNext(carouselApi.canScrollNext());
+        };
+        updateButtons();
+        carouselApi.on("select", updateButtons);
+        carouselApi.on("reInit", updateButtons);
+        return () => {
+            carouselApi.off("select", updateButtons);
+            carouselApi.off("reInit", updateButtons);
+        };
+    }, [carouselApi]);
+
+    return (
+        <>
+            {cards.length > 1 && <div className={`mb-4 flex items-center gap-3 shrink-0 self-start ${forceCarousel ? "" : "sm:hidden"}`}>
+                <button
+                    type="button"
+                    onClick={() => carouselApi?.scrollPrev()}
+                    disabled={!canScrollPrev}
+                    className="cse-mobile-button w-10 h-10 flex items-center justify-center rounded-full bg-white border border-[#DCE6F2] shadow-sm text-[#14284E] hover:bg-[#FFB703] transition-all disabled:opacity-30 disabled:cursor-not-allowed"
+                    aria-label={`Previous ${heading} cards`}
+                >
+                    <ArrowLeft className="w-4 h-4" />
+                </button>
+                <button
+                    type="button"
+                    onClick={() => carouselApi?.scrollNext()}
+                    disabled={!canScrollNext}
+                    className="cse-mobile-button w-10 h-10 flex items-center justify-center rounded-full bg-white border border-[#DCE6F2] shadow-sm text-[#14284E] hover:bg-[#FFB703] transition-all disabled:opacity-30 disabled:cursor-not-allowed"
+                    aria-label={`Next ${heading} cards`}
+                >
+                    <ArrowRight className="w-4 h-4" />
+                </button>
+            </div>}
+            <div
+                ref={carouselRef}
+                role="region"
+                aria-label={`${heading} cards`}
+                tabIndex={0}
+                className={`cse-activity-card-scroll overflow-hidden ${forceCarousel ? "-mx-4 px-4 sm:mx-0 sm:px-0" : "sm:overflow-visible -mx-4 px-4 sm:mx-0 sm:px-0"}`}
+            >
+                <div className={`flex ${forceCarousel ? "" : "sm:grid sm:grid-cols-2 lg:grid-cols-3"} gap-5 pb-4 ${forceCarousel ? "" : "sm:pb-0"}`}>
+                    {cards.map((event, index) => <article key={`${sectionId}-${event.title}-${index}`} className={`flex flex-col shrink-0 ${forceCarousel ? "w-[85vw] sm:w-[360px] lg:w-[390px]" : "w-[85vw] sm:w-auto sm:shrink"} bg-white border border-[#DCE6F2] border-b-[4px] border-b-[#d62c2b] rounded-2xl overflow-hidden shadow-[0_4px_18px_rgba(15,31,61,0.04)] hover:shadow-[0_12px_30px_rgba(15,31,61,0.08)] hover:-translate-y-1 transition-all duration-300`}>
+                        <div className="w-full aspect-[16/9] relative overflow-hidden bg-[#DCE6F2]"><img src={event.img} alt={event.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy" /></div>
+                        <div className="p-5 sm:p-6 flex flex-col flex-grow">
+                            <span className="text-[10.5px] font-bold uppercase tracking-[0.06em] text-[#d62c2b] mb-2 block">{event.tag}</span>
+                            <h3 className="font-bold text-[16px] text-[#14284E] font-display mb-2 leading-snug line-clamp-2">{event.title}</h3>
+                            {event.speaker && <div className="text-[13.5px] text-[#3F4C56] mb-4 flex-grow"><span className="line-clamp-2">{event.speaker}</span></div>}
+                            {!event.speaker && <p className="mb-4 flex-grow text-[13px] leading-relaxed text-[#4B5A72] line-clamp-3">{event.shortDesc}</p>}
+                            <div className="mt-auto pt-4 border-t border-[#F1F5F9]"><button onClick={() => onSelect(event)} className="cse-read-more cse-mobile-button text-[11.5px] font-bold text-[#d62c2b] hover:text-[#1B4F91] uppercase tracking-[0.08em] flex items-center gap-1.5 transition-colors">READ MORE →</button></div>
+                        </div>
+                    </article>)}
+                </div>
+            </div>
+        </>
+    );
+};
 
 // ─── Component ────────────────────────────────────────────────────────────────
 
@@ -327,8 +400,6 @@ const DepartmentOfComputerScienceAndEngineeringNew = ({ customData }: { customDa
     const [openFaq, setOpenFaq] = useState<number | null>(null);
     const [showAllFaq, setShowAllFaq] = useState(false);
     const [showAllCareers, setShowAllCareers] = useState(false);
-    const [showAllScholarships, setShowAllScholarships] = useState(false);
-
     useEffect(() => {
         if (blogCards.length === 0) {
             dispatch(fetchBlogs());
@@ -498,6 +569,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = ({ customData }: { customDa
         { num: "07", title: "Network Security Lab", desc: "Provides hands-on learning in computer networks, network security, information security, and foundational cybersecurity practices.", accent: "#d62c2b", iconSrc: "/assets/images/new-information-system/icons/7.png", animClass: "lab-icon-network" },
     ];
     const pageLabItems = customData?.labs.items ?? defaultLabItems;
+    const isPharmacyPage = customData?.hero.title === "Pharmacy";
     const pageActivitySections = customData ? [
         ...(customData.activitySections ?? []),
         ...(customData.studentProjects ? [{
@@ -523,11 +595,113 @@ const DepartmentOfComputerScienceAndEngineeringNew = ({ customData }: { customDa
         }] : []),
     ] : [];
 
+    const scholarshipSection = (
+        <DepartmentScholarships
+            id="scholarships"
+            className={customData && !customData.showScholarships ? "hidden" : ""}
+            applyNowHref="/scholarship"
+            eligibilityHref="#programs"
+            fullHeightScholarshipIllustration
+            scholarshipCardBackgroundImage={scholarshipCardBackground}
+        />
+    );
+
+    const highlightsSection = (
+                <section className={`relative isolate overflow-hidden py-8 md:py-12 px-4 sm:px-6 ${isPharmacyPage ? "bg-[#FBFCFF]" : "bg-[#14284e]"}`}>
+                    {isPharmacyPage && <>
+                        <div aria-hidden="true" className="pointer-events-none absolute -left-28 -top-28 h-72 w-72 rounded-full border-[5px] border-[#FFB703]/20 bg-[#FFB703]/5" />
+                        <div aria-hidden="true" className="pointer-events-none absolute -bottom-36 -right-32 h-80 w-80 rounded-full border-[5px] border-[#FFB703]/25 bg-[#FFB703]/10" />
+                        <div aria-hidden="true" className="pointer-events-none absolute left-2 top-[28%] hidden grid-cols-3 gap-3 sm:grid">
+                            {Array.from({ length: 15 }, (_, index) => <span key={index} className="h-1.5 w-1.5 rounded-full bg-[#FFB703]/80" />)}
+                        </div>
+                        <div aria-hidden="true" className="pointer-events-none absolute right-2 top-[42%] hidden grid-cols-3 gap-3 sm:grid">
+                            {Array.from({ length: 15 }, (_, index) => <span key={index} className="h-1.5 w-1.5 rounded-full bg-[#FFB703]/45" />)}
+                        </div>
+                    </>}
+                    <div className={`${Classes["container"]} cse-content-container ${isPharmacyPage ? "relative z-10" : ""}`}>
+                        <div className={`w-full ${isPharmacyPage ? "mb-10 flex flex-col items-start gap-4 text-left" : "mb-8 flex flex-col gap-4"}`}>
+                            <div className="w-full">
+                                <h2 id="academic-strength-heading" className={`text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display ${isPharmacyPage ? "text-[#14284E] text-left" : "text-white"}`}>
+                                    {customData ? <>{customData.highlights.headingBefore} <span className="text-[#FFB703]">{customData.highlights.headingHighlight}</span></> : <>What makes the <span className="text-[#FFB703]">CSE Department Different</span> in SRMU?</>}
+                                </h2>
+                            </div>
+
+                            {/* Navigation Buttons */}
+                            <div className="flex items-center gap-3 shrink-0 self-start sm:hidden">
+                                <button
+                                    onClick={() => whyEmblaApi?.scrollPrev()}
+                                    disabled={!whyCanPrev}
+                                    className={`cse-mobile-button w-10 h-10 flex items-center justify-center rounded-full border shadow-sm transition-all disabled:opacity-30 disabled:cursor-not-allowed ${isPharmacyPage ? "bg-white border-[#DCE6F2] text-[#14284E] hover:bg-[#FFB703]" : "bg-[#14284e] border-white/20 text-white hover:bg-white hover:text-[#14284e]"}`}
+                                    aria-label="Previous"
+                                >
+                                    <ArrowLeft className="w-4 h-4" />
+                                </button>
+                                <button
+                                    onClick={() => whyEmblaApi?.scrollNext()}
+                                    disabled={!whyCanNext}
+                                    className={`cse-mobile-button w-10 h-10 flex items-center justify-center rounded-full border shadow-sm transition-all disabled:opacity-30 disabled:cursor-not-allowed ${isPharmacyPage ? "bg-white border-[#DCE6F2] text-[#14284E] hover:bg-[#FFB703]" : "bg-[#14284e] border-white/20 text-white hover:bg-white hover:text-[#14284e]"}`}
+                                    aria-label="Next"
+                                >
+                                    <ArrowRight className="w-4 h-4" />
+                                </button>
+                            </div>
+                        </div>
+
+                        <div className="overflow-hidden sm:overflow-visible -mx-4 px-4 sm:mx-0 sm:px-0" ref={whyEmblaRef}>
+                            <div className={`flex sm:grid ${isPharmacyPage ? "sm:grid-cols-2 xl:grid-cols-3 gap-5" : "sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-px sm:bg-white/20 sm:border sm:border-white/20 sm:rounded-2xl sm:overflow-hidden"} pb-4 sm:pb-0`}>
+                                {pageWhyItems.map((w, index) => {
+                                    const HighlightIcon = w.icon;
+                                    return (
+                                    <motion.div
+                                        key={w.num}
+                                        initial={reduceMotion ? false : { opacity: 0, y: 20 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        viewport={{ once: true, amount: 0.15 }}
+                                        transition={{ duration: reduceMotion ? 0 : 0.45, delay: reduceMotion ? 0 : index * 0.1 }}
+                                        whileHover={reduceMotion ? undefined : isPharmacyPage ? { y: -5, boxShadow: "0 18px 38px rgba(20,40,78,0.10)", transition: { duration: 0.2 } } : { y: -4, backgroundColor: "#1c355e", transition: { duration: 0.2, delay: 0 } }}
+                                        style={isPharmacyPage ? {
+                                            borderRadius: index % 2 === 0
+                                                ? "52px 72px 58px 70px / 46px 58px 44px 58px"
+                                                : "72px 52px 70px 58px / 58px 44px 58px 46px",
+                                        } : undefined}
+                                        className={`cse-why-card flex shrink-0 w-[85vw] sm:w-auto sm:shrink ${isPharmacyPage ? "min-h-[230px] items-center gap-5 border border-white bg-white/80 p-5 shadow-[0_14px_40px_rgba(20,40,78,0.06)] sm:p-6" : "flex-col rounded-2xl border border-white/20 bg-[#14284e] p-7 sm:rounded-none sm:border-0 sm:p-8"}`}
+                                    >
+                                        {isPharmacyPage ? <>
+                                            <div className="grid size-[82px] shrink-0 place-items-center rounded-full border-[6px] border-[#FFB703] bg-[#14284E] ring-2 ring-[#FFB703]/40 ring-offset-2 ring-offset-white sm:size-[100px]">
+                                                {HighlightIcon && <HighlightIcon aria-hidden="true" className="h-9 w-9 text-white sm:h-11 sm:w-11" strokeWidth={1.8} />}
+                                            </div>
+                                            <div className="min-w-0 flex-1">
+                                                <div className="mb-2 flex items-center gap-2">
+                                                    <span className="cse-why-number text-[28px] font-extrabold leading-none tracking-tight text-[#FFB703] sm:text-[32px]">{w.num}</span>
+                                                    <span className="relative mt-2 h-[2px] flex-1 bg-[#FFB703]"><span className="absolute -right-0.5 -top-[3px] h-2 w-2 rounded-full bg-[#FFB703]" /></span>
+                                                </div>
+                                                <h3 className="mb-2 font-display text-[15px] font-extrabold leading-snug text-[#14284E] sm:text-[16px]">{w.title}</h3>
+                                                <p className="text-[13px] leading-[1.45] text-[#263A5E]">{w.desc}</p>
+                                            </div>
+                                        </> : <>
+                                            <div className="mb-5">
+                                                <span className="cse-why-number block w-fit origin-left text-[14px] text-[#FFB703] font-bold tracking-[0.05em]" style={{ animationDelay: `${index * 0.25}s` }}>{w.num}</span>
+                                                <div className="cse-why-underline w-6 h-[2.5px] bg-[#d62c2b] mt-2"></div>
+                                            </div>
+                                            <h4 className="text-white font-bold text-[17px] mb-3 font-display leading-snug">{w.title}</h4>
+                                            <p className="text-white/80 text-[13.5px] leading-relaxed text-left sm:text-justify">{w.desc}</p>
+                                        </>}
+                                    </motion.div>
+                                    );
+                                })}
+                            </div>
+                        </div>
+                    </div>
+                </section>
+    );
+
     return (
         <div id="cse-page" className="text-[#14284E] bg-white antialiased">
             {/* ── Lab Icon Micro-animations ─────────────────────────────── */}
             <style>{`
                 #cse-page #academic-strength-heading span { font-size: inherit; }
+                .cse-activity-card-scroll { scrollbar-width: none; -ms-overflow-style: none; -webkit-overflow-scrolling: touch; }
+                .cse-activity-card-scroll::-webkit-scrollbar { display: none; }
                 @media (max-width: 639px) {
                     #cse-page main section:not(.cse-page-hero) h2 { font-size: 24px; }
                     .cse-mobile-button, .cse-mobile-button span:not([aria-hidden]) { font-size: 14px; }
@@ -715,7 +889,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = ({ customData }: { customDa
                 <section className="cse-page-hero sm:hidden relative w-full overflow-hidden" style={{ minHeight: "620px" }}>
                     {/* Full background image */}
                     <img
-                        src="/assets/images/new-information-system/diff-banner.jpg"
+                        src={customData?.hero.backgroundImage ?? "/assets/images/new-information-system/diff-banner.jpg"}
                         alt={`${heroPrefix} ${heroTitle}`}
                         className="absolute inset-0 w-full h-full object-cover object-top"
                     />
@@ -786,7 +960,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = ({ customData }: { customDa
                 <section className="cse-page-hero relative hidden sm:flex w-full overflow-hidden items-center sm:pt-[78px] sm:pb-8 md:min-h-[504px] md:pt-24 md:pb-14 bg-[#071329]">
                     {/* Background Banner */}
                     <img
-                        src="/assets/images/new-information-system/again-banner.jpg"
+                        src={customData?.hero.backgroundImage ?? "/assets/images/new-information-system/again-banner.jpg"}
                         alt={`${heroPrefix} ${heroTitle}`}
                         className="absolute inset-0 w-full h-full object-cover object-top z-0"
                     />
@@ -915,7 +1089,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = ({ customData }: { customDa
                                 <h2 className="text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3 text-left lg:text-left">
                                     {customData?.overview.headingBefore ?? "About the"} <span className="text-[#FFB703]">{customData?.overview.headingHighlight ?? "Department of CSE"}</span>
                                 </h2>
-                                {customData?.overview.subtitle && <p className="mb-3 text-[15px] font-semibold text-[#0F4A85]">{customData.overview.subtitle}</p>}
+                                {/* {customData?.overview.subtitle && <p className="mb-3 text-[15px] font-semibold text-[#0F4A85]">{customData.overview.subtitle}</p>} */}
 
                                 <div className="text-[#4B5A72] text-[15.5px] sm:text-[16px] leading-relaxed space-y-4 text-justify">
                                     <p className="text-justify">
@@ -1242,6 +1416,8 @@ const DepartmentOfComputerScienceAndEngineeringNew = ({ customData }: { customDa
                     </div>
                 </section>
 
+                {isPharmacyPage && highlightsSection}
+
                 {/* ── Labs & Practical Learning fixing the not shown problem ─────────────────────────────── */}
                 <section id="labs" className="py-8 md:pt-6 md:pb-12 px-4 sm:px-6 bg-[#14284E] scroll-mt-24">
                     <div className={`${Classes["container"]} cse-content-container`}>
@@ -1250,7 +1426,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = ({ customData }: { customDa
                         <div className="w-full mb-8 md:mb-10 flex flex-col gap-4">
                             <div className="w-full">
                                 <h2 className="text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display text-white mb-3">
-                                    Labs &amp; <span className="text-[#FFB703]">Practical Learning</span>
+                                    {customData?.labs.headingBefore ?? "Labs &"} <span className="text-[#FFB703]">{customData?.labs.headingHighlight ?? "Practical Learning"}</span>
                                 </h2>
                                 <p className="hidden sm:block text-[15.5px] text-white/90 leading-relaxed text-justify">
                                     {customData?.labs.intro ?? "The Department of Computer Science and Engineering at Shri Ramswaroop Memorial University provides students with practical learning environments designed to complement classroom teaching. Through programming, computing, networking, artificial intelligence, cloud technologies and industry-oriented laboratories, students get opportunities to apply concepts, develop projects and strengthen their technical skills."}
@@ -1281,8 +1457,9 @@ const DepartmentOfComputerScienceAndEngineeringNew = ({ customData }: { customDa
                         {/* Lab Cards Carousel */}
                         <div className="overflow-hidden sm:overflow-visible -mx-4 px-4 sm:mx-0 sm:px-0" ref={labsEmblaRef}>
                             <div className="flex sm:grid sm:grid-cols-12 gap-5 pb-4 sm:pb-0">
-                                {pageLabItems.map((lab) => (
-                                    <div
+                                {pageLabItems.map((lab) => {
+                                    const LabIcon = lab.icon;
+                                    return <div
                                         key={lab.num}
                                         className={`col-span-12 sm:col-span-6 lg:col-span-4 ${parseInt(lab.num) <= 4 ? "xl:col-span-3" : "xl:col-span-4"} group relative flex flex-col rounded-2xl border border-[#DCE6F2] bg-white p-6 shadow-[0_2px_12px_rgba(15,31,61,0.04)] hover:shadow-[0_10px_28px_rgba(15,31,61,0.10)] hover:-translate-y-1 transition-all duration-300 overflow-hidden shrink-0 w-[85vw] sm:w-auto sm:shrink`}
                                     >
@@ -1300,11 +1477,19 @@ const DepartmentOfComputerScienceAndEngineeringNew = ({ customData }: { customDa
                                                 </span>
                                                 <div className="w-8 h-[2.5px] rounded-full" style={{ backgroundColor: lab.accent }} />
                                             </div>
-                                            <img
-                                                src={lab.iconSrc}
-                                                alt={lab.num === "01" ? "L&T Edutech" : ""}
-                                                className={`${lab.num === "01" ? "w-28 max-w-[50%] h-10" : "w-10 h-10"} object-contain shrink-0 opacity-90 group-hover:opacity-100 ${lab.animClass}`}
-                                            />
+                                            {LabIcon ? (
+                                                <LabIcon
+                                                    aria-hidden="true"
+                                                    className={`w-10 h-10 shrink-0 text-[#4E5B83] opacity-90 group-hover:opacity-100 ${lab.animClass}`}
+                                                    strokeWidth={1.6}
+                                                />
+                                            ) : lab.iconSrc ? (
+                                                <img
+                                                    src={lab.iconSrc}
+                                                    alt={lab.num === "01" && !isPharmacyPage ? "L&T Edutech" : ""}
+                                                    className={`${lab.num === "01" && !isPharmacyPage ? "w-28 max-w-[50%] h-10" : "w-10 h-10"} object-contain shrink-0 opacity-90 group-hover:opacity-100 ${lab.animClass}`}
+                                                />
+                                            ) : null}
                                         </div>
 
                                         {/* Title */}
@@ -1316,8 +1501,8 @@ const DepartmentOfComputerScienceAndEngineeringNew = ({ customData }: { customDa
                                         <p className="text-[13px] text-[#4B5A72] leading-relaxed text-left sm:text-justify flex-grow">
                                             {lab.desc}
                                         </p>
-                                    </div>
-                                ))}
+                                    </div>;
+                                })}
                             </div>
                         </div>
 
@@ -1342,12 +1527,12 @@ const DepartmentOfComputerScienceAndEngineeringNew = ({ customData }: { customDa
                                     {customData ? <>{customData.events.headingBefore} <span className="text-[#FFB703]">{customData.events.headingHighlight}</span></> : <>From Classroom Concepts to <span className="text-[#FFB703]">Real-World Applications</span></>}
                                 </h2>
                                 {customData?.events.sectionSubtitle && <p className="mb-2 font-display text-[18px] font-bold text-[#14284E]">{customData.events.sectionSubtitle}</p>}
-                                {customData?.events.intro && <p className="max-w-5xl text-[14px] leading-relaxed text-[#4B5A72] text-justify">{customData.events.intro}</p>}
-                                {customData?.events.cardsEyebrow && <p className="mt-4 mb-2 text-[11px] tracking-[0.1em] uppercase text-[#d62c2b] font-bold">{customData.events.cardsEyebrow}</p>}
+                                {customData?.events.intro && <p className="w-full text-[14px] leading-relaxed text-[#4B5A72] text-justify">{customData.events.intro}</p>}
+                                {/* {customData?.events.cardsEyebrow && <p className="mt-4 mb-2 text-[11px] tracking-[0.1em] uppercase text-[#d62c2b] font-bold">{customData.events.cardsEyebrow}</p>} */}
                                 {customData?.events.cardsHeading && <>
                                     <p className="mb-2 font-display text-[18px] font-bold text-[#14284E]">{customData.events.cardsHeading}</p>
                                     {customData.events.cardsSubheading && <p className="mb-2 text-[14px] font-semibold text-[#14284E]">{customData.events.cardsSubheading}</p>}
-                                    {customData.events.cardsIntro && <p className="mb-3 max-w-5xl text-[14px] leading-relaxed text-[#4B5A72] text-justify">{customData.events.cardsIntro}</p>}
+                                    {customData.events.cardsIntro && <p className="mb-3 w-full text-[14px] leading-relaxed text-[#4B5A72] text-justify">{customData.events.cardsIntro}</p>}
                                 </>}
                             </div>
 
@@ -1407,32 +1592,39 @@ const DepartmentOfComputerScienceAndEngineeringNew = ({ customData }: { customDa
                     </div>
                 </section>
 
-                {pageActivitySections.map((section) => (
-                    <section key={section.id} id={section.id} className="py-8 md:py-10 px-4 sm:px-6 bg-[#F0F6FB] scroll-mt-24">
-                        <div className={`${Classes["container"]} cse-content-container`}>
+                {pageActivitySections.filter((section) => !(isPharmacyPage && section.id === "student-projects")).map((section) => (
+                    <section key={section.id} id={section.id} className={`py-8 md:py-10 px-4 sm:px-6 ${isPharmacyPage && section.id === "research-publications" ? ResearchShowcaseStyles.researchShowcaseBackground : isPharmacyPage && section.id === "seminars-webinars" ? "bg-white" : isPharmacyPage && section.id === "industry-exposure" ? "bg-[#14284e]" : "bg-[#F0F6FB]"} scroll-mt-24`}>
+                        {isPharmacyPage && section.id === "research-publications" && <>
+                            <div aria-hidden="true" className={ResearchShowcaseStyles.showcaseAccentTop} />
+                            <div aria-hidden="true" className={ResearchShowcaseStyles.showcaseAccentLeft} />
+                            <div aria-hidden="true" className={ResearchShowcaseStyles.showcaseAccentRight} />
+                            <div aria-hidden="true" className={ResearchShowcaseStyles.showcaseDotsTop} />
+                            <div aria-hidden="true" className={ResearchShowcaseStyles.showcaseDotsBottom} />
+                            <svg className={ResearchShowcaseStyles.showcaseWave} viewBox="0 0 1440 300" preserveAspectRatio="none" aria-hidden="true">
+                                <path d="M0 74C176 22 325 34 506 82c198 53 346 17 524-27 161-40 277-19 410 26v219H0V74Z" fill="white" fillOpacity=".14" />
+                                <path d="M0 153c181 63 361 74 565 26 214-51 374-82 577-28 119 32 208 79 298 83v66H0v-147Z" fill="white" fillOpacity=".11" />
+                                <path d="M0 238c181 48 363 52 565 20 214-34 383-53 577-17 121 23 207 47 298 53" fill="none" stroke="white" strokeOpacity=".45" strokeWidth="2" />
+                                <path d="M0 267c187 28 376 30 568 1 217-33 383-42 574-8 116 20 208 38 298 40" fill="none" stroke="white" strokeOpacity=".26" strokeWidth="1.5" />
+                            </svg>
+                        </>}
+                        <div className={`${Classes["container"]} cse-content-container ${isPharmacyPage && section.id === "research-publications" ? "relative z-10" : ""}`}>
                             <div className="w-full mb-8 flex flex-col gap-4">
                                 <div className="w-full">
-                                    <div className="text-[11px] tracking-[0.1em] uppercase text-[#d62c2b] font-bold flex items-center gap-2 mb-3">
-                                        <span className="w-4 h-[2px] bg-[#d62c2b] inline-block shrink-0" />{section.eyebrow}
-                                    </div>
-                                    <h2 className="text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3">{section.heading}</h2>
-                                    {section.intro && <p className="max-w-5xl text-[15.5px] leading-relaxed text-[#4B5A72] text-justify">{section.intro}</p>}
+                                    {isPharmacyPage && (section.id === "seminars-webinars" || section.id === "industry-exposure" || section.id === "workshops" || section.id === "research-publications") ? <>
+                                        <h2 className={`text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display ${section.id === "industry-exposure" ? "text-[#FFB703]" : "text-[#14284E]"} mb-2`}>
+                                            {section.id === "seminars-webinars" ? <>Seminars & <span className="text-[#FFB703]">Webinars</span></> : section.id === "industry-exposure" ? <>Industry <span className="text-white">Exposure</span></> : section.id === "research-publications" ? <>Research & <span className="text-white">Publications</span></> : section.eyebrow}
+                                        </h2>
+                                        <h3 className={`text-[20px] sm:text-[22px] leading-[1.3] font-bold font-display ${section.id === "industry-exposure" ? "text-white" : "text-[#14284E]"} mb-3`}>{section.heading}</h3>
+                                    </> : <>
+                                        <div className={`text-[11px] tracking-[0.1em] uppercase ${isPharmacyPage && section.id === "industry-exposure" ? "text-[#FFB703]" : "text-[#d62c2b]"} font-bold flex items-center gap-2 mb-3`}>
+                                            <span className={`w-4 h-[2px] ${isPharmacyPage && section.id === "industry-exposure" ? "bg-[#FFB703]" : "bg-[#d62c2b]"} inline-block shrink-0`} />{section.eyebrow}
+                                        </div>
+                                        <h2 className={`text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display ${isPharmacyPage && section.id === "industry-exposure" ? "text-white" : "text-[#14284E]"} mb-3`}>{section.heading}</h2>
+                                    </>}
+                                    {section.intro && <p className={`w-full text-[15.5px] leading-relaxed ${isPharmacyPage && section.id === "industry-exposure" ? "text-white/80" : "text-[#4B5A72]"} text-justify`}>{section.intro}</p>}
                                 </div>
                             </div>
-                            {section.cards && section.cards.length > 0 && <div className="overflow-hidden sm:overflow-visible -mx-4 px-4 sm:mx-0 sm:px-0">
-                                <div className="flex sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-5 pb-4 sm:pb-0">
-                                    {section.cards.map((event, index) => <article key={`${section.id}-${event.title}-${index}`} className="flex flex-col shrink-0 w-[85vw] sm:w-auto sm:shrink bg-white border border-[#DCE6F2] border-b-[4px] border-b-[#d62c2b] rounded-2xl overflow-hidden shadow-[0_4px_18px_rgba(15,31,61,0.04)] hover:shadow-[0_12px_30px_rgba(15,31,61,0.08)] hover:-translate-y-1 transition-all duration-300">
-                                        <div className="w-full aspect-[16/9] relative overflow-hidden bg-[#DCE6F2]"><img src={event.img} alt={event.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy" /></div>
-                                        <div className="p-5 sm:p-6 flex flex-col flex-grow">
-                                            <span className="text-[10.5px] font-bold uppercase tracking-[0.06em] text-[#d62c2b] mb-2 block">{event.tag}</span>
-                                            <h3 className="font-bold text-[16px] text-[#14284E] font-display mb-2 leading-snug line-clamp-2">{event.title}</h3>
-                                            {event.speaker && <div className="text-[13.5px] text-[#3F4C56] mb-4 flex-grow"><span className="line-clamp-2">{event.speaker}</span></div>}
-                                            {!event.speaker && <p className="mb-4 flex-grow text-[13px] leading-relaxed text-[#4B5A72] line-clamp-3">{event.shortDesc}</p>}
-                                            <div className="mt-auto pt-4 border-t border-[#F1F5F9]"><button onClick={() => setSelectedEvent(event)} className="cse-read-more cse-mobile-button text-[11.5px] font-bold text-[#d62c2b] hover:text-[#1B4F91] uppercase tracking-[0.08em] flex items-center gap-1.5 transition-colors">READ MORE →</button></div>
-                                        </div>
-                                    </article>)}
-                                </div>
-                            </div>}
+                            {section.cards && section.cards.length > 0 && <ActivityCardsCarousel sectionId={section.id} heading={section.heading} cards={section.cards} onSelect={setSelectedEvent} forceCarousel={isPharmacyPage && section.id === "workshops"} />}
                             {section.listTitle && <div className="mt-7 rounded-2xl border border-[#DCE6F2] bg-white p-5 sm:p-6">
                                 <h3 className="font-display text-[16px] font-bold text-[#14284E]">{section.listTitle}</h3>
                                 <ul className="mt-4 grid gap-3 text-[13.5px] leading-relaxed text-[#4B5A72] sm:grid-cols-2 lg:grid-cols-3">{section.listItems?.map((item) => <li key={item} className="flex items-start gap-2"><span className="text-[#FFB703]">●</span>{item}</li>)}</ul>
@@ -1445,63 +1637,19 @@ const DepartmentOfComputerScienceAndEngineeringNew = ({ customData }: { customDa
                 <DepartmentPlacements recruiters={recruiterLogos} imageUrl={studentsPlacedImg} imageAlt="SRMU students getting placed at top companies" />
 
                 {/* ── Faculty ──────────────────────────────────────────────── */}
-                {(!customData || customData.showFaculty) && <DepartmentFaculty faculty={facultyList} onSelect={setSelectedFaculty} />}
+                {(!customData || customData.showFaculty) && (
+                    <DepartmentFaculty
+                        faculty={customData?.facultySection?.members ?? facultyList}
+                        onSelect={setSelectedFaculty}
+                        subheading={customData?.facultySection?.subheading}
+                        featuredDescription={customData?.facultySection?.featuredDescription}
+                        featuredLabel={customData?.facultySection?.featuredLabel}
+                        showResearchShowcase={customData?.facultySection?.showResearchShowcase ?? true}
+                    />
+                )}
 
-                {/* ── Key Highlights ───────────────────────────────────────── */}
-                <section className="pt-8 pb-6 md:pt-10 md:pb-6 px-4 sm:px-6 bg-[#14284e]">
-                    <div className={`${Classes["container"]} cse-content-container`}>
-                        <div className="w-full mb-8 flex flex-col gap-4">
-                            <div className="w-full">
-                                <h2 className="text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display text-white">
-                                    {customData ? <>{customData.highlights.headingBefore} <span className="text-[#FFB703]">{customData.highlights.headingHighlight}</span></> : <>What makes the <span className="text-[#FFB703]">CSE Department Different</span> in SRMU?</>}
-                                </h2>
-                            </div>
+                {!isPharmacyPage && highlightsSection}
 
-                            {/* Navigation Buttons */}
-                            <div className="flex items-center gap-3 shrink-0 self-start sm:hidden">
-                                <button
-                                    onClick={() => whyEmblaApi?.scrollPrev()}
-                                    disabled={!whyCanPrev}
-                                    className="cse-mobile-button w-10 h-10 flex items-center justify-center rounded-full bg-[#14284e] border border-white/20 shadow-sm text-white hover:bg-white hover:text-[#14284e] transition-all disabled:opacity-30 disabled:cursor-not-allowed"
-                                    aria-label="Previous"
-                                >
-                                    <ArrowLeft className="w-4 h-4" />
-                                </button>
-                                <button
-                                    onClick={() => whyEmblaApi?.scrollNext()}
-                                    disabled={!whyCanNext}
-                                    className="cse-mobile-button w-10 h-10 flex items-center justify-center rounded-full bg-[#14284e] border border-white/20 shadow-sm text-white hover:bg-white hover:text-[#14284e] transition-all disabled:opacity-30 disabled:cursor-not-allowed"
-                                    aria-label="Next"
-                                >
-                                    <ArrowRight className="w-4 h-4" />
-                                </button>
-                            </div>
-                        </div>
-
-                        <div className="overflow-hidden sm:overflow-visible -mx-4 px-4 sm:mx-0 sm:px-0" ref={whyEmblaRef}>
-                            <div className="flex sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-px pb-4 sm:pb-0 sm:bg-white/20 sm:border sm:border-white/20 sm:rounded-2xl sm:overflow-hidden">
-                                {pageWhyItems.map((w, index) => (
-                                    <motion.div
-                                        key={w.num}
-                                        initial={reduceMotion ? false : { opacity: 0, y: 20 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        viewport={{ once: true, amount: 0.15 }}
-                                        transition={{ duration: reduceMotion ? 0 : 0.45, delay: reduceMotion ? 0 : index * 0.1 }}
-                                        whileHover={reduceMotion ? undefined : { y: -4, backgroundColor: "#1c355e", transition: { duration: 0.2, delay: 0 } }}
-                                        className="cse-why-card bg-[#14284e] p-7 sm:p-8 flex flex-col shrink-0 w-[85vw] sm:w-auto sm:shrink rounded-2xl sm:rounded-none border border-white/20 sm:border-0"
-                                    >
-                                        <div className="mb-5">
-                                            <span className="cse-why-number block w-fit origin-left text-[14px] text-[#FFB703] font-bold tracking-[0.05em]" style={{ animationDelay: `${index * 0.25}s` }}>{w.num}</span>
-                                            <div className="cse-why-underline w-6 h-[2.5px] bg-[#d62c2b] mt-2"></div>
-                                        </div>
-                                        <h4 className="text-white font-bold text-[17px] mb-3 font-display leading-snug">{w.title}</h4>
-                                        <p className="text-white/80 text-[13.5px] leading-relaxed text-left sm:text-justify">{w.desc}</p>
-                                    </motion.div>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                </section>
                 {/* ── Career Pathways ──────────────────────────────────────── */}
                 <section id="careers" className="relative isolate pt-6 pb-2 md:pt-8 md:pb-3 px-4 sm:px-6 bg-[#EEF5FC] border-b-[8px] border-[#FFB703] overflow-hidden">
                     <CareerBackground />
@@ -1509,7 +1657,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = ({ customData }: { customDa
                         <div className="w-full mb-4 sm:mb-5 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
                             <div className="text-left max-w-3xl">
                                 <h2 className="text-[clamp(30px,7vw,36px)] sm:text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E]">
-                                    {customData ? customData.career.heading : <>Where can a <span className="text-[#FFB703]">CSE Degree</span> take you?</>}
+                                    {isPharmacyPage ? <>Career <span className="text-[#FFB703]">Opportunities</span></> : customData ? customData.career.heading : <>Where can a <span className="text-[#FFB703]">CSE Degree</span> take you?</>}
                                 </h2>
                             </div>
 
@@ -1626,7 +1774,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = ({ customData }: { customDa
                                 </g>
                             </svg>
                         </div>
-                        {careerDescriptions.length > 0 && <div className="mx-auto mt-8 grid max-w-[1100px] gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                        {customData?.showCareerDescriptionCards !== false && careerDescriptions.length > 0 && <div className="mx-auto mt-8 grid max-w-[1100px] gap-4 sm:grid-cols-2 lg:grid-cols-4">
                             {careerDescriptions.map((role, index) => <article key={role.title} className="rounded-2xl border border-[#DCE6F2] border-b-[4px] border-b-[#d62c2b] bg-white p-5 shadow-[0_4px_18px_rgba(15,31,61,0.04)]">
                                 <span className="text-[10px] font-bold tracking-[0.08em] text-[#d62c2b]">{String(index + 1).padStart(2, "0")}</span>
                                 <h3 className="mt-2 font-display text-[14px] font-bold text-[#14284E]">{role.title}</h3>
@@ -1636,155 +1784,56 @@ const DepartmentOfComputerScienceAndEngineeringNew = ({ customData }: { customDa
                     </div>
                 </section>
 
+                {isPharmacyPage && scholarshipSection}
+
                 {customData?.community && <section id="community" className="py-8 md:py-10 px-4 sm:px-6 bg-[#14284e] scroll-mt-24">
                     <div className={`${Classes["container"]} cse-content-container`}>
                         <div className="w-full mb-8 flex flex-col gap-4">
-                            <div className="text-[12px] tracking-[0.1em] uppercase text-[#FFB703] font-bold flex items-center gap-2 mb-2"><span className="w-4 h-[2px] bg-[#FFB703] inline-block shrink-0" />{customData.community.eyebrow}</div>
-                            <h2 className="text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display text-white">{customData.community.heading}</h2>
-                            {customData.community.paragraphs.map((paragraph) => <p key={paragraph} className="max-w-5xl text-[14px] leading-relaxed text-white/80 text-justify">{paragraph}</p>)}
+                            {isPharmacyPage ? <>
+                                <h2 className="text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display text-[#FFB703] mb-1">
+                                    Community Outreach <span className="text-white">Programmes</span>
+                                </h2>
+                                <h3 className="text-[20px] sm:text-[22px] leading-[1.3] font-bold font-display text-white mb-2">{customData.community.heading}</h3>
+                            </> : <>
+                                <div className="text-[12px] tracking-[0.1em] uppercase text-[#FFB703] font-bold flex items-center gap-2 mb-2"><span className="w-4 h-[2px] bg-[#FFB703] inline-block shrink-0" />{customData.community.eyebrow}</div>
+                                <h2 className="text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display text-white">{customData.community.heading}</h2>
+                            </>}
+                            {customData.community.paragraphs.map((paragraph) => <p key={paragraph} className="w-full text-[14px] leading-relaxed text-white/80 text-justify">{paragraph}</p>)}
                         </div>
                         <div className="mb-4 font-display text-[17px] font-bold text-white">{customData.community.focusTitle}</div>
-                        <div className="grid gap-px overflow-hidden rounded-2xl border border-white/20 bg-white/20 sm:grid-cols-2 lg:grid-cols-4">
+                        {isPharmacyPage ? <div className="grid grid-cols-1 gap-y-2 sm:grid-cols-2 xl:grid-cols-4 xl:divide-x xl:divide-white/25">
+                            {customData.community.focusAreas.map((area, index) => {
+                                const Icon = index === 1 ? HeartPulse : index === 2 ? Handshake : UsersRound;
+                                return <article key={area} className="flex min-w-0 items-center gap-4 px-2 py-4 xl:px-5 xl:py-2">
+                                    <div
+                                        className="grid h-[84px] w-[84px] shrink-0 place-items-center rounded-full p-[7px]"
+                                        style={{ background: "conic-gradient(from -35deg, #FFB703 0deg 132deg, #314574 132deg 360deg)" }}
+                                    >
+                                        <div className="grid h-full w-full place-items-center rounded-full bg-[#253968] text-white">
+                                            <Icon className="h-9 w-9" strokeWidth={2.5} aria-hidden="true" />
+                                        </div>
+                                    </div>
+                                    <div className="min-w-0">
+                                        <span className="block font-display text-[24px] leading-none font-extrabold text-[#FFB703]">{String(index + 1).padStart(2, "0")}</span>
+                                        <h3 className="mt-2 font-display text-[14px] leading-snug font-bold text-white sm:text-[15px]">{area}</h3>
+                                    </div>
+                                </article>;
+                            })}
+                        </div> : <div className="grid gap-px overflow-hidden rounded-2xl border border-white/20 bg-white/20 sm:grid-cols-2 lg:grid-cols-4">
                             {customData.community.focusAreas.map((area, index) => <article key={area} className="bg-[#14284e] p-6 sm:p-7">
                                 <span className="block text-[14px] font-bold tracking-[0.05em] text-[#FFB703]">0{index + 1}</span>
                                 <h3 className="mt-4 font-display text-[15px] leading-snug font-bold text-white">{area}</h3>
                             </article>)}
-                        </div>
+                        </div>}
                     </div>
                 </section>}
 
-                {/* ── Scholarships ─────────────────────────────────────────── */}
-                <section className={`${customData && !customData.showScholarships ? "hidden" : ""} pt-4 pb-4 sm:py-10 px-4 sm:px-6 bg-white scroll-mt-24 border-b border-[#e0e0e0]`} id="scholarships">
-                    <div className={`${Classes["container"]} cse-content-container mx-auto`}>
-                        <div className="flex flex-col lg:flex-row gap-5">
+                {!isPharmacyPage && scholarshipSection}
 
-                            {/* Left Side: Jagran Banner */}
-                            <div className="order-2 sm:order-none w-full lg:w-2/5 xl:w-[35%] flex">
-                                <img src="/assets/images/Trophy.png" alt="Future Ready University" className="w-full h-auto object-cover rounded-[20px]" />
-                            </div>
-
-                            {/* Right Side: Scholarship Details */}
-                            <div className="order-1 sm:order-none min-w-0 w-full lg:w-3/5 xl:w-[65%] flex flex-col gap-4">
-
-                                {/* Top: Typography & Books Image */}
-                                <div className="flex flex-row flex-wrap items-center justify-between bg-white rounded-[20px] p-5 border border-[#e0e0e0] shadow-sm">
-                                    <div className="w-[55%] sm:w-[60%] flex flex-col items-start px-2">
-                                        <span className="text-[#14284E] font-bold text-[18px] sm:text-[22px] mb-1 font-display">
-                                            Avail Up to
-                                        </span>
-                                        <div className="text-[#d62c2b] font-black text-[50px] sm:text-[75px] leading-[0.8] tracking-tighter flex items-start mb-2 drop-shadow-sm">
-                                            100% <Star aria-hidden="true" className="h-5 w-5 sm:h-6 sm:w-6 leading-none mt-1 ml-1 shrink-0 text-[#FFB703] fill-current drop-shadow-sm" strokeWidth={2} />
-                                        </div>
-                                        <h2 className="text-[#14284E] font-black text-[24px] sm:text-[32px] font-display leading-[1] tracking-tight mb-4">
-                                            Scholarships
-                                        </h2>
-
-                                        <div className="hidden sm:flex flex-row flex-nowrap items-center gap-2 sm:gap-3 w-full overflow-x-auto pb-1 sm:pb-0">
-                                            <Link
-                                                to="/scholarship"
-                                                className="cse-mobile-button uppercase tracking-wider group relative overflow-hidden inline-flex flex-none items-center gap-1.5 sm:gap-2 bg-[#FFB703] text-[#14284E] font-bold text-[12px] sm:text-[14px] px-4 sm:px-6 py-2.5 rounded-full shadow-[0_4px_12px_rgba(255,183,3,0.3)] hover:shadow-[0_6px_16px_rgba(255,183,3,0.45)] transition-all hover:-translate-y-0.5"
-                                            >
-                                                <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out bg-gradient-to-r from-transparent via-white/50 to-transparent pointer-events-none" />
-                                                Apply Now
-                                                <ArrowRight className="w-4 h-4 text-[#14284E] group-hover:translate-x-1 transition-transform" strokeWidth={2.5} />
-                                            </Link>
-                                            <a
-                                                href="#programs"
-                                                className="cse-mobile-button uppercase tracking-wider group inline-flex flex-none items-center gap-1.5 sm:gap-2 bg-white border border-[#14284E]/20 text-[#14284E] font-bold text-[12px] sm:text-[14px] px-4 sm:px-6 py-2.5 rounded-full shadow-sm hover:bg-gray-50 hover:shadow-md transition-all hover:-translate-y-0.5"
-                                            >
-                                                Eligibility
-                                                <ArrowRight className="w-4 h-4 text-[#14284E] group-hover:translate-x-1 transition-transform" strokeWidth={2.5} />
-                                            </a>
-                                        </div>
-                                    </div>
-
-                                    <div className="w-[45%] sm:w-[40%] flex justify-center mt-0">
-                                        <img src={AdditionInScholarImg} alt="Scholarships" className="w-[90%] sm:w-[90%] max-w-[150px] sm:max-w-[250px] object-contain drop-shadow-md" />
-                                    </div>
-
-                                    {/* Mobile Buttons */}
-                                    <div className="flex sm:hidden flex-row flex-wrap items-center gap-2 w-full mt-5 justify-center pb-1">
-                                        <Link
-                                            to="/scholarship"
-                                            className="cse-mobile-button uppercase tracking-wider group relative overflow-hidden inline-flex flex-none items-center gap-1.5 bg-[#FFB703] text-[#14284E] font-bold text-[12px] px-4 py-2.5 rounded-full shadow-[0_4px_12px_rgba(255,183,3,0.3)] hover:shadow-[0_6px_16px_rgba(255,183,3,0.45)] transition-all"
-                                        >
-                                            <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out bg-gradient-to-r from-transparent via-white/50 to-transparent pointer-events-none" />
-                                            Apply Now
-                                            <ArrowRight className="w-4 h-4 text-[#14284E]" strokeWidth={2.5} />
-                                        </Link>
-                                        <a
-                                            href="#programs"
-                                            className="cse-mobile-button uppercase tracking-wider group inline-flex flex-none items-center gap-1.5 bg-white border border-[#14284E]/20 text-[#14284E] font-bold text-[12px] px-4 py-2.5 rounded-full shadow-sm transition-all"
-                                        >
-                                            Eligibility
-                                            <ArrowRight className="w-4 h-4 text-[#14284E]" strokeWidth={2.5} />
-                                        </a>
-                                    </div>
-                                </div>
-
-                                {/* Bottom: Grid */}
-                                <div className="bg-[#FAFAFA] p-4 sm:p-5 rounded-[20px] relative overflow-hidden border border-[#e0e0e0] flex-1">
-                                    <div className="absolute -bottom-6 -right-6 opacity-20 pointer-events-none">
-                                        <svg width="80" height="80" viewBox="0 0 100 100" fill="none">
-                                            <pattern id="dots2" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
-                                                <circle cx="2" cy="2" r="2" fill="#FFB703" />
-                                            </pattern>
-                                            <rect width="100" height="100" fill="url(#dots2)" />
-                                        </svg>
-                                    </div>
-
-                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-2.5 gap-x-4 relative z-10 h-full content-start">
-                                        {scholarshipItems.map((item, idx) => (
-                                            <Link key={idx} to="/scholarship-scheme" className={`flex items-center gap-3 bg-white p-2 px-3 sm:px-4 rounded-full shadow-[0_1px_8px_rgba(20,40,78,0.03)] hover:shadow-[0_4px_12px_rgba(20,40,78,0.08)] hover:-translate-y-0.5 transition-all duration-300 group cursor-pointer border border-[#F0F4F8] ${!showAllScholarships && idx >= 4 ? "hidden sm:flex" : ""}`}>
-                                                <div className="w-7 h-7 rounded-full bg-[#FCE8E8] flex items-center justify-center shrink-0 group-hover:bg-[#d62c2b] group-hover:shadow-[0_4px_8px_rgba(214,44,43,0.3)] transition-all duration-300">
-                                                    <item.icon className="w-3.5 h-3.5 text-[#d62c2b] group-hover:text-white transition-colors duration-300" strokeWidth={2.5} />
-                                                </div>
-                                                <div className="w-[1px] h-4 bg-gray-200 shrink-0"></div>
-                                                <span className="text-[#14284E] text-[12px] sm:text-[13px] font-bold leading-snug sm:leading-[1.2] min-w-0 flex-1">
-                                                    {item.text}
-                                                </span>
-                                            </Link>
-                                        ))}
-                                    </div>
-                                    {scholarshipItems.length > 4 && (
-                                        <button
-                                            onClick={() => setShowAllScholarships(!showAllScholarships)}
-                                            className="cse-read-more cse-mobile-button text-[14px] font-bold text-[#FFB703] mt-3 pb-1 flex items-center justify-center sm:hidden transition-colors w-full z-20 relative"
-                                        >
-                                            {showAllScholarships ? "Read Less" : "Read More"}
-                                        </button>
-                                    )}
-                                </div>
-
-                            </div>
-                        </div>
-
-                        {/* Admission + Eligibility buttons */}
-                        {/* 
-                        <div className="flex flex-row items-center justify-center gap-3 sm:gap-4 mt-8 pb-2">
-                            <a
-                                href="https://students.srmu.ac.in/login"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="uppercase tracking-wider flex-1 sm:flex-none flex items-center gap-1.5 sm:gap-2 bg-[#FFB703] hover:bg-[#FFB703] text-[#14284E] font-bold text-[14px]  px-2 sm:px-8 py-3 sm:py-3.5 rounded-lg transition-all hover:-translate-y-0.5 shadow-md justify-center"
-                            >
-                                Admission <ArrowRight className="w-4 h-4 shrink-0" />
-                            </a>
-                            <a
-                                href="#programs"
-                                className="uppercase tracking-wider flex-1 sm:flex-none flex items-center gap-1.5 sm:gap-2 bg-white hover:bg-gray-50 border border-[#14284E]/30 text-[#14284E] font-bold text-[14px]  px-2 sm:px-8 py-3 sm:py-3.5 rounded-lg transition-all hover:-translate-y-0.5 shadow-sm justify-center"
-                            >
-                                Eligibility <ArrowRight className="w-4 h-4 shrink-0" />
-                            </a>
-                        </div>
-                        */}
-                    </div>
-                </section>
-
-                {/* ── Blog Section (CSE only) ──────────────────────────── */}
+                {/* ── Page-specific Blog Section ───────────────────────── */}
                 {(() => {
                     if (customData && !customData.showBlogs) return null;
-                    const csSlugs = new Set(ALL_TARGET_BLOGS.filter(b => b.category === "cs").map(b => b.slug));
+                    const pageBlogSlugs = new Set(ALL_TARGET_BLOGS.filter(b => b.category === (isPharmacyPage ? "pharmacy" : "cs")).map(b => b.slug));
                     const cseKeywords = [
                         "cse", "computer science", "bca", "b.tech cse", "btech cse",
                         "cyber security", "cybersecurity", "artificial intelligence",
@@ -1794,14 +1843,16 @@ const DepartmentOfComputerScienceAndEngineeringNew = ({ customData }: { customDa
                         "b.tech in cse", "b.tech in computer", "bca in", "cse vs",
                         "specialization", "b.tech cse vs"
                     ];
-                    const isCSERelated = (card: any) => {
+                    const pharmacyKeywords = ["pharmacy", "pharma", "pharmaceutical", "pharmacist", "pharmacology", "drug", "medicine", "medicinal", "b.pharm", "d.pharm"];
+                    const pageKeywords = isPharmacyPage ? pharmacyKeywords : cseKeywords;
+                    const isPageRelated = (card: any) => {
                         const slug = String(card.slug || "").trim();
-                        if (csSlugs.has(slug)) return true;
+                        if (pageBlogSlugs.has(slug)) return true;
                         const haystack = `${card.title || ""} ${slug}`.toLowerCase();
-                        return cseKeywords.some(kw => haystack.includes(kw));
+                        return pageKeywords.some(kw => haystack.includes(kw));
                     };
-                    const csBlogs = blogCards.filter(isCSERelated).slice(0, 3);
-                    if (csBlogs.length === 0) return null;
+                    const pageBlogs = blogCards.filter(isPageRelated).slice(0, 3);
+                    if (pageBlogs.length === 0) return null;
                     return (
                         <section className="py-10 md:py-14 px-4 sm:px-6 bg-white border-b border-[#DCE6F2]">
                             <div className={`${Classes["container"]} cse-content-container`}>
@@ -1815,7 +1866,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = ({ customData }: { customDa
                                             Latest <span className="text-[#FFB703]">Insights & Resources</span>
                                         </h2>
                                         <p className="text-[14px] text-[#4B5A72] mt-2 max-w-xl">
-                                            {customData ? "" : "Guides, stories, and updates from the world of Computer Science & Engineering."}
+                                            {isPharmacyPage ? "Articles and insights on pharmacy programmes, pharmaceutical sciences, and career opportunities." : customData ? "" : "Guides, stories, and updates from the world of Computer Science & Engineering."}
                                         </p>
                                     </div>
                                     <div className="flex sm:hidden items-center gap-3 shrink-0 w-full">
@@ -1844,7 +1895,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = ({ customData }: { customDa
                                 {/* Blog Cards — 3 cols on desktop */}
                                 <div className="overflow-hidden sm:overflow-visible -mx-4 px-4 sm:mx-0 sm:px-0" ref={blogsEmblaRef}>
                                     <div className="flex sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-6 touch-pan-y">
-                                        {csBlogs.map((card: any, idx: number) => {
+                                        {pageBlogs.map((card: any, idx: number) => {
                                             const resolvedSlug = String(card.slug || "").trim();
                                             const blogPath = `/blog/${resolvedSlug && resolvedSlug !== "null" ? resolvedSlug : normalizeRouteSlug(card.title || "")}`;
                                             return (
@@ -2047,7 +2098,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = ({ customData }: { customDa
                                     <div>
                                         <h5 className="text-[11px] uppercase tracking-[0.08em] text-[#8A97A1] font-bold mb-2">About</h5>
                                         <p className="text-[14px] text-[#4C5A65] leading-relaxed text-justify">
-                                            {selectedFaculty.name} is a dedicated {selectedFaculty.isHod ? "Head of Department" : "faculty member"} at the Department of Computer Science & Engineering, focusing on interactive, personalized teaching and fostering a research-oriented academic environment.
+                                            {selectedFaculty.expertise ?? customData?.facultySection?.profileDescription ?? `${selectedFaculty.name} is a dedicated ${selectedFaculty.isHod ? "Head of Department" : "faculty member"} at the Department of Computer Science & Engineering, focusing on interactive, personalized teaching and fostering a research-oriented academic environment.`}
                                         </p>
                                     </div>
 

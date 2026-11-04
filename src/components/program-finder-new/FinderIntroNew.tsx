@@ -1,11 +1,17 @@
 import { ArrowDown, ArrowRight, CircleCheck, Headphones, MessageCircle, Phone } from "lucide-react";
 import { buttonClass } from "./uiNew";
+import eligibilityBanner from "../../assets/images/eligibility-new/eligbility.webp";
 
 export default function FinderIntroNew() {
   return <section className="relative isolate overflow-hidden bg-[#14284E] px-5 pb-12 pt-36 text-white sm:pb-16 sm:pt-44">
-    <div aria-hidden="true" className="pointer-events-none absolute -right-48 top-28 size-[620px] rounded-full border border-white/10" />
-    <div aria-hidden="true" className="pointer-events-none absolute -right-24 top-52 size-[430px] rounded-full border-[70px] border-[#21A5DB]/10" />
-    <div className="relative mx-auto max-w-6xl">
+    <img
+      src={eligibilityBanner}
+      alt=""
+      aria-hidden="true"
+      className="absolute inset-0 size-full object-cover object-left"
+    />
+    <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-r from-[#14284E]/35 via-[#14284E]/10 to-transparent" />
+    <div className="relative z-10 mx-auto max-w-6xl">
       <div className="max-w-2xl">
         <h1 className="!text-[36px] !font-semibold !leading-[1.12] !tracking-tight !text-white sm:!text-[52px] lg:!text-[60px]">Find a programme.<br /><span className="text-[#FFB703]">Shape your future.</span></h1>
         <p className="mt-6 max-w-lg !text-base !leading-7 !text-blue-100/85">Find your course. Check your eligibility. Take the next step towards your future at SRMU.</p>

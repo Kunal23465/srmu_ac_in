@@ -4,6 +4,13 @@
 // ============================================================
 
 import type { ProgramPageDataNew } from "../../types/programPageNew";
+import curriculumDesktop from "../../assets/images/data-science-ai-ml-new-page/1 (1).webp";
+import curriculumMobile from "../../assets/images/data-science-ai-ml-new-page/1 (2).webp";
+import dataScienceAnalyticsLab from "../../assets/images/data-science-ai-ml-new-page/lab-images/data-science-analytics-lab.webp";
+import generativeAiLab from "../../assets/images/data-science-ai-ml-new-page/lab-images/generative-ai-intelligent-applications-lab.webp";
+import deepLearningNlpLab from "../../assets/images/data-science-ai-ml-new-page/lab-images/deep-learning-nlp-lab.webp";
+import artificialIntelligenceMachineLearningLab from "../../assets/images/data-science-ai-ml-new-page/lab-images/artificial-intelligence-machine-learning-lab.webp";
+import bigDataCloudComputingLab from "../../assets/images/data-science-ai-ml-new-page/lab-images/big-data-cloud-computing-lab.webp";
 
 const dataScienceNewData: ProgramPageDataNew = {
 
@@ -183,11 +190,11 @@ const dataScienceNewData: ProgramPageDataNew = {
   // ----------------------------------------------------------
   labs: {
     sectionTitle: "Learn Data Science & AI",
-    sectionTitleHighlight: "the Way Industry Works",
+    sectionTitleHighlight: "the way Industry Works",
     introParagraph:
       "From analyzing large datasets to building intelligent applications, students learn how technology can be used to solve real-world problems.",
-    curriculumImageDesktop: "/assets/images/data-science-ai-ml-new-page/Learn-Data-Science-AI-the-Way-Industry-Works-Section-Image.webp",
-    curriculumImageMobile: "/assets/images/data-science-ai-ml-new-page/Learn-Data-Science-AI-the-Way-Industry-Works-Section-Image.webp",
+    curriculumImageDesktop: curriculumDesktop,
+    curriculumImageMobile: curriculumMobile,
     curriculumOverlayItems: [
       { text: "Data\nAnalytics" },
       { text: "Machine\nLearning" },
@@ -207,6 +214,7 @@ const dataScienceNewData: ProgramPageDataNew = {
       {
         label: "LAB / 01",
         title: "Data Science & Analytics Lab",
+        imageUrl: dataScienceAnalyticsLab,
         tagline: "Turn data into meaningful insights.",
         description:
           "Students work with datasets to understand data preparation, analysis, visualization, and predictive modeling.",
@@ -214,17 +222,17 @@ const dataScienceNewData: ProgramPageDataNew = {
       },
       {
         label: "LAB / 02",
-        title: "Artificial Intelligence & Machine Learning Lab",
-        imageUrl: "/assets/images/data-science-ai-ml-new-page/The-Role-of-AI-in-Enhancing-Production-and-Operational-Efficiency-January-2025-Section-Image.webp",
-        tagline: "Build systems that learn from data.",
+        title: "Generative AI & Intelligent Applications Lab",
+        imageUrl: generativeAiLab,
+        tagline: "Explore the next generation of AI applications.",
         description:
-          "Students explore machine learning algorithms and AI techniques through practical exercises and application-oriented projects.",
-        items: ["Machine Learning", "Classification", "Regression", "Clustering", "Model Evaluation", "AI Applications"],
+          "Students learn how generative AI and intelligent systems can be used to develop innovative technology solutions.",
+        items: ["Generative AI", "Prompt Engineering", "AI Applications", "Intelligent Automation", "AI-assisted Development", "AI Project Development"],
       },
       {
         label: "LAB / 03",
         title: "Deep Learning & NLP Lab",
-        imageUrl: "/assets/images/new-information-system/Data-Science-Fundamentals-and-its-Application.webp",
+        imageUrl: deepLearningNlpLab,
         tagline: "Explore intelligent systems that understand patterns and language.",
         description:
           "Students gain practical exposure to deep learning and natural language processing applications.",
@@ -232,21 +240,21 @@ const dataScienceNewData: ProgramPageDataNew = {
       },
       {
         label: "LAB / 04",
+        title: "Artificial Intelligence & Machine Learning Lab",
+        imageUrl: artificialIntelligenceMachineLearningLab,
+        tagline: "Build systems that learn from data.",
+        description:
+          "Students explore machine learning algorithms and AI techniques through practical exercises and application-oriented projects.",
+        items: ["Machine Learning", "Classification", "Regression", "Clustering", "Model Evaluation", "AI Applications"],
+      },
+      {
+        label: "LAB / 05",
         title: "Big Data & Cloud Computing Lab",
-        imageUrl: "/assets/images/data-science-ai-ml-new-page/Learn-Data-Science-AI-the-Way-Industry-Works-Section-Image.webp",
+        imageUrl: bigDataCloudComputingLab,
         tagline: "Learn how modern organizations manage large-scale data.",
         description:
           "Students explore technologies and concepts used for processing, storing, and analyzing large datasets.",
         items: ["Big Data Processing", "Cloud Computing", "Distributed Data", "Data Storage", "Cloud Analytics", "Data Pipelines"],
-      },
-      {
-        label: "LAB / 05",
-        title: "Generative AI & Intelligent Applications Lab",
-        imageUrl: "/assets/images/data-science-ai-ml-new-page/Career-Opportunities-in-Data-Science-Artificial-Intelligence-Section-Image.webp",
-        tagline: "Explore the next generation of AI applications.",
-        description:
-          "Students learn how generative AI and intelligent systems can be used to develop innovative technology solutions.",
-        items: ["Generative AI", "Prompt Engineering", "AI Applications", "Intelligent Automation", "AI-assisted Development", "AI Project Development"],
       },
     ],
   },

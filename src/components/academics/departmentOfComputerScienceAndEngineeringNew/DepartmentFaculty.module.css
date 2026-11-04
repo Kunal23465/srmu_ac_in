@@ -1421,6 +1421,22 @@
 }
 
 /* Standalone Research & Publications showcase */
+.researchShowcaseBackground {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background: #FFB703;
+}
+
+.researchShowcaseBackground::before {
+    position: absolute;
+    z-index: 0;
+    inset: 0;
+    background: radial-gradient(ellipse at 61% 22%, rgba(255, 255, 255, 0.16), transparent 48%);
+    content: "";
+    pointer-events: none;
+}
+
 .researchShowcase {
     position: relative;
     isolation: isolate;

@@ -14,7 +14,7 @@ import {
   UserRound,
   Star,
 } from "lucide-react";
-import AdditionInScholarImg from "../../../assets/images/addition-in-scholar.png";
+import scholarshipGirl from "../../../assets/new-home/scholarship-section/scholarship-girl.png";
 import Classes from "../../../utils/styles/Global.module.css";
 
 export const departmentScholarshipItems = [
@@ -45,9 +45,9 @@ export interface DepartmentScholarshipsProps {
 export const DepartmentScholarships: React.FC<DepartmentScholarshipsProps> = ({
   id = "scholarships",
   className = "",
-  eligibilityHref = "/program-finder-new",
+  eligibilityHref = "/eligibility",
   applyNowHref = "/scholarship-scheme",
-  scholarshipIllustration = AdditionInScholarImg,
+  scholarshipIllustration = scholarshipGirl,
   fullHeightScholarshipIllustration = false,
   backgroundImage,
   scholarshipCardBackgroundImage,
@@ -149,8 +149,8 @@ export const DepartmentScholarships: React.FC<DepartmentScholarshipsProps> = ({
                   alt="Scholarships"
                   className={`object-contain drop-shadow-md ${
                     fullHeightScholarshipIllustration
-                      ? "w-[90%] sm:w-[120%] sm:max-w-none sm:translate-y-[13%] sm:scale-[1.2] sm:origin-bottom"
-                      : "w-[90%] sm:w-[90%] max-w-[150px] sm:max-w-[250px]"
+                      ? "w-[135%] max-w-[160px] origin-center sm:w-[120%] sm:max-w-none sm:translate-y-[13%] sm:scale-[1.2] sm:origin-bottom"
+                      : "w-[110%] max-w-[160px] sm:w-[90%] sm:max-w-[250px]"
                   }`}
                 />
               </div>

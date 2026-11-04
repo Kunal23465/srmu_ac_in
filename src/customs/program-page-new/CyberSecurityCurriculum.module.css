@@ -59,6 +59,7 @@
 
 @media (max-width: 1023px) {
   .panel { aspect-ratio: 1080 / 726; }
+  .panel.dataSciencePanel .background img { object-fit: cover; object-position: top center; }
   .heading {
     top: 9%;
     left: 3%;

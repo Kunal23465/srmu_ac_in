@@ -1,4 +1,5 @@
 import type { LucideIcon } from "lucide-react";
+import type { FacultyMember } from "../../components/academics/departmentOfComputerScienceAndEngineeringNew/DepartmentFaculty";
 import DepartmentOfComputerScienceAndEngineeringNew from "../../components/academics/departmentOfComputerScienceAndEngineeringNew/DepartmentOfComputerScienceAndEngineeringNew";
 
 export type DepartmentProgramNew = {
@@ -30,6 +31,7 @@ export type CustomDepartmentNewData = {
     hero: {
         prefix: string;
         title: string;
+        backgroundImage?: string;
         stats: { v: string; l: string; delay?: string }[];
         quickStats: { value: string; label: string }[];
     };
@@ -50,13 +52,15 @@ export type CustomDepartmentNewData = {
     programHeadingBefore?: string;
     programHeadingHighlight?: string;
     labs: {
+        headingBefore?: string;
+        headingHighlight?: string;
         intro: string;
-        items: { num: string; title: string; desc: string; accent: string; iconSrc: string; animClass: string }[];
+        items: { num: string; title: string; desc: string; accent: string; iconSrc?: string; icon?: LucideIcon; animClass: string }[];
     };
     highlights: {
         headingBefore: string;
         headingHighlight: string;
-        items: { num: string; title: string; desc: string }[];
+        items: { num: string; title: string; desc: string; icon?: LucideIcon }[];
     };
     events: {
         headingBefore: string;
@@ -109,6 +113,15 @@ export type CustomDepartmentNewData = {
         focusTitle: string;
         focusAreas: string[];
     };
+    facultySection?: {
+        members: FacultyMember[];
+        subheading?: string;
+        featuredDescription?: string;
+        featuredLabel?: string;
+        profileDescription?: string;
+        showResearchShowcase?: boolean;
+    };
+    showCareerDescriptionCards?: boolean;
     faq: { q: string; a: string }[];
     showFaculty?: boolean;
     showScholarships?: boolean;
