@@ -71,7 +71,6 @@ interface PlacementTrendChartProps {
 export function PlacementTrendChart({ activeIndex, onYearChange }: PlacementTrendChartProps) {
   const gradientId = `placement-area-${useId().replace(/:/g, "")}`;
   const [range, setRange] = useState<"six" | "three">("six");
-  const metricLabel = "Students Placed at SRMU";
   const maxValue = Math.max(1000, Math.ceil(Math.max(...placementChartYears.map(({ records }) => records)) / 10) * 10);
   const left = 38, right = 418, top = 72, bottom = 232;
   const visibleIndices = placementChartYears.map((_, index) => index).slice(range === "six" ? 0 : -3);
@@ -117,7 +116,7 @@ export function PlacementTrendChart({ activeIndex, onYearChange }: PlacementTren
   return (
     <div className={styles.trend} data-trend-chart>
       <div className={styles.trendHeader}>
-        <h3 className={styles.eyebrow}>{metricLabel}</h3>
+        <h3 className={styles.eyebrow}>Students Placed <span className={styles.headingAccent}>at SRMU</span></h3>
         <label className={styles.rangeControl}>
           <span className={styles.srOnly}>Placement history range</span>
           <select aria-label="Placement history range" value={range} onChange={(event) => changeRange(event.target.value as "six" | "three")}>
