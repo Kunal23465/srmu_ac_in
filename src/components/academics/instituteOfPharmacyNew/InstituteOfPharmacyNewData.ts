@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import type { CustomDepartmentNewData } from "../../../customs/department-page-new/CustomDepartmentNew";
 import TechCollabImg from "../../../assets/images/new-information-system/Tech-Collaboration_-L-T-EduTech-SRMU.png";
+import pharmacyBanner from "../../../assets/images/pharmacy-new/Pharmacy-Banner.webp";
 import lab01ChemistryIcon from "../../../assets/images/pharmacy-new/icons/lab-01-chemistry.svg";
 import lab02FormulationIcon from "../../../assets/images/pharmacy-new/icons/lab-02-formulation.svg";
 import lab03PharmacologyIcon from "../../../assets/images/pharmacy-new/icons/lab-03-pharmacology.svg";
@@ -62,6 +63,7 @@ export const instituteOfPharmacyNewData: CustomDepartmentNewData = {
     hero: {
         prefix: "Institute of",
         title: "Pharmacy",
+        backgroundImage: pharmacyBanner,
         stats: [
             { v: "90+", l: "Guest Lectures and\nSeminars", delay: "0ms" },
             { v: "15", l: "Industrial Visits", delay: "90ms" },

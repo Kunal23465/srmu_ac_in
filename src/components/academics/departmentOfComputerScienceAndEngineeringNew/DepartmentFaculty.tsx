@@ -16,6 +16,7 @@ import styles from "./DepartmentFaculty.module.css";
 import researchBooksGif from "../../../assets/video/B.Tech-CSE-Cyber Security-College-in-Lucknow.gif";
 
 export type FacultyMember = {
+    id?: string;
     name: string;
     role: string;
     img: string;
@@ -24,6 +25,8 @@ export type FacultyMember = {
     experience?: string;
     specialization?: string[];
     expertise?: string;
+    email?: string;
+    contact?: string;
 };
 
 // Academic-strength figures supplied in the section design reference.
@@ -224,7 +227,7 @@ export default function DepartmentFaculty({
                             <div className={styles.allFacultyGrid}>
                                 {faculty.map((member) => (
                                     <article
-                                        key={member.name}
+                                        key={member.id ?? member.name}
                                         className={styles.facultyCard}
                                         onClick={() => onSelect(member)}
                                     >
@@ -313,7 +316,7 @@ export default function DepartmentFaculty({
                                         <div className={styles.track}>
                                             {otherFaculty.map((member) => (
                                                 <article
-                                                    key={member.name}
+                                                    key={member.id ?? member.name}
                                                     className={styles.facultyCard}
                                                     onClick={() => onSelect(member)}
                                                 >

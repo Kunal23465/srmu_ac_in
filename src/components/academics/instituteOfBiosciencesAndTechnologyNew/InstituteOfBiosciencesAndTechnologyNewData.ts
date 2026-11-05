@@ -1,6 +1,5 @@
 import {
     BookOpenCheck,
-    BrainCircuit,
     Factory,
     FlaskConical,
     GraduationCap,
@@ -11,6 +10,35 @@ import {
 } from "lucide-react";
 import type { CustomDepartmentNewData, DepartmentActivityCardNew } from "../../../customs/department-page-new/CustomDepartmentNew";
 import type { FacultyMember } from "../departmentOfComputerScienceAndEngineeringNew/DepartmentFaculty";
+import drDevendraSinghPortrait from "../../../assets/images/institute-of-biosciences-and-technology-new/faculty/Dr Devendra Singh.png";
+import drTabishQidwaiPortrait from "../../../assets/images/institute-of-biosciences-and-technology-new/faculty/Dr Tabish Qidwai.png";
+import sunilKumarVermaPortrait from "../../../assets/images/institute-of-biosciences-and-technology-new/faculty/Sunil Kumar Verma.png";
+import dikshaSinghPortrait from "../../../assets/images/institute-of-biosciences-and-technology-new/faculty/Diksha Singh.png";
+import ayushiVermaPortrait from "../../../assets/images/institute-of-biosciences-and-technology-new/faculty/Er. Ayushi Verma.png";
+import himanshuYadavPortrait from "../../../assets/images/institute-of-biosciences-and-technology-new/faculty/Er.Himanshu Yadav.png";
+import rahulKYadavPortrait from "../../../assets/images/institute-of-biosciences-and-technology-new/faculty/Dr. Rahul K Yadav.png";
+import vandanaChauhanPortrait from "../../../assets/images/institute-of-biosciences-and-technology-new/faculty/Vandana Chauhan.png";
+import keertiKumarYadavPortrait from "../../../assets/images/institute-of-biosciences-and-technology-new/faculty/Dr.Keerti Kumar Yadav.png";
+import raviKDeshwalPortrait from "../../../assets/images/institute-of-biosciences-and-technology-new/faculty/Dr. Ravi K Deshwal.png";
+import bhawnaSrivastavaPortrait from "../../../assets/images/institute-of-biosciences-and-technology-new/faculty/Dr. Bhawna Srivastava.png";
+import pratibhaGuptaPortrait from "../../../assets/images/institute-of-biosciences-and-technology-new/faculty/Dr. Pratibha Gupta.png";
+import neerajGuptaPortrait from "../../../assets/images/institute-of-biosciences-and-technology-new/faculty/Dr. Neeraj Gupta.png";
+import sankalpMisraPortrait from "../../../assets/images/institute-of-biosciences-and-technology-new/faculty/Dr. Sankalp Misra.png";
+import sonalPrasadPortrait from "../../../assets/images/institute-of-biosciences-and-technology-new/faculty/Dr. Sonal Prasad.png";
+import nootanSinghPortrait from "../../../assets/images/institute-of-biosciences-and-technology-new/faculty/Dr. Nootan Singh.png";
+import neerajTiwariPortrait from "../../../assets/images/institute-of-biosciences-and-technology-new/faculty/Dr. Neeraj Tiwari.png";
+import deeptiSinghPortrait from "../../../assets/images/institute-of-biosciences-and-technology-new/faculty/Dr. Deepti Singh.png";
+import naushadAhmadPortrait from "../../../assets/images/institute-of-biosciences-and-technology-new/faculty/Mr. Naushad Ahmad.png";
+import shrutiShuklaPortrait from "../../../assets/images/institute-of-biosciences-and-technology-new/faculty/Dr. Shruti Shukla.png";
+import aparnaPortrait from "../../../assets/images/institute-of-biosciences-and-technology-new/faculty/Aparna.png";
+import manyataSharmaPortrait from "../../../assets/images/institute-of-biosciences-and-technology-new/faculty/Dr. Manyata Sharma.png";
+import anjaliPortrait from "../../../assets/images/institute-of-biosciences-and-technology-new/faculty/Dr. Anjali.png";
+import shaliniSinghAssistantPortrait from "../../../assets/images/institute-of-biosciences-and-technology-new/faculty/Dr. Shalini Singh.png";
+import shaliniSinghAssociatePortrait from "../../../assets/images/institute-of-biosciences-and-technology-new/faculty/Dr. Shalini Singh2.png";
+import renuKharePortrait from "../../../assets/images/institute-of-biosciences-and-technology-new/faculty/Dr. Renu Khare.png";
+import garimaGuptaPortrait from "../../../assets/images/institute-of-biosciences-and-technology-new/faculty/Dr. Garima Gupta.png";
+import ankitaSrivastavaPortrait from "../../../assets/images/institute-of-biosciences-and-technology-new/faculty/Dr. Ankita Srivastava.png";
+import srmuFacultyPlaceholder from "../../../assets/images/academics/institutes/faculty/default-img.webp";
 import overviewImage from "../../../assets/images/academics/departments/group-scientists-wearing-lab-coat-working-laborato-28012512230911.webp";
 import heroImage from "../../../assets/images/academics/departments/biotech-07022411273155.webp";
 import labImage from "../../../assets/images/academics/departments/biotech-lab-07052412272588.webp";
@@ -22,6 +50,11 @@ import foodSafetyImage from "../../../assets/images/academics/institutes/foodsaf
 import researchPapersImage from "../../../assets/images/academics/institutes/researchpapers-.webp";
 import researchDevelopmentImage from "../../../assets/images/academics/institutes/researchdevelopment.webp";
 import interdisciplinaryResearchImage from "../../../assets/images/academics/institutes/interdisciplinaryresearch.webp";
+import molecularBiologyIcon from "../../../assets/images/academics/institutes/biosciences-research-icons/molecular-biology.svg";
+import microbialBiotechnologyIcon from "../../../assets/images/academics/institutes/biosciences-research-icons/microbial-biotechnology.svg";
+import plantBiotechnologyIcon from "../../../assets/images/academics/institutes/biosciences-research-icons/plant-biotechnology.svg";
+import healthcareBiotechnologyIcon from "../../../assets/images/academics/institutes/biosciences-research-icons/healthcare-biotechnology.svg";
+import nanotechnologyIcon from "../../../assets/images/academics/institutes/biosciences-research-icons/nanotechnology.svg";
 import {
     facultyDetailsOfBioScienceDepartment,
 } from "../../../data/academics/faculty-of-biosciences/faculty-of-biosciences-data";
@@ -37,17 +70,481 @@ const makeCard = (
     img: string,
 ): DepartmentActivityCardNew => ({ tag, title, speaker, shortDesc: description, readMore: description, img });
 
+const providedIbstFacultyNames = new Set([
+    "Dr. Devendra Singh",
+    "Dr. Tabish Qidwai",
+    "Sunil Kumar Verma",
+    "Dr. Divya Srivastava",
+    "Dr. Shalini Maurya",
+    "Dr. Kunal Singh",
+    "Diksha Singh",
+    "Er. Ayushi Verma",
+    "Er. Himanshu Yadav",
+    "Dr. Rahul K Yadav",
+    "Dr. Ravi K Deshwal",
+    "Dr. Bhawna Srivastava",
+    "Dr. Pratibha Gupta",
+    "Dr. Neeraj Gupta",
+    "Dr. Sankalp Misra",
+    "Dr. Sonal Prasad",
+    "Dr. Nootan Singh",
+    "Dr. Neeraj Tiwari",
+    "Dr. Deepti Singh",
+    "Mr. Naushad Ahmad",
+    "Dr. Shruti Shukla",
+    "Aparna",
+    "Dr. Manyata Sharma",
+    "Dr. Anjali",
+    "Dr. Renu Khare",
+    "Dr. Garima Gupta",
+    "Dr. Ankita Srivastava",
+]);
+
 const ibstFaculty: FacultyMember[] = Array.from(
     new Map(
         [...facultyDetailsOfBiotechnologyDepartment, ...facultyDetailsOfBioScienceDepartment]
             .map((member) => [member.name, member] as const),
     ).values(),
-).map((member) => ({
-    name: member.name,
-    role: member.designation,
-    img: member.image,
-    isHod: member.name === "Dr. Tabish Qidwai",
-}));
+).map((member): FacultyMember => {
+    if (member.name === "Dr. Devendra Singh") {
+        return {
+            name: member.name,
+            role: "Assistant Professor",
+            img: drDevendraSinghPortrait,
+            qualification: "PhD",
+            experience: "5.5 Years",
+            email: "devendrasingh.ibst@srmu.ac.in",
+            contact: "9458662132",
+            specialization: ["Microbiology", "Drug Designing", "IPR", "Bioprocess", "Pharmaceutical Biotechnology"],
+            expertise: "Assistant Professor in biotechnology with research interests in medical microbiology and drug design.",
+        };
+    }
+
+    if (member.name === "Dr. Tabish Qidwai") {
+        return {
+            name: member.name,
+            role: "Professor",
+            img: drTabishQidwaiPortrait,
+            isHod: true,
+            qualification: "PhD",
+            experience: "14 Years",
+            email: "tabish.ibst@srmu.ac.in",
+            contact: "9140631326",
+            specialization: ["Functional Genomics", "Computational Biology", "Immunology"],
+            expertise: "Professor with research interests in functional genomics, computational biology, immunology, and infectious disease.",
+        };
+    }
+
+    if (member.name === "Er. Sunil Kumar Verma") {
+        return {
+            name: "Sunil Kumar Verma",
+            role: "Assistant Professor",
+            img: sunilKumarVermaPortrait,
+            qualification: "M.Tech BT",
+            experience: "9 Years",
+            email: "sunilkrverma.ibst@srmu.ac.in",
+            contact: "9451386221",
+            specialization: ["Immunology", "Environmental Biotechnology", "Cancer Biology"],
+            expertise: "Research interests include cancer biology, nanotechnology, and environmental biotechnology.",
+        };
+    }
+
+    if (member.name === "Dr. Divya Srivastava") {
+        return {
+            name: member.name,
+            role: "Assistant Professor",
+            img: member.image,
+            qualification: "Ph.D.",
+            experience: "7 Years",
+            email: "divyasrivastava.ibst@srmu.ac.in",
+            contact: "9450317889",
+            specialization: [
+                "Agricultural Biotechnology",
+                "Environmental Biotechnology",
+                "Microbial Biotechnology",
+                "Plant Protection",
+                "Bioprocess Engineering",
+            ],
+            expertise: "Research focuses on plant–microbe interactions, microbial bioformulations, sustainable agriculture, and climate-resilient crop production.",
+        };
+    }
+
+    if (member.name === "Dr. Shalini Maurya") {
+        return {
+            name: member.name,
+            role: "Assistant Professor",
+            img: member.image,
+            qualification: "PhD",
+            experience: "2 Years",
+            email: "shalinimaurya.ibst@srmu.ac.in",
+            contact: "8957777612",
+            specialization: ["Immunoinformatics", "Immunology", "Bioinformatics", "Microbiology"],
+            expertise: "Research interests include immunoinformatics, immunology, bioinformatics, and microbiology.",
+        };
+    }
+
+    if (member.name === "Dr. Kunal Singh") {
+        return {
+            name: member.name,
+            role: "Assistant Professor",
+            img: srmuFacultyPlaceholder,
+            qualification: "Ph.D.",
+            experience: "2026–2027",
+            email: "kunalsingh.apibst@srmu.ac.in",
+            contact: "9473912456",
+            specialization: ["New Product Development", "Bakery", "Meat and Meat Products"],
+            expertise: "Research focus: new product development.",
+        };
+    }
+
+    if (member.name === "Er. Diksha Singh") {
+        return {
+            name: "Diksha Singh",
+            role: "Assistant Professor",
+            img: dikshaSinghPortrait,
+            qualification: "M.Tech",
+            experience: "4.5 Years",
+            email: "dikshasingh.ibst@srmu.ac.in",
+            contact: "9621539396",
+            specialization: ["Food Processing", "Food Packaging", "Food Development", "Food Biotechnology"],
+            expertise: "Research interests include food processing, food packaging, and food development.",
+        };
+    }
+
+    if (member.name === "Er. Ayushi Verma") {
+        return {
+            name: member.name,
+            role: "Assistant Professor",
+            img: ayushiVermaPortrait,
+            qualification: "M.Tech in Industrial Biotechnology",
+            experience: "4 Years",
+            email: "ayushiverma.ibst@srmu.ac.in",
+            contact: "9621682562",
+            specialization: ["Plant Biotechnology", "Environmental Biotechnology", "Molecular Biology"],
+            expertise: "Research interests span plant biotechnology, environmental biotechnology, and industrial biotechnology.",
+        };
+    }
+
+    if (member.name === "Er. Himanshu Yadav") {
+        return {
+            name: member.name,
+            role: "Assistant Professor",
+            img: himanshuYadavPortrait,
+            qualification: "M.Tech",
+            experience: "3 Years",
+            email: "himanshuyadav.ibst@srmu.ac.in",
+            contact: "8382802271",
+            specialization: [
+                "Biomaterials and Drug Delivery",
+                "Biochemical Engineering",
+                "Bioprocessing",
+                "Biopharmaceuticals",
+                "Biorefining Engineering",
+            ],
+            expertise: "Research interests include biomaterials and drug delivery, biochemical engineering, biopharmaceuticals, and biophysics.",
+        };
+    }
+
+    if (member.name === "Dr Rahul Yadav") {
+        return {
+            name: "Dr. Rahul K Yadav",
+            role: "Assistant Professor",
+            img: rahulKYadavPortrait,
+            qualification: "Ph.D.",
+            experience: "2025–26",
+            email: "rahulkumaryadav.ibst@srmu.ac.in",
+            contact: "9771896014",
+            specialization: ["Molecular Biology", "Cell Biology", "Genetic Engineering"],
+            expertise: "Research focus: molecular biology.",
+        };
+    }
+
+    if (member.name === "Dr. Ravi Kumar Deshwal") {
+        return {
+            name: "Dr. Ravi K Deshwal",
+            role: "Assistant Professor",
+            img: raviKDeshwalPortrait,
+            qualification: "PhD",
+            experience: "18 Years",
+            email: "ravideshwal.ibst@srmu.ac.in",
+            contact: "9760184916",
+            specialization: ["Molecular Biology", "Microbiology", "Infectious and Non-Infectious Diseases"],
+            expertise: "Research interests include microbiology, cell biology, molecular biology, and infectious and non-infectious diseases.",
+        };
+    }
+
+    if (member.name === "Dr. Bhawna Srivastava") {
+        return {
+            name: member.name,
+            role: "Assistant Professor",
+            img: bhawnaSrivastavaPortrait,
+            qualification: "Ph.D.",
+            experience: "3 Years",
+            email: "bhawnasrivastava.bio@srmu.ac.in",
+            contact: "9936245935",
+            specialization: ["Food Technology", "Food and Nutrition", "Product Development", "Value-Added Foods", "Food Coatings"],
+            expertise: "Research focuses on weaning food development, value-added products from underutilized green leafy vegetables, and carnauba wax coatings.",
+        };
+    }
+
+    if (member.name === "Dr. Pratibha Gupta") {
+        return {
+            name: member.name,
+            role: "Assistant Professor",
+            img: pratibhaGuptaPortrait,
+            qualification: "Ph.D.",
+            experience: "5 Years",
+            email: "pratibhagupta.bio@srmu.ac.in",
+            contact: "9990738826",
+            specialization: ["Plant Biotechnology", "Plant Stress Studies", "Biochemical Analysis"],
+            expertise: "Research focuses on plant tissue culture, biotic and abiotic stress studies, and biochemical analysis of plants, microbes, and soil.",
+        };
+    }
+
+    if (member.name === "Dr. Neeraj Gupta") {
+        return {
+            name: member.name,
+            role: "Professor",
+            img: neerajGuptaPortrait,
+            qualification: "Ph.D.",
+            experience: "12 Years+",
+            email: "neeraj.bio@srmu.ac.in",
+            contact: "9936423569",
+            specialization: ["Biochemistry", "Microbial Enzyme Production", "Enzyme Engineering", "Proteomics"],
+            expertise: "Research interests include biochemistry, microbial enzyme production, enzyme engineering, and proteomics.",
+        };
+    }
+
+    if (member.name === "Dr. Sankalp Misra") {
+        return {
+            name: member.name,
+            role: "Assistant Professor",
+            img: sankalpMisraPortrait,
+            qualification: "Ph.D.",
+            experience: "4 Years",
+            email: "sankalpmisra.ibst@srmu.ac.in",
+            contact: "9453315356",
+            specialization: ["Soil Microbiology", "Plant–Microbe Interactions", "Biofertilizers", "Sustainable Agriculture", "Metagenomics"],
+            expertise: "Research spans soil microbiology, plant–microbe interactions, biofertilizers, sustainable agriculture, metagenomics, and plant stress biology.",
+        };
+    }
+
+    if (member.name === "Dr. Sonal Prasad") {
+        return {
+            name: member.name,
+            role: "Assistant Professor",
+            img: sonalPrasadPortrait,
+            qualification: "PhD",
+            experience: "10 Years",
+            email: "sonalprasad.ibst@srmu.ac.in",
+            contact: "7233059586",
+            specialization: ["Nutraceuticals", "Food Technology", "Dietetics", "Food Safety", "Nutrition Science"],
+            expertise: "Research focuses on bioactive compounds, antioxidant and phytochemical activity, microbiological analysis, and therapeutic diets.",
+        };
+    }
+
+    if (member.name === "Dr. Nootan Singh") {
+        return {
+            name: member.name,
+            role: "Assistant Professor",
+            img: nootanSinghPortrait,
+            qualification: "PhD",
+            experience: "1 Year",
+            email: "nootansingh.ibst@srmu.ac.in",
+            contact: "7080907037",
+            specialization: ["Computer-Aided Drug Design", "Molecular Docking", "Molecular Dynamics Simulation", "ADME Analysis", "QSAR"],
+            expertise: "Research focuses on pharmacokinetics and drug-likeness of anticancer phytoconstituents using ADMET, molecular docking, and simulation studies.",
+        };
+    }
+
+    if (member.name === "Dr. Neeraj Tiwari") {
+        return {
+            name: member.name,
+            role: "Assistant Professor",
+            img: neerajTiwariPortrait,
+            qualification: "PhD",
+            experience: "5 Years",
+            email: "neerajtiwari.ibst@srmu.ac.in",
+            contact: "8563004303",
+            specialization: ["Neurobiology", "Immunology", "Natural Product Research"],
+            expertise: "Research focuses on therapeutic approaches for infectious and non-infectious diseases and the potential of natural products in neurodegenerative disorders.",
+        };
+    }
+
+    if (member.name === "Dr. Deepti Singh") {
+        return {
+            name: member.name,
+            role: "Assistant Professor",
+            img: deeptiSinghPortrait,
+            qualification: "Ph.D.",
+            experience: "2 Years",
+            email: "deeptisingh.ibst@srmu.ac.in",
+            contact: "9151584608",
+            specialization: ["Microbial Enzyme Production", "Bioprocess Optimization", "Microbial Techniques", "Biodegradation", "Bioremediation"],
+            expertise: "Research focuses on microbial enzyme production and optimization, enzyme engineering and kinetics, and molecular biology.",
+        };
+    }
+
+    if (member.name === "Mr. Naushad Ahmad") {
+        return {
+            name: member.name,
+            role: "Assistant Professor",
+            img: naushadAhmadPortrait,
+            qualification: "M.Sc.",
+            experience: "4 Years",
+            email: "naushadahmad.ibst@srmu.ac.in",
+            contact: "9005419377",
+            specialization: ["Molecular Biology", "Plant Biotechnology", "Animal Biotechnology"],
+            expertise: "Research includes transcriptome-based marker gene studies in Withania somnifera and aquatic animal disease surveillance.",
+        };
+    }
+
+    if (member.name === "Dr. Shruti Shukla") {
+        return {
+            name: member.name,
+            role: "Assistant Professor",
+            img: shrutiShuklaPortrait,
+            qualification: "Ph.D.",
+            experience: "4 Years",
+            email: "shrutishukla.ibst@srmu.ac.in",
+            contact: "9044838505",
+            specialization: ["Plant–Microbe Interactions", "Soil Microbiology", "Environmental Microbiology", "Plant Growth-Promoting Microorganisms"],
+            expertise: "Research focuses on plant–microbe interactions, soil microbial ecology, environmental microbiology, and sustainable agriculture.",
+        };
+    }
+
+    if (member.name === "Ms. Aparna") {
+        return {
+            name: "Aparna",
+            role: "Assistant Professor",
+            img: aparnaPortrait,
+            qualification: "Ph.D.",
+            experience: "4 Years",
+            email: "aparna.ibst@srmu.ac.in",
+            contact: "9559036561",
+            specialization: ["Nutraceuticals and Functional Food", "New Product Development", "Value-Added Products", "Bioactive Compounds"],
+            expertise: "Research focuses on functional-food development, food-waste valorization, green extraction of bioactive compounds, and food-related encapsulation and nanomaterials.",
+        };
+    }
+
+    if (member.name === "Dr. Manyata Sharma") {
+        return {
+            name: member.name,
+            role: "Assistant Professor",
+            img: manyataSharmaPortrait,
+            qualification: "PhD",
+            experience: "1 Year",
+            email: "manyatasharma.ibst@srmu.ac.in",
+            contact: "8795773294",
+            specialization: ["Plant Growth-Promoting Rhizobacteria (PGPR)", "Plant Growth Promotion", "Plant–Microbe Interactions"],
+            expertise: "Research focuses on PGPR and beneficial plant–microbe interactions that promote plant growth.",
+        };
+    }
+
+    if (member.name === "Dr. Anjali") {
+        return {
+            name: member.name,
+            role: "Assistant Professor",
+            img: anjaliPortrait,
+            qualification: "PhD",
+            experience: "3 Years",
+            email: "anjali.ibst@srmu.ac.in",
+            contact: "9871021821",
+            specialization: ["Medical Microbiology", "Drug Designing", "Drug Synthesis"],
+            expertise: "Research focuses on antimicrobial drug discovery, bioactive compounds from medicinal plants, microbial biofilms, and antimicrobial screening.",
+        };
+    }
+
+    if (member.name === "Dr. Renu Khare") {
+        return {
+            name: member.name,
+            role: "Assistant Professor",
+            img: renuKharePortrait,
+            qualification: "PhD",
+            experience: "4 Years",
+            email: "renukhare.ibst@srmu.ac.in",
+            contact: "6388357575",
+            specialization: ["Plant Tissue Culture", "Microbial Technology", "Aflatoxin Detection"],
+            expertise: "Research focuses on aflatoxin production, purification, and characterization, and in vitro regeneration and genetic transformation of Sorghum bicolor.",
+        };
+    }
+
+    if (member.name === "Dr. Garima Gupta") {
+        return {
+            name: member.name,
+            role: "Assistant Professor",
+            img: garimaGuptaPortrait,
+            qualification: "Ph.D.",
+            experience: "8 Years",
+            email: "garimagupta.ibst@srmu.ac.in",
+            contact: "6394783594",
+            specialization: ["Plant–Microbe Interactions", "Environmental Microbiology", "Mycology and Mushrooms", "Metabolomics and Molecular Biology", "Bioremediation"],
+            expertise: "Research interests include plant–microbe interactions, environmental microbiology, mycology, metabolomics, bioremediation, and sustainable bioenergy.",
+        };
+    }
+
+    if (member.name === "Dr. Ankita Srivastava") {
+        return {
+            name: member.name,
+            role: "Assistant Professor",
+            img: ankitaSrivastavaPortrait,
+            qualification: "Ph.D.",
+            experience: "15 Years (Post-Ph.D.)",
+            email: "ankitasrivastava.ibst@srmu.ac.in",
+            contact: "9415633080",
+            specialization: ["Biochemistry", "Food Safety", "Food Toxicology", "Food Biotechnology", "Food Analysis"],
+            expertise: "Research focuses on food safety and toxicology, food biochemistry, host–parasite interactions, nutritional toxicity, and lifestyle diseases.",
+        };
+    }
+
+    return {
+        name: member.name,
+        role: member.designation,
+        img: member.image,
+    };
+}).filter((member) => providedIbstFacultyNames.has(member.name)).concat({
+    name: "Vandana Chauhan",
+    role: "Assistant Professor",
+    img: vandanaChauhanPortrait,
+    qualification: "M.Tech",
+    experience: "N/A",
+    email: "vandanachauhan.ibst@srmu.ac.in",
+    contact: "8707701509",
+    specialization: ["Analytical Techniques in Bioprocess", "Downstream Processing", "Enzyme Catalysis"],
+    expertise: "Research focus: enzymatic catalysis.",
+}, {
+    name: "Dr. Keerti Kumar Yadav",
+    role: "Assistant Professor",
+    img: keertiKumarYadavPortrait,
+    qualification: "PhD",
+    experience: "3 Years",
+    email: "keertikumaryadav.ibst@srmu.acc.in",
+    contact: "7836071067",
+    specialization: ["Cancer Biology", "Bioinformatics", "Systems Biology"],
+    expertise: "Research interests include bioinformatics, systems biology, computational biology, and cancer biology.",
+}, {
+    id: "shalini-singh-assistant-professor",
+    name: "Dr. Shalini Singh",
+    role: "Assistant Professor",
+    img: shaliniSinghAssistantPortrait,
+    qualification: "PhD",
+    experience: "2 Years",
+    email: "shalinisinghap.ibst@srmu.ac.in",
+    contact: "9554706551",
+    specialization: ["Enzymology", "Toxicology", "Protein Biochemistry"],
+    expertise: "Research focuses on purification and characterization of cysteine proteases and heavy metal toxicity.",
+}, {
+    id: "shalini-singh-associate-professor",
+    name: "Dr. Shalini Singh",
+    role: "Associate Professor",
+    img: shaliniSinghAssociatePortrait,
+    qualification: "Ph.D.",
+    experience: "17 Years",
+    email: "shalinisingh.ibst@srmu.ac.in",
+    contact: "919501000000",
+    specialization: ["Microbiology", "Microbial Technology", "Environmental Biotechnology", "Sustainable Waste Management", "Fermentation Technology"],
+    expertise: "Research interests include microbiology, microbial technology, environmental biotechnology, sustainable waste management, fermentation technology, and bioremediation.",
+});
 
 export const instituteOfBiosciencesAndTechnologyNewData: CustomDepartmentNewData = {
     navSections: [
@@ -137,11 +634,11 @@ export const instituteOfBiosciencesAndTechnologyNewData: CustomDepartmentNewData
         headingHighlight: "Practical Learning",
         intro: "The Institute of Biosciences and Technology promotes research-oriented learning through scientific investigations, academic collaborations, expert interactions, and exposure to industry practices. Students can explore the applications of biological sciences through these research areas:",
         items: [
-            { num: "01", title: "Molecular Biology & Genome Editing", desc: "Explore molecular mechanisms, genetic regulation, and genome-editing approaches for applications in agriculture and healthcare.", accent: "#FFB703", icon: BrainCircuit, animClass: "lab-icon-orbital" },
-            { num: "02", title: "Microbial Biotechnology", desc: "Study beneficial microorganisms, microbial interactions, and their applications in agriculture, environmental management, and biotechnology.", accent: "#1B4F91", icon: FlaskConical, animClass: "lab-icon-pulse" },
-            { num: "03", title: "Plant Biotechnology & Sustainable Agriculture", desc: "Explore plant growth-promoting microorganisms, nanofertilizers, crop productivity, and environmental resilience.", accent: "#14284E", icon: Lightbulb, animClass: "lab-icon-float" },
-            { num: "04", title: "Healthcare & Medical Biotechnology", desc: "Study cancer research, liquid biopsy, immunology, infectious diseases, and emerging biomedical applications.", accent: "#FFB703", icon: Microscope, animClass: "lab-icon-stack" },
-            { num: "05", title: "Nanotechnology & Biosciences", desc: "Investigate nanomaterials and their potential applications in healthcare, agriculture, and biological systems.", accent: "#1B4F91", icon: Settings, animClass: "lab-icon-glow" },
+            { num: "01", title: "Molecular Biology & Genome Editing", desc: "Explore molecular mechanisms, genetic regulation, and genome-editing approaches for applications in agriculture and healthcare.", accent: "#FFB703", iconSrc: molecularBiologyIcon, animClass: "lab-icon-orbital" },
+            { num: "02", title: "Microbial Biotechnology", desc: "Study beneficial microorganisms, microbial interactions, and their applications in agriculture, environmental management, and biotechnology.", accent: "#1B4F91", iconSrc: microbialBiotechnologyIcon, animClass: "lab-icon-pulse" },
+            { num: "03", title: "Plant Biotechnology & Sustainable Agriculture", desc: "Explore plant growth-promoting microorganisms, nanofertilizers, crop productivity, and environmental resilience.", accent: "#14284E", iconSrc: plantBiotechnologyIcon, animClass: "lab-icon-float" },
+            { num: "04", title: "Healthcare & Medical Biotechnology", desc: "Study cancer research, liquid biopsy, immunology, infectious diseases, and emerging biomedical applications.", accent: "#FFB703", iconSrc: healthcareBiotechnologyIcon, animClass: "lab-icon-stack" },
+            { num: "05", title: "Nanotechnology & Biosciences", desc: "Investigate nanomaterials and their potential applications in healthcare, agriculture, and biological systems.", accent: "#1B4F91", iconSrc: nanotechnologyIcon, animClass: "lab-icon-glow" },
             { num: "06", title: "Environmental Biotechnology", desc: "Study microbial ecosystem services, environmental stress management, and sustainable biological solutions.", accent: "#14284E", icon: Factory, animClass: "lab-icon-network" },
         ],
     },
@@ -171,7 +668,7 @@ export const instituteOfBiosciencesAndTechnologyNewData: CustomDepartmentNewData
     activitySections: [
         {
             id: "industry-exposure",
-            eyebrow: "INDUSTRY & INSTITUTIONAL VISITS",
+            eyebrow: "Industry & Institutional Visits",
             heading: "Connecting Biotechnology Education with Industry and Research Institutions",
             intro: "Industrial and institutional visits provide students with opportunities to observe scientific processes, understand research environments, and explore the practical applications of biotechnology.",
             cards: [
@@ -182,7 +679,7 @@ export const instituteOfBiosciencesAndTechnologyNewData: CustomDepartmentNewData
         },
         {
             id: "workshops",
-            eyebrow: "WORKSHOPS",
+            eyebrow: "Workshops",
             heading: "Building Practical Skills Through Scientific Workshops",
             intro: "The institute organizes workshops to strengthen students' practical knowledge, professional skills, and understanding of emerging opportunities in biotechnology and related fields.",
             cards: [
@@ -192,7 +689,7 @@ export const instituteOfBiosciencesAndTechnologyNewData: CustomDepartmentNewData
         },
         {
             id: "hackathons",
-            eyebrow: "HACKATHONS & CONFERENCES",
+            eyebrow: "Hackathons & Conferences",
             heading: "Student Participation in Innovation and Research Events",
             intro: "Students of Shri Ramswaroop Memorial University actively participate in technical competitions, international conferences, and innovation-driven events, showcasing their knowledge, research capabilities, and problem-solving skills.",
             cards: [
@@ -203,7 +700,7 @@ export const instituteOfBiosciencesAndTechnologyNewData: CustomDepartmentNewData
         },
         {
             id: "research-publications",
-            eyebrow: "RESEARCH CONTRIBUTIONS",
+            eyebrow: "Research Contributions",
             heading: "Research Contributions in Biotechnology and Biosciences (2025–2026)",
             intro: "Selected faculty and student research contributions published during 2025–2026.",
             cards: [
@@ -248,7 +745,7 @@ export const instituteOfBiosciencesAndTechnologyNewData: CustomDepartmentNewData
         { q: "Where can students find placement information?", a: "The placements section on this page provides the university's placement information and employer details." },
     ],
     showFaculty: true,
-    showScholarships: false,
-    showBlogs: false,
+    showScholarships: true,
+    showBlogs: true,
     showCareerDescriptionCards: false,
 };
