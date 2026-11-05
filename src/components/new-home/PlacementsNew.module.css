@@ -2,117 +2,267 @@
   --placement-blue: #0a4a8f;
   --placement-navy: #14284e;
   --placement-gold: #ffb703;
-  --placement-red: #d62c2b;
-  padding: 64px 0 76px;
+  --placement-red: #d63832;
+  width: 100%;
+  padding: 40px 0 18px;
   overflow: clip;
   color: var(--placement-navy);
-  background: linear-gradient(180deg, #fff 0%, #cee0ef 48%, #eef5fb 85%, #fff 100%);
+  background: #fff;
 }
 
-.headingRow { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-.heading { margin: 0; color: var(--placement-blue); font-size: clamp(26px, 2.5vw, 36px); font-weight: 750; line-height: 1.2; letter-spacing: -.7px; }
-.heading > span { display: block; color: #ffc107; }
-.primaryLink { display: inline-flex; align-items: center; justify-content: center; gap: 12px; flex-shrink: 0; padding: 15px 23px; border: 1px solid #f0ae00; border-radius: 999px; background: var(--placement-gold); color: var(--placement-navy); font-size: 13px; font-weight: 750; transition: background .2s, transform .2s; }
-.primaryLink:hover { background: #ffc933; transform: translateY(-2px); }
-.description { margin-top: 16px; max-width: 1240px; color: #4b6076; font-size: 16px; line-height: 1.75; }
-.dashboard { display: grid; grid-template-columns: 1.02fr 1.05fr 1fr; align-items: stretch; gap: 18px; margin-top: 32px; }
-.dashboard > * { min-width: 0; }
-.card { min-width: 0; border: 1px solid #c8d8e7; border-radius: 22px; background: #ffffffed; box-shadow: 0 10px 30px #14284e05; }
-.eyebrow { display: block; font-size: 10px; font-weight: 750; letter-spacing: 1.4px; line-height: 1.5; text-transform: uppercase; color: #5d738a; }
-.cardTitle { display: block; padding-left: 9px; border-left: 3px solid var(--placement-gold); color: var(--placement-blue); font-size: 20px; font-weight: 800; letter-spacing: -.4px; line-height: 1.25; text-transform: none; }
-.card h3 { margin: 8px 0 0; font-size: 23px; font-weight: 750; letter-spacing: -.6px; line-height: 1.25; }
-.recruiters { display: flex; flex-direction: column; padding: 25px 21px 22px; }
-.recruiters h3 { color: var(--placement-blue); }
-.headingAccent { color: var(--placement-gold); }
-.recruiterHeading { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin: 34px 0 14px; padding-top: 24px; border-top: 1px solid #e5edf3; }
-.recruiterHeading h3 { margin: 0; padding-left: 9px; border-left: 3px solid var(--placement-gold); color: var(--placement-blue); font-size: 20px; font-weight: 800; letter-spacing: -.4px; line-height: 1.25; }
-.recruiterHeading a { display: inline-flex; align-items: center; gap: 3px; color: #0a4a8f; font-size: 10px; font-weight: 600; }
-.logoGrid { display: grid; flex: 1; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: repeat(4, minmax(58px, 1fr)); gap: 6px 0; }
-.logoTile { display: flex; align-items: center; justify-content: center; min-height: 58px; overflow: hidden; padding: 0; }
-.logoTile img { display: block; width: 100%; height: auto; max-height: 58px; object-fit: contain; }
-.textLink { display: inline-flex; gap: 10px; align-items: center; align-self: flex-start; margin-top: 23px; color: var(--placement-blue); font-size: 12px; font-weight: 700; }
-.textLink:hover { text-decoration: underline; text-underline-offset: 4px; }
-.results { display: grid; grid-template-rows: auto 1fr; gap: 18px; }
-.trendCard { padding: 24px 20px 20px; }
-.coreSummary { display: flex; align-items: center; gap: 10px; margin-top: 5px; padding: 15px 12px; border-radius: 10px; background: #e0f1ff; color: var(--placement-navy); }
-.coreSummary > svg { flex-shrink: 0; color: var(--placement-red); }
-.coreSummary > strong { color: var(--placement-red); font-size: 22px; line-height: 1; font-weight: 800; }
-.coreSummary > span { font-size: 10px; line-height: 1.5; font-weight: 600; }
-.statsCard { padding: 25px 22px 18px; }
-.stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin: 17px 0 0; }
-.stat { display: flex; flex-direction: column-reverse; justify-content: center; gap: 10px; padding: 18px 8px; min-width: 0; }
-.stat:nth-child(odd) { border-right: 1px solid #e5edf3; padding-left: 0; }
-.stat:nth-child(even) { padding-left: 20px; padding-right: 0; }
-.stat:nth-child(-n + 2) { border-bottom: 1px solid #e5edf3; padding-top: 7px; padding-bottom: 25px; }
-.stat dt { max-width: 135px; color: #4b6076; font-size: 11px; font-weight: 600; line-height: 1.6; }
-.stat dd { margin: 0; color: var(--placement-red); font-size: clamp(28px, 2.6vw, 38px); font-weight: 800; letter-spacing: -1.6px; line-height: 1.1; white-space: nowrap; font-variant-numeric: tabular-nums; }
-.unit { font-size: .46em; letter-spacing: -.4px; }
-.alumniCard { display: flex; flex-direction: column; padding: 23px 15px 15px; }
-.alumniHeader { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 0 4px 20px; }
-.alumniHeader h3 { margin-top: 7px; color: var(--placement-blue); font-size: 20px; font-weight: 800; letter-spacing: -.4px; line-height: 1.25; }
-.alumniHeader .eyebrow { padding-left: 9px; border-left: 3px solid var(--placement-gold); color: var(--placement-blue); font-size: 14px; font-weight: 800; letter-spacing: 0; line-height: 1.4; text-transform: none; }
-.iconLink { display: grid; place-items: center; flex-shrink: 0; width: 32px; height: 32px; border: 1px solid #d5e2ee; border-radius: 50%; color: var(--placement-blue); transition: background .2s; }
-.iconLink:hover { background: #e9f1f9; }
-.portrait { position: relative; isolation: isolate; flex: 1; min-height: 350px; overflow: hidden; border-radius: 14px; background: #d4dce5; }
-.portrait > img { position: absolute; width: 100%; height: 100%; inset: 0; object-fit: cover; object-position: center top; animation: portraitEnter .45s ease-out both; }
-.portrait::after { position: absolute; inset: 0; content: ""; background: linear-gradient(180deg, transparent 25%, #102d4c18 43%, #102d4ce6 82%, #102d4c 100%); pointer-events: none; }
-.portraitCaption { position: absolute; z-index: 1; bottom: 0; left: 0; right: 0; padding: 20px; color: #fff; }
-.portraitCaption h4 { margin: 0 0 7px; color: #ffcc47; font-size: 21px; font-weight: 800; letter-spacing: -.3px; line-height: 1.3; }
-.portraitCaption p { color: #e2ecf7; margin: 0; font-size: 11px; line-height: 1.7; }
-.carouselFooter { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 13px; }
-.slideCount { color: #7b8fa3; font-size: 11px; letter-spacing: 1px; }
+.sectionIntro { margin: 0 0 36px; }
+.sectionTitle {
+  margin: 0;
+  color: var(--placement-blue);
+  font-size: clamp(26px, 2.5vw, 36px);
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+.sectionTitle > span { display: block; color: var(--placement-gold); }
+.description { max-width: 1280px; margin-top: 12px; color: #4b6076; font-size: 16px; line-height: 1.65; }
+
+.dashboard {
+  display: grid;
+  grid-template-columns: minmax(0, 2.25fr) minmax(360px, .95fr);
+  align-items: stretch;
+  gap: 16px;
+}
+
+.mainContent,
+.alumniCard { min-width: 0; }
+.mainContent { display: flex; flex-direction: column; }
+.highlights { padding: 0 4px; }
+.cardTitle {
+  position: relative;
+  display: block;
+  margin: 0 0 14px;
+  padding-left: 13px;
+  color: var(--placement-blue);
+  font-size: clamp(21px, 1.7vw, 28px);
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1.25;
+}
+.cardTitle::before {
+  position: absolute;
+  top: 1px;
+  bottom: 1px;
+  left: 0;
+  width: 4px;
+  border-radius: 3px;
+  background: var(--placement-gold);
+  content: "";
+}
+.cardTitle > span { color: var(--placement-gold); }
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 0;
+}
+.stat {
+  display: flex;
+  min-width: 0;
+  min-height: 96px;
+  flex-direction: column-reverse;
+  justify-content: center;
+  gap: 8px;
+  padding: 5px clamp(12px, 1.7vw, 27px);
+  border-right: 1px solid #dce5ed;
+}
+.stat:first-child { padding-left: 15px; }
+.stat:last-child { border-right: 0; }
+.stat dt { max-width: 190px; color: #52647a; font-size: 13px; font-weight: 600; line-height: 1.45; }
+.stat dd {
+  margin: 0;
+  color: var(--placement-red);
+  font-size: clamp(30px, 3.1vw, 48px);
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.unit { font-size: .48em; letter-spacing: 0; }
+.srOnly { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+
+.coreSummary {
+  display: flex;
+  width: 100%;
+  min-height: 58px;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px;
+  padding: 10px 18px;
+  border-radius: 12px;
+  background: #e4f3fc;
+  color: var(--placement-navy);
+}
+.coreSummary > svg { flex: 0 0 auto; color: var(--placement-red); }
+.coreSummary > strong { color: var(--placement-red); font-size: 28px; font-weight: 800; line-height: 1; }
+.coreSummary > span { font-size: 13px; font-weight: 650; }
+
+.analytics {
+  display: grid;
+  flex: 1;
+  grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr);
+  align-items: stretch;
+  margin-top: 12px;
+}
+.salaryChart { display: flex; min-width: 0; flex-direction: column; padding: 4px 22px 0 0; }
+.trendChart { min-width: 0; padding: 4px 0 0 22px; }
+.chartLink { padding-top: 12px; }
+
+.recruiters {
+  margin-top: auto;
+  padding: 12px 0 0;
+  border-top: 1px solid #e0e7ed;
+}
+.recruiterHeading { margin-bottom: 4px; }
+.recruiterHeading h3 {
+  display: inline-block;
+  margin: 0;
+  padding-left: 12px;
+  border-left: 4px solid var(--placement-gold);
+  color: var(--placement-blue);
+  font-size: clamp(19px, 1.65vw, 25px);
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1.25;
+}
+.recruiterHeading h3 span { color: var(--placement-gold); }
+.logoGrid {
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+}
+.logoTrack { display: flex; width: max-content; will-change: transform; animation: recruiterMarquee 36s linear infinite; }
+.logoGroup { display: flex; flex: 0 0 auto; align-items: center; }
+.logoTile {
+  display: flex;
+  width: clamp(125px, 14vw, 178px);
+  min-height: 72px;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 5px 14px;
+  border-right: 1px solid #d7e0e8;
+}
+.logoTile:last-child { border-right: 0; }
+.logoTile img { display: block; width: 100%; height: auto; max-height: 60px; object-fit: contain; }
+.logoGrid:hover .logoTrack, .logoGrid:focus-within .logoTrack { animation-play-state: paused; }
+.textLink {
+  display: inline-flex;
+  width: max-content;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 4px;
+  padding: 10px 18px;
+  border: 1px solid #f0ae00;
+  border-radius: 999px;
+  background: var(--placement-gold);
+  color: var(--placement-navy);
+  font-size: 12px;
+  font-weight: 750;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgb(255 183 3 / 30%);
+  transition: background .2s, box-shadow .2s, transform .2s;
+}
+.textLink:hover { transform: translateY(-1px); background: #ffa000; box-shadow: 0 6px 16px rgb(255 183 3 / 40%); }
+.salaryChart .chartLink { margin: auto 0 16px; }
+@keyframes recruiterMarquee { to { transform: translateX(-50%); } }
+
+.alumniCard { display: flex; flex-direction: column; }
+.alumniHeader { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 0 0 16px; }
+.eyebrow {
+  display: block;
+  padding-left: 10px;
+  border-left: 4px solid var(--placement-gold);
+  color: var(--placement-blue);
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.4;
+}
+.alumniHeader h3 { margin: 7px 0 0; color: var(--placement-blue); font-size: clamp(20px, 1.65vw, 26px); font-weight: 800; letter-spacing: 0; line-height: 1.2; }
+.alumniHeader h3 span { color: var(--placement-gold); }
+.iconLink {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid #d5e2ee;
+  border-radius: 50%;
+  color: var(--placement-blue);
+  transition: background .2s;
+}
+.iconLink:hover { background: #f0f5f9; }
+.portrait { position: relative; isolation: isolate; min-height: 390px; flex: 1; overflow: hidden; border-radius: 12px; background: #d4dce5; }
+.portrait > img { position: absolute; z-index: 0; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; object-position: center top; animation: portraitEnter .45s ease-out both; }
+.portrait::after { position: absolute; z-index: 1; inset: 0; background: linear-gradient(180deg, transparent 30%, #102d4c18 45%, #102d4ce6 82%, #102d4c 100%); content: ""; pointer-events: none; }
+.portraitCaption { position: absolute; z-index: 2; right: 0; bottom: 0; left: 0; padding: 22px; color: #fff; }
+.portraitCaption h4 { margin: 0 0 7px; color: #ffcc47; font-size: clamp(21px, 1.8vw, 27px); font-weight: 800; letter-spacing: 0; line-height: 1.3; }
+.portraitCaption p { margin: 0; color: #e2ecf7; font-size: 11px; line-height: 1.7; }
+.carouselFooter { display: flex; min-height: 42px; align-items: center; justify-content: space-between; gap: 8px; padding-top: 7px; }
+.slideCount { color: #7b8fa3; font-size: 11px; letter-spacing: 1px; white-space: nowrap; }
 .slideCount strong { color: var(--placement-blue); font-size: 13px; }
 .carouselDots, .carouselControls { display: flex; align-items: center; }
-.carouselDots button { display: grid; place-items: center; width: 24px; height: 36px; padding: 0; border: 0; background: transparent; cursor: pointer; }
-.carouselDots button::after { content: ""; width: 6px; height: 6px; border-radius: 50%; background: #c5d3e2; transition: background .2s, width .2s; }
-.carouselDots button[aria-pressed="true"]::after { background: var(--placement-gold); width: 17px; border-radius: 8px; }
+.carouselDots button { display: grid; width: 24px; height: 36px; place-items: center; padding: 0; border: 0; background: transparent; cursor: pointer; }
+.carouselDots button::after { width: 6px; height: 6px; border-radius: 50%; background: #c5d3e2; content: ""; transition: background .2s, width .2s; }
+.carouselDots button[aria-pressed="true"]::after { width: 17px; border-radius: 8px; background: var(--placement-gold); }
 .carouselControls { gap: 6px; }
-.carouselControls button { display: grid; place-items: center; width: 36px; height: 36px; padding: 0; background: #fff; border: 1px solid #d5e2ee; border-radius: 50%; color: var(--placement-blue); cursor: pointer; transition: background .2s; }
-.carouselControls button:hover { background: #e9f1f9; }
+.carouselControls button { display: grid; width: 36px; height: 36px; place-items: center; padding: 0; border: 1px solid #d5e2ee; border-radius: 50%; background: #fff; color: var(--placement-blue); cursor: pointer; transition: background .2s; }
+.carouselControls button:hover { background: #f0f5f9; }
 .section a:focus-visible, .section button:focus-visible { outline: 3px solid var(--placement-blue); outline-offset: 4px; }
-.srOnly { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
 @keyframes portraitEnter { from { opacity: .5; transform: scale(1.035); } to { opacity: 1; transform: scale(1); } }
 
-@media (min-width: 1024px) and (max-width: 1199px) {
-  .dashboard { gap: 12px; }
-  .recruiters, .statsCard { padding: 22px 16px; }
-  .stat:nth-child(even) { padding-left: 12px; }
-}
-
 @media (max-width: 1023px) {
-  .section { padding: 44px 0 56px; }
-  .dashboard { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .alumniCard { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 0 24px; padding: 24px; }
-  .alumniHeader { align-self: start; padding-top: 10px; }
-  .portrait { grid-column: 2; grid-row: 1 / 3; min-height: 350px; }
-  .carouselFooter { align-self: end; grid-column: 1; margin: 0; }
-  .recruiters { min-height: 490px; }
-  .stat dd { font-size: 32px; }
+  .section { padding: 32px 0 36px; }
+  .dashboard { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .alumniCard { display: grid; grid-template-columns: minmax(220px, .8fr) minmax(300px, 1fr); align-items: center; gap: 0 24px; }
+  .alumniHeader { grid-column: 1; grid-row: 1; align-self: start; }
+  .portrait { min-height: 360px; grid-column: 2; grid-row: 1 / 3; }
+  .carouselFooter { grid-column: 1; grid-row: 2; align-self: end; }
 }
 
 @media (max-width: 639px) {
-  .section { padding: 32px 4px 44px; }
-  .headingRow { align-items: flex-start; flex-direction: column; gap: 16px; }
-  .heading { font-size: 27px; }
-  .primaryLink { padding: 11px 17px; font-size: 12px; }
-  .description { font-size: 13px; line-height: 1.75; margin-top: 14px; }
-  .dashboard { grid-template-columns: minmax(0, 1fr); margin-top: 24px; gap: 16px; }
-  .results { grid-row: 1; grid-template-rows: auto auto; gap: 16px; }
-  .statsCard { padding: 23px; }
-  .stat { padding-top: 23px; }
-  .stat dd { font-size: 36px; }
+  .section { padding: 24px 0 30px; }
+  .sectionIntro { margin-bottom: 24px; }
+  .sectionTitle { font-size: 27px; }
+  .description { margin-top: 10px; font-size: 15px; line-height: 1.7; }
+  .dashboard { gap: 25px; }
+  .cardTitle { margin-bottom: 8px; font-size: 22px; }
+  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stat { min-height: 78px; padding: 8px 10px; border-bottom: 1px solid #dce5ed; }
+  .stat:nth-child(2) { border-right: 0; }
+  .stat:nth-last-child(-n + 2) { border-bottom: 0; }
+  .stat:first-child { padding-left: 10px; }
   .stat dt { font-size: 11px; }
-  .recruiters { min-height: auto; padding: 24px 21px; }
-  .alumniCard { display: flex; padding: 22px 15px 15px; gap: 0; }
-  .alumniHeader { align-self: auto; padding: 0 4px 20px; }
-  .portrait { width: 100%; min-height: 410px; }
-  .carouselFooter { align-self: auto; margin-top: 13px; }
-  .portraitCaption h4 { font-size: 24px; }
-  .portraitCaption p { font-size: 12px; }
-  .carouselControls button { width: 44px; height: 44px; }
-  .carouselDots button { width: 28px; height: 44px; }
+  .stat dd { font-size: clamp(27px, 7vw, 35px); }
+  .coreSummary { min-height: 50px; gap: 9px; margin-top: 8px; padding: 8px 12px; }
+  .coreSummary > strong { font-size: 23px; }
+  .coreSummary > span { font-size: 11px; }
+  .analytics { grid-template-columns: minmax(0, 1fr); gap: 20px; margin-top: 16px; }
+  .salaryChart { padding: 0; }
+  .salaryChart .chartLink { margin: 12px 0 16px; }
+  .trendChart { padding: 18px 0 0; border-top: 1px solid #e0e7ed; border-left: 0; }
+  .recruiters { margin-top: 20px; }
+  .logoTile { width: 135px; min-height: 62px; padding: 4px 12px; }
+  .logoTile img { max-height: 52px; }
+  .alumniCard { display: flex; }
+  .alumniHeader { padding-bottom: 12px; }
+  .portrait { height: clamp(390px, 110vw, 520px); min-height: 0; flex: 0 0 auto; }
+  .portrait > img { position: relative; inset: auto; height: 100%; }
+  .carouselControls button { width: 42px; height: 42px; }
+  .carouselDots button { width: 28px; height: 42px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .logoTrack { animation: none; }
+  .logoGrid { overflow-x: auto; }
+  .logoGroup[aria-hidden="true"] { display: none; }
   .section *, .section *::after { animation: none !important; transition: none !important; }
 }

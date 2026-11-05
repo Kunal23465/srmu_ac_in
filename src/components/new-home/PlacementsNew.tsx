@@ -14,7 +14,10 @@ import styles from "./PlacementsNew.module.css";
 export default function PlacementsNew() {
   const sectionRef = useRef<HTMLElement>(null);
   const [alumniIndex, setAlumniIndex] = useState(0);
-  const [activeYearIndex, setActiveYearIndex] = useState(placementChartYears.length - 1);
+  const [activeYearIndex, setActiveYearIndex] = useState(() => {
+    const referenceYear = placementChartYears.findIndex(({ year }) => year === "2023");
+    return referenceYear >= 0 ? referenceYear : placementChartYears.length - 1;
+  });
   const alumnus = data.alumni[alumniIndex];
 
   useEffect(() => {
@@ -31,14 +34,12 @@ export default function PlacementsNew() {
     }, (context) => {
       if (context.conditions?.reduceMotion) return;
 
-      const cards = section.querySelectorAll<HTMLElement>("[data-placement-card]");
-      cards.forEach((card, index) => {
-        // Each column settles into place as the section enters the viewport.
-        gsap.fromTo(card, { y: context.conditions?.desktop ? 45 + index * 30 : 24 }, {
+      section.querySelectorAll<HTMLElement>("[data-placement-reveal]").forEach((element, index) => {
+        gsap.fromTo(element, { y: context.conditions?.desktop ? 45 + index * 30 : 24 }, {
           y: 0,
           ease: "none",
           scrollTrigger: {
-            trigger: card,
+            trigger: element,
             start: "top 98%",
             end: "top 58%",
             scrub: 0.6,
@@ -77,47 +78,19 @@ export default function PlacementsNew() {
   return (
     <section ref={sectionRef} id="home-placements" className={styles.section} aria-labelledby="home-placements-title">
       <div className={Classes.container}>
-        <div className={styles.headingRow}>
-          <h2 id="home-placements-title" className={styles.heading}>
+        <div className={styles.sectionIntro} data-placement-reveal>
+          <h2 id="home-placements-title" className={styles.sectionTitle}>
             {data.heading}<span>{data.highlight}</span>
           </h2>
-          <Link to={data.placementsHref} className={styles.primaryLink}>
-            View Placements <ArrowUpRight size={18} aria-hidden="true" />
-          </Link>
+          <MobileReadMore className={styles.description}>{data.description}</MobileReadMore>
         </div>
-        <MobileReadMore className={styles.description}>{data.description}</MobileReadMore>
 
         <div className={styles.dashboard}>
-          <article className={`${styles.card} ${styles.recruiters}`} data-placement-card>
-            <SalaryRangeChart year={placementChartYears[activeYearIndex].year} />
-            <div className={styles.recruiterHeading}>
-              <h3>Top Recruiters <span className={styles.headingAccent}> at SRMU</span></h3>
-
-            </div>
-
-            <div className={styles.logoGrid} data-placement-recruiters aria-label="SRMU recruiters">
-              {data.recruiters.map((company) => (
-                <div key={company.name} className={styles.logoTile} data-placement-logo>
-                  <img
-                    src={company.logo}
-                    alt={company.name}
-                    width={220}
-                    height={106}
-                    loading="lazy"
-                    decoding="async"
-                    style={{ transform: `scale(${company.scale})` }}
-                  />
-                </div>
-              ))}
-            </div>
-            <Link to={data.placementsHref} className={styles.textLink}>
-              Explore placements <ArrowRight size={16} aria-hidden="true" />
-            </Link>
-          </article>
-
-          <div className={styles.results} data-placement-card>
-            <article className={`${styles.card} ${styles.statsCard}`}>
-              <span className={styles.cardTitle}>SRMU Placement <span className={styles.headingAccent}>Highlights 2026</span></span>
+          <div className={styles.mainContent} data-placement-reveal>
+            <section className={styles.highlights} aria-labelledby="placement-highlights-title">
+              <h2 id="placement-highlights-title" className={styles.cardTitle}>
+                SRMU Placement <span>Highlights 2026</span>
+              </h2>
               <dl className={styles.stats}>
                 {data.stats.map((stat) => (
                   <div key={stat.id} className={styles.stat}>
@@ -134,24 +107,59 @@ export default function PlacementsNew() {
                 <strong><span data-placement-count={data.corePlacement.value}>{data.corePlacement.value}</span>%</strong>
                 <span>{data.corePlacement.label}</span>
               </div>
-            </article>
+            </section>
 
-            <article className={`${styles.card} ${styles.trendCard}`}>
-              <PlacementTrendChart activeIndex={activeYearIndex} onYearChange={setActiveYearIndex} />
-            </article>
+            <div className={styles.analytics}>
+              <div className={styles.salaryChart}>
+                <SalaryRangeChart year={placementChartYears[activeYearIndex].year} />
+                <Link to={data.placementsHref} className={`${styles.textLink} ${styles.chartLink}`}>
+                  Explore placements <ArrowRight size={16} aria-hidden="true" />
+                </Link>
+              </div>
+              <div className={styles.trendChart}>
+                <PlacementTrendChart activeIndex={activeYearIndex} onYearChange={setActiveYearIndex} />
+              </div>
+            </div>
+
+            <section className={styles.recruiters} aria-labelledby="home-recruiters-title">
+              <div className={styles.recruiterHeading}>
+                <h3 id="home-recruiters-title">Top Recruiters <span>at SRMU</span></h3>
+              </div>
+              <div className={styles.logoGrid} data-placement-recruiters role="region" aria-label="SRMU recruiters">
+                <div className={styles.logoTrack}>
+                  {[0, 1].map((copy) => (
+                    <div key={copy} className={styles.logoGroup} aria-hidden={copy === 1 ? true : undefined}>
+                      {data.recruiters.map((company) => (
+                        <div key={company.name} className={styles.logoTile} data-placement-logo>
+                          <img
+                            src={company.logo}
+                            alt={copy === 0 ? company.name : ""}
+                            width={220}
+                            height={106}
+                            loading="lazy"
+                            decoding="async"
+                            style={{ transform: `scale(${company.scale * 1.18})` }}
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
           </div>
 
           {alumnus && (
-            <article className={`${styles.card} ${styles.alumniCard}`} data-placement-card aria-roledescription="carousel" aria-label="SRMU alumni">
+            <article className={styles.alumniCard} data-placement-reveal aria-roledescription="carousel" aria-label="SRMU alumni">
               <div className={styles.alumniHeader}>
                 <div>
                   <span className={styles.eyebrow}>From Classrooms to Careers</span>
-                  <h3>Featured Placement <span className={styles.headingAccent}>Success Stories</span></h3>
+                  <h3>Featured Placement <span>Success Stories</span></h3>
                 </div>
                 <Link to={data.alumniHref} className={styles.iconLink} aria-label="View all notable SRMU alumni"><ArrowUpRight size={20} /></Link>
               </div>
               <div className={styles.portrait} aria-live="polite" aria-atomic="true">
-                <img key={alumnus.id} src={alumnus.image} alt={alumnus.name} width={640} height={640} loading="lazy" decoding="async" />
+                <img key={alumnus.id} src={alumnus.image} alt={alumnus.name} width={640} height={640} loading="eager" decoding="async" />
                 <div className={styles.portraitCaption}>
                   <h4>{alumnus.name}</h4>
                   <p>{alumnus.title}</p>

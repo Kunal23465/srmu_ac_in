@@ -10,11 +10,11 @@ import zydus from "../../assets/new-home/recruiters/zydus.webp";
 import hcl from "../../assets/new-home/new-placement-logos/2.png";
 import accenture from "../../assets/new-home/new-placement-logos/3.png";
 import cognizant from "../../assets/new-home/new-placement-logos/5.png";
-import rudraPrakashTiwari from "../../assets/images/new-placement-section/rudra-prakash-tiwari.png";
-import shauryaKumarDubey from "../../assets/images/new-placement-section/shaurya-kumar-dubey.png";
-import garimaRai from "../../assets/images/new-placement-section/garima-rai.png";
+import rudraPrakashTiwari from "../../assets/images/new-placement-section/rudra-prakash-tiwari.webp";
+import shauryaKumarDubey from "../../assets/images/new-placement-section/shaurya-kumar-dubey.webp";
+import garimaRai from "../../assets/images/new-placement-section/garima-rai.webp";
 import rashiGupta from "../../assets/images/new-placement-section/rashi-gupta.jpeg";
-import aryaMishra from "../../assets/images/new-placement-section/arya-mishra.png";
+import aryaMishra from "../../assets/images/new-placement-section/arya-mishra.webp";
 
 // Keep the original Placements.tsx independent. Add new approved content here.
 export const placementsNewData = {
@@ -28,7 +28,7 @@ export const placementsNewData = {
     { id: "students", value: 225, prefix: "", suffix: "", label: "Students Above 5+ LPA" },
     { id: "multiple-offers", value: 33, prefix: "", suffix: "%", label: "Students with Multiple Offers" },
   ],
-  corePlacement: { value: 100, label: "Placement in Core Branches" },
+  corePlacement: { value: 100, label: "Placement Across Core Programmes: B.Tech, BBA, BCA, Law, MBA & Pharmacy" },
   // Per-logo scales balance the visible artwork despite the assets' different aspect ratios and padding.
   recruiters: [
     { name: "Amazon", logo: amazon, scale: 0.612 },
