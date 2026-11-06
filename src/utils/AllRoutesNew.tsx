@@ -12,6 +12,7 @@ import InsiderPage from "../pages/InsiderPage";
 import DepartmentOfComputerScienceAndEngineeringNewPage from "../pages/academics/institutes/institute-department/department-of-computer-science-and-engineering-new/DepartmentOfComputerScienceAndEngineeringNewPage";
 import InstituteOfPharmacyNewPage from "../pages/academics/institutes/institute-department/institute-of-pharmacy-new/InstituteOfPharmacyNewPage";
 import InstituteOfBiosciencesAndTechnologyNewPage from "../pages/academics/institutes/institute-department/institute-of-biosciences-and-technology-new/InstituteOfBiosciencesAndTechnologyNewPage";
+import DepartmentOfElectricalAndElectronicsEngineeringNewPage from "../pages/academics/institutes/institute-department/department-of-electrical-and-electronics-engineering-new/DepartmentOfElectricalAndElectronicsEngineeringNewPage";
 
 const HomePage = lazyPage(() => import("../pages/Home/HomePage"));
 const PageNotFound = lazyPage(() => import("../pages/PageNotFound"));
@@ -1101,6 +1102,10 @@ export const routes = [
       {
         path: "/institute-of-biosciences-and-technology-new",
         element: <InstituteOfBiosciencesAndTechnologyNewPage />,
+      },
+      {
+        path: "/department-of-electrical-and-electronics-engineering-new",
+        element: <DepartmentOfElectricalAndElectronicsEngineeringNewPage />,
       },
       {
         path: "green-initiative-new",

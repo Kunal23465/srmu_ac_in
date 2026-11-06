@@ -301,7 +301,7 @@ const faqs = [
     { q: "What kind of industry exposure is available?", a: "The department highlights industrial partnerships, internships, live projects, guest lectures and interactions with professionals from industry and research organizations." },
 ];
 
-const renderTwoColorTitle = (title: string, onDarkBackground = false) => {
+const renderTwoColorTitle = (title: string, onDarkBackground = false, accentClassName = "text-[#FFB703]") => {
     const words = title.trim().split(/\s+/);
     if (words.length < 2) {
         return <span className={onDarkBackground ? "text-white" : "text-[#14284E]"}>{title}</span>;
@@ -310,7 +310,7 @@ const renderTwoColorTitle = (title: string, onDarkBackground = false) => {
     const splitIndex = Math.ceil(words.length / 2);
     return <>
         <span className={onDarkBackground ? "text-white" : "text-[#14284E]"}>{words.slice(0, splitIndex).join(" ")}</span>{" "}
-        <span className="text-[#FFB703]">{words.slice(splitIndex).join(" ")}</span>
+        <span className={accentClassName}>{words.slice(splitIndex).join(" ")}</span>
     </>;
 };
 
@@ -474,7 +474,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = ({ customData }: { customDa
         loop: false,
         align: "start",
         dragFree: true,
-        breakpoints: customData?.hero.title === "Biosciences and Technology" ? {} : {
+        breakpoints: customData?.hero.title === "Biosciences and Technology" || customData?.hero.title === "Electrical and Electronics Engineering" ? {} : {
             '(min-width: 640px)': { active: false }
         }
     });
@@ -586,6 +586,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = ({ customData }: { customDa
     const pageLabItems = customData?.labs.items ?? defaultLabItems;
     const isPharmacyPage = customData?.hero.title === "Pharmacy";
     const isBiosciencesPage = customData?.hero.title === "Biosciences and Technology";
+    const isElectricalDepartmentPage = customData?.hero.title === "Electrical and Electronics Engineering";
     const pageActivitySections = customData ? [
         ...(customData.activitySections ?? []),
         ...(customData.studentProjects ? [{
@@ -1554,7 +1555,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = ({ customData }: { customDa
                             </div>
 
                             {/* Navigation Buttons */}
-                            <div className={`flex items-center gap-3 shrink-0 self-start ${isBiosciencesPage ? "" : "sm:hidden"}`}>
+                            <div className={`flex items-center gap-3 shrink-0 self-start ${isBiosciencesPage || isElectricalDepartmentPage ? "" : "sm:hidden"}`}>
                                 <button
                                     onClick={() => eventsEmblaApi?.scrollPrev()}
                                     disabled={!eventsCanPrev}
@@ -1574,10 +1575,10 @@ const DepartmentOfComputerScienceAndEngineeringNew = ({ customData }: { customDa
                             </div>
                         </div>
 
-                        <div className={`-mx-4 px-4 sm:mx-0 sm:px-0 ${isBiosciencesPage ? "overflow-hidden" : "overflow-hidden sm:overflow-visible"}`} ref={eventsEmblaRef}>
-                            <div className={`flex gap-5 pb-4 ${isBiosciencesPage ? "" : "sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:pb-0"}`}>
+                        <div className={`-mx-4 px-4 sm:mx-0 sm:px-0 ${isBiosciencesPage || isElectricalDepartmentPage ? "overflow-hidden" : "overflow-hidden sm:overflow-visible"}`} ref={eventsEmblaRef}>
+                            <div className={`flex gap-5 pb-4 ${isBiosciencesPage || isElectricalDepartmentPage ? "" : "sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:pb-0"}`}>
                                 {pageEvents.map((ev, i) => (
-                                    <div key={i} className={`flex flex-col bg-white border border-[#DCE6F2] border-b-[4px] border-b-[#d62c2b] rounded-2xl overflow-hidden shadow-[0_4px_18px_rgba(15,31,61,0.04)] hover:shadow-[0_12px_30px_rgba(15,31,61,0.08)] hover:-translate-y-1 transition-all duration-300 ${isBiosciencesPage ? "shrink-0 w-[85vw] sm:w-[390px]" : "shrink-0 w-[85vw] sm:w-auto sm:shrink"}`}>
+                                    <div key={i} className={`flex flex-col bg-white border border-[#DCE6F2] border-b-[4px] border-b-[#d62c2b] rounded-2xl overflow-hidden shadow-[0_4px_18px_rgba(15,31,61,0.04)] hover:shadow-[0_12px_30px_rgba(15,31,61,0.08)] hover:-translate-y-1 transition-all duration-300 ${isBiosciencesPage || isElectricalDepartmentPage ? "shrink-0 w-[85vw] sm:w-[390px]" : "shrink-0 w-[85vw] sm:w-auto sm:shrink"}`}>
                                         <div className="w-full aspect-[16/9] relative overflow-hidden bg-[#DCE6F2]">
                                             <img src={ev.img} alt={ev.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy" />
                                         </div>
@@ -1610,8 +1611,8 @@ const DepartmentOfComputerScienceAndEngineeringNew = ({ customData }: { customDa
                 </section>
 
                 {pageActivitySections.filter((section) => !(isPharmacyPage && section.id === "student-projects")).map((section) => (
-                    <section key={section.id} id={section.id} className={`py-8 md:py-10 px-4 sm:px-6 ${isBiosciencesPage && section.id === "hackathons" ? "bg-[#14284E]" : isBiosciencesPage && section.id === "industry-exposure" ? "bg-white" : (isPharmacyPage || isBiosciencesPage) && section.id === "research-publications" ? ResearchShowcaseStyles.researchShowcaseBackground : isPharmacyPage && section.id === "seminars-webinars" ? "bg-white" : isPharmacyPage && section.id === "industry-exposure" ? "bg-[#14284e]" : "bg-[#F0F6FB]"} scroll-mt-24`}>
-                        {(isPharmacyPage || isBiosciencesPage) && section.id === "research-publications" && <>
+                    <section key={section.id} id={section.id} className={`py-8 md:py-10 px-4 sm:px-6 ${isElectricalDepartmentPage && section.id === "research-publications" ? ResearchShowcaseStyles.researchShowcaseBackground : isElectricalDepartmentPage && section.id === "student-projects" ? "bg-[#14284E]" : isElectricalDepartmentPage && section.id === "industry-exposure" ? "bg-white" : isBiosciencesPage && section.id === "hackathons" ? "bg-[#14284E]" : isBiosciencesPage && section.id === "industry-exposure" ? "bg-white" : (isPharmacyPage || isBiosciencesPage) && section.id === "research-publications" ? ResearchShowcaseStyles.researchShowcaseBackground : isPharmacyPage && section.id === "seminars-webinars" ? "bg-white" : isPharmacyPage && section.id === "industry-exposure" ? "bg-[#14284e]" : "bg-[#F0F6FB]"} scroll-mt-24`}>
+                        {(isPharmacyPage || isBiosciencesPage || isElectricalDepartmentPage) && section.id === "research-publications" && <>
                             <div aria-hidden="true" className={ResearchShowcaseStyles.showcaseAccentTop} />
                             <div aria-hidden="true" className={ResearchShowcaseStyles.showcaseAccentLeft} />
                             <div aria-hidden="true" className={ResearchShowcaseStyles.showcaseAccentRight} />
@@ -1624,10 +1625,16 @@ const DepartmentOfComputerScienceAndEngineeringNew = ({ customData }: { customDa
                                 <path d="M0 267c187 28 376 30 568 1 217-33 383-42 574-8 116 20 208 38 298 40" fill="none" stroke="white" strokeOpacity=".26" strokeWidth="1.5" />
                             </svg>
                         </>}
-                        <div className={`${Classes["container"]} cse-content-container ${(isPharmacyPage || isBiosciencesPage) && section.id === "research-publications" ? "relative z-10" : ""}`}>
+                        <div className={`${Classes["container"]} cse-content-container ${(isPharmacyPage || isBiosciencesPage || isElectricalDepartmentPage) && section.id === "research-publications" ? "relative z-10" : ""}`}>
                             <div className="w-full mb-8 flex flex-col gap-4">
                                 <div className="w-full">
-                                    {isBiosciencesPage && section.id === "research-publications" ? <>
+                                    {isElectricalDepartmentPage && section.id === "research-publications" ? <>
+                                        <h2 className="text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display mb-2">{renderTwoColorTitle(section.eyebrow, false, "text-[#D62C2B]")}</h2>
+                                        <h3 className="text-[20px] sm:text-[22px] leading-[1.3] font-bold font-display text-[#14284E] mb-3">{section.heading}</h3>
+                                    </> : isElectricalDepartmentPage && (section.id === "industry-exposure" || section.id === "workshops" || section.id === "student-projects" || section.id === "smart-india-hackathon") ? <>
+                                        <h2 className="text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display mb-2">{renderTwoColorTitle(section.eyebrow, section.id === "student-projects")}</h2>
+                                        <h3 className={`text-[20px] sm:text-[22px] leading-[1.3] font-bold font-display ${section.id === "student-projects" ? "text-white/80" : "text-[#4B5A72]"} mb-3`}>{section.heading}</h3>
+                                    </> : isBiosciencesPage && section.id === "research-publications" ? <>
                                         <h2 className="text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display mb-2">
                                             <span className="text-[#14284E]">Research</span>{" "}<span className="text-white">Contributions</span>
                                         </h2>
@@ -1647,15 +1654,15 @@ const DepartmentOfComputerScienceAndEngineeringNew = ({ customData }: { customDa
                                         </h2>
                                         <h3 className={`text-[20px] sm:text-[22px] leading-[1.3] font-bold font-display ${section.id === "industry-exposure" ? "text-white" : "text-[#14284E]"} mb-3`}>{section.heading}</h3>
                                     </> : <>
-                                        <div className={`text-[11px] tracking-[0.1em] uppercase ${isPharmacyPage && section.id === "industry-exposure" ? "text-[#FFB703]" : "text-[#d62c2b]"} font-bold flex items-center gap-2 mb-3`}>
-                                            <span className={`w-4 h-[2px] ${isPharmacyPage && section.id === "industry-exposure" ? "bg-[#FFB703]" : "bg-[#d62c2b]"} inline-block shrink-0`} />{section.eyebrow}
+                                        <div className={`text-[11px] tracking-[0.1em] uppercase ${(isPharmacyPage && section.id === "industry-exposure") || (isElectricalDepartmentPage && section.id === "student-projects") ? "text-[#FFB703]" : "text-[#d62c2b]"} font-bold flex items-center gap-2 mb-3`}>
+                                            <span className={`w-4 h-[2px] ${(isPharmacyPage && section.id === "industry-exposure") || (isElectricalDepartmentPage && section.id === "student-projects") ? "bg-[#FFB703]" : "bg-[#d62c2b]"} inline-block shrink-0`} />{section.eyebrow}
                                         </div>
-                                        <h2 className={`text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display ${isPharmacyPage && section.id === "industry-exposure" ? "text-white" : "text-[#14284E]"} mb-3`}>{section.heading}</h2>
+                                        <h2 className={`text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display ${(isPharmacyPage && section.id === "industry-exposure") || (isElectricalDepartmentPage && section.id === "student-projects") ? "text-white" : "text-[#14284E]"} mb-3`}>{section.heading}</h2>
                                     </>}
-                                    {section.intro && <p className={`w-full text-[15.5px] leading-relaxed ${(isPharmacyPage && section.id === "industry-exposure") || (isBiosciencesPage && section.id === "hackathons") ? "text-white/80" : "text-[#4B5A72]"} text-justify`}>{section.intro}</p>}
+                                    {section.intro && <p className={`w-full text-[15.5px] leading-relaxed ${(isPharmacyPage && section.id === "industry-exposure") || (isBiosciencesPage && section.id === "hackathons") || (isElectricalDepartmentPage && section.id === "student-projects") ? "text-white/80" : "text-[#4B5A72]"} text-justify`}>{section.intro}</p>}
                                 </div>
                             </div>
-                            {section.cards && section.cards.length > 0 && <ActivityCardsCarousel sectionId={section.id} heading={section.heading} cards={section.cards} onSelect={setSelectedEvent} forceCarousel={(isPharmacyPage && section.id === "workshops") || (isBiosciencesPage && section.id === "research-publications")} />}
+                            {section.cards && section.cards.length > 0 && <ActivityCardsCarousel sectionId={section.id} heading={section.heading} cards={section.cards} onSelect={setSelectedEvent} forceCarousel={(isPharmacyPage && section.id === "workshops") || (isBiosciencesPage && section.id === "research-publications") || (isElectricalDepartmentPage && (section.id === "research-publications" || section.id === "smart-india-hackathon" || section.id === "workshops"))} />}
                             {section.listTitle && <div className="mt-7 rounded-2xl border border-[#DCE6F2] bg-white p-5 sm:p-6">
                                 <h3 className="font-display text-[16px] font-bold text-[#14284E]">{section.listTitle}</h3>
                                 <ul className="mt-4 grid gap-3 text-[13.5px] leading-relaxed text-[#4B5A72] sm:grid-cols-2 lg:grid-cols-3">{section.listItems?.map((item) => <li key={item} className="flex items-start gap-2"><span className="text-[#FFB703]">●</span>{item}</li>)}</ul>
@@ -1688,7 +1695,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = ({ customData }: { customDa
                         <div className="w-full mb-4 sm:mb-5 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
                             <div className="text-left max-w-3xl">
                                 <h2 className={`leading-[1.2] font-bold font-display ${isBiosciencesPage ? "text-[clamp(28px,3vw,36px)]" : "text-[clamp(30px,7vw,36px)] sm:text-[clamp(28px,3vw,36px)] text-[#14284E]"}`}>
-                                    {isPharmacyPage ? <>Career <span className="text-[#FFB703]">Opportunities</span></> : isBiosciencesPage ? renderTwoColorTitle(customData?.career.heading ?? "") : customData ? customData.career.heading : <>Where can a <span className="text-[#FFB703]">CSE Degree</span> take you?</>}
+                                    {isPharmacyPage ? <>Career <span className="text-[#FFB703]">Opportunities</span></> : isBiosciencesPage ? renderTwoColorTitle(customData?.career.heading ?? "") : isElectricalDepartmentPage ? renderTwoColorTitle(customData?.career.heading ?? "") : customData ? customData.career.heading : <>Where can a <span className="text-[#FFB703]">CSE Degree</span> take you?</>}
                                 </h2>
                             </div>
 
@@ -1867,8 +1874,20 @@ const DepartmentOfComputerScienceAndEngineeringNew = ({ customData }: { customDa
                 {/* ── Page-specific Blog Section ───────────────────────── */}
                 {(() => {
                     if (customData && !customData.showBlogs) return null;
-                    const blogCategory = isBiosciencesPage ? "biotech" : isPharmacyPage ? "pharmacy" : "cs";
-                    const pageBlogSlugs = new Set(ALL_TARGET_BLOGS.filter(b => b.category === blogCategory).map(b => b.slug));
+                    const blogCategory = isBiosciencesPage ? "biotech" : isPharmacyPage ? "pharmacy" : isElectricalDepartmentPage ? "engineering" : "cs";
+                    const electricalEngineeringKeywords = [
+                        "electrical engineering", "electrical", "electric vehicle", "ev engineering", "ev charging",
+                        "renewable energy", "power system", "power electronics", "electronics engineering",
+                        "electronics & communication", "electronics communication", "semiconductor", "vlsi", "smart grid"
+                    ];
+                    const isElectricalBlog = (title: string, slug: string) => {
+                        const haystack = `${title} ${slug}`.toLowerCase();
+                        return electricalEngineeringKeywords.some(kw => haystack.includes(kw));
+                    };
+                    const pageBlogSlugs = new Set(ALL_TARGET_BLOGS
+                        .filter(b => b.category === blogCategory)
+                        .filter(b => !isElectricalDepartmentPage || isElectricalBlog(b.title, b.slug))
+                        .map(b => b.slug));
                     const cseKeywords = [
                         "cse", "computer science", "bca", "b.tech cse", "btech cse",
                         "cyber security", "cybersecurity", "artificial intelligence",
@@ -1880,7 +1899,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = ({ customData }: { customDa
                     ];
                     const pharmacyKeywords = ["pharmacy", "pharma", "pharmaceutical", "pharmacist", "pharmacology", "drug", "medicine", "medicinal", "b.pharm", "d.pharm"];
                     const biosciencesKeywords = ["biotechnology", "biotech", "bioscience", "biosciences", "microbiology", "molecular biology", "genetic engineering", "life sciences", "food technology", "food science", "nutrition"];
-                    const pageKeywords = isBiosciencesPage ? biosciencesKeywords : isPharmacyPage ? pharmacyKeywords : cseKeywords;
+                    const pageKeywords = isBiosciencesPage ? biosciencesKeywords : isPharmacyPage ? pharmacyKeywords : isElectricalDepartmentPage ? electricalEngineeringKeywords : cseKeywords;
                     const isPageRelated = (card: any) => {
                         const slug = String(card.slug || "").trim();
                         if (pageBlogSlugs.has(slug)) return true;
@@ -1905,10 +1924,10 @@ const DepartmentOfComputerScienceAndEngineeringNew = ({ customData }: { customDa
                                             <span className="w-4 h-[2px] bg-[#d62c2b] inline-block shrink-0" /> From the Blog
                                         </div> */}
                                         <h2 className="text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E]">
-                                            Latest <span className="text-[#FFB703]">Insights & Resources</span>
+                                            {isElectricalDepartmentPage ? <>Electrical Engineering <span className="text-[#FFB703]">Insights & Resources</span></> : <>Latest <span className="text-[#FFB703]">Insights & Resources</span></>}
                                         </h2>
                                         <p className="text-[14px] text-[#4B5A72] mt-2 max-w-xl">
-                                            {isBiosciencesPage ? "Articles and insights on biotechnology, biosciences, and careers in the life sciences." : isPharmacyPage ? "Articles and insights on pharmacy programmes, pharmaceutical sciences, and career opportunities." : customData ? "" : "Guides, stories, and updates from the world of Computer Science & Engineering."}
+                                            {isBiosciencesPage ? "Articles and insights on biotechnology, biosciences, and careers in the life sciences." : isPharmacyPage ? "Articles and insights on pharmacy programmes, pharmaceutical sciences, and career opportunities." : isElectricalDepartmentPage ? "Articles and insights on electrical and electronics engineering, electric vehicles, renewable energy, and related careers." : customData ? "" : "Guides, stories, and updates from the world of Computer Science & Engineering."}
                                         </p>
                                     </div>
                                     <div className="flex sm:hidden items-center gap-3 shrink-0 w-full">
@@ -2097,8 +2116,8 @@ const DepartmentOfComputerScienceAndEngineeringNew = ({ customData }: { customDa
 
                 {/* ── Faculty Modal ───────────────────────────────────────── */}
                 {selectedFaculty && (
-                    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm" onClick={() => setSelectedFaculty(null)}>
-                        <div className="bg-white rounded-2xl max-w-lg w-full overflow-hidden shadow-2xl relative animate-in fade-in zoom-in-95 duration-200" onClick={e => e.stopPropagation()}>
+                    <div className="fixed inset-0 z-[1000] flex items-start justify-center overflow-y-auto overscroll-contain bg-black/60 px-3 py-3 backdrop-blur-sm sm:items-center sm:p-4" onClick={() => setSelectedFaculty(null)}>
+                        <div className="relative flex max-h-[calc(100dvh-1.5rem)] w-full max-w-lg flex-col overflow-hidden rounded-2xl bg-white shadow-2xl animate-in fade-in zoom-in-95 duration-200" onClick={e => e.stopPropagation()}>
                             <button
                                 onClick={() => setSelectedFaculty(null)}
                                 className="cse-mobile-button absolute top-4 right-4 w-8 h-8 flex items-center justify-center bg-white/20 hover:bg-white/40 rounded-full text-white transition-colors z-10 backdrop-blur-md"
@@ -2106,25 +2125,26 @@ const DepartmentOfComputerScienceAndEngineeringNew = ({ customData }: { customDa
                                 <X className="w-4 h-4" />
                             </button>
 
-                            <div className="h-32 bg-[#14284E] relative">
+                            <div className="relative h-32 shrink-0 bg-[#14284E]">
                                 <div className="absolute -bottom-16 left-6 border-4 border-white rounded-full overflow-hidden bg-[#EAEAEA] w-32 h-32 shadow-lg">
                                     <img
                                         src={selectedFaculty.img}
                                         alt={selectedFaculty.name}
                                         onError={(e) => { e.currentTarget.src = "https://ui-avatars.com/api/?name=" + encodeURIComponent(selectedFaculty.name) + "&background=EAEAEA&color=14284E&size=256"; }}
                                         className="w-full h-full object-cover object-top mix-blend-multiply"
+                                        style={selectedFaculty.portraitObjectPosition ? { objectPosition: selectedFaculty.portraitObjectPosition } : undefined}
                                     />
                                 </div>
                             </div>
 
-                            <div className="pt-20 px-6 pb-8">
+                            <div className="min-h-0 overflow-y-auto overscroll-contain px-5 pb-6 pt-20 sm:px-6 sm:pb-8">
                                 <h3 className="text-2xl font-bold font-display text-[#14284E] mb-1">{selectedFaculty.name}</h3>
                                 <div className="text-[13px] text-[#FFB703] font-bold uppercase tracking-widest mb-6">{selectedFaculty.role}</div>
 
-                                <div className="space-y-4">
+                                <div className="space-y-3 sm:space-y-4">
                                     <div className="flex flex-wrap gap-2">
                                         {selectedFaculty.qualification && (
-                                            <div className="inline-flex items-baseline gap-2 bg-[#F8FAFC] border border-[#DCE6F2] px-4 py-2 rounded-lg text-[13px] text-[#3F4C56]">
+                                            <div className="flex w-full flex-col items-start gap-1 rounded-lg border border-[#DCE6F2] bg-[#F8FAFC] px-4 py-2 text-[13px] text-[#3F4C56] sm:inline-flex sm:w-auto sm:flex-row sm:items-baseline sm:gap-2">
                                                 <span className="font-medium text-[#14284E]">Qualification:</span>
                                                 <span className="font-display text-[14px] font-semibold text-[#14284E]">{selectedFaculty.qualification}</span>
                                             </div>

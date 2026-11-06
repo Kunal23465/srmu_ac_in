@@ -20,6 +20,7 @@ export type FacultyMember = {
     name: string;
     role: string;
     img: string;
+    portraitObjectPosition?: string;
     isHod?: boolean;
     qualification?: string;
     experience?: string;
@@ -241,6 +242,7 @@ export default function DepartmentFaculty({
                                                 loading="lazy"
                                                 decoding="async"
                                                 className={styles.cardPortraitImg}
+                                                style={member.portraitObjectPosition ? { objectPosition: member.portraitObjectPosition } : undefined}
                                                 onError={(e) => {
                                                     e.currentTarget.src =
                                                         "https://ui-avatars.com/api/?name=" +
@@ -327,6 +329,7 @@ export default function DepartmentFaculty({
                                                             loading="lazy"
                                                             decoding="async"
                                                             className={styles.cardPortraitImg}
+                                                            style={member.portraitObjectPosition ? { objectPosition: member.portraitObjectPosition } : undefined}
                                                             onError={(e) => {
                                                                 e.currentTarget.src =
                                                                     "https://ui-avatars.com/api/?name=" +
