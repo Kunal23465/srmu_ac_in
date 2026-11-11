@@ -13,6 +13,8 @@ import DepartmentOfComputerScienceAndEngineeringNewPage from "../pages/academics
 import InstituteOfPharmacyNewPage from "../pages/academics/institutes/institute-department/institute-of-pharmacy-new/InstituteOfPharmacyNewPage";
 import InstituteOfBiosciencesAndTechnologyNewPage from "../pages/academics/institutes/institute-department/institute-of-biosciences-and-technology-new/InstituteOfBiosciencesAndTechnologyNewPage";
 import DepartmentOfElectricalAndElectronicsEngineeringNewPage from "../pages/academics/institutes/institute-department/department-of-electrical-and-electronics-engineering-new/DepartmentOfElectricalAndElectronicsEngineeringNewPage";
+import DepartmentOfMechanicalEngineeringNewPage from "../pages/academics/institutes/institute-department/department-of-mechanical-engineering-new/DepartmentOfMechanicalEngineeringNewPage";
+import DepartmentOfCivilEngineeringNewPage from "../pages/academics/institutes/institute-department/department-of-civil-engineering-new/DepartmentOfCivilEngineeringNewPage";
 
 const HomePage = lazyPage(() => import("../pages/Home/HomePage"));
 const PageNotFound = lazyPage(() => import("../pages/PageNotFound"));
@@ -1106,6 +1108,14 @@ export const routes = [
       {
         path: "/department-of-electrical-and-electronics-engineering-new",
         element: <DepartmentOfElectricalAndElectronicsEngineeringNewPage />,
+      },
+      {
+        path: "/department-of-mechanical-engineering-new",
+        element: <DepartmentOfMechanicalEngineeringNewPage />,
+      },
+      {
+        path: "/department-of-civil-engineering-new",
+        element: <DepartmentOfCivilEngineeringNewPage />,
       },
       {
         path: "green-initiative-new",
