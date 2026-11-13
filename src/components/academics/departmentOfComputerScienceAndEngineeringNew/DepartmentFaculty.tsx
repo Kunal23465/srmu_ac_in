@@ -105,6 +105,8 @@ function UniversityDomeWatermark() {
 export default function DepartmentFaculty({
     faculty,
     onSelect,
+    headingText = "Learn from Experienced",
+    headingHighlight = "Academic Professionals.",
     subheading = "The university highlights faculty recruitment from reputed institutions including IIT, IIM, MNNIT and IIT-BHU, with an emphasis on interactive, personalized teaching.",
     featuredDescription = "Expert in computer science and engineering with a focus on innovation and research.",
     featuredLabel = "HOD",
@@ -112,6 +114,8 @@ export default function DepartmentFaculty({
 }: {
     faculty: FacultyMember[];
     onSelect: (member: FacultyMember) => void;
+    headingText?: string;
+    headingHighlight?: string;
     subheading?: string;
     featuredDescription?: string;
     featuredLabel?: string;
@@ -169,9 +173,9 @@ export default function DepartmentFaculty({
                             <span className={styles.eyebrowBar} aria-hidden="true" />
                         </div>
                         <h2 id="faculty-heading" className={`font-display ${styles.heading}`}>
-                            Learn from Experienced{" "}
+                            {headingText}{" "}
                             <span className={styles.headingHighlight}>
-                                Academic Professionals.
+                                {headingHighlight}
                             </span>
                         </h2>
                         <p className={styles.subheading}>

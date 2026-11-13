@@ -9,6 +9,7 @@ import {
     Wrench,
 } from "lucide-react";
 import type { CustomDepartmentNewData, DepartmentActivityCardNew } from "../../../customs/department-page-new/CustomDepartmentNew";
+import { civilfacultyData } from "../../../data/academics/institute/faculty-of-civil-engineering/faculty-of-civil-engineering-data";
 import departmentBanner from "../../../assets/images/academics/departments/civil-07052411084968.webp";
 import departmentOverview from "../../../assets/images/home/departmentalvideos/civil.png";
 import industryExposureImage from "../../../assets/images/academics/institutes/training-.webp";
@@ -291,12 +292,34 @@ export const departmentOfCivilEngineeringNewData: CustomDepartmentNewData = {
         ],
         descriptions: [],
     },
+    facultySection: {
+        members: civilfacultyData.map((member) => {
+            const isDepartmentHead = member.name === "Prof. (Dr.) Abhishek Saxena";
+            return {
+                id: String(member.id),
+                name: member.name,
+                role: member.designation,
+                img: member.image,
+                isHod: isDepartmentHead,
+                ...(isDepartmentHead && {
+                    experience: "23+ years (10 years in industry, 13+ years in academia)",
+                    specialization: ["Environmental Impact Assessment", "Hydrogeology", "Groundwater"],
+                    expertise: "Dean of the Faculty of Civil Engineering and Officiating Director of the Institute of Architecture and Planning. His published profile highlights groundwater expertise, environmental impact assessment, nine consultancy projects, eight patents, 60 research papers and book chapters, and five PhD scholars supervised, with seven scholars awarded.",
+                }),
+            };
+        }),
+        headingText: "Faculty",
+        headingHighlight: "List",
+        subheading: "Our faculty bring experience from leading institutions and a student-focused approach to teaching, supported by active research and practical learning.",
+        featuredDescription: "Dean of the Faculty of Civil Engineering and Officiating Director of the Institute of Architecture and Planning, with 23+ years of experience across industry and academia.",
+        featuredLabel: "Department Head",
+        showResearchShowcase: false,
+    },
     community: {
-        eyebrow: "CAREER PREPARATION",
+        eyebrow: "Career Preparation",
         heading: "Preparing Engineers for the Infrastructure Sector",
         paragraphs: [
-            "The department aims to prepare students for professional opportunities across construction, infrastructure, structural design, project management, and related engineering sectors.",
-            "Students can also pursue postgraduate studies and research in areas such as structural engineering, environmental engineering, geotechnical engineering, and construction management.",
+            "The department aims to prepare students for professional opportunities across construction, infrastructure, structural design, project management, and related engineering sectors. Students can also pursue postgraduate studies and research in areas such as structural engineering, environmental engineering, geotechnical engineering, and construction management.",
         ],
         focusTitle: "Career Preparation Focus Areas",
         focusAreas: [
@@ -342,7 +365,7 @@ export const departmentOfCivilEngineeringNewData: CustomDepartmentNewData = {
             a: "Industrial exposure helps students understand construction processes, engineering practices, project execution, and the application of classroom concepts in professional environments.",
         },
     ],
-    showFaculty: false,
+    showFaculty: true,
     showScholarships: true,
     showBlogs: true,
     showCareerDescriptionCards: false,

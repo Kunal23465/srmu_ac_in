@@ -12,9 +12,15 @@ import InsiderPage from "../pages/InsiderPage";
 import DepartmentOfComputerScienceAndEngineeringNewPage from "../pages/academics/institutes/institute-department/department-of-computer-science-and-engineering-new/DepartmentOfComputerScienceAndEngineeringNewPage";
 import InstituteOfPharmacyNewPage from "../pages/academics/institutes/institute-department/institute-of-pharmacy-new/InstituteOfPharmacyNewPage";
 import InstituteOfBiosciencesAndTechnologyNewPage from "../pages/academics/institutes/institute-department/institute-of-biosciences-and-technology-new/InstituteOfBiosciencesAndTechnologyNewPage";
+import InstituteOfAgriculturalSciencesAndTechnologyNewPage from "../pages/academics/institutes/institute-department/institute-of-agricultural-sciences-and-technology-new/InstituteOfAgriculturalSciencesAndTechnologyNewPage";
+import InstituteOfMediaStudiesNewPage from "../pages/academics/institutes/institute-department/institute-of-media-studies-new/InstituteOfMediaStudiesNewPage";
+import InstituteOfNaturalSciencesAndHumanitiesNewPage from "../pages/academics/institutes/institute-department/institute-of-natural-sciences-and-humanities-new/InstituteOfNaturalSciencesAndHumanitiesNewPage";
 import DepartmentOfElectricalAndElectronicsEngineeringNewPage from "../pages/academics/institutes/institute-department/department-of-electrical-and-electronics-engineering-new/DepartmentOfElectricalAndElectronicsEngineeringNewPage";
 import DepartmentOfMechanicalEngineeringNewPage from "../pages/academics/institutes/institute-department/department-of-mechanical-engineering-new/DepartmentOfMechanicalEngineeringNewPage";
 import DepartmentOfCivilEngineeringNewPage from "../pages/academics/institutes/institute-department/department-of-civil-engineering-new/DepartmentOfCivilEngineeringNewPage";
+import FacultyOfCommerceAndEconomicsNewPage from "../pages/academics/institutes/institute-department/faculty-of-commerce-and-economics-new/FacultyOfCommerceAndEconomicsNewPage";
+import FacultyOfManagementNewPage from "../pages/academics/institutes/institute-department/faculty-of-management-new/FacultyOfManagementNewPage";
+import FacultyOfMathematicalAndStatisticalSciencesNewPage from "../pages/academics/institutes/institute-department/faculty-of-mathematical-and-statistical-sciences-new/FacultyOfMathematicalAndStatisticalSciencesNewPage";
 
 const HomePage = lazyPage(() => import("../pages/Home/HomePage"));
 const PageNotFound = lazyPage(() => import("../pages/PageNotFound"));
@@ -1106,6 +1112,18 @@ export const routes = [
         element: <InstituteOfBiosciencesAndTechnologyNewPage />,
       },
       {
+        path: "/institute-of-agricultural-sciences-and-technology-new",
+        element: <InstituteOfAgriculturalSciencesAndTechnologyNewPage />,
+      },
+      {
+        path: "/institute-of-media-studies-new",
+        element: <InstituteOfMediaStudiesNewPage />,
+      },
+      {
+        path: "/institute-of-natural-sciences-and-humanities-new",
+        element: <InstituteOfNaturalSciencesAndHumanitiesNewPage />,
+      },
+      {
         path: "/department-of-electrical-and-electronics-engineering-new",
         element: <DepartmentOfElectricalAndElectronicsEngineeringNewPage />,
       },
@@ -1116,6 +1134,18 @@ export const routes = [
       {
         path: "/department-of-civil-engineering-new",
         element: <DepartmentOfCivilEngineeringNewPage />,
+      },
+      {
+        path: "/faculty-of-commerce-and-economics-new",
+        element: <FacultyOfCommerceAndEconomicsNewPage />,
+      },
+      {
+        path: "/faculty-of-management-new",
+        element: <FacultyOfManagementNewPage />,
+      },
+      {
+        path: "/faculty-of-mathematical-and-statistical-sciences-new",
+        element: <FacultyOfMathematicalAndStatisticalSciencesNewPage />,
       },
       {
         path: "green-initiative-new",

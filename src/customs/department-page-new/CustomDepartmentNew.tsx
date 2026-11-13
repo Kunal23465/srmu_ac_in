@@ -115,6 +115,8 @@ export type CustomDepartmentNewData = {
     };
     facultySection?: {
         members: FacultyMember[];
+        headingText?: string;
+        headingHighlight?: string;
         subheading?: string;
         featuredDescription?: string;
         featuredLabel?: string;
