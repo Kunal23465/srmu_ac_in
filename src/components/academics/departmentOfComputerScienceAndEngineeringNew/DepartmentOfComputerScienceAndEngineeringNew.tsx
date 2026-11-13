@@ -913,7 +913,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = ({ customData }: { customDa
                 {/* ── Hero Banner ─────────────────────────────────────────── */}
 
                 {/* ── MOBILE banner ── image bg + gradient overlay ─────── */}
-                <section className="cse-page-hero sm:hidden relative w-full overflow-hidden" style={{ minHeight: "620px" }}>
+                <section className="cse-page-hero sm:hidden relative w-full overflow-hidden bg-[#071329]" style={{ minHeight: "620px" }}>
                     {/* Full background image */}
                     <img
                         src={customData?.hero.backgroundImage ?? "/assets/images/new-information-system/diff-banner.jpg"}
@@ -921,7 +921,12 @@ const DepartmentOfComputerScienceAndEngineeringNew = ({ customData }: { customDa
                         className="absolute inset-0 w-full h-full object-cover object-top"
                     />
 
-                    {/* Gradient: transparent at top → deep navy at ~45% downward */}
+                    {isElectricalDepartmentPage && (
+                        <div
+                            aria-hidden="true"
+                            className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b from-[#071329]/10 via-[#0B2B62]/50 to-[#061633]/95"
+                        />
+                    )}
 
                     {/* Text content — sits in the lower half over the gradient */}
                     <div className="absolute bottom-0 left-0 right-0 px-5 pt-6 pb-7 z-10">
@@ -941,20 +946,23 @@ const DepartmentOfComputerScienceAndEngineeringNew = ({ customData }: { customDa
                             {heroStats.map((s) => (
                                 <div
                                     key={s.l}
-                                    className="cse-stat-card rounded-xl px-3 py-2.5"
-                                    style={{
+                                    className={`cse-stat-card rounded-xl px-3 py-2.5 ${isElectricalDepartmentPage ? "border border-sky-200/40 shadow-[0_10px_26px_rgba(2,8,23,0.35)]" : ""}`}
+                                    style={isElectricalDepartmentPage ? {
+                                        background: "linear-gradient(135deg, rgba(15,64,132,0.96), rgba(7,25,68,0.96))",
+                                        backdropFilter: "blur(10px)",
+                                    } : {
                                         background: "rgba(255,255,255,0.07)",
                                         backdropFilter: "blur(6px)",
                                         border: "1px solid rgba(255,255,255,0.13)",
                                     }}
                                 >
                                     <div
-                                        className="cse-stat-value text-[#FFB703] font-extrabold text-[20px] leading-none tracking-tight"
+                                        className={`cse-stat-value ${isElectricalDepartmentPage ? "text-[#FFD166]" : "text-[#FFB703]"} font-extrabold text-[20px] leading-none tracking-tight`}
                                         style={{ animationDelay: s.delay }}
                                     >
                                         {s.v}
                                     </div>
-                                    <div className="text-white/70 text-[10px] leading-snug mt-1 whitespace-pre-line">
+                                    <div className={`${isElectricalDepartmentPage ? "text-white/95 text-[11px] font-medium" : "text-white/70 text-[10px]"} leading-snug mt-1 whitespace-pre-line`}>
                                         {s.l}
                                     </div>
                                 </div>
@@ -1360,7 +1368,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = ({ customData }: { customDa
                         <div className="grid grid-cols-1 items-start gap-7 lg:grid-cols-[minmax(260px,0.96fr)_minmax(0,3fr)] lg:gap-9">
                             <div className="min-w-0 sm:rounded-2xl sm:border sm:border-[#E0F1FF] sm:bg-white/80 sm:px-3 sm:pt-3 sm:pb-4 sm:shadow-[0_4px_24px_#3479c908] lg:mt-4">
                                 <p className="mx-2.5 mb-5 text-center sm:text-left text-[11px] leading-4 font-bold tracking-[0.2em] text-[#0F4A85]/70 uppercase">Choose your study level</p>
-                                <div className="grid w-full min-w-0 grid-cols-[0.6fr_0.6fr_1.4fr_1fr_1.4fr] gap-1 max-sm:-mx-4 max-sm:w-[calc(100%+2rem)] max-sm:bg-[#E0F1FF] max-sm:px-6 max-sm:py-2 sm:flex sm:flex-col sm:justify-between sm:gap-2.5" role="group" aria-label="Program categories">
+                                <div className={`grid w-full min-w-0 ${pagePrograms.length === 2 ? "grid-cols-2 gap-2" : "grid-cols-[0.6fr_0.6fr_1.4fr_1fr_1.4fr] gap-1"} max-sm:-mx-4 max-sm:w-[calc(100%+2rem)] max-sm:bg-[#E0F1FF] max-sm:px-6 max-sm:py-2 sm:flex sm:flex-col sm:justify-between sm:gap-2.5`} role="group" aria-label="Program categories">
                                     {pagePrograms.map((cat, idx) => (
                                         <button
                                             key={cat.category}
