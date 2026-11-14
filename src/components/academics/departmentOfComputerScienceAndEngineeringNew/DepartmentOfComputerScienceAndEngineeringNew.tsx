@@ -27,7 +27,7 @@ import PlacementLogoWipro from "../../../assets/new-home/new-placement-logos/11.
 import PlacementLogoInfosys from "../../../assets/new-home/new-placement-logos/12.png";
 import TechCollabImg from "../../../assets/images/new-information-system/Tech-Collaboration_-L-T-EduTech-SRMU.png";
 import studentsPlacedImg from "../../../assets/images/cyber-security-new/where-our-students-get-placed.webp";
-import { Download, ChevronDown, ChevronUp, Search, Mail, Phone, ArrowLeft, ArrowRight, X, ShieldCheck, GraduationCap, Settings, Database, Lightbulb, Share2, MapPin, Facebook, Instagram, Linkedin, Youtube, Twitter, Heart, HeartPulse, Handshake, UsersRound, Monitor, BrainCircuit, Code2, BookOpenCheck, Route, ChevronRight, Laptop, BriefcaseBusiness } from "lucide-react";
+import { Download, ChevronDown, ChevronUp, Search, Mail, Phone, ArrowLeft, ArrowRight, X, ShieldCheck, GraduationCap, Settings, Database, Lightbulb, Share2, MapPin, Facebook, Instagram, Linkedin, Youtube, Twitter, Heart, HeartPulse, Handshake, UsersRound, Monitor, BrainCircuit, Code2, BookOpenCheck, Route, ChevronRight, Laptop, BriefcaseBusiness, Gavel } from "lucide-react";
 import { FaQuora, FaRedditAlien } from "react-icons/fa";
 import useEmblaCarousel from "embla-carousel-react";
 import { motion, useReducedMotion } from "framer-motion";
@@ -314,6 +314,12 @@ const renderTwoColorTitle = (title: string, onDarkBackground = false, accentClas
     </>;
 };
 
+const renderCareerHeading = (heading: string) => {
+    if (heading !== "Where Can an M.A. in Education Take You?") return heading;
+
+    return <>Where Can an <span className="text-[#FFB703]">M.A. in Education</span> Take You?</>;
+};
+
 const ActivityCardsCarousel = ({
     sectionId,
     heading,
@@ -357,7 +363,7 @@ const ActivityCardsCarousel = ({
 
     return (
         <>
-            {cards.length > 1 && !hideNavigation && <div className={`mb-4 flex items-center gap-3 shrink-0 self-start ${forceCarousel ? "" : "sm:hidden"}`}>
+            {cards.length > 1 && !(sectionId === "legal-skills" && cards.length <= 3) && !hideNavigation && <div className={`mb-4 flex items-center gap-3 shrink-0 self-start ${forceCarousel ? "" : "sm:hidden"}`}>
                 <button
                     type="button"
                     onClick={() => carouselApi?.scrollPrev()}
@@ -472,12 +478,15 @@ const DepartmentOfComputerScienceAndEngineeringNew = ({ customData }: { customDa
     }, [programsEmblaApi]);
 
     const isMathematicalSciencesPage = customData?.hero.title === "Mathematical and Statistical Sciences";
+    const isPolytechnicPage = customData?.hero.title === "Polytechnic";
+    const isPharmaceuticalSciencesPage = customData?.hero.title === "Pharmaceutical Sciences";
+    const isEducationAndResearchPage = customData?.hero.title === "Education and Research";
     // Events carousel is active at all sizes for pages using the horizontal card layout.
     const [eventsEmblaRef, eventsEmblaApi] = useEmblaCarousel({
         loop: false,
         align: "start",
         dragFree: true,
-        breakpoints: customData?.hero.title === "Biosciences and Technology" || customData?.hero.title === "Electrical and Electronics Engineering" || customData?.hero.title === "Commerce and Economics" || customData?.hero.title === "Management" || customData?.hero.title === "Agricultural Sciences and Technology" || customData?.hero.title === "Media Studies" || isMathematicalSciencesPage ? {} : {
+        breakpoints: customData?.hero.title === "Biosciences and Technology" || customData?.hero.title === "Electrical and Electronics Engineering" || customData?.hero.title === "Commerce and Economics" || customData?.hero.title === "Management" || customData?.hero.title === "Agricultural Sciences and Technology" || customData?.hero.title === "Media Studies" || customData?.hero.title === "Legal Studies" || isMathematicalSciencesPage || isPolytechnicPage || isPharmaceuticalSciencesPage || isEducationAndResearchPage || customData?.hero.title === "Chemical Sciences" ? {} : {
             '(min-width: 640px)': { active: false }
         }
     });
@@ -561,6 +570,29 @@ const DepartmentOfComputerScienceAndEngineeringNew = ({ customData }: { customDa
     const pageWhyItems = customData?.highlights.items ?? whyItems;
     const pageCareerItems = customData?.career.items ?? careerItems;
     const careerDescriptions = customData?.career.descriptions ?? [];
+    const wrapCareerLabelLines = (lines: string[], maxCharacters: number) => {
+        const wrapped: string[] = [];
+        lines.forEach((line) => {
+            let current = "";
+            line.split(/\s+/).forEach((word) => {
+                const candidate = current ? `${current} ${word}` : word;
+                if (current && candidate.length > maxCharacters) {
+                    wrapped.push(current);
+                    current = word;
+                } else {
+                    current = candidate;
+                }
+            });
+            if (current) wrapped.push(current);
+        });
+        return wrapped;
+    };
+    const careerDiagramItems = isPharmaceuticalSciencesPage
+        ? pageCareerItems.map((lines) => wrapCareerLabelLines(lines, 15))
+        : pageCareerItems;
+    const mobileCareerDiagramItems = isPharmaceuticalSciencesPage
+        ? pageCareerItems.map((lines) => wrapCareerLabelLines(lines, 13))
+        : pageCareerItems;
     const careerMidIndex = Math.floor(pageCareerItems.length / 2);
     const careerAngleStep = 360 / Math.max(pageCareerItems.length, 1);
     const heroPrefix = customData?.hero.prefix ?? "Department of";
@@ -587,15 +619,18 @@ const DepartmentOfComputerScienceAndEngineeringNew = ({ customData }: { customDa
         { num: "07", title: "Network Security Lab", desc: "Provides hands-on learning in computer networks, network security, information security, and foundational cybersecurity practices.", accent: "#d62c2b", iconSrc: "/assets/images/new-information-system/icons/7.png", animClass: "lab-icon-network" },
     ];
     const pageLabItems = customData?.labs.items ?? defaultLabItems;
-    const isPharmacyPage = customData?.hero.title === "Pharmacy";
+    const isPharmacyPage = customData?.hero.title === "Pharmacy" || isPharmaceuticalSciencesPage;
     const isBiosciencesPage = customData?.hero.title === "Biosciences and Technology";
     const isCommerceAndEconomicsPage = customData?.hero.title === "Commerce and Economics";
     const isManagementPage = customData?.hero.title === "Management";
     const isElectricalDepartmentPage = customData?.hero.title === "Electrical and Electronics Engineering";
+    const isChemicalSciencesPage = customData?.hero.title === "Chemical Sciences";
+    const isAlliedHealthPage = customData?.hero.title === "Allied Health Sciences";
     const isMechanicalDepartmentPage = customData?.hero.title === "Mechanical Engineering";
     const isCivilEngineeringPage = customData?.hero.title === "Civil Engineering";
     const isAgriculturalSciencesPage = customData?.hero.title === "Agricultural Sciences and Technology";
     const isMediaStudiesPage = customData?.hero.title === "Media Studies";
+    const isLegalStudiesPage = customData?.hero.title === "Legal Studies";
     const pageActivitySections = customData ? [
         ...(customData.activitySections ?? []),
         ...(customData.studentProjects ? [{
@@ -1572,7 +1607,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = ({ customData }: { customDa
                             </div>
 
                             {/* Navigation Buttons */}
-                            <div className={`flex items-center gap-3 shrink-0 self-start ${isBiosciencesPage || isElectricalDepartmentPage || isCommerceAndEconomicsPage || isManagementPage || isAgriculturalSciencesPage || isMediaStudiesPage || isMathematicalSciencesPage ? "" : "sm:hidden"}`}>
+                            <div className={`flex items-center gap-3 shrink-0 self-start ${isBiosciencesPage || isElectricalDepartmentPage || isChemicalSciencesPage || isCommerceAndEconomicsPage || isManagementPage || isAgriculturalSciencesPage || isMediaStudiesPage || isLegalStudiesPage || isMathematicalSciencesPage || isPolytechnicPage || isPharmaceuticalSciencesPage || isEducationAndResearchPage ? "" : "sm:hidden"}`}>
                                 <button
                                     onClick={() => eventsEmblaApi?.scrollPrev()}
                                     disabled={!eventsCanPrev}
@@ -1592,10 +1627,10 @@ const DepartmentOfComputerScienceAndEngineeringNew = ({ customData }: { customDa
                             </div>
                         </div>
 
-                        <div className={`-mx-4 px-4 sm:mx-0 sm:px-0 ${isBiosciencesPage || isElectricalDepartmentPage || isCommerceAndEconomicsPage || isManagementPage || isAgriculturalSciencesPage || isMediaStudiesPage || isMathematicalSciencesPage ? "overflow-hidden" : "overflow-hidden sm:overflow-visible"}`} ref={eventsEmblaRef}>
-                            <div className={`flex gap-5 pb-4 ${isBiosciencesPage || isElectricalDepartmentPage || isCommerceAndEconomicsPage || isManagementPage || isAgriculturalSciencesPage || isMediaStudiesPage || isMathematicalSciencesPage ? "" : "sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:pb-0"}`}>
+                        <div className={`-mx-4 px-4 sm:mx-0 sm:px-0 ${isBiosciencesPage || isElectricalDepartmentPage || isChemicalSciencesPage || isCommerceAndEconomicsPage || isManagementPage || isAgriculturalSciencesPage || isMediaStudiesPage || isLegalStudiesPage || isMathematicalSciencesPage || isPolytechnicPage || isPharmaceuticalSciencesPage || isEducationAndResearchPage ? "overflow-hidden" : "overflow-hidden sm:overflow-visible"}`} ref={eventsEmblaRef}>
+                            <div className={`flex gap-5 pb-4 ${isBiosciencesPage || isElectricalDepartmentPage || isChemicalSciencesPage || isCommerceAndEconomicsPage || isManagementPage || isAgriculturalSciencesPage || isMediaStudiesPage || isLegalStudiesPage || isMathematicalSciencesPage || isPolytechnicPage || isPharmaceuticalSciencesPage || isEducationAndResearchPage ? "" : "sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:pb-0"}`}>
                                 {pageEvents.map((ev, i) => (
-                                    <div key={i} className={`flex flex-col bg-white border border-[#DCE6F2] border-b-[4px] border-b-[#d62c2b] rounded-2xl overflow-hidden shadow-[0_4px_18px_rgba(15,31,61,0.04)] hover:shadow-[0_12px_30px_rgba(15,31,61,0.08)] hover:-translate-y-1 transition-all duration-300 ${isBiosciencesPage || isElectricalDepartmentPage || isCommerceAndEconomicsPage || isManagementPage || isAgriculturalSciencesPage || isMediaStudiesPage || isMathematicalSciencesPage ? "shrink-0 w-[85vw] sm:w-[390px]" : "shrink-0 w-[85vw] sm:w-auto sm:shrink"}`}>
+                                    <div key={i} className={`flex flex-col bg-white border border-[#DCE6F2] border-b-[4px] border-b-[#d62c2b] rounded-2xl overflow-hidden shadow-[0_4px_18px_rgba(15,31,61,0.04)] hover:shadow-[0_12px_30px_rgba(15,31,61,0.08)] hover:-translate-y-1 transition-all duration-300 ${isBiosciencesPage || isElectricalDepartmentPage || isChemicalSciencesPage || isCommerceAndEconomicsPage || isManagementPage || isAgriculturalSciencesPage || isMediaStudiesPage || isLegalStudiesPage || isMathematicalSciencesPage || isPolytechnicPage || isPharmaceuticalSciencesPage || isEducationAndResearchPage ? "shrink-0 w-[85vw] sm:w-[390px]" : "shrink-0 w-[85vw] sm:w-auto sm:shrink"}`}>
                                         <div className="w-full aspect-[16/9] relative overflow-hidden bg-[#DCE6F2]">
                                             <img src={ev.img} alt={ev.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy" />
                                         </div>
@@ -1628,8 +1663,8 @@ const DepartmentOfComputerScienceAndEngineeringNew = ({ customData }: { customDa
                 </section>
 
                 {pageActivitySections.filter((section) => !(isPharmacyPage && section.id === "student-projects")).map((section) => (
-                    <section key={section.id} id={section.id} className={`py-8 md:py-10 px-4 sm:px-6 ${isAgriculturalSciencesPage && section.id === "student-projects" ? "bg-[#14284E]" : (isAgriculturalSciencesPage || isMediaStudiesPage) && section.id === "industry-exposure" ? "bg-white" : (isAgriculturalSciencesPage && section.id === "workshops") || (isMediaStudiesPage && section.id === "research-publications") ? ResearchShowcaseStyles.researchShowcaseBackground : isMechanicalDepartmentPage && section.id === "research-publications" ? ResearchShowcaseStyles.researchShowcaseBackground : (isElectricalDepartmentPage || isCivilEngineeringPage || isCommerceAndEconomicsPage || isManagementPage || isMathematicalSciencesPage) && section.id === "research-publications" ? ResearchShowcaseStyles.researchShowcaseBackground : (isElectricalDepartmentPage || isCivilEngineeringPage) && section.id === "student-projects" ? "bg-[#14284E]" : (isElectricalDepartmentPage || isCivilEngineeringPage) && section.id === "industry-exposure" ? "bg-white" : isBiosciencesPage && section.id === "hackathons" ? "bg-[#14284E]" : isBiosciencesPage && section.id === "industry-exposure" ? "bg-white" : (isPharmacyPage || isBiosciencesPage) && section.id === "research-publications" ? ResearchShowcaseStyles.researchShowcaseBackground : isPharmacyPage && section.id === "seminars-webinars" ? "bg-white" : isPharmacyPage && section.id === "industry-exposure" ? "bg-[#14284e]" : isMechanicalDepartmentPage && section.id === "industry-exposure" ? "bg-white" : isMechanicalDepartmentPage && section.id === "student-projects" ? "bg-[#14284E]" : "bg-[#F0F6FB]"} scroll-mt-24`}>
-                        {((isPharmacyPage || isBiosciencesPage || isElectricalDepartmentPage || isMechanicalDepartmentPage || isCivilEngineeringPage || isCommerceAndEconomicsPage || isManagementPage || isMediaStudiesPage || isMathematicalSciencesPage) && section.id === "research-publications" || isAgriculturalSciencesPage && section.id === "workshops") && <>
+                    <section key={section.id} id={section.id} className={`py-8 md:py-10 px-4 sm:px-6 ${(isChemicalSciencesPage || isLegalStudiesPage || isAlliedHealthPage) && section.id === "research-publications" ? ResearchShowcaseStyles.researchShowcaseBackground : isChemicalSciencesPage && section.id === "academic-events" ? "bg-white" : isAgriculturalSciencesPage && section.id === "student-projects" ? "bg-[#14284E]" : (isAgriculturalSciencesPage || isMediaStudiesPage) && section.id === "industry-exposure" ? "bg-white" : (isAgriculturalSciencesPage && section.id === "workshops") || (isMediaStudiesPage && section.id === "research-publications") ? ResearchShowcaseStyles.researchShowcaseBackground : isMechanicalDepartmentPage && section.id === "research-publications" ? ResearchShowcaseStyles.researchShowcaseBackground : (isElectricalDepartmentPage || isCivilEngineeringPage || isCommerceAndEconomicsPage || isManagementPage || isMathematicalSciencesPage) && section.id === "research-publications" ? ResearchShowcaseStyles.researchShowcaseBackground : (isElectricalDepartmentPage || isCivilEngineeringPage) && section.id === "student-projects" ? "bg-[#14284E]" : (isElectricalDepartmentPage || isCivilEngineeringPage) && section.id === "industry-exposure" ? "bg-white" : isBiosciencesPage && section.id === "hackathons" ? "bg-[#14284E]" : isBiosciencesPage && section.id === "industry-exposure" ? "bg-white" : (isPharmacyPage || isBiosciencesPage) && section.id === "research-publications" ? ResearchShowcaseStyles.researchShowcaseBackground : isPharmacyPage && section.id === "seminars-webinars" ? "bg-white" : isPharmacyPage && section.id === "industry-exposure" ? "bg-[#14284e]" : isMechanicalDepartmentPage && section.id === "industry-exposure" ? "bg-white" : isMechanicalDepartmentPage && section.id === "student-projects" ? "bg-[#14284E]" : "bg-[#F0F6FB]"} scroll-mt-24`} style={isLegalStudiesPage && section.id === "legal-skills" ? { backgroundColor: "#fff" } : undefined}>
+                        {((isPharmacyPage || isBiosciencesPage || isElectricalDepartmentPage || isMechanicalDepartmentPage || isCivilEngineeringPage || isCommerceAndEconomicsPage || isManagementPage || isMediaStudiesPage || isMathematicalSciencesPage || isLegalStudiesPage || isChemicalSciencesPage || isAlliedHealthPage) && section.id === "research-publications" || isAgriculturalSciencesPage && section.id === "workshops") && <>
                             <div aria-hidden="true" className={ResearchShowcaseStyles.showcaseAccentTop} />
                             <div aria-hidden="true" className={ResearchShowcaseStyles.showcaseAccentLeft} />
                             <div aria-hidden="true" className={ResearchShowcaseStyles.showcaseAccentRight} />
@@ -1642,10 +1677,19 @@ const DepartmentOfComputerScienceAndEngineeringNew = ({ customData }: { customDa
                                 <path d="M0 267c187 28 376 30 568 1 217-33 383-42 574-8 116 20 208 38 298 40" fill="none" stroke="white" strokeOpacity=".26" strokeWidth="1.5" />
                             </svg>
                         </>}
-                        <div className={`${Classes["container"]} cse-content-container ${((isPharmacyPage || isBiosciencesPage || isElectricalDepartmentPage || isMechanicalDepartmentPage || isCivilEngineeringPage || isCommerceAndEconomicsPage || isManagementPage || isMediaStudiesPage || isMathematicalSciencesPage) && section.id === "research-publications" || isAgriculturalSciencesPage && section.id === "workshops") ? "relative z-10" : ""}`}>
+                        <div className={`${Classes["container"]} cse-content-container ${((isPharmacyPage || isBiosciencesPage || isElectricalDepartmentPage || isMechanicalDepartmentPage || isCivilEngineeringPage || isCommerceAndEconomicsPage || isManagementPage || isMediaStudiesPage || isMathematicalSciencesPage || isLegalStudiesPage || isChemicalSciencesPage || isAlliedHealthPage) && section.id === "research-publications" || isAgriculturalSciencesPage && section.id === "workshops") ? "relative z-10" : ""}`}>
                             <div className="w-full mb-8 flex flex-col gap-4">
                                 <div className="w-full">
-                                    {isMediaStudiesPage && section.id === "research-publications" ? <>
+                                    {isChemicalSciencesPage && section.id === "academic-events" ? <>
+                                        <h2 className="text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display mb-2">{renderTwoColorTitle(section.eyebrow)}</h2>
+                                        <h3 className="text-[20px] sm:text-[22px] leading-[1.3] font-bold font-display text-[#4B5A72] mb-3">{section.heading}</h3>
+                                    </> : (isLegalStudiesPage || isChemicalSciencesPage || isAlliedHealthPage) && section.id === "research-publications" ? <>
+                                        <h2 className="text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display mb-2"><span className="text-[#14284E]">Research &amp; </span><span className="text-white">Publications</span></h2>
+                                        <h3 className="text-[20px] sm:text-[22px] leading-[1.3] font-bold font-display text-[#14284E] mb-3">{section.heading}</h3>
+                                    </> : isLegalStudiesPage && section.id === "legal-skills" ? <>
+                                        <h2 className="text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display mb-2">{renderTwoColorTitle(section.eyebrow)}</h2>
+                                        <h3 className="text-[20px] sm:text-[22px] leading-[1.3] font-bold font-display text-[#4B5A72] mb-3">{section.heading}</h3>
+                                    </> : isMediaStudiesPage && section.id === "research-publications" ? <>
                                         <h2 className="text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display mb-2">{renderTwoColorTitle(section.eyebrow, false, "text-[#D62C2B]")}</h2>
                                         <h3 className="text-[20px] sm:text-[22px] leading-[1.3] font-bold font-display text-[#14284E] mb-3">{section.heading}</h3>
                                     </> : isMathematicalSciencesPage && section.id === "research-publications" ? <>
@@ -1697,10 +1741,10 @@ const DepartmentOfComputerScienceAndEngineeringNew = ({ customData }: { customDa
                                         </div>
                                         <h2 className={`text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display ${(isPharmacyPage && section.id === "industry-exposure") || (isElectricalDepartmentPage && section.id === "student-projects") ? "text-white" : "text-[#14284E]"} mb-3`}>{section.heading}</h2>
                                     </>}
-                                    {section.intro && <p className={`w-full text-[15.5px] leading-relaxed ${(isPharmacyPage && section.id === "industry-exposure") || (isBiosciencesPage && section.id === "hackathons") || ((isElectricalDepartmentPage || isCivilEngineeringPage) && section.id === "student-projects") || (isMechanicalDepartmentPage && section.id === "student-projects") || (isAgriculturalSciencesPage && section.id === "student-projects") ? "text-white/80" : (isMechanicalDepartmentPage || isMathematicalSciencesPage) && section.id === "research-publications" ? "text-[#14284E]" : isAgriculturalSciencesPage && section.id === "workshops" ? "text-[#14284E]" : "text-[#4B5A72]"} text-justify`}>{section.intro}</p>}
+                                    {section.intro && <p className={`w-full text-[15.5px] leading-relaxed ${(isPharmacyPage && section.id === "industry-exposure") || (isBiosciencesPage && section.id === "hackathons") || ((isElectricalDepartmentPage || isCivilEngineeringPage) && section.id === "student-projects") || (isMechanicalDepartmentPage && section.id === "student-projects") || (isAgriculturalSciencesPage && section.id === "student-projects") ? "text-white/80" : (isChemicalSciencesPage || isMechanicalDepartmentPage || isMathematicalSciencesPage || isAlliedHealthPage) && section.id === "research-publications" ? "text-[#14284E]" : isAgriculturalSciencesPage && section.id === "workshops" ? "text-[#14284E]" : "text-[#4B5A72]"} text-justify`}>{section.intro}</p>}
                                 </div>
                             </div>
-                            {section.cards && section.cards.length > 0 && <ActivityCardsCarousel sectionId={section.id} heading={section.heading} cards={section.cards} onSelect={setSelectedEvent} forceCarousel={(isPharmacyPage && section.id === "workshops") || (isBiosciencesPage && section.id === "research-publications") || (isElectricalDepartmentPage && (section.id === "research-publications" || section.id === "smart-india-hackathon" || section.id === "workshops")) || ((isMechanicalDepartmentPage || isCivilEngineeringPage || isAgriculturalSciencesPage || isMediaStudiesPage || isMathematicalSciencesPage) && section.id === "research-publications")} hideNavigation={isCommerceAndEconomicsPage && section.id === "research-publications" && section.cards.length <= 3} />}
+                            {section.cards && section.cards.length > 0 && <ActivityCardsCarousel sectionId={section.id} heading={section.heading} cards={section.cards} onSelect={setSelectedEvent} forceCarousel={isLegalStudiesPage || ((isChemicalSciencesPage || isAlliedHealthPage) && section.id === "research-publications") || (isPharmacyPage && section.id === "workshops") || (isBiosciencesPage && section.id === "research-publications") || (isElectricalDepartmentPage && (section.id === "research-publications" || section.id === "smart-india-hackathon" || section.id === "workshops")) || ((isMechanicalDepartmentPage || isCivilEngineeringPage || isAgriculturalSciencesPage || isMediaStudiesPage || isMathematicalSciencesPage) && section.id === "research-publications")} hideNavigation={(isCommerceAndEconomicsPage || isAlliedHealthPage) && section.id === "research-publications" && section.cards.length <= 3} />}
                             {section.listTitle && (isManagementPage && section.id === "research-publications" ? (
                                 <div className="mt-7 pt-5 sm:pt-6">
                                     <h3 className="font-display text-[17px] font-bold text-[#14284E]">{section.listTitle}</h3>
@@ -1743,20 +1787,20 @@ const DepartmentOfComputerScienceAndEngineeringNew = ({ customData }: { customDa
                 {!isPharmacyPage && highlightsSection}
 
                 {/* ── Career Pathways ──────────────────────────────────────── */}
-                <section id="careers" className="relative isolate pt-6 pb-2 md:pt-8 md:pb-3 px-4 sm:px-6 bg-[#EEF5FC] border-b-[8px] border-[#FFB703] overflow-hidden">
+                {!isAlliedHealthPage && <section id="careers" className="relative isolate pt-6 pb-2 md:pt-8 md:pb-3 px-4 sm:px-6 bg-[#EEF5FC] border-b-[8px] border-[#FFB703] overflow-hidden">
                     <CareerBackground />
                     <div className={`${Classes["container"]} cse-content-container relative z-10`}>
                         <div className="w-full mb-4 sm:mb-5 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
                             <div className="text-left max-w-3xl">
                                 <h2 className={`leading-[1.2] font-bold font-display ${isBiosciencesPage ? "text-[clamp(28px,3vw,36px)]" : "text-[clamp(30px,7vw,36px)] sm:text-[clamp(28px,3vw,36px)] text-[#14284E]"}`}>
-                                    {isPharmacyPage ? <>Career <span className="text-[#FFB703]">Opportunities</span></> : isCommerceAndEconomicsPage ? <>Where Can a <span className="text-[#FFB703]">Degree in Commerce and Economics</span> Take You?</> : isBiosciencesPage ? renderTwoColorTitle(customData?.career.heading ?? "") : (isElectricalDepartmentPage || isCivilEngineeringPage) ? renderTwoColorTitle(customData?.career.heading ?? "") : customData ? customData.career.heading : <>Where can a <span className="text-[#FFB703]">CSE Degree</span> take you?</>}
+                                    {isPharmacyPage ? <>Career <span className="text-[#FFB703]">Opportunities</span></> : isCommerceAndEconomicsPage ? <>Where Can a <span className="text-[#FFB703]">Degree in Commerce and Economics</span> Take You?</> : isBiosciencesPage ? renderTwoColorTitle(customData?.career.heading ?? "") : (isElectricalDepartmentPage || isCivilEngineeringPage) ? renderTwoColorTitle(customData?.career.heading ?? "") : customData ? renderCareerHeading(customData.career.heading) : <>Where can a <span className="text-[#FFB703]">CSE Degree</span> take you?</>}
                                 </h2>
                             </div>
 
                         </div>
 
                     <div className="mx-auto max-w-[1100px] overflow-hidden">
-                            <svg className="cse-career-diagram" viewBox="0 35 1040 615" role="img" aria-labelledby="cse-career-title cse-career-description">
+                            <svg className="cse-career-diagram" viewBox={isPharmaceuticalSciencesPage ? "0 0 1040 700" : "0 35 1040 615"} role="img" aria-labelledby="cse-career-title cse-career-description">
                                 <title id="cse-career-title">Career Opportunities</title>
                                 <desc id="cse-career-description">{pageCareerItems.map(lines => lines.join(" ")).join(", ")}</desc>
                                 <defs>
@@ -1791,15 +1835,18 @@ const DepartmentOfComputerScienceAndEngineeringNew = ({ customData }: { customDa
                                     </text>
                                     <path d="M500 383 H540" stroke="#FFB703" strokeWidth="3" strokeLinecap="round" />
                                 </g>
-                                <g className="cse-career-labels" fill="#14284e" fontSize="17" fontWeight="600" aria-hidden="true">
-                                    {pageCareerItems.map((lines, index) => {
+                                <g className="cse-career-labels" fill="#14284e" fontSize={isPharmaceuticalSciencesPage ? "13" : "17"} fontWeight="600" letterSpacing={isPharmaceuticalSciencesPage ? "-0.35px" : undefined} aria-hidden="true">
+                                    {careerDiagramItems.map((lines, index) => {
                                         const angle = (index * careerAngleStep - 90) * Math.PI / 180;
                                         const centered = index === 0 || index === careerMidIndex;
-                                        const x = 520 + 240 * Math.cos(angle) + (centered ? 0 : index < careerMidIndex ? 22 : -22);
-                                        const y = 350 + 240 * Math.sin(angle) + (index === 0 ? -46 : index === careerMidIndex ? 38 : 5) - (lines.length - 1) * 11;
+                                        const labelRadius = isPharmaceuticalSciencesPage ? (index % 2 === 0 ? 280 : 320) : 240;
+                                        const x = 520 + labelRadius * Math.cos(angle) + (centered ? 0 : index < careerMidIndex ? (isPharmaceuticalSciencesPage ? 10 : 22) : (isPharmaceuticalSciencesPage ? -10 : -22));
+                                        const y = isPharmaceuticalSciencesPage
+                                            ? 350 + labelRadius * Math.sin(angle) - (lines.length - 1) * 8
+                                            : 350 + labelRadius * Math.sin(angle) + (index === 0 ? -46 : index === careerMidIndex ? 38 : 5) - (lines.length - 1) * 11;
                                         return (
-                                            <text key={index} x={x} y={y} textAnchor={centered ? "middle" : index < careerMidIndex ? "start" : "end"} fontSize={index === 0 ? 21 : undefined}>
-                                                {lines.map((line, lineIndex) => <tspan key={line} x={x} dy={lineIndex === 0 ? 0 : 23}>{line}</tspan>)}
+                                            <text key={index} x={x} y={y} textAnchor={centered ? "middle" : index < careerMidIndex ? "start" : "end"} fontSize={isPharmaceuticalSciencesPage ? undefined : index === 0 ? 21 : undefined}>
+                                                {lines.map((line, lineIndex) => <tspan key={line} x={x} dy={lineIndex === 0 ? 0 : isPharmaceuticalSciencesPage ? 16 : 23}>{line}</tspan>)}
                                                 {/* {index === 0 && <tspan x={x} dy="24" fontSize="14" fontWeight="400" fill="#697586">(Software, Web, or Mobile App Developer)</tspan>} */}
                                             </text>
                                         );
@@ -1809,7 +1856,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = ({ customData }: { customDa
                             {/* Mobile-only compact circle diagram */}
                             <svg
                                 className="sm:hidden block w-full"
-                                viewBox="-80 10 530 390"
+                                viewBox={isPharmaceuticalSciencesPage ? "-100 -80 570 570" : "-80 10 530 390"}
                                 role="img"
                                 aria-label="Career Opportunities diagram"
                             >
@@ -1845,20 +1892,23 @@ const DepartmentOfComputerScienceAndEngineeringNew = ({ customData }: { customDa
                                 </g>
 
                                 {/* Labels — fixed, outside animated group */}
-                                <g fill="#14284e" fontSize="14" fontWeight="600">
-                                    {pageCareerItems.map((lines, i) => {
+                                <g fill="#14284e" fontSize={isPharmaceuticalSciencesPage ? "12" : "14"} fontWeight="600" letterSpacing={isPharmaceuticalSciencesPage ? "-0.3px" : undefined}>
+                                    {mobileCareerDiagramItems.map((lines, i) => {
                                         const a = (i * careerAngleStep - 90) * Math.PI / 180;
                                         const centered = i === 0 || i === careerMidIndex;
-                                        const ox = 185 + 145 * Math.cos(a);
-                                        const oy = 195 + 145 * Math.sin(a);
+                                        const labelRadius = isPharmaceuticalSciencesPage ? (i % 2 === 0 ? 170 : 205) : 145;
+                                        const ox = 185 + labelRadius * Math.cos(a);
+                                        const oy = 195 + labelRadius * Math.sin(a);
                                         // Push labels further away from orbit dot so text has room
-                                        const gap = 14;
+                                        const gap = isPharmaceuticalSciencesPage ? 8 : 14;
                                         const lx = ox + (centered ? 0 : i < careerMidIndex ? gap : -gap);
-                                        const ly = oy + (i === 0 ? -26 : i === careerMidIndex ? 24 : 3) - (lines.length - 1) * 7;
+                                        const ly = isPharmaceuticalSciencesPage
+                                            ? oy - (lines.length - 1) * 6
+                                            : oy + (i === 0 ? -26 : i === careerMidIndex ? 24 : 3) - (lines.length - 1) * 7;
                                         return (
                                             <text key={i} x={lx} y={ly} textAnchor={centered ? "middle" : i < careerMidIndex ? "start" : "end"}>
                                                 {lines.map((line, li) => (
-                                                    <tspan key={line} x={lx} dy={li === 0 ? 0 : 17}>{line}</tspan>
+                                                    <tspan key={line} x={lx} dy={li === 0 ? 0 : isPharmaceuticalSciencesPage ? 12 : 17}>{line}</tspan>
                                                 ))}
                                             </text>
                                         );
@@ -1874,16 +1924,16 @@ const DepartmentOfComputerScienceAndEngineeringNew = ({ customData }: { customDa
                             </article>)}
                         </div>}
                     </div>
-                </section>
+                </section>}
 
                 {isPharmacyPage && scholarshipSection}
 
                 {customData?.community && <section id="community" className="py-8 md:py-10 px-4 sm:px-6 bg-[#14284e] scroll-mt-24">
                     <div className={`${Classes["container"]} cse-content-container`}>
                         <div className={`w-full mb-8 flex flex-col ${isCivilEngineeringPage ? "gap-3" : "gap-4"}`}>
-                            {isPharmacyPage ? <>
+                            {isPharmacyPage || isLegalStudiesPage ? <>
                                 <h2 className="text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display text-[#FFB703] mb-1">
-                                    Community Outreach <span className="text-white">Programmes</span>
+                                    {isLegalStudiesPage ? <>Legal Aid &amp; <span className="text-white">Outreach</span></> : <>Community Outreach <span className="text-white">Programmes</span></>}
                                 </h2>
                                 <h3 className="text-[20px] sm:text-[22px] leading-[1.3] font-bold font-display text-white mb-2">{customData.community.heading}</h3>
                             </> : isBiosciencesPage ? <>
@@ -1899,21 +1949,22 @@ const DepartmentOfComputerScienceAndEngineeringNew = ({ customData }: { customDa
                             {customData.community.paragraphs.map((paragraph) => <p key={paragraph} className={`w-full text-[14px] ${isCivilEngineeringPage ? "leading-[1.35]" : "leading-relaxed"} text-white/80 text-justify`}>{paragraph}</p>)}
                         </div>
                         <div className="mb-4 font-display text-[17px] font-bold text-white">{customData.community.focusTitle}</div>
-                        {isPharmacyPage ? <div className="grid grid-cols-1 gap-y-2 sm:grid-cols-2 xl:grid-cols-4 xl:divide-x xl:divide-white/25">
+                        {isPharmacyPage || isLegalStudiesPage ? <div className={`grid ${isLegalStudiesPage ? "grid-cols-2" : "grid-cols-1"} gap-y-2 sm:grid-cols-2 xl:grid-cols-4 xl:divide-x xl:divide-white/25`}>
                             {customData.community.focusAreas.map((area, index) => {
-                                const Icon = index === 1 ? HeartPulse : index === 2 ? Handshake : UsersRound;
-                                return <article key={area} className="flex min-w-0 items-center gap-4 px-2 py-4 xl:px-5 xl:py-2">
+                                const legalFocusIcons = [ShieldCheck, Gavel, UsersRound, BookOpenCheck];
+                                const Icon = isLegalStudiesPage ? legalFocusIcons[index] ?? UsersRound : index === 1 ? HeartPulse : index === 2 ? Handshake : UsersRound;
+                                return <article key={area} className={`flex min-w-0 ${isLegalStudiesPage ? "flex-col items-center gap-2 px-1 py-3 text-center sm:flex-row sm:items-center sm:gap-4 sm:px-2 sm:py-4 sm:text-left xl:px-5 xl:py-2" : "items-center gap-4 px-2 py-4 xl:px-5 xl:py-2"}`}>
                                     <div
-                                        className="grid h-[84px] w-[84px] shrink-0 place-items-center rounded-full p-[7px]"
+                                        className={`grid ${isLegalStudiesPage ? "h-[72px] w-[72px] p-[6px]" : "h-[84px] w-[84px] p-[7px]"} shrink-0 place-items-center rounded-full sm:h-[84px] sm:w-[84px] sm:p-[7px]`}
                                         style={{ background: "conic-gradient(from -35deg, #FFB703 0deg 132deg, #314574 132deg 360deg)" }}
                                     >
                                         <div className="grid h-full w-full place-items-center rounded-full bg-[#253968] text-white">
-                                            <Icon className="h-9 w-9" strokeWidth={2.5} aria-hidden="true" />
+                                            <Icon className={`sm:h-9 sm:w-9 ${isLegalStudiesPage ? "h-8 w-8" : "h-9 w-9"}`} strokeWidth={2.5} aria-hidden="true" />
                                         </div>
                                     </div>
                                     <div className="min-w-0">
-                                        <span className="block font-display text-[24px] leading-none font-extrabold text-[#FFB703]">{String(index + 1).padStart(2, "0")}</span>
-                                        <h3 className="mt-2 font-display text-[14px] leading-snug font-bold text-white sm:text-[15px]">{area}</h3>
+                                        <span className={`block font-display leading-none font-extrabold text-[#FFB703] sm:text-[24px] ${isLegalStudiesPage ? "text-[20px]" : "text-[24px]"}`}>{String(index + 1).padStart(2, "0")}</span>
+                                        <h3 className={`mt-2 font-display leading-snug font-bold text-white sm:text-[15px] ${isLegalStudiesPage ? "text-[12px]" : "text-[14px]"}`}>{area}</h3>
                                     </div>
                                 </article>;
                             })}
@@ -1931,7 +1982,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = ({ customData }: { customDa
                 {/* ── Page-specific Blog Section ───────────────────────── */}
                 {(() => {
                     if (customData && !customData.showBlogs) return null;
-                    const blogCategory = isBiosciencesPage ? "biotech" : isAgriculturalSciencesPage ? "agriculture" : isMediaStudiesPage ? "media" : isMathematicalSciencesPage ? "mathematics" : isPharmacyPage ? "pharmacy" : (isCommerceAndEconomicsPage || isManagementPage) ? "management" : (isElectricalDepartmentPage || isMechanicalDepartmentPage || isCivilEngineeringPage) ? "engineering" : "cs";
+                    const blogCategory = isAlliedHealthPage ? "allied-health" : isChemicalSciencesPage ? "chemistry" : isBiosciencesPage ? "biotech" : isAgriculturalSciencesPage ? "agriculture" : isMediaStudiesPage ? "media" : isMathematicalSciencesPage ? "mathematics" : isPharmacyPage ? "pharmacy" : isLegalStudiesPage ? "law" : (isCommerceAndEconomicsPage || isManagementPage) ? "management" : (isElectricalDepartmentPage || isMechanicalDepartmentPage || isCivilEngineeringPage || isPolytechnicPage) ? "engineering" : "cs";
                     const commerceAndEconomicsKeywords = ["commerce", "b.com", "bcom", "accounting", "finance", "financial", "banking", "economics", "taxation"];
                     const isCommerceAndEconomicsBlog = (title: string, slug: string) => {
                         const haystack = `${title} ${slug}`.toLowerCase();
@@ -1994,6 +2045,46 @@ const DepartmentOfComputerScienceAndEngineeringNew = ({ customData }: { customDa
                         const haystack = `${title} ${slug}`.toLowerCase();
                         return mathematicalSciencesKeywords.some((kw) => haystack.includes(kw));
                     };
+                    const legalStudiesKeywords = ["law", "legal", "llb", "lawyer", "advocate", "litigation", "judicial", "justice", "court"];
+                    const isLegalStudiesBlog = (title: string, slug: string) => {
+                        const haystack = `${title} ${slug}`.toLowerCase();
+                        return legalStudiesKeywords.some((kw) => haystack.includes(kw));
+                    };
+                    const alliedHealthKeywords = [
+                        "allied health", "allied-health", "paramedical", "medical laboratory technology",
+                        "medical laboratory sciences", "laboratory technologist", "laboratory technician",
+                        "medical laboratory technologist", "mlt", "bmls", "bmlt", "operation theatre technology",
+                        "operation theater technology", "operation theatre technologist", "anaesthesia technology",
+                        "anesthesia technology", "b.aott", "physiotherapy", "physical therapy", "bpt",
+                        "medical radiology", "radiology and imaging", "imaging technology", "bmrit",
+                        "optometry", "optometrist", "vision care", "rehabilitation assistant"
+                    ];
+                    const isAlliedHealthBlog = (title: string, slug: string) => {
+                        const haystack = `${title} ${slug}`.toLowerCase();
+                        return alliedHealthKeywords.some((kw) => haystack.includes(kw));
+                    };
+                    const polytechnicKeywords = [
+                        "polytechnic", "diploma", "technical education", "engineering after 10th",
+                        "civil engineering", "mechanical engineering", "production engineering", "automobile engineering",
+                        "automotive engineering", "electrical engineering", "computer science engineering",
+                        "electronics & communication engineering", "electronics communication engineering"
+                    ];
+                    const isPolytechnicBlog = (title: string, slug: string) => {
+                        const haystack = `${title} ${slug}`.toLowerCase();
+                        return polytechnicKeywords.some((kw) => haystack.includes(kw));
+                    };
+                    const chemicalSciencesKeywords = [
+                        "chemical sciences", "chemical science", "chemistry", "chemist", "chemical synthesis",
+                        "chemical analysis", "chemical research", "organic chemistry", "inorganic chemistry",
+                        "physical chemistry", "analytical chemistry", "medicinal chemistry", "materials chemistry",
+                        "material chemistry", "green chemistry", "environmental chemistry", "polymer chemistry",
+                        "nanochemistry", "nanomaterial", "catalysis", "molecular docking", "drug discovery",
+                        "b.sc. chemistry", "bsc chemistry", "m.sc. chemistry", "msc chemistry"
+                    ];
+                    const isChemicalSciencesBlog = (title: string, slug: string) => {
+                        const haystack = `${title} ${slug}`.toLowerCase();
+                        return chemicalSciencesKeywords.some((kw) => haystack.includes(kw));
+                    };
                     const pageBlogSlugs = new Set(ALL_TARGET_BLOGS
                         .filter(b => b.category === blogCategory)
                         .filter(b => !isCommerceAndEconomicsPage || isCommerceAndEconomicsBlog(b.title, b.slug))
@@ -2004,6 +2095,9 @@ const DepartmentOfComputerScienceAndEngineeringNew = ({ customData }: { customDa
                         .filter(b => !isAgriculturalSciencesPage || isAgricultureBlog(b.title, b.slug))
                         .filter(b => !isMediaStudiesPage || isMediaStudiesBlog(b.title, b.slug))
                         .filter(b => !isMathematicalSciencesPage || isMathematicalSciencesBlog(b.title, b.slug))
+                        .filter(b => !isChemicalSciencesPage || isChemicalSciencesBlog(b.title, b.slug))
+                        .filter(b => !isAlliedHealthPage || isAlliedHealthBlog(b.title, b.slug))
+                        .filter(b => !isPolytechnicPage || isPolytechnicBlog(b.title, b.slug))
                         .map(b => b.slug));
                     const cseKeywords = [
                         "cse", "computer science", "bca", "b.tech cse", "btech cse",
@@ -2016,7 +2110,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = ({ customData }: { customDa
                     ];
                     const pharmacyKeywords = ["pharmacy", "pharma", "pharmaceutical", "pharmacist", "pharmacology", "drug", "medicine", "medicinal", "b.pharm", "d.pharm"];
                     const biosciencesKeywords = ["biotechnology", "biotech", "bioscience", "biosciences", "microbiology", "molecular biology", "genetic engineering", "life sciences", "food technology", "food science", "nutrition"];
-                    const pageKeywords = isMathematicalSciencesPage ? mathematicalSciencesKeywords : isBiosciencesPage ? biosciencesKeywords : isAgriculturalSciencesPage ? agricultureKeywords : isMediaStudiesPage ? mediaStudiesKeywords : isPharmacyPage ? pharmacyKeywords : isManagementPage ? managementKeywords : isCommerceAndEconomicsPage ? commerceAndEconomicsKeywords : isElectricalDepartmentPage ? electricalEngineeringKeywords : isMechanicalDepartmentPage ? mechanicalEngineeringKeywords : isCivilEngineeringPage ? civilEngineeringKeywords : cseKeywords;
+                    const pageKeywords = isAlliedHealthPage ? alliedHealthKeywords : isChemicalSciencesPage ? chemicalSciencesKeywords : isMathematicalSciencesPage ? mathematicalSciencesKeywords : isBiosciencesPage ? biosciencesKeywords : isAgriculturalSciencesPage ? agricultureKeywords : isMediaStudiesPage ? mediaStudiesKeywords : isPharmacyPage ? pharmacyKeywords : isLegalStudiesPage ? legalStudiesKeywords : isManagementPage ? managementKeywords : isCommerceAndEconomicsPage ? commerceAndEconomicsKeywords : isElectricalDepartmentPage ? electricalEngineeringKeywords : isMechanicalDepartmentPage ? mechanicalEngineeringKeywords : isCivilEngineeringPage ? civilEngineeringKeywords : isPolytechnicPage ? polytechnicKeywords : cseKeywords;
                     const isPageRelated = (card: any) => {
                         const slug = String(card.slug || "").trim();
                         const title = String(card.title || "");
@@ -2025,6 +2119,10 @@ const DepartmentOfComputerScienceAndEngineeringNew = ({ customData }: { customDa
                         if (isAgriculturalSciencesPage && !isAgricultureBlog(title, slug)) return false;
                         if (isMediaStudiesPage && !isMediaStudiesBlog(title, slug)) return false;
                         if (isMathematicalSciencesPage && !isMathematicalSciencesBlog(title, slug)) return false;
+                        if (isLegalStudiesPage && !isLegalStudiesBlog(title, slug)) return false;
+                        if (isChemicalSciencesPage && !isChemicalSciencesBlog(title, slug)) return false;
+                        if (isAlliedHealthPage && !isAlliedHealthBlog(title, slug)) return false;
+                        if (isPolytechnicPage && !isPolytechnicBlog(title, slug)) return false;
                         if (pageBlogSlugs.has(slug)) return true;
                         const haystack = `${title} ${slug}`.toLowerCase();
                         return pageKeywords.some(kw => haystack.includes(kw));
@@ -2060,7 +2158,32 @@ const DepartmentOfComputerScienceAndEngineeringNew = ({ customData }: { customDa
                             .filter((article) => article.category === "mathematics" && isMathematicalSciencesBlog(article.title, article.slug))
                             .map((article) => ({ ...article, imagePath: customData?.hero.backgroundImage || "" }))
                         : [];
-                    const fallbackBlogs = isMathematicalSciencesPage ? mathematicalSciencesFallbackBlogs : isBiosciencesPage ? biosciencesFallbackBlogs : isAgriculturalSciencesPage ? agricultureFallbackBlogs : isMediaStudiesPage ? mediaStudiesFallbackBlogs : isCivilEngineeringPage ? civilEngineeringFallbackBlogs : isManagementPage ? managementFallbackBlogs : [];
+                    const legalStudiesFallbackBlogs = isLegalStudiesPage
+                        ? ALL_TARGET_BLOGS
+                            .filter((article) => article.category === "law" && isLegalStudiesBlog(article.title, article.slug))
+                            .map((article) => ({ ...article, imagePath: customData?.hero.backgroundImage || "" }))
+                        : [];
+                    const chemicalSciencesFallbackBlogs = isChemicalSciencesPage
+                        ? ALL_TARGET_BLOGS
+                            .filter((article) => article.category === "chemistry" && isChemicalSciencesBlog(article.title, article.slug))
+                            .map((article) => ({ ...article, imagePath: customData?.hero.backgroundImage || "" }))
+                        : [];
+                    const alliedHealthFallbackBlogs = isAlliedHealthPage
+                        ? legacyBlogArticles
+                            .filter((article) => isAlliedHealthBlog(article.title, article.slug))
+                            .map((article) => ({ ...article, imagePath: article.imagePath || customData?.hero.backgroundImage || "" }))
+                        : [];
+                    const pharmaceuticalSciencesFallbackBlogs = isPharmaceuticalSciencesPage
+                        ? ALL_TARGET_BLOGS
+                            .filter((article) => article.category === "pharmacy" && pharmacyKeywords.some((kw) => `${article.title} ${article.slug}`.toLowerCase().includes(kw)))
+                            .map((article) => ({ ...article, imagePath: customData?.hero.backgroundImage || "" }))
+                        : [];
+                    const polytechnicFallbackBlogs = isPolytechnicPage
+                        ? ALL_TARGET_BLOGS
+                            .filter((article) => article.category === "engineering" && isPolytechnicBlog(article.title, article.slug))
+                            .map((article) => ({ ...article, imagePath: customData?.hero.backgroundImage || "" }))
+                        : [];
+                    const fallbackBlogs = isPharmaceuticalSciencesPage ? pharmaceuticalSciencesFallbackBlogs : isPolytechnicPage ? polytechnicFallbackBlogs : isAlliedHealthPage ? alliedHealthFallbackBlogs : isChemicalSciencesPage ? chemicalSciencesFallbackBlogs : isLegalStudiesPage ? legalStudiesFallbackBlogs : isMathematicalSciencesPage ? mathematicalSciencesFallbackBlogs : isBiosciencesPage ? biosciencesFallbackBlogs : isAgriculturalSciencesPage ? agricultureFallbackBlogs : isMediaStudiesPage ? mediaStudiesFallbackBlogs : isCivilEngineeringPage ? civilEngineeringFallbackBlogs : isManagementPage ? managementFallbackBlogs : [];
                     const pageBlogs = (matchingPageBlogs.length > 0 ? matchingPageBlogs : fallbackBlogs).slice(0, 3);
                     if (pageBlogs.length === 0) return null;
                     return (
@@ -2068,15 +2191,15 @@ const DepartmentOfComputerScienceAndEngineeringNew = ({ customData }: { customDa
                             <div className={`${Classes["container"]} cse-content-container`}>
                                 {/* Header */}
                                 <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
-                                    <div className={isCivilEngineeringPage || isAgriculturalSciencesPage || isMediaStudiesPage || isMathematicalSciencesPage ? "w-full" : ""}>
+                                    <div className={isPharmaceuticalSciencesPage || isPolytechnicPage || isAlliedHealthPage || isCivilEngineeringPage || isAgriculturalSciencesPage || isMediaStudiesPage || isMathematicalSciencesPage ? "w-full" : ""}>
                                         {/* <div className="text-[12px] sm:text-[13px] tracking-[0.1em] uppercase text-[#d62c2b] font-bold flex items-center gap-2 mb-2">
                                             <span className="w-4 h-[2px] bg-[#d62c2b] inline-block shrink-0" /> From the Blog
                                         </div> */}
                                         <h2 className="text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E]">
-                                            {isElectricalDepartmentPage ? <>Electrical Engineering <span className="text-[#FFB703]">Insights & Resources</span></> : isMechanicalDepartmentPage ? <>Mechanical Engineering <span className="text-[#FFB703]">Insights & Resources</span></> : isCivilEngineeringPage ? <>Civil Engineering <span className="text-[#FFB703]">Insights & Resources</span></> : isAgriculturalSciencesPage ? <>Agricultural Sciences <span className="text-[#FFB703]">Insights & Resources</span></> : isMediaStudiesPage ? <>Media Studies <span className="text-[#FFB703]">Insights & Resources</span></> : isMathematicalSciencesPage ? <>Mathematical Sciences <span className="text-[#FFB703]">Insights & Resources</span></> : isCommerceAndEconomicsPage ? <>Commerce &amp; Economics <span className="text-[#FFB703]">Insights & Resources</span></> : isManagementPage ? <>Management <span className="text-[#FFB703]">Insights & Resources</span></> : <>Latest <span className="text-[#FFB703]">Insights & Resources</span></>}
+                                            {isPharmaceuticalSciencesPage ? <>Institute of Pharmaceutical Sciences <span className="text-[#FFB703]">Insights & Resources</span></> : isPolytechnicPage ? <>SRMU Polytechnic <span className="text-[#FFB703]">Insights & Resources</span></> : isAlliedHealthPage ? <>Allied Health Sciences <span className="text-[#FFB703]">Insights & Resources</span></> : isChemicalSciencesPage ? <>Chemical Sciences <span className="text-[#FFB703]">Insights & Resources</span></> : isElectricalDepartmentPage ? <>Electrical Engineering <span className="text-[#FFB703]">Insights & Resources</span></> : isMechanicalDepartmentPage ? <>Mechanical Engineering <span className="text-[#FFB703]">Insights & Resources</span></> : isCivilEngineeringPage ? <>Civil Engineering <span className="text-[#FFB703]">Insights & Resources</span></> : isAgriculturalSciencesPage ? <>Agricultural Sciences <span className="text-[#FFB703]">Insights & Resources</span></> : isMediaStudiesPage ? <>Media Studies <span className="text-[#FFB703]">Insights & Resources</span></> : isMathematicalSciencesPage ? <>Mathematical Sciences <span className="text-[#FFB703]">Insights & Resources</span></> : isCommerceAndEconomicsPage ? <>Commerce &amp; Economics <span className="text-[#FFB703]">Insights & Resources</span></> : isManagementPage ? <>Management <span className="text-[#FFB703]">Insights & Resources</span></> : isLegalStudiesPage ? <>Legal Studies <span className="text-[#FFB703]">Insights & Resources</span></> : <>Latest <span className="text-[#FFB703]">Insights & Resources</span></>}
                                         </h2>
-                                        <p className={`text-[14px] text-[#4B5A72] mt-2 ${isCivilEngineeringPage || isAgriculturalSciencesPage || isMediaStudiesPage || isCommerceAndEconomicsPage || isManagementPage || isMathematicalSciencesPage ? "w-full max-w-none" : "max-w-xl"}`}>
-                                            {isBiosciencesPage ? "Articles and insights on biotechnology, biosciences, and careers in the life sciences." : isAgriculturalSciencesPage ? "Articles and insights on agriculture, horticulture, agronomy, soil science, and agribusiness." : isMediaStudiesPage ? "Articles and insights on journalism, mass communication, digital media, filmmaking, and media careers." : isMathematicalSciencesPage ? "Articles and insights on mathematics, statistics, probability, quantitative analysis, and related fields." : isPharmacyPage ? "Articles and insights on pharmacy programmes, pharmaceutical sciences, and career opportunities." : isElectricalDepartmentPage ? "Articles and insights on electrical and electronics engineering, electric vehicles, renewable energy, and related careers." : isMechanicalDepartmentPage ? "Articles and insights on mechanical engineering, manufacturing, thermal systems, automotive technology, and related careers." : isCivilEngineeringPage ? "Articles and insights on civil engineering, construction, infrastructure, structural and environmental engineering, and related careers." : isCommerceAndEconomicsPage ? "Articles and insights on commerce, accounting, finance, banking, economics, and related career paths." : isManagementPage ? "Articles and insights on business administration, management, analytics, finance, marketing, leadership, and entrepreneurship." : customData ? "" : "Guides, stories, and updates from the world of Computer Science & Engineering."}
+                                        <p className={`text-[14px] text-[#4B5A72] mt-2 ${isPharmaceuticalSciencesPage || isPolytechnicPage || isAlliedHealthPage || isCivilEngineeringPage || isAgriculturalSciencesPage || isMediaStudiesPage || isCommerceAndEconomicsPage || isManagementPage || isMathematicalSciencesPage ? "w-full max-w-none" : "max-w-xl"}`}>
+                                            {isPharmaceuticalSciencesPage ? "Articles and insights on pharmaceutical education, drug development, research, pharmacy careers, and healthcare." : isPolytechnicPage ? "Articles and insights on polytechnic diplomas, engineering branches, practical training, and technical careers." : isAlliedHealthPage ? "Articles and insights on allied health programmes, paramedical careers, diagnostics, rehabilitation, medical imaging, optometry, and operation theatre technology." : isChemicalSciencesPage ? "Articles and insights on chemistry, chemical research, sustainable processes, materials, and related career paths." : isBiosciencesPage ? "Articles and insights on biotechnology, biosciences, and careers in the life sciences." : isAgriculturalSciencesPage ? "Articles and insights on agriculture, horticulture, agronomy, soil science, and agribusiness." : isMediaStudiesPage ? "Articles and insights on journalism, mass communication, digital media, filmmaking, and media careers." : isMathematicalSciencesPage ? "Articles and insights on mathematics, statistics, probability, quantitative analysis, and related fields." : isPharmacyPage ? "Articles and insights on pharmacy programmes, pharmaceutical sciences, and career opportunities." : isElectricalDepartmentPage ? "Articles and insights on electrical and electronics engineering, electric vehicles, renewable energy, and related careers." : isMechanicalDepartmentPage ? "Articles and insights on mechanical engineering, manufacturing, thermal systems, automotive technology, and related careers." : isCivilEngineeringPage ? "Articles and insights on civil engineering, construction, infrastructure, structural and environmental engineering, and related careers." : isCommerceAndEconomicsPage ? "Articles and insights on commerce, accounting, finance, banking, economics, and related career paths." : isManagementPage ? "Articles and insights on business administration, management, analytics, finance, marketing, leadership, and entrepreneurship." : isLegalStudiesPage ? "Articles and insights on law programmes, legal careers, specializations, and the justice system." : customData ? "" : "Guides, stories, and updates from the world of Computer Science & Engineering."}
                                         </p>
                                     </div>
                                     <div className="flex sm:hidden items-center gap-3 shrink-0 w-full">

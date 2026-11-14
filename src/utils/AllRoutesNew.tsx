@@ -16,11 +16,17 @@ import InstituteOfAgriculturalSciencesAndTechnologyNewPage from "../pages/academ
 import InstituteOfMediaStudiesNewPage from "../pages/academics/institutes/institute-department/institute-of-media-studies-new/InstituteOfMediaStudiesNewPage";
 import InstituteOfNaturalSciencesAndHumanitiesNewPage from "../pages/academics/institutes/institute-department/institute-of-natural-sciences-and-humanities-new/InstituteOfNaturalSciencesAndHumanitiesNewPage";
 import DepartmentOfElectricalAndElectronicsEngineeringNewPage from "../pages/academics/institutes/institute-department/department-of-electrical-and-electronics-engineering-new/DepartmentOfElectricalAndElectronicsEngineeringNewPage";
+import FacultyOfChemicalSciencesNewPage from "../pages/academics/institutes/institute-department/faculty-of-chemical-sciences-new/FacultyOfChemicalSciencesNewPage";
+import InstituteOfAlliedHealthSciencesNewPage from "../pages/academics/institutes/institute-department/institute-of-allied-health-sciences-new/InstituteOfAlliedHealthSciencesNewPage";
+import InstituteOfLegalStudiesNewPage from "../pages/academics/institutes/institute-department/institute-of-legal-studies-new/InstituteOfLegalStudiesNewPage";
 import DepartmentOfMechanicalEngineeringNewPage from "../pages/academics/institutes/institute-department/department-of-mechanical-engineering-new/DepartmentOfMechanicalEngineeringNewPage";
 import DepartmentOfCivilEngineeringNewPage from "../pages/academics/institutes/institute-department/department-of-civil-engineering-new/DepartmentOfCivilEngineeringNewPage";
 import FacultyOfCommerceAndEconomicsNewPage from "../pages/academics/institutes/institute-department/faculty-of-commerce-and-economics-new/FacultyOfCommerceAndEconomicsNewPage";
 import FacultyOfManagementNewPage from "../pages/academics/institutes/institute-department/faculty-of-management-new/FacultyOfManagementNewPage";
 import FacultyOfMathematicalAndStatisticalSciencesNewPage from "../pages/academics/institutes/institute-department/faculty-of-mathematical-and-statistical-sciences-new/FacultyOfMathematicalAndStatisticalSciencesNewPage";
+import SRMUPolytechnicNewPage from "../pages/academics/institutes/institute-department/srmu-polytechnic-new/SRMUPolytechnicNewPage";
+import InstituteOfPharmaceuticalSciencesNewPage from "../pages/academics/institutes/institute-department/institute-of-pharmaceutical-sciences-new/InstituteOfPharmaceuticalSciencesNewPage";
+import InstituteOfEducationAndResearchNewPage from "../pages/academics/institutes/institute-department/institute-of-education-and-research-new/InstituteOfEducationAndResearchNewPage";
 
 const HomePage = lazyPage(() => import("../pages/Home/HomePage"));
 const PageNotFound = lazyPage(() => import("../pages/PageNotFound"));
@@ -1120,12 +1126,28 @@ export const routes = [
         element: <InstituteOfMediaStudiesNewPage />,
       },
       {
+        path: "/institute-of-legal-studies-new",
+        element: <InstituteOfLegalStudiesNewPage />,
+      },
+      {
         path: "/institute-of-natural-sciences-and-humanities-new",
         element: <InstituteOfNaturalSciencesAndHumanitiesNewPage />,
       },
       {
+        path: "/institute-of-education-and-research-new",
+        element: <InstituteOfEducationAndResearchNewPage />,
+      },
+      {
         path: "/department-of-electrical-and-electronics-engineering-new",
         element: <DepartmentOfElectricalAndElectronicsEngineeringNewPage />,
+      },
+      {
+        path: "/faculty-of-chemical-sciences-new",
+        element: <FacultyOfChemicalSciencesNewPage />,
+      },
+      {
+        path: "/institute-of-allied-health-sciences-new",
+        element: <InstituteOfAlliedHealthSciencesNewPage />,
       },
       {
         path: "/department-of-mechanical-engineering-new",
@@ -1146,6 +1168,14 @@ export const routes = [
       {
         path: "/faculty-of-mathematical-and-statistical-sciences-new",
         element: <FacultyOfMathematicalAndStatisticalSciencesNewPage />,
+      },
+      {
+        path: "/srmu-polytechnic-new",
+        element: <SRMUPolytechnicNewPage />,
+      },
+      {
+        path: "/institute-of-pharmaceutical-sciences-new",
+        element: <InstituteOfPharmaceuticalSciencesNewPage />,
       },
       {
         path: "green-initiative-new",
