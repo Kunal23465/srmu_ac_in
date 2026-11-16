@@ -83,6 +83,7 @@ const NIRFPage = lazyPage(() => import("../pages/about/NIRF/NIRFPage"));
 const OragnisationStructurePage = lazyPage(() => import("../pages/about/organisation-structure-plan/OrganisationStructurePlan"));
 const InstitutePage = lazyPage(() => import("../pages/academics/institutes/InstitutePage"));
 const InstituteDepartmentPage = lazyPage(() => import("../pages/academics/institutes/institute-department/InstituteDepartmentPage"));
+const InstituteOfTechnologyNewPage = lazyPage(() => import("../pages/academics/institutes/institute-department/institute-of-technology-new/InstituteOfTechnologyNewPage"));
 const PoliciesReportsPage = lazyPage(() => import("../pages/academics/Policies-Reports/PoliciesReportsPage"));
 const AcademicCalendarsPage = lazyPage(() => import("../pages/academics/academic-calendars/AcademicCalendarsPage"));
 const TeachingLearningProcessPage = lazyPage(() => import("../pages/academics/teaching-learning-process/TeachingLearningProcessPage"));
@@ -966,6 +967,10 @@ export const routes = [
         path: "/institute-of-technology",
         element: <InstituteDepartmentPage />,
       },
+      {
+        path: "/institute-of-technology-new",
+        element: <InstituteOfTechnologyNewPage />,
+      },
 
 
       {
@@ -1114,7 +1119,7 @@ export const routes = [
         element: <InstituteOfPharmacyNewPage />,
       },
       {
-        path: "/institute-of-biosciences-and-technology-new",
+        path: "/department-of-biosciences-and-technology-new",
         element: <InstituteOfBiosciencesAndTechnologyNewPage />,
       },
       {

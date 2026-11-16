@@ -39,6 +39,8 @@ import bloodCamp from "../../assets/images/blood.jpg"
 
 import llmCollege from "../../assets/new-home/events/LLM-college-Lucknow.png"
 
+import legalAwareness from "../../assets/new-home/events/Legal-Aid-Cell-Awareness-Seminar.webp"
+
 
 
 
@@ -62,6 +64,26 @@ export type EventItem = {
 };
 
 const eventsData: EventItem[] = [
+
+  {
+    id: 51,
+    isRedirect: false,
+    image: legalAwareness,
+    imageSmall: legalAwareness,
+    date: "November 14th, 2026",
+    title: `Legal Awareness Programme on Children’s Rights and Freedom from Child Labor Organized at SRMU`,
+    description: `
+  The <strong>Legal Aid Cell, Institute of Legal Studies (ILS), Shri Ramswaroop Memorial University (SRMU)</strong>, in collaboration with the <strong>Pro Bono Club</strong>, organized a Legal Awareness Programme on the occasion of <strong>Children’s Day, 14 November 2026</strong>, at <strong>Maharana Pratap Inter College, Barabanki</strong>.<br />
+
+  The program was conducted on the theme <strong>“Freedom from Child Labor: Constitutional Rights of Every Child"</strong> to sensitize children about their constitutional and legal rights, the right to education, the importance of continuing education, and the prohibition of child labor. It also aimed to promote awareness about every child's right to protection, dignity, and a safe childhood.<br />
+
+  The program featured <strong>interactive awareness sessions on child rights</strong>, helping students understand the importance of education, legal protection, and freedom from child labor. Recreational and educational activities were also organized to make the learning experience engaging and informative.<br />
+
+  To further encourage legal awareness, <strong>pamphlets and booklets</strong> containing relevant information were distributed among students, providing them with accessible resources to understand their rights and available safeguards.<br />
+
+  The initiative reflected the commitment of the Institute of Legal Studies to <strong>community outreach, legal literacy, child protection, and social responsibility</strong>, while encouraging awareness about the rights and welfare of children.<br />
+  `,
+  },
 
   {
     id: 50,
