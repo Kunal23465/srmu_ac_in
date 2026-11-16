@@ -55,6 +55,9 @@ export type CustomDepartmentNewData = {
         headingBefore?: string;
         headingHighlight?: string;
         intro: string;
+        learningAreas?: string[];
+        learningAreasHeading?: string;
+        itemsHeading?: string;
         items: { num: string; title: string; desc: string; accent: string; iconSrc?: string; icon?: LucideIcon; animClass: string }[];
     };
     highlights: {

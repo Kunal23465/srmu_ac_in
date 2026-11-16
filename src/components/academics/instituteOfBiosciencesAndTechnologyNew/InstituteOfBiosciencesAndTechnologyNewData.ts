@@ -658,29 +658,45 @@ export const instituteOfBiosciencesAndTechnologyNewData: CustomDepartmentNewData
         intro: "The Institute of Biosciences and Technology regularly organizes expert lectures to familiarize students with emerging scientific developments, research methodologies, and practical applications in biotechnology and biosciences.",
         cardsEyebrow: "Featured Guest Lectures",
         cards: [
-            makeCard("GUEST LECTURE", "Bacillus subtilis: A Potent Biological Control Agent", "Dr. Poonam Singh · Senior Principal Scientist · CSIR-National Botanical Research Institute (CSIR-NBRI), Lucknow · 13 February 2026", "The lecture introduced students to Bacillus subtilis and its role as a biological control agent.", csirCimapImage),
-            makeCard("GUEST LECTURE", "Genome Editing: A New Era for Crop Improvement", "Dr. Vidhu A. Sane · Chief Scientist, Department of Molecular Biology and Biotechnology · CSIR-NBRI, Lucknow · 6 October 2025", "The session explored genome-editing approaches and their potential for crop improvement.", biotechImage),
-            makeCard("GUEST LECTURE", "Use of AI Tools in Healthcare and Teaching Innovations", "Dr. Santosh Kumar · Principal Scientist · CSIR-Central Drug Research Institute (CSIR-CDRI), Lucknow · 20 November 2025", "The lecture discussed uses of artificial intelligence tools in healthcare and teaching.", ibstImage),
-            makeCard("GUEST LECTURE", "Epigenetics in Health and Diseases", "Dr. Kulwant Singh · Associate Professor, Stem Cell Research Centre, Department of Haematology · SGPGIMS, Lucknow · 24 April 2024", "The session introduced epigenetics and its relevance to health and disease research.", industryImage),
-            makeCard("GUEST LECTURE", "Environment and Health: Biotechnological Interventions in Current Perspectives", "Dr. V. P. Sharma · Chief Scientist and Professor, AcSIR · CSIR-Indian Institute of Toxicology Research, Lucknow · 30 August 2024", "The lecture considered biotechnological approaches to current environment and health challenges.", labImage),
+            makeCard("GUEST LECTURE", "Bacillus subtilis: A Potent Biological Control Agent", "Dr. Poonam Singh · Senior Principal Scientist · CSIR-National Botanical Research Institute (CSIR-NBRI), Lucknow · 13 February 2026", "", csirCimapImage),
+            makeCard("GUEST LECTURE", "Genome Editing: A New Era for Crop Improvement", "Dr. Vidhu A. Sane · Chief Scientist, Department of Molecular Biology and Biotechnology · CSIR-NBRI, Lucknow · 6 October 2025", "", biotechImage),
+            makeCard("GUEST LECTURE", "Use of AI Tools in Healthcare and Teaching Innovations", "Dr. Santosh Kumar · Principal Scientist · CSIR-Central Drug Research Institute (CSIR-CDRI), Lucknow · 20 November 2025", "", ibstImage),
+            makeCard("GUEST LECTURE", "Epigenetics in Health and Diseases", "Dr. Kulwant Singh · Associate Professor, Stem Cell Research Centre, Department of Haematology · SGPGIMS, Lucknow · 24 April 2024", "", industryImage),
+            makeCard("GUEST LECTURE", "Environment and Health: Biotechnological Interventions in Current Perspectives", "Dr. V. P. Sharma · Chief Scientist and Professor, AcSIR · CSIR-Indian Institute of Toxicology Research, Lucknow · 30 August 2024", "", labImage),
         ],
     },
     activitySections: [
         {
             id: "industry-exposure",
-            eyebrow: "Industry & Institutional Visits",
-            heading: "Connecting Biotechnology Education with Industry and Research Institutions",
+            eyebrow: "Connecting Biotechnology Education with Industry and Research Institutions",
+            heading: "",
             intro: "Industrial and institutional visits provide students with opportunities to observe scientific processes, understand research environments, and explore the practical applications of biotechnology.",
             cards: [
-                makeCard("INSTITUTIONAL VISIT", "National Botanical Research Institute (CSIR-NBRI)", "27 February 2026 · Rana Pratap Marg, Lucknow · National Science Day", "M.Sc., B.Tech., and B.Sc. Biotechnology students took part in the Women in Science: Catalyzing Viksit Bharat programme on National Science Day.", csirCimapImage),
-                makeCard("INDUSTRY VISIT", "Prospera Biotech", "8 April 2026 · Zaidpur, Barabanki, Uttar Pradesh", "B.Tech. and B.Sc. Biotechnology students visited Prospera Biotech to learn about industry practices and biotechnology applications.", industryImage),
-                makeCard("INDUSTRY VISIT", "Amul Banas Dairy", "15 November 2025 · Sultanpur Road, Lucknow", "B.Tech. and B.Sc. Biotechnology students visited Amul Banas Dairy to observe applied processes in food and biotechnology.", foodSafetyImage),
+                makeCard("INSTITUTIONAL VISIT", "National Botanical Research Institute (CSIR-NBRI)", [
+                    "Date: 27 February 2026",
+                    "Location: Rana Pratap Marg, Lucknow",
+                    "Theme: Women in Science: Catalyzing Viksit Bharat",
+                    "Occasion: National Science Day",
+                    "Participants: M.Sc., B.Tech., and B.Sc. Biotechnology students",
+                ].join("\n"), "", csirCimapImage),
+                makeCard("INDUSTRY VISIT", "Prospera Biotech", [
+                    "Date: 8 April 2026",
+                    "Location: Zaidpur, Barabanki, Uttar Pradesh",
+                    "Visit Focus: Industry practices and biotechnology applications",
+                    "Participants: B.Tech. and B.Sc. Biotechnology students",
+                ].join("\n"), "", industryImage),
+                makeCard("INDUSTRY VISIT", "Amul Banas Dairy", [
+                    "Date: 15 November 2025",
+                    "Location: Sultanpur Road, Lucknow",
+                    "Visit Focus: Applied processes in food and biotechnology",
+                    "Participants: B.Tech. and B.Sc. Biotechnology students",
+                ].join("\n"), "", foodSafetyImage),
             ],
         },
         {
             id: "workshops",
-            eyebrow: "Workshops",
-            heading: "Building Practical Skills Through Scientific Workshops",
+            eyebrow: "Building Practical Skills Through Scientific Workshops",
+            heading: "",
             intro: "The institute organizes workshops to strengthen students' practical knowledge, professional skills, and understanding of emerging opportunities in biotechnology and related fields.",
             cards: [
                 makeCard("WORKSHOP", "Workshop on Entrepreneurship and Skill Development", "10–14 June 2024 · One week · Online · Organized with the SRMU Internal Quality Assurance Cell (IQAC)", "A one-week online workshop organized by the Institute of Biosciences and Technology in collaboration with the Internal Quality Assurance Cell (IQAC), Shri Ramswaroop Memorial University. The focus was entrepreneurship and skill development.", ibstImage),
@@ -690,19 +706,41 @@ export const instituteOfBiosciencesAndTechnologyNewData: CustomDepartmentNewData
         {
             id: "hackathons",
             eyebrow: "Hackathons & Conferences",
-            heading: "Student Participation in Innovation and Research Events",
+            heading: "",
             intro: "Students of Shri Ramswaroop Memorial University actively participate in technical competitions, international conferences, and innovation-driven events, showcasing their knowledge, research capabilities, and problem-solving skills.",
             cards: [
-                makeCard("HACKATHON", "VIVEKA: The Intelligence 5.0", "Shweta Ojha · Tech Fusion Club, SRMU · 18–20 February 2026", "Participation in Hack-A-Thon VIVEKA: The Intelligence 5.0 (Techfest 2K26). Achievement: Certificate of Participation. Tagline: #HackLearnWinSmile.", ibstImage),
-                makeCard("CONFERENCE", "Best Poster Presentation at SI:BRIRF 2.0", "Astha Maurya · International Conference on Sustainable Innovation: Bridging Research and Industry for a Resilient Future 2.0 · 9–11 April 2026", "Astha Maurya received the Best Poster Presentation achievement for STBTPP002 – Nanobiotechnology for Achieving Environmental Sustainability at Shri Ramswaroop Memorial University, Barabanki, Uttar Pradesh.", researchPapersImage),
-                makeCard("INTERNATIONAL CHALLENGE", "NASA International Space Apps Challenge 2025", "Akash Singh · 4–5 October 2025", "Akash Singh was recognized as a Galactic Problem Solver and received a Certificate of Participation for outstanding participation and efforts addressing challenges on Earth and in space.", researchDevelopmentImage),
+                makeCard("HACKATHON", "VIVEKA: The Intelligence 5.0", [
+                    "Student: Shweta Ojha",
+                    "Event: Hack-A-Thon",
+                    "Organizer: Tech Fusion Club, SRMU",
+                    "Event: VIVEKA: The Intelligence 5.0 (Techfest 2K26)",
+                    "Date: 18–20 February 2026",
+                    "Achievement: Certificate of Participation",
+                    "Tagline: #HackLearnWinSmile",
+                ].join("\n"), "", ibstImage),
+                makeCard("CONFERENCE", "Best Poster Presentation at SI:BRIRF 2.0", [
+                    "Student: Astha Maurya",
+                    "Institution: Shri Ramswaroop Memorial University",
+                    "Conference: International Conference on Sustainable Innovation: Bridging Research and Industry for a Resilient Future 2.0 (SI:BRIRF 2.0)",
+                    "Presentation Title: STBTPP002 - Nanobiotechnology for Achieving Environmental Sustainability",
+                    "Date: 9 - 11 April 2026",
+                    "Venue: Shri Ramswaroop Memorial University, Barabanki, Uttar Pradesh",
+                    "Achievement: Best Poster Presentation",
+                ].join("\n"), "", researchPapersImage),
+                makeCard("INTERNATIONAL CHALLENGE", "NASA International Space Apps Challenge 2025", [
+                    "Student: Akash Singh",
+                    "Event: NASA International Space Apps Challenge 2025",
+                    "Achievement: Galactic Problem Solver - Certificate of Participation",
+                    "Date: 4 - 5 October 2025",
+                    "Recognition: Outstanding participation and efforts towards addressing challenges on Earth and in space.",
+                ].join("\n"), "", researchDevelopmentImage),
             ],
         },
         {
             id: "research-publications",
-            eyebrow: "Research Contributions",
-            heading: "Research Contributions in Biotechnology and Biosciences (2025–2026)",
-            intro: "Selected faculty and student research contributions published during 2025–2026.",
+            eyebrow: "Research Contributions in Biotechnology and Biosciences (2025–2026)",
+            heading: "",
+            intro: "",
             cards: [
                 makeCard("RESEARCH CONTRIBUTION", "Clinical Evidence on BCG Vaccination and COVID-19 Infection: A Systematic Review", "Praneta Yadav, Arpita Singh, Manju Kumari, Sunil Kumar Verma, Devendra Singh · Respiratory Investigation · 2026", "Affiliation: Faculty of Biotechnology, Institute of Biosciences and Technology, Shri Ramswaroop Memorial University, Barabanki, Uttar Pradesh, India.", researchPapersImage),
                 makeCard("RESEARCH CONTRIBUTION", "Liquid Biopsy in Modern Medicine: Advancing Diagnostics from Molecular Insights to Clinical Practice", "Vivek Kumar Dhiman, Stuti Srivastava, Manju Kumari, Devendra Singh · Clinical and Translational Oncology · 2026", "Affiliation: Faculty of Biotechnology, Institute of Biosciences and Technology, Shri Ramswaroop Memorial University, Barabanki, Uttar Pradesh, India.", researchDevelopmentImage),
@@ -749,3 +787,5 @@ export const instituteOfBiosciencesAndTechnologyNewData: CustomDepartmentNewData
     showBlogs: true,
     showCareerDescriptionCards: false,
 };
+
+

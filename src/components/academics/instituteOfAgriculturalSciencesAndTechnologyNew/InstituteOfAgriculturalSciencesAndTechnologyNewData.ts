@@ -16,7 +16,6 @@ import {
 import type { CustomDepartmentNewData, DepartmentActivityCardNew } from "../../../customs/department-page-new/CustomDepartmentNew";
 import type { FacultyMember } from "../departmentOfComputerScienceAndEngineeringNew/DepartmentFaculty";
 import {
-    InstituteofAgriculturalSciencesandTechnologyDepartmentEventsData,
     InstituteofAgriculturalSciencesandTechnologyfacultyData,
     InstituteofAgriculturalSciencesandTechnologyinstituteProfiles,
 } from "../../../data/academics/institute/institute-department/institute-of-agricultural-sciences-and-technology-data";
@@ -65,23 +64,6 @@ const instituteFaculty: FacultyMember[] = [
     })),
 ];
 
-const instituteEventCards: DepartmentActivityCardNew[] = InstituteofAgriculturalSciencesandTechnologyDepartmentEventsData
-    .slice(0, 6)
-    .map((event) => {
-        const details = [event.topic, event.venue, event.date].filter(Boolean).join(" · ");
-        const description = details
-            ? `${event.title}: ${details}. Students connect agricultural learning with field practice, rural development, and current issues in the sector.`
-            : `Students connect agricultural learning with field practice, rural development, and current issues in the sector.`;
-
-        return activityCard(
-            event.title.toUpperCase(),
-            event.topic || event.title,
-            description,
-            event.image,
-            [event.date, event.speaker].filter(Boolean).join(" | ") || undefined,
-        );
-    });
-
 export const instituteOfAgriculturalSciencesAndTechnologyNewData: CustomDepartmentNewData = {
     navSections: [
         { id: "overview", label: "Overview" },
@@ -115,7 +97,7 @@ export const instituteOfAgriculturalSciencesAndTechnologyNewData: CustomDepartme
         paragraphs: [
             "The Institute of Agricultural Sciences and Technology at Shri Ramswaroop Memorial University (SRMU) focuses on advanced agricultural education, scientific research, and practical learning to prepare students for the evolving agricultural sector.",
             "The institute offers postgraduate programmes in horticulture, agronomy, soil science, and agribusiness management. Students develop specialized knowledge of crop production, agricultural technologies, soil management, horticultural practices, and agricultural business operations.",
-            "Academic instruction, research-oriented learning, and field-based activities connect theory with modern agricultural practice and sustainable approaches to improving productivity.",
+            "Though academic instruction, research-oriented learning, and field-based activities connect theory with modern agricultural practice and sustainable approaches to improving productivity.",
         ],
         preview: "The Institute of Agricultural Sciences and Technology at SRMU combines agricultural education, research, and practical learning to prepare students for a changing agricultural sector.",
         image: overviewImage,
@@ -123,11 +105,11 @@ export const instituteOfAgriculturalSciencesAndTechnologyNewData: CustomDepartme
     },
     missionVision: {
         missionItems: [
-            "Provide quality education in agricultural sciences through research-oriented and application-based learning.",
-            "Develop technical knowledge and practical competencies in horticulture, agronomy, and soil science.",
-            "Encourage scientific research and innovation in sustainable agriculture.",
-            "Promote modern agricultural practices and responsible resource management.",
-            "Develop skilled professionals who can contribute to agricultural development and agribusiness.",
+            "To provide quality education in agricultural sciences through research-oriented and application-based learning.",
+            "To develop technical knowledge and practical competencies in horticulture, agronomy, and soil science.",
+            "To encourage scientific research and innovation in sustainable agriculture.",
+            "To promote modern agricultural practices and responsible resource management.",
+            "To develop skilled professionals who can contribute to agricultural development and agribusiness.",
         ],
         visionText: "To emerge as a centre of excellence in agricultural education, research, and innovation by nurturing skilled professionals who contribute to sustainable farming, agricultural advancement, and rural development.",
     },
@@ -190,37 +172,44 @@ export const instituteOfAgriculturalSciencesAndTechnologyNewData: CustomDepartme
         },
     ],
     labs: {
-        headingBefore: "Fieldwork &",
-        headingHighlight: "Practical Learning",
-        intro: "Students connect agricultural concepts with practice through field-based learning, crop studies, research activities, and academic interaction. These activities build an understanding of agricultural processes and sustainable ways to improve productivity.",
+        headingBefore: "Practical Learning &",
+        headingHighlight: "Research Exposure",
+        intro: "The institute emphasizes practical and research-oriented learning to help students understand agricultural processes, crop management, and scientific approaches to improving productivity.",
         items: [
-            { num: "01", title: "Field Experiments", desc: "Observe crop growth, cultivation methods, and agricultural practices through practical experiments.", accent: "#1B7A4B", icon: Sprout, animClass: "lab-icon-orbital" },
-            { num: "02", title: "Research Activities", desc: "Explore contemporary agricultural challenges through research projects, field studies, and scientific investigations.", accent: "#D68B18", icon: Microscope, animClass: "lab-icon-pulse" },
-            { num: "03", title: "Workshops & Seminars", desc: "Learn about modern agricultural technologies, sustainable farming, and emerging developments.", accent: "#245A89", icon: UsersRound, animClass: "lab-icon-float" },
-            { num: "04", title: "Expert Interactions", desc: "Engage with agricultural scientists, researchers, and professionals from across the sector.", accent: "#1B7A4B", icon: BookOpenCheck, animClass: "lab-icon-network" },
-            { num: "05", title: "Crop Management", desc: "Build an understanding of crop planning, soil management, and agricultural productivity.", accent: "#D68B18", icon: Tractor, animClass: "lab-icon-stack" },
-            { num: "06", title: "Student Projects", desc: "Apply academic knowledge to agricultural questions through project-based learning.", accent: "#245A89", icon: FlaskConical, animClass: "lab-icon-glow" },
+            { num: "01", title: "Vegetable Science", desc: "Explore vegetable crop production, cultivation practices, crop improvement, and protected cultivation.", accent: "#1B7A4B", icon: Sprout, animClass: "lab-icon-orbital" },
+            { num: "02", title: "Fruit Science", desc: "Develop knowledge of fruit crop production, orchard management, propagation techniques, and post-harvest practices.", accent: "#D68B18", icon: Microscope, animClass: "lab-icon-pulse" },
+            { num: "03", title: "Agronomy", desc: "Understand crop production systems, field management, cropping patterns, and sustainable agricultural practices.", accent: "#245A89", icon: UsersRound, animClass: "lab-icon-float" },
+            { num: "04", title: "Soil Science & Agricultural Chemistry", desc: "Study soil properties, soil fertility, nutrient management, and agricultural chemistry.", accent: "#1B7A4B", icon: BookOpenCheck, animClass: "lab-icon-network" },
+            { num: "05", title: "Agribusiness Management", desc: "Explore agricultural marketing, supply chain management, farm business operations, and agribusiness entrepreneurship.", accent: "#D68B18", icon: Tractor, animClass: "lab-icon-stack" },
+            { num: "06", title: "Agricultural Research", desc: "Develop research and analytical skills through experiments, field studies, and scientific investigations.", accent: "#245A89", icon: FlaskConical, animClass: "lab-icon-glow" },
         ],
     },
     highlights: {
-        headingBefore: "Why Choose Agricultural Sciences at",
+        headingBefore: "What Makes the Institute of Agricultural Sciences and Technology Different at",
         headingHighlight: "SRMU?",
         items: [
-            { num: "01", title: "SPECIALIZED PROGRAMMES", desc: "Postgraduate study spans vegetable science, fruit science, agronomy, soil science, and agribusiness management.", icon: GraduationCap },
-            { num: "02", title: "SUSTAINABLE AGRICULTURE", desc: "Explore sustainable farming, soil conservation, responsible resource management, and environmentally aware practices.", icon: Leaf },
-            { num: "03", title: "PRACTICAL FIELD LEARNING", desc: "Field experiments, crop studies, and research activities connect classroom concepts with agricultural applications.", icon: Tractor },
-            { num: "04", title: "RESEARCH & SCIENTIFIC EXPLORATION", desc: "Research-oriented learning addresses crop production, horticulture, soil fertility, productivity, and emerging technologies.", icon: Microscope },
-            { num: "05", title: "HORTICULTURAL SCIENCES", desc: "Focused study covers vegetable and fruit cultivation, propagation, orchard management, and post-harvest practices.", icon: Flower2 },
-            { num: "06", title: "AGRICULTURE & BUSINESS", desc: "The MBA in Agribusiness Management connects agriculture with marketing, supply chains, and entrepreneurship.", icon: BriefcaseBusiness },
-            { num: "07", title: "CAREERS ACROSS AGRICULTURE", desc: "Prepare for professional pathways in research, horticulture, agribusiness, farm management, soil science, and consultancy.", icon: Activity },
+            { num: "01", title: "Specialized Agricultural Programs", desc: "Offers postgraduate programs in horticulture, agronomy, soil science, and agribusiness management, providing opportunities to develop specialized knowledge across agricultural disciplines.", icon: GraduationCap },
+            { num: "02", title: "Focus on Sustainable Agriculture", desc: "Encourages understanding of sustainable farming practices, soil conservation, resource management, and environmentally responsible agricultural methods.", icon: Leaf },
+            { num: "03", title: "Practical & Field-Based Learning", desc: "Emphasizes practical learning, field experiments, crop studies, and research activities to connect theoretical concepts with agricultural applications.", icon: Tractor },
+            { num: "04", title: "Research & Scientific Exploration", desc: "Promotes research-oriented learning in crop production, horticultural development, soil fertility, agricultural productivity, and emerging agricultural technologies.", icon: Microscope },
+            { num: "05", title: "Specialization in Horticultural Sciences", desc: "Provides focused learning opportunities in vegetable science and fruit science, covering crop cultivation, propagation, orchard management, and post-harvest practices.", icon: Flower2 },
+            { num: "06", title: "Agriculture Meets Business Management", desc: "The MBA in Agribusiness Management connects agricultural knowledge with business operations, agricultural marketing, supply chain management, and entrepreneurship.", icon: BriefcaseBusiness },
+            { num: "07", title: "Career Opportunities Across Agricultural Sectors", desc: "Prepares students to explore professional pathways in agricultural research, horticulture, agribusiness, farm management, soil science, and agricultural consultancy.", icon: Activity },
         ],
     },
     events: {
-        headingBefore: "Agriculture in Practice",
-        headingHighlight: "Institute Activities",
-        sectionSubtitle: "Field Visits & Expert Sessions",
-        intro: "The institute's published activities connect students with field practice, agricultural businesses, rural development, and expert perspectives on emerging topics.",
-        cards: instituteEventCards,
+        headingBefore: "From Classroom Concepts to",
+        headingHighlight: "Field Applications",
+        sectionSubtitle: "",
+        intro: "Students are encouraged to connect theoretical agricultural knowledge with practical applications through field-based learning, research activities, and academic interactions.",
+        cards: [
+            activityCard("PRACTICAL LEARNING", "Field Experiments", "Understand crop growth, cultivation methods, and agricultural practices through practical experiments.", cropScienceImage),
+            activityCard("PRACTICAL LEARNING", "Research Activities", "Explore contemporary agricultural challenges through research projects and scientific studies.", researchImage),
+            activityCard("PRACTICAL LEARNING", "Workshops & Seminars", "Gain insights into modern agricultural technologies, sustainable farming, and emerging developments.", practicalLearningImage),
+            activityCard("PRACTICAL LEARNING", "Expert Interactions", "Learn from agricultural scientists, researchers, and industry professionals.", overviewImage),
+            activityCard("PRACTICAL LEARNING", "Crop Management Activities", "Develop an understanding of crop planning, soil management, and agricultural productivity.", cropScienceImage),
+            activityCard("PRACTICAL LEARNING", "Student Projects", "Apply academic knowledge to agricultural problems through project-based learning.", practicalLearningImage),
+        ],
     },
     activitySections: [
         {
@@ -258,8 +247,8 @@ export const instituteOfAgriculturalSciencesAndTechnologyNewData: CustomDepartme
         },
         {
             id: "workshops",
-            eyebrow: "Learning from Research & Practice",
-            heading: "Workshops, Seminars & Expert Interactions",
+            eyebrow: "Research & Publication",
+            heading: "",
             intro: "Workshops, seminars, and expert interactions introduce students to modern agricultural technologies, sustainable farming, and developments across research and practice.",
             cards: [
                 activityCard("WORKSHOPS & SEMINARS", "Emerging Agricultural Technologies", "Academic interactions help students explore developments in agricultural technologies and sustainable farming methods.", practicalLearningImage),
@@ -270,28 +259,32 @@ export const instituteOfAgriculturalSciencesAndTechnologyNewData: CustomDepartme
     career: {
         heading: "Career Opportunities",
         items: [
-            ["Agricultural Research", "Agricultural Researcher"],
-            ["Horticulture", "Horticulturist"],
-            ["Crop Science", "Agronomist, Crop Production Specialist"],
-            ["Soil Science", "Soil Scientist"],
-            ["Agribusiness", "Agribusiness Manager"],
-            ["Farm Operations", "Farm Manager"],
-            ["Consultancy", "Agricultural Consultant"],
-            ["Marketing", "Agricultural Marketing Professional"],
-            ["Agricultural Extension", "Agricultural Extension Officer"],
-            ["Plantation & Research", "Plantation Manager, Research Associate"],
+            ["Agronomist"],
+            ["Horticulturist"],
+            ["Agricultural", "Researcher"],
+            ["Soil Scientist"],
+            ["Agricultural", "Consultant"],
+            ["Agribusiness", "Manager"],
+            ["Farm Manager"],
+            ["Crop Production", "Specialist"],
+            ["Agricultural Marketing", "Professional"],
+            ["Agricultural Extension", "Officer"],
+            ["Plantation Manager"],
+            ["Research Associate"],
         ],
         descriptions: [
-            { title: "Agricultural Research", description: "Agricultural Researcher" },
-            { title: "Horticulture", description: "Horticulturist" },
-            { title: "Crop Science", description: "Agronomist, Crop Production Specialist" },
-            { title: "Soil Science", description: "Soil Scientist" },
-            { title: "Agribusiness", description: "Agribusiness Manager" },
-            { title: "Farm Operations", description: "Farm Manager" },
-            { title: "Consultancy", description: "Agricultural Consultant" },
-            { title: "Marketing", description: "Agricultural Marketing Professional" },
-            { title: "Agricultural Extension", description: "Agricultural Extension Officer" },
-            { title: "Plantation & Research", description: "Plantation Manager, Research Associate" },
+            { title: "Agronomist", description: "Agronomist" },
+            { title: "Horticulturist", description: "Horticulturist" },
+            { title: "Agricultural Researcher", description: "Agricultural Researcher" },
+            { title: "Soil Scientist", description: "Soil Scientist" },
+            { title: "Agricultural Consultant", description: "Agricultural Consultant" },
+            { title: "Agribusiness Manager", description: "Agribusiness Manager" },
+            { title: "Farm Manager", description: "Farm Manager" },
+            { title: "Crop Production Specialist", description: "Crop Production Specialist" },
+            { title: "Agricultural Marketing Professional", description: "Agricultural Marketing Professional" },
+            { title: "Agricultural Extension Officer", description: "Agricultural Extension Officer" },
+            { title: "Plantation Manager", description: "Plantation Manager" },
+            { title: "Research Associate", description: "Research Associate" },
         ],
     },
     facultySection: {
@@ -303,16 +296,16 @@ export const instituteOfAgriculturalSciencesAndTechnologyNewData: CustomDepartme
         showResearchShowcase: false,
     },
     faq: [
-        { q: "What programmes are offered by the Institute of Agricultural Sciences and Technology?", a: "The institute offers M.Sc. programmes in Vegetable Science, Fruit Science, Agronomy, and Soil Science & Agricultural Chemistry, along with an MBA in Agribusiness Management." },
-        { q: "How long are the M.Sc. Horticulture programmes?", a: "The M.Sc. Horticulture programmes in Vegetable Science and Fruit Science have a duration of two years." },
-        { q: "What does the M.Sc. in Agronomy cover?", a: "The programme focuses on crop production, field management, cropping systems, and sustainable agricultural practices." },
-        { q: "What is covered in Soil Science and Agricultural Chemistry?", a: "Students study soil properties, soil fertility, nutrient management, and chemical processes that influence agricultural productivity." },
-        { q: "What does the MBA in Agribusiness Management cover?", a: "The programme focuses on agricultural business operations, marketing, supply chains, farm management, and agribusiness entrepreneurship." },
-        { q: "What practical learning activities are available?", a: "Students engage with field experiments, research activities, workshops, seminars, expert interactions, crop management activities, and student projects." },
-        { q: "What careers can graduates pursue after studying Horticulture?", a: "Career pathways include horticultural production, fruit and vegetable cultivation, research, nurseries, plantation management, and agricultural consultancy." },
-        { q: "What careers can graduates pursue after studying Agronomy?", a: "Graduates can explore crop management, agricultural research, farm consultancy, seed companies, and agricultural development organizations." },
-        { q: "What career options are available after an MBA in Agribusiness Management?", a: "Graduates can explore agribusiness management, agricultural marketing, supply chain management, farm enterprises, and agri-input companies." },
-        { q: "How can I apply for an agricultural programme at SRMU?", a: "Visit the official SRMU website to review programme eligibility and current fee details, then complete the online admission application." },
+        { q: "What postgraduate courses are offered by the Institute of Agricultural Sciences and Technology at SRMU?", a: "The institute offers M.Sc. programs in vegetable science, fruit science, agronomy, soil science & agricultural chemistry, along with an MBA in agribusiness management." },
+        { q: "What is the duration of M.Sc. Horticulture programs at SRMU?", a: "The M.Sc. Horticulture programs in Vegetable Science and Fruit Science have a duration of two years." },
+        { q: "What is an M.Sc. in Agronomy?", a: "The M.Sc. in Agronomy is a postgraduate program focused on crop production, field management, cropping systems, and sustainable agricultural practices." },
+        { q: "What is an M.Sc. in Soil Science & Agricultural Chemistry?", a: "This program focuses on soil properties, soil fertility, nutrient management, and the chemical processes that influence agricultural productivity." },
+        { q: "What is an MBA in Agribusiness Management?", a: "An MBA in Agribusiness Management focuses on business and management practices related to agriculture, including agricultural marketing, supply chains, farm management, and agribusiness operations." },
+        { q: "What career opportunities are available after an M.Sc. in Horticulture?", a: "Graduates can explore careers in horticultural production, fruit and vegetable cultivation, research, nurseries, plantation management, and agricultural consultancy." },
+        { q: "What career opportunities are available after an M.Sc. in Agronomy?", a: "Graduates can pursue opportunities in crop management, agricultural research, farm consultancy, seed companies, and agricultural development organizations." },
+        { q: "What career options are available after an MBA in Agribusiness Management?", a: "Graduates can explore roles in agribusiness management, agricultural marketing, supply chain management, farm enterprises, and agri-input companies." },
+        { q: "What is the annual fee for postgraduate agricultural programs at SRMU?", a: "The listed annual fee for M.Sc. Vegetable Science, M.Sc. Fruit Science, MBA Agribusiness Management, and M.Sc. Agronomy is ₹50,000. The remaining program fee should be confirmed through the official admission details." },
+        { q: "How can I apply for postgraduate agricultural programs at SRMU?", a: "Interested candidates can visit the official SRMU website, check program eligibility and fee details, and complete the online admission application." },
     ],
     showFaculty: true,
     showScholarships: true,

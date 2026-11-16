@@ -272,7 +272,7 @@ export const departmentOfMechanicalEngineeringNewData: CustomDepartmentNewData =
         subtitle: "Mechanical Engineering at SRMU",
         paragraphs: [
             "The Department of Mechanical Engineering at Shri Ramswaroop Memorial University (SRMU) develops technically competent engineers through engineering fundamentals, practical learning, research, and industry exposure. Students explore mechanical design, thermal engineering, manufacturing processes, energy systems, and sustainable engineering technologies.",
-            "Student projects, technical workshops, expert lectures, and industrial visits help students connect engineering concepts with their practical applications. Visits to organizations such as Larsen & Toubro (L&T) introduce students to construction technologies, prefabrication processes, and industrial engineering operations.",
+            "Through student projects, technical workshops, expert lectures, and industrial visits, students gain opportunities to understand engineering concepts and their practical applications. Exposure to industry practices through visits to organizations such as Larsen & Toubro (L&T) helps students understand modern construction technologies, prefabrication processes, and industrial engineering operations.",
             "The department promotes innovation through project-based and research-oriented learning. Students explore sustainable energy solutions, thermoelectric systems, HVAC technologies, and emerging mechanical engineering applications.",
         ],
         preview: "The Department of Mechanical Engineering at SRMU develops technically competent engineers through a combination of engineering fundamentals, practical learning, research, and industry exposure.",
@@ -317,9 +317,9 @@ export const departmentOfMechanicalEngineeringNewData: CustomDepartmentNewData =
         intro: "Students apply engineering principles through practical projects, technical workshops, and exposure to industrial technologies. Learning activities cover energy conversion, sustainable systems, fabrication, and thermal engineering.",
         items: [
             { num: "01", title: "Thermal Engineering & Energy Systems", desc: "Explore heat transfer, energy conversion, thermal performance, and sustainable energy applications.", accent: "#d62c2b", icon: Thermometer, animClass: "lab-icon-orbital" },
-            { num: "02", title: "Design & Fabrication", desc: "Build practical understanding of engineering design, fabrication techniques, material selection, and prototype development through project-based learning.", accent: "#1B4F91", icon: Wrench, animClass: "lab-icon-pulse" },
-            { num: "03", title: "Sustainable Energy & Energy Harvesting", desc: "Explore energy utilization, thermoelectric systems, and sustainable energy solutions through research-oriented projects.", accent: "#14284E", icon: Zap, animClass: "lab-icon-float" },
-            { num: "04", title: "HVAC & Thermal Systems", desc: "Learn about heating, ventilation, and air-conditioning systems, their components, operating principles, and industrial applications.", accent: "#d62c2b", icon: Wind, animClass: "lab-icon-network" },
+            { num: "02", title: "Design & Fabrication", desc: "Develop practical understanding of engineering design, fabrication techniques, material selection, and prototype development through project-based learning.", accent: "#1B4F91", icon: Wrench, animClass: "lab-icon-pulse" },
+            { num: "03", title: "Sustainable Energy & Energy Harvesting", desc: "Explore emerging approaches to energy utilization, thermoelectric systems, and sustainable energy solutions through research-oriented projects.", accent: "#14284E", icon: Zap, animClass: "lab-icon-float" },
+            { num: "04", title: "HVAC & Thermal Systems", desc: "Gain knowledge of heating, ventilation, and air-conditioning systems, including their components, operating principles, and industrial applications.", accent: "#d62c2b", icon: Wind, animClass: "lab-icon-network" },
         ],
     },
     highlights: {
@@ -337,72 +337,112 @@ export const departmentOfMechanicalEngineeringNewData: CustomDepartmentNewData =
     events: {
         headingBefore: "From Classroom Concepts to",
         headingHighlight: "Real-World Applications",
-        sectionSubtitle: "Guest Lectures & Expert Sessions",
-        intro: "The department has recorded three guest lectures. The featured session below connected mechanical engineering students with current research in smart materials and energy harvesting.",
+        sectionSubtitle: "",
+        intro: "",
         cards: [
-            activityCard(
-                "EXPERT LECTURE",
-                "Vibration Analysis of Energy Harvesting Functionally Graded Piezoelectric Structures under Hygrothermal Load",
-                "The lecture explored the integration of piezoelectric materials with functionally graded structures for energy harvesting under changing temperature and humidity conditions. Topics included smart materials, mathematical modelling, free and forced vibration analysis, environmental and boundary conditions, Finite Element Method (FEM) analysis, and applications in aerospace, civil, and mechanical engineering.",
-                energyImage,
-                "1 April 2026 | Dr. Pawan Kumar, Assistant Professor, Department of Mechanical Engineering, IIITDM Kurnool, Andhra Pradesh",
-            ),
-        ],
-    },
-    activitySections: [
-        {
-            id: "industry-exposure",
-            eyebrow: "Learning from Engineering Workplaces",
-            heading: "Industrial Visits & Industry Exposure",
-            intro: "The department has recorded two industrial visits. The featured visit gave students exposure to prefabricated construction, modular building methods, and engineering applications in Ayodhya.",
-            cards: [
-                activityCard(
+            {
+                ...activityCard(
+                    "EXPERT LECTURE",
+                    "Vibration Analysis of Energy Harvesting Functionally Graded Piezoelectric Structures under Hygrothermal Load",
+                    "The lecture explored the integration of piezoelectric materials with functionally graded structures for energy harvesting under varying environmental conditions, including temperature and humidity.",
+                    energyImage,
+                    "1 April 2026 | Speaker: Dr. Pawan Kumar, Assistant Professor, Department of Mechanical Engineering, IIITDM Kurnool, Andhra Pradesh",
+                ),
+                readMore: `The lecture explored the integration of piezoelectric materials with functionally graded structures for efficient energy harvesting under varying environmental conditions, including temperature and humidity.
+
+Key discussions included:
+• Applications of smart materials in modern engineering.
+• Mathematical modelling of piezoelectric functionally graded structures.
+• Free and forced vibration analysis and governing equations of motion.
+• Influence of environmental conditions and boundary conditions on structural performance.
+• Numerical analysis techniques, including the Finite Element Method (FEM).
+• Applications in aerospace, civil, and mechanical engineering.
+
+The session enhanced students' understanding of smart material behavior, vibration characteristics, and energy harvesting applications while introducing them to contemporary research developments.`,
+            },
+            {
+                ...activityCard(
                     "INDUSTRIAL VISIT",
                     "L&T PPVC Factory and Ram Temple, Ayodhya",
                     "Students and faculty visited the L&T PPVC Factory to learn about prefabricated prefinished volumetric construction (PPVC), off-site modular construction, prefabrication processes, and sustainable building techniques. At the Ram Temple, students observed how traditional Nagara-style architecture integrates with modern engineering practices.",
                     industryImage,
                     "18 September 2025 | Ayodhya",
                 ),
-            ],
-        },
-        {
-            id: "workshops",
-            eyebrow: "Develop Practical Skills Through Expert-Led Workshops",
-            heading: "Workshops & Technical Training",
-            intro: "Technical workshops strengthen students' understanding of engineering systems, industrial technologies, and their practical applications.",
-            cards: [
-                activityCard(
+                readMore: `The Department of Mechanical Engineering organized an educational visit for students and faculty members to the L&T PPVC Factory and Ram Temple in Ayodhya.
+
+At the L&T facility, students gained practical insights into prefabricated prefinished volumetric construction (PPVC), off-site modular construction, prefabrication processes, and sustainable building techniques.
+
+The visit to the Ram Temple offered an opportunity to observe the integration of traditional Nagara-style architecture with modern engineering practices. The experience helped students connect classroom concepts with industrial construction methods and real-world engineering applications.
+
+L&T Industry Exposure
+
+Industrial Visit Highlights:
+• Exposure to L&T's PPVC manufacturing and construction processes.
+• Understanding of modular and prefabricated construction techniques.
+• Insights into sustainable building technologies.
+• Learning from the engineering and architectural practices at Ram Temple, Ayodhya.
+
+The department has recorded 2 industrial visits. Details of the second visit can be added when available.`,
+            },
+            {
+                ...activityCard(
                     "TECHNICAL WORKSHOP",
                     "Heating, Ventilation, and Air Conditioning (HVAC)",
                     "The workshop introduced the fundamental principles, major components, and practical applications of modern air-conditioning and ventilation systems. Students explored centralized HVAC systems, how they operate, and their industrial applications.",
                     thermalImage,
-                    "5 February 2025 | Er. Veer Shankar Bhatnagar, SCORTEK Technology India Pvt. Ltd.",
+                    "5 February 2025 | Industry Expert: Er. Veer Shankar Bhatnagar, SCORTEK Technology India Pvt. Ltd.",
                 ),
-            ],
-        },
-        {
-            id: "student-projects",
-            eyebrow: "Applying Engineering Concepts to Practical Challenges",
-            heading: "Student Projects & Innovation",
-            intro: "Four student projects were completed across academic years 2024–25 and 2025–26. Featured projects connect engineering fundamentals with energy and sustainability challenges.",
-            cards: [
-                activityCard(
+                readMore: `The Faculty of Mechanical Engineering organized a workshop on Heating, Ventilation, and Air Conditioning (HVAC) to introduce students to the fundamental principles, major components, and practical applications of modern air-conditioning and ventilation systems.
+
+The session covered centralized HVAC systems, their operating principles, and real-world industrial applications. Through expert interaction, students gained practical insights into modern HVAC technologies and their importance in engineering infrastructure.
+
+Key Learning Areas:
+• Fundamentals of heating, ventilation, and air-conditioning.
+• Major components and functioning of HVAC systems.
+• Centralized air-conditioning systems.
+• Practical applications of HVAC technologies.
+• Industrial applications of ventilation and cooling systems.`,
+            },
+            {
+                ...activityCard(
                     "STUDENT PROJECT",
                     "Removal of CO₂ from Biogas Using Sustainable Energy",
                     "This project explores an energy-efficient and sustainable method for removing carbon dioxide from biogas to improve methane content and fuel quality. It uses sustainable energy sources to reduce energy consumption and environmental impact while supporting cleaner biofuel production.",
                     projectImage,
                     "Academic years 2024–25 and 2025–26",
                 ),
-                activityCard(
+                readMore: `Project 01: Removal of CO₂ from Biogas Using Sustainable Energy
+
+This project focuses on developing an energy-efficient and sustainable method for removing carbon dioxide (CO₂) from biogas to improve its methane content and fuel quality. It explores the use of renewable and sustainable energy sources to minimize energy consumption and environmental impact, supporting the production of cleaner and more efficient biofuel.
+
+Key Focus Areas:
+• Biogas purification and CO₂ removal.
+• Improvement of methane content and fuel quality.
+• Sustainable energy utilization.
+• Energy-efficient biofuel production.`,
+            },
+            {
+                ...activityCard(
                     "STUDENT PROJECT",
                     "Fabrication and Study of a Flat Plate Thermoelectric Collector",
                     "Students designed, fabricated, and experimentally investigated a flat plate thermoelectric collector that converts available heat into electrical energy. The study evaluates temperature differences, power output, efficiency, and performance under different operating conditions.",
                     energyImage,
                     "Academic years 2024–25 and 2025–26",
                 ),
-            ],
-        },
-    ],
+                readMore: `Project 02: Fabrication and Study of a Flat Plate Thermoelectric Collector
+
+This project involves the design, fabrication, and experimental investigation of a flat plate thermoelectric collector for converting available heat into useful electrical energy.
+
+The study evaluates temperature differences, power output, efficiency, and performance under different operating conditions, with the aim of developing a simple and sustainable energy-harvesting system.
+
+Key Focus Areas:
+• Thermoelectric energy conversion.
+• Design and fabrication of a flat plate collector.
+• Experimental performance evaluation.
+• Temperature difference, power output, and efficiency analysis.`,
+            },
+        ],
+    },
     research: {
         eyebrow: "Exploring Sustainable Engineering Through Research",
         heading: "Research & Innovation",
@@ -439,23 +479,27 @@ export const departmentOfMechanicalEngineeringNewData: CustomDepartmentNewData =
     },
     facultySection: {
         members: mechanicalFaculty,
-        subheading: "Faculty members guide students in engineering fundamentals, project work, practical learning, and emerging mechanical engineering applications.",
+        headingText: "Learn from Experienced Faculty &",
+        headingHighlight: "Engineering Professionals",
+        subheading: `The Department of Mechanical Engineering focuses on academic learning, technical development and research-oriented activities. Faculty members guide students through engineering concepts, project work, practical learning and emerging technological applications.
+
+`,
         featuredLabel: "PROFESSOR & DEAN",
         featuredDescription: "Dr. Rajesh Kr. Porwal leads the Faculty of Mechanical Engineering, with research expertise in micro manufacturing, optimization, industrial engineering, renewable energy, machining, Industry 5.0, and biofuels.",
         profileDescription: "Mechanical Engineering faculty support academic learning, practical training, student projects, and research-oriented activities.",
         showResearchShowcase: false,
     },
     faq: [
-        { q: "What is the Department of Mechanical Engineering at SRMU?", a: "The department focuses on engineering education, practical learning, research, and innovation in mechanical systems, thermal engineering, design, manufacturing, and sustainable technologies." },
-        { q: "Which programmes are offered by the Department of Mechanical Engineering?", a: "The programme list includes undergraduate options in mechanical engineering, integrated programmes, and postgraduate study in production and industrial engineering. Refer to SRMU's current approved programme list for the latest availability." },
-        { q: "Does the department provide industry exposure through L&T?", a: "Yes. The department organized an industrial visit to the L&T PPVC Factory in Ayodhya on 18 September 2025, where students learned about prefabrication, modular construction, and sustainable building techniques." },
-        { q: "What practical projects do Mechanical Engineering students undertake?", a: "Featured student projects include sustainable energy-based CO₂ removal from biogas and the fabrication and study of a flat plate thermoelectric collector." },
-        { q: "How many student projects have been completed in the last two academic years?", a: "The department has recorded four student projects during academic years 2024–25 and 2025–26." },
-        { q: "Does the department organize technical workshops?", a: "Yes. An HVAC workshop was conducted on 5 February 2025 by Er. Veer Shankar Bhatnagar from SCORTEK Technology India Pvt. Ltd." },
-        { q: "Are guest lectures organized for Mechanical Engineering students?", a: "Yes. The department has recorded three guest lectures. A featured session by Dr. Pawan Kumar of IIITDM Kurnool covered vibration analysis of energy harvesting functionally graded piezoelectric structures." },
-        { q: "What are the key research areas explored by students?", a: "Project and research areas include sustainable energy, biogas purification, CO₂ removal, thermoelectric energy conversion, energy harvesting, and HVAC and thermal engineering." },
-        { q: "What was the purpose of the industrial visit to Ram Temple, Ayodhya?", a: "The visit gave students an opportunity to observe the integration of traditional Nagara-style architecture with modern engineering practices and understand construction-related applications." },
-        { q: "What career opportunities are available after Mechanical Engineering?", a: "Graduates can explore opportunities in mechanical design, manufacturing, production, automotive engineering, HVAC, thermal systems, energy engineering, infrastructure, and research and development." },
+        { q: "What is the Department of Mechanical Engineering at SRMU?", a: "The Department of Mechanical Engineering at SRMU focuses on engineering education, practical learning, research and innovation in areas related to mechanical systems, thermal engineering, design, manufacturing and sustainable technologies." },
+        { q: "What programme is offered by the Department of Mechanical Engineering?", a: "Refer to the university's current approved programme list for details of available Mechanical Engineering programmes." },
+        { q: "Does the department provide industry exposure through L&T?", a: "Yes. The department organised an industrial visit to the L&T PPVC Factory in Ayodhya on 18 September 2025, providing students with insights into prefabrication, modular construction and sustainable building techniques." },
+        { q: "What practical projects do Mechanical Engineering students undertake?", a: "Students have undertaken projects involving CO₂ removal from biogas using sustainable energy and the fabrication and study of a flat plate thermoelectric collector." },
+        { q: "How many student projects have been completed in the last two academic years?", a: "The department has recorded four student projects during the academic years 2024–25 and 2025–26." },
+        { q: "Does the department organise technical workshops?", a: "Yes. The department has organised workshops, including an HVAC workshop conducted on 5 February 2025 by industry expert Er. Veer Shankar Bhatnagar from SCORTEK Technology India Pvt. Ltd." },
+        { q: "Are guest lectures organised for Mechanical Engineering students?", a: "Yes. The department has recorded three guest lectures. One featured session was delivered by Dr. Pawan Kumar of IIITDM Kurnool on vibration analysis of energy harvesting functionally graded piezoelectric structures." },
+        { q: "What are the key research areas explored by students?", a: "Student project areas include sustainable energy, biogas purification, CO₂ removal, thermoelectric energy conversion and energy harvesting." },
+        { q: "What was the purpose of the industrial visit to Ram Temple, Ayodhya?", a: "The visit offered students an opportunity to observe the integration of traditional Nagara-style architecture with modern engineering practices and understand construction-related engineering applications." },
+        { q: "What career opportunities are available after Mechanical Engineering?", a: "Graduates can explore opportunities in mechanical design, manufacturing, production, automotive engineering, HVAC, thermal systems, energy engineering, infrastructure and research and development." },
     ],
     showFaculty: true,
     showScholarships: true,

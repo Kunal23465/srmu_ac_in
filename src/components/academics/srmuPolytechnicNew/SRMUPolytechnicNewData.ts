@@ -167,9 +167,9 @@ export const srmuPolytechnicNewData: CustomDepartmentNewData = {
         ],
     },
     events: {
-        headingBefore: "Learning Through",
-        headingHighlight: "Practical Experience",
-        sectionSubtitle: "Technical Learning Experiences",
+        headingBefore: "From Classroom Concepts to",
+        headingHighlight: "Real-World Applications",
+        sectionSubtitle: "Turning Technical Knowledge into Practical Expertise",
         intro: "SRMU Polytechnic emphasises experiential learning through industrial visits, technical workshops, expert lectures, seminars, and hands-on training. These activities help students understand real-world engineering applications and develop practical competencies for professional environments.",
         cards: [
             card("INDUSTRIAL VISITS", "Learning Through Industry Exposure", "Industrial visits provide opportunities to observe industrial operations, manufacturing processes, engineering applications, and workplace practices.", industryVisitImage),
@@ -181,20 +181,20 @@ export const srmuPolytechnicNewData: CustomDepartmentNewData = {
         ],
     },
     highlights: {
-        headingBefore: "Research &",
-        headingHighlight: "Publications",
+        headingBefore: "What Makes SRMU",
+        headingHighlight: "Polytechnic Different?",
         items: [
-            { num: "01", title: "Industry-Oriented Technical Education", desc: "Programmes develop fundamental engineering knowledge alongside practical and technical competencies.", icon: BookOpen },
+            { num: "01", title: "Industry-Oriented Technical Education", desc: "Programs are designed to develop fundamental engineering knowledge alongside practical and technical competencies.", icon: BookOpen },
             { num: "02", title: "Hands-on Learning Experience", desc: "Laboratory sessions, workshops, and practical training help students understand real-world engineering applications.", icon: Wrench },
             { num: "03", title: "Experienced Faculty", desc: "Students receive academic guidance and technical mentoring from qualified faculty members with academic and industry experience.", icon: UsersRound },
             { num: "04", title: "Industrial Exposure", desc: "Industrial visits, expert lectures, and professional interactions help students understand workplace expectations and industry practices.", icon: Factory },
-            { num: "05", title: "Emerging Technology Exposure", desc: "Students are encouraged to explore Artificial Intelligence, cybersecurity, electric vehicles, and mechatronics.", icon: Lightbulb },
-            { num: "06", title: "Supportive Learning Environment", desc: "Academic support and learning interventions help students strengthen understanding and progress towards their goals.", icon: ShieldCheck },
+            { num: "05", title: "Emerging Technology Exposure", desc: "Students are encouraged to explore futuristic technologies such as artificial intelligence, cybersecurity, electric vehicles, and mechatronics.", icon: Lightbulb },
+            { num: "06", title: "Supportive Learning Environment", desc: "Special academic support and learning interventions help students strengthen their understanding and progress towards their academic goals.", icon: ShieldCheck },
             { num: "07", title: "Career & Placement Support", desc: "Career guidance and placement assistance help students prepare for employment opportunities across relevant technical sectors.", icon: GraduationCap },
         ],
     },
     career: {
-        heading: "Career Opportunities",
+        heading: "Where Can a Polytechnic Diploma Take You?",
         items: [
             ["Civil", "Engineering"],
             ["Mechanical", "Production"],

@@ -197,9 +197,9 @@ export const facultyOfManagementNewData: CustomDepartmentNewData = {
         ],
     },
     events: {
-        headingBefore: "From Management Concepts to",
-        headingHighlight: "Business Practice",
-        sectionSubtitle: "Learning Through Industry and Application",
+        headingBefore: "From Classroom Concepts to",
+        headingHighlight: "Real-World Applications",
+        sectionSubtitle: "",
         intro: "Students connect management theory with professional practice through expert-led sessions, industry engagement, business cases, and collaborative projects.",
         cards: [
             card("GUEST LECTURES", "Learning from Industry Experts", "Interactions with industry professionals and academic experts cover contemporary management practices, business trends, leadership, and entrepreneurship.", seminarImage, "Business trends, leadership, and entrepreneurship"),
@@ -221,7 +221,7 @@ export const facultyOfManagementNewData: CustomDepartmentNewData = {
         },
     ],
     career: {
-        heading: "Career Opportunities in Management",
+        heading: "Where Can a Degree in Management Take You?",
         items: [
             ["Business", "Analyst"],
             ["Management", "Consultant"],

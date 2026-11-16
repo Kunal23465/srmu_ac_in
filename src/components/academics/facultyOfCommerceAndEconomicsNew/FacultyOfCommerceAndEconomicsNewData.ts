@@ -183,7 +183,7 @@ export const facultyOfCommerceAndEconomicsNewData: CustomDepartmentNewData = {
     events: {
         headingBefore: "From Classroom Concepts to",
         headingHighlight: "Real-World Applications",
-        sectionSubtitle: "Practical and Co-Curricular Learning",
+        sectionSubtitle: "",
         intro: "The faculty encourages students to participate in academic and co-curricular activities that connect theoretical knowledge with practical applications in commerce and economics.",
         cards: [
             card("GUEST LECTURES", "Expert Sessions", "Expert sessions introduce students to emerging trends in commerce, banking, finance, economics, and business practices.", seminarImage, "Commerce, banking, finance, economics, and business"),

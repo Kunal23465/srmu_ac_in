@@ -178,7 +178,7 @@ export default function DepartmentFaculty({
                                 {headingHighlight}
                             </span>
                         </h2>
-                        <p className={styles.subheading}>
+                        <p className={`${styles.subheading} whitespace-pre-line`}>
                             {subheading}
                         </p>
                     </div>
