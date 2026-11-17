@@ -84,6 +84,10 @@ export type CustomDepartmentNewData = {
         cards?: DepartmentActivityCardNew[];
         listTitle?: string;
         listItems?: string[];
+        stats?: { value: string; label: string; icon?: LucideIcon }[];
+        lists?: { title: string; items: string[] }[];
+        backgroundImage?: string;
+        listLayout?: "capsule";
     }[];
     studentProjects?: {
         eyebrow: string;

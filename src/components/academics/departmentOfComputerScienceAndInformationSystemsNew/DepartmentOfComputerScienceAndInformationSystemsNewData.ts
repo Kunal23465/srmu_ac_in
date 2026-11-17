@@ -1,5 +1,6 @@
 import {
     Activity,
+    BookOpenCheck,
     Cpu,
     Factory,
     GraduationCap,
@@ -24,6 +25,7 @@ import rohitAnandPortrait from "../../../assets/images/academics/institutes/cse-
 import archanaMauryaPortrait from "../../../assets/images/academics/institutes/cse-is/cse-is2.png";
 import julliusKumarPortrait from "../../../assets/images/academics/institutes/cse-is/cse-is3.png";
 import anuradhaYadavPortrait from "../../../assets/images/academics/institutes/cse-is/Anuradha Yadav.png";
+import higherStudiesBackground from "../../../assets/images/department-of-computer-science-and-information-systems-new/Modern-Higher-Studies-Wave-Banner.png";
 
 const card = (
     tag: string,
@@ -182,8 +184,8 @@ export const departmentOfComputerScienceAndInformationSystemsNewData: CustomDepa
         ],
     },
     events: {
-        headingBefore: "Events of",
-        headingHighlight: "Department",
+        headingBefore: "From Classroom Concepts to",
+        headingHighlight: "Real-World Applications",
         sectionSubtitle: "Guest Lectures",
         intro: "The department encourages students to connect academic concepts with practical applications through expert interactions, industry visits, workshops, student projects, research activities, and hackathons.",
         cards: [
@@ -191,78 +193,79 @@ export const departmentOfComputerScienceAndInformationSystemsNewData: CustomDepa
             card("GUEST LECTURE", "Data Science Fundamentals and its Application", "16th April, 2025", dataScienceLecture, "Mr. Shivam Tiwari, Data Engineer, IBM Hyderabad", "Speaker: Mr. Shivam Tiwari, Data Engineer, IBM Hyderabad. Topic: Data Science Fundamentals and its Application. Date: 16th April, 2025"),
             card("GUEST LECTURE", "International Women's Day", "08th March, 2025", inspirationWorkshop, "Prof. Dr. Bineet Kumar Gupta, Head of DCSIS, SRMU Barabanki", "Speaker: Prof. Dr. Bineet Kumar Gupta, Head of DCSIS, SRMU Barabanki. Topic: International Women's Day. Date: 08th March, 2025"),
             card("GUEST LECTURE", "National Science Day", "28th February, 2025", nationalScienceDay, "Dr. Anil Gaikwadji, Sr. Principal Scientist CSIS, CDRI Lucknow", "Speaker: Dr. Anil Gaikwadji, Sr. Principal Scientist CSIS, CDRI Lucknow. Topic: National Science Day. Date: 28th February, 2025"),
+            card("INDUSTRY EXPOSURE", "Larsen & Toubro (L&T)", "The department highlights industry exposure and collaborations with Larsen & Toubro (L&T), supporting opportunities for students to understand industry-oriented learning and professional practices.", industryCollaboration),
+            card("STUDENT PROJECT", "ConstructAI – AI-Powered Construction Assistant", "An AI-powered project focused on applying artificial intelligence to construction-related assistance and information needs.", constructAiImage),
+            card("WORKSHOP", "Hands-on Practice on LabVIEW", "A practical learning session introducing students to LabVIEW and its applications.", inspirationWorkshop),
+            card("HACKATHON", "Smart India Hackathon (SIH)", "Participation in the Smart India Hackathon provides students with opportunities to work on problem statements, develop technology-based solutions, and collaborate in teams.", hackathonImage),
+
+
         ],
     },
     activitySections: [
-        {
-            id: "industry-exposure",
-            eyebrow: "Industry Exposure and Collaborations",
-            heading: "",
-            intro: "Industry visits and professional interactions help students understand workplace practices, technology applications, and industry expectations.\n\nThe department highlights industry exposure and collaborations with Larsen & Toubro (L&T), supporting opportunities for students to understand industry-oriented learning and professional practices.",
-            cards: [
-                card("INDUSTRY EXPOSURE", "Larsen & Toubro (L&T)", "The department highlights industry exposure and collaborations with Larsen & Toubro (L&T), supporting opportunities for students to understand industry-oriented learning and professional practices.", industryCollaboration),
-            ],
-        },
-        {
-            id: "student-projects",
-            eyebrow: "Student Projects",
-            heading: "",
-            intro: "Project-based learning encourages students to develop technical solutions, apply programming concepts, and strengthen their problem-solving abilities.",
-            cards: [
-                card("STUDENT PROJECT", "ConstructAI – AI-Powered Construction Assistant", "An AI-powered project focused on applying artificial intelligence to construction-related assistance and information needs.", constructAiImage),
-            ],
-        },
-        {
-            id: "workshops",
-            eyebrow: "Workshops",
-            heading: "",
-            intro: "Hands-on workshops help students strengthen their practical understanding of programming tools, software platforms, and emerging technologies.",
-            cards: [
-                card("WORKSHOP", "Hands-on Practice on LabVIEW", "A practical learning session introducing students to LabVIEW and its applications.", inspirationWorkshop),
-            ],
-        },
-        {
-            id: "hackathons",
-            eyebrow: "Hackathons",
-            heading: "",
-            intro: "Students are encouraged to participate in innovation challenges and collaborative problem-solving activities.",
-            cards: [
-                card("HACKATHON", "Smart India Hackathon (SIH)", "Participation in the Smart India Hackathon provides students with opportunities to work on problem statements, develop technology-based solutions, and collaborate in teams.", hackathonImage),
-            ],
-        },
+        // {
+        //     id: "industry-exposure",
+        //     eyebrow: "Industry Exposure and Collaborations",
+        //     heading: "",
+        //     intro: "Industry visits and professional interactions help students understand workplace practices, technology applications, and industry expectations.\n\nThe department highlights industry exposure and collaborations with Larsen & Toubro (L&T), supporting opportunities for students to understand industry-oriented learning and professional practices.",
+        //     cards: [
+        //     ],
+        // },
+        // {
+        //     id: "student-projects",
+        //     eyebrow: "Student Projects",
+        //     heading: "",
+        //     intro: "Project-based learning encourages students to develop technical solutions, apply programming concepts, and strengthen their problem-solving abilities.",
+        //     cards: [
+        //     ],
+        // },
+        // {
+        //     id: "workshops",
+        //     eyebrow: "Workshops",
+        //     heading: "",
+        //     intro: "Hands-on workshops help students strengthen their practical understanding of programming tools, software platforms, and emerging technologies.",
+        //     cards: [
+        //     ],
+        // },
+        // {
+        //     id: "hackathons",
+        //     eyebrow: "Hackathons",
+        //     heading: "",
+        //     intro: "Students are encouraged to participate in innovation challenges and collaborative problem-solving activities.",
+        //     cards: [
+        //     ],
+        // },
         {
             id: "research-publications",
             eyebrow: "Research & Publications",
             heading: "",
             intro: "The department encourages research, innovation, and the development of technology-driven solutions. Students and faculty members explore emerging areas of computer science through research papers, publications, patents, and technical projects.",
-            listTitle: "Research Highlights",
-            listItems: [
-                "100+ Research Papers Published in Reputed Journals",
-                "8+ Books and Book Chapters Published",
-                "5+ Ph.D. Awarded",
-                "4+ Patents Granted/Published",
+            stats: [
+                { value: "100+", label: "Research Papers Published in Reputed Journals", icon: Microscope },
+                { value: "8+", label: "Books and Book Chapters Published", icon: BookOpenCheck },
+                { value: "5+", label: "Ph.D. Awarded", icon: GraduationCap },
+                { value: "4+", label: "Patents Granted/Published", icon: ShieldCheck },
             ],
-        },
-        {
-            id: "research-areas",
-            eyebrow: "Key Research Areas",
-            heading: "",
-            listTitle: "Key Research Areas",
-            listItems: [
-                "Artificial Intelligence and Machine Learning",
-                "Data Science and Analytics",
-                "Cyber Security and Network Security",
-                "Cloud Computing",
-                "Software Engineering",
-                "Computer Vision and Image Processing",
-                "Emerging Computing Technologies",
+            lists: [
+                {
+                    title: "Key Research Areas",
+                    items: [
+                        "Artificial Intelligence and Machine Learning",
+                        "Data Science and Analytics",
+                        "Cyber Security and Network Security",
+                        "Cloud Computing",
+                        "Software Engineering",
+                        "Computer Vision and Image Processing",
+                        "Emerging Computing Technologies",
+                    ],
+                },
             ],
         },
         {
             id: "higher-studies",
             eyebrow: "Higher Studies",
-            heading: "",
-            listTitle: "Higher Studies",
+            heading: "Higher Studies",
+            backgroundImage: higherStudiesBackground,
+            listLayout: "capsule",
             listItems: [
                 "After completing a BCA, students can explore postgraduate options such as an MCA and other relevant postgraduate programs, subject to eligibility requirements.",
                 "B.Tech. graduates can pursue M.Tech., specialized postgraduate programs, and research opportunities in computing and emerging technologies.",
