@@ -22,7 +22,7 @@
 .readMore { display: none; }
 .domains { display: grid; gap: 18px; margin-top: 20px; }
 .domainRow { display: grid; grid-template-columns: 1fr 1fr 1.22fr .9fr; }
-.domainRow + .domainRow { grid-template-columns: 1.1fr 1.15fr 1.35fr; max-width: 92%; }
+.domainRowCompact { grid-template-columns: 1.1fr 1.15fr 1.35fr; max-width: 92%; }
 .gridDomains { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px 0; }
 .domain { position: relative; display: flex; align-items: center; gap: 10px; min-width: 0; padding: 0 15px; font-size: 13px; font-weight: 500; line-height: 1.25; }
 .domain:first-child { padding-left: 0; }
@@ -130,7 +130,7 @@
   .domains { gap: 14px; margin-top: 18px; }
   .gridDomains { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 12px; }
   .domainRow { grid-template-columns: 1fr 1fr; gap: 14px 12px; }
-  .domainRow + .domainRow { grid-template-columns: 1fr 1fr; gap: 14px 12px; max-width: none; }
+  .domainRowCompact { grid-template-columns: 1fr 1fr; gap: 14px 12px; max-width: none; }
   .domain { padding: 0; font-size: 12px; }
   .domain + .domain::before { display: none; }
   .domainIcon { flex-basis: 34px; height: 34px; }

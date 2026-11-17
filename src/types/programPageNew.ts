@@ -7,6 +7,12 @@
 export interface HeroBannerDataNew {
   /** E.g. "B.Tech. Computer Science and Engineering" */
   degreeTitle: string;
+  /** Optional single H1 for pages whose SEO heading differs from the specialization name. */
+  pageHeading?: string;
+  /** Alternative text for the temporary desktop and mobile hero artwork. */
+  bannerAlt?: string;
+  /** Program label used in the enquiry form. */
+  programLabel?: string;
   /** Highlighted specialization name, e.g. "Cyber Security" */
   specialization: string;
   /** Subtitle below specialization, e.g. "In collaboration with L&T" */
@@ -29,6 +35,12 @@ export interface BenefitCardNew {
 export interface WhyStudyDataNew {
   /** Year in heading, e.g. "2027" */
   year: string;
+  /** Optional heading override for programmes outside the default B.Tech CSE pattern. */
+  heading?: string;
+  /** Optional suffix rendered in the accent color. */
+  headingHighlight?: string;
+  /** Render the section heading larger while keeping its semantic h2 level. */
+  largeHeading?: boolean;
   /** Opening quote */
   quote: string;
   /** Main description paragraphs */
@@ -54,6 +66,15 @@ export interface LtTableRowNew {
 }
 
 export interface LtBenefitsDataNew {
+  /** Optional full heading override. */
+  heading?: string;
+  /** Optional heading suffix rendered in the title accent color. */
+  headingHighlight?: string;
+  /** Optional overview heading and copy below the L&T benefits section. */
+  overviewHeading?: string;
+  /** Optional overview heading suffix rendered in the accent color. */
+  overviewHeadingHighlight?: string;
+  overviewDescription?: string;
   introText: string;
   domainRows: DomainTagRowNew[];
   followUpText: string;
@@ -64,6 +85,9 @@ export interface LtBenefitsDataNew {
   tableRows: LtTableRowNew[];
   /** Optional background image for the table section */
   tableBackgroundImageUrl?: string;
+  /** Optional illustration for the L&T benefits section. */
+  artworkUrl?: string;
+  artworkAlt?: string;
 }
 
 export interface IndustryCardNew {
@@ -111,6 +135,9 @@ export interface PlacementDataNew {
   imageUrl: string;
   imageAlt: string;
   placementDetailUrl: string;
+  description?: string;
+  heading?: string;
+  recruitersHeading?: string;
 }
 
 export interface LabCardNew {
@@ -124,6 +151,8 @@ export interface LabCardNew {
   items: string[];
   /** Optional lab photo shown above the lab card content */
   imageUrl?: string;
+  /** Alternative text for the lab photo. */
+  imageAlt?: string;
 }
 
 export interface CurriculumOverlayItemNew {
@@ -163,10 +192,11 @@ export interface YearDataNew {
 
 export interface YearJourneyDataNew {
   introParagraph: string;
+  heading?: string;
   year1: YearDataNew;
   year2: YearDataNew;
   year3: YearDataNew;
-  year4: YearDataNew;
+  year4?: YearDataNew;
 }
 
 export interface FeeRowNew {
@@ -174,17 +204,13 @@ export interface FeeRowNew {
   yr1: string;
   yr2: string;
   yr3: string;
-  yr4: string;
-}
-
-export interface ScholarshipItemNew {
-  text: string;
+  yr4?: string;
 }
 
 export interface FeeDataNew {
   feeRows: FeeRowNew[];
   feeNote: string;
-  scholarshipItems: ScholarshipItemNew[];
+  description?: string;
 }
 
 export interface ProgramObjectiveNew {

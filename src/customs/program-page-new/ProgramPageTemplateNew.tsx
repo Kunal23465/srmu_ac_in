@@ -11,6 +11,7 @@ import {
     ChevronDown, ChevronUp, Settings, Wrench, PenTool, Zap, Factory, Car
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import scholarshipCardBackground from "../../assets/new-home/scholarship-section/Pale-Blue-Arcs-with-Golden-Swoosh.png";
 import ltLogo from "../../assets/new-home/l-t.webp";
 import cyberSecurityLaptop from "../../assets/images/new-information-system/Gemini_Generated_Image_l8pzsel8pzsel8pz-Photoroom.png";
 import dataScienceDashboard from "../../assets/images/data-science-ai-ml-new-page/neon-data-science-dashboard-ecosystem.png";
@@ -62,6 +63,11 @@ const cyberBenefitsIcons = [Shield, Lock, Code2, Fingerprint, Landmark, Cpu, Bug
 const dataScienceBenefitsIcons = [ChartNoAxesColumnIncreasing, BrainCircuit, Cpu, Database, Code2, Sparkles, Cloud];
 const mechanicalBenefitsIcons = [PenTool, Factory, PenTool, Factory, Settings, Cpu, Zap, Settings, Shield, Lock, Wrench, Settings];
 const semiconductorBenefitsIcons = [Cpu, Code2, Cpu, Code2, Cloud, Settings, Cpu, ChartNoAxesColumnIncreasing, Fingerprint, Database];
+
+const highlightedSuffix = (text: string, suffix?: string, className = "text-[#ffb703]") => {
+    if (!suffix || !text.endsWith(suffix)) return text;
+    return <>{text.slice(0, -suffix.length)}<span className={className}>{suffix}</span></>;
+};
 
 // ================================================================
 // ProgramPageTemplateNew — main reusable template
@@ -138,8 +144,19 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
         ? industryExposure.secondaryCards
         : industryExposure.secondaryCards.slice(0, collapsedIndustryCardCount);
 
-    const yearKeys = ["year1", "year2", "year3", "year4"] as const;
-    const yearDataMap = { year1: yearJourney.year1, year2: yearJourney.year2, year3: yearJourney.year3, year4: yearJourney.year4 };
+    const yearDataMap: Record<string, (typeof yearJourney.year1) | undefined> = {
+        year1: yearJourney.year1,
+        year2: yearJourney.year2,
+        year3: yearJourney.year3,
+        year4: yearJourney.year4,
+    };
+    const yearKeys = Object.keys(yearDataMap).filter((key) => yearDataMap[key]);
+    const feeYearColumns = [
+        { label: "1st Year", key: "yr1" as const },
+        { label: "2nd Year", key: "yr2" as const },
+        { label: "3rd Year", key: "yr3" as const },
+        { label: "4th Year", key: "yr4" as const },
+    ].slice(0, yearKeys.length);
 
     return (
         <div className="program-page-new text-[#14284E] bg-white antialiased">
@@ -149,10 +166,10 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                 <section className="relative w-full overflow-hidden flex items-center sm:pt-[78px] sm:pb-8 md:min-h-[504px] md:pt-24 md:pb-14 bg-[#071329]">
                     <img
                         src={heroBanner.mobileBannerUrl}
-                        alt={`${heroBanner.specialization} Banner`}
-                        className={`w-full block sm:hidden relative z-0 ${isDataSciencePage ? "h-[125vw] object-fill" : "h-auto"}`}
+                        alt={heroBanner.bannerAlt ?? `${heroBanner.specialization} Banner`}
+                        className={`w-full block sm:hidden relative z-0 ${isDataSciencePage || heroBanner.pageHeading ? "h-[125vw] object-fill" : "h-auto"}`}
                     />
-                    <img src={heroBanner.desktopBannerUrl} alt={`${heroBanner.specialization} Banner`} className="absolute inset-0 w-full h-full object-cover z-0 hidden sm:block" />
+                    <img src={heroBanner.desktopBannerUrl} alt={heroBanner.bannerAlt ?? `${heroBanner.specialization} Banner`} className="absolute inset-0 w-full h-full object-cover z-0 hidden sm:block" />
                     <div className="absolute inset-0 bg-gradient-to-r from-[#071329]/15 via-[#091a38]/5 to-transparent z-0"></div>
                     <div className="absolute inset-0 bg-[radial-gradient(#38bdf820_1px,transparent_1px)] [background-size:28px_28px] pointer-events-none opacity-50 z-0"></div>
                     <div className="absolute -top-20 -left-20 w-96 h-96 bg-[#1b4f91]/25 rounded-full blur-[130px] pointer-events-none z-0"></div>
@@ -160,15 +177,19 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                     <div className="absolute inset-0 flex flex-col justify-between pt-[78px] pb-5 z-10 w-full sm:relative sm:inset-auto sm:pt-0 sm:pb-0 sm:block">
                         <div className={`${Classes["container"]} flex flex-col justify-between h-full sm:h-auto w-full`}>
                             <div className="w-full max-w-[650px] text-white text-left mt-2 sm:mt-0">
-                                <h2 className="text-[clamp(24px,3vw,36px)] font-semibold mb-1 leading-[1.2] drop-shadow-md">{heroBanner.degreeTitle}</h2>
-                                <h1 className="text-[clamp(40px,5vw,64px)] leading-[1.1] font-bold text-[#38bdf8] drop-shadow-md">
-                                    {heroBanner.specialization === "Data Science & Artificial Intelligence" ? (
+                                {heroBanner.pageHeading ? (
+                                    <p className="text-[clamp(18px,2.5vw,28px)] font-semibold mb-1 leading-[1.2] drop-shadow-md">{heroBanner.degreeTitle}</p>
+                                ) : (
+                                    <h2 className="text-[clamp(24px,3vw,36px)] font-semibold mb-1 leading-[1.2] drop-shadow-md">{heroBanner.degreeTitle}</h2>
+                                )}
+                                <h1 className={`${heroBanner.pageHeading ? "text-[clamp(30px,4vw,48px)]" : "text-[clamp(40px,5vw,64px)]"} leading-[1.1] font-bold text-[#38bdf8] drop-shadow-md`}>
+                                    {heroBanner.pageHeading ?? (heroBanner.specialization === "Data Science & Artificial Intelligence" ? (
                                         <>
                                             Data Science & <span className="sm:whitespace-nowrap">Artificial Intelligence</span>
                                         </>
                                     ) : (
                                         heroBanner.specialization
-                                    )}
+                                    ))}
                                 </h1>
                                 <div className="h-[3px] bg-[#38bdf8] w-[140px] sm:w-[200px] mt-1 mb-2 sm:mb-4 rounded-full"></div>
                                 {heroBanner.subtitle && (
@@ -194,7 +215,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                 <section className="sm:hidden bg-[#0f1b33] py-8 px-4 w-full">
                     <div className="rounded-2xl overflow-hidden shadow-xl border border-white/10 max-w-[650px] mx-auto">
                         <div className="bg-[#14284E] px-4 py-3 text-center">
-                            <h3 className="text-white font-bold text-[15px]">Shri Ramswaroop Memorial University</h3>
+                            <p className="text-white font-bold text-[15px]">Shri Ramswaroop Memorial University</p>
                             <div className="w-8 h-0.5 bg-[#ffb703] mx-auto mt-2 rounded-full"></div>
                         </div>
                         <div className="bg-white px-4 py-4 space-y-2.5">
@@ -210,7 +231,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                                 </select>
                                 <select className="w-full border border-gray-200 rounded-lg px-3 py-2 text-[13px] text-gray-500 outline-none focus:border-[#14284E] bg-white">
                                     <option value="">Programme</option>
-                                    <option>B.Tech CSE {heroBanner.specialization}</option>
+                                    <option>{heroBanner.programLabel ?? `B.Tech CSE ${heroBanner.specialization}`}</option>
                                 </select>
                             </div>
                             <div className="grid grid-cols-2 gap-2">
@@ -234,8 +255,10 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                 <section id="why" className="pt-8 md:pt-10 pb-4 sm:pb-6 px-4 sm:px-6 bg-[#F0F6FB]">
                     <div className={`${Classes["container"]}`}>
                         <div className="w-full mb-5 sm:mb-11">
-                            <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3.5">
-                                Why Study B.Tech CSE {heroBanner.specialization}<span className="text-[#ffb703]"> in {whyStudy.year} ?</span>
+                            <h2 className={`${whyStudy.largeHeading ? "text-[clamp(34px,4.5vw,54px)]" : "text-[clamp(24px,3vw,36px)]"} leading-[1.12] font-bold font-display text-[#14284E] mb-3.5`}>
+                                {whyStudy.heading
+                                    ? highlightedSuffix(whyStudy.heading, whyStudy.headingHighlight)
+                                    : <>Why Study B.Tech CSE {heroBanner.specialization}<span className="text-[#ffb703]"> in {whyStudy.year}?</span></>}
                             </h2>
                         </div>
                         <div className="relative bg-[#FFFBEB] sm:bg-white border border-[#ffb703] sm:border-l-4 sm:border-l-[#ffb703] sm:border-t-[#ffb703] sm:border-b-[#ffb703] sm:border-r-[#ffb703] rounded-2xl p-7 sm:p-8 text-[14px] leading-5 sm:text-[17px] sm:leading-normal text-[#14284E] font-semibold italic mb-4 sm:mb-8">
@@ -382,6 +405,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                                         <header className={benefitsStyles.header}>
                                             <span className={benefitsStyles.accent} />
                                             <h2 className={`${benefitsStyles.title} ${isMechanicalPage ? benefitsStyles.mechanicalTitle : ""}`}>
+                                                {ltBenefits.heading ? highlightedSuffix(ltBenefits.heading, ltBenefits.headingHighlight, benefitsStyles.highlight) : <>
                                                 <span>How Does</span>
                                                 <img src={ltLogo} alt="L&amp;T EduTech" className={benefitsStyles.logo} />
                                                 {isDataSciencePage ? (
@@ -404,6 +428,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                                                         <span className={benefitsStyles.highlight}>SRMU Students?</span>
                                                     </>
                                                 )}
+                                                </>}
                                             </h2>
                                         </header>
 
@@ -423,7 +448,10 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                                                 })
                                             ) : (
                                                 ltBenefits.domainRows.map((row, ri) => (
-                                                    <div key={ri} className={benefitsStyles.domainRow}>
+                                                    <div
+                                                        key={ri}
+                                                        className={`${benefitsStyles.domainRow} ${ri > 0 && row.tags.length === 3 ? benefitsStyles.domainRowCompact : ""}`}
+                                                    >
                                                         {row.tags.map((tag, ti) => {
                                                             const DomainIcon = cyberBenefitsIcons[(ri * 4 + ti) % cyberBenefitsIcons.length];
                                                             return (
@@ -462,8 +490,8 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
 
                                     <div className={`${benefitsStyles.artwork} ${isMechanicalPage ? benefitsStyles.mechanicalArtwork : ""}`}>
                                         <img
-                                            src={isDataSciencePage ? dataScienceDashboard : isMechanicalPage ? mechanicalCadArtwork : isSemiconductorPage ? semiconductorDesignWorkbench : cyberSecurityLaptop}
-                                            alt={isDataSciencePage ? "Data science dashboard illustration with analytics, AI, and a laptop" : isMechanicalPage ? "Mechanical engineering CAD tools, gears, and an industrial robotic arm" : isSemiconductorPage ? "Neon semiconductor design workbench with chip layout and circuit design" : "Laptop protected by a digital shield, with cyber security tools and cloud connections"}
+                                            src={ltBenefits.artworkUrl ?? (isDataSciencePage ? dataScienceDashboard : isMechanicalPage ? mechanicalCadArtwork : isSemiconductorPage ? semiconductorDesignWorkbench : cyberSecurityLaptop)}
+                                            alt={ltBenefits.artworkAlt ?? (isDataSciencePage ? "Data science dashboard illustration with analytics, AI, and a laptop" : isMechanicalPage ? "Mechanical engineering CAD tools, gears, and an industrial robotic arm" : isSemiconductorPage ? "Neon semiconductor design workbench with chip layout and circuit design" : "Laptop protected by a digital shield, with cyber security tools and cloud connections")}
                                             className={benefitsStyles.image}
                                             loading="lazy"
                                             decoding="async"
@@ -526,11 +554,13 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                     <div className={`relative z-10 ${Classes["container"]}`}>
                         <div className={`w-full mb-8 ${usesCyberSecurityTextLayout ? "text-left sm:text-center" : "text-center"} max-w-4xl mx-auto`}>
                             <h2 className={`text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3.5 ${usesCyberSecurityTextLayout ? "max-sm:text-left" : ""}`}>
-                                Industry-Integrated Learning <span className="text-[#ffb703]">with L&amp;T</span>
+                                {ltBenefits.overviewHeading
+                                    ? highlightedSuffix(ltBenefits.overviewHeading, ltBenefits.overviewHeadingHighlight)
+                                    : <>Industry-Integrated Learning <span className="text-[#ffb703]">with L&amp;T</span></>}
                             </h2>
                             <div>
                                 <p className={`text-[16px] text-[#4B5A72] leading-relaxed ${usesCyberSecurityTextLayout ? "text-left sm:text-justify" : "text-justify"} ${!isCyberSecurityPage && !isDataSciencePage && !isMechanicalPage && !rm["lt1"] ? "rm-clamp" : ""}`}>
-                                    The program incorporates industry exposure through L&amp;T, helping students understand how concepts are applied in professional and technology-driven environments.
+                                    {ltBenefits.overviewDescription ?? "The program incorporates industry exposure through L&T, helping students understand how concepts are applied in professional and technology-driven environments."}
                                 </p>
                                 {!isCyberSecurityPage && !isDataSciencePage && !isMechanicalPage && <button className="rm-btn mx-auto mt-2" onClick={() => toggleRm("lt1")}>{rm["lt1"] ? "Read Less" : "Read More"}</button>}
                             </div>
@@ -668,6 +698,9 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                     imageUrl={placement.imageUrl}
                     imageAlt={placement.imageAlt}
                     placementDetailUrl={placement.placementDetailUrl}
+                    description={placement.description}
+                    heading={placement.heading}
+                    recruitersHeading={placement.recruitersHeading}
                 />
 
                 {/* ===== LABS & CURRICULUM ===== */}
@@ -835,7 +868,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                                     <article key={lab.label} className="group w-[85vw] max-w-[360px] shrink-0 snap-start overflow-hidden rounded-2xl border border-[#DCE6F2] bg-white shadow-[0_4px_18px_rgba(15,31,61,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_36px_rgba(15,31,61,0.12)] sm:w-auto sm:max-w-none sm:shrink">
                                         <div className="relative aspect-[16/10] overflow-hidden bg-gradient-to-br from-[#0B1D3A] via-[#123B69] to-[#1475A5]">
                                             {labImageUrl ? (
-                                                <img src={labImageUrl} alt={lab.title} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                                                <img src={labImageUrl} alt={lab.imageAlt ?? lab.title} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
                                             ) : (
                                                 <div className="flex h-full items-center justify-center"><Shield className="h-14 w-14 text-white/60" strokeWidth={1.2} /></div>
                                             )}
@@ -877,7 +910,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                     <div className={`${Classes["container"]} mx-auto`}>
                         <div className="w-full mb-11">
                             <h2 className={`text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] ${isCyberSecurityPage ? "tracking-[-0.02em]" : ""}`}>
-                                Your Journey from Student to <span className={`text-[#ffb703] ${isCyberSecurityPage ? "whitespace-nowrap" : ""}`}>{heroBanner.specialization} Professional</span>
+                                {yearJourney.heading ?? <>Your Journey from Student to <span className={`text-[#ffb703] ${isCyberSecurityPage ? "whitespace-nowrap" : ""}`}>{heroBanner.specialization} Professional</span></>}
                             </h2>
                             <p className={`mt-4 text-[15px] leading-6 text-[#4B5A72] ${usesCyberSecurityTextLayout ? "text-left sm:text-justify" : "text-justify"}`}>{yearJourney.introParagraph}</p>
                         </div>
@@ -894,7 +927,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                         {/* Mobile accordions */}
                         <div className="md:hidden space-y-3 mb-8">
                             {yearKeys.map((key, idx) => {
-                                const yd = yearDataMap[key];
+                                const yd = yearDataMap[key]!;
                                 return (
                                     <div key={key}>
                                         <button type="button" onClick={() => setActiveTab(activeTab === key ? "" : key)} className="w-full flex items-center justify-between gap-3 rounded-xl border border-[#DCE6F2] bg-[#F6FAFE] px-3.5 py-3.5 text-left text-[13px] font-bold text-[#20283A]" aria-expanded={activeTab === key}>
@@ -932,7 +965,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
 
                         {/* Desktop tab content */}
                         {yearKeys.map((key) => {
-                            const yd = yearDataMap[key];
+                            const yd = yearDataMap[key]!;
                             return activeTab === key ? (
                                 <div key={key} className="hidden md:block bg-white border border-[#DCE6F2] rounded-xl p-7.5 max-w-4xl mx-auto">
                                     <div className="italic text-[#ffb703] font-semibold mb-5 text-[15px]">{yd.quote}</div>
@@ -988,7 +1021,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                             </h2>
                             <div className="mt-4">
                                 <p className={`text-[15px] text-[#4B5A72] ${usesCyberSecurityTextLayout || isMechanicalPage || isSemiconductorPage ? "leading-[1.5] sm:leading-7 text-left sm:text-justify" : "leading-7 text-justify"} ${!isCyberSecurityPage && !isDataSciencePage && !isMechanicalPage && !isSemiconductorPage && !rm["fee1"] ? "rm-clamp" : ""}`}>
-                                    A quality engineering education is an investment in your future — with industry-oriented learning, advanced laboratories, and placement support.
+                                    {fee.description ?? "A quality engineering education is an investment in your future — with industry-oriented learning, advanced laboratories, and placement support."}
                                 </p>
                                 {!isCyberSecurityPage && !isDataSciencePage && !isMechanicalPage && !isSemiconductorPage && <button className="rm-btn" onClick={() => toggleRm("fee1")}>{rm["fee1"] ? "Read Less" : "Read More"}</button>}
                             </div>
@@ -997,15 +1030,16 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                         {/* Mobile fee cards */}
                         <div className="sm:hidden space-y-4">
                             <div className="rounded-2xl border border-[#DCE6F2] bg-white overflow-hidden">
-                                <div className="flex items-center justify-between px-4 py-3.5 border-b border-[#DCE6F2]">
-                                    <span className="font-bold text-[14px] text-[#14284E]">Course Fee</span>
-                                    <span className="text-[11px] font-bold text-white bg-[#14284E] px-3 py-1 rounded-full">Per Year</span>
-                                </div>
+                                <div className="px-4 py-3.5 border-b border-[#DCE6F2] font-bold text-[14px] text-[#14284E]">Fee Components by Year</div>
                                 <div className="divide-y divide-dashed divide-[#DCE6F2]">
-                                    {fee.feeRows.slice(0, 5).map((row, i) => (
-                                        <div key={i} className="flex items-center justify-between px-4 py-3">
-                                            <span className="text-[13px] text-[#4B5A72]">{row.label}</span>
-                                            <span className="text-[13px] font-semibold text-[#14284E]">{row.yr1}</span>
+                                    {fee.feeRows.slice(0, 4).map((row, i) => (
+                                        <div key={i} className="px-4 py-3">
+                                            <span className="block text-[13px] text-[#4B5A72]">{row.label}</span>
+                                            <div className={`mt-2 grid ${feeYearColumns.length === 4 ? "grid-cols-4" : "grid-cols-3"} gap-2`}>
+                                                {feeYearColumns.map(({ label, key }) => (
+                                                    <span key={key} className="text-[10px] leading-4 text-[#14284E]"><span className="block font-semibold text-[#718096]">{label}</span>{row[key]}</span>
+                                                ))}
+                                            </div>
                                         </div>
                                     ))}
                                 </div>
@@ -1014,9 +1048,13 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                                 <div className="px-4 py-3.5 border-b border-[#DCE6F2]"><span className="font-bold text-[14px] text-[#14284E]">Optional Add-ons</span></div>
                                 <div className="divide-y divide-dashed divide-[#DCE6F2]">
                                     {fee.feeRows.slice(4).map((row, i) => (
-                                        <div key={i} className="flex items-center justify-between px-4 py-3">
-                                            <span className="text-[13px] text-[#4B5A72]">{row.label}</span>
-                                            <span className="text-[13px] font-semibold text-[#14284E]">{row.yr1}</span>
+                                        <div key={i} className="px-4 py-3">
+                                            <span className="block text-[13px] text-[#4B5A72]">{row.label}</span>
+                                            <div className={`mt-2 grid ${feeYearColumns.length === 4 ? "grid-cols-4" : "grid-cols-3"} gap-2`}>
+                                                {feeYearColumns.map(({ label, key }) => (
+                                                    <span key={key} className="text-[10px] leading-4 text-[#14284E]"><span className="block font-semibold text-[#718096]">{label}</span>{row[key]}</span>
+                                                ))}
+                                            </div>
                                         </div>
                                     ))}
                                 </div>
@@ -1029,20 +1067,14 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                                 <thead>
                                     <tr className="bg-[#14284E] text-white">
                                         <th className="px-5 py-4 text-[14.5px] uppercase font-semibold">Fee Component</th>
-                                        <th className="px-5 py-4 text-[14.5px] uppercase font-semibold">1st Year</th>
-                                        <th className="px-5 py-4 text-[14.5px] uppercase font-semibold">2nd Year</th>
-                                        <th className="px-5 py-4 text-[14.5px] uppercase font-semibold">3rd Year</th>
-                                        <th className="px-5 py-4 text-[14.5px] uppercase font-semibold">4th Year</th>
+                                        {feeYearColumns.map(({ label }) => <th key={label} className="px-5 py-4 text-[14.5px] uppercase font-semibold">{label}</th>)}
                                     </tr>
                                 </thead>
                                 <tbody className="text-[#1B355F] text-[14px]">
                                     {fee.feeRows.map((row, i) => (
                                         <tr key={i} className={`border-b border-[#DCE6F2] ${i % 2 !== 0 ? "bg-[#F6FAFE]" : ""}`}>
                                             <td className="px-5 py-4">{row.label}</td>
-                                            <td className="px-5 py-4">{row.yr1}</td>
-                                            <td className="px-5 py-4">{row.yr2}</td>
-                                            <td className="px-5 py-4">{row.yr3}</td>
-                                            <td className="px-5 py-4">{row.yr4}</td>
+                                            {feeYearColumns.map(({ key }) => <td key={key} className="px-5 py-4">{row[key]}</td>)}
                                         </tr>
                                     ))}
                                 </tbody>
@@ -1057,7 +1089,10 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                 </section>
 
                 {/* ===== SCHOLARSHIPS ===== */}
-                <DepartmentScholarships />
+                <DepartmentScholarships
+                    fullHeightScholarshipIllustration
+                    scholarshipCardBackgroundImage={scholarshipCardBackground}
+                />
 
                 {/* ===== PO / PSO / PLO ===== */}
                 <section className="pt-8 pb-3 sm:pb-8 md:py-10 px-6 bg-[#F0F6FB]">

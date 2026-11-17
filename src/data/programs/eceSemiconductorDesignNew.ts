@@ -344,18 +344,6 @@ const eceSemiconductorDesignNewData: ProgramPageDataNew = {
       { label: "Transportation (Optional)", yr1: "₹35,000", yr2: "₹35,000", yr3: "₹35,000", yr4: "₹35,000" },
     ],
     feeNote: "Additional charges: Alumni Fee ₹500 and Degree Fee ₹1,000 (payable in the final year). *One-time refundable caution money as per university policy. **Hostel and transportation are optional and subject to university guidelines.",
-    scholarshipItems: [
-      { text: "SRMUSET Based Scholarship" },
-      { text: "MERIT Based Scholarship" },
-      { text: "Defence, Paramilitary & Police" },
-      { text: "Sibling/Ward of SRM Group Staff, Student & Alumni" },
-      { text: "Divyang" },
-      { text: "National/State Level" },
-      { text: "Sportsperson" },
-      { text: "Career Progression" },
-      { text: "Student of another state and country" },
-      { text: "Ward of a Single Parent" },
-    ],
   },
   poPsoPlo: {
     objectives: [

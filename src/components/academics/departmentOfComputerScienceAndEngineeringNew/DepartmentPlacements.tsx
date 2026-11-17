@@ -46,6 +46,8 @@ export interface DepartmentPlacementsProps {
     imageAlt?: string;
     placementDetailUrl?: string;
     description?: string;
+    heading?: string;
+    recruitersHeading?: string;
 }
 
 export default function DepartmentPlacements({
@@ -55,9 +57,11 @@ export default function DepartmentPlacements({
     imageAlt,
     placementDetailUrl,
     description,
+    heading,
+    recruitersHeading,
 }: DepartmentPlacementsProps = {}) {
     const activeRecruiters = (recruiters && recruiters.length > 0) ? recruiters : defaultRecruiterLogos;
-    const activeStats = (stats && stats.length > 0)
+    const activeStats = stats !== undefined
         ? stats.map((s, idx) => ({
             value: s.value || s.val || "",
             label: s.label,
@@ -76,22 +80,24 @@ export default function DepartmentPlacements({
                 <div className={styles.layout}>
                     <div className={styles.content}>
                         <h2 id="cse-placements-title" className={styles.heading}>
-                            Where our Students <span>Get Placed</span>
+                            {heading ?? <>Where our Students <span>Get Placed</span></>}
                         </h2>
                         <p className={styles.description}>
                             {activeDescription}
                         </p>
-                        <dl className={styles.statistics}>
-                            {activeStats.map(({ value, label, Icon }) => (
-                                <div key={label} className={styles.statistic}>
-                                    <dt>
-                                        <span className={styles.icon} aria-hidden="true"><Icon size={32} strokeWidth={2.2} /></span>
-                                        <span>{label}</span>
-                                    </dt>
-                                    <dd>{value}</dd>
-                                </div>
-                            ))}
-                        </dl>
+                        {activeStats.length > 0 && (
+                            <dl className={styles.statistics}>
+                                {activeStats.map(({ value, label, Icon }) => (
+                                    <div key={label} className={styles.statistic}>
+                                        <dt>
+                                            <span className={styles.icon} aria-hidden="true"><Icon size={32} strokeWidth={2.2} /></span>
+                                            <span>{label}</span>
+                                        </dt>
+                                        <dd>{value}</dd>
+                                    </div>
+                                ))}
+                            </dl>
+                        )}
                     </div>
 
                     <div className={styles.visual}>
@@ -115,7 +121,7 @@ export default function DepartmentPlacements({
 
                 <div className={styles.recruiters}>
                     <div className={styles.recruitersHeader}>
-                        <h3>Top Recruiters</h3>
+                        <h3>{recruitersHeading ?? "Top Recruiters"}</h3>
                         {/* <span>Our students work at</span> */}
                     </div>
                     <div className={styles.recruitersViewport} role="region" aria-label="Top recruiters" tabIndex={0}>

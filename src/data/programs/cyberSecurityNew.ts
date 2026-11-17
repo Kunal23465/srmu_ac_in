@@ -371,14 +371,6 @@ const cyberSecurityNewData: ProgramPageDataNew = {
     ],
     feeNote:
       "Additional charges: Alumni Fee ₹500 and Degree Fee ₹1,000 (payable in the final year). *One-time refundable caution money as per university policy. **Hostel and transportation are optional and subject to university guidelines.",
-    scholarshipItems: [
-      { text: "Students securing 80% and above in 10+2 Board Examination are eligible for a merit-based scholarship on Course Fee." },
-      { text: "Scholarship up to 100% for students with 95% and above (exceptional performance)." },
-      { text: "Special scholarships for students from economically weaker sections (EWS)." },
-      { text: "Defence personnel wards scholarship — additional benefits for children of ex-servicemen." },
-      { text: "Sports scholarship — for national and state-level athletes." },
-      { text: "Girl child scholarship — additional support for female students." },
-    ],
   },
 
   // ----------------------------------------------------------

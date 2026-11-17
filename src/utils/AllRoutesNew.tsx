@@ -5,6 +5,7 @@ import NewHomePage from "../pages/NewHomePage";
 import { resolveProgramRouteSlug } from "./legacyProgramRoutes";
 import BTechCseCyberSecurityNew from "../pages/BTechCseCyberSecurityNew";
 import BTechCseDataScienceNew from "../pages/BTechCseDataScienceNew";
+import BCACyberSecurityNew from "../pages/BCACyberSecurityNew";
 import BTechMechanicalEngineeringNew from "../pages/BTechMechanicalEngineeringNew";
 import BTechEceSemiconductorDesignNew from "../pages/BTechEceSemiconductorDesignNew";
 
@@ -1212,6 +1213,10 @@ export const routes = [
       {
         path: "b-tech-cse-cyber-security-new",
         element: <BTechCseCyberSecurityNew />,
+      },
+      {
+        path: "bca-cyber-security-new",
+        element: <BCACyberSecurityNew />,
       },
       {
         path: "b-tech-cse-data-science-new",
