@@ -26,6 +26,7 @@ import FacultyOfManagementNewPage from "../pages/academics/institutes/institute-
 import FacultyOfMathematicalAndStatisticalSciencesNewPage from "../pages/academics/institutes/institute-department/faculty-of-mathematical-and-statistical-sciences-new/FacultyOfMathematicalAndStatisticalSciencesNewPage";
 import SRMUPolytechnicNewPage from "../pages/academics/institutes/institute-department/srmu-polytechnic-new/SRMUPolytechnicNewPage";
 import InstituteOfPharmaceuticalSciencesNewPage from "../pages/academics/institutes/institute-department/institute-of-pharmaceutical-sciences-new/InstituteOfPharmaceuticalSciencesNewPage";
+import FacultyOfBiotechnologyNewPage from "../pages/academics/institutes/institute-department/faculty-of-biotechnology-new/FacultyOfBiotechnologyNewPage";
 import InstituteOfEducationAndResearchNewPage from "../pages/academics/institutes/institute-department/institute-of-education-and-research-new/InstituteOfEducationAndResearchNewPage";
 
 const HomePage = lazyPage(() => import("../pages/Home/HomePage"));
@@ -1119,8 +1120,12 @@ export const routes = [
         element: <InstituteOfPharmacyNewPage />,
       },
       {
-        path: "/department-of-biosciences-and-technology-new",
+        path: "/faculty-of-biosciences-new",
         element: <InstituteOfBiosciencesAndTechnologyNewPage />,
+      },
+      {
+        path: "/faculty-of-biotechnology-new",
+        element: <FacultyOfBiotechnologyNewPage />,
       },
       {
         path: "/institute-of-agricultural-sciences-and-technology-new",

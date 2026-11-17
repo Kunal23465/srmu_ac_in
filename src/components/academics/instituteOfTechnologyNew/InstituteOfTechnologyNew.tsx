@@ -463,18 +463,20 @@ export default function InstituteOfTechnologyNew() {
                         <p data-tech-reveal className="mt-5 text-left text-[15px] leading-7 text-[#34496B] lg:text-base lg:!text-justify">Engineering education involves more than understanding theories and technical concepts. It requires the ability to apply knowledge, analyze challenges, and develop solutions. The teaching-learning approach combines academic instruction with practical engagement to help students understand engineering applications.</p>
                     </div>
                     <div className="mt-10 grid grid-cols-2 gap-x-4 gap-y-7 sm:grid-cols-2 lg:grid-cols-5 lg:gap-y-0">
-                        {learningApproaches.map((approach, index) => {
+                        {learningApproaches.map((approach) => {
                             return (
-                                <article data-tech-reveal key={approach.title} className="group relative flex flex-col border-b border-[#CBD7EA] px-1 pb-6 sm:px-5 lg:border-b-0 lg:border-r lg:border-[#CBD7EA] lg:px-5 lg:py-2 lg:first:pl-0 lg:last:border-r-0 lg:last:pr-0">
-                                    <div className="mb-5 flex items-center gap-4">
-                                        <span className="relative grid h-[54px] w-[54px] shrink-0 place-items-center rounded-full bg-[#14284E] text-white shadow-sm transition group-hover:bg-[#0F4A85]">
-                                            <span aria-hidden="true" className="absolute -right-1 -top-1 h-[58px] w-[58px] rotate-[28deg] rounded-full border-[3px] border-transparent border-r-[#FFB703] border-t-[#FFB703]" />
-                                            <img src={approach.image} alt="" loading="lazy" className="relative z-10 h-[46px] w-[46px] rounded-full border-2 border-[#14284E] object-cover" />
+                                <article data-tech-reveal key={approach.title} className="group relative z-0 flex flex-col items-center border-b border-[#CBD7EA] px-1 pb-6 text-center transition-[transform,box-shadow,background-color,border-radius] duration-500 ease-out [transform-style:preserve-3d] sm:px-5 lg:border-b-0 lg:border-r lg:border-[#CBD7EA] lg:px-5 lg:py-2 lg:last:border-r-0 hover:z-20 hover:rounded-2xl hover:bg-white/90 hover:shadow-[0_20px_40px_rgba(20,40,78,0.16)] hover:ring-1 hover:ring-[#FFB703]/50 hover:[transform:perspective(1000px)_translateZ(16px)_scale(1.025)]">
+                                    <div className="mb-5 flex w-full items-center justify-center">
+                                        <span className="relative grid h-24 w-24 shrink-0 place-items-center rounded-full bg-[#14284E] text-white shadow-sm">
+                                            <span aria-hidden="true" className="absolute -right-1 -top-1 h-[104px] w-[104px] rotate-[28deg] rounded-full border-[3px] border-transparent border-r-[#FFB703] border-t-[#FFB703]" />
+                                            <span aria-hidden="true" className="absolute -right-3 -top-4 z-20 h-5 w-1.5 rotate-[12deg] rounded-full bg-[#FFB703]" />
+                                            <span aria-hidden="true" className="absolute -right-6 -top-2 z-20 h-5 w-1.5 rotate-[38deg] rounded-full bg-[#FFB703]" />
+                                            <span aria-hidden="true" className="absolute -right-1 -top-7 z-20 h-5 w-1.5 rotate-[24deg] rounded-full bg-[#FFB703]" />
+                                            <img src={approach.image} alt="" loading="lazy" className="relative z-10 h-[88px] w-[88px] rounded-full border-2 border-[#14284E] object-cover" />
                                         </span>
-                                        <span className="font-display text-sm font-extrabold tracking-wide text-[#D62C2B]">0{index + 1}</span>
                                     </div>
-                                    <h3 className="font-display text-base font-bold leading-snug text-[#14284E]">{approach.title}</h3>
-                                    <p className="mt-3 text-left text-sm leading-[1.6] text-[#435575]">{approach.description}</p>
+                                    <h3 className="w-full font-display text-base font-bold leading-snug text-[#14284E]">{approach.title}</h3>
+                                    <p className="mt-3 w-full text-center text-sm leading-[1.6] text-[#435575]">{approach.description}</p>
                                 </article>
                             );
                         })}
