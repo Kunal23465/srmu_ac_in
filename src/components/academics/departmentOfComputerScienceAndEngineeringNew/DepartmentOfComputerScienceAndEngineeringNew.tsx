@@ -1947,9 +1947,9 @@ const DepartmentOfComputerScienceAndEngineeringNew = ({ customData }: { customDa
                     <CareerBackground />
                     <div className={`${Classes["container"]} cse-content-container relative z-10`}>
                         <div className="w-full mb-4 sm:mb-5 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-                            <div className="text-left max-w-3xl">
-                                <h2 className={`leading-[1.2] font-bold font-display ${isBiosciencesPage ? "text-[clamp(28px,3vw,36px)]" : "text-[clamp(30px,7vw,36px)] sm:text-[clamp(28px,3vw,36px)] text-[#14284E]"}`}>
-                                    {isPharmacyPage ? <>Career <span className="text-[#FFB703]">Opportunities</span></> : isCommerceAndEconomicsPage ? <>Where Can a <span className="text-[#FFB703]">Degree in Commerce and Economics</span> Take You?</> : isBiosciencesPage || isNaturalSciencesAndHumanitiesPage ? renderTwoColorTitle(customData?.career.heading ?? "") : (isElectricalDepartmentPage || isCivilEngineeringPage) ? renderTwoColorTitle(customData?.career.heading ?? "") : customData ? renderCareerHeading(customData.career.heading) : <>Where can a <span className="text-[#FFB703]">CSE Degree</span> take you?</>}
+                            <div className={`text-left ${isFacultyOfBiotechnologyPage ? "w-full max-w-none" : "max-w-3xl"}`}>
+                                <h2 className={`leading-[1.2] font-bold font-display ${isFacultyOfBiotechnologyPage ? "w-full text-[clamp(28px,3vw,36px)] text-[#14284E]" : isBiosciencesPage ? "text-[clamp(28px,3vw,36px)]" : "text-[clamp(30px,7vw,36px)] sm:text-[clamp(28px,3vw,36px)] text-[#14284E]"}`}>
+                                    {isFacultyOfBiotechnologyPage ? <>Where Our Students Get <span className="whitespace-nowrap text-[#FFB703]">Career Opportunities</span></> : isPharmacyPage ? <>Career <span className="text-[#FFB703]">Opportunities</span></> : isCommerceAndEconomicsPage ? <>Where Can a <span className="text-[#FFB703]">Degree in Commerce and Economics</span> Take You?</> : isBiosciencesPage || isNaturalSciencesAndHumanitiesPage ? renderTwoColorTitle(customData?.career.heading ?? "") : (isElectricalDepartmentPage || isCivilEngineeringPage) ? renderTwoColorTitle(customData?.career.heading ?? "") : customData ? renderCareerHeading(customData.career.heading) : <>Where can a <span className="text-[#FFB703]">CSE Degree</span> take you?</>}
                                 </h2>
                             </div>
 

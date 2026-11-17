@@ -16,6 +16,7 @@ import InstituteOfAgriculturalSciencesAndTechnologyNewPage from "../pages/academ
 import InstituteOfMediaStudiesNewPage from "../pages/academics/institutes/institute-department/institute-of-media-studies-new/InstituteOfMediaStudiesNewPage";
 import InstituteOfNaturalSciencesAndHumanitiesNewPage from "../pages/academics/institutes/institute-department/institute-of-natural-sciences-and-humanities-new/InstituteOfNaturalSciencesAndHumanitiesNewPage";
 import DepartmentOfElectricalAndElectronicsEngineeringNewPage from "../pages/academics/institutes/institute-department/department-of-electrical-and-electronics-engineering-new/DepartmentOfElectricalAndElectronicsEngineeringNewPage";
+import DepartmentOfComputerScienceAndInformationSystemsNewPage from "../pages/academics/institutes/institute-department/department-of-computer-science-and-information-systems-new/DepartmentOfComputerScienceAndInformationSystemsNewPage";
 import FacultyOfChemicalSciencesNewPage from "../pages/academics/institutes/institute-department/faculty-of-chemical-sciences-new/FacultyOfChemicalSciencesNewPage";
 import InstituteOfAlliedHealthSciencesNewPage from "../pages/academics/institutes/institute-department/institute-of-allied-health-sciences-new/InstituteOfAlliedHealthSciencesNewPage";
 import InstituteOfLegalStudiesNewPage from "../pages/academics/institutes/institute-department/institute-of-legal-studies-new/InstituteOfLegalStudiesNewPage";
@@ -1150,6 +1151,10 @@ export const routes = [
       {
         path: "/department-of-electrical-and-electronics-engineering-new",
         element: <DepartmentOfElectricalAndElectronicsEngineeringNewPage />,
+      },
+      {
+        path: "/department-of-computer-science-and-information-systems-new",
+        element: <DepartmentOfComputerScienceAndInformationSystemsNewPage />,
       },
       {
         path: "/faculty-of-chemical-sciences-new",

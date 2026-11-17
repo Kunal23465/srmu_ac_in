@@ -465,7 +465,7 @@ export default function InstituteOfTechnologyNew() {
                     <div className="mt-10 grid grid-cols-2 gap-x-4 gap-y-7 sm:grid-cols-2 lg:grid-cols-5 lg:gap-y-0">
                         {learningApproaches.map((approach) => {
                             return (
-                                <article data-tech-reveal key={approach.title} className="group relative z-0 flex flex-col items-center border-b border-[#CBD7EA] px-1 pb-6 text-center transition-[transform,box-shadow,background-color,border-radius] duration-500 ease-out [transform-style:preserve-3d] sm:px-5 lg:border-b-0 lg:border-r lg:border-[#CBD7EA] lg:px-5 lg:py-2 lg:last:border-r-0 hover:z-20 hover:rounded-2xl hover:bg-white/90 hover:shadow-[0_20px_40px_rgba(20,40,78,0.16)] hover:ring-1 hover:ring-[#FFB703]/50 hover:[transform:perspective(1000px)_translateZ(16px)_scale(1.025)]">
+                                <article data-tech-reveal key={approach.title} className="group relative z-0 flex flex-col items-stretch border-b border-[#CBD7EA] px-1 pb-6 text-left transition-[transform,box-shadow,background-color,border-radius] duration-500 ease-out [transform-style:preserve-3d] sm:px-5 lg:border-b-0 lg:border-r lg:border-[#CBD7EA] lg:px-5 lg:py-2 lg:last:border-r-0 hover:z-20 hover:rounded-2xl hover:bg-white/90 hover:shadow-[0_20px_40px_rgba(20,40,78,0.16)] hover:ring-1 hover:ring-[#FFB703]/50 hover:[transform:perspective(1000px)_translateZ(16px)_scale(1.025)]">
                                     <div className="mb-5 flex w-full items-center justify-center">
                                         <span className="relative grid h-24 w-24 shrink-0 place-items-center rounded-full bg-[#14284E] text-white shadow-sm">
                                             <span aria-hidden="true" className="absolute -right-1 -top-1 h-[104px] w-[104px] rotate-[28deg] rounded-full border-[3px] border-transparent border-r-[#FFB703] border-t-[#FFB703]" />
@@ -476,7 +476,7 @@ export default function InstituteOfTechnologyNew() {
                                         </span>
                                     </div>
                                     <h3 className="w-full font-display text-base font-bold leading-snug text-[#14284E]">{approach.title}</h3>
-                                    <p className="mt-3 w-full text-center text-sm leading-[1.6] text-[#435575]">{approach.description}</p>
+                                    <p className="mt-3 w-full text-left text-sm leading-[1.6] text-[#435575]">{approach.description}</p>
                                 </article>
                             );
                         })}
