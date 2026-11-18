@@ -86,6 +86,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
     const isBcomHonsWithLtPage = heroBanner.pageHeading === "Bachelor of Commerce (Honours)" && heroBanner.specialization === "Commerce (Honours)";
     const isBcaCyberSecurityPage = isCyberSecurityPage && heroBanner.degreeTitle.startsWith("B.C.A.");
     const usesCyberSecurityDesign = isCyberSecurityPage || data.designVariant === "cyber-security";
+    const isAiAugmentedFintechPage = heroBanner.specialization === "AI-Augmented FinTech";
     const isBbaAiFintechPage = data.designVariant === "cyber-security" && heroBanner.specialization === "AI-Augmented FinTech";
     const isBcomHonsPage = heroBanner.specialization.toLowerCase().includes("commerce") && Boolean(heroBanner.pageHeading?.toLowerCase().includes("l&t"));
     const isBBABusinessAnalyticsPage = heroBanner.specialization.toLowerCase().includes("business analytics");
@@ -106,7 +107,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
     // Tauseef
     const usesCyberSecurityTextLayout = isCyberSecurityPage || isDataSciencePage || isBBABusinessAnalyticsPage || isBcomHonsWithLtPage;
     // Tauseef
-    const usesCurriculumPanel = usesCyberSecurityTextLayout || isBusinessAnalyticsPage || isBbaAiFintechPage || isBcomHonsPage || isBcomHonsWithLtPage;
+    const usesCurriculumPanel = usesCyberSecurityTextLayout || isBusinessAnalyticsPage || isAiAugmentedFintechPage || isBcomHonsPage || isBcomHonsWithLtPage;
     const careerDescriptionCutoffPhrase = isMechanicalPage ? "infrastructure." : isSemiconductorPage ? "data centers." : "informed decisions.";
     const careerDescriptionCutoff = careerOpportunities.description.indexOf(careerDescriptionCutoffPhrase);
     const careerDescriptionPreview = careerDescriptionCutoff >= 0
@@ -767,7 +768,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                     <div className={`${Classes["container"]} mx-auto`}>
                         {!usesCyberSecurityTextLayout && !isBbaAiFintechPage && (
                             <div className="w-full mb-5 sm:mb-10">
-                                {!isBusinessAnalyticsPage && !isBcomHonsPage && (
+                                {!isBusinessAnalyticsPage && !isAiAugmentedFintechPage && !isBcomHonsPage && (
                                     <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.15] font-bold font-display text-[#14284E]">
                                         {labs.sectionTitle}<span className="text-[#ffb703]"> {labs.sectionTitleHighlight}</span>
                                     </h2>
@@ -780,7 +781,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
 
                         {/* Curriculum image */}
                         {usesCurriculumPanel ? (
-                            <div className={`${curriculumStyles.panel} ${isDataSciencePage || isBusinessAnalyticsPage || isBcomHonsPage || isBcomHonsWithLtPage ? curriculumStyles.dataSciencePanel : ""}`}>
+                            <div className={`${curriculumStyles.panel} ${isDataSciencePage || isBusinessAnalyticsPage || isAiAugmentedFintechPage || isBcomHonsPage || isBcomHonsWithLtPage ? curriculumStyles.dataSciencePanel : ""}`}>
                                 <picture className={curriculumStyles.background} aria-hidden="true">
                                     <source media="(max-width: 1023px)" srcSet={labs.curriculumImageMobile} />
                                     <img src={labs.curriculumImageDesktop} alt="" loading="lazy" decoding="async" />

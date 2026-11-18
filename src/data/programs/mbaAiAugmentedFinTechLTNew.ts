@@ -3,8 +3,8 @@ import cyberSecurityNewData from "./cyberSecurityNew";
 
 const mbaAiAugmentedFinTechLTNewData: ProgramPageDataNew = {
   heroBanner: {
-    degreeTitle: "Master of Business Administration",
-    pageHeading: "M.B.A. in AI-Augmented FinTech with L&T",
+    degreeTitle: "",
+    pageHeading: "M.B.A. in AI-Augmented FinTech",
     programLabel: "M.B.A. (AI-Augmented FinTech) with L&T",
     specialization: "AI-Augmented FinTech",
     subtitle: "In collaboration with L&T EduTech",

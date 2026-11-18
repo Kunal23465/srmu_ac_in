@@ -1258,7 +1258,7 @@ export const routes = [
         element: <MbaBusinessAnalyticsWithLTNew />,
       },
       {
-        path: "mba-ai-augmented-fintech-lt-design-new-new",
+        path: "mba-ai-augmented-fintech-lt-design-new",
         element: <MbaAiAugmentedFinTechLTNew />,
       },
 
