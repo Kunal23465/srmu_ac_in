@@ -174,12 +174,6 @@ const dataScienceNewData: ProgramPageDataNew = {
   // PLACEMENT
   // ----------------------------------------------------------
   placement: {
-    stats: [
-      { val: "₹53 LPA", label: "Highest Package" },
-      { val: "₹4.5 LPA", label: "Average Package" },
-      { val: "1200+", label: "Job Offers Given" },
-      { val: "225+", label: "Students Placed" },
-    ],
     imageUrl: "/assets/images/data-science-ai-ml-new-page/Where-Our-Students-Get-Placed-Section-Image.webp",
     imageAlt: "Student preparing for career and placement",
     placementDetailUrl: "https://srmu.ac.in/placements",

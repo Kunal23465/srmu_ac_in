@@ -81,6 +81,9 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
     const { heroBanner, whyStudy, ltBenefits, industryExposure, placement, labs, yearJourney, fee, poPsoPlo, careerOpportunities, programComparison } = data;
     const isCyberSecurityPage = heroBanner.specialization.toLowerCase().includes("cyber security");
     const isDataSciencePage = heroBanner.specialization.toLowerCase().includes("data science");
+    const isBcaDataScienceAiPage = isDataSciencePage && Boolean(heroBanner.pageHeading);
+    const HeroPageTitleTag = isBcaDataScienceAiPage ? "p" : "h1";
+    const WhyStudyHeadingTag = isBcaDataScienceAiPage ? "h1" : "h2";
     const isMechanicalPage = heroBanner.specialization.toLowerCase().includes("mechanical");
     const isSemiconductorPage = heroBanner.specialization.toLowerCase().includes("semiconductor");
     const hasLtBenefitsDesign = isCyberSecurityPage || isDataSciencePage || isMechanicalPage || isSemiconductorPage;
@@ -135,6 +138,8 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
     // ---- State ----
     const [activeTab, setActiveTab] = useState("year1");
     const [openSection, setOpenSection] = useState<string | null>(null);
+    const [openFaq, setOpenFaq] = useState<number | null>(null);
+    const [showAllFaq, setShowAllFaq] = useState(false);
     const [rm, setRm] = useState<Record<string, boolean>>({});
     const [showAllIndustryCards, setShowAllIndustryCards] = useState(false);
     const toggleRm = (k: string) => setRm((p) => ({ ...p, [k]: !p[k] }));
@@ -182,7 +187,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                                 ) : (
                                     <h2 className="text-[clamp(24px,3vw,36px)] font-semibold mb-1 leading-[1.2] drop-shadow-md">{heroBanner.degreeTitle}</h2>
                                 )}
-                                <h1 className={`${heroBanner.pageHeading ? "text-[clamp(30px,4vw,48px)]" : "text-[clamp(40px,5vw,64px)]"} leading-[1.1] font-bold text-[#38bdf8] drop-shadow-md`}>
+                                <HeroPageTitleTag className={`${heroBanner.pageHeading ? "text-[clamp(30px,4vw,48px)]" : "text-[clamp(40px,5vw,64px)]"} leading-[1.1] font-bold text-[#38bdf8] drop-shadow-md`}>
                                     {heroBanner.pageHeading ?? (heroBanner.specialization === "Data Science & Artificial Intelligence" ? (
                                         <>
                                             Data Science & <span className="sm:whitespace-nowrap">Artificial Intelligence</span>
@@ -190,7 +195,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                                     ) : (
                                         heroBanner.specialization
                                     ))}
-                                </h1>
+                                </HeroPageTitleTag>
                                 <div className="h-[3px] bg-[#38bdf8] w-[140px] sm:w-[200px] mt-1 mb-2 sm:mb-4 rounded-full"></div>
                                 {heroBanner.subtitle && (
                                     <p className="hidden sm:block text-[clamp(16px,2vw,22px)] font-light mt-2 sm:mt-4 drop-shadow-md text-justify">
@@ -255,11 +260,16 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                 <section id="why" className="pt-8 md:pt-10 pb-4 sm:pb-6 px-4 sm:px-6 bg-[#F0F6FB]">
                     <div className={`${Classes["container"]}`}>
                         <div className="w-full mb-5 sm:mb-11">
-                            <h2 className={`${whyStudy.largeHeading ? "text-[clamp(34px,4.5vw,54px)]" : "text-[clamp(24px,3vw,36px)]"} leading-[1.12] font-bold font-display text-[#14284E] mb-3.5`}>
+                            <WhyStudyHeadingTag className={`${whyStudy.largeHeading ? "text-[clamp(34px,4.5vw,54px)]" : whyStudy.heading27pxOnDesktop ? "text-[24px] lg:text-[27px]" : "text-[clamp(24px,3vw,36px)]"} leading-[1.12] font-bold font-display text-[#14284E] mb-3.5`}>
                                 {whyStudy.heading
                                     ? highlightedSuffix(whyStudy.heading, whyStudy.headingHighlight)
                                     : <>Why Study B.Tech CSE {heroBanner.specialization}<span className="text-[#ffb703]"> in {whyStudy.year}?</span></>}
-                            </h2>
+                            </WhyStudyHeadingTag>
+                            {whyStudy.subheading && (
+                                <h3 className="text-[clamp(24px,3vw,36px)] leading-[1.12] font-bold font-display text-[#14284E]">
+                                    {highlightedSuffix(whyStudy.subheading, whyStudy.subheadingHighlight)}
+                                </h3>
+                            )}
                         </div>
                         <div className="relative bg-[#FFFBEB] sm:bg-white border border-[#ffb703] sm:border-l-4 sm:border-l-[#ffb703] sm:border-t-[#ffb703] sm:border-b-[#ffb703] sm:border-r-[#ffb703] rounded-2xl p-7 sm:p-8 text-[14px] leading-5 sm:text-[17px] sm:leading-normal text-[#14284E] font-semibold italic mb-4 sm:mb-8">
                             <span className="absolute top-4 left-7 sm:hidden text-[#ffb703] text-[30px] not-italic font-black leading-none">"</span>
@@ -294,7 +304,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                                             {whyStudy.paragraphs.map((p, i) => (
                                                 <p
                                                     key={i}
-                                                    className={`text-[#4B5A72] text-[15.5px] leading-relaxed text-left sm:text-justify ${i > 0 && !rm["whyStudyDetails"] ? "hidden sm:block" : ""}`}
+                                                    className={`${layoutStyles.desktopJustifiedParagraph} text-[#4B5A72] text-[15.5px] leading-relaxed ${i > 0 && !rm["whyStudyDetails"] ? "hidden sm:block" : ""}`}
                                                 >
                                                     {isDataSciencePage && i === 0 ? (
                                                         <>
@@ -448,10 +458,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                                                 })
                                             ) : (
                                                 ltBenefits.domainRows.map((row, ri) => (
-                                                    <div
-                                                        key={ri}
-                                                        className={`${benefitsStyles.domainRow} ${ri > 0 && row.tags.length === 3 ? benefitsStyles.domainRowCompact : ""}`}
-                                                    >
+                                                    <div key={ri} className={benefitsStyles.domainRow}>
                                                         {row.tags.map((tag, ti) => {
                                                             const DomainIcon = cyberBenefitsIcons[(ri * 4 + ti) % cyberBenefitsIcons.length];
                                                             return (
@@ -694,7 +701,6 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                 {/* ===== PLACEMENT ===== */}
                 <DepartmentPlacements
                     recruiters={defaultRecruiterLogos}
-                    stats={placement.stats}
                     imageUrl={placement.imageUrl}
                     imageAlt={placement.imageAlt}
                     placementDetailUrl={placement.placementDetailUrl}
@@ -1285,6 +1291,67 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
 
                     </div>
                 </section>
+
+                {data.faqs && data.faqs.length > 0 && (
+                    <section id="faq" className="py-10 md:py-14 px-4 sm:px-6 bg-[#F4F7FB]" aria-labelledby="program-faq-title">
+                        <div className={`${Classes["container"]} w-full`}>
+                            <div className="w-full mb-8">
+                                <h2 id="program-faq-title" className="text-[clamp(28px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] break-words">
+                                    Frequently Asked <span className="text-[#FFB703]">Questions</span>
+                                </h2>
+                            </div>
+                            <div className="flex flex-col gap-3 mt-6">
+                                {(showAllFaq ? data.faqs : data.faqs.slice(0, 3)).map((faq, index) => {
+                                    const isOpen = openFaq === index;
+                                    return (
+                                        <div key={faq.question} className={`bg-white border rounded-xl overflow-hidden shadow-sm transition-all duration-200 ${isOpen ? "border-[#14284E]" : "border-[#E5E7EB]"}`}>
+                                            <button
+                                                type="button"
+                                                id={`program-faq-question-${index}`}
+                                                className="w-full text-left flex items-center justify-between gap-4 px-5 py-4 sm:px-6 sm:py-[18px]"
+                                                aria-controls={`program-faq-answer-${index}`}
+                                                aria-expanded={isOpen}
+                                                onClick={() => setOpenFaq(isOpen ? null : index)}
+                                            >
+                                                <span className="font-bold text-[14.5px] sm:text-[15px] text-[#14284E] pr-2 leading-snug">
+                                                    <span className="text-[#d62c2b] mr-2">{String(index + 1).padStart(2, "0")}.</span>
+                                                    {faq.question}
+                                                </span>
+                                                <span className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center text-[18px] shrink-0 transition-all duration-300 font-sans ${isOpen ? "bg-[#14284E] text-white rotate-45" : "bg-[#F6FAFE] text-[#14284E]"}`} aria-hidden="true">
+                                                    +
+                                                </span>
+                                            </button>
+                                            <div
+                                                id={`program-faq-answer-${index}`}
+                                                role="region"
+                                                aria-labelledby={`program-faq-question-${index}`}
+                                                className={`overflow-hidden transition-all duration-300 px-5 sm:px-6 ${isOpen ? "max-h-[500px] pb-5 opacity-100" : "max-h-0 pb-0 opacity-0"}`}
+                                            >
+                                                <div className="w-full h-px bg-[#E5E7EB] mb-4" />
+                                                <p className="text-[14px] sm:text-[14.5px] text-[#4C5A65] leading-[1.7] text-justify">
+                                                    {faq.answer}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    );
+                                })}
+                            </div>
+
+                            {data.faqs.length > 3 && (
+                                <div className="mt-8 flex justify-center">
+                                    <button
+                                        type="button"
+                                        onClick={() => setShowAllFaq((showingAll) => !showingAll)}
+                                        className="self-center uppercase tracking-wider flex items-center justify-center gap-2 bg-[#FFB703] text-[#14284E] font-bold text-[14px] px-8 py-3 rounded-lg transition-colors w-fit shadow-md"
+                                    >
+                                        {showAllFaq ? "View Less" : "Read More"}
+                                        <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${showAllFaq ? "rotate-180" : ""}`} />
+                                    </button>
+                                </div>
+                            )}
+                        </div>
+                    </section>
+                )}
 
             </main>
         </div>

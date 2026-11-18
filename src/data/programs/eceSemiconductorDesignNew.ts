@@ -138,12 +138,6 @@ const eceSemiconductorDesignNewData: ProgramPageDataNew = {
     sectionBackgroundImageUrl: "/assets/images/semiconductor-new/industry-exposure-background.webp",
   },
   placement: {
-    stats: [
-      { val: "₹53 LPA", label: "Highest Package" },
-      { val: "₹4.5 LPA", label: "Average Package" },
-      { val: "1200+", label: "Job Offers Given" },
-      { val: "225+", label: "Students Placed" },
-    ],
     imageUrl: "/assets/images/semiconductor-new/where-students-placed.webp",
     imageAlt: "Student preparing for career and placement",
     placementDetailUrl: "https://srmu.ac.in/placements",

@@ -128,7 +128,6 @@ const bcaCyberSecurityNewData: ProgramPageDataNew = {
   },
 
   placement: {
-    stats: cyberSecurityNewData.placement.stats,
     imageUrl: cyberSecurityNewData.placement.imageUrl,
     imageAlt: cyberSecurityNewData.placement.imageAlt,
     placementDetailUrl: "https://srmu.ac.in/placements",

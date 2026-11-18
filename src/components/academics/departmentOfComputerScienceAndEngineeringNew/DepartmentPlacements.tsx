@@ -37,11 +37,8 @@ const defaultStatistics = [
     { value: "225+", label: "Students Placed", Icon: UsersRound },
 ];
 
-const defaultIcons = [Trophy, ChartNoAxesColumnIncreasing, BriefcaseBusiness, UsersRound];
-
 export interface DepartmentPlacementsProps {
     recruiters?: [string, string][] | readonly (readonly [string, string])[];
-    stats?: { val?: string; value?: string; label: string }[];
     imageUrl?: string;
     imageAlt?: string;
     placementDetailUrl?: string;
@@ -52,7 +49,6 @@ export interface DepartmentPlacementsProps {
 
 export default function DepartmentPlacements({
     recruiters,
-    stats,
     imageUrl,
     imageAlt,
     placementDetailUrl,
@@ -61,13 +57,7 @@ export default function DepartmentPlacements({
     recruitersHeading,
 }: DepartmentPlacementsProps = {}) {
     const activeRecruiters = (recruiters && recruiters.length > 0) ? recruiters : defaultRecruiterLogos;
-    const activeStats = stats !== undefined
-        ? stats.map((s, idx) => ({
-            value: s.value || s.val || "",
-            label: s.label,
-            Icon: defaultIcons[idx % defaultIcons.length],
-        }))
-        : defaultStatistics;
+    const activeStats = defaultStatistics;
 
     const activeImage = imageUrl || "https://ik.imagekit.io/ttalcskjf/IMAGE%202.webp?updatedAt=1788439003256";
     const activeImageAlt = imageAlt || "SRMU student preparing for a career in cybersecurity";

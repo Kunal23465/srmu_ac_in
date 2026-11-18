@@ -150,12 +150,6 @@ const cyberSecurityNewData: ProgramPageDataNew = {
   // PLACEMENT
   // ----------------------------------------------------------
   placement: {
-    stats: [
-      { val: "₹53 LPA", label: "Highest Package" },
-      { val: "₹4.5 LPA", label: "Average Package" },
-      { val: "1200+", label: "Job Offers Given" },
-      { val: "225+", label: "Students Placed" },
-    ],
     imageUrl: studentsPlaced,
     imageAlt: "Student preparing for career and placement",
     placementDetailUrl: "https://srmu.ac.in/placements",
