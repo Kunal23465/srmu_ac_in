@@ -8,6 +8,12 @@ import BTechCseDataScienceNew from "../pages/BTechCseDataScienceNew";
 import BCACyberSecurityNew from "../pages/BCACyberSecurityNew";
 import BCADataScienceAiNew from "../pages/BCADataScienceAiNew";
 import BBAAiAugmentedFintechNew from "../pages/BBAAiAugmentedFintechNew";
+import DiplomaCivilEngineeringNew from "../pages/DiplomaCivilEngineeringNew";
+import DiplomaMechanicalEngineeringProductionNew from "../pages/DiplomaMechanicalEngineeringProductionNew";
+import DiplomaMechanicalEngineeringAutomobileNew from "../pages/DiplomaMechanicalEngineeringAutomobileNew";
+import DiplomaElectricalEngineeringNew from "../pages/DiplomaElectricalEngineeringNew";
+import DiplomaComputerScienceEngineeringNew from "../pages/DiplomaComputerScienceEngineeringNew";
+import DiplomaElectronicsCommunicationEngineeringNew from "../pages/DiplomaElectronicsCommunicationEngineeringNew";
 import BTechMechanicalEngineeringNew from "../pages/BTechMechanicalEngineeringNew";
 import BTechEceSemiconductorDesignNew from "../pages/BTechEceSemiconductorDesignNew";
 
@@ -1228,6 +1234,30 @@ export const routes = [
       {
         path: "bba-ai-augmented-fintech-new",
         element: <BBAAiAugmentedFintechNew />,
+      },
+      {
+        path: "diploma-civil-engineering-new",
+        element: <DiplomaCivilEngineeringNew />,
+      },
+      {
+        path: "diploma-mechanical-engineering-production-new",
+        element: <DiplomaMechanicalEngineeringProductionNew />,
+      },
+      {
+        path: "diploma-mechanical-engineering-automobile-new",
+        element: <DiplomaMechanicalEngineeringAutomobileNew />,
+      },
+      {
+        path: "diploma-electrical-engineering-new",
+        element: <DiplomaElectricalEngineeringNew />,
+      },
+      {
+        path: "diploma-computer-science-engineering-new",
+        element: <DiplomaComputerScienceEngineeringNew />,
+      },
+      {
+        path: "diploma-electronics-communication-engineering-new",
+        element: <DiplomaElectronicsCommunicationEngineeringNew />,
       },
       {
         path: "b-tech-cse-data-science-new",

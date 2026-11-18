@@ -62,7 +62,11 @@ const CustomerSupportIcon = ({ className }: { className?: string }) => (
 const cyberBenefitsIcons = [Shield, Lock, Code2, Fingerprint, Landmark, Cpu, Bug];
 const dataScienceBenefitsIcons = [ChartNoAxesColumnIncreasing, BrainCircuit, Cpu, Database, Code2, Sparkles, Cloud];
 const mechanicalBenefitsIcons = [PenTool, Factory, PenTool, Factory, Settings, Cpu, Zap, Settings, Shield, Lock, Wrench, Settings];
+const electricalBenefitsIcons = [Zap, Settings, Factory, Cpu, Shield, Lock, Landmark, Wrench];
 const semiconductorBenefitsIcons = [Cpu, Code2, Cpu, Code2, Cloud, Settings, Cpu, ChartNoAxesColumnIncreasing, Fingerprint, Database];
+const civilEngineeringBenefitsIcons = [Factory, Landmark, PenTool, Wrench, Settings, Cpu, Shield, Code2];
+const computerScienceBenefitsIcons = [Code2, Cpu, Database, Cloud, Settings, Code2, Cpu, Fingerprint, Bug];
+const electronicsCommunicationBenefitsIcons = [Cpu, Zap, Code2, Wrench, Settings, Fingerprint, Database, Cloud];
 
 const highlightedSuffix = (text: string, suffix?: string, className = "text-[#ffb703]") => {
     if (!suffix || !text.endsWith(suffix)) return text;
@@ -88,17 +92,23 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
     const isBusinessAnalyticsPage = heroBanner.specialization.toLowerCase().includes("business analytics");
     const isBcaDataScienceAiPage = isDataSciencePage && Boolean(heroBanner.pageHeading);
     const HeroPageTitleTag = isBcaDataScienceAiPage ? "p" : "h1";
-    const isMechanicalPage = heroBanner.specialization.toLowerCase().includes("mechanical");
+    const isDiplomaElectricalEngineeringPage = heroBanner.degreeTitle === "Diploma in" && heroBanner.specialization === "Electrical Engineering";
+    const isDiplomaElectronicsCommunicationPage = heroBanner.degreeTitle === "Diploma in" && heroBanner.specialization === "Electronics & Communication Engineering";
+    const isDiplomaComputerScienceEngineeringPage = heroBanner.degreeTitle === "Diploma in" && heroBanner.specialization === "Computer Science Engineering";
+    const isDiplomaMechanicalProductionPage = heroBanner.degreeTitle === "Diploma in" && heroBanner.specialization === "Mechanical Engineering (Production)";
+    const isDiplomaMechanicalAutomobilePage = heroBanner.degreeTitle === "Diploma in" && heroBanner.specialization === "Mechanical Engineering (Automobile)";
+    const isMechanicalPage = heroBanner.specialization.toLowerCase().includes("mechanical") && heroBanner.degreeTitle !== "Diploma in";
     const isSemiconductorPage = heroBanner.specialization.toLowerCase().includes("semiconductor");
+    const isDiplomaCivilEngineeringPage = heroBanner.degreeTitle === "Diploma in" && heroBanner.specialization === "Civil Engineering";
     const hasLtBenefitsDesign = usesCyberSecurityDesign || isDataSciencePage || isMechanicalPage || isSemiconductorPage || isBBABusinessAnalyticsPage;
     const usesMatchedSectionSizing = usesCyberSecurityDesign || isDataSciencePage || isMechanicalPage || isSemiconductorPage;
-    const usesGridDomains = isDataSciencePage || isMechanicalPage || isSemiconductorPage || isBcaCyberSecurityPage || isBbaAiFintechPage;
+    const usesGridDomains = isDataSciencePage || isMechanicalPage || isSemiconductorPage || isBcaCyberSecurityPage || isBbaAiFintechPage || isDiplomaCivilEngineeringPage || isDiplomaMechanicalProductionPage || isDiplomaMechanicalAutomobilePage || isDiplomaElectricalEngineeringPage || isDiplomaComputerScienceEngineeringPage || isDiplomaElectronicsCommunicationPage;
     // const usesCyberSecurityTextLayout = usesCyberSecurityDesign || isDataSciencePage;
     // const hasLtBenefitsDesign = isCyberSecurityPage || isDataSciencePage || isBusinessAnalyticsPage || isMechanicalPage || isSemiconductorPage;
     // const usesMatchedSectionSizing = isCyberSecurityPage || isDataSciencePage || isMechanicalPage || isSemiconductorPage;
     // const usesGridDomains = isDataSciencePage || isBusinessAnalyticsPage || isMechanicalPage || isSemiconductorPage;
     const usesCyberSecurityTextLayout = isCyberSecurityPage || isDataSciencePage || isBBABusinessAnalyticsPage;
-    const usesCurriculumPanel = usesCyberSecurityTextLayout || isBusinessAnalyticsPage || isBbaAiFintechPage;
+    const usesCurriculumPanel = usesCyberSecurityTextLayout || isBusinessAnalyticsPage || isBbaAiFintechPage || isDiplomaCivilEngineeringPage || isDiplomaMechanicalProductionPage || isDiplomaMechanicalAutomobilePage || isDiplomaElectricalEngineeringPage || isDiplomaComputerScienceEngineeringPage || isDiplomaElectronicsCommunicationPage;
     const careerDescriptionCutoffPhrase = isMechanicalPage ? "infrastructure." : isSemiconductorPage ? "data centers." : "informed decisions.";
     const careerDescriptionCutoff = careerOpportunities.description.indexOf(careerDescriptionCutoffPhrase);
     const careerDescriptionPreview = careerDescriptionCutoff >= 0
@@ -484,10 +494,18 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                                         <div className={`${benefitsStyles.domains} ${usesGridDomains ? benefitsStyles.gridDomains : ""}`}>
                                             {usesGridDomains ? (
                                                 ltBenefits.domainRows.flatMap((row) => row.tags).map((tag, index) => {
-                                                    const iconSet = isMechanicalPage
-                                                        ? mechanicalBenefitsIcons
+                                                    const iconSet = isDiplomaElectricalEngineeringPage
+                                                        ? electricalBenefitsIcons
+                                                        : isDiplomaElectronicsCommunicationPage
+                                                            ? electronicsCommunicationBenefitsIcons
+                                                        : isDiplomaComputerScienceEngineeringPage
+                                                            ? computerScienceBenefitsIcons
+                                                        : isMechanicalPage || isDiplomaMechanicalProductionPage || isDiplomaMechanicalAutomobilePage
+                                                            ? mechanicalBenefitsIcons
                                                         : isSemiconductorPage
                                                             ? semiconductorBenefitsIcons
+                                                            : isDiplomaCivilEngineeringPage
+                                                                ? civilEngineeringBenefitsIcons
                                                             : isBcaCyberSecurityPage || isBbaAiFintechPage
                                                                 ? cyberBenefitsIcons
                                                                 : dataScienceBenefitsIcons;
@@ -757,7 +775,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                 {/* ===== LABS & CURRICULUM ===== */}
                 <section className="py-8 md:py-10 px-4 sm:px-6 bg-[#F0F6FB]">
                     <div className={`${Classes["container"]} mx-auto`}>
-                        {!usesCyberSecurityTextLayout && !isBbaAiFintechPage && (
+                        {!usesCyberSecurityTextLayout && !isBbaAiFintechPage && !isDiplomaCivilEngineeringPage && !isDiplomaMechanicalProductionPage && !isDiplomaMechanicalAutomobilePage && !isDiplomaElectricalEngineeringPage && !isDiplomaComputerScienceEngineeringPage && !isDiplomaElectronicsCommunicationPage && (
                             <div className="w-full mb-5 sm:mb-10">
                                 {!isBusinessAnalyticsPage && (
                                     <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.15] font-bold font-display text-[#14284E]">
@@ -772,7 +790,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
 
                         {/* Curriculum image */}
                         {usesCurriculumPanel ? (
-                            <div className={`${curriculumStyles.panel} ${isDataSciencePage || isBusinessAnalyticsPage ? curriculumStyles.dataSciencePanel : ""}`}>
+                            <div className={`${curriculumStyles.panel} ${isDataSciencePage || isBusinessAnalyticsPage || isDiplomaMechanicalProductionPage || isDiplomaMechanicalAutomobilePage || isDiplomaElectricalEngineeringPage || isDiplomaComputerScienceEngineeringPage || isDiplomaElectronicsCommunicationPage ? curriculumStyles.dataSciencePanel : ""}`}>
                                 <picture className={curriculumStyles.background} aria-hidden="true">
                                     <source media="(max-width: 1023px)" srcSet={labs.curriculumImageMobile} />
                                     <img src={labs.curriculumImageDesktop} alt="" loading="lazy" decoding="async" />
@@ -900,9 +918,9 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                         <div className="mb-5 sm:mb-7 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-2">
                             <div>
                                 <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#1B4F91]">Explore the spaces</p>
-                                <h3 className="mt-1 text-[22px] sm:text-[30px] leading-tight font-bold font-display text-[#14284E]">Hands-on Cyber Security Labs</h3>
+                                <h3 className="mt-1 text-[22px] sm:text-[30px] leading-tight font-bold font-display text-[#14284E]">{labs.labsHeading ?? "Hands-on Cyber Security Labs"}</h3>
                             </div>
-                            <p className="max-w-xl text-[13px] sm:text-[14px] leading-relaxed text-[#64748B]">Build practical skills across the tools and environments used by modern security teams.</p>
+                            <p className="max-w-xl text-[13px] sm:text-[14px] leading-relaxed text-[#64748B]">{labs.labsDescription ?? "Build practical skills across the tools and environments used by modern security teams."}</p>
                         </div>
 
                         <div className="mb-3 flex justify-end gap-2 sm:hidden">
@@ -1264,8 +1282,12 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                     <div className={`${Classes["container"]} mx-auto`}>
                         <div className="w-full mb-9">
                             <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.15] font-bold font-display text-[#14284E]">
-                                {programComparison.headers.find((h) => h.highlight)?.label} vs.
-                                <span className="text-[#ffb703]"> {programComparison.headers.filter((h) => !h.highlight && h.label !== "Feature").map((h) => h.label).join(", ")}</span>
+                                {programComparison.heading
+                                    ? highlightedSuffix(programComparison.heading, programComparison.headingHighlight)
+                                    : <>
+                                        {programComparison.headers.find((h) => h.highlight)?.label} vs.
+                                        <span className="text-[#ffb703]"> {programComparison.headers.filter((h) => !h.highlight && h.label !== "Feature").map((h) => h.label).join(", ")}</span>
+                                    </>}
                             </h2>
                         </div>
 

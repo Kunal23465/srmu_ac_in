@@ -68,12 +68,12 @@ const polytechnicFaculty: FacultyMember[] = [
 ];
 
 const diplomaPrograms = [
-    { title: "Diploma in Civil Engineering", description: "Three-year diploma programme in civil engineering.", icon: Building2, link: "/program/diploma-civil-engineering" },
-    { title: "Diploma in Mechanical Engineering (Production)", description: "Three-year diploma programme in mechanical production engineering.", icon: Cog, link: "/program/diploma-mechanical-engineering-production" },
-    { title: "Diploma in Mechanical Engineering (Automobile)", description: "Three-year diploma programme in automobile engineering.", icon: Car, link: "/program/diploma-mechanical-engineering-automobile" },
-    { title: "Diploma in Electrical Engineering", description: "Three-year diploma programme in electrical engineering.", icon: Zap, link: "/program/diploma-electrical-engineering" },
-    { title: "Diploma in Computer Science Engineering", description: "Three-year diploma programme in computer science engineering.", icon: Monitor, link: "/program/diploma-computer-science-engineering" },
-    { title: "Diploma in Electronics & Communication Engineering", description: "Three-year diploma programme in electronics and communication engineering.", icon: Radio, link: "/program/diploma-electronics-communication-engineering" },
+    { title: "Diploma in Civil Engineering", description: "Three-year diploma programme in civil engineering.", icon: Building2, link: "/diploma-civil-engineering-new" },
+    { title: "Diploma in Mechanical Engineering (Production)", description: "Three-year diploma programme in mechanical production engineering.", icon: Cog, link: "/diploma-mechanical-engineering-production-new" },
+    { title: "Diploma in Mechanical Engineering (Automobile)", description: "Three-year diploma programme in automobile engineering.", icon: Car, link: "/diploma-mechanical-engineering-automobile-new" },
+    { title: "Diploma in Electrical Engineering", description: "Three-year diploma programme in electrical engineering.", icon: Zap, link: "/diploma-electrical-engineering-new" },
+    { title: "Diploma in Computer Science Engineering", description: "Three-year diploma programme in computer science engineering.", icon: Monitor, link: "/diploma-computer-science-engineering-new" },
+    { title: "Diploma in Electronics & Communication Engineering", description: "Three-year diploma programme in electronics and communication engineering.", icon: Radio, link: "/diploma-electronics-communication-engineering-new" },
 ];
 
 const lateralEntryPrograms = [

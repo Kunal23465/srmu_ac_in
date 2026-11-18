@@ -169,6 +169,9 @@ export interface LabsDataNew {
   reelPosterUrl?: string;
   /** Optional background image for the first lab card */
   cardBackgroundImageUrl?: string;
+  /** Optional heading and description for the lab cards section. */
+  labsHeading?: string;
+  labsDescription?: string;
   labs: LabCardNew[];
 }
 
@@ -265,6 +268,10 @@ export interface ChooseIfCardNew {
 }
 
 export interface ProgramComparisonDataNew {
+  /** Optional title override for the comparison section. */
+  heading?: string;
+  /** Optional suffix in the title rendered with the accent color. */
+  headingHighlight?: string;
   /** Column headers, first is "Feature" */
   headers: ComparisonHeaderNew[];
   rows: ComparisonRowNew[];

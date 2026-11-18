@@ -1,0 +1,360 @@
+import type { ProgramPageDataNew } from "../../types/programPageNew";
+import automotiveProjectImage from "../../assets/images/institute-of-technology-new/engineering-project.jpg";
+import automobileWorkshopImage from "../../assets/images/admissions/how-to-apply/mechanical-auto-08022410595834.webp";
+import vehicleServiceImage from "../../assets/images/new-mechnical-program/vett6qrcicwki2tdldms.webp";
+import engineWorkshopImage from "../../assets/images/new-mechnical-program/uabl75dnikvruvxvs5ke.webp";
+import fabricationWorkshopImage from "../../assets/images/new-mechnical-program/jg3hq3h4vwrxfxh3ejkl.webp";
+import automotiveEngineeringNewData from "./diplomaMechanicalEngineeringProductionNew";
+
+const diplomaMechanicalEngineeringAutomobileNewData: ProgramPageDataNew = {
+  ...automotiveEngineeringNewData,
+
+  heroBanner: {
+    ...automotiveEngineeringNewData.heroBanner,
+    programLabel: "Diploma in Mechanical Engineering (Automobile)",
+    specialization: "Mechanical Engineering (Automobile)",
+    bannerAlt: "Automobile engineering students working on an engineering project",
+  },
+
+  whyStudy: {
+    year: "2027",
+    heading: "Why Study a Diploma in Mechanical Engineering (Automobile) in 2027?",
+    headingHighlight: "in 2027?",
+    quote: "How do engines, vehicle systems, electronics, and emerging mobility technologies work together?",
+    paragraphs: [
+      "The automobile industry is continuously evolving with advancements in vehicle technology, electric mobility, automotive electronics, manufacturing, and vehicle safety systems. These developments create opportunities for technically skilled professionals across automobile manufacturing, servicing, maintenance, and automotive component industries.",
+      "A three-year Diploma in Mechanical Engineering (Automobile) in Lucknow helps students understand the engineering principles behind vehicle design, engine operations, transmission systems, braking mechanisms, and automobile maintenance.",
+      "At SRMU, the programme aims to connect classroom learning with practical applications through technical assignments, laboratory exercises, and workshop-based learning.",
+    ],
+    imageUrl: automotiveProjectImage,
+    imageAlt: "Students working together on an automotive engineering project",
+    benefitCards: [
+      { title: "Automotive Technology", description: "Understand the working principles of engines, transmission systems, steering, suspension, and braking systems." },
+      { title: "Practical Workshop Learning", description: "Develop familiarity with automobile components, vehicle maintenance procedures, tools, and workshop practices." },
+      { title: "Emerging Mobility Technologies", description: "Build foundational awareness of electric vehicles, automotive electronics, and changing transportation technologies." },
+      { title: "Career Opportunities", description: "Explore career pathways in automobile manufacturing, vehicle servicing, and automotive component production and maintenance." },
+    ],
+  },
+
+  ltBenefits: {
+    ...automotiveEngineeringNewData.ltBenefits,
+    heading: "How Does Practical Learning Benefit Automobile Engineering Students?",
+    headingHighlight: "Automobile Engineering Students?",
+    overviewHeading: "Diploma in Mechanical Engineering (Automobile)",
+    overviewHeadingHighlight: "(Automobile)",
+    overviewDescription: "The three-year diploma introduces students to vehicle systems, engines, transmission, automobile maintenance, automotive electronics, and emerging mobility through technical subjects, workshop activities, and laboratory exercises.",
+    introText: "Automobile engineering requires an understanding of how different vehicle systems function together. Students learn about engines, mechanical components, transmission systems, vehicle maintenance, and automotive technologies. The Diploma in Mechanical Engineering (Automobile) at SRMU connects engineering concepts with practical applications through workshop activities, laboratory exercises, technical assignments, and project-based learning.",
+    domainRows: [
+      { tags: ["Automobile Engineering Fundamentals", "Internal Combustion Engines", "Automobile Chassis and Body Engineering"] },
+      { tags: ["Transmission and Power Train Systems", "Steering and Suspension Systems", "Braking Systems"] },
+      { tags: ["Automotive Electrical and Electronics", "Vehicle Maintenance and Servicing", "Electric Vehicle Fundamentals"] },
+    ],
+    followUpText: "Workshop practice, laboratory exercises, technical assignments, and project-based activities help students apply engineering concepts to automobile systems and maintenance tasks.",
+    projectsHeading: "Students can develop practical understanding through:",
+    projectsCol1: [
+      { text: "Studying engine components and their functions" },
+      { text: "Understanding transmission and power train mechanisms" },
+      { text: "Learning about steering, suspension, and braking systems" },
+      { text: "Practising automobile workshop and maintenance procedures" },
+    ],
+    projectsCol2: [
+      { text: "Exploring automotive electrical and electronic systems" },
+      { text: "Learning vehicle inspection and basic troubleshooting" },
+      { text: "Developing awareness of electric vehicle fundamentals" },
+      { text: "Completing automobile engineering assignments and projects" },
+    ],
+    tableRows: [
+      { label: "Programme", value: "Diploma in Mechanical Engineering (Automobile)" },
+      { label: "Duration", value: "3 years · 6 semesters" },
+      { label: "Entry Qualification", value: "Class 10 or equivalent" },
+      { label: "Minimum Marks", value: "35% aggregate" },
+      { label: "Compulsory Subjects", value: "Science, Mathematics, and English" },
+      { label: "Learning Approach", value: "Workshop-based, practical, and project-based learning" },
+    ],
+    artworkAlt: "Automotive engineering design and mechanical CAD tools",
+  },
+
+  industryExposure: {
+    ...automotiveEngineeringNewData.industryExposure,
+    sectionTitle: "Industry Exposure &",
+    sectionTitleHighlight: "Automobile Engineering Learning at SRMU, Lucknow",
+    introParagraph: "Automobile engineering education becomes more meaningful when students understand how vehicles are manufactured, assembled, inspected, and maintained in real-world industrial environments. At SRMU, the Diploma in Mechanical Engineering (Automobile) connects academic concepts with practical applications through workshops, laboratory activities, technical assignments, and industry-oriented learning opportunities.",
+    expertSessionsHeading: "Industrial Visits & Expert Interactions",
+    expertSessionsParagraph: "Industrial exposure helps students understand automobile manufacturing processes, vehicle assembly, component production, and maintenance operations. Students can gain insights into automobile manufacturing and assembly, engine components and vehicle systems, automobile servicing and maintenance, automotive component manufacturing, vehicle inspection and quality procedures, and electric vehicle technology.",
+    featuredCard: {
+      badge: "Practical Learning",
+      secondaryBadge: "AUTOMOBILE ENGINEERING",
+      title: "Exploring Vehicle Systems and Automotive Technology",
+      presenter: "Workshops, technical activities, and projects",
+      imageUrl: automotiveProjectImage,
+      paragraphs: ["Workshop activities and technical assignments encourage students to apply engineering concepts to automobile-related problems and develop practical understanding of vehicle systems."],
+    },
+    secondaryCards: [
+      {
+        badge: "Automotive Systems",
+        icon: "car",
+        iconLabel: "VEHICLES",
+        title: "Automobile Manufacturing and Assembly",
+        presenter: "Vehicle construction and components",
+        paragraphs: ["Understand how vehicle components and systems come together through automobile manufacturing and assembly processes."],
+      },
+      {
+        badge: "Core Technology",
+        icon: "settings",
+        iconLabel: "ENGINES",
+        title: "Engine Components and Operations",
+        presenter: "Internal combustion engine fundamentals",
+        paragraphs: ["Build familiarity with engine components, operating principles, and the role of engines in vehicle systems."],
+      },
+      {
+        badge: "Workshop Practice",
+        icon: "wrench",
+        iconLabel: "SERVICING",
+        title: "Vehicle Maintenance and Servicing",
+        presenter: "Inspection and basic troubleshooting",
+        paragraphs: ["Learn about vehicle maintenance procedures, service practices, inspection, and basic troubleshooting techniques."],
+      },
+      {
+        badge: "Emerging Technology",
+        icon: "energy",
+        iconLabel: "E-MOBILITY",
+        title: "Electric Vehicle Fundamentals",
+        presenter: "Batteries, electronics, and mobility",
+        paragraphs: ["Develop foundational awareness of electric vehicle systems, battery technology, automotive sensors, and vehicle electronics."],
+      },
+      {
+        badge: "Quality Skills",
+        icon: "factory",
+        iconLabel: "INSPECTION",
+        title: "Vehicle Inspection and Quality Procedures",
+        presenter: "Automotive components and systems",
+        paragraphs: ["Understand how inspection and quality procedures support vehicle safety, component reliability, and maintenance work."],
+      },
+      {
+        badge: "Technical Activities",
+        icon: "design",
+        iconLabel: "PROJECTS",
+        title: "Automotive Workshops and Projects",
+        presenter: "Applied engineering learning",
+        paragraphs: ["Technical activities and project assignments help connect mechanical engineering concepts with automobile-related applications."],
+      },
+    ],
+  },
+
+  placement: {
+    ...automotiveEngineeringNewData.placement,
+  },
+
+  labs: {
+    ...automotiveEngineeringNewData.labs,
+    sectionTitle: "Learn Automobile Engineering",
+    sectionTitleHighlight: "the Way Industry Works",
+    introParagraph: "The Diploma in Mechanical Engineering (Automobile) curriculum introduces students to vehicle construction, automotive systems, maintenance, and manufacturing. Workshop practice and laboratory activities help students apply engineering concepts to vehicle operation and safety.",
+    curriculumOverlayItems: [
+      { text: "Engineering\nMathematics" },
+      { text: "Engineering\nDrawing" },
+      { text: "Engine\nSystems" },
+      { text: "Automobile\nEngineering" },
+      { text: "Transmission &\nPower Train" },
+      { text: "Steering &\nSuspension" },
+      { text: "Automotive\nElectronics" },
+      { text: "EV & Vehicle\nMaintenance" },
+    ],
+    curriculumSectionTitle: "Automobile Engineering Curriculum",
+    curriculumDescription: "Students study engineering mathematics, drawing, mechanics, materials, and thermal engineering alongside internal combustion engines, automobile engineering, chassis and body, transmission, steering and suspension, braking, automotive electrical and electronics, vehicle servicing, and electric vehicle fundamentals.",
+    cardBackgroundImageUrl: automobileWorkshopImage,
+    labsHeading: "Automobile Engineering Workshop & Laboratories",
+    labsDescription: "Build practical familiarity with vehicle systems, engines, automotive equipment, inspection, and maintenance procedures.",
+    labs: [
+      {
+        label: "LAB / 01",
+        title: "Automobile Engine Systems",
+        imageUrl: engineWorkshopImage,
+        imageAlt: "Mechanical engineering students learning about workshop equipment",
+        tagline: "Understand engine components and operating principles.",
+        description: "Develop introductory knowledge of internal combustion engine components, their functions, and basic service procedures.",
+        items: ["Engine Components", "Internal Combustion Engines", "Engine Assembly Basics", "Cooling and Lubrication", "Workshop Safety"],
+      },
+      {
+        label: "LAB / 02",
+        title: "Transmission and Power Train",
+        imageUrl: vehicleServiceImage,
+        imageAlt: "Automotive engineering workshop equipment and mechanical systems",
+        tagline: "Explore how engine power reaches the wheels.",
+        description: "Learn the purpose of transmission and power train components in vehicle operation and performance.",
+        items: ["Clutch Fundamentals", "Gearbox Systems", "Drive Shafts", "Differential Basics", "Power Train Inspection"],
+      },
+      {
+        label: "LAB / 03",
+        title: "Steering, Suspension, and Braking",
+        imageUrl: automobileWorkshopImage,
+        imageAlt: "Technician working with mechanical vehicle components",
+        tagline: "Study systems that support control and vehicle safety.",
+        description: "Build familiarity with steering, suspension, and braking system components and their basic inspection requirements.",
+        items: ["Steering Systems", "Suspension Mechanisms", "Braking Systems", "Wheel Alignment Basics", "Safety Inspection"],
+      },
+      {
+        label: "LAB / 04",
+        title: "Automotive Electrical and Electronics",
+        imageUrl: automotiveProjectImage,
+        imageAlt: "Students collaborating on an automotive engineering project",
+        tagline: "Connect mechanical systems with vehicle electronics.",
+        description: "Explore introductory automotive electrical systems, sensors, and electronic components used in modern vehicles.",
+        items: ["Automotive Wiring", "Sensors Fundamentals", "Vehicle Electronics", "Battery Systems", "Electrical Safety"],
+      },
+      {
+        label: "LAB / 05",
+        title: "Vehicle Maintenance and Electric Mobility",
+        imageUrl: fabricationWorkshopImage,
+        imageAlt: "Workshop activity involving mechanical equipment and tools",
+        tagline: "Explore maintenance procedures and emerging mobility.",
+        description: "Understand vehicle servicing and inspection fundamentals alongside introductory electric vehicle and battery concepts.",
+        items: ["Vehicle Servicing", "Inspection and Troubleshooting", "Electric Vehicle Systems", "Battery Technology", "Modern Vehicle Technologies"],
+      },
+    ],
+  },
+
+  yearJourney: {
+    heading: "Your Journey from Student to Automobile Engineering Professional",
+    introParagraph: "The three-year Diploma in Mechanical Engineering (Automobile) is structured across six semesters. Each academic year introduces progressively advanced mechanical engineering concepts and automobile applications.",
+    year1: {
+      title: "Year 1 – Engineering Foundations",
+      quote: "Build the engineering and workshop foundations used to understand vehicle systems.",
+      subjects: ["Engineering Mathematics", "Engineering Physics", "Engineering Chemistry", "Engineering Drawing", "Engineering Mechanics", "Workshop Technology"],
+      practicalLearning: ["Introduction to engineering tools and equipment", "Basic workshop and fitting practices", "Understanding engineering drawings", "Introduction to engineering materials", "Basic mechanical measurements"],
+      projects: ["Engineering Drawing Exercise", "Workshop Practice", "Basic Mechanical Measurements"],
+      tools: ["Workshop Hand Tools", "Drawing Instruments", "Basic Measurement Tools"],
+      outcome: "Develop a foundation in engineering principles, mechanical concepts, and workshop practices.",
+    },
+    year2: {
+      title: "Year 2 – Core Automobile Engineering Concepts",
+      quote: "Understand the mechanical systems that help vehicles move, turn, and stop.",
+      subjects: ["Thermal Engineering", "Internal Combustion Engines", "Automobile Engineering Fundamentals", "Engineering Materials", "Automobile Chassis and Body Engineering", "Transmission Systems"],
+      practicalLearning: ["Understanding engine components and their functions", "Introduction to transmission mechanisms", "Studying steering and suspension systems", "Learning automobile workshop procedures", "Understanding vehicle construction and operation"],
+      projects: ["Engine Components Study", "Transmission System Exercise", "Vehicle Chassis Assignment"],
+      tools: ["Automobile Workshop Tools", "Engine Components", "Inspection Instruments"],
+      outcome: "Develop technical understanding of automobile systems, engine operations, and vehicle components.",
+    },
+    year3: {
+      title: "Year 3 – Automotive Technology and Industry Readiness",
+      quote: "Bring vehicle electronics, service, inspection, and emerging mobility together.",
+      subjects: ["Automotive Electrical and Electronics", "Vehicle Maintenance and Servicing", "Automobile Inspection and Testing", "Automotive Technology", "Electric Vehicle Fundamentals", "Project Work"],
+      practicalLearning: ["Understanding vehicle maintenance procedures", "Studying automotive electrical systems", "Introduction to vehicle inspection and troubleshooting", "Exploring emerging automobile technologies", "Applying technical knowledge through project assignments"],
+      projects: ["Automotive Electrical Systems Study", "Vehicle Inspection Assignment", "Electric Mobility Fundamentals Project"],
+      tools: ["Automotive Electrical Tools", "Vehicle Inspection Equipment", "Service Tools"],
+      outcome: "Develop the technical foundation and professional readiness for entry-level opportunities in automobile manufacturing, servicing, and maintenance.",
+    },
+  },
+
+  fee: {
+    description: "The currently published annual course fee for the Diploma in Mechanical Engineering (Automobile) is ₹57,000. Additional charges such as the student welfare fund, caution money, hostel, and transportation fees may apply.",
+    feeRows: [
+      { label: "Annual Course Fee", yr1: "₹57,000", yr2: "₹57,000", yr3: "₹57,000" },
+      { label: "Student Welfare Fund", yr1: "Additional charges may apply", yr2: "As per schedule", yr3: "As per schedule" },
+      { label: "Caution Money", yr1: "As applicable", yr2: "—", yr3: "—" },
+    ],
+    feeNote: "Hostel, transportation, and other applicable charges are additional. Confirm the latest fee schedule with SRMU admissions before applying.",
+  },
+
+  poPsoPlo: {
+    objectives: [
+      { text: "Develop foundational knowledge of automobile engineering, vehicle systems, engines, and automotive technologies." },
+      { text: "Build practical skills through automobile workshop practice, laboratory exercises, technical assignments, and projects." },
+      { text: "Strengthen understanding of vehicle servicing, inspection, maintenance, and basic troubleshooting." },
+      { text: "Introduce students to automotive electrical systems, electronics, and electric mobility fundamentals." },
+      { text: "Encourage safe, responsible, ethical, and collaborative engineering practice." },
+    ],
+    learningOutcomes: [
+      { text: "Explain introductory engineering and automobile concepts related to engines, chassis, and vehicle systems." },
+      { text: "Describe the function of transmission, steering, suspension, and braking systems." },
+      { text: "Apply basic workshop, servicing, inspection, and maintenance procedures under guidance." },
+      { text: "Identify foundational automotive electrical, electronic, sensor, and electric vehicle concepts." },
+      { text: "Contribute to technical assignments and projects while following workshop safety practices." },
+      { text: "Communicate technical observations and work collaboratively in an engineering environment." },
+    ],
+    specificOutcomes: [
+      { text: "Use foundational knowledge of engines, vehicle components, and automotive systems in guided practical tasks." },
+      { text: "Apply basic vehicle inspection, servicing, and maintenance concepts in workshop activities." },
+      { text: "Recognise introductory automotive electronics and electric mobility systems and their applications." },
+    ],
+  },
+
+  careerOpportunities: {
+    headingHighlight: "in Mechanical Engineering (Automobile)",
+    description: "A Diploma in Mechanical Engineering (Automobile) can help students explore technical roles in automobile manufacturing, vehicle service and maintenance, automotive component production, vehicle testing, dealerships, and emerging electric mobility. Opportunities depend on practical skills, experience, additional training, and employer requirements.",
+    imageUrl: automotiveProjectImage,
+    imageAlt: "Students working on an automotive engineering project",
+    industries: [
+      { title: "Automobile Manufacturing and Production", descriptionLabel: "Career areas", description: "Vehicle assembly, automobile production, and automotive component manufacturing." },
+      { title: "Vehicle Servicing and Maintenance", descriptionLabel: "Career areas", description: "Vehicle inspection, servicing, troubleshooting, and maintenance operations." },
+      { title: "Automotive Design and Product Development", descriptionLabel: "Career areas", description: "Vehicle component drawings, product development support, and CAD-related work." },
+      { title: "Automotive Electrical and Electronics", descriptionLabel: "Career areas", description: "Vehicle electrical systems, sensors, electronics, and related components." },
+      { title: "Quality Control and Vehicle Testing", descriptionLabel: "Career areas", description: "Vehicle inspection, component testing, and quality-related processes." },
+      { title: "Automobile Sales and Technical Services", descriptionLabel: "Career areas", description: "Dealership technical support, service coordination, and customer assistance." },
+    ],
+    careerRoles: [
+      { title: "Automobile Production Technician", description: "Support vehicle assembly, production activities, and automotive component manufacturing." },
+      { title: "Assembly Technician", description: "Assist with assembling vehicle systems and components in manufacturing settings." },
+      { title: "Automobile Service Technician", description: "Support vehicle servicing, inspections, and basic troubleshooting tasks." },
+      { title: "Automobile Supervisor", description: "Assist with coordinating service or workshop activities, subject to experience and employer requirements." },
+      { title: "Maintenance Technician", description: "Support routine maintenance of vehicles, mechanical systems, and related equipment." },
+      { title: "Design Assistant", description: "Assist technical teams working on vehicle components and engineering drawings." },
+      { title: "Product Development Assistant", description: "Support product development and documentation activities for automotive components." },
+      { title: "CAD Technician", description: "Assist with computer-aided drafting and mechanical component drawings." },
+      { title: "Automotive Electrical Technician", description: "Support vehicle electrical system checks and component-related service tasks." },
+      { title: "Automotive Software Trainee", description: "Explore this pathway with additional software and electronics skills and relevant training." },
+      { title: "Quality Control Assistant", description: "Help inspect vehicle components and support quality documentation." },
+      { title: "Automobile Testing Technician", description: "Assist with vehicle and component testing under appropriate supervision." },
+      { title: "Service Advisor", description: "Support service coordination and customer communication at automobile service centres." },
+      { title: "Technical Support Executive", description: "Provide product or service information in automobile sales and technical support settings." },
+    ],
+  },
+
+  programComparison: {
+    headers: [
+      { label: "Feature" },
+      { label: "Mechanical (Automobile)", highlight: true },
+      { label: "Mechanical (Production)" },
+      { label: "Civil Engineering" },
+      { label: "Electrical Engineering" },
+    ],
+    rows: [
+      { feature: "Main Focus", values: ["Vehicles and automotive systems", "Manufacturing and production", "Construction and infrastructure", "Electrical systems"] },
+      { feature: "Key Skills", values: ["Engines, transmission, maintenance", "Machining, quality, production", "Surveying and construction", "Circuits and power systems"] },
+      { feature: "Practical Areas", values: ["Automobile workshop", "Machine tools", "Building materials", "Electrical laboratories"] },
+      { feature: "Career Roles", values: ["Automobile technician", "Production technician", "Site supervisor", "Electrical technician"] },
+    ],
+    chooseIfCards: [
+      {
+        heading: "Choose Mechanical Engineering (Automobile) if you like:",
+        bgClass: "bg-white",
+        items: [
+          "Understanding how cars, buses, and other vehicles work",
+          "Learning about engines and automotive components",
+          "Exploring vehicle servicing and maintenance",
+          "Understanding electric vehicles and automotive electronics",
+          "Working with automobile manufacturing and servicing industries",
+        ],
+      },
+    ],
+  },
+
+  faqs: [
+    { question: "Which is the best Diploma in Mechanical Engineering (Automobile) college in Lucknow?", answer: "Compare workshop facilities, practical training, faculty, industry exposure, curriculum, and placement support. SRMU offers a three-year Diploma in Mechanical Engineering (Automobile) through SRMU Polytechnic." },
+    { question: "What is the difference between Diploma in Automobile Engineering and Diploma in Mechanical Engineering (Automobile)?", answer: "Both focus on automobile technology, vehicle systems, engines, transmission, maintenance, and automotive components. Diploma in Mechanical Engineering (Automobile) is the programme title offered at SRMU." },
+    { question: "What is the duration of Diploma in Mechanical Engineering (Automobile) in Lucknow?", answer: "The regular programme is three years, divided into six semesters." },
+    { question: "Can I pursue Diploma in Automobile Engineering after Class 10 in Lucknow?", answer: "Students who have passed Class 10 and meet the prescribed eligibility criteria can apply for the programme." },
+    { question: "What is the eligibility for Diploma in Mechanical Engineering (Automobile) at SRMU?", answer: "Candidates must have passed Class 10 or equivalent from a recognised board with at least 35% aggregate marks. Science, Mathematics, and English are specified as compulsory subjects. Check the latest admission guidelines." },
+    { question: "What are the Diploma in Mechanical Engineering (Automobile) fees in Lucknow?", answer: "The supplied annual course fee is ₹57,000. Additional charges such as student welfare fund, caution money, hostel, and transportation may apply; confirm the latest schedule with SRMU." },
+    { question: "Which are the top Polytechnic colleges in Lucknow for Automobile Engineering?", answer: "Compare course availability, automobile workshop facilities, practical training, faculty, industrial exposure, infrastructure, and placement records." },
+    { question: "Is SRMU a private Diploma in Automobile Engineering college in Lucknow?", answer: "Yes. Shri Ramswaroop Memorial University is a private university offering the Diploma in Mechanical Engineering (Automobile) through SRMU Polytechnic." },
+    { question: "What subjects are taught in Diploma in Mechanical Engineering (Automobile)?", answer: "The programme introduces students to automobile engineering, internal combustion engines, engineering mechanics, transmission systems, vehicle components, automotive electrical systems, vehicle maintenance, and workshop technology." },
+    { question: "Is lateral entry available for Diploma in Mechanical Engineering (Automobile)?", answer: "SRMU lists a separate two-year Diploma in Mechanical Engineering (Automobile) lateral-entry programme. Eligibility depends on the applicable admission requirements." },
+    { question: "Can I get Automobile Engineering Polytechnic admission without an entrance exam in Lucknow?", answer: "The admission process and entrance examination requirements depend on the applicable university policy. Confirm the 2027–28 requirements with SRMU admissions." },
+    { question: "What jobs can I get after Diploma in Mechanical Engineering (Automobile)?", answer: "Graduates can explore roles such as Automobile Technician, Production Technician, Service Advisor, Maintenance Technician, Quality Control Assistant, and Automobile Testing Technician, depending on their skills and employer requirements." },
+    { question: "What is the scope of Diploma in Mechanical Engineering (Automobile) in Uttar Pradesh?", answer: "Career pathways include automobile manufacturing, vehicle maintenance, automotive component production, dealerships, electric vehicle servicing, and automotive engineering services across Uttar Pradesh." },
+    { question: "Can I pursue B.Tech after completing Diploma in Mechanical Engineering (Automobile)?", answer: "Eligible diploma holders can explore lateral-entry admission into B.Tech programmes in relevant engineering disciplines, subject to university and regulatory eligibility requirements." },
+  ],
+};
+
+export default diplomaMechanicalEngineeringAutomobileNewData;
