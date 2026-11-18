@@ -93,9 +93,9 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
     const HeroPageTitleTag = isBcaDataScienceAiPage ? "p" : "h1";
     const isMechanicalPage = heroBanner.specialization.toLowerCase().includes("mechanical");
     const isSemiconductorPage = heroBanner.specialization.toLowerCase().includes("semiconductor");
-    const hasLtBenefitsDesign = usesCyberSecurityDesign || isDataSciencePage || isMechanicalPage || isSemiconductorPage || isBBABusinessAnalyticsPage || isBcomHonsPage;
+    const hasLtBenefitsDesign = usesCyberSecurityDesign || isDataSciencePage || isMechanicalPage || isSemiconductorPage || isBBABusinessAnalyticsPage || isBcomHonsPage || isBcomHonsWithLtPage;
     const usesMatchedSectionSizing = usesCyberSecurityDesign || isDataSciencePage || isMechanicalPage || isSemiconductorPage;
-    const usesGridDomains = isDataSciencePage || isMechanicalPage || isSemiconductorPage || isBcaCyberSecurityPage || isBbaAiFintechPage || isBcomHonsPage;
+    const usesGridDomains = isDataSciencePage || isMechanicalPage || isSemiconductorPage || isBcaCyberSecurityPage || isBbaAiFintechPage || isBcomHonsPage || isBcomHonsWithLtPage;
     // const usesCyberSecurityTextLayout = usesCyberSecurityDesign || isDataSciencePage;
     // const hasLtBenefitsDesign = isCyberSecurityPage || isDataSciencePage || isBusinessAnalyticsPage || isMechanicalPage || isSemiconductorPage;
     // const usesMatchedSectionSizing = isCyberSecurityPage || isDataSciencePage || isMechanicalPage || isSemiconductorPage;
@@ -184,9 +184,6 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
         { label: "4th Year", key: "yr4" as const },
     ].slice(0, yearKeys.length);
 
-
-
-    console.log("hello", isBcomHonsWithLtPage)
     return (
         <div className="program-page-new text-[#14284E] bg-white antialiased">
             <main className={[usesMatchedSectionSizing && layoutStyles.matchedSectionSizing, (isMechanicalPage || isSemiconductorPage) && layoutStyles.responsiveTextAlignment].filter(Boolean).join(" ") || undefined}>
@@ -652,7 +649,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                     <div className={`${Classes["container"]} relative z-10`}>
                         <div className="w-full">
                             <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3.5">
-                                {industryExposure.sectionTitle} <span className="text-[#ffb703]">{industryExposure.sectionTitleHighlight}</span>
+                                 {industryExposure.sectionTitle} <span className="text-[#ffb703]">{industryExposure.sectionTitleHighlight}</span>
                             </h2>
                             <p className={`text-[16px] text-[#4B5A72] leading-relaxed ${usesCyberSecurityTextLayout ? "text-left sm:text-justify" : "text-justify"} ${!usesCyberSecurityDesign && !isDataSciencePage && !isMechanicalPage && !isSemiconductorPage && !rm["indExp3"] ? "rm-clamp" : ""}`}>{industryExposure.introParagraph}</p>
                             {!usesCyberSecurityDesign && !isDataSciencePage && !isMechanicalPage && !isSemiconductorPage && <button className="rm-btn" onClick={() => toggleRm("indExp3")}>{rm["indExp3"] ? "Read Less" : "Read More"}</button>}
@@ -781,7 +778,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
 
                         {/* Curriculum image */}
                         {usesCurriculumPanel ? (
-                            <div className={`${curriculumStyles.panel} ${isDataSciencePage || isBusinessAnalyticsPage || isBcomHonsPage ? curriculumStyles.dataSciencePanel : ""}`}>
+                            <div className={`${curriculumStyles.panel} ${isDataSciencePage || isBusinessAnalyticsPage || isBcomHonsPage || isBcomHonsWithLtPage ? curriculumStyles.dataSciencePanel : ""}`}>
                                 <picture className={curriculumStyles.background} aria-hidden="true">
                                     <source media="(max-width: 1023px)" srcSet={labs.curriculumImageMobile} />
                                     <img src={labs.curriculumImageDesktop} alt="" loading="lazy" decoding="async" />

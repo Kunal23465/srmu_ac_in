@@ -143,12 +143,8 @@ const bcomHonsLTNewData: ProgramPageDataNew = {
 
   placement: {
     imageUrl: cyberSecurityNewData.placement.imageUrl,
-    imageAlt: cyberSecurityNewData.placement.imageAlt,
+    imageAlt: "Student preparing for career and placement",
     placementDetailUrl: "https://srmu.ac.in/placements",
-    heading: "Placement Support and Career Preparation",
-    description:
-      "A B.Com. (Hons.) degree can provide a foundation for careers across accounting, finance, taxation, banking, and business operations. The industry-oriented learning included in the program helps students explore how these functions work in professional settings.",
-    recruitersHeading: "Top Recruiters",
   },
 
   labs: {

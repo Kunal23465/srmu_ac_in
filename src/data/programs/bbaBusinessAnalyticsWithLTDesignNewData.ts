@@ -148,12 +148,8 @@ const bbaBusinessAnalyticsWithLTDesignNewData: ProgramPageDataNew = {
 
   placement: {
     imageUrl: cyberSecurityNewData.placement.imageUrl,
-    imageAlt: cyberSecurityNewData.placement.imageAlt,
+    imageAlt: "Student preparing for career and placement",
     placementDetailUrl: "https://srmu.ac.in/placements",
-    heading: "Where Our Students Get Placed",
-    description:
-      "A management degree with a specialization in business analytics can help students explore opportunities across corporate organizations, financial institutions, consulting firms, retail companies, and technology-driven businesses. At SRMU, placement preparation focuses on developing communication, analytical thinking, presentation, problem-solving, and professional skills.",
-    recruitersHeading: "Top Recruiters",
   },
 
   labs: {
