@@ -31,16 +31,13 @@ const autoOptimizeImageTags = ({ types: t }: any) => ({
 const eliminateRenderBlockingCss = () => ({
   name: "eliminate-render-blocking-css",
   transformIndexHtml(html: string) {
-    return html.replace(
-      /<link\s+rel="stylesheet"\s+([^>]*?)href="([^"]+\.css)"([^>]*?)>/gi,
-      (match: string, before: string, href: string, after: string) => {
-        const allAttrs = `${before} ${after}`;
-        if (allAttrs.includes("media=") || allAttrs.includes("data-blocking")) {
-          return match;
-        }
-        return `<link rel="preload" as="style" href="${href}" ${before} ${after} />\n    <link rel="stylesheet" href="${href}" ${before} ${after} media="print" onload="this.media='all'" />\n    <noscript><link rel="stylesheet" href="${href}" ${before} ${after} /></noscript>`;
-      },
-    );
+    return html.replace(/<link\s+rel="stylesheet"\s+([^>]*?)href="([^"]+\.css)"([^>]*?)>/gi, (match: string, before: string, href: string, after: string) => {
+      const allAttrs = `${before} ${after}`;
+      if (allAttrs.includes("media=") || allAttrs.includes("data-blocking")) {
+        return match;
+      }
+      return `<link rel="preload" as="style" href="${href}" ${before} ${after} />\n    <link rel="stylesheet" href="${href}" ${before} ${after} media="print" onload="this.media='all'" />\n    <noscript><link rel="stylesheet" href="${href}" ${before} ${after} /></noscript>`;
+    });
   },
 });
 
@@ -61,7 +58,7 @@ export default defineConfig(({ isSsrBuild }) => ({
 
   server: {
     host: "0.0.0.0",
-    port: 3031,
+    port: 3033,
     allowedHosts: ["test.srmu.ac.in", ".srmu.ac.in"],
   },
 

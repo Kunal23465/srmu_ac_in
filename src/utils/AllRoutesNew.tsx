@@ -32,6 +32,7 @@ import SRMUPolytechnicNewPage from "../pages/academics/institutes/institute-depa
 import InstituteOfPharmaceuticalSciencesNewPage from "../pages/academics/institutes/institute-department/institute-of-pharmaceutical-sciences-new/InstituteOfPharmaceuticalSciencesNewPage";
 import FacultyOfBiotechnologyNewPage from "../pages/academics/institutes/institute-department/faculty-of-biotechnology-new/FacultyOfBiotechnologyNewPage";
 import InstituteOfEducationAndResearchNewPage from "../pages/academics/institutes/institute-department/institute-of-education-and-research-new/InstituteOfEducationAndResearchNewPage";
+import BbaBusinessAnalyticsWithLTNew from "../pages/BbaBusinessAnalyticsWithLTNew";
 
 const HomePage = lazyPage(() => import("../pages/Home/HomePage"));
 const PageNotFound = lazyPage(() => import("../pages/PageNotFound"));
@@ -1239,6 +1240,11 @@ export const routes = [
       {
         path: "b-tech-ece-semiconductor-design-new",
         element: <BTechEceSemiconductorDesignNew />,
+      },
+
+      {
+        path: "bba-business-analytics-with-design-new",
+        element: <BbaBusinessAnalyticsWithLTNew />,
       },
 
       //------------------------------------------------------
