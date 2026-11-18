@@ -35,6 +35,7 @@ import InstituteOfEducationAndResearchNewPage from "../pages/academics/institute
 import BbaBusinessAnalyticsWithLTNew from "../pages/BbaBusinessAnalyticsWithLTNew";
 import BcomHonsWithLTNew from "../pages/BcomHonsWithLTNew";
 import MbaBusinessAnalyticsWithLTNew from "../pages/MbaBusinessAnalyticsWithLTNew";
+import MbaAiAugmentedFinTechLTNew from "../pages/MbaAiAugmentedFinTechLTNew";
 
 const HomePage = lazyPage(() => import("../pages/Home/HomePage"));
 const PageNotFound = lazyPage(() => import("../pages/PageNotFound"));
@@ -1255,6 +1256,10 @@ export const routes = [
       {
         path: "mba-business-analytics-with-lt-design-new",
         element: <MbaBusinessAnalyticsWithLTNew />,
+      },
+      {
+        path: "mba-ai-augmented-fintech-lt-design-new-new",
+        element: <MbaAiAugmentedFinTechLTNew />,
       },
 
       //------------------------------------------------------
