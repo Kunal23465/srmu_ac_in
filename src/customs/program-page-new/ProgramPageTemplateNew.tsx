@@ -36,6 +36,8 @@ const CardIcon = ({ icon }: { icon?: string }) => {
     if (icon === "energy") return <Zap className={cls} />;
     if (icon === "factory") return <Factory className={cls} />;
     if (icon === "car") return <Car className={cls} />;
+
+
     return <Cpu className={cls} />;
 };
 
@@ -84,9 +86,13 @@ interface ProgramPageTemplateNewProps {
 const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data }) => {
     const { heroBanner, whyStudy, ltBenefits, industryExposure, placement, labs, yearJourney, fee, poPsoPlo, careerOpportunities, programComparison } = data;
     const isCyberSecurityPage = heroBanner.specialization.toLowerCase().includes("cyber security");
+    // Tauseef
+    const isBcomHonsWithLtPage = heroBanner.pageHeading === "Bachelor of Commerce (Honours)" && heroBanner.specialization === "Commerce (Honours)";
     const isBcaCyberSecurityPage = isCyberSecurityPage && heroBanner.degreeTitle.startsWith("B.C.A.");
     const usesCyberSecurityDesign = isCyberSecurityPage || data.designVariant === "cyber-security";
+    const isAiAugmentedFintechPage = heroBanner.specialization === "AI-Augmented FinTech";
     const isBbaAiFintechPage = data.designVariant === "cyber-security" && heroBanner.specialization === "AI-Augmented FinTech";
+    const isBcomHonsPage = heroBanner.specialization.toLowerCase().includes("commerce") && Boolean(heroBanner.pageHeading?.toLowerCase().includes("l&t"));
     const isBBABusinessAnalyticsPage = heroBanner.specialization.toLowerCase().includes("business analytics");
     const isDataSciencePage = heroBanner.specialization.toLowerCase().includes("data science");
     const isBusinessAnalyticsPage = heroBanner.specialization.toLowerCase().includes("business analytics");
@@ -100,15 +106,23 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
     const isMechanicalPage = heroBanner.specialization.toLowerCase().includes("mechanical") && heroBanner.degreeTitle !== "Diploma in";
     const isSemiconductorPage = heroBanner.specialization.toLowerCase().includes("semiconductor");
     const isDiplomaCivilEngineeringPage = heroBanner.degreeTitle === "Diploma in" && heroBanner.specialization === "Civil Engineering";
-    const hasLtBenefitsDesign = usesCyberSecurityDesign || isDataSciencePage || isMechanicalPage || isSemiconductorPage || isBBABusinessAnalyticsPage;
+    // const hasLtBenefitsDesign = usesCyberSecurityDesign || isDataSciencePage || isMechanicalPage || isSemiconductorPage || isBBABusinessAnalyticsPage;
     const usesMatchedSectionSizing = usesCyberSecurityDesign || isDataSciencePage || isMechanicalPage || isSemiconductorPage;
     const usesGridDomains = isDataSciencePage || isMechanicalPage || isSemiconductorPage || isBcaCyberSecurityPage || isBbaAiFintechPage || isDiplomaCivilEngineeringPage || isDiplomaMechanicalProductionPage || isDiplomaMechanicalAutomobilePage || isDiplomaElectricalEngineeringPage || isDiplomaComputerScienceEngineeringPage || isDiplomaElectronicsCommunicationPage;
+    const hasLtBenefitsDesign = usesCyberSecurityDesign || isDataSciencePage || isMechanicalPage || isSemiconductorPage || isBBABusinessAnalyticsPage || isBcomHonsPage || isBcomHonsWithLtPage;
+    // const usesMatchedSectionSizing = usesCyberSecurityDesign || isDataSciencePage || isMechanicalPage || isSemiconductorPage;
+    // const usesGridDomains = isDataSciencePage || isBusinessAnalyticsPage || isMechanicalPage || isSemiconductorPage || isBcaCyberSecurityPage || isBbaAiFintechPage || isBcomHonsPage || isBcomHonsWithLtPage;
     // const usesCyberSecurityTextLayout = usesCyberSecurityDesign || isDataSciencePage;
     // const hasLtBenefitsDesign = isCyberSecurityPage || isDataSciencePage || isBusinessAnalyticsPage || isMechanicalPage || isSemiconductorPage;
     // const usesMatchedSectionSizing = isCyberSecurityPage || isDataSciencePage || isMechanicalPage || isSemiconductorPage;
     // const usesGridDomains = isDataSciencePage || isBusinessAnalyticsPage || isMechanicalPage || isSemiconductorPage;
-    const usesCyberSecurityTextLayout = isCyberSecurityPage || isDataSciencePage || isBBABusinessAnalyticsPage;
-    const usesCurriculumPanel = usesCyberSecurityTextLayout || isBusinessAnalyticsPage || isBbaAiFintechPage || isDiplomaCivilEngineeringPage || isDiplomaMechanicalProductionPage || isDiplomaMechanicalAutomobilePage || isDiplomaElectricalEngineeringPage || isDiplomaComputerScienceEngineeringPage || isDiplomaElectronicsCommunicationPage;
+    // const usesCyberSecurityTextLayout = isCyberSecurityPage || isDataSciencePage || isBBABusinessAnalyticsPage;
+    // const usesCurriculumPanel = usesCyberSecurityTextLayout || isBusinessAnalyticsPage || isBbaAiFintechPage || isDiplomaCivilEngineeringPage || isDiplomaMechanicalProductionPage || isDiplomaMechanicalAutomobilePage || isDiplomaElectricalEngineeringPage || isDiplomaComputerScienceEngineeringPage || isDiplomaElectronicsCommunicationPage;
+
+    // Tauseef
+    const usesCyberSecurityTextLayout = isCyberSecurityPage || isDataSciencePage || isBBABusinessAnalyticsPage || isBcomHonsWithLtPage;
+    // Tauseef
+    const usesCurriculumPanel = usesCyberSecurityTextLayout || isBusinessAnalyticsPage || isAiAugmentedFintechPage || isBcomHonsPage || isBcomHonsWithLtPage;
     const careerDescriptionCutoffPhrase = isMechanicalPage ? "infrastructure." : isSemiconductorPage ? "data centers." : "informed decisions.";
     const careerDescriptionCutoff = careerOpportunities.description.indexOf(careerDescriptionCutoffPhrase);
     const careerDescriptionPreview = careerDescriptionCutoff >= 0
@@ -498,17 +512,17 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                                                         ? electricalBenefitsIcons
                                                         : isDiplomaElectronicsCommunicationPage
                                                             ? electronicsCommunicationBenefitsIcons
-                                                        : isDiplomaComputerScienceEngineeringPage
-                                                            ? computerScienceBenefitsIcons
-                                                        : isMechanicalPage || isDiplomaMechanicalProductionPage || isDiplomaMechanicalAutomobilePage
-                                                            ? mechanicalBenefitsIcons
-                                                        : isSemiconductorPage
-                                                            ? semiconductorBenefitsIcons
-                                                            : isDiplomaCivilEngineeringPage
-                                                                ? civilEngineeringBenefitsIcons
-                                                            : isBcaCyberSecurityPage || isBbaAiFintechPage
-                                                                ? cyberBenefitsIcons
-                                                                : dataScienceBenefitsIcons;
+                                                            : isDiplomaComputerScienceEngineeringPage
+                                                                ? computerScienceBenefitsIcons
+                                                                : isMechanicalPage || isDiplomaMechanicalProductionPage || isDiplomaMechanicalAutomobilePage
+                                                                    ? mechanicalBenefitsIcons
+                                                                    : isSemiconductorPage
+                                                                        ? semiconductorBenefitsIcons
+                                                                        : isDiplomaCivilEngineeringPage
+                                                                            ? civilEngineeringBenefitsIcons
+                                                                            : isBcaCyberSecurityPage || isBbaAiFintechPage
+                                                                                ? cyberBenefitsIcons
+                                                                                : dataScienceBenefitsIcons;
                                                     const DomainIcon = iconSet[index % iconSet.length];
                                                     return (
                                                         <span key={tag} className={benefitsStyles.domain}>
@@ -777,7 +791,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                     <div className={`${Classes["container"]} mx-auto`}>
                         {!usesCyberSecurityTextLayout && !isBbaAiFintechPage && !isDiplomaCivilEngineeringPage && !isDiplomaMechanicalProductionPage && !isDiplomaMechanicalAutomobilePage && !isDiplomaElectricalEngineeringPage && !isDiplomaComputerScienceEngineeringPage && !isDiplomaElectronicsCommunicationPage && (
                             <div className="w-full mb-5 sm:mb-10">
-                                {!isBusinessAnalyticsPage && (
+                                {!isBusinessAnalyticsPage && !isAiAugmentedFintechPage && !isBcomHonsPage && (
                                     <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.15] font-bold font-display text-[#14284E]">
                                         {labs.sectionTitle}<span className="text-[#ffb703]"> {labs.sectionTitleHighlight}</span>
                                     </h2>
@@ -791,40 +805,41 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                         {/* Curriculum image */}
                         {usesCurriculumPanel ? (
                             <div className={`${curriculumStyles.panel} ${isDataSciencePage || isBusinessAnalyticsPage || isDiplomaMechanicalProductionPage || isDiplomaMechanicalAutomobilePage || isDiplomaElectricalEngineeringPage || isDiplomaComputerScienceEngineeringPage || isDiplomaElectronicsCommunicationPage ? curriculumStyles.dataSciencePanel : ""}`}>
-                                <picture className={curriculumStyles.background} aria-hidden="true">
-                                    <source media="(max-width: 1023px)" srcSet={labs.curriculumImageMobile} />
-                                    <img src={labs.curriculumImageDesktop} alt="" loading="lazy" decoding="async" />
-                                </picture>
-                                <h2 className={curriculumStyles.heading} data-preserve-mobile-title>
-                                    {labs.sectionTitle}<span> {labs.sectionTitleHighlight}</span>
-                                </h2>
-                                <ul className={curriculumStyles.points} aria-label="Industry integrated curriculum">
-                                    {labs.curriculumOverlayItems.map((item) => (
-                                        <li key={item.text} className={curriculumStyles.point}>
-                                            <span>{item.text.replace(/\n/g, " ")}</span>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        ) : (
-                            <div className="flex flex-col gap-6 sm:gap-8 mb-7">
-                                <div className="w-full overflow-x-auto pb-2">
-                                    <div className="relative">
-                                        <img src={labs.curriculumImageDesktop} alt="Industry Integrated Curriculum" className="hidden sm:block w-full h-auto object-contain rounded-xl" loading="lazy" />
-                                        <img src={labs.curriculumImageMobile} alt="Industry Integrated Curriculum" className="sm:hidden w-full h-auto object-contain rounded-xl" loading="lazy" />
-                                        <div className="grid absolute top-[68%] left-[0.5%] sm:left-[3%] right-[0.5%] sm:right-[3%] grid-cols-8 gap-0.5 sm:gap-1 items-start px-0.5 sm:px-2">
-                                            {labs.curriculumOverlayItems.map((item, i) => (
-                                                <div key={i} className="text-center text-[5.5px] min-[375px]:text-[6.5px] sm:text-[clamp(9px,1.05vw,13px)] font-medium text-[#14284E] leading-[1.05] sm:leading-[1.15] break-words break-all sm:break-normal">{item.text.split("\n").map((t, j) => <React.Fragment key={j}>{t}{j < item.text.split("\n").length - 1 && <br />}</React.Fragment>)}</div>
-                                            ))}
+                            
+                                    <picture className={curriculumStyles.background} aria-hidden="true">
+                                        <source media="(max-width: 1023px)" srcSet={labs.curriculumImageMobile} />
+                                        <img src={labs.curriculumImageDesktop} alt="" loading="lazy" decoding="async" />
+                                    </picture>
+                                    <h2 className={curriculumStyles.heading} data-preserve-mobile-title>
+                                        {labs.sectionTitle}<span> {labs.sectionTitleHighlight}</span>
+                                    </h2>
+                                    <ul className={curriculumStyles.points} aria-label="Industry integrated curriculum">
+                                        {labs.curriculumOverlayItems.map((item) => (
+                                            <li key={item.text} className={curriculumStyles.point}>
+                                                <span>{item.text.replace(/\n/g, " ")}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                                ) : (
+                                <div className="flex flex-col gap-6 sm:gap-8 mb-7">
+                                    <div className="w-full overflow-x-auto pb-2">
+                                        <div className="relative">
+                                            <img src={labs.curriculumImageDesktop} alt="Industry Integrated Curriculum" className="hidden sm:block w-full h-auto object-contain rounded-xl" loading="lazy" />
+                                            <img src={labs.curriculumImageMobile} alt="Industry Integrated Curriculum" className="sm:hidden w-full h-auto object-contain rounded-xl" loading="lazy" />
+                                            <div className="grid absolute top-[68%] left-[0.5%] sm:left-[3%] right-[0.5%] sm:right-[3%] grid-cols-8 gap-0.5 sm:gap-1 items-start px-0.5 sm:px-2">
+                                                {labs.curriculumOverlayItems.map((item, i) => (
+                                                    <div key={i} className="text-center text-[5.5px] min-[375px]:text-[6.5px] sm:text-[clamp(9px,1.05vw,13px)] font-medium text-[#14284E] leading-[1.05] sm:leading-[1.15] break-words break-all sm:break-normal">{item.text.split("\n").map((t, j) => <React.Fragment key={j}>{t}{j < item.text.split("\n").length - 1 && <br />}</React.Fragment>)}</div>
+                                                ))}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
                         )}
 
-                        {labs.reelVideoUrl && (
-                            <div className="relative isolate overflow-hidden rounded-[26px] border border-[#C7DDED] bg-gradient-to-br from-[#F4FAFE] via-[#E5F2FB] to-[#DCECF8] p-4 sm:p-6 lg:p-8 mb-8 sm:mb-10 shadow-[0_18px_50px_rgba(31,78,121,0.13)]">
-                                <style>{`
+                                {labs.reelVideoUrl && (
+                                    <div className="relative isolate overflow-hidden rounded-[26px] border border-[#C7DDED] bg-gradient-to-br from-[#F4FAFE] via-[#E5F2FB] to-[#DCECF8] p-4 sm:p-6 lg:p-8 mb-8 sm:mb-10 shadow-[0_18px_50px_rgba(31,78,121,0.13)]">
+                                        <style>{`
 @keyframes reelCircuitFlow { to { stroke-dashoffset: -180; } }
 @keyframes reelNodeFloat { 0%,100% { transform: translateY(0); opacity: .45; } 50% { transform: translateY(-9px); opacity: .9; } }
 .reel-circuit-flow { animation: reelCircuitFlow 18s linear infinite; }
@@ -833,147 +848,147 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
 .reel-circuit-flow, .reel-node-float { animation: none; }
 }
 `}</style>
-                                <svg aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 h-full w-full" viewBox="0 0 1200 430" preserveAspectRatio="none" fill="none">
-                                    <defs>
-                                        <linearGradient id="reelCircuitGradient" x1="0" y1="0" x2="1200" y2="430" gradientUnits="userSpaceOnUse">
-                                            <stop stopColor="#1B4F91" stopOpacity=".03" />
-                                            <stop offset=".52" stopColor="#168AC0" stopOpacity=".3" />
-                                            <stop offset="1" stopColor="#1B4F91" stopOpacity=".08" />
-                                        </linearGradient>
-                                    </defs>
-                                    <path className="reel-circuit-flow" d="M-40 82H185L238 135H435L482 88H695L752 145H930L978 97H1240M-30 350H165L222 293H410L456 339H660L716 283H900L950 333H1235M585-20V68L635 118V213L588 260V450M1070-20V75L1020 125V215L1065 260V450" stroke="url(#reelCircuitGradient)" strokeWidth="2" strokeDasharray="7 12" />
-                                    <path d="M0 214H195L234 175H342M1200 214H1010L971 175H860" stroke="#1B4F91" strokeOpacity=".1" strokeWidth="1.5" />
-                                    <g className="reel-node-float" fill="#168AC0" fillOpacity=".45">
-                                        <circle cx="238" cy="135" r="4" /><circle cx="482" cy="88" r="4" /><circle cx="752" cy="145" r="4" /><circle cx="978" cy="97" r="4" />
-                                    </g>
-                                    <g fill="#1B4F91" fillOpacity=".22"><circle cx="222" cy="293" r="3" /><circle cx="456" cy="339" r="3" /><circle cx="716" cy="283" r="3" /><circle cx="950" cy="333" r="3" /></g>
-                                </svg>
-                                <div className="flex flex-col sm:hidden gap-4">
-                                    <h3 className={`${layoutStyles.sectionTitle} text-[20px] leading-tight font-bold font-display text-[#14284E]`}>
-                                        {labs.curriculumSectionTitle.replace(/\s+with L&T$/i, "")} <span className="inline-flex items-center gap-2 align-middle whitespace-nowrap"><span className="text-[#ffb703]">with</span>
-                                            <img
-                                                src={ltLogo}
-                                                alt="L&T"
-                                                className="inline-block h-[26px] w-auto object-contain align-middle"
-                                            />
-                                        </span>
-                                    </h3>
-                                    <div className="mx-auto w-full max-w-[230px] overflow-hidden rounded-2xl ring-1 ring-white/20 bg-black shadow-[0_16px_36px_rgba(0,0,0,0.38)]">
-                                        <video
-                                            src={labs.reelVideoUrl}
-                                            poster={labs.reelPosterUrl}
-                                            width="720"
-                                            height="1280"
-                                            autoPlay
-                                            loop
-                                            muted
-                                            controls
-                                            playsInline
-                                            preload="metadata"
-                                            aria-label="Cyber security labs video reel"
-                                            className="block w-full aspect-[9/16] max-h-[390px] object-cover"
-                                        />
-                                    </div>
-                                    <p className="text-[13px] leading-relaxed text-[#405570]">
-                                        {isDataSciencePage || isSemiconductorPage ? <>{curriculumDescriptionPreview}<span className="hidden sm:inline">{curriculumDescriptionRemainder}</span></> : labs.curriculumDescription}
-                                    </p>
-                                </div>
-                                <div className="relative hidden sm:grid sm:grid-cols-[minmax(170px,0.7fr)_minmax(0,1.3fr)] lg:grid-cols-[250px_minmax(0,1fr)] items-center gap-5 sm:gap-7 lg:gap-10">
-                                    <div className="w-full overflow-hidden rounded-2xl ring-1 ring-white/20 bg-black shadow-[0_16px_36px_rgba(0,0,0,0.38)]">
-                                        <video
-                                            src={labs.reelVideoUrl}
-                                            poster={labs.reelPosterUrl}
-                                            width="720"
-                                            height="1280"
-                                            autoPlay
-                                            loop
-                                            muted
-                                            controls
-                                            playsInline
-                                            preload="metadata"
-                                            aria-label="Cyber security labs video reel"
-                                            className="block w-full aspect-[9/16] max-h-[390px] object-cover"
-                                        />
-                                    </div>
-                                    <div className="py-1 sm:py-4 lg:py-8 text-left">
-                                        <h3 className={`mt-3 text-[26px] lg:text-[34px] leading-tight font-bold font-display text-[#14284E] ${isMechanicalPage ? "" : "flex flex-wrap items-center gap-x-2"}`}>
-                                            {isMechanicalPage ? (
-                                                <>
-                                                    <span className="block">{labs.curriculumSectionTitle.replace(/\s+Works$/i, "")}</span>
-                                                    <span className="flex items-center gap-x-2">Works <span className="text-[#ffb703]">with</span><img src={ltLogo} alt="L&T" className="inline-block h-[36px] w-auto object-contain align-middle" /></span>
-                                                </>
-                                            ) : (
-                                                <>
-                                                    {labs.curriculumSectionTitle.replace(/\\s+with L&T$/i, "")} <span className="text-[#ffb703]">with</span>
-                                                    <img src={ltLogo} alt="L&T" className="inline-block h-[36px] w-auto object-contain align-middle" />
-                                                </>
-                                            )}
-                                        </h3>
-                                        <p className="mt-2 sm:mt-4 text-[15px] leading-relaxed text-[#405570]">{labs.curriculumDescription}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        )}
-
-                        <div className="mb-5 sm:mb-7 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-2">
-                            <div>
-                                <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#1B4F91]">Explore the spaces</p>
-                                <h3 className="mt-1 text-[22px] sm:text-[30px] leading-tight font-bold font-display text-[#14284E]">{labs.labsHeading ?? "Hands-on Cyber Security Labs"}</h3>
-                            </div>
-                            <p className="max-w-xl text-[13px] sm:text-[14px] leading-relaxed text-[#64748B]">{labs.labsDescription ?? "Build practical skills across the tools and environments used by modern security teams."}</p>
-                        </div>
-
-                        <div className="mb-3 flex justify-end gap-2 sm:hidden">
-                            <button type="button" onClick={() => scrollLabs("left")} aria-label="Scroll labs left" className="flex h-9 w-9 items-center justify-center rounded-full border border-[#DCE6F2] bg-white text-[#14284E] shadow-sm">
-                                <ArrowLeft className="h-4 w-4" aria-hidden="true" />
-                            </button>
-                            <button type="button" onClick={() => scrollLabs("right")} aria-label="Scroll labs right" className="flex h-9 w-9 items-center justify-center rounded-full border border-[#DCE6F2] bg-white text-[#14284E] shadow-sm">
-                                <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                            </button>
-                        </div>
-
-                        <div ref={labsScrollRef} className="-mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-3 scrollbar-hide sm:mx-0 sm:grid sm:grid-cols-1 sm:gap-5 sm:overflow-visible sm:px-0 sm:pb-0 md:grid-cols-2 xl:grid-cols-3">
-                            {labs.labs.map((lab, index) => {
-                                const labImageUrl = lab.imageUrl ?? (index === 0 ? labs.cardBackgroundImageUrl : undefined);
-                                return (
-                                    <article key={lab.label} className="group w-[85vw] max-w-[360px] shrink-0 snap-start overflow-hidden rounded-2xl border border-[#DCE6F2] bg-white shadow-[0_4px_18px_rgba(15,31,61,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_36px_rgba(15,31,61,0.12)] sm:w-auto sm:max-w-none sm:shrink">
-                                        <div className="relative aspect-[16/10] overflow-hidden bg-gradient-to-br from-[#0B1D3A] via-[#123B69] to-[#1475A5]">
-                                            {labImageUrl ? (
-                                                <img src={labImageUrl} alt={lab.imageAlt ?? lab.title} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
-                                            ) : (
-                                                <div className="flex h-full items-center justify-center"><Shield className="h-14 w-14 text-white/60" strokeWidth={1.2} /></div>
-                                            )}
-                                            <div className="absolute inset-0 bg-gradient-to-t from-[#06142C]/75 via-transparent to-[#06142C]/10" />
-                                            <span className="absolute left-4 top-4 rounded-full border border-white/25 bg-[#081A34]/70 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.14em] text-white backdrop-blur-sm">{lab.label}</span>
-                                            {/* <span className="absolute bottom-4 left-4 text-[10px] font-semibold uppercase tracking-[0.14em] text-white/85">Practical learning environment</span> */}
+                                        <svg aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 h-full w-full" viewBox="0 0 1200 430" preserveAspectRatio="none" fill="none">
+                                            <defs>
+                                                <linearGradient id="reelCircuitGradient" x1="0" y1="0" x2="1200" y2="430" gradientUnits="userSpaceOnUse">
+                                                    <stop stopColor="#1B4F91" stopOpacity=".03" />
+                                                    <stop offset=".52" stopColor="#168AC0" stopOpacity=".3" />
+                                                    <stop offset="1" stopColor="#1B4F91" stopOpacity=".08" />
+                                                </linearGradient>
+                                            </defs>
+                                            <path className="reel-circuit-flow" d="M-40 82H185L238 135H435L482 88H695L752 145H930L978 97H1240M-30 350H165L222 293H410L456 339H660L716 283H900L950 333H1235M585-20V68L635 118V213L588 260V450M1070-20V75L1020 125V215L1065 260V450" stroke="url(#reelCircuitGradient)" strokeWidth="2" strokeDasharray="7 12" />
+                                            <path d="M0 214H195L234 175H342M1200 214H1010L971 175H860" stroke="#1B4F91" strokeOpacity=".1" strokeWidth="1.5" />
+                                            <g className="reel-node-float" fill="#168AC0" fillOpacity=".45">
+                                                <circle cx="238" cy="135" r="4" /><circle cx="482" cy="88" r="4" /><circle cx="752" cy="145" r="4" /><circle cx="978" cy="97" r="4" />
+                                            </g>
+                                            <g fill="#1B4F91" fillOpacity=".22"><circle cx="222" cy="293" r="3" /><circle cx="456" cy="339" r="3" /><circle cx="716" cy="283" r="3" /><circle cx="950" cy="333" r="3" /></g>
+                                        </svg>
+                                        <div className="flex flex-col sm:hidden gap-4">
+                                            <h3 className={`${layoutStyles.sectionTitle} text-[20px] leading-tight font-bold font-display text-[#14284E]`}>
+                                                {labs.curriculumSectionTitle.replace(/\s+with L&T$/i, "")} <span className="inline-flex items-center gap-2 align-middle whitespace-nowrap"><span className="text-[#ffb703]">with</span>
+                                                    <img
+                                                        src={ltLogo}
+                                                        alt="L&T"
+                                                        className="inline-block h-[26px] w-auto object-contain align-middle"
+                                                    />
+                                                </span>
+                                            </h3>
+                                            <div className="mx-auto w-full max-w-[230px] overflow-hidden rounded-2xl ring-1 ring-white/20 bg-black shadow-[0_16px_36px_rgba(0,0,0,0.38)]">
+                                                <video
+                                                    src={labs.reelVideoUrl}
+                                                    poster={labs.reelPosterUrl}
+                                                    width="720"
+                                                    height="1280"
+                                                    autoPlay
+                                                    loop
+                                                    muted
+                                                    controls
+                                                    playsInline
+                                                    preload="metadata"
+                                                    aria-label="Cyber security labs video reel"
+                                                    className="block w-full aspect-[9/16] max-h-[390px] object-cover"
+                                                />
+                                            </div>
+                                            <p className="text-[13px] leading-relaxed text-[#405570]">
+                                                {isDataSciencePage || isSemiconductorPage ? <>{curriculumDescriptionPreview}<span className="hidden sm:inline">{curriculumDescriptionRemainder}</span></> : labs.curriculumDescription}
+                                            </p>
                                         </div>
-                                        <div className="p-4 sm:p-5">
-                                            <h4 className="text-[18px] font-bold font-display leading-snug text-[#14284E] group-hover:text-[#1B4F91] transition-colors">{lab.title}</h4>
-                                            <p className="mt-2 border-l-[3px] border-[#ffb703] pl-3 text-[13px] font-semibold leading-relaxed text-[#B86B00]">{lab.tagline}</p>
-                                            <p className="mt-3 text-[13px] leading-[1.65] text-[#526179]">{lab.description}</p>
-                                            <div className="mt-4 flex flex-wrap gap-2">
-                                                {lab.items.map((item) => (
-                                                    <span key={item} className="rounded-lg bg-[#F1F6FB] px-2.5 py-1.5 text-[11px] font-medium leading-tight text-[#34506F]">{item}</span>
-                                                ))}
+                                        <div className="relative hidden sm:grid sm:grid-cols-[minmax(170px,0.7fr)_minmax(0,1.3fr)] lg:grid-cols-[250px_minmax(0,1fr)] items-center gap-5 sm:gap-7 lg:gap-10">
+                                            <div className="w-full overflow-hidden rounded-2xl ring-1 ring-white/20 bg-black shadow-[0_16px_36px_rgba(0,0,0,0.38)]">
+                                                <video
+                                                    src={labs.reelVideoUrl}
+                                                    poster={labs.reelPosterUrl}
+                                                    width="720"
+                                                    height="1280"
+                                                    autoPlay
+                                                    loop
+                                                    muted
+                                                    controls
+                                                    playsInline
+                                                    preload="metadata"
+                                                    aria-label="Cyber security labs video reel"
+                                                    className="block w-full aspect-[9/16] max-h-[390px] object-cover"
+                                                />
+                                            </div>
+                                            <div className="py-1 sm:py-4 lg:py-8 text-left">
+                                                <h3 className={`mt-3 text-[26px] lg:text-[34px] leading-tight font-bold font-display text-[#14284E] ${isMechanicalPage ? "" : "flex flex-wrap items-center gap-x-2"}`}>
+                                                    {isMechanicalPage ? (
+                                                        <>
+                                                            <span className="block">{labs.curriculumSectionTitle.replace(/\s+Works$/i, "")}</span>
+                                                            <span className="flex items-center gap-x-2">Works <span className="text-[#ffb703]">with</span><img src={ltLogo} alt="L&T" className="inline-block h-[36px] w-auto object-contain align-middle" /></span>
+                                                        </>
+                                                    ) : (
+                                                        <>
+                                                            {labs.curriculumSectionTitle.replace(/\\s+with L&T$/i, "")} <span className="text-[#ffb703]">with</span>
+                                                            <img src={ltLogo} alt="L&T" className="inline-block h-[36px] w-auto object-contain align-middle" />
+                                                        </>
+                                                    )}
+                                                </h3>
+                                                <p className="mt-2 sm:mt-4 text-[15px] leading-relaxed text-[#405570]">{labs.curriculumDescription}</p>
                                             </div>
                                         </div>
-                                    </article>
-                                );
-                            })}
-                            <div className="hidden items-center justify-center sm:flex">
-                                <a href="tel:18001026004" className={buttonClasses("relative group overflow-hidden bg-gradient-to-r from-[#ffb703] via-[#ffc72c] to-[#ffa000] text-[#14284E] font-extrabold text-[14px] sm:text-[15px] px-8 py-3.5 rounded-lg shadow-[0_8px_20px_-8px_rgba(217,139,43,0.6)] hover:shadow-[0_12px_30px_rgba(255,183,3,0.65)] hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2 text-center uppercase")}>
-                                    <PhoneCall className={buttonClasses("w-4 h-4 shrink-0 transition-transform duration-300 group-hover:scale-110")} />
-                                    <span>Have a Query? Talk to Expert</span>
-                                </a>
+                                    </div>
+                                )}
+
+                                <div className="mb-5 sm:mb-7 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-2">
+                                    <div>
+                                        <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#1B4F91]">Explore the spaces</p>
+                                        <h3 className="mt-1 text-[22px] sm:text-[30px] leading-tight font-bold font-display text-[#14284E]">{labs.labsHeading ?? "Hands-on Cyber Security Labs"}</h3>
+                                    </div>
+                                    <p className="max-w-xl text-[13px] sm:text-[14px] leading-relaxed text-[#64748B]">{labs.labsDescription ?? "Build practical skills across the tools and environments used by modern security teams."}</p>
+                                </div>
+
+                                <div className="mb-3 flex justify-end gap-2 sm:hidden">
+                                    <button type="button" onClick={() => scrollLabs("left")} aria-label="Scroll labs left" className="flex h-9 w-9 items-center justify-center rounded-full border border-[#DCE6F2] bg-white text-[#14284E] shadow-sm">
+                                        <ArrowLeft className="h-4 w-4" aria-hidden="true" />
+                                    </button>
+                                    <button type="button" onClick={() => scrollLabs("right")} aria-label="Scroll labs right" className="flex h-9 w-9 items-center justify-center rounded-full border border-[#DCE6F2] bg-white text-[#14284E] shadow-sm">
+                                        <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                                    </button>
+                                </div>
+
+                                <div ref={labsScrollRef} className="-mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-3 scrollbar-hide sm:mx-0 sm:grid sm:grid-cols-1 sm:gap-5 sm:overflow-visible sm:px-0 sm:pb-0 md:grid-cols-2 xl:grid-cols-3">
+                                    {labs.labs.map((lab, index) => {
+                                        const labImageUrl = lab.imageUrl ?? (index === 0 ? labs.cardBackgroundImageUrl : undefined);
+                                        return (
+                                            <article key={lab.label} className="group w-[85vw] max-w-[360px] shrink-0 snap-start overflow-hidden rounded-2xl border border-[#DCE6F2] bg-white shadow-[0_4px_18px_rgba(15,31,61,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_36px_rgba(15,31,61,0.12)] sm:w-auto sm:max-w-none sm:shrink">
+                                                <div className="relative aspect-[16/10] overflow-hidden bg-gradient-to-br from-[#0B1D3A] via-[#123B69] to-[#1475A5]">
+                                                    {labImageUrl ? (
+                                                        <img src={labImageUrl} alt={lab.imageAlt ?? lab.title} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                                                    ) : (
+                                                        <div className="flex h-full items-center justify-center"><Shield className="h-14 w-14 text-white/60" strokeWidth={1.2} /></div>
+                                                    )}
+                                                    <div className="absolute inset-0 bg-gradient-to-t from-[#06142C]/75 via-transparent to-[#06142C]/10" />
+                                                    <span className="absolute left-4 top-4 rounded-full border border-white/25 bg-[#081A34]/70 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.14em] text-white backdrop-blur-sm">{lab.label}</span>
+                                                    {/* <span className="absolute bottom-4 left-4 text-[10px] font-semibold uppercase tracking-[0.14em] text-white/85">Practical learning environment</span> */}
+                                                </div>
+                                                <div className="p-4 sm:p-5">
+                                                    <h4 className="text-[18px] font-bold font-display leading-snug text-[#14284E] group-hover:text-[#1B4F91] transition-colors">{lab.title}</h4>
+                                                    <p className="mt-2 border-l-[3px] border-[#ffb703] pl-3 text-[13px] font-semibold leading-relaxed text-[#B86B00]">{lab.tagline}</p>
+                                                    <p className="mt-3 text-[13px] leading-[1.65] text-[#526179]">{lab.description}</p>
+                                                    <div className="mt-4 flex flex-wrap gap-2">
+                                                        {lab.items.map((item) => (
+                                                            <span key={item} className="rounded-lg bg-[#F1F6FB] px-2.5 py-1.5 text-[11px] font-medium leading-tight text-[#34506F]">{item}</span>
+                                                        ))}
+                                                    </div>
+                                                </div>
+                                            </article>
+                                        );
+                                    })}
+                                    <div className="hidden items-center justify-center sm:flex">
+                                        <a href="tel:18001026004" className={buttonClasses("relative group overflow-hidden bg-gradient-to-r from-[#ffb703] via-[#ffc72c] to-[#ffa000] text-[#14284E] font-extrabold text-[14px] sm:text-[15px] px-8 py-3.5 rounded-lg shadow-[0_8px_20px_-8px_rgba(217,139,43,0.6)] hover:shadow-[0_12px_30px_rgba(255,183,3,0.65)] hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2 text-center uppercase")}>
+                                            <PhoneCall className={buttonClasses("w-4 h-4 shrink-0 transition-transform duration-300 group-hover:scale-110")} />
+                                            <span>Have a Query? Talk to Expert</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div className="mt-4 flex justify-center sm:hidden">
+                                    <a href="tel:18001026004" className={buttonClasses("relative group overflow-hidden bg-gradient-to-r from-[#ffb703] via-[#ffc72c] to-[#ffa000] text-[#14284E] font-extrabold text-[14px] px-8 py-3.5 rounded-lg shadow-[0_8px_20px_-8px_rgba(217,139,43,0.6)] flex items-center justify-center gap-2 text-center uppercase")}>
+                                        <PhoneCall className={buttonClasses("w-4 h-4 shrink-0")} />
+                                        <span>Have a Query? Talk to Expert</span>
+                                    </a>
+                                </div>
                             </div>
-                        </div>
-                        <div className="mt-4 flex justify-center sm:hidden">
-                            <a href="tel:18001026004" className={buttonClasses("relative group overflow-hidden bg-gradient-to-r from-[#ffb703] via-[#ffc72c] to-[#ffa000] text-[#14284E] font-extrabold text-[14px] px-8 py-3.5 rounded-lg shadow-[0_8px_20px_-8px_rgba(217,139,43,0.6)] flex items-center justify-center gap-2 text-center uppercase")}>
-                                <PhoneCall className={buttonClasses("w-4 h-4 shrink-0")} />
-                                <span>Have a Query? Talk to Expert</span>
-                            </a>
-                        </div>
-                    </div>
                 </section>
 
                 {/* ===== 4-YEAR JOURNEY ===== */}
@@ -1208,9 +1223,9 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                                     {isDataSciencePage || isSemiconductorPage ? <>{careerDescriptionPreview}<span className="hidden md:inline">{careerDescriptionRemainder}</span></> : isMechanicalPage && !rm["digSys"] ? careerDescriptionPreview : careerOpportunities.description}
                                 </p>
                                 {!usesCyberSecurityDesign && !isDataSciencePage && !isSemiconductorPage && (
-                                <div className="mt-4 flex flex-wrap items-center gap-4">
-                                    <button className="rm-btn !mt-0" onClick={() => toggleRm("digSys")}>{rm["digSys"] ? "Read Less" : "Read More"}</button>
-                                </div>
+                                    <div className="mt-4 flex flex-wrap items-center gap-4">
+                                        <button className="rm-btn !mt-0" onClick={() => toggleRm("digSys")}>{rm["digSys"] ? "Read Less" : "Read More"}</button>
+                                    </div>
                                 )}
                             </div>
                         </div>

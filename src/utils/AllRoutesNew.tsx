@@ -39,6 +39,9 @@ import InstituteOfPharmaceuticalSciencesNewPage from "../pages/academics/institu
 import FacultyOfBiotechnologyNewPage from "../pages/academics/institutes/institute-department/faculty-of-biotechnology-new/FacultyOfBiotechnologyNewPage";
 import InstituteOfEducationAndResearchNewPage from "../pages/academics/institutes/institute-department/institute-of-education-and-research-new/InstituteOfEducationAndResearchNewPage";
 import BbaBusinessAnalyticsWithLTNew from "../pages/BbaBusinessAnalyticsWithLTNew";
+import BcomHonsWithLTNew from "../pages/BcomHonsWithLTNew";
+import MbaBusinessAnalyticsWithLTNew from "../pages/MbaBusinessAnalyticsWithLTNew";
+import MbaAiAugmentedFinTechLTNew from "../pages/MbaAiAugmentedFinTechLTNew";
 
 const HomePage = lazyPage(() => import("../pages/Home/HomePage"));
 const PageNotFound = lazyPage(() => import("../pages/PageNotFound"));
@@ -249,7 +252,7 @@ export const routes = [
         path: "/about-us",
         element: <AboutPage />,
       },
-     
+
       {
         path: "/news/:programName",
         element: <NewsEventDetails />,
@@ -613,7 +616,7 @@ export const routes = [
         path: "green-initiative",
         element: <GreenInitiativePage />,
       },
-    
+
       {
         path: "women-empowerment",
         element: <WomenEmpowermentPage />,
@@ -1275,6 +1278,18 @@ export const routes = [
       {
         path: "bba-business-analytics-with-design-new",
         element: <BbaBusinessAnalyticsWithLTNew />,
+      },
+      {
+        path: "bcom-hons-with-lt-design-new",
+        element: <BcomHonsWithLTNew />,
+      },
+      {
+        path: "mba-business-analytics-with-lt-design-new",
+        element: <MbaBusinessAnalyticsWithLTNew />,
+      },
+      {
+        path: "mba-ai-augmented-fintech-lt-design-new",
+        element: <MbaAiAugmentedFinTechLTNew />,
       },
 
       //------------------------------------------------------
