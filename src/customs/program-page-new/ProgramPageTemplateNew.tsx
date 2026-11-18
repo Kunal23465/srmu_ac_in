@@ -80,9 +80,12 @@ interface ProgramPageTemplateNewProps {
 const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data }) => {
     const { heroBanner, whyStudy, ltBenefits, industryExposure, placement, labs, yearJourney, fee, poPsoPlo, careerOpportunities, programComparison } = data;
     const isCyberSecurityPage = heroBanner.specialization.toLowerCase().includes("cyber security");
+    // Tauseef
+    const isBcomHonsWithLtPage = heroBanner.pageHeading === "Bachelor of Commerce (Honours)" && heroBanner.specialization === "Commerce (Honours)";
     const isBcaCyberSecurityPage = isCyberSecurityPage && heroBanner.degreeTitle.startsWith("B.C.A.");
     const usesCyberSecurityDesign = isCyberSecurityPage || data.designVariant === "cyber-security";
     const isBbaAiFintechPage = data.designVariant === "cyber-security" && heroBanner.specialization === "AI-Augmented FinTech";
+    const isBcomHonsPage = heroBanner.specialization.toLowerCase().includes("commerce") && Boolean(heroBanner.pageHeading?.toLowerCase().includes("l&t"));
     const isBBABusinessAnalyticsPage = heroBanner.specialization.toLowerCase().includes("business analytics");
     const isDataSciencePage = heroBanner.specialization.toLowerCase().includes("data science");
     const isBusinessAnalyticsPage = heroBanner.specialization.toLowerCase().includes("business analytics");
@@ -90,15 +93,18 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
     const HeroPageTitleTag = isBcaDataScienceAiPage ? "p" : "h1";
     const isMechanicalPage = heroBanner.specialization.toLowerCase().includes("mechanical");
     const isSemiconductorPage = heroBanner.specialization.toLowerCase().includes("semiconductor");
-    const hasLtBenefitsDesign = usesCyberSecurityDesign || isDataSciencePage || isMechanicalPage || isSemiconductorPage || isBBABusinessAnalyticsPage;
+    const hasLtBenefitsDesign = usesCyberSecurityDesign || isDataSciencePage || isMechanicalPage || isSemiconductorPage || isBBABusinessAnalyticsPage || isBcomHonsPage;
     const usesMatchedSectionSizing = usesCyberSecurityDesign || isDataSciencePage || isMechanicalPage || isSemiconductorPage;
-    const usesGridDomains = isDataSciencePage || isMechanicalPage || isSemiconductorPage || isBcaCyberSecurityPage || isBbaAiFintechPage;
+    const usesGridDomains = isDataSciencePage || isMechanicalPage || isSemiconductorPage || isBcaCyberSecurityPage || isBbaAiFintechPage || isBcomHonsPage;
     // const usesCyberSecurityTextLayout = usesCyberSecurityDesign || isDataSciencePage;
     // const hasLtBenefitsDesign = isCyberSecurityPage || isDataSciencePage || isBusinessAnalyticsPage || isMechanicalPage || isSemiconductorPage;
     // const usesMatchedSectionSizing = isCyberSecurityPage || isDataSciencePage || isMechanicalPage || isSemiconductorPage;
     // const usesGridDomains = isDataSciencePage || isBusinessAnalyticsPage || isMechanicalPage || isSemiconductorPage;
-    const usesCyberSecurityTextLayout = isCyberSecurityPage || isDataSciencePage || isBBABusinessAnalyticsPage;
-    const usesCurriculumPanel = usesCyberSecurityTextLayout || isBusinessAnalyticsPage || isBbaAiFintechPage;
+
+    // Tauseef
+    const usesCyberSecurityTextLayout = isCyberSecurityPage || isDataSciencePage || isBBABusinessAnalyticsPage || isBcomHonsWithLtPage;
+    // Tauseef
+    const usesCurriculumPanel = usesCyberSecurityTextLayout || isBusinessAnalyticsPage || isBbaAiFintechPage || isBcomHonsPage || isBcomHonsWithLtPage;
     const careerDescriptionCutoffPhrase = isMechanicalPage ? "infrastructure." : isSemiconductorPage ? "data centers." : "informed decisions.";
     const careerDescriptionCutoff = careerOpportunities.description.indexOf(careerDescriptionCutoffPhrase);
     const careerDescriptionPreview = careerDescriptionCutoff >= 0
@@ -178,6 +184,9 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
         { label: "4th Year", key: "yr4" as const },
     ].slice(0, yearKeys.length);
 
+
+
+    console.log("hello", isBcomHonsWithLtPage)
     return (
         <div className="program-page-new text-[#14284E] bg-white antialiased">
             <main className={[usesMatchedSectionSizing && layoutStyles.matchedSectionSizing, (isMechanicalPage || isSemiconductorPage) && layoutStyles.responsiveTextAlignment].filter(Boolean).join(" ") || undefined}>
@@ -759,7 +768,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                     <div className={`${Classes["container"]} mx-auto`}>
                         {!usesCyberSecurityTextLayout && !isBbaAiFintechPage && (
                             <div className="w-full mb-5 sm:mb-10">
-                                {!isBusinessAnalyticsPage && (
+                                {!isBusinessAnalyticsPage && !isBcomHonsPage && (
                                     <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.15] font-bold font-display text-[#14284E]">
                                         {labs.sectionTitle}<span className="text-[#ffb703]"> {labs.sectionTitleHighlight}</span>
                                     </h2>
@@ -772,7 +781,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
 
                         {/* Curriculum image */}
                         {usesCurriculumPanel ? (
-                            <div className={`${curriculumStyles.panel} ${isDataSciencePage || isBusinessAnalyticsPage ? curriculumStyles.dataSciencePanel : ""}`}>
+                            <div className={`${curriculumStyles.panel} ${isDataSciencePage || isBusinessAnalyticsPage || isBcomHonsPage ? curriculumStyles.dataSciencePanel : ""}`}>
                                 <picture className={curriculumStyles.background} aria-hidden="true">
                                     <source media="(max-width: 1023px)" srcSet={labs.curriculumImageMobile} />
                                     <img src={labs.curriculumImageDesktop} alt="" loading="lazy" decoding="async" />
@@ -1190,9 +1199,9 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                                     {isDataSciencePage || isSemiconductorPage ? <>{careerDescriptionPreview}<span className="hidden md:inline">{careerDescriptionRemainder}</span></> : isMechanicalPage && !rm["digSys"] ? careerDescriptionPreview : careerOpportunities.description}
                                 </p>
                                 {!usesCyberSecurityDesign && !isDataSciencePage && !isSemiconductorPage && (
-                                <div className="mt-4 flex flex-wrap items-center gap-4">
-                                    <button className="rm-btn !mt-0" onClick={() => toggleRm("digSys")}>{rm["digSys"] ? "Read Less" : "Read More"}</button>
-                                </div>
+                                    <div className="mt-4 flex flex-wrap items-center gap-4">
+                                        <button className="rm-btn !mt-0" onClick={() => toggleRm("digSys")}>{rm["digSys"] ? "Read Less" : "Read More"}</button>
+                                    </div>
                                 )}
                             </div>
                         </div>

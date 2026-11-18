@@ -3,7 +3,7 @@ import cyberSecurityNewData from "./cyberSecurityNew";
 
 const bbaBusinessAnalyticsWithLTDesignNewData: ProgramPageDataNew = {
   heroBanner: {
-    degreeTitle: "Bachelor of Business Administration",
+    degreeTitle: "",
     pageHeading: "B.B.A. - Business Analytics with L&T",
     programLabel: "B.B.A. (Business Analytics) with L&T",
     specialization: "Business Analytics",
