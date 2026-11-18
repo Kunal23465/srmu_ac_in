@@ -7,6 +7,7 @@ import BTechCseCyberSecurityNew from "../pages/BTechCseCyberSecurityNew";
 import BTechCseDataScienceNew from "../pages/BTechCseDataScienceNew";
 import BCACyberSecurityNew from "../pages/BCACyberSecurityNew";
 import BCADataScienceAiNew from "../pages/BCADataScienceAiNew";
+import BBAAiAugmentedFintechNew from "../pages/BBAAiAugmentedFintechNew";
 import BTechMechanicalEngineeringNew from "../pages/BTechMechanicalEngineeringNew";
 import BTechEceSemiconductorDesignNew from "../pages/BTechEceSemiconductorDesignNew";
 
@@ -1222,6 +1223,10 @@ export const routes = [
       {
         path: "bca-data-science-artificial-intelligence-new",
         element: <BCADataScienceAiNew />,
+      },
+      {
+        path: "bba-ai-augmented-fintech-new",
+        element: <BBAAiAugmentedFintechNew />,
       },
       {
         path: "b-tech-cse-data-science-new",

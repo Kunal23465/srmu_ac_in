@@ -37,16 +37,8 @@ export interface WhyStudyDataNew {
   year: string;
   /** Optional heading override for programmes outside the default B.Tech CSE pattern. */
   heading?: string;
-  /** Optional subheading rendered below the main section heading. */
-  subheading?: string;
-  /** Optional suffix of the subheading rendered in the accent color. */
-  subheadingHighlight?: string;
   /** Optional suffix rendered in the accent color. */
   headingHighlight?: string;
-  /** Render the section heading larger while keeping its semantic h2 level. */
-  largeHeading?: boolean;
-  /** Set the main heading to 27px on desktop. */
-  heading27pxOnDesktop?: boolean;
   /** Opening quote */
   quote: string;
   /** Main description paragraphs */
@@ -289,6 +281,8 @@ export interface ProgramFaqNew {
 // Root data shape — pass one of these to ProgramPageTemplateNew
 // ============================================================
 export interface ProgramPageDataNew {
+  /** Optional visual layout variant for a programme using an established page design. */
+  designVariant?: "cyber-security";
   heroBanner: HeroBannerDataNew;
   whyStudy: WhyStudyDataNew;
   ltBenefits: LtBenefitsDataNew;

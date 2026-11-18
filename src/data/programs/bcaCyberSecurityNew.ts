@@ -3,8 +3,7 @@ import cyberSecurityNewData from "./cyberSecurityNew";
 
 const bcaCyberSecurityNewData: ProgramPageDataNew = {
   heroBanner: {
-    degreeTitle: "B.C.A. (Bachelor of Computer Applications)",
-    pageHeading: "Best B.C.A. (Cyber Security) with L&T College in Uttar Pradesh",
+    degreeTitle: "B.C.A.",
     programLabel: "B.C.A. (Cyber Security) with L&T",
     specialization: "Cyber Security",
     subtitle: "In collaboration with L&T",
@@ -19,7 +18,7 @@ const bcaCyberSecurityNewData: ProgramPageDataNew = {
     heading: "Why Study BCA Cyber Security in 2027?",
     headingHighlight: "in 2027?",
     largeHeading: true,
-    quote: "Cybersecurity skills help protect the digital systems people rely on every day.",
+    quote: "Why is cybersecurity becoming one of the most important technology skills today?",
     paragraphs: [
       "From online banking and digital payments to cloud platforms, healthcare systems and business applications, almost every industry depends on secure digital infrastructure. As cyber threats become more sophisticated, organizations need professionals who understand how to identify vulnerabilities, protect information, and respond to security incidents.",
       "The BCA in Cyber Security at Shri Ramswaroop Memorial University combines computer application fundamentals with specialized cybersecurity learning. The program introduces students to programming, computer networks, operating systems, ethical hacking, digital forensics, and information security.",

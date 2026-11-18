@@ -3,8 +3,7 @@ import cyberSecurityNewData from "./cyberSecurityNew";
 
 const bcaDataScienceAiNewData: ProgramPageDataNew = {
   heroBanner: {
-    degreeTitle: "Bachelor of Computer Applications",
-    pageHeading: "B.C.A. - Data Science & Artificial Intelligence with L&T",
+    degreeTitle: "B.C.A.",
     programLabel: "B.C.A. (Data Science & Artificial Intelligence) with L&T",
     specialization: "Data Science & Artificial Intelligence",
     subtitle: "In collaboration with L&T",
@@ -17,11 +16,8 @@ const bcaDataScienceAiNewData: ProgramPageDataNew = {
 
   whyStudy: {
     year: "2027",
-    heading: "Best B.C.A. (Data Science & Artificial Intelligence) with L&T College in Uttar Pradesh",
-    headingHighlight: "in Uttar Pradesh",
-    subheading: "Why Study BCA Data Science & Artificial Intelligence in 2027?",
-    subheadingHighlight: "in 2027?",
-    heading27pxOnDesktop: true,
+    heading: "Why Study BCA Data Science & Artificial Intelligence in 2027?",
+    headingHighlight: "in 2027?",
     quote: "Why are data and artificial intelligence becoming essential to the way businesses and technology operate?",
     paragraphs: [
       "From personalized recommendations and voice assistants to healthcare analytics, financial forecasting, and automated business processes, artificial intelligence is transforming how organizations use information and make decisions. Data science helps turn large volumes of information into meaningful insights, while AI enables machines and applications to perform tasks that traditionally require human intelligence.",
