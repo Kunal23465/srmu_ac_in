@@ -361,12 +361,12 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                                     </div>
                                 ) : (
                                     <>
-                                {whyStudy.paragraphs.map((p, i) => (
-                                    <div key={i}>
-                                        <p className={`text-[#4B5A72] text-[15.5px] leading-relaxed text-justify ${!rm[`why${i}`] ? "rm-clamp" : ""}`}>{p}</p>
-                                        <button className="rm-btn" onClick={() => toggleRm(`why${i}`)}>{rm[`why${i}`] ? "Read Less" : "Read More"}</button>
-                                    </div>
-                                ))}
+                                        {whyStudy.paragraphs.map((p, i) => (
+                                            <div key={i}>
+                                                <p className={`text-[#4B5A72] text-[15.5px] leading-relaxed text-justify ${!rm[`why${i}`] ? "rm-clamp" : ""}`}>{p}</p>
+                                                <button className="rm-btn" onClick={() => toggleRm(`why${i}`)}>{rm[`why${i}`] ? "Read Less" : "Read More"}</button>
+                                            </div>
+                                        ))}
                                     </>
                                 )}
                             </div>
@@ -416,28 +416,28 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                                             <span className={benefitsStyles.accent} />
                                             <h2 className={`${benefitsStyles.title} ${isMechanicalPage ? benefitsStyles.mechanicalTitle : ""}`}>
                                                 {ltBenefits.heading ? highlightedSuffix(ltBenefits.heading, ltBenefits.headingHighlight, benefitsStyles.highlight) : <>
-                                                <span>How Does</span>
-                                                <img src={ltLogo} alt="L&amp;T EduTech" className={benefitsStyles.logo} />
-                                                {isDataSciencePage ? (
-                                                    <span className={benefitsStyles.titleLine}>
-                                                        Benefit B.Tech CSE {heroBanner.specialization} <span className={benefitsStyles.highlight}>SRMU Students?</span>
-                                                    </span>
-                                                ) : isMechanicalPage ? (
-                                                    <>
-                                                        <span className={benefitsStyles.titleLine}>Benefit {heroBanner.degreeTitle}</span>
-                                                        <span className={benefitsStyles.highlight}>SRMU Students?</span>
-                                                    </>
-                                                ) : isSemiconductorPage ? (
-                                                    <>
-                                                        <span className={benefitsStyles.titleLine}>Benefit B.Tech ECE ({heroBanner.specialization})</span>
-                                                        <span className={benefitsStyles.highlight}>SRMU Students?</span>
-                                                    </>
-                                                ) : (
-                                                    <>
-                                                        <span className={benefitsStyles.titleLine}>Benefit B.Tech CSE {heroBanner.specialization}</span>
-                                                        <span className={benefitsStyles.highlight}>SRMU Students?</span>
-                                                    </>
-                                                )}
+                                                    <span>How Does</span>
+                                                    <img src={ltLogo} alt="L&amp;T EduTech" className={benefitsStyles.logo} />
+                                                    {isDataSciencePage ? (
+                                                        <span className={benefitsStyles.titleLine}>
+                                                            Benefit B.Tech CSE {heroBanner.specialization} <span className={benefitsStyles.highlight}>SRMU Students?</span>
+                                                        </span>
+                                                    ) : isMechanicalPage ? (
+                                                        <>
+                                                            <span className={benefitsStyles.titleLine}>Benefit {heroBanner.degreeTitle}</span>
+                                                            <span className={benefitsStyles.highlight}>SRMU Students?</span>
+                                                        </>
+                                                    ) : isSemiconductorPage ? (
+                                                        <>
+                                                            <span className={benefitsStyles.titleLine}>Benefit B.Tech ECE ({heroBanner.specialization})</span>
+                                                            <span className={benefitsStyles.highlight}>SRMU Students?</span>
+                                                        </>
+                                                    ) : (
+                                                        <>
+                                                            <span className={benefitsStyles.titleLine}>Benefit B.Tech CSE {heroBanner.specialization}</span>
+                                                            <span className={benefitsStyles.highlight}>SRMU Students?</span>
+                                                        </>
+                                                    )}
                                                 </>}
                                             </h2>
                                         </header>
@@ -1143,9 +1143,9 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                                     {isDataSciencePage || isSemiconductorPage ? <>{careerDescriptionPreview}<span className="hidden md:inline">{careerDescriptionRemainder}</span></> : isMechanicalPage && !rm["digSys"] ? careerDescriptionPreview : careerOpportunities.description}
                                 </p>
                                 {!isCyberSecurityPage && !isDataSciencePage && !isSemiconductorPage && (
-                                <div className="mt-4 flex flex-wrap items-center gap-4">
-                                    <button className="rm-btn !mt-0" onClick={() => toggleRm("digSys")}>{rm["digSys"] ? "Read Less" : "Read More"}</button>
-                                </div>
+                                    <div className="mt-4 flex flex-wrap items-center gap-4">
+                                        <button className="rm-btn !mt-0" onClick={() => toggleRm("digSys")}>{rm["digSys"] ? "Read Less" : "Read More"}</button>
+                                    </div>
                                 )}
                             </div>
                         </div>
