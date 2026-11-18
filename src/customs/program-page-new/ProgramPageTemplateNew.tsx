@@ -80,16 +80,19 @@ interface ProgramPageTemplateNewProps {
 const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data }) => {
     const { heroBanner, whyStudy, ltBenefits, industryExposure, placement, labs, yearJourney, fee, poPsoPlo, careerOpportunities, programComparison } = data;
     const isCyberSecurityPage = heroBanner.specialization.toLowerCase().includes("cyber security");
+    const isBBABusinessAnalyticsPage = heroBanner.specialization.toLowerCase().includes("business analytics");
     const isDataSciencePage = heroBanner.specialization.toLowerCase().includes("data science");
+    const isBusinessAnalyticsPage = heroBanner.specialization.toLowerCase().includes("business analytics");
     const isBcaDataScienceAiPage = isDataSciencePage && Boolean(heroBanner.pageHeading);
     const HeroPageTitleTag = isBcaDataScienceAiPage ? "p" : "h1";
     const WhyStudyHeadingTag = isBcaDataScienceAiPage ? "h1" : "h2";
     const isMechanicalPage = heroBanner.specialization.toLowerCase().includes("mechanical");
     const isSemiconductorPage = heroBanner.specialization.toLowerCase().includes("semiconductor");
-    const hasLtBenefitsDesign = isCyberSecurityPage || isDataSciencePage || isMechanicalPage || isSemiconductorPage;
+    const hasLtBenefitsDesign = isCyberSecurityPage || isDataSciencePage || isBusinessAnalyticsPage || isMechanicalPage || isSemiconductorPage;
     const usesMatchedSectionSizing = isCyberSecurityPage || isDataSciencePage || isMechanicalPage || isSemiconductorPage;
-    const usesGridDomains = isDataSciencePage || isMechanicalPage || isSemiconductorPage;
-    const usesCyberSecurityTextLayout = isCyberSecurityPage || isDataSciencePage;
+    const usesGridDomains = isDataSciencePage || isBusinessAnalyticsPage || isMechanicalPage || isSemiconductorPage;
+    const usesCyberSecurityTextLayout = isCyberSecurityPage || isDataSciencePage || isBBABusinessAnalyticsPage;
+    const usesCurriculumPanel = usesCyberSecurityTextLayout || isBusinessAnalyticsPage;
     const careerDescriptionCutoffPhrase = isMechanicalPage ? "infrastructure." : isSemiconductorPage ? "data centers." : "informed decisions.";
     const careerDescriptionCutoff = careerOpportunities.description.indexOf(careerDescriptionCutoffPhrase);
     const careerDescriptionPreview = careerDescriptionCutoff >= 0
@@ -497,8 +500,8 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
 
                                     <div className={`${benefitsStyles.artwork} ${isMechanicalPage ? benefitsStyles.mechanicalArtwork : ""}`}>
                                         <img
-                                            src={ltBenefits.artworkUrl ?? (isDataSciencePage ? dataScienceDashboard : isMechanicalPage ? mechanicalCadArtwork : isSemiconductorPage ? semiconductorDesignWorkbench : cyberSecurityLaptop)}
-                                            alt={ltBenefits.artworkAlt ?? (isDataSciencePage ? "Data science dashboard illustration with analytics, AI, and a laptop" : isMechanicalPage ? "Mechanical engineering CAD tools, gears, and an industrial robotic arm" : isSemiconductorPage ? "Neon semiconductor design workbench with chip layout and circuit design" : "Laptop protected by a digital shield, with cyber security tools and cloud connections")}
+                                            src={ltBenefits.artworkUrl ?? (isDataSciencePage || isBusinessAnalyticsPage ? dataScienceDashboard : isMechanicalPage ? mechanicalCadArtwork : isSemiconductorPage ? semiconductorDesignWorkbench : cyberSecurityLaptop)}
+                                            alt={ltBenefits.artworkAlt ?? (isBusinessAnalyticsPage ? "Business analytics dashboard illustration with charts and data" : isDataSciencePage ? "Data science dashboard illustration with analytics, AI, and a laptop" : isMechanicalPage ? "Mechanical engineering CAD tools, gears, and an industrial robotic arm" : isSemiconductorPage ? "Neon semiconductor design workbench with chip layout and circuit design" : "Laptop protected by a digital shield, with cyber security tools and cloud connections")}
                                             className={benefitsStyles.image}
                                             loading="lazy"
                                             decoding="async"
@@ -714,9 +717,11 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                     <div className={`${Classes["container"]} mx-auto`}>
                         {!usesCyberSecurityTextLayout && (
                             <div className="w-full mb-5 sm:mb-10">
-                                <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.15] font-bold font-display text-[#14284E]">
-                                    {labs.sectionTitle}<span className="text-[#ffb703]"> {labs.sectionTitleHighlight}</span>
-                                </h2>
+                                {!isBusinessAnalyticsPage && (
+                                    <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.15] font-bold font-display text-[#14284E]">
+                                        {labs.sectionTitle}<span className="text-[#ffb703]"> {labs.sectionTitleHighlight}</span>
+                                    </h2>
+                                )}
                                 <p className={`mt-4 text-[15px] leading-6 text-[#4B5A72] ${usesCyberSecurityTextLayout ? "text-left sm:text-justify" : "text-justify"}`}>
                                     {isMechanicalPage ? <>{labsIntroPreview}<span className="hidden sm:inline">{labsIntroRemainder}</span></> : labs.introParagraph}
                                 </p>
@@ -724,8 +729,8 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                         )}
 
                         {/* Curriculum image */}
-                        {usesCyberSecurityTextLayout ? (
-                            <div className={`${curriculumStyles.panel} ${isDataSciencePage ? curriculumStyles.dataSciencePanel : ""}`}>
+                        {usesCurriculumPanel ? (
+                            <div className={`${curriculumStyles.panel} ${isDataSciencePage || isBusinessAnalyticsPage ? curriculumStyles.dataSciencePanel : ""}`}>
                                 <picture className={curriculumStyles.background} aria-hidden="true">
                                     <source media="(max-width: 1023px)" srcSet={labs.curriculumImageMobile} />
                                     <img src={labs.curriculumImageDesktop} alt="" loading="lazy" decoding="async" />

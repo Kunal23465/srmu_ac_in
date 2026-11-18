@@ -17,10 +17,10 @@ const bbaBusinessAnalyticsWithLTDesignNewData: ProgramPageDataNew = {
 
   whyStudy: {
     year: "2027",
-    heading: "Best B.B.A. (Business Analytics) with L&T College in Uttar Pradesh",
-    headingHighlight: "in Uttar Pradesh",
-    subheading: "Why Study BBA Business Analytics in 2027?",
-    subheadingHighlight: "in 2027?",
+    heading: "Why Study BBA Business Analytics in 2027?",
+    headingHighlight: "in 2027?",
+    subheading: "",
+    subheadingHighlight: "",
     heading27pxOnDesktop: true,
     quote: "Why are business analytics and data-driven decision-making becoming essential to the way organizations operate?",
     paragraphs: [
@@ -173,10 +173,10 @@ const bbaBusinessAnalyticsWithLTDesignNewData: ProgramPageDataNew = {
       { text: "Business\nIntelligence" },
       { text: "Strategic\nManagement" },
     ],
-    curriculumSectionTitle: "Industry-Integrated Curriculum with L&T",
+    curriculumSectionTitle: "Industry Integrated Curriculum with L&T",
     curriculumDescription:
       "The collaboration with L&T EduTech brings an industry-oriented approach to management education. The curriculum is developed with inputs from industry experts and university researchers. Blended teaching, multiple certification levels, and application-oriented learning help students connect business theories with practical workplace requirements.",
-    reelVideoUrl: "",
+    reelVideoUrl: "/MicrosoftTeams-video.mp4",
     reelPosterUrl: cyberSecurityNewData.labs.reelPosterUrl,
     cardBackgroundImageUrl: cyberSecurityNewData.labs.cardBackgroundImageUrl,
     labs: [
@@ -253,7 +253,7 @@ const bbaBusinessAnalyticsWithLTDesignNewData: ProgramPageDataNew = {
     introParagraph:
       "The three-year BBA Business Analytics program is designed to help students progress from management fundamentals to specialized analytical knowledge and practical business applications.",
     year1: {
-      title: "Year 1 – Business Management Foundations",
+      title: "Year 1 : Business Management Foundations",
       quote: "Develop a strong foundation in management, accounting, economics, and business communication.",
       subjects: [
         "Principles of Management",
@@ -283,7 +283,7 @@ const bbaBusinessAnalyticsWithLTDesignNewData: ProgramPageDataNew = {
       outcome: "Develop a strong foundation in management, accounting, economics, and business communication.",
     },
     year2: {
-      title: "Year 2 – Business Analytics & Functional Management",
+      title: "Year 2 : Business Analytics & Functional Management",
       quote: "Develop analytical thinking and practical knowledge of business research, data interpretation, and functional management.",
       subjects: [
         "Business Statistics",
@@ -313,7 +313,7 @@ const bbaBusinessAnalyticsWithLTDesignNewData: ProgramPageDataNew = {
       outcome: "Develop analytical thinking and practical knowledge of business research, data interpretation, and functional management.",
     },
     year3: {
-      title: "Year 3 – Advanced Business Analytics & Industry Readiness",
+      title: "Year 3 : Advanced Business Analytics & Industry Readiness",
       quote: "Build management knowledge, analytical capabilities, and professional readiness for business and analytics-related careers.",
       subjects: [
         "Business Intelligence",
