@@ -34,6 +34,7 @@ import FacultyOfBiotechnologyNewPage from "../pages/academics/institutes/institu
 import InstituteOfEducationAndResearchNewPage from "../pages/academics/institutes/institute-department/institute-of-education-and-research-new/InstituteOfEducationAndResearchNewPage";
 import BbaBusinessAnalyticsWithLTNew from "../pages/BbaBusinessAnalyticsWithLTNew";
 import BcomHonsWithLTNew from "../pages/BcomHonsWithLTNew";
+import MbaBusinessAnalyticsWithLTNew from "../pages/MbaBusinessAnalyticsWithLTNew";
 
 const HomePage = lazyPage(() => import("../pages/Home/HomePage"));
 const PageNotFound = lazyPage(() => import("../pages/PageNotFound"));
@@ -1250,6 +1251,10 @@ export const routes = [
       {
         path: "bcom-hons-with-lt-design-new",
         element: <BcomHonsWithLTNew />,
+      },
+      {
+        path: "mba-business-analytics-with-lt-design-new",
+        element: <MbaBusinessAnalyticsWithLTNew />,
       },
 
       //------------------------------------------------------

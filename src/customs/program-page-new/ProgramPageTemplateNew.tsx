@@ -36,6 +36,8 @@ const CardIcon = ({ icon }: { icon?: string }) => {
     if (icon === "energy") return <Zap className={cls} />;
     if (icon === "factory") return <Factory className={cls} />;
     if (icon === "car") return <Car className={cls} />;
+
+
     return <Cpu className={cls} />;
 };
 
@@ -95,7 +97,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
     const isSemiconductorPage = heroBanner.specialization.toLowerCase().includes("semiconductor");
     const hasLtBenefitsDesign = usesCyberSecurityDesign || isDataSciencePage || isMechanicalPage || isSemiconductorPage || isBBABusinessAnalyticsPage || isBcomHonsPage || isBcomHonsWithLtPage;
     const usesMatchedSectionSizing = usesCyberSecurityDesign || isDataSciencePage || isMechanicalPage || isSemiconductorPage;
-    const usesGridDomains = isDataSciencePage || isMechanicalPage || isSemiconductorPage || isBcaCyberSecurityPage || isBbaAiFintechPage || isBcomHonsPage || isBcomHonsWithLtPage;
+    const usesGridDomains = isDataSciencePage || isBusinessAnalyticsPage || isMechanicalPage || isSemiconductorPage || isBcaCyberSecurityPage || isBbaAiFintechPage || isBcomHonsPage || isBcomHonsWithLtPage;
     // const usesCyberSecurityTextLayout = usesCyberSecurityDesign || isDataSciencePage;
     // const hasLtBenefitsDesign = isCyberSecurityPage || isDataSciencePage || isBusinessAnalyticsPage || isMechanicalPage || isSemiconductorPage;
     // const usesMatchedSectionSizing = isCyberSecurityPage || isDataSciencePage || isMechanicalPage || isSemiconductorPage;
@@ -649,7 +651,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                     <div className={`${Classes["container"]} relative z-10`}>
                         <div className="w-full">
                             <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.2] font-bold font-display text-[#14284E] mb-3.5">
-                                 {industryExposure.sectionTitle} <span className="text-[#ffb703]">{industryExposure.sectionTitleHighlight}</span>
+                                {industryExposure.sectionTitle} <span className="text-[#ffb703]">{industryExposure.sectionTitleHighlight}</span>
                             </h2>
                             <p className={`text-[16px] text-[#4B5A72] leading-relaxed ${usesCyberSecurityTextLayout ? "text-left sm:text-justify" : "text-justify"} ${!usesCyberSecurityDesign && !isDataSciencePage && !isMechanicalPage && !isSemiconductorPage && !rm["indExp3"] ? "rm-clamp" : ""}`}>{industryExposure.introParagraph}</p>
                             {!usesCyberSecurityDesign && !isDataSciencePage && !isMechanicalPage && !isSemiconductorPage && <button className="rm-btn" onClick={() => toggleRm("indExp3")}>{rm["indExp3"] ? "Read Less" : "Read More"}</button>}
