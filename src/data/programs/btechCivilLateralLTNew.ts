@@ -1,4 +1,5 @@
 import type { ProgramPageDataNew } from "../../types/programPageNew";
+import civilHardHatImage from "../../assets/images/academics/departments/civil-07052411084968.webp";
 import cyberSecurityNewData from "./cyberSecurityNew";
 
 const btechCivilLateralLTNewData: ProgramPageDataNew = {
@@ -93,6 +94,8 @@ const btechCivilLateralLTNewData: ProgramPageDataNew = {
       { text: "Quality control and site safety practices" },
       { text: "Computer-aided design and drafting" },
     ],
+    artworkUrl: civilHardHatImage,
+    artworkAlt: "Civil engineering hard hat, construction drawings, and surveying tools",
     tableRows: [
       { label: "Program", value: "B.Tech. in Civil Engineering (Lateral Entry) with L&T" },
       { label: "Degree", value: "Bachelor of Technology" },
@@ -149,6 +152,16 @@ const btechCivilLateralLTNewData: ProgramPageDataNew = {
           "Exposure to ready-mix concrete operations helps students understand concrete production, quality considerations, and its use in construction. Learning activities connected with infrastructure and water-resource projects help students explore the practical challenges involved in planning and managing public utilities.",
         ],
       },
+      {
+        badge: "Infrastructure & Water Projects",
+        icon: "settings",
+        iconLabel: "INFRASTRUCTURE DEVELOPMENT",
+        title: "Infrastructure & Water Projects Exposure",
+        presenter: "Practical infrastructure and water-resource learning",
+        paragraphs: [
+          "Learning activities connected with infrastructure and water-resource projects help students explore the practical challenges involved in planning, developing, and managing public utilities.",
+        ],
+      },
     ],
     departmentUrl: "https://srmu.ac.in/department-of-computer-science-and-information-systems",
   },
@@ -183,7 +196,7 @@ const btechCivilLateralLTNewData: ProgramPageDataNew = {
     curriculumSectionTitle: "Hands-on Civil Engineering Laboratories",
     curriculumDescription:
       "The L&T association adds an industry-oriented dimension to the program. Students can connect their academic understanding with the professional expectations of engineering and construction environments. The program's learning focus includes practical problem-solving, technical understanding, and awareness of construction processes. SRMU's Faculty of Civil Engineering lists laboratories supporting these areas.",
-    reelVideoUrl: "",
+    reelVideoUrl: "/MicrosoftTeams-video.mp4",
     reelPosterUrl: cyberSecurityNewData.labs.reelPosterUrl,
     cardBackgroundImageUrl: cyberSecurityNewData.labs.cardBackgroundImageUrl,
     labs: [

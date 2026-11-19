@@ -115,8 +115,8 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
     // const hasLtBenefitsDesign = usesCyberSecurityDesign || isDataSciencePage || isMechanicalPage || isSemiconductorPage || isBBABusinessAnalyticsPage;
     const usesMatchedSectionSizing = usesCyberSecurityDesign || isDataSciencePage || isMechanicalPage || isSemiconductorPage;
     const usesUniformLtBenefitsGrid = isAiAugmentedFintechPage || isBBABusinessAnalyticsPage || isBcomHonsWithLtPage || isBiotechnologyLateralPage || isBtechCseLateralPage || isBtechCseLatralPage;
-    const usesGridDomains = isDataSciencePage || isMechanicalPage || isSemiconductorPage || usesUniformLtBenefitsGrid || isBcaCyberSecurityPage || isBbaAiFintechPage || isDiplomaCivilEngineeringPage || isDiplomaMechanicalProductionPage || isDiplomaMechanicalAutomobilePage || isDiplomaElectricalEngineeringPage || isDiplomaComputerScienceEngineeringPage || isDiplomaElectronicsCommunicationPage;
-    const hasLtBenefitsDesign = usesCyberSecurityDesign || isDataSciencePage || isAiAugmentedFintechPage || isBiotechnologyLateralPage || isBtechCseLateralPage || isMechanicalPage || isSemiconductorPage || isBBABusinessAnalyticsPage || isBcomHonsPage || isBcomHonsWithLtPage || isBtechCseLatralPage;
+    const usesGridDomains = isDataSciencePage || isMechanicalPage || isSemiconductorPage || usesUniformLtBenefitsGrid || isBcaCyberSecurityPage || isBbaAiFintechPage || isDiplomaCivilEngineeringPage || isBtechCivilLateralPage || isDiplomaMechanicalProductionPage || isDiplomaMechanicalAutomobilePage || isDiplomaElectricalEngineeringPage || isDiplomaComputerScienceEngineeringPage || isDiplomaElectronicsCommunicationPage;
+    const hasLtBenefitsDesign = usesCyberSecurityDesign || isDataSciencePage || isAiAugmentedFintechPage || isBiotechnologyLateralPage || isBtechCseLateralPage || isBtechCivilLateralPage || isMechanicalPage || isSemiconductorPage || isBBABusinessAnalyticsPage || isBcomHonsPage || isBcomHonsWithLtPage || isBtechCseLatralPage;
     // const usesMatchedSectionSizing = usesCyberSecurityDesign || isDataSciencePage || isMechanicalPage || isSemiconductorPage;
     // const usesGridDomains = isDataSciencePage || isBusinessAnalyticsPage || isMechanicalPage || isSemiconductorPage || isBcaCyberSecurityPage || isBbaAiFintechPage || isBcomHonsPage || isBcomHonsWithLtPage;
     // const usesCyberSecurityTextLayout = usesCyberSecurityDesign || isDataSciencePage;
@@ -528,7 +528,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                                                                     ? mechanicalBenefitsIcons
                                                                     : isSemiconductorPage
                                                                         ? semiconductorBenefitsIcons
-                                                                        : isDiplomaCivilEngineeringPage
+                                                                        : isDiplomaCivilEngineeringPage || isBtechCivilLateralPage
                                                                             ? civilEngineeringBenefitsIcons
                                                                             : isBcaCyberSecurityPage || isBbaAiFintechPage
                                                                                 ? cyberBenefitsIcons
@@ -799,7 +799,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                 {/* ===== LABS & CURRICULUM ===== */}
                 <section className="py-8 md:py-10 px-4 sm:px-6 bg-[#F0F6FB]">
                     <div className={`${Classes["container"]} mx-auto`}>
-                        {!usesCyberSecurityTextLayout && !isMbaAiAugmentedFintechLtPage && !isBtechBiotechnologyLateralPage && !isBbaAiFintechPage && !isDiplomaCivilEngineeringPage && !isDiplomaMechanicalProductionPage && !isDiplomaMechanicalAutomobilePage && !isDiplomaElectricalEngineeringPage && !isDiplomaComputerScienceEngineeringPage && !isDiplomaElectronicsCommunicationPage && (
+                        {!usesCyberSecurityTextLayout && !isBtechCivilLateralPage && !isMbaAiAugmentedFintechLtPage && !isBtechBiotechnologyLateralPage && !isBbaAiFintechPage && !isDiplomaCivilEngineeringPage && !isDiplomaMechanicalProductionPage && !isDiplomaMechanicalAutomobilePage && !isDiplomaElectricalEngineeringPage && !isDiplomaComputerScienceEngineeringPage && !isDiplomaElectronicsCommunicationPage && (
                             <div className="w-full mb-5 sm:mb-10">
                                 {!isBtechCseLatralPage && !isBusinessAnalyticsPage && !isAiAugmentedFintechPage && !isBcomHonsPage && !isBiotechnologyLateralPage && !isBtechCseLateralPage && (
                                     <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.15] font-bold font-display text-[#14284E]">
