@@ -1255,7 +1255,10 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                         </div>
 
                         {/* Desktop layout */}
-                        <div className="hidden md:grid md:grid-cols-[1.3fr_1fr] lg:grid-cols-[1.5fr_1fr] gap-6 mt-6 items-start">
+                        <div
+                            className="hidden md:grid md:grid-cols-[1.3fr_1fr] lg:grid-cols-[1.5fr_1fr] gap-6 mt-6 items-start"
+                            style={isBiotechnologyLateralPage ? { gridTemplateColumns: "minmax(0, 1.5fr) minmax(0, 1fr)" } : undefined}
+                        >
                             <div className="flex flex-col gap-5">
                                 <div className="w-full"><img src={careerOpportunities.imageUrl} alt={careerOpportunities.imageAlt} className="w-full aspect-[4/3] sm:aspect-[16/10] object-cover rounded-xl border border-[#DCE6F2]" loading="lazy" /></div>
                                 <div className="pr-4">
