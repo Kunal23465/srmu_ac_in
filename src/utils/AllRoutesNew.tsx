@@ -42,6 +42,7 @@ import BbaBusinessAnalyticsWithLTNew from "../pages/BbaBusinessAnalyticsWithLTNe
 import BcomHonsWithLTNew from "../pages/BcomHonsWithLTNew";
 import MbaBusinessAnalyticsWithLTNew from "../pages/MbaBusinessAnalyticsWithLTNew";
 import MbaAiAugmentedFinTechLTNew from "../pages/MbaAiAugmentedFinTechLTNew";
+import BtechBiotechnologyLateralNew from "../pages/BtechBiotechnologyLateralNew";
 
 const HomePage = lazyPage(() => import("../pages/Home/HomePage"));
 const PageNotFound = lazyPage(() => import("../pages/PageNotFound"));
@@ -1291,6 +1292,12 @@ export const routes = [
         path: "mba-ai-augmented-fintech-lt-design-new",
         element: <MbaAiAugmentedFinTechLTNew />,
       },
+
+      {
+        path: "btech-biotechnology-lateral-design-new",
+        element: <BtechBiotechnologyLateralNew />,
+      },
+
 
       //------------------------------------------------------
 
