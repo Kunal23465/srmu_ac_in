@@ -87,7 +87,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
     const { heroBanner, whyStudy, ltBenefits, industryExposure, placement, labs, yearJourney, fee, poPsoPlo, careerOpportunities, programComparison } = data;
     const isCyberSecurityPage = heroBanner.specialization.toLowerCase().includes("cyber security");
     // Tauseef
-    const isBtechCseLatralPage = heroBanner.pageHeading.includes("Computer Science Engineering") && heroBanner.specialization === "Computer Science Engineering";
+    const isBtechCseLatralPage = heroBanner.pageHeading?.includes("Computer Science Engineering") && heroBanner.specialization === "Computer Science Engineering";
     const isBcomHonsWithLtPage = heroBanner.pageHeading === "Bachelor of Commerce (Honours)" && heroBanner.specialization === "Commerce (Honours)";
     const isBcaCyberSecurityPage = isCyberSecurityPage && heroBanner.degreeTitle.startsWith("B.C.A.");
     const usesCyberSecurityDesign = isCyberSecurityPage || data.designVariant === "cyber-security";
