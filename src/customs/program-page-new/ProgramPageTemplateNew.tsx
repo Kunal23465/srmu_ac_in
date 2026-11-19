@@ -87,6 +87,8 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
     const { heroBanner, whyStudy, ltBenefits, industryExposure, placement, labs, yearJourney, fee, poPsoPlo, careerOpportunities, programComparison } = data;
     const isCyberSecurityPage = heroBanner.specialization.toLowerCase().includes("cyber security");
     // Tauseef
+    const isMbaAiAugmentedFintechLtPage = heroBanner.pageHeading?.includes("M.B.A. in AI-Augmented FinTech") && heroBanner.specialization === "AI-Augmented FinTech";
+    const isBtechBiotechnologyLateralPage = heroBanner.pageHeading?.includes("B.Tech. in Biotechnology") && heroBanner.specialization === "Biotechnology";
     const isBtechCseLatralPage = heroBanner.pageHeading?.includes("Computer Science Engineering") && heroBanner.specialization === "Computer Science Engineering";
     const isBcomHonsWithLtPage = heroBanner.pageHeading === "Bachelor of Commerce (Honours)" && heroBanner.specialization === "Commerce (Honours)";
     const isBcaCyberSecurityPage = isCyberSecurityPage && heroBanner.degreeTitle.startsWith("B.C.A.");
@@ -207,7 +209,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
     ].slice(0, yearKeys.length);
 
 
-    console.log("hello", isBtechCseLatralPage)
+    console.log("hello====", isMbaAiAugmentedFintechLtPage)
 
     return (
         <div className="program-page-new text-[#14284E] bg-white antialiased">
@@ -796,7 +798,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                 {/* ===== LABS & CURRICULUM ===== */}
                 <section className="py-8 md:py-10 px-4 sm:px-6 bg-[#F0F6FB]">
                     <div className={`${Classes["container"]} mx-auto`}>
-                        {!usesCyberSecurityTextLayout && !isBbaAiFintechPage && !isDiplomaCivilEngineeringPage && !isDiplomaMechanicalProductionPage && !isDiplomaMechanicalAutomobilePage && !isDiplomaElectricalEngineeringPage && !isDiplomaComputerScienceEngineeringPage && !isDiplomaElectronicsCommunicationPage && (
+                        {!usesCyberSecurityTextLayout && !isMbaAiAugmentedFintechLtPage && !isBtechBiotechnologyLateralPage && !isBbaAiFintechPage && !isDiplomaCivilEngineeringPage && !isDiplomaMechanicalProductionPage && !isDiplomaMechanicalAutomobilePage && !isDiplomaElectricalEngineeringPage && !isDiplomaComputerScienceEngineeringPage && !isDiplomaElectronicsCommunicationPage && (
                             <div className="w-full mb-5 sm:mb-10">
                                 {!isBtechCseLatralPage && !isBusinessAnalyticsPage && !isAiAugmentedFintechPage && !isBcomHonsPage && !isBiotechnologyLateralPage && !isBtechCseLateralPage && (
                                     <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.15] font-bold font-display text-[#14284E]">

@@ -214,7 +214,7 @@ const btechBiotechnologyLateralNewData: ProgramPageDataNew = {
     curriculumSectionTitle: "Hands-on Biotechnology Laboratories",
     curriculumDescription:
       "Biotechnology laboratories provide an environment where students can understand biological processes through practical experiments, sample analysis, and scientific observation. Laboratory-based learning helps students become familiar with research methodologies, experimental techniques, and equipment used in biotechnology.",
-    reelVideoUrl: "",
+    reelVideoUrl: "/MicrosoftTeams-video.mp4",
     reelPosterUrl: cyberSecurityNewData.labs.reelPosterUrl,
     cardBackgroundImageUrl: cyberSecurityNewData.labs.cardBackgroundImageUrl,
     labs: [
