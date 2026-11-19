@@ -6,12 +6,7 @@ import path from "path";
 import dotenv from "dotenv";
 import { fileURLToPath, pathToFileURL } from "url";
 import { brotliCompressSync, constants as zlibConstants, gzipSync } from "zlib";
-import {
-  buildRobotsTxt,
-  buildSitemapIndexXml,
-  buildAllSitemapXml,
-  buildBlogSitemapXml,
-} from "./src/utils/sitemap";
+import { buildRobotsTxt, buildSitemapIndexXml, buildAllSitemapXml, buildBlogSitemapXml } from "./src/utils/sitemap";
 import { getPreferredProgramRouteSlug } from "./src/utils/legacyProgramRoutes";
 import { hasValidTopLevelProgramRoute } from "./src/utils/programCategoryRoute";
 import { slugify } from "./src/utils/slugify";
@@ -36,7 +31,7 @@ try {
 }
 
 const host = "0.0.0.0";
-const port = Number(process.env.PORT || 3031);
+const port = Number(process.env.PORT || 3033);
 const siteUrl = process.env.VITE_SITE_URL || "https://srmu.ac.in";
 const canonicalSiteUrl = new URL(siteUrl);
 const canonicalOrigin = canonicalSiteUrl.origin.replace(/\/+$/, "");
@@ -137,16 +132,13 @@ function replaceTemplateMarker(template: string, marker: string, value: string) 
 }
 
 function optimizeRenderBlockingAssets(html: string): string {
-  return html.replace(
-    /<link\s+rel="stylesheet"\s+([^>]*?)href="([^"]+\.css)"([^>]*?)>/gi,
-    (match: string, before: string, href: string, after: string) => {
-      const allAttrs = `${before} ${after}`;
-      if (allAttrs.includes("media=") || allAttrs.includes("data-blocking")) {
-        return match;
-      }
-      return `<link rel="preload" as="style" href="${href}" ${before} ${after} />\n    <link rel="stylesheet" href="${href}" ${before} ${after} media="print" onload="this.media='all'" />\n    <noscript><link rel="stylesheet" href="${href}" ${before} ${after} /></noscript>`;
-    },
-  );
+  return html.replace(/<link\s+rel="stylesheet"\s+([^>]*?)href="([^"]+\.css)"([^>]*?)>/gi, (match: string, before: string, href: string, after: string) => {
+    const allAttrs = `${before} ${after}`;
+    if (allAttrs.includes("media=") || allAttrs.includes("data-blocking")) {
+      return match;
+    }
+    return `<link rel="preload" as="style" href="${href}" ${before} ${after} />\n    <link rel="stylesheet" href="${href}" ${before} ${after} media="print" onload="this.media='all'" />\n    <noscript><link rel="stylesheet" href="${href}" ${before} ${after} /></noscript>`;
+  });
 }
 
 function sanitizeAndEnsureHeadTitle(html: string): string {
@@ -171,10 +163,7 @@ function sanitizeAndEnsureHeadTitle(html: string): string {
   } else if (titleMatches.length > 1) {
     const chosenTitle = titleMatches[titleMatches.length - 1];
     headHtml = headHtml.replace(/<title[^>]*>[\s\S]*?<\/title>/gi, "");
-    headHtml = headHtml.replace(
-      /<meta\s+charset="UTF-8"\s*\/?>/i,
-      `<meta charset="UTF-8" />\n    ${chosenTitle}`,
-    );
+    headHtml = headHtml.replace(/<meta\s+charset="UTF-8"\s*\/?>/i, `<meta charset="UTF-8" />\n    ${chosenTitle}`);
   }
 
   return headHtml + bodyHtml;
@@ -304,9 +293,7 @@ async function createServer() {
       return;
     }
 
-    const targetUrl = isProduction
-      ? redirectTo
-      : redirectTo.replace(/^https?:\/\/(?:www\.)?srmu\.ac\.in/i, getRequestSiteUrl(req));
+    const targetUrl = isProduction ? redirectTo : redirectTo.replace(/^https?:\/\/(?:www\.)?srmu\.ac\.in/i, getRequestSiteUrl(req));
 
     res.redirect(301, targetUrl);
   });
@@ -348,19 +335,25 @@ async function createServer() {
 
   app.get("/robots.txt", (req, res) => {
     const robotsTxt = buildRobotsTxt(getRequestSiteUrl(req));
-    res.type("text/plain").set({
-      "Cache-Control": "public, max-age=3600",
-      "Vary": "Accept-Encoding",
-    }).send(robotsTxt);
+    res
+      .type("text/plain")
+      .set({
+        "Cache-Control": "public, max-age=3600",
+        Vary: "Accept-Encoding",
+      })
+      .send(robotsTxt);
   });
 
   app.get("/new-sitemap.xml", async (req, res) => {
     try {
       const sitemapXml = await buildSitemapIndexXml(getRequestSiteUrl(req));
-      res.type("application/xml").set({
-        "Cache-Control": "public, max-age=3600",
-        "Vary": "Accept-Encoding",
-      }).send(sitemapXml);
+      res
+        .type("application/xml")
+        .set({
+          "Cache-Control": "public, max-age=3600",
+          Vary: "Accept-Encoding",
+        })
+        .send(sitemapXml);
     } catch (error) {
       process.stderr.write(`NEW SITEMAP ERROR: ${String(error)}\n`);
       res.status(500).type("text/plain").send("Error generating new-sitemap");
@@ -375,10 +368,13 @@ async function createServer() {
   app.get("/all-sitemap.xml", async (req, res) => {
     try {
       const allSitemapXml = await buildAllSitemapXml(getRequestSiteUrl(req));
-      res.type("application/xml").set({
-        "Cache-Control": "public, max-age=3600",
-        "Vary": "Accept-Encoding",
-      }).send(allSitemapXml);
+      res
+        .type("application/xml")
+        .set({
+          "Cache-Control": "public, max-age=3600",
+          Vary: "Accept-Encoding",
+        })
+        .send(allSitemapXml);
     } catch (error) {
       process.stderr.write(`ALL SITEMAP ERROR: ${String(error)}\n`);
       res.status(500).type("text/plain").send("Error generating all-sitemap");
@@ -388,10 +384,13 @@ async function createServer() {
   app.get("/blog-sitemap.xml", async (req, res) => {
     try {
       const blogSitemapXml = await buildBlogSitemapXml(getRequestSiteUrl(req));
-      res.type("application/xml").set({
-        "Cache-Control": "public, max-age=3600",
-        "Vary": "Accept-Encoding",
-      }).send(blogSitemapXml);
+      res
+        .type("application/xml")
+        .set({
+          "Cache-Control": "public, max-age=3600",
+          Vary: "Accept-Encoding",
+        })
+        .send(blogSitemapXml);
     } catch (error) {
       process.stderr.write(`BLOG SITEMAP ERROR: ${String(error)}\n`);
       res.status(500).type("text/plain").send("Error generating blog-sitemap");
@@ -592,7 +591,7 @@ async function createServer() {
       } catch (err) {
         process.stderr.write(`SSR ERROR: ${String(err)}\n`);
         // Fallback to basic HTML if SSR fails (note: wrapped in root div by template)
-        appHtml = '<div>SSR Error - Check server logs</div>';
+        appHtml = "<div>SSR Error - Check server logs</div>";
         statusCode = 500;
       }
       const helmetHead = [

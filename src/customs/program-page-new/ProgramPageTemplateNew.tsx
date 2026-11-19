@@ -108,8 +108,9 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
     const isDiplomaCivilEngineeringPage = heroBanner.degreeTitle === "Diploma in" && heroBanner.specialization === "Civil Engineering";
     // const hasLtBenefitsDesign = usesCyberSecurityDesign || isDataSciencePage || isMechanicalPage || isSemiconductorPage || isBBABusinessAnalyticsPage;
     const usesMatchedSectionSizing = usesCyberSecurityDesign || isDataSciencePage || isMechanicalPage || isSemiconductorPage;
-    const usesGridDomains = isDataSciencePage || isMechanicalPage || isSemiconductorPage || isBcaCyberSecurityPage || isBbaAiFintechPage || isDiplomaCivilEngineeringPage || isDiplomaMechanicalProductionPage || isDiplomaMechanicalAutomobilePage || isDiplomaElectricalEngineeringPage || isDiplomaComputerScienceEngineeringPage || isDiplomaElectronicsCommunicationPage;
-    const hasLtBenefitsDesign = usesCyberSecurityDesign || isDataSciencePage || isMechanicalPage || isSemiconductorPage || isBBABusinessAnalyticsPage || isBcomHonsPage || isBcomHonsWithLtPage;
+    const usesUniformLtBenefitsGrid = isAiAugmentedFintechPage || isBBABusinessAnalyticsPage || isBcomHonsWithLtPage;
+    const usesGridDomains = isDataSciencePage || isMechanicalPage || isSemiconductorPage || usesUniformLtBenefitsGrid || isBcaCyberSecurityPage || isBbaAiFintechPage || isDiplomaCivilEngineeringPage || isDiplomaMechanicalProductionPage || isDiplomaMechanicalAutomobilePage || isDiplomaElectricalEngineeringPage || isDiplomaComputerScienceEngineeringPage || isDiplomaElectronicsCommunicationPage;
+    const hasLtBenefitsDesign = usesCyberSecurityDesign || isDataSciencePage || isAiAugmentedFintechPage || isMechanicalPage || isSemiconductorPage || isBBABusinessAnalyticsPage || isBcomHonsPage || isBcomHonsWithLtPage;
     // const usesMatchedSectionSizing = usesCyberSecurityDesign || isDataSciencePage || isMechanicalPage || isSemiconductorPage;
     // const usesGridDomains = isDataSciencePage || isBusinessAnalyticsPage || isMechanicalPage || isSemiconductorPage || isBcaCyberSecurityPage || isBbaAiFintechPage || isBcomHonsPage || isBcomHonsWithLtPage;
     // const usesCyberSecurityTextLayout = usesCyberSecurityDesign || isDataSciencePage;
@@ -572,8 +573,8 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
 
                                     <div className={`${benefitsStyles.artwork} ${isMechanicalPage ? benefitsStyles.mechanicalArtwork : ""}`}>
                                         <img
-                                            src={ltBenefits.artworkUrl ?? (isDataSciencePage || isBusinessAnalyticsPage ? dataScienceDashboard : isMechanicalPage ? mechanicalCadArtwork : isSemiconductorPage ? semiconductorDesignWorkbench : cyberSecurityLaptop)}
-                                            alt={ltBenefits.artworkAlt ?? (isBusinessAnalyticsPage ? "Business analytics dashboard illustration with charts and data" : isDataSciencePage ? "Data science dashboard illustration with analytics, AI, and a laptop" : isMechanicalPage ? "Mechanical engineering CAD tools, gears, and an industrial robotic arm" : isSemiconductorPage ? "Neon semiconductor design workbench with chip layout and circuit design" : "Laptop protected by a digital shield, with cyber security tools and cloud connections")}
+                                            src={ltBenefits.artworkUrl ?? (isDataSciencePage || isBusinessAnalyticsPage || isAiAugmentedFintechPage ? dataScienceDashboard : isMechanicalPage ? mechanicalCadArtwork : isSemiconductorPage ? semiconductorDesignWorkbench : cyberSecurityLaptop)}
+                                            alt={ltBenefits.artworkAlt ?? (isAiAugmentedFintechPage ? "AI-Augmented FinTech dashboard illustration with charts and financial data" : isBusinessAnalyticsPage ? "Business analytics dashboard illustration with charts and data" : isDataSciencePage ? "Data science dashboard illustration with analytics, AI, and a laptop" : isMechanicalPage ? "Mechanical engineering CAD tools, gears, and an industrial robotic arm" : isSemiconductorPage ? "Neon semiconductor design workbench with chip layout and circuit design" : "Laptop protected by a digital shield, with cyber security tools and cloud connections")}
                                             className={benefitsStyles.image}
                                             loading="lazy"
                                             decoding="async"
