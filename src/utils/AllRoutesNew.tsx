@@ -16,6 +16,7 @@ import DiplomaComputerScienceEngineeringNew from "../pages/DiplomaComputerScienc
 import DiplomaElectronicsCommunicationEngineeringNew from "../pages/DiplomaElectronicsCommunicationEngineeringNew";
 import BTechMechanicalEngineeringNew from "../pages/BTechMechanicalEngineeringNew";
 import BTechEceSemiconductorDesignNew from "../pages/BTechEceSemiconductorDesignNew";
+import BTechEceLateralEntryNew from "../pages/BTechEceLateralEntryNew";
 
 import InsiderPage from "../pages/InsiderPage";
 import DepartmentOfComputerScienceAndEngineeringNewPage from "../pages/academics/institutes/institute-department/department-of-computer-science-and-engineering-new/DepartmentOfComputerScienceAndEngineeringNewPage";
@@ -1275,6 +1276,10 @@ export const routes = [
       {
         path: "b-tech-ece-semiconductor-design-new",
         element: <BTechEceSemiconductorDesignNew />,
+      },
+      {
+        path: "b-tech-ece-lateral-entry-new",
+        element: <BTechEceLateralEntryNew />,
       },
 
       {

@@ -27,7 +27,7 @@ export type FacultyMember = {
     specialization?: string[];
     expertise?: string;
     email?: string;
-    contact?: string;
+    contact?: string | string[];
 };
 
 // Academic-strength figures supplied in the section design reference.

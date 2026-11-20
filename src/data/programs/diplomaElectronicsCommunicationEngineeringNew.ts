@@ -233,13 +233,16 @@ const diplomaElectronicsCommunicationEngineeringNewData: ProgramPageDataNew = {
   },
 
   fee: {
-    description: "Programme fees depend on the applicable academic session and university fee schedule. Contact SRMU admissions for the latest Diploma in Electronics & Communication Engineering fee details and applicable scholarships.",
+    description: "SRMU lists a ₹57,000 annual course fee, a ₹100 Student Welfare Fund each year, and ₹5,000 first-year caution money. Hostel and transportation fees are listed separately.",
     feeRows: [
-      { label: "Course Fee", yr1: "Refer to current schedule", yr2: "Refer to current schedule", yr3: "Refer to current schedule" },
-      { label: "Student Welfare Fund", yr1: "As per university schedule", yr2: "As per university schedule", yr3: "As per university schedule" },
-      { label: "Caution Money", yr1: "As per university schedule", yr2: "—", yr3: "—" },
+      { label: "Course Fee", yr1: "₹57,000", yr2: "₹57,000", yr3: "₹57,000" },
+      { label: "Student Welfare Fund", yr1: "₹100", yr2: "₹100", yr3: "₹100" },
+      { label: "Caution Money", yr1: "₹5,000", yr2: "–", yr3: "–" },
+      { label: "Total Fee", yr1: "₹62,100", yr2: "₹57,100", yr3: "₹57,100" },
+      { label: "Hostel Fees + Caution Money (1st Yr. Only)", yr1: "₹85,000", yr2: "₹80,000", yr3: "₹80,000" },
+      { label: "Transportation Fees", yr1: "₹35,000", yr2: "₹35,000", yr3: "₹35,000" },
     ],
-    feeNote: "Fees and additional charges may change by academic session. Confirm the applicable fee structure and scholarship details with SRMU admissions before applying.",
+    feeNote: "SRMU lists the Student Welfare Fund, caution money, hostel, and transportation charges separately. Alumni Fee (₹500) and Degree Fee (₹1,000) are payable in the final year. Confirm the fee schedule for your admission session.",
   },
 
   poPsoPlo: {

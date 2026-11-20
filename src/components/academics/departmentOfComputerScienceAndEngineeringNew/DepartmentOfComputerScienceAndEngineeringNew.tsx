@@ -1598,7 +1598,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = ({ customData }: { customDa
                                 <div className="overflow-hidden sm:overflow-visible -mx-4 px-4 sm:mx-0 sm:px-0" ref={programsEmblaRef}>
                                     <div className="flex sm:grid sm:grid-cols-2 xl:grid-cols-3 gap-5 pb-4 sm:pb-0 xl:gap-x-6">
                                         {pagePrograms[activeProgramCategory].programs.map((prog) => (
-                                            <article key={prog.link} className="flex min-h-[208px] min-w-0 flex-col rounded-2xl border border-[#E0F1FF] bg-white/85 px-6 pt-3.5 pb-[18px] shadow-[0_4px_20px_#3479c906] transition-shadow hover:shadow-[0_8px_24px_#3479c912] focus-within:border-[#21A5DB] motion-reduce:transition-none shrink-0 w-[80vw] sm:w-auto sm:shrink">
+                                            <article key={`${prog.title}-${prog.link}`} className="flex min-h-[208px] min-w-0 flex-col rounded-2xl border border-[#E0F1FF] bg-white/85 px-6 pt-3.5 pb-[18px] shadow-[0_4px_20px_#3479c906] transition-shadow hover:shadow-[0_8px_24px_#3479c912] focus-within:border-[#21A5DB] motion-reduce:transition-none shrink-0 w-[80vw] sm:w-auto sm:shrink">
                                                 <div className="mb-1 flex items-start justify-between gap-2">
                                                     <span className="grid size-[52px] shrink-0 place-items-center rounded-full bg-[#E0F1FF] text-[#0F4A85]">
                                                         <prog.icon size={28} strokeWidth={1.9} aria-hidden="true" />
@@ -2642,7 +2642,7 @@ const DepartmentOfComputerScienceAndEngineeringNew = ({ customData }: { customDa
 
                                     <div>
                                         <h5 className="text-[11px] uppercase tracking-[0.08em] text-[#8A97A1] font-bold mb-2">About</h5>
-                                        <p className="text-[14px] text-[#4C5A65] leading-relaxed text-justify">
+                                        <p className="text-[14px] text-[#4C5A65] leading-relaxed text-justify whitespace-pre-line">
                                             {selectedFaculty.expertise ?? customData?.facultySection?.profileDescription ?? (isCivilEngineeringPage ? `${selectedFaculty.name} is listed as ${selectedFaculty.role} in the Faculty of Civil Engineering at SRMU.` : `${selectedFaculty.name} is a dedicated ${selectedFaculty.isHod ? "Head of Department" : "faculty member"} at the Department of Computer Science & Engineering, focusing on interactive, personalized teaching and fostering a research-oriented academic environment.`)}
                                         </p>
                                     </div>
@@ -2676,10 +2676,18 @@ const DepartmentOfComputerScienceAndEngineeringNew = ({ customData }: { customDa
                                                 </a>
                                             )}
                                             {selectedFaculty.contact && (
-                                                <a href={`tel:${selectedFaculty.contact}`} className="flex flex-col text-[13px] text-[#14284E] font-bold hover:text-[#FFB703]">
+                                                <div className="flex flex-col text-[13px] text-[#14284E] font-bold">
                                                     <span className="text-[10.5px] text-[#8A97A1] uppercase tracking-[0.06em] font-semibold mb-0.5">Contact</span>
-                                                    <span className="flex items-center gap-1.5"><Phone className="w-3.5 h-3.5" />{selectedFaculty.contact}</span>
-                                                </a>
+                                                    <span className="flex flex-wrap items-center gap-1.5">
+                                                        <Phone className="w-3.5 h-3.5" />
+                                                        {(Array.isArray(selectedFaculty.contact) ? selectedFaculty.contact : [selectedFaculty.contact]).map((contact, index) => (
+                                                            <React.Fragment key={contact}>
+                                                                {index > 0 && <span aria-hidden="true">/</span>}
+                                                                <a href={`tel:${contact.replace(/[^\d+]/g, "")}`} className="hover:text-[#FFB703]">{contact}</a>
+                                                            </React.Fragment>
+                                                        ))}
+                                                    </span>
+                                                </div>
                                             )}
                                         </div>
                                     )}

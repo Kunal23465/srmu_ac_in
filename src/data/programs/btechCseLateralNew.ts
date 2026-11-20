@@ -389,11 +389,18 @@ const btechCseLateralNewData: ProgramPageDataNew = {
   },
 
   fee: {
+    yearLabels: ["Year 1", "Year 2", "Year 3"],
     description:
-      "The program page lists a transparent fee structure for B.Tech. in Computer Science Engineering (Lateral Entry). Please contact the admissions office for the current approved fee schedule applicable to your academic session.",
-    feeRows: [],
-    feeNote:
-      "Fee details for B.Tech. in Computer Science Engineering (Lateral Entry) are published as a transparent fee structure on the program page. Please contact admissions for the current approved fee schedule.",
+      "SRMU lists an annual course fee of ₹1,52,000, a ₹100 Student Welfare Fund each year, and ₹5,000 first-year caution money. Hostel and transportation fees are listed separately.",
+    feeRows: [
+      { label: "Course Fee", yr1: "₹1,52,000", yr2: "₹1,52,000", yr3: "₹1,52,000" },
+      { label: "Student Welfare Fund", yr1: "₹100", yr2: "₹100", yr3: "₹100" },
+      { label: "Caution Money", yr1: "₹5,000", yr2: "–", yr3: "–" },
+      { label: "Total Fee", yr1: "₹1,57,100", yr2: "₹1,52,100", yr3: "₹1,52,100" },
+      { label: "Hostel Fees + Caution Money (1st Yr. Only)", yr1: "₹85,000", yr2: "₹80,000", yr3: "₹80,000" },
+      { label: "Transportation Fees", yr1: "₹35,000", yr2: "₹35,000", yr3: "₹35,000" },
+    ],
+    feeNote: "SRMU lists the Student Welfare Fund, caution money, hostel, and transportation charges separately. Alumni Fee (₹500) and Degree Fee (₹1,000) are payable in the final year. Confirm the fee schedule for your admission session.",
   },
 
   poPsoPlo: {

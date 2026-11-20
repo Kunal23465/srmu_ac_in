@@ -100,6 +100,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
     const isBcaDataScienceAiPage = isDataSciencePage && Boolean(heroBanner.pageHeading);
     const isBiotechnologyLateralPage = heroBanner.pageHeading === "B.Tech. in Biotechnology (Lateral Entry)";
     const isBtechCseLateralPage = heroBanner.pageHeading === "B.Tech. in Computer Science Engineering (Lateral Entry)";
+    const isBtechEceLateralEntryPage = heroBanner.pageHeading === "B.Tech. in Electronics & Communication Engineering (Lateral Entry)";
     const HeroPageTitleTag = isBcaDataScienceAiPage ? "p" : "h1";
     const isDiplomaElectricalEngineeringPage = heroBanner.degreeTitle === "Diploma in" && heroBanner.specialization === "Electrical Engineering";
     const isDiplomaElectronicsCommunicationPage = heroBanner.degreeTitle === "Diploma in" && heroBanner.specialization === "Electronics & Communication Engineering";
@@ -111,9 +112,9 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
     const isDiplomaCivilEngineeringPage = heroBanner.degreeTitle === "Diploma in" && heroBanner.specialization === "Civil Engineering";
     // const hasLtBenefitsDesign = usesCyberSecurityDesign || isDataSciencePage || isMechanicalPage || isSemiconductorPage || isBBABusinessAnalyticsPage;
     const usesMatchedSectionSizing = usesCyberSecurityDesign || isDataSciencePage || isMechanicalPage || isSemiconductorPage;
-    const usesUniformLtBenefitsGrid = isAiAugmentedFintechPage || isBBABusinessAnalyticsPage || isBcomHonsWithLtPage || isBiotechnologyLateralPage || isBtechCseLateralPage || isBtechCseLatralPage;
-    const usesGridDomains = isDataSciencePage || isMechanicalPage || isSemiconductorPage || usesUniformLtBenefitsGrid || isBcaCyberSecurityPage || isBbaAiFintechPage || isDiplomaCivilEngineeringPage || isDiplomaMechanicalProductionPage || isDiplomaMechanicalAutomobilePage || isDiplomaElectricalEngineeringPage || isDiplomaComputerScienceEngineeringPage || isDiplomaElectronicsCommunicationPage;
-    const hasLtBenefitsDesign = usesCyberSecurityDesign || isDataSciencePage || isAiAugmentedFintechPage || isBiotechnologyLateralPage || isBtechCseLateralPage || isMechanicalPage || isSemiconductorPage || isBBABusinessAnalyticsPage || isBcomHonsPage || isBcomHonsWithLtPage || isBBtechCseLatralPage;
+    const usesUniformLtBenefitsGrid = isAiAugmentedFintechPage || isBBABusinessAnalyticsPage || isBcomHonsWithLtPage || isBiotechnologyLateralPage || isBtechCseLateralPage || isBtechCseLatralPage || isBtechEceLateralEntryPage;
+    const usesGridDomains = isDataSciencePage || isMechanicalPage || isSemiconductorPage || usesUniformLtBenefitsGrid || isBcaCyberSecurityPage || isBbaAiFintechPage || isDiplomaCivilEngineeringPage || isDiplomaMechanicalProductionPage || isDiplomaMechanicalAutomobilePage || isDiplomaElectricalEngineeringPage || isDiplomaComputerScienceEngineeringPage || isDiplomaElectronicsCommunicationPage || isBtechEceLateralEntryPage;
+    const hasLtBenefitsDesign = usesCyberSecurityDesign || isDataSciencePage || isAiAugmentedFintechPage || isBiotechnologyLateralPage || isBtechCseLateralPage || isBtechEceLateralEntryPage || isMechanicalPage || isSemiconductorPage || isBBABusinessAnalyticsPage || isBcomHonsPage || isBcomHonsWithLtPage || isBtechCseLatralPage;
     // const usesMatchedSectionSizing = usesCyberSecurityDesign || isDataSciencePage || isMechanicalPage || isSemiconductorPage;
     // const usesGridDomains = isDataSciencePage || isBusinessAnalyticsPage || isMechanicalPage || isSemiconductorPage || isBcaCyberSecurityPage || isBbaAiFintechPage || isBcomHonsPage || isBcomHonsWithLtPage;
     // const usesCyberSecurityTextLayout = usesCyberSecurityDesign || isDataSciencePage;
@@ -124,9 +125,9 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
     // const usesCurriculumPanel = usesCyberSecurityTextLayout || isBusinessAnalyticsPage || isBbaAiFintechPage || isDiplomaCivilEngineeringPage || isDiplomaMechanicalProductionPage || isDiplomaMechanicalAutomobilePage || isDiplomaElectricalEngineeringPage || isDiplomaComputerScienceEngineeringPage || isDiplomaElectronicsCommunicationPage;
 
     // Tauseef
-    const usesCyberSecurityTextLayout = isCyberSecurityPage || isDataSciencePage || isBBABusinessAnalyticsPage || isBcomHonsWithLtPage || isBtechCseLatralPage;
+    const usesCyberSecurityTextLayout = isCyberSecurityPage || isDataSciencePage || isBBABusinessAnalyticsPage || isBcomHonsWithLtPage || isBtechCseLatralPage || isBtechEceLateralEntryPage;
     // Tauseef
-    const usesCurriculumPanel = usesCyberSecurityTextLayout || isBusinessAnalyticsPage || isAiAugmentedFintechPage || isBcomHonsPage || isBcomHonsWithLtPage || isBiotechnologyLateralPage || isBtechCseLateralPage || isBtechCseLatralPage || isDiplomaComputerScienceEngineeringPage || isDiplomaCivilEngineeringPage || isDiplomaMechanicalProductionPage || isDiplomaMechanicalAutomobilePage || isDiplomaElectronicsCommunicationPage || isDiplomaElectricalEngineeringPage;
+    const usesCurriculumPanel = usesCyberSecurityTextLayout || isBusinessAnalyticsPage || isAiAugmentedFintechPage || isBcomHonsPage || isBcomHonsWithLtPage || isBiotechnologyLateralPage || isBtechCseLateralPage || isBtechCseLatralPage || isBtechEceLateralEntryPage || isDiplomaComputerScienceEngineeringPage || isDiplomaCivilEngineeringPage || isDiplomaMechanicalProductionPage || isDiplomaMechanicalAutomobilePage || isDiplomaElectronicsCommunicationPage || isDiplomaElectricalEngineeringPage;
     const careerDescriptionCutoffPhrase = isMechanicalPage ? "infrastructure." : isSemiconductorPage ? "data centers." : "informed decisions.";
     const careerDescriptionCutoff = careerOpportunities.description.indexOf(careerDescriptionCutoffPhrase);
     const careerDescriptionPreview = careerDescriptionCutoff >= 0
@@ -200,10 +201,10 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
     };
     const yearKeys = Object.keys(yearDataMap).filter((key) => yearDataMap[key]);
     const feeYearColumns = [
-        { label: "1st Year", key: "yr1" as const },
-        { label: "2nd Year", key: "yr2" as const },
-        { label: "3rd Year", key: "yr3" as const },
-        { label: "4th Year", key: "yr4" as const },
+        { label: fee.yearLabels?.[0] ?? "1st Year", key: "yr1" as const },
+        { label: fee.yearLabels?.[1] ?? "2nd Year", key: "yr2" as const },
+        { label: fee.yearLabels?.[2] ?? "3rd Year", key: "yr3" as const },
+        { label: fee.yearLabels?.[3] ?? "4th Year", key: "yr4" as const },
     ].slice(0, yearKeys.length);
 
 
@@ -515,10 +516,10 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                                         <div className={`${benefitsStyles.domains} ${usesGridDomains ? benefitsStyles.gridDomains : ""}`}>
                                             {usesGridDomains ? (
                                                 ltBenefits.domainRows.flatMap((row) => row.tags).map((tag, index) => {
-                                                    const iconSet = isDiplomaElectricalEngineeringPage
+                                                    const iconSet = isBtechEceLateralEntryPage || isDiplomaElectronicsCommunicationPage
+                                                        ? electronicsCommunicationBenefitsIcons
+                                                        : isDiplomaElectricalEngineeringPage
                                                         ? electricalBenefitsIcons
-                                                        : isDiplomaElectronicsCommunicationPage
-                                                            ? electronicsCommunicationBenefitsIcons
                                                             : isDiplomaComputerScienceEngineeringPage
                                                                 ? computerScienceBenefitsIcons
                                                                 : isMechanicalPage || isDiplomaMechanicalProductionPage || isDiplomaMechanicalAutomobilePage
@@ -695,7 +696,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                             {/* Featured card */}
                             <div className="bg-white border border-[#DCE6F2] hover:border-[#1B4F91]/35 rounded-3xl overflow-hidden shadow-[0_4px_20px_rgba(15,31,61,0.04)] transition-all flex flex-col md:flex-row">
                                 <div className="w-full md:w-5/12">
-                                    <img src={industryExposure.featuredCard.imageUrl} alt={industryExposure.featuredCard.title} className="w-full h-full object-cover min-h-[250px]" loading="lazy" />
+                                    <img src={industryExposure.featuredCard.imageUrl} alt={industryExposure.featuredCard.imageAlt ?? industryExposure.featuredCard.title} className="w-full h-full object-cover min-h-[250px]" loading="lazy" />
                                 </div>
                                 <div className="w-full md:w-7/12 p-5 sm:p-7 flex flex-col">
                                     <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
@@ -811,7 +812,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
 
                         {/* Curriculum image */}
                         {usesCurriculumPanel ? (
-                            <div className={`${curriculumStyles.panel} ${isDataSciencePage || isBusinessAnalyticsPage || isBiotechnologyLateralPage || isDiplomaMechanicalProductionPage || isDiplomaMechanicalAutomobilePage || isDiplomaElectricalEngineeringPage || isDiplomaComputerScienceEngineeringPage || isDiplomaElectronicsCommunicationPage ? curriculumStyles.dataSciencePanel : ""}`}>
+                            <div className={`${curriculumStyles.panel} ${isDataSciencePage || isBusinessAnalyticsPage || isBiotechnologyLateralPage || isDiplomaMechanicalProductionPage || isDiplomaMechanicalAutomobilePage || isDiplomaElectricalEngineeringPage || isDiplomaComputerScienceEngineeringPage || isDiplomaElectronicsCommunicationPage || isBtechEceLateralEntryPage ? curriculumStyles.dataSciencePanel : ""}`}>
 
                                 <picture className={curriculumStyles.background} aria-hidden="true">
                                     <source media="(max-width: 1023px)" srcSet={labs.curriculumImageMobile} />

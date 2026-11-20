@@ -101,6 +101,8 @@ export interface IndustryCardNew {
   paragraphs: string[];
   /** Optional image URL (used by featured card) */
   imageUrl?: string;
+  /** Alternative text for the featured image. */
+  imageAlt?: string;
   /** Short label displayed below the card icon */
   iconLabel?: string;
   icon?: "cpu" | "brain" | "lock" | "shield" | "code" | "code2" | "compass" | "settings" | "wrench" | "design" | "energy" | "factory" | "car";
@@ -204,6 +206,8 @@ export interface FeeRowNew {
 
 export interface FeeDataNew {
   feeRows: FeeRowNew[];
+  /** Optional displayed academic year labels, useful for lateral-entry schedules. */
+  yearLabels?: string[];
   feeNote: string;
   description?: string;
 }

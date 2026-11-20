@@ -136,7 +136,7 @@ const bcaDataScienceAiNewData: ProgramPageDataNew = {
     imageUrl: cyberSecurityNewData.placement.imageUrl,
     imageAlt: cyberSecurityNewData.placement.imageAlt,
     placementDetailUrl: "https://srmu.ac.in/placements",
-    heading: "Where Our Students Get Placed",
+    // heading: "Where Our Students Get Placed",
     description:
       "A degree in computer applications with a specialization in data science and artificial intelligence can open career opportunities across technology-driven industries. SRMU's placement preparation initiatives focus on technical knowledge, analytical thinking, communication, problem-solving, resume preparation, and interview readiness.",
     recruitersHeading: "Top Recruiters",
@@ -258,7 +258,7 @@ const bcaDataScienceAiNewData: ProgramPageDataNew = {
       { label: "Hostel Fees + Caution Money (1st Yr. Only)", yr1: "₹85,000", yr2: "₹80,000", yr3: "₹80,000" },
       { label: "Transportation Fees", yr1: "₹35,000", yr2: "₹35,000", yr3: "₹35,000" },
     ],
-    feeNote: "Alumni Fee: ₹500. Degree Fee: ₹1,000. Both are payable in the final year. Hostel and transportation fees are optional. Please contact admissions for the current approved fee schedule.",
+    feeNote: "SRMU lists the Student Welfare Fund, caution money, hostel, and transportation charges separately. Alumni Fee (₹500) and Degree Fee (₹1,000) are payable in the final year. Confirm the fee schedule for your admission session.",
   },
 
   poPsoPlo: {

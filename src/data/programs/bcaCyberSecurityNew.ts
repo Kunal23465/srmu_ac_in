@@ -293,8 +293,7 @@ const bcaCyberSecurityNewData: ProgramPageDataNew = {
       { label: "Hostel Fees + Caution Money (1st Yr. Only)", yr1: "₹85,000", yr2: "₹80,000", yr3: "₹80,000" },
       { label: "Transportation Fees", yr1: "₹35,000", yr2: "₹35,000", yr3: "₹35,000" },
     ],
-    feeNote:
-      "Alumni Fee: ₹500. Degree Fee: ₹1,000. Both are payable in the final year of the programme. Hostel and transportation fees are optional.",
+    feeNote: "SRMU lists the Student Welfare Fund, caution money, hostel, and transportation charges separately. Alumni Fee (₹500) and Degree Fee (₹1,000) are payable in the final year. Confirm the fee schedule for your admission session.",
   },
 
   poPsoPlo: {

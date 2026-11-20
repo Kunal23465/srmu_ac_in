@@ -242,10 +242,13 @@ const diplomaComputerScienceEngineeringNewData: ProgramPageDataNew = {
     description: "The currently published course fee is ₹57,000 per year. Additional charges may apply; confirm the applicable 2027–28 fee schedule with SRMU before admission.",
     feeRows: [
       { label: "Course Fee", yr1: "₹57,000", yr2: "₹57,000", yr3: "₹57,000" },
-      { label: "Student Welfare Fund", yr1: "As applicable", yr2: "As applicable", yr3: "As applicable" },
-      { label: "Caution Money", yr1: "As applicable", yr2: "—", yr3: "—" },
+      { label: "Student Welfare Fund", yr1: "₹100", yr2: "₹100", yr3: "₹100" },
+      { label: "Caution Money", yr1: "₹5,000", yr2: "–", yr3: "–" },
+      { label: "Total Fee", yr1: "₹62,100", yr2: "₹57,100", yr3: "₹57,100" },
+      { label: "Hostel Fees + Caution Money (1st Yr. Only)", yr1: "₹85,000", yr2: "₹80,000", yr3: "₹80,000" },
+      { label: "Transportation Fees", yr1: "₹35,000", yr2: "₹35,000", yr3: "₹35,000" },
     ],
-    feeNote: "Additional charges, including student welfare fund and first-year caution money, may apply. Confirm the 2027–28 fee structure before admission.",
+    feeNote: "SRMU lists the Student Welfare Fund, caution money, hostel, and transportation charges separately. Alumni Fee (₹500) and Degree Fee (₹1,000) are payable in the final year. Confirm the fee schedule for your admission session.",
   },
 
   poPsoPlo: {

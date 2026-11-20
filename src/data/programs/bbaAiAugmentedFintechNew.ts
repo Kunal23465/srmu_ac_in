@@ -139,7 +139,7 @@ const bbaAiAugmentedFintechNewData: ProgramPageDataNew = {
     imageUrl: cyberSecurityNewData.placement.imageUrl,
     imageAlt: cyberSecurityNewData.placement.imageAlt,
     placementDetailUrl: "https://srmu.ac.in/placements",
-    heading: "Where Our Students Get Placed",
+    // heading: "Where Our Students Get Placed",
     recruitersHeading: "Top Recruiters",
   },
 
@@ -252,11 +252,14 @@ const bbaAiAugmentedFintechNewData: ProgramPageDataNew = {
     description:
       "The annual course fee is ₹1,10,500. Additional charges, including the student welfare fund and one-time caution money, apply as per the university fee structure.",
     feeRows: [
-      { label: "Annual Course Fee", yr1: "₹1,10,500", yr2: "₹1,10,500", yr3: "₹1,10,500" },
-      { label: "Student Welfare Fund", yr1: "As per university fee structure", yr2: "As applicable", yr3: "As applicable" },
-      { label: "Caution Money", yr1: "One-time charge", yr2: "—", yr3: "—" },
+      { label: "Course Fee", yr1: "₹1,10,500", yr2: "₹1,10,500", yr3: "₹1,10,500" },
+      { label: "Student Welfare Fund", yr1: "₹100", yr2: "₹100", yr3: "₹100" },
+      { label: "Caution Money", yr1: "₹5,000", yr2: "–", yr3: "–" },
+      { label: "Total Fee", yr1: "₹1,15,600", yr2: "₹1,10,600", yr3: "₹1,10,600" },
+      { label: "Hostel Fees + Caution Money (1st Yr. Only)", yr1: "₹85,000", yr2: "₹80,000", yr3: "₹80,000" },
+      { label: "Transportation Fees", yr1: "₹35,000", yr2: "₹35,000", yr3: "₹35,000" },
     ],
-    feeNote: "The annual course fee is ₹1,10,500. Additional charges, including the student welfare fund and one-time caution money, apply as per the university fee structure. Please confirm the latest approved fee schedule with the admissions team.",
+    feeNote: "SRMU lists the Student Welfare Fund, caution money, hostel, and transportation charges separately. Alumni Fee (₹500) and Degree Fee (₹1,000) are payable in the final year. Confirm the fee schedule for your admission session.",
   },
 
   poPsoPlo: {

@@ -388,13 +388,12 @@ const dataScienceNewData: ProgramPageDataNew = {
     feeRows: [
       { label: "Course Fee", yr1: "₹1,70,000", yr2: "₹1,70,000", yr3: "₹1,70,000", yr4: "₹1,70,000" },
       { label: "Student Welfare Fund", yr1: "₹100", yr2: "₹100", yr3: "₹100", yr4: "₹100" },
-      { label: "Caution Money*", yr1: "₹5,000", yr2: "–", yr3: "–", yr4: "–" },
-      { label: "Academic Fee Total", yr1: "₹1,75,100", yr2: "₹1,70,100", yr3: "₹1,70,100", yr4: "₹1,70,100" },
-      { label: "Hostel Fee (Optional)**", yr1: "₹85,000", yr2: "₹80,000", yr3: "₹80,000", yr4: "₹80,000" },
-      { label: "Transportation (Optional)", yr1: "₹35,000", yr2: "₹35,000", yr3: "₹35,000", yr4: "₹35,000" },
+      { label: "Caution Money", yr1: "₹5,000", yr2: "₹0", yr3: "₹0", yr4: "₹0" },
+      { label: "Total Fee", yr1: "₹1,75,100", yr2: "₹1,70,100", yr3: "₹1,70,100", yr4: "₹1,70,100" },
+      { label: "Hostel Fees + Caution Money (1st Yr. Only)", yr1: "₹85,000", yr2: "₹80,000", yr3: "₹80,000", yr4: "₹80,000" },
+      { label: "Transportation Fees", yr1: "₹35,000", yr2: "₹35,000", yr3: "₹35,000", yr4: "₹35,000" },
     ],
-    feeNote:
-      "Additional charges: Alumni Fee ₹500 and Degree Fee ₹1,000 (payable in the final year). *One-time refundable caution money as per university policy. **Hostel and transportation are optional and subject to university guidelines.",
+    feeNote: "SRMU lists the Student Welfare Fund, caution money, hostel, and transportation charges separately. Alumni Fee (₹500) and Degree Fee (₹1,000) are payable in the final year. Confirm the fee schedule for your admission session.",
   },
 
   // ----------------------------------------------------------

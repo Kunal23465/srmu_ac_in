@@ -154,7 +154,7 @@ const diplomaMechanicalEngineeringProductionNewData: ProgramPageDataNew = {
     imageUrl: cyberSecurityNewData.placement.imageUrl,
     imageAlt: cyberSecurityNewData.placement.imageAlt,
     placementDetailUrl: "https://srmu.ac.in/placements",
-    heading: "Where Our Students Get Placed",
+    // heading: "Where Our Students Get Placed",
     recruitersHeading: "Top Recruiters",
   },
 
@@ -262,13 +262,16 @@ const diplomaMechanicalEngineeringProductionNewData: ProgramPageDataNew = {
   },
 
   fee: {
-    description: "The Diploma in Mechanical Engineering (Production) fee depends on the applicable academic session and university fee schedule. Refer to the latest approved SRMU Polytechnic fee structure for 2027–28 before applying.",
+    description: "SRMU lists a ₹57,000 annual course fee, a ₹100 Student Welfare Fund each year, and ₹5,000 first-year caution money. Hostel and transportation fees are listed separately.",
     feeRows: [
-      { label: "Course Fee", yr1: "Refer to 2027–28 schedule", yr2: "Refer to 2027–28 schedule", yr3: "Refer to 2027–28 schedule" },
-      { label: "Student Welfare Fund", yr1: "As per university schedule", yr2: "As per university schedule", yr3: "As per university schedule" },
-      { label: "Caution Money", yr1: "As per university schedule", yr2: "—", yr3: "—" },
+      { label: "Course Fee", yr1: "₹57,000", yr2: "₹57,000", yr3: "₹57,000" },
+      { label: "Student Welfare Fund", yr1: "₹100", yr2: "₹100", yr3: "₹100" },
+      { label: "Caution Money", yr1: "₹5,000", yr2: "–", yr3: "–" },
+      { label: "Total Fee", yr1: "₹62,100", yr2: "₹57,100", yr3: "₹57,100" },
+      { label: "Hostel Fees + Caution Money (1st Yr. Only)", yr1: "₹85,000", yr2: "₹80,000", yr3: "₹80,000" },
+      { label: "Transportation Fees", yr1: "₹35,000", yr2: "₹35,000", yr3: "₹35,000" },
     ],
-    feeNote: "The fee can change by academic session. Check the official SRMU fee schedule or contact the admissions team for confirmed 2027–28 charges.",
+    feeNote: "SRMU lists the Student Welfare Fund, caution money, hostel, and transportation charges separately. Alumni Fee (₹500) and Degree Fee (₹1,000) are payable in the final year. Confirm the fee schedule for your admission session.",
   },
 
   poPsoPlo: {

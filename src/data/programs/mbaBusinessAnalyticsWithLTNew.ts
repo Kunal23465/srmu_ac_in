@@ -336,9 +336,10 @@ const mbaBusinessAnalyticsLTNewData: ProgramPageDataNew = {
       { label: "Student Welfare Fund", yr1: "₹100", yr2: "₹100", yr3: "–" },
       { label: "Caution Money", yr1: "₹5,000", yr2: "–", yr3: "–" },
       { label: "Total Fee", yr1: "₹1,65,100", yr2: "₹1,60,100", yr3: "–" },
+      { label: "Hostel Fees + Caution Money (1st Yr. Only)", yr1: "₹85,000", yr2: "₹80,000", yr3: "–" },
+      { label: "Transportation Fees", yr1: "₹35,000", yr2: "₹35,000", yr3: "–" },
     ],
-    feeNote:
-      "The published annual course fee is ₹1,60,000. The first-year academic fee, including the Student Welfare Fund and caution money, is ₹1,65,100. The second-year academic fee is ₹1,60,100. Hostel, transportation, and other applicable charges are additional. Please contact admissions for the current approved fee schedule.",
+    feeNote: "SRMU lists the Student Welfare Fund, caution money, hostel, and transportation charges separately. Alumni Fee (₹500) and Degree Fee (₹1,000) are payable in the final year. Confirm the fee schedule for your admission session.",
   },
 
   poPsoPlo: {

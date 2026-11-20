@@ -17,8 +17,11 @@ import type { CustomDepartmentNewData, DepartmentActivityCardNew } from "../../.
 import type { FacultyMember } from "../departmentOfComputerScienceAndEngineeringNew/DepartmentFaculty";
 import {
     InstituteofAgriculturalSciencesandTechnologyfacultyData,
-    InstituteofAgriculturalSciencesandTechnologyinstituteProfiles,
 } from "../../../data/academics/institute/institute-department/institute-of-agricultural-sciences-and-technology-data";
+import directorImage from "../../../assets/images/institute-of-agricultural-sciences-and-technology-new/prof-dr-gajendra-singh.jpg";
+import arunKumarSinghImage from "../../../assets/images/institute-of-agricultural-sciences-and-technology-new/mr-arun-kumar-singh.jpg";
+import lavKumarImage from "../../../assets/images/institute-of-agricultural-sciences-and-technology-new/dr-lav-kumar.jpg";
+import akashSinghImage from "../../../assets/images/institute-of-agricultural-sciences-and-technology-new/dr-akash-singh.jpg";
 import departmentBanner from "../../../assets/images/academics/departments/agri1-09052412363771.webp";
 import overviewImage from "../../../assets/images/academics/departments/agri3-09052412364666.webp";
 import cropScienceImage from "../../../assets/images/academics/departments/agri2-09052412365475.webp";
@@ -40,28 +43,65 @@ const activityCard = (
     img,
 });
 
-const directorProfile = InstituteofAgriculturalSciencesandTechnologyinstituteProfiles[0];
-
 const instituteFaculty: FacultyMember[] = [
     {
         id: "director-iast",
-        name: directorProfile.name,
-        role: directorProfile.position,
-        img: directorProfile.image,
+        name: "Prof. (Dr.) Gajendra Singh",
+        role: "Director, IAST, SRMU, Lucknow–Deva Road",
+        img: directorImage,
         isHod: true,
-        qualification: "Ph.D. in Agronomy and postdoctoral research in China",
-        experience: "37+ years",
+        qualification: "Ph. D. in Agronomy",
+        experience: "More than 40 Years",
         email: "director.ag@srmu.ac.in",
-        contact: "+91-9474407465",
-        specialization: ["Agronomy", "Forage Crops", "Agricultural Extension"],
-        expertise: "Dr. Pal has guided more than 30 M.Sc. and Ph.D. students, published over 150 research papers, five books, and more than 50 book chapters, and led research projects funded by UPCAR, ICAR, DST, CIMMYT, and other agencies.",
+        contact: ["+91-9453601240", "+91-9076815959"],
+        specialization: [
+            "Cropping Systems",
+            "Nutrient Management",
+            "Weed Management",
+            "Rice-Based Cropping Systems in Rainfed Lowland and Flood-Prone Ecosystems",
+        ],
+        expertise: [
+            "Prof. Gajendra Singh completed his B.Sc. (Ag.) in 1979, M.Sc. (Agronomy) in 1981, and Ph.D. (Agronomy) in 1985 from Raja Balwant Singh P.G. College, affiliated with Agra University, Agra, Uttar Pradesh.",
+            "Prof. Singh began his academic career as an Assistant Professor in 1986 at Acharya Narendra Deva University of Agriculture and Technology (ANDUAT), Kumarganj, Ayodhya, Uttar Pradesh. He was promoted to Associate Professor in 1998 and Professor in 2003. He served as a Rice Agronomist for more than 22 years and as Chief Scientist at Krishi Vigyan Kendra (KVK), Bahraich, from July 1, 2008 to March 31, 2011.",
+            "He served on deputation as State Technical Coordinator under the Uttar Pradesh Diversified Agriculture Support Project (UPDASP), Project Coordinating Unit, PICUP Bhawan, Vibhuti Khand, Lucknow, from April 1, 2011 to May 31, 2016. He then returned to academic service as Professor of Agronomy, became Professor and Head of the Department of Agronomy in 2018, and served as Director of Research from 2019 to 2021.",
+            "Prof. Singh has published more than 250 research papers in national and international journals, including Scopus-indexed, UGC-CARE-listed, NAAS-rated, and other peer-reviewed publications. He has guided more than 30 M.Sc. students and five Ph.D. scholars. He has handled approximately 30 research projects under the All India Coordinated Research Project (AICRP) and other programmes funded by UPCAR, ICAR, the International Maize and Wheat Improvement Center (CIMMYT), and Rashtriya Krishi Vikas Yojana (RKVY).",
+            "He has participated in numerous national and international conferences and contributed to research projects through the ICAR–International Rice Research Institute (IRRI)–ANDUAT collaboration. He visited IRRI in Manila, Philippines, in 1995, 1996, 2000, and 2001 for workshops on GIS mapping and strategic research on Integrated Nutrient Management.",
+            "Prof. Singh contributed to four crop production technologies, including deep-water rice cultivation, sugarcane cultivation in flood-prone areas, and wheat cultivation under late-sown conditions following rice. He was also associated with the development of three rice varieties—Jalnidhi, Jalpriya, and Barhavrodhi—for deep-water, semi-deep-water, and flood-prone conditions, respectively. Nine improved agricultural technologies were popularized and demonstrated in farmers’ fields in Bahraich district, Uttar Pradesh.",
+            "He has been a life member of several academic and professional societies in India, a Fellow of the Indian Journal of Pulses Research and Development, IIPR, Kanpur, and a Councillor representing Uttar Pradesh in the Society of Agronomy, IARI, New Delhi.",
+            "In recognition of his contributions to agricultural research, Prof. Singh received the Best Scientist Award from UPCAR in 2003 and certificates of appreciation on two occasions from the Agricultural Technology Application Research Institute (ATARI), Kanpur. He contributed to the Uttar Pradesh Agriculture Policy, 2017, including the chapter “Diversification of Agriculture.”",
+            "After retiring from ANDUAT, Kumarganj, Ayodhya, Prof. Singh served as Principal of Chandra Bhan Gupt Agriculture P.G. College, affiliated with the University of Lucknow, from October 7, 2021 to September 8, 2025. He then served as Research Officer from September 9, 2025 to January 20, 2026.",
+        ].join("\n\n"),
     },
-    ...InstituteofAgriculturalSciencesandTechnologyfacultyData.map((member) => ({
-        id: String(member.id),
-        name: member.name,
-        role: member.designation,
-        img: member.image,
-    })),
+    ...InstituteofAgriculturalSciencesandTechnologyfacultyData
+        .filter((member) => member.name !== "Ms. Anam Khan")
+        .map((member) => ({
+            id: String(member.id),
+            name: member.name === "Dr. Balvir Singh" ? "Prof. (Dr.) Balvir Singh" : member.name,
+            role: member.name === "Dr. Pranav Kumar Mishra"
+                ? "Associate Professor"
+                : member.name === "Dr. Balvir Singh"
+                    ? "Professor and Deputy Director"
+                    : member.designation,
+            img: member.image,
+        })),
+    {
+        id: "arun-kumar-singh",
+        name: "Mr. Arun Kumar Singh",
+        role: "Assistant Professor",
+        img: arunKumarSinghImage,
+    },
+    {
+        id: "lav-kumar",
+        name: "Dr. Lav Kumar",
+        role: "Assistant Professor",
+        img: lavKumarImage,
+    },
+    {
+        id: "akash-singh",
+        name: "Dr. Akash Singh",
+        role: "Assistant Professor",
+        img: akashSinghImage,
+    },
 ];
 
 export const instituteOfAgriculturalSciencesAndTechnologyNewData: CustomDepartmentNewData = {
@@ -95,9 +135,9 @@ export const instituteOfAgriculturalSciencesAndTechnologyNewData: CustomDepartme
         headingHighlight: "Institute",
         subtitle: "Agricultural Sciences and Technology at SRMU",
         paragraphs: [
-            "The Institute of Agricultural Sciences and Technology at Shri Ramswaroop Memorial University (SRMU) focuses on advanced agricultural education, scientific research, and practical learning to prepare students for the evolving agricultural sector.",
-            "The institute offers postgraduate programmes in horticulture, agronomy, soil science, and agribusiness management. Students develop specialized knowledge of crop production, agricultural technologies, soil management, horticultural practices, and agricultural business operations.",
-            "Though academic instruction, research-oriented learning, and field-based activities connect theory with modern agricultural practice and sustainable approaches to improving productivity.",
+            "The Institute of Agricultural Sciences and Technology (IAST) at Shri Ramswaroop Memorial University (SRMU), Deva Road, Barabanki, was established in 2019 with a mission to nurture skilled, innovative and entrepreneurial manpower for the agriculture sector. The four-year B.Sc. (Hons.) Agriculture programme, recognized by the Indian Council of Agricultural Research (ICAR) as a professional degree with consequential benefits for students, fully incorporates the recommendations of the Sixth Dean’s Committee of ICAR on Agricultural Education. The Institute follows the ICAR Student READY (Rural Entrepreneurship Awareness Development Yojana) framework, comprising experiential learning, hands-on and skill development training, Rural Agricultural Work Experience (RAWE), and industrial attachment, ensuring that students gain practical, field-ready competence.",
+            "With modern laboratories, field facilities and infrastructure, IAST offers an ideal environment for learning and research. Students broaden their perspectives and build leadership, teamwork and social responsibility through co-curricular and extracurricular activities and community service, while a regular process of curriculum renewal, guided by best practices and continuous evaluation of learning outcomes, keeps teaching relevant and innovative. The Institute offers B.Sc. (Hons.) Agriculture; M.Sc. in Agronomy, Soil Science, Horticulture (Fruit Science) and Horticulture (Vegetable Science); MBA in Agribusiness Management; and Ph.D. programmes in Agronomy, Horticulture (Fruit Science) and Agribusiness Management, preparing graduates to succeed in a competitive global agricultural marketplace.",
+            
         ],
         preview: "The Institute of Agricultural Sciences and Technology at SRMU combines agricultural education, research, and practical learning to prepare students for a changing agricultural sector.",
         image: overviewImage,
@@ -170,6 +210,32 @@ export const instituteOfAgriculturalSciencesAndTechnologyNewData: CustomDepartme
                 },
             ],
         },
+        {
+            category: "Doctoral Programmes",
+            mobileLabel: "Ph.D.",
+            badge: "Doctoral",
+            icon: GraduationCap,
+            programs: [
+                {
+                    title: "Ph.D. in Agronomy",
+                    description: "Eligibility: Master degree in the concerned subject. Course fee: Refer to the Ph.D. fee structure on the university Research page.",
+                    icon: GraduationCap,
+                    link: "/program/phd",
+                },
+                {
+                    title: "Ph.D. (Horticulture) Fruit Science",
+                    description: "Eligibility: Master degree in the concerned subject. Course fee: Refer to the Ph.D. fee structure on the university Research page.",
+                    icon: GraduationCap,
+                    link: "/program/phd",
+                },
+                {
+                    title: "Ph.D. in Agribusiness Management",
+                    description: "Eligibility: Master degree in the concerned subject. Course fee: Refer to the Ph.D. fee structure on the university Research page.",
+                    icon: GraduationCap,
+                    link: "/program/phd",
+                },
+            ],
+        },
     ],
     labs: {
         headingBefore: "Practical Learning &",
@@ -227,7 +293,7 @@ export const instituteOfAgriculturalSciencesAndTechnologyNewData: CustomDepartme
             id: "research-publications",
             eyebrow: "Scientific Inquiry & Scholarly Work",
             heading: "Research & Publications",
-            intro: "The institute promotes research-oriented learning in agronomy, crop production, horticulture, soil fertility, agricultural productivity, and sustainable resource use. Its director, Prof. (Dr.) Mahendra Singh Pal, has published more than 150 research papers and led funded projects in agronomy and forage crops.",
+            intro: "The institute promotes research-oriented learning in agronomy, crop production, horticulture, soil fertility, agricultural productivity, and sustainable resource use. Its director, Prof. (Dr.) Gajendra Singh, has published more than 250 research papers and guided postgraduate research scholars.",
             cards: [
                 activityCard("RESEARCH AREA", "Agronomy & Crop Production", "Study crop production systems, field management, forage crops, and approaches to improving agricultural productivity.", cropScienceImage),
                 activityCard("RESEARCH AREA", "Horticulture & Crop Improvement", "Explore vegetable and fruit science, cultivation practices, propagation, orchard management, and post-harvest work.", overviewImage),
@@ -289,9 +355,9 @@ export const instituteOfAgriculturalSciencesAndTechnologyNewData: CustomDepartme
     },
     facultySection: {
         members: instituteFaculty,
-        subheading: "Faculty members support agricultural education, field-based learning, research, and practical understanding across horticulture, agronomy, soil science, and agribusiness.",
-        featuredLabel: "DIRECTOR, IAST",
-        featuredDescription: "Prof. (Dr.) Mahendra Singh Pal brings extensive experience in agronomy, agricultural research, and extension, with a record of scholarly publications, funded research, and postgraduate supervision.",
+        subheading: "SRMU takes pride in recruiting distinguished faculty from some of the country’s best and most reputed agricultural universities, including G.B. Pant University of Agriculture and Technology, Pantnagar (Uttarakhand); Acharya Narendra Deva University of Agriculture and Technology, Kumarganj, Ayodhya (UP); Chandra Shekhar Azad University of Agriculture and Technology, Kanpur (UP); Banaras Hindu University, Varanasi; and Banda University of Agriculture and Technology, Banda (UP).",
+        featuredLabel: "DEPARTMENT HEAD",
+        featuredDescription: "Prof. (Dr.) Gajendra Singh brings more than 40 years of experience in agronomy, rice-based cropping systems, agricultural research, and postgraduate supervision.",
         profileDescription: "Institute faculty support teaching, practical learning, research, and student development across agricultural sciences.",
         showResearchShowcase: false,
     },
