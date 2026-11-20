@@ -73,13 +73,7 @@ const btechElectricalLateralLTNewData: ProgramPageDataNew = {
       "Students build their understanding of electrical machines, power systems, control systems, power electronics, electrical drives, and renewable energy technologies through classroom teaching and practical learning. The university also lists an L&T-sponsored EV Lab within its Electrical and Electronics Engineering facilities, providing a relevant connection to the growing role of electric mobility and automotive technology in electrical engineering.",
     domainRows: [
       {
-        tags: [
-          "Electrical Machines and Drives",
-          "Electrical Power Generation and Distribution",
-          "Switchgear and Protection",
-          "Power Electronics",
-          "Control Systems",
-        ],
+        tags: ["Electrical Machines and Drives", "Electrical Power Generation and Distribution", "Switchgear and Protection", "Power Electronics", "Control Systems"],
       },
       {
         tags: [
@@ -92,7 +86,8 @@ const btechElectricalLateralLTNewData: ProgramPageDataNew = {
         ],
       },
     ],
-    followUpText: "The program is designed to help students understand how engineering principles are used in power infrastructure, industrial systems, and emerging electric vehicle technologies.",
+    followUpText:
+      "The program is designed to help students understand how engineering principles are used in power infrastructure, industrial systems, and emerging electric vehicle technologies.",
     projectsHeading: "Practical Learning Areas:",
     projectsCol1: [
       { text: "Understanding electrical machines and their applications" },
@@ -155,7 +150,9 @@ const btechElectricalLateralLTNewData: ProgramPageDataNew = {
         iconLabel: "INDUSTRIAL SETTINGS",
         title: "Industrial Understanding",
         presenter: "Practical activities and industry interactions",
-        paragraphs: ["Practical activities help students understand how electrical engineering principles are used in power infrastructure, industrial systems, and emerging electric vehicle technologies."],
+        paragraphs: [
+          "Practical activities help students understand how electrical engineering principles are used in power infrastructure, industrial systems, and emerging electric vehicle technologies.",
+        ],
       },
       {
         badge: "Expert Interactions",
@@ -220,8 +217,7 @@ const btechElectricalLateralLTNewData: ProgramPageDataNew = {
         imageUrl: cyberSecurityNewData.labs.labs[0].imageUrl,
         imageAlt: cyberSecurityNewData.labs.labs[0].title,
         tagline: "Build a foundation in electrical circuits and engineering principles.",
-        description:
-          "Students explore electrical quantities, circuit behavior, connections, and measurement techniques through practical exercises.",
+        description: "Students explore electrical quantities, circuit behavior, connections, and measurement techniques through practical exercises.",
         items: ["Electrical Circuits", "Circuit Behavior", "Electrical Quantities", "Measurement Techniques", "Engineering Principles"],
       },
       {
@@ -322,7 +318,16 @@ const btechElectricalLateralLTNewData: ProgramPageDataNew = {
     year2: {
       title: "Year 2 – Power Systems, Machines, and Automation",
       quote: "Develop practical understanding of electrical systems, power control and industrial automation.",
-      subjects: ["Power System Engineering", "Electrical Machine Design", "Power Electronics", "Control Systems", "Electrical Drives", "Switchgear and Protection", "Industrial Automation", "Electrical Instrumentation"],
+      subjects: [
+        "Power System Engineering",
+        "Electrical Machine Design",
+        "Power Electronics",
+        "Control Systems",
+        "Electrical Drives",
+        "Switchgear and Protection",
+        "Industrial Automation",
+        "Electrical Instrumentation",
+      ],
       practicalLearning: [
         "Study electrical machine performance",
         "Understand power system components",
@@ -331,14 +336,33 @@ const btechElectricalLateralLTNewData: ProgramPageDataNew = {
         "Understand PLC and SCADA concepts",
         "Study electrical protection and switching systems",
       ],
-      projects: ["Electrical machine-related assignments", "Basic automation exercises", "Power electronics experiments", "Electrical system analysis", "Control system demonstrations"],
-      tools: ["PLC/SCADA laboratory setup", "Electrical testing instruments", "Power electronics laboratory equipment", "Simulation and engineering tools, as prescribed by the curriculum"],
+      projects: [
+        "Electrical machine-related assignments",
+        "Basic automation exercises",
+        "Power electronics experiments",
+        "Electrical system analysis",
+        "Control system demonstrations",
+      ],
+      tools: [
+        "PLC/SCADA laboratory setup",
+        "Electrical testing instruments",
+        "Power electronics laboratory equipment",
+        "Simulation and engineering tools, as prescribed by the curriculum",
+      ],
       outcome: "Develop practical understanding of electrical systems, power control and industrial automation.",
     },
     year3: {
       title: "Year 3 – Emerging Technologies and Industry Readiness",
       quote: "Prepare to apply electrical engineering knowledge in power systems, renewable energy, industrial automation, and electric mobility environments.",
-      subjects: ["Renewable Energy Systems", "Smart Grid Concepts", "Electric Vehicle Technology", "Advanced Power Electronics", "Energy Management", "Electrical System Design", "Project Work and Professional Practices"],
+      subjects: [
+        "Renewable Energy Systems",
+        "Smart Grid Concepts",
+        "Electric Vehicle Technology",
+        "Advanced Power Electronics",
+        "Energy Management",
+        "Electrical System Design",
+        "Project Work and Professional Practices",
+      ],
       practicalLearning: [
         "Understand solar and renewable energy applications",
         "Explore electric vehicle electrical systems",
@@ -354,7 +378,13 @@ const btechElectricalLateralLTNewData: ProgramPageDataNew = {
         "EV technology-related project work",
         "Technical presentations and documentation",
       ],
-      tools: ["Electrical engineering simulation tools", "Power electronics equipment", "PLC/SCADA systems", "Electrical measurement and testing instruments", "Renewable energy and EV laboratory facilities"],
+      tools: [
+        "Electrical engineering simulation tools",
+        "Power electronics equipment",
+        "PLC/SCADA systems",
+        "Electrical measurement and testing instruments",
+        "Renewable energy and EV laboratory facilities",
+      ],
       outcome: "Prepare to apply electrical engineering knowledge in power systems, renewable energy, industrial automation, and electric mobility environments.",
     },
   },
