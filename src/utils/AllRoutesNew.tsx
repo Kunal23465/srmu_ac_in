@@ -49,6 +49,7 @@ import BtechCivilLateralLTNew from "../pages/BtechCivilLateralLTNew";
 import BtechMechanicalLateralLTNew from "../pages/BtechMechanicalLateralLTNew";
 import BtechElectricalLateralLTNew from "../pages/BtechElectricalLateralLTNew";
 import BscHonsAgricultureNew from "../pages/BscHonsAgricultureNew";
+import BscInformationTechnologyNew from "../pages/BscInformationTechnologyNew";
 
 const HomePage = lazyPage(() => import("../pages/Home/HomePage"));
 const PageNotFound = lazyPage(() => import("../pages/PageNotFound"));
@@ -1327,10 +1328,14 @@ export const routes = [
         path: "bsc-hons-agriculture-design-new",
         element: <BscHonsAgricultureNew />,
       },
+      {
+        path: "bsc-information-technology-design-new",
+        element: <BscInformationTechnologyNew />,
+      },
 
 
 
-
+      // BscInformationTechnologyNew
 
       //------------------------------------------------------
 
