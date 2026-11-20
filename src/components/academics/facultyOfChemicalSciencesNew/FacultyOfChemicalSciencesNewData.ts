@@ -16,6 +16,7 @@ import {
     PlacedStudentsDataOfFacultyChemicalScienceData,
 } from "../../../data/academics/institute/institute-department/faculty-of-chemical-sciences-data";
 import chemistryImage from "../../../assets/images/academics/departments/chemisty.webp";
+import chemistryBannerImage from "../../../assets/images/faculty-of-chemical-sciences-new/physical-sciences-banner.webp";
 import chemistryEvent1 from "../../../assets/images/academics/departments/faculty-of-chemical-science/events/img1.webp";
 import chemistryEvent2 from "../../../assets/images/academics/departments/faculty-of-chemical-science/events/img2.webp";
 import chemistryEvent3 from "../../../assets/images/academics/departments/faculty-of-chemical-science/events/img3.webp";
@@ -74,7 +75,7 @@ export const facultyOfChemicalSciencesNewData: CustomDepartmentNewData = {
     hero: {
         prefix: "Faculty of",
         title: "Chemical Sciences",
-        backgroundImage: chemistryImage,
+        backgroundImage: chemistryBannerImage,
         stats: [
             { v: "6", l: "Guest Lectures\nReported", delay: "0ms" },
             { v: "10", l: "Research\nPublications", delay: "90ms" },

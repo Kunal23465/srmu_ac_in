@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 import type { CustomDepartmentNewData, DepartmentActivityCardNew } from "../../../customs/department-page-new/CustomDepartmentNew";
 import { facultyDetailsOfMeDepartment } from "../../../data/academics/faculty-of-mechanical-engineering/faculty-of-mechanical-engineering";
-import departmentBanner from "../../../assets/images/new-mechnical-program/desktop-banner.webp";
+import departmentBanner from "../../../assets/images/department-of-mechanical-engineering-new/faculty-of-mechanical-engineering.webp";
 import overviewImage from "../../../assets/images/new-mechnical-program/vett6qrcicwki2tdldms.webp";
 import designImage from "../../../assets/images/new-mechnical-program/industrial-cad-engineering-toolkit.png";
 import industryImage from "../../../assets/images/new-mechnical-program/lhnggy89mzsivw8j6k7g.webp";

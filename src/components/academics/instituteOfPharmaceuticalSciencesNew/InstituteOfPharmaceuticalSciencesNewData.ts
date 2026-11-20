@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import type { CustomDepartmentNewData, DepartmentActivityCardNew } from "../../../customs/department-page-new/CustomDepartmentNew";
 import { instituteOfPharmacyNewData } from "../instituteOfPharmacyNew/InstituteOfPharmacyNewData";
-import pharmacyBanner from "../../../assets/images/pharmacy-new/Pharmacy-Banner.webp";
+import pharmacyBanner from "../../../assets/images/institute-of-pharmaceutical-sciences-new/pharmaceutical-sciences-banner.webp";
 import pharmaceuticalOverview from "../../../assets/images/academics/institutes/pharmaceutical-12022411152655.webp";
 import lab01ChemistryIcon from "../../../assets/images/pharmacy-new/icons/lab-01-chemistry.svg";
 import lab02FormulationIcon from "../../../assets/images/pharmacy-new/icons/lab-02-formulation.svg";

@@ -20,7 +20,7 @@ import {
     InstituteofMediaStudiesfacultyData,
     InstituteofMediaStudiesProfiles,
 } from "../../../data/academics/institute/institute-department/institute-of-media-studies-data";
-import heroImage from "../../../assets/images/academics/institutes/media1-06052403225269.webp";
+import heroImage from "../../../assets/images/institute-of-media-studies-new/media-studies-banner.webp";
 import overviewImage from "../../../assets/images/academics/departments/media-07052412412440.webp";
 import studioImage from "../../../assets/images/new-labo/studio-and-media-lab.webp";
 import mediaVisitImage from "../../../assets/images/academics/departments/media-visit-07052412425199.webp";

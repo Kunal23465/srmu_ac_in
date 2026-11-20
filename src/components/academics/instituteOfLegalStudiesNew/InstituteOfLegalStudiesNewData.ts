@@ -11,6 +11,7 @@ import {
 import type { CustomDepartmentNewData, DepartmentActivityCardNew } from "../../../customs/department-page-new/CustomDepartmentNew";
 import { InstituteofLegalStudiesfacultyData } from "../../../data/academics/institute/institute-department/institute-of-legal-studies-data";
 import mootCourtImage from "../../../assets/images/academics/departments/mootcourt-06022404053661.webp";
+import legalStudiesBannerImage from "../../../assets/images/institute-of-legal-studies-new/legal-studies-banner.webp";
 import legalSupportImage from "../../../assets/images/academics/departments/legalsupp-06022404091718.webp";
 import legalStudiesImage from "../../../assets/images/academics/departments/legalstudies-06022404143177.webp";
 import seminarImage from "../../../assets/images/academics/departments/seminar1-10022412522592.webp";
@@ -76,7 +77,7 @@ export const instituteOfLegalStudiesNewData: CustomDepartmentNewData = {
     hero: {
         prefix: "Institute of",
         title: "Legal Studies",
-        backgroundImage: mootCourtImage,
+        backgroundImage: legalStudiesBannerImage,
         stats: [
             { v: "2", l: "Integrated Law\nProgrammes", delay: "0ms" },
             { v: "4", l: "Core Areas of\nLegal Study", delay: "90ms" },

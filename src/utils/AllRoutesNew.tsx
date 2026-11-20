@@ -17,6 +17,7 @@ import DiplomaElectronicsCommunicationEngineeringNew from "../pages/DiplomaElect
 import BTechMechanicalEngineeringNew from "../pages/BTechMechanicalEngineeringNew";
 import BTechEceSemiconductorDesignNew from "../pages/BTechEceSemiconductorDesignNew";
 import BTechEceLateralEntryNew from "../pages/BTechEceLateralEntryNew";
+import BTechComputerScienceEngineeringNew from "../pages/BTechComputerScienceEngineeringNew";
 
 import InsiderPage from "../pages/InsiderPage";
 import DepartmentOfComputerScienceAndEngineeringNewPage from "../pages/academics/institutes/institute-department/department-of-computer-science-and-engineering-new/DepartmentOfComputerScienceAndEngineeringNewPage";
@@ -48,6 +49,8 @@ import BtechCseLateralNew from "../pages/BtechCseLateralNew";
 import BtechCivilLateralLTNew from "../pages/BtechCivilLateralLTNew";
 import BtechMechanicalLateralLTNew from "../pages/BtechMechanicalLateralLTNew";
 import BtechElectricalLateralLTNew from "../pages/BtechElectricalLateralLTNew";
+import BScHonsMicrobiologyNew from "../pages/BScHonsMicrobiologyNew";
+import BTechCseAiMlNew from "../pages/BTechCseAiMlNew";
 
 const HomePage = lazyPage(() => import("../pages/Home/HomePage"));
 const PageNotFound = lazyPage(() => import("../pages/PageNotFound"));
@@ -1267,6 +1270,18 @@ export const routes = [
       {
         path: "diploma-electronics-communication-engineering-new",
         element: <DiplomaElectronicsCommunicationEngineeringNew />,
+      },
+      {
+        path: "b-sc-hons-microbiology-new",
+        element: <BScHonsMicrobiologyNew />,
+      },
+      {
+        path: "b-tech-computer-science-engineering-new",
+        element: <BTechComputerScienceEngineeringNew />,
+      },
+      {
+        path: "b-tech-cse-artificial-intelligence-machine-learning-new",
+        element: <BTechCseAiMlNew />,
       },
       {
         path: "b-tech-cse-data-science-new",

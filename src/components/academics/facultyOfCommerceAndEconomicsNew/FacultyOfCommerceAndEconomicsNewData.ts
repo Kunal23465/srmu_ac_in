@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import type { CustomDepartmentNewData, DepartmentActivityCardNew } from "../../../customs/department-page-new/CustomDepartmentNew";
 import { facultyDataCommerceAndEconomics } from "../../../data/academics/institute/institute-department/institute-of-management-commerce-and-economics-data/institute-of-management-commerce-and-economics-data";
-import departmentBanner from "../../../assets/images/academics/institutes/economics--08022401082492.webp";
+import departmentBanner from "../../../assets/images/faculty-of-commerce-and-economics-new/commerce-banner.webp";
 import departmentOverview from "../../../assets/images/academics/departments/commerce-07052412092026.webp";
 import practicalLearningImage from "../../../assets/images/academics/institutes/learning-.webp";
 import researchImage from "../../../assets/images/academics/institutes/researchpapers-.webp";

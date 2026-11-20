@@ -14,7 +14,7 @@ import {
 } from "lucide-react";
 import type { CustomDepartmentNewData, DepartmentActivityCardNew } from "../../../customs/department-page-new/CustomDepartmentNew";
 import { managementfacultyData } from "../../../data/academics/institute/institute-department/institute-of-management-commerce-and-economics-data/faculty-of-management-data";
-import departmentBanner from "../../../assets/images/academics/departments/management1-07052412144882.webp";
+import departmentBanner from "../../../assets/images/faculty-of-management-new/faculty-of-management-banner.webp";
 import departmentOverview from "../../../assets/images/academics/institutes/corporate-manag-.webp";
 import practicalLearningImage from "../../../assets/images/academics/institutes/learning-.webp";
 import researchImage from "../../../assets/images/academics/institutes/researchpapers-.webp";

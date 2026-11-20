@@ -11,6 +11,7 @@ import {
 import type { CustomDepartmentNewData, DepartmentActivityCardNew } from "../../../customs/department-page-new/CustomDepartmentNew";
 import { civilfacultyData } from "../../../data/academics/institute/faculty-of-civil-engineering/faculty-of-civil-engineering-data";
 import departmentBanner from "../../../assets/images/academics/departments/civil-07052411084968.webp";
+import departmentHeroBanner from "../../../assets/images/department-of-civil-engineering-new/faculty-of-civil-engineering.webp";
 import departmentOverview from "../../../assets/images/home/departmentalvideos/civil.png";
 import industryExposureImage from "../../../assets/images/academics/institutes/training-.webp";
 import practicalLearningImage from "../../../assets/images/academics/institutes/skill-.webp";
@@ -44,7 +45,7 @@ export const departmentOfCivilEngineeringNewData: CustomDepartmentNewData = {
     hero: {
         prefix: "Department of",
         title: "Civil Engineering",
-        backgroundImage: departmentBanner,
+        backgroundImage: departmentHeroBanner,
         stats: [
             { v: "08", l: "Programme Options", delay: "0ms" },
             { v: "07", l: "Key Learning Areas", delay: "90ms" },

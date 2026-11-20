@@ -10,7 +10,7 @@ import {
 import type { CustomDepartmentNewData, DepartmentActivityCardNew } from "../../../customs/department-page-new/CustomDepartmentNew";
 import type { FacultyMember } from "../departmentOfComputerScienceAndEngineeringNew/DepartmentFaculty";
 import { facultyDetailsOfBiotechnologyDepartment } from "../../../data/academics/faculty-of-biotechnology/faculty-of-biotechnology-data";
-import heroImage from "../../../assets/images/academics/departments/biotech-07022411273155.webp";
+import heroImage from "../../../assets/images/faculty-of-biotechnology-new/biotechnology-banner.webp";
 import overviewImage from "../../../assets/images/academics/departments/group-scientists-wearing-lab-coat-working-laborato-28012512230911.webp";
 import labImage from "../../../assets/images/academics/departments/biotech-lab-07052412272588.webp";
 import biotechImage from "../../../assets/images/academics/departments/biotech1-07052412253675.webp";

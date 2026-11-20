@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 import type { CustomDepartmentNewData, DepartmentActivityCardNew } from "../../../customs/department-page-new/CustomDepartmentNew";
 import { InstituteofEducationandResearchfacultyData } from "../../../data/academics/institute/institute-department/institute-of-education-and-research-data";
-import educationBanner from "../../../assets/images/academics/departments/education-06022405372723.webp";
+import educationBanner from "../../../assets/images/institute-of-education-and-research-new/education-and-research-banner.webp";
 import educationOverview from "../../../assets/images/academics/institutes/handsonlearning.webp";
 import activityImageOne from "../../../assets/images/campus-life/events/new-education/1.webp";
 import activityImageTwo from "../../../assets/images/campus-life/events/new-education/2.webp";

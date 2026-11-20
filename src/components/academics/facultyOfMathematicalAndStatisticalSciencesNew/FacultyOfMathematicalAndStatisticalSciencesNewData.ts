@@ -13,7 +13,7 @@ import {
 import type { CustomDepartmentNewData, DepartmentActivityCardNew } from "../../../customs/department-page-new/CustomDepartmentNew";
 import type { FacultyMember } from "../departmentOfComputerScienceAndEngineeringNew/DepartmentFaculty";
 import { FacultyOfMathematicalAndStatisticalSciencesfacultyData } from "../../../data/academics/institute/institute-department/faculty-of-mathematical-and-statistical-sciences-data";
-import departmentBanner from "../../../assets/images/academics/departments/maths1-07022412033456.webp";
+import departmentBanner from "../../../assets/images/faculty-of-mathematical-and-statistical-sciences-new/mathematical-sciences-banner.webp";
 import departmentOverview from "../../../assets/images/academics/departments/maths-07022411311165.webp";
 import spSSLabImage from "../../../assets/images/academics/departments/maths/facilities-bg-lg.webp";
 import conferenceImage from "../../../assets/images/research/publication/NATIONALMATHSCONFERENCE(2)-24112310463276.jpeg";

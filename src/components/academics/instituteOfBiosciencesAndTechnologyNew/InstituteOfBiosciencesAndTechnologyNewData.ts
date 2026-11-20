@@ -40,7 +40,7 @@ import garimaGuptaPortrait from "../../../assets/images/institute-of-biosciences
 import ankitaSrivastavaPortrait from "../../../assets/images/institute-of-biosciences-and-technology-new/faculty/Dr. Ankita Srivastava.png";
 import srmuFacultyPlaceholder from "../../../assets/images/academics/institutes/faculty/default-img.webp";
 import overviewImage from "../../../assets/images/academics/departments/group-scientists-wearing-lab-coat-working-laborato-28012512230911.webp";
-import heroImage from "../../../assets/images/academics/departments/biotech-07022411273155.webp";
+import heroImage from "../../../assets/images/faculty-of-biosciences-new/biosciences-banner.webp";
 import labImage from "../../../assets/images/academics/departments/biotech-lab-07052412272588.webp";
 import biotechImage from "../../../assets/images/academics/departments/biotech1-07052412253675.webp";
 import csirCimapImage from "../../../assets/images/academics/institutes/csir-cimap.webp";

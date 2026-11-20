@@ -16,7 +16,7 @@ import {
     facultyDetailsOfAhsDepartment,
     facultyOfAhsProfileData,
 } from "../../../data/academics/faculty-of-allied-health-sciences/faculty-of-allied-health-sciences-data";
-import alliedHealthHero from "../../../assets/images/home/program-section/undergraduate/allied-health-sciences.jpg";
+import alliedHealthHero from "../../../assets/images/institute-of-allied-health-sciences-new/allied-health-sciences-banner.webp";
 import alliedHealthLabImage from "../../../assets/images/academics/institutes/statelab.webp";
 import biomedicalImage from "../../../assets/images/academics/institutes/biomedical.webp";
 import healthcareProgramImage from "../../../assets/images/academics/institutes/diverseprogram.webp";

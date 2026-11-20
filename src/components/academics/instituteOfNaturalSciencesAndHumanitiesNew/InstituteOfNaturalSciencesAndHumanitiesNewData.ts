@@ -13,6 +13,7 @@ import {
 import type { CustomDepartmentNewData, DepartmentActivityCardNew } from "../../../customs/department-page-new/CustomDepartmentNew";
 import type { FacultyMember } from "../departmentOfComputerScienceAndEngineeringNew/DepartmentFaculty";
 import heroImage from "../../../assets/images/academics/institutes/naturalscience-06052403201478.webp";
+import heroBannerImage from "../../../assets/images/institute-of-natural-sciences-and-humanities-new/natural-sciences-and-humanities-banner.webp";
 import overviewImage from "../../../assets/images/home/program-section/undergraduate/natural-science.jpg";
 import humanitiesImage from "../../../assets/images/home/program-section/undergraduate/humanities-22022410271022.jpg";
 import chemistryImage from "../../../assets/images/academics/departments/chemisty.webp";
@@ -66,7 +67,7 @@ export const instituteOfNaturalSciencesAndHumanitiesNewData: CustomDepartmentNew
     hero: {
         prefix: "Institute of",
         title: "Natural Sciences and Humanities",
-        backgroundImage: heroImage,
+        backgroundImage: heroBannerImage,
         stats: [
             { v: "04", l: "Faculties", delay: "0ms" },
             { v: "65+", l: "Faculty Members", delay: "90ms" },

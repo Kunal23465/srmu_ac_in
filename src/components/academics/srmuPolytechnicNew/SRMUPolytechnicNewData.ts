@@ -19,7 +19,7 @@ import {
     SRMUPolytechnicfacultyData,
     SRMUPolytechnicinstituteProfiles,
 } from "../../../data/academics/institute/institute-department/srmu-polytechnic-data";
-import polytechnicHero from "../../../assets/images/home/program-section/polytechnic/polytechnic-diploma.jpg";
+import polytechnicHero from "../../../assets/images/srmu-polytechnic-new/Polytechnic.webp";
 import polytechnicOverview from "../../../assets/images/academics/institutes/polytechnic11-08022412560314.webp";
 import civilLabImage from "../../../assets/images/academics/departments/civil-07052411084968.webp";
 import mechanicalWorkshopImage from "../../../assets/images/academics/departments/workshop4-0905240105378.webp";

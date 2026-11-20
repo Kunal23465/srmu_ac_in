@@ -22,7 +22,7 @@ import directorImage from "../../../assets/images/institute-of-agricultural-scie
 import arunKumarSinghImage from "../../../assets/images/institute-of-agricultural-sciences-and-technology-new/mr-arun-kumar-singh.jpg";
 import lavKumarImage from "../../../assets/images/institute-of-agricultural-sciences-and-technology-new/dr-lav-kumar.jpg";
 import akashSinghImage from "../../../assets/images/institute-of-agricultural-sciences-and-technology-new/dr-akash-singh.jpg";
-import departmentBanner from "../../../assets/images/academics/departments/agri1-09052412363771.webp";
+import departmentBanner from "../../../assets/images/institute-of-agricultural-sciences-and-technology-new/Agriculture.webp";
 import overviewImage from "../../../assets/images/academics/departments/agri3-09052412364666.webp";
 import cropScienceImage from "../../../assets/images/academics/departments/agri2-09052412365475.webp";
 import researchImage from "../../../assets/images/academics/departments/agri4-09052412370363.webp";

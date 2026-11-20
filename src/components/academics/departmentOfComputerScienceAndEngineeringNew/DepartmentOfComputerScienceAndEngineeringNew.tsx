@@ -1094,10 +1094,14 @@ const DepartmentOfComputerScienceAndEngineeringNew = ({ customData }: { customDa
                         className="absolute inset-0 w-full h-full object-cover object-top"
                     />
 
-                    {isElectricalDepartmentPage && (
+                    {(isElectricalDepartmentPage || isMechanicalDepartmentPage) && (
                         <div
                             aria-hidden="true"
-                            className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b from-[#071329]/10 via-[#0B2B62]/50 to-[#061633]/95"
+                            className={`pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b ${
+                                isMechanicalDepartmentPage
+                                    ? "from-[#071329]/30 via-[#0B2B62]/70 to-[#061633]/95"
+                                    : "from-[#071329]/10 via-[#0B2B62]/50 to-[#061633]/95"
+                            }`}
                         />
                     )}
 

@@ -12,7 +12,7 @@ import type { CustomDepartmentNewData, DepartmentActivityCardNew } from "../../.
 import {
     ElectricalAndElectronicsfacultyDetails,
 } from "../../../data/academics/institute/department-of-electrical-and-electronics-engineering-data";
-import departmentBanner from "../../../assets/images/academics/departments/electronics-communication-06022402270981.webp";
+import departmentBanner from "../../../assets/images/department-of-electrical-and-electronics-engineering-new/department-of-electrical-and-electronics-engineering.webp";
 import departmentOverview from "../../../assets/images/academics/institutes/learning-.webp";
 import researchImage from "../../../assets/images/academics/institutes/researchpapers-.webp";
 import skillsImage from "../../../assets/images/academics/institutes/skill-.webp";
