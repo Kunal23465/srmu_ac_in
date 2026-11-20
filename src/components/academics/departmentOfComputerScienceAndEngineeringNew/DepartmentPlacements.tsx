@@ -70,7 +70,7 @@ export default function DepartmentPlacements({
                 <div className={styles.layout}>
                     <div className={styles.content}>
                         <h2 id="cse-placements-title" className={styles.heading}>
-                            {heading ?? <>Where our Students<span>Get Placed</span></>}
+                            {heading ?? <>Where our Students <span> Get Placed</span></>}
                         </h2>
                         <p className={styles.description}>
                             {activeDescription}

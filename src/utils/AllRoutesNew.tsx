@@ -45,6 +45,9 @@ import MbaBusinessAnalyticsWithLTNew from "../pages/MbaBusinessAnalyticsWithLTNe
 import MbaAiAugmentedFinTechLTNew from "../pages/MbaAiAugmentedFinTechLTNew";
 import BtechBiotechnologyLateralNew from "../pages/BtechBiotechnologyLateralNew";
 import BtechCseLateralNew from "../pages/BtechCseLateralNew";
+import BtechCivilLateralLTNew from "../pages/BtechCivilLateralLTNew";
+import BtechMechanicalLateralLTNew from "../pages/BtechMechanicalLateralLTNew";
+import BtechElectricalLateralLTNew from "../pages/BtechElectricalLateralLTNew";
 
 const HomePage = lazyPage(() => import("../pages/Home/HomePage"));
 const PageNotFound = lazyPage(() => import("../pages/PageNotFound"));
@@ -1307,6 +1310,21 @@ export const routes = [
         path: "btech-cse-lateral-design-new",
         element: <BtechCseLateralNew />,
       },
+      {
+        path: "btech-civil-lateral-lt-design-new",
+        element: <BtechCivilLateralLTNew />,
+      },
+      {
+        path: "btech-mechanical-lateral-lt-design-new",
+        element: <BtechMechanicalLateralLTNew />,
+      },
+      {
+        path: "btech-electrical-lateral-lt-design-new",
+        element: <BtechElectricalLateralLTNew />,
+      },
+
+
+  
       //------------------------------------------------------
 
       {
