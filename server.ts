@@ -31,7 +31,7 @@ try {
 }
 
 const host = "0.0.0.0";
-const port = Number(process.env.PORT || 3031);
+const port = Number(process.env.PORT || 3033);
 const siteUrl = process.env.VITE_SITE_URL || "https://srmu.ac.in";
 const canonicalSiteUrl = new URL(siteUrl);
 const canonicalOrigin = canonicalSiteUrl.origin.replace(/\/+$/, "");
