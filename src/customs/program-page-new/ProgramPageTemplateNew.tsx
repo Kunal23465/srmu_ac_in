@@ -7,7 +7,7 @@ import curriculumStyles from "./CyberSecurityCurriculum.module.css";
 import layoutStyles from "./ProgramPageLayout.module.css";
 import {
     ArrowLeft, ArrowRight, Download, PhoneCall, Cpu, Lock, Code2, Shield, Fingerprint, Landmark, Bug,
-    BrainCircuit, ChartNoAxesColumnIncreasing, Cloud, Database, Sparkles, Sprout, Layers2, Flower2, Dna, Wheat,
+    BrainCircuit, ChartNoAxesColumnIncreasing, Cloud, Database, Sparkles, Sprout, Layers2, Flower2, Dna, Wheat, Microscope, FlaskConical,
     HandCoins, UsersRound,
     ChevronDown, ChevronUp, Settings, Wrench, PenTool, Zap, Factory, Car
 } from "lucide-react";
@@ -71,6 +71,7 @@ const civilEngineeringBenefitsIcons = [Factory, Landmark, PenTool, Wrench, Setti
 const computerScienceBenefitsIcons = [Code2, Cpu, Database, Cloud, Settings, Code2, Cpu, Fingerprint, Bug];
 const electronicsCommunicationBenefitsIcons = [Cpu, Zap, Code2, Wrench, Settings, Fingerprint, Database, Cloud];
 const agricultureBenefitsIcons = [Sprout, Layers2, Flower2, Bug, Dna, Wheat, HandCoins, UsersRound];
+const biotechnologyBenefitsIcons = [Dna, Microscope, Bug, FlaskConical, Dna, Shield, Sprout, Database];
 
 const highlightedSuffix = (text: string, suffix?: string, className = "text-[#ffb703]") => {
     if (!suffix || !text.endsWith(suffix)) return text;
@@ -89,6 +90,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
     const { heroBanner, whyStudy, ltBenefits, industryExposure, placement, labs, yearJourney, fee, poPsoPlo, careerOpportunities, programComparison } = data;
     const isCyberSecurityPage = heroBanner.specialization.toLowerCase().includes("cyber security");
     // Tauseef
+    const isBscHonsBiotechnologyNewPage = heroBanner.pageHeading?.includes("B.Sc. (Hons.) Biotechnology") && heroBanner.specialization === "Biotechnology";
     const isBcaArtificialIntelligenceMachineLearningPage = heroBanner.pageHeading?.includes("BCA in Artificial Intelligence and Machine Learning") && heroBanner.specialization === "Artificial Intelligence and Machine Learning";
     const isBcaPage = heroBanner.pageHeading?.includes("B.C.A. (Bachelor of Computer Applications)") && heroBanner.specialization === "Computer Applications";
     const isBscInformationTechnologyPage = heroBanner.pageHeading?.includes("B.Sc. in Information Technology") && heroBanner.specialization === "Information Technology";
@@ -126,16 +128,16 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
     const isSemiconductorPage = heroBanner.specialization.toLowerCase().includes("semiconductor");
     const isDiplomaCivilEngineeringPage = heroBanner.degreeTitle === "Diploma in" && heroBanner.specialization === "Civil Engineering";
     // const hasLtBenefitsDesign = usesCyberSecurityDesign || isDataSciencePage || isMechanicalPage || isSemiconductorPage || isBBABusinessAnalyticsPage;
-    const usesMatchedSectionSizing = usesCyberSecurityDesign || isDataSciencePage || isMechanicalPage || isSemiconductorPage;
+    const usesMatchedSectionSizing = usesCyberSecurityDesign || isDataSciencePage || isMechanicalPage || isSemiconductorPage || isBscHonsBiotechnologyNewPage;
     // const usesUniformLtBenefitsGrid = isAiAugmentedFintechPage || isBBABusinessAnalyticsPage || isBcomHonsWithLtPage || isBiotechnologyLateralPage || isBtechCseLateralPage || isBtechCseLatralPage || isBtechEceLateralEntryPage;
     const usesUniformLtBenefitsGrid = isAiAugmentedFintechPage || isBBABusinessAnalyticsPage || isBcomHonsWithLtPage || isBiotechnologyLateralPage || isBtechCseLateralPage || isBtechCseLatralPage || isBetecheEectricalLteralLPage || isBscInformationTechnologyPage;
 
     // const usesGridDomains = isDataSciencePage || isMechanicalPage || isSemiconductorPage || usesUniformLtBenefitsGrid ;
-    const usesGridDomains = isDataSciencePage || isMechanicalPage || isSemiconductorPage || usesUniformLtBenefitsGrid || isBscHonsAgriculturePage || isBcaPage || isBcaArtificialIntelligenceMachineLearningPage || isBcaCyberSecurityPage || isBbaAiFintechPage || isDiplomaCivilEngineeringPage || isDiplomaMechanicalProductionPage || isDiplomaMechanicalAutomobilePage || isDiplomaElectricalEngineeringPage || isDiplomaComputerScienceEngineeringPage || isDiplomaElectronicsCommunicationPage || isBtechEceLateralEntryPage || isBcaCyberSecurityPage || isBbaAiFintechPage || isDiplomaCivilEngineeringPage || isDiplomaMechanicalProductionPage || isDiplomaMechanicalAutomobilePage || isDiplomaElectricalEngineeringPage || isDiplomaComputerScienceEngineeringPage || isDiplomaElectronicsCommunicationPage || isBtechEceLateralEntryPage || isBTechComputerScienceEngineeringPage || isBTechCseAiMlPage || isBTechCseMbaPage;
+    const usesGridDomains = isDataSciencePage || isMechanicalPage || isSemiconductorPage || usesUniformLtBenefitsGrid || isBscHonsAgriculturePage || isBscHonsBiotechnologyNewPage || isBcaPage || isBcaArtificialIntelligenceMachineLearningPage || isBcaCyberSecurityPage || isBbaAiFintechPage || isDiplomaCivilEngineeringPage || isDiplomaMechanicalProductionPage || isDiplomaMechanicalAutomobilePage || isDiplomaElectricalEngineeringPage || isDiplomaComputerScienceEngineeringPage || isDiplomaElectronicsCommunicationPage || isBtechEceLateralEntryPage || isBcaCyberSecurityPage || isBbaAiFintechPage || isDiplomaCivilEngineeringPage || isDiplomaMechanicalProductionPage || isDiplomaMechanicalAutomobilePage || isDiplomaElectricalEngineeringPage || isDiplomaComputerScienceEngineeringPage || isDiplomaElectronicsCommunicationPage || isBtechEceLateralEntryPage || isBTechComputerScienceEngineeringPage || isBTechCseAiMlPage || isBTechCseMbaPage;
     // const hasLtBenefitsDesign = usesCyberSecurityDesign || isDataSciencePage || isAiAugmentedFintechPage || isBiotechnologyLateralPage || isBtechCseLateralPage || isBtechEceLateralEntryPage || isMechanicalPage || isSemiconductorPage || isBBABusinessAnalyticsPage || isBcomHonsPage || isBcomHonsWithLtPage || isBtechCseLatralPage;
     // const usesGridDomains = isDataSciencePage || isMechanicalPage || isSemiconductorPage || usesUniformLtBenefitsGrid || isBcaCyberSecurityPage || isBbaAiFintechPage || isDiplomaCivilEngineeringPage || isBtechCivilLateralPage || isDiplomaMechanicalProductionPage || isDiplomaMechanicalAutomobilePage || isDiplomaElectricalEngineeringPage || isDiplomaComputerScienceEngineeringPage || isDiplomaElectronicsCommunicationPage;
-    const hasLtBenefitsDesign = usesCyberSecurityDesign || isDataSciencePage || isAiAugmentedFintechPage || isBiotechnologyLateralPage || isBtechCseLateralPage || isBtechCivilLateralPage || isMechanicalPage || isSemiconductorPage || isBBABusinessAnalyticsPage || isBcomHonsPage || isBcomHonsWithLtPage || isBtechCseLatralPage || isBetecheEectricalLteralLPage || isBscHonsAgriculturePage || isBscInformationTechnologyPage || isBcaPage || isBcaArtificialIntelligenceMachineLearningPage;
-    const usesCareerOpportunitiesWideLayout = isBiotechnologyLateralPage || isBtechCivilLateralPage || isBtechMechanicalLateralLTPage || isBetecheEectricalLteralLPage || isBscHonsAgriculturePage || isBscInformationTechnologyPage || isBcaArtificialIntelligenceMachineLearningPage;
+    const hasLtBenefitsDesign = usesCyberSecurityDesign || isDataSciencePage || isAiAugmentedFintechPage || isBiotechnologyLateralPage || isBscHonsBiotechnologyNewPage || isBtechCseLateralPage || isBtechCivilLateralPage || isMechanicalPage || isSemiconductorPage || isBBABusinessAnalyticsPage || isBcomHonsPage || isBcomHonsWithLtPage || isBtechCseLatralPage || isBetecheEectricalLteralLPage || isBscHonsAgriculturePage || isBscInformationTechnologyPage || isBcaPage || isBcaArtificialIntelligenceMachineLearningPage;
+    const usesCareerOpportunitiesWideLayout = isBiotechnologyLateralPage || isBtechCivilLateralPage || isBtechMechanicalLateralLTPage || isBetecheEectricalLteralLPage || isBscHonsAgriculturePage || isBscInformationTechnologyPage || isBcaArtificialIntelligenceMachineLearningPage || isBscHonsBiotechnologyNewPage;
     // const usesMatchedSectionSizing = usesCyberSecurityDesign || isDataSciencePage || isMechanicalPage || isSemiconductorPage;
     // const usesGridDomains = isDataSciencePage || isBusinessAnalyticsPage || isMechanicalPage || isSemiconductorPage || isBcaCyberSecurityPage || isBbaAiFintechPage || isBcomHonsPage || isBcomHonsWithLtPage;
     // const usesCyberSecurityTextLayout = usesCyberSecurityDesign || isDataSciencePage;
@@ -150,7 +152,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
     // Tauseef
     // const usesCurriculumPanel = usesCyberSecurityTextLayout || isBusinessAnalyticsPage || isAiAugmentedFintechPage || isBcomHonsPage || isBcomHonsWithLtPage || isBiotechnologyLateralPage || isBtechCseLateralPage || isBtechCseLatralPage || isBtechEceLateralEntryPage || isDiplomaComputerScienceEngineeringPage || isDiplomaCivilEngineeringPage || isDiplomaMechanicalProductionPage || isDiplomaMechanicalAutomobilePage || isDiplomaElectronicsCommunicationPage || isDiplomaElectricalEngineeringPage;
     // const usesCurriculumPanel = usesCyberSecurityTextLayout || isBusinessAnalyticsPage || isAiAugmentedFintechPage || isBcomHonsPage || isBcomHonsWithLtPage || isBiotechnologyLateralPage || isBtechCseLateralPage || isBtechCseLatralPage || isDiplomaComputerScienceEngineeringPage || isDiplomaCivilEngineeringPage || isDiplomaMechanicalProductionPage || isDiplomaMechanicalAutomobilePage || isDiplomaElectronicsCommunicationPage || isDiplomaElectricalEngineeringPage || isBtechCivilLateralPage || isBtechMechanicalLateralLTPage || isBetecheEectricalLteralLPage || isBScHonsMicrobiologyPage ;
-    const usesCurriculumPanel = usesCyberSecurityTextLayout || isBusinessAnalyticsPage || isAiAugmentedFintechPage || isBcomHonsPage || isBcomHonsWithLtPage || isBiotechnologyLateralPage || isBtechCseLateralPage || isBtechCseLatralPage || isDiplomaComputerScienceEngineeringPage || isDiplomaCivilEngineeringPage || isDiplomaMechanicalProductionPage || isDiplomaMechanicalAutomobilePage || isDiplomaElectronicsCommunicationPage || isDiplomaElectricalEngineeringPage || isBtechCivilLateralPage || isBtechMechanicalLateralLTPage || isBetecheEectricalLteralLPage || isBscHonsAgriculturePage || isBscInformationTechnologyPage || isBcaPage || isBcaArtificialIntelligenceMachineLearningPage || isBTechComputerScienceEngineeringPage || isBTechCseAiMlPage || isBTechCseMbaPage;
+    const usesCurriculumPanel = usesCyberSecurityTextLayout || isBusinessAnalyticsPage || isAiAugmentedFintechPage || isBcomHonsPage || isBcomHonsWithLtPage || isBiotechnologyLateralPage || isBtechCseLateralPage || isBtechCseLatralPage || isDiplomaComputerScienceEngineeringPage || isDiplomaCivilEngineeringPage || isDiplomaMechanicalProductionPage || isDiplomaMechanicalAutomobilePage || isDiplomaElectronicsCommunicationPage || isDiplomaElectricalEngineeringPage || isBtechCivilLateralPage || isBtechMechanicalLateralLTPage || isBetecheEectricalLteralLPage || isBscHonsAgriculturePage || isBscInformationTechnologyPage || isBcaPage || isBcaArtificialIntelligenceMachineLearningPage || isBTechComputerScienceEngineeringPage || isBTechCseAiMlPage || isBTechCseMbaPage || isBscHonsBiotechnologyNewPage;
     const careerDescriptionCutoffPhrase = isMechanicalPage ? "infrastructure." : isSemiconductorPage ? "data centers." : "informed decisions.";
     const careerDescriptionCutoff = careerOpportunities.description.indexOf(careerDescriptionCutoffPhrase);
     const careerDescriptionPreview = careerDescriptionCutoff >= 0
@@ -508,7 +510,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                                     <div className="min-w-0">
                                         <header className={benefitsStyles.header}>
                                             <span className={benefitsStyles.accent} />
-                                            <h2 className={`${benefitsStyles.title} ${isMechanicalPage ? benefitsStyles.mechanicalTitle : ""}`}>
+                                            <h2 className={`${benefitsStyles.title} ${isMechanicalPage ? benefitsStyles.mechanicalTitle : ""}`} data-preserve-mobile-title={isBscHonsBiotechnologyNewPage ? "" : undefined}>
                                                 {ltBenefits.heading ? highlightedSuffix(ltBenefits.heading, ltBenefits.headingHighlight, benefitsStyles.highlight) : <>
                                                     <span>How Does</span>
                                                     <img src={ltLogo} alt="L&amp;T EduTech" className={benefitsStyles.logo} />
@@ -541,7 +543,9 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                                         <div className={`${benefitsStyles.domains} ${usesGridDomains ? benefitsStyles.gridDomains : ""}`}>
                                             {usesGridDomains ? (
                                                 ltBenefits.domainRows.flatMap((row) => row.tags).map((tag, index) => {
-                                                    const iconSet = isBtechEceLateralEntryPage || isDiplomaElectronicsCommunicationPage
+                                                    const iconSet = isBscHonsBiotechnologyNewPage
+                                                        ? biotechnologyBenefitsIcons
+                                                        : isBtechEceLateralEntryPage || isDiplomaElectronicsCommunicationPage
                                                         ? electronicsCommunicationBenefitsIcons
                                                         : isDiplomaElectricalEngineeringPage
                                                             ? electricalBenefitsIcons
@@ -826,7 +830,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                 {/* ===== LABS & CURRICULUM ===== */}
                 <section className="py-8 md:py-10 px-4 sm:px-6 bg-[#F0F6FB]">
                     <div className={`${Classes["container"]} mx-auto`}>
-                        {!usesCyberSecurityTextLayout && !isBtechCivilLateralPage && !isMbaAiAugmentedFintechLtPage && !isBtechBiotechnologyLateralPage && !isBbaAiFintechPage && !isDiplomaCivilEngineeringPage && !isDiplomaMechanicalProductionPage && !isDiplomaMechanicalAutomobilePage && !isDiplomaElectricalEngineeringPage && !isDiplomaComputerScienceEngineeringPage && !isDiplomaElectronicsCommunicationPage && !isBScHonsMicrobiologyPage && !isBTechComputerScienceEngineeringPage && !isBTechCseAiMlPage && !isBTechCseMbaPage && !isBcaArtificialIntelligenceMachineLearningPage && !isBscInformationTechnologyPage && !isBscHonsAgriculturePage && !isBetecheEectricalLteralLPage && !isBtechCivilLateralPage && !isMbaAiAugmentedFintechLtPage && !isBtechBiotechnologyLateralPage && !isBbaAiFintechPage && !isDiplomaCivilEngineeringPage && !isDiplomaMechanicalProductionPage && !isDiplomaMechanicalAutomobilePage && !isDiplomaElectricalEngineeringPage && !isDiplomaComputerScienceEngineeringPage && !isDiplomaElectronicsCommunicationPage && (
+                        {!usesCyberSecurityTextLayout && !isBscHonsBiotechnologyNewPage && !isBtechCivilLateralPage && !isMbaAiAugmentedFintechLtPage && !isBtechBiotechnologyLateralPage && !isBbaAiFintechPage && !isDiplomaCivilEngineeringPage && !isDiplomaMechanicalProductionPage && !isDiplomaMechanicalAutomobilePage && !isDiplomaElectricalEngineeringPage && !isDiplomaComputerScienceEngineeringPage && !isDiplomaElectronicsCommunicationPage && !isBScHonsMicrobiologyPage && !isBTechComputerScienceEngineeringPage && !isBTechCseAiMlPage && !isBTechCseMbaPage && !isBcaArtificialIntelligenceMachineLearningPage && !isBscInformationTechnologyPage && !isBscHonsAgriculturePage && !isBetecheEectricalLteralLPage && !isBtechCivilLateralPage && !isMbaAiAugmentedFintechLtPage && !isBtechBiotechnologyLateralPage && !isBbaAiFintechPage && !isDiplomaCivilEngineeringPage && !isDiplomaMechanicalProductionPage && !isDiplomaMechanicalAutomobilePage && !isDiplomaElectricalEngineeringPage && !isDiplomaComputerScienceEngineeringPage && !isDiplomaElectronicsCommunicationPage && (
                             <div className="w-full mb-5 sm:mb-10">
                                 {!isBtechCseLatralPage && !isBusinessAnalyticsPage && !isAiAugmentedFintechPage && !isBcomHonsPage && !isBiotechnologyLateralPage && !isBtechCseLateralPage && (
                                     <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.15] font-bold font-display text-[#14284E]">

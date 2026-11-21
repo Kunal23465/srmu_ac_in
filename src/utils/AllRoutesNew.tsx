@@ -60,6 +60,7 @@ import BscHonsAgricultureNew from "../pages/BscHonsAgricultureNew";
 import BscInformationTechnologyNew from "../pages/BscInformationTechnologyNew";
 import BcaNew from "../pages/BcaNew";
 import BcaArtificialIntelligenceMachineLearningNew from "../pages/BcaArtificialIntelligenceMachineLearningNew";
+import BscHonsBiotechnologyNew from "../pages/BscHonsBiotechnologyNew";
 
 const HomePage = lazyPage(() => import("../pages/Home/HomePage"));
 const PageNotFound = lazyPage(() => import("../pages/PageNotFound"));
@@ -1366,6 +1367,11 @@ export const routes = [
         path: "bca-artificial-intelligence-machine-learning-new",
         element: <BcaArtificialIntelligenceMachineLearningNew />,
       },
+      {
+        path: "bsc-hons-biotechnology-design-new",
+        element: <BscHonsBiotechnologyNew />,
+      },
+
 
       //------------------------------------------------------
 
