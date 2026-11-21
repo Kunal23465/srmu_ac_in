@@ -89,6 +89,8 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
     const { heroBanner, whyStudy, ltBenefits, industryExposure, placement, labs, yearJourney, fee, poPsoPlo, careerOpportunities, programComparison } = data;
     const isCyberSecurityPage = heroBanner.specialization.toLowerCase().includes("cyber security");
     // Tauseef
+    const isBcaArtificialIntelligenceMachineLearningPage = heroBanner.pageHeading?.includes("BCA in Artificial Intelligence and Machine Learning") && heroBanner.specialization === "Artificial Intelligence and Machine Learning";
+    const isBcaPage = heroBanner.pageHeading?.includes("B.C.A. (Bachelor of Computer Applications)") && heroBanner.specialization === "Computer Applications";
     const isBscInformationTechnologyPage = heroBanner.pageHeading?.includes("B.Sc. in Information Technology") && heroBanner.specialization === "Information Technology";
     const isBscHonsAgriculturePage = heroBanner.pageHeading?.includes("B.Sc.(Hons.) in Agriculture") && heroBanner.specialization === "Agriculture";
     const isBetecheEectricalLteralLPage = heroBanner.pageHeading?.includes("B.Tech. in Electrical Engineering (Lateral Entry)") && heroBanner.specialization === "Electrical Engineering";
@@ -124,10 +126,11 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
     // const usesUniformLtBenefitsGrid = isAiAugmentedFintechPage || isBBABusinessAnalyticsPage || isBcomHonsWithLtPage || isBiotechnologyLateralPage || isBtechCseLateralPage || isBtechCseLatralPage || isBtechEceLateralEntryPage;
     const usesUniformLtBenefitsGrid = isAiAugmentedFintechPage || isBBABusinessAnalyticsPage || isBcomHonsWithLtPage || isBiotechnologyLateralPage || isBtechCseLateralPage || isBtechCseLatralPage || isBetecheEectricalLteralLPage || isBscInformationTechnologyPage;
 
-    const usesGridDomains = isDataSciencePage || isMechanicalPage || isSemiconductorPage || usesUniformLtBenefitsGrid || isBscHonsAgriculturePage || isBcaCyberSecurityPage || isBbaAiFintechPage || isDiplomaCivilEngineeringPage || isDiplomaMechanicalProductionPage || isDiplomaMechanicalAutomobilePage || isDiplomaElectricalEngineeringPage || isDiplomaComputerScienceEngineeringPage || isDiplomaElectronicsCommunicationPage || isBtechEceLateralEntryPage;
+    const usesGridDomains = isDataSciencePage || isMechanicalPage || isSemiconductorPage || usesUniformLtBenefitsGrid || isBscHonsAgriculturePage || isBcaPage || isBcaArtificialIntelligenceMachineLearningPage || isBcaCyberSecurityPage || isBbaAiFintechPage || isDiplomaCivilEngineeringPage || isDiplomaMechanicalProductionPage || isDiplomaMechanicalAutomobilePage || isDiplomaElectricalEngineeringPage || isDiplomaComputerScienceEngineeringPage || isDiplomaElectronicsCommunicationPage || isBtechEceLateralEntryPage;
     // const hasLtBenefitsDesign = usesCyberSecurityDesign || isDataSciencePage || isAiAugmentedFintechPage || isBiotechnologyLateralPage || isBtechCseLateralPage || isBtechEceLateralEntryPage || isMechanicalPage || isSemiconductorPage || isBBABusinessAnalyticsPage || isBcomHonsPage || isBcomHonsWithLtPage || isBtechCseLatralPage;
     // const usesGridDomains = isDataSciencePage || isMechanicalPage || isSemiconductorPage || usesUniformLtBenefitsGrid || isBcaCyberSecurityPage || isBbaAiFintechPage || isDiplomaCivilEngineeringPage || isBtechCivilLateralPage || isDiplomaMechanicalProductionPage || isDiplomaMechanicalAutomobilePage || isDiplomaElectricalEngineeringPage || isDiplomaComputerScienceEngineeringPage || isDiplomaElectronicsCommunicationPage;
-    const hasLtBenefitsDesign = usesCyberSecurityDesign || isDataSciencePage || isAiAugmentedFintechPage || isBiotechnologyLateralPage || isBtechCseLateralPage || isBtechCivilLateralPage || isMechanicalPage || isSemiconductorPage || isBBABusinessAnalyticsPage || isBcomHonsPage || isBcomHonsWithLtPage || isBtechCseLatralPage || isBetecheEectricalLteralLPage || isBscHonsAgriculturePage || isBscInformationTechnologyPage;
+    const hasLtBenefitsDesign = usesCyberSecurityDesign || isDataSciencePage || isAiAugmentedFintechPage || isBiotechnologyLateralPage || isBtechCseLateralPage || isBtechCivilLateralPage || isMechanicalPage || isSemiconductorPage || isBBABusinessAnalyticsPage || isBcomHonsPage || isBcomHonsWithLtPage || isBtechCseLatralPage || isBetecheEectricalLteralLPage || isBscHonsAgriculturePage || isBscInformationTechnologyPage || isBcaPage || isBcaArtificialIntelligenceMachineLearningPage;
+    const usesCareerOpportunitiesWideLayout = isBiotechnologyLateralPage || isBtechCivilLateralPage || isBtechMechanicalLateralLTPage || isBetecheEectricalLteralLPage || isBscHonsAgriculturePage || isBscInformationTechnologyPage || isBcaArtificialIntelligenceMachineLearningPage;
     // const usesMatchedSectionSizing = usesCyberSecurityDesign || isDataSciencePage || isMechanicalPage || isSemiconductorPage;
     // const usesGridDomains = isDataSciencePage || isBusinessAnalyticsPage || isMechanicalPage || isSemiconductorPage || isBcaCyberSecurityPage || isBbaAiFintechPage || isBcomHonsPage || isBcomHonsWithLtPage;
     // const usesCyberSecurityTextLayout = usesCyberSecurityDesign || isDataSciencePage;
@@ -141,7 +144,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
     const usesCyberSecurityTextLayout = isCyberSecurityPage || isDataSciencePage || isBBABusinessAnalyticsPage || isBcomHonsWithLtPage || isBtechCseLatralPage || isBtechEceLateralEntryPage;
     // Tauseef
     // const usesCurriculumPanel = usesCyberSecurityTextLayout || isBusinessAnalyticsPage || isAiAugmentedFintechPage || isBcomHonsPage || isBcomHonsWithLtPage || isBiotechnologyLateralPage || isBtechCseLateralPage || isBtechCseLatralPage || isBtechEceLateralEntryPage || isDiplomaComputerScienceEngineeringPage || isDiplomaCivilEngineeringPage || isDiplomaMechanicalProductionPage || isDiplomaMechanicalAutomobilePage || isDiplomaElectronicsCommunicationPage || isDiplomaElectricalEngineeringPage;
-    const usesCurriculumPanel = usesCyberSecurityTextLayout || isBusinessAnalyticsPage || isAiAugmentedFintechPage || isBcomHonsPage || isBcomHonsWithLtPage || isBiotechnologyLateralPage || isBtechCseLateralPage || isBtechCseLatralPage || isDiplomaComputerScienceEngineeringPage || isDiplomaCivilEngineeringPage || isDiplomaMechanicalProductionPage || isDiplomaMechanicalAutomobilePage || isDiplomaElectronicsCommunicationPage || isDiplomaElectricalEngineeringPage || isBtechCivilLateralPage || isBtechMechanicalLateralLTPage || isBetecheEectricalLteralLPage || isBscHonsAgriculturePage || isBscInformationTechnologyPage;
+    const usesCurriculumPanel = usesCyberSecurityTextLayout || isBusinessAnalyticsPage || isAiAugmentedFintechPage || isBcomHonsPage || isBcomHonsWithLtPage || isBiotechnologyLateralPage || isBtechCseLateralPage || isBtechCseLatralPage || isDiplomaComputerScienceEngineeringPage || isDiplomaCivilEngineeringPage || isDiplomaMechanicalProductionPage || isDiplomaMechanicalAutomobilePage || isDiplomaElectronicsCommunicationPage || isDiplomaElectricalEngineeringPage || isBtechCivilLateralPage || isBtechMechanicalLateralLTPage || isBetecheEectricalLteralLPage || isBscHonsAgriculturePage || isBscInformationTechnologyPage || isBcaPage || isBcaArtificialIntelligenceMachineLearningPage;
     const careerDescriptionCutoffPhrase = isMechanicalPage ? "infrastructure." : isSemiconductorPage ? "data centers." : "informed decisions.";
     const careerDescriptionCutoff = careerOpportunities.description.indexOf(careerDescriptionCutoffPhrase);
     const careerDescriptionPreview = careerDescriptionCutoff >= 0
@@ -532,7 +535,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                                                 ltBenefits.domainRows.flatMap((row) => row.tags).map((tag, index) => {
                                                     const iconSet = isBscHonsAgriculturePage
                                                         ? agricultureBenefitsIcons
-                                                        : isBscInformationTechnologyPage
+                                                        : isBscInformationTechnologyPage || isBcaPage
                                                             ? computerScienceBenefitsIcons
                                                             : isBtechEceLateralEntryPage || isDiplomaElectronicsCommunicationPage
                                                                 ? electronicsCommunicationBenefitsIcons
@@ -815,7 +818,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                 {/* ===== LABS & CURRICULUM ===== */}
                 <section className="py-8 md:py-10 px-4 sm:px-6 bg-[#F0F6FB]">
                     <div className={`${Classes["container"]} mx-auto`}>
-                        {!usesCyberSecurityTextLayout && !isBscInformationTechnologyPage && !isBscHonsAgriculturePage && !isBetecheEectricalLteralLPage && !isBtechCivilLateralPage && !isMbaAiAugmentedFintechLtPage && !isBtechBiotechnologyLateralPage && !isBbaAiFintechPage && !isDiplomaCivilEngineeringPage && !isDiplomaMechanicalProductionPage && !isDiplomaMechanicalAutomobilePage && !isDiplomaElectricalEngineeringPage && !isDiplomaComputerScienceEngineeringPage && !isDiplomaElectronicsCommunicationPage && (
+                        {!usesCyberSecurityTextLayout && !isBcaArtificialIntelligenceMachineLearningPage && !isBscInformationTechnologyPage && !isBscHonsAgriculturePage && !isBetecheEectricalLteralLPage && !isBtechCivilLateralPage && !isMbaAiAugmentedFintechLtPage && !isBtechBiotechnologyLateralPage && !isBbaAiFintechPage && !isDiplomaCivilEngineeringPage && !isDiplomaMechanicalProductionPage && !isDiplomaMechanicalAutomobilePage && !isDiplomaElectricalEngineeringPage && !isDiplomaComputerScienceEngineeringPage && !isDiplomaElectronicsCommunicationPage && (
                             <div className="w-full mb-5 sm:mb-10">
                                 {!isBtechCseLatralPage && !isBusinessAnalyticsPage && !isAiAugmentedFintechPage && !isBcomHonsPage && !isBiotechnologyLateralPage && !isBtechCseLateralPage && (
                                     <h2 className="text-[clamp(24px,3vw,36px)] leading-[1.15] font-bold font-display text-[#14284E]">
@@ -1281,9 +1284,9 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                         {/* Desktop layout */}
                         <div
                             className="hidden md:grid md:grid-cols-[1.3fr_1fr] lg:grid-cols-[1.5fr_1fr] gap-6 mt-6 items-start"
-                            style={isBiotechnologyLateralPage || isBtechCivilLateralPage || isBtechMechanicalLateralLTPage || isBetecheEectricalLteralLPage || isBscHonsAgriculturePage || isBscInformationTechnologyPage ? { gridTemplateColumns: "minmax(0, 1.5fr) minmax(0, 1fr)" } : undefined}
+                            style={usesCareerOpportunitiesWideLayout ? { gridTemplateColumns: "minmax(0, 1.5fr) minmax(0, 1fr)" } : undefined}
                         >
-                            <div className={`flex flex-col gap-5 ${isBtechCivilLateralPage || isBtechMechanicalLateralLTPage || isBetecheEectricalLteralLPage || isBscHonsAgriculturePage || isBscInformationTechnologyPage ? "min-w-0" : ""}`}>
+                            <div className={`flex flex-col gap-5 ${usesCareerOpportunitiesWideLayout ? "min-w-0" : ""}`}>
                                 <div className="w-full"><img src={careerOpportunities.imageUrl} alt={careerOpportunities.imageAlt} className="w-full aspect-[4/3] sm:aspect-[16/10] object-cover rounded-xl border border-[#DCE6F2]" loading="lazy" /></div>
                                 <div className="pr-4">
                                     <p className="text-[15px] leading-relaxed text-[#4B5A72] text-justify">{careerOpportunities.description}</p>
@@ -1292,7 +1295,7 @@ const ProgramPageTemplateNew: React.FC<ProgramPageTemplateNewProps> = ({ data })
                                     </a>
                                 </div>
                             </div>
-                            <div className={`flex flex-col gap-3 ${isBtechCivilLateralPage || isBtechMechanicalLateralLTPage || isBetecheEectricalLteralLPage || isBscHonsAgriculturePage || isBscInformationTechnologyPage ? "min-w-0" : ""}`}>
+                            <div className={`flex flex-col gap-3 ${usesCareerOpportunitiesWideLayout ? "min-w-0" : ""}`}>
                                 {careerOpportunities.industries.map((item, i) => (
                                     <div key={i} className="bg-white border border-[#DCE6F2] rounded-xl overflow-hidden px-4 py-3">
                                         <h3 className="text-[13.5px] font-bold font-display text-[#14284E] mb-1">{item.title}</h3>

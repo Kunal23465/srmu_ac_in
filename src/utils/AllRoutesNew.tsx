@@ -50,6 +50,8 @@ import BtechMechanicalLateralLTNew from "../pages/BtechMechanicalLateralLTNew";
 import BtechElectricalLateralLTNew from "../pages/BtechElectricalLateralLTNew";
 import BscHonsAgricultureNew from "../pages/BscHonsAgricultureNew";
 import BscInformationTechnologyNew from "../pages/BscInformationTechnologyNew";
+import BcaNew from "../pages/BcaNew";
+import BcaArtificialIntelligenceMachineLearningNew from "../pages/BcaArtificialIntelligenceMachineLearningNew";
 
 const HomePage = lazyPage(() => import("../pages/Home/HomePage"));
 const PageNotFound = lazyPage(() => import("../pages/PageNotFound"));
@@ -1332,10 +1334,14 @@ export const routes = [
         path: "bsc-information-technology-design-new",
         element: <BscInformationTechnologyNew />,
       },
-
-
-
-      // BscInformationTechnologyNew
+      {
+        path: "bca-design-new",
+        element: <BcaNew />,
+      },
+      {
+        path: "bca-artificial-intelligence-machine-learning-new",
+        element: <BcaArtificialIntelligenceMachineLearningNew />,
+      },
 
       //------------------------------------------------------
 
