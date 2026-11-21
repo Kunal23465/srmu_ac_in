@@ -18,6 +18,7 @@ import BTechMechanicalEngineeringNew from "../pages/BTechMechanicalEngineeringNe
 import BTechEceSemiconductorDesignNew from "../pages/BTechEceSemiconductorDesignNew";
 import BTechEceLateralEntryNew from "../pages/BTechEceLateralEntryNew";
 import BTechComputerScienceEngineeringNew from "../pages/BTechComputerScienceEngineeringNew";
+import BTechCseMbaNew from "../pages/BTechCseMbaNew";
 
 import InsiderPage from "../pages/InsiderPage";
 import DepartmentOfComputerScienceAndEngineeringNewPage from "../pages/academics/institutes/institute-department/department-of-computer-science-and-engineering-new/DepartmentOfComputerScienceAndEngineeringNewPage";
@@ -1282,6 +1283,10 @@ export const routes = [
       {
         path: "b-tech-cse-artificial-intelligence-machine-learning-new",
         element: <BTechCseAiMlNew />,
+      },
+      {
+        path: "b-tech-cse-mba-new",
+        element: <BTechCseMbaNew />,
       },
       {
         path: "b-tech-cse-data-science-new",

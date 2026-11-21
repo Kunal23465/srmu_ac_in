@@ -194,6 +194,7 @@ export interface YearJourneyDataNew {
   year2: YearDataNew;
   year3: YearDataNew;
   year4?: YearDataNew;
+  year5?: YearDataNew;
 }
 
 export interface FeeRowNew {
@@ -202,6 +203,7 @@ export interface FeeRowNew {
   yr2: string;
   yr3: string;
   yr4?: string;
+  yr5?: string;
 }
 
 export interface FeeDataNew {
