@@ -52,6 +52,14 @@ import BtechMechanicalLateralLTNew from "../pages/BtechMechanicalLateralLTNew";
 import BtechElectricalLateralLTNew from "../pages/BtechElectricalLateralLTNew";
 import BScHonsMicrobiologyNew from "../pages/BScHonsMicrobiologyNew";
 import BTechCseAiMlNew from "../pages/BTechCseAiMlNew";
+// import BscHonsAgricultureNew from "../pages/BscHonsAgricultureNew";
+// import BscInformationTechnologyNew from "../pages/BscInformationTechnologyNew";
+// import BcaNew from "../pages/BcaNew";
+// import BcaArtificialIntelligenceMachineLearningNew from "../pages/BcaArtificialIntelligenceMachineLearningNew";
+import BscHonsAgricultureNew from "../pages/BscHonsAgricultureNew";
+import BscInformationTechnologyNew from "../pages/BscInformationTechnologyNew";
+import BcaNew from "../pages/BcaNew";
+import BcaArtificialIntelligenceMachineLearningNew from "../pages/BcaArtificialIntelligenceMachineLearningNew";
 
 const HomePage = lazyPage(() => import("../pages/Home/HomePage"));
 const PageNotFound = lazyPage(() => import("../pages/PageNotFound"));
@@ -1342,9 +1350,23 @@ export const routes = [
         path: "btech-electrical-lateral-lt-design-new",
         element: <BtechElectricalLateralLTNew />,
       },
+      {
+        path: "bsc-hons-agriculture-design-new",
+        element: <BscHonsAgricultureNew />,
+      },
+      {
+        path: "bsc-information-technology-design-new",
+        element: <BscInformationTechnologyNew />,
+      },
+      {
+        path: "bca-design-new",
+        element: <BcaNew />,
+      },
+      {
+        path: "bca-artificial-intelligence-machine-learning-new",
+        element: <BcaArtificialIntelligenceMachineLearningNew />,
+      },
 
-
-  
       //------------------------------------------------------
 
       {
