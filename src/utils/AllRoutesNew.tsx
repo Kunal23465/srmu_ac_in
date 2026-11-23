@@ -19,6 +19,12 @@ import BTechEceSemiconductorDesignNew from "../pages/BTechEceSemiconductorDesign
 import BTechEceLateralEntryNew from "../pages/BTechEceLateralEntryNew";
 import BTechComputerScienceEngineeringNew from "../pages/BTechComputerScienceEngineeringNew";
 import BTechCseMbaNew from "../pages/BTechCseMbaNew";
+import BTechBiotechnologyMbaNew from "../pages/BTechBiotechnologyMbaNew";
+import BTechEceMbaNew from "../pages/BTechEceMbaNew";
+import BTechMtechBiotechnologyNew from "../pages/BTechMtechBiotechnologyNew";
+import BTechMtechCseNew from "../pages/BTechMtechCseNew";
+import BTechMtechEceNew from "../pages/BTechMtechEceNew";
+import BTechMtechMechanicalNew from "../pages/BTechMtechMechanicalNew";
 
 import InsiderPage from "../pages/InsiderPage";
 import DepartmentOfComputerScienceAndEngineeringNewPage from "../pages/academics/institutes/institute-department/department-of-computer-science-and-engineering-new/DepartmentOfComputerScienceAndEngineeringNewPage";
@@ -1295,6 +1301,30 @@ export const routes = [
       {
         path: "b-tech-cse-mba-new",
         element: <BTechCseMbaNew />,
+      },
+      {
+        path: "b-tech-biotechnology-mba-new",
+        element: <BTechBiotechnologyMbaNew />,
+      },
+      {
+        path: "b-tech-ece-mba-new",
+        element: <BTechEceMbaNew />,
+      },
+      {
+        path: "b-tech-m-tech-biotechnology-new",
+        element: <BTechMtechBiotechnologyNew />,
+      },
+      {
+        path: "b-tech-m-tech-cse-new",
+        element: <BTechMtechCseNew />,
+      },
+      {
+        path: "b-tech-m-tech-ece-new",
+        element: <BTechMtechEceNew />,
+      },
+      {
+        path: "b-tech-m-tech-mechanical-new",
+        element: <BTechMtechMechanicalNew />,
       },
       {
         path: "b-tech-cse-data-science-new",

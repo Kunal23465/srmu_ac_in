@@ -65,11 +65,11 @@ export default function DepartmentPlacements({
     const activeDescription = description || "Dedicated placement training — resume building, coding practice, mock interviews and group discussions — starts from the final year.";
 
     return (
-        <section id="placements" className={styles.section} aria-labelledby="cse-placements-title">
+        <section id="placements" className={styles.section} aria-labelledby="program-placements-title">
             <div className={styles.container}>
                 <div className={styles.layout}>
                     <div className={styles.content}>
-                        <h2 id="cse-placements-title" className={styles.heading}>
+                        <h2 id="program-placements-title" className={styles.heading}>
                             {heading ?? <>Where our Students <span> Get Placed</span></>}
                         </h2>
                         <p className={styles.description}>
