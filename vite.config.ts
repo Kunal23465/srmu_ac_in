@@ -58,7 +58,7 @@ export default defineConfig(({ isSsrBuild }) => ({
 
   server: {
     host: "0.0.0.0",
-    port: 3031,
+    port: 3033,
     allowedHosts: ["test.srmu.ac.in", ".srmu.ac.in"],
   },
 
@@ -92,63 +92,63 @@ export default defineConfig(({ isSsrBuild }) => ({
     terserOptions: isSsrBuild
       ? undefined
       : {
-        compress: {
-          passes: 3,
-          drop_console: true,
-          drop_debugger: true,
+          compress: {
+            passes: 3,
+            drop_console: true,
+            drop_debugger: true,
+          },
+          format: {
+            comments: false,
+          },
         },
-        format: {
-          comments: false,
-        },
-      },
     rollupOptions: {
       output: isSsrBuild
         ? {
-          // SSR build outputs a single entry point to dist/server/entry-server.js
-          entryFileNames: "entry-server.js",
-          format: "es",
-        }
+            // SSR build outputs a single entry point to dist/server/entry-server.js
+            entryFileNames: "entry-server.js",
+            format: "es",
+          }
         : {
-          manualChunks(id) {
-            if (id.includes("node_modules")) {
-              if (id.includes("react-dom") || id.includes("react-router") || id.includes("scheduler") || id.includes("react-helmet-async")) {
-                return "react-runtime";
+            manualChunks(id) {
+              if (id.includes("node_modules")) {
+                if (id.includes("react-dom") || id.includes("react-router") || id.includes("scheduler") || id.includes("react-helmet-async")) {
+                  return "react-runtime";
+                }
+
+                if (id.includes("antd") || id.includes("@ant-design") || id.includes("rc-")) {
+                  return "antd-vendor";
+                }
+
+                if (id.includes("@reduxjs/toolkit") || id.includes("react-redux") || id.includes("redux")) {
+                  return "redux-vendor";
+                }
+
+                if (id.includes("react-icons") || id.includes("lucide-react")) {
+                  return "icons-vendor";
+                }
+
+                if (id.includes("formik") || id.includes("yup") || id.includes("react-select")) {
+                  return "forms-vendor";
+                }
+
+                if (id.includes("axios")) {
+                  return "network-vendor";
+                }
+
+                if (id.includes("@fancyapps")) {
+                  return "media-vendor";
+                }
+
+                if (id.includes("embla-carousel") || id.includes("framer-motion") || id.includes("react-countup")) {
+                  return "ui-vendor";
+                }
+
+                return "vendor";
               }
 
-              if (id.includes("antd") || id.includes("@ant-design") || id.includes("rc-")) {
-                return "antd-vendor";
-              }
-
-              if (id.includes("@reduxjs/toolkit") || id.includes("react-redux") || id.includes("redux")) {
-                return "redux-vendor";
-              }
-
-              if (id.includes("react-icons") || id.includes("lucide-react")) {
-                return "icons-vendor";
-              }
-
-              if (id.includes("formik") || id.includes("yup") || id.includes("react-select")) {
-                return "forms-vendor";
-              }
-
-              if (id.includes("axios")) {
-                return "network-vendor";
-              }
-
-              if (id.includes("@fancyapps")) {
-                return "media-vendor";
-              }
-
-              if (id.includes("embla-carousel") || id.includes("framer-motion") || id.includes("react-countup")) {
-                return "ui-vendor";
-              }
-
-              return "vendor";
-            }
-
-            return undefined;
+              return undefined;
+            },
           },
-        },
     },
   },
 }));
