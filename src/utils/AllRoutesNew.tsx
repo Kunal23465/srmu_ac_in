@@ -8,6 +8,8 @@ import BTechCseDataScienceNew from "../pages/BTechCseDataScienceNew";
 import BCACyberSecurityNew from "../pages/BCACyberSecurityNew";
 import BCADataScienceAiNew from "../pages/BCADataScienceAiNew";
 import BBAAiAugmentedFintechNew from "../pages/BBAAiAugmentedFintechNew";
+import BBABachelorBusinessAdministrationNew from "../pages/BBABachelorBusinessAdministrationNew";
+import BcomBachelorCommerceNew from "../pages/BcomBachelorCommerceNew";
 import DiplomaCivilEngineeringNew from "../pages/DiplomaCivilEngineeringNew";
 import DiplomaMechanicalEngineeringProductionNew from "../pages/DiplomaMechanicalEngineeringProductionNew";
 import DiplomaMechanicalEngineeringAutomobileNew from "../pages/DiplomaMechanicalEngineeringAutomobileNew";
@@ -19,12 +21,16 @@ import BTechEceSemiconductorDesignNew from "../pages/BTechEceSemiconductorDesign
 import BTechEceLateralEntryNew from "../pages/BTechEceLateralEntryNew";
 import BTechComputerScienceEngineeringNew from "../pages/BTechComputerScienceEngineeringNew";
 import BTechCseMbaNew from "../pages/BTechCseMbaNew";
+import BTechCivilEngineeringMbaNew from "../pages/BTechCivilEngineeringMbaNew";
 import BTechBiotechnologyMbaNew from "../pages/BTechBiotechnologyMbaNew";
 import BTechEceMbaNew from "../pages/BTechEceMbaNew";
 import BTechMtechBiotechnologyNew from "../pages/BTechMtechBiotechnologyNew";
 import BTechMtechCseNew from "../pages/BTechMtechCseNew";
 import BTechMtechEceNew from "../pages/BTechMtechEceNew";
 import BTechMtechMechanicalNew from "../pages/BTechMtechMechanicalNew";
+import BTechMtechCivilNew from "../pages/BTechMtechCivilNew";
+import BTechMtechElectricalNew from "../pages/BTechMtechElectricalNew";
+import BAHonsEconomicsNew from "../pages/BAHonsEconomicsNew";
 
 import InsiderPage from "../pages/InsiderPage";
 import DepartmentOfComputerScienceAndEngineeringNewPage from "../pages/academics/institutes/institute-department/department-of-computer-science-and-engineering-new/DepartmentOfComputerScienceAndEngineeringNewPage";
@@ -1268,6 +1274,10 @@ export const routes = [
         element: <BBAAiAugmentedFintechNew />,
       },
       {
+        path: "bba-bachelor-of-business-administration-new",
+        element: <BBABachelorBusinessAdministrationNew />,
+      },
+      {
         path: "diploma-civil-engineering-new",
         element: <DiplomaCivilEngineeringNew />,
       },
@@ -1308,6 +1318,10 @@ export const routes = [
         element: <BTechCseMbaNew />,
       },
       {
+        path: "b-tech-civil-engineering-mba-new",
+        element: <BTechCivilEngineeringMbaNew />,
+      },
+      {
         path: "b-tech-biotechnology-mba-new",
         element: <BTechBiotechnologyMbaNew />,
       },
@@ -1332,6 +1346,18 @@ export const routes = [
         element: <BTechMtechMechanicalNew />,
       },
       {
+        path: "b-tech-m-tech-civil-new",
+        element: <BTechMtechCivilNew />,
+      },
+      {
+        path: "b-tech-m-tech-electrical-new",
+        element: <BTechMtechElectricalNew />,
+      },
+      {
+        path: "ba-hons-economics-new",
+        element: <BAHonsEconomicsNew />,
+      },
+      {
         path: "b-tech-cse-data-science-new",
         element: <BTechCseDataScienceNew />,
       },
@@ -1351,6 +1377,10 @@ export const routes = [
       {
         path: "bba-business-analytics-with-design-new",
         element: <BbaBusinessAnalyticsWithLTNew />,
+      },
+      {
+        path: "b-com-bachelor-of-commerce-new",
+        element: <BcomBachelorCommerceNew />,
       },
       {
         path: "bcom-hons-with-lt-design-new",
