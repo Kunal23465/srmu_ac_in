@@ -61,6 +61,9 @@ import BscInformationTechnologyNew from "../pages/BscInformationTechnologyNew";
 import BcaNew from "../pages/BcaNew";
 import BcaArtificialIntelligenceMachineLearningNew from "../pages/BcaArtificialIntelligenceMachineLearningNew";
 import BscHonsBiotechnologyNew from "../pages/BscHonsBiotechnologyNew";
+import BscHonsNutritionDieteticsNew from "../pages/BscHonsNutritionDieteticsNew";
+import BtechBiotechnologyNew from "../pages/BtechBiotechnologyNew";
+import BtechMechanicalMbaIntegratedNew from "../pages/BtechMechanicalMbaIntegratedNew";
 
 const HomePage = lazyPage(() => import("../pages/Home/HomePage"));
 const PageNotFound = lazyPage(() => import("../pages/PageNotFound"));
@@ -1370,6 +1373,19 @@ export const routes = [
       {
         path: "bsc-hons-biotechnology-design-new",
         element: <BscHonsBiotechnologyNew />,
+      },
+      {
+        path: "bsc-hons-nutrition-dietetics-design-new",
+        element: <BscHonsNutritionDieteticsNew />,
+      },
+
+      {
+        path: "btech-biotechnology-design-new",
+        element: <BtechBiotechnologyNew />,
+      },
+      {
+        path: "btech-mechanical-mba-integrated-design-new",
+        element: <BtechMechanicalMbaIntegratedNew />,
       },
 
 
