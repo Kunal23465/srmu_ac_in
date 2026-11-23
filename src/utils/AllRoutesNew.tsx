@@ -70,6 +70,7 @@ import BscHonsBiotechnologyNew from "../pages/BscHonsBiotechnologyNew";
 import BscHonsNutritionDieteticsNew from "../pages/BscHonsNutritionDieteticsNew";
 import BtechBiotechnologyNew from "../pages/BtechBiotechnologyNew";
 import BtechMechanicalMbaIntegratedNew from "../pages/BtechMechanicalMbaIntegratedNew";
+import BtechElectricalMbaIntegratedNew from "../pages/BtechElectricalMbaIntegratedNew";
 
 const HomePage = lazyPage(() => import("../pages/Home/HomePage"));
 const PageNotFound = lazyPage(() => import("../pages/PageNotFound"));
@@ -1417,7 +1418,14 @@ export const routes = [
         path: "btech-mechanical-mba-integrated-design-new",
         element: <BtechMechanicalMbaIntegratedNew />,
       },
+      {
+        path: "btech-electrical-mba-tech-integrated-design-new",
+        element: <BtechElectricalMbaIntegratedNew />,
+      },
 
+
+
+      
 
       //------------------------------------------------------
 
