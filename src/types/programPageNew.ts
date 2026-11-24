@@ -307,5 +307,6 @@ export interface ProgramPageDataNew {
   poPsoPlo: PoPsoPloDataNew;
   careerOpportunities: CareerOpportunitiesDataNew;
   programComparison: ProgramComparisonDataNew;
+  // programComparison?: ProgramComparisonDataNew;
   faqs?: ProgramFaqNew[];
 }
