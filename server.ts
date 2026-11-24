@@ -29,7 +29,6 @@ try {
 } catch (err) {
   // Non-fatal: continue with existing process.env
 }
-
 const host = "0.0.0.0";
 const port = Number(process.env.PORT || 3031);
 const siteUrl = process.env.VITE_SITE_URL || "https://srmu.ac.in";
