@@ -10,6 +10,8 @@ import BCADataScienceAiNew from "../pages/BCADataScienceAiNew";
 import BBAAiAugmentedFintechNew from "../pages/BBAAiAugmentedFintechNew";
 import BBABachelorBusinessAdministrationNew from "../pages/BBABachelorBusinessAdministrationNew";
 import BcomBachelorCommerceNew from "../pages/BcomBachelorCommerceNew";
+import BALlbHonsNew from "../pages/BALlbHonsNew";
+import BBALlbHonsNew from "../pages/BBALlbHonsNew";
 import DiplomaCivilEngineeringNew from "../pages/DiplomaCivilEngineeringNew";
 import DiplomaMechanicalEngineeringProductionNew from "../pages/DiplomaMechanicalEngineeringProductionNew";
 import DiplomaMechanicalEngineeringAutomobileNew from "../pages/DiplomaMechanicalEngineeringAutomobileNew";
@@ -1381,6 +1383,14 @@ export const routes = [
       {
         path: "b-com-bachelor-of-commerce-new",
         element: <BcomBachelorCommerceNew />,
+      },
+      {
+        path: "ba-llb-hons-new",
+        element: <BALlbHonsNew />,
+      },
+      {
+        path: "bba-llb-hons-new",
+        element: <BBALlbHonsNew />,
       },
       {
         path: "bcom-hons-with-lt-design-new",
