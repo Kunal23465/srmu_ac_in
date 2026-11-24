@@ -80,6 +80,8 @@ import BtechBiotechnologyNew from "../pages/BtechBiotechnologyNew";
 import BtechMechanicalMbaIntegratedNew from "../pages/BtechMechanicalMbaIntegratedNew";
 import BtechElectricalMbaIntegratedNew from "../pages/BtechElectricalMbaIntegratedNew";
 import BaJournalismMassCommunicationNew from "../pages/BaJournalismMassCommunicationNew";
+import BpharmBachelorOfPharmacyNew from "../pages/ BpharmBachelorOfPharmacyNew";
+import BmritNew from "../pages/BmritNew";
 
 
 const HomePage = lazyPage(() => import("../pages/Home/HomePage"));
@@ -1468,6 +1470,16 @@ export const routes = [
       {
        path: "ba-journalism-mass-communication-design-new",
        element: <BaJournalismMassCommunicationNew />,
+      },
+
+      {
+       path: "bpharm-bachelor-of-pharmacy-design-new",
+       element: <BpharmBachelorOfPharmacyNew />,
+      },
+
+      {
+       path: "bmrit-design-new",
+       element: <BmritNew />,
       },
 
 
