@@ -152,7 +152,7 @@ const btechMtechCivilNewData: ProgramPageDataNew = {
     imageAlt: "SRMU engineering students visiting Gobind Industries Pvt. Ltd. in Barabanki; industry exposure image on the Civil Engineering programme page",
     placementDetailUrl: "https://srmu.ac.in/placements",
     description: "Civil engineering graduates can explore opportunities across construction companies, infrastructure development organizations, engineering consultancies, government departments, and research institutions. Career paths depend on individual skills, experience, and recruitment requirements. SRMU provides placement-related support; selection depends on eligibility, individual performance, and employer requirements.",
-    heading: "Build Your Career with Civil Engineering Placement Opportunities",
+    // heading: "Build Your Career with Civil Engineering Placement Opportunities",
     recruitersHeading: "Placement Support",
   },
 
