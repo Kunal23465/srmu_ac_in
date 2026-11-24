@@ -170,7 +170,7 @@ export const underGraduateFeeDataOfBioscience: FeeTableData = {
       duration: "3 Years",
       eligibility: "Click",
       fee: "Rs. 62,000/-",
-      link: "program/b-sc-hons-food-technology",
+      link: "b-sc-hons-food-technology-new",
       eligibilityContent: `
             <h2 class='font-bold text-lg mb-3  flex justify-center '>B.Sc.(Hons.) in Food Technology</h2>
             <p>Candidate must have passed 10+2 or equivalent system from any recognized Board with Physics and Mathematics/Biology as compulsory subject along with Chemistry/Biotechnology/Computer Science with minimum aggregate marks of 45% or equivalent grade for GEN /OBC and 40% marks or equivalent grade for SC/ ST Category.</p>

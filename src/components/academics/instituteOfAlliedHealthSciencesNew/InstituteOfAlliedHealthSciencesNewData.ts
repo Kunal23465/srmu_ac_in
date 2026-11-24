@@ -128,11 +128,11 @@ export const instituteOfAlliedHealthSciencesNewData: CustomDepartmentNewData = {
             badge: "Bachelor's Degrees",
             icon: GraduationCap,
             programs: [
-                { title: "Bachelor of Medical Laboratory Sciences (BMLS)", description: "Four-year undergraduate study in medical laboratory sciences and diagnostic practice.", icon: FlaskConical, link: "/program/bachelor-of-medical-laboratory-sciences-bmls" },
+                { title: "Bachelor of Medical Laboratory Sciences (BMLS)", description: "Four-year undergraduate study in medical laboratory sciences and diagnostic practice.", icon: FlaskConical, link: "/bachelor-of-medical-laboratory-sciences-new" },
                 { title: "Bachelor of Physiotherapy (BPT)", description: "Five-year undergraduate study in physiotherapy, rehabilitation, and patient care.", icon: Activity, link: "/program/bachelor-in-physiotherapy" },
                 { title: "Bachelor of Medical Radiology and Imaging Technology (BMRIT)", description: "Four-year undergraduate study in medical radiology and diagnostic imaging.", icon: Search, link: "/program/bachelor-of-medical-radiology-imaging-technology-bmrit" },
                 { title: "Bachelor of Optometry", description: "Five-year undergraduate study in vision assessment and optometric care.", icon: Eye, link: "/program/bachelor-of-optometry" },
-                { title: "Bachelor of Anaesthesia and Operation Theatre Technology (B.AOTT)", description: "Four-year undergraduate study in anaesthesia support and operation theatre technology.", icon: HeartPulse, link: "/program/bachelor-of-anaesthesia-and-operation-theatre-technology-b-aott" },
+                { title: "Bachelor of Anaesthesia and Operation Theatre Technology (B.AOTT)", description: "Four-year undergraduate study in anaesthesia support and operation theatre technology.", icon: HeartPulse, link: "/bachelor-of-anaesthesia-and-operation-theatre-technology-new" },
             ],
         },
     ],

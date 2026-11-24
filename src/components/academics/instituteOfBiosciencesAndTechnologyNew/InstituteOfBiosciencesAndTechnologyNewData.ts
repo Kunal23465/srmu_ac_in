@@ -605,6 +605,7 @@ export const instituteOfBiosciencesAndTechnologyNewData: CustomDepartmentNewData
             badge: "Undergraduate",
             icon: GraduationCap,
             programs: [
+                { title: "B.Sc. (Hons.) in Food Technology", description: "An undergraduate programme in food science, processing, preservation, quality, and food safety.", icon: Factory, link: "/b-sc-hons-food-technology-new" },
                 { title: "B.Tech. in Biotechnology", description: "An undergraduate programme in biological engineering and applied biotechnology.", icon: FlaskConical, link: "/program/b-tech-biotechnology" },
                 { title: "B.Sc. (Hons.) in Biotechnology", description: "An undergraduate programme in biotechnology and life sciences.", icon: Microscope, link: "/program/b-sc-hons-biotechnology" },
             ],

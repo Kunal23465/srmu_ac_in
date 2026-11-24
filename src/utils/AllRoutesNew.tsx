@@ -14,6 +14,9 @@ import BALlbHonsNew from "../pages/BALlbHonsNew";
 import BBALlbHonsNew from "../pages/BBALlbHonsNew";
 import DiplomaCivilEngineeringNew from "../pages/DiplomaCivilEngineeringNew";
 import DiplomaMechanicalEngineeringProductionNew from "../pages/DiplomaMechanicalEngineeringProductionNew";
+import DiplomaPharmacyNew from "../pages/DiplomaPharmacyNew";
+import BachelorMedicalLaboratorySciencesNew from "../pages/BachelorMedicalLaboratorySciencesNew";
+import BachelorAnaesthesiaOperationTheatreTechnologyNew from "../pages/BachelorAnaesthesiaOperationTheatreTechnologyNew";
 import DiplomaMechanicalEngineeringAutomobileNew from "../pages/DiplomaMechanicalEngineeringAutomobileNew";
 import DiplomaElectricalEngineeringNew from "../pages/DiplomaElectricalEngineeringNew";
 import DiplomaComputerScienceEngineeringNew from "../pages/DiplomaComputerScienceEngineeringNew";
@@ -65,6 +68,7 @@ import BtechCivilLateralLTNew from "../pages/BtechCivilLateralLTNew";
 import BtechMechanicalLateralLTNew from "../pages/BtechMechanicalLateralLTNew";
 import BtechElectricalLateralLTNew from "../pages/BtechElectricalLateralLTNew";
 import BScHonsMicrobiologyNew from "../pages/BScHonsMicrobiologyNew";
+import BScHonsFoodTechnologyNew from "../pages/BScHonsFoodTechnologyNew";
 import BTechCseAiMlNew from "../pages/BTechCseAiMlNew";
 // import BscHonsAgricultureNew from "../pages/BscHonsAgricultureNew";
 // import BscInformationTechnologyNew from "../pages/BscInformationTechnologyNew";
@@ -1290,6 +1294,18 @@ export const routes = [
         element: <DiplomaMechanicalEngineeringProductionNew />,
       },
       {
+        path: "diploma-pharmacy-new",
+        element: <DiplomaPharmacyNew />,
+      },
+      {
+        path: "bachelor-of-medical-laboratory-sciences-new",
+        element: <BachelorMedicalLaboratorySciencesNew />,
+      },
+      {
+        path: "bachelor-of-anaesthesia-and-operation-theatre-technology-new",
+        element: <BachelorAnaesthesiaOperationTheatreTechnologyNew />,
+      },
+      {
         path: "diploma-mechanical-engineering-automobile-new",
         element: <DiplomaMechanicalEngineeringAutomobileNew />,
       },
@@ -1308,6 +1324,10 @@ export const routes = [
       {
         path: "b-sc-hons-microbiology-new",
         element: <BScHonsMicrobiologyNew />,
+      },
+      {
+        path: "b-sc-hons-food-technology-new",
+        element: <BScHonsFoodTechnologyNew />,
       },
       {
         path: "b-tech-computer-science-engineering-new",

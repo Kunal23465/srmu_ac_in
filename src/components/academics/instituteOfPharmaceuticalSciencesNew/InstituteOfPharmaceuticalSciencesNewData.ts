@@ -109,7 +109,7 @@ export const instituteOfPharmaceuticalSciencesNewData: CustomDepartmentNewData =
             icon: Pill,
             programs: [
                 { title: "Bachelor of Pharmacy (B.Pharm.)", description: "Four-year undergraduate programme. Listed annual tuition fee: ₹145,000; additional applicable charges may apply.", icon: GraduationCap, link: "/program/bpharm-bachelor-of-pharmacy" },
-                { title: "Diploma in Pharmacy (D.Pharm.)", description: "Two-year diploma programme. Listed annual tuition fee: ₹92,000; additional applicable charges may apply.", icon: Pill, link: "/program/d-pharm-diploma-in-pharmacy" },
+                { title: "Diploma in Pharmacy (D.Pharm.)", description: "Two-year diploma programme. Listed annual tuition fee: ₹92,000; additional applicable charges may apply.", icon: Pill, link: "/diploma-pharmacy-new" },
             ],
         },
         {

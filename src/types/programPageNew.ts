@@ -178,6 +178,8 @@ export interface LabsDataNew {
 }
 
 export interface YearDataNew {
+  /** Optional label for non-year stages, such as prescribed practical training. */
+  stageLabel?: string;
   title: string;
   quote: string;
   subjects: string[];

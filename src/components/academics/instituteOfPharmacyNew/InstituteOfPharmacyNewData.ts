@@ -109,7 +109,7 @@ export const instituteOfPharmacyNewData: CustomDepartmentNewData = {
             icon: Pill,
             programs: [
                 { title: "Bachelor of Pharmacy (B.Pharm.)", description: "A four-year undergraduate program.", icon: GraduationCap, link: "/program/bpharm-bachelor-of-pharmacy" },
-                { title: "Diploma in Pharmacy (D.Pharm.)", description: "A two-year diploma program.", icon: Pill, link: "/program/d-pharm-diploma-in-pharmacy" },
+                { title: "Diploma in Pharmacy (D.Pharm.)", description: "A two-year diploma program.", icon: Pill, link: "/diploma-pharmacy-new" },
             ],
         },
     ],
